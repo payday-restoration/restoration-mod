@@ -1,0 +1,5 @@
+{
+  "Name": "Restoration Mod",
+  "Author": "Restoration Mod Collective",
+  "Description": "Required mod_override files for Restoration Mod."
+}

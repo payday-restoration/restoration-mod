@@ -1,0 +1,29 @@
+<table>
+		<!-- GUI ASSETS -->
+		<gui path="guis/mission_briefing/preload_contact_shatter"/>
+		<texture path="guis/textures/pd2/mission_briefing/shatter/contact"/>
+		<texture path="guis/textures/pd2/mission_briefing/shatter/bd_pattern"/>
+		<movie path="movies/codex/shatter1"/>
+		<movie path="movies/cn_ghrv"/>
+		
+
+		<!-- GUI ASSETS -->
+		
+		<!-- UNITS -->
+		<!-- <unit path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield"/>
+		<unit path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield_husk"/>
+		<model path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield"/>
+		<material_config path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield"/>
+		<material_config path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield_contour"/>
+		<object path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield"/>
+		<cooked_physics path ="units/pd2_dlc_veritas/characters/ene_omnia_shield/ene_omnia_shield"/> -->
+		<!-- UNITS -->
+		
+		<!-- MODEL TEXTURES -->
+		<!-- <texture path="units/pd2_dlc_veritas/characters/shared_textures/omnia_shield_helm_df"/>
+		<texture path="units/pd2_dlc_veritas/characters/shared_textures/omnia_shield_helm_nm"/>
+		<texture path="units/pd2_dlc_veritas/characters/shared_textures/omnia_shield_df"/>
+		<texture path="units/pd2_dlc_veritas/characters/shared_textures/omnia_shield_nm"/> -->
+		<!-- MODEL TEXTURES -->
+		
+</table>

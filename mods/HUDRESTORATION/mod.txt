@@ -1,0 +1,152 @@
+{
+ "name" : "Restoration Mod",
+ "description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2."
+ "author" : "Martini & Doktor Akcel & The Restoration Mod Crew",
+ "contact" : "[email protected]",
+ "version" : "5.1.4",
+ "priority" : 45,
+ "updates" : [
+  {
+   "revision" : 45,
+   "identifier" : "restoration",
+  },
+  {
+   "revision" : "./assets/mod_overrides/RestorationMod/revision.txt",
+   "identifier" : "restoration_mod_overrides",
+   "install_dir" : "assets/mod_overrides/",
+   "install_folder" : "RestorationMod",
+   "display_name" : "Restoration Mod mod_overrides"
+  }
+  ],
+ "persist_scripts" : [
+{ "global" : "RestorationTweak", "script_path" : "lua/TweakData.lua" }
+],
+
+ "hooks" : [
+  {  "hook_id" : "lib/managers/hud/hudobjectives",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/menumanager",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudpresenter",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudheisttimer",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudblackscreen",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudinteraction",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudtemp",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudassaultcorner",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hud/hudmissionbriefing",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/menu/menubackdropgui",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/menu/missionbriefinggui",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/crimenetmanager",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hudmanagerpd2",
+   "script_path" : "Core.lua"
+  },
+  {  "hook_id" : "lib/managers/hud/hudteammate",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hud/hudsuspicion",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hudmanager",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hud/hudhint",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/menu/menuscenemanager",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/tweak_data/levelstweakdata",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/menu/menupauserenderer",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/menu/menurenderer",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/menu/newsfeedgui",
+   "script_path" : "Core.lua"
+  },
+  {	"hook_id" : "lib/managers/menu/menunodegui",
+   "script_path" : "Core.lua"
+  },
+  {	"hook_id" : "lib/managers/menu/renderers/menunodecrimenetgui",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/tweak_data/tweakdata",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/states/menutitlescreenstate",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hud/hudchat",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hud/hudplayerdowned",
+   "script_path" : "Core.lua"
+  },
+  {	"hook_id" : "lib/managers/menu/playerprofileguiobject",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/hud/hudstageendscreen",
+   "script_path" : "Core.lua"
+  },
+  {	"hook_id" : "lib/managers/menu/crimenetcontractgui",
+   "script_path" : "Core.lua"
+  },
+  { "hook_id" : "lib/managers/lootmanager",
+   "script_path" : "Core.lua"
+  },
+  {	"hook_id" : "lib/managers/menu/contractboxgui",
+   "script_path" : "Core.lua"
+  },
+  {	"hook_id" : "lib/managers/dialogmanager",
+   "script_path" : "Core.lua"
+  },
+  {
+	"hook_id": "core/lib/managers/coresequencemanager",
+   "script_path": "Core.lua"
+  },
+  {
+	"hook_id" : "lib/managers/menumanager",
+   "script_path" : "Core.lua"
+  },
+  {
+	"hook_id" : "lib/tweak_data/groupaitweakdata",
+   "script_path" : "Core.lua"
+  },
+  {
+	"hook_id" : "lib/tweak_data/charactertweakdata",
+   "script_path" : "Core.lua"
+  }
+ ],
+ "libraries" : [
+        {
+            "display_name" : "BeardLib",
+            "identifier" : "beardlib",
+            "optional" : "false"
+        }
+    ]
+}

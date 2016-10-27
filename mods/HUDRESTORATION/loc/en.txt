@@ -15,6 +15,8 @@
 	"restoration_objectives_desc" : "Ticking this will enable the alpha-styled objective panel.",
 	"restoration_presenter_title" : "Enable Alpha Presenter Panel",
 	"restoration_presenter_desc" : "Ticking this will enable the alpha-styled presenter panel.",
+	"restoration_sc_title" : "Enable SC's Mod",
+	"restoration_sc_desc" : "Ticking this will enable SC's Mod, an overhaul to police, skills, and weapons designed to improve the gameplay experience.",
 	"restoration_bag_lower_title" : "Lower Bag Animation",
 	"restoration_bag_lower_desc" : "Lowers the alpha-styled bag pop-up animation on the screen.",
 	"restoration_assault_style_title" : "Assault Panel Style",

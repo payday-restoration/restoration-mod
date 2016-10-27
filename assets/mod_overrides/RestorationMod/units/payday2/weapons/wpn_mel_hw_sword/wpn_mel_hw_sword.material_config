@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mtr_safe" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_head_4_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_head_4_df"/>
+    </material>
+</materials>

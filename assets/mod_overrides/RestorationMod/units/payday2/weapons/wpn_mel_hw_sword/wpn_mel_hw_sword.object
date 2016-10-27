@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_mel_titan_hammer" materials="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" />
+    <graphics>
+        <object enabled="true" name="g_titan" shadow_caster="true" />
+    </graphics>
+</dynamic_object>

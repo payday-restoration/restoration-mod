@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="glock" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_g17_pts/extended_mag_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_third_pis_g17_pts/extended_mag_nm"/>
+    </material>
+</materials>

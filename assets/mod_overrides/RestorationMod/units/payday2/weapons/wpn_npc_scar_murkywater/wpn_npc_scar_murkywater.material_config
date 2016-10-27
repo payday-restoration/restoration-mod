@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mtr_mk17" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df"/>
+    </material>
+</materials>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" />
+   <dependencies>
+	<depends_on effect="effects/particles/weapons/raging/muzzleflash_3dp" />
+		<depends_on bnk="soundbanks/weapon_rbull" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCRaycastWeaponBase" >
+			<var name="name_id" value="peacemaker_npc" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_ragingbull" />
+    <default_soundsource source="rp_ragingbull" />
+  </sounds>
+</unit>

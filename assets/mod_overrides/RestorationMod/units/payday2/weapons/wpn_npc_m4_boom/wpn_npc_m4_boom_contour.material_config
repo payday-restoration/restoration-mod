@@ -1,0 +1,11 @@
+<materials version="3" group="wpn_npc_m4">
+    <material name="mtr_m4" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+        <bump_normal_texture file="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_nm"/>
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0.5" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="weapon_lod1" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_df"/>
+    </material>
+</materials>

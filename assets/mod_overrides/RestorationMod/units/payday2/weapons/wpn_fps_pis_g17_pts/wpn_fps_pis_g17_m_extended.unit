@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1" >
+    <object file="units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_m_extended" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

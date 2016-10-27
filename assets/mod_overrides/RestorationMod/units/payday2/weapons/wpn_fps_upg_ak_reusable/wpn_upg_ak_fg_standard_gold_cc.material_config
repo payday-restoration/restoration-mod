@@ -1,0 +1,14 @@
+<materials version="3" group="weapon_group">
+    <material name="handguard_lower_wood" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_lower_handguard_gold_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_lower_handguard_gold_nm"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_gold"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="handguard_upper_wood" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_upper_handguard_gold_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_upper_handguard_gold_nm"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+</materials>

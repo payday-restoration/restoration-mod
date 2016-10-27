@@ -1,0 +1,17 @@
+if restoration.Options:GetValue("SC/SC") then
+
+local sc_pptd = PrePlanningTweakData.init
+
+function PrePlanningTweakData:init(tweak_data)
+	sc_pptd(self, tweak_data)
+
+	--To hopefully make some crap on big bank more fruitful--
+	self.types.spycam.budget_cost = 1
+	self.types.escape_bus_loud.budget_cost = 6
+	self.types.escape_c4_loud.budget_cost = 2
+	self.types.escape_elevator_loud.budget_cost = 4
+	self.types.vault_thermite.budget_cost = 4
+
+end
+
+end

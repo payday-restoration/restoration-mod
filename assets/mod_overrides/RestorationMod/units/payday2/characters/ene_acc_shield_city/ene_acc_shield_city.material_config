@@ -1,0 +1,12 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" name="mtr_light_il" version="2">
+        <diffuse_texture file="units/payday2/characters/ene_acc_shield_city/shield_df"/>
+        <bump_normal_texture file="units/payday2/characters/ene_acc_shield_city/shield_nm"/>
+        <self_illumination_texture file="units/payday2/characters/ene_acc_shield_city/shield_il"/>
+        <variable type="scalar" name="il_multiplier" value="sun"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mtr_nshield" version="2">
+        <diffuse_texture file="units/payday2/characters/ene_acc_shield_city/shield_df"/>
+        <bump_normal_texture file="units/payday2/characters/ene_acc_shield_city/shield_nm"/>
+    </material>
+</materials>

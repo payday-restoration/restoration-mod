@@ -1,4 +1,4 @@
-{
+﻿{
 	"menu_es_boost" : "Boost",	
 	"menu_es_crew" : "Crew",
 	"menu_es_personal" : "Personal",
@@ -23,6 +23,12 @@
 	"RestorationDifficultyMarkersDescID" : "Enable or disable Difficulty Markers.",
 	"RestorationStaminaIndicatorTitleID" : "Stamina Indicator",
 	"RestorationStaminaIndicatorDescID" : "Enable or disable Stamina Indicator.",
+	"RestorationSCOptionsButtonTitleID" : "SC's Mod Options",
+	"RestorationSCOptionsButtonDescID" : "SC's Mod Options",
+	"RestorationSCTitleID" : "Cop/Skill Overhaul",
+	"RestorationSCDescID" : "Enable or disable the cop and skill changes.",
+	"RestorationSCWeaponTitleID" : "Weapon Overhaul",
+	"RestorationSCWeaponDescID" : "Enable or disable the weapon changes.",
 	"hud_instruct_mask_on" : "Hold $BTN_USE_ITEM to put on your mask",
 	"heist_contact_shatter_description" : ".:ERR! == ILLEGAL ENTRY POINT . . . TABLE DATA DUMP --> \n \n!!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  ",
 	"restoration_level_data_welcome_to_the_jungle_1" : "6:24 PM, Shaw District - 'Overkill MC' Bikers HQ",

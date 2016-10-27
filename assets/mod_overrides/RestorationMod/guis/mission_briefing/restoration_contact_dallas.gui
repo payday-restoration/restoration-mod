@@ -1,0 +1,14 @@
+<gui>
+	<preload texture="guis/textures/pd2/mission_briefing/dallas/dallas"/>
+	<preload texture="guis/textures/pd2/mission_briefing/dallas/bd_pattern"/>
+	<panel name_s="panel"/>
+	
+	<script><![CDATA[
+		pattern = "guis/textures/pd2/mission_briefing/dallas/bd_pattern"
+		function configure(t)
+			if( not t.empty ) then
+				local contact_image = panel:bitmap( { name="contact_image", texture="guis/textures/pd2/mission_briefing/dallas/dallas", w=720, h=720 } )
+			end
+		end
+	]]></script>
+</gui>

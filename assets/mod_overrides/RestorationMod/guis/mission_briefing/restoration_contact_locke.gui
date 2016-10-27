@@ -1,0 +1,45 @@
+<gui>
+	<preload texture="guis/dlcs/berry/textures/pd2/mission_briefing/bd_pattern"/>
+	<panel name_s="panel"/>
+	
+	<script><![CDATA[
+		pattern = "guis/dlcs/berry/textures/pd2/mission_briefing/bd_pattern"
+		function configure(t)
+			if( not t.empty ) then
+				local wait_and_spawn_video = function(panel)
+					local seconds = 1
+			    local t = 0
+			    while t < seconds do
+			    	local dt = coroutine.yield()
+			  		if dt == 0 then
+			  			dt = TimerManager:main():delta_time()
+			  		end
+			      t = t + dt
+			    end
+					--wait(1)
+					local variant = 1
+					local contact_image = panel:video( { name="contact_image", video = "movies/contact_locke"..tostring(variant), width = 1280, height = 720, blend_mode="add", loop=true, alpha=0 } )
+					
+					local f = function(p) contact_image:set_alpha(p) end
+					seconds = 0.5
+			    t = 0
+			    while true do
+			    	local dt = coroutine.yield()
+			  		if dt == 0 then
+			  			dt = TimerManager:main():delta_time()
+			  		end
+		        t = t + dt
+		        if t >= seconds then break end
+		        f(t/seconds, t)
+			    end
+					--over(0.5, function(p) contact_image:set_alpha(p) end )
+				end
+				panel:animate( wait_and_spawn_video )
+				
+				-- local variant = 1
+				-- local contact_image = panel:bitmap( { name="contact_image", texture="guis/textures/pd2/mission_briefing/interupt/contact", w=720, h=720 } )
+				-- local contact_image = panel:video( { name="contact_image", video = "movies/contact_interupt"..tostring(variant), width = 1280, height = 720, blend_mode="add", loop=true } )
+			end
+		end
+	]]></script>
+</gui>

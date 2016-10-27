@@ -49,283 +49,170 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	end
 	self.unit_categories = {}
 	self.unit_categories.spooc = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_spook_akan_1/ene_spook_akan_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
 		},
 		access = access_type_all,
 		special_type = "spooc"
 	}
 	self.unit_categories.CS_cop_C45_R870 = {
-		unit_types = {
-			america = {
+		units = {
 			Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
 			Idstring("units/payday2/characters/ene_cop_3/ene_cop_3"),
 			Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_2/ene_soldier_akan_2")
-			}
 		},
 		access = access_type_walk_only
 	}
 	self.unit_categories.CS_cop_stealth_MP5 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_1/ene_soldier_akan_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
 		},
 		access = access_type_walk_only
 	}
 	self.unit_categories.CS_swat_MP5 = {
-		unit_types = {
-			america = {
+		units = {
+			--Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"),  --FUCK IT, IT'S BROKE AS SHIT
+			--Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"),  --FUCK IT, IT'S BROKE AS SHIT
 			Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_3/ene_soldier_akan_3")
-			}
 		},
 		access = access_type_all
 	}
 	self.unit_categories.CS_swat_R870 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_1/ene_soldier_akan_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
 		},
 		access = access_type_all
 	}
 	self.unit_categories.CS_heavy_M4 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_heavy_1/ene_soldier_akan_heavy_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 		},
 		access = access_type_all
 	}
 	self.unit_categories.CS_heavy_M4_w = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_heavy_1/ene_soldier_akan_heavy_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 		},
 		access = access_type_walk_only
 	}
 	self.unit_categories.CS_tazer = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_tazer_akan_1/ene_tazer_akan_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1")
 		},
 		access = access_type_all,
 		special_type = "taser"
 	}
 	self.unit_categories.CS_shield = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_shield_2/ene_shield_2")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_shield_akan_1/ene_shield_akan_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_shield_2/ene_shield_2")
+			--Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2")  --FUCK IT, IT'S BROKE AS SHIT
 		},
 		access = access_type_walk_only,
 		special_type = "shield"
 	}
 	self.unit_categories.FBI_suit_C45_M4 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
-				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_1/ene_soldier_akan_1"),
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_2/ene_soldier_akan_2")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
+			Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
 		},
 		access = access_type_all
 	}
 	self.unit_categories.FBI_suit_M4_MP5 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_3/ene_soldier_akan_3"),
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_2/ene_soldier_akan_2")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+			Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 		},
 		access = access_type_all
 	}
 	self.unit_categories.FBI_suit_stealth_MP5 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_2/ene_soldier_akan_2")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 		},
 		access = access_type_all
 	}
 	if difficulty_index < 6 then
 		self.unit_categories.FBI_swat_M4 = {
-			unit_types = {
-				america = {
+			units = {
 				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-				Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_2/ene_soldier_akan_2")
-				}
+				Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1")
+				--Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2")  --FUCK IT, IT'S BROKE AS SHIT
 			},
 			access = access_type_all
 		}
 	else
 		self.unit_categories.FBI_swat_M4 = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_3/ene_soldier_akan_3")
-				}
+			units = {
+				Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1")
 			},
 			access = access_type_all
 		}
 	end
 	if difficulty_index < 6 then
 		self.unit_categories.FBI_swat_R870 = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_1/ene_soldier_akan_1")
-				}
+			units = {
+				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2")
 			},
 			access = access_type_all
 		}
 	else
 		self.unit_categories.FBI_swat_R870 = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_3/ene_soldier_akan_3"),
-					Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_2/ene_soldier_akan_2")
-				}
+			units = {
+				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3")
 			},
 			access = access_type_all
 		}
 	end
 	self.unit_categories.FBI_heavy_G36 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-				Idstring("units/payday2/characters/ene_sniper_2/ene_sniper_2")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_heavy_1/ene_soldier_akan_heavy_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 		},
 		access = access_type_all
 	}
 	self.unit_categories.FBI_heavy_G36_w = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_soldier_akan_heavy_1/ene_soldier_akan_heavy_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
+			Idstring("units/payday2/characters/ene_sniper_2/ene_sniper_2")
 		},
 		access = access_type_walk_only
 	}
 	self.unit_categories.FBI_shield = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_shield_akan_1/ene_shield_akan_1")
-			}
+		units = {
+			Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
+			--Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2")  --FUCK IT, IT'S BROKE AS SHIT
 		},
 		access = access_type_walk_only,
 		special_type = "shield"
 	}
 	if difficulty_index < 6 then
 		self.unit_categories.FBI_tank = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-					Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_bulldozer_akan_1/ene_bulldozer_akan_1")
-				}
+			units = {
+				Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+				Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
 			},
 			access = access_type_walk_only,
 			special_type = "tank"
 		}
 	else
 		self.unit_categories.FBI_tank = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_bulldozer_akan_1/ene_bulldozer_akan_1")
-				}
+			units = {
+				Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+				Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
 			},
 			access = access_type_walk_only,
 			special_type = "tank"
 		}
 	end
 	self.unit_categories.Phalanx_minion = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			}
+		units = {
+			Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 		},
 		access = access_type_walk_only,
 		special_type = "shield"
 	}
 	self.unit_categories.Phalanx_vip = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
-			}
+		units = {
+			Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
 		},
 		access = access_type_walk_only,
 		special_type = "shield"

@@ -190,18 +190,18 @@ function HUDMissionBriefing:init( hud, workspace )
 	self._current_map = managers.job:current_level_id()
 	self._job_class = self._current_job_data and self._current_job_data.jc or 0
 	
-	if self._current_contact == "shatter" or self._current_contact == "shatter_demo" then
+	if self._current_contact == "shatter" then
 		function making_video()
-					self._contact_image = self._background_layer_two:bitmap( { name="contact_image", texture="guis/textures/pd2/mission_briefing/shatter/contact", w=720, h=720 } )
+					self._contact_image = self._background_layer_two:bitmap( { name="contact_image", texture="guis/textures/trial_apartment", w=720, h=720 } )
 					self._contact_image = self._background_layer_two:video( { name="contact_image", video = "movies/menu", width = 1280, height = 720, blend_mode="add", loop=true, alpha=1, color = tweak_data.screen_color_red } ) -- , color = tweak_data.screen_color_yellow } )
 					
 		end
 		self._background_layer_two:stop()
 		self._background_layer_two:animate(making_video)
 	
-		local contact_pattern = "guis/textures/pd2/mission_briefing/shatter/bd_pattern"
+		local contact_pattern = "guis/textures/trial_characters"
 		if( contact_pattern ) then
-			self._backdrop:set_pattern( "guis/textures/pd2/mission_briefing/shatter/bd_pattern", 0.10, "add" )
+			self._backdrop:set_pattern( "guis/textures/trial_characters", 0.10, "add" )
 		end
 	
 	else 
@@ -519,44 +519,33 @@ function HUDMissionBriefing:remove_player_slot_by_peer_id(peer, reason)
 end
 end
 
- 
-if Restoration.options.restoration_loadouts == false then
+local shattervanil = HUDMissionBriefing.init
+--[[if Restoration.options.restoration_loadouts == false then
 
-local init_actual = HUDMissionBriefing.init
-function HUDMissionBriefing:init(hud, workspace, ...)
- 
-    self._current_contact = managers.job:current_contact_id()
- 
-    init_actual(self, hud, workspace, ...)
- 
-    if self._current_contact ~= "shatter" then
-        return
-    end
- 
-    local bg2 = self._background_layer_two
-    -- Unlikely to ever happen, but just in case
-    if not alive(bg2) then
-        return
-    end
- 
-    -- Wipe everything on self._background_layer_two. Removing them while iterating is probably not a wise idea (may cause
-    -- instability), so copy the references over to a new, temporary table first
-    local tmp = {}
-    for _, panel in pairs(bg2:children() or {}) do
-        table.insert(tmp, panel)
-    end
-    for index, panel in ipairs(tmp) do
-        bg2:remove(panel)
-    end
-    tmp = nil
- 
-    function making_video()
-        self._contact_image = bg2:bitmap( { name="contact_image", texture="guis/textures/pd2/mission_briefing/shatter/bd_pattern", w=720, h=720 } )
-        self._contact_image = bg2:video( { name="contact_image", video = "movies/menu", width = 1280, height = 720, blend_mode="add", loop=true, alpha=1, color = tweak_data.screen_color_red } ) -- , color = tweak_data.screen_color_yellow } )
-    end
-    bg2:stop()
-    bg2:animate(making_video)
- 
-    self._backdrop:set_pattern( "guis/textures/pd2/mission_briefing/shatter/contact", 0.10, "add" )
-end
-end
+function HUDMissionBriefing:init( hud, workspace )
+	shattervanil ( self, hud, workspace )
+		if self._current_contact == "shatter" then
+		function making_video()
+					self._contact_image = self._background_layer_two:bitmap( { name="contact_image", texture="guis/textures/trial_apartment", w=720, h=720 } )
+					self._contact_image = self._background_layer_two:video( { name="contact_image", video = "movies/menu", width = 1280, height = 720, blend_mode="alpha", loop=true, alpha=1, layer = -2, color = tweak_data.screen_color_yellow } )
+		end
+		self._background_layer_two:stop()
+		self._background_layer_two:animate(making_video)
+	
+		local contact_pattern = "guis/textures/trial_characters"
+		if( contact_pattern ) then
+			self._backdrop:set_pattern( "guis/textures/trial_characters", 0.10, "add" )
+		end
+	
+	else 
+		local contact_gui = self._background_layer_two:gui( self._current_contact_data.assets_gui, {} )
+	
+		local contact_pattern = contact_gui:has_script() and contact_gui:script().pattern
+		if( contact_pattern ) then
+			self._backdrop:set_pattern( contact_pattern, 0.10, "add" )
+		end
+	
+	end
+	end
+	
+end]]--

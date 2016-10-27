@@ -4,99 +4,62 @@ local rnd = math.random (3)
 local rnd2 = math.random (2)
 --ANYWHERE ELSE AND I'LL TAKE IT AWAY FROM YOU
 
---Package Loaders
---EXPERIMENTAL!!!  While loading packages during loadtime prevents asset corruption and crashes/visual glitches, it seriously puts load on overhead... look into truncating this?
---Also, when building a new level, keep extra packages and instances as low as you can without sacrificing ideas
---Make sure to put together small testing teams prior to pushing out an update to test a level's overhead, since too heavy a load will cause the game to CTD due to running out of memory
-
---Green Harvest Packages
-if Global.load_level == true and map == "greenharvest_stage1" and not PackageManager:loaded("packages/narr_hox_3") then
-PackageManager:load("packages/narr_hox_3")
-PackageManager:load("packages/narr_big")
-PackageManager:load("packages/narr_roberts")
-PackageManager:load("levels/narratives/bain/roberts/world/world")
-PackageManager:load("levels/narratives/dentist/hox/stage_1/world/world")
-PackageManager:load("levels/narratives/h_watchdogs/stage_1/world_sounds")
-log("green harvest stage 1 loaded")
-end
-if Global.load_level == true and map == "escape_overpass_ghrv" and not PackageManager:loaded("packages/narr_hox_3") then
-PackageManager:load("packages/narr_hox_3")
-PackageManager:load("levels/narratives/h_watchdogs/stage_1/world_sounds")
-log("green harvest overpass escape loaded")
-end
-if Global.load_level == true and map == "escape_garage_ghrv" and not PackageManager:loaded("packages/narr_hox_3") then
-PackageManager:load("packages/narr_hox_3")
-PackageManager:load("levels/narratives/h_watchdogs/stage_1/world_sounds")
-PackageManager:load("levels/narratives/dentist/hox/stage_1/world/world")
-log("green harvest garage escape loaded")
-end
---Dearly Departing Packages
-
---Time of Day Loader
 if Restoration.options.veritas_tod == true then
 Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
 
 
 	if map == "watchdogs_1" then
 	if rnd == 1 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment", true)
 	elseif rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment", true)
 	end
 	end
 	
 	if map == "branchbank" then
 	if rnd == 1 or rnd == 2 then
-	BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment", true)
 	--"sky_orientation/rotation":"-116.40824890137",
 	end
 	end
 	
 	if map == "watchdogs_1_night" then
 	if rnd == 1 or rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment", true)
 		--"sky_orientation/rotation":"278.53564453125",
 	end
 	end
 	
 	if map == "ukrainian_job" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment", true)
 	end
 
-	if map == "mad" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_mad_outdoor/pd2_mad_outdoor", "environment")
-	end
-	
 	end)
 end
-
---Heist Loader	
+	
 Hooks:Add("BeardLibCreateScriptDataMods", "RestorationCallBeardLibSequenceFuncs", function()
-	--Green Harvest	
+
+
+--Green Harvest	
 	if map == "greenharvest_stage1" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_stage1.custom_xml", "custom_xml", "levels/narratives/h_firestarter/stage_3/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_bdrop.custom_xml", "custom_xml", "levels/narratives/h_firestarter/stage_3/pc_only/pc_only", "continent")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_stage1.generic_xml", "generic_xml", "levels/narratives/h_firestarter/stage_3/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest.nav_data.generic_xml", "generic_xml", "levels/narratives/h_firestarter/stage_3/nav_manager_data", "nav_data")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_worlddef.custom_xml", "custom_xml", "levels/narratives/h_firestarter/stage_3/world", "world")
-		log("green harvest loaded")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_stage1.custom_xml", "custom_xml", "levels/narratives/h_firestarter/stage_3/world/world", "continent", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_bdrop.custom_xml", "custom_xml", "levels/narratives/h_firestarter/stage_3/pc_only/pc_only", "continent", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_stage1.generic_xml", "generic_xml", "levels/narratives/h_firestarter/stage_3/world/world", "mission", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/greenharvest_worlddef.custom_xml", "custom_xml", "levels/narratives/h_firestarter/stage_3/world", "world", true)
 	end
 	if map == "escape_garage_ghrv" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_garage_ghrv.generic_xml", "generic_xml", "levels/narratives/escapes/escape_garage/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_garage_ghrv.custom_xml", "custom_xml", "levels/narratives/escapes/escape_garage/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_garage_ghrv.generic_xml", "generic_xml", "levels/narratives/escapes/escape_garage/world/world", "mission", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_garage_ghrv.custom_xml", "custom_xml", "levels/narratives/escapes/escape_garage/world/world", "continent", true)
 	end
 	if map == "escape_overpass_ghrv" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_overpass_ghrv.generic_xml", "generic_xml", "levels/narratives/escapes/escape_overpass/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_overpass_ghrv.custom_xml", "custom_xml", "levels/narratives/escapes/escape_overpass/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_overpass_ghrv.generic_xml", "generic_xml", "levels/narratives/escapes/escape_overpass/world/world", "mission", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment", true)
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/greenharvest/escape_overpass_ghrv.custom_xml", "custom_xml", "levels/narratives/escapes/escape_overpass/world/world", "continent", true)
 	end
 	
-	
-	--Dearly Departing
-log("green harvest garage escape loaded")
-	--Safehouse edits removed for safety
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/safehouse/safehouse_w.custom_xml", "custom_xml", "levels/narratives/safehouse/world/world", "continent", true)
 end)
 
 
@@ -108,8 +71,7 @@ end)
             "sky_1930_twillight",
             "sky_1846_low_sun_nice_clouds",
             "sky_0902_overcast",
-			"sky_0200_night_moon_stars",
-			"sky_2000_twilight_mad"
+			"sky_0200_night_moon_stars"
         }
         for _, sky in ipairs(skies) do
             if not managers.dyn_resource:has_resource(Idstring("scene"), Idstring("core/environments/skies/" .. sky .. "/" .. sky), managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
@@ -121,3 +83,16 @@ end)
 end)
 	
 --Shadow Caster Fix
+	BeardLib.ScriptData.Continent:CreateMod({
+            ID = "BranchBankFix",
+            file = "levels/narratives/h_firestarter/stage_3/world/world"
+        })
+
+        BeardLib.ScriptData.Continent:AddUnit("BranchBankFix", {
+            path = "units/dev_tools/level_tools/shadow_caster_5x5",
+            name = "test_unit",
+            position = Vector3(-2936.95, 1200.98, 205.935),
+            rotation = Rotation(0, 90, 0),
+            unit_id = 66676
+        })
+		

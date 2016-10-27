@@ -1225,6 +1225,9 @@
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_wall_2x3m" name_id="com_int_basement_wall_2x3m_045" position="2125 1725 69" rotation="0 0 0 -1" unit_id="100605"/>
 		</table>
 		<table>
+			<unit_data continent="world" name="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" name_id="gen_prop_door_metal_openable_003" position="1900 2225 69" rotation="0 0 -0.707107 -0.707107" unit_id="100573"/>
+		</table>
+		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_wall_2x3m" name_id="com_int_basement_wall_2x3m_046" position="2125 2325 68" rotation="0 0 1 -6.85453e-007" unit_id="100575"/>
 		</table>
 		<table>
@@ -1328,6 +1331,9 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_wall_2x3m" name_id="com_int_basement_wall_2x3m_009" position="2700 1925 -331" rotation="0 0 -0.707107 -0.707106" unit_id="100590"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" name_id="gen_prop_door_metal_openable_004" position="2725 1825 -331" rotation="0 0 0.707106 -0.707107" unit_id="100535"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_floor_a_2x2m_clean" name_id="com_int_basement_floor_a_2x2m_clean_009" position="2725 1725 -31" rotation="0 1 0 4.37114e-008" unit_id="100612"/>
@@ -1517,6 +1523,9 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/lcm/lcm_ext_4x8m_y_solid" name_id="lcm_ext_4x8m_y_solid_003" position="3100 2325 375" rotation="0 0 1 1.19209e-007" unit_id="100680"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/architecture/ind/ind_ext_outdoor_stairs/ind_ext_outdoor_stairs_d_clean" name_id="ind_ext_outdoor_stairs_d_clean_062" position="-375.84 1366.24 -353" rotation="-0.281958 0.648459 -0.281958 -0.648459" unit_id="100242"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_floor_a_8x8m_blend" name_id="com_int_basement_floor_a_8x8m_blend_089" position="2700 -900 450" rotation="0 0 -0.707107 -0.707107" unit_id="100448"/>
@@ -1850,6 +1859,9 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_garage_pillar" name_id="com_int_basement_garage_pillar_067" position="2300 1550 450" rotation="0 0 -0.707107 -0.707107" unit_id="100752"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" name_id="gen_prop_door_metal_openable_006" position="2100 703 469" rotation="0 0 0 -1" unit_id="100916"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_floor_a_2x2m_clean" name_id="com_int_basement_floor_a_2x2m_clean_025" position="1900 1300 469" rotation="0 0 0 -1" unit_id="100917"/>
@@ -2688,24 +2700,24 @@
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_001" position="-1895.1 1010.14 430" rotation="0 0 0.949763 -0.31297" unit_id="100834">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_002" position="-2325 2250 430" rotation="0 0 -0.438371 -0.898794" unit_id="100677">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_003" position="-1724.94 2925 439.256" rotation="-0.0246777 0.0246777 0.706676 -0.706676" unit_id="101153">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -3165,8 +3177,8 @@
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_004" position="1700 -425 50" rotation="0 0 -0.809017 -0.587785" unit_id="100352">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@IDd07c4dc12188729d@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID90cc6917c5799ad8@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="reddot" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="none" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -4868,30 +4880,30 @@
 		<table>
 			<unit_data continent="world" mesh_variation="lights_on" name="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" name_id="vehicle_police_armored_truck_001" position="-1481 912 450" rotation="0 0 0 -1" unit_id="100248">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" mesh_variation="lights_on" name="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" name_id="vehicle_police_armored_truck_002" position="-1750.1 -725 425.925" rotation="1.04686e-010 4.33031e-008 4.53323e-018 -1" unit_id="100730">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" mesh_variation="lights_on" name="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" name_id="vehicle_police_armored_truck_004" position="-2375 -500 430" rotation="0 0 0.139173 -0.990268" unit_id="100732">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -5372,7 +5384,7 @@
 		<table>
 			<unit_data continent="world" mesh_variation="flicker_2" name="units/world/props/flickering_light/flickering_light" name_id="flickering_light_001" position="-100 700 -156.787" projection_light="lo_light_flicker" rotation="0 0 0 -1" unit_id="102806">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.968628 0.937255 0.576471" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_light_flicker" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.968628 0.937255 0.576471" enabled="true" falloff_exponent="1" far_range="250" multiplier="identity" name="lo_light_flicker" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -5619,16 +5631,16 @@
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_005" position="4397.43 -784.915 450" rotation="0 0 -0.377276 -0.926101" unit_id="103040">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@IDd07c4dc12188729d@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID90cc6917c5799ad8@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="reddot" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="none" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_006" position="4775 -275 430" rotation="0 0 0.970108 0.242673" unit_id="103041">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -6022,7 +6034,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_012" position="-768 2218 -255" projection_light="lo_omni" rotation="0 0 1 2.98023e-008" unit_id="103175">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.92549 0.407843 0.407843" enabled="true" falloff_exponent="3" far_range="150" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.92549 0.407843 0.407843" enabled="true" falloff_exponent="3" far_range="150" multiplier="match" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -6050,7 +6062,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_013" position="87 3550 211" projection_light="lo_omni" rotation="0 0 1 -2.68221e-007" unit_id="103199">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.968628 0.937255 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.968628 0.937255 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -6531,18 +6543,18 @@
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_007" position="2607 -2022.16 442.044" rotation="-0.0431679 0.0431678 -0.705788 -0.705788" unit_id="103509">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" mesh_variation="lights_on" name="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" name_id="vehicle_police_armored_truck_003" position="1946.88 -2177.42 430" rotation="0 0 0.780627 -0.624997" unit_id="103510">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="@IDbca13ba1d306f87b@" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="@IDbca13ba1d306f87b@" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="2000" multiplier="identity" name="ls_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_left" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1000" multiplier="identity" name="ls_t_right" near_range="0" spot_angle_end="40.0728" spot_angle_start="40.0728"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -6554,6 +6566,9 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_int_basement/com_int_basement_wall_8x3m" name_id="com_int_basement_wall_8x3m_042" position="1900 2325 -350" rotation="0 0 1 -4.17233e-007" unit_id="100622"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/world/props/signs/signs_warnings_04" name_id="signs_warnings_04_001" position="-475 3501.09 188.335" rotation="-0.147809 0 0 -0.989016" unit_id="103516"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/world/props/fire_extinguisher/fire_extinguisher" name_id="fire_extinguisher_003" position="-501 2314 100" rotation="1.16981e-023 -2.33962e-024 1 5.96046e-008" unit_id="103518"/>
@@ -6582,7 +6597,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_037" position="-600 -1312 269" projection_light="lo_omni" rotation="0 0 1 -4.47035e-008" unit_id="103532">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7096,14 +7111,14 @@
 		<table>
 			<unit_data continent="world" mesh_variation="on" name="units/world/props/apartment/facade_light/facade_light" name_id="facade_light_001" position="300 -1100 703.038" rotation="0 0 0 -1" unit_id="103867">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.466667 0.466667 0.466667" enabled="true" falloff_exponent="1" far_range="160" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="50" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.466667 0.466667 0.466667" enabled="true" falloff_exponent="1" far_range="160" multiplier="monitor" name="lo_omni" near_range="50" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_044" position="325 -1100 678.038" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="103868">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="400" multiplier="@ID3385027996510d31@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="400" multiplier="desklight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7113,7 +7128,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_045" position="100 -1275 678.038" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="103869">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="400" multiplier="@ID3385027996510d31@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="400" multiplier="desklight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7123,7 +7138,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_046" position="-300 -1000 703.038" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="103870">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID3385027996510d31@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="desklight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7133,7 +7148,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_047" position="-478.999 -1605 319" projection_light="lo_omni" rotation="0 0 -7.7486e-007 -1" unit_id="103871">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.870588 0.168627 0.0862745" enabled="true" falloff_exponent="3" far_range="250" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.870588 0.168627 0.0862745" enabled="true" falloff_exponent="3" far_range="250" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7143,7 +7158,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_051" position="2675 1825 -106" projection_light="lo_omni" rotation="-1.05367e-008 1.05367e-008 8.9407e-008 -1" unit_id="103437">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.207843 0.854902 0.0941177" enabled="true" falloff_exponent="3" far_range="250" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.207843 0.854902 0.0941177" enabled="true" falloff_exponent="3" far_range="250" multiplier="match" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7153,7 +7168,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_052" position="2750 1825 -106" projection_light="lo_omni" rotation="-1.05367e-008 1.05367e-008 8.9407e-008 -1" unit_id="103874">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.270588 0.882353 0.0666667" enabled="true" falloff_exponent="3" far_range="250" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.270588 0.882353 0.0666667" enabled="true" falloff_exponent="3" far_range="250" multiplier="match" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7163,7 +7178,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_053" position="2100 1550 694" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="103875">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.870588 0.168627 0.0862745" enabled="true" falloff_exponent="3" far_range="250" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.870588 0.168627 0.0862745" enabled="true" falloff_exponent="3" far_range="250" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7272,7 +7287,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_056" position="3000 1994 -281" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="103944">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.92549 0.407843 0.407843" enabled="true" falloff_exponent="3" far_range="150" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.92549 0.407843 0.407843" enabled="true" falloff_exponent="3" far_range="150" multiplier="match" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -7546,24 +7561,24 @@
 		<table>
 			<unit_data continent="world" name="units/payday2/vehicles/str_vehicle_van_player/str_vehicle_van_player" name_id="str_vehicle_van_player_001" position="1518 3463 450" rotation="0 0 -0.735411 -0.677622" unit_id="101645">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 0.861333 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_1" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.861 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_2" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.861333 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="identity" name="lo_omni_1" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.861 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="identity" name="lo_omni_2" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/vehicles/str_vehicle_van_player/str_vehicle_van_player" name_id="str_vehicle_van_player_002" position="-650 -1225 468" rotation="-1.85324e-011 -0.0043868 4.22459e-009 -0.99999" unit_id="102302">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 0.861333 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_1" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.861 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_2" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.861333 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="identity" name="lo_omni_1" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.861 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="identity" name="lo_omni_2" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/vehicles/str_vehicle_van_player/str_vehicle_van_player" name_id="str_vehicle_van_player_003" position="3367.01 -457.455 450" rotation="0 0 -0.702723 -0.711463" unit_id="102014">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 0.861333 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_1" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.861 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_2" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.861333 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="identity" name="lo_omni_1" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.861 0.584" enabled="true" falloff_exponent="4" far_range="150" multiplier="identity" name="lo_omni_2" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -7693,8 +7708,8 @@
 		<table>
 			<unit_data continent="world" mesh_variation="state_lights_siren_on" name="units/payday2/vehicles/str_vehicle_car_police_washington/str_vehicle_car_police_washington" name_id="str_vehicle_car_police_washington_008" position="-744.596 2002.69 450" rotation="0 0 0.71325 -0.700909" unit_id="104355">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
-					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID5035addc43a80b74@" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="0.118 0.5149 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_blue" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+					<table clipping_values="10000 -10000 0" color="1 0.118 0.118" enabled="true" falloff_exponent="4" far_range="350" multiplier="searchlight" name="li_light_red" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -7762,6 +7777,12 @@
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_exit_this_way" name_id="com_prop_parking_garage_sign_exit_this_way_004" position="3500 1425 -50" rotation="-2.42144e-008 0 -0.707107 -0.707106" unit_id="104376"/>
 		</table>
 		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_fire_exit" name_id="com_prop_parking_garage_sign_fire_exit_001" position="-500 -800 325" rotation="-2.42144e-008 0 -0.707107 -0.707106" unit_id="104377"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_fire_exit" name_id="com_prop_parking_garage_sign_fire_exit_002" position="-570 -1600 333.128" rotation="1.71222e-008 -1.71222e-008 1 -7.59959e-007" unit_id="104378"/>
+		</table>
+		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_fire_exit" name_id="com_prop_parking_garage_sign_fire_exit_003" position="1900 2226 324.576" rotation="-2.42144e-008 0 -0.707107 -0.707106" unit_id="104379"/>
 		</table>
 		<table>
@@ -7799,6 +7820,12 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_pay_machine" name_id="com_prop_parking_garage_sign_pay_machine_004" position="-249 3150 238.085" rotation="-2.5332e-007 0.707107 -0.707107 1.93715e-007" unit_id="104417"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_stairs" name_id="com_prop_parking_garage_sign_stairs_001" position="-500 0 350" rotation="2.51215e-015 2.42144e-008 0.707106 -0.707107" unit_id="104418"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_stairs" name_id="com_prop_parking_garage_sign_stairs_003" position="-502 2200 346" rotation="9.48303e-008 -5.26835e-008 0.707107 -0.707107" unit_id="104420"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_stairs" name_id="com_prop_parking_garage_sign_stairs_004" position="1700 2350 350" rotation="1.04308e-007 2.98023e-008 -3.57628e-007 -1" unit_id="104421"/>
@@ -8404,6 +8431,18 @@
 			<unit_data continent="world" name="units/payday2/architecture/com_ext_parking_garage/com_ext_parking_garage_concrete_slab_8m" name_id="com_ext_parking_garage_concrete_slab_8m_267" position="-500 1513 -24" rotation="1.42108e-014 -3.55271e-015 1 -5.96046e-008" unit_id="100073"/>
 		</table>
 		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_023" position="274 1549 252" rotation="0.707107 -3.16493e-007 -0.707107 1.55688e-008" unit_id="100286"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_024" position="326 1549 253" rotation="2.98023e-008 -0.707107 4.4351e-007 -0.707107" unit_id="100075"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_025" position="1074 1549 253" rotation="0.707107 -3.16493e-007 -0.707107 1.55688e-008" unit_id="100076"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_026" position="1126 1549 253.001" rotation="2.98022e-008 -0.707107 4.4351e-007 -0.707107" unit_id="100249"/>
+		</table>
+		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_027" position="1126 2349 253" rotation="2.98022e-008 -0.707107 4.4351e-007 -0.707107" unit_id="100300"/>
 		</table>
 		<table>
@@ -8418,7 +8457,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_029" position="-1314 2739 225" projection_light="lo_omni" rotation="0 0 0.707107 -0.707107" unit_id="102714">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="600" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="600" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -8482,7 +8521,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_064" position="2705 2750 48" projection_light="lo_omni" rotation="0 0 1 -5.96046e-008" unit_id="102743">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="1000" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="1000" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -8492,7 +8531,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_001" position="1150 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="101499">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8503,7 +8542,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_002" position="1050 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="101500">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8523,7 +8562,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_003" position="350 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102740">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="290" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="290" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8531,7 +8570,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_004" position="250 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102751">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="290" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="290" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8605,7 +8644,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_007" position="350 1550 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102774">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8613,7 +8652,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_008" position="250 1550 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102775">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8621,7 +8660,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_009" position="1150 1550 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102756">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8629,7 +8668,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_010" position="1050 1550 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102771">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -8694,7 +8733,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_068" position="-700 2152 169" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="100414">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID8c34304230e70372@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="flashlight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -8704,7 +8743,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_069" position="-700 1752 169" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="100793">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID8c34304230e70372@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="flashlight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -8714,7 +8753,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_070" position="-700 602 169" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102881">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID8c34304230e70372@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="flashlight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -8724,7 +8763,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_071" position="-700 2 169" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102882">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@ID8c34304230e70372@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="flashlight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -8782,7 +8821,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_005" position="-550 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102710">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8793,7 +8832,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_006" position="-450 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102711">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8816,7 +8855,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_011" position="-950 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102912">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8827,7 +8866,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_012" position="-850 2350 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102913">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8850,7 +8889,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_013" position="-950 1550 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102918">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8861,7 +8900,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_014" position="-850 1550 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102919">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8884,7 +8923,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_015" position="-950 700 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102924">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8895,7 +8934,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_016" position="-850 700 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102925">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8918,7 +8957,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_018" position="-850 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102931">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8941,7 +8980,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_019" position="-550 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102954">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8952,7 +8991,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_020" position="-450 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102955">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8975,7 +9014,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_021" position="250 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102960">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -8986,7 +9025,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_022" position="350 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102961">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9009,7 +9048,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_023" position="1050 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102966">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9020,13 +9059,19 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_024" position="1150 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102967">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
 				</projection_lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_047" position="1074 701 253" rotation="0.707107 -3.16493e-007 -0.707107 1.55688e-008" unit_id="102968"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_048" position="1126 701 253" rotation="2.98022e-008 -0.707107 4.4351e-007 -0.707107" unit_id="102969"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/world/props/office/light/spotlight_celing_small" name_id="spotlight_celing_small_045" position="1137.84 700 309.214" rotation="0.942641 1.45912e-008 0.333807 4.12042e-008" unit_id="102970"/>
@@ -9037,7 +9082,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_025" position="1050 700 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102972">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9048,13 +9093,19 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_026" position="1150 700 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103006">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
 				</projection_lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_049" position="274 701 253" rotation="0.707107 -3.16493e-007 -0.707107 1.55688e-008" unit_id="103007"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_050" position="326 701 253" rotation="2.98022e-008 -0.707107 4.4351e-007 -0.707107" unit_id="103008"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/world/props/office/light/spotlight_celing_small" name_id="spotlight_celing_small_047" position="337.837 700 309.214" rotation="0.942641 1.45912e-008 0.333807 4.12042e-008" unit_id="103009"/>
@@ -9065,7 +9116,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_027" position="250 700 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103011">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9076,7 +9127,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_028" position="350 700 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103012">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="250" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9087,7 +9138,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_029" position="-950 -100 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102930">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9098,7 +9149,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_058" position="-1314 1939 225" projection_light="lo_omni" rotation="0 0 0.707107 -0.707107" unit_id="103013">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9108,7 +9159,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_060" position="-1314 289 225" projection_light="lo_omni" rotation="0 0 0.707107 -0.707107" unit_id="102709">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9118,7 +9169,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_030" position="-1314 -511 225" projection_light="lo_omni" rotation="0 0 0.707107 -0.707107" unit_id="102169">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="600" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="600" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9194,7 +9245,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_073" position="-800 1152 219" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="100131">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="450" multiplier="@ID8c34304230e70372@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.835294 0.92549 1" enabled="true" falloff_exponent="4" far_range="450" multiplier="flashlight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9208,9 +9259,15 @@
 			<unit_data continent="world" name="units/world/props/office/light/spotlight_celing_small" name_id="spotlight_celing_small_050" position="-538.163 -900 309.214" rotation="6.70552e-008 0.942641 3.72529e-008 -0.333807" unit_id="100159"/>
 		</table>
 		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_051" position="-874 -901 253" rotation="2.98022e-008 -0.707107 4.4351e-007 -0.707107" unit_id="100162"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_level_2" name_id="com_prop_parking_garage_sign_level_2_052" position="-526 -899 253" rotation="0.707107 -3.16493e-007 -0.707107 1.55688e-008" unit_id="100409"/>
+		</table>
+		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_030" position="-850 -900 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="100410">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9221,7 +9278,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_031" position="-550 -900 350" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="100411">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="295" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9316,7 +9373,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_087" position="-99.9995 702 -231" projection_light="lo_omni" rotation="0 0 0.707107 -0.707107" unit_id="103373">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="400" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="400" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9338,7 +9395,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_032" position="1150 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102853">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9346,7 +9403,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_033" position="1050 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103370">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9429,7 +9486,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_034" position="350 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103433">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9437,7 +9494,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_035" position="250 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103434">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9445,7 +9502,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_036" position="-450 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103435">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9453,7 +9510,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_037" position="-550 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103436">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9461,7 +9518,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_038" position="-450 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103440">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9469,7 +9526,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_039" position="-550 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103441">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9477,7 +9534,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_040" position="350 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103442">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9485,7 +9542,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_041" position="250 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103443">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9493,7 +9550,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_042" position="1050 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103444">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9501,7 +9558,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_043" position="1150 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103445">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9509,7 +9566,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_044" position="1850 1550 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102630">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="4" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9517,7 +9574,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_045" position="1850 700 -50" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="102634">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="350" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_06_downlight_df"/>
 			</unit_data>
@@ -9531,7 +9588,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_094" position="2300 1102 -181" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102639">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9595,7 +9652,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_095" position="3150 1102 -181" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102862">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9605,7 +9662,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_098" position="3900 1102 -181" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102863">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9615,7 +9672,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_099" position="3900 1952 -181" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102864">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9625,7 +9682,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_100" position="3900 2752 -181" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="102865">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9641,7 +9698,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_101" position="2350 1927 -81" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="103184">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="450" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="450" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9750,7 +9807,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_097" position="2655 750 448" projection_light="lo_omni" rotation="0 0 1 -5.96046e-008" unit_id="102647">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="1000" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="1000" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9772,7 +9829,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_108" position="2700 -500 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102648">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9782,7 +9839,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_109" position="1900 1925 619" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102646">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9792,7 +9849,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_038" position="-600 3538 269" projection_light="lo_omni" rotation="0 0 1 -4.47035e-008" unit_id="103389">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9802,7 +9859,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_039" position="-650 3563 -131" projection_light="lo_omni" rotation="0 0 1 -4.47035e-008" unit_id="103390">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9812,7 +9869,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_040" position="-650 2588 -131" projection_light="lo_omni" rotation="0 0 1 -4.47035e-008" unit_id="102790">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9822,7 +9879,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_017" position="100 -925 694" projection_light="ls_spot" rotation="0.961262 0 0 -0.275637" unit_id="103189">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.980392 0.996078 0.780392" enabled="true" falloff_exponent="5" far_range="600" multiplier="@ID18ceffa252d5a43d@" name="ls_spot" near_range="80" spot_angle_end="67" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.980392 0.996078 0.780392" enabled="true" falloff_exponent="5" far_range="600" multiplier="match" name="ls_spot" near_range="80" spot_angle_end="67" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9833,7 +9890,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_110" position="2675 1925 619" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="103411">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -9939,7 +9996,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_046" position="-850 3150 349.999" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103447">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -9950,7 +10007,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_047" position="-550 3150 349.999" projection_light="ls_spot" rotation="0 1 0 4.47035e-008" unit_id="103448">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="@IDc1749c1433ffb099@" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
+					<table clipping_values="10000 -10000 0" color="0.87451 0.992157 1" enabled="true" falloff_exponent="1" far_range="325" multiplier="streetlight" name="ls_spot" near_range="5" spot_angle_end="45" spot_angle_start="43"/>
 				</lights>
 				<projection_lights>
 					<ls_spot x="64" y="64"/>
@@ -10012,7 +10069,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_111" position="1500 -500 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100760">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10022,7 +10079,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_112" position="1500 300 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100854">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10032,7 +10089,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_113" position="700 300 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100884">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10042,7 +10099,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_114" position="700 -500 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100896">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10052,7 +10109,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_115" position="-100 300 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="103348">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10062,7 +10119,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_116" position="-100 -500 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="103349">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10072,7 +10129,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_117" position="1500 2725 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="101319">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10082,7 +10139,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_118" position="1500 1925 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="101320">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10092,7 +10149,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_119" position="700 1925 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="101321">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10102,7 +10159,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_120" position="700 2725 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="101495">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10112,7 +10169,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_121" position="-100 1925 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="101497">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10122,7 +10179,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_122" position="-100 2725 244" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="101498">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10132,7 +10189,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_123" position="-100 1925 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100412">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10142,7 +10199,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_124" position="700 1925 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100416">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10152,7 +10209,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_125" position="1500 1925 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102638">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10162,7 +10219,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_126" position="-100 300 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102640">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10172,7 +10229,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_127" position="700 300 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102645">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10182,7 +10239,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_128" position="1500 300 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102649">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10192,7 +10249,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_129" position="1500 1125 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102650">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10202,7 +10259,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_130" position="700 1125 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102651">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10212,7 +10269,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_131" position="-100 1125 -106" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102757">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10222,7 +10279,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_059" position="-1314 1123 225" projection_light="lo_omni" rotation="0 0 0.707107 -0.707107" unit_id="101613">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10263,7 +10320,7 @@
 			<unit_data continent="world" name="units/payday2/architecture/ind/ind_ext_dock_bld/ind_ext_dock_bld_electrical_box_part" name_id="ind_ext_dock_bld_electrical_box_part_002" position="-175 -1700 69" rotation="0 0 0.707107 -0.707107" unit_id="103352"/>
 		</table>
 		<table>
-			<unit_data continent="world" name="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" name_id="gen_prop_door_metal_001" position="377 4007 450" rotation="0 0 0.999848 0.0174516" unit_id="103353"/>
+			<unit_data continent="world" name="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" name_id="gen_prop_door_metal_001" position="394 3950 450" rotation="0 0 0.707106 -0.707107" unit_id="103353"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/lcm_b/lcm_b_ext_vtile1_4x4m_b" name_id="lcm_b_ext_vtile1_4x4m_b_003" position="-500 -900 468" rotation="0 0 1 -4.47035e-008" unit_id="102316"/>
@@ -10481,7 +10538,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_132" position="700 -1000 194" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="103338">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.972549 0.627451 0.572549" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.972549 0.627451 0.572549" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10499,6 +10556,9 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_two_way_traffic" name_id="com_prop_parking_garage_sign_two_way_traffic_012" position="-1425 2350 350" rotation="0 0 0 -1" unit_id="103511"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_stairs" name_id="com_prop_parking_garage_sign_stairs_002" position="-900 1125 350" rotation="0 0 0.707107 -0.707107" unit_id="103512"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/architecture/com_ext_parking_garage/com_ext_parking_garage_concrete_slab_8m" name_id="com_ext_parking_garage_concrete_slab_8m_270" position="-911 700 54" rotation="-1.25607e-014 -7.53641e-015 -0.707107 -0.707107" unit_id="103513"/>
@@ -10573,9 +10633,12 @@
 			<unit_data continent="world" mesh_variation="iluminated" name="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage" name_id="stn_prop_lamp_garage_042" position="0 -1225 769" rotation="0 0 0 -1" unit_id="103544"/>
 		</table>
 		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_fire_exit" name_id="com_prop_parking_garage_sign_fire_exit_008" position="-225 -1350 769" rotation="0 0 1 -1.19209e-007" unit_id="103546"/>
+		</table>
+		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_048" position="-225 -1325 728.038" projection_light="lo_omni" rotation="0 0 -0.707107 -0.707107" unit_id="103547">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.580392 0.980392 0.313726" enabled="true" falloff_exponent="3" far_range="200" multiplier="@ID3385027996510d31@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.580392 0.980392 0.313726" enabled="true" falloff_exponent="3" far_range="200" multiplier="desklight" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10585,7 +10648,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_142" position="2400 -500 694" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100756">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.988235 0.94902 0.737255" enabled="true" falloff_exponent="4" far_range="1000" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.988235 0.94902 0.737255" enabled="true" falloff_exponent="4" far_range="1000" multiplier="match" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10621,6 +10684,9 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_garage_signs/com_prop_parking_garage_sign_info_a" name_id="com_prop_parking_garage_sign_info_a_006" position="74.9998 -900 149.914" rotation="0.707107 -3.8743e-007 3.57628e-007 -0.707107" unit_id="101028"/>
+		</table>
+		<table>
+			<unit_data continent="world" name="units/payday2/props/com_prop_garage_sign_windmaster/com_prop_garage_sign_windmaster" name_id="com_prop_garage_sign_windmaster_003" position="-825 -900 68.9999" rotation="1.04308e-007 2.98023e-008 -3.57628e-007 -1" unit_id="101067"/>
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_garage_ticketpass/com_prop_garage_ticketpass" name_id="com_prop_garage_ticketpass_003" position="-50.0001 3150 69.015" rotation="2.98023e-008 2.98023e-008 1 -4.17233e-007" unit_id="101068"/>
@@ -10784,7 +10850,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_133" position="-900 1125 -181" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="100731">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10812,7 +10878,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_041" position="-650 1913 -131" projection_light="lo_omni" rotation="0 0 1 -4.47035e-008" unit_id="102004">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="3" far_range="500" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10825,7 +10891,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_143" position="2100 2350 994" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102023">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="750" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="750" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10835,7 +10901,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_144" position="2300 1075 1044" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102024">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10845,7 +10911,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_145" position="2300 275 1044" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102357">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10855,7 +10921,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_146" position="2300 -525 1044" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102560">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10865,7 +10931,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_147" position="3100 -525 1044" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102581">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10875,7 +10941,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_148" position="3100 275 1044" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="102807">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -10885,7 +10951,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_149" position="3100 1075 1044" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="103476">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -11267,7 +11333,7 @@
 		<table>
 			<unit_data continent="world" name="units/lights/light_omni_shadow_projection_01/light_omni_shadow_projection_01" name_id="light_omni_shadow_projection_01_150" position="2100 1101 618" projection_light="lo_omni" rotation="0 0 1 -5.96046e-008" unit_id="102341">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="@ID748ce7d9371994d6@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="0.909804 0.968628 0.576471" enabled="true" falloff_exponent="4" far_range="550" multiplier="candle" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 				<projection_lights>
 					<lo_omni x="64" y="64"/>
@@ -11457,14 +11523,14 @@
 		<table>
 			<unit_data continent="world" name="core/units/light_omni/light_omni" name_id="light_omni_001" position="6830 310 600" rotation="0 0 0 -1" unit_id="100417">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="600" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="600" multiplier="identity" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 			</unit_data>
 		</table>
 		<table>
 			<unit_data continent="world" name="core/units/light_omni/light_omni" name_id="light_omni_002" position="6819 -1268 600" rotation="0 0 0 -1" unit_id="100419">
 				<lights>
-					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="600" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="600" multiplier="identity" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
 				</lights>
 			</unit_data>
 		</table>
@@ -11524,54 +11590,6 @@
 		</table>
 		<table>
 			<unit_data continent="world" name="units/payday2/props/com_prop_parking_sign_big/com_prop_parking_sign_big_4" name_id="com_prop_parking_sign_big_4_007" position="725 -74.9999 -296.64" rotation="1.04308e-007 2.98023e-008 -3.57628e-007 -1" unit_id="102167"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_1" position="1494.26 1545.33 69" rotation="-0 0 -0 -1" unit_id="646403"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_2" position="-498.61 1546.79 69" rotation="-0 0 -0 -1" unit_id="449825"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_3" position="299.39 1546.79 69" rotation="-0 0 -0 -1" unit_id="521525"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_4" position="1094.39 1544.79 69" rotation="-0 0 -0 -1" unit_id="811694"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_5" position="700.39 1546.79 69" rotation="-0 0 -0 -1" unit_id="373891"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_8" position="-98.61 1546.79 69" rotation="-0 0 -0 -1" unit_id="44772411"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_1" position="1494.26 690.33 69" rotation="-0 0 -0 -1" unit_id="646403"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_2" position="-498.61 690.33 69" rotation="-0 0 -0 -1" unit_id="449825"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_3" position="299.39 690.33 69" rotation="-0 0 -0 -1" unit_id="521525"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_4" position="1094.39 690.33 69" rotation="-0 0 -0 -1" unit_id="811694"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_5" position="700.39 690.33 69" rotation="-0 0 -0 -1" unit_id="373891"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="state_disabled" name="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence" name_id="air_prop_runway_fence_7" position="-98.61 690.33 69" rotation="-0 0 -0 -1" unit_id="447724"/>
-		</table>
-		<table>
-			<unit_data name="units/world/architecture/gym/gym_wall_fence/gym_wall_fence_40" name_id="gym_wall_fence_40_9" position="-500.903 -913.566 339.921" rotation="0 1 0 -4.37114e-008" unit_id="68501"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="activate_door" name="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" name_id="gen_interactable_door_reinforced_9" position="2045 677.258 469" rotation="0 0 0.707107 -0.707107" unit_id="306197"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="activate_door" name="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" name_id="gen_interactable_door_reinforced_10" position="2721.46 1770 -331" rotation="-0 0 -0 -1" unit_id="458951"/>
-		</table>
-		<table>
-			<unit_data mesh_variation="activate_door" name="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" name_id="gen_interactable_door_reinforced_11" position="1919.9 2169.95 69" rotation="-0 0 -0 -1" unit_id="600"/>
 		</table>
 	</statics>
 	<values>

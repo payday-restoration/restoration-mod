@@ -6,6 +6,11 @@ function LevelsTweakData:init(...)
 		LevelsTweakData:oinit(...)
 
 		self.ukrainian_job.env_params = { color_grading = "color_nice" }
+		--escape_street_tw
+		--escape_park_tw
+		--escape_overpass_tw
+		--escape_garage_tw
+		--escape_cafe_tw
 		
 		-------GREEN HARVEST
 		self.greenharvest_stage1 = {}
@@ -22,7 +27,6 @@ function LevelsTweakData:init(...)
 		self.greenharvest_stage1.music = "heist"
 		self.greenharvest_stage1.package = "packages/narr_firestarter3"
 		self.greenharvest_stage1.cube = "cube_apply_heist_bank"
-		self.greenharvest_stage1.ai_group_type = america
 		self.greenharvest_stage1.env_params = { color_grading = "color_nice" }
 		self.greenharvest_stage1.mission_data = {
 		{mission = "standalone"}
@@ -51,8 +55,4 @@ function LevelsTweakData:init(...)
 		self.escape_overpass_ghrv.package = "packages/escape_overpass"
 		self.escape_overpass_ghrv.cube = "cube_apply_heist_bank"
 		self.escape_overpass_ghrv.env_params = { color_grading = "color_nice" }
-		
-		
-		
-		
 end

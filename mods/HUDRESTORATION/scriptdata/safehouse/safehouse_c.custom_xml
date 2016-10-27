@@ -1,0 +1,8 @@
+<table>
+	<editor_only base_id="400000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="editor_only" visible="false"/>
+	<pc_only base_id="600000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="pc_only" visible="true"/>
+	<prop base_id="500000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="prop" visible="true"/>
+	<safehouse_worldmesh base_id="200000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="safehouse_worldmesh" visible="false"/>
+	<shadow_casters base_id="300000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="shadow_casters" visible="true"/>
+	<world base_id="100000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="world" visible="true"/>
+</table>

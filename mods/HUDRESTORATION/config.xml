@@ -1,0 +1,44 @@
+<mod name="Restoration" global_key="restoration">
+    <Classes directory="lua">
+    </Classes>
+    <Hooks directory="lua">
+	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
+		<hook file="managers/HUDManagerPD2.lua" source_file="lib/managers/HUDManagerPD2"/>
+		<hook file="managers/HUDManager.lua" source_file="lib/managers/HUDManager"/>
+		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
+        <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
+        <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>
+        <hook file="managers/hud/HUDTemp.lua" source_file="lib/managers/hud/HUDTemp"/>
+        <hook file="managers/hud/HUDBlackScreen.lua" source_file="lib/managers/hud/HUDBlackScreen"/>
+        <hook file="managers/hud/HUDTeammate.lua" source_file="lib/managers/hud/HUDTeammate"/>
+		<hook file="managers/hud/HUDInteraction.lua" source_file="lib/managers/hud/HUDInteraction"/>
+		<hook file="managers/hud/HUDChat.lua" source_file="lib/managers/hud/HUDChat"/>
+		<hook file="managers/hud/HUDHeistTimer.lua" source_file="lib/managers/hud/HUDHeistTimer"/>
+		<hook file="managers/hud/HUDHint.lua" source_file="lib/managers/hud/HUDHint"/>
+		<hook file="managers/hud/HUDPlayerDowned.lua" source_file="lib/managers/hud/HUDPlayerDowned"/>
+		<hook file="managers/hud/HUDPresenter.lua" source_file="lib/managers/hud/HUDPresenter"/>
+		<hook file="managers/hud/HUDSuspicion.lua" source_file="lib/managers/hud/HUDSuspicion"/>
+		<!--<hook file="managers/hud/HUDStageEndScreen.lua" source_file="lib/managers/hud/HUDStageEndScreen"/>-->
+		<hook file="managers/hud/HUDMissionBriefing.lua" source_file="lib/managers/hud/HUDMissionBriefing"/>
+        <!--<hook file="" source_file=""/>-->
+		<hook file="managers/menu/CircleGUIObject.lua" source_file="lib/managers/menu/CircleGUIObject"/>
+		<hook file="managers/menu/StageEndScreenGUI.lua" source_file="lib/managers/menu/StageEndScreenGUI"/>
+		<hook file="managers/menu/MissionBriefingGUI.lua" source_file="lib/managers/menu/MissionBriefingGUI"/>
+		<hook file="managers/menu/MenuBackdropGUI.lua" source_file="lib/managers/menu/MenuBackdropGUI"/>
+		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
+    </Hooks>
+    <Localization directory="loc" default="english.txt">
+    </Localization>
+    <Options name="Options" auto_build_menu="true" auto_load="true" save_file="restoration.txt">
+	    <options>
+			<option_group name="HUD">
+				<option type="bool" default_value="true" name="MainHud"/>
+				<option type="bool" default_value="true" name="AssaultPanel"/>
+				<option type="bool" default_value="true" name="ObjectivesPanel"/>
+				<option type="bool" default_value="true" name="Presenter"/>
+				<option type="bool" default_value="true" name="DifficultyMarkers"/>
+				<option type="bool" default_value="true" name="StaminaIndicator"/>
+			</option_group>
+        </options>
+    </Options>
+</mod>

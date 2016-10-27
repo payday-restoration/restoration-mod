@@ -1,8 +1,12 @@
 
 Hooks:Add("LocalizationManagerPostInit", "Restoration_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
+		["heist_turf_war"] = "TURF WAR",
+		["heist_turf_war1"] = "FOUR STORES",
+		["heist_turf_war2"] = "SHIELD MALL",
+		["heist_turf_war3"] = "PRECIOUS THINGS",
+		["heist_turf_war4"] = "DMITRI'S NIGHTCLUB",
 		["heist_contact_shatter"] = "SHATTER",
-		["heist_contact_remake"] = "MARTINI",
 		["menu_contacts_shatter"] = "///VERITAS_ROOT_MST:.",
 		["hud_assault_assault"] = "POLICE ASSAULT",
 		["menu_crewpage"] = "CREW PAGE",
@@ -24,25 +28,18 @@ table.insert (tweak_data.gui.crime_net.codex,
 				name_id = "heist_contact_shatter",
 				{
 					desc_id = "heist_contact_shatter_description",
-					videos = {"shatter1"},
+					videos = { }
 				}
 			}
 
 		} )
 
-tweak_data.narrative.contacts.shatter = {}
-tweak_data.narrative.contacts.shatter.name_id = "heist_contact_shatter"
-tweak_data.narrative.contacts.shatter.description_id = "heist_contact_shatter_description"
-tweak_data.narrative.contacts.shatter.image	= "guis/textures/pd2/crimenet_portrait_interupt"
+tweak_data.narrative.contacts.shatter				= {}
+tweak_data.narrative.contacts.shatter.name_id					= "heist_contact_shatter"
+tweak_data.narrative.contacts.shatter.description_id	= "heist_contact_shatter_description"
+tweak_data.narrative.contacts.shatter.image		= "guis/textures/pd2/crimenet_portrait_interupt"
 tweak_data.narrative.contacts.shatter.package = "packages/contact_interupt"
 tweak_data.narrative.contacts.shatter.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
-
-tweak_data.narrative.contacts.remake = {}
-tweak_data.narrative.contacts.remake.name_id = "heist_contact_remake"
-tweak_data.narrative.contacts.remake.description_id = "heist_contact_remake_description"
-tweak_data.narrative.contacts.remake.image	= "guis/textures/pd2/crimenet_portrait_interupt"
-tweak_data.narrative.contacts.remake.package = "packages/contact_interupt"
-tweak_data.narrative.contacts.remake.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
 
 tweak_data.menu.pd2_massive_font = "fonts/font_eroded"
 
@@ -67,7 +64,7 @@ tweak_data.gui.crime_net.regions = {
 
 	}
 
---[[	
+	
 tweak_data.narrative.jobs.greenharvest = {}
 tweak_data.narrative.jobs.greenharvest.name_id = "heist_greenharvest"
 tweak_data.narrative.jobs.greenharvest.professional = true
@@ -92,7 +89,7 @@ tweak_data.narrative.jobs.greenharvest.crimenet_callouts = {
 	"Play_plt_watchdogs_stage1_05"
 }
 tweak_data.narrative.jobs.greenharvest.crimenet_videos = {
-		"cn_ghrv"
+		"cn_branchbank2"
 		}
 tweak_data.narrative.jobs.greenharvest.payout = {
 	22000,
@@ -137,7 +134,6 @@ tweak_data.narrative.jobs.greenharvest.experience_mul = {
 table.insert(tweak_data.narrative._jobs_index, "greenharvest")
 table.insert(tweak_data.levels._level_index, "greenharvest_stage1")
 
-
 ------------------ESCAPES vvvvvvvv
 
 
@@ -145,4 +141,4 @@ table.insert(tweak_data.levels._level_index, "escape_overpass_ghrv")
 table.insert(tweak_data.levels.escape_levels, "escape_overpass_ghrv")
 table.insert(tweak_data.levels._level_index, "escape_garage_ghrv")
 table.insert(tweak_data.levels.escape_levels, "escape_garage_ghrv")
-------------------ESCAPES ^^^^^^^^]]--
+------------------ESCAPES ^^^^^^^^

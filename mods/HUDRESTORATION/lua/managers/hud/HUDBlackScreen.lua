@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/BlackScreen") then
 function HUDBlackScreen:init(hud)
 	self._hud_panel = hud.panel
 	if self._hud_panel:child("blackscreen_panel") then
@@ -153,4 +154,5 @@ function HUDBlackScreen:set_mid_text(text)
 	--mid_text:set_alpha(0)
 	local current_map = managers.job:current_level_id()
 	mid_text:set_text(utf8.to_upper(managers.localization:text("restoration_level_data_".. current_map)))
+	end
 end

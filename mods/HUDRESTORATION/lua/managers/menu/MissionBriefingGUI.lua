@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/Loadouts") then
 function MissionBriefingTabItem:init(panel, text, i)
 	self._main_panel = panel
 	self._panel = self._main_panel:panel({})
@@ -523,5 +524,6 @@ function MissionBriefingGui:close()
 		for _, clbk in pairs(level_tweak.on_enter_clbks) do
 			clbk()
 		end
+	end
 	end
 end

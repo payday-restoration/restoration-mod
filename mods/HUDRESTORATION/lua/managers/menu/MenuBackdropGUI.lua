@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/Loadouts") then
 function MenuBackdropGUI:animate_bg_text(text)
 	local function animate_text(o)
 		local left = true
@@ -17,4 +18,5 @@ function MenuBackdropGUI:animate_bg_text(text)
 		end
 	end
 	text:animate( animate_text )
+	end
 end

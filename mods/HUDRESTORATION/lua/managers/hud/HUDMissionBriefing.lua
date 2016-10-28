@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/Loadouts") then
 function HUDMissionBriefing:init(hud, workspace)
 	self._backdrop = MenuBackdropGUI:new(workspace)
 	self._backdrop:create_black_borders()
@@ -579,4 +580,5 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		pattern = "guis/textures/pd2/mission_briefing/interupt/bd_pattern"
 	end
 	return image, pattern
+	end
 end

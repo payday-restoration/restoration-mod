@@ -1,4 +1,4 @@
-﻿{
+{
 	"menu_es_boost" : "Boost",	
 	"menu_es_crew" : "Crew",
 	"menu_es_personal" : "Personal",
@@ -11,6 +11,10 @@
 	"RestorationOptionsButtonDescID" : "Restoration Options",
 	"RestorationHUDOptionsButtonTitleID" : "Restoration Options",
 	"RestorationHUDOptionsButtonDescID" : "Restoration Options",
+	"RestorationOTHEROptionsButtonTitleID" : "Additional Restoration Options",
+	"RestorationOTHEROptionsButtonDescID" : "Additional Restoration Options",
+	"RestorationTimeOfDayTitleID" : "Time Of Day Features",
+	"RestorationTimeOfDayDescID" : "Enable or disable time of day features.",
 	"RestorationMainHudTitleID" : "Main HUD",
 	"RestorationMainHudDescID" : "Enable or disable main HUD.",
 	"RestorationAssaultPanelTitleID" : "Assault Panel",
@@ -29,7 +33,9 @@
 	"RestorationSCDescID" : "Enable or disable the cop and skill changes.",
 	"RestorationSCWeaponTitleID" : "Weapon Overhaul",
 	"RestorationSCWeaponDescID" : "Enable or disable the weapon changes.",
-	"hud_instruct_mask_on" : "Hold $BTN_USE_ITEM to put on your mask",
+	"hud_instruct_mask_on_alpha" : "Hold $BTN_USE_ITEM to put on your mask",
+	"hud_assault_alpha" : "POLICE ASSAULT",
+	"hud_loot_secured_title" : "LOOT SECURED!",
 	"heist_contact_shatter_description" : ".:ERR! == ILLEGAL ENTRY POINT . . . TABLE DATA DUMP --> \n \n!!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  !!TABLE MISSING!!  ",
 	"restoration_level_data_welcome_to_the_jungle_1" : "6:24 PM, Shaw District - 'Overkill MC' Bikers HQ",
 	"restoration_level_data_welcome_to_the_jungle_1_night" : "1:32 AM, Shaw District - 'Overkill MC' Bikers HQ",

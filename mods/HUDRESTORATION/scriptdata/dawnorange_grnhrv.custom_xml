@@ -14,7 +14,7 @@
 			<deferred>
 				<deferred_lighting>
 					<apply_ambient>
-						<param key="fog_min_range" value="-500"/>
+						<param key="fog_min_range" value="1000"/>
 						<param key="ambient_color_scale" value="0.15502548217773"/>
 						<param key="fog_start_color" value="0.8 0.431373 0.247059"/>
 						<param key="fog_max_range" value="40698"/>

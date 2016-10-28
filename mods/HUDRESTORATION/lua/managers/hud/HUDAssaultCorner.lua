@@ -412,28 +412,28 @@ function HUDAssaultCorner:_get_assault_strings()
 		if managers.job:current_difficulty_stars() > 0 then
 			local ids_risk = Idstring("risk")
 			return {
-				"hud_assault_assault",
+				"hud_assault_alpha",
 				ids_risk,
 				"hud_assault_cover",
 				"hud_assault_end_line",
-				"hud_assault_assault",
+				"hud_assault_alpha",
 				ids_risk,
 				"hud_assault_cover",
 				"hud_assault_end_line",
-				"hud_assault_assault",
+				"hud_assault_alpha",
 				ids_risk,
 				"hud_assault_cover",
 				"hud_assault_end_line"
 			}
 		else
 			return {
-				"hud_assault_assault",
+				"hud_assault_alpha",
 				"hud_assault_cover",
 				"hud_assault_end_line",
-				"hud_assault_assault",
+				"hud_assault_alpha",
 				"hud_assault_cover",
 				"hud_assault_end_line",
-				"hud_assault_assault",
+				"hud_assault_alpha",
 				"hud_assault_cover",
 				"hud_assault_end_line"
 			}

@@ -32,8 +32,8 @@
 		<hook file="sc/network/matchmaking/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
 		<hook file="sc/tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
-		<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/attentiontweakdata"/>
-		<hook file="sc/tweak_data/attentiontweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
+		<hook file="sc/tweak_data/attentiontweakdata.lua" source_file="lib/tweak_data/attentiontweakdata"/>
+		<hook file="sc/tweak_data/skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 		<hook file="sc/units/vehicles/vehicledrivingext.lua" source_file="lib/units/vehicles/vehicledrivingext"/>
 		<hook file="sc/tweak_data/economytweakdata.lua" source_file="lib/tweak_data/economytweakdata"/>
 		<hook file="sc/tweak_data/hudiconstweakdata.lua" source_file="lib/tweak_data/hudiconstweakdata"/>

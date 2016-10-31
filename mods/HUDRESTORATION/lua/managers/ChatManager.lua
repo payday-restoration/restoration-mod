@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/Loadouts") then
 ChatGui.PRESETS.default = {
 	left = 0,
 	bottom = 120,
@@ -8,3 +9,5 @@ ChatGui.PRESETS.lobby = {
 	bottom = 50,
 	layer = 20
 }
+end
+

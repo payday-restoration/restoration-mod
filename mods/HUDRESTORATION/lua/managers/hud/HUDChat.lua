@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/AssaultPanel") then
 function HUDChat:init(ws, hud)
 	self._ws = ws
 	self._hud_panel = hud.panel
@@ -111,4 +112,5 @@ function HUDChat:_create_input_panel()
 		valign = "grow",
 		h = self._input_panel:h()
 	})
+end
 end

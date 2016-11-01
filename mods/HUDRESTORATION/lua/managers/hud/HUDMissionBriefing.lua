@@ -1,3 +1,10 @@
+local maps = {
+    greenharvest_stage1 = true,
+    escape_overpass_ghrv = true,
+    escape_garage_ghrv = true,
+	highrise = true
+}
+
 if restoration.Options:GetValue("HUD/Loadouts") then
 function HUDMissionBriefing:init(hud, workspace)
 	self._backdrop = MenuBackdropGUI:new(workspace)
@@ -581,4 +588,48 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 	end
 	return image, pattern
 	end
+end
+ 
+--[[if not Global.level_data.level_id or not maps[Global.level_data.level_id] then
+    return
+end]]--
+ 
+local init_actual = HUDMissionBriefing.init
+if not restoration.Options:GetValue("HUD/Loadouts") then
+function HUDMissionBriefing:init(hud, workspace, ...)
+ 
+    self._current_contact = managers.job:current_contact_id()
+ 
+    init_actual(self, hud, workspace, ...)
+ 
+    if self._current_contact ~= "shatter" then
+        return
+    end
+ 
+    local bg2 = self._background_layer_two
+    -- Unlikely to ever happen, but just in case
+    if not alive(bg2) then
+        return
+    end
+ 
+    -- Wipe everything on self._background_layer_two. Removing them while iterating is probably not a wise idea (may cause
+    -- instability), so copy the references over to a new, temporary table first
+    local tmp = {}
+    for _, panel in pairs(bg2:children() or {}) do
+        table.insert(tmp, panel)
+    end
+    for index, panel in ipairs(tmp) do
+        bg2:remove(panel)
+    end
+    tmp = nil
+ 
+    function making_video()
+        self._contact_image = bg2:bitmap( { name="contact_image", texture="guis/textures/restoration/mission_briefing/shatter", w=720, h=720 } )
+        self._contact_image = bg2:video( { name="contact_image", video = "movies/contact_shatter1", width = 1280, height = 720, blend_mode="add", loop=true, alpha=1, color = tweak_data.screen_color_red } ) -- , color = tweak_data.screen_color_yellow } )
+    end
+    bg2:stop()
+    bg2:animate(making_video)
+ 
+    self._backdrop:set_pattern( "guis/textures/restoration/mission_briefing/shatter_pattern", 0.10, "add" )
+end
 end

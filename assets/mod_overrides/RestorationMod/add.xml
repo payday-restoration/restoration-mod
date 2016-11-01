@@ -34,6 +34,9 @@
 <texture path="guis/textures/restoration/mission_briefing/shatter"/>
 <texture path="guis/textures/restoration/mission_briefing/shatter_pattern"/>
 <texture path="guis/textures/restoration/mission_briefing/calendar_payday"/>
+<movie path="movies/codex/shatter1" force="true"/>
+<movie path="movies/contact_shatter1" force="true"/>
+<movie path="movies/cn_veritasgroup1" force="true"/>
 <!--Headless Dozer-->
 <object path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
 <sequence_manager path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>

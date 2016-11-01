@@ -220,7 +220,7 @@ table.insert (tweak_data.gui.crime_net.codex,
 				name_id = "heist_contact_shatter",
 				{
 					desc_id = "heist_contact_shatter_description",
-					videos = { }
+					videos = {"shatter1"}
 				}
 			}
 

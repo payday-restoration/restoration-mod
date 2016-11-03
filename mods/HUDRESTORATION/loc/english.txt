@@ -37,6 +37,8 @@
 	"RestorationSCOptionsButtonDescID" : "SC's Mod Options",
 	"RestorationSCTitleID" : "Cop/Skill Overhaul",
 	"RestorationSCDescID" : "Enable or disable the cop and skill changes.",
+	"RestorationNotifyTitleID" : "Feature Notification",
+	"RestorationNotifyDescID" : "Enable or disable the notification for this feature.",
 	"RestorationSCWeaponTitleID" : "Weapon Overhaul",
 	"RestorationSCWeaponDescID" : "Enable or disable the weapon changes.",
 	"hud_instruct_mask_on_alpha" : "Hold $BTN_USE_ITEM to put on your mask",

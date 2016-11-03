@@ -28,6 +28,7 @@
 		<hook file="managers/menu/MenuBackdropGUI.lua" source_file="lib/managers/menu/MenuBackdropGUI"/>
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
+		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
 		<hook file="sc/network/matchmaking/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
@@ -122,6 +123,8 @@
 			<option_group name="SC">
 				<option type="bool" default_value="false" name="SC"/>
 				<option type="bool" default_value="false" name="SCWeapon"/>
+				
+				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">
 				<option type="bool" default_value="false" name="TimeOfDay"/>

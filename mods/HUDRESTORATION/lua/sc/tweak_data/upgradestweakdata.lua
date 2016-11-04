@@ -779,6 +779,11 @@ function UpgradesTweakData:_init_pd2_values()
 		0.8
 	}
 
+	--Sociopath nerfs
+	self.values.player.killshot_regen_armor_bonus = {2.5}
+	self.values.player.killshot_close_regen_armor_bonus = {2.5}
+	self.values.player.killshot_close_panic_chance = {0.5}
+
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
 		{

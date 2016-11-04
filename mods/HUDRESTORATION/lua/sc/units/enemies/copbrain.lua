@@ -40,7 +40,6 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.fbi_swat_vet = security_variant
 	CopBrain._logic_variants.boom = security_variant
 	CopBrain._logic_variants.rboom = security_variant
-	CopBrain._logic_variants.city_swat_vet = security_variant
 	CopBrain._logic_variants.fbi_vet = security_variant
 	CopBrain._logic_variants.spring = security_variant
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip

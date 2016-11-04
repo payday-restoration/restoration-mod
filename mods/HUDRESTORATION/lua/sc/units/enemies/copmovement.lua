@@ -42,7 +42,6 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.rboom = security_variant
-	CopMovement._action_variants.city_swat_vet = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.spring = security_variant
 end

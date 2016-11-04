@@ -17302,9 +17302,6 @@ function WeaponFactoryTweakData:_init_mg42()
 		a_obj = "a_b",
 		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_b_vg38",
 		dlc = "gage_pack_historical",
-		has_description = true,
-		desc_id = "bm_sc_silencers_large_desc",
-		custom_stats = {rof_mult = 0.65},
 		texture_bundle_folder = "gage_pack_historical",
 		is_a_unlockable = true,
 		stats = {
@@ -17340,6 +17337,7 @@ function WeaponFactoryTweakData:_init_mg42()
 		type = "lower_reciever",
 		name_id = "bm_wp_mg42_b_long",
 		a_obj = "a_body",
+		custom_stats = {reload_speed_mult = 1.2},
 		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever",
 		stats = {value = 1},
 		animations = {

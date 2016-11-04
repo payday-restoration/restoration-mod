@@ -123,6 +123,24 @@ if not tweak_data then return end
 	tweak_data.upgrades.values.player.health_multiplier = {1.25, 1.5}
 	tweak_data.upgrades.values.trip_mine.quantity = {3, 7}
 
+	--But why--
+	tweak_data.team_ai.stop_action.delay = 0.8
+	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
+
+	tweak_data.medic.cooldown = 20
+	tweak_data.radius = 700
+	tweak_data.medic.disabled_units = {
+		"biker",
+		"mobster",
+		"tank_hw",
+		"mobster_boss",
+		"biker_boss",
+		"hector_boss",
+		"hector_boss_no_armor",
+		"chavez_boss",
+		"gangster"
+	}
+
 	end
 
 	if restoration.Options:GetValue("SC/SCWeapon") then

@@ -266,6 +266,14 @@
 <unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2" load="true"/>
 <unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2_husk" load="true"/>
 
+<!--Zeal City-->
+<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1" load="true"/>
+<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk" load="true"/>
+
+<!--Zeal City shotgun-->
+<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2" load="true"/>
+<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>
+
 <!--Gensec Shield Acc-->
 <model path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 <material_config path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>

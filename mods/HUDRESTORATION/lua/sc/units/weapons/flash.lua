@@ -4,7 +4,6 @@
 -- v2.0 improved indicator positioning (should now move along with the flash grenade)
 -- v2.1 Added a new icon for the Flash grenade
 -- http://www.unknowncheats.me/forum/payday-2/135236-grenade-indicator-flash-grenades-only-smoke-grenades-excluded.html
-if restoration.Options:GetValue("SC/SC") then
 
 local QuickFlashGrenade_flashbang_grenade_marker_ID
 
@@ -45,7 +44,5 @@ function QuickFlashGrenade:_play_sound_and_effects()
             QuickFlashGrenade_flashbang_grenade_marker_ID = nil
         end
     end
-
-end
 
 end

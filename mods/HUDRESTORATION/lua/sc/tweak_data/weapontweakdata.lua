@@ -86,26 +86,24 @@ function WeaponTweakData:_set_overkill_145()
 end
 
 function WeaponTweakData:_set_easy_wish()
-	self.swat_van_turret_module.HEALTH_INIT = 32375
-	self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
+	self.swat_van_turret_module.HEALTH_INIT = 29600
+	self.swat_van_turret_module.SHIELD_HEALTH_INIT = 640
 	self.swat_van_turret_module.CLIP_SIZE = 800
-	self.swat_van_turret_module.BAG_DMG_MUL = 75
+	self.swat_van_turret_module.BAG_DMG_MUL = 90
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 3.125},
-		{2000, 3.125},
-		{3000, 3.125},
-		{4000, 1.25}
+		{1000, 2.875},
+		{1800, 2.625},
+		{3000, 1.05}
 	}
 	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 3.125},
-		{2000, 3.125},
-		{3000, 3.125},
-		{4000, 1.25}
+		{1000, 2.875},
+		{1800, 2.625},
+		{3000, 1.05}
 	}
 	self.ceiling_turret_module.CLIP_SIZE = 800
-	self.ceiling_turret_module.HEALTH_INIT = 16187.5
-	self.ceiling_turret_module.BAG_DMG_MUL = 75
-	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
+	self.ceiling_turret_module.HEALTH_INIT = 14800
+	self.ceiling_turret_module.BAG_DMG_MUL = 90
+	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 320
 end
 
 function WeaponTweakData:_set_overkill_290()
@@ -131,17 +129,18 @@ function WeaponTweakData:_set_overkill_290()
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
 
 	--DW Damage values below--
-	self.c45_npc.DAMAGE = 2.3
-	self.mp5_npc.DAMAGE = 2.3
-	self.mp9_npc.DAMAGE = 2.3
-	self.sr2_smg_npc.DAMAGE = 2.3
+	self.c45_npc.DAMAGE = 2.1
+	self.mp5_npc.DAMAGE = 2
+	self.mp9_npc.DAMAGE = 2
+	self.sr2_smg_npc.DAMAGE = 2
+	self.x_c45_npc.DAMAGE = 2.1
 end
 
 function WeaponTweakData:_set_sm_wish()
 	self.swat_van_turret_module.HEALTH_INIT = 37000
 	self.swat_van_turret_module.SHIELD_HEALTH_INIT = 800
 	self.swat_van_turret_module.CLIP_SIZE = 800
-	self.swat_van_turret_module.BAG_DMG_MUL = 100
+	self.swat_van_turret_module.BAG_DMG_MUL = 90
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 3.125},
 		{2000, 3.125},
@@ -156,14 +155,15 @@ function WeaponTweakData:_set_sm_wish()
 	}
 	self.ceiling_turret_module.CLIP_SIZE = 800
 	self.ceiling_turret_module.HEALTH_INIT = 18500
-	self.ceiling_turret_module.BAG_DMG_MUL = 100
+	self.ceiling_turret_module.BAG_DMG_MUL = 90
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 400
 
 	--OD Damage values below--
-	self.c45_npc.DAMAGE = 2.3
-	self.mp5_npc.DAMAGE = 2.3
-	self.mp9_npc.DAMAGE = 2.3
-	self.sr2_smg_npc.DAMAGE = 2.3
+	self.c45_npc.DAMAGE = 2.1
+	self.mp5_npc.DAMAGE = 2
+	self.mp9_npc.DAMAGE = 2
+	self.sr2_smg_npc.DAMAGE = 2
+	self.x_c45_npc.DAMAGE = 2.1
 end
 
 function WeaponTweakData:_init_data_npc_melee()
@@ -238,7 +238,7 @@ end
 function WeaponTweakData:_init_data_x_c45_npc()
 	self.x_c45_npc.sounds.prefix = "c45_npc"
 	self.x_c45_npc.use_data.selection_index = 1
-	self.x_c45_npc.DAMAGE = 2.3
+	self.x_c45_npc.DAMAGE = 1.8
 	self.x_c45_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 	self.x_c45_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 	self.x_c45_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -398,9 +398,17 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.mp5_tactical_npc.alert_size = 500
 	self.mp5_tactical_npc.suppression = 0.1
 	self.ump_npc = deep_clone(self.mp5_npc)
-	self.ump_npc.DAMAGE = 2.3
+	self.ump_npc.DAMAGE = 2.8
 	self.ump_npc.auto.fire_rate = 0.083
 	self.ump_npc.sounds.prefix = "akm_npc"
+	self.ump_npc.CLIP_AMMO_MAX = 25
+	self.asval_smg_npc = deep_clone(self.mp5_npc)
+	self.asval_smg_npc.DAMAGE = 7.5
+	self.asval_smg_npc.has_suppressor = "suppressed_a"
+	self.asval_smg_npc.auto.fire_rate = 0.07843137254
+	self.asval_smg_npc.CLIP_AMMO_MAX = 20
+	self.asval_smg_npc.suppression = 2.8
+	self.asval_smg_npc.usage = "m4"
 	self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 end
 
@@ -3020,8 +3028,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.spread.moving_standing = 4
 	self.mg42.spread.moving_crouching = 3
 	self.mg42.spread.moving_steelsight = 2
-	self.mg42.timers.reload_not_empty = 4
-	self.mg42.timers.reload_empty = 4
 	self.mg42.kick.standing = self.new_m4.kick.standing
 	self.mg42.kick.crouching = self.new_m4.kick.standing
 	self.mg42.kick.steelsight = self.new_m4.kick.standing
@@ -4406,6 +4412,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.schakal.fire_mode_data.fire_rate = 0.1
 	self.schakal.auto.fire_rate = 0.1
 	self.schakal.AMMO_MAX = 90
+	self.schakal.CLIP_AMMO_MAX = 25
 	self.schakal.AMMO_PICKUP = self:_pickup_chance(90, 1)
 	self.schakal.spread.standing = 3.5
 	self.schakal.spread.crouching = 2.5

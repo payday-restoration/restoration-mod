@@ -1,3 +1,4 @@
+if restoration.Options:GetValue("HUD/Loadouts") then
 function MenuNodeJukeboxGui:init(node, layer, parameters)
 	parameters.align = "left"
 	parameters._align_line_proportions = 0.5
@@ -6,4 +7,5 @@ function MenuNodeJukeboxGui:init(node, layer, parameters)
 	self:_set_topic_position()
 	node:parameters().block_back = true
 	node:parameters().allow_pause_menu = true
+end
 end

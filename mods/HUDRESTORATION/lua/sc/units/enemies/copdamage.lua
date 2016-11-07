@@ -722,10 +722,10 @@ end
 
 Hooks:PostHook(CopDamage, "_on_death", "SCRemoveJoker", function(self)
     
-    if self._unit:unit_data().is_convert and SC._converts then
-        for i, unit in pairs(SC._converts) do
+    if self._unit:unit_data().is_convert and restoration._converts then
+        for i, unit in pairs(restoration._converts) do
             if unit == self._unit then
-                table.remove(SC._converts, i)
+                table.remove(restoration._converts, i)
             end
         end
     end

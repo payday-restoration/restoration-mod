@@ -112,14 +112,14 @@
     <Options name="Options" auto_build_menu="true" auto_load="true" save_file="restoration.txt">
 	    <options>
 			<option_group name="HUD">
-				<option type="bool" default_value="true" name="MainHud"/>
-				<option type="bool" default_value="true" name="AssaultPanel"/>
-				<option type="bool" default_value="true" name="ObjectivesPanel"/>
-				<option type="bool" default_value="true" name="Presenter"/>
-				<option type="bool" default_value="true" name="DifficultyMarkers"/>
-				<option type="bool" default_value="true" name="StaminaIndicator"/>
-				<option type="bool" default_value="true" name="BlackScreen"/>
-				<option type="bool" default_value="true" name="Loadouts"/>
+				<option type="bool" default_value="false" name="MainHud"/>
+				<option type="bool" default_value="false" name="AssaultPanel"/>
+				<option type="bool" default_value="false" name="ObjectivesPanel"/>
+				<option type="bool" default_value="false" name="Presenter"/>
+				<option type="bool" default_value="false" name="DifficultyMarkers"/>
+				<option type="bool" default_value="false" name="StaminaIndicator"/>
+				<option type="bool" default_value="false" name="BlackScreen"/>
+				<option type="bool" default_value="false" name="Loadouts"/>
 			</option_group>
 			<option_group name="SC">
 				<option type="bool" default_value="false" name="SC"/>

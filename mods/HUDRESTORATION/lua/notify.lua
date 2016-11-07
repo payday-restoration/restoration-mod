@@ -9,7 +9,7 @@ function MenuNodeGui:_setup_item_rows(node, ...)
         Global._friendsonly_warning_shown = true
         QuickMenu:new(
             "NEW FEATURE ALERT!",
-            "Hello!\n \nRestoration Mod has been updated with a brand new feature -- SC's Mod is now a permanent part of our mod!\n \nIn order to prevent users from having their skillpoints reset on startup, SC's Mod starts disabled by default. Additionally, we have created this dialogue menu to tell all new and returning users of the feature.\n \nGo to Restoration Mod's options menu, and go to SC Mod Options, to turn on or off the complete game re-balance. You will also have to go to this menu to turn off this notification box.\n \nHappy heisting!\n \n- Martini, DoktorAkcel, SC, and the Restoration Mod team.",
+            "Hello!\n \nRestoration Mod has been updated with a brand new feature -- SC's Mod is now a permanent part of our mod! SC's Mod is a total game re-balance, increasing difficulty across the board without resorting to artificial difficulty like just boosting damage or HP.\n \nIn order to prevent users from having their skillpoints reset on startup, SC's Mod starts disabled by default. Additionally, we have created this dialogue menu to tell all new and returning users of the feature.\n \nGo to Restoration Mod's options menu, and go to SC Mod Options, to turn on or off the complete game re-balance. You will also have to go to this menu to turn off this notification box.\n \nHappy heisting!\n \n- Martini, DoktorAkcel, SC, and the Restoration Mod team.",
             {
                 {
                     text = "GOTCHA",

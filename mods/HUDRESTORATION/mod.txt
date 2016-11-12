@@ -26,6 +26,11 @@
             "display_name" : "BeardLib",
             "identifier" : "beardlib",
             "optional" : "false"
+        },
+		{
+            "display_name" : "Custom Sounds",
+            "identifier" : "CustomSounds",
+            "optional" : "false"
         }
     ]
 }

@@ -52,10 +52,10 @@ Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(
     
     --Ugly hack to be able to call converts
     --Kill me now
-    if not SC._converts then
-        SC._converts = {}
+    if not restoration._converts then
+        restoration._converts = {}
     end   
-    table.insert(SC._converts, self._unit)
+    table.insert(restoration._converts, self._unit)
     
 end)
 

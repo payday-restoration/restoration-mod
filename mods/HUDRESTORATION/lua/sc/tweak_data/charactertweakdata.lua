@@ -203,7 +203,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.disabled_units = {
 		"biker",
 		"mobster",
-		"tank_hw",
 		"mobster_boss",
 		"biker_boss",
 		"hector_boss",
@@ -662,7 +661,7 @@ function CharacterTweakData:_init_tank(presets)
 	self:_process_weapon_usage_table(self.tank.weapon)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 550
-	self.tank.headshot_dmg_mul = 11
+	self.tank.headshot_dmg_mul = 10
 	self.tank.damage.explosion_damage_mul = 1
 	self.tank.move_speed = presets.move_speed.slow
 	self.tank.allowed_stances = {cbt = true}
@@ -717,14 +716,11 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_3.AUTORAGE_TIMER = 10
  	table.insert(self._enemy_list, "tank_3")
 	self.tank_hw = deep_clone(self.tank)
-	self.tank_hw.HEALTH_INIT = 750
-	self.tank_hw.FORCE_RAGE_STATE_WHEN_HEADSHOT = true
-	self.tank_hw.damage.hurt_severity = presets.hurt_severities.titan
-	self.tank_hw.immune_to_body_stuns = true
+	self.tank_hw.HEALTH_INIT = 550
 	self.tank_hw.critical_hits = {
 		damage_mul = 2
 	}
-	self.tank_hw.headshot_dmg_mul = 3
+	self.tank_hw.headshot_dmg_mul = 6.3954
 	self.tank_hw.damage.explosion_damage_mul = 1
 	self.tank_hw.immune_to_concussion = true
 	self.tank_hw.use_animation_on_fire_damage = false
@@ -732,70 +728,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw.can_be_tased = false
 	self.tank_hw.melee_anims = nil
 	self.tank_hw.move_speed = presets.move_speed.slow
-	self.tank_hw.weapon = deep_clone(presets.weapon.normal)
-	self.tank_hw.weapon.saiga.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 1.6,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.6, 0.9},
-			dmg_mul = 1.6,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.8},
-			dmg_mul = 1.6,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.4, 0.55},
-			dmg_mul = 1.6,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.1, 0.35},
-			dmg_mul = 1.6,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		}
-	}
-	self:_process_weapon_usage_table(self.tank_hw.weapon)
  	table.insert(self._enemy_list, "tank_hw")
 end
 
@@ -898,7 +830,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.experience = {}
 	self.phalanx_minion.weapon = presets.weapon.normal
 	self.phalanx_minion.detection = presets.detection.normal
-	self.phalanx_minion.headshot_dmg_mul = 16.44786
+	self.phalanx_minion.headshot_dmg_mul = 8
 	self.phalanx_minion.HEALTH_INIT = 230
 	self.phalanx_minion.damage.explosion_damage_mul = 0.5
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
@@ -1148,7 +1080,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.robbers_safehouse.ignores_aggression = true
 	self.robbers_safehouse.calls_in = nil
 	self.robbers_safehouse.ignores_contours = true
-	self.robbers_safehouse.HEALTH_INIT = 50
+	self.robbers_safehouse.HEALTH_INIT = 75
 	self.robbers_safehouse.headshot_dmg_mul = 1
 end
 
@@ -4204,11 +4136,11 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.mp5.aim_delay = {0, 0.2}
+	presets.weapon.good.mp5.aim_delay = {0.1, 0.1}
 	presets.weapon.good.mp5.focus_delay = 3
 	presets.weapon.good.mp5.focus_dis = 200
-	presets.weapon.good.mp5.spread = 15
-	presets.weapon.good.mp5.miss_dis = 10
+	presets.weapon.good.mp5.spread = 20
+	presets.weapon.good.mp5.miss_dis = 40
 	presets.weapon.good.mp5.RELOAD_SPEED = 1
 	presets.weapon.good.mp5.melee_speed = presets.weapon.normal.mp5.melee_speed
 	presets.weapon.good.mp5.melee_dmg = 8
@@ -11309,70 +11241,6 @@ function CharacterTweakData:_set_overkill()
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.tank_hw.weapon = deep_clone(self.presets.weapon.good)
-	self.tank_hw.weapon.saiga.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.2,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.2,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.8},
-			dmg_mul = 3.2,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.4, 0.55},
-			dmg_mul = 1.6,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.1, 0.35},
-			dmg_mul = 1.6,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		}
-	}
-	self:_process_weapon_usage_table(self.tank_hw.weapon)
 	self.sniper.weapon.m4.FALLOFF = {
 		{
 			r = 1000,
@@ -11591,77 +11459,13 @@ function CharacterTweakData:_set_overkill_145()
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.tank_hw.weapon = deep_clone(self.presets.weapon.expert)
-	self.tank_hw.weapon.saiga.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 4,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.6, 0.9},
-			dmg_mul = 4,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.8},
-			dmg_mul = 4,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.4, 0.55},
-			dmg_mul = 4,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.1, 0.35},
-			dmg_mul = 1.6,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		}
-	}
-	self:_process_weapon_usage_table(self.tank_hw.weapon)
 end
 
 function CharacterTweakData:_set_easy_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.6, 0.8)
+		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(1.6, 0.8)
+		self:_multiply_all_hp(1.75, 0.8)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -11811,82 +11615,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.tank_hw.weapon = deep_clone(self.presets.weapon.expert)
-	self.tank_hw.weapon.saiga.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 4.6,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.6, 0.9},
-			dmg_mul = 4.6,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.8},
-			dmg_mul = 4.6,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1800,
-			acc = {0.4, 0.8},
-			dmg_mul = 4.6,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.4, 0.55},
-			dmg_mul = 4.2,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.1, 0.35},
-			dmg_mul = 1.68,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		}
-	}
-	self:_process_weapon_usage_table(self.tank_hw.weapon)
 end
 
 function CharacterTweakData:_set_overkill_290()
@@ -12065,82 +11793,6 @@ function CharacterTweakData:_set_overkill_290()
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.tank_hw.weapon = deep_clone(self.presets.weapon.deathwish)
-	self.tank_hw.weapon.saiga.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.6, 0.9},
-			dmg_mul = 5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.8},
-			dmg_mul = 5,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.4, 0.55},
-			dmg_mul = 5,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.1, 0.35},
-			dmg_mul = 5,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		},
-		{
-			r = 5000,
-			acc = {0.1, 0.35},
-			dmg_mul = 2,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		}
-	}
-	self:_process_weapon_usage_table(self.tank_hw.weapon)
 end
 
 function CharacterTweakData:_set_sm_wish()
@@ -12349,94 +12001,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.tank_hw.weapon = deep_clone(self.presets.weapon.deathwish)
-	self.tank_hw.weapon.saiga.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 5.5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.6, 0.9},
-			dmg_mul = 5.5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.8},
-			dmg_mul = 5.5,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1800,
-			acc = {0.4, 0.8},
-			dmg_mul = 5.5,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.4, 0.55},
-			dmg_mul = 5,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.1, 0.35},
-			dmg_mul = 5,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		},
-		{
-			r = 5000,
-			acc = {0.1, 0.35},
-			dmg_mul = 2,
-			recoil = {1, 1.2},
-			mode = {
-				3,
-				1,
-				1,
-				0
-			}
-		}
-	}
-	self:_process_weapon_usage_table(self.tank_hw.weapon)
 end
 
 function CharacterTweakData:_multiply_weapon_delay(weap_usage_table, mul)
@@ -12738,6 +12302,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"spooc",
 		"shield",
 		"tank",
+		"tank_hw",
 		"phalanx_minion"
 	}
 	for _, name in ipairs(all_units) do
@@ -13108,6 +12673,12 @@ function CharacterTweakData:character_map()
 			list = {
 				"npc_chavez",
 				"npc_jamaican"
+			}
+		},
+		help = {
+			path = "units/pd2_dlc_help/characters/",
+			list = {
+				"ene_zeal_bulldozer_halloween"
 			}
 		},
 		gitgud = {

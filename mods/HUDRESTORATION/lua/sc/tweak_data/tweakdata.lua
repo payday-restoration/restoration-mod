@@ -1,5 +1,5 @@
 if not tweak_data then return end
-	if restoration.Options:GetValue("SC/SC") then	
+	if restoration.Options:GetValue("SC/SC") then
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 34
 	tweak_data.projectiles.launcher_rocket.player_damage = 34
@@ -14,6 +14,23 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_incendiary.player_damage = 2
 	tweak_data.projectiles.launcher_incendiary.burn_duration = 10
 	tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
+		dot_damage = 1,
+		dot_trigger_max_distance = 3000,
+		dot_trigger_chance = 35,
+		dot_length = 3.1,
+		dot_tick_period = 0.5
+	}
+
+	--Arbiter--
+	tweak_data.projectiles.launcher_frag_arbiter.damage = 34
+	tweak_data.projectiles.launcher_frag_arbiter.player_damage = 34
+	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 1250
+	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
+	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 1250
+	tweak_data.projectiles.launcher_incendiary_arbiter.curve_pow = 0.1
+	tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
+	tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 10
+	tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 		dot_damage = 1,
 		dot_trigger_max_distance = 3000,
 		dot_trigger_chance = 35,
@@ -132,7 +149,6 @@ if not tweak_data then return end
 	tweak_data.medic.disabled_units = {
 		"biker",
 		"mobster",
-		"tank_hw",
 		"mobster_boss",
 		"biker_boss",
 		"hector_boss",

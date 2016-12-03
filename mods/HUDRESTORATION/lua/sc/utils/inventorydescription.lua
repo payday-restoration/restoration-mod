@@ -30,6 +30,12 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
                 end
                 skill_stats[stat.name].skill_in_effect = managers.player:has_category_upgrade(name, "clip_ammo_increase") or managers.player:has_category_upgrade("weapon", "clip_ammo_increase")
 			elseif stat.name == "totalammo" then
+			elseif stat.name == "reload" then
+				local mult = 0
+				mult = 1 / managers.player:upgrade_value(weapon_tweak.category, "reload_speed_multiplier", 1)
+				local diff = base_stats[stat.name].value * mult - base_stats[stat.name].value
+				skill_stats[stat.name].value = skill_stats[stat.name].value + diff
+				skill_stats[stat.name].skill_in_effect = managers.player:has_category_upgrade(weapon_tweak.category, "reload_speed_multiplier")
 			else
 				base_value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value, 0)
 				if base_stats[stat.name].index and mods_stats[stat.name].index then

@@ -106,6 +106,7 @@
 		<hook file="sc/player_actions/skills/playeractionstockholmsyndrometrade.lua" source_file="lib/player_actions/skills/playeractionstockholmsyndrometrade"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/enemies/securitycamera.lua" source_file="lib/units/props/securitycamera"/>
+		<hook file="sc/units/enemies/logics/tankcoplogicattack.lua" source_file="lib/units/enemies/tank/logics/tankcoplogicattack"/>
     </Hooks>
     <Localization directory="loc" default="english.txt">
     </Localization>

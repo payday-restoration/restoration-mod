@@ -1,5 +1,39 @@
 if restoration.Options:GetValue("SC/SCWeapon") then
 
+	function NewRaycastWeaponBase:_get_spread(user_unit)
+		local current_state = user_unit:movement()._current_state
+		if not current_state then
+			return 0, 0
+		end
+		local spread_values = tweak_data.weapon[self._name_id].spread
+		if not spread_values then
+			return 0, 0
+		end
+		local cond_spread_addend = self:conditional_accuracy_addend(current_state) or 0
+		local spread_addend = (self:spread_index_addend(current_state) or 0) + cond_spread_addend
+		local current_spread_value = spread_values[current_state:get_movement_state()]
+		local new_spread = self._current_stats_indices.spread + spread_addend
+		new_spread = math.clamp(new_spread, 1, #tweak_data.weapon.stats.spread)
+		self._spread = tweak_data.weapon.stats.spread[new_spread]
+		local spread_x, spread_y
+		if type(current_spread_value) == "number" then
+			spread_x = self._spread --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
+			spread_y = spread_x
+		else
+			spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)
+		end
+		if self._spread_multiplier then
+			spread_x = spread_x * self._spread_multiplier[1]
+			spread_y = spread_y * self._spread_multiplier[2]
+		end
+		local spread_mult = 1
+		spread_mult = spread_mult * self:spread_multiplier(current_state)
+		spread_mult = spread_mult * self:conditional_accuracy_multiplier(current_state)
+		spread_x = spread_x * spread_mult
+		spread_y = spread_y * spread_mult
+		return spread_x, spread_y
+	end
+
 	local start_shooting_original = RaycastWeaponBase.start_shooting
 	local stop_shooting_original = RaycastWeaponBase.stop_shooting
 	local _fire_sound_original = RaycastWeaponBase._fire_sound
@@ -210,22 +244,6 @@ if restoration.Options:GetValue("SC/SCWeapon") then
 			return false
 		end
 		return self._laser_data.unit:base():is_on()
-	end
-
-	function NewRaycastWeaponBase:_get_spread(user_unit)
-		local current_state = user_unit:movement()._current_state
-		local spread_multiplier = self:spread_multiplier(current_state)
-		local player_state = managers.player:current_state()
-		if player_state == "bipod" then
-			--spread_multiplier = 0
-		end
-		if current_state and current_state._unit_deploy_position then
-			spread = 0
-		end
-		if self._hipfire_mod and not current_state:in_steelsight() or current_state._unit_deploy_position then
-			spread_multiplier = spread_multiplier * self._hipfire_mod
-		end
-		return self._spread * spread_multiplier
 	end
 
 	--[[	fire rate multipler in-game stuff	]]--

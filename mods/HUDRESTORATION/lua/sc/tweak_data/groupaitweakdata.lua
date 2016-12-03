@@ -4,6 +4,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	local access_type_walk_only = {walk = true}
 	local access_type_all = {walk = true, acrobatic = true}
 	local Net = _G.LuaNetworking
+	local job_id = managers.job and managers.job:current_job_id()
+	local tweak = job_id and tweak_data.narrative.jobs[job_id]
+	local job = Global.level_data and Global.level_data.level_id
+	Month = os.date("%m")
 	if difficulty_index <= 2 then
 		self.special_unit_spawn_limits = {
 			tank = 1,
@@ -860,68 +864,134 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "shield"
 		}
 	end
-	if difficulty_index < 5 then
-		self.unit_categories.FBI_tank = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
+	if job == "haunted" or job == "nail" or job == "help" or Month == "10" then
+		if difficulty_index < 5 then
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
+					}
 				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
-				}
-			},
-			access = access_type_all,
-			special_type = "tank"
-		}
-	elseif difficulty_index < 7 then
-		self.unit_categories.FBI_tank = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-					Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
+				access = access_type_all,
+				special_type = "tank"
+			}
+		elseif difficulty_index < 7 then
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+					},
+					russia = {
+						Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
+					}
 				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
-				}
-			},
-			access = access_type_all,
-			special_type = "tank"
-		}
-	elseif difficulty_index < 8 then
-		self.unit_categories.FBI_tank = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-					Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
+				access = access_type_all,
+				special_type = "tank"
+			}
+		elseif difficulty_index < 8 then
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+						Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+						Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+						Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+					}
 				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
-				}
-			},
-			access = access_type_all,
-			special_type = "tank"
-		}
+				access = access_type_all,
+				special_type = "tank"
+			}
+		else
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+						Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+						Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+						Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+					}
+				},
+				access = access_type_all,
+				special_type = "tank"
+			}
+		end
 	else
-		self.unit_categories.FBI_tank = {
-			unit_types = {
-				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"),
+		if difficulty_index < 5 then
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
+					}
 				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
-				}
-			},
-			access = access_type_all,
-			special_type = "tank"
-		}
+				access = access_type_all,
+				special_type = "tank"
+			}
+		elseif difficulty_index < 7 then
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
+					}
+				},
+				access = access_type_all,
+				special_type = "tank"
+			}
+		elseif difficulty_index < 8 then
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
+					}
+				},
+				access = access_type_all,
+				special_type = "tank"
+			}
+		else
+			self.unit_categories.FBI_tank = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"),
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
+					}
+				},
+				access = access_type_all,
+				special_type = "tank"
+			}
+		end
 	end
 	self.unit_categories.medic_M4 = {
 		unit_types = {
@@ -3202,6 +3272,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.smoke_grenade_lifetime = 12
 	end
 	self.flash_grenade_lifetime = 7.5
+	self.flash_grenade = {
+		timer = 3,
+		range = 1000,
+		light_color = Vector3(255, 0, 0),
+		light_range = 300,
+		light_specular = 1,
+		beep_speed = {0.1, 0.025},
+		beep_fade_speed = 4,
+		beep_multi = 0.3
+	}
+	if difficulty_index < 6 then
+		self.flash_grenade.timer = 2
+	else
+		self.flash_grenade.timer = 2
+	end
 	self.optimal_trade_distance = {0, 0}
 	self.bain_assault_praise_limits = {1, 3}
 	if difficulty_index <= 2 then
@@ -4146,51 +4231,51 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	self.phalanx.minions.min_count = 0
 	self.phalanx.minions.amount = 10
 	self.phalanx.minions.distance = 100
-	self.phalanx.vip.health_ratio_flee = 0.01
+	self.phalanx.vip.health_ratio_flee = 0.05
 	if difficulty_index == 4 then
 		self.phalanx.vip.force_sprint = {true}
-		self.phalanx.vip.assault_force_multiplier = {1.25}
+		self.phalanx.vip.assault_force_multiplier = {1.1}
 		self.phalanx.vip.damage_reduction = {
-			start = 0.25,
-			increase = 0.05,
-			max = 0.25,
-			increase_intervall = 5
+			start = 0.000001,
+			increase = 0,
+			max = 0.000001,
+			increase_intervall = 0
 	}
 	elseif difficulty_index == 5 then
 		self.phalanx.vip.force_sprint = {true}
-		self.phalanx.vip.assault_force_multiplier = {1.25}
+		self.phalanx.vip.assault_force_multiplier = {1.2}
 		self.phalanx.vip.damage_reduction = {
-			start = 0.25,
-			increase = 0.05,
-			max = 0.25,
-			increase_intervall = 5
+			start = 0.000001,
+			increase = 0,
+			max = 0.000001,
+			increase_intervall = 0
 		}
 	elseif difficulty_index == 6 then
 		self.phalanx.vip.force_sprint = {true}
-		self.phalanx.vip.assault_force_multiplier = {1.25}
+		self.phalanx.vip.assault_force_multiplier = {1.3}
 		self.phalanx.vip.damage_reduction = {
-			start = 0.25,
-			increase = 0.05,
-			max = 0.25,
-			increase_intervall = 5
+			start = 0.000001,
+			increase = 0,
+			max = 0.000001,
+			increase_intervall = 0
 		}
 	elseif difficulty_index == 7 then
 		self.phalanx.vip.force_sprint = {true}
-		self.phalanx.vip.assault_force_multiplier = {1.25}
+		self.phalanx.vip.assault_force_multiplier = {1.4}
 		self.phalanx.vip.damage_reduction = {
-			start = 0.25,
-			increase = 0.05,
-			max = 0.25,
-			increase_intervall = 5
+			start = 0.000001,
+			increase = 0,
+			max = 0.000001,
+			increase_intervall = 0
 		}
 	elseif difficulty_index == 8 then
 		self.phalanx.vip.force_sprint = {true}
-		self.phalanx.vip.assault_force_multiplier = {1.25}
+		self.phalanx.vip.assault_force_multiplier = {1.5}
 		self.phalanx.vip.damage_reduction = {
-			start = 0.25,
-			increase = 0.05,
-			max = 0.25,
-			increase_intervall = 5
+			start = 0.000001,
+			increase = 0,
+			max = 0.000001,
+			increase_intervall = 0
 		}
 	else
 		self.phalanx.vip.force_sprint = nil
@@ -4234,7 +4319,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			increase = 0.09,
 			decrease = 1,
 			max = 1,
-			respawn_delay = 900
+			respawn_delay = 600
 		}
 	elseif difficulty_index == 8 then
 		self.phalanx.spawn_chance = {
@@ -4242,7 +4327,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			increase = 0.09,
 			decrease = 1,
 			max = 1,
-			respawn_delay = 900
+			respawn_delay = 300
 		}
 	else
 		self.phalanx.spawn_chance = {

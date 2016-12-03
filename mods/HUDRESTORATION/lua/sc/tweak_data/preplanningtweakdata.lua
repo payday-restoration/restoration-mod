@@ -10,7 +10,7 @@ function PrePlanningTweakData:init(tweak_data)
 	self.types.escape_bus_loud.budget_cost = 6
 	self.types.escape_c4_loud.budget_cost = 2
 	self.types.escape_elevator_loud.budget_cost = 4
-	self.types.vault_thermite.budget_cost = 4
+	self.types.vault_thermite.budget_cost = 6
 
 end
 

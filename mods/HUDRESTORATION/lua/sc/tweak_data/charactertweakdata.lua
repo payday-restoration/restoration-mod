@@ -12681,6 +12681,12 @@ function CharacterTweakData:character_map()
 				"ene_zeal_bulldozer_halloween"
 			}
 		},
+		moon = {
+			path = "units/pd2_dlc_moon/characters/",
+			list = {
+				"civ_male_pilot_2"
+			}
+		},
 		gitgud = {
 			path = "units/pd2_dlc_gitgud/characters/",
 			list = {

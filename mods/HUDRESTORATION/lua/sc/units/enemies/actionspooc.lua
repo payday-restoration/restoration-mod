@@ -121,7 +121,7 @@ function ActionSpooc:init(action_desc, common_data)
 	else
 		self:_wait()
 	end
-	if Global.level_data.level_id == "pines" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "roberts" then
+	if self:_use_christmas_sounds() then
 		self._unit:sound():play("cloaker_detect_christmas_mono", nil, nil)
 	end
 	self._unit:damage():run_sequence_simple("turn_on_spook_lights")
@@ -146,7 +146,7 @@ function ActionSpooc:anim_act_clbk(anim_act)
 			return
 		end
 		self._stroke_t = TimerManager:game():time()
-		if Global.level_data.level_id == "pines" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "roberts" then
+		if self:_use_christmas_sounds() then
 			self._unit:sound():play("cloaker_detect_christmas_stop", nil, nil)
 		end
 		if not self._is_local then
@@ -251,7 +251,7 @@ end
 
 function ActionSpooc:on_exit()
 	if self._unit:character_damage():dead() then
-		if Global.level_data.level_id == "pines" or Global.level_data.level_id == "cane" then
+		if self:_use_christmas_sounds() then
 			self._unit:sound():play("cloaker_detect_christmas_stop", nil, nil)
 		else
 			self._unit:sound():play("cloaker_detect_stop", nil, nil)
@@ -354,6 +354,11 @@ function ActionSpooc:_upd_flying_strike_first_frame(t)
 		mvector3.normalize(enemy_vec)
 	end
 	self:_set_updator("_upd_flying_strike")
+end
+
+function ActionSpooc:_use_christmas_sounds()
+	local tweak = tweak_data.narrative.jobs[managers.job:current_real_job_id()]
+	return false
 end
 
 end

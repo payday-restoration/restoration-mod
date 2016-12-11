@@ -6116,8 +6116,6 @@ function WeaponFactoryTweakData:_init_m14()
 		"wpn_fps_upg_o_m14_scopemount",
 		"wpn_fps_upg_ass_ns_battle",
 		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_45iron",
-		"wpn_fps_upg_fl_ass_utg",
 		"wpn_fps_ass_m14_b_legendary",
 		"wpn_fps_ass_m14_body_legendary",
 		"wpn_fps_ass_m14_body_upper_legendary",
@@ -6127,6 +6125,7 @@ function WeaponFactoryTweakData:_init_m14()
 	}
 	self.wpn_fps_ass_m14_npc = deep_clone(self.wpn_fps_ass_m14)
 	self.wpn_fps_ass_m14_npc.unit = "units/payday2/weapons/wpn_fps_ass_m14/wpn_fps_ass_m14_npc"
+	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_o_45iron")
 end
 
 function WeaponFactoryTweakData:_init_mp9()
@@ -10964,6 +10963,7 @@ function WeaponFactoryTweakData:_init_scar()
 		"wpn_fps_upg_m4_g_mgrip",
 		"wpn_fps_upg_m4_g_ergo",
 		"wpn_fps_upg_m4_g_sniper",
+		"wpn_fps_upg_vg_ass_smg_afg_vanilla",
 		"wpn_fps_upg_i_singlefire",
 		"wpn_fps_upg_i_autofire",
 		"wpn_fps_upg_o_specter",
@@ -10973,6 +10973,7 @@ function WeaponFactoryTweakData:_init_scar()
 		"wpn_fps_upg_o_t1micro",
 		"wpn_fps_upg_o_cmore",
 		"wpn_fps_upg_o_aimpoint_2",
+		"wpn_fps_upg_o_acog",
 		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
 		"wpn_fps_upg_fl_ass_smg_sho_surefire",
 		"wpn_fps_upg_ns_ass_smg_large",
@@ -10993,12 +10994,12 @@ function WeaponFactoryTweakData:_init_scar()
 		"wpn_fps_upg_fl_ass_laser",
 		"wpn_fps_upg_ass_ns_battle",
 		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_45iron",
 		"wpn_fps_upg_o_45rds",
 		"wpn_fps_upg_o_spot"
 	}
 	self.wpn_fps_ass_scar_npc = deep_clone(self.wpn_fps_ass_scar)
 	self.wpn_fps_ass_scar_npc.unit = "units/pd2_dlc_dec5/weapons/wpn_fps_ass_scar/wpn_fps_ass_scar_npc"
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_45iron")
 end
 
 function WeaponFactoryTweakData:_init_p226()

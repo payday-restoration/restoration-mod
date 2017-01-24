@@ -1,3 +1,5 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 local level = Global.level_data.level_id
 if level == "chill" then 
 
@@ -29,6 +31,8 @@ function CopActionWarp:init(action_desc, common_data)
 		executeNode(101020)
 		executeNode(101021)
 	end
+end
+
 end
 
 end

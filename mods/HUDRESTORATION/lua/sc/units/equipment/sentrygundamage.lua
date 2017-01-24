@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function SentryGunDamage:_apply_damage(damage, dmg_shield, dmg_body, is_local)
 	if dmg_shield and self._shield_health > 0 then

@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local level = Global.level_data.level_id
 if level == "short2_stage2b" or level == "pal" then 

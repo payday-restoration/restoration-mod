@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 function PlayerBipod:_check_action_steelsight(t, input)
 	local new_action

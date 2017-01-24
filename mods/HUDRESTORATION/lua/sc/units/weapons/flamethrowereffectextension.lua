@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	local old_effect_update = FlamethrowerEffectExtension.update
 	function FlamethrowerEffectExtension:update(...)

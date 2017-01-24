@@ -1,4 +1,35 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
+function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
+	local nr_players = 0
+	for u_key, u_data in pairs(self:all_player_criminals()) do
+		if not u_data.status then
+			nr_players = nr_players + 1
+		end
+	end
+	nr_players = math.clamp(nr_players, 1, 4)
+	return balance_multipliers[nr_players]
+end
+
+function GroupAIStateBase:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
+	local smoke_duration = duration == 0 and 15 or duration
+	if flashbang then
+		if Network:is_client() then
+			return
+		end
+		local flashbang_unit = "units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang"
+		local pos = detonate_pos + Vector3(0, 0, 1)
+		local rotation = Rotation(math.random() * 360, 0, 0)
+		local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), pos, rotation)
+		flash_grenade:base():activate(shooter_pos or pos, duration)
+	else
+		self._smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), detonate_pos, Rotation())
+		self._smoke_grenade:base():activate(shooter_pos or detonate_pos, smoke_duration)
+		managers.groupai:state():teammate_comment(nil, "g40x_any", detonate_pos, true, 2000, false)
+	end
+	self._smoke_end_t = Application:time() + smoke_duration
+	self._smoke_grenade_ignore_control = nil
+end
 
 function GroupAIStateBase:has_room_for_police_hostage()
 	local nr_hostages_allowed = 4

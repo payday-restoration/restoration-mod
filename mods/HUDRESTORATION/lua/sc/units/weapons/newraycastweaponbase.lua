@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	function NewRaycastWeaponBase:_get_spread(user_unit)
 		local current_state = user_unit:movement()._current_state
@@ -90,7 +90,7 @@ if restoration.Options:GetValue("SC/SCWeapon") then
 
 	function NewRaycastWeaponBase:recoil_multiplier(...)
 		if self._name_id == "m134" and not self._vulcan_firing then
-			return 0
+			--return 0
 		end
 
 		return recoil_multiplier_original(self, ...)
@@ -157,11 +157,10 @@ if restoration.Options:GetValue("SC/SCWeapon") then
 		end
 	end
 
-	--Muzzle flash stuff
-	local old_update_stats_values = NewRaycastWeaponBase._update_stats_values
-	
-	function NewRaycastWeaponBase:_update_stats_values()
-		old_update_stats_values(self)
+	--Le stats face
+	local old_update_stats_values = NewRaycastWeaponBase._update_stats_values	
+	function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
+		old_update_stats_values(self, disallow_replenish)
 		
 		self._reload_speed_mult = self._reload_speed_mult or 1
 		self._ads_speed_mult = self._ads_speed_mult or 1
@@ -212,40 +211,9 @@ if restoration.Options:GetValue("SC/SCWeapon") then
 			end
 
 		end
-		
-
-		--ROF Multiplier perks--{
-
-		self._block_eq_aced = managers.weapon_factory:has_perk("fire_mode_auto", self._factory_id, self._blueprint)
-		self._db_charge = managers.weapon_factory:has_perk("db_charge", self._factory_id, self._blueprint)
-		--}
-				
-		self:_check_laser()
-		
+							
 	end
-				
-	function NewRaycastWeaponBase:_check_laser()
-		self._laser_data = nil
-		if self._has_gadget then
-			local factory = tweak_data.weapon.factory
-			for _, part_id in ipairs(self._has_gadget) do
-				if factory.parts[part_id].sub_type == "laser" then
-					self._laser_data = {}
-					self._laser_data.part_id = part_id
-					self._laser_data.unit = self._parts and self._parts[part_id] and alive(self._parts[part_id].unit) and self._parts[part_id].unit
-				else
-				end
-			end
-		end
-	end
-		
-	function NewRaycastWeaponBase:_is_laser_on()
-		if not self._laser_data or not self._laser_data.unit then
-			return false
-		end
-		return self._laser_data.unit:base():is_on()
-	end
-
+						
 	--[[	fire rate multipler in-game stuff	]]--
 	function NewRaycastWeaponBase:fire_rate_multiplier()
 		local multiplier = self._rof_mult or 1
@@ -302,17 +270,17 @@ if restoration.Options:GetValue("SC/SCWeapon") then
 		return multiplier
 	end
 
-function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
-    local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + (self._extra_ammo or 0)
-    ammo = ammo * managers.player:upgrade_value(self._name_id, "clip_ammo_increase", 1)
-    if not self:upgrade_blocked("weapon", "clip_ammo_increase") then
-        ammo = ammo * managers.player:upgrade_value("weapon", "clip_ammo_increase", 1)
-    end
-    if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "clip_ammo_increase") then
-    	ammo = ammo * managers.player:upgrade_value(tweak_data.weapon[self._name_id].category, "clip_ammo_increase", 1)
-    end
-    ammo = math.floor(ammo)
-    return ammo
-end
+	function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
+		local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + (self._extra_ammo or 0)
+    		ammo = ammo * managers.player:upgrade_value(self._name_id, "clip_ammo_increase", 1)
+    		if not self:upgrade_blocked("weapon", "clip_ammo_increase") then
+        		ammo = ammo * managers.player:upgrade_value("weapon", "clip_ammo_increase", 1)
+    		end
+    		if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "clip_ammo_increase") then
+    			ammo = ammo * managers.player:upgrade_value(tweak_data.weapon[self._name_id].category, "clip_ammo_increase", 1)
+    		end
+    		ammo = math.floor(ammo)
+    		return ammo
+	end
 
 end

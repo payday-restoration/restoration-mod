@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	function BlackMarketManager:fire_rate_multiplier(name, category, sub_category, silencer, detection_risk, current_state, blueprint)
 		local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name)

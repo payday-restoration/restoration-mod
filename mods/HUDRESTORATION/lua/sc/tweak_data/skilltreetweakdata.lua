@@ -9,7 +9,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 
 ]]--
 
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local sc_sttd = SkillTreeTweakData.init
 function SkillTreeTweakData:init(tweak_data)
@@ -153,7 +153,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"first_aid_kit_quantity_increase_2"
+						"first_aid_kit_quantity_increase_2",
+						"first_aid_kit_downs_restore_chance"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -282,7 +283,8 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_civilian_reviver",
-						"player_civilian_gives_ammo"
+						"player_civilian_gives_ammo",
+						"player_super_syndrome_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -295,15 +297,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 10},
 				[1] = {
 					upgrades = {
-						"player_minion_master_speed_multiplier",
-						"player_passive_convert_enemies_health_multiplier_1"
+						"player_minion_master_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
 						"player_minion_master_health_multiplier",
-						"player_passive_convert_enemies_health_multiplier_2"
+						"player_passive_convert_enemies_health_multiplier_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -2374,59 +2375,57 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "character_pack_clover",
 			{
 				upgrades = {
-					"player_tier_dodge_chance_1"
+					"player_passive_dodge_chance_1"
 				},
 				cost = 200,
 				icon_xy = {1, 2},
 				name_id = "menu_deck7_1",
-				desc_id = "menu_deck7_1_desc"
+				desc_id = "menu_deck7_1_desc_sc"
 			},
 			deck2,
 			{
 				upgrades = {
-					"player_stand_still_crouch_camouflage_bonus_1",
+					"player_tier_dodge_chance_1",
 					"player_corpse_dispose_speed_multiplier"
 				},
 				cost = 400,
 				icon_xy = {0, 4},
 				name_id = "menu_deck7_3",
-				desc_id = "menu_deck7_3_desc"
+				desc_id = "menu_deck7_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_tier_dodge_chance_2",
-					"player_stand_still_crouch_camouflage_bonus_2",
+					"player_passive_dodge_chance_2",
 					"player_pick_lock_speed_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {7, 3},
 				name_id = "menu_deck7_5",
-				desc_id = "menu_deck7_5_desc"
+				desc_id = "menu_deck7_5_desc_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"player_tier_dodge_chance_3",
-					"player_stand_still_crouch_camouflage_bonus_3",
+					"player_passive_dodge_chance_3",
 					"player_alarm_pager_speed_multiplier"
 				},
 				cost = 2400,
 				icon_xy = {1, 4},
 				name_id = "menu_deck7_7",
-				desc_id = "menu_deck7_7_desc"
+				desc_id = "menu_deck7_7_desc_sc"
 			},
 			deck8,
 			{
 				upgrades = {
-					"player_armor_regen_timer_stand_still_multiplier",
+					"player_armor_regen_timer_multiplier_tier",
 					"player_crouch_speed_multiplier_2",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
 				icon_xy = {2, 4},
 				name_id = "menu_deck7_9",
-				desc_id = "menu_deck7_9_desc"
+				desc_id = "menu_deck7_9_desc_sc"
 			}
 		}
 
@@ -2905,13 +2904,80 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_damage_to_armor_1"
+					"player_damage_to_armor_1",
+					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
 				icon_xy = {0, 1},
 				texture_bundle_folder = "opera",
 				name_id = "menu_deck15_9",
 				desc_id = "menu_deck15_9_desc_sc"
+			}
+		}
+
+	--YOU AND I--
+	local sc_scarface = {
+			name_id = "menu_st_spec_17",
+			desc_id = "menu_st_spec_17_desc",
+			dlc = "chico",
+			{
+				upgrades = {
+					"temporary_chico_injector_1",
+					"chico_injector"
+				},
+				cost = 200,
+				icon_xy = {0, 0},
+				texture_bundle_folder = "chico",
+				name_id = "menu_deck17_1",
+				desc_id = "menu_deck17_1_desc"
+			},
+			deck2,
+			{
+				upgrades = {
+					"player_chico_armor_multiplier_1"
+				},
+				cost = 400,
+				icon_xy = {1, 0},
+				texture_bundle_folder = "chico",
+				name_id = "menu_deck17_3",
+				desc_id = "menu_deck17_3_desc_sc"
+			},
+			deck4,
+			{
+				upgrades = {
+					"player_chico_armor_multiplier_2",
+					"player_chico_preferred_target"
+				},
+				cost = 1000,
+				icon_xy = {2, 0},
+				texture_bundle_folder = "chico",
+				name_id = "menu_deck17_5",
+				desc_id = "menu_deck17_5_desc_sc"
+			},
+			deck6,
+			{
+				upgrades = {
+					"player_chico_armor_multiplier_3",
+					"player_chico_injector_low_health_multiplier"
+				},
+				cost = 2400,
+				icon_xy = {3, 0},
+				texture_bundle_folder = "chico",
+				name_id = "menu_deck17_7",
+				desc_id = "menu_deck17_7_desc_sc"
+			},
+			deck8,
+			{
+				upgrades = {
+					"player_passive_health_multiplier_1",
+					"player_chico_injector_health_to_speed",
+					"player_passive_loot_drop_multiplier"
+				},
+				cost = 4000,
+				icon_xy = {0, 1},
+				texture_bundle_folder = "chico",
+				name_id = "menu_deck17_9",
+				desc_id = "menu_deck17_9_desc_sc"
 			}
 		}
 
@@ -2930,7 +2996,9 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[12] = sc_yakuza
 	self.specializations[13] = sc_ex
 	self.specializations[14] = sc_maniac
-	self.specializations[15] = sc_sydney	
+	self.specializations[15] = sc_sydney
+	--insert fat dick here--
+	self.specializations[17] = sc_scarface		
 end
 
 end

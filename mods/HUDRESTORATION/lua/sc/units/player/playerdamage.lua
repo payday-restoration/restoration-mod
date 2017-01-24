@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local player_damage_melee = PlayerDamage.damage_melee
 function PlayerDamage:damage_melee(attack_data)
@@ -121,6 +121,20 @@ function PlayerDamage:revive(helped_self)
 	end
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "reload_weapon_faster") then
 		managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
+	end
+end
+
+function PlayerDamage:band_aid_health()
+	if managers.platform:presence() == "Playing" and (self:arrested() or self:need_revive()) then
+		return
+	end
+	self:change_health(self:_max_health() * self._healing_reduction)
+	self._said_hurt = false
+	if math.rand(1) < managers.player:upgrade_value("first_aid_kit", "downs_restore_chance", 0) then
+		self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
+		self._revive_health_i = math.max(self._revive_health_i - 1, 1)
+		managers.environment_controller:set_last_life(1 >= Application:digest_value(self._revives, false))
+		managers.hint:show_hint("skill_stockholm_syndrome_trade")
 	end
 end
 

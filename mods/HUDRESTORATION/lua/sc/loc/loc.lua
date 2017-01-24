@@ -97,7 +97,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	})
 end)
 
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
@@ -179,7 +179,7 @@ end)
 
 end
 
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local r = LevelsTweakData.LevelType.Russia
 local ai_type = tweak_data.levels:get_ai_group_type()
@@ -196,6 +196,9 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
+		["skill_uppers_revive"] = "Downs restored!",
+		["hud_ai_traded_in"] = "",
+		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		["hint_short_max_pagers"] = "Max number of pagers scales with difficulty. Be aware of the Pager operator's response.",
 
 		--Nuking infamy shit because it's gay--
@@ -235,7 +238,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "Uppers",
-			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.",
+			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.\n\nFirst Aid Kits have a ##50%## chance to restore ##1## down.",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
@@ -243,7 +246,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",
-			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance by shouting at them. This cannot occur more than once every ##20## seconds.",																								
+			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance by shouting at them. This cannot occur more than once every ##30## seconds.",																								
 
 
 			--}
@@ -269,7 +272,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime	
 			["menu_control_freak_beta_sc"] = "Partners in Crime",	
-			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.## Your converted enemy takes an additional ##45%## less damage.\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.## Your converted enemy takes an additional ##45%## less damage.",
+			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes ##45%## less damage.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
@@ -299,7 +302,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSubmachine Guns, Light Machineguns or Rifles set on automatic fire mode have a ##10%## chance to knock down enemies.\n\nACE: ##$pro##\nYour shots now have a ##25%## chance to knock down enemies.\n\nNote: Stagger effects do not apply to Bulldozers or Captains.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSubmachine Guns, Light Machineguns or Rifles set on automatic fire mode have a ##10%## chance to knock down enemies.\n\nACE: ##$pro##\nYour shots now have a ##25%## chance to knock down enemies.\n\nNote: Stagger effects do not apply to Captains, Veteran Cops, and Shields.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
@@ -364,7 +367,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nNote: Captains can only be stunned by melee attacks.",																																																																																																																																																																																																
 		
 
 			--}
@@ -676,6 +679,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##10%##.\n\n\Your armor is increased by ##20%## for ballistic vests.",
 		["menu_deck3_9_desc_sc"] = "Reduces the armor recovery time for you and your crew by ##10%##.\n\n\You are now ##immune to suppression.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
+		--Burglar--
+		["menu_deck7_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
+		["menu_deck7_3_desc_sc"] = "Your chance to dodge is increased by ##5%##.\n\nYou bag corpses ##20%## faster.",
+		["menu_deck7_5_desc_sc"] = "Your chance to dodge is increased by ##10%##.\n\nYou pick locks ##20%## faster.",
+		["menu_deck7_7_desc_sc"] = "Your chance to dodge is increased by ##10%##.\n\nYou answer pagers ##10%## faster.",
+		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##15%.##\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+
 		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\n\Cannot occur more than once every ##4## seconds.",
 
@@ -703,6 +713,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##55%## armor.",
 		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##60%## armor.",
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you ##10## armor - This can only occur once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+
+		--Scarface--
+		["menu_deck17_3_desc_sc"] = "You gain ##5%## more armor.",
+		["menu_deck17_5_desc_sc"] = "You gain ##5%## more armor.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
+		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##25%## while below ##50%## health.",
+		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##5## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 	})
 end)
 

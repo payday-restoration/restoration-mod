@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function PlayerCarry:_perform_jump(jump_vec)
         mvector3.multiply(jump_vec, tweak_data.carry.types[self._tweak_data_name].jump_modifier)

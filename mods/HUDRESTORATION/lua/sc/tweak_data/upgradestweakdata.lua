@@ -15,7 +15,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Upgrade Value changes for skills and such--
 
-	if restoration.Options:GetValue("SC/SCWeapon") then
+	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	--Explosives hurt--
 	self.explosive_bullet.curve_pow = 0.1
@@ -30,7 +30,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	end
 
-	if restoration.Options:GetValue("SC/SC") then
+	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	--Armor related stuff--
 	self.values.player.body_armor.armor = {
@@ -145,6 +145,7 @@ function UpgradesTweakData:_init_pd2_values()
 			
 				--Uppers
 				self.values.first_aid_kit.quantity = {4, 10}
+				self.values.first_aid_kit.downs_restore_chance = {0.5}
 
 				--Combat Doctor
 				self.doctor_bag_base = 2
@@ -155,7 +156,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.long_dis_revive = {0.5, 0.5}
 				self.skill_descs.inspire = {multibasic = "50%", multibasic2 = "20%", multibasic3 = "10", multipro = "50%"}
 				self.values.cooldown.long_dis_revive = {
-					{1, 20}
+					{1, 30}
 				}
 				self.morale_boost_speed_bonus = 1.2
 				self.morale_boost_suppression_resistance = 1
@@ -753,6 +754,11 @@ function UpgradesTweakData:_init_pd2_values()
 		0.3,
 		0.4
 	}
+	self.values.player.tier_dodge_chance = {
+		0.05,
+		0.05,
+		0.05
+	}
 	self.values.player.damage_to_hot_extra_ticks = {2}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
@@ -768,6 +774,7 @@ function UpgradesTweakData:_init_pd2_values()
 			taser_tased = true,
 			poison = true,
 			fire = true,
+			projectile = true,
 			swat_van = true,
 			civilian = false
 		}
@@ -812,6 +819,13 @@ function UpgradesTweakData:_init_pd2_values()
 			{1, 2},
 			{1, 2}
 		}
+	}
+
+	--Chico--
+	self.values.player.chico_armor_multiplier = {
+		1.05,
+		1.1,
+		1.15
 	}	
 end
 

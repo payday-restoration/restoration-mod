@@ -1,4 +1,10 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
+function WeaponFlashLight:is_haunted()
+	local job_id = managers.job and managers.job:current_job_id()
+	local tweak = job_id and tweak_data.narrative.jobs[job_id]
+	return tweak and tweak.is_halloween_level
+end
 
 Month = os.date("%m")
 if Month == "10" then

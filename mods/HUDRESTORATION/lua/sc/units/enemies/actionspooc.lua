@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 ActionSpooc = ActionSpooc or class()
 ActionSpooc._walk_anim_velocities = CopActionWalk._walk_anim_velocities

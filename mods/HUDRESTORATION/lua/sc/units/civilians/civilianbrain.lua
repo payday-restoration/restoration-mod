@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function CivilianBrain:on_intimidated(n, unit)
 	CivilianBrain.super.on_intimidated(self, n, unit)

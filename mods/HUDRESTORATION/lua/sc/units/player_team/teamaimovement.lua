@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function TeamAIMovement:on_SPOOCed( enemy_unit )
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"

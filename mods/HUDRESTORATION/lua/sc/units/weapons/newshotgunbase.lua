@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 local old_update_stats_values = NewShotgunBase._update_stats_values
 

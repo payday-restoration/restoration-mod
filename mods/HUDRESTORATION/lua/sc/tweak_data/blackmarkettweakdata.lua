@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 local old_projectiles = BlackMarketTweakData._init_projectiles
 function BlackMarketTweakData:_init_projectiles(tweak_data)
@@ -18,6 +18,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.molotov.client_authoritative = false
 	self.projectiles.launcher_frag.client_authoritative = false
 	self.projectiles.launcher_incendiary.client_authoritative = false
+
+	self.projectiles.launcher_frag_arbiter.physic_effect = Idstring("physic_effects/anti_gravitate")
 
 	--Throwables--
 	self.projectiles.wpn_prj_four.max_amount = 6
@@ -2363,9 +2365,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.nin.stats.min_damage = 8
 	self.melee_weapons.nin.stats.max_damage = 8
 	self.melee_weapons.nin.stats.min_damage_effect = 0.8
-	self.melee_weapons.nin.stats.max_damage_effect = 1.2
-	self.melee_weapons.nin.stats.charge_time = 1
-	self.melee_weapons.nin.stats.range = 155
+	self.melee_weapons.nin.stats.max_damage_effect = 0.8
+	self.melee_weapons.nin.stats.charge_time = 0.00001
+	self.melee_weapons.nin.stats.range = 600
 	self.melee_weapons.nin.stats.concealment = 27
 	self.melee_weapons.nin.stats.remove_weapon_movement_penalty = true
 	self.melee_weapons.nin.repeat_expire_t = 0.9
@@ -2431,6 +2433,31 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.road.repeat_expire_t = 0.8
 	self.melee_weapons.road.expire_t = 0.8
 	self.melee_weapons.road.melee_damage_delay = 0.375
+
+	--Chainsaw + Gun--
+	self.melee_weapons.cs.stats.min_damage = 12
+	self.melee_weapons.cs.stats.max_damage = 12
+	self.melee_weapons.cs.stats.min_damage_effect = 0.1
+	self.melee_weapons.cs.stats.max_damage_effect = 0.1
+	self.melee_weapons.cs.speed_mult = 1
+	self.melee_weapons.cs.stats.charge_time = 0.00001
+	self.melee_weapons.cs.stats.range = 200
+	self.melee_weapons.cs.stats.concealment = 21
+	self.melee_weapons.cs.repeat_expire_t = 1.6
+	self.melee_weapons.cs.expire_t = 1.2
+
+	--It's da hotline--
+	self.melee_weapons.brick.speed_mult = 1.15
+	self.melee_weapons.brick.stats.min_damage = 1.5
+	self.melee_weapons.brick.stats.max_damage = 4
+	self.melee_weapons.brick.stats.min_damage_effect = 2.5
+	self.melee_weapons.brick.stats.max_damage_effect = 4
+	self.melee_weapons.brick.stats.charge_time = 1.1
+	self.melee_weapons.brick.stats.range = 155
+	self.melee_weapons.brick.stats.concealment = 30
+	self.melee_weapons.brick.repeat_expire_t = 0.8
+	self.melee_weapons.brick.expire_t = 1.1
+	self.melee_weapons.brick.melee_damage_delay = 0.1
 end	
 
 end

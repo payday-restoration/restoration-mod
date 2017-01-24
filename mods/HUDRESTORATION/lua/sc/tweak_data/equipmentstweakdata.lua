@@ -2,8 +2,7 @@ local sc_etd = EquipmentsTweakData.init
 function EquipmentsTweakData:init()
 	sc_etd(self, tweak_data)
 
-
-	if restoration.Options:GetValue("SC/SC") then	
+	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 		--Because you're not getting 6 fucking sentries--
 		self.sentry_gun.quantity = {1}
 		self.trip_mine.quantity = {3, 3}

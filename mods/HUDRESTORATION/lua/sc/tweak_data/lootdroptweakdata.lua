@@ -2,7 +2,7 @@ local old_init = old_init or LootDropTweakData.init
  
 function LootDropTweakData:init(tweak_data)
     old_init(self, tweak_data)
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
     for i = 10, 100, 10 do
         self.WEIGHTED_TYPE_CHANCE[i].weapon_mods = self.WEIGHTED_TYPE_CHANCE[i].weapon_mods + self.WEIGHTED_TYPE_CHANCE[i].cash + self.WEIGHTED_TYPE_CHANCE[i].xp
         self.WEIGHTED_TYPE_CHANCE[i].cash = 0

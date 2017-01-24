@@ -12,14 +12,18 @@ local math_lerp = math.lerp
 local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
 
-local setup_original = SawWeaponBase.setup
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-function SawWeaponBase:setup(...)
-	setup_original(self, ...)
-	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+	local setup_original = SawWeaponBase.setup
+
+	function SawWeaponBase:setup(...)
+		setup_original(self, ...)
+		self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+	end
+
 end
 
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 function SawWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit)
 	if self:get_ammo_remaining_in_clip() == 0 then
@@ -80,7 +84,6 @@ local mvec_spread_direction = Vector3()
 function SawWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	local result = {}
 	local hit_unit
-	local spread = self:_get_spread(user_unit)
 	from_pos = self._obj_fire:position()
 	direction = self._obj_fire:rotation():y()
 	mvec3_add(from_pos, direction * -30)
@@ -131,7 +134,9 @@ SawHit = SawHit or class(InstantBulletBase)
 
 function SawHit:on_collision(col_ray, weapon_unit, user_unit, damage)
 	local hit_unit = col_ray.unit
-	if hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank" or hit_unit:base()._tweak_table == "tank_hw" ) then
+	if hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank") then
+		damage = 100
+	elseif hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank_hw") then
 		damage = 100
 	end
 	local result = InstantBulletBase.on_collision(self, col_ray, weapon_unit, user_unit, damage)

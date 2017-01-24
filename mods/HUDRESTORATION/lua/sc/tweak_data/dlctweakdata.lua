@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 old_DLCTweakData_init = DLCTweakData.init
 function DLCTweakData:init(...)
@@ -81,11 +81,6 @@ function DLCTweakData:init(...)
 		{
 			type_items = "weapon_mods",
 			item_entry = "wpn_fps_upg_ammo_40sw",
-			amount = 3
-		},
-		{
-			type_items = "weapon_mods",
-			item_entry = "wpn_fps_pis_g17_m_ext",
 			amount = 3
 		},
 		{

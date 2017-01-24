@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local job = Global.level_data and Global.level_data.level_id
 
@@ -119,7 +119,11 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.deathguard = true
 	self.cop.chatter = presets.enemy_chatter.cop
 	self.cop.melee_weapon = "baton"
-	self.cop.steal_loot = true
+	if job == "chill_combat" then
+		self.cop.steal_loot = true
+	else
+		self.cop.steal_loot = true
+	end
  	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
 	self.cop_scared.surrender = presets.surrender.always
@@ -152,7 +156,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi.speech_prefix_p1 = self._prefix_data_p1.cop()
     	self.fbi.speech_prefix_p2 = "n"
     	self.fbi.speech_prefix_count = 4
-	self.fbi.silent_priority_shout = "f37"
+	self.fbi.silent_priority_shout = "g29"
     	self.fbi.access = "fbi"
     	self.fbi.dodge = presets.dodge.athletic
     	self.fbi.deathguard = true
@@ -161,16 +165,44 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.no_arrest = false
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_vet = deep_clone(self.fbi)
+	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
-	self.fbi_vet.HEALTH_INIT = 30
-	self.fbi_vet.headshot_dmg_mul = 2.145
+	self.fbi_vet.suppression = nil
+    	self.fbi_vet.can_shoot_while_dodging = true
+	self.fbi_vet.HEALTH_INIT = 10
+	self.fbi_vet.headshot_dmg_mul = 2
+	self.fbi_vet.damage.bullet_damage_mul = 0
+	self.fbi_vet.DAMAGE_CLAMP_BULLET = 0.0
+	self.fbi_vet.damage.bullet_dodge_chance = 100
     	self.fbi_vet.dodge = presets.dodge.veteran
     	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.use_animation_on_fire_damage = false
-	self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
+	self.fbi_vet.priority_shout = "g29"
+	if job == "chill_combat" then
+		self.fbi_vet.steal_loot = nil
+	else
+		self.fbi_vet.steal_loot = true
+	end
+	self.fbi_vet.immune_to_knock_down = true
+	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.elite)
+	self.fbi_vet.damage.hurt_severity.bullet = {
+		health_reference = 1,
+		zones = {
+			{none = 1}
+		}
+	}
+	self.fbi_vet.damage.hurt_severity.melee = {
+		health_reference = "current",
+		zones = {
+			{
+				health_limit = 1,
+				heavy = 1
+			}
+		}
+	}
 	self.fbi_vet.dodge_with_grenade = {
 		smoke = {
-			duration = {10, 20}
+			duration = {12, 12}
 		}
 	}
 	function self.fbi_vet.dodge_with_grenade.check(t, nr_grenades_used)
@@ -221,8 +253,12 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.deathguard = true
 	self.medic.no_arrest = true
 	self.medic.chatter = {aggressive = true, contact = true}
-	self.medic.steal_loot = true
-	self.medic.priority_shout = "f47"
+	if job == "chill_combat" then
+		self.medic.steal_loot = nil
+	else
+		self.medic.steal_loot = true
+	end
+	self.medic.priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 700
 	table.insert(self._enemy_list, "medic")
 end
@@ -253,7 +289,11 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = "knife_1"
 	self.swat.melee_weapon_dmg_multiplier = 1
-	self.swat.steal_loot = true
+	if job == "chill_combat" then
+		self.swat.steal_loot = true
+	else
+		self.swat.steal_loot = true
+	end
 	table.insert(self._enemy_list, "swat")
 end
 
@@ -284,7 +324,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.dodge = presets.dodge.heavy
 	self.heavy_swat.no_arrest = false
 	self.heavy_swat.chatter = presets.enemy_chatter.swat
-	self.heavy_swat.steal_loot = true
+	if job == "chill_combat" then
+		self.heavy_swat.steal_loot = nil
+	else
+		self.heavy_swat.steal_loot = true
+	end
 	table.insert(self._enemy_list, "heavy_swat")
 end
 
@@ -315,7 +359,11 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.chatter = presets.enemy_chatter.swat
 	self.fbi_swat.melee_weapon = "knife_1"
 	self.fbi_swat.melee_weapon_dmg_multiplier = 2
-	self.fbi_swat.steal_loot = true
+	if job == "chill_combat" then
+		self.fbi_swat.steal_loot = nil
+	else
+		self.fbi_swat.steal_loot = true
+	end
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
@@ -349,7 +397,11 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.dodge = presets.dodge.heavy_very_hard
 	self.fbi_heavy_swat.no_arrest = false
 	self.fbi_heavy_swat.chatter = presets.enemy_chatter.swat
-	self.fbi_heavy_swat.steal_loot = true
+	if job == "chill_combat" then
+		self.fbi_heavy_swat.steal_loot = nil
+	else
+		self.fbi_heavy_swat.steal_loot = true
+	end
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -390,7 +442,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.dodge = presets.dodge.elite
 	self.city_swat.dodge_with_grenade = {
 		smoke = {
-			duration = {10, 20}
+			duration = {12, 12}
 		}
 	}
 	function self.city_swat.dodge_with_grenade.check(t, nr_grenades_used)
@@ -404,7 +456,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.chatter = presets.enemy_chatter.swat
 	self.city_swat.melee_weapon = nil
 	self.city_swat.melee_weapon_dmg_multiplier = 2.5
-	self.city_swat.steal_loot = true
+	if job == "chill_combat" then
+		self.city_swat.steal_loot = nil
+	else
+		self.city_swat.steal_loot = true
+	end
 	self.city_swat.has_alarm_pager = true
 	self.city_swat.calls_in = true
 	self.city_swat.use_animation_on_fire_damage = false
@@ -431,7 +487,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
 	self.sniper.speech_prefix_p2 = "n"
 	self.sniper.speech_prefix_count = 4
-	self.sniper.priority_shout = "f34"
+	self.sniper.priority_shout = "f34x_any"
 	self.sniper.access = "sniper"
 	self.sniper.no_retreat = true
 	self.sniper.no_arrest = true
@@ -534,7 +590,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.chatter = presets.enemy_chatter.no_chatter
 	self.mobster_boss.use_radio = nil
 	self.mobster_boss.can_be_tased = false
-	self.mobster_boss.priority_shout = "f45"
+	self.mobster_boss.priority_shout = "v28"
 	self.mobster_boss.use_animation_on_fire_damage = false
 	self.mobster_boss.flammable = true
 	self.mobster_boss.immune_to_knock_down = true
@@ -546,7 +602,6 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss = deep_clone(presets.base)
 	self.biker_boss.experience = {}
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
-	self:_process_weapon_usage_table(self.biker_boss.weapon)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 750
 	self.biker_boss.headshot_dmg_mul = 3
@@ -579,7 +634,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.flammable = false
 	self.biker_boss.can_be_tased = false
 	self.biker_boss.immune_to_knock_down = true
-	self.biker_boss.priority_shout = "f45"
+	self.biker_boss.priority_shout = "v29"
 	self.biker_boss.immune_to_concussion = true
  	table.insert(self._enemy_list, "biker_boss")
 end
@@ -605,7 +660,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
 	self.hector_boss_no_armor.use_radio = nil
 	self.hector_boss_no_armor.can_be_tased = false
-	self.hector_boss_no_armor.priority_shout = "f45"
+	self.hector_boss_no_armor.priority_shout = "v28"
  	table.insert(self._enemy_list, "hector_boss_no_armor")
 end
 
@@ -614,7 +669,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.experience = {}
 	self.chavez_boss.weapon = deep_clone(presets.weapon.normal)
 	self.chavez_boss.detection = presets.detection.normal
-	self.chavez_boss.priority_shout = "f45"
+	self.chavez_boss.priority_shout = "v28"
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.chavez_boss.HEALTH_INIT = 750
 	self.chavez_boss.headshot_dmg_mul = 3
@@ -650,6 +705,116 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
+function CharacterTweakData:_init_bolivians(presets)
+	self.bolivian = deep_clone(self.gangster)
+	self.bolivian.detection = presets.detection.normal
+	self.bolivian.access = "security"
+	self.bolivian.radio_prefix = "fri_"
+	self.bolivian.suspicious = true
+	self.bolivian.crouch_move = nil
+	self.bolivian.no_arrest = true
+	table.insert(self._enemy_list, "bolivian")
+	self.bolivian_indoors = deep_clone(self.bolivian)
+	self.bolivian_indoors.suppression = presets.suppression.hard
+	self.bolivian_indoors.has_alarm_pager = true
+	self.bolivian_indoors.surrender = presets.surrender.hard
+	self.bolivian_indoors.surrender_break_time = {20, 30}
+	self.bolivian_indoors.detection = presets.detection.guard
+	self.bolivian_indoors.HEALTH_INIT = 6
+	self.bolivian_indoors.headshot_dmg_mul = 3.4
+	self.bolivian_indoors.move_speed = presets.move_speed.normal
+	self.bolivian_indoors.ecm_vulnerability = 1
+	self.bolivian_indoors.no_arrest = false
+	self.bolivian_indoors.ecm_hurts = {
+		ears = {min_duration = 8, max_duration = 10}
+	}
+	table.insert(self._enemy_list, "bolivian_indoors")
+end
+
+function CharacterTweakData:_init_drug_lord_boss(presets)
+	self.drug_lord_boss = deep_clone(presets.base)
+	self.drug_lord_boss.experience = {}
+	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
+	self.drug_lord_boss.detection = presets.detection.normal
+	self.drug_lord_boss.HEALTH_INIT = 750
+	self.drug_lord_boss.headshot_dmg_mul = 3
+	self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.drug_lord_boss.damage.explosion_damage_mul = 1
+	self.drug_lord_boss.move_speed = presets.move_speed.slow
+	self.drug_lord_boss.allowed_poses = {stand = true}
+	self.drug_lord_boss.crouch_move = false
+	self.drug_lord_boss.no_run_start = true
+	self.drug_lord_boss.no_run_stop = true
+	self.drug_lord_boss.no_retreat = true
+	self.drug_lord_boss.no_arrest = true
+	self.drug_lord_boss.surrender = nil
+	self.drug_lord_boss.ecm_vulnerability = 0
+	self.drug_lord_boss.ecm_hurts = {
+		ears = {min_duration = 0, max_duration = 0}
+	}
+	self.drug_lord_boss.weapon_voice = "3"
+	self.drug_lord_boss.experience.cable_tie = "tie_swat"
+	self.drug_lord_boss.access = "gangster"
+	self.drug_lord_boss.speech_prefix_p1 = "bb"
+	self.drug_lord_boss.speech_prefix_p2 = "n"
+	self.drug_lord_boss.speech_prefix_count = 1
+	self.drug_lord_boss.rescue_hostages = false
+	self.drug_lord_boss.silent_priority_shout = "f37"
+	self.drug_lord_boss.melee_weapon = "fists_dozer"
+	self.drug_lord_boss.melee_weapon_dmg_multiplier = 1
+	self.drug_lord_boss.steal_loot = nil
+	self.drug_lord_boss.calls_in = nil
+	self.drug_lord_boss.chatter = presets.enemy_chatter.no_chatter
+	self.drug_lord_boss.use_radio = nil
+	self.drug_lord_boss.can_be_tased = false
+	self.drug_lord_boss.use_animation_on_fire_damage = false
+	self.drug_lord_boss.flammable = true
+	self.drug_lord_boss.can_be_tased = false
+	self.drug_lord_boss.immune_to_knock_down = true
+	self.drug_lord_boss.immune_to_concussion = true
+	self.drug_lord_boss.priority_shout = "v28"
+	table.insert(self._enemy_list, "drug_lord_boss")
+end
+
+function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
+	self.drug_lord_boss_stealth = deep_clone(presets.base)
+	self.drug_lord_boss_stealth.experience = {}
+	self.drug_lord_boss_stealth.weapon = deep_clone(presets.weapon.normal)
+	self.drug_lord_boss_stealth.detection = presets.detection.normal
+	self.drug_lord_boss_stealth.HEALTH_INIT = 6
+	self.drug_lord_boss_stealth.headshot_dmg_mul = 3.4
+	self.drug_lord_boss_stealth.damage.explosion_damage_mul = 1
+	self.drug_lord_boss_stealth.move_speed = presets.move_speed.very_fast
+	self.drug_lord_boss_stealth.no_retreat = true
+	self.drug_lord_boss_stealth.no_arrest = true
+	self.drug_lord_boss_stealth.surrender = nil
+	self.drug_lord_boss_stealth.ecm_vulnerability = 0
+	self.drug_lord_boss_stealth.ecm_hurts = {
+		ears = {min_duration = 0, max_duration = 0}
+	}
+	self.drug_lord_boss_stealth.weapon_voice = "3"
+	self.drug_lord_boss_stealth.experience.cable_tie = "tie_swat"
+	self.drug_lord_boss_stealth.access = "gangster"
+	self.drug_lord_boss_stealth.speech_prefix_p1 = "bb"
+	self.drug_lord_boss_stealth.speech_prefix_p2 = "n"
+	self.drug_lord_boss_stealth.speech_prefix_count = 1
+	self.drug_lord_boss_stealth.rescue_hostages = false
+	self.drug_lord_boss_stealth.silent_priority_shout = "f37"
+	self.drug_lord_boss_stealth.melee_weapon = "fists_dozer"
+	self.drug_lord_boss_stealth.melee_weapon_dmg_multiplier = 1
+	self.drug_lord_boss_stealth.steal_loot = nil
+	self.drug_lord_boss_stealth.calls_in = nil
+	self.drug_lord_boss_stealth.chatter = presets.enemy_chatter.no_chatter
+	self.drug_lord_boss_stealth.use_radio = nil
+	self.drug_lord_boss_stealth.use_animation_on_fire_damage = true
+	self.drug_lord_boss_stealth.flammable = true
+	self.drug_lord_boss_stealth.can_be_tased = true
+	self.drug_lord_boss_stealth.immune_to_knock_down = false
+	self.drug_lord_boss_stealth.immune_to_concussion = false
+	self.drug_lord_boss_stealth.priority_shout = "v28"
+	table.insert(self._enemy_list, "drug_lord_boss_stealth")
+end
+
 function CharacterTweakData:_init_tank(presets)
 	self.tank = deep_clone(presets.base)
 	self.tank.experience = {}
@@ -660,7 +825,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self:_process_weapon_usage_table(self.tank.weapon)
 	self.tank.detection = presets.detection.normal
-	self.tank.HEALTH_INIT = 550
+	self.tank.HEALTH_INIT = 500
 	self.tank.headshot_dmg_mul = 10
 	self.tank.damage.explosion_damage_mul = 1
 	self.tank.move_speed = presets.move_speed.slow
@@ -682,7 +847,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
 	self.tank.speech_prefix_p2 = nil
 	self.tank.speech_prefix_count = nil
-	self.tank.priority_shout = "f30"
+	self.tank.priority_shout = "f30x_any"
 	self.tank.rescue_hostages = true
 	self.tank.deathguard = true
 	self.tank.melee_weapon = "fists_dozer"
@@ -700,12 +865,16 @@ function CharacterTweakData:_init_tank(presets)
 		contact = true
  	}
 	self.tank.announce_incomming = "incomming_tank"
-	self.tank.steal_loot = true
+	if job == "chill_combat" then
+		self.tank.steal_loot = nil
+	else
+		self.tank.steal_loot = true
+	end
 	self.tank.calls_in = nil
 	self.tank.use_animation_on_fire_damage = false
 	self.tank.flammable = true
 	self.tank.can_be_tased = false
-	self.tank.immune_to_knock_down = true
+	self.tank.immune_to_knock_down = false
  	table.insert(self._enemy_list, "tank")
 	self.tank_2 = deep_clone(self.tank)
 	self.tank_2.HEALTH_RAGE_PERCENTAGE = 0.75
@@ -716,18 +885,23 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_3.AUTORAGE_TIMER = 10
  	table.insert(self._enemy_list, "tank_3")
 	self.tank_hw = deep_clone(self.tank)
-	self.tank_hw.HEALTH_INIT = 550
+	self.tank_hw.HEALTH_INIT = 500
 	self.tank_hw.critical_hits = {
 		damage_mul = 2
 	}
 	self.tank_hw.headshot_dmg_mul = 6.3954
 	self.tank_hw.damage.explosion_damage_mul = 1
-	self.tank_hw.immune_to_concussion = true
+	self.tank_hw.immune_to_concussion = false
 	self.tank_hw.use_animation_on_fire_damage = false
 	self.tank_hw.flammable = true
 	self.tank_hw.can_be_tased = false
 	self.tank_hw.melee_anims = nil
 	self.tank_hw.move_speed = presets.move_speed.slow
+	if job == "chill_combat" then
+		self.tank_hw.steal_loot = nil
+	else
+		self.tank_hw.steal_loot = true
+	end
  	table.insert(self._enemy_list, "tank_hw")
 end
 
@@ -746,7 +920,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.surrender_break_time = {4, 6}
 	self.spooc.suppression = nil
 	self.spooc.surrender = presets.surrender.special
-	self.spooc.priority_shout = "f33"
+	self.spooc.priority_shout = "f33x_any"
 	self.spooc.priority_shout_max_dis = 700
 	self.spooc.rescue_hostages = true
 	self.spooc.spooc_attack_timeout = {3, 3}
@@ -761,7 +935,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.dodge = presets.dodge.ninja
 	self.spooc.dodge_with_grenade = {
 		smoke = {
-			duration = {10, 20}
+			duration = {12, 12}
 		}
 	}
 	function self.spooc.dodge_with_grenade.check(t, nr_grenades_used)
@@ -774,7 +948,11 @@ function CharacterTweakData:_init_spooc(presets)
 	end
 
 	self.spooc.chatter = presets.enemy_chatter.no_chatter
-	self.spooc.steal_loot = true
+	if job == "chill_combat" then
+		self.spooc.steal_loot = nil
+	else
+		self.spooc.steal_loot = true
+	end
 	self.spooc.melee_weapon = "baton"
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = false
@@ -801,7 +979,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.ecm_hurts = {
 		ears = {min_duration = 7, max_duration = 9}
 	}
-	self.shield.priority_shout = "f31"
+	self.shield.priority_shout = "f31x_any"
 	self.shield.rescue_hostages = false
 	self.shield.deathguard = false
 	self.shield.no_equip_anim = true
@@ -820,8 +998,13 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.access = "shield"
 	self.shield.chatter = presets.enemy_chatter.shield
 	self.shield.announce_incomming = "incomming_shield"
-	self.shield.steal_loot = true
+	if job == "chill_combat" then
+		self.shield.steal_loot = nil
+	else
+		self.shield.steal_loot = true
+	end
 	self.shield.use_animation_on_fire_damage = false
+	self.shield.immune_to_knock_down = true
  	table.insert(self._enemy_list, "shield")
 end
 
@@ -832,11 +1015,13 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 8
 	self.phalanx_minion.HEALTH_INIT = 230
+	self.phalanx_minion.DAMAGE_CLAMP_BULLET = 14
 	self.phalanx_minion.damage.explosion_damage_mul = 0.5
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = true
-	self.phalanx_minion.priority_shout = "f45"
+	self.phalanx_minion.damage.shield_knocked = true
+	self.phalanx_minion.priority_shout = "f45x_any"
 	self.phalanx_minion.weapon_voice = "3"
 	self.phalanx_minion.experience.cable_tie = "tie_swat"
 	self.phalanx_minion.speech_prefix_p1 = "l"
@@ -845,7 +1030,11 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.access = "shield"
 	self.phalanx_minion.chatter = presets.enemy_chatter.shield
 	self.phalanx_minion.announce_incomming = "incomming_shield"
-	self.phalanx_minion.steal_loot = true
+	if job == "chill_combat" then
+		self.phalanx_minion.steal_loot = nil
+	else
+		self.phalanx_minion.steal_loot = true
+	end
 	self.phalanx_minion.leader = {max_nr_followers = 6}
 	self.phalanx_minion.damage_resist_followers = {multiplier = 0.75}
 	self.phalanx_minion.ecm_vulnerability = 1
@@ -855,6 +1044,8 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.use_animation_on_fire_damage = false
 	self.phalanx_minion.can_be_tased = false
 	self.phalanx_minion.immune_to_knock_down = true
+	self.phalanx_minion.immune_to_concussion = true
+	self.phalanx_minion.damage.immune_to_knockback = true
  	table.insert(self._enemy_list, "phalanx_minion")
 end
 
@@ -867,7 +1058,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.HEALTH_INIT = 750
 	self.phalanx_vip.headshot_dmg_mul = 3
 	self.phalanx_vip.damage.explosion_damage_mul = 0.5
-	self.phalanx_vip.priority_shout = "f45"
+	self.phalanx_vip.priority_shout = "f45x_any"
 	self.phalanx_vip.flammable = false
 	self.phalanx_vip.can_be_tased = false
 	self.phalanx_vip.ecm_vulnerability = nil
@@ -889,7 +1080,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.HEALTH_INIT = 750
 	self.spring.headshot_dmg_mul = 3
 	self.spring.damage.explosion_damage_mul = 0
-	self.spring.priority_shout = "f45"
+	self.spring.priority_shout = "f45x_any"
 	self.spring.flammable = false
 	self.spring.can_be_tased = false
 	self.spring.ecm_vulnerability = nil
@@ -928,7 +1119,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.speech_prefix_count = nil
 	self.taser.access = "taser"
 	self.taser.dodge = presets.dodge.athletic
-	self.taser.priority_shout = "f32"
+	self.taser.priority_shout = "f32x_any"
 	self.taser.rescue_hostages = true
 	self.taser.deathguard = true
  	self.taser.chatter = {
@@ -937,7 +1128,11 @@ function CharacterTweakData:_init_taser(presets)
 		contact = true
  	}
 	self.taser.announce_incomming = "incomming_taser"
-	self.taser.steal_loot = true
+	if job == "chill_combat" then
+		self.taser.steal_loot = nil
+	else
+		self.taser.steal_loot = true
+	end
 	self.taser.special_deaths = {}
 	self.taser.special_deaths.bullet = {
 		[("head"):id():key()] = {
@@ -995,7 +1190,8 @@ function CharacterTweakData:_init_boom(presets)
 		end
 		return false, t + delay_till_next_use
 	end
-	self.boom.priority_shout = "f45"
+	self.boom.priority_shout = "g29"
+	self.boom.custom_shout = true
 	self.boom.rescue_hostages = true
 	self.boom.deathguard = true
 	self.boom.chatter = {
@@ -1006,9 +1202,19 @@ function CharacterTweakData:_init_boom(presets)
 		entrance = true
 	}
 	self.boom.announce_incomming = "incomming_gren"
-	self.boom.steal_loot = true
+	if job == "chill_combat" then
+		self.boom.steal_loot = nil
+	else
+		self.boom.steal_loot = true
+	end
  	table.insert(self._enemy_list, "boom")
 	self.rboom = deep_clone(self.boom)
+	if job == "chill_combat" then
+		self.rboom.steal_loot = nil
+	else
+		self.rboom.steal_loot = true
+	end
+	self.rboom.speech_prefix_p1 = "clk"
  	table.insert(self._enemy_list, "rboom")
 end
 
@@ -1604,7 +1810,6 @@ function CharacterTweakData:_init_bodhi(presets)
 	self.bodhi.no_run_start = true
 	self.bodhi.no_run_stop = true
 	self.bodhi.damage = presets.gang_member_damage
-	self.bodhi.damage.explosion_damage_mul = 0
 	self.bodhi.weapon = deep_clone(presets.weapon.gang_member)
 	self.bodhi.weapon.weapons_of_choice = {
 		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
@@ -1652,7 +1857,6 @@ function CharacterTweakData:_init_sydney(presets)
 	self.sydney.no_run_start = true
 	self.sydney.no_run_stop = true
 	self.sydney.damage = presets.gang_member_damage
-	self.sydney.damage.explosion_damage_mul = 0
 	self.sydney.weapon = deep_clone(presets.weapon.gang_member)
 	self.sydney.weapon.weapons_of_choice = {
 		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
@@ -1688,6 +1892,30 @@ function CharacterTweakData:_init_wild(presets)
 	self.wild.weapon_voice = "3"
 	self.wild.access = "teamAI1"
 	self.wild.arrest = {
+		timeout = 240,
+		aggression_timeout = 6,
+		arrest_timeout = 240
+	}
+end
+
+function CharacterTweakData:_init_chico(presets)
+	self.chico = {}
+	self.chico.always_face_enemy = true
+	self.chico.no_run_start = true
+	self.chico.no_run_stop = true
+	self.chico.damage = presets.gang_member_damage
+	self.chico.weapon = deep_clone(presets.weapon.gang_member)
+	self.chico.weapon.weapons_of_choice = {
+		primary = Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+	}
+	self.chico.detection = presets.detection.gang_member
+	self.chico.move_speed = presets.move_speed.gang_member
+	self.chico.crouch_move = false
+	self.chico.speech_prefix = "rb17"
+	self.chico.weapon_voice = "3"
+	self.chico.access = "teamAI1"
+	self.chico.arrest = {
 		timeout = 240,
 		aggression_timeout = 6,
 		arrest_timeout = 240
@@ -2450,18 +2678,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 900,
-			acc = {0.4, 0.9},
-			dmg_mul = 1,
-			recoil = {1.5, 2},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 0.95,
 			recoil = {1.5, 2},
@@ -2473,7 +2689,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.9,
 			recoil = {1.5, 2},
@@ -2485,7 +2701,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.85,
 			recoil = {1.5, 2},
@@ -2497,7 +2713,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.8,
 			recoil = {1.5, 2},
@@ -2509,7 +2725,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.75,
 			recoil = {1.5, 2},
@@ -2521,7 +2737,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.7,
 			recoil = {1.5, 2},
@@ -2533,7 +2749,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.65,
 			recoil = {1.5, 2},
@@ -2545,7 +2761,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.6,
 			recoil = {1.5, 2},
@@ -2557,7 +2773,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.55,
 			recoil = {1.5, 2},
@@ -2569,7 +2785,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.5,
 			recoil = {1.5, 2},
@@ -2581,7 +2797,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.45,
 			recoil = {1.5, 2},
@@ -2593,7 +2809,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.4,
 			recoil = {1.5, 2},
@@ -2605,7 +2821,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.35,
 			recoil = {1.5, 2},
@@ -2617,7 +2833,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3,
 			recoil = {1.5, 2},
@@ -2629,7 +2845,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.25,
 			recoil = {1.5, 2},
@@ -2641,7 +2857,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2,
 			recoil = {1.5, 2},
@@ -2653,7 +2869,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15,
 			recoil = {1.5, 2},
@@ -2665,7 +2881,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.1,
 			recoil = {1.5, 2},
@@ -2677,7 +2893,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.05,
 			recoil = {1.5, 2},
@@ -2689,7 +2905,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -3580,18 +3796,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 900,
-			acc = {0.4, 0.9},
-			dmg_mul = 2,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 1.9,
 			recoil = {1.5, 2},
@@ -3603,7 +3807,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.9,
 			recoil = {1.5, 2},
@@ -3615,7 +3819,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.85,
 			recoil = {1.5, 2},
@@ -3627,7 +3831,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.8,
 			recoil = {1.5, 2},
@@ -3639,7 +3843,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.75,
 			recoil = {1.5, 2},
@@ -3651,7 +3855,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.7,
 			recoil = {1.5, 2},
@@ -3663,7 +3867,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.65,
 			recoil = {1.5, 2},
@@ -3675,7 +3879,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.6,
 			recoil = {1.5, 2},
@@ -3687,7 +3891,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.55,
 			recoil = {1.5, 2},
@@ -3699,7 +3903,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.5,
 			recoil = {1.5, 2},
@@ -3711,7 +3915,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.45,
 			recoil = {1.5, 2},
@@ -3723,7 +3927,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.4,
 			recoil = {1.5, 2},
@@ -3735,7 +3939,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.35,
 			recoil = {1.5, 2},
@@ -3747,7 +3951,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3,
 			recoil = {1.5, 2},
@@ -3759,7 +3963,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.25,
 			recoil = {1.5, 2},
@@ -3771,7 +3975,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2,
 			recoil = {1.5, 2},
@@ -3783,7 +3987,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15,
 			recoil = {1.5, 2},
@@ -3795,7 +3999,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.1,
 			recoil = {1.5, 2},
@@ -3807,7 +4011,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.05,
 			recoil = {1.5, 2},
@@ -3819,7 +4023,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -3886,18 +4090,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 900,
 			acc = {0.4, 0.9},
-			dmg_mul = 2,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.9},
 			dmg_mul = 1.9,
 			recoil = {0.4, 0.7},
 			mode = {
@@ -3908,7 +4100,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 0.9,
 			recoil = {0.45, 0.8},
@@ -3920,7 +4112,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.85,
 			recoil = {0.45, 0.8},
@@ -3932,7 +4124,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.8,
 			recoil = {0.45, 0.8},
@@ -3944,7 +4136,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.75,
 			recoil = {0.45, 0.8},
@@ -3956,7 +4148,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.7,
 			recoil = {0.45, 0.8},
@@ -3968,7 +4160,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.65,
 			recoil = {0.45, 0.8},
@@ -3980,7 +4172,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.6,
 			recoil = {0.45, 0.8},
@@ -3992,7 +4184,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.55,
 			recoil = {0.45, 0.8},
@@ -4004,7 +4196,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.5,
 			recoil = {0.45, 0.8},
@@ -4016,7 +4208,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.45,
 			recoil = {0.45, 0.8},
@@ -4028,7 +4220,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.4,
 			recoil = {0.45, 0.8},
@@ -4040,7 +4232,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.35,
 			recoil = {0.45, 0.8},
@@ -4052,7 +4244,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3,
 			recoil = {0.45, 0.8},
@@ -4064,7 +4256,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.25,
 			recoil = {0.45, 0.8},
@@ -4076,7 +4268,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2,
 			recoil = {0.45, 0.8},
@@ -4088,7 +4280,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15,
 			recoil = {0.45, 0.8},
@@ -4100,7 +4292,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.1,
 			recoil = {0.45, 0.8},
@@ -4112,7 +4304,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.05,
 			recoil = {0.45, 0.8},
@@ -4124,7 +4316,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
@@ -4702,18 +4894,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 900,
-			acc = {0.4, 0.9},
-			dmg_mul = 2.5,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 2.375,
 			recoil = {1, 1.5},
@@ -4725,7 +4905,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.25,
 			recoil = {1, 1.5},
@@ -4737,7 +4917,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.125,
 			recoil = {1, 1.5},
@@ -4749,7 +4929,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2,
 			recoil = {1, 1.5},
@@ -4761,7 +4941,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.875,
 			recoil = {1, 1.5},
@@ -4773,7 +4953,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.75,
 			recoil = {1, 1.5},
@@ -4785,7 +4965,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.625,
 			recoil = {1, 1.5},
@@ -4797,7 +4977,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.5,
 			recoil = {1, 1.5},
@@ -4809,7 +4989,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.375,
 			recoil = {1, 1.5},
@@ -4821,7 +5001,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.25,
 			recoil = {1, 1.5},
@@ -4833,7 +5013,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.125,
 			recoil = {1, 1.5},
@@ -4845,7 +5025,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.4,
 			recoil = {1.5, 2},
@@ -4857,7 +5037,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.35,
 			recoil = {1.5, 2},
@@ -4869,7 +5049,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3,
 			recoil = {1.5, 2},
@@ -4881,7 +5061,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.25,
 			recoil = {1.5, 2},
@@ -4893,7 +5073,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2,
 			recoil = {1.5, 2},
@@ -4905,7 +5085,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15,
 			recoil = {1.5, 2},
@@ -4917,7 +5097,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.1,
 			recoil = {1.5, 2},
@@ -4929,7 +5109,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.05,
 			recoil = {1.5, 2},
@@ -4941,7 +5121,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -5008,18 +5188,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 900,
 			acc = {0.4, 0.9},
-			dmg_mul = 2.5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.9},
 			dmg_mul = 2.375,
 			recoil = {0.4, 0.7},
 			mode = {
@@ -5030,7 +5198,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 2.25,
 			recoil = {0.45, 0.8},
@@ -5042,7 +5210,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.125,
 			recoil = {0.45, 0.8},
@@ -5054,7 +5222,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2,
 			recoil = {0.45, 0.8},
@@ -5066,7 +5234,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.875,
 			recoil = {0.45, 0.8},
@@ -5078,7 +5246,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.75,
 			recoil = {0.45, 0.8},
@@ -5090,7 +5258,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.625,
 			recoil = {0.45, 0.8},
@@ -5102,7 +5270,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.5,
 			recoil = {0.45, 0.8},
@@ -5114,7 +5282,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.375,
 			recoil = {0.45, 0.8},
@@ -5126,7 +5294,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.25,
 			recoil = {0.45, 0.8},
@@ -5138,7 +5306,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.125,
 			recoil = {0.45, 0.8},
@@ -5150,7 +5318,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.4,
 			recoil = {0.45, 0.8},
@@ -5162,7 +5330,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.35,
 			recoil = {0.45, 0.8},
@@ -5174,7 +5342,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3,
 			recoil = {0.45, 0.8},
@@ -5186,7 +5354,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.25,
 			recoil = {0.45, 0.8},
@@ -5198,7 +5366,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2,
 			recoil = {0.45, 0.8},
@@ -5210,7 +5378,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15,
 			recoil = {0.45, 0.8},
@@ -5222,7 +5390,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.1,
 			recoil = {0.45, 0.8},
@@ -5234,7 +5402,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.05,
 			recoil = {0.45, 0.8},
@@ -5246,7 +5414,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
@@ -5650,18 +5818,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 900,
-			acc = {0.4, 0.9},
-			dmg_mul = 2.875,
-			recoil = {1.5, 2},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 2.73125,
 			recoil = {1.5, 2},
@@ -5673,7 +5829,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.5875,
 			recoil = {1.5, 2},
@@ -5685,7 +5841,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.44375,
 			recoil = {1.5, 2},
@@ -5697,7 +5853,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.3,
 			recoil = {1.5, 2},
@@ -5709,7 +5865,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.15625,
 			recoil = {1.5, 2},
@@ -5721,7 +5877,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.0125,
 			recoil = {1.5, 2},
@@ -5733,7 +5889,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.86875,
 			recoil = {1.5, 2},
@@ -5745,7 +5901,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.725,
 			recoil = {1.5, 2},
@@ -5757,7 +5913,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.58125,
 			recoil = {1.5, 2},
@@ -5769,7 +5925,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.3125,
 			recoil = {1.5, 2},
@@ -5781,7 +5937,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.18125,
 			recoil = {1.5, 2},
@@ -5793,7 +5949,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.05,
 			recoil = {1.5, 2},
@@ -5805,7 +5961,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.91875,
 			recoil = {1.5, 2},
@@ -5817,7 +5973,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.7875,
 			recoil = {1.5, 2},
@@ -5829,7 +5985,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.65625,
 			recoil = {1.5, 2},
@@ -5841,7 +5997,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.525,
 			recoil = {1.5, 2},
@@ -5853,7 +6009,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.39375,
 			recoil = {1.5, 2},
@@ -5865,7 +6021,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2625,
 			recoil = {1.5, 2},
@@ -5877,7 +6033,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.13125,
 			recoil = {1.5, 2},
@@ -5889,7 +6045,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -5941,18 +6097,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 900,
 			acc = {0.4, 0.9},
-			dmg_mul = 2.875,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.9},
 			dmg_mul = 2.73125,
 			recoil = {0.4, 0.7},
 			mode = {
@@ -5963,7 +6107,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 2.5875,
 			recoil = {0.45, 0.8},
@@ -5975,7 +6119,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.44375,
 			recoil = {0.45, 0.8},
@@ -5987,7 +6131,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.3,
 			recoil = {0.45, 0.8},
@@ -5999,7 +6143,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.15625,
 			recoil = {0.45, 0.8},
@@ -6011,7 +6155,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.0125,
 			recoil = {0.45, 0.8},
@@ -6023,7 +6167,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.86875,
 			recoil = {0.45, 0.8},
@@ -6035,7 +6179,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.725,
 			recoil = {0.45, 0.8},
@@ -6047,7 +6191,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.58125,
 			recoil = {0.45, 0.8},
@@ -6059,7 +6203,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.3125,
 			recoil = {0.45, 0.8},
@@ -6071,7 +6215,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.18125,
 			recoil = {0.45, 0.8},
@@ -6083,7 +6227,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.05,
 			recoil = {0.45, 0.8},
@@ -6095,7 +6239,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.91875,
 			recoil = {0.45, 0.8},
@@ -6107,7 +6251,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.7875,
 			recoil = {0.45, 0.8},
@@ -6119,7 +6263,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.65625,
 			recoil = {0.45, 0.8},
@@ -6131,7 +6275,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.525,
 			recoil = {0.45, 0.8},
@@ -6143,7 +6287,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.39375,
 			recoil = {0.45, 0.8},
@@ -6155,7 +6299,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.2625,
 			recoil = {0.45, 0.8},
@@ -6167,7 +6311,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.13125,
 			recoil = {0.45, 0.8},
@@ -6179,7 +6323,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
@@ -7279,18 +7423,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 900,
-			acc = {0.4, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 2.96875,
 			recoil = {1, 1.5},
@@ -7302,7 +7434,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.8125,
 			recoil = {1, 1.5},
@@ -7314,7 +7446,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.65625,
 			recoil = {1, 1.5},
@@ -7326,7 +7458,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.5,
 			recoil = {1, 1.5},
@@ -7338,7 +7470,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.34375,
 			recoil = {1, 1.5},
@@ -7350,7 +7482,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.1875,
 			recoil = {1, 1.5},
@@ -7362,7 +7494,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.03125,
 			recoil = {1, 1.5},
@@ -7374,7 +7506,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.875,
 			recoil = {1, 1.5},
@@ -7386,7 +7518,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.71875,
 			recoil = {1, 1.5},
@@ -7398,7 +7530,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.5625,
 			recoil = {1, 1.5},
@@ -7410,7 +7542,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.40625,
 			recoil = {1, 1.5},
@@ -7422,7 +7554,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.25,
 			recoil = {1, 1.5},
@@ -7434,7 +7566,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.09375,
 			recoil = {1, 1.5},
@@ -7446,7 +7578,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.9375,
 			recoil = {1, 1.5},
@@ -7458,7 +7590,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.78125,
 			recoil = {1, 1.5},
@@ -7470,7 +7602,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.625,
 			recoil = {1, 1.5},
@@ -7482,7 +7614,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.46875,
 			recoil = {1, 1.5},
@@ -7494,7 +7626,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3125,
 			recoil = {1, 1.5},
@@ -7506,7 +7638,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15625,
 			recoil = {1, 1.5},
@@ -7518,7 +7650,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -7585,18 +7717,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 900,
 			acc = {0.4, 0.9},
-			dmg_mul = 3.125,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.9},
 			dmg_mul = 2.96875,
 			recoil = {0.4, 0.7},
 			mode = {
@@ -7607,7 +7727,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 2.8125,
 			recoil = {0.45, 0.8},
@@ -7619,7 +7739,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.65625,
 			recoil = {0.45, 0.8},
@@ -7631,7 +7751,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.5,
 			recoil = {0.45, 0.8},
@@ -7643,7 +7763,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.34375,
 			recoil = {0.45, 0.8},
@@ -7655,7 +7775,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.1875,
 			recoil = {0.45, 0.8},
@@ -7667,7 +7787,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.03125,
 			recoil = {0.45, 0.8},
@@ -7679,7 +7799,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.875,
 			recoil = {0.45, 0.8},
@@ -7691,7 +7811,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.71875,
 			recoil = {0.45, 0.8},
@@ -7703,7 +7823,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.5625,
 			recoil = {0.45, 0.8},
@@ -7715,7 +7835,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.40625,
 			recoil = {0.45, 0.8},
@@ -7727,7 +7847,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.25,
 			recoil = {0.45, 0.8},
@@ -7739,7 +7859,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.09375,
 			recoil = {0.45, 0.8},
@@ -7751,7 +7871,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.9375,
 			recoil = {0.45, 0.8},
@@ -7763,7 +7883,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.78125,
 			recoil = {0.45, 0.8},
@@ -7775,7 +7895,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.625,
 			recoil = {0.45, 0.8},
@@ -7787,7 +7907,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.46875,
 			recoil = {0.45, 0.8},
@@ -7799,7 +7919,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3125,
 			recoil = {0.45, 0.8},
@@ -7811,7 +7931,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15625,
 			recoil = {0.45, 0.8},
@@ -7823,7 +7943,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
@@ -8392,18 +8512,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 900,
-			acc = {0.4, 0.9},
-			dmg_mul = 3.4375,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 3.265625,
 			recoil = {1, 1.5},
@@ -8415,7 +8523,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.4, 0.75},
 			dmg_mul = 3.09375,
 			recoil = {1, 1.5},
@@ -8427,7 +8535,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.921875,
 			recoil = {1, 1.5},
@@ -8439,7 +8547,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.75,
 			recoil = {1, 1.5},
@@ -8451,7 +8559,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.578125,
 			recoil = {1, 1.5},
@@ -8463,7 +8571,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.40625,
 			recoil = {1, 1.5},
@@ -8475,7 +8583,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.234375,
 			recoil = {1, 1.5},
@@ -8487,7 +8595,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.0625,
 			recoil = {1, 1.5},
@@ -8499,7 +8607,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.890625,
 			recoil = {1, 1.5},
@@ -8511,7 +8619,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.5625,
 			recoil = {1, 1.5},
@@ -8523,7 +8631,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.40625,
 			recoil = {1, 1.5},
@@ -8535,7 +8643,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.25,
 			recoil = {1, 1.5},
@@ -8547,7 +8655,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.09375,
 			recoil = {1, 1.5},
@@ -8559,7 +8667,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.9375,
 			recoil = {1, 1.5},
@@ -8571,7 +8679,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.78125,
 			recoil = {1, 1.5},
@@ -8583,7 +8691,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.625,
 			recoil = {1, 1.5},
@@ -8595,7 +8703,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.46875,
 			recoil = {1, 1.5},
@@ -8607,7 +8715,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3125,
 			recoil = {1, 1.5},
@@ -8619,7 +8727,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15625,
 			recoil = {1, 1.5},
@@ -8631,7 +8739,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -8683,18 +8791,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 900,
 			acc = {0.4, 0.9},
-			dmg_mul = 3.4375,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.4, 0.9},
 			dmg_mul = 3.265625,
 			recoil = {0.4, 0.7},
 			mode = {
@@ -8705,7 +8801,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1100,
+			r = 1000,
 			acc = {0.2, 0.75},
 			dmg_mul = 3.09375,
 			recoil = {0.45, 0.8},
@@ -8717,7 +8813,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1200,
+			r = 1100,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.921875,
 			recoil = {0.45, 0.8},
@@ -8729,7 +8825,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1300,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.75,
 			recoil = {0.45, 0.8},
@@ -8741,7 +8837,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1400,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.578125,
 			recoil = {0.45, 0.8},
@@ -8753,7 +8849,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1500,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.40625,
 			recoil = {0.45, 0.8},
@@ -8765,7 +8861,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1600,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.234375,
 			recoil = {0.45, 0.8},
@@ -8777,7 +8873,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 2.0625,
 			recoil = {0.45, 0.8},
@@ -8789,7 +8885,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1700,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.890625,
 			recoil = {0.45, 0.8},
@@ -8801,7 +8897,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1800,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.5625,
 			recoil = {0.45, 0.8},
@@ -8813,7 +8909,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1900,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.40625,
 			recoil = {0.45, 0.8},
@@ -8825,7 +8921,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
+			r = 2000,
 			acc = {0.4, 0.75},
 			dmg_mul = 1.25,
 			recoil = {0.45, 0.8},
@@ -8837,7 +8933,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2200,
+			r = 2100,
 			acc = {0.1, 0.55},
 			dmg_mul = 1.09375,
 			recoil = {0.45, 0.8},
@@ -8849,7 +8945,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2300,
+			r = 2200,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.9375,
 			recoil = {0.45, 0.8},
@@ -8861,7 +8957,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2400,
+			r = 2300,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.78125,
 			recoil = {0.45, 0.8},
@@ -8873,7 +8969,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2500,
+			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.625,
 			recoil = {0.45, 0.8},
@@ -8885,7 +8981,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2600,
+			r = 2500,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.46875,
 			recoil = {0.45, 0.8},
@@ -8897,7 +8993,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2700,
+			r = 2600,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.3125,
 			recoil = {0.45, 0.8},
@@ -8909,7 +9005,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2800,
+			r = 2700,
 			acc = {0.1, 0.55},
 			dmg_mul = 0.15625,
 			recoil = {0.45, 0.8},
@@ -8921,7 +9017,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2800,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
@@ -10140,23 +10236,23 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		veteran = {
-			speed = 2,
+			speed = 3,
 			occasions = {
 				hit = {
-					chance = 3,
+					chance = 5,
 					check_timeout = {0, 0},
 					variations = {
-						wheel = {
+						dive = {
 							chance = 3,
 							timeout = {0, 0}
 						}
 					}
 				},
 				preemptive = {
-					chance = 3,
+					chance = 5,
 					check_timeout = {0, 0},
 					variations = {
-						wheel = {
+						dive = {
 							chance = 3,
 							timeout = {0, 0}
 						}
@@ -10352,6 +10448,65 @@ function CharacterTweakData:_presets(tweak_data)
 						fwd = 412,
 						strafe = 300,
 						bwd = 280
+					}
+				}
+			}
+		},
+		veteran = {
+			stand = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					},
+					cbt = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					}
+				},
+				run = {
+					hos = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					},
+					cbt = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					}
+				}
+			},
+			crouch = {
+				walk = {
+					hos = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					},
+					cbt = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					}
+				},
+				run = {
+					hos = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
+					},
+					cbt = {
+						fwd = 800,
+						strafe = 800,
+						bwd = 800
 					}
 				}
 			}
@@ -10901,6 +11056,7 @@ function CharacterTweakData:_create_table_structure()
 		"peacemaker",
 		"x_akmsu",
 		"x_c45",
+		"sg417",
 		"m4_boom",
 		"mp5_zeal"
 	}
@@ -10932,6 +11088,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker"),
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_x_akmsu"),
 		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45"),
+		Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
 		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	}
@@ -11051,6 +11208,10 @@ function CharacterTweakData:_set_normal()
 		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
+	self.chico.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+	}
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
@@ -11141,6 +11302,10 @@ function CharacterTweakData:_set_hard()
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.wild.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+	}
+	self.chico.weapon.weapons_of_choice = {
 		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
@@ -11236,6 +11401,10 @@ function CharacterTweakData:_set_overkill()
 	self.wild.weapon.weapons_of_choice = {
 		primary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun")
+	}
+	self.chico.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	}
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
@@ -11815,6 +11984,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.old_hoxton_mission.HEALTH_INIT = 300
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
+	self.presets.gang_member_damage.DOWNED_TIME = 0
 	self.presets.gang_member_damage.REGENERATE_TIME = 2.4
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
 	self.city_swat.dodge = self.presets.dodge.sm_wish
@@ -12021,6 +12191,10 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.fbi.HEALTH_INIT = self.fbi.HEALTH_INIT * hp_mul
 	self.fbi_vet.HEALTH_INIT = self.fbi_vet.HEALTH_INIT * hp_mul
 	self.medic.HEALTH_INIT = self.medic.HEALTH_INIT * hp_mul
+	self.bolivian.HEALTH_INIT = self.bolivian.HEALTH_INIT * hp_mul
+	self.bolivian_indoors.HEALTH_INIT = self.bolivian_indoors.HEALTH_INIT * hp_mul
+	self.drug_lord_boss.HEALTH_INIT = self.drug_lord_boss.HEALTH_INIT * hp_mul
+	self.drug_lord_boss_stealth.HEALTH_INIT = self.drug_lord_boss_stealth.HEALTH_INIT * hp_mul
 	self.fbi_swat.HEALTH_INIT = self.fbi_swat.HEALTH_INIT * hp_mul
 	self.fbi_swat_vet.HEALTH_INIT = self.fbi_swat_vet.HEALTH_INIT * hp_mul
 	self.city_swat.HEALTH_INIT = self.city_swat.HEALTH_INIT * hp_mul
@@ -12145,6 +12319,18 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.biker_escape.headshot_dmg_mul then
 		self.biker_escape.headshot_dmg_mul = self.biker_escape.headshot_dmg_mul * hs_mul
 	end
+	if self.drug_lord_boss.headshot_dmg_mul then
+		self.drug_lord_boss.headshot_dmg_mul = self.drug_lord_boss.headshot_dmg_mul * hs_mul
+	end
+	if self.drug_lord_boss_stealth.headshot_dmg_mul then
+		self.drug_lord_boss_stealth.headshot_dmg_mul = self.drug_lord_boss_stealth.headshot_dmg_mul * hs_mul
+	end
+	if self.bolivian.headshot_dmg_mul then
+		self.bolivian.headshot_dmg_mul = self.bolivian.headshot_dmg_mul * hs_mul
+	end
+	if self.bolivian_indoors.headshot_dmg_mul then
+		self.bolivian_indoors.headshot_dmg_mul = self.bolivian_indoors.headshot_dmg_mul * hs_mul
+	end
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
@@ -12182,6 +12368,10 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"rboom",
 		"taser"
 	}
+	table.insert(all_units, "bolivian")
+	table.insert(all_units, "bolivian_indoors")
+	table.insert(all_units, "drug_lord_boss")
+	table.insert(all_units, "drug_lord_boss_stealth")
 	for _, name in ipairs(all_units) do
 		local speed_table = self[name].SPEED_WALK
 		speed_table.hos = speed_table.hos * walk_mul
@@ -12195,6 +12385,10 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.fbi.SPEED_RUN = self.fbi.SPEED_RUN * run_mul
 	self.fbi_vet.SPEED_RUN = self.fbi_vet.SPEED_RUN * run_mul
 	self.medic.SPEED_RUN = self.medic.SPEED_RUN * run_mul
+	self.bolivian.SPEED_RUN = self.bolivian.SPEED_RUN * run_mul
+	self.bolivian_indoors.SPEED_RUN = self.bolivian_indoors.SPEED_RUN * run_mul
+	self.drug_lord_boss.SPEED_RUN = self.drug_lord_boss.SPEED_RUN * run_mul
+	self.drug_lord_boss_stealth.SPEED_RUN = self.drug_lord_boss_stealth.SPEED_RUN * run_mul
 	self.swat.SPEED_RUN = self.swat.SPEED_RUN * run_mul
 	self.heavy_swat.SPEED_RUN = self.heavy_swat.SPEED_RUN * run_mul
 	self.fbi_swat.SPEED_RUN = self.fbi_swat.SPEED_RUN * run_mul
@@ -12240,6 +12434,10 @@ function CharacterTweakData:_set_characters_weapon_preset(preset)
 		"biker_boss",
 		"hector_boss",
 		"hector_boss_no_armor",
+		"bolivian",
+		"bolivian_indoors",
+		"drug_lord_boss",
+		"drug_lord_boss_stealth",
 		"phalanx_vip"
 	}
 	for _, name in ipairs(all_units) do
@@ -12274,6 +12472,10 @@ function CharacterTweakData:_set_characters_melee_preset(preset)
 		"fbi_vet",
 		"swat",
 		"gangster",
+		"bolivian",
+		"bolivian_indoors",
+		"drug_lord_boss",
+		"drug_lord_boss_stealth",
 		"biker",
 		"mobster",
 		"mobster_boss",
@@ -12468,6 +12670,7 @@ function CharacterTweakData:character_map()
 				"ene_shield_1",
 				"ene_shield_2",
 				"ene_city_shield",
+				"ene_shield_gensec",
 				"ene_phalanx_1",
 				"ene_vip_1",
 				"ene_vip_2",
@@ -12687,6 +12890,17 @@ function CharacterTweakData:character_map()
 				"civ_male_pilot_2"
 			}
 		},
+		friend = {
+			path = "units/pd2_dlc_friend/characters/",
+			list = {
+				"ene_bolivian_thug_outdoor_01",
+				"ene_bolivian_thug_outdoor_02",
+				"ene_drug_lord_boss",
+				"ene_security_manager",
+				"ene_thug_indoor_01",
+				"ene_thug_indoor_02"
+			}
+		},
 		gitgud = {
 			path = "units/pd2_dlc_gitgud/characters/",
 			list = {
@@ -12698,6 +12912,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_swat_heavy",
+				"ene_zeal_heavy_shield",
 				"ene_zeal_swat_shield"
 			}
 		}

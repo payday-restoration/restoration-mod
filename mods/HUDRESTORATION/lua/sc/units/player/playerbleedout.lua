@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 --Allow converts and tied civs to revive you
 function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO_data)
@@ -103,8 +103,8 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
             self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_civilian, dist, false, false, prio, my_head_pos, cam_fwd)
 		end
         
-        if restoration._converts then
-            for u_key, u_data in pairs(restoration._converts) do
+        if SC._converts then
+            for u_key, u_data in pairs(SC._converts) do
                 if not u_data:movement():cool() and not u_data:anim_data().long_dis_interact_disabled then
                     self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, false, false, 100, my_head_pos, cam_fwd)
                 end

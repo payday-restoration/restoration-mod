@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 require("lib/units/enemies/cop/actions/lower_body/CopActionIdle")
 require("lib/units/enemies/cop/actions/lower_body/CopActionWalk")
@@ -44,6 +44,113 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.rboom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.spring = security_variant
+end
+
+function CopMovement:damage_clbk(my_unit, damage_info)
+	local hurt_type = damage_info.result.type
+	local roll = math.rand(1, 100)
+	local chance_stun = 25
+	if hurt_type == "knock_down" or hurt_type == "stagger" then
+		if self._unit:base()._tweak_table == "tank" or self._unit:base()._tweak_table == "tank_hw" then
+			if roll <= chance_stun then
+				hurt_type = "expl_hurt"
+			else
+				hurt_type = "light_hurt"		
+			end
+		else
+			hurt_type = "heavy_hurt"
+		end		
+	end
+	local block_type = hurt_type
+	if hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+		block_type = "heavy_hurt"
+	end
+	if hurt_type == "death" and self._queued_actions then
+		self._queued_actions = {}
+	end
+	if not hurt_type or Network:is_server() and self:chk_action_forbidden(block_type) then
+		if hurt_type == "death" then
+			debug_pause_unit(self._unit, "[CopMovement:damage_clbk] Death action skipped!!!", self._unit)
+			Application:draw_cylinder(self._m_pos, self._m_pos + math.UP * 5000, 30, 1, 0, 0)
+			print("active_actions")
+			for body_part, action in ipairs(self._active_actions) do
+				if action then
+					print(body_part, action:type(), inspect(action._blocks))
+				end
+			end
+		end
+		return
+	end
+	if hurt_type == "death" then
+		if self._rope then
+			self._rope:base():retract()
+			self._rope = nil
+			self._rope_death = true
+			if self._unit:sound().anim_clbk_play_sound then
+				self._unit:sound():anim_clbk_play_sound(self._unit, "repel_end")
+			end
+		end
+		if Network:is_server() then
+			self:set_attention()
+		else
+			self:synch_attention()
+		end
+	end
+	local attack_dir = damage_info.col_ray and damage_info.col_ray.ray or damage_info.attack_dir
+	local hit_pos = damage_info.col_ray and damage_info.col_ray.position or damage_info.pos
+	local lgt_hurt = hurt_type == "light_hurt"
+	local body_part = lgt_hurt and 4 or 1
+	local blocks
+	if not lgt_hurt then
+		blocks = {
+			walk = -1,
+			action = -1,
+			act = -1,
+			aim = -1,
+			tase = -1
+		}
+		if hurt_type == "bleedout" then
+			blocks.bleedout = -1
+			blocks.hurt = -1
+			blocks.heavy_hurt = -1
+			blocks.hurt_sick = -1
+		end
+	end
+	if damage_info.variant == "tase" then
+		block_type = "bleedout"
+	elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+		block_type = "heavy_hurt"
+	else
+		block_type = hurt_type
+	end
+	local client_interrupt
+	if Network:is_client() and (hurt_type == "light_hurt" or hurt_type == "hurt" and damage_info.variant ~= "tase" or hurt_type == "heavy_hurt" or hurt_type == "expl_hurt" or hurt_type == "shield_knock" or hurt_type == "counter_tased" or hurt_type == "taser_tased" or hurt_type == "counter_spooc" or hurt_type == "death" or hurt_type == "hurt_sick" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt") then
+		client_interrupt = true
+	end
+	local tweak = self._tweak_data
+	local action_data = {
+		type = "hurt",
+		block_type = block_type,
+		hurt_type = hurt_type,
+		variant = damage_info.variant,
+		direction_vec = attack_dir,
+		hit_pos = hit_pos,
+		body_part = body_part,
+		blocks = blocks,
+		client_interrupt = client_interrupt,
+		attacker_unit = damage_info.attacker_unit,
+		death_type = tweak.damage.death_severity and (damage_info.damage / tweak.HEALTH_INIT > tweak.damage.death_severity and "heavy" or "normal") or "normal",
+		ignite_character = damage_info.ignite_character,
+		start_dot_damage_roll = damage_info.start_dot_damage_roll,
+		is_fire_dot_damage = damage_info.is_fire_dot_damage,
+		fire_dot_data = damage_info.fire_dot_data
+	}
+	if Network:is_server() or not self:chk_action_forbidden(action_data) then
+		self:action_request(action_data)
+		if hurt_type == "death" and self._queued_actions then
+			self._queued_actions = {}
+		end
+	end
 end
 
 end

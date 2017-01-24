@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local damage_reduction_orig = PlayerManager.damage_reduction_skill_multiplier
 function PlayerManager:damage_reduction_skill_multiplier(damage_type, current_state, enemy_type)

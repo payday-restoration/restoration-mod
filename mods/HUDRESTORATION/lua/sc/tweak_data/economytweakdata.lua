@@ -1,14 +1,8 @@
-if restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 local old_eco_init = EconomyTweakData.init
 function EconomyTweakData:init()
 	old_eco_init(self)
-	--for bonus,i in pairs(self.bonuses) do
-		--self.bonuses[ bonus ].stats = {}
-		--self.bonuses[ bonus ].exp_multiplier = 1
-		--self.bonuses[ bonus ].money_multiplier = 1
-		--self.bonuses[ bonus ].name_id = "bm_sc_blank"
-	--end
 
 	--Modifiers are neat I guess--
 	self.bonuses.concealment_p1.name_id = "bm_menu_bonus_concealment_p1"

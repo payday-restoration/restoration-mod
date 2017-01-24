@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("SC/SC") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function TeamAILogicIdle._get_priority_attention(data, attention_objects, reaction_func)
 	reaction_func = reaction_func or TeamAILogicBase._chk_reaction_to_attention_object

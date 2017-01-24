@@ -156,7 +156,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi.speech_prefix_p1 = self._prefix_data_p1.cop()
     	self.fbi.speech_prefix_p2 = "n"
     	self.fbi.speech_prefix_count = 4
-	self.fbi.silent_priority_shout = "g29"
+	self.fbi.silent_priority_shout = "f37"
     	self.fbi.access = "fbi"
     	self.fbi.dodge = presets.dodge.athletic
     	self.fbi.deathguard = true
@@ -177,7 +177,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.dodge = presets.dodge.veteran
     	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.use_animation_on_fire_damage = false
-	self.fbi_vet.priority_shout = "g29"
+	self.fbi_vet.priority_shout = "f45"
 	if job == "chill_combat" then
 		self.fbi_vet.steal_loot = nil
 	else
@@ -258,8 +258,7 @@ function CharacterTweakData:_init_medic(presets)
 	else
 		self.medic.steal_loot = true
 	end
-	self.medic.priority_shout = "f47x_any"
-	self.medic.priority_shout_max_dis = 700
+	self.medic.priority_shout = "f47"
 	table.insert(self._enemy_list, "medic")
 end
 
@@ -487,7 +486,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
 	self.sniper.speech_prefix_p2 = "n"
 	self.sniper.speech_prefix_count = 4
-	self.sniper.priority_shout = "f34x_any"
+	self.sniper.priority_shout = "f34"
 	self.sniper.access = "sniper"
 	self.sniper.no_retreat = true
 	self.sniper.no_arrest = true
@@ -590,7 +589,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.chatter = presets.enemy_chatter.no_chatter
 	self.mobster_boss.use_radio = nil
 	self.mobster_boss.can_be_tased = false
-	self.mobster_boss.priority_shout = "v28"
+	self.mobster_boss.priority_shout = "f45"
 	self.mobster_boss.use_animation_on_fire_damage = false
 	self.mobster_boss.flammable = true
 	self.mobster_boss.immune_to_knock_down = true
@@ -634,7 +633,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.flammable = false
 	self.biker_boss.can_be_tased = false
 	self.biker_boss.immune_to_knock_down = true
-	self.biker_boss.priority_shout = "v29"
+	self.biker_boss.priority_shout = "f45"
 	self.biker_boss.immune_to_concussion = true
  	table.insert(self._enemy_list, "biker_boss")
 end
@@ -660,7 +659,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
 	self.hector_boss_no_armor.use_radio = nil
 	self.hector_boss_no_armor.can_be_tased = false
-	self.hector_boss_no_armor.priority_shout = "v28"
+	self.hector_boss_no_armor.priority_shout = "f45"
  	table.insert(self._enemy_list, "hector_boss_no_armor")
 end
 
@@ -669,7 +668,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.experience = {}
 	self.chavez_boss.weapon = deep_clone(presets.weapon.normal)
 	self.chavez_boss.detection = presets.detection.normal
-	self.chavez_boss.priority_shout = "v28"
+	self.chavez_boss.priority_shout = "f45"
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.chavez_boss.HEALTH_INIT = 750
 	self.chavez_boss.headshot_dmg_mul = 3
@@ -772,7 +771,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.can_be_tased = false
 	self.drug_lord_boss.immune_to_knock_down = true
 	self.drug_lord_boss.immune_to_concussion = true
-	self.drug_lord_boss.priority_shout = "v28"
+	self.drug_lord_boss.priority_shout = "f45"
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 
@@ -811,7 +810,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.can_be_tased = true
 	self.drug_lord_boss_stealth.immune_to_knock_down = false
 	self.drug_lord_boss_stealth.immune_to_concussion = false
-	self.drug_lord_boss_stealth.priority_shout = "v28"
+	self.drug_lord_boss_stealth.priority_shout = "f45"
 	table.insert(self._enemy_list, "drug_lord_boss_stealth")
 end
 
@@ -847,7 +846,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
 	self.tank.speech_prefix_p2 = nil
 	self.tank.speech_prefix_count = nil
-	self.tank.priority_shout = "f30x_any"
+	self.tank.priority_shout = "f30"
 	self.tank.rescue_hostages = true
 	self.tank.deathguard = true
 	self.tank.melee_weapon = "fists_dozer"
@@ -920,8 +919,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.surrender_break_time = {4, 6}
 	self.spooc.suppression = nil
 	self.spooc.surrender = presets.surrender.special
-	self.spooc.priority_shout = "f33x_any"
-	self.spooc.priority_shout_max_dis = 700
+	self.spooc.priority_shout = "f33"
 	self.spooc.rescue_hostages = true
 	self.spooc.spooc_attack_timeout = {3, 3}
 	self.spooc.spooc_attack_beating_time = {3, 3}
@@ -979,7 +977,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.ecm_hurts = {
 		ears = {min_duration = 7, max_duration = 9}
 	}
-	self.shield.priority_shout = "f31x_any"
+	self.shield.priority_shout = "f31"
 	self.shield.rescue_hostages = false
 	self.shield.deathguard = false
 	self.shield.no_equip_anim = true
@@ -1021,7 +1019,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = true
 	self.phalanx_minion.damage.shield_knocked = true
-	self.phalanx_minion.priority_shout = "f45x_any"
+	self.phalanx_minion.priority_shout = "f45"
 	self.phalanx_minion.weapon_voice = "3"
 	self.phalanx_minion.experience.cable_tie = "tie_swat"
 	self.phalanx_minion.speech_prefix_p1 = "l"
@@ -1058,7 +1056,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.HEALTH_INIT = 750
 	self.phalanx_vip.headshot_dmg_mul = 3
 	self.phalanx_vip.damage.explosion_damage_mul = 0.5
-	self.phalanx_vip.priority_shout = "f45x_any"
+	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.flammable = false
 	self.phalanx_vip.can_be_tased = false
 	self.phalanx_vip.ecm_vulnerability = nil
@@ -1080,7 +1078,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.HEALTH_INIT = 750
 	self.spring.headshot_dmg_mul = 3
 	self.spring.damage.explosion_damage_mul = 0
-	self.spring.priority_shout = "f45x_any"
+	self.spring.priority_shout = "f45"
 	self.spring.flammable = false
 	self.spring.can_be_tased = false
 	self.spring.ecm_vulnerability = nil
@@ -1119,7 +1117,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.speech_prefix_count = nil
 	self.taser.access = "taser"
 	self.taser.dodge = presets.dodge.athletic
-	self.taser.priority_shout = "f32x_any"
+	self.taser.priority_shout = "f32"
 	self.taser.rescue_hostages = true
 	self.taser.deathguard = true
  	self.taser.chatter = {
@@ -1190,7 +1188,7 @@ function CharacterTweakData:_init_boom(presets)
 		end
 		return false, t + delay_till_next_use
 	end
-	self.boom.priority_shout = "g29"
+	self.boom.priority_shout = "f45"
 	self.boom.custom_shout = true
 	self.boom.rescue_hostages = true
 	self.boom.deathguard = true

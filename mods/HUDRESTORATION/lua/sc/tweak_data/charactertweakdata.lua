@@ -169,11 +169,9 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.surrender = nil
 	self.fbi_vet.suppression = nil
     	self.fbi_vet.can_shoot_while_dodging = true
-	self.fbi_vet.HEALTH_INIT = 10
+	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
-	self.fbi_vet.damage.bullet_damage_mul = 0
-	self.fbi_vet.DAMAGE_CLAMP_BULLET = 0.0
-	self.fbi_vet.damage.bullet_dodge_chance = 100
+	self.fbi_vet.damage.bullet_dodge_chance = 80
     	self.fbi_vet.dodge = presets.dodge.veteran
     	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.use_animation_on_fire_damage = false
@@ -196,7 +194,7 @@ function CharacterTweakData:_init_fbi(presets)
 		zones = {
 			{
 				health_limit = 1,
-				heavy = 1
+				moderate = 1
 			}
 		}
 	}

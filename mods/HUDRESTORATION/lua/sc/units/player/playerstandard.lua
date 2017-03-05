@@ -1,3 +1,141 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+function PlayerStandard:_start_action_intimidate(t, secondary)
+	if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
+		local skip_alert = managers.groupai:state():whisper_mode()
+		local voice_type, plural, prime_target = self:_get_unit_intimidation_action(not secondary, not secondary, true, false, true, nil, nil, nil, secondary)
+		if prime_target and prime_target.unit and prime_target.unit.base and prime_target.unit:base().unintimidateable then
+			return
+		end
+		local interact_type, sound_name
+		local sound_suffix = plural and "plu" or "sin"
+		if voice_type == "stop" then
+			interact_type = "cmd_stop"
+			sound_name = "f02x_" .. sound_suffix
+		elseif voice_type == "stop_cop" then
+			interact_type = "cmd_stop"
+			sound_name = "l01x_" .. sound_suffix
+		elseif voice_type == "mark_cop" or voice_type == "mark_cop_quiet" then
+			interact_type = "cmd_point"
+			if voice_type == "mark_cop_quiet" then
+				sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].silent_priority_shout .. "_any"
+			elseif tweak_data.character[prime_target.unit:base()._tweak_table].custom_shout then
+				sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].priority_shout
+			else
+				sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].priority_shout .. "x_any"
+			end
+			if managers.player:has_category_upgrade("player", "special_enemy_highlight") then
+				prime_target.unit:contour():add(managers.player:get_contour_for_marked_enemy(), true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+				managers.network:session():send_to_peers_synched("spot_enemy", prime_target.unit)
+			end
+		elseif voice_type == "down" then
+			interact_type = "cmd_down"
+			sound_name = "f02x_" .. sound_suffix
+			self._shout_down_t = t
+		elseif voice_type == "down_cop" then
+			interact_type = "cmd_down"
+			sound_name = "l02x_" .. sound_suffix
+		elseif voice_type == "cuff_cop" then
+			interact_type = "cmd_down"
+			sound_name = "l03x_" .. sound_suffix
+		elseif voice_type == "down_stay" then
+			interact_type = "cmd_down"
+			if self._shout_down_t and t < self._shout_down_t + 2 then
+				sound_name = "f03b_any"
+			else
+				sound_name = "f03a_" .. sound_suffix
+			end
+		elseif voice_type == "come" then
+			interact_type = "cmd_come"
+			local static_data = managers.criminals:character_static_data_by_unit(prime_target.unit)
+			if static_data then
+				local character_code = static_data.ssuffix
+				sound_name = "f21" .. character_code .. "_sin"
+			else
+				sound_name = "f38_any"
+			end
+		elseif voice_type == "revive" then
+			interact_type = "cmd_get_up"
+			local static_data = managers.criminals:character_static_data_by_unit(prime_target.unit)
+			if not static_data then
+				return
+			end
+			local character_code = static_data.ssuffix
+			sound_name = "f36x_any"
+			if math.random() < self._ext_movement:rally_skill_data().revive_chance then
+				prime_target.unit:interaction():interact(self._unit)
+			end
+			self._ext_movement:rally_skill_data().morale_boost_delay_t = managers.player:player_timer():time() + (self._ext_movement:rally_skill_data().morale_boost_cooldown_t or 3.5)
+		elseif voice_type == "boost" then
+			interact_type = "cmd_gogo"
+			local static_data = managers.criminals:character_static_data_by_unit(prime_target.unit)
+			if not static_data then
+				return
+			end
+			local character_code = static_data.ssuffix
+			sound_name = "g18"
+			self._ext_movement:rally_skill_data().morale_boost_delay_t = managers.player:player_timer():time() + (self._ext_movement:rally_skill_data().morale_boost_cooldown_t or 3.5)
+		elseif voice_type == "escort" then
+			interact_type = "cmd_point"
+			sound_name = "f41_" .. sound_suffix
+		elseif voice_type == "escort_keep" or voice_type == "escort_go" then
+			interact_type = "cmd_point"
+			sound_name = "f40_any"
+		elseif voice_type == "bridge_codeword" then
+			sound_name = "bri_14"
+			interact_type = "cmd_point"
+		elseif voice_type == "bridge_chair" then
+			sound_name = "bri_29"
+			interact_type = "cmd_point"
+		elseif voice_type == "undercover_interrogate" then
+			sound_name = "f46x_any"
+			interact_type = "cmd_point"
+		elseif voice_type == "undercover_escort" then
+			sound_name = "f41_any"
+			interact_type = "cmd_point"
+		elseif voice_type == "mark_camera" then
+			sound_name = "f39_any"
+			interact_type = "cmd_point"
+			prime_target.unit:contour():add("mark_unit", true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+		elseif voice_type == "mark_turret" then
+			sound_name = "f44x_any"
+			interact_type = "cmd_point"
+			local type = prime_target.unit:base().get_type and prime_target.unit:base():get_type()
+			prime_target.unit:contour():add(managers.player:get_contour_for_marked_enemy(type), true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+		elseif voice_type == "ai_stay" then
+			sound_name = "f48x_any"
+			interact_type = "cmd_stop"
+		end
+		self:_do_action_intimidate(t, interact_type, sound_name, skip_alert)
+	end
+end
+
+function PlayerStandard:_update_omniscience(t, dt)
+	local action_forbidden = not managers.player:has_category_upgrade("player", "standstill_omniscience") or managers.player:current_state() == "civilian" or self:_interacting() or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self._moving or self:running() or self:_is_reloading() or self:in_air() or self:in_steelsight() or self:is_equipping() or self:shooting() or not tweak_data.player.omniscience
+	if action_forbidden then
+		if self._state_data.omniscience_t then
+			self._state_data.omniscience_t = nil
+		end
+		return
+	end
+	self._state_data.omniscience_t = self._state_data.omniscience_t or t + tweak_data.player.omniscience.start_t
+	if t >= self._state_data.omniscience_t then
+		local sensed_targets = World:find_units_quick("sphere", self._unit:movement():m_pos(), tweak_data.player.omniscience.sense_radius, managers.slot:get_mask("trip_mine_targets"))
+		for _, unit in ipairs(sensed_targets) do
+			if alive(unit) and not unit:base():char_tweak().is_escort then
+				self._state_data.omniscience_units_detected = self._state_data.omniscience_units_detected or {}
+				if not self._state_data.omniscience_units_detected[unit:key()] or t >= self._state_data.omniscience_units_detected[unit:key()] then
+					self._state_data.omniscience_units_detected[unit:key()] = t + tweak_data.player.omniscience.target_resense_t
+					managers.game_play_central:auto_highlight_enemy(unit, true)
+				end
+			else
+			end
+		end
+		self._state_data.omniscience_t = t + tweak_data.player.omniscience.interval_t
+	end
+end
+
+end
+
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 PlayerStandard.IDS_EQUIP = Idstring("equip")

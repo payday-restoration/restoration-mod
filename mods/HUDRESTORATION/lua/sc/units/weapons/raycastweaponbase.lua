@@ -13,6 +13,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 	end
 
+	local multiplier_table = {
+		phalanx_vip = 0.05,
+		phalanx_minion = 0.05,
+		shield = 0.6,
+	}
+
+	local _fire_raycast_original = _fire_raycast_original or RaycastWeaponBase._fire_raycast
+	local on_collision_original = on_collision_original or InstantBulletBase.on_collision
+	local current_penetration_multiplier = 1
+
+	function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
+		if not shoot_through_data then
+			current_penetration_multiplier = 1
+		end
+	
+		return _fire_raycast_original(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
+	end
+
+	function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, ...)
+		if current_penetration_multiplier == 1 and alive(user_unit) and user_unit == managers.player:player_unit() then
+			local unit = col_ray.unit
+			if unit:in_slot(8) and weapon_unit:base()._can_shoot_through_shield and alive(unit:parent()) and unit:parent():base() then
+				current_penetration_multiplier = multiplier_table[unit:parent():base()._tweak_table] or 1
+			end
+		end
+		
+		return on_collision_original(self, col_ray, weapon_unit, user_unit, damage * current_penetration_multiplier, ...)
+	end
+
 end
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then

@@ -41,7 +41,10 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.boom = security_variant
 	CopBrain._logic_variants.rboom = security_variant
 	CopBrain._logic_variants.fbi_vet = security_variant
-	CopBrain._logic_variants.spring = security_variant
+	CopBrain._logic_variants.spring = clone(security_variant)
+	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
+	CopBrain._logic_variants.tank_titan = clone(security_variant)
+	CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
 end
 

@@ -22,12 +22,18 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.launcher_frag_arbiter.physic_effect = Idstring("physic_effects/anti_gravitate")
 
 	--Throwables--
-	self.projectiles.wpn_prj_four.max_amount = 6
+	self.projectiles.wpn_prj_four.max_amount = 10
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_ace.max_amount = 6
+	self.projectiles.wpn_prj_ace.max_amount = 10
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.15
+	self.projectiles.wpn_prj_target.max_amount = 10
+	self.projectiles.wpn_prj_jav.max_amount = 7
+	self.projectiles.wpn_prj_hur.max_amount = 7
+
+	--Just so it won't mark you or whatever--
+	self.projectiles.concussion.no_cheat_count = true
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins
@@ -2458,6 +2464,32 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.brick.repeat_expire_t = 0.8
 	self.melee_weapons.brick.expire_t = 1.1
 	self.melee_weapons.brick.melee_damage_delay = 0.1
+
+	--how does this spin when it has a handle--
+	self.melee_weapons.ostry.stats.min_damage = 3
+	self.melee_weapons.ostry.stats.max_damage = 8
+	self.melee_weapons.ostry.stats.min_damage_effect = 1
+	self.melee_weapons.ostry.stats.max_damage_effect = 1
+	self.melee_weapons.ostry.stats.charge_time = 1.4
+	self.melee_weapons.ostry.stats.range = 200
+	self.melee_weapons.ostry.stats.concealment = 29
+	self.melee_weapons.ostry.melee_damage_delay = 0.1
+	self.melee_weapons.ostry.repeat_expire_t = 0.6
+	self.melee_weapons.ostry.expire_t = 1.2
+
+	--Pooper scooper--
+	self.melee_weapons.catch.speed_mult = 1.1
+	self.melee_weapons.catch.stats.min_damage = 4
+	self.melee_weapons.catch.stats.max_damage = 9
+	self.melee_weapons.catch.stats.min_damage_effect = 0.3
+	self.melee_weapons.catch.stats.max_damage_effect = 0.5
+	self.melee_weapons.catch.stats.charge_time = 1.5
+	self.melee_weapons.catch.stats.range = 150
+	self.melee_weapons.catch.stats.concealment = 29
+	self.melee_weapons.catch.stats.remove_weapon_movement_penalty = true
+	self.melee_weapons.catch.repeat_expire_t = 0.75
+	self.melee_weapons.catch.expire_t = 1.2
+	self.melee_weapons.catch.melee_damage_delay = 0.1
 end	
 
 end

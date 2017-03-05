@@ -18,9 +18,9 @@ function UpgradesTweakData:_init_pd2_values()
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 0.1
+	self.explosive_bullet.curve_pow = 1
 	self.explosive_bullet.player_dmg_mul = 1
-	self.explosive_bullet.range = 250
+	self.explosive_bullet.range = 350
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -145,7 +145,7 @@ function UpgradesTweakData:_init_pd2_values()
 			
 				--Uppers
 				self.values.first_aid_kit.quantity = {4, 10}
-				self.values.first_aid_kit.downs_restore_chance = {0.5}
+				self.values.first_aid_kit.downs_restore_chance = {1}
 
 				--Combat Doctor
 				self.doctor_bag_base = 2
@@ -189,6 +189,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.civ_intimidation_mul = {1.5}
 				self.values.player.civilian_reviver = {true}
 				self.values.player.civilian_gives_ammo = {true}
+				self.values.player.super_syndrome = {0}
 
 				--This breaks shit for some reason, not that it matters since we didn't change anything anyway.
 				--Partners in Crime--
@@ -212,7 +213,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.smg.hip_fire_spread_multiplier = {0.5}
 
 				--MG Specialist (Marksman)
-				self.values.smg.fire_rate_multiplier = {1.20}
+				self.values.smg.fire_rate_multiplier = {1.15}
 				self.values.smg.damage_multiplier = {1.15}
 				
 				--Shock and Awe
@@ -222,7 +223,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.knock_down = {0.1, 0.25}
 	
 				--Body Expertise
-				self.values.weapon.automatic_head_shot_add = {0.25, 0.5}
+				self.values.weapon.automatic_head_shot_add = {0.35, 1}
 
 			--}
 		--}
@@ -318,7 +319,7 @@ function UpgradesTweakData:_init_pd2_values()
 				
 				--Fully Loaded
 				self.values.player.extra_ammo_multiplier = {1.25}
-				self.values.player.pick_up_ammo_multiplier = {1.35, 1.75}
+				self.values.player.pick_up_ammo_multiplier = {1.35, 2.1}
 				self.values.player.regain_throwable_from_ammo = {
 					{chance = 0.02, chance_inc = 1.0}
 				}
@@ -403,8 +404,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Spotter
 				self.values.player.marked_enemy_extra_damage = {true}
-				self.values.player.marked_enemy_damage_mul = 1.2
-				self.values.player.marked_inc_dmg_distance = {{2500, 1.5}}
+				self.values.player.marked_enemy_damage_mul = 1.15
+				self.values.player.marked_inc_dmg_distance = {{2500, 1.25}}
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -421,7 +422,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 					
 				--Bulletproof
-				self.values.player.armor_multiplier = {1.5}
+				self.values.player.armor_multiplier = {1.35, 1.5}
 				self.values.team.armor.regen_time_multiplier = {0.75}
 			--}
 		--}
@@ -441,18 +442,20 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.corpse_dispose_amount = {1, 2}
 				self.values.player.extra_corpse_dispose_amount = {1}
 				self.values.bodybags_bag.quantity = {1}
+				self.values.player.cleaner_cost_multiplier = {0}
+				self.values.weapon.special_damage_taken_multiplier = {1.05}
 
 				--Sixth Sense
 				self.values.player.standstill_omniscience = {true}
 				self.values.player.additional_assets = {true}
 				self.values.player.buy_bodybags_asset = {true}
 				self.values.player.buy_spotter_asset = {true}
-				self.values.player.cleaner_cost_multiplier = {0.25}
 				
 				--Undertaker
 				self.values.player.tape_loop_duration = {10, 25}	
-				self.values.player.pick_lock_easy_speed_multiplier = {0.5}
+				self.values.player.pick_lock_easy_speed_multiplier = {0.25}
 				self.values.player.pick_lock_hard = {true}
+				self.values.player.mark_enemy_time_multiplier = {2}
 
 				--ECM Overdrive
 				self.values.ecm_jammer.feedback_duration_boost = {1.25}
@@ -464,6 +467,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
 				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
 				self.values.ecm_jammer.affects_pagers = {true}
+				self.values.player.melee_kill_snatch_pager_chance = {0}
 			--}
 			
 			--[[   COMMANDO SUBTREE   ]]--
@@ -524,8 +528,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--The Professional
 				self.values.weapon.silencer_spread_index_addend = {1}
-				self.values.weapon.silencer_recoil_index_addend = {2}
-				self.values.weapon.silencer_enter_steelsight_speed_multiplier = {2}
+				self.values.weapon.silencer_recoil_index_addend = {1}
+				self.values.weapon.silencer_enter_steelsight_speed_multiplier = {1.5}
 
 				--Dire Need
 				self.values.player.armor_depleted_stagger_shot = {0, 5}
@@ -665,6 +669,15 @@ function UpgradesTweakData:_init_pd2_values()
 	end
 
 	--Perk Deck shit--
+
+	--Hitman
+	self.values.player.perk_armor_regen_timer_multiplier = {
+		0.95,
+		0.85,
+		0.75,
+		0.65,
+		0.55
+	}
 
 	self.values.player.level_2_dodge_addend = {
 		0.1,
@@ -822,11 +835,20 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	--Chico--
+	self.values.temporary.chico_injector = {
+		{0.5, 5}
+	}
 	self.values.player.chico_armor_multiplier = {
 		1.05,
 		1.1,
 		1.15
+	}
+	self.values.player.chico_injector_low_health_multiplier = {
+		{0.25, 0.2}
 	}	
+	self.values.player.chico_injector_health_to_speed = {
+		{5, 1}
+	}
 end
 
 --Added new definitions--
@@ -1013,6 +1035,24 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			category = "player",
 			upgrade = "real_health_damage_reduction",
+			value = 2
+		}
+	}
+	self.definitions.player_armor_multiplier_1 = {
+		category = "feature",
+		name_id = "menu_player_armor_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "armor_multiplier",
+			value = 1
+		}
+	}
+	self.definitions.player_armor_multiplier_2 = {
+		category = "feature",
+		name_id = "menu_player_armor_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "armor_multiplier",
 			value = 2
 		}
 	}

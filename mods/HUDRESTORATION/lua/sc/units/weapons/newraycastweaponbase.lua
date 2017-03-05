@@ -1,3 +1,14 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
+function NewRaycastWeaponBase:get_add_head_shot_mul()
+	if self:is_category("smg", "lmg", "assault_rifle", "minigun") and self._fire_mode == ids_auto then
+		return self._add_head_shot_mul
+	end
+	return nil
+end
+
+end
+
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	function NewRaycastWeaponBase:_get_spread(user_unit)
@@ -243,20 +254,33 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	--[[	Reload stuff	]]--
 	function NewRaycastWeaponBase:reload_speed_multiplier()
 		local multiplier = 1
-		
 		multiplier = multiplier * self._reload_speed_mult
-		
+
 		multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().category, "reload_speed_multiplier", 1)
+		if self:weapon_tweak_data().sub_category then
+			multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().sub_category, "reload_speed_multiplier", 1)
+		end
 		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
 		multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
-		if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
+		--[[ if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
 			local morale_boost_bonus = self._setup.user_unit:movement():morale_boost()
 			if morale_boost_bonus then
 				multiplier = multiplier * morale_boost_bonus.reload_speed_bonus
 			end
+		end ]]
+	
+		if managers.player:has_activate_temporary_upgrade("temporary", "reload_weapon_faster") then
+			multiplier = multiplier * (managers.player:temporary_upgrade_value("temporary", "reload_weapon_faster", 1))
 		end
+		if managers.player:has_activate_temporary_upgrade("temporary", "single_shot_fast_reload") then
+			multiplier = multiplier * (managers.player:temporary_upgrade_value("temporary", "single_shot_fast_reload", 1))
+		end
+		multiplier = multiplier * (managers.player:get_property("shock_and_awe_reload_multiplier", 1))
+		multiplier = multiplier * (managers.player:get_temporary_property("bloodthirst_reload_speed", 1))
+	
 		return multiplier
 	end
+
 
 	function NewRaycastWeaponBase:enter_steelsight_speed_multiplier()
 		local multiplier = 1

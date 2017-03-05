@@ -1,11 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local level = Global.level_data.level_id
-if level == "chill" then 
-
---NOTHING
-
-else
+if level == "pbr2" then 
 
 function getNode(id)
     for name, script in pairs(managers.mission:scripts()) do

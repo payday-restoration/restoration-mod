@@ -4,9 +4,9 @@ local damage_reduction_orig = PlayerManager.damage_reduction_skill_multiplier
 function PlayerManager:damage_reduction_skill_multiplier(damage_type, current_state, enemy_type)
     local multiplier = damage_reduction_orig(self, damage_type, current_state, enemy_type)
    
-    if CopDamage and CopDamage.is_hrt(enemy_type) then
-        multiplier = multiplier * managers.player:upgrade_value("player", "gangster_damage_dampener", 1)
-    end
+    --if CopDamage and CopDamage.is_hrt(enemy_type) then
+       -- multiplier = multiplier * managers.player:upgrade_value("player", "gangster_damage_dampener", 1)
+    --end
    
     return multiplier
 end

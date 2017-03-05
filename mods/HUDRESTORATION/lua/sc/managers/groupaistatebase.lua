@@ -1,14 +1,49 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+local sc_group_misc_data = GroupAIStateBase._init_misc_data
+function GroupAIStateBase:_init_misc_data()
+	sc_group_misc_data(self)
+	self._special_unit_types = {
+		tank = true,
+		spooc = true,
+		shield = true,
+		taser = true,
+		boom = true,
+		medic = true,
+		phalanx_minion = true,
+		tank_titan = true,
+		fbi_vet = true,
+		spring = true
+	}
+end
+
+local sc_group_base = GroupAIStateBase.on_simulation_started
+function GroupAIStateBase:on_simulation_started()
+	sc_group_base(self)
+	self._special_unit_types = {
+		tank = true,
+		spooc = true,
+		shield = true,
+		taser = true,
+		boom = true,
+		medic = true,
+		phalanx_minion = true,
+		tank_titan = true,
+		fbi_vet = true,
+		spring = true
+	}
+end
+
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	local nr_players = 0
+	local nr_bots = managers.criminals:nr_AI_criminals()
 	for u_key, u_data in pairs(self:all_player_criminals()) do
 		if not u_data.status then
 			nr_players = nr_players + 1
 		end
 	end
 	nr_players = math.clamp(nr_players, 1, 4)
-	return balance_multipliers[nr_players]
+	return balance_multipliers[nr_players + nr_bots]
 end
 
 function GroupAIStateBase:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)

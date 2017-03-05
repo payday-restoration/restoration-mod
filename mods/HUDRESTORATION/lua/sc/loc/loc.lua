@@ -32,8 +32,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND WALLs.",
+		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR.",
 		["bm_ap_flamethrower_sc_desc"] = "BURNS THROUGH BODY ARMOR",
-		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR AND SHIELDS.",
+		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR.",
 		["menu_rifle"] = "RIFLES",
 	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
@@ -238,7 +239,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "Uppers",
-			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.\n\nFirst Aid Kits have a ##50%## chance to restore ##1## down.",
+			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.\n\nFirst Aid Kits now restore ##1## down on use.",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
@@ -294,7 +295,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##20%.##\n\nACE: ##$pro##\nYour SMGs and LMGs do ##15%## more damage.",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##\n\nACE: ##$pro##\nYour SMGs and LMGs do ##15%## more damage.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -306,7 +307,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
-			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to ##pierce body armor.##\n\n##25%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode.\n\nACE: ##$pro##\n##50%## of the enemy's headshot multiplier is applied to the enemy's body.",
+			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to ##pierce body armor.##\n\n##35%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode and does not apply to Bulldozers.\n\nACE: ##$pro##\n##100%## of the enemy's headshot multiplier is applied to the enemy's body.",
 
 			--}
 		--}
@@ -536,7 +537,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Spotter--	
 		["menu_fast_fire_beta_sc"] = "Spotter",
-		["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nSpecial enemies marked by you take ##20%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##25%## damage when further away than ##25## meters.",																																																																																																																																																																																																																									
+		["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nSpecial enemies marked by you take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##25%## damage when further away than ##25## meters.",																																																																																																																																																																																																																									
 
 		--Nerves of Steel--
 		["menu_kilmer_sc"] = "Nerves of Steel",
@@ -548,16 +549,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Bulletproof--
 		["menu_iron_man_sc"] = "Bulletproof",
-		["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nImproves your armor so you can absorb ##50%## more damage.\n\nACE: ##$pro##\nThe armor recovery rate of you and your crew is increased by ##25%.##",																																																																																																																																																																																																																									
+		["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nThe armor recovery rate of you and your crew is increased by ##25%.##",																																																																																																																																																																																																																									
 
 		--Chameleon--
 		["menu_jail_workout_sc"] = "Chameleon",
-		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nIncreases the time until you start getting detected while in casing mode by ##25%.##\n\nYou can mark enemies and cameras while in casing mode.\n\nACE: ##$pro##\nYou can pick up items while in casing mode.\n\nYou gain ##30%## more value to items and cash that you pick up.",																																																																																																																																																																																																																									
+		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nIncreases the time until you start getting detected while in casing mode by ##25%.##\n\nYou can mark enemies and cameras while in casing mode.\n\nACE: ##$pro##\nYou can pick up items while in casing mode.\n\nYou gain ##30%## more value to items and cash that you pick up.",	
 
+		--Cleaner--
+		["menu_cleaner_beta_sc"] = "Cleaner",
+		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nYour body bag inventory space is increased to ##3## from ##2.##\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases and you ##no longer have cleaner costs## when killing a civilian.\n\nYou deal ##5%## more damage against special enemies.",	
+																																																																																																																																																																																																																								
 		--Sixth Sense--
 		["menu_chameleon_beta_sc"] = "Sixth Sense",
-		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds while in stealth.\n\nACE: ##$pro##\nYou gain access to all insider assets.\n\nCleaning costs after killing a civilian is reduced by ##75%.##",																																																																																																																																																																																																																									
+		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",	
 
+		--Nimble--
+		["menu_second_chances_beta_sc"] = "Nimble",
+		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##25## seconds.\n\nACE: ##$pro##\nYou lockpick ##75%## faster and now you can ##lockpick safes.##\n\nThe duration of marked enemies is increased by ##100%## and you can now mark specials by aiming at them with any weapon.",	
+
+		--ECM Specialist--
+		["menu_ecm_2x_beta_sc"] = "ECM Specialist",
+		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##2## ECM jammers instead of just one.\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.",	
+																																																																																																																																																																																																																																															
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
 		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##10%## additional movement speed and ##20%## ladder climbing speed. \n\nACE: ##$pro##\nYour movement speed is ##unhindered while using steel sight.##\n\nYour fall damage is reduced by ##75%## and you only take armor damage from falling from non fatal heights.",																								
@@ -572,7 +585,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##8## weapon stability with silenced weapons.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy and ##100%## snap to zoom speed increase with silenced weapons.",																								
+		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##4## weapon stability with silenced weapons.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy and ##50%## snap to zoom speed increase with silenced weapons.",																								
 
 		--Dire Need--
 		["menu_backstab_beta_sc"] = "Dire Need",
@@ -660,7 +673,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##25%.##\n\n\Your armor recovery rate is increased by an additional ##10%##.",
 		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
 		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
-		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\n\You no longer have a stability penalty with Akimbo weapons and increases the ammo capacity of your Akimbo weapons to ##125%##.\n\n\Deck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%##.",
+		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\n\You no longer have a stability penalty with Akimbo weapons.\n\n\Deck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%##.",
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
@@ -715,10 +728,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you ##10## armor - This can only occur once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
+		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with ##50%## of all damage taken for ##5## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
 		["menu_deck17_3_desc_sc"] = "You gain ##5%## more armor.",
 		["menu_deck17_5_desc_sc"] = "You gain ##5%## more armor.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
-		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##25%## while below ##50%## health.",
-		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##5## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
+		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 	})
 end)
 

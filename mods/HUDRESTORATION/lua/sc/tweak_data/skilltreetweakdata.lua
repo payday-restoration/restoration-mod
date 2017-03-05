@@ -72,7 +72,8 @@ function SkillTreeTweakData:init(tweak_data)
 		"bodybags_bag",
 		"player_intimidate_enemies",
 		"player_walk_speed_multiplier",
-		"player_crouch_speed_multiplier"
+		"player_crouch_speed_multiplier",
+		"player_melee_kill_snatch_pager_chance"
 	}
 
 --[[   SKILLTREES   ]]--
@@ -1182,13 +1183,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 4},
 				[1] = {
 					upgrades = {
-						"player_armor_multiplier"
+						"player_armor_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"team_armor_regen_time_multiplier"
+						"team_armor_regen_time_multiplier",
+						"player_armor_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1227,8 +1229,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Cleaner--
 			self.skills.cleaner = {
-				["name_id"] = "menu_cleaner_beta",
-				["desc_id"] = "menu_cleaner_beta_desc",
+				["name_id"] = "menu_cleaner_beta_sc",
+				["desc_id"] = "menu_cleaner_beta_desc_sc",
 				["icon_xy"] = {7, 2},
 				[1] = {
 					upgrades = {
@@ -1239,7 +1241,9 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"bodybags_bag_quantity"
+						"bodybags_bag_quantity",
+						"player_cleaner_cost_multiplier",
+						"weapon_special_damage_taken_multiplier"
 					},
 					cost = self.costs.pro
 				}
@@ -1260,7 +1264,6 @@ function SkillTreeTweakData:init(tweak_data)
 					upgrades = {
 						"player_buy_bodybags_asset",
 						"player_additional_assets",
-						"player_cleaner_cost_multiplier",
 						"player_buy_spotter_asset"
 					},
 					cost = self.costs.pro
@@ -1269,8 +1272,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Undertaker--
 			self.skills.second_chances = {
-				["name_id"] = "menu_second_chances_beta",
-				["desc_id"] = "menu_second_chances_beta_desc",
+				["name_id"] = "menu_second_chances_beta_sc",
+				["desc_id"] = "menu_second_chances_beta_desc_sc",
 				["icon_xy"] = {4, 2},
 				[1] = {
 					upgrades = {
@@ -1282,7 +1285,9 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_pick_lock_hard",
-						"player_pick_lock_easy_speed_multiplier"
+						"player_pick_lock_easy_speed_multiplier",
+						"weapon_steelsight_highlight_specials",
+						"player_mark_enemy_time_multiplier",
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1310,8 +1315,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--ECM Specialist--
 			self.skills.ecm_2x = {
-				["name_id"] = "menu_ecm_2x_beta",
-				["desc_id"] = "menu_ecm_2x_beta_desc",
+				["name_id"] = "menu_ecm_2x_beta_sc",
+				["desc_id"] = "menu_ecm_2x_beta_desc_sc",
 				["icon_xy"] = {3, 4},
 				[1] = {
 					upgrades = {
@@ -1322,8 +1327,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"ecm_jammer_duration_multiplier_2",
-						"ecm_jammer_feedback_duration_boost_2",
-						"ecm_jammer_affects_pagers"
+						"ecm_jammer_feedback_duration_boost_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -2254,17 +2258,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_2",
-					"akimbo_recoil_multiplier_2",
-					"jowi",
-					"x_1911",
-					"x_b92fs",
-					"x_deagle",
-					"x_g22c",
-					"x_g17",
-					"x_usp",
-					"x_sr2",
-					"x_akmsu",
-					"x_mp5"
+					"akimbo_recoil_multiplier_2"
 				},
 				cost = 400,
 				icon_xy = {7, 2},
@@ -2296,8 +2290,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_5",
 					"player_passive_loot_drop_multiplier",
-					"akimbo_recoil_multiplier_3",
-					"akimbo_extra_ammo_multiplier_1"
+					"akimbo_recoil_multiplier_3"
 				},
 				cost = 4000,
 				icon_xy = {3, 3},
@@ -2929,7 +2922,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 0},
 				texture_bundle_folder = "chico",
 				name_id = "menu_deck17_1",
-				desc_id = "menu_deck17_1_desc"
+				desc_id = "menu_deck17_1_desc_sc"
 			},
 			deck2,
 			{

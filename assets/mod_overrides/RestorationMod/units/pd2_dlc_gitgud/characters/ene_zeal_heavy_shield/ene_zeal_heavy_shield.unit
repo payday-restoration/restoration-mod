@@ -1,24 +1,25 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_city_shield/ene_city_shield" />
+	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" />
 
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
-		<depends_on unit="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
+			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="shield" />
 			<var name="_default_weapon_id" value="mp9" />
-			<var name="can_be_marked" value="true" />
 		</extension>
 		<extension name="inventory" class="CopInventory" >
-			<var name="_shield_unit_name" value="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
+			<var name="_shield_unit_name" value="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
 		</extension>
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
@@ -26,7 +27,7 @@
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
+			<var name="_head_gear" value="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
@@ -44,7 +45,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/payday2/characters/ene_city_shield/ene_city_shield_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

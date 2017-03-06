@@ -45,7 +45,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

@@ -18,14 +18,15 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="spring" />
-			<var name="_default_weapon_id" value="r870" />
+			<var name="can_be_marked" value="true" />
+			<var name="_tweak_table" value="tank_titan" />
+			<var name="_default_weapon_id" value="m249" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskTankCopDamage" >
-			<var name="_head_body_name" value="head" />
+			<var name="_head_body_name" value="body_helmet_plate" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="bulldozer" />

@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang" orientation_object="rp_wpn_frag_flashbang" />
+	<sequence_manager file="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" />
+	<animations>
+		<animation_group name="enter">
+			<object name="anim_enter_flashbang" enabled="true" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body remove_ray_type="walk vis_graph" collides_with_mover="false" name="flash" enabled="false" template="static">
+			<object name="c_hitbox" collision_type="box" padding="-2"/>
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_body" enabled="true" />
+	</graphics>
+</dynamic_object>

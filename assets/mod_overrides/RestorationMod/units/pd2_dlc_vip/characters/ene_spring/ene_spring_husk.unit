@@ -1,36 +1,30 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_city_shield/ene_city_shield" />
+	<object file="units/pd2_dlc_vip/characters/ene_spring/ene_spring" />
 
 	<dependencies>
 		
-		<depends_on unit="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
-		<depends_on unit="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="shield" />
-			<var name="_default_weapon_id" value="mp9" />
 			<var name="can_be_marked" value="true" />
+			<var name="_tweak_table" value="spring" />
+			<var name="_default_weapon_id" value="hk21_sc" />
 		</extension>
-		<extension name="inventory" class="HuskCopInventory" >
-			<var name="_shield_unit_name" value="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
-		</extension>
+		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="HuskCopDamage" >
-			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
-			<var name="_head_gear_decal_mesh" value="dm_helmet" />
+		<extension name="character_damage" class="HuskTankCopDamage" >
+			<var name="_head_body_name" value="body_helmet_plate" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
-			<var name="_footwear" value="hardsole" />
-			<var name="_anim_global" value="shield" />
+			<var name="_footwear" value="bulldozer" />
+			<var name="_anim_global" value="tank" />
 		</extension>
 		<extension name="interaction" class="IntimitateInteractionExt" >
 			<var name="tweak_data" value="intimidate" />

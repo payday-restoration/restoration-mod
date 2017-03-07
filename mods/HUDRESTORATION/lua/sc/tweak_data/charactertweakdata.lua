@@ -180,6 +180,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.use_animation_on_fire_damage = false
 	self.fbi_vet.priority_shout = "g29"
+	self.fbi.silent_priority_shout = nil
 	self.fbi_vet.custom_shout = true
 	self.fbi_vet.priority_shout_max_dis = 3000
 	if job == "chill_combat" then
@@ -311,8 +312,8 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.weapon.m4.melee_dmg = 6
 	self.heavy_swat.weapon.r870.melee_dmg = 6
 	self.heavy_swat.detection = presets.detection.normal
-	self.heavy_swat.HEALTH_INIT = 13
-	self.heavy_swat.headshot_dmg_mul = 2.2
+	self.heavy_swat.HEALTH_INIT = 15
+	self.heavy_swat.headshot_dmg_mul = 2.5
 	self.heavy_swat.damage.explosion_damage_mul = 1
 	self.heavy_swat.move_speed = presets.move_speed.fast
 	self.heavy_swat.surrender_break_time = {6, 8}
@@ -424,8 +425,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.expert.mp5)
 	self.city_swat.weapon.mp5.melee_dmg = 15
 	self.city_swat.detection = presets.detection.normal
-	self.city_swat.HEALTH_INIT = 15
-	self.city_swat.headshot_dmg_mul = 2.2
+	self.city_swat.HEALTH_INIT = 13
+	self.city_swat.headshot_dmg_mul = 1.9
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
 	self.city_swat.suppression = presets.suppression.hard_def
@@ -1014,8 +1015,8 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.experience = {}
 	self.shield.weapon = presets.weapon.normal
 	self.shield.detection = presets.detection.normal
-	self.shield.HEALTH_INIT = 13
-	self.shield.headshot_dmg_mul = 2.1
+	self.shield.HEALTH_INIT = 15
+	self.shield.headshot_dmg_mul = 2.5
 	self.shield.allowed_stances = {cbt = true}
 	self.shield.allowed_poses = {crouch = true}
 	self.shield.always_face_enemy = true
@@ -1115,7 +1116,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.immune_to_knock_down = true
 	self.phalanx_vip.HEALTH_INIT = 230
-	self.phalanx_vip.headshot_dmg_mul = 5
+	self.phalanx_vip.headshot_dmg_mul = 2.5
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.spawn_sound_event = nil
 	self.phalanx_vip.priority_shout = "f45"

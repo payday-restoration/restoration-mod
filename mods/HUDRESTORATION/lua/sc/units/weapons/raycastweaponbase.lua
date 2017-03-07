@@ -34,7 +34,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, ...)
 		if current_penetration_multiplier == 1 and alive(user_unit) and user_unit == managers.player:player_unit() then
 			local unit = col_ray.unit
-			if unit:in_slot(8) and weapon_unit:base()._can_shoot_through_shield and alive(unit:parent()) and unit:parent():base() then
+			if unit:in_slot(8) and weapon_unit and weapon_unit:base()._can_shoot_through_shield and alive(unit:parent()) and unit:parent():base() then
 				current_penetration_multiplier = multiplier_table[unit:parent():base()._tweak_table] or 1
 			end
 		end

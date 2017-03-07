@@ -11,10 +11,10 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_frag.player_damage = 80
 	tweak_data.projectiles.launcher_frag.curve_pow = 1
 	tweak_data.projectiles.launcher_frag.range = 350
-	tweak_data.projectiles.launcher_incendiary.damage = 4
+	tweak_data.projectiles.launcher_incendiary.damage = 3
 	tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
 	tweak_data.projectiles.launcher_incendiary.curve_pow = 0.1
-	tweak_data.projectiles.launcher_incendiary.player_damage = 4
+	tweak_data.projectiles.launcher_incendiary.player_damage = 3
 	tweak_data.projectiles.launcher_incendiary.burn_duration = 10
 	tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
 		dot_damage = 1,
@@ -43,9 +43,9 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 	tweak_data.projectiles.launcher_frag_arbiter.mass_look_up_modifier = nil
 
-	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 3
+	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
 	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 1250
-	tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 3
+	tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
 	tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 10
 	tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 		dot_damage = 1,
@@ -56,16 +56,16 @@ if not tweak_data then return end
 	}
 
 	--Plainsrider--
-	tweak_data.projectiles.west_arrow.damage = 26.4
+	tweak_data.projectiles.west_arrow.damage = 24
 	tweak_data.projectiles.west_arrow.launch_speed = 10000
 	tweak_data.projectiles.west_arrow_exp.damage = 48
 	tweak_data.projectiles.west_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.bow_poison_arrow.damage = 21.4
+	tweak_data.projectiles.bow_poison_arrow.damage = 20
 	tweak_data.projectiles.bow_poison_arrow.launch_speed = 10000
 
 	--Hunter crossbow--
-	tweak_data.projectiles.crossbow_arrow.damage = 26.4
-	tweak_data.projectiles.crossbow_poison_arrow.damage = 21.4
+	tweak_data.projectiles.crossbow_arrow.damage = 24
+	tweak_data.projectiles.crossbow_poison_arrow.damage = 20
 	tweak_data.projectiles.crossbow_arrow_exp.damage = 48
 	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 10000
 	tweak_data.projectiles.crossbow_arrow.launch_speed = 10000
@@ -80,9 +80,9 @@ if not tweak_data then return end
 	tweak_data.projectiles.arblast_poison_arrow.launch_speed = 10000
 
 	--Franken fish--
-	tweak_data.projectiles.frankish_arrow.damage = 26.4
+	tweak_data.projectiles.frankish_arrow.damage = 24
 	tweak_data.projectiles.frankish_arrow_exp.damage = 48
-	tweak_data.projectiles.frankish_poison_arrow.damage = 21.4
+	tweak_data.projectiles.frankish_poison_arrow.damage = 20
 	tweak_data.projectiles.frankish_poison_arrow.launch_speed = 10000
 	tweak_data.projectiles.frankish_arrow_exp.launch_speed = 10000
 	tweak_data.projectiles.frankish_arrow.launch_speed = 10000
@@ -114,19 +114,19 @@ if not tweak_data then return end
 	tweak_data.projectiles.frag_com.range = 350
 
         --Molliest of tovs--
-	tweak_data.projectiles.molotov.damage = 2
-	tweak_data.projectiles.molotov.player_damage = 2
+	tweak_data.projectiles.molotov.damage = 3
+	tweak_data.projectiles.molotov.player_damage = 3
 	tweak_data.projectiles.molotov.burn_duration = 10
 
 	--Throwing Card--
-	tweak_data.projectiles.wpn_prj_ace.damage = 26.4
+	tweak_data.projectiles.wpn_prj_ace.damage = 24
 	tweak_data.projectiles.wpn_prj_ace.adjust_z = 0
 
 	--Shuriken
-	tweak_data.projectiles.wpn_prj_four.damage = 21.5
+	tweak_data.projectiles.wpn_prj_four.damage = 20
 
 	--Throwing Knife--
-	tweak_data.projectiles.wpn_prj_target.damage = 26.4
+	tweak_data.projectiles.wpn_prj_target.damage = 24
 	tweak_data.projectiles.wpn_prj_target.adjust_z = 0
 	tweak_data.projectiles.wpn_prj_target.launch_speed = 2000
 

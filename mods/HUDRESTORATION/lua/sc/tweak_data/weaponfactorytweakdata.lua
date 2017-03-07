@@ -3433,9 +3433,9 @@ function WeaponFactoryTweakData:_init_m16()
 				value = 1,
 				spread = 2,
 				recoil = -1,
-				total_ammo_mod = -5,
+				total_ammo_mod = -33,
 				extra_ammo = -5,
-				damage = 32,
+				damage = 33,
 				reload = -2,
 				suppression = -1,
 				alert_size = -1,
@@ -4221,8 +4221,8 @@ function WeaponFactoryTweakData:_init_ak74()
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				total_ammo_mod = -4,
-				damage = 13,
+				total_ammo_mod = -20,
+				damage = 12,
 				suppression = -1,
 				alert_size = -1,
 				concealment = -4
@@ -5069,8 +5069,8 @@ function WeaponFactoryTweakData:_init_saiga()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -5,
-				damage = 30,	
+				total_ammo_mod = -33,
+				damage = 31,	
 				recoil = -1,
 				spread = 11,
 				suppression = -1,
@@ -5085,8 +5085,8 @@ function WeaponFactoryTweakData:_init_saiga()
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
 				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				ammo_pickup_min_mul = 0.666666666667,
+				ammo_pickup_max_mul = 0.666666666667
 			}
 		},
 		wpn_fps_upg_a_explosive = {
@@ -6085,7 +6085,7 @@ function WeaponFactoryTweakData:_init_m14()
 			spread = -1,
 			damage = -19,
 			concealment = 1,
-			total_ammo_mod = 10
+			total_ammo_mod = 50
 		},
 		custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5},
 		forbids = {
@@ -8023,8 +8023,8 @@ function WeaponFactoryTweakData:_init_r870()
 		wpn_fps_upg_a_slug = {
 			stats = {
 				value = 10,
-				total_ammo_mod = -7,
-				damage = 57,
+				total_ammo_mod = -33,
+				damage = 56,
 				recoil = -2,
 				spread = 12,
 				moving_spread = 0,
@@ -8262,8 +8262,8 @@ function WeaponFactoryTweakData:_init_serbu()
 		wpn_fps_upg_a_slug = {
 			stats = {
 				value = 10,
-				total_ammo_mod = -7,
-				damage = 57,
+				total_ammo_mod = -25,
+				damage = 56,
 				recoil = -2,
 				spread = 12,
 				moving_spread = 0,
@@ -8279,8 +8279,8 @@ function WeaponFactoryTweakData:_init_serbu()
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				ammo_pickup_min_mul = 0.75,
+				ammo_pickup_max_mul = 0.75
 			}
 		},
 		wpn_fps_upg_a_slug_fire = {
@@ -8924,8 +8924,8 @@ function WeaponFactoryTweakData:_init_huntsman()
 				value = 10,
 				recoil = -5,
 				concealment = -7,
-				total_ammo_mod = -17,
-				damage = 139
+				total_ammo_mod = -62,
+				damage = 256
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -8934,8 +8934,8 @@ function WeaponFactoryTweakData:_init_huntsman()
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
 				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.065,
-				ammo_pickup_max_mul = 0.25
+				ammo_pickup_min_mul = 0.375,
+				ammo_pickup_max_mul = 0.375
 			}
 		}
 	}
@@ -9657,18 +9657,18 @@ function WeaponFactoryTweakData:_init_judge()
 				value = 10,
 				recoil = -5,
 				concealment = -7,
-				total_ammo_mod = -18,
-				damage = 139
+				total_ammo_mod = -60,
+				damage = 256
 			},
 			custom_stats = {
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999999999,
-				damage_far_mul = 999999999999999,
+				damage_near_mul = 9999999999,
+				damage_far_mul = 9999999999,
 				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.085,
-				ammo_pickup_max_mul = 0.3
+				ammo_pickup_min_mul = 0.4,
+				ammo_pickup_max_mul = 0.4
 			}
 		},
 		wpn_fps_upg_a_slug_fire = {
@@ -9708,8 +9708,8 @@ function WeaponFactoryTweakData:_init_judge()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -7,
-				damage = 74,	
+				total_ammo_mod = -33,
+				damage = 56,	
 				recoil = -2,
 				spread = 12,
 				suppression = -1,
@@ -9720,8 +9720,8 @@ function WeaponFactoryTweakData:_init_judge()
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
 				rays = 1,
-				ammo_pickup_min_mul = 0.66,
-				ammo_pickup_max_mul = 0.66,
+				ammo_pickup_min_mul = 0.666666666667,
+				ammo_pickup_max_mul = 0.666666666667,
 				armor_piercing_add = 1,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
@@ -11742,7 +11742,7 @@ function WeaponFactoryTweakData:_init_m249()
 		wpn_fps_upg_ammo_half_that = {
 			stats = {
 				value = 1,
-				total_ammo_mod = -4,
+				total_ammo_mod = -20,
 				recoil = 0
 			},
 			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
@@ -12900,7 +12900,7 @@ function WeaponFactoryTweakData:_init_ben()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -7,
+				total_ammo_mod = -25,
 				damage = 31,
 				spread = 12,
 				recoil = -1,
@@ -12914,8 +12914,8 @@ function WeaponFactoryTweakData:_init_ben()
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
 				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.66,
-				ammo_pickup_max_mul = 0.66
+				ammo_pickup_min_mul = 0.75,
+				ammo_pickup_max_mul = 0.75
 			}
 		},
 		wpn_fps_upg_a_slug_fire = {
@@ -13135,7 +13135,7 @@ function WeaponFactoryTweakData:_init_striker()
 			stats = {
 				value = 10,
 				concealment = 0,
-				total_ammo_mod = -5,
+				total_ammo_mod = -33,
 				damage = 31,
 				spread = 14,
 				recoil = -3,
@@ -13149,8 +13149,8 @@ function WeaponFactoryTweakData:_init_striker()
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
 				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				ammo_pickup_min_mul = 0.666666666667,
+				ammo_pickup_max_mul = 0.666666666667
 			}
 		},
 		wpn_fps_upg_a_explosive = {
@@ -13518,8 +13518,8 @@ function WeaponFactoryTweakData:_init_ksg()
 		wpn_fps_upg_a_slug = {
 			stats = {
 				value = 10,
-				total_ammo_mod = -7,
-				damage = 57,
+				total_ammo_mod = -33,
+				damage = 56,
 				recoil = -2,
 				spread = 12,
 				moving_spread = 0,
@@ -13820,11 +13820,11 @@ function WeaponFactoryTweakData:_init_g3()
 			recoil = -2,
 			spread = 2,
 			concealment = -4,
-			total_ammo_mod = -10,
+			total_ammo_mod = -50,
 			extra_ammo = -5,
 			suppression = -1,
 			alert_size = -1,
-			damage = 56
+			damage = 57
 		},
 		override = {
 			wpn_fps_ass_g3_m_mag = {
@@ -13861,10 +13861,10 @@ function WeaponFactoryTweakData:_init_g3()
 			recoil = 1,
 			spread = -1,
 			concealment = 4,
-			damage = -13,
+			damage = -12,
 			suppression = 1,
 			alert_size = 1,
-			total_ammo_mod = 5
+			total_ammo_mod = 25
 		},
 		custom_stats = {
 			ammo_pickup_min_mul = 1.25,
@@ -14202,8 +14202,8 @@ function WeaponFactoryTweakData:_init_galil()
 			value = 0,
 			recoil = -1,
 			spread = 1,
-			total_ammo_mod = -4,
-			damage = 13,
+			total_ammo_mod = -20,
+			damage = 12,
 			suppression = -1,
 			alert_size = -1,
 			concealment = -4
@@ -14503,7 +14503,7 @@ function WeaponFactoryTweakData:_init_galil()
 			value = 0,
 			spread = 2,
 			recoil = -2,
-			total_ammo_mod = -8,
+			total_ammo_mod = -40,
 			damage = 40,
 			suppression = -2,
 			alert_size = -2,
@@ -16038,7 +16038,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		stats = {value = 1, damage = 3, total_ammo_mod = -1},
+		stats = {value = 1, damage = 3, total_ammo_mod = -5},
 		custom_stats = {ammo_pickup_min_mul = 0.95, ammo_pickup_max_mul = 0.95},
 		internal_part = true,
 		perks = {"bonus"},
@@ -16058,7 +16058,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		stats = {value = 1, damage = 5, total_ammo_mod = -2},
+		stats = {value = 1, damage = 5, total_ammo_mod = -10},
 		custom_stats = {ammo_pickup_min_mul = 0.9, ammo_pickup_max_mul = 0.9},
 		internal_part = true,
 		perks = {"bonus"},
@@ -16078,7 +16078,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		stats = {value = 1, damage = -3, total_ammo_mod = 1},
+		stats = {value = 1, damage = -3, total_ammo_mod = 5},
 		custom_stats = {ammo_pickup_min_mul = 1.05, ammo_pickup_max_mul = 1.05},
 		internal_part = true,
 		perks = {"bonus"},
@@ -16098,7 +16098,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		stats = {value = 1, damage = -8, total_ammo_mod = 3},
+		stats = {value = 1, damage = -8, total_ammo_mod = 10},
 		custom_stats = {ammo_pickup_min_mul = 1.15, ammo_pickup_max_mul = 1.15},
 		internal_part = true,
 		perks = {"bonus"},
@@ -16201,8 +16201,8 @@ function WeaponFactoryTweakData:create_ammunition()
 		stats = {
 			value = 10,
 			concealment = -5,
-			total_ammo_mod = -5,
-			damage = 74,	
+			total_ammo_mod = -25,
+			damage = 56,	
 			recoil = -2,
 			spread = 12,
 			suppression = -1,
@@ -16392,20 +16392,10 @@ function WeaponFactoryTweakData:create_ammunition()
 		end
 	end
 	local exp_weapons = {
-		"wpn_fps_shot_saiga",
-		"wpn_fps_shot_r870",
 		"wpn_fps_shot_huntsman",
-		"wpn_fps_shot_serbu",
-		"wpn_fps_sho_ben",
-		"wpn_fps_sho_striker",
-		"wpn_fps_sho_ksg",
 		"wpn_fps_pis_judge",
-		"wpn_fps_sho_spas12",
 		"wpn_fps_shot_b682",
-		"wpn_fps_sho_aa12",
-		"wpn_fps_sho_boot",
-		"wpn_fps_shot_m37",
-		"wpn_fps_sho_rota"
+		"wpn_fps_sho_boot"
 	}
 	for _, factory_id in ipairs(exp_weapons) do
 		if self[factory_id] and self[factory_id].uses_parts then
@@ -16421,7 +16411,7 @@ function WeaponFactoryTweakData:create_ammunition()
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		stats = {damage = -190},
+		stats = {damage = -77},
 		texture_bundle_folder = "bbq",
 		is_a_unlockable = true,
 		internal_part = true,
@@ -16459,7 +16449,7 @@ function WeaponFactoryTweakData:create_ammunition()
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		stats = {damage = -285},
+		stats = {damage = -290},
 		custom_stats = {ammo_pickup_min_mul = 1, ammo_pickup_max_mul = 1},
 		texture_bundle_folder = "tng",
 		is_a_unlockable = true,
@@ -17517,7 +17507,7 @@ function WeaponFactoryTweakData:_init_spas12()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -7,
+				total_ammo_mod = -25,
 				damage = 31,
 				spread = 12,
 				recoil = -1,
@@ -17531,8 +17521,8 @@ function WeaponFactoryTweakData:_init_spas12()
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
 				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.66,
-				ammo_pickup_max_mul = 0.66
+				ammo_pickup_min_mul = 0.75,
+				ammo_pickup_max_mul = 0.75
 			}
 		},
 		wpn_fps_upg_a_slug_fire = {
@@ -17540,7 +17530,7 @@ function WeaponFactoryTweakData:_init_spas12()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -7,
+				total_ammo_mod = -25,
 				damage = 31,
 				spread = 12,
 				recoil = -1,
@@ -17563,8 +17553,8 @@ function WeaponFactoryTweakData:_init_spas12()
 					dot_length = "3",
 					dot_tick_period = "0.5"
 				},
-				ammo_pickup_min_mul = 0.66,
-				ammo_pickup_max_mul = 0.66
+				ammo_pickup_min_mul = 0.75,
+				ammo_pickup_max_mul = 0.75
 			}
 		},
 		wpn_fps_upg_a_explosive = {
@@ -17754,7 +17744,7 @@ function WeaponFactoryTweakData:_init_mg42()
 		wpn_fps_upg_ammo_half_that = {
 			stats = {
 				value = 1,
-				total_ammo_mod = -5,
+				total_ammo_mod = -25,
 				recoil = 0
 			},
 			custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
@@ -19735,14 +19725,14 @@ function WeaponFactoryTweakData:_init_modpack_m4_ak()
 			value = 1,
 			spread = 1,
 			recoil = -1,
-			total_ammo_mod = -5,
-			damage = 27,
+			total_ammo_mod = -33,
+			damage = 28,
 			suppression = -1,
 			alert_size = -1,
 			extra_ammo = -5,
 			concealment = -4
 		},
-		custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75},
+		custom_stats = {ammo_pickup_min_mul = 0.666666666667, ammo_pickup_max_mul = 0.666666666667},
 		sound_switch = {suppressed = "regular_b"},
 		texture_bundle_folder = "dlc_akm4",
 		is_a_unlockable = true,
@@ -20962,8 +20952,8 @@ function WeaponFactoryTweakData:_init_modpack_m4_ak()
 			value = 1,
 			spread = 2,
 			recoil = -1,
-			total_ammo_mod = -4,
-			damage = 18,
+			total_ammo_mod = -20,
+			damage = 17,
 			concealment = -4,
 			alert_size = -1,
 			suppression = -1
@@ -21034,7 +21024,7 @@ function WeaponFactoryTweakData:_init_m134()
 		unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_body_upper_light",
 		stats = {
 			value = 1,
-			total_ammo_mod = -4
+			total_ammo_mod = -20
 		},
 		custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},
 		has_description = true,
@@ -21671,8 +21661,8 @@ function WeaponFactoryTweakData:_init_b682()
 				value = 10,
 				recoil = -5,
 				concealment = -7,
-				total_ammo_mod = -17,
-				damage = 139
+				total_ammo_mod = -62,
+				damage = 256
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -21681,8 +21671,8 @@ function WeaponFactoryTweakData:_init_b682()
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
 				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.065,
-				ammo_pickup_max_mul = 0.25
+				ammo_pickup_min_mul = 0.375,
+				ammo_pickup_max_mul = 0.375
 			}
 		}
 	}
@@ -21741,7 +21731,7 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 		stats = {
 			value = 1,
 			extra_ammo = 25,
-			total_ammo_mod = 10
+			total_ammo_mod = 50
 		},
 		texture_bundle_folder = "butcher_pack_mods",
 		dlc = "butch_pack_free",
@@ -21811,7 +21801,7 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 			damage = 6,
 			recoil = -2,
 			spread = 1,
-			total_ammo_mod = -4,
+			total_ammo_mod = -20,
 			suppression = -1,
 			alert_size = -1,
 			concealment = 1
@@ -22543,7 +22533,7 @@ function WeaponFactoryTweakData:_init_flamethrower_mk2()
 		unit = "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/wpn_fps_fla_mk2_mag_rare",
 		stats = {
 			value = 10,
-			total_ammo_mod = 4,
+			total_ammo_mod = 20,
 			extra_ammo = 5,
 			spread = -1,
 			suppression = 1,
@@ -22580,7 +22570,7 @@ function WeaponFactoryTweakData:_init_flamethrower_mk2()
 		unit = "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/wpn_fps_fla_mk2_mag_welldone",
 		stats = {
 			value = 10,
-			total_ammo_mod = -4,
+			total_ammo_mod = -20,
 			extra_ammo = -5,
 			spread = 1,
 			recoil = -1,
@@ -23027,8 +23017,8 @@ function WeaponFactoryTweakData:_init_aa12()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -5,
-				damage = 30,	
+				total_ammo_mod = -33,
+				damage = 31,	
 				recoil = -1,
 				spread = 11,
 				suppression = -1,
@@ -23043,8 +23033,8 @@ function WeaponFactoryTweakData:_init_aa12()
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
 				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				ammo_pickup_min_mul = 0.666666666667,
+				ammo_pickup_max_mul = 0.666666666667
 			}
 		},
 		wpn_fps_upg_a_explosive = {
@@ -23527,7 +23517,7 @@ function WeaponFactoryTweakData:_init_plainsrider()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_fps_bow_plainsrider_m_explosive",
 		third_unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_third_bow_plainsrider_m_explosive",
-		stats = {damage = 108, total_ammo_mod = -10, spread = -6, recoil = -5},
+		stats = {damage = 120, total_ammo_mod = -50, spread = -6, recoil = -5},
 		custom_stats = {
 			launcher_grenade = "west_arrow_exp",
 			block_b_storm = true
@@ -23546,7 +23536,7 @@ function WeaponFactoryTweakData:_init_plainsrider()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_plainsrider_m_poison/wpn_fps_bow_plainsrider_m_poison",
 		third_unit = "units/pd2_dlc_turtles/weapons/wpn_third_bow_plainsrider_m_poison/wpn_third_bow_plainsrider_m_poison",
-		stats = {damage = -25, total_ammo_mod = 0},
+		stats = {damage = -20, total_ammo_mod = 0},
 		custom_stats = {
 			launcher_grenade = "bow_poison_arrow",
 			ammo_pickup_min_mul = 0, ammo_pickup_max_mul = 0,
@@ -24910,7 +24900,7 @@ function WeaponFactoryTweakData:_init_hunter()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_m_poison",
 		third_unit = "units/pd2_dlc_turtles/weapons/wpn_third_bow_hunter_pts/wpn_third_bow_hunter_m_poison",
-		stats = {damage = -25, total_ammo_mod = 0},
+		stats = {damage = -20, total_ammo_mod = 0},
 		is_a_unlockable = true,
 		custom_stats = {
 			launcher_grenade = "crossbow_poison_arrow",
@@ -24932,7 +24922,7 @@ function WeaponFactoryTweakData:_init_hunter()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_m_explosive",
 		third_unit = "units/pd2_dlc_turtles/weapons/wpn_third_bow_hunter_pts/wpn_third_bow_hunter_m_explosive",
-		stats = {damage = 108, total_ammo_mod = -8, spread = -8, recoil = -5},
+		stats = {damage = 120, total_ammo_mod = -40, spread = -8, recoil = -5},
 		custom_stats = {
 			launcher_grenade = "crossbow_arrow_exp",
 			block_b_storm = true
@@ -25347,7 +25337,7 @@ function WeaponFactoryTweakData:_init_arblast()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_fps_bow_arblast_m_explosive",
 		third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_third_bow_arblast_m_explosive",
-		stats = {damage = 120, total_ammo_mod = -8, spread = -10, recoil = -6},
+		stats = {damage = 120, total_ammo_mod = -40, spread = -10, recoil = -6},
 		custom_stats = {
 			launcher_grenade = "arblast_arrow_exp",
 			block_b_storm = true
@@ -25431,7 +25421,7 @@ function WeaponFactoryTweakData:_init_frankish()
 		unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_fps_bow_frankish_m_poison",
 		third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_third_bow_frankish_m_poison",
 		is_a_unlockable = true,
-		stats = {damage = -25, total_ammo_mod = 0},
+		stats = {damage = -20, total_ammo_mod = 0},
 		custom_stats = {
 			launcher_grenade = "frankish_poison_arrow", ammo_pickup_min_mul = 0, ammo_pickup_max_mul = 0,
 			dot_data = {
@@ -25452,7 +25442,7 @@ function WeaponFactoryTweakData:_init_frankish()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_fps_bow_frankish_m_explosive",
 		third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_third_bow_frankish_m_explosive",
-		stats = {damage = 108, total_ammo_mod = -10, spread = -6, recoil = -5},
+		stats = {damage = 120, total_ammo_mod = -50, spread = -6, recoil = -5},
 		custom_stats = {
 			launcher_grenade = "frankish_arrow_exp",
 			block_b_storm = true
@@ -25535,7 +25525,7 @@ function WeaponFactoryTweakData:_init_long()
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_fps_bow_long_m_explosive",
 		third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_third_bow_long_m_explosive",
-		stats = {damage = 120, total_ammo_mod = -8, spread = -10, recoil = -6},
+		stats = {damage = 120, total_ammo_mod = -40, spread = -10, recoil = -6},
 		custom_stats = {
 			launcher_grenade = "long_arrow_exp",
 			block_b_storm = true
@@ -26455,8 +26445,8 @@ function WeaponFactoryTweakData:_init_m37()
 		wpn_fps_upg_a_slug = {
 			stats = {
 				value = 10,
-				total_ammo_mod = -7,
-				damage = 57,
+				total_ammo_mod = -25,
+				damage = 56,
 				recoil = -2,
 				spread = 12,
 				moving_spread = 0,
@@ -26472,8 +26462,8 @@ function WeaponFactoryTweakData:_init_m37()
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				ammo_pickup_min_mul = 0.75,
+				ammo_pickup_max_mul = 0.75
 			}
 		},
 		wpn_fps_upg_a_slug_fire = {
@@ -27130,6 +27120,17 @@ function WeaponFactoryTweakData:_init_x_mp5()
 			animations = {}
 		},
 		wpn_fps_smg_mp5_m_straight = {
+			stats = {
+				value = 1,
+				damage = 6,
+				recoil = -2,
+				spread = 1,
+				total_ammo_mod = -16,
+				suppression = -1,
+				alert_size = -1,
+				concealment = 1
+			},
+			custom_stats = {ammo_pickup_min_mul = 0.833333333333, ammo_pickup_max_mul = 0.833333333333},
 			animations = {}
 		}
 	}
@@ -27920,8 +27921,8 @@ function WeaponFactoryTweakData:_init_boot()
 				value = 10,
 				recoil = -5,
 				concealment = -7,
-				total_ammo_mod = -17,
-				damage = 139
+				total_ammo_mod = -62,
+				damage = 256
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -27930,8 +27931,8 @@ function WeaponFactoryTweakData:_init_boot()
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
 				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.065,
-				ammo_pickup_max_mul = 0.25
+				ammo_pickup_min_mul = 0.375,
+				ammo_pickup_max_mul = 0.375
 			}
 		}
 	}
@@ -28833,7 +28834,7 @@ function WeaponFactoryTweakData:_init_rota()
 			stats = {
 				value = 10,
 				concealment = 0,
-				total_ammo_mod = -5,
+				total_ammo_mod = -33,
 				damage = 31,
 				spread = 14,
 				recoil = -3,
@@ -28847,8 +28848,8 @@ function WeaponFactoryTweakData:_init_rota()
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
 				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				ammo_pickup_min_mul = 0.666666666667,
+				ammo_pickup_max_mul = 0.666666666667
 			}
 		},
 		wpn_fps_upg_a_explosive = {
@@ -31136,7 +31137,7 @@ if self.wpn_fps_smg_mpx then
 			damage = 6,
 			recoil = -2,
 			spread = 1,
-			total_ammo_mod = -4,
+			total_ammo_mod = -20,
 			suppression = -1,
 			alert_size = -1,
 			concealment = 1
@@ -31165,19 +31166,76 @@ if self.wpn_fps_shot_toz66 then
 				value = 10,
 				recoil = -5,
 				concealment = -7,
-				total_ammo_mod = -18,
-				damage = 139
+				total_ammo_mod = -60,
+				damage = 256
 			},
 			custom_stats = {
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999999999,
-				damage_far_mul = 999999999999999,
+				damage_near_mul = 9999999999,
+				damage_far_mul = 9999999999,
 				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.085,
-				ammo_pickup_max_mul = 0.3
+				ammo_pickup_min_mul = 0.4,
+				ammo_pickup_max_mul = 0.4
 			}
+		},
+		wpn_fps_upg_a_slug_fire = {
+			stats = {
+				value = 10,
+				concealment = -5,
+				total_ammo_mod = -7,
+				damage = 74,	
+				recoil = -2,
+				spread = 12,
+				suppression = -1,
+				alert_size = -1,
+				moving_spread = 0
+			},
+			custom_stats = {
+				damage_near_mul = 999999999,
+				damage_far_mul = 999999999,
+				rays = 1,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true,
+				bullet_class = "FlameBulletBase",
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "0",
+					dot_trigger_max_distance = "9999",
+					dot_trigger_chance = "100",
+					dot_length = "3",
+					dot_tick_period = "0.5"
+				},
+				ammo_pickup_min_mul = 0.66,
+				ammo_pickup_max_mul = 0.66
+			}
+		},
+		wpn_fps_upg_a_slug = {
+			stats = {
+				value = 10,
+				concealment = -5,
+				total_ammo_mod = -33,
+				damage = 56,	
+				recoil = -2,
+				spread = 12,
+				suppression = -1,
+				alert_size = -1,
+				moving_spread = 0
+			},
+			custom_stats = {
+				damage_near_mul = 999999999,
+				damage_far_mul = 999999999,
+				rays = 1,
+				ammo_pickup_min_mul = 0.666666666667,
+				ammo_pickup_max_mul = 0.666666666667,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true,
+			},
 		}
 	}
 	--table.list_append(self.wpn_fps_shot_toz66.uses_parts, {
@@ -31212,8 +31270,8 @@ if self.wpn_fps_shot_toz34 then
 				value = 10,
 				recoil = -5,
 				concealment = -7,
-				total_ammo_mod = -17,
-				damage = 139
+				total_ammo_mod = -62,
+				damage = 256
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -31222,8 +31280,8 @@ if self.wpn_fps_shot_toz34 then
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
 				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.065,
-				ammo_pickup_max_mul = 0.25
+				ammo_pickup_min_mul = 0.375,
+				ammo_pickup_max_mul = 0.375
 			}
 		}
 	}
@@ -31340,7 +31398,7 @@ end
 		dlc = "sc",
 		stats = {
 			value = 1,
-			total_ammo_mod = -4,
+			total_ammo_mod = -20,
 			recoil = 0
 		},
 		custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},
@@ -31399,13 +31457,13 @@ end
 			value = 10,
 			damage = 11,
 			extra_ammo = -5,
-			total_ammo_mod = -5,
+			total_ammo_mod = -33,
 			suppression = -1,
 			alert_size = -1,
 			recoil = -1,
 			spread = 1
 		},
-		custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
+		custom_stats = {ammo_pickup_min_mul = 0.666666666667, ammo_pickup_max_mul = 0.666666666667},
 		internal_part = true
 	}
 	self.parts.wpn_fps_upg_ammo_p = {
@@ -31440,7 +31498,7 @@ end
 		dlc = "sc",
 		stats = {
 			value = 3,
-			damage = 65
+			damage = 64
 		},
 		internal_part = true
 	}
@@ -31461,7 +31519,7 @@ end
 			value = 10,
 			alert_size = -1,
 			suppression = -1,
-			total_ammo_mod = -4,
+			total_ammo_mod = -20,
 			spread = 1,
 			concealment = -1,
 			recoil = -1,

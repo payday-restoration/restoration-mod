@@ -180,7 +180,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.use_animation_on_fire_damage = false
 	self.fbi_vet.priority_shout = "g29"
-	self.fbi.silent_priority_shout = nil
+	self.fbi_vet.silent_priority_shout = nil
 	self.fbi_vet.custom_shout = true
 	self.fbi_vet.priority_shout_max_dis = 3000
 	if job == "chill_combat" then

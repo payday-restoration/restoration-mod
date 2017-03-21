@@ -15,14 +15,14 @@ function EquipmentsTweakData:init()
 		self.specials.hydrogen_chloride.max_quantity=4
 		self.specials.boards.max_quantity=4
 		self.specials.planks.max_quantity=4
-		--self.specials.bank_manager_key.max_quantity=4
 		self.specials.thermite_paste.max_quantity=4
 		self.specials.acid.quantity=1
 		self.specials.caustic_soda.quantity=1
 		self.specials.hydrogen_chloride.quantity=1
 		self.specials.boards.quantity=1
 		self.specials.planks.quantity=1
-		--self.specials.bank_manager_key.quantity = 0
+		self.specials.bank_manager_key.quantity = 1
+		self.specials.bank_manager_key.max_quantity=4
 		self.specials.thermite_paste.quantity=1
 		self.specials.cable_tie.quantity=8
 		self.specials.gas.max_quantity=4
@@ -35,5 +35,9 @@ function EquipmentsTweakData:init()
 		self.specials.printer_ink.max_quantity=4
 		self.specials.paper_roll.quantity=1
 		self.specials.paper_roll.max_quantity=4
+		self.specials.crowbar.quantity=1
+		self.specials.crowbar.max_quantity=4
+		self.specials.crowbar_stack.quantity=1
+		self.specials.crowbar_stack.max_quantity=4
    	end
 end

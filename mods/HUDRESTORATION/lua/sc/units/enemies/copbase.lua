@@ -4,7 +4,6 @@ Month = os.date("%m")
 function CopBase:_chk_spawn_gear()
 	if self._tweak_table == "spring" then
 		GroupAIStateBesiege:set_assault_endless(true)
-		--managers.network:session():send_to_peers_synched("group_ai_event", GroupAIStateBesiege:get_sync_event_id("phalanx_spawned"), 0)
 		managers.hud:set_buff_enabled("vip", true)
 	end
 	if Global.level_data.level_id == "pines" or Global.level_data.level_id == "roberts" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "moon" or Month == "12" then

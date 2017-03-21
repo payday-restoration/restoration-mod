@@ -45,7 +45,7 @@ function deploy_gas(shoot_from_pos, target_vec)
 	target_vec = target_vec + Vector3(0, 0, z_fix[math.random(7)])
 	local detonate_pos = managers.player:player_unit():position()
 	local roll = math.rand(1, 100)
-	local chance_gas = 27
+	local chance_gas = 25
 	if roll <= chance_gas then
 		managers.groupai:state():detonate_cs_grenade(detonate_pos, nil, 7.5)
 	end

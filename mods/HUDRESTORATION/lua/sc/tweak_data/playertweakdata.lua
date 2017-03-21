@@ -189,7 +189,7 @@ function PlayerTweakData:init()
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.TASED_TIME = 10
 	self.damage.TASED_RECOVER_TIME = 1
-	self.damage.BLEED_OUT_HEALTH_INIT = 10
+	self.damage.BLEED_OUT_HEALTH_INIT = 20
 	self.damage.DOWNED_TIME = 30
 	self.damage.DOWNED_TIME_DEC = 10
 	self.damage.DOWNED_TIME_MIN = 10

@@ -3726,7 +3726,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	end
 	self.flash_grenade_lifetime = 7.5
 	self.flash_grenade = {
-		timer = 2,
+		timer = 2.5,
 		range = 1000,
 		light_color = Vector3(255, 0, 0),
 		light_range = 0,
@@ -3736,9 +3736,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		beep_multi = 0
 	}
 	if difficulty_index < 6 then
-		self.flash_grenade.timer = 2
+		self.flash_grenade.timer = 2.5
 	else
-		self.flash_grenade.timer = 2
+		self.flash_grenade.timer = 2.5
 	end
 	self.optimal_trade_distance = {0, 0}
 	self.bain_assault_praise_limits = {1, 3}

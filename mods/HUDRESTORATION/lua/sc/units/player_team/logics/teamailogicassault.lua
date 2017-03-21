@@ -2,7 +2,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 function TeamAILogicAssault.mark_enemy(data, criminal, to_mark, play_sound, play_action)
 	if play_sound then
-		criminal:sound():say(to_mark:base():char_tweak().priority_shout .. "x_any", true)
+		criminal:sound():say(to_mark:base():char_tweak().bot_priority_shout, true)
 	end
 	if play_action and not criminal:movement():chk_action_forbidden("action") then
 		local new_action = {

@@ -86,7 +86,6 @@ end
 function WeaponTweakData:_set_easy_wish()
 	self.swat_van_turret_module.HEALTH_INIT = 3237.5
 	self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
-	self.swat_van_turret_module.CLIP_SIZE = 800
 	self.swat_van_turret_module.BAG_DMG_MUL = 8
 
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
@@ -104,11 +103,9 @@ function WeaponTweakData:_set_easy_wish()
 		{2000, 2.5},
 		{3000, 1}
 	}
-	self.ceiling_turret_module.CLIP_SIZE = 800
 	self.ceiling_turret_module.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module.BAG_DMG_MUL = 8
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
-	self.ceiling_turret_module_no_idle.CLIP_SIZE = 800
 	self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 8
 	self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
@@ -117,8 +114,7 @@ end
 function WeaponTweakData:_set_overkill_290()
 	self.swat_van_turret_module.HEALTH_INIT = 3237.5
 	self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
-	self.swat_van_turret_module.CLIP_SIZE = 800
-	self.swat_van_turret_module.BAG_DMG_MUL = 80
+	self.swat_van_turret_module.BAG_DMG_MUL = 8
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 2.875},
 		{1800, 2.625},
@@ -134,11 +130,9 @@ function WeaponTweakData:_set_overkill_290()
 		{1800, 2.625},
 		{3000, 1.05}
 	}
-	self.ceiling_turret_module.CLIP_SIZE = 800
 	self.ceiling_turret_module.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module.BAG_DMG_MUL = 8
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
-	self.ceiling_turret_module_no_idle.CLIP_SIZE = 800
 	self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 8
 	self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
@@ -155,8 +149,7 @@ end
 function WeaponTweakData:_set_sm_wish()
 	self.swat_van_turret_module.HEALTH_INIT = 3237.5
 	self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
-	self.swat_van_turret_module.CLIP_SIZE = 800
-	self.swat_van_turret_module.BAG_DMG_MUL = 80
+	self.swat_van_turret_module.BAG_DMG_MUL = 8
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 3.125},
 		{2000, 3.125},
@@ -175,12 +168,10 @@ function WeaponTweakData:_set_sm_wish()
 		{3000, 3.125},
 		{4000, 1.25}
 	}
-	self.ceiling_turret_module.CLIP_SIZE = 800
 	self.ceiling_turret_module.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module.BAG_DMG_MUL = 8
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
 
-	self.ceiling_turret_module_no_idle.CLIP_SIZE = 800
 	self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 8
 	self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
@@ -522,16 +513,16 @@ end
 
 function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.name_id = "debug_sentry_gun"
-	self.swat_van_turret_module.DAMAGE = 1.8
+	self.swat_van_turret_module.DAMAGE = 1.7
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
 		{3000, 1}
 	}
-	self.swat_van_turret_module.SUPPRESSION = 0
+	self.swat_van_turret_module.SUPPRESSION = 0.1
 	self.swat_van_turret_module.SPREAD = 0.5
 	self.swat_van_turret_module.FIRE_RANGE = 10000
-	self.swat_van_turret_module.CLIP_SIZE = 400
+	self.swat_van_turret_module.CLIP_SIZE = 200
 	self.swat_van_turret_module.AUTO_RELOAD = true
 	self.swat_van_turret_module.AUTO_RELOAD_DURATION = 8
 	self.swat_van_turret_module.CAN_GO_IDLE = true
@@ -551,10 +542,10 @@ function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 	self.swat_van_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.swat_van_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-	self.swat_van_turret_module.auto.fire_rate = 0.06
+	self.swat_van_turret_module.auto.fire_rate = 0.13333333333
 	self.swat_van_turret_module.alert_size = 2500
 	self.swat_van_turret_module.headshot_dmg_mul = 1
-	self.swat_van_turret_module.EXPLOSION_DMG_MUL = 4
+	self.swat_van_turret_module.EXPLOSION_DMG_MUL = 3
 	self.swat_van_turret_module.FIRE_DMG_MUL = 1
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
 	self.swat_van_turret_module.SHIELD_DMG_MUL = 1
@@ -591,24 +582,24 @@ function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.challenges = {}
 	self.swat_van_turret_module.challenges.group = "sentry_gun"
 	self.swat_van_turret_module.challenges.weapon = "sentry_gun"
-	self.swat_van_turret_module.suppression = 0
+	self.swat_van_turret_module.suppression = 0.1
 end
 
 function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.name_id = "debug_sentry_gun"
-	self.ceiling_turret_module.DAMAGE = 1.8
+	self.ceiling_turret_module.DAMAGE = 1.7
 	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
 		{3000, 1}
 	}
-	self.ceiling_turret_module.SUPPRESSION = 0
+	self.ceiling_turret_module.SUPPRESSION = 0.1
 	self.ceiling_turret_module.SPREAD = 0.5
 	self.ceiling_turret_module.FIRE_RANGE = 10000
-	self.ceiling_turret_module.CLIP_SIZE = 400
+	self.ceiling_turret_module.CLIP_SIZE = 200
 	self.ceiling_turret_module.AUTO_RELOAD = true
 	self.ceiling_turret_module.AUTO_RELOAD_DURATION = 8
-	self.ceiling_turret_module.CAN_GO_IDLE = true
+	self.ceiling_turret_module.CAN_GO_IDLE = false
 	self.ceiling_turret_module.IDLE_WAIT_TIME = 5
 	self.ceiling_turret_module.AUTO_REPAIR = false
 	self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 2
@@ -625,10 +616,10 @@ function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 	self.ceiling_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.ceiling_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-	self.ceiling_turret_module.auto.fire_rate = 0.06
+	self.ceiling_turret_module.auto.fire_rate = 0.13333333333
 	self.ceiling_turret_module.alert_size = 2500
 	self.ceiling_turret_module.headshot_dmg_mul = 1
-	self.ceiling_turret_module.EXPLOSION_DMG_MUL = 4
+	self.ceiling_turret_module.EXPLOSION_DMG_MUL = 3
 	self.ceiling_turret_module.FIRE_DMG_MUL = 1
 	self.ceiling_turret_module.BAG_DMG_MUL = 10
 	self.ceiling_turret_module.SHIELD_DMG_MUL = 1
@@ -665,7 +656,7 @@ function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.challenges = {}
 	self.ceiling_turret_module.challenges.group = "sentry_gun"
 	self.ceiling_turret_module.challenges.weapon = "sentry_gun"
-	self.ceiling_turret_module.suppression = 0
+	self.ceiling_turret_module.suppression = 0.1
 	self.ceiling_turret_module_no_idle = deep_clone(self.ceiling_turret_module)
 	self.ceiling_turret_module_no_idle.CAN_GO_IDLE = false
 end
@@ -2339,14 +2330,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw.CLIP_AMMO_MAX = 20
 	self.saw.AMMO_MAX = 40
 	self.saw.AMMO_PICKUP = self:_pickup_chance(40, 2)
+	self.saw.kick.standing = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.saw.kick.crouching = self.saw.kick.standing
+	self.saw.kick.steelsight = self.saw.kick.standing
 	self.saw.stats = {
 		alert_size = 7,
 		suppression = 7,
 		zoom = 1,
 		spread = 0,
-		recoil = 18,
+		recoil = 0,
 		spread_moving = 7,
-		damage = 109,
+		damage = 150,
 		concealment = 16,
 		value = 1,
 		extra_ammo = 6,
@@ -2354,6 +2353,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 11
 	}
 	self.saw.panic_suppression_chance = 0.0
+	self.saw_secondary.kick.standing = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.saw_secondary.kick.crouching = self.saw.kick.standing
+	self.saw_secondary.kick.steelsight = self.saw.kick.standing
 	self.saw_secondary.spread.standing = 0
 	self.saw_secondary.spread.crouching = 0
 	self.saw_secondary.spread.steelsight = 0
@@ -2370,9 +2377,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		suppression = 7,
 		zoom = 1,
 		spread = 0,
-		recoil = 18,
+		recoil = 0,
 		spread_moving = 7,
-		damage = 109,
+		damage = 150,
 		concealment = 16,
 		value = 1,
 		extra_ammo = 6,

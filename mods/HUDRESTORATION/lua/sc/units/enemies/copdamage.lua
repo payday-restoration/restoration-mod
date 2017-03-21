@@ -487,9 +487,7 @@ function CopDamage:damage_bullet(attack_data)
 		dodge_chance = 0
 	end
 	if roll <= dodge_chance and self._char_tweak.damage.bullet_dodge_chance then
-		damage = damage * 0
-	else
-		damage = damage
+		return
 	end
 	damage = damage * (self._marked_dmg_mul or 1)
 	if self._marked_dmg_mul and self._marked_dmg_dist_mul then

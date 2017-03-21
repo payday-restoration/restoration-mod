@@ -34,7 +34,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND WALLs.",
 		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR.",
 		["bm_ap_flamethrower_sc_desc"] = "BURNS THROUGH BODY ARMOR",
-		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR.",
+		["bm_ap_saw_sc_desc"] = "",
+		["bm_ap_saw_blade_sc_desc"] = "Adds the ability to cut through body armor.",
+		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
 		["menu_rifle"] = "RIFLES",
 	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
@@ -386,7 +388,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Portable Saw
 			["menu_portable_saw_beta_sc"] = "Portable Saw",
-			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\n\nACE: ##$pro##\nYou gain ##1## extra saw blade for the OVE9000 portable saw.\n\nYou deal ##30%## more damage with the Saw.",																																																																																																																																																																																																
+			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\n\nACE: ##$pro##\nYou gain ##1## extra saw blade for the OVE9000 portable saw.\n\nYou deal ##15%## more damage with the Saw.",																																																																																																																																																																																																
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "Extra Lead",

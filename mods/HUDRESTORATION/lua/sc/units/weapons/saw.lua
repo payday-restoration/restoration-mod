@@ -89,7 +89,7 @@ function SawWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, sh
 	mvec3_add(from_pos, direction * -30)
 	mvector3.set(mvec_spread_direction, direction)
 	mvector3.set(mvec_to, mvec_spread_direction)
-	mvector3.multiply(mvec_to, 200)
+	mvector3.multiply(mvec_to, 300)
 	mvector3.add(mvec_to, from_pos)
 	local damage = self:_get_current_damage(dmg_mul)
 	local valid_hit = false

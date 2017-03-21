@@ -16148,17 +16148,27 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
         	local uses_parts = {
             	wpn_fps_upg_bonus_team_exp_money_p3 = {},
             	wpn_fps_upg_bonus_concealment_p1 = {},
-            	wpn_fps_upg_bonus_recoil_p1 = {},
-            	wpn_fps_upg_bonus_spread_p1 = {},
-            	wpn_fps_upg_bonus_spread_n1 = {},
+            	wpn_fps_upg_bonus_recoil_p1 = {
+			exclude_category = {"saw"}
+		},
+            	wpn_fps_upg_bonus_spread_p1 = {
+			exclude_category = {"saw"}
+		},
+            	wpn_fps_upg_bonus_spread_n1 = {
+			exclude_category = {"saw"}
+		},
             	wpn_fps_upg_bonus_damage_p1 = {
 			exclude_category = {"grenade_launcher", "crossbow", "bow"}
 		},
             	wpn_fps_upg_bonus_total_ammo_p1 = {
 			exclude_category = {"grenade_launcher", "crossbow", "bow"}
 		},
-            	wpn_fps_upg_bonus_concealment_p2 = {},
-            	wpn_fps_upg_bonus_concealment_p3 = {},
+            	wpn_fps_upg_bonus_concealment_p2 = {
+			exclude_category = {"saw"}
+		},
+            	wpn_fps_upg_bonus_concealment_p3 = {
+			exclude_category = {"saw"}
+		},
             	wpn_fps_upg_bonus_damage_p2 = {
 			exclude_category = {"grenade_launcher", "crossbow", "bow"}
 		},
@@ -21717,7 +21727,10 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 		name_id = "bm_wp_saw_body_speed",
 		a_obj = "a_body",
 		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_body_speed/wpn_fps_saw_body_speed",
-		stats = {value = 1, damage = 3},
+		stats = {value = 1},
+		custom_stats = {rof_mult = 1.15},
+		has_description = true,
+		desc_id = "bm_fast_motor_sc_desc",
 		texture_bundle_folder = "butcher_pack_mods",
 		dlc = "butch_pack_free",
 		sound_switch = {suppressed = "regular_b"}
@@ -21730,8 +21743,7 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_m_blade_durable/wpn_fps_saw_m_blade_durable",
 		stats = {
 			value = 1,
-			extra_ammo = 25,
-			total_ammo_mod = 50
+			extra_ammo = 10
 		},
 		texture_bundle_folder = "butcher_pack_mods",
 		dlc = "butch_pack_free",
@@ -21748,9 +21760,14 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 		name_id = "bm_wp_saw_m_blade_sharp",
 		a_obj = "a_m",
 		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_m_blade_sharp/wpn_fps_saw_m_blade_sharp",
-		stats = {value = 1, damage = 3},
+		stats = {value = 1},
 		texture_bundle_folder = "butcher_pack_mods",
+		has_description = true,
+		desc_id = "bm_ap_saw_blade_sc_desc",
 		dlc = "butch_pack_free",
+		custom_stats = {
+			armor_piercing_add = 1
+		},
 		animations = {
 			reload = "reload",
 			reload_not_empty = "reload",
@@ -23187,8 +23204,7 @@ function WeaponFactoryTweakData:_init_peacemaker()
 			value = 1,
 			spread = 1,
 			spread_moving = -1,
-			concealment = -2,
-			damage = 1
+			concealment = -2
 		},
 		dlc = "west",
 		texture_bundle_folder = "west"
@@ -23208,8 +23224,7 @@ function WeaponFactoryTweakData:_init_peacemaker()
 			value = 1,
 			spread = -1,
 			spread_moving = -1,
-			concealment = 2,
-			damage = 1
+			concealment = 2
 		},
 		dlc = "west",
 		texture_bundle_folder = "west"

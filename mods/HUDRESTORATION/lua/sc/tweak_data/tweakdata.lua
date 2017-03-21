@@ -207,11 +207,13 @@ if not tweak_data then return end
 			jobs = {"mia"},
 			num_players = nil,
 			difficulties = hard_and_above,
-			masks = {
-				"white_wolf",
-				"owl",
-				"rabbit",
-				"pig"
+			equipped_team = {
+				masks = {
+					"white_wolf",
+					"owl",
+					"rabbit",
+					"pig"
+				}
 			}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, animal_fight)
@@ -222,11 +224,13 @@ if not tweak_data then return end
 		job = {"alex"},
 		num_players = nil,
 		difficulties = overkill_and_above,
-		masks = {
-			"silverback",
-			"mandril",
-			"skullmonkey",
-			"orangutang"
+		equipped_team = {
+			masks = {
+				"silverback",
+				"mandril",
+				"skullmonkey",
+				"orangutang"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, go_bananas)
@@ -237,11 +241,13 @@ if not tweak_data then return end
 		jobs = {"pines"},
 		num_players = nil,
 		difficulties = deathwish_and_above,
-		masks = {
-			"krampus",
-			"mrs_claus",
-			"strinch",
-			"robo_santa"
+		equipped_team = {
+			masks = {
+				"krampus",
+				"mrs_claus",
+				"strinch",
+				"robo_santa"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, xmas_2014)
@@ -250,11 +256,13 @@ if not tweak_data then return end
 	local reindeer_games = {
 		award = "charliesierra_9",
 		num_players = nil,
-		masks = {
-			"santa_happy",
-			"santa_mad",
-			"santa_drunk",
-			"santa_surprise"
+		equipped_team = {
+			masks = {
+				"santa_happy",
+				"santa_mad",
+				"santa_drunk",
+				"santa_surprise"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, reindeer_games)
@@ -263,13 +271,15 @@ if not tweak_data then return end
 	local ghost_riders = {
 		award = "bob_10",
 		num_players = nil,
-		masks = {
-			"skullhard",
-			"skullveryhard",
-			"skulloverkill",
-			"skulloverkillplus",
-			"gitgud_e_wish",
-			"gitgud_sm_wish"
+		equipped_team = {
+			masks = {
+				"skullhard",
+				"skullveryhard",
+				"skulloverkill",
+				"skulloverkillplus",
+				"gitgud_e_wish",
+				"gitgud_sm_wish"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, ghost_riders)
@@ -278,11 +288,13 @@ if not tweak_data then return end
 	local funding_father = {
 		award = "bigbank_10",
 		num_players = nil,
-		masks = {
-			"franklin",
-			"lincoln",
-			"grant",
-			"washington"
+		equipped_team = {
+			masks = {
+				"franklin",
+				"lincoln",
+				"grant",
+				"washington"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, funding_father)
@@ -297,11 +309,13 @@ if not tweak_data then return end
 			"watchdogs_night"
 		},
 		difficulties = overkill_and_above,
-		masks = {
-			"galax",
-			"crowgoblin",
-			"evil",
-			"volt"
+		equipped_team = {
+			masks = {
+				"galax",
+				"crowgoblin",
+				"evil",
+				"volt"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, guy_with_gun_now_with_night_jobs)
@@ -312,11 +326,13 @@ if not tweak_data then return end
 		num_players = nil,
 		jobs = {"hox"},
 		difficulties = overkill_and_above,
-		masks = {
-			"churchill",
-			"red_hurricane",
-			"patton",
-			"de_gaulle"
+		equipped_team = {
+			masks = {
+				"churchill",
+				"red_hurricane",
+				"patton",
+				"de_gaulle"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, wind_of_change)
@@ -326,11 +342,13 @@ if not tweak_data then return end
 		award = "bat_5",
 		jobs = {"mus"},
 		difficulties = overkill_and_above,
-		masks = {
-			"medusa",
-			"anubis",
-			"pazuzu",
-			"cursed_crown"
+		equipped_team = {
+			masks = {
+				"medusa",
+				"anubis",
+				"pazuzu",
+				"cursed_crown"
+			}
 		}
 	}
 	table.insert(tweak_data.achievement.complete_heist_achievements, blight)

@@ -299,7 +299,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Portable Saw
 				self.values.saw.extra_ammo_multiplier = {1.5}
-				self.values.saw.damage_multiplier = {1.3}
+				self.values.saw.damage_multiplier = {1.075}
 				
 				--Extra Lead
 				self.ammo_bag_base = 3
@@ -665,7 +665,7 @@ function UpgradesTweakData:_init_pd2_values()
 		--}
 
     	if Global.game_settings and Global.game_settings.single_player then
-		self.values.cable_tie.quantity_1 = {10}
+		self.values.cable_tie.quantity_1 = {16}
 	end
 
 	--Perk Deck shit--

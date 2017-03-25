@@ -1511,10 +1511,10 @@ end
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal'}
 	for i, wep_id in ipairs(tact_rel) do
-			self[wep_id].tactical_reload = true
-			self[wep_id].has_description = false
+		self[wep_id].tactical_reload = true
+		--self[wep_id].has_description = false
 	end
 	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat'}
 	for i, wep_id in ipairs(tact_akimbo_pistol) do
@@ -5097,6 +5097,97 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tti.armor_piercing_chance = 1
 	self.tti.stats_modifiers = {damage = 1}
 	self.tti.panic_suppression_chance = 0.0
+	self.siltstone.upgrade_blocks = nil
+	self.siltstone.has_description = true
+	self.siltstone.desc_id = "bm_ap_weapon_sc_desc"
+	self.siltstone.CLIP_AMMO_MAX = 10
+	self.siltstone.AMMO_MAX = 40
+	self.siltstone.AMMO_PICKUP = self:_pickup_chance(40, 2)
+	self.siltstone.fire_mode_data.fire_rate = 0.66666666666
+	self.siltstone.spread.standing = 3.5
+	self.siltstone.spread.crouching = 2.5
+	self.siltstone.spread.steelsight = 2
+	self.siltstone.spread.moving_standing = 4
+	self.siltstone.spread.moving_crouching = 3
+	self.siltstone.spread.moving_steelsight = 2
+	self.siltstone.kick.standing = self.r870.kick.standing
+	self.siltstone.kick.crouching = self.r870.kick.standing
+	self.siltstone.kick.steelsight = self.r870.kick.standing
+	self.siltstone.stats = {
+		damage = 172,
+		spread = 19,
+		recoil = 17,
+		spread_moving = 8,
+		zoom = 1,
+		concealment = 18,
+		suppression = 4,
+		alert_size = 4,
+		extra_ammo = 6,
+		total_ammo_mod = 100,
+		value = 9,
+		reload = 11
+	}
+	self.siltstone.stats_modifiers = nil
+	self.siltstone.panic_suppression_chance = 0.0
+	self.flint.AMMO_MAX = 150
+	self.flint.AMMO_PICKUP = self:_pickup_chance(150, 2)
+	self.flint.CLIP_AMMO_MAX = 30
+	self.flint.fire_mode_data.fire_rate = 0.08571428571
+	self.flint.auto.fire_rate = 0.08571428571
+	self.flint.spread.standing = 3.5
+	self.flint.spread.crouching = 2.5
+	self.flint.spread.steelsight = 1
+	self.flint.spread.moving_standing = 4
+	self.flint.spread.moving_crouching = 3
+	self.flint.spread.moving_steelsight = 2
+	self.flint.kick.standing = self.new_m4.kick.standing
+	self.flint.kick.crouching = self.new_m4.kick.standing
+	self.flint.kick.steelsight = self.new_m4.kick.standing
+	self.flint.stats = {
+		damage = 41,
+		spread = 14,
+		recoil = 20,
+		spread_moving = 5,
+		zoom = 3,
+		concealment = 17,
+		suppression = 7,
+		alert_size = 7,
+		extra_ammo = 6,
+		total_ammo_mod = 100,
+		value = 4,
+		reload = 11
+	}
+	self.flint.panic_suppression_chance = 0.0
+	self.coal.AMMO_MAX = 180
+	self.coal.CLIP_AMMO_MAX = 64
+	self.coal.AMMO_PICKUP = self:_pickup_chance(180, 1)
+	self.coal.fire_mode_data.fire_rate = 0.08823529411
+	self.coal.auto.fire_rate = 0.08823529411
+	self.coal.panic_suppression_chance = 0.1
+	self.coal.spread.standing = 3.5
+	self.coal.spread.crouching = 2.5
+	self.coal.spread.steelsight = 1
+	self.coal.spread.moving_standing = 4
+	self.coal.spread.moving_crouching = 3
+	self.coal.spread.moving_steelsight = 2
+	self.coal.kick.standing = self.new_m4.kick.standing
+	self.coal.kick.crouching = self.new_m4.kick.standing
+	self.coal.kick.steelsight = self.new_m4.kick.standing
+	self.coal.stats = {
+		damage = 25,
+		spread = 14,
+		recoil = 21,
+		spread_moving = 9,
+		zoom = 3,
+		concealment = 23,
+		suppression = 9,
+		alert_size = 9,
+		extra_ammo = 6,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 11
+	}
+	self.coal.panic_suppression_chance = 0.1
 
 	--Custom weapons below--
 

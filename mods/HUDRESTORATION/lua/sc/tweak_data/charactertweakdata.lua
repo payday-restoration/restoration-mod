@@ -1469,7 +1469,7 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.headshot_dmg_mul = 1
 	self.old_hoxton_mission.move_speed = presets.move_speed.gang_member
 	self.old_hoxton_mission.surrender_break_time = {6, 10}
-	self.old_hoxton_mission.suppression = nil
+	self.old_hoxton_mission.suppression = presets.suppression.no_supress
 	self.old_hoxton_mission.surrender = false
 	self.old_hoxton_mission.weapon_voice = "1"
 	self.old_hoxton_mission.experience.cable_tie = "tie_swat"
@@ -12869,7 +12869,8 @@ function CharacterTweakData:character_map()
 				"ene_sniper_3",
 				"npc_spa",
 				"npc_spa_2",
-				"npc_spa_3"
+				"npc_spa_3",
+				"npc_gage"
 			}
 		},
 		fish = {

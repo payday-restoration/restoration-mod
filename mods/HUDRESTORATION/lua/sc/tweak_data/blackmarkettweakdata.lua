@@ -2490,6 +2490,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.catch.repeat_expire_t = 0.75
 	self.melee_weapons.catch.expire_t = 1.2
 	self.melee_weapons.catch.melee_damage_delay = 0.1
+
+	--another machete--
+	self.melee_weapons.oxide.speed_mult = 0.85
+	self.melee_weapons.oxide.stats.min_damage = 6
+	self.melee_weapons.oxide.stats.max_damage = 12
+	self.melee_weapons.oxide.stats.min_damage_effect = 0.6
+	self.melee_weapons.oxide.stats.max_damage_effect = 0.8
+	self.melee_weapons.oxide.stats.charge_time = 2
+	self.melee_weapons.oxide.stats.range = 190
+	self.melee_weapons.oxide.expire_t = 0.9
+	self.melee_weapons.oxide.repeat_expire_t = 0.6
+	self.melee_weapons.oxide.stats.concealment = 27
+	self.melee_weapons.oxide.melee_damage_delay = 0.1
 end	
 
 end

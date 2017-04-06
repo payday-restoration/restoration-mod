@@ -12886,6 +12886,10 @@ function CharacterTweakData:character_map()
 		slu = {
 			path = "units/pd2_dlc_slu/characters/",
 			list = {"npc_vlad", "npc_sophia"}
+		},
+		run = {
+			path = "units/pd2_dlc_run/characters/",
+			list = {"npc_matt"}
 		}
 	}
 	return char_map

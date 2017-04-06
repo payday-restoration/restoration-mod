@@ -1190,6 +1190,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"team_armor_regen_time_multiplier",
+						"player_armor_regen_timer_multiplier_tier",
 						"player_armor_multiplier_2"
 					},
 					cost = self.costs.hightierpro
@@ -2352,7 +2353,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_armor_regen_timer_multiplier_tier"
+					"player_perk_armor_regen_timer_multiplier_1",
+					"player_perk_armor_regen_timer_multiplier_2"
 				},
 				cost = 4000,
 				icon_xy = {6, 2},
@@ -2411,7 +2413,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_armor_regen_timer_multiplier_tier",
+					"player_perk_armor_regen_timer_multiplier_1",
+					"player_perk_armor_regen_timer_multiplier_2",
 					"player_crouch_speed_multiplier_2",
 					"player_passive_loot_drop_multiplier"
 				},

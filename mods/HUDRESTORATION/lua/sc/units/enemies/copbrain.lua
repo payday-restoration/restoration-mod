@@ -48,6 +48,11 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
 end
 
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+if difficulty_index == 8 then
+
 function CopBrain:_chk_use_cover_grenade(unit)
 	if not Network:is_server() or not self._logic_data.char_tweak.dodge_with_grenade or not self._logic_data.attention_obj then
 		return
@@ -76,6 +81,8 @@ function CopBrain:_chk_use_cover_grenade(unit)
 	if grenade_was_used then
 		self._nr_flashbang_covers_used = (self._nr_flashbang_covers_used or 0) + 1
 	end
+end
+
 end
 
 --Thanks Rokk--

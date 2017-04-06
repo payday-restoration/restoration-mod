@@ -223,7 +223,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.knock_down = {0.1, 0.25}
 	
 				--Body Expertise
-				self.values.weapon.automatic_head_shot_add = {0.35, 1}
+				self.values.weapon.automatic_head_shot_add = {0.3, 0.9}
 
 			--}
 		--}
@@ -423,7 +423,8 @@ function UpgradesTweakData:_init_pd2_values()
 					
 				--Bulletproof
 				self.values.player.armor_multiplier = {1.35, 1.5}
-				self.values.team.armor.regen_time_multiplier = {0.75}
+				self.values.team.armor.regen_time_multiplier = {0.9}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.9}
 			--}
 		--}
 		
@@ -694,7 +695,6 @@ function UpgradesTweakData:_init_pd2_values()
 		0.2,
 		0.35
 	}
-	self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 
 	self.values.player.level_5_armor_addend = {-7}
 	self.values.player.level_2_armor_multiplier = {

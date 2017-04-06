@@ -364,5 +364,7 @@ if not tweak_data then return end
 	tweak_data.player.stances.winchester1874.steelsight.shakers.breathing.amplitude = 0
 	tweak_data.player.stances.wa2000.steelsight.shakers.breathing.amplitude = 0
 	tweak_data.player.stances.model70.steelsight.shakers.breathing.amplitude = 0
+	tweak_data.player.stances.tti.steelsight.shakers.breathing.amplitude = 0
+	tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
 
 	end

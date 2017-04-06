@@ -45,6 +45,7 @@ StatisticsManager.special_unit_ids = {
 	"sniper",
 	"phalanx_minion",
 	"phalanx_vip",
+	"tank_titan",
 	"spring",
 	"swat_turret",
 	"biker_boss",
@@ -66,6 +67,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.rboom = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.tank_titan = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,

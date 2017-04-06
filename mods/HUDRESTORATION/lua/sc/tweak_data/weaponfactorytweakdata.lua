@@ -16538,6 +16538,19 @@ function WeaponFactoryTweakData:create_ammunition()
 			table.insert(self[factory_id .. "_npc"].uses_parts, "wpn_fps_upg_a_grenade_launcher_incendiary_arbiter")
 		end
 	end
+	self.parts.wpn_fps_upg_pis_adam = {
+		pcs = {},
+		type = "ammo",
+		name_id = "bm_wp_upg_pis_adam",
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		is_a_unlockable = false,
+		stats = {},
+		custom_stats = {},
+		internal_part = true,
+		sub_type = "ammo"
+	}
 end
 
 function WeaponFactoryTweakData:_init_g26()

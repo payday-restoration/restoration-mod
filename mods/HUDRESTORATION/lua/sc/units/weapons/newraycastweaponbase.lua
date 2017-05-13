@@ -221,6 +221,29 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				end
 			end
 
+			if stats.use_pistol_kick then
+				if self:weapon_tweak_data().kick then
+					self:weapon_tweak_data().kick.standing = {
+									0.6,
+									0.8,
+									-0.5,
+									0.5
+					}
+					self:weapon_tweak_data().kick.crouching = {
+									0.6,
+									0.8,
+									-0.5,
+									0.5
+					}
+					self:weapon_tweak_data().kick.steelsight = {
+									0.6,
+									0.8,
+									-0.5,
+									0.5
+					}
+				end
+			end
+
 		end
 							
 	end
@@ -253,22 +276,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 	--[[	Reload stuff	]]--
 	function NewRaycastWeaponBase:reload_speed_multiplier()
+		if self._current_reload_speed_multiplier then
+			return self._current_reload_speed_multiplier
+		end
 		local multiplier = 1
 		multiplier = multiplier * self._reload_speed_mult
 
-		multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().category, "reload_speed_multiplier", 1)
-		if self:weapon_tweak_data().sub_category then
-			multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().sub_category, "reload_speed_multiplier", 1)
+		for _, category in ipairs(self:weapon_tweak_data().categories) do
+			multiplier = multiplier * managers.player:upgrade_value(category, "reload_speed_multiplier", 1)
 		end
 		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
 		multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
-		--[[ if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
-			local morale_boost_bonus = self._setup.user_unit:movement():morale_boost()
-			if morale_boost_bonus then
-				multiplier = multiplier * morale_boost_bonus.reload_speed_bonus
-			end
-		end ]]
-	
+
 		if managers.player:has_activate_temporary_upgrade("temporary", "reload_weapon_faster") then
 			multiplier = multiplier * (managers.player:temporary_upgrade_value("temporary", "reload_weapon_faster", 1))
 		end
@@ -277,6 +296,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		multiplier = multiplier * (managers.player:get_property("shock_and_awe_reload_multiplier", 1))
 		multiplier = multiplier * (managers.player:get_temporary_property("bloodthirst_reload_speed", 1))
+		multiplier = managers.crime_spree:modify_value("WeaponBase:GetReloadSpeedMultiplier", multiplier)
 	
 		return multiplier
 	end
@@ -284,10 +304,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	function NewRaycastWeaponBase:enter_steelsight_speed_multiplier()
 		local multiplier = 1
+		local categories = self:weapon_tweak_data().categories
+		for _, category in ipairs(categories) do
+			multiplier = multiplier * managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1)
+		end
 				
 		multiplier = multiplier * self._ads_speed_mult
 
-		multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().category, "enter_steelsight_speed_multiplier", 1)
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "combat_medic_enter_steelsight_speed_multiplier", 1)
 		multiplier = multiplier * managers.player:upgrade_value(self._name_id, "enter_steelsight_speed_multiplier", 1)
 		

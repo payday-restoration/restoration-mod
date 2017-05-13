@@ -46,24 +46,33 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	return balance_multipliers[nr_players + nr_bots]
 end
 
-function GroupAIStateBase:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
-	local smoke_duration = duration == 0 and 15 or duration
-	if flashbang then
+function GroupAIStateBase:detonate_world_smoke_grenade(id)
+	self._smoke_grenades = self._smoke_grenades or {}
+	if not self._smoke_grenades[id] then
+		Application:error("Could not detonate smoke grenade as it was not queued!", id)
+		return
+	end
+	local data = self._smoke_grenades[id]
+	if data.flashbang then
 		if Network:is_client() then
 			return
 		end
 		local flashbang_unit = "units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang"
-		local pos = detonate_pos + Vector3(0, 0, 1)
+		local pos = data.detonate_pos + Vector3(0, 0, 1)
 		local rotation = Rotation(math.random() * 360, 0, 0)
-		local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), pos, rotation)
-		flash_grenade:base():activate(shooter_pos or pos, duration)
+		local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), data.detonate_pos, rotation)
+		flash_grenade:base():activate(data.detonate_pos, data.duration)
+		self._smoke_grenades[id] = nil
 	else
-		self._smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), detonate_pos, Rotation())
-		self._smoke_grenade:base():activate(shooter_pos or detonate_pos, smoke_duration)
-		managers.groupai:state():teammate_comment(nil, "g40x_any", detonate_pos, true, 2000, false)
+		data.duration = data.duration == 0 and 15 or data.duration
+		local smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), data.detonate_pos, Rotation())
+		smoke_grenade:base():activate(data.detonate_pos, data.duration)
+		managers.groupai:state():teammate_comment(nil, "g40x_any", data.detonate_pos, true, 2000, false)
+		data.grenade = smoke_grenade
 	end
-	self._smoke_end_t = Application:time() + smoke_duration
-	self._smoke_grenade_ignore_control = nil
+	if Network:is_server() then
+		managers.network:session():send_to_peers_synched("sync_smoke_grenade", data.detonate_pos, data.detonate_pos, data.duration, data.flashbang and true or false)
+	end
 end
 
 function GroupAIStateBase:has_room_for_police_hostage()

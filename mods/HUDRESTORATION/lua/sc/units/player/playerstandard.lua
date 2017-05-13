@@ -3,7 +3,7 @@ function PlayerStandard:_start_action_intimidate(t, secondary)
 	if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 		local skip_alert = managers.groupai:state():whisper_mode()
 		local voice_type, plural, prime_target = self:_get_unit_intimidation_action(not secondary, not secondary, true, false, true, nil, nil, nil, secondary)
-		if prime_target and prime_target.unit and prime_target.unit.base and prime_target.unit:base().unintimidateable then
+		if prime_target and prime_target.unit and prime_target.unit.base and (prime_target.unit:base().unintimidateable or prime_target.unit:anim_data() and prime_target.unit:anim_data().unintimidateable) then
 			return
 		end
 		local interact_type, sound_name
@@ -348,7 +348,7 @@ end
 		end
 		if col_ray and alive(col_ray.unit) then
 			local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(charge_lerp_value)
-			local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().category, "melee_knockdown_mul", 1))
+			local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().categories and self._equipped_unit:base():weapon_tweak_data().categories[1], "melee_knockdown_mul", 1))
 			damage = damage * managers.player:get_melee_dmg_multiplier()
 			damage_effect = damage_effect * damage_effect_mul
 			col_ray.sphere_cast_radius = sphere_cast_radius

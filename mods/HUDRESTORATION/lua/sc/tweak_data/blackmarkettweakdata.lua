@@ -22,15 +22,16 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.launcher_frag_arbiter.physic_effect = Idstring("physic_effects/anti_gravitate")
 
 	--Throwables--
-	self.projectiles.wpn_prj_four.max_amount = 10
+	self.projectiles.wpn_prj_four.max_amount = 9
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_ace.max_amount = 10
+	self.projectiles.wpn_prj_ace.max_amount = 9
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.15
-	self.projectiles.wpn_prj_target.max_amount = 10
-	self.projectiles.wpn_prj_jav.max_amount = 7
-	self.projectiles.wpn_prj_hur.max_amount = 7
+	self.projectiles.wpn_prj_target.max_amount = 9
+	self.projectiles.wpn_prj_jav.max_amount = 6
+	self.projectiles.wpn_prj_hur.max_amount = 6
+	self.projectiles.fir_com.max_amount = 3
 
 	--Just so it won't mark you or whatever--
 	self.projectiles.concussion.no_cheat_count = true
@@ -1457,7 +1458,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.toothbrush.stats.charge_time = 1.5
 	self.melee_weapons.toothbrush.stats.range = 125
 	self.melee_weapons.toothbrush.repeat_expire_t = 0.5
-	--self.melee_weapons.toothbrush.stats.concealment = 30
+	self.melee_weapons.toothbrush.stats.concealment = 30
 
 	--Money money money--
 	self.melee_weapons.moneybundle.speed_mult = 1.65
@@ -2503,6 +2504,30 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.oxide.repeat_expire_t = 0.6
 	self.melee_weapons.oxide.stats.concealment = 27
 	self.melee_weapons.oxide.melee_damage_delay = 0.1
+
+	--memed hard enough into the game--
+	self.melee_weapons.sword.speed_mult = 1.7
+	self.melee_weapons.sword.stats.min_damage = 1
+	self.melee_weapons.sword.stats.max_damage = 9
+	self.melee_weapons.sword.stats.min_damage_effect = 0.1
+	self.melee_weapons.sword.stats.max_damage_effect = 0.1
+	self.melee_weapons.sword.stats.charge_time = 1.5
+	self.melee_weapons.sword.stats.range = 125
+	self.melee_weapons.sword.repeat_expire_t = 0.5
+	self.melee_weapons.sword.stats.concealment = 30
+
+	--asdf--
+	self.melee_weapons.agave.speed_mult = 0.85
+	self.melee_weapons.agave.stats.min_damage = 6
+	self.melee_weapons.agave.stats.max_damage = 12
+	self.melee_weapons.agave.stats.min_damage_effect = 0.6
+	self.melee_weapons.agave.stats.max_damage_effect = 0.8
+	self.melee_weapons.agave.stats.charge_time = 2
+	self.melee_weapons.agave.stats.range = 190
+	self.melee_weapons.agave.expire_t = 0.9
+	self.melee_weapons.agave.repeat_expire_t = 0.6
+	self.melee_weapons.agave.stats.concealment = 27
+	self.melee_weapons.agave.melee_damage_delay = 0.1
 end	
 
 end

@@ -213,7 +213,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.smg.hip_fire_spread_multiplier = {0.5}
 
 				--MG Specialist (Marksman)
-				self.values.smg.fire_rate_multiplier = {1.15}
+				self.values.smg.fire_rate_multiplier = {1.2}
 				self.values.smg.damage_multiplier = {1.15}
 				
 				--Shock and Awe
@@ -299,7 +299,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Portable Saw
 				self.values.saw.extra_ammo_multiplier = {1.5}
-				self.values.saw.damage_multiplier = {1.075}
+				self.values.saw.damage_multiplier = {1.15}
 				
 				--Extra Lead
 				self.ammo_bag_base = 3
@@ -401,6 +401,11 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.single_spread_index_addend = {1}
 				self.values.assault_rifle.recoil_index_addend = {1}
 				self.values.snp.recoil_index_addend = {1}
+				self.sharpshooter_categories = {
+					"assault_rifle",
+					"smg",
+					"snp"
+				}
 
 				--Spotter
 				self.values.player.marked_enemy_extra_damage = {true}

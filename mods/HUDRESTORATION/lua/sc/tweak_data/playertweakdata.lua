@@ -13,71 +13,34 @@ end
 function PlayerTweakData:_set_hard()
 	self.damage.automatic_respawn_time = 220
 	self.damage.MIN_DAMAGE_INTERVAL = 0.5
-end
-
-function PlayerTweakData:_set_overkill()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1.1
 	self.suspicion.buildup_mul = 1.1
 end
 
-function PlayerTweakData:_set_overkill_145()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.4
+function PlayerTweakData:_set_overkill()
+	self.damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.suspicion.max_value = 10
 	self.suspicion.range_mul = 1.2
 	self.suspicion.buildup_mul = 1.2
-	self.alarm_pager = {
-		first_call_delay = {2, 4},
-		call_duration = {
-			{6, 6},
-			{6, 6}
-		},
-		nr_of_calls = {2, 2},
-		bluff_success_chance = {
-			1,
-			1,
-			1,
-			0
-		},
-		bluff_success_chance_w_skill = {
-			1,
-			1,
-			1,
-			0
-		}
-	}
 end
 
-function PlayerTweakData:_set_easy_wish()
+function PlayerTweakData:_set_overkill_145()
+	self.damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.suspicion.max_value = 11
 	self.suspicion.range_mul = 1.3
 	self.suspicion.buildup_mul = 1.3
+end
+
+function PlayerTweakData:_set_easy_wish()
+	self.suspicion.max_value = 12
+	self.suspicion.range_mul = 1.4
+	self.suspicion.buildup_mul = 1.4
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.5,
 		0.251
-	}
-	self.alarm_pager = {
-		first_call_delay = {2, 4},
-		call_duration = {
-			{6, 6},
-			{6, 6}
-		},
-		nr_of_calls = {2, 2},
-		bluff_success_chance = {
-			1,
-			1,
-			1,
-			0
-		},
-		bluff_success_chance_w_skill = {
-			1,
-			1,
-			1,
-			0
-		}
 	}
 end
 
@@ -101,9 +64,11 @@ function PlayerTweakData:_set_overkill_290()
 		bluff_success_chance = {
 			1,
 			1,
+			1,
 			0
 		},
 		bluff_success_chance_w_skill = {
+			1,
 			1,
 			1,
 			0

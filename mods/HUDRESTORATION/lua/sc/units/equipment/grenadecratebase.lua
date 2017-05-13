@@ -8,17 +8,17 @@ function GrenadeCrateBase:take_grenade(unit)
 	if can_take_grenade == 1 then
 		unit:sound():play("pickup_ammo")
 		if BlackMarketManager:equipped_grenade() == "wpn_prj_four" then
-			managers.player:add_grenade_amount(6)
+			managers.player:add_grenade_amount(3)
 		elseif BlackMarketManager:equipped_grenade() == "wpn_prj_ace" then
-			managers.player:add_grenade_amount(6)
+			managers.player:add_grenade_amount(3)
 		elseif BlackMarketManager:equipped_grenade() == "wpn_prj_jav" then
-			managers.player:add_grenade_amount(3)
+			managers.player:add_grenade_amount(2)
 		elseif BlackMarketManager:equipped_grenade() == "wpn_prj_hur" then
-			managers.player:add_grenade_amount(3)
+			managers.player:add_grenade_amount(2)
 		elseif BlackMarketManager:equipped_grenade() == "concussion" then
 			managers.player:add_grenade_amount(2)
 		elseif BlackMarketManager:equipped_grenade() == "wpn_prj_target" then
-			managers.player:add_grenade_amount(6)
+			managers.player:add_grenade_amount(3)
 		else
 			managers.player:add_grenade_amount(1)
 		end

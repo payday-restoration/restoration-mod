@@ -174,7 +174,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
-	self.fbi_vet.damage.bullet_dodge_chance = 70
+	self.fbi_vet.damage.bullet_dodge_chance = 60
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
     	self.fbi_vet.move_speed = presets.move_speed.lightning
@@ -237,20 +237,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.ecm_vulnerability = 1
 	self.medic.ecm_hurts = {
 		ears = {min_duration = 8, max_duration = 10}
-	}
-	self.medic.disabled_units = {
-		"biker",
-		"mobster",
-		"mobster_boss",
-		"biker_boss",
-		"hector_boss",
-		"hector_boss_no_armor",
-		"chavez_boss",
-		"phalanx_minion",
-		"spring",
-		"medic",
-		"tank_titan",
-		"gangster"
 	}
 	self.medic.weapon_voice = "2"
 	self.medic.experience.cable_tie = "tie_swat"
@@ -316,7 +302,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.detection = presets.detection.normal
 	self.heavy_swat.HEALTH_INIT = 15
 	self.heavy_swat.headshot_dmg_mul = 2.5
-	self.heavy_swat.damage.explosion_damage_mul = 1
 	self.heavy_swat.move_speed = presets.move_speed.fast
 	self.heavy_swat.surrender_break_time = {6, 8}
 	self.heavy_swat.suppression = presets.suppression.hard_agg
@@ -389,7 +374,6 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
 	self.fbi_heavy_swat.headshot_dmg_mul = 2
-	self.fbi_heavy_swat.damage.explosion_damage_mul = 1
 	self.fbi_heavy_swat.move_speed = presets.move_speed.fast
 	self.fbi_heavy_swat.surrender_break_time = {6, 8}
 	self.fbi_heavy_swat.suppression = presets.suppression.hard_agg
@@ -421,9 +405,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.damage.hurt_severity = presets.hurt_severities.elite
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
 	self.city_swat.weapon.m4.melee_dmg = 15
-	self.city_swat.weapon.r870 = deep_clone(presets.weapon.expert.saiga)
-	self.city_swat.weapon.r870.RELOAD_SPEED = 1
-	self.city_swat.weapon.r870.melee_dmg = 15
+	self.city_swat.weapon.saiga = deep_clone(presets.weapon.expert.saiga)
+	self.city_swat.weapon.saiga.RELOAD_SPEED = 1
+	self.city_swat.weapon.saiga.melee_dmg = 15
 	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.expert.mp5)
 	self.city_swat.weapon.mp5.melee_dmg = 15
 	self.city_swat.detection = presets.detection.normal
@@ -596,8 +580,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 500
-	self.mobster_boss.headshot_dmg_mul = 6.3954
-	self.mobster_boss.damage.explosion_damage_mul = 1
+	self.mobster_boss.headshot_dmg_mul = 7.99425
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.mobster_boss.move_speed = presets.move_speed.slow
 	self.mobster_boss.allowed_poses = {stand = true}
@@ -641,8 +624,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 500
-	self.biker_boss.headshot_dmg_mul = 6.3954
-	self.biker_boss.damage.explosion_damage_mul = 1
+	self.biker_boss.headshot_dmg_mul = 7.99425
 	self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.no_hurts
 	self.biker_boss.move_speed = presets.move_speed.slow
 	self.biker_boss.allowed_poses = {stand = true}
@@ -720,8 +702,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.chavez_boss.HEALTH_INIT = 500
-	self.chavez_boss.headshot_dmg_mul = 6.3954
-	self.chavez_boss.damage.explosion_damage_mul = 1
+	self.chavez_boss.headshot_dmg_mul = 7.99425
 	self.chavez_boss.move_speed = presets.move_speed.slow
 	self.chavez_boss.allowed_poses = {stand = true}
 	self.chavez_boss.no_retreat = true
@@ -788,9 +769,8 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 500
-	self.drug_lord_boss.headshot_dmg_mul = 6.3954
+	self.drug_lord_boss.headshot_dmg_mul = 7.99425
 	self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.drug_lord_boss.damage.explosion_damage_mul = 1
 	self.drug_lord_boss.move_speed = presets.move_speed.slow
 	self.drug_lord_boss.allowed_poses = {stand = true}
 	self.drug_lord_boss.crouch_move = false
@@ -838,7 +818,6 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.detection = presets.detection.normal
 	self.drug_lord_boss_stealth.HEALTH_INIT = 6
 	self.drug_lord_boss_stealth.headshot_dmg_mul = 3.4
-	self.drug_lord_boss_stealth.damage.explosion_damage_mul = 1
 	self.drug_lord_boss_stealth.move_speed = presets.move_speed.very_fast
 	self.drug_lord_boss_stealth.no_retreat = true
 	self.drug_lord_boss_stealth.no_arrest = true
@@ -880,8 +859,7 @@ function CharacterTweakData:_init_tank(presets)
 	self:_process_weapon_usage_table(self.tank.weapon)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
-	self.tank.headshot_dmg_mul = 10
-	self.tank.damage.explosion_damage_mul = 1
+	self.tank.headshot_dmg_mul = 12.5
 	self.tank.move_speed = presets.move_speed.slow
 	self.tank.allowed_stances = {cbt = true}
 	self.tank.allowed_poses = {stand = true}
@@ -938,8 +916,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw.critical_hits = {
 		damage_mul = 2
 	}
-	self.tank_hw.headshot_dmg_mul = 6.3954
-	self.tank_hw.damage.explosion_damage_mul = 1
+	self.tank_hw.headshot_dmg_mul = 7.99425
 	self.tank_hw.immune_to_concussion = false
 	self.tank_hw.use_animation_on_fire_damage = false
 	self.tank_hw.flammable = true
@@ -1059,7 +1036,6 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.deathguard = false
 	self.shield.no_equip_anim = true
 	self.shield.wall_fwd_offset = 100
-	self.shield.damage.explosion_damage_mul = 1
 	self.shield.calls_in = nil
 	self.shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
 	self.shield.damage.shield_knocked = true
@@ -1183,7 +1159,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.melee_weapon = "fists_dozer"
 	self.spring.melee_weapon_dmg_multiplier = 1
 	self.spring.melee_anims = {
-		"cbt_std_melee"
+		"e_so_kickdrill_low"
 	}
 	self.spring.speech_prefix_p1 = "l"
 	self.spring.speech_prefix_p2 = "d"
@@ -1191,7 +1167,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.chatter = presets.enemy_chatter.no_chatter
 	self.spring.announce_incomming = "incomming_captain"
 	self.spring.spawn_sound_event = "cpa_a02_01"
-	self.spring.die_sound_event = "tsr_burndeath"
+	self.spring.die_sound_event = "mga_death_scream"
 	self.spring.critical_hits = {
 		damage_mul = 2
 	}
@@ -1266,6 +1242,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.flammable = false
 	self.boom.use_animation_on_fire_damage = false
 	self.boom.damage.explosion_damage_mul = 0
+	self.boom.damage.fire_damage_mul = 0
 	self.boom.damage.hurt_severity = presets.hurt_severities.boom
 	self.boom.headshot_dmg_mul = 1.8
 	self.boom.bag_dmg_mul = 6
@@ -1329,7 +1306,7 @@ function CharacterTweakData:_init_boom(presets)
 	end
 	self.rboom.spawn_sound_event = "clk_c01x_plu"
 	self.rboom.speech_prefix_p1 = "rgren"
-	self.rboom.die_sound_event = "rmdc_x02a_any_3p"
+	self.rboom.die_sound_event = "mdc_x02a_any_3p"
  	table.insert(self._enemy_list, "rboom")
 end
 
@@ -2032,6 +2009,30 @@ function CharacterTweakData:_init_chico(presets)
 	self.chico.weapon_voice = "3"
 	self.chico.access = "teamAI1"
 	self.chico.arrest = {
+		timeout = 240,
+		aggression_timeout = 6,
+		arrest_timeout = 240
+	}
+end
+
+function CharacterTweakData:_init_max(presets)
+	self.max = {}
+	self.max.always_face_enemy = true
+	self.max.no_run_start = true
+	self.max.no_run_stop = true
+	self.max.damage = presets.gang_member_damage
+	self.max.weapon = deep_clone(presets.weapon.gang_member)
+	self.max.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+	}
+	self.max.detection = presets.detection.gang_member
+	self.max.move_speed = presets.move_speed.gang_member
+	self.max.crouch_move = false
+	self.max.speech_prefix = "rb18"
+	self.max.weapon_voice = "3"
+	self.max.access = "teamAI1"
+	self.max.arrest = {
 		timeout = 240,
 		aggression_timeout = 6,
 		arrest_timeout = 240
@@ -11631,6 +11632,7 @@ function CharacterTweakData:_set_easy()
 	self.old_hoxton_mission.HEALTH_INIT = 37.5
 	self.spa_vip.HEALTH_INIT = 37.5
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 18.75
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -11730,6 +11732,11 @@ function CharacterTweakData:_set_normal()
 		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
+	self.max.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+	}
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
@@ -11829,6 +11836,11 @@ function CharacterTweakData:_set_hard()
 		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
+	self.max.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+	}
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
@@ -11928,6 +11940,11 @@ function CharacterTweakData:_set_overkill()
 		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	}
+	self.max.weapon.weapons_of_choice = {
+		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
+		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	}
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11946,6 +11963,8 @@ function CharacterTweakData:_set_overkill_145()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("expert")
+	self.city_swat.weapon.m4 = deep_clone(self.presets.weapon.good.m4)
+	self.city_swat.weapon.m4.melee_dmg = 12
 	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.good.mp5)
 	self.city_swat.weapon.mp5.melee_dmg = 12
 	self:_set_characters_dodge_preset("athletic_overkill")
@@ -11963,6 +11982,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.spa_vip.HEALTH_INIT = 187.5
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 93.75
 	self:_multiply_all_speeds(1, 1.05)
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11998,6 +12018,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -12039,6 +12060,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -12047,9 +12069,9 @@ end
 
 function CharacterTweakData:_set_sm_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(2, 0.915)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(2, 0.915)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12082,6 +12104,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
+	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
 	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -12829,6 +12852,19 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_dlc_help/characters/",
 			list = {
 				"ene_zeal_bulldozer_halloween"
+			}
+		},
+		glace = {
+			path = "units/pd2_dlc_glace/characters/",
+			list = {
+				"npc_chinese_prisoner",
+				"npc_prisoner_1",
+				"npc_prisoner_2",
+				"npc_prisoner_3",
+				"npc_prisoner_4",
+				"npc_prisoner_5",
+				"npc_prisoner_6",
+				"npc_yakuza_prisoner"
 			}
 		},
 		moon = {

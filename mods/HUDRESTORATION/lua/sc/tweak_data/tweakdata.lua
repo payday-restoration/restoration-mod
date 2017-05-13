@@ -118,6 +118,19 @@ if not tweak_data then return end
 	tweak_data.projectiles.molotov.player_damage = 3
 	tweak_data.projectiles.molotov.burn_duration = 10
 
+	--Incendiary Nades--
+	tweak_data.projectiles.fir_com.damage = 60
+	tweak_data.projectiles.fir_com.curve_pow = 3
+	tweak_data.projectiles.fir_com.player_damage = 60
+	tweak_data.projectiles.fir_com.fire_dot_data = {
+		dot_damage = 1,
+		dot_trigger_max_distance = 3000,
+		dot_trigger_chance = 50,
+		dot_length = 10,
+		dot_tick_period = 0.5
+	}
+	tweak_data.projectiles.fir_com.range = 350
+
 	--Throwing Card--
 	tweak_data.projectiles.wpn_prj_ace.damage = 24
 	tweak_data.projectiles.wpn_prj_ace.adjust_z = 0
@@ -177,18 +190,10 @@ if not tweak_data then return end
 	tweak_data.medic.cooldown = 30
 	tweak_data.radius = 700
 	tweak_data.medic.disabled_units = {
-		"biker",
-		"mobster",
-		"mobster_boss",
-		"biker_boss",
-		"hector_boss",
-		"hector_boss_no_armor",
-		"chavez_boss",
 		"phalanx_minion",
 		"spring",
 		"medic",
-		"tank_titan",
-		"gangster"
+		"tank_titan"
 	}
 	tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
 	tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil

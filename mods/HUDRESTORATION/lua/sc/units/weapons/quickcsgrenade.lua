@@ -22,7 +22,7 @@ function QuickCsGrenade:_setup_from_tweak_data()
 	else
 		self._damage_tick_period = 0.25
 	end
-	self._damage_per_tick = self._tweak_data.damage_per_tick or 0.75
+	self._damage_per_tick = 0
 end
 
 end

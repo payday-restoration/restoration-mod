@@ -8,7 +8,7 @@ function BlackMarketGui:choose_weapon_buy_callback(data)
 	local item_categories = {}
 	for _, item in ipairs(blackmarket_items) do
 		local weapon_data = tweak_data.weapon[item.weapon_id]
-		local category = weapon_data.recategorize or tweak_data.gui.buy_weapon_category_groups[weapon_data.category] or weapon_data.category
+		local category = tweak_data.gui.buy_weapon_category_groups[weapon_data.categories[1]] or weapon_data.categories[1]
 		item_categories[category] = item_categories[category] or {}
 		table.insert(item_categories[category], item)
 	end
@@ -202,8 +202,9 @@ else
 				end
 				local weapon = managers.blackmarket:get_crafted_category_slot(data.prev_node_data.category, data.prev_node_data.slot) or {}
 				local gadget
-				local mod_type = tweak_data.weapon.factory.parts[new_data.name].type
-				local sub_type = tweak_data.weapon.factory.parts[new_data.name].sub_type
+				local mod_td = tweak_data.weapon.factory.parts[new_data.name]
+				local mod_type = mod_td.type
+				local sub_type = mod_td.sub_type
 				local is_auto = weapon and tweak_data.weapon[weapon.weapon_id] and tweak_data.weapon[weapon.weapon_id].FIRE_MODE == "auto"
 				if mod_type == "gadget" then
 					gadget = sub_type

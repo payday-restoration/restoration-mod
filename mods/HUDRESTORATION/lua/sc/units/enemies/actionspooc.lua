@@ -153,6 +153,7 @@ function ActionSpooc:anim_act_clbk(anim_act)
 			self._unit:sound():say(sound_string, true, true)
 			self._beating_end_t = self._stroke_t + 1
 			managers.mutators:_run_func("OnPlayerCloakerKicked", self._unit)
+			managers.crime_spree:run_func("OnPlayerCloakerKicked", self._unit)
 			return
 		end
 		if self:_chk_target_invalid() then
@@ -196,6 +197,7 @@ function ActionSpooc:anim_act_clbk(anim_act)
 		self._strike_unit = self._target_unit
 		local spooc_res = self._strike_unit:movement():on_SPOOCed(self._unit, self:is_flying_strike() and "flying_strike" or "sprint_attack")
 		managers.mutators:_run_func("OnPlayerCloakerKicked", self._unit)
+		managers.crime_spree:run_func("OnPlayerCloakerKicked", self._unit)
 		if spooc_res == "countered" then
 			if not Network:is_server() then
 				self._ext_network:send_to_host("action_spooc_stop", self._ext_movement:m_pos(), 1, self._action_id)

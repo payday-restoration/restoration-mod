@@ -139,11 +139,8 @@ function CopDamage:damage_fire(attack_data)
 		if not attack_data.is_fire_dot_damage or data.is_molotov then
 			managers.statistics:killed_by_anyone(data)
 		end
-		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and not attack_data.weapon_unit:base().thrower_unit then
-			local weapon_category = attack_data.weapon_unit:base():weapon_tweak_data().category
-			if weapon_category == "shotgun" or weapon_category == "saw" then
-				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-			end
+		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and alive(attack_data.weapon_unit) and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
 		if attacker_unit and alive(attacker_unit) and attacker_unit:base() and attacker_unit:base().thrower_unit then
 			attacker_unit = attacker_unit:base():thrower_unit()
@@ -154,7 +151,7 @@ function CopDamage:damage_fire(attack_data)
 				self:_comment_death(attacker_unit, self._unit:base()._tweak_table)
 			end
 			self:_show_death_hint(self._unit:base()._tweak_table)
-			if not attack_data.is_fire_dot_damage then
+			if not attack_data.is_fire_dot_damage or data.is_molotov then
 				managers.statistics:killed(data)
 			end
 			if is_civilian then
@@ -450,8 +447,7 @@ function CopDamage:damage_bullet(attack_data)
 			if attack_data.weapon_unit:base():got_silencer() then
 				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance_silencer", 0)
 			end
-			local weapon_category = attack_data.weapon_unit:base():weapon_tweak_data().category
-			if weapon_category == "saw" then
+			if attack_data.weapon_unit:base():is_category("saw") then
 				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("saw", "armor_piercing_chance", 0)
 			end
 			if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit then
@@ -593,11 +589,8 @@ function CopDamage:damage_bullet(attack_data)
 			data.attacker_state = attacker_state
 			managers.statistics:killed(data)
 			self:_check_damage_achievements(attack_data, head)
-			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not attack_data.weapon_unit:base().thrower_unit then
-				local weapon_category = attack_data.weapon_unit:base():weapon_tweak_data().category
-				if weapon_category == "shotgun" or weapon_category == "saw" then
-					managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-				end
+			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end
 			if is_civilian then
 				managers.money:civilian_killed()
@@ -661,6 +654,7 @@ function CopDamage:damage_explosion(attack_data)
 	end
 	local result
 	local damage = attack_data.damage
+	damage = managers.crime_spree:modify_value("CopDamage:DamageExplosion", damage, self._unit:base()._tweak_table)
 	if self._unit:base():char_tweak().DAMAGE_CLAMP_EXPLOSION then
 		damage = math.min(damage, self._unit:base():char_tweak().DAMAGE_CLAMP_EXPLOSION)
 	end
@@ -730,11 +724,8 @@ function CopDamage:damage_explosion(attack_data)
 			attacker_unit = attacker_unit:base():thrower_unit()
 			data.weapon_unit = attack_data.attacker_unit
 		end
-		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit then
-			local weapon_category = attack_data.weapon_unit:base():weapon_tweak_data().category
-			if weapon_category == "shotgun" or weapon_category == "saw" then
-				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-			end
+		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
 		self:chk_killshot(attacker_unit, "explosion")
 		if attacker_unit == managers.player:player_unit() then
@@ -791,7 +782,7 @@ function CopDamage:_comment_death(unit, type)
 	elseif type == "shield" or type == "phalanx_minion" then
 		PlayerStandard.say_line(unit:sound(), "g31x_any")
 	elseif type == "boom" or type == "rboom" or type == "fbi_vet" or type == "spring" then
-		PlayerStandard.say_line(unit:sound(), "v46")
+		PlayerStandard.say_line(unit:sound(), "g92")
 	elseif type == "sniper" then
 		PlayerStandard.say_line(unit:sound(), "g35x_any")
 	elseif type == "medic" then
@@ -813,7 +804,7 @@ function CopDamage:_AI_comment_death(unit, type)
 	elseif type == "shield" or type == "phalanx_minion" then
 		unit:sound():say("g31x_any", true, true)
 	elseif  type == "boom" or type == "rboom" or type == "fbi_vet" or type == "spring" then
-		unit:sound():say("v46", true, true)
+		unit:sound():say("g92", true, true)
 	elseif type == "sniper" then
 		unit:sound():say("g35x_any", true, true)
 	elseif type == "medic" then

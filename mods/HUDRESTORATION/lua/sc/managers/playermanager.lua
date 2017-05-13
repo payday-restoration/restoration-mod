@@ -7,7 +7,7 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type, current_st
     --if CopDamage and CopDamage.is_hrt(enemy_type) then
        -- multiplier = multiplier * managers.player:upgrade_value("player", "gangster_damage_dampener", 1)
     --end
-   
+    
     return multiplier
 end
 

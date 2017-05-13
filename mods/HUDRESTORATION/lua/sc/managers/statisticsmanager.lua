@@ -7,15 +7,15 @@ function StatisticsManager:killed(data)
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local kill_limit = 8
 	if difficulty_index <= 2 then
-		kill_limit = 10
+		kill_limit = 999
 	elseif difficulty_index == 3 then
-		kill_limit = 8
+		kill_limit = 999
 	elseif difficulty_index == 4 then
-		kill_limit = 6
+		kill_limit = 999
 	elseif difficulty_index == 5 then
-		kill_limit = 4
+		kill_limit = 999
 	elseif difficulty_index == 6 then
-		kill_limit = 2
+		kill_limit = 999
 	elseif difficulty_index == 7 then
 		kill_limit = 0
 	else

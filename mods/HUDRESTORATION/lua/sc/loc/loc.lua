@@ -96,7 +96,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED."
 	})
 end)
 
@@ -175,7 +175,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para Rifle",
 		["bm_w_akmsu"] = "Krinkov Rifle",
-		["bm_w_hajk"] = "CR 805B Rifle",
+		["bm_w_hajk"] = "CR 805B Rifle"
 			
 	})
 end)
@@ -191,7 +191,7 @@ if ai_type == r then
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 	LocalizationManager:add_localized_strings({
-		["hud_assault_assault"] = "Reaper Assault in Progress",
+		["hud_assault_assault"] = "Reaper Assault in Progress"
 	})
 end)
 
@@ -217,6 +217,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Combat Engineer",
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
+
+		--Gensec replacer instead of heavies
+		["menu_cs_modifier_heavies"] = "FBI SWATs with rifles are replaced with Gensec Elites.",
 
 
 --[[   SKILLTREES   ]]--
@@ -297,7 +300,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##\n\nACE: ##$pro##\nYour SMGs and LMGs do ##15%## more damage.",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##20%.##\n\nACE: ##$pro##\nYour SMGs and LMGs do ##15%## more damage.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -571,7 +574,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--ECM Specialist--
 		["menu_ecm_2x_beta_sc"] = "ECM Specialist",
-		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##2## ECM jammers instead of just one.\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.",	
+		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##2## ECM jammers instead of just one.\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer. ",	
 																																																																																																																																																																																																																																															
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
@@ -655,7 +658,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",
-		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##25%##, you will do up to ##250%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##25%##, you will do up to ##100%## more damage with firearms.",																																																																																																																																																																																																																																		
+		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##25%##, you will do up to ##250%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##25%##, you will do up to ##100%## more damage with firearms."																																																																																																																																																																																																																																	
 
 	})
 end)
@@ -734,7 +737,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_3_desc_sc"] = "You gain ##5%## more armor.",
 		["menu_deck17_5_desc_sc"] = "You gain ##5%## more armor.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
-		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##"
 	})
 end)
 

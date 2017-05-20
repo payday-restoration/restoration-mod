@@ -54,7 +54,6 @@
 		<hook file="sc/managers/skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>
 		<hook file="sc/managers/statisticsmanager.lua" source_file="lib/managers/statisticsmanager"/>
 		<hook file="sc/managers/playermanager.lua" source_file="lib/managers/playermanager"/>
-		<hook file="sc/managers/teamai.lua" source_file="lib/managers/criminalsmanager"/>
 		<hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"/>
 		<hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
 		<hook file="sc/managers/blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
@@ -92,7 +91,6 @@
 		<hook file="sc/units/player_team/logics/teamailogicidle.lua" source_file="lib/units/player_team/logics/teamailogicidle"/>
 		<hook file="sc/units/player_team/logics/teamailogicassault.lua" source_file="lib/units/player_team/logics/teamailogicassault"/>
 		<hook file="sc/units/enemies/logics/spooclogicattack.lua" source_file="lib/units/enemies/spooc/logics/spooclogicattack"/>
-		<hook file="sc/units/enemies/copactionwarp.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionwarp"/>
 		<hook file="sc/tweak_data/enveffecttweakdata.lua" source_file="lib/tweak_data/enveffecttweakdata"/>
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>

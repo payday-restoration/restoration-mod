@@ -32,6 +32,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_jav.max_amount = 6
 	self.projectiles.wpn_prj_hur.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
+	self.projectiles.smoke_screen_grenade.base_cooldown = 30
 
 	--Just so it won't mark you or whatever--
 	self.projectiles.concussion.no_cheat_count = true

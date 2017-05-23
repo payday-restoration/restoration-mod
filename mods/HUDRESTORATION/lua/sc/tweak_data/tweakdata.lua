@@ -183,6 +183,17 @@ if not tweak_data then return end
 		tweak_data.interaction.corpse_alarm_pager.timer = 10
 	end
 
+	--Smoke Grenades--
+	tweak_data.projectiles.smoke_screen_grenade.damage = 0
+	tweak_data.projectiles.smoke_screen_grenade.curve_pow = 0.1
+	tweak_data.projectiles.smoke_screen_grenade.range = 1500
+	tweak_data.projectiles.smoke_screen_grenade.name_id = "bm_smoke_screen_grenade"
+	tweak_data.projectiles.smoke_screen_grenade.duration = 12
+	tweak_data.projectiles.smoke_screen_grenade.dodge_chance = 0.1
+	tweak_data.projectiles.smoke_screen_grenade.init_timer = 0
+	tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.5
+	tweak_data.projectiles.smoke_screen_grenade.accuracy_fail_spread = {5, 10}
+
 	--But why--
 	tweak_data.team_ai.stop_action.delay = 0.8
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999

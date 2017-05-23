@@ -122,6 +122,42 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.health_revive_max = {true}
     	self.values.player.yakuza_berserker = {true}
 
+	--Bot stuff--
+	self.values.team.crew_add_health = {0}
+	self.values.team.crew_add_armor = {0}
+	self.values.team.crew_add_dodge = {0}
+	self.values.team.crew_add_concealment = {0}
+	self.values.team.crew_add_stamina = {0}
+	self.values.team.crew_reduce_speed_penalty = {1}
+	self.values.team.crew_health_regen = {0}
+	self.values.team.crew_throwable_regen = {999999999999999999999999999999999999999999999999999999999999999999}
+	self.values.team.crew_faster_reload = {1}
+	self.values.team.crew_faster_swap = {1}
+
+	--Crew ability stuff
+	self.values.team.crew_inspire = {
+		{
+			30,
+			30,
+			30
+		}
+	}
+	self.values.team.crew_scavenge = {
+		{
+			0,
+			0,
+			0
+		}
+	}
+	self.values.team.crew_interact = {
+		{
+			1,
+			1,
+			1
+		}
+	}
+	self.values.team.crew_ai_ap_ammo = {false}
+
 	--[[   MASTERMIND   ]]--
 		--{
 			--[[   MEDIC SUBTREE   ]]--
@@ -365,7 +401,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 				--Hardware Expert
-				self.values.player.drill_fix_interaction_speed_multiplier = {0.75}
+				self.values.player.drill_fix_interaction_speed_multiplier = {0.5}
 				self.values.player.drill_alert_rad = {900}
 				self.values.player.silent_drill = {true}
 				
@@ -734,8 +770,8 @@ function UpgradesTweakData:_init_pd2_values()
 		1.25,
 		1
 	}
-	self.values.team.armor.multiplier = {1.15}
-	self.values.team.health.passive_multiplier = {1.15}
+	self.values.team.armor.multiplier = {1.05}
+	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
 		health_regen = 1,
 		health = 4,
@@ -797,6 +833,7 @@ function UpgradesTweakData:_init_pd2_values()
 			civilian = false
 		}
 	}
+	
 	self.values.player.perk_armor_loss_multiplier = {
 		0.5,
 		0.9,
@@ -804,10 +841,22 @@ function UpgradesTweakData:_init_pd2_values()
 		0.8
 	}
 
+	--Gambler
+ 	self.loose_ammo_restore_health_values = {
+		base = 4,
+ 		cd = 4,
+ 		multiplier = 0.2,
+		{0, 2},
+		{2, 4},
+		{4, 6}
+ 	}
+	self.loose_ammo_give_team_health_ratio = 0.5
+
 	--Sociopath nerfs
 	self.values.player.killshot_regen_armor_bonus = {2.5}
 	self.values.player.killshot_close_regen_armor_bonus = {2.5}
 	self.values.player.killshot_close_panic_chance = {0.5}
+	self.on_killshot_cooldown = 2
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
@@ -854,6 +903,14 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.chico_injector_health_to_speed = {
 		{5, 1}
 	}
+
+	--Are these the dreamers we were told about?--
+	self.values.player.dodge_shot_gain = {
+		{0.2, 4}
+	}
+	self.values.player.dodge_replenish_armor = {true}
+	self.values.player.smoke_screen_ally_dodge_bonus = {0.05}
+	self.values.player.sicario_multiplier = {1.5}
 end
 
 --Added new definitions--

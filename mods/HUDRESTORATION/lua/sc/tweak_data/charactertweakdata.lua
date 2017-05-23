@@ -174,7 +174,8 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
-	self.fbi_vet.damage.bullet_dodge_chance = 60
+	self.fbi_vet.damage.bullet_dodge_chance = 60	
+	self.fbi_vet.smoke_dodge_increase = 10
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
     	self.fbi_vet.move_speed = presets.move_speed.lightning
@@ -1472,8 +1473,8 @@ function CharacterTweakData:_init_russian(presets)
 	self.russian.damage = presets.gang_member_damage
 	self.russian.weapon = deep_clone(presets.weapon.gang_member)
 	self.russian.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_74_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.russian.detection = presets.detection.gang_member
 	self.russian.move_speed = presets.move_speed.gang_member
@@ -1498,7 +1499,8 @@ function CharacterTweakData:_init_german(presets)
 	self.german.damage = presets.gang_member_damage
 	self.german.weapon = deep_clone(presets.weapon.gang_member)
 	self.german.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870")
+		primary = "wpn_fps_shot_r870_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.german.detection = presets.detection.gang_member
 	self.german.move_speed = presets.move_speed.gang_member
@@ -1522,54 +1524,9 @@ function CharacterTweakData:_init_spanish(presets)
 	self.spanish.flammable = false
 	self.spanish.damage = presets.gang_member_damage
 	self.spanish.weapon = deep_clone(presets.weapon.gang_member)
-	self.spanish.weapon.ak47.aim_delay = {0, 0}
-	self.spanish.weapon.ak47.focus_delay = 0
-	self.spanish.weapon.ak47.focus_dis = 200
-	self.spanish.weapon.ak47.spread = 20
-	self.spanish.weapon.ak47.miss_dis = 40
-	self.spanish.weapon.ak47.RELOAD_SPEED = 0.5
-	self.spanish.weapon.ak47.autofire_rounds = {20, 40}
-	self.spanish.weapon.ak47.FALLOFF = {
-		{
-			r = 300,
-			acc = {0.7, 0.9},
-			dmg_mul = 1.3,
-			recoil = {0, 0.1},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.5, 0.75},
-			dmg_mul = 1.3,
-			recoil = {0.1, 0.2},
-			mode = {
-				0,
-				1,
-				2,
-				8
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.3, 0.6},
-			dmg_mul = 1.3,
-			recoil = {0.4, 0.6},
-			mode = {
-				1,
-				3,
-				6,
-				6
-			}
-		}
-	}
 	self.spanish.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+		primary = "wpn_fps_lmg_m249_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.spanish.detection = presets.detection.gang_member
 	self.spanish.move_speed = presets.move_speed.gang_member
@@ -1594,8 +1551,8 @@ function CharacterTweakData:_init_american(presets)
 	self.american.damage = presets.gang_member_damage
 	self.american.weapon = deep_clone(presets.weapon.gang_member)
 	self.american.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_m14_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.american.detection = presets.detection.gang_member
 	self.american.move_speed = presets.move_speed.gang_member
@@ -1619,8 +1576,8 @@ function CharacterTweakData:_init_jowi(presets)
 	self.jowi.damage = presets.gang_member_damage
 	self.jowi.weapon = deep_clone(presets.weapon.gang_member)
 	self.jowi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_snp_tti_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jowi.detection = presets.detection.gang_member
 	self.jowi.move_speed = presets.move_speed.gang_member
@@ -1644,7 +1601,8 @@ function CharacterTweakData:_init_old_hoxton(presets)
 	self.old_hoxton.damage = presets.gang_member_damage
 	self.old_hoxton.weapon = deep_clone(presets.weapon.gang_member)
 	self.old_hoxton.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870")
+		primary = "wpn_fps_sho_spas12_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.old_hoxton.detection = presets.detection.gang_member
 	self.old_hoxton.move_speed = presets.move_speed.gang_member
@@ -1668,8 +1626,8 @@ function CharacterTweakData:_init_clover(presets)
 	self.female_1.damage = presets.gang_member_damage
 	self.female_1.weapon = deep_clone(presets.weapon.gang_member)
 	self.female_1.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_l85a2_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.female_1.detection = presets.detection.gang_member
 	self.female_1.move_speed = presets.move_speed.gang_member
@@ -1692,54 +1650,9 @@ function CharacterTweakData:_init_dragan(presets)
 	self.dragan.no_run_stop = true
 	self.dragan.damage = presets.gang_member_damage
 	self.dragan.weapon = deep_clone(presets.weapon.gang_member)
-	self.dragan.weapon.ak47.aim_delay = {0, 0}
-	self.dragan.weapon.ak47.focus_delay = 0
-	self.dragan.weapon.ak47.focus_dis = 200
-	self.dragan.weapon.ak47.spread = 20
-	self.dragan.weapon.ak47.miss_dis = 40
-	self.dragan.weapon.ak47.RELOAD_SPEED = 0.5
-	self.dragan.weapon.ak47.autofire_rounds = {20, 40}
-	self.dragan.weapon.ak47.FALLOFF = {
-		{
-			r = 300,
-			acc = {0.7, 0.9},
-			dmg_mul = 1.3,
-			recoil = {0, 0.1},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.5, 0.75},
-			dmg_mul = 1.3,
-			recoil = {0.1, 0.2},
-			mode = {
-				0,
-				1,
-				2,
-				8
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.3, 0.6},
-			dmg_mul = 1.3,
-			recoil = {0.4, 0.6},
-			mode = {
-				1,
-				3,
-				6,
-				6
-			}
-		}
-	}
 	self.dragan.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+		primary = "wpn_fps_ass_vhs_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.dragan.detection = presets.detection.gang_member
 	self.dragan.move_speed = presets.move_speed.gang_member
@@ -1763,8 +1676,8 @@ function CharacterTweakData:_init_jacket(presets)
 	self.jacket.damage = presets.gang_member_damage
 	self.jacket.weapon = deep_clone(presets.weapon.gang_member)
 	self.jacket.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_74_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jacket.detection = presets.detection.gang_member
 	self.jacket.move_speed = presets.move_speed.gang_member
@@ -1787,54 +1700,9 @@ function CharacterTweakData:_init_bonnie(presets)
 	self.bonnie.no_run_stop = true
 	self.bonnie.damage = presets.gang_member_damage
 	self.bonnie.weapon = deep_clone(presets.weapon.gang_member)
-	self.bonnie.weapon.ak47.aim_delay = {0, 0}
-	self.bonnie.weapon.ak47.focus_delay = 0
-	self.bonnie.weapon.ak47.focus_dis = 200
-	self.bonnie.weapon.ak47.spread = 20
-	self.bonnie.weapon.ak47.miss_dis = 40
-	self.bonnie.weapon.ak47.RELOAD_SPEED = 0.5
-	self.bonnie.weapon.ak47.autofire_rounds = {20, 40}
-	self.bonnie.weapon.ak47.FALLOFF = {
-		{
-			r = 300,
-			acc = {0.7, 0.9},
-			dmg_mul = 1.3,
-			recoil = {0, 0.1},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.5, 0.75},
-			dmg_mul = 1.3,
-			recoil = {0.1, 0.2},
-			mode = {
-				0,
-				1,
-				2,
-				8
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.3, 0.6},
-			dmg_mul = 1.3,
-			recoil = {0.4, 0.6},
-			mode = {
-				1,
-				3,
-				6,
-				6
-			}
-		}
-	}
 	self.bonnie.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+		primary = "wpn_fps_shot_b682_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.bonnie.detection = presets.detection.gang_member
 	self.bonnie.move_speed = presets.move_speed.gang_member
@@ -1858,8 +1726,8 @@ function CharacterTweakData:_init_sokol(presets)
 	self.sokol.damage = presets.gang_member_damage
 	self.sokol.weapon = deep_clone(presets.weapon.gang_member)
 	self.sokol.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_asval_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.sokol.detection = presets.detection.gang_member
 	self.sokol.move_speed = presets.move_speed.gang_member
@@ -1882,7 +1750,8 @@ function CharacterTweakData:_init_dragon(presets)
 	self.dragon.damage = presets.gang_member_damage
 	self.dragon.weapon = deep_clone(presets.weapon.gang_member)
 	self.dragon.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870")
+		primary = "wpn_fps_snp_wa2000_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.dragon.detection = presets.detection.gang_member
 	self.dragon.move_speed = presets.move_speed.gang_member
@@ -1905,8 +1774,8 @@ function CharacterTweakData:_init_bodhi(presets)
 	self.bodhi.damage = presets.gang_member_damage
 	self.bodhi.weapon = deep_clone(presets.weapon.gang_member)
 	self.bodhi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_snp_model70_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.bodhi.detection = presets.detection.gang_member
 	self.bodhi.move_speed = presets.move_speed.gang_member
@@ -1929,7 +1798,8 @@ function CharacterTweakData:_init_jimmy(presets)
 	self.jimmy.damage = presets.gang_member_damage
 	self.jimmy.weapon = deep_clone(presets.weapon.gang_member)
 	self.jimmy.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870")
+		primary = "wpn_fps_sho_ben_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.jimmy.detection = presets.detection.gang_member
 	self.jimmy.move_speed = presets.move_speed.gang_member
@@ -1952,8 +1822,8 @@ function CharacterTweakData:_init_sydney(presets)
 	self.sydney.damage = presets.gang_member_damage
 	self.sydney.weapon = deep_clone(presets.weapon.gang_member)
 	self.sydney.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_tecci_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.sydney.detection = presets.detection.gang_member
 	self.sydney.move_speed = presets.move_speed.gang_member
@@ -1976,7 +1846,8 @@ function CharacterTweakData:_init_wild(presets)
 	self.wild.damage = presets.gang_member_damage
 	self.wild.weapon = deep_clone(presets.weapon.gang_member)
 	self.wild.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870")
+		primary = "wpn_fps_sho_boot_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.wild.detection = presets.detection.gang_member
 	self.wild.move_speed = presets.move_speed.gang_member
@@ -1999,8 +1870,8 @@ function CharacterTweakData:_init_chico(presets)
 	self.chico.damage = presets.gang_member_damage
 	self.chico.weapon = deep_clone(presets.weapon.gang_member)
 	self.chico.weapon.weapons_of_choice = {
-		primary = Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_contraband_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.chico.detection = presets.detection.gang_member
 	self.chico.move_speed = presets.move_speed.gang_member
@@ -2023,8 +1894,8 @@ function CharacterTweakData:_init_max(presets)
 	self.max.damage = presets.gang_member_damage
 	self.max.weapon = deep_clone(presets.weapon.gang_member)
 	self.max.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		primary = "wpn_fps_ass_akm_gold_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.max.detection = presets.detection.gang_member
 	self.max.move_speed = presets.move_speed.gang_member
@@ -3321,7 +3192,31 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 500,
 			acc = {0.4, 0.9},
-			dmg_mul = 1,
+			dmg_mul = 0.95,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 600,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.9,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 700,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.85,
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
@@ -3333,7 +3228,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 800,
 			acc = {0.4, 0.9},
-			dmg_mul = 1,
+			dmg_mul = 0.8,
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
@@ -3345,7 +3240,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 900,
 			acc = {0.4, 0.9},
-			dmg_mul = 1,
+			dmg_mul = 0.75,
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
@@ -3356,8 +3251,8 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 1000,
-			acc = {0.4, 0.9},
-			dmg_mul = 0.95,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.7,
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
@@ -3368,66 +3263,6 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 1100,
-			acc = {0.2, 0.75},
-			dmg_mul = 0.9,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1200,
-			acc = {0.4, 0.75},
-			dmg_mul = 0.85,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1300,
-			acc = {0.4, 0.75},
-			dmg_mul = 0.8,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1400,
-			acc = {0.4, 0.75},
-			dmg_mul = 0.75,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1500,
-			acc = {0.4, 0.75},
-			dmg_mul = 0.7,
-			recoil = {0.45, 0.8},
-			mode = {
-				1,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 1600,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.65,
 			recoil = {0.45, 0.8},
@@ -3439,7 +3274,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1700,
+			r = 1200,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.6,
 			recoil = {0.45, 0.8},
@@ -3451,7 +3286,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1800,
+			r = 1300,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.55,
 			recoil = {0.45, 0.8},
@@ -3463,7 +3298,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 1900,
+			r = 1400,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.5,
 			recoil = {0.45, 0.8},
@@ -3475,7 +3310,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2000,
+			r = 1500,
 			acc = {0.4, 0.75},
 			dmg_mul = 0.45,
 			recoil = {0.45, 0.8},
@@ -3487,9 +3322,69 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2100,
-			acc = {0.4, 0.75},
+			r = 1600,
+			acc = {0.1, 0.55},
 			dmg_mul = 0.4,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				2,
+				2,
+				0
+			}
+		},
+		{
+			r = 1700,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.35,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				2,
+				2,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.3,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				2,
+				2,
+				0
+			}
+		},
+		{
+			r = 1900,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.25,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				2,
+				2,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.2,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				2,
+				2,
+				0
+			}
+		},
+		{
+			r = 2100,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.15,
 			recoil = {0.45, 0.8},
 			mode = {
 				1,
@@ -3501,7 +3396,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2200,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.35,
+			dmg_mul = 0.1,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -3513,66 +3408,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2300,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.3,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2400,
-			acc = {0.1, 0.55},
-			dmg_mul = 0.25,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2500,
-			acc = {0.1, 0.55},
-			dmg_mul = 0.2,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2600,
-			acc = {0.1, 0.55},
-			dmg_mul = 0.15,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2700,
-			acc = {0.1, 0.55},
-			dmg_mul = 0.1,
-			recoil = {0.45, 0.8},
-			mode = {
-				3,
-				2,
-				2,
-				0
-			}
-		},
-		{
-			r = 2800,
-			acc = {0.1, 0.55},
 			dmg_mul = 0.05,
 			recoil = {0.45, 0.8},
 			mode = {
@@ -3583,7 +3418,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 2900,
+			r = 2400,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
@@ -9808,7 +9643,10 @@ function CharacterTweakData:_presets(tweak_data)
 		r870 = {},
 		mossberg = {},
 		mp5 = {},
-		mac11 = {}
+		mac11 = {},
+		rifle = {},
+		akimbo_pistol = {},
+		saiga = {},
 	}
 	presets.weapon.gang_member.beretta92.aim_delay = {0, 0}
 	presets.weapon.gang_member.beretta92.focus_delay = 0
@@ -9824,7 +9662,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 300,
 			acc = {0.7, 0.95},
-			dmg_mul = 1,
+			dmg_mul = 1.25,
 			recoil = {0.1, 0.25},
 			mode = {
 				0,
@@ -9836,7 +9674,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.7, 0.95},
-			dmg_mul = 1,
+			dmg_mul = 1.25,
 			recoil = {0.3, 0.7},
 			mode = {
 				0,
@@ -9848,7 +9686,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 10000,
 			acc = {0.3, 0.5},
-			dmg_mul = 1,
+			dmg_mul = 1.25,
 			recoil = {0.4, 1},
 			mode = {
 				0,
@@ -9877,7 +9715,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 300,
 			acc = {0.9, 0.975},
-			dmg_mul = 2,
+			dmg_mul = 1.25,
 			recoil = {0.25, 0.3},
 			mode = {
 				0,
@@ -9889,7 +9727,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.875, 0.95},
-			dmg_mul = 2,
+			dmg_mul = 1.25,
 			recoil = {0.25, 0.3},
 			mode = {
 				0,
@@ -9901,7 +9739,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 10000,
 			acc = {0.7, 0.9},
-			dmg_mul = 2,
+			dmg_mul = 1.25,
 			recoil = {0.35, 0.55},
 			mode = {
 				0,
@@ -9911,6 +9749,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.gang_member.r870 = deep_clone(presets.weapon.normal.r870)
 	presets.weapon.gang_member.r870.aim_delay = {0, 0}
 	presets.weapon.gang_member.r870.focus_delay = 0
 	presets.weapon.gang_member.r870.focus_dis = 200
@@ -9920,45 +9759,6 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.r870.melee_speed = 1
 	presets.weapon.gang_member.r870.melee_dmg = 4
 	presets.weapon.gang_member.r870.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.gang_member.r870.range = presets.weapon.normal.r870.range
-	presets.weapon.gang_member.r870.FALLOFF = {
-		{
-			r = 300,
-			acc = {0.6, 0.95},
-			dmg_mul = 2,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.5, 0.9},
-			dmg_mul = 2,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.4, 0.75},
-			dmg_mul = 2,
-			recoil = {1.5, 2},
-			mode = {
-				1,
-				1,
-				0,
-				0
-			}
-		}
-	}
 	presets.weapon.gang_member.mp5 = deep_clone(presets.weapon.gang_member.m4)
 	presets.weapon.gang_member.mp5.FALLOFF = {
 		{
@@ -10004,43 +9804,95 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.ak47.FALLOFF = {
 		{
 			r = 300,
-			acc = {0.9, 0.975},
-			dmg_mul = 1.3,
-			recoil = {0.25, 0.3},
+			acc = {0.7, 0.9},
+			dmg_mul = 1.25,
+			recoil = {0, 0.1},
 			mode = {
 				0,
-				3,
-				3,
+				0,
+				0,
 				1
 			}
 		},
 		{
 			r = 2000,
-			acc = {0.875, 0.95},
-			dmg_mul = 1.3,
-			recoil = {0.25, 0.3},
+			acc = {0.5, 0.75},
+			dmg_mul = 1.25,
+			recoil = {0.1, 0.2},
 			mode = {
 				0,
-				3,
-				8,
-				1
+				1,
+				2,
+				8
 			}
 		},
 		{
 			r = 10000,
-			acc = {0.7, 0.9},
-			dmg_mul = 1.3,
-			recoil = {0.35, 0.55},
+			acc = {0.3, 0.6},
+			dmg_mul = 1.25,
+			recoil = {0.4, 0.6},
 			mode = {
-				0,
-				2,
-				5,
-				1
+				1,
+				3,
+				6,
+				6
 			}
 		}
 	}
 	presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.r870)
 	presets.weapon.gang_member.mac11 = presets.weapon.gang_member.mp5
+	presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.m4)
+	presets.weapon.gang_member.rifle.autofire_rounds = nil
+	presets.weapon.gang_member.rifle.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.95, 1},
+			dmg_mul = 1.25,
+			recoil = {1, 1},
+			mode = {
+				1,
+				1,
+				1,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.9, 0.95},
+			dmg_mul = 1.25,
+			recoil = {1, 1},
+			mode = {
+				1,
+				1,
+				1,
+				1
+			}
+		},
+		{
+			r = 10000,
+			acc = {0.85, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				1,
+				1,
+				1
+			}
+		}
+	}
+	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.beretta92
+	presets.weapon.gang_member.saiga = deep_clone(presets.weapon.normal.saiga)
+	presets.weapon.gang_member.saiga.aim_delay = {0, 0}
+	presets.weapon.gang_member.saiga.focus_delay = 0
+	presets.weapon.gang_member.saiga.focus_dis = 200
+	presets.weapon.gang_member.saiga.spread = 15
+	presets.weapon.gang_member.saiga.miss_dis = 20
+	presets.weapon.gang_member.saiga.melee_speed = 1
+	presets.weapon.gang_member.saiga.melee_dmg = 4
+	presets.weapon.gang_member.saiga.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
+	presets.weapon.gang_member.saiga.RELOAD_SPEED = 1
+	presets.weapon.gang_member.saiga.autofire_rounds = {4, 9}
 	presets.detection = {}
 	presets.detection.normal = {
 		idle = {},
@@ -11664,78 +11516,6 @@ function CharacterTweakData:_set_normal()
 	self.old_hoxton_mission.HEALTH_INIT = 75
 	self.spa_vip.HEALTH_INIT = 75
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 37.5
-	self.russian.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.german.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.spanish.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.american.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.jowi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.old_hoxton.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.female_1.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.dragan.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.jacket.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.bonnie.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.sokol.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.dragon.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.bodhi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.jimmy.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.sydney.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.wild.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.chico.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.max.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -11768,78 +11548,6 @@ function CharacterTweakData:_set_hard()
 	self.old_hoxton_mission.HEALTH_INIT = 112.5
 	self.spa_vip.HEALTH_INIT = 112.5
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 56.25
-	self.russian.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.german.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.spanish.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.american.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.jowi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.old_hoxton.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.female_1.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.dragan.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.jacket.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.bonnie.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.sokol.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.dragon.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.bodhi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.jimmy.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.sydney.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.wild.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.chico.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
-	self.max.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
-	}
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -11872,78 +11580,6 @@ function CharacterTweakData:_set_overkill()
 	self.old_hoxton_mission.HEALTH_INIT = 150
 	self.spa_vip.HEALTH_INIT = 150
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
-	self.russian.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.german.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun")
-	}
-	self.spanish.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
-	}
-	self.american.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.jowi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.old_hoxton.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun")
-	}
-	self.female_1.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.dragan.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.jacket.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.bonnie.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
-	}
-	self.sokol.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.dragon.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun")
-	}
-	self.bodhi.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.jimmy.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun")
-	}
-	self.sydney.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.wild.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun")
-	}
-	self.chico.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
-	self.max.weapon.weapons_of_choice = {
-		primary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	}
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")

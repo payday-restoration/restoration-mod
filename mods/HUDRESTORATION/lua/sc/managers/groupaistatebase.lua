@@ -36,14 +36,13 @@ end
 
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	local nr_players = 0
-	local nr_bots = managers.criminals:nr_AI_criminals()
-	for u_key, u_data in pairs(self:all_player_criminals()) do
+	for u_key, u_data in pairs(self:all_criminals()) do
 		if not u_data.status then
 			nr_players = nr_players + 1
 		end
 	end
 	nr_players = math.clamp(nr_players, 1, 4)
-	return balance_multipliers[nr_players + nr_bots]
+	return balance_multipliers[nr_players]
 end
 
 function GroupAIStateBase:detonate_world_smoke_grenade(id)

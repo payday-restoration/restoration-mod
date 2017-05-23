@@ -1,16 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-local damage_reduction_orig = PlayerManager.damage_reduction_skill_multiplier
-function PlayerManager:damage_reduction_skill_multiplier(damage_type, current_state, enemy_type)
-    local multiplier = damage_reduction_orig(self, damage_type, current_state, enemy_type)
-   
-    --if CopDamage and CopDamage.is_hrt(enemy_type) then
-       -- multiplier = multiplier * managers.player:upgrade_value("player", "gangster_damage_dampener", 1)
-    --end
-    
-    return multiplier
-end
-
 local player_movement_speed_multiplier_orig = PlayerManager.movement_speed_multiplier
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
     

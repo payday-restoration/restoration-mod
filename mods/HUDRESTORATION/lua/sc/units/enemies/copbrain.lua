@@ -48,43 +48,6 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
 end
 
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-
-if difficulty_index == 9 then
-
-function CopBrain:_chk_use_cover_grenade(unit)
-	if not Network:is_server() or not self._logic_data.char_tweak.dodge_with_grenade or not self._logic_data.attention_obj then
-		return
-	end
-	local check_f = self._logic_data.char_tweak.dodge_with_grenade.check
-	local t = TimerManager:game():time()
-	if check_f and (not self._flashbang_cover_expire_t or t > self._next_cover_grenade_chk_t) then
-		local result, next_t = check_f(t, self._nr_flashbang_covers_used or 0)
-		self._next_cover_grenade_chk_t = next_t
-		if not result then
-			return
-		end
-	end
-	local grenade_was_used
-	if self._logic_data.attention_obj.dis > 1000 or not self._logic_data.char_tweak.dodge_with_grenade.flash then
-		if self._logic_data.char_tweak.dodge_with_grenade.smoke then
-			local duration = self._logic_data.char_tweak.dodge_with_grenade.smoke.duration
-			managers.groupai:state():detonate_smoke_grenade(self._logic_data.m_pos + math.UP * 10, self._unit:movement():m_head_pos(), math.lerp(duration[1], duration[2], math.random()), false)
-			grenade_was_used = true
-		end
-	elseif self._logic_data.char_tweak.dodge_with_grenade.flash then
-		local duration = self._logic_data.char_tweak.dodge_with_grenade.flash.duration
-		managers.groupai:state():detonate_smoke_grenade(self._logic_data.m_pos + math.UP * 10, self._unit:movement():m_head_pos(), math.lerp(duration[1], duration[2], math.random()), true)
-		grenade_was_used = true
-	end
-	if grenade_was_used then
-		self._nr_flashbang_covers_used = (self._nr_flashbang_covers_used or 0) + 1
-	end
-end
-
-end
-
 --Thanks Rokk--
 Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(self)
     

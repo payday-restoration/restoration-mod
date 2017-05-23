@@ -17109,6 +17109,16 @@ function WeaponFactoryTweakData:_init_x_1911()
 		fire_steelsight = "recoil"
 	}
 	self.wpn_fps_x_1911.override = {
+		wpn_fps_upg_ammo_46custom = {
+			stats = {
+				value = 3,
+				spread = 1,
+				recoil = -1,
+				total_ammo_mod = -33,
+				damage = 24
+			},	
+			custom_stats = {ammo_pickup_min_mul = 0.666666666667, ammo_pickup_max_mul = 0.666666666667},
+		},
 		wpn_fps_pis_1911_m_standard = {
 			animations = {
 				reload = "reload_right",
@@ -33053,8 +33063,11 @@ end
 		stats = {
 			value = 3,
 			spread = 1,
+			recoil = -1,
+			total_ammo_mod = -25,
 			damage = 24
 		},
+		custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75},
 		internal_part = true
 	}
 	self.parts.wpn_fps_upg_ammo_65grendel = {

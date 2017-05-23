@@ -3695,19 +3695,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	self.max_nr_simultaneous_boss_types = 0
 	self.difficulty_curve_points = {0.5}
 	if difficulty_index <= 2 then
-		self.smoke_and_flash_grenade_timeout = {12, 14}
+		self.smoke_and_flash_grenade_timeout = {19, 20}
 	elseif difficulty_index == 3 then
-		self.smoke_and_flash_grenade_timeout = {10, 12}
+		self.smoke_and_flash_grenade_timeout = {18, 19}
 	elseif difficulty_index == 4 then
-		self.smoke_and_flash_grenade_timeout = {8, 10}
+		self.smoke_and_flash_grenade_timeout = {17, 18}
 	elseif difficulty_index == 5 then
-		self.smoke_and_flash_grenade_timeout = {6, 8}
+		self.smoke_and_flash_grenade_timeout = {16, 17}
 	elseif difficulty_index == 6 then
-		self.smoke_and_flash_grenade_timeout = {4, 6}
+		self.smoke_and_flash_grenade_timeout = {15, 16}
 	elseif difficulty_index == 7 then
-		self.smoke_and_flash_grenade_timeout = {2, 4}
+		self.smoke_and_flash_grenade_timeout = {14, 15}
 	else
-		self.smoke_and_flash_grenade_timeout = {1, 2}
+		self.smoke_and_flash_grenade_timeout = {13, 14}
 	end
 	if difficulty_index < 6 then
 		self.smoke_grenade_lifetime = 12
@@ -4525,21 +4525,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			}
 		elseif difficulty_index == 4 then
 			self.besiege.assault.groups.Cap_Spring = {
-				0.035,
-				0.035,
-				0.035
+				0.025,
+				0.025,
+				0.025
 			}
 		elseif difficulty_index == 5 then
 			self.besiege.assault.groups.Cap_Spring = {
-				0.035,
-				0.035,
-				0.035
+				0.025,
+				0.025,
+				0.025
 			}
 		else
 			self.besiege.assault.groups.Cap_Spring = {
-				0.035,
-				0.035,
-				0.035
+				0.025,
+				0.025,
+				0.025
 			}
 		end
 	end

@@ -221,6 +221,43 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Gensec replacer instead of heavies
 		["menu_cs_modifier_heavies"] = "FBI SWATs with rifles are replaced with Gensec Elites.",
 
+		["bm_menu_skill"] = "Crew Perks",
+
+		["menu_crew_interact"] = "Fast Recovery",
+		["menu_crew_interact_desc"] = "Bots equipped with this ability recover health 20% faster.",
+
+		["menu_crew_inspire"] = "Inspiring Presence",
+		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 30 seconds.",
+
+		["menu_crew_scavenge"] = "Mag Plus",
+		["menu_crew_scavenge_desc"] = "Bots equipped with this ability gain 50% larger magazines.",
+
+		["menu_crew_ai_ap_ammo"] = "Specialized Killing",
+		["menu_crew_ai_ap_ammo_desc"] = "Bots equipped with this ability deal 20% extra damage against special units.",
+
+		["menu_crew_healthy"] = "The Muscle",
+		["menu_crew_healthy_desc"] = "Bots equipped with this perk gain 50% increased health.",
+
+		["menu_crew_sturdy"] = "Sturdy Recovery",
+		["menu_crew_sturdy_desc"] = "Bots equipped with this perk recover health 20% faster.",
+
+		["menu_crew_evasive"] = "Evasive",
+		["menu_crew_evasive_desc"] = "Bots equipped with this perk gain 20% dodge chance.",
+
+		["menu_crew_motivated"] = "Motivated",
+		["menu_crew_evasive_desc"] = "Bots equipped with this perk gain 50% increased movement speed.",
+
+		["menu_crew_regen"] = "Regeneration",
+		["menu_crew_regen_desc"] = "Bots equipped with this perk gain health 50 health returned on damage dealt every 3 seconds.",
+
+		["menu_crew_quiet"] = "The Mole",
+		["menu_crew_quiet_desc"] = "Bots equipped with this perk gain 25% damage resistance when surrounded by 3 or more enemies within 18 meters.",
+
+		["menu_crew_generous"] = "Mayhem Maker",
+		["menu_crew_generous_desc"] = "Bots equipped with this perk gain 15% damage resistance when surrounded by 3 or more enemies within 18 meters.\n\nEnemies this bot kills in close quarters have a 50% chance to spread panic among enemies.\n\nThis cannot occur more than once every 2 seconds.",
+
+		["menu_crew_eager"] = "Wolverine",
+		["menu_crew_eager_desc"] = "Bots equipped with this perk gain increased movement speed and health regeneration as their health decreases.",
 
 --[[   SKILLTREES   ]]--
 	--{
@@ -444,7 +481,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hardware Expert--
 			["menu_hardware_expert_beta_sc"] = "Hardware Expert",
-			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##25%## faster.\n\nACE: ##$pro##\nYour drills are now silent, civilians and guards have to see the drills in order to get alerted.",																								
+			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##50%## faster.\n\nACE: ##$pro##\nYour drills are now silent, civilians and guards have to see the drills in order to get alerted.",																								
 
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
@@ -574,7 +611,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--ECM Specialist--
 		["menu_ecm_2x_beta_sc"] = "ECM Specialist",
-		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##2## ECM jammers instead of just one.\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer. ",	
+		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##2## ECM jammers instead of just one.\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer.",	
 																																																																																																																																																																																																																																															
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
@@ -684,8 +721,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_7_desc_sc"] = "You can now use light machine guns and submachine guns to spread panic among your enemies.\n\n\Panic will make enemies go into short bursts of uncontrollable fear.",
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##20%## more health.\n\n\You now ##always revive with maximum health##.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-		["menu_deck1_5_desc_sc"] = "You and your crew gains ##15%## more health.\n\n\Note: Crew perks do not stack.",
-		["menu_deck1_7_desc_sc"] = "You and your crew gains ##15%## more armor.\n\n\Note: Crew perks do not stack.",
+		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\n\Increases your shout distance by ##25%##.\n\n\Note: Crew perks do not stack.",
+		["menu_deck1_5_desc_sc"] = "You gain ##10%## more health.\n\nYour crew gains ##5%## more health.\n\n\Note: Crew perks do not stack.",
+		["menu_deck1_7_desc_sc"] = "You gain ##15%## more armor.\n\nYour crew gains ##5%## more armor.\n\n\Note: Crew perks do not stack.",
 		["menu_deck4_9_desc_sc"] = "The time between swapping weapons is reduced to for you by ##80%.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\n\Note: Crew perks do not stack.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
@@ -706,6 +744,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\n\Cannot occur more than once every ##4## seconds.",
+		["menu_deck10_7_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.",
+		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Infiltrator--
 		["menu_deck8_1_desc_sc"] = "When you are within medium range of an enemy, you receive ##10%## less damage from enemies.",
@@ -716,6 +756,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Sociopath--
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##10%## health.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy at medium range regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_9_desc_sc"] = "Killing an enemy at medium range has a ##50%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
@@ -737,7 +778,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_3_desc_sc"] = "You gain ##5%## more armor.",
 		["menu_deck17_5_desc_sc"] = "You gain ##5%## more armor.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
-		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##"
+		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+
+		--10 feet higher--
+		["menu_deck18_1_desc_sc"] = "Your chance to dodge is increased by ##5%##.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke grenade, you and your allies automatically avoid ##10%## of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nAfter the smoke dissipates, the Smoke Bomb is on a cooldown for ##30## seconds, but killing enemies will reduce this cooldown by ##1## second.",
+		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+	
 	})
 end)
 

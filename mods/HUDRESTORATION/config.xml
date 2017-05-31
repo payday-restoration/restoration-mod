@@ -113,6 +113,7 @@
 	    	<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 	    	<hook file="sc/managers/menu/menunodegui.lua" source_file="lib/managers/menu/menunodegui"/>
 	    	<hook file="sc/units/weapons/sentrygunweapon.lua" source_file="lib/units/weapons/sentrygunweapon"/>
+	    	<hook file="sc/tweak_data/assetstweakdata.lua" source_file="lib/tweak_data/assetstweakdata"/>
     </Hooks>
     <Localization directory="loc" default="english.txt">
     </Localization>

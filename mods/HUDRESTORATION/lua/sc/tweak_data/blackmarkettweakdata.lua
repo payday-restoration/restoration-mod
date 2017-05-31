@@ -19,8 +19,6 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.launcher_frag.client_authoritative = false
 	self.projectiles.launcher_incendiary.client_authoritative = false
 
-	self.projectiles.launcher_frag_arbiter.physic_effect = Idstring("physic_effects/anti_gravitate")
-
 	--Throwables--
 	self.projectiles.wpn_prj_four.max_amount = 9
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5

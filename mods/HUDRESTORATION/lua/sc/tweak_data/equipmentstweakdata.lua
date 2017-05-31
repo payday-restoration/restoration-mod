@@ -1,12 +1,12 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 local sc_etd = EquipmentsTweakData.init
 function EquipmentsTweakData:init()
 	sc_etd(self, tweak_data)
 
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-		--Because you're not getting 6 fucking sentries--
-		self.sentry_gun.quantity = {1}
-		self.trip_mine.quantity = {3, 3}
-	end
+	--Because you're not getting 6 fucking sentries--
+	self.sentry_gun.quantity = {1}
+	self.trip_mine.quantity = {3, 3}
 
 	--Again just some quality of life stuff to make single player less awful--
     	if Global.game_settings and Global.game_settings.single_player then
@@ -40,4 +40,6 @@ function EquipmentsTweakData:init()
 		self.specials.crowbar_stack.quantity=1
 		self.specials.crowbar_stack.max_quantity=4
    	end
+end
+
 end

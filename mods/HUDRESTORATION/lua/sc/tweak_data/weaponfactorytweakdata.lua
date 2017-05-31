@@ -9679,7 +9679,7 @@ function WeaponFactoryTweakData:_init_judge()
 	self.parts.wpn_fps_pis_judge_body_standard = {
 		type = "lower_reciever",
 		name_id = "bm_wp_judge_body_standard",
-		custom_stats = {reload_speed_mult = 0.75},
+		custom_stats = {reload_speed_mult = 0.85},
 		a_obj = "a_body",
 		unit = "units/pd2_million/weapons/wpn_fps_pis_judge_pts/wpn_fps_pis_judge_body_standard",
 		stats = {value = 1},
@@ -29877,7 +29877,7 @@ function WeaponFactoryTweakData:_init_arbiter()
 		name_id = "bm_wp_l85a2_fg_medium",
 		a_obj = "a_m",
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		custom_stats = {reload_speed_mult = 0.75},
+		custom_stats = {reload_speed_mult = 0.85},
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_m_standard",
 		stats = {value = 1}
 	}

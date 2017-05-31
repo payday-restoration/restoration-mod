@@ -174,7 +174,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
-	self.fbi_vet.damage.bullet_dodge_chance = 60	
+	self.fbi_vet.damage.bullet_dodge_chance = 60
 	self.fbi_vet.smoke_dodge_increase = 10
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
@@ -439,19 +439,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.speech_prefix_count = 4
 	self.city_swat.access = "swat"
 	self.city_swat.dodge = presets.dodge.elite
-	self.city_swat.dodge_with_grenade = {
-		smoke = {
-			duration = {12, 12}
-		}
-	}
-	function self.city_swat.dodge_with_grenade.check(t, nr_grenades_used)
-		local delay_till_next_use = math.lerp(17, 45, math.min(1, (nr_grenades_used or 0) / 4))
-		local chance = math.lerp(1, 0.5, math.min(1, (nr_grenades_used or 0) / 10))
-		if chance > math.random() then
-			return true, t + delay_till_next_use
-		end
-		return false, t + delay_till_next_use
-	end
 	self.city_swat.chatter = presets.enemy_chatter.swat
 	self.city_swat.melee_weapon = nil
 	self.city_swat.melee_weapon_dmg_multiplier = 2.5
@@ -983,20 +970,6 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.access = "spooc"
 	self.spooc.flammable = true
 	self.spooc.dodge = presets.dodge.ninja
-	self.spooc.dodge_with_grenade = {
-		smoke = {
-			duration = {12, 12}
-		}
-	}
-	function self.spooc.dodge_with_grenade.check(t, nr_grenades_used)
-		local delay_till_next_use = math.lerp(17, 45, math.min(1, (nr_grenades_used or 0) / 4))
-		local chance = math.lerp(1, 0.5, math.min(1, (nr_grenades_used or 0) / 10))
-		if chance > math.random() then
-			return true, t + delay_till_next_use
-		end
-		return false, t + delay_till_next_use
-	end
-
 	self.spooc.chatter = presets.enemy_chatter.no_chatter
 	if job == "chill_combat" then
 		self.spooc.steal_loot = nil
@@ -1264,19 +1237,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.access = "taser"
 	self.boom.dodge = presets.dodge.athletic
 	self.boom.use_gas = true
-	self.boom.dodge_with_grenade = {
-		smoke = {
-			duration = {12, 12}
-		}
-	}
-	function self.boom.dodge_with_grenade.check(t, nr_grenades_used)
-		local delay_till_next_use = math.lerp(17, 45, math.min(1, (nr_grenades_used or 0) / 4))
-		local chance = math.lerp(1, 0.5, math.min(1, (nr_grenades_used or 0) / 10))
-		if chance > math.random() then
-			return true, t + delay_till_next_use
-		end
-		return false, t + delay_till_next_use
-	end
 	self.boom.priority_shout = "g29"
 	self.boom.bot_priority_shout = "g29"
 	self.boom.priority_shout_max_dis = 3000
@@ -11350,13 +11310,13 @@ function CharacterTweakData:_presets(tweak_data)
 			duration = {5, 10},
 			react_point = {0, 2},
 			brown_point = {5, 6},
-			panic_chance_mul = 0.7
+			panic_chance_mul = 1
 		},
 		hard_agg = {
 			duration = {5, 8},
 			react_point = {2, 5},
 			brown_point = {5, 6},
-			panic_chance_mul = 0.7
+			panic_chance_mul = 1
 		},
 		no_supress = {
 			duration = {0.1, 0.15},

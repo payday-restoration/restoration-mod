@@ -41,7 +41,7 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_frag_arbiter.range = 350
 	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 	tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
-	tweak_data.projectiles.launcher_frag_arbiter.mass_look_up_modifier = nil
+	tweak_data.projectiles.launcher_frag_arbiter.mass_look_up_modifier = nil	
 
 	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
 	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 1250
@@ -199,7 +199,7 @@ if not tweak_data then return end
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
 	tweak_data.medic.cooldown = 30
-	tweak_data.radius = 700
+	tweak_data.radius = 900
 	tweak_data.medic.disabled_units = {
 		"phalanx_minion",
 		"spring",

@@ -483,6 +483,7 @@ function CopDamage:damage_bullet(attack_data)
 		dodge_chance = 0
 	end
 	if roll <= dodge_chance and self._char_tweak.damage.bullet_dodge_chance then
+		self._unit:sound():play("pickup_fak_skill", nil, nil)
 		return
 	end
 	damage = damage * (self._marked_dmg_mul or 1)

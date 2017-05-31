@@ -1,5 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	if not SystemFS:exists("assets/mod_overrides/sc/add.xml") then
+	if not SystemFS:exists("assets/mod_overrides/RestorationMod/add.xml") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)
 			_setup_item_rows_original(self, node, ...)

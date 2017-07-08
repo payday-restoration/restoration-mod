@@ -1,6 +1,5 @@
 if not tweak_data then return end
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	tweak_data.max_players = 6
 	
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120

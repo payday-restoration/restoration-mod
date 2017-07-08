@@ -14,3 +14,17 @@ if not _G.restoration then
 		log("[ERROR] Something bad happened with Restoration. " .. tostring(err))
 	end
 end
+
+_G.SC = _G.SC or {}
+SC._path = ModPath
+SC._data = {}
+
+if SystemFS:exists("mods/DMCWO/mod.txt") then
+	SC._data.sc_player_weapon_toggle = false
+else
+	SC._data.sc_player_weapon_toggle = true
+end
+
+if not restoration.Options:GetValue("SC/SC") then
+	SC._data.sc_player_weapon_toggle = false
+end

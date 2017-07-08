@@ -7,7 +7,7 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_rocket.player_damage = 120
 	tweak_data.projectiles.launcher_rocket.range = 350
 	tweak_data.projectiles.launcher_rocket.curve_pow = 1
-	
+
 	--Grenade launcher stuff--
 	tweak_data.projectiles.launcher_frag.damage = 80
 	tweak_data.projectiles.launcher_frag.player_damage = 80

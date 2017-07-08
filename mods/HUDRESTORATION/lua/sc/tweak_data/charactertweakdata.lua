@@ -19,6 +19,7 @@ function CharacterTweakData:init(tweak_data, presets)
 	local presets = self:_presets(tweak_data)
 	self:_init_boom(presets)
 	self:_init_spring(presets)
+	self:_process_weapon_usage_table()
 end
 
 function CharacterTweakData:_init_security(presets)
@@ -168,13 +169,14 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.no_arrest = false
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_vet = deep_clone(self.fbi)
+	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
 	self.fbi_vet.suppression = nil
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
-	self.fbi_vet.damage.bullet_dodge_chance = 60
+	self.fbi_vet.damage.bullet_dodge_chance = 55
 	self.fbi_vet.smoke_dodge_increase = 10
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
@@ -225,8 +227,9 @@ end
 
 function CharacterTweakData:_init_medic(presets)
 	self.medic = deep_clone(presets.base)
+	self.medic.tags = {"medic"}
 	self.medic.experience = {}
-	self.medic.weapon = presets.weapon.normal
+	self.medic.weapon = deep_clone(presets.weapon.normal)
 	self.medic.detection = presets.detection.normal
 	self.medic.HEALTH_INIT = 30
 	self.medic.headshot_dmg_mul = 2.2
@@ -297,9 +300,7 @@ end
 function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat = deep_clone(presets.base)
 	self.heavy_swat.experience = {}
-	self.heavy_swat.weapon = deep_clone(presets.weapon.normal)
-	self.heavy_swat.weapon.m4.melee_dmg = 6
-	self.heavy_swat.weapon.r870.melee_dmg = 6
+	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
 	self.heavy_swat.HEALTH_INIT = 15
 	self.heavy_swat.headshot_dmg_mul = 2.5
@@ -326,13 +327,15 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat.steal_loot = true
 	end
 	table.insert(self._enemy_list, "heavy_swat")
+	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
+	self.heavy_swat_sniper.weapon = presets.weapon.sniper
+	table.insert(self._enemy_list, "heavy_swat_sniper")
 end
 
 function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat = deep_clone(presets.base)
 	self.fbi_swat.experience = {}
-	self.fbi_swat.weapon = deep_clone(presets.weapon.good)
-	self.fbi_swat.weapon.mp5 = deep_clone(presets.weapon.good.mp5)
+	self.fbi_swat.weapon = presets.weapon.good
 	self.fbi_swat.detection = presets.detection.normal
 	self.fbi_swat.HEALTH_INIT = 13
 	self.fbi_swat.headshot_dmg_mul = 3.25
@@ -369,9 +372,7 @@ end
 function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat = deep_clone(presets.base)
 	self.fbi_heavy_swat.experience = {}
-	self.fbi_heavy_swat.weapon = deep_clone(presets.weapon.normal)
-	self.fbi_heavy_swat.weapon.m4.melee_dmg = 6
-	self.fbi_heavy_swat.weapon.r870.melee_dmg = 6
+	self.fbi_heavy_swat.weapon = presets.weapon.normal
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
 	self.fbi_heavy_swat.headshot_dmg_mul = 2
@@ -405,12 +406,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.experience = {}
 	self.city_swat.damage.hurt_severity = presets.hurt_severities.elite
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
-	self.city_swat.weapon.m4.melee_dmg = 15
-	self.city_swat.weapon.saiga = deep_clone(presets.weapon.expert.saiga)
-	self.city_swat.weapon.saiga.RELOAD_SPEED = 1
-	self.city_swat.weapon.saiga.melee_dmg = 15
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.expert.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 15
+	self.city_swat.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
+	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
 	self.city_swat.detection = presets.detection.normal
 	self.city_swat.HEALTH_INIT = 13
 	self.city_swat.headshot_dmg_mul = 1.9
@@ -452,10 +449,13 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	self.city_swat_titan.HEALTH_INIT = 20
-	self.city_swat_titan.headshot_dmg_mul = 2
+	self.city_swat_titan.tags = {"custom"}
+	self.city_swat_titan.HEALTH_INIT = 15
+	self.city_swat_titan.headshot_dmg_mul = 2.5
+	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.priority_shout = "f45"
 	self.city_swat_titan.bot_priority_shout = "f45x_any"
+	self.city_swat_titan.silent_priority_shout = nil
 	self.city_swat_titan.priority_shout_max_dis = 3000
 	self.city_swat_titan.no_retreat = true
 	self.city_swat_titan.no_arrest = true
@@ -466,11 +466,14 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	self.city_swat_titan.leader = {max_nr_followers = 6}
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
+	self.city_swat_titan.spawn_sound_event = "l2d_prm"
+	self.city_swat_titan.die_sound_event = "mga_death_scream"
  	table.insert(self._enemy_list, "city_swat_titan")
 end
 
 function CharacterTweakData:_init_sniper(presets)
 	self.sniper = deep_clone(presets.base)
+	self.sniper.tags = {"sniper"}
 	self.sniper.experience = {}
 	self.sniper.weapon = presets.weapon.sniper
 	self.sniper.detection = presets.detection.sniper
@@ -478,6 +481,8 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.headshot_dmg_mul = 3.4
 	self.sniper.move_speed = presets.move_speed.very_fast
 	self.sniper.shooting_death = false
+	self.sniper.no_move_and_shoot = true
+	self.sniper.move_and_shoot_cooldown = 1
 	self.sniper.suppression = nil
 	self.sniper.melee_weapon = "knife_1"
 	self.sniper.ecm_vulnerability = 1
@@ -659,7 +664,6 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.silent_priority_shout = nil
 	self.hector_boss.custom_shout = true
 	self.hector_boss.priority_shout_max_dis = 3000
-	self:_process_weapon_usage_table(self.hector_boss.weapon)
  	table.insert(self._enemy_list, "hector_boss")
 end
 
@@ -838,13 +842,13 @@ end
 
 function CharacterTweakData:_init_tank(presets)
 	self.tank = deep_clone(presets.base)
+	self.tank.tags = {"tank"}
 	self.tank.experience = {}
 	self.tank.damage.tased_response = {
 		light = {tased_time = 1, down_time = 0},
 		heavy = {tased_time = 2, down_time = 0}
 	}
 	self.tank.weapon = deep_clone(presets.weapon.normal)
-	self:_process_weapon_usage_table(self.tank.weapon)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
 	self.tank.headshot_dmg_mul = 12.5
@@ -917,9 +921,12 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_hw.steal_loot = true
 	end
  	table.insert(self._enemy_list, "tank_hw")
+	self.tank_medic = deep_clone(self.tank)
+	table.insert(self.tank_medic.tags, "medic")
+	table.insert(self._enemy_list, "tank_medic")
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
-	self.tank_titan.headshot_dmg_mul = 3.1977
+	self.tank_titan.headshot_dmg_mul = 3.997125
 	if job == "chill_combat" then
 		self.tank_titan.steal_loot = nil
 	else
@@ -940,13 +947,17 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 0.5
  	table.insert(self._enemy_list, "tank_titan")
+	self.tank_mini = deep_clone(self.tank)
+	self.tank_mini.move_speed = presets.move_speed.very_slow
+	table.insert(self._enemy_list, "tank_mini")
 end
 
 function CharacterTweakData:_init_spooc(presets)
 	self.spooc = deep_clone(presets.base)
+	self.spooc.tags = {"spooc"}
 	self.spooc.experience = {}
 	self.spooc.damage.hurt_severity = presets.hurt_severities.spooc
-	self.spooc.weapon = presets.weapon.normal
+	self.spooc.weapon = deep_clone(presets.weapon.normal)
 	self.spooc.detection = presets.detection.normal
 	self.spooc.HEALTH_INIT = 60
 	self.spooc.headshot_dmg_mul = 5.85
@@ -984,8 +995,12 @@ end
 
 function CharacterTweakData:_init_shield(presets)
 	self.shield = deep_clone(presets.base)
+	self.shield.tags = {"shield"}
 	self.shield.experience = {}
-	self.shield.weapon = presets.weapon.normal
+	self.shield.weapon = deep_clone(presets.weapon.normal)
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.shield.detection = presets.detection.normal
 	self.shield.HEALTH_INIT = 15
 	self.shield.headshot_dmg_mul = 2.5
@@ -1011,6 +1026,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.no_equip_anim = true
 	self.shield.wall_fwd_offset = 100
 	self.shield.calls_in = nil
+	self.shield.ignore_medic_revive_animation = true
 	self.shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
 	self.shield.damage.shield_knocked = true
 	self.shield.use_animation_on_fire_damage = false
@@ -1035,11 +1051,12 @@ end
 
 function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion = deep_clone(self.shield)
+	self.phalanx_minion.tags = {"shield"}
 	self.phalanx_minion.experience = {}
-	self.phalanx_minion.weapon = presets.weapon.normal
+	self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 2.5
-	self.phalanx_minion.HEALTH_INIT = 30
+	self.phalanx_minion.HEALTH_INIT = 15
 	self.phalanx_minion.DAMAGE_CLAMP_BULLET = 36
 	self.phalanx_minion.damage.explosion_damage_mul = 0.05
 	self.phalanx_minion.damage.fire_damage_mul = 0.05
@@ -1064,6 +1081,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	end
 	self.phalanx_minion.leader = {max_nr_followers = 6}
 	self.phalanx_minion.damage_resist_followers = {multiplier = 0.75}
+	self.phalanx_minion.ignore_medic_revive_animation = true
 	self.phalanx_minion.ecm_vulnerability = 1
 	self.phalanx_minion.ecm_hurts = {
 		ears = {min_duration = 2, max_duration = 3}
@@ -1088,8 +1106,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.immune_to_knock_down = true
-	self.phalanx_vip.HEALTH_INIT = 230
-	self.phalanx_vip.headshot_dmg_mul = 2.5
+	self.phalanx_vip.HEALTH_INIT = 30
+	self.phalanx_vip.headshot_dmg_mul = 1.59885
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.spawn_sound_event = nil
 	self.phalanx_vip.priority_shout = "f45"
@@ -1106,6 +1124,7 @@ end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
+	self.spring.tags = {"custom"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.no_run_start = true
@@ -1133,7 +1152,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.melee_weapon = "fists_dozer"
 	self.spring.melee_weapon_dmg_multiplier = 1
 	self.spring.melee_anims = {
-		"e_so_kickdrill_low"
+		"cbt_std_melee"
 	}
 	self.spring.speech_prefix_p1 = "l"
 	self.spring.speech_prefix_p2 = "d"
@@ -1150,11 +1169,12 @@ end
 
 function CharacterTweakData:_init_taser(presets)
 	self.taser = deep_clone(presets.base)
+	self.taser.tags = {"taser"}
 	self.taser.experience = {}
-	self.taser.weapon = presets.weapon.normal
-	self.taser.weapon.m4.tase_distance = 1400
-	self.taser.weapon.m4.aim_delay_tase = {0, 0.5}
-	self.taser.weapon.m4.tase_sphere_cast_radius = 30
+	self.taser.weapon = deep_clone(presets.weapon.normal)
+	self.taser.weapon.is_rifle.tase_distance = 1400
+	self.taser.weapon.is_rifle.aim_delay_tase = {0, 0.5}
+	self.taser.weapon.is_rifle.tase_sphere_cast_radius = 30
 	self.taser.detection = presets.detection.normal
 	self.taser.HEALTH_INIT = 36
 	self.taser.headshot_dmg_mul = 1.8
@@ -1205,6 +1225,7 @@ end
 
 function CharacterTweakData:_init_boom(presets)
 	self.boom = deep_clone(presets.base)
+	self.boom.tags = {"custom"}
 	self.boom.experience = {}
 	self.boom.weapon = deep_clone(presets.weapon.normal)
 	self.boom.melee_weapon = "knife_1"
@@ -1339,7 +1360,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.robbers_safehouse.ignores_aggression = true
 	self.robbers_safehouse.calls_in = nil
 	self.robbers_safehouse.ignores_contours = true
-	self.robbers_safehouse.HEALTH_INIT = 75
+	self.robbers_safehouse.HEALTH_INIT = 50
 	self.robbers_safehouse.headshot_dmg_mul = 1
 end
 
@@ -2304,17 +2325,17 @@ function CharacterTweakData:_presets(tweak_data)
 		heavy = {tased_time = 5, down_time = 10}
 	}
 	presets.gang_member_damage = {}
-	presets.gang_member_damage.HEALTH_INIT = 100
+	presets.gang_member_damage.HEALTH_INIT = 25
 	presets.gang_member_damage.no_run_start = true
 	presets.gang_member_damage.no_run_stop = true
 	presets.gang_member_damage.headshot_dmg_mul = 1
 	presets.gang_member_damage.LIVES_INIT = 4
 	presets.gang_member_damage.explosion_damage_mul = 0
-	presets.gang_member_damage.REGENERATE_TIME = 4
-	presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.5
+	presets.gang_member_damage.REGENERATE_TIME = 2
+	presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.25
 	presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME
 	presets.gang_member_damage.TASED_TIME = tweak_data.player.damage.TASED_TIME
-	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
+	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
 	presets.gang_member_damage.ARRESTED_TIME = tweak_data.player.damage.ARRESTED_TIME
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
@@ -2323,110 +2344,35 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.base_respawn_time_penalty = 5
 	presets.weapon = {}
 	presets.weapon.normal = {
-		beretta92 = {},
-		c45 = {},
-		raging_bull = {},
-		m4 = {},
-		ak47 = {},
-		r870 = {},
-		saiga = {},
+		is_pistol = {},
+		is_revolver = {},
+		is_rifle = {},
+		is_lmg = {},
+		is_shotgun_pump = {},
+		is_shotgun_mag = {},
 		mossberg = {},
-		mp5 = {},
+		is_smg = {},
+		mp9 = {},
 		mac11 = {},
-		raging_bull = {},
-		akimbo_pistol = {}
+		is_revolver = {},
+		akimbo_pistol = {},
+		mini = {}
 	}
-	presets.weapon.normal.beretta92.aim_delay = {0.1, 0.1}
-	presets.weapon.normal.beretta92.focus_delay = 10
-	presets.weapon.normal.beretta92.focus_dis = 200
-	presets.weapon.normal.beretta92.spread = 25
-	presets.weapon.normal.beretta92.miss_dis = 30
-	presets.weapon.normal.beretta92.RELOAD_SPEED = 1
-	presets.weapon.normal.beretta92.melee_speed = 1
-	presets.weapon.normal.beretta92.melee_dmg = 4
-	presets.weapon.normal.beretta92.melee_retry_delay = {0, 0}
-	presets.weapon.normal.beretta92.range = {
+	presets.weapon.normal.is_pistol.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_pistol.focus_delay = 10
+	presets.weapon.normal.is_pistol.focus_dis = 200
+	presets.weapon.normal.is_pistol.spread = 20
+	presets.weapon.normal.is_pistol.miss_dis = 50
+	presets.weapon.normal.is_pistol.RELOAD_SPEED = 1
+	presets.weapon.normal.is_pistol.melee_speed = 1
+	presets.weapon.normal.is_pistol.melee_dmg = 4
+	presets.weapon.normal.is_pistol.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_pistol.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.normal.beretta92.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.6, 0.9},
-			dmg_mul = 1,
-			recoil = {0.1, 0.25},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 500,
-			acc = {0.4, 0.85},
-			dmg_mul = 1,
-			recoil = {0.1, 0.25},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.375, 0.55},
-			dmg_mul = 1,
-			recoil = {0.15, 0.3},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.25, 0.45},
-			dmg_mul = 1,
-			recoil = {0.3, 0.7},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.01, 0.35},
-			dmg_mul = 1,
-			recoil = {0.4, 1},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.normal.c45.aim_delay = {0.1, 0.1}
-	presets.weapon.normal.c45.focus_delay = 10
-	presets.weapon.normal.c45.focus_dis = 200
-	presets.weapon.normal.c45.spread = 20
-	presets.weapon.normal.c45.miss_dis = 50
-	presets.weapon.normal.c45.RELOAD_SPEED = 1
-	presets.weapon.normal.c45.melee_speed = 1
-	presets.weapon.normal.c45.melee_dmg = 4
-	presets.weapon.normal.c45.melee_retry_delay = {0, 0}
-	presets.weapon.normal.c45.range = {
-		close = 1000,
-		optimal = 2000,
-		far = 5000
-	}
-	presets.weapon.normal.c45.FALLOFF = {
+	presets.weapon.normal.is_pistol.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -2488,26 +2434,26 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.akimbo_pistol = presets.weapon.normal.c45
-	presets.weapon.normal.m4.aim_delay = {0.1, 0.1}
-	presets.weapon.normal.m4.focus_delay = 10
-	presets.weapon.normal.m4.focus_dis = 200
-	presets.weapon.normal.m4.spread = 20
-	presets.weapon.normal.m4.miss_dis = 40
-	presets.weapon.normal.m4.RELOAD_SPEED = 1
-	presets.weapon.normal.m4.melee_speed = 1
-	presets.weapon.normal.m4.melee_dmg = 4
-	presets.weapon.normal.m4.tase_distance = 1400
-	presets.weapon.normal.m4.aim_delay_tase = {0, 0.5}
-	presets.weapon.normal.m4.tase_sphere_cast_radius = 30
-	presets.weapon.normal.m4.melee_retry_delay = {0, 0}
-	presets.weapon.normal.m4.range = {
+	presets.weapon.normal.akimbo_pistol = presets.weapon.normal.is_pistol
+	presets.weapon.normal.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_rifle.focus_delay = 10
+	presets.weapon.normal.is_rifle.focus_dis = 200
+	presets.weapon.normal.is_rifle.spread = 20
+	presets.weapon.normal.is_rifle.miss_dis = 40
+	presets.weapon.normal.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.normal.is_rifle.melee_speed = 1
+	presets.weapon.normal.is_rifle.melee_dmg = 4
+	presets.weapon.normal.is_rifle.tase_distance = 1400
+	presets.weapon.normal.is_rifle.aim_delay_tase = {0, 0.5}
+	presets.weapon.normal.is_rifle.tase_sphere_cast_radius = 30
+	presets.weapon.normal.is_rifle.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_rifle.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.normal.m4.autofire_rounds = {6, 11}
-	presets.weapon.normal.m4.FALLOFF = {
+	presets.weapon.normal.is_rifle.autofire_rounds = {6, 11}
+	presets.weapon.normal.is_rifle.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -2569,21 +2515,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.r870.aim_delay = {0.1, 0.1}
-	presets.weapon.normal.r870.focus_delay = 10
-	presets.weapon.normal.r870.focus_dis = 200
-	presets.weapon.normal.r870.spread = 15
-	presets.weapon.normal.r870.miss_dis = 20
-	presets.weapon.normal.r870.RELOAD_SPEED = 1
-	presets.weapon.normal.r870.melee_speed = 1
-	presets.weapon.normal.r870.melee_dmg = 4
-	presets.weapon.normal.r870.melee_retry_delay = {0, 0}
-	presets.weapon.normal.r870.range = {
+	presets.weapon.normal.is_bullpup = presets.weapon.normal.is_rifle
+	presets.weapon.normal.is_shotgun_pump.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_shotgun_pump.focus_delay = 10
+	presets.weapon.normal.is_shotgun_pump.focus_dis = 200
+	presets.weapon.normal.is_shotgun_pump.spread = 15
+	presets.weapon.normal.is_shotgun_pump.miss_dis = 20
+	presets.weapon.normal.is_shotgun_pump.RELOAD_SPEED = 0.25
+	presets.weapon.normal.is_shotgun_pump.melee_speed = 1
+	presets.weapon.normal.is_shotgun_pump.melee_dmg = 4
+	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_shotgun_pump.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.normal.r870.FALLOFF = {
+	presets.weapon.normal.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -2837,22 +2784,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.mp5.aim_delay = {0.1, 0.1}
-	presets.weapon.normal.mp5.focus_delay = 10
-	presets.weapon.normal.mp5.focus_dis = 200
-	presets.weapon.normal.mp5.spread = 15
-	presets.weapon.normal.mp5.miss_dis = 20
-	presets.weapon.normal.mp5.RELOAD_SPEED = 1
-	presets.weapon.normal.mp5.melee_speed = 1
-	presets.weapon.normal.mp5.melee_dmg = 4
-	presets.weapon.normal.mp5.melee_retry_delay = {0, 0}
-	presets.weapon.normal.mp5.range = {
+	presets.weapon.normal.is_smg.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_smg.focus_delay = 10
+	presets.weapon.normal.is_smg.focus_dis = 200
+	presets.weapon.normal.is_smg.spread = 15
+	presets.weapon.normal.is_smg.miss_dis = 20
+	presets.weapon.normal.is_smg.RELOAD_SPEED = 1
+	presets.weapon.normal.is_smg.melee_speed = 1
+	presets.weapon.normal.is_smg.melee_dmg = 4
+	presets.weapon.normal.is_smg.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_smg.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.normal.mp5.autofire_rounds = {6, 11}
-	presets.weapon.normal.mp5.FALLOFF = {
+	presets.weapon.normal.is_smg.autofire_rounds = {6, 11}
+	presets.weapon.normal.is_smg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -2906,6 +2853,83 @@ function CharacterTweakData:_presets(tweak_data)
 			acc = {0.1, 0.35},
 			dmg_mul = 1,
 			recoil = {0.5, 0.6},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		}
+	}
+	presets.weapon.normal.mp9.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.mp9.focus_delay = 10
+	presets.weapon.normal.mp9.focus_dis = 200
+	presets.weapon.normal.mp9.spread = 30
+	presets.weapon.normal.mp9.miss_dis = 15
+	presets.weapon.normal.mp9.RELOAD_SPEED = 1
+	presets.weapon.normal.mp9.melee_speed = nil
+	presets.weapon.normal.mp9.melee_dmg = nil
+	presets.weapon.normal.mp9.melee_retry_delay = nil
+	presets.weapon.normal.mp9.range = {
+		close = 500,
+		optimal = 1200,
+		far = 3000
+	}
+	presets.weapon.normal.mp9.autofire_rounds = {6, 11}
+	presets.weapon.normal.mp9.FALLOFF = {
+		{
+			r = 0,
+			acc = {0.7, 0.95},
+			dmg_mul = 1,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 700,
+			acc = {0.5, 0.75},
+			dmg_mul = 1,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.45, 0.65},
+			dmg_mul = 1,
+			recoil = {0.3, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.3, 0.5},
+			dmg_mul = 1,
+			recoil = {1, 1.2},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.1, 0.25},
+			dmg_mul = 1,
+			recoil = {1.2, 1.5},
 			mode = {
 				1,
 				3,
@@ -2980,7 +3004,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 3000,
-			acc = {0, 0.3},
+			acc = {0, 0.2},
 			dmg_mul = 1,
 			recoil = {0.65, 1},
 			mode = {
@@ -2991,21 +3015,21 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.raging_bull.aim_delay = {0.1, 0.1}
-	presets.weapon.normal.raging_bull.focus_delay = 10
-	presets.weapon.normal.raging_bull.focus_dis = 200
-	presets.weapon.normal.raging_bull.spread = 20
-	presets.weapon.normal.raging_bull.miss_dis = 50
-	presets.weapon.normal.raging_bull.RELOAD_SPEED = 1
-	presets.weapon.normal.raging_bull.melee_speed = 1
-	presets.weapon.normal.raging_bull.melee_dmg = 4
-	presets.weapon.normal.raging_bull.melee_retry_delay = {0, 0}
-	presets.weapon.normal.raging_bull.range = {
+	presets.weapon.normal.is_revolver.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_revolver.focus_delay = 10
+	presets.weapon.normal.is_revolver.focus_dis = 200
+	presets.weapon.normal.is_revolver.spread = 20
+	presets.weapon.normal.is_revolver.miss_dis = 50
+	presets.weapon.normal.is_revolver.RELOAD_SPEED = 1
+	presets.weapon.normal.is_revolver.melee_speed = 1
+	presets.weapon.normal.is_revolver.melee_dmg = 4
+	presets.weapon.normal.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.normal.raging_bull.FALLOFF = {
+	presets.weapon.normal.is_revolver.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -3067,10 +3091,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.ak47 = deep_clone(presets.weapon.normal.m4)
-	presets.weapon.normal.ak47.RELOAD_SPEED = 0.5
-	presets.weapon.normal.ak47.autofire_rounds = {20, 40}
-	presets.weapon.normal.ak47.FALLOFF = {
+	presets.weapon.normal.is_lmg = deep_clone(presets.weapon.normal.is_rifle)
+	presets.weapon.normal.is_lmg.RELOAD_SPEED = 0.5
+	presets.weapon.normal.is_lmg.autofire_rounds = {20, 40}
+	presets.weapon.normal.is_lmg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -3132,11 +3156,11 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.mossberg = presets.weapon.normal.r870
-	presets.weapon.normal.saiga = deep_clone(presets.weapon.normal.r870)
-	presets.weapon.normal.saiga.RELOAD_SPEED = 0.5
-	presets.weapon.normal.saiga.autofire_rounds = {4, 9}
-	presets.weapon.normal.saiga.FALLOFF = {
+	presets.weapon.normal.mossberg = presets.weapon.normal.is_shotgun_pump
+	presets.weapon.normal.is_shotgun_mag = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.normal.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.normal.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.normal.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -3390,102 +3414,109 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good = {
-		beretta92 = {},
-		c45 = {},
-		raging_bull = {},
-		m4 = {},
-		ak47 = {},
-		r870 = {},
-		saiga = {},
-		mossberg = {},
-		mp5 = {},
-		mac11 = {},
-		akimbo_pistol = {}
+	presets.weapon.normal.mini = {}
+	presets.weapon.normal.mini.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.mini.focus_delay = 10
+	presets.weapon.normal.mini.focus_dis = 200
+	presets.weapon.normal.mini.spread = 20
+	presets.weapon.normal.mini.miss_dis = 40
+	presets.weapon.normal.mini.RELOAD_SPEED = 0.25
+	presets.weapon.normal.mini.melee_speed = 1
+	presets.weapon.normal.mini.melee_dmg = 4
+	presets.weapon.normal.mini.melee_retry_delay = {0, 0}
+	presets.weapon.normal.mini.range = {
+		close = 1000,
+		optimal = 2500,
+		far = 5000
 	}
-	presets.weapon.good.beretta92.aim_delay = {0.1, 0.1}
-	presets.weapon.good.beretta92.focus_delay = 2
-	presets.weapon.good.beretta92.focus_dis = 200
-	presets.weapon.good.beretta92.spread = 25
-	presets.weapon.good.beretta92.miss_dis = 30
-	presets.weapon.good.beretta92.RELOAD_SPEED = 1
-	presets.weapon.good.beretta92.melee_speed = presets.weapon.normal.beretta92.melee_speed
-	presets.weapon.good.beretta92.melee_dmg = 8
-	presets.weapon.good.beretta92.melee_retry_delay = presets.weapon.normal.beretta92.melee_retry_delay
-	presets.weapon.good.beretta92.range = presets.weapon.normal.beretta92.range
-	presets.weapon.good.beretta92.FALLOFF = {
+	presets.weapon.normal.mini.autofire_rounds = {20, 40}
+	presets.weapon.normal.mini.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
-			dmg_mul = 2,
-			recoil = {0.1, 0.25},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
 			mode = {
 				0,
-				3,
-				3,
+				0,
+				0,
 				1
 			}
 		},
 		{
 			r = 500,
-			acc = {0.5, 0.9},
-			dmg_mul = 2,
-			recoil = {0.1, 0.25},
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
 			mode = {
+				0,
 				1,
-				0,
-				0,
-				0
+				2,
+				8
 			}
 		},
 		{
 			r = 1000,
-			acc = {0.375, 0.55},
-			dmg_mul = 2,
-			recoil = {0.15, 0.3},
+			acc = {0.4, 0.6},
+			dmg_mul = 1,
+			recoil = {0.45, 0.8},
 			mode = {
 				1,
-				0,
-				1,
-				0
+				3,
+				6,
+				6
 			}
 		},
 		{
 			r = 2000,
-			acc = {0.15, 0.45},
+			acc = {0.2, 0.5},
 			dmg_mul = 1,
-			recoil = {0.3, 0.7},
+			recoil = {0.45, 0.8},
 			mode = {
 				1,
-				0,
-				1,
-				0
+				2,
+				2,
+				1
 			}
 		},
 		{
 			r = 3000,
 			acc = {0.1, 0.35},
 			dmg_mul = 1,
-			recoil = {0.4, 1},
+			recoil = {1, 1.2},
 			mode = {
+				4,
+				2,
 				1,
-				0,
-				0,
 				0
 			}
 		}
 	}
-	presets.weapon.good.c45.aim_delay = {0.1, 0.1}
-	presets.weapon.good.c45.focus_delay = 2
-	presets.weapon.good.c45.focus_dis = 200
-	presets.weapon.good.c45.spread = 20
-	presets.weapon.good.c45.miss_dis = 50
-	presets.weapon.good.c45.RELOAD_SPEED = 1
-	presets.weapon.good.c45.melee_speed = presets.weapon.normal.c45.melee_speed
-	presets.weapon.good.c45.melee_dmg = 8
-	presets.weapon.good.c45.melee_retry_delay = presets.weapon.normal.c45.melee_retry_delay
-	presets.weapon.good.c45.range = presets.weapon.normal.c45.range
-	presets.weapon.good.c45.FALLOFF = {
+	presets.weapon.good = {
+		is_pistol = {},
+		is_revolver = {},
+		is_rifle = {},
+		is_lmg = {},
+		is_shotgun_pump = {},
+		is_shotgun_mag = {},
+		mossberg = {},
+		is_smg = {},
+		mp9 = {},
+		mac11 = {},
+		akimbo_pistol = {},
+		mini = {}
+	}
+	presets.weapon.good.is_pistol.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_pistol.focus_delay = 2
+	presets.weapon.good.is_pistol.focus_dis = 200
+	presets.weapon.good.is_pistol.spread = 20
+	presets.weapon.good.is_pistol.miss_dis = 50
+	presets.weapon.good.is_pistol.RELOAD_SPEED = 1
+	presets.weapon.good.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
+	presets.weapon.good.is_pistol.melee_dmg = 8
+	presets.weapon.good.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
+	presets.weapon.good.is_pistol.range = presets.weapon.normal.is_pistol.range
+	presets.weapon.good.is_pistol.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -3547,26 +3578,26 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.akimbo_pistol = presets.weapon.good.c45
-	presets.weapon.good.m4.aim_delay = {0.1, 0.1}
-	presets.weapon.good.m4.focus_delay = 3
-	presets.weapon.good.m4.focus_dis = 200
-	presets.weapon.good.m4.spread = 20
-	presets.weapon.good.m4.miss_dis = 40
-	presets.weapon.good.m4.RELOAD_SPEED = 1
-	presets.weapon.good.m4.melee_speed = 1
-	presets.weapon.good.m4.melee_dmg = 8
-	presets.weapon.good.m4.tase_distance = 1400
-	presets.weapon.good.m4.aim_delay_tase = {0, 0.5}
-	presets.weapon.good.m4.tase_sphere_cast_radius = 30
-	presets.weapon.good.m4.melee_retry_delay = presets.weapon.normal.m4.melee_retry_delay
-	presets.weapon.good.m4.range = {
+	presets.weapon.good.akimbo_pistol = presets.weapon.good.is_pistol
+	presets.weapon.good.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_rifle.focus_delay = 3
+	presets.weapon.good.is_rifle.focus_dis = 200
+	presets.weapon.good.is_rifle.spread = 20
+	presets.weapon.good.is_rifle.miss_dis = 40
+	presets.weapon.good.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.good.is_rifle.melee_speed = 1
+	presets.weapon.good.is_rifle.melee_dmg = 8
+	presets.weapon.good.is_rifle.tase_distance = 1400
+	presets.weapon.good.is_rifle.aim_delay_tase = {0, 0.5}
+	presets.weapon.good.is_rifle.tase_sphere_cast_radius = 30
+	presets.weapon.good.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
+	presets.weapon.good.is_rifle.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.good.m4.autofire_rounds = presets.weapon.normal.m4.autofire_rounds
-	presets.weapon.good.m4.FALLOFF = {
+	presets.weapon.good.is_rifle.autofire_rounds = presets.weapon.normal.is_rifle.autofire_rounds
+	presets.weapon.good.is_rifle.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -3628,21 +3659,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.r870.aim_delay = {0.1, 0.1}
-	presets.weapon.good.r870.focus_delay = 5
-	presets.weapon.good.r870.focus_dis = 200
-	presets.weapon.good.r870.spread = 15
-	presets.weapon.good.r870.miss_dis = 20
-	presets.weapon.good.r870.RELOAD_SPEED = 1
-	presets.weapon.good.r870.melee_speed = 1
-	presets.weapon.good.r870.melee_dmg = 8
-	presets.weapon.good.r870.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.good.r870.range = {
+	presets.weapon.good.is_bullpup = presets.weapon.good.is_rifle
+	presets.weapon.good.is_shotgun_pump.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_shotgun_pump.focus_delay = 5
+	presets.weapon.good.is_shotgun_pump.focus_dis = 200
+	presets.weapon.good.is_shotgun_pump.spread = 15
+	presets.weapon.good.is_shotgun_pump.miss_dis = 20
+	presets.weapon.good.is_shotgun_pump.RELOAD_SPEED = 0.25
+	presets.weapon.good.is_shotgun_pump.melee_speed = 1
+	presets.weapon.good.is_shotgun_pump.melee_dmg = 8
+	presets.weapon.good.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.good.is_shotgun_pump.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.good.r870.FALLOFF = {
+	presets.weapon.good.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -3908,22 +3940,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.saiga.aim_delay = {0.1, 0.1}
-	presets.weapon.good.saiga.focus_delay = 5
-	presets.weapon.good.saiga.focus_dis = 200
-	presets.weapon.good.saiga.spread = 15
-	presets.weapon.good.saiga.miss_dis = 20
-	presets.weapon.good.saiga.RELOAD_SPEED = 0.5
-	presets.weapon.good.saiga.melee_speed = 1
-	presets.weapon.good.saiga.melee_dmg = 8
-	presets.weapon.good.saiga.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.good.saiga.autofire_rounds = {4, 9}
-	presets.weapon.good.saiga.range = {
+	presets.weapon.good.is_shotgun_mag.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_shotgun_mag.focus_delay = 5
+	presets.weapon.good.is_shotgun_mag.focus_dis = 200
+	presets.weapon.good.is_shotgun_mag.spread = 15
+	presets.weapon.good.is_shotgun_mag.miss_dis = 20
+	presets.weapon.good.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.good.is_shotgun_mag.melee_speed = 1
+	presets.weapon.good.is_shotgun_mag.melee_dmg = 8
+	presets.weapon.good.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.good.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.good.is_shotgun_mag.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.good.saiga.FALLOFF = {
+	presets.weapon.good.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -4189,18 +4221,18 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.mp5.aim_delay = {0.1, 0.1}
-	presets.weapon.good.mp5.focus_delay = 3
-	presets.weapon.good.mp5.focus_dis = 200
-	presets.weapon.good.mp5.spread = 20
-	presets.weapon.good.mp5.miss_dis = 40
-	presets.weapon.good.mp5.RELOAD_SPEED = 1
-	presets.weapon.good.mp5.melee_speed = presets.weapon.normal.mp5.melee_speed
-	presets.weapon.good.mp5.melee_dmg = 8
-	presets.weapon.good.mp5.melee_retry_delay = presets.weapon.normal.mp5.melee_retry_delay
-	presets.weapon.good.mp5.range = presets.weapon.normal.mp5.range
-	presets.weapon.good.mp5.autofire_rounds = presets.weapon.normal.mp5.autofire_rounds
-	presets.weapon.good.mp5.FALLOFF = {
+	presets.weapon.good.is_smg.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_smg.focus_delay = 3
+	presets.weapon.good.is_smg.focus_dis = 200
+	presets.weapon.good.is_smg.spread = 20
+	presets.weapon.good.is_smg.miss_dis = 40
+	presets.weapon.good.is_smg.RELOAD_SPEED = 1
+	presets.weapon.good.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
+	presets.weapon.good.is_smg.melee_dmg = 8
+	presets.weapon.good.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
+	presets.weapon.good.is_smg.range = presets.weapon.normal.is_smg.range
+	presets.weapon.good.is_smg.autofire_rounds = presets.weapon.normal.is_smg.autofire_rounds
+	presets.weapon.good.is_smg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -4254,6 +4286,83 @@ function CharacterTweakData:_presets(tweak_data)
 			acc = {0.1, 0.35},
 			dmg_mul = 1,
 			recoil = {0.5, 0.6},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		}
+	}
+	presets.weapon.good.mp9.aim_delay = {0.1, 0.1}
+	presets.weapon.good.mp9.focus_delay = 10
+	presets.weapon.good.mp9.focus_dis = 200
+	presets.weapon.good.mp9.spread = 30
+	presets.weapon.good.mp9.miss_dis = 15
+	presets.weapon.good.mp9.RELOAD_SPEED = 1
+	presets.weapon.good.mp9.melee_speed = nil
+	presets.weapon.good.mp9.melee_dmg = nil
+	presets.weapon.good.mp9.melee_retry_delay = nil
+	presets.weapon.good.mp9.range = {
+		close = 500,
+		optimal = 1200,
+		far = 3000
+	}
+	presets.weapon.good.mp9.autofire_rounds = {6, 11}
+	presets.weapon.good.mp9.FALLOFF = {
+		{
+			r = 0,
+			acc = {0.7, 0.95},
+			dmg_mul = 2,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 700,
+			acc = {0.5, 0.75},
+			dmg_mul = 2,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.45, 0.65},
+			dmg_mul = 2,
+			recoil = {0.3, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.3, 0.5},
+			dmg_mul = 1,
+			recoil = {1, 1.2},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.1, 0.25},
+			dmg_mul = 1,
+			recoil = {1.2, 1.5},
 			mode = {
 				1,
 				3,
@@ -4335,21 +4444,21 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.raging_bull.aim_delay = {0.1, 0.1}
-	presets.weapon.good.raging_bull.focus_delay = 10
-	presets.weapon.good.raging_bull.focus_dis = 200
-	presets.weapon.good.raging_bull.spread = 20
-	presets.weapon.good.raging_bull.miss_dis = 50
-	presets.weapon.good.raging_bull.RELOAD_SPEED = 1
-	presets.weapon.good.raging_bull.melee_speed = 1
-	presets.weapon.good.raging_bull.melee_dmg = 8
-	presets.weapon.good.raging_bull.melee_retry_delay = {0, 0}
-	presets.weapon.good.raging_bull.range = {
+	presets.weapon.good.is_revolver.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_revolver.focus_delay = 10
+	presets.weapon.good.is_revolver.focus_dis = 200
+	presets.weapon.good.is_revolver.spread = 20
+	presets.weapon.good.is_revolver.miss_dis = 50
+	presets.weapon.good.is_revolver.RELOAD_SPEED = 1
+	presets.weapon.good.is_revolver.melee_speed = 1
+	presets.weapon.good.is_revolver.melee_dmg = 8
+	presets.weapon.good.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.good.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.good.raging_bull.FALLOFF = {
+	presets.weapon.good.is_revolver.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -4411,10 +4520,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.ak47 = deep_clone(presets.weapon.good.m4)
-	presets.weapon.good.ak47.RELOAD_SPEED = 0.5
-	presets.weapon.good.ak47.autofire_rounds = {20, 40}
-	presets.weapon.good.ak47.FALLOFF = {
+	presets.weapon.good.is_lmg = deep_clone(presets.weapon.good.is_rifle)
+	presets.weapon.good.is_lmg.RELOAD_SPEED = 0.5
+	presets.weapon.good.is_lmg.autofire_rounds = {20, 40}
+	presets.weapon.good.is_lmg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -4476,91 +4585,110 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.mossberg = presets.weapon.good.r870
-	presets.weapon.expert = {
-		beretta92 = {},
-		c45 = {},
-		raging_bull = {},
-		m4 = {},
-		ak47 = {},
-		r870 = {},
-		saiga = {},
-		mossberg = {},
-		mp5 = {},
-		mac11 = {},
-		akimbo_pistol = {}
+	presets.weapon.good.mossberg = presets.weapon.good.is_shotgun_pump
+	presets.weapon.good.mini = {}
+	presets.weapon.good.mini.aim_delay = {0.1, 0.1}
+	presets.weapon.good.mini.focus_delay = 3
+	presets.weapon.good.mini.focus_dis = 200
+	presets.weapon.good.mini.spread = 20
+	presets.weapon.good.mini.miss_dis = 40
+	presets.weapon.good.mini.RELOAD_SPEED = 0.25
+	presets.weapon.good.mini.melee_speed = 1
+	presets.weapon.good.mini.melee_dmg = 8
+	presets.weapon.good.mini.melee_retry_delay = {0, 0}
+	presets.weapon.good.mini.range = {
+		close = 1000,
+		optimal = 2500,
+		far = 5000
 	}
-	presets.weapon.expert.beretta92.aim_delay = {0, 0.1}
-	presets.weapon.expert.beretta92.focus_delay = 1
-	presets.weapon.expert.beretta92.focus_dis = 300
-	presets.weapon.expert.beretta92.spread = 25
-	presets.weapon.expert.beretta92.miss_dis = 30
-	presets.weapon.expert.beretta92.RELOAD_SPEED = 1
-	presets.weapon.expert.beretta92.melee_speed = presets.weapon.normal.beretta92.melee_speed
-	presets.weapon.expert.beretta92.melee_dmg = 10
-	presets.weapon.expert.beretta92.melee_retry_delay = presets.weapon.normal.beretta92.melee_retry_delay
-	presets.weapon.expert.beretta92.range = presets.weapon.normal.beretta92.range
-	presets.weapon.expert.beretta92.FALLOFF = {
+	presets.weapon.good.mini.autofire_rounds = {20, 40}
+	presets.weapon.good.mini.FALLOFF = {
 		{
-			r = 0,
-			acc = {0.5, 0.95},
-			dmg_mul = 2.5,
-			recoil = {0.1, 0.25},
+			r = 100,
+			acc = {0.6, 0.9},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
 			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.7},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
 				1,
-				0,
-				0,
-				0
+				2,
+				8
 			}
 		},
 		{
 			r = 1000,
-			acc = {0.375, 0.55},
-			dmg_mul = 2.5,
-			recoil = {0.15, 0.3},
+			acc = {0.4, 0.6},
+			dmg_mul = 2,
+			recoil = {0.45, 0.8},
 			mode = {
 				1,
-				0,
-				1,
-				0
+				3,
+				6,
+				6
 			}
 		},
 		{
 			r = 2000,
-			acc = {0.05, 0.5},
-			dmg_mul = 2.5,
-			recoil = {0.3, 0.7},
+			acc = {0.2, 0.5},
+			dmg_mul = 1,
+			recoil = {0.45, 0.8},
 			mode = {
 				1,
-				0,
-				1,
-				0
+				2,
+				2,
+				1
 			}
 		},
 		{
 			r = 3000,
-			acc = {0, 0.3},
+			acc = {0.1, 0.35},
 			dmg_mul = 1,
-			recoil = {0.4, 1},
+			recoil = {1, 1.2},
 			mode = {
+				4,
+				2,
 				1,
-				0,
-				0,
 				0
 			}
 		}
 	}
-	presets.weapon.expert.c45.aim_delay = {0, 0.1}
-	presets.weapon.expert.c45.focus_delay = 1
-	presets.weapon.expert.c45.focus_dis = 300
-	presets.weapon.expert.c45.spread = 20
-	presets.weapon.expert.c45.miss_dis = 50
-	presets.weapon.expert.c45.RELOAD_SPEED = 1
-	presets.weapon.expert.c45.melee_speed = presets.weapon.normal.c45.melee_speed
-	presets.weapon.expert.c45.melee_dmg = 10
-	presets.weapon.expert.c45.melee_retry_delay = presets.weapon.normal.c45.melee_retry_delay
-	presets.weapon.expert.c45.range = presets.weapon.normal.c45.range
-	presets.weapon.expert.c45.FALLOFF = {
+	presets.weapon.expert = {
+		is_pistol = {},
+		is_revolver = {},
+		is_rifle = {},
+		is_lmg = {},
+		is_shotgun_pump = {},
+		is_shotgun_mag = {},
+		mossberg = {},
+		is_smg = {},
+		mp9 = {},
+		mac11 = {},
+		akimbo_pistol = {},
+		mini = {}
+	}
+	presets.weapon.expert.is_pistol.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_pistol.focus_delay = 1
+	presets.weapon.expert.is_pistol.focus_dis = 300
+	presets.weapon.expert.is_pistol.spread = 20
+	presets.weapon.expert.is_pistol.miss_dis = 50
+	presets.weapon.expert.is_pistol.RELOAD_SPEED = 1
+	presets.weapon.expert.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
+	presets.weapon.expert.is_pistol.melee_dmg = 10
+	presets.weapon.expert.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
+	presets.weapon.expert.is_pistol.range = presets.weapon.normal.is_pistol.range
+	presets.weapon.expert.is_pistol.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -4600,7 +4728,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.3, 0.5},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {0.4, 0.9},
 			mode = {
 				1,
@@ -4622,26 +4750,26 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.akimbo_pistol = presets.weapon.expert.c45
-	presets.weapon.expert.m4.aim_delay = {0, 0.1}
-	presets.weapon.expert.m4.focus_delay = 2
-	presets.weapon.expert.m4.focus_dis = 300
-	presets.weapon.expert.m4.spread = 20
-	presets.weapon.expert.m4.miss_dis = 40
-	presets.weapon.expert.m4.RELOAD_SPEED = 1
-	presets.weapon.expert.m4.melee_speed = 1
-	presets.weapon.expert.m4.melee_dmg = 10
-	presets.weapon.expert.m4.tase_distance = 1400
-	presets.weapon.expert.m4.aim_delay_tase = {0, 0.5}
-	presets.weapon.expert.m4.tase_sphere_cast_radius = 30
-	presets.weapon.expert.m4.melee_retry_delay = presets.weapon.normal.m4.melee_retry_delay
-	presets.weapon.expert.m4.range = {
+	presets.weapon.expert.akimbo_pistol = presets.weapon.expert.is_pistol
+	presets.weapon.expert.is_rifle.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_rifle.focus_delay = 2
+	presets.weapon.expert.is_rifle.focus_dis = 300
+	presets.weapon.expert.is_rifle.spread = 20
+	presets.weapon.expert.is_rifle.miss_dis = 40
+	presets.weapon.expert.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.expert.is_rifle.melee_speed = 1
+	presets.weapon.expert.is_rifle.melee_dmg = 10
+	presets.weapon.expert.is_rifle.tase_distance = 1400
+	presets.weapon.expert.is_rifle.aim_delay_tase = {0, 0.5}
+	presets.weapon.expert.is_rifle.tase_sphere_cast_radius = 30
+	presets.weapon.expert.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
+	presets.weapon.expert.is_rifle.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.expert.m4.autofire_rounds = presets.weapon.normal.m4.autofire_rounds
-	presets.weapon.expert.m4.FALLOFF = {
+	presets.weapon.expert.is_rifle.autofire_rounds = presets.weapon.normal.is_rifle.autofire_rounds
+	presets.weapon.expert.is_rifle.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -4681,7 +4809,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.5, 0.7},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {0.4, 1.2},
 			mode = {
 				3,
@@ -4703,21 +4831,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.r870.aim_delay = {0, 0.1}
-	presets.weapon.expert.r870.focus_delay = 2
-	presets.weapon.expert.r870.focus_dis = 200
-	presets.weapon.expert.r870.spread = 15
-	presets.weapon.expert.r870.miss_dis = 20
-	presets.weapon.expert.r870.RELOAD_SPEED = 1
-	presets.weapon.expert.r870.melee_speed = 1
-	presets.weapon.expert.r870.melee_dmg = 10
-	presets.weapon.expert.r870.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.expert.r870.range = {
+	presets.weapon.expert.is_bullpup = presets.weapon.expert.is_rifle
+	presets.weapon.expert.is_shotgun_pump.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_shotgun_pump.focus_delay = 2
+	presets.weapon.expert.is_shotgun_pump.focus_dis = 200
+	presets.weapon.expert.is_shotgun_pump.spread = 15
+	presets.weapon.expert.is_shotgun_pump.miss_dis = 20
+	presets.weapon.expert.is_shotgun_pump.RELOAD_SPEED = 0.25
+	presets.weapon.expert.is_shotgun_pump.melee_speed = 1
+	presets.weapon.expert.is_shotgun_pump.melee_dmg = 10
+	presets.weapon.expert.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.expert.is_shotgun_pump.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.expert.r870.FALLOFF = {
+	presets.weapon.expert.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -4913,19 +5042,19 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.5,
-			recoil = {1.5, 2},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
+			dmg_mul = 0.25,
+         		recoil = {1.5, 2},
+            		mode = {
+                		1,
+                		0,
+                		0,
+               			0
+            		}
 		},
 		{
 			r = 2100,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.375,
+			dmg_mul = 0.2,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -4937,7 +5066,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2200,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.25,
+			dmg_mul = 0.15,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -4949,7 +5078,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2300,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.125,
+			dmg_mul = 0.1,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -4960,6 +5089,18 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 2400,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.05,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2500,
 			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {1.5, 2},
@@ -4971,22 +5112,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.saiga.aim_delay = {0, 0.1}
-	presets.weapon.expert.saiga.focus_delay = 2
-	presets.weapon.expert.saiga.focus_dis = 200
-	presets.weapon.expert.saiga.spread = 15
-	presets.weapon.expert.saiga.miss_dis = 20
-	presets.weapon.expert.saiga.RELOAD_SPEED = 0.5
-	presets.weapon.expert.saiga.melee_speed = 1
-	presets.weapon.expert.saiga.melee_dmg = 10
-	presets.weapon.expert.saiga.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.expert.saiga.range = {
+	presets.weapon.expert.is_shotgun_mag.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_shotgun_mag.focus_delay = 2
+	presets.weapon.expert.is_shotgun_mag.focus_dis = 200
+	presets.weapon.expert.is_shotgun_mag.spread = 15
+	presets.weapon.expert.is_shotgun_mag.miss_dis = 20
+	presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.expert.is_shotgun_mag.melee_speed = 1
+	presets.weapon.expert.is_shotgun_mag.melee_dmg = 10
+	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.expert.is_shotgun_mag.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.expert.saiga.autofire_rounds = {4, 9}
-	presets.weapon.expert.saiga.FALLOFF = {
+	presets.weapon.expert.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.expert.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -5182,7 +5323,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.5,
+			dmg_mul = 0.25,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -5194,7 +5335,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2100,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.375,
+			dmg_mul = 0.2,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -5206,7 +5347,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2200,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.25,
+			dmg_mul = 0.15,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -5218,7 +5359,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2300,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.125,
+			dmg_mul = 0.1,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -5230,6 +5371,18 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2400,
 			acc = {0.1, 0.55},
+			dmg_mul = 0.05,
+			recoil = {0.45, 0.8},
+			mode = {
+				3,
+				2,
+				2,
+				0
+			}
+		},
+		{
+			r = 2500,
+			acc = {0, 0},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
 			mode = {
@@ -5240,18 +5393,18 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.mp5.aim_delay = {0, 0.1}
-	presets.weapon.expert.mp5.focus_delay = 1
-	presets.weapon.expert.mp5.focus_dis = 200
-	presets.weapon.expert.mp5.spread = 15
-	presets.weapon.expert.mp5.miss_dis = 10
-	presets.weapon.expert.mp5.RELOAD_SPEED = 1
-	presets.weapon.expert.mp5.melee_speed = presets.weapon.normal.mp5.melee_speed
-	presets.weapon.expert.mp5.melee_dmg = 10
-	presets.weapon.expert.mp5.melee_retry_delay = presets.weapon.normal.mp5.melee_retry_delay
-	presets.weapon.expert.mp5.range = presets.weapon.normal.mp5.range
-	presets.weapon.expert.mp5.autofire_rounds = presets.weapon.normal.mp5.autofire_rounds
-	presets.weapon.expert.mp5.FALLOFF = {
+	presets.weapon.expert.is_smg.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_smg.focus_delay = 1
+	presets.weapon.expert.is_smg.focus_dis = 200
+	presets.weapon.expert.is_smg.spread = 15
+	presets.weapon.expert.is_smg.miss_dis = 10
+	presets.weapon.expert.is_smg.RELOAD_SPEED = 1
+	presets.weapon.expert.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
+	presets.weapon.expert.is_smg.melee_dmg = 10
+	presets.weapon.expert.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
+	presets.weapon.expert.is_smg.range = presets.weapon.normal.is_smg.range
+	presets.weapon.expert.is_smg.autofire_rounds = presets.weapon.normal.is_smg.autofire_rounds
+	presets.weapon.expert.is_smg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.95},
@@ -5291,7 +5444,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.4, 0.6},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {0.35, 0.7},
 			mode = {
 				0,
@@ -5305,6 +5458,83 @@ function CharacterTweakData:_presets(tweak_data)
 			acc = {0.2, 0.35},
 			dmg_mul = 1,
 			recoil = {0.5, 1.5},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		}
+	}
+	presets.weapon.expert.mp9.aim_delay = {0, 0.1}
+	presets.weapon.expert.mp9.focus_delay = 10
+	presets.weapon.expert.mp9.focus_dis = 200
+	presets.weapon.expert.mp9.spread = 30
+	presets.weapon.expert.mp9.miss_dis = 15
+	presets.weapon.expert.mp9.RELOAD_SPEED = 1
+	presets.weapon.expert.mp9.melee_speed = nil
+	presets.weapon.expert.mp9.melee_dmg = nil
+	presets.weapon.expert.mp9.melee_retry_delay = nil
+	presets.weapon.expert.mp9.range = {
+		close = 500,
+		optimal = 1200,
+		far = 3000
+	}
+	presets.weapon.expert.mp9.autofire_rounds = {6, 11}
+	presets.weapon.expert.mp9.FALLOFF = {
+		{
+			r = 0,
+			acc = {0.7, 0.95},
+			dmg_mul = 2.5,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 700,
+			acc = {0.5, 0.75},
+			dmg_mul = 2.5,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.45, 0.65},
+			dmg_mul = 2.5,
+			recoil = {0.3, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.3, 0.5},
+			dmg_mul = 1,
+			recoil = {1, 1.2},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.1, 0.25},
+			dmg_mul = 1,
+			recoil = {1.2, 1.5},
 			mode = {
 				1,
 				3,
@@ -5364,7 +5594,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.35, 0.55},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {0.65, 1},
 			mode = {
 				2,
@@ -5386,21 +5616,21 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.raging_bull.aim_delay = {0, 0.1}
-	presets.weapon.expert.raging_bull.focus_delay = 10
-	presets.weapon.expert.raging_bull.focus_dis = 200
-	presets.weapon.expert.raging_bull.spread = 20
-	presets.weapon.expert.raging_bull.miss_dis = 50
-	presets.weapon.expert.raging_bull.RELOAD_SPEED = 1
-	presets.weapon.expert.raging_bull.melee_speed = 1
-	presets.weapon.expert.raging_bull.melee_dmg = 10
-	presets.weapon.expert.raging_bull.melee_retry_delay = {0, 0}
-	presets.weapon.expert.raging_bull.range = {
+	presets.weapon.expert.is_revolver.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_revolver.focus_delay = 10
+	presets.weapon.expert.is_revolver.focus_dis = 200
+	presets.weapon.expert.is_revolver.spread = 20
+	presets.weapon.expert.is_revolver.miss_dis = 50
+	presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
+	presets.weapon.expert.is_revolver.melee_speed = 1
+	presets.weapon.expert.is_revolver.melee_dmg = 10
+	presets.weapon.expert.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.expert.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.expert.raging_bull.FALLOFF = {
+	presets.weapon.expert.is_revolver.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -5440,7 +5670,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.25, 0.45},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {1, 1.3},
 			mode = {
 				1,
@@ -5462,10 +5692,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.ak47 = deep_clone(presets.weapon.expert.m4)
-	presets.weapon.expert.ak47.RELOAD_SPEED = 0.5
-	presets.weapon.expert.ak47.autofire_rounds = {20, 40}
-	presets.weapon.expert.ak47.FALLOFF = {
+	presets.weapon.expert.is_lmg = deep_clone(presets.weapon.expert.is_rifle)
+	presets.weapon.expert.is_lmg.RELOAD_SPEED = 0.5
+	presets.weapon.expert.is_lmg.autofire_rounds = {20, 40}
+	presets.weapon.expert.is_lmg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -5505,7 +5735,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.25, 0.55},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {1, 1},
 			mode = {
 				1,
@@ -5527,104 +5757,104 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.mossberg = presets.weapon.expert.r870
-	presets.weapon.sniper = {
-		m4 = {},
-		ak47 = {}
+	presets.weapon.expert.mossberg = presets.weapon.expert.is_shotgun_pump
+	presets.weapon.expert.mini = {}
+	presets.weapon.expert.mini.aim_delay = {0, 0.1}
+	presets.weapon.expert.mini.focus_delay = 2
+	presets.weapon.expert.mini.focus_dis = 300
+	presets.weapon.expert.mini.spread = 20
+	presets.weapon.expert.mini.miss_dis = 40
+	presets.weapon.expert.mini.RELOAD_SPEED = 0.25
+	presets.weapon.expert.mini.melee_speed = 1
+	presets.weapon.expert.mini.melee_dmg = 10
+	presets.weapon.expert.mini.melee_retry_delay = {0, 0}
+	presets.weapon.expert.mini.range = {
+		close = 1000,
+		optimal = 2500,
+		far = 5000
 	}
-	presets.weapon.sniper.ak47.aim_delay = {0, 0.1}
-	presets.weapon.sniper.ak47.focus_delay = 1
-	presets.weapon.sniper.ak47.focus_dis = 200
-	presets.weapon.sniper.ak47.spread = 30
-	presets.weapon.sniper.ak47.miss_dis = 250
-	presets.weapon.sniper.ak47.RELOAD_SPEED = 1
-	presets.weapon.sniper.ak47.melee_speed = presets.weapon.normal.m4.melee_speed
-	presets.weapon.sniper.ak47.melee_dmg = presets.weapon.normal.m4.melee_dmg
-	presets.weapon.sniper.ak47.melee_retry_delay = presets.weapon.normal.m4.melee_retry_delay
-	presets.weapon.sniper.ak47.range = {
-		close = 15000,
-		optimal = 15000,
-		far = 15000
-	}
-	presets.weapon.sniper.ak47.use_laser = true
-	presets.weapon.sniper.ak47.FALLOFF = {
+	presets.weapon.expert.mini.autofire_rounds = {20, 40}
+	presets.weapon.expert.mini.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.6, 0.9},
+			dmg_mul = 2.5,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.7},
+			dmg_mul = 2.5,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				8
+			}
+		},
 		{
 			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 1,
-			recoil = {1, 1},
+			acc = {0.4, 0.6},
+			dmg_mul = 2.5,
+			recoil = {0.45, 0.8},
 			mode = {
 				1,
+				3,
+				6,
+				6
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.2, 0.5},
+			dmg_mul = 1,
+			recoil = {0.45, 0.8},
+			mode = {
 				1,
-				1,
+				2,
+				2,
 				1
 			}
 		},
 		{
-			r = 3500,
-			acc = {0.6, 0.9},
+			r = 3000,
+			acc = {0.1, 0.35},
 			dmg_mul = 1,
-			recoil = {1, 1},
+			recoil = {1, 1.2},
 			mode = {
+				4,
+				2,
 				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.9},
-			dmg_mul = 1,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.9},
-			dmg_mul = 1,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.2, 0.8},
-			dmg_mul = 1,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
+				0
 			}
 		}
 	}
-	presets.weapon.sniper.m4.aim_delay = {0.1, 0.1}
-	presets.weapon.sniper.m4.focus_delay = 7
-	presets.weapon.sniper.m4.focus_dis = 200
-	presets.weapon.sniper.m4.spread = 30
-	presets.weapon.sniper.m4.miss_dis = 250
-	presets.weapon.sniper.m4.RELOAD_SPEED = 1
-	presets.weapon.sniper.m4.melee_speed = presets.weapon.normal.m4.melee_speed
-	presets.weapon.sniper.m4.melee_dmg = presets.weapon.normal.m4.melee_dmg
-	presets.weapon.sniper.m4.melee_retry_delay = presets.weapon.normal.m4.melee_retry_delay
-	presets.weapon.sniper.m4.range = {
+	presets.weapon.sniper = {
+		is_rifle = {}
+	}
+	presets.weapon.sniper.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.sniper.is_rifle.focus_delay = 7
+	presets.weapon.sniper.is_rifle.focus_dis = 200
+	presets.weapon.sniper.is_rifle.spread = 30
+	presets.weapon.sniper.is_rifle.miss_dis = 250
+	presets.weapon.sniper.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.sniper.is_rifle.melee_speed = presets.weapon.normal.is_rifle.melee_speed
+	presets.weapon.sniper.is_rifle.melee_dmg = presets.weapon.normal.is_rifle.melee_dmg
+	presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
+	presets.weapon.sniper.is_rifle.range = {
 		close = 15000,
 		optimal = 15000,
 		far = 15000
 	}
-	presets.weapon.sniper.m4.use_laser = true
-	presets.weapon.sniper.m4.FALLOFF = {
+	presets.weapon.sniper.is_rifle.use_laser = true
+	presets.weapon.sniper.is_rifle.FALLOFF = {
 		{
 			r = 1000,
 			acc = {0.7, 0.95},
@@ -5687,7 +5917,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.sniper_good = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_good.m4.FALLOFF = {
+	presets.weapon.sniper_good.is_rifle.FALLOFF = {
 		{
 			r = 1000,
 			acc = {0.7, 0.95},
@@ -5750,69 +5980,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.sniper_expert = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_expert.ak47.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 2.5,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 3500,
-			acc = {0.6, 0.9},
-			dmg_mul = 2.5,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.9},
-			dmg_mul = 2.5,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.9},
-			dmg_mul = 2.5,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.2, 0.8},
-			dmg_mul = 1,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		}
-	}
-	presets.weapon.sniper_expert.m4.FALLOFF = {
+	presets.weapon.sniper_expert.is_rifle.FALLOFF = {
 		{
 			r = 1000,
 			acc = {0.7, 1},
@@ -5852,7 +6020,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 6000,
 			acc = {0.6, 0.85},
-			dmg_mul = 2.5,
+			dmg_mul = 1,
 			recoil = {3, 5},
 			mode = {
 				1,
@@ -5875,69 +6043,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.sniper_easy_wish = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_easy_wish.ak47.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 2.875,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 1900,
-			acc = {0.7, 0.95},
-			dmg_mul = 2.625,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 3500,
-			acc = {0.6, 0.9},
-			dmg_mul = 2.625,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.9},
-			dmg_mul = 2.625,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.9},
-			dmg_mul = 1.05,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		}
-	}
-	presets.weapon.sniper_easy_wish.m4.FALLOFF = {
+	presets.weapon.sniper_easy_wish.is_rifle.FALLOFF = {
 		{
 			r = 1000,
 			acc = {0.7, 1},
@@ -6000,81 +6106,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.sniper_deathwish = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_deathwish.ak47.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 3500,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.2, 0.8},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.2, 0.8},
-			dmg_mul = 1.25,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-	}
-	presets.weapon.sniper_deathwish.m4.FALLOFF = {
+	presets.weapon.sniper_deathwish.is_rifle.FALLOFF = {
 		{
 			r = 1000,
 			acc = {0.7, 1},
@@ -6126,18 +6158,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 8000,
 			acc = {0.6, 0.75},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.2, 0.7},
 			dmg_mul = 1.25,
 			recoil = {3, 5},
 			mode = {
@@ -6149,93 +6169,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.sniper_sm_wish = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_sm_wish.ak47.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 3.4375,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 1800,
-			acc = {0.7, 0.95},
-			dmg_mul = 3.4375,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 1900,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.9},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.2, 0.8},
-			dmg_mul = 3.125,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.2, 0.8},
-			dmg_mul = 1.25,
-			recoil = {1, 1},
-			mode = {
-				1,
-				1,
-				1,
-				1
-			}
-		},
-	}
-	presets.weapon.sniper_sm_wish.m4.FALLOFF = {
+	presets.weapon.sniper_sm_wish.is_rifle.FALLOFF = {
 		{
 			r = 1000,
 			acc = {0.7, 1},
@@ -6322,33 +6256,33 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.deathwish = {
-		beretta92 = {},
-		c45 = {},
-		raging_bull = {},
-		m4 = {},
-		ak47 = {},
-		r870 = {},
-		saiga = {},
+		is_pistol = {},
+		is_revolver = {},
+		is_rifle = {},
+		is_lmg = {},
+		is_shotgun_pump = {},
+		is_shotgun_mag = {},
 		mossberg = {},
-		mp5 = {},
+		is_smg = {},
+		mp9 = {},
 		mac11 = {},
 		akimbo_pistol = {}
 	}
-	presets.weapon.deathwish.raging_bull.aim_delay = {0, 0}
-	presets.weapon.deathwish.raging_bull.focus_delay = 10
-	presets.weapon.deathwish.raging_bull.focus_dis = 200
-	presets.weapon.deathwish.raging_bull.spread = 20
-	presets.weapon.deathwish.raging_bull.miss_dis = 50
-	presets.weapon.deathwish.raging_bull.RELOAD_SPEED = 1
-	presets.weapon.deathwish.raging_bull.melee_speed = 1
-	presets.weapon.deathwish.raging_bull.melee_dmg = 12
-	presets.weapon.deathwish.raging_bull.melee_retry_delay = {0, 0}
-	presets.weapon.deathwish.raging_bull.range = {
+	presets.weapon.deathwish.is_revolver.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_revolver.focus_delay = 10
+	presets.weapon.deathwish.is_revolver.focus_dis = 200
+	presets.weapon.deathwish.is_revolver.spread = 20
+	presets.weapon.deathwish.is_revolver.miss_dis = 50
+	presets.weapon.deathwish.is_revolver.RELOAD_SPEED = 1
+	presets.weapon.deathwish.is_revolver.melee_speed = 1
+	presets.weapon.deathwish.is_revolver.melee_dmg = 12
+	presets.weapon.deathwish.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.deathwish.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
 		far = 5000
 	}
-	presets.weapon.deathwish.raging_bull.FALLOFF = {
+	presets.weapon.deathwish.is_revolver.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -6400,18 +6334,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 3000,
 			acc = {0.1, 0.35},
-			dmg_mul = 3.125,
-			recoil = {1, 1.5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.1, 0.35},
 			dmg_mul = 1.25,
 			recoil = {1, 1.5},
 			mode = {
@@ -6422,93 +6344,21 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.beretta92.aim_delay = {0, 0.1}
-	presets.weapon.deathwish.beretta92.focus_delay = 0
-	presets.weapon.deathwish.beretta92.focus_dis = 200
-	presets.weapon.deathwish.beretta92.spread = 25
-	presets.weapon.deathwish.beretta92.miss_dis = 30
-	presets.weapon.deathwish.beretta92.RELOAD_SPEED = 1
-	presets.weapon.deathwish.beretta92.melee_speed = presets.weapon.expert.beretta92.melee_speed
-	presets.weapon.deathwish.beretta92.melee_dmg = 12
-	presets.weapon.deathwish.beretta92.melee_retry_delay = presets.weapon.expert.beretta92.melee_retry_delay
-	presets.weapon.deathwish.beretta92.range = presets.weapon.normal.beretta92.range
-	presets.weapon.deathwish.beretta92.FALLOFF = {
-		{
-			r = 0,
-			acc = {0.7, 0.95},
-			dmg_mul = 3.125,
-			recoil = {0.1, 0.25},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.8, 0.99},
-			dmg_mul = 3.125,
-			recoil = {0.15, 0.3},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 0.95},
-			dmg_mul = 3.125,
-			recoil = {0.3, 0.7},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0.3, 0.5},
-			dmg_mul = 3.125,
-			recoil = {0.4, 1},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.1, 0.5},
-			dmg_mul = 1.25,
-			recoil = {0.4, 1},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.deathwish.c45.aim_delay = {0, 0}
-	presets.weapon.deathwish.c45.focus_delay = 0
-	presets.weapon.deathwish.c45.focus_dis = 200
-	presets.weapon.deathwish.c45.spread = 20
-	presets.weapon.deathwish.c45.miss_dis = 50
-	presets.weapon.deathwish.c45.RELOAD_SPEED = 1
-	presets.weapon.deathwish.c45.melee_speed = presets.weapon.expert.c45.melee_speed
-	presets.weapon.deathwish.c45.melee_dmg = 12
-	presets.weapon.deathwish.c45.melee_retry_delay = presets.weapon.expert.c45.melee_retry_delay
-	presets.weapon.deathwish.c45.range = {
+	presets.weapon.deathwish.is_pistol.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_pistol.focus_delay = 0
+	presets.weapon.deathwish.is_pistol.focus_dis = 200
+	presets.weapon.deathwish.is_pistol.spread = 20
+	presets.weapon.deathwish.is_pistol.miss_dis = 50
+	presets.weapon.deathwish.is_pistol.RELOAD_SPEED = 1
+	presets.weapon.deathwish.is_pistol.melee_speed = presets.weapon.expert.is_pistol.melee_speed
+	presets.weapon.deathwish.is_pistol.melee_dmg = 12
+	presets.weapon.deathwish.is_pistol.melee_retry_delay = presets.weapon.expert.is_pistol.melee_retry_delay
+	presets.weapon.deathwish.is_pistol.range = {
 		close = 2000,
 		optimal = 3200,
 		far = 5000
 	}
-	presets.weapon.deathwish.c45.FALLOFF = {
+	presets.weapon.deathwish.is_pistol.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.9, 0.95},
@@ -6560,20 +6410,8 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 3000,
 			acc = {0.6, 0.65},
-			dmg_mul = 3.125,
-			recoil = {0.6, 0.8},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.2, 0.65},
 			dmg_mul = 1.25,
-			recoil = {1, 1.5},
+			recoil = {0.6, 0.8},
 			mode = {
 				1,
 				0,
@@ -6582,25 +6420,25 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.m4.aim_delay = {0, 0}
-	presets.weapon.deathwish.m4.focus_delay = 0
-	presets.weapon.deathwish.m4.focus_dis = 200
-	presets.weapon.deathwish.m4.spread = 20
-	presets.weapon.deathwish.m4.miss_dis = 40
-	presets.weapon.deathwish.m4.RELOAD_SPEED = 1
-	presets.weapon.deathwish.m4.melee_speed = 1
-	presets.weapon.deathwish.m4.melee_dmg = 12
-	presets.weapon.deathwish.m4.tase_distance = 1400
-	presets.weapon.deathwish.m4.aim_delay_tase = {0, 0.5}
-	presets.weapon.deathwish.m4.tase_sphere_cast_radius = 30
-	presets.weapon.deathwish.m4.melee_retry_delay = presets.weapon.expert.m4.melee_retry_delay
-	presets.weapon.deathwish.m4.range = {
+	presets.weapon.deathwish.is_rifle.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_rifle.focus_delay = 0
+	presets.weapon.deathwish.is_rifle.focus_dis = 200
+	presets.weapon.deathwish.is_rifle.spread = 20
+	presets.weapon.deathwish.is_rifle.miss_dis = 40
+	presets.weapon.deathwish.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.deathwish.is_rifle.melee_speed = 1
+	presets.weapon.deathwish.is_rifle.melee_dmg = 12
+	presets.weapon.deathwish.is_rifle.tase_distance = 1400
+	presets.weapon.deathwish.is_rifle.aim_delay_tase = {0, 0.5}
+	presets.weapon.deathwish.is_rifle.tase_sphere_cast_radius = 30
+	presets.weapon.deathwish.is_rifle.melee_retry_delay = presets.weapon.expert.is_rifle.melee_retry_delay
+	presets.weapon.deathwish.is_rifle.range = {
 		close = 2000,
 		optimal = 3500,
 		far = 6000
 	}
-	presets.weapon.deathwish.m4.autofire_rounds = {4, 9}
-	presets.weapon.deathwish.m4.FALLOFF = {
+	presets.weapon.deathwish.is_rifle.autofire_rounds = {4, 9}
+	presets.weapon.deathwish.is_rifle.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.9, 0.975},
@@ -6652,20 +6490,8 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 3000,
 			acc = {0.65, 0.75},
-			dmg_mul = 3.125,
-			recoil = {0.7, 1.1},
-			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.25, 0.7},
 			dmg_mul = 1.25,
-			recoil = {1, 2},
+			recoil = {0.7, 1.1},
 			mode = {
 				0,
 				3,
@@ -6674,21 +6500,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.r870.aim_delay = {0, 0}
-	presets.weapon.deathwish.r870.focus_delay = 0
-	presets.weapon.deathwish.r870.focus_dis = 200
-	presets.weapon.deathwish.r870.spread = 15
-	presets.weapon.deathwish.r870.miss_dis = 20
-	presets.weapon.deathwish.r870.RELOAD_SPEED = 1
-	presets.weapon.deathwish.r870.melee_speed = 1
-	presets.weapon.deathwish.r870.melee_dmg = 12
-	presets.weapon.deathwish.r870.melee_retry_delay = presets.weapon.expert.r870.melee_retry_delay
-	presets.weapon.deathwish.r870.range = {
+	presets.weapon.deathwish.is_bullpup = presets.weapon.deathwish.is_rifle
+	presets.weapon.deathwish.is_shotgun_pump.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_shotgun_pump.focus_delay = 0
+	presets.weapon.deathwish.is_shotgun_pump.focus_dis = 200
+	presets.weapon.deathwish.is_shotgun_pump.spread = 15
+	presets.weapon.deathwish.is_shotgun_pump.miss_dis = 20
+	presets.weapon.deathwish.is_shotgun_pump.RELOAD_SPEED = 0.25
+	presets.weapon.deathwish.is_shotgun_pump.melee_speed = 1
+	presets.weapon.deathwish.is_shotgun_pump.melee_dmg = 12
+	presets.weapon.deathwish.is_shotgun_pump.melee_retry_delay = presets.weapon.expert.is_shotgun_pump.melee_retry_delay
+	presets.weapon.deathwish.is_shotgun_pump.range = {
 		close = 2000,
 		optimal = 3000,
 		far = 5000
 	}
-	presets.weapon.deathwish.r870.FALLOFF = {
+	presets.weapon.deathwish.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -6942,22 +6769,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.saiga.aim_delay = {0, 0}
-	presets.weapon.deathwish.saiga.focus_delay = 0
-	presets.weapon.deathwish.saiga.focus_dis = 200
-	presets.weapon.deathwish.saiga.spread = 20
-	presets.weapon.deathwish.saiga.miss_dis = 40
-	presets.weapon.deathwish.saiga.RELOAD_SPEED = 0.5
-	presets.weapon.deathwish.saiga.melee_speed = 1
-	presets.weapon.deathwish.saiga.melee_dmg = 12
-	presets.weapon.deathwish.saiga.melee_retry_delay = presets.weapon.expert.r870.melee_retry_delay
-	presets.weapon.deathwish.saiga.range = {
+	presets.weapon.deathwish.is_shotgun_mag.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_shotgun_mag.focus_delay = 0
+	presets.weapon.deathwish.is_shotgun_mag.focus_dis = 200
+	presets.weapon.deathwish.is_shotgun_mag.spread = 20
+	presets.weapon.deathwish.is_shotgun_mag.miss_dis = 40
+	presets.weapon.deathwish.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.deathwish.is_shotgun_mag.melee_speed = 1
+	presets.weapon.deathwish.is_shotgun_mag.melee_dmg = 12
+	presets.weapon.deathwish.is_shotgun_mag.melee_retry_delay = presets.weapon.expert.is_shotgun_pump.melee_retry_delay
+	presets.weapon.deathwish.is_shotgun_mag.range = {
 		close = 2000,
 		optimal = 3000,
 		far = 5000
 	}
-	presets.weapon.deathwish.saiga.autofire_rounds = {4, 9}
-	presets.weapon.deathwish.saiga.FALLOFF = {
+	presets.weapon.deathwish.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.deathwish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -7211,22 +7038,22 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.mp5.aim_delay = {0, 0}
-	presets.weapon.deathwish.mp5.focus_delay = 0
-	presets.weapon.deathwish.mp5.focus_dis = 200
-	presets.weapon.deathwish.mp5.spread = 15
-	presets.weapon.deathwish.mp5.miss_dis = 10
-	presets.weapon.deathwish.mp5.RELOAD_SPEED = 1
-	presets.weapon.deathwish.mp5.melee_speed = presets.weapon.expert.mp5.melee_speed
-	presets.weapon.deathwish.mp5.melee_dmg = 12
-	presets.weapon.deathwish.mp5.melee_retry_delay = presets.weapon.expert.mp5.melee_retry_delay
-	presets.weapon.deathwish.mp5.range = {
+	presets.weapon.deathwish.is_smg.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_smg.focus_delay = 0
+	presets.weapon.deathwish.is_smg.focus_dis = 200
+	presets.weapon.deathwish.is_smg.spread = 15
+	presets.weapon.deathwish.is_smg.miss_dis = 10
+	presets.weapon.deathwish.is_smg.RELOAD_SPEED = 1
+	presets.weapon.deathwish.is_smg.melee_speed = presets.weapon.expert.is_smg.melee_speed
+	presets.weapon.deathwish.is_smg.melee_dmg = 12
+	presets.weapon.deathwish.is_smg.melee_retry_delay = presets.weapon.expert.is_smg.melee_retry_delay
+	presets.weapon.deathwish.is_smg.range = {
 		close = 2000,
 		optimal = 3200,
 		far = 6000
 	}
-	presets.weapon.deathwish.mp5.autofire_rounds = {8, 16}
-	presets.weapon.deathwish.mp5.FALLOFF = {
+	presets.weapon.deathwish.is_smg.autofire_rounds = {8, 16}
+	presets.weapon.deathwish.is_smg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.95, 0.95},
@@ -7278,7 +7105,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 3000,
 			acc = {0.55, 0.6},
-			dmg_mul = 3.125,
+			dmg_mul = 1.25,
 			recoil = {0.5, 1.5},
 			mode = {
 				1,
@@ -7286,12 +7113,77 @@ function CharacterTweakData:_presets(tweak_data)
 				2,
 				0
 			}
+		}
+	}
+	presets.weapon.deathwish.mp9.aim_delay = {0, 0}
+	presets.weapon.deathwish.mp9.focus_delay = 8
+	presets.weapon.deathwish.mp9.focus_dis = 200
+	presets.weapon.deathwish.mp9.spread = 30
+	presets.weapon.deathwish.mp9.miss_dis = 15
+	presets.weapon.deathwish.mp9.RELOAD_SPEED = 1
+	presets.weapon.deathwish.mp9.melee_speed = nil
+	presets.weapon.deathwish.mp9.melee_dmg = nil
+	presets.weapon.deathwish.mp9.melee_retry_delay = nil
+	presets.weapon.deathwish.mp9.range = {
+		close = 500,
+		optimal = 1200,
+		far = 3000
+	}
+	presets.weapon.deathwish.mp9.autofire_rounds = {6, 11}
+	presets.weapon.deathwish.mp9.FALLOFF = {
+		{
+			r = 0,
+			acc = {0.9, 0.95},
+			dmg_mul = 3.125,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
 		},
 		{
-			r = 4000,
-			acc = {0.3, 0.6},
+			r = 700,
+			acc = {0.8, 0.8},
+			dmg_mul = 3.125,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.6, 0.65},
+			dmg_mul = 3.125,
+			recoil = {0.3, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.5, 0.7},
+			dmg_mul = 3.125,
+			recoil = {1, 1.2},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.5, 0.5},
 			dmg_mul = 1.25,
-			recoil = {1, 1.5},
+			recoil = {1.2, 1.5},
 			mode = {
 				1,
 				3,
@@ -7367,18 +7259,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 3000,
 			acc = {0.4, 0.55},
-			dmg_mul = 3.125,
-			recoil = {0.65, 1.2},
-			mode = {
-				4,
-				1,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.4, 0.55},
 			dmg_mul = 1.25,
 			recoil = {0.65, 1.2},
 			mode = {
@@ -7389,13 +7269,13 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.akimbo_pistol = presets.weapon.deathwish.c45
-	presets.weapon.deathwish.ak47 = deep_clone(presets.weapon.deathwish.m4)
-	presets.weapon.deathwish.ak47.RELOAD_SPEED = 0.5
-	presets.weapon.deathwish.ak47.aim_delay = {0, 0}
-	presets.weapon.deathwish.ak47.focus_delay = 0
-	presets.weapon.deathwish.ak47.autofire_rounds = {20, 40}
-	presets.weapon.deathwish.ak47.FALLOFF = {
+	presets.weapon.deathwish.akimbo_pistol = presets.weapon.deathwish.is_pistol
+	presets.weapon.deathwish.is_lmg = deep_clone(presets.weapon.deathwish.is_rifle)
+	presets.weapon.deathwish.is_lmg.RELOAD_SPEED = 0.5
+	presets.weapon.deathwish.is_lmg.aim_delay = {0, 0}
+	presets.weapon.deathwish.is_lmg.focus_delay = 0
+	presets.weapon.deathwish.is_lmg.autofire_rounds = {20, 40}
+	presets.weapon.deathwish.is_lmg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -7447,18 +7327,6 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 3000,
 			acc = {0.15, 0.5},
-			dmg_mul = 3.125,
-			recoil = {1, 2},
-			mode = {
-				0,
-				0,
-				2,
-				6
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.15, 0.5},
 			dmg_mul = 1.25,
 			recoil = {1, 2},
 			mode = {
@@ -7469,73 +7337,11 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.mossberg = presets.weapon.deathwish.r870
+	presets.weapon.deathwish.mossberg = presets.weapon.deathwish.is_shotgun_pump
 	presets.weapon.easy_wish = deep_clone(presets.weapon.expert)
-	presets.weapon.easy_wish.beretta92.melee_dmg = 10
-	presets.weapon.easy_wish.beretta92.FALLOFF = {
-		{
-			r = 0,
-			acc = {0.5, 0.95},
-			dmg_mul = 2.875,
-			recoil = {0.1, 0.25},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.375, 0.55},
-			dmg_mul = 2.875,
-			recoil = {0.15, 0.3},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			r = 1800,
-			acc = {0.375, 0.55},
-			dmg_mul = 2.875,
-			recoil = {0.15, 0.3},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.05, 0.5},
-			dmg_mul = 2.625,
-			recoil = {0.3, 0.7},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			r = 3000,
-			acc = {0, 0.3},
-			dmg_mul = 1.05,
-			recoil = {0.4, 1},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.easy_wish.r870.melee_dmg = 10
-	presets.weapon.easy_wish.r870.FALLOFF = {
+	presets.weapon.easy_wish.is_bullpup = presets.weapon.easy_wish.is_rifle
+	presets.weapon.easy_wish.is_shotgun_pump.melee_dmg = 10
+	presets.weapon.easy_wish.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -7707,7 +7513,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.7875,
+			dmg_mul = 0.75,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -7719,7 +7525,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1900,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.65625,
+			dmg_mul = 0.625,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -7731,7 +7537,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.525,
+			dmg_mul = 0.5,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -7743,7 +7549,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2100,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.39375,
+			dmg_mul = 0.375,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -7755,7 +7561,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2200,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.2625,
+			dmg_mul = 0.25,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -7767,7 +7573,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2300,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.13125,
+			dmg_mul = 0.125,
 			recoil = {1.5, 2},
 			mode = {
 				1,
@@ -7789,7 +7595,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.easy_wish.saiga.FALLOFF = {
+	presets.weapon.easy_wish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -7961,7 +7767,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.7875,
+			dmg_mul = 0.75,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -7973,7 +7779,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1900,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.65625,
+			dmg_mul = 0.625,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -7985,7 +7791,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2000,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.525,
+			dmg_mul = 0.5,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -7997,7 +7803,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2100,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.39375,
+			dmg_mul = 0.375,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -8009,7 +7815,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2200,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.2625,
+			dmg_mul = 0.25,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -8021,7 +7827,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 2300,
 			acc = {0.1, 0.55},
-			dmg_mul = 0.13125,
+			dmg_mul = 0.125,
 			recoil = {0.45, 0.8},
 			mode = {
 				3,
@@ -8032,7 +7838,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 2400,
-			acc = {0, 0},
+			acc = {0.1, 0.55},
 			dmg_mul = 0,
 			recoil = {0.45, 0.8},
 			mode = {
@@ -8043,8 +7849,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.easy_wish.c45.melee_dmg = 10
-	presets.weapon.easy_wish.c45.FALLOFF = {
+	presets.weapon.easy_wish.is_pistol.melee_dmg = 10
+	presets.weapon.easy_wish.is_pistol.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -8084,7 +7890,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.4, 0.65},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {0.15, 0.3},
 			mode = {
 				1,
@@ -8159,7 +7965,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.4, 0.65},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {0.15, 0.3},
 			mode = {
 				1,
@@ -8234,7 +8040,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.3, 0.65},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {0.55, 0.85},
 			mode = {
 				2,
@@ -8268,8 +8074,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.easy_wish.raging_bull.melee_dmg = 10
-	presets.weapon.easy_wish.raging_bull.FALLOFF = {
+	presets.weapon.easy_wish.is_revolver.melee_dmg = 10
+	presets.weapon.easy_wish.is_revolver.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -8309,7 +8115,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.375, 0.55},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {0.8, 1.1},
 			mode = {
 				1,
@@ -8343,8 +8149,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.easy_wish.m4.melee_dmg = 10
-	presets.weapon.easy_wish.m4.FALLOFF = {
+	presets.weapon.easy_wish.is_rifle.melee_dmg = 10
+	presets.weapon.easy_wish.is_rifle.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -8384,7 +8190,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.525, 0.8},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {0.35, 0.75},
 			mode = {
 				1,
@@ -8418,8 +8224,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.easy_wish.mp5.melee_dmg = 10
-	presets.weapon.easy_wish.mp5.FALLOFF = {
+	presets.weapon.easy_wish.is_smg.melee_dmg = 10
+	presets.weapon.easy_wish.is_smg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.95},
@@ -8459,7 +8265,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.4, 0.65},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {0.35, 0.5},
 			mode = {
 				0,
@@ -8493,8 +8299,82 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.easy_wish.ak47.melee_dmg = 10
-	presets.weapon.easy_wish.ak47.FALLOFF = {
+	presets.weapon.easy_wish.mp9.FALLOFF = {
+		{
+			r = 0,
+			acc = {0.7, 0.95},
+			dmg_mul = 2.875,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 700,
+			acc = {0.5, 0.75},
+			dmg_mul = 2.875,
+			recoil = {0.35, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.45, 0.65},
+			dmg_mul = 2.875,
+			recoil = {0.3, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.45, 0.65},
+			dmg_mul = 2.625,
+			recoil = {0.3, 0.55},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.3, 0.5},
+			dmg_mul = 2.625,
+			recoil = {1, 1.2},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.1, 0.25},
+			dmg_mul = 1.05,
+			recoil = {1.2, 1.5},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		}
+	}
+	presets.weapon.easy_wish.is_lmg.melee_dmg = 10
+	presets.weapon.easy_wish.is_lmg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -8534,7 +8414,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 1800,
 			acc = {0.3, 0.6},
-			dmg_mul = 2.875,
+			dmg_mul = 2.625,
 			recoil = {1, 1},
 			mode = {
 				0,
@@ -8568,8 +8448,83 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.easy_wish.mini.melee_dmg = 10
+	presets.weapon.easy_wish.mini.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.6, 0.9},
+			dmg_mul = 2.875,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.7},
+			dmg_mul = 2.875,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				8
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.4, 0.6},
+			dmg_mul = 2.875,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				3,
+				6,
+				6
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.4, 0.6},
+			dmg_mul = 2.625,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				3,
+				6,
+				6
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.2, 0.5},
+			dmg_mul = 2.625,
+			recoil = {0.45, 0.8},
+			mode = {
+				1,
+				2,
+				2,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.1, 0.35},
+			dmg_mul = 1.05,
+			recoil = {1, 1.2},
+			mode = {
+				4,
+				2,
+				1,
+				0
+			}
+		}
+	}
 	presets.weapon.sm_wish = deep_clone(presets.weapon.deathwish)
-	presets.weapon.sm_wish.raging_bull.FALLOFF = {
+	presets.weapon.sm_wish.is_revolver.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -8655,7 +8610,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.sm_wish.c45.FALLOFF = {
+	presets.weapon.sm_wish.is_pistol.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.9, 0.95},
@@ -8741,7 +8696,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.sm_wish.m4.FALLOFF = {
+	presets.weapon.sm_wish.is_rifle.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.9, 0.975},
@@ -8827,7 +8782,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.sm_wish.r870.FALLOFF = {
+	presets.weapon.sm_wish.is_bullpup = presets.weapon.sm_wish.is_rifle
+	presets.weapon.sm_wish.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -9081,7 +9037,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.sm_wish.saiga.FALLOFF = {
+	presets.weapon.sm_wish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.6, 0.9},
@@ -9335,7 +9291,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.sm_wish.mp5.FALLOFF = {
+	presets.weapon.sm_wish.is_smg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.95, 0.95},
@@ -9416,6 +9372,92 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				1,
 				3,
+				2,
+				0
+			}
+		}
+	}
+	presets.weapon.sm_wish.mp9.FALLOFF = {
+		{
+			r = 0,
+			acc = {0.9, 0.95},
+			dmg_mul = 3.4375,
+			recoil = {0.35, 0.35},
+			mode = {
+				0.2,
+				2,
+				4,
+				10
+			}
+		},
+		{
+			r = 700,
+			acc = {0.8, 0.8},
+			dmg_mul = 3.4375,
+			recoil = {0.35, 0.55},
+			mode = {
+				0.2,
+				2,
+				4,
+				10
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.6, 0.65},
+			dmg_mul = 3.4375,
+			recoil = {0.35, 0.55},
+			mode = {
+				0.2,
+				2,
+				4,
+				10
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.6, 0.65},
+			dmg_mul = 3.4375,
+			recoil = {0.35, 0.55},
+			mode = {
+				0.2,
+				2,
+				4,
+				10
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.5, 0.7},
+			dmg_mul = 3.125,
+			recoil = {0.35, 1},
+			mode = {
+				2,
+				5,
+				6,
+				4
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.5, 0.5},
+			dmg_mul = 3.125,
+			recoil = {0.5, 1.2},
+			mode = {
+				6,
+				4,
+				2,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.1, 0.25},
+			dmg_mul = 1.25,
+			recoil = {0.35, 1.5},
+			mode = {
+				6,
+				4,
 				2,
 				0
 			}
@@ -9507,8 +9549,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.sm_wish.akimbo_pistol = deep_clone(presets.weapon.sm_wish.c45)
-	presets.weapon.sm_wish.ak47.FALLOFF = {
+	presets.weapon.sm_wish.akimbo_pistol = deep_clone(presets.weapon.sm_wish.is_pistol)
+	presets.weapon.sm_wish.is_lmg.FALLOFF = {
 		{
 			r = 100,
 			acc = {0.7, 0.9},
@@ -9595,83 +9637,70 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.gang_member = {
-		beretta92 = {},
-		c45 = {},
-		raging_bull = {},
-		m4 = {},
-		ak47 = {},
-		r870 = {},
+		is_pistol = {},
+		is_revolver = {},
+		is_rifle = {},
+		is_lmg = {},
+		is_shotgun_pump = {},
 		mossberg = {},
-		mp5 = {},
+		is_smg = {},
 		mac11 = {},
 		rifle = {},
 		akimbo_pistol = {},
-		saiga = {},
+		is_shotgun_mag = {},
 	}
-	presets.weapon.gang_member.beretta92.aim_delay = {0, 0}
-	presets.weapon.gang_member.beretta92.focus_delay = 0
-	presets.weapon.gang_member.beretta92.focus_dis = 200
-	presets.weapon.gang_member.beretta92.spread = 20
-	presets.weapon.gang_member.beretta92.miss_dis = 50
-	presets.weapon.gang_member.beretta92.RELOAD_SPEED = 1
-	presets.weapon.gang_member.beretta92.melee_speed = 3
-	presets.weapon.gang_member.beretta92.melee_dmg = 12
-	presets.weapon.gang_member.beretta92.melee_retry_delay = presets.weapon.normal.beretta92.melee_retry_delay
-	presets.weapon.gang_member.beretta92.range = presets.weapon.normal.beretta92.range
-	presets.weapon.gang_member.beretta92.FALLOFF = {
+	presets.weapon.gang_member.is_pistol.aim_delay = {0, 0}
+	presets.weapon.gang_member.is_pistol.focus_delay = 0
+	presets.weapon.gang_member.is_pistol.focus_dis = 200
+	presets.weapon.gang_member.is_pistol.spread = 25
+	presets.weapon.gang_member.is_pistol.miss_dis = 20
+	presets.weapon.gang_member.is_pistol.RELOAD_SPEED = 1.5
+	presets.weapon.gang_member.is_pistol.melee_speed = 3
+	presets.weapon.gang_member.is_pistol.melee_dmg = 3
+	presets.weapon.gang_member.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
+	presets.weapon.gang_member.is_pistol.range = presets.weapon.normal.is_pistol.range
+	presets.weapon.gang_member.is_pistol.FALLOFF = {
 		{
 			r = 300,
-			acc = {0.7, 0.95},
-			dmg_mul = 1.25,
-			recoil = {0.1, 0.25},
+			acc = {1, 1},
+			dmg_mul = 5,
+			recoil = {0.25, 0.45},
 			mode = {
-				0,
-				3,
-				3,
-				1
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 0.95},
-			dmg_mul = 1.25,
-			recoil = {0.3, 0.7},
-			mode = {
-				0,
-				3,
-				3,
-				1
+				0.1,
+				0.3,
+				4,
+				7
 			}
 		},
 		{
 			r = 10000,
-			acc = {0.3, 0.5},
-			dmg_mul = 1.25,
-			recoil = {0.4, 1},
+			acc = {1, 1},
+			dmg_mul = 2.5,
+			recoil = {2, 3},
 			mode = {
-				0,
-				3,
-				3,
-				1
+				0.1,
+				0.3,
+				4,
+				7
 			}
 		}
 	}
-	presets.weapon.gang_member.m4.aim_delay = {0, 0}
-	presets.weapon.gang_member.m4.focus_delay = 0
-	presets.weapon.gang_member.m4.focus_dis = 200
-	presets.weapon.gang_member.m4.spread = 20
-	presets.weapon.gang_member.m4.miss_dis = 40
-	presets.weapon.gang_member.m4.RELOAD_SPEED = 1
-	presets.weapon.gang_member.m4.melee_speed = 1
-	presets.weapon.gang_member.m4.melee_dmg = 4
-	presets.weapon.gang_member.m4.melee_retry_delay = presets.weapon.normal.m4.melee_retry_delay
-	presets.weapon.gang_member.m4.range = {
+	presets.weapon.gang_member.is_rifle.aim_delay = {0, 0}
+	presets.weapon.gang_member.is_rifle.focus_delay = 0
+	presets.weapon.gang_member.is_rifle.focus_dis = 200
+	presets.weapon.gang_member.is_rifle.spread = 20
+	presets.weapon.gang_member.is_rifle.miss_dis = 40
+	presets.weapon.gang_member.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.gang_member.is_rifle.melee_speed = 1
+	presets.weapon.gang_member.is_rifle.melee_dmg = 4
+	presets.weapon.gang_member.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
+	presets.weapon.gang_member.is_rifle.range = {
 		close = 1500,
 		optimal = 2500,
 		far = 6000
 	}
-	presets.weapon.gang_member.m4.autofire_rounds = presets.weapon.normal.m4.autofire_rounds
-	presets.weapon.gang_member.m4.FALLOFF = {
+	presets.weapon.gang_member.is_rifle.autofire_rounds = presets.weapon.normal.is_rifle.autofire_rounds
+	presets.weapon.gang_member.is_rifle.FALLOFF = {
 		{
 			r = 300,
 			acc = {0.9, 0.975},
@@ -9709,18 +9738,19 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member.r870 = deep_clone(presets.weapon.normal.r870)
-	presets.weapon.gang_member.r870.aim_delay = {0, 0}
-	presets.weapon.gang_member.r870.focus_delay = 0
-	presets.weapon.gang_member.r870.focus_dis = 200
-	presets.weapon.gang_member.r870.spread = 15
-	presets.weapon.gang_member.r870.miss_dis = 20
-	presets.weapon.gang_member.r870.RELOAD_SPEED = 1
-	presets.weapon.gang_member.r870.melee_speed = 1
-	presets.weapon.gang_member.r870.melee_dmg = 4
-	presets.weapon.gang_member.r870.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.gang_member.mp5 = deep_clone(presets.weapon.gang_member.m4)
-	presets.weapon.gang_member.mp5.FALLOFF = {
+	presets.weapon.gang_member.is_bullpup = presets.weapon.gang_member.is_rifle
+	presets.weapon.gang_member.is_shotgun_pump = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.gang_member.is_shotgun_pump.aim_delay = {0, 0}
+	presets.weapon.gang_member.is_shotgun_pump.focus_delay = 0
+	presets.weapon.gang_member.is_shotgun_pump.focus_dis = 200
+	presets.weapon.gang_member.is_shotgun_pump.spread = 15
+	presets.weapon.gang_member.is_shotgun_pump.miss_dis = 20
+	presets.weapon.gang_member.is_shotgun_pump.RELOAD_SPEED = 1
+	presets.weapon.gang_member.is_shotgun_pump.melee_speed = 1
+	presets.weapon.gang_member.is_shotgun_pump.melee_dmg = 4
+	presets.weapon.gang_member.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
+	presets.weapon.gang_member.is_smg.FALLOFF = {
 		{
 			r = 300,
 			acc = {0.9, 0.975},
@@ -9758,10 +9788,9 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member.c45 = presets.weapon.gang_member.beretta92
-	presets.weapon.gang_member.raging_bull = presets.weapon.gang_member.beretta92
-	presets.weapon.gang_member.ak47 = deep_clone(presets.weapon.gang_member.m4)
-	presets.weapon.gang_member.ak47.FALLOFF = {
+	presets.weapon.gang_member.is_revolver = presets.weapon.gang_member.is_pistol
+	presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
+	presets.weapon.gang_member.is_lmg.FALLOFF = {
 		{
 			r = 300,
 			acc = {0.7, 0.9},
@@ -9799,9 +9828,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.r870)
-	presets.weapon.gang_member.mac11 = presets.weapon.gang_member.mp5
-	presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.m4)
+	presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
+	presets.weapon.gang_member.mossberg.RELOAD_SPEED = 3
+	presets.weapon.gang_member.mac11 = presets.weapon.gang_member.is_smg
+	presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.is_rifle)
 	presets.weapon.gang_member.rifle.autofire_rounds = nil
 	presets.weapon.gang_member.rifle.FALLOFF = {
 		{
@@ -9841,18 +9871,19 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.beretta92
-	presets.weapon.gang_member.saiga = deep_clone(presets.weapon.normal.saiga)
-	presets.weapon.gang_member.saiga.aim_delay = {0, 0}
-	presets.weapon.gang_member.saiga.focus_delay = 0
-	presets.weapon.gang_member.saiga.focus_dis = 200
-	presets.weapon.gang_member.saiga.spread = 15
-	presets.weapon.gang_member.saiga.miss_dis = 20
-	presets.weapon.gang_member.saiga.melee_speed = 1
-	presets.weapon.gang_member.saiga.melee_dmg = 4
-	presets.weapon.gang_member.saiga.melee_retry_delay = presets.weapon.normal.r870.melee_retry_delay
-	presets.weapon.gang_member.saiga.RELOAD_SPEED = 1
-	presets.weapon.gang_member.saiga.autofire_rounds = {4, 9}
+	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.is_pistol
+	presets.weapon.gang_member.is_shotgun_mag = deep_clone(presets.weapon.normal.is_shotgun_mag)
+	presets.weapon.gang_member.is_shotgun_mag.aim_delay = {0, 0}
+	presets.weapon.gang_member.is_shotgun_mag.focus_delay = 0
+	presets.weapon.gang_member.is_shotgun_mag.focus_dis = 200
+	presets.weapon.gang_member.is_shotgun_mag.spread = 15
+	presets.weapon.gang_member.is_shotgun_mag.miss_dis = 20
+	presets.weapon.gang_member.is_shotgun_mag.melee_speed = 1
+	presets.weapon.gang_member.is_shotgun_mag.melee_dmg = 4
+	presets.weapon.gang_member.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.gang_member.is_shotgun_mag.RELOAD_SPEED = 1
+	presets.weapon.gang_member.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
 	presets.detection = {}
 	presets.detection.normal = {
 		idle = {},
@@ -9948,10 +9979,6 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.detection.gang_member.guard.angle_max = 240
 	presets.detection.gang_member.guard.delay = {0, 0}
 	presets.detection.gang_member.ntl = presets.detection.normal.ntl
-	self:_process_weapon_usage_table(presets.weapon.normal)
-	self:_process_weapon_usage_table(presets.weapon.good)
-	self:_process_weapon_usage_table(presets.weapon.expert)
-	self:_process_weapon_usage_table(presets.weapon.gang_member)
 	presets.detection.civilian = {
 		cbt = {},
 		ntl = {}
@@ -11350,6 +11377,7 @@ function CharacterTweakData:_presets(tweak_data)
 	return presets
 end
 
+
 function CharacterTweakData:_create_table_structure()
 	self.weap_ids = {
 		"beretta92",
@@ -11381,6 +11409,7 @@ function CharacterTweakData:_create_table_structure()
 		"x_c45",
 		"sg417",
 		"svdsil_snp",
+		"mini",
 		"m4_boom",
 		"hk21_sc",
 		"mp5_zeal"
@@ -11415,6 +11444,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45"),
 		Idstring("units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417"),
 		Idstring("units/pd2_dlc_spa/weapons/wpn_npc_svd_silenced/wpn_npc_svd_silenced"),
+		Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
 		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
 		Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
@@ -11422,28 +11452,28 @@ function CharacterTweakData:_create_table_structure()
 end
 
 function CharacterTweakData:_set_easy()
-	self:_multiply_all_hp(0.8, 1)
+	self:_multiply_all_hp(0.75, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal")
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.normal.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 6
+	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1")
 	self:_set_specials_weapon_preset("normal")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.presets.gang_member_damage.HEALTH_INIT = 37.5
+	self.presets.gang_member_damage.HEALTH_INIT = 25
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.6
-	self.presets.gang_member_damage.REGENERATE_TIME = 4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.5
-	self.old_hoxton_mission.HEALTH_INIT = 37.5
-	self.spa_vip.HEALTH_INIT = 37.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 18.75
+	self.old_hoxton_mission.HEALTH_INIT = 25
+	self.spa_vip.HEALTH_INIT = 25
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
@@ -11454,28 +11484,28 @@ function CharacterTweakData:_set_easy()
 end
 
 function CharacterTweakData:_set_normal()
-	self:_multiply_all_hp(1, 1)
+	self:_multiply_all_hp(0.75, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal")
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.normal.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 6
+	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1")
 	self:_set_specials_weapon_preset("normal")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.presets.gang_member_damage.HEALTH_INIT = 75
+	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
-	self.presets.gang_member_damage.REGENERATE_TIME = 4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.5
-	self.old_hoxton_mission.HEALTH_INIT = 75
-	self.spa_vip.HEALTH_INIT = 75
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 37.5
+	self.old_hoxton_mission.HEALTH_INIT = 50
+	self.spa_vip.HEALTH_INIT = 50
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -11493,21 +11523,21 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal")
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.normal.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 6
+	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1")
 	self:_set_specials_weapon_preset("normal")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.presets.gang_member_damage.HEALTH_INIT = 112.5
+	self.presets.gang_member_damage.HEALTH_INIT = 75
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
-	self.presets.gang_member_damage.REGENERATE_TIME = 4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.5
-	self.old_hoxton_mission.HEALTH_INIT = 112.5
-	self.spa_vip.HEALTH_INIT = 112.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 56.25
+	self.old_hoxton_mission.HEALTH_INIT = 75
+	self.spa_vip.HEALTH_INIT = 75
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -11525,21 +11555,21 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("good")
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.good.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 12
+	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self:_set_characters_dodge_preset("athletic_very_hard")
 	self:_set_characters_melee_preset("2")
 	self:_set_specials_weapon_preset("normal")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.presets.gang_member_damage.HEALTH_INIT = 150
+	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
-	self.presets.gang_member_damage.REGENERATE_TIME = 4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.5
-	self.old_hoxton_mission.HEALTH_INIT = 150
-	self.spa_vip.HEALTH_INIT = 150
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
+	self.old_hoxton_mission.HEALTH_INIT = 100
+	self.spa_vip.HEALTH_INIT = 100
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_ump/wpn_npc_ump")
@@ -11559,24 +11589,22 @@ function CharacterTweakData:_set_overkill_145()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("expert")
-	self.city_swat.weapon.m4 = deep_clone(self.presets.weapon.good.m4)
-	self.city_swat.weapon.m4.melee_dmg = 12
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.good.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 12
+	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self:_set_characters_dodge_preset("athletic_overkill")
 	self:_set_characters_melee_preset("2.5")
 	self:_set_specials_weapon_preset("good")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self:_set_specials_melee_preset("2")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.presets.gang_member_damage.HEALTH_INIT = 187.5
+	self.presets.gang_member_damage.HEALTH_INIT = 125
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
-	self.presets.gang_member_damage.REGENERATE_TIME = 3.4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.425
-	self.old_hoxton_mission.HEALTH_INIT = 187.5
-	self.spa_vip.HEALTH_INIT = 187.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 93.75
+	self.old_hoxton_mission.HEALTH_INIT = 125
+	self.spa_vip.HEALTH_INIT = 125
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 	self:_multiply_all_speeds(1, 1.05)
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -11596,22 +11624,22 @@ function CharacterTweakData:_set_easy_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("easy_wish")
-	self:_set_characters_dodge_preset("easy_wish")
-	self:_set_characters_melee_preset("3")
-	self:_set_specials_weapon_preset("expert")
-	self:_set_specials_melee_preset("2.5")
-	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
-	self.city_swat.weapon.mp5 = deep_clone(self.presets.weapon.expert.mp5)
-	self.city_swat.weapon.mp5.melee_dmg = 15
+	self:_set_characters_weapon_preset("expert")
+	self:_set_characters_dodge_preset("athletic_overkill")
+	self:_set_characters_melee_preset("2.5")
+	self:_set_specials_weapon_preset("good")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self:_set_specials_melee_preset("2")
+	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
+	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self:_multiply_all_speeds(1.05, 1.1)
-	self.presets.gang_member_damage.HEALTH_INIT = 225
+	self.presets.gang_member_damage.HEALTH_INIT = 150
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-	self.old_hoxton_mission.HEALTH_INIT = 225
-	self.spa_vip.HEALTH_INIT = 225
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 112.5
-	self.presets.gang_member_damage.REGENERATE_TIME = 2.4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
+	self.old_hoxton_mission.HEALTH_INIT = 150
+	self.spa_vip.HEALTH_INIT = 150
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11632,12 +11660,15 @@ function CharacterTweakData:_set_overkill_290()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("deathwish")
-	self:_set_characters_dodge_preset("elite")
+	self:_set_characters_weapon_preset("easy_wish")
+	self:_set_characters_dodge_preset("easy_wish")
 	self:_set_characters_melee_preset("3")
-	self:_set_specials_weapon_preset("easy_wish")
+	self:_set_specials_weapon_preset("expert")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("2.5")
-	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_easy_wish)
+	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true
@@ -11647,13 +11678,11 @@ function CharacterTweakData:_set_overkill_290()
 		self.city_swat.no_arrest = false
 	end
 	self:_multiply_all_speeds(1.1, 1.15)
-	self.presets.gang_member_damage.HEALTH_INIT = 262.5
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.old_hoxton_mission.HEALTH_INIT = 262.5
-	self.spa_vip.HEALTH_INIT = 262.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 131.25
-	self.presets.gang_member_damage.REGENERATE_TIME = 2.4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
+	self.presets.gang_member_damage.HEALTH_INIT = 175
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.old_hoxton_mission.HEALTH_INIT = 175
+	self.spa_vip.HEALTH_INIT = 175
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11674,12 +11703,15 @@ function CharacterTweakData:_set_sm_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("sm_wish")
-	self:_set_characters_dodge_preset("sm_wish")
+	self:_set_characters_weapon_preset("deathwish")
+	self:_set_characters_dodge_preset("elite")
 	self:_set_characters_melee_preset("3")
-	self:_set_specials_weapon_preset("deathwish")
+	self:_set_specials_weapon_preset("easy_wish")
+	self.shield.weapon.is_pistol.melee_speed = nil
+	self.shield.weapon.is_pistol.melee_dmg = nil
+	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("3")
-	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_deathwish)
+	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_easy_wish)
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true
@@ -11689,15 +11721,11 @@ function CharacterTweakData:_set_sm_wish()
 		self.city_swat.no_arrest = false
 	end
 	self:_multiply_all_speeds(1.15, 1.2)
-	self.presets.gang_member_damage.HEALTH_INIT = 300
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
-	self.old_hoxton_mission.HEALTH_INIT = 300
-	self.spa_vip.HEALTH_INIT = 300
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
-	self.presets.gang_member_damage.DOWNED_TIME = 0
-	self.presets.gang_member_damage.INCAPACITATED_TIME = 30
-	self.presets.gang_member_damage.REGENERATE_TIME = 2.4
-	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.3
+	self.presets.gang_member_damage.HEALTH_INIT = 200
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.old_hoxton_mission.HEALTH_INIT = 200
+	self.spa_vip.HEALTH_INIT = 200
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11732,8 +11760,10 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.fbi_swat.HEALTH_INIT = self.fbi_swat.HEALTH_INIT * hp_mul
 	self.fbi_swat_vet.HEALTH_INIT = self.fbi_swat_vet.HEALTH_INIT * hp_mul
 	self.city_swat.HEALTH_INIT = self.city_swat.HEALTH_INIT * hp_mul
+	self.city_swat_titan.HEALTH_INIT = self.city_swat_titan.HEALTH_INIT * hp_mul
 	self.swat.HEALTH_INIT = self.swat.HEALTH_INIT * hp_mul
 	self.heavy_swat.HEALTH_INIT = self.heavy_swat.HEALTH_INIT * hp_mul
+	self.heavy_swat_sniper.HEALTH_INIT = self.heavy_swat_sniper.HEALTH_INIT * hp_mul
 	self.fbi_heavy_swat.HEALTH_INIT = self.fbi_heavy_swat.HEALTH_INIT * hp_mul
 	self.sniper.HEALTH_INIT = self.sniper.HEALTH_INIT * hp_mul
 	self.gangster.HEALTH_INIT = self.gangster.HEALTH_INIT * hp_mul
@@ -11745,6 +11775,8 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.biker_boss.HEALTH_INIT = self.biker_boss.HEALTH_INIT * hp_mul
 	self.biker.HEALTH_INIT = self.biker.HEALTH_INIT * hp_mul
 	self.tank.HEALTH_INIT = self.tank.HEALTH_INIT * hp_mul
+	self.tank_mini.HEALTH_INIT = self.tank_mini.HEALTH_INIT * hp_mul
+	self.tank_medic.HEALTH_INIT = self.tank_medic.HEALTH_INIT * hp_mul
 	self.tank_hw.HEALTH_INIT = self.tank_hw.HEALTH_INIT * hp_mul
 	self.tank_titan.HEALTH_INIT = self.tank_titan.HEALTH_INIT * hp_mul
 	self.spooc.HEALTH_INIT = self.spooc.HEALTH_INIT * hp_mul
@@ -11789,11 +11821,17 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.city_swat.headshot_dmg_mul then
 		self.city_swat.headshot_dmg_mul = self.city_swat.headshot_dmg_mul * hs_mul
 	end
+	if self.city_swat_titan.headshot_dmg_mul then
+		self.city_swat_titan.headshot_dmg_mul = self.city_swat_titan.headshot_dmg_mul * hs_mul
+	end
 	if self.swat.headshot_dmg_mul then
 		self.swat.headshot_dmg_mul = self.swat.headshot_dmg_mul * hs_mul
 	end
 	if self.heavy_swat.headshot_dmg_mul then
 		self.heavy_swat.headshot_dmg_mul = self.heavy_swat.headshot_dmg_mul * hs_mul
+	end
+	if self.heavy_swat_sniper.headshot_dmg_mul then
+		self.heavy_swat_sniper.headshot_dmg_mul = self.heavy_swat_sniper.headshot_dmg_mul * hs_mul
 	end
 	if self.fbi_heavy_swat.headshot_dmg_mul then
 		self.fbi_heavy_swat.headshot_dmg_mul = self.fbi_heavy_swat.headshot_dmg_mul * hs_mul
@@ -11824,6 +11862,12 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 	if self.tank.headshot_dmg_mul then
 		self.tank.headshot_dmg_mul = self.tank.headshot_dmg_mul * hs_mul
+	end
+	if self.tank_mini.headshot_dmg_mul then
+		self.tank_mini.headshot_dmg_mul = self.tank_mini.headshot_dmg_mul * hs_mul
+	end
+	if self.tank_medic.headshot_dmg_mul then
+		self.tank_medic.headshot_dmg_mul = self.tank_medic.headshot_dmg_mul * hs_mul
 	end
 	if self.tank_titan.headshot_dmg_mul then
 		self.tank_titan.headshot_dmg_mul = self.tank_titan.headshot_dmg_mul * hs_mul
@@ -11887,10 +11931,12 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"medic",
 		"swat",
 		"heavy_swat",
+		"heavy_swat_sniper",
 		"fbi_swat",
 		"fbi_swat_vet",
 		"fbi_heavy_swat",
 		"city_swat",
+		"city_swat_titan",
 		"sniper",
 		"gangster",
 		"mobster",
@@ -11900,6 +11946,8 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"chavez_boss",
 		"hector_boss_no_armor",
 		"tank",
+		"tank_mini",
+		"tank_medic",
 		"tank_titan",
 		"tank_hw",
 		"spooc",
@@ -11935,10 +11983,12 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.drug_lord_boss_stealth.SPEED_RUN = self.drug_lord_boss_stealth.SPEED_RUN * run_mul
 	self.swat.SPEED_RUN = self.swat.SPEED_RUN * run_mul
 	self.heavy_swat.SPEED_RUN = self.heavy_swat.SPEED_RUN * run_mul
+	self.heavy_swat_sniper.SPEED_RUN = self.heavy_swat_sniper.SPEED_RUN * run_mul
 	self.fbi_swat.SPEED_RUN = self.fbi_swat.SPEED_RUN * run_mul
 	self.fbi_swat_vet.SPEED_RUN = self.fbi_swat_vet.SPEED_RUN * run_mul
 	self.fbi_heavy_swat.SPEED_RUN = self.fbi_heavy_swat.SPEED_RUN * run_mul
 	self.city_swat.SPEED_RUN = self.city_swat.SPEED_RUN * run_mul
+	self.city_swat_titan.SPEED_RUN = self.city_swat_titan.SPEED_RUN * run_mul
 	self.sniper.SPEED_RUN = self.sniper.SPEED_RUN * run_mul
 	self.gangster.SPEED_RUN = self.gangster.SPEED_RUN * run_mul
 	self.mobster.SPEED_RUN = self.gangster.SPEED_RUN * run_mul
@@ -11948,6 +11998,8 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.hector_boss.SPEED_RUN = self.hector_boss.SPEED_RUN * run_mul
 	self.hector_boss_no_armor.SPEED_RUN = self.hector_boss_no_armor.SPEED_RUN * run_mul
 	self.tank.SPEED_RUN = self.tank.SPEED_RUN * run_mul
+	self.tank_mini.SPEED_RUN = self.tank_mini.SPEED_RUN * run_mul
+	self.tank_medic.SPEED_RUN = self.tank_medic.SPEED_RUN * run_mul
 	self.tank_titan.SPEED_RUN = self.tank_titan.SPEED_RUN * run_mul
 	self.tank_hw.SPEED_RUN = self.tank_hw.SPEED_RUN * run_mul
 	self.spooc.SPEED_RUN = self.spooc.SPEED_RUN * run_mul
@@ -12034,8 +12086,11 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"spooc",
 		"shield",
 		"tank",
+		"tank_mini",
+		"tank_medic",
 		"tank_hw",
 		"tank_titan",
+		"city_swat_titan",
 		"mobster_boss",
 		"biker_boss",
 		"chavez_boss",
@@ -12046,7 +12101,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"phalanx_vip"
 	}
 	for _, name in ipairs(all_units) do
-		self[name].weapon = self.presets.weapon[preset]
+		self[name].weapon = deep_clone(self.presets.weapon[preset])
 	end
 end
 
@@ -12060,7 +12115,10 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"spooc",
 		"shield",
 		"tank",
+		"tank_mini",
+		"tank_medic",
 		"tank_titan",
+		"city_swat_titan",
 		"sniper",
 		"tank_hw",
 		"mobster_boss",
@@ -12334,7 +12392,8 @@ function CharacterTweakData:character_map()
 				"ene_vip_1",
 				"ene_vip_2",
 				"ene_spring",
-				"ene_phalanx_1"
+				"ene_phalanx_1",
+				"ene_titan_shotgun"
 			}
 		},
 		holly = {
@@ -12522,6 +12581,14 @@ function CharacterTweakData:character_map()
 		run = {
 			path = "units/pd2_dlc_run/characters/",
 			list = {"npc_matt"}
+		},
+		drm = {
+			path = "units/pd2_dlc_drm/characters/",
+			list = {
+				"ene_bulldozer_medic",
+				"ene_bulldozer_minigun",
+				"ene_zeal_swat_heavy_sniper"
+			}
 		}
 	}
 	return char_map

@@ -1,4 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 function PlayerStandard:_start_action_intimidate(t, secondary)
 	if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 		local skip_alert = managers.groupai:state():whisper_mode()
@@ -138,50 +139,19 @@ end
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
-PlayerStandard.IDS_EQUIP = Idstring("equip")
-PlayerStandard.IDS_MASK_EQUIP = Idstring("mask_equip")
-PlayerStandard.IDS_UNEQUIP = Idstring("unequip")
-PlayerStandard.IDS_RELOAD_EXIT = Idstring("reload_exit")
-PlayerStandard.IDS_RELOAD_NOT_EMPTY_EXIT = Idstring("reload_not_empty_exit")
-PlayerStandard.IDS_START_RUNNING = Idstring("start_running")
-PlayerStandard.IDS_STOP_RUNNING = Idstring("stop_running")
-PlayerStandard.IDS_MELEE = Idstring("melee")
-PlayerStandard.IDS_MELEE_MISS = Idstring("melee_miss")
-PlayerStandard.IDS_MELEE_BAYONET = Idstring("melee_bayonet")
-PlayerStandard.IDS_MELEE_MISS_BAYONET = Idstring("melee_miss_bayonet")
-PlayerStandard.IDS_IDLE = Idstring("idle")
-PlayerStandard.IDS_USE = Idstring("use")
-PlayerStandard.IDS_RECOIL = Idstring("recoil")
-PlayerStandard.IDS_RECOIL_STEELSIGHT = Idstring("recoil_steelsight")
-PlayerStandard.IDS_RECOIL_ENTER = Idstring("recoil_enter")
-PlayerStandard.IDS_RECOIL_LOOP = Idstring("recoil_loop")
-PlayerStandard.IDS_RECOIL_EXIT = Idstring("recoil_exit")
-PlayerStandard.IDS_MELEE_CHARGE = Idstring("melee_charge")
-PlayerStandard.IDS_MELEE_CHARGE_STATE = Idstring("fps/melee_charge")
-PlayerStandard.IDS_MELEE_ATTACK = Idstring("melee_attack")
-PlayerStandard.IDS_MELEE_ATTACK_STATE = Idstring("fps/melee_attack")
-PlayerStandard.IDS_MELEE_EXIT_STATE = Idstring("fps/melee_exit")
-PlayerStandard.IDS_MELEE_ENTER = Idstring("melee_enter")
-PlayerStandard.IDS_PROJECTILE_START = Idstring("throw_projectile_start")
-PlayerStandard.IDS_PROJECTILE_IDLE = Idstring("throw_projectile_idle")
-PlayerStandard.IDS_PROJECTILE_THROW = Idstring("throw_projectile")
-PlayerStandard.IDS_PROJECTILE_THROW_STATE = Idstring("fps/throw_projectile")
-PlayerStandard.IDS_PROJECTILE_EXIT_STATE = Idstring("fps/throw_projectile_exit")
-PlayerStandard.IDS_PROJECTILE_ENTER = Idstring("throw_projectile_enter")
-PlayerStandard.IDS_CHARGE = Idstring("charge")
-PlayerStandard.IDS_BASE = Idstring("base")
-PlayerStandard.IDS_CASH_INSPECT = Idstring("cash_inspect")
-PlayerStandard.IDS_FALLING = Idstring("falling")
-
 function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	self._state_data.meleeing = nil
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local pre_calc_hit_ray = tweak_data.blackmarket.melee_weapons[melee_entry].hit_pre_calculation
+	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t)
+	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_start or 2 --i.e. never get the bonus
+	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_speed or 1
 	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
+	local melee_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].expire_t or 0
+	local melee_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
 	melee_damage_delay = math.min(melee_damage_delay, tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t)
-	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t)
 	local primary = managers.blackmarket:equipped_primary()
 	local primary_id = primary.weapon_id
 	local bayonet_id = managers.blackmarket:equipped_bayonet(primary_id)
@@ -189,8 +159,16 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	if bayonet_id and self._equipped_unit:base():selection_index() == 2 then
 		bayonet_melee = true
 	end
-	self._state_data.melee_expire_t = t + tweak_data.blackmarket.melee_weapons[melee_entry].expire_t
-	self._state_data.melee_repeat_expire_t = t + math.min(tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t, tweak_data.blackmarket.melee_weapons[melee_entry].expire_t)
+		
+	if charge_lerp_value and charge_lerp_value > charge_bonus_start then
+		speed = math.max( speed, speed * (charge_lerp_value * charge_bonus_speed) )
+		melee_damage_delay = math.min( melee_damage_delay, melee_damage_delay / (charge_lerp_value * charge_bonus_speed) )
+		melee_expire_t = math.min( melee_expire_t, melee_expire_t / (charge_lerp_value * charge_bonus_speed) )
+		melee_repeat_expire_t = math.min( melee_repeat_expire_t, melee_repeat_expire_t / (charge_lerp_value * charge_bonus_speed) )
+	end
+	
+	self._state_data.melee_expire_t = t + melee_expire_t
+	self._state_data.melee_repeat_expire_t = t + math.min(melee_repeat_expire_t, melee_expire_t)
 	if not instant_hit and not skip_damage then
 		self._state_data.melee_damage_delay_t = t + melee_damage_delay
 		if pre_calc_hit_ray then
@@ -200,25 +178,37 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		end
 	end
 	local send_redirect = instant_hit and (bayonet_melee and "melee_bayonet" or "melee") or "melee_item"
-	managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, send_redirect)
+	if instant_hit then
+		managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, send_redirect)
+	else
+		self._ext_network:send("sync_melee_discharge")
+	end
 	if self._state_data.melee_charge_shake then
 		self._ext_camera:shaker():stop(self._state_data.melee_charge_shake)
 		self._state_data.melee_charge_shake = nil
 	end
+	self._melee_attack_var = 0
 	if instant_hit then
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
 		if hit then
-			self._ext_camera:play_redirect(bayonet_melee and self.IDS_MELEE_BAYONET or self.IDS_MELEE)
+			if not bayonet_melee or not self:get_animation("melee_bayonet") then
+			end
+			self._ext_camera:play_redirect((self:get_animation("melee")))
 		else
-			self._ext_camera:play_redirect(bayonet_melee and self.IDS_MELEE_MISS_BAYONET or self.IDS_MELEE_MISS)
+			if not bayonet_melee or not self:get_animation("melee_miss_bayonet") then
+			end
+			self._ext_camera:play_redirect((self:get_animation("melee_miss")))
 		end
 	else
 		local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars
+		--START--
+		local anim_attack_charged_amount = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_amount or 0.5 --At half charge, use the charge variant
 		local anim_attack_charged_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_charged_vars
 		local anim_attack_left_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_left_vars
 		local anim_attack_right_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_right_vars
 		local timing_fix = tweak_data.blackmarket.melee_weapons[melee_entry].timing_fix
 		local timing_fix_speed_mult = tweak_data.blackmarket.melee_weapons[melee_entry].timing_fix_speed_mult or 1
+		--END--
 		self._melee_attack_var = anim_attack_vars and math.random(#anim_attack_vars)
 		self:_play_melee_sound(melee_entry, "hit_air", self._melee_attack_var)
 		local melee_item_tweak_anim = "attack"
@@ -226,8 +216,8 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		local melee_item_suffix = ""
 		local anim_attack_param = anim_attack_vars and anim_attack_vars[self._melee_attack_var]
 		
-		
-		if anim_attack_charged_vars and charge_lerp_value >= 0.5 then
+		--START--
+		if anim_attack_charged_vars and charge_lerp_value >= anim_attack_charged_amount then
 			self._melee_attack_var = anim_attack_charged_vars and math.random(#anim_attack_charged_vars)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
 		elseif self._stick_move then
@@ -244,8 +234,8 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		if fix_anim_timer then
 			speed = speed * timing_fix_speed_mult
 		end
-		
-		local state = self._ext_camera:play_redirect(PlayerStandard.IDS_MELEE_ATTACK, speed)
+		--END--
+		local state = self._ext_camera:play_redirect(self:get_animation("melee_attack"), speed)
 		
 		if anim_attack_param then
 			self._camera_unit:anim_state_machine():set_parameter(state, anim_attack_param, 1)
@@ -258,7 +248,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		melee_item_tweak_anim = melee_item_prefix .. melee_item_tweak_anim .. melee_item_suffix
 		self._camera_unit:base():play_anim_melee_item(melee_item_tweak_anim)
 	end
-end 
+end
 
 	local update_original = PlayerStandard.update
 	local start_steelsight_original = PlayerStandard._start_action_steelsight
@@ -295,38 +285,38 @@ end
 		end
 	end
 
-function PlayerStandard:_stance_entered(unequipped)
-	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
-	local head_stance = self._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
-	local stance_id
-	local stance_mod = {
-		translation = Vector3(0, 0, 0)
-	}
-	if not unequipped then
-		stance_id = self._equipped_unit:base():get_stance_id()
-		stance_mod = self._state_data.in_steelsight and self._equipped_unit:base().stance_mod and self._equipped_unit:base():stance_mod() or stance_mod
-	end
-	local stances
-	if self:_is_meleeing() or self:_is_throwing_projectile() then
-		stances = tweak_data.player.stances.default
-	else
-		stances = tweak_data.player.stances[stance_id] or tweak_data.player.stances.default
-	end
-	local misc_attribs = stances.standard
-	if self:_is_using_bipod() and not self:_is_throwing_projectile() then
-		misc_attribs = stances.bipod
-		if self._state_data.in_steelsight then 
-			misc_attribs = stances.steelsight
+	function PlayerStandard:_stance_entered(unequipped)
+		local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
+		local head_stance = self._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
+		local stance_id
+		local stance_mod = {
+			translation = Vector3(0, 0, 0)
+		}
+		if not unequipped then
+			stance_id = self._equipped_unit:base():get_stance_id()
+			stance_mod = self._state_data.in_steelsight and self._equipped_unit:base().stance_mod and self._equipped_unit:base():stance_mod() or stance_mod
 		end
-	else
-		misc_attribs = self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard
+		local stances
+		if self:_is_meleeing() or self:_is_throwing_projectile() then
+			stances = tweak_data.player.stances.default
+		else
+			stances = tweak_data.player.stances[stance_id] or tweak_data.player.stances.default
+		end
+		local misc_attribs = stances.standard
+		if self:_is_using_bipod() and not self:_is_throwing_projectile() then
+			misc_attribs = stances.bipod
+			if self._state_data.in_steelsight then 
+				misc_attribs = stances.steelsight
+			end
+		else
+			misc_attribs = self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard
+		end
+		local duration = tweak_data.player.TRANSITION_DURATION + (self._equipped_unit:base():transition_duration() or 0)
+		local duration_multiplier = self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
+		local new_fov = self:get_zoom_fov(misc_attribs) + 0
+		self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
+		managers.menu:set_mouse_sensitivity(self:in_steelsight())
 	end
-	local duration = tweak_data.player.TRANSITION_DURATION + (self._equipped_unit:base():transition_duration() or 0)
-	local duration_multiplier = self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
-	local new_fov = self:get_zoom_fov(misc_attribs) + 0
-	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
-	managers.menu:set_mouse_sensitivity(self:in_steelsight())
-end
 
 	local melee_vars = {
 		"player_melee",

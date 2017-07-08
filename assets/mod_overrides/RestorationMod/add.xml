@@ -41,7 +41,7 @@
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
-	
+
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<model path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
@@ -136,6 +136,10 @@
 	<sequence_manager path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/ load="true">
 	<unit path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
+
+	<!--Titan Shotgunner-->	
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
 
 	<!--Titandozer-->	
 	<object path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
@@ -248,13 +252,6 @@
 
 	<!--Fixed Sniper-->
 	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
-
-	<!--Dynamite Fix-->
-	<object path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true"/>
-	<sequence_manager path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="false"/>
-
-	<!--what the fuck why is there a different model for this-->
-	<object path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr_pts/wpn_fps_snp_msr_ns_suppressor_long" force="true"/>
 
 	<!--National Guard-->
 	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>

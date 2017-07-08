@@ -18,9 +18,9 @@ function QuickCsGrenade:_setup_from_tweak_data()
 	elseif difficulty_index == 6 then
 		self._damage_tick_period = 0.35
 	elseif difficulty_index == 7 then
-		self._damage_tick_period = 0.3
+		self._damage_tick_period = 0.35
 	else
-		self._damage_tick_period = 0.25
+		self._damage_tick_period = 0.3
 	end
 	self._damage_per_tick = 0
 end

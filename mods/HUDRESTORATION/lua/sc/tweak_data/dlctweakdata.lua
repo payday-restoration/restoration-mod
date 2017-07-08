@@ -87,7 +87,12 @@ function DLCTweakData:init(...)
 			type_items = "weapon_mods",
 			item_entry = "wpn_fps_upg_a_slug_fire",
 			amount = 3
-		}
+		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_extra_mp_unlock",
+			amount = 3
+		},
 	}
 end
 

@@ -38,10 +38,6 @@ function PlayerTweakData:_set_easy_wish()
 	self.suspicion.buildup_mul = 1.4
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.MIN_DAMAGE_INTERVAL = 0.35
-	self.damage.REVIVE_HEALTH_STEPS = {
-		0.5,
-		0.251
-	}
 end
 
 function PlayerTweakData:_set_overkill_290()
@@ -50,7 +46,7 @@ function PlayerTweakData:_set_overkill_290()
 	self.suspicion.buildup_mul = 1.4
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.LIVES_INIT = 4
-	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.251
 	}
@@ -82,7 +78,7 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.buildup_mul = 1.5
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.LIVES_INIT = 2
-	self.damage.MIN_DAMAGE_INTERVAL = 0.25
+	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.251
 	}
@@ -107,7 +103,6 @@ end
 
 function PlayerTweakData:_set_singleplayer()
 	self.max_nr_following_hostages = 4
-	self.damage.REGENERATE_TIME = 3.9
 end
 
 function PlayerTweakData:_set_multiplayer()
@@ -117,6 +112,8 @@ function PlayerTweakData:init()
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
 	self.arrest = {arrest_timeout = 240, aggression_timeout = 60}
 	self.put_on_mask_time = 0
+	self.gravity = -982
+	self.terminal_velocity = -5500
 	self.damage = {}
 	if is_console then
 		self.damage.ARMOR_INIT = 2
@@ -142,9 +139,9 @@ function PlayerTweakData:init()
 	self.damage.HEALTH_INIT = 20
 	self.damage.LIVES_INIT = 4
 	if is_console then
-		self.damage.REGENERATE_TIME = 3.9
+		self.damage.REGENERATE_TIME = 3.5
 	else
-		self.damage.REGENERATE_TIME = 3.9
+		self.damage.REGENERATE_TIME = 3.5
 	end
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.75,
@@ -176,12 +173,12 @@ function PlayerTweakData:init()
 		intimidate_range_teammates = 100000
 	}
 	self.suppression = {
-		max_value = 20,
+		max_value = 60,
 		decay_start_delay = 0.1,
-		receive_mul = 10,
+		receive_mul = 1,
 		spread_mul = 1,
 		autohit_chance_mul = 1,
-		tolerance = 1
+		tolerance = 0
 	}	
 	self.suspicion = {
 		max_value = 8,

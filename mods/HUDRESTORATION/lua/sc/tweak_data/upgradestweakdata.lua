@@ -20,7 +20,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Explosives hurt--
 	self.explosive_bullet.curve_pow = 1
 	self.explosive_bullet.player_dmg_mul = 1
-	self.explosive_bullet.range = 300
+	self.explosive_bullet.range = 350
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -52,10 +52,10 @@ function UpgradesTweakData:_init_pd2_values()
 		0.62
 	}
 	self.values.player.body_armor.dodge = {
-		0.1,
-		-0.0,
+		0.05,
 		-0.05,
 		-0.1,
+		-0.15,
 		-0.3,
 		-0.35,
 		-0.4
@@ -119,6 +119,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
     	self.values.player.suppression_resist = {true}
+    	self.values.player.ignore_suppression_flinch = {true}
     	self.values.player.health_revive_max = {true}
     	self.values.player.yakuza_berserker = {true}
 
@@ -465,7 +466,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Bulletproof
 				self.values.player.armor_multiplier = {1.35, 1.5}
 				self.values.team.armor.regen_time_multiplier = {0.9}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.9}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.8}
 			--}
 		--}
 		
@@ -711,14 +712,19 @@ function UpgradesTweakData:_init_pd2_values()
 	end
 
 	--Perk Deck shit--
+	self.values.temporary.armor_break_invulnerable = {
+		{2, 15}
+	}
+	self.values.player.armor_regen_timer_stand_still_multiplier = {0.9}
+	self.values.player.armor_regen_timer_multiplier_passive = {0.95}
 
 	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
-		0.95,
-		0.85,
-		0.75,
-		0.65,
-		0.55
+		0.9,
+		0.8,
+		0.7,
+		0.6,
+		0.5
 	}
 
 	self.values.player.level_2_dodge_addend = {
@@ -855,7 +861,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Sociopath nerfs
 	self.values.player.killshot_regen_armor_bonus = {2.5}
 	self.values.player.killshot_close_regen_armor_bonus = {2.5}
-	self.values.player.killshot_close_panic_chance = {0.5}
+	self.values.player.killshot_close_panic_chance = {0.25}
 	self.on_killshot_cooldown = 2
 
 	--Anarchist stuff--
@@ -1025,6 +1031,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			category = "player",
 			upgrade = "suppression_resist",
+			value = 1
+		}
+	}
+	self.definitions.player_ignore_suppression_flinch = {
+		category = "feature",
+		name_id = "menu_player_panic_suppression",
+		upgrade = {
+			category = "player",
+			upgrade = "ignore_suppression_flinch",
 			value = 1
 		}
 	}

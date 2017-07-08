@@ -13,7 +13,8 @@ function PlayerTased:enter(state_data, enter_data)
 		managers.enemy:add_delayed_clbk(self._recover_delayed_clbk, callback(self, self, "clbk_exit_to_std"), recover_time)
 	else
 		self._fatal_delayed_clbk = "PlayerTased_fatal_delayed_clbk"
-		managers.enemy:add_delayed_clbk(self._fatal_delayed_clbk, callback(self, self, "clbk_exit_to_fatal"), TimerManager:game():time() + tweak_data.player.damage.TASED_TIME)
+		local tased_time = tweak_data.player.damage.TASED_TIME
+		managers.enemy:add_delayed_clbk(self._fatal_delayed_clbk, callback(self, self, "clbk_exit_to_fatal"), TimerManager:game():time() + tased_time)
 	end
 	self._next_shock = 0.5
 	self._taser_value = 1

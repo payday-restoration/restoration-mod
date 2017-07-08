@@ -73,7 +73,9 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_intimidate_enemies",
 		"player_walk_speed_multiplier",
 		"player_crouch_speed_multiplier",
-		"player_melee_kill_snatch_pager_chance"
+		"player_flashbang_multiplier_1",
+		"player_melee_kill_snatch_pager_chance",
+		"player_suppression_resist"
 	}
 
 --[[   SKILLTREES   ]]--
@@ -596,7 +598,6 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_flashbang_multiplier_1",
 						"player_flashbang_multiplier_2"
 					},
 					cost = self.costs.pro
@@ -1188,7 +1189,6 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"team_armor_regen_time_multiplier",
 						"player_armor_regen_timer_multiplier_tier",
 						"player_armor_multiplier_2"
 					},
@@ -2178,8 +2178,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_suppression_resist",
-					"team_passive_armor_regen_time_multiplier",
+					"player_ignore_suppression_flinch",
+					"player_perk_armor_regen_timer_multiplier_1",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
@@ -2256,12 +2256,11 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 200,
 				icon_xy = {6, 2},
 				name_id = "menu_deck5_1",
-				desc_id = "menu_deck5_1_desc"
+				desc_id = "menu_deck5_1_desc_sc"
 			},
 			deck2,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_2",
 					"akimbo_recoil_multiplier_2"
 				},
 				cost = 400,
@@ -2272,7 +2271,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_3"
+					"player_perk_armor_regen_timer_multiplier_2"
 				},
 				cost = 1000,
 				icon_xy = {0, 3},
@@ -2282,7 +2281,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_4"
+					"player_perk_armor_regen_timer_multiplier_3"
 				},
 				cost = 2400,
 				icon_xy = {1, 3},
@@ -2292,7 +2291,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_5",
+					"player_perk_armor_regen_timer_multiplier_4",
 					"player_passive_loot_drop_multiplier",
 					"akimbo_recoil_multiplier_3"
 				},
@@ -2356,8 +2355,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_perk_armor_regen_timer_multiplier_1",
-					"player_perk_armor_regen_timer_multiplier_2"
+					"player_armor_regen_timer_stand_still_multiplier"
 				},
 				cost = 4000,
 				icon_xy = {6, 2},
@@ -2416,8 +2414,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1",
-					"player_perk_armor_regen_timer_multiplier_2",
+					"player_armor_regen_timer_stand_still_multiplier",
 					"player_crouch_speed_multiplier_2",
 					"player_passive_loot_drop_multiplier"
 				},

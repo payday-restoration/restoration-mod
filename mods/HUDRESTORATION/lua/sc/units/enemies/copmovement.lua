@@ -43,6 +43,7 @@ local security_variant = action_variants.security
 function CopMovement:init(unit)
 	old_init(self, unit)
 	CopMovement._action_variants.fbi_swat_vet = security_variant
+	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.rboom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
@@ -56,7 +57,7 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 	local hurt_type = damage_info.result.type
 	local roll = math.rand(1, 100)
 	local chance_stun = 25
-	if hurt_type == "knock_down" or hurt_type == "stagger" then
+	if hurt_type == "stagger" then
 		if self._unit:base()._tweak_table == "tank" or self._unit:base()._tweak_table == "tank_hw" or self._unit:base()._tweak_table == "tank_titan" then
 			if roll <= chance_stun then
 				hurt_type = "expl_hurt"
@@ -65,11 +66,11 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 			end
 		else
 			hurt_type = "heavy_hurt"
-		end		
+		end	
 	end
 	hurt_type = managers.crime_spree:modify_value("CopMovement:HurtType", hurt_type)
 	local block_type = hurt_type
-	if hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+	if hurt_type == "knock_down" or hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
 		block_type = "heavy_hurt"
 	end
 	if hurt_type == "death" and self._queued_actions then
@@ -176,7 +177,11 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 			fire_dot_data = damage_info.fire_dot_data
 		}
 	end
-	if Network:is_server() or not self:chk_action_forbidden(action_data) then
+	local request_action = Network:is_server() or not self:chk_action_forbidden(action_data)
+	if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt") then
+		request_action = false
+	end
+	if request_action then
 		self:action_request(action_data)
 		if hurt_type == "death" and self._queued_actions then
 			self._queued_actions = {}

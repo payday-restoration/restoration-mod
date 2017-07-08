@@ -41,7 +41,7 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 			nr_players = nr_players + 1
 		end
 	end
-	nr_players = math.clamp(nr_players, 1, 4)
+	nr_players = math.clamp(nr_players, 1, 20)
 	return balance_multipliers[nr_players]
 end
 

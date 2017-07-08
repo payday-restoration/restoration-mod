@@ -148,7 +148,7 @@ function CopDamage:damage_fire(attack_data)
 		end
 		if attacker_unit == managers.player:player_unit() then
 			if alive(attacker_unit) then
-				self:_comment_death(attacker_unit, self._unit:base()._tweak_table)
+				self:_comment_death(attacker_unit, self._unit)
 			end
 			self:_show_death_hint(self._unit:base()._tweak_table)
 			if not attack_data.is_fire_dot_damage or data.is_molotov then
@@ -308,7 +308,7 @@ end
 			}
 			managers.statistics:killed_by_anyone(data)
 			if attack_data.attacker_unit == managers.player:player_unit() then
-				self:_comment_death(attack_data.attacker_unit, self._unit:base()._tweak_table)
+				self:_comment_death(attack_data.attacker_unit, self._unit)
 				self:_show_death_hint(self._unit:base()._tweak_table)
 				managers.statistics:killed(data)
 				local is_civlian = CopDamage.is_civilian(self._unit:base()._tweak_table)
@@ -584,7 +584,7 @@ function CopDamage:damage_bullet(attack_data)
 		end
 		if attack_data.attacker_unit == managers.player:player_unit() then
 			local special_comment = self:_check_special_death_conditions(attack_data.variant, attack_data.col_ray.body, attack_data.attacker_unit, attack_data.weapon_unit)
-			self:_comment_death(attack_data.attacker_unit, self._unit:base()._tweak_table, special_comment)
+			self:_comment_death(attack_data.attacker_unit, self._unit, special_comment)
 			self:_show_death_hint(self._unit:base()._tweak_table)
 			local attacker_state = managers.player:current_state()
 			data.attacker_state = attacker_state
@@ -597,7 +597,7 @@ function CopDamage:damage_bullet(attack_data)
 				managers.money:civilian_killed()
 			end
 		elseif attack_data.attacker_unit:in_slot(managers.slot:get_mask("criminals_no_deployables")) then
-			self:_AI_comment_death(attack_data.attacker_unit, self._unit:base()._tweak_table)
+			self:_AI_comment_death(attack_data.attacker_unit, self._unit)
 		elseif attack_data.attacker_unit:base().sentry_gun then
 			if Network:is_server() then
 				local server_info = attack_data.weapon_unit:base():server_information()
@@ -731,7 +731,7 @@ function CopDamage:damage_explosion(attack_data)
 		self:chk_killshot(attacker_unit, "explosion")
 		if attacker_unit == managers.player:player_unit() then
 			if alive(attacker_unit) then
-				self:_comment_death(attacker_unit, self._unit:base()._tweak_table)
+				self:_comment_death(attacker_unit, self._unit)
 			end
 			self:_show_death_hint(self._unit:base()._tweak_table)
 			managers.statistics:killed(data)
@@ -767,49 +767,42 @@ function CopDamage:_apply_min_health_limit(damage, damage_percent)
 	return damage, damage_percent
 end
 
-function CopDamage:_comment_death(unit, type)
+function CopDamage:_comment_death(attacker, killed_unit, special_comment)
+	local victim_base = killed_unit:base()
 	if special_comment then
-		PlayerStandard.say_line(unit:sound(), special_comment)
-	elseif type == "tank" then
-		PlayerStandard.say_line(unit:sound(), "g30x_any")
-	elseif type == "tank_hw" then
-		PlayerStandard.say_line(unit:sound(), "g30x_any")
-	elseif type == "tank_titan" then
-		PlayerStandard.say_line(unit:sound(), "g30x_any")
-	elseif type == "spooc" then
-		PlayerStandard.say_line(unit:sound(), "g33x_any")
-	elseif type == "taser" then
-		PlayerStandard.say_line(unit:sound(), "g32x_any")
-	elseif type == "shield" or type == "phalanx_minion" then
-		PlayerStandard.say_line(unit:sound(), "g31x_any")
-	elseif type == "boom" or type == "rboom" or type == "fbi_vet" or type == "spring" then
-		PlayerStandard.say_line(unit:sound(), "g92")
-	elseif type == "sniper" then
-		PlayerStandard.say_line(unit:sound(), "g35x_any")
-	elseif type == "medic" then
-		PlayerStandard.say_line(unit:sound(), "g36x_any")
+		PlayerStandard.say_line(attacker:sound(), special_comment)
+	elseif victim_base:has_tag("tank") then
+		PlayerStandard.say_line(attacker:sound(), "g30x_any")
+	elseif victim_base:has_tag("spooc") then
+		PlayerStandard.say_line(attacker:sound(), "g33x_any")
+	elseif victim_base:has_tag("taser") then
+		PlayerStandard.say_line(attacker:sound(), "g32x_any")
+	elseif victim_base:has_tag("shield") then
+		PlayerStandard.say_line(attacker:sound(), "g31x_any")
+	elseif victim_base:has_tag("sniper") then
+		PlayerStandard.say_line(attacker:sound(), "g35x_any")
+	elseif victim_base:has_tag("medic") then
+		PlayerStandard.say_line(attacker:sound(), "g36x_any")
+	elseif victim_base:has_tag("custom") then
+		PlayerStandard.say_line(attacker:sound(), "g92")
 	end
 end
-
-function CopDamage:_AI_comment_death(unit, type)
-	if type == "tank" then
-		unit:sound():say("g30x_any", true, true)
-	elseif type == "tank_hw" then
-		unit:sound():say("g30x_any", true, true)
-	elseif type == "tank_titan" then
-		unit:sound():say("g30x_any", true, true)
-	elseif type == "spooc" then
-		unit:sound():say("g33x_any", true, true)
-	elseif type == "taser" then
-		unit:sound():say("g32x_any", true, true)
-	elseif type == "shield" or type == "phalanx_minion" then
-		unit:sound():say("g31x_any", true, true)
-	elseif  type == "boom" or type == "rboom" or type == "fbi_vet" or type == "spring" then
-		unit:sound():say("g92", true, true)
-	elseif type == "sniper" then
-		unit:sound():say("g35x_any", true, true)
-	elseif type == "medic" then
+function CopDamage:_AI_comment_death(unit, killed_unit)
+	local victim_base = killed_unit:base()
+	if victim_base:has_tag("tank") then
+		unit:sound():say("g30x_any", true)
+	elseif victim_base:has_tag("spooc") then
+		unit:sound():say("g33x_any", true)
+	elseif victim_base:has_tag("taser") then
+		unit:sound():say("g32x_any", true)
+	elseif victim_base:has_tag("shield") then
+		unit:sound():say("g31x_any", true)
+	elseif victim_base:has_tag("sniper") then
+		unit:sound():say("g35x_any", true)
+	elseif victim_base:has_tag("medic") then
 		unit:sound():say("g36x_any", true)
+	elseif victim_base:has_tag("custom") then
+		unit:sound():say("g92", true)
 	end
 end
 

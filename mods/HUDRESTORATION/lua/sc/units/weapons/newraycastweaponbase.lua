@@ -244,6 +244,29 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				end
 			end
 
+			if stats.use_auto_kick then
+				if self:weapon_tweak_data().kick then
+					self:weapon_tweak_data().kick.standing = {
+									0.6,
+									0.8,
+									-1,
+									1
+					}
+					self:weapon_tweak_data().kick.crouching = {
+									0.6,
+									0.8,
+									-1,
+									1
+					}
+					self:weapon_tweak_data().kick.steelsight = {
+									0.6,
+									0.8,
+									-1,
+									1
+					}
+				end
+			end
+
 		end
 							
 	end

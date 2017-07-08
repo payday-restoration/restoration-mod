@@ -1,23 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-require("lib/units/enemies/cop/logics/CopLogicBase")
-require("lib/units/enemies/cop/logics/CopLogicInactive")
-require("lib/units/enemies/cop/logics/CopLogicIdle")
-require("lib/units/enemies/cop/logics/CopLogicAttack")
-require("lib/units/enemies/cop/logics/CopLogicIntimidated")
-require("lib/units/enemies/cop/logics/CopLogicTravel")
-require("lib/units/enemies/cop/logics/CopLogicArrest")
-require("lib/units/enemies/cop/logics/CopLogicGuard")
-require("lib/units/enemies/cop/logics/CopLogicFlee")
-require("lib/units/enemies/cop/logics/CopLogicSniper")
-require("lib/units/enemies/cop/logics/CopLogicTrade")
-require("lib/units/enemies/cop/logics/CopLogicPhalanxMinion")
-require("lib/units/enemies/cop/logics/CopLogicPhalanxVip")
-require("lib/units/enemies/tank/logics/TankCopLogicAttack")
-require("lib/units/enemies/shield/logics/ShieldLogicAttack")
-require("lib/units/enemies/spooc/logics/SpoocLogicIdle")
-require("lib/units/enemies/spooc/logics/SpoocLogicAttack")
-require("lib/units/enemies/taser/logics/TaserLogicAttack")
 local old_init = CopBrain.init
 local logic_variants = {
 	security = {
@@ -38,6 +20,7 @@ local security_variant = logic_variants.security
 function CopBrain:init(unit)
 	old_init(self, unit)
 	CopBrain._logic_variants.fbi_swat_vet = security_variant
+	CopBrain._logic_variants.city_swat_titan = security_variant
 	CopBrain._logic_variants.boom = security_variant
 	CopBrain._logic_variants.rboom = security_variant
 	CopBrain._logic_variants.fbi_vet = security_variant

@@ -1,11 +1,13 @@
 if not tweak_data then return end
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	tweak_data.max_players = 6
+	
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 120
 	tweak_data.projectiles.launcher_rocket.range = 350
 	tweak_data.projectiles.launcher_rocket.curve_pow = 1
-
+	
 	--Grenade launcher stuff--
 	tweak_data.projectiles.launcher_frag.damage = 80
 	tweak_data.projectiles.launcher_frag.player_damage = 80
@@ -113,6 +115,12 @@ if not tweak_data then return end
 	tweak_data.projectiles.frag_com.curve_pow = 1
 	tweak_data.projectiles.frag_com.range = 350
 
+	--The other community frag--
+	tweak_data.projectiles.dada_com.damage = 80
+	tweak_data.projectiles.dada_com.player_damage = 80
+	tweak_data.projectiles.dada_com.curve_pow = 1
+	tweak_data.projectiles.dada_com.range = 350
+
         --Molliest of tovs--
 	tweak_data.projectiles.molotov.damage = 3
 	tweak_data.projectiles.molotov.player_damage = 3
@@ -204,7 +212,9 @@ if not tweak_data then return end
 		"phalanx_minion",
 		"spring",
 		"medic",
-		"tank_titan"
+		"tank_titan",
+		"tank_medic",
+		"city_swat_titan"
 	}
 	tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
 	tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil

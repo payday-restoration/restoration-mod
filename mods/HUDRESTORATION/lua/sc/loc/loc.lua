@@ -31,9 +31,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad_desc"] = "",
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND WALLs.",
+		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLs.",
 		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR.",
-		["bm_ap_flamethrower_sc_desc"] = "BURNS THROUGH BODY ARMOR",
+		["bm_ap_flamethrower_sc_desc"] = "BURNS THROUGH BODY ARMOR.",
 		["bm_ap_saw_sc_desc"] = "",
 		["bm_ap_saw_blade_sc_desc"] = "Adds the ability to cut through body armor.",
 		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
@@ -42,7 +42,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
 	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
-		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets gives more impact and increases damage.",
+		["bm_wp_upg_a_custom_desc"] = "Bigger pellets that give more impact and increases damage.",
+		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
 		["menu_moving_target_sc"] = "Subtle",
 		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",
 		["bm_sc_silencers_small_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
@@ -57,7 +58,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["sc_menu_desc"] = "Options for SC's mod.",
 		["sc_deploy_title"] = "Deployable Changes",
 		["sc_player_weapon_title"] = "Player Weapon Changes",
-		["sc_ai_title"] = "Difficulty Changes",
+		["sc_ai_title"] = "SC's Mod Main Changes",
+		["sc_classic_smoke_title"] = "Alternative Tear Gas Visuals",
+		["sc_classic_smoke_desc"] = "Toggle the alternative Tear Gas visuals.",
 		["sc_spawn_title"] = "Spawn Rate Changes",
 		["sc_player_title"] = "Player/Skill changes",
 		["sc_perk_title"] = "Perk Deck changes",
@@ -68,7 +71,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["sc_player_weapon_desc"] = "Turn this off if you don't want player weapon changes from SC's mod, usually for when you want to use ANOTHER weapon overhaul. (Requires restart)",
 		["sc_spawn_desc"] = "Turn this off if you don't want enemy spawn rate changes from SC's mod. (Requires restart)",
 		["sc_sp_desc"] = "Turn this off if you don't want single player changes from SC's mod. (Requires restart)",
-		["sc_ai_desc"] = "Toggle for SC's mod Difficulty related changes. Why are you in here anyway? You're not scared of a challenge, right? Note: Having this on locks your online play to only other SC mod users. (Requires restart)",
+		["sc_ai_desc"] = "Toggle for SC's Mod Main changes. Useful for quickly toggling back to the vanilla game. Note: Having this on locks your online play to only other SC mod users. (Requires restart)",
 		["sc_player_desc"] = "Turn this off if you don't want Player/Skill changes from SC's mod. (Requires restart)",
 		["sc_perk_desc"] = "Turn this off if you don't want Perk Deck changes from SC's mod. (Requires restart)",
 		["sc_flash_desc"] = "Turn this off if you don't want a flashbang HUD indicator... wait why wouldn't you? (Requires restart)",
@@ -93,6 +96,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hint_titan_end"] = "The Titandozer left to haunt another world!",
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
+
+		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
+		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
 
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
@@ -163,7 +169,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_recoil_p1"] = "Small Stability bonus and Accuracy penalty",
 		["bm_menu_bonus_recoil_p1_mod"] = "Small Stability Modifier",
 		["bm_menu_bonus_recoil_p2"] = "Large Stability bonus and Accuracy penalty",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+10% Experience and money reward for you and your crew.",	
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+10% Experience reward for you and your crew, -10% Money reward for you and your crew.",	
 		["bm_menu_spread"] = "Accuracy\n",
 		["bm_menu_recoil"] = "Stability\n",	
 		["bm_menu_concealment"] = "Concealment\n",
@@ -390,7 +396,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stun Resistance--
 			["menu_oppressor_beta_sc"] = "Stun Resistance",
-			["menu_oppressor_beta_desc_sc"] = "BASIC: ##$basic##\nYour steadiness is increased by ##10.##\n\nACE: ##$pro##\nReduces the visual effect duration of Flashbangs by ##75%.##",
+			["menu_oppressor_beta_desc_sc"] = "BASIC: ##$basic##\nYour steadiness is increased by ##10.##\n\nACE: ##$pro##\nReduces the visual effect duration of Flashbangs by ##50%.##",
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "Die Hard",
@@ -591,7 +597,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Bulletproof--
 		["menu_iron_man_sc"] = "Bulletproof",
-		["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nYour armor recovery rate is increased by ##20%.##\n\nThe armor recovery rate of your crew is increased by ##10%.##",																																																																																																																																																																																																																									
+		["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nYour armor recovery rate is increased by ##20%.##",																																																																																																																																																																																																																									
 
 		--Chameleon--
 		["menu_jail_workout_sc"] = "Chameleon",
@@ -706,13 +712,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.",
 		["menu_deck6_5_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.",
 		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##15%## for ballistic vests.",
-		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##15%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck6_9_desc_sc"] = "Standing still and crouching increases your armor recovery rate by ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck4_5_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck4_7_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##25%.##\n\n\Your armor recovery rate is increased by an additional ##10%##.",
+		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##10%##.",
+		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##25%.##",
 		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
 		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
 		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\n\You no longer have a stability penalty with Akimbo weapons.\n\n\Deck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%##.",
@@ -732,15 +739,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck3_1_desc_sc"] = "You gain an additional ##10%## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.\n\n\Your armor is increased by ##10%## for ballistic vests.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.\n\n\Your armor is increased by ##10%## for ballistic vests.",
-		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##10%##.\n\n\Your armor is increased by ##20%## for ballistic vests.",
-		["menu_deck3_9_desc_sc"] = "Reduces the armor recovery time for you and your crew by ##10%##.\n\n\You are now ##immune to suppression.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\n\Your armor is increased by ##20%## for ballistic vests.",
+		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\n\You are now ##immune to suppression.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Burglar--
 		["menu_deck7_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck7_3_desc_sc"] = "Your chance to dodge is increased by ##5%##.\n\nYou bag corpses ##20%## faster.",
 		["menu_deck7_5_desc_sc"] = "Your chance to dodge is increased by ##10%##.\n\nYou pick locks ##20%## faster.",
 		["menu_deck7_7_desc_sc"] = "Your chance to dodge is increased by ##10%##.\n\nYou answer pagers ##10%## faster.",
-		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##15%.##\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck7_9_desc_sc"] = "Standing still and crouching increases your armor recovery rate by ##10%.##\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\n\Cannot occur more than once every ##4## seconds.",
@@ -758,7 +765,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##10%## health.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy at medium range regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy at medium range has a ##50%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy at medium range has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\n\This effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\n\You lose ##70## armor while wearing the Flak Jacket.",

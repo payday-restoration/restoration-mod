@@ -46,6 +46,7 @@ StatisticsManager.special_unit_ids = {
 	"phalanx_minion",
 	"phalanx_vip",
 	"city_swat_titan",
+	"heavy_swat_sniper",
 	"tank_titan",
 	"spring",
 	"swat_turret",
@@ -119,6 +120,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.city_swat_titan = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.heavy_swat_sniper = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,

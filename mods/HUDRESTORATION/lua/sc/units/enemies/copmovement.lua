@@ -53,140 +53,143 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.tank_titan.walk = TankCopActionWalk
 end
 
-function CopMovement:damage_clbk(my_unit, damage_info)
-	local hurt_type = damage_info.result.type
-	local roll = math.rand(1, 100)
-	local chance_stun = 25
-	if hurt_type == "stagger" then
-		if self._unit:base()._tweak_table == "tank" or self._unit:base()._tweak_table == "tank_hw" or self._unit:base()._tweak_table == "tank_titan" then
-			if roll <= chance_stun then
-				hurt_type = "expl_hurt"
-			else
-				hurt_type = "light_hurt"		
-			end
-		else
-			hurt_type = "heavy_hurt"
-		end	
+function CopMovement:post_init()
+	local unit = self._unit
+	self._ext_brain = unit:brain()
+	self._ext_network = unit:network()
+	self._ext_anim = unit:anim_data()
+	self._ext_base = unit:base()
+	self._ext_damage = unit:character_damage()
+	self._ext_inventory = unit:inventory()
+	self._tweak_data = tweak_data.character[self._ext_base._tweak_table]
+	tweak_data:add_reload_callback(self, self.tweak_data_clbk_reload)
+	self._machine = self._unit:anim_state_machine()
+	self._machine:set_callback_object(self)
+	self._stance = {
+		code = 1,
+		name = "ntl",
+		values = {
+			1,
+			0,
+			0,
+			0
+		}
+	}
+	if managers.navigation:is_data_ready() then
+		self._nav_tracker = managers.navigation:create_nav_tracker(self._m_pos)
+		self._pos_rsrv_id = managers.navigation:get_pos_reservation_id()
+	else
+		Application:error("[CopMovement:post_init] Spawned AI unit with incomplete navigation data.")
+		self._unit:set_extension_update(ids_movement, false)
 	end
-	hurt_type = managers.crime_spree:modify_value("CopMovement:HurtType", hurt_type)
-	local block_type = hurt_type
-	if hurt_type == "knock_down" or hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
-		block_type = "heavy_hurt"
+	self._unit:kill_mover()
+	self._unit:set_driving("script")
+	self._unit:unit_data().has_alarm_pager = self._tweak_data.has_alarm_pager
+	local event_list = {
+		"bleedout",
+		"light_hurt",
+		"heavy_hurt",
+		"expl_hurt",
+		"hurt",
+		"hurt_sick",
+		"shield_knock",
+		"knock_down",
+		"stagger",
+		"counter_tased",
+		"taser_tased",
+		"death",
+		"fatal",
+		"fire_hurt",
+		"poison_hurt",
+		"concussion"
+	}
+	table.insert(event_list, "healed")
+	self._unit:character_damage():add_listener("movement", event_list, callback(self, self, "damage_clbk"))
+	self._unit:inventory():add_listener("movement", {"equip", "unequip"}, callback(self, self, "clbk_inventory"))
+	log("SC: ADDING WEAPONS")
+	self:add_weapons()
+	log("SC: WEAPONS ADDED")
+	if self._unit:inventory():is_selection_available(1) then
+		self._unit:inventory():equip_selection(1, true)
+	elseif self._unit:inventory():is_selection_available(2) then
+		self._unit:inventory():equip_selection(2, true)
 	end
-	if hurt_type == "death" and self._queued_actions then
-		self._queued_actions = {}
+	if self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
+		log("SC: Stealth with secondary equipped, disabling weapon")
+		self._ext_inventory:set_weapon_enabled(false)
+		log("SC: Secondary disabled")
 	end
-	if not hurt_type or Network:is_server() and self:chk_action_forbidden(block_type) then
-		if hurt_type == "death" then
-			debug_pause_unit(self._unit, "[CopMovement:damage_clbk] Death action skipped!!!", self._unit)
-			Application:draw_cylinder(self._m_pos, self._m_pos + math.UP * 5000, 30, 1, 0, 0)
-			for body_part, action in ipairs(self._active_actions) do
-				if action then
-					print(body_part, action:type(), inspect(action._blocks))
+	local weap_name = self._ext_base:default_weapon_name(managers.groupai:state():enemy_weapons_hot() and "primary" or "secondary")
+	local fwd = self._m_rot:y()
+	self._action_common_data = {
+		stance = self._stance,
+		pos = self._m_pos,
+		rot = self._m_rot,
+		fwd = fwd,
+		right = self._m_rot:x(),
+		unit = unit,
+		machine = self._machine,
+		ext_movement = self,
+		ext_brain = self._ext_brain,
+		ext_anim = self._ext_anim,
+		ext_inventory = self._ext_inventory,
+		ext_base = self._ext_base,
+		ext_network = self._ext_network,
+		ext_damage = self._ext_damage,
+		char_tweak = self._tweak_data,
+		nav_tracker = self._nav_tracker,
+		active_actions = self._active_actions,
+		queued_actions = self._queued_actions,
+		look_vec = mvector3.copy(fwd)
+	}
+	self:upd_ground_ray()
+	if self._gnd_ray then
+		self:set_position(self._gnd_ray.position)
+	end
+	self:_post_init()
+end
+
+function CopMovement:add_weapons()
+	if self._tweak_data.use_factory then
+		local weapon_to_use = self._tweak_data.factory_weapon_id[ math.random( #self._tweak_data.factory_weapon_id ) ]
+		log("SC: WEAPON TO USE " .. weapon_to_use)
+		if weapon_to_use then
+			self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, nil, "")
+			log("SC: PRIMARY ADDED")
+		end
+	else
+		local prim_weap_name = self._ext_base:default_weapon_name("primary")
+		local sec_weap_name = self._ext_base:default_weapon_name("secondary")
+		if prim_weap_name then
+			self._unit:inventory():add_unit_by_name(prim_weap_name)
+		end
+		if sec_weap_name and sec_weap_name ~= prim_weap_name then
+			self._unit:inventory():add_unit_by_name(sec_weap_name)
+		end
+	end
+end
+
+function CopMovement:_chk_play_equip_weapon()
+	if self._stance.values[1] == 1 and not self._ext_anim.equip and not self._tweak_data.no_equip_anim and not self:chk_action_forbidden("action") then
+		local redir_res = self:play_redirect("equip")
+		if redir_res then
+			local weapon_unit = self._ext_inventory:equipped_unit()
+			if weapon_unit then
+				local weap_tweak = weapon_unit:base():weapon_tweak_data()
+				log("SC: Weapon tweak found! " .. weap_tweak.sounds.prefix)
+				local weapon_hold = weap_tweak.hold
+				if type(weap_tweak.hold) == "table" then
+					local num = #weap_tweak.hold + 1
+					for i, hold_type in ipairs(weap_tweak.hold) do
+						self._machine:set_parameter(redir_res, "to_" .. hold_type, num - i)
+					end
+				else
+					self._machine:set_parameter(redir_res, "to_" .. weap_tweak.hold, 1)
 				end
 			end
 		end
-		return
 	end
-	if damage_info.variant == "stun" then
-		if alive(self._ext_inventory and self._ext_inventory._shield_unit) then
-			hurt_type = "shield_knock"
-			block_type = "shield_knock"
-			damage_info.variant = "melee"
-			damage_info.result = {
-				type = "shield_knock",
-				variant = "melee"
-			}
-			damage_info.shield_knock = true
-		end
-	end
-	if hurt_type == "death" then
-		if self._rope then
-			self._rope:base():retract()
-			self._rope = nil
-			self._rope_death = true
-			if self._unit:sound().anim_clbk_play_sound then
-				self._unit:sound():anim_clbk_play_sound(self._unit, "repel_end")
-			end
-		end
-		if Network:is_server() then
-			self:set_attention()
-		else
-			self:synch_attention()
-		end
-	end
-	local attack_dir = damage_info.col_ray and damage_info.col_ray.ray or damage_info.attack_dir
-	local hit_pos = damage_info.col_ray and damage_info.col_ray.position or damage_info.pos
-	local lgt_hurt = hurt_type == "light_hurt"
-	local body_part = lgt_hurt and 4 or 1
-	local blocks
-	if not lgt_hurt then
-		blocks = {
-			walk = -1,
-			action = -1,
-			act = -1,
-			aim = -1,
-			tase = -1
-		}
-		if hurt_type == "bleedout" then
-			blocks.bleedout = -1
-			blocks.hurt = -1
-			blocks.heavy_hurt = -1
-			blocks.hurt_sick = -1
-			blocks.concussion = -1
-		end
-	end
-	if damage_info.variant == "tase" then
-		block_type = "bleedout"
-	elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
-		block_type = "heavy_hurt"
-	else
-		block_type = hurt_type
-	end
-	local client_interrupt
-	if Network:is_client() and (hurt_type == "light_hurt" or hurt_type == "hurt" and damage_info.variant ~= "tase" or hurt_type == "heavy_hurt" or hurt_type == "expl_hurt" or hurt_type == "shield_knock" or hurt_type == "counter_tased" or hurt_type == "taser_tased" or hurt_type == "counter_spooc" or hurt_type == "death" or hurt_type == "hurt_sick" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "concussion") then
-		client_interrupt = true
-	end
-	local tweak = self._tweak_data
-	local action_data
-	if hurt_type == "healed" then
-		if Network:is_client() then
-			client_interrupt = true
-		end
-		action_data = {
-			type = "healed",
-			body_part = 3,
-			client_interrupt = client_interrupt
-		}
-	else
-		action_data = {
-			type = "hurt",
-			block_type = block_type,
-			hurt_type = hurt_type,
-			variant = damage_info.variant,
-			direction_vec = attack_dir,
-			hit_pos = hit_pos,
-			body_part = body_part,
-			blocks = blocks,
-			client_interrupt = client_interrupt,
-			attacker_unit = damage_info.attacker_unit,
-			death_type = tweak.damage.death_severity and (damage_info.damage / tweak.HEALTH_INIT > tweak.damage.death_severity and "heavy" or "normal") or "normal",
-			ignite_character = damage_info.ignite_character,
-			start_dot_damage_roll = damage_info.start_dot_damage_roll,
-			is_fire_dot_damage = damage_info.is_fire_dot_damage,
-			fire_dot_data = damage_info.fire_dot_data
-		}
-	end
-	local request_action = Network:is_server() or not self:chk_action_forbidden(action_data)
-	if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt") then
-		request_action = false
-	end
-	if request_action then
-		self:action_request(action_data)
-		if hurt_type == "death" and self._queued_actions then
-			self._queued_actions = {}
-		end
-	end
+	self._ext_inventory:set_weapon_enabled(true)
 end
 
 end

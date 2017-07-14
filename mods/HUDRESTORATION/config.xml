@@ -51,6 +51,7 @@
 		<hook file="sc/tweak_data/preplanningtweakdata.lua" source_file="lib/tweak_data/preplanningtweakdata"/>
 		<hook file="sc/managers/blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 		<hook file="sc/managers/skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>
+		<hook file="sc/managers/enemymanager.lua" source_file="lib/managers/enemymanager"/>
 		<hook file="sc/managers/statisticsmanager.lua" source_file="lib/managers/statisticsmanager"/>
 		<hook file="sc/managers/playermanager.lua" source_file="lib/managers/playermanager"/>
 		<hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"/>
@@ -64,6 +65,7 @@
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 		<hook file="sc/units/weapons/newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+		<hook file="sc/units/weapons/newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
 		<hook file="sc/units/weapons/newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
 		<hook file="sc/units/weapons/flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 		<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
@@ -82,10 +84,12 @@
 		<hook file="sc/managers/weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
 		<hook file="sc/tweak_data/upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>
+		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="sc/units/player_team/teamaimovement.lua" source_file="lib/units/player_team/teamaimovement"/>
 		<hook file="sc/units/enemies/logics/coplogicintimidated.lua" source_file="lib/units/enemies/cop/logics/coplogicintimidated"/>
 		<hook file="sc/units/enemies/logics/coplogicbase.lua" source_file="lib/units/enemies/cop/logics/coplogicbase"/>
+		<hook file="sc/units/enemies/logics/coplogicidle.lua" source_file="lib/units/enemies/cop/logics/coplogicidle"/>
 		<hook file="sc/units/enemies/logics/tankcoplogicattack.lua" source_file="lib/units/enemies/tank/logics/tankcoplogicattack"/>
 		<hook file="sc/units/player_team/logics/teamailogicidle.lua" source_file="lib/units/player_team/logics/teamailogicidle"/>
 		<hook file="sc/units/player_team/logics/teamailogicassault.lua" source_file="lib/units/player_team/logics/teamailogicassault"/>
@@ -94,6 +98,7 @@
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 		<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
+		<hook file="sc/units/enemies/copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 		<hook file="sc/units/enemies/copbrain.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/civilians/civilianbrain.lua" source_file="lib/units/civilians/civilianbrain"/>
 		<hook file="sc/units/enemies/huskcopdamage.lua" source_file="lib/units/enemies/cop/huskcopdamage"/>

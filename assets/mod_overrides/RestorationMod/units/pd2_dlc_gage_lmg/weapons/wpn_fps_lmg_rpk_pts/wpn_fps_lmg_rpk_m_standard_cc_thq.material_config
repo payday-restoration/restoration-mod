@@ -1,6 +1,0 @@
-<materials version="3" group="weapon_group">
-    <material name="mtr_extended" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
-        <diffuse_texture file="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/extended_df" mip="1"/>
-        <bump_normal_texture file="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/extended_nm" mip="1"/>
-    </material>
-</materials>

@@ -1,6 +1,0 @@
-<materials version="3" group="weapon_group">
-	<material name="mtr_legendary_pump" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
-		<diffuse_texture file="units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/grip_legend_df" />
-		<bump_normal_texture file="units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/grip_legend_nm" />
-	</material>
-</materials>

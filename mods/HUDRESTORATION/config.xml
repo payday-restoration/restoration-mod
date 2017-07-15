@@ -141,7 +141,7 @@
 				<option type="bool" default_value="false" name="District"/>
 			</option_group>
 			<option_group name="SC">
-				<option type="bool" default_value="false" name="SC"/>
+				<option type="bool" default_value="true" name="SC"/>
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">

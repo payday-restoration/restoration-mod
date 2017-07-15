@@ -16,47 +16,5 @@
 
 
     </AddFiles>
-	
-	<Music id="lethal_force" source="lf_assault" menu="false" heist="true">
-        <event name="setup" source="lf_stealth"/>
-        <event name="anticipation" source="lf_buildup"/>
-        <event name="assault" start_source="lf_sting" source="lf_assault"/>
-        <event name="control" source="lf_control"/>
-    </Music>
-    <AddFiles>
-        <movie path="lf_stealth"/>
-        <movie path="lf_buildup"/>
-        <movie path="lf_assault"/>
-        <movie path="lf_control"/>
-		<movie path="lf_sting"/>
-    </AddFiles>
-	
-	<Music id="riot_control" source="riot_assault" menu="false" heist="true">
-        <event name="setup" source="riot_stealth"/>
-        <event name="anticipation" source="riot_buildup"/>
-        <event name="assault" start_source="riot_sting" source="riot_assault"/>
-        <event name="control" source="riot_control"/>
-    </Music>
-    <AddFiles>
-        <movie path="riot_stealth"/>
-        <movie path="riot_buildup"/>
-        <movie path="riot_assault"/>
-        <movie path="riot_control"/>
-		<movie path="riot_sting"/>
-    </AddFiles>
-	
-	<Music id="bleeding_edge" source="edge_assault" menu="false" heist="true">
-        <event name="setup" source="edge_stealth"/>
-        <event name="anticipation" source="edge_buildup"/>
-        <event name="assault" start_source="edge_sting" source="edge_assault"/>
-        <event name="control" source="edge_control"/>
-    </Music>
-    <AddFiles>
-        <movie path="edge_stealth"/>
-        <movie path="edge_buildup"/>
-        <movie path="edge_assault"/>
-        <movie path="edge_control"/>
-		<movie path="edge_sting"/>
-    </AddFiles>
 </table>
 

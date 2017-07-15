@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/MainHud") then
+if restoration.Options:GetValue("HUD/Down") then
 
 function HUDPlayerDowned:init(hud)
 	self._hud = hud

@@ -148,7 +148,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	local point_of_no_return_text = point_of_no_return_panel:text({
 		name = "point_of_no_return_text",
 		text = "",
-		--blend_mode = "add",
+		blend_mode = "add",
 		layer = 1,
 		valign = "center",
 		align = "center",
@@ -157,7 +157,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		y = 0,
 		color = self._noreturn_color,
 		font_size = 30,
-		font = "fonts/font_medium_shadow_mf"
+		font = "fonts/font_large_mf"
 	})
 	point_of_no_return_text:set_text(utf8.to_upper(managers.localization:text("hud_assault_point_no_return_in", {time = ""})))
 	local _, _, w, h = point_of_no_return_text:text_rect()
@@ -166,7 +166,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	local point_of_no_return_timer = point_of_no_return_panel:text({
 		name = "point_of_no_return_timer",
 		text = "22:11",
-		--blend_mode = "add",
+		blend_mode = "add",
 		layer = 1,
 		valign = "center",
 		align = "center",
@@ -273,9 +273,19 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 		if type(text_id) == "string" then
 			text_string = managers.localization:to_upper_text(text_id)
 		elseif text_id == Idstring("risk") then
-			for i = 1, managers.job:current_difficulty_stars() do
-				text_string = text_string .. managers.localization:get_default_macro("BTN_SKULL")
+			local use_stars = true
+			if managers.crime_spree:is_active() then
+				text_string = text_string .. managers.localization:to_upper_text("menu_cs_level", {
+					level = managers.experience:cash_string(managers.crime_spree:server_spree_level(), "")
+				})
+				use_stars = false
 			end
+			if use_stars then
+				for i = 1, managers.job:current_difficulty_stars() do
+					text_string = text_string .. managers.localization:get_default_macro("BTN_SKULL")
+				end
+			end
+
 		end
 		local mod_color = color_function and color_function() or color or self._assault_color
 		local text = text_panel:text({
@@ -396,6 +406,9 @@ function HUDAssaultCorner:sync_start_assault(data)
 	if self._point_of_no_return or self._casing then
 		return
 	end
+		if restoration.Options:GetValue("HUD/Hostage") then
+			self:_hide_hostages()
+		end
 	local color = self._assault_color
 	if self._assault_mode == "phalanx" then
 		color = self._vip_assault_color
@@ -513,7 +526,9 @@ function HUDAssaultCorner:_end_assault()
 	end
 	self._remove_hostage_offset = true
 	self._start_assault_after_hostage_offset = nil
-
+		if restoration.Options:GetValue("HUD/Hostage") then
+			self:_show_hostages()
+		end
 	self:_set_feedback_color(nil)
 	local assault_panel = self._hud_panel:child("assault_panel")
 	local text_panel = assault_panel:child("text_panel")

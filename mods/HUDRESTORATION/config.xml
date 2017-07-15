@@ -19,6 +19,7 @@
 		<hook file="managers/hud/HUDPlayerDowned.lua" source_file="lib/managers/hud/HUDPlayerDowned"/>
 		<hook file="managers/hud/HUDPresenter.lua" source_file="lib/managers/hud/HUDPresenter"/>
 		<hook file="managers/hud/HUDSuspicion.lua" source_file="lib/managers/hud/HUDSuspicion"/>
+		<hook file="utils/levelloadingscreenguiscript.lua" source_file="lib/utils/levelloadingscreenguiscript"/>
 		<!--<hook file="managers/hud/HUDStageEndScreen.lua" source_file="lib/managers/hud/HUDStageEndScreen"/>-->
 		<hook file="managers/hud/HUDMissionBriefing.lua" source_file="lib/managers/hud/HUDMissionBriefing"/>
         <!--<hook file="" source_file=""/>-->
@@ -26,6 +27,7 @@
 		<hook file="managers/menu/StageEndScreenGUI.lua" source_file="lib/managers/menu/StageEndScreenGUI"/>
 		<hook file="managers/menu/MissionBriefingGUI.lua" source_file="lib/managers/menu/MissionBriefingGUI"/>
 		<hook file="managers/menu/MenuBackdropGUI.lua" source_file="lib/managers/menu/MenuBackdropGUI"/>
+		<hook file="managers/menu/MenuPauseRenderer.lua" source_file="lib/managers/menu/MenuPauseRenderer"/>
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
@@ -123,13 +125,20 @@
 	    <options>
 			<option_group name="HUD">
 				<option type="bool" default_value="false" name="MainHud"/>
+				<option type="bool" default_value="false" name="Waypoints"/>
 				<option type="bool" default_value="false" name="AssaultPanel"/>
 				<option type="bool" default_value="false" name="ObjectivesPanel"/>
 				<option type="bool" default_value="false" name="Presenter"/>
+				<!--<option type="bool" default_value="false" name="Interaction"/>-->
+				<option type="bool" default_value="false" name="Stealth"/>
+				<option type="bool" default_value="false" name="Down"/>
+				<option type="bool" default_value="false" name="Bag"/>
+				<option type="bool" default_value="false" name="Hostage"/>
 				<option type="bool" default_value="false" name="DifficultyMarkers"/>
 				<option type="bool" default_value="false" name="StaminaIndicator"/>
 				<option type="bool" default_value="false" name="BlackScreen"/>
 				<option type="bool" default_value="false" name="Loadouts"/>
+				<option type="bool" default_value="false" name="District"/>
 			</option_group>
 			<option_group name="SC">
 				<option type="bool" default_value="false" name="SC"/>

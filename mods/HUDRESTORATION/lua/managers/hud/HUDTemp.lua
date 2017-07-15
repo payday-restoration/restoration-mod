@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/MainHud") then
+if restoration.Options:GetValue("HUD/Bag") then
 function HUDTemp:init(hud)
 	self._hud_panel = hud.panel
 	if self._hud_panel:child("temp_panel") then
@@ -130,7 +130,7 @@ function HUDTemp:_animate_show_bag_panel(bag_panel)
 	local ecx = self._temp_panel:w() - w / 2
 	local scy = self._temp_panel:h() / 2
 	local ecy = (self._temp_panel:h() - 152) - self._bag_panel_h / 2
-	if pdth_hud and pdth_hud.Options:GetValue("HUD/MainHud") then -- some love for Bushy
+	if pdth_hud and pdth_hud.Options:GetValue("HUD/Bag") then -- some love for Bushy
 		local const = pdth_hud.constants
 		ecx = self._temp_panel:w() - ((w / 2) + (const.main_equipment_size *  1.5) + const.main_bag_gap)
 		ecy = self._temp_panel:h() - ((h / 2) + (const.main_equipment_size * const.main_equipment_y_offset_multiplier))

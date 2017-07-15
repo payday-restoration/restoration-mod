@@ -317,6 +317,24 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		})
 		radial_info_meter_bg:set_color(Color(1, 0, 0, 0))
 		radial_info_meter_bg:hide()
+		local radial_ability = radial_health_panel:bitmap({
+		name = "radial_ability",
+		texture = "guis/dlcs/chico/textures/pd2/hud_fearless",
+		texture_rect = {
+			0,
+			0,
+			64,
+			64
+		},
+		render_template = "VertexColorTexturedRadial",
+		blend_mode = "add",
+		alpha = 1,
+		w = radial_health_panel:w(),
+		h = radial_health_panel:h(),
+		layer = 5
+	})
+		radial_ability:set_color(Color(1, 0, 0, 0))
+		radial_ability:hide()
 	end
 	local x, y, w, h = radial_health_panel:shape()
 	teammate_panel:bitmap({
@@ -742,7 +760,224 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 	self._interact:set_position(4, 4)
 	self._special_equipment = {}
 	self._panel = teammate_panel
+	self:create_waiting_panel(teammates_panel)
 end
+
+function HUDTeammate:_create_equipment(panel, icon_name, scale)
+	scale = scale or 1
+	local icon, rect
+	if icon_name then
+		icon, rect = tweak_data.hud_icons:get_icon_data(icon_name)
+	end
+	local eq_h = 21.333334
+	local eq_w = 48
+	local eq_rect = {
+		84,
+		0,
+		44,
+		32
+	}
+	local tabs_texture = "guis/textures/pd2/hud_tabs"
+	local bg_color = Color.white / 3
+	panel:set_w(eq_w * scale)
+	panel:set_h(eq_h * scale)
+	local vis_at_start = true
+	local bg = panel:bitmap({
+		name = "bg",
+		texture = tabs_texture,
+		texture_rect = eq_rect,
+		visible = true,
+		layer = 0,
+		color = bg_color,
+		w = panel:w(),
+		h = panel:h(),
+		x = 0
+	})
+	local icon = panel:bitmap({
+		name = "icon",
+		texture = icon,
+		texture_rect = rect,
+		visible = vis_at_start,
+		layer = 1,
+		color = Color.white,
+		w = panel:h() * scale,
+		h = panel:h() * scale,
+		x = 2
+	})
+	local amount = panel:text({
+		name = "amount",
+		visible = vis_at_start,
+		text = "00",
+		font = "fonts/font_medium_mf",
+		font_size = 22,
+		color = Color.white,
+		align = "center",
+		vertical = "center",
+		layer = 2,
+		w = panel:w(),
+		h = panel:h()
+	})
+	managers.hud:make_fine_text(amount)
+	amount:set_right(bg:right() - 2)
+	amount:set_center_y(bg:center_y() + 1)
+end
+
+function HUDTeammate:create_waiting_panel(parent_panel)
+	local PADD = 2
+	local panel = parent_panel:panel()
+	print(self._panel:lefttop())
+	print(panel:lefttop())
+	print(self._panel:world_x(), self._panel:world_y())
+	print(panel:world_x(), panel:world_y())
+	panel:set_visible(false)
+	panel:set_lefttop(self._panel:lefttop())
+	local name = panel:text({
+		name = "name",
+		font_size = tweak_data.hud_players.name_size,
+		font = tweak_data.hud_players.name_font
+	})
+	local player_panel = self._panel:child("player")
+	local health_panel = player_panel:child("radial_health_panel")
+	local detection = panel:panel({
+		name = "detection",
+		w = health_panel:w(),
+		h = health_panel:h()
+	})
+	detection:set_lefttop(health_panel:lefttop())
+	local detection_ring_left_bg = detection:bitmap({
+		name = "detection_left_bg",
+		texture = "guis/textures/pd2/mission_briefing/inv_detection_meter",
+		alpha = 0.2,
+		blend_mode = "add",
+		w = detection:w(),
+		h = detection:h()
+	})
+	local detection_ring_right_bg = detection:bitmap({
+		name = "detection_right_bg",
+		texture = "guis/textures/pd2/mission_briefing/inv_detection_meter",
+		alpha = 0.2,
+		blend_mode = "add",
+		w = detection:w(),
+		h = detection:h()
+	})
+	detection_ring_right_bg:set_texture_rect(detection_ring_right_bg:texture_width(), 0, -detection_ring_right_bg:texture_width(), detection_ring_right_bg:texture_height())
+	local detection_ring_left = detection:bitmap({
+		name = "detection_left",
+		texture = "guis/textures/pd2/mission_briefing/inv_detection_meter",
+		render_template = "VertexColorTexturedRadial",
+		blend_mode = "add",
+		layer = 1,
+		w = detection:w(),
+		h = detection:h()
+	})
+	local detection_ring_right = detection:bitmap({
+		name = "detection_right",
+		texture = "guis/textures/pd2/mission_briefing/inv_detection_meter",
+		render_template = "VertexColorTexturedRadial",
+		blend_mode = "add",
+		layer = 1,
+		w = detection:w(),
+		h = detection:h()
+	})
+	detection_ring_right:set_texture_rect(detection_ring_right:texture_width(), 0, -detection_ring_right:texture_width(), detection_ring_right:texture_height())
+	local detection_value = panel:text({
+		name = "detection_value",
+		font_size = tweak_data.menu.pd2_medium_font_size,
+		font = tweak_data.menu.pd2_medium_font,
+		align = "center",
+		vertical = "center"
+	})
+	detection_value:set_center_x(detection:left() + detection:w() / 2)
+	detection_value:set_center_y(detection:top() + detection:h() / 2 + 2)
+	local bg_rect = {
+		84,
+		0,
+		44,
+		32
+	}
+	local tabs_texture = "guis/textures/pd2/hud_tabs"
+	local bg_color = Color.white / 3
+	name:set_lefttop(detection:right() + PADD, detection:top())
+	local bg = panel:bitmap({
+		name = "name_bg",
+		texture = tabs_texture,
+		texture_rect = bg_rect,
+		visible = true,
+		layer = -1,
+		color = bg_color,
+		y = name:y() - PADD
+	})
+	bg:set_lefttop(detection:right() + PADD, detection:top())
+	local deploy_panel = panel:panel({name = "deploy"})
+	local throw_panel = panel:panel({name = "throw"})
+	local perk_panel = panel:panel({name = "perk"})
+	self:_create_equipment(deploy_panel, "frag_grenade")
+	self:_create_equipment(throw_panel, "frag_grenade")
+	self:_create_equipment(perk_panel, "frag_grenade")
+	deploy_panel:set_lefttop(detection:right() + PADD, detection:center_y())
+	throw_panel:set_lefttop(deploy_panel:right() + PADD, deploy_panel:top())
+	perk_panel:set_lefttop(throw_panel:right() + PADD, deploy_panel:top())
+	self._wait_panel = panel
+end
+local set_icon_data = function(image, icon, rect)
+	if rect then
+		image:set_image(icon, unpack(rect))
+		return
+	end
+	local text, rect = tweak_data.hud_icons:get_icon_data(icon or "fallback")
+	image:set_image(text, unpack(rect))
+end
+function HUDTeammate:set_waiting(waiting, peer)
+	local my_peer = managers.network:session():peer(self._peer_id)
+	peer = peer or my_peer
+	if self._wait_panel then
+		if waiting then
+			self._panel:set_visible(false)
+			self._wait_panel:set_lefttop(self._panel:lefttop())
+			local name = self._wait_panel:child("name")
+			local name_bg = self._wait_panel:child("name_bg")
+			local detection = self._wait_panel:child("detection")
+			local detection_value = self._wait_panel:child("detection_value")
+			local current, reached = managers.blackmarket:get_suspicion_offset_of_peer(peer, tweak_data.player.SUSPICION_OFFSET_LERP or 0.75)
+			detection:child("detection_left"):set_color(Color(0.5 + current * 0.5, 1, 1))
+			detection:child("detection_right"):set_color(Color(0.5 + current * 0.5, 1, 1))
+			detection_value:set_text(math.round(current * 100))
+			if reached then
+				detection_value:set_color(Color(255, 255, 42, 0) / 255)
+			else
+				detection_value:set_color(tweak_data.screen_colors.text)
+			end
+			local outfit = peer:profile().outfit
+			outfit = outfit or managers.blackmarket:unpack_outfit_from_string(peer:profile().outfit_string) or {}
+			name:set_text(" " .. peer:name() .. "  " .. (0 < peer:rank() and managers.experience:rank_string(peer:rank()) .. "-" or "") .. (peer:level() or "") .. "")
+			managers.hud:make_fine_text(name)
+			name_bg:set_w(name:w() + 4)
+			name_bg:set_h(name:h())
+			local has_deployable = outfit.deployable and outfit.deployable ~= "nil"
+			self._wait_panel:child("deploy"):child("amount"):set_text(has_deployable and outfit.deployable_amount or "")
+			self._wait_panel:child("throw"):child("amount"):set_text(managers.player:get_max_grenades(peer:grenade_id()))
+			self._wait_panel:child("perk"):child("amount"):set_text(outfit.skills.specializations[2])
+			local deploy_image = self._wait_panel:child("deploy"):child("icon")
+			if has_deployable then
+				set_icon_data(deploy_image, tweak_data.equipments[outfit.deployable].icon)
+				deploy_image:set_position(0, 0)
+			else
+				set_icon_data(deploy_image, "none_icon")
+				deploy_image:set_world_center(self._wait_panel:child("deploy"):world_center())
+			end
+			set_icon_data(self._wait_panel:child("throw"):child("icon"), outfit.grenade and tweak_data.blackmarket.projectiles[outfit.grenade].icon)
+			set_icon_data(self._wait_panel:child("perk"):child("icon"), tweak_data.skilltree:get_specialization_icon_data(tonumber(outfit.skills.specializations[1])))
+		elseif self._ai or my_peer and my_peer:unit() then
+			self._panel:set_visible(true)
+		end
+		self._wait_panel:set_visible(waiting)
+	end
+end
+
+function HUDTeammate:is_waiting()
+	return self._wait_panel:visible()
+end
+
 
 function HUDTeammate:set_name(teammate_name)
 	local teammate_panel = self._panel
@@ -766,6 +1001,14 @@ function HUDTeammate:set_carry_info(carry_id, value)
 	local bg = carry_panel:child("bg")
 	bg:set_w(carry_panel:child("bag"):w() + w + 4)
 end
+
+function HUDTeammate:set_ability_cooldown(data)
+    if not PlayerBase.USE_GRENADES then
+     	return
+    end
+	data.cooldown = data.cooldown and math.ceil(data.cooldown) or 0
+	self:set_grenades_amount({amount = data.cooldown}, true)
+     end
 
 function HUDTeammate:_set_amount_string(text, amount)
 	text:set_text( tostring( amount ) )
@@ -854,11 +1097,11 @@ function HUDTeammate:set_grenades(data)
         end
 end
 
-function HUDTeammate:set_grenades_amount(data)
+function HUDTeammate:set_grenades_amount(data, ignore)
 	if not data then
 		return
 	end
-	if data.amount < 1 then
+	if data.amount < 1 and not ignore then
 		self:remove_special_equipment("grenades_panel")
 	else
 		self:set_special_equipment_amount("grenades_panel", data.amount)

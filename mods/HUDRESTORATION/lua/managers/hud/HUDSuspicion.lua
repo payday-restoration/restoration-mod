@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/MainHud") then
+if restoration.Options:GetValue("HUD/Stealth") then
 function HUDSuspicion:init(hud, sound_source)
 	self._hud_panel = hud.panel
 	self._sound_source = sound_source

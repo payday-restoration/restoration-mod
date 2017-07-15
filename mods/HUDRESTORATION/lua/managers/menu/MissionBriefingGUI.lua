@@ -37,6 +37,13 @@ function MissionBriefingTabItem:init(panel, text, i)
 	self:deselect()
 end
 
+function MissionBriefingTabItem:update_tab_position()
+	local prev_item_title_text = self._main_panel:child("tab_text_" .. tostring(self._index - 1))
+	local offset = prev_item_title_text and prev_item_title_text:right() or 0
+	self._tab_text:set_x(offset + 5)
+	--self._tab_select_rect:set_shape(self._tab_text:shape())
+end
+
 function MissionBriefingTabItem:reduce_to_small_font()
 	--self._tab_text:set_font(tweak_data.menu.pd2_small_font_id)
 	self._tab_text:set_font_size(24)
@@ -263,6 +270,12 @@ function MissionBriefingGui:init(saferect_ws, fullrect_ws, node)
 	self._assets_item = AssetsItem:new(self._panel, managers.preplanning:has_current_level_preplanning() and managers.localization:to_upper_text("menu_preplanning") or utf8.to_upper(managers.localization:text("menu_assets")), index, {}, nil, asset_data)
 	table.insert(self._items, self._assets_item)
 	index = index + 1
+	if managers.crime_spree:is_active() then
+		local gage_assets_data = {}
+		self._gage_assets_item = GageAssetsItem:new(self._panel, managers.localization:to_upper_text("menu_cs_gage_assets"), index)
+		table.insert(self._items, self._gage_assets_item)
+		index = index + 1
+	end
 	self._new_loadout_item = NewLoadoutTab:new(self._panel, managers.localization:to_upper_text("menu_loadout"), index, loadout_data)
 	table.insert(self._items, self._new_loadout_item)
 	index = index + 1
@@ -494,11 +507,12 @@ function MissionBriefingGui:reload_loadout()
 	end
 	loadout_data.changing_loadout = nil
 	loadout_data.current_slot = nil
+	local index = self._new_loadout_item._index
 	self._new_loadout_item:destroy()
 	self._new_loadout_item = nil
-	self._items[3] = nil
-	self._new_loadout_item = NewLoadoutTab:new(self._panel, managers.localization:to_upper_text("menu_loadout"), 3, loadout_data)
-	self._items[3] = self._new_loadout_item
+	self._items[index] = nil
+	self._new_loadout_item = NewLoadoutTab:new(self._panel, managers.localization:to_upper_text("menu_loadout"), index, loadout_data)
+	self._items[index] = self._new_loadout_item
 	self:chk_reduce_to_small_font()
 	self:set_tab(self._node:parameters().menu_component_data.selected_tab, true)
 	self._items[self._selected_item]:select(true)

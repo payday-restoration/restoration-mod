@@ -254,10 +254,19 @@ function StageEndScreenGui:init(saferect_ws, fullrect_ws, statistics_data)
 	})
 	self._panel:set_right(self._safe_workspace:panel():w())
 	self._panel:set_bottom(self._safe_workspace:panel():h())
+	if managers.crime_spree:is_active() then
+		self._panel:set_bottom(self._safe_workspace:panel():h() - (CrimeSpreeMissionsMenuComponent.get_height() + 10))
+	else
+		self._panel:set_bottom(self._safe_workspace:panel():h())
+	end
 	local continue_button = managers.menu:is_pc_controller() and "[ENTER]" or nil
+	local continue_text = utf8.to_upper(managers.localization:text("menu_es_calculating_experience", {CONTINUE = continue_button}))
+	if managers.crime_spree:is_active() then
+		continue_text = ""
+	end
 	self._continue_button = self._panel:text({
 		name = "ready_button",
-		text = utf8.to_upper(managers.localization:text("menu_es_calculating_experience", {CONTINUE = continue_button})),
+		text = continue_text,
 		h = 32,
 		align = "right",
 		vertical = "center",
@@ -278,7 +287,7 @@ function StageEndScreenGui:init(saferect_ws, fullrect_ws, statistics_data)
 	self._tab_panel = self._scroll_panel:panel({name = "tab_panel"})
 	local big_text = self._fullscreen_panel:text({
 		name = "continue_big_text",
-		text = utf8.to_upper(managers.localization:text("menu_es_calculating_experience", {CONTINUE = continue_button})),
+		text = continue_text,
 		h = 90,
 		align = "right",
 		vertical = "bottom",
@@ -297,11 +306,19 @@ function StageEndScreenGui:init(saferect_ws, fullrect_ws, statistics_data)
 	self._items = {}
 	local item
 	local tab_height = 0
-	item = StatsTabItem:new(self._panel, self._tab_panel, utf8.to_upper(managers.localization:text("menu_es_summary")), 1)
-	item:set_stats({
-		"stage_cash_summary"
-	})
-	table.insert(self._items, item)
+	local show_summary = true
+	if managers.crime_spree:is_active() then
+		show_summary = false
+		item = CrimeSpreeResultTabItem:new(self._panel, self._tab_panel, utf8.to_upper(managers.localization:text("menu_es_crime_spree_summary")), 1)
+		table.insert(self._items, item)
+	end
+	if show_summary then
+		item = StatsTabItem:new(self._panel, self._tab_panel, utf8.to_upper(managers.localization:text("menu_es_summary")), 1)
+		item:set_stats({
+			"stage_cash_summary"
+		})
+		table.insert(self._items, item)
+	end
 	item = StatsTabItem:new(self._panel, self._tab_panel, utf8.to_upper( managers.localization:text( "menu_es_boost" ) ), 2)
 	item:set_stats({
 		"most_downs",

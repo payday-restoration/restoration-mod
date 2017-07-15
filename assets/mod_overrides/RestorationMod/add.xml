@@ -34,10 +34,15 @@
 	<texture path="guis/textures/restoration/mission_briefing/shatter"/>
 	<texture path="guis/textures/restoration/mission_briefing/shatter_pattern"/>
 	<texture path="guis/textures/restoration/mission_briefing/calendar_payday"/>
+	<texture path="guis/textures/restoration/mission_briefing/the_continental"/>
+	<texture path="guis/textures/restoration/mission_briefing/the_andre"/>
+	<texture path="guis/textures/restoration/mission_briefing/event"/>
+	<texture path="guis/textures/restoration/mission_briefing/classic"/>
+	<texture path="guis/textures/restoration/crimenet/crimenet_portrait_gen"/>
 	<movie path="movies/codex/shatter1" force="true"/>
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
-	
+
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
@@ -129,11 +134,11 @@
 
 	<!--NPC Peacemaker-->	
 	<object path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
-    	<cooked_physics path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+    <cooked_physics path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
 	<material_config path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
 	<material_config path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker_contour" force="false"/>
 	<model path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
-	<sequence_manager path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/ load="true">
+	<sequence_manager path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<unit path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
 
@@ -316,5 +321,5 @@
 
 	<!--Medic w/ Mp5-->
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" force="false" load="true"/>
-	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" force="false" load="true"/>		
+	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" force="false" load="true"/>
 </table>

@@ -7,6 +7,5 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 
 		self.ukrainian_job.env_params = { color_grading = "color_nice" }
 		
-		
 	end
 end

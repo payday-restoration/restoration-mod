@@ -2,7 +2,8 @@ local maps = {
     greenharvest_stage1 = true,
     escape_overpass_ghrv = true,
     escape_garage_ghrv = true,
-	highrise = true
+	highrise = true,
+	nomercy = true
 }
 
 if restoration.Options:GetValue("HUD/Loadouts") then
@@ -176,11 +177,18 @@ function HUDMissionBriefing:init(hud, workspace)
 	self._current_job_data = managers.job:current_job_data()
 	self._current_job_chain = managers.job:current_job_chain_data()
 	self._job_class = self._current_job_data and self._current_job_data.jc or 0
+	local show_contact_gui = true
+	if managers.crime_spree:is_active() then
+		self._backdrop:set_pattern("guis/textures/pd2/mission_briefing/bain/bd_pattern", 0.1, "add")
+		show_contact_gui = false
+	end
 	self._current_contact = managers.job:current_contact_id()
-	local image, pattern = self:set_contact_info(self._current_contact, interupt_stage)
-	local contact_image = self._background_layer_two:bitmap( { name="contact_image", texture=image, w=720, h=720 } )
-	if pattern then
-		self._backdrop:set_pattern(pattern, 0.1, "add")
+	if show_contact_gui then
+		local image, pattern = self:set_contact_info(self._current_contact, interupt_stage)
+		local contact_image = self._background_layer_two:bitmap( { name="contact_image", texture=image, w=720, h=720 } )
+		if pattern then
+			self._backdrop:set_pattern(pattern, 0.1, "add")
+		end
 	end
 	local padding_y = 70
 	self._paygrade_panel = self._background_layer_one:panel({
@@ -387,20 +395,94 @@ function HUDMissionBriefing:init(hud, workspace)
 	local _, _, w, h = job_overview_text:text_rect()
 	job_overview_text:set_size(w, h)
 	job_overview_text:set_leftbottom(self._job_schedule_panel:left(), self._job_schedule_panel:top())
+
+	local text = utf8.to_upper(managers.localization:text(self._current_job_data.name_id))
+	local text_align, text_len
+	if managers.crime_spree:is_active() then
+		local level_id = Global.game_settings.level_id
+		local name_id = level_id and tweak_data.levels[level_id] and tweak_data.levels[level_id].name_id
+		local mission = managers.crime_spree:get_mission()
+		text = managers.localization:to_upper_text(name_id) .. ": "
+		text_len = utf8.len(text)
+		local mission_text = mission and mission.add or 0
+		text = text .. "+" .. mission_text
+		text_align = "right"
+	end
+
 	local job_text = self._foreground_layer_one:text({
 		name = "job_text",
-		text = utf8.to_upper(managers.localization:text(self._current_job_data.name_id)),
-		align = "left",
-		vertical = "center",
+		text = text,
+		align = text_align or "left",
+		vertical = "top",
+		font_size = title_font_size,
+		font = title_font,
+		color = tweak_data.screen_colors.text
+	})
+	if managers.crime_spree:is_active() then
+		job_text:set_range_color(text_len, utf8.len(text), tweak_data.screen_colors.crime_spree_risk)
+	end
+	if not text_align then
+		local big_text = self._background_layer_three:text({
+			name = "job_text",
+			text = text,
+			align = "left",
+			vertical = "top",
+			font_size = bg_font_size,
+			font = bg_font,
+			color = tweak_data.screen_color_blue,
+			alpha = 0.4
+		})
+		big_text:set_world_center_y(self._foreground_layer_one:child("job_text"):world_center_y())
+		big_text:set_world_x(self._foreground_layer_one:child("job_text"):world_x())
+		big_text:move(-13, 9)
+		self._backdrop:animate_bg_text(big_text)
+	end
+	--[[local text = utf8.to_upper(managers.localization:text(self._current_job_data.name_id))
+	local text_align, text_len
+	if managers.crime_spree:is_active() then
+		local level_id = Global.game_settings.level_id
+		local name_id = level_id and tweak_data.levels[level_id] and tweak_data.levels[level_id].name_id
+		local mission = managers.crime_spree:get_mission()
+		text = managers.localization:to_upper_text(name_id) .. ": "
+		text_len = utf8.len(text)
+		local mission_text = mission and mission.add or 0
+		text = text .. "+" .. mission_text
+		text_align = "right"
+	end
+
+	local job_text = self._foreground_layer_one:text({
+		name = "job_text",
+		text = text,
+		align = text_align or "left",
+		vertical = "top",
 		font_size = title_font_size,
 		font = title_font,
 		color = tweak_data.screen_colors.text
 	})
 	local _, _, w, h = job_text:text_rect()
 	job_text:set_size(w, h)
+	if managers.crime_spree:is_active() then
+		job_text:set_range_color(text_len, utf8.len(text), tweak_data.screen_colors.crime_spree_risk)
+	end
+	if not text_align then
+		local big_text = self._background_layer_three:text({
+			name = "job_text",
+			text = text,
+			align = text_align or "left",
+			vertical = "top",
+			font_size = bg_font_size,
+			font = bg_font,
+			color = tweak_data.screen_color_blue,
+			alpha = 0.4
+		})
+		big_text:set_world_center_y(self._foreground_layer_one:child("job_text"):world_center_y())
+		big_text:set_world_x(self._foreground_layer_one:child("job_text"):world_x())
+		big_text:move(-13, 9)
+		self._backdrop:animate_bg_text(big_text)
+	end
 	local big_text = self._background_layer_three:text({
 		name = "job_text",
-		text = utf8.to_upper(managers.localization:text(self._current_job_data.name_id)),
+		text = text,
 		align = "left",
 		vertical = "top",
 		font_size = bg_font_size,
@@ -413,7 +495,14 @@ function HUDMissionBriefing:init(hud, workspace)
 	big_text:set_world_center_y(self._foreground_layer_one:child("job_text"):world_center_y())
 	big_text:set_world_x(self._foreground_layer_one:child("job_text"):world_x())
 	big_text:move(-13, 9)
-	self._backdrop:animate_bg_text(big_text)
+	self._backdrop:animate_bg_text(big_text)]]
+	if managers.crime_spree:is_active() then
+		self._paygrade_panel:set_visible(false)
+		self._job_schedule_panel:set_visible(false)
+		pg_text:set_visible(false)
+		job_overview_text:set_visible(false)
+		df_text:set_visible(false)
+	end
 end
 
 function HUDMissionBriefing:set_player_slot(nr, params)
@@ -553,7 +642,7 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
     local set_image = {
         bain = "guis/textures/restoration/mission_briefing/bain",
         hoxton = "guis/textures/restoration/mission_briefing/hoxton",
-        classic = "guis/textures/pd2/mission_briefing/dallas/dallas",
+        classic = "guis/textures/restoration/mission_briefing/classic",
         hector = "guis/textures/pd2/mission_briefing/hector/hector",
         interupt = "guis/textures/pd2/mission_briefing/interupt/contact",
         jimmy = "guis/textures/restoration/mission_briefing/jimmy",
@@ -562,9 +651,11 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
         the_dentist = "guis/textures/restoration/mission_briefing/dentist",
         the_elephant = "guis/textures/pd2/mission_briefing/the_elephant/the_elephant",
         vlad = "guis/textures/pd2/mission_briefing/vlad/contact",
+		the_continental = "guis/textures/restoration/mission_briefing/the_continental",
+		events = "guis/textures/restoration/mission_briefing/event",
 		shatter = "guis/textures/restoration/mission_briefing/shatter"
     }
-	local image = "guis/textures/pd2/mission_briefing/dallas/dallas"
+	local image = "guis/textures/restoration/mission_briefing/classic"
 	if set_image[contact] then
             image = set_image[contact]
     end
@@ -576,6 +667,7 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
         locke = "guis/dlcs/berry/textures/pd2/mission_briefing/bd_pattern",
         the_butcher = "guis/dlcs/the_bomb/textures/pd2/mission_briefing/bd_pattern",
         the_dentist = "guis/dlcs/big_bank/textures/pd2/mission_briefing/bd_pattern",
+		the_continental = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
 		shatter = "guis/textures/restoration/mission_briefing/shatter_pattern",
     }
 	local pattern = "guis/textures/pd2/mission_briefing/".. contact .."/bd_pattern"

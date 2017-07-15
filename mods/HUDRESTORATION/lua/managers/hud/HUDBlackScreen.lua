@@ -103,7 +103,41 @@ function HUDBlackScreen:set_loading_text_status(status)
 	end
 end
 
-function HUDBlackScreen:set_job_data()
+function HUDBlackScreen:_set_job_data_crime_spree()
+	local job_panel = self._blackscreen_panel:panel({
+		visible = true,
+		name = "job_panel",
+		y = 0,
+		valign = "grow",
+		halign = "grow",
+		layer = 1
+	})
+	local job_text = job_panel:text({
+		text = managers.localization:to_upper_text("cn_crime_spree"),
+			font = tweak_data.menu.eroded_font,
+			font_size = tweak_data.menu.eroded_font_size,
+			align = "center",
+			vertical = "bottom",
+		color = tweak_data.screen_colors.crime_spree_risk
+	})
+	job_text:set_bottom(job_panel:h() * 0.5)
+	job_text:set_center_x(job_panel:center_x())
+	local risk_text = job_panel:text({
+		text = managers.localization:to_upper_text("menu_cs_level", {
+			level = managers.experience:cash_string(managers.crime_spree:server_spree_level(), "")
+		}),
+		font = tweak_data.menu.pd2_large_font,
+		font_size = tweak_data.menu.pd2_large_font_size,
+		align = "center",
+		vertical = "top",
+		color = tweak_data.screen_colors.crime_spree_risk
+	})
+	risk_text:set_top(job_panel:h() * 0.5)
+	risk_text:set_center_x(job_panel:center_x())
+end
+
+
+function HUDBlackScreen:_set_job_data()
 	if not managers.job:has_active_job() then
 		return
 	end

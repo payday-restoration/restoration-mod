@@ -13,6 +13,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 	end
 
+function RaycastWeaponBase:_weapon_tweak_data_id()
+	local override_gadget = self:gadget_overrides_weapon_functions()
+	if override_gadget then
+		return override_gadget.name_id
+	end
+	return self._name_id
+end
+
+
+function RaycastWeaponBase:set_laser_enabled(state)
+	if state then
+		if alive(self._laser_unit) then
+			return
+		end
+		local spawn_rot = self._obj_fire:rotation()
+		local spawn_pos = self._obj_fire:position()
+		spawn_pos = spawn_pos - spawn_rot:y() * 8 + spawn_rot:z() * 2 - spawn_rot:x() * 1.5
+		self._laser_unit = World:spawn_unit(Idstring("units/payday2/weapons/wpn_npc_upg_fl_ass_smg_sho_peqbox/wpn_npc_upg_fl_ass_smg_sho_peqbox"), spawn_pos, spawn_rot)
+		self._unit:link(self._obj_fire:name(), self._laser_unit)
+		self._laser_unit:base():set_npc()
+		self._laser_unit:base():set_on()
+		self._laser_unit:base():set_color_by_theme("cop_sniper")
+		self._laser_unit:base():set_max_distace(10000)
+	elseif alive(self._laser_unit) then
+		self._laser_unit:set_slot(0)
+		self._laser_unit = nil
+	end
+end
+
 
 local mvec_to = Vector3()
 local mvec_spread_direction = Vector3()
@@ -54,7 +83,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local autoaim, suppression_enemies = self:check_autoaim(from_pos, direction)
 	if self._autoaim then
 		local weight = 0.1
-		if col_ray and col_ray.unit:in_slot(managers.slot:get_mask("enemies")) then
+		if col_ray and (col_ray.unit:in_slot(managers.slot:get_mask("enemies")) or col_ray.unit:in_slot(managers.slot:get_mask("players"))) then
 			self._autohit_current = (self._autohit_current + weight) / (1 + weight)
 			damage = self:get_damage_falloff(damage, col_ray, user_unit)
 			hit_unit = self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage)
@@ -224,6 +253,8 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 end
 
 end
+
+
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 

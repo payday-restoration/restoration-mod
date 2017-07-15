@@ -55,10 +55,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.melee_weapon = "baton"
 	self.security.no_arrest_chance_inc = 0.25
 	self.security.steal_loot = nil
-
-	self.security.use_factory = true
-	self.security.factory_weapon_id = {"wpn_fps_pis_g17_npc", "wpn_fps_pis_g22c_npc", "wpn_fps_pis_g26_npc"}
-	
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
 	self.security_undominatable.surrender = nil
@@ -99,8 +95,6 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.melee_weapon = "baton"
 	self.gensec.steal_loot = nil
 	table.insert(self._enemy_list, "gensec")
-	self.gensec.use_factory = true
-	self.gensec.factory_weapon_id = {"wpn_fps_pis_p226_npc"}
 end
 
 function CharacterTweakData:_init_cop(presets)
@@ -134,9 +128,6 @@ function CharacterTweakData:_init_cop(presets)
 	else
 		self.cop.steal_loot = true
 	end
-	self.cop.use_factory = true
-	self.cop.factory_weapon_id = {"wpn_fps_pis_p226_npc", "wpn_fps_pis_rage_npc", "wpn_fps_pis_1911_npc"}
-
  	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
 	self.cop_scared.surrender = presets.surrender.always
@@ -146,7 +137,6 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop_female.speech_prefix_p1 = "fl"
 	self.cop_female.speech_prefix_p2 = self._speech_prefix_p2
 	self.cop_female.speech_prefix_count = 1
-	self.cop_female.factory_weapon_id = {"wpn_fps_x_1911_npc"}
  	table.insert(self._enemy_list, "cop_female")
 end
 
@@ -177,11 +167,8 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi.chatter = presets.enemy_chatter.cop
     	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
-	self.fbi.use_factory = true
-	self.fbi.factory_weapon_id = {"wpn_fps_pis_p226_npc", "wpn_fps_pis_rage_npc", "wpn_fps_pis_1911_npc"}	
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_vet = deep_clone(self.fbi)
-	self.fbi_vet.factory_weapon_id = {"wpn_fps_x_1911_npc"}
 	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
@@ -273,10 +260,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.priority_shout = "f47"
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
-
-	self.medic.use_factory = true
-	self.medic.factory_weapon_id = {"wpn_fps_smg_p90_npc"}
-
 	table.insert(self._enemy_list, "medic")
 end
 
@@ -311,8 +294,6 @@ function CharacterTweakData:_init_swat(presets)
 	else
 		self.swat.steal_loot = true
 	end
-	self.swat.use_factory = true
-	self.swat.factory_weapon_id = {"wpn_fps_smg_mp5_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_spas12_npc"}
 	table.insert(self._enemy_list, "swat")
 end
 
@@ -345,8 +326,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat.steal_loot = true
 	end
-	self.heavy_swat.use_factory = true
-	self.heavy_swat.factory_weapon_id = {"wpn_fps_smg_mp5_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_spas12_npc"}
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
 	self.heavy_swat_sniper.tags = {"sniper"}
@@ -360,7 +339,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
-	self.heavy_swat_sniper.use_factory = false
 	if job == "kosugi" or job == "dark" then
 		self.heavy_swat_sniper.surrender = nil
 		self.heavy_swat_sniper.no_arrest_chance_inc = 0.25
@@ -370,7 +348,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.no_arrest_chance_inc = nil
 		self.heavy_swat_sniper.detection_increase = nil
 	end
-	self.heavy_swat_sniper.use_factory = false
 	self.heavy_swat_sniper.no_arrest = true
 	self.heavy_swat_sniper.ecm_vulnerability = 1
 	self.heavy_swat_sniper.ecm_hurts = {
@@ -427,13 +404,9 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	else
 		self.fbi_swat.steal_loot = true
 	end
-	self.fbi_swat.use_factory = true
-	self.fbi_swat.factory_weapon_id = {"wpn_fps_smg_mp5_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_spas12_npc"}
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
-	self.fbi_swat_vet.use_factory = true
-	self.fbi_swat_vet.factory_weapon_id = {"wpn_fps_x_deagle_npc"}
 	table.insert(self._enemy_list, "fbi_swat_vet")
 end
 
@@ -466,8 +439,6 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	else
 		self.fbi_heavy_swat.steal_loot = true
 	end
-	self.fbi_heavy_swat.use_factory = true
-	self.fbi_heavy_swat.factory_weapon_id = {"wpn_fps_smg_schakal_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_striker_npc"}
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -514,8 +485,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat.steal_loot = true
 	end
-	self.city_swat.use_factory = true
-	self.city_swat.factory_weapon_id = {"wpn_fps_smg_schakal_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_striker_npc"}
 	self.city_swat.has_alarm_pager = true
 	self.city_swat.calls_in = true
 	self.city_swat.use_animation_on_fire_damage = false
@@ -541,8 +510,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
 	self.city_swat_titan.spawn_sound_event = "l2d_prm"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
-	self.city_swat_titan.use_factory = true
-	self.city_swat_titan.factory_weapon_id = {"wpn_fps_sho_ksg_npc"}
  	table.insert(self._enemy_list, "city_swat_titan")
 end
 
@@ -633,22 +600,6 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.melee_weapon = "fists"
 	self.gangster.steal_loot = nil
 	self.gangster.calls_in = true
-	self.gangster.use_factory = true
-	self.gangster.factory_weapon_id = {"wpn_fps_smg_cobray_npc",
-										"wpn_fps_smg_coal_npc",
-										"wpn_fps_smg_tec9_npc",
-										"wpn_fps_pis_c96_npc",
-										"wpn_fps_pis_ppk_npc",
-										"wpn_fps_pis_chinchilla_npc",
-										"wpn_fps_sho_boot_npc",
-										"wpn_fps_shot_huntsman_npc",
-										"wpn_fps_shot_b682_npc",
-										"wpn_fps_snp_siltstone_npc",
-										"wpn_fps_lmg_rpk_npc",
-										"wpn_fps_ass_74_npc",
-										"wpn_fps_ass_flint_npc",
-										"wpn_fps_ass_akm_npc",
-										"wpn_fps_ass_akm_gold_npc"}
  	table.insert(self._enemy_list, "gangster")
 end
 
@@ -737,8 +688,6 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.immune_to_knock_down = true
 	self.mobster_boss.immune_to_concussion = false
 	self.mobster_boss.must_headshot = true
-	self.mobster_boss.use_factory = true
-	self.mobster_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"} -- opulence
  	table.insert(self._enemy_list, "mobster_boss")
 end
 
@@ -795,8 +744,6 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.silent_priority_shout = nil
 	self.hector_boss.custom_shout = true
 	self.hector_boss.priority_shout_max_dis = 3000
-	self.hector_boss.use_factory = true
-	self.hector_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"}
  	table.insert(self._enemy_list, "hector_boss")
 end
 
@@ -857,8 +804,6 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.immune_to_knock_down = true
 	self.chavez_boss.immune_to_concussion = false
 	self.chavez_boss.must_headshot = true
-	self.chavez_boss.use_factory = true
-	self.chavez_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"}
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -955,8 +900,6 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.custom_shout = true
 	self.drug_lord_boss.priority_shout_max_dis = 3000
 	self.drug_lord_boss.must_headshot = true
-	self.drug_lord_boss.use_factory = true
-	self.drug_lord_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"}
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 
@@ -1377,8 +1320,6 @@ function CharacterTweakData:_init_taser(presets)
 			special_comment = "x01"
 		}
 	}
-	self.taser.use_factory = true
-	self.taser.factory_weapon_id = {"wpn_fps_ass_m4_npc"}
  	table.insert(self._enemy_list, "taser")
 end
 
@@ -1433,7 +1374,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.announce_incomming = "incomming_gren"
 	self.boom.spawn_sound_event = "clk_c01x_plu"
 	self.boom.die_sound_event = "rmdc_x02a_any_3p"
-	self.boom.factory_weapon_id = {"wpn_fps_ass_contraband"}
 	if job == "chill_combat" then
 		self.boom.steal_loot = nil
 	else
@@ -5997,6 +5937,430 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.sniper = {
+		is_rifle = {}
+	}
+	presets.weapon.sniper.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.sniper.is_rifle.focus_delay = 7
+	presets.weapon.sniper.is_rifle.focus_dis = 200
+	presets.weapon.sniper.is_rifle.spread = 30
+	presets.weapon.sniper.is_rifle.miss_dis = 250
+	presets.weapon.sniper.is_rifle.RELOAD_SPEED = 1
+	presets.weapon.sniper.is_rifle.melee_speed = presets.weapon.normal.is_rifle.melee_speed
+	presets.weapon.sniper.is_rifle.melee_dmg = 4
+	presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
+	presets.weapon.sniper.is_rifle.range = {
+		close = 15000,
+		optimal = 15000,
+		far = 15000
+	}
+	presets.weapon.sniper.is_rifle.use_laser = true
+	presets.weapon.sniper.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.7, 0.95},
+			dmg_mul = 1,
+			recoil = {3, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.7, 0.95},
+			dmg_mul = 1,
+			recoil = {3, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.95},
+			dmg_mul = 1,
+			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.85},
+			dmg_mul = 1,
+			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.75},
+			dmg_mul = 1,
+			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}
+	presets.weapon.sniper_good = deep_clone(presets.weapon.sniper)
+	presets.weapon.sniper_good.is_rifle.melee_dmg = 8
+	presets.weapon.sniper_good.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.7, 0.95},
+			dmg_mul = 2,
+			recoil = {3, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.7, 0.95},
+			dmg_mul = 2,
+			recoil = {3, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.95},
+			dmg_mul = 2,
+			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.85},
+			dmg_mul = 1,
+			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.75},
+			dmg_mul = 1,
+			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}
+	presets.weapon.sniper_expert = deep_clone(presets.weapon.sniper)
+	presets.weapon.sniper_expert.is_rifle.melee_dmg = 10
+	presets.weapon.sniper_expert.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.7, 1},
+			dmg_mul = 2.5,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.7, 1},
+			dmg_mul = 2.5,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.6, 0.95},
+			dmg_mul = 2.5,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.6, 0.85},
+			dmg_mul = 1,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.6, 0.75},
+			dmg_mul = 1,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}
+	presets.weapon.sniper_easy_wish = deep_clone(presets.weapon.sniper)
+	presets.weapon.sniper_easy_wish.is_rifle.melee_dmg = 10
+	presets.weapon.sniper_easy_wish.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.7, 1},
+			dmg_mul = 2.875,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.7, 1},
+			dmg_mul = 2.625,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.7, 1},
+			dmg_mul = 2.625,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.6, 0.95},
+			dmg_mul = 2.625,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.6, 0.85},
+			dmg_mul = 1.05,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}
+	presets.weapon.sniper_deathwish = deep_clone(presets.weapon.sniper)
+	presets.weapon.sniper_deathwish.is_rifle.melee_dmg = 12
+	presets.weapon.sniper_deathwish.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.7, 1},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.7, 1},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.6, 0.95},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.6, 0.85},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.6, 0.75},
+			dmg_mul = 1.25,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}
+	presets.weapon.sniper_sm_wish = deep_clone(presets.weapon.sniper)
+	presets.weapon.sniper_sm_wish.is_rifle.melee_dmg = 12
+	presets.weapon.sniper_sm_wish.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.7, 1},
+			dmg_mul = 3.4375,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.7, 1},
+			dmg_mul = 3.4375,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.7, 1},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.6, 0.95},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.6, 0.85},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.6, 0.75},
+			dmg_mul = 3.125,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 10000,
+			acc = {0.2, 0.7},
+			dmg_mul = 1.25,
+			recoil = {3, 5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}
 	presets.weapon.deathwish = {
 		is_pistol = {},
 		is_revolver = {},
@@ -9613,7 +9977,6 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-
 	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.is_pistol
 	presets.weapon.gang_member.is_shotgun_mag = deep_clone(presets.weapon.normal.is_shotgun_mag)
 	presets.weapon.gang_member.is_shotgun_mag.aim_delay = {0, 0}
@@ -9627,456 +9990,6 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_mag.RELOAD_SPEED = 1
 	presets.weapon.gang_member.is_shotgun_mag.autofire_rounds = {4, 9}
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
-	log("SC: normal presets")
-	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)
-	presets.weapon.normal.mac11 = deep_clone(presets.weapon.normal.is_pistol)
-	presets.weapon.normal.rifle = deep_clone(presets.weapon.normal.is_rifle)
-	presets.weapon.normal.is_sniper = deep_clone(presets.weapon.normal.rifle)
-	log("SC: good presets")
-	presets.weapon.good.akimbo_pistol = deep_clone(presets.weapon.good.is_pistol)
-	presets.weapon.good.mac11 = deep_clone(presets.weapon.good.is_pistol)
-	presets.weapon.good.rifle = deep_clone(presets.weapon.good.is_rifle)
-	presets.weapon.good.is_sniper = deep_clone(presets.weapon.good.rifle)
-	log("SC: expert presets")
-	presets.weapon.expert.akimbo_pistol = deep_clone(presets.weapon.expert.is_pistol)
-	presets.weapon.expert.mac11 = deep_clone(presets.weapon.expert.is_pistol)
-	presets.weapon.expert.rifle = deep_clone(presets.weapon.expert.is_rifle)
-	presets.weapon.expert.is_sniper = deep_clone(presets.weapon.expert.rifle)
-
-	log("SC: deathwish presets")
-	presets.weapon.deathwish.akimbo_pistol = deep_clone(presets.weapon.deathwish.is_pistol)
-	presets.weapon.deathwish.mac11 = deep_clone(presets.weapon.deathwish.is_pistol)
-	presets.weapon.deathwish.rifle = deep_clone(presets.weapon.deathwish.is_rifle)
-	presets.weapon.deathwish.is_sniper = deep_clone(presets.weapon.deathwish.rifle)
-	log("SC: easy_wish presets")
-	presets.weapon.easy_wish.akimbo_pistol = deep_clone(presets.weapon.easy_wish.is_pistol)
-	presets.weapon.easy_wish.mac11 = deep_clone(presets.weapon.easy_wish.is_pistol)
-	presets.weapon.easy_wish.rifle = deep_clone(presets.weapon.easy_wish.is_rifle)
-	presets.weapon.easy_wish.is_sniper = deep_clone(presets.weapon.easy_wish.rifle)
-
-	presets.weapon.sniper = deep_clone(presets.weapon.normal)
-	presets.weapon.sniper.is_rifle.aim_delay = {0.1, 0.1}
-	presets.weapon.sniper.is_rifle.focus_delay = 7
-	presets.weapon.sniper.is_rifle.focus_dis = 200
-	presets.weapon.sniper.is_rifle.spread = 30
-	presets.weapon.sniper.is_rifle.miss_dis = 250
-	presets.weapon.sniper.is_rifle.RELOAD_SPEED = 1
-	presets.weapon.sniper.is_rifle.melee_speed = presets.weapon.normal.is_rifle.melee_speed
-	presets.weapon.sniper.is_rifle.melee_dmg = 4
-	presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
-	presets.weapon.sniper.is_rifle.range = {
-		close = 15000,
-		optimal = 15000,
-		far = 15000
-	}
-	presets.weapon.sniper.is_rifle.use_laser = true
-	presets.weapon.sniper.is_rifle.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 1,
-			recoil = {3, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 0.95},
-			dmg_mul = 1,
-			recoil = {3, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.5, 0.95},
-			dmg_mul = 1,
-			recoil = {4, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.5, 0.85},
-			dmg_mul = 1,
-			recoil = {4, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.5, 0.75},
-			dmg_mul = 1,
-			recoil = {4, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.sniper_good = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_good.is_rifle.melee_dmg = 8
-	presets.weapon.sniper_good.is_rifle.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 0.95},
-			dmg_mul = 2,
-			recoil = {3, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 0.95},
-			dmg_mul = 2,
-			recoil = {3, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.5, 0.95},
-			dmg_mul = 2,
-			recoil = {4, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.5, 0.85},
-			dmg_mul = 1,
-			recoil = {4, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.5, 0.75},
-			dmg_mul = 1,
-			recoil = {4, 6},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.sniper_expert = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_expert.is_rifle.melee_dmg = 10
-	presets.weapon.sniper_expert.is_rifle.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 1},
-			dmg_mul = 2.5,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 1},
-			dmg_mul = 2.5,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.95},
-			dmg_mul = 2.5,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.85},
-			dmg_mul = 1,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.6, 0.75},
-			dmg_mul = 1,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.sniper_easy_wish = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_easy_wish.is_rifle.melee_dmg = 10
-	presets.weapon.sniper_easy_wish.is_rifle.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 1},
-			dmg_mul = 2.875,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1800,
-			acc = {0.7, 1},
-			dmg_mul = 2.625,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 1},
-			dmg_mul = 2.625,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.95},
-			dmg_mul = 2.625,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.85},
-			dmg_mul = 1.05,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.sniper_deathwish = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_deathwish.is_rifle.melee_dmg = 12
-	presets.weapon.sniper_deathwish.is_rifle.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 1},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 1},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.95},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.85},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.6, 0.75},
-			dmg_mul = 1.25,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.sniper_sm_wish = deep_clone(presets.weapon.sniper)
-	presets.weapon.sniper_sm_wish.is_rifle.melee_dmg = 12
-	presets.weapon.sniper_sm_wish.is_rifle.FALLOFF = {
-		{
-			r = 1000,
-			acc = {0.7, 1},
-			dmg_mul = 3.4375,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 1800,
-			acc = {0.7, 1},
-			dmg_mul = 3.4375,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.7, 1},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 4000,
-			acc = {0.6, 0.95},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 6000,
-			acc = {0.6, 0.85},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 8000,
-			acc = {0.6, 0.75},
-			dmg_mul = 3.125,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			r = 10000,
-			acc = {0.2, 0.7},
-			dmg_mul = 1.25,
-			recoil = {3, 5},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	
 	presets.detection = {}
 	presets.detection.normal = {
 		idle = {},

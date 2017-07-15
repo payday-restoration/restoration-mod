@@ -3664,6 +3664,18 @@ function WeaponFactoryTweakData:_init_m16()
 	}
 	self.wpn_fps_ass_m16_npc = deep_clone(self.wpn_fps_ass_m16)
 	self.wpn_fps_ass_m16_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
+	self.wpn_fps_ass_m16_npc_summers = deep_clone(self.wpn_fps_ass_m16_npc)
+	self.wpn_fps_ass_m16_npc_summers.default_blueprint = {
+		"wpn_fps_m4_uupg_b_long",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_upg_o_cs",
+		"wpn_fps_m4_upper_reciever_round",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_m16_fg_vietnam",
+		"wpn_fps_m16_s_solid_vanilla",
+		"wpn_fps_m4_upg_m_quick",
+		"wpn_fps_upg_m4_g_standard_vanilla"
+	}
 end
 
 function WeaponFactoryTweakData:_init_olympic()
@@ -6068,6 +6080,13 @@ function WeaponFactoryTweakData:_init_p90()
 	}
 	self.wpn_fps_smg_p90_npc = deep_clone(self.wpn_fps_smg_p90)
 	self.wpn_fps_smg_p90_npc.unit = "units/payday2/weapons/wpn_fps_smg_p90/wpn_fps_smg_p90_npc"
+	self.wpn_fps_smg_p90_npc_summers = deep_clone(self.wpn_fps_smg_p90_npc)
+	self.wpn_fps_smg_p90_npc_summers.default_blueprint = {
+		"wpn_fps_smg_p90_body_p90",
+		"wpn_fps_smg_p90_b_ninja",
+		"wpn_fps_smg_p90_m_strap",
+		"wpn_fps_upg_o_rx30"
+	}
 end
 
 function WeaponFactoryTweakData:_init_m14()
@@ -22807,6 +22826,12 @@ function WeaponFactoryTweakData:_init_flamethrower_mk2()
 	}
 	self.wpn_fps_fla_mk2_npc = deep_clone(self.wpn_fps_fla_mk2)
 	self.wpn_fps_fla_mk2_npc.unit = "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_npc"
+	self.wpn_fps_fla_mk2_npc_summers = deep_clone(self.wpn_fps_fla_mk2_npc)
+	self.wpn_fps_fla_mk2_npc_summers.default_blueprint = {
+		"wpn_fps_fla_mk2_empty",
+		"wpn_fps_fla_mk2_body_fierybeast",
+		"wpn_fps_fla_mk2_mag_welldone"
+	}
 end
 
 function WeaponFactoryTweakData:_init_m32()
@@ -23500,6 +23525,13 @@ function WeaponFactoryTweakData:_init_peacemaker()
 	}
 	self.wpn_fps_pis_peacemaker_npc = deep_clone(self.wpn_fps_pis_peacemaker)
 	self.wpn_fps_pis_peacemaker_npc.unit = "units/pd2_dlc_west/weapons/wpn_fps_pis_peacemaker/wpn_fps_pis_peacemaker_npc"
+	self.wpn_fps_pis_peacemaker_npc_summers = deep_clone(self.wpn_fps_pis_peacemaker_npc)
+	self.wpn_fps_pis_peacemaker_npc_summers.default_blueprint = {
+		"wpn_fps_pis_peacemaker_body_standard",
+		"wpn_fps_pis_peacemaker_b_short",
+		"wpn_fps_pis_peacemaker_m_standard",
+		"wpn_fps_pis_peacemaker_g_standard"
+	}
 end
 
 function WeaponFactoryTweakData:_init_winchester1874()

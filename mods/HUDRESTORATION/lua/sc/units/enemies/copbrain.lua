@@ -22,13 +22,20 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.fbi_swat_vet = security_variant
 	CopBrain._logic_variants.city_swat_titan = security_variant
 	CopBrain._logic_variants.boom = security_variant
+	CopBrain._logic_variants.boom_summers = security_variant
+	CopBrain._logic_variants.taser_summers = clone(security_variant)
+	CopBrain._logic_variants.medic_summers = security_variant
 	CopBrain._logic_variants.rboom = security_variant
 	CopBrain._logic_variants.fbi_vet = security_variant
 	CopBrain._logic_variants.spring = clone(security_variant)
 	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
+	CopBrain._logic_variants.summers = clone(security_variant)
+	CopBrain._logic_variants.summers.attack = TankCopLogicAttack
 	CopBrain._logic_variants.tank_titan = clone(security_variant)
 	CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
+	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
+	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
 end
 
 --Thanks Rokk--

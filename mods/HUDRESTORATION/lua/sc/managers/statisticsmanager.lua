@@ -39,6 +39,9 @@ StatisticsManager.special_unit_ids = {
 	"tank_skull",
 	"taser",
 	"boom",
+	"boom_summers",
+	"taser_summers",
+	"medic_summers",
 	"rboom",
 	"fbi_vet",
 	"medic",
@@ -49,6 +52,7 @@ StatisticsManager.special_unit_ids = {
 	"heavy_swat_sniper",
 	"tank_titan",
 	"spring",
+	"summers",
 	"swat_turret",
 	"biker_boss",
 	"chavez_boss",
@@ -63,6 +67,27 @@ local old_stats = StatisticsManager.init
 function StatisticsManager:init()
 	old_stats(self)
 
+	self._defaults.killed.taser_summers = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.boom_summers = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.medic_summers = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
 	self._defaults.killed.boom = {
 			count = 0,
 			head_shots = 0,
@@ -99,6 +124,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.spring = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.summers = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,

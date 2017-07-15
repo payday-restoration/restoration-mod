@@ -19,6 +19,7 @@ function CharacterTweakData:init(tweak_data, presets)
 	local presets = self:_presets(tweak_data)
 	self:_init_boom(presets)
 	self:_init_spring(presets)
+	self:_init_summers(presets)
 	self:_process_weapon_usage_table()
 end
 
@@ -55,9 +56,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.melee_weapon = "baton"
 	self.security.no_arrest_chance_inc = 0.25
 	self.security.steal_loot = nil
-
-	self.security.use_factory = true
-	self.security.factory_weapon_id = {"wpn_fps_pis_g17_npc", "wpn_fps_pis_g22c_npc", "wpn_fps_pis_g26_npc"}
 	
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
@@ -99,8 +97,6 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.melee_weapon = "baton"
 	self.gensec.steal_loot = nil
 	table.insert(self._enemy_list, "gensec")
-	self.gensec.use_factory = true
-	self.gensec.factory_weapon_id = {"wpn_fps_pis_p226_npc"}
 end
 
 function CharacterTweakData:_init_cop(presets)
@@ -134,8 +130,6 @@ function CharacterTweakData:_init_cop(presets)
 	else
 		self.cop.steal_loot = true
 	end
-	self.cop.use_factory = true
-	self.cop.factory_weapon_id = {"wpn_fps_pis_p226_npc", "wpn_fps_pis_rage_npc", "wpn_fps_pis_1911_npc"}
 
  	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
@@ -177,11 +171,8 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi.chatter = presets.enemy_chatter.cop
     	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
-	self.fbi.use_factory = true
-	self.fbi.factory_weapon_id = {"wpn_fps_pis_p226_npc", "wpn_fps_pis_rage_npc", "wpn_fps_pis_1911_npc"}	
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_vet = deep_clone(self.fbi)
-	self.fbi_vet.factory_weapon_id = {"wpn_fps_x_1911_npc"}
 	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
@@ -273,10 +264,19 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.priority_shout = "f47"
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
-
-	self.medic.use_factory = true
-	self.medic.factory_weapon_id = {"wpn_fps_smg_p90_npc"}
-
+	
+	self.medic_summers = deep_clone(self.medic)
+	self.medic_summers.use_factory = true
+	self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
+	self.medic_summers.HEALTH_INIT = 85.7142857
+	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom"}
+	self.medic_summers.ignore_medic_revive_animation = false
+	self.medic_summers.flammable = false
+	self.medic_summers.use_animation_on_fire_damage = false
+	self.medic_summers.damage.explosion_damage_mul = 0
+	self.medic_summers.damage.fire_damage_mul = 0
+	self.medic_summers.damage.hurt_severity = presets.hurt_severities.boom
+	table.insert(self._enemy_list, "medic_summers")
 	table.insert(self._enemy_list, "medic")
 end
 
@@ -311,8 +311,6 @@ function CharacterTweakData:_init_swat(presets)
 	else
 		self.swat.steal_loot = true
 	end
-	self.swat.use_factory = true
-	self.swat.factory_weapon_id = {"wpn_fps_smg_mp5_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_spas12_npc"}
 	table.insert(self._enemy_list, "swat")
 end
 
@@ -345,8 +343,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat.steal_loot = true
 	end
-	self.heavy_swat.use_factory = true
-	self.heavy_swat.factory_weapon_id = {"wpn_fps_smg_mp5_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_spas12_npc"}
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
 	self.heavy_swat_sniper.tags = {"sniper"}
@@ -360,7 +356,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
-	self.heavy_swat_sniper.use_factory = false
 	if job == "kosugi" or job == "dark" then
 		self.heavy_swat_sniper.surrender = nil
 		self.heavy_swat_sniper.no_arrest_chance_inc = 0.25
@@ -370,7 +365,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.no_arrest_chance_inc = nil
 		self.heavy_swat_sniper.detection_increase = nil
 	end
-	self.heavy_swat_sniper.use_factory = false
 	self.heavy_swat_sniper.no_arrest = true
 	self.heavy_swat_sniper.ecm_vulnerability = 1
 	self.heavy_swat_sniper.ecm_hurts = {
@@ -427,13 +421,9 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	else
 		self.fbi_swat.steal_loot = true
 	end
-	self.fbi_swat.use_factory = true
-	self.fbi_swat.factory_weapon_id = {"wpn_fps_smg_mp5_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_spas12_npc"}
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
-	self.fbi_swat_vet.use_factory = true
-	self.fbi_swat_vet.factory_weapon_id = {"wpn_fps_x_deagle_npc"}
 	table.insert(self._enemy_list, "fbi_swat_vet")
 end
 
@@ -466,8 +456,6 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	else
 		self.fbi_heavy_swat.steal_loot = true
 	end
-	self.fbi_heavy_swat.use_factory = true
-	self.fbi_heavy_swat.factory_weapon_id = {"wpn_fps_smg_schakal_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_striker_npc"}
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -514,8 +502,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat.steal_loot = true
 	end
-	self.city_swat.use_factory = true
-	self.city_swat.factory_weapon_id = {"wpn_fps_smg_schakal_npc", "wpn_fps_ass_m4_npc", "wpn_fps_sho_striker_npc"}
 	self.city_swat.has_alarm_pager = true
 	self.city_swat.calls_in = true
 	self.city_swat.use_animation_on_fire_damage = false
@@ -541,8 +527,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
 	self.city_swat_titan.spawn_sound_event = "l2d_prm"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
-	self.city_swat_titan.use_factory = true
-	self.city_swat_titan.factory_weapon_id = {"wpn_fps_sho_ksg_npc"}
  	table.insert(self._enemy_list, "city_swat_titan")
 end
 
@@ -633,22 +617,6 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.melee_weapon = "fists"
 	self.gangster.steal_loot = nil
 	self.gangster.calls_in = true
-	self.gangster.use_factory = true
-	self.gangster.factory_weapon_id = {"wpn_fps_smg_cobray_npc",
-										"wpn_fps_smg_coal_npc",
-										"wpn_fps_smg_tec9_npc",
-										"wpn_fps_pis_c96_npc",
-										"wpn_fps_pis_ppk_npc",
-										"wpn_fps_pis_chinchilla_npc",
-										"wpn_fps_sho_boot_npc",
-										"wpn_fps_shot_huntsman_npc",
-										"wpn_fps_shot_b682_npc",
-										"wpn_fps_snp_siltstone_npc",
-										"wpn_fps_lmg_rpk_npc",
-										"wpn_fps_ass_74_npc",
-										"wpn_fps_ass_flint_npc",
-										"wpn_fps_ass_akm_npc",
-										"wpn_fps_ass_akm_gold_npc"}
  	table.insert(self._enemy_list, "gangster")
 end
 
@@ -1324,6 +1292,67 @@ function CharacterTweakData:_init_spring(presets)
  	table.insert(self._enemy_list, "spring")
 end
 
+function CharacterTweakData:_init_summers(presets)
+	self.summers = deep_clone(presets.base)
+	self.summers.tags = {"custom"}
+	self.summers.experience = {}
+	self.summers.weapon = deep_clone(presets.weapon.normal)
+	self.summers.melee_weapon = "knife_1"
+	self.summers.melee_weapon_dmg_multiplier = 1
+	self.summers.weapon_safety_range = 1
+	self.summers.detection = presets.detection.normal
+	self.summers.HEALTH_INIT = 85.7142857
+	self.summers.HEALTH_SUICIDE_LIMIT = 0.25
+	self.summers.flammable = false
+	self.summers.use_animation_on_fire_damage = false
+	self.summers.damage.explosion_damage_mul = 0
+	self.summers.damage.fire_damage_mul = 0
+	self.summers.damage.hurt_severity = presets.hurt_severities.boom
+	self.summers.headshot_dmg_mul = 1.5
+	self.summers.bag_dmg_mul = 6
+	self.summers.move_speed = presets.move_speed.fast
+	self.summers.no_retreat = true
+	self.summers.no_arrest = true
+	self.summers.surrender = nil
+	self.summers.ecm_vulnerability = 0.9
+	self.summers.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8}
+	}
+	self.summers.surrender_break_time = {4, 6}
+	self.summers.suppression = nil
+	self.summers.weapon_voice = "3"
+	self.summers.experience.cable_tie = "tie_swat"
+	self.summers.speech_prefix_p1 = "gren"
+	self.summers.speech_prefix_count = nil
+	self.summers.access = "taser"
+	self.summers.dodge = presets.dodge.athletic
+	self.summers.use_gas = true
+	self.summers.priority_shout = "g29"
+	self.summers.bot_priority_shout = "g29"
+	self.summers.priority_shout_max_dis = 3000
+	self.summers.custom_shout = true
+	self.summers.rescue_hostages = true
+	self.summers.deathguard = true
+	self.summers.chatter = {
+		aggressive = true,
+		retreat = true,
+		go_go = true,
+		contact = true,
+		entrance = true
+	}
+	self.summers.announce_incomming = "incomming_gren"
+	self.summers.spawn_sound_event = "clk_c01x_plu"
+	self.summers.die_sound_event = "rmdc_x02a_any_3p"
+	self.summers.use_factory = true
+	self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
+	if job == "chill_combat" then
+		self.summers.steal_loot = nil
+	else
+		self.summers.steal_loot = true
+	end
+ 	table.insert(self._enemy_list, "summers")
+end
+
 function CharacterTweakData:_init_taser(presets)
 	self.taser = deep_clone(presets.base)
 	self.taser.tags = {"taser"}
@@ -1377,9 +1406,19 @@ function CharacterTweakData:_init_taser(presets)
 			special_comment = "x01"
 		}
 	}
-	self.taser.use_factory = true
-	self.taser.factory_weapon_id = {"wpn_fps_ass_m4_npc"}
+	self.taser_summers = deep_clone(self.taser)
+	self.taser_summers.use_factory = true
+	self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
+	self.taser_summers.HEALTH_INIT = 85.7142857
+	self.taser_summers.tags = {"taser", "medic_summers", "custom"}
+	self.taser_summers.ignore_medic_revive_animation = false
+	self.taser_summers.flammable = false
+	self.taser_summers.use_animation_on_fire_damage = false
+	self.taser_summers.damage.explosion_damage_mul = 0
+	self.taser_summers.damage.fire_damage_mul = 0
+	self.taser_summers.damage.hurt_severity = presets.hurt_severities.boom
  	table.insert(self._enemy_list, "taser")
+ 	table.insert(self._enemy_list, "taser_summers")
 end
 
 function CharacterTweakData:_init_boom(presets)
@@ -1450,6 +1489,22 @@ function CharacterTweakData:_init_boom(presets)
 	self.rboom.speech_prefix_p1 = "rgren"
 	self.rboom.die_sound_event = "mdc_x02a_any_3p"
  	table.insert(self._enemy_list, "rboom")
+	self.boom_summers = deep_clone(self.boom)
+	if job == "chill_combat" then
+		self.boom_summers.steal_loot = nil
+	else
+		self.boom_summers.steal_loot = true
+	end
+	self.boom_summers = deep_clone(self.boom)
+	self.boom_summers.spawn_sound_event = "clk_c01x_plu"
+	self.boom_summers.speech_prefix_p1 = "rgren"
+	self.boom_summers.die_sound_event = "mdc_x02a_any_3p"
+	self.boom_summers.use_factory = true
+	self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
+	self.boom_summers.HEALTH_INIT = 85.7142857
+	self.boom_summers.tags = {"medic_summers", "custom"}
+	self.boom_summers.ignore_medic_revive_animation = false
+ 	table.insert(self._enemy_list, "boom_summers")
 end
 
 function CharacterTweakData:_init_inside_man(presets)
@@ -2517,7 +2572,8 @@ function CharacterTweakData:_presets(tweak_data)
 		mac11 = {},
 		is_revolver = {},
 		akimbo_pistol = {},
-		mini = {}
+		mini = {},
+		flamethrower = {}
 	}
 	presets.weapon.normal.is_pistol.aim_delay = {0.1, 0.1}
 	presets.weapon.normal.is_pistol.focus_delay = 10
@@ -2943,6 +2999,67 @@ function CharacterTweakData:_presets(tweak_data)
 				0,
 				0
 			}
+		}
+	}
+	presets.weapon.normal.flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.normal.flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.normal.flamethrower.range = {
+		close = 250,
+		optimal = 500,
+		far = 750
+	}
+	presets.weapon.normal.flamethrower.FALLOFF = {
+		{
+			r = 250,
+			acc = {1, 1},
+			dmg_mul = 1,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.5},
+			dmg_mul = 1,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 750,
+			acc = {0.25, 0.25},
+			dmg_mul = 1,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 751,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
 		}
 	}
 	presets.weapon.normal.is_smg.aim_delay = {0.1, 0.1}
@@ -3653,20 +3770,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good = {
-		is_pistol = {},
-		is_revolver = {},
-		is_rifle = {},
-		is_lmg = {},
-		is_shotgun_pump = {},
-		is_shotgun_mag = {},
-		mossberg = {},
-		is_smg = {},
-		mp9 = {},
-		mac11 = {},
-		akimbo_pistol = {},
-		mini = {}
-	}
+	presets.weapon.good = deep_clone(presets.weapon.normal)
 	presets.weapon.good.is_pistol.aim_delay = {0.1, 0.1}
 	presets.weapon.good.is_pistol.focus_delay = 2
 	presets.weapon.good.is_pistol.focus_dis = 200
@@ -4825,20 +4929,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert = {
-		is_pistol = {},
-		is_revolver = {},
-		is_rifle = {},
-		is_lmg = {},
-		is_shotgun_pump = {},
-		is_shotgun_mag = {},
-		mossberg = {},
-		is_smg = {},
-		mp9 = {},
-		mac11 = {},
-		akimbo_pistol = {},
-		mini = {}
-	}
+	presets.weapon.expert = deep_clone(presets.weapon.good)
 	presets.weapon.expert.is_pistol.aim_delay = {0, 0.1}
 	presets.weapon.expert.is_pistol.focus_delay = 1
 	presets.weapon.expert.is_pistol.focus_dis = 300
@@ -5997,19 +6088,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish = {
-		is_pistol = {},
-		is_revolver = {},
-		is_rifle = {},
-		is_lmg = {},
-		is_shotgun_pump = {},
-		is_shotgun_mag = {},
-		mossberg = {},
-		is_smg = {},
-		mp9 = {},
-		mac11 = {},
-		akimbo_pistol = {}
-	}
+	presets.weapon.deathwish = deep_clone(presets.weapon.expert)
 	presets.weapon.deathwish.is_revolver.aim_delay = {0, 0}
 	presets.weapon.deathwish.is_revolver.focus_delay = 10
 	presets.weapon.deathwish.is_revolver.focus_dis = 200
@@ -9378,19 +9457,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member = {
-		is_pistol = {},
-		is_revolver = {},
-		is_rifle = {},
-		is_lmg = {},
-		is_shotgun_pump = {},
-		mossberg = {},
-		is_smg = {},
-		mac11 = {},
-		rifle = {},
-		akimbo_pistol = {},
-		is_shotgun_mag = {},
-	}
+	presets.weapon.gang_member = deep_clone(presets.weapon.sm_wish)
 	presets.weapon.gang_member.is_pistol.aim_delay = {0, 0}
 	presets.weapon.gang_member.is_pistol.focus_delay = 0
 	presets.weapon.gang_member.is_pistol.focus_dis = 200
@@ -11983,8 +12050,12 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.phalanx_minion.HEALTH_INIT = self.phalanx_minion.HEALTH_INIT * hp_mul
 	self.phalanx_vip.HEALTH_INIT = self.phalanx_vip.HEALTH_INIT * hp_mul
 	self.spring.HEALTH_INIT = self.spring.HEALTH_INIT * hp_mul
+	self.summers.HEALTH_INIT = self.summers.HEALTH_INIT * hp_mul
 	self.taser.HEALTH_INIT = self.taser.HEALTH_INIT * hp_mul
 	self.boom.HEALTH_INIT = self.boom.HEALTH_INIT * hp_mul
+	self.medic_summers.HEALTH_INIT = self.medic_summers.HEALTH_INIT * hp_mul
+	self.taser_summers.HEALTH_INIT = self.taser_summers.HEALTH_INIT * hp_mul
+	self.boom_summers.HEALTH_INIT = self.boom_summers.HEALTH_INIT * hp_mul
 	self.rboom.HEALTH_INIT = self.rboom.HEALTH_INIT * hp_mul
 	self.biker_escape.HEALTH_INIT = self.biker_escape.HEALTH_INIT * hp_mul
 	if self.security.headshot_dmg_mul then
@@ -12092,6 +12163,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.spring.headshot_dmg_mul then
 		self.spring.headshot_dmg_mul = self.spring.headshot_dmg_mul * hs_mul
 	end
+	if self.summers.headshot_dmg_mul then
+		self.summers.headshot_dmg_mul = self.summers.headshot_dmg_mul * hs_mul
+	end
 	if self.taser.headshot_dmg_mul then
 		self.taser.headshot_dmg_mul = self.taser.headshot_dmg_mul * hs_mul
 	end
@@ -12100,6 +12174,18 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 	if self.rboom.headshot_dmg_mul then
 		self.rboom.headshot_dmg_mul = self.rboom.headshot_dmg_mul * hs_mul
+	end
+	if self.medic_summers.headshot_dmg_mul then
+		self.medic_summers.headshot_dmg_mul = self.medic_summers.headshot_dmg_mul * hs_mul
+	end
+	if self.boom_summers.headshot_dmg_mul then
+		self.boom_summers.headshot_dmg_mul = self.boom_summers.headshot_dmg_mul * hs_mul
+	end
+	if self.taser_summers.headshot_dmg_mul then
+		self.taser_summers.headshot_dmg_mul = self.taser_summers.headshot_dmg_mul * hs_mul
+	end
+	if self.summers.headshot_dmg_mul then
+		self.summers.headshot_dmg_mul = self.summers.headshot_dmg_mul * hs_mul
 	end
 	if self.biker_escape.headshot_dmg_mul then
 		self.biker_escape.headshot_dmg_mul = self.biker_escape.headshot_dmg_mul * hs_mul
@@ -12152,6 +12238,10 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"spooc",
 		"phalanx_vip",
 		"spring",
+		"summers",
+		"boom_summers",
+		"taser_summers",
+		"medic_summers",
 		"phalanx_minion",
 		"shield",
 		"biker",
@@ -12204,6 +12294,10 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.spooc.SPEED_RUN = self.spooc.SPEED_RUN * run_mul
 	self.phalanx_vip.SPEED_RUN = self.phalanx_vip.SPEED_RUN * run_mul
 	self.spring.SPEED_RUN = self.spring.SPEED_RUN * run_mul
+	self.summers.SPEED_RUN = self.summers.SPEED_RUN * run_mul
+	self.medic_summers.SPEED_RUN = self.medic_summers.SPEED_RUN * run_mul
+	self.boom_summers.SPEED_RUN = self.boom_summers.SPEED_RUN * run_mul
+	self.taser_summers.SPEED_RUN = self.taser_summers.SPEED_RUN * run_mul
 	self.phalanx_minion.SPEED_RUN = self.phalanx_minion.SPEED_RUN * run_mul
 	self.shield.SPEED_RUN = self.shield.SPEED_RUN * run_mul
 	self.biker.SPEED_RUN = self.biker.SPEED_RUN * run_mul
@@ -12297,6 +12391,10 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"drug_lord_boss",
 		"phalanx_minion",
 		"spring",
+		"summers",
+		"boom_summers",
+		"medic_summers",
+		"taser_summers",
 		"phalanx_vip"
 	}
 	for _, name in ipairs(all_units) do
@@ -12327,6 +12425,10 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"drug_lord_boss",
 		"phalanx_minion",
 		"spring",
+		"summers",
+		"boom_summers",
+		"medic_summers",
+		"taser_summers",
 		"phalanx_vip"
 	}
 	for _, name in ipairs(all_units) do
@@ -12591,6 +12693,10 @@ function CharacterTweakData:character_map()
 				"ene_vip_1",
 				"ene_vip_2",
 				"ene_spring",
+				"ene_summers",
+				"ene_phalanx_medic",
+				"ene_phalanx_grenadier",
+				"ene_phalanx_taser",
 				"ene_phalanx_1",
 				"ene_titan_shotgun"
 			}

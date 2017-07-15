@@ -5,33 +5,40 @@ local group_timestamps = {}
 
 -- Example contents with haphazardly chosen cooldowns, add more group types and adjust as desired
 local group_cooldowns = {
-	Cap_Spring = 1500
+	Cap_Spring = 1500,
+	Cap_Summers = 1500
 }
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 if difficulty_index == 4 then
 	group_cooldowns = {
-		Cap_Spring = 1800
+		Cap_Spring = 1800,
+		Cap_Summers = 1800
 	}
 elseif difficulty_index == 5 then
 	group_cooldowns = {
-		Cap_Spring = 1500
+		Cap_Spring = 1500,
+		Cap_Summers = 1500
 	}
 elseif difficulty_index == 6 then
 	group_cooldowns = {
-		Cap_Spring = 1200
+		Cap_Spring = 1200,
+		Cap_Summers = 1200
 	}
 elseif difficulty_index == 7 then
 	group_cooldowns = {
-		Cap_Spring = 900
+		Cap_Spring = 900,
+		Cap_Summers = 900
 	}
 elseif difficulty_index == 8 then
 	group_cooldowns = {
-		Cap_Spring = 600
+		Cap_Spring = 600,
+		Cap_Summers = 600
 	}
 else
 	group_cooldowns = {
-		Cap_Spring = 1800
+		Cap_Spring = 1800,
+		Cap_Summers = 1800
 	}
 end
 -- Ditto, adjust as desired. Affects all groups not listed in group_cooldowns above

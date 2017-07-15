@@ -210,10 +210,24 @@ if not tweak_data then return end
 	tweak_data.medic.disabled_units = {
 		"phalanx_minion",
 		"spring",
+		"taser_summers",
+		"boom_summers",
+		"medic_summers",
+		"summers",
 		"medic",
 		"tank_titan",
 		"tank_medic",
 		"city_swat_titan"
+	}
+	tweak_data.medic.cooldown_summers = 0
+	tweak_data.radius_summers = 2000
+	tweak_data.medic.whitelisted_units = {
+		"taser_summers",
+		"boom_summers",
+		"summers"
+	}
+	tweak_data.medic.whitelisted_units_summer_squad = {
+		"summers"
 	}
 	tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
 	tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil

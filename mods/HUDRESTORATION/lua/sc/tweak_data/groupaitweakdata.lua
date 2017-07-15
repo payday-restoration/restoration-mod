@@ -1354,6 +1354,55 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_walk_only,
 		special_type = "spring"
 	}
+	self.unit_categories.Cap_Summers = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_summers/ene_summers")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_summers/ene_summers")
+			}
+		},
+		max_amount = 1,
+		access = access_type_all,
+		special_type = "summers"
+	}
+	self.unit_categories.boom_summers = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
+			}
+		},
+		access = access_type_all,
+		special_type = "boom"
+	}
+	self.unit_categories.medic_summers = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
+			}
+		},
+		access = access_type_all,
+		special_type = "medic"
+	}
+	self.unit_categories.taser_summers = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
+			}
+		},
+		access = access_type_all,
+		special_type = "taser"
+	}
 	self.unit_categories.Tank_Titan = {
 		unit_types = {
 			america = {
@@ -1573,7 +1622,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"murder"
 		},
-
+		Cap_summers = {
+			"charge",
+			"murder"
+		},
 
 		--Vanilla shit below
 		swat_shotgun_rush = {
@@ -2502,6 +2554,43 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_max = 2,
 				tactics = self._tactics.Cap_spring,
 				rank = 2
+			}
+		}
+	}
+	self.enemy_spawn_groups.Cap_Summers = {
+		amount = {4, 4},
+		spawn = {
+			{
+				unit = "Cap_Summers",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.Cap_summers,
+				rank = 1
+			},
+			{
+				unit = "medic_summers",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.Cap_summers,
+				rank = 2
+			},
+			{
+				unit = "boom_summers",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.Cap_summers,
+				rank = 3
+			},
+			{
+				unit = "taser_summers",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.Cap_summers,
+				rank = 4
 			}
 		}
 	}
@@ -4744,32 +4833,82 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
+	local lists_of_heists_to_burninate = {
+		"dinner",
+		"run",
+		"mia_2",
+		"hox_1",
+		"firestarter_3",
+		"mad",
+		"jolly"
+	}
 	--Captain stuff here--
-	if job == "branchbank" or job == "firestarter_3" or job == "man" or job == "framing_frame_3" or job == "four_stores" or job == "alex_2" or job == "flat" then
-		if difficulty_index <= 3 then
-			self.besiege.assault.groups.Cap_Spring = {
-				0,
-				0,
-				0
-			}
-		elseif difficulty_index == 4 then
-			self.besiege.assault.groups.Cap_Spring = {
-				0.075,
-				0.075,
-				0.075
-			}
-		elseif difficulty_index == 5 then
-			self.besiege.assault.groups.Cap_Spring = {
-				0.075,
-				0.075,
-				0.075
-			}
-		else
-			self.besiege.assault.groups.Cap_Spring = {
-				0.075,
-				0.075,
-				0.075
-			}
+	for _,v in pairs(lists_of_heists_to_burninate) do
+		if job == v then
+			if difficulty_index <= 3 then
+				self.besiege.assault.groups.Cap_Summers = {
+					0,
+					0,
+					0
+				}
+			elseif difficulty_index == 4 then
+				self.besiege.assault.groups.Cap_Summers = {
+					0.075,
+					0.075,
+					0.075
+				}
+			elseif difficulty_index == 5 then
+				self.besiege.assault.groups.Cap_Summers = {
+					0.075,
+					0.075,
+					0.075
+				}
+			else
+				self.besiege.assault.groups.Cap_Summers = {
+					0.075,
+					0.075,
+					0.075
+				}
+			end
+			break
+		end
+	end
+	local heists_in_which_the_payday_gang_are_up_against_the_wall = {
+		"branchbank",
+		"man",
+		"framing_frame_3",
+		"four_stores",
+		"alex_2",
+		"flat"
+	}
+	for _,v in pairs(heists_in_which_the_payday_gang_are_up_against_the_wall) do
+		if job == v then
+			if difficulty_index <= 3 then
+				self.besiege.assault.groups.Cap_Spring = {
+					0,
+					0,
+					0
+				}
+			elseif difficulty_index == 4 then
+				self.besiege.assault.groups.Cap_Spring = {
+					0.075,
+					0.075,
+					0.075
+				}
+			elseif difficulty_index == 5 then
+				self.besiege.assault.groups.Cap_Spring = {
+					0.075,
+					0.075,
+					0.075
+				}
+			else
+				self.besiege.assault.groups.Cap_Spring = {
+					0.075,
+					0.075,
+					0.075
+				}
+			end
+			break
 		end
 	end
 	self.besiege.reenforce.interval = {

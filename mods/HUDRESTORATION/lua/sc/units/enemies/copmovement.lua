@@ -48,7 +48,10 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.rboom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.spring = clone(security_variant)
-	CopMovement._action_variants.spring.walk = TankCopActionWalk
+	CopMovement._action_variants.summers = security_variant
+	CopMovement._action_variants.boom_summers = security_variant
+	CopMovement._action_variants.taser_summers = security_variant
+	CopMovement._action_variants.medic_summers = security_variant
 	CopMovement._action_variants.tank_titan = clone(security_variant)
 	CopMovement._action_variants.tank_titan.walk = TankCopActionWalk
 end

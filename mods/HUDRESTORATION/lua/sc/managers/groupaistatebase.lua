@@ -9,11 +9,15 @@ function GroupAIStateBase:_init_misc_data()
 		shield = true,
 		taser = true,
 		boom = true,
+		boom_summers = true,
+		taser_summers = true,
+		medic_summers = true,
 		medic = true,
 		phalanx_minion = true,
 		tank_titan = true,
 		fbi_vet = true,
-		spring = true
+		spring = true,
+		summers = true
 	}
 end
 
@@ -26,11 +30,15 @@ function GroupAIStateBase:on_simulation_started()
 		shield = true,
 		taser = true,
 		boom = true,
+		boom_summers = true,
+		taser_summers = true,
+		medic_summers = true,
 		medic = true,
 		phalanx_minion = true,
 		tank_titan = true,
 		fbi_vet = true,
-		spring = true
+		spring = true,
+		summers = true
 	}
 end
 

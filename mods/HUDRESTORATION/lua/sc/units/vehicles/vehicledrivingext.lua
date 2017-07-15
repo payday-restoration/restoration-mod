@@ -12,7 +12,7 @@ function VehicleDrivingExt:_detect_npc_collisions()
 		local unit_is_criminal = unit:in_slot(managers.slot:get_mask("all_criminals"))
 		local unit_name = unit:base()._tweak_table
 		if unit_is_criminal then
-		elseif unit_name == "spring" or unit_name == "phalanx_vip" then
+		elseif unit_name == "spring" or unit_name == "summers" or unit_name == "phalanx_vip" then
 		elseif unit:character_damage() and not unit:character_damage():dead() then
 			self._hit_soundsource:set_position(unit:position())
 			self._hit_soundsource:set_rtpc("car_hit_vel", math.clamp(vel:length() / 100 * 2, 0, 100))

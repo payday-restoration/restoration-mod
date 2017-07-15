@@ -322,4 +322,39 @@
 	<!--Medic w/ Mp5-->
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" force="false" load="true"/>
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" force="false" load="true"/>
+
+	<!--Summers NEEDS ASSETS-->
+	<object path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
+
+	<!--Summer's Gang NEEDS ASSETS-->
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_husk" force="false" load="true"/>
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_husk" force="false" load="true"/>
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_husk" force="false" load="true"/>
+	
 </table>

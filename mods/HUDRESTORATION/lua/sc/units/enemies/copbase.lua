@@ -2,7 +2,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 Month = os.date("%m")
 function CopBase:_chk_spawn_gear()
-	if self._tweak_table == "spring" then
+	if self._tweak_table == "spring" or self._tweak_table == "summers" then
 		GroupAIStateBesiege:set_assault_endless(true)
 		managers.hud:set_buff_enabled("vip", true)
 	end

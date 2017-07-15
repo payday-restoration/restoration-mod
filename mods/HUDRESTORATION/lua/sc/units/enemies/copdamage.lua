@@ -49,6 +49,67 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.mutators:notify(Message.OnCopDamageDeath, self, attack_data)
 	end
 
+function CopDamage:heal_unit(unit, override_cooldown)
+	local t = Application:time()
+	local my_tweak_table = self._unit:base()._tweak_table
+	local cooldown = tweak_data.medic.cooldown
+	cooldown = managers.crime_spree:modify_value("MedicDamage:CooldownTime", cooldown)
+	if my_tweak_table == "medic_summers" then
+		cooldown = 0
+	end
+	if my_tweak_table == "medic" then
+		if t < self._heal_cooldown_t + cooldown and not override_cooldown then
+			return false
+		end
+	end
+	if self._unit:anim_data() and self._unit:anim_data().act then
+		return false
+	end
+	if my_tweak_table == "medic" then
+		local tweak_table = unit:base()._tweak_table
+		if table.contains(tweak_data.medic.disabled_units, tweak_table) then
+			return false
+		end
+		if unit:brain() and unit:brain()._logic_data then
+			local team = unit:brain()._logic_data.team
+			if team and team.id ~= "law1" and (not team.friends or not team.friends.law1) then
+				return false
+			end
+		end
+		if unit:brain() and unit:brain()._logic_data and unit:brain()._logic_data.is_converted then
+			return false
+		end
+	else
+		local tweak_table = unit:base()._tweak_table
+		if not table.contains(tweak_data.medic.whitelisted_units, tweak_table) then
+			return false
+		end
+		if unit:brain() and unit:brain()._logic_data then
+			local team = unit:brain()._logic_data.team
+			if team and team.id ~= "law1" and (not team.friends or not team.friends.law1) then
+				return false
+			end
+		end
+	end
+	local cop_dmg = unit:character_damage()
+	cop_dmg._health = cop_dmg._HEALTH_INIT
+	cop_dmg._health_ratio = 1
+	cop_dmg:_update_debug_ws()
+	self._heal_cooldown_t = t
+	if not self._unit:character_damage():dead() then
+		local action_data = {
+			type = "heal",
+			body_part = 3,
+			client_interrupt = Network:is_client() and true or false
+		}
+		self._unit:movement():action_request(action_data)
+	end
+	managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
+	managers.network:session():send_to_peers("sync_medic_heal", self._unit)
+	return true
+end
+
+	
 function CopDamage:damage_fire(attack_data)
 	self._attack_data = attack_data
 	if self._dead or self._invulnerable then

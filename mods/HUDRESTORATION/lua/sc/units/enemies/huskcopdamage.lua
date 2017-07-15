@@ -35,4 +35,9 @@ function HuskCopDamage:die(variant)
 	self:_on_death()
 end
 
+function HuskCopDamage:heal_unit(...)
+	return CopDamage.heal_unit(self, ...)
+end
+
+
 end

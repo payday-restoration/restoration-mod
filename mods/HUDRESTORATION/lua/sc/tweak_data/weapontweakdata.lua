@@ -4652,6 +4652,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 11
 	}
 	self.flamethrower_mk2.panic_suppression_chance = 0.0
+	self.flamethrower_mk2_crew.DAMAGE = 10
 	self.m32.spread.standing = 3.5
 	self.m32.spread.crouching = 2.5
 	self.m32.spread.steelsight = 1
@@ -6622,6 +6623,8 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {},
 		auto = {}
 	}
+	self.flamethrower_mk2_crew.usage = "flamethrower"
+	self.flamethrower_mk2_crew.anim_usage = "is_bullpup"
 	--Crew shit below--
 	self.benelli_crew = {
 		usage = "is_shotgun_mag",

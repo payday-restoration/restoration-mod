@@ -1,5 +1,4 @@
 <table>
-<AssetUpdates id="425" name="asset_updates" folder_name="RestorationMod" provider="lastbullet"/>
     <GlobalValue id="veritas" color="Color(1, 0.5, 0)"/>
 
     <Mask id="shatter_true" unit="units/mods/masks/msk_shatter_true/msk_shatter_true" texture_bundle_folder="mods" global_value="veritas"/>
@@ -17,5 +16,6 @@
 
 
     </AddFiles>
+	
 </table>
 

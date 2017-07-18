@@ -1,0 +1,33 @@
+<gui>
+	<preload texture="guis/dlcs/the_bomb/textures/pd2/mission_briefing/bd_pattern"/>
+	<panel name_s="panel"/>
+	
+	<script><![CDATA[
+		pattern = "guis/dlcs/the_bomb/textures/pd2/mission_briefing/bd_pattern"
+		function configure(t)
+			if( not t.empty ) then
+				local animate_effect = function( panel )
+					while( alive( panel ) and alive( panel:child( "contact_image" ) ) ) do
+						over( 1, function( p ) 
+							panel:child( "contact_image" ):set_color( Color( 1, 1, math.sin( p * 180 ) * 0.2 + 0.8, math.sin( p * 180 ) * 0.2 + 0.8 ) )
+						end )
+					end
+				end
+				
+				local wait_and_spawn_video = function( panel )
+					wait(1)
+					local variant = math.random(3)
+					local contact_image = panel:video( { name="contact_image", video = "movies/contact_the_butcher"..tostring(variant), width = 1280, height = 720, blend_mode="add", loop=true, alpha=0 } )
+					
+					over(0.5, function(p) contact_image:set_alpha(p) end )
+				end
+				
+				panel:animate( wait_and_spawn_video )
+				
+				-- local variant = math.random(3)
+				-- local contact_image = panel:bitmap( { name="contact_image", texture="guis/textures/pd2/mission_briefing/bain/contact", w=720, h=720 } )
+				-- local contact_image = panel:video( { name="contact_image", video = "movies/contact_bain"..tostring(variant), width = 1280, height = 720, blend_mode="add", loop=true } )
+			end
+		end
+	]]></script>
+</gui>

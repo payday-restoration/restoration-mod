@@ -11,55 +11,55 @@ function SkillTreeManager:load(data, version)
 	the_skilltree = {}
 	if SkillTreeManager.VERSION ~= 9 and SkillTreeManager.VERSION ~= 69 then
 		game_updated_call_the_police = true
-		log("SC: GAME UPDATE SEND IN THE CAPTAIN")
+		RestorationCore.log_shit("SC: GAME UPDATE SEND IN THE CAPTAIN")
 	end
 	if (SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC")) and not game_updated_call_the_police then
 		if state.VERSION ~= 69 then
-			log("SC: Enabled, incorrect version! Trying to load save file.")
-			log("SC: Enabled, version is " .. state.VERSION)
+			RestorationCore.log_shit("SC: Enabled, incorrect version! Trying to load save file.")
+			RestorationCore.log_shit("SC: Enabled, version is " .. state.VERSION)
 			if SystemFS:exists("mods/saves/SCSkillTree.json") then
-				log("SC: Enabled, Found save file! Loading.")
+				RestorationCore.log_shit("SC: Enabled, Found save file! Loading.")
 				dont_reset = true
 				local sc_save = io.open(SavePath .. "SCSkillTree.json", "r")
 				the_skilltree = json.decode(sc_save:read())
 				sc_save:close()
-				log("SC: Enabled, New save file is " .. the_skilltree.VERSION)
+				RestorationCore.log_shit("SC: Enabled, New save file is " .. the_skilltree.VERSION)
 				local vanilla_save = io.open(SavePath .. "VanillaSkillTree.json", "w+")
 				vanilla_save:write(json.encode(data.SkillTreeManager))
 				vanilla_save:close()
 				if the_skilltree.VERSION ~= 69 then
-					log("SC: Enabled, SAVE FILE IS INCORRECT VERSION!!! Resetting!")
+					RestorationCore.log_shit("SC: Enabled, SAVE FILE IS INCORRECT VERSION!!! Resetting!")
 					allow_reset = true
 				else
 					state = the_skilltree
 				end
 			else
-				log("SC: Enabled, Couldn't find save file! Resetting.")
+				RestorationCore.log_shit("SC: Enabled, Couldn't find save file! Resetting.")
 				allow_reset = true
 			end
 		end
 	elseif not game_updated_call_the_police then
 		if state.VERSION ~= 9 then
-			log("SC: Disabled, incorrect version! Trying to load save file.")
-			log("SC: Disabled, version is " .. state.VERSION)
+			RestorationCore.log_shit("SC: Disabled, incorrect version! Trying to load save file.")
+			RestorationCore.log_shit("SC: Disabled, version is " .. state.VERSION)
 			if SystemFS:exists("mods/saves/VanillaSkillTree.json") then
-				log("SC: Disabled, Found save file! Loading.")
+				RestorationCore.log_shit("SC: Disabled, Found save file! Loading.")
 				dont_reset = true
 				local vanilla_save = io.open(SavePath .. "VanillaSkillTree.json", "r")
 				the_skilltree = json.decode(vanilla_save:read())
 				vanilla_save:close()
-				log("SC: Disabled, New save file is " .. the_skilltree.VERSION)
+				RestorationCore.log_shit("SC: Disabled, New save file is " .. the_skilltree.VERSION)
 				local sc_save = io.open(SavePath .. "SCSkillTree.json", "w+")
 				sc_save:write(json.encode(data.SkillTreeManager))
 				sc_save:close()
 				if the_skilltree.VERSION ~= 9 then
-					log("SC: Disabled, SAVE FILE IS INCORRECT VERSION!!! Resetting!")
+					RestorationCore.log_shit("SC: Disabled, SAVE FILE IS INCORRECT VERSION!!! Resetting!")
 					allow_reset = true
 				else
 					state = the_skilltree
 				end
 			else
-				log("SC: Disabled, Couldn't find save file! Resetting.")
+				RestorationCore.log_shit("SC: Disabled, Couldn't find save file! Resetting.")
 				allow_reset = true
 			end
 		end
@@ -123,12 +123,12 @@ function SkillTreeManager:load(data, version)
 end
 function SkillTreeManager:version_reset_skilltrees(points_aquired_during_load)
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-		log("SC: Enabled, Saving Disabled skills before reset.")
+		RestorationCore.log_shit("SC: Enabled, Saving Disabled skills before reset.")
 		local vanilla_save = io.open(SavePath .. "VanillaSkillTree.json", "w+")
 		vanilla_save:write(json.encode(self._global))
 		vanilla_save:close()
 	else
-		log("SC: Disabled, Saving Enabled skills before reset.")
+		RestorationCore.log_shit("SC: Disabled, Saving Enabled skills before reset.")
 		local sc_save = io.open(SavePath .. "SCSkillTree.json", "w+")
 		sc_save:write(json.encode(self._global))
 		sc_save:close()
@@ -142,12 +142,12 @@ function SkillTreeManager:version_reset_skilltrees(points_aquired_during_load)
 		managers.statistics:publish_skills_to_steam()
 	end
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-		log("SC: Enabled, saving skills.")
+		RestorationCore.log_shit("SC: Enabled, saving skills.")
 		local sc_save = io.open(SavePath .. "SCSkillTree.json", "w+")
 		sc_save:write(json.encode(self._global))
 		sc_save:close()
 	else
-		log("SC: Disabled, saving skills.")
+		RestorationCore.log_shit("SC: Disabled, saving skills.")
 		local vanilla_save = io.open(SavePath .. "VanillaSkillTree.json", "w+")
 		vanilla_save:write(json.encode(self._global))
 		vanilla_save:close()

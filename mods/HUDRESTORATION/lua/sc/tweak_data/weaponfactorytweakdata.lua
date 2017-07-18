@@ -3676,6 +3676,19 @@ function WeaponFactoryTweakData:_init_m16()
 		"wpn_fps_m4_upg_m_quick",
 		"wpn_fps_upg_m4_g_standard_vanilla"
 	}
+	self.wpn_fps_ass_m16_npc_omnia_lpf = deep_clone(self.wpn_fps_ass_m16_npc)
+	self.wpn_fps_ass_m16_npc_omnia_lpf.default_blueprint = {
+		"wpn_fps_upg_ns_ass_smg_firepig",
+		"wpn_fps_upg_m4_g_hgrip",
+		"wpn_fps_m16_fg_vietnam",
+		"wpn_fps_m4_upper_reciever_edge",
+		"wpn_fps_m16_s_solid_vanilla",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_ass_m16_o_handle_sight",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_upg_m4_m_drum"
+	}
 end
 
 function WeaponFactoryTweakData:_init_olympic()

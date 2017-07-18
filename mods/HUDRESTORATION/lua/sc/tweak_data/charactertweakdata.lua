@@ -11,15 +11,79 @@ function CharacterTweakData:init(tweak_data, presets)
 			if ai_type == r then
 				return "n"
 			else
-				return "d"
+				return "n"
 			end
 		end
 	}
 	old_init(self, tweak_data, presets)
 	local presets = self:_presets(tweak_data)
+	self._prefix_data_p1 = {
+		swat = function()
+			if ai_type == r then
+				return "r"
+			else
+				return "l"
+			end
+		end,
+		cop = function()
+			if ai_type == r then
+				return "r"
+			else
+				return "l"
+			end
+		end,
+		heavy_swat = function()
+			if ai_type == r then
+				return "r"
+			else
+				return "l"
+			end
+		end,
+		taser = function()
+			if ai_type == r then
+				return "rtsr"
+			else
+				return "tsr"
+			end
+		end,
+		cloaker = function()
+			if ai_type == r then
+				return "rclk"
+			else
+				return "clk"
+			end
+		end,
+		bulldozer = function()
+			if ai_type == r then
+				return "rbdz"
+			else
+				return "bdz"
+			end
+		end,
+		medic = function()
+			if ai_type == r then
+				return "rmdc"
+			else
+				return "mdc"
+			end
+		end,
+		summers = function()
+			return "r"
+		end,
+		medic_summers = function()
+			return "rmdc"
+		end,
+		taser_summers = function()
+			return "rtsr"
+		end,
+		boom_summers = function()
+			return "rclk"
+		end
+	}
 	self:_init_boom(presets)
 	self:_init_spring(presets)
 	self:_init_summers(presets)
+	self:_init_omnia_lpf(presets)
 	self:_process_weapon_usage_table()
 end
 
@@ -142,6 +206,42 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop_female.speech_prefix_count = 1
 	self.cop_female.factory_weapon_id = {"wpn_fps_x_1911_npc"}
  	table.insert(self._enemy_list, "cop_female")
+end
+
+function CharacterTweakData:_init_omnia_lpf(presets)
+	self.omnia_lpf = deep_clone(presets.base)
+	self.omnia_lpf.experience = {}
+	self.omnia_lpf.weapon = presets.weapon.normal
+	self.omnia_lpf.detection = presets.detection.normal
+	self.omnia_lpf.HEALTH_INIT = 35
+	self.omnia_lpf.headshot_dmg_mul = 2
+	self.omnia_lpf.move_speed = presets.move_speed.fast
+	self.omnia_lpf.surrender_break_time = {6, 10}
+	self.omnia_lpf.suppression = presets.suppression.hard_agg
+	self.omnia_lpf.surrender = presets.surrender.easy
+	self.omnia_lpf.ecm_vulnerability = 1
+	self.omnia_lpf.ecm_hurts = {
+		ears = {min_duration = 8, max_duration = 10}
+	}
+	self.omnia_lpf.weapon_voice = "2"
+	self.omnia_lpf.experience.cable_tie = "tie_swat"
+	self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
+	self.omnia_lpf.speech_prefix_p2 = self._speech_prefix_p2
+	self.omnia_lpf.speech_prefix_count = 4
+	self.omnia_lpf.access = "swat"
+	self.omnia_lpf.dodge = presets.dodge.athletic
+	self.omnia_lpf.no_arrest = true
+	self.omnia_lpf.chatter = presets.enemy_chatter.swat
+	self.omnia_lpf.melee_weapon = "knife_1"
+	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
+	self.omnia_lpf.steal_loot = true
+	self.omnia_lpf.priority_shout = "f47"
+	self.omnia_lpf.bot_priority_shout = "f47x_any"
+	self.omnia_lpf.tags = {"custom"}
+	self.omnia_lpf.use_factory = true
+	self.omnia_lpf.factory_weapon_id = {"wpn_fps_ass_m16_npc_omnia_lpf"}
+	self.omnia_lpf.do_omnia = true
+	table.insert(self._enemy_list, "omnia_lpf")
 end
 
 function CharacterTweakData:_init_fbi(presets)
@@ -276,6 +376,14 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.damage.explosion_damage_mul = 0
 	self.medic_summers.damage.fire_damage_mul = 0
 	self.medic_summers.damage.hurt_severity = presets.hurt_severities.boom
+	self.medic_summers.no_retreat = true
+	self.medic_summers.no_arrest = true
+	self.medic_summers.immune_to_knock_down = true
+	self.medic_summers.priority_shout = "f45"
+	self.medic_summers.bot_priority_shout = "f45x_any"
+	self.medic_summers.speech_prefix_p1 = "rmdc"
+	self.medic_summers.speech_prefix_p2 = "rmdc"
+	self.medic_summers.chatter = presets.enemy_chatter.summers
 	table.insert(self._enemy_list, "medic_summers")
 	table.insert(self._enemy_list, "medic")
 end
@@ -1301,7 +1409,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.melee_weapon_dmg_multiplier = 1
 	self.summers.weapon_safety_range = 1
 	self.summers.detection = presets.detection.normal
-	self.summers.HEALTH_INIT = 85.7142857
+	self.summers.HEALTH_INIT = 171.428571
 	self.summers.HEALTH_SUICIDE_LIMIT = 0.25
 	self.summers.flammable = false
 	self.summers.use_animation_on_fire_damage = false
@@ -1313,6 +1421,10 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.move_speed = presets.move_speed.fast
 	self.summers.no_retreat = true
 	self.summers.no_arrest = true
+	self.summers.ends_assault_on_death = true
+	self.summers.immune_to_knock_down = true
+	self.summers.priority_shout = "f45"
+	self.summers.bot_priority_shout = "f45x_any"
 	self.summers.surrender = nil
 	self.summers.ecm_vulnerability = 0.9
 	self.summers.ecm_hurts = {
@@ -1322,24 +1434,17 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.suppression = nil
 	self.summers.weapon_voice = "3"
 	self.summers.experience.cable_tie = "tie_swat"
-	self.summers.speech_prefix_p1 = "gren"
+	self.summers.speech_prefix_p1 = "r"
+	self.summers.speech_prefix_p2 = "r"
 	self.summers.speech_prefix_count = nil
 	self.summers.access = "taser"
 	self.summers.dodge = presets.dodge.athletic
 	self.summers.use_gas = true
-	self.summers.priority_shout = "g29"
-	self.summers.bot_priority_shout = "g29"
 	self.summers.priority_shout_max_dis = 3000
 	self.summers.custom_shout = true
 	self.summers.rescue_hostages = true
 	self.summers.deathguard = true
-	self.summers.chatter = {
-		aggressive = true,
-		retreat = true,
-		go_go = true,
-		contact = true,
-		entrance = true
-	}
+	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_gren"
 	self.summers.spawn_sound_event = "clk_c01x_plu"
 	self.summers.die_sound_event = "rmdc_x02a_any_3p"
@@ -1417,6 +1522,14 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.damage.explosion_damage_mul = 0
 	self.taser_summers.damage.fire_damage_mul = 0
 	self.taser_summers.damage.hurt_severity = presets.hurt_severities.boom
+	self.taser_summers.chatter = presets.enemy_chatter.summers
+	self.taser_summers.no_retreat = true
+	self.taser_summers.no_arrest = true
+	self.taser_summers.immune_to_knock_down = true
+	self.taser_summers.priority_shout = "f45"
+	self.taser_summers.bot_priority_shout = "f45x_any"
+	self.taser_summers.speech_prefix_p1 = "rtsr"
+	self.taser_summers.speech_prefix_p2 = "rtsr"
  	table.insert(self._enemy_list, "taser")
  	table.insert(self._enemy_list, "taser_summers")
 end
@@ -1497,6 +1610,7 @@ function CharacterTweakData:_init_boom(presets)
 	end
 	self.boom_summers = deep_clone(self.boom)
 	self.boom_summers.spawn_sound_event = "clk_c01x_plu"
+	self.boom_summers.chatter = presets.enemy_chatter.summers
 	self.boom_summers.speech_prefix_p1 = "rgren"
 	self.boom_summers.die_sound_event = "mdc_x02a_any_3p"
 	self.boom_summers.use_factory = true
@@ -1504,6 +1618,13 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.HEALTH_INIT = 85.7142857
 	self.boom_summers.tags = {"medic_summers", "custom"}
 	self.boom_summers.ignore_medic_revive_animation = false
+	self.boom_summers.no_retreat = true
+	self.boom_summers.no_arrest = true
+	self.boom_summers.immune_to_knock_down = true
+	self.boom_summers.priority_shout = "f45"
+	self.boom_summers.bot_priority_shout = "f45x_any"
+	self.boom_summers.speech_prefix_p1 = "rclk"
+	self.boom_summers.speech_prefix_p2 = "rclk"
  	table.insert(self._enemy_list, "boom_summers")
 end
 
@@ -9694,28 +9815,28 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_mag.RELOAD_SPEED = 1
 	presets.weapon.gang_member.is_shotgun_mag.autofire_rounds = {4, 9}
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
-	log("SC: normal presets")
+	RestorationCore.log_shit("SC: normal presets")
 	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)
 	presets.weapon.normal.mac11 = deep_clone(presets.weapon.normal.is_pistol)
 	presets.weapon.normal.rifle = deep_clone(presets.weapon.normal.is_rifle)
 	presets.weapon.normal.is_sniper = deep_clone(presets.weapon.normal.rifle)
-	log("SC: good presets")
+	RestorationCore.log_shit("SC: good presets")
 	presets.weapon.good.akimbo_pistol = deep_clone(presets.weapon.good.is_pistol)
 	presets.weapon.good.mac11 = deep_clone(presets.weapon.good.is_pistol)
 	presets.weapon.good.rifle = deep_clone(presets.weapon.good.is_rifle)
 	presets.weapon.good.is_sniper = deep_clone(presets.weapon.good.rifle)
-	log("SC: expert presets")
+	RestorationCore.log_shit("SC: expert presets")
 	presets.weapon.expert.akimbo_pistol = deep_clone(presets.weapon.expert.is_pistol)
 	presets.weapon.expert.mac11 = deep_clone(presets.weapon.expert.is_pistol)
 	presets.weapon.expert.rifle = deep_clone(presets.weapon.expert.is_rifle)
 	presets.weapon.expert.is_sniper = deep_clone(presets.weapon.expert.rifle)
 
-	log("SC: deathwish presets")
+	RestorationCore.log_shit("SC: deathwish presets")
 	presets.weapon.deathwish.akimbo_pistol = deep_clone(presets.weapon.deathwish.is_pistol)
 	presets.weapon.deathwish.mac11 = deep_clone(presets.weapon.deathwish.is_pistol)
 	presets.weapon.deathwish.rifle = deep_clone(presets.weapon.deathwish.is_rifle)
 	presets.weapon.deathwish.is_sniper = deep_clone(presets.weapon.deathwish.rifle)
-	log("SC: easy_wish presets")
+	RestorationCore.log_shit("SC: easy_wish presets")
 	presets.weapon.easy_wish.akimbo_pistol = deep_clone(presets.weapon.easy_wish.is_pistol)
 	presets.weapon.easy_wish.mac11 = deep_clone(presets.weapon.easy_wish.is_pistol)
 	presets.weapon.easy_wish.rifle = deep_clone(presets.weapon.easy_wish.is_rifle)
@@ -11618,18 +11739,57 @@ function CharacterTweakData:_presets(tweak_data)
 			aggressive = true,
 			retreat = true,
 			contact = true,
+			clear = true,
 			go_go = true,
+			push = true,
+			reload = true,
+			look_for_angle = true,
+			ecm = true,
+			saw = true,
+			trip_mines = true,
+			sentry = true,
+			ready = true,
+			smoke = true,
+			flash_grenade = true,
+			follow_me = true,
 			suppress = true
 		},
 		swat = {
 			aggressive = true,
 			retreat = true,
-			follow_me = true,
+			contact = true,
 			clear = true,
 			go_go = true,
+			push = true,
+			reload = true,
+			look_for_angle = true,
+			ecm = true,
+			saw = true,
+			trip_mines = true,
+			sentry = true,
 			ready = true,
 			smoke = true,
+			flash_grenade = true,
+			follow_me = true,
+			suppress = true
+		},
+		summers = {
+			aggressive = true,
+			retreat = true,
 			contact = true,
+			clear = true,
+			go_go = true,
+			push = true,
+			reload = true,
+			look_for_angle = true,
+			ecm = true,
+			saw = true,
+			trip_mines = true,
+			sentry = true,
+			ready = true,
+			smoke = true,
+			flash_grenade = true,
+			follow_me = true,
 			suppress = true
 		},
 		shield = {follow_me = true}
@@ -12058,6 +12218,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.boom_summers.HEALTH_INIT = self.boom_summers.HEALTH_INIT * hp_mul
 	self.rboom.HEALTH_INIT = self.rboom.HEALTH_INIT * hp_mul
 	self.biker_escape.HEALTH_INIT = self.biker_escape.HEALTH_INIT * hp_mul
+	self.omnia_lpf.HEALTH_INIT = self.omnia_lpf.HEALTH_INIT * hp_mul
 	if self.security.headshot_dmg_mul then
 		self.security.headshot_dmg_mul = self.security.headshot_dmg_mul * hs_mul
 	end
@@ -12202,6 +12363,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.bolivian_indoors.headshot_dmg_mul then
 		self.bolivian_indoors.headshot_dmg_mul = self.bolivian_indoors.headshot_dmg_mul * hs_mul
 	end
+	if self.omnia_lpf.headshot_dmg_mul then
+		self.omnia_lpf.headshot_dmg_mul = self.omnia_lpf.headshot_dmg_mul * hs_mul
+	end
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
@@ -12247,7 +12411,8 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"biker",
 		"boom",
 		"rboom",
-		"taser"
+		"taser",
+		"omnia_lpf"
 	}
 	table.insert(all_units, "bolivian")
 	table.insert(all_units, "bolivian_indoors")
@@ -12305,6 +12470,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.boom.SPEED_RUN = self.boom.SPEED_RUN * run_mul
 	self.rboom.SPEED_RUN = self.rboom.SPEED_RUN * run_mul
 	self.biker_escape.SPEED_RUN = self.biker_escape.SPEED_RUN * run_mul
+	self.omnia_lpf.SPEED_RUN = self.omnia_lpf.SPEED_RUN * run_mul
 end
 
 function CharacterTweakData:_set_characters_weapon_preset(preset)
@@ -12698,7 +12864,8 @@ function CharacterTweakData:character_map()
 				"ene_phalanx_grenadier",
 				"ene_phalanx_taser",
 				"ene_phalanx_1",
-				"ene_titan_shotgun"
+				"ene_titan_shotgun",
+				"ene_omnia_lpf"
 			}
 		},
 		holly = {

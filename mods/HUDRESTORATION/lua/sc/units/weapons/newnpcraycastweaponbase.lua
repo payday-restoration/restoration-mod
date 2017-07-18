@@ -9,10 +9,10 @@ function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, d
 	mvector3.multiply(mvec_to, ray_distance)
 	mvector3.add(mvec_to, from_pos)
 	local damage = self._damage * (dmg_mul or 1)
-	log("SC: damage before " ..damage)
+	RestorationCore.log_shit("SC: damage before " ..damage)
 	local new_damage = damage * 0.74
 	damage = new_damage
-	log("SC: damage after " ..damage)
+	RestorationCore.log_shit("SC: damage after " ..damage)
 	local ray_from_unit = shoot_through_data and alive(shoot_through_data.ray_from_unit) and shoot_through_data.ray_from_unit or nil
 	local col_ray = ray_from_unit or World:raycast("ray", from_pos, mvec_to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
 	if shoot_through_data and shoot_through_data.has_hit_wall then

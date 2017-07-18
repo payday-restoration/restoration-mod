@@ -83,14 +83,15 @@ function CopLogicIdle.enter(data, new_logic_name, enter_params)
 			my_data.weapon_range = fuck_you_and_your_tables.range
 	else
 		local fucking_stupid_callback
-		log("SC: " .. usage)
+		RestorationCore.log_shit("SC: " .. usage)
 
 		if my_data.weapon_range == nil then
 			local fucking_stupid_callback = tweak_data.character.presets.weapon.normal[usage]
-			log("SC: Fucking couldnt find a weapon range, falling back to presets")
+			RestorationCore.log_shit("SC: Fucking couldnt find a weapon range, falling back to presets")
 			my_data.weapon_range = fucking_stupid_callback.range
 		end
 	end
+	RestorationCore.log_shit("SC: FUCK YOUUUUUUU 6")
 	data.unit:brain():set_update_enabled_state(false)
 	CopLogicIdle._perform_objective_action(data, my_data, objective)
 	if my_data ~= data.internal_data then
@@ -1194,4 +1195,5 @@ function CopLogicIdle._start_idle_action_from_act(data)
 			fire_hurt = -1
 		}
 	})
+
 end

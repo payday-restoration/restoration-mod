@@ -8,7 +8,7 @@ function NewNPCFlamethrowerBase:setup_default()
 	self._use_trails = false
 end
 function NewNPCFlamethrowerBase:_spawn_muzzle_effect(from_pos, direction)
-	log("SC: Making flames")
+	RestorationCore.log_shit("SC: Making flames")
 	self._unit:set_extension_update_enabled(Idstring("base"), true)
 	self._unit:flamethrower_effect_extension():_spawn_muzzle_effect(from_pos, direction)
 end

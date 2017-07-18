@@ -70,8 +70,12 @@
 		<hook file="sc/units/weapons/newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
 		<hook file="sc/units/weapons/newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
 		<hook file="sc/units/weapons/newnpcflamethrowerbase.lua" source_file="lib/units/weapons/newnpcflamethrowerbase"/>
+		<hook file="sc/units/weapons/npcgrenadelauncherbase.lua" source_file="lib/units/weapons/npcgrenadelauncherbase"/>
+		<hook file="sc/units/weapons/npcbowweaponbase.lua" source_file="lib/units/weapons/npcbowweaponbase"/>
+		<hook file="sc/units/weapons/npcsawweaponbase.lua" source_file="lib/units/weapons/npcsawweaponbase"/>
 		<hook file="sc/units/weapons/flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 		<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
+		<hook file="sc/units/weapons/projectileweaponbase.lua" source_file="lib/units/weapons/projectileweaponbase"/>
 		<hook file="sc/units/weapons/raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 		<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>
 		<hook file="sc/units/player/playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
@@ -80,6 +84,7 @@
 		<hook file="sc/units/player/playertased.lua" source_file="lib/units/beings/player/states/playertased"/>
 		<hook file="sc/units/player/playermovement.lua" source_file="lib/units/beings/player/playermovement"/>
 		<hook file="sc/units/player/playerbipod.lua" source_file="lib/units/beings/player/states/playerbipod"/>
+		<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>
 		<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 		<hook file="sc/units/player/recoil.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
 		<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>

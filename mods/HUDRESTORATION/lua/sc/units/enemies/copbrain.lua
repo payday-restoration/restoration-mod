@@ -1,6 +1,8 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+
 local old_init = CopBrain.init
+local old_update = CopBrain.update
 local logic_variants = {
 	security = {
 		idle = CopLogicIdle,
@@ -36,6 +38,7 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
+	CopBrain._logic_variants.omnia_lpf = security_variant
 end
 
 --Thanks Rokk--

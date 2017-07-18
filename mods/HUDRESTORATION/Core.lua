@@ -1,5 +1,5 @@
 if not ModCore then
-	log("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
+	RestorationCore.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
 RestorationCore = RestorationCore or class(ModCore)
@@ -8,11 +8,20 @@ function RestorationCore:init()
 	self.super.init(self, ModPath .. "config.xml", true, true)
 end
 
+function RestorationCore.log_shit(to_log)
+	if _G.restoration.we_log then
+		log(to_log)
+	end
+end
+
 if not _G.restoration then
 	local success, err = pcall(function() _G.restoration = RestorationCore:new() end)
 	if not success then
-		log("[ERROR] Something bad happened with Restoration. " .. tostring(err))
+		RestorationCore.log_shit("[ERROR] Something bad happened with Restoration. " .. tostring(err))
 	end
+	RestorationCore.log_shit("SC: FUCKING LOADING: " .. ModPath)
+	_G.restoration.ModPath = ModPath
+	_G.restoration.we_log = true
 end
 
 _G.SC = _G.SC or {}

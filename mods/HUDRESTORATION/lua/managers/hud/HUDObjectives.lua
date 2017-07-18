@@ -1,5 +1,5 @@
 if restoration.Options:GetValue("HUD/ObjectivesPanel") == true then
-log("[RESTORATION] LOADED OBJECTIVES")
+RestorationCore.log_shit("[RESTORATION] LOADED OBJECTIVES")
 HUDObjectives = HUDObjectives or class()
 
 function HUDObjectives:init( hud )

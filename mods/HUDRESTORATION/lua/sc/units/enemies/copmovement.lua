@@ -51,6 +51,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.summers = security_variant
 	CopMovement._action_variants.boom_summers = security_variant
 	CopMovement._action_variants.taser_summers = security_variant
+	CopMovement._action_variants.omnia_lpf = security_variant
 	CopMovement._action_variants.medic_summers = security_variant
 	CopMovement._action_variants.tank_titan = clone(security_variant)
 	CopMovement._action_variants.tank_titan.walk = TankCopActionWalk
@@ -109,18 +110,18 @@ function CopMovement:post_init()
 	table.insert(event_list, "healed")
 	self._unit:character_damage():add_listener("movement", event_list, callback(self, self, "damage_clbk"))
 	self._unit:inventory():add_listener("movement", {"equip", "unequip"}, callback(self, self, "clbk_inventory"))
-	log("SC: ADDING WEAPONS")
+	RestorationCore.log_shit("SC: ADDING WEAPONS")
 	self:add_weapons()
-	log("SC: WEAPONS ADDED")
+	RestorationCore.log_shit("SC: WEAPONS ADDED")
 	if self._unit:inventory():is_selection_available(1) then
 		self._unit:inventory():equip_selection(1, true)
 	elseif self._unit:inventory():is_selection_available(2) then
 		self._unit:inventory():equip_selection(2, true)
 	end
 	if self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
-		log("SC: Stealth with secondary equipped, disabling weapon")
+		RestorationCore.log_shit("SC: Stealth with secondary equipped, disabling weapon")
 		self._ext_inventory:set_weapon_enabled(false)
-		log("SC: Secondary disabled")
+		RestorationCore.log_shit("SC: Secondary disabled")
 	end
 	local weap_name = self._ext_base:default_weapon_name(managers.groupai:state():enemy_weapons_hot() and "primary" or "secondary")
 	local fwd = self._m_rot:y()
@@ -149,16 +150,118 @@ function CopMovement:post_init()
 	if self._gnd_ray then
 		self:set_position(self._gnd_ray.position)
 	end
+	self._omnia_cooldown = 0
 	self:_post_init()
+end
+
+function CopMovement:_upd_actions(t)
+	local a_actions = self._active_actions
+	local has_no_action = true
+	for i_action, action in ipairs(a_actions) do
+		if action then
+			if action.update then
+				action:update(t)
+			end
+			if not self._need_upd and action.need_upd then
+				self._need_upd = action:need_upd()
+			end
+			if action.expired and action:expired() then
+				a_actions[i_action] = false
+				if action.on_exit then
+					action:on_exit()
+				end
+				self._ext_brain:action_complete_clbk(action)
+				self._ext_base:chk_freeze_anims()
+				for _, action in ipairs(a_actions) do
+					if action then
+						has_no_action = nil
+					else
+					end
+				end
+			else
+				has_no_action = nil
+			end
+		end
+	end
+	if has_no_action and (not self._queued_actions or not next(self._queued_actions)) then
+		self:action_request({type = "idle", body_part = 1})
+	end
+	if not a_actions[1] and not a_actions[2] and (not self._queued_actions or not next(self._queued_actions)) and not self:chk_action_forbidden("action") then
+		if a_actions[3] then
+			self:action_request({type = "idle", body_part = 2})
+		else
+			self:action_request({type = "idle", body_part = 1})
+		end
+	end
+	self:_upd_stance(t)
+	if not self._need_upd and (self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._stance.transition or self._suppression.transition) then
+		self._need_upd = true
+	end
+	if self._tweak_data.do_omnia then
+		self:do_omnia(self)
+	end
+end
+
+function CopMovement:do_omnia(self)
+	local t = TimerManager:main():time()
+	if self._omnia_cooldown > t then
+		return
+	else
+		self._omnia_cooldown = t + 0.2
+	end
+	if self and self._unit then
+		if self._unit:base()._tweak_table == "omnia_lpf" then
+			local cops_to_heal = {
+				"cop",
+				"cop_female",
+				"gensec",
+				"security"
+			}
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
+			if enemies then
+				RestorationCore.log_shit("SC: FOUND ENEMIES")
+				for _,enemy in ipairs(enemies) do
+					if enemy ~= self._unit then
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							RestorationCore.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								RestorationCore.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
+							end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 4
+							RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
+							end
+						end
+					end
+				end
+			end
+		end
+	else
+		RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
+	end
 end
 
 function CopMovement:add_weapons()
 	if self._tweak_data.use_factory then
 		local weapon_to_use = self._tweak_data.factory_weapon_id[ math.random( #self._tweak_data.factory_weapon_id ) ]
-		log("SC: WEAPON TO USE " .. weapon_to_use)
+		local weapon_cosmetic = self._tweak_data.weapon_cosmetic_string
+		RestorationCore.log_shit("SC: WEAPON TO USE " .. weapon_to_use)
 		if weapon_to_use then
-			self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, nil, "")
-			log("SC: PRIMARY ADDED")
+			if weapon_cosmetic then
+				self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, weapon_cosmetic, "")
+			else
+				self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, nil, "")
+			end
+			RestorationCore.log_shit("SC: PRIMARY ADDED")
 		end
 	else
 		local prim_weap_name = self._ext_base:default_weapon_name("primary")
@@ -179,7 +282,7 @@ function CopMovement:_chk_play_equip_weapon()
 			local weapon_unit = self._ext_inventory:equipped_unit()
 			if weapon_unit then
 				local weap_tweak = weapon_unit:base():weapon_tweak_data()
-				log("SC: Weapon tweak found! " .. weap_tweak.sounds.prefix)
+				RestorationCore.log_shit("SC: Weapon tweak found! " .. weap_tweak.sounds.prefix)
 				local weapon_hold = weap_tweak.hold
 				if type(weap_tweak.hold) == "table" then
 					local num = #weap_tweak.hold + 1

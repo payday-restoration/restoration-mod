@@ -21,18 +21,18 @@ function WeaponFactoryTweakData:init(...)
 		"wpn_fps_m4_upg_m_quick",
 		"wpn_fps_upg_m4_g_standard_vanilla"
 	}
-	self.wpn_fps_ass_m16_npc_omnia_lpf = deep_clone(self.wpn_fps_ass_m16_npc)
-	self.wpn_fps_ass_m16_npc_omnia_lpf.default_blueprint = {
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_m16_fg_vietnam",
-		"wpn_fps_m4_upper_reciever_edge",
-		"wpn_fps_m16_s_solid_vanilla",
+	self.wpn_fps_smg_olympic_npc_omnia_lpf = deep_clone(self.wpn_fps_smg_olympic_npc)
+	self.wpn_fps_smg_olympic_npc_omnia_lpf.default_blueprint = {
 		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_ass_m16_o_handle_sight",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_m4_uupg_b_short_vanilla",
+		"wpn_fps_m4_upper_reciever_round",
 		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_upg_m4_m_drum"
+		"wpn_fps_smg_olympic_fg_olympic",
+		"wpn_fps_upg_ass_ns_jprifles",
+		"wpn_fps_upg_ass_ns_jprifles",
+		"wpn_fps_upg_m4_m_drum",
+		"wpn_fps_smg_olympic_s_short"
 	}
 	self.wpn_fps_smg_p90_npc_summers = deep_clone(self.wpn_fps_smg_p90_npc)
 	self.wpn_fps_smg_p90_npc_summers.default_blueprint = {

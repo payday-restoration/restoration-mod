@@ -4,17 +4,15 @@
 	<object file="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" />
 
 	<dependencies>
-		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
+		
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on bnk="soundbanks/regular_sfx" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="omnia_lpf" />
-			<var name="_default_weapon_id" value="m4" />
+			<var name="_default_weapon_id" value="c45" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

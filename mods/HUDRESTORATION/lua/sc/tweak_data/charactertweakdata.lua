@@ -237,6 +237,8 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"custom"}
 	self.omnia_lpf.do_omnia = true
+	self.omnia_lpf.use_factory = true
+	self.omnia_lpf.factory_weapon_id = {"wpn_fps_smg_olympic_npc_omnia_lpf"}
 	table.insert(self._enemy_list, "omnia_lpf")
 end
 

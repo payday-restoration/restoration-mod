@@ -2738,7 +2738,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				tactics = self._tactics.Cap_summers,
-				rank = 1
+				rank = 4
 			},
 			{
 				unit = "medic_summers",
@@ -2746,7 +2746,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				tactics = self._tactics.Cap_summers,
-				rank = 2
+				rank = 1
 			},
 			{
 				unit = "boom_summers",
@@ -2762,7 +2762,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				tactics = self._tactics.Cap_summers,
-				rank = 4
+				rank = 2
 			}
 		}
 	}

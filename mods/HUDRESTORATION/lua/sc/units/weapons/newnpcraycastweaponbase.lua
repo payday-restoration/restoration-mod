@@ -1,3 +1,5 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 local mvec_to = Vector3()
 local mvec_spread = Vector3()
 local mvec1 = Vector3()
@@ -90,4 +92,6 @@ function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, d
 		end
 	end
 	return result
+end
+
 end

@@ -181,7 +181,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 0,
-			spring = 0
+			spring = 0,
+			summers = 0
 		}
 	elseif difficulty_index == 3 then
 		self.special_unit_spawn_limits = {
@@ -194,7 +195,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 0,
-			spring = 0
+			spring = 0,
+			summers = 0
 		}
 	elseif difficulty_index == 4 then
 		self.special_unit_spawn_limits = {
@@ -207,7 +209,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 0,
-			spring = 1
+			spring = 1,
+			summers = 1
 		}
 	elseif difficulty_index == 5 then
 		self.special_unit_spawn_limits = {
@@ -220,7 +223,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 2,
-			spring = 1
+			spring = 1,
+			summers = 1
 		}
 	elseif difficulty_index == 6 then
 		self.special_unit_spawn_limits = {
@@ -233,7 +237,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 1,
 			tank_titan = 1,
 			fbi_vet = 3,
-			spring = 1
+			spring = 1,
+			summers = 1
 		}
 	elseif difficulty_index == 7 then
 		self.special_unit_spawn_limits = {
@@ -246,7 +251,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 2,
 			tank_titan = 1,
 			fbi_vet = 3,
-			spring = 1
+			spring = 1,
+			summers = 1
 		}
 	else
 		self.special_unit_spawn_limits = {
@@ -259,7 +265,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			phalanx_minion = 3,
 			tank_titan = 2,
 			fbi_vet = 4,
-			spring = 1
+			spring = 1,
+			summers = 1
 		}
 	end
 	self.unit_categories = {}
@@ -1533,8 +1540,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
 			}
 		},
-		access = access_type_all,
-		special_type = "boom"
+		access = access_type_all
 	}
 	self.unit_categories.medic_summers = {
 		unit_types = {
@@ -1545,8 +1551,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
 			}
 		},
-		access = access_type_all,
-		special_type = "medic"
+		access = access_type_all
 	}
 	self.unit_categories.taser_summers = {
 		unit_types = {
@@ -1557,8 +1562,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
 			}
 		},
-		access = access_type_all,
-		special_type = "taser"
+		access = access_type_all
 	}
 	self.unit_categories.Tank_Titan = {
 		unit_types = {
@@ -4991,10 +4995,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0
 	}
 	local lists_of_heists_to_burninate = {
-		"dinner",
+		"pal",
 		"run",
 		"mia_2",
-		"hox_1",
 		"firestarter_3",
 		"mad",
 		"jolly"
@@ -5030,12 +5033,15 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			break
 		end
 	end
+	--Captain stuff here--
 	local heists_in_which_the_payday_gang_are_up_against_the_wall = {
 		"branchbank",
 		"man",
+		"firestarter_2",
 		"framing_frame_3",
 		"four_stores",
 		"alex_2",
+		"rat",	
 		"flat"
 	}
 	for _,v in pairs(heists_in_which_the_payday_gang_are_up_against_the_wall) do

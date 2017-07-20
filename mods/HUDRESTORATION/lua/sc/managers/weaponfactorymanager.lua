@@ -1,3 +1,5 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 function WeaponFactoryManager:get_part_desc_by_part_id_from_weapon(part_id, factory_id, blueprint)
 local factory = tweak_data.weapon.factory
 local override = self:_get_override_parts(factory_id, blueprint)
@@ -99,4 +101,6 @@ function WeaponFactoryManager:_add_parts(p_unit, factory_id, factory_weapon, blu
 		RestorationCore.log_shit("SC: Finished Load!")
 	end
 	return parts, blueprint
+end
+
 end

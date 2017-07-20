@@ -11,7 +11,7 @@ function CharacterTweakData:init(tweak_data, presets)
 			if ai_type == r then
 				return "n"
 			else
-				return "n"
+				return "d"
 			end
 		end
 	}
@@ -66,18 +66,6 @@ function CharacterTweakData:init(tweak_data, presets)
 			else
 				return "mdc"
 			end
-		end,
-		summers = function()
-			return "r"
-		end,
-		medic_summers = function()
-			return "rmdc"
-		end,
-		taser_summers = function()
-			return "rtsr"
-		end,
-		boom_summers = function()
-			return "rclk"
 		end
 	}
 	self:_init_boom(presets)
@@ -120,7 +108,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.melee_weapon = "baton"
 	self.security.no_arrest_chance_inc = 0.25
 	self.security.steal_loot = nil
-	
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
 	self.security_undominatable.surrender = nil
@@ -204,7 +191,18 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop_female.speech_prefix_p1 = "fl"
 	self.cop_female.speech_prefix_p2 = self._speech_prefix_p2
 	self.cop_female.speech_prefix_count = 1
-	self.cop_female.factory_weapon_id = {"wpn_fps_x_1911_npc"}
+	if job == "hox_1" then
+		self.cop_female.HEALTH_INIT = 3
+		self.cop_female.headshot_dmg_mul = 1.7
+	else
+		self.cop_female.HEALTH_INIT = 6
+		self.cop_female.headshot_dmg_mul = 3.4
+		self.cop_female.move_speed = presets.move_speed.very_fast
+    		self.cop_female.dodge = presets.dodge.athletic
+    		self.cop_female.suppression = presets.suppression.hard_def
+		self.cop_female.surrender_break_time = {7, 12}
+		self.cop_female.melee_weapon = nil
+	end
  	table.insert(self._enemy_list, "cop_female")
 end
 
@@ -213,12 +211,12 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.experience = {}
 	self.omnia_lpf.weapon = presets.weapon.normal
 	self.omnia_lpf.detection = presets.detection.normal
-	self.omnia_lpf.HEALTH_INIT = 35
+	self.omnia_lpf.HEALTH_INIT = 13
 	self.omnia_lpf.headshot_dmg_mul = 2
 	self.omnia_lpf.move_speed = presets.move_speed.fast
 	self.omnia_lpf.surrender_break_time = {6, 10}
-	self.omnia_lpf.suppression = presets.suppression.hard_agg
-	self.omnia_lpf.surrender = presets.surrender.easy
+	self.omnia_lpf.suppression = nil
+	self.omnia_lpf.surrender = nil
 	self.omnia_lpf.ecm_vulnerability = 1
 	self.omnia_lpf.ecm_hurts = {
 		ears = {min_duration = 8, max_duration = 10}
@@ -226,7 +224,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.weapon_voice = "2"
 	self.omnia_lpf.experience.cable_tie = "tie_swat"
 	self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.omnia_lpf.speech_prefix_p2 = self._speech_prefix_p2
+	self.omnia_lpf.speech_prefix_p2 = self._prefix_data_p2.swat()
 	self.omnia_lpf.speech_prefix_count = 4
 	self.omnia_lpf.access = "swat"
 	self.omnia_lpf.dodge = presets.dodge.athletic
@@ -238,8 +236,6 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"custom"}
-	self.omnia_lpf.use_factory = true
-	self.omnia_lpf.factory_weapon_id = {"wpn_fps_ass_m16_npc_omnia_lpf"}
 	self.omnia_lpf.do_omnia = true
 	table.insert(self._enemy_list, "omnia_lpf")
 end
@@ -338,7 +334,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.HEALTH_INIT = 30
 	self.medic.headshot_dmg_mul = 2.2
 	self.medic.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.medic.suppression = presets.suppression.no_supress
+	self.medic.suppression = nil
 	self.medic.surrender = presets.surrender.special
 	self.medic.move_speed = presets.move_speed.very_fast
 	self.medic.surrender_break_time = {7, 12}
@@ -364,28 +360,33 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.priority_shout = "f47"
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
-	
+	table.insert(self._enemy_list, "medic")
 	self.medic_summers = deep_clone(self.medic)
-	self.medic_summers.use_factory = true
-	self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
-	self.medic_summers.HEALTH_INIT = 85.7142857
+	self.medic_summers.HEALTH_INIT = 30
+	self.medic_summers.headshot_dmg_mul = 1.25
 	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom"}
 	self.medic_summers.ignore_medic_revive_animation = false
+	self.medic_summers.surrender = nil
 	self.medic_summers.flammable = false
 	self.medic_summers.use_animation_on_fire_damage = false
+	self.medic_summers.damage.bullet_damage_mul = 0.65
 	self.medic_summers.damage.explosion_damage_mul = 0
 	self.medic_summers.damage.fire_damage_mul = 0
-	self.medic_summers.damage.hurt_severity = presets.hurt_severities.boom
+	self.medic_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.medic_summers.immune_to_concussion = true
 	self.medic_summers.no_retreat = true
 	self.medic_summers.no_arrest = true
 	self.medic_summers.immune_to_knock_down = true
 	self.medic_summers.priority_shout = "f45"
 	self.medic_summers.bot_priority_shout = "f45x_any"
 	self.medic_summers.speech_prefix_p1 = "rmdc"
-	self.medic_summers.speech_prefix_p2 = "rmdc"
+	self.medic_summers.speech_prefix_p2 = nil
+	self.medic_summers.spawn_sound_event = "rmdc_entrance"
+	self.medic_summers.die_sound_event = "mga_death_scream"
 	self.medic_summers.chatter = presets.enemy_chatter.summers
+	self.medic_summers.use_factory = true
+	self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
 	table.insert(self._enemy_list, "medic_summers")
-	table.insert(self._enemy_list, "medic")
 end
 
 function CharacterTweakData:_init_swat(presets)
@@ -813,8 +814,6 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.immune_to_knock_down = true
 	self.mobster_boss.immune_to_concussion = false
 	self.mobster_boss.must_headshot = true
-	self.mobster_boss.use_factory = true
-	self.mobster_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"} -- opulence
  	table.insert(self._enemy_list, "mobster_boss")
 end
 
@@ -871,8 +870,6 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.silent_priority_shout = nil
 	self.hector_boss.custom_shout = true
 	self.hector_boss.priority_shout_max_dis = 3000
-	self.hector_boss.use_factory = true
-	self.hector_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"}
  	table.insert(self._enemy_list, "hector_boss")
 end
 
@@ -933,8 +930,6 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.immune_to_knock_down = true
 	self.chavez_boss.immune_to_concussion = false
 	self.chavez_boss.must_headshot = true
-	self.chavez_boss.use_factory = true
-	self.chavez_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"}
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -1031,8 +1026,6 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.custom_shout = true
 	self.drug_lord_boss.priority_shout_max_dis = 3000
 	self.drug_lord_boss.must_headshot = true
-	self.drug_lord_boss.use_factory = true
-	self.drug_lord_boss.factory_weapon_id = {"wpn_fps_ass_akm_gold_npc"}
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 
@@ -1134,6 +1127,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.flammable = true
 	self.tank.can_be_tased = false
 	self.tank.immune_to_knock_down = true
+	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
  	table.insert(self._enemy_list, "tank")
 	self.tank_hw = deep_clone(self.tank)
@@ -1405,17 +1399,18 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.tags = {"custom"}
 	self.summers.experience = {}
 	self.summers.weapon = deep_clone(presets.weapon.normal)
-	self.summers.melee_weapon = "knife_1"
+	self.summers.melee_weapon = "buzzer_summer"
 	self.summers.melee_weapon_dmg_multiplier = 1
 	self.summers.weapon_safety_range = 1
 	self.summers.detection = presets.detection.normal
-	self.summers.HEALTH_INIT = 171.428571
+	self.summers.HEALTH_INIT = 72
 	self.summers.HEALTH_SUICIDE_LIMIT = 0.25
 	self.summers.flammable = false
 	self.summers.use_animation_on_fire_damage = false
+	self.summers.damage.bullet_damage_mul = 0.65
 	self.summers.damage.explosion_damage_mul = 0
 	self.summers.damage.fire_damage_mul = 0
-	self.summers.damage.hurt_severity = presets.hurt_severities.boom
+	self.summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.summers.headshot_dmg_mul = 1.5
 	self.summers.bag_dmg_mul = 6
 	self.summers.move_speed = presets.move_speed.fast
@@ -1425,11 +1420,10 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.immune_to_knock_down = true
 	self.summers.priority_shout = "f45"
 	self.summers.bot_priority_shout = "f45x_any"
+	self.summers.priority_shout_max_dis = 3000
 	self.summers.surrender = nil
-	self.summers.ecm_vulnerability = 0.9
-	self.summers.ecm_hurts = {
-		ears = {min_duration = 6, max_duration = 8}
-	}
+	self.summers.ecm_vulnerability = 0
+	self.summers.ecm_hurts = {}
 	self.summers.surrender_break_time = {4, 6}
 	self.summers.suppression = nil
 	self.summers.weapon_voice = "3"
@@ -1438,16 +1432,15 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.speech_prefix_p2 = "r"
 	self.summers.speech_prefix_count = nil
 	self.summers.access = "taser"
-	self.summers.dodge = presets.dodge.athletic
+	self.summers.dodge = presets.dodge.elite
 	self.summers.use_gas = true
-	self.summers.priority_shout_max_dis = 3000
-	self.summers.custom_shout = true
-	self.summers.rescue_hostages = true
+	self.summers.rescue_hostages = false
+	self.summers.can_be_tased = false
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
-	self.summers.announce_incomming = "incomming_gren"
-	self.summers.spawn_sound_event = "clk_c01x_plu"
-	self.summers.die_sound_event = "rmdc_x02a_any_3p"
+	self.summers.announce_incomming = "incomming_captain"
+	self.summers.spawn_sound_event = "cpa_a02_01"
+	self.summers.die_sound_event = "mga_death_scream"
 	self.summers.use_factory = true
 	self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
 	if job == "chill_combat" then
@@ -1511,17 +1504,19 @@ function CharacterTweakData:_init_taser(presets)
 			special_comment = "x01"
 		}
 	}
+ 	table.insert(self._enemy_list, "taser")
 	self.taser_summers = deep_clone(self.taser)
-	self.taser_summers.use_factory = true
-	self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
-	self.taser_summers.HEALTH_INIT = 85.7142857
+	self.taser_summers.HEALTH_INIT = 36
+	self.taser_summers.headshot_dmg_mul = 1.25
 	self.taser_summers.tags = {"taser", "medic_summers", "custom"}
 	self.taser_summers.ignore_medic_revive_animation = false
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
+	self.taser_summers.damage.bullet_damage_mul = 0.65
 	self.taser_summers.damage.explosion_damage_mul = 0
 	self.taser_summers.damage.fire_damage_mul = 0
-	self.taser_summers.damage.hurt_severity = presets.hurt_severities.boom
+	self.taser_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.taser_summers.ecm_hurts = {}
 	self.taser_summers.chatter = presets.enemy_chatter.summers
 	self.taser_summers.no_retreat = true
 	self.taser_summers.no_arrest = true
@@ -1529,8 +1524,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.priority_shout = "f45"
 	self.taser_summers.bot_priority_shout = "f45x_any"
 	self.taser_summers.speech_prefix_p1 = "rtsr"
-	self.taser_summers.speech_prefix_p2 = "rtsr"
- 	table.insert(self._enemy_list, "taser")
+	self.taser_summers.speech_prefix_p2 = nil
+	self.taser_summers.spawn_sound_event = "rtsr_elite"
+	self.taser_summers.die_sound_event = "mga_death_scream"
+	self.taser_summers.use_factory = true
+	self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
  	table.insert(self._enemy_list, "taser_summers")
 end
 
@@ -1585,7 +1583,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.announce_incomming = "incomming_gren"
 	self.boom.spawn_sound_event = "clk_c01x_plu"
 	self.boom.die_sound_event = "rmdc_x02a_any_3p"
-	self.boom.factory_weapon_id = {"wpn_fps_ass_contraband"}
 	if job == "chill_combat" then
 		self.boom.steal_loot = nil
 	else
@@ -1613,9 +1610,8 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.chatter = presets.enemy_chatter.summers
 	self.boom_summers.speech_prefix_p1 = "rgren"
 	self.boom_summers.die_sound_event = "mdc_x02a_any_3p"
-	self.boom_summers.use_factory = true
-	self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
-	self.boom_summers.HEALTH_INIT = 85.7142857
+	self.boom_summers.HEALTH_INIT = 36
+	self.boom_summers.headshot_dmg_mul = 1.25
 	self.boom_summers.tags = {"medic_summers", "custom"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.no_retreat = true
@@ -1623,8 +1619,10 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.immune_to_knock_down = true
 	self.boom_summers.priority_shout = "f45"
 	self.boom_summers.bot_priority_shout = "f45x_any"
-	self.boom_summers.speech_prefix_p1 = "rclk"
-	self.boom_summers.speech_prefix_p2 = "rclk"
+	self.boom_summers.custom_shout = false
+	self.boom_summers.die_sound_event = "mga_death_scream"
+	self.boom_summers.use_factory = true
+	self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
  	table.insert(self._enemy_list, "boom_summers")
 end
 
@@ -3122,67 +3120,6 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
-	presets.weapon.normal.flamethrower.autofire_rounds = {25, 50}
-	presets.weapon.normal.flamethrower.range = {
-		close = 250,
-		optimal = 500,
-		far = 750
-	}
-	presets.weapon.normal.flamethrower.FALLOFF = {
-		{
-			r = 250,
-			acc = {1, 1},
-			dmg_mul = 1,
-			recoil = {0, 0},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			},
-			autofire_rounds = {25, 50}
-		},
-		{
-			r = 500,
-			acc = {0.5, 0.5},
-			dmg_mul = 1,
-			recoil = {0, 0},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			},
-			autofire_rounds = {25, 50}
-		},
-		{
-			r = 750,
-			acc = {0.25, 0.25},
-			dmg_mul = 1,
-			recoil = {0, 0},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			},
-			autofire_rounds = {25, 50}
-		},
-		{
-			r = 751,
-			acc = {0, 0},
-			dmg_mul = 0,
-			recoil = {0, 0},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			},
-			autofire_rounds = {25, 50}
-		}
-	}
 	presets.weapon.normal.is_smg.aim_delay = {0.1, 0.1}
 	presets.weapon.normal.is_smg.focus_delay = 10
 	presets.weapon.normal.is_smg.focus_dis = 200
@@ -3813,6 +3750,68 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.normal.flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.normal.flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.normal.flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.normal.flamethrower.range = {
+		close = 250,
+		optimal = 750,
+		far = 1400
+	}
+	presets.weapon.normal.flamethrower.FALLOFF = {
+		{
+			r = 250,
+			acc = {1, 1},
+			dmg_mul = 1,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.5},
+			dmg_mul = 1,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1400,
+			acc = {0.25, 0.25},
+			dmg_mul = 1,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1401,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		}
+	}
 	presets.weapon.normal.mini = {}
 	presets.weapon.normal.mini.aim_delay = {0.1, 0.1}
 	presets.weapon.normal.mini.focus_delay = 10
@@ -3840,7 +3839,8 @@ function CharacterTweakData:_presets(tweak_data)
 				0,
 				0,
 				1
-			}
+			},
+			autofire_rounds = {500, 700}
 		},
 		{
 			r = 500,
@@ -3849,10 +3849,11 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
-				1,
-				2,
-				8
-			}
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {500, 500}
 		},
 		{
 			r = 1000,
@@ -3860,11 +3861,12 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				3,
-				6,
-				6
-			}
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {300, 500}
 		},
 		{
 			r = 2000,
@@ -4607,6 +4609,68 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.good.flamethrower = deep_clone(presets.weapon.good.is_shotgun_pump)
+	presets.weapon.good.flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.good.flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.good.flamethrower.range = {
+		close = 250,
+		optimal = 750,
+		far = 1400
+	}
+	presets.weapon.good.flamethrower.FALLOFF = {
+		{
+			r = 250,
+			acc = {1, 1},
+			dmg_mul = 2,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.5},
+			dmg_mul = 2,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1400,
+			acc = {0.25, 0.25},
+			dmg_mul = 2,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1401,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		}
+	}
 	presets.weapon.good.is_smg.aim_delay = {0.1, 0.1}
 	presets.weapon.good.is_smg.focus_delay = 3
 	presets.weapon.good.is_smg.focus_dis = 200
@@ -4999,7 +5063,8 @@ function CharacterTweakData:_presets(tweak_data)
 				0,
 				0,
 				1
-			}
+			},
+			autofire_rounds = {500, 700}
 		},
 		{
 			r = 500,
@@ -5008,10 +5073,11 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
-				1,
-				2,
-				8
-			}
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {500, 500}
 		},
 		{
 			r = 1000,
@@ -5019,11 +5085,12 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				3,
-				6,
-				6
-			}
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {300, 500}
 		},
 		{
 			r = 2000,
@@ -5766,6 +5833,68 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.expert.flamethrower = deep_clone(presets.weapon.expert.is_shotgun_pump)
+	presets.weapon.expert.flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.expert.flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.expert.flamethrower.range = {
+		close = 250,
+		optimal = 750,
+		far = 1400
+	}
+	presets.weapon.expert.flamethrower.FALLOFF = {
+		{
+			r = 250,
+			acc = {1, 1},
+			dmg_mul = 2.5,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.5},
+			dmg_mul = 2.5,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1400,
+			acc = {0.25, 0.25},
+			dmg_mul = 2.5,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1401,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		}
+	}
 	presets.weapon.expert.is_smg.aim_delay = {0, 0.1}
 	presets.weapon.expert.is_smg.focus_delay = 1
 	presets.weapon.expert.is_smg.focus_dis = 200
@@ -6158,7 +6287,8 @@ function CharacterTweakData:_presets(tweak_data)
 				0,
 				0,
 				1
-			}
+			},
+			autofire_rounds = {500, 700}
 		},
 		{
 			r = 500,
@@ -6167,10 +6297,11 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
-				1,
-				2,
-				8
-			}
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {500, 500}
 		},
 		{
 			r = 1000,
@@ -6178,11 +6309,12 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2.5,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				3,
-				6,
-				6
-			}
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {300, 500}
 		},
 		{
 			r = 2000,
@@ -7537,6 +7669,68 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.easy_wish.flamethrower = deep_clone(presets.weapon.easy_wish.is_shotgun_pump)
+	presets.weapon.easy_wish.flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.easy_wish.flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.easy_wish.flamethrower.range = {
+		close = 250,
+		optimal = 750,
+		far = 1400
+	}
+	presets.weapon.easy_wish.flamethrower.FALLOFF = {
+		{
+			r = 250,
+			acc = {1, 1},
+			dmg_mul = 2.875,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.5},
+			dmg_mul = 2.875,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1400,
+			acc = {0.25, 0.25},
+			dmg_mul = 2.875,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		},
+		{
+			r = 1401,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {0, 0},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {25, 50}
+		}
+	}
 	presets.weapon.easy_wish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
@@ -8402,7 +8596,8 @@ function CharacterTweakData:_presets(tweak_data)
 				0,
 				0,
 				1
-			}
+			},
+			autofire_rounds = {500, 700}
 		},
 		{
 			r = 500,
@@ -8411,10 +8606,11 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.4, 0.7},
 			mode = {
 				0,
-				1,
-				2,
-				8
-			}
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {500, 500}
 		},
 		{
 			r = 1000,
@@ -8422,11 +8618,12 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2.875,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				3,
-				6,
-				6
-			}
+				0,
+				0,
+				0,
+				1
+			},
+			autofire_rounds = {300, 500}
 		},
 		{
 			r = 1800,
@@ -9593,7 +9790,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 300,
 			acc = {1, 1},
-			dmg_mul = 5,
+			dmg_mul = 1.25,
 			recoil = {0.25, 0.45},
 			mode = {
 				0.1,
@@ -9605,7 +9802,7 @@ function CharacterTweakData:_presets(tweak_data)
 		{
 			r = 10000,
 			acc = {1, 1},
-			dmg_mul = 2.5,
+			dmg_mul = 1.25,
 			recoil = {2, 3},
 			mode = {
 				0.1,
@@ -11833,7 +12030,9 @@ function CharacterTweakData:_create_table_structure()
 		"heavy_zeal_sniper",
 		"m4_boom",
 		"hk21_sc",
-		"mp5_zeal"
+		"mp5_zeal",
+		"p90_summer",
+		"m16_summer"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11869,7 +12068,9 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
 		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
 		Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
+		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical"),
+		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
+		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	}
 end
 

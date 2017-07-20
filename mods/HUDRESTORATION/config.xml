@@ -19,7 +19,6 @@
 		<hook file="managers/hud/HUDPlayerDowned.lua" source_file="lib/managers/hud/HUDPlayerDowned"/>
 		<hook file="managers/hud/HUDPresenter.lua" source_file="lib/managers/hud/HUDPresenter"/>
 		<hook file="managers/hud/HUDSuspicion.lua" source_file="lib/managers/hud/HUDSuspicion"/>
-		<hook file="utils/levelloadingscreenguiscript.lua" source_file="lib/utils/levelloadingscreenguiscript"/>
 		<!--<hook file="managers/hud/HUDStageEndScreen.lua" source_file="lib/managers/hud/HUDStageEndScreen"/>-->
 		<hook file="managers/hud/HUDMissionBriefing.lua" source_file="lib/managers/hud/HUDMissionBriefing"/>
         <!--<hook file="" source_file=""/>-->
@@ -27,7 +26,6 @@
 		<hook file="managers/menu/StageEndScreenGUI.lua" source_file="lib/managers/menu/StageEndScreenGUI"/>
 		<hook file="managers/menu/MissionBriefingGUI.lua" source_file="lib/managers/menu/MissionBriefingGUI"/>
 		<hook file="managers/menu/MenuBackdropGUI.lua" source_file="lib/managers/menu/MenuBackdropGUI"/>
-		<hook file="managers/menu/MenuPauseRenderer.lua" source_file="lib/managers/menu/MenuPauseRenderer"/>
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
@@ -70,12 +68,8 @@
 		<hook file="sc/units/weapons/newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
 		<hook file="sc/units/weapons/newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
 		<hook file="sc/units/weapons/newnpcflamethrowerbase.lua" source_file="lib/units/weapons/newnpcflamethrowerbase"/>
-		<hook file="sc/units/weapons/npcgrenadelauncherbase.lua" source_file="lib/units/weapons/npcgrenadelauncherbase"/>
-		<hook file="sc/units/weapons/npcbowweaponbase.lua" source_file="lib/units/weapons/npcbowweaponbase"/>
-		<hook file="sc/units/weapons/npcsawweaponbase.lua" source_file="lib/units/weapons/npcsawweaponbase"/>
 		<hook file="sc/units/weapons/flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 		<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
-		<hook file="sc/units/weapons/projectileweaponbase.lua" source_file="lib/units/weapons/projectileweaponbase"/>
 		<hook file="sc/units/weapons/raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
 		<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>
 		<hook file="sc/units/player/playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>

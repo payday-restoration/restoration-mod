@@ -21,7 +21,7 @@ if not _G.restoration then
 	end
 	RestorationCore.log_shit("SC: FUCKING LOADING: " .. ModPath)
 	_G.restoration.ModPath = ModPath
-	_G.restoration.we_log = true
+	_G.restoration.we_log = false
 end
 
 _G.SC = _G.SC or {}

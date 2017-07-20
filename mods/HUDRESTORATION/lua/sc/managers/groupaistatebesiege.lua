@@ -74,7 +74,11 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, ...)
 	return _spawn_in_group_actual(self, spawn_group, spawn_group_type, ...)
 end
 
+local job = Global.level_data and Global.level_data.level_id
 function GroupAIStateBesiege:_check_spawn_phalanx()
+	if job == "firestarter_2" or job == "rat" or job == "pal" then	
+		return
+	end
 	if self._task_data and self._task_data.assault.active and self._phalanx_center_pos and not self._phalanx_spawn_group then
 		if self._task_data.assault.phase == "build" or self._task_data.assault.phase == "sustain" then
 		local now = TimerManager:game():time()

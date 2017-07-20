@@ -220,7 +220,7 @@ if not tweak_data then return end
 		"city_swat_titan"
 	}
 	tweak_data.medic.cooldown_summers = 0
-	tweak_data.radius_summers = 2000
+	tweak_data.radius_summers = 100000
 	tweak_data.medic.whitelisted_units = {
 		"taser_summers",
 		"boom_summers",

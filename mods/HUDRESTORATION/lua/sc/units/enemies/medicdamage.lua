@@ -1,3 +1,5 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 function MedicDamage:heal_unit(unit, override_cooldown)
 	local t = Application:time()
 	local my_tweak_table = self._unit:base()._tweak_table
@@ -68,4 +70,6 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
 	managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 	return true
+end
+
 end

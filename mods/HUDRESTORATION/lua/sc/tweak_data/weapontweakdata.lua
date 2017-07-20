@@ -242,6 +242,12 @@ function WeaponTweakData:_init_data_npc_melee()
 	self.npc_melee.helloween_sword.animation_param = "melee_fireaxe"
 	self.npc_melee.helloween_sword.player_blood_effect = true
 	self.npc_melee.helloween_sword.armor_piercing = true
+	self.npc_melee.buzzer_summer = {}
+	self.npc_melee.buzzer_summer.unit_name = Idstring("units/payday2/characters/ene_acc_knife_1/ene_acc_knife_1")
+	self.npc_melee.buzzer_summer.damage = 6
+	self.npc_melee.buzzer_summer.animation_param = "melee_knife"
+	self.npc_melee.buzzer_summer.player_blood_effect = true
+	self.npc_melee.buzzer_summer.armor_piercing = true
 end
 
 function WeaponTweakData:_set_npc_weapon_damage_multiplier(mul)
@@ -310,6 +316,9 @@ function WeaponTweakData:_init_data_raging_bull_npc()
 	self.raging_bull_npc.hold = "pistol"
 	self.raging_bull_npc.alert_size = 10000
 	self.raging_bull_npc.suppression = 3.1
+	self.peacemaker_npc = deep_clone(self.raging_bull_npc)
+	self.peacemaker_npc.DAMAGE = 14.1
+	self.peacemaker_npc.armor_piercing = true
 	self.raging_bull_primary_npc = deep_clone(self.raging_bull_npc)
 	self.raging_bull_primary_npc.use_data.selection_index = 2
 end
@@ -749,6 +758,60 @@ function WeaponTweakData:_init_data_mini_npc()
 	self.mini_npc.suppression = 2
 end
 
+--Crew weapons but not really--
+function WeaponTweakData:_init_data_flamethrower_mk2_crew()
+	self.flamethrower_mk2_crew.sounds.prefix = "flamethrower_npc"
+	self.flamethrower_mk2_crew.sounds.fire = "flamethrower_npc_fire"
+	self.flamethrower_mk2_crew.sounds.stop_fire = "flamethrower_npc_fire_stop"
+	self.flamethrower_mk2_crew.use_data.selection_index = 2
+	self.flamethrower_mk2_crew.DAMAGE = 5
+	self.flamethrower_mk2_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.flamethrower_mk2_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	self.flamethrower_mk2_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+	self.flamethrower_mk2_crew.CLIP_AMMO_MAX = 60
+	self.flamethrower_mk2_crew.NR_CLIPS_MAX = 4
+	self.flamethrower_mk2_crew.pull_magazine_during_reload = "large_metal"
+	self.flamethrower_mk2_crew.hold = {"bullpup", "rifle"}
+	self.flamethrower_mk2_crew.auto.fire_rate = 0.1
+	self.flamethrower_mk2_crew.hud_icon = "rifle"
+	self.flamethrower_mk2_crew.alert_size = 3500
+	self.flamethrower_mk2_crew.suppression = 3.1
+end
+
+function WeaponTweakData:_init_data_p90_crew()
+	self.p90_crew.sounds.prefix = "p90_npc"
+	self.p90_crew.use_data.selection_index = 1
+	self.p90_crew.DAMAGE = 2.1
+	self.p90_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.p90_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	self.p90_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+	self.p90_crew.CLIP_AMMO_MAX = 50
+	self.p90_crew.NR_CLIPS_MAX = 4
+	self.p90_crew.reload = "looped"
+	self.p90_crew.looped_reload_speed = 0.14285715
+	self.p90_crew.auto.fire_rate = 0.06666666666
+	self.p90_crew.hold = {"bullpup", "rifle"}
+	self.p90_crew.alert_size = 1000
+	self.p90_crew.suppression = 0.1
+end
+
+function WeaponTweakData:_init_data_peacemaker_crew()
+	self.peacemaker_crew.sounds.prefix = "pmkr45_npc"
+	self.peacemaker_crew.use_data.selection_index = 1
+	self.peacemaker_crew.DAMAGE = 14.1
+	self.peacemaker_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.peacemaker_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	self.peacemaker_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+	self.peacemaker_crew.CLIP_AMMO_MAX = 6
+	self.peacemaker_crew.NR_CLIPS_MAX = 8
+	self.peacemaker_crew.reload = "looped"
+	self.peacemaker_crew.looped_reload_speed = 0.5
+	self.peacemaker_crew.hold = "pistol"
+	self.peacemaker_crew.alert_size = 5000
+	self.peacemaker_crew.suppression = 3.1
+	self.peacemaker_crew.armor_piercing = true
+end
+
 --Lotta crew guns in here now--
 function WeaponTweakData:_init_data_akm_gold_crew()
 	self.akm_gold_crew.sounds.prefix = "akm_npc"
@@ -1007,10 +1070,11 @@ function WeaponTweakData:_init_data_l85a2_crew()
 	self.l85a2_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 	self.l85a2_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
 	self.l85a2_crew.CLIP_AMMO_MAX = 30
+	self.l85a2_crew.NR_CLIPS_MAX = 5
 	self.l85a2_crew.pull_magazine_during_reload = "rifle"
 	self.l85a2_crew.auto.fire_rate = 0.08571428571
-	self.l85a2_crew.reload = "bullpup"
 	self.l85a2_crew.hold = "rifle"
+	self.l85a2_crew.reload = "bullpup"
 	self.l85a2_crew.alert_size = 5000
 	self.l85a2_crew.suppression = 2.6
 end
@@ -4652,7 +4716,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 11
 	}
 	self.flamethrower_mk2.panic_suppression_chance = 0.0
-	self.flamethrower_mk2_crew.DAMAGE = 10
 	self.m32.spread.standing = 3.5
 	self.m32.spread.crouching = 2.5
 	self.m32.spread.steelsight = 1
@@ -6609,6 +6672,11 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {},
 		auto = {}
 	}
+	self.peacemaker_npc = {
+		usage = "is_revolver",
+		sounds = {},
+		use_data = {}
+	}
 	self.m249_npc = {
 		usage = "is_lmg",
 		anim_usage = "is_rifle",
@@ -6638,12 +6706,31 @@ function WeaponTweakData:_create_table_structure()
 		sounds = {},
 		use_data = {}
 	}
+	self.m16_crew = {
+		usage = "is_rifle",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
+	self.peacemaker_crew = {
+		usage = "is_revolver",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
+	self.p90_crew = {
+		usage = "is_smg",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
 end
 
 WeaponTweakData.clone__precalculate_values = WeaponTweakData._precalculate_values
 function WeaponTweakData:_precalculate_values()
 	self:clone__precalculate_values()
 	self.hk21_sc_npc.AMMO_MAX = self.hk21_sc_npc.CLIP_AMMO_MAX * self.hk21_sc_npc.NR_CLIPS_MAX
+	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
 end
 
 end

@@ -1,3 +1,5 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 NewNPCFlamethrowerBase = NewNPCFlamethrowerBase or class(NewFlamethrowerBase)
 function NewNPCFlamethrowerBase:init(...)
 	NewNPCFlamethrowerBase.super.init(self, ...)
@@ -44,4 +46,6 @@ function NewNPCFlamethrowerBase:_sound_autofire_end()
 end
 function NewNPCFlamethrowerBase:third_person_important()
 	return NewFlamethrowerBase.third_person_important(self)
+end
+
 end

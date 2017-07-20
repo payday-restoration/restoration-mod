@@ -4,9 +4,8 @@ local player_damage_melee = PlayerDamage.damage_melee
 function PlayerDamage:damage_melee(attack_data)
 	if attack_data then
 		if alive(attack_data.attacker_unit) then
-			if tostring(attack_data.attacker_unit:base()._tweak_table) == "boom" then
-				--Soon
-				--managers.player:set_player_state("incapacitated")
+			if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" then
+				managers.player:set_player_state("tased")
 			end
 		end
 	end
@@ -65,7 +64,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		local dicks = tweak_data.character[attack_data.attacker_unit:base()._tweak_table]
 		RestorationCore.log_shit("SC DICKS: " .. tostring(dicks.use_factory))
 		if dicks.use_factory then
-			attack_data.damage = attack_data.damage * 0.5
+			attack_data.damage = attack_data.damage * 1
 		end
 	end
 	RestorationCore.log_shit("SC: Bullet, ending damage: " .. attack_data.damage)

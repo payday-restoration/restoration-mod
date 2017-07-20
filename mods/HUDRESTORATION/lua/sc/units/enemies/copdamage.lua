@@ -109,6 +109,28 @@ function CopDamage:heal_unit(unit, override_cooldown)
 	return true
 end
 
+function CopDamage:stun_hit(attack_data)
+	if self._dead or self._invulnerable then
+		return
+	end
+	local result = {
+		type = "concussion",
+		variant = attack_data.variant
+	}
+	if self._char_tweak.tank_concussion then
+		result = {
+			type = "expl_hurt",
+			variant = attack_data.variant
+		}		
+	end
+	attack_data.result = result
+	attack_data.pos = attack_data.col_ray.position
+	local damage_percent = 0
+	local attacker = attack_data.attacker_unit
+	self:_send_stun_attack_result(attacker, damage_percent, self:_get_attack_variant_index(attack_data.result.variant), attack_data.col_ray.ray)
+	self:_on_damage_received(attack_data)
+	self:_create_stun_exit_clbk()
+end
 	
 function CopDamage:damage_fire(attack_data)
 	self._attack_data = attack_data

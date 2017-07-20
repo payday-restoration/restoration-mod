@@ -157,6 +157,7 @@
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
 
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="true"/>
+	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="true"/>
 
 	<!--Spring-->
 	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
@@ -359,7 +360,6 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_head_df" force="false"/>
 
-
 	<!--Omnia LPF-->
 	<object path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
@@ -368,7 +368,5 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
-	
-	<unit path="units/pd2_dlc_overkill_pack/weapons/wpn_fps_rpg7/wpn_fps_rpg7_npc" force="true" load="true"/>
-	
+		
 </table>

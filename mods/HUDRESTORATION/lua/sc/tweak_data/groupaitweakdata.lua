@@ -312,6 +312,17 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_walk_only
 	}
+	self.unit_categories.omnia_LPF = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			}
+		},
+		access = access_type_all
+	}
 	self.unit_categories.CS_cop_stealth_MP5 = {
 		unit_types = {
 			america = {
@@ -2755,6 +2766,27 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
+	self.enemy_spawn_groups.Omnia_LPF = {
+		amount = {6, 6},
+		spawn = {
+			{
+				unit = "omnia_LPF",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics = self._tactics.CS_swat_heavy,
+				rank = 1
+			},
+			{
+				unit = "CS_cop_C45_R870",
+				freq = 1,
+				amount_min = 5,
+				amount_max = 5,
+				tactics = self._tactics.CS_swat_heavy,
+				rank = 2
+			}
+		}
+	}
 	self.enemy_spawn_groups.single_spooc = {
 		amount = {1, 1},
 		spawn = {
@@ -4984,6 +5016,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			}
 		}
 	end
+	self.besiege.assault.groups.Omnia_LPF = {
+		0.2,
+		0.2,
+		0.2
+	}
 	self.besiege.assault.groups.single_spooc = {
 		0,
 		0,

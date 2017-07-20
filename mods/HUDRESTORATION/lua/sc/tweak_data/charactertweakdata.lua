@@ -209,9 +209,9 @@ end
 function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf = deep_clone(presets.base)
 	self.omnia_lpf.experience = {}
-	self.omnia_lpf.weapon = presets.weapon.normal
+	self.omnia_lpf.weapon = presets.weapon.expert
 	self.omnia_lpf.detection = presets.detection.normal
-	self.omnia_lpf.HEALTH_INIT = 13
+	self.omnia_lpf.HEALTH_INIT = 20
 	self.omnia_lpf.headshot_dmg_mul = 2
 	self.omnia_lpf.move_speed = presets.move_speed.fast
 	self.omnia_lpf.surrender_break_time = {6, 10}

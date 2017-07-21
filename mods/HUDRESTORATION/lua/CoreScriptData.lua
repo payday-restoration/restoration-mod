@@ -64,7 +64,19 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	
 	end)
 end
+--SC Level Edits
+ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
 
+	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "run" then
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
+	end
+end)
 
 --Environment skies loader
 	

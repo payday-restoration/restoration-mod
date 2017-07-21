@@ -812,6 +812,24 @@ function WeaponTweakData:_init_data_peacemaker_crew()
 	self.peacemaker_crew.armor_piercing = true
 end
 
+function WeaponTweakData:_init_data_olympic_crew()
+	self.olympic_crew.sounds.prefix = "m4_olympic_npc"
+	self.olympic_crew.use_data.selection_index = 1
+	self.olympic_crew.DAMAGE = 2.6
+	self.olympic_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.olympic_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	self.olympic_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+	self.olympic_crew.CLIP_AMMO_MAX = 100
+	self.olympic_crew.NR_CLIPS_MAX = 5
+	self.olympic_crew.pull_magazine_during_reload = "rifle"
+	self.olympic_crew.auto.fire_rate = 0.075
+	self.olympic_crew.hold = "rifle"
+	self.olympic_crew.alert_size = 1000
+	self.olympic_crew.suppression = 2.4
+	self.olympic_primary_crew = deep_clone(self.olympic_crew)
+	self.olympic_primary_crew.use_data.selection_index = 2
+end
+
 --Lotta crew guns in here now--
 function WeaponTweakData:_init_data_akm_gold_crew()
 	self.akm_gold_crew.sounds.prefix = "akm_npc"
@@ -3121,8 +3139,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw.spread.moving_steelsight = 0
 	self.saw.desc_id = "bm_ap_saw_sc_desc"
 	self.saw.CLIP_AMMO_MAX = 20
-	self.saw.AMMO_MAX = 40
-	self.saw.AMMO_PICKUP = self:_pickup_chance(40, 2)
+	self.saw.AMMO_MAX = 60
+	self.saw.AMMO_PICKUP = self:_pickup_chance(60, 2)
 	self.saw.kick.standing = {
 		0,
 		0,
@@ -3163,8 +3181,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw_secondary.has_description = true
 	self.saw_secondary.desc_id = "bm_ap_saw_sc_desc"
 	self.saw_secondary.CLIP_AMMO_MAX = 20
-	self.saw_secondary.AMMO_MAX = 20
-	self.saw_secondary.AMMO_PICKUP = self:_pickup_chance(20, 2)
+	self.saw_secondary.AMMO_MAX = 40
+	self.saw_secondary.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.saw_secondary.stats = {
 		alert_size = 7,
 		suppression = 7,

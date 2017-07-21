@@ -15,4 +15,7 @@ function LevelsTweakData:init()
 	self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	--Stuff for Summers below--
 	self.pal.package = {"packages/narr_pal", "levels/narratives/elephant/mad/world_sounds"}
+	self.run.package = {"packages/narr_run", "levels/narratives/elephant/mad/world_sounds"}
+	self.firestarter_3.package = {"packages/narr_firestarter3", "levels/narratives/elephant/mad/world_sounds"}
+	self.jolly.package = {"packages/jolly", "levels/narratives/elephant/mad/world_sounds"}
 end

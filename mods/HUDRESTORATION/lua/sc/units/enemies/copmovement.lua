@@ -42,6 +42,7 @@ local action_variants = {
 local security_variant = action_variants.security
 function CopMovement:init(unit)
 	old_init(self, unit)
+	CopMovement._action_variants.cop_civ = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.boom = security_variant
@@ -212,10 +213,13 @@ function CopMovement:do_omnia(self)
 	if self and self._unit then
 		if self._unit:base()._tweak_table == "omnia_lpf" then
 			local cops_to_heal = {
+				"security",
 				"cop",
+				"cop_scared",
 				"cop_female",
 				"gensec",
-				"security"
+				"fbi",
+				"swat"
 			}
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
 			if enemies then
@@ -233,7 +237,7 @@ function CopMovement:do_omnia(self)
 						if found_dat_shit then
 							local health_left = enemy:character_damage()._health
 							RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
-							local max_health = enemy:character_damage()._HEALTH_INIT * 4
+							local max_health = enemy:character_damage()._HEALTH_INIT * 2
 							RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
 							if health_left < max_health then
 								local amount_to_heal = math.ceil(((max_health - health_left) / 20))

@@ -51,6 +51,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"ecm_jammer_interaction_speed_multiplier",
 		"ecm_jammer_can_retrigger",
 		"saw",
+		"saw_secondary",
 		"cable_tie",
 		"player_special_enemy_highlight",
 		"player_hostage_trade",
@@ -749,13 +750,12 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {0, 1},
 					[1] = {
 						upgrades = {
-							"saw_secondary"
+							"saw_reload_speed_multiplier"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"saw_extra_ammo_multiplier",
 							"saw_damage_multiplier"
 						},
 						cost = self.costs.hightierpro

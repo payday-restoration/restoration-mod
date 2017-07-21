@@ -432,9 +432,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",
 			["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: ##$basic##\nAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to ##5## seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\n\nACE: ##$pro##\nIncreases the base duration of the effect by up to ##15## seconds.",																								
 
-			--Portable Saw
-			["menu_portable_saw_beta_sc"] = "Portable Saw",
-			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\n\nACE: ##$pro##\nYou gain ##1## extra saw blade for the OVE9000 portable saw.\n\nYou deal ##15%## more damage with the Saw.",																																																																																																																																																																																																
+			--Rip and Tear
+			["menu_portable_saw_beta_sc"] = "Rip and Tear",
+			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload Saws ##25%## faster.\n\nACE: ##$pro##\nYou deal ##15%## more damage with the Saw.",																																																																																																																																																																																																
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "Extra Lead",

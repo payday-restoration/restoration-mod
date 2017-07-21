@@ -181,7 +181,6 @@ function CharacterTweakData:_init_cop(presets)
 	else
 		self.cop.steal_loot = true
 	end
-
  	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
 	self.cop_scared.surrender = presets.surrender.always
@@ -204,12 +203,21 @@ function CharacterTweakData:_init_cop(presets)
 		self.cop_female.melee_weapon = nil
 	end
  	table.insert(self._enemy_list, "cop_female")
+	self.cop_civ = deep_clone(self.cop)
+	self.cop_civ.weapon = presets.weapon.normal
+	self.cop_civ.detection = presets.detection.normal_undercover
+	self.cop_civ.HEALTH_INIT = 0.9
+	self.cop_civ.headshot_dmg_mul = 1.7
+	self.cop_civ.surrender = nil
+	self.cop_civ.silent_priority_shout = nil
+	self.cop_civ.melee_weapon = nil
+	self.cop_civ.move_speed = presets.move_speed.very_fast
 end
 
 function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf = deep_clone(presets.base)
 	self.omnia_lpf.experience = {}
-	self.omnia_lpf.weapon = presets.weapon.expert
+	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 	self.omnia_lpf.detection = presets.detection.normal
 	self.omnia_lpf.HEALTH_INIT = 20
 	self.omnia_lpf.headshot_dmg_mul = 2
@@ -224,7 +232,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.weapon_voice = "2"
 	self.omnia_lpf.experience.cable_tie = "tie_swat"
 	self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.omnia_lpf.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.omnia_lpf.speech_prefix_p2 = "n"
 	self.omnia_lpf.speech_prefix_count = 4
 	self.omnia_lpf.access = "swat"
 	self.omnia_lpf.dodge = presets.dodge.athletic
@@ -1430,14 +1438,15 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.suppression = nil
 	self.summers.weapon_voice = "3"
 	self.summers.experience.cable_tie = "tie_swat"
-	self.summers.speech_prefix_p1 = "r"
-	self.summers.speech_prefix_p2 = "r"
+	self.summers.speech_prefix_p1 = "rtsr"
+	self.summers.speech_prefix_p2 = nil
 	self.summers.speech_prefix_count = nil
 	self.summers.access = "taser"
 	self.summers.dodge = presets.dodge.elite
 	self.summers.use_gas = true
 	self.summers.rescue_hostages = false
 	self.summers.can_be_tased = false
+	self.summers.immune_to_concussion = true
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
@@ -1521,6 +1530,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.ecm_hurts = {}
 	self.taser_summers.chatter = presets.enemy_chatter.summers
 	self.taser_summers.no_retreat = true
+	self.taser_summers.immune_to_concussion = true
 	self.taser_summers.no_arrest = true
 	self.taser_summers.immune_to_knock_down = true
 	self.taser_summers.priority_shout = "f45"
@@ -1619,6 +1629,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.no_retreat = true
 	self.boom_summers.no_arrest = true
 	self.boom_summers.immune_to_knock_down = true
+	self.boom_summers.immune_to_concussion = true
 	self.boom_summers.priority_shout = "f45"
 	self.boom_summers.bot_priority_shout = "f45x_any"
 	self.boom_summers.custom_shout = false
@@ -1683,7 +1694,6 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.challenges = {type = "civilians"}
 	self.civilian.calls_in = true
 	self.civilian.hostage_move_speed = 3
-	self.civilian_armed = deep_clone(self.civilian)
 	self.civilian_female = deep_clone(self.civilian)
 	self.civilian_female.speech_prefix_p1 = "cf"
 	self.civilian_female.speech_prefix_count = 5
@@ -10490,6 +10500,31 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.detection.normal.ntl.dis_max = 4000
 	presets.detection.normal.ntl.angle_max = 60
 	presets.detection.normal.ntl.delay = {0.2, 2}
+	presets.detection.normal_undercover = {
+		idle = {},
+		combat = {},
+		recon = {},
+		guard = {},
+		ntl = {}
+	}
+	presets.detection.normal_undercover.idle.dis_max = 700
+	presets.detection.normal_undercover.idle.angle_max = 60
+	presets.detection.normal_undercover.idle.delay = {0, 0}
+	presets.detection.normal_undercover.idle.use_uncover_range = false
+	presets.detection.normal_undercover.combat.dis_max = 10000
+	presets.detection.normal_undercover.combat.angle_max = 120
+	presets.detection.normal_undercover.combat.delay = {0, 0}
+	presets.detection.normal_undercover.combat.use_uncover_range = true
+	presets.detection.normal_undercover.recon.dis_max = 10000
+	presets.detection.normal_undercover.recon.angle_max = 120
+	presets.detection.normal_undercover.recon.delay = {0, 0}
+	presets.detection.normal_undercover.recon.use_uncover_range = true
+	presets.detection.normal_undercover.guard.dis_max = 10000
+	presets.detection.normal_undercover.guard.angle_max = 120
+	presets.detection.normal_undercover.guard.delay = {0, 0}
+	presets.detection.normal_undercover.ntl.dis_max = 4000
+	presets.detection.normal_undercover.ntl.angle_max = 60
+	presets.detection.normal_undercover.ntl.delay = {0.2, 2}
 	presets.detection.guard = {
 		idle = {},
 		combat = {},
@@ -12703,6 +12738,7 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 		"gensec",
 		"fbi",
 		"medic",
+		"omnia_lpf",
 		"taser",
 		"boom",
 		"rboom",
@@ -12742,6 +12778,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 	local all_units = {
 		"taser",
 		"medic",
+		"omnia_lpf",
 		"fbi_vet",
 		"boom",
 		"rboom",
@@ -12775,6 +12812,7 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 	local all_units = {
 		"taser",
 		"medic",
+		"omnia_lpf",
 		"fbi_vet",
 		"boom",
 		"rboom",

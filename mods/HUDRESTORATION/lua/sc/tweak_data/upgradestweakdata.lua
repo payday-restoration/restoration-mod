@@ -335,7 +335,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.no_ammo_cost = {true, true}
 
 				--Portable Saw
-				self.values.saw.extra_ammo_multiplier = {1.5}
+				self.values.saw.reload_speed_multiplier = {1.25}
 				self.values.saw.damage_multiplier = {1.15}
 				
 				--Extra Lead

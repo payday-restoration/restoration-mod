@@ -1,0 +1,13 @@
+<unit type="wpn" slot="1" >
+    <object file="units/pd2_dlc_overkill_pack/weapons/wpn_fps_rpg7/wpn_fps_rpg7" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_rpg"/>
+		<depends_on unit="units/pd2_dlc_overkill_pack/weapons/wpn_third_rpg7_fired_rocket/wpn_third_rpg7_fired_rocket"/>
+	</dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="base" class="NPCGrenadeLauncherBase" >
+			<var name="name_id" value="rpg7_crew" />
+		</extension>
+    </extensions>
+</unit>

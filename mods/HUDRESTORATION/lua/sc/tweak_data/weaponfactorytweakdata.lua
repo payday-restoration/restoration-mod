@@ -32,6 +32,7 @@ function WeaponFactoryTweakData:init(...)
 		"wpn_fps_upg_ass_ns_jprifles",
 		"wpn_fps_upg_ass_ns_jprifles",
 		"wpn_fps_upg_m4_m_drum",
+		"wpn_fps_ass_m16_o_handle_sight",
 		"wpn_fps_smg_olympic_s_short"
 	}
 	self.wpn_fps_smg_p90_npc_summers = deep_clone(self.wpn_fps_smg_p90_npc)
@@ -5056,8 +5057,6 @@ function WeaponFactoryTweakData:_init_saiga()
 		custom_stats = {reload_speed_mult = 0.85, is_drum_aa12 = true},
 		stats = {value = 1, extra_ammo = 5, reload = -2}
 	}
-	self.parts.wpn_upg_saiga_m_20rnd.material_config = Idstring("units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd")
-	self.parts.wpn_upg_saiga_m_20rnd.thq_material_config = Idstring("units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_cc_thq")
 	self.parts.wpn_fps_shot_saiga_b_standard.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_b_standard"
 	self.parts.wpn_fps_shot_saiga_m_5rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_m_5rnd"
 	self.parts.wpn_upg_saiga_fg_standard.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_upg_saiga_fg_standard"

@@ -324,6 +324,10 @@
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" force="false" load="true"/>
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" force="false" load="true"/>
 
+	<!--Undercover Cops-->
+	<unit path="units/payday2/characters/ene_cop_civ_1/ene_cop_civ_1" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_cop_civ_1/ene_cop_civ_1_husk" force="false" load="true"/>
+
 	<!--Summers-->
 	<object path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>

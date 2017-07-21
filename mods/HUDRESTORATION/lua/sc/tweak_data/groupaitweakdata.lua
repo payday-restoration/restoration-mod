@@ -178,6 +178,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 0,
 			shield = 2,
 			medic = 0,
+			omnia_LPF = 0,
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 0,
@@ -192,6 +193,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 1,
 			shield = 3,
 			medic = 0,
+			omnia_LPF = 0,
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 0,
@@ -206,6 +208,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 2,
 			shield = 4,
 			medic = 2,
+			omnia_LPF = 2,
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 0,
@@ -220,6 +223,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 3,
 			shield = 5,
 			medic = 3,
+			omnia_LPF = 3,
 			phalanx_minion = 0,
 			tank_titan = 0,
 			fbi_vet = 2,
@@ -234,6 +238,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 4,
 			shield = 5,
 			medic = 3,
+			omnia_LPF = 3,
 			phalanx_minion = 1,
 			tank_titan = 1,
 			fbi_vet = 3,
@@ -248,6 +253,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 4,
 			shield = 5,
 			medic = 3,
+			omnia_LPF = 3,
 			phalanx_minion = 2,
 			tank_titan = 1,
 			fbi_vet = 3,
@@ -262,6 +268,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			spooc = 4,
 			shield = 6,
 			medic = 4,
+			omnia_LPF = 4,
 			phalanx_minion = 3,
 			tank_titan = 2,
 			fbi_vet = 4,
@@ -321,7 +328,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 			}
 		},
-		access = access_type_all
+		access = access_type_all,
+		special_type = "omnia_LPF"
 	}
 	self.unit_categories.CS_cop_stealth_MP5 = {
 		unit_types = {
@@ -2018,6 +2026,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 2,
 					tactics = self._tactics.CS_cop_stealth,
 					rank = 1
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.2,
+					amount_max = 1,
+					tactics = self._tactics.CS_cop_stealth,
+					rank = 2
 				}
 			}
 		}
@@ -2113,6 +2128,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				tactics = self._tactics.FBI_suit,
 				rank = 1
+			},
+			{
+				unit = "omnia_LPF",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
 			}
 		}
 	}
@@ -2131,6 +2153,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				tactics = self._tactics.FBI_suit,
 				rank = 1
+			},
+			{
+				unit = "omnia_LPF",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
 			}
 		}
 	}
@@ -2142,6 +2171,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				tactics = self._tactics.FBI_suit,
 				rank = 1
+			},
+			{
+				unit = "omnia_LPF",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
 			}
 		}
 	}
@@ -2153,6 +2189,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				tactics = self._tactics.FBI_suit,
 				rank = 1
+			},
+			{
+				unit = "omnia_LPF",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
 			}
 		}
 	}
@@ -2172,6 +2215,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_max = 2,
 					tactics = self._tactics.CS_tazer,
+					rank = 2
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.2,
+					amount_max = 1,
+					tactics = self._tactics.FBI_suit_stealth,
 					rank = 2
 				}
 			}
@@ -2193,6 +2243,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 2,
 					tactics = self._tactics.CS_tazer,
 					rank = 1
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.35,
+					amount_max = 1,
+					tactics = self._tactics.FBI_suit_stealth,
+					rank = 2
 				}
 			}
 		}
@@ -2213,6 +2270,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 2,
 					tactics = self._tactics.CS_tazer,
 					rank = 1
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.35,
+					amount_max = 1,
+					tactics = self._tactics.FBI_suit_stealth,
+					rank = 2
 				}
 			}
 		}
@@ -2233,6 +2297,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 0.75,
 					tactics = self._tactics.FBI_suit,
 					rank = 2
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.2,
+					amount_max = 1,
+					tactics = self._tactics.FBI_suit_stealth,
+					rank = 2
 				}
 			}
 		}
@@ -2252,6 +2323,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 0.75,
 					tactics = self._tactics.FBI_suit,
 					rank = 2
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.35,
+					amount_max = 1,
+					tactics = self._tactics.FBI_suit_stealth,
+					rank = 2
 				}
 			}
 		}
@@ -2269,6 +2347,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "FBI_suit_M4_MP5",
 					freq = 0.75,
+					tactics = self._tactics.FBI_suit_stealth,
+					rank = 2
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 0.35,
+					amount_max = 1,
 					tactics = self._tactics.FBI_suit_stealth,
 					rank = 2
 				}
@@ -2762,27 +2847,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				tactics = self._tactics.Cap_summers,
-				rank = 2
-			}
-		}
-	}
-	self.enemy_spawn_groups.Omnia_LPF = {
-		amount = {6, 6},
-		spawn = {
-			{
-				unit = "omnia_LPF",
-				freq = 1,
-				amount_min = 1,
-				amount_max = 1,
-				tactics = self._tactics.CS_swat_heavy,
-				rank = 1
-			},
-			{
-				unit = "CS_cop_C45_R870",
-				freq = 1,
-				amount_min = 5,
-				amount_max = 5,
-				tactics = self._tactics.CS_swat_heavy,
 				rank = 2
 			}
 		}
@@ -5016,11 +5080,6 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			}
 		}
 	end
-	self.besiege.assault.groups.Omnia_LPF = {
-		0.2,
-		0.2,
-		0.2
-	}
 	self.besiege.assault.groups.single_spooc = {
 		0,
 		0,

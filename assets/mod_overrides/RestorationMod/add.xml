@@ -336,6 +336,8 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_head_df" force="false"/>
 
 	<!--Summer's Gang-->
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
@@ -345,6 +347,8 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
 
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
@@ -353,6 +357,8 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
 
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>

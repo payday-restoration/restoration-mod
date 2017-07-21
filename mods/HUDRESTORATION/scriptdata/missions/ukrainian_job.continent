@@ -11806,9 +11806,6 @@
 			<unit_data continent="world" name="units/dev_tools/level_tools/dev_collision_10m_bag" name_id="dev_collision_10m_bag_037" position="-630 -1875 425" rotation="0 0 -0.707107 -0.707107" unit_id="104403"/>
 		</table>
 		<table>
-			<unit_data continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/com_prop_jewelry_bag/jewelry_bags_small_1" name_id="jewelry_bags_small_1_005" position="812.905 1610.1 85.9632" rotation="0 0 0 -1" unit_id="100012"/>
-		</table>
-		<table>
 			<unit_data continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_store_cashbox/com_prop_store_cashbox" name_id="com_prop_store_cashbox_002" position="70 280 125" rotation="-0 0 -0 -1" unit_id="100020"/>
 		</table>
 		<table>

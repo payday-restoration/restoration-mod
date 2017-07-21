@@ -24,11 +24,10 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_night" then
-	if rnd == 1 or rnd == 2 then
 		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 		--"sky_orientation/rotation":"278.53564453125",
 	end
-	end
+
 	
 	if Global.load_level == true and Global.game_settings.level_id == "bronze" then
 	
@@ -75,8 +74,20 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	
 	if Global.load_level == true and Global.game_settings.level_id == "run" then
 		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "alex_1" then
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "mission")
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "alex_2" then
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "mission")
 	end
 end)
+end
 
 --Environment skies loader
 	

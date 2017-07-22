@@ -1,4 +1,4 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+if restoration and restoration.Options:GetValue("SC/SCSkills") then
 
 local player_movement_speed_multiplier_orig = PlayerManager.movement_speed_multiplier
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)

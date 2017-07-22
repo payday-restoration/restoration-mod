@@ -9,7 +9,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 
 ]]--
 
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+if restoration and restoration.Options:GetValue("SC/SCSkills") then
 
 local sc_sttd = SkillTreeTweakData.init
 function SkillTreeTweakData:init(tweak_data)

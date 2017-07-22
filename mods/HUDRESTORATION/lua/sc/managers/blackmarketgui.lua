@@ -1,4 +1,4 @@
-if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+if restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 function BlackMarketGui:choose_weapon_buy_callback(data)
 	local blackmarket_items = managers.blackmarket:get_weapon_category(data.category) or {}

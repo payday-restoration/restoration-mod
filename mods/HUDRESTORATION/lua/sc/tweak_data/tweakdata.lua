@@ -1,6 +1,201 @@
 if not tweak_data then return end
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	--But why--
+	tweak_data.team_ai.stop_action.delay = 0.8
+	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
+
+	tweak_data.medic.cooldown = 30
+	tweak_data.radius = 900
+	tweak_data.medic.disabled_units = {
+		"phalanx_minion",
+		"spring",
+		"taser_summers",
+		"boom_summers",
+		"medic_summers",
+		"summers",
+		"medic",
+		"tank_titan",
+		"tank_medic",
+		"city_swat_titan"
+	}
+	tweak_data.medic.cooldown_summers = 0
+	tweak_data.radius_summers = 100000
+	tweak_data.medic.whitelisted_units = {
+		"taser_summers",
+		"boom_summers",
+		"summers"
+	}
+	tweak_data.medic.whitelisted_units_summer_squad = {
+		"summers"
+	}
+	tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.steel_1.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.green_2.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.trophy_flawless.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.trophy_friendly_car.num_players = nil
+	tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
+	tweak_data.achievement.complete_heist_statistics_achievements.immortal_ballot.num_players = nil
+	tweak_data.achievement.complete_heist_statistics_achievements.full_two_twenty.num_players = nil
+
+	--Sounds of Animals Fighting--
+	local animal_fight = {
+			award = "pig_5",
+			jobs = {"mia"},
+			num_players = nil,
+			difficulties = hard_and_above,
+			equipped_team = {
+				masks = {
+					"white_wolf",
+					"owl",
+					"rabbit",
+					"pig"
+				}
+			}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, animal_fight)
+
+	--Four Monkeys--
+	local go_bananas = {
+		award = "gage4_12",
+		job = {"alex"},
+		num_players = nil,
+		difficulties = overkill_and_above,
+		equipped_team = {
+			masks = {
+				"silverback",
+				"mandril",
+				"skullmonkey",
+				"orangutang"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, go_bananas)
+
+	--Riders on the snowstorm--
+	local xmas_2014 = {
+		award = "deer_6",
+		jobs = {"pines"},
+		num_players = nil,
+		difficulties = deathwish_and_above,
+		equipped_team = {
+			masks = {
+				"krampus",
+				"mrs_claus",
+				"strinch",
+				"robo_santa"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, xmas_2014)
+
+	--Reindeer Games--
+	local reindeer_games = {
+		award = "charliesierra_9",
+		num_players = nil,
+		equipped_team = {
+			masks = {
+				"santa_happy",
+				"santa_mad",
+				"santa_drunk",
+				"santa_surprise"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, reindeer_games)
+
+	--Ghost Riders--
+	local ghost_riders = {
+		award = "bob_10",
+		num_players = nil,
+		equipped_team = {
+			masks = {
+				"skullhard",
+				"skullveryhard",
+				"skulloverkill",
+				"skulloverkillplus",
+				"gitgud_e_wish",
+				"gitgud_sm_wish"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, ghost_riders)
+
+	--Funding Father--
+	local funding_father = {
+		award = "bigbank_10",
+		num_players = nil,
+		equipped_team = {
+			masks = {
+				"franklin",
+				"lincoln",
+				"grant",
+				"washington"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, funding_father)
+
+	--Unusual Suspects--
+	local guy_with_gun_now_with_night_jobs = {
+		award = "gage5_6",
+		num_players = nil,
+		jobs = {
+			"watchdogs_wrapper",
+			"watchdogs",
+			"watchdogs_night"
+		},
+		difficulties = overkill_and_above,
+		equipped_team = {
+			masks = {
+				"galax",
+				"crowgoblin",
+				"evil",
+				"volt"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, guy_with_gun_now_with_night_jobs)
+
+	--Wind of change--
+	local wind_of_change = {
+		award = "eagle_3",
+		num_players = nil,
+		jobs = {"hox"},
+		difficulties = overkill_and_above,
+		equipped_team = {
+			masks = {
+				"churchill",
+				"red_hurricane",
+				"patton",
+				"de_gaulle"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, wind_of_change)
+
+	--Honor Among Thieves--
+	local blight = {
+		award = "bat_5",
+		jobs = {"mus"},
+		difficulties = overkill_and_above,
+		equipped_team = {
+			masks = {
+				"medusa",
+				"anubis",
+				"pazuzu",
+				"cursed_crown"
+			}
+		}
+	}
+	table.insert(tweak_data.achievement.complete_heist_achievements, blight)
+
+	end
+
+	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 120
@@ -200,202 +395,7 @@ if not tweak_data then return end
 	tweak_data.projectiles.smoke_screen_grenade.init_timer = 0
 	tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.5
 	tweak_data.projectiles.smoke_screen_grenade.accuracy_fail_spread = {5, 10}
-
-	--But why--
-	tweak_data.team_ai.stop_action.delay = 0.8
-	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
-
-	tweak_data.medic.cooldown = 30
-	tweak_data.radius = 900
-	tweak_data.medic.disabled_units = {
-		"phalanx_minion",
-		"spring",
-		"taser_summers",
-		"boom_summers",
-		"medic_summers",
-		"summers",
-		"medic",
-		"tank_titan",
-		"tank_medic",
-		"city_swat_titan"
-	}
-	tweak_data.medic.cooldown_summers = 0
-	tweak_data.radius_summers = 100000
-	tweak_data.medic.whitelisted_units = {
-		"taser_summers",
-		"boom_summers",
-		"summers"
-	}
-	tweak_data.medic.whitelisted_units_summer_squad = {
-		"summers"
-	}
-	tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.steel_1.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.green_2.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.trophy_flawless.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.trophy_friendly_car.num_players = nil
-	tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
-	tweak_data.achievement.complete_heist_statistics_achievements.immortal_ballot.num_players = nil
-	tweak_data.achievement.complete_heist_statistics_achievements.full_two_twenty.num_players = nil
-
-	--Sounds of Animals Fighting--
-	local animal_fight = {
-			award = "pig_5",
-			jobs = {"mia"},
-			num_players = nil,
-			difficulties = hard_and_above,
-			equipped_team = {
-				masks = {
-					"white_wolf",
-					"owl",
-					"rabbit",
-					"pig"
-				}
-			}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, animal_fight)
-
-	--Four Monkeys--
-	local go_bananas = {
-		award = "gage4_12",
-		job = {"alex"},
-		num_players = nil,
-		difficulties = overkill_and_above,
-		equipped_team = {
-			masks = {
-				"silverback",
-				"mandril",
-				"skullmonkey",
-				"orangutang"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, go_bananas)
-
-	--Riders on the snowstorm--
-	local xmas_2014 = {
-		award = "deer_6",
-		jobs = {"pines"},
-		num_players = nil,
-		difficulties = deathwish_and_above,
-		equipped_team = {
-			masks = {
-				"krampus",
-				"mrs_claus",
-				"strinch",
-				"robo_santa"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, xmas_2014)
-
-	--Reindeer Games--
-	local reindeer_games = {
-		award = "charliesierra_9",
-		num_players = nil,
-		equipped_team = {
-			masks = {
-				"santa_happy",
-				"santa_mad",
-				"santa_drunk",
-				"santa_surprise"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, reindeer_games)
-
-	--Ghost Riders--
-	local ghost_riders = {
-		award = "bob_10",
-		num_players = nil,
-		equipped_team = {
-			masks = {
-				"skullhard",
-				"skullveryhard",
-				"skulloverkill",
-				"skulloverkillplus",
-				"gitgud_e_wish",
-				"gitgud_sm_wish"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, ghost_riders)
-
-	--Funding Father--
-	local funding_father = {
-		award = "bigbank_10",
-		num_players = nil,
-		equipped_team = {
-			masks = {
-				"franklin",
-				"lincoln",
-				"grant",
-				"washington"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, funding_father)
-
-	--Unusual Suspects--
-	local guy_with_gun_now_with_night_jobs = {
-		award = "gage5_6",
-		num_players = nil,
-		jobs = {
-			"watchdogs_wrapper",
-			"watchdogs",
-			"watchdogs_night"
-		},
-		difficulties = overkill_and_above,
-		equipped_team = {
-			masks = {
-				"galax",
-				"crowgoblin",
-				"evil",
-				"volt"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, guy_with_gun_now_with_night_jobs)
-
-	--Wind of change--
-	local wind_of_change = {
-		award = "eagle_3",
-		num_players = nil,
-		jobs = {"hox"},
-		difficulties = overkill_and_above,
-		equipped_team = {
-			masks = {
-				"churchill",
-				"red_hurricane",
-				"patton",
-				"de_gaulle"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, wind_of_change)
-
-	--Honor Among Thieves--
-	local blight = {
-		award = "bat_5",
-		jobs = {"mus"},
-		difficulties = overkill_and_above,
-		equipped_team = {
-			masks = {
-				"medusa",
-				"anubis",
-				"pazuzu",
-				"cursed_crown"
-			}
-		}
-	}
-	table.insert(tweak_data.achievement.complete_heist_achievements, blight)
-
-	end
-
-	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
-
+	
 	tweak_data.player.stances.msr.steelsight.shakers.breathing.amplitude = 0
 	tweak_data.player.stances.r93.steelsight.shakers.breathing.amplitude = 0
 	tweak_data.player.stances.m95.steelsight.shakers.breathing.amplitude = 0

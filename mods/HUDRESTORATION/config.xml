@@ -143,6 +143,8 @@
 			</option_group>
 			<option_group name="SC">
 				<option type="bool" default_value="true" name="SC"/>
+				<option type="bool" default_value="false" name="SCWeapon"/>
+				<option type="bool" default_value="false" name="SCSkills"/>
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">

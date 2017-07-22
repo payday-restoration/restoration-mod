@@ -1,4 +1,4 @@
-if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+if restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	--fire rate multiplier blackmarket statchart stuff	
 	function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, detection_risk, current_state, blueprint)

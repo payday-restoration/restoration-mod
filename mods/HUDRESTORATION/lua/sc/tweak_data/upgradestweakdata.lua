@@ -30,7 +30,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	end
 
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	if restoration and restoration.Options:GetValue("SC/SCSkills") then
 
 	--Armor related stuff--
 	self.values.player.body_armor.armor = {

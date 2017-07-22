@@ -1,3 +1,4 @@
+if restoration and restoration.Options:GetValue("SC/SC") then
 function PlayerInventory:add_unit_by_factory_name(factory_name, equip, instant, blueprint, cosmetics, texture_switches)
 	if cosmetics then
 		for _,v in pairs(cosmetics) do
@@ -38,4 +39,5 @@ function PlayerInventory:add_unit_by_factory_name(factory_name, equip, instant, 
 	if new_unit:base().AKIMBO then
 		new_unit:base():create_second_gun()
 	end
+end
 end

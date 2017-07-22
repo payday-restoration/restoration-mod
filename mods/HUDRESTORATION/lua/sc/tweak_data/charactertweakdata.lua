@@ -12112,7 +12112,11 @@ function CharacterTweakData:_create_table_structure()
 end
 
 function CharacterTweakData:_set_easy()
-	self:_multiply_all_hp(0.75, 1)
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+		self:_multiply_all_hp(0.75, 1)
+	else
+		self:_multiply_all_hp(1.5, 1.5)
+	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12144,7 +12148,11 @@ function CharacterTweakData:_set_easy()
 end
 
 function CharacterTweakData:_set_normal()
-	self:_multiply_all_hp(0.75, 1)
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+		self:_multiply_all_hp(0.75, 1)
+	else
+		self:_multiply_all_hp(1.5, 1.5)
+	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12176,7 +12184,11 @@ function CharacterTweakData:_set_normal()
 end
 
 function CharacterTweakData:_set_hard()
-	self:_multiply_all_hp(1, 1)
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+		self:_multiply_all_hp(1, 1)
+	else
+		self:_multiply_all_hp(3, 1.5)
+	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12208,7 +12220,11 @@ function CharacterTweakData:_set_hard()
 end
 
 function CharacterTweakData:_set_overkill()
-	self:_multiply_all_hp(1, 1)
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+		self:_multiply_all_hp(1, 1)
+	else
+		self:_multiply_all_hp(3, 1.5)
+	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12238,10 +12254,10 @@ function CharacterTweakData:_set_overkill()
 end
 
 function CharacterTweakData:_set_overkill_145()
-	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.5, 1)
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+		self:_multiply_all_hp(1, 1)
 	else
-		self:_multiply_all_hp(1.5, 1)
+		self:_multiply_all_hp(4.5, 1.5)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12275,10 +12291,10 @@ function CharacterTweakData:_set_overkill_145()
 end
 
 function CharacterTweakData:_set_easy_wish()
-	if SystemInfo:platform() == Idstring("PS3") then
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
 		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(5.25, 1.3)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12312,10 +12328,10 @@ function CharacterTweakData:_set_easy_wish()
 end
 
 function CharacterTweakData:_set_overkill_290()
-	if SystemInfo:platform() == Idstring("PS3") then
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
 		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(5.25, 1.3)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12356,10 +12372,10 @@ function CharacterTweakData:_set_overkill_290()
 end
 
 function CharacterTweakData:_set_sm_wish()
-	if SystemInfo:platform() == Idstring("PS3") then
+	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
 		self:_multiply_all_hp(2, 0.915)
 	else
-		self:_multiply_all_hp(2, 0.915)
+		self:_multiply_all_hp(6.75, 1.415)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)

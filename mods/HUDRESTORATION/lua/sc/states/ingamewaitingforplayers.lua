@@ -1,4 +1,4 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+if restoration and restoration.Options:GetValue("SC/SCSkills") then
 
 local old_playerstate = IngameWaitingForPlayersState._start
 function IngameWaitingForPlayersState:_start()

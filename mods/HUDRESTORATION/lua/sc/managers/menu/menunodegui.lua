@@ -27,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				Global._friendsonly_warning_shown = true
 				QuickMenu:new(
 					"SC's Mod",
-					"Warning! You are using Seamlink's overhaul (and possibly some other mods) which is known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Seamlink's overhaul or SC's Mod before reporting anything to Seamlink or myself.",
+					"Warning! You are using Seamlink's overhaul (and possibly some other mods) which is known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Seamlink's overhaul or SC's Mod before reporting anything to Seamlink or Restoration.",
 					{
 						{
 							text = "ok",
@@ -47,7 +47,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				Global._friendsonly_warning_shown = true
 				QuickMenu:new(
 					"SC's Mod",
-					"Warning! You are using Spawn Faster or Harder Difficulty (and possibly some other mods) which is known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Spawn Faster/Harder Difficulty or SC's Mod before reporting anything to BRAND0 or myself.",
+					"Warning! You are using Spawn Faster or Harder Difficulty (and possibly some other mods) which is known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Spawn Faster/Harder Difficulty or SC's Mod before reporting anything to BRAND0 or Restoration.",
 					{
 						{
 							text = "ok",
@@ -59,4 +59,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+end
 end

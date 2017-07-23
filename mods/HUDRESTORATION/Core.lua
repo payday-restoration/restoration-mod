@@ -31,7 +31,7 @@ SC._data = {}
 if SystemFS:exists("mods/DMCWO/mod.txt") then
 	SC._data.sc_player_weapon_toggle = false
 else
-	SC._data.sc_player_weapon_toggle = true
+	SC._data.sc_player_weapon_toggle = false
 end
 
 if not restoration.Options:GetValue("SC/SC") then

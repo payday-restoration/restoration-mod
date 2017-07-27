@@ -1430,7 +1430,9 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.summers.headshot_dmg_mul = 1.5
 	self.summers.bag_dmg_mul = 6
-	self.summers.move_speed = presets.move_speed.fast
+	self.summers.move_speed = presets.move_speed.slow
+	self.summers.no_run_start = true
+	self.summers.no_run_stop = true
 	self.summers.no_retreat = true
 	self.summers.no_arrest = true
 	self.summers.ends_assault_on_death = true

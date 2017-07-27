@@ -21,7 +21,26 @@ if not _G.restoration then
 	end
 	RestorationCore.log_shit("SC: FUCKING LOADING: " .. ModPath)
 	_G.restoration.ModPath = ModPath
-	_G.restoration.we_log = false
+	_G.restoration.captain_teamwork = {
+		"pal",
+		"run",
+		"mia_2",
+		"firestarter_3",
+		"mad",
+		"jolly",
+		"peta",
+		"peta2"
+	}
+	_G.restoration.captain_murderdozer = {
+		"branchbank",
+		"man",
+		"firestarter_2",
+		"framing_frame_3",
+		"four_stores",
+		"alex_2",
+		"rat",	
+		"flat"
+	}
 end
 
 _G.SC = _G.SC or {}

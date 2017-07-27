@@ -239,23 +239,62 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	buffs_panel:set_top(0)
 	buffs_panel:set_right(self._hud_panel:w())
-	local vip_icon = buffs_panel:bitmap({
-		halign = "center",
-		valign = "center",
-		color = Color.white,
-		name = "vip_icon",
-		blend_mode = "add",
-		visible = true,
-		layer = 3,
-		texture = "guis/textures/pd2/hud_buff_shield",
-		x = 0,
-		y = 0,
-		w = 38,
-		h = 38
-	})
+	if restoration and restoration.Options:GetValue("SC/SC") then
+		local job = Global.level_data and Global.level_data.level_id
+		local found_shit = false
+		for _,j in ipairs(restoration.captain_teamwork) do
+			if job == j then
+				buff_icon = "guis/textures/pd2/hud_buff_fire"
+				found_shit = true
+				break
+			end
+		end
+		for _,j2 in ipairs(restoration.captain_murderdozer) do
+			if job == j then
+				buff_icon = "guis/textures/pd2/hud_buff_skull"
+				found_shit = true
+				break
+			end
+		end
+		if not found_shit then
+			buff_icon = "guis/textures/pd2/hud_buff_shield"
+		end
+		local vip_icon = buffs_panel:bitmap({
+			halign = "center",
+			valign = "center",
+			color = Color.white,
+			name = "vip_icon",
+			blend_mode = "add",
+			visible = true,
+			layer = 0,
+			texture = buff_icon,
+			x = 0,
+			y = 0,
+			w = 38,
+			h = 38
+		})
 		vip_icon:set_right(buffs_panel:w())
 		vip_icon:set_rotation(30)
 		vip_icon:set_top(0)
+	else
+		local vip_icon = buffs_panel:bitmap({
+			halign = "center",
+			valign = "center",
+			color = Color.white,
+			name = "vip_icon",
+			blend_mode = "add",
+			visible = true,
+			layer = 3,
+			texture = "guis/textures/pd2/hud_buff_shield",
+			x = 0,
+			y = 0,
+			w = 38,
+			h = 38
+		})
+		vip_icon:set_right(buffs_panel:w())
+		vip_icon:set_rotation(30)
+		vip_icon:set_top(0)
+	end
 end
 function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_function)
 	local text_list = text_panel:script().text_list

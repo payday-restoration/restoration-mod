@@ -5028,18 +5028,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
-	local lists_of_heists_to_burninate = {
-		"pal",
-		"run",
-		"mia_2",
-		"firestarter_3",
-		"mad",
-		"jolly",
-		"peta",
-		"peta2"
-	}
 	--Captain stuff here--
-	for _,v in pairs(lists_of_heists_to_burninate) do
+	for _,v in pairs(restoration.captain_teamwork) do
 		if job == v then
 			if difficulty_index <= 3 then
 				self.besiege.assault.groups.Cap_Summers = {
@@ -5070,17 +5060,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		end
 	end
 	--Captain stuff here--
-	local heists_in_which_the_payday_gang_are_up_against_the_wall = {
-		"branchbank",
-		"man",
-		"firestarter_2",
-		"framing_frame_3",
-		"four_stores",
-		"alex_2",
-		"rat",	
-		"flat"
-	}
-	for _,v in pairs(heists_in_which_the_payday_gang_are_up_against_the_wall) do
+	for _,v in pairs(restoration.captain_murderdozer) do
 		if job == v then
 			if difficulty_index <= 3 then
 				self.besiege.assault.groups.Cap_Spring = {

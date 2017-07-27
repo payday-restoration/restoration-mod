@@ -53,6 +53,7 @@ StatisticsManager.special_unit_ids = {
 	"tank_titan",
 	"spring",
 	"summers",
+	"omnia_lpf",
 	"swat_turret",
 	"biker_boss",
 	"chavez_boss",
@@ -66,7 +67,13 @@ StatisticsManager.special_unit_ids = {
 local old_stats = StatisticsManager.init
 function StatisticsManager:init()
 	old_stats(self)
-
+	self._defaults.killed.omnia_lpf = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
 	self._defaults.killed.taser_summers = {
 			count = 0,
 			head_shots = 0,

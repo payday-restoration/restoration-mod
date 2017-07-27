@@ -21,6 +21,7 @@ function CopActionShoot:_get_target_pos(shoot_from_pos, ...)
 			shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
 			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			throw_molly(shoot_from_pos, target_vec)
+			self._ext_movement:play_redirect("throw_grenade")
 		else
 			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 		end
@@ -33,12 +34,13 @@ function CopActionShoot:_get_target_pos(shoot_from_pos, ...)
 		else
 			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 		end
-	elseif self._unit:base()._tweak_table == "spring_gren" and self._throw_projectile_time < _time then
+	elseif self._unit:base()._tweak_table == "spring" and self._throw_projectile_time < _time then
 		if self._shooting_player then
 			self._throw_projectile_time = _time + math.round_with_precision(10, 2)
 			shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
 			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			throw_frag(shoot_from_pos, target_vec)
+			self._ext_movement:play_redirect("throw_grenade")
 		else
 			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 		end

@@ -455,18 +455,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_heavy_M4 = {
 			unit_types = {
 				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
 				}
 			},
 			access = access_type_all
@@ -474,17 +466,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_heavy_R870 = {
 			unit_types = {
 				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
 					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
 				}
 			},
@@ -493,18 +477,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_heavy_M4_w = {
 			unit_types = {
 				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
 				}
 			},
 			access = access_type_walk_only
@@ -513,18 +489,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_heavy_M4 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
 				}
 			},
 			access = access_type_all
@@ -532,18 +500,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_heavy_R870 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
 					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
 				}
 			},
 			access = access_type_all
@@ -551,18 +511,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_heavy_M4_w = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
 				}
 			},
 			access = access_type_walk_only
@@ -697,15 +649,15 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.FBI_suit_M4_MP5 = {
 			unit_types = {
 				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2"),
+					Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+					Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2"),
 					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1"),
@@ -901,38 +853,26 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}
 	end
-	if difficulty_index < 7 then
+	if difficulty_index <= 6 then
 		self.unit_categories.FBI_heavy_G36 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870")
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 				}
 			},
 			access = access_type_all
 		}
-	elseif difficulty_index < 8 then
+	elseif difficulty_index == 7 then
 		self.unit_categories.FBI_heavy_G36 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 				}
 			},
 			access = access_type_all
@@ -944,81 +884,51 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"),
+					Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper")
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"),
+					Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper")
 				}
 			},
 			access = access_type_all
 		}
 	end
-	if difficulty_index < 7 then
+	if difficulty_index <= 6 then
 		self.unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870")
 				}
 			},
 			access = access_type_all
 		}
-	elseif difficulty_index < 8 then
+	elseif difficulty_index == 7 then
 		self.unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
+					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
 				}
 			},
@@ -1028,53 +938,35 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
+					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
 				}
 			},
 			access = access_type_all
 		}
 	end
-	if difficulty_index < 7 then
+	if difficulty_index <= 6 then
 		self.unit_categories.FBI_heavy_G36_w = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 				}
 			},
 			access = access_type_walk_only
 		}
-	elseif difficulty_index < 8 then
+	elseif difficulty_index == 7 then
 		self.unit_categories.FBI_heavy_G36_w = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 				}
 			},
 			access = access_type_all
@@ -1086,13 +978,27 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+					Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper")
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+					Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper")
 				}
 			},
 			access = access_type_walk_only
@@ -1951,7 +1857,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			{
 				unit = "CS_swat_R870",
 				freq = 0.5,
-				amount_max = 2,
+				amount_max = 1,
 				tactics = self._tactics.CS_swat_shotgun,
 				rank = 1
 			},
@@ -1973,8 +1879,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 2
 			},
 			{
+				unit = "CS_heavy_R870",
+				freq = 0.5,
+				amount_max = 1,
+				tactics = self._tactics.CS_swat_shotgun,
+				rank = 1
+			},
+			{
 				unit = "CS_heavy_M4",
-				freq = 0.35,
+				freq = 0.33,
 				tactics = self._tactics.CS_swat_rifle_flank,
 				rank = 3
 			}
@@ -2380,7 +2293,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "FBI_swat_R870",
 					freq = 0.5,
-					amount_max = 2,
+					amount_max = 1,
 					tactics = self._tactics.FBI_swat_shotgun,
 					rank = 1
 				},
@@ -2420,7 +2333,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},
 				{
 					unit = "FBI_swat_R870",
-					amount_min = 2,
+					amount_min = 1,
+					amount_max = 2,
 					freq = 1,
 					tactics = self._tactics.FBI_swat_shotgun,
 					rank = 3
@@ -2454,7 +2368,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},
 				{
 					unit = "FBI_swat_R870",
-					amount_min = 2,
+					amount_min = 1,
+					amount_max = 2,
 					freq = 1,
 					tactics = self._tactics.FBI_swat_shotgun,
 					rank = 3
@@ -2485,6 +2400,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 0.75,
 					tactics = self._tactics.FBI_swat_rifle_flank,
 					rank = 2
+				},
+				{
+					unit = "FBI_heavy_R870",
+					freq = 0.5,
+					amount_max = 1,
+					tactics = self._tactics.FBI_swat_shotgun,
+					rank = 1
 				},
 				{
 					unit = "CS_tazer",
@@ -2522,6 +2444,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},
 				{
+					unit = "FBI_heavy_R870",
+					amount_min = 1,
+					amount_max = 2,
+					freq = 1,
+					tactics = self._tactics.FBI_swat_shotgun,
+					rank = 3
+				},
+				{
 					unit = "medic_M4",
 					freq = 0.8,
 					amount_min = 0,
@@ -2548,6 +2478,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 3,
 					tactics = self._tactics.FBI_heavy_flank,
 					rank = 2
+				},
+				{
+					unit = "FBI_heavy_R870",
+					amount_min = 1,
+					amount_max = 2,
+					freq = 1,
+					tactics = self._tactics.FBI_swat_shotgun,
+					rank = 3
 				},
 				{
 					unit = "medic_M4",
@@ -5096,7 +5034,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		"mia_2",
 		"firestarter_3",
 		"mad",
-		"jolly"
+		"jolly",
+		"peta",
+		"peta2"
 	}
 	--Captain stuff here--
 	for _,v in pairs(lists_of_heists_to_burninate) do

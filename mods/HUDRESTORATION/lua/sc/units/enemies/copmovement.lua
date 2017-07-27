@@ -43,6 +43,7 @@ local security_variant = action_variants.security
 function CopMovement:init(unit)
 	old_init(self, unit)
 	CopMovement._action_variants.cop_civ = security_variant
+	CopMovement._action_variants.fbi_female = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.boom = security_variant
@@ -286,7 +287,7 @@ function CopMovement:_chk_play_equip_weapon()
 			local weapon_unit = self._ext_inventory:equipped_unit()
 			if weapon_unit then
 				local weap_tweak = weapon_unit:base():weapon_tweak_data()
-				RestorationCore.log_shit("SC: Weapon tweak found! " .. weap_tweak.sounds.prefix)
+				RestorationCore.log_shit("SC: Weapon tweak found! " .. tostring(weap_tweak.sounds.prefix))
 				local weapon_hold = weap_tweak.hold
 				if type(weap_tweak.hold) == "table" then
 					local num = #weap_tweak.hold + 1

@@ -49,25 +49,6 @@ function WeaponFactoryTweakData:init(...)
 		"wpn_fps_pis_peacemaker_m_standard",
 		"wpn_fps_pis_peacemaker_g_standard"
 	}
-	self.parts.wpn_fps_upg_m4_m_drum = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_aa12_mag_drum",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 98},
-		is_a_unlockable = true,
-		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/barrel_ext",
-		dlc = "sc",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum",
-		stats = {
-			value = 9,
-			extra_ammo = 35,
-			reload = -3,
-			concealment = -5
-		},
-		custom_stats = {reload_speed_mult = 0.7},
-		third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_drum"
-	}
 end
 
 end
@@ -2677,6 +2658,24 @@ function WeaponFactoryTweakData:_init_m4()
 			damage_far_mul = 200
 		}
 	}
+	self.parts.wpn_fps_upg_m4_m_drum = {
+		pcs = {},
+		type = "magazine",
+		name_id = "bm_wp_aa12_mag_drum",
+		a_obj = "a_m",
+		bullet_objects = {prefix = "g_bullet_", amount = 98},
+		is_a_unlockable = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/barrel_ext",
+		dlc = "sc",
+		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum",
+		stats = {
+			value = 9,
+			extra_ammo = 35,
+			reload = -3,
+			concealment = -5
+		},
+		custom_stats = {reload_speed_mult = 0.7}
+	}
 	self.parts.wpn_fps_upg_m4_m_pmag = {
 		pcs = {
 			10,
@@ -2796,6 +2795,7 @@ function WeaponFactoryTweakData:_init_m4()
 	self.parts.wpn_fps_upg_m4_g_ergo.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_g_ergo"
 	self.parts.wpn_fps_upg_m4_g_sniper.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_g_sniper"
 	self.parts.wpn_fps_upg_m4_g_standard.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_g_standard"
+	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_drum"
 	self.parts.wpn_fps_upg_m4_m_pmag.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_pmag"
 	self.parts.wpn_fps_upg_m4_m_straight.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_straight"
 	self.parts.wpn_fps_upg_m4_s_adapter.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_s_adapter"

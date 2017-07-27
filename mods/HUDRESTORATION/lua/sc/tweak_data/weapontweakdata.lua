@@ -244,7 +244,7 @@ function WeaponTweakData:_init_data_npc_melee()
 	self.npc_melee.helloween_sword.armor_piercing = true
 	self.npc_melee.buzzer_summer = {}
 	self.npc_melee.buzzer_summer.unit_name = Idstring("units/payday2/characters/ene_acc_knife_1/ene_acc_knife_1")
-	self.npc_melee.buzzer_summer.damage = 6
+	self.npc_melee.buzzer_summer.damage = 3
 	self.npc_melee.buzzer_summer.animation_param = "melee_knife"
 	self.npc_melee.buzzer_summer.player_blood_effect = true
 	self.npc_melee.buzzer_summer.armor_piercing = true

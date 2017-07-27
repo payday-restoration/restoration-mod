@@ -1,4 +1,4 @@
-if restoration and restoration.Options:GetValue("SC/SCSkills") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function PlayerStandard:_start_action_intimidate(t, secondary)
 	if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then

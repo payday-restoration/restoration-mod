@@ -1,4 +1,4 @@
-if restoration and restoration.Options:GetValue("SC/SCSkills") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function PlayerTased:enter(state_data, enter_data)
 	PlayerTased.super.enter(self, state_data, enter_data)

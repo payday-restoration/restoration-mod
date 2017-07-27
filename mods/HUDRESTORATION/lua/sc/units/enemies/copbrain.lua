@@ -22,6 +22,7 @@ local security_variant = logic_variants.security
 function CopBrain:init(unit)
 	old_init(self, unit)
 	CopBrain._logic_variants.cop_civ = security_variant
+	CopBrain._logic_variants.fbi_female = security_variant
 	CopBrain._logic_variants.fbi_swat_vet = security_variant
 	CopBrain._logic_variants.city_swat_titan = security_variant
 	CopBrain._logic_variants.boom = security_variant

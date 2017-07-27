@@ -312,7 +312,7 @@ function HUDAssaultCorner:init(hud, full_hud, tweak_hud)
 	local job = Global.level_data and Global.level_data.level_id
     	if job == "branchbank" or job == "man" or job == "firestarter_2" or job == "framing_frame_3" or job == "four_stores" or job == "alex_2" or job == "rat" or job == "flat" then
 		buff_icon = "guis/textures/pd2/hud_buff_skull"
-	elseif job == "pal" or job == "run" or job == "mia_2" or job == "firestarter_3" or job == "mad" or job == "jolly" then
+	elseif job == "pal" or job == "run" or job == "mia_2" or job == "firestarter_3" or job == "mad" or job == "jolly" or job == "peta" or job == "peta2" then
 		buff_icon = "guis/textures/pd2/hud_buff_fire"
     	else
 		buff_icon = "guis/textures/pd2/hud_buff_shield"

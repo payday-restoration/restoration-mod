@@ -278,6 +278,11 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
 	table.insert(self._enemy_list, "fbi")
+	self.fbi_female = deep_clone(self.fbi)
+	self.fbi_female.speech_prefix_p1 = "fl"
+	self.fbi_female.speech_prefix_p2 = self._speech_prefix_p2
+	self.fbi_female.speech_prefix_count = 1
+	table.insert(self._enemy_list, "fbi_female")
 	self.fbi_vet = deep_clone(self.fbi)
 	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
@@ -343,7 +348,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.detection = presets.detection.normal
 	self.medic.HEALTH_INIT = 30
 	self.medic.headshot_dmg_mul = 2.2
-	self.medic.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.medic.suppression = nil
 	self.medic.surrender = presets.surrender.special
 	self.medic.move_speed = presets.move_speed.very_fast
@@ -386,6 +390,8 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.immune_to_concussion = true
 	self.medic_summers.no_retreat = true
 	self.medic_summers.no_arrest = true
+	self.medic_summers.rescue_hostages = false
+	self.medic_summers.steal_loot = nil
 	self.medic_summers.immune_to_knock_down = true
 	self.medic_summers.priority_shout = "f45"
 	self.medic_summers.bot_priority_shout = "f45x_any"
@@ -393,6 +399,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.speech_prefix_p2 = nil
 	self.medic_summers.spawn_sound_event = "rmdc_entrance"
 	self.medic_summers.die_sound_event = "mga_death_scream"
+	self.medic_summers.use_radio = "dsp_radio_russian"
 	self.medic_summers.chatter = presets.enemy_chatter.summers
 	self.medic_summers.use_factory = true
 	self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
@@ -1452,13 +1459,10 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.announce_incomming = "incomming_captain"
 	self.summers.spawn_sound_event = "cpa_a02_01"
 	self.summers.die_sound_event = "mga_death_scream"
+	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.use_factory = true
 	self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
-	if job == "chill_combat" then
-		self.summers.steal_loot = nil
-	else
-		self.summers.steal_loot = true
-	end
+	self.summers.steal_loot = nil
  	table.insert(self._enemy_list, "summers")
 end
 
@@ -1530,17 +1534,20 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.ecm_hurts = {}
 	self.taser_summers.chatter = presets.enemy_chatter.summers
 	self.taser_summers.no_retreat = true
+	self.taser_summers.rescue_hostages = false
+	self.taser_summers.steal_loot = nil
 	self.taser_summers.immune_to_concussion = true
 	self.taser_summers.no_arrest = true
 	self.taser_summers.immune_to_knock_down = true
 	self.taser_summers.priority_shout = "f45"
 	self.taser_summers.bot_priority_shout = "f45x_any"
-	self.taser_summers.speech_prefix_p1 = "rtsr"
-	self.taser_summers.speech_prefix_p2 = nil
-	self.taser_summers.spawn_sound_event = "rtsr_elite"
+	self.taser_summers.speech_prefix_p1 = "fl"
+	self.taser_summers.speech_prefix_p2 = "n"
+	self.taser_summers.speech_prefix_count = 1
 	self.taser_summers.die_sound_event = "mga_death_scream"
 	self.taser_summers.use_factory = true
 	self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
+	self.taser_summers.use_radio = "dsp_radio_russian"
  	table.insert(self._enemy_list, "taser_summers")
 end
 
@@ -1612,16 +1619,13 @@ function CharacterTweakData:_init_boom(presets)
 	self.rboom.die_sound_event = "mdc_x02a_any_3p"
  	table.insert(self._enemy_list, "rboom")
 	self.boom_summers = deep_clone(self.boom)
-	if job == "chill_combat" then
-		self.boom_summers.steal_loot = nil
-	else
-		self.boom_summers.steal_loot = true
-	end
-	self.boom_summers = deep_clone(self.boom)
 	self.boom_summers.spawn_sound_event = "clk_c01x_plu"
 	self.boom_summers.chatter = presets.enemy_chatter.summers
-	self.boom_summers.speech_prefix_p1 = "rgren"
-	self.boom_summers.die_sound_event = "mdc_x02a_any_3p"
+	self.boom_summers.speech_prefix_p1 = "fl"
+	self.boom_summers.speech_prefix_p2 = "n"
+	self.boom_summers.speech_prefix_count = 1
+	self.boom_summers.die_sound_event = "mga_death_scream"
+	self.boom_summers.use_radio = "dsp_radio_russian"
 	self.boom_summers.HEALTH_INIT = 36
 	self.boom_summers.headshot_dmg_mul = 1.25
 	self.boom_summers.tags = {"medic_summers", "custom"}
@@ -1633,8 +1637,9 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.priority_shout = "f45"
 	self.boom_summers.bot_priority_shout = "f45x_any"
 	self.boom_summers.custom_shout = false
-	self.boom_summers.die_sound_event = "mga_death_scream"
 	self.boom_summers.use_factory = true
+	self.boom_summers.rescue_hostages = false
+	self.boom_summers.steal_loot = nil
 	self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
  	table.insert(self._enemy_list, "boom_summers")
 end
@@ -3753,11 +3758,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2400,
 			acc = {0, 0},
 			dmg_mul = 0,
-			recoil = {0.45, 0.8},
+			recoil = {1.5, 2},
 			mode = {
-				3,
-				2,
-				2,
+				1,
+				0,
+				0,
 				0
 			}
 		}
@@ -4612,11 +4617,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2500,
 			acc = {0, 0},
 			dmg_mul = 0,
-			recoil = {0.45, 0.8},
+			recoil = {1.5, 2},
 			mode = {
-				3,
-				2,
-				2,
+				1,
+				0,
+				0,
 				0
 			}
 		}
@@ -5836,11 +5841,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2500,
 			acc = {0, 0},
 			dmg_mul = 0,
-			recoil = {0.45, 0.8},
+			recoil = {1.5, 2},
 			mode = {
-				3,
-				2,
-				2,
+				1,
+				0,
+				0,
 				0
 			}
 		}
@@ -7115,11 +7120,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2400,
 			acc = {0, 0},
 			dmg_mul = 0,
-			recoil = {0.45, 0.8},
+			recoil = {1.5, 2},
 			mode = {
-				3,
-				2,
-				2,
+				1,
+				0,
+				0,
 				0
 			}
 		}
@@ -7988,11 +7993,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2400,
 			acc = {0.1, 0.55},
 			dmg_mul = 0,
-			recoil = {0.45, 0.8},
+			recoil = {1.5, 2},
 			mode = {
-				3,
-				2,
-				2,
+				1,
+				0,
+				0,
 				0
 			}
 		}
@@ -9433,11 +9438,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2400,
 			acc = {0, 0},
 			dmg_mul = 0,
-			recoil = {0.45, 0.8},
+			recoil = {1.5, 2},
 			mode = {
-				3,
-				2,
-				2,
+				1,
+				0,
+				0,
 				0
 			}
 		}
@@ -12105,18 +12110,14 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
 		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
 		Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical"),
+		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	}
 end
 
 function CharacterTweakData:_set_easy()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
-		self:_multiply_all_hp(0.75, 1)
-	else
-		self:_multiply_all_hp(1.5, 1.5)
-	end
+	self:_multiply_all_hp(0.75, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12148,11 +12149,7 @@ function CharacterTweakData:_set_easy()
 end
 
 function CharacterTweakData:_set_normal()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
-		self:_multiply_all_hp(0.75, 1)
-	else
-		self:_multiply_all_hp(1.5, 1.5)
-	end
+	self:_multiply_all_hp(0.75, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12184,11 +12181,7 @@ function CharacterTweakData:_set_normal()
 end
 
 function CharacterTweakData:_set_hard()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
-		self:_multiply_all_hp(1, 1)
-	else
-		self:_multiply_all_hp(3, 1.5)
-	end
+	self:_multiply_all_hp(1, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12220,11 +12213,7 @@ function CharacterTweakData:_set_hard()
 end
 
 function CharacterTweakData:_set_overkill()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
-		self:_multiply_all_hp(1, 1)
-	else
-		self:_multiply_all_hp(3, 1.5)
-	end
+	self:_multiply_all_hp(1, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -12254,10 +12243,10 @@ function CharacterTweakData:_set_overkill()
 end
 
 function CharacterTweakData:_set_overkill_145()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
-		self:_multiply_all_hp(1, 1)
+	if SystemInfo:platform() == Idstring("PS3") then
+		self:_multiply_all_hp(1.5, 1)
 	else
-		self:_multiply_all_hp(4.5, 1.5)
+		self:_multiply_all_hp(1.5, 1)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12291,10 +12280,10 @@ function CharacterTweakData:_set_overkill_145()
 end
 
 function CharacterTweakData:_set_easy_wish()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(5.25, 1.3)
+		self:_multiply_all_hp(1.75, 0.8)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12328,10 +12317,10 @@ function CharacterTweakData:_set_easy_wish()
 end
 
 function CharacterTweakData:_set_overkill_290()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(5.25, 1.3)
+		self:_multiply_all_hp(1.75, 0.8)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12372,10 +12361,10 @@ function CharacterTweakData:_set_overkill_290()
 end
 
 function CharacterTweakData:_set_sm_wish()
-	if restoration and restoration.Options:GetValue("SC/SCWeapon") and restoration.Options:GetValue("SC/SCSkills") then
+	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(2, 0.915)
 	else
-		self:_multiply_all_hp(6.75, 1.415)
+		self:_multiply_all_hp(2, 0.915)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12431,6 +12420,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.cop_scared.HEALTH_INIT = self.cop_scared.HEALTH_INIT * hp_mul
 	self.cop_female.HEALTH_INIT = self.cop_female.HEALTH_INIT * hp_mul
 	self.fbi.HEALTH_INIT = self.fbi.HEALTH_INIT * hp_mul
+	self.fbi_female.HEALTH_INIT = self.fbi_female.HEALTH_INIT * hp_mul
 	self.fbi_vet.HEALTH_INIT = self.fbi_vet.HEALTH_INIT * hp_mul
 	self.medic.HEALTH_INIT = self.medic.HEALTH_INIT * hp_mul
 	self.bolivian.HEALTH_INIT = self.bolivian.HEALTH_INIT * hp_mul
@@ -12490,6 +12480,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 	if self.fbi.headshot_dmg_mul then
 		self.fbi.headshot_dmg_mul = self.fbi.headshot_dmg_mul * hs_mul
+	end
+	if self.fbi_female.headshot_dmg_mul then
+		self.fbi_female.headshot_dmg_mul = self.fbi_female.headshot_dmg_mul * hs_mul
 	end
 	if self.fbi_vet.headshot_dmg_mul then
 		self.fbi_vet.headshot_dmg_mul = self.fbi_vet.headshot_dmg_mul * hs_mul
@@ -12630,6 +12623,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"cop_scared",
 		"cop_female",
 		"fbi",
+		"fbi_female",
 		"fbi_vet",
 		"medic",
 		"swat",
@@ -12683,6 +12677,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.cop_scared.SPEED_RUN = self.cop_scared.SPEED_RUN * run_mul
 	self.cop_female.SPEED_RUN = self.cop_female.SPEED_RUN * run_mul
 	self.fbi.SPEED_RUN = self.fbi.SPEED_RUN * run_mul
+	self.fbi_female.SPEED_RUN = self.fbi_female.SPEED_RUN * run_mul
 	self.fbi_vet.SPEED_RUN = self.fbi_vet.SPEED_RUN * run_mul
 	self.medic.SPEED_RUN = self.medic.SPEED_RUN * run_mul
 	self.bolivian.SPEED_RUN = self.bolivian.SPEED_RUN * run_mul
@@ -12735,6 +12730,7 @@ function CharacterTweakData:_set_characters_weapon_preset(preset)
 		"cop_female",
 		"gensec",
 		"fbi",
+		"fbi_female",
 		"swat",
 		"gangster",
 		"hector_boss_no_armor",
@@ -12753,6 +12749,7 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 	local all_units = {
 		"gensec",
 		"fbi",
+		"fbi_female",
 		"medic",
 		"omnia_lpf",
 		"taser",
@@ -12776,6 +12773,7 @@ function CharacterTweakData:_set_characters_melee_preset(preset)
 		"cop_female",
 		"gensec",
 		"fbi",
+		"fbi_female",
 		"swat",
 		"gangster",
 		"hector_boss_no_armor",

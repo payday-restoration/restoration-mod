@@ -1,4 +1,4 @@
-if restoration and restoration.Options:GetValue("SC/SCSkills") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 --Allow converts and tied civs to revive you
 function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO_data)

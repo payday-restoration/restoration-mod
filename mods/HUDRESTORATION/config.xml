@@ -119,6 +119,7 @@
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/managers/menu/menunodegui.lua" source_file="lib/managers/menu/menunodegui"/>
 		<hook file="sc/tweak_data/assetstweakdata.lua" source_file="lib/tweak_data/assetstweakdata"/>
+		<hook file="sc/tweak_data/tipstweakdata.lua" source_file="lib/tweak_data/tipstweakdata"/>
     </Hooks>
     <Localization directory="loc" default="english.txt">
     </Localization>
@@ -143,8 +144,6 @@
 			</option_group>
 			<option_group name="SC">
 				<option type="bool" default_value="true" name="SC"/>
-				<option type="bool" default_value="false" name="SCWeapon"/>
-				<option type="bool" default_value="false" name="SCSkills"/>
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">

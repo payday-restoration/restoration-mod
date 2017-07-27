@@ -102,7 +102,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED."
+		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+
+		--We assets now--
+		["menu_asset_dinner_safe"] = "Safe",
+		["menu_asset_bomb_inside_info"] = "Insider Info",
 	})
 end)
 
@@ -205,6 +209,11 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
+		--Woo Hints--
+		["loading_gameplay_101"] = "Flashbangs make an audible noise when deployed. They cannot be destroyed by gunfire or melee weapons, so it's best to simply look away.",
+		["loading_gameplay_118"] = "Cable Ties are a finite resource, make the most of them.",
+		["loading_gameplay_12"] = "Know your enemy. Cloakers have distinct green, glowing night vision goggles on, and are completely silent. Check your corners and maintain vigilance!",
+
 		["skill_uppers_revive"] = "Downs restored!",
 		["hud_ai_traded_in"] = "",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",

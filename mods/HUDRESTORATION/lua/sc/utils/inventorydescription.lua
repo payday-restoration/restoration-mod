@@ -1,4 +1,4 @@
-if restoration and restoration.Options:GetValue("SC/SCWeapon") then
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
 	local skill_stats = {}

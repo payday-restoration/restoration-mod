@@ -165,7 +165,7 @@
 	"menu_contacts_shatter" : "///VERITAS_ROOT_MST:.",
 	"heist_contact_shatter_description" : "Jackal, one of the many people that are all operating under one identity -- Shatter.",
 	"bm_msk_shatter_res" : "Shatter",
-	"bm_msk_shatter_res_desc" : "The Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.\n\nShatter, though, was a little different.  In some Pagan derivations of the Phoenix, Shatter was believed to be a being of immeasurable power.  Being able to surpass long distances in the blink of an eye, having strength beyond any mortal, an intellect to challenge the wisest of elders, and a heart that refused to stop beating, Shatter was an indestructible icon of fervency.\n\nBut nobody ever knew what happened to the being.  Some speculate he left the Earth; in an attempt to find greater challenges to conquer.  Some believe that the being was killed in a spectacular battle against an inter-dimensional superpower.\n\nBut the truth is, he never went anywhere.",
+	"bm_msk_shatter_res_desc" : "The mask used a fringe criminal organization, who all take on the alias of the legendary Shatter.\n\nShatter was the heister responsible for the 2003 theft of the VERITAS system from OMNIA, and the system later went on to become the CRIME.NET you know today.\n\nThe mask isn't accurate at all to the real Shatter's mask -- but nobody knows who Shatter was or what his mask was like to begin with.\n\nAll that remains is a name and a story.",
 	"menu_l_global_value_veritas" : "This is a VERITAS item!",
 	"restoration_level_data_highrise_stage1" : "12:00 AM, HIGHRISE APARTMENTS",
 }

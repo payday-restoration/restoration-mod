@@ -66,8 +66,8 @@ function WeaponTweakData:_set_overkill_145()
 		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 300
 		self.swat_van_turret_module.AUTO_REPAIR = false
 	else
-		self.swat_van_turret_module.HEALTH_INIT = 2775
-		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 600
+		self.swat_van_turret_module.HEALTH_INIT = 1387.5
+		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 300
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
@@ -98,8 +98,8 @@ function WeaponTweakData:_set_easy_wish()
 		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
 		self.swat_van_turret_module.AUTO_REPAIR = false
 	else
-		self.swat_van_turret_module.HEALTH_INIT = 3237.5
-		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
+		self.swat_van_turret_module.HEALTH_INIT = 1618.75
+		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
@@ -133,8 +133,8 @@ function WeaponTweakData:_set_overkill_290()
 		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
 		self.swat_van_turret_module.AUTO_REPAIR = false
 	else
-		self.swat_van_turret_module.HEALTH_INIT = 3237.5
-		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
+		self.swat_van_turret_module.HEALTH_INIT = 1618.75
+		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
@@ -155,39 +155,39 @@ function WeaponTweakData:_set_overkill_290()
 	}
 	self.ceiling_turret_module.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module.BAG_DMG_MUL = 10
-	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
+	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 400
 	self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
 	self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-	self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
+	self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 400
 
 end
 
 function WeaponTweakData:_set_sm_wish()
 	if job == "chew" or job == "glace" then
 		self.swat_van_turret_module.HEALTH_INIT = 1850
-		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 400
 		self.swat_van_turret_module.AUTO_REPAIR = false
 	else
-		self.swat_van_turret_module.HEALTH_INIT = 3700
-		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 700
+		self.swat_van_turret_module.HEALTH_INIT = 1850
+		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 400
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 
 	self.swat_van_turret_module.BAG_DMG_MUL = 11.4375
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.875},
-		{1800, 2.625},
-		{3000, 1.05}
+		{1000, 2.5},
+		{2000, 1},
+		{3000, 1}
 	}
 	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.875},
-		{1800, 2.625},
-		{3000, 1.05}
+		{1000, 2.5},
+		{2000, 1},
+		{3000, 1}
 	}
 	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2.875},
-		{1800, 2.625},
-		{3000, 1.05}
+		{1000, 2.5},
+		{2000, 1},
+		{3000, 1}
 	}
 	self.ceiling_turret_module.HEALTH_INIT = 1850
 	self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
@@ -243,9 +243,9 @@ function WeaponTweakData:_init_data_npc_melee()
 	self.npc_melee.helloween_sword.player_blood_effect = true
 	self.npc_melee.helloween_sword.armor_piercing = true
 	self.npc_melee.buzzer_summer = {}
-	self.npc_melee.buzzer_summer.unit_name = Idstring("units/payday2/characters/ene_acc_knife_1/ene_acc_knife_1")
+	self.npc_melee.buzzer_summer.unit_name = Idstring("units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1")
 	self.npc_melee.buzzer_summer.damage = 3
-	self.npc_melee.buzzer_summer.animation_param = "melee_knife"
+	self.npc_melee.buzzer_summer.animation_param = "melee_freedom"
 	self.npc_melee.buzzer_summer.player_blood_effect = true
 	self.npc_melee.buzzer_summer.armor_piercing = true
 end
@@ -547,7 +547,7 @@ function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.auto.fire_rate = 0.13333333333
 	self.swat_van_turret_module.alert_size = 2500
 	self.swat_van_turret_module.headshot_dmg_mul = 1
-	self.swat_van_turret_module.EXPLOSION_DMG_MUL = 3
+	self.swat_van_turret_module.EXPLOSION_DMG_MUL = 4
 	self.swat_van_turret_module.FIRE_DMG_MUL = 1
 	self.swat_van_turret_module.BAG_DMG_MUL = 12.5
 	self.swat_van_turret_module.SHIELD_DMG_MUL = 1
@@ -556,8 +556,8 @@ function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 200
 		self.swat_van_turret_module.AUTO_REPAIR = false
 	else
-		self.swat_van_turret_module.HEALTH_INIT = 1850
-		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 400
+		self.swat_van_turret_module.HEALTH_INIT = 925
+		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 200
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 	self.swat_van_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
@@ -628,7 +628,7 @@ function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.auto.fire_rate = 0.13333333333
 	self.ceiling_turret_module.alert_size = 2500
 	self.ceiling_turret_module.headshot_dmg_mul = 1
-	self.ceiling_turret_module.EXPLOSION_DMG_MUL = 3
+	self.ceiling_turret_module.EXPLOSION_DMG_MUL = 4
 	self.ceiling_turret_module.FIRE_DMG_MUL = 1
 	self.ceiling_turret_module.BAG_DMG_MUL = 12.5
 	self.ceiling_turret_module.SHIELD_DMG_MUL = 1
@@ -6749,6 +6749,11 @@ function WeaponTweakData:_precalculate_values()
 	self:clone__precalculate_values()
 	self.hk21_sc_npc.AMMO_MAX = self.hk21_sc_npc.CLIP_AMMO_MAX * self.hk21_sc_npc.NR_CLIPS_MAX
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
+	self.m16_crew.AMMO_MAX = 9999999
+	self.peacemaker_crew.AMMO_MAX = 9999999
+	self.p90_crew.AMMO_MAX = 9999999
+	self.flamethrower_mk2_crew.AMMO_MAX = 9999999
+	self.olympic_crew.AMMO_MAX = 9999999
 end
 
 end

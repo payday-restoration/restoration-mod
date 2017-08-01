@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ene_acc_knife_1" materials="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" />
+    <graphics>
+        <object enabled="true" name="g_kabar" />
+    </graphics>
+</dynamic_object>

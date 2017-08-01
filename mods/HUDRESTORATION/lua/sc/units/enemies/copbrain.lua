@@ -1,6 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-
 local old_init = CopBrain.init
 local old_update = CopBrain.update
 local logic_variants = {

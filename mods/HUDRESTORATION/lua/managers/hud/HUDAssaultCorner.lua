@@ -250,7 +250,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 			end
 		end
 		for _,j2 in ipairs(restoration.captain_murderdozer) do
-			if job == j then
+			if job == j2 then
 				buff_icon = "guis/textures/pd2/hud_buff_skull"
 				found_shit = true
 				break

@@ -60,6 +60,9 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 
+	if Global.load_level == true and Global.game_settings.level_id == "cult_murky" then
+		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/cult_stage1.custom_xml", "custom_xml", "core/environments/default", "environment")
+	end
 	
 	end)
 end
@@ -74,7 +77,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	
 	if Global.load_level == true and Global.game_settings.level_id == "run" then
 		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
+		--BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_1" then

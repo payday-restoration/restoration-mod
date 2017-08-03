@@ -296,7 +296,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
     	self.fbi_vet.move_speed = presets.move_speed.lightning
-	self.fbi_vet.use_animation_on_fire_damage = false
+	self.fbi_vet.use_animation_on_fire_damage = true
 	self.fbi_vet.priority_shout = "g29"
 	self.fbi_vet.bot_priority_shout = "g29"
 	self.fbi_vet.silent_priority_shout = nil
@@ -308,7 +308,7 @@ function CharacterTweakData:_init_fbi(presets)
 		self.fbi_vet.steal_loot = true
 	end
 	self.fbi_vet.immune_to_knock_down = true
-	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.elite)
+	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.base)
 	self.fbi_vet.damage.hurt_severity.bullet = {
 		health_reference = 1,
 		zones = {
@@ -677,7 +677,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.weapon_voice = "1"
 	self.sniper.experience.cable_tie = "tie_swat"
 	self.sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.sniper.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.sniper.speech_prefix_p2 = "n"
 	self.sniper.speech_prefix_count = 4
 	self.sniper.priority_shout = "f34"
 	self.sniper.bot_priority_shout = "f34x_any"

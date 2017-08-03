@@ -1,0 +1,404 @@
+<table directory="assets">
+	<texture path="guis/textures/restoration/hud_icons"/>
+	<texture path="guis/textures/restoration/icon_carrybag"/>
+	<texture path="guis/textures/restoration/hud_health"/>
+	<texture path="guis/textures/restoration/hud_radial_rim"/>
+	<texture path="guis/textures/restoration/hud_radialbg"/>
+	<texture path="guis/textures/restoration/hud_shield"/>
+	<texture path="guis/textures/restoration/hud_progress_active"/>
+	<texture path="guis/textures/restoration/hud_progress_invalid"/>
+	<texture path="guis/textures/restoration/hud_progress_bg"/>
+	<texture path="guis/textures/restoration/hud_tabs"/>
+	<texture path="guis/textures/restoration/hud_alertbox_start"/>
+	<texture path="guis/textures/restoration/hud_alertbox_mid"/>
+	<texture path="guis/textures/restoration/hud_alertbox_end"/>
+	<texture path="guis/textures/restoration/hud_glow"/>
+	<texture path="guis/textures/restoration/hud_stroke"/>
+	<texture path="guis/textures/restoration/hud_stealth_exclam"/>
+	<texture path="guis/textures/restoration/hud_stealth_eye"/>
+	<texture path="guis/textures/restoration/hud_stealthmeter"/>
+	<texture path="guis/textures/restoration/hud_stealthmeter_bg"/>
+	<texture path="guis/textures/restoration/pd2_waypoints"/>
+	<texture path="guis/textures/restoration/hud_difficultymarkers"/>
+	<texture path="guis/textures/restoration/hud_pickups"/>
+	<texture path="guis/textures/restoration/throwables"/>
+	<texture path="guis/textures/restoration/equipment"/>
+	<texture path="guis/textures/restoration/risklevel_blackscreen"/>
+	<gui path="guis/mask_off_hud" force="true"/>
+	<texture path="guis/textures/restoration/mission_briefing/bain"/>
+	<texture path="guis/textures/restoration/mission_briefing/dentist"/>
+	<texture path="guis/textures/restoration/mission_briefing/butcher"/>
+	<texture path="guis/textures/restoration/mission_briefing/jimmy"/>
+	<texture path="guis/textures/restoration/mission_briefing/locke"/>
+	<texture path="guis/textures/restoration/mission_briefing/hoxton"/>
+	<texture path="guis/textures/restoration/mission_briefing/shatter"/>
+	<texture path="guis/textures/restoration/mission_briefing/shatter_pattern"/>
+	<texture path="guis/textures/restoration/mission_briefing/calendar_payday"/>
+	<texture path="guis/textures/restoration/mission_briefing/the_continental"/>
+	<texture path="guis/textures/restoration/mission_briefing/the_andre"/>
+	<texture path="guis/textures/restoration/mission_briefing/event"/>
+	<texture path="guis/textures/restoration/mission_briefing/classic"/>
+	<texture path="guis/textures/restoration/crimenet/crimenet_portrait_gen"/>
+	<movie path="movies/codex/shatter1" force="true"/>
+	<movie path="movies/contact_shatter1" force="true"/>
+	<movie path="movies/cn_veritasgroup1" force="true"/>
+
+	<!--Risk Level-->
+	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
+
+	<!--HK21-->
+	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
+
+	<!--Headless Dozer-->
+	<object path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<sequence_manager path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<model path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<unit path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_husk" force="false" load="true"/>
+	
+	<!--Halloween Sword-->
+	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	<model path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	<unit path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false" load="true"/>
+	<material_config path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+
+	<!--FBI Vet w/ UMP-->
+	<object path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<model path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<unit path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>
+
+	<!--Akan FBI SWAT w/ UMP-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump_husk" load="true"/>
+
+	<!--Akan Gensec Elite-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass_husk" force="true"/>
+
+	<!--Akan Gensec Shotgunner this is only here to fix a bug anyway-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870_husk" force="true"/>
+
+	<!--Akan UMP guy-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump_husk" load="true"/>
+
+	<!--Akan Beat Cops w/ MP5-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg_husk" force="true"/>
+
+	<!--Akan Beat Cops w/ C45-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass_husk" force="true"/>
+
+	<!--Akan Beat Cops w/ Bronco-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg_husk" force="true"/>
+
+	<!--Akan Blue Swat w/ SMG-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass_husk" force="true"/>
+
+	<!--Akan Blue Swat w/ Silenced SMG-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal_husk" load="true"/>				
+
+	<!--Akan Gensec Tan-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_contour" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_heavy_dw_df" force="false"/>
+
+	<!--Akan Gensec Tan w/ Shotgun-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870_husk" force="false" load="true"/>		
+
+	<!--NPC Peacemaker-->	
+	<object path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+    <cooked_physics path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker_contour" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
+	<unit path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
+
+	<!--Titan Shotgunner-->	
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+
+	<!--Titandozer-->	
+	<object path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
+
+	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="true"/>
+	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="true"/>
+
+	<!--Spring-->
+	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_contour" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<object path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" load="true" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>
+
+	<!--Veteran Cop-->	
+	<object path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk" force="false" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
+
+	<object path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2_husk" force="false" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_nm" force="false"/>
+
+	<!--Grenadier-->
+	<object path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/> <!--Placeholder, get the actual texture-->
+	<texture path="units/payday2/characters/shared_textures/grenadier_body_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
+
+	<!--Russian Grenadier-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_contour" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
+
+	<!--Russian FBI-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1_contour" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_agent_2_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_3_df" force="false"/>
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_husk" force="false" load="true"/>
+	
+	<!--Russian Vet-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1_contour" force="false"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_veteran_akan_1_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_veteran_akan_head_df" force="false"/>
+	
+	<!--M4 Boom-->
+	<object path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false" load="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom_contour" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_nm" force="false"/>
+
+	<!--NPC AKMSU-->	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_x_akmsu" force="false" load="true"/>
+
+	<!--NPC XC45-->	
+	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45" force="true" load="true"/>
+
+	<!--Fixed Sniper-->
+	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+
+	<!--National Guard-->
+	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>
+
+	<!--Zeal Dozer fixes ('gitgud' means bringing a bow, right?)-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc_husk" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3_husk" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3" load="true"/>
+
+	<!--Zeal Shield Heavy Swat-->
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_contour" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" load="true" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/>
+
+	<!--Zeal Swat MP5 Tactical-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2_husk" load="true"/>
+
+	<!--Zeal City-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk" load="true"/>
+
+	<!--Zeal City shotgun-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>
+
+	<!--Zeal City UMP-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>
+
+	<!--Gensec Shield Acc-->
+	<model path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<material_config path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<object path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<unit path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<sequence_manager path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<texture path="units/payday2/characters/ene_acc_shield_city/shield_df" force="false"/>
+	<texture path="units/payday2/characters/ene_acc_shield_city/shield_il" force="false"/>
+	<texture path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>
+	
+	<!--Gensec Shield-->
+	<material_config path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" force="false"/>
+	<material_config path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec_contour" force="false"/>
+	<model path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" force="false"/>
+	<object path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" force="false"/>
+	<unit path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" load="true" force="false"/>
+	<unit path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk" load="true" force="false"/>
+
+	<!--Unshootable Flashbangs-->
+	<sequence_manager path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<model path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<object path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<unit path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="true" force="false"/>
+
+	<!--Medic w/ Mp5-->
+	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" force="false" load="true"/>
+
+	<!--Undercover Cops-->
+	<unit path="units/payday2/characters/ene_cop_civ_1/ene_cop_civ_1" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_cop_civ_1/ene_cop_civ_1_husk" force="false" load="true"/>
+
+	<!--Summers-->
+	<object path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
+
+	<!--Summer's Gang-->
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_nm" force="false"/>
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_nm" force="false"/>
+
+	<!--Omnia LPF-->
+	<object path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
+	
+	<!-- Shatter True -->
+	<cooked_physics path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
+	<model path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
+	<object path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
+	<unit path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
+	<material_config path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
+	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_df"/>
+	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true"/>
+		
+</table>

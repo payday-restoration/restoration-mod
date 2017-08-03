@@ -1,6 +1,0 @@
-<materials version="3">
-    <material name="kabar_npc" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
-        <bump_normal_texture file="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1_nm"/>
-        <diffuse_texture file="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1_df"/>
-    </material>
-</materials>

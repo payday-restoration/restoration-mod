@@ -1,0 +1,31 @@
+{
+ "name" : "Restoration Mod",
+ "description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
+ "author" : "Martini, DoktorAkcel, SC, & The Restoration Mod Crew",
+ "contact" : "No information given",
+ "version" : "6.0",
+ "priority" : 45,
+ "updates" : [
+  {
+   "revision" : 56,
+   "identifier" : "restoration",
+  },
+  {
+   "revision" : "./mods/RestorationMod/revision.txt",
+   "identifier" : "restoration_mod_overrides",
+   "install_dir" : "mods/",
+   "install_folder" : "RestorationMod",
+   "display_name" : "Restoration Mod mod_overrides"
+  }
+  ],
+ "pre_hooks" : [
+		{ "hook_id" : "lib/entry", "script_path" : "Core.lua" }
+    ],
+ "libraries" : [
+        {
+            "display_name" : "BeardLib",
+            "identifier" : "beardlib",
+            "optional" : "false"
+        }
+    ]
+}

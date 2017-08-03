@@ -355,6 +355,15 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
 
+	<!--Summers Flamethrower-->
+	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<model path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<object path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers_thq" force="false"/>
+	<cooked_physics path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<unit path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" load="true" force="false"/>
+	<texture path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df" force="false"/>
+
 	<!--Summer's Gang-->
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
@@ -430,4 +439,132 @@
 	<!--Loading Screen Tips-->
 	<texture path="guis/textures/loading/hints/grenadier_load" force="false"/>	
 	<texture path="guis/textures/loading/hints/vet_cop_loading" force="false"/>	
+
+	<!--Optimized gas-->
+	<effect path="effects/particles/explosions/cs_grenade_smoke" force="true"/>
+	
+	<!--Stat Boost-->
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3" force="true"/>
+	
+	<!--Incendiary Slug-->
+	<texture path="guis/dlcs/cash/safes/cf15/weapon_skins/m95_forest - copy" force="true"/>
+	
+	<!--AK drum mag-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/barrel" force="true"/>
+
+	<!--M4 Drum-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/barrel_ext" force="true"/>
+	
+	<!--Some angled grip, forgot what this one was lol-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/extra" force="true"/>
+	
+	<!--that ugly tan vert grip-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/foregrip" force="true"/>
+	
+	<!--The other vert grip-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/gadget" force="true"/>
+	
+	<!--Saiga Drum-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/grip" force="true"/>
+	
+	<!--MP5 Drum-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/lower_reciever" force="true"/>
+	
+	<!--Blank Statboost-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_bayonet" force="true"/>
+	
+	<!--SC Skill atlas-->
+	<texture path="guis/textures/pd2/skilltree/icons_atlas" force="true"/>
+	
+	<!--Unused gold texture intended for golden AK mods. Remove?-->
+	<texture path="guis/textures/pd2/fav_video2" force="true"/>
+		
+	<!--NPC M308 texture. Unused? There's a copy of this in the SCAR folder-->
+	<texture path="guis/textures/upgrade_images" force="true"/>
+	
+	<!--Birdshot (unused)-->
+	<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>
+	
+	<!--Restoration sound replacements (is this even supported by Beardlib? Here just in case.)-->
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/99542904" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/342216271" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/566618683" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/641377974" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/781884718" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/876924888" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/991751405" force="true"/>
+	
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/29569825" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/244684289" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/351647302" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/458068934" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/576160481" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/616866572" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/896790363" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/969288357" force="true"/>
+	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/1045867404" force="true"/>
+	
+	<stream path="soundbanks/streamed/regular_sfx/517987912" force="true"/>
+	
+	<!--Saiga Drum Mag fix (note: could probably add a proper THQ config now)-->
+	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd" force="true"/>
+	<texture path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_df_cc" force="true"/>
+	
+	<!--I think this was a fix for the Golden AK skin config (because the textures don't actually exist). Unused.-->
+	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_standard_gold_cc" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_akm_gold_cc" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_folding_gold_cc" force="true"/>
+	
+	<!--M4 Drum Mag fix (note: could probably add a proper THQ config now)-->
+	<material_config path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
+	<model path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
+	
+	<!--Test skin texture for M4 Drum, remove? I don't know how well this works.-->
+	<texture path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum_df_cc" force="true"/>
+	
+	<!--Note: remove wpn_frag_flashbang AGAIN-->
+
+	<!--Not getting rid of my NPC weps dammit-->
+	<!--NPC M4-->
+	<model path="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" force="true"/>
+	
+	<!--NPC Mp5-->
+	<model path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
+	
+	<!--NPC R870-->
+	<model path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_r870/r870_df" force="true"/>
+	
+	<!--Unused NPC sniper texture, I think? This was moved over to wpn_npc_sniper_p1_df. Remove?-->
+	<texture path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df" force="true"/>
+	
+	<!--NPC Saiga-->
+	<model path="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_nm" force="true"/>
+	
+	<!--NPC M308 again? Might need to look into that other texture-->
+	<model path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+
+	<!--NPC Sniper-->
+	<model path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	
+	<!--Note: remove units/pd2_dlc_bbq. These aren't necessary for the NPC flamethrower to work-->
+
+	<!--NPC RPG tweak (changed from NewNPCRaycastWeaponBase > NPCGrenadeLauncherBase)-->
+	<unit path="units/pd2_dlc_overkill_pack/weapons/wpn_fps_rpg7/wpn_fps_rpg7_npc" force="true"/>
 </table>

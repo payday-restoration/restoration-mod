@@ -1,13 +1,6 @@
 if not tweak_data then return end
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-	
-	tweak_data.music.soundbank_list = {
-		"soundbanks/music",
-		"soundbanks/music_alesso",
-		"soundbanks/mr_plinketts_voice"
-	}
-
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 120

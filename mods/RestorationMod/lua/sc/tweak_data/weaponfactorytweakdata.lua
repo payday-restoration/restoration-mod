@@ -3,10 +3,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 local old_init = WeaponFactoryTweakData.init
 function WeaponFactoryTweakData:init(...)
 	old_init(self, ...)
+	self.parts.wpn_fps_fla_mk2_body_fierybeast_summer = {
+		type = "lower_reciever",
+		name_id = "bm_wp_huntsman_body_standard",
+		a_obj = "a_body",
+		unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers",
+		stats = {value = 1},
+		animations = {
+			reload = "reload",
+			reload_not_empty = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil"
+		}
+	}
+	self.parts.wpn_fps_fla_mk2_body_fierybeast_summer.third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers"
 	self.wpn_fps_fla_mk2_npc_summers = deep_clone(self.wpn_fps_fla_mk2_npc)
 	self.wpn_fps_fla_mk2_npc_summers.default_blueprint = {
 		"wpn_fps_fla_mk2_empty",
-		"wpn_fps_fla_mk2_body_fierybeast",
+		"wpn_fps_fla_mk2_body_fierybeast_summer",
 		"wpn_fps_fla_mk2_mag_welldone"
 	}
 	self.wpn_fps_ass_m16_npc_summers = deep_clone(self.wpn_fps_ass_m16_npc)

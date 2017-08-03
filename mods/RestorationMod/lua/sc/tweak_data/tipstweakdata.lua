@@ -4,17 +4,13 @@ local old_tips_init = TipsTweakData.init
 function TipsTweakData:init()
 	old_tips_init(self)
 
-	--[[
-	Custom Hints maybe?
-
-	local dicks = {	
-		{ category = "sc_tip", cat_index = 1, image = "weapon_shotgun", force_image = true }		
+	local hints = {	
+		{ category = "sc_tip", cat_index = 1, image = "grenadier_load", force_image = true },	
+		{ category = "sc_tip", cat_index = 2, image = "vet_cop_loading", force_image = true }		
 	}
-	for i, v in pairs(dicks) do
-		table.insert(self.tips, dicks[i])
+	for i, v in pairs(hints) do
+		table.insert(self.tips, hints[i])
 	end
-
-	]]--
 	
 	self.category_totals = {}
 	for _, tip in ipairs(self.tips) do

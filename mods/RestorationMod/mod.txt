@@ -7,15 +7,8 @@
  "priority" : 45,
  "updates" : [
   {
-   "revision" : 56,
-   "identifier" : "restoration",
-  },
-  {
-   "revision" : "./mods/RestorationMod/revision.txt",
-   "identifier" : "restoration_mod_overrides",
-   "install_dir" : "mods/",
-   "install_folder" : "RestorationMod",
-   "display_name" : "Restoration Mod mod_overrides"
+   "revision" : 1,
+   "identifier" : "restorationnew",
   }
   ],
  "pre_hooks" : [

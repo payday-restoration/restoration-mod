@@ -10,54 +10,54 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1" then
 	if rnd == 1 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/dawnorange.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/dawnorange.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	elseif rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "branchbank" then
 	if rnd == 1 or rnd == 2 then
-	BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	--"sky_orientation/rotation":"-116.40824890137",
 	end
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_night" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 		--"sky_orientation/rotation":"278.53564453125",
 	end
 
 	
 	if Global.load_level == true and Global.game_settings.level_id == "bronze" then
 	
-	BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	--"sky_orientation/rotation":"-116.40824890137",
 	
 	end
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" then
 	if rnd == 1 or rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
 		--"sky_orientation/rotation":"278.53564453125",
 	end
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_3" then
 	if rnd == 1 or rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
 		--"sky_orientation/rotation":"278.53564453125",
 	end
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "four_stores" then
 	if rnd == 1 or rnd == 2 then
-	BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	--"sky_orientation/rotation":"-116.40824890137",
 	end
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 
 	
@@ -68,23 +68,23 @@ end
 Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
 
 	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "run" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
+		--BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_1" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "mission")
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_2" then
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "mission")
 	end
 end)
 end
@@ -115,12 +115,12 @@ end)
 --Paintings
 if restoration.Options:GetValue("OTHER/Paintings") then	
 Hooks:Add("BeardLibCreateScriptDataMods", "MorePaintingsCallBeardLibSequenceFuncs", function()
-BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
+BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
 end)
 end
 
 if restoration.Options:GetValue("SC/CorpseCollide") then	
 Hooks:Add("BeardLibCreateScriptDataMods", "CorpseCollideShit", function()
-BeardLib:ReplaceScriptData("mods/HUDRESTORATION/scriptdata/physics_settings.custom_xml", "custom_xml", "settings/physics_settings", "physics_settings", true)
+BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/physics_settings.custom_xml", "custom_xml", "settings/physics_settings", "physics_settings", true)
 end)
 end

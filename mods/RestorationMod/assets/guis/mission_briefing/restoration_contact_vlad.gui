@@ -1,0 +1,118 @@
+<gui>
+	<!--<preload texture="guis/textures/pd2/mission_briefing/vlad/contact"/>-->
+	<preload texture="guis/textures/pd2/mission_briefing/vlad/bd_pattern"/>
+	<!--<preload texture="guis/textures/pd2/mission_briefing/vlad/contact_effect_01"/>
+	<preload texture="guis/textures/pd2/mission_briefing/vlad/contact_effect_02"/>
+	<preload texture="guis/textures/pd2/mission_briefing/vlad/contact_effect_03"/>
+	<preload texture="guis/textures/pd2/mission_briefing/vlad/contact_effect_04"/>-->
+	<panel name_s="panel"/>
+	
+	
+	<script><![CDATA[
+		pattern = "guis/textures/pd2/mission_briefing/vlad/bd_pattern"
+		function configure(t)
+			if( not t.empty ) then
+				local wait_and_spawn_video = function(panel)
+					local seconds = 1
+			    local t = 0
+			    while t < seconds do
+			    	local dt = coroutine.yield()
+			  		if dt == 0 then
+			  			dt = TimerManager:main():delta_time()
+			  		end
+			      t = t + dt
+			    end
+					--wait(1)
+					local variant = math.random(3)
+					local contact_image = panel:video( { name="contact_image", video = "movies/contact_vlad"..tostring(variant), width = 1280, height = 720, blend_mode="add", loop=true, alpha=0 } )
+					
+					local f = function(p) contact_image:set_alpha(p) end
+					seconds = 0.5
+			    t = 0
+			    while true do
+			    	local dt = coroutine.yield()
+			  		if dt == 0 then
+			  			dt = TimerManager:main():delta_time()
+			  		end
+		        t = t + dt
+		        if t >= seconds then break end
+		        f(t/seconds, t)
+			    end
+					-- over(0.5, function(p) contact_image:set_alpha(p) end )
+				end
+				panel:animate( wait_and_spawn_video )
+				
+				-- local variant = math.random(3)
+				-- local contact_image = panel:bitmap( { name="contact_image", texture="guis/textures/pd2/mission_briefing/vlad/contact", w=720, h=720 } )
+				-- local contact_image = panel:video( { name="contact_image", video = "movies/contact_vlad"..tostring(variant), width = 1280, height = 720, blend_mode="add", loop=true } )
+				
+			end
+		end
+		--[[
+		function animate_effect(o)
+			local order = { 1, 3, 1, 2, 4, 2, 1, 4, 1, 4, 1, 2 }
+			local curr_order = 0
+			local curr_effect = order[1]
+			
+			local effect_1 = o:child( "contact_effect_1" )
+			local effect_2 = o:child( "contact_effect_2" )
+			local effect_3 = o:child( "contact_effect_3" )
+			local effect_4 = o:child( "contact_effect_4" )
+			
+			local r1 = math.rand(0.05, 0.10)
+			local r2 = math.rand(0.05, 0.15)
+			local r3 = math.rand(0.10, 0.20)
+			local r4 = math.rand(0.15, 0.25)
+			local r5 = math.rand(0.20, 0.30)
+			local r6 = math.rand(0.30, 0.40)
+			
+			while( true ) do
+				curr_order = math.max( 1, (curr_order + 1) % (#order+1) )
+				curr_effect = order[curr_order]
+				
+				if( curr_effect == 1 ) then
+					over(r5, function(p) effect_1:set_alpha( p ) end )
+					over(r5, function(p) effect_1:set_alpha( 1 - p ) end )
+					wait(r2 )
+					over(r3, function(p) effect_1:set_alpha( p ) end )
+					over(r3, function(p) effect_1:set_alpha( 1 - p ) end )
+					effect_1:set_alpha(0)
+				elseif( curr_effect == 2 ) then
+					over(r4, function(p) effect_2:set_alpha( p ) end )
+					wait(r5 )
+					over(r3, function(p) effect_2:set_alpha( 1 - p ) end )
+					wait(r4 )
+					over(r3, function(p) effect_2:set_alpha( p ) end )
+					over(r2, function(p) effect_2:set_alpha( 1 - p ) end )
+					effect_2:set_alpha(0)
+				elseif( curr_effect == 3 ) then
+					over(r5, function(p) effect_3:set_alpha( p ) end )
+					over(r4, function(p) effect_3:set_alpha( 1 - p ) end )
+					wait(r2 )
+					over(r3, function(p) effect_3:set_alpha( p ) end )
+					over(r4, function(p) effect_3:set_alpha( 1 - p ) end )
+					effect_3:set_alpha(0)
+				elseif( curr_effect == 4 ) then
+					over(r3, function(p) effect_4:set_alpha( p ) end )
+					over(r4, function(p) effect_4:set_alpha( 1 - p ) end )
+					wait(r2 )
+					over(r3, function(p) effect_4:set_alpha( p ) end )
+					over(r2, function(p) effect_4:set_alpha( 1 - p ) end )
+					wait(r3 )
+					over(r4, function(p) effect_4:set_alpha( p ) end )
+					over(r3, function(p) effect_4:set_alpha( 1 - p ) end )
+					effect_4:set_alpha(0)
+				end
+				
+				wait( r6 + r3 )
+				
+				r1 = math.rand(0.05)
+				r2 = math.rand(0.10)
+				r3 = math.rand(0.05, 0.15)
+				r4 = math.rand(0.10, 0.20)
+				r5 = math.rand(0.15, 0.25)
+				r6 = math.rand(0.20, 0.30)
+			end
+		end]]
+	]]></script>
+</gui>

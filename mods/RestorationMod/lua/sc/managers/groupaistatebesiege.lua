@@ -76,20 +76,7 @@ end
 
 local job = Global.level_data and Global.level_data.level_id
 function GroupAIStateBesiege:_check_spawn_phalanx()
-	local found_shit = false
-	for _,j in ipairs(restoration.captain_teamwork) do
-		if job == j then
-			found_shit = true
-			break
-		end
-	end
-	for _,j2 in ipairs(restoration.captain_murderdozer) do
-		if job == j then
-			found_shit = true
-			break
-		end
-	end
-	if found_shit then
+	if job == "firestarter_2" or job == "rat" or job == "pal" or job == "nail" or job == "born" or job == "peta" or job == "peta2" then	
 		return
 	end
 	if self._task_data and self._task_data.assault.active and self._phalanx_center_pos and not self._phalanx_spawn_group then

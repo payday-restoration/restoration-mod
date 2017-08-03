@@ -1,0 +1,47 @@
+<dynamic_object>
+	<diesel materials="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" orientation_object="rp_wpn_fps_fla_mk2_body_fierybeast" />
+	<animations>
+		<animation_group name="recoil">
+			<object name="anim_meter_recoil" enabled="true" />
+			<object name="anim_trigger_recoil" enabled="true" />
+		</animation_group>
+		<animation_group name="reload">
+			<object name="anim_trigger_reload" enabled="true" />
+			<object name="anim_nozzle_reload" enabled="true" />
+			<object name="anim_lock_1" enabled="true" />
+			<object name="anim_lock_2" enabled="true" />
+			<object name="anim_lock_3" enabled="true" />
+			<object name="anim_lock_4" enabled="true" />
+			<object name="anim_lock_5" enabled="true" />
+			<object name="anim_lock_6" enabled="true" />
+			<object name="anim_handle_2_reload" enabled="true" />
+			<object name="anim_handle_1_reload" enabled="true" />
+			<object name="anim_arm_1" enabled="true" />
+			<object name="anim_arm_2" enabled="true" />
+			<object name="anim_arm_3" enabled="true" />
+			<object name="anim_arm_4" enabled="true" />
+			<object name="anim_meter_reload" enabled="true" />
+		</animation_group>
+	</animations>
+	<graphics>
+		<object name="g_nozzle" enabled="true" />
+		<object name="g_pin_1" enabled="true" />
+		<object name="g_pin_2" enabled="true" />
+		<object name="g_pin_3" enabled="true" />
+		<object name="g_pin_4" enabled="true" />
+		<object name="g_pin_5" enabled="true" />
+		<object name="g_pin_6" enabled="true" />
+		<object name="g_lever_upper" enabled="true" />
+		<object name="g_lever_lower" enabled="true" />
+		<object name="g_arm_left_front" enabled="true" />
+		<object name="g_arm_right_front" enabled="true" />
+		<object name="g_arm_left_back" enabled="true" />
+		<object name="g_arm_right_back" enabled="true" />
+		<object name="g_trigger" enabled="true" />
+		<object name="g_body" enabled="true" />
+		<object name="g_glass" enabled="true" />
+		<object name="g_meter" enabled="true" />
+		<object name="g_meter_display" enabled="true" />
+		<object name="g_head" enabled="true" />
+	</graphics>
+</dynamic_object>

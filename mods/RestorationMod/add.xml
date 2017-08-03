@@ -391,14 +391,31 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
 	
-	<!-- Shatter True -->
-	<cooked_physics path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
-	<model path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
-	<object path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
-	<unit path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
-	<material_config path="units/mods/masks/msk_shatter_true/msk_shatter_true"/>
-	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_df"/>
-	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm"/>
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true"/>
-		
+	<!--Russian Medic-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4_husk" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870_husk" force="false" load="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
+	<model path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4_contour" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/akan_heavy_df" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/maska_df" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/glass_op" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/maska_nm" force="false" />
+
+	<!--Buzz-->
+	<object path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1_nm" force="false"/>
+
+	<!--Loading Screen Tips-->
+	<texture path="guis/textures/loading/hints/grenadier_load" force="false"/>	
+	<texture path="guis/textures/loading/hints/vet_cop_loading" force="false"/>	
 </table>

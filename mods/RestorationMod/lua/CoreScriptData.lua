@@ -60,6 +60,9 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 
+	if Global.load_level == true and Global.game_settings.level_id == "cult_murky" then
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cult_stage1.custom_xml", "custom_xml", "core/environments/default", "environment")
+	end
 	
 	end)
 end
@@ -119,8 +122,3 @@ BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/paint.custom_xml", "c
 end)
 end
 
-if restoration.Options:GetValue("SC/CorpseCollide") then	
-Hooks:Add("BeardLibCreateScriptDataMods", "CorpseCollideShit", function()
-BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/physics_settings.custom_xml", "custom_xml", "settings/physics_settings", "physics_settings", true)
-end)
-end

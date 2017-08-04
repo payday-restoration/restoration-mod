@@ -84,7 +84,7 @@ function GroupAIStateBesiege:_check_spawn_phalanx()
  		end
  	end
  	for _,j2 in ipairs(restoration.captain_murderdozer) do
- 		if job == j then
+ 		if job == j2 then
 		found_shit = true
  			break
  		end

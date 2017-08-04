@@ -400,5 +400,12 @@
 	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_df"/>
 	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true"/>
+
+	<!--I LOVE TO RELOAD DURING A HEIST-->
+	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="true"/>
+	<cooked_physics path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<model path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<object path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="true"/>
 		
 </table>

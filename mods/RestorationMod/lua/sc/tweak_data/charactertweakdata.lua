@@ -291,12 +291,12 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
-	self.fbi_vet.damage.bullet_dodge_chance = 55
+	self.fbi_vet.damage.bullet_dodge_chance = 50
 	self.fbi_vet.smoke_dodge_increase = 10
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
     	self.fbi_vet.move_speed = presets.move_speed.lightning
-	self.fbi_vet.use_animation_on_fire_damage = false
+	self.fbi_vet.use_animation_on_fire_damage = true
 	self.fbi_vet.priority_shout = "g29"
 	self.fbi_vet.bot_priority_shout = "g29"
 	self.fbi_vet.silent_priority_shout = nil
@@ -308,7 +308,7 @@ function CharacterTweakData:_init_fbi(presets)
 		self.fbi_vet.steal_loot = true
 	end
 	self.fbi_vet.immune_to_knock_down = true
-	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.elite)
+	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.base)
 	self.fbi_vet.damage.hurt_severity.bullet = {
 		health_reference = 1,
 		zones = {
@@ -384,8 +384,8 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.flammable = false
 	self.medic_summers.use_animation_on_fire_damage = false
 	self.medic_summers.damage.bullet_damage_mul = 0.65
-	self.medic_summers.damage.explosion_damage_mul = 0
-	self.medic_summers.damage.fire_damage_mul = 0
+	self.medic_summers.damage.explosion_damage_mul = 0.1
+	self.medic_summers.damage.fire_damage_mul = 0.1
 	self.medic_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.medic_summers.immune_to_concussion = true
 	self.medic_summers.no_retreat = true
@@ -619,7 +619,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.speech_prefix_p2 = self._prefix_data_p2.swat()
 	self.city_swat.speech_prefix_count = 4
 	self.city_swat.access = "swat"
-	self.city_swat.dodge = presets.dodge.elite
+	self.city_swat.dodge = presets.dodge.athletic_overkill
 	self.city_swat.chatter = presets.enemy_chatter.swat
 	self.city_swat.melee_weapon = nil
 	self.city_swat.melee_weapon_dmg_multiplier = 2.5
@@ -677,7 +677,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.weapon_voice = "1"
 	self.sniper.experience.cable_tie = "tie_swat"
 	self.sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.sniper.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.sniper.speech_prefix_p2 = "n"
 	self.sniper.speech_prefix_count = 4
 	self.sniper.priority_shout = "f34"
 	self.sniper.bot_priority_shout = "f34x_any"
@@ -749,9 +749,15 @@ end
 function CharacterTweakData:_init_biker(presets)
 	self.biker = deep_clone(self.gangster)
 	self.biker.calls_in = true
-	self.biker.speech_prefix_p1 = "bik"
-	self.biker.speech_prefix_p2 = nil
-	self.biker.speech_prefix_count = 2
+	if job == "born" or job == "chew" then
+		self.biker.speech_prefix_p1 = "nl"
+		self.biker.speech_prefix_p2 = nil
+		self.biker.speech_prefix_count = 2
+	else
+		self.biker.speech_prefix_p1 = "bik"
+		self.biker.speech_prefix_p2 = nil
+		self.biker.speech_prefix_count = 2	
+	end
  	self.biker.chatter = {
 		aggressive = true,
 		retreat = true,
@@ -1425,12 +1431,12 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.flammable = false
 	self.summers.use_animation_on_fire_damage = false
 	self.summers.damage.bullet_damage_mul = 0.65
-	self.summers.damage.explosion_damage_mul = 0
-	self.summers.damage.fire_damage_mul = 0
+	self.summers.damage.explosion_damage_mul = 0.1
+	self.summers.damage.fire_damage_mul = 0.05
 	self.summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.summers.headshot_dmg_mul = 1.5
 	self.summers.bag_dmg_mul = 6
-	self.summers.move_speed = presets.move_speed.slow
+	self.summers.move_speed = presets.move_speed.very_slow
 	self.summers.no_run_start = true
 	self.summers.no_run_stop = true
 	self.summers.no_retreat = true
@@ -1530,8 +1536,8 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
 	self.taser_summers.damage.bullet_damage_mul = 0.65
-	self.taser_summers.damage.explosion_damage_mul = 0
-	self.taser_summers.damage.fire_damage_mul = 0
+	self.taser_summers.damage.explosion_damage_mul = 0.1
+	self.taser_summers.damage.fire_damage_mul = 0.1
 	self.taser_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.taser_summers.ecm_hurts = {}
 	self.taser_summers.chatter = presets.enemy_chatter.summers
@@ -1564,10 +1570,10 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.detection = presets.detection.normal
 	self.boom.HEALTH_INIT = 36
 	self.boom.HEALTH_SUICIDE_LIMIT = 0.25
-	self.boom.flammable = false
-	self.boom.use_animation_on_fire_damage = false
-	self.boom.damage.explosion_damage_mul = 0
-	self.boom.damage.fire_damage_mul = 0
+	self.boom.flammable = true
+	self.boom.use_animation_on_fire_damage = true
+	self.boom.damage.explosion_damage_mul = 0.1
+	self.boom.damage.fire_damage_mul = 1
 	self.boom.damage.hurt_severity = presets.hurt_severities.boom
 	self.boom.headshot_dmg_mul = 1.8
 	self.boom.bag_dmg_mul = 6
@@ -1622,6 +1628,10 @@ function CharacterTweakData:_init_boom(presets)
  	table.insert(self._enemy_list, "rboom")
 	self.boom_summers = deep_clone(self.boom)
 	self.boom_summers.spawn_sound_event = "clk_c01x_plu"
+	self.boom_summers.use_animation_on_fire_damage = false
+	self.boom_summers.damage.explosion_damage_mul = 0.1
+	self.boom_summers.damage.fire_damage_mul = 0.1
+	self.boom_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.boom_summers.chatter = presets.enemy_chatter.summers
 	self.boom_summers.speech_prefix_p1 = "fl"
 	self.boom_summers.speech_prefix_p2 = "n"
@@ -2618,13 +2628,7 @@ function CharacterTweakData:_presets(tweak_data)
 			{light = 1}
 		}
 	}
-	presets.hurt_severities.boom = deep_clone(presets.hurt_severities.elite)
-	presets.hurt_severities.boom.fire = {
-		health_reference = 1,
-		zones = {
-			{none = 1}
-		}
-	}
+	presets.hurt_severities.boom = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.boom.explosion = {
 		health_reference = 1,
 		zones = {
@@ -12373,16 +12377,16 @@ function CharacterTweakData:_set_sm_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("deathwish")
+	self:_set_characters_weapon_preset("easy_wish")
 	self:_set_characters_dodge_preset("elite")
 	self:_set_characters_melee_preset("3")
-	self:_set_specials_weapon_preset("easy_wish")
+	self:_set_specials_weapon_preset("expert")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("3")
-	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_easy_wish)
-	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_easy_wish)
+	self:_set_specials_melee_preset("2.5")
+	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true
@@ -13212,7 +13216,9 @@ function CharacterTweakData:character_map()
 				"ene_akan_fbi_1",
 				"ene_akan_fbi_2",
 				"ene_akan_veteran_1",
-				"ene_akan_grenadier_1"
+				"ene_akan_veteran_2",
+				"ene_akan_grenadier_1",
+				"ene_akan_medic_m4"
 			}
 		},
 		born = {

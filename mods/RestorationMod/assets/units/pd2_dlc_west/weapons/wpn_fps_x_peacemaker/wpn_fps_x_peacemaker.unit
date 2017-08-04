@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_pmkr45"/>
+	</dependencies>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="base" class="AkimboWeaponBase" >
+			<var name="name_id" value="x_peacemaker" />
+		</extension>
+	</extensions>
+</unit>

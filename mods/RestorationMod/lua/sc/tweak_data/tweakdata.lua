@@ -1,11 +1,18 @@
 if not tweak_data then return end
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-	
-	tweak_data.music.soundbank_list = {
-		"soundbanks/music",
-		"soundbanks/music_alesso",
-		"soundbanks/mr_plinketts_voice"
+	tweak_data.ammo = {}
+	tweak_data.ammo.ricochet = {}
+	tweak_data.ammo.ricochet.max_ricochets = 5
+	tweak_data.ammo.ricochet.angles = {0, 175}
+	tweak_data.ammo.ricochet.spread_angle = {10, 30}
+	tweak_data.ammo.ricochet.autohit = {
+		MIN_RATIO = 0.6,
+		MAX_RATIO = 1,
+		INIT_RATIO = 0.6,
+		far_dis = 50000,
+		far_angle = 60,
+		near_angle = 60
 	}
 
 	--HE'S GOT AN RPG--

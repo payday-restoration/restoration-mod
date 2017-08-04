@@ -3,10 +3,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 local old_init = WeaponFactoryTweakData.init
 function WeaponFactoryTweakData:init(...)
 	old_init(self, ...)
+	self.parts.wpn_fps_fla_mk2_body_fierybeast_summer = {
+		type = "lower_reciever",
+		name_id = "bm_wp_huntsman_body_standard",
+		a_obj = "a_body",
+		unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers",
+		stats = {value = 1},
+		animations = {
+			reload = "reload",
+			reload_not_empty = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil"
+		}
+	}
+	self.parts.wpn_fps_fla_mk2_body_fierybeast_summer.third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers"
 	self.wpn_fps_fla_mk2_npc_summers = deep_clone(self.wpn_fps_fla_mk2_npc)
 	self.wpn_fps_fla_mk2_npc_summers.default_blueprint = {
 		"wpn_fps_fla_mk2_empty",
-		"wpn_fps_fla_mk2_body_fierybeast",
+		"wpn_fps_fla_mk2_body_fierybeast_summer",
 		"wpn_fps_fla_mk2_mag_welldone"
 	}
 	self.wpn_fps_ass_m16_npc_summers = deep_clone(self.wpn_fps_ass_m16_npc)
@@ -8622,7 +8636,8 @@ function WeaponFactoryTweakData:_init_g17()
 		"wpn_fps_pis_g18c_co_comp_2",
 		"wpn_fps_pis_g18c_co_1",
 		"wpn_fps_upg_ammo_p",
-		"wpn_fps_pis_g18c_m_mag_33rnd"
+		"wpn_fps_pis_g18c_m_mag_33rnd",
+		"wpn_fps_upg_pis_adam"
 	}
 	self.wpn_fps_pis_g17_npc = deep_clone(self.wpn_fps_pis_g17)
 	self.wpn_fps_pis_g17_npc.unit = "units/payday2/weapons/wpn_fps_pis_g17/wpn_fps_pis_g17_npc"
@@ -16576,15 +16591,18 @@ function WeaponFactoryTweakData:create_ammunition()
 	self.parts.wpn_fps_upg_pis_adam = {
 		pcs = {},
 		type = "ammo",
-		name_id = "bm_wp_upg_pis_adam",
+		name_id = "bm_wp_upg_a_ricochet",
 		a_obj = "a_body",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		is_a_unlockable = false,
+		texture_bundle_folder = "mmo",
+		is_a_unlockable = true,
 		stats = {},
-		custom_stats = {},
+		custom_stats = {
+			bullet_class = "InstantRicochetBulletBase"
+		},
 		internal_part = true,
-		sub_type = "ammo"
+		sub_type = "adam"
 	}
 end
 

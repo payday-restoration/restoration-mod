@@ -4,6 +4,16 @@ local mvec_to = Vector3()
 local mvec_spread = Vector3()
 local mvec1 = Vector3()
 function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
+	if self._ammo_data.bullet_class ~= nil then
+		log("SC: Found Ammo Data! " .. self._ammo_data.bullet_class)
+		self._bullet_class = CoreSerialize.string_to_classtable(self._ammo_data.bullet_class)
+		self._bullet_slotmask = self._bullet_class:bullet_slotmask()
+		self._blank_slotmask = self._bullet_class:blank_slotmask()
+	else
+		self._bullet_class = CoreSerialize.string_to_classtable("InstantBulletBase")
+		self._bullet_slotmask = self._bullet_class:bullet_slotmask()
+		self._blank_slotmask = self._bullet_class:blank_slotmask()
+	end
 	local result = {}
 	local hit_unit
 	local ray_distance = shoot_through_data and shoot_through_data.ray_distance or self._weapon_range or 20000
@@ -31,16 +41,16 @@ function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, d
 	end
 	if col_ray then
 		if col_ray.unit:in_slot(self._character_slotmask) then
-			hit_unit = InstantBulletBase:on_collision(col_ray, self._unit, user_unit, damage)
+			hit_unit = self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage)
 		elseif shoot_player and self:damage_player(col_ray, from_pos, direction) then
-			InstantBulletBase:on_hit_player(col_ray, self._unit, user_unit, self._damage * (dmg_mul or 1))
+			self._bullet_class:on_hit_player(col_ray, self._unit, user_unit, self._damage * (dmg_mul or 1))
 		else
-			hit_unit = InstantBulletBase:on_collision(col_ray, self._unit, user_unit, damage)
+			hit_unit = self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage)
 		end
 	elseif shoot_player then
 		local hit, ray_data = self:damage_player(col_ray, from_pos, direction)
 		if hit then
-			InstantBulletBase:on_hit_player(ray_data, self._unit, user_unit, damage)
+			self._bullet_class:on_hit_player(ray_data, self._unit, user_unit, damage)
 		end
 	end
 	if not col_ray or col_ray.distance > 600 then
@@ -92,6 +102,94 @@ function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, d
 		end
 	end
 	return result
+end
+
+function NewNPCRaycastWeaponBase:auto_fire_blank(direction, impact)
+	local user_unit = self._setup.user_unit
+	self._unit:m_position(mfrom)
+	local rays = {}
+	if impact and (self._use_trails == nil or self._use_trails == true) then
+		local num_rays = 1
+		if self._ammo_data and self._ammo_data.rays then
+			num_rays = self._ammo_data.rays
+		end
+		for i = 1, num_rays do
+			mvector3.set(mspread, direction)
+			mvector3.spread(mspread, self:_get_spread())
+			mvector3.set(mto, mspread)
+			mvector3.multiply(mto, 20000)
+			mvector3.add(mto, mfrom)
+			local col_ray = World:raycast("ray", mfrom, mto, "slot_mask", self._blank_slotmask, "ignore_unit", self._setup.ignore_units)
+			if alive(self._obj_fire) then
+				self._obj_fire:m_position(self._trail_effect_table.position)
+				mvector3.set(self._trail_effect_table.normal, mspread)
+			end
+			local trail
+			trail = self:weapon_tweak_data().no_trail or alive(self._obj_fire) and (not col_ray or col_ray.distance > 650) and World:effect_manager():spawn(self._trail_effect_table) or nil
+			if col_ray then
+				self._bullet_class:on_collision(col_ray, self._unit, user_unit, self._damage, true)
+				if trail then
+					World:effect_manager():set_remaining_lifetime(trail, math.clamp((col_ray.distance - 600) / 10000, 0, col_ray.distance))
+				end
+				table.insert(rays, col_ray)
+			end
+		end
+	end
+	if alive(self._obj_fire) then
+		self:_spawn_muzzle_effect(mfrom, direction)
+	end
+	if self._use_shell_ejection_effect then
+		World:effect_manager():spawn(self._shell_ejection_effect_table)
+	end
+	if self:weapon_tweak_data().has_fire_animation then
+		self:tweak_data_anim_play("fire")
+	end
+	if user_unit:movement() then
+		user_unit:movement():play_redirect("recoil_single")
+	end
+	return true
+end
+function NewNPCRaycastWeaponBase:fire_blank(direction, impact)
+	local user_unit = self._setup.user_unit
+	self._unit:m_position(mfrom)
+	local rays = {}
+	if impact and (self._use_trails == nil or self._use_trails == true) then
+		local num_rays = 1
+		if self._ammo_data and self._ammo_data.rays then
+			num_rays = self._ammo_data.rays
+		end
+		for i = 1, num_rays do
+			mvector3.set(mspread, direction)
+			mvector3.spread(mspread, self:_get_spread())
+			mvector3.set(mto, mspread)
+			mvector3.multiply(mto, 20000)
+			mvector3.add(mto, mfrom)
+			local col_ray = World:raycast("ray", mfrom, mto, "slot_mask", self._blank_slotmask, "ignore_unit", self._setup.ignore_units)
+			if alive(self._obj_fire) then
+				self._obj_fire:m_position(self._trail_effect_table.position)
+				mvector3.set(self._trail_effect_table.normal, mspread)
+			end
+			local trail
+			trail = self:weapon_tweak_data().no_trail or alive(self._obj_fire) and (not col_ray or col_ray.distance > 650) and World:effect_manager():spawn(self._trail_effect_table) or nil
+			if col_ray then
+				self._bullet_class:on_collision(col_ray, self._unit, user_unit, self._damage, true)
+				if trail then
+					World:effect_manager():set_remaining_lifetime(trail, math.clamp((col_ray.distance - 600) / 10000, 0, col_ray.distance))
+				end
+				table.insert(rays, col_ray)
+			end
+		end
+	end
+	if alive(self._obj_fire) then
+		self:_spawn_muzzle_effect(mfrom, direction)
+	end
+	if self._use_shell_ejection_effect then
+		World:effect_manager():spawn(self._shell_ejection_effect_table)
+	end
+	if self:weapon_tweak_data().has_fire_animation then
+		self:tweak_data_anim_play("fire")
+	end
+	self:_sound_singleshot()
 end
 
 end

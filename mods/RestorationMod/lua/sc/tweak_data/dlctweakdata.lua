@@ -93,6 +93,11 @@ function DLCTweakData:init(...)
 			item_entry = "wpn_fps_upg_extra_mp_unlock",
 			amount = 3
 		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_pis_adam",
+			amount = 3
+		}
 	}
 end
 

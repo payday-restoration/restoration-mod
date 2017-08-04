@@ -6,7 +6,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="NPCAkimboWeaponBase" >
-			<var name="name_id" value="x_peacemaker_npc" />
+			<var name="name_id" value="six_shots" />
 		</extension>
 	</extensions>
 </unit>

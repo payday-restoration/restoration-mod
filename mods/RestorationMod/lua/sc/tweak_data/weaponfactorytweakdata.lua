@@ -63,6 +63,31 @@ function WeaponFactoryTweakData:init(...)
 		"wpn_fps_pis_peacemaker_m_standard",
 		"wpn_fps_pis_peacemaker_g_standard"
 	}
+	self.wpn_fps_x_six_shots_npc = {}
+	self.wpn_fps_x_six_shots_npc.optional_types = {
+		"barrel_ext",
+		"gadget",
+		"sight"
+	}
+	self.wpn_fps_x_six_shots_npc.default_blueprint = {
+		"wpn_fps_pis_peacemaker_body_standard",
+		"wpn_fps_pis_peacemaker_b_standard",
+		"wpn_fps_pis_peacemaker_m_standard",
+		"wpn_fps_pis_peacemaker_g_standard",
+		"wpn_fps_upg_pis_adam"
+	}
+	self.wpn_fps_x_six_shots_npc.uses_parts = {
+		"wpn_fps_pis_peacemaker_body_standard",
+		"wpn_fps_pis_peacemaker_b_standard",
+		"wpn_fps_pis_peacemaker_b_long",
+		"wpn_fps_pis_peacemaker_b_short",
+		"wpn_fps_pis_peacemaker_m_standard",
+		"wpn_fps_pis_peacemaker_g_standard",
+		"wpn_fps_pis_peacemaker_g_bling",
+		"wpn_fps_pis_peacemaker_s_skeletal",
+		"wpn_fps_upg_pis_adam"
+	}
+	self.wpn_fps_x_six_shots_npc.unit = "units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc"
 end
 
 end
@@ -8636,8 +8661,7 @@ function WeaponFactoryTweakData:_init_g17()
 		"wpn_fps_pis_g18c_co_comp_2",
 		"wpn_fps_pis_g18c_co_1",
 		"wpn_fps_upg_ammo_p",
-		"wpn_fps_pis_g18c_m_mag_33rnd",
-		"wpn_fps_upg_pis_adam"
+		"wpn_fps_pis_g18c_m_mag_33rnd"
 	}
 	self.wpn_fps_pis_g17_npc = deep_clone(self.wpn_fps_pis_g17)
 	self.wpn_fps_pis_g17_npc.unit = "units/payday2/weapons/wpn_fps_pis_g17/wpn_fps_pis_g17_npc"

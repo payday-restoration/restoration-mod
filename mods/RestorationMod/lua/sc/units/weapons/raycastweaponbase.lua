@@ -1,5 +1,5 @@
 InstantRicochetBulletBase = InstantRicochetBulletBase or class(InstantBulletBase)
-InstantRicochetBulletBase.TRAIL_EFFECT = Idstring("effects/payday2/particles/weapons/trail_adam")
+InstantRicochetBulletBase.TRAIL_EFFECT = Idstring("effects/particles/weapons/sniper_trail")
 local idstr_trail = Idstring("trail")
 local idstr_simulator_length = Idstring("simulator_length")
 local idstr_size = Idstring("size")

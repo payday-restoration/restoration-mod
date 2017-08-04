@@ -574,4 +574,10 @@
 
 	<!--NPC RPG tweak (changed from NewNPCRaycastWeaponBase > NPCGrenadeLauncherBase)-->
 	<unit path="units/pd2_dlc_overkill_pack/weapons/wpn_fps_rpg7/wpn_fps_rpg7_npc" force="true"/>
+	<!--I LOVE TO RELOAD DURING A HEIST-->
+	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="true"/>
+	<cooked_physics path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<model path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<object path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="true"/>
 </table>

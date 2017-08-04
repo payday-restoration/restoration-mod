@@ -810,6 +810,11 @@ function WeaponTweakData:_init_data_peacemaker_crew()
 	self.peacemaker_crew.alert_size = 5000
 	self.peacemaker_crew.suppression = 3.1
 	self.peacemaker_crew.armor_piercing = true
+	self.six_shots = deep_clone(self.peacemaker_crew)
+	self.six_shots.CLIP_AMMO_MAX = 12
+	self.six_shots.NR_CLIPS_MAX = 8
+	self.six_shots.usage = "akimbo_pistol"
+	self.six_shots.anim_usage = "akimbo_pistol"
 end
 
 function WeaponTweakData:_init_data_olympic_crew()

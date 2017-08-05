@@ -197,8 +197,8 @@ function CharacterTweakData:_init_cop(presets)
 		self.cop_female.HEALTH_INIT = 6
 		self.cop_female.headshot_dmg_mul = 3.4
 		self.cop_female.move_speed = presets.move_speed.very_fast
-    	self.cop_female.dodge = presets.dodge.athletic
-    	self.cop_female.suppression = presets.suppression.hard_def
+    		self.cop_female.dodge = presets.dodge.athletic
+    		self.cop_female.suppression = presets.suppression.hard_def
 		self.cop_female.surrender_break_time = {7, 12}
 		self.cop_female.melee_weapon = nil
 	end
@@ -257,25 +257,25 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.detection = presets.detection.normal
 	self.fbi.HEALTH_INIT = 6
 	self.fbi.headshot_dmg_mul = 3.4
-    self.fbi.move_speed = presets.move_speed.very_fast
-    self.fbi.surrender_break_time = {7, 12}
-    self.fbi.suppression = presets.suppression.hard_def
-    self.fbi.surrender = presets.surrender.normal
-    self.fbi.ecm_vulnerability = 1
+    	self.fbi.move_speed = presets.move_speed.very_fast
+    	self.fbi.surrender_break_time = {7, 12}
+    	self.fbi.suppression = presets.suppression.hard_def
+    	self.fbi.surrender = presets.surrender.normal
+    	self.fbi.ecm_vulnerability = 1
    	self.fbi.ecm_hurts = {
         	ears = {min_duration = 8, max_duration = 10}
     	}
-    self.fbi.weapon_voice = "2"
-    self.fbi.experience.cable_tie = "tie_swat"
-    self.fbi.speech_prefix_p1 = self._prefix_data_p1.cop()
-    self.fbi.speech_prefix_p2 = "n"
-    self.fbi.speech_prefix_count = 4
+    	self.fbi.weapon_voice = "2"
+    	self.fbi.experience.cable_tie = "tie_swat"
+    	self.fbi.speech_prefix_p1 = self._prefix_data_p1.cop()
+    	self.fbi.speech_prefix_p2 = "n"
+    	self.fbi.speech_prefix_count = 4
 	self.fbi.silent_priority_shout = "f37"
-    self.fbi.access = "fbi"
-    self.fbi.dodge = presets.dodge.athletic
-    self.fbi.deathguard = true
-    self.fbi.chatter = presets.enemy_chatter.cop
-    self.fbi.steal_loot = true
+    	self.fbi.access = "fbi"
+    	self.fbi.dodge = presets.dodge.athletic
+    	self.fbi.deathguard = true
+    	self.fbi.chatter = presets.enemy_chatter.cop
+    	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_female = deep_clone(self.fbi)
@@ -286,16 +286,16 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet = deep_clone(self.fbi)
 	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
-    self.fbi_vet.surrender = nil
+    	self.fbi_vet.surrender = nil
 	self.fbi_vet.suppression = nil
-    self.fbi_vet.can_shoot_while_dodging = true
+    	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 20
 	self.fbi_vet.headshot_dmg_mul = 2
 	self.fbi_vet.damage.bullet_dodge_chance = 50
 	self.fbi_vet.smoke_dodge_increase = 10
-    self.fbi_vet.dodge = presets.dodge.veteran
+    	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
-    self.fbi_vet.move_speed = presets.move_speed.lightning
+    	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.use_animation_on_fire_damage = true
 	self.fbi_vet.priority_shout = "g29"
 	self.fbi_vet.bot_priority_shout = "g29"

@@ -76,10 +76,10 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	
-	if Global.load_level == true and Global.game_settings.level_id == "run" then
+	--[[if Global.load_level == true and Global.game_settings.level_id == "run" then
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
-		--BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
-	end
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
+	end]]--
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_1" then
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "continent")

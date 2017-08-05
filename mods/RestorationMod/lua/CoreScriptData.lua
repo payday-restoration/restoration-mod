@@ -82,13 +82,13 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	end]]--
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_1" then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/stage_1/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/stage_1/world/world", "mission")
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_2" then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/stage_2/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/stage_2/world/world", "mission")
 	end
 end)
 end

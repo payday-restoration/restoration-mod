@@ -1,0 +1,6 @@
+<materials version="3">
+	<material name="mtr_third_rocket" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" />
+		<bump_normal_texture file="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_nm" />
+	</material>
+</materials>

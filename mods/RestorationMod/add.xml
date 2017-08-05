@@ -570,6 +570,11 @@
 	<texture path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	
+	<!--Commando Rocket-->
+	<texture path="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" force="true"/>
+	<material_config path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
+	<model path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
+	
 	<!--Note: remove units/pd2_dlc_bbq. These aren't necessary for the NPC flamethrower to work-->
 
 	<!--NPC RPG tweak (changed from NewNPCRaycastWeaponBase > NPCGrenadeLauncherBase)-->

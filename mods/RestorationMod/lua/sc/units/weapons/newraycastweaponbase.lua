@@ -1,11 +1,11 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-function NewRaycastWeaponBase:get_add_head_shot_mul()
-	if self:is_category("smg", "lmg", "assault_rifle", "minigun") and self._fire_mode == ids_auto then
-		return self._add_head_shot_mul
+	function NewRaycastWeaponBase:get_add_head_shot_mul()
+		if self:is_category("smg", "lmg", "assault_rifle", "minigun") and self._fire_mode == ids_auto then
+			return self._add_head_shot_mul
+		end
+		return nil
 	end
-	return nil
-end
 
 end
 

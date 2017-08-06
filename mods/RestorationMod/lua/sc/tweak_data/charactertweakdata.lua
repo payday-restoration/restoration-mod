@@ -337,8 +337,6 @@ function CharacterTweakData:_init_fbi(presets)
 		end
 		return false, t + delay_till_next_use
 	end
-	self.fbi_vet.use_factory = true
-	self.fbi_vet.factory_weapon_id = {"wpn_fps_x_six_shots_npc"}
 	table.insert(self._enemy_list, "fbi_vet")
 end
 

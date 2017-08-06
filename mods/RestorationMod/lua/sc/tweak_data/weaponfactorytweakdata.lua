@@ -18,6 +18,7 @@ function WeaponFactoryTweakData:init(...)
 	}
 	self.parts.wpn_fps_fla_mk2_body_fierybeast_summer.third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers"
 	self.wpn_fps_fla_mk2_npc_summers = deep_clone(self.wpn_fps_fla_mk2_npc)
+	self.wpn_fps_fla_mk2_npc_summers.unit = "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc"
 	self.wpn_fps_fla_mk2_npc_summers.default_blueprint = {
 		"wpn_fps_fla_mk2_empty",
 		"wpn_fps_fla_mk2_body_fierybeast_summer",

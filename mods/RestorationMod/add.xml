@@ -363,6 +363,7 @@
 	<cooked_physics path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
 	<unit path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" load="true" force="false"/>
 	<texture path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df" force="false"/>
+	<unit path="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc" load="true" force="false"/>
 
 	<!--Summer's Gang-->
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
@@ -487,7 +488,7 @@
 	
 	<!--Unused gold texture intended for golden AK mods. Remove?-->
 	<texture path="guis/textures/pd2/fav_video2" force="true"/>
-
+	
 	<!--I LOVE TO RELOAD DURING A HEIST-->
 	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="true"/>
 	<cooked_physics path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
@@ -538,8 +539,6 @@
 	<!--Test skin texture for M4 Drum, remove? I don't know how well this works.-->
 	<texture path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum_df_cc" force="true"/>
 	
-	<!--Note: remove wpn_frag_flashbang AGAIN-->
-
 	<!--Not getting rid of my NPC weps dammit-->
 	<!--NPC M4-->
 	<model path="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" force="true"/>
@@ -570,10 +569,13 @@
 	<texture path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	
+	<!--Commando Rocket-->
+	<texture path="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" force="true"/>
+	<material_config path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
+	<model path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
+	
 	<!--Note: remove units/pd2_dlc_bbq. These aren't necessary for the NPC flamethrower to work-->
 
-	<!--NPC RPG tweak (changed from NewNPCRaycastWeaponBase > NPCGrenadeLauncherBase)-->
-	<unit path="units/pd2_dlc_overkill_pack/weapons/wpn_fps_rpg7/wpn_fps_rpg7_npc" force="true"/>
 	<!--I LOVE TO RELOAD DURING A HEIST-->
 	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="true"/>
 	<cooked_physics path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>

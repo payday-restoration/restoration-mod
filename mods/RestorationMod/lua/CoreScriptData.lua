@@ -73,21 +73,22 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	
-	if Global.load_level == true and Global.game_settings.level_id == "run" then
+	--[[if Global.load_level == true and Global.game_settings.level_id == "run" then
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.continent", "custom_xml", "levels/narratives/classics/run/world/world", "continent")
-		--BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
-	end
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/run.mission", "binary", "levels/narratives/classics/run/world/world", "mission")
+	end]]--
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_1" then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/alex_1/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.continent", "binary", "levels/narratives/h_alex_must_die/stage_1/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_1.mission", "binary", "levels/narratives/h_alex_must_die/stage_1/world/world", "mission")
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "alex_2" then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/alex_2/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.continent", "binary", "levels/narratives/h_alex_must_die/stage_2/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/alex_2.mission", "binary", "levels/narratives/h_alex_must_die/stage_2/world/world", "mission")
 	end
 end)
 end
@@ -121,4 +122,3 @@ Hooks:Add("BeardLibCreateScriptDataMods", "MorePaintingsCallBeardLibSequenceFunc
 BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
 end)
 end
-

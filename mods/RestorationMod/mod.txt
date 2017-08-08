@@ -3,7 +3,7 @@
  "description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
  "author" : "Martini, DoktorAkcel, SC, & The Restoration Mod Crew",
  "contact" : "No information given",
- "version" : "6.04",
+ "version" : "6.05",
  "priority" : 45,
  "pre_hooks" : [
 		{ "hook_id" : "lib/entry", "script_path" : "Core.lua" }
@@ -14,5 +14,16 @@
             "identifier" : "beardlib",
             "optional" : "false"
         }
-    ]
+    ],
+		"hooks" : [
+		{ 	"hook_id" : "lib/tweak_data/weaponfactorytweakdata",
+			"script_path" : "lua/sc/tweak_data/weaponfactorytweakdata.lua"
+		},
+		{ 	"hook_id" : "lib/tweak_data/upgradestweakdata",
+			"script_path" : "lua/sc/tweak_data/upgradestweakdata.lua"
+		},
+		{ 	"hook_id" : "lib/tweak_data/skilltreetweakdata",
+			"script_path" : "lua/sc/tweak_data/skilltreetweakdata.lua"
+		}
+	]
 }

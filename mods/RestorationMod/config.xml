@@ -1,7 +1,7 @@
 <mod name="RestorationMod" global_key="restorationnew">
     <Classes directory="lua">
     </Classes>
-	<AssetUpdates id="428" version="6.04" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="6.05" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
     <Hooks directory="lua">
 	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
@@ -38,7 +38,6 @@
 		<hook file="sc/network/matchmaking/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
 		<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="sc/tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
-		<hook file="sc/tweak_data/skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
 		<hook file="sc/units/vehicles/vehicledrivingext.lua" source_file="lib/units/vehicles/vehicledrivingext"/>
 		<hook file="sc/tweak_data/economytweakdata.lua" source_file="lib/tweak_data/economytweakdata"/>
 		<hook file="sc/tweak_data/customsafehousetweakdata.lua" source_file="lib/tweak_data/customsafehousetweakdata"/>
@@ -47,7 +46,6 @@
 		<hook file="sc/tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
 		<hook file="sc/tweak_data/dlctweakdata.lua" source_file="lib/tweak_data/dlctweakdata"/>
 		<hook file="sc/tweak_data/lootdroptweakdata.lua" source_file="lib/tweak_data/lootdroptweakdata"/>
-		<hook file="sc/tweak_data/weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
 		<hook file="sc/tweak_data/playertweakdata.lua" source_file="lib/tweak_data/playertweakdata"/>
 		<hook file="sc/tweak_data/preplanningtweakdata.lua" source_file="lib/tweak_data/preplanningtweakdata"/>
 		<hook file="sc/managers/blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
@@ -85,7 +83,6 @@
 		<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 		<hook file="sc/units/enemies/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
 		<hook file="sc/managers/weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
-		<hook file="sc/tweak_data/upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>
 		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>

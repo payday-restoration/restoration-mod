@@ -1,88 +1,78 @@
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
-function BlackMarketGui:choose_weapon_buy_callback(data)
-	local blackmarket_items = managers.blackmarket:get_weapon_category(data.category) or {}
-	local new_node_data = {}
-	local weapon_tweak = tweak_data.weapon
-	local x_id, y_id, x_level, y_level, x_unlocked, y_unlocked, x_skill, y_skill, x_gv, y_gv, x_sn, y_sn
-	local item_categories = {}
-	for _, item in ipairs(blackmarket_items) do
-		local weapon_data = tweak_data.weapon[item.weapon_id]
-		local category = tweak_data.gui.buy_weapon_category_groups[weapon_data.categories[1]] or weapon_data.categories[1]
-		item_categories[category] = item_categories[category] or {}
-		table.insert(item_categories[category], item)
-	end
-	local sorted_categories = {}
-	for category, items in pairs(item_categories) do
-		table.insert(sorted_categories, category)
-		table.sort(items, function(x, y)
-			x_unlocked = x.unlocked
-			y_unlocked = y.unlocked
-			if x_unlocked ~= y_unlocked then
-				return x_unlocked
-			end
-			x_id = x.weapon_id
-			y_id = y.weapon_id
-			x_gv = weapon_tweak[x_id].global_value
-			y_gv = weapon_tweak[y_id].global_value
-			x_sn = x_gv and tweak_data.lootdrop.global_values[x_gv].sort_number or 0
-			y_sn = y_gv and tweak_data.lootdrop.global_values[y_gv].sort_number or 0
-			if x_sn ~= y_sn then
-				return x_sn < y_sn
-			end
-			x_skill = x.skill_based
-			y_skill = y.skill_based
-			if x_skill ~= y_skill then
-				return y_skill
-			end
-			x_level = x.level or 0
-			y_level = y.level or 0
-			if x_level ~= y_level then
-				return x_level < y_level
-			end
-			return x_id < y_id
+	function BlackMarketGui:choose_weapon_buy_callback(data)
+		local blackmarket_items = managers.blackmarket:get_weapon_category(data.category) or {}
+		local new_node_data = {}
+		local weapon_tweak = tweak_data.weapon
+		local x_id, y_id, x_level, y_level, x_unlocked, y_unlocked, x_skill, y_skill, x_gv, y_gv, x_sn, y_sn
+		local item_categories = {}
+		for _, item in ipairs(blackmarket_items) do
+			local weapon_data = tweak_data.weapon[item.weapon_id]
+			local category = tweak_data.gui.buy_weapon_category_groups[weapon_data.categories[1]] or weapon_data.categories[1]
+			item_categories[category] = item_categories[category] or {}
+			table.insert(item_categories[category], item)
+		end
+		local sorted_categories = {}
+		for category, items in pairs(item_categories) do
+			table.insert(sorted_categories, category)
+			table.sort(items, function(x, y)
+				x_unlocked = x.unlocked
+				y_unlocked = y.unlocked
+				if x_unlocked ~= y_unlocked then
+					return x_unlocked
+				end
+				x_id = x.weapon_id
+				y_id = y.weapon_id
+				x_gv = weapon_tweak[x_id].global_value
+				y_gv = weapon_tweak[y_id].global_value
+				x_sn = x_gv and tweak_data.lootdrop.global_values[x_gv].sort_number or 0
+				y_sn = y_gv and tweak_data.lootdrop.global_values[y_gv].sort_number or 0
+				if x_sn ~= y_sn then
+					return x_sn < y_sn
+				end
+				x_skill = x.skill_based
+				y_skill = y.skill_based
+				if x_skill ~= y_skill then
+					return y_skill
+				end
+				x_level = x.level or 0
+				y_level = y.level or 0
+				if x_level ~= y_level then
+					return x_level < y_level
+				end
+				return x_id < y_id
+			end)
+		end
+		table.sort(sorted_categories, function(x, y)
+			return #item_categories[x] > #item_categories[y]
 		end)
-	end
-	table.sort(sorted_categories, function(x, y)
-		return #item_categories[x] > #item_categories[y]
-	end)
-	local item_data
-	for _, category in ipairs(sorted_categories) do
-		local items = item_categories[category]
-		item_data = {}
-		for _, item in ipairs(items) do
-			table.insert(item_data, item)
-		end
-		local name_id = managers.localization:to_upper_text("menu_" .. category)
-		table.insert(new_node_data, {
-			name = category,
-			category = data.category,
-			prev_node_data = data,
-			name_localized = name_id,
-			on_create_func_name = "populate_buy_weapon",
-			on_create_data = item_data,
-			identifier = self.identifiers.weapon
-		})
-	end
-	new_node_data.buying_weapon = true
-	new_node_data.topic_id = "bm_menu_buy_weapon_title"
-	new_node_data.topic_params = {
-		weapon_category = managers.localization:text("bm_menu_" .. data.category)
-	}
-	new_node_data.blur_fade = self._data.blur_fade
-	managers.menu:open_node(self._inception_node_name, {new_node_data})
-end
-
-if GoonBase then
-	Hooks:Add("BlackMarketGUIOnPopulateModsActionList", "sc_custom_icon", function(BlackMarketGui, data)
-		if data.name then
-			data.use_icon = tweak_data.weapon.factory.parts[data.name] and tweak_data.weapon.factory.parts[data.name].alt_icon
-			if data.use_icon then
-				data.bitmap_texture = data.use_icon
+		local item_data
+		for _, category in ipairs(sorted_categories) do
+			local items = item_categories[category]
+			item_data = {}
+			for _, item in ipairs(items) do
+				table.insert(item_data, item)
 			end
+			local name_id = managers.localization:to_upper_text("menu_" .. category)
+			table.insert(new_node_data, {
+				name = category,
+				category = data.category,
+				prev_node_data = data,
+				name_localized = name_id,
+				on_create_func_name = "populate_buy_weapon",
+				on_create_data = item_data,
+				identifier = self.identifiers.weapon
+			})
 		end
-	end)
-else
+		new_node_data.buying_weapon = true
+		new_node_data.topic_id = "bm_menu_buy_weapon_title"
+		new_node_data.topic_params = {
+			weapon_category = managers.localization:text("bm_menu_" .. data.category)
+		}
+		new_node_data.blur_fade = self._data.blur_fade
+		managers.menu:open_node(self._inception_node_name, {new_node_data})
+	end
+	
 	function BlackMarketGui:populate_mods(data)
 		local new_data = {}
 		local default_mod = data.on_create_data.default_mod
@@ -128,6 +118,7 @@ else
 			new_data.equipped = false
 			new_data.stream = true
 			new_data.default_mod = default_mod
+			new_data.cosmetic_kit_mod = cosmetic_kit_mod
 			new_data.is_internal = tweak_data.weapon.factory:is_part_internal(new_data.name)
 			new_data.free_of_charge = tweak_data.blackmarket.weapon_mods[mod_name] and tweak_data.blackmarket.weapon_mods[mod_name].is_a_unlockable
 			new_data.unlock_tracker = achievement_tracker[new_data.name] or false
@@ -147,7 +138,13 @@ else
 			new_data.can_afford = part_is_from_cosmetic or managers.money:can_afford_weapon_modification(weapon_id, new_data.name, new_data.global_value)
 			local font, font_size
 			local no_upper = false
-			if not new_data.lock_texture and (not new_data.unlocked or new_data.unlocked == 0) then
+			if crafted.previewing then
+				new_data.previewing = true
+				new_data.corner_text = {}
+				new_data.corner_text.selected_text = managers.localization:text("bm_menu_mod_preview")
+				new_data.corner_text.noselected_text = new_data.corner_text.selected_text
+				new_data.corner_text.noselected_color = Color.white
+			elseif not new_data.lock_texture and (not new_data.unlocked or new_data.unlocked == 0) then
 				local selected_text, noselected_text
 				if not new_data.dlc_locked and new_data.unlock_tracker then
 					local text_id = "bm_menu_no_items"
@@ -177,19 +174,17 @@ else
 				end
 				selected_text = selected_text or managers.localization:text("bm_menu_no_items")
 				noselected_text = selected_text
-				new_data.mid_text = {}
-				new_data.mid_text.selected_text = selected_text
-				new_data.mid_text.selected_color = tweak_data.screen_colors.text
-				new_data.mid_text.noselected_text = noselected_text
-				new_data.mid_text.noselected_color = tweak_data.screen_colors.text
-				new_data.mid_text.vertical = "center"
-				new_data.mid_text.font = font
-				new_data.mid_text.font_size = font_size
-				new_data.mid_text.no_upper = no_upper
-				new_data.lock_texture = true
+				new_data.corner_text = {}
+				new_data.corner_text.selected_text = selected_text
+				new_data.corner_text.noselected_text = selected_text
+			elseif new_data.unlocked and not new_data.can_afford then
+				new_data.corner_text = {}
+				new_data.corner_text.selected_text = managers.localization:text("bm_menu_not_enough_cash")
+				new_data.corner_text.noselected_text = new_data.corner_text.selected_text
 			end
+			local forbid
 			if mod_name then
-				local forbid = managers.blackmarket:can_modify_weapon(new_data.category, new_data.slot, new_data.name)
+				forbid = managers.blackmarket:can_modify_weapon(new_data.category, new_data.slot, new_data.name)
 				if forbid then
 					if type(new_data.unlocked) == "number" then
 						new_data.unlocked = -math.abs(new_data.unlocked)
@@ -200,11 +195,12 @@ else
 					new_data.mid_text = nil
 					new_data.conflict = managers.localization:text("bm_menu_" .. tostring(tweak_data.weapon.factory.parts[forbid] and tweak_data.weapon.factory.parts[forbid].type or forbid))
 				end
+				local replaces, removes = managers.blackmarket:get_modify_weapon_consequence(new_data.category, new_data.slot, new_data.name)
+				new_data.removes = removes or {}
 				local weapon = managers.blackmarket:get_crafted_category_slot(data.prev_node_data.category, data.prev_node_data.slot) or {}
 				local gadget
-				local mod_td = tweak_data.weapon.factory.parts[new_data.name]
-				local mod_type = mod_td.type
-				local sub_type = mod_td.sub_type
+				local mod_type = tweak_data.weapon.factory.parts[new_data.name].type
+				local sub_type = tweak_data.weapon.factory.parts[new_data.name].sub_type
 				local is_auto = weapon and tweak_data.weapon[weapon.weapon_id] and tweak_data.weapon[weapon.weapon_id].FIRE_MODE == "auto"
 				if mod_type == "gadget" then
 					gadget = sub_type
@@ -245,24 +241,43 @@ else
 				end
 			end
 			local active = true
-			if mod_name and new_data.unlocked and not crafted.customize_locked and active then
-				if type(new_data.unlocked) ~= "number" or new_data.unlocked > 0 then
+			local can_apply = not crafted.previewing
+			local preview_forbidden = managers.blackmarket:is_previewing_legendary_skin() or managers.blackmarket:preview_mod_forbidden(new_data.category, new_data.slot, new_data.name)
+			if mod_name and not crafted.customize_locked and active then
+				if new_data.unlocked and (type(new_data.unlocked) ~= "number" or new_data.unlocked > 0) and can_apply then
 					if new_data.can_afford then
 						table.insert(new_data, "wm_buy")
 					end
-					table.insert(new_data, "wm_preview")
-					if not new_data.is_internal then
-						table.insert(new_data, "wm_preview_mod")
+					if managers.blackmarket:is_previewing_any_mod() then
+						table.insert(new_data, "wm_clear_mod_preview")
+					end
+					if not new_data.is_internal and not preview_forbidden then
+						if managers.blackmarket:is_previewing_mod(new_data.name) then
+							table.insert(new_data, "wm_remove_preview")
+						else
+							table.insert(new_data, "wm_preview_mod")
+						end
 					end
 				else
-					table.insert(new_data, "wm_preview")
+					if managers.blackmarket:is_previewing_any_mod() then
+						table.insert(new_data, "wm_clear_mod_preview")
+					end
+					if not new_data.is_internal and not preview_forbidden then
+						if managers.blackmarket:is_previewing_mod(new_data.name) then
+							table.insert(new_data, "wm_remove_preview")
+						else
+							table.insert(new_data, "wm_preview_mod")
+						end
+					end
 				end
 				if managers.workshop and managers.workshop:enabled() and not table.contains(managers.blackmarket:skin_editor():get_excluded_weapons(), weapon_id) then
 					table.insert(new_data, "w_skin")
 				end
-				local weapon_mod_tweak = tweak_data.weapon.factory.parts[mod_name]
-				if weapon_mod_tweak and weapon_mod_tweak.is_a_unlockable ~= true then
-					table.insert(new_data, "wm_buy_mod")
+				if new_data.unlocked then
+					local weapon_mod_tweak = tweak_data.weapon.factory.parts[mod_name]
+					if weapon_mod_tweak --[[ and weapon_mod_tweak.type ~= "bonus" ]] and weapon_mod_tweak.is_a_unlockable ~= true and can_apply then
+						table.insert(new_data, "wm_buy_mod")
+					end
 				end
 			end
 			data[index] = new_data
@@ -346,6 +361,5 @@ else
 			end
 		end
 	end
-end
 
 end

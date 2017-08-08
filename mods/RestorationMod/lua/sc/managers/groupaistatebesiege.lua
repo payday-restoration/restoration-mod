@@ -89,7 +89,7 @@ function GroupAIStateBesiege:_check_spawn_phalanx()
  			break
  		end
  	end
-	 for _,j4 in ipairs(restoration.captain_camper) do
+	 for _,j4 in ipairs(restoration.disable_captain_camper) do
  		if job == j4 then
 		found_shit = true
  			break

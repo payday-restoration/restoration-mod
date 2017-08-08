@@ -21,6 +21,9 @@ if not _G.restoration then
 	end
 	RestorationCore.log_shit("SC: FUCKING LOADING: " .. ModPath)
 	_G.restoration.ModPath = ModPath
+	_G.restoration.captain_camper = {
+		"born"
+	}
 	_G.restoration.captain_teamwork = {
 		"pal",
 		"run",

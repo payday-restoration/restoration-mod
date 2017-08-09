@@ -2843,7 +2843,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 1},
 				texture_bundle_folder = "coco",
 				name_id = "menu_deck14_9",
-				desc_id = "menu_deck14_9_desc"
+				desc_id = "menu_deck14_9_desc_sc"
 			}
 		}
 

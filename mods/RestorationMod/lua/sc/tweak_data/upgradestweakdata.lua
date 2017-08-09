@@ -894,6 +894,9 @@ function UpgradesTweakData:_init_pd2_values()
 		}
 	}
 
+	--I AM A BAD MOTHERFUCKA--
+	self.values.player.cocaine_stack_absorption_multiplier = {1.5}
+	
 	--Chico--
 	self.values.temporary.chico_injector = {
 		{0.5, 5}

@@ -118,6 +118,7 @@
 		<hook file="sc/managers/menu/menunodegui.lua" source_file="lib/managers/menu/menunodegui"/>
 		<hook file="sc/tweak_data/assetstweakdata.lua" source_file="lib/tweak_data/assetstweakdata"/>
 		<hook file="sc/tweak_data/tipstweakdata.lua" source_file="lib/tweak_data/tipstweakdata"/>
+		<hook file="sc/tweak_data/achievementstweakdata.lua" source_file="lib/tweak_data/achievementstweakdata"/>
 		<!--Experimental edits-->
 		<hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"/>
     </Hooks>

@@ -748,6 +748,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		damage = damage * (self._char_tweak.damage.explosion_damage_mul or 1)
 		damage = damage * (self._marked_dmg_mul or 1)
+		if attack_data.attacker_unit == managers.player:player_unit() then
+			if attack_data.weapon_unit and attack_data.variant ~= "stun" then
+				managers.hud:on_hit_confirmed()
+			end
+		end
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, 0, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)

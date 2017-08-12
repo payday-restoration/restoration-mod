@@ -121,6 +121,8 @@
 		<hook file="sc/tweak_data/achievementstweakdata.lua" source_file="lib/tweak_data/achievementstweakdata"/>
 		<!--Experimental edits-->
 		<hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"/>
+		<!--Ingame Manual, don't fuck this up-->
+		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
     </Hooks>
     <Localization directory="loc" default="english.txt">
     </Localization>

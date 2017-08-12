@@ -1,4 +1,7 @@
 <table directory="assets">
+	<!--We'll have manual stuff at the top here since I don't like to scroll-->
+	<texture path="guis/textures/restoration/ingame_manual/page_1"/>
+	<!--End of manual stuff, carry on-->
 	<texture path="guis/textures/restoration/hud_icons"/>
 	<texture path="guis/textures/restoration/icon_carrybag"/>
 	<texture path="guis/textures/restoration/hud_health"/>

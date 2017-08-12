@@ -5773,15 +5773,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		value = 1,
 		reload = 11
 	}
-	self.arbiter.fire_mode_data.fire_rate = 1.5
-	self.arbiter.single.fire_rate = 1.5
+	self.arbiter.fire_mode_data.fire_rate = 2
+	self.arbiter.single.fire_rate = 2
 	self.arbiter.CLIP_AMMO_MAX = 6
-	self.arbiter.AMMO_MAX = 9
-	self.arbiter.AMMO_PICKUP = {0.18, 0.45}
+	self.arbiter.AMMO_MAX = 6
+	self.arbiter.AMMO_PICKUP = {0.12, 0.38}
 	self.arbiter.stats = {
-		damage = 300,
-		spread = 4,
-		recoil = 10,
+		damage = 80,
+		spread = 6,
+		recoil = 7,
 		spread_moving = 6,
 		zoom = 3,
 		concealment = 8,
@@ -5792,7 +5792,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		value = 1,
 		reload = 11
 	}
-	self.arbiter.stats_modifiers = {damage = 2}
+	self.arbiter.stats_modifiers = {damage = 10}
 	self.arbiter.panic_suppression_chance = 0.0
 	self.arbiter.spread.standing = 3.5
 	self.arbiter.spread.crouching = 2.5

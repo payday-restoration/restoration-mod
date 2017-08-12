@@ -66,6 +66,7 @@
 	"RestorationModDistrictDescID" : "Enable or disable district descriptions in CRIME.NET.  Not gameplay accurate.",
 	"menu_ingame_manual" : "Overhaul Manual",
 	"menu_ingame_manual_help" : "View the in-game manual for Restoration's Overhaul.",
+	"menu_manual_header" : "What the fuck?",
 	"hud_instruct_mask_on_alpha" : "Hold $BTN_USE_ITEM to put on your mask",
 	"hud_assault_alpha" : "POLICE ASSAULT",
 	"hud_loot_secured_title" : "LOOT SECURED!",

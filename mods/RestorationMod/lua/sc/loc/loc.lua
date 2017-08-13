@@ -100,6 +100,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
 		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
 
+		["bm_wp_p90_body_p90_tan"] = "Tan Body",
+		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
 		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",

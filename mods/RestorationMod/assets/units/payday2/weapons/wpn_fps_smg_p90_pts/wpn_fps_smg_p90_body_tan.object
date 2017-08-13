@@ -1,0 +1,18 @@
+<dynamic_object>
+    <diesel materials="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan" orientation_object="rp_wpn_fps_smg_p90_body_p90" />
+	<animations>
+		<animation_group name="reload" >
+			<object name="a_reload" enabled="true" />
+			<object name="a_reload_bolt" enabled="true" />
+		</animation_group>
+		<animation_group name="reload_not_empty" >
+			<object name="a_reload_not_empty" enabled="true" />
+		</animation_group>
+	</animations>
+    <graphics>
+        <object name="g_p90" enabled="true" />
+        <object name="g_bolt" enabled="true" />
+        <object name="g_mag_lock" enabled="true" />
+        <object name="g_trigger" enabled="true" />
+    </graphics>
+</dynamic_object>

@@ -572,6 +572,18 @@
 	<texture path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	
+	<!--P90 Tan Body-->
+	<texture path="units/payday2/weapons/wpn_fps_smg_p90_pts/body_tan_df"/>
+	<unit path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan" load="true"/>
+	<model path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_cc"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_cc_thq"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_thq"/>
+	<object path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<cooked_physics path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan"/>
+	
 	<!--Commando Rocket-->
 	<texture path="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" force="true"/>
 	<material_config path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>

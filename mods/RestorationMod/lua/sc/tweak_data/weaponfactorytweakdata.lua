@@ -6066,6 +6066,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				reload_not_empty = "reload_not_empty"
 			}
 		}
+		self.parts.wpn_fps_smg_p90_body_p90_tan = {
+			pcs = {},
+			type = "lower_reciever",
+			name_id = "bm_wp_p90_body_p90_tan",
+			a_obj = "a_body",
+			dlc = "sc",
+			is_a_unlockable = true,
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan",
+			unit = "units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan",
+			stats = {value = 0},
+			animations = {
+				reload = "reload",
+				reload_not_empty = "reload_not_empty"
+			}
+		}
 		self.parts.wpn_fps_smg_p90_m_std = {
 			type = "magazine",
 			name_id = "bm_wp_p90_m_std",
@@ -6081,6 +6096,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_p90_b_long.third_unit = "units/payday2/weapons/wpn_third_smg_p90_pts/wpn_third_smg_p90_b_long"
 		self.parts.wpn_fps_smg_p90_b_short.third_unit = "units/payday2/weapons/wpn_third_smg_p90_pts/wpn_third_smg_p90_b_short"
 		self.parts.wpn_fps_smg_p90_body_p90.third_unit = "units/payday2/weapons/wpn_third_smg_p90_pts/wpn_third_smg_p90_body_p90"
+		self.parts.wpn_fps_smg_p90_body_p90_tan.third_unit = "units/payday2/weapons/wpn_third_smg_p90_pts/wpn_third_smg_p90_body_p90"
 		self.parts.wpn_fps_smg_p90_m_std.third_unit = "units/payday2/weapons/wpn_third_smg_p90_pts/wpn_third_smg_p90_m_std"
 		self.wpn_fps_smg_p90 = {}
 		self.wpn_fps_smg_p90.unit = "units/payday2/weapons/wpn_fps_smg_p90/wpn_fps_smg_p90"
@@ -6136,7 +6152,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_smg_p90_b_legend",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_smg_p90_m_strap"
+			"wpn_fps_smg_p90_m_strap",
+			--at least it's not Red Stars--
+			"wpn_fps_smg_p90_body_p90_tan"
 		}
 		self.wpn_fps_smg_p90_npc = deep_clone(self.wpn_fps_smg_p90)
 		self.wpn_fps_smg_p90_npc.unit = "units/payday2/weapons/wpn_fps_smg_p90/wpn_fps_smg_p90_npc"

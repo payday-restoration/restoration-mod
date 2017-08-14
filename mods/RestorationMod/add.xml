@@ -451,17 +451,16 @@
 	<effect path="effects/particles/explosions/cs_grenade_smoke" force="true"/>
 	
 	<!--Stat Boost-->
-	<!--Ask goof to implement the .lua loading for override assets like this please, or redo what icons the stat boosts call for and make these custom ~Martini-->
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc" force="true"/>
 	
 	<!--Incendiary Slug-->
 	<texture path="guis/dlcs/cash/safes/cf15/weapon_skins/m95_forest - copy" force="true"/>
@@ -511,7 +510,7 @@
 	
 	<!--Restoration sound replacements (is this even supported by Beardlib? Here just in case.)-->
 	<!--These were for Green Harvest, and some are for Out of Frame.  If Luffy updates the sound module to support contractor voiceover OR we
-	find a solution to soundbanks, these can be removed.  I don't know what that regular_sfx file is for, though, because it's not mine.  ~Martini-->
+	find a solution to soundbanks, these can be removed. ~Martini-->
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/99542904" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/342216271" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/566618683" force="true"/>
@@ -529,9 +528,7 @@
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/896790363" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/969288357" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/1045867404" force="true"/>
-	
-	<stream path="soundbanks/streamed/regular_sfx/517987912" force="true"/>
-	
+		
 	<!--Saiga Drum Mag fix (note: could probably add a proper THQ config now)-->
 	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd" force="true"/>
 	<texture path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_df_cc" force="true"/>

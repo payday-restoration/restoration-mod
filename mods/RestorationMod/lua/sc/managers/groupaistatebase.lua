@@ -105,5 +105,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return nr_hostages_allowed > self._police_hostage_headcount + table.size(self._converted_police)
 	end
+	
+	function GroupAIStateBase:sync_event(event_id, blame_id)
+		local event_name = self.EVENT_SYNC[event_id]
+		local blame_name = self.BLAME_SYNC[blame_id]
+		if event_name == "police_called" then
+			self._police_called = true
+			self:_call_listeners("police_called")
+		elseif event_name == "enemy_weapons_hot" then
+			self._police_called = true
+			self._enemy_weapons_hot = true
+			managers.music:post_event(tweak_data.levels:get_music_event("control"))
+			self:_call_listeners("enemy_weapons_hot")
+			managers.enemy:add_delayed_clbk("notify_bain_weapons_hot", callback(self, self, "notify_bain_weapons_hot", blame_name), Application:time() + 0)
+			managers.enemy:set_corpse_disposal_enabled(true)
+		elseif event_name == "phalanx_spawned" then
+			managers.game_play_central:announcer_say("cpa_a02_01")
+		end
+	end
 
 end

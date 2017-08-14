@@ -1,0 +1,11 @@
+<materials version="3" group="ene_akan_fbi_tank_r870">
+    <material name="mtr_akan_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_nm"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df"/>
+    </material>
+    <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
+        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -57,6 +57,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.medic_summers = security_variant
 	CopMovement._action_variants.tank_titan = clone(security_variant)
 	CopMovement._action_variants.tank_titan.walk = TankCopActionWalk
+	CopMovement._action_variants.tank_biker = clone(security_variant)
+	CopMovement._action_variants.tank_biker.walk = TankCopActionWalk
 end
 
 function CopMovement:post_init()

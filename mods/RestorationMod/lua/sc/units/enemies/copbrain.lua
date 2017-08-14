@@ -40,6 +40,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
 	CopBrain._logic_variants.omnia_lpf = security_variant
+	CopBrain._logic_variants.tank_biker = clone(security_variant)
+	CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
 end
 
 --Thanks Rokk--

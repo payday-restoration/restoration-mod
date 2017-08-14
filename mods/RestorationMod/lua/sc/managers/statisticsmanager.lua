@@ -33,6 +33,7 @@ StatisticsManager.special_unit_ids = {
 	"shield",
 	"spooc",
 	"tank",
+	"tank_biker",
 	"tank_hw",
 	"tank_green",
 	"tank_black",
@@ -173,6 +174,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.heavy_swat_sniper = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.tank_biker = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,

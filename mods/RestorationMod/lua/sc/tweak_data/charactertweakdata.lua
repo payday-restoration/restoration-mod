@@ -72,6 +72,7 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_spring(presets)
 	self:_init_summers(presets)
 	self:_init_omnia_lpf(presets)
+	self:_init_tank_biker(presets)
 	self:_process_weapon_usage_table()
 end
 
@@ -1200,6 +1201,23 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_mini")
+end
+
+function CharacterTweakData:_init_tank_biker(presets)
+	self.tank_biker = deep_clone(self.tank)
+	self.tank_biker.access = "gangster"
+	self.tank_biker.rescue_hostages = false
+	self.tank_biker.use_radio = nil
+	self.tank_biker.speech_prefix_p1 = "bik"
+	self.tank_biker.speech_prefix_p2 = nil
+	self.tank_biker.speech_prefix_count = 2	
+	self.tank_biker.chatter = {
+		aggressive = true,
+		retreat = true,
+		contact = true,
+		go_go = true,
+		suppress = true
+ 	}
 end
 
 function CharacterTweakData:_init_spooc(presets)
@@ -3515,7 +3533,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.mossberg = presets.weapon.normal.is_shotgun_pump
+	presets.weapon.normal.mossberg = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.normal.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.normal.is_shotgun_mag = deep_clone(presets.weapon.normal.is_shotgun_pump)
 	presets.weapon.normal.is_shotgun_mag.RELOAD_SPEED = 0.25
 	presets.weapon.normal.is_shotgun_mag.autofire_rounds = {4, 9}
@@ -5058,7 +5077,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.mossberg = presets.weapon.good.is_shotgun_pump
+	presets.weapon.good.mossberg = deep_clone(presets.weapon.good.is_shotgun_pump)
+	presets.weapon.good.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.good.mini = {}
 	presets.weapon.good.mini.aim_delay = {0.1, 0.1}
 	presets.weapon.good.mini.focus_delay = 3
@@ -6282,7 +6302,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.mossberg = presets.weapon.expert.is_shotgun_pump
+	presets.weapon.expert.mossberg = deep_clone(presets.weapon.expert.is_shotgun_pump)
+	presets.weapon.expert.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.expert.mini = {}
 	presets.weapon.expert.mini.aim_delay = {0, 0.1}
 	presets.weapon.expert.mini.focus_delay = 2
@@ -7434,7 +7455,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.mossberg = presets.weapon.deathwish.is_shotgun_pump
+	presets.weapon.deathwish.mossberg = deep_clone(presets.weapon.deathwish.is_shotgun_pump)
+	presets.weapon.deathwish.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.easy_wish = deep_clone(presets.weapon.expert)
 	presets.weapon.easy_wish.is_bullpup = presets.weapon.easy_wish.is_rifle
 	presets.weapon.easy_wish.is_shotgun_pump.melee_dmg = 10
@@ -12450,6 +12472,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.hector_boss_no_armor.HEALTH_INIT = self.hector_boss_no_armor.HEALTH_INIT * hp_mul
 	self.biker_boss.HEALTH_INIT = self.biker_boss.HEALTH_INIT * hp_mul
 	self.biker.HEALTH_INIT = self.biker.HEALTH_INIT * hp_mul
+	self.tank_biker.HEALTH_INIT = self.tank_biker.HEALTH_INIT * hp_mul
 	self.tank.HEALTH_INIT = self.tank.HEALTH_INIT * hp_mul
 	self.tank_mini.HEALTH_INIT = self.tank_mini.HEALTH_INIT * hp_mul
 	self.tank_medic.HEALTH_INIT = self.tank_medic.HEALTH_INIT * hp_mul
@@ -12540,6 +12563,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 	if self.biker.headshot_dmg_mul then
 		self.biker.headshot_dmg_mul = self.biker.headshot_dmg_mul * hs_mul
+	end
+	if self.tank_biker.headshot_dmg_mul then
+		self.tank_biker.headshot_dmg_mul = self.tank_biker.headshot_dmg_mul * hs_mul
 	end
 	if self.biker_boss.headshot_dmg_mul then
 		self.biker_boss.headshot_dmg_mul = self.biker_boss.headshot_dmg_mul * hs_mul
@@ -12663,6 +12689,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"phalanx_minion",
 		"shield",
 		"biker",
+		"tank_biker",
 		"boom",
 		"rboom",
 		"taser",
@@ -12721,6 +12748,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.phalanx_minion.SPEED_RUN = self.phalanx_minion.SPEED_RUN * run_mul
 	self.shield.SPEED_RUN = self.shield.SPEED_RUN * run_mul
 	self.biker.SPEED_RUN = self.biker.SPEED_RUN * run_mul
+	self.tank_biker.SPEED_RUN = self.tank_biker.SPEED_RUN * run_mul
 	self.taser.SPEED_RUN = self.taser.SPEED_RUN * run_mul
 	self.boom.SPEED_RUN = self.boom.SPEED_RUN * run_mul
 	self.rboom.SPEED_RUN = self.rboom.SPEED_RUN * run_mul
@@ -12805,6 +12833,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"spooc",
 		"shield",
 		"tank",
+		"tank_biker",
 		"tank_mini",
 		"tank_medic",
 		"tank_hw",
@@ -12839,6 +12868,7 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"spooc",
 		"shield",
 		"tank",
+		"tank_biker",
 		"tank_mini",
 		"tank_medic",
 		"tank_titan",
@@ -13041,7 +13071,8 @@ function CharacterTweakData:character_map()
 				"ene_medic_r870",
 				"ene_medic_m4",
 				"ene_city_heavy_r870",
-				"ene_city_heavy_g36"
+				"ene_city_heavy_g36",
+				"ene_bulldozer_biker_1"
 			}
 		},
 		dlc1 = {

@@ -597,4 +597,57 @@
 	<model path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
 	<object path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
 	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="true"/>
+	
+	<!--Biker Dozer-->
+	<unit path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1" load="true"/>
+	<unit path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_husk" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"/>
+	<model path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1" />
+	<object path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_contour"/>
+	<sequence_manager path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"/> <!--i hope this doesn't break-->
+	
+	<texture path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_df"/>
+	<texture path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1_nm"/>
+	<texture path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
+	<texture path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
+	
+	<!--fuck you biker dozer armor bits-->
+	<unit path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1"/>
+	<model path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1" />
+	<object path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1"/>
+	<material_config path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1"/>
+	
+	<unit path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1"/>
+	<model path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1" />
+	<object path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1"/>
+	<material_config path="units/payday2/characters/ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1"/>
+	
+	<unit path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1"/>
+	<model path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1" />
+	<object path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1"/>
+	<material_config path="units/payday2/characters/ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1"/>
+	
+	<unit path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1"/>
+	<model path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1" />
+	<object path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1"/>
+	<material_config path="units/payday2/characters/ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1"/>
+	
+	<unit path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1"/>
+	<model path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1" />
+	<object path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1"/>
+	<material_config path="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1"/>
+	
+	<unit path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
+	<model path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1" />
+	<object path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
+	<material_config path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
+	<!--end armor bits-->
 </table>

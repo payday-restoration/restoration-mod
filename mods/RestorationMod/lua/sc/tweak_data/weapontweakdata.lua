@@ -6707,6 +6707,12 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {},
 		auto = {}
 	}
+	self.mossberg_npc = {
+		usage = "mossberg",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {}
+	}
 	self.mp9_npc = {
 		usage = "mp9",
 		anim_usage = "is_smg",

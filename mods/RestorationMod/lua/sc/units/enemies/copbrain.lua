@@ -42,6 +42,7 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.omnia_lpf = security_variant
 	CopBrain._logic_variants.tank_biker = clone(security_variant)
 	CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
+	CopBrain._logic_variants.biker_guard = security_variant
 end
 
 --Thanks Rokk--

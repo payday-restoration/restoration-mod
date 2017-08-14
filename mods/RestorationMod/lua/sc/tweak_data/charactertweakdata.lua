@@ -123,10 +123,10 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.detection_increase = 0.05
 	self.gensec.HEALTH_INIT = 6
 	self.gensec.headshot_dmg_mul = 3.4
-	self.gensec.move_speed = presets.move_speed.normal
+	self.gensec.move_speed = presets.move_speed.very_fast
 	self.gensec.crouch_move = nil
 	self.gensec.surrender_break_time = {20, 30}
-	self.gensec.suppression = presets.suppression.hard
+	self.gensec.suppression = presets.suppression.hard_def
 	self.gensec.surrender = presets.surrender.hard
 	self.gensec.ecm_vulnerability = 1
 	self.gensec.ecm_hurts = {
@@ -767,6 +767,33 @@ function CharacterTweakData:_init_biker(presets)
 		suppress = true
  	}
  	table.insert(self._enemy_list, "biker")
+	self.biker_guard = deep_clone(self.biker)
+	self.biker_guard.suppression = presets.suppression.hard_def
+	self.biker_guard.has_alarm_pager = true
+	self.biker_guard.radio_prefix = "fri_"
+	self.biker_guard.surrender = presets.surrender.hard
+	self.biker_guard.surrender_break_time = {20, 30}
+	self.biker_guard.detection = presets.detection.guard
+	self.biker_guard.HEALTH_INIT = 6
+	self.biker_guard.headshot_dmg_mul = 3.4
+	self.biker_guard.no_arrest_chance_inc = 0.25
+	self.biker_guard.detection_increase = 0.05
+	self.biker_guard.move_speed = presets.move_speed.very_fast
+	self.biker_guard.ecm_vulnerability = 1
+	self.biker_guard.no_arrest = false
+	self.biker_guard.ecm_hurts = {
+		ears = {min_duration = 8, max_duration = 10}
+	}
+	self.biker_guard.speech_prefix_p1 = "bik"
+	self.biker_guard.speech_prefix_p2 = nil
+	self.biker_guard.speech_prefix_count = 2
+ 	self.biker_guard.chatter = {
+		aggressive = true,
+		retreat = true,
+		contact = true,
+		go_go = true,
+		suppress = true
+ 	}
 end
 
 function CharacterTweakData:_init_biker_escape(presets)
@@ -12472,6 +12499,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.hector_boss_no_armor.HEALTH_INIT = self.hector_boss_no_armor.HEALTH_INIT * hp_mul
 	self.biker_boss.HEALTH_INIT = self.biker_boss.HEALTH_INIT * hp_mul
 	self.biker.HEALTH_INIT = self.biker.HEALTH_INIT * hp_mul
+	self.biker_guard.HEALTH_INIT = self.biker_guard.HEALTH_INIT * hp_mul
 	self.tank_biker.HEALTH_INIT = self.tank_biker.HEALTH_INIT * hp_mul
 	self.tank.HEALTH_INIT = self.tank.HEALTH_INIT * hp_mul
 	self.tank_mini.HEALTH_INIT = self.tank_mini.HEALTH_INIT * hp_mul
@@ -12563,6 +12591,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 	if self.biker.headshot_dmg_mul then
 		self.biker.headshot_dmg_mul = self.biker.headshot_dmg_mul * hs_mul
+	end
+	if self.biker_guard.headshot_dmg_mul then
+		self.biker_guard.headshot_dmg_mul = self.biker_guard.headshot_dmg_mul * hs_mul
 	end
 	if self.tank_biker.headshot_dmg_mul then
 		self.tank_biker.headshot_dmg_mul = self.tank_biker.headshot_dmg_mul * hs_mul
@@ -12689,6 +12720,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"phalanx_minion",
 		"shield",
 		"biker",
+		"biker_guard",
 		"tank_biker",
 		"boom",
 		"rboom",
@@ -12748,6 +12780,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.phalanx_minion.SPEED_RUN = self.phalanx_minion.SPEED_RUN * run_mul
 	self.shield.SPEED_RUN = self.shield.SPEED_RUN * run_mul
 	self.biker.SPEED_RUN = self.biker.SPEED_RUN * run_mul
+	self.biker_guard.SPEED_RUN = self.biker_guard.SPEED_RUN * run_mul
 	self.tank_biker.SPEED_RUN = self.tank_biker.SPEED_RUN * run_mul
 	self.taser.SPEED_RUN = self.taser.SPEED_RUN * run_mul
 	self.boom.SPEED_RUN = self.boom.SPEED_RUN * run_mul
@@ -12772,6 +12805,7 @@ function CharacterTweakData:_set_characters_weapon_preset(preset)
 		"bolivian_indoors",
 		"drug_lord_boss_stealth",
 		"biker",
+		"biker_guard",
 		"mobster"
 	}
 	for _, name in ipairs(all_units) do
@@ -12815,6 +12849,7 @@ function CharacterTweakData:_set_characters_melee_preset(preset)
 		"bolivian_indoors",
 		"drug_lord_boss_stealth",
 		"biker",
+		"biker_guard",
 		"mobster"
 	}
 	for _, name in ipairs(all_units) do
@@ -13072,7 +13107,8 @@ function CharacterTweakData:character_map()
 				"ene_medic_m4",
 				"ene_city_heavy_r870",
 				"ene_city_heavy_g36",
-				"ene_bulldozer_biker_1"
+				"ene_bulldozer_biker_1",
+				"ene_guard_biker_1",
 			}
 		},
 		dlc1 = {

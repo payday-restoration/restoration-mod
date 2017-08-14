@@ -650,4 +650,14 @@
 	<object path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
 	<material_config path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
 	<!--end armor bits-->
+	
+	<unit path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" load="true"/>
+	<unit path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_husk" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
+	<model path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" />
+	<object path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
+	<material_config path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
+	<material_config path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_contour"/>
+	<texture path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_body_df"/>
+	<texture path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_head_df"/>
 </table>

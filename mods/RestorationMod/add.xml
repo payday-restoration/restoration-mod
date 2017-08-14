@@ -1,4 +1,7 @@
 <table directory="assets">
+	<!--Ask Luffy to implement checks you can add to entries in add.xml to help with optimization, also ask Luffy
+	to make a check to see if specified mod option/game option is on/off ~Martini-->
+	
 	<!--We'll have manual stuff at the top here since I don't like to scroll-->
 	<texture path="guis/textures/restoration/ingame_manual/page_1"/>
 	<!--End of manual stuff, carry on-->
@@ -448,6 +451,7 @@
 	<effect path="effects/particles/explosions/cs_grenade_smoke" force="true"/>
 	
 	<!--Stat Boost-->
+	<!--Ask goof to implement the .lua loading for override assets like this please, or redo what icons the stat boosts call for and make these custom ~Martini-->
 	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1" force="true"/>
 	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2" force="true"/>
 	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3" force="true"/>
@@ -506,6 +510,8 @@
 	<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>
 	
 	<!--Restoration sound replacements (is this even supported by Beardlib? Here just in case.)-->
+	<!--These were for Green Harvest, and some are for Out of Frame.  If Luffy updates the sound module to support contractor voiceover OR we
+	find a solution to soundbanks, these can be removed.  I don't know what that regular_sfx file is for, though, because it's not mine.  ~Martini-->
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/99542904" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/342216271" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/566618683" force="true"/>
@@ -614,6 +620,7 @@
 	<texture path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
 	
 	<!--fuck you biker dozer armor bits-->
+	<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->
 	<unit path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1" load="true"/>
 	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1"/>
 	<model path="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1" />

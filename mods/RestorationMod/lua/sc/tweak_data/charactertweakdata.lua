@@ -1264,7 +1264,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.no_arrest = true
 	self.spooc.surrender_break_time = {4, 6}
 	self.spooc.suppression = nil
-	self.spooc.surrender = presets.surrender.special
+	self.spooc.surrender = nil
 	self.spooc.priority_shout = "f33"
 	self.spooc.bot_priority_shout = "f33x_any"
 	self.spooc.priority_shout_max_dis = 3000
@@ -1287,8 +1287,16 @@ function CharacterTweakData:_init_spooc(presets)
 	end
 	self.spooc.melee_weapon = "baton"
 	self.spooc.use_radio = nil
-	self.spooc.can_be_tased = false
+	self.spooc.can_be_tased = true
  	table.insert(self._enemy_list, "spooc")
+	self.spooc_titan = deep_clone(self.spooc)
+	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.spooc_titan.can_be_tased = false
+	self.spooc_titan.priority_shout = "f45"
+	self.spooc_titan.bot_priority_shout = "f45x_any"
+	self.spooc_titan.priority_shout_max_dis = 1000
+	self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
+	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 end
 
 function CharacterTweakData:_init_shield(presets)
@@ -12133,7 +12141,8 @@ function CharacterTweakData:_create_table_structure()
 		"hk21_sc",
 		"mp5_zeal",
 		"p90_summer",
-		"m16_summer"
+		"m16_summer",
+		"mp5_cloak"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -12171,7 +12180,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
+		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak")
 	}
 end
 
@@ -12512,6 +12522,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.tank_titan.HEALTH_INIT = self.tank_titan.HEALTH_INIT * hp_mul
 	self.tank_titan_assault.HEALTH_INIT = self.tank_titan_assault.HEALTH_INIT * hp_mul
 	self.spooc.HEALTH_INIT = self.spooc.HEALTH_INIT * hp_mul
+	self.spooc_titan.HEALTH_INIT = self.spooc_titan.HEALTH_INIT * hp_mul
 	self.shield.HEALTH_INIT = self.shield.HEALTH_INIT * hp_mul
 	self.phalanx_minion.HEALTH_INIT = self.phalanx_minion.HEALTH_INIT * hp_mul
 	self.phalanx_minion_assault.HEALTH_INIT = self.phalanx_minion_assault.HEALTH_INIT * hp_mul
@@ -12631,6 +12642,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.spooc.headshot_dmg_mul then
 		self.spooc.headshot_dmg_mul = self.spooc.headshot_dmg_mul * hs_mul
 	end
+	if self.spooc_titan.headshot_dmg_mul then
+		self.spooc_titan.headshot_dmg_mul = self.spooc_titan.headshot_dmg_mul * hs_mul
+	end
 	if self.shield.headshot_dmg_mul then
 		self.shield.headshot_dmg_mul = self.shield.headshot_dmg_mul * hs_mul
 	end
@@ -12724,6 +12738,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"tank_titan_assault",
 		"tank_hw",
 		"spooc",
+		"spooc_titan",
 		"phalanx_vip",
 		"spring",
 		"summers",
@@ -12786,6 +12801,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.tank_titan_assault.SPEED_RUN = self.tank_titan_assault.SPEED_RUN * run_mul
 	self.tank_hw.SPEED_RUN = self.tank_hw.SPEED_RUN * run_mul
 	self.spooc.SPEED_RUN = self.spooc.SPEED_RUN * run_mul
+	self.spooc_titan.SPEED_RUN = self.spooc_titan.SPEED_RUN * run_mul
 	self.phalanx_vip.SPEED_RUN = self.phalanx_vip.SPEED_RUN * run_mul
 	self.spring.SPEED_RUN = self.spring.SPEED_RUN * run_mul
 	self.summers.SPEED_RUN = self.summers.SPEED_RUN * run_mul
@@ -12882,6 +12898,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"boom",
 		"rboom",
 		"spooc",
+		"spooc_titan",
 		"shield",
 		"tank",
 		"tank_biker",
@@ -12919,6 +12936,7 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"boom",
 		"rboom",
 		"spooc",
+		"spooc_titan",
 		"shield",
 		"tank",
 		"tank_biker",

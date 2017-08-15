@@ -1,0 +1,21 @@
+<materials version="3" group="ene_spook_cloak_1">
+	<material name="mtr_body" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_cloak_df"/>
+		<variable name="uv0_speed" value="0 0 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+	</material>
+
+	<material name="mtr_body_lod1" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/pd2_dlc_cop/masks/msk_wolf_glow/msk_wolf_glow_constant_il"/>
+        <variable name="uv0_speed" value="1 1 1" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+    </material>
+
+	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
+		<self_illumination_texture 		file="units/payday2/characters/shared_textures/spook_il"/>
+		<opacity_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
+		<variable 						value="reddot" type="scalar" name="il_multiplier"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

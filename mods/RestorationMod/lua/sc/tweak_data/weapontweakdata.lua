@@ -435,6 +435,7 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.mp5_tactical_npc.DAMAGE = 3.1
 	self.mp5_tactical_npc.alert_size = 500
 	self.mp5_tactical_npc.suppression = 0.1
+	self.mp5_cloak_npc = deep_clone(self.mp5_npc)
 	self.ump_npc = deep_clone(self.mp5_npc)
 	self.ump_npc.DAMAGE = 2.8
 	self.ump_npc.auto.fire_rate = 0.083
@@ -6759,6 +6760,7 @@ WeaponTweakData.clone__precalculate_values = WeaponTweakData._precalculate_value
 function WeaponTweakData:_precalculate_values()
 	self:clone__precalculate_values()
 	self.hk21_sc_npc.AMMO_MAX = self.hk21_sc_npc.CLIP_AMMO_MAX * self.hk21_sc_npc.NR_CLIPS_MAX
+	self.mp5_cloak_npc.AMMO_MAX = self.mp5_cloak_npc.CLIP_AMMO_MAX * self.mp5_cloak_npc.NR_CLIPS_MAX
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
 	self.m16_crew.AMMO_MAX = 9999999
 	self.peacemaker_crew.AMMO_MAX = 9999999

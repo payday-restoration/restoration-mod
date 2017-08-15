@@ -49,6 +49,9 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack
 	CopBrain._logic_variants.phalanx_minion_assault.intimidated = nil
 	CopBrain._logic_variants.phalanx_minion_assault.flee = nil
+	CopBrain._logic_variants.spooc_titan = clone(security_variant)
+	CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
+	CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
 end
 
 --Thanks Rokk--

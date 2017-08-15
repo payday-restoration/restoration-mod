@@ -600,13 +600,6 @@
 	<model path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
 	
 	<!--Note: remove units/pd2_dlc_bbq. These aren't necessary for the NPC flamethrower to work-->
-
-	<!--I LOVE TO RELOAD DURING A HEIST-->
-	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="true"/>
-	<cooked_physics path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
-	<model path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
-	<object path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
-	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="true"/>
 	
 	<!--Biker Dozer-->
 	<unit path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1" load="true"/>
@@ -671,4 +664,37 @@
 	<material_config path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_contour"/>
 	<texture path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_body_df"/>
 	<texture path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_head_df"/>
+	
+	<model path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<object path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<sequence_manager path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/spook_cloak_df"/>
+	
+	<!--Cloaked Cloaker Debris-->
+	<!--head-->
+	<model path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_head_debris"/>
+	<object path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_head_debris"/>
+	<cooked_physics path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_head_debris"/>
+	<material_config path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_head_debris"/>
+	<unit path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_head_debris" load="true"/>
+	<!--body-->
+	<model path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris"/>
+	<object path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris"/>
+	<cooked_physics path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris"/>
+	<unit path="units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris" load="true"/>
+	<!--end debris-->
+	
+	<!--Cloaked MP5-->
+	<model path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<object path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<unit path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" load="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<material_config path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_dead"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 </table>

@@ -161,7 +161,14 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
-
+	
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
+	
+	<!--Titanshield-->	
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
+	
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="true"/>
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="true"/>
 

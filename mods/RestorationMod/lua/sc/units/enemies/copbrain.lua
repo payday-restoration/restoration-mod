@@ -36,6 +36,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.summers.attack = TankCopLogicAttack
 	CopBrain._logic_variants.tank_titan = clone(security_variant)
 	CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
+	CopBrain._logic_variants.tank_titan_assault = clone(security_variant)
+	CopBrain._logic_variants.tank_titan_assault.attack = TankCopLogicAttack
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
@@ -43,6 +45,10 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.tank_biker = clone(security_variant)
 	CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
 	CopBrain._logic_variants.biker_guard = security_variant
+	CopBrain._logic_variants.phalanx_minion_assault = clone(security_variant)
+	CopBrain._logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack
+	CopBrain._logic_variants.phalanx_minion_assault.intimidated = nil
+	CopBrain._logic_variants.phalanx_minion_assault.flee = nil
 end
 
 --Thanks Rokk--

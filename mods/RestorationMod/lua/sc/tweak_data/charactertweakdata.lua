@@ -652,7 +652,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.suppression = nil
 	self.city_swat_titan.leader = {max_nr_followers = 6}
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
-	self.city_swat_titan.spawn_sound_event = "l2d_prm"
+	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
  	table.insert(self._enemy_list, "city_swat_titan")
 end
@@ -1225,6 +1225,9 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 0.5
  	table.insert(self._enemy_list, "tank_titan")
+	self.tank_titan_assault = deep_clone(self.tank_titan)
+	self.tank_titan_assault.spawn_sound_event = "cloaker_spawn"
+	table.insert(self._enemy_list, "tank_titan_assault")
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_mini")
@@ -1391,8 +1394,9 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.suppression = nil
  	table.insert(self._enemy_list, "phalanx_minion")
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
-	self.phalanx_minion_assault.spawn_sound_event = "mga_s01"
+	self.phalanx_minion_assault.spawn_sound_event = "cloaker_spawn"
 	self.phalanx_minion_assault.die_sound_event = "mga_death_scream"
+	table.insert(self._enemy_list, "phalanx_minion_assault")
 end
 
 function CharacterTweakData:_init_phalanx_vip(presets)
@@ -12506,9 +12510,11 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.tank_medic.HEALTH_INIT = self.tank_medic.HEALTH_INIT * hp_mul
 	self.tank_hw.HEALTH_INIT = self.tank_hw.HEALTH_INIT * hp_mul
 	self.tank_titan.HEALTH_INIT = self.tank_titan.HEALTH_INIT * hp_mul
+	self.tank_titan_assault.HEALTH_INIT = self.tank_titan_assault.HEALTH_INIT * hp_mul
 	self.spooc.HEALTH_INIT = self.spooc.HEALTH_INIT * hp_mul
 	self.shield.HEALTH_INIT = self.shield.HEALTH_INIT * hp_mul
 	self.phalanx_minion.HEALTH_INIT = self.phalanx_minion.HEALTH_INIT * hp_mul
+	self.phalanx_minion_assault.HEALTH_INIT = self.phalanx_minion_assault.HEALTH_INIT * hp_mul
 	self.phalanx_vip.HEALTH_INIT = self.phalanx_vip.HEALTH_INIT * hp_mul
 	self.spring.HEALTH_INIT = self.spring.HEALTH_INIT * hp_mul
 	self.summers.HEALTH_INIT = self.summers.HEALTH_INIT * hp_mul
@@ -12613,6 +12619,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.tank_titan.headshot_dmg_mul then
 		self.tank_titan.headshot_dmg_mul = self.tank_titan.headshot_dmg_mul * hs_mul
 	end
+	if self.tank_titan_assault.headshot_dmg_mul then
+		self.tank_titan_assault.headshot_dmg_mul = self.tank_titan_assault.headshot_dmg_mul * hs_mul
+	end
 	if self.chavez_boss.headshot_dmg_mul then
 		self.chavez_boss.headshot_dmg_mul = self.chavez_boss.headshot_dmg_mul * hs_mul
 	end
@@ -12627,6 +12636,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 	if self.phalanx_minion.headshot_dmg_mul then
 		self.phalanx_minion.headshot_dmg_mul = self.phalanx_minion.headshot_dmg_mul * hs_mul
+	end
+	if self.phalanx_minion_assault.headshot_dmg_mul then
+		self.phalanx_minion_assault.headshot_dmg_mul = self.phalanx_minion_assault.headshot_dmg_mul * hs_mul
 	end
 	if self.phalanx_vip.headshot_dmg_mul then
 		self.phalanx_vip.headshot_dmg_mul = self.phalanx_vip.headshot_dmg_mul * hs_mul
@@ -12709,6 +12721,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"tank_mini",
 		"tank_medic",
 		"tank_titan",
+		"tank_titan_assault",
 		"tank_hw",
 		"spooc",
 		"phalanx_vip",
@@ -12718,6 +12731,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"taser_summers",
 		"medic_summers",
 		"phalanx_minion",
+		"phalanx_minion_assault",
 		"shield",
 		"biker",
 		"biker_guard",
@@ -12769,6 +12783,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.tank_mini.SPEED_RUN = self.tank_mini.SPEED_RUN * run_mul
 	self.tank_medic.SPEED_RUN = self.tank_medic.SPEED_RUN * run_mul
 	self.tank_titan.SPEED_RUN = self.tank_titan.SPEED_RUN * run_mul
+	self.tank_titan_assault.SPEED_RUN = self.tank_titan_assault.SPEED_RUN * run_mul
 	self.tank_hw.SPEED_RUN = self.tank_hw.SPEED_RUN * run_mul
 	self.spooc.SPEED_RUN = self.spooc.SPEED_RUN * run_mul
 	self.phalanx_vip.SPEED_RUN = self.phalanx_vip.SPEED_RUN * run_mul
@@ -12778,6 +12793,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.boom_summers.SPEED_RUN = self.boom_summers.SPEED_RUN * run_mul
 	self.taser_summers.SPEED_RUN = self.taser_summers.SPEED_RUN * run_mul
 	self.phalanx_minion.SPEED_RUN = self.phalanx_minion.SPEED_RUN * run_mul
+	self.phalanx_minion_assault.SPEED_RUN = self.phalanx_minion_assault.SPEED_RUN * run_mul
 	self.shield.SPEED_RUN = self.shield.SPEED_RUN * run_mul
 	self.biker.SPEED_RUN = self.biker.SPEED_RUN * run_mul
 	self.biker_guard.SPEED_RUN = self.biker_guard.SPEED_RUN * run_mul
@@ -12873,6 +12889,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"tank_medic",
 		"tank_hw",
 		"tank_titan",
+		"tank_titan_assault",
 		"city_swat_titan",
 		"mobster_boss",
 		"biker_boss",
@@ -12880,6 +12897,7 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"hector_boss",
 		"drug_lord_boss",
 		"phalanx_minion",
+		"phalanx_minion_assault",
 		"spring",
 		"summers",
 		"boom_summers",
@@ -12907,6 +12925,7 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"tank_mini",
 		"tank_medic",
 		"tank_titan",
+		"tank_titan_assault",
 		"city_swat_titan",
 		"sniper",
 		"tank_hw",
@@ -12916,6 +12935,7 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"hector_boss",
 		"drug_lord_boss",
 		"phalanx_minion",
+		"phalanx_minion_assault",
 		"spring",
 		"summers",
 		"boom_summers",

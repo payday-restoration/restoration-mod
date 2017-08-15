@@ -52,6 +52,7 @@ StatisticsManager.special_unit_ids = {
 	"city_swat_titan",
 	"heavy_swat_sniper",
 	"tank_titan",
+	"tank_titan_assault",
 	"spring",
 	"summers",
 	"omnia_lpf",
@@ -62,7 +63,8 @@ StatisticsManager.special_unit_ids = {
 	"hector_boss",
 	"hector_boss_no_armor",
 	"tank_medic",
-	"tank_mini"
+	"tank_mini",
+	"phalanx_minion_assault"
 }
 
 local old_stats = StatisticsManager.init
@@ -111,6 +113,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.tank_titan = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.tank_titan_assault = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,
@@ -188,6 +197,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.biker_guard = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.phalanx_minion_assault = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,

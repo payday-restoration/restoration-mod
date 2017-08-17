@@ -76,7 +76,11 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_crouch_speed_multiplier",
 		"player_flashbang_multiplier_1",
 		"player_melee_kill_snatch_pager_chance",
-		"player_suppression_resist"
+		"player_suppression_resist",
+		"frag_com",
+		"frag",
+		"dynamite",
+		"molotov"
 	}
 
 --[[   SKILLTREES   ]]--

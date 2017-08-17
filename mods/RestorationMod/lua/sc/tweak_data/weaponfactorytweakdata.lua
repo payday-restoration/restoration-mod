@@ -8615,6 +8615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "magazine",
 			a_obj = "a_m",
 			unit = "units/payday2/weapons/wpn_fps_pis_g18c_pts/wpn_fps_pis_g18c_m_mag_17rnd",
+			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			stats = {value = 1},
 			animations = {
 				reload = "reload",
@@ -11351,6 +11352,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_p226_m_standard",
 			texture_bundle_folder = "gage_pack",
 			a_obj = "a_m",
+			bullet_objects = {prefix = "g_bullet_", amount = 2},
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_pis_p226_pts/wpn_fps_pis_p226_m_standard",
 			stats = {value = 1},
 			animations = {
@@ -11369,6 +11371,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_p226_m_extended",
 			texture_bundle_folder = "gage_pack",
 			a_obj = "a_m",
+			bullet_objects = {prefix = "g_bullet_", amount = 2},
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_pis_p226_pts/wpn_fps_pis_p226_m_extended",
 			stats = {
 				value = 1,
@@ -19840,6 +19843,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_hs2000_m_standard",
 			texture_bundle_folder = "the_bomb",
 			a_obj = "a_m",
+			bullet_objects = {prefix = "g_bullet_", amount = 3},
 			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_m_standard",
 			stats = {value = 1},
 			animations = {
@@ -19858,6 +19862,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_hs2000_m_extended",
 			texture_bundle_folder = "the_bomb",
 			a_obj = "a_m",
+			bullet_objects = {prefix = "g_bullet_", amount = 3},
 			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_m_extended",
 			stats = {
 				value = 1,

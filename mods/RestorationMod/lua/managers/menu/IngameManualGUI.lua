@@ -1,13 +1,4 @@
 --[[
-This GUI is a brand new one for the game for our manual purposes
-
-It's WIP and this iteration as of this upload is cookie cutter of me setting up the menu backdrop
-
-Can't figure out how to make it scale to current resolution?  And giving it a proper opening and closing animation, right now it just pops init
-
-Improve or change how you want, since I can't work on it more right now, later
-
-~Martini, 9:00 AM MT 8/12/17
 
 ]]--
 
@@ -16,11 +7,13 @@ require "lib/managers/menu/MenuBackdropGUI"
 IngameManualGui = IngameManualGui or class()
 
 function IngameManualGui:init( workspace )
-	self._backdrop = MenuBackdropGUI:new( workspace )
+	managers.menu_component:play_transition(true)
+	self._backdrop = MenuBackdropGUI:new( managers.gui_data:create_fullscreen_workspace() )
 	self._backdrop:create_black_borders()
 	--local res = RenderSettings.resolution
 	self._active = false
-	self._workspace = workspace
+	self._workspace = managers.gui_data:create_fullscreen_workspace()
+	self._panel = self._workspace:panel():panel({})
 	--[[self._workspace_size = {
 		x = 0,
 		y = 0,
@@ -60,6 +53,36 @@ function IngameManualGui:init( workspace )
 	bg_text:set_world_left( manual_text:world_x() )
 	bg_text:set_world_center_y( manual_text:world_center_y() )
 	bg_text:move( -13, 9 )
+
+	self._panel:text( { name="back_button", text=utf8.to_upper( managers.localization:text("menu_back") ), align="right", vertical="bottom", font_size=large_font_size, font=large_font, color=tweak_data.screen_colors.button_stage_3 } )
+	self:make_fine_text( self._panel:child("back_button") )
+	self._panel:child("back_button"):set_right( self._panel:w() )
+	self._panel:child("back_button"):set_bottom( self._panel:h() )
+	self._panel:child("back_button"):set_visible( managers.menu:is_pc_controller() )
+	
+end
+
+function IngameManualGui:mouse_moved(o, x, y)
+	if self._panel:child("back_button"):inside(x, y) then
+		used = true
+		pointer = "link"
+		if not self._back_button_highlighted then
+			self._back_button_highlighted = true
+			self._panel:child("back_button"):set_color(tweak_data.screen_colors.button_stage_2)
+			managers.menu_component:post_event("highlight")
+			return used, pointer
+		end
+	elseif self._back_button_highlighted then
+		self._back_button_highlighted = false
+		self._panel:child("back_button"):set_color(tweak_data.screen_colors.button_stage_3)
+	end
+end
+
+function IngameManualGui:mouse_pressed(button, x, y)
+	if self._panel:child("back_button"):inside(x, y) then
+		managers.menu:back(true)
+		return
+	end
 end
 
 function IngameManualGui:make_fine_text( text )
@@ -71,7 +94,6 @@ end
 
 function IngameManualGui:close()
 	self._backdrop:close()
+	managers.menu_component:play_transition(true)
 	self._backdrop = nil
 end
-
-

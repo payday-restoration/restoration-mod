@@ -2352,8 +2352,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.clip_capacity = 10
 	self.mosin.clip_capacity = 5
 	--End of Tac reloading shit--
-	self.trip_mines.damage = 100
-	self.trip_mines.player_damage = 100
+	self.trip_mines.damage = 40
+	self.trip_mines.player_damage = 40
 	self.trip_mines.damage_size = 200
 	self.trip_mines.delay = 0.1
 

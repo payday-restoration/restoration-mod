@@ -158,7 +158,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"first_aid_kit_quantity_increase_2",
-						"first_aid_kit_downs_restore_chance"
+						"first_aid_kit_auto_recovery_1"
 					},
 					cost = self.costs.hightierpro
 				}

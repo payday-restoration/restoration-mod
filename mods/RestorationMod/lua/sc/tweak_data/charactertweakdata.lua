@@ -1125,6 +1125,7 @@ function CharacterTweakData:_init_tank(presets)
 		light = {tased_time = 1, down_time = 0},
 		heavy = {tased_time = 2, down_time = 0}
 	}
+	self.tank.damage.explosion_damage_mul = 2.5
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
@@ -1183,6 +1184,7 @@ function CharacterTweakData:_init_tank(presets)
  	table.insert(self._enemy_list, "tank")
 	self.tank_hw = deep_clone(self.tank)
 	self.tank_hw.HEALTH_INIT = 500
+	self.tank_hw.ignore_headshot = false
 	self.tank_hw.critical_hits = {
 		damage_mul = 2
 	}
@@ -1217,13 +1219,13 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.priority_shout_max_dis = 3000
 	self.tank_titan.leader = {max_nr_followers = 6}
 	self.tank_titan.damage_multiplier = {multiplier = 1.1}
-	self.tank_titan.ecm_vulnerability = 1
+	self.tank_titan.ecm_vulnerability = 0.85
 	self.tank_titan.ecm_hurts = {
-		ears = {min_duration = 2, max_duration = 3}
+		ears = {min_duration = 1, max_duration = 3}
 	}
 	self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 	self.tank_titan.die_sound_event = "mga_death_scream"
-	self.tank_titan.damage.explosion_damage_mul = 0.5
+	self.tank_titan.damage.explosion_damage_mul = 1.25
  	table.insert(self._enemy_list, "tank_titan")
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.spawn_sound_event = "cloaker_spawn"
@@ -1363,9 +1365,8 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 2.5
 	self.phalanx_minion.HEALTH_INIT = 15
-	self.phalanx_minion.DAMAGE_CLAMP_BULLET = 36
-	self.phalanx_minion.damage.explosion_damage_mul = 0.05
-	self.phalanx_minion.damage.fire_damage_mul = 0.05
+	self.phalanx_minion.damage.explosion_damage_mul = 0.2
+	self.phalanx_minion.damage.fire_damage_mul = 0.2
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = true
@@ -1416,6 +1417,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.HEALTH_INIT = 30
 	self.phalanx_vip.headshot_dmg_mul = 1.59885
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
+	self.phalanx_vip.damage.fire_damage_mul = 0.05
 	self.phalanx_vip.spawn_sound_event = nil
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -1445,7 +1447,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.HEALTH_INIT = 1000
 	self.spring.EXTRA_HEALTH_BALANCE = 50
 	self.spring.headshot_dmg_mul = 1.59885
-	self.spring.damage.explosion_damage_mul = 0.1
+	self.spring.damage.explosion_damage_mul = 0.75
 	self.spring.priority_shout = "f45"
 	self.spring.bot_priority_shout = "f45x_any"
 	self.spring.priority_shout_max_dis = 3000
@@ -1629,7 +1631,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.HEALTH_SUICIDE_LIMIT = 0.25
 	self.boom.flammable = true
 	self.boom.use_animation_on_fire_damage = true
-	self.boom.damage.explosion_damage_mul = 0.1
+	self.boom.damage.explosion_damage_mul = 0.5
 	self.boom.damage.fire_damage_mul = 1
 	self.boom.damage.hurt_severity = presets.hurt_severities.boom
 	self.boom.headshot_dmg_mul = 1.8

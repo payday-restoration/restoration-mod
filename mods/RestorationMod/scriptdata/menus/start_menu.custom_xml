@@ -63,7 +63,7 @@
 			<item callback="on_visit_fbi_files" help_id="menu_visit_fbi_files_help" name="fbi_files" text_id="menu_visit_fbi_files" visible_callback="is_win32"/>
 			<item name="divider_infamy" no_text="true" size="8" type="MenuItemDivider"/>
 			<item help_id="menu_options_help" name="options" next_node="options" text_id="menu_options"/>
-			<item help_id="menu_ingame_manual_help" name="ingame_manual" next_node="ingame_manual" text_id="menu_ingame_manual" visible_callback="is_win32"/>
+			<!--<item help_id="menu_ingame_manual_help" name="ingame_manual" next_node="ingame_manual" text_id="menu_ingame_manual" visible_callback="is_win32"/>-->
 			<item help_id="menu_credits_help" name="credits" next_node="credits" text_id="menu_credits"/>
 			<item name="divider_test2" no_text="true" size="8" type="MenuItemDivider"/>
 			<item callback="on_account_picker" help_id="menu_account_picker_help" name="account_picker" text_id="menu_account_picker" visible_callback="is_xb1"/>

@@ -366,7 +366,13 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
 	self.medic.no_arrest = true
-	self.medic.chatter = {aggressive = true, contact = true}
+	self.medic.chatter = {
+		aggressive = true,
+		retreat = true,
+		go_go = true,
+		contact = true,
+		entrance = true
+	}
 	if job == "chill_combat" then
 		self.medic.steal_loot = nil
 	else
@@ -1164,9 +1170,11 @@ function CharacterTweakData:_init_tank(presets)
 	}
 	self.tank.damage.hurt_severity = presets.hurt_severities.no_hurts
  	self.tank.chatter = {
- 		aggressive = true,
- 		retreat = true,
-		contact = true
+		aggressive = true,
+		retreat = true,
+		go_go = true,
+		contact = true,
+		entrance = true
  	}
 	self.tank.announce_incomming = "incomming_tank"
 	if job == "chill_combat" then
@@ -1567,9 +1575,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.rescue_hostages = true
 	self.taser.deathguard = true
  	self.taser.chatter = {
- 		aggressive = true,
- 		retreat = true,
-		contact = true
+		aggressive = true,
+		retreat = true,
+		go_go = true,
+		contact = true,
+		entrance = true
  	}
 	self.taser.announce_incomming = "incomming_taser"
 	if job == "chill_combat" then
@@ -1648,8 +1658,9 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.suppression = nil
 	self.boom.weapon_voice = "3"
 	self.boom.experience.cable_tie = "tie_swat"
-	self.boom.speech_prefix_p1 = "gren"
-	self.boom.speech_prefix_count = nil
+	self.boom.speech_prefix_p1 = self._prefix_data_p1.swat()
+	self.boom.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.boom.speech_prefix_count = 1
 	self.boom.access = "taser"
 	self.boom.dodge = presets.dodge.athletic
 	self.boom.use_gas = true
@@ -1682,7 +1693,6 @@ function CharacterTweakData:_init_boom(presets)
 		self.rboom.steal_loot = true
 	end
 	self.rboom.spawn_sound_event = "clk_c01x_plu"
-	self.rboom.speech_prefix_p1 = "rgren"
 	self.rboom.die_sound_event = "mdc_x02a_any_3p"
  	table.insert(self._enemy_list, "rboom")
 	self.boom_summers = deep_clone(self.boom)
@@ -12433,9 +12443,9 @@ end
 
 function CharacterTweakData:_set_sm_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(2, 0.915)
+		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(2, 0.915)
+		self:_multiply_all_hp(1.75, 0.8)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)

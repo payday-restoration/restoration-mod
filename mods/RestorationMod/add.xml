@@ -213,7 +213,7 @@
 	<material_config path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
 	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
-	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/> <!--Placeholder, get the actual texture-->
+	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>
 	<texture path="units/payday2/characters/shared_textures/grenadier_body_df" force="false"/>
 	<texture path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
 
@@ -226,6 +226,8 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_contour" force="false"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_df"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_nm" />
 
 	<!--Russian FBI-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>

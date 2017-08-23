@@ -22,7 +22,8 @@ if not _G.restoration then
 	RestorationCore.log_shit("SC: FUCKING LOADING: " .. ModPath)
 	_G.restoration.ModPath = ModPath
 	_G.restoration.disable_captain_camper = {
-		"born"
+		"born",
+		"nail"
 	}
 	_G.restoration.captain_teamwork = {
 		"pal",

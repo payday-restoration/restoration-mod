@@ -2825,7 +2825,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g36.stats = {
 		damage = 32,
 		spread = 16,
-		recoil = 18,
+		recoil = 19,
 		spread_moving = 8,
 		zoom = 3,
 		concealment = 20,
@@ -5611,6 +5611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.kick.standing = self.r870.kick.standing
 	self.boot.kick.crouching = self.r870.kick.standing
 	self.boot.kick.steelsight = self.r870.kick.standing
+	self.boot.timers.shotgun_reload_first_shell_offset = 0.12
 	self.boot.stats = {
 		damage = 139,
 		spread = 8,

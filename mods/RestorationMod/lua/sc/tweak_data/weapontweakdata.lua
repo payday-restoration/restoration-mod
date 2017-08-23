@@ -6731,6 +6731,19 @@ function WeaponTweakData:_create_table_structure()
 		sounds = {},
 		use_data = {}
 	}
+	self.mossberg_crew = {
+		usage = "mossberg",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {}
+	}
+	self.b682_crew = {
+		usage = "mossberg",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
 	self.spas12_crew = {
 		usage = "is_shotgun_mag",
 		anim_usage = "is_shotgun_pump",

@@ -242,6 +242,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.melee_weapon = "knife_1"
 	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 	self.omnia_lpf.steal_loot = true
+	self.omnia_lpf.rescue_hostages = true
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"custom"}
@@ -303,6 +304,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.silent_priority_shout = nil
 	self.fbi_vet.custom_shout = true
 	self.fbi_vet.priority_shout_max_dis = 3000
+	self.fbi_vet.rescue_hostages = true
 	if job == "chill_combat" then
 		self.fbi_vet.steal_loot = nil
 	else
@@ -373,11 +375,8 @@ function CharacterTweakData:_init_medic(presets)
 		contact = true,
 		entrance = true
 	}
-	if job == "chill_combat" then
-		self.medic.steal_loot = nil
-	else
-		self.medic.steal_loot = true
-	end
+	self.medic.steal_loot = nil
+	self.medic.rescue_hostages = false
 	self.medic.priority_shout = "f47"
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
@@ -650,11 +649,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.priority_shout_max_dis = 3000
 	self.city_swat_titan.no_retreat = true
 	self.city_swat_titan.no_arrest = true
-	if job == "chill_combat" then
-		self.city_swat_titan.steal_loot = nil
-	else
-		self.city_swat_titan.steal_loot = true
-	end
+	self.city_swat_titan.steal_loot = nil
+	self.city_swat_titan.rescue_hostages = false
 	self.city_swat_titan.suppression = nil
 	self.city_swat_titan.leader = {max_nr_followers = 6}
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
@@ -693,7 +689,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.no_retreat = true
 	self.sniper.no_arrest = true
 	self.sniper.chatter = presets.enemy_chatter.no_chatter
-	self.sniper.steal_loot = true
+	self.sniper.steal_loot = nil
 	self.sniper.rescue_hostages = false
  	table.insert(self._enemy_list, "sniper")
 end
@@ -1158,7 +1154,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.priority_shout = "f30"
 	self.tank.bot_priority_shout = "f30x_any"
 	self.tank.priority_shout_max_dis = 3000
-	self.tank.rescue_hostages = true
+	self.tank.rescue_hostages = false
 	self.tank.deathguard = true
 	self.tank.melee_weapon = "fists_dozer"
 	self.tank.melee_weapon_dmg_multiplier = 1
@@ -1177,11 +1173,7 @@ function CharacterTweakData:_init_tank(presets)
 		entrance = true
  	}
 	self.tank.announce_incomming = "incomming_tank"
-	if job == "chill_combat" then
-		self.tank.steal_loot = nil
-	else
-		self.tank.steal_loot = true
-	end
+	self.tank.steal_loot = nil
 	self.tank.calls_in = nil
 	self.tank.use_animation_on_fire_damage = false
 	self.tank.flammable = true
@@ -1203,11 +1195,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw.can_be_tased = false
 	self.tank_hw.melee_anims = nil
 	self.tank_hw.move_speed = presets.move_speed.slow
-	if job == "chill_combat" then
-		self.tank_hw.steal_loot = nil
-	else
-		self.tank_hw.steal_loot = true
-	end
  	table.insert(self._enemy_list, "tank_hw")
 	self.tank_medic = deep_clone(self.tank)
 	table.insert(self.tank_medic.tags, "medic")
@@ -1215,11 +1202,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.headshot_dmg_mul = 3.997125
-	if job == "chill_combat" then
-		self.tank_titan.steal_loot = nil
-	else
-		self.tank_titan.steal_loot = true
-	end
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
 	self.tank_titan.priority_shout = "f45"
@@ -1278,7 +1260,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.priority_shout = "f33"
 	self.spooc.bot_priority_shout = "f33x_any"
 	self.spooc.priority_shout_max_dis = 3000
-	self.spooc.rescue_hostages = true
+	self.spooc.rescue_hostages = false
 	self.spooc.spooc_attack_timeout = {3, 3}
 	self.spooc.spooc_attack_beating_time = {3, 3}
 	self.spooc.spooc_attack_use_smoke_chance = 1
@@ -1290,11 +1272,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.flammable = true
 	self.spooc.dodge = presets.dodge.ninja
 	self.spooc.chatter = presets.enemy_chatter.no_chatter
-	if job == "chill_combat" then
-		self.spooc.steal_loot = nil
-	else
-		self.spooc.steal_loot = true
-	end
+	self.spooc.steal_loot = nil
 	self.spooc.melee_weapon = "baton"
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = true
@@ -1355,11 +1333,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.access = "shield"
 	self.shield.chatter = presets.enemy_chatter.shield
 	self.shield.announce_incomming = "incomming_shield"
-	if job == "chill_combat" then
-		self.shield.steal_loot = nil
-	else
-		self.shield.steal_loot = true
-	end
+	self.shield.steal_loot = nil
 	self.shield.use_animation_on_fire_damage = false
 	self.shield.immune_to_knock_down = true
  	table.insert(self._enemy_list, "shield")
@@ -1389,11 +1363,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.access = "shield"
 	self.phalanx_minion.chatter = presets.enemy_chatter.shield
 	self.phalanx_minion.announce_incomming = "incomming_shield"
-	if job == "chill_combat" then
-		self.phalanx_minion.steal_loot = nil
-	else
-		self.phalanx_minion.steal_loot = true
-	end
+	self.phalanx_minion.steal_loot = nil
 	self.phalanx_minion.leader = {max_nr_followers = 6}
 	self.phalanx_minion.damage_resist_followers = {multiplier = 0.75}
 	self.phalanx_minion.ignore_medic_revive_animation = true
@@ -1572,7 +1542,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.priority_shout = "f32"
 	self.taser.bot_priority_shout = "f32x_any"
 	self.taser.priority_shout_max_dis = 3000
-	self.taser.rescue_hostages = true
+	self.taser.rescue_hostages = false
 	self.taser.deathguard = true
  	self.taser.chatter = {
 		aggressive = true,
@@ -1582,11 +1552,7 @@ function CharacterTweakData:_init_taser(presets)
 		entrance = true
  	}
 	self.taser.announce_incomming = "incomming_taser"
-	if job == "chill_combat" then
-		self.taser.steal_loot = nil
-	else
-		self.taser.steal_loot = true
-	end
+	self.taser.steal_loot = nil
 	self.taser.special_deaths = {}
 	self.taser.special_deaths.bullet = {
 		[("head"):id():key()] = {
@@ -1668,7 +1634,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.bot_priority_shout = "g29"
 	self.boom.priority_shout_max_dis = 3000
 	self.boom.custom_shout = true
-	self.boom.rescue_hostages = true
+	self.boom.rescue_hostages = false
 	self.boom.deathguard = true
 	self.boom.chatter = {
 		aggressive = true,
@@ -1680,18 +1646,9 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.announce_incomming = "incomming_gren"
 	self.boom.spawn_sound_event = "clk_c01x_plu"
 	self.boom.die_sound_event = "rmdc_x02a_any_3p"
-	if job == "chill_combat" then
-		self.boom.steal_loot = nil
-	else
-		self.boom.steal_loot = true
-	end
+	self.boom.steal_loot = nil
  	table.insert(self._enemy_list, "boom")
 	self.rboom = deep_clone(self.boom)
-	if job == "chill_combat" then
-		self.rboom.steal_loot = nil
-	else
-		self.rboom.steal_loot = true
-	end
 	self.rboom.spawn_sound_event = "clk_c01x_plu"
 	self.rboom.die_sound_event = "mdc_x02a_any_3p"
  	table.insert(self._enemy_list, "rboom")
@@ -9972,6 +9929,8 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_pump.melee_speed = 1
 	presets.weapon.gang_member.is_shotgun_pump.melee_dmg = 4
 	presets.weapon.gang_member.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.gang_member.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
 	presets.weapon.gang_member.is_smg.FALLOFF = {
 		{

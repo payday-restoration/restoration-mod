@@ -48,6 +48,7 @@
 	<movie path="movies/codex/shatter1" force="true"/>
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
+	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
 
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>

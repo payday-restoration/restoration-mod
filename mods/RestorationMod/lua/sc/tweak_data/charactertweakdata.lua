@@ -452,8 +452,8 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.experience = {}
 	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
-	self.heavy_swat.HEALTH_INIT = 15
-	self.heavy_swat.headshot_dmg_mul = 2.5
+	self.heavy_swat.HEALTH_INIT = 13
+	self.heavy_swat.headshot_dmg_mul = 2.2
 	self.heavy_swat.move_speed = presets.move_speed.fast
 	self.heavy_swat.surrender_break_time = {6, 8}
 	self.heavy_swat.suppression = presets.suppression.hard_agg
@@ -640,8 +640,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	self.city_swat_titan.HEALTH_INIT = 20
-	self.city_swat_titan.headshot_dmg_mul = 2
+	self.city_swat_titan.HEALTH_INIT = 13
+	self.city_swat_titan.headshot_dmg_mul = 1.265
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.leader = {max_nr_followers = 6}
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
@@ -1287,8 +1287,8 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.shield.detection = presets.detection.normal
-	self.shield.HEALTH_INIT = 15
-	self.shield.headshot_dmg_mul = 2.5
+	self.shield.HEALTH_INIT = 13
+	self.shield.headshot_dmg_mul = 2.2
 	self.shield.allowed_stances = {cbt = true}
 	self.shield.allowed_poses = {crouch = true}
 	self.shield.always_face_enemy = true
@@ -1336,10 +1336,10 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.experience = {}
 	self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 	self.phalanx_minion.detection = presets.detection.normal
-	self.phalanx_minion.headshot_dmg_mul = 2.5
-	self.phalanx_minion.HEALTH_INIT = 15
-	self.phalanx_minion.damage.explosion_damage_mul = 0.2
-	self.phalanx_minion.damage.fire_damage_mul = 0.2
+	self.phalanx_minion.headshot_dmg_mul = 2.2
+	self.phalanx_minion.HEALTH_INIT = 13
+	self.phalanx_minion.damage.explosion_damage_mul = 0.1
+	self.phalanx_minion.damage.fire_damage_mul = 0.1
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = true

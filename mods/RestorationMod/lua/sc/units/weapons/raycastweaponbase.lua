@@ -339,7 +339,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if unit_type == "shield" then
 						dmg_mul = ( dmg_mul or 1 ) * 0.6
 					elseif  unit_type == "phalanx_minion" then
-						dmg_mul = ( dmg_mul or 1 ) * 0.05
+						dmg_mul = ( dmg_mul or 1 ) * 0.1
+					elseif  unit_type == "phalanx_minion_assault" then
+						dmg_mul = ( dmg_mul or 1 ) * 0.1
 					elseif  unit_type == "phalanx_vip" then
 						dmg_mul = ( dmg_mul or 1 ) * 0.05
 					end

@@ -230,7 +230,8 @@ if not tweak_data then return end
 		"tank_titan",
 		"tank_medic",
 		"city_swat_titan",
-		"omnia_lpf"
+		"omnia_lpf",
+		"spooc_titan"
 	}
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000

@@ -2,6 +2,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CopDamage:die(attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
+		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		if self._immortal then
 			debug_pause("Immortal character died!")
 		end
@@ -14,11 +16,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.interaction:active_unit():interaction():selected()
 		end
 		if char_tweak.ends_assault_on_death then
-			--GroupAIStateBesiege:set_assault_endless(false)
 			managers.groupai:state():force_end_assault_phase()
 			managers.hud:set_buff_enabled("vip", false)
 		end
-		self:drop_pickup()
+		if difficulty_index <= 7 then
+			self:drop_pickup()
+		else
+			local roll = math.rand(1, 100)
+			local chance_ammo = 100
+			if roll <= chance_ammo then
+				self:drop_pickup()
+			end
+		end
 		self._unit:inventory():drop_shield()
 		if self._unit:unit_data().mission_element then
 			self._unit:unit_data().mission_element:event("death", self._unit)
@@ -45,6 +54,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:base():char_tweak().die_sound_event then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event, nil, nil)
 		end
+		if self._unit:base()._tweak_table == "swat_titan" then
+			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+		end 
 		self:_on_death()
 		managers.mutators:notify(Message.OnCopDamageDeath, self, attack_data)
 	end

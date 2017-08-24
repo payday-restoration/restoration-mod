@@ -242,7 +242,8 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.melee_weapon = "knife_1"
 	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 	self.omnia_lpf.steal_loot = true
-	self.omnia_lpf.rescue_hostages = true
+	self.omnia_lpf.rescue_hostages = false
+	self.omnia_lpf.steal_loot = nil
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"custom"}
@@ -639,19 +640,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	self.city_swat_titan.tags = {"custom"}
 	self.city_swat_titan.HEALTH_INIT = 20
 	self.city_swat_titan.headshot_dmg_mul = 2
 	self.city_swat_titan.surrender = nil
-	self.city_swat_titan.priority_shout = "f45"
-	self.city_swat_titan.bot_priority_shout = "f45x_any"
-	self.city_swat_titan.silent_priority_shout = nil
-	self.city_swat_titan.priority_shout_max_dis = 3000
-	self.city_swat_titan.no_retreat = true
-	self.city_swat_titan.no_arrest = true
-	self.city_swat_titan.steal_loot = nil
-	self.city_swat_titan.rescue_hostages = false
-	self.city_swat_titan.suppression = nil
 	self.city_swat_titan.leader = {max_nr_followers = 6}
 	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
@@ -3499,9 +3490,9 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.5, 0.8},
 			mode = {
 				0,
-				1,
-				2,
-				8
+				0,
+				0,
+				6
 			}
 		},
 		{
@@ -3510,9 +3501,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 1},
 			mode = {
-				1,
-				3,
-				6,
+				0,
+				0,
+				2,
 				6
 			}
 		},
@@ -3522,10 +3513,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 1},
 			mode = {
-				1,
+				0,
+				0,
 				2,
-				2,
-				1
+				6
 			}
 		},
 		{
@@ -3534,10 +3525,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 2},
 			mode = {
-				4,
+				0,
+				0,
 				2,
-				1,
-				0
+				6
 			}
 		}
 	}
@@ -5043,9 +5034,9 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.5, 0.8},
 			mode = {
 				0,
-				1,
-				2,
-				8
+				0,
+				0,
+				6
 			}
 		},
 		{
@@ -5054,9 +5045,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2,
 			recoil = {1, 1},
 			mode = {
-				1,
-				3,
-				6,
+				0,
+				0,
+				2,
 				6
 			}
 		},
@@ -5066,10 +5057,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 1},
 			mode = {
-				1,
+				0,
+				0,
 				2,
-				2,
-				1
+				6
 			}
 		},
 		{
@@ -5078,10 +5069,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 2},
 			mode = {
-				4,
+				0,
+				0,
 				2,
-				1,
-				0
+				6
 			}
 		}
 	}
@@ -6268,9 +6259,9 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.5, 0.8},
 			mode = {
 				0,
-				1,
-				2,
-				8
+				0,
+				0,
+				6
 			}
 		},
 		{
@@ -6279,9 +6270,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2.5,
 			recoil = {1, 1},
 			mode = {
-				1,
-				3,
-				6,
+				0,
+				0,
+				2,
 				6
 			}
 		},
@@ -6291,10 +6282,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 1},
 			mode = {
-				1,
+				0,
+				0,
 				2,
-				2,
-				1
+				6
 			}
 		},
 		{
@@ -6303,10 +6294,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1,
 			recoil = {1, 2},
 			mode = {
-				4,
+				0,
+				0,
 				2,
-				1,
-				0
+				6
 			}
 		}
 	}
@@ -9992,9 +9983,9 @@ function CharacterTweakData:_presets(tweak_data)
 			recoil = {0.1, 0.2},
 			mode = {
 				0,
-				1,
-				2,
-				8
+				0,
+				0,
+				1
 			}
 		},
 		{
@@ -12402,9 +12393,9 @@ end
 
 function CharacterTweakData:_set_sm_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(2, 0.915)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(2, 0.915)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -12878,7 +12869,6 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"tank_hw",
 		"tank_titan",
 		"tank_titan_assault",
-		"city_swat_titan",
 		"mobster_boss",
 		"biker_boss",
 		"chavez_boss",
@@ -12915,7 +12905,6 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"tank_medic",
 		"tank_titan",
 		"tank_titan_assault",
-		"city_swat_titan",
 		"sniper",
 		"tank_hw",
 		"mobster_boss",

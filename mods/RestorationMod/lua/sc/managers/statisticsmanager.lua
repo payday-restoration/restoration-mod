@@ -49,7 +49,6 @@ StatisticsManager.special_unit_ids = {
 	"sniper",
 	"phalanx_minion",
 	"phalanx_vip",
-	"city_swat_titan",
 	"heavy_swat_sniper",
 	"tank_titan",
 	"tank_titan_assault",

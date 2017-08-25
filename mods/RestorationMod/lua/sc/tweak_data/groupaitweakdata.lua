@@ -177,8 +177,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 2,
 					medic = 0,
 					omnia_LPF = 0,
-					phalanx_minion = 0,
-					tank_titan = 0,
 					fbi_vet = 0,
 					spring = 0,
 					summers = 0
@@ -192,8 +190,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 3,
 					medic = 0,
 					omnia_LPF = 0,
-					phalanx_minion = 0,
-					tank_titan = 0,
 					fbi_vet = 0,
 					spring = 0,
 					summers = 0
@@ -207,8 +203,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 4,
 					medic = 2,
 					omnia_LPF = 2,
-					phalanx_minion = 0,
-					tank_titan = 0,
 					fbi_vet = 0,
 					spring = 1,
 					summers = 1
@@ -222,8 +216,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 5,
 					medic = 3,
 					omnia_LPF = 3,
-					phalanx_minion = 0,
-					tank_titan = 0,
 					fbi_vet = 2,
 					spring = 1,
 					summers = 1
@@ -237,8 +229,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 5,
 					medic = 3,
 					omnia_LPF = 3,
-					phalanx_minion = 1,
-					tank_titan = 1,
 					fbi_vet = 3,
 					spring = 1,
 					summers = 1
@@ -252,8 +242,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 5,
 					medic = 3,
 					omnia_LPF = 3,
-					phalanx_minion = 2,
-					tank_titan = 1,
 					fbi_vet = 3,
 					spring = 1,
 					summers = 1
@@ -267,8 +255,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 6,
 					medic = 4,
 					omnia_LPF = 4,
-					phalanx_minion = 3,
-					tank_titan = 2,
 					fbi_vet = 4,
 					spring = 1,
 					summers = 1
@@ -409,6 +395,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				access = access_type_all,
 				special_type = "omnia_LPF"
 			}
+			if difficulty_index <= 6 then
+				self.unit_categories.fbi_vet = {
+					unit_types = {
+						america = {
+							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+						},
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")
+						}
+					},
+					access = access_type_all,
+					special_type = "fbi_vet"
+				}
+			else
+				self.unit_categories.fbi_vet = {
+					unit_types = {
+						america = {
+							Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+						},
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")
+						}
+					},
+					access = access_type_all,
+					special_type = "fbi_vet"
+				}
+			end
 			self.unit_categories.CS_cop_stealth_MP5 = {
 				unit_types = {
 					america = {
@@ -447,18 +460,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						}
 					},
 					access = access_type_all
@@ -478,18 +483,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						}
 					},
 					access = access_type_all
@@ -688,17 +685,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						}
 					},
 					access = access_type_all
@@ -708,17 +699,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						}
 					},
 					access = access_type_all
@@ -728,17 +713,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2"),
-							Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
 						}
 					},
 					access = access_type_all
@@ -748,17 +727,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						}
 					},
 					access = access_type_all
@@ -2019,6 +1992,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 1
 						},
 						{
+							unit = "fbi_vet",
+							freq = 0.5,
+							amount_max = 2,
+							tactics = self._tactics.CS_cop_stealth,
+							rank = 1
+						},
+						{
 							unit = "omnia_LPF",
 							freq = 0.2,
 							amount_max = 1,
@@ -2113,7 +2093,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_min = 1,
 						tactics = self._tactics.FBI_suit,
 						rank = 2
-					},
+					},					
 					{
 						unit = "CS_cop_C45_R870",
 						freq = 1,
@@ -2139,6 +2119,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						tactics = self._tactics.FBI_suit,
 						rank = 2
 					},
+					{
+						unit = "fbi_vet",
+						freq = 0.5,
+						tactics = self._tactics.FBI_suit,
+						rank = 2
+					},					
 					{
 						unit = "FBI_swat_M4",
 						freq = 1,
@@ -2200,7 +2186,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							amount_min = 1,
 							tactics = self._tactics.FBI_suit_stealth,
 							rank = 1
-						},
+						},				
 						{
 							unit = "CS_tazer",
 							freq = 1,
@@ -2290,6 +2276,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 2
 						},
 						{
+							unit = "fbi_vet",
+							freq = 0.5,
+							tactics = self._tactics.FBI_suit,
+							rank = 2
+						},							
+						{
 							unit = "omnia_LPF",
 							freq = 0.2,
 							amount_max = 1,
@@ -2316,6 +2308,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 2
 						},
 						{
+							unit = "fbi_vet",
+							freq = 0.7,
+							tactics = self._tactics.FBI_suit,
+							rank = 2
+						},							
+						{
 							unit = "omnia_LPF",
 							freq = 0.35,
 							amount_max = 1,
@@ -2341,6 +2339,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							tactics = self._tactics.FBI_suit_stealth,
 							rank = 2
 						},
+						{
+							unit = "fbi_vet",
+							freq = 0.7,
+							tactics = self._tactics.FBI_suit_stealth,
+							rank = 2
+						},							
 						{
 							unit = "omnia_LPF",
 							freq = 0.35,
@@ -2410,6 +2414,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 2
 						},
 						{
+							unit = "fbi_vet",
+							freq = 0.7,
+							tactics = self._tactics.FBI_swat_rifle_flank,
+							rank = 2
+						},						
+						{
 							unit = "FBI_swat_R870",
 							amount_min = 1,
 							amount_max = 2,
@@ -2444,6 +2454,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							tactics = self._tactics.FBI_swat_rifle_flank,
 							rank = 2
 						},
+						{
+							unit = "fbi_vet",
+							freq = 0.7,
+							tactics = self._tactics.FBI_swat_rifle_flank,
+							rank = 2
+						},							
 						{
 							unit = "FBI_swat_R870",
 							amount_min = 1,

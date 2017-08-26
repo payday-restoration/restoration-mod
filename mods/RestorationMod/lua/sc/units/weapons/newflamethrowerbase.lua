@@ -10,6 +10,11 @@ function NewFlamethrowerBase:setup_default()
 	self._bullet_class = FlameBulletBase
 end
 
+function NewFlamethrowerBase:run_and_shoot_allowed()
+	local allowed = NewFlamethrowerBase.super.run_and_shoot_allowed(self)
+	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot")
+end
+
 function NewFlamethrowerBase:_update_stats_values()
 	NewFlamethrowerBase.super._update_stats_values(self)
 	--self:setup_default()

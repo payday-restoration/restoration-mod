@@ -1383,7 +1383,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.immune_to_knock_down = true
-	self.phalanx_vip.HEALTH_INIT = 30
+	self.phalanx_vip.HEALTH_INIT = 26
 	self.phalanx_vip.headshot_dmg_mul = 1.59885
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.damage.fire_damage_mul = 0.05

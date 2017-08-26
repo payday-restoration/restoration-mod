@@ -2309,7 +2309,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						},
 						{
 							unit = "fbi_vet",
-							freq = 0.7,
+							freq = 0.5,
 							tactics = self._tactics.FBI_suit,
 							rank = 2
 						},							
@@ -2341,7 +2341,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						},
 						{
 							unit = "fbi_vet",
-							freq = 0.7,
+							freq = 0.5,
 							tactics = self._tactics.FBI_suit_stealth,
 							rank = 2
 						},							

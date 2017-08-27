@@ -210,6 +210,19 @@ end)
 
 end
 
+local m = LevelsTweakData.LevelType.Murky
+local ai_type = tweak_data.levels:get_ai_group_type()
+if ai_type == m then
+
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Murky Assault in Progress",
+			["hud_assault_alpha"] = "MURKY ASSAULT"
+		})
+	end)
+
+end
+
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		--Woo Hints--

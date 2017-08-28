@@ -126,6 +126,13 @@
 		<hook file="sc/modifiers/modifierdozerminigun.lua" source_file="lib/modifiers/modifierdozerminigun"/>
 		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
 		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
+		<!--Hopefully this makes mutators used more-->
+		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
+		<hook file="sc/mutators/mutatorenemydamage.lua" source_file="lib/mutators/mutatorenemydamage"/>
+		<hook file="sc/mutators/mutatorenemyhealth.lua" source_file="lib/mutators/mutatorenemyhealth"/>
+		<hook file="sc/mutators/mutatorfriendlyfire.lua" source_file="lib/mutators/mutatorfriendlyfire"/>
+		<hook file="sc/mutators/mutatorshielddozers.lua" source_file="lib/mutators/mutatorshielddozers"/>
+		<hook file="sc/mutators/mutatorhydra.lua" source_file="lib/mutators/mutatorhydra"/>
 		<!--Experimental edits-->
 		<hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"/>
 		<!--Ingame Manual, don't fuck this up-->

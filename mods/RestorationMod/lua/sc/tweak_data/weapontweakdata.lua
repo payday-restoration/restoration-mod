@@ -5744,7 +5744,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		value = 1,
 		reload = 11
 	}
-	self.rota.upgrade_blocks = nil
+	self.rota.upgrade_blocks = {
+		weapon = {
+			"clip_ammo_increase"
+		}
+	}
 	self.rota.AMMO_MAX = 60
 	self.rota.AMMO_PICKUP = self:_pickup_chance(60, 1)
 	self.rota.spread.standing = 3.5

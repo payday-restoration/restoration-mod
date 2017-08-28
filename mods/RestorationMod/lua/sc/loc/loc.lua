@@ -252,6 +252,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Combat Engineer",
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
+		
+		--Mutators
+		["menu_mutators_achievement_disabled"] = "",
 
 		--Crime spree modifier changes
 		["menu_cs_next_modifier_stealth"] = "",

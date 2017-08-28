@@ -253,8 +253,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 
-		--Gensec replacer instead of heavies
-		["menu_cs_modifier_heavies"] = "FBI SWATs with rifles are replaced with Gensec Elites.",
+		--Crime spree modifier changes
+		["menu_cs_next_modifier_stealth"] = "",
+		["menu_cs_next_modifier_forced"] = "",
+		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 15% chance to become a Skulldozer.",
+		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become a squad leader.",
+		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 15% chance to become a Titan Shotgunner.",
+		["menu_cs_modifier_dozer_medic"] = "All HRT units have an additional 15% chance to become an OMNIA LPF.",
+		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 15% chance to become a Titan Bulldozer.",
+		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 15% chance to become a Titan Shield.",
 
 		["bm_menu_skill"] = "Crew Perks",
 

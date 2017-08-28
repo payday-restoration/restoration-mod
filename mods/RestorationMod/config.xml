@@ -120,6 +120,11 @@
 		<hook file="sc/tweak_data/tipstweakdata.lua" source_file="lib/tweak_data/tipstweakdata"/>
 		<hook file="sc/tweak_data/achievementstweakdata.lua" source_file="lib/tweak_data/achievementstweakdata"/>
 		<hook file="sc/units/load/enemyunitgroups.lua" source_file="lib/units/load/enemyunitgroups"/>
+		<hook file="sc/managers/crimespreemanager.lua" source_file="lib/managers/crimespreemanager"/>
+		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
+		<hook file="sc/modifiers/modifierdozerminigun.lua" source_file="lib/modifiers/modifierdozerminigun"/>
+		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
+		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
 		<!--Experimental edits-->
 		<hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"/>
 		<!--Ingame Manual, don't fuck this up-->

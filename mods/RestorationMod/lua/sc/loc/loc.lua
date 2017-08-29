@@ -252,11 +252,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Combat Engineer",
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
-		
+				
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "",
+		["menu_mutators_achievement_disabled"] = "Some mutators disable the earning of achievements and most trophies! Also level completions may not accumulate!",
+		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
 
 		--Crime spree modifier changes
+		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_stealth"] = "",
 		["menu_cs_next_modifier_forced"] = "",
 		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 15% chance to become a Skulldozer.",

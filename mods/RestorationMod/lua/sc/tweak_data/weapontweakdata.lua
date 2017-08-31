@@ -2375,7 +2375,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		1
 	}
 	self.new_m4.stats = {
-		damage = 23,
+		damage = 29,
 		spread = 14,
 		recoil = 19,
 		spread_moving = 7,
@@ -2410,7 +2410,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_17.kick.crouching = self.glock_17.kick.standing
 	self.glock_17.kick.steelsight = self.glock_17.kick.standing
 	self.glock_17.stats = {
-		damage = 18,
+		damage = 27,
 		spread = 15,
 		recoil = 21,
 		spread_moving = 7,
@@ -2440,7 +2440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mp9.kick.crouching = self.new_m4.kick.standing
 	self.mp9.kick.steelsight = self.new_m4.kick.standing
 	self.mp9.stats = {
-		damage = 17,
+		damage = 29,
 		spread = 12,
 		recoil = 23,
 		spread_moving = 8,
@@ -2509,7 +2509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_18c.kick.crouching = self.new_m4.kick.standing
 	self.glock_18c.kick.steelsight = self.new_m4.kick.standing
 	self.glock_18c.stats = {
-		damage = 19,
+		damage = 29,
 		spread = 16,
 		recoil = 20,
 		spread_moving = 9,
@@ -2539,7 +2539,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.amcar.kick.crouching = self.new_m4.kick.standing
 	self.amcar.kick.steelsight = self.new_m4.kick.standing
 	self.amcar.stats = {
-		damage = 21,
+		damage = 27,
 		spread = 14,
 		recoil = 21,
 		spread_moving = 6,
@@ -3092,7 +3092,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b92fs.kick.crouching = self.glock_17.kick.standing
 	self.b92fs.kick.steelsight = self.glock_17.kick.standing
 	self.b92fs.stats = {
-		damage = 19,
+		damage = 28,
 		spread = 16,
 		recoil = 20,
 		spread_moving = 5,
@@ -4084,7 +4084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_b92fs.fire_mode_data.fire_rate = 0.075
 	self.x_b92fs.single.fire_rate = 0.075
 	self.x_b92fs.stats = {
-		damage = 19,
+		damage = 28,
 		spread = 16,
 		recoil = 20,
 		spread_moving = 5,
@@ -4641,7 +4641,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g17.fire_mode_data.fire_rate = 0.075
 	self.x_g17.single.fire_rate = 0.075
 	self.x_g17.stats = {
-		damage = 18,
+		damage = 27,
 		spread = 15,
 		recoil = 21,
 		spread_moving = 7,

@@ -70,11 +70,6 @@ function DLCTweakData:init(...)
 		},
 		{
 			type_items = "weapon_mods",
-			item_entry = "wpn_fps_upg_ammo_65grendel",
-			amount = 3
-		},
-		{
-			type_items = "weapon_mods",
 			item_entry = "wpn_fps_upg_ammo_p",
 			amount = 3
 		},

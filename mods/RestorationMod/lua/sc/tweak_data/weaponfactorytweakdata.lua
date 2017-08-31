@@ -2447,7 +2447,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",
 			stats = {
 				value = 1,
-				damage = 5
+				damage = 7
 			},
 			forbids = {
 				"wpn_fps_m4_upper_reciever_round_vanilla",
@@ -3381,6 +3381,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_m_straight_vanilla",
 			"wpn_fps_m16_s_solid",
 			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_ass_m16_o_handle_sight"
 		}
 		self.wpn_fps_ass_amcar.uses_parts = {
@@ -3392,6 +3393,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_m_straight_vanilla",
 			"wpn_fps_m4_uupg_m_std",
 			"wpn_fps_m16_s_solid",
+			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_upg_m4_g_standard_vanilla",
 			"wpn_fps_upg_o_specter",
 			"wpn_fps_upg_o_aimpoint",
@@ -8634,7 +8636,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 7,
 					recoil = 1,
 					concealment = -1,
-					damage = 1
+					damage = 2
 				},
 			},
 			wpn_upg_o_marksmansight_rear = {
@@ -8835,6 +8837,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
+				damage = 1,
 				spread_moving = -2
 			},
 			animations = {
@@ -21112,7 +21115,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_upper_reciever_ballos/wpn_fps_upg_ass_m4_upper_reciever_ballos",
 			stats = {
 				value = 1,
-				damage = 5,
+				damage = 7,
 				recoil = -1,
 				spread = 1
 			},
@@ -21137,7 +21140,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_upper_reciever_core/wpn_fps_upg_ass_m4_upper_reciever_core",
 			stats = {
 				value = 1,
-				damage = 5,
+				damage = 7,
 				recoil = 1,
 				spread = -1
 			},
@@ -28222,7 +28225,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_m_standard",
 			bullet_objects = {prefix = "g_bullet_", amount = 2},
-			custom_stats = {reload_speed_mult = 0.65},
+			custom_stats = {reload_speed_mult = 0.75},
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_sho_boot_em_extra = {
@@ -33479,7 +33482,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_65grendel = {
-			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_65grendel",
 			desc_id = "bm_wp_upg_a_65grendel_desc",
@@ -33492,7 +33494,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			dlc = "sc",
 			stats = {
 				value = 10,
-				damage = 8
+				damage = 0
 			},
 			internal_part = true
 		}
@@ -33522,7 +33524,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_p = {
-			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_p",
 			desc_id = "bm_wp_upg_a_p_desc",
@@ -33535,7 +33536,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			dlc = "sc",
 			stats = {
 				value = 3,
-				damage = 10
+				damage = 0
 			},
 			internal_part = true
 		}

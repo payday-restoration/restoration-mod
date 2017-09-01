@@ -2,9 +2,13 @@
  "name" : "RestorationMod",
  "description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
  "author" : "Martini, DoktorAkcel, SC, & The Restoration Mod Crew",
- "contact" : "No information given",
+ "contact" : "Join the official Steam group, or follow us on Twitter!\nTwitter: @RestorationCrew",
  "version" : "6.05",
  "priority" : 45,
+ "blt_version" : 2,
+ "image" : "res.png",
+ "undisablable" : false,
+ "disable_safe_mode" : false,
  "pre_hooks" : [
 		{ "hook_id" : "lib/entry", "script_path" : "Core.lua" }
     ],

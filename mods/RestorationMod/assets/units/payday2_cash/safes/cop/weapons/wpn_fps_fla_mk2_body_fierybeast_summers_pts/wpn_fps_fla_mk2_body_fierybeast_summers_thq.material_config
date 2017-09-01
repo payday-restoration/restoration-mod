@@ -1,0 +1,26 @@
+<materials version="3" group="weapon_group">
+
+    <material name="body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/body_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/body_nm" mip="1"/>
+    </material>
+	
+    <material version="2" unique="true" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:FPS:NORMALMAP" name="glass">
+        <variable value="2 1 1" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/glass_df" mip="1"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/glass_nm" mip="1"/>
+    </material>
+
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df" mip="1"/>
+        <bump_normal_texture file="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_pts/dragon_nm" mip="1"/>
+    </material>
+	
+    <material name="mtr_meter" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/body_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/body_nm" mip="1"/>
+    </material>
+	
+</materials>

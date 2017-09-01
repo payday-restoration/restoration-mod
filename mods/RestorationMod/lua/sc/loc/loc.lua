@@ -608,7 +608,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Deep Pockets--
 		["menu_thick_skin_beta_sc"] = "Deep Pockets",
-		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\n\Increases the armor of all ballistic vests by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
+		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the armor of all ballistic vests by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
 
 		--Duck and Cover--
 		["menu_sprinter_beta_sc"] = "Duck and Cover",
@@ -763,25 +763,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##25%.##",
 		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
 		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
-		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\n\You no longer have a stability penalty with Akimbo weapons.\n\n\Deck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%##.",
+		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\nYou no longer have a stability penalty with Akimbo weapons.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
-		["menu_deck2_7_desc_sc"] = "You can now use light machine guns and submachine guns to spread panic among your enemies.\n\n\Panic will make enemies go into short bursts of uncontrollable fear.",
-		["menu_deck2_9_desc_sc"] = "You gain an additional ##20%## more health.\n\n\You now ##always revive with maximum health##.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\n\Increases your shout distance by ##25%##.\n\n\Note: Crew perks do not stack.",
-		["menu_deck1_5_desc_sc"] = "You gain ##10%## more health.\n\nYour crew gains ##5%## more health.\n\n\Note: Crew perks do not stack.",
-		["menu_deck1_7_desc_sc"] = "You gain ##15%## more armor.\n\nYour crew gains ##5%## more armor.\n\n\Note: Crew perks do not stack.",
-		["menu_deck4_9_desc_sc"] = "The time between swapping weapons is reduced to for you by ##80%.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck2_7_desc_sc"] = "You can now use light machine guns and submachine guns to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.",
+		["menu_deck2_9_desc_sc"] = "You gain an additional ##20%## more health.\n\nYou now ##always revive with maximum health##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",
+		["menu_deck1_5_desc_sc"] = "You gain ##10%## more health.\n\nYour crew gains ##5%## more health.\n\nNote: Crew perks do not stack.",
+		["menu_deck1_7_desc_sc"] = "You gain ##15%## more armor.\n\nYour crew gains ##5%## more armor.\n\nNote: Crew perks do not stack.",
+		["menu_deck4_9_desc_sc"] = "The time between swapping weapons is reduced to for you by ##80%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
-		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\n\Note: Crew perks do not stack.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
 		["menu_deck3_1_desc_sc"] = "You gain an additional ##10%## more armor.",
-		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.\n\n\Your armor is increased by ##10%## for ballistic vests.",
-		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.\n\n\Your armor is increased by ##10%## for ballistic vests.",
-		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\n\Your armor is increased by ##20%## for ballistic vests.",
-		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\n\You are now ##immune to suppression.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.\n\nYour armor is increased by ##10%## for ballistic vests.",
+		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.\n\nYour armor is increased by ##10%## for ballistic vests.",
+		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nYour armor is increased by ##20%## for ballistic vests.",
+		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\nYou are now ##immune to suppression.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Burglar--
 		["menu_deck7_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
@@ -791,7 +791,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "Standing still and crouching increases your armor recovery rate by ##10%.##\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
-		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\n\Cannot occur more than once every ##4## seconds.",
+		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\nCannot occur more than once every ##4## seconds.",
 		["menu_deck10_7_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.",
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
@@ -800,40 +800,40 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_3_desc_sc"] = "When you are within medium range of an enemy, you receive an additional ##5%## less damage from enemies.",
 		["menu_deck8_5_desc_sc"] = "When you are within medium range of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
 		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more, you an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
-		["menu_deck8_9_desc_sc"] = "Striking an enemy with your melee weapon regenerates ##10%## of your health. This cannot occur more than once every ##10## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck8_9_desc_sc"] = "Striking an enemy with your melee weapon regenerates ##10%## of your health. This cannot occur more than once every ##10## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##10%## health.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy at medium range regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy at medium range has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy at medium range has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\n\This effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\n\You lose ##70## armor while wearing the Flak Jacket.",
-		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.\n\n\You gain ##20%## more health.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
+		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##20%## more health.",
 		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds. ",
-		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\n\You gain ##20%## more health.",
-		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##20%## more health.",
+		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--THIS IS WAR BABY--
-		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##50%.##\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
+		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##50%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Anarchist--
 		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
 		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##55%## armor.",
 		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##60%## armor.",
-		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you ##10## armor - This can only occur once every ##2## seconds.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you ##10## armor - This can only occur once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
 		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with ##50%## of all damage taken for ##5## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
 		["menu_deck17_3_desc_sc"] = "You gain ##5%## more armor.",
 		["menu_deck17_5_desc_sc"] = "You gain ##5%## more armor.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
-		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck17_9_desc_sc"] = "You gain ##10%## more health.\n\nFor every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "Your chance to dodge is increased by ##5%##.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke grenade, you and your allies automatically avoid ##10%## of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nAfter the smoke dissipates, the Smoke Bomb is on a cooldown for ##30## seconds, but killing enemies will reduce this cooldown by ##1## second.",
-		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\n\Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 	
 	})
 end)

@@ -158,7 +158,7 @@ function UpgradesTweakData:_init_pd2_values()
 		}
 	}
 	self.values.team.crew_ai_ap_ammo = {false}
-
+	
 	--[[   MASTERMIND   ]]--
 		--{
 			--[[   MEDIC SUBTREE   ]]--
@@ -260,7 +260,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.knock_down = {0.1, 0.25}
 	
 				--Body Expertise
-				self.values.weapon.automatic_head_shot_add = {0.3, 0.9}
+				self.values.weapon.automatic_head_shot_add = {0.3, 1}
 
 			--}
 		--}

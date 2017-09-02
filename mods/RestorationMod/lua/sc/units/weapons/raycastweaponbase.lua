@@ -446,6 +446,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		local picked_up, add_amount
 		picked_up, add_amount = _add_ammo(self, ratio, add_amount_override)
+		
+		if self.AKIMBO then
+			local akimbo_rounding = self:get_ammo_total() % 2 + #self._fire_callbacks
+	
+			if akimbo_rounding > 0 then
+				_add_ammo(self, nil, akimbo_rounding)
+			end
+		end		
+		
 		for _, gadget in ipairs(self:get_all_override_weapon_gadgets()) do
 			if gadget and gadget.ammo_base then
 				local p, a = _add_ammo(gadget:ammo_base(), ratio, add_amount_override)

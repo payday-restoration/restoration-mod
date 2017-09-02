@@ -497,14 +497,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				mvector3.normalize(mvec_1)
 				mvector3.set(mvec_2, self._unit:rotation():y())
 				local from_behind = mvector3.dot(mvec_1, mvec_2) >= 0
-					if tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
-						local achievements = tweak_data.achievement.enemy_melee_kill_achievements or {}
-						local melee_type = tweak_data.blackmarket.melee_weapons[attack_data.name_id].type
-						local enemy_type = self._unit:base()._tweak_table
-						local unit_weapon = self._unit:base()._default_weapon_id
-						local health_ratio = managers.player:player_unit():character_damage():health_ratio() * 100
-						local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass
-						for achievement, achievement_data in pairs(achievements) do
+				if tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
+					local achievements = tweak_data.achievement.enemy_melee_kill_achievements or {}
+					local melee_type = tweak_data.blackmarket.melee_weapons[attack_data.name_id].type
+					local enemy_type = self._unit:base()._tweak_table
+					local unit_weapon = self._unit:base()._default_weapon_id
+					local health_ratio = managers.player:player_unit():character_damage():health_ratio() * 100
+					local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass = nil
+					for achievement, achievement_data in pairs(achievements) do
 						melee_pass = not achievement_data.melee_id or achievement_data.melee_id == attack_data.name_id
 						melee_weapons_pass = not achievement_data.melee_weapons or table.contains(achievement_data.melee_weapons, attack_data.name_id)
 						type_pass = not achievement_data.melee_type or melee_type == achievement_data.melee_type
@@ -513,12 +513,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						behind_pass = not achievement_data.from_behind or from_behind
 						diff_pass = not achievement_data.difficulty or table.contains(achievement_data.difficulty, Global.game_settings.difficulty)
 						health_pass = not achievement_data.health or health_ratio <= achievement_data.health
-						if achievement_data.level_id then
-							level_pass = (managers.job:current_level_id() or "") == achievement_data.level_id
-						end
+						level_pass = not achievement_data.level_id or (managers.job:current_level_id() or "") == achievement_data.level_id
 						job_pass = not achievement_data.job or managers.job:current_real_job_id() == achievement_data.job
 						jobs_pass = not achievement_data.jobs or table.contains(achievement_data.jobs, managers.job:current_real_job_id())
-						enemy_count_pass = not achievement_data.enemy_kills or managers.statistics:session_enemy_killed_by_type(achievement_data.enemy_kills.enemy, "melee") >= achievement_data.enemy_kills.count
+						enemy_count_pass = not achievement_data.enemy_kills or achievement_data.enemy_kills.count <= managers.statistics:session_enemy_killed_by_type(achievement_data.enemy_kills.enemy, "melee")
 						cop_pass = not achievement_data.is_cop or is_cop
 						gangster_pass = not achievement_data.is_gangster or is_gangster
 						civilian_pass = not achievement_data.is_not_civilian or not is_civlian
@@ -529,7 +527,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 							for _, enemy in pairs(achievement_data.enemies) do
 								if enemy == enemy_type then
 									enemy_pass = true
-								else
+									break
 								end
 							end
 						end

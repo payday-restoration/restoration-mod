@@ -2324,7 +2324,7 @@ end
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = true
 		self[wep_id].has_description = false
@@ -6121,7 +6121,112 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 11
 	}
 	self.x_chinchilla.panic_suppression_chance = 0.0
-
+	self.breech.timers = {
+		reload_not_empty = 1.55,
+		reload_empty = 2.1,
+		unequip = 0.5,
+		equip = 0.35
+	}	
+	self.breech.AMMO_MAX = 150
+	self.breech.CLIP_AMMO_MAX = 12
+	self.breech.AMMO_PICKUP = self:_pickup_chance(150, 1)
+	self.breech.fire_mode_data.fire_rate = 0.06666666666
+	self.breech.single.fire_rate = 0.06666666666
+	self.breech.spread.standing = 3.5
+	self.breech.spread.crouching = 2.5
+	self.breech.spread.steelsight = 1
+	self.breech.spread.moving_standing = 4
+	self.breech.spread.moving_crouching = 3
+	self.breech.spread.moving_steelsight = 2
+	self.breech.kick.standing = self.glock_17.kick.standing
+	self.breech.kick.crouching = self.glock_17.kick.standing
+	self.breech.kick.steelsight = self.glock_17.kick.standing
+	self.breech.stats = {
+		damage = 34,
+		spread = 15,
+		recoil = 24,
+		spread_moving = 9,
+		zoom = 3,
+		concealment = 30,
+		suppression = 9,
+		alert_size = 9,
+		extra_ammo = 6,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 11
+	}
+	self.breech.panic_suppression_chance = 0.0	
+	self.ching.categories = {"snp"}
+	self.ching.FIRE_MODE = "single"
+	self.ching.fire_mode_data = {fire_rate = 0.6}
+	self.ching.CAN_TOGGLE_FIREMODE = false
+	self.ching.single = {fire_rate = 0.6}	
+	self.ching.has_description = true
+	self.ching.desc_id = "bm_ap_weapon_sc_desc"
+	self.ching.CLIP_AMMO_MAX = 8
+	self.ching.AMMO_MAX = 40
+	self.ching.AMMO_PICKUP = self:_pickup_chance(40, 2)
+	self.ching.CAN_TOGGLE_FIREMODE = false
+	self.ching.spread.standing = 3.5
+	self.ching.spread.crouching = 2.5
+	self.ching.spread.steelsight = 1
+	self.ching.spread.moving_standing = 4
+	self.ching.spread.moving_crouching = 3
+	self.ching.spread.moving_steelsight = 2
+	self.ching.kick.standing = self.r870.kick.standing
+	self.ching.kick.crouching = self.r870.kick.standing
+	self.ching.kick.steelsight = self.r870.kick.standing
+	self.ching.stats = {
+		damage = 172,
+		spread = 17,
+		recoil = 14,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 16,
+		suppression = 4,
+		alert_size = 4,
+		extra_ammo = 6,
+		total_ammo_mod = 100,
+		value = 9,
+		reload = 11
+	}
+	self.ching.armor_piercing_chance = 1
+	self.ching.can_shoot_through_enemy = true
+	self.ching.can_shoot_through_shield = true
+	self.ching.can_shoot_through_wall = true	
+	self.ching.stats_modifiers = nil
+	self.ching.panic_suppression_chance = 0.0	
+	self.erma.CLIP_AMMO_MAX = 32
+	self.erma.AMMO_MAX = 120
+	self.erma.AMMO_PICKUP = self:_pickup_chance(120, 1)
+	self.erma.fire_mode_data.fire_rate = 0.10909090909
+	self.erma.auto.fire_rate = 0.10909090909
+	self.erma.CAN_TOGGLE_FIREMODE = true
+	self.erma.spread.standing = 3.5
+	self.erma.spread.crouching = 2.5
+	self.erma.spread.steelsight = 1
+	self.erma.spread.moving_standing = 4
+	self.erma.spread.moving_crouching = 3
+	self.erma.spread.moving_steelsight = 2
+	self.erma.kick.standing = self.new_m4.kick.standing
+	self.erma.kick.crouching = self.new_m4.kick.standing
+	self.erma.kick.steelsight = self.new_m4.kick.standing
+	self.erma.stats = {
+		damage = 35,
+		spread = 18,
+		recoil = 20,
+		spread_moving = 8,
+		zoom = 1,
+		concealment = 25,
+		suppression = 8,
+		alert_size = 8,
+		extra_ammo = 6,
+		total_ammo_mod = 100,
+		value = 5,
+		reload = 11
+	}
+	self.erma.panic_suppression_chance = 0.1
+	
 	--Custom weapons below--
 
 	if self.mpx then

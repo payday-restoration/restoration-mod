@@ -1387,6 +1387,72 @@ function BlackMarketTweakData:_init_weapon_skins()
 			}
 		}
 	}
+	self.weapon_skins.ching_wwt = {
+		name_id = "bm_wskn_ching_wwt",
+		desc_id = "bm_wskn_ching_wwt_desc",
+		weapon_id = "ching",
+		rarity = "rare",
+		bonus = "spread_p1",
+		reserve_quality = true,
+		texture_bundle_folder = "cash/safes/wwt",
+		base_gradient = Idstring("units/payday2_cash/safes/wwt/base_gradient/base_wwt_008_df"),
+		pattern_gradient = Idstring("units/payday2_cash/safes/ast/pattern_gradient/gradient_ast_001_df"),
+		pattern = Idstring("units/payday2_cash/safes/smosh/pattern/smosh_pattern_021_b_df"),
+		default_blueprint = {
+			"wpn_fps_ass_ching_body_standard",
+			"wpn_fps_ass_ching_bolt_standard",
+			"wpn_fps_ass_ching_dh_standard",
+			"wpn_fps_ass_ching_extra_swiwel",
+			"wpn_fps_ass_ching_extra1_swiwel",
+			"wpn_fps_ass_ching_m_standard",
+			"wpn_fps_ass_ching_s_standard",
+			"wpn_fps_ass_ching_s_pouch",
+			"wpn_fps_upg_o_acog",
+			"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+			"wpn_fps_ass_ching_b_standard",
+			"wpn_fps_ass_ching_fg_railed"
+		},
+		parts = {
+			wpn_fps_ass_ching_b_standard = {[Idstring("mat_ching_body"):key()] = {
+				sticker = Idstring("units/payday2_cash/safes/grunt/sticker/grunt_sticker_011_df"),
+				uv_offset_rot = Vector3(0.406869, 1.37038, 1.60788),
+				uv_scale = Vector3(3.59991, 1.64524, 1)
+			}},
+			wpn_fps_ass_ching_s_standard = {[Idstring("mat_ching_body"):key()] = {
+				sticker = Idstring("units/payday2_cash/safes/wwt/sticker/wwt_sticker_004_b_df"),
+				uv_offset_rot = Vector3(-0.035, 0.881156, 0),
+				uv_scale = Vector3(1.02547, 1.40687, 1)
+			}},
+			wpn_fps_ass_ching_fg_standard = {[Idstring("mat_ching_body"):key()] = {pattern = Idstring("units/payday2_cash/safes/default/pattern/pattern_default_df")}},
+			wpn_fps_ass_ching_body_standard = {[Idstring("mat_ching_receiver"):key()] = {
+				base_gradient = Idstring("units/payday2_cash/safes/wac/base_gradient/base_wac_006_b_df"),
+				uv_offset_rot = Vector3(0, 0, 3.09139),
+				uv_scale = Vector3(1, 1, 0.215359),
+				pattern = Idstring("units/payday2_cash/safes/default/pattern/pattern_default_df")
+			}},
+			wpn_fps_ass_ching_bolt_standard = {[Idstring("mat_ching_body"):key()] = {pattern = Idstring("units/payday2_cash/safes/default/pattern/pattern_default_df")}},
+			wpn_fps_ass_ching_s_pouch = {
+				[Idstring("mtr_pouch"):key()] = {
+					base_gradient = Idstring("units/payday2_cash/safes/wac/base_gradient/base_wac_018_df"),
+					sticker = Idstring("units/payday2_cash/safes/wwt/sticker/wwt_sticker_004_df"),
+					uv_scale = Vector3(1.21217, 1.1685, 1),
+					uv_offset_rot = Vector3(0.330551, 1.07465, 4.72475),
+					pattern = Idstring("units/payday2_cash/safes/default/pattern/pattern_default_df")
+				},
+				[Idstring("mat_ching_body"):key()] = {
+					uv_offset_rot = Vector3(-0.0381166, 0.880473, 0),
+					sticker = Idstring("units/payday2_cash/safes/wwt/sticker/wwt_sticker_004_b_df"),
+					uv_scale = Vector3(1.01782, 1.4152, 1)
+				}
+			},
+			wpn_fps_upg_o_acog = {[Idstring("mtr_acog"):key()] = {base_gradient = Idstring("units/payday2_cash/safes/wwt/base_gradient/base_wwt_006_df")}}
+		},
+		types = {sight = {
+			pattern_gradient = Idstring("units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"),
+			base_gradient = Idstring("units/payday2_cash/safes/cola/base_gradient/base_cola_005_df"),
+			pattern = Idstring("units/payday2_cash/safes/default/pattern/pattern_default_df")
+		}}
+	}	
 end
 
 local melee_weapons_old = BlackMarketTweakData._init_melee_weapons
@@ -2527,6 +2593,31 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.agave.repeat_expire_t = 0.6
 	self.melee_weapons.agave.stats.concealment = 27
 	self.melee_weapons.agave.melee_damage_delay = 0.1
+
+	--Not one but TWO pokers--
+	self.melee_weapons.push.expire_t = 0.9
+	self.melee_weapons.push.speed_mult = 1.2
+	self.melee_weapons.push.repeat_expire_t = 0.6
+	self.melee_weapons.push.melee_damage_delay = 0.125
+	self.melee_weapons.push.stats.min_damage = 6
+	self.melee_weapons.push.stats.max_damage = 9
+	self.melee_weapons.push.stats.min_damage_effect = 0.3
+	self.melee_weapons.push.stats.max_damage_effect = 0.5
+	self.melee_weapons.push.stats.charge_time = 1.2
+	self.melee_weapons.push.stats.range = 140
+	self.melee_weapons.push.stats.concealment = 29
+
+	self.melee_weapons.grip.expire_t = 0.9
+	self.melee_weapons.grip.speed_mult = 1.2
+	self.melee_weapons.grip.repeat_expire_t = 0.6
+	self.melee_weapons.grip.melee_damage_delay = 0.125
+	self.melee_weapons.grip.stats.min_damage = 6
+	self.melee_weapons.grip.stats.max_damage = 9
+	self.melee_weapons.grip.stats.min_damage_effect = 0.3
+	self.melee_weapons.grip.stats.max_damage_effect = 0.5
+	self.melee_weapons.grip.stats.charge_time = 1.2
+	self.melee_weapons.grip.stats.range = 140
+	self.melee_weapons.grip.stats.concealment = 29		
 end	
 
 end

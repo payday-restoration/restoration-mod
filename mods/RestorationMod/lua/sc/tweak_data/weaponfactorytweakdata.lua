@@ -778,6 +778,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_coal = {
 					translation = Vector3(0, 5, -4),
 					rotation = Rotation(0, 0, 0)
+				},
+				wpn_fps_ass_ching = {
+					translation = Vector3(0, -10, -2.77),
+					rotation = Rotation(0, 0, 0)
+				},
+				wpn_fps_smg_erma = {
+					translation = Vector3(0, 5, -3.85),
+					rotation = Rotation(0, 0, 0)					
 				}
 			},
 			forbids = {
@@ -1611,6 +1619,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_coal = {
 					translation = Vector3(0, 15, -4),
 					rotation = Rotation(0, 0, 0)
+				},
+				wpn_fps_ass_ching = {
+					translation = Vector3(0, -10, -2.77),
+					rotation = Rotation(0, 0, 0)
+				},
+				wpn_fps_smg_erma = {
+					translation = Vector3(0, 5, -3.85),
+					rotation = Rotation(0, 0, 0)				
 				}
 			},
 			forbids = {
@@ -2210,6 +2226,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				wpn_fps_pis_chinchilla = {
 					translation = Vector3(0, 5, -0.75)
+				},
+				wpn_fps_pis_breech = {
+					translation = Vector3(0, 5, -0.65)
 				},
 				wpn_fps_x_deagle = {
 					translation = Vector3 (-11.1, 10, 2.5), 
@@ -3056,7 +3075,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_b",
 			unit = "units/payday2/weapons/wpn_fps_pis_g18c_pts/wpn_fps_pis_g18c_b_standard",
 			stats = {value = 1},
-			animations = {reload = "reload", fire = "recoil"}
+			animations = {
+				fire = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			}
 		}
 		self.parts.wpn_fps_pis_g18c_co_1 = {
 			pcs = {30, 40},
@@ -6486,9 +6509,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_body_standard",
 			stats = {value = 1},
 			animations = {
-				fire = "recoil",
 				reload = "reload",
-				fire_steelsight = "recoil"
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			},
 			adds = {
 				"wpn_fps_pis_deagle_lock"
@@ -6684,9 +6708,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_deagle = {}
 		self.wpn_fps_pis_deagle.unit = "units/payday2/weapons/wpn_fps_pis_deagle/wpn_fps_pis_deagle"
 		self.wpn_fps_pis_deagle.animations = {
-			fire = "recoil",
 			reload = "reload",
-			fire_steelsight = "recoil"
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_deagle.optional_types = {
 			"barrel_ext",
@@ -7226,9 +7251,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_upg_o_marksmansight_front = {a_obj = "a_ol"}
 			},
 			animations = {
-				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				reload = "reload",
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_1911_b_standard = {
@@ -7241,9 +7267,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_pis_1911_o_standard"
 			},
 			animations = {
-				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				reload = "reload",
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_1911_b_vented = {
@@ -7268,9 +7295,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_pis_1911_o_standard"
 			},
 			animations = {
-				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				reload = "reload",
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_1911_body_standard = {
@@ -7431,7 +7459,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"gadget",
 			"sight"
 		}
-		self.wpn_fps_pis_1911.animations = {fire = "recoil", reload = "reload"}
+		self.wpn_fps_pis_1911.animations = {
+			reload = "reload",
+			fire = "recoil",
+			magazine_empty = "last_recoil"
+		}
 		self.wpn_fps_pis_1911.override = {
 			wpn_upg_o_marksmansight_rear = {
 				a_obj = "a_o",
@@ -8599,9 +8631,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_b_standard",
 			stats = {value = 1},
 			animations = {
-				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				reload = "reload",
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_g17_body_standard = {
@@ -8843,7 +8876,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_beretta_sl_std = {
@@ -8855,7 +8889,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_beretta_body_beretta.third_unit = "units/payday2/weapons/wpn_third_pis_b92fs_pts/wpn_third_pis_beretta_body_beretta"
@@ -8874,7 +8909,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_beretta.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload"
+			reload = "reload",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_beretta.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_pis_beretta.adds = {
@@ -9432,7 +9468,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_usp_b_expert = {
@@ -9455,7 +9492,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			},
 			dlc = "pd2_clan"
 		}
@@ -9480,7 +9518,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			},
 			dlc = "pd2_clan"
 		}
@@ -9631,7 +9670,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_g22c_b_long = {
@@ -9655,7 +9695,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_g22c_b_standard.third_unit = "units/payday2/weapons/wpn_third_pis_g22c_pts/wpn_third_pis_g22c_b_standard"
@@ -9666,7 +9707,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_g22c.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload"
+			reload = "reload",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_g22c.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_pis_g22c.override = {
@@ -9978,12 +10020,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 4,
 				concealment = -1,
+				reload = -2,
 				extra_ammo = 10
 			},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
 			},
+			custom_stats = {reload_speed_mult = 0.85},
 			dlc = "armored_transport"
 		}
 		self.parts.wpn_fps_smg_m45_b_standard = {
@@ -10608,7 +10652,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"				
 			},
 			dlc = "armored_transport"
 		}
@@ -10622,7 +10667,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_ppk_body_standard = {
@@ -10691,7 +10737,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_ppk.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload"
+			reload = "reload",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_ppk.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_pis_ppk.adds = {
@@ -11242,7 +11289,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_p226_b_equinox = {
@@ -11273,7 +11321,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_p226_b_long = {
@@ -11304,7 +11353,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_p226_body_standard = {
@@ -11467,7 +11517,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_p226.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload"
+			reload = "reload",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_p226.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_pis_p226.override = {
@@ -16677,7 +16728,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				recoil = 1
 			},
 			dlc = "pd2_clan",
-			animations = {reload = "reload", fire = "recoil"}
+			animations = {
+				reload = "reload", 
+				fire = "recoil",
+				magazine_empty = "last_recoil"
+			}
 		}
 		self.parts.wpn_fps_pis_g26_b_standard = {
 			type = "slide",
@@ -16685,7 +16740,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_b",
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_pis_g26_pts/wpn_fps_pis_g26_b_standard",
 			stats = {value = 1},
-			animations = {reload = "reload", fire = "recoil"}
+			animations = {
+				reload = "reload", 
+				fire = "recoil",
+				magazine_empty = "last_recoil"
+			}
 		}
 		self.parts.wpn_fps_pis_g26_body_custom = {
 			pcs = {
@@ -17091,14 +17150,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				animations = {
 					reload = "reload_right",
 					reload_left = "reload_left",
-					fire = "recoil"
+					fire = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_g26_b_custom = {
 				animations = {
 					reload = "reload_right",
 					reload_left = "reload_left",
-					fire = "recoil"
+					fire = "recoil",
+					magazine_empty = "last_recoil"				
 				}
 			}
 		}
@@ -17188,7 +17249,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_1911_b_long = {
@@ -17196,7 +17258,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_1911_b_vented = {
@@ -17204,7 +17267,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_1911_m_big = {
@@ -17333,7 +17397,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_beretta_sl_brigadier = {
@@ -17341,7 +17406,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			}
 		}
@@ -17396,7 +17462,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire = "recoil",
 			reload = "reload_right",
 			reload_left = "reload_left",
-			fire_steelsight = "recoil"
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_x_deagle.optional_types = {
 			"barrel_ext",
@@ -17464,7 +17531,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			}
 		}
@@ -18033,7 +18101,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				reload = "reload",
 				reload_not_empty = "reload_not_empty",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_c96_nozzle = {
@@ -18097,7 +18166,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				reload = "reload",
 				reload_not_empty = "reload_not_empty",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_c96_body_standard = {
@@ -18174,7 +18244,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_c96.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload"
+			reload = "reload",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_c96.optional_types = {
 			"barrel_ext",
@@ -19761,7 +19832,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_hs2000_sl_custom = {
@@ -19787,7 +19859,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_hs2000_sl_long = {
@@ -19813,7 +19886,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			},
 			stance_mod = {
 				wpn_fps_pis_hs2000 = {
@@ -19886,7 +19960,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_hs2000.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload"
+			reload = "reload",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_hs2000.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_pis_hs2000.override = {
@@ -22504,7 +22579,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire = "recoil",
 			reload = "reload_right",
 			reload_left = "reload_left",
-			fire_steelsight = "recoil"
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_x_g22c.override = {
 			wpn_fps_pis_g18c_m_mag_33rnd = {
@@ -22534,7 +22610,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_g22c_b_long = {
@@ -22542,7 +22619,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			}
 		}
@@ -22591,7 +22669,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire = "recoil",
 			reload = "reload_right",
 			reload_left = "reload_left",
-			fire_steelsight = "recoil"
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_x_g17.override = {
 			wpn_fps_pis_g17_m_standard = {
@@ -22607,7 +22686,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_g26_b_custom = {
@@ -22700,7 +22780,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire = "recoil",
 			reload = "reload_right",
 			reload_left = "reload_left",
-			fire_steelsight = "recoil"
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_x_usp.override = {
 			wpn_fps_pis_usp_m_standard = {
@@ -22730,7 +22811,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_usp_b_expert = {
@@ -22738,7 +22820,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"				
 				}
 			},
 			wpn_fps_pis_usp_b_match = {
@@ -22746,7 +22829,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload_right",
 					reload_left = "reload_left",
 					fire = "recoil",
-					fire_steelsight = "recoil"
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
 				}
 			},
 			wpn_fps_pis_usp_m_big = {
@@ -26299,7 +26383,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_sparrow_sl_rpl = {
@@ -26312,7 +26397,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_sparrow_b_941.third_unit = "units/pd2_dlc_rip/weapons/wpn_third_pis_sparrow_pts/wpn_third_pis_sparrow_b_941"
@@ -27338,7 +27424,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				fire = "recoil",
-				fire_steelsight = "recoil"
+				fire_steelsight = "recoil",
+				magazine_empty = "last_recoil"
 			}
 		}
 		self.parts.wpn_fps_pis_pl14_b_comp.third_unit = "units/pd2_dlc_mad/weapons/wpn_third_pis_pl14_pts/wpn_third_pis_pl14_b_comp"
@@ -28426,7 +28513,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			reload = "reload",
 			reload_not_empty = "reload_not_empty",
 			fire = "recoil",
-			fire_steelsight = "recoil"
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_packrat.override = {
 			wpn_fps_upg_o_rmr = {parent = "slide"},
@@ -28930,7 +29018,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire = "recoil",
 			fire_steelsight = "recoil",
 			reload_left = "reload_left",
-			reload_not_empty_left = "reload_not_empty_left"
+			reload_not_empty_left = "reload_not_empty_left",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_x_packrat.override = {
 			wpn_fps_upg_o_rmr = {parent = "slide"},
@@ -29455,6 +29544,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(-3.2, 0, -13.1),
 					rotation = Rotation(0, 0, -45)
 				},
+				wpn_fps_ass_ching = {
+					translation = Vector3(-1.8, 0, -13.1),
+					rotation = Rotation(0, 0, -45)					
+				},
 				wpn_fps_shot_ak12_76 = {
 					translation = Vector3(-3.2, 0, -13.1),
 					rotation = Rotation(0, 0, -45)
@@ -29610,8 +29703,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_g36_b_ultra",
 			a_obj = "a_fg",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_g36_fg_long/wpn_fps_upg_g36_b_ultra",
-			stats = {value = 1},
-			dlc = "tango"
+			stats = {value = 1}
 		}
 		self.parts.wpn_fps_smg_mp5_fg_flash = {
 			pcs = {},
@@ -31414,6 +31506,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 11, -4),
 					rotation = Rotation(0, 0, 0)
 				},
+				wpn_fps_ass_ching = {
+					translation = Vector3(0, 11, -2.8),
+					rotation = Rotation(0, 0, 0)					
+				},
 				wpn_fps_ass_sub2000 = {
 					translation = Vector3(0, -11, 0)
 				}
@@ -31539,7 +31635,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			reload = "reload",
 			reload_not_empty = "reload_not_empty",
 			fire = "recoil",
-			fire_steelsight = "recoil"
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_lemming.override = {
 			wpn_fps_upg_o_rmr = {parent = "slide"},
@@ -31815,7 +31912,602 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_x_chinchilla_npc = deep_clone(self.wpn_fps_pis_chinchilla)
 		self.wpn_fps_pis_x_chinchilla_npc.unit = "units/pd2_dlc_max/weapons/wpn_fps_pis_x_chinchilla/wpn_fps_pis_x_chinchilla_npc"
 	end
+	
+	function WeaponFactoryTweakData:_init_breech()
+		self.parts.wpn_fps_pis_breech_b_reinforced = {
+			texture_bundle_folder = "old",
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_breech_b_reinforced",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_b_reinforced",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 1,
+				spread = 1,
+				concealment = -2
+			}
+		}
+		self.parts.wpn_fps_pis_breech_b_short = {
+			texture_bundle_folder = "old",
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_breech_b_short",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_b_short",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				spread = -1,
+				value = 1,
+				concealment = 2
+			}
+		}
+		self.parts.wpn_fps_pis_breech_b_standard = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_breech_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_b_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_breech_body = {
+			a_obj = "a_body",
+			type = "body",
+			name_id = "bm_wp_breech_body",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_body",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_breech_dh = {
+			a_obj = "a_dh",
+			type = "drag_handle",
+			name_id = "bm_wp_breech_dh",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_dh",
+			stats = {value = 1},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			}
+		}
+		self.parts.wpn_fps_pis_breech_g_custom = {
+			texture_bundle_folder = "old",
+			a_obj = "a_g",
+			type = "grip",
+			name_id = "bm_wp_breech_g_custom",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_g_custom",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_breech_g_standard = {
+			a_obj = "a_g",
+			type = "grip",
+			name_id = "bm_wp_breech_g_std",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_g_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_breech_mag = {
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_breech_m",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_fps_pis_breech_mag",
+			bullet_objects = {
+				amount = 1,
+				prefix = "g_bullet_"
+			},
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_breech_b_reinforced.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_b_reinforced"
+		self.parts.wpn_fps_pis_breech_b_short.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_b_short"
+		self.parts.wpn_fps_pis_breech_b_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_b_standard"
+		self.parts.wpn_fps_pis_breech_body.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_body"
+		self.parts.wpn_fps_pis_breech_dh.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_dh"
+		self.parts.wpn_fps_pis_breech_g_custom.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_g_custom"
+		self.parts.wpn_fps_pis_breech_g_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_g_standard"
+		self.parts.wpn_fps_pis_breech_mag.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech_pts/wpn_third_pis_breech_mag"
+		self.wpn_fps_pis_breech = {
+			optional_types = {
+				"barrel_ext",
+				"gadget",
+				"sight"
+			},
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech/wpn_fps_pis_breech",
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			},
+			override = {
+				wpn_fps_upg_o_rmr = {parent = false},
+				wpn_fps_upg_pis_ns_flash = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_medium_slim = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_ass_filter = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_jungle = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_large = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_medium = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_small = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_large_kac = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_medium_gem = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_ipsccomp = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				},
+				wpn_fps_upg_ns_pis_meatgrinder = {
+					a_obj = "a_ns",
+					parent = "barrel"
+				}
+			},
+			default_blueprint = {
+				"wpn_fps_pis_breech_b_standard",
+				"wpn_fps_pis_breech_body",
+				"wpn_fps_pis_breech_dh",
+				"wpn_fps_pis_breech_g_standard",
+				"wpn_fps_pis_breech_mag"
+			},
+			uses_parts = {
+				"wpn_fps_pis_breech_b_reinforced",
+				"wpn_fps_pis_breech_b_short",
+				"wpn_fps_pis_breech_b_standard",
+				"wpn_fps_pis_breech_body",
+				"wpn_fps_pis_breech_dh",
+				"wpn_fps_pis_breech_g_custom",
+				"wpn_fps_pis_breech_g_standard",
+				"wpn_fps_pis_breech_mag",
+				"wpn_fps_upg_o_rmr"
+			}
+		}
+		self.wpn_fps_pis_breech_npc = deep_clone(self.wpn_fps_pis_breech)
+		self.wpn_fps_pis_breech_npc.unit = "units/pd2_dlc_old/weapons/wpn_fps_pis_breech/wpn_fps_pis_breech_npc"
+	end
 
+	function WeaponFactoryTweakData:_init_ching()
+		self.parts.wpn_fps_ass_ching_b_short = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_ching_b_short",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_b_short",
+			texture_bundle_folder = "old",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 1,
+				concealment = 1
+			},
+			override = {wpn_fps_ass_ching_extra_swiwel = {
+				third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_extra_swiwel_empty",
+				unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_extra_swiwel_empty"
+			}}
+		}
+		self.parts.wpn_fps_ass_ching_b_standard = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_b_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_body_standard = {
+			a_obj = "a_body",
+			type = "lower_receiver",
+			name_id = "bm_wp_ching_body_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_body_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_bolt_standard = {
+			a_obj = "a_bolt",
+			type = "bolt",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_bolt_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_dh_standard = {
+			a_obj = "a_dh",
+			type = "drag_handle",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_dh_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_extra_swiwel_empty = {
+			a_obj = "a_extra",
+			type = "swiwel_2",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_extra_swiwel_empty",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_extra_swiwel = {
+			a_obj = "a_extra",
+			type = "swiwel_2",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_extra_swiwel",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_extra1_swiwel = {
+			a_obj = "a_extra1",
+			type = "swiwel_1",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_extra1_swiwel",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_fg_railed = {
+			texture_bundle_folder = "old",
+			a_obj = "a_fg",
+			type = "foregrip",
+			name_id = "bm_wp_ching_fg_railed",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_fg_railed",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {value = 1},
+			forbids = {"wpn_fps_ak_extra_ris"}
+		}
+		self.parts.wpn_fps_ass_ching_fg_standard = {
+			a_obj = "a_fg",
+			type = "foregrip",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_fg_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_m_standard = {
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_m_standard",
+			bullet_objects = {
+				amount = 8,
+				prefix = "g_bullet_"
+			},
+			stats = {value = 1},
+			magazine_empty_objects = {"g_clip"}
+		}
+		self.parts.wpn_fps_ass_ching_s_pouch = {
+			texture_bundle_folder = "old",
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_ching_s_pouch",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_s_pouch",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 1
+			}
+		}
+		self.parts.wpn_fps_ass_ching_s_standard = {
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_s_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_strip_standard = {
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_ching_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_s_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_ass_ching_b_short.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_b_short"
+		self.parts.wpn_fps_ass_ching_b_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_b_standard"
+		self.parts.wpn_fps_ass_ching_body_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_body_standard"
+		self.parts.wpn_fps_ass_ching_bolt_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_bolt_standard"
+		self.parts.wpn_fps_ass_ching_dh_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_dh_standard"
+		self.parts.wpn_fps_ass_ching_extra_swiwel_empty.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_fps_ass_ching_extra_swiwel_empty"
+		self.parts.wpn_fps_ass_ching_extra_swiwel.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_extra_swiwel"
+		self.parts.wpn_fps_ass_ching_extra1_swiwel.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_extra1_swiwel"
+		self.parts.wpn_fps_ass_ching_fg_railed.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_fg_railed"
+		self.parts.wpn_fps_ass_ching_fg_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_fg_standard"
+		self.parts.wpn_fps_ass_ching_m_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_m_standard"
+		self.parts.wpn_fps_ass_ching_s_pouch.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_s_pouch"
+		self.parts.wpn_fps_ass_ching_s_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_s_standard"
+		self.parts.wpn_fps_ass_ching_strip_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching_pts/wpn_third_ass_ching_strip_standad"
+		self.wpn_fps_ass_ching = {
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching",
+			optional_types = {
+				"barrel_ext",
+				"gadget",
+				"sight"
+			},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			},
+			adds = {
+				wpn_fps_upg_o_specter = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_aimpoint = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_aimpoint_2 = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_docter = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_eotech = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_t1micro = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_cmore = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_acog = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_cs = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_eotech_xps = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_reflex = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_rx01 = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_rx30 = {"wpn_fps_ak_extra_ris"},
+				wpn_fps_upg_o_spot = {"wpn_fps_ak_extra_ris"}
+			},
+			default_blueprint = {
+				"wpn_fps_ass_ching_b_standard",
+				"wpn_fps_ass_ching_body_standard",
+				"wpn_fps_ass_ching_bolt_standard",
+				"wpn_fps_ass_ching_dh_standard",
+				"wpn_fps_ass_ching_extra_swiwel",
+				"wpn_fps_ass_ching_extra1_swiwel",
+				"wpn_fps_ass_ching_fg_standard",
+				"wpn_fps_ass_ching_m_standard",
+				"wpn_fps_ass_ching_s_standard"
+			},
+			uses_parts = {
+				"wpn_fps_ass_ching_b_short",
+				"wpn_fps_ass_ching_b_standard",
+				"wpn_fps_ass_ching_body_standard",
+				"wpn_fps_ass_ching_bolt_standard",
+				"wpn_fps_ass_ching_dh_standard",
+				"wpn_fps_ass_ching_extra_swiwel",
+				"wpn_fps_ass_ching_extra1_swiwel",
+				"wpn_fps_ass_ching_fg_railed",
+				"wpn_fps_ass_ching_fg_standard",
+				"wpn_fps_ass_ching_m_standard",
+				"wpn_fps_ass_ching_s_pouch",
+				"wpn_fps_ass_ching_s_standard",
+				"wpn_fps_ass_ching_strip_standard",
+				"wpn_fps_upg_o_specter",
+				"wpn_fps_upg_o_aimpoint",
+				"wpn_fps_upg_o_docter",
+				"wpn_fps_upg_o_eotech",
+				"wpn_fps_upg_o_t1micro",
+				"wpn_fps_upg_o_rx30",
+				"wpn_fps_upg_o_rx01",
+				"wpn_fps_upg_o_reflex",
+				"wpn_fps_upg_o_eotech_xps",
+				"wpn_fps_upg_o_cmore",
+				"wpn_fps_upg_o_aimpoint_2",
+				"wpn_fps_upg_o_acog",
+				"wpn_fps_upg_o_cs",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_spot",
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds_v2"
+			}
+		}
+		self.wpn_fps_ass_ching_npc = deep_clone(self.wpn_fps_ass_ching)
+		self.wpn_fps_ass_ching_npc.unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching_npc"
+	end
+
+	function WeaponFactoryTweakData:_init_erma()
+		self.parts.wpn_fps_smg_erma_b_standard = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_erma_b_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_b_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_body_standard = {
+			a_obj = "a_body",
+			type = "lower_receiver",
+			name_id = "bm_wp_erma_body_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_body_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_bolt_standard = {
+			a_obj = "a_bolt",
+			type = "drag_handle",
+			name_id = "bm_wp_erma_bolt_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_bolt_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_extra_rail = {
+			a_obj = "a_o",
+			type = "extra",
+			name_id = "bm_wp_erma_extra_rail",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_extra_rail",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_mag_standard = {
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_erma_mag_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_mag_standard",
+			bullet_objects = {
+				amount = 1,
+				prefix = "g_bullet_"
+			},
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_ns_standard = {
+			parent = "barrel",
+			a_obj = "a_ns",
+			type = "barrel_ext",
+			name_id = "bm_wp_erma_ns_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_ns_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_o_ironsight_standard = {
+			a_obj = "a_o",
+			type = "sight",
+			name_id = "bm_wp_erma_o_ironsight_standard",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_o_ironsight_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_s_folded = {
+			texture_bundle_folder = "old",
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_erma_s_folded",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_s_folded",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 0,
+				concealment = 1
+			}
+		}
+		self.parts.wpn_fps_smg_erma_s_unfolded = {
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_erma_s_unfolded",
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_fps_smg_erma_s_unfolded",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_erma_b_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_b_standard"
+		self.parts.wpn_fps_smg_erma_body_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_body_standard"
+		self.parts.wpn_fps_smg_erma_bolt_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_bolt_standard"
+		self.parts.wpn_fps_smg_erma_extra_rail.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_extra_rail"
+		self.parts.wpn_fps_smg_erma_mag_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_mag_standard"
+		self.parts.wpn_fps_smg_erma_ns_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_ns_standard"
+		self.parts.wpn_fps_smg_erma_o_ironsight_standard.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_o_ironsight_standard"
+		self.parts.wpn_fps_smg_erma_s_folded.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_s_folded"
+		self.parts.wpn_fps_smg_erma_s_unfolded.third_unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma_pts/wpn_third_smg_erma_s_unfolded"
+		self.wpn_fps_smg_erma = {
+			unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma/wpn_fps_smg_erma",
+			optional_types = {
+				"barrel_ext",
+				"gadget"
+			},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			},
+			adds = {
+				wpn_fps_upg_o_specter = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_aimpoint = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_aimpoint_2 = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_docter = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_eotech = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_t1micro = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_cmore = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_acog = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_cs = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_eotech_xps = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_reflex = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_rx01 = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_rx30 = {"wpn_fps_smg_erma_extra_rail"},
+				wpn_fps_upg_o_spot = {"wpn_fps_smg_erma_extra_rail"}
+			},
+			default_blueprint = {
+				"wpn_fps_smg_erma_b_standard",
+				"wpn_fps_smg_erma_body_standard",
+				"wpn_fps_smg_erma_bolt_standard",
+				"wpn_fps_smg_erma_mag_standard",
+				"wpn_fps_smg_erma_ns_standard",
+				"wpn_fps_smg_erma_o_ironsight_standard",
+				"wpn_fps_smg_erma_s_unfolded"
+			},
+			uses_parts = {
+				"wpn_fps_smg_erma_b_standard",
+				"wpn_fps_smg_erma_body_standard",
+				"wpn_fps_smg_erma_bolt_standard",
+				"wpn_fps_smg_erma_extra_rail",
+				"wpn_fps_smg_erma_mag_standard",
+				"wpn_fps_smg_erma_ns_standard",
+				"wpn_fps_smg_erma_o_ironsight_standard",
+				"wpn_fps_smg_erma_s_folded",
+				"wpn_fps_smg_erma_s_unfolded",
+				"wpn_fps_upg_o_specter",
+				"wpn_fps_upg_o_aimpoint",
+				"wpn_fps_upg_o_docter",
+				"wpn_fps_upg_o_eotech",
+				"wpn_fps_upg_o_t1micro",
+				"wpn_fps_upg_o_cmore",
+				"wpn_fps_upg_o_aimpoint_2",
+				"wpn_fps_upg_o_acog",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
+				"wpn_fps_upg_o_eotech_xps",
+				"wpn_fps_upg_o_reflex",
+				"wpn_fps_upg_o_rx01",
+				"wpn_fps_upg_o_rx30",
+				"wpn_fps_upg_o_cs",
+				"wpn_fps_upg_ass_ns_jprifles",
+				"wpn_fps_upg_ass_ns_linear",
+				"wpn_fps_upg_ass_ns_surefire",
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_ass_ns_battle",
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_o_spot",
+				--Custom stuff--
+				"wpn_fps_upg_i_singlefire",
+				"wpn_fps_upg_i_autofire"			
+			}
+		}
+		self.wpn_fps_smg_erma_npc = deep_clone(self.wpn_fps_smg_erma)
+		self.wpn_fps_smg_erma_npc.unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma/wpn_fps_smg_erma_npc"
+	end
+	
 	Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 		--Vlad's Rodina--
 		self.parts.wpn_fps_upg_vlad_rodina_legend = {

@@ -31,13 +31,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CrimeSpreeTweakData:init_modifiers(tweak_data)
-		local health_increase = 25
-		local damage_increase = 25
+		local health_increase = 0
+		local damage_increase = 15
 		self.max_modifiers_displayed = 3
 		self.modifier_levels = {
 			forced = 400,
 			loud = 20,
-			stealth = 9999999999999999999999999999999999
+			stealth = 999999999
 		}
 		self.modifiers = {
 			forced = {
@@ -47,7 +47,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_health",
 					level = 400,
 					data = {
-						health = {15, "add"},
+						health = {0, "add"},
 						damage = {15, "add"}
 					}
 				}
@@ -305,7 +305,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_health",
 					level = 5,
 					data = {
-						health = {15, "add"},
+						health = {0, "add"},
 						damage = {15, "add"}
 					}
 				}

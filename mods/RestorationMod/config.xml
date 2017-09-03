@@ -126,6 +126,7 @@
 		<hook file="sc/modifiers/modifierdozerminigun.lua" source_file="lib/modifiers/modifierdozerminigun"/>
 		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
 		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
+		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
 		<hook file="sc/mutators/mutatorenemydamage.lua" source_file="lib/mutators/mutatorenemydamage"/>

@@ -606,7 +606,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-		local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 		if self._immortal then
 			debug_pause("Immortal character died!")
 		end
@@ -657,7 +656,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:base():char_tweak().die_sound_event then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event, nil, nil)
 		end
-		if not head and self._unit:base()._tweak_table == "fbi_titan" then
+		if self._unit:base()._tweak_table == "fbi_titan" then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
 		end 
 		self:_on_death()

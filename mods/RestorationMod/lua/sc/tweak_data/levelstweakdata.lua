@@ -16,8 +16,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.murky = murky
 		
 		--Murky test--
-		self.shoutout_raid.ai_group_type = murky
-		self.pbr.ai_group_type = murky
+		--self.shoutout_raid.ai_group_type = murky
+		--self.pbr.ai_group_type = murky
 		
 		if Global.load_level == true and not PackageManager:loaded("packages/job_nail") then
 			PackageManager:load("packages/job_nail")

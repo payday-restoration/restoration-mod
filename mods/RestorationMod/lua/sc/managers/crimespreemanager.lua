@@ -24,5 +24,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Global.game_settings.mission = mission_data.mission or "none"
 		end
 	end
-
+	
 end

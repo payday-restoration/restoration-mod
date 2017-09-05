@@ -127,6 +127,7 @@
 		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
 		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
 		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
+		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
 		<hook file="sc/mutators/mutatorenemydamage.lua" source_file="lib/mutators/mutatorenemydamage"/>

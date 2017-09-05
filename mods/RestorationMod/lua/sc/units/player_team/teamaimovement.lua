@@ -22,5 +22,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return "countered"
 		end
 	end
-
+		
 end

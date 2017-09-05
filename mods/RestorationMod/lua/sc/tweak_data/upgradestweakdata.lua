@@ -311,6 +311,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.primary_weapon_when_downed = {true}
 
 				--Transporter
+				self.values.carry.movement_speed_multiplier = {1.5}
 				self.values.carry.throw_distance_multiplier = {1.5}
 				self.values.carry.movement_penalty_nullifier = {true}
 				

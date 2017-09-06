@@ -73,6 +73,7 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_summers(presets)
 	self:_init_omnia_lpf(presets)
 	self:_init_tank_biker(presets)
+	self:_init_omnia(presets)
 	self:_process_weapon_usage_table()
 end
 
@@ -106,7 +107,7 @@ function CharacterTweakData:_init_security(presets)
 	self.security.deathguard = false
 	self.security.chatter = presets.enemy_chatter.cop
 	self.security.has_alarm_pager = true
-	self.security.melee_weapon = "baton"
+	self.security.melee_weapon = nil
 	self.security.no_arrest_chance_inc = 0.25
 	self.security.steal_loot = nil
 	table.insert(self._enemy_list, "security")
@@ -176,7 +177,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.dodge = presets.dodge.average
 	self.cop.deathguard = true
 	self.cop.chatter = presets.enemy_chatter.cop
-	self.cop.melee_weapon = "baton"
+	self.cop.melee_weapon = nil
 	if job == "chill_combat" then
 		self.cop.steal_loot = true
 	else
@@ -239,7 +240,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.dodge = presets.dodge.athletic
 	self.omnia_lpf.no_arrest = true
 	self.omnia_lpf.chatter = presets.enemy_chatter.swat
-	self.omnia_lpf.melee_weapon = "knife_1"
+	self.omnia_lpf.melee_weapon = "baton"
 	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 	self.omnia_lpf.steal_loot = true
 	self.omnia_lpf.rescue_hostages = false
@@ -437,7 +438,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.dodge = presets.dodge.athletic
 	self.swat.no_arrest = false
 	self.swat.chatter = presets.enemy_chatter.swat
-	self.swat.melee_weapon = "knife_1"
+	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
 	if job == "chill_combat" then
 		self.swat.steal_loot = true
@@ -583,6 +584,8 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.access = "swat"
 	self.fbi_heavy_swat.dodge = presets.dodge.heavy_very_hard
 	self.fbi_heavy_swat.no_arrest = false
+	self.fbi_heavy_swat.melee_weapon = "knife_1"
+	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1
 	self.fbi_heavy_swat.chatter = presets.enemy_chatter.swat
 	if job == "chill_combat" then
 		self.fbi_heavy_swat.steal_loot = nil
@@ -648,6 +651,55 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
  	table.insert(self._enemy_list, "city_swat_titan")
+end
+
+function CharacterTweakData:_init_omnia(presets)
+	self.omnia = deep_clone(presets.base)
+	self.omnia.experience = {}
+	self.omnia.damage.hurt_severity = presets.hurt_severities.elite
+	self.omnia.weapon = deep_clone(presets.weapon.expert)
+	self.omnia.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
+	self.omnia.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
+	self.omnia.detection = presets.detection.normal
+	self.omnia.HEALTH_INIT = 15
+	self.omnia.headshot_dmg_mul = 1.46
+	self.omnia.move_speed = presets.move_speed.very_fast
+	self.omnia.surrender_break_time = {6, 10}
+	self.omnia.suppression = presets.suppression.hard_def
+	if job == "kosugi" or job == "dark" then
+		self.omnia.surrender = presets.surrender.hard
+		self.omnia.no_arrest_chance_inc = 0.25
+		self.omnia.detection_increase = 0.05
+	else
+		self.omnia.surrender = presets.surrender.hard
+		self.omnia.no_arrest_chance_inc = nil
+		self.omnia.detection_increase = nil
+	end
+	self.omnia.no_arrest = false
+	self.omnia.ecm_vulnerability = 1
+	self.omnia.ecm_hurts = {
+		ears = {min_duration = 8, max_duration = 10}
+	}
+	self.omnia.weapon_voice = "2"
+	self.omnia.experience.cable_tie = "tie_swat"
+	self.omnia.silent_priority_shout = "f37"
+	self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
+	self.omnia.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.omnia.speech_prefix_count = 4
+	self.omnia.access = "swat"
+	self.omnia.dodge = presets.dodge.athletic_overkill
+	self.omnia.chatter = presets.enemy_chatter.swat
+	self.omnia.melee_weapon = nil
+	self.omnia.melee_weapon_dmg_multiplier = 2.5
+	if job == "chill_combat" then
+		self.omnia.steal_loot = nil
+	else
+		self.omnia.steal_loot = true
+	end
+	self.omnia.has_alarm_pager = true
+	self.omnia.calls_in = true
+	self.omnia.use_animation_on_fire_damage = false
+ 	table.insert(self._enemy_list, "omnia")
 end
 
 function CharacterTweakData:_init_sniper(presets)
@@ -734,7 +786,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.use_radio = nil
 	self.gangster.dodge = presets.dodge.average
 	self.gangster.challenges = {type = "gangster"}
-	self.gangster.melee_weapon = "fists"
+	self.gangster.melee_weapon = nil
 	self.gangster.steal_loot = nil
 	self.gangster.calls_in = true
  	table.insert(self._enemy_list, "gangster")
@@ -1264,7 +1316,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.dodge = presets.dodge.ninja
 	self.spooc.chatter = presets.enemy_chatter.no_chatter
 	self.spooc.steal_loot = nil
-	self.spooc.melee_weapon = "baton"
+	self.spooc.melee_weapon = nil
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = true
  	table.insert(self._enemy_list, "spooc")
@@ -1432,10 +1484,16 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.melee_anims = {
 		"cbt_std_melee"
 	}
-	self.spring.speech_prefix_p1 = "l"
-	self.spring.speech_prefix_p2 = "d"
-	self.spring.speech_prefix_count = 4
-	self.spring.chatter = presets.enemy_chatter.no_chatter
+	self.spring.speech_prefix_p1 = "cpw"
+	self.spring.speech_prefix_p2 = nil
+	self.spring.speech_prefix_count = nil
+ 	self.spring.chatter = {
+		aggressive = true,
+		retreat = true,
+		go_go = true,
+		contact = true,
+		entrance = true
+ 	}
 	self.spring.announce_incomming = "incomming_captain"
 	self.spring.spawn_sound_event = "cpa_a02_01"
 	self.spring.die_sound_event = "mga_death_scream"

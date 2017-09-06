@@ -91,6 +91,7 @@
 		<hook file="sc/units/enemies/logics/coplogicintimidated.lua" source_file="lib/units/enemies/cop/logics/coplogicintimidated"/>
 		<hook file="sc/units/enemies/logics/coplogicbase.lua" source_file="lib/units/enemies/cop/logics/coplogicbase"/>
 		<hook file="sc/units/enemies/logics/coplogicidle.lua" source_file="lib/units/enemies/cop/logics/coplogicidle"/>
+		<hook file="sc/units/enemies/logics/coplogicattack.lua" source_file="lib/units/enemies/cop/logics/coplogicattack"/>
 		<hook file="sc/units/enemies/medicdamage.lua" source_file="lib/units/enemies/medic/medicdamage"/>
 		<hook file="sc/units/enemies/logics/tankcoplogicattack.lua" source_file="lib/units/enemies/tank/logics/tankcoplogicattack"/>
 		<hook file="sc/units/player_team/logics/teamailogicidle.lua" source_file="lib/units/player_team/logics/teamailogicidle"/>

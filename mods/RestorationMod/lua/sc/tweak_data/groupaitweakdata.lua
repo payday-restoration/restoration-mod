@@ -14,6 +14,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				group_min = 0,
 				queue = "g90"
 			}
+			self.enemy_chatter.aggressive_captain = {
+				radius = 700,
+				max_nr = 20,
+				duration = {2, 4},
+				interval = {0.75, 1.5},
+				group_min = 0,
+				queue = "a05"
+			}			
 			self.enemy_chatter.retreat = {
 				radius = 900,
 				max_nr = 20,

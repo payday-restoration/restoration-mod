@@ -1484,7 +1484,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.melee_anims = {
 		"cbt_std_melee"
 	}
-	self.spring.speech_prefix_p1 = "cpw"
+	self.spring.speech_prefix_p1 = "cpsp"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil
  	self.spring.chatter = {

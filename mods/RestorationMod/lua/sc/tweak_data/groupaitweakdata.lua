@@ -4915,10 +4915,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					3.9
 				}
 				self.besiege.assault.force_pool_balance_mul = {
-					2,
-					4,
-					6,
-					8
+					2.7,
+					2.9,
+					3.1,
+					3.3
 				}
 			elseif difficulty_index == 7 then
 				self.besiege.assault.force_balance_mul = {
@@ -4928,10 +4928,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					3.9
 				}
 				self.besiege.assault.force_pool_balance_mul = {
-					2,
-					4,
-					6,
-					8
+					2.7,
+					2.9,
+					3.1,
+					3.3
 				}
 			else
 				self.besiege.assault.force_balance_mul = {
@@ -4941,10 +4941,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					4.9
 				}
 				self.besiege.assault.force_pool_balance_mul = {
-					3,
-					5,
-					7,
-					9
+					3.2,
+					3.4,
+					3.6,
+					3.8
 				}
 			end
 			if difficulty_index <= 2 then

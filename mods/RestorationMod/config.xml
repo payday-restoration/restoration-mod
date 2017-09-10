@@ -1,7 +1,7 @@
 <mod name="RestorationMod" global_key="restorationnew">
     <Classes directory="lua">
     </Classes>
-	<AssetUpdates id="428" version="6.05" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="6.07" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
     <Hooks directory="lua">
 	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>

@@ -52,7 +52,7 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		19,
 		19
 	}
-	local bg_color = Color.white / 2
+	local bg_color = Color.white / 1
 	teammate_panel:bitmap({
 		name = "name_bg",
 		texture = tabs_texture,
@@ -408,8 +408,8 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		texture_rect = bg_rect,
 		visible = true,
 		layer = 0,
-		color = bg_color,
-		w = weapon_panel_w,
+		--color = bg_color,
+		w = 67,
 		x = 0
 	})
 	primary_weapon_panel:text({
@@ -422,11 +422,11 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		w = ammo_text_w + extra_clip_w,
 		h = primary_weapon_panel:h(),
 		x = 0,
-		y = -1 + font_bottom_align_correction,
+		y = -1,-- + font_bottom_align_correction,
 		vertical = "bottom",
 		align = "center",
-		font_size = 29,
-		font = tweak_data.hud_players.ammo_font
+		font_size = 30,
+		font = "fonts/font_medium_noshadow_mf"
 	})
 	primary_weapon_panel:text({
 		name = "ammo_total",
@@ -438,11 +438,11 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		w = ammo_text_w - extra_clip_w,
 		h = primary_weapon_panel:h(),
 		x = ammo_text_w + extra_clip_w,
-		y = -1 + font_bottom_align_correction,
+		y = -1, --+ font_bottom_align_correction,
 		vertical = "bottom",
 		align = "center",
 		font_size = 20,
-		font = tweak_data.hud_players.ammo_font
+		font = "fonts/font_medium_noshadow_mf"
 	})
 	local weapon_selection_panel = primary_weapon_panel:panel({
 		name = "weapon_selection",
@@ -475,7 +475,7 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		visible = true,
 		layer = 0,
 		color = bg_color,
-		w = weapon_panel_w,
+		w = 67,
 		x = 0
 	})
 	secondary_weapon_panel:text({
@@ -488,11 +488,11 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		w = ammo_text_w + extra_clip_w,
 		h = secondary_weapon_panel:h(),
 		x = 0,
-		y = 0 + font_bottom_align_correction,
+		y = -1, --+ font_bottom_align_correction,
 		vertical = "bottom",
 		align = "center",
-		font_size = 29,
-		font = tweak_data.hud_players.ammo_font
+		font_size = 30,
+		font = "fonts/font_medium_noshadow_mf"
 	})
 	secondary_weapon_panel:text({
 		name = "ammo_total",
@@ -504,11 +504,11 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		w = ammo_text_w - extra_clip_w,
 		h = secondary_weapon_panel:h(),
 		x = ammo_text_w + extra_clip_w,
-		y = 0 + font_bottom_align_correction,
+		y = -1, --+ font_bottom_align_correction,
 		vertical = "bottom",
 		align = "center",
 		font_size = 20,
-		font = tweak_data.hud_players.ammo_font
+		font = "fonts/font_medium_noshadow_mf"
 	})
 	local weapon_selection_panel = secondary_weapon_panel:panel({
 		name = "weapon_selection",

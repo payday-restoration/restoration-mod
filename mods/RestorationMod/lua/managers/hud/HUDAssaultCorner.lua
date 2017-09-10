@@ -1,5 +1,6 @@
 if restoration.Options:GetValue("HUD/AssaultPanel") then
 function HUDAssaultCorner:init(hud, full_hud)
+	self._v2_corner = true
 	self._hud_panel = hud.panel
 	self._full_hud_panel = full_hud.panel
 	if self._hud_panel:child("assault_panel") then
@@ -50,6 +51,57 @@ function HUDAssaultCorner:init(hud, full_hud)
 		layer = 1,
 		w = yellow_tape:w()
 	}):set_center(yellow_tape:center())
+	------------------------------
+	self._assault_corner_color = Color.red
+	self._assault_corner2_color = Color.blue
+	self._wave_corner_color = Color.green
+	self._wave_corner2_color = Color(1, 0.8, 0)
+	self._captain_corner_color = Color.blue
+	self._captain_corner2_color = Color.white
+	local corner_panel = self._hud_panel:panel({
+		visible = false,
+		name = "corner_panel",
+		w = 200,
+		h = 200
+	})
+	corner_panel:set_top( 0 )
+	corner_panel:set_right( self._hud_panel:w() )
+	local corner = corner_panel:rect({
+		visible = true,
+		name = "corner",
+		h = 198, --tweak_data.hud.location_font_size * 5.5,
+		w = size * 2,
+		color = self._assault_corner_color,
+		layer = 1
+	})
+	corner:set_top(-104)
+	corner:set_rotation(45)
+	local corner2 = corner_panel:rect({
+		visible = true,
+		name = "corner2",
+		h = 158,
+		w = size * 2,
+		color = self._assault_corner2_color,
+		layer = 1
+	})
+	corner2:set_top(-104)
+	corner2:set_rotation(45)
+	local corner_title = corner_panel:text({ 
+		name="corner_title", 
+		text="ASSAULT", 
+		layer = 11, 
+		valign="top", 
+		align = "center", 
+		vertical = "center", 
+		x = 0, 
+		y = 0, 
+		color = self._assault_corner2_color, 
+		font_size = 28, 
+		font = "fonts/font_medium_shadow_mf" 
+		})
+	corner_title:set_rotation(45)
+	corner_title:set_top(-38)
+	corner_title:set_right( 257 )
 	------------------------------
 	if self._hud_panel:child("hostages_panel") then
 		self._hud_panel:remove(self._hud_panel:child("hostages_panel"))
@@ -274,7 +326,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 			h = 38
 		})
 		vip_icon:set_right(buffs_panel:w())
-		vip_icon:set_rotation(30)
+		vip_icon:set_rotation(self._v2_corner and 45 or 30)
 		vip_icon:set_top(0)
 	else
 		local vip_icon = buffs_panel:bitmap({
@@ -292,9 +344,34 @@ function HUDAssaultCorner:init(hud, full_hud)
 			h = 38
 		})
 		vip_icon:set_right(buffs_panel:w())
-		vip_icon:set_rotation(30)
+		vip_icon:set_rotation(self._v2_corner and 45 or 30)
 		vip_icon:set_top(0)
 	end
+	local buffs_pad_panel = self._hud_panel:panel({
+		visible = false,
+		name = "buffs_pad_panel",
+		y = 42,
+		w = 200,
+		h = 64
+	})
+	local buff_start = buffs_pad_panel:bitmap( { name = "buff_start", texture = "guis/textures/ammocounter", color = self._vip_assault_color, texture_rect = { 0, 0, 13, 64 }, layer = 1} )
+	local buff_mid = buffs_pad_panel:bitmap( { name = "buff_mid", texture_rect = { 19, 0, 33, 64 }, color = self._vip_assault_color, layer = 1, texture = "guis/textures/ammocounter"} )
+	local buff_end = buffs_pad_panel:bitmap( { name = "buff_end", texture_rect = { 52, 0, 12, 64 }, color = self._vip_assault_color, layer = 1, texture = "guis/textures/ammocounter"} )
+	buff_mid:set_x( buffs_pad_panel:h() )
+	buff_end:set_x( buffs_pad_panel:h() * 2 )
+	local buff_text_string = managers.localization:text("hud_assault_vip")
+	local buff_text = buffs_pad_panel:text( { name = "buff_text", visible = true, layer = 2, color = Color( 0, 0, 0 ), text="EAT ASS", font_size = 22, font = tweak_data.hud.medium_font_noshadow, x = 0, y = 10, align = "left", vertical = "top" } )
+	buff_text:set_x( buffs_pad_panel:x() + 12 )
+	buff_text:set_y( 21 )
+	buff_text:set_text( utf8.to_upper( buff_text_string ) )
+	local _,_,w,h = buff_text:text_rect()
+	buff_text:set_size( w, h )
+	local panel_w = w + 12*2
+	buffs_pad_panel:set_w( panel_w )
+	buff_start:set_x( 0 )
+	buff_mid:set_x( 13 )
+	buff_mid:set_w( (panel_w - 20) )
+	buff_end:set_x( 13 + (panel_w - 20) )
 end
 function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_function)
 	local text_list = text_panel:script().text_list
@@ -374,7 +451,8 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 	end
 end
 function HUDAssaultCorner:set_buff_enabled(buff_name, enabled)
-	self._hud_panel:child("buffs_panel"):set_visible(enabled)
+	self._hud_panel:child("buffs_panel"):set_visible(not self._v2_corner and enabled)
+	self._hud_panel:child("buffs_pad_panel"):set_visible(self._v2_corner and enabled)
 end
 function HUDAssaultCorner:get_assault_mode()
 	return self._assault_mode
@@ -384,10 +462,20 @@ function HUDAssaultCorner:sync_set_assault_mode(mode)
 		return
 	end
 	self._assault_mode = mode
+	local corner_panel = self._hud_panel:child("corner_panel")
 	local color = self._assault_color
-	if mode == "phalanx" then
+	local corner_color = self._assault_corner_color
+	local corner2_color = self._assault_corner2_color
+	local text = "ASSAULT"
+	if self._assault_mode == "phalanx" then
 		color = self._vip_assault_color
+		corner_color = self._captain_corner_color
+		corner2_color = self._captain_corner2_color
+		text = "CAPTAIN"
 	end
+	corner_panel:child( "corner_title" ):set_text(text)
+	corner_panel:child( "corner" ):set_color(corner_color)
+	corner_panel:child( "corner2" ):set_color(corner2_color)
 	self._current_assault_color = color
 	self:_set_text_list(self:_get_assault_strings())
 	self:_update_assault_hud_color(color)
@@ -441,21 +529,45 @@ function HUDAssaultCorner:_animate_assault( assault_panel )
 	
 end
 
-function HUDAssaultCorner:sync_start_assault(data)
+function HUDAssaultCorner:sync_start_assault(assault_number)
 	if self._point_of_no_return or self._casing then
 		return
 	end
 		if restoration.Options:GetValue("HUD/Hostage") then
 			self:_hide_hostages()
 		end
+	local corner_panel = self._hud_panel:child("corner_panel")
 	local color = self._assault_color
+	local corner_color = self._assault_corner_color
+	local corner2_color = self._assault_corner2_color
+	local text = "ASSAULT"
 	if self._assault_mode == "phalanx" then
 		color = self._vip_assault_color
+		corner_color = self._captain_corner_color
+		corner2_color = self._captain_corner2_color
+		text = "CAPTAIN"
 	end
+	corner_panel:child( "corner_title" ):set_text(text)
+	corner_panel:child( "corner" ):set_color(corner_color)
+	corner_panel:child( "corner2" ):set_color(corner2_color)
 	self:_update_assault_hud_color(color)
 	self._start_assault_after_hostage_offset = true
 	self:_set_hostage_offseted(true)
+	self:set_assault_wave_number(assault_number)
 end
+
+function HUDAssaultCorner:set_assault_wave_number(assault_number)
+	self._wave_number = assault_number
+	local panel = self._hud_panel:child("wave_panel")
+	print("found panel")
+	if panel then
+		local wave_text = panel:child("num_waves")
+		if wave_text then
+			wave_text:set_text(self._completed_waves)
+		end
+	end
+end
+
 function HUDAssaultCorner:start_assault_callback()
 	self:_start_assault(self:_get_assault_strings())
 end
@@ -539,6 +651,7 @@ function HUDAssaultCorner:_start_assault(text_list)
 	text_list = text_list or {""}
 	local assault_panel = self._hud_panel:child("assault_panel")
 	local text_panel = assault_panel:child("text_panel")
+	local corner_panel = self._hud_panel:child("corner_panel")
 	self:_set_text_list(text_list)
 	self._assault = true
 	if self._hud_panel:child("assault_panel"):child("text_panel") then
@@ -547,7 +660,10 @@ function HUDAssaultCorner:_start_assault(text_list)
 	else
 		assault_panel:panel({name = "text_panel"})
 	end
-	assault_panel:set_visible(true)
+	corner_panel:set_visible(self._v2_corner)
+	corner_panel:stop()
+	corner_panel:animate(callback(self, self, "_animate_assault_corner"))
+	assault_panel:set_visible(not self._v2_corner)
 	text_panel:stop()
 	assault_panel:stop()
 	assault_panel:animate(callback(self, self, "_animate_assault"))
@@ -555,6 +671,40 @@ function HUDAssaultCorner:_start_assault(text_list)
 	self:_set_feedback_color(self._assault_color)
 
 end
+
+function HUDAssaultCorner:_animate_assault_corner( corner_panel )
+	local corner = corner_panel:child( "corner" )
+	local corner2 = corner_panel:child( "corner2" )
+	local corner_title = corner_panel:child( "corner_title" )
+	while true do
+		local a = 0.25 + (math.sin( Application:time()*750 )+1)/4
+		-- print( "a", a, 1 - a )
+		corner:set_color( corner:color():with_alpha( a ) )
+		corner2:set_color( corner2:color():with_alpha( 0.25 ) )
+		corner_title:set_color( Color( a, 0, 0.8-a ) )
+		if self._assault_mode == "phalanx" then	
+			corner_title:set_color( Color.white:with_alpha ( a ) )
+		end
+		-- o:set_color( o:color():with_alpha( 0.5 + (math.sin( Application:time()*750 )+1)/4 ) )
+		coroutine.yield()
+	end
+end
+
+function HUDAssaultCorner:_animate_wave_corner( corner_panel )
+	local corner = corner_panel:child( "corner" )
+	local corner2 = corner_panel:child( "corner2" )
+	local corner_title = corner_panel:child( "corner_title" )
+	while true do
+		local a = 0.25 + (math.sin( Application:time()*375 )+1)/4
+		-- print( "a", a, 1 - a )
+		corner:set_color( corner:color():with_alpha( a ) )
+		corner2:set_color( corner2:color():with_alpha( 0.25 ) )
+		corner_title:set_color( Color(1, 0.8, 0):with_alpha ( a ) )
+		-- o:set_color( o:color():with_alpha( 0.5 + (math.sin( Application:time()*750 )+1)/4 ) )
+		coroutine.yield()
+	end
+end
+
 function HUDAssaultCorner:assault_attention_color_function()
 	return self._current_assault_color
 end
@@ -569,11 +719,15 @@ function HUDAssaultCorner:_end_assault()
 			self:_show_hostages()
 		end
 	self:_set_feedback_color(nil)
+	local corner_panel = self._hud_panel:child("corner_panel")
+	corner_panel:set_visible(false)
+	corner_panel:stop()
 	local assault_panel = self._hud_panel:child("assault_panel")
 	local text_panel = assault_panel:child("text_panel")
 	self._hud_panel:child("assault_panel"):child("text_panel"):stop()
 	self._hud_panel:child("assault_panel"):child("text_panel"):clear()
 	if self:is_safehouse_raid() then
+		assault_panel:set_visible(not self._v2_corner)
 		self._raid_finised = false
 		wave_panel = self._hud_panel:child("wave_panel")
 		self:_update_assault_hud_color(self._assault_survived_color)
@@ -581,13 +735,22 @@ function HUDAssaultCorner:_end_assault()
 		text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
 		self._completed_waves = self._completed_waves + 1
 		wave_panel:animate(callback(self, self, "_animate_wave_completed"), self)
+		if self._v2_corner then
+			corner_panel:child( "corner" ):set_color(self._wave_corner_color)
+			corner_panel:child( "corner2" ):set_color(self._wave_corner2_color)
+			corner_panel:child( "corner_title" ):set_text("YOU SURVIVED")
+			corner_panel:set_visible(true)
+			corner_panel:animate(callback(self, self, "_animate_wave_corner"))
+		end
 	else
 		self:_close_assault_box()
 	end
 end
 
 function HUDAssaultCorner:_close_assault_box()
-
+	local corner_panel = self._hud_panel:child("corner_panel")
+	corner_panel:set_visible(false)
+	corner_panel:stop()
 	self:sync_set_assault_mode("normal")
 	self._assault = false
 	if self._remove_hostage_offset then
@@ -648,7 +811,7 @@ function HUDAssaultCorner:_set_hostage_offseted(is_offseted)
 end
 function HUDAssaultCorner:_offset_hostage(is_offseted, hostage_panel)
 	local TOTAL_T = 0.18
-	local OFFSET = self._hud_panel:child("assault_panel"):h() + 8
+	local OFFSET = self._v2_corner and self._hud_panel:child("corner_panel"):h() or self._hud_panel:child("assault_panel"):h() + 8
 	local from_y = is_offseted and 0 or OFFSET
 	local target_y = is_offseted and OFFSET or 0
 	local t = (1 - math.abs(hostage_panel:y() - target_y) / OFFSET) * TOTAL_T

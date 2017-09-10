@@ -70,7 +70,7 @@ end
  if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
 
-	BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/menus/start_menu.custom_xml", "custom_xml", "gamedata/menus/start_menu", "menu")
+	--BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/menus/start_menu.custom_xml", "custom_xml", "gamedata/menus/start_menu", "menu")
 	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")

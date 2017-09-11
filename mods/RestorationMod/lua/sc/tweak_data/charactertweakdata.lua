@@ -646,8 +646,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.HEALTH_INIT = 13
 	self.city_swat_titan.headshot_dmg_mul = 1.265
 	self.city_swat_titan.surrender = nil
-	self.city_swat_titan.leader = {max_nr_followers = 6}
-	self.city_swat_titan.speed_multiplier_followers = {multiplier = 1.5}
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
  	table.insert(self._enemy_list, "city_swat_titan")
@@ -1250,8 +1248,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.priority_shout = "f45"
 	self.tank_titan.bot_priority_shout = "f45x_any"
 	self.tank_titan.priority_shout_max_dis = 3000
-	self.tank_titan.leader = {max_nr_followers = 6}
-	self.tank_titan.damage_multiplier = {multiplier = 1.1}
 	self.tank_titan.ecm_vulnerability = 0.85
 	self.tank_titan.ecm_hurts = {
 		ears = {min_duration = 1, max_duration = 3}
@@ -1407,8 +1403,6 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.chatter = presets.enemy_chatter.shield
 	self.phalanx_minion.announce_incomming = "incomming_shield"
 	self.phalanx_minion.steal_loot = nil
-	self.phalanx_minion.leader = {max_nr_followers = 6}
-	self.phalanx_minion.damage_resist_followers = {multiplier = 0.75}
 	self.phalanx_minion.ignore_medic_revive_animation = true
 	self.phalanx_minion.ecm_vulnerability = 1
 	self.phalanx_minion.ecm_hurts = {
@@ -1468,7 +1462,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.HEALTH_INIT = 1000
 	self.spring.EXTRA_HEALTH_BALANCE = 50
 	self.spring.headshot_dmg_mul = 1.59885
-	self.spring.damage.explosion_damage_mul = 0.75
+	self.spring.damage.explosion_damage_mul = 1.25
 	self.spring.priority_shout = "f45"
 	self.spring.bot_priority_shout = "f45x_any"
 	self.spring.priority_shout_max_dis = 3000

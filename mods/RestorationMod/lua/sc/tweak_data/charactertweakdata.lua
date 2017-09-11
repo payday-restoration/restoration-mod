@@ -2800,7 +2800,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_pistol.RELOAD_SPEED = 1
 	presets.weapon.normal.is_pistol.melee_speed = 1
 	presets.weapon.normal.is_pistol.melee_dmg = 4
-	presets.weapon.normal.is_pistol.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_pistol.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.is_pistol.range = {
 		close = 1000,
 		optimal = 2000,
@@ -2880,7 +2880,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_rifle.tase_distance = 1400
 	presets.weapon.normal.is_rifle.aim_delay_tase = {0, 0.5}
 	presets.weapon.normal.is_rifle.tase_sphere_cast_radius = 30
-	presets.weapon.normal.is_rifle.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_rifle.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.is_rifle.range = {
 		close = 1000,
 		optimal = 2000,
@@ -2958,7 +2958,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_shotgun_pump.RELOAD_SPEED = 0.25
 	presets.weapon.normal.is_shotgun_pump.melee_speed = 1
 	presets.weapon.normal.is_shotgun_pump.melee_dmg = 4
-	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.is_shotgun_pump.range = {
 		close = 1000,
 		optimal = 2000,
@@ -3226,7 +3226,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_smg.RELOAD_SPEED = 1
 	presets.weapon.normal.is_smg.melee_speed = 1
 	presets.weapon.normal.is_smg.melee_dmg = 4
-	presets.weapon.normal.is_smg.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_smg.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.is_smg.range = {
 		close = 1000,
 		optimal = 2000,
@@ -3380,7 +3380,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.mac11.RELOAD_SPEED = 1
 	presets.weapon.normal.mac11.melee_speed = 1
 	presets.weapon.normal.mac11.melee_dmg = 4
-	presets.weapon.normal.mac11.melee_retry_delay = {0, 0}
+	presets.weapon.normal.mac11.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.mac11.range = {
 		close = 1000,
 		optimal = 2000,
@@ -3457,7 +3457,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_revolver.RELOAD_SPEED = 1
 	presets.weapon.normal.is_revolver.melee_speed = 1
 	presets.weapon.normal.is_revolver.melee_dmg = 4
-	presets.weapon.normal.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.normal.is_revolver.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
@@ -3920,7 +3920,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.mini.RELOAD_SPEED = 0.25
 	presets.weapon.normal.mini.melee_speed = 1
 	presets.weapon.normal.mini.melee_dmg = 4
-	presets.weapon.normal.mini.melee_retry_delay = {0, 0}
+	presets.weapon.normal.mini.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.mini.range = {
 		close = 1000,
 		optimal = 2500,
@@ -5001,7 +5001,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_revolver.RELOAD_SPEED = 1
 	presets.weapon.good.is_revolver.melee_speed = 1
 	presets.weapon.good.is_revolver.melee_dmg = 8
-	presets.weapon.good.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.good.is_revolver.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.good.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
@@ -5145,7 +5145,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.mini.RELOAD_SPEED = 0.25
 	presets.weapon.good.mini.melee_speed = 1
 	presets.weapon.good.mini.melee_dmg = 8
-	presets.weapon.good.mini.melee_retry_delay = {0, 0}
+	presets.weapon.good.mini.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.good.mini.range = {
 		close = 1000,
 		optimal = 2500,
@@ -6226,7 +6226,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
 	presets.weapon.expert.is_revolver.melee_speed = 1
 	presets.weapon.expert.is_revolver.melee_dmg = 10
-	presets.weapon.expert.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.expert.is_revolver.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.expert.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,
@@ -6370,7 +6370,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.mini.RELOAD_SPEED = 0.25
 	presets.weapon.expert.mini.melee_speed = 1
 	presets.weapon.expert.mini.melee_dmg = 10
-	presets.weapon.expert.mini.melee_retry_delay = {0, 0}
+	presets.weapon.expert.mini.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.expert.mini.range = {
 		close = 1000,
 		optimal = 2500,
@@ -6451,7 +6451,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.deathwish.is_revolver.RELOAD_SPEED = 1
 	presets.weapon.deathwish.is_revolver.melee_speed = 1
 	presets.weapon.deathwish.is_revolver.melee_dmg = 12
-	presets.weapon.deathwish.is_revolver.melee_retry_delay = {0, 0}
+	presets.weapon.deathwish.is_revolver.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.deathwish.is_revolver.range = {
 		close = 1000,
 		optimal = 2000,

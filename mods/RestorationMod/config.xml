@@ -151,6 +151,7 @@
 				<option type="bool" default_value="false" name="MainHud"/>
 				<option type="bool" default_value="false" name="Waypoints"/>
 				<option type="bool" default_value="false" name="AssaultPanel"/>
+				<option type="bool" default_value="false" name="AltAssault"/>
 				<option type="bool" default_value="false" name="ObjectivesPanel"/>
 				<option type="bool" default_value="false" name="Presenter"/>
 				<!--<option type="bool" default_value="false" name="Interaction"/>-->

@@ -1,6 +1,12 @@
 if restoration.Options:GetValue("HUD/AssaultPanel") then
 function HUDAssaultCorner:init(hud, full_hud)
-	self._v2_corner = true
+--Control option for alternate indicator, gotta make this less fuck stupid later on
+	if restoration.Options:GetValue("HUD/AltAssault") then
+		self._v2_corner = true
+	else
+		self._v2_corner = false
+	end
+	
 	self._hud_panel = hud.panel
 	self._full_hud_panel = full_hud.panel
 	if self._hud_panel:child("assault_panel") then

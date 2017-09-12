@@ -13158,6 +13158,8 @@ function CharacterTweakData:character_map()
 				"ene_city_heavy_g36",
 				"ene_bulldozer_biker_1",
 				"ene_guard_biker_1",
+				"ene_murky_heavy_m4",
+				"ene_murky_heavy_r870"
 			}
 		},
 		dlc1 = {
@@ -13440,7 +13442,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_minigun",
 				"ene_zeal_swat_heavy_sniper"
 			}
-		}
+		}	
 	}
 	return char_map
 end

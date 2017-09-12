@@ -1176,6 +1176,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			type = "sight",
 			name_id = "bm_wp_upg_o_leupold",
+			desc_id = "bm_wp_upg_o_leupold_desc_sc",
+			has_description = true,
 			a_obj = "a_o",
 			unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_fps_upg_o_leupold",
 			stats = {
@@ -16493,6 +16495,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_explosive",
+			desc_id = "bm_wp_upg_a_explosive_desc_sc",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -16633,6 +16636,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_grenade_launcher_incendiary",
+			desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_desc_sc",
+			has_description = true,			
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -29586,6 +29591,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			type = "sight",
 			name_id = "bm_wp_upg_o_box",
+			desc_id = "bm_wp_upg_o_leupold_desc_sc",
+			has_description = true,			
 			a_obj = "a_o",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_box/wpn_fps_upg_o_box",
 			stats = {
@@ -29751,6 +29758,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_ns_duck",
 			a_obj = "a_ns",
 			parent = "barrel",
+			desc_id = "bm_wp_ns_duck_desc_sc",
+			has_description = true,
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_ns_duck/wpn_fps_upg_ns_duck",
 			stats = {
 				value = 1,

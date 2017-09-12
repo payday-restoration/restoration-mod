@@ -3947,6 +3947,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.ksg.panic_suppression_chance = 0.0
+		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
+		self.gre_m79.has_description = true
 		self.gre_m79.fire_mode_data.fire_rate = 3
 		self.gre_m79.spread.standing = 3.5
 		self.gre_m79.spread.crouching = 2.5
@@ -5238,7 +5240,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.polymer.panic_suppression_chance = 0.1
 		self.hunter.has_description = true
-		self.hunter.desc_id = "bm_ap_2_weapon_sc_desc"
+		self.hunter.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.hunter.AMMO_MAX = 20
 		self.hunter.AMMO_PICKUP = {0.24, 0.6}
 		self.hunter.spread.standing = 3.5
@@ -5301,7 +5303,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.baka.panic_suppression_chance = 0.1
 		self.arblast.has_description = true
-		self.arblast.desc_id = "bm_ap_2_weapon_sc_desc"
+		self.arblast.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.arblast.AMMO_MAX = 20
 		self.arblast.AMMO_PICKUP = {0.24, 0.6}
 		self.arblast.spread.standing = 3.5
@@ -5330,7 +5332,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.arblast.stats_modifiers = {damage =  2}
 		self.frankish.has_description = true
-		self.frankish.desc_id = "bm_ap_2_weapon_sc_desc"
+		self.frankish.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.frankish.spread.standing = 3.5
 		self.frankish.spread.crouching = 2.5
 		self.frankish.spread.steelsight = 1
@@ -5521,6 +5523,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.china.desc_id = "bm_40mm_weapon_sc_desc"
+		self.china.has_description = true
 		self.china.fire_mode_data.fire_rate = 2
 		self.china.single.fire_rate = 2
 		self.china.AMMO_MAX = 6
@@ -5968,6 +5972,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arbiter.kick.standing = self.r870.kick.standing
 		self.arbiter.kick.crouching = self.r870.kick.standing
 		self.arbiter.kick.steelsight = self.r870.kick.standing
+		self.contraband.desc_id = "bm_m203_weapon_sc_desc"
+		self.contraband.has_description = true
 		self.contraband.AMMO_MAX = 80
 		self.contraband.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.contraband.FIRE_MODE = "auto"

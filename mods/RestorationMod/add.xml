@@ -703,4 +703,22 @@
 	<material_config path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_dead"/>
 	<sequence_manager path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 	<cooked_physics path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	
+	<!--murky heavy-->
+	<object path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4" force="false"/>
+	<model path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4" force="false"/>
+	<unit path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4" force="false"/>
+	<material_config path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_murky_heavy_m4/ene_murky_heavy_m4_husk" force="false" load="true"/>
+	<!--murky heavy r870-->
+	<unit path="units/payday2/characters/ene_murky_heavy_r870/ene_murky_heavy_r870" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_murky_heavy_r870/ene_murky_heavy_r870_husk" force="false" load="true"/>
+	<!--murky heavy textures-->
+	<texture path="units/payday2/characters/ene_murky_heavy_m4/murky_heavy_df" force="false"/>
+	<texture path="units/payday2/characters/ene_murky_heavy_m4/murky_helmet_df" force="false"/>
+	<texture path="units/payday2/characters/ene_murky_heavy_m4/murky_helmet_nm" force="false"/>
+	<texture path="units/payday2/characters/ene_murky_heavy_m4/tank_glass_df" force="false"/>
+	<texture path="units/payday2/characters/ene_murky_heavy_m4/tank_glass_op" force="false"/>	
 </table>

@@ -3782,8 +3782,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				spread_moving = -1,
 				recoil = 1,
-				concealment = -1,
-				damage = 2
+				concealment = -1
 			},
 			forbids = {
 				"wpn_fps_addon_ris"
@@ -21180,8 +21179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				spread_moving = -1,
 				spread = 1,
-				concealment = -2,
-				damage = 2
+				concealment = -2
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",

@@ -2725,7 +2725,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.spread.moving_crouching = 3
 		self.m16.spread.moving_steelsight = 2
 		self.m16.stats = {
-			damage = 43,
+			damage = 41,
 			spread = 16,
 			recoil = 17,
 			spread_moving = 5,

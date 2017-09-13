@@ -2259,6 +2259,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.cqc.stats.concealment = 30
 
 	--YOOOOOOOOOOOOOOOOOOOOOOOOOOO--
+	self.melee_weapons.sandsteel.info_id = "bm_melee_katana_info"
 	self.melee_weapons.sandsteel.speed_mult = 1.05
 	self.melee_weapons.sandsteel.stats.min_damage = 8
 	self.melee_weapons.sandsteel.stats.max_damage = 18

@@ -1290,7 +1290,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				damage = 0,
 				spread = 0,
-				recoil = 0
+				recoil = 1
 			},
 			forbids = {
 				"wpn_fps_upg_extra_mp_lock"
@@ -1317,7 +1317,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				damage = 0,
 				spread = 0,
-				recoil = 0,
+				recoil = -1,
 				spread_moving = 0
 			},
 			forbids = {
@@ -33547,14 +33547,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	--TOZ66--
 	if self.wpn_fps_shot_toz66 then
-		self.parts.wpn_fps_toz66_uupg_barrel_choke.stats = {
+		self.parts.wpn_fps_upg_toz66_ammo_000_magnum.pcs = nil
+		self.parts.wpn_fps_upg_toz66_choke.stats = {
 				value = 0,
 				spread_moving = -1,
 				spread = 1,
 				concealment = -1
 		}
-		self.parts.wpn_fps_toz66_uupg_barrel_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
-		self.parts.wpn_fps_toz66_uupg_leupold_pro.stats = {
+		self.parts.wpn_fps_upg_toz66_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+		self.parts.wpn_fps_upg_toz66_leupold_pro.stats = {
 				value = 1,
 				recoil = 1,
 				zoom = 1,
@@ -33656,6 +33657,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	-->:3's TOZ
 	if self.wpn_fps_shot_toz34 then
+		self.parts.wpn_fps_upg_toz34_ammo_000_magnum.pcs = nil
 		self.parts.wpn_fps_shot_toz34_barrel_choke.stats = {
 				value = 1,
 				spread_moving = -1,

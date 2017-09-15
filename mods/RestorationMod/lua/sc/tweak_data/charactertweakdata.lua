@@ -643,8 +643,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	self.city_swat_titan.HEALTH_INIT = 13
-	self.city_swat_titan.headshot_dmg_mul = 1.265
+	self.city_swat_titan.HEALTH_INIT = 15
+	self.city_swat_titan.headshot_dmg_mul = 1.46
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"

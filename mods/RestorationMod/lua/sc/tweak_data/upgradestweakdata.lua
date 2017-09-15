@@ -236,7 +236,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--self.values.player.passive_convert_enemies_damage_multiplier = {1.15}				
 			
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.025, 0.05}
+				self.values.player.hostage_health_regen_addend = {0.015, 0.045}
 			--}
 			
 			--[[   ASSAULT SUBTREE   ]]--

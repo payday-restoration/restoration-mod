@@ -31,11 +31,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad_desc"] = "",
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLs.",
+		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 		["bm_m203_weapon_sc_desc"] = "Press the [Bipod Key/Alt-Fire Key] to switch to the mounted Grenade Launcher.",
 		["bm_40mm_weapon_sc_desc"] = "Press the [Gadget Key] to toggle Flip Up Sight.",
 		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
-		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR AND ARROWS CAN BE RESTORED BY PICKING THEM UP.",
+		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
 		["bm_ap_flamethrower_sc_desc"] = "BURNS THROUGH BODY ARMOR.",
 		["bm_ap_saw_sc_desc"] = "",
 		["bm_ap_saw_blade_sc_desc"] = "Adds the ability to cut through body armor.",
@@ -49,7 +49,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
 	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
-		["bm_wp_upg_a_custom_desc"] = "Bigger pellets that give more impact and increases damage.",
+		["bm_wp_upg_a_custom_desc"] = "Bigger pellets that give more impact and increase damage.",
 		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
 		["menu_moving_target_sc"] = "Subtle",
 		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",
@@ -67,7 +67,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["sc_player_weapon_title"] = "Player Weapon Changes",
 		["sc_ai_title"] = "SC's Mod Main Changes",
 		["sc_classic_smoke_title"] = "Alternative Tear Gas Visuals",
-		["sc_classic_smoke_desc"] = "Toggle the alternative Tear Gas visuals.",
+		["sc_classic_smoke_desc"] = "Toggle the alternative Tear Gas visuals. This will provide a performance boost if the normal visuals cause performance issues.",
 		["sc_spawn_title"] = "Spawn Rate Changes",
 		["sc_player_title"] = "Player/Skill changes",
 		["sc_perk_title"] = "Perk Deck changes",
@@ -128,7 +128,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus"] = "Modifiers",
 		--["menu_challenge_stat_boost"] = "Random Mod Kit",
 		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
-		["bm_menu_suppression"] = "Noise level",
+		["bm_menu_suppression"] = "Noise Level",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
 		--["dialog_new_tradable_item_bonus"] = "",
 		--["steam_inventory_team_boost"] = "",
@@ -308,7 +308,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_evasive_desc"] = "Bots equipped with this perk gain 50% increased movement speed.",
 
 		["menu_crew_regen"] = "Regeneration",
-		["menu_crew_regen_desc"] = "Bots equipped with this perk gain health 50 health returned on damage dealt every 3 seconds.",
+		["menu_crew_regen_desc"] = "Bots equipped with this perk regenerate 50 health every 3 seconds when damaging an enemy.",
 
 		["menu_crew_quiet"] = "The Mole",
 		["menu_crew_quiet_desc"] = "Bots equipped with this perk gain 25% damage resistance when surrounded by 3 or more enemies within 18 meters.",
@@ -379,7 +379,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##2.5%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##5%## health every ##5## seconds.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1.5%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##4.5%## health every ##5## seconds.",
 		
 
 			--}
@@ -458,7 +458,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "Transporter",
-			["menu_transporter_beta_desc_sc"] = "BASIC: ##$basic##\nYou can throw bags ##50%## further.\n\nACE: ##$pro##\nYou can now sprint with any bag.\n\nNote: The movment penalty incited by the bag still applies.",																																																																																																																																																																																																
+			["menu_transporter_beta_desc_sc"] = "BASIC: ##$basic##\nYou can throw bags ##50%## further.\n\nACE: ##$pro##\nYou can now sprint with any bag.\n\nNote: The movement penalty from the bag still applies.",																																																																																																																																																																																																
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "More Blood to Bleed",
@@ -541,7 +541,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hardware Expert--
 			["menu_hardware_expert_beta_sc"] = "Hardware Expert",
-			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##50%## faster.\n\nACE: ##$pro##\nYour drills are now silent, civilians and guards have to see the drills in order to get alerted.",																								
+			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##50%## faster.\n\nACE: ##$pro##\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to get alerted.",																								
 
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
@@ -647,7 +647,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
-		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## killing headshots in less than ##6## seconds will refund ##1## ammo pickup to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nACE: ##$pro##\nGetting ##3## headshots in a row will refund ##1## ammo pickup for your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.",																																																																																																																																																																																																																									
+		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## killing headshots in less than ##6## seconds will grant ##1## ammo pickup to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nACE: ##$pro##\nGetting ##3## headshots in a row will grant ##1## ammo pickup for your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.",																																																																																																																																																																																																																									
 
 		--Bulletproof--
 		["menu_iron_man_sc"] = "Bulletproof",
@@ -809,17 +809,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Infiltrator--
-		["menu_deck8_1_desc_sc"] = "When you are within medium range of an enemy, you receive ##10%## less damage from enemies.",
-		["menu_deck8_3_desc_sc"] = "When you are within medium range of an enemy, you receive an additional ##5%## less damage from enemies.",
-		["menu_deck8_5_desc_sc"] = "When you are within medium range of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
-		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more, you an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
+		["menu_deck8_1_desc_sc"] = "When you are within ##18## meters of an enemy, you receive ##10%## less damage from enemies.",
+		["menu_deck8_3_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.",
+		["menu_deck8_5_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
+		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more within ##18 meters##, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
 		["menu_deck8_9_desc_sc"] = "Striking an enemy with your melee weapon regenerates ##10%## of your health. This cannot occur more than once every ##10## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##10%## health.\n\nThis cannot occur more than once every ##2## seconds.",
-		["menu_deck9_7_desc_sc"] = "Killing an enemy at medium range regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy at medium range has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
@@ -838,7 +838,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you ##10## armor - This can only occur once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with ##50%## of all damage taken for ##5## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
+		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##50%## of all damage taken for ##5## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
 		["menu_deck17_3_desc_sc"] = "You gain ##5%## more armor.",
 		["menu_deck17_5_desc_sc"] = "You gain ##5%## more armor.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "You gain ##5%## more armor.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",

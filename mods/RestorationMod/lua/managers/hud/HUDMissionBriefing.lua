@@ -716,8 +716,8 @@ function HUDMissionBriefing:init(hud, workspace, ...)
     tmp = nil
  
     function making_video()
-        self._contact_image = bg2:bitmap( { name="contact_image", texture="guis/textures/restoration/mission_briefing/shatter", w=720, h=720 } )
-        self._contact_image = bg2:video( { name="contact_image", video = "movies/contact_shatter1", width = 1280, height = 720, blend_mode="add", loop=true, alpha=1, color = tweak_data.screen_color_red } ) -- , color = tweak_data.screen_color_yellow } )
+        --self._contact_image = bg2:bitmap( { name="contact_image", texture="guis/textures/restoration/mission_briefing/shatter", w=720, h=720 } )
+        self._contact_image = bg2:video( { name="contact_image", video = "movies/contact_shatter1", width = 1280, height = 720, blend_mode="add", loop=true, alpha=1 } ) -- , color = tweak_data.screen_color_yellow } )
     end
     bg2:stop()
     bg2:animate(making_video)

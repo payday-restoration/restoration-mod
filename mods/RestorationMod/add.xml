@@ -152,7 +152,31 @@
 	<!--Titan Shotgunner-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
-
+	<object path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
+	
+	<!--Titan Rifle-->	
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_rifle_df" force="false"/>
+	
+	<!--Keep those helmets flying ;)-->	
+	<object path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="true"/>
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	
 	<!--Titandozer-->	
 	<object path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>

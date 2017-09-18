@@ -493,7 +493,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sg417_npc.CLIP_AMMO_MAX = 20
 		self.sg417_npc.DAMAGE = 5.4
 		self.m4_boom_npc = deep_clone(self.m4_npc)
-		self.m4_npc = deep_clone(self.m4_npc)
 	end
 
 	function WeaponTweakData:_init_data_ak47_npc()

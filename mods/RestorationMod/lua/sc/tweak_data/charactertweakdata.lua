@@ -643,8 +643,10 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	self.city_swat_titan.HEALTH_INIT = 15
-	self.city_swat_titan.headshot_dmg_mul = 1.46
+	self.city_swat_titan.HEALTH_INIT = 13
+	self.city_swat_titan.headshot_dmg_mul = 1.265
+	self.city_swat_titan.move_speed = presets.move_speed.lightning
+	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
@@ -12155,7 +12157,8 @@ function CharacterTweakData:_create_table_structure()
 		"mp5_zeal",
 		"p90_summer",
 		"m16_summer",
-		"mp5_cloak"
+		"mp5_cloak",
+		"s552_sc"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -12194,7 +12197,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak")
+		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"),
+		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc")
 	}
 end
 
@@ -13244,6 +13248,7 @@ function CharacterTweakData:character_map()
 				"ene_phalanx_taser",
 				"ene_phalanx_1",
 				"ene_titan_shotgun",
+				"ene_titan_rifle",
 				"ene_omnia_lpf"
 			}
 		},

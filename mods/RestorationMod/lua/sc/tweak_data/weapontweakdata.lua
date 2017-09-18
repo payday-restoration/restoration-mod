@@ -493,6 +493,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sg417_npc.CLIP_AMMO_MAX = 20
 		self.sg417_npc.DAMAGE = 5.4
 		self.m4_boom_npc = deep_clone(self.m4_npc)
+		self.m4_npc = deep_clone(self.m4_npc)
 	end
 
 	function WeaponTweakData:_init_data_ak47_npc()
@@ -820,6 +821,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_no_idle = deep_clone(self.ceiling_turret_module)
 		self.ceiling_turret_module_no_idle.CAN_GO_IDLE = false
 	end
+		
+	function WeaponTweakData:_init_data_s552_npc()
+		self.s552_npc.sounds.prefix = "sig552_npc"
+		self.s552_npc.use_data.selection_index = 2
+		self.s552_npc.DAMAGE = 2.3
+		self.s552_npc.muzzleflash = "effects/payday2/particles/weapons/556_auto"
+		self.s552_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+		self.s552_npc.CLIP_AMMO_MAX = 30
+		self.s552_npc.NR_CLIPS_MAX = 5
+		self.s552_npc.auto.fire_rate = 0.086
+		self.s552_npc.hold = "rifle"
+		self.s552_npc.alert_size = 4000
+		self.s552_npc.suppression = 2.2
+	end	
 
 	function WeaponTweakData:_init_data_scar_npc()
 		self.scar_npc.sounds.prefix = "scar_npc"

@@ -16,9 +16,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if id == "GroupAIStateBesiege:SpawningUnit" then
 			local is_fbi = table.contains(ModifierHeavies.fbi, value)
 			local is_gensec = table.contains(ModifierHeavies.gensec, value)
-			if is_fbi and math.random(0,100) < 15 then
+			if is_fbi and math.random(0,100) < 10 then
 				return Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")
-			elseif is_gensec and math.random(0,100) < 15 then
+			elseif is_gensec and math.random(0,100) < 10 then
 				return Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3")
 			end
 		end

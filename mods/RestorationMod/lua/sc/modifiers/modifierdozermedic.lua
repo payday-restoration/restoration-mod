@@ -15,7 +15,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function ModifierDozerMedic:modify_value(id, value)
 		if id == "GroupAIStateBesiege:SpawningUnit" then
 			local is_hrt = table.contains(ModifierDozerMedic.hrts, value)
-			if is_hrt and math.random(0,100) < 15 then
+			if is_hrt and math.random(0,100) < 10 then
 				return Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 			end
 		end

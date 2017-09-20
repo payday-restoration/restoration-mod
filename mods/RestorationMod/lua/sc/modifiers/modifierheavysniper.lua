@@ -19,7 +19,7 @@ ModifierHeavySniper.heavy_units = {
 function ModifierHeavySniper:modify_value(id, value)
 	if id == "GroupAIStateBesiege:SpawningUnit" then
 		local is_heavy = table.contains(ModifierHeavySniper.heavy_units, value)
-		if is_heavy and math.random(0,100) < 15 then
+		if is_heavy and math.random(0,100) < 10 then
 			return Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
 		end
 	end

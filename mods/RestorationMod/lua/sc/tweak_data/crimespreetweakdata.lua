@@ -212,8 +212,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					data = {
 						duration = {50, "add"},
 						spawn_pool = {50, "add"},
-						deduction = {4, "add"},
-						max_hostages = {8, "none"}
+						deduction = {8, "add"},
+						max_hostages = {4, "none"}
 					}
 				},
 				{

@@ -22,7 +22,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function ModifierShieldPhalanx:modify_value(id, value)
 		if id == "GroupAIStateBesiege:SpawningUnit" then
 			local is_shield = table.contains(ModifierShieldPhalanx.shields, value)
-			if is_shield and math.random(0,100) < 15 then
+			if is_shield and math.random(0,100) < 10 then
 				return Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 			end
 		end

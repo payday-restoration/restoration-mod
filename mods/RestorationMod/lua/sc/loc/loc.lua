@@ -274,12 +274,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_no_hurt"] = "Enemies are 50% resistant to knock down.",
 		["menu_cs_modifier_enemy_health_damage"] = "Enemies deal an additional 15% more damage.",
 		["menu_cs_modifier_health_damage_total"] = "",
-		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 15% chance to become a Skulldozer.",
-		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become a squad leader.",
-		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 15% chance to become a Titan Shotgunner.",
-		["menu_cs_modifier_dozer_medic"] = "All HRT units have an additional 15% chance to become an OMNIA LPF.",
-		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 15% chance to become a Titan Bulldozer.",
-		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 15% chance to become a Titan Shield.",
+		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 10% chance to become a Skulldozer.",
+		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 10% chance to become a squad leader.",
+		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 10% chance to become a Titan Shotgunner.",
+		["menu_cs_modifier_dozer_medic"] = "All HRT units have an additional 10% chance to become an OMNIA LPF.",
+		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 10% chance to become a Titan Bulldozer.",
+		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 10% chance to become a Titan Shield.",
 
 		["bm_menu_skill"] = "Crew Perks",
 

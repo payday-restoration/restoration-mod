@@ -858,6 +858,48 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_on_damage_received(attack_data)
 		return result
 	end
+	
+	function CopDamage:damage_mission(attack_data)
+		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
+		if self._dead or (self._invulnerable or self._immortal) and not attack_data.forced then
+			return
+		end
+
+		if self.immortal and self.is_escort then
+			if attack_data.backup_so then
+				attack_data.backup_so:on_executed(self._unit)
+			end
+
+			return
+		end
+		
+		if char_tweak.no_damage_mission then
+			return
+		end
+
+		local result = nil
+		local damage_percent = self._HEALTH_GRANULARITY
+		attack_data.damage = self._health
+		result = {
+			type = "death",
+			variant = attack_data.variant
+		}
+
+		self:die(attack_data)
+
+		attack_data.result = result
+		attack_data.attack_dir = self._unit:rotation():y()
+		attack_data.pos = self._unit:position()
+
+		if attack_data.attacker_unit == managers.player:local_player() and CopDamage.is_civilian(self._unit:base()._tweak_table) then
+			managers.money:civilian_killed()
+		end
+
+		self:_send_explosion_attack_result(attack_data, self._unit, damage_percent, self:_get_attack_variant_index("explosion"), attack_data.col_ray and attack_data.col_ray.ray)
+		self:_on_damage_received(attack_data)
+
+		return result
+	end
 
 	function CopDamage:_apply_min_health_limit(damage, damage_percent)
 		local lower_health_percentage_limit = self._unit:base():char_tweak().LOWER_HEALTH_PERCENTAGE_LIMIT

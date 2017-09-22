@@ -393,9 +393,10 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.use_animation_on_fire_damage = false
 	self.medic_summers.damage.bullet_damage_mul = 0.65
 	self.medic_summers.damage.explosion_damage_mul = 0.1
-	self.medic_summers.damage.fire_damage_mul = 0.1
+	self.medic_summers.damage.fire_damage_mul = 0.05
 	self.medic_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.medic_summers.immune_to_concussion = true
+	self.medic_summers.no_damage_mission = true
 	self.medic_summers.no_retreat = true
 	self.medic_summers.no_arrest = true
 	self.medic_summers.rescue_hostages = false
@@ -1460,6 +1461,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.LOWER_HEALTH_PERCENTAGE_LIMIT = nil
 	self.spring.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = nil
 	self.spring.ends_assault_on_death = true
+	self.spring.no_damage_mission = true
 	self.spring.immune_to_knock_down = true
 	self.spring.HEALTH_INIT = 1000
 	self.spring.EXTRA_HEALTH_BALANCE = 50
@@ -1524,6 +1526,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.no_retreat = true
 	self.summers.no_arrest = true
 	self.summers.ends_assault_on_death = true
+	self.summers.no_damage_mission = true
 	self.summers.immune_to_knock_down = true
 	self.summers.priority_shout = "f45"
 	self.summers.bot_priority_shout = "f45x_any"
@@ -1617,7 +1620,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.use_animation_on_fire_damage = false
 	self.taser_summers.damage.bullet_damage_mul = 0.65
 	self.taser_summers.damage.explosion_damage_mul = 0.1
-	self.taser_summers.damage.fire_damage_mul = 0.1
+	self.taser_summers.damage.fire_damage_mul = 0.05
 	self.taser_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.taser_summers.ecm_hurts = {}
 	self.taser_summers.chatter = presets.enemy_chatter.summers
@@ -1625,6 +1628,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.rescue_hostages = false
 	self.taser_summers.steal_loot = nil
 	self.taser_summers.immune_to_concussion = true
+	self.taser_summers.no_damage_mission = true
 	self.taser_summers.no_arrest = true
 	self.taser_summers.immune_to_knock_down = true
 	self.taser_summers.priority_shout = "f45"
@@ -1701,7 +1705,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.spawn_sound_event = "clk_c01x_plu"
 	self.boom_summers.use_animation_on_fire_damage = false
 	self.boom_summers.damage.explosion_damage_mul = 0.1
-	self.boom_summers.damage.fire_damage_mul = 0.1
+	self.boom_summers.damage.fire_damage_mul = 0.05
 	self.boom_summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.boom_summers.chatter = presets.enemy_chatter.summers
 	self.boom_summers.speech_prefix_p1 = "fl"
@@ -1717,6 +1721,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.no_arrest = true
 	self.boom_summers.immune_to_knock_down = true
 	self.boom_summers.immune_to_concussion = true
+	self.boom_summers.no_damage_mission = true
 	self.boom_summers.priority_shout = "f45"
 	self.boom_summers.bot_priority_shout = "f45x_any"
 	self.boom_summers.custom_shout = false
@@ -12477,7 +12482,7 @@ function CharacterTweakData:_set_sm_wish()
 	end
 	self:_multiply_all_speeds(1.15, 1.2)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 200
 	self.spa_vip.HEALTH_INIT = 200
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200

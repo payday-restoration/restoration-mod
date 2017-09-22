@@ -26,14 +26,15 @@ if not _G.restoration then
 		"nail"
 	}
 	_G.restoration.captain_teamwork = {
+		"nightclub",
+		"welcome_to_the_jungle_2",
+		"gallery",
 		"pal",
-		"run",
 		"mia_2",
 		"firestarter_3",
 		"mad",
 		"jolly",
-		"peta",
-		"peta2"
+		"peta"
 	}
 	_G.restoration.captain_murderdozer = {
 		"branchbank",

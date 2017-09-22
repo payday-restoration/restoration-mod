@@ -78,7 +78,7 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.buildup_mul = 1.5
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.LIVES_INIT = 2
-	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.251
 	}

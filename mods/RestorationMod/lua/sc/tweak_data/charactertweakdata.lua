@@ -644,6 +644,15 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
+	if job == "mad" then
+		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.city_swat_titan.speech_prefix_p2 = self._prefix_data_p2.swat()
+		self.city_swat_titan.speech_prefix_count = 4
+	else
+		self.city_swat_titan.speech_prefix_p1 = "l5d"
+		self.city_swat_titan.speech_prefix_p2 = nil
+		self.city_swat_titan.speech_prefix_count = nil
+	end
 	self.city_swat_titan.HEALTH_INIT = 13
 	self.city_swat_titan.headshot_dmg_mul = 1.265
 	self.city_swat_titan.move_speed = presets.move_speed.lightning

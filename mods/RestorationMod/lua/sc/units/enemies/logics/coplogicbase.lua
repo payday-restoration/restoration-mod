@@ -228,6 +228,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if AIAttentionObject.REACT_SHOOT <= new_reaction and new_att_obj.verified and contact_chatter_time_ok and (data.unit:anim_data().idle or data.unit:anim_data().move) and new_att_obj.is_person and data.char_tweak.chatter.contact then
 				if data.unit:base()._tweak_table == "spring" then
 					data.unit:sound():say("a01", true)
+				elseif data.unit:base()._tweak_table == "city_swat_titan" then
+					data.unit:sound():say("lk3a", true)
 				else
 					data.unit:sound():say("c01", true)
 				end

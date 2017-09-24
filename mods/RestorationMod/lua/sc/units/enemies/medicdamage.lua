@@ -6,7 +6,7 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	local cooldown = tweak_data.medic.cooldown
 
 	cooldown = managers.crime_spree:modify_value("MedicDamage:CooldownTime", cooldown)
-	if my_tweak_table == "medic" then
+	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
 		cooldown = tweak_data.medic.cooldown
 	else
 		cooldown = 0.1
@@ -17,7 +17,7 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	if self._unit:anim_data() and self._unit:anim_data().act then
 		return false
 	end
-	if my_tweak_table == "medic" then
+	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
 		local tweak_table = unit:base()._tweak_table
 		if table.contains(tweak_data.medic.disabled_units, tweak_table) then
 			return false

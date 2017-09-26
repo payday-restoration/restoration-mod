@@ -653,8 +653,8 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.speech_prefix_p2 = nil
 		self.city_swat_titan.speech_prefix_count = nil
 	end
-	self.city_swat_titan.HEALTH_INIT = 13
-	self.city_swat_titan.headshot_dmg_mul = 1.265
+	self.city_swat_titan.HEALTH_INIT = 15
+	self.city_swat_titan.headshot_dmg_mul = 2.19
 	self.city_swat_titan.move_speed = presets.move_speed.lightning
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil

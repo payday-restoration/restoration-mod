@@ -13461,7 +13461,24 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_minigun",
 				"ene_zeal_swat_heavy_sniper"
 			}
-		}	
+		},
+		sharks = {
+			path = "units/pd2_mod_sharks/characters/",
+			list = {
+				"ene_murky_swat_m4",
+				"ene_murky_swat_r870",
+				"ene_murky_hrt_1",
+				"ene_murky_hrt_2",
+				"ene_murky_heavy_m4",
+				"ene_murky_heavy_r870",
+				"ene_murky_fbi_heavy_m4",
+				"ene_murky_fbi_heavy_r870",
+				"ene_murky_yellow_m4",
+				"ene_murky_yellow_r870",
+				"ene_murky_shield_yellow",
+				"ene_murky_shield_fbi"
+			}
+		}			
 	}
 	return char_map
 end

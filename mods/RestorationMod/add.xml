@@ -736,16 +736,6 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk" force="false" load="true"/>
 	
-	<!--BONK BONK BONK-->
-	<unit path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false" load="true"/>
-	<object path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
-	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>	
-	<material_config path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>	
-	<model path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
-	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
-	<texture path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/shield_df" force="false"/>
-	<texture path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/shield_nm" force="false"/>
-
 	<!--murky swat m4-->
 	<object path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false"/>

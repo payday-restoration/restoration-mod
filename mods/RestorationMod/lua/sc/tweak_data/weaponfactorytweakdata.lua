@@ -1025,6 +1025,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_45iron/wpn_fps_upg_o_45iron",
 			stats = {value = 1, gadget_zoom = 1},
 			perks = {"gadget"},
+			depends_on = "sight",
 			texture_bundle_folder = "gage_pack_snp",
 			dlc = "gage_pack_snp",
 			is_a_unlockable = true,
@@ -8711,7 +8712,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
 			"wpn_fps_pis_g26_body_custom",
-			"wpn_upg_o_marksmansight_rear",
 			"wpn_fps_pis_g18c_g_ergo",
 			"wpn_fps_pis_g18c_co_comp_2",
 			"wpn_fps_pis_g18c_co_1",
@@ -9755,8 +9755,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_pis_g26_g_laser",
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
-			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_upg_o_marksmansight_rear"
+			"wpn_fps_upg_ns_pis_jungle"
 		}
 		self.wpn_fps_pis_g22c_npc = deep_clone(self.wpn_fps_pis_g22c)
 		self.wpn_fps_pis_g22c_npc.unit = "units/payday2/weapons/wpn_fps_pis_g22c/wpn_fps_pis_g22c_npc"

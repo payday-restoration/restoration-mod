@@ -602,6 +602,71 @@ end
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	function CopDamage:init(unit)
+		self._unit = unit
+		local char_tweak = tweak_data.character[unit:base()._tweak_table]
+		self._immune_to_knockback = char_tweak.damage.immune_to_knockback
+		self._HEALTH_INIT = char_tweak.HEALTH_INIT
+		self._health = self._HEALTH_INIT
+		self._health_ratio = 1
+		self._HEALTH_INIT_PRECENT = self._HEALTH_INIT / self._HEALTH_GRANULARITY
+		self._autotarget_data = {fast = unit:get_object(Idstring("Spine1"))}
+		self._pickup = "ammo"
+		self._listener_holder = EventListenerHolder:new()
+
+		if char_tweak.permanently_invulnerable or self.immortal then
+			self:set_invulnerable(true)
+		end
+
+		self._char_tweak = char_tweak
+		self._spine2_obj = unit:get_object(Idstring("Spine2"))
+
+		if self._head_body_name then
+			self._ids_head_body_name = Idstring(self._head_body_name)
+			self._head_body_key = self._unit:body(self._head_body_name):key()
+		end
+
+		self._ids_plate_name = Idstring("body_plate")
+		if self._unit:base()._tweak_table == "city_swat" then
+			self._has_plate = false
+		else
+			self._has_plate = true
+		end
+		local body = self._unit:body("mover_blocker")
+
+		if body then
+			body:add_ray_type(Idstring("trip_mine"))
+		end
+
+		self._last_time_unit_got_fire_damage = nil
+		self._last_time_unit_got_fire_effect = nil
+		self._temp_flame_redir_res = nil
+		self._active_fire_bone_effects = {}
+
+		if CopDamage.DEBUG_HP then
+			self:_create_debug_ws()
+		end
+
+		self._tase_effect_table = {
+			effect = Idstring("effects/payday2/particles/character/taser_hittarget"),
+			parent = self._spine2_obj
+		}
+
+		self:_set_lower_health_percentage_limit(self._char_tweak.LOWER_HEALTH_PERCENTAGE_LIMIT)
+
+		self._has_been_staggered = false
+
+
+		-- Lines: 142 to 144
+		local function clbk()
+			self._has_been_staggered = false
+		end
+
+		managers.player:register_message(Message.ResetStagger, self, clbk)
+
+		self._accuracy_multiplier = 1
+	end
+
 	function CopDamage:die(attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"

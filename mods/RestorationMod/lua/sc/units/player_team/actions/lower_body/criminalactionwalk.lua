@@ -23,7 +23,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local speed_modifier = tweak_data.carry.types[tweak_data.carry[self._ext_movement:carry_id()].type].move_speed_modifier * 1.5
 
 			for k, v in pairs(speed) do
-				speed[k] = v * speed_modifier
+				speed[k] = v * 1
 			end
 		end
 
@@ -35,7 +35,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if self._ext_movement:carrying_bag() then
 			local speed_modifier = tweak_data.carry.types[tweak_data.carry[self._ext_movement:carry_id()].type].move_speed_modifier * 1.5
-			speed = speed * speed_modifier
+			speed = speed * 1
 		end
 
 		return speed

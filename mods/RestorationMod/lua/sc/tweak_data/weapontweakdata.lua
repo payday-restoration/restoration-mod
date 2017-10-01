@@ -7054,6 +7054,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			use_data = {},
 			auto = {}
 		}
+		self.m14_crew = {
+			usage = "rifle",
+			anim_usage = "is_rifle",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}	
+		self.g3_crew = {
+			usage = "rifle",
+			anim_usage = "is_rifle",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}		
 	end
 
 	WeaponTweakData.clone__precalculate_values = WeaponTweakData._precalculate_values

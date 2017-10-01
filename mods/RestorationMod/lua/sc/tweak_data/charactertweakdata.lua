@@ -10072,11 +10072,12 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.mossberg.RELOAD_SPEED = 3
 	presets.weapon.gang_member.mac11 = presets.weapon.gang_member.is_smg
 	presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.is_rifle)
+	presets.weapon.gang_member.rifle.spread = 5
 	presets.weapon.gang_member.rifle.autofire_rounds = nil
 	presets.weapon.gang_member.rifle.FALLOFF = {
 		{
 			r = 100,
-			acc = {0.95, 1},
+			acc = {1, 1},
 			dmg_mul = 1.25,
 			recoil = {1, 1},
 			mode = {
@@ -10088,7 +10089,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 3000,
-			acc = {0.9, 0.95},
+			acc = {0.95, 1},
 			dmg_mul = 1.25,
 			recoil = {1, 1},
 			mode = {
@@ -10100,7 +10101,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 10000,
-			acc = {0.85, 0.9},
+			acc = {0.9, 0.95},
 			dmg_mul = 1.25,
 			recoil = {1, 1},
 			mode = {
@@ -12490,7 +12491,7 @@ function CharacterTweakData:_set_sm_wish()
 	end
 	self:_multiply_all_speeds(1.15, 1.2)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 200
 	self.spa_vip.HEALTH_INIT = 200
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200

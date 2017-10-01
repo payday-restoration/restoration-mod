@@ -1847,7 +1847,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				},
 				max_amount = 1,
-				access = access_type_all,
+				access = access_type_walk_only,
 				special_type = "summers"
 			}
 			self.unit_categories.boom_summers = {
@@ -1862,7 +1862,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
 					}
 				},
-				access = access_type_all
+				access = access_type_walk_only
 			}
 			self.unit_categories.medic_summers = {
 				unit_types = {
@@ -1876,7 +1876,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
 					}
 				},
-				access = access_type_all
+				access = access_type_walk_only
 			}
 			self.unit_categories.taser_summers = {
 				unit_types = {
@@ -1890,7 +1890,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
 					}
 				},
-				access = access_type_all
+				access = access_type_walk_only
 			}
 			self.unit_categories.Tank_Titan = {
 				unit_types = {

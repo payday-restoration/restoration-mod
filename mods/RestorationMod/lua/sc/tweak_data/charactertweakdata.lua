@@ -659,7 +659,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
- 	table.insert(self._enemy_list, "city_swat_titan")
+	table.insert(self._enemy_list, "city_swat_titan")
+	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
+	self.city_swat_titan_assault.spawn_sound_event = "cloaker_spawn"
+	self.city_swat_titan_assault.die_sound_event = "mga_death_scream"
+ 	table.insert(self._enemy_list, "city_swat_titan_assault")
 end
 
 function CharacterTweakData:_init_omnia(presets)
@@ -12531,6 +12535,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.fbi_swat_vet.HEALTH_INIT = self.fbi_swat_vet.HEALTH_INIT * hp_mul
 	self.city_swat.HEALTH_INIT = self.city_swat.HEALTH_INIT * hp_mul
 	self.city_swat_titan.HEALTH_INIT = self.city_swat_titan.HEALTH_INIT * hp_mul
+	self.city_swat_titan_assault.HEALTH_INIT = self.city_swat_titan_assault.HEALTH_INIT * hp_mul
 	self.swat.HEALTH_INIT = self.swat.HEALTH_INIT * hp_mul
 	self.heavy_swat.HEALTH_INIT = self.heavy_swat.HEALTH_INIT * hp_mul
 	self.heavy_swat_sniper.HEALTH_INIT = self.heavy_swat_sniper.HEALTH_INIT * hp_mul
@@ -12607,6 +12612,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.city_swat_titan.headshot_dmg_mul then
 		self.city_swat_titan.headshot_dmg_mul = self.city_swat_titan.headshot_dmg_mul * hs_mul
 	end
+	if self.city_swat_titan_assault.headshot_dmg_mul then
+		self.city_swat_titan_assault.headshot_dmg_mul = self.city_swat_titan_assault.headshot_dmg_mul * hs_mul
+	end	
 	if self.swat.headshot_dmg_mul then
 		self.swat.headshot_dmg_mul = self.swat.headshot_dmg_mul * hs_mul
 	end
@@ -12754,6 +12762,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"fbi_heavy_swat",
 		"city_swat",
 		"city_swat_titan",
+		"city_swat_titan_assault",
 		"sniper",
 		"gangster",
 		"mobster",
@@ -12817,6 +12826,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.fbi_heavy_swat.SPEED_RUN = self.fbi_heavy_swat.SPEED_RUN * run_mul
 	self.city_swat.SPEED_RUN = self.city_swat.SPEED_RUN * run_mul
 	self.city_swat_titan.SPEED_RUN = self.city_swat_titan.SPEED_RUN * run_mul
+	self.city_swat_titan_assault.SPEED_RUN = self.city_swat_titan_assault.SPEED_RUN * run_mul
 	self.sniper.SPEED_RUN = self.sniper.SPEED_RUN * run_mul
 	self.gangster.SPEED_RUN = self.gangster.SPEED_RUN * run_mul
 	self.mobster.SPEED_RUN = self.gangster.SPEED_RUN * run_mul

@@ -813,6 +813,10 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870_husk" force="false" load="true"/>
 	
+	<!--Murky Heavy UMP-->
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_husk" load="true"/>				
+	
 	<!--murky heavy textures-->
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_heavy_m4/murky_heavy_df" force="false"/>	
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_heavy_r870/murky_heavy_df" force="false"/>	
@@ -823,7 +827,7 @@
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_heavy_m4/helmets_atlas_df" force="false"/>	
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_heavy_m4/helmets_atlas_nm" force="false"/>	
 	
-	<!--murky heavy hat unused atm-->
+	<!--murky heavy hat-->
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false" load="true"/>
 	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>	
@@ -838,10 +842,27 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk" force="false" load="true"/>	
 	
-	<!--Temp Murky FBIs-->
+    <!--murky fbi heavy m4-->
+	<object path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4_husk" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4_husk" force="false" load="true"/>	
+   
+	<!--murky fbi heavy r870-->    
+ 	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870" force="false" load="true"/>	
+ 	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870_husk" force="false" load="true"/>	
+  
+	<!--murky fbi heavy texture-->    
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/murky_heavy_df" force="false"/>	
 	
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870_husk" force="false" load="true"/>
+	<!--Keeping those helmets flying again and again and again;)-->	
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" load="true"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>			
 </table>

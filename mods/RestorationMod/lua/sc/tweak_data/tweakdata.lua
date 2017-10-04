@@ -232,6 +232,7 @@ if not tweak_data then return end
 		"tank_titan_assault",
 		"tank_medic",
 		"city_swat_titan",
+		"city_swat_titan_assault",
 		"omnia_lpf",
 		"spooc_titan"
 	}

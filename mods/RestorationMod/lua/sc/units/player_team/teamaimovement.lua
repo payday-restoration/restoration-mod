@@ -23,4 +23,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 		
+	local old_throw = TeamAIMovement.throw_bag
+	function TeamAIMovement:throw_bag(...)
+		local data = self._ext_brain._logic_data
+		if data then
+			local objective = data.objective
+			if objective then
+				if objective.type == "revive" then
+					if managers.player:is_custom_cooldown_not_active("team", "crew_inspire") then
+						return
+					end
+				end
+			end
+		end
+		return old_throw(self, ...)
+	end
+		
 end

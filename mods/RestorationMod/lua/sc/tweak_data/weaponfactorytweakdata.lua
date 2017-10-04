@@ -6951,7 +6951,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_fg_m5k",
 			stats = {
 				value = 4,
-				damage = 3,
+				damage = 2,
 				spread_moving = 3,
 				recoil = -2,
 				concealment = 2
@@ -6979,7 +6979,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = 0,
 				recoil = 1,
 				concealment = -2,
-				damage = 3
+				damage = 2
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_mp5a5"
@@ -7005,7 +7005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -1,
 				suppression = 12,
 				alert_size = 12,
-				damage = 8,
+				damage = 7,
 				spread = 1,
 				recoil = -1,
 				concealment = -2
@@ -27136,7 +27136,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_sr2_s_unfolded",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_sr2_parts/wpn_fps_smg_sr2_s_unfolded",
-			stats = {value = 1, recoil = 1, damage = 3},
+			stats = {value = 1, recoil = 1},
 			texture_bundle_folder = "coco"
 		}
 		self.parts.wpn_fps_smg_sr2_vg_standard = {
@@ -29717,7 +29717,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_smg_mp5_fg_flash/wpn_fps_smg_mp5_fg_flash",
 			stats = {
 				value = 1,
-				damage = 3,
+				damage = 2,
 				spread = 1,
 				concealment = -3
 			},

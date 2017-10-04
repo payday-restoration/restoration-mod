@@ -75,6 +75,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_walk_speed_multiplier",
 		"player_crouch_speed_multiplier",
 		"player_flashbang_multiplier_1",
+		"player_fall_health_damage_multiplier",
 		"player_melee_kill_snatch_pager_chance",
 		"player_suppression_resist",
 		"frag_com",
@@ -1379,8 +1380,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_steelsight_normal_movement_speed",
-						"player_fall_damage_multiplier",
-						"player_fall_health_damage_multiplier"
+						"player_fall_damage_multiplier"
 					},
 					cost = self.costs.pro
 				}

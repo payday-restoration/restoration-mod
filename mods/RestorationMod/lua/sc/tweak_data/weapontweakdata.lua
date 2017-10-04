@@ -605,7 +605,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_mac11_npc()
 		self.mac11_npc.sounds.prefix = "mp5_npc"
 		self.mac11_npc.use_data.selection_index = 1
-		self.mac11_npc.DAMAGE = 2.2
+		self.mac11_npc.DAMAGE = 2.1
 		self.mac11_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.mac11_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.mac11_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -635,13 +635,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_mp9_npc()
 		self.mp9_npc.sounds.prefix = "mp9_npc"
 		self.mp9_npc.use_data.selection_index = 1
-		self.mp9_npc.DAMAGE = 1.8
+		self.mp9_npc.DAMAGE = 1.7
 		self.mp9_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.mp9_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.mp9_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-		self.mp9_npc.CLIP_AMMO_MAX = 30
+		self.mp9_npc.CLIP_AMMO_MAX = 20
 		self.mp9_npc.NR_CLIPS_MAX = 5
-		self.mp9_npc.auto.fire_rate = 0.06666666666
+		self.mp9_npc.auto.fire_rate = 0.07843137254
 		self.mp9_npc.hold = "pistol"
 		self.mp9_npc.alert_size = 3500
 		self.mp9_npc.suppression = 2
@@ -885,7 +885,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_contraband_npc()
 		self.contraband_npc.sounds.prefix = "contraband_npc"
 		self.contraband_npc.use_data.selection_index = 2
-		self.contraband_npc.DAMAGE = 5.4
+		self.contraband_npc.DAMAGE = 4.4
 		self.contraband_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.contraband_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.contraband_npc.CLIP_AMMO_MAX = 30
@@ -896,7 +896,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_npc.suppression = 2.4
 		self.contraband_m203_npc.sounds.prefix = "contrabandm203_npc"
 		self.contraband_m203_npc.use_data.selection_index = 2
-		self.contraband_m203_npc.DAMAGE = 2
+		self.contraband_m203_npc.DAMAGE = 80
 		self.contraband_m203_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.contraband_m203_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
 		self.contraband_m203_npc.no_trail = true
@@ -3115,7 +3115,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_mp5.AMMO_MAX = 150
 		self.new_mp5.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.new_mp5.stats = {
-			damage = 26,
+			damage = 27,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 8,
@@ -5584,7 +5584,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sr2.kick.crouching = self.new_m4.kick.standing
 		self.sr2.kick.steelsight = self.new_m4.kick.standing
 		self.sr2.stats = {
-			damage = 26,
+			damage = 29,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 8,
@@ -5613,7 +5613,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sr2.AMMO_MAX = 180
 		self.x_sr2.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_sr2.stats = {
-			damage = 26,
+			damage = 29,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 8,
@@ -5669,7 +5669,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp5.AMMO_MAX = 180
 		self.x_mp5.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_mp5.stats = {
-			damage = 26,
+			damage = 27,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 8,

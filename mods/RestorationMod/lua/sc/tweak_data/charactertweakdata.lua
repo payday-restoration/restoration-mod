@@ -1207,6 +1207,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
 	self.tank.speech_prefix_p2 = nil
 	self.tank.speech_prefix_count = nil
+	self.tank.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance"
 	self.tank.priority_shout = "f30"
 	self.tank.bot_priority_shout = "f30x_any"
 	self.tank.priority_shout_max_dis = 3000
@@ -1597,6 +1598,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.speech_prefix_p1 = self._prefix_data_p1.taser()
 	self.taser.speech_prefix_p2 = nil
 	self.taser.speech_prefix_count = nil
+	self.taser.spawn_sound_event = self._prefix_data_p1.taser() .. "_entrance"
 	self.taser.access = "taser"
 	self.taser.dodge = presets.dodge.athletic
 	self.taser.priority_shout = "f32"
@@ -13486,7 +13488,10 @@ function CharacterTweakData:character_map()
 				"ene_murky_yellow_m4",
 				"ene_murky_yellow_r870",
 				"ene_murky_shield_yellow",
-				"ene_murky_shield_fbi"
+				"ene_murky_shield_fbi",
+				"ene_murky_city_ump",
+				"ene_murky_city_bnl",
+				"ene_murky_city_m4"
 			}
 		}			
 	}

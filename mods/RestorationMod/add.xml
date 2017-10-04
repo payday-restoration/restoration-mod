@@ -865,4 +865,36 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" load="true"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>	
+	
+    <!--murky city m4 -->
+	<object path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4_husk" force="false" load="true"/>    
+	
+	<!--murky city bnl -->
+	<object path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl_husk" force="false" load="true"/>    
+	
+	<!--murky city ump -->
+	<object path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump_husk" force="false" load="true"/>	
+	
+	<!--murky city textures-->    
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/murky_heavy_df" force="false"/>	
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/helmets_atlas_df" force="false"/>	
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/helmets_atlas_nm" force="false"/>		
 </table>

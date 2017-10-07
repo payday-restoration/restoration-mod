@@ -605,7 +605,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
 	self.city_swat.detection = presets.detection.normal
 	self.city_swat.HEALTH_INIT = 13
-	self.city_swat.headshot_dmg_mul = 1.9
+	self.city_swat.headshot_dmg_mul = 3.25
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
 	self.city_swat.suppression = presets.suppression.hard_def

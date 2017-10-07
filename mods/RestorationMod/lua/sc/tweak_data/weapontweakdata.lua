@@ -2529,6 +2529,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.trip_mines.player_damage = 40
 		self.trip_mines.damage_size = 200
 		self.trip_mines.delay = 0.1
+		
+		--Hopefully now there's less bitching and moaning
+		for i, weap in pairs(self) do
+			if weap.stats then
+				weap.stats.total_ammo_mod = "100"
+			end
+		end
 
 		self.new_m4.desc_id = "bm_menu_sc_m4_desc"
 		self.new_m4.AMMO_MAX = 150

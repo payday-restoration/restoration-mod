@@ -122,18 +122,30 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.ignore_suppression_flinch = {true}
     	self.values.player.health_revive_max = {true}
     	self.values.player.yakuza_berserker = {true}
-
-	--Bot stuff--
-	self.values.team.crew_add_health = {0}
-	self.values.team.crew_add_armor = {0}
-	self.values.team.crew_add_dodge = {0}
-	self.values.team.crew_add_concealment = {0}
-	self.values.team.crew_add_stamina = {0}
-	self.values.team.crew_reduce_speed_penalty = {1}
-	self.values.team.crew_health_regen = {0}
-	self.values.team.crew_throwable_regen = {999999999999999999999999999999999999999999999999999999999999999999}
-	self.values.team.crew_faster_reload = {1}
-	self.values.team.crew_faster_swap = {1}
+	--Bot boost stuff stuff--
+	if Global.game_settings and Global.game_settings.single_player then
+		self.values.team.crew_add_health = {2}
+		self.values.team.crew_add_armor = {1}
+		self.values.team.crew_add_dodge = {0.02}
+		self.values.team.crew_add_concealment = {1}
+		self.values.team.crew_add_stamina = {25}
+		self.values.team.crew_reduce_speed_penalty = {1}
+		self.values.team.crew_health_regen = {0.1}
+		self.values.team.crew_throwable_regen = {150}
+		self.values.team.crew_faster_reload = {1.1}
+		self.values.team.crew_faster_swap = {1}	
+	else
+		self.values.team.crew_add_health = {0}
+		self.values.team.crew_add_armor = {0}
+		self.values.team.crew_add_dodge = {0}
+		self.values.team.crew_add_concealment = {0}
+		self.values.team.crew_add_stamina = {0}
+		self.values.team.crew_reduce_speed_penalty = {1}
+		self.values.team.crew_health_regen = {0}
+		self.values.team.crew_throwable_regen = {999999999999999999999999999999999999999999999999999999999999999999}
+		self.values.team.crew_faster_reload = {1}
+		self.values.team.crew_faster_swap = {1}
+	end
 
 	--Crew ability stuff
 	self.values.team.crew_inspire = {
@@ -145,19 +157,19 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.team.crew_scavenge = {
 		{
-			0,
-			0,
-			0
+			0.05,
+			0.05,
+			0.05
 		}
 	}
 	self.values.team.crew_interact = {
 		{
-			1,
-			1,
-			1
+			0.9,
+			0.9,
+			0.9
 		}
 	}
-	self.values.team.crew_ai_ap_ammo = {false}
+	self.values.team.crew_ai_ap_ammo = {true}
 	
 	--[[   MASTERMIND   ]]--
 		--{

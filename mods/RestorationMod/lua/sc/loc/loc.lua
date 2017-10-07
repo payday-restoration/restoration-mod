@@ -278,43 +278,43 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 10% chance to become a Titan Bulldozer.",
 		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 10% chance to become a Titan Shield.",
 
-		["bm_menu_skill"] = "Crew Perks",
+		["bm_menu_skill"] = "Crew Boosts",
 
-		["menu_crew_interact"] = "Fast Recovery",
-		["menu_crew_interact_desc"] = "Bots equipped with this ability recover health 20% faster.",
+		["menu_crew_interact"] = "Quick",
+		["menu_crew_interact_desc"] = "Players interact 10% faster.\n\nNote: Pager response is not affected by this boost.",
 
-		["menu_crew_inspire"] = "Inspiring Presence",
+		["menu_crew_inspire"] = "Inspiring",
 		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 30 seconds.",
 
-		["menu_crew_scavenge"] = "Mag Plus",
-		["menu_crew_scavenge_desc"] = "Bots equipped with this ability gain 50% larger magazines.",
+		["menu_crew_scavenge"] = "Sharpeyed",
+		["menu_crew_scavenge_desc"] = "Players pickup 5% more ammunition.",
 
-		["menu_crew_ai_ap_ammo"] = "Specialized Killing",
-		["menu_crew_ai_ap_ammo_desc"] = "Bots equipped with this ability deal 20% extra damage against special units.",
+		["menu_crew_ai_ap_ammo"] = "Piercing",
+		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through armor.",
 
-		["menu_crew_healthy"] = "The Muscle",
-		["menu_crew_healthy_desc"] = "Bots equipped with this perk gain 50% increased health.",
+		["menu_crew_healthy"] = "Reinforcer",
+		["menu_crew_healthy_desc"] = "Players' health is increased by 20.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_sturdy"] = "Sturdy Recovery",
-		["menu_crew_sturdy_desc"] = "Bots equipped with this perk recover health 20% faster.",
+		["menu_crew_sturdy"] = "Protector",
+		["menu_crew_sturdy_desc"] = "Players' armor is increased by 10.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_evasive"] = "Evasive",
-		["menu_crew_evasive_desc"] = "Bots equipped with this perk gain 20% dodge chance.",
+		["menu_crew_evasive"] = "Distractor",
+		["menu_crew_evasive_desc"] = "Players' dodge is increased by 2.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_motivated"] = "Motivated",
-		["menu_crew_evasive_desc"] = "Bots equipped with this perk gain 50% increased movement speed.",
+		["menu_crew_motivated"] = "Invigorator",
+		["menu_crew_evasive_desc"] = "Players have 25 more stamina.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_regen"] = "Regeneration",
-		["menu_crew_regen_desc"] = "Bots equipped with this perk regenerate 50 health every 3 seconds when damaging an enemy.",
+		["menu_crew_regen"] = "Healer",
+		["menu_crew_regen_desc"] = "Players heal 1 health every 5 seconds.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_quiet"] = "The Mole",
-		["menu_crew_quiet_desc"] = "Bots equipped with this perk gain 25% damage resistance when surrounded by 3 or more enemies within 18 meters.",
+		["menu_crew_quiet"] = "Concealer",
+		["menu_crew_quiet_desc"] = "Players gain 3 more concealment.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_generous"] = "Mayhem Maker",
-		["menu_crew_generous_desc"] = "Bots equipped with this perk gain 15% damage resistance when surrounded by 3 or more enemies within 18 meters.\n\nEnemies this bot kills in close quarters have a 50% chance to spread panic among enemies.\n\nThis cannot occur more than once every 2 seconds.",
+		["menu_crew_generous"] = "Stockpiler ",
+		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 150 kills.\n\nNote: This Boost only works in Crime.net Offline.",
 
-		["menu_crew_eager"] = "Wolverine",
-		["menu_crew_eager_desc"] = "Bots equipped with this perk gain increased movement speed and health regeneration as their health decreases.",
+		["menu_crew_eager"] = "Accelerator",
+		["menu_crew_eager_desc"] = "Players reload 10% faster.\n\nNote: This Boost only works in Crime.net Offline.",
 
 --[[   SKILLTREES   ]]--
 	--{

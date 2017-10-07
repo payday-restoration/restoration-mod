@@ -319,6 +319,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		multiplier = multiplier * (managers.player:get_property("shock_and_awe_reload_multiplier", 1))
 		multiplier = multiplier * (managers.player:get_temporary_property("bloodthirst_reload_speed", 1))
+		multiplier = multiplier * (managers.player:upgrade_value("team", "crew_faster_reload", 1))
 		multiplier = managers.crime_spree:modify_value("WeaponBase:GetReloadSpeedMultiplier", multiplier)
 	
 		return multiplier

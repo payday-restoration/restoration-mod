@@ -13491,7 +13491,10 @@ function CharacterTweakData:character_map()
 				"ene_murky_shield_fbi",
 				"ene_murky_city_ump",
 				"ene_murky_city_bnl",
-				"ene_murky_city_m4"
+				"ene_murky_city_m4",
+				"ene_murky_fbi_tank_m249",
+				"ene_murky_fbi_tank_saiga",
+				"ene_murky_fbi_tank_r870"
 			}
 		}			
 	}

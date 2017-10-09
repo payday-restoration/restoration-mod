@@ -724,6 +724,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:base()._tweak_table == "fbi_titan" then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
 		end 
+		if self._unit:base()._tweak_table == "spooc" then
+			self._unit:damage():run_sequence_simple("kill_spook_lights")
+		end 		
 		self:_on_death()
 		managers.mutators:notify(Message.OnCopDamageDeath, self, attack_data)
 	end

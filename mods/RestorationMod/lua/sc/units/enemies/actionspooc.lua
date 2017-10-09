@@ -124,7 +124,7 @@ function ActionSpooc:init(action_desc, common_data)
 	if self:_use_christmas_sounds() then
 		self._unit:sound():play("cloaker_detect_christmas_mono", nil, nil)
 	end
-	self._unit:damage():run_sequence_simple("turn_on_spook_lights")
+
 	local r = LevelsTweakData.LevelType.Russia
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	self._taunt_during_assault = "cloaker_taunt_during_assault"
@@ -195,7 +195,11 @@ function ActionSpooc:anim_act_clbk(anim_act)
 			end
 		end
 		self._strike_unit = self._target_unit
-		local spooc_res = self._strike_unit:movement():on_SPOOCed(self._unit, self:is_flying_strike() and "flying_strike" or "sprint_attack")
+		if self:is_flying_strike() then
+			spooc_res = self._strike_unit:movement():on_jump_SPOOCed(self._unit, self:is_flying_strike() and "flying_strike" or "sprint_attack")
+		else
+			spooc_res = self._strike_unit:movement():on_SPOOCed(self._unit, self:is_flying_strike() and "flying_strike" or "sprint_attack")
+		end	
 		managers.mutators:_run_func("OnPlayerCloakerKicked", self._unit)
 		managers.crime_spree:run_func("OnPlayerCloakerKicked", self._unit)
 		if spooc_res == "countered" then
@@ -263,7 +267,7 @@ function ActionSpooc:on_exit()
 			self._unit:sound():say(self._taunt_after_assault, true, true)
 		end
 	end
-	self._unit:damage():run_sequence_simple("kill_spook_lights")
+	
 	if self._root_blend_disabled then
 		self._ext_movement:set_root_blend(true)
 	end

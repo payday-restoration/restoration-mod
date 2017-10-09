@@ -224,7 +224,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 5,
 					medic = 3,
 					omnia_LPF = 3,
-					fbi_vet = 2,
+					fbi_vet = 0,
 					spring = 1,
 					summers = 1
 				}
@@ -237,7 +237,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 5,
 					medic = 3,
 					omnia_LPF = 3,
-					fbi_vet = 3,
+					fbi_vet = 2,
 					spring = 1,
 					summers = 1
 				}
@@ -250,7 +250,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 5,
 					medic = 3,
 					omnia_LPF = 3,
-					fbi_vet = 3,
+					fbi_vet = 2,
 					spring = 1,
 					summers = 1
 				}
@@ -263,7 +263,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					shield = 6,
 					medic = 4,
 					omnia_LPF = 4,
-					fbi_vet = 4,
+					fbi_vet = 3,
 					spring = 1,
 					summers = 1
 				}
@@ -2250,7 +2250,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 2
 						}
 					}
-				}
+				}			
 			elseif difficulty_index == 7 then
 				self.enemy_spawn_groups.CS_tazers = {
 					amount = {2, 3},

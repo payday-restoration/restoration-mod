@@ -14,14 +14,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		player_damage_melee(self, attack_data)
 	end
 
-	--Only consume Ex-President health if you lost health. Rokk wuz here.
-	function PlayerDamage:set_armor(armor)   
-		if self._armor and self:get_real_armor() == 0 and armor ~= 0 and self:health_ratio() < 1 then
-			self:consume_armor_stored_health()
-		end
-		self._armor = Application:digest_value(math.clamp(armor, 0, self:_max_armor()), true)
-	end
-
 	--Lets you heal with full HP--
 	function PlayerDamage.full_revives(self)
 		return Application:digest_value(self._revives, false) >= tweak_data.player.damage.LIVES_INIT + managers.player:upgrade_value("player", "additional_lives", 0)

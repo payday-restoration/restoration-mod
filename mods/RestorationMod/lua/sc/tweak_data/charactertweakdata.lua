@@ -455,7 +455,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
 	self.heavy_swat.HEALTH_INIT = 13
-	self.heavy_swat.headshot_dmg_mul = 2.2
+	self.heavy_swat.headshot_dmg_mul = 3.25
 	self.heavy_swat.move_speed = presets.move_speed.fast
 	self.heavy_swat.surrender_break_time = {6, 8}
 	self.heavy_swat.suppression = presets.suppression.hard_agg
@@ -531,7 +531,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.weapon = presets.weapon.good
 	self.fbi_swat.detection = presets.detection.normal
 	self.fbi_swat.HEALTH_INIT = 13
-	self.fbi_swat.headshot_dmg_mul = 3.25
+	self.fbi_swat.headshot_dmg_mul = 2.6
 	self.fbi_swat.move_speed = presets.move_speed.very_fast
 	self.fbi_swat.surrender_break_time = {6, 10}
 	self.fbi_swat.suppression = presets.suppression.hard_def
@@ -605,7 +605,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
 	self.city_swat.detection = presets.detection.normal
 	self.city_swat.HEALTH_INIT = 13
-	self.city_swat.headshot_dmg_mul = 3.25
+	self.city_swat.headshot_dmg_mul = 2.6
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
 	self.city_swat.suppression = presets.suppression.hard_def
@@ -1446,9 +1446,10 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.immune_to_knock_down = true
 	self.phalanx_vip.HEALTH_INIT = 26
-	self.phalanx_vip.headshot_dmg_mul = 1.59885
+	self.phalanx_vip.headshot_dmg_mul = 1.25
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.damage.fire_damage_mul = 0.05
+	self.phalanx_vip.damage.bullet_damage_mul = 0.65
 	self.phalanx_vip.spawn_sound_event = nil
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -1478,8 +1479,10 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.immune_to_knock_down = true
 	self.spring.HEALTH_INIT = 1000
 	self.spring.EXTRA_HEALTH_BALANCE = 50
-	self.spring.headshot_dmg_mul = 1.59885
+	self.spring.headshot_dmg_mul = 3.997125
 	self.spring.damage.explosion_damage_mul = 1.25
+	self.spring.damage.bullet_damage_mul = 0.65
+	self.spring.damage.fire_damage_mul = 0.65
 	self.spring.priority_shout = "f45"
 	self.spring.bot_priority_shout = "f45x_any"
 	self.spring.priority_shout_max_dis = 3000
@@ -1531,7 +1534,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.damage.explosion_damage_mul = 0.1
 	self.summers.damage.fire_damage_mul = 0.05
 	self.summers.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.summers.headshot_dmg_mul = 1.5
+	self.summers.headshot_dmg_mul = 1.25
 	self.summers.bag_dmg_mul = 6
 	self.summers.move_speed = presets.move_speed.very_slow
 	self.summers.no_run_start = true

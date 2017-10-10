@@ -352,7 +352,6 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.saw.damage_multiplier = {1.15}
 				
 				--Extra Lead
-				self.ammo_bag_base = 3
 				self.values.ammo_bag.ammo_increase = {2}
 				self.values.ammo_bag.quantity = {1}
 

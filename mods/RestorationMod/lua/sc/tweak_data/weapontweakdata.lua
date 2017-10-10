@@ -2532,8 +2532,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		--Hopefully now there's less bitching and moaning
 		for i, weap in pairs(self) do
-			if weap.stats then
-				weap.stats.total_ammo_mod = "100"
+			if weap.stats and weap.stats.total_ammo_mod then
+				weap.stats.total_ammo_mod = 100
 			end
 		end
 

@@ -341,7 +341,7 @@ function CharacterTweakData:_init_fbi(presets)
 			return true, t + delay_till_next_use
 		end
 		return false, t + delay_till_next_use
-	end
+	end	
 	table.insert(self._enemy_list, "fbi_vet")
 end
 
@@ -1318,7 +1318,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.rescue_hostages = false
 	self.spooc.spooc_attack_timeout = {3, 3}
 	self.spooc.spooc_attack_beating_time = {3, 3}
-	self.spooc.spooc_attack_use_smoke_chance = 1
+	self.spooc.spooc_attack_use_smoke_chance = 0
 	self.spooc.weapon_voice = "3"
 	self.spooc.experience.cable_tie = "tie_swat"
 	self.spooc.speech_prefix_p1 = self._prefix_data_p1.cloaker()
@@ -13494,7 +13494,9 @@ function CharacterTweakData:character_map()
 				"ene_murky_city_m4",
 				"ene_murky_fbi_tank_m249",
 				"ene_murky_fbi_tank_saiga",
-				"ene_murky_fbi_tank_r870"
+				"ene_murky_fbi_tank_r870",
+				"ene_murky_spook",
+				"ene_murky_tazer"
 			}
 		}			
 	}

@@ -269,7 +269,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			end
 			self.unit_categories = {}
-			if difficulty_index <= 5 then
+			if difficulty_index < 8 then
 				self.unit_categories.spooc = {
 					unit_types = {
 						america = {
@@ -279,44 +279,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
 						},
 						murky = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 						}						
 					},
 					access = access_type_all,
 					special_type = "spooc"
 				}
-			elseif difficulty_index == 6 then
-				self.unit_categories.spooc = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
-						},
-						murky = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
-						}						
-					},
-					access = access_type_all,
-					special_type = "spooc"
-				}	
-			elseif difficulty_index == 7 then
-				self.unit_categories.spooc = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
-						},
-						murky = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
-						}						
-					},
-					access = access_type_all,
-					special_type = "spooc"
-				}					
 			else
 				self.unit_categories.spooc = {
 					unit_types = {
@@ -327,7 +295,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
 						},
 						murky = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 						}						
 					},
 					access = access_type_all,
@@ -416,94 +384,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_walk_only
 			}
-			if difficulty_index == 8 then
-				self.unit_categories.CS_swat_MP5 = {
-					unit_types = {
-						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-				self.unit_categories.CS_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 5 then
-				self.unit_categories.CS_swat_MP5 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-				self.unit_categories.CS_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 6 then
-				self.unit_categories.CS_swat_MP5 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-				self.unit_categories.CS_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
-						}						
-					},
-					access = access_type_all
-				}
-			else
+			if difficulty_index < 5 then
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
@@ -532,94 +413,78 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			end
-			if difficulty_index == 8 then
-				self.unit_categories.CS_heavy_M4 = {
-					unit_types = {
-						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
-						}				
-					},
-					access = access_type_all
-				}
-				self.unit_categories.CS_heavy_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870")
-						}						
-					},
-					access = access_type_all
-				}
-				self.unit_categories.CS_heavy_M4_w = {
-					unit_types = {
-						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
-						}						
-					},
-					access = access_type_walk_only
-				}
 			else
-				self.unit_categories.CS_heavy_M4 = {
+				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
+							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						},
 						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
 						}						
 					},
 					access = access_type_all
 				}
-				self.unit_categories.CS_heavy_R870 = {
+				self.unit_categories.CS_swat_R870 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+							Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
 						},
 						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870")
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
 						}						
 					},
 					access = access_type_all
-				}
-				self.unit_categories.CS_heavy_M4_w = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
-						}						
-					},
-					access = access_type_walk_only
 				}
 			end
+			self.unit_categories.CS_heavy_M4 = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
+					},
+					murky = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.CS_heavy_R870 = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
+					},
+					murky = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.CS_heavy_M4_w = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
+					},
+					murky = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
+					}						
+				},
+				access = access_type_walk_only
+			}
 			if difficulty_index <= 4 then
 				self.unit_categories.CS_tazer = {
 					unit_types = {
@@ -630,7 +495,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
 						},
 						murky = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")
 						}						
 					},
 					access = access_type_all,
@@ -650,8 +515,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 						},
 						murky = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 						}						
 					},
@@ -659,39 +524,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					special_type = "taser"
 				}
 			end
-			if difficulty_index == 8 then
-				self.unit_categories.CS_shield = {
-					unit_types = {
-						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow")
-						}						
+			self.unit_categories.CS_shield = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_shield_2/ene_shield_2")
 					},
-					access = access_type_walk_only,
-					special_type = "shield"
-				}
-			else
-				self.unit_categories.CS_shield = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_shield_2/ene_shield_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow")
-						}						
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45")
 					},
-					access = access_type_walk_only,
-					special_type = "shield"
-				}
-			end
+					murky = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow")
+					}						
+				},
+				access = access_type_walk_only,
+				special_type = "shield"
+			}
 			self.unit_categories.FBI_suit_C45_M4 = {
 				unit_types = {
 					america = {
@@ -709,7 +556,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
-			if difficulty_index <= 4 then
+			if difficulty_index < 8 then
 				self.unit_categories.FBI_suit_M4_MP5 = {
 					unit_types = {
 						america = {
@@ -719,60 +566,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 5 then
-				self.unit_categories.FBI_suit_M4_MP5 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 6 then
-				self.unit_categories.FBI_suit_M4_MP5 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 8 then
-				self.unit_categories.FBI_suit_M4_MP5 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
 						},
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
@@ -786,11 +579,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
 						},
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
@@ -937,25 +730,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_all
 				}
 			end
-			if difficulty_index <= 5 then
-				self.unit_categories.FBI_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-							Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 6 then
+			if difficulty_index <= 6 then
 				self.unit_categories.FBI_swat_R870 = {
 					unit_types = {
 						america = {
@@ -1202,23 +977,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_walk_only
 				}
 			end
-			if difficulty_index < 6 then
-				self.unit_categories.FBI_shield = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
-						}						
-					},
-					access = access_type_walk_only,
-					special_type = "shield"
-				}
-			elseif difficulty_index == 6 then
+			if difficulty_index <= 6 then
 				self.unit_categories.FBI_shield = {
 					unit_types = {
 						america = {
@@ -1328,7 +1087,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			end
 			if job == "haunted" or job == "nail" or job == "help" or Month == "10" then
-				if difficulty_index < 5 then
+				if difficulty_index <= 4 then
 					self.unit_categories.FBI_tank = {
 						unit_types = {
 							america = {
@@ -1391,41 +1150,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							america = {
 								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
 							},
 							russia = {
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
 							},
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")
 							}
 						},
 						access = access_type_all,
@@ -1479,7 +1217,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				end
 			else
-				if difficulty_index < 5 then
+				if difficulty_index <= 4 then
 					self.unit_categories.FBI_tank = {
 						unit_types = {
 							america = {
@@ -1543,40 +1281,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
 								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
 								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 							},
 							russia = {
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 							},
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 							}
 						},
 						access = access_type_all,
@@ -1654,7 +1371,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4")
 					},
 					murky = {
-						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4")
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")
 					}
 				},
 				access = access_type_all,
@@ -1669,7 +1386,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870")
 					},
 					murky = {
-						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870")
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870")
 					}
 				},
 				access = access_type_all,
@@ -4867,34 +4584,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				}
 			elseif difficulty_index == 5 then
-				self.besiege.assault.groups = {
-					FBI_swats = {
-						0.2,
-						1,
-						1
-					},
-					FBI_heavys = {
-						0.1,
-						0.5,
-						0.75
-					},
-					FBI_shields = {
-						0.1,
-						0.3,
-						0.4
-					},
-					FBI_tanks = {
-						0,
-						0.25,
-						0.3
-					},
-					CS_tazers = {
-						0.1,
-						0.25,
-						0.25
-					}
-				}
-			elseif difficulty_index == 6 then
 				self.besiege.assault.groups = {
 					FBI_swats = {
 						0.2,

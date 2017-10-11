@@ -254,7 +254,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spring = 1,
 					summers = 1
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.special_unit_spawn_limits = {
 					tank = 4,
 					taser = 5,
@@ -264,6 +264,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					medic = 4,
 					omnia_LPF = 4,
 					fbi_vet = 3,
+					spring = 1,
+					summers = 1
+				}
+			elseif difficulty_index == 9 then
+				self.special_unit_spawn_limits = {
+					tank = 3,
+					taser = 4,
+					boom = 2,
+					spooc = 4,
+					shield = 6,
+					medic = 6,
+					--ass_sniper = 2,
+					omnia_LPF = 0, --obsolete w/ DV
+					fbi_vet = 1,
 					spring = 1,
 					summers = 1
 				}
@@ -285,7 +299,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_all,
 					special_type = "spooc"
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.spooc = {
 					unit_types = {
 						america = {
@@ -574,7 +588,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_suit_M4_MP5 = {
 					unit_types = {
 						america = {
@@ -608,7 +622,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_suit_stealth_MP5 = {
 					unit_types = {
 						america = {
@@ -684,7 +698,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_swat_M4 = {
 					unit_types = {
 						america = {
@@ -793,7 +807,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_swat_R870 = {
 					unit_types = {
 						america = {
@@ -869,7 +883,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_heavy_G36 = {
 					unit_types = {
 						america = {
@@ -915,7 +929,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_heavy_R870 = {
 					unit_types = {
 						america = {
@@ -961,7 +975,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_heavy_G36_w = {
 					unit_types = {
 						america = {
@@ -1039,7 +1053,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_walk_only,
 					special_type = "shield"
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.unit_categories.FBI_shield = {
 					unit_types = {
 						america = {
@@ -1169,7 +1183,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						access = access_type_all,
 						special_type = "tank"
 					}
-				else
+				elseif difficulty_index == 8 then
 					self.unit_categories.FBI_tank = {
 						unit_types = {
 							america = {
@@ -1299,7 +1313,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						access = access_type_all,
 						special_type = "tank"
 					}
-				else
+				elseif difficulty_index == 8 then
 					self.unit_categories.FBI_tank = {
 						unit_types = {
 							america = {
@@ -1996,7 +2010,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.CS_tazers = {
 					amount = {2, 3},
 					spawn = {
@@ -2191,7 +2205,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.FBI_stealth_a = {
 					amount = {2, 3},
 					spawn = {
@@ -2283,7 +2297,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.FBI_stealth_b = {
 					amount = {2, 3},
 					spawn = {
@@ -2398,7 +2412,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.FBI_swats = {
 					amount = {3, 4},
 					spawn = {
@@ -2516,7 +2530,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.FBI_heavys = {
 					amount = {3, 4},
 					spawn = {
@@ -2632,7 +2646,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.FBI_shields = {
 					amount = {2, 3},
 					spawn = {
@@ -2733,7 +2747,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.FBI_tanks = {
 					amount = {3, 4},
 					spawn = {
@@ -2991,7 +3005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_swat_shotgun_rush = {
 					amount = {4, 5},
 					spawn = {
@@ -3146,7 +3160,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_swat_shotgun_flank = {
 					amount = {4, 5},
 					spawn = {
@@ -3301,7 +3315,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_swat_rifle = {
 					amount = {4, 5},
 					spawn = {
@@ -3456,7 +3470,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_swat_rifle_flank = {
 					amount = {4, 5},
 					spawn = {
@@ -3611,7 +3625,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_shield_wall_ranged = {
 					amount = {4, 5},
 					spawn = {
@@ -3766,7 +3780,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_shield_wall_charge = {
 					amount = {4, 5},
 					spawn = {
@@ -3873,7 +3887,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.enemy_spawn_groups.tac_shield_wall = {
 					amount = {4, 5},
 					spawn = {
@@ -4161,7 +4175,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.smoke_and_flash_grenade_timeout = {15, 16}
 			elseif difficulty_index == 7 then
 				self.smoke_and_flash_grenade_timeout = {14, 15}
-			else
+			elseif difficulty_index == 8 then
 				self.smoke_and_flash_grenade_timeout = {13, 14}
 			end
 			if difficulty_index < 6 then
@@ -4485,7 +4499,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					3.1,
 					3.3
 				}
-			else
+			elseif difficulty_index == 8 then
 				self.besiege.assault.force_balance_mul = {
 					4,
 					4.2,

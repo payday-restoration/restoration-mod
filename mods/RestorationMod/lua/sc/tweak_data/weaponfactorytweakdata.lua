@@ -89,6 +89,78 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_pis_adam"
 		}
 		self.wpn_fps_x_six_shots_npc.unit = "units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc"
+
+		self.wpn_deathvox_medicdozer_smg = deep_clone(self.wpn_fps_smg_polymer_npc)
+		self.wpn_deathvox_medicdozer_smg.default_blueprint = {
+			"wpn_fps_smg_polymer_body_standard",
+			"wpn_fps_smg_polymer_bolt_standard",
+			"wpn_fps_smg_polymer_dh_standard",
+			"wpn_fps_smg_polymer_extra_sling",
+			"wpn_fps_smg_polymer_o_iron",
+			"wpn_fps_smg_polymer_fg_standard",
+			"wpn_fps_smg_polymer_barrel_standard",
+			"wpn_fps_smg_polymer_m_standard",
+			"wpn_fps_smg_polymer_s_standard"
+		}
+		
+		self.wpn_deathvox_shield_pistol = deep_clone(self.wpn_fps_pis_g18c_npc)
+		self.wpn_deathvox_shield_pistol.default_blueprint = {
+			"wpn_fps_pis_g18c_body_frame",
+			"wpn_fps_pis_g18c_b_standard",
+			"wpn_fps_pis_g18c_g_ergo",
+			"wpn_fps_pis_g18c_m_mag_33rnd",
+			"wpn_fps_pis_g18c_s_stock"
+		}
+		
+		self.wpn_deathvox_guard_pistol = deep_clone(self.wpn_fps_pis_packrat_npc)
+		self.wpn_deathvox_guard_pistol.default_blueprint = {
+			"wpn_fps_pis_packrat_b_standard",
+			"wpn_fps_pis_packrat_body_standard",
+			"wpn_fps_pis_packrat_bolt_standard",
+			"wpn_fps_pis_packrat_m_standard",
+			"wpn_fps_pis_packrat_sl_standard",
+			"wpn_fps_pis_packrat_o_expert"
+		}
+
+		self.wpn_deathvox_medic_pistol = deep_clone(self.wpn_fps_pis_2006m_npc)
+		self.wpn_deathvox_medic_pistol.default_blueprint = {
+			"wpn_fps_pis_2006m_body_standard",
+			"wpn_fps_pis_2006m_m_standard",
+			"wpn_fps_pis_2006m_b_long",
+			"wpn_fps_pis_2006m_g_bling"
+		}
+		
+		self.wpn_deathvox_light_ar = deep_clone(self.wpn_fps_ass_aug_npc)
+		self.wpn_deathvox_light_ar.default_blueprint = {
+			"wpn_fps_aug_m_pmag",
+			"wpn_fps_aug_b_long",
+			"wpn_fps_upg_ass_ns_surefire",
+			"wpn_fps_aug_fg_a3",
+			"wpn_fps_upg_fl_ass_peq15",
+			"wpn_fps_aug_body_f90",
+			"wpn_fps_upg_o_cs"
+		}
+
+		self.wpn_deathvox_heavy_ar = deep_clone(self.wpn_fps_ass_l85a2_npc)
+		self.wpn_deathvox_heavy_ar.default_blueprint = {
+			"wpn_fps_ass_l85a2_body_standard",
+			"wpn_fps_ass_l85a2_g_standard",
+			"wpn_fps_ass_l85a2_b_long",
+			"wpn_fps_upg_ass_ns_surefire",
+			"wpn_fps_ass_l85a2_fg_short",
+			"wpn_fps_upg_fl_ass_peq15",
+			"wpn_fps_ass_l85a2_m_emag",
+			"wpn_fps_upg_o_acog"
+		}
+		
+		self.wpn_deathvox_shotgun = deep_clone(self.wpn_fps_sho_spas12_npc)
+		self.wpn_deathvox_shotgun.default_blueprint = {
+			"wpn_fps_sho_spas12_short",
+			"wpn_fps_sho_body_spas12_standard",
+			"wpn_fps_sho_fg_spas12_standard",
+			"wpn_fps_sho_s_spas12_folded"
+		}
+
 	end
 
 	end

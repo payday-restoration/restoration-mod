@@ -3057,12 +3057,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_ass_smg_small",
 			"wpn_fps_m4_uupg_fg_rail",
 			"wpn_fps_m4_uupg_fg_lr300",
+			"wpn_fps_upg_m4_m_straight_vanilla",
 			"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_upg_m4_m_pmag",
 			"wpn_fps_m4_uupg_m_std",
 			"wpn_fps_m4_uupg_s_fold",
-			"wpn_fps_upg_m4_m_straight_vanilla",
-			"wpn_fps_m16_s_solid",
+			"wpn_fps_upg_m4_s_standard_vanilla",
 			"wpn_fps_upg_m4_s_pts",
 			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_m4_uupg_o_flipup",
@@ -3117,16 +3117,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_m4_fg_lvoa",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_smg_olympic_s_short",
-			"wpn_fps_upg_m4_s_standard",
-			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_snp_tti_g_grippy",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			--Stuff--
+			"wpn_fps_m16_s_solid",
+			"wpn_fps_upg_m4_s_standard"
 		}
 		self.wpn_fps_ass_m4_npc = deep_clone(self.wpn_fps_ass_m4)
 		self.wpn_fps_ass_m4_npc.unit = "units/payday2/weapons/wpn_fps_ass_m4/wpn_fps_ass_m4_npc"
@@ -34542,13 +34542,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
 			"wpn_fps_upg_o_xpsg33_magnifier"
 		})
-		for factory_id, i in pairs(self) do
-		factory_id = string.gsub(factory_id, "_npc", "")
-			if self[ factory_id ] and self[ factory_id ].uses_parts then
-				self[ factory_id .. "_npc" ].stock_adapter = self[ factory_id ].stock_adapter
-			end
-		end
-
 	end
 
 	end)

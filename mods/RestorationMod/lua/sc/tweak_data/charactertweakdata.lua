@@ -74,6 +74,7 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_omnia_lpf(presets)
 	self:_init_tank_biker(presets)
 	self:_init_omnia(presets)
+	self:_init_deathvox(presets)
 	self:_process_weapon_usage_table()
 end
 
@@ -2345,6 +2346,45 @@ function CharacterTweakData:_init_max(presets)
 		aggression_timeout = 6,
 		arrest_timeout = 240
 	}
+end
+
+function CharacterTweakData:_init_deathvox(presets)
+	self.deathvox_guard = deep_clone(self.security)
+	self.deathvox_guard.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_guard.use_factory = true
+	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_guard_pistol"}
+	table.insert(self._enemy_list, "deathvox_guard")
+	
+	self.deathvox_lightar = deep_clone(self.swat)
+	self.deathvox_lightar.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_lightar.use_factory = true
+	self.deathvox_lightar.factory_weapon_id = {"wpn_deathvox_light_ar"}
+	table.insert(self._enemy_list, "deathvox_lightar")
+	
+	self.deathvox_heavyar = deep_clone(self.fbi_swat)
+	self.deathvox_heavyar.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_heavyar.use_factory = true
+	self.deathvox_heavyar.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
+	table.insert(self._enemy_list, "deathvox_heavyar")
+	
+	self.deathvox_shotgun = deep_clone(self.swat)
+	self.deathvox_shotgun.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_shotgun.use_factory = true
+	self.deathvox_shotgun.factory_weapon_id = {"wpn_deathvox_shotgun"}
+	table.insert(self._enemy_list, "deathvox_shotgun")
+	
+	self.deathvox_shield = deep_clone(self.shield)
+	self.deathvox_shield.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_shield.use_factory = true
+	self.deathvox_shield.factory_weapon_id = {"wpn_deathvox_shield_pistol"}
+	table.insert(self._enemy_list, "deathvox_shield")
+	
+	self.deathvox_medic = deep_clone(self.medic)
+	self.deathvox_medic.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_medic.use_factory = true
+	self.deathvox_medic.factory_weapon_id = {"wpn_deathvox_medic_pistol"}
+	table.insert(self._enemy_list, "deathvox_medic")
+
 end
 
 function CharacterTweakData:_presets(tweak_data)
@@ -13501,7 +13541,18 @@ function CharacterTweakData:character_map()
 				"ene_murky_spook",
 				"ene_murky_tazer"
 			}
-		}			
+		},
+		gageammo = {
+			path = "units/pd2_mod_gageammo/characters/",
+			list = {
+				"ene_deathvox_guard",
+				"ene_deathvox_heavyar",
+				"ene_deathvox_lightar",
+				"ene_deathvox_medic",
+				"ene_deathvox_shield",
+				"ene_deathvox_shotgun"
+			}
+		}				
 	}
 	return char_map
 end

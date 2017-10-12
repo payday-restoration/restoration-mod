@@ -553,6 +553,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				access = access_type_walk_only,
 				special_type = "shield"
 			}
+
 			self.unit_categories.FBI_suit_C45_M4 = {
 				unit_types = {
 					america = {
@@ -1523,6 +1524,168 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 					}
+				},
+				access = access_type_walk_only
+			}
+
+
+
+			-- Death Vox
+			self.unit_categories.deathvox_guard = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.deathvox_lightar = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.deathvox_heavyar = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.deathvox_shotgun = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shotgun/ene_deathvox_shotgun")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shotgun/ene_deathvox_shotgun")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shotgun/ene_deathvox_shotgun")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.deathvox_shield = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.deathvox_medic = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
+					}						
+				},
+				access = access_type_all
+			}
+								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+			self.unit_categories.deathvox_taser = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+					},
+					murky = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+					}						
+				},
+				access = access_type_all,
+				special_type = "taser"
+			}
+			self.unit_categories.deathvox_greendozer = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+					},
+					russia = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+					},
+					murky = {
+						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+					}						
+				},
+				access = access_type_walk_only
+			}
+			self.unit_categories.deathvox_medicdozer = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+					},
+					russia = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+					},
+					murky = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+					}						
+				},
+				access = access_type_walk_only
+			}
+			self.unit_categories.deathvox_blackdozer = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+					},
+					russia = {
+						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+					},
+					murky = {
+						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+					}					
+				},
+				access = access_type_walk_only
+			}
+			self.unit_categories.deathvox_lmgdozer = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+					},
+					russia = {
+						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+					},
+					murky = {
+						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+					}						
 				},
 				access = access_type_walk_only
 			}
@@ -2872,6 +3035,431 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 			self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
 
+			-- Death Vox
+			
+			self.enemy_spawn_groups.gorgon = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_taser",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.tazer_charge,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.atlas = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.shield_wall_charge,
+						rank = 4
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 3
+					},
+					{
+						unit = "deathvox_lmgdozer", -- placeholder
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.chimera = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_taser",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.tazer_charge,
+						rank = 4
+					},
+					{
+						unit = "deathvox_blackdozer",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 3
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					},
+					{
+						unit = "deathvox_blackdozer",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.zeus = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_greendozer",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_tank,
+						rank = 3
+					},
+					{
+						unit = "deathvox_taser",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.tazer_charge,
+						rank = 2
+					},
+					{
+						unit = "boom_M4203",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.boom,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.epeius = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_shield",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.shield_wall_charge,
+						rank = 2
+					},
+					{
+						unit = "deathvox_lmgdozer",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.damocles = {
+				amount = {3, 3},
+				spawn = {
+					{
+						unit = "spooc",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.spooc,
+						rank = 1
+					}
+				}
+			}
+			self.enemy_spawn_groups.caduceus = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_greendozer",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 3
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medicdozer",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.atropos = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "spooc",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.spooc,
+						rank = 2
+					},
+					{
+						unit = "deathvox_taser",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.tazer_charge,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.aegeas = {
+				amount = {3, 3},
+				spawn = {
+					{
+						unit = "boom_M4203",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.boom,
+						rank = 3
+					},
+					{
+						unit = "deathvox_shield",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.shield_wall_ranged,
+						rank = 2
+					},
+					{
+						unit = "boom_M4203",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.boom,
+						rank = 1
+					}
+				}
+			}
+			FBI_suit_C45_M4
+			FBI_suit_M4_MP5
+
+			-- Death Vox Control Phase
+
+			self.enemy_spawn_groups.recovery_unit = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "FBI_suit_stealth_MP5",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.FBI_suit_stealth,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_suit_stealth,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.too_group = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "FBI_suit_M4_MP5",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_suit,
+						rank = 2
+					},
+					{
+						unit = "deathvox_taser",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.tazer_charge,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.styx = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "spooc",
+						freq = 1,
+						amount_min = 4,
+						amount_max = 4,
+						tactics = self._tactics.spooc,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.recon = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "FBI_suit_M4_MP5",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_suit,
+						rank = 2
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.lawn_wolfe = {
+				amount = {1, 1},
+				spawn = {
+					{
+						unit = "fbi_vet",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_Spring,
+						rank = 2
+					}
+				}
+			}
+
+			-- Normal DV Spawngroups
+
+			self.enemy_spawn_groups.dv_group_1 = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_heavyar",
+						freq = 1,
+						amount_min = 4,
+						amount_max = 4,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+
+			self.enemy_spawn_groups.dv_group_2 = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_shotgun",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 2
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					},
+				}
+			}
+			self.enemy_spawn_groups.dv_group_3 = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_shotgun",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 2
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					},
+				}
+			}
+			self.enemy_spawn_groups.dv_group_4 = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_heavyar",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 2
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					},
+				}
+			}
+			
 			--Vanilla shit below--
 			if difficulty_index <= 2 then
 				self.enemy_spawn_groups.tac_swat_shotgun_rush = {

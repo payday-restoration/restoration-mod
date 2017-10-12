@@ -53,6 +53,17 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.spooc_titan = clone(security_variant)
 	CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
 	CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
+	
+	CopBrain._logic_variants.deathvox_shield = clone(security_variant)
+	CopBrain._logic_variants.deathvox_shield.attack = ShieldLogicAttack
+	CopBrain._logic_variants.deathvox_shield.intimidated = nil
+	CopBrain._logic_variants.deathvox_shield.flee = nil
+	
+	CopBrain._logic_variants.deathvox_heavyar = security_variant
+	CopBrain._logic_variants.deathvox_lightar = security_variant
+	CopBrain._logic_variants.deathvox_medic = security_variant
+	CopBrain._logic_variants.deathvox_guard = security_variant
+	CopBrain._logic_variants.deathvox_shotgun = security_variant
 end
 
 --Thanks Rokk--

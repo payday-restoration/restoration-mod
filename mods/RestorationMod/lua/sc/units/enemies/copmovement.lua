@@ -67,6 +67,17 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.phalanx_minion_assault.hurt = ShieldActionHurt
 	CopMovement._action_variants.phalanx_minion_assault.walk = ShieldCopActionWalk
 	CopMovement._action_variants.spooc_titan = security_variant
+
+	CopMovement._action_variants.deathvox_shield = clone(security_variant)
+	CopMovement._action_variants.deathvox_shield.hurt = ShieldActionHurt
+	CopMovement._action_variants.deathvox_shield.walk = ShieldCopActionWalk
+	CopMovement._action_variants.deathvox_heavyar = security_variant
+	CopMovement._action_variants.deathvox_lightar = security_variant
+	CopMovement._action_variants.deathvox_medic = security_variant
+	CopMovement._action_variants.deathvox_guard = security_variant
+	CopMovement._action_variants.deathvox_shotgun = security_variant
+
+
 end
 
 function CopMovement:post_init()
@@ -278,6 +289,7 @@ function CopMovement:add_weapons()
 			end
 			RestorationCore.log_shit("SC: PRIMARY ADDED")
 		end
+		self._unit:inventory():_chk_spawn_shield(new_unit)
 	else
 		local prim_weap_name = self._ext_base:default_weapon_name("primary")
 		local sec_weap_name = self._ext_base:default_weapon_name("secondary")

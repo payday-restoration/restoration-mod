@@ -155,7 +155,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.wpn_deathvox_shotgun = deep_clone(self.wpn_fps_sho_spas12_npc)
 		self.wpn_deathvox_shotgun.default_blueprint = {
-			"wpn_fps_sho_spas12_short",
+			"wpn_fps_sho_b_spas12_short",
 			"wpn_fps_sho_body_spas12_standard",
 			"wpn_fps_sho_fg_spas12_standard",
 			"wpn_fps_sho_s_spas12_folded"

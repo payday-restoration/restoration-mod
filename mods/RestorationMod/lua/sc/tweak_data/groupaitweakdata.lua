@@ -1615,9 +1615,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
 			self.unit_categories.deathvox_taser = {
 				unit_types = {
 					america = {
@@ -3281,8 +3278,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				}
 			}
-			FBI_suit_C45_M4
-			FBI_suit_M4_MP5
 
 			-- Death Vox Control Phase
 

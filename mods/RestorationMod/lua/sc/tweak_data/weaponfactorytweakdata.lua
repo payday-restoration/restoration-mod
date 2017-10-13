@@ -141,24 +141,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_cs"
 		}
 
-		self.wpn_deathvox_heavy_ar = deep_clone(self.wpn_fps_ass_l85a2_npc)
+		self.wpn_deathvox_heavy_ar = deep_clone(self.wpn_fps_ass_fal_npc)
 		self.wpn_deathvox_heavy_ar.default_blueprint = {
-			"wpn_fps_ass_l85a2_body_standard",
-			"wpn_fps_ass_l85a2_g_standard",
-			"wpn_fps_ass_l85a2_b_long",
-			"wpn_fps_upg_ass_ns_surefire",
-			"wpn_fps_ass_l85a2_fg_short",
+			"wpn_fps_ass_fal_body_standard",
+			"wpn_fps_ass_fal_fg_standard",
+			"wpn_fps_ass_fal_s_standard",
+			"wpn_fps_upg_ass_ns_battle",
+			"wpn_fps_ass_fal_g_01",
 			"wpn_fps_upg_fl_ass_peq15",
-			"wpn_fps_ass_l85a2_m_emag",
-			"wpn_fps_upg_o_acog"
+			"wpn_fps_ass_fal_m_01",
+			"wpn_fps_upg_o_reflex"
 		}
 		
-		self.wpn_deathvox_shotgun = deep_clone(self.wpn_fps_sho_spas12_npc)
-		self.wpn_deathvox_shotgun.default_blueprint = {
-			"wpn_fps_sho_b_spas12_short",
-			"wpn_fps_sho_body_spas12_standard",
-			"wpn_fps_sho_fg_spas12_standard",
-			"wpn_fps_sho_s_spas12_folded"
+		self.wpn_deathvox_shotgun_light = deep_clone(self.wpn_fps_shot_r870_npc)
+		self.wpn_deathvox_shotgun_light.default_blueprint = {
+			"wpn_fps_shot_r870_body_standard",
+			"wpn_fps_shot_r870_b_long",
+			"wpn_fps_shot_r870_fg_wood",
+			"wpn_fps_upg_m4_g_sniper",
+			"wpn_fps_shot_r870_s_nostock",
+			"wpn_fps_shot_r870_body_rack"
+		}
+
+		self.wpn_deathvox_shotgun_heavy = deep_clone(self.wpn_fps_sho_ben_npc)
+		self.wpn_deathvox_shotgun_heavy.default_blueprint = {
+			"wpn_fps_sho_ben_b_short",
+			"wpn_fps_sho_ben_body_standard",
+			"wpn_fps_sho_ben_fg_standard",
+			"wpn_fps_sho_ben_s_collapsable"
 		}
 
 	end

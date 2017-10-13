@@ -2367,11 +2367,17 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_heavyar.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
 	table.insert(self._enemy_list, "deathvox_heavyar")
 	
-	self.deathvox_shotgun = deep_clone(self.swat)
-	self.deathvox_shotgun.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_shotgun.use_factory = true
-	self.deathvox_shotgun.factory_weapon_id = {"wpn_deathvox_shotgun"}
-	table.insert(self._enemy_list, "deathvox_shotgun")
+	self.deathvox_lightshot = deep_clone(self.swat)
+	self.deathvox_lightshot.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_lightshot.use_factory = true
+	self.deathvox_lightshot.factory_weapon_id = {"wpn_deathvox_shotgun_light"}
+	table.insert(self._enemy_list, "deathvox_lightshot")
+	
+	self.deathvox_heavyshot = deep_clone(self.swat)
+	self.deathvox_heavyshot.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_heavyshot.use_factory = true
+	self.deathvox_heavyshot.factory_weapon_id = {"wpn_deathvox_shotgun_heavy"}
+	table.insert(self._enemy_list, "deathvox_heavyshot")
 	
 	self.deathvox_shield = deep_clone(self.shield)
 	self.deathvox_shield.weapon = deep_clone(presets.weapon.deathwish)
@@ -12618,6 +12624,13 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.rboom.HEALTH_INIT = self.rboom.HEALTH_INIT * hp_mul
 	self.biker_escape.HEALTH_INIT = self.biker_escape.HEALTH_INIT * hp_mul
 	self.omnia_lpf.HEALTH_INIT = self.omnia_lpf.HEALTH_INIT * hp_mul
+	self.deathvox_guard.HEALTH_INIT = self.deathvox_guard.HEALTH_INIT * hp_mul
+	self.deathvox_heavyar.HEALTH_INIT = self.deathvox_heavyar.HEALTH_INIT * hp_mul
+	self.deathvox_heavyshot.HEALTH_INIT = self.deathvox_heavyshot.HEALTH_INIT * hp_mul
+	self.deathvox_lightar.HEALTH_INIT = self.deathvox_lightar.HEALTH_INIT * hp_mul
+	self.deathvox_lightshot.HEALTH_INIT = self.deathvox_lightshot.HEALTH_INIT * hp_mul
+	self.deathvox_shield.HEALTH_INIT = self.deathvox_shield.HEALTH_INIT * hp_mul
+	self.deathvox_medic.HEALTH_INIT = self.deathvox_medic.HEALTH_INIT * hp_mul
 	if self.security.headshot_dmg_mul then
 		self.security.headshot_dmg_mul = self.security.headshot_dmg_mul * hs_mul
 	end
@@ -12786,6 +12799,27 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.omnia_lpf.headshot_dmg_mul then
 		self.omnia_lpf.headshot_dmg_mul = self.omnia_lpf.headshot_dmg_mul * hs_mul
 	end
+	if self.deathvox_guard.headshot_dmg_mul then
+		self.deathvox_guard.headshot_dmg_mul = self.deathvox_guard.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_heavyar.headshot_dmg_mul then
+		self.deathvox_heavyar.headshot_dmg_mul = self.deathvox_heavyar.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_heavyshot.headshot_dmg_mul then
+		self.deathvox_heavyshot.headshot_dmg_mul = self.deathvox_heavyshot.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_lightar.headshot_dmg_mul then
+		self.deathvox_lightar.headshot_dmg_mul = self.deathvox_lightar.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_medic.headshot_dmg_mul then
+		self.deathvox_medic.headshot_dmg_mul = self.deathvox_medic.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_shield.headshot_dmg_mul then
+		self.deathvox_shield.headshot_dmg_mul = self.deathvox_shield.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_lightshot.headshot_dmg_mul then
+		self.deathvox_lightshot.headshot_dmg_mul = self.deathvox_lightshot.headshot_dmg_mul * hs_mul
+	end
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
@@ -12839,7 +12873,14 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"boom",
 		"rboom",
 		"taser",
-		"omnia_lpf"
+		"omnia_lpf",
+		"deathvox_guard",
+		"deathvox_heavyar",
+		"deathvox_heavyshot",
+		"deathvox_lightar",
+		"deathvox_lightshot",
+		"deathvox_medic",
+		"deathvox_shield"
 	}
 	table.insert(all_units, "bolivian")
 	table.insert(all_units, "bolivian_indoors")
@@ -12905,6 +12946,13 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.rboom.SPEED_RUN = self.rboom.SPEED_RUN * run_mul
 	self.biker_escape.SPEED_RUN = self.biker_escape.SPEED_RUN * run_mul
 	self.omnia_lpf.SPEED_RUN = self.omnia_lpf.SPEED_RUN * run_mul
+	self.deathvox_guard.SPEED_RUN = self.deathvox_guard.SPEED_RUN * run_mul
+	self.deathvox_heavyar.SPEED_RUN = self.deathvox_heavyar.SPEED_RUN * run_mul
+	self.deathvox_heavyshot.SPEED_RUN = self.deathvox_heavyshot.SPEED_RUN * run_mul
+	self.deathvox_lightar.SPEED_RUN = self.deathvox_lightar.SPEED_RUN * run_mul
+	self.deathvox_lightshot.SPEED_RUN = self.deathvox_lightshot.SPEED_RUN * run_mul
+	self.deathvox_shield.SPEED_RUN = self.deathvox_shield.SPEED_RUN * run_mul
+	self.deathvox_medic.SPEED_RUN = self.deathvox_medic.SPEED_RUN * run_mul
 end
 
 function CharacterTweakData:_set_characters_weapon_preset(preset)
@@ -12924,7 +12972,14 @@ function CharacterTweakData:_set_characters_weapon_preset(preset)
 		"drug_lord_boss_stealth",
 		"biker",
 		"biker_guard",
-		"mobster"
+		"mobster",
+		"deathvox_guard",
+		"deathvox_heavyar",
+		"deathvox_heavyshot",
+		"deathvox_lightar",
+		"deathvox_lightshot",
+		"deathvox_medic",
+		"deathvox_shield"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].weapon = self.presets.weapon[preset]
@@ -12944,7 +12999,14 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 		"hector_boss_no_armor",
 		"bolivian_indoors",
 		"drug_lord_boss_stealth",
-		"swat"
+		"swat",
+		"deathvox_guard",
+		"deathvox_heavyar",
+		"deathvox_heavyshot",
+		"deathvox_lightar",
+		"deathvox_lightshot",
+		"deathvox_medic",
+		"deathvox_shield"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].dodge = self.presets.dodge[preset]
@@ -12968,7 +13030,14 @@ function CharacterTweakData:_set_characters_melee_preset(preset)
 		"drug_lord_boss_stealth",
 		"biker",
 		"biker_guard",
-		"mobster"
+		"mobster",
+		"deathvox_guard",
+		"deathvox_heavyar",
+		"deathvox_heavyshot",
+		"deathvox_lightar",
+		"deathvox_lightshot",
+		"deathvox_medic",
+		"deathvox_shield"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].melee_weapon_dmg_multiplier = preset
@@ -13005,7 +13074,9 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"boom_summers",
 		"medic_summers",
 		"taser_summers",
-		"phalanx_vip"
+		"phalanx_vip",
+		"deathvox_medic",
+		"deathvox_shield"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].weapon = deep_clone(self.presets.weapon[preset])
@@ -13043,7 +13114,9 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"boom_summers",
 		"medic_summers",
 		"taser_summers",
-		"phalanx_vip"
+		"phalanx_vip",
+		"deathvox_medic",
+		"deathvox_shield"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].melee_weapon_dmg_multiplier = preset
@@ -13550,7 +13623,8 @@ function CharacterTweakData:character_map()
 				"ene_deathvox_lightar",
 				"ene_deathvox_medic",
 				"ene_deathvox_shield",
-				"ene_deathvox_shotgun"
+				"ene_deathvox_lightshot",
+				"ene_deathvox_heavyshot"
 			}
 		}				
 	}

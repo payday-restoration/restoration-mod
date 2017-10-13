@@ -1,0 +1,1 @@
+CustomSafehouseManager.SPAWN_COOLDOWN = 3

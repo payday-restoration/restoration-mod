@@ -9,7 +9,7 @@ function RestorationCore:init()
 end
 
 function RestorationCore.log_shit(to_log)
-	if _G.restoration.we_log then
+	if true then
 		log(to_log)
 	end
 end

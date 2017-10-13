@@ -75,7 +75,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.deathvox_lightar = security_variant
 	CopMovement._action_variants.deathvox_medic = security_variant
 	CopMovement._action_variants.deathvox_guard = security_variant
-	CopMovement._action_variants.deathvox_shotgun = security_variant
+	CopMovement._action_variants.deathvox_lightshot = security_variant
+	CopMovement._action_variants.deathvox_heavyshot = security_variant
 
 
 end

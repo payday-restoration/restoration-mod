@@ -111,13 +111,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+		["menu_risk_sm_wish"] = "Death Vox. When all of Vox's wishes are granted, many of his dreams will be destroyed.",
+		["menu_difficulty_sm_wish"] = "Death Vox",
 
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
+		
 	})
 end)
 
@@ -316,6 +318,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_eager"] = "Accelerator",
 		["menu_crew_eager_desc"] = "Players reload 10% faster.\n\nNote: This Boost only works in Crime.net Offline.",
 
+		["menu_risk_dv"] = "Death Vox",
+		["menu_difficulty_dv"] = "Death Vox",
+		
 --[[   SKILLTREES   ]]--
 	--{
 	

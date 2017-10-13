@@ -1573,16 +1573,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
-			self.unit_categories.deathvox_shotgun = {
+			self.unit_categories.deathvox_lightshot = {
 				unit_types = {
 					america = {
-						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shotgun/ene_deathvox_shotgun")
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightshot/ene_deathvox_lightshot")
 					},
 					russia = {
-						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shotgun/ene_deathvox_shotgun")
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightshot/ene_deathvox_lightshot")
 					},
 					murky = {
-						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shotgun/ene_deathvox_shotgun")
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightshot/ene_deathvox_lightshot")
+					}						
+				},
+				access = access_type_all
+			}
+			self.unit_categories.deathvox_heavyshot = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/deathvox_heavyshot/deathvox_heavyshot")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/deathvox_heavyshot/deathvox_heavyshot")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/deathvox_heavyshot/deathvox_heavyshot")
 					}						
 				},
 				access = access_type_all
@@ -3391,11 +3405,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 
-			self.enemy_spawn_groups.dv_group_2 = {
+			self.enemy_spawn_groups.dv_group_2_std = {
 				amount = {4, 4},
 				spawn = {
 					{
-						unit = "deathvox_shotgun",
+						unit = "deathvox_heavyshot",
 						freq = 1,
 						amount_min = 2,
 						amount_max = 2,
@@ -3409,17 +3423,104 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_max = 2,
 						tactics = self._tactics.FBI_swat_rifle,
 						rank = 1
-					},
+					}
 				}
 			}
-			self.enemy_spawn_groups.dv_group_3 = {
+			self.enemy_spawn_groups.dv_group_2_med = {
 				amount = {4, 4},
 				spawn = {
 					{
-						unit = "deathvox_shotgun",
+						unit = "deathvox_heavyshot",
 						freq = 1,
-						amount_min = 3,
-						amount_max = 3,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 3
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
+				}
+			}
+			self.enemy_spawn_groups.dv_group_3_std = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_lightshot",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 2
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+			self.enemy_spawn_groups.dv_group_3_med = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_lightshot",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 3
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+			self.enemy_spawn_groups.dv_group_4_std = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_heavyshot",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 3
+					},
+					{
+						unit = "deathvox_lightshot",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
 						tactics = self._tactics.FBI_swat_shotgun,
 						rank = 2
 					},
@@ -3430,10 +3531,39 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
 						rank = 1
-					},
+					}
 				}
 			}
-			self.enemy_spawn_groups.dv_group_4 = {
+			self.enemy_spawn_groups.dv_group_4_med = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_heavyshot",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 3
+					},
+					{
+						unit = "deathvox_lightshot",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+			self.enemy_spawn_groups.dv_group_5_std = {
 				amount = {4, 4},
 				spawn = {
 					{
@@ -3441,7 +3571,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.FBI_swat_shotgun,
+						tactics = self._tactics.FBI_swat_rifle,
 						rank = 2
 					},
 					{
@@ -3452,9 +3582,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						tactics = self._tactics.FBI_swat_rifle,
 						rank = 1
 					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
 				}
 			}
-			
+			self.enemy_spawn_groups.dv_group_5_med = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_heavyar",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 3
+					},
+					{
+						unit = "deathvox_lightar",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
 			--Vanilla shit below--
 			if difficulty_index <= 2 then
 				self.enemy_spawn_groups.tac_swat_shotgun_rush = {
@@ -5095,6 +5261,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					3.6,
 					3.8
 				}
+			elseif difficulty_index == 9 then
+				self.besiege.assault.force_balance_mul = {
+					3,
+					3.2,
+					3.5,
+					3.9
+				}
+				self.besiege.assault.force_pool_balance_mul = {
+					2.7,
+					2.9,
+					3.1,
+					3.3
+				}
 			end
 			if difficulty_index <= 2 then
 				self.besiege.assault.groups = {
@@ -5208,7 +5387,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.25
 					}
 				}
-			else
+			elseif difficulty_index <= 8 then
 				self.besiege.assault.groups = {
 					FBI_swats = {
 						0.2,
@@ -5240,6 +5419,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.45,
 						0.45
 					}
+				}
+			elseif difficulty_index == 9 then
+				self.besiege.assault.groups = {
+					gorgon = { 0.05,0.05,0.05 },
+					atlas = { 0.05,0.05,0.05 },
+					chimera = { 0.05,0.05,0.05 },
+					zeus = { 0.05,0.05,0.05 },
+					epeius = { 0.05,0.05,0.05 },
+					damocles = { 0.05,0.05,0.05 },
+					caduceus = { 0.05,0.05,0.05 },
+					atropos = { 0.05,0.05,0.05 },
+					aegeas = { 0.05,0.05,0.05 },
+					dv_group_1 = {0.1, 0.1, 0.1},
+					dv_group_2_std = { 0.05,0.05,0.05 },
+					dv_group_2_med = { 0.05,0.05,0.05 },
+					dv_group_3_std = { 0.05,0.05,0.05 },
+					dv_group_3_med = { 0.05,0.05,0.05 },
+					dv_group_4_std = { 0.05,0.05,0.05 },
+					dv_group_4_med = { 0.05,0.05,0.05 },
+					dv_group_5_std = { 0.1,0.1,0.1 }, -- TODO: implement artemis
+					dv_group_5_med = { 0.05,0.05,0.05 }
 				}
 			end
 			self.besiege.assault.groups.single_spooc = {
@@ -5401,7 +5601,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			else
+			elseif difficulty_index <= 8 then
 				self.besiege.reenforce.groups = {
 					CS_defend_a = {
 						0.1,
@@ -5423,6 +5623,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0,
 						1
 					}
+				}
+			elseif difficulty_index == 9 then
+				self.besiege.reenforce.groups = {
+					gorgon = { 0.05,0.05,0.05 },
+					atlas = { 0.05,0.05,0.05 },
+					chimera = { 0.05,0.05,0.05 },
+					zeus = { 0.05,0.05,0.05 },
+					epeius = { 0.05,0.05,0.05 },
+					damocles = { 0.05,0.05,0.05 },
+					caduceus = { 0.05,0.05,0.05 },
+					atropos = { 0.05,0.05,0.05 },
+					aegeas = { 0.05,0.05,0.05 },
+					dv_group_1 = {0.1, 0.1, 0.1},
+					dv_group_2_std = { 0.05,0.05,0.05 },
+					dv_group_2_med = { 0.05,0.05,0.05 },
+					dv_group_3_std = { 0.05,0.05,0.05 },
+					dv_group_3_med = { 0.05,0.05,0.05 },
+					dv_group_4_std = { 0.05,0.05,0.05 },
+					dv_group_4_med = { 0.05,0.05,0.05 },
+					dv_group_5_std = { 0.1,0.1,0.1 }, -- TODO: implement artemis
+					dv_group_5_med = { 0.05,0.05,0.05 }
 				}
 			end
 			self.besiege.recon.interval = {
@@ -5506,7 +5727,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			else
+			elseif difficulty_index <= 8 then
 				self.besiege.recon.groups = {
 					FBI_stealth_a = {
 						0.5,
@@ -5518,6 +5739,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.5,
 						1
 					}
+				}
+			elseif difficulty_index == 9 then
+				self.besiege.recon.groups = {
+					recovery_unit = { 0.2,0.2,0.2 },
+					too_group = { 0.2,0.2,0.2 },
+					styx = { 0.1,0.1,0.1 },
+					recon = { 0.2,0.2,0.2 },
+					lawn_wolfe = { 0.1,0.1,0.1 }
 				}
 			end
 			self.besiege.recon.groups.single_spooc = {
@@ -5632,6 +5861,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					respawn_delay = 900
 				}
 			elseif difficulty_index == 8 then
+				self.phalanx.spawn_chance = {
+					start = 0.05,
+					increase = 0.09,
+					decrease = 1,
+					max = 1,
+					respawn_delay = 600
+				}
+			elseif difficulty_index == 9 then
 				self.phalanx.spawn_chance = {
 					start = 0.05,
 					increase = 0.09,

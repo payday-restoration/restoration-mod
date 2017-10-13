@@ -143,6 +143,9 @@
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
 		<!--MOD SAVE DATA, DON'T FUCK THIS UP EVER-->
 		<hook file="sc/managers/savefilemanager.lua" source_file="lib/managers/savefilemanager"/>
+		
+		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
+		
     </Hooks>
     <Localization directory="loc" default="english.txt">
     </Localization>

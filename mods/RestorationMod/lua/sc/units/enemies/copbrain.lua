@@ -63,7 +63,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.deathvox_lightar = security_variant
 	CopBrain._logic_variants.deathvox_medic = security_variant
 	CopBrain._logic_variants.deathvox_guard = security_variant
-	CopBrain._logic_variants.deathvox_shotgun = security_variant
+	CopBrain._logic_variants.deathvox_lightshot = security_variant
+	CopBrain._logic_variants.deathvox_heavyshot = security_variant
 end
 
 --Thanks Rokk--

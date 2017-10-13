@@ -256,19 +256,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			elseif difficulty_index == 8 then
 				self.special_unit_spawn_limits = {
-					tank = 4,
-					taser = 5,
-					boom = 3,
-					spooc = 4,
-					shield = 6,
-					medic = 4,
-					omnia_LPF = 4,
-					fbi_vet = 3,
-					spring = 1,
-					summers = 1
-				}
-			elseif difficulty_index == 9 then
-				self.special_unit_spawn_limits = {
 					tank = 3,
 					taser = 4,
 					boom = 2,
@@ -1590,13 +1577,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.deathvox_heavyshot = {
 				unit_types = {
 					america = {
-						Idstring("units/pd2_mod_gageammo/characters/deathvox_heavyshot/deathvox_heavyshot")
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot")
 					},
 					russia = {
-						Idstring("units/pd2_mod_gageammo/characters/deathvox_heavyshot/deathvox_heavyshot")
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot")
 					},
 					murky = {
-						Idstring("units/pd2_mod_gageammo/characters/deathvox_heavyshot/deathvox_heavyshot")
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot")
 					}						
 				},
 				access = access_type_all
@@ -1613,7 +1600,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
 					}						
 				},
-				access = access_type_all
+				access = access_type_all,
+				special_type = "shield"
 			}
 			self.unit_categories.deathvox_medic = {
 				unit_types = {
@@ -1627,7 +1615,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
 					}						
 				},
-				access = access_type_all
+				access = access_type_all,
+				special_type = "medic"
 			}
 			self.unit_categories.deathvox_taser = {
 				unit_types = {
@@ -1656,7 +1645,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
 					}						
 				},
-				access = access_type_walk_only
+				access = access_type_walk_only,
+				special_type = "tank"
 			}
 			self.unit_categories.deathvox_medicdozer = {
 				unit_types = {
@@ -1670,7 +1660,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
 					}						
 				},
-				access = access_type_walk_only
+				access = access_type_walk_only,
+				special_type = "tank"
 			}
 			self.unit_categories.deathvox_blackdozer = {
 				unit_types = {
@@ -1684,7 +1675,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
 					}					
 				},
-				access = access_type_walk_only
+				access = access_type_walk_only,
+				special_type = "tank"
 			}
 			self.unit_categories.deathvox_lmgdozer = {
 				unit_types = {
@@ -1698,7 +1690,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
 					}						
 				},
-				access = access_type_walk_only
+				access = access_type_walk_only,
+				special_type = "tank"
 			}
 		end
 
@@ -5250,19 +5243,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			elseif difficulty_index == 8 then
 				self.besiege.assault.force_balance_mul = {
-					4,
-					4.2,
-					4.5,
-					4.9
-				}
-				self.besiege.assault.force_pool_balance_mul = {
-					3.2,
-					3.4,
-					3.6,
-					3.8
-				}
-			elseif difficulty_index == 9 then
-				self.besiege.assault.force_balance_mul = {
 					3,
 					3.2,
 					3.5,
@@ -5387,7 +5367,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.25
 					}
 				}
-			elseif difficulty_index <= 8 then
+			elseif difficulty_index <= 7 then
 				self.besiege.assault.groups = {
 					FBI_swats = {
 						0.2,
@@ -5420,7 +5400,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.45
 					}
 				}
-			elseif difficulty_index == 9 then
+			elseif difficulty_index == 8 then
 				self.besiege.assault.groups = {
 					gorgon = { 0.05,0.05,0.05 },
 					atlas = { 0.05,0.05,0.05 },
@@ -5601,7 +5581,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			elseif difficulty_index <= 8 then
+			elseif difficulty_index <= 7 then
 				self.besiege.reenforce.groups = {
 					CS_defend_a = {
 						0.1,
@@ -5624,7 +5604,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			elseif difficulty_index == 9 then
+			elseif difficulty_index == 8 then
 				self.besiege.reenforce.groups = {
 					gorgon = { 0.05,0.05,0.05 },
 					atlas = { 0.05,0.05,0.05 },
@@ -5728,19 +5708,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				}
 			elseif difficulty_index <= 8 then
-				self.besiege.recon.groups = {
-					FBI_stealth_a = {
-						0.5,
-						1,
-						1
-					},
-					FBI_stealth_b = {
-						0.25,
-						0.5,
-						1
-					}
-				}
-			elseif difficulty_index == 9 then
 				self.besiege.recon.groups = {
 					recovery_unit = { 0.2,0.2,0.2 },
 					too_group = { 0.2,0.2,0.2 },
@@ -5861,14 +5828,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					respawn_delay = 900
 				}
 			elseif difficulty_index == 8 then
-				self.phalanx.spawn_chance = {
-					start = 0.05,
-					increase = 0.09,
-					decrease = 1,
-					max = 1,
-					respawn_delay = 600
-				}
-			elseif difficulty_index == 9 then
 				self.phalanx.spawn_chance = {
 					start = 0.05,
 					increase = 0.09,

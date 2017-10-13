@@ -2355,25 +2355,25 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_guard_pistol"}
 	table.insert(self._enemy_list, "deathvox_guard")
 	
-	self.deathvox_lightar = deep_clone(self.swat)
+	self.deathvox_lightar = deep_clone(self.city_swat)
 	self.deathvox_lightar.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_lightar.use_factory = true
 	self.deathvox_lightar.factory_weapon_id = {"wpn_deathvox_light_ar"}
 	table.insert(self._enemy_list, "deathvox_lightar")
 	
-	self.deathvox_heavyar = deep_clone(self.fbi_swat)
+	self.deathvox_heavyar = deep_clone(self.city_swat)
 	self.deathvox_heavyar.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_heavyar.use_factory = true
 	self.deathvox_heavyar.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
 	table.insert(self._enemy_list, "deathvox_heavyar")
 	
-	self.deathvox_lightshot = deep_clone(self.swat)
+	self.deathvox_lightshot = deep_clone(self.city_swat)
 	self.deathvox_lightshot.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_lightshot.use_factory = true
 	self.deathvox_lightshot.factory_weapon_id = {"wpn_deathvox_shotgun_light"}
 	table.insert(self._enemy_list, "deathvox_lightshot")
 	
-	self.deathvox_heavyshot = deep_clone(self.swat)
+	self.deathvox_heavyshot = deep_clone(self.city_swat)
 	self.deathvox_heavyshot.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_heavyshot.use_factory = true
 	self.deathvox_heavyshot.factory_weapon_id = {"wpn_deathvox_shotgun_heavy"}
@@ -2388,6 +2388,8 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_medic = deep_clone(self.medic)
 	self.deathvox_medic.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_medic.use_factory = true
+	self.deathvox_medic.dv_medic_heal = true
+	self.deathvox_medic.tags = {"medic"}
 	self.deathvox_medic.factory_weapon_id = {"wpn_deathvox_medic_pistol"}
 	table.insert(self._enemy_list, "deathvox_medic")
 

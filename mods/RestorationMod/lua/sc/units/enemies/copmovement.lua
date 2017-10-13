@@ -238,10 +238,11 @@ function CopMovement:do_dv_medic_heal(self)
 	end
 	if self and self._unit then
 		if self._unit:base()._tweak_table == "deathvox_medic" then
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius, managers.slot:get_mask("enemies"))
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
 			if enemies then
 				for _,enemy in ipairs(enemies) do
-					if enemy ~= self._unit and enemy:base()._tweak_table ~= "deathvox_medic" then
+					if enemy ~= self._unit then
+						RestorationCore.log_shit("SC: FOUND UNIT")
 						local health_left = enemy:character_damage()._health
 						local max_health = enemy:character_damage()._HEALTH_INIT
 						if health_left < max_health then

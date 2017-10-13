@@ -1,8 +1,10 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function PlayerDamage:init(unit)
+	log("SC: Player Init called")
 	self._lives_init = tweak_data.player.damage.LIVES_INIT
 	self._lives_init = managers.crime_spree:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
+	log("SC: Player Lives: " .. self._lives_init)
 	self._unit = unit
 	self._max_health_reduction = managers.player:upgrade_value("player", "max_health_reduction", 1)
 	self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)

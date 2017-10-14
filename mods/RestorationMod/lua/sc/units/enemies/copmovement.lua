@@ -335,7 +335,6 @@ function CopMovement:add_weapons()
 			end
 			RestorationCore.log_shit("SC: PRIMARY ADDED")
 		end
-		self._unit:inventory():_chk_spawn_shield(new_unit)
 	else
 		local prim_weap_name = self._ext_base:default_weapon_name("primary")
 		local sec_weap_name = self._ext_base:default_weapon_name("secondary")

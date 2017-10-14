@@ -171,6 +171,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_sho_ben_s_collapsable"
 		}
 
+		self.wpn_deathvox_sniper = deep_clone(self.wpn_fps_snp_wa2000_npc)
+		self.wpn_deathvox_sniper.default_blueprint = {
+			"wpn_fps_snp_wa2000_body_standard",
+			"wpn_fps_snp_wa2000_m_standard",
+			"wpn_fps_snp_wa2000_s_standard",
+			"wpn_fps_snp_wa2000_b_long",
+			"wpn_fps_upg_fl_ass_peq15",
+			"wpn_fps_snp_wa2000_g_stealth",
+			"wpn_fps_upg_o_spot"
+		}
+
 	end
 
 	end

@@ -78,6 +78,18 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.deathvox_lightshot = security_variant
 	CopMovement._action_variants.deathvox_heavyshot = security_variant
 
+	CopMovement._action_variants.deathvox_taser = security_variant
+	CopMovement._action_variants.deathvox_sniper_assault = security_variant
+	CopMovement._action_variants.deathvox_cloaker = security_variant
+	
+	CopMovement._action_variants.deathvox_greendozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_greendozer.walk = TankCopActionWalk
+	CopMovement._action_variants.deathvox_blackdozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_blackdozer.walk = TankCopActionWalk
+	CopMovement._action_variants.deathvox_lmgdozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_lmgdozer.walk = TankCopActionWalk
+	CopMovement._action_variants.deathvox_medicdozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_medicdozer.walk = TankCopActionWalk
 
 end
 
@@ -237,7 +249,7 @@ function CopMovement:do_dv_medic_heal(self)
 		self._omnia_cooldown = t + 0.2
 	end
 	if self and self._unit then
-		if self._unit:base()._tweak_table == "deathvox_medic" then
+		if not self._unit:character_damage():dead() then
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
 			if enemies then
 				for _,enemy in ipairs(enemies) do
@@ -267,7 +279,7 @@ function CopMovement:do_omnia(self)
 		self._omnia_cooldown = t + 0.2
 	end
 	if self and self._unit then
-		if self._unit:base()._tweak_table == "omnia_lpf" then
+		if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then
 			local cops_to_heal = {
 				"security",
 				"cop",

@@ -73,27 +73,31 @@ function PlayerTweakData:_set_overkill_290()
 end
 
 function PlayerTweakData:_set_sm_wish()
-	self.suspicion.max_value = 13
-	self.suspicion.range_mul = 1.5
-	self.suspicion.buildup_mul = 1.5
+	self.suspicion.max_value = 12
+	self.suspicion.range_mul = 1.4
+	self.suspicion.buildup_mul = 1.4
 	self.damage.BLEED_OT_TIME = 40
-	self.damage.LIVES_INIT = 2
-	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.damage.LIVES_INIT = 4
+	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.251
 	}
 	self.alarm_pager = {
 		first_call_delay = {2, 4},
 		call_duration = {
-			{3, 3},
-			{3, 3}
+			{4.5, 4.5},
+			{4.5, 4.5}
 		},
 		nr_of_calls = {2, 2},
 		bluff_success_chance = {
 			1,
+			1,
+			1,
 			0
 		},
 		bluff_success_chance_w_skill = {
+			1,
+			1,
 			1,
 			0
 		}

@@ -7,12 +7,9 @@
 		
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_1/ene_acc_bulldozer_back_murky_1" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_1/ene_acc_bulldozer_chest_murky_1" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_helmet_plate_murky_1/ene_acc_bulldozer_helmet_plate_murky_1" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_neck_murky_1/ene_acc_bulldozer_neck_murky_1" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_1/ene_acc_bulldozer_stomache_murky_1" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_throat_murky_1/ene_acc_bulldozer_throat_murky_1" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_2/ene_acc_bulldozer_back_murky_2" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_2/ene_acc_bulldozer_chest_murky_2" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_2/ene_acc_bulldozer_stomache_murky_2" />
 	</dependencies>
 
 	<extensions>

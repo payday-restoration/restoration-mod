@@ -261,8 +261,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					boom = 2,
 					spooc = 4,
 					shield = 6,
-					medic = 6,
-					--ass_sniper = 2,
+					medic = 3,
+					ass_sniper = 2,
 					omnia_LPF = 0, --obsolete w/ DV
 					fbi_vet = 1,
 					spring = 1,
@@ -1621,13 +1621,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.deathvox_taser = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_taser/ene_deathvox_taser"),
 					},
 					russia = {
-						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_taser/ene_deathvox_taser"),
 					},
 					murky = {
-						Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_taser/ene_deathvox_taser"),
 					}						
 				},
 				access = access_type_all,
@@ -1636,13 +1636,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.deathvox_greendozer = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
 					},
 					russia = {
-						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
 					},
 					murky = {
-						Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
 					}						
 				},
 				access = access_type_walk_only,
@@ -1651,13 +1651,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.deathvox_medicdozer = {
 				unit_types = {
 					america = {
-						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
 					},
 					russia = {
-						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
 					},
 					murky = {
-						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
 					}						
 				},
 				access = access_type_walk_only,
@@ -1666,13 +1666,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.deathvox_blackdozer = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
 					},
 					russia = {
-						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
 					},
 					murky = {
-						Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
 					}					
 				},
 				access = access_type_walk_only,
@@ -1681,17 +1681,47 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.deathvox_lmgdozer = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
 					},
 					russia = {
-						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
 					},
 					murky = {
-						Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
 					}						
 				},
 				access = access_type_walk_only,
 				special_type = "tank"
+			}
+			self.unit_categories.deathvox_cloaker = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_cloaker/ene_deathvox_cloaker")
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_cloaker/ene_deathvox_cloaker")
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_cloaker/ene_deathvox_cloaker")
+					}						
+				},
+				access = access_type_all,
+				special_type = "spooc"
+			}
+			self.unit_categories.deathvox_sniper_assault = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
+					},
+					russia = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
+					},
+					murky = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
+					}						
+				},
+				access = access_type_walk_only,
+				special_type = "ass_sniper"
 			}
 		end
 
@@ -3169,6 +3199,36 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 
+			self.enemy_spawn_groups.artemis = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "deathvox_sniper_assault",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.CS_sniper,
+						rank = 3
+					},
+					{
+						unit = "deathvox_shield",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.shield_wall_charge,
+						rank = 2
+					},
+					{
+						unit = "deathvox_medic",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}
+
 			self.enemy_spawn_groups.epeius = {
 				amount = {4, 4},
 				spawn = {
@@ -3195,7 +3255,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = {3, 3},
 				spawn = {
 					{
-						unit = "spooc",
+						unit = "deathvox_cloaker",
 						freq = 1,
 						amount_min = 3,
 						amount_max = 3,
@@ -3238,7 +3298,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = {4, 4},
 				spawn = {
 					{
-						unit = "spooc",
+						unit = "deathvox_cloaker",
 						freq = 1,
 						amount_min = 2,
 						amount_max = 2,
@@ -3336,7 +3396,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = {4, 4},
 				spawn = {
 					{
-						unit = "spooc",
+						unit = "deathvox_cloaker",
 						freq = 1,
 						amount_min = 4,
 						amount_max = 4,
@@ -4918,24 +4978,41 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif difficulty_index == 7 then
 				self.smoke_and_flash_grenade_timeout = {14, 15}
 			elseif difficulty_index == 8 then
-				self.smoke_and_flash_grenade_timeout = {13, 14}
+				self.smoke_and_flash_grenade_timeout = {14, 15}
 			end
 			if difficulty_index < 6 then
 				self.smoke_grenade_lifetime = 12
 			else
 				self.smoke_grenade_lifetime = 12
 			end
-			self.flash_grenade_lifetime = 7.5
-			self.flash_grenade = {
-				timer = 2.5,
-				range = 1000,
-				light_color = Vector3(255, 0, 0),
-				light_range = 0,
-				light_specular = 1,
-				beep_speed = {0, 0},
-				beep_fade_speed = 0,
-				beep_multi = 0
-			}
+			if difficulty_index == 8 then
+				self.flash_grenade_lifetime = 7.5
+				self.flash_grenade = {
+					timer = 3,
+					light_range = 300,
+					range = 1000,
+					light_specular = 1,
+					beep_fade_speed = 4,
+					beep_multi = 0.3,
+					light_color = Vector3(255, 0, 0),
+					beep_speed = {
+						0.1,
+						0.025
+					}
+				}
+			else
+				self.flash_grenade_lifetime = 7.5
+				self.flash_grenade = {
+					timer = 2.5,
+					range = 1000,
+					light_color = Vector3(255, 0, 0),
+					light_range = 0,
+					light_specular = 1,
+					beep_speed = {0, 0},
+					beep_fade_speed = 0,
+					beep_multi = 0
+				}
+			end
 			if difficulty_index < 6 then
 				self.flash_grenade.timer = 2.5
 			else
@@ -5052,6 +5129,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					30,
 					20,
 					15
+				}
+			elseif difficulty_index == 8 then
+				self.besiege.assault.delay = {
+					45,
+					30,
+					20
 				}
 			else
 				self.besiege.assault.delay = {
@@ -5402,24 +5485,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			elseif difficulty_index == 8 then
 				self.besiege.assault.groups = {
-					gorgon = { 0.05,0.05,0.05 },
-					atlas = { 0.05,0.05,0.05 },
-					chimera = { 0.05,0.05,0.05 },
-					zeus = { 0.05,0.05,0.05 },
-					epeius = { 0.05,0.05,0.05 },
-					damocles = { 0.05,0.05,0.05 },
-					caduceus = { 0.05,0.05,0.05 },
-					atropos = { 0.05,0.05,0.05 },
-					aegeas = { 0.05,0.05,0.05 },
-					dv_group_1 = {0.1, 0.1, 0.1},
-					dv_group_2_std = { 0.05,0.05,0.05 },
-					dv_group_2_med = { 0.05,0.05,0.05 },
-					dv_group_3_std = { 0.05,0.05,0.05 },
-					dv_group_3_med = { 0.05,0.05,0.05 },
-					dv_group_4_std = { 0.05,0.05,0.05 },
-					dv_group_4_med = { 0.05,0.05,0.05 },
-					dv_group_5_std = { 0.1,0.1,0.1 }, -- TODO: implement artemis
-					dv_group_5_med = { 0.05,0.05,0.05 }
+					gorgon = { 0.025,0.025,0.025 },
+					atlas = { 0.025,0.025,0.025 },
+					chimera = { 0.025,0.025,0.025 },
+					zeus = { 0.025,0.025,0.025 },
+					artemis = { 0.025,0.025,0.025 },
+					epeius = { 0.025,0.025,0.025 },
+					damocles = { 0.025,0.025,0.025 },
+					caduceus = { 0.025,0.025,0.025 },
+					atropos = { 0.025,0.025,0.025 },
+					aegeas = { 0.025,0.025,0.025 },
+					dv_group_1 = {0.2, 0.2, 0.2},
+					dv_group_2_std = { 0.1,0.1,0.1 },
+					dv_group_2_med = { 0.1,0.1,0.1 },
+					dv_group_3_std = { 0.1,0.1,0.1 },
+					dv_group_3_med = { 0.1,0.1,0.1 },
+					dv_group_4_std = { 0.1,0.1,0.1 },
+					dv_group_4_med = { 0.1,0.1,0.1 },
+					dv_group_5_std = { 0.1,0.1,0.1 },
+					dv_group_5_med = { 0.1,0.1,0.1 }
 				}
 			end
 			self.besiege.assault.groups.single_spooc = {
@@ -5606,24 +5690,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			elseif difficulty_index == 8 then
 				self.besiege.reenforce.groups = {
-					gorgon = { 0.05,0.05,0.05 },
-					atlas = { 0.05,0.05,0.05 },
-					chimera = { 0.05,0.05,0.05 },
-					zeus = { 0.05,0.05,0.05 },
-					epeius = { 0.05,0.05,0.05 },
-					damocles = { 0.05,0.05,0.05 },
-					caduceus = { 0.05,0.05,0.05 },
-					atropos = { 0.05,0.05,0.05 },
-					aegeas = { 0.05,0.05,0.05 },
-					dv_group_1 = {0.1, 0.1, 0.1},
-					dv_group_2_std = { 0.05,0.05,0.05 },
-					dv_group_2_med = { 0.05,0.05,0.05 },
-					dv_group_3_std = { 0.05,0.05,0.05 },
-					dv_group_3_med = { 0.05,0.05,0.05 },
-					dv_group_4_std = { 0.05,0.05,0.05 },
-					dv_group_4_med = { 0.05,0.05,0.05 },
-					dv_group_5_std = { 0.1,0.1,0.1 }, -- TODO: implement artemis
-					dv_group_5_med = { 0.05,0.05,0.05 }
+					dv_group_1 = {0.2, 0.2, 0.2},
+					dv_group_2_std = { 0.1,0.1,0.1 },
+					dv_group_2_med = { 0.1,0.1,0.1 },
+					dv_group_3_std = { 0.1,0.1,0.1 },
+					dv_group_3_med = { 0.1,0.1,0.1 },
+					dv_group_4_std = { 0.1,0.1,0.1 },
+					dv_group_4_med = { 0.1,0.1,0.1 },
+					dv_group_5_std = { 0.1,0.1,0.1 },
+					dv_group_5_med = { 0.1,0.1,0.1 }
 				}
 			end
 			self.besiege.recon.interval = {
@@ -5637,6 +5712,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					2,
 					4,
 					6
+				}
+			elseif difficulty_index == 8 then
+				self.besiege.recon.force = {
+					20, -- testing this
+					20,
+					20
 				}
 			else
 				self.besiege.recon.force = {
@@ -5694,7 +5775,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			elseif difficulty_index == 5 then
+			elseif difficulty_index <= 7 then
 				self.besiege.recon.groups = {
 					FBI_stealth_a = {
 						0.5,
@@ -5707,7 +5788,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			elseif difficulty_index <= 8 then
+			elseif difficulty_index == 8 then
 				self.besiege.recon.groups = {
 					recovery_unit = { 0.2,0.2,0.2 },
 					too_group = { 0.2,0.2,0.2 },

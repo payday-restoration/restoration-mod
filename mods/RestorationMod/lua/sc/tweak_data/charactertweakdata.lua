@@ -2350,49 +2350,234 @@ end
 
 function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_guard = deep_clone(self.security)
+	self.deathvox_guard.detection = presets.detection.guard -- normal, guard, sniper, gang_member, civilian, blind
+	self.deathvox_guard.suppression = nil -- presets.suppression.no_supress
+	self.deathvox_guard.surrender = nil
+	self.deathvox_guard.move_speed = presets.move_speed.very_fast -- tentative.
+	self.deathvox_guard.ecm_vulnerability = 0 -- DV guards ignore feedback. Removing safety net in stealth.
+	
+	self.deathvox_guard.dodge = presets.dodge.deathvox_guard
+	self.deathvox_guard.deathguard = true -- unlikely to be relevant usually, but adds slight safety window during pathing step.
+	self.deathvox_guard.no_arrest = true -- removing the arrest loophole.
+	
 	self.deathvox_guard.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_guard.use_factory = true
 	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_guard_pistol"}
 	table.insert(self._enemy_list, "deathvox_guard")
 	
 	self.deathvox_lightar = deep_clone(self.city_swat)
+	self.deathvox_lightar.detection = presets.detection.normal
+	self.deathvox_lightar.suppression = presets.suppression.hard_agg -- tentative. Need to consider effect, may be too much.
+	self.deathvox_lightar.surrender = presets.surrender.normal --tentative. hard for heavy, normal for light.
+	self.deathvox_lightar.move_speed = presets.move_speed.very_fast
+	self.deathvox_lightar.surrender_break_time = {6, 8} --should be fairly fast, used in base for fbi heavy swat.
+	self.deathvox_lightar.ecm_vulnerability = 1
+	self.deathvox_lightar.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8} -- base game taser value. Gen base is 8-10.
+	}
+	self.deathvox_lightar.dodge = presets.dodge.deathvox
+	self.deathvox_lightar.deathguard = true
+	self.deathvox_lightar.no_arrest = true
+	self.deathvox_lightar.steal_loot = true
+	self.deathvox_lightar.rescue_hostages = true
 	self.deathvox_lightar.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_lightar.use_factory = true
 	self.deathvox_lightar.factory_weapon_id = {"wpn_deathvox_light_ar"}
 	table.insert(self._enemy_list, "deathvox_lightar")
 	
 	self.deathvox_heavyar = deep_clone(self.city_swat)
+	self.deathvox_heavyar.detection = presets.detection.normal
+	self.deathvox_heavyar.suppression = presets.suppression.hard_agg -- tentative.
+	self.deathvox_heavyar.surrender = presets.surrender.hard --tentative.
+	self.deathvox_heavyar.move_speed = presets.move_speed.very_fast
+	self.deathvox_heavyar.surrender_break_time = {6, 8}
+	self.deathvox_heavyar.ecm_vulnerability = 1
+	self.deathvox_heavyar.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8}
+	}
+	self.deathvox_heavyar.dodge = presets.dodge.deathvox
+	self.deathvox_heavyar.deathguard = true
+	self.deathvox_heavyar.no_arrest = true
+	self.deathvox_heavyar.steal_loot = true
+	self.deathvox_heavyar.rescue_hostages = true
 	self.deathvox_heavyar.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_heavyar.use_factory = true
 	self.deathvox_heavyar.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
 	table.insert(self._enemy_list, "deathvox_heavyar")
 	
 	self.deathvox_lightshot = deep_clone(self.city_swat)
+	self.deathvox_lightshot.detection = presets.detection.normal
+	self.deathvox_lightshot.suppression = presets.suppression.hard_agg -- tentative.
+	self.deathvox_lightshot.surrender = presets.surrender.normal -- tentative.
+	self.deathvox_lightshot.move_speed = presets.move_speed.very_fast
+	self.deathvox_lightshot.surrender_break_time = {6, 8} 
+	self.deathvox_lightshot.ecm_vulnerability = 1
+	self.deathvox_lightshot.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8}
+	}
+	self.deathvox_lightshot.dodge = presets.dodge.deathvox
+	self.deathvox_lightshot.deathguard = true
+	self.deathvox_lightshot.no_arrest = true
+	self.deathvox_lightshot.steal_loot = true
+	self.deathvox_lightshot.rescue_hostages = true
 	self.deathvox_lightshot.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_lightshot.use_factory = true
 	self.deathvox_lightshot.factory_weapon_id = {"wpn_deathvox_shotgun_light"}
 	table.insert(self._enemy_list, "deathvox_lightshot")
 	
 	self.deathvox_heavyshot = deep_clone(self.city_swat)
+	self.deathvox_heavyshot.detection = presets.detection.normal
+	self.deathvox_heavyshot.suppression = presets.suppression.hard_agg -- tentative.
+	self.deathvox_heavyshot.surrender = presets.surrender.hard -- tentative.
+	self.deathvox_heavyshot.move_speed = presets.move_speed.very_fast
+	self.deathvox_heavyshot.surrender_break_time = {6, 8} 
+	self.deathvox_heavyshot.ecm_vulnerability = 1
+	self.deathvox_heavyshot.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8}
+	}
+	self.deathvox_heavyshot.dodge = presets.dodge.deathvox
+	self.deathvox_heavyshot.deathguard = true
+	self.deathvox_heavyshot.no_arrest = true
+	self.deathvox_heavyshot.steal_loot = true
+	self.deathvox_heavyshot.rescue_hostages = true
 	self.deathvox_heavyshot.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_heavyshot.use_factory = true
 	self.deathvox_heavyshot.factory_weapon_id = {"wpn_deathvox_shotgun_heavy"}
 	table.insert(self._enemy_list, "deathvox_heavyshot")
 	
 	self.deathvox_shield = deep_clone(self.shield)
+	self.deathvox_shield.tags = {"shield"} -- just to be sure it's being applied.
+	self.deathvox_shield.detection = presets.detection.normal
+	self.deathvox_shield.suppression = presets.suppression.no_supress --I think this is in resto, if not it now is.
+	self.deathvox_shield.surrender = nil
+	self.deathvox_shield.move_speed = presets.move_speed.very_fast -- same as base.
+	self.deathvox_shield.ecm_vulnerability = .9 -- same as base.
+	self.deathvox_shield.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8} -- same as general enemies, less than vanilla.
+	}
+	self.deathvox_shield.deathguard = false
+	self.deathvox_shield.no_arrest = true
+	self.deathvox_shield.steal_loot = true -- this is new.
+	self.deathvox_shield.rescue_hostages = false
 	self.deathvox_shield.weapon = deep_clone(presets.weapon.deathwish)
 	self.deathvox_shield.use_factory = true
 	self.deathvox_shield.factory_weapon_id = {"wpn_deathvox_shield_pistol"}
 	table.insert(self._enemy_list, "deathvox_shield")
 	
 	self.deathvox_medic = deep_clone(self.medic)
-	self.deathvox_medic.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_medic.use_factory = true
-	self.deathvox_medic.dv_medic_heal = true
-	self.deathvox_medic.tags = {"medic"}
+	self.deathvox_medic.tags = {"medic"} --just making sure tag applies.
+	self.deathvox_medic.detection = presets.detection.normal
+	self.deathvox_medic.suppression = presets.suppression.no_supress -- tentative, in base.
+	self.deathvox_medic.surrender = presets.surrender.special 
+	self.deathvox_medic.move_speed = presets.move_speed.very_fast
+	self.deathvox_medic.surrender_break_time = {7, 12} 
+	self.deathvox_medic.ecm_vulnerability = 1
+	self.deathvox_medic.ecm_hurts = {
+		ears = {min_duration = 8, max_duration = 10}
+	}
+	self.deathvox_medic.dodge = presets.dodge.deathvox
+	self.deathvox_medic.deathguard = false
+	self.deathvox_medic.no_arrest = true 
+	self.deathvox_medic.steal_loot = nil
+	self.deathvox_medic.rescue_hostages = false
+	self.deathvox_medic.weapon = deep_clone(presets.weapon.deathwish) -- normal, good, expert, deathwish, easy_wish, sm_wish, gang_member, sniper, sniper_good/expert/easy_wish/deathwish/sm_wish
+	self.deathvox_medic.use_factory = true -- Use a factory weapon
+	self.deathvox_medic.dv_medic_heal = true -- dont touch, makes him use the death vox healing
 	self.deathvox_medic.factory_weapon_id = {"wpn_deathvox_medic_pistol"}
-	table.insert(self._enemy_list, "deathvox_medic")
+	table.insert(self._enemy_list, "deathvox_medic") 
 
+	self.deathvox_taser = deep_clone(self.taser)
+	self.deathvox_taser.tags = {"taser"} -- just making sure tag applies.
+	self.deathvox_taser.detection = presets.detection.normal
+	self.deathvox_taser.suppression = nil
+	self.deathvox_taser.surrender = presets.surrender.special 
+	self.deathvox_taser.move_speed = presets.move_speed.fast --tentative, in base.
+	self.deathvox_taser.surrender_break_time = {7, 12} 
+	self.deathvox_taser.ecm_vulnerability = 0.9 -- in base
+	self.deathvox_taser.ecm_hurts = {
+		ears = {min_duration = 6, max_duration = 8} -- in base
+	}
+	self.deathvox_taser.dodge = presets.dodge.deathvox
+	self.deathvox_taser.deathguard = true 
+	self.deathvox_taser.no_arrest = true
+	self.deathvox_taser.steal_loot = nil
+	self.deathvox_taser.rescue_hostages = false
+
+	self.deathvox_taser.use_factory = true -- Use a factory weapon
+	self.deathvox_taser.factory_weapon_id = {"wpn_deathvox_light_ar"} 
+
+	table.insert(self._enemy_list, "deathvox_taser") 
+
+	self.deathvox_cloaker = deep_clone(self.spooc)
+	self.deathvox_cloaker.tags = {"spooc"} -- just making sure tag applies.
+	self.deathvox_cloaker.detection = presets.detection.normal
+	self.deathvox_cloaker.suppression = nil
+	self.deathvox_cloaker.surrender = presets.surrender.special 
+	self.deathvox_cloaker.move_speed = presets.move_speed.lightning
+	self.deathvox_cloaker.surrender_break_time = {4, 6} 
+	self.deathvox_cloaker.ecm_vulnerability = 0
+	self.deathvox_cloaker.dodge = presets.dodge.ninja
+	self.deathvox_cloaker.deathguard = true 
+	self.deathvox_cloaker.no_arrest = true
+	self.deathvox_cloaker.steal_loot = nil
+	self.deathvox_cloaker.rescue_hostages = false
+
+	self.deathvox_cloaker.use_factory = true -- Use a factory weapon
+	self.deathvox_cloaker.factory_weapon_id = {"wpn_deathvox_medicdozer_smg"} 
+
+	table.insert(self._enemy_list, "deathvox_spooc") 
+
+	self.deathvox_sniper = deep_clone(self.sniper)
+	self.deathvox_sniper.tags = {"sniper"} -- just making sure tag applies.
+	self.deathvox_sniper.detection = presets.detection.normal
+	self.deathvox_sniper.suppression = presets.suppression.no_supress -- this actually makes snipers way less annoying!
+	self.deathvox_sniper.surrender = presets.surrender.special 
+	self.deathvox_sniper.move_speed = presets.move_speed.normal
+	self.deathvox_sniper.surrender_break_time = {4, 6} 
+	self.deathvox_sniper.ecm_vulnerability = 0
+	self.deathvox_sniper.no_arrest = true
+	self.deathvox_sniper.steal_loot = nil
+	self.deathvox_sniper.rescue_hostages = false
+
+	self.deathvox_sniper.use_factory = true -- Use a factory weapon
+	self.deathvox_sniper.factory_weapon_id = {"wpn_deathvox_sniper"}
+
+	self.deathvox_sniper_assault = deep_clone(self.deathvox_sniper)
+	self.deathvox_sniper_assault.move_speed = presets.move_speed.very_fast
+	self.deathvox_sniper_assault.deathguard = true --tentative. This was apparently a big problem in RAID, but that unit may be implemented differently.
+
+	table.insert(self._enemy_list, "deathvox_sniperassault")
+
+    self.deathvox_tank = deep_clone(self.tank)
+    self.deathvox_tank.tags = {"tank"} -- just making sure tag applies.
+    self.deathvox_tank.detection = presets.detection.normal
+    self.deathvox_tank.suppression = presets.suppression.no_supress
+    self.deathvox_tank.surrender = nil
+    self.deathvox_tank.surrender_break_time = {4, 6}
+    self.deathvox_tank.ecm_vulnerability = 0.85
+    self.deathvox_taser.ecm_hurts = {
+        ears = {min_duration = 1, max_duration = 3} -- tentative, in base
+    }
+    self.deathvox_tank.deathguard = true
+    self.deathvox_tank.no_arrest = true
+    self.deathvox_tank.steal_loot = nil
+    self.deathvox_tank.rescue_hostages = false
+
+    self.deathvox_greendozer = deep_clone(self.deathvox_tank) -- pro OOP strats
+	table.insert(self._enemy_list, "deathvox_greendozer")
+
+    self.deathvox_blackdozer = deep_clone(self.deathvox_tank)
+	table.insert(self._enemy_list, "deathvox_blackdozer")
+
+    self.deathvox_lmgdozer = deep_clone(self.deathvox_tank)
+	table.insert(self._enemy_list, "deathvox_lmgdozer")
+	
+    self.deathvox_medicdozer = deep_clone(self.deathvox_tank)
+	self.deathvox_medicdozer.use_factory = true -- Use a factory weapon
+	self.deathvox_medicdozer.factory_weapon_id = {"wpn_deathvox_medicdozer_smg"} 
+	self.deathvox_medicdozer.dv_medic_heal = true -- dont touch, makes him use the death vox healing
+	table.insert(self._enemy_list, "deathvox_medicdozer")
+	
 end
 
 function CharacterTweakData:_presets(tweak_data)
@@ -11382,7 +11567,97 @@ function CharacterTweakData:_presets(tweak_data)
 					}
 				}
 			}
-		}
+		},
+        deathvox = {
+            speed = 2,
+            occasions = {
+                hit = {
+                    chance = 1,
+                    check_timeout = {0, 3},
+                    variations = {
+                        side_step = {
+                            chance = 3,
+                            timeout = {1, 2},
+                            shoot_chance = 1,
+                            shoot_accuracy = 0.8
+                        },
+                        roll = {
+                            chance = 1,
+                            timeout = {1.2, 2}
+                        }
+                    }
+                },
+                preemptive = {
+                    chance = 0.9,
+                    check_timeout = {0, 3},
+                    variations = {
+                        side_step = {
+                            chance = 3,
+                            timeout = {1, 2},
+                            shoot_chance = 1,
+                            shoot_accuracy = 0.8
+                        },
+                        roll = {
+                            chance = 1,
+                            timeout = {1.2, 2}
+                        }
+                    }
+                },
+                scared = {
+                    chance = 0.9,
+                    check_timeout = {0, 3},
+                    variations = {
+                        side_step = {
+                            chance = 5,
+                            timeout = {1, 2},
+                            shoot_chance = 1,
+                            shoot_accuracy = 0.7
+                        },
+                        roll = {
+                            chance = 3,
+                            timeout = {1.2, 2}
+                        },
+                        dive = {
+                            chance = 1,
+                            timeout = {1.2, 2}
+                        }
+                    }
+                }
+            }
+        },
+        deathvox_guard = {
+            speed = 1.2,
+            occasions = {
+                hit = {
+                    chance = 1,
+                    check_timeout = {0, 3},
+                    variations = {
+                        side_step = {
+                            chance = 3,
+                            timeout = {1, 2},
+                        },
+                        roll = {
+                            chance = 1,
+                            timeout = {1.2, 2}
+                        }
+                    }
+                },
+                scared = {
+                    chance = 0.9,
+                    check_timeout = {0, 3},
+                    variations = {
+                        side_step = {
+                            chance = 5,
+                            timeout = {1, 2},
+                        },
+                        roll = {
+                            chance = 3,
+                            timeout = {1.2, 2}
+                        },
+                    }
+                }
+            }
+        }		
 	}
 	for preset_name, preset_data in pairs(presets.dodge) do
 		for reason_name, reason_data in pairs(preset_data.occasions) do
@@ -12519,17 +12794,18 @@ end
 
 function CharacterTweakData:_set_sm_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(2, 0.915)
+		self:_multiply_all_hp(1.75, 0.8)
 	else
-		self:_multiply_all_hp(2, 0.915)
+		self:_multiply_all_hp(1.75, 0.8)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("easy_wish")
-	self:_set_characters_dodge_preset("elite")
+	self:_set_characters_weapon_preset("expert")
+	self.deathvox_sniper_assault.weapon = deep_clone(self.presets.weapon.sniper_expert)
+	self:_set_characters_dodge_preset("deathvox")
 	self:_set_characters_melee_preset("3")
 	self:_set_specials_weapon_preset("expert")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -12546,12 +12822,12 @@ function CharacterTweakData:_set_sm_wish()
 	else
 		self.city_swat.no_arrest = false
 	end
-	self:_multiply_all_speeds(1.15, 1.2)
-	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.old_hoxton_mission.HEALTH_INIT = 200
-	self.spa_vip.HEALTH_INIT = 200
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
+	self:_multiply_all_speeds(1.1, 1.15)
+	self.presets.gang_member_damage.HEALTH_INIT = 175
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.old_hoxton_mission.HEALTH_INIT = 175
+	self.spa_vip.HEALTH_INIT = 175
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -12633,6 +12909,15 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.deathvox_lightshot.HEALTH_INIT = self.deathvox_lightshot.HEALTH_INIT * hp_mul
 	self.deathvox_shield.HEALTH_INIT = self.deathvox_shield.HEALTH_INIT * hp_mul
 	self.deathvox_medic.HEALTH_INIT = self.deathvox_medic.HEALTH_INIT * hp_mul
+
+	self.deathvox_taser.HEALTH_INIT = self.deathvox_taser.HEALTH_INIT * hp_mul
+	self.deathvox_cloaker.HEALTH_INIT = self.deathvox_cloaker.HEALTH_INIT * hp_mul
+	self.deathvox_sniper_assault.HEALTH_INIT = self.deathvox_sniper_assault.HEALTH_INIT * hp_mul
+	self.deathvox_greendozer.HEALTH_INIT = self.deathvox_greendozer.HEALTH_INIT * hp_mul
+	self.deathvox_blackdozer.HEALTH_INIT = self.deathvox_blackdozer.HEALTH_INIT * hp_mul
+	self.deathvox_lmgdozer.HEALTH_INIT = self.deathvox_lmgdozer.HEALTH_INIT * hp_mul
+	self.deathvox_medicdozer.HEALTH_INIT = self.deathvox_medicdozer.HEALTH_INIT * hp_mul
+	
 	if self.security.headshot_dmg_mul then
 		self.security.headshot_dmg_mul = self.security.headshot_dmg_mul * hs_mul
 	end
@@ -12822,6 +13107,27 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.deathvox_lightshot.headshot_dmg_mul then
 		self.deathvox_lightshot.headshot_dmg_mul = self.deathvox_lightshot.headshot_dmg_mul * hs_mul
 	end
+	if self.deathvox_taser.headshot_dmg_mul then
+		self.deathvox_taser.headshot_dmg_mul = self.deathvox_taser.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_cloaker.headshot_dmg_mul then
+		self.deathvox_cloaker.headshot_dmg_mul = self.deathvox_cloaker.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_sniper_assault.headshot_dmg_mul then
+		self.deathvox_sniper_assault.headshot_dmg_mul = self.deathvox_sniper_assault.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_greendozer.headshot_dmg_mul then
+		self.deathvox_greendozer.headshot_dmg_mul = self.deathvox_greendozer.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_blackdozer.headshot_dmg_mul then
+		self.deathvox_blackdozer.headshot_dmg_mul = self.deathvox_blackdozer.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_lmgdozer.headshot_dmg_mul then
+		self.deathvox_lmgdozer.headshot_dmg_mul = self.deathvox_lmgdozer.headshot_dmg_mul * hs_mul
+	end
+	if self.deathvox_medicdozer.headshot_dmg_mul then
+		self.deathvox_medicdozer.headshot_dmg_mul = self.deathvox_medicdozer.headshot_dmg_mul * hs_mul
+	end
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
@@ -12882,7 +13188,14 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"deathvox_lightar",
 		"deathvox_lightshot",
 		"deathvox_medic",
-		"deathvox_shield"
+		"deathvox_shield",
+		"deathvox_taser",
+		"deathvox_cloaker",
+		"deathvox_sniper_assault",
+		"deathvox_greendozer",
+		"deathvox_blackdozer",
+		"deathvox_lmgdozer",
+		"deathvox_medicdozer"
 	}
 	table.insert(all_units, "bolivian")
 	table.insert(all_units, "bolivian_indoors")
@@ -12955,6 +13268,14 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.deathvox_lightshot.SPEED_RUN = self.deathvox_lightshot.SPEED_RUN * run_mul
 	self.deathvox_shield.SPEED_RUN = self.deathvox_shield.SPEED_RUN * run_mul
 	self.deathvox_medic.SPEED_RUN = self.deathvox_medic.SPEED_RUN * run_mul
+	
+	self.deathvox_taser.SPEED_RUN = self.deathvox_taser.SPEED_RUN * run_mul
+	self.deathvox_cloaker.SPEED_RUN = self.deathvox_cloaker.SPEED_RUN * run_mul
+	self.deathvox_sniper_assault.SPEED_RUN = self.deathvox_sniper_assault.SPEED_RUN * run_mul
+	self.deathvox_greendozer.SPEED_RUN = self.deathvox_greendozer.SPEED_RUN * run_mul
+	self.deathvox_blackdozer.SPEED_RUN = self.deathvox_blackdozer.SPEED_RUN * run_mul
+	self.deathvox_lmgdozer.SPEED_RUN = self.deathvox_lmgdozer.SPEED_RUN * run_mul
+	self.deathvox_medicdozer.SPEED_RUN = self.deathvox_medicdozer.SPEED_RUN * run_mul
 end
 
 function CharacterTweakData:_set_characters_weapon_preset(preset)
@@ -12981,7 +13302,14 @@ function CharacterTweakData:_set_characters_weapon_preset(preset)
 		"deathvox_lightar",
 		"deathvox_lightshot",
 		"deathvox_medic",
-		"deathvox_shield"
+		"deathvox_shield",
+		"deathvox_taser",
+		"deathvox_cloaker",
+		"deathvox_sniper_assault",
+		"deathvox_greendozer",
+		"deathvox_blackdozer",
+		"deathvox_lmgdozer",
+		"deathvox_medicdozer"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].weapon = self.presets.weapon[preset]
@@ -13002,13 +13330,14 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 		"bolivian_indoors",
 		"drug_lord_boss_stealth",
 		"swat",
-		"deathvox_guard",
 		"deathvox_heavyar",
 		"deathvox_heavyshot",
 		"deathvox_lightar",
 		"deathvox_lightshot",
 		"deathvox_medic",
-		"deathvox_shield"
+		"deathvox_taser",
+		"deathvox_cloaker",
+		"deathvox_sniper_assault"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].dodge = self.presets.dodge[preset]
@@ -13039,7 +13368,14 @@ function CharacterTweakData:_set_characters_melee_preset(preset)
 		"deathvox_lightar",
 		"deathvox_lightshot",
 		"deathvox_medic",
-		"deathvox_shield"
+		"deathvox_shield",
+		"deathvox_taser",
+		"deathvox_cloaker",
+		"deathvox_sniper_assault",
+		"deathvox_greendozer",
+		"deathvox_blackdozer",
+		"deathvox_lmgdozer",
+		"deathvox_medicdozer"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].melee_weapon_dmg_multiplier = preset
@@ -13078,7 +13414,14 @@ function CharacterTweakData:_set_specials_weapon_preset(preset)
 		"taser_summers",
 		"phalanx_vip",
 		"deathvox_medic",
-		"deathvox_shield"
+		"deathvox_shield",
+		"deathvox_taser",
+		"deathvox_cloaker",
+		"deathvox_sniper_assault",
+		"deathvox_greendozer",
+		"deathvox_blackdozer",
+		"deathvox_lmgdozer",
+		"deathvox_medicdozer"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].weapon = deep_clone(self.presets.weapon[preset])
@@ -13118,7 +13461,14 @@ function CharacterTweakData:_set_specials_melee_preset(preset)
 		"taser_summers",
 		"phalanx_vip",
 		"deathvox_medic",
-		"deathvox_shield"
+		"deathvox_shield",
+		"deathvox_taser",
+		"deathvox_cloaker",
+		"deathvox_sniper_assault",
+		"deathvox_greendozer",
+		"deathvox_blackdozer",
+		"deathvox_lmgdozer",
+		"deathvox_medicdozer"
 	}
 	for _, name in ipairs(all_units) do
 		self[name].melee_weapon_dmg_multiplier = preset
@@ -13626,7 +13976,14 @@ function CharacterTweakData:character_map()
 				"ene_deathvox_medic",
 				"ene_deathvox_shield",
 				"ene_deathvox_lightshot",
-				"ene_deathvox_heavyshot"
+				"ene_deathvox_heavyshot",
+				"ene_deathvox_taser",
+				"ene_deathvox_cloaker",
+				"ene_deathvox_sniper_assault",
+				"ene_deathvox_greendozer",
+				"ene_deathvox_blackdozer",
+				"ene_deathvox_lmgdozer",
+				"ene_deathvox_medicdozer"
 			}
 		}				
 	}

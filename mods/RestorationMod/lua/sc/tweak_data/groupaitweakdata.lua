@@ -265,8 +265,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					ass_sniper = 2,
 					omnia_LPF = 0, --obsolete w/ DV
 					fbi_vet = 1,
-					spring = 1,
-					summers = 1
+					spring = 0,
+					summers = 0
 				}
 			end
 			self.unit_categories = {}
@@ -5485,25 +5485,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			elseif difficulty_index == 8 then
 				self.besiege.assault.groups = {
-					gorgon = { 0.025,0.025,0.025 },
-					atlas = { 0.025,0.025,0.025 },
-					chimera = { 0.025,0.025,0.025 },
-					zeus = { 0.025,0.025,0.025 },
-					artemis = { 0.025,0.025,0.025 },
-					epeius = { 0.025,0.025,0.025 },
-					damocles = { 0.025,0.025,0.025 },
-					caduceus = { 0.025,0.025,0.025 },
-					atropos = { 0.025,0.025,0.025 },
-					aegeas = { 0.025,0.025,0.025 },
+					gorgon = { 0.05,0.05,0.05  },
+					atlas = { 0.05,0.05,0.05  },
+					chimera = { 0.05,0.05,0.05  },
+					zeus = { 0.05,0.05,0.05  },
+					artemis = { 0.05,0.05,0.05 },
+					epeius = { 0.05,0.05,0.05  },
+					damocles = { 0.05,0.05,0.05  },
+					caduceus = { 0.05,0.05,0.05  },
+					atropos = { 0.05,0.05,0.05 },
+					aegeas = { 0.05,0.05,0.05 },
 					dv_group_1 = {0.2, 0.2, 0.2},
-					dv_group_2_std = { 0.1,0.1,0.1 },
-					dv_group_2_med = { 0.1,0.1,0.1 },
-					dv_group_3_std = { 0.1,0.1,0.1 },
-					dv_group_3_med = { 0.1,0.1,0.1 },
-					dv_group_4_std = { 0.1,0.1,0.1 },
-					dv_group_4_med = { 0.1,0.1,0.1 },
-					dv_group_5_std = { 0.1,0.1,0.1 },
-					dv_group_5_med = { 0.1,0.1,0.1 }
+					dv_group_2_std = { 0.05,0.05,0.05  },
+					dv_group_2_med = { 0.05,0.05,0.05  },
+					dv_group_3_std = { 0.05,0.05,0.05  },
+					dv_group_3_med = { 0.05,0.05,0.05  },
+					dv_group_4_std = { 0.05,0.05,0.05  },
+					dv_group_4_med = { 0.05,0.05,0.05  },
+					dv_group_5_std = { 0.05,0.05,0.05  },
+					dv_group_5_med = { 0.05,0.05,0.05  }
 				}
 			end
 			self.besiege.assault.groups.single_spooc = {

@@ -2460,8 +2460,6 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_shield.steal_loot = true -- this is new.
 	self.deathvox_shield.rescue_hostages = false
 	self.deathvox_shield.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_shield.use_factory = true
-	self.deathvox_shield.factory_weapon_id = {"wpn_deathvox_shield_pistol"}
 	table.insert(self._enemy_list, "deathvox_shield")
 	
 	self.deathvox_medic = deep_clone(self.medic)

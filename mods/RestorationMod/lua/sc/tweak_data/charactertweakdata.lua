@@ -2360,9 +2360,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_guard.deathguard = true -- unlikely to be relevant usually, but adds slight safety window during pathing step.
 	self.deathvox_guard.no_arrest = true -- removing the arrest loophole.
 	
-	self.deathvox_guard.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_guard.use_factory = true
-	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_guard_pistol"}
+	self.deathvox_guard.weapon = deep_clone(presets.weapon.expert)
 	table.insert(self._enemy_list, "deathvox_guard")
 	
 	self.deathvox_lightar = deep_clone(self.city_swat)
@@ -2380,9 +2378,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_lightar.no_arrest = true
 	self.deathvox_lightar.steal_loot = true
 	self.deathvox_lightar.rescue_hostages = true
-	self.deathvox_lightar.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_lightar.use_factory = true
-	self.deathvox_lightar.factory_weapon_id = {"wpn_deathvox_light_ar"}
+	self.deathvox_lightar.weapon = deep_clone(presets.weapon.expert)
 	table.insert(self._enemy_list, "deathvox_lightar")
 	
 	self.deathvox_heavyar = deep_clone(self.city_swat)
@@ -2400,9 +2396,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_heavyar.no_arrest = true
 	self.deathvox_heavyar.steal_loot = true
 	self.deathvox_heavyar.rescue_hostages = true
-	self.deathvox_heavyar.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_heavyar.use_factory = true
-	self.deathvox_heavyar.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
+	self.deathvox_heavyar.weapon = deep_clone(presets.weapon.expert)
 	table.insert(self._enemy_list, "deathvox_heavyar")
 	
 	self.deathvox_lightshot = deep_clone(self.city_swat)
@@ -2420,9 +2414,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_lightshot.no_arrest = true
 	self.deathvox_lightshot.steal_loot = true
 	self.deathvox_lightshot.rescue_hostages = true
-	self.deathvox_lightshot.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_lightshot.use_factory = true
-	self.deathvox_lightshot.factory_weapon_id = {"wpn_deathvox_shotgun_light"}
+	self.deathvox_lightshot.weapon = deep_clone(presets.weapon.expert)
 	table.insert(self._enemy_list, "deathvox_lightshot")
 	
 	self.deathvox_heavyshot = deep_clone(self.city_swat)
@@ -2440,9 +2432,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_heavyshot.no_arrest = true
 	self.deathvox_heavyshot.steal_loot = true
 	self.deathvox_heavyshot.rescue_hostages = true
-	self.deathvox_heavyshot.weapon = deep_clone(presets.weapon.deathwish)
-	self.deathvox_heavyshot.use_factory = true
-	self.deathvox_heavyshot.factory_weapon_id = {"wpn_deathvox_shotgun_heavy"}
+	self.deathvox_heavyshot.weapon = deep_clone(presets.weapon.expert)
 	table.insert(self._enemy_list, "deathvox_heavyshot")
 	
 	self.deathvox_shield = deep_clone(self.shield)
@@ -2459,7 +2449,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_shield.no_arrest = true
 	self.deathvox_shield.steal_loot = true -- this is new.
 	self.deathvox_shield.rescue_hostages = false
-	self.deathvox_shield.weapon = deep_clone(presets.weapon.deathwish)
+	self.deathvox_shield.weapon = deep_clone(presets.weapon.expert)
 	table.insert(self._enemy_list, "deathvox_shield")
 	
 	self.deathvox_medic = deep_clone(self.medic)
@@ -2478,7 +2468,7 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_medic.no_arrest = true 
 	self.deathvox_medic.steal_loot = nil
 	self.deathvox_medic.rescue_hostages = false
-	self.deathvox_medic.weapon = deep_clone(presets.weapon.deathwish) -- normal, good, expert, deathwish, easy_wish, sm_wish, gang_member, sniper, sniper_good/expert/easy_wish/deathwish/sm_wish
+	self.deathvox_medic.weapon = deep_clone(presets.weapon.expert) -- normal, good, expert, deathwish, easy_wish, sm_wish, gang_member, sniper, sniper_good/expert/easy_wish/deathwish/sm_wish
 	self.deathvox_medic.use_factory = true -- Use a factory weapon
 	self.deathvox_medic.dv_medic_heal = true -- dont touch, makes him use the death vox healing
 	self.deathvox_medic.factory_weapon_id = {"wpn_deathvox_medic_pistol"}
@@ -2501,9 +2491,6 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_taser.steal_loot = nil
 	self.deathvox_taser.rescue_hostages = false
 
-	self.deathvox_taser.use_factory = true -- Use a factory weapon
-	self.deathvox_taser.factory_weapon_id = {"wpn_deathvox_light_ar"} 
-
 	table.insert(self._enemy_list, "deathvox_taser") 
 
 	self.deathvox_cloaker = deep_clone(self.spooc)
@@ -2519,9 +2506,6 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_cloaker.no_arrest = true
 	self.deathvox_cloaker.steal_loot = nil
 	self.deathvox_cloaker.rescue_hostages = false
-
-	self.deathvox_cloaker.use_factory = true -- Use a factory weapon
-	self.deathvox_cloaker.factory_weapon_id = {"wpn_deathvox_medicdozer_smg"} 
 
 	table.insert(self._enemy_list, "deathvox_spooc") 
 
@@ -12820,7 +12804,7 @@ function CharacterTweakData:_set_sm_wish()
 	else
 		self.city_swat.no_arrest = false
 	end
-	self:_multiply_all_speeds(1.1, 1.15)
+	self:_multiply_all_speeds(1, 1)
 	self.presets.gang_member_damage.HEALTH_INIT = 175
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 175

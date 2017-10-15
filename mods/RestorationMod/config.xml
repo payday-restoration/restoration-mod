@@ -131,6 +131,7 @@
 		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<hook file="sc/managers/mission/elementspawngrenade.lua" source_file="lib/managers/mission/elementspawngrenade"/>
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
+		<hook file="sc/units/weapons/quickflashgrenade.lua" source_file="lib/units/weapons/grenades/quickflashgrenade"/>
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
 		<hook file="sc/mutators/mutatorenemydamage.lua" source_file="lib/mutators/mutatorenemydamage"/>

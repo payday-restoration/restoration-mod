@@ -1,10 +1,8 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 function PlayerDamage:init(unit)
-	log("SC: Player Init called")
 	self._lives_init = tweak_data.player.damage.LIVES_INIT
 	self._lives_init = managers.crime_spree:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
-	log("SC: Player Lives: " .. self._lives_init)
 	self._unit = unit
 	self._max_health_reduction = managers.player:upgrade_value("player", "max_health_reduction", 1)
 	self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)
@@ -154,10 +152,14 @@ end
 PlayerDamage._UPPERS_COOLDOWN = 120
 local player_damage_melee = PlayerDamage.damage_melee
 function PlayerDamage:damage_melee(attack_data)
+	local player_unit = managers.player:player_unit()
 	if attack_data then
 		if alive(attack_data.attacker_unit) then
 			if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" then
-				managers.player:set_player_state("tased")
+				if alive(player_unit) then
+					player_unit:movement():on_non_lethal_electrocution()
+					managers.player:set_player_state("tased")
+				end
 			end
 		end
 	end

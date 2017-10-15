@@ -372,6 +372,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			perks = {"silencer"},
 			sound_switch = {
 				suppressed = "suppressed_a"
+			},
+			forbids = {
+				"wpn_fps_upg_a_explosive"
 			}
 		}
 		self.parts.wpn_fps_upg_ns_ass_smg_large.third_unit = "units/payday2/weapons/wpn_third_upg_ns_ass_smg_large/wpn_third_upg_ns_ass_smg_large"
@@ -16612,13 +16615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				ammo_pickup_max_mul = 0.3
 			},
 			internal_part = true,
-			sub_type = "ammo_explosive",
-			forbids = {
-				"wpn_fps_upg_ns_shot_thick",
-				"wpn_fps_upg_ns_sho_salvo_large",
-				"wpn_fps_sho_aa12_barrel_silenced",
-				"wpn_fps_sho_striker_b_suppressed"
-			}
+			sub_type = "ammo_explosive"
 		}
 		self.parts.wpn_fps_upg_a_piercing = {
 			pcs = {},
@@ -22639,6 +22636,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				damage_far_mul = -400
 			},
 			perks = {"silencer"},
+			forbids = {
+				"wpn_fps_upg_a_explosive"
+			},
 			sound_switch = {
 				suppressed = "suppressed_a"
 			},

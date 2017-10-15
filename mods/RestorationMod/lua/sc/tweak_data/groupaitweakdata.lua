@@ -286,7 +286,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_all,
 					special_type = "spooc"
 				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.spooc = {
 					unit_types = {
 						america = {
@@ -576,7 +576,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.FBI_suit_M4_MP5 = {
 					unit_types = {
 						america = {
@@ -610,7 +610,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.FBI_suit_stealth_MP5 = {
 					unit_types = {
 						america = {
@@ -750,7 +750,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			elseif difficulty_index == 7 then
+			else
 				self.unit_categories.FBI_swat_R870 = {
 					unit_types = {
 						america = {
@@ -792,51 +792,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),							
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
 						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 8 then
-				self.unit_categories.FBI_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),							
-							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"),							
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),	
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),		
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),							
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-						}							
 					},
 					access = access_type_all
 				}
@@ -856,22 +811,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			elseif difficulty_index == 7 then
-				self.unit_categories.FBI_heavy_G36 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.FBI_heavy_G36 = {
 					unit_types = {
 						america = {
@@ -902,22 +842,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_all
 				}
-			elseif difficulty_index == 7 then
-				self.unit_categories.FBI_heavy_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.FBI_heavy_R870 = {
 					unit_types = {
 						america = {
@@ -948,22 +873,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					access = access_type_walk_only
 				}
-			elseif difficulty_index == 7 then
-				self.unit_categories.FBI_heavy_G36_w = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
-						}						
-					},
-					access = access_type_all
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.FBI_heavy_G36_w = {
 					unit_types = {
 						america = {
@@ -1041,7 +951,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_walk_only,
 					special_type = "shield"
 				}
-			elseif difficulty_index == 8 then
+			else
 				self.unit_categories.FBI_shield = {
 					unit_types = {
 						america = {
@@ -1171,7 +1081,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						access = access_type_all,
 						special_type = "tank"
 					}
-				elseif difficulty_index == 8 then
+				else
 					self.unit_categories.FBI_tank = {
 						unit_types = {
 							america = {
@@ -1301,7 +1211,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						access = access_type_all,
 						special_type = "tank"
 					}
-				elseif difficulty_index == 8 then
+				else
 					self.unit_categories.FBI_tank = {
 						unit_types = {
 							america = {
@@ -2179,35 +2089,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}			
-			elseif difficulty_index == 7 then
-				self.enemy_spawn_groups.CS_tazers = {
-					amount = {2, 3},
-					spawn = {
-						{
-							unit = "CS_tazer",
-							freq = 1,
-							amount_min = 3,
-							tactics_ = self._tactics.CS_tazer,
-							rank = 1
-						},
-						{
-							unit = "FBI_shield",
-							freq = 1,
-							amount_min = 2,
-							amount_max = 3,
-							tactics = self._tactics.FBI_shield,
-							rank = 3
-						},
-						{
-							unit = "FBI_heavy_G36",
-							freq = 1,
-							amount_max = 2,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 1
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.enemy_spawn_groups.CS_tazers = {
 					amount = {2, 3},
 					spawn = {
@@ -2375,34 +2257,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			elseif difficulty_index == 7 then
-				self.enemy_spawn_groups.FBI_stealth_a = {
-					amount = {2, 3},
-					spawn = {
-						{
-							unit = "FBI_suit_stealth_MP5",
-							freq = 1,
-							amount_min = 1,
-							tactics = self._tactics.FBI_suit_stealth,
-							rank = 2
-						},
-						{
-							unit = "CS_tazer",
-							freq = 1,
-							amount_max = 2,
-							tactics = self._tactics.CS_tazer,
-							rank = 1
-						},
-						{
-							unit = "omnia_LPF",
-							freq = 0.35,
-							amount_max = 1,
-							tactics = self._tactics.FBI_suit_stealth,
-							rank = 2
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.enemy_spawn_groups.FBI_stealth_a = {
 					amount = {2, 3},
 					spawn = {
@@ -2462,7 +2317,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			elseif difficulty_index == 7 then
+			else
 				self.enemy_spawn_groups.FBI_stealth_b = {
 					amount = {2, 3},
 					spawn = {
@@ -2483,38 +2338,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							unit = "fbi_vet",
 							freq = 0.5,
 							tactics = self._tactics.FBI_suit,
-							rank = 2
-						},							
-						{
-							unit = "omnia_LPF",
-							freq = 0.35,
-							amount_max = 1,
-							tactics = self._tactics.FBI_suit_stealth,
-							rank = 2
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
-				self.enemy_spawn_groups.FBI_stealth_b = {
-					amount = {2, 3},
-					spawn = {
-						{
-							unit = "FBI_suit_stealth_MP5",
-							freq = 1,
-							amount_min = 1,
-							tactics = self._tactics.FBI_suit_stealth,
-							rank = 1
-						},
-						{
-							unit = "FBI_suit_M4_MP5",
-							freq = 0.75,
-							tactics = self._tactics.FBI_suit_stealth,
-							rank = 2
-						},
-						{
-							unit = "fbi_vet",
-							freq = 0.5,
-							tactics = self._tactics.FBI_suit_stealth,
 							rank = 2
 						},							
 						{
@@ -2568,7 +2391,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			elseif difficulty_index == 7 then
+			else
 				self.enemy_spawn_groups.FBI_swats = {
 					amount = {3, 4},
 					spawn = {
@@ -2591,47 +2414,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							tactics = self._tactics.FBI_swat_rifle_flank,
 							rank = 2
 						},						
-						{
-							unit = "FBI_swat_R870",
-							amount_min = 1,
-							amount_max = 2,
-							freq = 1,
-							tactics = self._tactics.FBI_swat_shotgun,
-							rank = 3
-						},
-						{
-							unit = "medic_M4",
-							freq = 0.8,
-							amount_min = 0,
-							amount_max = 1,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 1
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
-				self.enemy_spawn_groups.FBI_swats = {
-					amount = {3, 4},
-					spawn = {
-						{
-							unit = "FBI_swat_M4",
-							freq = 1,
-							amount_min = 3,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 1
-						},
-						{
-							unit = "FBI_suit_M4_MP5",
-							freq = 1,
-							tactics = self._tactics.FBI_swat_rifle_flank,
-							rank = 2
-						},
-						{
-							unit = "fbi_vet",
-							freq = 0.7,
-							tactics = self._tactics.FBI_swat_rifle_flank,
-							rank = 2
-						},							
 						{
 							unit = "FBI_swat_R870",
 							amount_min = 1,
@@ -2691,43 +2473,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			elseif difficulty_index == 7 then
-				self.enemy_spawn_groups.FBI_heavys = {
-					amount = {3, 4},
-					spawn = {
-						{
-							unit = "FBI_heavy_G36_w",
-							freq = 1,
-							amount_min = 4,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 1
-						},
-						{
-							unit = "FBI_swat_M4",
-							freq = 1,
-							amount_min = 3,
-							tactics = self._tactics.FBI_heavy_flank,
-							rank = 2
-						},
-						{
-							unit = "FBI_heavy_R870",
-							amount_min = 1,
-							amount_max = 2,
-							freq = 1,
-							tactics = self._tactics.FBI_swat_shotgun,
-							rank = 3
-						},
-						{
-							unit = "medic_M4",
-							freq = 0.8,
-							amount_min = 0,
-							amount_max = 1,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 1
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.enemy_spawn_groups.FBI_heavys = {
 					amount = {3, 4},
 					spawn = {
@@ -2800,50 +2546,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			elseif difficulty_index == 7 then
-				self.enemy_spawn_groups.FBI_shields = {
-					amount = {2, 3},
-					spawn = {
-						{
-							unit = "FBI_shield",
-							freq = 1,
-							amount_min = 3,
-							amount_max = 4,
-							tactics = self._tactics.FBI_shield,
-							rank = 3
-						},
-						{
-							unit = "FBI_suit_stealth_MP5",
-							freq = 1,
-							amount_min = 1,
-							tactics = self._tactics.FBI_suit_stealth,
-							rank = 1
-						},
-						{
-							unit = "spooc",
-							freq = 0.15,
-							amount_max = 2,
-							tactics = self._tactics.spooc,
-							rank = 1
-						},
-						{
-							unit = "CS_tazer",
-							freq = 0.75,
-							amount_min = 2,
-							tactics = self._tactics.CS_swat_heavy,
-							rank = 2
-						},
-						{
-							unit = "medic_M4",
-							freq = 0.8,
-							amount_min = 0,
-							amount_max = 1,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 1
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.enemy_spawn_groups.FBI_shields = {
 					amount = {2, 3},
 					spawn = {
@@ -2915,36 +2618,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				}
-			elseif difficulty_index == 7 then
-				self.enemy_spawn_groups.FBI_tanks = {
-					amount = {3, 4},
-					spawn = {
-						{
-							unit = "FBI_tank",
-							freq = 1,
-							amount_min = 1,
-							amount_max = 2,
-							tactics = self._tactics.FBI_tank,
-							rank = 3
-						},
-						{
-							unit = "FBI_shield",
-							freq = 1,
-							amount_min = 1,
-							amount_max = 2,
-							tactics = self._tactics.FBI_shield,
-							rank = 3
-						},
-						{
-							unit = "CS_tazer",
-							freq = 0.75,
-							amount_min = 1,
-							tactics = self._tactics.FBI_swat_rifle,
-							rank = 2
-						}
-					}
-				}
-			elseif difficulty_index == 8 then
+			else
 				self.enemy_spawn_groups.FBI_tanks = {
 					amount = {3, 4},
 					spawn = {
@@ -4977,47 +4651,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.smoke_and_flash_grenade_timeout = {15, 16}
 			elseif difficulty_index == 7 then
 				self.smoke_and_flash_grenade_timeout = {14, 15}
-			elseif difficulty_index == 8 then
+			else
 				self.smoke_and_flash_grenade_timeout = {14, 15}
 			end
-			if difficulty_index < 6 then
-				self.smoke_grenade_lifetime = 12
-			else
-				self.smoke_grenade_lifetime = 12
-			end
-			if difficulty_index == 8 then
-				self.flash_grenade_lifetime = 7.5
-				self.flash_grenade = {
-					timer = 3,
-					light_range = 300,
-					range = 1000,
-					light_specular = 1,
-					beep_fade_speed = 4,
-					beep_multi = 0.3,
-					light_color = Vector3(255, 0, 0),
-					beep_speed = {
-						0.1,
-						0.025
-					}
+			self.smoke_grenade_lifetime = 12
+			self.flash_grenade_lifetime = 7.5
+			self.flash_grenade = {
+				timer = 2.5,
+				light_range = 300,
+				range = 1000,
+				light_specular = 1,
+				beep_fade_speed = 4,
+				beep_multi = 0.3,
+				light_color = Vector3(255, 0, 0),
+				beep_speed = {
+					0.1,
+					0.025
 				}
-			else
-				self.flash_grenade_lifetime = 7.5
-				self.flash_grenade = {
-					timer = 2.5,
-					range = 1000,
-					light_color = Vector3(255, 0, 0),
-					light_range = 0,
-					light_specular = 1,
-					beep_speed = {0, 0},
-					beep_fade_speed = 0,
-					beep_multi = 0
-				}
-			end
-			if difficulty_index < 6 then
-				self.flash_grenade.timer = 2.5
-			else
-				self.flash_grenade.timer = 2.5
-			end
+			}
 			self.optimal_trade_distance = {0, 0}
 			self.bain_assault_praise_limits = {1, 3}
 			if difficulty_index <= 2 then
@@ -5324,18 +4975,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					3.1,
 					3.3
 				}
-			elseif difficulty_index == 8 then
+			else
 				self.besiege.assault.force_balance_mul = {
-					3,
-					3.2,
-					3.5,
-					3.9
+					4,
+					4.2,
+					4.5,
+					4.9
 				}
 				self.besiege.assault.force_pool_balance_mul = {
-					2.7,
-					2.9,
-					3.1,
-					3.3
+					3.2,
+					3.4,
+					3.6,
+					3.8
 				}
 			end
 			if difficulty_index <= 2 then
@@ -5712,12 +5363,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					2,
 					4,
 					6
-				}
-			elseif difficulty_index == 8 then
-				self.besiege.recon.force = {
-					20, -- testing this
-					20,
-					20
 				}
 			else
 				self.besiege.recon.force = {

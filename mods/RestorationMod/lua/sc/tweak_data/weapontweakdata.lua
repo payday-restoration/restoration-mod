@@ -491,7 +491,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.auto.fire_rate = 0.1
 		self.sg417_npc.CLIP_AMMO_MAX = 20
-		self.sg417_npc.DAMAGE = 5.4
+		self.sg417_npc.DAMAGE = 4.4
 		self.m4_boom_npc = deep_clone(self.m4_npc)
 	end
 
@@ -985,7 +985,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_olympic_crew()
 		self.olympic_crew.sounds.prefix = "m4_olympic_npc"
 		self.olympic_crew.use_data.selection_index = 1
-		self.olympic_crew.DAMAGE = 2.1
+		self.olympic_crew.DAMAGE = 2.3
 		self.olympic_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.olympic_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.olympic_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"

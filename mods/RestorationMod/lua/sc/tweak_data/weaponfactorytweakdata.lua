@@ -40,11 +40,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_smg_olympic_npc_omnia_lpf.default_blueprint = {
 			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_upg_m4_g_standard_vanilla",
-			"wpn_fps_m4_uupg_b_short_vanilla",
+			"wpn_fps_m4_uupg_b_medium_vanilla",
 			"wpn_fps_m4_upper_reciever_round",
 			"wpn_fps_m4_lower_reciever",
 			"wpn_fps_smg_olympic_fg_olympic",
-			"wpn_fps_upg_ass_ns_jprifles",
 			"wpn_fps_upg_ass_ns_jprifles",
 			"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_ass_m16_o_handle_sight",

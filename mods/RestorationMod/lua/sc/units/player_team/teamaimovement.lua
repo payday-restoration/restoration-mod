@@ -1,17 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-	if SystemFS:exists("mods/Better Bots/mod.txt") then
-		return
-	end
-
 	TeamAIMovement.update = TeamAIMovement.super.update
-
-	function TeamAIMovement:on_SPOOCed(enemy_unit)
-		if self._unit:character_damage()._god_mode then
-			return
-		end
-		self._unit:character_damage():on_incapacitated()
-	end
 	
 	function TeamAIMovement:on_jump_SPOOCed(enemy_unit)
 		if self._unit:character_damage()._god_mode then

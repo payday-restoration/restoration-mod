@@ -518,7 +518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+							Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
 						}						
 					},
 					access = access_type_all,
@@ -1268,7 +1268,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 					},
 					murky = {
-						Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
 					}
 				},
 				access = access_type_all,

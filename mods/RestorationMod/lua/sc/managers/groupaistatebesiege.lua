@@ -184,7 +184,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 		if task_spawn_allowance <= 0 then
 			task_data.phase = "fade"
 			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
-		elseif t > task_data.phase_end_t or self._drama_data.zone == "high" then
+		elseif t > task_data.phase_end_t then
 			self._assault_number = self._assault_number + 1
 			managers.mission:call_global_event("start_assault")
 			managers.hud:start_assault(self._assault_number)
@@ -230,7 +230,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 		if task_spawn_allowance <= 0 then
 			task_data.phase = "fade"
 			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
-		elseif t > task_data.phase_end_t or self._drama_data.zone == "high" then
+		elseif t > task_data.phase_end_t then
 			local sustain_duration = math.lerp(self:_get_difficulty_dependent_value(self._tweak_data.assault.sustain_duration_min), self:_get_difficulty_dependent_value(self._tweak_data.assault.sustain_duration_max), math.random()) * self:_get_balancing_multiplier(self._tweak_data.assault.sustain_duration_balance_mul)
 			managers.crime_spree:run_func("OnEnterSustainPhase", sustain_duration)
 			task_data.phase = "sustain"

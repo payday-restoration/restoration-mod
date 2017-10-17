@@ -111,8 +111,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "Like PAYDAY With Guns",
-		["menu_difficulty_sm_wish"] = "It's like Dark Souls, but with heisting. Approach like Bloodborne.",
+		["menu_risk_sm_wish"] = "OVERDOSE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+		["menu_difficulty_sm_wish"] = "OVERDOSE",
 
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		

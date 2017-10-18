@@ -332,7 +332,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_hostage_health_regen_addend_2"
+						"player_hostage_health_regen_addend_2",
+						"team_damage_hostage_absorption"
 					},
 					cost = self.costs.hightierpro
 				}

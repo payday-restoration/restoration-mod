@@ -249,6 +249,10 @@ function UpgradesTweakData:_init_pd2_values()
 			
 				--Hostage Taker
 				self.values.player.hostage_health_regen_addend = {0.015, 0.045}
+				self.values.team.damage = {
+					hostage_absorption = {0.8},
+					hostage_absorption_limit = 4
+				}
 			--}
 			
 			--[[   ASSAULT SUBTREE   ]]--

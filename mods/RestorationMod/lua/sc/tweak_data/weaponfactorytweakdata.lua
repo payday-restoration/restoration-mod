@@ -6272,6 +6272,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_smg_p90_b_legend",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_smg_p90_m_strap",
+			"wpn_fps_smg_p90_body_boxy",
 			--at least it's not Red Stars--
 			"wpn_fps_smg_p90_body_p90_tan"
 		}

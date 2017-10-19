@@ -39,6 +39,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return result
 			end
 		end
+		
+		local right = direction:cross(math.UP):normalized()
+		local up = direction:cross(right):normalized()
+		
 		if col_ray then
 			if col_ray.unit:in_slot(self._character_slotmask) then
 				hit_unit = self._bullet_class:on_collision(col_ray, self._unit, user_unit, damage)
@@ -54,13 +58,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		if not col_ray or col_ray.distance > 600 then
-			local jfc = tweak_data.weapon[self._name_id]
-			local num_rays = jfc.rays or 1
-			for i = 1, num_rays do
+			local name_id = self.non_npc_name_id and self:non_npc_name_id() or self._name_id
+			local num_rays = (tweak_data.weapon[name_id] or {}).rays or 1
+
+			for i = 1, num_rays, 1 do
 				mvector3.set(mvec_spread, direction)
+
 				if i > 1 then
-					mvector3.spread(mvec_spread, self:_get_spread())
+					local spread_x, spread_y = self:_get_spread(user_unit)
+					local theta = math.random() * 360
+					local ax = math.sin(theta) * math.random() * spread_x
+					local ay = math.cos(theta) * math.random() * (spread_y or spread_x)
+
+					mvector3.add(mvec_spread, right * math.rad(ax))
+					mvector3.add(mvec_spread, up * math.rad(ay))
 				end
+
 				self:_spawn_trail_effect(mvec_spread, col_ray)
 			end
 		end

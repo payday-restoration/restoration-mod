@@ -231,6 +231,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			if critical_hit then
 				managers.hud:on_crit_confirmed()
 				damage = crit_damage
+				attack_data.critical_hit = true
 			else
 				managers.hud:on_hit_confirmed()
 			end

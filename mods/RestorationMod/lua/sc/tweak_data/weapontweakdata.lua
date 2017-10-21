@@ -673,7 +673,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{2000, 1},
 			{3000, 1}
 		}
-		self.swat_van_turret_module.SUPPRESSION = 0.1
+		self.swat_van_turret_module.SUPPRESSION = 1
 		self.swat_van_turret_module.SPREAD = 3.5
 		self.swat_van_turret_module.FIRE_RANGE = 4000
 		self.swat_van_turret_module.CLIP_SIZE = 200
@@ -742,7 +742,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_van_turret_module.challenges = {}
 		self.swat_van_turret_module.challenges.group = "sentry_gun"
 		self.swat_van_turret_module.challenges.weapon = "sentry_gun"
-		self.swat_van_turret_module.suppression = 0.1
+		self.swat_van_turret_module.suppression = 1
 	end
 
 	function WeaponTweakData:_init_data_ceiling_turret_module_npc()
@@ -753,7 +753,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{2000, 1},
 			{3000, 1}
 		}
-		self.ceiling_turret_module.SUPPRESSION = 0.1
+		self.ceiling_turret_module.SUPPRESSION = 1
 		self.ceiling_turret_module.SPREAD = 3.5
 		self.ceiling_turret_module.FIRE_RANGE = 4000
 		self.ceiling_turret_module.CLIP_SIZE = 200
@@ -816,7 +816,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.challenges = {}
 		self.ceiling_turret_module.challenges.group = "sentry_gun"
 		self.ceiling_turret_module.challenges.weapon = "sentry_gun"
-		self.ceiling_turret_module.suppression = 0.1
+		self.ceiling_turret_module.suppression = 1
 		self.ceiling_turret_module_no_idle = deep_clone(self.ceiling_turret_module)
 		self.ceiling_turret_module_no_idle.CAN_GO_IDLE = false
 	end
@@ -3466,8 +3466,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 7,
 			suppression = 7,
 			zoom = 1,
-			spread = 0,
-			recoil = 0,
+			spread = 1,
+			recoil = 1,
 			spread_moving = 7,
 			damage = 150,
 			concealment = 16,
@@ -3500,8 +3500,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 7,
 			suppression = 7,
 			zoom = 1,
-			spread = 0,
-			recoil = 0,
+			spread = 1,
+			recoil = 1,
 			spread_moving = 7,
 			damage = 150,
 			concealment = 16,

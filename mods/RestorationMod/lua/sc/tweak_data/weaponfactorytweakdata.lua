@@ -180,6 +180,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_snp_wa2000_g_stealth",
 			"wpn_fps_upg_o_spot"
 		}
+		self.wpn_deathvox_guard_pistol.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_guard_pistol"
+		self.wpn_deathvox_medic_pistol.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medic_pistol"
+		self.wpn_deathvox_light_ar.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_light_ar"
+		self.wpn_deathvox_heavy_ar.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_heavy_ar"
+		self.wpn_deathvox_shotgun_light.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_light"
+		self.wpn_deathvox_shotgun_heavy.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_heavy"
+		self.wpn_deathvox_sniper.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_sniper"
+		self.wpn_deathvox_medicdozer_smg.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medicdozer_smg"
 
 	end
 

@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat/wpn_fps_pis_packrat" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_packrat"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="deathvox_guard_pistol" />
+		</extension>
+	</extensions>
+</unit>

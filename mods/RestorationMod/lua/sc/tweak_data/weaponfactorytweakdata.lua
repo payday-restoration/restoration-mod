@@ -6641,6 +6641,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				concealment = -2
 			},
+			forbids = {
+				"wpn_fps_pis_deagle_co_long",
+				"wpn_fps_pis_deagle_co_short"
+			},			
 			override = {
 				wpn_upg_o_marksmansight_front = {a_obj = "a_ol"}
 			}
@@ -6666,8 +6670,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 6,
 				damage = 5,
-				spread = 1,
-				concealment = -3
+				spread = 2,
+				concealment = -5
 			}
 		}
 		self.parts.wpn_fps_pis_deagle_co_short = {
@@ -6684,10 +6688,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 7,
 				damage = 5,
+				spread = 1,
 				recoil = 1,
 				alert_size = -2,
 				suppression = -2,
-				concealment = -2
+				concealment = -4
 			}
 		}
 		self.parts.wpn_fps_pis_deagle_fg_rail = {
@@ -6976,7 +6981,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_pis_jungle",
 			"wpn_fps_pis_deagle_b_legend",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			--Custom Stuff--
+			"wpn_fps_pis_g18c_co_comp_2",
+			"wpn_fps_pis_g18c_co_1",
 		}
 		self.wpn_fps_pis_deagle_npc = deep_clone(self.wpn_fps_pis_deagle)
 		self.wpn_fps_pis_deagle_npc.unit = "units/payday2/weapons/wpn_fps_pis_deagle/wpn_fps_pis_deagle_npc"
@@ -17677,7 +17685,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_upg_o_rmr"
+			--Custom Stuff--
+			--"wpn_fps_upg_o_rmr", Unfinished
+			"wpn_fps_pis_g18c_co_comp_2",
+			"wpn_fps_pis_g18c_co_1"
 		}
 		self.wpn_fps_x_deagle_npc = deep_clone(self.wpn_fps_x_deagle)
 		self.wpn_fps_x_deagle_npc.unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_x_deagle/wpn_fps_x_deagle_npc"

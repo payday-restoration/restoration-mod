@@ -1122,13 +1122,13 @@
 	<unit path="units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault" load="true"/>
 	<unit path="units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault_husk" load="true"/>
 	
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_guard_pistol" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medic_pistol" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_light_ar" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_heavy_ar" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_light" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_heavy" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_sniper" load="true" force="false"/>
-	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medicdozer_smg" load="true" force="false"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_guard_pistol" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medic_pistol" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_light_ar" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_heavy_ar" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_light" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_heavy" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_sniper" load="true" force="true"/>
+	<unit path="units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medicdozer_smg" load="true" force="true"/>
 	
 </table>

@@ -2368,8 +2368,8 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_lightar.steal_loot = true
 	self.deathvox_lightar.rescue_hostages = true
 	self.deathvox_lightar.weapon = deep_clone(presets.weapon.deathvox)
-	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_light_ar"}
-	self.deathvox_guard.use_factory = true
+	self.deathvox_lightar.factory_weapon_id = {"wpn_deathvox_light_ar"}
+	self.deathvox_lightar.use_factory = true
 	table.insert(self._enemy_list, "deathvox_lightar")
 	
 	self.deathvox_heavyar = deep_clone(self.city_swat)
@@ -2388,8 +2388,8 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_heavyar.steal_loot = true
 	self.deathvox_heavyar.rescue_hostages = true
 	self.deathvox_heavyar.weapon = deep_clone(presets.weapon.deathvox)
-	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
-	self.deathvox_guard.use_factory = true
+	self.deathvox_heavyar.factory_weapon_id = {"wpn_deathvox_heavy_ar"}
+	self.deathvox_heavyar.use_factory = true
 	table.insert(self._enemy_list, "deathvox_heavyar")
 	
 	self.deathvox_lightshot = deep_clone(self.city_swat)
@@ -2408,8 +2408,8 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_lightshot.steal_loot = true
 	self.deathvox_lightshot.rescue_hostages = true
 	self.deathvox_lightshot.weapon = deep_clone(presets.weapon.deathvox)
-	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_shotgun_light"}
-	self.deathvox_guard.use_factory = true
+	self.deathvox_lightshot.factory_weapon_id = {"wpn_deathvox_shotgun_light"}
+	self.deathvox_lightshot.use_factory = true
 	table.insert(self._enemy_list, "deathvox_lightshot")
 	
 	self.deathvox_heavyshot = deep_clone(self.city_swat)
@@ -2428,8 +2428,8 @@ function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_heavyshot.steal_loot = true
 	self.deathvox_heavyshot.rescue_hostages = true
 	self.deathvox_heavyshot.weapon = deep_clone(presets.weapon.deathvox)
-	self.deathvox_guard.factory_weapon_id = {"wpn_deathvox_shotgun_heavy"}
-	self.deathvox_guard.use_factory = true
+	self.deathvox_heavyshot.factory_weapon_id = {"wpn_deathvox_shotgun_heavy"}
+	self.deathvox_heavyshot.use_factory = true
 	table.insert(self._enemy_list, "deathvox_heavyshot")
 	
 	self.deathvox_shield = deep_clone(self.shield)

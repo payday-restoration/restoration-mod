@@ -130,7 +130,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus"] = "Modifiers",
 		--["menu_challenge_stat_boost"] = "Random Mod Kit",
 		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
-		["bm_menu_suppression"] = "Noise Level",
+		["bm_menu_suppression"] = "Noise Range(M)",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
 		--["dialog_new_tradable_item_bonus"] = "",
 		--["steam_inventory_team_boost"] = "",

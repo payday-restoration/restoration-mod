@@ -358,7 +358,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		local weapon_unit = attack_data.weapon_unit
 		if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
-			weapon_unit:base():add_damage_result(self._unit, attacker, result.type == "death", damage_percent)
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", attacker, damage_percent)
 		end
 		local variant
 		if result.type == "knock_down" then
@@ -918,7 +918,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		local weapon_unit = attack_data.weapon_unit
 		if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
-			weapon_unit:base():add_damage_result(self._unit, attacker, result.type == "death", damage_percent)
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", attacker, damage_percent)
 		end
 		if not self._no_blood then
 			managers.game_play_central:sync_play_impact_flesh(attack_data.pos, attack_data.col_ray.ray)

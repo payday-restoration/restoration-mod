@@ -48,15 +48,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
 			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
 			["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar",
-			["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot",
-			["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
+			["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot"
+			--[[["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
 			["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
 			["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
 			["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
 			["units/payday2/characters/ene_security_5/ene_security_5"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
 			["units/payday2/characters/ene_security_6/ene_security_6"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
 			["units/payday2/characters/ene_security_7/ene_security_7"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_8/ene_security_8"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard"
+			["units/payday2/characters/ene_security_8/ene_security_8"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard"]]--
 		}
 	local deathwish = {
 			["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/payday2/characters/ene_city_swat_1/ene_city_swat_1",

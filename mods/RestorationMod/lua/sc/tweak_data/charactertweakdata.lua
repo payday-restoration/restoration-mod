@@ -11370,6 +11370,7 @@ function CharacterTweakData:_set_sm_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
+	self.security = deep_clone(self.deathvox_guard) -- fucking broke piece of shit movement stuff
 	self:_set_characters_weapon_preset("deathvox")
 	self.deathvox_sniper_assault.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self:_set_characters_dodge_preset("deathvox")

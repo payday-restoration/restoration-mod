@@ -128,6 +128,8 @@
 		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
 		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
 		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
+		<hook file="sc/modifiers/modifierlessconcealment.lua" source_file="lib/modifiers/modifierlessconcealment"/>
+		<hook file="sc/modifiers/modifierlesspagers.lua" source_file="lib/modifiers/modifierlesspagers"/>
 		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<hook file="sc/managers/mission/elementspawngrenade.lua" source_file="lib/managers/mission/elementspawngrenade"/>
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
@@ -173,6 +175,7 @@
 			</option_group>
 			<option_group name="SC">
 				<option type="bool" default_value="false" name="SC"/>
+				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">

@@ -267,8 +267,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
 
 		--Crime spree modifier changes
-		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
-		["menu_cs_next_modifier_stealth"] = "",
+		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
 		["menu_cs_modifier_no_hurt"] = "Enemies are 50% resistant to knock down.",
 		["menu_cs_modifier_enemy_health_damage"] = "Enemies deal an additional 15% more damage.",
@@ -279,6 +278,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dozer_medic"] = "All HRT units have an additional 10% chance to become an OMNIA LPF.",
 		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 10% chance to become a Titan Bulldozer.",
 		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 10% chance to become a Titan Shield.",
+		["menu_cs_modifier_concealment"] = "Suspicion buildup is increased by 10%.",
+		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",
 

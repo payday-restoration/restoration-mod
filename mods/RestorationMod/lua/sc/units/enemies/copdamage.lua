@@ -774,21 +774,55 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		end
-		local cop_dmg = unit:character_damage()
-		cop_dmg._health = cop_dmg._HEALTH_INIT
-		cop_dmg._health_ratio = 1
-		cop_dmg:_update_debug_ws()
-		self._heal_cooldown_t = t
-		if not self._unit:character_damage():dead() then
-			local action_data = {
-				type = "heal",
-				body_part = 3,
-				client_interrupt = Network:is_client() and true or false
-			}
-			self._unit:movement():action_request(action_data)
+		if my_tweak_table.dv_medic_heal then
+			local dv_enemy_list = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius, managers.slot:get_mask("enemies"))
+			if enemies then
+				self._heal_cooldown_t = t
+				if not self._unit:character_damage():dead() then
+					local action_data = {
+						type = "heal",
+						body_part = 3,
+						client_interrupt = Network:is_client() and true or false
+					}
+					self._unit:movement():action_request(action_data)
+				end
+				for _,enemy in ipairs(enemies) do
+					if enemy ~= self._unit then
+						if not enemy:character_damage():dead() then
+							local cop_dmg = enemy:character_damage()
+							cop_dmg._health = cop_dmg._HEALTH_INIT
+							cop_dmg._health_ratio = 1
+							cop_dmg:_update_debug_ws()
+							managers.crime_spree:run_func("OnEnemyHealed", self._unit, enemy)
+							managers.network:session():send_to_peers("sync_medic_heal", self._unit)
+
+							enemy:sound():say("hr01")
+
+							if enemy:contour() then
+								enemy:contour():add("medic_heal", true)
+								enemy:contour():flash("medic_heal", 0.2)
+							end
+						end
+					end
+				end
+			end
+		else
+			local cop_dmg = unit:character_damage()
+			cop_dmg._health = cop_dmg._HEALTH_INIT
+			cop_dmg._health_ratio = 1
+			cop_dmg:_update_debug_ws()
+			self._heal_cooldown_t = t
+			if not self._unit:character_damage():dead() then
+				local action_data = {
+					type = "heal",
+					body_part = 3,
+					client_interrupt = Network:is_client() and true or false
+				}
+				self._unit:movement():action_request(action_data)
+			end
+			managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
+			managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		end
-		managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
-		managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		return true
 	end
 

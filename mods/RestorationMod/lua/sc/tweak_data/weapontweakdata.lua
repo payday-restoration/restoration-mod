@@ -2624,7 +2624,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = true
 			self[wep_id].has_description = false
@@ -6539,7 +6539,75 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.erma.panic_suppression_chance = 0.1
-		
+		self.basset.damage_near = 600
+		self.basset.damage_far = 1200
+		self.basset.rays = 9
+		self.basset.CLIP_AMMO_MAX = 10
+		self.basset.AMMO_MAX = 80
+		self.basset.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.basset.fire_mode_data = {fire_rate = 0.1}
+		self.basset.auto = {fire_rate = 0.1}
+		self.basset.spread = {
+			standing = 3.5,
+			crouching = 2.5,
+			steelsight = 1,
+			moving_standing = 4,
+			moving_crouching = 3,
+			moving_steelsight = 2
+		}		
+		self.basset.kick.standing = self.new_m4.kick.standing
+		self.basset.kick.crouching = self.new_m4.kick.standing
+		self.basset.kick.steelsight = self.new_m4.kick.standing
+		self.basset.panic_suppression_chance = 0.0
+		self.basset.stats = {
+			zoom = 3,
+			total_ammo_mod = 100,
+			damage = 39,
+			alert_size = 6,
+			spread = 6,
+			spread_moving = 8,
+			recoil = 20,
+			value = 1,
+			extra_ammo = 6,
+			reload = 11,
+			suppression = 6,
+			concealment = 21
+		}		
+		self.x_basset.tactical_akimbo = true
+		self.x_basset.damage_near = 600
+		self.x_basset.damage_far = 1200
+		self.x_basset.rays = 9
+		self.x_basset.CLIP_AMMO_MAX = 20
+		self.x_basset.AMMO_MAX = 120
+		self.x_basset.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.x_basset.fire_mode_data = {fire_rate = 0.1}
+		self.x_basset.auto = {fire_rate = 0.1}
+		self.x_basset.spread = {
+			standing = 3.5,
+			crouching = 2.5,
+			steelsight = 1,
+			moving_standing = 4,
+			moving_crouching = 3,
+			moving_steelsight = 2
+		}		
+		self.x_basset.kick.standing = self.new_m4.kick.standing
+		self.x_basset.kick.crouching = self.new_m4.kick.standing
+		self.x_basset.kick.steelsight = self.new_m4.kick.standing
+		self.x_basset.panic_suppression_chance = 0.0
+		self.x_basset.stats = {
+			zoom = 3,
+			total_ammo_mod = 100,
+			damage = 39,
+			alert_size = 6,
+			spread = 6,
+			spread_moving = 8,
+			recoil = 20,
+			value = 1,
+			extra_ammo = 6,
+			reload = 11,
+			suppression = 6,
+			concealment = 21
+		}				
 		--Custom weapons below--
 
 		if self.mpx then

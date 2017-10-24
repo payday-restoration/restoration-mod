@@ -1,6 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
+	
 	local job = Global.level_data and Global.level_data.level_id
+	
 	if job == "nomercy" then
 		--At some point I'll do something with this, probably add PDTH looking Grenadiers (maybe)
 	else
@@ -998,7 +999,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					special_type = "shield"
 				}
 			end
-			if job == "haunted" or job == "nail" or job == "help" or Month == "10" then
+			if job == "haunted" or job == "nail" or job == "help" or Month == "10" and restoration.Options:GetValue("SC/Holiday") then
 				if difficulty_index <= 4 then
 					self.unit_categories.FBI_tank = {
 						unit_types = {

@@ -37,7 +37,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.modifier_levels = {
 			forced = 400,
 			loud = 20,
-			stealth = 999999999
+			stealth = 26
 		}
 		self.modifiers = {
 			forced = {
@@ -233,64 +233,73 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stealth = {
 				{
-					id = "pagers_1",
 					class = "ModifierLessPagers",
+					id = "pagers_1",
 					icon = "crime_spree_pager",
 					level = 26,
 					data = {}
 				},
 				{
-					id = "civs_1",
 					class = "ModifierCivilianAlarm",
+					id = "civs_1",
 					icon = "crime_spree_civs_killed",
 					level = 26,
-					data = {}
+					data = {count = {
+						2,
+						"min"
+					}}
 				},
 				{
-					id = "conceal_1",
 					class = "ModifierLessConcealment",
+					id = "conceal_1",
 					icon = "crime_spree_concealment",
 					level = 26,
 					data = {}
 				},
 				{
-					id = "civs_2",
 					class = "ModifierCivilianAlarm",
+					id = "civs_2",
 					icon = "crime_spree_civs_killed",
 					level = 52,
-					data = {}
+					data = {count = {
+						1,
+						"min"
+					}}
 				},
 				{
-					id = "pagers_2",
 					class = "ModifierLessPagers",
+					id = "pagers_2",
 					icon = "crime_spree_pager",
 					level = 78,
 					data = {}
 				},
 				{
-					id = "conceal_2",
 					class = "ModifierLessConcealment",
+					id = "conceal_2",
 					icon = "crime_spree_concealment",
 					level = 104,
 					data = {}
 				},
 				{
-					id = "pagers_3",
 					class = "ModifierLessPagers",
+					id = "pagers_3",
 					icon = "crime_spree_pager",
 					level = 130,
 					data = {}
 				},
 				{
-					id = "civs_3",
 					class = "ModifierCivilianAlarm",
+					id = "civs_3",
 					icon = "crime_spree_civs_killed",
 					level = 156,
-					data = {}
+					data = {count = {
+						0,
+						"min"
+					}}
 				},
 				{
-					id = "pagers_4",
 					class = "ModifierLessPagers",
+					id = "pagers_4",
 					icon = "crime_spree_pager",
 					level = 182,
 					data = {}

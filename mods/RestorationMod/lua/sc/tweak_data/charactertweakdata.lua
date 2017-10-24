@@ -12509,6 +12509,16 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_heavy_sniper"
 			}
 		},
+		wwh = {
+			path = "units/pd2_dlc_wwh/characters/",
+			list = {
+				"ene_female_crew",
+				"ene_male_crew_01",
+				"ene_male_crew_02",
+				"ene_captain",
+				"ene_locke"
+			}			
+		},		
 		sharks = {
 			path = "units/pd2_mod_sharks/characters/",
 			list = {

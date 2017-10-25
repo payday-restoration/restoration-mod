@@ -3033,7 +3033,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.saiga.spread.moving_standing = 4
 		self.saiga.spread.moving_crouching = 3
 		self.saiga.spread.moving_steelsight = 2
-		self.saiga.CLIP_AMMO_MAX = 10
+		self.saiga.CLIP_AMMO_MAX = 6
 		self.saiga.AMMO_MAX = 120
 		self.saiga.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.saiga.fire_mode_data.fire_rate = 0.1
@@ -6542,7 +6542,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.basset.damage_near = 600
 		self.basset.damage_far = 1200
 		self.basset.rays = 9
-		self.basset.CLIP_AMMO_MAX = 10
+		self.basset.CLIP_AMMO_MAX = 6
 		self.basset.AMMO_MAX = 80
 		self.basset.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.basset.fire_mode_data = {fire_rate = 0.1}
@@ -6577,7 +6577,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_basset.damage_near = 600
 		self.x_basset.damage_far = 1200
 		self.x_basset.rays = 9
-		self.x_basset.CLIP_AMMO_MAX = 20
+		self.x_basset.CLIP_AMMO_MAX = 12
 		self.x_basset.AMMO_MAX = 120
 		self.x_basset.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_basset.fire_mode_data = {fire_rate = 0.1}

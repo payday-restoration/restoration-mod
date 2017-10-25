@@ -1909,7 +1909,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 3,
 				spread_moving = -2,
 				concealment = -3,
-				reload = -2,
+				reload = -3,
 				extra_ammo = 15
 			},
 			dlc = "gage_pack_jobs",
@@ -1983,7 +1983,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -2,
 				concealment = -3,
 				extra_ammo = 15,
-				reload = -2,
+				reload = -3,
 				recoil = 0,
 				spread = 0
 			},
@@ -2737,7 +2737,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = 5,
-				reload = -1,
+				reload = -2,
 				concealment = -1
 			},
 			forbids = {
@@ -2844,7 +2844,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 9,
 				extra_ammo = 35,
-				reload = -3,
+				reload = -6,
 				concealment = -5
 			},
 			custom_stats = {reload_speed_mult = 0.7}
@@ -2888,7 +2888,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread_moving = 2,
 				concealment = 2,
-				reload = 1,
+				reload = 2,
 				extra_ammo = -5
 			}
 		}
@@ -3025,7 +3025,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 9,
 					extra_ammo = 40,
-					reload = -3,
+					reload = -6,
 					concealment = -5
 				},
 				has_description = true,
@@ -3038,7 +3038,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 5,
 					recoil = 0,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3049,7 +3049,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = -1,
 					concealment = -1,
 					extra_ammo = 5,
-					reload = 1
+					reload = 2
 				}
 			},
 			wpn_fps_ass_l85a2_m_emag = {
@@ -3058,7 +3058,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 5,
 					recoil = 0,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3068,7 +3068,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 5,
 					recoil = -1,
 					concealment = 0,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3077,7 +3077,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 20,
 					concealment = -3,
-					reload = -2
+					reload = -3
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -3445,7 +3445,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 9,
 					extra_ammo = 40,
-					reload = -3,
+					reload = -6,
 					concealment = -5
 				},
 				has_description = true,
@@ -3457,7 +3457,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 5,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3471,7 +3471,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = -1,
 					concealment = -1,
 					extra_ammo = 5,
-					reload = 1
+					reload = 2
 				}
 			},
 			wpn_fps_ass_l85a2_m_emag = {
@@ -3479,7 +3479,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 5,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3492,7 +3492,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 5,
 					recoil = -1,
 					concealment = 0,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3504,7 +3504,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 20,
 					concealment = -3,
-					reload = -2
+					reload = -3
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -3702,7 +3702,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -33,
 					extra_ammo = -5,
 					damage = 33,
-					reload = -2,
+					reload = -3,
 					suppression = -1,
 					alert_size = -1,
 					concealment = -4
@@ -3719,7 +3719,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 9,
 					extra_ammo = 40,
-					reload = -3,
+					reload = -6,
 					concealment = -5
 				},
 				has_description = true,
@@ -3730,7 +3730,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 1,
 					extra_ammo = 5,
-					reload = -1,
+					reload = -2,
 					concealment = -1
 				},
 				has_description = true,
@@ -3745,7 +3745,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = -1,
 					concealment = -1,
 					extra_ammo = 5,
-					reload = 1
+					reload = 2
 				}
 			},
 			wpn_fps_ass_l85a2_m_emag = {
@@ -3753,7 +3753,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 5,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3766,7 +3766,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 5,
 					recoil = -1,
 					concealment = 0,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3778,7 +3778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 20,
 					concealment = -3,
-					reload = -2
+					reload = -3
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -3951,7 +3951,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = -7,
 					total_ammo_mod = -5,
 					damage = 8,
-					reload = -2,
+					reload = -3,
 					concealment = -4
 				},
 				custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, reload_speed_mult = 0.85},
@@ -3970,7 +3970,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 9,
 					extra_ammo = 40,
-					reload = -3,
+					reload = -6,
 					concealment = -5
 				},
 				has_description = true,
@@ -3982,7 +3982,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 5,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3992,7 +3992,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 5,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -4001,7 +4001,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 5,
 					recoil = -1,
-					reload = -1
+					reload = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -4012,14 +4012,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = -1,
 					concealment = -1,
 					extra_ammo = 5,
-					reload = 1
+					reload = 2
 				}
 			},
 			wpn_fps_upg_m4_m_quad = {
 				stats = {
 					extra_ammo = 20,
 					concealment = -3,
-					reload = -2
+					reload = -3
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -4261,7 +4261,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -2,
 				concealment = -5,
 				extra_ammo = 35,
-				reload = -3,
+				reload = -6,
 				recoil = 0,
 				spread = 0
 			},
@@ -5233,7 +5233,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/grip",
 			unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
 			custom_stats = {reload_speed_mult = 0.85, is_drum_aa12 = true},
-			stats = {value = 1, extra_ammo = 5, reload = -2}
+			stats = {value = 1, extra_ammo = 7, reload = -3}
 		}
 		self.parts.wpn_fps_shot_saiga_b_standard.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_b_standard"
 		self.parts.wpn_fps_shot_saiga_m_5rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_m_5rnd"
@@ -10147,7 +10147,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 4,
 				concealment = -1,
-				reload = -2,
+				reload = -3,
 				extra_ammo = 10
 			},
 			animations = {
@@ -12254,7 +12254,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					 stats = {
 						value = 5,
 							concealment = -3,
-					reload = -2,
+					reload = -1,
 							extra_ammo = 20,
 					 },
 					 custom_stats = {reload_speed_mult = 1}
@@ -15526,7 +15526,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 3,
 				concealment = 0,
 				recoil = 0,
-				reload = 4,
+				reload = 7,
 				extra_ammo = 0
 			},
 			custom_stats = {reload_speed_mult = 1.35},
@@ -23460,7 +23460,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = 6,
-				reload = -2,
+				reload = -3,
 				concealment = -4
 			},
 			animations = {fire = "recoil", fire_steelsight = "recoil"},
@@ -29967,7 +29967,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			animations = {
 				reload = "reload",
@@ -29989,7 +29989,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -30006,7 +30006,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -30023,7 +30023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -30040,7 +30040,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			animations = {
 				reload = "reload",
@@ -30061,7 +30061,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			animations = {
 				reload = "reload",
@@ -30082,7 +30082,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			},
 			animations = {
 				reload = "reload",
@@ -32739,8 +32739,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			custom_stats = {reload_speed_mult = 0.85},
-			stats = {value = 1, extra_ammo = 5, reload = -2}
+			custom_stats = {reload_speed_mult = 0.95},
+			stats = {value = 1, extra_ammo = 1, reload = -1}
 		}
 		self.parts.wpn_fps_sho_basset_o_standard = {
 			a_obj = "a_o",
@@ -32799,8 +32799,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						can_shoot_through_enemy = false,
 						can_shoot_through_shield = false,
 						can_shoot_through_wall = false,
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
+						ammo_pickup_min_mul = 0.75,
+						ammo_pickup_max_mul = 0.75
 					}
 				},
 				wpn_fps_upg_a_explosive = {
@@ -32817,10 +32817,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						bullet_class = "InstantExplosiveBulletBase",
-						ammo_pickup_min_mul = 0.333333333333,
-						ammo_pickup_max_mul = 0.333333333333
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
 					}
-				}
+				},
+				wpn_upg_saiga_m_20rnd = {
+					custom_stats = {reload_speed_mult = 0.85, is_drum_aa12 = false}
+				}				
 			},
 			default_blueprint = {
 				"wpn_fps_sho_basset_b_standard",
@@ -32869,7 +32872,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ns_sho_salvo_large",
 				"wpn_fps_upg_o_spot",
 				"wpn_fps_upg_ns_duck",
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				--Custom stuff--
+				"wpn_upg_saiga_m_20rnd"
 			}
 		}
 		self.wpn_fps_sho_basset_npc = deep_clone(self.wpn_fps_sho_basset)
@@ -32934,11 +32939,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				wpn_fps_sho_basset_m_extended = {
 					stats = {
-						extra_ammo = 10,
+						extra_ammo = 1,
 						value = 1,
-						reload = -5
+						reload = -1
 					}
-				}
+				},
+				wpn_upg_saiga_m_20rnd = {
+					stats = {value = 1, extra_ammo = 14, reload = -3},
+					custom_stats = {reload_speed_mult = 0.85, is_drum_aa12 = false}
+				}	
 			},
 			default_blueprint = {
 				"wpn_fps_sho_basset_b_standard",
@@ -32972,7 +32981,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_fl_ass_utg",
 				"wpn_fps_upg_ns_sho_salvo_large",
-				"wpn_fps_upg_ns_duck"
+				"wpn_fps_upg_ns_duck",
+				--Custom stuff--
+				"wpn_upg_saiga_m_20rnd"
 			}
 		}
 		self.wpn_fps_sho_x_basset_npc = deep_clone(self.wpn_fps_sho_x_basset)
@@ -34183,7 +34194,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -2,
 				concealment = -3,
 				extra_ammo = 15,
-				reload = -2,
+				reload = -3,
 				recoil = 0,
 				spread = 0
 			}
@@ -34238,7 +34249,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 2
 			}
 		self.parts.wpn_fps_ass_yayo_mag_pmag.stats = {
 				value = 0,
@@ -34248,7 +34259,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread_moving = 2,
 				concealment = 2,
-				reload = 1,
+				reload = 2,
 				extra_ammo = -5
 			}
 

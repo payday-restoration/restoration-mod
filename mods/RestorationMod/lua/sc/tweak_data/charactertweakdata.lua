@@ -8187,114 +8187,31 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.deathwish.is_sniper = deep_clone(presets.weapon.deathwish.rifle)
 
 	presets.weapon.deathvox = {is_pistol = {}}
-	presets.weapon.deathvox.is_pistol.aim_delay = {
-		0.1,
-		0.1
-	}
-	presets.weapon.deathvox.is_pistol.focus_delay = 1
-	presets.weapon.deathvox.is_pistol.focus_dis = 300
-	presets.weapon.deathvox.is_pistol.spread = 25
-	presets.weapon.deathvox.is_pistol.miss_dis = 30
-	presets.weapon.deathvox.is_pistol.RELOAD_SPEED = 1.1
-	presets.weapon.deathvox.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
-	presets.weapon.deathvox.is_pistol.melee_dmg = presets.weapon.normal.is_pistol.melee_dmg
-	presets.weapon.deathvox.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
-	presets.weapon.deathvox.is_pistol.range = presets.weapon.normal.is_pistol.range
-	presets.weapon.deathvox.is_pistol.FALLOFF = {
-		{
-			dmg_mul = 4,
-			r = 0,
-			acc = {
-				0.5,
-				0.95
-			},
-			recoil = {
-				0.1,
-				0.25
-			},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		},
-		{
-			dmg_mul = 2,
-			r = 1000,
-			acc = {
-				0.375,
-				0.55
-			},
-			recoil = {
-				0.15,
-				0.3
-			},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			dmg_mul = 2,
-			r = 2000,
-			acc = {
-				0.05,
-				0.5
-			},
-			recoil = {
-				0.3,
-				0.7
-			},
-			mode = {
-				1,
-				0,
-				1,
-				0
-			}
-		},
-		{
-			dmg_mul = 2,
-			r = 3000,
-			acc = {
-				0,
-				0.3
-			},
-			recoil = {
-				0.4,
-				1
-			},
-			mode = {
-				1,
-				0,
-				0,
-				0
-			}
-		}
-	}
-	presets.weapon.deathvox.is_pistol = {
+	presets.weapon.deathvox.is_pistol = { -- draft values complete.
 		aim_delay = {
-			0.1,
-			0.1
+			0,
+			0
 		},
-		focus_delay = 1,
-		focus_dis = 300,
+		focus_delay = 0,
+		focus_dis = 200,
 		spread = 20,
 		miss_dis = 50,
-		RELOAD_SPEED = 1.2,
-		melee_speed = presets.weapon.normal.is_pistol.melee_speed,
+		RELOAD_SPEED = 1.4,
+		melee_speed = presets.weapon.expert.is_pistol.melee_speed,
 		melee_dmg = 20,
-		melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay,
-		range = presets.weapon.normal.is_pistol.range,
+		melee_retry_delay = presets.weapon.expert.is_pistol.melee_retry_delay,
+		range = {
+			optimal = 3200,
+			far = 5000,
+			close = 2000
+		},
 		FALLOFF = {
 			{
-				dmg_mul = 5,
+				dmg_mul = 1,
 				r = 100,
 				acc = {
-					0.6,
-					0.9
+					0.9,
+					0.95
 				},
 				recoil = {
 					0.15,
@@ -8302,164 +8219,75 @@ function CharacterTweakData:_presets(tweak_data)
 				},
 				mode = {
 					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				dmg_mul = 4,
-				r = 500,
-				acc = {
-					0.5,
-					0.9
-				},
-				recoil = {
-					0.15,
-					0.3
-				},
-				mode = {
-					1,
 					0,
 					1,
 					0
 				}
 			},
 			{
-				dmg_mul = 3.5,
+				dmg_mul = 1,
+				r = 500,
+				acc = {
+					0.9,
+					0.95
+				},
+				recoil = {
+					0.15,
+					0.3
+				},
+				mode = {
+					0,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				dmg_mul = .8,
 				r = 1000,
 				acc = {
+					0.7,
+					0.8
+				},
+				recoil = {
+					0.25,
+					0.3
+				},
+				mode = {
+					0,
+					1,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .65,
+				r = 2000,
+				acc = {
+					0.6,
+					0.7
+				},
+				recoil = {
 					0.4,
+					0.5
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .6,
+				r = 3000,
+				acc = {
+					0.6,
 					0.65
 				},
 				recoil = {
-					0.15,
-					0.3
-				},
-				mode = {
-					1,
-					0,
-					1,
-					0
-				}
-			},
-			{
-				dmg_mul = 3,
-				r = 2000,
-				acc = {
-					0.3,
-					0.5
-				},
-				recoil = {
-					0.4,
-					0.9
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
-			{
-				dmg_mul = 2.5,
-				r = 3000,
-				acc = {
-					0.1,
-					0.25
-				},
-				recoil = {
-					0.4,
-					1.4
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			}
-		}
-	}
-	presets.weapon.deathvox.akimbo_pistol = {
-		aim_delay = {
-			0.1,
-			0.1
-		},
-		focus_delay = 1,
-		focus_dis = 300,
-		spread = 20,
-		miss_dis = 50,
-		RELOAD_SPEED = 1.2,
-		melee_speed = presets.weapon.normal.is_pistol.melee_speed,
-		melee_dmg = 20,
-		melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay,
-		range = presets.weapon.normal.is_pistol.range,
-		FALLOFF = {
-			{
-				dmg_mul = 5,
-				r = 100,
-				acc = {
 					0.6,
-					0.9
-				},
-				recoil = {
-					0.15,
-					0.25
-				},
-				mode = {
-					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				dmg_mul = 4,
-				r = 500,
-				acc = {
-					0.5,
-					0.9
-				},
-				recoil = {
-					0.15,
-					0.3
-				},
-				mode = {
-					1,
-					0,
-					1,
-					0
-				}
-			},
-			{
-				dmg_mul = 3.5,
-				r = 1000,
-				acc = {
-					0.4,
-					0.65
-				},
-				recoil = {
-					0.15,
-					0.3
-				},
-				mode = {
-					1,
-					0,
-					1,
-					0
-				}
-			},
-			{
-				dmg_mul = 3,
-				r = 2000,
-				acc = {
-					0.3,
-					0.5
-				},
-				recoil = {
-					0.4,
-					0.9
+					0.8
 				},
 				mode = {
 					1,
@@ -8469,15 +8297,15 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			},
 			{
-				dmg_mul = 2.5,
-				r = 3000,
+				dmg_mul = .5,
+				r = 4000,
 				acc = {
-					0.1,
-					0.25
+					0.2,
+					0.60 -- no infinite range.
 				},
 				recoil = {
-					0.4,
-					1.4
+					1,
+					1.5
 				},
 				mode = {
 					1,
@@ -8600,119 +8428,495 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.deathvox.is_shotgun_mag = presets.weapon.deathvox.is_shotgun_pump
-	presets.weapon.deathvox.is_rifle = {
+	presets.weapon.deathvox.is_light_rifle = { -- draft values complete.
 		aim_delay = {
-			0.1,
-			0.1
+			0,
+			0
 		},
 		focus_delay = 3,
 		focus_dis = 200,
 		spread = 20,
 		miss_dis = 40,
-		RELOAD_SPEED = 1,
+		RELOAD_SPEED = 1.4,
 		melee_speed = 1,
-		melee_dmg = 15,
-		melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay,
+		melee_dmg = 20,
+		melee_retry_delay = presets.weapon.expert.is_rifle.melee_retry_delay,
 		range = {
-			optimal = 2000,
-			far = 5000,
-			close = 1000
+			optimal = 3500,
+			far = 6000,
+			close = 2000
 		},
-		autofire_rounds = presets.weapon.normal.is_rifle.autofire_rounds,
+		autofire_rounds = {
+			4,
+			9
+		},
 		FALLOFF = {
 			{
-				dmg_mul = 3,
+				dmg_mul = 1,
 				r = 100,
 				acc = {
-					0.6,
-					0.9
+					0.9,
+					0.975
 				},
 				recoil = {
-					0.4,
-					0.8
+					0.25,
+					0.3
 				},
 				mode = {
 					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				dmg_mul = 2,
-				r = 500,
-				acc = {
-					0.4,
-					0.9
-				},
-				recoil = {
-					0.45,
-					0.8
-				},
-				mode = {
 					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				dmg_mul = 1.5,
-				r = 1000,
-				acc = {
-					0.2,
-					0.8
-				},
-				recoil = {
-					0.35,
-					0.75
-				},
-				mode = {
 					1,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				dmg_mul = 1.25,
-				r = 2000,
-				acc = {
-					0.2,
-					0.5
-				},
-				recoil = {
-					0.4,
-					1.2
-				},
-				mode = {
-					3,
-					2,
-					2,
 					0
 				}
 			},
 			{
 				dmg_mul = 1,
-				r = 3000,
+				r = 500,
 				acc = {
-					0.01,
-					0.35
+					0.875,
+					0.95
 				},
 				recoil = {
-					1.5,
-					3
+					0.25,
+					0.3
 				},
 				mode = {
-					3,
+					0,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.8,
+				r = 1000,
+				acc = {
+					0.7,
+					0.9
+				},
+				recoil = {
+					0.35,
+					0.55
+				},
+				mode = {
+					0,
 					1,
 					1,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.7,
+				r = 2000,
+				acc = {
+					0.7,
+					0.85
+				},
+				recoil = {
+					0.4,
+					0.7
+				},
+				mode = {
+					0,
+					1,
+					1,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.6,
+				r = 3000,
+				acc = {
+					0.65,
+					0.75
+				},
+				recoil = {
+					0.7,
+					1.1
+				},
+				mode = {
+					0,
+					1,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .5,
+				r = 4500,
+				acc = {
+					0.25,
+					0.7
+				},
+				recoil = {
+					1,
+					2
+				},
+				mode = {
+					1,
+					1,
+					0,
 					0
 				}
 			}
 		}
 	}
-	presets.weapon.deathvox.is_bullpup = presets.weapon.deathvox.is_rifle
+	presets.weapon.deathvox.is_heavy_rifle = { -- draft values complete.
+		aim_delay = {
+			0,
+			0
+		},
+		focus_delay = 3,
+		focus_dis = 200,
+		spread = 20,
+		miss_dis = 40,
+		RELOAD_SPEED = 1.4,
+		melee_speed = 1,
+		melee_dmg = 20,
+		melee_retry_delay = presets.weapon.expert.is_rifle.melee_retry_delay,
+		range = {
+			optimal = 3500,
+			far = 6000,
+			close = 2000
+		},
+		autofire_rounds = {
+			4,
+			9
+		},
+		FALLOFF = {
+			{
+				dmg_mul = 1,
+				r = 100,
+				acc = {
+					0.9,
+					0.975
+				},
+				recoil = {
+					0.25,
+					0.3
+				},
+				mode = {
+					0,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				dmg_mul = 1,
+				r = 500,
+				acc = {
+					0.875,
+					0.95
+				},
+				recoil = {
+					0.25,
+					0.3
+				},
+				mode = {
+					0,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.9,
+				r = 1000,
+				acc = {
+					0.7,
+					0.9
+				},
+				recoil = {
+					0.35,
+					0.55
+				},
+				mode = {
+					0,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.85,
+				r = 2000,
+				acc = {
+					0.7,
+					0.85
+				},
+				recoil = {
+					0.4,
+					0.7
+				},
+				mode = {
+					0,
+					1,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.7,
+				r = 3000,
+				acc = {
+					0.65,
+					0.75
+				},
+				recoil = {
+					0.7,
+					1.1
+				},
+				mode = {
+					0,
+					1,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = 0.6,
+				r = 6000,
+				acc = {
+					0.25,
+					0.7
+				},
+				recoil = {
+					1.5,
+					2
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}
+	}
+	presets.weapon.deathvox.is_bullpup = presets.weapon.deathvox.is_light_rifle
+	presets.weapon.deathvox.is_light_shotgun = { -- draft values complete.
+		aim_delay = {
+			0,
+			0
+		},
+		focus_delay = 5,
+		focus_dis = 200,
+		spread = 15,
+		miss_dis = 20,
+		RELOAD_SPEED = 1.4,
+		melee_speed = 1,
+		melee_dmg = 20,
+		melee_retry_delay = presets.weapon.expert.is_shotgun_pump.melee_retry_delay,
+		range = {
+			optimal = 3000,
+			far = 5000,
+			close = 2000
+		},
+		FALLOFF = {
+			{
+				dmg_mul = 1,
+				r = 100,
+				acc = {
+					0.95,
+					0.95
+				},
+				recoil = {
+					1,
+					1.1
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = 1,
+				r = 500,
+				acc = {
+					0.7,
+					0.95
+				},
+				recoil = {
+					1,
+					1.25
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .7,
+				r = 1000,
+				acc = {
+					0.5,
+					0.8
+				},
+				recoil = {
+					1,
+					1.5
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .4,
+				r = 2000,
+				acc = {
+					0.15,
+					0.45
+				},
+				recoil = {
+					1.25,
+					1.5
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .2,
+				r = 3000,
+				acc = {
+					0.1,
+					0.25
+				},
+				recoil = {
+					1.5,
+					1.75
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}
+	}
+	presets.weapon.deathvox.is_heavy_shotgun = { -- draft values complete.
+		aim_delay = {
+			0,
+			0
+		},
+		focus_delay = 5,
+		focus_dis = 200,
+		spread = 15,
+		miss_dis = 20,
+		RELOAD_SPEED = 2.77,
+		melee_speed = 1,
+		melee_dmg = 20,
+		melee_retry_delay = presets.weapon.expert.is_shotgun_pump.melee_retry_delay,
+		range = {
+			optimal = 3000,
+			far = 5000,
+			close = 2000
+		},
+		FALLOFF = {
+			{
+				dmg_mul = 1,
+				r = 100,
+				acc = {
+					0.95,
+					0.95
+				},
+				recoil = {
+					1,
+					1.1
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = 1,
+				r = 500,
+				acc = {
+					0.7,
+					0.95
+				},
+				recoil = {
+					1,
+					1.25
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = 7,
+				r = 1000,
+				acc = {
+					0.5,
+					0.8
+				},
+				recoil = {
+					1,
+					1.5
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .4,
+				r = 2000,
+				acc = {
+					0.45,
+					0.75
+				},
+				recoil = {
+					1.25,
+					1.5
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				dmg_mul = .2,
+				r = 3000,
+				acc = {
+					0.3,
+					0.5
+				},
+				recoil = {
+					1.5,
+					1.75
+				},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}
+	}
 	presets.weapon.deathvox.is_smg = {
 		aim_delay = {
 			0,
@@ -8821,120 +9025,118 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathvox.is_revolver = {
-		aim_delay = {
-			0.1,
-			0.1
+	presets.weapon.deathvox.is_revolver.aim_delay = {
+		0,
+		0
+	}
+	presets.weapon.deathvox.is_revolver.focus_delay = 10 -- leaving intact
+	presets.weapon.deathvox.is_revolver.focus_dis = 200
+	presets.weapon.deathvox.is_revolver.spread = 20
+	presets.weapon.deathvox.is_revolver.miss_dis = 50
+	presets.weapon.deathvox.is_revolver.RELOAD_SPEED = 0.9
+	presets.weapon.deathvox.is_revolver.melee_speed = 1
+	presets.weapon.deathvox.is_revolver.melee_dmg = 8
+	presets.weapon.deathvox.is_revolver.melee_retry_delay = {
+		1,
+		2
+	}
+	presets.weapon.deathvox.is_revolver.range = {
+		optimal = 2000,
+		far = 5000,
+		close = 1000
+	}
+	presets.weapon.deathvox.is_revolver.FALLOFF = { 
+		{
+			dmg_mul = 1,
+			r = 100,
+			acc = {
+				0.7, --note to self 2 values show acc increase with focus delay
+				0.9
+			},
+			recoil = {
+				0.8,
+				1
+			},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
 		},
-		focus_delay = 10,
-		focus_dis = 200,
-		spread = 20,
-		miss_dis = 50,
-		RELOAD_SPEED = 0.9,
-		melee_speed = 1,
-		melee_dmg = 8,
-		melee_retry_delay = {
-			1,
-			2
+		{
+			dmg_mul = 1,
+			r = 500,
+			acc = {
+				0.6,
+				0.85
+			},
+			recoil = {
+				0.8,
+				1.1
+			},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
 		},
-		range = {
-			optimal = 2000,
-			far = 5000,
-			close = 1000
+		{
+			dmg_mul = 0.65,
+			r = 1000,
+			acc = {
+				0.5,
+				0.75
+			},
+			recoil = {
+				0.8,
+				1.1
+			},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
 		},
-		FALLOFF = {
-			{
-				dmg_mul = 5,
-				r = 100,
-				acc = {
-					0.6,
-					0.9
-				},
-				recoil = {
-					0.8,
-					1
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
+		{
+			dmg_mul = 0.5,
+			r = 2000,
+			acc = {
+				0.5,
+				0.65
 			},
-			{
-				dmg_mul = 4,
-				r = 500,
-				acc = {
-					0.5,
-					0.85
-				},
-				recoil = {
-					0.8,
-					1.1
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
+			recoil = {
+				1,
+				1.3
 			},
-			{
-				dmg_mul = 2.5,
-				r = 1000,
-				acc = {
-					0.375,
-					0.55
-				},
-				recoil = {
-					0.8,
-					1.1
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			dmg_mul = 0.37,
+			r = 3000,
+			acc = {
+				0.1,
+				0.35
 			},
-			{
-				dmg_mul = 2,
-				r = 2000,
-				acc = {
-					0.25,
-					0.45
-				},
-				recoil = {
-					1,
-					1.3
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
+			recoil = {
+				1,
+				1.5
 			},
-			{
-				dmg_mul = 1.5,
-				r = 3000,
-				acc = {
-					0.01,
-					0.35
-				},
-				recoil = {
-					1,
-					1.5
-				},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
+			mode = {
+				1,
+				0,
+				0,
+				0
 			}
 		}
-	}
+	}	
 	presets.weapon.deathvox.mini = {
 		aim_delay = {
 			0.1,
@@ -9170,6 +9372,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.deathvox.mac11 = deep_clone(presets.weapon.deathvox.is_pistol)
 	presets.weapon.deathvox.rifle = deep_clone(presets.weapon.deathvox.is_rifle)
 	presets.weapon.deathvox.is_sniper = deep_clone(presets.weapon.deathvox.rifle)
+	presets.weapon.deathvox.akimbo_pistol = deep_clone(presets.weapon.deathvox.is_pistol)
 	
 	presets.weapon.sniper = deep_clone(presets.weapon.normal)
 	presets.weapon.sniper.is_rifle.aim_delay = {0.1, 0.1}

@@ -1093,7 +1093,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.deathvox_light_ar.sounds.prefix = "aug_npc" -- dont worry about this
 		self.deathvox_light_ar.use_data.selection_index = 2 -- dont worry about this
-		self.deathvox_light_ar.DAMAGE = 1.2 -- How much damage you want to deal per bullet before multipliers and falloff, multiplied by 10 like health is
+		self.deathvox_light_ar.DAMAGE = 6 -- Base damage 60.
 		self.deathvox_light_ar.muzzleflash = "effects/payday2/particles/weapons/556_auto" -- dont worry about this
 		self.deathvox_light_ar.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556" -- dont worry about this
 		self.deathvox_light_ar.CLIP_AMMO_MAX = 30 -- How many shots before they gotta reload
@@ -1105,11 +1105,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"rifle"
 		}
 		self.deathvox_light_ar.alert_size = 5000 -- how far away in AlmirUnits(tm) it alerts people
-		self.deathvox_light_ar.suppression = 1 -- domt worry about this
+		self.deathvox_light_ar.suppression = 1 -- dont worry about this
 		
 		self.deathvox_heavy_ar.sounds.prefix = "fn_fal_npc"
 		self.deathvox_heavy_ar.use_data.selection_index = 2
-		self.deathvox_heavy_ar.DAMAGE = 1.29
+		self.deathvox_heavy_ar.DAMAGE = 7.5 -- base damage 75.
 		self.deathvox_heavy_ar.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.deathvox_heavy_ar.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.deathvox_heavy_ar.CLIP_AMMO_MAX = 20
@@ -1122,7 +1122,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.deathvox_guard_pistol.sounds.prefix = "packrat_npc"
 		self.deathvox_guard_pistol.use_data.selection_index = 1
-		self.deathvox_guard_pistol.DAMAGE = 1
+		self.deathvox_guard_pistol.DAMAGE = 4 -- base damage 40
 		self.deathvox_guard_pistol.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_guard_pistol.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_guard_pistol.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1135,7 +1135,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.deathvox_medic_pistol.sounds.prefix = "mateba_npc"
 		self.deathvox_medic_pistol.use_data.selection_index = 1
-		self.deathvox_medic_pistol.DAMAGE = 4
+		self.deathvox_medic_pistol.DAMAGE = 6 -- base 60 damage.
 		self.deathvox_medic_pistol.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_medic_pistol.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_medic_pistol.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
@@ -1148,7 +1148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.deathvox_shotgun_light.sounds.prefix = "remington_npc"
 		self.deathvox_shotgun_light.use_data.selection_index = 2
-		self.deathvox_shotgun_light.DAMAGE = 5
+		self.deathvox_shotgun_light.DAMAGE = 7.5 -- Base damage 75.
 		self.deathvox_shotgun_light.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.deathvox_shotgun_light.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.deathvox_shotgun_light.CLIP_AMMO_MAX = 6
@@ -1160,7 +1160,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.deathvox_shotgun_heavy.sounds.prefix = "benelli_m4_npc"
 		self.deathvox_shotgun_heavy.use_data.selection_index = 2
-		self.deathvox_shotgun_heavy.DAMAGE = 5
+		self.deathvox_shotgun_heavy.DAMAGE = 10 -- Base damage 100
 		self.deathvox_shotgun_heavy.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.deathvox_shotgun_heavy.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.deathvox_shotgun_heavy.auto.fire_rate = 0.14
@@ -1175,7 +1175,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.deathvox_sniper.sounds.prefix = "lakner_npc"
 		self.deathvox_sniper.use_data.selection_index = 2
-		self.deathvox_sniper.DAMAGE = 2
+		self.deathvox_sniper.DAMAGE = 24 -- base 240, drop with distance, check other vals.
 		self.deathvox_sniper.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_sniper.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_sniper.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1193,7 +1193,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 		self.deathvox_medicdozer_smg.sounds.prefix = "polymer_npc"
 		self.deathvox_medicdozer_smg.use_data.selection_index = 1
-		self.deathvox_medicdozer_smg.DAMAGE = 2
+		self.deathvox_medicdozer_smg.DAMAGE = 3.6 -- Vanilla base is 20, adjusting up to 36.
 		self.deathvox_medicdozer_smg.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_medicdozer_smg.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_medicdozer_smg.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1207,7 +1207,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"rifle"
 		}
 		self.deathvox_medicdozer_smg.alert_size = 5000
-		self.deathvox_medicdozer_smg.suppression = 1
+		self.deathvox_medicdozer_smg.suppression = 1	
 	end
 
 	function WeaponTweakData:_init_data_akm_crew()
@@ -7284,26 +7284,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			auto = {}
 		}
 		self.deathvox_shotgun_heavy = {
-			usage = "is_shotgun_mag",
+			usage = "is_heavy_shotgun",
 			anim_usage = "is_shotgun_mag",
 			sounds = {},
 			use_data = {}
 		}
 		self.deathvox_shotgun_light = {
-			usage = "is_shotgun_pump",
+			usage = "is_light_shotgun",
 			anim_usage = "is_shotgun_pump",
 			sounds = {},
 			use_data = {},
 			auto = {}
 		}
 		self.deathvox_heavy_ar = {
-			usage = "is_rifle",
+			usage = "is_heavy_rifle",
 			anim_usage = "is_rifle",
 			sounds = {},
 			use_data = {}
 		}
 		self.deathvox_light_ar = {
-			usage = "is_rifle",
+			usage = "is_light_rifle",
 			anim_usage = "is_bullpup",
 			sounds = {},
 			use_data = {}

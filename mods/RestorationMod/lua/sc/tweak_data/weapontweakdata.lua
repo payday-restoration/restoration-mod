@@ -2624,12 +2624,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = true
 			self[wep_id].has_description = false
 		end
-		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla'}
+		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla','x_shrew'}
 		for i, wep_id in ipairs(tact_akimbo_pistol) do
 			self[wep_id].tactical_akimbo = true
 			self[wep_id].recategorize = "akimbo"
@@ -6539,7 +6539,65 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.erma.panic_suppression_chance = 0.1
-		self.basset.damage_near = 600
+		self.shrew.fire_mode_data.fire_rate = 0.075
+		self.shrew.single.fire_rate = 0.075
+		self.shrew.CLIP_AMMO_MAX = 6
+		self.shrew.AMMO_MAX = 80
+		self.shrew.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.shrew.spread.standing = 3.5
+		self.shrew.spread.crouching = 2.5
+		self.shrew.spread.steelsight = 1
+		self.shrew.spread.moving_standing = 4
+		self.shrew.spread.moving_crouching = 3
+		self.shrew.spread.moving_steelsight = 2
+		self.shrew.kick.standing = self.glock_17.kick.standing
+		self.shrew.kick.crouching = self.glock_17.kick.standing
+		self.shrew.kick.steelsight = self.glock_17.kick.standing
+		self.shrew.stats = {
+			damage = 43,
+			spread = 17,
+			recoil = 21,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.shrew.panic_suppression_chance = 0.0		
+		self.x_shrew.fire_mode_data.fire_rate = 0.075
+		self.x_shrew.single.fire_rate = 0.075
+		self.x_shrew.CLIP_AMMO_MAX = 12
+		self.x_shrew.AMMO_MAX = 120
+		self.x_shrew.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.x_shrew.spread.standing = 3.5
+		self.x_shrew.spread.crouching = 2.5
+		self.x_shrew.spread.steelsight = 1
+		self.x_shrew.spread.moving_standing = 4
+		self.x_shrew.spread.moving_crouching = 3
+		self.x_shrew.spread.moving_steelsight = 2
+		self.x_shrew.kick.standing = self.glock_17.kick.standing
+		self.x_shrew.kick.crouching = self.glock_17.kick.standing
+		self.x_shrew.kick.steelsight = self.glock_17.kick.standing
+		self.x_shrew.stats = {
+			damage = 43,
+			spread = 17,
+			recoil = 21,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.x_shrew.panic_suppression_chance = 0.0				
+		self.basset.damage_near = 600	
 		self.basset.damage_far = 1200
 		self.basset.rays = 9
 		self.basset.CLIP_AMMO_MAX = 6

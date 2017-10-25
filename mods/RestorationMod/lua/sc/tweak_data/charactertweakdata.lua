@@ -2336,6 +2336,32 @@ function CharacterTweakData:_init_max(presets)
 	}
 end
 
+function CharacterTweakData:_init_myh(presets)
+	self.myh = {}
+	self.myh.always_face_enemy = true
+	self.myh.no_run_start = true
+	self.myh.no_run_stop = true
+	self.myh.flammable = false
+	self.myh.damage = presets.gang_member_damage
+	self.myh.weapon = deep_clone(presets.weapon.gang_member)
+	self.myh.weapon.weapons_of_choice = {
+		primary = "wpn_fps_ass_74_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+	}
+	self.myh.detection = presets.detection.gang_member
+	self.myh.move_speed = presets.move_speed.gang_member
+	self.myh.crouch_move = false
+	self.myh.speech_prefix = "rb2"
+	self.myh.weapon_voice = "1"
+	self.myh.access = "teamAI1"
+	self.myh.dodge = presets.dodge.athletic
+	self.myh.arrest = {
+		timeout = 240,
+		aggression_timeout = 6,
+		arrest_timeout = 240
+	}
+end
+
 function CharacterTweakData:_init_deathvox(presets)
 	self.deathvox_guard = deep_clone(self.security)
 	self.deathvox_guard.detection = presets.detection.guard -- normal, guard, sniper, gang_member, civilian, blind
@@ -8186,7 +8212,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.deathwish.rifle = deep_clone(presets.weapon.deathwish.is_rifle)
 	presets.weapon.deathwish.is_sniper = deep_clone(presets.weapon.deathwish.rifle)
 
-	presets.weapon.deathvox = {is_pistol = {}}
+	presets.weapon.deathvox = deep_clone(presets.weapon.deathwish)
 	presets.weapon.deathvox.is_pistol = { -- draft values complete.
 		aim_delay = {
 			0,

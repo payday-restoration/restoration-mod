@@ -148,6 +148,11 @@ function PlayerDamage:init(unit)
 		self:set_mission_damage_blockers("damage_fall_disabled", true)
 		self:set_mission_damage_blockers("invulnerable", true)
 	end
+	
+	self._delayed_damage = {
+		epsilon = 0.001,
+		chunks = {}
+	}	
 end
 PlayerDamage._UPPERS_COOLDOWN = 120
 local player_damage_melee = PlayerDamage.damage_melee
@@ -198,13 +203,9 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	attack_data.damage = attack_data.damage * dmg_mul
 	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
 	attack_data.damage = managers.crime_spree:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-	local damage_absorption = pm:get_best_cocaine_damage_absorption()
+	local damage_absorption = pm:damage_absorption()
 	if damage_absorption > 0 then
 		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
-	end
-	local hostage_absorption = pm:damage_absorption()
-	if hostage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - hostage_absorption)
 	end
 	if managers.enemy:is_enemy(attack_data.attacker_unit) then
 		local dicks = tweak_data.character[attack_data.attacker_unit:base()._tweak_table]
@@ -284,6 +285,9 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	managers.rumble:play("damage_bullet")
 	self:_hit_direction(attack_data.attacker_unit:position())
 	pm:check_damage_carry(attack_data)
+	
+	attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
+	
 	if self._bleed_out then
 		self:_bleed_out_damage(attack_data)
 		return
@@ -363,11 +367,13 @@ function PlayerDamage:revive(helped_self)
 	self._downed_timer = nil
 	self._downed_start_time = nil
 	if not arrested then
-			if managers.player:has_category_upgrade("player", "health_revive_max") then		
+		if managers.player:has_category_upgrade("player", "health_revive_max") then		
 			self:set_health(self:_max_health() * 1)
 		else
 			self:set_health(self:_max_health() * tweak_data.player.damage.REVIVE_HEALTH_STEPS[self._revive_health_i] * (self._revive_health_multiplier or 1))
-		end		self:set_armor(self:_total_armor())
+		end		
+		
+		self:set_armor(self:_max_armor())
 		self._revive_health_i = math.min(#tweak_data.player.damage.REVIVE_HEALTH_STEPS, self._revive_health_i + 1)
 		--self._down_time = math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time - tweak_data.player.damage.DOWNED_TIME_DEC)
 		self._revive_miss = 2

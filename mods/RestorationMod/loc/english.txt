@@ -57,6 +57,8 @@
 	"RestorationModSCOptionsButtonDescID" : "SC's Mod Options",
 	"RestorationModSCTitleID" : "Complete Overhaul",
 	"RestorationModSCDescID" : "Enable or disable Restoration's complete game overhaul.",
+	"RestorationModHolidayTitleID" : "Holiday Effects",
+	"RestorationModHolidayDescID" : "Enable or disable Holiday effects for the overhaul.",
 	"RestorationModNotifyTitleID" : "Feature Notification",
 	"RestorationModNotifyDescID" : "Enable or disable the notification for this feature.",
 	"RestorationModSCWeaponTitleID" : "Weapon Overhaul",

@@ -6,20 +6,12 @@ function StatisticsManager:killed(data)
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local kill_limit = 8
-	if difficulty_index <= 2 then
-		kill_limit = 999
-	elseif difficulty_index == 3 then
-		kill_limit = 999
-	elseif difficulty_index == 4 then
-		kill_limit = 999
-	elseif difficulty_index == 5 then
-		kill_limit = 999
-	elseif difficulty_index == 6 then
+	if difficulty_index <= 6 then
 		kill_limit = 999
 	elseif difficulty_index == 7 then
-		kill_limit = 0
+		kill_limit = 4
 	else
-		kill_limit = 0
+		kill_limit = 3
 	end
 	if Network:is_server() and managers.groupai:state():whisper_mode() then
 		local civ_deaths = self:session_total_civilian_kills()
@@ -167,6 +159,13 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}
+	self._defaults.killed.hrt = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
 	self._defaults.killed.fbi_female = {
 			count = 0,
 			head_shots = 0,

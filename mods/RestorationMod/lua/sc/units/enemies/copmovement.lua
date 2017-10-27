@@ -44,6 +44,7 @@ function CopMovement:init(unit)
 	old_init(self, unit)
 	CopMovement._action_variants.cop_civ = security_variant
 	CopMovement._action_variants.fbi_female = security_variant
+	CopMovement._action_variants.hrt = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
@@ -234,40 +235,9 @@ function CopMovement:_upd_actions(t)
 		self._need_upd = true
 	end
 	if self._tweak_data.do_omnia then
-		self:do_omnia(self)
-	end
-	if self._tweak_data.dv_medic_heal then
-		self:do_dv_medic_heal(self)
-	end
-end
-
-function CopMovement:do_dv_medic_heal(self)
-	local t = TimerManager:main():time()
-	if self._omnia_cooldown > t then
-		return
-	else
-		self._omnia_cooldown = t + 0.2
-	end
-	if self and self._unit then
-		if not self._unit:character_damage():dead() then
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
-			if enemies then
-				for _,enemy in ipairs(enemies) do
-					if enemy ~= self._unit then
-						RestorationCore.log_shit("SC: FOUND UNIT")
-						local health_left = enemy:character_damage()._health
-						local max_health = enemy:character_damage()._HEALTH_INIT
-						if health_left < max_health then
-							local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-							RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
-							enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
-						end
-					end
-				end
-			end
+		if not self._unit:character_damage():dead() then			
+			self:do_omnia(self)		
 		end
-	else
-		RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
 	end
 end
 
@@ -287,7 +257,8 @@ function CopMovement:do_omnia(self)
 				"cop_female",
 				"gensec",
 				"fbi",
-				"swat"
+				"swat",
+				"hrt"
 			}
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
 			if enemies then

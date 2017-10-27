@@ -1093,7 +1093,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.deathvox_light_ar.sounds.prefix = "aug_npc" -- dont worry about this
 		self.deathvox_light_ar.use_data.selection_index = 2 -- dont worry about this
-		self.deathvox_light_ar.DAMAGE = 1.2 -- How much damage you want to deal per bullet before multipliers and falloff, multiplied by 10 like health is
+		self.deathvox_light_ar.DAMAGE = 6 -- Base damage 60.
 		self.deathvox_light_ar.muzzleflash = "effects/payday2/particles/weapons/556_auto" -- dont worry about this
 		self.deathvox_light_ar.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556" -- dont worry about this
 		self.deathvox_light_ar.CLIP_AMMO_MAX = 30 -- How many shots before they gotta reload
@@ -1105,11 +1105,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"rifle"
 		}
 		self.deathvox_light_ar.alert_size = 5000 -- how far away in AlmirUnits(tm) it alerts people
-		self.deathvox_light_ar.suppression = 1 -- domt worry about this
+		self.deathvox_light_ar.suppression = 1 -- dont worry about this
 		
 		self.deathvox_heavy_ar.sounds.prefix = "fn_fal_npc"
 		self.deathvox_heavy_ar.use_data.selection_index = 2
-		self.deathvox_heavy_ar.DAMAGE = 1.29
+		self.deathvox_heavy_ar.DAMAGE = 7.5 -- base damage 75.
 		self.deathvox_heavy_ar.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.deathvox_heavy_ar.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.deathvox_heavy_ar.CLIP_AMMO_MAX = 20
@@ -1122,7 +1122,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.deathvox_guard_pistol.sounds.prefix = "packrat_npc"
 		self.deathvox_guard_pistol.use_data.selection_index = 1
-		self.deathvox_guard_pistol.DAMAGE = 1
+		self.deathvox_guard_pistol.DAMAGE = 4 -- base damage 40
 		self.deathvox_guard_pistol.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_guard_pistol.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_guard_pistol.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1135,7 +1135,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.deathvox_medic_pistol.sounds.prefix = "mateba_npc"
 		self.deathvox_medic_pistol.use_data.selection_index = 1
-		self.deathvox_medic_pistol.DAMAGE = 4
+		self.deathvox_medic_pistol.DAMAGE = 6 -- base 60 damage.
 		self.deathvox_medic_pistol.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_medic_pistol.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_medic_pistol.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
@@ -1148,7 +1148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.deathvox_shotgun_light.sounds.prefix = "remington_npc"
 		self.deathvox_shotgun_light.use_data.selection_index = 2
-		self.deathvox_shotgun_light.DAMAGE = 5
+		self.deathvox_shotgun_light.DAMAGE = 7.5 -- Base damage 75.
 		self.deathvox_shotgun_light.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.deathvox_shotgun_light.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.deathvox_shotgun_light.CLIP_AMMO_MAX = 6
@@ -1160,7 +1160,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.deathvox_shotgun_heavy.sounds.prefix = "benelli_m4_npc"
 		self.deathvox_shotgun_heavy.use_data.selection_index = 2
-		self.deathvox_shotgun_heavy.DAMAGE = 5
+		self.deathvox_shotgun_heavy.DAMAGE = 10 -- Base damage 100
 		self.deathvox_shotgun_heavy.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.deathvox_shotgun_heavy.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.deathvox_shotgun_heavy.auto.fire_rate = 0.14
@@ -1175,7 +1175,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.deathvox_sniper.sounds.prefix = "lakner_npc"
 		self.deathvox_sniper.use_data.selection_index = 2
-		self.deathvox_sniper.DAMAGE = 2
+		self.deathvox_sniper.DAMAGE = 24 -- base 240, drop with distance, check other vals.
 		self.deathvox_sniper.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_sniper.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_sniper.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1193,7 +1193,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 		self.deathvox_medicdozer_smg.sounds.prefix = "polymer_npc"
 		self.deathvox_medicdozer_smg.use_data.selection_index = 1
-		self.deathvox_medicdozer_smg.DAMAGE = 2
+		self.deathvox_medicdozer_smg.DAMAGE = 3.6 -- Vanilla base is 20, adjusting up to 36.
 		self.deathvox_medicdozer_smg.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.deathvox_medicdozer_smg.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.deathvox_medicdozer_smg.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -1207,7 +1207,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"rifle"
 		}
 		self.deathvox_medicdozer_smg.alert_size = 5000
-		self.deathvox_medicdozer_smg.suppression = 1
+		self.deathvox_medicdozer_smg.suppression = 1	
 	end
 
 	function WeaponTweakData:_init_data_akm_crew()
@@ -2624,12 +2624,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = true
 			self[wep_id].has_description = false
 		end
-		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla'}
+		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla','x_shrew'}
 		for i, wep_id in ipairs(tact_akimbo_pistol) do
 			self[wep_id].tactical_akimbo = true
 			self[wep_id].recategorize = "akimbo"
@@ -3033,7 +3033,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.saiga.spread.moving_standing = 4
 		self.saiga.spread.moving_crouching = 3
 		self.saiga.spread.moving_steelsight = 2
-		self.saiga.CLIP_AMMO_MAX = 10
+		self.saiga.CLIP_AMMO_MAX = 6
 		self.saiga.AMMO_MAX = 120
 		self.saiga.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.saiga.fire_mode_data.fire_rate = 0.1
@@ -6539,7 +6539,133 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.erma.panic_suppression_chance = 0.1
-		
+		self.shrew.fire_mode_data.fire_rate = 0.075
+		self.shrew.single.fire_rate = 0.075
+		self.shrew.CLIP_AMMO_MAX = 6
+		self.shrew.AMMO_MAX = 80
+		self.shrew.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.shrew.spread.standing = 3.5
+		self.shrew.spread.crouching = 2.5
+		self.shrew.spread.steelsight = 1
+		self.shrew.spread.moving_standing = 4
+		self.shrew.spread.moving_crouching = 3
+		self.shrew.spread.moving_steelsight = 2
+		self.shrew.kick.standing = self.glock_17.kick.standing
+		self.shrew.kick.crouching = self.glock_17.kick.standing
+		self.shrew.kick.steelsight = self.glock_17.kick.standing
+		self.shrew.stats = {
+			damage = 43,
+			spread = 17,
+			recoil = 21,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.shrew.panic_suppression_chance = 0.0		
+		self.x_shrew.fire_mode_data.fire_rate = 0.075
+		self.x_shrew.single.fire_rate = 0.075
+		self.x_shrew.CLIP_AMMO_MAX = 12
+		self.x_shrew.AMMO_MAX = 120
+		self.x_shrew.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.x_shrew.spread.standing = 3.5
+		self.x_shrew.spread.crouching = 2.5
+		self.x_shrew.spread.steelsight = 1
+		self.x_shrew.spread.moving_standing = 4
+		self.x_shrew.spread.moving_crouching = 3
+		self.x_shrew.spread.moving_steelsight = 2
+		self.x_shrew.kick.standing = self.glock_17.kick.standing
+		self.x_shrew.kick.crouching = self.glock_17.kick.standing
+		self.x_shrew.kick.steelsight = self.glock_17.kick.standing
+		self.x_shrew.stats = {
+			damage = 43,
+			spread = 17,
+			recoil = 21,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.x_shrew.panic_suppression_chance = 0.0				
+		self.basset.damage_near = 600	
+		self.basset.damage_far = 1200
+		self.basset.rays = 9
+		self.basset.CLIP_AMMO_MAX = 6
+		self.basset.AMMO_MAX = 80
+		self.basset.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.basset.fire_mode_data = {fire_rate = 0.1}
+		self.basset.auto = {fire_rate = 0.1}
+		self.basset.spread = {
+			standing = 3.5,
+			crouching = 2.5,
+			steelsight = 1,
+			moving_standing = 4,
+			moving_crouching = 3,
+			moving_steelsight = 2
+		}		
+		self.basset.kick.standing = self.new_m4.kick.standing
+		self.basset.kick.crouching = self.new_m4.kick.standing
+		self.basset.kick.steelsight = self.new_m4.kick.standing
+		self.basset.panic_suppression_chance = 0.0
+		self.basset.stats = {
+			zoom = 3,
+			total_ammo_mod = 100,
+			damage = 39,
+			alert_size = 6,
+			spread = 6,
+			spread_moving = 8,
+			recoil = 20,
+			value = 1,
+			extra_ammo = 6,
+			reload = 11,
+			suppression = 6,
+			concealment = 21
+		}		
+		self.x_basset.tactical_akimbo = true
+		self.x_basset.damage_near = 600
+		self.x_basset.damage_far = 1200
+		self.x_basset.rays = 9
+		self.x_basset.CLIP_AMMO_MAX = 12
+		self.x_basset.AMMO_MAX = 120
+		self.x_basset.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.x_basset.fire_mode_data = {fire_rate = 0.1}
+		self.x_basset.auto = {fire_rate = 0.1}
+		self.x_basset.spread = {
+			standing = 3.5,
+			crouching = 2.5,
+			steelsight = 1,
+			moving_standing = 4,
+			moving_crouching = 3,
+			moving_steelsight = 2
+		}		
+		self.x_basset.kick.standing = self.new_m4.kick.standing
+		self.x_basset.kick.crouching = self.new_m4.kick.standing
+		self.x_basset.kick.steelsight = self.new_m4.kick.standing
+		self.x_basset.panic_suppression_chance = 0.0
+		self.x_basset.stats = {
+			zoom = 3,
+			total_ammo_mod = 100,
+			damage = 39,
+			alert_size = 6,
+			spread = 6,
+			spread_moving = 8,
+			recoil = 20,
+			value = 1,
+			extra_ammo = 6,
+			reload = 11,
+			suppression = 6,
+			concealment = 21
+		}				
 		--Custom weapons below--
 
 		if self.mpx then
@@ -7216,26 +7342,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			auto = {}
 		}
 		self.deathvox_shotgun_heavy = {
-			usage = "is_shotgun_mag",
+			usage = "is_heavy_shotgun",
 			anim_usage = "is_shotgun_mag",
 			sounds = {},
 			use_data = {}
 		}
 		self.deathvox_shotgun_light = {
-			usage = "is_shotgun_pump",
+			usage = "is_light_shotgun",
 			anim_usage = "is_shotgun_pump",
 			sounds = {},
 			use_data = {},
 			auto = {}
 		}
 		self.deathvox_heavy_ar = {
-			usage = "is_rifle",
+			usage = "is_heavy_rifle",
 			anim_usage = "is_rifle",
 			sounds = {},
 			use_data = {}
 		}
 		self.deathvox_light_ar = {
-			usage = "is_rifle",
+			usage = "is_light_rifle",
 			anim_usage = "is_bullpup",
 			sounds = {},
 			use_data = {}

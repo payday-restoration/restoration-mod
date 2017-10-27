@@ -2619,6 +2619,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.grip.stats.charge_time = 1.2
 	self.melee_weapons.grip.stats.range = 140
 	self.melee_weapons.grip.stats.concealment = 29		
+	
+	--For that you get the belt--
+	self.melee_weapons.sap.speed_mult = 1.65
+	self.melee_weapons.sap.stats.min_damage = 0.4
+	self.melee_weapons.sap.stats.max_damage = 0.8
+	self.melee_weapons.sap.stats.min_damage_effect = 5
+	self.melee_weapons.sap.stats.max_damage_effect = 20
+	self.melee_weapons.sap.stats.charge_time = 0.8
+	self.melee_weapons.sap.repeat_expire_t = 0.6
+	self.melee_weapons.sap.stats.range = 125
+	self.melee_weapons.sap.stats.concealment = 30
+	self.melee_weapons.sap.melee_damage_delay = 0.1	
 end	
 
 end

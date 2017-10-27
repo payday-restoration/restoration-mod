@@ -6,7 +6,8 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	local cooldown = tweak_data.medic.cooldown
 
 	cooldown = managers.crime_spree:modify_value("MedicDamage:CooldownTime", cooldown)
-	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" or my_tweak_table == "deathvox_medic" or my_tweak_table == "deathvox_medicdozer" then
 		cooldown = tweak_data.medic.cooldown
 	else
 		cooldown = 0.1
@@ -17,7 +18,7 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	if self._unit:anim_data() and self._unit:anim_data().act then
 		return false
 	end
-	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
+	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" or my_tweak_table == "deathvox_medic" or my_tweak_table == "deathvox_medicdozer" then
 		local tweak_table = unit:base()._tweak_table
 		if table.contains(tweak_data.medic.disabled_units, tweak_table) then
 			return false
@@ -69,6 +70,24 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 	end
 	managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
 	managers.network:session():send_to_peers("sync_medic_heal", self._unit)
+	if difficulty_index == 8 then
+		local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius, managers.slot:get_mask("enemies"))
+		if enemies then
+			RestorationCore.log_shit("SC: DV: Found Enemies to heal")
+			for _,enemy in ipairs(enemies) do
+				if enemy ~= self._unit then
+					RestorationCore.log_shit("SC: DV: Enemy isnt us, tweak table is " .. enemy:base()._tweak_table)
+					if not enemy:character_damage():dead() then
+						RestorationCore.log_shit("Enemy not dead")
+						local health_left = enemy:character_damage()._health
+						local max_health = enemy:character_damage()._HEALTH_INIT 
+						enemy:character_damage():_apply_damage_to_health(((max_health - health_left) * -1))
+						RestorationCore.log_shit("Enemy healed")
+					end
+				end
+			end
+		end
+	end
 	return true
 end
 

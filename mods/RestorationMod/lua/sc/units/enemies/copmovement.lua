@@ -257,7 +257,8 @@ function CopMovement:do_omnia(self)
 				"cop_female",
 				"gensec",
 				"fbi",
-				"swat"
+				"swat",
+				"hrt"
 			}
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
 			if enemies then

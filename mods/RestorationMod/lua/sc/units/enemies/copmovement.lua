@@ -234,7 +234,9 @@ function CopMovement:_upd_actions(t)
 		self._need_upd = true
 	end
 	if self._tweak_data.do_omnia then
-		self:do_omnia(self)
+		if not self._unit:character_damage():dead() then
+			self:do_omnia(self)
+		end
 	end
 end
 

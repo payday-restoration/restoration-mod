@@ -59,6 +59,8 @@
 	"RestorationModSCDescID" : "Enable or disable Restoration's complete game overhaul.",
 	"RestorationModHolidayTitleID" : "Holiday Effects",
 	"RestorationModHolidayDescID" : "Enable or disable Holiday effects for the overhaul.",
+	"RestorationModSaveTitleID" : "[EXPERIMENTAL] Unique Savefile",
+	"RestorationModSaveDescID" : "Unique savefile for the overhaul, is only active if the overhaul is on and this setting is ticked.  RESTART YOUR GAME AFTER CHANGING THIS SETTING AT ALL TIMES.",
 	"RestorationModNotifyTitleID" : "Feature Notification",
 	"RestorationModNotifyDescID" : "Enable or disable the notification for this feature.",
 	"RestorationModSCWeaponTitleID" : "Weapon Overhaul",

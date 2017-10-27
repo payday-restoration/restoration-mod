@@ -111,8 +111,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "CRACKDOWN. OMNIA & D.H.S. HAVE MADE YOU THEIR #1 TARGET.",
-		["menu_difficulty_sm_wish"] = "Crackdown",
+		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+		["menu_difficulty_sm_wish"] = "One Down",
 
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		

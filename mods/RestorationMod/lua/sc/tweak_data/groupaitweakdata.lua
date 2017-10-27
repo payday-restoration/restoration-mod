@@ -257,17 +257,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			elseif difficulty_index == 8 then
 				self.special_unit_spawn_limits = {
-					tank = 3,
-					taser = 4,
-					boom = 2,
+					tank = 4,
+					taser = 5,
+					boom = 3,
 					spooc = 4,
 					shield = 6,
-					medic = 3,
-					ass_sniper = 2,
-					omnia_LPF = 0, --obsolete w/ DV
-					fbi_vet = 1,
-					spring = 0,
-					summers = 0
+					medic = 4,
+					omnia_LPF = 4,
+					fbi_vet = 3,
+					spring = 1,
+					summers = 1
 				}
 			end
 			self.unit_categories = {}
@@ -419,7 +418,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
@@ -564,7 +563,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
@@ -600,7 +599,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.FBI_suit_stealth_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
@@ -4653,7 +4652,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif difficulty_index == 7 then
 				self.smoke_and_flash_grenade_timeout = {14, 15}
 			else
-				self.smoke_and_flash_grenade_timeout = {14, 15}
+				self.smoke_and_flash_grenade_timeout = {13, 14}
 			end
 			self.smoke_grenade_lifetime = 12
 			self.flash_grenade_lifetime = 7.5
@@ -4781,12 +4780,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					30,
 					20,
 					15
-				}
-			elseif difficulty_index == 8 then
-				self.besiege.assault.delay = {
-					45,
-					30,
-					20
 				}
 			else
 				self.besiege.assault.delay = {
@@ -5102,7 +5095,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.25
 					}
 				}
-			elseif difficulty_index <= 7 then
+			else
 				self.besiege.assault.groups = {
 					FBI_swats = {
 						0.2,
@@ -5134,28 +5127,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.45,
 						0.45
 					}
-				}
-			elseif difficulty_index == 8 then
-				self.besiege.assault.groups = {
-					gorgon = { 0.05,0.05,0.05  },
-					atlas = { 0.05,0.05,0.05  },
-					chimera = { 0.05,0.05,0.05  },
-					zeus = { 0.05,0.05,0.05  },
-					artemis = { 0.05,0.05,0.05 },
-					epeius = { 0.05,0.05,0.05  },
-					damocles = { 0.05,0.05,0.05  },
-					caduceus = { 0.05,0.05,0.05  },
-					atropos = { 0.05,0.05,0.05 },
-					aegeas = { 0.05,0.05,0.05 },
-					dv_group_1 = {0.2, 0.2, 0.2},
-					dv_group_2_std = { 0.05,0.05,0.05  },
-					dv_group_2_med = { 0.05,0.05,0.05  },
-					dv_group_3_std = { 0.05,0.05,0.05  },
-					dv_group_3_med = { 0.05,0.05,0.05  },
-					dv_group_4_std = { 0.05,0.05,0.05  },
-					dv_group_4_med = { 0.05,0.05,0.05  },
-					dv_group_5_std = { 0.05,0.05,0.05  },
-					dv_group_5_med = { 0.05,0.05,0.05  }
 				}
 			end
 			self.besiege.assault.groups.single_spooc = {
@@ -5317,7 +5288,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			elseif difficulty_index <= 7 then
+			else
 				self.besiege.reenforce.groups = {
 					CS_defend_a = {
 						0.1,
@@ -5339,18 +5310,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0,
 						1
 					}
-				}
-			elseif difficulty_index == 8 then
-				self.besiege.reenforce.groups = {
-					dv_group_1 = {0.2, 0.2, 0.2},
-					dv_group_2_std = { 0.1,0.1,0.1 },
-					dv_group_2_med = { 0.1,0.1,0.1 },
-					dv_group_3_std = { 0.1,0.1,0.1 },
-					dv_group_3_med = { 0.1,0.1,0.1 },
-					dv_group_4_std = { 0.1,0.1,0.1 },
-					dv_group_4_med = { 0.1,0.1,0.1 },
-					dv_group_5_std = { 0.1,0.1,0.1 },
-					dv_group_5_med = { 0.1,0.1,0.1 }
 				}
 			end
 			self.besiege.recon.interval = {
@@ -5421,7 +5380,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						1
 					}
 				}
-			elseif difficulty_index <= 7 then
+			else
 				self.besiege.recon.groups = {
 					FBI_stealth_a = {
 						0.5,
@@ -5433,14 +5392,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.5,
 						1
 					}
-				}
-			elseif difficulty_index == 8 then
-				self.besiege.recon.groups = {
-					recovery_unit = { 0.2,0.2,0.2 },
-					too_group = { 0.2,0.2,0.2 },
-					styx = { 0.1,0.1,0.1 },
-					recon = { 0.2,0.2,0.2 },
-					lawn_wolfe = { 0.1,0.1,0.1 }
 				}
 			end
 			self.besiege.recon.groups.single_spooc = {

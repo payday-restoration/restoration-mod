@@ -30,35 +30,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
 		}
 	local sm_wish = {
-			["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer",
-			["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer",
-			["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer",
-			["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar",
-			["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot",
-			["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield",
-			["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield",
-			["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield",
-			["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar",
-			["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar",
-			["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot"
-			--[[["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_4/ene_security_4"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_5/ene_security_5"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_6/ene_security_6"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_7/ene_security_7"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard",
-			["units/payday2/characters/ene_security_8/ene_security_8"] = "units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard"]]--
-		}
+			["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2",
+			["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3",
+			["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+			["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+			["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+			["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+			["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+			["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+			["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+			["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+			["units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+			["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870",
+			["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield",
+			["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield",
+			["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield",
+			["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2",
+			["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2",
+			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2",
+			["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+			["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870",
+			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
+		}	
 	local deathwish = {
 			["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/payday2/characters/ene_city_swat_1/ene_city_swat_1",
 			["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/payday2/characters/ene_city_swat_2/ene_city_swat_2",
@@ -71,7 +64,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
 			["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870",
-			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
+			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
+			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
 		}
 	local easy_wish = {
 			["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -86,7 +80,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 			["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 			["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/payday2/characters/ene_shield_1/ene_shield_1",
-			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
+			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
+			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
 		}
 	local fbi_sniper = {
 			["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
@@ -94,7 +89,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local normal_sniper = {
 			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
 		}
-		
+	local all = {
+			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
+		}	
+	
 	function ElementSpawnEnemyDummy:init(...)
 		ElementSpawnEnemyDummy.super.init(self, ...)
 		local ai_type = tweak_data.levels:get_ai_group_type()
@@ -118,6 +116,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					self._values.enemy = easy_wish[self._values.enemy]
 				end
 				self._values.enemy = easy_wish[self._values.enemy] or self._values.enemy
+			else
+				if all[self._values.enemy] then
+					self._values.enemy = all[self._values.enemy]
+				end
+				self._values.enemy = all[self._values.enemy] or self._values.enemy			
 			end
 		end
 
@@ -145,7 +148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			 end
 			 self._values.enemy = fbi_sniper[self._values.enemy] or self._values.enemy
 		end
-		
+				
 		self._enemy_name = self._values.enemy and Idstring(self._values.enemy) or Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")
 		self._values.enemy = nil
 		self._units = {}

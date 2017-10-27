@@ -2620,7 +2620,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.grip.stats.range = 140
 	self.melee_weapons.grip.stats.concealment = 29		
 	
-	--Money money money--
+	--For that you get the belt--
 	self.melee_weapons.sap.speed_mult = 1.65
 	self.melee_weapons.sap.stats.min_damage = 0.4
 	self.melee_weapons.sap.stats.max_damage = 0.8

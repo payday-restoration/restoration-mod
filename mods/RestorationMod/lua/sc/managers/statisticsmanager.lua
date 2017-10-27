@@ -159,6 +159,13 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}
+	self._defaults.killed.hrt = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
 	self._defaults.killed.fbi_female = {
 			count = 0,
 			head_shots = 0,

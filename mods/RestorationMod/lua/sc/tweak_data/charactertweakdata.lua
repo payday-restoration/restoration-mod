@@ -436,6 +436,12 @@ function CharacterTweakData:_init_swat(presets)
 		self.swat.steal_loot = true
 	end
 	table.insert(self._enemy_list, "swat")
+	
+	self.hrt = deep_clone(self.swat)
+	self.hrt.speech_prefix_p1 = self._prefix_data_p1.swat()
+	self.hrt.speech_prefix_p2 = "n"
+	self.hrt.speech_prefix_count = 4
+	table.insert(self._enemy_list, "hrt")	
 end
 
 function CharacterTweakData:_init_heavy_swat(presets)
@@ -476,7 +482,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000
 	self.heavy_swat_sniper.weapon = presets.weapon.sniper
 	self.heavy_swat_sniper.HEALTH_INIT = 13
-	self.heavy_swat_sniper.headshot_dmg_mul = 1.9
+	self.heavy_swat_sniper.headshot_dmg_mul = 2.6
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
@@ -499,7 +505,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.speech_prefix_p2 = self._prefix_data_p2.swat()
 	self.heavy_swat_sniper.speech_prefix_count = 4
 	self.heavy_swat_sniper.access = "swat"
-	self.heavy_swat_sniper.dodge = presets.dodge.elite
+	self.heavy_swat_sniper.dodge = presets.dodge.athletic_overkill
 	self.heavy_swat_sniper.chatter = presets.enemy_chatter.swat
 	self.heavy_swat_sniper.melee_weapon = nil
 	self.heavy_swat_sniper.melee_weapon_dmg_multiplier = 2.5
@@ -11573,12 +11579,12 @@ function CharacterTweakData:_set_overkill_290()
 	else
 		self.city_swat.no_arrest = false
 	end
-	self:_multiply_all_speeds(1.05, 1.1)
-	self.presets.gang_member_damage.HEALTH_INIT = 175
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-	self.old_hoxton_mission.HEALTH_INIT = 175
-	self.spa_vip.HEALTH_INIT = 175
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
+	self:_multiply_all_speeds(1.15, 1.2)
+	self.presets.gang_member_damage.HEALTH_INIT = 200
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.old_hoxton_mission.HEALTH_INIT = 200
+	self.spa_vip.HEALTH_INIT = 200
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11590,26 +11596,25 @@ end
 
 function CharacterTweakData:_set_sm_wish()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(2, 0.915)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(2, 0.915)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self.security = deep_clone(self.deathvox_guard) -- fucking broke piece of shit movement stuff
-	self:_set_characters_weapon_preset("deathvox")
-	self.deathvox_sniper_assault.weapon = deep_clone(self.presets.weapon.sniper_expert)
-	self:_set_characters_dodge_preset("deathvox")
-	self:_set_characters_melee_preset("3")
+	self:_set_characters_weapon_preset("deathwish")
+	self:_set_characters_dodge_preset("deathwish")
+	self:_set_characters_melee_preset("3.125")
 	self:_set_specials_weapon_preset("expert")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self:_set_specials_melee_preset("2.5")
-	self.deathvox_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
+	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true
@@ -11618,12 +11623,12 @@ function CharacterTweakData:_set_sm_wish()
 	else
 		self.city_swat.no_arrest = false
 	end
-	self:_multiply_all_speeds(1, 1)
-	self.presets.gang_member_damage.HEALTH_INIT = 175
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-	self.old_hoxton_mission.HEALTH_INIT = 175
-	self.spa_vip.HEALTH_INIT = 175
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
+	self:_multiply_all_speeds(1.15, 1.2)
+	self.presets.gang_member_damage.HEALTH_INIT = 200
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.old_hoxton_mission.HEALTH_INIT = 200
+	self.spa_vip.HEALTH_INIT = 200
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11662,6 +11667,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	self.city_swat_titan.HEALTH_INIT = self.city_swat_titan.HEALTH_INIT * hp_mul
 	self.city_swat_titan_assault.HEALTH_INIT = self.city_swat_titan_assault.HEALTH_INIT * hp_mul
 	self.swat.HEALTH_INIT = self.swat.HEALTH_INIT * hp_mul
+	self.hrt.HEALTH_INIT = self.hrt.HEALTH_INIT * hp_mul
 	self.heavy_swat.HEALTH_INIT = self.heavy_swat.HEALTH_INIT * hp_mul
 	self.heavy_swat_sniper.HEALTH_INIT = self.heavy_swat_sniper.HEALTH_INIT * hp_mul
 	self.fbi_heavy_swat.HEALTH_INIT = self.fbi_heavy_swat.HEALTH_INIT * hp_mul
@@ -11759,6 +11765,9 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	if self.swat.headshot_dmg_mul then
 		self.swat.headshot_dmg_mul = self.swat.headshot_dmg_mul * hs_mul
 	end
+	if self.hrt.headshot_dmg_mul then
+		self.hrt.headshot_dmg_mul = self.hrt.headshot_dmg_mul * hs_mul
+	end	
 	if self.heavy_swat.headshot_dmg_mul then
 		self.heavy_swat.headshot_dmg_mul = self.heavy_swat.headshot_dmg_mul * hs_mul
 	end
@@ -11938,6 +11947,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 		"fbi_vet",
 		"medic",
 		"swat",
+		"hrt",
 		"heavy_swat",
 		"heavy_swat_sniper",
 		"fbi_swat",
@@ -12016,6 +12026,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	self.drug_lord_boss.SPEED_RUN = self.drug_lord_boss.SPEED_RUN * run_mul
 	self.drug_lord_boss_stealth.SPEED_RUN = self.drug_lord_boss_stealth.SPEED_RUN * run_mul
 	self.swat.SPEED_RUN = self.swat.SPEED_RUN * run_mul
+	self.hrt.SPEED_RUN = self.hrt.SPEED_RUN * run_mul
 	self.heavy_swat.SPEED_RUN = self.heavy_swat.SPEED_RUN * run_mul
 	self.heavy_swat_sniper.SPEED_RUN = self.heavy_swat_sniper.SPEED_RUN * run_mul
 	self.fbi_swat.SPEED_RUN = self.fbi_swat.SPEED_RUN * run_mul
@@ -12084,6 +12095,7 @@ function CharacterTweakData:_set_characters_weapon_preset(preset)
 		"fbi",
 		"fbi_female",
 		"swat",
+		"hrt",
 		"gangster",
 		"hector_boss_no_armor",
 		"bolivian",
@@ -12126,6 +12138,7 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 		"bolivian_indoors",
 		"drug_lord_boss_stealth",
 		"swat",
+		"hrt",
 		"deathvox_heavyar",
 		"deathvox_heavyshot",
 		"deathvox_lightar",
@@ -12150,6 +12163,7 @@ function CharacterTweakData:_set_characters_melee_preset(preset)
 		"fbi",
 		"fbi_female",
 		"swat",
+		"hrt",
 		"gangster",
 		"hector_boss_no_armor",
 		"bolivian",
@@ -12747,6 +12761,13 @@ function CharacterTweakData:character_map()
 				"ene_captain",
 				"ene_locke"
 			}			
+		},		
+		dah = {
+			path = "units/pd2_dlc_dah/characters/",
+			list = {
+				"npc_male_cfo",
+				"npc_male_ralph"
+			}
 		},		
 		sharks = {
 			path = "units/pd2_mod_sharks/characters/",

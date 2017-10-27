@@ -44,6 +44,7 @@ function CopMovement:init(unit)
 	old_init(self, unit)
 	CopMovement._action_variants.cop_civ = security_variant
 	CopMovement._action_variants.fbi_female = security_variant
+	CopMovement._action_variants.hrt = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
@@ -234,8 +235,8 @@ function CopMovement:_upd_actions(t)
 		self._need_upd = true
 	end
 	if self._tweak_data.do_omnia then
-		if not self._unit:character_damage():dead() then
-			self:do_omnia(self)
+		if not self._unit:character_damage():dead() then			
+			self:do_omnia(self)		
 		end
 	end
 end

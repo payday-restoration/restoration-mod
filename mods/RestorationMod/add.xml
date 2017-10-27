@@ -88,6 +88,10 @@
 	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>
+	
+	<!--HRT-->
+	<unit path="units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc" load="true"/>
+	<unit path="units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc_husk" load="true"/>
 
 	<!--Akan FBI SWAT w/ UMP-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump" load="true"/>

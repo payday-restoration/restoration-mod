@@ -9755,7 +9755,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 
-	presets.weapon.deathvox_sniper.is_rifle = {is_rifle = {}} -- mark 2 values complete. basis is presets.weapon.sniper. For non-assault wave snipers. Please check I've not botched headings.
+	presets.weapon.deathvox_sniper = {is_rifle = {}} -- mark 2 values complete. basis is presets.weapon.sniper. For non-assault wave snipers. Please check I've not botched headings.
 	presets.weapon.deathvox_sniper.is_rifle.aim_delay = {
 		0,
 		0.1

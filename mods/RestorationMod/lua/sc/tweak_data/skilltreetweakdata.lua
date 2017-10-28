@@ -2767,7 +2767,6 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_armor_health_store_amount_3",
 					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4",
 					"player_level_2_dodge_addend_2",
 					"player_level_3_dodge_addend_2",
 					"player_level_4_dodge_addend_2"
@@ -2775,7 +2774,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 2400,
 				icon_xy = {6, 7},
 				name_id = "menu_deck13_7",
-				desc_id = "menu_deck13_7_desc"
+				desc_id = "menu_deck13_7_desc_sc"
 			},
 			deck8,
 			{
@@ -2935,7 +2934,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_chico_armor_multiplier_1"
+					"player_passive_health_multiplier_1"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
@@ -2946,7 +2945,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_chico_armor_multiplier_2",
+					"player_passive_health_multiplier_2",
 					"player_chico_preferred_target"
 				},
 				cost = 1000,
@@ -2958,7 +2957,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_chico_armor_multiplier_3",
+					"player_passive_health_multiplier_3",
 					"player_chico_injector_low_health_multiplier"
 				},
 				cost = 2400,
@@ -2970,7 +2969,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_1",
 					"player_chico_injector_health_to_speed",
 					"player_passive_loot_drop_multiplier"
 				},

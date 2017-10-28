@@ -34,7 +34,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Armor related stuff--
 	self.values.player.body_armor.armor = {
-		1,
+		0,
 		2,
 		4,
 		6,
@@ -48,17 +48,17 @@ function UpgradesTweakData:_init_pd2_values()
 		0.9, 
 		0.85, 
 		0.75, 
-		0.72, 
-		0.62
+		0.7, 
+		0.6
 	}
 	self.values.player.body_armor.dodge = {
-		0.05,
-		-0.05,
+		0,
 		-0.1,
 		-0.15,
+		-0.2,
 		-0.3,
 		-0.35,
-		-0.4
+		-0.45
 	}
 	self.values.player.body_armor.concealment = {
 		30,
@@ -70,22 +70,22 @@ function UpgradesTweakData:_init_pd2_values()
 		0
 	}
 	self.values.player.body_armor.damage_shake = { 
-		3, 
-		1.75, 
 		1, 
 		0.95, 
-		0.8, 
+		0.9, 
+		0.85, 
+		0.75, 
 		0.7, 
-		0.5 
+		0.6 
 	}
 	self.values.player.body_armor.stamina = {
-		1.025,
 		1,
 		0.95,
 		0.9,
 		0.85,
-		0.8,
-		0.7
+		0.75,
+		0.7,
+		0.6
 	}
 	self.values.player.body_armor.skill_ammo_mul = {
 		1,

@@ -6,6 +6,10 @@ RestorationCore = RestorationCore or class(ModCore)
 
 function RestorationCore:init()
 	self.super.init(self, ModPath .. "config.xml", true, true)
+	
+
+	
+	self:post_init({"Options"})
 end
 
 function RestorationCore.log_shit(to_log)

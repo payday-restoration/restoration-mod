@@ -7336,7 +7336,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			auto = {}
 		}
 		self.deathvox_medicdozer_smg = {
-			usage = "is_smg",
+			usage = "is_tank_smg",
 			sounds = {},
 			use_data = {},
 			auto = {}

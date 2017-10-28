@@ -4,6 +4,10 @@ function RestorationCoreCallbacks:init(parent)
     self._parent = parent
 end
 
-function RestorationCoreCallbacks:Restart(value)
-	application:close()
+function RestorationCoreCallbacks:Restart(key, value)
+
+	DelayedCalls:Add( "DelayedCallsExample", 2, function()
+		log("Game closing in 2 second[s]!")
+		application:close()
+	end )
 end

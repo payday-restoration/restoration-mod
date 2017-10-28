@@ -6,8 +6,8 @@ end
 
 function RestorationCoreCallbacks:Restart(key, value)
 
-	DelayedCalls:Add( "DelayedCallsExample", 2, function()
-		log("Game closing in 2 second[s]!")
+	DelayedCalls:Add( "SCRestartGame", 3, function()
+		log("Game closing in 3 second[s]!")
 		application:close()
 	end )
 end

@@ -14,12 +14,14 @@
 	end
 		
 	function layout( o, screen_width, screen_height, safe_rect )
-		mask_on_text:set_text( utf8.to_upper( managers.localization:text( "hud_instruct_mask_on_alpha", { BTN_USE_ITEM = managers.localization:btn_macro( "use_item" ) } ) ) )
+	
 		mask_on_text:set_center_x( panel:center_x() )
 		if restoration and restoration.Options:GetValue("HUD/MainHud") then
 			mask_on_text:set_center_y( panel:center_y()/1.5 )
+			mask_on_text:set_text( utf8.to_upper( managers.localization:text( "hud_instruct_mask_on_alpha", { BTN_USE_ITEM = managers.localization:btn_macro( "use_item" ) } ) ) )
 		else
 			mask_on_text:set_y( 28 )
+			mask_on_text:set_text( utf8.to_upper( managers.localization:text( "hud_instruct_mask_on", { BTN_USE_ITEM = managers.localization:btn_macro( "use_item" ) } ) ) )
 			mask_on_text:set_font( Idstring( tweak_data.hud_mask_off.text_font ) )
 			mask_on_text:set_font_size( tweak_data.hud_mask_off.text_size )
 		end

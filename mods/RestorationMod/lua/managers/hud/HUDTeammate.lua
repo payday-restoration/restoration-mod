@@ -20,6 +20,14 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		halign = "right"
 	})
 	self._player_panel = teammate_panel:panel({name = "player"})
+	self._health_data = {
+		current = 0,
+		total = 0
+	}
+	self._armor_data = {
+		current = 0,
+		total = 0
+	}
 	local name = teammate_panel:text({
 		name = "name",
 		text = " " .. names[i],
@@ -135,207 +143,197 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		y = mask:y()
 	})
 	radial_health_panel:set_bottom(self._player_panel:h())
-	local radial_bg = radial_health_panel:bitmap({
-		name = "radial_bg",
+local radial_bg = radial_health_panel:bitmap({
 		texture = "guis/textures/restoration/hud_radialbg",
+		name = "radial_bg",
 		alpha = 1,
+		layer = 0,
 		w = radial_health_panel:w(),
-		h = radial_health_panel:h(),
-		layer = 0
+		h = radial_health_panel:h()
 	})
 	local radial_health = radial_health_panel:bitmap({
-		name = "radial_health",
 		texture = "guis/textures/restoration/hud_health",
+		name = "radial_health",
+		layer = 2,
+		blend_mode = "add",
+		render_template = "VertexColorTexturedRadial",
 		texture_rect = {
 			64,
 			0,
 			-64,
 			64
 		},
-		render_template = "VertexColorTexturedRadial",
-		blend_mode = "add",
-		alpha = 1,
+		color = Color(1, 0, 1, 1),
 		w = radial_health_panel:w(),
-		h = radial_health_panel:h(),
-		layer = 2
+		h = radial_health_panel:h()
 	})
-	radial_health:set_color(Color(1, 1, 0, 0))
 	local radial_shield = radial_health_panel:bitmap({
-		name = "radial_shield",
 		texture = "guis/textures/restoration/hud_shield",
+		name = "radial_shield",
+		layer = 1,
+		blend_mode = "add",
+		render_template = "VertexColorTexturedRadial",
 		texture_rect = {
 			64,
 			0,
 			-64,
 			64
 		},
-		render_template = "VertexColorTexturedRadial",
-		blend_mode = "add",
-		alpha = 1,
+		color = Color(1, 0, 1, 1),
 		w = radial_health_panel:w(),
-		h = radial_health_panel:h(),
-		layer = 1
+		h = radial_health_panel:h()
 	})
-	radial_shield:set_color(Color(1, 1, 0, 0))
 	local damage_indicator = radial_health_panel:bitmap({
+		blend_mode = "add",
 		name = "damage_indicator",
-		texture = "guis/textures/restoration/hud_radial_rim",
-		blend_mode = "add",
 		alpha = 0,
+		texture = "guis/textures/restoration/hud_radial_rim",
+		layer = 1,
+		color = Color(1, 1, 1, 1),
 		w = radial_health_panel:w(),
-		h = radial_health_panel:h(),
-		layer = 1
+		h = radial_health_panel:h()
 	})
-	damage_indicator:set_color(Color(1, 1, 1, 1))
 	local radial_custom = radial_health_panel:bitmap({
-		name = "radial_custom",
 		texture = "guis/textures/pd2/hud_swansong",
-		texture_rect = {
-			0,
-			0,
-			64,
-			64
-		},
-		render_template = "VertexColorTexturedRadial",
+		name = "radial_custom",
 		blend_mode = "add",
-		alpha = 1,
+		visible = false,
+		render_template = "VertexColorTexturedRadial",
+		layer = 5,
+		color = Color(1, 0, 0, 0),
 		w = radial_health_panel:w(),
-		h = radial_health_panel:h(),
-		layer = 5
+		h = radial_health_panel:h()
 	})
-	radial_custom:set_color(Color(1, 0, 0, 0))
-	radial_custom:hide()
+	local radial_ability_panel = radial_health_panel:panel({name = "radial_ability"})
+	local radial_ability_meter = radial_ability_panel:bitmap({
+		blend_mode = "add",
+		name = "ability_meter",
+		texture = "guis/dlcs/chico/textures/pd2/hud_fearless",
+		render_template = "VertexColorTexturedRadial",
+		layer = 5,
+		color = Color(1, 0, 0, 0),
+		w = radial_health_panel:w(),
+		h = radial_health_panel:h()
+	})
+	local radial_ability_icon = radial_ability_panel:bitmap({
+		blend_mode = "add",
+		name = "ability_icon",
+		visible = false,
+		alpha = 1,
+		layer = 5,
+		w = radial_size * 0.5,
+		h = radial_size * 0.5
+	})
+
+	radial_ability_icon:set_center(radial_ability_panel:center())
+
+	local radial_delayed_damage_panel = radial_health_panel:panel({name = "radial_delayed_damage"})
+	local radial_delayed_damage_armor = radial_delayed_damage_panel:bitmap({
+		texture = "guis/textures/pd2/hud_dot_shield",
+		name = "radial_delayed_damage_armor",
+		visible = false,
+		render_template = "VertexColorTexturedRadialFlex",
+		layer = 5,
+		w = radial_delayed_damage_panel:w(),
+		h = radial_delayed_damage_panel:h()
+	})
+	local radial_delayed_damage_health = radial_delayed_damage_panel:bitmap({
+		texture = "guis/textures/restoration/hud_dot",
+		name = "radial_delayed_damage_health",
+		visible = false,
+		render_template = "VertexColorTexturedRadialFlex",
+		layer = 5,
+		w = radial_delayed_damage_panel:w(),
+		h = radial_delayed_damage_panel:h()
+	})
+
 	if main_player then
 		local radial_rip = radial_health_panel:bitmap({
-			name = "radial_rip",
 			texture = "guis/textures/pd2/hud_rip",
+			name = "radial_rip",
+			layer = 3,
+			blend_mode = "add",
+			visible = false,
+			render_template = "VertexColorTexturedRadial",
 			texture_rect = {
 				64,
 				0,
 				-64,
 				64
 			},
-			render_template = "VertexColorTexturedRadial",
-			blend_mode = "add",
-			alpha = 1,
+			color = Color(1, 0, 0, 0),
 			w = radial_health_panel:w(),
-			h = radial_health_panel:h(),
-			layer = 3
+			h = radial_health_panel:h()
 		})
-		radial_rip:set_color(Color(1, 0, 0, 0))
-		radial_rip:hide()
 		local radial_rip_bg = radial_health_panel:bitmap({
-			name = "radial_rip_bg",
 			texture = "guis/textures/pd2/hud_rip_bg",
+			name = "radial_rip_bg",
+			layer = 1,
+			visible = false,
+			render_template = "VertexColorTexturedRadial",
 			texture_rect = {
 				64,
 				0,
 				-64,
 				64
 			},
-			render_template = "VertexColorTexturedRadial",
-			blend_mode = "normal",
-			alpha = 1,
+			color = Color(1, 0, 0, 0),
 			w = radial_health_panel:w(),
-			h = radial_health_panel:h(),
-			layer = 1
+			h = radial_health_panel:h()
 		})
-		radial_rip_bg:set_color(Color(1, 0, 0, 0))
-		radial_rip_bg:hide()
 	end
-	do
-		local radial_absorb_shield_active = radial_health_panel:bitmap({
-			name = "radial_absorb_shield_active",
-			texture = "guis/dlcs/coco/textures/pd2/hud_absorb_shield",
-			texture_rect = {
-				0,
-				0,
-				64,
-				64
-			},
-			render_template = "VertexColorTexturedRadial",
-			blend_mode = "normal",
-			alpha = 1,
-			w = radial_health_panel:w(),
-			h = radial_health_panel:h(),
-			layer = 5
-		})
-		radial_absorb_shield_active:set_color(Color(1, 0, 0, 0))
-		radial_absorb_shield_active:hide()
-		local radial_absorb_health_active = radial_health_panel:bitmap({
-			name = "radial_absorb_health_active",
-			texture = "guis/dlcs/coco/textures/pd2/hud_absorb_health",
-			texture_rect = {
-				0,
-				0,
-				64,
-				64
-			},
-			render_template = "VertexColorTexturedRadial",
-			blend_mode = "normal",
-			alpha = 1,
-			w = radial_health_panel:w(),
-			h = radial_health_panel:h(),
-			layer = 5
-		})
-		radial_absorb_health_active:set_color(Color(1, 0, 0, 0))
-		radial_absorb_health_active:hide()
-		radial_absorb_health_active:animate(callback(self, self, "animate_update_absorb_active"))
-		local radial_info_meter = radial_health_panel:bitmap({
-			name = "radial_info_meter",
-			texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_fg",
-			texture_rect = {
-				0,
-				0,
-				64,
-				64
-			},
-			render_template = "VertexColorTexturedRadial",
-			blend_mode = "add",
-			alpha = 1,
-			w = radial_health_panel:w(),
-			h = radial_health_panel:h(),
-			layer = 3
-		})
-		radial_info_meter:set_color(Color(1, 0, 0, 0))
-		radial_info_meter:hide()
-		local radial_info_meter_bg = radial_health_panel:bitmap({
-			name = "radial_info_meter_bg",
-			texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_bg",
-			texture_rect = {
-				64,
-				0,
-				-64,
-				64
-			},
-			render_template = "VertexColorTexturedRadial",
-			blend_mode = "normal",
-			alpha = 1,
-			w = radial_health_panel:w(),
-			h = radial_health_panel:h(),
-			layer = 1
-		})
-		radial_info_meter_bg:set_color(Color(1, 0, 0, 0))
-		radial_info_meter_bg:hide()
-		local radial_ability = radial_health_panel:bitmap({
-		name = "radial_ability",
-		texture = "guis/dlcs/chico/textures/pd2/hud_fearless",
+
+	radial_health_panel:bitmap({
+		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_shield",
+		name = "radial_absorb_shield_active",
+		visible = false,
+		render_template = "VertexColorTexturedRadial",
+		layer = 5,
+		color = Color(1, 0, 0, 0),
+		w = radial_health_panel:w(),
+		h = radial_health_panel:h()
+	})
+
+	local radial_absorb_health_active = radial_health_panel:bitmap({
+		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_health",
+		name = "radial_absorb_health_active",
+		visible = false,
+		render_template = "VertexColorTexturedRadial",
+		layer = 5,
+		color = Color(1, 0, 0, 0),
+		w = radial_health_panel:w(),
+		h = radial_health_panel:h()
+	})
+
+	radial_absorb_health_active:animate(callback(self, self, "animate_update_absorb_active"))
+	radial_health_panel:bitmap({
+		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_fg",
+		name = "radial_info_meter",
+		blend_mode = "add",
+		visible = false,
+		render_template = "VertexColorTexturedRadial",
+		layer = 3,
+		color = Color(1, 0, 0, 0),
+		w = radial_health_panel:w(),
+		h = radial_health_panel:h()
+	})
+	radial_health_panel:bitmap({
+		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_bg",
+		name = "radial_info_meter_bg",
+		layer = 1,
+		visible = false,
+		render_template = "VertexColorTexturedRadial",
 		texture_rect = {
-			0,
-			0,
 			64,
+			0,
+			-64,
 			64
 		},
-		render_template = "VertexColorTexturedRadial",
-		blend_mode = "add",
-		alpha = 1,
+		color = Color(1, 0, 0, 0),
 		w = radial_health_panel:w(),
-		h = radial_health_panel:h(),
-		layer = 5
+		h = radial_health_panel:h()
 	})
-		radial_ability:set_color(Color(1, 0, 0, 0))
-		radial_ability:hide()
-	end
+
 	local x, y, w, h = radial_health_panel:shape()
 	teammate_panel:bitmap({
 		name = "condition_icon",
@@ -628,6 +626,7 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 	})
 
 		cable_ties_panel:set_bottom(weapons_panel:bottom())
+
 	--[[if PlayerBase.USE_GRENADES then
 		local texture, rect = tweak_data.hud_icons:get_icon_data("frag_grenade")
 		local grenades_panel = self._player_panel:panel({
@@ -1002,14 +1001,6 @@ function HUDTeammate:set_carry_info(carry_id, value)
 	bg:set_w(carry_panel:child("bag"):w() + w + 4)
 end
 
-function HUDTeammate:set_ability_cooldown(data)
-    if not PlayerBase.USE_GRENADES then
-     	return
-    end
-	data.cooldown = data.cooldown and math.ceil(data.cooldown) or 0
-	self:set_grenades_amount({amount = data.cooldown}, true)
-     end
-
 function HUDTeammate:_set_amount_string(text, amount)
 	text:set_text( tostring( amount ) )
 	text:set_visible( amount ~= 0 )
@@ -1105,8 +1096,37 @@ function HUDTeammate:set_grenades_amount(data, ignore)
 		self:remove_special_equipment("grenades_panel")
 	else
 		self:set_special_equipment_amount("grenades_panel", data.amount)
+		local test = data.amount
+		log("RESTORE" .. test)
 		self:set_grenades(data)
 	end
+end
+
+
+function HUDTeammate:set_ability_cooldown(data) -- Not working anymore, left just in case ~~ D.A.
+    if not PlayerBase.USE_GRENADES then
+     	return
+    end
+	data.cooldown = data.cooldown and math.ceil(data.cooldown) or 0
+	self:set_grenades_amount({amount = data.cooldown}, true)
+end
+
+function HUDTeammate:set_grenade_cooldown(data)
+	if not PlayerBase.USE_GRENADES then
+		return
+	end
+
+	local teammate_panel = self
+	local end_time = data and data.end_time
+	local duration = data and data.duration
+
+	if self._main_player then
+		managers.network:session():send_to_peers("sync_grenades_cooldown", end_time, duration)
+	end
+end
+
+function HUDTeammate:animate_grenade_flash()
+	local teammate_panel = self._panel:child("player")
 end
 
 local icon_conversion = {

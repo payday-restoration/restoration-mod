@@ -98,21 +98,21 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.player.body_armor.skill_max_health_store = {
 		14,
-		13.5,
-		12.5,
+		13,
 		12,
-		10.5,
-		9.5,
-		4
+		10,
+		8,
+		7,
+		5
 	}
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
 		14,
-		13.5,
-		12.5,
+		13,
 		12,
-		10.5,
-		9.5,
-		4
+		10,
+		8,
+		7,
+		5
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -759,7 +759,6 @@ function UpgradesTweakData:_init_pd2_values()
 		0.35
 	}
 
-	self.values.player.level_5_armor_addend = {-7}
 	self.values.player.level_2_armor_multiplier = {
 		1.1,
 		1.2,
@@ -824,25 +823,21 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.dmg_dampener_outnumbered_strong = {
 		{0.95, 7}
 	}
-	self.values.player.damage_to_hot = {
-		0.1,
-		0.2,
-		0.3,
-		0.4
-	}
 	self.values.player.tier_dodge_chance = {
 		0.05,
 		0.05,
 		0.05
 	}
-	self.values.player.damage_to_hot_extra_ticks = {2}
+	
+	--Hey you're getting your grinder on my grinder
+	self.values.player.level_5_armor_addend = {-7}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
 		tick_time = 0.5,
-		total_ticks = 6,
+		total_ticks = 10,
 		max_stacks = false,
-		stacking_cooldown = 1,
+		stacking_cooldown = 1.5,
 		add_stack_sources = {
 			bullet = true,
 			explosion = true,
@@ -855,6 +850,13 @@ function UpgradesTweakData:_init_pd2_values()
 			civilian = false
 		}
 	}
+	self.values.player.damage_to_hot = {
+		0.1,
+		0.2,
+		0.3,
+		0.4
+	}	
+	self.values.player.damage_to_hot_extra_ticks = {2}
 	
 	self.values.player.perk_armor_loss_multiplier = {
 		0.5,

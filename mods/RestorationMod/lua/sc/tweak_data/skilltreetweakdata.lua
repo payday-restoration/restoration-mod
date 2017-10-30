@@ -77,11 +77,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_flashbang_multiplier_1",
 		"player_fall_health_damage_multiplier",
 		"player_melee_kill_snatch_pager_chance",
-		"player_suppression_resist",
-		"frag_com",
-		"frag",
-		"dynamite",
-		"molotov"
+		"player_suppression_resist"
 	}
 
 --[[   SKILLTREES   ]]--
@@ -2622,8 +2618,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_2",
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2",	
+					"player_passive_health_multiplier_1"
 				},
 				cost = 400,
 				icon_xy = {2, 6},
@@ -2633,7 +2628,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_damage_to_hot_3"
+					"player_damage_to_hot_3",
+					"player_passive_health_multiplier_2"
 				},
 				cost = 1000,
 				icon_xy = {3, 6},
@@ -2644,8 +2640,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_4",
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4"
+					"player_passive_health_multiplier_3"
 				},
 				cost = 2400,
 				icon_xy = {4, 6},

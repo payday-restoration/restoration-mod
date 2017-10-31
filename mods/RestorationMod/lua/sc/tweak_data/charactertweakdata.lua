@@ -1,5 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+local job = Global.level_data and Global.level_data.level_id
+
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
 	local r = LevelsTweakData.LevelType.Russia

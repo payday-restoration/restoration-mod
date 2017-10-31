@@ -249,7 +249,7 @@ local radial_bg = radial_health_panel:bitmap({
 
 	if main_player then
 		local radial_rip = radial_health_panel:bitmap({
-			texture = "guis/textures/pd2/hud_rip",
+			texture = "guis/textures/restoration/hud_rip",
 			name = "radial_rip",
 			layer = 3,
 			blend_mode = "add",
@@ -266,7 +266,7 @@ local radial_bg = radial_health_panel:bitmap({
 			h = radial_health_panel:h()
 		})
 		local radial_rip_bg = radial_health_panel:bitmap({
-			texture = "guis/textures/pd2/hud_rip_bg",
+			texture = "guis/textures/restoration/hud_rip_bg",
 			name = "radial_rip_bg",
 			layer = 1,
 			visible = false,
@@ -284,7 +284,7 @@ local radial_bg = radial_health_panel:bitmap({
 	end
 
 	radial_health_panel:bitmap({
-		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_shield",
+		texture = "guis/textures/restoration/hud_absorb_shield",
 		name = "radial_absorb_shield_active",
 		visible = false,
 		render_template = "VertexColorTexturedRadial",
@@ -295,7 +295,7 @@ local radial_bg = radial_health_panel:bitmap({
 	})
 
 	local radial_absorb_health_active = radial_health_panel:bitmap({
-		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_health",
+		texture = "guis/textures/restoration/hud_absorb_health",
 		name = "radial_absorb_health_active",
 		visible = false,
 		render_template = "VertexColorTexturedRadial",
@@ -307,7 +307,7 @@ local radial_bg = radial_health_panel:bitmap({
 
 	radial_absorb_health_active:animate(callback(self, self, "animate_update_absorb_active"))
 	radial_health_panel:bitmap({
-		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_fg",
+		texture = "guis/textures/restoration/hud_absorb_stack_fg",
 		name = "radial_info_meter",
 		blend_mode = "add",
 		visible = false,
@@ -318,7 +318,7 @@ local radial_bg = radial_health_panel:bitmap({
 		h = radial_health_panel:h()
 	})
 	radial_health_panel:bitmap({
-		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_bg",
+		texture = "guis/textures/restoration/hud_absorb_stack_bg",
 		name = "radial_info_meter_bg",
 		layer = 1,
 		visible = false,

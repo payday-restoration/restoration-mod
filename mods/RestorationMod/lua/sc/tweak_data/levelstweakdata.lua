@@ -1,5 +1,9 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	LevelsTweakData.LevelType = {}
+	LevelsTweakData.LevelType.America = "america"
+	LevelsTweakData.LevelType.Russia = "russia"
+	LevelsTweakData.LevelType.Zombie = "zombie"
 	LevelsTweakData.LevelType.Murky = "murky"
 
 	local old_ltd_init = LevelsTweakData.init
@@ -8,11 +12,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		local america = LevelsTweakData.LevelType.America
 		local russia = LevelsTweakData.LevelType.Russia
+		local zombie = LevelsTweakData.LevelType.Zombie
 		local murky = LevelsTweakData.LevelType.Murky
 		self.ai_groups = {}
 		self.ai_groups.default = america
 		self.ai_groups.america = america
 		self.ai_groups.russia = russia
+		self.ai_groups.zombie  = zombie
 		self.ai_groups.murky = murky
 		
 		--Murky test--

@@ -28922,6 +28922,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_vg_surefire",
 			stats = {value = 1},
 			perks = {"gadget"},
+			sub_type = "laser",
 			forbids = {
 				"wpn_fps_smg_schakal_vg_extra"
 			},
@@ -33362,7 +33363,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "icc",
 			a_obj = "a_body",
 			type = "lower_reciever",
-			is_event_mod = "bm_wp_90_body_boxy_locked",
 			name_id = "bm_wp_90_body_boxy",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_p90_body_boxy/wpn_fps_smg_p90_body_boxy",
 			pcs = {},
@@ -33377,7 +33377,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "icc",
 			a_obj = "a_body",
 			type = "lower_reciever",
-			is_event_mod = "bm_wp_mac10_body_modern_locked",
 			name_id = "bm_wp_mac10_body_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_mac10_body_modern/wpn_fps_smg_mac10_body_modern",
 			pcs = {},
@@ -33392,7 +33391,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_pis_deagle_b_modern = {
 			a_obj = "a_b",
 			texture_bundle_folder = "icc",
-			is_event_mod = "bm_wp_deagle_b_modern_locked",
 			type = "slide",
 			name_id = "bm_wp_deagle_b_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_deagle_b_modern/wpn_fps_pis_deagle_b_modern",
@@ -33413,7 +33411,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "icc",
 			a_obj = "a_body",
 			type = "lower_reciever",
-			is_event_mod = "bm_wp_beretta_body_modern_locked",
 			name_id = "bm_wp_beretta_body_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_beretta_body_modern/wpn_fps_pis_beretta_body_modern",
 			pcs = {},
@@ -33430,7 +33427,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "icc",
 			a_obj = "a_body",
 			type = "lower_reciever",
-			is_event_mod = "bm_wp_judge_body_modern_locked",
 			name_id = "bm_wp_judge_body_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_judge_body_modern/wpn_fps_pis_judge_body_modern",
 			pcs = {},

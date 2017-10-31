@@ -279,6 +279,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1")
+						},
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 						}						
@@ -295,6 +298,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 						}						
@@ -315,6 +321,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg"),	
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1"),
+						Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3"),
+						Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
+					},				
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"),	
@@ -329,6 +340,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 					},
 					russia = {
+						Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+					},
+					zombie = {
 						Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 					},
 					murky = {
@@ -347,6 +361,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")
 						},
+						zombie = {
+							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+						},
 						murky = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1")
 						}						
@@ -363,6 +380,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")
 						},
+						zombie = {
+							Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+						},						
 						murky = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1")
 						}						
@@ -379,6 +399,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {	
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2")
+					},
 					murky = {	
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")
 					}					
@@ -394,22 +417,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1")
+						},
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
-						}						
-					},
-					access = access_type_all
-				}
-				self.unit_categories.CS_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
 						}						
 					},
 					access = access_type_all
@@ -423,27 +435,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
 						}						
 					},
 					access = access_type_all
 				}
-				self.unit_categories.CS_swat_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
-						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
-						},
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
-						}						
-					},
-					access = access_type_all
-				}
 			end
+			self.unit_categories.CS_swat_R870 = {
+				unit_types = {
+					america = {
+						Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2")
+					},
+					murky = {
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870")
+					}						
+				},
+				access = access_type_all
+			}
 			self.unit_categories.CS_heavy_M4 = {
 				unit_types = {
 					america = {
@@ -451,6 +469,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1")
 					},
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
@@ -466,6 +487,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870")
 					}						
@@ -480,6 +504,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
 					}						
@@ -495,6 +522,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")
 						}						
@@ -515,6 +545,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
@@ -533,6 +568,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow")
 					}						
@@ -540,7 +578,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				access = access_type_walk_only,
 				special_type = "shield"
 			}
-
 			self.unit_categories.FBI_suit_C45_M4 = {
 				unit_types = {
 					america = {
@@ -551,6 +588,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1"),
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1"),
+						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_1/ene_murky_hrt_1"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2")
@@ -569,6 +610,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
@@ -587,6 +632,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
@@ -604,6 +653,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
 						}						
@@ -619,6 +671,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
 						}						
@@ -635,6 +690,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4")
 						}						
@@ -670,6 +728,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						},
+						zombie = {
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
@@ -715,6 +786,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),	
+							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
@@ -743,6 +827,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+							Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump")
@@ -779,6 +867,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
 						},
+						zombie = {
+							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+							Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),							
+							Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump"),
@@ -805,6 +906,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						}						
@@ -820,6 +924,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						}						
@@ -836,6 +943,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
+						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
 						}						
@@ -851,6 +961,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
+						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
 						}						
@@ -867,6 +980,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 						},
+						zombie = {
+							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						}						
@@ -882,6 +998,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 						},
+						zombie = {
+							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						}						
@@ -898,6 +1017,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
 						}						
@@ -934,6 +1056,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),							
 							Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),						
+							Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
@@ -980,6 +1115,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),								
 							Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),						
+							Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+						},								
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
@@ -1008,6 +1156,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							russia = {
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")
+							},							
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")
 							}
@@ -1026,6 +1177,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+							},								
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
@@ -1047,6 +1202,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+							},								
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
@@ -1071,6 +1231,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")
+							},								
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
@@ -1110,6 +1276,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),								
 								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),	
+								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+							},								
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
@@ -1138,6 +1317,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							russia = {
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")
+							},							
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")
 							}
@@ -1156,6 +1338,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")
+							},							
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga")
@@ -1177,6 +1363,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+							},							
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
@@ -1201,6 +1392,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")
+							},								
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
@@ -1240,6 +1437,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),								
 								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),	
+								Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+							},							
 							murky = {
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
@@ -1267,6 +1477,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
 					},
+					zombie = {
+						Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+					},				
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
 					}
@@ -1282,6 +1495,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4")
 					},
+					zombie = {
+						Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")
 					}
@@ -1297,6 +1513,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870")
 					}
@@ -1312,6 +1531,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 					}
@@ -1328,6 +1550,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
 					}
@@ -1344,6 +1569,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
 					}
@@ -1360,6 +1588,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_summers/ene_summers")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_summers/ene_summers")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_summers/ene_summers")
 					}
@@ -1376,6 +1607,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
 					}
@@ -1390,6 +1624,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
 					}
@@ -1404,6 +1641,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
+					},					
 					murky = {
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
 					}
@@ -1415,6 +1655,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					america = {
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 					},
+					zombie = {
+						Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
+					},					
 					russia = {
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 					},
@@ -1436,6 +1679,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_guard/ene_deathvox_guard")
 					}						
@@ -1450,6 +1696,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightar/ene_deathvox_lightar")
 					}						
@@ -1460,10 +1709,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				unit_types = {
 					america = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
-					},
+					},				
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
+					},						
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyar/ene_deathvox_heavyar")
 					}						
@@ -1478,6 +1730,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightshot/ene_deathvox_lightshot")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightshot/ene_deathvox_lightshot")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lightshot/ene_deathvox_lightshot")
 					}						
@@ -1492,6 +1747,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_heavyshot/ene_deathvox_heavyshot")
 					}						
@@ -1506,6 +1764,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_shield/ene_deathvox_shield")
 					}						
@@ -1521,6 +1782,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medic/ene_deathvox_medic")
 					}						
@@ -1536,6 +1800,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_taser/ene_deathvox_taser"),
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_taser/ene_deathvox_taser"),
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_taser/ene_deathvox_taser"),
 					}						
@@ -1551,6 +1818,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
 					}						
@@ -1562,10 +1832,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				unit_types = {
 					america = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
-					},
+					},				
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
+					},						
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
 					}						
@@ -1581,6 +1854,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
 					}					
@@ -1596,6 +1872,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
 					}						
@@ -1611,6 +1890,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_cloaker/ene_deathvox_cloaker")
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_cloaker/ene_deathvox_cloaker")
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_cloaker/ene_deathvox_cloaker")
 					}						
@@ -1626,6 +1908,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					russia = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
 					},
+					zombie = {
+						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
+					},					
 					murky = {
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
 					}						

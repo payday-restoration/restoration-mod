@@ -4,23 +4,32 @@ local job = Global.level_data and Global.level_data.level_id
 
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
-	local r = LevelsTweakData.LevelType.Russia
 	local ai_type = tweak_data.levels:get_ai_group_type()
+	local r = LevelsTweakData.LevelType.Russia
+	local z = LevelsTweakData.LevelType.Zombie
 	self._prefix_data_p2 = {
 		swat = function()
-			if ai_type == r then
+			if ai_type == r or ai_type == z then
 				return "n"
 			else
 				return "d"
 			end
 		end
-	}
+	}	
+
+	self._default_chatter = "dispatch_generic_message"
+
+	if ai_type == r or ai_type == z then
+		self._default_chatter = "dsp_radio_russian"
+	end	
 	old_init(self, tweak_data, presets)
 	local presets = self:_presets(tweak_data)
 	self._prefix_data_p1 = {
 		swat = function()
 			if ai_type == r then
 				return "r"
+			elseif ai_type == z then
+				return "z"				
 			else
 				return "l"
 			end
@@ -28,6 +37,8 @@ function CharacterTweakData:init(tweak_data, presets)
 		cop = function()
 			if ai_type == r then
 				return "r"
+			elseif ai_type == z then
+				return "z"							
 			else
 				return "l"
 			end
@@ -35,6 +46,8 @@ function CharacterTweakData:init(tweak_data, presets)
 		heavy_swat = function()
 			if ai_type == r then
 				return "r"
+			elseif ai_type == z then
+				return "z"							
 			else
 				return "l"
 			end
@@ -76,6 +89,58 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_omnia(presets)
 	self:_init_deathvox(presets)
 	self:_process_weapon_usage_table()
+end
+
+function CharacterTweakData:_init_region_america()
+	self._default_chatter = "dispatch_generic_message"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
+end
+
+function CharacterTweakData:_init_region_russia()
+	self._default_chatter = "dsp_radio_russian"
+	self._unit_prefixes = {
+		cop = "r",
+		swat = "r",
+		heavy_swat = "r",
+		taser = "rtsr",
+		cloaker = "rclk",
+		bulldozer = "rbdz",
+		medic = "rmdc"
+	}
+end
+
+function CharacterTweakData:_init_region_zombie()
+	self._default_chatter = "dsp_radio_russian"
+	self._unit_prefixes = {
+		cop = "z",
+		swat = "z",
+		heavy_swat = "z",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
+end
+
+function CharacterTweakData:_init_region_murky()
+	self._default_chatter = "dispatch_generic_message"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
 end
 
 function CharacterTweakData:_init_security(presets)
@@ -13204,6 +13269,36 @@ function CharacterTweakData:character_map()
 			list = {
 				"npc_male_cfo",
 				"npc_male_ralph"
+			}
+		},		
+		hvh = {
+			path = "units/pd2_dlc_hvh/characters/",
+			list = {
+				"ene_cop_hvh_1",
+				"ene_cop_hvh_2",
+				"ene_cop_hvh_3",
+				"ene_cop_hvh_4",
+				"ene_swat_hvh_1",
+				"ene_swat_hvh_2",
+				"ene_fbi_hvh_1",
+				"ene_fbi_hvh_2",
+				"ene_fbi_hvh_3",
+				"ene_spook_hvh_1",
+				"ene_swat_heavy_hvh_1",
+				"ene_swat_heavy_hvh_r870",
+				"ene_tazer_hvh_1",
+				"ene_shield_hvh_1",
+				"ene_shield_hvh_2",
+				"ene_medic_hvh_r870",
+				"ene_medic_hvh_m4",
+				"ene_bulldozer_hvh_1",
+				"ene_bulldozer_hvh_2",
+				"ene_bulldozer_hvh_3",
+				"ene_fbi_swat_hvh_1",
+				"ene_fbi_swat_hvh_2",
+				"ene_fbi_heavy_hvh_1",
+				"ene_fbi_heavy_hvh_r870",
+				"ene_sniper_hvh_2"
 			}
 		},		
 		sharks = {

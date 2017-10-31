@@ -3237,9 +3237,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 6,
 				spread_moving = -3,
-				extra_ammo = 6,
-				concealment = 0
+				extra_ammo = 7,
+				concealment = -1,
+				reload = -1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -6767,14 +6769,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_deagle_m_extended",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 5},
-			custom_stats = {reload_speed_mult = 0.9},
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_m_extended",
 			stats = {
 				value = 5,
-				concealment = -2,
-				spread_moving = -2,
+				concealment = -1,
+				reload = -1,
 				extra_ammo = 1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -6785,7 +6787,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_deagle_m_standard",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 5},
-			custom_stats = {reload_speed_mult = 0.9},
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_m_standard",
 			stats = {value = 1},
 			animations = {
@@ -7536,10 +7537,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_m_extended",
 			stats = {
 				value = 3,
-				spread_moving = -2,
-				concealment = 0,
-				extra_ammo = 2
+				concealment = -1,
+				extra_ammo = 2,
+				reload = -1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -8960,10 +8962,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_b92fs_pts/wpn_fps_pis_beretta_m_extended",
 			stats = {
 				value = 2,
-				spread_moving = -2,
-				concealment = 0,
-				extra_ammo = 8
+				concealment = -1,
+				extra_ammo = 8,
+				reload = -1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -9671,8 +9674,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				spread_moving = -1,
-				extra_ammo = 4
+				concealment = -1,
+				extra_ammo = 4,
+				reload = -1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -9854,7 +9860,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_upg_o_marksmansight_front = {
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-			}
+			},
+			wpn_fps_pis_g18c_m_mag_33rnd = {
+				stats = {
+					value = 6,
+					spread_moving = -3,
+					extra_ammo = 6,
+					concealment = -1,
+					reload = -1
+				}
+			}			
 		}
 		self.wpn_fps_pis_g22c.default_blueprint = {
 			"wpn_fps_pis_g22c_b_standard",
@@ -15531,10 +15546,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_m_extended",
 			stats = {
 				value = 3,
-				concealment = 0,
-				recoil = 0,
-				reload = 7,
-				extra_ammo = 0
+				concealment = -2,
+				reload = 7
 			},
 			custom_stats = {reload_speed_mult = 1.35},
 			has_description = true,
@@ -16965,7 +16978,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_pis_g26_pts/wpn_fps_pis_g26_m_contour",
 			stats = {
 				value = 5,
-				concealment = 1,
+				concealment = -1,
 				extra_ammo = 1
 			},
 			custom_stats = {rof_mult = 1.125},
@@ -17171,10 +17184,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_pis_g18c_m_mag_33rnd = {
 				stats = {
 					value = 6,
-					spread_moving = -3,
-					extra_ammo = 10,
-					concealment = 0
-				},
+					extra_ammo = 11,
+					concealment = -2,
+					reload = -1
+				}
 			},
 			wpn_fps_upg_o_rmr = {parent = "slide"}
 		}
@@ -17261,7 +17274,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 5,
-					concealment = 1,
+					concealment = -1,
 					extra_ammo = 2
 				}
 			},
@@ -17274,9 +17287,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 6,
-					spread_moving = -3,
-					extra_ammo = 20,
-					concealment = 0
+					extra_ammo = 22,
+					concealment = -2,
+					reload = -1
 				}
 			},
 			wpn_fps_pis_g26_b_standard = {
@@ -17372,9 +17385,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 3,
-					spread_moving = -2,
-					concealment = 0,
-					extra_ammo = 4
+					concealment = -1,
+					extra_ammo = 4,
+					reload = -1
 				}
 			},
 			wpn_fps_pis_1911_b_standard = {
@@ -17412,10 +17425,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload_not_empty_left = "reload_not_empty_left"
 				},
 				stats = {
-					value = 3,
-					spread_moving = -2,
-					concealment = 0,
-					extra_ammo = 4
+					value = 2,
+					concealment = -2,
+					extra_ammo = 6,
+					spread = -1,
+					recoil = 1,			
+					reload = -2
 				}
 			}
 		}
@@ -17522,7 +17537,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 2,
-					extra_ammo = 16
+					extra_ammo = 16,
+					concealment = -1,
+					reload = -1
 				}
 			},
 			wpn_fps_pis_beretta_sl_std = {
@@ -17651,9 +17668,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload_not_empty_left = "reload_not_empty_left"
 				},
 				stats = {
-					value = 7,
-					concealment = -2,
-					spread_moving = -2,
+					value = 5,
+					concealment = -1,
+					reload = -1,
 					extra_ammo = 2
 				}
 			},
@@ -20083,9 +20100,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_m_extended",
 			stats = {
 				value = 1,
-				extra_ammo = 2,
-				spread_moving = -2
+				extra_ammo = 3,
+				reload = -1,
+				concealment = -1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			dlc = "the_bomb",
 			animations = {
 				reload = "reload",
@@ -22011,7 +22030,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_smg_cobray_s_standard",
 			"wpn_fps_smg_cobray_barrel",
 			"wpn_fps_smg_cobray_o_adapter",
-			"wpn_fps_smg_mac10_s_skel",
 			"wpn_fps_upg_ns_ass_smg_large",
 			"wpn_fps_upg_ns_ass_smg_medium",
 			"wpn_fps_upg_ns_ass_smg_small",
@@ -22042,7 +22060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_snp_tti_s_vltor"
+			"wpn_fps_smg_mac10_s_skel"
 		}
 		self.wpn_fps_smg_cobray_npc = deep_clone(self.wpn_fps_smg_cobray)
 		self.wpn_fps_smg_cobray_npc.unit = "units/pd2_dlc_hotline2/weapons/wpn_fps_smg_cobray/wpn_fps_smg_cobray_npc"
@@ -22736,10 +22754,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload_not_empty_left = "reload_not_empty_left"
 				},
 				stats = {
-					value = 3,
-					spread_moving = -2,
+					value = 6,
+					extra_ammo = 12,
 					concealment = -1,
-					extra_ammo = 12
+					reload = -1
 				}
 			},
 			wpn_fps_pis_g18c_m_mag_17rnd = {
@@ -22842,8 +22860,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 6,
 					spread_moving = -3,
-					extra_ammo = 12,
-					concealment = 0
+					extra_ammo = 14,
+					concealment = -1,
+					reload = -1
 				},
 				animations = {
 					reload = "reload_right",
@@ -22946,8 +22965,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 3,
-					spread_moving = -2,
-					concealment = 0,
+					reload = -1,
+					concealment = -1,
 					extra_ammo = 8
 				}
 			},
@@ -22986,10 +23005,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload_not_empty_left = "reload_not_empty_left"
 				},
 				stats = {
-					value = 3,
-					spread_moving = -2,
-					concealment = -1,
-					extra_ammo = 8
+					value = 2,
+					concealment = -2,
+					extra_ammo = 10,
+					spread = -1,
+					recoil = 1,
+					reload = -2
 				}
 			}
 		}
@@ -27539,7 +27560,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_mad/weapons/wpn_fps_pis_pl14_pts/wpn_fps_pis_pl14_m_extended",
 			stats = {
 				value = 1,
-				extra_ammo = 1
+				extra_ammo = 1,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -28581,8 +28603,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_m_extended",
 			stats = {
 				value = 1,
-				extra_ammo = 5
+				extra_ammo = 5,
+				concealment = -1,
+				reload = -1
 			},
+			custom_stats = {reload_speed_mult = 0.95},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
 			is_a_unlockable = true
@@ -29183,8 +29208,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_ns_pis_meatgrinder = {parent = "barrel", a_obj = "a_ns"},
 			wpn_fps_pis_packrat_m_extended = {
 				stats = {
-					value = 2,
-					extra_ammo = 10
+					value = 1,
+					extra_ammo = 10,
+					concealment = -1,
+					reload = -1
 				}
 			}
 		}
@@ -29929,12 +29956,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_pis_usp_m_big/wpn_fps_pis_usp_m_big",
 			stats = {
 				value = 2,
-				spread_moving = -1,
-				concealment = -1,
-				extra_ammo = 4,
+				concealment = -2,
+				extra_ammo = 5,
 				spread = -1,
-				recoil = 1
+				recoil = 1,
+				reload = -2
 			},
+			custom_stats = {reload_speed_mult = 0.9},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -29951,12 +29979,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_pis_1911_m_big/wpn_fps_pis_1911_m_big",
 			stats = {
 				value = 2,
-				spread_moving = -1,
 				concealment = -2,
-				extra_ammo = 2,
+				extra_ammo = 3,
 				spread = -1,
-				recoil = 1
+				recoil = 1,			
+				reload = -2
 			},
+			custom_stats = {reload_speed_mult = 0.9},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -31752,7 +31781,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 3},
 			unit = "units/pd2_dlc_fi7/weapons/wpn_fps_pis_lemming_pts/wpn_fps_pis_lemming_m_ext",
-			stats = {value = 1, extra_ammo = 5},
+			stats = {
+				value = 1, 
+				extra_ammo = 5,
+				reload = -1
+			},
+			custom_stats = {reload_speed_mult = 0.95},
 			dlc = "pd2_clan",
 			texture_bundle_folder = "fi7"
 		}
@@ -32750,6 +32784,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stats = {
 				extra_ammo = 1,
+				concealment = -1,
 				value = 1
 			}
 		}
@@ -32923,6 +32958,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_pis_shrew_m_extended = {
 					stats = {
 						extra_ammo = 2,
+						concealment = -1,
 						value = 1
 					}
 				},
@@ -33320,6 +33356,102 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_sho_x_basset_npc = deep_clone(self.wpn_fps_sho_x_basset)
 		self.wpn_fps_sho_x_basset_npc.unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_x_basset/wpn_fps_sho_x_basset_npc"
 	end
+	
+	function WeaponFactoryTweakData:_init_icc()
+		self.parts.wpn_fps_smg_p90_body_boxy = {
+			texture_bundle_folder = "icc",
+			a_obj = "a_body",
+			type = "lower_reciever",
+			is_event_mod = "bm_wp_90_body_boxy_locked",
+			name_id = "bm_wp_90_body_boxy",
+			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_p90_body_boxy/wpn_fps_smg_p90_body_boxy",
+			pcs = {},
+			stats = {value = 1},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				reload = "reload"
+			},
+			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_p90_body_boxy/wpn_third_smg_p90_body_boxy"
+		}
+		self.parts.wpn_fps_smg_mac10_body_modern = {
+			texture_bundle_folder = "icc",
+			a_obj = "a_body",
+			type = "lower_reciever",
+			is_event_mod = "bm_wp_mac10_body_modern_locked",
+			name_id = "bm_wp_mac10_body_modern",
+			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_mac10_body_modern/wpn_fps_smg_mac10_body_modern",
+			pcs = {},
+			stats = {value = 1},
+			animations = {
+				fire = "recoil",
+				reload = "reload",
+				fire_steelsight = "recoil"
+			},
+			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_mac10_body_modern/wpn_third_smg_mac10_body_modern"
+		}
+		self.parts.wpn_fps_pis_deagle_b_modern = {
+			a_obj = "a_b",
+			texture_bundle_folder = "icc",
+			is_event_mod = "bm_wp_deagle_b_modern_locked",
+			type = "slide",
+			name_id = "bm_wp_deagle_b_modern",
+			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_deagle_b_modern/wpn_fps_pis_deagle_b_modern",
+			pcs = {},
+			stats = {
+				value = 5,
+				spread_moving = -3,
+				spread = 1,
+				concealment = -2
+			},
+			forbids = {
+				"wpn_fps_pis_deagle_co_long",
+				"wpn_fps_pis_deagle_co_short"
+			},				
+			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_deagle_b_modern/wpn_third_pis_deagle_b_modern"
+		}
+		self.parts.wpn_fps_pis_beretta_body_modern = {
+			texture_bundle_folder = "icc",
+			a_obj = "a_body",
+			type = "lower_reciever",
+			is_event_mod = "bm_wp_beretta_body_modern_locked",
+			name_id = "bm_wp_beretta_body_modern",
+			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_beretta_body_modern/wpn_fps_pis_beretta_body_modern",
+			pcs = {},
+			stats = {value = 1},
+			forbids = {"wpn_fps_pis_beretta_body_rail"},
+			animations = {
+				fire = "recoil",
+				reload = "reload",
+				fire_steelsight = "recoil"
+			},
+			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_beretta_body_modern/wpn_third_pis_beretta_body_modern"
+		}
+		self.parts.wpn_fps_pis_judge_body_modern = {
+			texture_bundle_folder = "icc",
+			a_obj = "a_body",
+			type = "lower_reciever",
+			is_event_mod = "bm_wp_judge_body_modern_locked",
+			name_id = "bm_wp_judge_body_modern",
+			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_judge_body_modern/wpn_fps_pis_judge_body_modern",
+			pcs = {},
+			stats = {value = 1},
+			forbids = {
+				"wpn_fps_addon_ris",
+				"wpn_fps_pis_judge_fl_adapter"
+			},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				reload = "reload",
+				fire_steelsight = "recoil",
+				fire = "recoil"
+			},
+			override = {wpn_fps_pis_judge_g_standard = {
+				third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_judge_body_modern/wpn_third_pis_judge_g_modern",
+				unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_judge_body_modern/wpn_fps_pis_judge_g_modern"
+			}},
+			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_judge_body_modern/wpn_third_pis_judge_body_modern"
+		}
+	end	
 		
 	Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 		--Vlad's Rodina--

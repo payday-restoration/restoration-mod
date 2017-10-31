@@ -1,7 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-local job = Global.level_data and Global.level_data.level_id
-
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
 	local r = LevelsTweakData.LevelType.Russia
@@ -1234,6 +1232,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
  	table.insert(self._enemy_list, "tank")
+	
 	self.tank_hw = deep_clone(self.tank)
 	self.tank_hw.HEALTH_INIT = 500
 	self.tank_hw.ignore_headshot = false
@@ -1248,9 +1247,11 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw.melee_anims = nil
 	self.tank_hw.move_speed = presets.move_speed.slow
  	table.insert(self._enemy_list, "tank_hw")
+	
 	self.tank_medic = deep_clone(self.tank)
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
+	
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.headshot_dmg_mul = 3.997125
@@ -1267,12 +1268,14 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
  	table.insert(self._enemy_list, "tank_titan")
+	
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.spawn_sound_event = "cloaker_spawn"
 	table.insert(self._enemy_list, "tank_titan_assault")
+	
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.move_speed = presets.move_speed.very_slow
-	table.insert(self._enemy_list, "tank_mini")
+	table.insert(self._enemy_list, "tank_mini")	
 end
 
 function CharacterTweakData:_init_tank_biker(presets)

@@ -3552,7 +3552,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g22c.kick.standing = self.glock_17.kick.standing
 		self.g22c.kick.crouching = self.glock_17.kick.standing
 		self.g22c.kick.steelsight = self.glock_17.kick.standing
-		self.g22c.CLIP_AMMO_MAX = 18
+		self.g22c.CLIP_AMMO_MAX = 16
 		self.g22c.stats = {
 			damage = 32,
 			spread = 16,
@@ -3738,7 +3738,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.scar.panic_suppression_chance = 0.0
 		self.p226.AMMO_MAX = 120
-		self.p226.CLIP_AMMO_MAX = 16
+		self.p226.CLIP_AMMO_MAX = 14
 		self.p226.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.p226.fire_mode_data.fire_rate = 0.08571428571
 		self.p226.single.fire_rate = 0.08571428571
@@ -4732,7 +4732,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.vhs.panic_suppression_chance = 0.0
-		self.hs2000.CLIP_AMMO_MAX = 16
+		self.hs2000.CLIP_AMMO_MAX = 14
 		self.hs2000.AMMO_MAX = 80
 		self.hs2000.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.hs2000.FIRE_MODE = "single"
@@ -4911,7 +4911,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g22c.kick.standing = self.glock_17.kick.standing
 		self.x_g22c.kick.crouching = self.glock_17.kick.standing
 		self.x_g22c.kick.steelsight = self.glock_17.kick.standing
-		self.x_g22c.CLIP_AMMO_MAX = 36
+		self.x_g22c.CLIP_AMMO_MAX = 32
 		self.x_g22c.AMMO_MAX = 150
 		self.x_g22c.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_g22c.FIRE_MODE = "single"

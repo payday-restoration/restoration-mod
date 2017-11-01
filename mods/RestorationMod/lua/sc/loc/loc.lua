@@ -213,21 +213,21 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-	LocalizationManager:add_localized_strings({
-		["hud_assault_assault"] = "Reaper Assault in Progress",
-		["hud_assault_alpha"] = "REAPER ASSAULT"
-	})
-end)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Reaper Assault in Progress",
+			["hud_assault_alpha"] = "REAPER ASSAULT"
+		})
+	end)
 
 elseif ai_type == m then
 		
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-	LocalizationManager:add_localized_strings({
-		["hud_assault_assault"] = "Murkywater Assault in Progress",
-		["hud_assault_alpha"] = "MURKYWATER ASSAULT"
-	})
-end)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Murkywater Assault in Progress",
+			["hud_assault_alpha"] = "MURKYWATER ASSAULT"
+		})
+	end)
 
 end
 

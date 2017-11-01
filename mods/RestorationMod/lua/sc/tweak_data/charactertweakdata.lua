@@ -68,7 +68,7 @@ function CharacterTweakData:init(tweak_data, presets)
 		end,
 		bulldozer = function()
 			if ai_type == r then
-				return "rbdz"
+				return "rbdz"					
 			else
 				return "bdz"
 			end

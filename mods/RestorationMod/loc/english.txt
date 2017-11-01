@@ -152,6 +152,7 @@
 	"restoration_level_data_short1_stage2" : "TIME UNKNOWN, LOCATION CLASSIFIED",
 	"restoration_level_data_short2_stage1" : "TIME UNKNOWN, LOCATION CLASSIFIED",
 	"restoration_level_data_short2_stage2" : "TIME UNKNOWN, LOCATION CLASSIFIED",
+	"restoration_level_data_short2_stage2b" : "TIME UNKNOWN, LOCATION CLASSIFIED",
 	"restoration_level_data_dark" : "2:21 AM, HIDDEN TRAINYARD",
 	"restoration_level_data_mad" : "TIME UNKNOWN, SOMEWHERE OVER RUSSIA...",
 	"restoration_level_data_born" : "10:15 AM, OVERKILL MC CLUB & BAR",

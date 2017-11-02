@@ -765,11 +765,12 @@ end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
+		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.",
-		["menu_deck6_5_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.",
-		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##15%## for ballistic vests.",
-		["menu_deck6_9_desc_sc"] = "Standing still and crouching increases your armor recovery rate by ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by ##20%## for ballistic vests.",
+		["menu_deck6_5_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by ##30%## for ballistic vests.",
+		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.\n\nYour armor is increased by ##40%## for ballistic vests.",
+		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##10%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
@@ -794,9 +795,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
 		["menu_deck3_1_desc_sc"] = "You gain an additional ##10%## more armor.",
-		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.\n\nYour armor is increased by ##10%## for ballistic vests.",
-		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.\n\nYour armor is increased by ##10%## for ballistic vests.",
-		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nYour armor is increased by ##20%## for ballistic vests.",
+		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.",
+		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.",
+		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
 		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.\n\nYou are now ##immune to suppression.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Burglar--
@@ -804,7 +805,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_3_desc_sc"] = "Your chance to dodge is increased by ##5%##.\n\nYou bag corpses ##20%## faster.",
 		["menu_deck7_5_desc_sc"] = "Your chance to dodge is increased by ##10%##.\n\nYou pick locks ##20%## faster.",
 		["menu_deck7_7_desc_sc"] = "Your chance to dodge is increased by ##10%##.\n\nYou answer pagers ##10%## faster.",
-		["menu_deck7_9_desc_sc"] = "Standing still and crouching increases your armor recovery rate by ##10%.##\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##10%##.\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\nCannot occur more than once every ##4## seconds.",

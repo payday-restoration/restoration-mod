@@ -2140,10 +2140,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_3",
-					"player_tier_armor_multiplier_4",
-					"player_level_2_armor_multiplier_1",
-					"player_level_3_armor_multiplier_1",
-					"player_level_4_armor_multiplier_1"
+					"player_tier_armor_multiplier_4"
 				},
 				cost = 400,
 				icon_xy = {5, 1},
@@ -2153,10 +2150,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_5",
-					"player_level_2_armor_multiplier_2",
-					"player_level_3_armor_multiplier_2",
-					"player_level_4_armor_multiplier_2"
+					"player_tier_armor_multiplier_5"
 				},
 				cost = 1000,
 				icon_xy = {7, 1},
@@ -2166,10 +2160,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_armor_regen_timer_multiplier_passive",
-					"player_level_2_armor_multiplier_3",
-					"player_level_3_armor_multiplier_3",
-					"player_level_4_armor_multiplier_3"
+					"player_armor_regen_timer_multiplier_passive"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},
@@ -2321,7 +2312,10 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_dodge_addend_1",
 					"player_level_3_dodge_addend_1",
-					"player_level_4_dodge_addend_1"
+					"player_level_4_dodge_addend_1",
+					"player_level_2_armor_multiplier_1",
+					"player_level_3_armor_multiplier_1",
+					"player_level_4_armor_multiplier_1"					
 				},
 				cost = 400,
 				icon_xy = {4, 3},
@@ -2333,7 +2327,10 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_dodge_addend_2",
 					"player_level_3_dodge_addend_2",
-					"player_level_4_dodge_addend_2"
+					"player_level_4_dodge_addend_2",
+					"player_level_2_armor_multiplier_2",
+					"player_level_3_armor_multiplier_2",
+					"player_level_4_armor_multiplier_2"						
 				},
 				cost = 1000,
 				icon_xy = {5, 3},
@@ -2345,7 +2342,10 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_dodge_addend_3",
 					"player_level_3_dodge_addend_3",
-					"player_level_4_dodge_addend_3"
+					"player_level_4_dodge_addend_3",
+					"player_level_2_armor_multiplier_3",
+					"player_level_3_armor_multiplier_3",
+					"player_level_4_armor_multiplier_3"						
 				},
 				cost = 2400,
 				icon_xy = {6, 3},
@@ -2356,7 +2356,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_armor_regen_timer_stand_still_multiplier"
+					"player_perk_armor_regen_timer_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {6, 2},
@@ -2415,7 +2415,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_armor_regen_timer_stand_still_multiplier",
+					"player_perk_armor_regen_timer_multiplier_1",
 					"player_crouch_speed_multiplier_2",
 					"player_passive_loot_drop_multiplier"
 				},

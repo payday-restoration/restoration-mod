@@ -106,8 +106,8 @@ function CharacterTweakData:_init_security(presets)
 	self.security.weapon = presets.weapon.normal
 	self.security.detection = presets.detection.guard
 	self.security.detection_increase = 0.05
-	self.security.HEALTH_INIT = 2
-	self.security.headshot_dmg_mul = 1.7
+	self.security.HEALTH_INIT = 4
+	self.security.headshot_dmg_mul = 2.25
 	self.security.move_speed = presets.move_speed.normal
 	self.security.crouch_move = nil
 	self.security.surrender_break_time = {20, 30}
@@ -180,8 +180,8 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.experience = {}
 	self.cop.weapon = presets.weapon.normal
 	self.cop.detection = presets.detection.normal
-	self.cop.HEALTH_INIT = 2
-	self.cop.headshot_dmg_mul = 1.7
+	self.cop.HEALTH_INIT = 4
+	self.cop.headshot_dmg_mul = 2.25
 	self.cop.move_speed = presets.move_speed.normal
 	self.cop.surrender_break_time = {10, 15}
 	self.cop.suppression = presets.suppression.easy
@@ -10805,7 +10805,7 @@ function CharacterTweakData:_presets(tweak_data)
 					}
 				},
 				preemptive = {
-					chance = 75,
+					chance = 90,
 					check_timeout = {0, 0},
 					variations = {
 						dive = {
@@ -11805,6 +11805,8 @@ function CharacterTweakData:_set_easy()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1")
 	self:_set_specials_weapon_preset("normal")
@@ -11837,6 +11839,8 @@ function CharacterTweakData:_set_normal()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1")
 	self:_set_specials_weapon_preset("normal")
@@ -11869,6 +11873,8 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1")
 	self:_set_specials_weapon_preset("normal")
@@ -11901,6 +11907,8 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("good")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic_very_hard")
 	self:_set_characters_melee_preset("2")
 	self:_set_specials_weapon_preset("normal")
@@ -11935,6 +11943,8 @@ function CharacterTweakData:_set_overkill_145()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("expert")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self:_set_characters_dodge_preset("athletic_overkill")
 	self:_set_characters_melee_preset("2.5")
 	self:_set_specials_weapon_preset("good")
@@ -11981,6 +11991,8 @@ function CharacterTweakData:_set_easy_wish()
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 150
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35

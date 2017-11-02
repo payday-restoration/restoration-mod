@@ -4,83 +4,36 @@ local job = Global.level_data and Global.level_data.level_id
 
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
-	local ai_type = tweak_data.levels:get_ai_group_type()
-	local r = LevelsTweakData.LevelType.Russia
-	local z = LevelsTweakData.LevelType.Zombie
-	self._prefix_data_p2 = {
-		swat = function()
-			if ai_type == r or ai_type == z then
-				return "n"
-			else
-				return "d"
-			end
-		end
-	}	
-
-	self._default_chatter = "dispatch_generic_message"
-
-	if ai_type == r or ai_type == z then
-		self._default_chatter = "dsp_radio_russian"
-	end	
 	old_init(self, tweak_data, presets)
 	local presets = self:_presets(tweak_data)
+	local func = "_init_region_" .. tostring(tweak_data.levels:get_ai_group_type())
+
+	self[func](self)
+
 	self._prefix_data_p1 = {
-		swat = function()
-			if ai_type == r then
-				return "r"
-			elseif ai_type == z then
-				return "z"				
-			else
-				return "l"
-			end
+		cop = function ()
+			return self._unit_prefixes.cop
 		end,
-		cop = function()
-			if ai_type == r then
-				return "r"
-			elseif ai_type == z then
-				return "z"							
-			else
-				return "l"
-			end
+		swat = function ()
+			return self._unit_prefixes.swat
 		end,
-		heavy_swat = function()
-			if ai_type == r then
-				return "r"
-			elseif ai_type == z then
-				return "z"							
-			else
-				return "l"
-			end
+		heavy_swat = function ()
+			return self._unit_prefixes.heavy_swat
 		end,
-		taser = function()
-			if ai_type == r then
-				return "rtsr"
-			else
-				return "tsr"
-			end
+		taser = function ()
+			return self._unit_prefixes.taser
 		end,
-		cloaker = function()
-			if ai_type == r then
-				return "rclk"
-			else
-				return "clk"
-			end
+		cloaker = function ()
+			return self._unit_prefixes.cloaker
 		end,
-		bulldozer = function()
-			if ai_type == r then
-				return "rbdz"					
-			else
-				return "bdz"
-			end
+		bulldozer = function ()
+			return self._unit_prefixes.bulldozer
 		end,
-		medic = function()
-			if ai_type == r then
-				return "rmdc"
-			else
-				return "mdc"
-			end
+		medic = function ()
+			return self._unit_prefixes.medic
 		end
 	}
+	
 	self:_init_boom(presets)
 	self:_init_spring(presets)
 	self:_init_summers(presets)
@@ -102,6 +55,7 @@ function CharacterTweakData:_init_region_america()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
+	self._speech_prefix_p2 = "d"
 end
 
 function CharacterTweakData:_init_region_russia()
@@ -115,6 +69,7 @@ function CharacterTweakData:_init_region_russia()
 		bulldozer = "rbdz",
 		medic = "rmdc"
 	}
+	self._speech_prefix_p2 = "n"
 end
 
 function CharacterTweakData:_init_region_zombie()
@@ -128,6 +83,7 @@ function CharacterTweakData:_init_region_zombie()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
+	self._speech_prefix_p2 = "n"
 end
 
 function CharacterTweakData:_init_region_murky()
@@ -141,6 +97,7 @@ function CharacterTweakData:_init_region_murky()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
+	self._speech_prefix_p2 = "d"
 end
 
 function CharacterTweakData:_init_security(presets)
@@ -383,19 +340,6 @@ function CharacterTweakData:_init_fbi(presets)
 			}
 		}
 	}
-	self.fbi_vet.dodge_with_grenade = {
-		smoke = {
-			duration = {12, 12}
-		}
-	}
-	function self.fbi_vet.dodge_with_grenade.check(t, nr_grenades_used)
-		local delay_till_next_use = math.lerp(17, 45, math.min(1, (nr_grenades_used or 0) / 4))
-		local chance = math.lerp(1, 0.5, math.min(1, (nr_grenades_used or 0) / 10))
-		if chance > math.random() then
-			return true, t + delay_till_next_use
-		end
-		return false, t + delay_till_next_use
-	end	
 	table.insert(self._enemy_list, "fbi_vet")
 end
 
@@ -487,7 +431,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.weapon_voice = "2"
 	self.swat.experience.cable_tie = "tie_swat"
 	self.swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.swat.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.swat.speech_prefix_count = 4
 	self.swat.access = "swat"
 	self.swat.dodge = presets.dodge.athletic
@@ -527,7 +471,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.weapon_voice = "2"
 	self.heavy_swat.experience.cable_tie = "tie_swat"
 	self.heavy_swat.speech_prefix_p1 = self._prefix_data_p1.heavy_swat()
-	self.heavy_swat.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.heavy_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.heavy_swat.speech_prefix_count = 4
 	self.heavy_swat.access = "swat"
 	self.heavy_swat.dodge = presets.dodge.heavy
@@ -567,7 +511,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	}
 	self.heavy_swat_sniper.experience.cable_tie = "tie_swat"
 	self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.heavy_swat_sniper.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
 	self.heavy_swat_sniper.speech_prefix_count = 4
 	self.heavy_swat_sniper.access = "swat"
 	self.heavy_swat_sniper.dodge = presets.dodge.athletic_overkill
@@ -603,7 +547,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.weapon_voice = "2"
 	self.fbi_swat.experience.cable_tie = "tie_swat"
 	self.fbi_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.fbi_swat.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.fbi_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.fbi_swat.speech_prefix_count = 4
 	self.fbi_swat.access = "swat"
 	self.fbi_swat.dodge = presets.dodge.athletic_very_hard
@@ -640,7 +584,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.weapon_voice = "2"
 	self.fbi_heavy_swat.experience.cable_tie = "tie_swat"
 	self.fbi_heavy_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.fbi_heavy_swat.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.fbi_heavy_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.fbi_heavy_swat.speech_prefix_count = 4
 	self.fbi_heavy_swat.access = "swat"
 	self.fbi_heavy_swat.dodge = presets.dodge.heavy_very_hard
@@ -687,7 +631,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.experience.cable_tie = "tie_swat"
 	self.city_swat.silent_priority_shout = "f37"
 	self.city_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.city_swat.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.city_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.city_swat.speech_prefix_count = 4
 	self.city_swat.access = "swat"
 	self.city_swat.dodge = presets.dodge.athletic_overkill
@@ -706,7 +650,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan = deep_clone(self.city_swat)
 	if job == "mad" then
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.city_swat_titan.speech_prefix_p2 = self._prefix_data_p2.swat()
+		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4
 	else
 		self.city_swat_titan.speech_prefix_p1 = "l5d"
@@ -757,7 +701,7 @@ function CharacterTweakData:_init_omnia(presets)
 	self.omnia.experience.cable_tie = "tie_swat"
 	self.omnia.silent_priority_shout = "f37"
 	self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.omnia.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.omnia.speech_prefix_p2 = self._speech_prefix_p2
 	self.omnia.speech_prefix_count = 4
 	self.omnia.access = "swat"
 	self.omnia.dodge = presets.dodge.athletic_overkill
@@ -1448,7 +1392,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.weapon_voice = "3"
 	self.shield.experience.cable_tie = "tie_swat"
 	self.shield.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.shield.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.shield.speech_prefix_p2 = self._speech_prefix_p2
 	self.shield.speech_prefix_count = 4
 	self.shield.access = "shield"
 	self.shield.chatter = presets.enemy_chatter.shield
@@ -1478,7 +1422,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.weapon_voice = "3"
 	self.phalanx_minion.experience.cable_tie = "tie_swat"
 	self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.phalanx_minion.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
 	self.phalanx_minion.speech_prefix_count = 4
 	self.phalanx_minion.access = "shield"
 	self.phalanx_minion.chatter = presets.enemy_chatter.shield
@@ -1756,7 +1700,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.weapon_voice = "3"
 	self.boom.experience.cable_tie = "tie_swat"
 	self.boom.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.boom.speech_prefix_p2 = self._prefix_data_p2.swat()
+	self.boom.speech_prefix_p2 = self._speech_prefix_p2
 	self.boom.speech_prefix_count = 1
 	self.boom.access = "taser"
 	self.boom.dodge = presets.dodge.athletic
@@ -10851,21 +10795,21 @@ function CharacterTweakData:_presets(tweak_data)
 			speed = 3,
 			occasions = {
 				hit = {
-					chance = 5,
+					chance = 100,
 					check_timeout = {0, 0},
 					variations = {
 						dive = {
-							chance = 3,
+							chance = 100,
 							timeout = {0, 0}
 						}
 					}
 				},
 				preemptive = {
-					chance = 5,
+					chance = 75,
 					check_timeout = {0, 0},
 					variations = {
 						dive = {
-							chance = 3,
+							chance = 100,
 							timeout = {0, 0}
 						}
 					}

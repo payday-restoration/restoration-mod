@@ -106,7 +106,7 @@ function CharacterTweakData:_init_security(presets)
 	self.security.weapon = presets.weapon.normal
 	self.security.detection = presets.detection.guard
 	self.security.detection_increase = 0.05
-	self.security.HEALTH_INIT = 3
+	self.security.HEALTH_INIT = 2
 	self.security.headshot_dmg_mul = 1.7
 	self.security.move_speed = presets.move_speed.normal
 	self.security.crouch_move = nil
@@ -180,7 +180,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.experience = {}
 	self.cop.weapon = presets.weapon.normal
 	self.cop.detection = presets.detection.normal
-	self.cop.HEALTH_INIT = 3
+	self.cop.HEALTH_INIT = 2
 	self.cop.headshot_dmg_mul = 1.7
 	self.cop.move_speed = presets.move_speed.normal
 	self.cop.surrender_break_time = {10, 15}
@@ -11797,7 +11797,7 @@ function CharacterTweakData:_create_table_structure()
 end
 
 function CharacterTweakData:_set_easy()
-	self:_multiply_all_hp(0.75, 1)
+	self:_multiply_all_hp(1, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -11829,7 +11829,7 @@ function CharacterTweakData:_set_easy()
 end
 
 function CharacterTweakData:_set_normal()
-	self:_multiply_all_hp(0.75, 1)
+	self:_multiply_all_hp(1, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)

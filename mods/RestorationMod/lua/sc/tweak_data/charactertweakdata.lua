@@ -232,8 +232,8 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.experience = {}
 	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 	self.omnia_lpf.detection = presets.detection.normal
-	self.omnia_lpf.HEALTH_INIT = 20
-	self.omnia_lpf.headshot_dmg_mul = 2
+	self.omnia_lpf.HEALTH_INIT = 15
+	self.omnia_lpf.headshot_dmg_mul = 2.19
 	self.omnia_lpf.move_speed = presets.move_speed.fast
 	self.omnia_lpf.surrender_break_time = {6, 10}
 	self.omnia_lpf.suppression = nil
@@ -304,8 +304,8 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi_vet.surrender = nil
 	self.fbi_vet.suppression = nil
     	self.fbi_vet.can_shoot_while_dodging = true
-	self.fbi_vet.HEALTH_INIT = 20
-	self.fbi_vet.headshot_dmg_mul = 2
+	self.fbi_vet.HEALTH_INIT = 15
+	self.fbi_vet.headshot_dmg_mul = 2.19
 	self.fbi_vet.damage.bullet_dodge_chance = 50
 	self.fbi_vet.smoke_dodge_increase = 10
     	self.fbi_vet.dodge = presets.dodge.veteran

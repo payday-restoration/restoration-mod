@@ -52,13 +52,13 @@ function UpgradesTweakData:_init_pd2_values()
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
+		0.05,
 		0,
 		-0.05,
 		-0.1,
-		-0.15,
+		-0.2,
 		-0.25,
-		-0.3,
-		-0.4
+		-0.35
 	}
 	self.values.player.body_armor.concealment = {
 		30,

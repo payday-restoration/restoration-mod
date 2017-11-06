@@ -237,7 +237,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_101"] = "Flashbangs make an audible noise when deployed. They cannot be destroyed by gunfire or melee weapons, so it's best to simply look away.",
 		["loading_gameplay_118"] = "Cable Ties are a finite resource, make the most of them.",
 		["loading_gameplay_12"] = "Know your enemy. Cloakers have distinct green, glowing night vision goggles on, and are completely silent. Check your corners and maintain vigilance!",
-
+		
 		["loading_sc_tip_title"] = "SC's Mod Tips",
 		["loading_sc_tip_1"] = "Know your enemy. Grenadiers use tear gas grenades to flush heisters out of cover and are resistant to explosives themselves. Take them out quickly!",
 		["loading_sc_tip_2"] = "Know your enemy. The Veteran Cop automatically dodges 50% of incoming gunfire. Try using damage types that he can't dodge like explosives, fire, or your melee weapon!",
@@ -408,7 +408,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSubmachine Guns, Light Machineguns or Rifles set on automatic fire mode have a ##10%## chance to knock down enemies.\n\nACE: ##$pro##\nYour shots now have a ##25%## chance to knock down enemies.\n\nNote: Stagger effects do not apply to Captains, Veteran Cops, Bulldozers, and Shields.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSubmachine Guns, Light Machineguns or Rifles set on automatic fire mode have a ##10%## chance to knock down enemies.\n\nACE: ##$pro##\nYour shots now have a ##25%## chance to knock down enemies.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
@@ -662,7 +662,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Cleaner--
 		["menu_cleaner_beta_sc"] = "Cleaner",
-		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nYour body bag inventory space is increased to ##3## from ##2.##\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases and you ##no longer have cleaner costs## when killing a civilian.\n\nYou deal ##5%## more damage against special enemies.",	
+		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases and you ##no longer have cleaner costs## when killing a civilian.\n\nYou deal ##5%## more damage against special enemies.",	
 																																																																																																																																																																																																																								
 		--Sixth Sense--
 		["menu_chameleon_beta_sc"] = "Sixth Sense",

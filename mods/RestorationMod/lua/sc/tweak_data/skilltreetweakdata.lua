@@ -25,7 +25,6 @@ function SkillTreeTweakData:init(tweak_data)
 		digest(18)
 	}
 
-	--No more primary when downed son--
    	self.default_upgrades = {
 		"carry_interact_speed_multiplier_1",
 		"carry_interact_speed_multiplier_2",
@@ -1236,8 +1235,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {7, 2},
 				[1] = {
 					upgrades = {
-						"player_corpse_dispose_amount_2",
-						"player_extra_corpse_dispose_amount"
+						"player_corpse_dispose_amount_2"
 					},
 					cost = self.costs.default
 				},

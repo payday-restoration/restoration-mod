@@ -320,7 +320,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Stun Resistance
 				self.values.player.damage_shake_addend = {1}
-				self.values.player.flashbang_multiplier = {0.75, 0.25}
+				self.values.player.flashbang_multiplier = {0.5, 0.25}
 				
 				--Die Hard
 				self.values.player.armor_regen_timer_multiplier = {0.85}
@@ -498,7 +498,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.small_loot_multiplier = {1.1, 1.3}
 				
 				--Cleaner
-				self.values.player.corpse_dispose_amount = {1, 2}
+				self.values.player.corpse_dispose_amount = {2, 3}
 				self.values.player.extra_corpse_dispose_amount = {1}
 				self.values.bodybags_bag.quantity = {1}
 				self.values.player.cleaner_cost_multiplier = {0}

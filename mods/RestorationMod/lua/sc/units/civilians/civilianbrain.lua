@@ -6,7 +6,7 @@ function CivilianBrain:on_intimidated(n, unit)
 		managers.groupai:state():propagate_alert({
 			"vo_distress",
 			unit:movement():m_head_pos(),
-			600,
+			200,
 			managers.groupai:state():get_unit_type_filter("civilians_enemies"),
 			unit
 		})

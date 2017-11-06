@@ -728,6 +728,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:base()._tweak_table == "spooc" then
 			self._unit:damage():run_sequence_simple("kill_spook_lights")
 		end 		
+		if self._unit:interaction().tweak_data == "hostage_convert" then
+			self._unit:interaction():set_active(false, true, false)
+		end		
 		self:_on_death()
 		managers.mutators:notify(Message.OnCopDamageDeath, self, attack_data)
 	end
@@ -1034,16 +1037,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		
 	end)
-
-	--stealth BS, making it so cuffed guard's pagers WILL NOT go off--
-		origCopDamageDie = origCopDamageDie or CopDamage.die
-		function CopDamage:die(...)
-			origCopDamageDie(self, ...)
-			io.stderr:write(self._unit:interaction().tweak_data .."\n")
-			if self._unit:interaction().tweak_data == "hostage_convert" then
-				self._unit:interaction():set_active(false, true, false)
-			end
-		end
 
 	function CopDamage.is_hrt(type)
 		return type == "swat" or type == "fbi" or type == "cop" or type == "security"

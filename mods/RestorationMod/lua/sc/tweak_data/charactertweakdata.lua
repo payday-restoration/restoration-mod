@@ -236,7 +236,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.headshot_dmg_mul = 2.19
 	self.omnia_lpf.move_speed = presets.move_speed.fast
 	self.omnia_lpf.surrender_break_time = {6, 10}
-	self.omnia_lpf.suppression = nil
+	self.omnia_lpf.suppression = presets.suppression.no_supress
 	self.omnia_lpf.surrender = nil
 	self.omnia_lpf.ecm_vulnerability = 1
 	self.omnia_lpf.ecm_hurts = {
@@ -302,7 +302,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
-	self.fbi_vet.suppression = nil
+	self.fbi_vet.suppression = presets.suppression.no_supress
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 15
 	self.fbi_vet.headshot_dmg_mul = 2.19
@@ -323,7 +323,6 @@ function CharacterTweakData:_init_fbi(presets)
 	else
 		self.fbi_vet.steal_loot = true
 	end
-	self.fbi_vet.immune_to_knock_down = true
 	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.base)
 	self.fbi_vet.damage.hurt_severity.bullet = {
 		health_reference = 1,
@@ -340,6 +339,22 @@ function CharacterTweakData:_init_fbi(presets)
 			}
 		}
 	}
+	self.fbi_vet.dodge_with_grenade = {
+		smoke = {duration = {
+			12,
+			12
+		}},
+		check = function (t, nr_grenades_used)
+			local delay_till_next_use = 30
+			local chance = 0.1
+
+			if math.random() < chance then
+				return true, t + delay_till_next_use
+			end
+
+			return false, t + delay_till_next_use
+		end
+	}	
 	table.insert(self._enemy_list, "fbi_vet")
 end
 
@@ -351,7 +366,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.detection = presets.detection.normal
 	self.medic.HEALTH_INIT = 30
 	self.medic.headshot_dmg_mul = 2.2
-	self.medic.suppression = nil
+	self.medic.suppression = presets.suppression.no_supress
 	self.medic.surrender = presets.surrender.special
 	self.medic.move_speed = presets.move_speed.very_fast
 	self.medic.surrender_break_time = {7, 12}
@@ -494,7 +509,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.headshot_dmg_mul = 2.6
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
-	self.heavy_swat_sniper.suppression = nil
+	self.heavy_swat_sniper.suppression = presets.suppression.no_supress
 	if job == "kosugi" or job == "dark" then
 		self.heavy_swat_sniper.surrender = nil
 		self.heavy_swat_sniper.no_arrest_chance_inc = 0.25
@@ -731,7 +746,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.shooting_death = false
 	self.sniper.no_move_and_shoot = true
 	self.sniper.move_and_shoot_cooldown = 1
-	self.sniper.suppression = nil
+	self.sniper.suppression = presets.suppression.no_supress
 	self.sniper.melee_weapon = nil
 	self.sniper.ecm_vulnerability = 1
 	self.sniper.ecm_hurts = {
@@ -863,7 +878,7 @@ function CharacterTweakData:_init_biker_escape(presets)
 	self.biker_escape.melee_weapon = "knife_1"
 	self.biker_escape.move_speed = presets.move_speed.very_fast
 	self.biker_escape.HEALTH_INIT = 4
-	self.biker_escape.suppression = nil
+	self.biker_escape.suppression = presets.suppression.no_supress
  	table.insert(self._enemy_list, "biker_escape")
 end
 
@@ -1319,7 +1334,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.no_retreat = true
 	self.spooc.no_arrest = true
 	self.spooc.surrender_break_time = {4, 6}
-	self.spooc.suppression = nil
+	self.spooc.suppression = presets.suppression.no_supress
 	self.spooc.surrender = nil
 	self.spooc.priority_shout = "f33"
 	self.spooc.bot_priority_shout = "f33x_any"
@@ -1372,7 +1387,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.no_arrest = true
 	self.shield.surrender = nil
 	self.shield.ecm_vulnerability = 0.9
-	self.shield.suppression = nil
+	self.shield.suppression = presets.suppression.no_supress
 	self.shield.ecm_hurts = {
 		ears = {min_duration = 7, max_duration = 9}
 	}
@@ -1440,7 +1455,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.damage.immune_to_knockback = true
 	self.phalanx_minion.spawn_sound_event = "l2d_prm"
 	self.phalanx_minion.die_sound_event = "mga_death_scream"
-	self.phalanx_minion.suppression = nil
+	self.phalanx_minion.suppression = presets.suppression.no_supress
  	table.insert(self._enemy_list, "phalanx_minion")
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 	self.phalanx_minion_assault.spawn_sound_event = "cloaker_spawn"
@@ -1467,7 +1482,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.can_be_tased = false
 	self.phalanx_vip.ecm_vulnerability = nil
 	self.phalanx_vip.must_headshot = true
-	self.phalanx_vip.suppression = nil
+	self.phalanx_vip.suppression = presets.suppression.no_supress
 	self.phalanx_vip.ecm_hurts = {}
  	table.insert(self._enemy_list, "phalanx_vip")
 end
@@ -1560,7 +1575,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.ecm_vulnerability = 0
 	self.summers.ecm_hurts = {}
 	self.summers.surrender_break_time = {4, 6}
-	self.summers.suppression = nil
+	self.summers.suppression = presets.suppression.no_supress
 	self.summers.weapon_voice = "3"
 	self.summers.experience.cable_tie = "tie_swat"
 	self.summers.speech_prefix_p1 = "rtsr"
@@ -1604,7 +1619,7 @@ function CharacterTweakData:_init_taser(presets)
 		ears = {min_duration = 6, max_duration = 8}
 	}
 	self.taser.surrender_break_time = {4, 6}
-	self.taser.suppression = nil
+	self.taser.suppression = presets.suppression.no_supress
 	self.taser.weapon_voice = "3"
 	self.taser.experience.cable_tie = "tie_swat"
 	self.taser.speech_prefix_p1 = self._prefix_data_p1.taser()
@@ -1696,7 +1711,7 @@ function CharacterTweakData:_init_boom(presets)
 		ears = {min_duration = 6, max_duration = 8}
 	}
 	self.boom.surrender_break_time = {4, 6}
-	self.boom.suppression = nil
+	self.boom.suppression = presets.suppression.no_supress
 	self.boom.weapon_voice = "3"
 	self.boom.experience.cable_tie = "tie_swat"
 	self.boom.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -10795,21 +10810,21 @@ function CharacterTweakData:_presets(tweak_data)
 			speed = 3,
 			occasions = {
 				hit = {
-					chance = 100,
+					chance = 1,
 					check_timeout = {0, 0},
 					variations = {
 						dive = {
-							chance = 100,
+							chance = 1,
 							timeout = {0, 0}
 						}
 					}
 				},
 				preemptive = {
-					chance = 90,
+					chance = 0.95,
 					check_timeout = {0, 0},
 					variations = {
 						dive = {
-							chance = 100,
+							chance = 1,
 							timeout = {0, 0}
 						}
 					}

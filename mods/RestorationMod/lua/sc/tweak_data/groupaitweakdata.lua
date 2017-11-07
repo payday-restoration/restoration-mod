@@ -5743,11 +5743,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0,
 						0
 					},
-					CS_swats = {
-						0,
-						1,
-						1
-					},
 					CS_tazers = {
 						0,
 						0.1,
@@ -5871,7 +5866,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					increase = 0.05,
 					decrease = 0.7,
 					max = 1,
-					respawn_delay = 1800
+					respawn_delay = 2700
 				}
 			elseif difficulty_index == 5 then
 				self.phalanx.spawn_chance = {
@@ -5879,7 +5874,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					increase = 0.09,
 					decrease = 0.7,
 					max = 1,
-					respawn_delay = 1500
+					respawn_delay = 2700
 				}
 			elseif difficulty_index == 6 then
 				self.phalanx.spawn_chance = {
@@ -5887,7 +5882,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					increase = 0.09,
 					decrease = 1,
 					max = 1,
-					respawn_delay = 1200
+					respawn_delay = 2700
 				}
 			elseif difficulty_index == 7 then
 				self.phalanx.spawn_chance = {
@@ -5895,7 +5890,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					increase = 0.09,
 					decrease = 1,
 					max = 1,
-					respawn_delay = 900
+					respawn_delay = 2700
 				}
 			elseif difficulty_index == 8 then
 				self.phalanx.spawn_chance = {
@@ -5903,7 +5898,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					increase = 0.09,
 					decrease = 1,
 					max = 1,
-					respawn_delay = 600
+					respawn_delay = 2700
 				}
 			else
 				self.phalanx.spawn_chance = {

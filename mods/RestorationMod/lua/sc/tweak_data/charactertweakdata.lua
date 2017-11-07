@@ -78,10 +78,10 @@ function CharacterTweakData:_init_region_zombie()
 		cop = "z",
 		swat = "z",
 		heavy_swat = "z",
-		taser = "tsr",
-		cloaker = "clk",
-		bulldozer = "bdz",
-		medic = "mdc"
+		taser = "z1n",
+		cloaker = "z2n",
+		bulldozer = "z3n",
+		medic = "z4n"
 	}
 	self._speech_prefix_p2 = "n"
 end
@@ -105,7 +105,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.experience = {}
 	self.security.weapon = presets.weapon.normal
 	self.security.detection = presets.detection.guard
-	self.security.detection_increase = 0.05
 	self.security.HEALTH_INIT = 4
 	self.security.headshot_dmg_mul = 2.25
 	self.security.move_speed = presets.move_speed.normal
@@ -131,7 +130,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.chatter = presets.enemy_chatter.cop
 	self.security.has_alarm_pager = true
 	self.security.melee_weapon = nil
-	self.security.no_arrest_chance_inc = 0.25
 	self.security.steal_loot = nil
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
@@ -144,7 +142,6 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.experience = {}
 	self.gensec.weapon = presets.weapon.normal
 	self.gensec.detection = presets.detection.guard
-	self.gensec.detection_increase = 0.05
 	self.gensec.HEALTH_INIT = 6
 	self.gensec.headshot_dmg_mul = 3.4
 	self.gensec.move_speed = presets.move_speed.very_fast
@@ -167,7 +164,6 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.silent_priority_shout = "f37"
 	self.gensec.dodge = presets.dodge.athletic
 	self.gensec.deathguard = false
-	self.gensec.no_arrest_chance_inc = 0.25
 	self.gensec.chatter = presets.enemy_chatter.cop
 	self.gensec.has_alarm_pager = true
 	self.gensec.melee_weapon = "baton"
@@ -510,15 +506,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = presets.suppression.no_supress
-	if job == "kosugi" or job == "dark" then
-		self.heavy_swat_sniper.surrender = nil
-		self.heavy_swat_sniper.no_arrest_chance_inc = 0.25
-		self.heavy_swat_sniper.detection_increase = 0.05
-	else
-		self.heavy_swat_sniper.surrender = nil
-		self.heavy_swat_sniper.no_arrest_chance_inc = nil
-		self.heavy_swat_sniper.detection_increase = nil
-	end
+	self.heavy_swat_sniper.surrender = nil
 	self.heavy_swat_sniper.no_arrest = true
 	self.heavy_swat_sniper.ecm_vulnerability = 1
 	self.heavy_swat_sniper.ecm_hurts = {
@@ -628,15 +616,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
 	self.city_swat.suppression = presets.suppression.hard_def
-	if job == "kosugi" or job == "dark" then
-		self.city_swat.surrender = presets.surrender.hard
-		self.city_swat.no_arrest_chance_inc = 0.25
-		self.city_swat.detection_increase = 0.05
-	else
-		self.city_swat.surrender = presets.surrender.hard
-		self.city_swat.no_arrest_chance_inc = nil
-		self.city_swat.detection_increase = nil
-	end
+	self.city_swat.surrender = presets.surrender.hard
 	self.city_swat.no_arrest = false
 	self.city_swat.ecm_vulnerability = 1
 	self.city_swat.ecm_hurts = {
@@ -698,15 +678,7 @@ function CharacterTweakData:_init_omnia(presets)
 	self.omnia.move_speed = presets.move_speed.very_fast
 	self.omnia.surrender_break_time = {6, 10}
 	self.omnia.suppression = presets.suppression.hard_def
-	if job == "kosugi" or job == "dark" then
-		self.omnia.surrender = presets.surrender.hard
-		self.omnia.no_arrest_chance_inc = 0.25
-		self.omnia.detection_increase = 0.05
-	else
-		self.omnia.surrender = presets.surrender.hard
-		self.omnia.no_arrest_chance_inc = nil
-		self.omnia.detection_increase = nil
-	end
+	self.omnia.surrender = presets.surrender.hard
 	self.omnia.no_arrest = false
 	self.omnia.ecm_vulnerability = 1
 	self.omnia.ecm_hurts = {
@@ -853,8 +825,6 @@ function CharacterTweakData:_init_biker(presets)
 	self.biker_guard.detection = presets.detection.guard
 	self.biker_guard.HEALTH_INIT = 6
 	self.biker_guard.headshot_dmg_mul = 3.4
-	self.biker_guard.no_arrest_chance_inc = 0.25
-	self.biker_guard.detection_increase = 0.05
 	self.biker_guard.move_speed = presets.move_speed.very_fast
 	self.biker_guard.ecm_vulnerability = 1
 	self.biker_guard.no_arrest = false
@@ -1088,8 +1058,6 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors.detection = presets.detection.guard
 	self.bolivian_indoors.HEALTH_INIT = 6
 	self.bolivian_indoors.headshot_dmg_mul = 3.4
-	self.bolivian_indoors.no_arrest_chance_inc = 0.25
-	self.bolivian_indoors.detection_increase = 0.05
 	self.bolivian_indoors.move_speed = presets.move_speed.normal
 	self.bolivian_indoors.ecm_vulnerability = 1
 	self.bolivian_indoors.no_arrest = false
@@ -1553,6 +1521,8 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.HEALTH_INIT = 72
 	self.summers.HEALTH_SUICIDE_LIMIT = 0.25
 	self.summers.flammable = false
+	self.summers.allowed_stances = {cbt = true}
+	self.summers.allowed_poses = {stand = true}	
 	self.summers.use_animation_on_fire_damage = false
 	self.summers.damage.bullet_damage_mul = 0.65
 	self.summers.damage.explosion_damage_mul = 0.1
@@ -1561,6 +1531,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.headshot_dmg_mul = 1.25
 	self.summers.bag_dmg_mul = 6
 	self.summers.move_speed = presets.move_speed.very_slow
+	self.summers.crouch_move = false
 	self.summers.no_run_start = true
 	self.summers.no_run_stop = true
 	self.summers.no_retreat = true
@@ -12044,20 +12015,12 @@ function CharacterTweakData:_set_overkill_290()
 	self:_set_specials_melee_preset("2.5")
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
-	self.security.no_arrest = true
-	self.gensec.no_arrest = true
-	self.bolivian_indoors.no_arrest = true
-	if job == "kosugi" or job == "dark" then
-		self.city_swat.no_arrest = true
-	else
-		self.city_swat.no_arrest = false
-	end
-	self:_multiply_all_speeds(1.15, 1.2)
-	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.old_hoxton_mission.HEALTH_INIT = 200
-	self.spa_vip.HEALTH_INIT = 200
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
+	self:_multiply_all_speeds(1.05, 1.1)
+	self.presets.gang_member_damage.HEALTH_INIT = 175
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.old_hoxton_mission.HEALTH_INIT = 175
+	self.spa_vip.HEALTH_INIT = 175
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -12096,7 +12059,7 @@ function CharacterTweakData:_set_sm_wish()
 	else
 		self.city_swat.no_arrest = false
 	end
-	self:_multiply_all_speeds(1.15, 1.2)
+	self:_multiply_all_speeds(1.1, 1.15)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 200

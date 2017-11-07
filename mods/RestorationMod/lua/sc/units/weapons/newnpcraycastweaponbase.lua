@@ -4,7 +4,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local mvec_spread = Vector3()
 	local mvec1 = Vector3()
 	function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
-		if self._ammo_data.bullet_class ~= nil then
+		if self._ammo_data.bullet_class ~= nil and not self._is_team_ai then
 			log("SC: Found Ammo Data! " .. self._ammo_data.bullet_class)
 			self._bullet_class = CoreSerialize.string_to_classtable(self._ammo_data.bullet_class)
 			self._bullet_slotmask = self._bullet_class:bullet_slotmask()

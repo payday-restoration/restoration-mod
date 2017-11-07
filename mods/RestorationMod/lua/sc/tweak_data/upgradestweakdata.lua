@@ -115,7 +115,7 @@ function UpgradesTweakData:_init_pd2_values()
 		5
 	}
 
-	self.values.rep_upgrades.values = {0}
+	self.values.rep_upgrades.values = {1}
 
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
     	self.values.player.suppression_resist = {true}

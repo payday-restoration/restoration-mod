@@ -332,7 +332,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Medic
 			["menu_combat_medic_beta_sc"] = "Combat Medic",
-			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nAfter you have revived a crew member, you receive a ##25%## damage bonus for ##10## seconds.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
+			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
 			
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "Quick Fix",
@@ -362,7 +362,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "Cable Guy",
-			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4.##\n\nYou can cable tie hostages ##75%## faster.\n\nACE: ##$pro##\nIncreases your stamina by ##150%## and your crew's stamina by ##50%.##",																								
+			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nIncreases your stamina by ##150%## and your crew's stamina by ##50%.##",																								
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "Clowns are Scary",
@@ -461,7 +461,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "Transporter",
-			["menu_transporter_beta_desc_sc"] = "BASIC: ##$basic##\nYou can throw bags ##50%## further.\n\nACE: ##$pro##\nYou can now sprint with any bag.\n\nNote: The movement penalty from the bag still applies.",																																																																																																																																																																																																
+			["menu_transporter_beta_desc_sc"] = "BASIC: ##$basic##\nFor each ##10## armor points the bag movement penalty is reduced by ##0.5%##.\n\nACE: ##$pro##\nYou can now sprint with any bag.\n\nNote: The movement penalty from the bag still applies.",																																																																																																																																																																																																
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "More Blood to Bleed",
@@ -473,7 +473,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nNote: Captains can only be stunned by melee attacks.",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.",																																																																																																																																																																																																
 		
 
 			--}
@@ -678,11 +678,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 																																																																																																																																																																																																																																															
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
-		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##10%## additional movement speed and ##20%## ladder climbing speed. \n\nACE: ##$pro##\nYour movement speed is ##unhindered while using steel sight.##\n\nYour fall damage is reduced by ##75%## and you only take armor damage from falling from non fatal heights.",																								
+		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed and ##20%## ladder climbing speed.\n\nACE: ##$pro##\nYou gain ##10%## additional movement speed.\n\nYour fall damage is reduced by ##75%##.",																								
 
 		--Moving Target--
 		["menu_dire_need_beta_sc"] = "Moving Target",
-		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1%## extra movement speed for every ##3## points of concealment under ##35##, up to ##10%.##\n\nACE: ##$pro##\nYou gain ##1%## extra movement speed for every ##1## point of concealment under ##35##, up to ##10%.##",																								
+		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##",																								
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",

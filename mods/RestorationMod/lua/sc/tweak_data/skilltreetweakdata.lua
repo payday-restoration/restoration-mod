@@ -21,14 +21,15 @@ function SkillTreeTweakData:init(tweak_data)
 	self.tier_unlocks = {
 		digest(0),
 		digest(1),
-		digest(9),
-		digest(18)
+		digest(7),
+		digest(16)
 	}
 
    	self.default_upgrades = {
 		"carry_interact_speed_multiplier_1",
 		"carry_interact_speed_multiplier_2",
 		"carry_movement_speed_multiplier",
+		"carry_throw_distance_multiplier",
 		"trip_mine_sensor_toggle",
 		"trip_mine_sensor_highlight",
 		"trip_mine_can_switch_on_off",
@@ -52,6 +53,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"saw",
 		"saw_secondary",
 		"cable_tie",
+		"cable_tie_interact_speed_multiplier",
 		"player_special_enemy_highlight",
 		"player_hostage_trade",
 		"player_sec_camera_highlight",
@@ -94,7 +96,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {5, 7},
 				[1] = {
 					upgrades = {
-						"temporary_combat_medic_damage_multiplier1"
+						"temporary_revive_damage_reduction_1",
+						"player_revive_damage_reduction_1"
 					},
 					cost = self.costs.default
 				},
@@ -215,8 +218,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 7},
 				[1] = {
 					upgrades = {
-						"cable_tie_quantity",
-						"cable_tie_interact_speed_multiplier"
+						"cable_tie_quantity"
 					},
 					cost = self.costs.default
 				},
@@ -632,7 +634,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 0},
 				[1] = {
 					upgrades = {
-						"carry_throw_distance_multiplier"
+						"player_armor_carry_bonus_1"
 					},
 					cost = self.costs.default
 				},
@@ -1367,14 +1369,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {7, 10},
 				[1] = {
 					upgrades = {
-						"player_movement_speed_multiplier",
+						"player_movement_speed_multiplier_1",
 						"player_climb_speed_multiplier_1"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_steelsight_normal_movement_speed",
+						"player_movement_speed_multiplier_2",
 						"player_fall_damage_multiplier"
 					},
 					cost = self.costs.pro

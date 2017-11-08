@@ -298,7 +298,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.tags = {"custom"}
 	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
-	self.fbi_vet.suppression = presets.suppression.no_supress
+	self.fbi_vet.suppression = nil
     	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.HEALTH_INIT = 15
 	self.fbi_vet.headshot_dmg_mul = 2.19
@@ -1302,7 +1302,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.no_retreat = true
 	self.spooc.no_arrest = true
 	self.spooc.surrender_break_time = {4, 6}
-	self.spooc.suppression = presets.suppression.no_supress
+	self.spooc.suppression = nil
 	self.spooc.surrender = nil
 	self.spooc.priority_shout = "f33"
 	self.spooc.bot_priority_shout = "f33x_any"
@@ -1420,7 +1420,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.can_be_tased = false
 	self.phalanx_minion.immune_to_knock_down = true
 	self.phalanx_minion.immune_to_concussion = true
-	self.phalanx_minion.damage.immune_to_knockback = true
+	self.phalanx_minion.damage.immune_to_knockback = false
 	self.phalanx_minion.spawn_sound_event = "l2d_prm"
 	self.phalanx_minion.die_sound_event = "mga_death_scream"
 	self.phalanx_minion.suppression = presets.suppression.no_supress
@@ -1436,6 +1436,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
 	self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
 	self.phalanx_vip.damage.shield_knocked = false
+	self.phalanx_vip.damage.immune_to_knockback = true
 	self.phalanx_vip.immune_to_knock_down = true
 	self.phalanx_vip.HEALTH_INIT = 26
 	self.phalanx_vip.headshot_dmg_mul = 1.25
@@ -11783,7 +11784,7 @@ function CharacterTweakData:_create_table_structure()
 end
 
 function CharacterTweakData:_set_easy()
-	self:_multiply_all_hp(1, 1)
+	self:_multiply_all_hp(0.75, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -11817,7 +11818,7 @@ function CharacterTweakData:_set_easy()
 end
 
 function CharacterTweakData:_set_normal()
-	self:_multiply_all_hp(1, 1)
+	self:_multiply_all_hp(0.75, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)

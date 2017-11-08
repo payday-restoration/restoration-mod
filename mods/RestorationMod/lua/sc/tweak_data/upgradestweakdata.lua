@@ -115,7 +115,7 @@ function UpgradesTweakData:_init_pd2_values()
 		5
 	}
 
-	self.values.rep_upgrades.values = {1}
+	self.values.rep_upgrades.values = {0}
 
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
     	self.values.player.suppression_resist = {true}
@@ -181,7 +181,12 @@ function UpgradesTweakData:_init_pd2_values()
 					{1.25, 15}
 				}
 				self.revive_health_multiplier = {1.3}
-
+				self.values.temporary.revive_damage_reduction = {{
+					0.9,
+					5
+				}}
+				self.values.player.revive_damage_reduction = {0.9}
+				
 				--Quick Fix
 				self.values.first_aid_kit.deploy_time_multiplier = {0.5}
 				self.values.temporary.first_aid_damage_reduction = { {0.85, 20} }
@@ -330,6 +335,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.carry.movement_speed_multiplier = {1.5}
 				self.values.carry.throw_distance_multiplier = {1.5}
 				self.values.carry.movement_penalty_nullifier = {true}
+				self.values.player.armor_carry_bonus = {1.005}
 				
 				--More Blood To Bleed
 				self.values.player.health_multiplier = {1.25, 1.5}
@@ -537,7 +543,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.crouch_dodge_chance = {0.05, 0.15}
 
 				--Evasion
-				self.values.player.movement_speed_multiplier = {1.1}
+				self.values.player.movement_speed_multiplier = {1.05, 1.15}
 				self.values.player.climb_speed_multiplier = {1.2, 1.75}
 				self.values.player.can_free_run = {true}
 				self.values.player.fall_damage_multiplier = {0.25}
@@ -558,14 +564,14 @@ function UpgradesTweakData:_init_pd2_values()
 						3,
 						"below",
 						35,
-						0.1
+						0.15
 					},
 					{
 						0.01,
 						1,
 						"below",
 						35,
-						0.1
+						0.15
 					}
 				}
 
@@ -1154,6 +1160,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
+	self.definitions.player_movement_speed_multiplier_1 = {
+		name_id = "menu_player_movement_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "movement_speed_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.player_movement_speed_multiplier_2 = {
+		name_id = "menu_player_movement_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "movement_speed_multiplier",
+			category = "player"
+		}
+	}		
 end
 
 function UpgradesTweakData:_smg_definitions()

@@ -92,6 +92,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local all = {
 			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
 		}	
+	local haunted = {
+			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
+		}		
 	
 	function ElementSpawnEnemyDummy:init(...)
 		ElementSpawnEnemyDummy.super.init(self, ...)
@@ -99,7 +103,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		local job = Global.level_data and Global.level_data.level_id
-
+		
 		if ai_type == "america" and job ~= "firestarter_2" then --only replace enemies if we're in america and not on firestarter 2, otherwise DHS appear in FBI office and it looks fucking stupid
 			if difficulty_index == 8 then --DHS over GenSec/FBI
 				if sm_wish[self._values.enemy] then
@@ -148,7 +152,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			 end
 			 self._values.enemy = fbi_sniper[self._values.enemy] or self._values.enemy
 		end
-				
+		
+		if job == "haunted" then  
+			if haunted[self._values.enemy] then
+				self._values.enemy = haunted[self._values.enemy]
+			end
+			self._values.enemy = haunted[self._values.enemy] or self._values.enemy
+		end		
+						
 		self._enemy_name = self._values.enemy and Idstring(self._values.enemy) or Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")
 		self._values.enemy = nil
 		self._units = {}

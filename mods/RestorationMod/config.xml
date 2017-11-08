@@ -45,6 +45,7 @@
 		<hook file="sc/tweak_data/customsafehousetweakdata.lua" source_file="lib/tweak_data/customsafehousetweakdata"/>
 		<hook file="sc/units/equipment/grenadecratebase.lua" source_file="lib/units/equipment/grenade_crate/grenadecratebase"/>
 		<hook file="sc/tweak_data/infamytweakdata.lua" source_file="lib/tweak_data/infamytweakdata"/>
+		<hook file="sc/tweak_data/interactiontweakdata.lua" source_file="lib/tweak_data/interactiontweakdata"/>
 		<hook file="sc/tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
 		<hook file="sc/tweak_data/dlctweakdata.lua" source_file="lib/tweak_data/dlctweakdata"/>
 		<hook file="sc/tweak_data/lootdroptweakdata.lua" source_file="lib/tweak_data/lootdroptweakdata"/>

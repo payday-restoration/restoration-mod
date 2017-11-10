@@ -184,7 +184,7 @@
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">
-				<option type="bool" default_value="false" name="TimeOfDay"/>
+				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 			</option_group>
         </options>

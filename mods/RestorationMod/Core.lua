@@ -28,7 +28,8 @@ if not _G.restoration then
 	_G.restoration.disable_captain_camper = {
 		"pbr2",
 		"born",
-		"nail"
+		"nail",
+		"peta"
 	}
 	_G.restoration.captain_teamwork = {
 		"nightclub",
@@ -38,8 +39,7 @@ if not _G.restoration then
 		"mia_2",
 		"firestarter_3",
 		"mad",
-		"jolly",
-		"peta"
+		"jolly"
 	}
 	_G.restoration.captain_murderdozer = {
 		"branchbank",

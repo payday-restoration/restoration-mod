@@ -263,9 +263,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 				
 		--Mutators
-		["menu_mutators_achievement_disabled"] = "Some mutators disable the earning of achievements and most trophies! Also level completions may not accumulate!",
+		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
+		["mutator_medicdozers"] = "Medic Dozers",
+		["mutator_medicdozers_desc"] = "Medic Dozers can now spawn.",
+		["mutator_medicdozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a Medic Bulldozer. A Medic Bulldozer counts as both a Medic and a Bulldozer.",
 
+		["mutator_minidozers"] = "Minigun Dozers",
+		["mutator_minidozers_desc"] = "Minigun Dozers can now spawn.",
+		["mutator_minidozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a slow-moving minigun-wielding Bulldozer.",
+				
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",

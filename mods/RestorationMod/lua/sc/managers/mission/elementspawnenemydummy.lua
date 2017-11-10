@@ -33,6 +33,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2",
 			["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3",
 			["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+			["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+			["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3",				
 			["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 			["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
 			["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
@@ -89,9 +91,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local normal_sniper = {
 			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
 		}
-	local all = {
-			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
-		}	
 	local haunted = {
 			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
@@ -119,12 +118,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if easy_wish[self._values.enemy] then
 					self._values.enemy = easy_wish[self._values.enemy]
 				end
-				self._values.enemy = easy_wish[self._values.enemy] or self._values.enemy
-			else
-				if all[self._values.enemy] then
-					self._values.enemy = all[self._values.enemy]
-				end
-				self._values.enemy = all[self._values.enemy] or self._values.enemy			
+				self._values.enemy = easy_wish[self._values.enemy] or self._values.enemy		
 			end
 		end
 
@@ -152,14 +146,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			 end
 			 self._values.enemy = fbi_sniper[self._values.enemy] or self._values.enemy
 		end
-		
-		if job == "haunted" then  
-			if haunted[self._values.enemy] then
-				self._values.enemy = haunted[self._values.enemy]
-			end
-			self._values.enemy = haunted[self._values.enemy] or self._values.enemy
-		end		
-						
+							
 		self._enemy_name = self._values.enemy and Idstring(self._values.enemy) or Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")
 		self._values.enemy = nil
 		self._units = {}

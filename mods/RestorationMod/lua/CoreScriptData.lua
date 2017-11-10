@@ -79,8 +79,8 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	
 	--Safehouse Booster
 	if Global.load_level == true and Global.game_settings.level_id == "safehouse" then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/safehouse.mission", "binary", "levels/narratives/safehouse/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/safehouse.continent", "binary", "levels/narratives/safehouse/world/world", "continent")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
 	end
 end)
 end

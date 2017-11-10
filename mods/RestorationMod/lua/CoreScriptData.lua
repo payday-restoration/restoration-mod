@@ -77,6 +77,11 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	
+	--Safehouse Booster
+	if Global.load_level == true and Global.game_settings.level_id == "safehouse" then
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/safehouse.mission", "binary", "levels/narratives/safehouse/world/world", "mission")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/safehouse.continent", "binary", "levels/narratives/safehouse/world/world", "continent")
+	end
 end)
 end
 

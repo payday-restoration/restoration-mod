@@ -2841,7 +2841,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							freq = 1,
 							tactics = self._tactics.FBI_swat_shotgun,
 							rank = 3
-						},					
+						},								
 						{
 							unit = "medic_M4",
 							freq = 0.8,
@@ -5432,7 +5432,40 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.25,
 						0.25
 					}
-				}						
+				}	
+			elseif difficulty_index == 7 then
+				self.besiege.assault.groups = {
+					FBI_swats = {
+						0.2,
+						0.9,
+						0.9
+					},
+					FBI_heavys = {
+						0.1,
+						0.4,
+						0.65
+					},
+					FBI_shields = {
+						0.1,
+						0.4,
+						0.3
+					},
+					FBI_tanks = {
+						0.1,
+						0.35,
+						0.4
+					},
+					CS_tazers = {
+						0.1,
+						0.4,
+						0.35
+					},
+					FBI_spoocs = {
+						0,
+						0.35,
+						0.35
+					}
+				}				
 			else
 				self.besiege.assault.groups = {
 					FBI_swats = {

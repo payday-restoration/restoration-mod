@@ -231,21 +231,6 @@ table.insert (tweak_data.gui.crime_net.codex,
 
 		} )
 
-table.insert (tweak_data.gui.crime_net.codex, 
-		
-		{
-			id = "contacts",
-			name_id = "menu_org",
-			{
-				id = "sha1",
-				name_id = "org_sha1",
-				{
-					desc_id = "org_desc_sha1",
-					videos = {"shatter1"}
-				}
-			}
-			
-		} )
 tweak_data.narrative.contacts.shatter				= {}
 tweak_data.narrative.contacts.shatter.name_id					= "heist_contact_shatter"
 tweak_data.narrative.contacts.shatter.description_id	= "heist_contact_shatter_description"

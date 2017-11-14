@@ -229,7 +229,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spring = 1,
 					summers = 1
 				}
-			else
+			elseif difficulty_index == 6 then
 				self.special_unit_spawn_limits = {
 					tank = 3,
 					taser = 4,
@@ -239,6 +239,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					medic = 3,
 					omnia_LPF = 3,
 					fbi_vet = 2,
+					spring = 1,
+					summers = 1
+				}	
+			elseif difficulty_index == 7 then
+				self.special_unit_spawn_limits = {
+					tank = 3,
+					taser = 4,
+					boom = 2,
+					spooc = 4,
+					shield = 5,
+					medic = 3,
+					omnia_LPF = 3,
+					fbi_vet = 2,
+					spring = 1,
+					summers = 1
+				}				
+			else
+				self.special_unit_spawn_limits = {
+					tank = 4,
+					taser = 5,
+					boom = 3,
+					spooc = 4,
+					shield = 6,
+					medic = 4,
+					omnia_LPF = 4,
+					fbi_vet = 3,
 					spring = 1,
 					summers = 1
 				}
@@ -5405,7 +5431,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.2
 					}
 				}
-			elseif difficulty_index == 5 or difficulty_index == 6 then
+			elseif difficulty_index == 5 then
 				self.besiege.assault.groups = {
 					FBI_swats = {
 						0.2,
@@ -5433,7 +5459,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.25
 					}
 				}	
-			elseif difficulty_index == 7 then
+			elseif difficulty_index == 6 then
+				self.besiege.assault.groups = {
+					FBI_swats = {
+						0.2,
+						1,
+						1
+					},
+					FBI_heavys = {
+						0.1,
+						0.5,
+						0.75
+					},
+					FBI_shields = {
+						0.1,
+						0.3,
+						0.4
+					},
+					FBI_tanks = {
+						0,
+						0.25,
+						0.3
+					},
+					CS_tazers = {
+						0.1,
+						0.25,
+						0.25
+					}
+				}				
+			else
 				self.besiege.assault.groups = {
 					FBI_swats = {
 						0.2,
@@ -5466,39 +5520,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						0.35
 					}
 				}				
-			else
-				self.besiege.assault.groups = {
-					FBI_swats = {
-						0.2,
-						0.8,
-						0.8
-					},
-					FBI_heavys = {
-						0.1,
-						0.3,
-						0.4
-					},
-					FBI_shields = {
-						0.1,
-						0.5,
-						0.4
-					},
-					FBI_tanks = {
-						0.1,
-						0.5,
-						0.5
-					},
-					CS_tazers = {
-						0.1,
-						0.5,
-						0.45
-					},
-					FBI_spoocs = {
-						0,
-						0.45,
-						0.45
-					}
-				}
 			end
 			self.besiege.assault.groups.single_spooc = {
 				0,

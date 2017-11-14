@@ -4259,7 +4259,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			is_a_unlockable = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/barrel",
-			unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_drum",
+			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_lmg_rpk_m_drum",
 			dlc = "sc",
 			stats = {
 				value = 5,
@@ -4398,7 +4398,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_upg_ak_g_standard.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_g_standard"
 		self.parts.wpn_upg_ak_m_akm.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_m_akm"
 		self.parts.wpn_upg_ak_m_akm_gold.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_m_akm_gold"
-		self.parts.wpn_upg_ak_m_drum.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_m_drum"
+		self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
 		self.parts.wpn_upg_ak_s_adapter.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_s_adapter"
 		self.parts.wpn_upg_ak_s_folding.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_s_folding"
 		self.parts.wpn_upg_ak_s_folding_vanilla_gold.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_s_folding_gold"
@@ -15471,7 +15471,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "upper_reciever",
 			name_id = "bm_wp_serbu_s_nostock_short",
 			texture_bundle_folder = "dlc1",
-			custom_stats = {reload_speed_mult = 1.25},
+			custom_stats = {reload_speed_mult = 1.1},
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_body_standard",
 			stats = {value = 1},
@@ -15547,9 +15547,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 3,
 				concealment = -2,
-				reload = 7
+				reload = 4
 			},
-			custom_stats = {reload_speed_mult = 1.35},
+			custom_stats = {reload_speed_mult = 1.2},
 			has_description = true,
 			desc_id = "bm_sc_scorpion_double_mag",
 			animations = {

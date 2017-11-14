@@ -289,19 +289,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.swat_van_turret_module.BAG_DMG_MUL = 10
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-			{1000, 2.5},
-			{2000, 1},
-			{3000, 1}
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}
 		self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-			{1000, 2.5},
-			{2000, 1},
-			{3000, 1}
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}
 		self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-			{1000, 2.5},
-			{2000, 1},
-			{3000, 1}
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
@@ -325,19 +325,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.swat_van_turret_module.BAG_DMG_MUL = 11.4375
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-			{1000, 2.5},
-			{2000, 1},
-			{3000, 1}
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}
 		self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-			{1000, 2.5},
-			{2000, 1},
-			{3000, 1}
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}
 		self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-			{1000, 2.5},
-			{2000, 1},
-			{3000, 1}
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}
 		self.ceiling_turret_module.HEALTH_INIT = 1850
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375

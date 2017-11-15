@@ -861,7 +861,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "Your chance to dodge is increased by ##5%##.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke grenade, you and your allies automatically avoid ##10%## of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nAfter the smoke dissipates, the Smoke Bomb is on a cooldown for ##30## seconds, but killing enemies will reduce this cooldown by ##1## second.",
 		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-	
+
+		--Sweet liquor eases the pain--
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##75%##. The remaining damage will be applied directly.\n\nThe ##75%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##20## second cooldown but time remaining will be lessened by ##1## second per enemy killed.",		
 	})
 end)
 

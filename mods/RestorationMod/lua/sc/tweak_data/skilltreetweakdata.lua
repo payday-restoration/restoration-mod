@@ -3037,7 +3037,76 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck18_9_desc_sc"
 			}
 		}
-
+		
+	--Don't cry for me, I'm already dead.--
+	local sc_august = {
+			desc_id = "menu_st_spec_19_desc",
+			name_id = "menu_st_spec_19",
+			{
+				cost = 200,
+				texture_bundle_folder = "myh",
+				desc_id = "menu_deck19_1_desc_sc",
+				name_id = "menu_deck19_1",
+				upgrades = {
+					"temporary_damage_control",
+					"damage_control",
+					"player_damage_control_passive",
+					"player_damage_control_cooldown_drain_1"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			deck2,
+			{
+				cost = 400,
+				texture_bundle_folder = "myh",
+				desc_id = "menu_deck19_3_desc",
+				name_id = "menu_deck19_3",
+				upgrades = {"player_armor_to_health_conversion"},
+				icon_xy = {
+					1,
+					0
+				}
+			},
+			deck4,
+			{
+				cost = 1000,
+				texture_bundle_folder = "myh",
+				desc_id = "menu_deck19_5_desc",
+				name_id = "menu_deck19_5",
+				upgrades = {"player_damage_control_auto_shrug"},
+				icon_xy = {
+					2,
+					0
+				}
+			},
+			deck6,
+			{
+				cost = 2400,
+				texture_bundle_folder = "myh",
+				desc_id = "menu_deck19_7_desc",
+				name_id = "menu_deck19_7",
+				upgrades = {"player_damage_control_cooldown_drain_2"},
+				icon_xy = {
+					3,
+					0
+				}
+			},
+			deck8,
+			{
+				cost = 4000,
+				texture_bundle_folder = "myh",
+				desc_id = "menu_deck19_9_desc",
+				name_id = "menu_deck19_9",
+				upgrades = {"player_damage_control_healing"},
+				icon_xy = {
+					0,
+					1
+				}
+			}
+		}
 
 	--Then we insert our new perk decks into the table--
 	self.specializations[1] = sc_crew_chief
@@ -3057,7 +3126,8 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[15] = sc_sydney
 	--insert fat dick here--
 	self.specializations[17] = sc_scarface
-	self.specializations[18] = sc_wall				
+	self.specializations[18] = sc_wall	
+	self.specializations[19] = sc_august	
 end
 
 end

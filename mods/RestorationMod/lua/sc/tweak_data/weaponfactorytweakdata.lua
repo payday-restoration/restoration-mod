@@ -1054,7 +1054,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_o",
 			unit = "units/payday2/weapons/wpn_fps_upg_o_marksmansight/wpn_upg_o_marksmansight_rear",
 			stats = {
-				value = 5
+				value = 1
 			},
 			perks = {"scope"},
 			adds = {
@@ -1067,7 +1067,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_upg_o_marksmansight_front = {
@@ -1088,7 +1090,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_dd_front"
 			},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_upg_o_dd_front = {
@@ -1343,6 +1347,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_upg_o_leupold.third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_third_upg_o_leupold"
 		self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
 		self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {zoom = 6}
+		self.parts.wpn_fps_upg_o_shortdot_vanilla.dlc = nil
 		self.parts.wpn_fps_upg_o_shortdot_vanilla.pcs = nil
 	end
 
@@ -1968,6 +1973,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = 2,
 				concealment = 2
 			},
+			override = {wpn_upg_ak_fg_combo3 = {unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_combo3_slavic"}},
 			dlc = "gage_pack_jobs"
 		}
 		self.parts.wpn_fps_upg_ak_m_quad = {
@@ -2772,7 +2778,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup",
 			stats = {value = 1},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_m4_uupg_draghandle = {
@@ -3360,7 +3368,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_m4_upper_reciever_round_vanilla",
 				"wpn_fps_m4_uupg_draghandle_vanilla",
 				"wpn_fps_m4_uupg_fg_rail_ext",
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2",					
+				"wpn_fps_upg_o_xpsg33_magnifier"			
 			}
 		}
 		self.parts.wpn_fps_amcar_uupg_fg_amcar = {
@@ -3668,8 +3678,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 			stats = {value = 1},
 			adds = {
-				"wpn_fps_ass_m16_os_frontsight"
-			}
+				"wpn_fps_ass_m16_os_frontsight"				
+			},
+			forbids = {
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"
+			}			
 		}
 		self.parts.wpn_fps_ass_m16_os_frontsight = {
 			type = "sight_special",
@@ -10476,7 +10491,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_ass_s552_pts/wpn_fps_ass_s552_o_flipup",
 			stats = {value = 1},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_ass_s552_m_standard = {
@@ -11263,7 +11280,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_o_flipups_up",
 			stats = {value = 1},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_ass_scar_s_sniper = {
@@ -12846,7 +12865,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
 			is_a_unlockable = true,
-			animations = {reload = "reload"}
+			animations = {
+				fire = "recoil",
+				reload = "reload",
+				fire_steelsight = "recoil"
+			}			
 		}
 		self.parts.wpn_fps_ass_fal_fg_01 = {
 			pcs = {},
@@ -13046,6 +13069,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_ass_fal = {}
 		self.wpn_fps_ass_fal.unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal/wpn_fps_ass_fal"
 		self.wpn_fps_ass_fal.optional_types = {"barrel_ext", "gadget"}
+		self.wpn_fps_ass_fal.animations = {}
 		self.wpn_fps_ass_fal.override = {}
 		self.wpn_fps_ass_fal.adds = {}
 		self.wpn_fps_ass_fal.default_blueprint = {
@@ -14669,6 +14693,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				},
+				wpn_fps_upg_o_45rds = {
+					a_obj = "a_os_fab",
+					stance_mod = {wpn_fps_ass_galil = {
+						translation = Vector3(-2.02, 0, -13.7),
+						rotation = Rotation(0, 0, -45)
+					}}
+				},
+				wpn_fps_upg_o_45rds_v2 = {
+					a_obj = "a_os_fab",
+					stance_mod = {wpn_fps_ass_galil = {
+						translation = Vector3(-2.02, 0, -13.7),
+						rotation = Rotation(0, 0, -45)
+					}}
+				},				
 				wpn_fps_upg_o_xpsg33_magnifier = {
 					stance_mod = {
 						wpn_fps_ass_galil = {
@@ -14806,6 +14844,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					}
 				},
+				wpn_fps_upg_o_45rds = {
+					a_obj = "a_os_mar",
+					stance_mod = {wpn_fps_ass_galil = {
+						translation = Vector3(-2.9, 0, -12.85),
+						rotation = Rotation(0, 0, -45)
+					}}
+				},
+				wpn_fps_upg_o_45rds_v2 = {
+					a_obj = "a_os_mar",
+					stance_mod = {wpn_fps_ass_galil = {
+						translation = Vector3(-2.9, 0, -12.85),
+						rotation = Rotation(0, 0, -45)
+					}}
+				},				
 				wpn_fps_upg_o_spot = {
 					a_obj = "a_os_mar",
 					stance_mod = {
@@ -19641,7 +19693,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "character_pack_clover",
 			dlc = "character_pack_clover",
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_ass_l85a2_body_standard.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_body_standard"
@@ -19903,7 +19957,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "character_pack_dragan",
 			dlc = "character_pack_dragan",
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_ass_vhs_body.third_unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_third_ass_vhs_body"
@@ -28011,7 +28067,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_o_standard",
 			stats = {value = 1},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_ass_tecci_s_standard = {
@@ -29997,6 +30055,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.parts.wpn_fps_smg_p90_m_strap = {
 			pcs = {},
+			bullet_objects = {
+				amount = 50,
+				prefix = "g_bullet_"
+			},			
 			type = "magazine",
 			name_id = "bm_wp_p90_m_strap",
 			a_obj = "a_m",
@@ -30389,7 +30451,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_o_standard",
 			stats = {value = 1},
 			forbids = {
-				"wpn_fps_upg_o_xpsg33_magnifier"
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2"				
 			}
 		}
 		self.parts.wpn_fps_ass_contraband_s_standard = {
@@ -31117,6 +31181,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_grv/weapons/wpn_fps_ass_flint_pts/wpn_fps_ass_flint_o_standard",
 			stats = {value = 1},
 			forbids = {
+				"wpn_fps_upg_o_45rds",
+				"wpn_fps_upg_o_45rds_v2",
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			}
 		}

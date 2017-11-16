@@ -133,7 +133,7 @@ function PlayerTweakData:init()
 		0.98,
 		0.99
 	}
-	self.damage.HEALTH_INIT = 22
+	self.damage.HEALTH_INIT = 20
 	self.damage.LIVES_INIT = 4
 	if is_console then
 		self.damage.REGENERATE_TIME = 3.5

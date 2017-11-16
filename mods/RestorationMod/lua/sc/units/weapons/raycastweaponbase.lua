@@ -294,11 +294,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if col_ray and col_ray.unit then
 				local kills
 				if hit_unit then
+					if not self._can_shoot_through_enemy then
+						break
+					end
 					local killed = hit_unit.type == "death"
 					local unit_type = col_ray.unit:base() and col_ray.unit:base()._tweak_table
-					dmg_mul = ( dmg_mul or 1 )
-					local is_enemy = unit_type ~= "civilian" and unit_type ~= "civilian_female" and unit_type ~= "bank_manager"
-					kills = ( shoot_through_data and shoot_through_data.kills or 0 ) + ( killed and is_enemy and 1 or 0 )
+					local is_enemy = not CopDamage.is_civilian(unit_type)
+					kills = (shoot_through_data and shoot_through_data.kills or 0) + (killed and is_enemy and 1 or 0)
 				end
 				self._shoot_through_data.kills = kills
 				if ( col_ray.distance < 0.1 ) or ( ray_distance - col_ray.distance < 50 ) then

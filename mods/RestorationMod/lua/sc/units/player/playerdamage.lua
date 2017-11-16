@@ -419,7 +419,23 @@ end
 
 function PlayerDamage:_calc_health_damage(attack_data)
 	local health_subtracted = 0
+	local player_armor = managers.blackmarket:equipped_armor()
 	health_subtracted = self:get_real_health()
+	if player_armor == "level_1" then
+		attack_data.damage = attack_data.damage * 1
+	elseif player_armor == "level_2" then
+		attack_data.damage = attack_data.damage * 0.99
+	elseif player_armor == "level_3" then
+		attack_data.damage = attack_data.damage * 0.98	
+	elseif player_armor == "level_4" then
+		attack_data.damage = attack_data.damage * 0.97	
+	elseif player_armor == "level_5" then
+		attack_data.damage = attack_data.damage * 0.95	
+	elseif player_armor == "level_6" then
+		attack_data.damage = attack_data.damage * 0.94		
+	else
+		attack_data.damage = attack_data.damage * 0.92
+	end
 	attack_data.damage = attack_data.damage * managers.player:upgrade_value("player", "real_health_damage_reduction", 1)
 	self:change_health(-attack_data.damage)
 	health_subtracted = health_subtracted - self:get_real_health()

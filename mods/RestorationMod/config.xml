@@ -181,11 +181,11 @@
 				<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<!--<option type="bool" default_value="false" name="Save"/>-->
-				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
 			<option_group name="OTHER">
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Paintings"/>
+				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>
         </options>
     </Options>

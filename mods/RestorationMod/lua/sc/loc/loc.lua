@@ -464,7 +464,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "Die Hard",
-			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYour armor recovers ##15%## faster.\n\nACE: ##$pro##\nYou can use your primary weapon in bleedout.",																																																																																																																																																																																																
+			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou can use your primary weapon in bleedout.\n\nACE: ##$pro##\nYour armor recovers ##15%## faster.",																																																																																																																																																																																																
 			
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "Transporter",

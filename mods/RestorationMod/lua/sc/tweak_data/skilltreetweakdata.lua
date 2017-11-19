@@ -615,13 +615,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 2},
 				[1] = {
 					upgrades = {
-						"player_armor_regen_timer_multiplier"
+						"player_primary_weapon_when_downed"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_primary_weapon_when_downed"
+						"player_armor_regen_timer_multiplier"
 					},
 					cost = self.costs.pro
 				}

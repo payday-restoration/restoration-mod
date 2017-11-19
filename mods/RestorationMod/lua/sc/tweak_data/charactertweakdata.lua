@@ -606,7 +606,6 @@ end
 function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat = deep_clone(presets.base)
 	self.city_swat.experience = {}
-	self.city_swat.damage.hurt_severity = presets.hurt_severities.elite
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
@@ -654,6 +653,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	self.city_swat_titan.HEALTH_INIT = 15
 	self.city_swat_titan.headshot_dmg_mul = 2.19
+	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
 	self.city_swat_titan.move_speed = presets.move_speed.lightning
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
@@ -8127,7 +8127,6 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.gang_member.is_bullpup = presets.weapon.gang_member.is_rifle
-	presets.weapon.gang_member.is_shotgun_pump = deep_clone(presets.weapon.normal.is_shotgun_pump)
 	presets.weapon.gang_member.is_shotgun_pump.aim_delay = {0, 0}
 	presets.weapon.gang_member.is_shotgun_pump.focus_delay = 0
 	presets.weapon.gang_member.is_shotgun_pump.focus_dis = 200
@@ -8137,7 +8136,273 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_pump.melee_speed = 1
 	presets.weapon.gang_member.is_shotgun_pump.melee_dmg = 4
 	presets.weapon.gang_member.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
-	presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.gang_member.is_shotgun_pump.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 900,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 1000,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.95,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1100,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.9,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1200,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.85,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1300,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.8,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1400,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.75,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1500,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.7,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1600,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.65,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1700,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.6,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.55,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1900,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.5,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.45,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2100,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.4,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2200,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.35,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2300,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.3,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2400,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.25,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2500,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.2,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2600,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.15,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2700,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.1,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2800,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.05,
+			recoil = {0.75, 0.75},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 2900,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}	
+	presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
 	presets.weapon.gang_member.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
 	presets.weapon.gang_member.is_smg.FALLOFF = {
@@ -8263,7 +8528,6 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.is_pistol
-	presets.weapon.gang_member.is_shotgun_mag = deep_clone(presets.weapon.normal.is_shotgun_mag)
 	presets.weapon.gang_member.is_shotgun_mag.aim_delay = {0, 0}
 	presets.weapon.gang_member.is_shotgun_mag.focus_delay = 0
 	presets.weapon.gang_member.is_shotgun_mag.focus_dis = 200
@@ -8274,6 +8538,272 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.gang_member.is_shotgun_mag.RELOAD_SPEED = 1
 	presets.weapon.gang_member.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.gang_member.is_shotgun_mag.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 900,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},		
+		{
+			r = 1000,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.95,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1100,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.9,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1200,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.85,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1300,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.8,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1400,
+			acc = {0.4, 0.9},
+			dmg_mul = 0.75,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1500,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.7,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1600,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.65,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1700,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.6,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.55,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 1900,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.5,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.4, 0.75},
+			dmg_mul = 0.45,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2100,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.4,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2200,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.35,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2300,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2400,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.25,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2500,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2600,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.15,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2700,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2800,
+			acc = {0.1, 0.55},
+			dmg_mul = 0.05,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				1,
+				2,
+				1
+			}
+		},
+		{
+			r = 2900,
+			acc = {0, 0},
+			dmg_mul = 0,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}		
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
 	RestorationCore.log_shit("SC: normal presets")
 	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)

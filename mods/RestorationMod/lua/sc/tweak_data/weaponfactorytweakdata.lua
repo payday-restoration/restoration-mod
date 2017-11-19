@@ -34658,14 +34658,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	-->:3's TOZ
 	if self.wpn_fps_shot_toz34 then
 		self.parts.wpn_fps_upg_toz34_ammo_000_magnum.pcs = nil
-		self.parts.wpn_fps_shot_toz34_barrel_choke.stats = {
+		self.parts.wpn_fps_upg_toz34_choke.stats = {
 				value = 1,
 				spread_moving = -1,
 				spread = 1,
 				concealment = -2
 		}
-		self.parts.wpn_fps_shot_toz34_barrel_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
-		self.parts.wpn_fps_shot_toz34_barrel_duckbill.custom_stats = {damage_near_mul = -300, damage_far_mul = -600}
+		self.parts.wpn_fps_upg_toz34_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+		self.parts.wpn_fps_upg_toz34_duckbill.custom_stats = {damage_near_mul = -300, damage_far_mul = -600}
 		self.wpn_fps_shot_toz34.override = {
 			wpn_fps_upg_a_explosive = {
 				stats = {

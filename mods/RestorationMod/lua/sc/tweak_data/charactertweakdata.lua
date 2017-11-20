@@ -639,7 +639,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	self.city_swat.has_alarm_pager = true
 	self.city_swat.calls_in = true
-	self.city_swat.use_animation_on_fire_damage = false
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
 	if job == "mad" then
@@ -654,6 +653,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.HEALTH_INIT = 15
 	self.city_swat_titan.headshot_dmg_mul = 2.19
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
+	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.move_speed = presets.move_speed.lightning
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil

@@ -70,6 +70,11 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	self.wet_intel.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_intel"
 	self.wet_intel.stages = {"wetwork"}	
 	
+	self.wet_boat = {}
+	self.wet_boat.name_id = "menu_asset_wet_boat"
+	self.wet_boat.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_boat"
+	self.wet_boat.stages = {"wetwork"}		
+	
 	--Adding Bikers to Biker heist cause it makes sense--
 	self.jungle_1_bikers.stages = {
 		"welcome_to_the_jungle_1",

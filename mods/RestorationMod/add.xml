@@ -64,6 +64,7 @@
 	
 	<!--Assets-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
 
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>

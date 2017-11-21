@@ -2,9 +2,54 @@ local old_init_risk_assets = AssetsTweakData._init_risk_assets
 function AssetsTweakData:_init_risk_assets(tweak_data)
 	old_init_risk_assets(self, tweak_data)
 	
+	--Blood's in the water--
+	self.risk_murky = {}
+	self.risk_murky.name_id = "menu_asset_risk_murky"
+	self.risk_murky.texture = "guis/textures/pd2/mission_briefing/assets/risk_murky"
+	
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+		--Kills PD risk level for Murky levels--
+		table.insert(self.risk_pd.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_pd.exclude_stages, "pbr")
+		table.insert(self.risk_pd.exclude_stages, "wetwork")
+
+		--SWAT--		
+		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_swat.exclude_stages, "pbr")
+		table.insert(self.risk_swat.exclude_stages, "wetwork")	
+		
+		--FBI--		
+		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_fbi.exclude_stages, "pbr")
+		table.insert(self.risk_fbi.exclude_stages, "wetwork")		
+
+		--Overkill--		
+		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_death_squad.exclude_stages, "pbr")
+		table.insert(self.risk_death_squad.exclude_stages, "wetwork")	
+
+		--Mayhem--		
+		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_easy_wish.exclude_stages, "pbr")
+		table.insert(self.risk_easy_wish.exclude_stages, "wetwork")		
+
+		--Deathwish--		
+		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_death_wish.exclude_stages, "pbr")
+		table.insert(self.risk_death_wish.exclude_stages, "wetwork")			
+		
+		--One Down--		
+		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
+		table.insert(self.risk_sm_wish.exclude_stages, "pbr")
+		table.insert(self.risk_sm_wish.exclude_stages, "wetwork")			
+		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
+		self.risk_murky.stages = {
+			"shoutout_raid",
+			"pbr",
+			"wetwork"
+		}		
 	end
 
 	--Slaughterhouse safe--

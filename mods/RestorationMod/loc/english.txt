@@ -182,5 +182,6 @@
 	"bm_msk_shatter_true_desc" : "The mask used by a fringe criminal organization, who all operate under the alias of the legendary Shatter.\n\nShatter was the heister responsible for the 2003 theft of the VERITAS system from OMNIA, and the system later went on to become the CRIME.NET you know today.\n\nThe mask isn't accurate at all to the real Shatter's mask -- but nobody knows who Shatter was, or what his mask was like to begin with.\n\nAll that remains is a name and a story.",
 	"menu_l_global_value_veritas" : "This is a VERITAS item!",
 	"restoration_level_data_highrise_stage1" : "12:00 AM, HIGHRISE APARTMENTS",
-	"menu_asset_wet_intel" : "Intel"
+	"menu_asset_wet_intel" : "Intel",
+	"menu_asset_risk_murky" : "Murkywater Mercenaries"
 }

@@ -28,6 +28,6 @@
 		},
 		{ 	"hook_id" : "lib/tweak_data/skilltreetweakdata",
 			"script_path" : "lua/sc/tweak_data/skilltreetweakdata.lua"
-		}
+		}		
 	]
 }

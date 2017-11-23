@@ -890,6 +890,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 5, -3.85),
 					rotation = Rotation(0, 0, 0)					
 				},
+				wpn_fps_bow_ecp = {
+					translation = Vector3(0, 5, -3.35),
+					rotation = Rotation(0, 0, 0)
+				},				
 				wpn_fps_sho_basset = {
 					translation = Vector3(0, 5, -0.68),
 					rotation = Rotation(0, 0, 0)					
@@ -1743,6 +1747,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 5, -3.85),
 					rotation = Rotation(0, 0, 0)				
 				},
+				wpn_fps_bow_ecp = {
+					translation = Vector3(0, 1, -3.35),
+					rotation = Rotation(0, 0, 0)
+				},				
 				wpn_fps_sho_basset = {
 					translation = Vector3(0, 5, -0.68),
 					rotation = Rotation(0, 0, 0)					
@@ -32760,6 +32768,247 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.wpn_fps_smg_erma_npc = deep_clone(self.wpn_fps_smg_erma)
 		self.wpn_fps_smg_erma_npc.unit = "units/pd2_dlc_old/weapons/wpn_fps_smg_erma/wpn_fps_smg_erma_npc"
+	end
+	
+	function WeaponFactoryTweakData:_init_ecp()
+		self.parts.wpn_fps_bow_ecp_s_standard = {
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_ecp_s_standard",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_s_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_s_bare = {
+			texture_bundle_folder = "ecp",
+			dlc = "ecp",
+			type = "stock",
+			name_id = "bm_wp_ecp_s_bare",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_s_bare",
+			a_obj = "a_s",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 1,
+				concealment = 1
+			}
+		}
+		self.parts.wpn_fps_bow_ecp_b_dummy = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_ecp_b_dummy",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_b_dummy",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_body_lower = {
+			a_obj = "a_body",
+			type = "lower_receiver",
+			name_id = "bm_wp_ecp_body_lower",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_body_lower",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_body_upper = {
+			a_obj = "a_body",
+			type = "upper_receiver",
+			name_id = "bm_wp_ecp_body_upper",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_body_upper",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_dh_standard = {
+			a_obj = "a_dh",
+			type = "drag_handle",
+			name_id = "bm_wp_ecp_dh_standard",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_dh_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_ejector_left = {
+			a_obj = "a_ejector_left",
+			type = "ejector_l",
+			name_id = "bm_wp_ecp_ejector_left",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_ejector_left",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_ejector_right = {
+			a_obj = "a_ejector_right",
+			type = "ejector_r",
+			name_id = "bm_wp_ecp_ejector_right",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_ejector_right",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_m_arrows = {
+			a_obj = "a_m",
+			type = "ammo",
+			name_id = "bm_wp_ecp_m_arrows",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_standard",
+			bullet_objects = {
+				amount = 6,
+				prefix = "g_bullet_"
+			},
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_m_arrows_standard = {
+			a_obj = "a_m",
+			type = "ammo",
+			name_id = "bm_wp_ecp_m_arrows",
+			custom_stats = {ammo_pickup_min_mul = 0, ammo_pickup_max_mul = 0},
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_standard",
+			bullet_objects = {
+				amount = 6,
+				prefix = "g_bullet_"
+			},
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_m_arrows_explosive = {
+			is_a_unlockable = true,
+			texture_bundle_folder = "ecp",
+			a_obj = "a_m",
+			type = "ammo",
+			third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_explosive",
+			sub_type = "ammo_explosive",
+			dlc = "ecp",
+			name_id = "bm_wp_ecp_m_arrows_explosive",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_explosive",
+			pcs = {},
+			bullet_objects = {
+				amount = 6,
+				prefix = "g_bullet_"
+			},
+			stats = {damage = 90, total_ammo_mod = -25, spread = -10, recoil = -6},
+			custom_stats = {launcher_grenade = "ecp_arrow_exp"}
+		}
+		self.parts.wpn_fps_bow_ecp_m_arrows_poison = {
+			is_a_unlockable = true,
+			texture_bundle_folder = "ecp",
+			a_obj = "a_m",
+			type = "ammo",
+			third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_poison",
+			sub_type = "ammo_poison",
+			dlc = "ecp",
+			name_id = "bm_wp_ecp_m_arrows_poison",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_poison",
+			pcs = {},
+			bullet_objects = {
+				amount = 6,
+				prefix = "g_bullet_"
+			},
+			stats = {damage = -15},
+			custom_stats = {
+				launcher_grenade = "ecp_arrow_poison",
+				dot_data = {
+					type = "poison",
+					custom_data = {}
+				},
+				ammo_pickup_min_mul = 0, 
+				ammo_pickup_max_mul = 0
+			}
+		}
+		self.parts.wpn_fps_bow_ecp_m_casing = {
+			a_obj = "a_clip",
+			type = "magazine",
+			name_id = "bm_wp_ecp_m_casing",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_casing",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_meter_left = {
+			a_obj = "a_meter_l",
+			type = "meter_l",
+			name_id = "bm_wp_ecp_meter_left",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_meter_left",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_meter_right = {
+			a_obj = "a_meter_r",
+			type = "meter_r",
+			name_id = "bm_wp_ecp_meter_right",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_meter_right",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_bow_ecp_o_iron = {
+			a_obj = "a_o",
+			type = "sight",
+			name_id = "bm_wp_ecp_meter_right",
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_o_iron",
+			stats = {value = 1},
+			forbids = {"wpn_fps_upg_o_xpsg33_magnifier"}
+		}
+		self.parts.wpn_fps_bow_ecp_s_standard.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_s_standard"
+		self.parts.wpn_fps_bow_ecp_s_bare.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_s_bare"
+		self.parts.wpn_fps_bow_ecp_body_lower.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_body_lower"
+		self.parts.wpn_fps_bow_ecp_body_upper.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_body_upper"
+		self.parts.wpn_fps_bow_ecp_dh_standard.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_dh_standard"
+		self.parts.wpn_fps_bow_ecp_ejector_left.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_ejector_left"
+		self.parts.wpn_fps_bow_ecp_ejector_right.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_ejector_right"
+		self.parts.wpn_fps_bow_ecp_m_casing.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_m_casing"
+		self.parts.wpn_fps_bow_ecp_meter_left.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_meter_left"
+		self.parts.wpn_fps_bow_ecp_meter_right.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_meter_right"
+		self.parts.wpn_fps_bow_ecp_o_iron.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_o_iron"
+		self.parts.wpn_fps_bow_ecp_m_arrows_standard.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_m_arrows_standard"
+		self.parts.wpn_fps_bow_ecp_m_arrows_explosive.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_m_arrows_explosive"
+		self.parts.wpn_fps_bow_ecp_m_arrows_poison.third_unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_third_bow_ecp_m_arrows_poison"
+		self.wpn_fps_bow_ecp = {
+			optional_types = {
+				"barrel_ext",
+				"gadget",
+				"sight"
+			},
+			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp/wpn_fps_bow_ecp",
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			},
+			default_blueprint = {
+				"wpn_fps_bow_ecp_s_standard",
+				"wpn_fps_bow_ecp_b_dummy",
+				"wpn_fps_bow_ecp_body_lower",
+				"wpn_fps_bow_ecp_body_upper",
+				"wpn_fps_bow_ecp_dh_standard",
+				"wpn_fps_bow_ecp_ejector_left",
+				"wpn_fps_bow_ecp_ejector_right",
+				"wpn_fps_bow_ecp_m_arrows_standard",
+				"wpn_fps_bow_ecp_m_casing",
+				"wpn_fps_bow_ecp_meter_left",
+				"wpn_fps_bow_ecp_meter_right",
+				"wpn_fps_bow_ecp_o_iron"
+			},
+			uses_parts = {
+				"wpn_fps_bow_ecp_s_standard",
+				"wpn_fps_bow_ecp_s_bare",
+				"wpn_fps_bow_ecp_b_dummy",
+				"wpn_fps_bow_ecp_body_lower",
+				"wpn_fps_bow_ecp_body_upper",
+				"wpn_fps_bow_ecp_dh_standard",
+				"wpn_fps_bow_ecp_ejector_left",
+				"wpn_fps_bow_ecp_ejector_right",
+				"wpn_fps_bow_ecp_m_arrows_standard",
+				"wpn_fps_bow_ecp_m_arrows_explosive",
+				"wpn_fps_bow_ecp_m_arrows_poison",
+				"wpn_fps_bow_ecp_m_casing",
+				"wpn_fps_bow_ecp_meter_left",
+				"wpn_fps_bow_ecp_meter_right",
+				"wpn_fps_bow_ecp_o_iron",
+				"wpn_fps_upg_o_specter",
+				"wpn_fps_upg_o_aimpoint",
+				"wpn_fps_upg_o_docter",
+				"wpn_fps_upg_o_eotech",
+				"wpn_fps_upg_o_t1micro",
+				"wpn_fps_upg_o_cmore",
+				"wpn_fps_upg_o_aimpoint_2",
+				"wpn_fps_upg_o_acog",
+				"wpn_fps_upg_o_eotech_xps",
+				"wpn_fps_upg_o_reflex",
+				"wpn_fps_upg_o_rx01",
+				"wpn_fps_upg_o_rx30",
+				"wpn_fps_upg_o_cs"
+			}
+		}
+		self.wpn_fps_bow_ecp_npc = deep_clone(self.wpn_fps_bow_ecp)
+		self.wpn_fps_bow_ecp_npc.unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp/wpn_fps_bow_ecp_npc"
 	end
 	
 	function WeaponFactoryTweakData:_init_shrew()

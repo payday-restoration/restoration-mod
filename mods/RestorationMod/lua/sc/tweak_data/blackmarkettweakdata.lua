@@ -13,6 +13,11 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.frankish_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
 	self.projectiles.frankish_arrow_exp.physic_effect = Idstring("physic_effects/anti_gravitate")
 	self.projectiles.frankish_poison_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
+	
+	self.projectiles.ecp_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
+	self.projectiles.ecp_arrow_exp.physic_effect = Idstring("physic_effects/anti_gravitate")
+	self.projectiles.ecp_arrow_poison.physic_effect = Idstring("physic_effects/anti_gravitate")	
+	
 	self.projectiles.frag.client_authoritative = false
 	self.projectiles.dynamite.client_authoritative = false
 	self.projectiles.molotov.client_authoritative = false
@@ -2632,6 +2637,20 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.sap.stats.range = 125
 	self.melee_weapons.sap.stats.concealment = 30
 	self.melee_weapons.sap.melee_damage_delay = 0.1	
+	
+	--Binary Ruler--
+	self.melee_weapons.meter.speed_mult = 0.95
+	self.melee_weapons.meter.stats.min_damage = 10
+	self.melee_weapons.meter.stats.max_damage = 25
+	self.melee_weapons.meter.stats.min_damage_effect = 0.6
+	self.melee_weapons.meter.stats.max_damage_effect = 0.8
+	self.melee_weapons.meter.stats.charge_time = 2.9
+	self.melee_weapons.meter.stats.range = 265
+	self.melee_weapons.meter.stats.concealment = 21
+	self.melee_weapons.meter.repeat_expire_t = 1.25
+	self.melee_weapons.meter.expire_t = 1.45
+	self.melee_weapons.meter.melee_damage_delay = 0.6
+	self.melee_weapons.meter.stats.remove_weapon_movement_penalty = true	
 end	
 
 end

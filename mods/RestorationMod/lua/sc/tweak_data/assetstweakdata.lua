@@ -73,7 +73,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	self.wet_boat = {}
 	self.wet_boat.name_id = "menu_asset_wet_boat"
 	self.wet_boat.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_boat"
-	self.wet_boat.stages = {"wetwork"}		
+	self.wet_boat.stages = {"wetwork"}	
+	self.wet_boat.visible_if_locked = true
+	self.wet_boat.no_mystery = true
+	self.wet_boat.money_lock = tweak_data:get_value("money_manager", "mission_asset_cost_medium", 10)
 	
 	--Adding Bikers to Biker heist cause it makes sense--
 	self.jungle_1_bikers.stages = {

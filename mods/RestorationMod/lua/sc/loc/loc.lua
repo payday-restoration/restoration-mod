@@ -864,6 +864,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Sweet liquor eases the pain--
 		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##75%##. The remaining damage will be applied directly.\n\nThe ##75%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##20## second cooldown but time remaining will be lessened by ##1## second per enemy killed.",		
+
+		--it's not a war crime if they're not people--
+		["menu_deck20_7_desc_sc"] = "You gain ##10%## more health.",	
 	})
 end)
 

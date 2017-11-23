@@ -1175,7 +1175,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
 	--Temp solution, unless someone manages to fix armor bits before release
-	if job == "shoutout_raid" or job == "pbr" then
+	if job == "shoutout_raid" or job == "pbr" or job == "wetwork" then
 		self.tank.headshot_dmg_mul = 8.9286
 	else
 		self.tank.headshot_dmg_mul = 12.5
@@ -1660,6 +1660,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.use_factory = true
 	self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
 	self.taser_summers.use_radio = "dsp_radio_russian"
+	self.taser_summers.spawn_sound_event = nil
  	table.insert(self._enemy_list, "taser_summers")
 end
 
@@ -2374,6 +2375,34 @@ function CharacterTweakData:_init_myh(presets)
 		aggression_timeout = 6,
 		arrest_timeout = 240
 	}
+end
+
+function CharacterTweakData:_init_ecp(presets)
+	self.ecp_female = {
+		damage = presets.gang_member_damage,
+		weapon = deep_clone(presets.weapon.gang_member)
+	}
+	self.ecp_female.weapon.weapons_of_choice = {
+		primary = "wpn_fps_ass_m4_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+	}
+	self.ecp_female.always_face_enemy = true
+	self.ecp_female.no_run_start = true
+	self.ecp_female.no_run_stop = true
+	self.ecp_female.flammable = false	
+	self.ecp_female.detection = presets.detection.gang_member
+	self.ecp_female.move_speed = presets.move_speed.gang_member
+	self.ecp_female.crouch_move = false
+	self.ecp_female.speech_prefix = "rb21"
+	self.ecp_female.weapon_voice = "3"
+	self.ecp_female.access = "teamAI1"
+	self.ecp_female.arrest = {
+		timeout = 240,
+		aggression_timeout = 6,
+		arrest_timeout = 240
+	}
+	self.ecp_male = deep_clone(self.ecp_female)
+	self.ecp_male.speech_prefix = "rb20"
 end
 
 function CharacterTweakData:_init_deathvox(presets)

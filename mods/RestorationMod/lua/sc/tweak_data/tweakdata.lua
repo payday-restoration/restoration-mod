@@ -107,6 +107,14 @@ if not tweak_data then return end
 	tweak_data.projectiles.long_arrow_exp.launch_speed = 10000
 	tweak_data.projectiles.long_arrow.launch_speed = 10000
 	tweak_data.projectiles.long_poison_arrow.launch_speed = 10000
+	
+	--le happy merchant--
+	tweak_data.projectiles.ecp_arrow.damage = 18
+	tweak_data.projectiles.ecp_arrow_exp.damage = 36
+	tweak_data.projectiles.ecp_arrow_poison.damage = 15
+	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 10000
+	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 10000
+	tweak_data.projectiles.ecp_arrow.launch_speed = 10000	
 
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80

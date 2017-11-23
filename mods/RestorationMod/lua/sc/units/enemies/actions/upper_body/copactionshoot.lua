@@ -99,7 +99,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local z_fix = {-0.05, -0.02, -0.05, -0.02, -0.07, -0.07, -0.1}
 		target_vec = target_vec + Vector3(0, 0, z_fix[math.random(7)])
 		if Network:is_server() then
-			ProjectileBase.throw_projectile(1, shoot_from_pos, target_vec)
+			ProjectileBase.throw_projectile("frag", shoot_from_pos, target_vec)
 		end
 	end
 
@@ -108,7 +108,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local z_fix = {-0.05, -0.02, -0.05, -0.02, -0.07, -0.07, -0.1}
 		target_vec = target_vec + Vector3(0, 0, z_fix[math.random(7)])
 		if Network:is_server() then
-			ProjectileBase.throw_projectile(4, shoot_from_pos, target_vec)
+			ProjectileBase.throw_projectile("molotov", shoot_from_pos, target_vec)
 		end
 	end
 

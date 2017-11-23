@@ -6539,6 +6539,36 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.erma.panic_suppression_chance = 0.1
+		self.ecp.has_description = true
+		self.ecp.desc_id = "bm_ap_3_weapon_sc_desc"
+		self.ecp.spread.standing = 3.5
+		self.ecp.spread.crouching = 2.5
+		self.ecp.spread.steelsight = 1
+		self.ecp.spread.moving_standing = 4
+		self.ecp.spread.moving_crouching = 3
+		self.ecp.spread.moving_steelsight = 2
+		self.ecp.kick.standing = self.r870.kick.standing
+		self.ecp.kick.crouching = self.r870.kick.standing
+		self.ecp.kick.steelsight = self.r870.kick.standing
+		self.ecp.AMMO_MAX = 40
+		self.ecp.AMMO_PICKUP = {0.6, 1.5}
+		self.ecp.panic_suppression_chance = 0.0
+		self.ecp.ignore_damage_upgrades = true
+		self.ecp.stats = {
+			damage = 90,
+			spread = 20,
+			recoil = 19,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 26,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.ecp.stats_modifiers = {damage = 2}		
 		self.shrew.fire_mode_data.fire_rate = 0.075
 		self.shrew.single.fire_rate = 0.075
 		self.shrew.CLIP_AMMO_MAX = 6

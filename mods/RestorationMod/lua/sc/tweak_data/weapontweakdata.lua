@@ -398,6 +398,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.npc_melee.buzzer_summer.animation_param = "melee_freedom"
 		self.npc_melee.buzzer_summer.player_blood_effect = true
 		self.npc_melee.buzzer_summer.armor_piercing = true
+		self.npc_melee.claws = {}
+		self.npc_melee.claws.unit_name = nil
+		self.npc_melee.claws.damage = 1.5
+		self.npc_melee.claws.animation_param = "melee_fist"
+		self.npc_melee.claws.player_blood_effect = true
+		self.npc_melee.claws.armor_piercing = true	
+		self.npc_melee.bite = {}
+		self.npc_melee.bite.unit_name = nil
+		self.npc_melee.bite.damage = 22 * 10
+		self.npc_melee.bite.animation_param = "melee_fist"
+		self.npc_melee.bite.player_blood_effect = true
+		self.npc_melee.bite.armor_piercing = true	
+		self.npc_melee.bite.lethal = true
 	end
 
 	function WeaponTweakData:_set_npc_weapon_damage_multiplier(mul)

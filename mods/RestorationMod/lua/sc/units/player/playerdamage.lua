@@ -165,7 +165,7 @@ function PlayerDamage:damage_melee(attack_data)
 					player_unit:movement():on_non_lethal_electrocution()
 					managers.player:set_player_state("tased")
 				end
-			end
+			end		
 		end
 	end
 	player_damage_melee(self, attack_data)

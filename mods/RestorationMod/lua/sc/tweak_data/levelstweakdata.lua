@@ -6,9 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.Zombie = "zombie"
 	LevelsTweakData.LevelType.Murky = "murky"
 
-	local old_ltd_init = LevelsTweakData.init
-	function LevelsTweakData:init()
-		old_ltd_init(self, tweak_data)
+	Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		
 		local america = LevelsTweakData.LevelType.America
 		local russia = LevelsTweakData.LevelType.Russia
@@ -35,6 +33,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mia_2.package = {"packages/narr_mia_2", "levels/narratives/elephant/mad/world_sounds"}
 		self.firestarter_3.package = {"packages/narr_firestarter3", "levels/narratives/elephant/mad/world_sounds"}
 		self.jolly.package = {"packages/jolly", "levels/narratives/elephant/mad/world_sounds"}
-	end
+	end)
 
 end

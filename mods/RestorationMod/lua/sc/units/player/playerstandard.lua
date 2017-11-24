@@ -317,7 +317,7 @@ end
 		self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
 		managers.menu:set_mouse_sensitivity(self:in_steelsight())
 	end
-
+	
 	local melee_vars = {
 		"player_melee",
 		"player_melee_var2"
@@ -365,8 +365,12 @@ end
 			else
 				if bayonet_melee then
 					self._unit:sound():play("knife_hit_gen", nil, false)
-				elseif special_weapon == "taser" and charge_lerp_value ~= 1 then
-					self._unit:sound():play("melee_hit_gen", nil, false)
+				elseif special_weapon == "taser" then
+					if charge_lerp_value >= 0.99 then
+						self:_play_melee_sound(melee_entry, "hit_gen")
+					else
+						self._unit:sound():play("melee_hit_gen", nil, false)
+					end
 				else
 					self:_play_melee_sound(melee_entry, "hit_gen")
 				end
@@ -421,10 +425,10 @@ end
 					managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
 					self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 				end
-				--local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
+				local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
 				local action_data = {}
 				action_data.variant = "melee"
-				if special_weapon == "taser" and charge_lerp_value == 1 then
+				if special_weapon == "taser" and charge_lerp_value >= 0.99 then
 					action_data.variant = "taser_tased"
 				end
 				action_data.damage = shield_knock and 0 or damage * dmg_multiplier

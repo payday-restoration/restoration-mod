@@ -41,6 +41,18 @@ function InteractionTweakData:init(...)
 	self.res_lvl_shop.action_text_id = "res_lvl_shop_action"
 	self.res_lvl_shop.timer = 3
 	
+--Alaska
+	self.res_lvl_alaska = {}
+	self.res_lvl_alaska.text_id = "res_lvl_alaska"
+	self.res_lvl_alaska.action_text_id = "res_lvl_alaska_action"
+	self.res_lvl_alaska.timer = 3
+	
+--Departing
+	self.res_lvl_departing = {}
+	self.res_lvl_departing.text_id = "res_lvl_departing"
+	self.res_lvl_departing.action_text_id = "res_lvl_departing_action"
+	self.res_lvl_departing.timer = 3
+	
 --Jackal Mercenary Backup
 	self.res_lvl_assault_merc = {}
 	self.res_lvl_assault_merc.text_id = "res_lvl_assault_merc"

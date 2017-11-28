@@ -34,5 +34,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.firestarter_3.package = {"packages/narr_firestarter3", "levels/narratives/elephant/mad/world_sounds"}
 		self.jolly.package = {"packages/jolly", "levels/narratives/elephant/mad/world_sounds"}
 	end)
-
+	
 end

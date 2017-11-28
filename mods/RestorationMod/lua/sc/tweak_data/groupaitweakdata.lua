@@ -1268,272 +1268,137 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					special_type = "shield"
 				}
 			end
-			if job == "haunted" or job == "nail" or job == "help" or Month == "10" and restoration.Options:GetValue("SC/Holiday") then
-				if difficulty_index <= 4 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")
-							},							
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")
-							}
+			if difficulty_index <= 4 then
+				self.unit_categories.FBI_tank = {
+					unit_types = {
+						america = {
+							Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				elseif difficulty_index == 5 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-							},								
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-							}
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				elseif difficulty_index == 6 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},								
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),						
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							}
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")
+						},							
+						murky = {
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")
+						}
+					},
+					access = access_type_all,
+					special_type = "tank"
+				}
+			elseif difficulty_index == 5 then
+				self.unit_categories.FBI_tank = {
+					unit_types = {
+						america = {
+							Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+							Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				elseif difficulty_index == 7 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},								
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							}
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				else
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"),
-								Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},								
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							}
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")
+						},							
+						murky = {
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga")
+						}
+					},
+					access = access_type_all,
+					special_type = "tank"
+				}
+			elseif difficulty_index == 6 then
+				self.unit_categories.FBI_tank = {
+					unit_types = {
+						america = {
+							Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+							Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),							
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				end
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),								
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),							
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						},							
+						murky = {
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),							
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						}
+					},
+					access = access_type_all,
+					special_type = "tank"
+				}
+			elseif difficulty_index == 7 then
+				self.unit_categories.FBI_tank = {
+					unit_types = {
+						america = {
+							Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+							Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+							Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),							
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						},
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),								
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),	
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						},								
+						murky = {
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),								
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						}
+					},
+					access = access_type_all,
+					special_type = "tank"
+				}
 			else
-				if difficulty_index <= 4 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")
-							},							
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")
-							}
+				self.unit_categories.FBI_tank = {
+					unit_types = {
+						america = {
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				elseif difficulty_index == 5 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")
-							},							
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga")
-							}
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				elseif difficulty_index == 6 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},							
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							}
-						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				elseif difficulty_index == 7 then
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-								Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-								Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),							
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),	
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},								
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),								
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							}
-						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				else
-					self.unit_categories.FBI_tank = {
-						unit_types = {
-							america = {
-								Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"),
-								Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
-								Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							russia = {
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},
-							zombie = {
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
-								Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							},							
-							murky = {
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-								Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-							}
-						},
-						access = access_type_all,
-						special_type = "tank"
-					}
-				end
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						},							
+						murky = {
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+						}
+					},
+					access = access_type_all,
+					special_type = "tank"
+				}
 			end
 			self.unit_categories.boom_M4203 = {
 				unit_types = {
@@ -5542,21 +5407,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					elseif difficulty_index == 4 then
 						self.besiege.assault.groups.Cap_Summers = {
-							0.05,
-							0.05,
-							0.05
+							0.04,
+							0.04,
+							0.04
 						}
 					elseif difficulty_index == 5 then
 						self.besiege.assault.groups.Cap_Summers = {
-							0.05,
-							0.05,
-							0.05
+							0.04,
+							0.04,
+							0.04
 						}
 					else
 						self.besiege.assault.groups.Cap_Summers = {
-							0.05,
-							0.05,
-							0.05
+							0.04,
+							0.04,
+							0.04
 						}
 					end
 					break

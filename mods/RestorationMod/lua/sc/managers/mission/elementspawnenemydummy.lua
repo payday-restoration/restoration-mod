@@ -66,8 +66,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
 			["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870",
-			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
-			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
+			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
 		}
 	local easy_wish = {
 			["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -83,7 +82,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 			["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/payday2/characters/ene_shield_1/ene_shield_1",
 			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
-			["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "units/payday2/characters/ene_fbi_3_sc/ene_fbi_3_sc"
+			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		}
 	local fbi_sniper = {
 			["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
@@ -91,6 +90,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local normal_sniper = {
 			["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
 		}
+	local all = {
+			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		} 		
 	local haunted = {
 			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
@@ -118,7 +120,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if easy_wish[self._values.enemy] then
 					self._values.enemy = easy_wish[self._values.enemy]
 				end
-				self._values.enemy = easy_wish[self._values.enemy] or self._values.enemy		
+				self._values.enemy = easy_wish[self._values.enemy] or self._values.enemy	
+			else
+				if all[self._values.enemy] then
+					self._values.enemy = all[self._values.enemy]
+				end
+				self._values.enemy = all[self._values.enemy] or self._values.enemy					
 			end
 		end
 

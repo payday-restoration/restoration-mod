@@ -476,7 +476,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "More Blood to Bleed",
-			["menu_iron_man_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##25%## extra health.\n\nACE: ##$pro##\nYou gain an additional ##25%## extra health.",																								
+			["menu_iron_man_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##20%## extra health.\n\nACE: ##$pro##\nYou gain an additional ##20%## extra health.",																								
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "Bullseye",

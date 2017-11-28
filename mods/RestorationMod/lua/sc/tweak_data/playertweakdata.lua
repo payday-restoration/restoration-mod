@@ -133,12 +133,12 @@ function PlayerTweakData:init()
 		0.98,
 		0.99
 	}
-	self.damage.HEALTH_INIT = 22
+	self.damage.HEALTH_INIT = 23
 	self.damage.LIVES_INIT = 4
 	if is_console then
-		self.damage.REGENERATE_TIME = 3.5
+		self.damage.REGENERATE_TIME = 3
 	else
-		self.damage.REGENERATE_TIME = 3.5
+		self.damage.REGENERATE_TIME = 3
 	end
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.75,
@@ -148,7 +148,7 @@ function PlayerTweakData:init()
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.TASED_TIME = 10
 	self.damage.TASED_RECOVER_TIME = 1
-	self.damage.BLEED_OUT_HEALTH_INIT = 22
+	self.damage.BLEED_OUT_HEALTH_INIT = 23
 	self.damage.DOWNED_TIME = 30
 	self.damage.DOWNED_TIME_DEC = 10
 	self.damage.DOWNED_TIME_MIN = 10

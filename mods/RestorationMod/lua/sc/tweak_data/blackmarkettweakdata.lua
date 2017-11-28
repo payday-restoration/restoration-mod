@@ -1690,6 +1690,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.rambo.stats.max_damage_effect = 0.25
 	self.melee_weapons.rambo.anim_global_param = "melee_knife"
 	self.melee_weapons.rambo.repeat_expire_t = 0.75
+	self.melee_weapons.rambo.expire_t = 1.2
 	self.melee_weapons.rambo.stats.charge_time = 1.6
 	self.melee_weapons.rambo.stats.range = 160
 	self.melee_weapons.rambo.stats.concealment = 29

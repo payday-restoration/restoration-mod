@@ -12613,7 +12613,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 8,
-				concealment = 5
+				recoil = -1,
+				concealment = 2
 			},
 			animations = {
 				reload = "reload",
@@ -30916,7 +30917,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_grv/weapons/wpn_fps_snp_siltstone_pts/wpn_fps_snp_siltstone_fg_polymer",
 			stats = {
 				value = 1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "grv",
 			texture_bundle_folder = "grv"
@@ -30980,7 +30981,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_grv/weapons/wpn_fps_snp_siltstone_pts/wpn_fps_snp_siltstone_s_polymer",
 			stats = {
 				value = 1,
-				concealment = 3
+				recoil = -1,
+				concealment = 2
 			},
 			dlc = "grv",
 			texture_bundle_folder = "grv"

@@ -752,9 +752,9 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.suspicious = nil
 	self.gangster.suppression = presets.suppression.easy
 	self.gangster.surrender = nil
-	self.gangster.ecm_vulnerability = 0
+	self.gangster.ecm_vulnerability = 1
 	self.gangster.ecm_hurts = {
-		ears = {min_duration = 0, max_duration = 0}
+		ears = {min_duration = 8, max_duration = 10}
 	}
 	self.gangster.no_arrest = true
 	self.gangster.no_retreat = true
@@ -877,9 +877,10 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 500
-	self.mobster_boss.headshot_dmg_mul = 7.99425
+	self.mobster_boss.headshot_dmg_mul = 3.997125
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.mobster_boss.move_speed = presets.move_speed.slow
+	self.mobster_boss.damage.explosion_damage_mul = 1.25
+	self.mobster_boss.move_speed = presets.move_speed.very_slow
 	self.mobster_boss.allowed_poses = {stand = true}
 	self.mobster_boss.crouch_move = false
 	self.mobster_boss.no_run_start = true
@@ -887,8 +888,10 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.no_retreat = true
 	self.mobster_boss.no_arrest = true
 	self.mobster_boss.surrender = nil
-	self.mobster_boss.ecm_vulnerability = nil
-	self.mobster_boss.ecm_hurts = nil
+	self.mobster_boss.ecm_vulnerability = 0.85
+	self.mobster_boss.ecm_hurts = {
+		ears = {min_duration = 1, max_duration = 3}
+	}
 	self.mobster_boss.weapon_voice = "3"
 	self.mobster_boss.experience.cable_tie = "tie_swat"
 	self.mobster_boss.access = "gangster"
@@ -910,7 +913,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.use_animation_on_fire_damage = false
 	self.mobster_boss.flammable = true
 	self.mobster_boss.immune_to_knock_down = true
-	self.mobster_boss.immune_to_concussion = false
+	self.mobster_boss.immune_to_concussion = true
 	self.mobster_boss.must_headshot = true
  	table.insert(self._enemy_list, "mobster_boss")
 end
@@ -921,16 +924,19 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 500
-	self.biker_boss.headshot_dmg_mul = 7.99425
+	self.biker_boss.headshot_dmg_mul = 3.997125
+	self.biker_boss.damage.explosion_damage_mul = 1.25
 	self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.no_hurts
-	self.biker_boss.move_speed = presets.move_speed.slow
+	self.biker_boss.move_speed = presets.move_speed.very_slow
 	self.biker_boss.allowed_poses = {stand = true}
 	self.biker_boss.no_retreat = true
+	self.biker_boss.no_run_start = true
+	self.biker_boss.no_run_stop = true	
 	self.biker_boss.no_arrest = true
 	self.biker_boss.surrender = nil
-	self.biker_boss.ecm_vulnerability = 0
+	self.biker_boss.ecm_vulnerability = 0.85
 	self.biker_boss.ecm_hurts = {
-		ears = {min_duration = 0, max_duration = 0}
+		ears = {min_duration = 1, max_duration = 3}
 	}
 	self.biker_boss.weapon_voice = "3"
 	self.biker_boss.experience.cable_tie = "tie_swat"
@@ -954,7 +960,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.silent_priority_shout = nil
 	self.biker_boss.custom_shout = true
 	self.biker_boss.priority_shout_max_dis = 3000
-	self.biker_boss.immune_to_concussion = false
+	self.biker_boss.immune_to_concussion = true
 	self.biker_boss.must_headshot = true
  	table.insert(self._enemy_list, "biker_boss")
 end
@@ -982,7 +988,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.calls_in = nil
 	self.hector_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
 	self.hector_boss_no_armor.use_radio = nil
-	self.hector_boss_no_armor.can_be_tased = false
+	self.hector_boss_no_armor.can_be_tased = true
  	table.insert(self._enemy_list, "hector_boss_no_armor")
 end
 
@@ -998,15 +1004,18 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.chavez_boss.HEALTH_INIT = 500
-	self.chavez_boss.headshot_dmg_mul = 7.99425
-	self.chavez_boss.move_speed = presets.move_speed.slow
+	self.chavez_boss.headshot_dmg_mul = 3.997125
+	self.chavez_boss.damage.explosion_damage_mul = 1.25
+	self.chavez_boss.move_speed = presets.move_speed.very_slow
 	self.chavez_boss.allowed_poses = {stand = true}
 	self.chavez_boss.no_retreat = true
 	self.chavez_boss.no_arrest = true
+	self.chavez_boss.no_run_start = true
+	self.chavez_boss.no_run_stop = true		
 	self.chavez_boss.surrender = nil
-	self.chavez_boss.ecm_vulnerability = 0
+	self.chavez_boss.ecm_vulnerability = 0.85
 	self.chavez_boss.ecm_hurts = {
-		ears = {min_duration = 0, max_duration = 0}
+		ears = {min_duration = 1, max_duration = 3}
 	}
 	self.chavez_boss.weapon_voice = "1"
 	self.chavez_boss.experience.cable_tie = "tie_swat"
@@ -1026,7 +1035,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.flammable = true
 	self.chavez_boss.can_be_tased = false
 	self.chavez_boss.immune_to_knock_down = true
-	self.chavez_boss.immune_to_concussion = false
+	self.chavez_boss.immune_to_concussion = true
 	self.chavez_boss.must_headshot = true
 	table.insert(self._enemy_list, "chavez_boss")
 end
@@ -1083,9 +1092,10 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 500
-	self.drug_lord_boss.headshot_dmg_mul = 7.99425
+	self.drug_lord_boss.headshot_dmg_mul = 3.997125
+	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 	self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.drug_lord_boss.move_speed = presets.move_speed.slow
+	self.drug_lord_boss.move_speed = presets.move_speed.very_slow
 	self.drug_lord_boss.allowed_poses = {stand = true}
 	self.drug_lord_boss.crouch_move = false
 	self.drug_lord_boss.no_run_start = true
@@ -1093,9 +1103,9 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.no_retreat = true
 	self.drug_lord_boss.no_arrest = true
 	self.drug_lord_boss.surrender = nil
-	self.drug_lord_boss.ecm_vulnerability = 0
+	self.drug_lord_boss.ecm_vulnerability = 0.85
 	self.drug_lord_boss.ecm_hurts = {
-		ears = {min_duration = 0, max_duration = 0}
+		ears = {min_duration = 1, max_duration = 3}
 	}
 	self.drug_lord_boss.weapon_voice = "3"
 	self.drug_lord_boss.experience.cable_tie = "tie_swat"
@@ -1116,7 +1126,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.flammable = true
 	self.drug_lord_boss.can_be_tased = false
 	self.drug_lord_boss.immune_to_knock_down = true
-	self.drug_lord_boss.immune_to_concussion = false
+	self.drug_lord_boss.immune_to_concussion = true
 	self.drug_lord_boss.priority_shout = "g29"
 	self.drug_lord_boss.bot_priority_shout = "g29"
 	self.drug_lord_boss.custom_shout = true
@@ -1232,21 +1242,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.must_headshot = true
  	table.insert(self._enemy_list, "tank")
 	
-	self.tank_hw = deep_clone(self.tank)
-	self.tank_hw.HEALTH_INIT = 500
-	self.tank_hw.ignore_headshot = false
-	self.tank_hw.critical_hits = {
-		damage_mul = 2
-	}
-	self.tank_hw.headshot_dmg_mul = 7.99425
-	self.tank_hw.immune_to_concussion = false
-	self.tank_hw.use_animation_on_fire_damage = false
-	self.tank_hw.flammable = true
-	self.tank_hw.can_be_tased = false
-	self.tank_hw.melee_anims = nil
-	self.tank_hw.move_speed = presets.move_speed.slow
- 	table.insert(self._enemy_list, "tank_hw")
-	
 	self.tank_medic = deep_clone(self.tank)
 	self.tank_medic.headshot_dmg_mul = 12.5
 	table.insert(self.tank_medic.tags, "medic")
@@ -1272,6 +1267,15 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.spawn_sound_event = "cloaker_spawn"
 	table.insert(self._enemy_list, "tank_titan_assault")
+	
+	self.tank_hw = deep_clone(self.tank_titan)
+	self.tank_hw.priority_shout = "f30"
+	self.tank_hw.bot_priority_shout = "f30x_any"	
+	self.tank_hw.ignore_headshot = false
+	self.tank_hw.melee_anims = nil
+	self.tank_hw.spawn_sound_event = nil
+	self.tank_hw.die_sound_event = nil
+ 	table.insert(self._enemy_list, "tank_hw")	
 	
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.headshot_dmg_mul = 12.5

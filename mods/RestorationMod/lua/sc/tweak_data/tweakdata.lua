@@ -194,7 +194,7 @@ if not tweak_data then return end
 	tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 7.5}
 
 	--Had to include this in here due to some BS with it being in upgradestweakdata
-	tweak_data.upgrades.values.player.health_multiplier = {1.25, 1.5}
+	tweak_data.upgrades.values.player.health_multiplier = {1.2, 1.4}
 	tweak_data.upgrades.values.trip_mine.quantity = {3, 7}
 
 	tweak_data.interaction.drill_upgrade.timer = 3

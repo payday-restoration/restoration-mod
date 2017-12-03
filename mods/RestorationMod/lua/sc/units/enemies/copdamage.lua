@@ -676,6 +676,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			debug_pause("Immortal character died!")
 		end
 		local variant = attack_data.variant
+		--[[
 		if char_tweak.custom_voicework then
 			local voice_pos = self._unit:position()
 			local voice_source = self._unit:base().my_voice
@@ -683,6 +684,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			voice_source:setbuffer(_G.restoration.BufferedSounds[char_tweak.custom_voicework].death)
 			voice_source:play()
 		end
+		]]--
 		self:_check_friend_4(attack_data)
 		CopDamage.MAD_3_ACHIEVEMENT(attack_data)
 		self:_remove_debug_gui()

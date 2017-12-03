@@ -1,3 +1,69 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
+	--This is a helmet, not a mask--
+	local old_masks = BlackMarketTweakData._init_masks
+	function BlackMarketTweakData:_init_masks(tweak_data)
+		old_masks(self, tweak_data)
+		
+		--Shatter
+		self.masks.shatter_true = {
+			unit = "units/mods/masks/msk_shatter_true/msk_shatter_true",
+			name_id = "bm_msk_shatter_true",
+			desc_id = "bm_msk_shatter_true_desc",
+			pcs = {},
+			value = 0,
+			global_value = "infamous",
+			texture_bundle_folder = "mods"
+		}		
+		
+		--Hockey Hell
+		self.masks.canada = {
+			unit = "units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc",
+			name_id = "bm_msk_canada",
+			desc_id = "bm_msk_canada_desc",
+			pcs = {},
+			value = 0,
+			global_value = "infamous",
+			texture_bundle_folder = "mods"
+		}
+
+		--Mrs. Graffiti
+		self.masks.jsr = {
+			unit = "units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc",
+			name_id = "bm_msk_jsr",
+			desc_id = "bm_msk_jsr_desc",
+			pcs = {},
+			value = 0,
+			global_value = "infamous",
+			texture_bundle_folder = "mods"
+		}		
+		
+		--Mr. Graffiti
+		self.masks.jsrf = {
+			unit = "units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc",
+			name_id = "bm_msk_jsrf",
+			desc_id = "bm_msk_jsrf_desc",
+			pcs = {},
+			value = 0,
+			global_value = "infamous",
+			texture_bundle_folder = "mods"
+		}
+
+		--The Lootbag
+		self.masks.courier_stash = {
+			unit = "units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc",
+			name_id = "bm_msk_courier_stash",
+			desc_id = "bm_msk_courier_stash_desc",
+			pcs = {},
+			value = 0,
+			global_value = "infamous",
+			texture_bundle_folder = "mods"
+		}				
+		
+	end
+
+end
+
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 local old_projectiles = BlackMarketTweakData._init_projectiles

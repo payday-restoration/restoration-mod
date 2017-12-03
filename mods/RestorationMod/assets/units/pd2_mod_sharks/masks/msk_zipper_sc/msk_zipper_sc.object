@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_zipper_mask" materials="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" />
+    <graphics>
+        <object enabled="true" name="g_zipper" />
+    </graphics>
+</dynamic_object>

@@ -184,5 +184,14 @@
 	"restoration_level_data_highrise_stage1" : "12:00 AM, HIGHRISE APARTMENTS",
 	"menu_asset_wet_intel" : "Intel",
 	"menu_asset_risk_murky" : "Murkywater Mercenaries",
-	"menu_asset_wet_boat" : "Boat"
+	"menu_asset_wet_boat" : "Boat",
+	"menu_asset_wet_boat_desc" : "Buy the boat escape",
+	"bm_msk_canada" : "Hockey Hell",
+	"bm_msk_canada_desc" : "The doggo man gave you a fancy mask for being a bretty cool guy.",
+	"bm_msk_jsr" : "Mrs. Graffiti",
+	"bm_msk_jsr_desc" : "WOULD YOU STOP PLAYING WITH THAT RADIO OF YOURS, I'M TRYING TO GET SOME SLEEP.",	
+	"bm_msk_jsrf" : "Mr. Graffiti",
+	"bm_msk_jsrf_desc" : "UNDERSTAND UNDERSTAND, UNDERSTAND UNDERSTAND THE CONCEPT OF LOVE.",		
+	"bm_msk_courier_stash" : "The Lootbag",
+	"bm_msk_courier_stash_desc" : "This is a loot bag item!"		
 }

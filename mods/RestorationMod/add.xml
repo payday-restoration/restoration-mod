@@ -65,6 +65,52 @@
 	<!--Assets-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
+	
+	<!--Mask: Shatter-->
+	<material_config path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<unit path="units/mods/masks/msk_shatter_true/msk_shatter_true" load="true"/>
+	<cooked_physics path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<object path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<model path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_df" force="false"/>
+	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true" force="false"/>	
+	
+	<!--Mask: Hockey Hell-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" load="true"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_hockey_sc/hockey_b_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/canada" force="false"/>
+	
+	<!--Mask: Mrs. Graffiti-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" load="true"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/jsr" force="false"/>
+	
+	<!--Mask: Mr. Graffiti-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" load="true"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/jsrf" force="false"/>
+	
+	<!--Mask: The Lootbag-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" load="true"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_zipper_sc/zipper_df" force="false"/>	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/courier_stash" force="false"/>
 
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>

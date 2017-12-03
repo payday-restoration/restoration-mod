@@ -1,0 +1,7 @@
+<unit type="static" slot="1" >
+    <object file="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="MaskExt" name="base" />
+    </extensions>
+</unit>

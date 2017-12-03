@@ -826,6 +826,11 @@ function UpgradesTweakData:_init_pd2_values()
 		{0.85, 7},
 		{0.8, 7}
 	}
+	self.max_melee_weapon_dmg_mul_stacks = 4
+	self.values.melee.stacking_hit_damage_multiplier = {
+		0.1,
+		0.2
+	}
 	self.values.dmg_dampener_outnumbered_strong = {
 		{0.95, 7}
 	}
@@ -944,6 +949,12 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.dodge_replenish_armor = {true}
 	self.values.player.smoke_screen_ally_dodge_bonus = {0.05}
 	self.values.player.sicario_multiplier = {1.5}
+	
+	--alcoholism is no joke
+	self.values.player.damage_control_passive = {{
+		75,
+		6.25
+	}}
 end
 
 --Added new definitions--

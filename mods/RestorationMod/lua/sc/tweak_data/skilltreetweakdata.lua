@@ -2497,7 +2497,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				cost = 200,
 				icon_xy = {3, 4},
-				name_id = "menu_deck9_1",
+				name_id = "menu_deck9_1_sc",
 				desc_id = "menu_deck8_1_desc_sc"
 			},
 			deck2,

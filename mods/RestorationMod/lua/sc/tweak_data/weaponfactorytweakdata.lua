@@ -2603,7 +2603,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_m4_upper_reciever_round_vanilla",
 				"wpn_fps_amcar_uupg_body_upperreciever"
 			},
-			animations = {reload = "reload"}
+			animations = {},
+			override = {wpn_fps_amcar_bolt_standard = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_bolt_edge"}}
 		}
 		self.parts.wpn_fps_m4_upper_reciever_round = {
 			type = "upper_reciever",
@@ -2611,7 +2612,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_round",
 			stats = {value = 1},
-			animations = {reload = "reload"}
+			override = {wpn_fps_amcar_bolt_standard = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_bolt_round"}}
 		}
 		self.parts.wpn_fps_m4_uupg_b_long = {
 			pcs = {
@@ -3018,6 +3019,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_m4_uupg_b_short_vanilla.stats = nil
 		self.parts.wpn_fps_m4_uupg_b_short_vanilla.pcs = nil
 		self.wpn_fps_ass_m4 = {}
+		self.wpn_fps_ass_m4.animations = {
+			reload = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload_not_empty = "reload_not_empty",
+			magazine_empty = "last_recoil"
+		}
 		self.wpn_fps_ass_m4.optional_types = {
 			"barrel_ext",
 			"gadget",
@@ -3034,7 +3042,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_m_straight_vanilla",
 			"wpn_fps_m16_s_solid",
 			"wpn_fps_m4_uupg_draghandle",
-			"wpn_fps_m4_uupg_o_flipup"
+			"wpn_fps_m4_uupg_o_flipup",
+			"wpn_fps_amcar_bolt_standard"
 		}
 		self.wpn_fps_ass_m4.override = {
 			wpn_fps_upg_ass_m4_b_beowulf = {
@@ -3175,6 +3184,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_m4_fg_lvoa",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
+			"wpn_fps_amcar_bolt_standard",
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
@@ -3369,6 +3379,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_g18c_m_mag_17rnd",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_body_upperreciever",
+			animations = {
+				fire = "recoil",
+				reload = "reload",
+				magazine_empty = "last_recoil"
+			},			
 			adds = {
 				"wpn_fps_ass_m16_os_frontsight"
 			},
@@ -3386,11 +3401,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fg",
 			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_fg_amcar"
 		}
+		self.parts.wpn_fps_amcar_bolt_standard = {
+			a_obj = "a_bolt",
+			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_bolt_standard",
+			type = "bolt"
+		}		
 		self.parts.wpn_fps_amcar_uupg_body_upperreciever.third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_body_upperreciever"
 		self.parts.wpn_fps_amcar_uupg_fg_amcar.third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_fg_amcar"
+		self.parts.wpn_fps_amcar_bolt_standard.third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_bolt_standard"
 		self.wpn_fps_ass_amcar = {}
 		self.wpn_fps_ass_amcar.unit = "units/payday2/weapons/wpn_fps_ass_amcar/wpn_fps_ass_amcar"
 		self.wpn_fps_ass_amcar.stock_adapter = "wpn_fps_upg_m4_s_adapter"
+		self.wpn_fps_ass_amcar.animations = {
+			reload = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload_not_empty = "reload_not_empty",
+			magazine_empty = "last_recoil"
+		}
 		self.wpn_fps_ass_amcar.adds = {
 			wpn_fps_upg_o_specter = {
 				"wpn_fps_m4_upper_reciever_round_vanilla",
@@ -3531,7 +3559,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
-			}
+			},
+			wpn_fps_m4_uupg_b_medium_vanilla = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_medium"}
 		}
 		self.wpn_fps_ass_amcar.default_blueprint = {
 			"wpn_fps_m4_uupg_b_medium_vanilla",
@@ -3541,6 +3570,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_m_straight_vanilla",
 			"wpn_fps_m16_s_solid",
 			"wpn_fps_upg_m4_g_standard_vanilla",
+			"wpn_fps_amcar_bolt_standard",
 			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_ass_m16_o_handle_sight"
 		}
@@ -3611,6 +3641,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_fg_smr",
 			"wpn_fps_upg_ass_m4_fg_lvoa",
+			"wpn_fps_amcar_bolt_standard",
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
@@ -3711,6 +3742,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_m16_s_solid_vanilla.stats = nil
 		self.parts.wpn_fps_m16_s_solid_vanilla.pc = nil
 		self.wpn_fps_ass_m16 = {}
+		self.wpn_fps_ass_m16.animations = {
+			reload = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload_not_empty = "reload_not_empty",
+			magazine_empty = "last_recoil"
+		}
 		self.wpn_fps_ass_m16.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16"
 		self.wpn_fps_ass_m16.stock_adapter = "wpn_fps_upg_m4_s_adapter"
 		self.wpn_fps_ass_m16.optional_types = {
@@ -3820,6 +3858,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_m16_fg_standard",
 			"wpn_fps_m16_s_solid_vanilla",
+			"wpn_fps_amcar_bolt_standard",
 			"wpn_fps_upg_m4_m_straight_vanilla",
 			"wpn_fps_upg_m4_g_standard_vanilla"
 		}
@@ -3890,6 +3929,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_m16_fg_stag",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
+			"wpn_fps_amcar_bolt_standard",
 			"wpn_fps_smg_olympic_s_short",
 			"wpn_fps_m4_uupg_s_fold",
 			"wpn_fps_upg_m4_s_standard",
@@ -3965,6 +4005,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_olympic_s_short.third_unit = "units/payday2/weapons/wpn_third_smg_olympic_pts/wpn_third_smg_olympic_s_short"
 		self.parts.wpn_fps_smg_olympic_s_adjust.third_unit = "units/payday2/weapons/wpn_third_smg_olympic_pts/wpn_third_smg_olympic_s_adjust"
 		self.wpn_fps_smg_olympic = {}
+		self.wpn_fps_smg_olympic.animations = {
+			reload = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			reload_not_empty = "reload_not_empty",
+			magazine_empty = "last_recoil"
+		}
 		self.wpn_fps_smg_olympic.unit = "units/payday2/weapons/wpn_fps_smg_olympic/wpn_fps_smg_olympic"
 		self.wpn_fps_smg_olympic.optional_types = {
 			"barrel_ext",
@@ -3972,6 +4019,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"vertical_grip"
 		}
 		self.wpn_fps_smg_olympic.override = {
+			wpn_fps_m4_uupg_b_short_vanilla = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short"},
+			wpn_fps_m4_uupg_b_medium = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_medium"},		
 			wpn_fps_upg_ass_m4_b_beowulf = {
 				stats = {
 					value = 1,
@@ -4063,7 +4112,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_m4_upper_reciever_round",
 			"wpn_fps_m4_lower_reciever",
 			"wpn_fps_smg_olympic_fg_olympic",
-			"wpn_fps_ass_m16_o_handle_sight"
+			"wpn_fps_ass_m16_o_handle_sight",
+			"wpn_fps_amcar_bolt_standard"
 		}
 		self.wpn_fps_smg_olympic.uses_parts = {
 			"wpn_fps_m4_lower_reciever",
@@ -4133,6 +4183,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_smg_olympic_fg_lr300",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
+			"wpn_fps_amcar_bolt_standard",
 			"wpn_fps_m4_uupg_s_fold",
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_spot",
@@ -21430,7 +21481,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			override = {
 				wpn_fps_m4_uupg_draghandle = {
 					unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_m4_uupg_draghandle_ballos/wpn_fps_m4_uupg_draghandle_ballos"
-				}
+				},
+				wpn_fps_amcar_bolt_standard = {unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_bolt_ballos/wpn_fps_upg_ass_m4_bolt_ballos"}
 			}
 		}
 		self.parts.wpn_fps_upg_ass_m4_upper_reciever_core = {
@@ -21455,7 +21507,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			override = {
 				wpn_fps_m4_uupg_draghandle = {
 					unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_m4_uupg_draghandle_core/wpn_fps_m4_uupg_draghandle_core"
-				}
+				},
+				wpn_fps_amcar_bolt_standard = {unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_bolt_core/wpn_fps_upg_ass_m4_bolt_core"}
 			}
 		}
 		self.parts.wpn_fps_m4_uupg_draghandle_ballos = {

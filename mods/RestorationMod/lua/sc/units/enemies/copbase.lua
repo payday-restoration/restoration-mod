@@ -1,5 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	--[[
 	function CopBase:init(unit)
 		UnitBase.init(self, unit, false)
 
@@ -14,6 +15,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._buffs = {}
 		self.my_voice = blt.xaudio.newsource()
 	end
+	]]--
 
 	Month = os.date("%m")
 	function CopBase:_chk_spawn_gear()
@@ -26,7 +28,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if restoration and restoration.Options:GetValue("SC/Holiday") then
 			if Global.level_data.level_id == "pines" or Global.level_data.level_id == "roberts" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "moon" or Month == "12" then
-				PackageManager:load("packages/narr_pines")
 				if self:char_tweak().tags then
 					if self._tweak_table == "tank_hw" then
 					else

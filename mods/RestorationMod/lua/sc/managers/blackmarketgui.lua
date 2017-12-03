@@ -276,7 +276,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				end
 				if new_data.unlocked then
 					local weapon_mod_tweak = tweak_data.weapon.factory.parts[mod_name]
-					if weapon_mod_tweak and weapon_mod_tweak.type ~= "bonus" and weapon_mod_tweak.is_a_unlockable ~= true and can_apply then
+					if weapon_mod_tweak and weapon_mod_tweak.is_a_unlockable ~= true and can_apply then
 						table.insert(new_data, "wm_buy_mod")
 					end
 				end

@@ -51,6 +51,7 @@ if not _G.restoration then
 		"rat",	
 		"flat"
 	}
+	--[[
 	_G.restoration.BufferedSounds = {
 		grenadier = {
 			death = blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/death.ogg"),
@@ -63,6 +64,7 @@ if not _G.restoration then
 			use_gas = blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg")
 		}
 	}
+	]]--
 end
 
 _G.SC = _G.SC or {}

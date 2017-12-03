@@ -1721,6 +1721,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.spawn_sound_event = "clk_c01x_plu"
 	self.boom.die_sound_event = "rmdc_x02a_any_3p"
 	self.boom.steal_loot = nil
+	self.boom.custom_voicework = "grenadier"
  	table.insert(self._enemy_list, "boom")
 	self.rboom = deep_clone(self.boom)
 	self.rboom.spawn_sound_event = "clk_c01x_plu"

@@ -1,5 +1,20 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	function CopBase:init(unit)
+		UnitBase.init(self, unit, false)
+
+		self._char_tweak = tweak_data.character[self._tweak_table]
+		self._unit = unit
+		self._visibility_state = true
+		self._foot_obj_map = {
+			right = self._unit:get_object(Idstring("RightToeBase")),
+			left = self._unit:get_object(Idstring("LeftToeBase"))
+		}
+		self._is_in_original_material = true
+		self._buffs = {}
+		self.my_voice = blt.xaudio.newsource()
+	end
+
 	Month = os.date("%m")
 	function CopBase:_chk_spawn_gear()
 		if self._tweak_table == "spooc" then

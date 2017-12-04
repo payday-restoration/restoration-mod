@@ -66,6 +66,15 @@
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
 	
+	<!--Mats/Patterns-->
+	<texture path="units/pd2_mod_jack/matcaps/jkl_matt01" force="false"/>
+	<texture path="units/pd2_mod_jack/matcaps/jkl_matt02" force="false"/>	
+	<texture path="guis/textures/pd2/blackmarket/icons/materials/jkl_matt01"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/materials/jkl_matt02"/>	
+	
+	<texture path="patterns/jkl_patt01"/>
+	<texture path="patterns/jkl_patt02"/>
+	
 	<!--Mask: Shatter-->
 	<material_config path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
 	<unit path="units/mods/masks/msk_shatter_true/msk_shatter_true" load="true"/>
@@ -111,7 +120,7 @@
 	<model path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
 	<texture path="units/pd2_mod_sharks/masks/msk_zipper_sc/zipper_df" force="false"/>	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/courier_stash" force="false"/>
-
+	
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<model path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>

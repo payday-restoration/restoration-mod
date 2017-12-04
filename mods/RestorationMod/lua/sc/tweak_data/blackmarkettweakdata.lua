@@ -12,7 +12,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_msk_shatter_true_desc",
 			pcs = {},
 			value = 0,
-			global_value = "infamous",
+			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}		
 		
@@ -23,7 +23,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_msk_canada_desc",
 			pcs = {},
 			value = 0,
-			global_value = "infamous",
+			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
 
@@ -34,7 +34,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_msk_jsr_desc",
 			pcs = {},
 			value = 0,
-			global_value = "infamous",
+			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}		
 		
@@ -45,7 +45,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_msk_jsrf_desc",
 			pcs = {},
 			value = 0,
-			global_value = "infamous",
+			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
 
@@ -56,11 +56,57 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_msk_courier_stash_desc",
 			pcs = {},
 			value = 0,
-			global_value = "infamous",
+			global_value = "rest",
 			texture_bundle_folder = "mods"
-		}				
-		
+		}						
 	end
+	
+	--we all know alligator skin's the best material right--
+	local old_mat = BlackMarketTweakData._init_materials
+	function BlackMarketTweakData:_init_materials(tweak_data)
+		old_mat(self, tweak_data)
+		
+		self.materials.jkl_matt01 = {
+			name_id = "material_jkl_matt01_title",
+			pcs = {},
+			texture = "units/pd2_mod_jack/matcaps/jkl_matt01",
+			material_amount = 0,
+			value = 0,
+			dlc = "rest"
+		}
+		self.materials.jkl_matt02 = {
+			name_id = "material_jkl_matt02_title",
+			pcs = {},
+			texture = "units/pd2_mod_jack/matcaps/jkl_matt02",
+			material_amount = 0,
+			value = 0,
+			dlc = "rest"
+		}		
+				
+	end	
+	
+	--for when you want to put something stupid on your face--
+	local old_text = BlackMarketTweakData._init_textures
+	function BlackMarketTweakData:_init_textures(tweak_data)
+		old_text(self, tweak_data)
+		
+		self.textures.jkl_patt01 = {
+			name_id = "pattern_jkl_patt01_title",
+			pcs = {},
+			texture = "patterns/jkl_patt01",
+			value = 0,
+			dlc = "rest"
+		}
+
+		self.textures.jkl_patt02 = {
+			name_id = "pattern_jkl_patt02_title",
+			pcs = {},
+			texture = "patterns/jkl_patt02",
+			value = 0,
+			dlc = "rest"
+		}			
+				
+	end		
 
 end
 

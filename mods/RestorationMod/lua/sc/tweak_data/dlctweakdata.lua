@@ -3,11 +3,17 @@ function DLCTweakData:init(...)
 	old_DLCTweakData_init(self, ...)
 	
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+		self.rest = {
+			content = {},
+			free = true
+		}
+		self.rest.content.loot_drops = {}
+		self.rest.content.upgrades = {}	
 		self.wetwork_masks = {
 			content = {},
 			free = true
 		}
-		self.wetwork_masks.content.loot_global_value = "infamous"
+		self.wetwork_masks.content.loot_global_value = "rest"
 		self.wetwork_masks.content.loot_drops = {
 			{
 				type_items = "masks",
@@ -32,6 +38,26 @@ function DLCTweakData:init(...)
 			{
 				type_items = "masks",
 				item_entry = "courier_stash",
+				amount = 1
+			},
+			{
+				type_items = "materials",
+				item_entry = "jkl_matt01",
+				amount = 1
+			},
+			{
+				type_items = "materials",
+				item_entry = "jkl_matt02",
+				amount = 1
+			},	
+			{
+				type_items = "textures",
+				item_entry = "jkl_patt01",
+				amount = 1
+			},		
+			{
+				type_items = "textures",
+				item_entry = "jkl_patt02",
 				amount = 1
 			}			
 		}

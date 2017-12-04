@@ -25,8 +25,8 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.sc.category = "sc"
 	--HERE I COME, ROUGHER THAN THE REST OF THEM 
     self.global_values.rest = {}
-    self.global_values.rest.name_id = "loot_rest"
-    self.global_values.rest.desc_id = "loot_rest_desc"
+    self.global_values.rest.name_id = "menu_l_global_value_veritas"
+    self.global_values.rest.desc_id = "menu_l_global_value_veritas_desc"
     self.global_values.rest.color = Color('A30C1D')
     self.global_values.rest.dlc = false
     self.global_values.rest.chance = 0
@@ -35,5 +35,5 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.rest.drops = false
     self.global_values.rest.track = false
     self.global_values.rest.sort_number = 30
-    self.global_values.rest.category = "sc"	
+    self.global_values.rest.category = "rest"	
 end

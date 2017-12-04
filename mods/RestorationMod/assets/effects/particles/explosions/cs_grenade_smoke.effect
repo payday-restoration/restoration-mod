@@ -27,8 +27,8 @@
                 </size_keys>
                 <opacity_keys loop="false">
                     <key t="0" v="0"/>
-                    <key t="0.46471598744392" v="255"/>
-                    <key t="4.440619468689" v="255"/>
+                    <key t="0.46471598744392" v="30"/>
+                    <key t="4.440619468689" v="30"/>
                     <key t="4.9913940429688" v="0"/>
                 </opacity_keys>
                 <rotation_scale_keys loop="false">
@@ -66,8 +66,8 @@
                 </size_keys>
                 <opacity_keys loop="false">
                     <key t="0" v="0"/>
-                    <key t="0.37865751981735" v="255"/>
-                    <key t="4.4061961174011" v="255"/>
+                    <key t="0.37865751981735" v="100"/>
+                    <key t="4.4061961174011" v="100"/>
                     <key t="4.9913940429688" v="0"/>
                 </opacity_keys>
                 <rotation_scale_keys loop="false">
@@ -103,8 +103,8 @@
                 </size_keys>
                 <opacity_keys loop="false">
                     <key t="0" v="0"/>
-                    <key t="2.3580033779144" v="70"/>
-                    <key t="6.9363164901733" v="70"/>
+                    <key t="2.3580033779144" v="100"/>
+                    <key t="6.9363164901733" v="100"/>
                     <key t="9.7074012756348" v="0"/>
                 </opacity_keys>
                 <rotation_scale_keys loop="false">

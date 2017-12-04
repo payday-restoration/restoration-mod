@@ -678,7 +678,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local variant = attack_data.variant
 		if char_tweak.custom_voicework then
 			local voicelines = _G.restoration.BufferedSounds[char_tweak.custom_voicework]
-			if voicelines["death"] then
+			if voicelines and voicelines["death"] then
 				self._unit:base():play_voiceline(voicelines.death[1], voicelines.death[2], true)
 			end
 		end

@@ -78,7 +78,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "material_jkl_matt02_title",
 			pcs = {},
 			texture = "units/pd2_mod_jack/matcaps/jkl_matt02",
-			material_amount = 0,
 			value = 0,
 			dlc = "rest"
 		}		

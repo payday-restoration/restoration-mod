@@ -51,20 +51,19 @@ if not _G.restoration then
 		"rat",	
 		"flat"
 	}
-	--[[
+	blt.xaudio.setup()
 	_G.restoration.BufferedSounds = {
 		grenadier = {
-			death = blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/death.ogg"),
+			death = {XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/death.ogg"), 2},
 			spot_heister = {
-				blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/spotted1.ogg"),
-				blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/spotted2.ogg"),
-				blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/spotted3.ogg"),
-				blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/spotted4.ogg")
+				{XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted1.ogg"), 2},
+				{XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted2.ogg"), 2},
+				{XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted3.ogg"), 2},
+				{XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted4.ogg"), 2}
 			},
-			use_gas = blt.xaudio.loadbuffer(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg")
+			use_gas = {XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg"), 2}
 		}
 	}
-	]]--
 end
 
 _G.SC = _G.SC or {}

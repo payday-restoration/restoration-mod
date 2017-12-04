@@ -26,16 +26,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
  
 	local _f_CopActionShoot__get_target_pos = CopActionShoot._get_target_pos
 
-	--[[
 	function CopActionShoot:_get_target_pos(shoot_from_pos, ...)
+		blt.xaudio.setup()
 		local target_pos, target_vec, target_dis, autotarget
 		local _time = math.floor(TimerManager:game():time())
 		self._throw_projectile_time = self._throw_projectile_time or 0
+		target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 		if self._unit:base()._tweak_table == "boom" then
 			if self._shooting_player then
-				local boom_pos = self._unit:position()
-				local boom_voice = self._unit:base().my_voice
-				boom_voice:setposition(boom_pos.x, boom_pos.y, boom_pos.z)
 				local roll = math.rand(1, 100)
 				if self._throw_projectile_time < _time then
 					local chance_gas = 25
@@ -43,15 +41,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						self._throw_projectile_time = _time + math.round_with_precision(10, 2)
 						shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
 						target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-						boom_voice:setbuffer(_G.restoration.BufferedSounds.grenadier.spot_heister[math.random(#_G.restoration.BufferedSounds.grenadier.spot_heister)])
-						boom_voice:play()
+						self._unit:base():play_voiceline(_G.restoration.BufferedSounds.grenadier.use_gas[1], _G.restoration.BufferedSounds.grenadier.use_gas[2], true)
 						deploy_gas(shoot_from_pos, target_vec)
 					end
 				else
 					roll = math.rand(1, 100)
-					if roll <= 25 then
-						boom_voice:setbuffer(_G.restoration.BufferedSounds.grenadier.use_gas)
-						boom_voice:play()
+					if roll <= 5 then
+						local dildo = _G.restoration.BufferedSounds.grenadier.spot_heister
+						local voiceline_to_use = dildo[math.random(#dildo)]
+						self._unit:base():play_voiceline(voiceline_to_use[1], voiceline_to_use[2])
 					end
 				end
 			else
@@ -91,56 +89,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return target_pos, target_vec, target_dis, autotarget
 	end
-	]]--
-	
-	function CopActionShoot:_get_target_pos(shoot_from_pos, ...)
-		local target_pos, target_vec, target_dis, autotarget
-		local _time = math.floor(TimerManager:game():time())
-		self._throw_projectile_time = self._throw_projectile_time or 0
-		if self._unit:base()._tweak_table == "boom" and self._throw_projectile_time < _time then
-			if self._shooting_player then
-				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
-				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-				deploy_gas(shoot_from_pos, target_vec)
-			else
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-			end
-		elseif self._unit:base()._tweak_table == "boom_summers" and self._throw_projectile_time < _time then
-			if self._shooting_player then
-				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
-				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-				throw_molly(shoot_from_pos, target_vec)
-				self._ext_movement:play_redirect("throw_grenade")
-			else
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-			end
-		elseif self._unit:base()._tweak_table == "rboom" and self._throw_projectile_time < _time then
-			if self._shooting_player then
-				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
-				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-				deploy_gas(shoot_from_pos, target_vec)
-			else
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-			end
-		elseif self._unit:base()._tweak_table == "spring" and self._throw_projectile_time < _time then
-			if self._shooting_player then
-				self._throw_projectile_time = _time + math.round_with_precision(30, 2)
-				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-				throw_frag(shoot_from_pos, target_vec)
-				self._ext_movement:play_redirect("throw_grenade")
-			else
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-			end
-		else
-			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-		end
-		return target_pos, target_vec, target_dis, autotarget
-	end
-	
+
 	function deploy_gas(shoot_from_pos, target_vec)
 		local Net = _G.LuaNetworking
 		local z_fix = {-0.05, -0.02, -0.05, -0.02, -0.07, -0.07, -0.1}

@@ -32,6 +32,9 @@ function HuskCopDamage:die(variant)
 	if self._unit:base():char_tweak().die_sound_event then
 		self._unit:sound():play(self._unit:base():char_tweak().die_sound_event, nil, nil)
 	end
+	if self._unit:base():char_tweak().custom_voicework then
+		self._unit:base():play_voiceline(_G.restoration.BufferedSounds[self._unit:base():char_tweak().custom_voicework].death[1], _G.restoration.BufferedSounds[self._unit:base():char_tweak().custom_voicework].death[2], true)
+	end
 	self:_on_death()
 end
 

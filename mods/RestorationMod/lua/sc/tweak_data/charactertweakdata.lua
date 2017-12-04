@@ -1244,6 +1244,7 @@ function CharacterTweakData:_init_tank(presets)
 	
 	self.tank_medic = deep_clone(self.tank)
 	self.tank_medic.headshot_dmg_mul = 12.5
+	self.tank_medic.custom_voicework = "medicdozer"
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	

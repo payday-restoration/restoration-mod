@@ -677,7 +677,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		local variant = attack_data.variant
 		if char_tweak.custom_voicework then
-			self._unit:base():play_voiceline(_G.restoration.BufferedSounds[char_tweak.custom_voicework].death[1], _G.restoration.BufferedSounds[char_tweak.custom_voicework].death[2], true)
+			local voicelines = _G.restoration.BufferedSounds[char_tweak.custom_voicework]
+			if voicelines["death"] then
+				self._unit:base():play_voiceline(voicelines.death[1], voicelines.death[2], true)
+			end
 		end
 		self:_check_friend_4(attack_data)
 		CopDamage.MAD_3_ACHIEVEMENT(attack_data)
@@ -753,6 +756,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if self._unit:anim_data() and self._unit:anim_data().act then
 			return false
+		end
+		if my_tweak_table.custom_voicework then
+			local voicelines = _G.restoration.BufferedSounds[my_tweak_table.custom_voicework]
+			if voicelines["heal"] then
+				local line_to_use = voicelines.heal[math.random(#voicelines.heal)]
+				self._unit:base():play_voiceline(line_to_use[1], line_to_use[2])
+			end
 		end
 		if my_tweak_table == "medic" then
 			local tweak_table = unit:base()._tweak_table

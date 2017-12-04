@@ -62,8 +62,14 @@ if not _G.restoration then
 				{XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted4.ogg"), 2}
 			},
 			use_gas = {XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg"), 2}
+		},
+		medicdozer = {
+			heal = {}
 		}
 	}
+	for i = 1, 31 do
+		_G.restoration.BufferedSounds.medicdozer.heal.insert({XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg"), 5})
+	end
 end
 
 _G.SC = _G.SC or {}

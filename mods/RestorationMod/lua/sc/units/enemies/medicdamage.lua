@@ -18,9 +18,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:anim_data() and self._unit:anim_data().act then
 			return false
 		end
-		if my_tweak_table.custom_voicework then
-			local voicelines = _G.restoration.BufferedSounds[my_tweak_table.custom_voicework]
-			if voicelines["heal"] then
+		if self._unit:base():char_tweak().custom_voicework then
+			local voicelines = _G.restoration.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
+			if voicelines and voicelines["heal"] then
 				local line_to_use = voicelines.heal[math.random(#voicelines.heal)]
 				self._unit:base():play_voiceline(line_to_use[1], line_to_use[2])
 			end

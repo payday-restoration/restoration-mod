@@ -68,9 +68,8 @@ if not _G.restoration then
 		}
 	}
 	for i = 1, 31 do
-		_G.restoration.BufferedSounds.medicdozer.heal.insert({XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg"), 5})
+		table.insert(_G.restoration.BufferedSounds.medicdozer.heal, {XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg"), 5})	end
 	end
-end
 
 _G.SC = _G.SC or {}
 SC._path = ModPath

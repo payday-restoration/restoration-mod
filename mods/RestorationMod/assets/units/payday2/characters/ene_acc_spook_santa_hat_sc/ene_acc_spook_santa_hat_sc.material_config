@@ -1,0 +1,14 @@
+<materials version="3">
+	<material name="mtr_hat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/ene_acc_spook_santa_hat/santa_hat_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/ene_acc_spook_santa_hat/santa_hat_df"/>
+	</material>
+	<material name="mtr_hat_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/ene_acc_spook_santa_hat/santa_hat_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/ene_acc_spook_santa_hat/santa_hat_df" mip="1"/>
+	</material>
+	<material name="mtr_hat_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/ene_acc_spook_santa_hat/santa_hat_nm" mip="2"/>
+		<diffuse_texture 		file="units/payday2/characters/ene_acc_spook_santa_hat/santa_hat_df" mip="2"/>
+	</material>
+</materials>

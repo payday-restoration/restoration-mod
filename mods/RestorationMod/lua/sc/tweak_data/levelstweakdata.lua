@@ -34,11 +34,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mia_2.package = {"packages/narr_mia_2", "levels/narratives/elephant/mad/world_sounds"}
 		self.firestarter_3.package = {"packages/narr_firestarter3", "levels/narratives/elephant/mad/world_sounds"}
 		self.jolly.package = {"packages/jolly", "levels/narratives/elephant/mad/world_sounds"}
-		
-		self.roberts.package = {"packages/narr_roberts", "packages/narr_pines"}
-		if Month == "12" then
-			PackageManager:load("packages/narr_pines")
-		end
 	end)
 	
 end

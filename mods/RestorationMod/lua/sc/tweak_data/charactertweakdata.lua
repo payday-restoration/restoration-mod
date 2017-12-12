@@ -1699,9 +1699,9 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.suppression = presets.suppression.no_supress
 	self.boom.weapon_voice = "3"
 	self.boom.experience.cable_tie = "tie_swat"
-	self.boom.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.boom.speech_prefix_p2 = self._speech_prefix_p2
-	self.boom.speech_prefix_count = 1
+	self.boom.speech_prefix_p1 = nil
+	self.boom.speech_prefix_p2 = nil
+	self.boom.speech_prefix_count = nil
 	self.boom.access = "taser"
 	self.boom.dodge = presets.dodge.athletic
 	self.boom.use_gas = true
@@ -1727,6 +1727,10 @@ function CharacterTweakData:_init_boom(presets)
 	self.rboom = deep_clone(self.boom)
 	self.rboom.spawn_sound_event = "clk_c01x_plu"
 	self.rboom.die_sound_event = "mdc_x02a_any_3p"
+	self.rboom.speech_prefix_p1 = self._prefix_data_p1.swat()
+	self.rboom.speech_prefix_p2 = self._speech_prefix_p2
+	self.rboom.speech_prefix_count = 1	
+	self.rboom.custom_voicework = nil
  	table.insert(self._enemy_list, "rboom")
 	self.boom_summers = deep_clone(self.boom)
 	self.boom_summers.spawn_sound_event = "clk_c01x_plu"
@@ -1738,6 +1742,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.speech_prefix_p1 = "fl"
 	self.boom_summers.speech_prefix_p2 = "n"
 	self.boom_summers.speech_prefix_count = 1
+	self.boom_summers.custom_voicework = nil
 	self.boom_summers.die_sound_event = "mga_death_scream"
 	self.boom_summers.use_radio = "dsp_radio_russian"
 	self.boom_summers.HEALTH_INIT = 36

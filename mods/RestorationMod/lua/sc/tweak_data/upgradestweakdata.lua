@@ -12,7 +12,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 local sc_sttd = UpgradesTweakData._init_pd2_values
 function UpgradesTweakData:_init_pd2_values()
 	sc_sttd(self, tweak_data)
-
+	
 	--Upgrade Value changes for skills and such--
 
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
@@ -957,6 +957,19 @@ function UpgradesTweakData:_init_pd2_values()
 	}}
 end
 
+local sc_utd_init = UpgradesTweakData.init
+function UpgradesTweakData:init(tweak_data)
+	sc_utd_init(self, tweak_data)
+	
+	self.definitions.jeb = {
+		dlc = "rest",
+		factory_id = "wpn_fps_pis_jeb",
+		weapon_id = "jeb",
+		category = "weapon"
+	}	
+	table.insert(self.level_tree[50].upgrades, "jeb")
+end	
+
 --Added new definitions--
 
 local sc_definitions = UpgradesTweakData._player_definitions
@@ -1188,7 +1201,7 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "movement_speed_multiplier",
 			category = "player"
 		}
-	}		
+	}			
 end
 
 function UpgradesTweakData:_smg_definitions()

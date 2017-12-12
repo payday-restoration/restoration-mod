@@ -188,9 +188,63 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_deathvox_shotgun_heavy.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_shotgun_heavy"
 		self.wpn_deathvox_sniper.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_sniper"
 		self.wpn_deathvox_medicdozer_smg.unit = "units/pd2_mod_gageammo/pew_pew_lasers/wpn_deathvox_medicdozer_smg"
-
+		
+		self:_init_jeb()
 	end
 
+	function WeaponFactoryTweakData:_init_jeb()
+		self.parts.wpn_fps_pis_jeb_b_standard = {
+			a_obj = "a_b",
+			type = "slide",
+			name_id = "bm_wp_rage_b_standard",
+			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_jeb_body_standard = {
+			a_obj = "a_body",
+			type = "upper_reciever",
+			name_id = "bm_wp_rage_body_standard",
+			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_body_standard",
+			stats = {value = 1},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				reload = "reload",
+				fire_steelsight = "recoil",
+				fire = "recoil"
+			},
+			adds = {"wpn_fps_pis_rage_lock"}
+		}
+		self.parts.wpn_fps_pis_jeb_g_standard = {
+			a_obj = "a_g",
+			type = "grip",
+			name_id = "bm_wp_rage_g_standard",
+			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_g_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_jeb_b_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_b_standard"
+		self.parts.wpn_fps_pis_jeb_body_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_body_standard"
+		self.parts.wpn_fps_pis_jeb_g_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_g_standard"
+		self.wpn_fps_pis_jeb = {
+			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury",
+			optional_types = {
+				"barrel_ext",
+				"gadget"
+			},
+			default_blueprint = {
+				"wpn_fps_pis_jeb_body_standard",
+				"wpn_fps_pis_jeb_b_standard",
+				"wpn_fps_pis_jeb_g_standard"
+			},
+			uses_parts = {
+				"wpn_fps_pis_jeb_body_standard",
+				"wpn_fps_pis_jeb_b_standard",
+				"wpn_fps_pis_jeb_g_standard"
+			}
+		}
+		self.wpn_fps_pis_jeb_npc = deep_clone(self.wpn_fps_pis_rage)
+		self.wpn_fps_pis_jeb_npc.unit = "units/payday2/weapons/wpn_fps_pis_rage/wpn_fps_pis_rage_npc"
+	end
+		
 	end
 
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then

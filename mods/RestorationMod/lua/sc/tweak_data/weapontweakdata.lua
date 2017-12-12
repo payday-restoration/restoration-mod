@@ -1014,6 +1014,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	--Lotta crew guns in here now--
+	function WeaponTweakData:_init_data_raging_bull_crew()
+		self.raging_bull_crew.sounds.prefix = "rbull_npc"
+		self.raging_bull_crew.use_data.selection_index = 1
+		self.raging_bull_crew.DAMAGE = 4
+		self.raging_bull_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.raging_bull_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.raging_bull_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+		self.raging_bull_crew.CLIP_AMMO_MAX = 6
+		self.raging_bull_crew.NR_CLIPS_MAX = 8
+		self.raging_bull_crew.hold = "pistol"
+		self.raging_bull_crew.reload = "revolver"
+		self.raging_bull_crew.alert_size = 5000
+		self.raging_bull_crew.suppression = 1.8
+		self.raging_bull_primary_crew = deep_clone(self.raging_bull_crew)
+		self.raging_bull_primary_crew.use_data.selection_index = 2
+		
+		self.jeb_crew = deep_clone(self.raging_bull_crew)
+	end	
+	
 	function WeaponTweakData:_init_data_akm_gold_crew()
 		self.akm_gold_crew.sounds.prefix = "akm_npc"
 		self.akm_gold_crew.use_data.selection_index = 2
@@ -6709,6 +6728,96 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			suppression = 6,
 			concealment = 21
 		}				
+		
+		--Restoration Weapons--
+		self.jeb = {
+			categories = {
+				"pistol",
+				"revolver"
+			},
+			upgrade_blocks = {weapon = {"clip_ammo_increase"}},
+			damage_melee = 3,
+			damage_melee_effect_mul = 1,
+			sounds = {}
+		}
+		self.jeb.sounds.fire = "rbull_fire"
+		self.jeb.sounds.dryfire = "secondary_dryfire"
+		self.jeb.sounds.enter_steelsight = "pistol_steel_sight_enter"
+		self.jeb.sounds.leave_steelsight = "pistol_steel_sight_exit"
+		self.jeb.timers = {
+			reload_not_empty = 2.25,
+			reload_empty = 2.25,
+			unequip = 0.5,
+			equip = 0.45
+		}
+		self.jeb.FIRE_MODE = "single"
+		self.jeb.fire_mode_data = {fire_rate = 0.166}
+		self.jeb.single = {fire_rate = 0.166}
+		self.jeb.name_id = "bm_w_jeb"
+		self.jeb.desc_id = "bm_w_jeb_desc"
+		self.jeb.description_id = "des_new_raging_bull"
+		self.jeb.muzzleflash = "effects/payday2/particles/weapons/762_auto_fps"
+		self.jeb.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+		self.jeb.use_data = {selection_index = 1}
+		self.jeb.DAMAGE = 2
+		self.jeb.CLIP_AMMO_MAX = 6
+		self.jeb.NR_CLIPS_MAX = 9
+		self.jeb.AMMO_MAX = 30
+		self.jeb.AMMO_PICKUP = self:_pickup_chance(1, 1)
+		self.jeb.spread = {
+			standing = self.new_m4.spread.standing,
+			crouching = self.new_m4.spread.crouching,
+			steelsight = self.new_m4.spread.steelsight,
+			moving_standing = self.new_m4.spread.moving_standing,
+			moving_crouching = self.new_m4.spread.moving_crouching,
+			moving_steelsight = self.new_m4.spread.moving_steelsight
+		}
+		self.jeb.kick = {standing = self.glock_17.kick.standing}
+		self.jeb.kick.crouching = self.new_raging_bull.kick.standing
+		self.jeb.kick.steelsight = self.new_raging_bull.kick.standing
+		self.jeb.crosshair = {
+			standing = {},
+			crouching = {},
+			steelsight = {}
+		}
+		self.jeb.crosshair.standing.offset = 0.2
+		self.jeb.crosshair.standing.moving_offset = 0.6
+		self.jeb.crosshair.standing.kick_offset = 0.4
+		self.jeb.crosshair.crouching.offset = 0.1
+		self.jeb.crosshair.crouching.moving_offset = 0.6
+		self.jeb.crosshair.crouching.kick_offset = 0.3
+		self.jeb.crosshair.steelsight.hidden = true
+		self.jeb.crosshair.steelsight.offset = 0
+		self.jeb.crosshair.steelsight.moving_offset = 0
+		self.jeb.crosshair.steelsight.kick_offset = 0.1
+		self.jeb.shake = {
+			fire_multiplier = 1,
+			fire_steelsight_multiplier = -1
+		}
+		self.jeb.autohit = autohit_pistol_default
+		self.jeb.aim_assist = aim_assist_pistol_default		
+		self.jeb.weapon_hold = "raging_bull"
+		self.jeb.animations = {
+			equip_id = "equip_raging_bull",
+			recoil_steelsight = true
+		}
+		self.jeb.panic_suppression_chance = 0.2
+		self.jeb.stats = {
+			zoom = 3,
+			total_ammo_mod = 21,
+			damage = 175,
+			alert_size = 7,
+			spread = 20,
+			spread_moving = 5,
+			recoil = 2,
+			value = 1,
+			extra_ammo = 6,
+			reload = 11,
+			suppression = 7,
+			concealment = 26
+		}		
+		self.jeb.custom = true
+		
 		--Custom weapons below--
 
 		if self.mpx then
@@ -7371,6 +7480,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			use_data = {},
 			auto = {}
 		}
+		self.jeb_crew = {
+			usage = "is_revolver",
+			sounds = {},
+			use_data = {}
+		}		
 		self.deathvox_sniper = {
 			usage = "is_sniper",
 			anim_usage = "is_bullpup",

@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+	<object file="units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_rbull"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewRaycastWeaponBase" >
+			<var name="name_id" value="jeb" />
+		</extension>
+	</extensions>
+</unit>

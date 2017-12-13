@@ -225,7 +225,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_pis_jeb_body_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_body_standard"
 		self.parts.wpn_fps_pis_jeb_g_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_g_standard"
 		self.wpn_fps_pis_jeb = {
-			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury",
+			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb",
 			optional_types = {
 				"barrel_ext",
 				"gadget"

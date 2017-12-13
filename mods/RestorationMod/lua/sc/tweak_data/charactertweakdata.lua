@@ -1720,7 +1720,6 @@ function CharacterTweakData:_init_boom(presets)
 	}
 	self.boom.announce_incomming = "incomming_gren"
 	self.boom.spawn_sound_event = "clk_c01x_plu"
-	self.boom.die_sound_event = "rmdc_x02a_any_3p"
 	self.boom.steal_loot = nil
 	self.boom.custom_voicework = "grenadier"
  	table.insert(self._enemy_list, "boom")

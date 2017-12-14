@@ -197,14 +197,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_b",
 			type = "slide",
 			name_id = "bm_wp_rage_b_standard",
-			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_standard",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_standard",
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_pis_jeb_body_standard = {
 			a_obj = "a_body",
 			type = "upper_reciever",
 			name_id = "bm_wp_rage_body_standard",
-			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_body_standard",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_body_standard",
 			stats = {value = 1},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -218,14 +218,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_g",
 			type = "grip",
 			name_id = "bm_wp_rage_g_standard",
-			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_g_standard",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_g_standard",
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_pis_jeb_b_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_b_standard"
 		self.parts.wpn_fps_pis_jeb_body_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_body_standard"
 		self.parts.wpn_fps_pis_jeb_g_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_g_standard"
 		self.wpn_fps_pis_jeb = {
-			unit = "units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb",
 			optional_types = {
 				"barrel_ext",
 				"gadget"

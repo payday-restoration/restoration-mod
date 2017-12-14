@@ -129,10 +129,11 @@
 	<unit path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc" load="true"/>	
 	
 	<!--S&W .500-->
-	<cooked_physics path="units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
-	<model path="units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
-	<object path="units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
-	<unit path="units/pd2_mod_sharks/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" load="true"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/jeb"/>
+	<cooked_physics path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
+	<model path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
+	<object path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
+	<unit path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" load="true"/>
 	
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>

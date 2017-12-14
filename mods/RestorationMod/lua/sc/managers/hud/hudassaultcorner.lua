@@ -1,6 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-if (Holo and Holo.Options:GetValue("Base/Hud")) or (pdth_hud and (pdth_hud.Options:GetValue("HUD/MainHud") or pdth_hud.Options:GetValue("HUD/Assault"))) or MUIMenu or (restoration and (restoration.Options:GetValue("HUD/MainHud") or restoration.Options:GetValue("HUD/AssaultPanel"))) then
+if (Holo and Holo.Options:GetValue("Base/Hud")) or (pdth_hud and (pdth_hud.Options:GetValue("HUD/MainHud") or (VoidUI and (VoidUI.Options:GetValue("HUD/AssaultPanel"))) or pdth_hud.Options:GetValue("HUD/Assault"))) or MUIMenu or (restoration and (restoration.Options:GetValue("HUD/MainHud") or restoration.Options:GetValue("HUD/AssaultPanel"))) then
 	return
 end
 

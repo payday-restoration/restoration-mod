@@ -254,7 +254,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.steal_loot = nil
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
-	self.omnia_lpf.tags = {"custom"}
+	self.omnia_lpf.tags = {"custom", "special"}
 	self.omnia_lpf.do_omnia = true
 	self.omnia_lpf.use_factory = true
 	self.omnia_lpf.factory_weapon_id = {"wpn_fps_smg_olympic_npc_omnia_lpf"}
@@ -295,7 +295,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_female.speech_prefix_count = 1
 	table.insert(self._enemy_list, "fbi_female")
 	self.fbi_vet = deep_clone(self.fbi)
-	self.fbi_vet.tags = {"custom"}
+	self.fbi_vet.tags = {"custom", "special"}
 	self.fbi_vet.no_arrest = true
     	self.fbi_vet.surrender = nil
 	self.fbi_vet.suppression = nil
@@ -356,7 +356,7 @@ end
 
 function CharacterTweakData:_init_medic(presets)
 	self.medic = deep_clone(presets.base)
-	self.medic.tags = {"medic"}
+	self.medic.tags = {"medic", "special"}
 	self.medic.experience = {}
 	self.medic.weapon = deep_clone(presets.weapon.normal)
 	self.medic.detection = presets.detection.normal
@@ -395,7 +395,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers = deep_clone(self.medic)
 	self.medic_summers.HEALTH_INIT = 30
 	self.medic_summers.headshot_dmg_mul = 1.25
-	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom"}
+	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom", "special"}
 	self.medic_summers.ignore_medic_revive_animation = false
 	self.medic_summers.surrender = nil
 	self.medic_summers.flammable = false
@@ -495,7 +495,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	end
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
-	self.heavy_swat_sniper.tags = {"sniper"}
+	self.heavy_swat_sniper.tags = {"sniper", "special"}
 	self.heavy_swat_sniper.damage.hurt_severity = presets.hurt_severities.elite
 	self.heavy_swat_sniper.priority_shout = "f34"
 	self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
@@ -708,7 +708,7 @@ end
 
 function CharacterTweakData:_init_sniper(presets)
 	self.sniper = deep_clone(presets.base)
-	self.sniper.tags = {"sniper"}
+	self.sniper.tags = {"sniper", "special"}
 	self.sniper.experience = {}
 	self.sniper.weapon = presets.weapon.sniper
 	self.sniper.detection = presets.detection.sniper
@@ -1174,7 +1174,7 @@ end
 
 function CharacterTweakData:_init_tank(presets)
 	self.tank = deep_clone(presets.base)
-	self.tank.tags = {"tank"}
+	self.tank.tags = {"tank", "special"}
 	self.tank.experience = {}
 	self.tank.damage.tased_response = {
 		light = {tased_time = 1, down_time = 0},
@@ -1303,7 +1303,7 @@ end
 
 function CharacterTweakData:_init_spooc(presets)
 	self.spooc = deep_clone(presets.base)
-	self.spooc.tags = {"spooc"}
+	self.spooc.tags = {"spooc", "special"}
 	self.spooc.experience = {}
 	self.spooc.damage.hurt_severity = presets.hurt_severities.spooc
 	self.spooc.weapon = deep_clone(presets.weapon.normal)
@@ -1348,7 +1348,7 @@ end
 
 function CharacterTweakData:_init_shield(presets)
 	self.shield = deep_clone(presets.base)
-	self.shield.tags = {"shield"}
+	self.shield.tags = {"shield", "special"}
 	self.shield.experience = {}
 	self.shield.weapon = deep_clone(presets.weapon.normal)
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -1400,7 +1400,7 @@ end
 
 function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion = deep_clone(self.shield)
-	self.phalanx_minion.tags = {"shield"}
+	self.phalanx_minion.tags = {"shield", "special"}
 	self.phalanx_minion.experience = {}
 	self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 	self.phalanx_minion.detection = presets.detection.normal
@@ -1470,7 +1470,7 @@ end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
-	self.spring.tags = {"custom"}
+	self.spring.tags = {"custom", "special"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.no_run_start = true
@@ -1524,7 +1524,7 @@ end
 
 function CharacterTweakData:_init_summers(presets)
 	self.summers = deep_clone(presets.base)
-	self.summers.tags = {"custom"}
+	self.summers.tags = {"custom", "special"}
 	self.summers.experience = {}
 	self.summers.weapon = deep_clone(presets.weapon.normal)
 	self.summers.melee_weapon = "buzzer_summer"
@@ -1585,7 +1585,7 @@ end
 
 function CharacterTweakData:_init_taser(presets)
 	self.taser = deep_clone(presets.base)
-	self.taser.tags = {"taser"}
+	self.taser.tags = {"taser", "special"}
 	self.taser.experience = {}
 	self.taser.weapon = deep_clone(presets.weapon.normal)
 	self.taser.weapon.is_rifle.tase_distance = 1400
@@ -1639,7 +1639,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers = deep_clone(self.taser)
 	self.taser_summers.HEALTH_INIT = 36
 	self.taser_summers.headshot_dmg_mul = 1.25
-	self.taser_summers.tags = {"taser", "medic_summers", "custom"}
+	self.taser_summers.tags = {"taser", "medic_summers", "custom", "special"}
 	self.taser_summers.ignore_medic_revive_animation = false
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
@@ -1671,7 +1671,7 @@ end
 
 function CharacterTweakData:_init_boom(presets)
 	self.boom = deep_clone(presets.base)
-	self.boom.tags = {"custom"}
+	self.boom.tags = {"custom", "special"}
 	self.boom.experience = {}
 	self.boom.weapon = deep_clone(presets.weapon.normal)
 	self.boom.melee_weapon = "knife_1"
@@ -1746,7 +1746,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.use_radio = "dsp_radio_russian"
 	self.boom_summers.HEALTH_INIT = 36
 	self.boom_summers.headshot_dmg_mul = 1.25
-	self.boom_summers.tags = {"medic_summers", "custom"}
+	self.boom_summers.tags = {"medic_summers", "custom", "special"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.no_retreat = true
 	self.boom_summers.no_arrest = true
@@ -13842,6 +13842,23 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_dlc_run/characters/",
 			list = {"npc_matt"}
 		},
+		rvd = {
+			path = "units/pd2_dlc_rvd/characters/",
+			list = {
+				"npc_cop",
+				"npc_cop_01",
+				"npc_mr_brown",
+				"npc_mr_pink",
+				"npc_mr_orange",
+				"npc_mr_blonde",
+				"npc_mr_pink_escort",
+				"ene_la_cop_1",
+				"ene_la_cop_2",
+				"ene_la_cop_3",
+				"ene_la_cop_4",
+				"ene_female_civ_undercover"
+			}
+		},		
 		drm = {
 			path = "units/pd2_dlc_drm/characters/",
 			list = {

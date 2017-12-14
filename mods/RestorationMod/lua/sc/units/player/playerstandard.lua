@@ -322,8 +322,8 @@ end
 		"player_melee",
 		"player_melee_var2"
 	}
-	function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray)
-		local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry)
+		melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 		local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 		local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 		local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
@@ -387,8 +387,11 @@ end
 					managers.network:session():send_to_peers_synched("sync_body_damage_melee", col_ray.body, self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
 				end
 			end
-			managers.rumble:play("melee_hit")
+			local custom_data = nil
+			
+			managers.rumble:play("melee_hit", nil, nil, custom_data)
 			managers.game_play_central:physics_push(col_ray)
+			
 			local character_unit, shield_knock
 			local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
 			if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) then

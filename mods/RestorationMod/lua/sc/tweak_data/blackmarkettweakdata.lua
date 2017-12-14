@@ -2683,6 +2683,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.meter.repeat_expire_t = 1.25
 	self.melee_weapons.meter.melee_damage_delay = 0.6
 	self.melee_weapons.meter.stats.remove_weapon_movement_penalty = true	
+	
+	--Clowns to the left of me, jokers to the right--
+	self.melee_weapons.clean.speed_mult = 1
+	self.melee_weapons.clean.stats.weapon_type = "sharp"
+	self.melee_weapons.clean.stats.min_damage = 1.5
+	self.melee_weapons.clean.stats.max_damage = 6
+	self.melee_weapons.clean.stats.min_damage_effect = 0.1
+	self.melee_weapons.clean.stats.max_damage_effect = 0.2
+	self.melee_weapons.clean.stats.charge_time = 1.1
+	self.melee_weapons.clean.stats.range = 120
+	self.melee_weapons.clean.stats.concealment = 30
+	self.melee_weapons.clean.repeat_expire_t = 0.325
+	self.melee_weapons.clean.melee_damage_delay = 0.15	
 end	
 
 end

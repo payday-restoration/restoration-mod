@@ -39,6 +39,8 @@ function EquipmentsTweakData:init()
 		self.specials.crowbar.max_quantity=4
 		self.specials.crowbar_stack.quantity=1
 		self.specials.crowbar_stack.max_quantity=4
+		self.specials.liquid_nitrogen.quantity=1
+		self.specials.liquid_nitrogen.max_quantity=4
    	end
 end
 

@@ -102,6 +102,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_crew.DAMAGE = 1.28
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
+		self.corgi_crew.DAMAGE = 2
 	end
 
 	function WeaponTweakData:_set_hard()
@@ -155,6 +156,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_crew.DAMAGE = 1.28
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
+		self.corgi_crew.DAMAGE = 2
 	end
 
 	function WeaponTweakData:_set_overkill()
@@ -208,6 +210,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_crew.DAMAGE = 1.6
 		self.hk21_crew.DAMAGE = 2
 		self.mg42_crew.DAMAGE = 2.6
+		self.corgi_crew.DAMAGE = 2.5
 	end
 
 	function WeaponTweakData:_set_overkill_145()
@@ -1899,6 +1902,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mg42_secondary_crew.use_data.selection_index = 1
 		self.mg42_secondary_crew.armor_piercing = true
 	end
+	
+	function WeaponTweakData:_init_data_corgi_crew()
+		self.corgi_crew.sounds.prefix = "corgi_npc"
+		self.corgi_crew.use_data.selection_index = 2
+		self.corgi_crew.DAMAGE = 4.09
+		self.corgi_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.corgi_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.corgi_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.corgi_crew.CLIP_AMMO_MAX = 30
+		self.corgi_crew.NR_CLIPS_MAX = 5
+		self.corgi_crew.pull_magazine_during_reload = "rifle"
+		self.corgi_crew.auto.fire_rate = 0.07058823529
+		self.corgi_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.corgi_crew.alert_size = 5000
+		self.corgi_crew.suppression = 2.4
+	end	
 
 end
 
@@ -2656,7 +2678,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = true
 			self[wep_id].has_description = false
@@ -6727,7 +6749,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11,
 			suppression = 6,
 			concealment = 21
-		}				
+		}
+		self.corgi.CLIP_AMMO_MAX = 30
+		self.corgi.AMMO_MAX = 180
+		self.corgi.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.corgi.fire_mode_data.fire_rate = 0.07058823529
+		self.corgi.CAN_TOGGLE_FIREMODE = true
+		self.corgi.auto = {}
+		self.corgi.auto.fire_rate = 0.07058823529
+		self.corgi.spread.standing = 3.5
+		self.corgi.spread.crouching = 2.5
+		self.corgi.spread.steelsight = 1
+		self.corgi.spread.moving_standing = 4
+		self.corgi.spread.moving_crouching = 3
+		self.corgi.spread.moving_steelsight = 2
+		self.corgi.kick.standing = self.new_m4.kick.standing
+		self.corgi.kick.crouching = self.new_m4.kick.standing
+		self.corgi.kick.steelsight = self.new_m4.kick.standing
+		self.corgi.stats = {
+			damage = 34,
+			spread = 15,
+			recoil = 22,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 21,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.corgi.panic_suppression_chance = 0.0		
 		
 		--Restoration Weapons--
 		self.jeb = {

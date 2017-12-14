@@ -107,6 +107,7 @@ end
 
 function PlayerTweakData:init()
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
+	local is_vr = false
 	self.arrest = {arrest_timeout = 240, aggression_timeout = 60}
 	self.put_on_mask_time = 0
 	self.gravity = -982
@@ -133,7 +134,11 @@ function PlayerTweakData:init()
 		0.98,
 		0.99
 	}
-	self.damage.HEALTH_INIT = 23
+	if is_vr then
+		self.damage.HEALTH_INIT = 28
+	else
+		self.damage.HEALTH_INIT = 23
+	end
 	self.damage.LIVES_INIT = 4
 	self.damage.REGENERATE_TIME = 3.5
 	self.damage.REVIVE_HEALTH_STEPS = {

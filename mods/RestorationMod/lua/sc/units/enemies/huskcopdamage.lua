@@ -35,7 +35,7 @@ function HuskCopDamage:die(variant)
 	if self._unit:base():char_tweak().custom_voicework then
 		local voicelines = _G.restoration.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
 		if voicelines and voicelines["death"] then
-			self._unit:base():play_voiceline(voicelines.death[1], voicelines.death[2], true)
+			self._unit:base():play_voiceline(voicelines.death, true)
 		end
 	end
 	self:_on_death()

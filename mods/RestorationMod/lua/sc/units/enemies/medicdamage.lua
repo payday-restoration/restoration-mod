@@ -22,7 +22,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local voicelines = _G.restoration.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
 			if voicelines and voicelines["heal"] then
 				local line_to_use = voicelines.heal[math.random(#voicelines.heal)]
-				self._unit:base():play_voiceline(line_to_use[1], line_to_use[2])
+				self._unit:base():play_voiceline(line_to_use)
 			end
 		end
 		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then

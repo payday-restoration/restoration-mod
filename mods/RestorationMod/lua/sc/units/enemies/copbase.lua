@@ -16,8 +16,8 @@ function CopBase:init(unit)
 	self:play_voiceline(nil, nil)
 end
 
-function CopBase:play_voiceline(buffer, length, force)
-	if buffer and length then
+function CopBase:play_voiceline(buffer, force)
+	if buffer then
 		if force and self.my_voice and not self.my_voice:is_closed() then
 			self.my_voice:stop()
 			self.my_voice:close()
@@ -32,8 +32,8 @@ function CopBase:play_voiceline(buffer, length, force)
 				self.my_voice = nil
 			end
 			self.my_voice = XAudio.UnitSource:new(self._unit, buffer)
-			self.voice_length = length
-			self.voice_start_time = _time + length
+			self.voice_length = buffer:get_length()
+			self.voice_start_time = _time + buffer:get_length()
 		end
 	end
 end

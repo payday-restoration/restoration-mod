@@ -39,12 +39,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local roll = math.rand(1, 100)
 				local chance_gas = 25
 				if roll <= chance_gas then
-					self._unit:base():play_voiceline(_G.restoration.BufferedSounds.grenadier.use_gas[1], _G.restoration.BufferedSounds.grenadier.use_gas[2], true)
+					self._unit:base():play_voiceline(_G.restoration.BufferedSounds.grenadier.use_gas, true)
 					deploy_gas(shoot_from_pos, target_vec)
 				else
 					local dildo = _G.restoration.BufferedSounds.grenadier.spot_heister
 					local voiceline_to_use = dildo[math.random(#dildo)]
-					self._unit:base():play_voiceline(voiceline_to_use[1], voiceline_to_use[2])			
+					self._unit:base():play_voiceline(voiceline_to_use)			
 				end
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)

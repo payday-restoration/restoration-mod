@@ -29859,6 +29859,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(-2.35, 0, -12),
 					rotation = Rotation(0, 0, -45)
 				},
+				wpn_fps_ass_corgi = {
+					translation = Vector3(-2.9, 0, -13.9),
+					rotation = Rotation(0, 0, -45)
+				},
 				wpn_fps_snp_m95 = {
 					translation = Vector3(-0.4, 5.8, -15.075),
 					rotation = Rotation(-0.4, 0, -45)
@@ -33958,7 +33962,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "foregrip",
 			name_id = "bm_wp_corgi_body",
 			unit = "units/pd2_dlc_rvd/weapons/wpn_fps_ass_corgi_pts/wpn_fps_ass_corgi_fg_rail",
-			stats = {value = 1}
+			stats = {value = 1},
+			forbids = {"wpn_fps_addon_ris"}
 		}
 		self.parts.wpn_fps_ass_corgi_ns_standard = {
 			parent = "barrel",

@@ -12113,54 +12113,8 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.surrender = {}
 	presets.surrender.always = {base_chance = 1}
 	presets.surrender.never = {base_chance = 0}
-	presets.surrender.gangster = {
-		base_chance = 1,
-		significant_chance = 0.1,
-		violence_timeout = 0,
-		reasons = {
-			health = {
-				[1] = 0.2,
-				[0.3] = 1
-			},
-			weapon_down = 0.8,
-			pants_down = 1,
-			isolated = 0.1
-		},
-		factors = {
-			flanked = 0.07,
-			unaware_of_aggressor = 0.08,
-			enemy_weap_cold = 0.15,
-			aggressor_dis = {
-				[1000] = 0.02,
-				[300] = 0.15
-			}
-		}
-	}
-	presets.surrender.guard = {
-		base_chance = 0.75,
-		significant_chance = 0.1,
-		violence_timeout = 2,
-		reasons = {
-			health = {
-				[1] = 0.2,
-				[0.3] = 1
-			},
-			weapon_down = 1,
-			pants_down = 0,
-			isolated = 0.1
-		},
-		factors = {
-			flanked = 0.07,
-			unaware_of_aggressor = 0.08,
-			enemy_weap_cold = 0.15,
-			aggressor_dis = {
-				[1000] = 0.02,
-				[300] = 0.15
-			}
-		}
-	}
 	presets.surrender.easy = {
-		base_chance = 0.75,
+		base_chance = 0.8,
 		significant_chance = 0.1,
 		violence_timeout = 2,
 		reasons = {
@@ -12183,15 +12137,15 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.surrender.normal = {
-		base_chance = 0.5,
+		base_chance = 0.6,
 		significant_chance = 0.2,
 		violence_timeout = 2,
 		reasons = {
 			health = {
-				[1] = 0,
-				[0.5] = 0.5
+				[1] = 0.1,
+				[0.5] = 0.75
 			},
-			weapon_down = 0.5,
+			weapon_down = 0.75,
 			pants_down = 1,
 			isolated = 0.08
 		},
@@ -12206,39 +12160,16 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.surrender.hard = {
-		base_chance = 0.35,
+		base_chance = 0.4,
 		significant_chance = 0.25,
 		violence_timeout = 2,
 		reasons = {
 			health = {
-				[1] = 0,
-				[0.35] = 0.5
+				[1] = 0.05,
+				[0.5] = 0.5
 			},
 			weapon_down = 0.2,
-			pants_down = 0.8
-		},
-		factors = {
-			isolated = 0.1,
-			flanked = 0.04,
-			unaware_of_aggressor = 0.1,
-			enemy_weap_cold = 0.05,
-			aggressor_dis = {
-				[1000] = 0,
-				[300] = 0.1
-			}
-		}
-	}
-	presets.surrender.hard_guard = {
-		base_chance = 0.35,
-		significant_chance = 0.25,
-		violence_timeout = 2,
-		reasons = {
-			health = {
-				[1] = 0,
-				[0.35] = 0.5
-			},
-			weapon_down = 1,
-			pants_down = 0
+			pants_down = 1
 		},
 		factors = {
 			isolated = 0.1,

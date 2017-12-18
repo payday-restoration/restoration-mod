@@ -496,6 +496,33 @@ function HUDMissionBriefing:init(hud, workspace)
 	big_text:set_world_x(self._foreground_layer_one:child("job_text"):world_x())
 	big_text:move(-13, 9)
 	self._backdrop:animate_bg_text(big_text)]]
+	
+	if managers.job:current_job_data().name_id == "heist_rvd" then
+		local day_1_text = self._job_schedule_panel:child("day_poly_1")
+		local day_1_sticker = self._job_schedule_panel:bitmap({
+			texture = "guis/dlcs/rvd/textures/pd2/mission_briefing/day2",
+			h = 48,
+			w = 96,
+			rotation = 360,
+			layer = 3
+		})
+
+		day_1_sticker:set_center(day_1_text:center())
+		day_1_sticker:move(math.random(4) - 2, math.random(4) - 2)
+
+		local day_2_text = self._job_schedule_panel:child("day_poly_2")
+		local day_2_sticker = self._job_schedule_panel:bitmap({
+			texture = "guis/dlcs/rvd/textures/pd2/mission_briefing/day1",
+			h = 48,
+			w = 96,
+			rotation = 360,
+			layer = 3
+		})
+
+		day_2_sticker:set_center(day_2_text:center())
+		day_2_sticker:move(math.random(4) - 2, math.random(4) - 2)
+	end
+	
 	if managers.crime_spree:is_active() then
 		self._paygrade_panel:set_visible(false)
 		self._job_schedule_panel:set_visible(false)

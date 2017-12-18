@@ -175,10 +175,10 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 	local carry_panel = self._player_panel:panel({
 		name = "carry_panel",
 		visible = false,
-		x = 0,
 		layer = 1,
-		w =self._player_panel:w(),
+		w = self._player_panel:w(),
 		x = name:x(), 
+		h = bag_h + 2,
 		y = name:top() - 23 
 	})
 
@@ -233,7 +233,7 @@ function HUDTeammate:_create_carry(carry_panel)
 
 	carry_panel:bitmap({
 		name = "bg",
-		visible = false,
+		visible = true,
 		w = 100,
 		layer = 0,
 		y = 0,
@@ -256,17 +256,16 @@ function HUDTeammate:_create_carry(carry_panel)
 		color = Color.white
 	})
 	carry_panel:text({
-		y = 0,
-		vertical = "center",
 		name = "value",
-		text = "$2,000,000",
-		vertical = "center",
-		font_size = tweak_data.hud_players.name_size,
 		visible = true,
+		text = "$2,000,000",
 		layer = 1,
 		color = Color.white,
 		x = bag_rect[3] + 4,
-		font_size = tweak_data.hud.small_font_size
+		y = 0,
+		vertical = "center",
+		font_size = tweak_data.hud_players.name_size,
+		font = "fonts/font_small_mf"
 	})
 end
 
@@ -469,7 +468,7 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 end
 
 function HUDTeammate:_create_weapon_panels(weapons_panel)
-	local bg_color = Color.white / 3
+	local bg_color = Color.white / 1
 	local w_selection_w = 12
 	local weapon_panel_w = 80
 	local extra_clip_w = 4
@@ -521,7 +520,7 @@ function HUDTeammate:_create_weapon_panels(weapons_panel)
 		blend_mode = "normal",
 		x = 0,
 		layer = 1,
-		visible = self._main_player and true,
+		visible = true,
 		text = "0" .. math.random(40),
 		color = Color.white,
 		w = ammo_text_w + extra_clip_w,
@@ -549,7 +548,7 @@ function HUDTeammate:_create_weapon_panels(weapons_panel)
 	local weapon_selection_panel = primary_weapon_panel:panel({
 		name = "weapon_selection",
 		layer = 1,
-		visible = self._main_player and true,
+		visible = true,
 		w = w_selection_w,
 		x = weapon_panel_w - w_selection_w
 	})
@@ -591,7 +590,7 @@ function HUDTeammate:_create_weapon_panels(weapons_panel)
 		blend_mode = "normal",
 		x = 0,
 		layer = 1,
-		visible = self._main_player and true,
+		visible = true,
 		text = "" .. math.random(40),
 		color = Color.white,
 		w = ammo_text_w + extra_clip_w,
@@ -619,7 +618,7 @@ function HUDTeammate:_create_weapon_panels(weapons_panel)
 	local weapon_selection_panel = secondary_weapon_panel:panel({
 		name = "weapon_selection",
 		layer = 1,
-		visible = self._main_player and true,
+		visible = true,
 		w = w_selection_w,
 		x = weapon_panel_w - w_selection_w
 	})
@@ -636,6 +635,116 @@ function HUDTeammate:_create_weapon_panels(weapons_panel)
 
 end
 
+function HUDTeammate:_create_equipment_panels(player_panel, x, top, bottom)
+	local tabs_texture = "guis/textures/restoration/hud_tabs"
+	local bg_color = Color.white / 1
+	local eq_rect = {
+		84,
+		0,
+		44,
+		32
+	}
+	local temp_scale = 1
+	local eq_h = 64 / 2
+	local eq_w = 48
+	local eq_tm_scale = 0.75
+	local deployable_equipment_panel = self._player_panel:panel({
+		name = "deployable_equipment_panel",
+		layer = 1,
+		w = eq_w,
+		h = eq_h,
+		x = x + 4,
+		y = top
+	})
+
+	deployable_equipment_panel:bitmap({
+		name = "bg",
+		layer = 0,
+		x = 0,
+		texture = tabs_texture,
+		texture_rect = eq_rect,
+		color = bg_color,
+		w = deployable_equipment_panel:w()
+	})
+
+	local equipment = deployable_equipment_panel:bitmap({
+		name = "equipment",
+		visible = false,
+		layer = 1,
+		color = Color.white,
+		w = deployable_equipment_panel:h() * temp_scale,
+		h = deployable_equipment_panel:h() * temp_scale,
+		x = -(deployable_equipment_panel:h() * temp_scale - deployable_equipment_panel:h()) / 2,
+		y = -(deployable_equipment_panel:h() * temp_scale - deployable_equipment_panel:h()) / 2
+	})
+	local amount = deployable_equipment_panel:text({
+		name = "amount",
+		visible = false,
+		text = tostring(12),
+		font = tweak_data.menu.small_font,
+		font_size = 14,
+		color = Color.white,
+		align = "right",
+		vertical = "top",
+		layer = 2,
+		x = -3,
+		y = 1,
+		w = deployable_equipment_panel:w(),
+		h = deployable_equipment_panel:h()
+	})
+
+	self._deployable_equipment_panel = deployable_equipment_panel
+	local texture, rect = tweak_data.hud_icons:get_icon_data(tweak_data.equipments.specials.cable_tie.icon)
+	local cable_ties_panel = self._player_panel:panel({
+		name = "cable_ties_panel",
+		layer = 1,
+		w = eq_w,
+		h = eq_h,
+		x = x + 4,
+		y = top
+	})
+
+	cable_ties_panel:bitmap({
+		name = "bg",
+		layer = 0,
+		x = 0,
+		texture = tabs_texture,
+		texture_rect = eq_rect,
+		color = bg_color,
+		w = deployable_equipment_panel:w()
+	})
+
+	local cable_ties = cable_ties_panel:bitmap({
+		name = "cable_ties",
+		layer = 1,
+		texture = texture,
+		texture_rect = rect,
+		color = Color.white,
+		w = deployable_equipment_panel:h() * temp_scale,
+		h = deployable_equipment_panel:h() * temp_scale,
+		x = -(deployable_equipment_panel:h() * temp_scale - deployable_equipment_panel:h()) / 2,
+		y = -(deployable_equipment_panel:h() * temp_scale - deployable_equipment_panel:h()) / 2
+	})
+	local amount = cable_ties_panel:text({
+		name = "amount",
+		visible = false,
+		text = tostring(12),
+		font = tweak_data.menu.small_font,
+		font_size = 14,
+		color = Color.white,
+		align = "right",
+		vertical = "top",
+		layer = 2,
+		x = -3,
+		y = 1,
+		w = deployable_equipment_panel:w(),
+		h = deployable_equipment_panel:h()
+	})
+
+	cable_ties_panel:set_bottom(bottom)
+
+	self._cable_ties_panel = cable_ties_panel
+end
 
 function HUDTeammate:set_name(teammate_name)
 	local teammate_panel = self._panel
@@ -741,10 +850,8 @@ function HUDTeammate:set_carry_info(carry_id, value)
 	carry_panel:set_visible(true)
 
 	local value_text = carry_panel:child("value")
-
 	local real_value = managers.money:get_secured_bonus_bag_value(carry_id, value)
 	value_text:set_text(managers.experience:cash_string(real_value))
-
 	local _, _, w, _ = value_text:text_rect()
 	local bg = carry_panel:child("bg")
 
@@ -872,7 +979,7 @@ function HUDTeammate:add_special_equipment(data)
 		h = equipment_panel:w() + 2
 	})
 		flash_icon:set_center(bitmap:center())
-		flash_icon:animate(callback(self, self, "equipment_flash_icon"))
+		flash_icon:animate(hud.flash_icon, nil, equipment_panel)
 	end
 	self:layout_special_equipments()
 end

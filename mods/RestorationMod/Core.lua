@@ -61,7 +61,7 @@ if not _G.restoration then
 				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted3.ogg"),
 				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted4.ogg")
 			},
-			use_gas = {XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg")
+			use_gas = XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg")
 		},
 		medicdozer = {
 			heal = {}

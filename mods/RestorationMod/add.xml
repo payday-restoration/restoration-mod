@@ -1074,9 +1074,7 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_contour"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_husk" load="true"/>
-	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/spook_heavy_df"/>			
-	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df"/>			
-	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm"/>	
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/spook_heavy_df"/>				
 
     <!--murky medics-->	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" load="true"/>	

@@ -9,7 +9,7 @@ function MenuNodeGui:_setup_item_rows(node, ...)
         Global._friendsonly_warning_shown = true
         QuickMenu:new(
             "NEW FEATURE ALERT!",
-            "Hello!\n \nRestoration Mod has been updated with a brand new feature -- SC's Mod is now a permanent part of our mod! SC's Mod is a total game re-balance, increasing difficulty across the board without resorting to artificial difficulty like just boosting damage or HP.\n \nIn order to prevent users from being unexpected to these changes and start playing without prior knowledge, SC's Mod starts disabled by default. Additionally, we have created this dialogue menu to tell all new and returning users of the feature.\n \nGo to Restoration Mod's options menu, and go to SC Mod Options, to turn on or off the complete game re-balance. You will also have to go to this menu to turn off this notification box.\n \nHappy heisting!\n \n- Martini, DoktorAkcel, SC, and the Restoration Mod team.",
+            "Restoration Mod's Overhaul now has its own savefile!\n\nThis means that when you turn the overhaul on or off, the game will force-restart to allow the changes to take effect. Your normal, vanilla savefile will be totally unaffected in the Overhaul as of now.\n\nContact us on our Discord channel for troubleshooting and questions. Thanks!\n\n-Restoration Mod Team",
             {
                 {
                     text = "GOTCHA",
@@ -24,7 +24,7 @@ end
 
 --Probably gonna repurpose this set of functions to talk about major updates to the mod. We'll see though, feel free to mess with stuff here.
 local res_sc_text = "RESTORATION MOD NOTICE:."
-local res_sc_text_desc = "SC's Mod is officially integrated into Restoration Mod!"
+local res_sc_text_desc = "Nothing here at the moment. Carry on!"
 
 local function DisplayNotification()
 	

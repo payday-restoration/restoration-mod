@@ -42,6 +42,8 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_m203.player_damage = 80
 	tweak_data.projectiles.launcher_m203.curve_pow = 1
 	tweak_data.projectiles.launcher_m203.range = 350
+	tweak_data.projectiles.launcher_frag_m32.damage = 80
+	tweak_data.projectiles.launcher_frag_china.damage = 80
 
 	--M202--
 	tweak_data.projectiles.rocket_ray_frag.damage = 120

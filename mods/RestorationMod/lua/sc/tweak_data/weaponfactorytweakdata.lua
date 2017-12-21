@@ -7310,8 +7310,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 9,
 				extra_ammo = 10,
 				concealment = -2,
-				damage = 0
+				reload = -3
 			},
+			custom_stats = {reload_speed_mult = 0.85},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -16979,7 +16980,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local weapons = {
 			"wpn_fps_gre_m79",
 			"wpn_fps_gre_m32",
-			"wpn_fps_gre_china"
+			"wpn_fps_gre_china",
+			"wpn_fps_gre_slap"
 		}
 		for _, factory_id in ipairs(weapons) do
 			if self[factory_id] and self[factory_id].uses_parts then

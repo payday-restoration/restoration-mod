@@ -6,10 +6,18 @@ RestorationCore = RestorationCore or class(ModCore)
 
 function RestorationCore:init()
 	self.super.init(self, ModPath .. "config.xml", true, true)
-	
 
 	
 	self:post_init({"Options"})
+end
+
+function RestorationCore:all_enabled(...)
+	for _, opt in pairs({...}) do
+		if self.Options:GetValue(opt) == false then
+			return false
+		end
+	end
+	return true
 end
 
 function RestorationCore.log_shit(to_log)

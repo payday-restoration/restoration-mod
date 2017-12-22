@@ -50,7 +50,7 @@ tweak_data.hud_icons.interaction_trade = {
 		}
 	}
 
-if restoration.Options:GetValue("HUD/MainHud") then
+if restoration.Options:GetValue("HUD/MainHUD") then
 --[[tweak_data.hud_icons.equipment_cable_ties = {
 		texture = "guis/textures/restoration/hud_icons",
 		texture_rect = {

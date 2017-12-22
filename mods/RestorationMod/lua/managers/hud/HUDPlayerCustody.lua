@@ -1,3 +1,3 @@
-if restoration.Options:GetValue("HUD/MainHud") then
+if restoration.Options:GetValue("HUD/MainHUD") then
 
 end

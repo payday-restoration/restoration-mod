@@ -1,4 +1,6 @@
-if restoration.Options:GetValue("HUD/MainHud") then
+if not restoration:all_enabled("HUD/MainHUD", "HUD/Teammate") then
+	return
+end
 
 function HUDTeammate:init(i, teammates_panel, is_player, width)
 	self._id = i
@@ -1036,6 +1038,4 @@ function HUDTeammate:teammate_progress(enabled, tweak_data_id, timer, success)
 		circle:set_position(bitmap:position())
 		bitmap:animate(callback(HUDInteraction, HUDInteraction, "_animate_interaction_complete"), circle)
 	end
-end
-
 end

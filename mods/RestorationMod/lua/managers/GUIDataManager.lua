@@ -1,3 +1,7 @@
+if core then
+	core:module("CoreGuiDataManager")
+end
+
 function GuiDataManager:layout_scaled_fullscreen_workspace(ws, scale, on_screen_scale)
     local data = {}
     local res = RenderSettings.resolution

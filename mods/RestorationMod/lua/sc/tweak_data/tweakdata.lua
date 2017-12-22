@@ -257,6 +257,42 @@ if not tweak_data then return end
 	tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
 	tweak_data.achievement.complete_heist_statistics_achievements.immortal_ballot.num_players = nil
 	tweak_data.achievement.complete_heist_statistics_achievements.full_two_twenty.num_players = nil
+	
+	tweak_data.casino = {
+		unlock_level = 0,
+		entrance_level = {
+			14,
+			28,
+			40,
+			45,
+			55,
+			65,
+			75
+		},
+		entrance_fee = {
+			15000,
+			15000,
+			15000,
+			15000,
+			15000,
+			15000,
+			15000
+		},
+		prefer_cost = 5000,
+		prefer_chance = 0.1,
+		secure_card_cost = {
+			10000,
+			20000,
+			30000
+		},
+		secure_card_level = {
+			0,
+			0,
+			0
+		},
+		infamous_cost = 100000,
+		infamous_chance = 3
+	}	
 
 	--Sounds of Animals Fighting--
 	local animal_fight = {

@@ -8,7 +8,7 @@
 	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
 		<hook file="managers/HUDManager.lua" source_file="lib/managers/HUDManager"/>
-		<hook file="managers/GUIDataManager.lua" source_file="lire/lib/managers/coreguidatamanager"/>
+		<hook file="managers/GUIDataManager.lua" source_file="core/lib/managers/coreguidatamanager"/>
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
         <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
         <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>

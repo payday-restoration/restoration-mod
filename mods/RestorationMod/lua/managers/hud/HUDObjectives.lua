@@ -93,7 +93,7 @@ function HUDObjectives:remind_objective(id)
 	end	
 end
 
-RestorationCoreHooks:Post(HUDObjectives, "complete_objective", function(self)
+RestorationCoreHooks:Post(HUDObjectives, "complete_objective", function(self, data)
 	if data.id == self._active_objective_id then
 		self._hud_panel:child("objectives_panel"):stop()
 	end

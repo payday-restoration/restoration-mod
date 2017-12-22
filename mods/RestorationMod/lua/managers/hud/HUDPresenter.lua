@@ -1,4 +1,7 @@
-if restoration.Options:GetValue("HUD/Presenter") then
+if not restoration:all_enabled("HUD/MainHUD", "HUD/Presenter") then
+	return
+end
+
 function HUDPresenter:init(hud)
 	self._hud_panel = hud.panel
 	if self._hud_panel:child("present_panel") then
@@ -247,6 +250,4 @@ function HUDPresenter:_animate_present_information(present_panel, params)
 	present_panel:set_visible( false )
 	
 	params.done_cb()
-end
-
 end

@@ -1,4 +1,7 @@
-if restoration.Options:GetValue("HUD/MainHud") then
+if not restoration.Options:GetValue("HUD/MainHUD") then
+	return
+end
+
 function CircleBitmapGuiObject:init(panel, config)
 	self._panel = panel
 	self._radius = config.radius or 20
@@ -20,6 +23,4 @@ function CircleBitmapGuiObject:init(panel, config)
 		bg_config.blend_mode = "normal"
 		self._bg_circle = self._panel:bitmap(bg_config)
 	end
-end
-
 end

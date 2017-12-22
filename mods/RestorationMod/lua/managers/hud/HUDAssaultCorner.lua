@@ -1,7 +1,10 @@
-if restoration.Options:GetValue("HUD/AssaultPanel") then
+if not restoration:all_enabled("HUD/MainHUD", "HUD/AssaultPanel") then
+	return
+end
+
 function HUDAssaultCorner:init(hud, full_hud)
 --Control option for alternate indicator, gotta make this less fuck stupid later on
-	if restoration.Options:GetValue("HUD/AltAssault") then
+	if restoration.Options:GetValue("HUD/Extra/AltAssault") then
 		self._v2_corner = true
 	else
 		self._v2_corner = false
@@ -23,9 +26,9 @@ function HUDAssaultCorner:init(hud, full_hud)
 	assault_panel:set_center( self._hud_panel:w(), 0 )
 	--assault_panel:set_right( self._hud_panel:w() )
 	self._assault_mode = "normal"
-	self._assault_color = Color(1, 0.8, 0)
-	self._vip_assault_color = Color(1, 1, 0.5019608, 0)
-	self._assault_survived_color = Color(1, 0.1254902, 0.9019608, 0.1254902)
+	self._assault_color = restoration.Options:GetValue("HUD/Colors/AssaultBG")
+	self._vip_assault_color = restoration.Options:GetValue("HUD/Colors/AssaultEndlessBG")
+	self._assault_survived_color = restoration.Options:GetValue("HUD/Colors/AssaultSurvivedBG")
 	self._current_assault_color = self._assault_color
 	local icon_assaultbox = assault_panel:bitmap({
 		halign = "right",
@@ -322,7 +325,27 @@ function HUDAssaultCorner:init(hud, full_hud)
 	buff_mid:set_x( 13 )
 	buff_mid:set_w( (panel_w - 20) )
 	buff_end:set_x( 13 + (panel_w - 20) )
+
+	RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
+	self:RestorationValueChanged()
 end
+
+function HUDAssaultCorner:RestorationValueChanged()
+	self._assault_color = restoration.Options:GetValue("HUD/Colors/AssaultBG")
+	self._vip_assault_color = restoration.Options:GetValue("HUD/Colors/AssaultEndlessBG")
+	self._assault_survived_color = restoration.Options:GetValue("HUD/Colors/AssaultSurvivedBG")
+	local point = self._hud_panel:child("point_of_no_return_panel")
+	local point_color = restoration.Options:GetValue("HUD/Colors/NoReturnText")
+	point:child("point_of_no_return_text"):set_color(point_color)
+	point:child("point_of_no_return_timer"):set_color(point_color)
+	self._noreturn_color = point_color
+	
+	local hostages = self._hud_panel:child("hostages_panel")
+	local hostages_color = restoration.Options:GetValue("HUD/Colors/HostagesText")
+	hostages:child("hostages_icon"):set_color(hostages_color)
+	hostages:child("num_hostages"):set_color(hostages_color)
+end
+
 function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_function)
 	local text_list = text_panel:script().text_list
 	local text_index = 0
@@ -360,7 +383,7 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 			align = "center",
 			vertical = "center",
 			rotation = 30,
-			color = Color.black,
+			color = restoration.Options:GetValue("HUD/Colors/AssaultFG"),
 			font_size = tweak_data.hud_corner.assault_size * 1.2,
 			font = tweak_data.hud_corner.assault_font,
 			w = 10,
@@ -813,9 +836,9 @@ function HUDAssaultCorner:flash_point_of_no_return_timer(beep)
 		while t < 0.5 do
 			t = t + coroutine.yield()
 			local n = 1 - math.sin(t * 180)
-			local r = math.lerp(1 or self._point_of_no_return_color.r, 1, n)
-			local g = math.lerp(0 or self._point_of_no_return_color.g, 0.8, n)
-			local b = math.lerp(0 or self._point_of_no_return_color.b, 0.2, n)
+			local r = math.lerp(self._noreturn_color.r, 1, n)
+			local g = math.lerp(self._noreturn_color.g, 0.8, n)
+			local b = math.lerp(self._noreturn_color.b, 0.2, n)
 			o:set_color(Color(r, g, b))
 			o:set_font_size(math.lerp(50, 50 * 1.25, n))
 		end
@@ -987,6 +1010,4 @@ function HUDAssaultCorner:_animate_wave_completed(panel, assault_hud)
 	wave_text:set_text(tostring(self._completed_waves))
 	wait(7.2)
 	self:_close_assault_box()
-end
-
 end

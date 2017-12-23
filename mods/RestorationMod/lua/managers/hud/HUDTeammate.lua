@@ -37,7 +37,7 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		vertical = "bottom",
 		y = 0,
 		layer = 1,
-		text = " " .. names[i],
+		text = "PLAYER-" .. i,
 		color = Color.white,
 		font_size = tweak_data.hud_players.name_size,
 		font = tweak_data.hud_players.name_font

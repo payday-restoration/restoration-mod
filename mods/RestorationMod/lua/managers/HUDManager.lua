@@ -232,6 +232,8 @@ if not restoration.Options:GetValue("HUD/Teammate") then
 	return
 end
 
+HUDManager.PLAYER_PANEL = _G.BigLobbyGlobals and BigLobbyGlobals:num_player_slots() or 4
+
 function HUDManager:_create_teammates_panel(hud)
 	hud = hud or managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)
 	self._hud.teammate_panels_data = self._hud.teammate_panels_data or {}
@@ -249,8 +251,8 @@ function HUDManager:_create_teammates_panel(hud)
 	})
 	local teammate_w = 204
 	local player_gap = 240
-	local small_gap = (teammates_panel:w() - player_gap - teammate_w * 4) / 3
-	for i = 1, 4 do
+	local small_gap = (teammates_panel:w() - player_gap - teammate_w * HUDManager.PLAYER_PANEL) / (HUDManager.PLAYER_PANEL - 1)
+	for i = 1, HUDManager.PLAYER_PANEL do
 		local is_player = i == HUDManager.PLAYER_PANEL
 		self._hud.teammate_panels_data[i] = {
 			taken = false and is_player,

@@ -14,6 +14,7 @@ function HUDMissionBriefing:init(hud, workspace)
 	self._workspace = workspace
 	self._singleplayer = Global.game_settings.single_player
 	local bg_font = tweak_data.menu.eroded_font
+	local num_player_slots = _G.BigLobbyGlobals and BigLobbyGlobals:num_player_slots() or 4
 	local title_font = tweak_data.menu.medium_font
 	local content_font = tweak_data.menu.default_font
 	local text_font = tweak_data.menu.default_font
@@ -31,14 +32,14 @@ function HUDMissionBriefing:init(hud, workspace)
 	self._ready_slot_panel = self._foreground_layer_one:panel({
 		name = "player_slot_panel",
 		w = self._foreground_layer_one:w() / 2,
-		h = text_font_size * 4 + 20
+		h = text_font_size * num_player_slots + 20
 	})
 	self._ready_slot_panel:set_bottom(self._foreground_layer_one:h())
 	--self._ready_slot_panel:set_right(self._foreground_layer_one:w())
 	if not self._singleplayer then
 		local voice_icon, voice_texture_rect = tweak_data.hud_icons:get_icon_data("mugshot_talk")
 		local infamy_icon, infamy_rect = tweak_data.hud_icons:get_icon_data("infamy_icon")
-		for i = 1, 4 do
+		for i = 1, num_player_slots do
 			local color_id = i
 			local color = tweak_data.chat_colors[color_id]
 			local slot_panel = self._ready_slot_panel:panel({

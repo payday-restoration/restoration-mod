@@ -6781,6 +6781,36 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.corgi.panic_suppression_chance = 0.0		
+		self.slap.desc_id = "bm_40mm_weapon_sc_desc"
+		self.slap.has_description = false
+		self.slap.fire_mode_data.fire_rate = 3
+		self.slap.spread.standing = 3.5
+		self.slap.spread.crouching = 2.5
+		self.slap.spread.steelsight = 1
+		self.slap.spread.moving_standing = 4
+		self.slap.spread.moving_crouching = 3
+		self.slap.spread.moving_steelsight = 2
+		self.slap.kick.standing = self.r870.kick.standing
+		self.slap.kick.crouching = self.r870.kick.standing
+		self.slap.kick.steelsight = self.r870.kick.standing
+		self.slap.AMMO_MAX = 6
+		self.slap.AMMO_PICKUP = {0.12, 0.38}
+		self.slap.stats = {
+			damage = 80,
+			spread = 13,
+			recoil = 7,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 27,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 6,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.slap.panic_suppression_chance = 0.0
+		self.slap.stats_modifiers = {damage = 10}		
 		
 		--Restoration Weapons--
 		self.jeb = {

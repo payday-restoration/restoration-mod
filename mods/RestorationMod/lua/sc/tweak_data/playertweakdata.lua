@@ -113,11 +113,7 @@ function PlayerTweakData:init()
 	self.gravity = -982
 	self.terminal_velocity = -5500
 	self.damage = {}
-	if is_console then
-		self.damage.ARMOR_INIT = 2
-	else
-		self.damage.ARMOR_INIT = 2
-	end
+	self.damage.ARMOR_INIT = 2
 	self.damage.DODGE_INIT = 0
 	self.damage.HEALTH_REGEN = 0
 	self.damage.ARMOR_STEPS = 1
@@ -140,7 +136,7 @@ function PlayerTweakData:init()
 		self.damage.HEALTH_INIT = 23
 	end
 	self.damage.LIVES_INIT = 4
-	self.damage.REGENERATE_TIME = 3.5
+	self.damage.REGENERATE_TIME = 3
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.75,
 		0.5,

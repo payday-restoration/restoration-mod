@@ -2170,7 +2170,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_ignore_suppression_flinch",
 					"player_perk_armor_regen_timer_multiplier_1",
 					"player_passive_loot_drop_multiplier"
 				},
@@ -2672,7 +2671,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 200,
 				icon_xy = {6, 6},
 				name_id = "menu_deck12_1",
-				desc_id = "menu_deck12_1_desc"
+				desc_id = "menu_deck12_1_desc_sc"
 			},
 			deck2,
 			{
@@ -2692,7 +2691,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 1000,
 				icon_xy = {0, 7},
 				name_id = "menu_deck12_5",
-				desc_id = "menu_deck12_5_desc"
+				desc_id = "menu_deck12_5_desc_sc"
 			},
 			deck6,
 			{
@@ -2702,7 +2701,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 2400,
 				icon_xy = {1, 7},
 				name_id = "menu_deck12_7",
-				desc_id = "menu_deck12_7_desc"
+				desc_id = "menu_deck12_7_desc_sc"
 			},
 			deck8,
 			{

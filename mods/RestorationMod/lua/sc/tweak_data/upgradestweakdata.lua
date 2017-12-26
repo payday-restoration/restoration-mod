@@ -328,7 +328,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.flashbang_multiplier = {0.5, 0.25}
 				
 				--Die Hard
-				self.values.player.armor_regen_timer_multiplier = {0.85}
+				self.values.player.armor_regen_timer_multiplier = {0.9}
 				self.values.player.primary_weapon_when_downed = {true}
 
 				--Transporter
@@ -488,7 +488,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Bulletproof
 				self.values.player.armor_multiplier = {1.35, 1.5}
 				self.values.team.armor.regen_time_multiplier = {0.9}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.8}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 			--}
 		--}
 		
@@ -742,11 +742,11 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
+		0.95,
 		0.9,
+		0.85,
 		0.8,
-		0.7,
-		0.6,
-		0.5
+		0.75
 	}
 
 	self.values.player.level_2_dodge_addend = {
@@ -955,6 +955,13 @@ function UpgradesTweakData:_init_pd2_values()
 		75,
 		6.25
 	}}
+	
+	--yoooooooooooooooooo--
+	self.values.player.armor_regen_damage_health_ratio_multiplier = {
+		0.15,
+		0.3,
+		0.45
+	}
 end
 
 local sc_utd_init = UpgradesTweakData.init

@@ -17005,7 +17005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {damage = -77},
+			stats = {damage = -58},
 			texture_bundle_folder = "tng",
 			is_a_unlockable = true,
 			internal_part = true,

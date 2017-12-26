@@ -4151,7 +4151,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ksg.panic_suppression_chance = 0.0
 		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
 		self.gre_m79.has_description = true
-		self.gre_m79.fire_mode_data.fire_rate = 3
+		self.gre_m79.fire_mode_data.fire_rate = 1
 		self.gre_m79.spread.standing = 3.5
 		self.gre_m79.spread.crouching = 2.5
 		self.gre_m79.spread.steelsight = 1
@@ -5112,6 +5112,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.kick.standing = self.r870.kick.standing
 		self.m32.kick.crouching = self.r870.kick.standing
 		self.m32.kick.steelsight = self.r870.kick.standing
+		self.m32.fire_mode_data.fire_rate = 1.5
 		self.m32.AMMO_MAX = 9
 		self.m32.AMMO_PICKUP = {0.18, 0.45}
 		self.m32.stats = {
@@ -5453,6 +5454,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hunter.spread.moving_steelsight = 2
 		self.hunter.panic_suppression_chance = 0.0
 		self.hunter.ignore_damage_upgrades = true
+		self.hunter.fire_mode_data.fire_rate = 1
 		self.hunter.stats = {
 			damage = 120,
 			spread = 16,
@@ -5514,6 +5516,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arblast.spread.moving_standing = 4
 		self.arblast.spread.moving_crouching = 3
 		self.arblast.spread.moving_steelsight = 2
+		self.arblast.fire_mode_data.fire_rate = 1.2
 		self.arblast.kick.standing = self.r870.kick.standing
 		self.arblast.kick.crouching = self.r870.kick.standing
 		self.arblast.kick.steelsight = self.r870.kick.standing
@@ -5541,6 +5544,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.frankish.spread.moving_standing = 4
 		self.frankish.spread.moving_crouching = 3
 		self.frankish.spread.moving_steelsight = 2
+		self.frankish.fire_mode_data.fire_rate = 1
 		self.frankish.kick.standing = self.r870.kick.standing
 		self.frankish.kick.crouching = self.r870.kick.standing
 		self.frankish.kick.steelsight = self.r870.kick.standing
@@ -6144,13 +6148,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.arbiter.fire_mode_data.fire_rate = 2
-		self.arbiter.single.fire_rate = 2
+		self.arbiter.fire_mode_data.fire_rate = 1.5
+		self.arbiter.single.fire_rate = 1.5
 		self.arbiter.CLIP_AMMO_MAX = 6
-		self.arbiter.AMMO_MAX = 6
-		self.arbiter.AMMO_PICKUP = {0.12, 0.38}
+		self.arbiter.AMMO_MAX = 9
+		self.arbiter.AMMO_PICKUP = {0.18, 0.45}
 		self.arbiter.stats = {
-			damage = 80,
+			damage = 60,
 			spread = 6,
 			recoil = 7,
 			spread_moving = 6,
@@ -6247,7 +6251,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ray.timers.reload_not_empty = 6
 		self.ray.timers.reload_empty = 6
 		self.ray.has_description = false
-		self.ray.fire_mode_data.fire_rate = 1.5
+		self.ray.fire_mode_data.fire_rate = 2
 		self.ray.CLIP_AMMO_MAX = 4
 		self.ray.AMMO_MAX = 6
 		self.ray.AMMO_PICKUP = {0.12, 0.38}
@@ -6783,7 +6787,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.corgi.panic_suppression_chance = 0.0		
 		self.slap.desc_id = "bm_40mm_weapon_sc_desc"
 		self.slap.has_description = false
-		self.slap.fire_mode_data.fire_rate = 3
+		self.slap.fire_mode_data.fire_rate = 1.2
 		self.slap.spread.standing = 3.5
 		self.slap.spread.crouching = 2.5
 		self.slap.spread.steelsight = 1

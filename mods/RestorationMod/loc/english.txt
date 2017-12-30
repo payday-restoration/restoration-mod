@@ -182,6 +182,8 @@
 	"restoration_level_data_jackass_a" : "Escape!",
 	"restoration_level_data_jackass_b" : "Escape!",
 	"restoration_level_data_jackass_c" : "Escape!",
+	"menu_title_145" : "145 ITEMS",
+	"menu_desc_145" : "REFUND 101+ LEVELS FOR SPECIAL ITEMS.",
 	"heist_contact_shatter" : "JACKAL",
 	"menu_contacts_shatter" : "///VERITAS_ROOT_MST:.",
 	"heist_contact_shatter_description" : "Jackal, one of the many people that are all operating under one identity -- Shatter.",

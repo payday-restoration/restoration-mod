@@ -3,7 +3,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="7.02" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="7.03" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
     <Hooks directory="lua">
 	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>

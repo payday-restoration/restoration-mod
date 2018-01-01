@@ -138,6 +138,7 @@
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
 		<hook file="sc/units/weapons/quickflashgrenade.lua" source_file="lib/units/weapons/grenades/quickflashgrenade"/>
 		<hook file="sc/units/enemies/actions/upper_body/medicactionheal.lua" source_file="lib/units/enemies/medic/actions/upper_body/medicactionheal"/>
+		<hook file="sc/tweak_data/hudiconstweakdata.lua" source_file="lib/tweak_data/hudiconstweakdata"/>
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>

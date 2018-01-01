@@ -92,7 +92,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					id = "heavies",
 					class = "ModifierHeavies",
-					icon = "crime_spree_heavies",
+					icon = "crime_spree_ump_me_up",
 					data = {}
 				},
 				{
@@ -106,7 +106,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					id = "heavy_sniper",
 					class = "ModifierHeavySniper",
-					icon = "crime_spree_heavy_sniper",
+					icon = "crime_spree_shotgun",
 					data = {
 						spawn_chance = {5, "add"}
 					}
@@ -182,7 +182,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					id = "dozer_minigun",
 					class = "ModifierDozerMinigun",
-					icon = "crime_spree_dozer_minigun",
+					icon = "crime_spree_titandozer",
 					data = {}
 				},
 				{
@@ -202,7 +202,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					id = "dozer_medic",
 					class = "ModifierDozerMedic",
-					icon = "crime_spree_dozer_medic",
+					icon = "crime_spree_youre_that_ninja",
 					data = {}
 				},
 				{
@@ -235,7 +235,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					class = "ModifierLessPagers",
 					id = "pagers_1",
-					icon = "crime_spree_pager",
+					icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
 					level = 26,
 					data = {}
 				},
@@ -252,7 +252,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					class = "ModifierLessConcealment",
 					id = "conceal_1",
-					icon = "crime_spree_concealment",
+					icon = "crime_spree_dun_dun_dun_dunna",
 					level = 26,
 					data = {}
 				},
@@ -269,21 +269,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					class = "ModifierLessPagers",
 					id = "pagers_2",
-					icon = "crime_spree_pager",
+					icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
 					level = 78,
 					data = {}
 				},
 				{
 					class = "ModifierLessConcealment",
 					id = "conceal_2",
-					icon = "crime_spree_concealment",
+					icon = "crime_spree_dun_dun_dun_dunna",
 					level = 104,
 					data = {}
 				},
 				{
 					class = "ModifierLessPagers",
 					id = "pagers_3",
-					icon = "crime_spree_pager",
+					icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
 					level = 130,
 					data = {}
 				},
@@ -300,7 +300,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					class = "ModifierLessPagers",
 					id = "pagers_4",
-					icon = "crime_spree_pager",
+					icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
 					level = 182,
 					data = {}
 				}

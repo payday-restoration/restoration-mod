@@ -3007,12 +3007,6 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.hurt_severities.spooc = deep_clone(presets.hurt_severities.base)
-	presets.hurt_severities.spooc.melee = {
-		health_reference = 1,
-		zones = {
-			{light = 1}
-		}
-	}
 	presets.hurt_severities.boom = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.boom.explosion = {
 		health_reference = 1,

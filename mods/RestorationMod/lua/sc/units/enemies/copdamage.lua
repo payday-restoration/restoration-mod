@@ -426,7 +426,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				damage_effect = self._health * 10
 			end
 		end
-		local damage_effect = attack_data.damage_effect
 		local damage_effect_percent
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, self._HEALTH_INIT_PRECENT, self._HEALTH_INIT)

@@ -234,7 +234,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Joker
 				self.values.player.convert_enemies = {true}
-				self.values.player.convert_enemies_health_multiplier = {0.65}
+				self.values.player.convert_enemies_health_multiplier = {0.45}
 				self.values.player.convert_enemies_damage_multiplier = {1.45}
 				self.values.player.convert_enemies_interaction_speed_multiplier = {0.35}
 
@@ -249,9 +249,11 @@ function UpgradesTweakData:_init_pd2_values()
 				--Partners in Crime--
 				--self.values.player.minion_master_speed_multiplier = {1.1}
 				--self.values.player.minion_master_health_multiplier = {1.3}
-				--self.values.player.passive_convert_enemies_health_multiplier = {0.25}
-				--self.values.player.passive_convert_enemies_damage_multiplier = {1.15}				
-			
+				--self.values.player.passive_convert_enemies_health_multiplier = {
+				--	0.8,
+				--	0.4
+				--}				
+							
 				--Hostage Taker
 				self.values.player.hostage_health_regen_addend = {0.015, 0.045}
 				self.values.team.damage = {

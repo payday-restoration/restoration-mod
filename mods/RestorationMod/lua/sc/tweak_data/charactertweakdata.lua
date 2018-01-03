@@ -148,7 +148,7 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.crouch_move = nil
 	self.gensec.surrender_break_time = {20, 30}
 	self.gensec.suppression = presets.suppression.hard_def
-	self.gensec.surrender = presets.surrender.hard
+	self.gensec.surrender = presets.surrender.easy
 	self.gensec.ecm_vulnerability = 1
 	self.gensec.ecm_hurts = {
 		ears = {min_duration = 8, max_duration = 10}
@@ -181,7 +181,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.move_speed = presets.move_speed.normal
 	self.cop.surrender_break_time = {10, 15}
 	self.cop.suppression = presets.suppression.easy
-	self.cop.surrender = presets.surrender.normal
+	self.cop.surrender = presets.surrender.easy
 	self.cop.ecm_vulnerability = 1
 	self.cop.ecm_hurts = {
 		ears = {min_duration = 8, max_duration = 10}
@@ -271,7 +271,7 @@ function CharacterTweakData:_init_fbi(presets)
     	self.fbi.move_speed = presets.move_speed.very_fast
     	self.fbi.surrender_break_time = {7, 12}
     	self.fbi.suppression = presets.suppression.hard_def
-    	self.fbi.surrender = presets.surrender.normal
+    	self.fbi.surrender = presets.surrender.easy
     	self.fbi.ecm_vulnerability = 1
    	self.fbi.ecm_hurts = {
         	ears = {min_duration = 8, max_duration = 10}
@@ -1062,7 +1062,7 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors = deep_clone(self.bolivian)
 	self.bolivian_indoors.suppression = presets.suppression.hard
 	self.bolivian_indoors.has_alarm_pager = true
-	self.bolivian_indoors.surrender = presets.surrender.hard
+	self.bolivian_indoors.surrender = presets.surrender.easy
 	self.bolivian_indoors.surrender_break_time = {20, 30}
 	self.bolivian_indoors.detection = presets.detection.guard
 	self.bolivian_indoors.HEALTH_INIT = 6
@@ -12108,38 +12108,16 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.surrender.always = {base_chance = 1}
 	presets.surrender.never = {base_chance = 0}
 	presets.surrender.easy = {
-		base_chance = 0.8,
-		significant_chance = 0.1,
+		base_chance = 0.75,
+		significant_chance = 0.35,
 		violence_timeout = 2,
 		reasons = {
 			health = {
-				[1] = 0.2,
-				[0.5] = 1
+				[1] = 0.25,
+				[0.75] = 0.5,
+				[0.5] = 0.75,
 			},
-			weapon_down = 1,
-			pants_down = 1,
-			isolated = 0.1
-		},
-		factors = {
-			flanked = 0.07,
-			unaware_of_aggressor = 0.08,
-			enemy_weap_cold = 0.15,
-			aggressor_dis = {
-				[1000] = 0.02,
-				[300] = 0.15
-			}
-		}
-	}
-	presets.surrender.normal = {
-		base_chance = 0.6,
-		significant_chance = 0.2,
-		violence_timeout = 2,
-		reasons = {
-			health = {
-				[1] = 0.1,
-				[0.5] = 0.75
-			},
-			weapon_down = 0.75,
+			weapon_down = 0.5,
 			pants_down = 1,
 			isolated = 0.08
 		},
@@ -12149,50 +12127,56 @@ function CharacterTweakData:_presets(tweak_data)
 			enemy_weap_cold = 0.11,
 			aggressor_dis = {
 				[1000] = 0,
-				[300] = 0.1
+				[300] = 0.2
 			}
 		}
 	}
 	presets.surrender.hard = {
-		base_chance = 0.4,
-		significant_chance = 0.25,
+		base_chance = 0.5,
+		significant_chance = 0.35,
 		violence_timeout = 2,
 		reasons = {
 			health = {
-				[1] = 0.05,
-				[0.5] = 0.5
+				[1] = 0.25,
+				[0.75] = 0.5,
+				[0.5] = 0.75,
 			},
-			weapon_down = 0.2,
-			pants_down = 1
+			weapon_down = 0.5,
+			pants_down = 1,
+			isolated = 0.08
 		},
 		factors = {
-			isolated = 0.1,
-			flanked = 0.04,
+			flanked = 0.05,
 			unaware_of_aggressor = 0.1,
-			enemy_weap_cold = 0.05,
+			enemy_weap_cold = 0.11,
 			aggressor_dis = {
 				[1000] = 0,
-				[300] = 0.1
+				[300] = 0.2
 			}
 		}
 	}
 	presets.surrender.special = {
 		base_chance = 0.25,
-		significant_chance = 0.25,
+		significant_chance = 0.35,
 		violence_timeout = 2,
 		reasons = {
 			health = {
-				[0.5] = 0,
-				[0.2] = 0.25
+				[1] = 0.25,
+				[0.75] = 0.5,
+				[0.5] = 0.75,
 			},
-			weapon_down = 0.02,
-			pants_down = 0.6
+			weapon_down = 0.5,
+			pants_down = 1,
+			isolated = 0.08
 		},
 		factors = {
-			isolated = 0.05,
-			flanked = 0.015,
-			unaware_of_aggressor = 0.02,
-			enemy_weap_cold = 0.05
+			flanked = 0.05,
+			unaware_of_aggressor = 0.1,
+			enemy_weap_cold = 0.11,
+			aggressor_dis = {
+				[1000] = 0,
+				[300] = 0.2
+			}
 		}
 	}
 	presets.suppression = {

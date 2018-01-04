@@ -1880,15 +1880,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 0},
 				[1] = {
 					upgrades = {
-						"player_non_special_melee_multiplier_1",
-						"player_melee_damage_multiplier_1"
+						"player_melee_swing_multiplier_1",
+						"player_melee_swing_multiplier_delay_1"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_non_special_melee_multiplier_2",
-						"player_melee_damage_multiplier_2"
+						"player_non_special_melee_multiplier_1",
+						"player_melee_damage_multiplier_1"
 					},
 					cost = self.costs.pro
 				}

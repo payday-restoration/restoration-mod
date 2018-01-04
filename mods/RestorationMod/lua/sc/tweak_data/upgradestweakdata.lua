@@ -710,8 +710,10 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
 
 				--Pumping Iron	
-				self.values.player.non_special_melee_multiplier = {1.25, 1.50}
-				self.values.player.melee_damage_multiplier = {1.25, 1.50}
+				self.values.player.non_special_melee_multiplier = {1.2, 1.4}
+				self.values.player.melee_damage_multiplier = {1.2, 1.4}
+				self.values.player.melee_swing_multiplier = {1.25, 1.5}
+				self.values.player.melee_swing_multiplier_delay = {0.75, 0.5}
 				
 				--Counter Strike
 				self.values.player.counter_strike_melee = {true}
@@ -1076,6 +1078,42 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
+	self.definitions.player_melee_swing_multiplier_1 = {
+		category = "feature",
+		name_id = "menu_player_melee_damage_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_swing_multiplier",
+			value = 1
+		}
+	}
+	self.definitions.player_melee_swing_multiplier_2 = {
+		category = "feature",
+		name_id = "menu_player_melee_damage_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_swing_multiplier",
+			value = 2
+		}
+	}	
+	self.definitions.player_melee_swing_multiplier_delay_1 = {
+		category = "feature",
+		name_id = "menu_player_melee_damage_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_swing_multiplier_delay",
+			value = 1
+		}
+	}
+	self.definitions.player_melee_swing_multiplier_delay_2 = {
+		category = "feature",
+		name_id = "menu_player_melee_damage_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_swing_multiplier_delay",
+			value = 2
+		}
+	}		
 	self.definitions.player_messiah_revive_from_bleed_out_2 = {
 		category = "feature",
 		name_id = "menu_player_pistol_revive_from_bleed_out",

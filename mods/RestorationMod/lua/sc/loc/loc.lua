@@ -761,7 +761,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "Pumping Iron",
-		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYour melee attacks do ##25%## more damage.\n\nACE: ##$pro##\nYour melee attacks do an additional ##25%## more damage.",																																																																																																																																																																																																																																		
+		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing melee weapons ##25%## faster.\n\nACE: ##$pro##\nYour melee attacks do ##20%## more damage.",																																																																																																																																																																																																																																		
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",

@@ -671,7 +671,7 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
         bain = "guis/textures/restoration/mission_briefing/bain",
         hoxton = "guis/textures/restoration/mission_briefing/hoxton",
         classic = "guis/textures/restoration/mission_briefing/classic",
-        hector = "guis/textures/pd2/mission_briefing/hector/hector",
+        hector = "guis/textures/restoration/mission_briefing/hector",
         interupt = "guis/textures/pd2/mission_briefing/interupt/contact",
         jimmy = "guis/textures/restoration/mission_briefing/jimmy",
         locke = "guis/textures/restoration/mission_briefing/locke",

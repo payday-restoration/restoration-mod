@@ -237,6 +237,14 @@ tweak_data.narrative.contacts.shatter.description_id	= "heist_contact_shatter_de
 tweak_data.narrative.contacts.shatter.image		= "guis/textures/pd2/crimenet_portrait_interupt"
 tweak_data.narrative.contacts.shatter.package = "packages/contact_interupt"
 tweak_data.narrative.contacts.shatter.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
+
+--Sinaloan
+tweak_data.narrative.contacts.sin				= {}
+tweak_data.narrative.contacts.sin.name_id					= "heist_contact_sin"
+tweak_data.narrative.contacts.sin.description_id	= "heist_contact_shatter_description"
+tweak_data.narrative.contacts.sin.image		= "guis/textures/pd2/crimenet_portrait_interupt"
+tweak_data.narrative.contacts.sin.package = "packages/contact_interupt"
+tweak_data.narrative.contacts.sin.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
 --District descriptions
 if restoration.Options:GetValue("HUD/District") then
 	tweak_data.gui.crime_net.regions = {

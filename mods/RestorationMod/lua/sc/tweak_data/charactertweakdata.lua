@@ -12360,17 +12360,15 @@ function CharacterTweakData:_set_easy()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("normal")
+	self:_set_characters_weapon_preset("normal", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self:_set_characters_dodge_preset("athletic")
-	self:_set_characters_melee_preset("1")
-	self:_set_specials_weapon_preset("normal")
+	self:_set_characters_melee_preset("1", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 25
@@ -12394,17 +12392,15 @@ function CharacterTweakData:_set_normal()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("normal")
+	self:_set_characters_weapon_preset("normal", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic")
-	self:_set_characters_melee_preset("1")
-	self:_set_specials_weapon_preset("normal")
+	self:_set_characters_melee_preset("1", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 50
@@ -12428,17 +12424,15 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("normal")
+	self:_set_characters_weapon_preset("normal", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic")
-	self:_set_characters_melee_preset("1")
-	self:_set_specials_weapon_preset("normal")
+	self:_set_characters_melee_preset("1", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 75
@@ -12462,17 +12456,16 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("good")
+	self:_set_characters_weapon_preset("good", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic_very_hard")
-	self:_set_characters_melee_preset("2")
+	self:_set_characters_melee_preset("2", "1")
 	self:_set_specials_weapon_preset("normal")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("1")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 100
@@ -12498,19 +12491,17 @@ function CharacterTweakData:_set_overkill_145()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("expert")
+	self:_set_characters_weapon_preset("expert", "good")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self:_set_characters_dodge_preset("athletic_overkill")
-	self:_set_characters_melee_preset("2.5")
-	self:_set_specials_weapon_preset("good")
+	self:_set_characters_melee_preset("2.5", "2")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
-	self:_set_specials_melee_preset("2")
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 125
@@ -12537,14 +12528,12 @@ function CharacterTweakData:_set_easy_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("expert")
+	self:_set_characters_weapon_preset("expert", "good")
 	self:_set_characters_dodge_preset("athletic_overkill")
-	self:_set_characters_melee_preset("2.5")
-	self:_set_specials_weapon_preset("good")
+	self:_set_characters_melee_preset("2.5", "2")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("2")
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
@@ -12576,14 +12565,12 @@ function CharacterTweakData:_set_overkill_290()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("deathwish")
+	self:_set_characters_weapon_preset("deathwish", "expert")
 	self:_set_characters_dodge_preset("deathwish")
-	self:_set_characters_melee_preset("3.125")
-	self:_set_specials_weapon_preset("expert")
+	self:_set_characters_melee_preset("3.125", "2.5")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("2.5")
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self:_multiply_all_speeds(1.05, 1.1)
@@ -12612,14 +12599,12 @@ function CharacterTweakData:_set_sm_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-	self:_set_characters_weapon_preset("deathwish")
+	self:_set_characters_weapon_preset("deathwish", "expert")
 	self:_set_characters_dodge_preset("deathwish")
-	self:_set_characters_melee_preset("3.125")
-	self:_set_specials_weapon_preset("expert")
+	self:_set_characters_melee_preset("3.125", "2.5")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self:_set_specials_melee_preset("2.5")
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.security.no_arrest = true
@@ -12648,6 +12633,7 @@ end
 function CharacterTweakData:_multiply_weapon_delay(weap_usage_table, mul)
 	for _, weap_id in ipairs(self.weap_ids) do
 		local usage_data = weap_usage_table[weap_id]
+
 		if usage_data then
 			usage_data.focus_delay = usage_data.focus_delay * mul
 		end
@@ -12655,640 +12641,70 @@ function CharacterTweakData:_multiply_weapon_delay(weap_usage_table, mul)
 end
 
 function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
-	self.security.HEALTH_INIT = self.security.HEALTH_INIT * hp_mul
-	self.gensec.HEALTH_INIT = self.gensec.HEALTH_INIT * hp_mul
-	self.cop.HEALTH_INIT = self.cop.HEALTH_INIT * hp_mul
-	self.cop_scared.HEALTH_INIT = self.cop_scared.HEALTH_INIT * hp_mul
-	self.cop_female.HEALTH_INIT = self.cop_female.HEALTH_INIT * hp_mul
-	self.fbi.HEALTH_INIT = self.fbi.HEALTH_INIT * hp_mul
-	self.fbi_female.HEALTH_INIT = self.fbi_female.HEALTH_INIT * hp_mul
-	self.fbi_vet.HEALTH_INIT = self.fbi_vet.HEALTH_INIT * hp_mul
-	self.medic.HEALTH_INIT = self.medic.HEALTH_INIT * hp_mul
-	self.bolivian.HEALTH_INIT = self.bolivian.HEALTH_INIT * hp_mul
-	self.bolivian_indoors.HEALTH_INIT = self.bolivian_indoors.HEALTH_INIT * hp_mul
-	self.drug_lord_boss.HEALTH_INIT = self.drug_lord_boss.HEALTH_INIT * hp_mul
-	self.drug_lord_boss_stealth.HEALTH_INIT = self.drug_lord_boss_stealth.HEALTH_INIT * hp_mul
-	self.fbi_swat.HEALTH_INIT = self.fbi_swat.HEALTH_INIT * hp_mul
-	self.fbi_swat_vet.HEALTH_INIT = self.fbi_swat_vet.HEALTH_INIT * hp_mul
-	self.city_swat.HEALTH_INIT = self.city_swat.HEALTH_INIT * hp_mul
-	self.city_swat_titan.HEALTH_INIT = self.city_swat_titan.HEALTH_INIT * hp_mul
-	self.city_swat_titan_assault.HEALTH_INIT = self.city_swat_titan_assault.HEALTH_INIT * hp_mul
-	self.swat.HEALTH_INIT = self.swat.HEALTH_INIT * hp_mul
-	self.hrt.HEALTH_INIT = self.hrt.HEALTH_INIT * hp_mul
-	self.heavy_swat.HEALTH_INIT = self.heavy_swat.HEALTH_INIT * hp_mul
-	self.heavy_swat_sniper.HEALTH_INIT = self.heavy_swat_sniper.HEALTH_INIT * hp_mul
-	self.fbi_heavy_swat.HEALTH_INIT = self.fbi_heavy_swat.HEALTH_INIT * hp_mul
-	self.sniper.HEALTH_INIT = self.sniper.HEALTH_INIT * hp_mul
-	self.gangster.HEALTH_INIT = self.gangster.HEALTH_INIT * hp_mul
-	self.mobster.HEALTH_INIT = self.mobster.HEALTH_INIT * hp_mul
-	self.mobster_boss.HEALTH_INIT = self.mobster_boss.HEALTH_INIT * hp_mul
-	self.chavez_boss.HEALTH_INIT = self.chavez_boss.HEALTH_INIT * hp_mul
-	self.hector_boss.HEALTH_INIT = self.hector_boss.HEALTH_INIT * hp_mul
-	self.hector_boss_no_armor.HEALTH_INIT = self.hector_boss_no_armor.HEALTH_INIT * hp_mul
-	self.biker_boss.HEALTH_INIT = self.biker_boss.HEALTH_INIT * hp_mul
-	self.biker.HEALTH_INIT = self.biker.HEALTH_INIT * hp_mul
-	self.biker_guard.HEALTH_INIT = self.biker_guard.HEALTH_INIT * hp_mul
-	self.tank_biker.HEALTH_INIT = self.tank_biker.HEALTH_INIT * hp_mul
-	self.tank.HEALTH_INIT = self.tank.HEALTH_INIT * hp_mul
-	self.tank_mini.HEALTH_INIT = self.tank_mini.HEALTH_INIT * hp_mul
-	self.tank_medic.HEALTH_INIT = self.tank_medic.HEALTH_INIT * hp_mul
-	self.tank_hw.HEALTH_INIT = self.tank_hw.HEALTH_INIT * hp_mul
-	self.tank_titan.HEALTH_INIT = self.tank_titan.HEALTH_INIT * hp_mul
-	self.tank_titan_assault.HEALTH_INIT = self.tank_titan_assault.HEALTH_INIT * hp_mul
-	self.spooc.HEALTH_INIT = self.spooc.HEALTH_INIT * hp_mul
-	self.spooc_titan.HEALTH_INIT = self.spooc_titan.HEALTH_INIT * hp_mul
-	self.shield.HEALTH_INIT = self.shield.HEALTH_INIT * hp_mul
-	self.phalanx_minion.HEALTH_INIT = self.phalanx_minion.HEALTH_INIT * hp_mul
-	self.phalanx_minion_assault.HEALTH_INIT = self.phalanx_minion_assault.HEALTH_INIT * hp_mul
-	self.phalanx_vip.HEALTH_INIT = self.phalanx_vip.HEALTH_INIT * hp_mul
-	self.spring.HEALTH_INIT = self.spring.HEALTH_INIT * hp_mul
-	self.summers.HEALTH_INIT = self.summers.HEALTH_INIT * hp_mul
-	self.taser.HEALTH_INIT = self.taser.HEALTH_INIT * hp_mul
-	self.boom.HEALTH_INIT = self.boom.HEALTH_INIT * hp_mul
-	self.medic_summers.HEALTH_INIT = self.medic_summers.HEALTH_INIT * hp_mul
-	self.taser_summers.HEALTH_INIT = self.taser_summers.HEALTH_INIT * hp_mul
-	self.boom_summers.HEALTH_INIT = self.boom_summers.HEALTH_INIT * hp_mul
-	self.rboom.HEALTH_INIT = self.rboom.HEALTH_INIT * hp_mul
-	self.biker_escape.HEALTH_INIT = self.biker_escape.HEALTH_INIT * hp_mul
-	self.omnia_lpf.HEALTH_INIT = self.omnia_lpf.HEALTH_INIT * hp_mul
-	self.deathvox_guard.HEALTH_INIT = self.deathvox_guard.HEALTH_INIT * hp_mul
-	self.deathvox_heavyar.HEALTH_INIT = self.deathvox_heavyar.HEALTH_INIT * hp_mul
-	self.deathvox_heavyshot.HEALTH_INIT = self.deathvox_heavyshot.HEALTH_INIT * hp_mul
-	self.deathvox_lightar.HEALTH_INIT = self.deathvox_lightar.HEALTH_INIT * hp_mul
-	self.deathvox_lightshot.HEALTH_INIT = self.deathvox_lightshot.HEALTH_INIT * hp_mul
-	self.deathvox_shield.HEALTH_INIT = self.deathvox_shield.HEALTH_INIT * hp_mul
-	self.deathvox_medic.HEALTH_INIT = self.deathvox_medic.HEALTH_INIT * hp_mul
-
-	self.deathvox_taser.HEALTH_INIT = self.deathvox_taser.HEALTH_INIT * hp_mul
-	self.deathvox_cloaker.HEALTH_INIT = self.deathvox_cloaker.HEALTH_INIT * hp_mul
-	self.deathvox_sniper_assault.HEALTH_INIT = self.deathvox_sniper_assault.HEALTH_INIT * hp_mul
-	self.deathvox_greendozer.HEALTH_INIT = self.deathvox_greendozer.HEALTH_INIT * hp_mul
-	self.deathvox_blackdozer.HEALTH_INIT = self.deathvox_blackdozer.HEALTH_INIT * hp_mul
-	self.deathvox_lmgdozer.HEALTH_INIT = self.deathvox_lmgdozer.HEALTH_INIT * hp_mul
-	self.deathvox_medicdozer.HEALTH_INIT = self.deathvox_medicdozer.HEALTH_INIT * hp_mul
-	
-	if self.security.headshot_dmg_mul then
-		self.security.headshot_dmg_mul = self.security.headshot_dmg_mul * hs_mul
-	end
-	if self.gensec.headshot_dmg_mul then
-		self.gensec.headshot_dmg_mul = self.gensec.headshot_dmg_mul * hs_mul
-	end
-	if self.cop.headshot_dmg_mul then
-		self.cop.headshot_dmg_mul = self.cop.headshot_dmg_mul * hs_mul
-	end
-	if self.cop_scared.headshot_dmg_mul then
-		self.cop_scared.headshot_dmg_mul = self.cop_scared.headshot_dmg_mul * hs_mul
-	end
-	if self.cop_female.headshot_dmg_mul then
-		self.cop_female.headshot_dmg_mul = self.cop_female.headshot_dmg_mul * hs_mul
-	end
-	if self.fbi.headshot_dmg_mul then
-		self.fbi.headshot_dmg_mul = self.fbi.headshot_dmg_mul * hs_mul
-	end
-	if self.fbi_female.headshot_dmg_mul then
-		self.fbi_female.headshot_dmg_mul = self.fbi_female.headshot_dmg_mul * hs_mul
-	end
-	if self.fbi_vet.headshot_dmg_mul then
-		self.fbi_vet.headshot_dmg_mul = self.fbi_vet.headshot_dmg_mul * hs_mul
-	end
-	if self.medic.headshot_dmg_mul then
-		self.medic.headshot_dmg_mul = self.medic.headshot_dmg_mul * hs_mul
-	end
-	if self.fbi_swat.headshot_dmg_mul then
-		self.fbi_swat.headshot_dmg_mul = self.fbi_swat.headshot_dmg_mul * hs_mul
-	end
-	if self.fbi_swat_vet.headshot_dmg_mul then
-		self.fbi_swat_vet.headshot_dmg_mul = self.fbi_swat_vet.headshot_dmg_mul * hs_mul
-	end
-	if self.city_swat.headshot_dmg_mul then
-		self.city_swat.headshot_dmg_mul = self.city_swat.headshot_dmg_mul * hs_mul
-	end
-	if self.city_swat_titan.headshot_dmg_mul then
-		self.city_swat_titan.headshot_dmg_mul = self.city_swat_titan.headshot_dmg_mul * hs_mul
-	end
-	if self.city_swat_titan_assault.headshot_dmg_mul then
-		self.city_swat_titan_assault.headshot_dmg_mul = self.city_swat_titan_assault.headshot_dmg_mul * hs_mul
-	end	
-	if self.swat.headshot_dmg_mul then
-		self.swat.headshot_dmg_mul = self.swat.headshot_dmg_mul * hs_mul
-	end
-	if self.hrt.headshot_dmg_mul then
-		self.hrt.headshot_dmg_mul = self.hrt.headshot_dmg_mul * hs_mul
-	end	
-	if self.heavy_swat.headshot_dmg_mul then
-		self.heavy_swat.headshot_dmg_mul = self.heavy_swat.headshot_dmg_mul * hs_mul
-	end
-	if self.heavy_swat_sniper.headshot_dmg_mul then
-		self.heavy_swat_sniper.headshot_dmg_mul = self.heavy_swat_sniper.headshot_dmg_mul * hs_mul
-	end
-	if self.fbi_heavy_swat.headshot_dmg_mul then
-		self.fbi_heavy_swat.headshot_dmg_mul = self.fbi_heavy_swat.headshot_dmg_mul * hs_mul
-	end
-	if self.sniper.headshot_dmg_mul then
-		self.sniper.headshot_dmg_mul = self.sniper.headshot_dmg_mul * hs_mul
-	end
-	if self.gangster.headshot_dmg_mul then
-		self.gangster.headshot_dmg_mul = self.gangster.headshot_dmg_mul * hs_mul
-	end
-	if self.hector_boss.headshot_dmg_mul then
-		self.hector_boss.headshot_dmg_mul = self.hector_boss.headshot_dmg_mul * hs_mul
-	end
-	if self.hector_boss_no_armor.headshot_dmg_mul then
-		self.hector_boss_no_armor.headshot_dmg_mul = self.hector_boss_no_armor.headshot_dmg_mul * hs_mul
-	end
-	if self.mobster.headshot_dmg_mul then
-		self.mobster.headshot_dmg_mul = self.mobster.headshot_dmg_mul * hs_mul
-	end
-	if self.mobster_boss.headshot_dmg_mul then
-		self.mobster_boss.headshot_dmg_mul = self.mobster_boss.headshot_dmg_mul * hs_mul
-	end
-	if self.biker.headshot_dmg_mul then
-		self.biker.headshot_dmg_mul = self.biker.headshot_dmg_mul * hs_mul
-	end
-	if self.biker_guard.headshot_dmg_mul then
-		self.biker_guard.headshot_dmg_mul = self.biker_guard.headshot_dmg_mul * hs_mul
-	end
-	if self.tank_biker.headshot_dmg_mul then
-		self.tank_biker.headshot_dmg_mul = self.tank_biker.headshot_dmg_mul * hs_mul
-	end
-	if self.biker_boss.headshot_dmg_mul then
-		self.biker_boss.headshot_dmg_mul = self.biker_boss.headshot_dmg_mul * hs_mul
-	end
-	if self.tank.headshot_dmg_mul then
-		self.tank.headshot_dmg_mul = self.tank.headshot_dmg_mul * hs_mul
-	end
-	if self.tank_mini.headshot_dmg_mul then
-		self.tank_mini.headshot_dmg_mul = self.tank_mini.headshot_dmg_mul * hs_mul
-	end
-	if self.tank_medic.headshot_dmg_mul then
-		self.tank_medic.headshot_dmg_mul = self.tank_medic.headshot_dmg_mul * hs_mul
-	end
-	if self.tank_titan.headshot_dmg_mul then
-		self.tank_titan.headshot_dmg_mul = self.tank_titan.headshot_dmg_mul * hs_mul
-	end
-	if self.tank_titan_assault.headshot_dmg_mul then
-		self.tank_titan_assault.headshot_dmg_mul = self.tank_titan_assault.headshot_dmg_mul * hs_mul
-	end
-	if self.chavez_boss.headshot_dmg_mul then
-		self.chavez_boss.headshot_dmg_mul = self.chavez_boss.headshot_dmg_mul * hs_mul
-	end
-	if self.tank_hw.headshot_dmg_mul then
-		self.tank_hw.headshot_dmg_mul = self.tank_hw.headshot_dmg_mul * hs_mul
-	end
-	if self.spooc.headshot_dmg_mul then
-		self.spooc.headshot_dmg_mul = self.spooc.headshot_dmg_mul * hs_mul
-	end
-	if self.spooc_titan.headshot_dmg_mul then
-		self.spooc_titan.headshot_dmg_mul = self.spooc_titan.headshot_dmg_mul * hs_mul
-	end
-	if self.shield.headshot_dmg_mul then
-		self.shield.headshot_dmg_mul = self.shield.headshot_dmg_mul * hs_mul
-	end
-	if self.phalanx_minion.headshot_dmg_mul then
-		self.phalanx_minion.headshot_dmg_mul = self.phalanx_minion.headshot_dmg_mul * hs_mul
-	end
-	if self.phalanx_minion_assault.headshot_dmg_mul then
-		self.phalanx_minion_assault.headshot_dmg_mul = self.phalanx_minion_assault.headshot_dmg_mul * hs_mul
-	end
-	if self.phalanx_vip.headshot_dmg_mul then
-		self.phalanx_vip.headshot_dmg_mul = self.phalanx_vip.headshot_dmg_mul * hs_mul
-	end
-	if self.spring.headshot_dmg_mul then
-		self.spring.headshot_dmg_mul = self.spring.headshot_dmg_mul * hs_mul
-	end
-	if self.summers.headshot_dmg_mul then
-		self.summers.headshot_dmg_mul = self.summers.headshot_dmg_mul * hs_mul
-	end
-	if self.taser.headshot_dmg_mul then
-		self.taser.headshot_dmg_mul = self.taser.headshot_dmg_mul * hs_mul
-	end
-	if self.boom.headshot_dmg_mul then
-		self.boom.headshot_dmg_mul = self.boom.headshot_dmg_mul * hs_mul
-	end
-	if self.rboom.headshot_dmg_mul then
-		self.rboom.headshot_dmg_mul = self.rboom.headshot_dmg_mul * hs_mul
-	end
-	if self.medic_summers.headshot_dmg_mul then
-		self.medic_summers.headshot_dmg_mul = self.medic_summers.headshot_dmg_mul * hs_mul
-	end
-	if self.boom_summers.headshot_dmg_mul then
-		self.boom_summers.headshot_dmg_mul = self.boom_summers.headshot_dmg_mul * hs_mul
-	end
-	if self.taser_summers.headshot_dmg_mul then
-		self.taser_summers.headshot_dmg_mul = self.taser_summers.headshot_dmg_mul * hs_mul
-	end
-	if self.summers.headshot_dmg_mul then
-		self.summers.headshot_dmg_mul = self.summers.headshot_dmg_mul * hs_mul
-	end
-	if self.biker_escape.headshot_dmg_mul then
-		self.biker_escape.headshot_dmg_mul = self.biker_escape.headshot_dmg_mul * hs_mul
-	end
-	if self.drug_lord_boss.headshot_dmg_mul then
-		self.drug_lord_boss.headshot_dmg_mul = self.drug_lord_boss.headshot_dmg_mul * hs_mul
-	end
-	if self.drug_lord_boss_stealth.headshot_dmg_mul then
-		self.drug_lord_boss_stealth.headshot_dmg_mul = self.drug_lord_boss_stealth.headshot_dmg_mul * hs_mul
-	end
-	if self.bolivian.headshot_dmg_mul then
-		self.bolivian.headshot_dmg_mul = self.bolivian.headshot_dmg_mul * hs_mul
-	end
-	if self.bolivian_indoors.headshot_dmg_mul then
-		self.bolivian_indoors.headshot_dmg_mul = self.bolivian_indoors.headshot_dmg_mul * hs_mul
-	end
-	if self.omnia_lpf.headshot_dmg_mul then
-		self.omnia_lpf.headshot_dmg_mul = self.omnia_lpf.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_guard.headshot_dmg_mul then
-		self.deathvox_guard.headshot_dmg_mul = self.deathvox_guard.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_heavyar.headshot_dmg_mul then
-		self.deathvox_heavyar.headshot_dmg_mul = self.deathvox_heavyar.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_heavyshot.headshot_dmg_mul then
-		self.deathvox_heavyshot.headshot_dmg_mul = self.deathvox_heavyshot.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_lightar.headshot_dmg_mul then
-		self.deathvox_lightar.headshot_dmg_mul = self.deathvox_lightar.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_medic.headshot_dmg_mul then
-		self.deathvox_medic.headshot_dmg_mul = self.deathvox_medic.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_shield.headshot_dmg_mul then
-		self.deathvox_shield.headshot_dmg_mul = self.deathvox_shield.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_lightshot.headshot_dmg_mul then
-		self.deathvox_lightshot.headshot_dmg_mul = self.deathvox_lightshot.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_taser.headshot_dmg_mul then
-		self.deathvox_taser.headshot_dmg_mul = self.deathvox_taser.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_cloaker.headshot_dmg_mul then
-		self.deathvox_cloaker.headshot_dmg_mul = self.deathvox_cloaker.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_sniper_assault.headshot_dmg_mul then
-		self.deathvox_sniper_assault.headshot_dmg_mul = self.deathvox_sniper_assault.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_greendozer.headshot_dmg_mul then
-		self.deathvox_greendozer.headshot_dmg_mul = self.deathvox_greendozer.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_blackdozer.headshot_dmg_mul then
-		self.deathvox_blackdozer.headshot_dmg_mul = self.deathvox_blackdozer.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_lmgdozer.headshot_dmg_mul then
-		self.deathvox_lmgdozer.headshot_dmg_mul = self.deathvox_lmgdozer.headshot_dmg_mul * hs_mul
-	end
-	if self.deathvox_medicdozer.headshot_dmg_mul then
-		self.deathvox_medicdozer.headshot_dmg_mul = self.deathvox_medicdozer.headshot_dmg_mul * hs_mul
+	for _, enemy_tweak in ipairs(_enemy_list) do
+		if self[enemy_tweak] then
+			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT * hp_mul
+			if self[enemy_tweak].headshot_dmg_mul then
+				self[enemy_tweak].headshot_dmg_mul = self[enemy_tweak].headshot_dmg_mul * hs_mul
+			end
+		end
 	end
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
-	local all_units = {
-		"security",
-		"gensec",
-		"cop",
-		"cop_scared",
-		"cop_female",
-		"fbi",
-		"fbi_female",
-		"fbi_vet",
-		"medic",
-		"swat",
-		"hrt",
-		"heavy_swat",
-		"heavy_swat_sniper",
-		"fbi_swat",
-		"fbi_swat_vet",
-		"fbi_heavy_swat",
-		"city_swat",
-		"city_swat_titan",
-		"city_swat_titan_assault",
-		"sniper",
-		"gangster",
-		"mobster",
-		"mobster_boss",
-		"biker_boss",
-		"hector_boss",
-		"chavez_boss",
-		"hector_boss_no_armor",
-		"tank",
-		"tank_mini",
-		"tank_medic",
-		"tank_titan",
-		"tank_titan_assault",
-		"tank_hw",
-		"spooc",
-		"spooc_titan",
-		"phalanx_vip",
-		"spring",
-		"summers",
-		"boom_summers",
-		"taser_summers",
-		"medic_summers",
-		"phalanx_minion",
-		"phalanx_minion_assault",
-		"shield",
-		"biker",
-		"biker_guard",
-		"tank_biker",
-		"boom",
-		"rboom",
-		"taser",
-		"omnia_lpf",
-		"deathvox_guard",
-		"deathvox_heavyar",
-		"deathvox_heavyshot",
-		"deathvox_lightar",
-		"deathvox_lightshot",
-		"deathvox_medic",
-		"deathvox_shield",
-		"deathvox_taser",
-		"deathvox_cloaker",
-		"deathvox_sniper_assault",
-		"deathvox_greendozer",
-		"deathvox_blackdozer",
-		"deathvox_lmgdozer",
-		"deathvox_medicdozer"
-	}
-	table.insert(all_units, "bolivian")
-	table.insert(all_units, "bolivian_indoors")
-	table.insert(all_units, "drug_lord_boss")
-	table.insert(all_units, "drug_lord_boss_stealth")
-	for _, name in ipairs(all_units) do
-		local speed_table = self[name].SPEED_WALK
-		speed_table.hos = speed_table.hos * walk_mul
-		speed_table.cbt = speed_table.cbt * walk_mul
+	for _, enemy_tweak in ipairs(_enemy_list) do
+		if self[enemy_tweak] then
+			local speed_table = self[enemy_tweak].SPEED_WALK
+			speed_table.hos = speed_table.hos * walk_mul
+			speed_table.cbt = speed_table.cbt * walk_mul
+			self[enemy_tweak].SPEED_RUN = self[enemy_tweak].SPEED_RUN * run_mul
+		end
 	end
-	self.security.SPEED_RUN = self.security.SPEED_RUN * run_mul
-	self.gensec.SPEED_RUN = self.security.SPEED_RUN * run_mul
-	self.cop.SPEED_RUN = self.cop.SPEED_RUN * run_mul
-	self.cop_scared.SPEED_RUN = self.cop_scared.SPEED_RUN * run_mul
-	self.cop_female.SPEED_RUN = self.cop_female.SPEED_RUN * run_mul
-	self.fbi.SPEED_RUN = self.fbi.SPEED_RUN * run_mul
-	self.fbi_female.SPEED_RUN = self.fbi_female.SPEED_RUN * run_mul
-	self.fbi_vet.SPEED_RUN = self.fbi_vet.SPEED_RUN * run_mul
-	self.medic.SPEED_RUN = self.medic.SPEED_RUN * run_mul
-	self.bolivian.SPEED_RUN = self.bolivian.SPEED_RUN * run_mul
-	self.bolivian_indoors.SPEED_RUN = self.bolivian_indoors.SPEED_RUN * run_mul
-	self.drug_lord_boss.SPEED_RUN = self.drug_lord_boss.SPEED_RUN * run_mul
-	self.drug_lord_boss_stealth.SPEED_RUN = self.drug_lord_boss_stealth.SPEED_RUN * run_mul
-	self.swat.SPEED_RUN = self.swat.SPEED_RUN * run_mul
-	self.hrt.SPEED_RUN = self.hrt.SPEED_RUN * run_mul
-	self.heavy_swat.SPEED_RUN = self.heavy_swat.SPEED_RUN * run_mul
-	self.heavy_swat_sniper.SPEED_RUN = self.heavy_swat_sniper.SPEED_RUN * run_mul
-	self.fbi_swat.SPEED_RUN = self.fbi_swat.SPEED_RUN * run_mul
-	self.fbi_swat_vet.SPEED_RUN = self.fbi_swat_vet.SPEED_RUN * run_mul
-	self.fbi_heavy_swat.SPEED_RUN = self.fbi_heavy_swat.SPEED_RUN * run_mul
-	self.city_swat.SPEED_RUN = self.city_swat.SPEED_RUN * run_mul
-	self.city_swat_titan.SPEED_RUN = self.city_swat_titan.SPEED_RUN * run_mul
-	self.city_swat_titan_assault.SPEED_RUN = self.city_swat_titan_assault.SPEED_RUN * run_mul
-	self.sniper.SPEED_RUN = self.sniper.SPEED_RUN * run_mul
-	self.gangster.SPEED_RUN = self.gangster.SPEED_RUN * run_mul
-	self.mobster.SPEED_RUN = self.gangster.SPEED_RUN * run_mul
-	self.mobster_boss.SPEED_RUN = self.mobster_boss.SPEED_RUN * run_mul
-	self.chavez_boss.SPEED_RUN = self.chavez_boss.SPEED_RUN * run_mul
-	self.biker_boss.SPEED_RUN = self.biker_boss.SPEED_RUN * run_mul
-	self.hector_boss.SPEED_RUN = self.hector_boss.SPEED_RUN * run_mul
-	self.hector_boss_no_armor.SPEED_RUN = self.hector_boss_no_armor.SPEED_RUN * run_mul
-	self.tank.SPEED_RUN = self.tank.SPEED_RUN * run_mul
-	self.tank_mini.SPEED_RUN = self.tank_mini.SPEED_RUN * run_mul
-	self.tank_medic.SPEED_RUN = self.tank_medic.SPEED_RUN * run_mul
-	self.tank_titan.SPEED_RUN = self.tank_titan.SPEED_RUN * run_mul
-	self.tank_titan_assault.SPEED_RUN = self.tank_titan_assault.SPEED_RUN * run_mul
-	self.tank_hw.SPEED_RUN = self.tank_hw.SPEED_RUN * run_mul
-	self.spooc.SPEED_RUN = self.spooc.SPEED_RUN * run_mul
-	self.spooc_titan.SPEED_RUN = self.spooc_titan.SPEED_RUN * run_mul
-	self.phalanx_vip.SPEED_RUN = self.phalanx_vip.SPEED_RUN * run_mul
-	self.spring.SPEED_RUN = self.spring.SPEED_RUN * run_mul
-	self.summers.SPEED_RUN = self.summers.SPEED_RUN * run_mul
-	self.medic_summers.SPEED_RUN = self.medic_summers.SPEED_RUN * run_mul
-	self.boom_summers.SPEED_RUN = self.boom_summers.SPEED_RUN * run_mul
-	self.taser_summers.SPEED_RUN = self.taser_summers.SPEED_RUN * run_mul
-	self.phalanx_minion.SPEED_RUN = self.phalanx_minion.SPEED_RUN * run_mul
-	self.phalanx_minion_assault.SPEED_RUN = self.phalanx_minion_assault.SPEED_RUN * run_mul
-	self.shield.SPEED_RUN = self.shield.SPEED_RUN * run_mul
-	self.biker.SPEED_RUN = self.biker.SPEED_RUN * run_mul
-	self.biker_guard.SPEED_RUN = self.biker_guard.SPEED_RUN * run_mul
-	self.tank_biker.SPEED_RUN = self.tank_biker.SPEED_RUN * run_mul
-	self.taser.SPEED_RUN = self.taser.SPEED_RUN * run_mul
-	self.boom.SPEED_RUN = self.boom.SPEED_RUN * run_mul
-	self.rboom.SPEED_RUN = self.rboom.SPEED_RUN * run_mul
-	self.biker_escape.SPEED_RUN = self.biker_escape.SPEED_RUN * run_mul
-	self.omnia_lpf.SPEED_RUN = self.omnia_lpf.SPEED_RUN * run_mul
-	self.deathvox_guard.SPEED_RUN = self.deathvox_guard.SPEED_RUN * run_mul
-	self.deathvox_heavyar.SPEED_RUN = self.deathvox_heavyar.SPEED_RUN * run_mul
-	self.deathvox_heavyshot.SPEED_RUN = self.deathvox_heavyshot.SPEED_RUN * run_mul
-	self.deathvox_lightar.SPEED_RUN = self.deathvox_lightar.SPEED_RUN * run_mul
-	self.deathvox_lightshot.SPEED_RUN = self.deathvox_lightshot.SPEED_RUN * run_mul
-	self.deathvox_shield.SPEED_RUN = self.deathvox_shield.SPEED_RUN * run_mul
-	self.deathvox_medic.SPEED_RUN = self.deathvox_medic.SPEED_RUN * run_mul
-	
-	self.deathvox_taser.SPEED_RUN = self.deathvox_taser.SPEED_RUN * run_mul
-	self.deathvox_cloaker.SPEED_RUN = self.deathvox_cloaker.SPEED_RUN * run_mul
-	self.deathvox_sniper_assault.SPEED_RUN = self.deathvox_sniper_assault.SPEED_RUN * run_mul
-	self.deathvox_greendozer.SPEED_RUN = self.deathvox_greendozer.SPEED_RUN * run_mul
-	self.deathvox_blackdozer.SPEED_RUN = self.deathvox_blackdozer.SPEED_RUN * run_mul
-	self.deathvox_lmgdozer.SPEED_RUN = self.deathvox_lmgdozer.SPEED_RUN * run_mul
-	self.deathvox_medicdozer.SPEED_RUN = self.deathvox_medicdozer.SPEED_RUN * run_mul
 end
 
-function CharacterTweakData:_set_characters_weapon_preset(preset)
-	local all_units = {
-		"security",
-		"cop",
-		"cop_scared",
-		"cop_female",
-		"gensec",
-		"fbi",
-		"fbi_female",
-		"swat",
-		"hrt",
-		"gangster",
-		"hector_boss_no_armor",
-		"bolivian",
-		"bolivian_indoors",
-		"drug_lord_boss_stealth",
-		"biker",
-		"biker_guard",
-		"mobster",
-		"deathvox_guard",
-		"deathvox_heavyar",
-		"deathvox_heavyshot",
-		"deathvox_lightar",
-		"deathvox_lightshot",
-		"deathvox_medic",
-		"deathvox_shield",
-		"deathvox_taser",
-		"deathvox_cloaker",
-		"deathvox_sniper_assault",
-		"deathvox_greendozer",
-		"deathvox_blackdozer",
-		"deathvox_lmgdozer",
-		"deathvox_medicdozer"
-	}
-	for _, name in ipairs(all_units) do
-		self[name].weapon = self.presets.weapon[preset]
+function CharacterTweakData:_set_characters_weapon_preset(preset, special_preset)
+	for _, enemy_tweak in ipairs(_enemy_list) do
+		if self[enemy_tweak] then
+			local is_special = false
+			if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
+				is_special = true
+			end
+			if not is_special then
+				self[enemy_tweak].weapon = self.presets.weapon[preset]
+			else
+				self[enemy_tweak].weapon = self.presets.weapon[special_preset]
+			end
+		end
 	end
 end
 
 function CharacterTweakData:_set_characters_dodge_preset(preset)
-	local all_units = {
-		"gensec",
-		"fbi",
-		"fbi_female",
-		"medic",
-		"omnia_lpf",
-		"taser",
-		"boom",
-		"rboom",
-		"hector_boss_no_armor",
-		"bolivian_indoors",
-		"drug_lord_boss_stealth",
-		"swat",
-		"hrt",
-		"deathvox_heavyar",
-		"deathvox_heavyshot",
-		"deathvox_lightar",
-		"deathvox_lightshot",
-		"deathvox_medic",
-		"deathvox_taser",
-		"deathvox_cloaker",
-		"deathvox_sniper_assault"
-	}
-	for _, name in ipairs(all_units) do
-		self[name].dodge = self.presets.dodge[preset]
+	for _, enemy_tweak in ipairs(_enemy_list) do
+		if self[enemy_tweak] then
+			local is_special = false
+			if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
+				is_special = true
+			end
+			if not is_special then
+				self[enemy_tweak].dodge = self.presets.dodge[preset]
+			end
+		end
 	end
 end
 
-function CharacterTweakData:_set_characters_melee_preset(preset)
-	local all_units = {
-		"security",
-		"cop",
-		"cop_scared",
-		"cop_female",
-		"gensec",
-		"fbi",
-		"fbi_female",
-		"swat",
-		"hrt",
-		"gangster",
-		"hector_boss_no_armor",
-		"bolivian",
-		"bolivian_indoors",
-		"drug_lord_boss_stealth",
-		"biker",
-		"biker_guard",
-		"mobster",
-		"deathvox_guard",
-		"deathvox_heavyar",
-		"deathvox_heavyshot",
-		"deathvox_lightar",
-		"deathvox_lightshot",
-		"deathvox_medic",
-		"deathvox_shield",
-		"deathvox_taser",
-		"deathvox_cloaker",
-		"deathvox_sniper_assault",
-		"deathvox_greendozer",
-		"deathvox_blackdozer",
-		"deathvox_lmgdozer",
-		"deathvox_medicdozer"
-	}
-	for _, name in ipairs(all_units) do
-		self[name].melee_weapon_dmg_multiplier = preset
-	end
-end
-
-function CharacterTweakData:_set_specials_weapon_preset(preset)
-	local all_units = {
-		"taser",
-		"medic",
-		"omnia_lpf",
-		"fbi_vet",
-		"boom",
-		"rboom",
-		"spooc",
-		"spooc_titan",
-		"shield",
-		"tank",
-		"tank_biker",
-		"tank_mini",
-		"tank_medic",
-		"tank_hw",
-		"tank_titan",
-		"tank_titan_assault",
-		"mobster_boss",
-		"biker_boss",
-		"chavez_boss",
-		"hector_boss",
-		"drug_lord_boss",
-		"phalanx_minion",
-		"phalanx_minion_assault",
-		"spring",
-		"summers",
-		"boom_summers",
-		"medic_summers",
-		"taser_summers",
-		"phalanx_vip",
-		"deathvox_medic",
-		"deathvox_shield",
-		"deathvox_taser",
-		"deathvox_cloaker",
-		"deathvox_sniper_assault",
-		"deathvox_greendozer",
-		"deathvox_blackdozer",
-		"deathvox_lmgdozer",
-		"deathvox_medicdozer"
-	}
-	for _, name in ipairs(all_units) do
-		self[name].weapon = deep_clone(self.presets.weapon[preset])
-	end
-end
-
-function CharacterTweakData:_set_specials_melee_preset(preset)
-	local all_units = {
-		"taser",
-		"medic",
-		"omnia_lpf",
-		"fbi_vet",
-		"boom",
-		"rboom",
-		"spooc",
-		"spooc_titan",
-		"shield",
-		"tank",
-		"tank_biker",
-		"tank_mini",
-		"tank_medic",
-		"tank_titan",
-		"tank_titan_assault",
-		"sniper",
-		"tank_hw",
-		"mobster_boss",
-		"biker_boss",
-		"chavez_boss",
-		"hector_boss",
-		"drug_lord_boss",
-		"phalanx_minion",
-		"phalanx_minion_assault",
-		"spring",
-		"summers",
-		"boom_summers",
-		"medic_summers",
-		"taser_summers",
-		"phalanx_vip",
-		"deathvox_medic",
-		"deathvox_shield",
-		"deathvox_taser",
-		"deathvox_cloaker",
-		"deathvox_sniper_assault",
-		"deathvox_greendozer",
-		"deathvox_blackdozer",
-		"deathvox_lmgdozer",
-		"deathvox_medicdozer"
-	}
-	for _, name in ipairs(all_units) do
-		self[name].melee_weapon_dmg_multiplier = preset
+function CharacterTweakData:_set_characters_melee_preset(preset, special_preset)
+	for _, enemy_tweak in ipairs(_enemy_list) do
+		if self[enemy_tweak] then
+			local is_special = false
+			if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
+				is_special = true
+			end
+			if not is_special then
+				self[enemy_tweak].melee_weapon_dmg_multiplier = preset
+			else
+				self[enemy_tweak].melee_weapon_dmg_multiplier = special_preset
+			end
+		end
 	end
 end
 

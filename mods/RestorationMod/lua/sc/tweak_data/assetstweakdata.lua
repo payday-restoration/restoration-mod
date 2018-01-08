@@ -83,6 +83,20 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		category = "player"
 	}
 	
+	--Burning Floor--
+	self.wetwork_burn_add_saw = {}
+	self.wetwork_burn_add_saw.name_id = "menu_asset_wet_add_saw"
+	self.wetwork_burn_add_saw.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_burn_add_saw"
+	self.wetwork_burn_add_saw.stages = {"wetwork_burn"}	
+	self.wetwork_burn_add_saw.visible_if_locked = true
+	self.wetwork_burn_add_saw.no_mystery = true
+	self.wetwork_burn_add_saw.unlock_desc_id = "menu_asset_wet_add_saw_desc"
+	self.wetwork_burn_add_saw.money_lock = tweak_data:get_value("money_manager", "mission_asset_cost_medium", 10)
+	self.wetwork_burn_add_saw.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}	
+	
 	--Adding Bikers to Biker heist cause it makes sense--
 	self.jungle_1_bikers.stages = {
 		"welcome_to_the_jungle_1",

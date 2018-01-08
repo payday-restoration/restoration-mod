@@ -1,5 +1,17 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	local playerstandard_exit_old = PlayerStandard.exit
+	function PlayerStandard:exit(...)
+		if self._shooting then
+			local weap_base = self._equipped_unit:base()
+			if not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire then
+				self._ext_network:send('sync_stop_auto_fire_sound')
+			end
+		end
+
+		return playerstandard_exit_old(self, ...)
+	end
+
 	function PlayerStandard:_start_action_intimidate(t, secondary)
 		if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 			local skip_alert = managers.groupai:state():whisper_mode()

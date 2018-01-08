@@ -3061,6 +3061,9 @@ function CharacterTweakData:_presets(tweak_data)
 		light = {tased_time = 5, down_time = 5},
 		heavy = {tased_time = 5, down_time = 10}
 	}
+	presets.base.static_weapon_preset = false
+	presets.base.static_dodge_preset = false
+	presets.base.static_melee_preset = false
 	presets.gang_member_damage = {}
 	presets.gang_member_damage.HEALTH_INIT = 25
 	presets.gang_member_damage.no_run_start = true
@@ -12630,6 +12633,14 @@ function CharacterTweakData:_set_sm_wish()
 	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
+function CharacterTweakData:is_special_unit(enemy_tweak)
+	local is_special = false
+	if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
+		is_special = true
+	end
+	return is_special
+end
+
 function CharacterTweakData:_multiply_weapon_delay(weap_usage_table, mul)
 	for _, weap_id in ipairs(self.weap_ids) do
 		local usage_data = weap_usage_table[weap_id]
@@ -12665,14 +12676,12 @@ end
 function CharacterTweakData:_set_characters_weapon_preset(preset, special_preset)
 	for _, enemy_tweak in ipairs(_enemy_list) do
 		if self[enemy_tweak] then
-			local is_special = false
-			if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
-				is_special = true
-			end
-			if not is_special then
-				self[enemy_tweak].weapon = self.presets.weapon[preset]
-			else
-				self[enemy_tweak].weapon = self.presets.weapon[special_preset]
+			if not self[enemy_tweak].static_weapon_preset then
+				if not is_special_unit(enemy_tweak) then
+					self[enemy_tweak].weapon = self.presets.weapon[preset]
+				else
+					self[enemy_tweak].weapon = self.presets.weapon[special_preset]
+				end
 			end
 		end
 	end
@@ -12681,12 +12690,10 @@ end
 function CharacterTweakData:_set_characters_dodge_preset(preset)
 	for _, enemy_tweak in ipairs(_enemy_list) do
 		if self[enemy_tweak] then
-			local is_special = false
-			if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
-				is_special = true
-			end
-			if not is_special then
-				self[enemy_tweak].dodge = self.presets.dodge[preset]
+			if not self[enemy_tweak].static_dodge_preset then
+				if not is_special_unit(enemy_tweak) then
+					self[enemy_tweak].dodge = self.presets.dodge[preset]
+				end
 			end
 		end
 	end
@@ -12695,14 +12702,12 @@ end
 function CharacterTweakData:_set_characters_melee_preset(preset, special_preset)
 	for _, enemy_tweak in ipairs(_enemy_list) do
 		if self[enemy_tweak] then
-			local is_special = false
-			if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
-				is_special = true
-			end
-			if not is_special then
-				self[enemy_tweak].melee_weapon_dmg_multiplier = preset
-			else
-				self[enemy_tweak].melee_weapon_dmg_multiplier = special_preset
+			if not self[enemy_tweak].static_melee_preset then
+				if not is_special_unit(enemy_tweak) then
+					self[enemy_tweak].melee_weapon_dmg_multiplier = preset
+				else
+					self[enemy_tweak].melee_weapon_dmg_multiplier = special_preset
+				end
 			end
 		end
 	end

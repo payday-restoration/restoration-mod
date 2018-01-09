@@ -12652,7 +12652,7 @@ function CharacterTweakData:_multiply_weapon_delay(weap_usage_table, mul)
 end
 
 function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
-	for _, enemy_tweak in ipairs(_enemy_list) do
+	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT * hp_mul
 			if self[enemy_tweak].headshot_dmg_mul then
@@ -12663,7 +12663,7 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
-	for _, enemy_tweak in ipairs(_enemy_list) do
+	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			local speed_table = self[enemy_tweak].SPEED_WALK
 			speed_table.hos = speed_table.hos * walk_mul
@@ -12674,7 +12674,7 @@ function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 end
 
 function CharacterTweakData:_set_characters_weapon_preset(preset, special_preset)
-	for _, enemy_tweak in ipairs(_enemy_list) do
+	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			if not self[enemy_tweak].static_weapon_preset then
 				if not is_special_unit(enemy_tweak) then
@@ -12688,7 +12688,7 @@ function CharacterTweakData:_set_characters_weapon_preset(preset, special_preset
 end
 
 function CharacterTweakData:_set_characters_dodge_preset(preset)
-	for _, enemy_tweak in ipairs(_enemy_list) do
+	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			if not self[enemy_tweak].static_dodge_preset then
 				if not is_special_unit(enemy_tweak) then
@@ -12700,7 +12700,7 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 end
 
 function CharacterTweakData:_set_characters_melee_preset(preset, special_preset)
-	for _, enemy_tweak in ipairs(_enemy_list) do
+	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			if not self[enemy_tweak].static_melee_preset then
 				if not is_special_unit(enemy_tweak) then

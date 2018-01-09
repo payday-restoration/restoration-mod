@@ -131,6 +131,7 @@ function CharacterTweakData:_init_security(presets)
 	self.security.has_alarm_pager = true
 	self.security.melee_weapon = nil
 	self.security.steal_loot = nil
+	self.security.static_dodge_preset = true
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
 	self.security_undominatable.surrender = nil
@@ -202,6 +203,7 @@ function CharacterTweakData:_init_cop(presets)
 	else
 		self.cop.steal_loot = true
 	end
+	self.cop.static_dodge_preset = true
  	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
 	self.cop_scared.surrender = presets.surrender.always
@@ -351,6 +353,7 @@ function CharacterTweakData:_init_fbi(presets)
 			return false, t + delay_till_next_use
 		end
 	}	
+	self.fbi_vet.static_dodge_preset = true
 	table.insert(self._enemy_list, "fbi_vet")
 end
 
@@ -493,6 +496,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.heavy_swat.steal_loot = true
 	end
+	self.heavy_swat.static_weapon_preset = true
+	self.heavy_swat.static_dodge_preset = true
+	self.heavy_swat.static_melee_preset = true
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
 	self.heavy_swat_sniper.tags = {"sniper", "special"}
@@ -529,6 +535,8 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.has_alarm_pager = false
 	self.heavy_swat_sniper.calls_in = true
 	self.heavy_swat_sniper.use_animation_on_fire_damage = false
+	self.heavy_swat_sniper.static_weapon_preset = true
+	self.heavy_swat_sniper.static_dodge_preset = true
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 end
 
@@ -563,6 +571,9 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	else
 		self.fbi_swat.steal_loot = true
 	end
+	self.fbi_swat.static_weapon_preset = true
+	self.fbi_swat.static_dodge_preset = true
+	self.fbi_swat.static_melee_preset = true
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
@@ -600,6 +611,9 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	else
 		self.fbi_heavy_swat.steal_loot = true
 	end
+	self.fbi_heavy_swat.static_weapon_preset = true
+	self.fbi_heavy_swat.static_dodge_preset = true
+	self.fbi_heavy_swat.static_melee_preset = true		
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -639,6 +653,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	self.city_swat.has_alarm_pager = true
 	self.city_swat.calls_in = true
+	self.city_swat.static_weapon_preset = true
+	self.city_swat.static_dodge_preset = true
+	self.city_swat.static_melee_preset = true		
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
 	if job == "mad" then
@@ -658,6 +675,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
+	self.city_swat_titan.static_weapon_preset = true
+	self.city_swat_titan.static_dodge_preset = true
+	self.city_swat_titan.static_melee_preset = true	
 	table.insert(self._enemy_list, "city_swat_titan")
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 	self.city_swat_titan_assault.spawn_sound_event = "cloaker_spawn"
@@ -738,6 +758,8 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.chatter = presets.enemy_chatter.no_chatter
 	self.sniper.steal_loot = nil
 	self.sniper.rescue_hostages = false
+	self.sniper.static_weapon_preset = true
+	self.sniper.static_dodge_preset = true
  	table.insert(self._enemy_list, "sniper")
 end
 
@@ -793,6 +815,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.melee_weapon = nil
 	self.gangster.steal_loot = nil
 	self.gangster.calls_in = true
+	self.gangster.static_dodge_preset = true
  	table.insert(self._enemy_list, "gangster")
 end
 
@@ -815,6 +838,7 @@ function CharacterTweakData:_init_biker(presets)
 		go_go = true,
 		suppress = true
  	}
+	self.biker.static_dodge_preset = true
  	table.insert(self._enemy_list, "biker")
 	self.biker_guard = deep_clone(self.biker)
 	self.biker_guard.suppression = presets.suppression.hard_def
@@ -841,6 +865,7 @@ function CharacterTweakData:_init_biker(presets)
 		go_go = true,
 		suppress = true
  	}
+	self.biker_guard.static_dodge_preset = false
 end
 
 function CharacterTweakData:_init_biker_escape(presets)
@@ -868,6 +893,7 @@ function CharacterTweakData:_init_mobster(presets)
 		go_go = true,
 		suppress = true
  	}
+	self.mobster.static_dodge_preset = true
  	table.insert(self._enemy_list, "mobster")
 end
 
@@ -915,6 +941,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.immune_to_knock_down = true
 	self.mobster_boss.immune_to_concussion = true
 	self.mobster_boss.must_headshot = true
+	self.mobster_boss.static_dodge_preset = true
  	table.insert(self._enemy_list, "mobster_boss")
 end
 
@@ -962,6 +989,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.priority_shout_max_dis = 3000
 	self.biker_boss.immune_to_concussion = true
 	self.biker_boss.must_headshot = true
+	self.biker_boss.static_dodge_preset = true
  	table.insert(self._enemy_list, "biker_boss")
 end
 
@@ -1037,6 +1065,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.immune_to_knock_down = true
 	self.chavez_boss.immune_to_concussion = true
 	self.chavez_boss.must_headshot = true
+	self.chavez_boss.static_dodge_preset = true
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -1058,6 +1087,7 @@ function CharacterTweakData:_init_bolivians(presets)
 		go_go = true,
 		suppress = true
  	}
+	self.bolivian.static_dodge_preset = true
 	table.insert(self._enemy_list, "bolivian")
 	self.bolivian_indoors = deep_clone(self.bolivian)
 	self.bolivian_indoors.suppression = presets.suppression.hard
@@ -1083,6 +1113,7 @@ function CharacterTweakData:_init_bolivians(presets)
 		go_go = true,
 		suppress = true
  	}
+	self.bolivian.static_dodge_preset = false
 	table.insert(self._enemy_list, "bolivian_indoors")
 end
 
@@ -1132,6 +1163,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.custom_shout = true
 	self.drug_lord_boss.priority_shout_max_dis = 3000
 	self.drug_lord_boss.must_headshot = true
+	self.drug_lord_boss.static_dodge_preset = true
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 
@@ -1240,6 +1272,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.immune_to_knock_down = true
 	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
+	self.tank.static_dodge_preset = true
  	table.insert(self._enemy_list, "tank")
 	
 	self.tank_medic = deep_clone(self.tank)
@@ -1335,6 +1368,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.melee_weapon = nil
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = true
+	self.spooc.static_dodge_preset = true
  	table.insert(self._enemy_list, "spooc")
 	self.spooc_titan = deep_clone(self.spooc)
 	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.no_hurts
@@ -1395,6 +1429,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.steal_loot = nil
 	self.shield.use_animation_on_fire_damage = false
 	self.shield.immune_to_knock_down = true
+	self.shield.static_dodge_preset = true
  	table.insert(self._enemy_list, "shield")
 end
 
@@ -1519,6 +1554,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.critical_hits = {
 		damage_mul = 2
 	}
+	self.spring.static_dodge_preset = true
  	table.insert(self._enemy_list, "spring")
 end
 
@@ -1913,6 +1949,7 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.steal_loot = false
 	self.old_hoxton_mission.rescue_hostages = false
 	self.old_hoxton_mission.crouch_move = false
+	self.old_hoxton_mission.static_dodge_preset = true
 end
 
 function CharacterTweakData:_init_russian(presets)
@@ -12651,6 +12688,7 @@ function CharacterTweakData:_multiply_weapon_delay(weap_usage_table, mul)
 	end
 end
 
+
 function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
@@ -12677,10 +12715,10 @@ function CharacterTweakData:_set_characters_weapon_preset(preset, special_preset
 	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			if not self[enemy_tweak].static_weapon_preset then
-				if not is_special_unit(enemy_tweak) then
-					self[enemy_tweak].weapon = self.presets.weapon[preset]
+				if not self:is_special_unit(enemy_tweak) then
+					self[enemy_tweak].weapon = deep_clone(self.presets.weapon[preset])
 				else
-					self[enemy_tweak].weapon = self.presets.weapon[special_preset]
+					self[enemy_tweak].weapon = deep_clone(self.presets.weapon[special_preset])
 				end
 			end
 		end
@@ -12691,7 +12729,7 @@ function CharacterTweakData:_set_characters_dodge_preset(preset)
 	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			if not self[enemy_tweak].static_dodge_preset then
-				if not is_special_unit(enemy_tweak) then
+				if not self:is_special_unit(enemy_tweak) then
 					self[enemy_tweak].dodge = self.presets.dodge[preset]
 				end
 			end
@@ -12703,7 +12741,7 @@ function CharacterTweakData:_set_characters_melee_preset(preset, special_preset)
 	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then
 			if not self[enemy_tweak].static_melee_preset then
-				if not is_special_unit(enemy_tweak) then
+				if not self:is_special_unit(enemy_tweak) then
 					self[enemy_tweak].melee_weapon_dmg_multiplier = preset
 				else
 					self[enemy_tweak].melee_weapon_dmg_multiplier = special_preset

@@ -410,14 +410,14 @@
 	<!--unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3_husk" load="true"/-->
 	<!--unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3" load="true"/-->
 
-	<!--Zeal Shield Heavy Swat
+	<!--Zeal Shield Heavy Swat-->
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_contour" force="false"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" load="true" force="false"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/>
 
 	<!--Zeal Swat MP5 Tactical
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2" load="true"/>

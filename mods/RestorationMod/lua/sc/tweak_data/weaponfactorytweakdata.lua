@@ -750,7 +750,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(-0.028, 0, -3.35)
 				},
 				wpn_fps_ass_ak5 = {
-					translation = Vector3(0.025, 0, -3.725)
+					translation = Vector3(0, 0, -3.5),
+					rotation = Rotation(0, 0, 0)
 				},
 				wpn_fps_ass_aug = {
 					translation = Vector3(0, 0, -2.8)
@@ -970,7 +971,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "sight",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = {gfx_reddot = {{
+				id = Idstring("holo_reticle_scale"),
+				value = Vector3(0.2, 1.5, 40)
+			}}}
 		}
 		self.parts.wpn_fps_upg_o_aimpoint = {
 			pcs = {30, 40},
@@ -995,7 +1000,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "sight",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_aimpoint_2 = {
 			pcs = {
@@ -1026,7 +1032,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "sight",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_docter = {
 			pcs = {
@@ -1051,7 +1058,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "sight",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_eotech = {
 			pcs = {
@@ -1080,7 +1088,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_t1micro = {
 			pcs = {
@@ -1106,7 +1115,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "sight",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_upg_o_marksmansight_rear = {
 			pcs = {
@@ -1444,7 +1454,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_cmore.third_unit = "units/pd2_dlc1/weapons/wpn_third_upg_o_cmore/wpn_third_upg_o_cmore"
 	end
@@ -1609,8 +1620,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(-0.028, 0, -3.3)
 				},
 				wpn_fps_ass_ak5 = {
-					translation = Vector3(0.025, 0, -3.45),
-					rotation = Rotation(0, -0.35, 0)
+					translation = Vector3(0, 0, -3.5)
 				},
 				wpn_fps_ass_aug = {
 					translation = Vector3(0, 0, -2.8)
@@ -2370,77 +2380,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			custom_stats = {disable_steelsight_stance = true},
 			perks = {"scope"},
 			stance_mod = {
-				wpn_fps_pis_1911 = {
-					translation = Vector3(0, 0, -0.45)
-				},
+				wpn_fps_pis_1911 = {translation = Vector3(0, 0, -0.45)},
 				wpn_fps_pis_beretta = {
-					translation = Vector3(0, 0, -0.7),
-					rotation = Rotation(0, 0, 0)
+					translation = Vector3(0, 0, -0.4),
+					rotation = Rotation(0, -0.5, 0)
 				},
 				wpn_fps_pis_deagle = {
-					translation = Vector3(0, 0, -0.78)
+					translation = Vector3(0, 0, -0.48),
+					rotation = Rotation(0, -0.5, 0)
 				},
-				wpn_fps_pis_g17 = {
-					translation = Vector3(0, 0, -0.85)
-				},
-				wpn_fps_pis_g18c = {
-					translation = Vector3(0, 0, -0.45)
-				},
-				wpn_fps_pis_usp = {
-					translation = Vector3(-0.015, 0, -0.34)
-				},
-				wpn_fps_pis_ppk = {
-					translation = Vector3(0, 0, -1)
-				},
-				wpn_fps_pis_p226 = {
-					translation = Vector3(0, 0, -0.6)
-				},
+				wpn_fps_pis_g17 = {translation = Vector3(0, 0, -0.85)},
+				wpn_fps_pis_g18c = {translation = Vector3(0, 0, -0.45)},
+				wpn_fps_pis_usp = {translation = Vector3(-0.015, 0, -0.34)},
+				wpn_fps_pis_ppk = {translation = Vector3(0, 0, -1)},
+				wpn_fps_pis_p226 = {translation = Vector3(0, 0, -0.6)},
 				wpn_fps_pis_g22c = {
-					translation = Vector3(0, 0, -0.45)
+					translation = Vector3(0, 0, -0.45),
+					rotation = Rotation(0, -0.3, 0)
 				},
-				wpn_fps_pis_g26 = {
-					translation = Vector3(-0.01, 0, -0.35)
-				},
-				wpn_fps_pis_c96 = {
-					translation = Vector3(0, 0, -1.2)
-				},
-				wpn_fps_pis_hs2000 = {
-					translation = Vector3(0, 0, -0.75)
-				},
-				wpn_fps_bow_hunter = {
-					translation = Vector3(0, 8, 0.8)
-				},
-				wpn_fps_pis_sparrow = {
-					translation = Vector3(0, 0, -0.93)
-				},
-				wpn_fps_pis_pl14 = {
-					translation = Vector3(0, 0, -0.85)
-				},
-				wpn_fps_pis_packrat = {
-					translation = Vector3(0, 0, -1.15)
-				},
-				wpn_fps_pis_lemming = {
-					translation = Vector3(0, 5, -0.75)
-				},
-				wpn_fps_pis_chinchilla = {
-					translation = Vector3(0, 5, -0.75)
-				},
-				wpn_fps_pis_breech = {
-					translation = Vector3(0, 5, -0.65)
-				},
-				wpn_fps_pis_shrew = {
-					translation = Vector3(0, 5, -0.48)
-				},
-				wpn_fps_x_deagle = {
-					translation = Vector3 (-11.1, 10, 2.5), 
-					rotation = Rotation (-0.347954, 0.253161, 0.281029)
-				}
+				wpn_fps_pis_g26 = {translation = Vector3(-0.01, 0, -0.35)},
+				wpn_fps_pis_c96 = {translation = Vector3(0, 0, -1.2)},
+				wpn_fps_pis_hs2000 = {translation = Vector3(0, 0, -0.75)},
+				wpn_fps_bow_hunter = {translation = Vector3(0, 8, 0.8)},
+				wpn_fps_pis_sparrow = {translation = Vector3(0, 0, -0.93)},
+				wpn_fps_pis_pl14 = {translation = Vector3(0, 0, -0.85)},
+				wpn_fps_pis_packrat = {translation = Vector3(0, 0, -1.15)},
+				wpn_fps_pis_lemming = {translation = Vector3(0, 5, -0.75)},
+				wpn_fps_pis_chinchilla = {translation = Vector3(0, 5, -0.75)},
+				wpn_fps_pis_breech = {translation = Vector3(0, 5, -0.65)},
+				wpn_fps_pis_shrew = {translation = Vector3(0, 5, -0.48)}
 			},
 			dlc = "gage_pack_jobs",
 			texture_switch = {
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_eotech_xps = {
 			pcs = {},
@@ -2464,7 +2439,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
 			},
-			dlc = "gage_pack_jobs"
+			dlc = "gage_pack_jobs",
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_reflex = {
 			pcs = {},
@@ -2490,7 +2466,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
 			},
-			dlc = "gage_pack_jobs"
+			dlc = "gage_pack_jobs",
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_rx01 = {
 			pcs = {},
@@ -2516,7 +2493,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
 			},
-			dlc = "gage_pack_jobs"
+			dlc = "gage_pack_jobs",
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_rx30 = {
 			pcs = {},
@@ -2542,7 +2520,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
 			},
-			dlc = "gage_pack_jobs"
+			dlc = "gage_pack_jobs",
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_cs = {
 			pcs = {},
@@ -29776,6 +29755,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				material = "gfx_reddot1",
 				channel = "diffuse_texture"
 			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters),
 			stance_mod = {
 				wpn_fps_ass_m4 = {
 					translation = Vector3(-2.75, 0, -11.15),
@@ -29802,7 +29782,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					rotation = Rotation(0, 0, -45)
 				},
 				wpn_fps_ass_ak5 = {
-					translation = Vector3(-1.3, 0, -13.6),
+					translation = Vector3(-1.25, 0, -13.5),
 					rotation = Rotation(0, 0, -45)
 				},
 				wpn_fps_ass_aug = {
@@ -31711,7 +31691,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(-0.028, 6, -3.35)
 				},
 				wpn_fps_ass_ak5 = {
-					translation = Vector3(0.025, 6, -3.725)
+					translation = Vector3(0, 0, -3.5)
 				},
 				wpn_fps_ass_aug = {
 					translation = Vector3(0, 6, -2.8)
@@ -31935,7 +31915,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				material = "gfx_reddot1",
 				channel = "diffuse_texture"
-			}
+			},
+			material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
 		}
 		self.parts.wpn_fps_upg_o_xpsg33_magnifier.third_unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_xpsg33/wpn_third_upg_o_xpsg33_magnifier"
 		self.parts.wpn_fps_upg_o_45rds_v2.third_unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_45rds_v2/wpn_third_upg_o_45rds_v2"

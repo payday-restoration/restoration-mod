@@ -1830,6 +1830,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian = {
 		experience = {}
 	}
+	self.civilian.tags = {"civilian"}
 	self.civilian.detection = presets.detection.civilian
 	self.civilian.HEALTH_INIT = 0.9
 	self.civilian.headshot_dmg_mul = 999
@@ -2448,8 +2449,29 @@ function CharacterTweakData:_init_ecp(presets)
 		aggression_timeout = 6,
 		arrest_timeout = 240
 	}
-	self.ecp_male = deep_clone(self.ecp_female)
+	self.ecp_male = {
+		damage = presets.gang_member_damage,
+		weapon = deep_clone(presets.weapon.gang_member)
+	}
+	self.ecp_male.weapon.weapons_of_choice = {
+		primary = "wpn_fps_ass_m4_npc",
+		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+	}
+	self.ecp_male.always_face_enemy = true
+	self.ecp_male.no_run_start = true
+	self.ecp_male.no_run_stop = true
+	self.ecp_male.flammable = false		
+	self.ecp_male.detection = presets.detection.gang_member
+	self.ecp_male.move_speed = presets.move_speed.gang_member
+	self.ecp_male.crouch_move = false
 	self.ecp_male.speech_prefix = "rb20"
+	self.ecp_male.weapon_voice = "3"
+	self.ecp_male.access = "teamAI1"
+	self.ecp_male.arrest = {
+		timeout = 240,
+		aggression_timeout = 6,
+		arrest_timeout = 240
+	}
 end
 
 function CharacterTweakData:_init_deathvox(presets)

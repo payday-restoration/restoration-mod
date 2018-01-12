@@ -778,7 +778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
@@ -818,7 +818,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.FBI_suit_stealth_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
@@ -1326,16 +1326,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.FBI_shield = {
 					unit_types = {
 						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield"),							
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),						
 							Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 						},
 						russia = {
@@ -1478,9 +1478,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.FBI_tank = {
 					unit_types = {
 						america = {
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"),
 							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
-							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc_3/ene_zeal_bulldozer_sc_3")
+							Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+							Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),

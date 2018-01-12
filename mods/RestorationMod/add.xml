@@ -404,6 +404,9 @@
 	<!--National Guard-->
 	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>
 
+	
+	<!--NOTICE:  these below are broke as of u170, ovk changed something with zeals and it effected only these, fix ASAP-->
+
 	<!--Zeal Dozer fixes ('gitgud' means bringing a bow, right?)-->
 	<!--unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc" load="true"/-->
 	<!--unit path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc_husk" load="true"/-->

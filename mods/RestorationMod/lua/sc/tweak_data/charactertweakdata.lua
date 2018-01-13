@@ -12524,7 +12524,6 @@ function CharacterTweakData:_set_overkill()
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
 	self:_set_characters_dodge_preset("athletic_very_hard")
 	self:_set_characters_melee_preset("2", "1")
-	self:_set_specials_weapon_preset("normal")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil

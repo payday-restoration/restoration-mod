@@ -5,6 +5,7 @@ local job = Global.level_data and Global.level_data.level_id
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
 	old_init(self, tweak_data, presets)
+	log("here be SC Tweak Data loading")
 	local presets = self:_presets(tweak_data)
 	local func = "_init_region_" .. tostring(tweak_data.levels:get_ai_group_type())
 

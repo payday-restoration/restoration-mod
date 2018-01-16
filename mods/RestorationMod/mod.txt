@@ -4,7 +4,7 @@
  "author" : "Martini, DoktorAkcel, SC, & The Restoration Mod Crew",
  "contact" : "Join the official Steam group, or follow us on Twitter!\nTwitter: @RestorationCrew",
  "version" : "7.0",
- "priority" : 45,
+ "priority" : 46,
  "blt_version" : 2,
  "image" : "res.png",
  "undisablable" : false,

@@ -68,30 +68,6 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.phalanx_minion_assault.hurt = ShieldActionHurt
 	CopMovement._action_variants.phalanx_minion_assault.walk = ShieldCopActionWalk
 	CopMovement._action_variants.spooc_titan = security_variant
-
-	CopMovement._action_variants.deathvox_shield = clone(security_variant)
-	CopMovement._action_variants.deathvox_shield.hurt = ShieldActionHurt
-	CopMovement._action_variants.deathvox_shield.walk = ShieldCopActionWalk
-	CopMovement._action_variants.deathvox_heavyar = security_variant
-	CopMovement._action_variants.deathvox_lightar = security_variant
-	CopMovement._action_variants.deathvox_medic = security_variant
-	CopMovement._action_variants.deathvox_guard = security_variant
-	CopMovement._action_variants.deathvox_lightshot = security_variant
-	CopMovement._action_variants.deathvox_heavyshot = security_variant
-
-	CopMovement._action_variants.deathvox_taser = security_variant
-	CopMovement._action_variants.deathvox_sniper_assault = security_variant
-	CopMovement._action_variants.deathvox_cloaker = security_variant
-	
-	CopMovement._action_variants.deathvox_greendozer = clone(security_variant)
-	CopMovement._action_variants.deathvox_greendozer.walk = TankCopActionWalk
-	CopMovement._action_variants.deathvox_blackdozer = clone(security_variant)
-	CopMovement._action_variants.deathvox_blackdozer.walk = TankCopActionWalk
-	CopMovement._action_variants.deathvox_lmgdozer = clone(security_variant)
-	CopMovement._action_variants.deathvox_lmgdozer.walk = TankCopActionWalk
-	CopMovement._action_variants.deathvox_medicdozer = clone(security_variant)
-	CopMovement._action_variants.deathvox_medicdozer.walk = TankCopActionWalk
-
 end
 
 function CopMovement:post_init()

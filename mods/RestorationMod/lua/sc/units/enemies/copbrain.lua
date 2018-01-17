@@ -54,35 +54,6 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.spooc_titan = clone(security_variant)
 	CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
 	CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
-	
-	CopBrain._logic_variants.deathvox_shield = clone(security_variant)
-	CopBrain._logic_variants.deathvox_shield.attack = ShieldLogicAttack
-	CopBrain._logic_variants.deathvox_shield.intimidated = nil
-	CopBrain._logic_variants.deathvox_shield.flee = nil
-	
-	CopBrain._logic_variants.deathvox_heavyar = security_variant
-	CopBrain._logic_variants.deathvox_lightar = security_variant
-	CopBrain._logic_variants.deathvox_medic = security_variant
-	CopBrain._logic_variants.deathvox_guard = security_variant
-	CopBrain._logic_variants.deathvox_lightshot = security_variant
-	CopBrain._logic_variants.deathvox_heavyshot = security_variant
-	
-	CopBrain._logic_variants.deathvox_taser = clone(security_variant)
-	CopBrain._logic_variants.deathvox_taser.attack = TaserLogicAttack
-	CopBrain._logic_variants.deathvox_sniper_assault = security_variant
-	CopBrain._logic_variants.deathvox_cloaker = clone(security_variant)
-	CopBrain._logic_variants.deathvox_cloaker.idle = SpoocLogicIdle
-	CopBrain._logic_variants.deathvox_cloaker.attack = SpoocLogicAttack
-	
-	CopBrain._logic_variants.deathvox_greendozer = clone(security_variant)
-	CopBrain._logic_variants.deathvox_greendozer.attack = TankCopLogicAttack
-	CopBrain._logic_variants.deathvox_blackdozer = clone(security_variant)
-	CopBrain._logic_variants.deathvox_blackdozer.attack = TankCopLogicAttack
-	CopBrain._logic_variants.deathvox_lmgdozer = clone(security_variant)
-	CopBrain._logic_variants.deathvox_lmgdozer.attack = TankCopLogicAttack
-	CopBrain._logic_variants.deathvox_medicdozer = clone(security_variant)
-	CopBrain._logic_variants.deathvox_medicdozer.attack = TankCopLogicAttack
-
 end
 
 --Thanks Rokk--

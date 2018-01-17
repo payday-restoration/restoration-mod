@@ -1,0 +1,52 @@
+<sequence_manager>
+	<unit>
+		<sequence name="'crack'">
+			<sound action="'play'" event="'bulldozer_visor_shatter'" source="'glass'"/>
+			<body enabled="false" name="'glass'"/>
+			<body enabled="true" name="'head'"/>
+			<object enabled="true" name="'g_glass_hole'"/>
+			<object enabled="false" name="'g_glass'"/>
+			<decal_mesh enabled="false" name="'g_glass'"/>
+			<decal_mesh enabled="true" name="'c_head'"/>
+			<effect damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'e_glass' )" position="v()"/>
+			<effect damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'e_glass' )" position="v()"/>
+		</sequence>
+		<body name="'glass'">
+			<endurance damage="20" explosion="100">
+				<run_sequence name="'crack'"/>
+			</endurance>
+		</body>
+		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
+			<body enabled="false" name="'body'"/>
+			<body enabled="false" name="'helmet'"/>
+			<body enabled="false" name="'glass'"/>
+			<body enabled="false" name="'head'"/>
+			<body enabled="false" name="'mover_blocker'"/>
+			<body enabled="true" name="'rag_Hips'"/>
+			<body enabled="true" name="'rag_LeftUpLeg'"/>
+			<body enabled="true" name="'rag_RightUpLeg'"/>
+			<body enabled="true" name="'rag_LeftLeg'"/>
+			<body enabled="true" name="'rag_RightLeg'"/>
+			<body enabled="true" name="'rag_Spine'"/>
+			<body enabled="true" name="'rag_Spine1'"/>
+			<body enabled="true" name="'rag_Spine2'"/>
+			<body enabled="true" name="'rag_LeftForeArm'"/>
+			<body enabled="true" name="'rag_RightForeArm'"/>
+			<body enabled="true" name="'rag_LeftArm'"/>
+			<body enabled="true" name="'rag_RightArm'"/>
+			<body enabled="true" name="'rag_Head'"/>
+			<constraint enabled="true" name="'LeftUpLeg'"/>
+			<constraint enabled="true" name="'RightUpLeg'"/>
+			<constraint enabled="true" name="'LeftLeg'"/>
+			<constraint enabled="true" name="'RightLeg'"/>
+			<constraint enabled="true" name="'Spine'"/>
+			<constraint enabled="true" name="'Spine1'"/>
+			<constraint enabled="true" name="'Spine2'"/>
+			<constraint enabled="true" name="'LeftForeArm'"/>
+			<constraint enabled="true" name="'RightForeArm'"/>
+			<constraint enabled="true" name="'LeftArm'"/>
+			<constraint enabled="true" name="'RightArm'"/>
+			<constraint enabled="true" name="'Head'"/>
+		</sequence>
+	</unit>
+</sequence_manager>

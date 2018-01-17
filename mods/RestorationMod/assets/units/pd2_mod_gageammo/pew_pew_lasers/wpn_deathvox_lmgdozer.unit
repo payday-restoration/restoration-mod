@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+    <object file="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249/wpn_fps_lmg_m249" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_m249"/>
+	</dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="deathvox_lmgdozer" />
+		</extension>
+    </extensions>
+</unit>

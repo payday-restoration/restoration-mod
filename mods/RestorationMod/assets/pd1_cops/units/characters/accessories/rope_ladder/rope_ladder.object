@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="pd1_cops/units/characters/accessories/rope_ladder/rope_ladder" orientation_object="rp_rope_ladder" />
+  <sequence_manager file="pd1_cops/units/characters/accessories/rope_ladder/rope_ladder" />
+	<animations>
+		<animation_group name="anim">			
+			<object name="joint1" />
+			<object name="joint2" />
+			<object name="joint3" />
+			<object name="joint4" />
+			<object name="joint5" />
+			<object name="joint6" />
+			<object name="joint7" />
+			<object name="joint8" />
+			<object name="joint9" />
+			<object name="joint10" />
+			<object name="joint11" />
+			<object name="joint12" />
+			<object name="joint13" />
+			<object name="joint14" />
+			<object name="end_joint_dont_animate" />
+		</animation_group>
+  </animations>
+  <graphics>
+	 <graphic_group name="culling" enabled="true" culling_object="co_rope">
+		<object name="g_rope_ladder" enabled="true" />
+	</graphic_group>
+  </graphics>
+  
+</dynamic_object>

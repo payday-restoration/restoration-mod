@@ -110,5 +110,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return result
 	end
+	function NewNPCRaycastWeaponBase:add_damage_multiplier(damage_multiplier)
+		self._damage = self._damage * damage_multiplier
+	end
 	
+	DeathVoxSniperWeaponBase = DeathVoxSniperWeaponBase or blt_class(NewNPCRaycastWeaponBase)
+	DeathVoxSniperWeaponBase.TRAIL_EFFECT = Idstring("effects/particles/weapons/trail_dv_sniper")
 end

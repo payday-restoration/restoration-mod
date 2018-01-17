@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+	<object file="units/pd2_dlc_big/weapons/wpn_fps_ass_fal/wpn_fps_ass_fal" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_fn_fal"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="deathvox_heavy_ar" />
+		</extension>
+	</extensions>
+</unit>

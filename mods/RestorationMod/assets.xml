@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<assets base_path="assets/" target="scripted" load_group="cops">
+	<group name="pd1_cops/">
+		<file :name="units/characters/enemies/tank/tank.object" force="false"/>
+		<file :name="units/characters/enemies/tank/tank.model" force="false"/>
+		<file :name="units/characters/enemies/tank/tank.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/tank/tank.sequence_manager" force="false"/>
+		<file :name="units/characters/enemies/tank/tank_contour.material_config" force="false"/>
+		<file :name="units/characters/accessories/baton/baton.unit" load="true"/>
+		<file :name="units/characters/accessories/baton/baton.object" force="false"/>
+		<file :name="units/characters/accessories/baton/baton.model" force="false"/>
+		<file :name="units/characters/accessories/baton/baton.cooked_physics" force="false"/>
+		<file :name="effects/particles/character/cloaker_goggle.effect" load="false" force="true"/>
+		<file :name="units/characters/enemies/spooc/spooc.object" force="false"/>
+		<file :name="units/characters/enemies/spooc/spooc.model" force="false"/>
+		<file :name="units/characters/enemies/spooc/spooc.cooked_physics" force="false"/>
+		<file :name="effects/particles/weapons/taser_thread.effect" load="false" force="true"/>
+		<file :name="units/characters/enemies/taser/taser.object" force="false"/>
+		<file :name="units/characters/enemies/taser/taser.model" force="false"/>
+		<file :name="units/characters/enemies/taser/taser.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/kevlar_helmet.unit" load="true"/>
+		<file :name="units/characters/enemies/swat_kevlar1/kevlar_helmet.object" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/kevlar_helmet.model" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/kevlar_helmet.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/kevlar_helmet.sequence_manager" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/swat_kevlar1.object" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/swat_kevlar1.model" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar1/swat_kevlar1.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_01.object" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_01.model" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_01.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_02.object" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_02.model" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_02.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/cop2/cop2.object" force="false"/>
+		<file :name="units/characters/enemies/cop2/cop2.model" force="false"/>
+		<file :name="units/characters/enemies/cop2/cop2.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/cop3/cop3.object" force="false"/>
+		<file :name="units/characters/enemies/cop3/cop3.model" force="false"/>
+		<file :name="units/characters/enemies/cop3/cop3.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/swat/swat_helmet_1.unit" load="true"/>
+		<file :name="units/characters/enemies/swat/swat_helmet_1.object" force="false"/>
+		<file :name="units/characters/enemies/swat/swat_helmet_1.model" force="false"/>
+		<file :name="units/characters/enemies/swat/swat_helmet_1.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/swat/swat.object" force="false"/>
+		<file :name="units/characters/enemies/swat/swat.model" force="false"/>
+		<file :name="units/characters/enemies/swat/swat.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/cop/nypd_hat.object" force="false"/>
+		<file :name="units/characters/enemies/cop/nypd_hat.model" force="false"/>
+		<file :name="units/characters/enemies/cop/nypd_hat.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/cop/cop.object" force="false"/>
+		<file :name="units/characters/enemies/cop/cop.model" force="false"/>
+		<file :name="units/characters/enemies/cop/cop.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/security/cap.object" force="false"/>
+		<file :name="units/characters/enemies/security/cap.model" force="false"/>
+		<file :name="units/characters/enemies/security/cap.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/police_force.material_config" force="false"/>
+		<file :name="units/characters/enemies/police_force_contour.material_config" force="false"/>
+		<file :name="units/characters/enemies/textures/police_force_df.texture" force="false"/>
+		<file :name="units/glass/tank_glass_df.texture" force="false"/>
+		<file :name="units/weapons/texture/weapon_il_green_il.texture" force="false"/>
+		<file :name="units/characters/enemies/textures/police_force_nm.texture" force="false"/>
+		<file :name="units/glass/tank_glass_op.texture" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_one_diamond.object" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_one_diamond.model" force="false"/>
+		<file :name="units/characters/enemies/security/security_guard_one_diamond.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar2/swat_kevlar2.object" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar2/swat_kevlar2.model" force="false"/>
+		<file :name="units/characters/enemies/swat_kevlar2/swat_kevlar2.cooked_physics" force="false"/>
+		<file :name="units/characters/enemies/shield/shield.object" force="false"/>
+		<file :name="units/characters/enemies/shield/shield.model" force="false"/>
+		<file :name="units/characters/enemies/shield/shield.cooked_physics" force="false"/>
+		<file :name="units/weapons/shield/shield.unit" load="true"/>
+		<file :name="units/weapons/shield/shield.object" force="false"/>
+		<file :name="units/weapons/shield/shield.model" force="false"/>
+		<file :name="units/weapons/shield/shield.material_config" force="false"/>
+		<file :name="units/weapons/shield/shield.sequence_manager" force="false"/>
+		<file :name="units/weapons/shield/shield.cooked_physics" force="false"/>
+		<file :name="units/weapons/shield/shield_df.texture" force="false"/>
+		<file :name="units/weapons/shield/shield_nm.texture" force="false"/>
+		<file :name="units/characters/ragdoll.sequence_manager" force="false"/>
+		
+		<file :name="units/characters/enemies/swat2/swat2.object" force="false"/>
+		<file :name="units/characters/enemies/swat2/swat2.model" force="false"/>
+		<file :name="units/characters/enemies/swat2/swat2.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/swat3/swat3.object" force="false"/>
+		<file :name="units/characters/enemies/swat3/swat3.model" force="false"/>
+		<file :name="units/characters/enemies/swat3/swat3.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/sniper/sniper.unit" load="true"/>
+		
+		<file :name="units/characters/enemies/fbi1/fbi1.object" force="false"/>
+		<file :name="units/characters/enemies/fbi1/fbi1.model" force="false"/>
+		<file :name="units/characters/enemies/fbi1/fbi1.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/fbi2/fbi2.object" force="false"/>
+		<file :name="units/characters/enemies/fbi2/fbi2.model" force="false"/>
+		<file :name="units/characters/enemies/fbi2/fbi2.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/fbi3/fbi3.object" force="false"/>
+		<file :name="units/characters/enemies/fbi3/fbi3.model" force="false"/>
+		<file :name="units/characters/enemies/fbi3/fbi3.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/fbi3/fbi_cap.object" force="false"/>
+		<file :name="units/characters/enemies/fbi3/fbi_cap.model" force="false"/>
+		<file :name="units/characters/enemies/fbi3/fbi_cap.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/murky_water1/murky_water1.object" force="false"/>
+		<file :name="units/characters/enemies/murky_water1/murky_water1.model" force="false"/>
+		<file :name="units/characters/enemies/murky_water1/murky_water1.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/murky_water2/murky_water2.object" force="false"/>
+		<file :name="units/characters/enemies/murky_water2/murky_water2.model" force="false"/>
+		<file :name="units/characters/enemies/murky_water2/murky_water2.cooked_physics" force="false"/>
+		
+		<file :name="units/characters/enemies/murky_water1/murky_water_cap.object" force="false"/>
+		<file :name="units/characters/enemies/murky_water1/murky_water_cap.model" force="false"/>
+		<file :name="units/characters/enemies/murky_water1/murky_water_cap.cooked_physics" force="false"/>
+	</group>
+
+	<group name="units/pd2_mod_gageammo/characters/">
+		<file :name="ene_deathvox_guard/ene_deathvox_guard.unit" load="true"/>
+		<file :name="ene_deathvox_guard/ene_deathvox_guard_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_heavyar/ene_deathvox_heavyar.unit" load="true"/>
+		<file :name="ene_deathvox_heavyar/ene_deathvox_heavyar_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_lightar/ene_deathvox_lightar.unit" load="true"/>
+		<file :name="ene_deathvox_lightar/ene_deathvox_lightar_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_medic/ene_deathvox_medic.unit" load="true"/>
+		<file :name="ene_deathvox_medic/ene_deathvox_medic_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_shield/ene_deathvox_shield.unit" load="true"/>
+		<file :name="ene_deathvox_shield/ene_deathvox_shield_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_heavyshot/ene_deathvox_heavyshot.unit" load="true"/>
+		<file :name="ene_deathvox_heavyshot/ene_deathvox_heavyshot_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_lightshot/ene_deathvox_lightshot.unit" load="true"/>
+		<file :name="ene_deathvox_lightshot/ene_deathvox_lightshot_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_greendozer/ene_deathvox_greendozer.unit" load="true"/>
+		<file :name="ene_deathvox_greendozer/ene_deathvox_greendozer_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_blackdozer/ene_deathvox_blackdozer.unit" load="true"/>
+		<file :name="ene_deathvox_blackdozer/ene_deathvox_blackdozer_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_lmgdozer/ene_deathvox_lmgdozer.unit" load="true"/>
+		<file :name="ene_deathvox_lmgdozer/ene_deathvox_lmgdozer_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_medicdozer/ene_deathvox_medicdozer.unit" load="true"/>
+		<file :name="ene_deathvox_medicdozer/ene_deathvox_medicdozer_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_taser/ene_deathvox_taser.unit" load="true"/>
+		<file :name="ene_deathvox_taser/ene_deathvox_taser_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_cloaker/ene_deathvox_cloaker.unit" load="true"/>
+		<file :name="ene_deathvox_cloaker/ene_deathvox_cloaker_husk.unit" load="true"/>
+
+		<file :name="ene_deathvox_sniper_assault/ene_deathvox_sniper_assault.unit" load="true"/>
+		<file :name="ene_deathvox_sniper_assault/ene_deathvox_sniper_assault_husk.unit" load="true"/>
+
+		<file :name="shared_textures/grenadier_atlas_df.texture" force="false"/>
+		<file :name="shared_textures/grenadier_atlas_nm.texture" force="false"/>
+		<file :name="shared_textures/grenadier_body_df.texture" force="false"/>
+		<file :name="shared_textures/grenadier_body_nm.texture" force="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier.object" force="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier.cooked_physics" force="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier.model" force="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier.unit" force="false" load="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier.material_config" force="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier_contour.material_config" force="false"/>
+		<file :name="ene_deathvox_grenadier/ene_deathvox_grenadier_husk.unit" force="false" load="true"/>
+	</group>
+
+	<group name="units/pd2_mod_gageammo/pew_pew_lasers/">
+		<file :name="wpn_deathvox_guard_pistol.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_medic_pistol.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_light_ar.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_heavy_ar.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_shotgun_light.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_shotgun_heavy.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_sniper.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_medicdozer_smg.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_grenadier.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_greendozer.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_blackdozer.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_lmgdozer.unit" load="true" force="true"/>
+		<file :name="wpn_deathvox_cloaker.unit" load="true" force="true"/>
+	</group>
+
+	<file name="effects/particles/explosions/cs_grenade_smoke.effect" load="false" force="true"/>
+	<file name="effects/particles/weapons/trail_dv_sniper.effect" load="false" force="true"/>
+	<file name="effects/particles/character/taser_thread.effect" load="false" force="true"/>
+	
+</assets>

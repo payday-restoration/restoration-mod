@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal/wpn_fps_smg_schakal" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_schakal"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="deathvox_cloaker" />
+		</extension>
+	</extensions>
+</unit>

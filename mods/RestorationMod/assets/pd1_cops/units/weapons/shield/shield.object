@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="pd1_cops/units/weapons/shield/shield" orientation_object="rp_weapon" />
+	<sequence_manager file="pd1_cops/units/weapons/shield/shield" />
+	<bodies>
+		<body name="held_body" enabled="true" template="animated" collision_class = "ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision" >
+			<object name="rp_weapon" />
+			<object name="c_1" collision_type="box" padding="-2"/>
+			<object name="c_2" collision_type="box" padding="-2"/>
+		</body>
+		<body name="dropped_body" enabled="false" template="debris" collision_class = "ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision" >
+			<object name="rp_weapon" />
+			<object name="c_1" collision_type="box" padding="-2"/>
+			<object name="c_2" collision_type="box" padding="-2"/>
+		</body>
+	</bodies>    
+	<decal_surfaces default_material="shield">
+		<decal_mesh name="dm_body" enabled="true" material="shield" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_body" enabled="true"/>
+		<!--object name="s_body" enabled="true" shadow_caster="true" /-->
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<mod name="RestorationCoreShit" global_key="Restoration_assets">
+	<:include src="assets.xml" />
+</mod>

@@ -1,3 +1,6 @@
+CopBase._material_translation_map[tostring(Idstring("pd1_cops/units/characters/enemies/police_force"):key())] = Idstring("pd1_cops/units/characters/enemies/police_force_contour")
+CopBase._material_translation_map[tostring(Idstring("pd1_cops/units/characters/enemies/police_force_contour"):key())] = Idstring("pd1_cops/units/characters/enemies/police_force")
+
 function CopBase:init(unit)
 	UnitBase.init(self, unit, false)
 

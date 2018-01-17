@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<unit type="debris" slot="18">
+<network sync="spawn"/>
+  <object file="pd1_cops/units/characters/enemies/swat_kevlar1/kevlar_helmet" />
+  <dependencies>
+    <depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
+	<depends_on bnk="soundbanks/regular_sfx" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+  	<soundsource name="glass" source="e_glass" />
+  </sounds>
+</unit>

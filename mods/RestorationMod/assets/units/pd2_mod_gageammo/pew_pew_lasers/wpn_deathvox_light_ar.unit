@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+	<object file="units/payday2/weapons/wpn_fps_ass_aug/wpn_fps_ass_aug" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_aug"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="deathvox_light_ar" />
+		</extension>
+	</extensions>
+</unit>

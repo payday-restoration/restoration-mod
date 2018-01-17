@@ -68,6 +68,30 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.phalanx_minion_assault.hurt = ShieldActionHurt
 	CopMovement._action_variants.phalanx_minion_assault.walk = ShieldCopActionWalk
 	CopMovement._action_variants.spooc_titan = security_variant
+	CopMovement._action_variants.deathvox_shield = clone(security_variant)
+	CopMovement._action_variants.deathvox_shield.hurt = ShieldActionHurt
+	CopMovement._action_variants.deathvox_shield.walk = ShieldCopActionWalk
+	CopMovement._action_variants.deathvox_heavyar = security_variant
+	CopMovement._action_variants.deathvox_lightar = security_variant
+	CopMovement._action_variants.deathvox_medic = security_variant
+	CopMovement._action_variants.deathvox_guard = security_variant
+	CopMovement._action_variants.deathvox_lightshot = security_variant
+	CopMovement._action_variants.deathvox_heavyshot = security_variant
+
+	CopMovement._action_variants.deathvox_taser = security_variant
+	CopMovement._action_variants.deathvox_sniper_assault = security_variant
+	CopMovement._action_variants.deathvox_cloaker = security_variant
+	CopMovement._action_variants.deathvox_grenadier = security_variant
+	
+	CopMovement._action_variants.deathvox_greendozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_greendozer.walk = TankCopActionWalk
+	CopMovement._action_variants.deathvox_blackdozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_blackdozer.walk = TankCopActionWalk
+	CopMovement._action_variants.deathvox_lmgdozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_lmgdozer.walk = TankCopActionWalk
+	CopMovement._action_variants.deathvox_medicdozer = clone(security_variant)
+	CopMovement._action_variants.deathvox_medicdozer.walk = TankCopActionWalk
+
 end
 
 function CopMovement:post_init()
@@ -123,18 +147,14 @@ function CopMovement:post_init()
 	table.insert(event_list, "healed")
 	self._unit:character_damage():add_listener("movement", event_list, callback(self, self, "damage_clbk"))
 	self._unit:inventory():add_listener("movement", {"equip", "unequip"}, callback(self, self, "clbk_inventory"))
-	RestorationCore.log_shit("SC: ADDING WEAPONS")
 	self:add_weapons()
-	RestorationCore.log_shit("SC: WEAPONS ADDED")
 	if self._unit:inventory():is_selection_available(1) then
 		self._unit:inventory():equip_selection(1, true)
 	elseif self._unit:inventory():is_selection_available(2) then
 		self._unit:inventory():equip_selection(2, true)
 	end
 	if self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
-		RestorationCore.log_shit("SC: Stealth with secondary equipped, disabling weapon")
 		self._ext_inventory:set_weapon_enabled(false)
-		RestorationCore.log_shit("SC: Secondary disabled")
 	end
 	local weap_name = self._ext_base:default_weapon_name(managers.groupai:state():enemy_weapons_hot() and "primary" or "secondary")
 	local fwd = self._m_rot:y()
@@ -163,8 +183,53 @@ function CopMovement:post_init()
 	if self._gnd_ray then
 		self:set_position(self._gnd_ray.position)
 	end
-	self._omnia_cooldown = 0
 	self:_post_init()
+end
+
+
+function CopMovement:add_weapons()
+	if self._tweak_data.use_factory then
+		local weapon_to_use = self._tweak_data.factory_weapon_id[ math.random( #self._tweak_data.factory_weapon_id ) ]
+		local weapon_cosmetic = self._tweak_data.weapon_cosmetic_string
+		if weapon_to_use then
+			if weapon_cosmetic then
+				self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, weapon_cosmetic, "")
+			else
+				self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, nil, "")
+			end
+		end
+	else
+		local prim_weap_name = self._ext_base:default_weapon_name("primary")
+		local sec_weap_name = self._ext_base:default_weapon_name("secondary")
+		if prim_weap_name then
+			self._unit:inventory():add_unit_by_name(prim_weap_name)
+		end
+		if sec_weap_name and sec_weap_name ~= prim_weap_name then
+			self._unit:inventory():add_unit_by_name(sec_weap_name)
+		end
+	end
+end
+
+function CopMovement:_chk_play_equip_weapon()
+	if self._stance.values[1] == 1 and not self._ext_anim.equip and not self._tweak_data.no_equip_anim and not self:chk_action_forbidden("action") then
+		local redir_res = self:play_redirect("equip")
+		if redir_res then
+			local weapon_unit = self._ext_inventory:equipped_unit()
+			if weapon_unit then
+				local weap_tweak = weapon_unit:base():weapon_tweak_data()
+				local weapon_hold = weap_tweak.hold
+				if type(weap_tweak.hold) == "table" then
+					local num = #weap_tweak.hold + 1
+					for i, hold_type in ipairs(weap_tweak.hold) do
+						self._machine:set_parameter(redir_res, "to_" .. hold_type, num - i)
+					end
+				else
+					self._machine:set_parameter(redir_res, "to_" .. weap_tweak.hold, 1)
+				end
+			end
+		end
+	end
+	self._ext_inventory:set_weapon_enabled(true)
 end
 
 function CopMovement:_upd_actions(t)
@@ -267,54 +332,6 @@ function CopMovement:do_omnia(self)
 	else
 		RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
 	end
-end
-
-function CopMovement:add_weapons()
-	if self._tweak_data.use_factory then
-		local weapon_to_use = self._tweak_data.factory_weapon_id[ math.random( #self._tweak_data.factory_weapon_id ) ]
-		local weapon_cosmetic = self._tweak_data.weapon_cosmetic_string
-		RestorationCore.log_shit("SC: WEAPON TO USE " .. weapon_to_use)
-		if weapon_to_use then
-			if weapon_cosmetic then
-				self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, weapon_cosmetic, "")
-			else
-				self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, nil, "")
-			end
-			RestorationCore.log_shit("SC: PRIMARY ADDED")
-		end
-	else
-		local prim_weap_name = self._ext_base:default_weapon_name("primary")
-		local sec_weap_name = self._ext_base:default_weapon_name("secondary")
-		if prim_weap_name then
-			self._unit:inventory():add_unit_by_name(prim_weap_name)
-		end
-		if sec_weap_name and sec_weap_name ~= prim_weap_name then
-			self._unit:inventory():add_unit_by_name(sec_weap_name)
-		end
-	end
-end
-
-function CopMovement:_chk_play_equip_weapon()
-	if self._stance.values[1] == 1 and not self._ext_anim.equip and not self._tweak_data.no_equip_anim and not self:chk_action_forbidden("action") then
-		local redir_res = self:play_redirect("equip")
-		if redir_res then
-			local weapon_unit = self._ext_inventory:equipped_unit()
-			if weapon_unit then
-				local weap_tweak = weapon_unit:base():weapon_tweak_data()
-				RestorationCore.log_shit("SC: Weapon tweak found! " .. tostring(weap_tweak.sounds.prefix))
-				local weapon_hold = weap_tweak.hold
-				if type(weap_tweak.hold) == "table" then
-					local num = #weap_tweak.hold + 1
-					for i, hold_type in ipairs(weap_tweak.hold) do
-						self._machine:set_parameter(redir_res, "to_" .. hold_type, num - i)
-					end
-				else
-					self._machine:set_parameter(redir_res, "to_" .. weap_tweak.hold, 1)
-				end
-			end
-		end
-	end
-	self._ext_inventory:set_weapon_enabled(true)
 end
 
 end

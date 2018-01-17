@@ -62,14 +62,28 @@ if not _G.restoration then
 	blt.xaudio.setup()
 	_G.restoration.BufferedSounds = {
 		grenadier = {
-			death = XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/death.ogg"),
-			spot_heister = {
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted1.ogg"),
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted2.ogg"),
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted3.ogg"),
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted4.ogg")
+			death = {
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death1.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death2.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death3.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death4.ogg")
 			},
-			use_gas = XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg")
+			spawn = {
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_spawn1.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_spawn2.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_spawn3.ogg")
+			},
+			spot_heister = {
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_contact3.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_contact2.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_contact1.ogg")
+			},
+			use_gas = {
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_1.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_2.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_3.ogg"),
+				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")
+			}
 		},
 		medicdozer = {
 			heal = {}

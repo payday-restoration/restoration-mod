@@ -1072,4 +1072,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return type == "swat" or type == "fbi" or type == "cop" or type == "security"
 	end
 
+	function CopDamage:_spawn_head_gadget(params)
+		if not self._head_gear then
+			return
+		end
+		if self._head_gear_object then
+			if self._nr_head_gear_objects then
+				for i = 1, self._nr_head_gear_objects do
+					local head_gear_obj_name = self._head_gear_object .. tostring(i)
+					if self._unit:base():char_tweak().use_pdth_shit then
+						head_gear_obj_name = self._head_gear_object
+					end
+					if self._unit and head_gear_obj_name and self._unit:get_object(Idstring(head_gear_obj_name)) then
+						self._unit:get_object(Idstring(head_gear_obj_name)):set_visibility(false)
+					end
+				end
+			else
+				self._unit:get_object(Idstring(self._head_gear_object)):set_visibility(false)
+			end
+			if self._head_gear_decal_mesh then
+				local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
+				self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("flesh"))
+			end
+		end
+		local unit = World:spawn_unit(Idstring(self._head_gear), params.position, params.rotation)
+		if not params.skip_push then
+			local dir = math.UP - params.dir / 2
+			dir = dir:spread(25)
+			local body = unit:body(0)
+			body:push_at(body:mass(), dir * math.lerp(300, 650, math.random()), unit:position() + Vector3(math.rand(1), math.rand(1), math.rand(1)))
+		end
+		self._head_gear = false
+	end
+	
 end

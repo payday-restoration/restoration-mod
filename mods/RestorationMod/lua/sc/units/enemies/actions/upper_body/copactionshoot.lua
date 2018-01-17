@@ -31,20 +31,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local target_pos, target_vec, target_dis, autotarget
 		local _time = math.floor(TimerManager:game():time())
 		self._throw_projectile_time = self._throw_projectile_time or 0
-		if self._unit:base()._tweak_table == "boom" and self._throw_projectile_time < _time then
+		if (self._unit:base()._tweak_table == "deathvox_grenadier" or self._unit:base()._tweak_table == "boom" or self._unit:base()._tweak_table == "rboom") and self._throw_projectile_time < _time then
 			if self._shooting_player then
-				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
-				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 				local roll = math.rand(1, 100)
-				local chance_gas = 25
-				if roll <= chance_gas then
-					self._unit:base():play_voiceline(_G.restoration.BufferedSounds.grenadier.use_gas, true)
-					deploy_gas(shoot_from_pos, target_vec)
-				else
-					local dildo = _G.restoration.BufferedSounds.grenadier.spot_heister
-					local voiceline_to_use = dildo[math.random(#dildo)]
-					self._unit:base():play_voiceline(voiceline_to_use)			
+				if self._throw_projectile_time < _time then
+					local chance_gas = 25
+					if roll <= chance_gas and not managers.groupai:state()._cs_grenade and not Network:is_client() then
+						self._throw_projectile_time = _time + math.round_with_precision(10, 2)
+						shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
+						target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+						local dildo = _G.restoration.BufferedSounds.grenadier.use_gas
+						local voiceline_to_use = dildo[math.random(#dildo)]
+						self._unit:base():play_voiceline(voiceline_to_use, true)
+						deploy_gas(shoot_from_pos, target_vec)
+					else
+						roll = math.rand(1, 100)
+						if roll <= 15 then
+							local dildo = _G.restoration.BufferedSounds.grenadier.spot_heister
+							local voiceline_to_use = dildo[math.random(#dildo)]
+							self._unit:base():play_voiceline(voiceline_to_use)
+						end
+					end
 				end
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
@@ -56,19 +63,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 				throw_molly(shoot_from_pos, target_vec)
 				self._ext_movement:play_redirect("throw_grenade")
-			else
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-			end
-		elseif self._unit:base()._tweak_table == "rboom" and self._throw_projectile_time < _time then
-			if self._shooting_player then
-				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
-				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
-				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-				local roll = math.rand(1, 100)
-				local chance_gas = 25
-				if roll <= chance_gas then
-					deploy_gas(shoot_from_pos, target_vec)
-				end
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			end

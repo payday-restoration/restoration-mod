@@ -18,10 +18,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:anim_data() and self._unit:anim_data().act then
 			return false
 		end
-		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
+		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" or "deathvox_medic" or "deathvox_medicdozer" then
+
 			local tweak_table = unit:base()._tweak_table
-			if table.contains(tweak_data.medic.disabled_units, tweak_table) then
-				return false
+			if difficulty_index == 8 then
+				if table.contains(crackdown_disable_heal, tweak_table)  then
+					return false
+				end
+			else
+				if table.contains(tweak_data.medic.disabled_units, tweak_table) then
+					return false
+				end
 			end
 			if unit:brain() and unit:brain()._logic_data then
 				local team = unit:brain()._logic_data.team

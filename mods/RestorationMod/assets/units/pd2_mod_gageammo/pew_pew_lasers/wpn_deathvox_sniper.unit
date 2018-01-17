@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_turtles/weapons/wpn_fps_snp_wa2000/wpn_fps_snp_wa2000" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_lakner"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="DeathVoxSniperWeaponBase" >
+			<var name="name_id" value="deathvox_sniper" />
+		</extension>
+	</extensions>
+</unit>

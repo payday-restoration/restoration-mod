@@ -1,0 +1,29 @@
+<materials version="3" group="police_force">
+    <material version="2" unique="true" name="police_force" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER">
+        <bump_normal_texture file="pd1_cops/units/characters/enemies/textures/police_force_nm"/>
+        <diffuse_texture file="pd1_cops/units/characters/enemies/textures/police_force_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material version="2" unique="true" name="police_force_no_skin" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER">
+        <bump_normal_texture file="pd1_cops/units/characters/enemies/textures/police_force_nm"/>
+        <diffuse_texture file="pd1_cops/units/characters/enemies/textures/police_force_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material version="2" name="glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+        <variable value="0 0.97999995946884 1" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="pd1_cops/units/glass/tank_glass_op"/>
+        <diffuse_texture file="pd1_cops/units/glass/tank_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material name="police_force_lod1" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER" version="2">
+        <diffuse_texture file="pd1_cops/units/characters/enemies/textures/police_force_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="police_force_lod2" unique="true" render_template="generic:CONTOUR:RL_COPS:SKINNED_1WEIGHT:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER" version="2">
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+</materials>

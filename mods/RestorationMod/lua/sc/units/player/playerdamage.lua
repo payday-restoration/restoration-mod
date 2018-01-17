@@ -8,7 +8,10 @@ function PlayerDamage:init(unit)
 	self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)
 	self._revives = Application:digest_value(0, true)
 	self._uppers_elapsed = 0
-
+	if difficulty_index == 8 then
+		self._lives_init = 3
+		self._lives_init = managers.crime_spree:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
+	end
 	self:replenish()
 
 	local player_manager = managers.player

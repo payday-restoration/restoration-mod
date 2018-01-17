@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="pd1_cops/units/characters/enemies/police_force" orientation_object="rp_cap" />
+  <bodies>
+    <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false"> <!--error in havok forces pushed_by_mover="false" to be used to not collide with mover-->
+    	<object name="rp_cap" enabled="true" />
+      	<object name="c_cap" enabled="true" collision_type="box" mass="5"/>
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_cap" enabled="true"  />
+  </graphics>
+  <decal_surfaces default_material="cloth">
+  </decal_surfaces>
+</dynamic_object>

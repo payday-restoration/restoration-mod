@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="pd1_cops/units/characters/enemies/police_force" orientation_object="rp_baton" />
+  <graphics>
+    <object name="g_baton" enabled="true"  />
+  </graphics>
+</dynamic_object>

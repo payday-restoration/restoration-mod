@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<unit type="being" slot="12">
+	
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	
+	<object file="pd1_cops/units/characters/enemies/security/security_guard_01" />
+	
+	<dependencies>
+  		<depends_on animation_state_machine="anims/units/enemies/cop/cop_machine" animation_def="anims/units/enemies/cop/cop_def" />
+  		<depends_on unit="pd1_cops/units/characters/enemies/security/cap" />
+  </dependencies>
+  
+  <extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="CopBase" >
+			<var name="_tweak_table" value="security" />
+			<var name="_default_weapon_id" value="c45" />
+		</extension>
+		<extension name="inventory" class="CopInventory" />
+		<extension name="brain" class="CopBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="CopDamage">
+			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_cap" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="pd1_cops/units/characters/enemies/security/cap" />
+		</extension>
+		<extension name="movement" class="CopMovement" >
+			<var name="_footwear" value="hardsole" />
+			<var name="_anim_global" value="cop" />
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt" >
+			<var name="tweak_data" value="intimidate" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_skip_save_anim_state_machine" value="true" />
+		</extension>
+		<extension name="contour" class="ContourExt" />
+		<extension name="sound" class="CopSound" />
+	</extensions>
+  
+  <network sync="spawn" remote_unit="pd1_cops/units/multiplayer/security_husk/security_guard_01_husk"/>
+	
+  <sounds>
+		<default_soundsource source="Hips"/>
+
+  </sounds>
+  
+</unit>

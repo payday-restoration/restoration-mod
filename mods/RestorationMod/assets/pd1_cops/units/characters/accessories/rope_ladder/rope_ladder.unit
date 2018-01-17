@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<unit type="static" slot="1">
+<network sync="spawn"/>
+  <object file="pd1_cops/units/characters/accessories/rope_ladder/rope_ladder" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

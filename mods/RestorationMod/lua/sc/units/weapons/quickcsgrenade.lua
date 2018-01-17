@@ -32,7 +32,7 @@ end
 function QuickCsGrenade:update(unit, t, dt)
 	local current_time = TimerManager:game():time()
 	if not self._remove_t then
-		self._remove_t =  current_time + _G.deathvox.grenadier_gas_duration
+		self._remove_t =  current_time + 15
 	end
 	if self._remove_t and self._remove_t < current_time then
 		managers.network:session():send_to_peers_synched("sync_cs_grenade_kill")

@@ -7700,7 +7700,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.DAMAGE = 3.5
 		self.ceiling_turret_module.CLIP_SIZE = 800
 		self.ceiling_turret_module.EXPLOSION_DMG_MUL = 3
-		self.ceiling_turret_module.BAG_DMG_MUL = 50
+		self.ceiling_turret_module.BAG_DMG_MUL = 10
 	end
 
 end

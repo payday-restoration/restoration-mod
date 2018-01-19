@@ -821,6 +821,8 @@ end
 
 function CharacterTweakData:_init_biker(presets)
 	self.biker = deep_clone(self.gangster)
+	self.biker.HEALTH_INIT = 4
+	self.biker.headshot_dmg_mul = 2.3	
 	self.biker.calls_in = true
 	if job == "born" or job == "chew" then
 		self.biker.speech_prefix_p1 = "nl"
@@ -866,6 +868,23 @@ function CharacterTweakData:_init_biker(presets)
 		suppress = true
  	}
 	self.biker_guard.static_dodge_preset = false
+	table.insert(self._enemy_list, "biker_guard")
+end
+
+function CharacterTweakData:_init_captain(presets)
+	self.captain = deep_clone(self.gangster)
+	self.captain.calls_in = true
+	self.captain.immune_to_knock_down = true
+	self.captain.immune_to_concussion = true
+	self.captain.no_retreat = true
+	self.captain.no_arrest = true
+	self.captain.surrender = nil
+	self.captain.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.captain.flammable = false
+	self.captain.can_be_tased = false
+	self.captain.suppression = nil
+
+	table.insert(self._enemy_list, "captain")
 end
 
 function CharacterTweakData:_init_biker_escape(presets)

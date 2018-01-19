@@ -254,7 +254,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					fbi_vet = 2,
 					spring = 1,
 					summers = 1
-				}				
+				}	
+			elseif difficulty_index == 8 then
+				self.special_unit_spawn_limits = {
+					tank = 3,
+					taser = 4,
+					boom = 2,
+					spooc = 4,
+					shield = 6,
+					medic = 4,
+					ass_sniper = 3,
+					omnia_LPF = 3,
+					fbi_vet = 2,
+					spring = 1,
+					summers = 1
+				}	
 			else
 				self.special_unit_spawn_limits = {
 					tank = 3,

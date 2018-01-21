@@ -456,4 +456,13 @@ function PlayerDamage:clbk_kill_taunt_spring(attack_data)
 	end
 end	
 
+function PlayerDamage:on_arrested()
+	self._bleed_out = false
+	self._arrested_timer = tweak_data.player.damage.ARRESTED_TIME * managers.player:upgrade_value("player", "pick_lock_easy_speed_multiplier", 1)
+	self._arrested_paused_counter = 0
+
+	managers.hud:pd_start_timer({time = self._arrested_timer})
+	managers.hud:on_arrested()
+end
+
 end

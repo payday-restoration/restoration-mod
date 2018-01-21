@@ -681,7 +681,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Nimble--
 		["menu_second_chances_beta_sc"] = "Nimble",
-		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##25## seconds.\n\nACE: ##$pro##\nYou lockpick ##75%## faster and now you can ##lockpick safes.##\n\nThe duration of marked enemies is increased by ##100%## and you can now mark specials by aiming at them with any weapon.",	
+		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##25## seconds.\n\nACE: ##$pro##\nYou pick all locks and handcuffs ##75%## faster and now you can ##lockpick safes.##\n\nThe duration of marked enemies is increased by ##100%## and you can now mark specials by aiming at them with any weapon.",	
 
 		--ECM Specialist--
 		["menu_ecm_2x_beta_sc"] = "ECM Specialist",

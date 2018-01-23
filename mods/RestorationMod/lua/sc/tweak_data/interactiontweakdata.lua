@@ -64,4 +64,28 @@ function InteractionTweakData:init(...)
 	self.res_lvl_assault_shatter.text_id = "res_lvl_assault_shatter"
 	self.res_lvl_assault_shatter.action_text_id = "res_lvl_assault_shatter_action"
 	self.res_lvl_assault_shatter.timer = 3
+	
+	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+		--Skill based shaped charges--
+		self.shaped_sharge = {
+			icon = "equipment_c4",
+			text_id = "hud_int_equipment_shaped_charge",
+			contour = "interactable_icon",
+			required_deployable = "trip_mine",
+			deployable_consume = true,
+			timer = 2,
+			sound_start = "bar_c4_apply",
+			sound_interupt = "bar_c4_apply_cancel",
+			sound_done = "bar_c4_apply_finished",
+			upgrade_timer_multiplier = {
+				upgrade = "trip_mine_deploy_time_multiplier",
+				category = "player"
+			},			
+			action_text_id = "hud_action_placing_shaped_charge",
+			slot = 2,
+			blocked_hint = ""
+		}	
+		self.shaped_charge_single = deep_clone(self.shaped_sharge)
+		self.shaped_charge_single.axis = "z"		
+	end
 end

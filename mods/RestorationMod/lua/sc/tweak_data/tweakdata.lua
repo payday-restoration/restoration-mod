@@ -203,7 +203,6 @@ if not tweak_data then return end
 
 	tweak_data.interaction.drill_upgrade.timer = 3
 	tweak_data.interaction.gen_int_saw_upgrade.timer = 3
-	tweak_data.interaction.shaped_sharge.timer = 1
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0

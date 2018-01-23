@@ -1021,14 +1021,17 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"shape_charge_quantity_increase_1",
-						"trip_mine_quantity_increase_1"
+						"trip_mine_quantity_increase_1",
+						"player_trip_mine_deploy_time_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
 						"shape_charge_quantity_increase_2",
-						"trip_mine_quantity_increase_2"
+						"trip_mine_quantity_increase_2",
+						"player_trip_mine_deploy_time_multiplier_2"
+						
 					},
 					cost = self.costs.hightierpro
 				}

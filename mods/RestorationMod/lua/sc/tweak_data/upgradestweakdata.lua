@@ -438,6 +438,10 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.drill_speed_multiplier = {0.85, 0.7}
 				
 				--Demoman
+				self.values.player.trip_mine_deploy_time_multiplier = {
+					0.8,
+					0.6
+				}				
 				--Located in tweakdata.lua since their quantity is hardcoded in the exe
 
 				--Kickstarter

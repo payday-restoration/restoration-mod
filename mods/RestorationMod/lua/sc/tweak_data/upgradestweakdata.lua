@@ -1252,7 +1252,27 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "movement_speed_multiplier",
 			category = "player"
 		}
-	}			
+	}	
+	self.definitions.player_trip_mine_deploy_time_multiplier_1 = {
+		incremental = true,
+		name_id = "menu_player_trip_mine_deploy_time_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "trip_mine_deploy_time_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_trip_mine_deploy_time_multiplier_2 = {
+		incremental = true,
+		name_id = "menu_player_trip_mine_deploy_time_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "trip_mine_deploy_time_multiplier",
+			category = "player"
+		}
+	}	
 end
 
 function UpgradesTweakData:_smg_definitions()

@@ -18,27 +18,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	function CriminalActionWalk:_get_max_walk_speed()
 		local speed = deep_clone(CriminalActionWalk.super._get_max_walk_speed(self))
-
+		
 		if self._ext_movement:carrying_bag() then
-			local speed_modifier = tweak_data.carry.types[tweak_data.carry[self._ext_movement:carry_id()].type].move_speed_modifier * 1.5
-
-			for k, v in pairs(speed) do
-				speed[k] = v * 1
+			local carry_mod = tweak_data.carry.types[tweak_data.carry[self._ext_movement:carry_id()].type].move_speed_modifier
+			local speed_modifier = (carry_mod * 1.5) > 1 and 1 or carry_mod
+			for k = 1, #speed do
+				local v = speed[k]
+				v = v * speed_modifier
 			end
 		end
-
+		
 		return speed
 	end
-
+	
 	function CriminalActionWalk:_get_current_max_walk_speed(move_dir)
 		local speed = CriminalActionWalk.super._get_current_max_walk_speed(self, move_dir)
-
+		
 		if self._ext_movement:carrying_bag() then
-			local speed_modifier = tweak_data.carry.types[tweak_data.carry[self._ext_movement:carry_id()].type].move_speed_modifier * 1.5
-			speed = speed * 1
+			local carry_mod = tweak_data.carry.types[tweak_data.carry[self._ext_movement:carry_id()].type].move_speed_modifier
+			local speed_modifier = (carry_mod * 1.5) > 1 and 1 or carry_mod
+			speed = speed * speed_modifier
 		end
-
+		
 		return speed
-	end	
+	end
 		
 end

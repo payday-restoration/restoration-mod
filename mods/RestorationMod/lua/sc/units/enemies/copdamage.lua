@@ -159,6 +159,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self._dead or self._invulnerable then
 			return
 		end
+		if self._unit:in_slot(22) then	
+			if attack_data.attacker_unit:in_slot(16) then
+				return
+			end
+		end
 		if self:is_friendly_fire(attack_data.attacker_unit) then
 			return "friendly_fire"
 		end

@@ -87,5 +87,98 @@ function InteractionTweakData:init(...)
 		}	
 		self.shaped_charge_single = deep_clone(self.shaped_sharge)
 		self.shaped_charge_single.axis = "z"		
+		
+		--Mission C4
+		self.c4 = {
+			icon = "equipment_c4",
+			text_id = "debug_interact_c4",
+			timer = 2,
+			sound_start = "bar_c4_apply",
+			sound_interupt = "bar_c4_apply_cancel",
+			sound_done = "bar_c4_apply_finished",
+			upgrade_timer_multiplier = {
+				upgrade = "trip_mine_deploy_time_multiplier",
+				category = "player"
+			},					
+			action_text_id = "hud_action_placing_c4"
+		}	
+		self.c4_mission_door = deep_clone(self.c4)
+		self.c4_mission_door.special_equipment = "c4"
+		self.c4_mission_door.equipment_text_id = "debug_interact_equipment_c4"
+		self.c4_mission_door.equipment_consume = true		
+		self.c4_special = {
+			icon = "equipment_c4",
+			text_id = "debug_interact_c4",
+			equipment_text_id = "debug_interact_equipment_c4",
+			equipment_consume = true,
+			timer = 2,
+			sound_start = "bar_c4_apply",
+			sound_interupt = "bar_c4_apply_cancel",
+			sound_done = "bar_c4_apply_finished",
+			axis = "z",
+			upgrade_timer_multiplier = {
+				upgrade = "trip_mine_deploy_time_multiplier",
+				category = "player"
+			},			
+			action_text_id = "hud_action_placing_c4"
+		}
+		self.c4_bag = {
+			text_id = "debug_interact_c4_bag",
+			timer = 4,
+			contour = "interactable",
+			axis = "z",
+			sound_start = "bar_bag_generic",
+			sound_interupt = "bar_bag_generic_cancel",
+			upgrade_timer_multiplier = {
+				upgrade = "trip_mine_deploy_time_multiplier",
+				category = "player"
+			},			
+			sound_done = "bar_bag_generic_finished"
+		}
+		self.c4_x1_bag = {
+			text_id = "debug_interact_c4_bag",
+			timer = 4,
+			contour = "interactable",
+			sound_start = "bar_bag_generic",
+			sound_interupt = "bar_bag_generic_cancel",
+			upgrade_timer_multiplier = {
+				upgrade = "trip_mine_deploy_time_multiplier",
+				category = "player"
+			},					
+			sound_done = "bar_bag_generic_finished"
+		}		
+		self.shape_charge_plantable = {
+			text_id = "debug_interact_c4",
+			action_text_id = "hud_action_placing_c4",
+			equipment_text_id = "debug_interact_equipment_c4",
+			special_equipment = "c4",
+			equipment_consume = true,
+			axis = "z",
+			timer = 2,
+			sound_start = "bar_c4_apply",
+			sound_interupt = "bar_c4_apply_cancel",
+			upgrade_timer_multiplier = {
+				upgrade = "trip_mine_deploy_time_multiplier",
+				category = "player"
+			},			
+			sound_done = "bar_c4_apply_finished"
+		}		
+		self.shape_charge_plantable_c4_1 = deep_clone(self.shape_charge_plantable)
+		self.shape_charge_plantable_c4_1.special_equipment = "c4_1"
+		self.shape_charge_plantable_c4_x1 = deep_clone(self.shape_charge_plantable)
+		self.shape_charge_plantable_c4_x1.special_equipment = "c4_x1"
+		self.shape_charge_plantable_c4_x1.interact_distance = 500	
+		self.c4_x10 = deep_clone(self.c4_mission_door)
+		self.c4_x10.special_equipment = "c4_x10"
+		self.c4_x10.axis = "z"	
+		self.c4_consume = deep_clone(self.c4_special)
+		self.c4_consume.special_equipment = "c4"
+		self.c4_consume.equipment_consume = true	
+		self.c4_consume_x1 = deep_clone(self.c4_special)
+		self.c4_consume_x1.special_equipment = "c4_x1"
+		self.c4_consume_x1.equipment_consume = true		
+		self.c4_consume_x3 = deep_clone(self.c4_special)
+		self.c4_consume_x3.special_equipment = "c4_x3"
+		self.c4_consume_x3.equipment_consume = true
 	end
 end

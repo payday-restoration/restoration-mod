@@ -1,5 +1,18 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	local init_original = NewNPCRaycastWeaponBase.init
+	local setup_original = NewNPCRaycastWeaponBase.setup
+
+	function NewNPCRaycastWeaponBase:init(...)
+		init_original(self, ...)
+		self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(22)
+	end
+
+	function NewNPCRaycastWeaponBase:setup(...)
+		setup_original(self, ...)
+		self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(22)
+	end
+
 	local mvec_to = Vector3()
 	local mvec_spread = Vector3()
 	local mvec1 = Vector3()

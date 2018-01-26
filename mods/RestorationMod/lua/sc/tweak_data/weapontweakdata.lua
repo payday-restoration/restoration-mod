@@ -434,6 +434,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.c45_npc.hold = "pistol"
 		self.c45_npc.alert_size = 3500
 		self.c45_npc.suppression = 2
+		self.c45_npc.FIRE_MODE = "single"
 		self.colt_1911_primary_npc = deep_clone(self.c45_npc)
 		self.colt_1911_primary_npc.DAMAGE = 3
 		self.colt_1911_primary_npc.use_data.selection_index = 2
@@ -451,6 +452,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.x_c45_npc.hold = "akimbo_pistol"
 		self.x_c45_npc.alert_size = 3500
 		self.x_c45_npc.suppression = 2
+		self.x_c45_npc.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_beretta92_npc()
@@ -465,6 +467,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.hold = "pistol"
 		self.beretta92_npc.alert_size = 0
 		self.beretta92_npc.suppression = 0.1
+		self.beretta92_npc.FIRE_MODE = "single"
 		self.beretta92_npc.has_suppressor = "suppressed_a"
 		self.beretta92_primary_npc = deep_clone(self.beretta92_npc)
 		self.beretta92_primary_npc.use_data.selection_index = 2
@@ -482,6 +485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.raging_bull_npc.hold = "pistol"
 		self.raging_bull_npc.alert_size = 10000
 		self.raging_bull_npc.suppression = 3.1
+		self.raging_bull_npc.FIRE_MODE = "single"
 		self.peacemaker_npc = deep_clone(self.raging_bull_npc)
 		self.peacemaker_npc.DAMAGE = 14.1
 		self.peacemaker_npc.armor_piercing = true
@@ -501,6 +505,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_npc.hold = "rifle"
 		self.m4_npc.alert_size = 4000
 		self.m4_npc.suppression = 2.2
+		self.m4_npc.FIRE_MODE = "auto"
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
 		self.m4_secondary_npc.use_data.selection_index = 1
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
@@ -523,6 +528,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ak47_npc.hold = "rifle"
 		self.ak47_npc.alert_size = 7500
 		self.ak47_npc.suppression = 2.8
+		self.ak47_npc.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_m14_sniper_npc()
@@ -540,6 +546,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m14_sniper_npc.alert_size = 10000
 		self.m14_sniper_npc.suppression = 3.1
 		self.m14_sniper_npc.armor_piercing = true
+		self.m14_sniper_npc.FIRE_MODE = "single"
 		self.svd_snp_npc = deep_clone(self.m14_sniper_npc)
 		self.svdsil_snp_npc = deep_clone(self.m14_sniper_npc)
 		self.svdsil_snp_npc.has_suppressor = "suppressed_a"
@@ -561,6 +568,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.is_shotgun = true
 		self.r870_npc.rays = 9
 		self.r870_npc.spread = 3.5
+		self.r870_npc.FIRE_MODE = "single"
 		self.benelli_npc = deep_clone(self.r870_npc)
 		self.benelli_npc.sounds.prefix = "remington_npc"
 		self.benelli_npc.DAMAGE = 7
@@ -581,6 +589,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mossberg_npc.is_shotgun = true
 		self.mossberg_npc.rays = 9
 		self.mossberg_npc.spread = 3.5
+		self.mossberg_npc.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_mp5_npc()
@@ -596,6 +605,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp5_npc.hold = "rifle"
 		self.mp5_npc.alert_size = 3500
 		self.mp5_npc.suppression = 2
+		self.mp5_npc.FIRE_MODE = "auto"
 		self.mp5_tactical_npc = deep_clone(self.mp5_npc)
 		self.mp5_tactical_npc.has_suppressor = "suppressed_a"
 		self.mp5_tactical_npc.DAMAGE = 3.1
@@ -632,6 +642,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mac11_npc.alert_size = 3500
 		self.mac11_npc.hold = {"uzi", "pistol"}
 		self.mac11_npc.suppression = 2
+		self.mac11_npc.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_g36_npc()
@@ -646,6 +657,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.g36_npc.hold = "rifle"
 		self.g36_npc.alert_size = 3500
 		self.g36_npc.suppression = 2
+		self.g36_npc.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_mp9_npc()
@@ -661,6 +673,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp9_npc.hold = "pistol"
 		self.mp9_npc.alert_size = 3500
 		self.mp9_npc.suppression = 2
+		self.mp9_npc.FIRE_MODE = "auto"
 		self.sr2_smg_npc = deep_clone(self.mp9_npc)
 	end
 
@@ -679,6 +692,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_npc.is_shotgun = true
 		self.saiga_npc.rays = 9
 		self.saiga_npc.spread = 3.5
+		self.saiga_npc.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_swat_van_turret_module_npc()
@@ -849,6 +863,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.s552_npc.hold = "rifle"
 		self.s552_npc.alert_size = 4000
 		self.s552_npc.suppression = 2.2
+		self.s552_npc.FIRE_MODE = "auto"
 	end	
 
 	function WeaponTweakData:_init_data_scar_npc()
@@ -863,6 +878,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.hold = "rifle"
 		self.scar_npc.alert_size = 6000
 		self.scar_npc.suppression = 2.8
+		self.scar_npc.FIRE_MODE = "auto"
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
 		self.asval_smg_npc = deep_clone(self.scar_npc)
@@ -882,6 +898,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_npc.hold = "rifle"
 		self.m249_npc.alert_size = 10000
 		self.m249_npc.suppression = 2
+		self.m249_npc.FIRE_MODE = "auto"
 		self.rpk_lmg_npc = deep_clone(self.m249_npc)
 		self.hk21_sc_npc = deep_clone(self.m249_npc)
 		self.hk21_sc_npc.sounds.prefix = "m249_npc"
@@ -910,6 +927,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_npc.hold = "rifle"
 		self.contraband_npc.alert_size = 5000
 		self.contraband_npc.suppression = 2.4
+		self.contraband_npc.FIRE_MODE = "auto"		
 		self.contraband_m203_npc.sounds.prefix = "contrabandm203_npc"
 		self.contraband_m203_npc.use_data.selection_index = 2
 		self.contraband_m203_npc.DAMAGE = 80
@@ -937,6 +955,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mini_npc.hold = "rifle"
 		self.mini_npc.alert_size = 5000
 		self.mini_npc.suppression = 2
+		self.mini_npc.FIRE_MODE = "auto"
 	end
 
 	--Crew weapons but not really--
@@ -957,6 +976,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flamethrower_mk2_crew.hud_icon = "rifle"
 		self.flamethrower_mk2_crew.alert_size = 3500
 		self.flamethrower_mk2_crew.suppression = 3.1
+		self.flamethrower_mk2_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_p90_crew()
@@ -974,6 +994,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.p90_crew.hold = {"bullpup", "rifle"}
 		self.p90_crew.alert_size = 1000
 		self.p90_crew.suppression = 0.1
+		self.p90_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_peacemaker_crew()
@@ -991,6 +1012,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.peacemaker_crew.alert_size = 5000
 		self.peacemaker_crew.suppression = 3.1
 		self.peacemaker_crew.armor_piercing = true
+		self.peacemaker_crew.FIRE_MODE = "single"
 		self.six_shots = deep_clone(self.peacemaker_crew)
 		self.six_shots.CLIP_AMMO_MAX = 12
 		self.six_shots.NR_CLIPS_MAX = 8
@@ -1012,6 +1034,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.olympic_crew.hold = "rifle"
 		self.olympic_crew.alert_size = 1000
 		self.olympic_crew.suppression = 2.4
+		self.olympic_crew.FIRE_MODE = "auto"
 		self.olympic_primary_crew = deep_clone(self.olympic_crew)
 		self.olympic_primary_crew.use_data.selection_index = 2
 	end
@@ -1030,6 +1053,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.raging_bull_crew.reload = "revolver"
 		self.raging_bull_crew.alert_size = 5000
 		self.raging_bull_crew.suppression = 1.8
+		self.raging_bull_crew.FIRE_MODE = "single"
 		self.raging_bull_primary_crew = deep_clone(self.raging_bull_crew)
 		self.raging_bull_primary_crew.use_data.selection_index = 2
 		
@@ -1049,6 +1073,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.akm_gold_crew.hold = "rifle"
 		self.akm_gold_crew.alert_size = 5000
 		self.akm_gold_crew.suppression = 3.4
+		self.akm_gold_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_amcar_crew()
@@ -1064,6 +1089,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.amcar_crew.hold = "rifle"
 		self.amcar_crew.alert_size = 5000
 		self.amcar_crew.suppression = 2
+		self.amcar_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_ak74_crew()
@@ -1079,6 +1105,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ak74_crew.hold = "rifle"
 		self.ak74_crew.alert_size = 5000
 		self.ak74_crew.suppression = 1
+		self.ak74_crew.FIRE_MODE = "auto"
 		self.ak74_secondary_crew = deep_clone(self.ak74_crew)
 		self.ak74_secondary_crew.use_data.selection_index = 1
 	end
@@ -1096,6 +1123,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_crew.alert_size = 5000
 		self.m4_crew.suppression = 2.2
 		self.m4_crew.pull_magazine_during_reload = "rifle"
+		self.m4_crew.FIRE_MODE = "auto"
 		self.m4_secondary_crew = deep_clone(self.m4_crew)
 		self.m4_secondary_crew.use_data.selection_index = 1
 		self.ak47_ass_crew = deep_clone(self.m4_crew)
@@ -1114,6 +1142,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aug_crew.hold = {"bullpup", "rifle"}
 		self.aug_crew.alert_size = 5000
 		self.aug_crew.suppression = 2.6
+		self.aug_crew.FIRE_MODE = "auto"
 		self.aug_secondary_crew = deep_clone(self.aug_crew)
 		self.aug_secondary_crew.use_data.selection_index = 1
 	end
@@ -1131,6 +1160,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.akm_crew.hold = "rifle"
 		self.akm_crew.alert_size = 5000
 		self.akm_crew.suppression = 3.4
+		self.akm_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_g36_crew()
@@ -1146,6 +1176,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.g36_crew.hold = "rifle"
 		self.g36_crew.alert_size = 5000
 		self.g36_crew.suppression = 2.4
+		self.g36_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_m14_crew()
@@ -1161,6 +1192,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m14_crew.hold = "rifle"
 		self.m14_crew.alert_size = 5000
 		self.m14_crew.suppression = 3.4
+		self.m14_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_ak5_crew()
@@ -1176,6 +1208,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ak5_crew.hold = "rifle"
 		self.ak5_crew.alert_size = 5000
 		self.ak5_crew.suppression = 2.6
+		self.ak5_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_m16_crew()
@@ -1191,6 +1224,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m16_crew.alert_size = 5000
 		self.m16_crew.suppression = 2.8
 		self.m16_crew.pull_magazine_during_reload = "rifle"
+		self.m16_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_s552_crew()
@@ -1206,6 +1240,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.s552_crew.hold = "rifle"
 		self.s552_crew.alert_size = 5000
 		self.s552_crew.suppression = 2.6
+		self.s552_crew.FIRE_MODE = "auto"
 		self.s552_secondary_crew = deep_clone(self.s552_crew)
 		self.s552_secondary_crew.use_data.selection_index = 1
 	end
@@ -1223,6 +1258,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_crew.hold = "rifle"
 		self.scar_crew.alert_size = 5000
 		self.scar_crew.suppression = 1
+		self.scar_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_fal_crew()
@@ -1238,6 +1274,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fal_crew.hold = "rifle"
 		self.fal_crew.alert_size = 5000
 		self.fal_crew.suppression = 2.8
+		self.fal_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_famas_crew()
@@ -1253,6 +1290,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.famas_crew.hold = {"bullpup", "rifle"}
 		self.famas_crew.alert_size = 5000
 		self.famas_crew.suppression = 2.4
+		self.famas_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_galil_crew()
@@ -1268,6 +1306,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.galil_crew.hold = "rifle"
 		self.galil_crew.alert_size = 5000
 		self.galil_crew.suppression = 2.8
+		self.galil_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_g3_crew()
@@ -1283,6 +1322,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.g3_crew.hold = "rifle"
 		self.g3_crew.alert_size = 5000
 		self.g3_crew.suppression = 2.6
+		self.g3_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_l85a2_crew()
@@ -1300,6 +1340,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.l85a2_crew.reload = "bullpup"
 		self.l85a2_crew.alert_size = 5000
 		self.l85a2_crew.suppression = 2.6
+		self.l85a2_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_vhs_crew()
@@ -1316,6 +1357,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.vhs_crew.hold = {"bullpup", "rifle"}
 		self.vhs_crew.alert_size = 5000
 		self.vhs_crew.suppression = 2.4
+		self.vhs_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_asval_crew()
@@ -1331,6 +1373,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.asval_crew.hold = "rifle"
 		self.asval_crew.alert_size = 5000
 		self.asval_crew.suppression = 2.2
+		self.asval_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_tecci_crew()
@@ -1346,6 +1389,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tecci_crew.hold = "rifle"
 		self.tecci_crew.alert_size = 5000
 		self.tecci_crew.suppression = 2.8
+		self.tecci_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_contraband_crew()
@@ -1362,6 +1406,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_crew.reload = "rifle"
 		self.contraband_crew.alert_size = 5000
 		self.contraband_crew.suppression = 2.8
+		self.contraband_crew.FIRE_MODE = "auto"
 		self.contraband_m203_crew.sounds.prefix = "contrabandm203_npc"
 		self.contraband_m203_crew.use_data.selection_index = 2
 		self.contraband_m203_crew.DAMAGE = 2
@@ -1375,6 +1420,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_m203_crew.hold = {"bullpup", "rifle"}
 		self.contraband_m203_crew.alert_size = 2800
 		self.contraband_m203_crew.suppression = 1
+		self.contraband_m203_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_flint_crew()
@@ -1390,6 +1436,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flint_crew.hold = "rifle"
 		self.flint_crew.alert_size = 5000
 		self.flint_crew.suppression = 2.8
+		self.flint_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_spas12_crew()
@@ -1405,6 +1452,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spas12_crew.suppression = 3.4
 		self.spas12_crew.rays = 9
 		self.spas12_crew.is_shotgun = true
+		self.spas12_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_b682_crew()
@@ -1421,6 +1469,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.b682_crew.suppression = 3.4
 		self.b682_crew.rays = 9
 		self.b682_crew.is_shotgun = true
+		self.b682_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_r870_crew()
@@ -1436,6 +1485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_crew.suppression = 3.4
 		self.r870_crew.is_shotgun = true
 		self.r870_crew.rays = 9
+		self.r870_crew.FIRE_MODE = "single"
 		self.benelli_crew = deep_clone(self.r870_crew)
 	end
 
@@ -1454,6 +1504,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_crew.suppression = 3.4
 		self.saiga_crew.rays = 9
 		self.saiga_crew.is_shotgun = true
+		self.saiga_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_huntsman_crew()
@@ -1470,6 +1521,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.huntsman_crew.suppression = 3.4
 		self.huntsman_crew.is_shotgun = true
 		self.huntsman_crew.rays = 9
+		self.huntsman_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_ben_crew()
@@ -1487,6 +1539,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ben_crew.suppression = 3.4
 		self.ben_crew.is_shotgun = true
 		self.ben_crew.rays = 9
+		self.ben_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_ksg_crew()
@@ -1503,6 +1556,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ksg_crew.suppression = 3.7
 		self.ksg_crew.is_shotgun = true
 		self.ksg_crew.rays = 9
+		self.ksg_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_aa12_crew()
@@ -1520,6 +1574,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa12_crew.suppression = 3.1
 		self.aa12_crew.is_shotgun = true
 		self.aa12_crew.rays = 9
+		self.aa12_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_boot_crew()
@@ -1537,6 +1592,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boot_crew.suppression = 3.7
 		self.boot_crew.is_shotgun = true
 		self.boot_crew.rays = 9
+		self.boot_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_model70_crew()
@@ -1552,6 +1608,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.model70_crew.alert_size = 5000
 		self.model70_crew.suppression = 3.4
 		self.model70.is_sniper = true
+		self.model70_crew.FIRE_MODE = "single"
 		self.model70_secondary_crew = deep_clone(self.model70_crew)
 		self.model70_secondary_crew.use_data.selection_index = 1
 	end
@@ -1569,6 +1626,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.msr_crew.pull_magazine_during_reload = "rifle"
 		self.msr_crew.alert_size = 5000
 		self.msr_crew.suppression = 3.1
+		self.msr_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_r93_crew()
@@ -1584,6 +1642,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r93_crew.hold = "rifle"
 		self.r93_crew.alert_size = 5000
 		self.r93_crew.suppression = 3.4
+		self.r93_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_m95_crew()
@@ -1600,6 +1659,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m95_crew.auto.fire_rate = 1.2
 		self.m95_crew.alert_size = 5000
 		self.m95_crew.suppression = 3.7
+		self.m95_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_mosin_crew()
@@ -1614,6 +1674,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mosin_crew.hold = "rifle"
 		self.mosin_crew.alert_size = 5000
 		self.mosin_crew.suppression = 3.4
+		self.mosin_crew.FIRE_MODE = "single"
 		self.mosin_secondary_crew = deep_clone(self.mosin_crew)
 		self.mosin_secondary_crew.use_data.selection_index = 1
 	end
@@ -1631,6 +1692,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.winchester1874_crew.hold = "rifle"
 		self.winchester1874_crew.alert_size = 5000
 		self.winchester1874_crew.suppression = 3.1
+		self.winchester1874_crew.FIRE_MODE = "auto"
 		self.winchester1874_secondary_crew = deep_clone(self.winchester1874_crew)
 		self.winchester1874_secondary_crew.use_data.selection_index = 1
 	end
@@ -1649,6 +1711,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wa2000_crew.hold = {"bullpup", "rifle"}
 		self.wa2000_crew.alert_size = 5000
 		self.wa2000_crew.suppression = 3.1
+		self.wa2000_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_desertfox_crew()
@@ -1665,6 +1728,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.desertfox_crew.reload = "bullpup"
 		self.desertfox_crew.alert_size = 5000
 		self.desertfox_crew.suppression = 3.4
+		self.desertfox_crew.FIRE_MODE = "single"
 		self.desertfox_secondary_crew = deep_clone(self.desertfox_crew)
 		self.desertfox_secondary_crew.use_data.selection_index = 1
 	end
@@ -1683,6 +1747,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tti_crew.hold = "rifle"
 		self.tti_crew.alert_size = 5000
 		self.tti_crew.suppression = 3.1
+		self.tti_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_siltstone_crew()
@@ -1698,6 +1763,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.siltstone_crew.hold = "rifle"
 		self.siltstone_crew.alert_size = 5000
 		self.siltstone_crew.suppression = 3.1
+		self.siltstone_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_par_crew()
@@ -1712,6 +1778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.par_crew.hold = "rifle"
 		self.par_crew.alert_size = 5000
 		self.par_crew.suppression = 2.4
+		self.par_crew.FIRE_MODE = "auto"
 		self.par_secondary_crew = deep_clone(self.par_crew)
 		self.par_secondary_crew.use_data.selection_index = 1
 		self.par_secondary_crew.armor_piercing = true
@@ -1729,6 +1796,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rpk_crew.hold = "rifle"
 		self.rpk_crew.alert_size = 5000
 		self.rpk_crew.suppression = 2.6
+		self.rpk_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_m249_crew()
@@ -1743,6 +1811,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_crew.hold = "rifle"
 		self.m249_crew.alert_size = 5000
 		self.m249_crew.suppression = 2.4
+		self.m249_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_hk21_crew()
@@ -1757,6 +1826,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.hold = "rifle"
 		self.hk21_crew.alert_size = 5000
 		self.hk21_crew.suppression = 2.4
+		self.hk21_crew.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_mg42_crew()
@@ -1771,6 +1841,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mg42_crew.hold = "rifle"
 		self.mg42_crew.alert_size = 5000
 		self.mg42_crew.suppression = 2.6
+		self.mg42_crew.FIRE_MODE = "auto"
 		self.mg42_secondary_crew = deep_clone(self.mg42_crew)
 		self.mg42_secondary_crew.use_data.selection_index = 1
 		self.mg42_secondary_crew.armor_piercing = true
@@ -1793,6 +1864,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.corgi_crew.alert_size = 5000
 		self.corgi_crew.suppression = 2.4
+		self.corgi_crew.FIRE_MODE = "auto"
 	end	
 
 end

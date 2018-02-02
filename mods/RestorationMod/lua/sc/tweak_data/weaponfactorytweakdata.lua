@@ -8960,8 +8960,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_b92fs_pts/wpn_fps_pis_beretta_g_ergo",
 			stats = {
 				value = 1,
-				spread_moving = 1,
-				recoil = 1
+				recoil = 1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_pis_beretta_g_std = {
@@ -9027,9 +9027,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_b92fs_pts/wpn_fps_pis_beretta_sl_brigadier",
 			stats = {
 				value = 1,
-				recoil = 1,
 				damage = 1,
-				spread_moving = -2
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -17040,7 +17039,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_pis_g26_pts/wpn_fps_pis_g26_m_contour",
 			stats = {
 				value = 5,
-				concealment = -1,
 				extra_ammo = 1
 			},
 			custom_stats = {rof_mult = 1.125},

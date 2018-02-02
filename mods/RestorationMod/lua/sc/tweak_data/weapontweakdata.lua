@@ -3400,7 +3400,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b92fs.stats = {
 			damage = 28,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -4338,7 +4338,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 19,
 			spread_moving = 9,
 			zoom = 3,
-			concealment = 29,
+			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 6,
@@ -4394,7 +4394,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_b92fs.stats = {
 			damage = 28,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -4460,7 +4460,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 19,
 			spread_moving = 9,
 			zoom = 3,
-			concealment = 29,
+			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 6,
@@ -6589,7 +6589,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shrew.stats = {
 			damage = 43,
 			spread = 17,
-			recoil = 21,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
@@ -6618,7 +6618,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shrew.stats = {
 			damage = 43,
 			spread = 17,
-			recoil = 21,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,

@@ -5,7 +5,7 @@ local job = Global.level_data and Global.level_data.level_id
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
 	old_init(self, tweak_data, presets)
-	log("here be SC Tweak Data loading")
+	RestorationCore.log_shit("here be SC Tweak Data loading")
 	local presets = self:_presets(tweak_data)
 	local func = "_init_region_" .. tostring(tweak_data.levels:get_ai_group_type())
 
@@ -1300,8 +1300,13 @@ function CharacterTweakData:_init_tank(presets)
  	table.insert(self._enemy_list, "tank")
 	
 	self.tank_medic = deep_clone(self.tank)
-	self.tank_medic.headshot_dmg_mul = 12.5
-	self.tank_medic.custom_voicework = "medicdozer"
+	self.tank_medic.headshot_dmg_mul = 18.75
+	self.tank_medic.HEALTH_INIT = 400
+	if job == "mad" then
+		self.tank_medic.custom_voicework = nil
+	else
+		self.tank_medic.custom_voicework = "medicdozer"
+	end
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	

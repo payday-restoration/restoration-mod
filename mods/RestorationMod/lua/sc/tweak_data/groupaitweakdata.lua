@@ -211,7 +211,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spooc = 2,
 					shield = 4,
 					medic = 2,
-					omnia_LPF = 2,
+					omnia_LPF = 1,
 					fbi_vet = 0,
 					spring = 1,
 					summers = 1
@@ -224,7 +224,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spooc = 3,
 					shield = 5,
 					medic = 3,
-					omnia_LPF = 3,
+					omnia_LPF = 2,
 					fbi_vet = 0,
 					spring = 1,
 					summers = 1
@@ -250,7 +250,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spooc = 4,
 					shield = 5,
 					medic = 3,
-					omnia_LPF = 3,
+					omnia_LPF = 2,
 					fbi_vet = 2,
 					spring = 1,
 					summers = 1
@@ -263,7 +263,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spooc = 4,
 					shield = 6,
 					medic = 4,
-					omnia_LPF = 4,
+					omnia_LPF = 3,
 					fbi_vet = 3,
 					spring = 1,
 					summers = 1
@@ -1480,22 +1480,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						america = {
 							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
 							Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-							Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
+							Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},
 						zombie = {
 							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
 							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3")
+							Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
+							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						}
 					},
 					access = access_type_all,
@@ -2834,7 +2838,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							freq = 1,
 							tactics = self._tactics.FBI_swat_shotgun,
 							rank = 3
-						},								
+						},	
+						{
+							unit = "omnia_LPF",
+							freq = 0.5,
+							amount_max = 1,
+							tactics = self._tactics.FBI_suit_stealth,
+							rank = 2
+						},						
 						{
 							unit = "medic_M4",
 							freq = 0.8,
@@ -4986,9 +4997,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif difficulty_index == 6 then
 				self.smoke_and_flash_grenade_timeout = {15, 16}
 			elseif difficulty_index == 7 then
-				self.smoke_and_flash_grenade_timeout = {14, 15}
+				self.smoke_and_flash_grenade_timeout = {15, 16}
 			else
-				self.smoke_and_flash_grenade_timeout = {13, 14}
+				self.smoke_and_flash_grenade_timeout = {14, 15}
 			end
 			self.smoke_grenade_lifetime = 12
 			self.flash_grenade_lifetime = 7.5

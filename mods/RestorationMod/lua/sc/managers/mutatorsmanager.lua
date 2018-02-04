@@ -24,8 +24,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			MutatorCloakerEffect:new(self),
 			MutatorShieldDozers:new(self),
 			MutatorTitandozers:new(self),
-			MutatorMinidozers:new(self),
-			MutatorMedicdozers:new(self)
+			MutatorMinidozers:new(self)
 		}
 		self._active_mutators = {}
 		local activate = Global.mutators and Global.mutators.active_on_load

@@ -157,16 +157,16 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.team.crew_scavenge = {
 		{
-			0.05,
-			0.05,
-			0.05
+			0.15,
+			0.15,
+			0.15
 		}
 	}
 	self.values.team.crew_interact = {
 		{
-			0.9,
-			0.9,
-			0.9
+			0.8,
+			0.8,
+			0.8
 		}
 	}
 	self.values.team.crew_ai_ap_ammo = {true}

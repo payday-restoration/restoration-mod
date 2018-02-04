@@ -295,16 +295,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 10% faster.\n\nNote: Pager response is not affected by this boost.",
+		["menu_crew_interact_desc"] = "Players interact 15% faster.\n\nNote: Pager response is not affected by this boost.",
 
 		["menu_crew_inspire"] = "Inspiring",
 		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 30 seconds.",
 
 		["menu_crew_scavenge"] = "Sharpeyed",
-		["menu_crew_scavenge_desc"] = "Players pickup 5% more ammunition.",
+		["menu_crew_scavenge_desc"] = "Players pickup 15% more ammunition.",
 
 		["menu_crew_ai_ap_ammo"] = "Piercing",
-		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through armor.",
+		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through body armor and shields.",
 
 		["menu_crew_healthy"] = "Reinforcer",
 		["menu_crew_healthy_desc"] = "Players' health is increased by 20.\n\nNote: This Boost only works in Crime.net Offline.",

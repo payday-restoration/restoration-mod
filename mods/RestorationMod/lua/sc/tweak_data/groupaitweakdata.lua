@@ -237,7 +237,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spooc = 4,
 					shield = 5,
 					medic = 3,
-					omnia_LPF = 3,
+					omnia_LPF = 2,
 					fbi_vet = 2,
 					spring = 1,
 					summers = 1
@@ -2750,7 +2750,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						},
 						{
 							unit = "fbi_vet",
-							freq = 0.7,
+							freq = 0.65,
 							tactics = self._tactics.FBI_swat_rifle_flank,
 							rank = 2
 						},						
@@ -2841,7 +2841,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						},	
 						{
 							unit = "omnia_LPF",
-							freq = 0.5,
+							freq = 0.45,
 							amount_max = 1,
 							tactics = self._tactics.FBI_suit_stealth,
 							rank = 2
@@ -5135,7 +5135,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					10
 				}
 			end
-			if difficulty_index <= 6 then
+			if difficulty_index <= 7 then
 				self.besiege.assault.hostage_hesitation_delay = {
 					30,
 					30,
@@ -5143,9 +5143,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			else
 				self.besiege.assault.hostage_hesitation_delay = {
-					10,
-					10,
-					10
+					15,
+					15,
+					15
 				}
 			end
 			if is_console then
@@ -5688,19 +5688,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				5
 			}
 			self.besiege.recon.interval_variation = 40
-			if difficulty_index < 6 then
-				self.besiege.recon.force = {
-					2,
-					4,
-					6
-				}
-			else
-				self.besiege.recon.force = {
-					3,
-					4,
-					6
-				}
-			end
+			self.besiege.recon.force = {
+				2,
+				4,
+				6
+			}
 			if difficulty_index <= 2 then
 				self.besiege.recon.groups = {
 					CS_stealth_a = {

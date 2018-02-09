@@ -868,8 +868,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			},
 			texture_switch = {
-				material = "sight",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"sight",
+					"screen"
+				}
 			},
 			material_parameters = {gfx_reddot = {{
 				id = Idstring("holo_reticle_scale"),
@@ -1233,10 +1236,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			forbids = {
 				"wpn_fps_upg_o_xpsg33_magnifier"
-			},
+			},		
 			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot1",
+					"screen"
+				}
 			}
 		}
 		self.parts.shortdot_normal = {
@@ -1266,6 +1272,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_wp_upg_o_leupold_desc_sc",
 			has_description = true,
 			a_obj = "a_o",
+			reticle_obj = "g_reddot",
 			unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_fps_upg_o_leupold",
 			stats = {
 				value = 8,
@@ -1313,8 +1320,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			},
 			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot1",
+					"screen"
+				}
 			}
 		}
 		self.parts.wpn_fps_upg_o_45iron.third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_45iron/wpn_third_upg_o_45iron"
@@ -1475,6 +1485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			type = "sight",
+			reticle_obj = "g_reddot",
 			name_id = "bm_wp_upg_o_acog",
 			a_obj = "a_o",
 			unit = "units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/wpn_fps_upg_o_acog",
@@ -1742,8 +1753,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			},
 			texture_switch = {
-				material = "gfx_reddot",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot",
+					"screen"
+				}
 			}
 		}
 		self.parts.wpn_fps_upg_o_acog.third_unit = "units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/wpn_third_upg_o_acog"
@@ -2427,6 +2441,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "sight",
 			name_id = "bm_wp_upg_o_cs",
 			a_obj = "a_o",
+			reticle_obj = "g_reddot",
 			texture_bundle_folder = "gage_pack_jobs",
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/wpn_fps_upg_o_cs",
 			stats = {
@@ -2444,8 +2459,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			},
 			texture_switch = {
-				material = "gfx_reddot",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot",
+					"screen"
+				}
 			},
 			dlc = "gage_pack_jobs"
 		}
@@ -3168,7 +3186,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {value = 1},
 			animations = {
 				fire = "recoil",
-				reload = "reload",
+				reload = "reload_right",
+				reload_left = "reload_left",
 				magazine_empty = "last_recoil"
 			}
 		}
@@ -3217,8 +3236,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
+				reload_not_empty = "reload_not_empty",
 				reload = "reload",
-				reload_not_empty = "reload_not_empty"
+				reload_left = "reload_left"
 			}
 		}
 		self.parts.wpn_fps_pis_g18c_m_mag_17rnd = {
@@ -3228,8 +3248,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_g18c_pts/wpn_fps_pis_g18c_m_mag_17rnd",
 			stats = {value = 1},
 			animations = {
+				reload_not_empty = "reload_not_empty",
 				reload = "reload",
-				reload_not_empty = "reload_not_empty"
+				reload_left = "reload_left"
 			}
 		}
 		self.parts.wpn_fps_pis_g18c_s_stock = {
@@ -7069,7 +7090,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_body_mp5",
 			stats = {value = 1},
-			animations = {fire = "recoil"}
+			animations = {
+				reload = "reload",
+				fire = "recoil"
+			}
 		}
 		self.parts.wpn_fps_smg_mp5_body_rail = {
 			type = "upper_reciever",
@@ -7198,11 +7222,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -2,
 				reload = -3
 			},
-			custom_stats = {reload_speed_mult = 0.85},
-			animations = {
-				reload = "reload",
-				reload_not_empty = "reload_not_empty"
-			}
+			custom_stats = {reload_speed_mult = 0.85}
 		}
 		self.parts.wpn_fps_smg_mp5_m_std = {
 			type = "magazine",
@@ -7210,11 +7230,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_std",
-			stats = {value = 1},
-			animations = {
-				reload = "reload",
-				reload_not_empty = "reload_not_empty"
-			}
+			stats = {value = 1}
 		}
 		self.parts.wpn_fps_smg_mp5_s_adjust = {
 			pcs = {
@@ -7275,6 +7291,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"gadget",
 			"sight",
 			"vertical_grip"
+		}
+		self.wpn_fps_smg_mp5.animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload"
 		}
 		self.wpn_fps_smg_mp5.adds = {
 			wpn_fps_upg_o_specter = {
@@ -20046,6 +20066,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponFactoryTweakData:_init_hs2000()
+		self.parts.wpn_fps_pis_hs2000_b_standard = {
+			name_id = "bm_wp_hs2000_body_standard",
+			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_b_standard",
+			a_obj = "a_b",
+			type = "barrel"
+		}
+		self.parts.wpn_fps_pis_hs2000_b_custom = {
+			name_id = "bm_wp_hs2000_body_standard",
+			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_b_custom",
+			a_obj = "a_b",
+			type = "barrel"
+		}
+		self.parts.wpn_fps_pis_hs2000_b_long = {
+			name_id = "bm_wp_hs2000_body_standard",
+			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_b_long",
+			a_obj = "a_b",
+			type = "barrel"
+		}	
 		self.parts.wpn_fps_pis_hs2000_sl_standard = {
 			type = "slide",
 			name_id = "bm_wp_hs2000_sl_standard",
@@ -20053,12 +20091,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_sl",
 			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_sl_standard",
 			stats = {value = 1},
-			animations = {
-				reload = "reload",
-				fire = "recoil",
-				fire_steelsight = "recoil",
-				magazine_empty = "last_recoil"
-			}
+			adds = {"wpn_fps_pis_hs2000_b_standard"}
 		}
 		self.parts.wpn_fps_pis_hs2000_sl_custom = {
 			pcs = {
@@ -20080,12 +20113,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = 1
 			},
 			dlc = "the_bomb",
-			animations = {
-				reload = "reload",
-				fire = "recoil",
-				fire_steelsight = "recoil",
-				magazine_empty = "last_recoil"
-			}
+			adds = {"wpn_fps_pis_hs2000_b_custom"}
 		}
 		self.parts.wpn_fps_pis_hs2000_sl_long = {
 			pcs = {
@@ -20107,12 +20135,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -3
 			},
 			dlc = "the_bomb",
-			animations = {
-				reload = "reload",
-				fire = "recoil",
-				fire_steelsight = "recoil",
-				magazine_empty = "last_recoil"
-			},
+			adds = {"wpn_fps_pis_hs2000_b_long"},
 			stance_mod = {
 				wpn_fps_pis_hs2000 = {
 					translation = Vector3(0, 0, -0.25)
@@ -20143,11 +20166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 3},
 			unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_pis_hs2000_m_standard",
-			stats = {value = 1},
-			animations = {
-				reload = "reload",
-				reload_not_empty = "reload_not_empty"
-			}
+			stats = {value = 1}
 		}
 		self.parts.wpn_fps_pis_hs2000_m_extended = {
 			pcs = {
@@ -20169,12 +20188,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -1
 			},
 			custom_stats = {reload_speed_mult = 0.95},
-			dlc = "the_bomb",
-			animations = {
-				reload = "reload",
-				reload_not_empty = "reload_not_empty"
-			}
+			dlc = "the_bomb"
 		}
+		self.parts.wpn_fps_pis_hs2000_b_standard.third_unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_third_pis_hs2000_b_standard"
+		self.parts.wpn_fps_pis_hs2000_b_custom.third_unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_third_pis_hs2000_b_custom"
+		self.parts.wpn_fps_pis_hs2000_b_long.third_unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_third_pis_hs2000_b_long"		
 		self.parts.wpn_fps_pis_hs2000_sl_standard.third_unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_third_pis_hs2000_sl_standard"
 		self.parts.wpn_fps_pis_hs2000_sl_custom.third_unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_third_pis_hs2000_sl_custom"
 		self.parts.wpn_fps_pis_hs2000_sl_long.third_unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_third_pis_hs2000_sl_long"
@@ -20184,14 +20202,67 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_hs2000 = {}
 		self.wpn_fps_pis_hs2000.unit = "units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000/wpn_fps_pis_hs2000"
 		self.wpn_fps_pis_hs2000.animations = {
+			reload = "reload",
 			fire = "recoil",
 			fire_steelsight = "recoil",
-			reload = "reload",
+			reload_not_empty = "reload_not_empty",
 			magazine_empty = "last_recoil"
 		}
 		self.wpn_fps_pis_hs2000.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_pis_hs2000.override = {
-			wpn_fps_upg_o_rmr = {parent = "slide"}
+			wpn_fps_upg_o_rmr = {parent = "slide"},
+			wpn_fps_upg_pis_ns_flash = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_medium_slim = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_ass_filter = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_jungle = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_large = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_medium = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_small = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_large_kac = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_medium_gem = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_ipsccomp = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_meatgrinder = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_pis_g18c_co_comp_2 = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_pis_g18c_co_1 = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			}			
 		}
 		self.wpn_fps_pis_hs2000.default_blueprint = {
 			"wpn_fps_pis_hs2000_body_standard",
@@ -20205,6 +20276,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_pis_hs2000_sl_standard",
 			"wpn_fps_pis_hs2000_sl_custom",
 			"wpn_fps_pis_hs2000_sl_long",
+			"wpn_fps_pis_hs2000_b_standard",
+			"wpn_fps_pis_hs2000_b_custom",
+			"wpn_fps_pis_hs2000_b_long",			
 			"wpn_fps_upg_fl_pis_laser",
 			"wpn_fps_upg_fl_pis_tlr1",
 			"wpn_fps_upg_ns_pis_large",
@@ -20222,6 +20296,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
+			--Heads up--
 			"wpn_fps_pis_g18c_co_comp_2",
 			"wpn_fps_pis_g18c_co_1",
 		}
@@ -22402,11 +22477,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
 			texture_bundle_folder = "butcher_pack_mods",
-			dlc = "butch_pack_free",
-			animations = {
-				reload = "reload",
-				reload_not_empty = "reload_not_empty"
-			}
+			dlc = "butch_pack_free"
 		}
 		self.parts.wpn_fps_smg_mp9_b_suppressed = {
 			pcs = {},
@@ -27770,6 +27841,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				custom_stats = {ammo_pickup_min_mul = 0.833333333333, ammo_pickup_max_mul = 0.833333333333},
 				animations = {}
+			},
+			wpn_fps_smg_mp5_body_mp5 = {
+				animations = {fire = "recoil"}
 			}
 		}
 		self.wpn_fps_smg_x_mp5.adds = {
@@ -29807,6 +29881,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_upg_o_spot = {
 			pcs = {},
 			type = "sight",
+			reticle_obj = "g_reticle",
 			name_id = "bm_wp_upg_o_spot",
 			a_obj = "a_o",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_spot/wpn_fps_upg_o_spot",
@@ -29825,8 +29900,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			},
 			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot1",
+					"screen"
+				}
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -29883,8 +29961,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_xpsg33_magnifier"
 			},
 			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot1",
+					"screen"
+				}
 			},
 			reticle_obj = "g_reticle"
 		}
@@ -29894,6 +29975,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_g36_o_vintage",
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_g36_body_optics/wpn_fps_ass_g36_o_vintage",
+			reticle_obj = "g_reticle",
 			stats = {
 				value = 1,
 				zoom = 5,

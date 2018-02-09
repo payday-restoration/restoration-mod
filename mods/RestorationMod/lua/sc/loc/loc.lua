@@ -645,7 +645,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
-		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with weapons set to semi-auto by ##5.##\n\nACE: ##$pro##\nYour weapon stability is increased with all rifles by ##4.##",
+		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles set to semi-auto by ##5.##\n\nACE: ##$pro##\nYour weapon stability is increased with all rifles by ##4.##",
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "Kilmer",

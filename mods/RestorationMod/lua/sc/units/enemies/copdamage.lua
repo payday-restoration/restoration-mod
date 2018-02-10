@@ -831,9 +831,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 	
 	function CopDamage:stun_hit(attack_data)
-		if self._dead or self._invulnerable then
+		if self._dead or self._invulnerable or self._unit:in_slot(16, 21, 22) then
 			return
-		end
+		end	
 		local result = {
 			type = "concussion",
 			variant = attack_data.variant

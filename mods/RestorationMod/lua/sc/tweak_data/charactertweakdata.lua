@@ -1883,7 +1883,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.intimidateable = true
 	self.civilian.challenges = {type = "civilians"}
 	self.civilian.calls_in = true
-	self.civilian.hostage_move_speed = 3
+	self.civilian.hostage_move_speed = 1.5
 	self.civilian_female = deep_clone(self.civilian)
 	self.civilian_female.speech_prefix_p1 = "cf"
 	self.civilian_female.speech_prefix_count = 5

@@ -33811,13 +33811,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			stats = {
 				value = 5,
-				spread_moving = -3,
-				spread = 1,
-				concealment = -2
+				spread = -1,
+				concealment = 2
 			},
 			forbids = {
-				"wpn_fps_pis_deagle_co_long",
-				"wpn_fps_pis_deagle_co_short"
+				"wpn_fps_upg_ns_pis_large",
+				"wpn_fps_upg_ns_pis_medium",
+				"wpn_fps_upg_ns_pis_small",
+				"wpn_fps_upg_ns_pis_large_kac",
+				"wpn_fps_upg_ns_pis_medium_gem",
+				"wpn_fps_upg_ns_pis_medium_slim",
+				"wpn_fps_upg_ns_ass_filter",
+				"wpn_fps_upg_ns_pis_jungle",
+				"wpn_fps_pis_g18c_co_comp_2",
+				"wpn_fps_pis_g18c_co_1"				
 			},				
 			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_deagle_b_modern/wpn_third_pis_deagle_b_modern"
 		}

@@ -2563,7 +2563,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",
 			stats = {
 				value = 1,
-				damage = 7
+				damage = 1
 			},
 			forbids = {
 				"wpn_fps_m4_upper_reciever_round_vanilla",
@@ -2629,7 +2629,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_medium",
 			stats = {
 				value = 1,
-				damage = 3,
 				spread = 2,
 				concealment = -1
 			}
@@ -3736,7 +3735,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = -1,
 					total_ammo_mod = -33,
 					extra_ammo = -5,
-					damage = 33,
+					damage = 30,
 					reload = -3,
 					suppression = -1,
 					alert_size = -1,
@@ -4556,7 +4555,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 1,
 					recoil = -1,
 					total_ammo_mod = -20,
-					damage = 12,
+					damage = 10,
 					suppression = -1,
 					alert_size = -1,
 					concealment = -4
@@ -5044,7 +5043,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_akmsu_fg_rail",
 			a_obj = "a_fg",
 			unit = "units/payday2/weapons/wpn_fps_smg_akmsu_pts/wpn_fps_smg_akmsu_fg_rail",
-			stats = {value = 1, spread = 4, damage = 2, concealment = -1},
+			stats = {value = 1, spread = 1, concealment = -2},
 			forbids = {
 				"wpn_fps_addon_ris",
 				"wpn_fps_ak_extra_ris"
@@ -6018,7 +6017,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_g36_pts/wpn_fps_ass_g36_fg_c",
 			stats = {
 				value = 4,
-				damage = 2,
 				spread_moving = 2,
 				recoil = -1,
 				concealment = 2
@@ -6058,7 +6056,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				spread_moving = -2,
-				damage = 2,
 				recoil = 1,
 				concealment = -2
 			},
@@ -6367,9 +6364,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_fps_ass_m14_pts/wpn_fps_ass_m14_body_ebr",
 			stats = {
-				value = 10,
+				value = 1,
 				recoil = 1,
-				damage = 10,
 				concealment = -1
 			},
 			forbids = {
@@ -6384,12 +6380,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m14_pts/wpn_fps_ass_m14_body_jae",
 			stats = {
 				value = 10,
-				spread_moving = -2,
-				recoil = 2,
+				recoil = 1,
 				spread = -1,
-				damage = -19,
+				damage = -25,
 				concealment = 1,
-				total_ammo_mod = 50
+				total_ammo_mod = 34
 			},
 			custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5},
 			forbids = {
@@ -10559,7 +10554,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				spread = 1,
-				spread_moving = -4,
 				concealment = -2
 			},
 			dlc = "armored_transport"
@@ -10591,7 +10585,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_ass_s552_pts/wpn_fps_ass_s552_body_standard_black",
 			stats = {
 				value = 7,
-				damage = 1,
 				concealment = 4
 			},
 			animations = {
@@ -12721,12 +12714,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_laser",
 			"wpn_fps_snp_model70_iron_sight",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_upg_ammo_mag_msr",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_o_box",
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			--Custom--
+			"wpn_fps_upg_ammo_mag_msr"
 		}
 		self.wpn_fps_snp_msr_npc = deep_clone(self.wpn_fps_snp_msr)
 		self.wpn_fps_snp_msr_npc.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr/wpn_fps_snp_msr_npc"
@@ -14218,7 +14212,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				extra_ammo = -5,
 				suppression = -1,
 				alert_size = -1,
-				damage = 57
+				damage = 50
 			},
 			override = {
 				wpn_fps_ass_g3_m_mag = {
@@ -14255,7 +14249,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				recoil = 1,
 				spread = -1,
 				concealment = 4,
-				damage = -12,
+				damage = -10,
 				suppression = 1,
 				alert_size = 1,
 				total_ammo_mod = 25
@@ -14599,7 +14593,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				recoil = -1,
 				spread = 1,
 				total_ammo_mod = -20,
-				damage = 12,
+				damage = 10,
 				suppression = -1,
 				alert_size = -1,
 				concealment = -4
@@ -14942,7 +14936,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 2,
 				recoil = -2,
 				total_ammo_mod = -40,
-				damage = 40,
+				damage = 35,
 				suppression = -2,
 				alert_size = -2,
 				extra_ammo = -5,
@@ -20316,7 +20310,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				recoil = -1,
 				total_ammo_mod = -33,
-				damage = 28,
+				damage = 25,
 				suppression = -1,
 				alert_size = -1,
 				extra_ammo = -5,
@@ -20825,7 +20819,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_upg_ak_fg_zenit",
 			a_obj = "a_fg",
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ak_fg_zenit/wpn_fps_upg_ak_fg_zenit",
-			stats = {value = 1, spread = 4, damage = 2, concealment = -1},
+			stats = {value = 1, spread = -1, concealment = 2},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
 			is_a_unlockable = true,
@@ -21490,7 +21484,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_upper_reciever_ballos/wpn_fps_upg_ass_m4_upper_reciever_ballos",
 			stats = {
 				value = 1,
-				damage = 7,
+				damage = 1,
 				recoil = -1,
 				spread = 1
 			},
@@ -21516,7 +21510,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_upper_reciever_core/wpn_fps_upg_ass_m4_upper_reciever_core",
 			stats = {
 				value = 1,
-				damage = 7,
+				damage = 1,
 				recoil = 1,
 				spread = -1
 			},
@@ -21612,7 +21606,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 2,
 				recoil = -1,
 				total_ammo_mod = -20,
-				damage = 17,
+				damage = 15,
 				concealment = -4,
 				alert_size = -1,
 				suppression = -1
@@ -30018,7 +30012,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = 2,
 				recoil = -1,
-				damage = 2,
 				concealment = -3
 			},
 			texture_bundle_folder = "tng",
@@ -35903,7 +35896,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			dlc = "sc",
 			stats = {
 				value = 3,
-				damage = 64
+				damage = 50
 			},
 			internal_part = true
 		}

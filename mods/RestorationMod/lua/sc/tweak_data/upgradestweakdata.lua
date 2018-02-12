@@ -268,13 +268,13 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.smg.recoil_index_addend = {1}
 				self.values.team.weapon.recoil_index_addend = {1}
 
-				--MG Handling (Rifleman)
+				--MG Handling
 				self.values.smg.reload_speed_multiplier = {1.25}
 				self.values.smg.hip_fire_spread_multiplier = {0.5}
 
-				--MG Specialist (Marksman)
-				self.values.smg.fire_rate_multiplier = {1.2}
-				self.values.smg.damage_multiplier = {1.15}
+				--MG Specialist
+				self.values.smg.fire_rate_multiplier = {1.15, 1.3}
+				self.values.smg.damage_multiplier = {1}
 				
 				--Shock and Awe
 				self.values.weapon.clip_ammo_increase = {1.3, 1.5}
@@ -303,7 +303,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Shotgun Impact
 				self.values.shotgun.recoil_index_addend = {1}
-				self.values.shotgun.damage_multiplier = {1.15, 1.15}
+				self.values.shotgun.damage_multiplier = {1, 1}
 				self.skill_descs.shotgun_impact = {multibasic = "4", multipro = "35%"}
 				
 				--Far Away
@@ -361,13 +361,13 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Portable Saw
 				self.values.saw.reload_speed_multiplier = {1.25}
-				self.values.saw.damage_multiplier = {1.15}
+				self.values.saw.damage_multiplier = {1}
 				
 				--Extra Lead
 				self.values.ammo_bag.ammo_increase = {2}
 				self.values.ammo_bag.quantity = {1}
 
-				--Carbon Blade
+				--Saw Massacre
 				self.values.saw.enemy_slicer = {true}
 				self.values.saw.ignore_shields = {true}
 				self.values.saw.panic_when_kill = {
@@ -475,7 +475,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Spotter
 				self.values.player.marked_enemy_extra_damage = {true}
 				self.values.player.marked_enemy_damage_mul = 1.15
-				self.values.player.marked_inc_dmg_distance = {{2500, 1.25}}
+				self.values.player.marked_inc_dmg_distance = {{1000, 1.5}}
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -606,7 +606,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.armor_depleted_stagger_shot = {0, 5}
 				
 				--Subsonic Rounds
-				self.values.weapon.silencer_damage_multiplier = {1.075, 1.15}
+				self.values.weapon.silencer_damage_multiplier = {1, 1}
 
 				--Low Blow
 				self.values.player.detection_risk_add_crit_chance = {
@@ -643,9 +643,9 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.pistol.spread_index_addend = {1}
 				self.values.pistol.fire_rate_multiplier = {1.5}
 
-				--Over Pressurized/Custom Ammo (Formerly Akimbo)
-				self.values.pistol.reload_speed_multiplier = {1.5}
-				self.values.pistol.damage_multiplier = {1.15}
+				--Over Pressurized/Gunfighter (Formerly Akimbo)
+				self.values.pistol.reload_speed_multiplier = {1.25, 1.25}
+				self.values.pistol.damage_multiplier = {1}
 				
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
 				self.values.akimbo.extra_ammo_multiplier = {1.25, 1.5}
@@ -714,8 +714,8 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
 
 				--Pumping Iron	
-				self.values.player.non_special_melee_multiplier = {1.2, 1.4}
-				self.values.player.melee_damage_multiplier = {1.2, 1.4}
+				self.values.player.non_special_melee_multiplier = {1.05, 1.1, 1.15, 1.2}
+				self.values.player.melee_damage_multiplier = {1.05, 1.1, 1.15, 1.2}
 				self.values.player.melee_swing_multiplier = {1.25, 1.5}
 				self.values.player.melee_swing_multiplier_delay = {0.75, 0.5}
 				
@@ -742,6 +742,10 @@ function UpgradesTweakData:_init_pd2_values()
 	end
 
 	--Perk Deck shit--
+	
+	--Shared stuff--
+	self.values.weapon.passive_damage_multiplier = {1.05, 1.1, 1.15, 1.2}     
+	
 	self.values.temporary.armor_break_invulnerable = {
 		{2, 15}
 	}
@@ -1064,6 +1068,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
+	self.definitions.player_non_special_melee_multiplier_3 = {
+		category = "feature",
+		name_id = "menu_player_non_special_melee_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "non_special_melee_multiplier",
+			value = 3
+		}
+	}
+	self.definitions.player_non_special_melee_multiplier_4 = {
+		category = "feature",
+		name_id = "menu_player_non_special_melee_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "non_special_melee_multiplier",
+			value = 4
+		}
+	}	
 	self.definitions.player_melee_damage_multiplier_1 = {
 		category = "feature",
 		name_id = "menu_player_melee_damage_multiplier",
@@ -1082,6 +1104,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
+	self.definitions.player_melee_damage_multiplier_3 = {
+		category = "feature",
+		name_id = "menu_player_melee_damage_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_damage_multiplier",
+			value = 3
+		}
+	}
+	self.definitions.player_melee_damage_multiplier_4 = {
+		category = "feature",
+		name_id = "menu_player_melee_damage_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_damage_multiplier",
+			value = 4
+		}
+	}	
 	self.definitions.player_melee_swing_multiplier_1 = {
 		category = "feature",
 		name_id = "menu_player_melee_damage_multiplier",
@@ -1273,6 +1313,62 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}	
+	self.definitions.pistol_reload_speed_multiplier_1 = {
+		name_id = "menu_pistol_reload_speed",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "pistol"
+		}
+	}
+	self.definitions.pistol_reload_speed_multiplier_2 = {
+		name_id = "menu_pistol_reload_speed",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "reload_speed_multiplier",
+			category = "pistol"
+		}
+	}	
+	
+	--Passive Perk Deck Dam increases
+	self.definitions.weapon_passive_damage_multiplier_1 = {
+		name_id = "menu_weapon_passive_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "passive_damage_multiplier",
+			category = "weapon"
+		}
+	}	
+	self.definitions.weapon_passive_damage_multiplier_2 = {
+		name_id = "menu_weapon_passive_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "passive_damage_multiplier",
+			category = "weapon"
+		}
+	}
+	self.definitions.weapon_passive_damage_multiplier_3 = {
+		name_id = "menu_weapon_passive_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "passive_damage_multiplier",
+			category = "weapon"
+		}
+	}	
+	self.definitions.weapon_passive_damage_multiplier_4 = {
+		name_id = "menu_weapon_passive_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 4,
+			upgrade = "passive_damage_multiplier",
+			category = "weapon"
+		}
+	}	
 end
 
 function UpgradesTweakData:_smg_definitions()
@@ -1294,7 +1390,7 @@ function UpgradesTweakData:_smg_definitions()
 			value = 1
 		}
 	}
-	self.definitions.smg_fire_rate_multiplier = {
+	self.definitions.smg_fire_rate_multiplier_1 = {
 		category = "feature",
 		name_id = "menu_smg_fire_rate_multiplier",
 		upgrade = {
@@ -1303,6 +1399,15 @@ function UpgradesTweakData:_smg_definitions()
 			value = 1
 		}
 	}
+	self.definitions.smg_fire_rate_multiplier_2 = {
+		category = "feature",
+		name_id = "menu_smg_fire_rate_multiplier",
+		upgrade = {
+			category = "smg",
+			upgrade = "fire_rate_multiplier",
+			value = 2
+		}
+	}	
 	self.definitions.smg_damage_multiplier = {
 		category = "feature",
 		name_id = "menu_smg_fire_rate_multiplier",

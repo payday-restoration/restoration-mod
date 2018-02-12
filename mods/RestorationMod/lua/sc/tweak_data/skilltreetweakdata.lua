@@ -365,7 +365,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.rifleman = {
 				["name_id"] = "menu_scavenger_sc",
 				["desc_id"] = "menu_scavenger_desc_sc",
-				["icon_xy"] = {10, 0},
+				["icon_xy"] = {3, 3},
 				[1] = {
 					upgrades = {
 						"smg_hip_fire_spread_multiplier"
@@ -384,16 +384,16 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.sharpshooter = {
 				["name_id"] = "menu_sharpshooter_sc",
 				["desc_id"] = "menu_sharpshooter_desc_sc",
-				["icon_xy"] = {3, 3},
+				["icon_xy"] = {10, 0},
 				[1] = {
 					upgrades = {
-						"smg_fire_rate_multiplier"
+						"smg_fire_rate_multiplier_1"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"smg_damage_multiplier"
+						"smg_fire_rate_multiplier_2"
 					},
 					cost = self.costs.pro
 				}
@@ -1108,57 +1108,49 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 9},
 				[1] = {
 					upgrades = {
-						"assault_rifle_enter_steelsight_speed_multiplier",
-						"snp_enter_steelsight_speed_multiplier"
+						"assault_rifle_reload_speed_multiplier",
+						"snp_reload_speed_multiplier",
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"assault_rifle_reload_speed_multiplier",
-						"snp_reload_speed_multiplier",
+						"player_run_and_reload"
 					},
 					cost = self.costs.pro
 				}
 			}
 
-			--Spotter--
+			--Nerves of Steel--
 			self.skills.fire_control = {
 				["name_id"] = "menu_fast_fire_beta_sc",
 				["desc_id"] = "menu_fast_fire_beta_desc_sc",
-				["icon_xy"] = {8, 2},
-				[1] = {
-					upgrades = {
-						"player_marked_enemy_extra_damage"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"player_marked_inc_dmg_distance_1"
-					},
-					cost = self.costs.hightierpro
-				}
-			}
-
-			--Nerves of Steel--
-			self.skills.shock_and_awe = {
-				["name_id"] = "menu_kilmer_sc",
-				["desc_id"] = "menu_kilmer_desc_sc",
 				["icon_xy"] = {6, 6},
 				[1] = {
 					upgrades = {
-						"player_interacting_damage_multiplier",
 						"player_steelsight_when_downed"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"assault_rifle_move_spread_multiplier",
-						"player_run_and_reload",
-						"snp_move_spread_multiplier"
+						"player_interacting_damage_multiplier"
 					},
+					cost = self.costs.hightierpro
+				}
+			}
+
+			--Graze--
+			self.skills.shock_and_awe = {
+				["name_id"] = "menu_kilmer_sc",
+				["desc_id"] = "menu_kilmer_desc_sc",
+				["icon_xy"] = {0, 0},
+				[1] = {
+					upgrades = {},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {},
 					cost = self.costs.hightierpro
 				}
 			}
@@ -1549,20 +1541,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Subsonic rounds--
+			--Spotter--
 			self.skills.hitman = {
 				["name_id"] = "menu_hitman_beta_sc",
 				["desc_id"] = "menu_hitman_beta_desc_sc",
-				["icon_xy"] = {5, 9},
+				["icon_xy"] = {8, 2},
 				[1] = {
 					upgrades = {
-						"weapon_silencer_damage_multiplier_1"
+						"player_marked_enemy_extra_damage"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"weapon_silencer_damage_multiplier_2"
+						"player_marked_inc_dmg_distance_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1634,20 +1626,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Over Pressurized--
+			--Over Pressurized/Gunfighter--
 			self.skills.akimbo = {
 				["name_id"] = "menu_gun_fighter_sc",
 				["desc_id"] = "menu_gun_fighter_desc_sc",
-				["icon_xy"] = {7, 11},
+				["icon_xy"] = {0, 9},
 				[1] = {
 					upgrades = {
-						"pistol_reload_speed_multiplier",
+						"pistol_reload_speed_multiplier_1",
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"pistol_damage_multiplier"
+						"pistol_reload_speed_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1890,8 +1882,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_non_special_melee_multiplier_1",
-						"player_melee_damage_multiplier_1"
+						"player_melee_swing_multiplier_2",
+						"player_melee_swing_multiplier_delay_2"
 					},
 					cost = self.costs.pro
 				}
@@ -1967,43 +1959,54 @@ function SkillTreeTweakData:init(tweak_data)
 
 	local deck2 = {
 		upgrades = {
-			"weapon_passive_headshot_damage_multiplier"
+			"weapon_passive_headshot_damage_multiplier",
+			"weapon_passive_damage_multiplier_1",
+			"player_non_special_melee_multiplier_1",
+			"player_melee_damage_multiplier_1"
 		},
 		cost = 300,
 		icon_xy = {1, 0},
 		name_id = "menu_deckall_2",
-		desc_id = "menu_deckall_2_desc"
+		desc_id = "menu_deckall_2_desc_sc"
 	}
 	local deck4 = {
 		upgrades = {
 			"passive_player_xp_multiplier",
 			"player_passive_suspicion_bonus",
-			"player_passive_armor_movement_penalty_multiplier"
+			"player_passive_armor_movement_penalty_multiplier",
+			"weapon_passive_damage_multiplier_2",
+			"player_non_special_melee_multiplier_2",
+			"player_melee_damage_multiplier_2"			
 		},
 		cost = 600,
 		icon_xy = {3, 0},
 		name_id = "menu_deckall_4",
-		desc_id = "menu_deckall_4_desc"
+		desc_id = "menu_deckall_4_desc_sc"
 	}
 	local deck6 = {
 		upgrades = {
 			"armor_kit",
-			"player_pick_up_ammo_multiplier"
+			"player_pick_up_ammo_multiplier",
+			"weapon_passive_damage_multiplier_3",
+			"player_non_special_melee_multiplier_3",
+			"player_melee_damage_multiplier_3"			
 		},
 		cost = 1600,
 		icon_xy = {5, 0},
 		name_id = "menu_deckall_6",
-		desc_id = "menu_deckall_6_desc"
+		desc_id = "menu_deckall_6_desc_sc"
 	}
 	local deck8 = {
 		upgrades = {
-			"weapon_passive_damage_multiplier",
-			"passive_doctor_bag_interaction_speed_multiplier"
+			"weapon_passive_damage_multiplier_4",
+			"passive_doctor_bag_interaction_speed_multiplier",
+			"player_non_special_melee_multiplier_4",
+			"player_melee_damage_multiplier_4"
 		},
 		cost = 3200,
 		icon_xy = {7, 0},
 		name_id = "menu_deckall_8",
-		desc_id = "menu_deckall_8_desc"
+		desc_id = "menu_deckall_8_desc_sc"
 	}
 	
 	--Crew Chief--
@@ -2911,6 +2914,78 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck15_9_desc_sc"
 			}
 		}
+		
+	--Rust Perlman--
+	local sc_fat_dick = {
+			{
+				cost = 200,
+				texture_bundle_folder = "wild",
+				desc_id = "menu_deck16_1_desc",
+				name_id = "menu_deck16_1",
+				upgrades = {
+					"player_wild_health_amount_1",
+					"player_wild_armor_amount_1"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			deck2,
+			{
+				cost = 400,
+				texture_bundle_folder = "wild",
+				desc_id = "menu_deck16_3_desc",
+				name_id = "menu_deck16_3",
+				upgrades = {"player_less_health_wild_armor_1"},
+				icon_xy = {
+					1,
+					0
+				}
+			},
+			deck4,
+			{
+				cost = 1000,
+				texture_bundle_folder = "wild",
+				desc_id = "menu_deck16_5_desc",
+				name_id = "menu_deck16_5",
+				upgrades = {"player_less_health_wild_cooldown_1"},
+				icon_xy = {
+					2,
+					0
+				}
+			},
+			deck6,
+			{
+				cost = 2400,
+				texture_bundle_folder = "wild",
+				desc_id = "menu_deck16_7_desc",
+				name_id = "menu_deck16_7",
+				upgrades = {"player_less_armor_wild_health_1"},
+				icon_xy = {
+					3,
+					0
+				}
+			},
+			deck8,
+			{
+				cost = 4000,
+				texture_bundle_folder = "wild",
+				desc_id = "menu_deck16_9_desc",
+				name_id = "menu_deck16_9",
+				upgrades = {
+					"player_passive_loot_drop_multiplier",
+					"player_less_armor_wild_cooldown_1"
+				},
+				icon_xy = {
+					0,
+					1
+				}
+			},
+			name_id = "menu_st_spec_16",
+			dlc = "wild",
+			desc_id = "menu_st_spec_16_desc"
+		}
 
 	--YOU AND I--
 	local sc_scarface = {
@@ -3204,7 +3279,7 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[13] = sc_ex
 	self.specializations[14] = sc_maniac
 	self.specializations[15] = sc_sydney
-	--insert fat dick here--
+	self.specializations[16] = sc_fat_dick
 	self.specializations[17] = sc_scarface
 	self.specializations[18] = sc_wall	
 	self.specializations[19] = sc_august	

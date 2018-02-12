@@ -154,7 +154,7 @@ function PlayerDamage:init(unit)
 		chunks = {}
 	}	
 end
-PlayerDamage._UPPERS_COOLDOWN = 120
+PlayerDamage._UPPERS_COOLDOWN = 60
 local player_damage_melee = PlayerDamage.damage_melee
 function PlayerDamage:damage_melee(attack_data)
 	local player_unit = managers.player:player_unit()

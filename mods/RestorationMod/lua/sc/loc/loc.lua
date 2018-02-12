@@ -355,7 +355,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "Uppers",
-			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##120## seconds.\n\n Note: Does not apply to Swan Song.",
+			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##60## seconds.\n\n Note: Does not apply to Swan Song.",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
@@ -411,7 +411,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##20%.##\n\nACE: ##$pro##\nYour SMGs and LMGs do ##15%## more damage.",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by an additional ##15%.##",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -443,7 +443,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability with all shotguns is increased by ##4.##\n\nACE: ##$pro##\nYou deal ##15%## more damage with shotguns.",																																																																																																																																																																																																
+			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability with all shotguns is increased by ##4.##\n\nACE: ##$pro##\nYou gain ##3## extra pellets with every shotgun shot.\n\nNote: Does not apply to slugs or explosive rounds.",																																																																																																																																																																																																
 
 			--Pigeon Shooting	
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
@@ -502,7 +502,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear
 			["menu_portable_saw_beta_sc"] = "Rip and Tear",
-			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload Saws ##25%## faster.\n\nACE: ##$pro##\nYou deal ##15%## more damage with the Saw.",																																																																																																																																																																																																
+			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload Saws ##25%## faster.\n\nACE: ##$pro##\nAttacking enemies with the OVE9000 portable saw wears it down ##50%## less than before. ",																																																																																																																																																																																																
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "Extra Lead",
@@ -510,7 +510,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "Carbon Blades",
-			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nReduces the wear down of the blades on enemies by ##50%.##\n\nACE: ##$pro##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nWhen killing an enemy with the saw, you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.",																								
+			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nWhen killing an enemy with the saw, you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.",																								
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
@@ -649,15 +649,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
-		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour ADS speed with rifles is ##50%## faster.\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
+		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload rifles ##25%## faster.\n\nACE: ##$pro##\nYou can now ##reload your weapons while sprinting.##",
 
-		--Spotter--	
-		["menu_fast_fire_beta_sc"] = "Spotter",
-		["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nSpecial enemies marked by you take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##25%## damage when further away than ##25## meters.",																																																																																																																																																																																																																									
+		--Nerves of Steel--	
+		["menu_fast_fire_beta_sc"] = "Nerves of Steel",
+		["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sight while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
 
-		--Nerves of Steel--
-		["menu_kilmer_sc"] = "Nerves of Steel",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nYou take ##50%## less damage while interacting with objects.\n\nYou can now use steel sight while in bleedout.\n\nACE: ##$pro##\nYou can now reload your weapons while sprinting.\n\nYour weapon accuracy while moving with Assault Rifles and Sniper Rifles is increased by ##50%##",																																																																																																																																																																																																																									
+		--Graze--
+		["menu_kilmer_sc"] = "Graze",
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nWIP\n\nACE: ##$pro##\n\nWIP",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
@@ -707,9 +707,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_backstab_beta_sc"] = "Dire Need",
 		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor is fully depleted, the first shot on every enemy will cause that enemy to stagger.\n\nThis effect ends when your armor regenerates.\n\nACE: ##$pro##\nThe effect persists for ##5## seconds after your armor has regenerated. ",																								
 
-		--Subsonic rounds--
-		["menu_hitman_beta_sc"] = "Subsonic Rounds",
-		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nYou deal ##7.5%## more damage with all suppressed weapons.\n\nACE: ##$pro##\nYou deal an additional ##7.5%## more damage with all suppressed weapons.",																								
+		--Spotter--
+		["menu_hitman_beta_sc"] = "Spotter",
+		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##50%## damage when further than 10 meters.",																								
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",
@@ -723,9 +723,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_dance_instructor_sc"] = "Gun Nut",
 		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## weapon accuracy with pistols.\n\nACE: ##$pro##\nYou gain a ##50%## increased rate of fire with pistols.",																								
 
-		--Over Pressurized--
-		["menu_gun_fighter_sc"] = "Over Pressurized",
-		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##50%## faster.\n\nACE: ##$pro##\nYou deal ##15%## more damage with pistols.",																								
+		--Over Pressurized/Gunfighter--
+		["menu_gun_fighter_sc"] = "Gunfighter",
+		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##25%## faster.\n\nACE: ##$pro##\nYou reload pistols an additional ##25%## faster.",																								
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
@@ -761,7 +761,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "Pumping Iron",
-		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing melee weapons ##25%## faster.\n\nACE: ##$pro##\nYour melee attacks do ##20%## more damage.",																																																																																																																																																																																																																																		
+		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing melee weapons ##25%## faster.\n\nACE: ##$pro##\nYou swing melee weapons an additional ##25%## faster.",																																																																																																																																																																																																																																		
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
@@ -776,6 +776,12 @@ end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
+		--Shared Perks--
+		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+		["menu_deckall_6_desc_sc"] = "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\n\nIncreases your ammo pickup to ##135%## of the normal rate.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+	
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by ##20%## for ballistic vests.",

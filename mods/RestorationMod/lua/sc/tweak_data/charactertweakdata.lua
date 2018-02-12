@@ -5396,7 +5396,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_pistol.miss_dis = 50
 	presets.weapon.expert.is_pistol.RELOAD_SPEED = 1
 	presets.weapon.expert.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
-	presets.weapon.expert.is_pistol.melee_dmg = 12
+	presets.weapon.expert.is_pistol.melee_dmg = 10.5
 	presets.weapon.expert.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 	presets.weapon.expert.is_pistol.range = presets.weapon.normal.is_pistol.range
 	presets.weapon.expert.is_pistol.FALLOFF = {
@@ -5481,7 +5481,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_rifle.miss_dis = 40
 	presets.weapon.expert.is_rifle.RELOAD_SPEED = 1
 	presets.weapon.expert.is_rifle.melee_speed = 1
-	presets.weapon.expert.is_rifle.melee_dmg = 12
+	presets.weapon.expert.is_rifle.melee_dmg = 10.5
 	presets.weapon.expert.is_rifle.tase_distance = 1400
 	presets.weapon.expert.is_rifle.aim_delay_tase = {0, 0.5}
 	presets.weapon.expert.is_rifle.tase_sphere_cast_radius = 30
@@ -5574,7 +5574,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_pump.miss_dis = 20
 	presets.weapon.expert.is_shotgun_pump.RELOAD_SPEED = 0.25
 	presets.weapon.expert.is_shotgun_pump.melee_speed = 1
-	presets.weapon.expert.is_shotgun_pump.melee_dmg = 12
+	presets.weapon.expert.is_shotgun_pump.melee_dmg = 10.5
 	presets.weapon.expert.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.expert.is_shotgun_pump.range = {
 		close = 1000,
@@ -5842,7 +5842,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_mag.miss_dis = 20
 	presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
 	presets.weapon.expert.is_shotgun_mag.melee_speed = 1
-	presets.weapon.expert.is_shotgun_mag.melee_dmg = 12
+	presets.weapon.expert.is_shotgun_mag.melee_dmg = 10.5
 	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.expert.is_shotgun_mag.range = {
 		close = 1000,
@@ -6173,7 +6173,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_smg.miss_dis = 10
 	presets.weapon.expert.is_smg.RELOAD_SPEED = 1
 	presets.weapon.expert.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
-	presets.weapon.expert.is_smg.melee_dmg = 12
+	presets.weapon.expert.is_smg.melee_dmg = 10.5
 	presets.weapon.expert.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
 	presets.weapon.expert.is_smg.range = presets.weapon.normal.is_smg.range
 	presets.weapon.expert.is_smg.autofire_rounds = presets.weapon.normal.is_smg.autofire_rounds
@@ -6347,7 +6347,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.mac11.miss_dis = 10
 	presets.weapon.expert.mac11.RELOAD_SPEED = 1
 	presets.weapon.expert.mac11.melee_speed = presets.weapon.normal.mac11.melee_speed
-	presets.weapon.expert.mac11.melee_dmg = 12
+	presets.weapon.expert.mac11.melee_dmg = 10.5
 	presets.weapon.expert.mac11.melee_retry_delay = presets.weapon.normal.mac11.melee_retry_delay
 	presets.weapon.expert.mac11.range = presets.weapon.normal.mac11.range
 	presets.weapon.expert.mac11.autofire_rounds = presets.weapon.normal.mac11.autofire_rounds
@@ -6432,7 +6432,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_revolver.miss_dis = 50
 	presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
 	presets.weapon.expert.is_revolver.melee_speed = 1
-	presets.weapon.expert.is_revolver.melee_dmg = 12
+	presets.weapon.expert.is_revolver.melee_dmg = 10.5
 	presets.weapon.expert.is_revolver.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.expert.is_revolver.range = {
 		close = 1000,
@@ -6600,7 +6600,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.mini.miss_dis = 40
 	presets.weapon.expert.mini.RELOAD_SPEED = 0.25
 	presets.weapon.expert.mini.melee_speed = 1
-	presets.weapon.expert.mini.melee_dmg = 12
+	presets.weapon.expert.mini.melee_dmg = 10.5
 	presets.weapon.expert.mini.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.expert.mini.range = {
 		close = 1000,
@@ -6687,7 +6687,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.deathwish = deep_clone(presets.weapon.expert)
-	presets.weapon.deathwish.is_shotgun_pump.melee_dmg = 12
+	presets.weapon.deathwish.is_shotgun_pump.melee_dmg = 13.125
 	presets.weapon.deathwish.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
@@ -7004,6 +7004,7 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
+	presets.weapon.deathwish.is_shotgun_mag.melee_dmg = 13.125
 	presets.weapon.deathwish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
@@ -7258,7 +7259,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.is_pistol.melee_dmg = 12
+	presets.weapon.deathwish.is_pistol.melee_dmg = 13.125
 	presets.weapon.deathwish.is_pistol.FALLOFF = {
 		{
 			r = 100,
@@ -7333,7 +7334,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.akimbo_pistol.melee_dmg = 12
+	presets.weapon.deathwish.akimbo_pistol.melee_dmg = 13.125
 	presets.weapon.deathwish.akimbo_pistol.FALLOFF = {
 		{
 			r = 100,
@@ -7408,7 +7409,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.mac11.melee_dmg = 12
+	presets.weapon.deathwish.mac11.melee_dmg = 13.125
 	presets.weapon.deathwish.mac11.FALLOFF = {
 		{
 			r = 100,
@@ -7483,7 +7484,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.is_revolver.melee_dmg = 12
+	presets.weapon.deathwish.is_revolver.melee_dmg = 13.125
 	presets.weapon.deathwish.is_revolver.FALLOFF = {
 		{
 			r = 100,
@@ -7558,7 +7559,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.is_rifle.melee_dmg = 12
+	presets.weapon.deathwish.is_rifle.melee_dmg = 13.125
 	presets.weapon.deathwish.is_rifle.FALLOFF = {
 		{
 			r = 100,
@@ -7634,7 +7635,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.deathwish.is_bullpup = presets.weapon.deathwish.is_rifle
-	presets.weapon.deathwish.is_smg.melee_dmg = 12
+	presets.weapon.deathwish.is_smg.melee_dmg = 13.125
 	presets.weapon.deathwish.is_smg.FALLOFF = {
 		{
 			r = 100,
@@ -7783,7 +7784,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.is_lmg.melee_dmg = 12
+	presets.weapon.deathwish.is_lmg.melee_dmg = 13.125
 	presets.weapon.deathwish.is_lmg.FALLOFF = {
 		{
 			r = 100,
@@ -7858,7 +7859,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.mini.melee_dmg = 12
+	presets.weapon.deathwish.mini.melee_dmg = 13.125
 	presets.weapon.deathwish.mini.FALLOFF = {
 		{
 			r = 100,
@@ -10652,7 +10653,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self:_set_characters_dodge_preset("athletic_overkill")
-	self:_set_characters_melee_preset("2.5", "2")
+	self:_set_characters_melee_preset("2.1", "2")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -10723,7 +10724,7 @@ function CharacterTweakData:_set_overkill_290()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("deathwish", "expert")
 	self:_set_characters_dodge_preset("deathwish")
-	self:_set_characters_melee_preset("3.125", "2.5")
+	self:_set_characters_melee_preset("2.625", "2.1")
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil

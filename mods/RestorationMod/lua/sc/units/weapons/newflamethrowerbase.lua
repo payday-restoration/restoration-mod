@@ -45,6 +45,8 @@ function NewFlamethrowerBase:_update_stats_values()
 			self._damage_far = self._damage_far + stats.damage_far_mul
 		end
 	end
+	
+	self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 1)
 end
 
 function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)

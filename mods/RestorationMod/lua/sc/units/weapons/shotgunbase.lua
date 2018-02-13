@@ -33,6 +33,10 @@ local old_update_stats_values = ShotgunBase._update_stats_values
 			end
 		end
 		
+		if self._ammo_data.rays ~= 1 then
+			self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 1)
+		end
+		
 	end
 
 	function ShotgunBase:reload_expire_t()

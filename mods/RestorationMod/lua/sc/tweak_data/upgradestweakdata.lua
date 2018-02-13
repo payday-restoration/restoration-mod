@@ -304,6 +304,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Shotgun Impact
 				self.values.shotgun.recoil_index_addend = {1}
 				self.values.shotgun.damage_multiplier = {1, 1}
+				self.values.shotgun.extra_rays = {3}
 				self.skill_descs.shotgun_impact = {multibasic = "4", multipro = "35%"}
 				
 				--Far Away
@@ -1329,6 +1330,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 2,
 			upgrade = "reload_speed_multiplier",
 			category = "pistol"
+		}
+	}	
+	self.definitions.shotgun_extra_rays = {
+		name_id = "menu_shotgun_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "extra_rays",
+			category = "shotgun"
 		}
 	}	
 	

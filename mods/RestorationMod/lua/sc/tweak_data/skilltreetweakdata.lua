@@ -224,8 +224,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_stamina_multiplier",
-						"team_stamina_multiplier"
+						"cable_tie_pickup_chance"
 					},
 					cost = self.costs.pro
 				}
@@ -759,7 +758,7 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"saw_damage_multiplier"
+							"saw_enemy_slicer"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -791,13 +790,12 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {0, 2},
 					[1] = {
 						upgrades = {
-							"saw_enemy_slicer"
+							"saw_ignore_shields_1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"saw_ignore_shields_1",
 							"saw_panic_when_kill_1"
 						},
 						cost = self.costs.hightierpro

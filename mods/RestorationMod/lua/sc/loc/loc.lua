@@ -373,7 +373,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "Cable Guy",
-			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nIncreases your stamina by ##150%## and your crew's stamina by ##50%.##",																								
+			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nYou gain a ##10%## chance to pick up cable ties from ammo boxes.\n\nIncreases your maximum cable ties by ##3.##",																								
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "Clowns are Scary",
@@ -502,7 +502,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear
 			["menu_portable_saw_beta_sc"] = "Rip and Tear",
-			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload Saws ##25%## faster.\n\nACE: ##$pro##\nAttacking enemies with the OVE9000 portable saw wears it down ##50%## less than before. ",																																																																																																																																																																																																
+			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload Saws ##25%## faster.\n\nACE: ##$pro##\nYour saw blade wear is reduced by ##50%##",																																																																																																																																																																																																
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "Extra Lead",
@@ -709,7 +709,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
-		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##50%## damage when further than 10 meters.",																								
+		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.",																								
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",

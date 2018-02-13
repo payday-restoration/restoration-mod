@@ -34,12 +34,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if hit_something then
 			self:_start_sawing_effect()
 			local ammo_usage = 2
-			if ray_res.hit_enemy then
-				if managers.player:has_category_upgrade("saw", "enemy_slicer") then
-					ammo_usage = 1
-				else
-					ammo_usage = 2
-				end
+			if managers.player:has_category_upgrade("saw", "enemy_slicer") then
+				ammo_usage = 1
+			else
+				ammo_usage = 2
 			end
 			self:set_ammo_remaining_in_clip(math.max(self:get_ammo_remaining_in_clip() - ammo_usage, 0))
 			self:set_ammo_total(math.max(self:get_ammo_total() - ammo_usage, 0))

@@ -223,7 +223,9 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Cable Guy
 				self.values.cable_tie.interact_speed_multiplier = {0.25}
+				self.values.cable_tie.pickup_chance = {0.1}
 				self.values.cable_tie.quantity_1 = {4}
+				self.values.cable_tie.quantity_2 = {4}
 				self.values.player.stamina_multiplier = {2}
 				self.values.team.stamina.multiplier = {1.5}
 
@@ -476,7 +478,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Spotter
 				self.values.player.marked_enemy_extra_damage = {true}
 				self.values.player.marked_enemy_damage_mul = 1.15
-				self.values.player.marked_inc_dmg_distance = {{1000, 1.5}}
+				self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -738,7 +740,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--}
 		--}
 
-    	if Global.game_settings and Global.game_settings.single_player then
+		if Global.game_settings and Global.game_settings.single_player then
 		self.values.cable_tie.quantity_1 = {16}
 	end
 
@@ -1341,6 +1343,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "shotgun"
 		}
 	}	
+	self.definitions.cable_tie_pickup_chance = {
+		name_id = "menu_shotgun_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "pickup_chance",
+			category = "cable_tie"
+		}
+	}		
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {

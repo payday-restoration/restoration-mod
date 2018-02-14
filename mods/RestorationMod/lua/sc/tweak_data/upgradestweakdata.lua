@@ -647,7 +647,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.pistol.fire_rate_multiplier = {1.5}
 
 				--Over Pressurized/Gunfighter (Formerly Akimbo)
-				self.values.pistol.reload_speed_multiplier = {1.25, 1.25}
+				self.values.pistol.reload_speed_multiplier = {1.25, 1.5}
 				self.values.pistol.damage_multiplier = {1}
 				
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)

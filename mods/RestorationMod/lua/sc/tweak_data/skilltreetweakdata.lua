@@ -303,14 +303,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 10},
 				[1] = {
 					upgrades = {
-						"player_minion_master_speed_multiplier"
+						"player_minion_master_speed_multiplier",
+						"player_passive_convert_enemies_health_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
 						"player_minion_master_health_multiplier",
-						"player_passive_convert_enemies_health_multiplier_1"
+						"player_passive_convert_enemies_health_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -387,13 +388,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 0},
 				[1] = {
 					upgrades = {
-						"smg_fire_rate_multiplier_1"
+						"smg_move_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"smg_fire_rate_multiplier_2"
+						"smg_fire_rate_multiplier_1"
 					},
 					cost = self.costs.pro
 				}

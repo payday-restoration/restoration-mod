@@ -389,7 +389,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime	
 			["menu_control_freak_beta_sc"] = "Partners in Crime",	
-			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes ##45%## less damage.",
+			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nYour converted enemy takes ##45%## less damage.\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes an additional ##45%## less damage.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
@@ -411,7 +411,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by an additional ##15%.##",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy while moving with SMGs and LMGs is increased by ##50%.##\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -673,7 +673,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Cleaner--
 		["menu_cleaner_beta_sc"] = "Cleaner",
-		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases and you ##no longer have cleaner costs## when killing a civilian.\n\nYou deal ##5%## more damage against special enemies.",	
+		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases and you ##no longer have cleaner costs## when killing a civilian.\n\nYou deal ##10%## more damage against special enemies.",	
 																																																																																																																																																																																																																								
 		--Sixth Sense--
 		["menu_chameleon_beta_sc"] = "Sixth Sense",

@@ -247,14 +247,11 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.civilian_gives_ammo = {true}
 				self.values.player.super_syndrome = {0}
 
-				--This breaks shit for some reason, not that it matters since we didn't change anything anyway.
 				--Partners in Crime--
-				--self.values.player.minion_master_speed_multiplier = {1.1}
-				--self.values.player.minion_master_health_multiplier = {1.3}
-				--self.values.player.passive_convert_enemies_health_multiplier = {
-				--	0.8,
-				--	0.4
-				--}				
+				self.values.player.passive_convert_enemies_health_multiplier = {
+					0.55,
+					0.1
+				}				
 							
 				--Hostage Taker
 				self.values.player.hostage_health_regen_addend = {0.015, 0.045}
@@ -275,7 +272,8 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.smg.hip_fire_spread_multiplier = {0.5}
 
 				--MG Specialist
-				self.values.smg.fire_rate_multiplier = {1.15, 1.3}
+				self.values.smg.fire_rate_multiplier = {1.15, 1.15}
+				self.values.smg.move_spread_multiplier = {0.5}
 				self.values.smg.damage_multiplier = {1}
 				
 				--Shock and Awe
@@ -517,7 +515,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.extra_corpse_dispose_amount = {1}
 				self.values.bodybags_bag.quantity = {1}
 				self.values.player.cleaner_cost_multiplier = {0}
-				self.values.weapon.special_damage_taken_multiplier = {1.05}
+				self.values.weapon.special_damage_taken_multiplier = {1.1}
 
 				--Sixth Sense
 				self.values.player.standstill_omniscience = {true}
@@ -1456,6 +1454,15 @@ function UpgradesTweakData:_smg_definitions()
 			value = 1
 		}
 	}
+	self.definitions.smg_move_spread_multiplier = {
+		name_id = "menu_snp_move_spread_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "move_spread_multiplier",
+			category = "smg"
+		}
+	}	
 	self.definitions.smg_recoil_index_addend = {
 		category = "feature",
 		name_id = "menu_smg_recoil_index_addend",

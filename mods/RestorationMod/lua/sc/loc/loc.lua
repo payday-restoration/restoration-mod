@@ -377,15 +377,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "Clowns are Scary",
-			["menu_cable_guy_beta_desc_sc"] = "BASIC: ##$basic##\nThe power and range of your intimidation is increased by ##50%.##\n\nACE: ##$pro##\nYou can now have ##2## converted enemies at the same time.",																								
-
-			--Joker
-			["menu_joker_beta_sc"] = "Joker",
-			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nYou can convert a non-special enemy to fight on your side. This can not be done during stealth and enemies must surrender before you can convert them. You can only convert one enemy at a time.\n\nACE: ##$pro##\nConverted enemies gain ##55%## more health and deal ##45%## more damage. The time to convert an enemy is reduced by ##65%.##",																								
+			["menu_cable_guy_beta_desc_sc"] = "BASIC: ##$basic##\nThe power and range of your intimidation is increased by ##50%.##\n\nACE: ##$pro##\nCivilians are intimidated by the noise you make and remain intimidated ##50%## longer.",																								
 
 			--Stockholm Syndrome	
-			["menu_stockholm_syndrome_beta_sc"] = "Stockholm Syndrome",	
-			["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: ##$basic##\nCivilians are intimidated by the noise you make and remain intimidated ##50%## longer.\n\nACE: ##$pro##\nYour hostages will not flee when they have been rescued by law enforcers.\n\nNearby civilians and jokers have a chance of reviving you if you interact with them, and have a chance of giving you ammo.",
+			["menu_joker_beta_sc"] = "Stockholm Syndrome",
+			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nYour hostages will not flee when they have been rescued by law enforcers.\n\nACE: ##$pro##\nNearby civilians and jokers have a chance of reviving you if you interact with them, and have a chance of giving you ammo.",																								
+
+			--Joker	
+			["menu_stockholm_syndrome_beta_sc"] = "Joker",	
+			["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: ##$basic##\nYou can convert a non-special enemy to fight on your side. This can not be done during stealth and enemies must surrender before you can convert them. You can only convert one enemy at a time.\n\nACE: ##$pro##\nThe converted enemy deals ##45%## more damage.\n\nYou can now have ##2## converted enemies at the same time.",
 
 			--Partners in Crime	
 			["menu_control_freak_beta_sc"] = "Partners in Crime",	
@@ -439,7 +439,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB	
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou ADS ##50%## faster when using shotguns.\n\nACE: ##$pro##\nYou reload Shotguns ##25%## faster.",																								
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased steel sight speed when using Shotguns.\n\nACE: ##$pro##\nYou reload Shotguns ##25%## faster.",																								
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
@@ -649,7 +649,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
-		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload rifles ##25%## faster.\n\nACE: ##$pro##\nYou can now ##reload your weapons while sprinting.##",
+		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy while moving with Assault Rifles and Sniper Rifles is increased by ##50%.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
 
 		--Nerves of Steel--	
 		["menu_fast_fire_beta_sc"] = "Nerves of Steel",
@@ -689,7 +689,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 																																																																																																																																																																																																																																															
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
-		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed and ##20%## ladder climbing speed.\n\nACE: ##$pro##\nYou gain ##10%## additional movement speed.\n\nYour fall damage is reduced by ##75%##.",																								
+		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%##.\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.",																								
 
 		--Moving Target--
 		["menu_dire_need_beta_sc"] = "Moving Target",

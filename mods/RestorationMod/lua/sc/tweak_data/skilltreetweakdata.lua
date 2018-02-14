@@ -78,6 +78,9 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_flashbang_multiplier_1",
 		"player_fall_health_damage_multiplier",
 		"player_melee_kill_snatch_pager_chance",
+		"player_convert_enemies_health_multiplier",
+		"player_convert_enemies_interaction_speed_multiplier",
+		"player_climb_speed_multiplier_1",
 		"player_suppression_resist"
 	}
 
@@ -245,16 +248,37 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_convert_enemies_max_minions_2"
+						"player_civ_calming_alerts",
+						"player_civ_intimidation_mul"
 					},
 					cost = self.costs.pro
 				}
 			}
 
-			--Joker--
+			--Stockholm Syndrome--
 			self.skills.joker = {
 				["name_id"] = "menu_joker_beta_sc",
 				["desc_id"] = "menu_joker_beta_desc_sc",
+				["icon_xy"] = {3, 8},
+				[1] = {
+					upgrades = {
+						"player_super_syndrome_1"
+					},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {
+						"player_civilian_reviver",
+						"player_civilian_gives_ammo"
+					},
+					cost = self.costs.hightierpro
+				}
+			}
+
+			--Joker--
+			self.skills.stockholm_syndrome = {
+				["name_id"] = "menu_stockholm_syndrome_beta_sc",
+				["desc_id"] = "menu_stockholm_syndrome_beta_desc_sc",
 				["icon_xy"] = {6, 8},
 				[1] = {
 					upgrades = {
@@ -265,31 +289,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_convert_enemies_health_multiplier",
 						"player_convert_enemies_damage_multiplier",
-						"player_convert_enemies_interaction_speed_multiplier"
-					},
-					cost = self.costs.hightierpro
-				}
-			}
-
-			--Stockholm Syndrome--
-			self.skills.stockholm_syndrome = {
-				["name_id"] = "menu_stockholm_syndrome_beta_sc",
-				["desc_id"] = "menu_stockholm_syndrome_beta_desc_sc",
-				["icon_xy"] = {3, 8},
-				[1] = {
-					upgrades = {
-						"player_civ_calming_alerts",
-						"player_civ_intimidation_mul"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"player_civilian_reviver",
-						"player_civilian_gives_ammo",
-						"player_super_syndrome_1"
+						"player_convert_enemies_max_minions_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1106,14 +1107,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 9},
 				[1] = {
 					upgrades = {
-						"assault_rifle_reload_speed_multiplier",
-						"snp_reload_speed_multiplier",
+						"assault_rifle_move_spread_multiplier",
+						"snp_move_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_run_and_reload"
+						"assault_rifle_reload_speed_multiplier",
+						"snp_reload_speed_multiplier"
 					},
 					cost = self.costs.pro
 				}
@@ -1363,14 +1365,13 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"player_movement_speed_multiplier_1",
-						"player_climb_speed_multiplier_1"
+						"player_fall_damage_multiplier"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_movement_speed_multiplier_2",
-						"player_fall_damage_multiplier"
+						"player_run_and_reload"
 					},
 					cost = self.costs.pro
 				}

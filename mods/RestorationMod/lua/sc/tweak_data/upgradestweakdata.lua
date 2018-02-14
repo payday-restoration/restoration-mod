@@ -552,7 +552,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.crouch_dodge_chance = {0.05, 0.15}
 
 				--Evasion
-				self.values.player.movement_speed_multiplier = {1.05, 1.15}
+				self.values.player.movement_speed_multiplier = {1.05, 1.1}
 				self.values.player.climb_speed_multiplier = {1.2, 1.75}
 				self.values.player.can_free_run = {true}
 				self.values.player.fall_damage_multiplier = {0.25}

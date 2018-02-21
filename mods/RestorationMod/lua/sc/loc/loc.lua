@@ -333,6 +333,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_risk_dv"] = "Death Vox",
 		["menu_difficulty_dv"] = "Death Vox",
 		
+		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 20 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
+		
 --[[   SKILLTREES   ]]--
 	--{
 	
@@ -645,11 +647,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
-		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles set to semi-auto by ##5.##\n\nACE: ##$pro##\nYour weapon stability is increased with all rifles by ##4.##",
+		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability is increased with all rifles by ##4.##\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy while standing still.",
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
-		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy while moving with Assault Rifles and Sniper Rifles is increased by ##50%.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
+		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles and SMGs set to semi-auto by ##5.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
 
 		--Nerves of Steel--	
 		["menu_fast_fire_beta_sc"] = "Nerves of Steel",
@@ -667,25 +669,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_iron_man_sc"] = "Bulletproof",
 		["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nYour armor recovery rate is increased by ##15%.##",																																																																																																																																																																																																																									
 
-		--Chameleon--
-		["menu_jail_workout_sc"] = "Chameleon",
-		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nIncreases the time until you start getting detected while in casing mode by ##25%.##\n\nYou can mark enemies and cameras while in casing mode.\n\nACE: ##$pro##\nYou can pick up items while in casing mode.\n\nYou gain ##30%## more value to items and cash that you pick up.",	
-
 		--Cleaner--
-		["menu_cleaner_beta_sc"] = "Cleaner",
-		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases and you ##no longer have cleaner costs## when killing a civilian.\n\nYou deal ##10%## more damage against special enemies.",	
+		["menu_jail_workout_sc"] = "Cleaner",
+		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases.\n\nYou deal ##10%## more damage against special enemies. ",	
+
+		--Nimble--
+		["menu_cleaner_beta_sc"] = "Nimble",
+		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou pick all locks and handcuffs ##75%## faster.\n\nACE: ##$pro##\nYou can now ##silently crack safes by hand.##",	
 																																																																																																																																																																																																																								
 		--Sixth Sense--
 		["menu_chameleon_beta_sc"] = "Sixth Sense",
 		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",	
 
-		--Nimble--
-		["menu_second_chances_beta_sc"] = "Nimble",
-		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##25## seconds.\n\nACE: ##$pro##\nYou pick all locks and handcuffs ##75%## faster and now you can ##lockpick safes.##\n\nThe duration of marked enemies is increased by ##100%## and you can now mark specials by aiming at them with any weapon.",	
-
+		--Camera Loop--
+		["menu_second_chances_beta_sc"] = "Camera Loop",
+		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##25## seconds.\n\nACE: ##$pro##\nCamera loop duration is increased by ##25## seconds.",	
+		
 		--ECM Specialist--
-		["menu_ecm_2x_beta_sc"] = "ECM Specialist",
-		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##2## ECM jammers instead of just one.\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer.",	
+		["menu_ecm_booster_beta_sc"] = "ECM Specialist",
+		["menu_ecm_booster_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##3## ECM jammers instead of just two.\n\nACE: ##$pro##\nYou can now place ##4## ECM jammers instead of just three.",	
+		
+		--ECM Overdrive--
+		["menu_ecm_2x_beta_sc"] = "ECM Overdrive",
+		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can ##now be used to open certain electronic doors.##\n\nYour ECM jammer and feedback duration is increased by ##25%.##\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer.",	
 																																																																																																																																																																																																																																															
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
@@ -709,7 +715,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
-		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.",																								
+		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.\n\nThe duration of marked enemies is increased by ##100%## and you can now mark specials by aiming at them with any weapon.",																								
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",

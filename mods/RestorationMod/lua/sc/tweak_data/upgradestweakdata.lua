@@ -171,6 +171,17 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.team.crew_ai_ap_ammo = {true}
 	
+	--Equipment--
+	
+	--ECMs--
+	self.ecm_jammer_base_battery_life = 10
+	self.ecm_jammer_base_low_battery_life = 4
+	self.ecm_jammer_base_range = 2500
+	self.ecm_feedback_min_duration = 20
+	self.ecm_feedback_max_duration = 20
+	self.ecm_feedback_interval = 1.5	
+	self.ecm_feedback_retrigger_interval = 240
+	
 	--[[   MASTERMIND   ]]--
 		--{
 			--[[   MEDIC SUBTREE   ]]--
@@ -477,6 +488,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.marked_enemy_extra_damage = {true}
 				self.values.player.marked_enemy_damage_mul = 1.15
 				self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}
+				self.values.player.mark_enemy_time_multiplier = {2}
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -503,12 +515,12 @@ function UpgradesTweakData:_init_pd2_values()
 		--{
 			--[[   COVERT OPS SUBTREE   ]]--
 			--{
-				--Chameleon
+				--Chameleon (RIP)
 				self.values.player.suspicion_multiplier = {0.75}
 				self.values.player.sec_camera_highlight_mask_off = {true}
 				self.values.player.special_enemy_highlight_mask_off = {true}
 				self.values.player.mask_off_pickup = {true}
-				self.values.player.small_loot_multiplier = {1.1, 1.3}
+				self.values.player.small_loot_multiplier = {1.3, 1.3}
 				
 				--Cleaner
 				self.values.player.corpse_dispose_amount = {2, 3}
@@ -516,6 +528,10 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.bodybags_bag.quantity = {1}
 				self.values.player.cleaner_cost_multiplier = {0}
 				self.values.weapon.special_damage_taken_multiplier = {1.1}
+				
+				--Nimble
+				self.values.player.pick_lock_easy_speed_multiplier = {0.25}
+				self.values.player.pick_lock_hard = {true}		
 
 				--Sixth Sense
 				self.values.player.standstill_omniscience = {true}
@@ -523,23 +539,20 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.buy_bodybags_asset = {true}
 				self.values.player.buy_spotter_asset = {true}
 				
-				--Undertaker
-				self.values.player.tape_loop_duration = {10, 25}	
-				self.values.player.pick_lock_easy_speed_multiplier = {0.25}
-				self.values.player.pick_lock_hard = {true}
-				self.values.player.mark_enemy_time_multiplier = {2}
-
+				--Camera Loop
+				self.values.player.tape_loop_duration = {25, 50}
+				
+				--ECM Specialist
+				self.values.ecm_jammer.quantity = {1, 2}
+				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
+				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
+				self.values.player.melee_kill_snatch_pager_chance = {0}
+				
 				--ECM Overdrive
 				self.values.ecm_jammer.feedback_duration_boost = {1.25}
 				self.values.ecm_jammer.duration_multiplier = {1.25}
-				self.values.ecm_jammer.can_open_sec_doors = {true}
-				
-				--ECM Specialist
-				self.values.ecm_jammer.quantity = {1, 3}
-				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
-				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
+				self.values.ecm_jammer.can_open_sec_doors = {true}		
 				self.values.ecm_jammer.affects_pagers = {true}
-				self.values.player.melee_kill_snatch_pager_chance = {0}
 			--}
 			
 			--[[   COMMANDO SUBTREE   ]]--

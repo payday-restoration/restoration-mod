@@ -81,6 +81,11 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_convert_enemies_health_multiplier",
 		"player_convert_enemies_interaction_speed_multiplier",
 		"player_climb_speed_multiplier_1",
+		"player_suspicion_bonus",
+		"player_sec_camera_highlight_mask_off",
+		"player_special_enemy_highlight_mask_off",
+		"player_mask_off_pickup",
+		"player_small_loot_multiplier_1",
 		"player_suppression_resist"
 	}
 
@@ -1088,14 +1093,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {0, 5},
 				[1] = {
 					upgrades = {
-						"weapon_single_spread_index_addend"
+						"assault_rifle_recoil_index_addend",
+						"snp_recoil_index_addend"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"assault_rifle_recoil_index_addend",
-						"snp_recoil_index_addend"
+						"player_not_moving_accuracy_increase_bonus_1"
 					},
 					cost = self.costs.pro
 				}
@@ -1108,8 +1113,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 9},
 				[1] = {
 					upgrades = {
-						"assault_rifle_move_spread_multiplier",
-						"snp_move_spread_multiplier"
+						"weapon_single_spread_index_addend"
 					},
 					cost = self.costs.default
 				},
@@ -1204,32 +1208,10 @@ function SkillTreeTweakData:init(tweak_data)
 			--[[   COVERT OPS SUBTREE   ]]--
 			--{
 
-			--Chameleon--
+			--Cleaner--
 			self.skills.jail_workout = {
 				["name_id"] = "menu_jail_workout_sc",
 				["desc_id"] = "menu_jail_workout_desc_sc",
-				["icon_xy"] = {5, 3},
-				[1] = {
-					upgrades = {
-						"player_suspicion_bonus",
-						"player_sec_camera_highlight_mask_off",
-						"player_special_enemy_highlight_mask_off"
-					},
-					cost = self.costs.default
-				},
-				[2] = {
-					upgrades = {
-						"player_mask_off_pickup",
-						"player_small_loot_multiplier_1"
-					},
-					cost = self.costs.pro
-				}
-			}
-
-			--Cleaner--
-			self.skills.cleaner = {
-				["name_id"] = "menu_cleaner_beta_sc",
-				["desc_id"] = "menu_cleaner_beta_desc_sc",
 				["icon_xy"] = {7, 2},
 				[1] = {
 					upgrades = {
@@ -1240,8 +1222,26 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"bodybags_bag_quantity",
-						"player_cleaner_cost_multiplier",
-						"weapon_special_damage_taken_multiplier"
+						"weapon_special_damage_taken_multiplier"						
+					},
+					cost = self.costs.pro
+				}
+			}
+
+			--Nimble--
+			self.skills.cleaner = {
+				["name_id"] = "menu_cleaner_beta_sc",
+				["desc_id"] = "menu_cleaner_beta_desc_sc",
+				["icon_xy"] = {10, 4},
+				[1] = {
+					upgrades = {
+						"player_pick_lock_easy_speed_multiplier"
+					},
+					cost = self.costs.default
+				},
+				[2] = {
+					upgrades = {
+						"player_pick_lock_hard"
 					},
 					cost = self.costs.pro
 				}
@@ -1268,57 +1268,54 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Undertaker--
+			--Camera Loop-
 			self.skills.second_chances = {
 				["name_id"] = "menu_second_chances_beta_sc",
 				["desc_id"] = "menu_second_chances_beta_desc_sc",
 				["icon_xy"] = {4, 2},
 				[1] = {
 					upgrades = {
-						"player_tape_loop_duration_1",
+						"player_tape_loop_duration_1"
+					},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {
 						"player_tape_loop_duration_2"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"player_pick_lock_hard",
-						"player_pick_lock_easy_speed_multiplier",
-						"weapon_steelsight_highlight_specials",
-						"player_mark_enemy_time_multiplier",
-					},
-					cost = self.costs.hightierpro
-				}
-			}
-
-			--ECM Overdrive--
-			self.skills.ecm_booster = {
-				["name_id"] = "menu_ecm_booster_beta",
-				["desc_id"] = "menu_ecm_booster_beta_desc",
-				["icon_xy"] = {6, 3},
-				[1] = {
-					upgrades = {
-						"ecm_jammer_duration_multiplier",
-						"ecm_jammer_feedback_duration_boost"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"ecm_jammer_can_open_sec_doors"
 					},
 					cost = self.costs.hightierpro
 				}
 			}
 
 			--ECM Specialist--
-			self.skills.ecm_2x = {
-				["name_id"] = "menu_ecm_2x_beta_sc",
-				["desc_id"] = "menu_ecm_2x_beta_desc_sc",
+			self.skills.ecm_booster = {
+				["name_id"] = "menu_ecm_booster_beta_sc",
+				["desc_id"] = "menu_ecm_booster_beta_desc_sc",
 				["icon_xy"] = {3, 4},
 				[1] = {
 					upgrades = {
 						"ecm_jammer_quantity_increase_1"
+					},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {
+						"ecm_jammer_quantity_increase_2"
+					},
+					cost = self.costs.hightierpro
+				}
+			}
+
+			--ECM Overdrive--
+			self.skills.ecm_2x = {
+				["name_id"] = "menu_ecm_2x_beta_sc",
+				["desc_id"] = "menu_ecm_2x_beta_desc_sc",
+				["icon_xy"] = {6, 3},
+				[1] = {
+					upgrades = {
+						"ecm_jammer_can_open_sec_doors",
+						"ecm_jammer_duration_multiplier",
+						"ecm_jammer_feedback_duration_boost"
 					},
 					cost = self.costs.hightier
 				},
@@ -1554,7 +1551,9 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_marked_inc_dmg_distance_1"
+						"player_marked_inc_dmg_distance_1",
+						"weapon_steelsight_highlight_specials",
+						"player_mark_enemy_time_multiplier"					
 					},
 					cost = self.costs.hightierpro
 				}

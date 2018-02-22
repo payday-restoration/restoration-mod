@@ -482,7 +482,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "Bullseye",
-			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##5## armor for each successful headshot. This effect cannot occur more than once every ##2## seconds.\n\nACE: ##$pro##\nYou regenerate an additional ##20## armor for each successful headshot.",																								
+			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##5## armor for each successful headshot. This effect cannot occur more than once every ##3## seconds.\n\nACE: ##$pro##\nYou regenerate an additional ##20## armor for each successful headshot.",																								
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
@@ -675,15 +675,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Nimble--
 		["menu_cleaner_beta_sc"] = "Nimble",
-		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou pick all locks and handcuffs ##75%## faster.\n\nACE: ##$pro##\nYou can now ##silently crack safes by hand.##",	
+		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou pick all locks and handcuffs ##50%## faster.\n\nACE: ##$pro##\nYou can now ##silently crack safes by hand.##",	
 																																																																																																																																																																																																																								
 		--Sixth Sense--
 		["menu_chameleon_beta_sc"] = "Sixth Sense",
 		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",	
 
-		--Camera Loop--
-		["menu_second_chances_beta_sc"] = "Camera Loop",
-		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##25## seconds.\n\nACE: ##$pro##\nCamera loop duration is increased by ##25## seconds.",	
+		--Systems Specialist--
+		["menu_second_chances_beta_sc"] = "Systems Specialist",
+		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability disable ##1## camera from detecting you and your crew. Effect lasts for ##30## seconds.\n\nYou interact with all computers, hacks, and ECMs ##25%## faster.\n\nACE: ##$pro##\nIncreases the duration of marked enemies by ##100%## and you can now mark specials and guards in stealth by aiming at them with any weapon.\n\nYou interact with all computers, hacks, and ECMs an additional ##50%## faster.",	
 		
 		--ECM Specialist--
 		["menu_ecm_booster_beta_sc"] = "ECM Specialist",
@@ -715,7 +715,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
-		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.\n\nThe duration of marked enemies is increased by ##100%## and you can now mark specials by aiming at them with any weapon.",																								
+		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.",																								
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",

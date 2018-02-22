@@ -86,6 +86,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_special_enemy_highlight_mask_off",
 		"player_mask_off_pickup",
 		"player_small_loot_multiplier_1",
+		"player_pick_lock_easy_speed_multiplier_1",
 		"player_suppression_resist"
 	}
 
@@ -1235,7 +1236,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 4},
 				[1] = {
 					upgrades = {
-						"player_pick_lock_easy_speed_multiplier"
+						"player_pick_lock_easy_speed_multiplier_2"
 					},
 					cost = self.costs.default
 				},
@@ -1268,20 +1269,23 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Camera Loop-
+			--Systems Specialist-
 			self.skills.second_chances = {
 				["name_id"] = "menu_second_chances_beta_sc",
 				["desc_id"] = "menu_second_chances_beta_desc_sc",
 				["icon_xy"] = {4, 2},
 				[1] = {
 					upgrades = {
-						"player_tape_loop_duration_1"
+						"player_tape_loop_duration_1",
+						"player_hack_fix_interaction_speed_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_tape_loop_duration_2"
+						"player_mark_enemy_time_multiplier",
+						"weapon_steelsight_highlight_specials",
+						"player_hack_fix_interaction_speed_multiplier_2",
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1551,9 +1555,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_marked_inc_dmg_distance_1",
-						"weapon_steelsight_highlight_specials",
-						"player_mark_enemy_time_multiplier"					
+						"player_marked_inc_dmg_distance_1"			
 					},
 					cost = self.costs.hightierpro
 				}

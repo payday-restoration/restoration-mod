@@ -234,7 +234,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Cable Guy
 				self.values.cable_tie.interact_speed_multiplier = {0.25}
-				self.values.cable_tie.pickup_chance = {0.1}
+				self.values.cable_tie.pickup_chance = {true}
 				self.values.cable_tie.quantity_1 = {4}
 				self.values.cable_tie.quantity_2 = {4}
 				self.values.player.stamina_multiplier = {2}
@@ -356,6 +356,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Bullseye
 				self.values.player.headshot_regen_armor_bonus = {0.05, 2.5}
+				self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
 				self.values.player.shield_knock = {true}
@@ -487,8 +488,6 @@ function UpgradesTweakData:_init_pd2_values()
 				--Spotter
 				self.values.player.marked_enemy_extra_damage = {true}
 				self.values.player.marked_enemy_damage_mul = 1.15
-				self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}
-				self.values.player.mark_enemy_time_multiplier = {2}
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -530,8 +529,8 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.special_damage_taken_multiplier = {1.1}
 				
 				--Nimble
-				self.values.player.pick_lock_easy_speed_multiplier = {0.25}
-				self.values.player.pick_lock_hard = {true}		
+				self.values.player.pick_lock_easy_speed_multiplier = {0.5, 0.25}
+				self.values.player.pick_lock_hard = {true}
 
 				--Sixth Sense
 				self.values.player.standstill_omniscience = {true}
@@ -539,8 +538,11 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.buy_bodybags_asset = {true}
 				self.values.player.buy_spotter_asset = {true}
 				
-				--Camera Loop
+				--Systems Specialist
 				self.values.player.tape_loop_duration = {25, 50}
+				self.values.player.hack_fix_interaction_speed_multiplier = {0.75, 0.25}
+				self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}
+				self.values.player.mark_enemy_time_multiplier = {2}
 				
 				--ECM Specialist
 				self.values.ecm_jammer.quantity = {1, 2}
@@ -1361,6 +1363,42 @@ function UpgradesTweakData:_player_definitions()
 			value = 1,
 			upgrade = "pickup_chance",
 			category = "cable_tie"
+		}
+	}		
+	self.definitions.player_hack_fix_interaction_speed_multiplier_1 = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hack_fix_interaction_speed_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_hack_fix_interaction_speed_multiplier_2 = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "hack_fix_interaction_speed_multiplier",
+			category = "player"
+		}
+	}		
+	self.definitions.player_pick_lock_easy_speed_multiplier_1 = {
+		name_id = "menu_player_pick_lock_easy_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "pick_lock_easy_speed_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_pick_lock_easy_speed_multiplier_2 = {
+		name_id = "menu_player_pick_lock_easy_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "pick_lock_easy_speed_multiplier",
+			category = "player"
 		}
 	}		
 	

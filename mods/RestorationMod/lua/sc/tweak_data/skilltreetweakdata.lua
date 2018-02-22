@@ -1152,11 +1152,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["desc_id"] = "menu_kilmer_desc_sc",
 				["icon_xy"] = {0, 0},
 				[1] = {
-					upgrades = {},
+					upgrades = {
+						"snp_graze_damage_1"
+					},
 					cost = self.costs.hightier
 				},
 				[2] = {
-					upgrades = {},
+					upgrades = {
+						"snp_graze_damage_2"
+					},
 					cost = self.costs.hightierpro
 				}
 			}

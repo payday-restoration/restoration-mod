@@ -53,10 +53,13 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.spring = clone(security_variant)
 	CopMovement._action_variants.summers = security_variant
-	CopMovement._action_variants.boom_summers = security_variant
-	CopMovement._action_variants.taser_summers = security_variant
+	CopMovement._action_variants.boom_summers = clone(security_variant)
+	CopMovement._action_variants.boom_summers.heal = MedicActionHeal
+	CopMovement._action_variants.taser_summers = clone(security_variant)
+	CopMovement._action_variants.taser_summers.heal = MedicActionHeal
 	CopMovement._action_variants.omnia_lpf = security_variant
-	CopMovement._action_variants.medic_summers = security_variant
+	CopMovement._action_variants.medic_summers = clone(security_variant)
+	CopMovement._action_variants.medic_summers.heal = MedicActionHeal
 	CopMovement._action_variants.tank_titan = clone(security_variant)
 	CopMovement._action_variants.tank_titan.walk = TankCopActionWalk
 	CopMovement._action_variants.tank_titan_assault = clone(security_variant)

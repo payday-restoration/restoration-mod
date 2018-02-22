@@ -484,10 +484,6 @@ function UpgradesTweakData:_init_pd2_values()
 					"smg",
 					"snp"
 				}
-
-				--Spotter
-				self.values.player.marked_enemy_extra_damage = {true}
-				self.values.player.marked_enemy_damage_mul = 1.15
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -496,6 +492,20 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.snp.reload_speed_multiplier = {1.25}
 				self.values.assault_rifle.move_spread_multiplier = {0.5}
 				self.values.snp.move_spread_multiplier = {0.5}
+				
+				--Graze
+				self.values.snp.graze_damage = {
+					{
+						radius = 100,
+						damage_factor = 0.2,
+						damage_factor_headshot = 0.2
+					},
+					{
+						radius = 100,
+						damage_factor = 0.2,
+						damage_factor_headshot = 0.5
+					}
+				}				
 
 				--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
@@ -621,8 +631,10 @@ function UpgradesTweakData:_init_pd2_values()
 				--Dire Need
 				self.values.player.armor_depleted_stagger_shot = {0, 5}
 				
-				--Subsonic Rounds
+				--Spotter
 				self.values.weapon.silencer_damage_multiplier = {1, 1}
+				self.values.player.marked_enemy_extra_damage = {true}
+				self.values.player.marked_enemy_damage_mul = 1.15				
 
 				--Low Blow
 				self.values.player.detection_risk_add_crit_chance = {

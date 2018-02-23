@@ -2940,7 +2940,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME
 	presets.gang_member_damage.TASED_TIME = tweak_data.player.damage.TASED_TIME
 	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
-	presets.gang_member_damage.ARRESTED_TIME = tweak_data.player.damage.ARRESTED_TIME
+	presets.gang_member_damage.ARRESTED_TIME = 30
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
 	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.6

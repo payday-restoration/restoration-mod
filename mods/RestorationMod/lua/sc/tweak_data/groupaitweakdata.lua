@@ -446,7 +446,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
 					}					
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}	
 			self.unit_categories.CS_cop_C45_MP5 = {
 				unit_types = {
@@ -467,7 +467,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
 					}					
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}	
 			self.unit_categories.CS_cop_R870 = {
 				unit_types = {
@@ -484,7 +484,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
 					}					
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}				
 			self.unit_categories.CS_cop_stealth_MP5 = {
 				unit_types = {
@@ -501,7 +501,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")
 					}					
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}				
 			self.unit_categories.omnia_LPF = {
 				unit_types = {
@@ -663,7 +663,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")
 					}						
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}
 			if difficulty_index <= 4 then
 				self.unit_categories.CS_tazer = {
@@ -727,7 +727,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow")
 					}						
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "shield"
 			}
 			self.unit_categories.FBI_suit_C45_M4 = {
@@ -1263,7 +1263,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						}						
 					},
-					access = access_type_walk_only
+					access = access_type_all
 				}
 			else
 				self.unit_categories.FBI_heavy_G36_w = {
@@ -1281,7 +1281,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						}						
 					},
-					access = access_type_walk_only
+					access = access_type_all
 				}
 			end
 			if difficulty_index <= 6 then
@@ -1300,7 +1300,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
 						}						
 					},
-					access = access_type_walk_only,
+					access = access_type_all,
 					special_type = "shield"
 				}
 			elseif difficulty_index == 7 then
@@ -1319,7 +1319,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
 						}						
 					},
-					access = access_type_walk_only,
+					access = access_type_all,
 					special_type = "shield"
 				}
 			else
@@ -1378,7 +1378,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 						}						
 					},
-					access = access_type_walk_only,
+					access = access_type_all,
 					special_type = "shield"
 				}
 			end
@@ -1575,7 +1575,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 					}
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "shield",
 				is_captain = true
 			}
@@ -1594,7 +1594,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
 					}
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "shield",
 				is_captain = true
 			}
@@ -1614,7 +1614,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				},
 				max_amount = 1,
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "spring"
 			}
 			self.unit_categories.Cap_Summers = {
@@ -1633,7 +1633,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				},
 				max_amount = 1,
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "summers"
 			}
 			self.unit_categories.boom_summers = {
@@ -1651,7 +1651,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier")
 					}
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}
 			self.unit_categories.medic_summers = {
 				unit_types = {
@@ -1668,7 +1668,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic")
 					}
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}
 			self.unit_categories.taser_summers = {
 				unit_types = {
@@ -1685,7 +1685,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser")
 					}
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}
 			self.unit_categories.Tank_Titan = {
 				unit_types = {
@@ -1702,7 +1702,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 					}
 				},
-				access = access_type_walk_only
+				access = access_type_all
 			}
 
 
@@ -1862,7 +1862,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_greendozer/ene_deathvox_greendozer"),
 					}						
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "tank"
 			}
 			self.unit_categories.deathvox_medicdozer = {
@@ -1880,7 +1880,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_medicdozer/ene_deathvox_medicdozer"),
 					}						
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "tank"
 			}
 			self.unit_categories.deathvox_blackdozer = {
@@ -1898,7 +1898,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_blackdozer/ene_deathvox_blackdozer"),
 					}					
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "tank"
 			}
 			self.unit_categories.deathvox_lmgdozer = {
@@ -1916,7 +1916,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_lmgdozer/ene_deathvox_lmgdozer"),
 					}						
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "tank"
 			}
 			self.unit_categories.deathvox_cloaker = {
@@ -1952,7 +1952,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_gageammo/characters/ene_deathvox_sniper_assault/ene_deathvox_sniper_assault"),
 					}						
 				},
-				access = access_type_walk_only,
+				access = access_type_all,
 				special_type = "ass_sniper"
 			}
 		end
@@ -5148,97 +5148,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					15
 				}
 			end
-			if is_console then
-				self.besiege.assault.force = {
-					0,
-					4,
-					7
-				}
-				self.besiege.assault.force_pool = {
-					0,
-					60,
-					100
-				}
-			else
-				self.besiege.assault.force = {
-					0,
-					7,
-					9
-				}
-				self.besiege.assault.force_pool = {
-					0,
-					20,
-					50
-				}
-			end
-			if is_console then
-				if difficulty_index <= 2 then
-					self.besiege.assault.force_balance_mul = {
-						1,
-						1.1,
-						1.2,
-						1.3
-					}
-					self.besiege.assault.force_pool_balance_mul = {
-						1,
-						1.1,
-						1.2,
-						1.3
-					}
-				elseif difficulty_index == 3 then
-					self.besiege.assault.force_balance_mul = {
-						1.2,
-						1.4,
-						1.6,
-						1.8
-					}
-					self.besiege.assault.force_pool_balance_mul = {
-						1.2,
-						1.4,
-						1.6,
-						1.8
-					}
-				elseif difficulty_index == 4 then
-					self.besiege.assault.force_balance_mul = {
-						1.6,
-						1.8,
-						2,
-						2.2
-					}
-					self.besiege.assault.force_pool_balance_mul = {
-						1.6,
-						1.8,
-						2,
-						2.2
-					}
-				elseif difficulty_index == 5 then
-					self.besiege.assault.force_balance_mul = {
-						1.8,
-						2.1,
-						2.4,
-						2.8
-					}
-					self.besiege.assault.force_pool_balance_mul = {
-						1.8,
-						2.1,
-						2.4,
-						2.8
-					}
-				else
-					self.besiege.assault.force_balance_mul = {
-						1.8,
-						2.1,
-						2.4,
-						2.8
-					}
-					self.besiege.assault.force_pool_balance_mul = {
-						1.8,
-						2.1,
-						2.4,
-						2.8
-					}
-				end
-			elseif difficulty_index <= 2 then
+			self.besiege.assault.force = {
+				0,
+				7,
+				9
+			}
+			self.besiege.assault.force_pool = {
+				0,
+				20,
+				50
+			}
+			if difficulty_index <= 2 then
 				self.besiege.assault.force_balance_mul = {
 					0.9,
 					1.5,

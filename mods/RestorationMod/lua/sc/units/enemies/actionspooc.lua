@@ -416,7 +416,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		mvector3.lerp(ray_to, ray_from, ray_to, 0.5)
 		mvector3.set_z(ray_to, mvector3.z(ray_to) + 50)
 
-		local sphere_radius = 25
+		local sphere_radius = 200
 		local ray = World:raycast("ray", ray_from, ray_to, "sphere_cast_radius", sphere_radius, "bundle", 5, "slot_mask", managers.slot:get_mask("AI_graph_obstacle_check"), "ray_type", "walk")
 
 		if ray then

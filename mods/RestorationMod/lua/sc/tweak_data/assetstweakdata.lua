@@ -97,6 +97,20 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		category = "player"
 	}	
 	
+	--Rush--
+	self.rush_asset_sentrygun = {}
+	self.rush_asset_sentrygun.name_id = "menu_rush_asset_sentrygun"
+	self.rush_asset_sentrygun.texture = "guis/textures/pd2/mission_briefing/assets/rush_asset_sentrygun"
+	self.rush_asset_sentrygun.stages = {"rush"}	
+	self.rush_asset_sentrygun.visible_if_locked = true
+	self.rush_asset_sentrygun.no_mystery = true
+	self.rush_asset_sentrygun.unlock_desc_id = "menu_rush_asset_sentrygun_desc"
+	self.rush_asset_sentrygun.money_lock = tweak_data:get_value("money_manager", "mission_asset_cost_medium", 10)
+	self.rush_asset_sentrygun.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}	
+	
 	--Adding Bikers to Biker heist cause it makes sense--
 	self.jungle_1_bikers.stages = {
 		"welcome_to_the_jungle_1",

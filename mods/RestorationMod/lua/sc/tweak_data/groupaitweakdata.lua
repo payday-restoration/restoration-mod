@@ -5149,13 +5149,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			end
 			self.besiege.assault.force = {
-				0,
-				7,
-				9
+				3,
+				5,
+				7
 			}
 			self.besiege.assault.force_pool = {
-				0,
-				20,
+				30,
+				40,
 				50
 			}
 			if difficulty_index <= 2 then

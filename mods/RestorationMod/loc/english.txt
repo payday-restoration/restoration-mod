@@ -248,5 +248,7 @@
 	"RestorationModLowerBagTitleID" : "Lowered bag position",
 	"RestorationModLowerBagDescID" : "Lowers down the position of the bag panel to be a little less distracting",
 	"menu_asset_wet_add_saw" : "Additional Saw",
-	"menu_asset_wet_add_saw_desc" : "Buy an additional saw"
+	"menu_asset_wet_add_saw_desc" : "Buy an additional saw",
+	"menu_rush_asset_sentrygun" : "Sentry Package",
+	"menu_rush_asset_sentrygun_desc" : "Buy a Sentry Package"
 }

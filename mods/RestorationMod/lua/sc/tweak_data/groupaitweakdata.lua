@@ -5148,11 +5148,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					15
 				}
 			end
-			self.besiege.assault.force = {
-				3,
-				5,
-				7
-			}
+			if job == "hvh" or job == "chew" then
+				self.besiege.assault.force = {
+					2,
+					4,
+					6
+				}
+			else
+				self.besiege.assault.force = {
+					4,
+					6,
+					8
+				}
+			end
 			self.besiege.assault.force_pool = {
 				30,
 				40,

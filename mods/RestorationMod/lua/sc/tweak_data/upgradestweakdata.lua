@@ -18,9 +18,9 @@ function UpgradesTweakData:_init_pd2_values()
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 1
+	self.explosive_bullet.curve_pow = 2
 	self.explosive_bullet.player_dmg_mul = 1
-	self.explosive_bullet.range = 350
+	self.explosive_bullet.range = 500
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -355,7 +355,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.health_multiplier = {1.25, 1.5}
 
 				--Bullseye
-				self.values.player.headshot_regen_armor_bonus = {0.05, 2.5}
+				self.values.player.headshot_regen_armor_bonus = {0.05, 4}
 				self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man

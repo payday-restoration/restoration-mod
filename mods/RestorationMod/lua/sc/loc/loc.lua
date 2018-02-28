@@ -482,7 +482,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "Bullseye",
-			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##5## armor for each successful headshot. This effect cannot occur more than once every ##3## seconds.\n\nACE: ##$pro##\nYou regenerate an additional ##20## armor for each successful headshot.",																								
+			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##5## armor for each successful headshot. This effect cannot occur more than once every ##3## seconds.\n\nACE: ##$pro##\nYou regenerate an additional ##35## armor for each successful headshot.",																								
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",

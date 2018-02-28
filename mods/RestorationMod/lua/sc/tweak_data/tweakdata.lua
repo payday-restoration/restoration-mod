@@ -18,14 +18,14 @@ if not tweak_data then return end
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 120
-	tweak_data.projectiles.launcher_rocket.range = 350
-	tweak_data.projectiles.launcher_rocket.curve_pow = 1
+	tweak_data.projectiles.launcher_rocket.range = 500
+	tweak_data.projectiles.launcher_rocket.curve_pow = 2
 
 	--Grenade launcher stuff--
 	tweak_data.projectiles.launcher_frag.damage = 80
 	tweak_data.projectiles.launcher_frag.player_damage = 80
-	tweak_data.projectiles.launcher_frag.curve_pow = 1
-	tweak_data.projectiles.launcher_frag.range = 350
+	tweak_data.projectiles.launcher_frag.curve_pow = 2
+	tweak_data.projectiles.launcher_frag.range = 500
 	tweak_data.projectiles.launcher_incendiary.damage = 3
 	tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
 	tweak_data.projectiles.launcher_incendiary.curve_pow = 0.1
@@ -40,23 +40,23 @@ if not tweak_data then return end
 	}
 	tweak_data.projectiles.launcher_m203.damage = 80
 	tweak_data.projectiles.launcher_m203.player_damage = 80
-	tweak_data.projectiles.launcher_m203.curve_pow = 1
-	tweak_data.projectiles.launcher_m203.range = 350
+	tweak_data.projectiles.launcher_m203.curve_pow = 2
+	tweak_data.projectiles.launcher_m203.range = 500
 	tweak_data.projectiles.launcher_frag_m32.damage = 80
 	tweak_data.projectiles.launcher_frag_china.damage = 80
 
 	--M202--
 	tweak_data.projectiles.rocket_ray_frag.damage = 120
 	tweak_data.projectiles.rocket_ray_frag.player_damage = 120
-	tweak_data.projectiles.rocket_ray_frag.range = 350
-	tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
+	tweak_data.projectiles.rocket_ray_frag.range = 500
+	tweak_data.projectiles.rocket_ray_frag.curve_pow = 2
 
 	--Arbiter--
 	tweak_data.projectiles.launcher_frag_arbiter.damage = 60
 	tweak_data.projectiles.launcher_frag_arbiter.player_damage = 60
 	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 8000
-	tweak_data.projectiles.launcher_frag_arbiter.range = 350
-	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
+	tweak_data.projectiles.launcher_frag_arbiter.range = 500
+	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 2
 	tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 
 	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
@@ -123,26 +123,26 @@ if not tweak_data then return end
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80
 	tweak_data.projectiles.frag.player_damage = 80
-	tweak_data.projectiles.frag.curve_pow = 1
-	tweak_data.projectiles.frag.range = 350
+	tweak_data.projectiles.frag.curve_pow = 2
+	tweak_data.projectiles.frag.range = 500
 
 	--Dynamite--
 	tweak_data.projectiles.dynamite.damage = 80
 	tweak_data.projectiles.dynamite.player_damage = 80
-	tweak_data.projectiles.dynamite.curve_pow = 1
-	tweak_data.projectiles.dynamite.range = 350
+	tweak_data.projectiles.dynamite.curve_pow = 2
+	tweak_data.projectiles.dynamite.range = 500
 
 	--Community Frag--
 	tweak_data.projectiles.frag_com.damage = 80
 	tweak_data.projectiles.frag_com.player_damage = 80
-	tweak_data.projectiles.frag_com.curve_pow = 1
-	tweak_data.projectiles.frag_com.range = 350
+	tweak_data.projectiles.frag_com.curve_pow = 2
+	tweak_data.projectiles.frag_com.range = 500
 
 	--The other community frag--
 	tweak_data.projectiles.dada_com.damage = 80
 	tweak_data.projectiles.dada_com.player_damage = 80
-	tweak_data.projectiles.dada_com.curve_pow = 1
-	tweak_data.projectiles.dada_com.range = 350
+	tweak_data.projectiles.dada_com.curve_pow = 2
+	tweak_data.projectiles.dada_com.range = 500
 
         --Molliest of tovs--
 	tweak_data.projectiles.molotov.damage = 3
@@ -151,7 +151,7 @@ if not tweak_data then return end
 
 	--Incendiary Nades--
 	tweak_data.projectiles.fir_com.damage = 60
-	tweak_data.projectiles.fir_com.curve_pow = 3
+	tweak_data.projectiles.fir_com.curve_pow = 2
 	tweak_data.projectiles.fir_com.player_damage = 60
 	tweak_data.projectiles.fir_com.fire_dot_data = {
 		dot_damage = 1,
@@ -160,7 +160,7 @@ if not tweak_data then return end
 		dot_length = 10,
 		dot_tick_period = 0.5
 	}
-	tweak_data.projectiles.fir_com.range = 350
+	tweak_data.projectiles.fir_com.range = 500
 
 	--Throwing Card--
 	tweak_data.projectiles.wpn_prj_ace.damage = 24

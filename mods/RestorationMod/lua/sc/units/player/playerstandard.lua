@@ -19,6 +19,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if prime_target and prime_target.unit and prime_target.unit.base and (prime_target.unit:base().unintimidateable or prime_target.unit:anim_data() and prime_target.unit:anim_data().unintimidateable) then
 				return
 			end
+			
+			if prime_target and prime_target.unit and prime_target.unit.base then
+				if prime_target.unit:movement() and not prime_target.unit:movement():cool() and tweak_data.character[prime_target.unit:base()._tweak_table].unintimidateable then
+					return
+				end
+			end
+			
 			local interact_type, sound_name
 			local sound_suffix = plural and "plu" or "sin"
 			if voice_type == "stop" then

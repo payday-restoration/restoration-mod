@@ -2807,7 +2807,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {0, 0},
 				texture_bundle_folder = "coco",
 				name_id = "menu_deck14_1",
-				desc_id = "menu_deck14_1_desc"
+				desc_id = "menu_deck14_1_desc_sc"
 			},
 			deck2,
 			{
@@ -2840,7 +2840,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {3, 0},
 				texture_bundle_folder = "coco",
 				name_id = "menu_deck14_7",
-				desc_id = "menu_deck14_7_desc"
+				desc_id = "menu_deck14_7_desc_sc"
 			},
 			deck8,
 			{

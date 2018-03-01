@@ -859,11 +859,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##10%## more health.",
 		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
-		--Open your mind--
+		--Open your mind--	
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.\n\nYou gain ##10%## more health.",	
 		
 		--THIS IS WAR BABY--
-		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##50%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
+		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks, up to ##240## every ##4## seconds. Max amount of stacks is ##600##.\n\nHysteria Stacks:\nYou gain ##0.5## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decays ##60% + 80## every ##8## seconds.",	
+		["menu_deck14_7_desc_sc"] = "Changes the damage absorption of your Hysteria Stacks on you and your crew to ##0.5## damage absorption for every ##25## stacks of Hysteria.",	
+		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##100%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Anarchist--
 		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",

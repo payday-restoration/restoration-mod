@@ -135,6 +135,7 @@ function CharacterTweakData:_init_security(presets)
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
 	self.security_undominatable.surrender = nil
+	self.security_undominatable.unintimidateable = true
 	table.insert(self._enemy_list, "security_undominatable")
 end
 
@@ -220,6 +221,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop_civ.HEALTH_INIT = 0.9
 	self.cop_civ.headshot_dmg_mul = 1.7
 	self.cop_civ.surrender = nil
+	self.cop_civ.unintimidateable = true
 	self.cop_civ.silent_priority_shout = nil
 	self.cop_civ.melee_weapon = nil
 	self.cop_civ.move_speed = presets.move_speed.very_fast
@@ -234,7 +236,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.headshot_dmg_mul = 2.19
 	self.omnia_lpf.move_speed = presets.move_speed.fast
 	self.omnia_lpf.surrender_break_time = {6, 10}
-	self.omnia_lpf.suppression = presets.suppression.no_supress
+	self.omnia_lpf.suppression = nil
 	self.omnia_lpf.surrender = nil
 	self.omnia_lpf.ecm_vulnerability = 1
 	self.omnia_lpf.ecm_hurts = {
@@ -365,7 +367,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.detection = presets.detection.normal
 	self.medic.HEALTH_INIT = 30
 	self.medic.headshot_dmg_mul = 2.2
-	self.medic.suppression = presets.suppression.no_supress
+	self.medic.suppression = nil
 	self.medic.surrender = presets.surrender.special
 	self.medic.move_speed = presets.move_speed.very_fast
 	self.medic.surrender_break_time = {7, 12}
@@ -396,7 +398,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.priority_shout_max_dis = 3000
 	table.insert(self._enemy_list, "medic")
 	self.medic_summers = deep_clone(self.medic)
-	self.medic_summers.HEALTH_INIT = 30
+	self.medic_summers.HEALTH_INIT = 60
 	self.medic_summers.headshot_dmg_mul = 1.25
 	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom", "special"}
 	self.medic_summers.ignore_medic_revive_animation = false
@@ -511,7 +513,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.headshot_dmg_mul = 2.6
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
-	self.heavy_swat_sniper.suppression = presets.suppression.no_supress
+	self.heavy_swat_sniper.suppression = nil
 	self.heavy_swat_sniper.surrender = nil
 	self.heavy_swat_sniper.no_arrest = true
 	self.heavy_swat_sniper.ecm_vulnerability = 1
@@ -658,7 +660,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.static_melee_preset = true		
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	if job == "mad" then
+	if job == "mad" or job == "hvh" then
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4
@@ -674,6 +676,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.move_speed = presets.move_speed.lightning
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
+	self.city_swat_titan.unintimidateable = true
 	self.city_swat_titan.die_sound_event = "mga_death_scream"
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
@@ -738,7 +741,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.shooting_death = false
 	self.sniper.no_move_and_shoot = true
 	self.sniper.move_and_shoot_cooldown = 1
-	self.sniper.suppression = presets.suppression.no_supress
+	self.sniper.suppression = nil
 	self.sniper.melee_weapon = nil
 	self.sniper.ecm_vulnerability = 1
 	self.sniper.ecm_hurts = {
@@ -816,6 +819,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.steal_loot = nil
 	self.gangster.calls_in = true
 	self.gangster.static_dodge_preset = true
+	self.gangster.unintimidateable = true
  	table.insert(self._enemy_list, "gangster")
 end
 
@@ -879,6 +883,7 @@ function CharacterTweakData:_init_captain(presets)
 	self.captain.no_retreat = true
 	self.captain.no_arrest = true
 	self.captain.surrender = nil
+	self.captain.unintimidateable = true
 	self.captain.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.captain.flammable = false
 	self.captain.can_be_tased = false
@@ -892,7 +897,7 @@ function CharacterTweakData:_init_biker_escape(presets)
 	self.biker_escape.melee_weapon = "knife_1"
 	self.biker_escape.move_speed = presets.move_speed.very_fast
 	self.biker_escape.HEALTH_INIT = 4
-	self.biker_escape.suppression = presets.suppression.no_supress
+	self.biker_escape.suppression = nil
  	table.insert(self._enemy_list, "biker_escape")
 end
 
@@ -1032,6 +1037,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.no_retreat = true
 	self.hector_boss_no_armor.no_arrest = true
 	self.hector_boss_no_armor.surrender = nil
+	self.hector_boss_no_armor.unintimidateable = true
 	self.hector_boss_no_armor.access = "gangster"
 	self.hector_boss_no_armor.rescue_hostages = false
 	self.hector_boss_no_armor.steal_loot = nil
@@ -1202,6 +1208,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.no_retreat = true
 	self.drug_lord_boss_stealth.no_arrest = true
 	self.drug_lord_boss_stealth.surrender = nil
+	self.drug_lord_boss_stealth.unintimidateable = true
 	self.drug_lord_boss_stealth.ecm_vulnerability = 0
 	self.drug_lord_boss_stealth.ecm_hurts = {
 		ears = {min_duration = 0, max_duration = 0}
@@ -1430,7 +1437,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.no_arrest = true
 	self.shield.surrender = nil
 	self.shield.ecm_vulnerability = 0.9
-	self.shield.suppression = presets.suppression.no_supress
+	self.shield.suppression = nil
 	self.shield.ecm_hurts = {
 		ears = {min_duration = 7, max_duration = 9}
 	}
@@ -1499,7 +1506,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.damage.immune_to_knockback = false
 	self.phalanx_minion.spawn_sound_event = "l2d_prm"
 	self.phalanx_minion.die_sound_event = "mga_death_scream"
-	self.phalanx_minion.suppression = presets.suppression.no_supress
+	self.phalanx_minion.suppression = nil
  	table.insert(self._enemy_list, "phalanx_minion")
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 	self.phalanx_minion_assault.spawn_sound_event = "cloaker_spawn"
@@ -1527,7 +1534,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.can_be_tased = false
 	self.phalanx_vip.ecm_vulnerability = nil
 	self.phalanx_vip.must_headshot = true
-	self.phalanx_vip.suppression = presets.suppression.no_supress
+	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
  	table.insert(self._enemy_list, "phalanx_vip")
 end
@@ -1624,7 +1631,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.ecm_vulnerability = 0
 	self.summers.ecm_hurts = {}
 	self.summers.surrender_break_time = {4, 6}
-	self.summers.suppression = presets.suppression.no_supress
+	self.summers.suppression = nil
 	self.summers.weapon_voice = "3"
 	self.summers.experience.cable_tie = "tie_swat"
 	self.summers.speech_prefix_p1 = "rtsr"
@@ -1639,7 +1646,11 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
-	self.summers.spawn_sound_event = "cpa_a02_01"
+	if job == "mad" then
+		self.summers.spawn_sound_event = "cloaker_spawn"
+	else
+		self.summers.spawn_sound_event = "cpa_a02_01"
+	end
 	self.summers.die_sound_event = "mga_death_scream"
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.use_factory = true
@@ -1668,7 +1679,7 @@ function CharacterTweakData:_init_taser(presets)
 		ears = {min_duration = 6, max_duration = 8}
 	}
 	self.taser.surrender_break_time = {4, 6}
-	self.taser.suppression = presets.suppression.no_supress
+	self.taser.suppression = nil
 	self.taser.weapon_voice = "3"
 	self.taser.experience.cable_tie = "tie_swat"
 	self.taser.speech_prefix_p1 = self._prefix_data_p1.taser()
@@ -1702,7 +1713,7 @@ function CharacterTweakData:_init_taser(presets)
 	}
  	table.insert(self._enemy_list, "taser")
 	self.taser_summers = deep_clone(self.taser)
-	self.taser_summers.HEALTH_INIT = 36
+	self.taser_summers.HEALTH_INIT = 72
 	self.taser_summers.headshot_dmg_mul = 1.25
 	self.taser_summers.tags = {"taser", "medic_summers", "custom", "special"}
 	self.taser_summers.ignore_medic_revive_animation = false
@@ -1761,7 +1772,7 @@ function CharacterTweakData:_init_boom(presets)
 		ears = {min_duration = 6, max_duration = 8}
 	}
 	self.boom.surrender_break_time = {4, 6}
-	self.boom.suppression = presets.suppression.no_supress
+	self.boom.suppression = nil
 	self.boom.weapon_voice = "3"
 	self.boom.experience.cable_tie = "tie_swat"
 	self.boom.speech_prefix_p1 = nil
@@ -1809,7 +1820,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.custom_voicework = nil
 	self.boom_summers.die_sound_event = "mga_death_scream"
 	self.boom_summers.use_radio = "dsp_radio_russian"
-	self.boom_summers.HEALTH_INIT = 36
+	self.boom_summers.HEALTH_INIT = 72
 	self.boom_summers.headshot_dmg_mul = 1.25
 	self.boom_summers.tags = {"medic_summers", "custom", "special"}
 	self.boom_summers.ignore_medic_revive_animation = false
@@ -1837,8 +1848,9 @@ function CharacterTweakData:_init_inside_man(presets)
 	self.inside_man.headshot_dmg_mul = 2.5
 	self.inside_man.move_speed = presets.move_speed.normal
 	self.inside_man.surrender_break_time = {10, 15}
-	self.inside_man.suppression = presets.suppression.no_supress
+	self.inside_man.suppression = nil
 	self.inside_man.surrender = nil
+	self.inside_man.unintimidateable = true
 	self.inside_man.ecm_vulnerability = nil
 	self.inside_man.ecm_hurts = {
 		ears = {min_duration = 0, max_duration = 0}
@@ -1964,7 +1976,7 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.headshot_dmg_mul = 1
 	self.old_hoxton_mission.move_speed = presets.move_speed.gang_member
 	self.old_hoxton_mission.surrender_break_time = {6, 10}
-	self.old_hoxton_mission.suppression = presets.suppression.no_supress
+	self.old_hoxton_mission.suppression = nil
 	self.old_hoxton_mission.surrender = false
 	self.old_hoxton_mission.weapon_voice = "1"
 	self.old_hoxton_mission.experience.cable_tie = "tie_swat"
@@ -1980,6 +1992,25 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.rescue_hostages = false
 	self.old_hoxton_mission.crouch_move = false
 	self.old_hoxton_mission.static_dodge_preset = true
+end
+
+function CharacterTweakData:_init_spa_vip(presets)
+	self.spa_vip = deep_clone(self.old_hoxton_mission)
+	self.spa_vip.spotlight_important = 100
+	self.spa_vip.is_escort = true
+	self.spa_vip.escort_idle_talk = false
+	self.spa_vip.escort_scared_dist = 100
+end
+
+function CharacterTweakData:_init_spa_vip_hurt(presets)
+	self.spa_vip_hurt = deep_clone(self.civilian)
+	self.spa_vip_hurt.move_speed = presets.move_speed.slow
+	self.spa_vip_hurt.flee_type = "hide"
+	self.spa_vip_hurt.access = "civ_male"
+	self.spa_vip_hurt.intimidateable = nil
+	self.spa_vip_hurt.challenges = {type = "civilians"}
+	self.spa_vip_hurt.calls_in = nil
+	self.spa_vip_hurt.ignores_aggression = true
 end
 
 function CharacterTweakData:_init_russian(presets)

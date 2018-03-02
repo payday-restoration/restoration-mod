@@ -270,7 +270,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			end
 			self.unit_categories = {}
-			if job == "wetwork" then
+			if Global.game_settings and Global.game_settings.one_down then
 				if difficulty_index < 8 then
 					self.unit_categories.spooc = {
 						unit_types = {
@@ -1479,8 +1479,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
-							Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-							Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"),
 							Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
 						},
 						russia = {

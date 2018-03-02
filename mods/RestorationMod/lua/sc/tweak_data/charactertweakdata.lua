@@ -1300,6 +1300,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.use_animation_on_fire_damage = false
 	self.tank.flammable = true
 	self.tank.can_be_tased = false
+	self.tank.immune_to_concussion = true
 	self.tank.immune_to_knock_down = true
 	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
@@ -1411,7 +1412,8 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.can_be_tased = false
 	self.spooc_titan.priority_shout = "f45"
 	self.spooc_titan.bot_priority_shout = "f45x_any"
-	self.spooc_titan.priority_shout_max_dis = 1000
+	self.spooc_titan.priority_shout_max_dis = 0
+	self.spooc_titan.unintimidateable = true
 	self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 end

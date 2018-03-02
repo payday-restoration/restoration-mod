@@ -111,8 +111,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "ONE DOWN. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
-		["menu_difficulty_sm_wish"] = "One Down",
+		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+		["menu_difficulty_sm_wish"] = "DEATH SENTENCE",
 
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		
@@ -482,7 +482,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "Bullseye",
-			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##5## armor for each successful headshot. This effect cannot occur more than once every ##3## seconds.\n\nACE: ##$pro##\nYou regenerate an additional ##35## armor for each successful headshot.",																								
+			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##5## armor for each successful headshot. This effect cannot occur more than once every ##3## seconds.\n\nACE: ##$pro##\nYou regenerate an additional ##30## armor for each successful headshot.",																								
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
@@ -865,7 +865,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--THIS IS WAR BABY--
 		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks, up to ##240## every ##4## seconds. Max amount of stacks is ##600##.\n\nHysteria Stacks:\nYou gain ##0.5## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decays ##60% + 80## every ##8## seconds.",	
 		["menu_deck14_7_desc_sc"] = "Changes the damage absorption of your Hysteria Stacks on you and your crew to ##0.5## damage absorption for every ##25## stacks of Hysteria.",	
-		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##100%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
+		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##25%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Anarchist--
 		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",

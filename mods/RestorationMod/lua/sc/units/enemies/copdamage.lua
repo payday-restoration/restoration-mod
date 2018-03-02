@@ -10,9 +10,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 		local damage = attack_data.damage
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
-		if not is_civilian and attack_data.attacker_unit and alive(attack_data.attacker_unit) then
-			managers.player:send_message(Message.OnEnemyShot, nil, attack_data.attacker_unit, self._unit, "fire")
-		end		
+
+		
 		local headshot_multiplier = 1
 		damage = damage * (self._char_tweak.damage.fire_damage_mul or 1)
 		if attack_data.attacker_unit == managers.player:player_unit() then
@@ -153,6 +152,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		self:_send_fire_attack_result(attack_data, attacker, damage_percent, attack_data.is_fire_dot_damage, attack_data.col_ray.ray, attack_data.result.type == "healed")
 		self:_on_damage_received(attack_data)
+		
+		if not is_civilian and attack_data.attacker_unit and alive(attack_data.attacker_unit) then
+			managers.player:send_message(Message.OnEnemyShot, nil, attack_data.attacker_unit, self._unit, "fire")
+		end				
 	end
 	
 	function CopDamage:damage_bullet(attack_data)
@@ -168,9 +171,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			return "friendly_fire"
 		end
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
-		if not is_civilian then
-			managers.player:send_message(Message.OnEnemyShot, nil, attack_data.attacker_unit, self._unit, attack_data and attack_data.variant or "bullet")
-		end
+
 		if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name and not attack_data.armor_piercing and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and not attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
 			local armor_pierce_roll = math.rand(1)
 			local armor_pierce_value = 0
@@ -265,6 +266,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		damage = self:_apply_damage_reduction(damage)
 		attack_data.raw_damage = damage
+		attack_data.headshot = head
 		local damage_percent = math.ceil(math.clamp(damage / self._HEALTH_INIT_PRECENT, 1, self._HEALTH_GRANULARITY))
 		damage = damage_percent * self._HEALTH_INIT_PRECENT
 		damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)
@@ -378,6 +380,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		self:_send_bullet_attack_result(attack_data, attacker, damage_percent, body_index, hit_offset_height, variant)
 		self:_on_damage_received(attack_data)
+		
+		if not is_civilian then
+			managers.player:send_message(Message.OnEnemyShot, nil, self._unit, attack_data)
+		end
+
+		result.attack_data = attack_data
+		
 		return result
 	end
 
@@ -858,9 +867,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
-		if not is_civilian and attack_data.attacker_unit and alive(attack_data.attacker_unit) then
-			managers.player:send_message(Message.OnEnemyShot, nil, attack_data.attacker_unit, self._unit, "explosion")
-		end
+
 		local result
 		local damage = attack_data.damage
 		damage = managers.crime_spree:modify_value("CopDamage:DamageExplosion", damage, self._unit:base()._tweak_table)
@@ -963,6 +970,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self:_send_explosion_attack_result(attack_data, attacker, damage_percent, self:_get_attack_variant_index(attack_data.result.variant), attack_data.col_ray.ray)
 		self:_on_damage_received(attack_data)
+		
+		if not is_civilian and attack_data.attacker_unit and alive(attack_data.attacker_unit) then
+			managers.player:send_message(Message.OnEnemyShot, nil, attack_data.attacker_unit, self._unit, "explosion")
+		end		
+		
 		return result
 	end
 	

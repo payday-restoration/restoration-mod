@@ -20,6 +20,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				Global.game_settings.difficulty = "overkill_145"
 			end
+			Global.game_settings.one_down = false
 			Global.game_settings.level_id = mission_data.level.level_id
 			Global.game_settings.mission = mission_data.mission or "none"
 		end

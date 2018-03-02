@@ -295,7 +295,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_convert_enemies_damage_multiplier",
+						"player_convert_enemies_damage_multiplier_1",
 						"player_convert_enemies_max_minions_2"
 					},
 					cost = self.costs.hightierpro

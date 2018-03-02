@@ -248,7 +248,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Joker
 				self.values.player.convert_enemies = {true}
 				self.values.player.convert_enemies_health_multiplier = {0.45}
-				self.values.player.convert_enemies_damage_multiplier = {1.45}
+				self.values.player.convert_enemies_damage_multiplier = {1.45, 1.45}
 				self.values.player.convert_enemies_interaction_speed_multiplier = {0.35}
 
 				--Stockholm Syndrome
@@ -352,10 +352,10 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.armor_carry_bonus = {1.005}
 				
 				--More Blood To Bleed
-				self.values.player.health_multiplier = {1.25, 1.5}
+				self.values.player.health_multiplier = {1.2, 1.4}
 
 				--Bullseye
-				self.values.player.headshot_regen_armor_bonus = {0.05, 4}
+				self.values.player.headshot_regen_armor_bonus = {0.05, 3.5}
 				self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
@@ -964,8 +964,8 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	--I AM A BAD MOTHERFUCKA--
-	self.cocaine_stacks_dmg_absorption_value = 0.05
-	self.values.player.cocaine_stack_absorption_multiplier = {2}
+	self.cocaine_stacks_dmg_absorption_value = 0.0625
+	self.values.player.cocaine_stack_absorption_multiplier = {1.25}
 	
 	--Chico--
 	self.values.temporary.chico_injector = {

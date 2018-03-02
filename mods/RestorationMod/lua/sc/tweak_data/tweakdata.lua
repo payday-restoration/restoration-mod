@@ -193,9 +193,9 @@ if not tweak_data then return end
 
 	--Stun nades--
 	tweak_data.projectiles.concussion.damage = 0
-	tweak_data.projectiles.concussion.curve_pow = 0.1
+	tweak_data.projectiles.concussion.curve_pow = 2
 	tweak_data.projectiles.concussion.range = 1000
-	tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 7.5}
+	tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
 	--Had to include this in here due to some BS with it being in upgradestweakdata
 	tweak_data.upgrades.values.player.health_multiplier = {1.2, 1.4}

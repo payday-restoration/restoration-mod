@@ -1150,7 +1150,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.shock_and_awe = {
 				["name_id"] = "menu_kilmer_sc",
 				["desc_id"] = "menu_kilmer_desc_sc",
-				["icon_xy"] = {0, 0},
+				["icon_xy"] = {11, 9},
 				[1] = {
 					upgrades = {
 						"snp_graze_damage_1"

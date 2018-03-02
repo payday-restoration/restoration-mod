@@ -21,8 +21,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			
 			if prime_target and prime_target.unit and prime_target.unit.base then
-				if prime_target.unit:movement() and not prime_target.unit:movement():cool() and tweak_data.character[prime_target.unit:base()._tweak_table].unintimidateable then
-					return
+				if tweak_data.character[prime_target.unit:base()._tweak_table] and tweak_data.character[prime_target.unit:base()._tweak_table].unintimidateable then
+					if prime_target.unit:movement() and not prime_target.unit:movement():cool() then
+						return
+					end
 				end
 			end
 			

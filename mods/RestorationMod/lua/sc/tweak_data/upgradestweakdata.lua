@@ -502,8 +502,8 @@ function UpgradesTweakData:_init_pd2_values()
 					},
 					{
 						radius = 100,
-						damage_factor = 0.2,
-						damage_factor_headshot = 0.5
+						damage_factor = 0.8,
+						damage_factor_headshot = 0.8
 					}
 				}				
 

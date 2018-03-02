@@ -659,7 +659,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Graze--
 		["menu_kilmer_sc"] = "Graze",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nSnipers that hit their target deal ##20%## of the damage dealt in a ##100 cm## radius around the bullet trajectory.\n\nACE: ##$pro##\nIf a bullet would headshot-kill someone, the graze skill will deal ##50%## of the weapon's damage instead of ##20%.##",																																																																																																																																																																																																																									
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nSnipers that hit their target deal ##20%## of the damage dealt in a ##100 cm## radius around the bullet trajectory.\n\nACE: ##$pro##\nSnipers that hit their target now deal ##80%## of the damage dealt",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",

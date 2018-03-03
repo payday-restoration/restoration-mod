@@ -237,6 +237,9 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
+		["menu_toggle_one_down"] = "145+",
+		["menu_one_down"] = "145+",
+	
 		--Woo Hints--
 		["loading_gameplay_101"] = "Flashbangs make an audible noise when deployed. They cannot be destroyed by gunfire or melee weapons, so it's best to simply look away.",
 		["loading_gameplay_118"] = "Cable Ties are a finite resource, make the most of them.",

@@ -223,7 +223,6 @@ if not tweak_data then return end
 	tweak_data.radius = 900
 	tweak_data.medic.disabled_units = {
 		"phalanx_minion",
-		"phalanx_minion_assault",
 		"spring",
 		"taser_summers",
 		"boom_summers",
@@ -231,12 +230,8 @@ if not tweak_data then return end
 		"summers",
 		"medic",
 		"tank_titan",
-		"tank_titan_assault",
 		"tank_medic",
-		"city_swat_titan",
-		"city_swat_titan_assault",
-		"omnia_lpf",
-		"spooc_titan"
+		"omnia_lpf"
 	}
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000
@@ -294,7 +289,7 @@ if not tweak_data then return end
 		infamous_cost = 100000,
 		infamous_chance = 3
 	}	
-
+	
 	--Sounds of Animals Fighting--
 	local animal_fight = {
 			award = "pig_5",

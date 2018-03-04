@@ -1599,116 +1599,236 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				end
 			end
-			if difficulty_index <= 6 then
-				self.unit_categories.FBI_heavy_G36 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			if Global.game_settings and Global.game_settings.one_down then
+				if difficulty_index <= 6 then
+					self.unit_categories.FBI_heavy_G36 = {
+						unit_types = {
+							america = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
+						access = access_type_all
+					}
+				else
+					self.unit_categories.FBI_heavy_G36 = {
+						unit_types = {
+							america = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},							
+							murky = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							}						
 						},
-						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
-						},						
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
-						}						
-					},
-					access = access_type_all
-				}
+						access = access_type_all
+					}
+				end
 			else
-				self.unit_categories.FBI_heavy_G36 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+				if difficulty_index <= 6 then
+					self.unit_categories.FBI_heavy_G36 = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+						access = access_type_all
+					}
+				else
+					self.unit_categories.FBI_heavy_G36 = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},							
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
+							}						
 						},
-						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
-						},							
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
-						}						
-					},
-					access = access_type_all
-				}
+						access = access_type_all
+					}
+				end
 			end
-			if difficulty_index <= 6 then
-				self.unit_categories.FBI_heavy_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
+			if Global.game_settings and Global.game_settings.one_down then
+				if difficulty_index <= 6 then
+					self.unit_categories.FBI_heavy_R870 = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
+							},							
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870")
+						access = access_type_all
+					}
+				else
+					self.unit_categories.FBI_heavy_R870 = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
+							},							
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
+							}						
 						},
-						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
-						},							
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
-						}						
-					},
-					access = access_type_all
-				}
+						access = access_type_all
+					}
+				end
 			else
-				self.unit_categories.FBI_heavy_R870 = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
+				if difficulty_index <= 6 then
+					self.unit_categories.FBI_heavy_R870 = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
+							},							
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+						access = access_type_all
+					}
+				else
+					self.unit_categories.FBI_heavy_R870 = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
+							},							
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
+							}						
 						},
-						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2")
-						},							
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
-						}						
-					},
-					access = access_type_all
-				}
+						access = access_type_all
+					}
+				end			
 			end
-			if difficulty_index <= 6 then
-				self.unit_categories.FBI_heavy_G36_w = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			if Global.game_settings and Global.game_settings.one_down then
+				if difficulty_index <= 6 then
+					self.unit_categories.FBI_heavy_G36_w = {
+						unit_types = {
+							america = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
+						access = access_type_all
+					}
+				else
+					self.unit_categories.FBI_heavy_G36_w = {
+						unit_types = {
+							america = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
+							}						
 						},
-						zombie = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-						},						
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
-						}						
-					},
-					access = access_type_all
-				}
+						access = access_type_all
+					}
+				end			
 			else
-				self.unit_categories.FBI_heavy_G36_w = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+				if difficulty_index <= 6 then
+					self.unit_categories.FBI_heavy_G36_w = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+						access = access_type_all
+					}
+				else
+					self.unit_categories.FBI_heavy_G36_w = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
+							}						
 						},
-						zombie = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-						},						
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
-						}						
-					},
-					access = access_type_all
-				}
+						access = access_type_all
+					}
+				end
 			end
 			if difficulty_index <= 6 then
 				self.unit_categories.FBI_shield = {
@@ -5574,24 +5694,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					15
 				}
 			end
-			if job == "hvh" or job == "chew" then
+			if job == "hvh" or job == "chew" or job == "peta2" then
 				self.besiege.assault.force = {
 					2,
 					4,
 					6
 				}
+				self.besiege.assault.force_pool = {
+					10,
+					20,
+					30
+				}				
 			else
 				self.besiege.assault.force = {
 					4,
 					6,
 					8
 				}
+				self.besiege.assault.force_pool = {
+					30,
+					40,
+					50
+				}				
 			end
-			self.besiege.assault.force_pool = {
-				30,
-				40,
-				50
-			}
 			if difficulty_index <= 2 then
 				self.besiege.assault.force_balance_mul = {
 					0.9,

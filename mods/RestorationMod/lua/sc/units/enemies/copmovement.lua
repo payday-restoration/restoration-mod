@@ -258,8 +258,16 @@ function CopMovement:do_omnia(self)
 							local max_health = enemy:character_damage()._HEALTH_INIT * 2
 							RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
 							if health_left < max_health then
+								if self._unit:contour() then
+									self._unit:contour():add("omnia_heal", true)
+									self._unit:contour():flash("omnia_heal", 0.2)
+								end
 								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
 								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								local align_obj_name = Idstring("Head")
+								local align_obj = enemy:get_object(align_obj_name)
+								self._headwear_unit = World:spawn_unit(Idstring("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"), Vector3(), Rotation())
+								--enemy:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
 								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 							end
 						end

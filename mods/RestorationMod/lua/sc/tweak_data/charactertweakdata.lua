@@ -260,7 +260,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"custom", "special"}
 	self.omnia_lpf.do_omnia = true
-	self.omnia_lpf.use_factory = true
+	self.omnia_lpf.use_factory = false
 	self.omnia_lpf.factory_weapon_id = {"wpn_fps_smg_olympic_npc_omnia_lpf"}
 	table.insert(self._enemy_list, "omnia_lpf")
 end
@@ -11468,7 +11468,14 @@ function CharacterTweakData:character_map()
 				"ene_murky_spook",
 				"ene_murky_tazer"
 			}
-		}		
+		},
+		omnia = {
+			path = "units/pd2_mod_omnia/characters/",
+			list = {
+				"ene_omnia_city",
+				"ene_omnia_heavy"
+			}
+		}
 	}
 	return char_map
 end

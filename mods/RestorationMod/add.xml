@@ -571,7 +571,24 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
-		
+	<unit path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="true"/>
+	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false"/>	
+	
+	<!--Omnia Buff Effect-->
+	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="true"/>
+			
 	<!--Russian Medic-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" load="true"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4_husk" force="false" load="true"/>

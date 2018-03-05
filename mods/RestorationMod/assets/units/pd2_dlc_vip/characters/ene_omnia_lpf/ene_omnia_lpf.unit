@@ -13,7 +13,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true"/>
 			<var name="_tweak_table" value="omnia_lpf" />
-			<var name="_default_weapon_id" value="m4" />
+			<var name="_default_weapon_id" value="s552_sc" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

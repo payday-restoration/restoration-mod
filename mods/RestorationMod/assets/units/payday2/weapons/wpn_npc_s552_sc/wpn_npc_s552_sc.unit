@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/payday2/weapons/wpn_npc_s552/wpn_npc_s552" />
+  <dependencies>
+   	<depends_on effect="effects/particles/weapons/silenced/muzzleflash_3dp" />
+		<depends_on bnk="soundbanks/weapon_sig552" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCRaycastWeaponBase" >
+		<var name="name_id" value="s552_npc" />
+    </extension>
+  <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_wpn_npc_s552" />
+    <default_soundsource source="rp_wpn_npc_s552" />
+  </sounds>
+</unit>

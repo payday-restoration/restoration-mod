@@ -244,9 +244,15 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	}
 	self.omnia_lpf.weapon_voice = "2"
 	self.omnia_lpf.experience.cable_tie = "tie_swat"
-	self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.omnia_lpf.speech_prefix_p2 = "n"
-	self.omnia_lpf.speech_prefix_count = 4
+	if job == "mad" or job == "hvh" then
+		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.omnia_lpf.speech_prefix_p2 = self._speech_prefix_p2
+		self.omnia_lpf.speech_prefix_count = 4
+	else
+		self.omnia_lpf.speech_prefix_p1 = "l5d"
+		self.omnia_lpf.speech_prefix_p2 = nil
+		self.omnia_lpf.speech_prefix_count = nil
+	end
 	self.omnia_lpf.access = "swat"
 	self.omnia_lpf.dodge = presets.dodge.athletic
 	self.omnia_lpf.no_arrest = true

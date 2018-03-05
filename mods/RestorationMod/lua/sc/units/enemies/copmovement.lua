@@ -266,8 +266,8 @@ function CopMovement:do_omnia(self)
 								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
 								local align_obj_name = Idstring("Head")
 								local align_obj = enemy:get_object(align_obj_name)
-								self._headwear_unit = World:spawn_unit(Idstring("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"), Vector3(), Rotation())
-								--enemy:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
+								self._headwear_unit = World:spawn_unit(Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff"), Vector3(), Rotation())
+								enemy:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
 								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 							end
 						end

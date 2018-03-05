@@ -864,6 +864,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.s552_npc.alert_size = 4000
 		self.s552_npc.suppression = 2.2
 		self.s552_npc.FIRE_MODE = "auto"
+		self.s552_npc.has_suppressor = "suppressed_c"
 	end	
 
 	function WeaponTweakData:_init_data_scar_npc()

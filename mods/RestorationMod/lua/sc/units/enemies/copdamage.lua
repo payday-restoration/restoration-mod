@@ -307,8 +307,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self:_apply_damage_to_health(damage)
 		end
+
 		attack_data.result = result
 		attack_data.pos = attack_data.col_ray.position
+
 		if result.type == "death" then
 			local data = {
 				name = self._unit:base()._tweak_table,
@@ -317,20 +319,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				weapon_unit = attack_data.weapon_unit,
 				variant = attack_data.variant
 			}
+
 			if managers.groupai:state():all_criminals()[attack_data.attacker_unit:key()] then
 				managers.statistics:killed_by_anyone(data)
 			end
+
 			if attack_data.attacker_unit == managers.player:player_unit() then
 				local special_comment = self:_check_special_death_conditions(attack_data.variant, attack_data.col_ray.body, attack_data.attacker_unit, attack_data.weapon_unit)
+
 				self:_comment_death(attack_data.attacker_unit, self._unit, special_comment)
 				self:_show_death_hint(self._unit:base()._tweak_table)
+
 				local attacker_state = managers.player:current_state()
 				data.attacker_state = attacker_state
+
 				managers.statistics:killed(data)
 				self:_check_damage_achievements(attack_data, head)
+
 				if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 					managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 				end
+
 				if is_civilian then
 					managers.money:civilian_killed()
 				end
@@ -339,18 +348,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			elseif attack_data.attacker_unit:base().sentry_gun then
 				if Network:is_server() then
 					local server_info = attack_data.weapon_unit:base():server_information()
+
 					if server_info and server_info.owner_peer_id ~= managers.network:session():local_peer():id() then
 						local owner_peer = managers.network:session():peer(server_info.owner_peer_id)
+
 						if owner_peer then
 							owner_peer:send_queued_sync("sync_player_kill_statistic", data.name, data.head_shot and true or false, data.weapon_unit, data.variant, data.stats_name)
 						end
 					else
 						data.attacker_state = managers.player:current_state()
+
 						managers.statistics:killed(data)
 					end
 				end
+
 				local sentry_attack_data = deep_clone(attack_data)
 				sentry_attack_data.attacker_unit = attack_data.attacker_unit:base():get_owner()
+
 				if sentry_attack_data.attacker_unit == managers.player:player_unit() then
 					self:_check_damage_achievements(sentry_attack_data, head)
 				else
@@ -358,6 +372,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				end
 			end
 		end
+				
 		local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:movement():m_pos().z, 0, 300)
 		local attacker = attack_data.attacker_unit
 		if attacker:id() == -1 then
@@ -723,6 +738,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if char_tweak.ends_assault_on_death then
 			managers.groupai:state():force_end_assault_phase()
 			managers.hud:set_buff_enabled("vip", false)
+		end
+		if self._unit:contour() then
+			self._unit:contour():remove("omnia_heal", true)
 		end
 		if difficulty_index <= 7 then
 			self:drop_pickup()

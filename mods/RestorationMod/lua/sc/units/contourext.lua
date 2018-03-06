@@ -9,7 +9,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	ContourExt._types.omnia_heal = {
 			priority = 1,
 			material_swap_required = true,
-			fadeout = 2,
+			fadeout = 300000,
 			color = Vector3(128, 0, 128)
 		}			
 

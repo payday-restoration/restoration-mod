@@ -1422,6 +1422,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.unintimidateable = true
 	self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
+	table.insert(self._enemy_list, "spooc_titan")
 end
 
 function CharacterTweakData:_init_shield(presets)

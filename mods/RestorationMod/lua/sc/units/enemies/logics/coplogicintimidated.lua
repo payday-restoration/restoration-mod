@@ -24,6 +24,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if data.unit:unit_data().mission_element then
 			data.unit:unit_data().mission_element:event("tied", data.unit)
 		end
+		if data.unit:contour() then
+			data.unit:contour():remove("omnia_heal", true)
+		end		
 		if aggressor_unit then
 			data.unit:character_damage():drop_pickup()
 			data.unit:character_damage():set_pickup(nil)

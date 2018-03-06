@@ -741,6 +741,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if self._unit:contour() then
 			self._unit:contour():remove("omnia_heal", true)
+			self._unit:contour():remove("medic_show", true)
 		end
 		if difficulty_index <= 7 then
 			self:drop_pickup()

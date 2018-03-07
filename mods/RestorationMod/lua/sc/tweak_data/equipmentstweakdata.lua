@@ -10,6 +10,22 @@ function EquipmentsTweakData:init()
 	self.ecm_jammer.quantity = {2}
 	self.ecm_jammer.deploy_time = 1
 	self.specials.cable_tie.max_quantity = 9
+	
+	self.max_amount = {
+		trip_mine = 25,
+		asset_sentry_gun = 4,
+		ecm_jammer = 4,
+		asset_doctor_bag = 3,
+		ammo_bag = 2,
+		grenades = 20,
+		asset_ammo_bag = 4,
+		asset_grenade_crate = 3,
+		first_aid_kit = 14,
+		asset_bodybags_bag = 3,
+		bodybags_bag = 2,
+		sentry_gun = -1,
+		doctor_bag = 2
+	}	
 
 	--Again just some quality of life stuff to make single player less awful--
 		if Global.game_settings and Global.game_settings.single_player then

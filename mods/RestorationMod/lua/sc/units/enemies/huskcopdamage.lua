@@ -22,6 +22,10 @@ function HuskCopDamage:die(variant)
 	if self._unit:base():char_tweak().ends_assault_on_death then
 		managers.hud:set_buff_enabled("vip", false)
 	end
+	if self._unit:contour() then
+		self._unit:contour():remove("omnia_heal", false)
+		self._unit:contour():remove("medic_show", false)
+	end	
 	if self._death_sequence then
 		if self._unit:damage() and self._unit:damage():has_sequence(self._death_sequence) then
 			self._unit:damage():run_sequence_simple(self._death_sequence)

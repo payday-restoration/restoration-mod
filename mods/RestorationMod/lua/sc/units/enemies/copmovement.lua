@@ -266,8 +266,8 @@ function CopMovement:do_omnia(self)
 								--Maybe some day
 								--enemy:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
 								if enemy:contour() then
-									enemy:contour():add("omnia_heal", true)
-								end								
+									enemy:contour():add("omnia_heal", false)
+								end		
 								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 							end
 						end

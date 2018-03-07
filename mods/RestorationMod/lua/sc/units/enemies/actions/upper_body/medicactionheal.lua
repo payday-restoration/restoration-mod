@@ -14,7 +14,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._ext_movement:play_redirect("heal")
 		
 		if self._unit:contour() then
-			self._unit:contour():add("medic_show", true)
+			self._unit:contour():add("medic_show", false)
 			self._unit:contour():flash("medic_show", 0.2)
 		end
 		

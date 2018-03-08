@@ -510,11 +510,85 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
 	self.heavy_swat_sniper.tags = {"sniper", "special"}
-	self.heavy_swat_sniper.damage.hurt_severity = presets.hurt_severities.elite
 	self.heavy_swat_sniper.priority_shout = "f34"
 	self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000
-	self.heavy_swat_sniper.weapon = presets.weapon.sniper
+	self.heavy_swat_sniper.weapon = deep_clone(presets.weapon.expert)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 12
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 2.3,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.6, 0.9},
+			dmg_mul = 2.1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 2.1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 2.1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1.05,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1.05,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}	
 	self.heavy_swat_sniper.HEALTH_INIT = 13
 	self.heavy_swat_sniper.headshot_dmg_mul = 2.6
 	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
@@ -545,6 +619,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.use_animation_on_fire_damage = false
 	self.heavy_swat_sniper.static_weapon_preset = true
 	self.heavy_swat_sniper.static_dodge_preset = true
+	self.heavy_swat_sniper.static_weapon_preset = true
+	self.heavy_swat_sniper.static_dodge_preset = true
+	self.heavy_swat_sniper.static_melee_preset = true	
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 end
 
@@ -9538,6 +9615,59 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			}
 		},
+		heavy_overkill = {
+			speed = 1.2,
+			occasions = {
+				hit = {
+					chance = 0.8,
+					check_timeout = {0, 0},
+					variations = {
+						side_step = {
+							chance = 9,
+							timeout = {0, 7},
+							shoot_chance = 0.8,
+							shoot_accuracy = 0.5
+						},
+						roll = {
+							chance = 1,
+							timeout = {8, 10}
+						}
+					}
+				},
+				preemptive = {
+					chance = 0.3,
+					check_timeout = {1, 7},
+					variations = {
+						side_step = {
+							chance = 1,
+							timeout = {1, 7},
+							shoot_chance = 1,
+							shoot_accuracy = 0.7
+						}
+					}
+				},
+				scared = {
+					chance = 0.8,
+					check_timeout = {1, 2},
+					variations = {
+						side_step = {
+							chance = 5,
+							timeout = {1, 2},
+							shoot_chance = 0.5,
+							shoot_accuracy = 0.4
+						},
+						roll = {
+							chance = 1,
+							timeout = {8, 10}
+						},
+						dive = {
+							chance = 2,
+							timeout = {8, 10}
+						}
+					}
+				}
+			}
+		},		
 		ninja = {
 			speed = 1.6,
 			occasions = {
@@ -10708,7 +10838,6 @@ function CharacterTweakData:_set_overkill_145()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
-	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 125
@@ -10742,7 +10871,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
-	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
@@ -10781,7 +10909,9 @@ function CharacterTweakData:_set_overkill_290()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
-	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
+	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
+	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 175
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
@@ -10815,7 +10945,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
-	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true
@@ -10824,6 +10953,9 @@ function CharacterTweakData:_set_sm_wish()
 	else
 		self.city_swat.no_arrest = false
 	end
+	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
+	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 	self:_multiply_all_speeds(1.1, 1.15)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3

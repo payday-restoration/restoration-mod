@@ -868,7 +868,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 
 	function WeaponTweakData:_init_data_scar_npc()
-		self.scar_npc.sounds.prefix = "scar_npc"
+		self.scar_npc.sounds.prefix = "zsniper_npc"
 		self.scar_npc.use_data.selection_index = 2
 		self.scar_npc.DAMAGE = 7.2
 		self.scar_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"

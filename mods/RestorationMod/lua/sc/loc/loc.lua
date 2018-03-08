@@ -275,10 +275,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medicdozers"] = "Medic Dozers",
 		["mutator_medicdozers_desc"] = "Medic Dozers can now spawn.",
 		["mutator_medicdozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a Medic Bulldozer. A Medic Bulldozer counts as both a Medic and a Bulldozer.",
-
+		
 		["mutator_minidozers"] = "Minigun Dozers",
 		["mutator_minidozers_desc"] = "Minigun Dozers can now spawn.",
 		["mutator_minidozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a slow-moving minigun-wielding Bulldozer.",
+		
+		["mutator_fatroll"] = "Fat Roll",
+		["mutator_fatroll_desc"] = "Damage Grace disabled.",
+		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0. Meaning there is no delay on instances of damage.",
 				
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",

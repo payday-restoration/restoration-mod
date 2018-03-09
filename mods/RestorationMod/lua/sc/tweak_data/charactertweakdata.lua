@@ -624,6 +624,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.static_weapon_preset = true
 	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_melee_preset = true	
+	self.heavy_swat_sniper.custom_voicework = nil
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 end
 
@@ -701,7 +702,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	end
 	self.fbi_heavy_swat.static_weapon_preset = true
 	self.fbi_heavy_swat.static_dodge_preset = true
-	self.fbi_heavy_swat.static_melee_preset = true	
+	self.fbi_heavy_swat.static_melee_preset = true		
 	self.fbi_heavy_swat.custom_voicework = "heavy"
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
@@ -744,7 +745,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.calls_in = true
 	self.city_swat.static_weapon_preset = true
 	self.city_swat.static_dodge_preset = true
-	self.city_swat.static_melee_preset = true	
+	self.city_swat.static_melee_preset = true		
 	self.city_swat.custom_voicework = "light"
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
@@ -769,11 +770,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
-	self.city_swat_titan.custom_voicework = "heavy"
+	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
+	self.city_swat_titan.die_sound_event = "mga_death_scream"	
+	self.city_swat.custom_voicework = nil
 	table.insert(self._enemy_list, "city_swat_titan")
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
-	self.city_swat_titan_assault.spawn_sound_event = "cloaker_spawn"
-	self.city_swat_titan_assault.die_sound_event = "mga_death_scream"
  	table.insert(self._enemy_list, "city_swat_titan_assault")
 end
 

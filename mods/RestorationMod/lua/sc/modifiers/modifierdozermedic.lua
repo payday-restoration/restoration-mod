@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
 		Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 		Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_2/ene_zeal_swat_2")
+		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
 	}
 
 	function ModifierDozerMedic:init(data)

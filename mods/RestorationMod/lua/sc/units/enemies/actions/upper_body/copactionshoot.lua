@@ -175,18 +175,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		if not ext_anim.reload and not ext_anim.equip and not ext_anim.melee then
-			if ext_anim.equip then
-				-- Nothing
-			elseif self._weapon_base:clip_empty() then
-				if self._autofiring then
-					self._weapon_base:stop_autofire()
-					self._ext_movement:play_redirect("up_idle")
+				if ext_anim.equip then
+					-- Nothing
+				elseif self._weapon_base:clip_empty() then
+					if self._autofiring then
+						self._weapon_base:stop_autofire()
+						self._ext_movement:play_redirect("up_idle")
 
-					self._autofiring = nil
-					self._autoshots_fired = nil
-				end
-
-				if not self._ext_anim.base_no_reload then
+						self._autofiring = nil
+						self._autoshots_fired = nil
+					end
+					
 					local res = CopActionReload._play_reload(self)
 
 					if res then
@@ -196,7 +195,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if Network:is_server() then
 						managers.network:session():send_to_peers("reload_weapon_cop", self._unit)
 					end
-				end
 			elseif self._autofiring then
 				if not target_vec or not self._common_data.allow_fire then
 					self._weapon_base:stop_autofire()

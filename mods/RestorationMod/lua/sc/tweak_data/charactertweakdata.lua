@@ -772,7 +772,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.static_melee_preset = true	
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"	
-	self.city_swat.custom_voicework = nil
+	self.city_swat_titan.custom_voicework = nil
 	table.insert(self._enemy_list, "city_swat_titan")
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
  	table.insert(self._enemy_list, "city_swat_titan_assault")

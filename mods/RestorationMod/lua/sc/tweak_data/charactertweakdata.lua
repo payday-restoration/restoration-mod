@@ -466,6 +466,7 @@ function CharacterTweakData:_init_swat(presets)
 	else
 		self.swat.steal_loot = true
 	end
+	self.swat.custom_voicework = "light"
 	table.insert(self._enemy_list, "swat")
 	
 	self.hrt = deep_clone(self.swat)
@@ -507,6 +508,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.static_weapon_preset = true
 	self.heavy_swat.static_dodge_preset = true
 	self.heavy_swat.static_melee_preset = true
+	self.heavy_swat.custom_voicework = "heavy"
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
 	self.heavy_swat_sniper.tags = {"sniper", "special"}
@@ -659,6 +661,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.static_weapon_preset = true
 	self.fbi_swat.static_dodge_preset = true
 	self.fbi_swat.static_melee_preset = true
+	self.fbi_swat.custom_voicework = "light"
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
@@ -698,7 +701,8 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	end
 	self.fbi_heavy_swat.static_weapon_preset = true
 	self.fbi_heavy_swat.static_dodge_preset = true
-	self.fbi_heavy_swat.static_melee_preset = true		
+	self.fbi_heavy_swat.static_melee_preset = true	
+	self.fbi_heavy_swat.custom_voicework = "heavy"
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -740,7 +744,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.calls_in = true
 	self.city_swat.static_weapon_preset = true
 	self.city_swat.static_dodge_preset = true
-	self.city_swat.static_melee_preset = true		
+	self.city_swat.static_melee_preset = true	
+	self.city_swat.custom_voicework = "light"
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
 	if job == "mad" or job == "hvh" then
@@ -764,6 +769,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
+	self.city_swat_titan.custom_voicework = "heavy"
 	table.insert(self._enemy_list, "city_swat_titan")
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 	self.city_swat_titan_assault.spawn_sound_event = "cloaker_spawn"

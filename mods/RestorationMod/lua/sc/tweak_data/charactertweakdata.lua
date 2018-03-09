@@ -1804,6 +1804,7 @@ function CharacterTweakData:_init_taser(presets)
 			special_comment = "x01"
 		}
 	}
+	self.taser.custom_voicework = "taser"
  	table.insert(self._enemy_list, "taser")
 	self.taser_summers = deep_clone(self.taser)
 	self.taser_summers.HEALTH_INIT = 72

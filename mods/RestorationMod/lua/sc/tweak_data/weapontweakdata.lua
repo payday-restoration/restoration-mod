@@ -2653,7 +2653,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mosin.clip_capacity = 5
 		--End of Tac reloading shit--
 		self.trip_mines.damage = 40
-		self.trip_mines.player_damage = 40
+		self.trip_mines.player_damage = 20
 		self.trip_mines.damage_size = 200
 		self.trip_mines.delay = 0.1
 		
@@ -3294,7 +3294,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.colt_1911.panic_suppression_chance = 0.0
 		self.mac10.timers.reload_not_empty = 2
 		self.mac10.timers.reload_empty = 2.7
-		self.mac10.CLIP_AMMO_MAX = 40
+		self.mac10.CLIP_AMMO_MAX = 30
 		self.mac10.AMMO_MAX = 120
 		self.mac10.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.mac10.spread.standing = 3.5
@@ -3309,9 +3309,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.kick.crouching = self.new_m4.kick.standing
 		self.mac10.kick.steelsight = self.new_m4.kick.standing
 		self.mac10.stats = {
-			damage = 30,
-			spread = 11,
-			recoil = 20,
+			damage = 35,
+			spread = 14,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,

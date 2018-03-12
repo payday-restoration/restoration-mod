@@ -43,15 +43,15 @@ if not _G.restoration then
 		"nightclub",
 		"welcome_to_the_jungle_2",
 		"gallery",
-		"pal",
-		"mia_2",
+		"man",
 		"firestarter_3",
 		"mad",
-		"jolly"
+		"jolly",
+		"rvd1"
 	}
 	_G.restoration.captain_murderdozer = {
 		"branchbank",
-		"man",
+		"pal",
 		"firestarter_2",
 		"framing_frame_3",
 		"four_stores",
@@ -59,6 +59,13 @@ if not _G.restoration then
 		"rat",	
 		"flat"
 	}
+	_G.restoration.tiny_levels = {
+		"hvh",
+		"chew",
+		"peta2",
+		"nail",
+		"rvd2",
+	}	
 	blt.xaudio.setup()
 	_G.restoration.BufferedSounds = {
 		grenadier = {

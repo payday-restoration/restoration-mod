@@ -149,6 +149,7 @@
 		<hook file="sc/units/weapons/concussiongrenade.lua" source_file="lib/units/weapons/grenades/concussiongrenade"/>
 		<hook file="sc/tweak_data/moneytweakdata.lua" source_file="lib/tweak_data/moneytweakdata"/>
 		<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>
+		<hook file="sc/units/weapons/incendiaryburstgrenade.lua" source_file="lib/units/weapons/grenades/incendiaryburstgrenade"/>
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>

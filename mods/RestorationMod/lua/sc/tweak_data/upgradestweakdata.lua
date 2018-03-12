@@ -17,16 +17,16 @@ function UpgradesTweakData:_init_pd2_values()
 
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
-	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 2
-	self.explosive_bullet.player_dmg_mul = 1
-	self.explosive_bullet.range = 500
-	self.explosive_bullet.feedback_range = self.explosive_bullet.range
-	self.explosive_bullet.camera_shake_max_mul = 4
+		--Explosives hurt--
+		self.explosive_bullet.curve_pow = 2
+		self.explosive_bullet.player_dmg_mul = 0.5
+		self.explosive_bullet.range = 500
+		self.explosive_bullet.feedback_range = self.explosive_bullet.range
+		self.explosive_bullet.camera_shake_max_mul = 4
 
-	--Restoring movement penalties--
-	self.weapon_movement_penalty.minigun = 0.8
-	self.weapon_movement_penalty.lmg = 0.8
+		--Restoring movement penalties--
+		self.weapon_movement_penalty.minigun = 0.8
+		self.weapon_movement_penalty.lmg = 0.8
 
 	end
 

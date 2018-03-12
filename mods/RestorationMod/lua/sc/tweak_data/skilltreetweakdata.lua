@@ -2745,10 +2745,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_armor_health_store_amount_2",
-					"player_passive_health_multiplier_1",
-					"player_level_2_dodge_addend_1",
-					"player_level_3_dodge_addend_1",
-					"player_level_4_dodge_addend_1"
+					"player_passive_health_multiplier_1"
 				},
 				cost = 400,
 				icon_xy = {4, 7},
@@ -2771,10 +2768,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_armor_health_store_amount_3",
-					"player_passive_health_multiplier_3",
-					"player_level_2_dodge_addend_2",
-					"player_level_3_dodge_addend_2",
-					"player_level_4_dodge_addend_2"
+					"player_passive_health_multiplier_3"
 				},
 				cost = 2400,
 				icon_xy = {6, 7},

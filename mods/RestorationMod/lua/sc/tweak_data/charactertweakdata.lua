@@ -227,50 +227,6 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop_civ.move_speed = presets.move_speed.very_fast
 end
 
-function CharacterTweakData:_init_omnia_lpf(presets)
-	self.omnia_lpf = deep_clone(presets.base)
-	self.omnia_lpf.experience = {}
-	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
-	self.omnia_lpf.detection = presets.detection.normal
-	self.omnia_lpf.HEALTH_INIT = 15
-	self.omnia_lpf.headshot_dmg_mul = 2.19
-	self.omnia_lpf.move_speed = presets.move_speed.fast
-	self.omnia_lpf.surrender_break_time = {6, 10}
-	self.omnia_lpf.suppression = nil
-	self.omnia_lpf.surrender = nil
-	self.omnia_lpf.ecm_vulnerability = 1
-	self.omnia_lpf.ecm_hurts = {
-		ears = {min_duration = 8, max_duration = 10}
-	}
-	self.omnia_lpf.weapon_voice = "2"
-	self.omnia_lpf.experience.cable_tie = "tie_swat"
-	if job == "mad" or job == "hvh" then
-		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.omnia_lpf.speech_prefix_p2 = self._speech_prefix_p2
-		self.omnia_lpf.speech_prefix_count = 4
-	else
-		self.omnia_lpf.speech_prefix_p1 = "l5d"
-		self.omnia_lpf.speech_prefix_p2 = nil
-		self.omnia_lpf.speech_prefix_count = nil
-	end
-	self.omnia_lpf.access = "swat"
-	self.omnia_lpf.dodge = presets.dodge.athletic
-	self.omnia_lpf.no_arrest = true
-	self.omnia_lpf.chatter = presets.enemy_chatter.swat
-	self.omnia_lpf.melee_weapon = "baton"
-	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
-	self.omnia_lpf.steal_loot = true
-	self.omnia_lpf.rescue_hostages = false
-	self.omnia_lpf.steal_loot = nil
-	self.omnia_lpf.priority_shout = "f47"
-	self.omnia_lpf.bot_priority_shout = "f47x_any"
-	self.omnia_lpf.tags = {"custom", "special"}
-	self.omnia_lpf.do_omnia = true
-	self.omnia_lpf.use_factory = false
-	self.omnia_lpf.factory_weapon_id = {"wpn_fps_smg_olympic_npc_omnia_lpf"}
-	table.insert(self._enemy_list, "omnia_lpf")
-end
-
 function CharacterTweakData:_init_fbi(presets)
 	self.fbi = deep_clone(presets.base)
  	self.fbi.experience = {}
@@ -301,7 +257,7 @@ function CharacterTweakData:_init_fbi(presets)
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_female = deep_clone(self.fbi)
 	self.fbi_female.speech_prefix_p1 = "fl"
-	self.fbi_female.speech_prefix_p2 = self._speech_prefix_p2
+	self.fbi_female.speech_prefix_p2 = "n"
 	self.fbi_female.speech_prefix_count = 1
 	table.insert(self._enemy_list, "fbi_female")
 	self.fbi_vet = deep_clone(self.fbi)
@@ -324,6 +280,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.custom_shout = true
 	self.fbi_vet.priority_shout_max_dis = 3000
 	self.fbi_vet.rescue_hostages = true
+	self.fbi_vet.access = "spooc"
 	if job == "chill_combat" then
 		self.fbi_vet.steal_loot = nil
 	else
@@ -336,15 +293,6 @@ function CharacterTweakData:_init_fbi(presets)
 			{none = 1}
 		}
 	}
-	self.fbi_vet.damage.hurt_severity.melee = {
-		health_reference = "current",
-		zones = {
-			{
-				health_limit = 1,
-				moderate = 1
-			}
-		}
-	}
 	self.fbi_vet.dodge_with_grenade = {
 		smoke = {duration = {
 			12,
@@ -352,7 +300,7 @@ function CharacterTweakData:_init_fbi(presets)
 		}},
 		check = function (t, nr_grenades_used)
 			local delay_till_next_use = 30
-			local chance = 0.1
+			local chance = 0.25
 
 			if math.random() < chance then
 				return true, t + delay_till_next_use
@@ -433,6 +381,47 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.use_factory = true
 	self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
 	table.insert(self._enemy_list, "medic_summers")
+end
+
+function CharacterTweakData:_init_omnia_lpf(presets)
+	self.omnia_lpf = deep_clone(presets.base)
+	self.omnia_lpf.experience = {}
+	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
+	self.omnia_lpf.detection = presets.detection.normal
+	self.omnia_lpf.HEALTH_INIT = 15
+	self.omnia_lpf.headshot_dmg_mul = 2.19
+	self.omnia_lpf.move_speed = presets.move_speed.fast
+	self.omnia_lpf.surrender_break_time = {6, 10}
+	self.omnia_lpf.suppression = nil
+	self.omnia_lpf.surrender = nil
+	self.omnia_lpf.ecm_vulnerability = 1
+	self.omnia_lpf.ecm_hurts = {
+		ears = {min_duration = 8, max_duration = 10}
+	}
+	self.omnia_lpf.weapon_voice = "2"
+	self.omnia_lpf.experience.cable_tie = "tie_swat"
+	if job == "mad" or job == "hvh" then
+		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.omnia_lpf.speech_prefix_p2 = self._speech_prefix_p2
+		self.omnia_lpf.speech_prefix_count = 4
+	else
+		self.omnia_lpf.speech_prefix_p1 = "l5d"
+		self.omnia_lpf.speech_prefix_p2 = nil
+		self.omnia_lpf.speech_prefix_count = nil
+	end
+	self.omnia_lpf.access = "swat"
+	self.omnia_lpf.dodge = presets.dodge.athletic
+	self.omnia_lpf.no_arrest = true
+	self.omnia_lpf.chatter = presets.enemy_chatter.swat
+	self.omnia_lpf.melee_weapon = "baton"
+	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
+	self.omnia_lpf.rescue_hostages = false
+	self.omnia_lpf.steal_loot = nil
+	self.omnia_lpf.priority_shout = "f47"
+	self.omnia_lpf.bot_priority_shout = "f47x_any"
+	self.omnia_lpf.tags = {"medic", "special"}
+	self.omnia_lpf.do_omnia = true
+	table.insert(self._enemy_list, "omnia_lpf")
 end
 
 function CharacterTweakData:_init_swat(presets)
@@ -1836,6 +1825,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
 	self.taser_summers.use_radio = "dsp_radio_russian"
 	self.taser_summers.spawn_sound_event = nil
+	self.taser_summers.custom_voicework = nil
  	table.insert(self._enemy_list, "taser_summers")
 end
 

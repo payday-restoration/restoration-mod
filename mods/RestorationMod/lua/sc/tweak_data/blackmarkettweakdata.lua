@@ -134,6 +134,30 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.molotov.client_authoritative = false
 	self.projectiles.launcher_frag.client_authoritative = false
 	self.projectiles.launcher_incendiary.client_authoritative = false
+	
+	--[[
+	self.projectiles.fir_com = {
+		name_id = "bm_grenade_fir_com",
+		desc_id = "bm_grenade_fir_com_desc",
+		unit = "units/pd2_dlc_fir/weapons/wpn_fps_gre_white/wpn_third_gre_white",
+		unit_dummy = "units/pd2_dlc_fir/weapons/wpn_fps_gre_white/wpn_fps_gre_white_husk",
+		icon = "fir_grenade",
+		dlc = "pd2_clan",
+		no_cheat_count = true,
+		impact_detonation = true,
+		time_cheat = 1,
+		throwable = true,
+		max_amount = 3,
+		texture_bundle_folder = "fir",
+		physic_effect = Idstring("physic_effects/molotov_throw"),
+		animation = "throw_concussion",
+		anim_global_param = "projectile_frag",
+		throw_allowed_expire_t = 0.1,
+		expire_t = 1.3,
+		repeat_expire_t = 1.5,
+		is_a_grenade = true
+	}
+	]]--
 
 	--Throwables--
 	self.projectiles.wpn_prj_four.max_amount = 9

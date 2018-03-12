@@ -1913,7 +1913,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_m4_m_quad/wpn_fps_upg_m4_m_quad",
 			stats = {
 				value = 3,
-				spread_moving = -2,
 				concealment = -3,
 				reload = -3,
 				extra_ammo = 15
@@ -7732,11 +7731,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mac10_pts/wpn_fps_smg_mac10_body_ris",
 			stats = {
 				value = 5,
-				recoil = 1,
-				spread = 2,
-				spread_moving = -2,
-				concealment = -2,
-				damage = 5
+				spread = 1,
+				concealment = -2
 			},
 			adds = {
 				"wpn_upg_o_marksmansight_rear_vanilla"
@@ -7784,10 +7780,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mac10_pts/wpn_fps_smg_mac10_m_extended",
 			stats = {
 				value = 2,
-				spread_moving = -2,
-				concealment = -2,
-				extra_ammo = 10
+				concealment = -3,
+				extra_ammo = 15,
+				reload = -3
 			},
+			custom_stats = {reload_speed_mult = 0.85},			
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -7836,10 +7833,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mac10_pts/wpn_fps_smg_mac10_s_skel",
 			stats = {
 				value = 1,
-				spread_moving = -3,
 				recoil = 1,
-				spread = 2,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_smg_mac10_body_mac10.third_unit = "units/payday2/weapons/wpn_third_smg_mac10_pts/wpn_third_smg_mac10_body_mac10"

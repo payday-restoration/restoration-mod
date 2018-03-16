@@ -107,6 +107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerTweakData:init()
 		local is_console = SystemInfo:platform() ~= Idstring("WIN32")
 		local is_vr = false
+		is_vr = _G.IS_VR
 		self.arrest = {arrest_timeout = 240, aggression_timeout = 60}
 		self.put_on_mask_time = 0
 		self.gravity = -982
@@ -299,7 +300,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			speed = {},
 			jump_velocity = {
 				xy = {}
-			}
+			},
+			multiplier = {}
 		}
 		self.movement_state.standard.movement.speed.STANDARD_MAX = 350
 		self.movement_state.standard.movement.speed.RUNNING_MAX = 575
@@ -310,14 +312,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.movement_state.standard.movement.jump_velocity.z = 470
 		self.movement_state.standard.movement.jump_velocity.xy.run = self.movement_state.standard.movement.speed.RUNNING_MAX * 1
 		self.movement_state.standard.movement.jump_velocity.xy.walk = self.movement_state.standard.movement.speed.STANDARD_MAX * 1.2
+		
+		if is_vr then
+			self.movement_state.standard.movement.multiplier.run = 1.3
+			self.movement_state.standard.movement.multiplier.walk = 1
+			self.movement_state.standard.movement.multiplier.crouch = 1
+			self.movement_state.standard.movement.multiplier.climb = 1
+		end
+		
 		self.movement_state.interaction_delay = 1.5
 		self.movement_state.stamina = {}
-		self.movement_state.stamina.STAMINA_INIT = 50
+
+		if is_vr then
+			self.movement_state.stamina.STAMINA_INIT = 50
+		else
+			self.movement_state.stamina.STAMINA_INIT = 50
+		end
+
 		self.movement_state.stamina.STAMINA_REGEN_RATE = 3
 		self.movement_state.stamina.STAMINA_DRAIN_RATE = 2
+		self.movement_state.stamina.STAMINA_DRAIN_RATE_WARP = 3
 		self.movement_state.stamina.REGENERATE_TIME = 1
 		self.movement_state.stamina.MIN_STAMINA_THRESHOLD = 4
 		self.movement_state.stamina.JUMP_STAMINA_DRAIN = 2
+		
 		self.camera = {}
 		self.camera.MIN_SENSITIVITY = 0.3
 		self.camera.MAX_SENSITIVITY = 1.7

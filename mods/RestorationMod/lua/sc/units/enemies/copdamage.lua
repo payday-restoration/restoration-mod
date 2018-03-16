@@ -778,7 +778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:base():char_tweak().die_sound_event then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event, nil, nil)
 		end
-		if self._unit:base()._tweak_table == "fbi_titan" then
+		if self._unit:base()._tweak_table == "swat_titan" then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
 		end 
 		if self._unit:base()._tweak_table == "spooc" then

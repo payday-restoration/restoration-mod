@@ -411,6 +411,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 			local custom_data = nil
+				
+			if _G.IS_VR then
+				local melee_hand_id = self._unit:hand():get_active_hand_id("melee")
+				melee_hand_id = melee_hand_id or self._unit:hand():get_active_hand_id("weapon")
+
+				if melee_hand_id then
+					custom_data = {engine = melee_hand_id == 1 and "right" or "left"}
+				end
+			end			
 			
 			managers.rumble:play("melee_hit", nil, nil, custom_data)
 			managers.game_play_central:physics_push(col_ray)
@@ -457,6 +466,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if special_weapon == "taser" and charge_lerp_value >= 0.99 then
 					action_data.variant = "taser_tased"
 				end
+				
+				if _G.IS_VR and melee_entry == "weapon" and not bayonet_melee then
+					dmg_multiplier = 0.1
+				end				
+				
 				action_data.damage = shield_knock and 0 or damage * dmg_multiplier
 				action_data.damage_effect = damage_effect
 				action_data.attacker_unit = self._unit

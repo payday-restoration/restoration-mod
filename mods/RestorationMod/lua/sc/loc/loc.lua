@@ -432,7 +432,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
-			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to ##pierce body armor.##\n\n##30%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode and does not apply to Bulldozers.\n\nACE: ##$pro##\n##100%## of the enemy's headshot multiplier is applied to the enemy's body.",
+			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\n##30%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode and does not apply to Bulldozers.\n\nACE: ##$pro##\n##100%## of the enemy's headshot multiplier is applied to the enemy's body.",
 
 			--}
 		--}
@@ -523,7 +523,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
-			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%##.\n\nACE: ##$pro##\nIncreases your ammo pickup to ##175%## of the normal rate.\n\nYou gain a ##2%## chance to get a throwable from an ammo box.",
+			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%##.\n\nACE: ##$pro##\nIncreases your ammo pickup to ##175%## of the normal rate.\n\nYou gain a ##5%## chance to get a throwable from an ammo box.",
 									
 			--}
 		--}
@@ -748,6 +748,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_expert_handling_sc"] = "Desperado",
 		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit gives you a ##10%## increased accuracy bonus for ##10## seconds and can stack ##4## times.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##20## seconds.",																																																																																																																																																																																																																																		
 
+		--Trigger Happy--
+		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit grants a ##20%## damage boost for ##5## seconds and can stack ##4## times.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##10## seconds.",																								
+				
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",
 		["menu_nine_lives_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##25%## faster for ##10## seconds after getting up.\n\nACE: ##$pro##\nYou reload and swap weapons ##25%## faster for ##10## seconds after getting up.",																																																																																																																																																																																																																																		

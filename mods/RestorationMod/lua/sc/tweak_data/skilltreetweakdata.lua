@@ -472,25 +472,25 @@ function SkillTreeTweakData:init(tweak_data)
 		--{
 			--[[   SHOTGUNNER SUBTREE   ]]--
 			--{
-
-			--Underdog--
+			
+			--Shotgun Impact--
 			self.skills.underdog = {
-				["name_id"] = "menu_underdog_beta_sc",
-				["desc_id"] = "menu_underdog_beta_desc_sc",
-				["icon_xy"] = {2, 1},
+				["name_id"] = "menu_shotgun_impact_beta_sc",
+				["desc_id"] = "menu_shotgun_impact_beta_desc_sc",
+				["icon_xy"] = {5, 0},
 				[1] = {
 					upgrades = {
-						"player_damage_multiplier_outnumbered"
+						"shotgun_recoil_index_addend",
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_damage_dampener_outnumbered"
+						"shotgun_extra_rays"
 					},
 					cost = self.costs.pro
 				}
-			}
+			}			
 
 			--Shotgun CQB--
 			self.skills.shotgun_cqb = {
@@ -511,25 +511,25 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 			
-			--Shotgun Impact--
+			--Underdog--
 			self.skills.shotgun_impact = {
-				["name_id"] = "menu_shotgun_impact_beta_sc",
-				["desc_id"] = "menu_shotgun_impact_beta_desc_sc",
-				["icon_xy"] = {5, 0},
+				["name_id"] = "menu_underdog_beta_sc",
+				["desc_id"] = "menu_underdog_beta_desc_sc",
+				["icon_xy"] = {2, 1},
 				[1] = {
 					upgrades = {
-						"shotgun_recoil_index_addend",
+						"player_damage_multiplier_outnumbered"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"shotgun_extra_rays"
+						"player_damage_dampener_outnumbered"
 					},
 					cost = self.costs.pro
 				}
-			}
-
+			}			
+			
 			--Pigeon Shooter--
 			self.skills.far_away = {
 				["name_id"] = "menu_far_away_beta_sc",
@@ -1692,8 +1692,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Trigger Happy--
 			self.skills.trigger_happy = {
-				["name_id"] = "menu_trigger_happy_beta",
-				["desc_id"] = "menu_trigger_happy_beta_desc",
+				["name_id"] = "menu_trigger_happy_beta_sc",
+				["desc_id"] = "menu_trigger_happy_beta_desc_sc",
 				["icon_xy"] = {11, 2},
 				[1] = {
 					upgrades = {

@@ -310,7 +310,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
 		multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
-
+		
+		if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
+			if self._setup.user_unit:movement():next_reload_speed_multiplier() then
+				multiplier = multiplier + 1 - self._setup.user_unit:movement():next_reload_speed_multiplier()
+			end
+		end
+		
 		if managers.player:has_activate_temporary_upgrade("temporary", "reload_weapon_faster") then
 			multiplier = multiplier * (managers.player:temporary_upgrade_value("temporary", "reload_weapon_faster", 1))
 		end

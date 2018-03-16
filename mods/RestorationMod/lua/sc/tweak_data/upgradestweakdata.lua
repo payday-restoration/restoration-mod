@@ -42,6 +42,7 @@ function UpgradesTweakData:_init_pd2_values()
 		13,
 		18
 	}
+	
 	self.values.player.body_armor.movement = { 
 		1, 
 		0.95, 
@@ -395,7 +396,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.extra_ammo_multiplier = {1.25}
 				self.values.player.pick_up_ammo_multiplier = {1.35, 2.1}
 				self.values.player.regain_throwable_from_ammo = {
-					{chance = 0.02, chance_inc = 1.0}
+					{chance = 0.05, chance_inc = 1.0}
 				}
 			--}
 		--}
@@ -692,12 +693,12 @@ function UpgradesTweakData:_init_pd2_values()
 				--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
 					{
-						damage_bonus = 1.2,
+						damage_bonus = 1.3,
 						max_stacks = 4,
-						max_time = 2
+						max_time = 5
 					},
 					{	
-						damage_bonus = 1.2,
+						damage_bonus = 1.3,
 						max_stacks = 4,
 						max_time = 10
 					}

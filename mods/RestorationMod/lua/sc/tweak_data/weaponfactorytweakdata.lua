@@ -874,10 +874,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"screen"
 				}
 			},
-			material_parameters = {gfx_reddot = {{
-				id = Idstring("holo_reticle_scale"),
-				value = Vector3(0.2, 1.5, 40)
-			}}}
+			material_parameters = {gfx_reddot = {
+				{
+					id = Idstring("holo_reticle_scale"),
+					value = Vector3(0.2, 1.5, 40),
+					condition = function ()
+						return not _G.IS_VR
+					end
+				},
+				{
+					id = Idstring("holo_reticle_scale"),
+					value = Vector3(0.2, 1, 20),
+					condition = function ()
+						return _G.IS_VR
+					end
+				}
+			}},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_glass = false,
+					g_vr_phong = true,
+					g_gfx_specter = false,
+					g_screen = true,
+					g_vr_lens = true,
+					g_gfx = false
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 13,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
+			}
 		}
 		self.parts.wpn_fps_upg_o_aimpoint = {
 			pcs = {30, 40},
@@ -1243,27 +1275,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"gfx_reddot1",
 					"screen"
 				}
-			}
-		}
-		self.parts.shortdot_normal = {
-			pcs = {},
-			type = "sight",
-			name_id = "shortdot_normal",
-			a_obj = "a_o",
-			unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot",
-			third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_third_upg_o_shortdot",
-			perks = {"scope"},
-			dlc = "sc",
-			is_a_unlockable = true,
-			alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight",
-			stats = { value = 8, zoom = 6, concealment = -6},
-			custom_stats = {disable_steelsight_stance = true },
-			forbids = { "wpn_fps_amcar_uupg_body_upperreciever",  "wpn_fps_ass_scar_o_flipups_up", "wpn_fps_ass_m16_o_handle_sight", "wpn_fps_ass_l85a2_o_standard","wpn_fps_ass_sub2000_o_back","wpn_fps_m4_uupg_o_flipup"  },
-			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
 			},
-			stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_gfx_lens = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens_3 = false,
+					g_reddot = false,
+					g_screen = true,
+					g_vr_phong = true,
+					g_reticle = false
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 9,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
+			}
 		}
 		self.parts.wpn_fps_upg_o_leupold = {
 			pcs = {},
@@ -1325,6 +1359,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"gfx_reddot1",
 					"screen"
 				}
+			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_gfx_lens = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens_3 = false,
+					g_reddot = false,
+					g_screen = true,
+					g_vr_phong = true,
+					g_reticle = false
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 7,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
 			}
 		}
 		self.parts.wpn_fps_upg_o_45iron.third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_45iron/wpn_third_upg_o_45iron"
@@ -1758,6 +1814,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"gfx_reddot",
 					"screen"
 				}
+			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_reticle = false,
+					g_screen = true,
+					g_reddot = false,
+					g_vr_acog = true,
+					g_vr_phong = true
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 13,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
 			}
 		}
 		self.parts.wpn_fps_upg_o_acog.third_unit = "units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/wpn_third_upg_o_acog"
@@ -2463,6 +2539,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"gfx_reddot",
 					"screen"
 				}
+			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_screen = true,
+					g_vr_gfx_lens = true,
+					g_reddot = false
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 13,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
 			},
 			dlc = "gage_pack_jobs"
 		}
@@ -7088,7 +7182,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {value = 1},
 			animations = {
 				reload = "reload",
-				fire = "recoil"
+				fire = "recoil",
+				fire_steelsight = "recoil"
 			}
 		}
 		self.parts.wpn_fps_smg_mp5_body_rail = {
@@ -18485,8 +18580,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {
+					"gfx_reddot1",
+					"screen"
+				}
+			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_gfx_lens = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens_3 = false,
+					g_reddot = false,
+					g_vr_screen = true,
+					g_vr_phong = true,
+					g_reticle = false
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 9,
+				a_screen = "g_vr_screen",
+				channel = "macrodetail_diffuse_texture"
 			}
 		}
 		self.parts.wpn_fps_pis_c96_rail = {
@@ -24208,6 +24328,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, -28, -1.69)
 				}
 			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_gfx_lens = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens_3 = false,
+					g_vr_scope = true,
+					g_vr_phong = true,
+					g_reticle = false,
+					g_screen = true
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 12,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
+			},		
 			dlc = "west",
 			texture_bundle_folder = "west"
 		}
@@ -29998,6 +30140,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"screen"
 				}
 			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_gfx_lens_2 = false,
+					g_gfx_lens = false,
+					g_gfx_lens_3 = false,
+					g_screen = true,
+					g_reddot = false,
+					g_vr_phong = true,
+					g_vr_spot = true
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 13,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
+			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
 			is_a_unlockable = true
@@ -30059,6 +30223,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"screen"
 				}
 			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_reticle = false,
+					g_screen = true,
+					g_reddot = false
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 7,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
+			},
 			reticle_obj = "g_reticle"
 		}
 		self.parts.wpn_fps_ass_g36_o_vintage = {
@@ -30093,8 +30275,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			texture_switch = {
-				material = "gfx_reddot1",
-				channel = "diffuse_texture"
+				channel = "diffuse_texture",
+				material = {"sight"}
+			},
+			material_parameters = {gfx_reddot = {
+				{
+					id = Idstring("holo_reticle_scale"),
+					value = Vector3(0.2, 1.5, 40),
+					condition = function ()
+						return not _G.IS_VR
+					end
+				},
+				{
+					id = Idstring("holo_reticle_scale"),
+					value = Vector3(0.2, 1, 20),
+					condition = function ()
+						return _G.IS_VR
+					end
+				}
+			}},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_vr_phong = true,
+					g_vr_optic = true,
+					g_screen = true
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 13,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
 			},
 			forbids = {
 				"wpn_fps_upg_o_xpsg33_magnifier"
@@ -31959,6 +32175,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 0, -2.3),
 					rotation = Rotation(0, 0, 0)
 				}				
+			},
+			visibility = {{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_vr_phong = true,
+					g_glass = false,
+					g_screen = true,
+					g_vr_g33 = true
+				}
+			}},
+			camera = {
+				a_camera = "a_camera",
+				material = "screen",
+				fov = 13,
+				a_screen = "g_screen",
+				channel = "macrodetail_diffuse_texture"
 			}
 		}
 		self.parts.wpn_fps_upg_o_45rds_v2 = {

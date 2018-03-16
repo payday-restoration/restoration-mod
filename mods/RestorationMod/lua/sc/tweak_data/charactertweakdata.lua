@@ -458,6 +458,15 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.custom_voicework = "light"
 	table.insert(self._enemy_list, "swat")
 	
+	self.swat_titan = deep_clone(self.swat)
+	self.swat_titan.spawn_sound_event = "cloaker_spawn"
+	self.swat_titan.die_sound_event = "mga_death_scream"		
+	self.swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
+	self.swat_titan.speech_prefix_p2 = "n"
+	self.swat_titan.speech_prefix_count = 4
+	self.swat_titan.chatter = presets.enemy_chatter.cop
+	table.insert(self._enemy_list, "swat_titan")
+	
 	self.hrt = deep_clone(self.swat)
 	self.hrt.speech_prefix_p1 = self._prefix_data_p1.swat()
 	self.hrt.speech_prefix_p2 = "n"
@@ -762,6 +771,22 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.city_swat_titan.die_sound_event = "mga_death_scream"	
 	self.city_swat_titan.custom_voicework = nil
+	self.city_swat_titan.dodge_with_grenade = {
+		smoke = {duration = {
+			12,
+			12
+		}},
+		check = function (t, nr_grenades_used)
+			local delay_till_next_use = 30
+			local chance = 0.25
+
+			if math.random() < chance then
+				return true, t + delay_till_next_use
+			end
+
+			return false, t + delay_till_next_use
+		end
+	}		
 	table.insert(self._enemy_list, "city_swat_titan")
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
  	table.insert(self._enemy_list, "city_swat_titan_assault")
@@ -9850,28 +9875,38 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		veteran = {
-			speed = 3,
+			speed = 2,
 			occasions = {
 				hit = {
 					chance = 1,
 					check_timeout = {0, 0},
-					variations = {
-						dive = {
-							chance = 1,
+					variations = {	
+						roll = {
+							chance = 3,
+							timeout = {0, 0}
+						}							
+					}
+				},
+				preemptive = {
+					chance = 1,
+					check_timeout = {0, 0},
+					variations = {	
+						roll = {
+							chance = 3,
 							timeout = {0, 0}
 						}
 					}
 				},
-				preemptive = {
-					chance = 0.95,
+				scared = {
+					chance = 1,
 					check_timeout = {0, 0},
-					variations = {
-						dive = {
-							chance = 1,
+					variations = {	
+						roll = {
+							chance = 3,
 							timeout = {0, 0}
-						}
+						}								
 					}
-				}
+				}				
 			}
 		}
 	}
@@ -11318,7 +11353,8 @@ function CharacterTweakData:character_map()
 				"ene_phalanx_1",
 				"ene_titan_shotgun",
 				"ene_titan_rifle",
-				"ene_omnia_lpf"
+				"ene_omnia_lpf",
+				"ene_fbi_titan_1"
 			}
 		},
 		holly = {

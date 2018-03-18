@@ -20,7 +20,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				Global.game_settings.difficulty = "overkill_145"
 			end
-			Global.game_settings.one_down = false
+			
+			if crime_spree_level > 399 then
+				Global.game_settings.one_down = true
+			else
+				Global.game_settings.one_down = false
+			end
 			Global.game_settings.level_id = mission_data.level.level_id
 			Global.game_settings.mission = mission_data.mission or "none"
 		end

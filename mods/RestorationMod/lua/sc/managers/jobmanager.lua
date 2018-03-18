@@ -4,6 +4,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if not self._global.current_job then
 			return
 		end
+		
+		if managers.crime_spree:is_active() then
+			return
+		end
 
 		--Just to suffer--
 		return Global.game_settings.one_down

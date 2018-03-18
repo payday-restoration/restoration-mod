@@ -461,10 +461,6 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan = deep_clone(self.swat)
 	self.swat_titan.spawn_sound_event = "cloaker_spawn"
 	self.swat_titan.die_sound_event = "mga_death_scream"		
-	self.swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.swat_titan.speech_prefix_p2 = "n"
-	self.swat_titan.speech_prefix_count = 4
-	self.swat_titan.chatter = presets.enemy_chatter.cop
 	table.insert(self._enemy_list, "swat_titan")
 	
 	self.hrt = deep_clone(self.swat)
@@ -1246,7 +1242,8 @@ function CharacterTweakData:_init_bolivians(presets)
 		go_go = true,
 		suppress = true
  	}
-	self.bolivian.static_dodge_preset = false
+	self.bolivian_indoors.static_dodge_preset = false
+	self.bolivian_indoors.unintimidateable = false
 	table.insert(self._enemy_list, "bolivian_indoors")
 end
 

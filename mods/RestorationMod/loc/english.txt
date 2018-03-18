@@ -58,7 +58,7 @@
 	"RestorationModSCOptionsButtonTitleID" : "SC's Mod Options",
 	"RestorationModSCOptionsButtonDescID" : "SC's Mod Options",
 	"RestorationModSCTitleID" : "Complete Overhaul",
-	"RestorationModSCDescID" : "Enable or disable Restoration's complete game overhaul.",
+	"RestorationModSCDescID" : "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
 	"RestorationModHolidayTitleID" : "Holiday Effects",
 	"RestorationModHolidayDescID" : "Enable or disable Holiday effects for the overhaul.",
 	"RestorationModSaveTitleID" : "[EXPERIMENTAL] Unique Savefile",

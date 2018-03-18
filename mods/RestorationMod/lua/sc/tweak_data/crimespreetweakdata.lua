@@ -35,7 +35,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local damage_increase = 15
 		self.max_modifiers_displayed = 3
 		self.modifier_levels = {
-			forced = 400,
+			forced = 500,
 			loud = 20,
 			stealth = 26
 		}

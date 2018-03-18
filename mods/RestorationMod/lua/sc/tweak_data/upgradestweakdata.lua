@@ -261,14 +261,14 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Partners in Crime--
 				self.values.player.passive_convert_enemies_health_multiplier = {
-					0.55,
-					0.1
+					0.6,
+					0.2
 				}				
 							
 				--Hostage Taker
 				self.values.player.hostage_health_regen_addend = {0.015, 0.045}
 				self.values.team.damage = {
-					hostage_absorption = {0.2},
+					hostage_absorption = {0.1},
 					hostage_absorption_limit = 4
 				}
 			--}
@@ -693,14 +693,14 @@ function UpgradesTweakData:_init_pd2_values()
 				--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
 					{
-						damage_bonus = 1.3,
-						max_stacks = 4,
-						max_time = 5
-					},
-					{	
-						damage_bonus = 1.3,
+						damage_bonus = 1.2,
 						max_stacks = 4,
 						max_time = 10
+					},
+					{	
+						damage_bonus = 1.2,
+						max_stacks = 4,
+						max_time = 20
 					}
 				}
 

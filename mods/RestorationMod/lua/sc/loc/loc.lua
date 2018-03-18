@@ -398,11 +398,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime	
 			["menu_control_freak_beta_sc"] = "Partners in Crime",	
-			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nYour converted enemy takes ##45%## less damage.\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes an additional ##45%## less damage.",
+			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nYour converted enemy takes ##40%## less damage.\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes an additional ##40%## less damage.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1.5%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##4.5%## health every ##5## seconds.\n\nYou and your crew gain ##2## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\nNote: This skill does not stack.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1.5%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##4.5%## health every ##5## seconds.\n\nYou and your crew gain ##1## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\nNote: This skill does not stack.",
 		
 
 			--}
@@ -750,7 +750,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit grants a ##20%## damage boost for ##5## seconds and can stack ##4## times.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##10## seconds.",																								
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit grants a ##20%## damage boost for ##10## seconds and can stack ##4## times.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##20## seconds.",																								
 				
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",

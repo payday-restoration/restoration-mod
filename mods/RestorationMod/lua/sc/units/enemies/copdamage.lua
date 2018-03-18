@@ -648,6 +648,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 end
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	local old_death = CopDamage.die
+
 
 	function CopDamage:init(unit)
 		self._unit = unit
@@ -715,26 +717,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CopDamage:die(attack_data)
+		old_death(self, attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
-		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-		if self._immortal then
-			debug_pause("Immortal character died!")
-		end
-		local variant = attack_data.variant
-		if char_tweak.custom_voicework then
-			local voicelines = _G.restoration.BufferedSounds[char_tweak.custom_voicework]
-			if voicelines and voicelines["death"] then
-				self._unit:base():play_voiceline(voicelines.death, true)
-			end
-		end
-		self:_check_friend_4(attack_data)
-		CopDamage.MAD_3_ACHIEVEMENT(attack_data)
-		self:_remove_debug_gui()
-		self._unit:base():set_slot(self._unit, 17)
-		if alive(managers.interaction:active_unit()) then
-			managers.interaction:active_unit():interaction():selected()
-		end
 		if char_tweak.ends_assault_on_death then
 			managers.groupai:state():force_end_assault_phase()
 			managers.hud:set_buff_enabled("vip", false)
@@ -743,52 +727,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:contour():remove("omnia_heal", false)
 			self._unit:contour():remove("medic_show", false)
 		end
-		if difficulty_index <= 7 then
-			self:drop_pickup()
-		else
-			local roll = math.rand(1, 100)
-			local chance_ammo = 100
-			if roll <= chance_ammo then
-				self:drop_pickup()
-			end
-		end
-		self._unit:inventory():drop_shield()
-		if self._unit:unit_data().mission_element then
-			self._unit:unit_data().mission_element:event("death", self._unit)
-			if not self._unit:unit_data().alerted_event_called then
-				self._unit:unit_data().alerted_event_called = true
-				self._unit:unit_data().mission_element:event("alerted", self._unit)
-			end
-		end
-		if self._unit:movement() then
-			self._unit:movement():remove_giveaway()
-		end
-		variant = variant or "bullet"
-		self._health = 0
-		self._health_ratio = 0
-		self._dead = true
-		self:set_mover_collision_state(false)
-		if self._death_sequence then
-			if self._unit:damage() and self._unit:damage():has_sequence(self._death_sequence) then
-				self._unit:damage():run_sequence_simple(self._death_sequence)
-			else
-				debug_pause_unit(self._unit, "[CopDamage:die] does not have death sequence", self._death_sequence, self._unit)
-			end
-		end
-		if self._unit:base():char_tweak().die_sound_event then
-			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event, nil, nil)
-		end
 		if self._unit:base()._tweak_table == "swat_titan" then
-			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
-		end 
-		if self._unit:base()._tweak_table == "spooc" then
-			self._unit:damage():run_sequence_simple("kill_spook_lights")
-		end 		
-		if self._unit:interaction().tweak_data == "hostage_convert" then
-			self._unit:interaction():set_active(false, true, false)
-		end		
-		self:_on_death()
-		managers.mutators:notify(Message.OnCopDamageDeath, self, attack_data)
+			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.up * 10, nil, 7.5)
+		end
 	end
 
 	function CopDamage:heal_unit(unit, override_cooldown)

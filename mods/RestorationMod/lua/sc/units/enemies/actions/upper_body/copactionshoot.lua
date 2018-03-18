@@ -27,7 +27,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local _f_CopActionShoot__get_target_pos = CopActionShoot._get_target_pos
 
 	function CopActionShoot:_get_target_pos(shoot_from_pos, ...)
-		blt.xaudio.setup()
 		local target_pos, target_vec, target_dis, autotarget
 		local _time = math.floor(TimerManager:game():time())
 		self._throw_projectile_time = self._throw_projectile_time or 0
@@ -39,12 +38,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local roll = math.rand(1, 100)
 				local chance_gas = 25
 				if roll <= chance_gas then
-					self._unit:base():play_voiceline(_G.restoration.BufferedSounds.grenadier.use_gas, true)
-					deploy_gas(shoot_from_pos, target_vec)
-				else
-					local dildo = _G.restoration.BufferedSounds.grenadier.spot_heister
-					local voiceline_to_use = dildo[math.random(#dildo)]
-					self._unit:base():play_voiceline(voiceline_to_use)			
+					self._unit:sound():say("use_gas", true, nil, true)
+					deploy_gas(shoot_from_pos, target_vec)	
 				end
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)

@@ -65,27 +65,44 @@ if not _G.restoration then
 		"peta2",
 		"nail",
 		"rvd2",
-	}	
-	blt.xaudio.setup()
-	_G.restoration.BufferedSounds = {
-		grenadier = {
-			death = XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/death.ogg"),
-			spot_heister = {
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted1.ogg"),
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted2.ogg"),
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted3.ogg"),
-				XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/spotted4.ogg")
-			},
-			use_gas = XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/grenadier/use_gas.ogg")
-		},
-		medicdozer = {
-			heal = {}
-		}
 	}
-	for i = 1, 31 do
-		table.insert(_G.restoration.BufferedSounds.medicdozer.heal, XAudio.Buffer:new(ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg"))	end
+	blt.xaudio.setup()
+	log("DOING FRAMEWORK SETUP")
+	if _G.voiceline_framework then
+		_G.voiceline_framework:register_unit("grenadier")
+		_G.voiceline_framework:register_line_type("grenadier", "death")
+		_G.voiceline_framework:register_line_type("grenadier", "spawn")
+		_G.voiceline_framework:register_line_type("grenadier", "contact")
+		_G.voiceline_framework:register_line_type("grenadier", "use_gas")
+		
+		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death1.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death2.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death3.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death4.ogg")
+		
+		_G.voiceline_framework:register_voiceline("grenadier", "spawn", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_spawn1.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "spawn", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_spawn2.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "spawn", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_spawn3.ogg")
+		
+		_G.voiceline_framework:register_voiceline("grenadier", "contact", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_contact1.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "contact", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_contact2.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "contact", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_contact3.ogg")
+		
+		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_1.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_2.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_3.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")
+		
+		_G.voiceline_framework:register_unit("medicdozer")
+		_G.voiceline_framework:register_line_type("medicdozer", "heal")
+		for i = 1, 31 do
+			_G.voiceline_framework:register_voiceline("medicdozer", "heal", ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg")
+		end
+		_G.deathvox.grenadier_gas_duration = 15
+	else
+		log("NO FRAMEWORK!!!")
 	end
-
+end
 _G.SC = _G.SC or {}
 SC._path = ModPath
 SC._data = {}

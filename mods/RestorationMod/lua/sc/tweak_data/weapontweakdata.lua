@@ -443,7 +443,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_x_c45_npc()
 		self.x_c45_npc.sounds.prefix = "c45_npc"
 		self.x_c45_npc.use_data.selection_index = 1
-		self.x_c45_npc.DAMAGE = 1.8
+		self.x_c45_npc.DAMAGE = 2.4
 		self.x_c45_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.x_c45_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.x_c45_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -557,7 +557,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_r870_npc()
 		self.r870_npc.sounds.prefix = "remington_npc"
 		self.r870_npc.use_data.selection_index = 2
-		self.r870_npc.DAMAGE = 8.9
+		self.r870_npc.DAMAGE = 9.5
 		self.r870_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.r870_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.r870_npc.CLIP_AMMO_MAX = 8
@@ -578,7 +578,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_mossberg_npc()
 		self.mossberg_npc.sounds.prefix = "remington_npc"
 		self.mossberg_npc.use_data.selection_index = 2
-		self.mossberg_npc.DAMAGE = 14.4
+		self.mossberg_npc.DAMAGE = 15
 		self.mossberg_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.mossberg_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.mossberg_npc.CLIP_AMMO_MAX = 2
@@ -631,7 +631,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_mac11_npc()
 		self.mac11_npc.sounds.prefix = "mp5_npc"
 		self.mac11_npc.use_data.selection_index = 1
-		self.mac11_npc.DAMAGE = 2.1
+		self.mac11_npc.DAMAGE = 2.6
 		self.mac11_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.mac11_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.mac11_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -680,7 +680,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_saiga_npc()
 		self.saiga_npc.sounds.prefix = "saiga_npc"
 		self.saiga_npc.use_data.selection_index = 2
-		self.saiga_npc.DAMAGE = 4.4
+		self.saiga_npc.DAMAGE = 5
 		self.saiga_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.saiga_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.saiga_npc.auto.fire_rate = 0.1

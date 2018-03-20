@@ -226,7 +226,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							self._unit:unit_data().mission_element:event("killshot", self._unit)
 						end
 
-						if not ext_anim.recoil and vis_state == 1 and not ext_anim.base_no_recoil and not ext_anim.move then
+						if not ext_anim.recoil and vis_state == 1 and not ext_anim.base_no_recoil and not ext_anim.move and not self._common_data.char_tweak.no_recoil then
 							self._ext_movement:play_redirect("recoil_auto")
 						end
 
@@ -343,7 +343,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 							self._autoshots_fired = 0
 
-							if vis_state == 1 and not ext_anim.base_no_recoil and not ext_anim.move then
+							if vis_state == 1 and not ext_anim.base_no_recoil and not ext_anim.move and not self._common_data.char_tweak.no_recoil then
 								self._ext_movement:play_redirect("recoil_auto")
 							end
 						else

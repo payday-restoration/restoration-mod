@@ -705,8 +705,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self._has_been_staggered = false
 
-
-		-- Lines: 142 to 144
 		local function clbk()
 			self._has_been_staggered = false
 		end
@@ -719,6 +717,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function CopDamage:die(attack_data)
 		old_death(self, attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
+		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+		
+		if self._unit:interaction().tweak_data == "hostage_convert" then
+			self._unit:interaction():set_active(false, true, false)
+		end
+		
 		if char_tweak.ends_assault_on_death then
 			managers.groupai:state():force_end_assault_phase()
 			managers.hud:set_buff_enabled("vip", false)
@@ -728,8 +733,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:contour():remove("medic_show", false)
 		end
 		if self._unit:base()._tweak_table == "swat_titan" then
-			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.up * 10, nil, 7.5)
+			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
 		end
+		if self._unit:base()._tweak_table == "spooc" then
+			self._unit:damage():run_sequence_simple("kill_spook_lights")
+		end 			
 	end
 
 	function CopDamage:heal_unit(unit, override_cooldown)

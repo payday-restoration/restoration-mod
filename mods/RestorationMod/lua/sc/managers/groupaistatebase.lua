@@ -14,7 +14,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			medic_summers = true,
 			medic = true,
 			omnia_LPF = true,
-			fbi_vet = true,
 			spring = true,
 			summers = true
 		}
@@ -34,7 +33,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			medic_summers = true,
 			medic = true,
 			omnia_LPF = true,
-			fbi_vet = true,
 			spring = true,
 			summers = true
 		}

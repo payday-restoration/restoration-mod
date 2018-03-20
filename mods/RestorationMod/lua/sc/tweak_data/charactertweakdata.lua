@@ -260,39 +260,23 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_female.speech_prefix_p2 = "n"
 	self.fbi_female.speech_prefix_count = 1
 	table.insert(self._enemy_list, "fbi_female")
+	
 	self.fbi_vet = deep_clone(self.fbi)
-	self.fbi_vet.tags = {"custom", "special"}
-	self.fbi_vet.no_arrest = true
-    	self.fbi_vet.surrender = nil
-	self.fbi_vet.suppression = nil
     	self.fbi_vet.can_shoot_while_dodging = true
-	self.fbi_vet.HEALTH_INIT = 15
-	self.fbi_vet.headshot_dmg_mul = 2.19
-	self.fbi_vet.damage.bullet_dodge_chance = 55
+	self.fbi_vet.HEALTH_INIT = 12
+	self.fbi_vet.headshot_dmg_mul = 1.7
+	self.fbi_vet.damage.bullet_dodge_chance = 65
 	self.fbi_vet.smoke_dodge_increase = 10
     	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.allowed_stances = {cbt = true}
-    	self.fbi_vet.move_speed = presets.move_speed.lightning
-	self.fbi_vet.use_animation_on_fire_damage = true
-	self.fbi_vet.priority_shout = "g29"
-	self.fbi_vet.bot_priority_shout = "g29"
-	self.fbi_vet.silent_priority_shout = nil
-	self.fbi_vet.custom_shout = true
-	self.fbi_vet.priority_shout_max_dis = 3000
-	self.fbi_vet.rescue_hostages = true
 	self.fbi_vet.access = "spooc"
-	if job == "chill_combat" then
-		self.fbi_vet.steal_loot = nil
-	else
-		self.fbi_vet.steal_loot = true
-	end
-	self.fbi_vet.damage.hurt_severity = deep_clone(presets.hurt_severities.base)
-	self.fbi_vet.damage.hurt_severity.bullet = {
-		health_reference = 1,
-		zones = {
-			{none = 1}
-		}
-	}
+	self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
+	self.fbi_vet.use_animation_on_fire_damage = false
+	self.fbi_vet.move_speed = presets.move_speed.lightning
+	self.fbi_vet.surrender = nil
+	self.fbi_vet.unintimidateable = true	
+	self.fbi_vet.spawn_sound_event = "cloaker_spawn"
+	self.fbi_vet.custom_voicework = nil	
 	self.fbi_vet.dodge_with_grenade = {
 		smoke = {duration = {
 			12,
@@ -300,7 +284,7 @@ function CharacterTweakData:_init_fbi(presets)
 		}},
 		check = function (t, nr_grenades_used)
 			local delay_till_next_use = 30
-			local chance = 0.25
+			local chance = 0.5
 
 			if math.random() < chance then
 				return true, t + delay_till_next_use
@@ -459,8 +443,16 @@ function CharacterTweakData:_init_swat(presets)
 	table.insert(self._enemy_list, "swat")
 	
 	self.swat_titan = deep_clone(self.swat)
+	self.swat_titan.damage.hurt_severity = presets.hurt_severities.elite
+	self.swat_titan.use_animation_on_fire_damage = false
+	self.swat_titan.move_speed = presets.move_speed.lightning
+	self.swat_titan.dodge = presets.dodge.elite
+	self.swat_titan.surrender = nil
+	self.swat_titan.unintimidateable = true	
 	self.swat_titan.spawn_sound_event = "cloaker_spawn"
-	self.swat_titan.die_sound_event = "mga_death_scream"		
+	self.swat_titan.die_sound_event = "mga_death_scream"	
+	self.swat_titan.custom_voicework = nil
+	self.swat_titan.static_dodge_preset = true
 	table.insert(self._enemy_list, "swat_titan")
 	
 	self.hrt = deep_clone(self.swat)
@@ -1406,6 +1398,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
 	self.tank.static_dodge_preset = true
+	self.tank.no_recoil = true
  	table.insert(self._enemy_list, "tank")
 	
 	self.tank_medic = deep_clone(self.tank)
@@ -3072,8 +3065,8 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.headshot_dmg_mul = 1
 	presets.gang_member_damage.LIVES_INIT = 4
 	presets.gang_member_damage.explosion_damage_mul = 0
-	presets.gang_member_damage.REGENERATE_TIME = 2
-	presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.25
+	presets.gang_member_damage.REGENERATE_TIME = 2.25
+	presets.gang_member_damage.REGENERATE_TIME_AWAY = 1.125
 	presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME
 	presets.gang_member_damage.TASED_TIME = tweak_data.player.damage.TASED_TIME
 	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -3268,9 +3261,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_shotgun_pump.melee_dmg = 5
 	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {0.68, 0.68}
 	presets.weapon.normal.is_shotgun_pump.range = {
-		close = 1000,
-		optimal = 2000,
-		far = 5000
+		close = 500,
+		optimal = 1000,
+		far = 2000
 	}
 	presets.weapon.normal.is_shotgun_pump.FALLOFF = {
 		{
@@ -4465,9 +4458,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_pump.melee_dmg = 10
 	presets.weapon.good.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.good.is_shotgun_pump.range = {
-		close = 1000,
-		optimal = 2000,
-		far = 5000
+		close = 500,
+		optimal = 1000,
+		far = 2000
 	}
 	presets.weapon.good.is_shotgun_pump.FALLOFF = {
 		{
@@ -4746,9 +4739,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.good.is_shotgun_mag.autofire_rounds = {4, 9}
 	presets.weapon.good.is_shotgun_mag.range = {
-		close = 1000,
-		optimal = 2000,
-		far = 5000
+		close = 500,
+		optimal = 1000,
+		far = 2000
 	}
 	presets.weapon.good.is_shotgun_mag.FALLOFF = {
 		{
@@ -5714,9 +5707,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_pump.melee_dmg = 10.5
 	presets.weapon.expert.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.expert.is_shotgun_pump.range = {
-		close = 1000,
-		optimal = 2000,
-		far = 5000
+		close = 500,
+		optimal = 1000,
+		far = 2000
 	}
 	presets.weapon.expert.is_shotgun_pump.FALLOFF = {
 		{
@@ -5982,9 +5975,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_mag.melee_dmg = 10.5
 	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.expert.is_shotgun_mag.range = {
-		close = 1000,
-		optimal = 2000,
-		far = 5000
+		close = 500,
+		optimal = 1000,
+		far = 2000
 	}
 	presets.weapon.expert.is_shotgun_mag.autofire_rounds = {4, 9}
 	presets.weapon.expert.is_shotgun_mag.FALLOFF = {
@@ -8164,7 +8157,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member.is_bullpup = presets.weapon.gang_member.is_rifle
+	presets.weapon.gang_member.is_bullpup = presets.weapon.gang_member.is_rifle	
 	presets.weapon.gang_member.is_shotgun_pump.aim_delay = {0, 0}
 	presets.weapon.gang_member.is_shotgun_pump.focus_delay = 0
 	presets.weapon.gang_member.is_shotgun_pump.focus_dis = 200
@@ -8174,6 +8167,11 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_pump.melee_speed = 1
 	presets.weapon.gang_member.is_shotgun_pump.melee_dmg = 5
 	presets.weapon.gang_member.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.gang_member.is_shotgun_pump.range = {
+		close = 1000,
+		optimal = 2000,
+		far = 5000
+	}
 	presets.weapon.gang_member.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
@@ -8565,7 +8563,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.is_pistol
+	presets.weapon.gang_member.akimbo_pistol = presets.weapon.gang_member.is_pistol	
 	presets.weapon.gang_member.is_shotgun_mag.aim_delay = {0, 0}
 	presets.weapon.gang_member.is_shotgun_mag.focus_delay = 0
 	presets.weapon.gang_member.is_shotgun_mag.focus_dis = 200
@@ -8576,6 +8574,11 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 	presets.weapon.gang_member.is_shotgun_mag.RELOAD_SPEED = 1
 	presets.weapon.gang_member.is_shotgun_mag.autofire_rounds = {4, 9}
+	presets.weapon.gang_member.is_shotgun_mag.range = {
+		close = 1000,
+		optimal = 2000,
+		far = 5000
+	}		
 	presets.weapon.gang_member.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
@@ -9877,19 +9880,39 @@ function CharacterTweakData:_presets(tweak_data)
 				hit = {
 					chance = 1,
 					check_timeout = {0, 0},
-					variations = {	
-						roll = {
+					variations = {
+						side_step = {
 							chance = 3,
+							timeout = {0, 0},
+							shoot_chance = 1,
+							shoot_accuracy = 0.7
+						},
+						roll = {
+							chance = 1,
 							timeout = {0, 0}
-						}							
+						},
+						wheel = {
+							chance = 2,
+							timeout = {0, 0}
+						}
 					}
 				},
 				preemptive = {
 					chance = 1,
 					check_timeout = {0, 0},
-					variations = {	
-						roll = {
+					variations = {
+						side_step = {
 							chance = 3,
+							timeout = {0, 0},
+							shoot_chance = 1,
+							shoot_accuracy = 0.8
+						},
+						roll = {
+							chance = 1,
+							timeout = {0, 0}
+						},
+						wheel = {
+							chance = 2,
 							timeout = {0, 0}
 						}
 					}
@@ -9897,13 +9920,27 @@ function CharacterTweakData:_presets(tweak_data)
 				scared = {
 					chance = 1,
 					check_timeout = {0, 0},
-					variations = {	
+					variations = {
+						side_step = {
+							chance = 5,
+							timeout = {0, 0},
+							shoot_chance = 0.8,
+							shoot_accuracy = 0.6
+						},
 						roll = {
 							chance = 3,
 							timeout = {0, 0}
-						}								
+						},
+						wheel = {
+							chance = 3,
+							timeout = {0, 0}
+						},
+						dive = {
+							chance = 1,
+							timeout = {0, 0}
+						}
 					}
-				}				
+				}
 			}
 		}
 	}

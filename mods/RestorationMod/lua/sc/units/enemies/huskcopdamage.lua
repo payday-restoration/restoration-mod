@@ -10,7 +10,7 @@ function HuskCopDamage:die(variant)
 	if self._unit:contour() then
 		self._unit:contour():remove("omnia_heal", false)
 		self._unit:contour():remove("medic_show", false)
-	end	
+	end 	
 end
 
 function HuskCopDamage:heal_unit(...)

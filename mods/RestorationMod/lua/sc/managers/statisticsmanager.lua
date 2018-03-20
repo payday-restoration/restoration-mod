@@ -15,7 +15,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		"taser_summers",
 		"medic_summers",
 		"rboom",
-		"fbi_vet",
 		"medic",
 		"sniper",
 		"phalanx_minion",

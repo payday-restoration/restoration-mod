@@ -280,7 +280,9 @@
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<model path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>	
+	<material_config path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
 	
 	<!--Titandozer-->	
 	<object path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
@@ -954,6 +956,10 @@
   
 	<!--murky fbi heavy texture-->    
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/murky_heavy_df" force="false"/>	
+	
+    <!--murky glass-->
+    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
 	
 	<!--Keeping those helmets flying again and again and again;)-->	
 	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>

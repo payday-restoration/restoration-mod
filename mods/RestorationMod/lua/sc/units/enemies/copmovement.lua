@@ -168,6 +168,7 @@ function CopMovement:post_init()
 		self:set_position(self._gnd_ray.position)
 	end
 	self._omnia_cooldown = 0
+	self._aoe_heal_cooldown = 0
 	self:_post_init()
 end
 
@@ -219,6 +220,11 @@ function CopMovement:_upd_actions(t)
 			self:do_omnia(self)		
 		end
 	end
+	if self._tweak_data.do_aoe_heal then
+		if not self._unit:character_damage():dead() then			
+			self:do_aoe_heal(self)		
+		end
+	end	
 end
 
 function CopMovement:do_omnia(self)
@@ -231,14 +237,13 @@ function CopMovement:do_omnia(self)
 	if self and self._unit then
 		if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then
 			local cops_to_heal = {
-				"security",
 				"cop",
 				"cop_scared",
 				"cop_female",
-				"gensec",
 				"fbi",
+				"fbi_vet",
 				"swat",
-				"hrt"
+				"swat_titan"
 			}
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
 			if enemies then
@@ -261,13 +266,80 @@ function CopMovement:do_omnia(self)
 							if health_left < max_health then
 								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
 								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
-								local align_obj_name = Idstring("Head")
-								local align_obj = enemy:get_object(align_obj_name)
-								self._headwear_unit = World:spawn_unit(Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff"), Vector3(), Rotation())
-								--Maybe some day
-								--enemy:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
 								if enemy:contour() then
 									enemy:contour():add("omnia_heal", false)
+								end		
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
+							end
+						end
+					end
+				end
+			end
+		end
+	else
+		RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
+	end
+end
+
+function CopMovement:do_aoe_heal(self)
+	local t = TimerManager:main():time()
+	if self._aoe_heal_cooldown > t then
+		return
+	else
+		self._aoe_heal_cooldown = t + 0.1
+	end
+	if self and self._unit then
+		if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then
+			local cops_to_heal = {
+				"heavy_swat",
+				"heavy_swat_sniper",
+				"fbi_swat",
+				"fbi_heavy_swat",
+				"city_swat",
+				"city_swat_titan",
+				"city_swat_titan_assault",
+				"sniper",
+				"tank",
+				"tank_medic",
+				"tank_titan_assault",
+				"tank_hw",
+				"tank_mini",
+				"spooc",
+				"spooc_titan",
+				"shield",
+				"phalanx_minion_assault",
+				"taser",
+				"boom",
+				"rboom"
+			}
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
+			if enemies then
+				RestorationCore.log_shit("SC: FOUND ENEMIES")
+				for _,enemy in ipairs(enemies) do
+					if enemy ~= self._unit then
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							RestorationCore.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								RestorationCore.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
+							end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 1
+							RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+								end								
+								if enemy:contour() then
+									enemy:contour():add("medic_heal", true)
+									enemy:contour():flash("medic_heal", 0.2)
 								end		
 								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 							end

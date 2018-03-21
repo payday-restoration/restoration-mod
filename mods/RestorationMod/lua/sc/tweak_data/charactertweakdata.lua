@@ -275,7 +275,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.move_speed = presets.move_speed.lightning
 	self.fbi_vet.surrender = nil
 	self.fbi_vet.unintimidateable = true	
-	self.fbi_vet.spawn_sound_event = "cloaker_spawn"
 	self.fbi_vet.custom_voicework = nil	
 	self.fbi_vet.dodge_with_grenade = {
 		smoke = {duration = {
@@ -372,10 +371,10 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.experience = {}
 	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 	self.omnia_lpf.detection = presets.detection.normal
-	self.omnia_lpf.HEALTH_INIT = 15
-	self.omnia_lpf.headshot_dmg_mul = 2.19
-	self.omnia_lpf.move_speed = presets.move_speed.fast
-	self.omnia_lpf.surrender_break_time = {6, 10}
+	self.omnia_lpf.HEALTH_INIT = 30
+	self.omnia_lpf.headshot_dmg_mul = 2.2
+	self.omnia_lpf.move_speed = presets.move_speed.very_fast
+	self.omnia_lpf.surrender_break_time = {7, 12}
 	self.omnia_lpf.suppression = nil
 	self.omnia_lpf.surrender = nil
 	self.omnia_lpf.ecm_vulnerability = 1
@@ -405,6 +404,9 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"medic", "special"}
 	self.omnia_lpf.do_omnia = true
+	self.omnia_lpf.do_aoe_heal = true
+	self.omnia_lpf.spawn_sound_event = "cloaker_spawn"
+	self.omnia_lpf.die_sound_event = "mga_death_scream"		
 	table.insert(self._enemy_list, "omnia_lpf")
 end
 
@@ -449,8 +451,6 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan.dodge = presets.dodge.elite
 	self.swat_titan.surrender = nil
 	self.swat_titan.unintimidateable = true	
-	self.swat_titan.spawn_sound_event = "cloaker_spawn"
-	self.swat_titan.die_sound_event = "mga_death_scream"	
 	self.swat_titan.custom_voicework = nil
 	self.swat_titan.static_dodge_preset = true
 	table.insert(self._enemy_list, "swat_titan")
@@ -752,12 +752,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.unintimidateable = true
-	self.city_swat_titan.die_sound_event = "mga_death_scream"
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
-	self.city_swat_titan.spawn_sound_event = "cloaker_spawn"
-	self.city_swat_titan.die_sound_event = "mga_death_scream"	
 	self.city_swat_titan.custom_voicework = nil
 	self.city_swat_titan.dodge_with_grenade = {
 		smoke = {duration = {
@@ -1340,12 +1337,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
-	--Temp solution, unless someone manages to fix armor bits before release
-	if job == "shoutout_raid" or job == "pbr" or job == "wetwork" then
-		self.tank.headshot_dmg_mul = 8.9286
-	else
-		self.tank.headshot_dmg_mul = 12.5
-	end
+	self.tank.headshot_dmg_mul = 12.5
 	self.tank.move_speed = presets.move_speed.slow
 	self.tank.allowed_stances = {cbt = true}
 	self.tank.allowed_poses = {stand = true}
@@ -3066,7 +3058,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.LIVES_INIT = 4
 	presets.gang_member_damage.explosion_damage_mul = 0
 	presets.gang_member_damage.REGENERATE_TIME = 2.25
-	presets.gang_member_damage.REGENERATE_TIME_AWAY = 1.125
+	presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.75
 	presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME
 	presets.gang_member_damage.TASED_TIME = tweak_data.player.damage.TASED_TIME
 	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25

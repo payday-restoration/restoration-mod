@@ -23,7 +23,8 @@
 		</body>
 		<body name="body_helmet_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_plate" collision_type="convex"/>
+			<object name="g_helmet_glass" collision_type="convex"/>
+			<!--<object name="c_helmet_plate" collision_type="convex"/>-->
 		</body>
 		<body name="body_helmet_glass" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -310,10 +311,10 @@
 			</lod_object>
 
 			<lod_object name="lod_throat">
-				<object name="g_throat" 				enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_throat" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_bulldozer"/>
 				</object>
-				<object name="g_throat_lod1" 			enabled="false" lod="1" >
+				<object name="g_throat_lod1" 			enabled="true" lod="1" >
 					<material materials="mtr_bulldozer" cpy_material_vars="contour_color, contour_opacity"/>
 				</object>
 			</lod_object>

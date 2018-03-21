@@ -1,6 +1,4 @@
 
-
-
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	
 	Month = os.date("%m")
@@ -11,7 +9,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._tweak_table == "spring" or self._tweak_table == "summers" then
 			GroupAIStateBesiege:set_assault_endless(true)
 			managers.hud:set_buff_enabled("vip", true)
-		end
+		end	
 		if restoration and restoration.Options:GetValue("SC/Holiday") then
 			if Global.level_data.level_id == "pines" or Global.level_data.level_id == "roberts" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "moon" or Month == "12" then
 				if self:char_tweak().tags then

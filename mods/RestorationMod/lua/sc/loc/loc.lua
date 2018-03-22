@@ -49,7 +49,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
 	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
-		["bm_wp_upg_a_custom_desc"] = "Bigger pellets that give more impact and increase damage.",
+		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that give more impact and increase damage.",
 		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
 		["menu_moving_target_sc"] = "Subtle",
 		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",

@@ -266,6 +266,29 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					}
 				end
 			end
+			
+			if stats.use_heavy_kick then
+				if self:weapon_tweak_data().kick then
+					self:weapon_tweak_data().kick.standing = {
+									1.9,
+									2,
+									-0.2,
+									0.2
+					}
+					self:weapon_tweak_data().kick.crouching = {
+									1.9,
+									2,
+									-0.2,
+									0.2
+					}
+					self:weapon_tweak_data().kick.steelsight = {
+									1.9,
+									2,
+									-0.2,
+									0.2
+					}
+				end
+			end			
 
 		end
 							

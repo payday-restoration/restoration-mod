@@ -245,7 +245,7 @@ function CopMovement:do_omnia(self)
 				"swat",
 				"swat_titan"
 			}
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
 			if enemies then
 				RestorationCore.log_shit("SC: FOUND ENEMIES")
 				for _,enemy in ipairs(enemies) do
@@ -286,7 +286,7 @@ function CopMovement:do_aoe_heal(self)
 	if self._aoe_heal_cooldown > t then
 		return
 	else
-		self._aoe_heal_cooldown = t + 0.1
+		self._aoe_heal_cooldown = t + 0.2
 	end
 	if self and self._unit then
 		if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then
@@ -312,7 +312,7 @@ function CopMovement:do_aoe_heal(self)
 				"boom",
 				"rboom"
 			}
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 4, managers.slot:get_mask("enemies"))
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
 			if enemies then
 				RestorationCore.log_shit("SC: FOUND ENEMIES")
 				for _,enemy in ipairs(enemies) do

@@ -2101,7 +2101,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_3"
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4"
 				},
 				cost = 1000,
 				icon_xy = {2, 1},
@@ -2121,8 +2122,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_4",
 					"player_passive_health_multiplier_5",
+					"player_passive_health_multiplier_6",
 					"player_health_revive_max",
 					"player_passive_loot_drop_multiplier"
 				},
@@ -3207,11 +3208,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 400,
 				texture_bundle_folder = "ecp",
-				desc_id = "menu_deck20_3_desc",
+				desc_id = "menu_deck20_3_desc_sc",
 				name_id = "menu_deck20_3",
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"player_passive_health_multiplier_1"
 				},
 				icon_xy = {
 					1,
@@ -3236,7 +3236,10 @@ function SkillTreeTweakData:init(tweak_data)
 				texture_bundle_folder = "ecp",
 				desc_id = "menu_deck20_7_desc_sc",
 				name_id = "menu_deck20_7",
-				upgrades = {"player_passive_health_multiplier_3"},
+				upgrades = {
+					"player_passive_health_multiplier_2",
+					"player_passive_health_multiplier_3"
+				},
 				icon_xy = {
 					3,
 					0

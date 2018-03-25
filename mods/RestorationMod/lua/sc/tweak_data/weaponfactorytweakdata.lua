@@ -2939,7 +2939,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_sc_blank",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 28},
-			is_a_unlockable = true,
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_pmag",
 			stats = {
 				value = 3,

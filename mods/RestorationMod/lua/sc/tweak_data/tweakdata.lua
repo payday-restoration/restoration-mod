@@ -19,7 +19,7 @@ if not tweak_data then return end
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 60
 	tweak_data.projectiles.launcher_rocket.range = 500
-	tweak_data.projectiles.launcher_rocket.curve_pow = 2
+	tweak_data.projectiles.launcher_rocket.curve_pow = 1
 
 	--Grenade launcher stuff--
 	tweak_data.projectiles.launcher_frag.damage = 80
@@ -49,14 +49,14 @@ if not tweak_data then return end
 	tweak_data.projectiles.rocket_ray_frag.damage = 120
 	tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 	tweak_data.projectiles.rocket_ray_frag.range = 500
-	tweak_data.projectiles.rocket_ray_frag.curve_pow = 2
+	tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
 
 	--Arbiter--
 	tweak_data.projectiles.launcher_frag_arbiter.damage = 60
 	tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
 	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 8000
 	tweak_data.projectiles.launcher_frag_arbiter.range = 500
-	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 2
+	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 3
 	tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 
 	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2

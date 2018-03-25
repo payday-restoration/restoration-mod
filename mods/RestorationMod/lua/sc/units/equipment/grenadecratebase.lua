@@ -16,7 +16,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif BlackMarketManager:equipped_grenade() == "wpn_prj_hur" then
 				managers.player:add_grenade_amount(2)
 			elseif BlackMarketManager:equipped_grenade() == "concussion" then
-				managers.player:add_grenade_amount(2)
+				managers.player:add_grenade_amount(1)
 			elseif BlackMarketManager:equipped_grenade() == "wpn_prj_target" then
 				managers.player:add_grenade_amount(3)
 			else

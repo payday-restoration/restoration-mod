@@ -113,28 +113,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 local old_projectiles = BlackMarketTweakData._init_projectiles
 function BlackMarketTweakData:_init_projectiles(tweak_data)
-   	old_projectiles(self, tweak_data)
-	self.projectiles.rocket_frag.client_authoritative = false
-	self.projectiles.crossbow_arrow_exp.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.crossbow_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.crossbow_poison_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.arblast_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.arblast_arrow_exp.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.arblast_poison_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.frankish_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.frankish_arrow_exp.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.frankish_poison_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	
-	self.projectiles.ecp_arrow.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.ecp_arrow_exp.physic_effect = Idstring("physic_effects/anti_gravitate")
-	self.projectiles.ecp_arrow_poison.physic_effect = Idstring("physic_effects/anti_gravitate")	
-	
-	self.projectiles.frag.client_authoritative = false
-	self.projectiles.dynamite.client_authoritative = false
-	self.projectiles.molotov.client_authoritative = false
-	self.projectiles.launcher_frag.client_authoritative = false
-	self.projectiles.launcher_incendiary.client_authoritative = false
-	
+   	old_projectiles(self, tweak_data)	
 	--[[
 	self.projectiles.fir_com = {
 		name_id = "bm_grenade_fir_com",
@@ -172,9 +151,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.fir_com.max_amount = 3
 	self.projectiles.smoke_screen_grenade.base_cooldown = 30
 	self.projectiles.damage_control.base_cooldown = 20
-
-	--Just so it won't mark you or whatever--
-	self.projectiles.concussion.no_cheat_count = true
+	self.projectiles.concussion.max_amount = 3
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

@@ -1385,7 +1385,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.use_animation_on_fire_damage = false
 	self.tank.flammable = true
 	self.tank.can_be_tased = false
-	self.tank.immune_to_concussion = true
+	self.tank.immune_to_concussion = false
 	self.tank.immune_to_knock_down = true
 	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
@@ -10749,6 +10749,7 @@ function CharacterTweakData:_set_easy()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
@@ -10783,6 +10784,7 @@ function CharacterTweakData:_set_normal()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
@@ -10817,6 +10819,7 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
@@ -10851,6 +10854,7 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("good", "normal")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
@@ -10887,6 +10891,7 @@ function CharacterTweakData:_set_overkill_145()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("expert", "good")
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
@@ -10931,6 +10936,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)

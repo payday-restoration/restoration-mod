@@ -18,7 +18,7 @@ function UpgradesTweakData:_init_pd2_values()
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 		--Explosives hurt--
-		self.explosive_bullet.curve_pow = 2
+		self.explosive_bullet.curve_pow = 3
 		self.explosive_bullet.player_dmg_mul = 0.5
 		self.explosive_bullet.range = 500
 		self.explosive_bullet.feedback_range = self.explosive_bullet.range
@@ -98,22 +98,22 @@ function UpgradesTweakData:_init_pd2_values()
 		1.12
 	}
 	self.values.player.body_armor.skill_max_health_store = {
-		14,
-		13,
-		12,
 		10,
+		9,
 		8,
 		7,
-		5
+		5,
+		4,
+		2
 	}
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		14,
-		13,
-		12,
 		10,
+		9,
 		8,
 		7,
-		5
+		5,
+		4,
+		2
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -858,6 +858,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.passive_health_multiplier = {
 		1.1,
 		1.2,
+		1.25,
 		1.3,
 		1.4,
 		1.5
@@ -868,6 +869,7 @@ function UpgradesTweakData:_init_pd2_values()
 		{0.8, 7}
 	}
 	self.max_melee_weapon_dmg_mul_stacks = 4
+	self.values.melee.stacking_hit_expire_t = {7}
 	self.values.melee.stacking_hit_damage_multiplier = {
 		0.1,
 		0.2
@@ -1251,6 +1253,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 5
 		}
 	}
+	self.definitions.player_passive_health_multiplier_6 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 6
+		}
+	}	
 	self.definitions.temporary_damage_speed_multiplier_1 = {
 		category = "temporary",
 		name_id = "menu_temporary_damage_speed_1",

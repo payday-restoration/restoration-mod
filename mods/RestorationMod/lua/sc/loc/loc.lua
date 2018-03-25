@@ -867,11 +867,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
 		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##10%## more health.",
 		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##10%## more health.",
-		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##10%## more health.",
+		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
 		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Open your mind--	
-		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.\n\nYou gain ##10%## more health.",	
+		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.\n\nYou gain ##5%## more health.",	
 		
 		--THIS IS WAR BABY--
 		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks, up to ##240## every ##4## seconds. Max amount of stacks is ##600##.\n\nHysteria Stacks:\nYou gain ##0.5## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decays ##60% + 80## every ##8## seconds.",	
@@ -888,7 +888,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##50%## of all damage taken for ##5## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
 		["menu_deck17_3_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck17_5_desc_sc"] = "You gain ##10%## more health.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
-		["menu_deck17_7_desc_sc"] = "You gain ##10%## more health.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
+		["menu_deck17_7_desc_sc"] = "You gain ##5%## more health.\n\nThe amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
 		["menu_deck17_9_desc_sc"] = "For every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
@@ -899,7 +899,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##75%##. The remaining damage will be applied directly.\n\nThe ##75%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##20## second cooldown but time remaining will be lessened by ##1## second per enemy killed.",		
 
 		--it's not a war crime if they're not people--
-		["menu_deck20_7_desc_sc"] = "You gain ##10%## more health.",	
+		["menu_deck20_3_desc_sc"] = "You gain ##10%## more health.",	
+		["menu_deck20_7_desc_sc"] = "You gain ##15%## more health.",	
 		
 		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to ##15%## armor recovery rate.\n\nNOTE: Entering this state negates regeneration effects.",	

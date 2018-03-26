@@ -130,11 +130,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			0.98,
 			0.99
 		}
-		if is_vr then
-			self.damage.HEALTH_INIT = 28
-		else
-			self.damage.HEALTH_INIT = 23
-		end
+		self.damage.HEALTH_INIT = 23
 		self.damage.LIVES_INIT = 4
 		self.damage.REGENERATE_TIME = 3
 		self.damage.REVIVE_HEALTH_STEPS = {
@@ -314,7 +310,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.movement_state.standard.movement.jump_velocity.xy.walk = self.movement_state.standard.movement.speed.STANDARD_MAX * 1.2
 		
 		if is_vr then
-			self.movement_state.standard.movement.multiplier.run = 1.3
+			self.movement_state.standard.movement.multiplier.run = 1
 			self.movement_state.standard.movement.multiplier.walk = 1
 			self.movement_state.standard.movement.multiplier.crouch = 1
 			self.movement_state.standard.movement.multiplier.climb = 1

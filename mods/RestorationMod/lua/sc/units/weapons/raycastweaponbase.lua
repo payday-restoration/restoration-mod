@@ -414,8 +414,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return result
 	end
-
+	
+	local raycast_current_damage_orig = RaycastWeaponBase._get_current_damage
+	function RaycastWeaponBase:_get_current_damage(dmg_mul)
+	   if self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase") then
+ 	       dmg_mul = dmg_mul / managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
+  	   end
+  	   return raycast_current_damage_orig(self, dmg_mul)
 	end
+	
+end
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
@@ -473,50 +481,46 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		return picked_up, add_amount
 	end
 
-	function RaycastWeaponBase:clip_full()
-		if tweak_data.weapon[self._name_id].tactical_reload == true then
-			return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip() + 1
-		elseif tweak_data.weapon[self._name_id].tactical_akimbo == true then
-			return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip() + 2
-		else
-			return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip()
+	if _G.IS_VR then
+		--I might have to do something unique for VR, but we'll see.
+	else
+		function RaycastWeaponBase:clip_full()
+			if tweak_data.weapon[self._name_id].tactical_reload == true then
+				return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip() + 1
+			elseif tweak_data.weapon[self._name_id].tactical_akimbo == true then
+				return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip() + 2
+			else
+				return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip()
+			end
 		end
-	end
-	
-	function RaycastWeaponBase:can_reload()
-		if tweak_data.weapon[self._name_id].uses_clip == true and ( (self:get_ammo_max_per_clip() == tweak_data.weapon[self._name_id].clip_capacity and self:get_ammo_remaining_in_clip() > 0 ) or self:get_ammo_remaining_in_clip() > self:get_ammo_max_per_clip() - tweak_data.weapon[self._name_id].clip_capacity) then
-			return false
-		elseif self:get_ammo_total() > self:get_ammo_remaining_in_clip() then
-			return true
+		
+		function RaycastWeaponBase:can_reload()
+			if tweak_data.weapon[self._name_id].uses_clip == true and ( (self:get_ammo_max_per_clip() == tweak_data.weapon[self._name_id].clip_capacity and self:get_ammo_remaining_in_clip() > 0 ) or self:get_ammo_remaining_in_clip() > self:get_ammo_max_per_clip() - tweak_data.weapon[self._name_id].clip_capacity) then
+				return false
+			elseif self:get_ammo_total() > self:get_ammo_remaining_in_clip() then
+				return true
+			end
 		end
-	end
-	function RaycastWeaponBase:on_reload(amount)
-		local ammo_base = self._reload_ammo_base or self:ammo_base()
-		amount = amount or ammo_base:get_ammo_max_per_clip()
-		if self:get_ammo_remaining_in_clip() > 0 and tweak_data.weapon[self._name_id].tactical_reload == true then
-			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 1))
-		elseif self:get_ammo_remaining_in_clip() > 1 and tweak_data.weapon[self._name_id].tactical_akimbo == true then
-			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 2))
-		elseif self:get_ammo_remaining_in_clip() == 1 and tweak_data.weapon[self._name_id].tactical_akimbo == true then
-			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 1))
-		elseif tweak_data.weapon[self._name_id].uses_clip == true and self:get_ammo_remaining_in_clip() <= self:get_ammo_max_per_clip()  then
-			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + tweak_data.weapon[self._name_id].clip_capacity))
-		elseif self._setup.expend_ammo and not managers.enemy:is_enemy(self._setup.user_unit) then
-			ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), amount))
-		else
-			ammo_base:set_ammo_remaining_in_clip(amount)
-			ammo_base:set_ammo_total(amount)
+		function RaycastWeaponBase:on_reload(amount)
+			local ammo_base = self._reload_ammo_base or self:ammo_base()
+			amount = amount or ammo_base:get_ammo_max_per_clip()
+			if self:get_ammo_remaining_in_clip() > 0 and tweak_data.weapon[self._name_id].tactical_reload == true then
+				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 1))
+			elseif self:get_ammo_remaining_in_clip() > 1 and tweak_data.weapon[self._name_id].tactical_akimbo == true then
+				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 2))
+			elseif self:get_ammo_remaining_in_clip() == 1 and tweak_data.weapon[self._name_id].tactical_akimbo == true then
+				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 1))
+			elseif tweak_data.weapon[self._name_id].uses_clip == true and self:get_ammo_remaining_in_clip() <= self:get_ammo_max_per_clip()  then
+				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + tweak_data.weapon[self._name_id].clip_capacity))
+			elseif self._setup.expend_ammo and not managers.enemy:is_enemy(self._setup.user_unit) then
+				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), amount))
+			else
+				ammo_base:set_ammo_remaining_in_clip(amount)
+				ammo_base:set_ammo_total(amount)
+			end
+			managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+			self._reload_ammo_base = nil
 		end
-		managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
-		self._reload_ammo_base = nil
-	end
-
-	local raycast_current_damage_orig = RaycastWeaponBase._get_current_damage
-	function RaycastWeaponBase:_get_current_damage(dmg_mul)
-	   if self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase") then
- 	       dmg_mul = dmg_mul / managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
-  	   end
-  	   return raycast_current_damage_orig(self, dmg_mul)
-	end
+	end	
 
 end

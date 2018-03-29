@@ -11900,7 +11900,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "barrel_ext",
 			name_id = "bm_wp_p226_co_comp_1",
 			a_obj = "a_co",
-			parent = "slide",
+			parent = "barrel",
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_pis_p226_pts/wpn_fps_pis_p226_co_comp_1",
 			stats = {
 				value = 4,
@@ -11920,7 +11920,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "barrel_ext",
 			name_id = "bm_wp_p226_co_comp_2",
 			a_obj = "a_co",
-			parent = "slide",
+			parent = "barrel",
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_pis_p226_pts/wpn_fps_pis_p226_co_comp_2",
 			stats = {
 				value = 5,

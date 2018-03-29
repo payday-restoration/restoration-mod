@@ -45,7 +45,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.suspicion.buildup_mul = 1.4
 		self.damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.damage.REVIVE_HEALTH_STEPS = {
-			0.251
+			0.25
 		}
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
@@ -75,7 +75,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.suspicion.buildup_mul = 1.4
 		self.damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.damage.REVIVE_HEALTH_STEPS = {
-			0.251
+			0.25
 		}
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
@@ -136,7 +136,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.75,
 			0.5,
-			0.251
+			0.25
 		}
 		self.damage.BLEED_OT_TIME = 40
 		self.damage.TASED_TIME = 10

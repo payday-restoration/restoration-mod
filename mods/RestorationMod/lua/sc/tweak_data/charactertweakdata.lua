@@ -102,6 +102,7 @@ end
 
 function CharacterTweakData:_init_security(presets)
 	self.security = deep_clone(presets.base)
+	self.security.tags = {"law"}
 	self.security.experience = {}
 	self.security.weapon = presets.weapon.normal
 	self.security.detection = presets.detection.guard
@@ -141,6 +142,7 @@ end
 
 function CharacterTweakData:_init_gensec(presets)
 	self.gensec = deep_clone(presets.base)
+	self.gensec.tags = {"law"}
 	self.gensec.experience = {}
 	self.gensec.weapon = presets.weapon.normal
 	self.gensec.detection = presets.detection.guard
@@ -175,6 +177,7 @@ end
 
 function CharacterTweakData:_init_cop(presets)
 	self.cop = deep_clone(presets.base)
+	self.cop.tags = {"law"}
 	self.cop.experience = {}
 	self.cop.weapon = presets.weapon.normal
 	self.cop.detection = presets.detection.normal
@@ -229,6 +232,7 @@ end
 
 function CharacterTweakData:_init_fbi(presets)
 	self.fbi = deep_clone(presets.base)
+	self.fbi.tags = {"law"}
  	self.fbi.experience = {}
 	self.fbi.weapon = presets.weapon.normal
 	self.fbi.detection = presets.detection.normal
@@ -298,7 +302,7 @@ end
 
 function CharacterTweakData:_init_medic(presets)
 	self.medic = deep_clone(presets.base)
-	self.medic.tags = {"medic", "special"}
+	self.medic.tags = {"law", "medic", "special"}
 	self.medic.experience = {}
 	self.medic.weapon = deep_clone(presets.weapon.normal)
 	self.medic.detection = presets.detection.normal
@@ -402,7 +406,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.steal_loot = nil
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
-	self.omnia_lpf.tags = {"medic", "special"}
+	self.omnia_lpf.tags = {"law", "medic", "special"}
 	self.omnia_lpf.do_omnia = true
 	self.omnia_lpf.do_aoe_heal = true
 	self.omnia_lpf.spawn_sound_event = "cloaker_spawn"
@@ -412,6 +416,7 @@ end
 
 function CharacterTweakData:_init_swat(presets)
 	self.swat = deep_clone(presets.base)
+	self.swat.tags = {"law"}
 	self.swat.experience = {}
 	self.swat.weapon = presets.weapon.normal
 	self.swat.detection = presets.detection.normal
@@ -464,6 +469,7 @@ end
 
 function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat = deep_clone(presets.base)
+	self.heavy_swat.tags = {"law"}
 	self.heavy_swat.experience = {}
 	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
@@ -497,7 +503,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.custom_voicework = "heavy"
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
-	self.heavy_swat_sniper.tags = {"sniper", "special"}
+	self.heavy_swat_sniper.tags = {"law", "sniper", "special"}
 	self.heavy_swat_sniper.priority_shout = "f34"
 	self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000
@@ -616,6 +622,7 @@ end
 
 function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat = deep_clone(presets.base)
+	self.fbi_swat.tags = {"law"}
 	self.fbi_swat.experience = {}
 	self.fbi_swat.weapon = presets.weapon.good
 	self.fbi_swat.detection = presets.detection.normal
@@ -657,6 +664,7 @@ end
 
 function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat = deep_clone(presets.base)
+	self.fbi_heavy_swat.tags = {"law"}
 	self.fbi_heavy_swat.experience = {}
 	self.fbi_heavy_swat.weapon = presets.weapon.normal
 	self.fbi_heavy_swat.detection = presets.detection.normal
@@ -695,6 +703,7 @@ end
 
 function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat = deep_clone(presets.base)
+	self.city_swat.tags = {"law"}
 	self.city_swat.experience = {}
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
@@ -779,6 +788,7 @@ end
 
 function CharacterTweakData:_init_omnia(presets)
 	self.omnia = deep_clone(presets.base)
+	self.omnia.tags = {"law"}
 	self.omnia.experience = {}
 	self.omnia.damage.hurt_severity = presets.hurt_severities.elite
 	self.omnia.weapon = deep_clone(presets.weapon.expert)
@@ -820,7 +830,7 @@ end
 
 function CharacterTweakData:_init_sniper(presets)
 	self.sniper = deep_clone(presets.base)
-	self.sniper.tags = {"sniper", "special"}
+	self.sniper.tags = {"law", "sniper", "special"}
 	self.sniper.experience = {}
 	self.sniper.weapon = presets.weapon.sniper
 	self.sniper.detection = presets.detection.sniper
@@ -1327,7 +1337,7 @@ end
 
 function CharacterTweakData:_init_tank(presets)
 	self.tank = deep_clone(presets.base)
-	self.tank.tags = {"tank", "special"}
+	self.tank.tags = {"law", "tank", "special"}
 	self.tank.experience = {}
 	self.tank.damage.tased_response = {
 		light = {tased_time = 1, down_time = 0},
@@ -1459,7 +1469,7 @@ end
 
 function CharacterTweakData:_init_spooc(presets)
 	self.spooc = deep_clone(presets.base)
-	self.spooc.tags = {"spooc", "special"}
+	self.spooc.tags = {"law", "spooc", "special"}
 	self.spooc.experience = {}
 	self.spooc.damage.hurt_severity = presets.hurt_severities.spooc
 	self.spooc.weapon = deep_clone(presets.weapon.normal)
@@ -1507,7 +1517,7 @@ end
 
 function CharacterTweakData:_init_shield(presets)
 	self.shield = deep_clone(presets.base)
-	self.shield.tags = {"shield", "special"}
+	self.shield.tags = {"law", "shield", "special"}
 	self.shield.experience = {}
 	self.shield.weapon = deep_clone(presets.weapon.normal)
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -1750,7 +1760,7 @@ end
 
 function CharacterTweakData:_init_taser(presets)
 	self.taser = deep_clone(presets.base)
-	self.taser.tags = {"taser", "special"}
+	self.taser.tags = {"law", "taser", "special"}
 	self.taser.experience = {}
 	self.taser.weapon = deep_clone(presets.weapon.normal)
 	self.taser.weapon.is_rifle.tase_distance = 1400
@@ -1838,7 +1848,7 @@ end
 
 function CharacterTweakData:_init_boom(presets)
 	self.boom = deep_clone(presets.base)
-	self.boom.tags = {"custom", "special"}
+	self.boom.tags = {"law", "custom", "special"}
 	self.boom.experience = {}
 	self.boom.weapon = deep_clone(presets.weapon.normal)
 	self.boom.melee_weapon = "knife_1"
@@ -1980,6 +1990,7 @@ function CharacterTweakData:_init_civilian(presets)
 		ears = {min_duration = 0, max_duration = 0}
 	}
 	self.civilian.experience.cable_tie = "tie_civ"
+	self.civilian.silent_priority_shout = "f37"
 	self.civilian.speech_prefix_p1 = "cm"
 	self.civilian.speech_prefix_count = 2
 	self.civilian.access = "civ_male"
@@ -2001,6 +2012,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.robbers_safehouse.ignores_contours = true
 	self.robbers_safehouse.HEALTH_INIT = 50
 	self.robbers_safehouse.headshot_dmg_mul = 1
+	self.robbers_safehouse.use_ik = true
 end
 
 function CharacterTweakData:_init_bank_manager(presets)

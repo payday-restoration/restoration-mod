@@ -4,7 +4,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local mvec_bayonet_dir = Vector3()
 
 	function HandMelee:update(unit, t, dt)
-		if not self:has_melee_weapon() and not self:has_weapon() then
+		if not self:has_melee_weapon() and not self:has_weapon() and not self:has_custom_weapon() then
 			if alive(self._weapon_unit) then
 				self:set_melee_unit()
 			else
@@ -21,7 +21,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local valid_hit = false
 		local has_bayonet = self:has_weapon() and alive(self._bayonet_unit)
 
-		if self:has_weapon() then
+		if self:has_weapon() or self:has_custom_weapon() then
 			local limit = 5
 			local point = nil
 

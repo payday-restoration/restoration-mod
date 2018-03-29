@@ -413,7 +413,6 @@ function PlayerDamage:band_aid_health()
 		self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
 		self._revive_health_i = math.max(self._revive_health_i - 1, 1)
 		managers.environment_controller:set_last_life(1 >= Application:digest_value(self._revives, false))
-		managers.hint:show_hint("skill_stockholm_syndrome_trade")
 	end
 end
 

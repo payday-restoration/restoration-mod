@@ -65,6 +65,7 @@ if not _G.restoration then
 		"peta2",
 		"nail",
 		"rvd2",
+		"mia_2"
 	}
 	blt.xaudio.setup()
 	log("DOING FRAMEWORK SETUP")

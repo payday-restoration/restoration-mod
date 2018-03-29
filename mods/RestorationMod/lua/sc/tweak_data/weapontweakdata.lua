@@ -904,7 +904,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_sc_npc = deep_clone(self.m249_npc)
 		self.hk21_sc_npc.sounds.prefix = "m249_npc"
 		self.hk21_sc_npc.use_data.selection_index = 2
-		self.hk21_sc_npc.DAMAGE = 3.5
+		self.hk21_sc_npc.DAMAGE = 2.5
 		self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.hk21_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 		self.hk21_sc_npc.CLIP_AMMO_MAX = 150
@@ -1708,7 +1708,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wa2000_crew.CLIP_AMMO_MAX = 10
 		self.wa2000_crew.NR_CLIPS_MAX = 5
 		self.wa2000_crew.pull_magazine_during_reload = "rifle"
-		self.wa2000_crew.auto.fire_rate = 0.3
+		self.wa2000_crew.auto.fire_rate = 0.4
 		self.wa2000_crew.hold = {"bullpup", "rifle"}
 		self.wa2000_crew.alert_size = 5000
 		self.wa2000_crew.suppression = 3.1
@@ -5333,10 +5333,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.wa2000.CLIP_AMMO_MAX = 10
 		self.wa2000.AMMO_MAX = 40
 		self.wa2000.AMMO_PICKUP = self:_pickup_chance(40, 2)
-		self.wa2000.fire_mode_data.fire_rate = 0.3
+		self.wa2000.fire_mode_data.fire_rate = 0.4
 		self.wa2000.CAN_TOGGLE_FIREMODE = false
 		self.wa2000.single = {}
-		self.wa2000.single.fire_rate = 0.3
+		self.wa2000.single.fire_rate = 0.4
 		self.wa2000.spread.standing = 3.5
 		self.wa2000.spread.crouching = 2.5
 		self.wa2000.spread.steelsight = 1

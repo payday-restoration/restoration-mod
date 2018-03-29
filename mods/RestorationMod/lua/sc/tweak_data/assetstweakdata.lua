@@ -51,7 +51,15 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"wetwork"
 		}		
 	end
-
+	
+	--Adding Bikers to Biker heist cause it makes sense--
+	self.jungle_1_bikers.stages = {
+		"welcome_to_the_jungle_1",
+		"welcome_to_the_jungle_1_night",
+		"born",
+		"chew"
+	}
+	
 	--Slaughterhouse safe--
 	self.dinner_safe = {}
 	self.dinner_safe.name_id = "menu_asset_dinner_safe"
@@ -64,16 +72,15 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	self.bomb_loot.texture = "guis/textures/pd2/mission_briefing/assets/crojob/stage_1/assets_crojob_insiderinfo_bomb"
 	self.bomb_loot.stages = {"crojob2"}
 
+	--Restoration Heist assets--
 	--wet floor--
 	self.wet_intel = {}
 	self.wet_intel.name_id = "menu_asset_wet_intel"
-	self.wet_intel.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_intel"
-	self.wet_intel.stages = {"wetwork"}	
+	self.wet_intel.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_intel"	
 	
 	self.wet_boat = {}
 	self.wet_boat.name_id = "menu_asset_wet_boat"
 	self.wet_boat.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_boat"
-	self.wet_boat.stages = {"wetwork"}	
 	self.wet_boat.visible_if_locked = true
 	self.wet_boat.no_mystery = true
 	self.wet_boat.unlock_desc_id = "menu_asset_wet_boat_desc"
@@ -87,7 +94,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	self.wetwork_burn_add_saw = {}
 	self.wetwork_burn_add_saw.name_id = "menu_asset_wet_add_saw"
 	self.wetwork_burn_add_saw.texture = "guis/textures/pd2/mission_briefing/assets/wetwork_burn_add_saw"
-	self.wetwork_burn_add_saw.stages = {"wetwork_burn"}	
 	self.wetwork_burn_add_saw.visible_if_locked = true
 	self.wetwork_burn_add_saw.no_mystery = true
 	self.wetwork_burn_add_saw.unlock_desc_id = "menu_asset_wet_add_saw_desc"
@@ -101,7 +107,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	self.rush_asset_sentrygun = {}
 	self.rush_asset_sentrygun.name_id = "menu_rush_asset_sentrygun"
 	self.rush_asset_sentrygun.texture = "guis/textures/pd2/mission_briefing/assets/rush_asset_sentrygun"
-	self.rush_asset_sentrygun.stages = {"rush"}	
 	self.rush_asset_sentrygun.visible_if_locked = true
 	self.rush_asset_sentrygun.no_mystery = true
 	self.rush_asset_sentrygun.unlock_desc_id = "menu_rush_asset_sentrygun_desc"
@@ -110,12 +115,4 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		upgrade = "additional_assets",
 		category = "player"
 	}	
-	
-	--Adding Bikers to Biker heist cause it makes sense--
-	self.jungle_1_bikers.stages = {
-		"welcome_to_the_jungle_1",
-		"welcome_to_the_jungle_1_night",
-		"born",
-		"chew"
-	}
 end

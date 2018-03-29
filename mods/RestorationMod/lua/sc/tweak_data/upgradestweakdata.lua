@@ -53,13 +53,13 @@ function UpgradesTweakData:_init_pd2_values()
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
+		0.1,
 		0.05,
 		0,
 		-0.05,
-		-0.1,
+		-0.15,
 		-0.2,
-		-0.25,
-		-0.35
+		-0.3
 	}
 	self.values.player.body_armor.concealment = {
 		30,
@@ -497,12 +497,12 @@ function UpgradesTweakData:_init_pd2_values()
 				--Graze
 				self.values.snp.graze_damage = {
 					{
-						radius = 100,
-						damage_factor = 0.2,
-						damage_factor_headshot = 0.2
+						radius = 500,
+						damage_factor = 0.4,
+						damage_factor_headshot = 0.4
 					},
 					{
-						radius = 100,
+						radius = 500,
 						damage_factor = 0.8,
 						damage_factor_headshot = 0.8
 					}
@@ -753,16 +753,16 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.counter_strike_spooc = {true}
 
 				--Frenzy (Berserker)
-				self.values.player.max_health_reduction = {0.2}
+				self.values.player.max_health_reduction = {0.25}
 				self.values.player.healing_reduction = {0.25, 0.50}
                			self.values.player.health_damage_reduction = {0.85, 0.7}
-                		self.values.player.real_health_damage_reduction = {0.7, 0.5}
+                		self.values.player.real_health_damage_reduction = {0.7, 0.4}
 				
 				--Berserker (Frenzy)
-				self.player_damage_health_ratio_threshold = 0.25
+				self.player_damage_health_ratio_threshold = 0.5
 				self.player_damage_health_ratio_threshold_2 = 0.5
-				self.values.player.damage_health_ratio_multiplier = {1}
-				self.values.player.melee_damage_health_ratio_multiplier = {2.50}
+				self.values.player.damage_health_ratio_multiplier = {0.75}
+				self.values.player.melee_damage_health_ratio_multiplier = {1.50}
 			--}
 		--}
 

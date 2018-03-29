@@ -10902,6 +10902,70 @@ function CharacterTweakData:_set_overkill_145()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 10
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 2,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 2,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}	
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
 	self.presets.gang_member_damage.HEALTH_INIT = 125
@@ -10935,6 +10999,70 @@ function CharacterTweakData:_set_easy_wish()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 10
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 2,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 2,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 2,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}		
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)

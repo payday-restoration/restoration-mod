@@ -497,14 +497,14 @@ function UpgradesTweakData:_init_pd2_values()
 				--Graze
 				self.values.snp.graze_damage = {
 					{
-						radius = 500,
-						damage_factor = 0.4,
-						damage_factor_headshot = 0.4
+						radius = 300,
+						damage_factor = 0.3,
+						damage_factor_headshot = 0.3
 					},
 					{
 						radius = 500,
-						damage_factor = 0.8,
-						damage_factor_headshot = 0.8
+						damage_factor = 0.6,
+						damage_factor_headshot = 0.6
 					}
 				}				
 

@@ -12895,9 +12895,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 12,
 				spread = -1,
 				recoil = 1,
-				spread_moving = -2,
-				concealment = 0,
-				damage = 0
+				spread_moving = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -12915,8 +12913,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 8,
-				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			animations = {
 				reload = "reload",
@@ -31622,8 +31619,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_grv/weapons/wpn_fps_snp_siltstone_pts/wpn_fps_snp_siltstone_s_polymer",
 			stats = {
 				value = 1,
-				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "grv",
 			texture_bundle_folder = "grv"

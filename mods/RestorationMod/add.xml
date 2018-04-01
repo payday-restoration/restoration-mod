@@ -1169,5 +1169,36 @@
 	
 	<!--Murky Sniper-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper_husk" force="false" load="true"/>			
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper_husk" force="false" load="true"/>		
+
+    <!--Titan Sniper-->	
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
+	<object path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>	
+		
+	<!--Veteran Cop New-->	
+	<object path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_new_1/ene_veteran_cop_1_husk" force="false" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/vetcop_body_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/vetcop_head_df" force="false"/>
+
+	<object path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_new_2/ene_veteran_cop_2_husk" force="false" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/vetcop_body_2_df" force="false"/>	
 </table>

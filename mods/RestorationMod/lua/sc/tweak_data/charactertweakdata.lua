@@ -583,9 +583,8 @@ function CharacterTweakData:_init_heavy_swat(presets)
 			}
 		}
 	}	
-	self.heavy_swat_sniper.HEALTH_INIT = 13
-	self.heavy_swat_sniper.headshot_dmg_mul = 2.6
-	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
+	self.heavy_swat_sniper.HEALTH_INIT = 12
+	self.heavy_swat_sniper.headshot_dmg_mul = 3.5
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
 	self.heavy_swat_sniper.surrender = nil
@@ -599,20 +598,16 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
 	self.heavy_swat_sniper.speech_prefix_count = 4
 	self.heavy_swat_sniper.access = "swat"
-	self.heavy_swat_sniper.dodge = presets.dodge.athletic_overkill
+	self.heavy_swat_sniper.damage.hurt_severity = presets.hurt_severities.elite
+	self.heavy_swat_sniper.use_animation_on_fire_damage = false
+	self.heavy_swat_sniper.move_speed = presets.move_speed.lightning
+	self.heavy_swat_sniper.dodge = presets.dodge.elite
 	self.heavy_swat_sniper.chatter = presets.enemy_chatter.swat
 	self.heavy_swat_sniper.melee_weapon = nil
 	self.heavy_swat_sniper.melee_weapon_dmg_multiplier = 2.5
-	if job == "chill_combat" then
-		self.heavy_swat_sniper.steal_loot = nil
-	else
-		self.heavy_swat_sniper.steal_loot = true
-	end
+	self.heavy_swat_sniper.steal_loot = nil
 	self.heavy_swat_sniper.has_alarm_pager = false
 	self.heavy_swat_sniper.calls_in = true
-	self.heavy_swat_sniper.use_animation_on_fire_damage = false
-	self.heavy_swat_sniper.static_weapon_preset = true
-	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_weapon_preset = true
 	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_melee_preset = true	
@@ -10766,6 +10761,70 @@ function CharacterTweakData:_set_easy()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}		
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -10800,7 +10859,71 @@ function CharacterTweakData:_set_normal()
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
-	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
+	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}		
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -10836,6 +10959,70 @@ function CharacterTweakData:_set_hard()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}		
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -10871,6 +11058,70 @@ function CharacterTweakData:_set_overkill()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
+	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+		{
+			r = 1000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {1, 1},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 4000,
+			acc = {0.5, 0.85},
+			dmg_mul = 1,
+			recoil = {1, 1.25},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 6000,
+			acc = {0.5, 0.8},
+			dmg_mul = 1,
+			recoil = {1.25, 1.5},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		},
+		{
+			r = 8000,
+			acc = {0.5, 0.7},
+			dmg_mul = 1,
+			recoil = {1.5, 2},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}		
 	self:_set_characters_dodge_preset("athletic_very_hard")
 	self:_set_characters_melee_preset("2", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -11526,7 +11777,8 @@ function CharacterTweakData:character_map()
 				"ene_titan_shotgun",
 				"ene_titan_rifle",
 				"ene_omnia_lpf",
-				"ene_fbi_titan_1"
+				"ene_fbi_titan_1",
+				"ene_titan_sniper"
 			}
 		},
 		holly = {

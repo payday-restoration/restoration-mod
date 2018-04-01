@@ -870,7 +870,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function WeaponTweakData:_init_data_scar_npc()
 		self.scar_npc.sounds.prefix = "zsniper_npc"
 		self.scar_npc.use_data.selection_index = 2
-		self.scar_npc.DAMAGE = 7.2
+		self.scar_npc.DAMAGE = 6.1
 		self.scar_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.scar_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.scar_npc.CLIP_AMMO_MAX = 20
@@ -3932,7 +3932,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 17,
 			spread_moving = 8,
 			zoom = 1,
-			concealment = 21,
+			concealment = 22,
 			suppression = 4,
 			alert_size = 4,
 			extra_ammo = 6,
@@ -5173,7 +5173,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.winchester1874.stats = {
 			damage = 150,
 			spread = 20,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 12,
@@ -6252,8 +6252,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tti.can_shoot_through_wall = true
 		self.tti.stats = {
 			damage = 150,
-			spread = 16,
-			recoil = 13,
+			spread = 18,
+			recoil = 18,
 			spread_moving = 24,
 			zoom = 1,
 			concealment = 16,
@@ -6289,7 +6289,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 18,
 			spread_moving = 8,
 			zoom = 1,
-			concealment = 20,
+			concealment = 21,
 			suppression = 4,
 			alert_size = 4,
 			extra_ammo = 6,
@@ -6506,7 +6506,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.stats = {
 			damage = 150,
 			spread = 17,
-			recoil = 14,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 16,

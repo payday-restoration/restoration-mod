@@ -99,7 +99,6 @@ if not _G.restoration then
 		for i = 1, 31 do
 			_G.voiceline_framework:register_voiceline("medicdozer", "heal", ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg")
 		end
-		_G.deathvox.grenadier_gas_duration = 15
 	else
 		log("NO FRAMEWORK!!!")
 	end

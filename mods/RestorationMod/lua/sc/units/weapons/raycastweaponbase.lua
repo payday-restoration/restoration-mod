@@ -200,7 +200,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._laser_unit = nil
 		end
 	end
-
+	
 	function RaycastWeaponBase:_collect_hits(from, to)
 		local can_shoot_through = self._can_shoot_through_wall or self._can_shoot_through_shield or self._can_shoot_through_enemy
 		local ray_hits = nil
@@ -217,21 +217,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if not units_hit[hit.unit:key()] then
 				units_hit[hit.unit:key()] = true
 				unique_hits[#unique_hits + 1] = hit
-				hit.hit_position = hit.position
-				hit_enemy = hit_enemy or hit.unit:in_slot(enemy_mask)
+				local hit_enemy = hit_enemy or hit.unit:in_slot(enemy_mask)
 				local weak_body = hit.body:has_ray_type(ai_vision_ids)
 
 				if not self._can_shoot_through_enemy and hit_enemy then
 					break
-				elseif not self._can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body then
+				elseif has_hit_wall or (not self._can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body) then
 					break
 				elseif not self._can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
 					break
 				elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' then
 					break
 				elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then
-					break					
+					break						
 				end
+				
+				local has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)
+				
 			end
 		end
 

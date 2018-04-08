@@ -612,6 +612,8 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_melee_preset = true	
 	self.heavy_swat_sniper.custom_voicework = nil
+	self.heavy_swat_sniper.spawn_sound_event = "bdz_entrance_elite"
+	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"	
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 end
 
@@ -1471,6 +1473,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.detection = presets.detection.normal
 	self.spooc.HEALTH_INIT = 60
 	self.spooc.headshot_dmg_mul = 5.85
+	self.spooc.damage.explosion_damage_mul = 1.25
 	self.spooc.move_speed = presets.move_speed.lightning
 	self.spooc.no_retreat = true
 	self.spooc.no_arrest = true

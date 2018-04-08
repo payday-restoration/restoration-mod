@@ -13,8 +13,8 @@
     </material>
     <material version="2" name="glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
         <variable value="0 1 0" type="vector3" name="fresnel_settings"/>
-        <opacity_texture file="units/payday2/glass/glass_clear_small_teal_op"/>
-        <diffuse_texture file="units/payday2/glass/glass_clear_default_df"/>
+        <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
     </material>   
 </materials>

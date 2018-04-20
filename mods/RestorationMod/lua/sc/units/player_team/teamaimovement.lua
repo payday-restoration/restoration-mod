@@ -9,6 +9,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._unit:brain():set_logic("surrender")
 		self._unit:network():send("arrested")
 		self._unit:character_damage():on_arrested()
+		
+		return true
+	end	
+	
+	function TeamAIMovement:on_SPOOCed(enemy_unit)
+		self._unit:character_damage():on_incapacitated()
+
+		return true
 	end	
 		
 	local old_throw = TeamAIMovement.throw_bag

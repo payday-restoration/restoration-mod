@@ -131,6 +131,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end	
 		
+		self._unit:damage():run_sequence_simple("decloak")
+		
 		local r = LevelsTweakData.LevelType.Russia
 		local ai_type = tweak_data.levels:get_ai_group_type()
 		self._taunt_during_assault = "cloaker_taunt_during_assault"
@@ -277,6 +279,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._unit:sound():say(self._taunt_after_assault, true, true)
 			end
 		end
+		
+		self._unit:damage():run_sequence_simple("cloak_engaged")
 		
 		if self._root_blend_disabled then
 			self._ext_movement:set_root_blend(true)
@@ -434,5 +438,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return true
 	end
-		
+	
+	function ActionSpooc:complete()
+		return (self._beating_end_t and self._beating_end_t < TimerManager:game():time()) or (self._beating_end_t and self._last_vel_z >= 0)
+	end
+	
 end

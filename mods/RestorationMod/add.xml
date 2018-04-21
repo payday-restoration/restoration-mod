@@ -466,10 +466,6 @@
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" force="false" load="true"/>
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" force="false" load="true"/>
 
-	<!--Undercover Cops-->
-	<unit path="units/payday2/characters/ene_cop_civ_1/ene_cop_civ_1" force="false" load="true"/>
-	<unit path="units/payday2/characters/ene_cop_civ_1/ene_cop_civ_1_husk" force="false" load="true"/>
-
 	<!--Summers-->
 	<object path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
@@ -572,7 +568,6 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4_contour" force="false" />
 	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/akan_heavy_df" force="false" />
 	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/maska_df" force="false" />
-	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/glass_op" force="false" />
 	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/maska_nm" force="false" />
 
 	<!--Buzz-->
@@ -604,37 +599,34 @@
 	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc" force="true"/>
 	
 	<!--Incendiary Slug-->
-	<texture path="guis/dlcs/cash/safes/cf15/weapon_skins/m95_forest - copy" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_slug_fire"/>
 	
 	<!--AK drum mag-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/barrel" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"/>
 
 	<!--M4 Drum-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/barrel_ext" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum"/>
 	
 	<!--Some angled grip, forgot what this one was lol-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/extra" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg"/>
 	
 	<!--that ugly tan vert grip-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/foregrip" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_stubby"/>
 	
 	<!--The other vert grip-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/gadget" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_verticalgrip"/>
 	
 	<!--Saiga Drum-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/grip" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd"/>
 	
 	<!--MP5 Drum-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/lower_reciever" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum"/>
 	
 	<!--Blank Statboost-->
-	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_bayonet" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>
 	
 	<!--SC Skill atlas-->
-	<texture path="guis/textures/pd2/skilltree/icons_atlas" force="true"/>
-	
-	<!--Unused gold texture intended for golden AK mods. Remove?-->
-	<texture path="guis/textures/pd2/fav_video2" force="true"/>
+	<texture path="guis/textures/pd2/skilltree/icons_atlas_sc"/>
 	
 	<!--I LOVE TO RELOAD DURING A HEIST-->
 	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
@@ -642,10 +634,7 @@
 	<model path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
 	<object path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
 	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="false"/>
-		
-	<!--NPC M308 texture. Unused? There's a copy of this in the SCAR folder-->
-	<texture path="guis/textures/upgrade_images" force="true"/>
-	
+			
 	<!--Birdshot (unused)-->
 	<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>
 	
@@ -672,12 +661,7 @@
 		
 	<!--Saiga Drum Mag fix-->
 	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq"/>
-	
-	<!--I think this was a fix for the Golden AK skin config (because the textures don't actually exist). Unused.-->
-	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_standard_gold_cc" force="true"/>
-	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_akm_gold_cc" force="true"/>
-	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_folding_gold_cc" force="true"/>
-	
+		
 	<!--M4 Drum Mag fix (note: could probably add a proper THQ config now)-->
 	<material_config path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
 	<model path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>

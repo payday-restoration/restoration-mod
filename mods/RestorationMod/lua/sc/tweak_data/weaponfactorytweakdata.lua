@@ -530,7 +530,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_vg",
 			is_a_unlockable = true,
 			dlc = "sc",
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/gadget",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_verticalgrip",
 			unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_verticalgrip/wpn_fps_upg_vg_ass_smg_verticalgrip",
 			stats = {
 				value = 1,
@@ -546,7 +546,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_vg",
 			is_a_unlockable = true,
 			dlc = "sc",
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/foregrip",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_stubby",
 			unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_stubby/wpn_fps_upg_vg_ass_smg_stubby",
 			stats = {
 				value = 1,
@@ -562,7 +562,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_vg",
 			is_a_unlockable = true,
 			dlc = "sc",
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/extra",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg",
 			unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_afg/wpn_fps_upg_vg_ass_smg_afg",
 			stats = {
 				value = 1,
@@ -2916,7 +2916,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 98},
 			is_a_unlockable = true,
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/barrel_ext",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum",
 			dlc = "sc",
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum",
 			stats = {
@@ -4389,7 +4389,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			is_a_unlockable = true,
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/barrel",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum",
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_lmg_rpk_m_drum",
 			dlc = "sc",
 			stats = {
@@ -5366,7 +5366,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			dlc = "sc",
 			is_a_unlockable = true,
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/grip",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
 			unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
 			custom_stats = {reload_speed_mult = 0.85, is_drum_aa12 = true},
 			stats = {value = 1, extra_ammo = 7, reload = -3}
@@ -7333,7 +7333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_aa12_mag_drum",
 			a_obj = "a_m",
 			is_a_unlockable = true,
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/lower_reciever",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum",
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_drum",
 			dlc = "sc",
 			stats = {
@@ -16933,7 +16933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_bayonet",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none",
 			stats = {value = 0},
 			internal_part = true,
 			is_a_unlockable = true,
@@ -36398,7 +36398,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_upg_a_slug_sc_fire",
 			desc_id = "bm_wp_upg_a_slug_fire_desc",
 			a_obj = "a_body",
-			alt_icon = "guis/dlcs/cash/safes/cf15/weapon_skins/m95_forest - copy",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_slug_fire",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			dlc = "sc",

@@ -1,5 +1,5 @@
-<materials version="3" group="weapon_group">
-    <material name="saiga_20rnd" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+<materials version="3">
+	<material name="saiga_20rnd" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
         <diffuse_texture file="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_df"/>
         <bump_normal_texture file="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_nm"/>
     </material>

@@ -368,7 +368,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
-			["menu_medic_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour doctor bags have ##2## more charges.\n\nACE: ##$pro##\nYou can now deploy ##2## Doctor Bags instead of just one.",																								
+			["menu_medic_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour doctor bags have ##1## more charge.\n\nACE: ##$pro##\nYou can now deploy ##2## Doctor Bags instead of just one.",																								
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",

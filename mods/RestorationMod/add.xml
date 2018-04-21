@@ -670,9 +670,8 @@
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/969288357" force="true"/>
 	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/1045867404" force="true"/>
 		
-	<!--Saiga Drum Mag fix (note: could probably add a proper THQ config now)-->
-	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd" force="true"/>
-	<texture path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_df_cc" force="true"/>
+	<!--Saiga Drum Mag fix-->
+	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq"/>
 	
 	<!--I think this was a fix for the Golden AK skin config (because the textures don't actually exist). Unused.-->
 	<material_config path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_fg_standard_gold_cc" force="true"/>
@@ -696,10 +695,7 @@
 	<!--NPC R870-->
 	<model path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_df" force="true"/>
-	
-	<!--Unused NPC sniper texture, I think? This was moved over to wpn_npc_sniper_p1_df. Remove?-->
-	<texture path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df" force="true"/>
-	
+		
 	<!--NPC Saiga-->
 	<model path="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_df" force="true"/>

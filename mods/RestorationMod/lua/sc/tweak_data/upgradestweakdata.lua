@@ -211,12 +211,12 @@ function UpgradesTweakData:_init_pd2_values()
 			
 				--Uppers
 				self.values.first_aid_kit.quantity = {4, 10}
-				self.values.first_aid_kit.downs_restore_chance = {1}
+				self.values.first_aid_kit.downs_restore_chance = {0}
 
 				--Combat Doctor
 				self.doctor_bag_base = 2
 				self.values.doctor_bag.quantity = {1}
-				self.values.doctor_bag.amount_increase = {2}
+				self.values.doctor_bag.amount_increase = {1}
 				
 				--Inspire
 				self.values.player.long_dis_revive = {0.5, 0.5}

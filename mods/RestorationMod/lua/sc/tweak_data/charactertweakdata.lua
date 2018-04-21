@@ -612,7 +612,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_melee_preset = true	
 	self.heavy_swat_sniper.custom_voicework = nil
-	self.heavy_swat_sniper.spawn_sound_event = "bdz_entrance_elite"
+	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
 	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"	
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 end

@@ -6483,16 +6483,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.breech.panic_suppression_chance = 0.0	
-		self.ching.categories = {"snp"}
+		self.ching.categories = {"assault_rifle"}
+		self.ching.recategorize = "rifle"
 		self.ching.FIRE_MODE = "single"
-		self.ching.fire_mode_data = {fire_rate = 0.6}
+		self.ching.fire_mode_data = {fire_rate = 0.17142857142}
 		self.ching.CAN_TOGGLE_FIREMODE = false
-		self.ching.single = {fire_rate = 0.6}	
-		self.ching.has_description = true
+		self.ching.single = {fire_rate = 0.17142857142}	
+		self.ching.has_description = false
 		self.ching.desc_id = "bm_ap_weapon_sc_desc"
 		self.ching.CLIP_AMMO_MAX = 8
-		self.ching.AMMO_MAX = 40
-		self.ching.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.ching.AMMO_MAX = 60
+		self.ching.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.ching.CAN_TOGGLE_FIREMODE = false
 		self.ching.spread.standing = 3.5
 		self.ching.spread.crouching = 2.5
@@ -6500,27 +6501,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.spread.moving_standing = 4
 		self.ching.spread.moving_crouching = 3
 		self.ching.spread.moving_steelsight = 2
-		self.ching.kick.standing = self.huntsman.kick.standing
-		self.ching.kick.crouching = self.huntsman.kick.standing
-		self.ching.kick.steelsight = self.huntsman.kick.standing
+		self.ching.kick.standing = self.glock_17.kick.standing
+		self.ching.kick.crouching = self.glock_17.kick.standing
+		self.ching.kick.steelsight = self.glock_17.kick.standing
 		self.ching.stats = {
-			damage = 150,
+			damage = 95,
 			spread = 17,
-			recoil = 21,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 16,
-			suppression = 4,
-			alert_size = 4,
+			concealment = 12,
+			suppression = 5,
+			alert_size = 5,
 			extra_ammo = 51,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
 		}
-		self.ching.armor_piercing_chance = 1
-		self.ching.can_shoot_through_enemy = true
-		self.ching.can_shoot_through_shield = true
-		self.ching.can_shoot_through_wall = true	
+		self.ching.armor_piercing_chance = 0
+		self.ching.can_shoot_through_enemy = false
+		self.ching.can_shoot_through_shield = false
+		self.ching.can_shoot_through_wall = false	
 		self.ching.stats_modifiers = nil
 		self.ching.panic_suppression_chance = 0.0	
 		self.erma.CLIP_AMMO_MAX = 32

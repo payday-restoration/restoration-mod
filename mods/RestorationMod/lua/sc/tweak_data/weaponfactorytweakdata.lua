@@ -33114,7 +33114,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				30,
 				40
 			},
-			stats = {value = 1},
+			stats = {value = 1, recoil = 1, concealment = -1},
 			forbids = {"wpn_fps_ak_extra_ris"}
 		}
 		self.parts.wpn_fps_ass_ching_fg_standard = {
@@ -33248,10 +33248,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_aimpoint_2",
 				"wpn_fps_upg_o_acog",
 				"wpn_fps_upg_o_cs",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
 				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
 				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_ass_ns_jprifles",
+				"wpn_fps_upg_ass_ns_linear",
+				"wpn_fps_upg_ass_ns_surefire",
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_ass_ns_battle",
 				"wpn_fps_upg_fl_ass_utg",
 				"wpn_fps_upg_o_45rds",
 				"wpn_fps_upg_o_spot",

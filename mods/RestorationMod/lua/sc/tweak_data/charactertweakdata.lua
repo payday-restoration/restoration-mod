@@ -78,10 +78,10 @@ function CharacterTweakData:_init_region_zombie()
 		cop = "z",
 		swat = "z",
 		heavy_swat = "z",
-		taser = "z1n",
-		cloaker = "z2n",
-		bulldozer = "z3n",
-		medic = "z4n"
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
 	}
 	self._speech_prefix_p2 = "n"
 end
@@ -387,7 +387,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	}
 	self.omnia_lpf.weapon_voice = "2"
 	self.omnia_lpf.experience.cable_tie = "tie_swat"
-	if job == "mad" or job == "hvh" then
+	if job == "mad" then
 		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.omnia_lpf.speech_prefix_p2 = self._speech_prefix_p2
 		self.omnia_lpf.speech_prefix_count = 4
@@ -741,7 +741,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.custom_voicework = "light"
  	table.insert(self._enemy_list, "city_swat")
 	self.city_swat_titan = deep_clone(self.city_swat)
-	if job == "mad" or job == "hvh" then
+	if job == "mad" then
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4

@@ -103,6 +103,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hint_titan_end"] = "The Titandozer left to haunt another world!",
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
+		["menu_battle_rifle"] = "Battle Rifle",
 
 		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
 		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",

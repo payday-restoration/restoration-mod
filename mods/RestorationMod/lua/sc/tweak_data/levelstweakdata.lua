@@ -34,6 +34,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.firestarter_3.package = {"packages/narr_firestarter3", "levels/narratives/elephant/mad/world_sounds"}
 		self.jolly.package = {"packages/jolly", "levels/narratives/elephant/mad/world_sounds"}
 		self.rvd1.package = {"packages/job_rvd", "levels/narratives/elephant/mad/world_sounds"}
+		
+		--Halloween enemies on halloween maps--
+		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh"}
+		self.nail.package = {"packages/job_nail", "packages/narr_hvh"}
+		self.help.package = {"packages/lvl_help", "packages/narr_hvh"}
+		if restoration and restoration.Options:GetValue("SC/Holiday") then
+			self.haunted.ai_group_type = zombie		
+			self.nail.ai_group_type = zombie
+			self.help.ai_group_type = zombie
+		end
 	end)
 	
 end

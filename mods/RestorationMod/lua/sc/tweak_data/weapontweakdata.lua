@@ -238,11 +238,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{2000, 1},
 			{3000, 1}
 		}
+		self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
+			{1000, 2},
+			{2000, 1},
+			{3000, 1}
+		}		
 
 		self.ceiling_turret_module.HEALTH_INIT = 1387.5
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 300
 		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1387.5
 		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 300
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1387.5
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 300		
 	end
 
 	function WeaponTweakData:_set_easy_wish()
@@ -272,12 +279,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{2000, 1},
 			{3000, 1}
 		}
+		self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
+			{1000, 2},
+			{2000, 1},
+			{3000, 1}
+		}		
+		
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
 		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
 		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
 	end
 
 	function WeaponTweakData:_set_overkill_290()
@@ -306,23 +322,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1800, 2.1},
 			{3000, 1.05}
 		}
+		self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
+		}		
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 400
 		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
 		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 400
-
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
 	end
 
 	function WeaponTweakData:_set_sm_wish()
 		if job == "chew" or job == "glace" then
 			self.swat_van_turret_module.HEALTH_INIT = 1850
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 400
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
 			self.swat_van_turret_module.HEALTH_INIT = 1850
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 400
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 
@@ -342,6 +365,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1800, 2.1},
 			{3000, 1.05}
 		}
+		self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
+		}		
 		self.ceiling_turret_module.HEALTH_INIT = 1850
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
@@ -349,6 +377,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1850
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 11.4375
 		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
+		
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1850
+		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 11.4375
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350		
 	end
 
 	function WeaponTweakData:_init_data_npc_melee()
@@ -849,6 +881,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.suppression = 1
 		self.ceiling_turret_module_no_idle = deep_clone(self.ceiling_turret_module)
 		self.ceiling_turret_module_no_idle.CAN_GO_IDLE = false
+		self.ceiling_turret_module_longer_range = deep_clone(self.ceiling_turret_module)
+		self.ceiling_turret_module_longer_range.CAN_GO_IDLE = false
+		self.ceiling_turret_module_longer_range.FIRE_RANGE = 30000
+		self.ceiling_turret_module_longer_range.DETECTION_RANGE = self.ceiling_turret_module_longer_range.FIRE_RANGE		
 	end
 		
 	function WeaponTweakData:_init_data_s552_npc()

@@ -8,6 +8,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerTweakData:_set_normal()
 		self.damage.automatic_respawn_time = 175
 		self.damage.MIN_DAMAGE_INTERVAL = 0.55
+		self.suspicion.max_value = 8
+		self.suspicion.range_mul = 1
+		self.suspicion.buildup_mul = 1	
 	end
 
 	function PlayerTweakData:_set_hard()

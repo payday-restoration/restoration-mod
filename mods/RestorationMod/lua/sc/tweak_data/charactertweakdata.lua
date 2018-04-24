@@ -133,11 +133,24 @@ function CharacterTweakData:_init_security(presets)
 	self.security.melee_weapon = nil
 	self.security.steal_loot = nil
 	self.security.static_dodge_preset = true
+	self.security.shooting_death = false
 	table.insert(self._enemy_list, "security")
 	self.security_undominatable = deep_clone(self.security)
 	self.security_undominatable.surrender = nil
 	self.security_undominatable.unintimidateable = true
 	table.insert(self._enemy_list, "security_undominatable")
+	
+	self.mute_security_undominatable = deep_clone(self.security)
+	self.mute_security_undominatable.suppression = nil
+	self.mute_security_undominatable.surrender = nil
+	self.mute_security_undominatable.has_alarm_pager = false
+	self.mute_security_undominatable.chatter = presets.enemy_chatter.no_chatter
+	self.mute_security_undominatable.weapon_voice = "3"
+	self.mute_security_undominatable.speech_prefix_p1 = "bb"
+	self.mute_security_undominatable.speech_prefix_p2 = "n"
+	self.mute_security_undominatable.speech_prefix_count = 1
+
+	table.insert(self._enemy_list, "mute_security_undominatable")	
 end
 
 function CharacterTweakData:_init_gensec(presets)
@@ -733,6 +746,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat.steal_loot = true
 	end
+	if job == "kosugi" or job == "dark" then
+		self.city_swat.shooting_death = false
+	else
+		self.city_swat.shooting_death = true
+	end	
 	self.city_swat.has_alarm_pager = true
 	self.city_swat.calls_in = true
 	self.city_swat.static_weapon_preset = true
@@ -2018,6 +2036,7 @@ function CharacterTweakData:_init_bank_manager(presets)
 		experience = {},
 		escort = {}
 	}
+	self.bank_manager.tags = {"civilian"}
 	self.bank_manager.detection = presets.detection.civilian
 	self.bank_manager.HEALTH_INIT = self.civilian.HEALTH_INIT
 	self.bank_manager.headshot_dmg_mul = self.civilian.headshot_dmg_mul
@@ -12043,7 +12062,11 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_hvh_r870",
 				"ene_sniper_hvh_2"
 			}
-		},		
+		},
+		tag = {
+			path = "units/pd2_dlc_tag/characters/",
+			list = {"ene_male_commissioner"}			
+		},			
 		sharks = {
 			path = "units/pd2_mod_sharks/characters/",
 			list = {

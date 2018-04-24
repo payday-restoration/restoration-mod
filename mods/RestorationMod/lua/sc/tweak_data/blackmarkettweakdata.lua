@@ -1989,7 +1989,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.model24.stats.max_damage_effect = 2
 	self.melee_weapons.model24.stats.charge_time = 0.65
 	self.melee_weapons.model24.stats.range = 140
-	self.melee_weapons.model24.repeat_expire_t = 0.6
 	self.melee_weapons.model24.repeat_expire_t = 0.825
 	self.melee_weapons.model24.stats.concealment = 28
 	self.melee_weapons.model24.melee_damage_delay = 0.175
@@ -2697,6 +2696,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.clean.stats.concealment = 30
 	self.melee_weapons.clean.repeat_expire_t = 0.325
 	self.melee_weapons.clean.melee_damage_delay = 0.15	
+	
+	--Fleshlight--
+	self.melee_weapons.aziz.speed_mult = 1.025
+	self.melee_weapons.aziz.stats.min_damage = 2.5
+	self.melee_weapons.aziz.stats.max_damage = 5
+	self.melee_weapons.aziz.stats.min_damage_effect = 1.5
+	self.melee_weapons.aziz.stats.max_damage_effect = 2
+	self.melee_weapons.aziz.stats.charge_time = 0.65
+	self.melee_weapons.aziz.stats.range = 140
+	self.melee_weapons.aziz.repeat_expire_t = 0.825
+	self.melee_weapons.aziz.stats.concealment = 28
+	self.melee_weapons.aziz.melee_damage_delay = 0.175
 end	
 
 end

@@ -219,6 +219,17 @@ if not tweak_data then return end
 
 	tweak_data.interaction.drill_upgrade.timer = 3
 	tweak_data.interaction.gen_int_saw_upgrade.timer = 3
+	
+ 
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	if difficulty_index == 8 then
+		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
+	elseif difficulty_index == 7 then
+		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
+	else
+		tweak_data.interaction.corpse_alarm_pager.timer = 10
+	end	
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0

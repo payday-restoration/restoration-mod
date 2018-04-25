@@ -740,9 +740,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if self._unit:base()._tweak_table == "spooc" then
 			self._unit:damage():run_sequence_simple("kill_spook_lights")
-		end 			
+		end 
+		if char_tweak.failure_on_death then
+			if managers.platform:presence() == "Playing" then 
+				managers.network:session():send_to_peers( "mission_ended", false ) 
+				game_state_machine:change_state_by_name( "gameoverscreen" ) 
+			end
+		end 		
 	end
-
+	
 	function CopDamage:heal_unit(unit, override_cooldown)
 		local t = Application:time()
 		local my_tweak_table = self._unit:base()._tweak_table

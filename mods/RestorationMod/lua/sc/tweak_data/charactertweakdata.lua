@@ -149,7 +149,9 @@ function CharacterTweakData:_init_security(presets)
 	self.mute_security_undominatable.speech_prefix_p1 = "bb"
 	self.mute_security_undominatable.speech_prefix_p2 = "n"
 	self.mute_security_undominatable.speech_prefix_count = 1
-
+	if job == "tag" then
+		self.mute_security_undominatable.failure_on_death = true
+	end
 	table.insert(self._enemy_list, "mute_security_undominatable")	
 end
 
@@ -2057,7 +2059,7 @@ function CharacterTweakData:_init_bank_manager(presets)
 	self.bank_manager.speech_prefix_count = 2
 	self.bank_manager.access = "civ_male"
 	self.bank_manager.intimidateable = true
-	self.bank_manager.hostage_move_speed = 3
+	self.bank_manager.hostage_move_speed = 1.5
 	self.bank_manager.challenges = {type = "civilians"}
 	self.bank_manager.calls_in = true
 end

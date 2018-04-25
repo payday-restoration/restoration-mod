@@ -3,6 +3,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerTweakData:_set_easy()
 		self.damage.automatic_respawn_time = 120
 		self.damage.MIN_DAMAGE_INTERVAL = 0.6
+		self.suspicion.max_value = 7
+		self.suspicion.range_mul = 0.9
+		self.suspicion.buildup_mul = 0.9
 	end
 
 	function PlayerTweakData:_set_normal()
@@ -53,17 +56,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
 			call_duration = {
-				{6, 6},
-				{6, 6}
+				{4.5, 4.5},
+				{4.5, 4.5}
 			},
 			nr_of_calls = {2, 2},
 			bluff_success_chance = {
 				1,
 				1,
 				1,
+				1,
 				0
 			},
 			bluff_success_chance_w_skill = {
+				1,
 				1,
 				1,
 				1,
@@ -83,16 +88,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
 			call_duration = {
-				{6, 6},
-				{6, 6}
+				{4.5, 4.5},
+				{4.5, 4.5}
 			},
 			nr_of_calls = {2, 2},
 			bluff_success_chance = {
 				1,
 				1,
+				1,
+				1,
 				0
 			},
 			bluff_success_chance_w_skill = {
+				1,
+				1,
 				1,
 				1,
 				0

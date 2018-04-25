@@ -7,9 +7,9 @@ function IngameWaitingForPlayersState:_start()
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local mark_duration = 13.5
 	if difficulty_index == 8 then
-		mark_duration = 6
+		mark_duration = 10.125
 	elseif difficulty_index == 7 then
-		mark_duration = 6
+		mark_duration = 10.125
 	else
 		mark_duration = 13.5
 	end

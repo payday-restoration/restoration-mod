@@ -50,6 +50,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function GroupAIStateBase:detonate_world_smoke_grenade(id)
+		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
 		self._smoke_grenades = self._smoke_grenades or {}
 		if not self._smoke_grenades[id] then
 			Application:error("Could not detonate smoke grenade as it was not queued!", id)
@@ -60,7 +62,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if Network:is_client() then
 				return
 			end
-			local flashbang_unit = "units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang"
+			local flashbang_unit = "units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang"
+			if difficulty_index == 7 or difficulty_index == 8 then
+				flashbang_unit = "units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang"
+			end			
 			local pos = data.detonate_pos + Vector3(0, 0, 1)
 			local rotation = Rotation(math.random() * 360, 0, 0)
 			local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), data.detonate_pos, rotation)

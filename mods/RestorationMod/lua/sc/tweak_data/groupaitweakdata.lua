@@ -10007,6 +10007,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0.025
 				}
 			}
+			if difficulty_index == 7 or difficulty_index == 8 then
+				self.flash_grenade.light_color = Vector3(255, 165, 0)
+			end
 			self.optimal_trade_distance = {0, 0}
 			self.bain_assault_praise_limits = {1, 3}
 			if difficulty_index <= 2 then

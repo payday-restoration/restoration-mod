@@ -562,7 +562,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			local enemy_type = enemy_base._tweak_table
 			local unit_weapon = enemy_base._default_weapon_id
 			local health_ratio = managers.player:player_unit():character_damage():health_ratio() * 100
-			local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, tags_all_pass, tags_any_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass, result_pass, mutators_pass, critical_pass = nil
+			local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, tags_all_pass, tags_any_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass, result_pass, mutators_pass, critical_pass, action_pass = nil
 
 			for achievement, achievement_data in pairs(achievements) do
 				melee_pass = not achievement_data.melee_id or achievement_data.melee_id == attack_data.name_id
@@ -605,7 +605,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					critical_pass = attack_data.critical_hit
 				end
 
-				all_pass = melee_pass and melee_weapons_pass and type_pass and enemy_pass and enemy_weapon_pass and behind_pass and diff_pass and health_pass and level_pass and job_pass and jobs_pass and cop_pass and gangster_pass and civilian_pass and stealth_pass and on_fire_pass and enemy_count_pass and tags_all_pass and tags_any_pass and result_pass and mutators_pass and critical_pass
+				action_pass = true
+
+				if achievement_data.action then
+					local action = enemy_movement:get_action(achievement_data.action.body_part)
+					local action_type = action and action:type()
+					action_pass = action_type == achievement_data.action.type
+				end
+
+				all_pass = melee_pass and melee_weapons_pass and type_pass and enemy_pass and enemy_weapon_pass and behind_pass and diff_pass and health_pass and level_pass and job_pass and jobs_pass and cop_pass and gangster_pass and civilian_pass and stealth_pass and on_fire_pass and enemy_count_pass and tags_all_pass and tags_any_pass and result_pass and mutators_pass and critical_pass and action_pass
 
 				if all_pass then
 					if achievement_data.stat then

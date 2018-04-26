@@ -1,5 +1,5 @@
 <dynamic_object>
-	<diesel materials="units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang" orientation_object="rp_wpn_frag_flashbang" />
+	<diesel materials="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" orientation_object="rp_wpn_frag_flashbang" />
 	<sequence_manager file="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" />
 	<animations>
 		<animation_group name="enter">

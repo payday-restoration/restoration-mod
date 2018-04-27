@@ -352,6 +352,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.priority_shout = "f47"
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
+	self.medic.is_special = true
 	table.insert(self._enemy_list, "medic")
 	self.medic_summers = deep_clone(self.medic)
 	self.medic_summers.HEALTH_INIT = 60
@@ -382,6 +383,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.chatter = presets.enemy_chatter.summers
 	self.medic_summers.use_factory = true
 	self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
+	self.medic_summers.is_special = true
 	table.insert(self._enemy_list, "medic_summers")
 end
 
@@ -426,6 +428,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.do_aoe_heal = true
 	self.omnia_lpf.spawn_sound_event = "cloaker_spawn"
 	self.omnia_lpf.die_sound_event = "mga_death_scream"		
+	self.omnia_lpf.is_special = true
 	table.insert(self._enemy_list, "omnia_lpf")
 end
 
@@ -629,6 +632,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.custom_voicework = nil
 	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
 	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"	
+	self.heavy_swat_sniper.is_special = true
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 end
 
@@ -879,6 +883,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.rescue_hostages = false
 	self.sniper.static_weapon_preset = true
 	self.sniper.static_dodge_preset = true
+	self.sniper.is_special = true
  	table.insert(self._enemy_list, "sniper")
 end
 
@@ -1083,6 +1088,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.immune_to_concussion = true
 	self.mobster_boss.must_headshot = true
 	self.mobster_boss.static_dodge_preset = true
+	self.mobster_boss.is_special = true
  	table.insert(self._enemy_list, "mobster_boss")
 end
 
@@ -1132,6 +1138,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.immune_to_concussion = true
 	self.biker_boss.must_headshot = true
 	self.biker_boss.static_dodge_preset = true
+	self.biker_boss.is_special = true
  	table.insert(self._enemy_list, "biker_boss")
 end
 
@@ -1145,6 +1152,7 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.silent_priority_shout = nil
 	self.hector_boss.custom_shout = true
 	self.hector_boss.priority_shout_max_dis = 3000
+	self.hector_boss.is_special = true
  	table.insert(self._enemy_list, "hector_boss")
 end
 
@@ -1211,6 +1219,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.immune_to_concussion = true
 	self.chavez_boss.must_headshot = true
 	self.chavez_boss.static_dodge_preset = true
+	self.chavez_boss.is_special = true
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -1311,6 +1320,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.priority_shout_max_dis = 3000
 	self.drug_lord_boss.must_headshot = true
 	self.drug_lord_boss.static_dodge_preset = true
+	self.drug_lord_boss.is_special = true
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 
@@ -1418,6 +1428,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.must_headshot = true
 	self.tank.static_dodge_preset = true
 	self.tank.no_recoil = true
+	self.tank.is_special = true
  	table.insert(self._enemy_list, "tank")
 	
 	self.tank_medic = deep_clone(self.tank)
@@ -1428,6 +1439,7 @@ function CharacterTweakData:_init_tank(presets)
 	else
 		self.tank_medic.custom_voicework = "medicdozer"
 	end
+	self.tank_medic.is_special = true
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	
@@ -1446,6 +1458,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
+	self.tank_titan.is_special = true
  	table.insert(self._enemy_list, "tank_titan")
 	
 	self.tank_titan_assault = deep_clone(self.tank_titan)
@@ -1520,6 +1533,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
+	self.spooc.is_special = true
  	table.insert(self._enemy_list, "spooc")
 	self.spooc_titan = deep_clone(self.spooc)
 	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.no_hurts
@@ -1530,6 +1544,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.unintimidateable = true
 	self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
+	self.spooc_titan.is_special = true
 	table.insert(self._enemy_list, "spooc_titan")
 end
 
@@ -1583,6 +1598,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.use_animation_on_fire_damage = false
 	self.shield.immune_to_knock_down = true
 	self.shield.static_dodge_preset = true
+	self.shield.is_special = true
  	table.insert(self._enemy_list, "shield")
 end
 
@@ -1624,6 +1640,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.spawn_sound_event = "l2d_prm"
 	self.phalanx_minion.die_sound_event = "mga_death_scream"
 	self.phalanx_minion.suppression = nil
+	self.phalanx_minion.is_special = true
  	table.insert(self._enemy_list, "phalanx_minion")
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 	self.phalanx_minion_assault.spawn_sound_event = "cloaker_spawn"
@@ -1653,6 +1670,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
+	self.phalanx_vip.is_special = true
  	table.insert(self._enemy_list, "phalanx_vip")
 end
 
@@ -1708,6 +1726,7 @@ function CharacterTweakData:_init_spring(presets)
 		damage_mul = 2
 	}
 	self.spring.static_dodge_preset = true
+	self.spring.is_special = true
  	table.insert(self._enemy_list, "spring")
 end
 
@@ -1773,6 +1792,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.use_factory = true
 	self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
 	self.summers.steal_loot = nil
+	self.summers.is_special = true
  	table.insert(self._enemy_list, "summers")
 end
 
@@ -1829,6 +1849,7 @@ function CharacterTweakData:_init_taser(presets)
 		}
 	}
 	self.taser.custom_voicework = "taser"
+	self.taser.is_special = true
  	table.insert(self._enemy_list, "taser")
 	self.taser_summers = deep_clone(self.taser)
 	self.taser_summers.HEALTH_INIT = 72
@@ -1861,6 +1882,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.use_radio = "dsp_radio_russian"
 	self.taser_summers.spawn_sound_event = nil
 	self.taser_summers.custom_voicework = nil
+	self.taser_summers.is_special = true	
  	table.insert(self._enemy_list, "taser_summers")
 end
 
@@ -1917,6 +1939,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.spawn_sound_event = "clk_c01x_plu"
 	self.boom.steal_loot = nil
 	self.boom.custom_voicework = "grenadier"
+	self.boom.is_special = true		
  	table.insert(self._enemy_list, "boom")
 	self.rboom = deep_clone(self.boom)
 	self.rboom.spawn_sound_event = "clk_c01x_plu"
@@ -11453,7 +11476,7 @@ end
 
 function CharacterTweakData:is_special_unit(enemy_tweak)
 	local is_special = false
-	if self[enemy_tweak]["tags"] and #self[enemy_tweak].tags then
+	if self[enemy_tweak].is_special then
 		is_special = true
 	end
 	return is_special

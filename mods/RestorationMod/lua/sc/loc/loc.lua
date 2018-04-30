@@ -199,7 +199,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para Rifle",
 		["bm_w_akmsu"] = "Krinkov Rifle",
-		["bm_w_hajk"] = "CR 805B Rifle"
+		["bm_w_hajk"] = "CR 805B Rifle",
+		
+		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle"
 			
 	})
 end)

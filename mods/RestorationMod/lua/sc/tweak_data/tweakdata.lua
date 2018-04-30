@@ -317,6 +317,42 @@ if not tweak_data then return end
 		infamous_chance = 3
 	}	
 	
+	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+		tweak_data.gui.buy_weapon_categories = {
+			primaries = {
+				{"assault_rifle"},
+				{"shotgun"},
+				{"lmg"},
+				{"snp"},
+				{"pistol"},
+				{
+					"akimbo",
+					"pistol"
+				},
+				{
+					"akimbo",
+					"smg"
+				},
+				{
+					"akimbo",
+					"shotgun"
+				},
+				{
+					"akimbo",
+					"assault_rifle"
+				},			
+				{"wpn_special"}
+			},
+			secondaries = {
+				{"pistol"},
+				{"smg"},
+				{"wpn_special"},
+				{"shotgun"},
+				{"assault_rifle"}
+			}
+		}
+	end
+	
 	--Sounds of Animals Fighting--
 	local animal_fight = {
 			award = "pig_5",

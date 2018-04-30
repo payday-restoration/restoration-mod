@@ -23,6 +23,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Murky test--
 		self.shoutout_raid.ai_group_type = murky
 		self.pbr.ai_group_type = murky
+		self.des.ai_group_type = murky 
 		
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage1/world_sounds"}
 		self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}

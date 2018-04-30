@@ -12,43 +12,51 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_pd.exclude_stages, "pbr")
 		table.insert(self.risk_pd.exclude_stages, "wetwork")
+		table.insert(self.risk_pd.exclude_stages, "des")
 
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_swat.exclude_stages, "pbr")
-		table.insert(self.risk_swat.exclude_stages, "wetwork")	
+		table.insert(self.risk_swat.exclude_stages, "wetwork")
+		table.insert(self.risk_swat.exclude_stages, "des")		
 		
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_fbi.exclude_stages, "pbr")
-		table.insert(self.risk_fbi.exclude_stages, "wetwork")		
+		table.insert(self.risk_fbi.exclude_stages, "wetwork")
+		table.insert(self.risk_fbi.exclude_stages, "des")	
 
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_death_squad.exclude_stages, "pbr")
 		table.insert(self.risk_death_squad.exclude_stages, "wetwork")	
+		table.insert(self.risk_death_squad.exclude_stages, "des")
 
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_easy_wish.exclude_stages, "pbr")
-		table.insert(self.risk_easy_wish.exclude_stages, "wetwork")		
+		table.insert(self.risk_easy_wish.exclude_stages, "wetwork")	
+		table.insert(self.risk_easy_wish.exclude_stages, "des")
 
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_death_wish.exclude_stages, "pbr")
-		table.insert(self.risk_death_wish.exclude_stages, "wetwork")			
+		table.insert(self.risk_death_wish.exclude_stages, "wetwork")	
+		table.insert(self.risk_death_wish.exclude_stages, "des")
 		
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_sm_wish.exclude_stages, "pbr")
-		table.insert(self.risk_sm_wish.exclude_stages, "wetwork")			
+		table.insert(self.risk_sm_wish.exclude_stages, "wetwork")	
+		table.insert(self.risk_sm_wish.exclude_stages, "des")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
 		self.risk_murky.stages = {
 			"shoutout_raid",
 			"pbr",
-			"wetwork"
+			"wetwork",
+			"des"
 		}	
 
 		--Adding Bikers to Biker heist cause it makes sense--

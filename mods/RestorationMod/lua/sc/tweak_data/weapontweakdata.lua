@@ -242,7 +242,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2},
 			{2000, 1},
 			{3000, 1}
+		}	
+		self.aa_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2},
+			{2000, 1},
+			{3000, 1}
 		}		
+		
 
 		self.ceiling_turret_module.HEALTH_INIT = 1387.5
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 300
@@ -250,6 +256,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 300
 		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1387.5
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 300		
+		self.aa_turret_module.HEALTH_INIT = 1387.5
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 300			
 	end
 
 	function WeaponTweakData:_set_easy_wish()
@@ -283,7 +291,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2},
 			{2000, 1},
 			{3000, 1}
-		}		
+		}
+		self.aa_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2},
+			{2000, 1},
+			{3000, 1}
+		}				
 		
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
@@ -294,6 +307,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
+		self.aa_turret_module.HEALTH_INIT = 1618.75
+		self.aa_turret_module.BAG_DMG_MUL = 10
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
 	end
 
 	function WeaponTweakData:_set_overkill_290()
@@ -326,6 +342,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2.3},
 			{1800, 2.1},
 			{3000, 1.05}
+		}
+		self.aa_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
 		}		
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
@@ -336,6 +357,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
+		self.aa_turret_module.HEALTH_INIT = 1618.75
+		self.aa_turret_module.BAG_DMG_MUL = 10
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
 	end
 
 	function WeaponTweakData:_set_sm_wish()
@@ -369,7 +393,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2.3},
 			{1800, 2.1},
 			{3000, 1.05}
-		}		
+		}	
+		self.aa_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
+		}				
 		self.ceiling_turret_module.HEALTH_INIT = 1850
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
@@ -381,6 +410,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1850
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 11.4375
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350		
+		
+		self.aa_turret_module.HEALTH_INIT = 1850
+		self.aa_turret_module.BAG_DMG_MUL = 11.4375
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350			
 	end
 
 	function WeaponTweakData:_init_data_npc_melee()
@@ -455,6 +488,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_c45_npc()
+		self.c45_npc.categories = {"pistol"}
 		self.c45_npc.sounds.prefix = "c45_npc"
 		self.c45_npc.use_data.selection_index = 1
 		self.c45_npc.DAMAGE = 1.8
@@ -473,6 +507,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_x_c45_npc()
+		self.x_c45_npc.categories = {
+			"akimbo",
+			"pistol"
+		}	
 		self.x_c45_npc.sounds.prefix = "c45_npc"
 		self.x_c45_npc.use_data.selection_index = 1
 		self.x_c45_npc.DAMAGE = 2.4
@@ -488,6 +526,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_beretta92_npc()
+		self.beretta92_npc.categories = clone(self.b92fs.categories)
 		self.beretta92_npc.sounds.prefix = "beretta_npc"
 		self.beretta92_npc.use_data.selection_index = 1
 		self.beretta92_npc.DAMAGE = 4.09
@@ -506,6 +545,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_raging_bull_npc()
+		self.raging_bull_npc.categories = clone(self.new_raging_bull.categories)
 		self.raging_bull_npc.sounds.prefix = "rbull_npc"
 		self.raging_bull_npc.use_data.selection_index = 1
 		self.raging_bull_npc.DAMAGE = 8.6
@@ -526,6 +566,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m4_npc()
+		self.m4_npc.categories = clone(self.new_m4.categories)
 		self.m4_npc.sounds.prefix = "m4_npc"
 		self.m4_npc.use_data.selection_index = 2
 		self.m4_npc.DAMAGE = 2.3
@@ -549,6 +590,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_ak47_npc()
+		self.ak47_npc.categories = {"assault_rifle"}
 		self.ak47_npc.sounds.prefix = "akm_npc"
 		self.ak47_npc.use_data.selection_index = 2
 		self.ak47_npc.DAMAGE = 4.4
@@ -564,6 +606,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m14_sniper_npc()
+		self.m14_sniper_npc.categories = {"snp"}
 		self.m14_sniper_npc.sounds.prefix = "sniper_npc"
 		self.m14_sniper_npc.use_data.selection_index = 2
 		self.m14_sniper_npc.DAMAGE = 10
@@ -587,6 +630,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_r870_npc()
+		self.r870_npc.categories = clone(self.r870.categories)
 		self.r870_npc.sounds.prefix = "remington_npc"
 		self.r870_npc.use_data.selection_index = 2
 		self.r870_npc.DAMAGE = 9.5
@@ -608,6 +652,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mossberg_npc()
+		self.mossberg_npc.categories = {"shotgun"}
 		self.mossberg_npc.sounds.prefix = "remington_npc"
 		self.mossberg_npc.use_data.selection_index = 2
 		self.mossberg_npc.DAMAGE = 15
@@ -625,6 +670,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mp5_npc()
+		self.mp5_npc.categories = clone(self.new_mp5.categories)
 		self.mp5_npc.sounds.prefix = "mp5_npc"
 		self.mp5_npc.use_data.selection_index = 1
 		self.mp5_npc.DAMAGE = 1.8
@@ -661,6 +707,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mac11_npc()
+		self.mac11_npc.categories = {"smg"}
 		self.mac11_npc.sounds.prefix = "mp5_npc"
 		self.mac11_npc.use_data.selection_index = 1
 		self.mac11_npc.DAMAGE = 2.6
@@ -678,6 +725,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_g36_npc()
+		self.g36_npc.categories = clone(self.g36.categories)
 		self.g36_npc.sounds.prefix = "g36_npc"
 		self.g36_npc.use_data.selection_index = 2
 		self.g36_npc.DAMAGE = 2.3
@@ -693,6 +741,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mp9_npc()
+		self.mp9_npc.categories = clone(self.mp9.categories)
 		self.mp9_npc.sounds.prefix = "mp9_npc"
 		self.mp9_npc.use_data.selection_index = 1
 		self.mp9_npc.DAMAGE = 1.7
@@ -710,6 +759,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_saiga_npc()
+		self.saiga_npc.categories = clone(self.saiga.categories)
 		self.saiga_npc.sounds.prefix = "saiga_npc"
 		self.saiga_npc.use_data.selection_index = 2
 		self.saiga_npc.DAMAGE = 5
@@ -886,8 +936,83 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.FIRE_RANGE = 30000
 		self.ceiling_turret_module_longer_range.DETECTION_RANGE = self.ceiling_turret_module_longer_range.FIRE_RANGE		
 	end
-		
+	
+	function WeaponTweakData:_init_data_aa_turret_module_npc()
+		self.aa_turret_module.name_id = "debug_sentry_gun"
+		self.aa_turret_module.DAMAGE = 1.6
+		self.aa_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 1},
+			{2000, 1},
+			{3000, 1}
+		}
+		self.aa_turret_module.SUPPRESSION = 1
+		self.aa_turret_module.SPREAD = 3.5
+		self.aa_turret_module.FIRE_RANGE = 4000
+		self.aa_turret_module.CLIP_SIZE = 200
+		self.aa_turret_module.AUTO_RELOAD = true
+		self.aa_turret_module.AUTO_RELOAD_DURATION = 8
+		self.aa_turret_module.CAN_GO_IDLE = false
+		self.aa_turret_module.IDLE_WAIT_TIME = 5
+		self.aa_turret_module.AUTO_REPAIR = true
+		self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
+		self.aa_turret_module.AUTO_REPAIR_DURATION = 30
+		self.aa_turret_module.ECM_HACKABLE = false
+		self.aa_turret_module.FLASH_GRENADE = {
+			range = 300,
+			effect_duration = 6,
+			chance = 1,
+			check_interval = {1, 1},
+			quiet_time = {10, 13}
+		}
+		self.aa_turret_module.HACKABLE_WITH_ECM = false
+		self.aa_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
+		self.aa_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.aa_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+		self.aa_turret_module.auto.fire_rate = 0.13333333333
+		self.aa_turret_module.alert_size = 2500
+		self.aa_turret_module.headshot_dmg_mul = 1
+		self.aa_turret_module.EXPLOSION_DMG_MUL = 4
+		self.aa_turret_module.FIRE_DMG_MUL = 1
+		self.aa_turret_module.BAG_DMG_MUL = 12.5
+		self.aa_turret_module.SHIELD_DMG_MUL = 1
+		self.aa_turret_module.HEALTH_INIT = 925
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 200
+		self.aa_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
+		self.aa_turret_module.DETECTION_RANGE = self.aa_turret_module.FIRE_RANGE
+		self.aa_turret_module.DETECTION_DELAY = {
+			{900, 0.3},
+			{3500, 1.5}
+		}
+		self.aa_turret_module.KEEP_FIRE_ANGLE = 0.9
+		self.aa_turret_module.MAX_VEL_SPIN = 72
+		self.aa_turret_module.MIN_VEL_SPIN = self.aa_turret_module.MAX_VEL_SPIN * 0.05
+		self.aa_turret_module.SLOWDOWN_ANGLE_SPIN = 30
+		self.aa_turret_module.ACC_SPIN = self.aa_turret_module.MAX_VEL_SPIN * 5
+		self.aa_turret_module.MAX_VEL_PITCH = 60
+		self.aa_turret_module.MIN_VEL_PITCH = self.aa_turret_module.MAX_VEL_PITCH * 0.05
+		self.aa_turret_module.SLOWDOWN_ANGLE_PITCH = 20
+		self.aa_turret_module.ACC_PITCH = self.aa_turret_module.MAX_VEL_PITCH * 5
+		self.aa_turret_module.recoil = {}
+		self.aa_turret_module.recoil.horizontal = {
+			1,
+			1.5,
+			1,
+			1
+		}
+		self.aa_turret_module.recoil.vertical = {
+			1,
+			1.5,
+			1,
+			1
+		}
+		self.aa_turret_module.challenges = {}
+		self.aa_turret_module.challenges.group = "sentry_gun"
+		self.aa_turret_module.challenges.weapon = "sentry_gun"
+		self.aa_turret_module.suppression = 1	
+	end	
+			
 	function WeaponTweakData:_init_data_s552_npc()
+		self.s552_npc.categories = clone(self.s552.categories)
 		self.s552_npc.sounds.prefix = "sig552_npc"
 		self.s552_npc.use_data.selection_index = 2
 		self.s552_npc.DAMAGE = 2.3
@@ -904,6 +1029,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 
 	function WeaponTweakData:_init_data_scar_npc()
+		self.scar_npc.categories = clone(self.scar.categories)
 		self.scar_npc.sounds.prefix = "zsniper_npc"
 		self.scar_npc.use_data.selection_index = 2
 		self.scar_npc.DAMAGE = 6.1
@@ -924,6 +1050,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m249_npc()
+		self.m249_npc.categories = clone(self.m249.categories)
 		self.m249_npc.sounds.prefix = "m249_npc"
 		self.m249_npc.use_data.selection_index = 2
 		self.m249_npc.DAMAGE = 2.5
@@ -953,6 +1080,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_contraband_npc()
+		self.contraband_npc.categories = clone(self.contraband.categories)
 		self.contraband_npc.sounds.prefix = "contraband_npc"
 		self.contraband_npc.use_data.selection_index = 2
 		self.contraband_npc.DAMAGE = 4.4
@@ -981,6 +1109,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mini_npc()
+		self.mini_npc.categories = clone(self.m134.categories)
 		self.mini_npc.sounds.prefix = "minigun_npc"
 		self.mini_npc.use_data.selection_index = 2
 		self.mini_npc.DAMAGE = 2.2
@@ -997,6 +1126,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	--Crew weapons but not really--
 	function WeaponTweakData:_init_data_flamethrower_mk2_crew()
+		self.flamethrower_mk2_crew.categories = clone(self.flamethrower_mk2.categories)
 		self.flamethrower_mk2_crew.sounds.prefix = "flamethrower_npc"
 		self.flamethrower_mk2_crew.sounds.fire = "flamethrower_npc_fire"
 		self.flamethrower_mk2_crew.sounds.stop_fire = "flamethrower_npc_fire_stop"
@@ -1017,6 +1147,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_p90_crew()
+		self.p90_crew.categories = clone(self.p90.categories)
 		self.p90_crew.sounds.prefix = "p90_npc"
 		self.p90_crew.use_data.selection_index = 1
 		self.p90_crew.DAMAGE = 2.1
@@ -1035,6 +1166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_peacemaker_crew()
+		self.peacemaker_crew.categories = clone(self.peacemaker.categories)
 		self.peacemaker_crew.sounds.prefix = "pmkr45_npc"
 		self.peacemaker_crew.use_data.selection_index = 1
 		self.peacemaker_crew.DAMAGE = 14.1
@@ -1058,6 +1190,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_olympic_crew()
+		self.olympic_crew.categories = clone(self.olympic.categories)
 		self.olympic_crew.sounds.prefix = "m4_olympic_npc"
 		self.olympic_crew.use_data.selection_index = 1
 		self.olympic_crew.DAMAGE = 2.3
@@ -1078,6 +1211,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	--Lotta crew guns in here now--
 	function WeaponTweakData:_init_data_raging_bull_crew()
+		self.raging_bull_crew.categories = clone(self.new_raging_bull.categories)
 		self.raging_bull_crew.sounds.prefix = "rbull_npc"
 		self.raging_bull_crew.use_data.selection_index = 1
 		self.raging_bull_crew.DAMAGE = 4
@@ -1098,6 +1232,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 	
 	function WeaponTweakData:_init_data_akm_gold_crew()
+		self.akm_gold_crew.categories = clone(self.akm_gold.categories)
 		self.akm_gold_crew.sounds.prefix = "akm_npc"
 		self.akm_gold_crew.use_data.selection_index = 2
 		self.akm_gold_crew.DAMAGE = 6.09
@@ -1114,6 +1249,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_amcar_crew()
+		self.amcar_crew.categories = clone(self.amcar.categories)
 		self.amcar_crew.sounds.prefix = "amcar_npc"
 		self.amcar_crew.use_data.selection_index = 2
 		self.amcar_crew.DAMAGE = 4.09
@@ -1130,6 +1266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_ak74_crew()
+		self.ak74_crew.categories = clone(self.ak74.categories)
 		self.ak74_crew.sounds.prefix = "ak74_npc"
 		self.ak74_crew.use_data.selection_index = 2
 		self.ak74_crew.DAMAGE = 4.83
@@ -1148,6 +1285,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m4_crew()
+		self.m4_crew.categories = clone(self.new_m4.categories)
 		self.m4_crew.sounds.prefix = "m4_npc"
 		self.m4_crew.use_data.selection_index = 2
 		self.m4_crew.DAMAGE = 4.83
@@ -1167,6 +1305,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_aug_crew()
+		self.aug_crew.categories = clone(self.aug.categories)
 		self.aug_crew.sounds.prefix = "aug_npc"
 		self.aug_crew.use_data.selection_index = 2
 		self.aug_crew.DAMAGE = 4.83
@@ -1185,6 +1324,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_akm_crew()
+		self.akm_crew.categories = clone(self.akm.categories)
 		self.akm_crew.sounds.prefix = "akm_npc"
 		self.akm_crew.use_data.selection_index = 2
 		self.akm_crew.DAMAGE = 6.09
@@ -1201,6 +1341,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_g36_crew()
+		self.g36_crew.categories = clone(self.g36.categories)
 		self.g36_crew.sounds.prefix = "g36_npc"
 		self.g36_crew.use_data.selection_index = 2
 		self.g36_crew.DAMAGE = 40.9
@@ -1217,6 +1358,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m14_crew()
+		self.m14_crew.categories = clone(self.new_m14.categories)
 		self.m14_crew.sounds.prefix = "m14_npc"
 		self.m14_crew.use_data.selection_index = 2
 		self.m14_crew.DAMAGE = 12.7
@@ -1233,6 +1375,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_ak5_crew()
+		self.ak5_crew.categories = clone(self.ak5.categories)
 		self.ak5_crew.sounds.prefix = "ak5_npc"
 		self.ak5_crew.use_data.selection_index = 2
 		self.ak5_crew.DAMAGE = 4.83
@@ -1249,6 +1392,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m16_crew()
+		self.m16_crew.categories = clone(self.m16.categories)
 		self.m16_crew.sounds.prefix = "m16_npc"
 		self.m16_crew.use_data.selection_index = 2
 		self.m16_crew.DAMAGE = 6.09
@@ -1265,6 +1409,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_s552_crew()
+		self.s552_crew.categories = clone(self.s552.categories)
 		self.s552_crew.sounds.prefix = "sig552_npc"
 		self.s552_crew.use_data.selection_index = 2
 		self.s552_crew.DAMAGE = 4.83
@@ -1283,6 +1428,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_scar_crew()
+		self.scar_crew.categories = clone(self.scar.categories)
 		self.scar_crew.sounds.prefix = "scar_npc"
 		self.scar_crew.use_data.selection_index = 2
 		self.scar_crew.DAMAGE = 9.03
@@ -1299,6 +1445,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_fal_crew()
+		self.fal_crew.categories = clone(self.fal.categories)
 		self.fal_crew.sounds.prefix = "fn_fal_npc"
 		self.fal_crew.use_data.selection_index = 2
 		self.fal_crew.DAMAGE = 6.09
@@ -1315,6 +1462,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_famas_crew()
+		self.famas_crew.categories = clone(self.famas.categories)
 		self.famas_crew.sounds.prefix = "famas_npc"
 		self.famas_crew.use_data.selection_index = 2
 		self.famas_crew.DAMAGE = 4.09
@@ -1331,6 +1479,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_galil_crew()
+		self.galil_crew.categories = clone(self.galil.categories)
 		self.galil_crew.sounds.prefix = "galil_npc"
 		self.galil_crew.use_data.selection_index = 2
 		self.galil_crew.DAMAGE = 4.83
@@ -1347,6 +1496,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_g3_crew()
+		self.g3_crew.categories = clone(self.g3.categories)
 		self.g3_crew.sounds.prefix = "g3_npc"
 		self.g3_crew.use_data.selection_index = 2
 		self.g3_crew.DAMAGE = 12.07
@@ -1363,6 +1513,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_l85a2_crew()
+		self.l85a2_crew.categories = clone(self.l85a2.categories)
 		self.l85a2_crew.sounds.prefix = "l85_npc"
 		self.l85a2_crew.use_data.selection_index = 2
 		self.l85a2_crew.DAMAGE = 4.83
@@ -1381,6 +1532,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_vhs_crew()
+		self.vhs_crew.categories = clone(self.vhs.categories)
 		self.vhs_crew.sounds.prefix = "vhs_npc"
 		self.vhs_crew.use_data.selection_index = 2
 		self.vhs_crew.DAMAGE = 4.09
@@ -1398,6 +1550,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_asval_crew()
+		self.asval_crew.categories = clone(self.asval.categories)
 		self.asval_crew.sounds.prefix = "val_npc"
 		self.asval_crew.use_data.selection_index = 2
 		self.asval_crew.DAMAGE = 9.03
@@ -1414,6 +1567,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_tecci_crew()
+		self.tecci_crew.categories = clone(self.tecci.categories)
 		self.tecci_crew.sounds.prefix = "tecci_npc"
 		self.tecci_crew.use_data.selection_index = 2
 		self.tecci_crew.DAMAGE = 6.09
@@ -1430,6 +1584,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_contraband_crew()
+		self.contraband_crew.categories = clone(self.contraband.categories)
 		self.contraband_crew.sounds.prefix = "contraband_npc"
 		self.contraband_crew.use_data.selection_index = 2
 		self.contraband_crew.DAMAGE = 6.09
@@ -1461,6 +1616,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_flint_crew()
+		self.flint_crew.categories = clone(self.flint.categories)
 		self.flint_crew.sounds.prefix = "flint_npc"
 		self.flint_crew.use_data.selection_index = 2
 		self.flint_crew.DAMAGE = 4.83
@@ -1477,6 +1633,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_spas12_crew()
+		self.spas12_crew.categories = clone(self.spas12.categories)
 		self.spas12_crew.sounds.prefix = "spas_npc"
 		self.spas12_crew.use_data.selection_index = 2
 		self.spas12_crew.DAMAGE = 11.25
@@ -1493,6 +1650,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_b682_crew()
+		self.b682_crew.categories = clone(self.b682.categories)
 		self.b682_crew.sounds.prefix = "b682_npc"
 		self.b682_crew.use_data.selection_index = 2
 		self.b682_crew.DAMAGE = 22.5
@@ -1510,6 +1668,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_r870_crew()
+		self.r870_crew.categories = clone(self.r870.categories)
 		self.r870_crew.sounds.prefix = "remington_npc"
 		self.r870_crew.use_data.selection_index = 2
 		self.r870_crew.DAMAGE = 15
@@ -1527,6 +1686,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_saiga_crew()
+		self.saiga_crew.categories = clone(self.saiga.categories)
 		self.saiga_crew.sounds.prefix = "saiga_npc"
 		self.saiga_crew.use_data.selection_index = 2
 		self.saiga_crew.DAMAGE = 7.5
@@ -1545,6 +1705,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_huntsman_crew()
+		self.huntsman_crew.categories = clone(self.huntsman.categories)
 		self.huntsman_crew.sounds.prefix = "huntsman_npc"
 		self.huntsman_crew.use_data.selection_index = 2
 		self.huntsman_crew.DAMAGE = 22.5
@@ -1562,6 +1723,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_ben_crew()
+		self.ben_crew.categories = {"shotgun"}
 		self.ben_crew.sounds.prefix = "benelli_m4_npc"
 		self.ben_crew.use_data.selection_index = 2
 		self.ben_crew.DAMAGE = 11.25
@@ -1580,6 +1742,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_ksg_crew()
+		self.ksg_crew.categories = clone(self.ksg.categories)
 		self.ksg_crew.sounds.prefix = "keltec_npc"
 		self.ksg_crew.use_data.selection_index = 2
 		self.ksg_crew.DAMAGE = 15
@@ -1597,6 +1760,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_aa12_crew()
+		self.aa12_crew.categories = clone(self.aa12.categories)
 		self.aa12_crew.sounds.prefix = "aa12_npc"
 		self.aa12_crew.use_data.selection_index = 2
 		self.aa12_crew.DAMAGE = 7.5
@@ -1615,6 +1779,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_boot_crew()
+		self.boot_crew.categories = clone(self.boot.categories)
 		self.boot_crew.sounds.prefix = "boot_npc"
 		self.boot_crew.use_data.selection_index = 2
 		self.boot_crew.DAMAGE = 22.5
@@ -1633,6 +1798,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_model70_crew()
+		self.model70_crew.categories = clone(self.model70.categories)
 		self.model70_crew.sounds.prefix = "model70_npc"
 		self.model70_crew.use_data.selection_index = 2
 		self.model70_crew.DAMAGE = 24
@@ -1651,6 +1817,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_msr_crew()
+		self.msr_crew.categories = clone(self.msr.categories)
 		self.msr_crew.sounds.prefix = "msr_npc"
 		self.msr_crew.use_data.selection_index = 2
 		self.msr_crew.DAMAGE = 18
@@ -1667,6 +1834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_r93_crew()
+		self.r93_crew.categories = clone(self.r93.categories)
 		self.r93_crew.sounds.prefix = "blazer_npc"
 		self.r93_crew.use_data.selection_index = 2
 		self.r93_crew.DAMAGE = 24
@@ -1683,6 +1851,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m95_crew()
+		self.m95_crew.categories = clone(self.m95.categories)
 		self.m95_crew.sounds.prefix = "barrett_npc"
 		self.m95_crew.use_data.selection_index = 2
 		self.m95_crew.DAMAGE = 36.01
@@ -1700,6 +1869,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mosin_crew()
+		self.mosin_crew.categories = clone(self.mosin.categories)
 		self.mosin_crew.sounds.prefix = "nagant_npc"
 		self.mosin_crew.use_data.selection_index = 2
 		self.mosin_crew.DAMAGE = 24
@@ -1717,6 +1887,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_winchester1874_crew()
+		self.winchester1874_crew.categories = clone(self.winchester1874.categories)
 		self.winchester1874_crew.sounds.prefix = "m1873_npc"
 		self.winchester1874_crew.use_data.selection_index = 2
 		self.winchester1874_crew.DAMAGE = 18
@@ -1735,6 +1906,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_wa2000_crew()
+		self.wa2000_crew.categories = clone(self.wa2000.categories)
 		self.wa2000_crew.sounds.prefix = "lakner_npc"
 		self.wa2000_crew.use_data.selection_index = 2
 		self.wa2000_crew.DAMAGE = 18
@@ -1752,6 +1924,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_desertfox_crew()
+		self.desertfox_crew.categories = clone(self.desertfox.categories)
 		self.desertfox_crew.sounds.prefix = "desertfox_npc"
 		self.desertfox_crew.use_data.selection_index = 2
 		self.desertfox_crew.DAMAGE = 24
@@ -1771,6 +1944,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_tti_crew()
+		self.tti_crew.categories = clone(self.tti.categories)
 		self.tti_crew.sounds.prefix = "tti_npc"
 		self.tti_crew.use_data.selection_index = 2
 		self.tti_crew.DAMAGE = 18
@@ -1788,6 +1962,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_siltstone_crew()
+		self.siltstone_crew.categories = clone(self.siltstone.categories)
 		self.siltstone_crew.sounds.prefix = "siltstone_npc"
 		self.siltstone_crew.use_data.selection_index = 2
 		self.siltstone_crew.DAMAGE = 18
@@ -1804,6 +1979,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_par_crew()
+		self.par_crew.categories = clone(self.par.categories)
 		self.par_crew.sounds.prefix = "svinet_npc"
 		self.par_crew.use_data.selection_index = 2
 		self.par_crew.DAMAGE = 3.6
@@ -1822,6 +1998,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_rpk_crew()
+		self.rpk_crew.categories = clone(self.rpk.categories)
 		self.rpk_crew.sounds.prefix = "rpk_npc"
 		self.rpk_crew.use_data.selection_index = 2
 		self.rpk_crew.DAMAGE = 3.6
@@ -1837,6 +2014,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_m249_crew()
+		self.m249_crew.categories = clone(self.m249.categories)
 		self.m249_crew.sounds.prefix = "m249_npc"
 		self.m249_crew.use_data.selection_index = 2
 		self.m249_crew.DAMAGE = 3.6
@@ -1852,6 +2030,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_hk21_crew()
+		self.hk21_crew.categories = clone(self.hk21.categories)
 		self.hk21_crew.sounds.prefix = "hk23e_npc"
 		self.hk21_crew.use_data.selection_index = 2
 		self.hk21_crew.DAMAGE = 4.08
@@ -1867,6 +2046,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponTweakData:_init_data_mg42_crew()
+		self.mg42_crew.categories = clone(self.mg42.categories)
 		self.mg42_crew.sounds.prefix = "mg42_npc"
 		self.mg42_crew.use_data.selection_index = 2
 		self.mg42_crew.DAMAGE = 4.8
@@ -1885,6 +2065,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 	
 	function WeaponTweakData:_init_data_corgi_crew()
+		self.corgi_crew.categories = clone(self.corgi.categories)
 		self.corgi_crew.sounds.prefix = "corgi_npc"
 		self.corgi_crew.use_data.selection_index = 2
 		self.corgi_crew.DAMAGE = 4.09
@@ -1903,7 +2084,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.corgi_crew.suppression = 2.4
 		self.corgi_crew.FIRE_MODE = "auto"
 	end	
-
+	
+	function WeaponTweakData:_init_data_x_basset_crew()
+		self.x_basset_crew.categories = clone(self.x_basset.categories)
+		self.x_basset_crew.sounds.prefix = "basset_x_npc"
+		self.x_basset_crew.use_data.selection_index = 2
+		self.x_basset_crew.DAMAGE = 1.25
+		self.x_basset_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.x_basset_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.x_basset_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+		self.x_basset_crew.rays = 6
+		self.x_basset_crew.CLIP_AMMO_MAX = 60
+		self.x_basset_crew.NR_CLIPS_MAX = 5
+		self.x_basset_crew.hold = "akimbo_pistol"
+		self.x_basset_crew.alert_size = 1800
+		self.x_basset_crew.suppression = 2
+		self.x_basset_crew.FIRE_MODE = "auto"
+	end
+	
 end
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
@@ -6845,7 +7043,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_baka.CLIP_AMMO_MAX = 60
 		self.x_baka.NR_CLIPS_MAX = 4
 		self.x_baka.AMMO_MAX = 180
-		self.x_baka.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_baka.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_baka.FIRE_MODE = "auto"
 		self.x_baka.fire_mode_data = {}
 		self.x_baka.fire_mode_data.fire_rate = 0.06315789473
@@ -6881,7 +7079,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.CLIP_AMMO_MAX = 120
 		self.x_cobray.NR_CLIPS_MAX = 4
 		self.x_cobray.AMMO_MAX = 150
-		self.x_cobray.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_cobray.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_cobray.spread.standing = 3.5
 		self.x_cobray.spread.crouching = 2.5
 		self.x_cobray.spread.steelsight = 1
@@ -6911,7 +7109,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.panic_suppression_chance = 0.1		
 		self.x_erma.CLIP_AMMO_MAX = 64
 		self.x_erma.AMMO_MAX = 150
-		self.x_erma.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_erma.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_erma.fire_mode_data.fire_rate = 0.10909090909
 		self.x_erma.single.fire_rate = 0.10909090909
 		self.x_erma.CAN_TOGGLE_FIREMODE = true
@@ -6943,7 +7141,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hajk.single.fire_rate = 0.075
 		self.x_hajk.CLIP_AMMO_MAX = 60
 		self.x_hajk.AMMO_MAX = 150
-		self.x_hajk.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_hajk.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_hajk.spread.standing = 3.5
 		self.x_hajk.spread.crouching = 2.5
 		self.x_hajk.spread.steelsight = 1
@@ -6970,7 +7168,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 		self.x_m45.CLIP_AMMO_MAX = 80
 		self.x_m45.AMMO_MAX = 150
-		self.x_m45.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_m45.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_m45.spread.standing = 3.5
 		self.x_m45.spread.crouching = 2.5
 		self.x_m45.spread.steelsight = 1
@@ -7007,7 +7205,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m1928.spread.moving_steelsight = 2
 		self.x_m1928.CLIP_AMMO_MAX = 100
 		self.x_m1928.AMMO_MAX = 180
-		self.x_m1928.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_m1928.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_m1928.kick.standing = self.new_m4.kick.standing
 		self.x_m1928.kick.crouching = self.new_m4.kick.standing
 		self.x_m1928.kick.steelsight = self.new_m4.kick.standing
@@ -7028,7 +7226,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m1928.panic_suppression_chance = 0.1		
 		self.x_mac10.CLIP_AMMO_MAX = 60
 		self.x_mac10.AMMO_MAX = 150
-		self.x_mac10.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_mac10.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_mac10.spread.standing = 3.5
 		self.x_mac10.spread.crouching = 2.5
 		self.x_mac10.spread.steelsight = 1
@@ -7056,7 +7254,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_mac10.panic_suppression_chance = 0.1		
 		self.x_mp7.AMMO_MAX = 150
-		self.x_mp7.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_mp7.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_mp7.fire_mode_data.fire_rate = 0.06315789473
 		self.x_mp7.CAN_TOGGLE_FIREMODE = true
 		self.x_mp7.single.fire_rate = 0.06315789473
@@ -7085,7 +7283,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp9.single.fire_rate = 0.06666666666
 		self.x_mp9.fire_mode_data.fire_rate = 0.06666666666
 		self.x_mp9.AMMO_MAX = 180
-		self.x_mp9.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_mp9.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_mp9.spread.standing = 3.5
 		self.x_mp9.spread.crouching = 2.5
 		self.x_mp9.spread.steelsight = 1
@@ -7114,7 +7312,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_olympic.AMMO_MAX = 180
 		self.x_olympic.fire_mode_data.fire_rate = 0.075
 		self.x_olympic.single.fire_rate = 0.075
-		self.x_olympic.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_olympic.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_olympic.spread.standing = 3.5
 		self.x_olympic.spread.crouching = 2.5
 		self.x_olympic.spread.steelsight = 1
@@ -7137,7 +7335,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}	
 		self.x_p90.AMMO_MAX = 200
-		self.x_p90.AMMO_PICKUP = self:_pickup_chance(200, 1)
+		self.x_p90.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.x_p90.fire_mode_data.fire_rate = 0.06666666666
 		self.x_p90.single.fire_rate = 0.06666666666
 		self.x_p90.panic_suppression_chance = 0.1
@@ -7167,7 +7365,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p90.panic_suppression_chance = 0.1		
 		self.x_polymer.CLIP_AMMO_MAX = 60
 		self.x_polymer.AMMO_MAX = 120
-		self.x_polymer.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.x_polymer.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_polymer.fire_mode_data.fire_rate = 0.05
 		self.x_polymer.single.fire_rate = 0.05
 		self.x_polymer.spread = {}
@@ -7199,7 +7397,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_schakal.single.fire_rate = 0.1
 		self.x_schakal.AMMO_MAX = 120
 		self.x_schakal.CLIP_AMMO_MAX = 50
-		self.x_schakal.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.x_schakal.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_schakal.spread.standing = 3.5
 		self.x_schakal.spread.crouching = 2.5
 		self.x_schakal.spread.steelsight = 1
@@ -7226,7 +7424,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}		
 		self.x_scorpion.CLIP_AMMO_MAX = 40
 		self.x_scorpion.AMMO_MAX = 180
-		self.x_scorpion.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_scorpion.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
 		self.x_scorpion.single.fire_rate = 0.07058823529
 		self.x_scorpion.spread = {}
@@ -7256,7 +7454,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_scorpion.panic_suppression_chance = 0.1	
 		self.x_sterling.CLIP_AMMO_MAX = 60
 		self.x_sterling.AMMO_MAX = 150
-		self.x_sterling.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_sterling.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_sterling.fire_mode_data.fire_rate = 0.10909090909
 		self.x_sterling.single.fire_rate = 0.10909090909
 		self.x_sterling.spread.standing = 3.5
@@ -7285,7 +7483,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sterling.panic_suppression_chance = 0.1	
 		self.x_tec9.AMMO_MAX = 150
 		self.x_tec9.CLIP_AMMO_MAX = 64
-		self.x_tec9.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_tec9.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_tec9.fire_mode_data.fire_rate = 0.067
 		self.x_tec9.single.fire_rate = 0.067
 		self.x_tec9.spread = {}
@@ -7314,7 +7512,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_tec9.panic_suppression_chance = 0.1
 		self.x_uzi.AMMO_MAX = 150
-		self.x_uzi.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_uzi.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_uzi.fire_mode_data.fire_rate = 0.086
 		self.x_uzi.single.fire_rate = 0.086
 		self.x_uzi.spread.standing = 3.5
@@ -7344,7 +7542,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_2006m.fire_mode_data.fire_rate = 0.15
 		self.x_2006m.single.fire_rate = 0.15
 		self.x_2006m.AMMO_MAX = 60
-		self.x_2006m.AMMO_PICKUP = self:_pickup_chance(60, 1)
+		self.x_2006m.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.x_2006m.spread.standing = 3.5
 		self.x_2006m.spread.crouching = 2.5
 		self.x_2006m.spread.steelsight = 1
@@ -7368,10 +7566,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.x_2006m.panic_suppression_chance = 0.0		
+		self.x_2006m.panic_suppression_chance = 0.0	
+		self.x_2006m.weapon_hold = "x_chinchilla"
+		self.x_2006m.animations.reload_name_id = "x_chinchilla"
+		self.x_2006m.animations.second_gun_versions = self.x_rage.animations.second_gun_versions or {}
+		self.x_2006m.animations.second_gun_versions.reload = "reload"		
 		self.x_breech.AMMO_MAX = 180
 		self.x_breech.CLIP_AMMO_MAX = 24
-		self.x_breech.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_breech.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_breech.fire_mode_data.fire_rate = 0.06666666666
 		self.x_breech.single.fire_rate = 0.06666666666
 		self.x_breech.spread.standing = 3.5
@@ -7399,7 +7601,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_breech.panic_suppression_chance = 0.0		
 		self.x_c96.AMMO_MAX = 120
-		self.x_c96.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.x_c96.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_c96.FIRE_MODE = "single"
 		self.x_c96.sounds.fire_auto = "akm_fire"
 		self.x_c96.sounds.stop_fire = "akm_stop"
@@ -7437,7 +7639,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.single.fire_rate = 0.05
 		self.x_g18c.CLIP_AMMO_MAX = 36
 		self.x_g18c.AMMO_MAX = 180
-		self.x_g18c.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_g18c.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_g18c.spread.standing = 3.5
 		self.x_g18c.spread.crouching = 2.5
 		self.x_g18c.spread.steelsight = 1
@@ -7464,7 +7666,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.panic_suppression_chance = 0.0		
 		self.x_hs2000.CLIP_AMMO_MAX = 27
 		self.x_hs2000.AMMO_MAX = 120
-		self.x_hs2000.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.x_hs2000.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_hs2000.FIRE_MODE = "single"
 		self.x_hs2000.fire_mode_data = {}
 		self.x_hs2000.fire_mode_data.fire_rate = 0.1
@@ -7496,7 +7698,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hs2000.panic_suppression_chance = 0.0		
 		self.x_p226.AMMO_MAX = 150
 		self.x_p226.CLIP_AMMO_MAX = 28
-		self.x_p226.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_p226.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_p226.fire_mode_data.fire_rate = 0.08571428571
 		self.x_p226.single.fire_rate = 0.08571428571
 		self.x_p226.spread.standing = 3.5
@@ -7527,7 +7729,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_pl14.single.fire_rate = 0.075
 		self.x_pl14.CLIP_AMMO_MAX = 20
 		self.x_pl14.AMMO_MAX = 150
-		self.x_pl14.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_pl14.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_pl14.spread.standing = 3.5
 		self.x_pl14.spread.crouching = 2.5
 		self.x_pl14.spread.steelsight = 1
@@ -7554,7 +7756,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_pl14.panic_suppression_chance = 0.0	
 		self.x_ppk.AMMO_MAX = 180
 		self.x_ppk.CLIP_AMMO_MAX = 24
-		self.x_ppk.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_ppk.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_ppk.fire_mode_data.fire_rate = 0.06666666666
 		self.x_ppk.single.fire_rate = 0.06666666666
 		self.x_ppk.spread.standing = 3.5
@@ -7593,7 +7795,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rage.kick.standing = self.glock_17.kick.standing
 		self.x_rage.kick.crouching = self.glock_17.kick.standing
 		self.x_rage.kick.steelsight = self.glock_17.kick.standing
-		self.x_rage.AMMO_PICKUP = self:_pickup_chance(60, 1)
+		self.x_rage.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.x_rage.stats = {
 			damage = 85,
 			spread = 18,
@@ -7608,9 +7810,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.x_rage.panic_suppression_chance = 0.0		
+		self.x_rage.panic_suppression_chance = 0.0	
+		self.x_rage.weapon_hold = "x_chinchilla"
+		self.x_rage.animations.reload_name_id = "x_chinchilla"
+		self.x_rage.animations.second_gun_versions = self.x_rage.animations.second_gun_versions or {}
+		self.x_rage.animations.second_gun_versions.reload = "reload"		
 		self.x_sparrow.AMMO_MAX = 150
-		self.x_sparrow.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_sparrow.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_sparrow.spread.standing = 3.5
 		self.x_sparrow.spread.crouching = 2.5
 		self.x_sparrow.spread.steelsight = 1
@@ -7649,7 +7855,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.AMMO_MAX = 40
 		self.x_judge.damage_near = 600
 		self.x_judge.damage_far = 1200
-		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.x_judge.stats = {
 			damage = 145,
 			spread = 6,
@@ -7666,13 +7872,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_judge.panic_suppression_chance = 0.0
 		self.x_judge.stats_modifiers = {damage = 1}	
+		self.x_judge.weapon_hold = "x_chinchilla"
+		self.x_judge.animations.reload_name_id = "x_chinchilla"
+		self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
+		self.x_judge.animations.second_gun_versions.reload = "reload"		
 		self.x_rota.upgrade_blocks = {
 			weapon = {
 				"clip_ammo_increase"
 			}
 		}
 		self.x_rota.AMMO_MAX = 80
-		self.x_rota.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.x_rota.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.x_rota.rays = 9
 		self.x_rota.spread.standing = 3.5
 		self.x_rota.spread.crouching = 2.5

@@ -19339,8 +19339,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_laser",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_upg_ammo_762_sterling",
-			"wpn_fps_upg_o_spot"
+			"wpn_fps_upg_o_spot",
+			--Custom--
+			"wpn_fps_upg_ammo_762_sterling"
 		}
 		self.wpn_fps_smg_sterling_npc = deep_clone(self.wpn_fps_smg_sterling)
 		self.wpn_fps_smg_sterling_npc.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling/wpn_fps_smg_sterling_npc"
@@ -35804,7 +35805,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 10,
 					concealment = -2
-				}}
+				}},
+				wpn_fps_upg_ammo_762_sterling = {
+					stats = {
+						value = 10,
+						damage = 10,
+						extra_ammo = -10,
+						total_ammo_mod = -20,
+						suppression = -1,
+						alert_size = -1,
+						recoil = -1,
+						spread = 1
+					},
+					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
+				}				
 			},
 			default_blueprint = {
 				"wpn_fps_smg_sterling_b_standard",
@@ -35842,7 +35856,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				--Custom--
+				"wpn_fps_upg_ammo_762_sterling"
 			}
 		}
 		self.wpn_fps_smg_x_sterling_npc = deep_clone(self.wpn_fps_smg_x_sterling)
@@ -35966,10 +35982,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_upg_fl_pis_m3x = {"wpn_fps_pis_2006m_fl_adapter"}
 			},
 			override = {
-				wpn_fps_pis_2006m_body_standard = {animations = {
-					fire_steelsight = "recoil",
-					fire = "recoil"
-				}},
+				wpn_fps_pis_2006m_body_standard = {},
 				wpn_fps_pis_2006m_m_standard = {animations = {}}
 			},
 			default_blueprint = {
@@ -36660,14 +36673,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"gadget"
 			},
 			override = {
-				wpn_fps_pis_rage_body_standard = {animations = {
-					fire_steelsight = "recoil",
-					fire = "recoil"
-				}},
-				wpn_fps_pis_rage_body_smooth = {animations = {
-					fire_steelsight = "recoil",
-					fire = "recoil"
-				}}
+				wpn_fps_pis_rage_body_standard = {},
+				wpn_fps_pis_rage_body_smooth = {}
 			},
 			animations = {
 				reload = "reload_right",
@@ -36912,8 +36919,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						ammo_pickup_max_mul = 0.75
 					}
 				},	
-				wpn_fps_pis_judge_body_standard = {animations = {}},
-				wpn_fps_pis_judge_body_modern = {animations = {}}
+				wpn_fps_pis_judge_body_standard = {},
+				wpn_fps_pis_judge_body_modern = {}
 			},
 			adds = {
 				wpn_fps_upg_fl_ass_laser = {"wpn_fps_pis_judge_fl_adapter"},

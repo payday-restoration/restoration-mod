@@ -44,6 +44,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.nail.ai_group_type = zombie
 			self.help.ai_group_type = zombie
 		end
+		
+		self.chill.ghost_bonus = nil
 	end)
 	
 end

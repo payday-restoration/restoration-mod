@@ -1703,7 +1703,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.ecm_vulnerability = nil
 	self.spring.immune_to_concussion = true
 	self.spring.ecm_hurts = {}
-	self.spring.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.spring.damage.hurt_severity = presets.hurt_severities.captain
 	self.spring.melee_weapon = "fists_dozer"
 	self.spring.melee_weapon_dmg_multiplier = 1
 	self.spring.melee_anims = {
@@ -1751,7 +1751,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.summers.headshot_dmg_mul = 1.25
 	self.summers.bag_dmg_mul = 6
-	self.summers.move_speed = presets.move_speed.very_slow
+	self.summers.move_speed = presets.move_speed.fast
 	self.summers.crouch_move = false
 	self.summers.no_run_start = true
 	self.summers.no_run_stop = true
@@ -2720,67 +2720,43 @@ function CharacterTweakData:_presets(tweak_data)
 			health_reference = "current",
 			zones = {
 				{
-					health_limit = 0.3,
-					none = 0.2,
-					light = 0.75,
-					explode = 0.05,
-					heavy = 0
-				},
-				{
-					health_limit = 0.6,
-					light = 0.7,
-					explode = 0.15,
-					heavy = 0
-				},
-				{
-					health_limit = 0.9,
-					light = 0.6,
-					explode = 0.2,
-					heavy = 0
-				},
-				{
-					light = 0.5,
-					explode = 0.25,
-					heavy = 0
+					none = 0.95,
+					explode = 0.05
 				}
 			}
 	}
 	presets.hurt_severities.titan.fire = {
 			health_reference = "current",
 			zones = {
-				{fire = 1}
+				{none = 1}
 			}
 	}
 	presets.hurt_severities.titan.explosion = {
 			health_reference = "current",
 			zones = {
-				{
-					health_limit = 0.3,
-					none = 0.2,
-					light = 0.75,
-					explode = 0.05,
-					heavy = 0
-				},
-				{
-					health_limit = 0.6,
-					light = 0.7,
-					explode = 0.3,
-					heavy = 0
-				},
-				{
-					health_limit = 0.9,
-					light = 0.6,
-					explode = 0.4,
-					heavy = 0
-				},
-				{
-					light = 0.5,
-					explode = 0.5,
-					heavy = 0
-				}
+				{none = 1}
 			}
 	}
 	presets.hurt_severities.captain = deep_clone(presets.hurt_severities.titan)
+	presets.hurt_severities.captain.bullet = {
+			health_reference = "current",
+			zones = {
+				{
+					none = 0.95,
+					explode = 0.05
+				}
+			}
+	}	
+	presets.hurt_severities.boss = deep_clone(presets.hurt_severities.titan)
+	presets.hurt_severities.boss.bullet = {
+			health_reference = "current",
+			zones = {
+				{
+					none = 0.95,
+					heavy = 0.05
+				}
+			}
+	}		
 	presets.hurt_severities.no_hurts_no_tase = deep_clone(presets.hurt_severities.no_hurts)
 	presets.hurt_severities.no_hurts_no_tase.tase = false
 	presets.hurt_severities.only_light_hurt = {

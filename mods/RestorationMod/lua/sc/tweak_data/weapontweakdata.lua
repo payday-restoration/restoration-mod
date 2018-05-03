@@ -5060,7 +5060,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpg7.has_description = false
 		self.rpg7.fire_mode_data.fire_rate = 3
 		self.rpg7.AMMO_MAX = 3
-		self.rpg7.AMMO_PICKUP = {0.06, 0.38}
+		self.rpg7.AMMO_PICKUP = {0.06, 0.41}
 		self.rpg7.timers.reload_not_empty = 6.3
 		self.rpg7.timers.reload_empty = 6.3
 		self.rpg7.stats = {
@@ -5936,7 +5936,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.china.kick.standing = self.huntsman.kick.standing
 		self.china.kick.crouching = self.huntsman.kick.standing
 		self.china.kick.steelsight = self.huntsman.kick.standing
-		self.china.AMMO_PICKUP = {0.12, 0.38}
+		self.china.AMMO_PICKUP = {0.12, 0.43}
 		self.china.stats = {
 			damage = 80,
 			spread = 6,
@@ -6448,7 +6448,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ray.fire_mode_data.fire_rate = 2
 		self.ray.CLIP_AMMO_MAX = 4
 		self.ray.AMMO_MAX = 6
-		self.ray.AMMO_PICKUP = {0.12, 0.38}
+		self.ray.AMMO_PICKUP = {0.12, 0.43}
 		self.ray.stats = {
 			damage = 400,
 			spread = 13,
@@ -6993,7 +6993,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.slap.kick.crouching = self.huntsman.kick.standing
 		self.slap.kick.steelsight = self.huntsman.kick.standing
 		self.slap.AMMO_MAX = 6
-		self.slap.AMMO_PICKUP = {0.12, 0.38}
+		self.slap.AMMO_PICKUP = {0.12, 0.43}
 		self.slap.stats = {
 			damage = 80,
 			spread = 13,

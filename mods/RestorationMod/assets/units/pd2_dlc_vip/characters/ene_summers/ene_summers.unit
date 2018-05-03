@@ -24,7 +24,7 @@
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="bulldozer" />
-			<var name="_anim_global" value="tank" />
+			<var name="_anim_global" value="cop" />
 		</extension>
 		<extension name="interaction" class="IntimitateInteractionExt" >
 			<var name="tweak_data" value="intimidate" />

@@ -53,7 +53,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.rboom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.spring = clone(security_variant)
-	CopMovement._action_variants.summers = security_variant
+	CopMovement._action_variants.summers = clone(security_variant)
+	CopMovement._action_variants.summers.walk = TankCopActionWalk
 	CopMovement._action_variants.boom_summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers.heal = MedicActionHeal
 	CopMovement._action_variants.taser_summers = clone(security_variant)
@@ -300,7 +301,6 @@ function CopMovement:do_aoe_heal(self)
 				"city_swat_titan_assault",
 				"sniper",
 				"tank",
-				"tank_medic",
 				"tank_titan_assault",
 				"tank_hw",
 				"tank_mini",

@@ -3354,8 +3354,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g36.spread.moving_standing = 4
 		self.g36.spread.moving_crouching = 3
 		self.g36.spread.moving_steelsight = 2
-		self.g36.auto.fire_rate = 0.08571428571
-		self.g36.fire_mode_data.fire_rate = 0.08571428571
+		self.g36.auto.fire_rate = 0.08
+		self.g36.fire_mode_data.fire_rate = 0.08
 		self.g36.AMMO_MAX = 180
 		self.g36.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.g36.CLIP_AMMO_MAX = 30

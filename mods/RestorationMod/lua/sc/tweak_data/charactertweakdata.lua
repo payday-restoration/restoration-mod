@@ -1050,7 +1050,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 500
 	self.mobster_boss.headshot_dmg_mul = 3.997125
-	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
 	self.mobster_boss.move_speed = presets.move_speed.very_slow
 	self.mobster_boss.allowed_poses = {stand = true}
@@ -1101,7 +1101,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.HEALTH_INIT = 500
 	self.biker_boss.headshot_dmg_mul = 3.997125
 	self.biker_boss.damage.explosion_damage_mul = 1.25
-	self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.no_hurts
+	self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.boss
 	self.biker_boss.move_speed = presets.move_speed.very_slow
 	self.biker_boss.allowed_poses = {stand = true}
 	self.biker_boss.no_retreat = true
@@ -1183,7 +1183,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.silent_priority_shout = nil
 	self.chavez_boss.custom_shout = true
 	self.chavez_boss.priority_shout_max_dis = 3000
-	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.chavez_boss.HEALTH_INIT = 500
 	self.chavez_boss.headshot_dmg_mul = 3.997125
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
@@ -1281,7 +1281,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.HEALTH_INIT = 500
 	self.drug_lord_boss.headshot_dmg_mul = 3.997125
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
-	self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.titan
 	self.drug_lord_boss.move_speed = presets.move_speed.very_slow
 	self.drug_lord_boss.allowed_poses = {stand = true}
 	self.drug_lord_boss.crouch_move = false
@@ -1445,6 +1445,7 @@ function CharacterTweakData:_init_tank(presets)
 	
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
+	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 	self.tank_titan.headshot_dmg_mul = 3.997125
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
@@ -2753,7 +2754,7 @@ function CharacterTweakData:_presets(tweak_data)
 			zones = {
 				{
 					none = 0.95,
-					heavy = 0.05
+					moderate = 0.05
 				}
 			}
 	}		

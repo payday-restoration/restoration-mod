@@ -11,7 +11,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
 		if restoration and restoration.Options:GetValue("SC/Holiday") then
 			if Global.level_data.level_id == "pines" or Global.level_data.level_id == "roberts" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "moon" or Month == "12" then
-				if self:char_tweak().tags then
+				if self:char_tweak().is_special then
 					if self._tweak_table == "tank_hw" then
 					else
 						local align_obj_name = Idstring("Head")

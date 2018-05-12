@@ -28,6 +28,9 @@
 		},
 		{ 	"hook_id" : "lib/tweak_data/skilltreetweakdata",
 			"script_path" : "lua/sc/tweak_data/skilltreetweakdata.lua"
+		},
+		{ 	"hook_id" : "lib/entry",
+			"script_path" : "core_voice.lua"
 		}		
 	]
 }

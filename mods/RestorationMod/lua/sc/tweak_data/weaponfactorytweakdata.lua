@@ -5395,9 +5395,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_shot_saiga.override = {
 			wpn_upg_o_marksmansight_rear_vanilla = {
 				a_obj = "a_or",
-				forbids = {
-					"wpn_fps_upg_o_ak_scopemount"
-				}
+				forbids = table.list_add(self.parts.wpn_upg_o_marksmansight_rear_vanilla.forbids, {"wpn_fps_upg_o_ak_scopemount"})
 			},
 			wpn_upg_o_marksmansight_front = {a_obj = "a_of"},
 			wpn_fps_upg_a_slug_fire = {
@@ -6738,48 +6736,47 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_smg_mp9_b_dummy"
 		}
 		self.wpn_fps_smg_mp9.uses_parts = {
-			"wpn_fps_smg_mp9_body_mp9",
-			"wpn_fps_smg_mp9_m_short",
-			"wpn_fps_smg_mp9_m_extended",
-			"wpn_fps_smg_mp9_s_skel",
-			"wpn_fps_smg_mp9_s_fold",
 			"wpn_fps_smg_mp9_b_dummy",
-			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
-			"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
-			"wpn_fps_upg_o_specter",
-			"wpn_fps_upg_o_aimpoint",
-			"wpn_fps_upg_o_docter",
-			"wpn_fps_upg_o_eotech",
-			"wpn_fps_upg_o_t1micro",
-			"wpn_fps_upg_o_cmore",
-			"wpn_fps_upg_o_aimpoint_2",
-			"wpn_fps_upg_o_acog",
-			"wpn_fps_upg_ns_ass_smg_large",
-			"wpn_fps_upg_ns_ass_smg_medium",
-			"wpn_fps_upg_ns_ass_smg_small",
-			"wpn_fps_upg_ns_ass_smg_firepig",
-			"wpn_fps_upg_ns_ass_smg_stubby",
-			"wpn_fps_upg_ns_ass_smg_tank",
-			"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-			"wpn_fps_upg_fl_ass_smg_sho_surefire",
-			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire",
+			"wpn_fps_smg_mp9_b_suppressed",
+			"wpn_fps_smg_mp9_body_mp9",
+			"wpn_fps_smg_mp9_m_extended",
+			"wpn_fps_smg_mp9_m_short",
+			"wpn_fps_smg_mp9_s_fold",
+			"wpn_fps_smg_mp9_s_skel",
+			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_ass_ns_jprifles",
 			"wpn_fps_upg_ass_ns_linear",
 			"wpn_fps_upg_ass_ns_surefire",
+			"wpn_fps_upg_fl_ass_laser",
+			"wpn_fps_upg_fl_ass_peq15",
+			"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+			"wpn_fps_upg_fl_ass_smg_sho_surefire",
+			"wpn_fps_upg_fl_ass_utg",
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_singlefire",
+			"wpn_fps_upg_ns_ass_smg_firepig",
+			"wpn_fps_upg_ns_ass_smg_large",
+			"wpn_fps_upg_ns_ass_smg_medium",
+			"wpn_fps_upg_ns_ass_smg_small",
+			"wpn_fps_upg_ns_ass_smg_stubby",
+			"wpn_fps_upg_ns_ass_smg_tank",
+			"wpn_fps_upg_o_acog",
+			"wpn_fps_upg_o_aimpoint",
+			"wpn_fps_upg_o_aimpoint_2",
+			"wpn_fps_upg_o_cmore",
+			"wpn_fps_upg_o_cs",
+			"wpn_fps_upg_o_docter",
+			"wpn_fps_upg_o_eotech",
 			"wpn_fps_upg_o_eotech_xps",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_rx30",
-			"wpn_fps_upg_o_cs",
-			"wpn_fps_upg_fl_ass_peq15",
-			"wpn_fps_upg_fl_ass_laser",
-			"wpn_fps_smg_mp9_b_suppressed",
-			"wpn_fps_upg_ass_ns_battle",
-			"wpn_fps_upg_fl_ass_utg",
+			"wpn_fps_upg_o_specter",
+			"wpn_fps_upg_o_t1micro",
+			"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_ammo_p"
+			"wpn_fps_upg_o_xpsg33_magnifier"
 		}
 		self.wpn_fps_smg_mp9_npc = deep_clone(self.wpn_fps_smg_mp9)
 		self.wpn_fps_smg_mp9_npc.unit = "units/payday2/weapons/wpn_fps_smg_mp9/wpn_fps_smg_mp9_npc"
@@ -7076,11 +7073,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_deagle.override = {
 			wpn_upg_o_marksmansight_rear = {
 				a_obj = "a_o",
-				forbids = {
+				forbids = table.list_add(self.parts.wpn_upg_o_marksmansight_rear.forbids, {
 					"wpn_fps_pis_deagle_o_standard_front",
 					"wpn_fps_pis_deagle_o_standard_front_long",
 					"wpn_fps_pis_deagle_o_standard_rear"
-				}
+				})
 			},
 			wpn_fps_pis_deagle_b_modern = {
 				"wpn_fps_pis_deagle_o_standard_rear",
@@ -7765,10 +7762,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_1911.override = {
 			wpn_upg_o_marksmansight_rear = {
 				a_obj = "a_o",
-				forbids = {
+				forbids = table.list_add(self.parts.wpn_upg_o_marksmansight_rear.forbids, {
 					"wpn_fps_pis_1911_o_long",
 					"wpn_fps_pis_1911_o_standard"
-				}
+				})
 			},
 			wpn_upg_o_marksmansight_front = {a_obj = "a_os"},
 			wpn_fps_upg_o_rmr = {parent = "slide"}
@@ -14111,9 +14108,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_specter.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_aimpoint = {
 				override = {
@@ -14121,9 +14116,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_aimpoint.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_aimpoint_2 = {
 				override = {
@@ -14131,9 +14124,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_aimpoint_2.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_docter = {
 				override = {
@@ -14141,9 +14132,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_docter.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_eotech = {
 				override = {
@@ -14151,9 +14140,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_eotech.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_t1micro = {
 				override = {
@@ -14161,9 +14148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_t1micro.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_cmore = {
 				override = {
@@ -14171,9 +14156,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_cmore.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_acog = {
 				override = {
@@ -14181,9 +14164,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_acog.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_cs = {
 				override = {
@@ -14191,9 +14172,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_cs.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_eotech_xps = {
 				override = {
@@ -14201,9 +14180,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_eotech_xps.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_reflex = {
 				override = {
@@ -14211,9 +14188,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_reflex.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_rx01 = {
 				override = {
@@ -14221,9 +14196,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_rx01.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_o_rx30 = {
 				override = {
@@ -14231,27 +14204,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
 					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
 				},
-				forbids = {
-					"wpn_fps_addon_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_rx30.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_ak_extra_ris = {a_obj = "a_fl_90"},
 			wpn_fps_upg_fl_ass_smg_sho_surefire = {
-				forbids = {
-					"wpn_fps_addon_ris"
-				},
-				adds = {
-					"wpn_fps_ak_extra_ris"
-				}
+				forbids = table.list_add(self.parts.wpn_fps_upg_fl_ass_smg_sho_surefire.forbids, {"wpn_fps_addon_ris"}),
+				adds = {"wpn_fps_ak_extra_ris"}
 			},
 			wpn_fps_upg_fl_ass_utg = {
-				forbids = {
-					"wpn_fps_addon_ris"
-				},
+				forbids = table.list_add(self.parts.wpn_fps_upg_fl_ass_utg.forbids, {"wpn_fps_addon_ris"}),
 				adds = {
 					"wpn_fps_ak_extra_ris",
 					"wpn_fps_upg_fl_ass_peq15_flashlight"
 				}
+			},
+			wpn_fps_upg_o_spot = {
+				override = {
+					wpn_fps_upg_fl_ass_smg_sho_peqbox = {a_obj = "a_fl_2"},
+					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
+					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
+				},
+				forbids = table.list_add(self.parts.wpn_fps_upg_o_spot.forbids, {"wpn_fps_addon_ris"})
 			},
 			wpn_fps_upg_a_slug = {
 				stats = {
@@ -14328,16 +14301,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					bullet_class = "InstantExplosiveBulletBase",
 					ammo_pickup_min_mul = 0.333333333333,
 					ammo_pickup_max_mul = 0.333333333333
-				}
-			},
-			wpn_fps_upg_o_spot = {
-				override = {
-					wpn_fps_upg_fl_ass_smg_sho_peqbox = {a_obj = "a_fl_2"},
-					wpn_fps_upg_fl_ass_laser = {a_obj = "a_fl_2"},
-					wpn_fps_upg_fl_ass_peq15 = {a_obj = "a_fl_2"}
-				},
-				forbids = {
-					"wpn_fps_addon_ris"
 				}
 			}
 		}
@@ -34836,26 +34799,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_smg_coal_m_standard",
 				"wpn_fps_smg_coal_mr_standard",
 				"wpn_fps_smg_coal_o_scopemount_standard",
+				"wpn_fps_upg_ns_ass_pbs1",
+				"wpn_fps_upg_ns_ass_smg_firepig",
 				"wpn_fps_upg_ns_ass_smg_large",
 				"wpn_fps_upg_ns_ass_smg_medium",
 				"wpn_fps_upg_ns_ass_smg_small",
-				"wpn_fps_upg_ns_ass_smg_firepig",
 				"wpn_fps_upg_ns_ass_smg_stubby",
 				"wpn_fps_upg_ns_ass_smg_tank",
-				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-				"wpn_fps_upg_fl_ass_smg_sho_surefire",
 				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 				"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
 				"wpn_fps_upg_vg_ass_smg_afg_vanilla",
 				"wpn_fps_upg_i_singlefire",
 				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_ass_ns_battle",
 				"wpn_fps_upg_ass_ns_jprifles",
 				"wpn_fps_upg_ass_ns_linear",
 				"wpn_fps_upg_ass_ns_surefire",
-				"wpn_fps_upg_fl_ass_peq15",
-				"wpn_fps_upg_fl_ass_laser",
-				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_ak_g_hgrip",
+				"wpn_fps_upg_ak_g_pgrip",
+				"wpn_fps_upg_ak_g_wgrip",
+				"wpn_fps_upg_ak_g_rk3"
 			}
 		}
 		self.wpn_fps_smg_x_coal_npc = deep_clone(self.wpn_fps_smg_x_coal)
@@ -35381,31 +35349,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_smg_mp9_b_dummy"
 			},
 			uses_parts = {
-				"wpn_fps_smg_mp9_body_mp9",
-				"wpn_fps_smg_mp9_m_short",
-				"wpn_fps_smg_mp9_m_extended",
-				"wpn_fps_smg_mp9_s_fold",
 				"wpn_fps_smg_mp9_b_dummy",
-				"wpn_fps_upg_ns_ass_smg_large",
-				"wpn_fps_upg_ns_ass_smg_medium",
-				"wpn_fps_upg_ns_ass_smg_small",
-				"wpn_fps_upg_ns_ass_smg_firepig",
-				"wpn_fps_upg_ns_ass_smg_stubby",
-				"wpn_fps_upg_ns_ass_smg_tank",
-				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-				"wpn_fps_upg_fl_ass_smg_sho_surefire",
-				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
-				"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
-				"wpn_fps_upg_vg_ass_smg_afg_vanilla",
-				"wpn_fps_upg_i_singlefire",
-				"wpn_fps_upg_i_autofire",
+				"wpn_fps_smg_mp9_b_suppressed",
+				"wpn_fps_smg_mp9_body_mp9",
+				"wpn_fps_smg_mp9_m_extended",
+				"wpn_fps_smg_mp9_m_short",
+				"wpn_fps_smg_mp9_s_fold",
+				"wpn_fps_upg_ass_ns_battle",
 				"wpn_fps_upg_ass_ns_jprifles",
 				"wpn_fps_upg_ass_ns_linear",
 				"wpn_fps_upg_ass_ns_surefire",
-				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
-				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_i_singlefire",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
+				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
+				"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
+				"wpn_fps_upg_vg_ass_smg_afg_vanilla"
 			}
 		}
 		self.wpn_fps_smg_x_mp9_npc = deep_clone(self.wpn_fps_smg_x_mp9)

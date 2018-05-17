@@ -498,7 +498,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.c45_npc.CLIP_AMMO_MAX = 17
 		self.c45_npc.NR_CLIPS_MAX = 5
 		self.c45_npc.hold = "pistol"
-		self.c45_npc.alert_size = 3500
+		self.c45_npc.alert_size = 2600
 		self.c45_npc.suppression = 2
 		self.c45_npc.FIRE_MODE = "single"
 		self.colt_1911_primary_npc = deep_clone(self.c45_npc)
@@ -520,7 +520,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.x_c45_npc.CLIP_AMMO_MAX = 34
 		self.x_c45_npc.NR_CLIPS_MAX = 5
 		self.x_c45_npc.hold = "akimbo_pistol"
-		self.x_c45_npc.alert_size = 3500
+		self.x_c45_npc.alert_size = 2600
 		self.x_c45_npc.suppression = 2
 		self.x_c45_npc.FIRE_MODE = "single"
 	end
@@ -555,7 +555,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.raging_bull_npc.CLIP_AMMO_MAX = 6
 		self.raging_bull_npc.NR_CLIPS_MAX = 8
 		self.raging_bull_npc.hold = "pistol"
-		self.raging_bull_npc.alert_size = 10000
+		self.raging_bull_npc.alert_size = 3600
 		self.raging_bull_npc.suppression = 3.1
 		self.raging_bull_npc.FIRE_MODE = "single"
 		self.peacemaker_npc = deep_clone(self.raging_bull_npc)
@@ -576,7 +576,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_npc.NR_CLIPS_MAX = 5
 		self.m4_npc.auto.fire_rate = 0.086
 		self.m4_npc.hold = "rifle"
-		self.m4_npc.alert_size = 4000
+		self.m4_npc.alert_size = 2800
 		self.m4_npc.suppression = 2.2
 		self.m4_npc.FIRE_MODE = "auto"
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
@@ -600,7 +600,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ak47_npc.NR_CLIPS_MAX = 5
 		self.ak47_npc.auto.fire_rate = 0.2
 		self.ak47_npc.hold = "rifle"
-		self.ak47_npc.alert_size = 7500
+		self.ak47_npc.alert_size = 3400
 		self.ak47_npc.suppression = 2.8
 		self.ak47_npc.FIRE_MODE = "auto"
 	end
@@ -618,7 +618,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m14_sniper_npc.CLIP_AMMO_MAX = 10
 		self.m14_sniper_npc.NR_CLIPS_MAX = 8
 		self.m14_sniper_npc.hold = "rifle"
-		self.m14_sniper_npc.alert_size = 10000
+		self.m14_sniper_npc.alert_size = 3600
 		self.m14_sniper_npc.suppression = 3.1
 		self.m14_sniper_npc.armor_piercing = true
 		self.m14_sniper_npc.FIRE_MODE = "single"
@@ -639,7 +639,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.CLIP_AMMO_MAX = 8
 		self.r870_npc.NR_CLIPS_MAX = 4
 		self.r870_npc.hold = "rifle"
-		self.r870_npc.alert_size = 7500
+		self.r870_npc.alert_size = 3400
 		self.r870_npc.suppression = 2.8
 		self.r870_npc.is_shotgun = true
 		self.r870_npc.rays = 9
@@ -661,7 +661,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mossberg_npc.CLIP_AMMO_MAX = 2
 		self.mossberg_npc.NR_CLIPS_MAX = 6
 		self.mossberg_npc.hold = "rifle"
-		self.mossberg_npc.alert_size = 15000
+		self.mossberg_npc.alert_size = 3800
 		self.mossberg_npc.suppression = 3.4
 		self.mossberg_npc.is_shotgun = true
 		self.mossberg_npc.rays = 9
@@ -681,7 +681,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp5_npc.NR_CLIPS_MAX = 5
 		self.mp5_npc.auto.fire_rate = 0.075
 		self.mp5_npc.hold = "rifle"
-		self.mp5_npc.alert_size = 3500
+		self.mp5_npc.alert_size = 2600
 		self.mp5_npc.suppression = 2
 		self.mp5_npc.FIRE_MODE = "auto"
 		self.mp5_tactical_npc = deep_clone(self.mp5_npc)
@@ -718,7 +718,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mac11_npc.NR_CLIPS_MAX = 5
 		self.mac11_npc.auto.fire_rate = 0.06
 		self.mac11_npc.hold = "pistol"
-		self.mac11_npc.alert_size = 3500
+		self.mac11_npc.alert_size = 2600
 		self.mac11_npc.hold = {"uzi", "pistol"}
 		self.mac11_npc.suppression = 2
 		self.mac11_npc.FIRE_MODE = "auto"
@@ -735,7 +735,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.g36_npc.NR_CLIPS_MAX = 5
 		self.g36_npc.auto.fire_rate = 0.08571428571
 		self.g36_npc.hold = "rifle"
-		self.g36_npc.alert_size = 3500
+		self.g36_npc.alert_size = 2600
 		self.g36_npc.suppression = 2
 		self.g36_npc.FIRE_MODE = "auto"
 	end
@@ -752,7 +752,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp9_npc.NR_CLIPS_MAX = 5
 		self.mp9_npc.auto.fire_rate = 0.07843137254
 		self.mp9_npc.hold = "pistol"
-		self.mp9_npc.alert_size = 3500
+		self.mp9_npc.alert_size = 2600
 		self.mp9_npc.suppression = 2
 		self.mp9_npc.FIRE_MODE = "auto"
 		self.sr2_smg_npc = deep_clone(self.mp9_npc)
@@ -769,7 +769,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_npc.CLIP_AMMO_MAX = 20
 		self.saiga_npc.NR_CLIPS_MAX = 4
 		self.saiga_npc.hold = "rifle"
-		self.saiga_npc.alert_size = 10000
+		self.saiga_npc.alert_size = 3200
 		self.saiga_npc.suppression = 3.1
 		self.saiga_npc.is_shotgun = true
 		self.saiga_npc.rays = 9
@@ -1022,7 +1022,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.s552_npc.NR_CLIPS_MAX = 5
 		self.s552_npc.auto.fire_rate = 0.086
 		self.s552_npc.hold = "rifle"
-		self.s552_npc.alert_size = 4000
+		self.s552_npc.alert_size = 400
 		self.s552_npc.suppression = 2.2
 		self.s552_npc.FIRE_MODE = "auto"
 		self.s552_npc.has_suppressor = "suppressed_c"
@@ -1039,7 +1039,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.NR_CLIPS_MAX = 5
 		self.scar_npc.auto.fire_rate = 0.08571428571
 		self.scar_npc.hold = "rifle"
-		self.scar_npc.alert_size = 6000
+		self.scar_npc.alert_size = 3400
 		self.scar_npc.suppression = 2.8
 		self.scar_npc.FIRE_MODE = "auto"
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
@@ -1060,7 +1060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_npc.NR_CLIPS_MAX = 2
 		self.m249_npc.auto.fire_rate = 0.075
 		self.m249_npc.hold = "rifle"
-		self.m249_npc.alert_size = 10000
+		self.m249_npc.alert_size = 2600
 		self.m249_npc.suppression = 2
 		self.m249_npc.FIRE_MODE = "auto"
 		self.rpk_lmg_npc = deep_clone(self.m249_npc)
@@ -1074,7 +1074,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_sc_npc.NR_CLIPS_MAX = 5
 		self.hk21_sc_npc.auto.fire_rate = 0.075
 		self.hk21_sc_npc.hold = "rifle"
-		self.hk21_sc_npc.alert_size = 10000
+		self.hk21_sc_npc.alert_size = 2800
 		self.hk21_sc_npc.suppression = 2.4
 		self.hk21_sc_npc.usage = "is_lmg"
 	end
@@ -1090,7 +1090,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_npc.NR_CLIPS_MAX = 5
 		self.contraband_npc.auto.fire_rate = 0.1
 		self.contraband_npc.hold = "rifle"
-		self.contraband_npc.alert_size = 5000
+		self.contraband_npc.alert_size = 3000
 		self.contraband_npc.suppression = 2.4
 		self.contraband_npc.FIRE_MODE = "auto"		
 		self.contraband_m203_npc.sounds.prefix = "contrabandm203_npc"
@@ -1119,7 +1119,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mini_npc.NR_CLIPS_MAX = 2
 		self.mini_npc.auto.fire_rate = 0.03
 		self.mini_npc.hold = "rifle"
-		self.mini_npc.alert_size = 5000
+		self.mini_npc.alert_size = 2600
 		self.mini_npc.suppression = 2
 		self.mini_npc.FIRE_MODE = "auto"
 	end

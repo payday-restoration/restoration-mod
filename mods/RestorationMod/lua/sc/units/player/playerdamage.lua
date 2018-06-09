@@ -324,6 +324,22 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	if self._next_allowed_dmg_t ~= next_allowed_dmg_t_old then
 		self._last_received_dmg = self._last_bullet_damage
 	end
+	
+	local _time = math.floor(TimerManager:game():time())
+	self.tase_time = self.tase_time or 0
+	local player_unit = managers.player:player_unit()
+	if attack_data then
+		if alive(attack_data.attacker_unit) then
+			if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time then
+				if alive(player_unit) then
+					player_unit:movement():on_non_lethal_electrocution()
+					managers.player:set_player_state("tased")
+					self.tase_time = _time + 30
+				end
+			end		
+		end
+	end		
+	
 	return 
 end
 

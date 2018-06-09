@@ -1088,52 +1088,540 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
-			if difficulty_index <= 4 then
-				self.unit_categories.CS_tazer = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1")
+			if Global.game_settings and Global.game_settings.one_down then
+				if difficulty_index <= 4 then
+					self.unit_categories.CS_tazer = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
+						access = access_type_all,
+						special_type = "taser"
+					}
+				elseif difficulty_index == 5 then
+					self.unit_categories.CS_tazer = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")							
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")							
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")							
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")								
+							}						
 						},
-						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1")
-						},						
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")
-						}						
-					},
-					access = access_type_all,
-					special_type = "taser"
-				}
-			else 
-				self.unit_categories.CS_tazer = {
-					unit_types = {
-						america = {
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+						access = access_type_all,
+						special_type = "taser"
+					}
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					self.unit_categories.CS_tazer = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")								
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")								
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")								
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")								
+							}						
 						},
-						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+						access = access_type_all,
+						special_type = "taser"
+					}			
+				else
+					self.unit_categories.CS_tazer = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")								
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")							
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")								
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")								
+							}						
 						},
-						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
-							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
-						},						
-						murky = {
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
-							Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
-						}						
-					},
-					access = access_type_all,
-					special_type = "taser"
-				}
+						access = access_type_all,
+						special_type = "taser"
+					}				
+				end			
+			else
+				if difficulty_index <= 4 then
+					self.unit_categories.CS_tazer = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")
+							}						
+						},
+						access = access_type_all,
+						special_type = "taser"
+					}
+				else 
+					self.unit_categories.CS_tazer = {
+						unit_types = {
+							america = {
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+							},
+							russia = {
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+								Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+							},
+							zombie = {
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+								Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+							},						
+							murky = {
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+								Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+							}						
+						},
+						access = access_type_all,
+						special_type = "taser"
+					}
+				end
 			end
 			self.unit_categories.CS_shield = {
 				unit_types = {

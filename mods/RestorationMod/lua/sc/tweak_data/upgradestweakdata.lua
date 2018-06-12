@@ -123,6 +123,7 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.ignore_suppression_flinch = {true}
     	self.values.player.health_revive_max = {true}
     	self.values.player.yakuza_berserker = {true}
+		self.values.player.electrocution_resistance_multiplier = {0.5}
 	--Bot boost stuff stuff--
 	if Global.game_settings and Global.game_settings.single_player then
 		self.values.team.crew_add_health = {2}
@@ -1226,6 +1227,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_electrocution_resistance_1 = {
+		name_id = "menu_player_electrocution_resistance",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "electrocution_resistance_multiplier",
+			category = "player"
+		}
+	}	
 	self.definitions.player_level_5_armor_addend = {
 		category = "feature",
 		name_id = "menu_player_level_5_armor_addend",

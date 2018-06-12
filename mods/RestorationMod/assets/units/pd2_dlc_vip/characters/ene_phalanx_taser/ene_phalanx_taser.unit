@@ -17,7 +17,9 @@
 			<var name="_default_weapon_id" value="m16_summer" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
-		<extension name="brain" class="CopBrain" />
+		<extension name="brain" class="CopBrain">
+			<var name="entrance_chatter_cue" value="elite" />
+		</extension>		
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />

@@ -89,6 +89,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_pick_lock_easy_speed_multiplier_1",
 		"first_aid_kit_downs_restore_chance",
 		"player_suppression_resist",
+		"player_electrocution_resistance_1",
 		"x_p226",
 		"x_m45",
 		"x_mp7",

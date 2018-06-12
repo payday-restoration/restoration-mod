@@ -160,10 +160,13 @@ function PlayerDamage:damage_melee(attack_data)
 	local player_unit = managers.player:player_unit()
 	if attack_data then
 		if alive(attack_data.attacker_unit) then
-			if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" then
+			if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "taser_titan" then
 				if alive(player_unit) then
-					player_unit:movement():on_non_lethal_electrocution()
-					managers.player:set_player_state("tased")
+					if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal then
+					else
+						player_unit:movement():on_non_lethal_electrocution()
+						managers.player:set_player_state("tased")
+					end
 				end
 			end		
 		end
@@ -334,7 +337,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 				if alive(player_unit) then
 					player_unit:movement():on_non_lethal_electrocution()
 					managers.player:set_player_state("tased")
-					self.tase_time = _time + 30
+					self.tase_time = _time + 15
 				end
 			end		
 		end

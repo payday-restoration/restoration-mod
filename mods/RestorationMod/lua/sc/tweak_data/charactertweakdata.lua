@@ -1899,6 +1899,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.die_sound_event = "mga_death_scream"
 	self.taser_titan.custom_voicework = nil
 	self.taser_titan.surrender = nil
+	self.taser_titan.dodge = presets.dodge.elite
+	self.taser_titan.static_dodge_preset = true
+	self.taser_titan.is_special = true	
+	self.taser_titan.move_speed = presets.move_speed.lightning
+	self.taser_titan.melee_weapon = "buzzer_summer"
 	table.insert(self._enemy_list, "taser_titan")
 end
 

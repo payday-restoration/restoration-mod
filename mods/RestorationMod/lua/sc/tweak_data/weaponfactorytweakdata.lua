@@ -10057,7 +10057,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -1,
 					reload = -1
 				}
-			}			
+			},
+			wpn_fps_pis_g26_g_gripforce = {a_obj = "a_g_2"},
+			wpn_fps_pis_g26_g_laser = {a_obj = "a_g_2"}			
 		}
 		self.wpn_fps_pis_g22c.default_blueprint = {
 			"wpn_fps_pis_g22c_b_standard",
@@ -23298,7 +23300,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					fire_steelsight = "recoil",
 					magazine_empty = "last_recoil"
 				}
-			}
+			},
+			wpn_fps_pis_g26_g_gripforce = {a_obj = "a_g_2"},
+			wpn_fps_pis_g26_g_laser = {a_obj = "a_g_2"}				
 		}
 		self.wpn_fps_pis_x_g22c.default_blueprint = {
 			"wpn_fps_pis_g22c_b_standard",

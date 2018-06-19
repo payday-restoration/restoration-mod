@@ -9,7 +9,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			
 		self._underdog_skill_data.chk_interval_active = 1 --temp test
 	end
-	
+		
 	function PlayerMovement:on_jump_SPOOCed(enemy_unit)
 		if managers.player:has_category_upgrade("player", "counter_strike_spooc") and self._current_state.in_melee and self._current_state:in_melee() then
 			self._current_state:discharge_melee()

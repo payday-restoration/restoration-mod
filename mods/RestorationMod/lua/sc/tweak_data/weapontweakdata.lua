@@ -1344,7 +1344,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.g36_crew.categories = clone(self.g36.categories)
 		self.g36_crew.sounds.prefix = "g36_npc"
 		self.g36_crew.use_data.selection_index = 2
-		self.g36_crew.DAMAGE = 40.9
+		self.g36_crew.DAMAGE = 4.09
 		self.g36_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 		self.g36_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.g36_crew.CLIP_AMMO_MAX = 30

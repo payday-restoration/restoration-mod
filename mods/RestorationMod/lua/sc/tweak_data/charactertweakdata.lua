@@ -12135,7 +12135,24 @@ function CharacterTweakData:character_map()
 				"ene_omnia_city",
 				"ene_omnia_heavy"
 			}
-		}
+		},
+		nypd = {
+			path = "units/pd2_mod_nypd/characters/",
+			list = {
+				"ene_bulldozer_1",
+				"ene_bulldozer_2",
+				"ene_nypd_heavy_m4",
+				"ene_tazer_1",
+				"ene_nypd_heavy_r870",
+				"ene_nypd_swat_1",
+				"ene_nypd_swat_2",
+				"ene_nypd_shield",
+				"ene_cop_1",
+				"ene_cop_2",
+				"ene_cop_3",
+				"ene_cop_4"
+			}
+		}		
 	}
 	return char_map
 end

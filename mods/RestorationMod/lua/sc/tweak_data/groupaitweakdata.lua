@@ -3445,91 +3445,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),	
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),	
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),	
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -3539,51 +3465,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),	
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -3593,51 +3485,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),	
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),	
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -3647,31 +3505,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -4145,91 +3989,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),	
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),	
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),	
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -4239,51 +4009,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),	
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -4293,51 +4029,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),	
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),	
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -4347,31 +4049,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit_types = {
 						america = {
 							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						},
 						russia = {
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 						},
 						zombie = {
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
 						},							
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-							Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+							Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 						}							
 					},
 					access = access_type_all
@@ -5944,8 +5632,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			access = access_type_all
 		}
-	end
-
 	end
 
 	function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -9164,3 +8850,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.safehouse = deep_clone(self.besiege)	
 	end
+	
+end

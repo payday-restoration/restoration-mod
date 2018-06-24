@@ -24804,7 +24804,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_arena/weapons/wpn_fps_pis_2006m_pts/wpn_fps_pis_2006m_m_standard",
 			stats = {value = 1},
-			custom_stats = {reload_speed_mult = 1.375},
+			custom_stats = {reload_speed_mult = 1},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -35956,7 +35956,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			override = {
 				wpn_fps_pis_2006m_body_standard = {},
-				wpn_fps_pis_2006m_m_standard = {animations = {}}
+				wpn_fps_pis_2006m_m_standard = {
+					animations = {},
+					custom_stats = {reload_speed_mult = 1},		
+				}
 			},
 			default_blueprint = {
 				"wpn_fps_pis_2006m_b_standard",

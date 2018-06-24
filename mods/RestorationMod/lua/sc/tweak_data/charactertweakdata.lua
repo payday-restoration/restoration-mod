@@ -100,6 +100,20 @@ function CharacterTweakData:_init_region_murky()
 	self._speech_prefix_p2 = "d"
 end
 
+function CharacterTweakData:_init_region_nypd()
+	self._default_chatter = "dispatch_generic_message"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
+	self._speech_prefix_p2 = "d"
+end
+
 function CharacterTweakData:_init_security(presets)
 	self.security = deep_clone(presets.base)
 	self.security.tags = {"law"}

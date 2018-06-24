@@ -33,7 +33,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		"hector_boss_no_armor",
 		"tank_medic",
 		"tank_mini",
-		"phalanx_minion_assault"
+		"phalanx_minion_assault",
+		"spooc_titan",
+		"taser_titan"
 	}
 
 	local old_stats = StatisticsManager.init
@@ -193,7 +195,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				explosion = 0,
 				tied = 0
 			}
-
+		self._defaults.killed.spooc_titan = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}
+		self._defaults.killed.taser_titan = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}			
+			
 	end
 
 end

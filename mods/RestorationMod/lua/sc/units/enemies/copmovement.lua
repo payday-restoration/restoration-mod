@@ -73,6 +73,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.phalanx_minion_assault.hurt = ShieldActionHurt
 	CopMovement._action_variants.phalanx_minion_assault.walk = ShieldCopActionWalk
 	CopMovement._action_variants.spooc_titan = security_variant
+	CopMovement._action_variants.taser_titan = clone(security_variant)
 end
 
 function CopMovement:post_init()

@@ -100,6 +100,20 @@ function CharacterTweakData:_init_region_murky()
 	self._speech_prefix_p2 = "d"
 end
 
+function CharacterTweakData:_init_region_nypd()
+	self._default_chatter = "dispatch_generic_message"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
+	self._speech_prefix_p2 = "d"
+end
+
 function CharacterTweakData:_init_security(presets)
 	self.security = deep_clone(presets.base)
 	self.security.tags = {"law"}
@@ -1536,6 +1550,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
  	table.insert(self._enemy_list, "spooc")
+	
 	self.spooc_titan = deep_clone(self.spooc)
 	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.spooc_titan.can_be_tased = false
@@ -1852,6 +1867,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.custom_voicework = "taser"
 	self.taser.is_special = true
  	table.insert(self._enemy_list, "taser")
+	
 	self.taser_summers = deep_clone(self.taser)
 	self.taser_summers.HEALTH_INIT = 72
 	self.taser_summers.headshot_dmg_mul = 1.25
@@ -1885,6 +1901,24 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.custom_voicework = nil
 	self.taser_summers.is_special = true	
  	table.insert(self._enemy_list, "taser_summers")
+	
+	self.taser_titan = deep_clone(self.taser)
+	self.taser_titan.priority_shout = "f45"
+	self.taser_titan.bot_priority_shout = "f45x_any"	
+	self.taser_titan.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.taser_titan.immune_to_concussion = true	
+	self.taser_titan.use_animation_on_fire_damage = false
+	self.taser_titan.can_be_tased = false	
+	self.taser_titan.spawn_sound_event = "cloaker_spawn"
+	self.taser_titan.die_sound_event = "mga_death_scream"
+	self.taser_titan.custom_voicework = nil
+	self.taser_titan.surrender = nil
+	self.taser_titan.dodge = presets.dodge.elite
+	self.taser_titan.static_dodge_preset = true
+	self.taser_titan.is_special = true	
+	self.taser_titan.move_speed = presets.move_speed.lightning
+	self.taser_titan.melee_weapon = "buzzer_summer"
+	table.insert(self._enemy_list, "taser_titan")
 end
 
 function CharacterTweakData:_init_boom(presets)
@@ -10727,7 +10761,8 @@ function CharacterTweakData:_create_table_structure()
 		"p90_summer",
 		"m16_summer",
 		"mp5_cloak",
-		"s552_sc"
+		"s552_sc",
+		"r870_taser"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -10767,7 +10802,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
 		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"),
-		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc")
+		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),
+		Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc")
 	}
 end
 
@@ -11802,7 +11838,8 @@ function CharacterTweakData:character_map()
 				"ene_titan_rifle",
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
-				"ene_titan_sniper"
+				"ene_titan_sniper",
+				"ene_titan_taser"
 			}
 		},
 		holly = {
@@ -12112,7 +12149,24 @@ function CharacterTweakData:character_map()
 				"ene_omnia_city",
 				"ene_omnia_heavy"
 			}
-		}
+		},
+		nypd = {
+			path = "units/pd2_mod_nypd/characters/",
+			list = {
+				"ene_bulldozer_1",
+				"ene_bulldozer_2",
+				"ene_nypd_heavy_m4",
+				"ene_tazer_1",
+				"ene_nypd_heavy_r870",
+				"ene_nypd_swat_1",
+				"ene_nypd_swat_2",
+				"ene_nypd_shield",
+				"ene_cop_1",
+				"ene_cop_2",
+				"ene_cop_3",
+				"ene_cop_4"
+			}
+		}		
 	}
 	return char_map
 end

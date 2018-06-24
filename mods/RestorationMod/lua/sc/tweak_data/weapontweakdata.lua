@@ -1344,7 +1344,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.g36_crew.categories = clone(self.g36.categories)
 		self.g36_crew.sounds.prefix = "g36_npc"
 		self.g36_crew.use_data.selection_index = 2
-		self.g36_crew.DAMAGE = 40.9
+		self.g36_crew.DAMAGE = 4.09
 		self.g36_crew.muzzleflash = "effects/payday2/particles/weapons/556_auto"
 		self.g36_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.g36_crew.CLIP_AMMO_MAX = 30
@@ -2904,6 +2904,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		self.new_m4.desc_id = "bm_menu_sc_m4_desc"
 		self.new_m4.AMMO_MAX = 150
+		self.new_m4.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.new_m4.CLIP_AMMO_MAX = 20
 		self.new_m4.fire_mode_data.fire_rate = 0.08571428571
 		self.new_m4.auto.fire_rate = 0.08571428571
@@ -2939,7 +2940,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_17.single.fire_rate = 0.075
 		self.glock_17.AMMO_MAX = 150
 		self.glock_17.CLIP_AMMO_MAX = 18
-		self.glock_17.AMMO_PICKUP = self:_pickup_chance(self.glock_17.AMMO_MAX, 1)
+		self.glock_17.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.glock_17.spread.standing = 3.5
 		self.glock_17.spread.crouching = 2.5
 		self.glock_17.spread.steelsight = 1

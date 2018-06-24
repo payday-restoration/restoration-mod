@@ -885,7 +885,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
 		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##55%## armor.",
 		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##60%## armor.",
-		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you ##10## armor - This can only occur once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##3## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
 		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##50%## of all damage taken for ##5## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",

@@ -25,7 +25,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			duration = {2, 4},
 			interval = {0.75, 1.5},
 			group_min = 0,
-			queue = "mov"
+			queue = "m01"
 		}
 		self.enemy_chatter.contact = {
 			radius = 700,
@@ -9392,7 +9392,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				3.1,
 				3.3
 			}
-		else
+		elseif difficulty_index == 8 then
+			self.besiege.assault.force_balance_mul = {
+				3,
+				3.2,
+				3.5,
+				3.9
+			}
+			self.besiege.assault.force_pool_balance_mul = {
+				2.7,
+				2.9,
+				3.1,
+				3.3
+			}
+		else		
 			self.besiege.assault.force_balance_mul = {
 				4,
 				4.2,

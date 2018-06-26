@@ -2,11 +2,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	ModifierHeavies.default_value = "spawn_chance"
 	ModifierHeavies.fbi = {
-		Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1")
+		Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+		Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+		Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),	
+		Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4")
 	}
 	ModifierHeavies.gensec = {
 		Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
-		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
+		Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
+		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+		Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass"),
+		Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4")
 	}
 	--just to make sure the original doesn't do anything
 	ModifierHeavies.unit_swaps = {}

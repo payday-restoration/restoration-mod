@@ -59,6 +59,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_shield_reflect",
 					data = {}
 				},
+				--Cloaker drops smoke grenade on kick
 				{
 					id = "cloaker_smoke",
 					class = "ModifierCloakerKick",
@@ -75,20 +76,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						speed = {20, "add"}
 					}
 				},
+				--50% less likely to be staggered
 				{
 					id = "no_hurt",
 					class = "ModifierNoHurtAnims",
 					icon = "crime_spree_no_hurt",
 					data = {}
 				},
+				--Titan Taser spawn chance increase
 				{
 					id = "taser_overcharge",
 					class = "ModifierTaserOvercharge",
 					icon = "crime_spree_taser_overcharge",
-					data = {
-						speed = {50, "add"}
-					}
+					data = {}
 				},
+				--Increased UMP unit spawn chance
 				{
 					id = "heavies",
 					class = "ModifierHeavies",
@@ -103,6 +105,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						inc = {2, "add"}
 					}
 				},
+				--More Titan Shotgunners
 				{
 					id = "heavy_sniper",
 					class = "ModifierHeavySniper",
@@ -179,6 +182,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_medic_deathwish",
 					data = {}
 				},
+				--Titan Dozer spawn increase
 				{
 					id = "dozer_minigun",
 					class = "ModifierDozerMinigun",
@@ -199,10 +203,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_dozer_explosion",
 					data = {}
 				},
+				--Vet Cop Spawn increase
 				{
 					id = "dozer_medic",
 					class = "ModifierDozerMedic",
-					icon = "crime_spree_youre_that_ninja",
+					icon = "crime_spree_heavies",
+					--icon = "crime_spree_youre_that_ninja",
 					data = {}
 				},
 				{

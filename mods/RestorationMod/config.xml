@@ -119,20 +119,12 @@
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
 		<hook file="sc/managers/mission/elementfilter.lua" source_file="lib/managers/mission/elementfilter"/>
 		<hook file="sc/tweak_data/crimespreetweakdata.lua" source_file="lib/tweak_data/crimespreetweakdata"/>
-		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/managers/menu/menunodegui.lua" source_file="lib/managers/menu/menunodegui"/>
 		<hook file="sc/tweak_data/assetstweakdata.lua" source_file="lib/tweak_data/assetstweakdata"/>
 		<hook file="sc/tweak_data/tipstweakdata.lua" source_file="lib/tweak_data/tipstweakdata"/>
 		<hook file="sc/tweak_data/achievementstweakdata.lua" source_file="lib/tweak_data/achievementstweakdata"/>
 		<hook file="sc/units/load/enemyunitgroups.lua" source_file="lib/units/load/enemyunitgroups"/>
 		<hook file="sc/managers/crimespreemanager.lua" source_file="lib/managers/crimespreemanager"/>
-		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
-		<hook file="sc/modifiers/modifierdozerminigun.lua" source_file="lib/modifiers/modifierdozerminigun"/>
-		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
-		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
-		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
-		<hook file="sc/modifiers/modifierlessconcealment.lua" source_file="lib/modifiers/modifierlessconcealment"/>
-		<hook file="sc/modifiers/modifierlesspagers.lua" source_file="lib/modifiers/modifierlesspagers"/>
 		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<hook file="sc/managers/mission/elementspawngrenade.lua" source_file="lib/managers/mission/elementspawngrenade"/>
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
@@ -155,6 +147,16 @@
 		<hook file="sc/managers/snipergrazedamage.lua" source_file="lib/managers/player/snipergrazedamage"/>
 		<hook file="sc/units/equipment/doctorbagbase.lua" source_file="lib/units/equipment/doctor_bag/doctorbagbase"/>
 		<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
+		<!--Crime Spree-->
+		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
+		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
+		<hook file="sc/modifiers/modifierdozerminigun.lua" source_file="lib/modifiers/modifierdozerminigun"/>
+		<hook file="sc/modifiers/modifierheavysniper.lua" source_file="lib/modifiers/modifierheavysniper"/>
+		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
+		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
+		<hook file="sc/modifiers/modifierlessconcealment.lua" source_file="lib/modifiers/modifierlessconcealment"/>
+		<hook file="sc/modifiers/modifierlesspagers.lua" source_file="lib/modifiers/modifierlesspagers"/>
+		<hook file="sc/modifiers/modifiertaserovercharge.lua" source_file="lib/modifiers/modifiertaserovercharge"/>		
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>

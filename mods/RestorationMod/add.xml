@@ -605,7 +605,8 @@
 	<texture path="guis/textures/loading/hints/vet_cop_loading" force="false"/>	
 
 	<!--Optimized gas-->
-	<effect path="effects/particles/explosions/cs_grenade_smoke" force="true"/>
+	<effect path="effects/particles/explosions/cs_grenade_smoke_sc" force="false"/>
+	<effect path="effects/particles/explosions/cs_grenade_smoke_ds_sc" force="false"/>
 	
 	<!--Stat Boost-->
 	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc" force="true"/>

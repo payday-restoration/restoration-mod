@@ -229,6 +229,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.silent_priority_shout = "f37"
 	self.cop.dodge = presets.dodge.average
 	self.cop.deathguard = true
+	self.cop.shooting_death = false
 	self.cop.chatter = presets.enemy_chatter.cop
 	self.cop.melee_weapon = nil
 	if job == "chill_combat" then

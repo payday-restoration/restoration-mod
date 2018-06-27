@@ -103,6 +103,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
 		self.corgi_crew.DAMAGE = 2
+		
+		self.scar_npc.sniper_trail = false
 	end
 
 	function WeaponTweakData:_set_hard()
@@ -157,6 +159,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
 		self.corgi_crew.DAMAGE = 2
+		
+		self.scar_npc.sniper_trail = false
 	end
 
 	function WeaponTweakData:_set_overkill()
@@ -413,7 +417,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.aa_turret_module.HEALTH_INIT = 1850
 		self.aa_turret_module.BAG_DMG_MUL = 11.4375
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350			
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
+
+		--Sniper Trail for Snipers
+		--self.m14_sniper_npc.sniper_trail = true
 	end
 
 	function WeaponTweakData:_init_data_npc_melee()
@@ -1042,6 +1049,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.alert_size = 3400
 		self.scar_npc.suppression = 2.8
 		self.scar_npc.FIRE_MODE = "auto"
+		self.scar_npc.sniper_trail = true
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
 		self.asval_smg_npc = deep_clone(self.scar_npc)

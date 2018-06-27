@@ -53,27 +53,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			loud = {
+				--Mirrorshields
 				{
 					id = "shield_reflect",
 					class = "ModifierShieldReflect",
 					icon = "crime_spree_shield_reflect",
 					data = {}
 				},
-				--Cloaker drops smoke grenade on kick
+				--More Titancloakers
 				{
 					id = "cloaker_smoke",
 					class = "ModifierCloakerKick",
 					icon = "crime_spree_cloaker_smoke",
-					data = {
-						effect = {"smoke", "none"}
-					}
+					data = {}
 				},
+				--Shorter Medic Cooldown T1
 				{
 					id = "medic_heal_1",
 					class = "ModifierHealSpeed",
 					icon = "crime_spree_medic_speed",
 					data = {
-						speed = {20, "add"}
+						speed = {25, "add"}
 					}
 				},
 				--50% less likely to be staggered
@@ -97,6 +97,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_ump_me_up",
 					data = {}
 				},
+				--+2 Medic cap limit
 				{
 					id = "medic_1",
 					class = "ModifierMoreMedics",
@@ -114,24 +115,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spawn_chance = {5, "add"}
 					}
 				},
+				--Dozer DR on visor break
 				{
 					id = "dozer_rage",
 					class = "ModifierDozerRage",
 					icon = "crime_spree_dozer_rage",
 					data = {
-						damage = {15, "add"}
+						damage_resistance = {10, "add"}
 					}
 				},
+				--More Titan HRTs
 				{
 					id = "cloaker_tear_gas",
 					class = "ModifierCloakerTearGas",
 					icon = "crime_spree_cloaker_tear_gas",
-					data = {
-						diameter = {4, "none"},
-						damage = {0, "none"},
-						duration = {10, "none"}
-					}
+					data = {}
 				},
+				--Higher Dozer Cap T1
 				{
 					id = "dozer_1",
 					class = "ModifierMoreDozers",
@@ -140,34 +140,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						inc = {2, "add"}
 					}
 				},
+				--Shorter Medic Cooldown T2
 				{
 					id = "medic_heal_2",
 					class = "ModifierHealSpeed",
 					icon = "crime_spree_medic_speed",
 					data = {
-						speed = {20, "add"}
+						speed = {25, "add"}
 					}
 				},
+				--10% more Skulldozers
 				{
 					id = "dozer_lmg",
 					class = "ModifierSkulldozers",
 					icon = "crime_spree_dozer_lmg",
 					data = {}
 				},
+				--More Omnia LPFs
 				{
 					id = "medic_adrenaline",
 					class = "ModifierMedicAdrenaline",
-					icon = "crime_spree_medic_adrenaline",
-					data = {
-						damage = {25, "add"}
-					}
+					icon = "crime_spree_youre_that_ninja",
+					data = {}
 				},
+				--Titanshield spawn chance increase
 				{
 					id = "shield_phalanx",
 					class = "ModifierShieldPhalanx",
 					icon = "crime_spree_shield_phalanx",
 					data = {}
 				},
+				--Higher Dozer Cap T2
 				{
 					id = "dozer_2",
 					class = "ModifierMoreDozers",
@@ -176,6 +179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						inc = {2, "add"}
 					}
 				},
+				--Medic heals everyone around him in AoE on death
 				{
 					id = "medic_deathwish",
 					class = "ModifierMedicDeathwish",
@@ -189,6 +193,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					icon = "crime_spree_titandozer",
 					data = {}
 				},
+				--Higher Medic Cap T2
 				{
 					id = "medic_2",
 					class = "ModifierMoreMedics",
@@ -197,6 +202,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						inc = {2, "add"}
 					}
 				},
+				--Dozer Explosion Immunity
 				{
 					id = "dozer_immunity",
 					class = "ModifierExplosionImmunity",
@@ -208,9 +214,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					id = "dozer_medic",
 					class = "ModifierDozerMedic",
 					icon = "crime_spree_heavies",
-					--icon = "crime_spree_youre_that_ninja",
 					data = {}
 				},
+				--Longer assault waves
 				{
 					id = "assault_extender",
 					class = "ModifierAssaultExtender",
@@ -222,12 +228,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						max_hostages = {4, "none"}
 					}
 				},
+				--Cloaker jumpkicks down players
 				{
 					id = "cloaker_arrest",
 					class = "ModifierCloakerArrest",
 					icon = "crime_spree_cloaker_arrest",
 					data = {}
 				},
+				--Medic gets damage increase for every unit that dies near him
 				{
 					id = "medic_rage",
 					class = "ModifierMedicRage",

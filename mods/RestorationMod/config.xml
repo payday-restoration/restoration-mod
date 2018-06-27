@@ -157,6 +157,11 @@
 		<hook file="sc/modifiers/modifierlessconcealment.lua" source_file="lib/modifiers/modifierlessconcealment"/>
 		<hook file="sc/modifiers/modifierlesspagers.lua" source_file="lib/modifiers/modifierlesspagers"/>
 		<hook file="sc/modifiers/modifiertaserovercharge.lua" source_file="lib/modifiers/modifiertaserovercharge"/>		
+		<hook file="sc/modifiers/modifierdozerrage.lua" source_file="lib/modifiers/modifierdozerrage"/>	
+		<hook file="sc/modifiers/modifiermedicadrenaline.lua" source_file="lib/modifiers/modifiermedicadrenaline"/>	
+		<hook file="sc/modifiers/modifiercloakerarrest.lua" source_file="lib/modifiers/modifiercloakerarrest"/>
+		<hook file="sc/modifiers/modifiercloakerkick.lua" source_file="lib/modifiers/modifiercloakerkick"/>	
+		<hook file="sc/modifiers/modifiercloakerteargas.lua" source_file="lib/modifiers/modifiercloakerteargas"/>	
 		<!--Hopefully this makes mutators used more-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>

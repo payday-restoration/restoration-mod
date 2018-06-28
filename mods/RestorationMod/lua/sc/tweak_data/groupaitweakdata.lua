@@ -4287,7 +4287,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 						}						
 					},
 					access = access_type_all
@@ -4308,7 +4308,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+							Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 						}						
 					},
 					access = access_type_all

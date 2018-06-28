@@ -2673,7 +2673,7 @@ function CharacterTweakData:_init_ecp(presets)
 	}
 	self.ecp_female.weapon.weapons_of_choice = {
 		primary = "wpn_fps_ass_m4_npc",
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.ecp_female.always_face_enemy = true
 	self.ecp_female.no_run_start = true
@@ -2696,7 +2696,7 @@ function CharacterTweakData:_init_ecp(presets)
 	}
 	self.ecp_male.weapon.weapons_of_choice = {
 		primary = "wpn_fps_ass_m4_npc",
-		secondary = Idstring("units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11")
+		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.ecp_male.always_face_enemy = true
 	self.ecp_male.no_run_start = true
@@ -11462,6 +11462,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
+	self.sniper.weapon.is_rifle.use_laser = false
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true

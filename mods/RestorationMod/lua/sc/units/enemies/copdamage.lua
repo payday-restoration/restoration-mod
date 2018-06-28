@@ -742,6 +742,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:contour() then
 			self._unit:contour():remove("omnia_heal", false)
 			self._unit:contour():remove("medic_show", false)
+			self._unit:contour():remove("medic_buff", false)
 		end
 		if self._unit:base()._tweak_table == "swat_titan" then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)

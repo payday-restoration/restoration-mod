@@ -7,7 +7,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		cooldown = managers.crime_spree:modify_value("MedicDamage:CooldownTime", cooldown)
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" or my_tweak_table == "deathvox_medic" or my_tweak_table == "deathvox_medicdozer" then
+		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
 			cooldown = tweak_data.medic.cooldown
 		else
 			cooldown = 0.1
@@ -71,8 +71,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
 		
 		if Global.game_settings.difficulty == "sm_wish" then
+			
+			if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
 		
-			unit:base():add_buff("base_damage", 15 * 0.01)
+				unit:base():add_buff("base_damage", 15 * 0.01)
+				if unit:contour() then
+					unit:contour():add("medic_buff", false)
+				end	
+				
+			end
 		
 		end
 		

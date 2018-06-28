@@ -16,7 +16,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local trail = Idstring("effects/particles/weapons/weapon_trail")
 		
 		if weapon_tweak and weapon_tweak.sniper_trail then
-			trail = Idstring("effects/particles/weapons/sniper_trail")
+			trail = Idstring("effects/particles/weapons/sniper_trail_sc")
+		elseif weapon_tweak and weapon_tweak.titan_trail then
+			trail = Idstring("effects/particles/weapons/titan_trail_sc")
 		end
 		
 		self._trail_effect_table = {

@@ -12,5 +12,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fadeout = 300000,
 			color = Vector3(128, 0, 128)
 		}	
+	ContourExt._types.medic_buff = {
+			priority = 1,
+			material_swap_required = true,
+			fadeout = 300000,
+			color = Vector3(255, 140, 0)
+		}	
+		
 
 end

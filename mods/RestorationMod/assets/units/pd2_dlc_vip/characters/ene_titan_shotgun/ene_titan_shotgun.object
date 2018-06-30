@@ -16,7 +16,7 @@
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
-		<body name="body_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_plate" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="c_body_plate" collision_type="capsule" />
 		</body>
 

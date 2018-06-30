@@ -7,7 +7,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._tweak_data = tweak_data.projectiles[grenade_entry]
 		self._radius = self._tweak_data.radius or 300
 		self._radius_blurzone_multiplier = self._tweak_data.radius_blurzone_multiplier or 1.3
-		self._damage_per_tick = 0
+		self._damage_per_tick = 0.1
 		if difficulty_index <= 2 then
 			self._damage_tick_period = 0.55
 		elseif difficulty_index == 3 then
@@ -22,7 +22,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._damage_tick_period = 0.35
 		else
 			self._damage_tick_period = 0.3
-			self._damage_per_tick = 0.1
+			self._damage_per_tick = 0.2
 		end
 	end
 	

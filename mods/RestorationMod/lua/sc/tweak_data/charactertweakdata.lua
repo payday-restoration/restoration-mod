@@ -1653,7 +1653,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.can_be_tased = false
 	self.phalanx_minion.immune_to_knock_down = true
 	self.phalanx_minion.immune_to_concussion = true
-	self.phalanx_minion.damage.immune_to_knockback = false
+	self.phalanx_minion.damage.immune_to_knockback = true
 	self.phalanx_minion.spawn_sound_event = "l2d_prm"
 	self.phalanx_minion.die_sound_event = "mga_death_scream"
 	self.phalanx_minion.suppression = nil
@@ -11463,6 +11463,11 @@ function CharacterTweakData:_set_sm_wish()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.sniper.weapon.is_rifle.use_laser = false
+	
+	self.shield.damage.hurt_severity = self.presets.hurt_severities.no_hurts
+	self.shield.damage.explosion_damage_mul = 0.5
+	self.shield.immune_to_concussion = true
+	
 	self.security.no_arrest = true
 	self.gensec.no_arrest = true
 	self.bolivian_indoors.no_arrest = true

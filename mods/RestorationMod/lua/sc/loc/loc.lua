@@ -817,9 +817,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck4_5_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck4_7_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
+		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
+		["menu_deck4_5_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
+		["menu_deck4_7_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
 		
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
@@ -841,7 +841,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
-		["menu_deck3_1_desc_sc"] = "You gain an additional ##10%## more armor.",
+		["menu_deck3_1_desc_sc"] = "You gain ##10%## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.",
 		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",

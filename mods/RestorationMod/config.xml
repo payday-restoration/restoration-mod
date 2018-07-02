@@ -147,6 +147,7 @@
 		<hook file="sc/managers/snipergrazedamage.lua" source_file="lib/managers/player/snipergrazedamage"/>
 		<hook file="sc/units/equipment/doctorbagbase.lua" source_file="lib/units/equipment/doctor_bag/doctorbagbase"/>
 		<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
+		<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

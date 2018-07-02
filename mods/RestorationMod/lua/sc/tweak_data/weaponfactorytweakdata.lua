@@ -38279,7 +38279,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--MPX--
 	if self.wpn_fps_smg_mpx then
 
-		self.parts.wpn_fps_smg_mpx_fg_mpx_sd.stats = {
+		self.parts.wpn_fps_upg_mpx_barrel_sd.stats = {
 				value = 10,
 				spread_moving = 1,
 				suppression = 12,
@@ -38287,8 +38287,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				damage = 5,
 				concealment = 1
 			}
-		self.parts.wpn_fps_smg_mpx_mag_40.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
-		self.parts.wpn_fps_smg_mpx_mag_40.stats = {
+		self.parts.wpn_fps_smg_mpx_ammo_40sw.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
+		self.parts.wpn_fps_smg_mpx_ammo_40sw.stats = {
 				value = 1,
 				damage = 6,
 				recoil = -2,

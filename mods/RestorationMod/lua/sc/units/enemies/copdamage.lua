@@ -319,6 +319,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				weapon_unit = attack_data.weapon_unit,
 				variant = attack_data.variant
 			}
+			
+			if data.head_shot and data.name == "boom" then
+				self._unit:damage():run_sequence_simple("grenadier_glass_break")
+			end			
 
 			if managers.groupai:state():all_criminals()[attack_data.attacker_unit:key()] then
 				managers.statistics:killed_by_anyone(data)

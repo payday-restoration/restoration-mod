@@ -1,0 +1,21 @@
+<unit type="wpn" slot="13" >
+    <object file="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" />
+	<dependencies>
+		<depends_on effect="effects/particles/weapons/rifle/muzzleflash_3dp" />
+		<depends_on effect="effects/particles/weapons/sniper_trail" />
+		<depends_on bnk="soundbanks/weapon_g36"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NPCRaycastWeaponBase" >
+			<var name="name_id" value="m4_npc" />
+			<var name="_multivoice" value="true" />
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+	
+	<sounds>
+		<soundsource name="root" source="rp_wpn_npc_g36" />
+		<default_soundsource source="rp_wpn_npc_g36" />
+	</sounds>
+</unit>

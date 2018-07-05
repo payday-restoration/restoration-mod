@@ -10763,7 +10763,8 @@ function CharacterTweakData:_create_table_structure()
 		"m16_summer",
 		"mp5_cloak",
 		"s552_sc",
-		"r870_taser"
+		"r870_taser",
+		"oicw"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -10804,7 +10805,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"),
 		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),
-		Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc")
+		Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"),
+		Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw")
 	}
 end
 

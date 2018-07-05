@@ -174,6 +174,16 @@
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df"/>	
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_df"/>	
+	
+	<!--OICW-->
+	<object path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false" load="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_nm" force="false"/>	
 
 	<!--Headless Dozer-->
 	<object path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>

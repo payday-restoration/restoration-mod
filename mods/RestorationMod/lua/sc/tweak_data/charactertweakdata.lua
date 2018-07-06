@@ -10729,6 +10729,7 @@ function CharacterTweakData:_create_table_structure()
 		"c45",
 		"raging_bull",
 		"m4",
+		"m4_yellow",
 		"ak47",
 		"r870",
 		"mossberg",
@@ -10771,6 +10772,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_c45"),
 		Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull"),
 		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
+		Idstring("units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow"),
 		Idstring("units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47"),
 		Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
 		Idstring("units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun"),
@@ -10900,13 +10902,13 @@ function CharacterTweakData:_set_easy()
 	self.old_hoxton_mission.HEALTH_INIT = 25
 	self.spa_vip.HEALTH_INIT = 25
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[20] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")	
 end
 
 function CharacterTweakData:_set_normal()
@@ -10999,13 +11001,13 @@ function CharacterTweakData:_set_normal()
 	self.old_hoxton_mission.HEALTH_INIT = 50
 	self.spa_vip.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[20] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")	
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")	
 end
 
 function CharacterTweakData:_set_hard()
@@ -11098,13 +11100,13 @@ function CharacterTweakData:_set_hard()
 	self.old_hoxton_mission.HEALTH_INIT = 75
 	self.spa_vip.HEALTH_INIT = 75
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[12] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[20] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
 function CharacterTweakData:_set_overkill()
@@ -11197,11 +11199,11 @@ function CharacterTweakData:_set_overkill()
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
 function CharacterTweakData:_set_overkill_145()
@@ -11300,11 +11302,11 @@ function CharacterTweakData:_set_overkill_145()
 	self.spa_vip.HEALTH_INIT = 125
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 	self:_multiply_all_speeds(1, 1.05)
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
 function CharacterTweakData:_set_easy_wish()
@@ -11403,11 +11405,11 @@ function CharacterTweakData:_set_easy_wish()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
 function CharacterTweakData:_set_overkill_290()
@@ -11439,11 +11441,11 @@ function CharacterTweakData:_set_overkill_290()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
 function CharacterTweakData:_set_sm_wish()
@@ -11489,11 +11491,11 @@ function CharacterTweakData:_set_sm_wish()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 2
-	self.weap_unit_names[5] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[9] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
-	self.weap_unit_names[18] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[24] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[22] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 end
 
 function CharacterTweakData:is_special_unit(enemy_tweak)
@@ -11669,6 +11671,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_3",
 				"ene_bulldozer_4",
 				"ene_city_swat_1",
+				"ene_city_swat_1_sc",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
 				"ene_city_swat_heavy_1",
@@ -12008,7 +12011,8 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_2",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_heavy_shield",
-				"ene_zeal_swat_shield"
+				"ene_zeal_swat_shield",
+				"ene_zeal_tazer"
 			}
 		},
 		spa = {

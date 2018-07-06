@@ -600,6 +600,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sg417_npc.DAMAGE = 4.4
 		self.m4_boom_npc = deep_clone(self.m4_npc)
 	end
+	
+	function WeaponTweakData:_init_data_m4_yellow_npc()
+		self.m4_yellow_npc.categories = clone(self.new_m4.categories)
+		self.m4_yellow_npc.sounds.prefix = "m4_npc"
+		self.m4_yellow_npc.use_data.selection_index = 2
+		self.m4_yellow_npc.DAMAGE = 2.3
+		self.m4_yellow_npc.muzzleflash = "effects/payday2/particles/weapons/556_auto"
+		self.m4_yellow_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+		self.m4_yellow_npc.CLIP_AMMO_MAX = 30
+		self.m4_yellow_npc.NR_CLIPS_MAX = 5
+		self.m4_yellow_npc.auto.fire_rate = 0.086
+		self.m4_yellow_npc.hold = "rifle"
+		self.m4_yellow_npc.alert_size = 2800
+		self.m4_yellow_npc.suppression = 2.2
+		self.m4_yellow_npc.FIRE_MODE = "auto"
+	end
 
 	function WeaponTweakData:_init_data_ak47_npc()
 		self.ak47_npc.categories = {"assault_rifle"}

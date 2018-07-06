@@ -9,5 +9,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+	
+	function MenuCallbackHandler:SCEnabled()
+		if restoration and restoration.Options:GetValue("SC/SC") then
+			return true
+		else
+			return false
+		end
+	end	
 
 end

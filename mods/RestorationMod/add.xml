@@ -1317,4 +1317,23 @@
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />	
+	
+	<!--fuck u183 what a pile of shit-->
+	<object path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>
+	<cooked_physics path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>
+	<model path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>
+	<unit path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" load="true"/>
+	<material_config path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>
+	<material_config path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_contour"/>
+	<unit path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk" load="true"/>	
+	<!--textures-->
+	<texture path="units/payday2/characters/shared_textures/swat_city_df_sc" />	
+	<texture path="units/payday2/characters/shared_textures/helmets_city_df" />	
+	<!--ben and ump override since ovenkill forgot about them-->
+	<material_config path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3" force="true"/>
+	<material_config path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3_contour" force="true"/>
+	<model path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3" force="true"/>
+	<material_config path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>
+	<material_config path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2_contour" force="true"/>
+	<model path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>	
 </table>

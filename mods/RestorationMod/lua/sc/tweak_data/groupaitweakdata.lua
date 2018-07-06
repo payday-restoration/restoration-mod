@@ -1760,17 +1760,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_tazer = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
 							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
 							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
 							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-							Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
 							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
@@ -1872,7 +1872,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_all,
 					special_type = "taser"
 				}
-			else 
+			elseif difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 then
 				self.unit_categories.CS_tazer = {
 					unit_types = {
 						america = {
@@ -1904,6 +1904,38 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					access = access_type_all,
 					special_type = "taser"
 				}
+			else
+				self.unit_categories.CS_tazer = {
+					unit_types = {
+						america = {
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+						},
+						russia = {
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+							Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+						},
+						zombie = {
+							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+							Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+						},						
+						murky = {
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+							Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+							Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+						},
+						nypd = {
+							Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
+							Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
+							Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+						}							
+					},
+					access = access_type_all,
+					special_type = "taser"
+				}				
 			end
 		end
 		self.unit_categories.CS_shield = {
@@ -3263,9 +3295,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.FBI_swat_M4 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 							Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 							Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						},
@@ -3277,10 +3309,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						},
 						zombie = {
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						},						
 						murky = {
@@ -3291,9 +3323,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 							Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 							Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 						}						
@@ -3400,19 +3432,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.FBI_swat_M4 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1")
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass")
 						},
 						zombie = {
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1")
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
 						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1")							
+							Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")							
 						}				
 					},
 					access = access_type_all

@@ -26,6 +26,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if data.unit:contour() then
 			data.unit:contour():remove("omnia_heal", true)
+			data.unit:contour():remove("medic_buff", true)
 		end		
 		if aggressor_unit then
 			data.unit:character_damage():drop_pickup()

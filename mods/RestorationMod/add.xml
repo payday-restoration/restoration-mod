@@ -61,7 +61,6 @@
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
-	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/risk_murky" force="false"/>
 	
 	<!--Assets-->
@@ -1388,6 +1387,8 @@
 	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask" load="false"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask"/>
 	<!--textures fbi -->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_soldier_zeal_head_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_soldier_zeal_head_nm" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_nm" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_df" />	

@@ -52,6 +52,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
+		self.risk_sm_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc"
 		self.risk_murky.stages = {
 			"shoutout_raid",
 			"pbr",

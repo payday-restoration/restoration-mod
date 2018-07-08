@@ -23,7 +23,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.murky = murky
 		self.ai_groups.nypd = nypd
 		
-		--Murky test--
+		--Murky faction--
 		self.shoutout_raid.ai_group_type = murky
 		self.pbr.ai_group_type = murky
 		self.des.ai_group_type = murky 

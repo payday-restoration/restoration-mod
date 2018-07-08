@@ -40,7 +40,6 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_summers(presets)
 	self:_init_omnia_lpf(presets)
 	self:_init_tank_biker(presets)
-	self:_init_omnia(presets)
 	self:_process_weapon_usage_table()
 end
 
@@ -479,7 +478,11 @@ function CharacterTweakData:_init_swat(presets)
 	else
 		self.swat.steal_loot = true
 	end
-	self.swat.custom_voicework = "light"
+	if job == "mad" then 
+		self.swat.custom_voicework = nil
+	else
+		self.swat.custom_voicework = "light"
+	end			
 	table.insert(self._enemy_list, "swat")
 	
 	self.swat_titan = deep_clone(self.swat)
@@ -533,7 +536,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.static_weapon_preset = true
 	self.heavy_swat.static_dodge_preset = true
 	self.heavy_swat.static_melee_preset = true
-	self.heavy_swat.custom_voicework = "heavy"
+	if job == "mad" then 
+		self.heavy_swat.custom_voicework = nil
+	else
+		self.heavy_swat.custom_voicework = "heavy"
+	end	
 	table.insert(self._enemy_list, "heavy_swat")
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
 	self.heavy_swat_sniper.tags = {"law", "sniper", "special"}
@@ -686,7 +693,11 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.static_weapon_preset = true
 	self.fbi_swat.static_dodge_preset = true
 	self.fbi_swat.static_melee_preset = true
-	self.fbi_swat.custom_voicework = "light"
+	if job == "mad" then 
+		self.fbi_swat.custom_voicework = nil
+	else
+		self.fbi_swat.custom_voicework = "light"
+	end		
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
@@ -728,7 +739,11 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.static_weapon_preset = true
 	self.fbi_heavy_swat.static_dodge_preset = true
 	self.fbi_heavy_swat.static_melee_preset = true		
-	self.fbi_heavy_swat.custom_voicework = "heavy"
+	if job == "mad" then 
+		self.fbi_heavy_swat.custom_voicework = nil
+	else
+		self.fbi_heavy_swat.custom_voicework = "heavy"
+	end		
  	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -776,9 +791,19 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.calls_in = true
 	self.city_swat.static_weapon_preset = true
 	self.city_swat.static_dodge_preset = true
-	self.city_swat.static_melee_preset = true		
-	self.city_swat.custom_voicework = "light"
+	self.city_swat.static_melee_preset = true	
+	if job == "mad" then 
+		self.city_swat.custom_voicework = nil
+	else
+		self.city_swat.custom_voicework = "heavy"
+	end
  	table.insert(self._enemy_list, "city_swat")
+	
+	self.omnia = deep_clone(self.city_swat)	
+	self.omnia.dodge = presets.dodge.elite
+	self.omnia.move_speed = presets.move_speed.lightning
+	table.insert(self._enemy_list, "omnia")
+	
 	self.city_swat_titan = deep_clone(self.city_swat)
 	if job == "mad" then
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -818,50 +843,9 @@ function CharacterTweakData:_init_city_swat(presets)
 		end
 	}		
 	table.insert(self._enemy_list, "city_swat_titan")
+	
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
  	table.insert(self._enemy_list, "city_swat_titan_assault")
-end
-
-function CharacterTweakData:_init_omnia(presets)
-	self.omnia = deep_clone(presets.base)
-	self.omnia.tags = {"law"}
-	self.omnia.experience = {}
-	self.omnia.damage.hurt_severity = presets.hurt_severities.elite
-	self.omnia.weapon = deep_clone(presets.weapon.expert)
-	self.omnia.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
-	self.omnia.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
-	self.omnia.detection = presets.detection.normal
-	self.omnia.HEALTH_INIT = 15
-	self.omnia.headshot_dmg_mul = 1.46
-	self.omnia.move_speed = presets.move_speed.very_fast
-	self.omnia.surrender_break_time = {6, 10}
-	self.omnia.suppression = presets.suppression.hard_def
-	self.omnia.surrender = presets.surrender.hard
-	self.omnia.no_arrest = false
-	self.omnia.ecm_vulnerability = 1
-	self.omnia.ecm_hurts = {
-		ears = {min_duration = 8, max_duration = 10}
-	}
-	self.omnia.weapon_voice = "2"
-	self.omnia.experience.cable_tie = "tie_swat"
-	self.omnia.silent_priority_shout = "f37"
-	self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.omnia.speech_prefix_p2 = self._speech_prefix_p2
-	self.omnia.speech_prefix_count = 4
-	self.omnia.access = "swat"
-	self.omnia.dodge = presets.dodge.athletic_overkill
-	self.omnia.chatter = presets.enemy_chatter.swat
-	self.omnia.melee_weapon = nil
-	self.omnia.melee_weapon_dmg_multiplier = 2.5
-	if job == "chill_combat" then
-		self.omnia.steal_loot = nil
-	else
-		self.omnia.steal_loot = true
-	end
-	self.omnia.has_alarm_pager = true
-	self.omnia.calls_in = true
-	self.omnia.use_animation_on_fire_damage = false
- 	table.insert(self._enemy_list, "omnia")
 end
 
 function CharacterTweakData:_init_sniper(presets)
@@ -1865,7 +1849,11 @@ function CharacterTweakData:_init_taser(presets)
 			special_comment = "x01"
 		}
 	}
-	self.taser.custom_voicework = "taser"
+	if job == "mad" then 
+		self.taser.custom_voicework = nil
+	else
+		self.taser.custom_voicework = "taser"
+	end		
 	self.taser.is_special = true
  	table.insert(self._enemy_list, "taser")
 	
@@ -10826,6 +10814,7 @@ function CharacterTweakData:_set_easy()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -10925,6 +10914,7 @@ function CharacterTweakData:_set_normal()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -11024,6 +11014,7 @@ function CharacterTweakData:_set_hard()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
+	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -11123,6 +11114,7 @@ function CharacterTweakData:_set_overkill()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 	self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -11224,6 +11216,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 	self:_set_characters_dodge_preset("athletic_overkill")
 	self:_set_characters_melee_preset("2.1", "2")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -11397,6 +11390,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
+	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 150
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35

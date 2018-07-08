@@ -27,6 +27,7 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.swat_titan = security_variant
 	CopBrain._logic_variants.city_swat_titan = security_variant
 	CopBrain._logic_variants.city_swat_titan_assault = security_variant
+	CopBrain._logic_variants.omnia = security_variant
 	CopBrain._logic_variants.boom = security_variant
 	CopBrain._logic_variants.boom_summers = security_variant
 	CopBrain._logic_variants.taser_summers = clone(security_variant)

@@ -49,6 +49,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
+	CopMovement._action_variants.omnia = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.rboom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
@@ -298,6 +299,7 @@ function CopMovement:do_aoe_heal(self)
 				"fbi_swat",
 				"fbi_heavy_swat",
 				"city_swat",
+				"omnia",
 				"city_swat_titan",
 				"city_swat_titan_assault",
 				"sniper",

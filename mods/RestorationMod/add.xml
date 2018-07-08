@@ -61,6 +61,7 @@
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/risk_murky" force="false"/>
 	
 	<!--Assets-->
@@ -314,7 +315,7 @@
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
 	
-    <!--Titan Taser-->	
+        <!--Titan Taser-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
 	<object path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
@@ -958,7 +959,7 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk" force="false" load="true"/>	
 	
-    <!--murky fbi heavy m4-->
+        <!--murky fbi heavy m4-->
 	<object path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4" force="false"/>
@@ -974,9 +975,9 @@
 	<!--murky fbi heavy texture-->    
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/murky_heavy_df" force="false"/>	
 	
-    <!--murky glass-->
-    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
-    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
+        <!--murky glass-->
+        <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+        <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
 	
 	<!--Keeping those helmets flying again and again and again;)-->	
 	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
@@ -986,7 +987,7 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" load="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>	
 	
-    <!--murky city m4 -->
+        <!--murky city m4 -->
 	<object path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
@@ -1111,7 +1112,7 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_husk" load="true"/>
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/spook_heavy_df"/>				
 
-    <!--murky medics-->	
+        <!--murky medics-->	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" load="true"/>	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_husk" load="true"/>	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870" load="true"/>	
@@ -1188,7 +1189,7 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper_husk" force="false" load="true"/>		
 
-    <!--Titan Sniper-->	
+        <!--Titan Sniper-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
 	<object path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
@@ -1202,8 +1203,8 @@
 	<!--nypd dozer stuff-->	
 	<!--green-->
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"/>
-    <object path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"/>
-    <model path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"/>
+        <object path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"/>
+        <model path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"load="true"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1_husk"load="true"/>
 	<sequence_manager path="units/pd2_mod_nypd/characters/ene_bulldozer_1" force="false"/>
@@ -1239,7 +1240,7 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_contour"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk" load="true"/>
 	
-    <!--NYPD heavy r870-->	
+        <!--NYPD heavy r870-->	
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870" load="true"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk" load="true"/>
 	
@@ -1394,7 +1395,7 @@
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_nm" />	
 	<!--zeal heavy m4-->
-    <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+        <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" load="true"/>

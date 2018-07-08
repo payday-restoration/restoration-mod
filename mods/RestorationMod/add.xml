@@ -862,6 +862,7 @@
 	
 	<!--murky swat textures-->
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/murky_swat_df" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_soldier_murky_head_df" force="false"/>
 
 	<!--murky swat r870-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870" force="false" load="true"/>

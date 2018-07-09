@@ -289,7 +289,7 @@ function CopMovement:do_aoe_heal(self)
 	if self._aoe_heal_cooldown > t then
 		return
 	else
-		self._aoe_heal_cooldown = t + 0.2
+		self._aoe_heal_cooldown = t + 0.4
 	end
 	if self and self._unit then
 		if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then

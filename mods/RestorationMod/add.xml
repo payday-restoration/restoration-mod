@@ -572,9 +572,9 @@
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
 	<unit path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>
 	
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_nm" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_nm" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false" load="true"/>	
 	
 	<!--Omnia Buff Effect-->
 	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>

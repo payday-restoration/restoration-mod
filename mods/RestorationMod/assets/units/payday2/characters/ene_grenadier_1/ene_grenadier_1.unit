@@ -5,6 +5,7 @@
 
 	<dependencies>
 		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
+		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 	</dependencies>

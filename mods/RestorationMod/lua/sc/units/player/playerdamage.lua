@@ -333,7 +333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local player_unit = managers.player:player_unit()
 		if attack_data then
 			if alive(attack_data.attacker_unit) then
-				if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time then
+				if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
 					if alive(player_unit) then
 						player_unit:movement():on_non_lethal_electrocution()
 						managers.player:set_player_state("tased")

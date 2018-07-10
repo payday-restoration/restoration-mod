@@ -103,6 +103,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
 		self.corgi_crew.DAMAGE = 2
+		
+		self.scar_npc.titan_trail = false
 	end
 
 	function WeaponTweakData:_set_hard()
@@ -157,6 +159,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
 		self.corgi_crew.DAMAGE = 2
+		
+		self.scar_npc.titan_trail = false
 	end
 
 	function WeaponTweakData:_set_overkill()
@@ -413,7 +417,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.aa_turret_module.HEALTH_INIT = 1850
 		self.aa_turret_module.BAG_DMG_MUL = 11.4375
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350			
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
+		
+		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 3
+		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 3
+		self.ceiling_turret_module_no_idle.AUTO_REPAIR_MAX_COUNT = 3
+		self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = 3
+
+		--Sniper Trail for Snipers
+		self.m14_sniper_npc.sniper_trail = true
 	end
 
 	function WeaponTweakData:_init_data_npc_melee()
@@ -587,6 +599,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sg417_npc.CLIP_AMMO_MAX = 20
 		self.sg417_npc.DAMAGE = 4.4
 		self.m4_boom_npc = deep_clone(self.m4_npc)
+	end
+	
+	function WeaponTweakData:_init_data_m4_yellow_npc()
+		self.m4_yellow_npc.categories = clone(self.new_m4.categories)
+		self.m4_yellow_npc.sounds.prefix = "m4_npc"
+		self.m4_yellow_npc.use_data.selection_index = 2
+		self.m4_yellow_npc.DAMAGE = 2.3
+		self.m4_yellow_npc.muzzleflash = "effects/payday2/particles/weapons/556_auto"
+		self.m4_yellow_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+		self.m4_yellow_npc.CLIP_AMMO_MAX = 30
+		self.m4_yellow_npc.NR_CLIPS_MAX = 5
+		self.m4_yellow_npc.auto.fire_rate = 0.086
+		self.m4_yellow_npc.hold = "rifle"
+		self.m4_yellow_npc.alert_size = 2800
+		self.m4_yellow_npc.suppression = 2.2
+		self.m4_yellow_npc.FIRE_MODE = "auto"
 	end
 
 	function WeaponTweakData:_init_data_ak47_npc()
@@ -1042,6 +1070,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.alert_size = 3400
 		self.scar_npc.suppression = 2.8
 		self.scar_npc.FIRE_MODE = "auto"
+		self.scar_npc.titan_trail = true
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
 		self.asval_smg_npc = deep_clone(self.scar_npc)

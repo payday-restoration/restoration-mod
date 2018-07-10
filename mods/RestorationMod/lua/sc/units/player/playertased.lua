@@ -8,7 +8,7 @@ function PlayerTased:enter(state_data, enter_data)
 	self:_start_action_tased(managers.player:player_timer():time(), state_data.non_lethal_electrocution)
 	if state_data.non_lethal_electrocution then
 		state_data.non_lethal_electrocution = nil
-		local recover_time = Application:time() + tweak_data.player.damage.TASED_TIME * managers.player:upgrade_value("player", "electrocution_resistance_multiplier", 1)
+		local recover_time = Application:time() + tweak_data.player.damage.STUN_TIME * managers.player:upgrade_value("player", "electrocution_resistance_multiplier", 1)
 		self._recover_delayed_clbk = "PlayerTased_recover_delayed_clbk"
 		managers.enemy:add_delayed_clbk(self._recover_delayed_clbk, callback(self, self, "clbk_exit_to_std"), recover_time)
 	else

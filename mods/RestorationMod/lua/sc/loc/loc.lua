@@ -294,12 +294,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_enemy_health_damage"] = "Enemies deal an additional 15% more damage.",
 		["menu_cs_modifier_health_damage_total"] = "",
 		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 10% chance to become a Skulldozer.",
-		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 10% chance to become a squad leader.",
+		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 10% chance to become an elite UMP unit.",
 		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 10% chance to become a Titan Shotgunner.",
-		["menu_cs_modifier_dozer_medic"] = "All HRT units have an additional 10% chance to become an OMNIA LPF.",
+		["menu_cs_modifier_dozer_medic"] = "All Veteran Agent units have an additional 10% chance to become a Veteran Cop.",
 		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 10% chance to become a Titan Bulldozer.",
 		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 10% chance to become a Titan Shield.",
 		["menu_cs_modifier_concealment"] = "Suspicion buildup is increased by 10%.",
+		["menu_cs_modifier_cloaker_smoke"] = "Cloakers will drop a smokebomb when they kick a player.",
+		["menu_cs_modifier_taser_overcharge"] = "All Taser units have an additional 10% chance to become a Titan Taser.",
+		["menu_cs_modifier_dozer_rage"] = "When a Bulldozer's faceplate is destroyed, the Bulldozer enters a berserker rage, receiving a 10% increase to their base damage resistance.",
+		["menu_cs_modifier_medic_adrenaline"] = "All Medic units have an additional 10% chance to become an Omnia LPF.",	
+		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
+		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 10% chance to become a Titan Cloaker.",
+		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 10% chance to become a Titan HRT.",
 		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",
@@ -496,7 +503,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\n##Note: Titanshields can only be knocked down by melee strikes.##",																																																																																																																																																																																																
 		
 
 			--}
@@ -810,9 +817,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck4_5_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck4_7_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
+		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
+		["menu_deck4_5_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
+		["menu_deck4_7_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
 		
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
@@ -834,7 +841,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
-		["menu_deck3_1_desc_sc"] = "You gain an additional ##10%## more armor.",
+		["menu_deck3_1_desc_sc"] = "You gain ##10%## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.",
 		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",

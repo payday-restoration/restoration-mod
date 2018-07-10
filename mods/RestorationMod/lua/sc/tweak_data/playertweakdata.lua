@@ -107,6 +107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				0
 			}
 		}
+		self.damage.TASED_TIME = 5
 	end
 
 	function PlayerTweakData:_set_singleplayer()
@@ -152,6 +153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.damage.BLEED_OT_TIME = 40
 		self.damage.TASED_TIME = 10
+		self.damage.STUN_TIME = 10
 		self.damage.TASED_RECOVER_TIME = 1
 		self.damage.BLEED_OUT_HEALTH_INIT = 23
 		self.damage.DOWNED_TIME = 30

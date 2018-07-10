@@ -407,7 +407,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 	self.omnia_lpf.detection = presets.detection.normal
 	self.omnia_lpf.HEALTH_INIT = 30
-	self.omnia_lpf.headshot_dmg_mul = 2.2
+	self.omnia_lpf.headshot_dmg_mul = 1.25
 	self.omnia_lpf.move_speed = presets.move_speed.very_fast
 	self.omnia_lpf.surrender_break_time = {7, 12}
 	self.omnia_lpf.suppression = nil
@@ -1892,6 +1892,7 @@ function CharacterTweakData:_init_taser(presets)
  	table.insert(self._enemy_list, "taser_summers")
 	
 	self.taser_titan = deep_clone(self.taser)
+	self.taser_titan.headshot_dmg_mul = 1.25
 	self.taser_titan.priority_shout = "f45"
 	self.taser_titan.bot_priority_shout = "f45x_any"	
 	self.taser_titan.damage.hurt_severity = presets.hurt_severities.no_hurts

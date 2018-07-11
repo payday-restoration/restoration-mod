@@ -11,7 +11,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if play_action and not criminal:movement():chk_action_forbidden("action") then
 			local new_action = {
 				type = "act",
-				variant = "arrest",
+				variant = "cmd_point",
 				body_part = 3,
 				align_sync = true
 			}

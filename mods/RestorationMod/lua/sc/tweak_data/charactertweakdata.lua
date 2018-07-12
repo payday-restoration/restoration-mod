@@ -454,7 +454,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.detection = presets.detection.normal
 	self.swat.HEALTH_INIT = 8
 	self.swat.headshot_dmg_mul = 4.5
-	self.swat.move_speed = presets.move_speed.fast
+	self.swat.move_speed = presets.move_speed.very_fast
 	self.swat.surrender_break_time = {6, 10}
 	self.swat.suppression = presets.suppression.hard_agg
 	self.swat.surrender = presets.surrender.hard
@@ -818,7 +818,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.headshot_dmg_mul = 2.19
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
 	self.city_swat_titan.use_animation_on_fire_damage = false
-	self.city_swat_titan.move_speed = presets.move_speed.lightning
+	self.city_swat_titan.move_speed = presets.move_speed.very_fast
 	self.city_swat_titan.dodge = presets.dodge.elite
 	self.city_swat_titan.surrender = nil
 	self.city_swat_titan.unintimidateable = true
@@ -893,7 +893,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.detection = presets.detection.normal
 	self.gangster.HEALTH_INIT = 4
 	self.gangster.headshot_dmg_mul = 2.3
-	self.gangster.move_speed = presets.move_speed.fast
+	self.gangster.move_speed = presets.move_speed.normal
 	self.gangster.suspicious = nil
 	self.gangster.suppression = presets.suppression.easy
 	self.gangster.surrender = nil
@@ -1250,7 +1250,7 @@ function CharacterTweakData:_init_bolivians(presets)
 	self.bolivian_indoors.detection = presets.detection.guard
 	self.bolivian_indoors.HEALTH_INIT = 6
 	self.bolivian_indoors.headshot_dmg_mul = 3.4
-	self.bolivian_indoors.move_speed = presets.move_speed.normal
+	self.bolivian_indoors.move_speed = presets.move_speed.very_fast
 	self.bolivian_indoors.ecm_vulnerability = 1
 	self.bolivian_indoors.no_arrest = false
 	self.bolivian_indoors.ecm_hurts = {
@@ -1906,7 +1906,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.dodge = presets.dodge.elite
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
-	self.taser_titan.move_speed = presets.move_speed.lightning
+	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.melee_weapon = "buzzer_summer"
 	table.insert(self._enemy_list, "taser_titan")
 end
@@ -10182,65 +10182,6 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			}
 		},
-		veteran = {
-			stand = {
-				walk = {
-					ntl = {
-						fwd = 150,
-						strafe = 120,
-						bwd = 110
-					},
-					hos = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					},
-					cbt = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					}
-				},
-				run = {
-					hos = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					},
-					cbt = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					}
-				}
-			},
-			crouch = {
-				walk = {
-					hos = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					},
-					cbt = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					}
-				},
-				run = {
-					hos = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					},
-					cbt = {
-						fwd = 800,
-						strafe = 800,
-						bwd = 800
-					}
-				}
-			}
-		},
 		very_slow = {
 			stand = {
 				walk = {
@@ -11482,7 +11423,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
-	self:_multiply_all_speeds(1.05, 1.05)
+	self:_multiply_all_speeds(1, 1.05)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 200

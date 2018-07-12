@@ -123,7 +123,7 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.ignore_suppression_flinch = {true}
     	self.values.player.health_revive_max = {true}
     	self.values.player.yakuza_berserker = {true}
-		self.values.player.electrocution_resistance_multiplier = {0.5}
+		self.values.player.electrocution_resistance_multiplier = {0.2}
 	--Bot boost stuff stuff--
 	if Global.game_settings and Global.game_settings.single_player then
 		self.values.team.crew_add_health = {2}

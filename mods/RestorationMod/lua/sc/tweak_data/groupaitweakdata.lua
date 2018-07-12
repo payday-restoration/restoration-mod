@@ -241,12 +241,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}				
 		else
 			self.special_unit_spawn_limits = {
-				tank = 4,
-				taser = 5,
-				boom = 3,
+				tank = 3,
+				taser = 4,
+				boom = 2,
 				spooc = 4,
-				shield = 6,
-				medic = 4,
+				shield = 5,
+				medic = 3,
 				spring = 1,
 				summers = 1
 			}

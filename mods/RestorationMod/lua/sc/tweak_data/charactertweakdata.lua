@@ -12108,6 +12108,8 @@ function CharacterTweakData:character_map()
 				"ene_murky_fbi_tank_saiga",
 				"ene_murky_fbi_tank_r870",
 				"ene_murky_spook",
+				"ene_murky_veteran_1",
+				"ene_grenadier_1",
 				"ene_murky_tazer"
 			}
 		},

@@ -110,10 +110,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		
-		--More fitting descriptions of difficulties--
-		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
-
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		
 		--We assets now--
@@ -241,6 +237,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "145+",
 		["menu_one_down"] = "145+",
+		
+		--More fitting descriptions of difficulties--
+		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
+		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
 	
 		--Woo Hints--
 		["loading_gameplay_101"] = "Flashbangs make an audible noise when deployed. They cannot be destroyed by gunfire or melee weapons, so it's best to simply look away.",

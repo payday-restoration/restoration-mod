@@ -1112,9 +1112,20 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_husk" load="true"/>
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/spook_heavy_df"/>				
 
-        <!--murky medics-->	
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" load="true"/>	
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_husk" load="true"/>	
+    <!--murky medics-->	
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_husk" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<model path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_contour" force="false" />
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/murky_heavy_df" force="false" />
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_df" force="false" />
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_nm" force="false" />
+	<!--r870-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870" load="true"/>	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870_husk" load="true"/>		
 

@@ -149,11 +149,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						speed = {25, "add"}
 					}
 				},
-				--10% more Skulldozers
+				--30% chance for Semi-auto Dozers
 				{
 					id = "dozer_lmg",
 					class = "ModifierSkulldozers",
-					icon = "crime_spree_dozer_lmg",
+					icon = "crime_spree_more_dozers",
 					data = {}
 				},
 				--More Omnia LPFs

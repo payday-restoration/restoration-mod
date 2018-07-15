@@ -110,11 +110,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		
-		--More fitting descriptions of difficulties--
-		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
-		["menu_difficulty_sm_wish"] = "DEATH SENTENCE",
-
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		
 		--We assets now--
@@ -242,6 +237,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "145+",
 		["menu_one_down"] = "145+",
+		
+		--More fitting descriptions of difficulties--
+		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
+		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
 	
 		--Woo Hints--
 		["loading_gameplay_101"] = "Flashbangs make an audible noise when deployed. They cannot be destroyed by gunfire or melee weapons, so it's best to simply look away.",
@@ -307,6 +306,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
 		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 10% chance to become a Titan Cloaker.",
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 10% chance to become a Titan HRT.",
+		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer.",
 		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",

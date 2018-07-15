@@ -133,15 +133,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	function SawHit:on_collision(col_ray, weapon_unit, user_unit, damage)
 		local hit_unit = col_ray.unit
 		if hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank") then
-			damage = 100
+			damage = damage * 2
 		elseif hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank_hw") then
-			damage = 100
+			damage = damage * 2
 		elseif hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank_medic") then
-			damage = 100
+			damage = damage * 2
 		elseif hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank_titan") then
-			damage = 100
+			damage = damage * 2
+		elseif hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank_titan_assault") then
+			damage = damage * 2			
 		elseif hit_unit and hit_unit:base() and hit_unit:base()._tweak_table and (hit_unit:base()._tweak_table == "tank_mini") then
-			damage = 100
+			damage = damage * 2
 		end
 		local result = InstantBulletBase.on_collision(self, col_ray, weapon_unit, user_unit, damage)
 		if hit_unit:damage() and col_ray.body:extension() and col_ray.body:extension().damage then

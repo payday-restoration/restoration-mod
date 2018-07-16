@@ -103,8 +103,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
 		self.corgi_crew.DAMAGE = 2
-		
-		self.scar_npc.titan_trail = false
 	end
 
 	function WeaponTweakData:_set_hard()
@@ -159,8 +157,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_crew.DAMAGE = 1.6
 		self.mg42_crew.DAMAGE = 2.08
 		self.corgi_crew.DAMAGE = 2
-		
-		self.scar_npc.titan_trail = false
 	end
 
 	function WeaponTweakData:_set_overkill()

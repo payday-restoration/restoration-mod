@@ -88,15 +88,15 @@ end
 function CharacterTweakData:_init_region_murky()
 	self._default_chatter = "dispatch_generic_message"
 	self._unit_prefixes = {
-		cop = "l",
-		swat = "l",
-		heavy_swat = "l",
+		cop = "ict",
+		swat = "rt",
+		heavy_swat = "bik",
 		taser = "tsr",
 		cloaker = "clk",
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
-	self._speech_prefix_p2 = "d"
+	self._speech_prefix_p2 = nil
 end
 
 function CharacterTweakData:_init_region_nypd()
@@ -464,8 +464,8 @@ function CharacterTweakData:_init_swat(presets)
 	}
 	self.swat.weapon_voice = "2"
 	self.swat.experience.cable_tie = "tie_swat"
-	self.swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.swat.speech_prefix_p2 = self._speech_prefix_p2
+	self.swat.speech_prefix_p1 = self._prefix_data_p1.cop()
+	self.swat.speech_prefix_p2 = "n"
 	self.swat.speech_prefix_count = 4
 	self.swat.access = "swat"
 	self.swat.dodge = presets.dodge.athletic
@@ -10871,7 +10871,6 @@ function CharacterTweakData:_set_easy()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
@@ -10973,7 +10972,6 @@ function CharacterTweakData:_set_normal()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
@@ -11075,7 +11073,6 @@ function CharacterTweakData:_set_hard()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")

@@ -723,10 +723,10 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.revived_health_regain = {1.4}
 				
 				--Swan Song
-				self.values.temporary.berserker_damage_multiplier = { {1, 5}, {1, 10} }
+				self.values.temporary.berserker_damage_multiplier = { {1, 3}, {1, 9} }
 
 				--Undying
-				self.values.player.cheat_death_chance = {0.25, 0.5}
+				self.values.player.cheat_death_chance = {0.2, 0.45}
 				
 				--Messiah
 				self.values.player.messiah_revive_from_bleed_out = {1, 3}

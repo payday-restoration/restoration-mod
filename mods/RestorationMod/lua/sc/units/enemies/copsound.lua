@@ -8,7 +8,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local r = LevelsTweakData.LevelType.Russia
 		local m = LevelsTweakData.LevelType.Murky
 		local z = LevelsTweakData.LevelType.Zombie
-		local ai_type = tweak_data.levels:get_ai_group_type()
+		local ai_type = a
 
 		self:set_voice_prefix(nil)
 

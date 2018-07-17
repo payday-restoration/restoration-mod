@@ -6,6 +6,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 	</dependencies>
 
 	<extensions>

@@ -72,7 +72,7 @@ function CharacterTweakData:_init_region_russia()
 end
 
 function CharacterTweakData:_init_region_zombie()
-	self._default_chatter = "dsp_radio_russian"
+	self._default_chatter = "dsp_radio_zombie"
 	self._unit_prefixes = {
 		cop = "z",
 		swat = "z",
@@ -86,11 +86,11 @@ function CharacterTweakData:_init_region_zombie()
 end
 
 function CharacterTweakData:_init_region_murky()
-	self._default_chatter = "dispatch_generic_message"
+	self._default_chatter = "dsp_radio_russian"
 	self._unit_prefixes = {
-		cop = "ict",
+		cop = "rt",
 		swat = "rt",
-		heavy_swat = "bik",
+		heavy_swat = "rt",
 		taser = "tsr",
 		cloaker = "clk",
 		bulldozer = "bdz",
@@ -697,7 +697,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 		self.fbi_swat.custom_voicework = nil
 	else
 		self.fbi_swat.custom_voicework = "light"
-	end		
+	end
 	table.insert(self._enemy_list, "fbi_swat")
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
 	self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
@@ -745,6 +745,19 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 		self.fbi_heavy_swat.custom_voicework = "heavy"
 	end		
  	table.insert(self._enemy_list, "fbi_heavy_swat")
+	
+	self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
+	if job == "mad" then
+		self.omnia_heavy.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.omnia_heavy.speech_prefix_p2 = self._speech_prefix_p2
+		self.omnia_heavy.speech_prefix_count = 4
+	else
+		self.omnia_heavy.speech_prefix_p1 = "l5d"
+		self.omnia_heavy.speech_prefix_p2 = nil
+		self.omnia_heavy.speech_prefix_count = nil
+	end	
+	self.omnia_heavy.custom_voicework = nil
+	table.insert(self._enemy_list, "omnia_heavy")		
 end
 
 function CharacterTweakData:_init_city_swat(presets)
@@ -800,8 +813,18 @@ function CharacterTweakData:_init_city_swat(presets)
  	table.insert(self._enemy_list, "city_swat")
 	
 	self.omnia = deep_clone(self.city_swat)	
+	if job == "mad" then
+		self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.omnia.speech_prefix_p2 = self._speech_prefix_p2
+		self.omnia.speech_prefix_count = 4
+	else
+		self.omnia.speech_prefix_p1 = "l5d"
+		self.omnia.speech_prefix_p2 = nil
+		self.omnia.speech_prefix_count = nil
+	end	
 	self.omnia.dodge = presets.dodge.elite
 	self.omnia.move_speed = presets.move_speed.lightning
+	self.omnia.custom_voicework = nil
 	table.insert(self._enemy_list, "omnia")
 	
 	self.city_swat_titan = deep_clone(self.city_swat)
@@ -1745,7 +1768,6 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.HEALTH_SUICIDE_LIMIT = 0.25
 	self.summers.flammable = false
 	self.summers.allowed_stances = {cbt = true}
-	self.summers.allowed_poses = {stand = true}	
 	self.summers.use_animation_on_fire_damage = false
 	self.summers.damage.bullet_damage_mul = 0.65
 	self.summers.damage.explosion_damage_mul = 0.1
@@ -1755,8 +1777,8 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.bag_dmg_mul = 6
 	self.summers.move_speed = presets.move_speed.fast
 	self.summers.crouch_move = false
-	self.summers.no_run_start = true
-	self.summers.no_run_stop = true
+	self.summers.no_run_start = false
+	self.summers.no_run_stop = false
 	self.summers.no_retreat = true
 	self.summers.no_arrest = true
 	self.summers.ends_assault_on_death = true
@@ -10873,7 +10895,6 @@ function CharacterTweakData:_set_easy()
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
 	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
@@ -10974,7 +10995,6 @@ function CharacterTweakData:_set_normal()
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
 	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")	
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -11075,7 +11095,6 @@ function CharacterTweakData:_set_hard()
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-	self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
 	self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -11418,6 +11437,9 @@ function CharacterTweakData:_set_overkill_290()
 	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
+	self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
+	self.omnia_heavy.melee_weapon_dmg_multiplier = 2
+	self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
@@ -11472,6 +11494,11 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
+	
+	self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
+	self.omnia_heavy.melee_weapon_dmg_multiplier = 2
+	self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
+	
 	self:_multiply_all_speeds(1, 1.05)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3

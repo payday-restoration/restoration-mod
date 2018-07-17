@@ -233,7 +233,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif data.unit:base()._tweak_table == "city_swat_titan_assault" then
 					data.unit:sound():say("lk3a", true)					
 				elseif data.unit:base()._tweak_table == "omnia_lpf" then
-					data.unit:sound():say("lk3a", true)					
+					data.unit:sound():say("lk3a", true)	
+				elseif data.unit:base()._tweak_table == "omnia" then
+					data.unit:sound():say("lk3a", true)	
+				elseif data.unit:base()._tweak_table == "omnia_heavy" then
+					data.unit:sound():say("lk3a", true)							
 				else
 					data.unit:sound():say("c01", true)
 				end

@@ -2,6 +2,11 @@
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
 	<object file="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" />
+	<dependencies>
+		
+		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
+	</dependencies>	
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />

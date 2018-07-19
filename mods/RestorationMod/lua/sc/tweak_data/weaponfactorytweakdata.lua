@@ -17111,7 +17111,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				armor_piercing_add = 1,
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
-					dot_damage = "0.1",
+					dot_damage = "0.25",
 					dot_trigger_max_distance = "99999999",
 					dot_trigger_chance = "50",
 					dot_length = "5",
@@ -37270,7 +37270,161 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_lmg_shuno_npc = deep_clone(self.wpn_fps_lmg_shuno)
 		self.wpn_fps_lmg_shuno_npc.unit = "units/pd2_dlc_dmg/weapons/wpn_fps_lmg_shuno/wpn_fps_lmg_shuno_npc"
 	end
-				
+	
+	function WeaponFactoryTweakData:_init_system()
+		self.parts.wpn_fps_fla_system_b_standard = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_system_body_standard",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_b_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_fla_system_b_wtf = {
+			texture_bundle_folder = "sft",
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_system_b_wtf",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_b_wtf",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				concealment = 1,
+				value = 1
+			}
+		}
+		self.parts.wpn_fps_fla_system_body_standard = {
+			a_obj = "a_body",
+			type = "lower_reciever",
+			name_id = "bm_wp_system_body_standard",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_body_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_fla_system_body_upper = {
+			a_obj = "a_body",
+			type = "upper_reciever",
+			name_id = "bm_wp_system_body_standard",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_body_upper",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_fla_system_dh_standard = {
+			a_obj = "a_dh",
+			type = "drag_handle",
+			name_id = "bm_wp_system_body_standard",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_dh_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_fla_system_m_high = {
+			texture_bundle_folder = "sft",
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_system_m_high",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_m_high",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 10,
+				total_ammo_mod = -33,
+				extra_ammo = -5,
+				spread = 1,
+				recoil = -1,
+				suppression = -1,
+				alert_size = -1,
+				damage = 3
+			},
+			custom_stats = {
+				flame_max_range_set = 1200,
+				damage_near_mul = 100,
+				damage_far_mul = 200,
+				ammo_pickup_min_mul = 0.667, 
+				ammo_pickup_max_mul = 0.667		
+			}			
+		}
+		self.parts.wpn_fps_fla_system_m_low = {
+			texture_bundle_folder = "sft",
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_system_m_low",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_m_low",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				value = 10,
+				total_ammo_mod = 25,
+				extra_ammo = 5,
+				spread = -1,
+				suppression = 1,
+				alert_size = 1,
+				recoil = 1,
+				damage = -4
+			},
+			custom_stats = {
+				flame_max_range_set = 800,
+				damage_near_mul = -100,
+				damage_far_mul = -200,
+				ammo_pickup_min_mul = 1.25, 
+				ammo_pickup_max_mul = 1.25		
+			}			
+		}
+		self.parts.wpn_fps_fla_system_m_standard = {
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_system_body_standard",
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_m_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_fla_system_b_standard.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_b_standard"
+		self.parts.wpn_fps_fla_system_b_wtf.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_b_wtf"
+		self.parts.wpn_fps_fla_system_body_standard.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_body_standard"
+		self.parts.wpn_fps_fla_system_body_upper.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_body_upper"
+		self.parts.wpn_fps_fla_system_dh_standard.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_dh_standard"
+		self.parts.wpn_fps_fla_system_m_high.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_m_high"
+		self.parts.wpn_fps_fla_system_m_low.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_m_low"
+		self.parts.wpn_fps_fla_system_m_standard.third_unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_third_fla_system_m_standard"
+		self.wpn_fps_fla_system = {
+			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system/wpn_fps_fla_system",
+			animations = {
+				reload_not_empty = "reload",
+				reload = "reload"
+			},
+			default_blueprint = {
+				"wpn_fps_fla_system_b_standard",
+				"wpn_fps_fla_system_body_standard",
+				"wpn_fps_fla_system_body_upper",
+				"wpn_fps_fla_system_dh_standard",
+				"wpn_fps_fla_system_m_standard"
+			},
+			uses_parts = {
+				"wpn_fps_fla_system_b_standard",
+				"wpn_fps_fla_system_b_wtf",
+				"wpn_fps_fla_system_body_standard",
+				"wpn_fps_fla_system_body_upper",
+				"wpn_fps_fla_system_dh_standard",
+				"wpn_fps_fla_system_m_high",
+				"wpn_fps_fla_system_m_low",
+				"wpn_fps_fla_system_m_standard",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_fl_ass_utg"
+			}
+		}
+		self.wpn_fps_fla_system_npc = deep_clone(self.wpn_fps_fla_system)
+		self.wpn_fps_fla_system_npc.unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system/wpn_fps_fla_system_npc"
+	end
+					
 	Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 		--Vlad's Rodina--
 		self.parts.wpn_fps_upg_vlad_rodina_legend = {

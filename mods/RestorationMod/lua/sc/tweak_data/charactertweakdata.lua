@@ -88,8 +88,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function CharacterTweakData:_init_region_murky()
 		self._default_chatter = "dsp_radio_russian"
 		self._unit_prefixes = {
-			cop = "l5d",
-			swat = "l5d",
+			cop = "l",
+			swat = "l",
 			heavy_swat = "l5d",
 			taser = "tsr",
 			cloaker = "clk",
@@ -778,15 +778,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon_voice = "2"
 		self.city_swat.experience.cable_tie = "tie_swat"
 		self.city_swat.silent_priority_shout = "f37"
-		if job == "mad" or job == "hvh" then
-			self.city_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-			self.city_swat.speech_prefix_p2 = self._speech_prefix_p2
-			self.city_swat.speech_prefix_count = 4
-		else
-			self.city_swat.speech_prefix_p1 = "l5d"
-			self.city_swat.speech_prefix_p2 = nil
-			self.city_swat.speech_prefix_count = nil
-		end		
+		self.city_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.city_swat.speech_prefix_p2 = self._speech_prefix_p2
+		self.city_swat.speech_prefix_count = 4
 		self.city_swat.access = "swat"
 		self.city_swat.dodge = presets.dodge.athletic_overkill
 		self.city_swat.chatter = presets.enemy_chatter.swat
@@ -799,6 +793,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if job == "kosugi" or job == "dark" then
 			self.city_swat.shooting_death = false
+			self.city_swat.use_radio = "dsp_radio_russian"
 		else
 			self.city_swat.shooting_death = true
 		end	
@@ -811,12 +806,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	
+		if job == "mad" or job == "hvh" then
+			self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
+			self.omnia.speech_prefix_p2 = self._speech_prefix_p2
+			self.omnia.speech_prefix_count = 4
+		else
+			self.omnia.speech_prefix_p1 = "l5d"
+			self.omnia.speech_prefix_p2 = nil
+			self.omnia.speech_prefix_count = nil
+		end				
 		self.omnia.dodge = presets.dodge.elite
 		self.omnia.move_speed = presets.move_speed.lightning
 		self.omnia.custom_voicework = nil
 		table.insert(self._enemy_list, "omnia")
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
+		if job == "mad" or job == "hvh" then
+			self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
+			self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
+			self.city_swat_titan.speech_prefix_count = 4
+		else
+			self.city_swat_titan.speech_prefix_p1 = "l5d"
+			self.city_swat_titan.speech_prefix_p2 = nil
+			self.city_swat_titan.speech_prefix_count = nil
+		end				
 		self.city_swat_titan.HEALTH_INIT = 15
 		self.city_swat_titan.headshot_dmg_mul = 2.19
 		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
@@ -11418,15 +11431,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
-		if job == "mad" or job == "hvh" then 
-			self.fbi_heavy_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-			self.fbi_heavy_swat.speech_prefix_p2 = self._speech_prefix_p2
-			self.fbi_heavy_swat.speech_prefix_count = 4
-		else
-			self.fbi_heavy_swat.speech_prefix_p1 = "l5d"
-			self.fbi_heavy_swat.speech_prefix_p2 = nil
-			self.fbi_heavy_swat.speech_prefix_count = nil
-		end			
 		
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
@@ -11484,16 +11488,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
-		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
-		if job == "mad" or job == "hvh" then 
-			self.fbi_heavy_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
-			self.fbi_heavy_swat.speech_prefix_p2 = self._speech_prefix_p2
-			self.fbi_heavy_swat.speech_prefix_count = 4
-		else
-			self.fbi_heavy_swat.speech_prefix_p1 = "l5d"
-			self.fbi_heavy_swat.speech_prefix_p2 = nil
-			self.fbi_heavy_swat.speech_prefix_count = nil
-		end				
+		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)			
 		
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
@@ -12102,6 +12097,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				list = {
 					"ene_bulldozer_medic",
 					"ene_bulldozer_minigun",
+					"ene_bulldozer_minigun_classic",
 					"ene_zeal_swat_heavy_sniper"
 				}
 			},

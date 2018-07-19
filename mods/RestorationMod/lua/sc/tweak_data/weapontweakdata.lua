@@ -5301,7 +5301,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flamethrower_mk2.kick.crouching = self.new_m4.kick.standing
 		self.flamethrower_mk2.kick.steelsight = self.new_m4.kick.standing
 		self.flamethrower_mk2.fire_dot_data = {
-			dot_damage = 0.1,
+			dot_damage = 0.25,
 			dot_trigger_max_distance = 999999,
 			dot_trigger_chance = 50,
 			dot_length = 5,
@@ -7978,6 +7978,61 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}		
+		self.system.categories = {
+			"flamethrower",
+			"shotgun"
+		}
+		self.system.recategorize = "wpn_special"
+		self.system.has_description = true
+		self.system.desc_id = "bm_ap_flamethrower_sc_desc"
+		self.system.timers.reload_not_empty = 8
+		self.system.timers.reload_empty = 8
+		self.system.rays = 9
+		self.system.CLIP_AMMO_MAX = 40
+		self.system.AMMO_MAX = 120
+		self.system.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.system.fire_mode_data.fire_rate = 0.1
+		self.system.auto = {}
+		self.system.auto.fire_rate = 0.1
+		self.system.flame_max_range = 1000
+		self.system.single_flame_effect_duration = 1
+		self.system.armor_piercing_chance = 1
+		self.system.can_shoot_through_enemy = false
+		self.system.can_shoot_through_shield = false
+		self.system.can_shoot_through_wall = false
+		self.system.spread.standing = 3
+		self.system.spread.crouching = 2
+		self.system.spread.steelsight = 1
+		self.system.spread.moving_standing = 4
+		self.system.spread.moving_crouching = 3
+		self.system.spread.moving_steelsight = 2
+		self.system.damage_near = 500
+		self.system.damage_far = 1000
+		self.system.kick.standing = self.new_m4.kick.standing
+		self.system.kick.crouching = self.new_m4.kick.standing
+		self.system.kick.steelsight = self.new_m4.kick.standing
+		self.system.fire_dot_data = {
+			dot_damage = 0.25,
+			dot_trigger_max_distance = 999999,
+			dot_trigger_chance = 50,
+			dot_length = 5,
+			dot_tick_period = 0.5
+		}
+		self.system.stats = {
+			damage = 41,
+			spread = 5,
+			recoil = 22,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 6,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.system.panic_suppression_chance = 0.0		
 		
 		--Restoration Weapons--
 		self.jeb = {

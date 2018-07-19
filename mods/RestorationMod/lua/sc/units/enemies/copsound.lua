@@ -4,28 +4,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._unit = unit
 		self._speak_expire_t = 0
 		local char_tweak = tweak_data.character[unit:base()._tweak_table]
-		
-		local r = LevelsTweakData.LevelType.Russia
-		local m = LevelsTweakData.LevelType.Murky
-		local z = LevelsTweakData.LevelType.Zombie
-		local ai_type = a
 
 		self:set_voice_prefix(nil)
 
 		local nr_variations = char_tweak.speech_prefix_count
-		
-		if ai_type == m then
-			if char_tweak.speech_prefix_count == 4 then
-				nr_variations = 2
-			end
-		end
-		
-		if ai_type == m then
-			if char_tweak.speech_prefix_p2 == "n" then
-				self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"
-			else
-				self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. (char_tweak.speech_prefix_p2 or "") .. "_"
-			end
+				
+		if char_tweak.speech_prefix_p1 == "l5d" then
+			self._prefix = (char_tweak.speech_prefix_p1 or "") .. "_"
 		else
 			self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. (char_tweak.speech_prefix_p2 or "") .. "_"
 		end

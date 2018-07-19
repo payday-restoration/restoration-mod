@@ -25,13 +25,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Murky faction--
 		self.shoutout_raid.ai_group_type = murky
-		self.shoutout_raid.package = {"packages/vlad_shout", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.pbr.ai_group_type = murky
-		self.pbr.package = {"packages/narr_jerry1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 				
 		self.des.ai_group_type = murky 
-		self.des.package = {"packages/job_des", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd

@@ -162,7 +162,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {0.5, 1},
 			group_min = 0,
 			queue = "tsr"
-		}
+		}	
 	end
 
 	function GroupAITweakData:_init_unit_categories(difficulty_index)

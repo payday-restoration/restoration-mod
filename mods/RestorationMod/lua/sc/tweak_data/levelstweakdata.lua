@@ -25,7 +25,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Murky faction--
 		self.shoutout_raid.ai_group_type = murky
+		
 		self.pbr.ai_group_type = murky
+				
 		self.des.ai_group_type = murky 
 		
 		--NYPD--
@@ -39,16 +41,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dah.ai_group_type = nypd
 		self.dinner.ai_group_type = nypd
 		
-		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage1/world_sounds"}
+		--Gangster VO below--
+		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
-		--Stuff for Summers below--
-		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage1/world_sounds", "levels/narratives/elephant/mad/world_sounds"}
-		self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "levels/narratives/elephant/mad/world_sounds"}
-		self.gallery.package = {"packages/narr_framing_1", "levels/narratives/elephant/mad/world_sounds"}
-		self.man.package = {"packages/narr_man", "levels/narratives/elephant/mad/world_sounds"}
-		self.firestarter_3.package = {"packages/narr_firestarter3", "levels/narratives/elephant/mad/world_sounds"}
-		self.jolly.package = {"packages/jolly", "levels/narratives/elephant/mad/world_sounds"}
-		self.rvd1.package = {"packages/job_rvd", "levels/narratives/elephant/mad/world_sounds"}
+		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--Halloween enemies on halloween maps--
 		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh"}

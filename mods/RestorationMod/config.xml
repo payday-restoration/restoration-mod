@@ -3,7 +3,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="8.01" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="8.02" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 	   <mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
 			<options merge_mode="script_merge"/>
@@ -153,6 +153,7 @@
 		<hook file="sc/units/equipment/doctorbagbase.lua" source_file="lib/units/equipment/doctor_bag/doctorbagbase"/>
 		<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
 		<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
+		<hook file="sc/units/enemies/copsound.lua" source_file="lib/units/enemies/cop/copsound"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

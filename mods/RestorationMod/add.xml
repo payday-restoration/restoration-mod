@@ -1266,7 +1266,7 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_contour"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk" load="true"/>
 	
-        <!--NYPD heavy r870-->	
+    <!--NYPD heavy r870-->	
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870" load="true"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk" load="true"/>
 	
@@ -1327,6 +1327,23 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4_contour"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4_husk" load="true"/>	
+			
+	<!--"NYPD" murky (just soft cap guys who look more like vanilla murkies-->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_contour" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_husk" force="false" load="true"/>
+	<!--2-->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_contour" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk" force="false" load="true"/>
 	
 	<!--shared_textures crap-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
@@ -1334,6 +1351,9 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_df" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_nm" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/murky_heavy_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	

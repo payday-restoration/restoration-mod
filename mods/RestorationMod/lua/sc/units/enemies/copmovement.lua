@@ -50,6 +50,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
 	CopMovement._action_variants.omnia = security_variant
+	CopMovement._action_variants.omnia_heavy = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.rboom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
@@ -269,6 +270,10 @@ function CopMovement:do_omnia(self)
 							if health_left < max_health then
 								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
 								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+								end										
 								if enemy:contour() then
 									enemy:contour():add("omnia_heal", false)
 								end		
@@ -344,7 +349,7 @@ function CopMovement:do_aoe_heal(self)
 									enemy:contour():add("medic_heal", true)
 									enemy:contour():flash("medic_heal", 0.2)
 								end		
-								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
 							end
 						end
 					end

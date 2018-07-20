@@ -7,6 +7,7 @@
 		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 	</dependencies>
 
 	<extensions>

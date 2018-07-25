@@ -257,5 +257,5 @@
 			</option_group>
         </options>
     </Options>
-	<AddFiles file="add.xml"/>
+	<AddFiles file="add2.xml"/>
 </mod>

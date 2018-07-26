@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+	<!-- All characters -->
+	<group name="units/payday2/characters/">
+
+		<!--Santa Hat-->
+		<file :name="ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc.material_config" force="false"/>
+		<file :name="ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc.object" force="false"/>
+		<file :name="ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc.cooked_physics" force="false"/>
+		<file :name="ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc.model" force="false"/>
+		<file :name="ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc.unit" load="true"/>
+		
+		<!--Headless Dozer-->
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw.material_config" force="false"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw_contour.material_config" force="false"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw.object" force="false"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw.cooked_physics" force="false"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw.model" force="false"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw.sequence_manager" force="false"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw.unit" load="true"/>
+		<file :name="ene_bulldozer_2_hw/ene_bulldozer_2_hw_husk.unit" load="true"/>
+		
+		<!--FBI Vet w/ UMP-->
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3.material_config" force="false"/>
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3_contour.material_config" force="false"/>
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3.object" force="false"/>
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3.cooked_physics" force="false"/>
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3.model" force="false"/>
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3.unit" load="true"/>
+		<file :name="ene_fbi_swat_3/ene_fbi_swat_3_husk.unit" load="true"/>
+		
+		<!--Veteran Cop-->	
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1.material_config" force="false"/>
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1_contour.material_config" force="false"/>
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1.object" force="false"/>
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1.cooked_physics" force="false"/>
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1.model" force="false"/>
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1.unit" load="true"/>
+		<file :name="ene_veteran_cop_1/ene_veteran_cop_1_husk.unit" load="true"/>
+		
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2.material_config" force="false"/>
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2_contour.material_config" force="false"/>
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2.object" force="false"/>
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2.cooked_physics" force="false"/>
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2.model" force="false"/>
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2.unit" load="true"/>
+		<file :name="ene_veteran_cop_2/ene_veteran_cop_2_husk.unit" load="true"/>
+		
+		<file :name="shared_textures/vetcop_body_2_df.texture" force="false"/>
+		<file :name="shared_textures/vetcop_body_df.texture" force="false"/>
+		<file :name="shared_textures/vetcop_head_df.texture" force="false"/>
+
+		<!--Grenadier-->
+		<!-- <file :name="ene_grenadier_1/ene_grenadier_1.material_config" force="false"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1_contour.material_config" force="false"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1.object" force="false"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1.cooked_physics" force="false"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1.model" force="false"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1.unit" load="true"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1_husk.unit" load="true"/>
+		<file :name="ene_grenadier_1/ene_grenadier_1.sequence_manager" force="false"/>
+		<file :name="shared_textures/glass_op.texture" force="false"/>
+		<file :name="shared_textures/material_body_df.texture" force="false"/>
+		<file :name="shared_textures/material_body_nm.texture" force="false"/>
+		<file :name="shared_textures/grenadier_atlas_df.texture" force="false"/>
+		<file :name="shared_textures/grenadier_atlas_nm.texture" force="false"/>
+		<file :name="shared_textures/grenadier_body_df.texture" force="false"/>
+		<file :name="shared_textures/grenadier_body_nm.texture" force="false"/> -->
+		
+		<!--National Guard-->
+		<file :name="ene_guard_national_1/national_guard_df.texture" force="false"/>
+			
+		<!--Gensec Shield Acc-->
+		<file :name="ene_acc_shield_city/ene_acc_shield_city.material_config" force="false"/>
+		<file :name="ene_acc_shield_city/ene_acc_shield_city.object" force="false"/>
+		<file :name="ene_acc_shield_city/ene_acc_shield_city.cooked_physics" force="false"/>
+		<file :name="ene_acc_shield_city/ene_acc_shield_city.model" force="false"/>
+		<file :name="ene_acc_shield_city/ene_acc_shield_city.sequence_manager" force="false"/>
+		<file :name="ene_acc_shield_city/ene_acc_shield_city.unit" load="true"/>
+		<file :name="ene_acc_shield_city/shield_df.texture" force="false"/>
+		<file :name="ene_acc_shield_city/shield_il.texture" force="false"/>
+		<file :name="ene_acc_shield_city/shield_nm.texture" force="false"/>
+		
+		<!--Gensec Shield-->
+		<file :name="ene_shield_gensec/ene_shield_gensec.material_config" force="false"/>
+		<file :name="ene_shield_gensec/ene_shield_gensec_contour.material_config" force="false"/>
+		<file :name="ene_shield_gensec/ene_shield_gensec.object" force="false"/>
+		<file :name="ene_shield_gensec/ene_shield_gensec.cooked_physics" force="false"/>
+		<file :name="ene_shield_gensec/ene_shield_gensec.model" force="false"/>
+		<file :name="ene_shield_gensec/ene_shield_gensec.unit" load="true"/>
+		<file :name="ene_shield_gensec/ene_shield_gensec_husk.unit" load="true"/>
+		
+		<!--Medic w/ Mp5-->
+		<file :name="ene_medic_mp5/ene_medic_mp5.unit" load="true"/>
+		<file :name="ene_medic_mp5/ene_medic_mp5_husk.unit" load="true"/>
+		
+		<!--Biker Dozer-->
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1.material_config" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1_contour.material_config" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1.object" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1.model" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1.sequence_manager" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1.unit" load="true"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1_husk.unit" load="true"/>
+		
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1_df.texture" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_1_nm.texture" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df.texture" force="false"/>
+		<file :name="ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm.texture" force="false"/>
+		
+		<!--fuck you biker dozer armor bits-->
+		<!--for future reference we'll avoid implementing dozers with breakable pieces, sorry!  ~Martini-->
+		<file :name="ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1.material_config" force="false"/>
+		<file :name="ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1.object" force="false"/>
+		<file :name="ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1.model" force="false"/>
+		<file :name="ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1.unit" load="true"/>
+		
+		<file :name="ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1.material_config" force="false"/>
+		<file :name="ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1.object" force="false"/>
+		<file :name="ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1.model" force="false"/>
+		<file :name="ene_acc_bulldozer_chest_biker_1/ene_acc_bulldozer_chest_biker_1.unit" load="true"/>
+		
+		<file :name="ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1.material_config" force="false"/>
+		<file :name="ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1.object" force="false"/>
+		<file :name="ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1.model" force="false"/>
+		<file :name="ene_acc_bulldozer_helmet_plate_biker_1/ene_acc_bulldozer_helmet_plate_biker_1.unit" load="true"/>
+		
+		<file :name="ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1.material_config" force="false"/>
+		<file :name="ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1.object" force="false"/>
+		<file :name="ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1.model" force="false"/>
+		<file :name="ene_acc_bulldozer_neck_biker_1/ene_acc_bulldozer_neck_biker_1.unit" load="true"/>
+		
+		<file :name="ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1.material_config" force="false"/>
+		<file :name="ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1.object" force="false"/>
+		<file :name="ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1.model" force="false"/>
+		<file :name="ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1.unit" load="true"/>
+		
+		<file :name="ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1.material_config" force="false"/>
+		<file :name="ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1.object" force="false"/>
+		<file :name="ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1.model" force="false"/>
+		<file :name="ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1.unit" load="true"/>
+		<!--end armor bits-->
+
+		<file :name="ene_guard_biker_1/ene_guard_biker_1.material_config" force="false"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1_contour.material_config" force="false"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1.object" force="false"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1.cooked_physics" force="false"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1.model" force="false"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1.unit" load="true"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1_husk.unit" load="true"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1_body_df.texture" force="false"/>
+		<file :name="ene_guard_biker_1/ene_guard_biker_1_head_df.texture" force="false"/>
+
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1.material_config" force="false"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1_dead.material_config" force="false"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1.object" force="false"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1.cooked_physics" force="false"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1.model" force="false"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1.sequence_manager" force="false"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1.unit" load="true"/>
+		<file :name="ene_spook_cloak_1/ene_spook_cloak_1_husk.unit" load="true"/>
+		<file :name="shared_textures/spook_cloak_df.texture" force="false"/>
+		<file :name="shared_textures/spook_cloak_dead_df.texture" force="false"/>
+		<file :name="shared_textures/spook_cloak_nm.texture" force="false"/>
+		<file :name="shared_textures/spook_cloak_glow_df.texture" force="false"/>
+
+		<!--Cloaked Cloaker Debris-->
+		<!--head-->
+		<file :name="ene_spook_cloak_1/debris/ene_spook_head_debris.material_config" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_head_debris.object" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_head_debris.cooked_physics" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_head_debris.model" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_head_debris.unit" load="true"/>
+
+		<!--body-->
+		<file :name="ene_spook_cloak_1/debris/ene_spook_upper_body_debris.object" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_upper_body_debris.cooked_physics" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_upper_body_debris.model" force="false"/>
+		<file :name="ene_spook_cloak_1/debris/ene_spook_upper_body_debris.unit" load="true"/>
+		<!--end debris-->
+
+		<!--fuck u183 what a pile of shit-->
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc.material_config" force="false"/>
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc_contour.material_config" force="false"/>
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc.object" force="false"/>
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc.cooked_physics" force="false"/>
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc.model" force="false"/>
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc.unit" load="true"/>
+		<file :name="ene_city_swat_1_sc/ene_city_swat_1_sc_husk.unit" load="true"/>
+		<file :name="shared_textures/swat_city_df_sc.texture" force="false"/>
+		<file :name="shared_textures/helmets_city_df.texture" force="false"/>
+		
+		<file :name="ene_city_swat_3/ene_city_swat_3.material_config" force="true"/>
+		<file :name="ene_city_swat_3/ene_city_swat_3_contour.material_config" force="true"/>
+		<file :name="ene_city_swat_3/ene_city_swat_3.model" force="true"/>
+		<file :name="ene_city_swat_2/ene_city_swat_2.material_config" force="true"/>
+		<file :name="ene_city_swat_2/ene_city_swat_2_contour.material_config" force="true"/>
+		<file :name="ene_city_swat_2/ene_city_swat_2.model" force="true"/>
+	</group>
+
+</assets>

@@ -730,10 +730,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CopDamage:die(attack_data)
+		local attacker_unit = attack_data.attacker_unit
+		if attacker_unit then
+			if attacker_unit:in_slot(16) then
+				self:set_pickup(nil)
+			end
+		end		
+	
 		old_death(self, attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+
 		
 		if self._unit:interaction().tweak_data == "hostage_convert" then
 			self._unit:interaction():set_active(false, true, false)

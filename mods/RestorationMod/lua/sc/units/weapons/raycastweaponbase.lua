@@ -266,12 +266,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 			multiplier_min = multiplier_min * managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
 			multiplier_min = multiplier_min * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1)
+			multiplier_min = multiplier_min * managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
 			
 			if ammo_max then
 				multiplier_max = multiplier_max * ammo_max
 			end
 			multiplier_max = multiplier_max * managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
 			multiplier_max = multiplier_max * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1)
+			multiplier_max = multiplier_max * managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
 			
 			local add_amount = add_amount_override
 			local picked_up = true

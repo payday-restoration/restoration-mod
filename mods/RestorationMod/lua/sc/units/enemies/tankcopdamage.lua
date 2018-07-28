@@ -13,7 +13,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			if Global.game_settings.difficulty == "sm_wish" then
 				self._unit:sound():say("g90")
 				self._unit:sound():play("clk_turn", nil, nil)
-				self._unit:base():add_buff("base_damage", 15 * 0.01)
+				self._unit:base():add_buff("base_damage", 10 * 0.01)
 				self._unit:movement():play_redirect("use_syringe")
 			else
 				self._unit:sound():say("visor_lost")

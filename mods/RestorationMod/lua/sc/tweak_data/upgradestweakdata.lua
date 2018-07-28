@@ -125,14 +125,14 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {0.2}
 	--Bot boost stuff stuff--
-	self.values.team.crew_add_health = {2}
-	self.values.team.crew_add_armor = {1}
-	self.values.team.crew_add_dodge = {0.02}
+	self.values.team.crew_add_health = {3}
+	self.values.team.crew_add_armor = {1.5}
+	self.values.team.crew_add_dodge = {0.03}
 	self.values.team.crew_add_concealment = {1}
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
-	self.values.team.crew_health_regen = {0.1}
-	self.values.team.crew_throwable_regen = {150}
+	self.values.team.crew_health_regen = {0.25}
+	self.values.team.crew_throwable_regen = {100}
 	self.values.team.crew_faster_reload = {1.1}
 	self.values.team.crew_faster_swap = {1}	
 
@@ -140,21 +140,21 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_inspire = {
 		{
 			60,
-			45,
-			30
+			60,
+			60
 		}
 	}
 	self.values.team.crew_scavenge = {
 		{
-			0.05,
-			0.1,
-			0.15
+			1.4,
+			1.4,
+			1.4
 		}
 	}
 	self.values.team.crew_interact = {
 		{
-			0.9,
-			0.85,
+			0.8,
+			0.8,
 			0.8
 		}
 	}

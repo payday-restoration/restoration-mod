@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<file name="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01.object"/>
+
+	<!--Risk Level-->
+	<file name="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc.texture"/>
+	<file name="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc.texture"/>
+	<file name="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc.texture"/>
+	<file name="guis/textures/pd2/mission_briefing/assets/risk_murky.texture"/>
+	
+	<!--Assets-->
+	<file name="guis/textures/pd2/mission_briefing/assets/wetwork_intel.texture"/>
+	<file name="guis/textures/pd2/mission_briefing/assets/wetwork_boat.texture"/>
+	<file name="guis/textures/pd2/mission_briefing/assets/wetwork_burn_add_saw.texture"/>
+	<file name="guis/textures/pd2/mission_briefing/assets/rush_asset_sentrygun.texture"/>
+	
+	<!--New Crime Spree icons-->
+	<file name="guis/dlcs/sc/textures/pd2/crime_spree/modifiers_atlas_sc.texture"/>
+	
+	<!--Mats/Patterns-->
+	<file name="units/pd2_mod_jack/matcaps/jkl_matt01.texture"/>
+	<file name="units/pd2_mod_jack/matcaps/jkl_matt02.texture"/>	
+	<file name="guis/textures/pd2/blackmarket/icons/materials/jkl_matt01.texture"/>
+	<file name="guis/textures/pd2/blackmarket/icons/materials/jkl_matt02.texture"/>	
+	
+	<file name="patterns/jkl_patt01.texture"/>
+	<file name="patterns/jkl_patt02.texture"/>
+	
+	<!--Mask: Shatter-->
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true.material_config"/>
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true.unit"/>
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true.cooked_physics"/>
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true.object"/>
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true.model"/>
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true_df.texture"/>
+	<file name="units/mods/masks/msk_shatter_true/msk_shatter_true_nm.texture"/>
+	<file name="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true.texture"/>	
+	
+	<!--Mask: Hockey Hell-->
+	<file name="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc.material_config"/>
+	<file name="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc.unit"/>
+	<file name="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc.cooked_physics"/>
+	<file name="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc.object"/>
+	<file name="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc.model"/>
+	<file name="units/pd2_mod_sharks/masks/msk_hockey_sc/hockey_b_df.texture"/>
+	<file name="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/canada.texture"/>
+	
+	<!--Mask: Mrs. Graffiti-->
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc.material_config"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc.unit"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc.cooked_physics"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc.object"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc.model"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_df.texture"/>
+	<file name="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/jsr.texture"/>
+	
+	<!--Mask: Mr. Graffiti-->
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc.material_config"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc.unit"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc.cooked_physics"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc.object"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc.model"/>
+	<file name="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_df.texture"/>
+	<file name="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/jsrf.texture"/>
+	
+	<!--Mask: The Lootbag-->
+	<file name="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc.material_config"/>
+	<file name="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc.unit"/>
+	<file name="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc.cooked_physics"/>
+	<file name="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc.object"/>
+	<file name="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc.model"/>
+	<file name="units/pd2_mod_sharks/masks/msk_zipper_sc/zipper_df.texture"/>	
+	<file name="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/courier_stash.texture"/>
+	
+	<!--Loading Screen Tips-->
+	<file name="guis/textures/loading/hints/grenadier_load.texture"/>	
+	<file name="guis/textures/loading/hints/vet_cop_loading.texture"/>	
+
+	<file name="guis/textures/pd2/hud_buff_skull.texture" load="false"/>
+	<file name="guis/textures/pd2/hud_buff_fire.texture" load="false"/>
+	
+	<!--SC Skill atlas-->
+	<file name="guis/textures/pd2/skilltree/icons_atlas_sc.texture"/>
+	
+	<!--Restoration sound replacements (is this even supported by Beardlib? Here just in case.)-->
+	<!--These were for Green Harvest, and some are for Out of Frame.  If Luffy updates the sound module to support contractor voiceover OR we
+	find a solution to soundbanks, these can be removed. ~Martini-->
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/99542904.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/342216271.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/566618683.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/641377974.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/781884718.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/876924888.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage1/991751405.stream"/>
+	
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/29569825.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/244684289.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/351647302.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/458068934.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/576160481.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/616866572.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/896790363.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/969288357.stream"/>
+	<file name="soundbanks/streamed/job_h_watchdogs_stage2/1045867404.stream"/>
+	
+</assets>

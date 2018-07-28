@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<mod name="Restoration" global_key="restoration">
+	<:include src="superXML/hud.xml" />
+	<:include src="superXML/misc.xml" />
+	<:include src="superXML/mad.xml" />
+	<:include src="superXML/omnia.xml" />
+	<:include src="superXML/SCstandard.xml" />
+	<:include src="superXML/SCweapons.xml" />
+	<:include src="superXML/sharks.xml" />
+	<:include src="superXML/special.xml" />
+	<:include src="superXML/zeal.xml" />
+	<:include src="superXML/nypd.xml" />
+</mod>

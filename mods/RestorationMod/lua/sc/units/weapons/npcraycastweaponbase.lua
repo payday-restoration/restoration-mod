@@ -28,9 +28,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 	end
 
-	function NPCRaycastWeaponBase:setup(...)
-		setup_original(self, ...)
+	function NPCRaycastWeaponBase:setup(setup_data, ...)
+		setup_original(self, setup_data, ...)
 		self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(22)
+		local user_unit = setup_data.user_unit
+		if user_unit then
+			if user_unit:in_slot(16) then
+				self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16, 22)
+			end
+		end		
 	end
 	
 	function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)

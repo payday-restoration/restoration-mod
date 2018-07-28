@@ -146,9 +146,9 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.team.crew_scavenge = {
 		{
-			1.4,
-			1.4,
-			1.4
+			0.4,
+			0.4,
+			0.4
 		}
 	}
 	self.values.team.crew_interact = {

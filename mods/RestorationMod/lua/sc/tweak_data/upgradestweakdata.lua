@@ -910,13 +910,33 @@ function UpgradesTweakData:_init_pd2_values()
 	--Gambler
  	self.loose_ammo_restore_health_values = {
 		base = 4,
- 		cd = 4,
+ 		cd = 5,
  		multiplier = 0.2,
 		{0, 2},
 		{2, 4},
 		{4, 6}
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5
+	self.loose_ammo_give_team_ratio = 0.5
+	self.values.temporary.loose_ammo_restore_health = {}	
+	
+	for i, data in ipairs(self.loose_ammo_restore_health_values) do
+		local base = self.loose_ammo_restore_health_values.base
+
+		table.insert(self.values.temporary.loose_ammo_restore_health, {
+			{
+				base + data[1],
+				base + data[2]
+			},
+			self.loose_ammo_restore_health_values.cd
+		})
+	end
+
+	self.values.temporary.loose_ammo_give_team = {{
+		true,
+		5
+	}}
+	self.values.player.loose_ammo_restore_health_give_team = {true}	
 
 	--Sociopath nerfs
 	self.values.player.killshot_regen_armor_bonus = {2.5}

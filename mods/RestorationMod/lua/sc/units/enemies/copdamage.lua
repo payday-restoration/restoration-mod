@@ -674,9 +674,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local old_death = CopDamage.die
 	function CopDamage:die(attack_data)
 		local attacker_unit = attack_data.attacker_unit
+		local roll = math.rand(1, 100)
+		local no_ammo_chance = 80
 		if attacker_unit then
 			if attacker_unit:in_slot(16) then
-				self:set_pickup(nil)
+				if roll <= no_ammo_chance then
+					self:set_pickup(nil)
+				end
 			end
 		end		
 	

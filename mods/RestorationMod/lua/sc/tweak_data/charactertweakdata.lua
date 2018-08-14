@@ -2719,6 +2719,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			arrest_timeout = 240
 		}
 	end
+	
+	function CharacterTweakData:_init_joy(presets)
+		self.joy = {
+			damage = presets.gang_member_damage,
+			weapon = deep_clone(presets.weapon.gang_member)
+		}
+		self.joy.weapon.weapons_of_choice = {
+			primary = "wpn_fps_ass_m4_npc",
+			secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+		}
+		self.joy.always_face_enemy = true
+		self.joy.no_run_start = true
+		self.joy.no_run_stop = true
+		self.joy.flammable = false			
+		self.joy.detection = presets.detection.gang_member
+		self.joy.move_speed = presets.move_speed.gang_member
+		self.joy.crouch_move = false
+		self.joy.speech_prefix = "rb19"
+		self.joy.weapon_voice = "3"
+		self.joy.access = "teamAI1"
+		self.joy.arrest = {
+			timeout = 240,
+			aggression_timeout = 6,
+			arrest_timeout = 240
+		}
+	end	
 
 	function CharacterTweakData:_presets(tweak_data)
 		local presets = {}

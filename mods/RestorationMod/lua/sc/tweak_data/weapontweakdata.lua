@@ -2885,7 +2885,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = true
 			self[wep_id].has_description = false
@@ -2896,7 +2896,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self[wep_id].recategorize = "akimbo"
 			self[wep_id].categories = {"akimbo", "pistol"}
 		end
-		local tact_akimbo_smg = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9'}
+		local tact_akimbo_smg = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard'}
 		for i, wep_id in ipairs(tact_akimbo_smg) do
 			self[wep_id].tactical_akimbo = true
 			self[wep_id].recategorize = "akimbo"
@@ -3537,7 +3537,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.colt_1911.kick.crouching = self.glock_17.kick.standing
 		self.colt_1911.kick.steelsight = self.glock_17.kick.standing
 		self.colt_1911.stats = {
-			damage = 43,
+			damage = 42,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 5,
@@ -3796,7 +3796,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.usp.kick.steelsight = self.glock_17.kick.standing
 		self.usp.CLIP_AMMO_MAX = 12
 		self.usp.stats = {
-			damage = 41,
+			damage = 40,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 8,
@@ -4634,7 +4634,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_1911.kick.crouching = self.glock_17.kick.standing
 		self.x_1911.kick.steelsight = self.glock_17.kick.standing
 		self.x_1911.stats = {
-			damage = 43,
+			damage = 42,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 5,
@@ -4826,7 +4826,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.c96.kick.crouching = self.new_m4.kick.standing
 		self.c96.kick.steelsight = self.new_m4.kick.standing
 		self.c96.stats = {
-			damage = 46,
+			damage = 45,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 8,
@@ -5020,7 +5020,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hs2000.kick.crouching = self.glock_17.kick.standing
 		self.hs2000.kick.steelsight = self.glock_17.kick.standing
 		self.hs2000.stats = {
-			damage = 45,
+			damage = 44,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 7,
@@ -5253,7 +5253,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_usp.single = {}
 		self.x_usp.single.fire_rate = 0.1
 		self.x_usp.stats = {
-			damage = 41,
+			damage = 40,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 8,
@@ -6863,7 +6863,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shrew.kick.crouching = self.glock_17.kick.standing
 		self.shrew.kick.steelsight = self.glock_17.kick.standing
 		self.shrew.stats = {
-			damage = 43,
+			damage = 42,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 5,
@@ -6892,7 +6892,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shrew.kick.crouching = self.glock_17.kick.standing
 		self.x_shrew.kick.steelsight = self.glock_17.kick.standing
 		self.x_shrew.stats = {
-			damage = 43,
+			damage = 42,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 5,
@@ -7647,7 +7647,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_c96.kick.crouching = self.new_m4.kick.standing
 		self.x_c96.kick.steelsight = self.new_m4.kick.standing
 		self.x_c96.stats = {
-			damage = 46,
+			damage = 45,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 8,
@@ -7708,7 +7708,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hs2000.kick.crouching = self.glock_17.kick.standing
 		self.x_hs2000.kick.steelsight = self.glock_17.kick.standing
 		self.x_hs2000.stats = {
-			damage = 45,
+			damage = 44,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 7,
@@ -8033,6 +8033,64 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.system.panic_suppression_chance = 0.0		
+		self.shepheard.fire_mode_data.fire_rate = 0.07058823529
+		self.shepheard.auto.fire_rate = 0.07058823529
+		self.shepheard.spread.standing = 3
+		self.shepheard.spread.crouching = 2
+		self.shepheard.spread.steelsight = 1
+		self.shepheard.spread.moving_standing = 4
+		self.shepheard.spread.moving_crouching = 3
+		self.shepheard.spread.moving_steelsight = 2
+		self.shepheard.panic_suppression_chance = 0.05
+		self.shepheard.kick.standing = self.new_m4.kick.standing
+		self.shepheard.kick.crouching = self.new_m4.kick.standing
+		self.shepheard.kick.steelsight = self.new_m4.kick.standing
+		self.shepheard.AMMO_MAX = 150
+		self.shepheard.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.shepheard.stats = {
+			damage = 29,
+			spread = 16,
+			recoil = 20,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 22,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.shepheard.panic_suppression_chance = 0.1		
+		self.x_shepheard.fire_mode_data.fire_rate = 0.07058823529
+		self.x_shepheard.single.fire_rate = 0.07058823529
+		self.x_shepheard.spread.standing = 3
+		self.x_shepheard.spread.crouching = 2
+		self.x_shepheard.spread.steelsight = 1
+		self.x_shepheard.spread.moving_standing = 4
+		self.x_shepheard.spread.moving_crouching = 3
+		self.x_shepheard.spread.moving_steelsight = 2
+		self.x_shepheard.panic_suppression_chance = 0.05
+		self.x_shepheard.kick.standing = self.new_m4.kick.standing
+		self.x_shepheard.kick.crouching = self.new_m4.kick.standing
+		self.x_shepheard.kick.steelsight = self.new_m4.kick.standing
+		self.x_shepheard.AMMO_MAX = 180
+		self.x_shepheard.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.x_shepheard.stats = {
+			damage = 29,
+			spread = 16,
+			recoil = 20,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 22,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.x_shepheard.panic_suppression_chance = 0.1				
 		
 		--Restoration Weapons--
 		self.jeb = {

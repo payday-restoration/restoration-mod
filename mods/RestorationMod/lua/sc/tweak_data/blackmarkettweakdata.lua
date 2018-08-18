@@ -2720,6 +2720,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.happy.stats.concealment = 30
 	self.melee_weapons.happy.repeat_expire_t = 0.8
 	self.melee_weapons.happy.melee_damage_delay = 0.1	
+	
+	-- https://i.imgur.com/8IJSRPZ.jpg --
+	self.melee_weapons.shock.speed_mult = 0.875
+	self.melee_weapons.shock.stats.min_damage = 3.2
+	self.melee_weapons.shock.stats.max_damage = 7.5
+	self.melee_weapons.shock.stats.min_damage_effect = 2
+	self.melee_weapons.shock.stats.max_damage_effect = 5
+	self.melee_weapons.shock.stats.charge_time = 1.85
+	self.melee_weapons.shock.stats.range = 170
+	self.melee_weapons.shock.repeat_expire_t = 0.8
+	self.melee_weapons.shock.attack_allowed_expire_t = 0.1
+	self.melee_weapons.shock.stats.concealment = 27
+	self.melee_weapons.shock.melee_damage_delay = 0.1
 end	
 
 end

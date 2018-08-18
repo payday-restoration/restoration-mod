@@ -68,7 +68,8 @@ if not _G.restoration then
 		"mia_2",
 		"spa",
 		"chill_combat",
-		"des"
+		"des",
+		"sah"
 	}
 end
 

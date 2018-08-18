@@ -18,7 +18,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			else
 				self._unit:sound():say("visor_lost")
 			end		
-			managers.crime_spree:run_func("OnTankVisorShatter", self._unit)
+			managers.modifiers:run_func("OnTankVisorShatter", self._unit)
 				
 		end
 	end	

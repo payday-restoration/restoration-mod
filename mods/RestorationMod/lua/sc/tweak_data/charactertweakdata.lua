@@ -12189,7 +12189,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			tag = {
 				path = "units/pd2_dlc_tag/characters/",
 				list = {"ene_male_commissioner"}			
-			},			
+			},	
+			sah = {
+				path = "units/pd2_dlc_sah/characters/",
+				list = {
+					"civ_male_gala_guest_03",
+					"civ_male_gala_guest_04",
+					"civ_male_gala_guest_05",
+					"civ_male_gala_guest_06",
+					"civ_male_auctioneer",
+					"civ_female_gala_guest_04",
+					"civ_female_gala_guest_05",
+					"civ_female_gala_guest_06",
+					"civ_male_shacklethorn_waiter_01",
+					"civ_male_shacklethorn_waiter_02",
+					"civ_male_maintenance_01"
+				}
+			},
+			skm = {
+				path = "units/pd2_skirmish/characters/",
+				list = {
+					"civ_male_bank_manager_hostage",
+					"civ_female_museum_curator_hostage",
+					"civ_female_drug_lord_hostage",
+					"civ_male_prisoner_hostage"
+				}				
+			},
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",
 				list = {

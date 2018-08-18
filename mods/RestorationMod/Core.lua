@@ -66,10 +66,15 @@ if not _G.restoration then
 		"nail",
 		"rvd2",
 		"mia_2",
+		"hox_1",
 		"spa",
 		"chill_combat",
 		"des",
-		"sah"
+		"sah",
+		"skm_mus",
+		"skm_red2",
+		"skm_run",
+		"skm_watchdogs_stage2"
 	}
 end
 

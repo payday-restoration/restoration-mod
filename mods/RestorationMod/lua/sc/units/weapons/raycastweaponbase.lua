@@ -307,47 +307,5 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		return picked_up, add_amount
 	end
-
-	if _G.IS_VR then
-		--I might have to do something unique for VR, but we'll see.
-	else
-		function RaycastWeaponBase:clip_full()
-			if tweak_data.weapon[self._name_id].tactical_reload == true then
-				return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip() + 1
-			elseif tweak_data.weapon[self._name_id].tactical_akimbo == true then
-				return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip() + 2
-			else
-				return self:get_ammo_remaining_in_clip() == self:get_ammo_max_per_clip()
-			end
-		end
-		
-		function RaycastWeaponBase:can_reload()
-			if tweak_data.weapon[self._name_id].uses_clip == true and ( (self:get_ammo_max_per_clip() == tweak_data.weapon[self._name_id].clip_capacity and self:get_ammo_remaining_in_clip() > 0 ) or self:get_ammo_remaining_in_clip() > self:get_ammo_max_per_clip() - tweak_data.weapon[self._name_id].clip_capacity) then
-				return false
-			elseif self:get_ammo_total() > self:get_ammo_remaining_in_clip() then
-				return true
-			end
-		end
-		function RaycastWeaponBase:on_reload(amount)
-			local ammo_base = self._reload_ammo_base or self:ammo_base()
-			amount = amount or ammo_base:get_ammo_max_per_clip()
-			if self:get_ammo_remaining_in_clip() > 0 and tweak_data.weapon[self._name_id].tactical_reload == true then
-				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 1))
-			elseif self:get_ammo_remaining_in_clip() > 1 and tweak_data.weapon[self._name_id].tactical_akimbo == true then
-				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 2))
-			elseif self:get_ammo_remaining_in_clip() == 1 and tweak_data.weapon[self._name_id].tactical_akimbo == true then
-				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip() + 1))
-			elseif tweak_data.weapon[self._name_id].uses_clip == true and self:get_ammo_remaining_in_clip() <= self:get_ammo_max_per_clip()  then
-				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_total(), self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + tweak_data.weapon[self._name_id].clip_capacity))
-			elseif self._setup.expend_ammo and not managers.enemy:is_enemy(self._setup.user_unit) then
-				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), amount))
-			else
-				ammo_base:set_ammo_remaining_in_clip(amount)
-				ammo_base:set_ammo_total(amount)
-			end
-			managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
-			self._reload_ammo_base = nil
-		end
-	end	
-
+	
 end

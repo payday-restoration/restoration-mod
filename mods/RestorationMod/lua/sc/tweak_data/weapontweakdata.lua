@@ -2887,24 +2887,24 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard'}
 		for i, wep_id in ipairs(tact_rel) do
-			self[wep_id].tactical_reload = true
+			self[wep_id].tactical_reload = 1
 			self[wep_id].has_description = false
 		end
 		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow'}
 		for i, wep_id in ipairs(tact_akimbo_pistol) do
-			self[wep_id].tactical_akimbo = true
+			self[wep_id].tactical_reload = 2
 			self[wep_id].recategorize = "akimbo"
 			self[wep_id].categories = {"akimbo", "pistol"}
 		end
 		local tact_akimbo_smg = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard'}
 		for i, wep_id in ipairs(tact_akimbo_smg) do
-			self[wep_id].tactical_akimbo = true
+			self[wep_id].tactical_reload = 2
 			self[wep_id].recategorize = "akimbo"
 			self[wep_id].categories = {"akimbo", "smg"}
 		end
 		local tact_akimbo_rifle = {'x_akmsu', 'x_hajk', 'x_olympic'}
 		for i, wep_id in ipairs(tact_akimbo_rifle) do
-			self[wep_id].tactical_akimbo = true
+			self[wep_id].tactical_reload = 2
 			self[wep_id].recategorize = "akimbo"
 			self[wep_id].categories = {"akimbo", "assault_rifle"}
 		end
@@ -4811,9 +4811,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.c96.sounds.fire_auto = "akm_fire"
 		self.c96.sounds.stop_fire = "akm_stop"
 		self.c96.CAN_TOGGLE_FIREMODE = true
-		self.c96.fire_mode_data = {}
 		self.c96.fire_mode_data.fire_rate = 0.06
-		self.c96.single = {}
 		self.c96.single.fire_rate = 0.06
 		self.c96.spread = {}
 		self.c96.spread.standing = 3
@@ -7632,9 +7630,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_c96.sounds.fire_auto = "akm_fire"
 		self.x_c96.sounds.stop_fire = "akm_stop"
 		self.x_c96.CAN_TOGGLE_FIREMODE = true
-		self.x_c96.fire_mode_data = {}
 		self.x_c96.fire_mode_data.fire_rate = 0.06
-		self.x_c96.single = {}
 		self.x_c96.single.fire_rate = 0.06
 		self.x_c96.spread = {}
 		self.x_c96.spread.standing = 3

@@ -11,6 +11,72 @@ end
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
+	if _G.IS_VR then
+		--I might have to do something unique for VR, but we'll see.
+	else
+		function NewRaycastWeaponBase:clip_full()
+			if self:ammo_base():weapon_tweak_data().tactical_reload then
+				return self:ammo_base():get_ammo_remaining_in_clip() == self:ammo_base():get_ammo_max_per_clip() + self:ammo_base():weapon_tweak_data().tactical_reload
+			else
+				return self:ammo_base():get_ammo_remaining_in_clip() == self:ammo_base():get_ammo_max_per_clip()
+			end
+		end
+				
+		function NewRaycastWeaponBase:on_reload()
+			local ammo_base = self._reload_ammo_base or self:ammo_base()
+			if ammo_base:weapon_tweak_data().uses_clip == true then
+				if ammo_base:get_ammo_remaining_in_clip() <= ammo_base:get_ammo_max_per_clip()  then
+					ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip(), ammo_base:get_ammo_remaining_in_clip() +  ammo_base:weapon_tweak_data().clip_capacity))
+				end
+			else
+				if ammo_base:get_ammo_remaining_in_clip() > 0 and  ammo_base:weapon_tweak_data().tactical_reload == 1 then
+					ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
+				elseif ammo_base:get_ammo_remaining_in_clip() > 1 and  ammo_base:weapon_tweak_data().tactical_reload == 2 then
+					ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
+				elseif ammo_base:get_ammo_remaining_in_clip() == 1 and  ammo_base:weapon_tweak_data().tactical_reload == 2 then
+					ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
+				elseif ammo_base:get_ammo_remaining_in_clip() > 0 and not  ammo_base:weapon_tweak_data().tactical_reload then
+					ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip()))
+				elseif self._setup.expend_ammo then
+					ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip()))
+				else
+					ammo_base:set_ammo_remaining_in_clip(ammo_base:get_ammo_max_per_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_max_per_clip())
+				end
+			end
+			managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+			self._reload_ammo_base = nil
+		end
+		
+		function NewRaycastWeaponBase:reload_expire_t()
+			if self._use_shotgun_reload then
+				local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
+				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
+					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+				else
+					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+				end
+			end
+			return nil
+		end
+		
+		function NewRaycastWeaponBase:update_reloading(t, dt, time_left)
+			if self._use_shotgun_reload and t > self._next_shell_reloded_t then
+				local speed_multiplier = self:reload_speed_multiplier()
+				self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
+				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
+					return true
+				else
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
+					return true
+				end
+				managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+				return true
+			end
+		end	
+	end
+
 	function NewRaycastWeaponBase:_get_spread(user_unit)
 		local current_state = user_unit:movement()._current_state
 		if not current_state then
@@ -44,7 +110,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		spread_y = spread_y * spread_mult
 		return spread_x, spread_y
 	end
-
+	
 	local start_shooting_original = RaycastWeaponBase.start_shooting
 	local stop_shooting_original = RaycastWeaponBase.stop_shooting
 	local _fire_sound_original = RaycastWeaponBase._fire_sound

@@ -305,7 +305,14 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<!--textures-->
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op" load="true" force="false"/>
 	
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
@@ -933,8 +940,13 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870_husk" force="false" load="true"/>
 	
 	<!--Murky Heavy UMP-->
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_husk" load="true"/>				
+	<object path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_husk" force="false" load="true"/>			
 	
 	<!--murky heavy textures-->
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_heavy_m4/murky_heavy_df" force="false"/>	

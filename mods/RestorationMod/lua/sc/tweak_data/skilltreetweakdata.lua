@@ -1670,7 +1670,6 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"akimbo_extra_ammo_multiplier_1",
-						"akimbo_extra_ammo_multiplier_2",
 						"akimbo_recoil_multiplier_3"
 					},
 					cost = self.costs.hightierpro

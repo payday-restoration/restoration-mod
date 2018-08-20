@@ -430,12 +430,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
+		self.omnia_lpf.custom_voicework = "olpf"
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
 		self.omnia_lpf.tags = {"law", "medic", "special"}
 		self.omnia_lpf.do_omnia = true
 		self.omnia_lpf.do_aoe_heal = true
-		self.omnia_lpf.spawn_sound_event = "cloaker_spawn"
+		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
 		self.omnia_lpf.die_sound_event = "mga_death_scream"		
 		self.omnia_lpf.is_special = true
 		table.insert(self._enemy_list, "omnia_lpf")
@@ -648,7 +649,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.static_dodge_preset = true
 		self.heavy_swat_sniper.static_melee_preset = true	
 		self.heavy_swat_sniper.custom_voicework = nil
-		self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
+		self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
 		self.heavy_swat_sniper.die_sound_event = "mga_death_scream"	
 		self.heavy_swat_sniper.is_special = true
 		table.insert(self._enemy_list, "heavy_swat_sniper")
@@ -1478,7 +1479,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_titan")
 		
 		self.tank_titan_assault = deep_clone(self.tank_titan)
-		self.tank_titan_assault.spawn_sound_event = "cloaker_spawn"
+		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
 		self.tank_hw = deep_clone(self.tank_titan)
@@ -1661,15 +1662,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.is_special = true
 		table.insert(self._enemy_list, "phalanx_minion")
 		self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
-		self.phalanx_minion_assault.spawn_sound_event = "cloaker_spawn"
+		self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
 		self.phalanx_minion_assault.die_sound_event = "mga_death_scream"
 		table.insert(self._enemy_list, "phalanx_minion_assault")
 	end
 
 	function CharacterTweakData:_init_phalanx_vip(presets)
 		self.phalanx_vip = deep_clone(self.phalanx_minion)
-		self.phalanx_vip.LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
-		self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
+		--self.phalanx_vip.LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
+		--self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001		
 		self.phalanx_vip.damage.shield_knocked = false
 		self.phalanx_vip.damage.immune_to_knockback = true
 		self.phalanx_vip.immune_to_knock_down = true
@@ -1915,7 +1916,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
-		self.taser_titan.spawn_sound_event = "cloaker_spawn"
+		self.taser_titan.spawn_sound_event = "tsr_elite"
+		self.taser_titan.spawn_sound_event_2 = "cloaker_spawn"
 		self.taser_titan.die_sound_event = "mga_death_scream"
 		self.taser_titan.custom_voicework = nil
 		self.taser_titan.surrender = nil

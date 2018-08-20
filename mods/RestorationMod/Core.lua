@@ -37,7 +37,11 @@ if not _G.restoration then
 		"pbr2",
 		"born",
 		"nail",
-		"peta"
+		"peta",
+		"skm_mus",
+		"skm_red2",
+		"skm_run",
+		"skm_watchdogs_stage2"
 	}
 	_G.restoration.captain_teamwork = {
 		"nightclub",

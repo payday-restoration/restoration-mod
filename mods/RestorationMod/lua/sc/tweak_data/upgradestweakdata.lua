@@ -667,9 +667,9 @@ function UpgradesTweakData:_init_pd2_values()
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
 				self.values.akimbo.extra_ammo_multiplier = {1.25, 1.5}
 				self.values.akimbo.recoil_multiplier = {
-					1.5,
-					1.25,
-					1
+					1.2,
+					1.15,
+					1.1
 				}
 
 				--Desperado
@@ -820,11 +820,6 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.temporary.melee_life_leech = {
 		{0.1, 10}
-	}
-	self.values.akimbo.recoil_multiplier = {
-		1.5,
-		1.25,
-		1
 	}
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}

@@ -32,6 +32,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		elseif self._unit:base():char_tweak().spawn_sound_event then
 			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event, nil, nil)
 		end
+		
+		--Mostly just here in the event we have a unit to have both an 'entrance' line *and* a global spawn in noise
+		if self._unit:base():char_tweak().spawn_sound_event_2 then
+			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_2, nil, nil)
+		end		
 
 		unit:base():post_init()
 	end

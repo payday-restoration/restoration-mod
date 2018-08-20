@@ -1,0 +1,40 @@
+<table name="watchdogs">
+	<level ai_group_type="america" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist">
+		<assets/>
+		<include directory="levels/watchdogs_1">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="day_only/day_only.continent" type="binary"/>
+			<file file="day_only/day_only.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="night_only/night_only.continent" type="binary"/>
+			<file file="night_only/night_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_watchdogs_new_stage1_end_a"/>
+			<value_node value="Play_pln_watchdogs_new_stage1_end_b"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_watchdogs1"/>
+			<value_node value="packages/job_watchdogs"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/world"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/world_sounds"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/world/world"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/day_only/day_only"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/night_only/night_only"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/editor_only/editor_only"/>
+			<value_node value="levels/narratives/classics/red2/world/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_1/world/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+</table>

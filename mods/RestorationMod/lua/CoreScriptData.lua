@@ -10,9 +10,9 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1" then
 	if rnd == 1 then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/dawnorange.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	elseif rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	end
 	

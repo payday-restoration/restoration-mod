@@ -151,7 +151,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		self._hud_panel:remove(self._hud_panel:child("wave_panel"))
 	end
 	self._completed_waves = 0
-	if self:is_safehouse_raid() then
+	if self:has_waves() then
 		self._wave_panel_size = {250, 38}
 		local wave_w, wave_h = 38, 38
 		local wave_panel = self._hud_panel:panel({
@@ -162,7 +162,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		})
 		local num_waves = wave_panel:text({
 			name = "num_waves",
-			text = tostring(self._completed_waves),
+			text = self:get_completed_waves_string(),
 			valign = "center",
 			vertical = "center",
 			align = "center",
@@ -328,6 +328,10 @@ function HUDAssaultCorner:init(hud, full_hud)
 
 	RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 	self:RestorationValueChanged()
+	
+	if managers.skirmish:is_skirmish() then
+		self._assault_color = tweak_data.screen_colors.skirmish_color
+	end
 end
 
 function HUDAssaultCorner:RestorationValueChanged()
@@ -536,7 +540,7 @@ function HUDAssaultCorner:set_assault_wave_number(assault_number)
 	if panel then
 		local wave_text = panel:child("num_waves")
 		if wave_text then
-			wave_text:set_text(self._completed_waves)
+			wave_text:set_text(self:get_completed_waves_string())
 		end
 	end
 end
@@ -642,6 +646,12 @@ function HUDAssaultCorner:_start_assault(text_list)
 	assault_panel:animate(callback(self, self, "_animate_assault"))
 	text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
 	self:_set_feedback_color(self._assault_color)
+	
+	-- local started_now = not self._assault
+	
+	-- if managers.skirmish:is_skirmish() and started_now then
+		-- self:_popup_wave_started()
+	-- end
 
 end
 
@@ -699,7 +709,7 @@ function HUDAssaultCorner:_end_assault()
 	local text_panel = assault_panel:child("text_panel")
 	self._hud_panel:child("assault_panel"):child("text_panel"):stop()
 	self._hud_panel:child("assault_panel"):child("text_panel"):clear()
-	if self:is_safehouse_raid() then
+	if self:has_waves() then
 		assault_panel:set_visible(not self._v2_corner)
 		self._raid_finised = false
 		wave_panel = self._hud_panel:child("wave_panel")
@@ -714,6 +724,10 @@ function HUDAssaultCorner:_end_assault()
 			corner_panel:child( "corner_title" ):set_text("YOU SURVIVED")
 			corner_panel:set_visible(true)
 			corner_panel:animate(callback(self, self, "_animate_wave_corner"))
+		end
+		
+		if managers.skirmish:is_skirmish() then
+			self:_popup_wave_finished()
 		end
 	else
 		self:_close_assault_box()
@@ -1007,7 +1021,15 @@ end
 function HUDAssaultCorner:_animate_wave_completed(panel, assault_hud)
 	local wave_text = panel:child("num_waves")
 	wait(1.4)
-	wave_text:set_text(tostring(self._completed_waves))
+	wave_text:set_text(self:get_completed_waves_string())
 	wait(7.2)
 	self:_close_assault_box()
+end
+
+function HUDAssaultCorner:has_waves()
+	return managers.job:current_level_id() == "chill_combat" or managers.skirmish:is_skirmish()
+end
+
+function HUDAssaultCorner:get_completed_waves_string()
+	return tostring(managers.groupai:state():get_assault_number() or 0)
 end

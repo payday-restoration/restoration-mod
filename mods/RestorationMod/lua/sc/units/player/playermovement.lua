@@ -44,7 +44,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if self._current_state_name == "standard" or self._current_state_name == "carry" or self._current_state_name == "bleed_out" or self._current_state_name == "tased" or self._current_state_name == "bipod" then
 			local state = "arrested"
-			state = managers.modifiers:modify_value("PlayerMovement:OnSpooked", state)
+			state = managers.modifiers:modify_value("PlayerMovement:OnJumpSpooked", state)
 
 			managers.player:set_player_state(state)
 			managers.achievment:award(tweak_data.achievement.finally.award)

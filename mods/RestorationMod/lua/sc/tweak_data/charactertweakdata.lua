@@ -128,7 +128,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.surrender = presets.surrender.easy
 		self.security.ecm_vulnerability = 1
 		self.security.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.security.weapon_voice = "3"
 		self.security.experience.cable_tie = "tie_swat"
@@ -184,7 +184,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.surrender = presets.surrender.easy
 		self.gensec.ecm_vulnerability = 1
 		self.gensec.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.gensec.weapon_voice = "3"
 		self.gensec.experience.cable_tie = "tie_swat"
@@ -218,7 +218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop.surrender = presets.surrender.easy
 		self.cop.ecm_vulnerability = 1
 		self.cop.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.cop.weapon_voice = "1"
 		self.cop.experience.cable_tie = "tie_swat"
@@ -274,7 +274,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.fbi.surrender = presets.surrender.easy
 			self.fbi.ecm_vulnerability = 1
 		self.fbi.ecm_hurts = {
-				ears = {min_duration = 8, max_duration = 10}
+				ears = {min_duration = 10, max_duration = 10}
 			}
 			self.fbi.weapon_voice = "2"
 			self.fbi.experience.cable_tie = "tie_swat"
@@ -344,7 +344,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic.surrender_break_time = {7, 12}
 		self.medic.ecm_vulnerability = 1
 		self.medic.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.medic.weapon_voice = "2"
 		self.medic.experience.cable_tie = "tie_swat"
@@ -415,7 +415,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.surrender = nil
 		self.omnia_lpf.ecm_vulnerability = 1
 		self.omnia_lpf.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.omnia_lpf.weapon_voice = "2"
 		self.omnia_lpf.experience.cable_tie = "tie_swat"
@@ -456,7 +456,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.surrender = presets.surrender.hard
 		self.swat.ecm_vulnerability = 1
 		self.swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.swat.weapon_voice = "2"
 		self.swat.experience.cable_tie = "tie_swat"
@@ -513,7 +513,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.surrender = presets.surrender.hard
 		self.heavy_swat.ecm_vulnerability = 1
 		self.heavy_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.heavy_swat.weapon_voice = "2"
 		self.heavy_swat.experience.cable_tie = "tie_swat"
@@ -628,7 +628,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.no_arrest = true
 		self.heavy_swat_sniper.ecm_vulnerability = 1
 		self.heavy_swat_sniper.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.heavy_swat_sniper.experience.cable_tie = "tie_swat"
 		self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -669,7 +669,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.surrender = presets.surrender.hard
 		self.fbi_swat.ecm_vulnerability = 1
 		self.fbi_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.fbi_swat.weapon_voice = "2"
 		self.fbi_swat.experience.cable_tie = "tie_swat"
@@ -715,7 +715,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.surrender = presets.surrender.hard
 		self.fbi_heavy_swat.ecm_vulnerability = 1
 		self.fbi_heavy_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.fbi_heavy_swat.weapon_voice = "2"
 		self.fbi_heavy_swat.experience.cable_tie = "tie_swat"
@@ -774,7 +774,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.no_arrest = false
 		self.city_swat.ecm_vulnerability = 1
 		self.city_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.city_swat.weapon_voice = "2"
 		self.city_swat.experience.cable_tie = "tie_swat"
@@ -881,7 +881,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.melee_weapon = nil
 		self.sniper.ecm_vulnerability = 1
 		self.sniper.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.sniper.weapon_voice = "1"
 		self.sniper.experience.cable_tie = "tie_swat"
@@ -916,7 +916,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.surrender = nil
 		self.gangster.ecm_vulnerability = 1
 		self.gangster.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.gangster.no_arrest = true
 		self.gangster.no_retreat = true
@@ -996,7 +996,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_guard.ecm_vulnerability = 1
 		self.biker_guard.no_arrest = false
 		self.biker_guard.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.biker_guard.speech_prefix_p1 = "bik"
 		self.biker_guard.speech_prefix_p2 = nil
@@ -1076,10 +1076,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.no_retreat = true
 		self.mobster_boss.no_arrest = true
 		self.mobster_boss.surrender = nil
-		self.mobster_boss.ecm_vulnerability = 0.85
-		self.mobster_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.mobster_boss.ecm_vulnerability = 0
+		self.mobster_boss.ecm_hurts = {}
 		self.mobster_boss.weapon_voice = "3"
 		self.mobster_boss.experience.cable_tie = "tie_swat"
 		self.mobster_boss.access = "gangster"
@@ -1125,10 +1123,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.no_run_stop = true	
 		self.biker_boss.no_arrest = true
 		self.biker_boss.surrender = nil
-		self.biker_boss.ecm_vulnerability = 0.85
-		self.biker_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.biker_boss.ecm_vulnerability = 0
+		self.biker_boss.ecm_hurts = {}
 		self.biker_boss.weapon_voice = "3"
 		self.biker_boss.experience.cable_tie = "tie_swat"
 		self.biker_boss.access = "gangster"
@@ -1210,10 +1206,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.no_run_start = true
 		self.chavez_boss.no_run_stop = true		
 		self.chavez_boss.surrender = nil
-		self.chavez_boss.ecm_vulnerability = 0.85
-		self.chavez_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.chavez_boss.ecm_vulnerability = 0
+		self.chavez_boss.ecm_hurts = {}
 		self.chavez_boss.weapon_voice = "1"
 		self.chavez_boss.experience.cable_tie = "tie_swat"
 		self.chavez_boss.access = "gangster"
@@ -1271,7 +1265,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bolivian_indoors.ecm_vulnerability = 1
 		self.bolivian_indoors.no_arrest = false
 		self.bolivian_indoors.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.bolivian_indoors.speech_prefix_p1 = "lt"
 		self.bolivian_indoors.speech_prefix_p2 = nil
@@ -1306,10 +1300,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.no_retreat = true
 		self.drug_lord_boss.no_arrest = true
 		self.drug_lord_boss.surrender = nil
-		self.drug_lord_boss.ecm_vulnerability = 0.85
-		self.drug_lord_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.drug_lord_boss.ecm_vulnerability = 0
+		self.drug_lord_boss.ecm_hurts = {}
 		self.drug_lord_boss.weapon_voice = "3"
 		self.drug_lord_boss.experience.cable_tie = "tie_swat"
 		self.drug_lord_boss.access = "gangster"
@@ -1400,10 +1392,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank.no_retreat = true
 		self.tank.no_arrest = true
 		self.tank.surrender = nil
-		self.tank.ecm_vulnerability = 0.85
-		self.tank.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.tank.ecm_vulnerability = 0
+		self.tank.ecm_hurts = {}
 		self.tank.weapon_voice = "3"
 		self.tank.experience.cable_tie = "tie_swat"
 		self.tank.access = "tank"
@@ -1468,10 +1458,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.priority_shout = "f45"
 		self.tank_titan.bot_priority_shout = "f45x_any"
 		self.tank_titan.priority_shout_max_dis = 3000
-		self.tank_titan.ecm_vulnerability = 0.85
-		self.tank_titan.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.tank_titan.ecm_vulnerability = 0
+		self.tank_titan.ecm_hurts = {}
 		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 		self.tank_titan.die_sound_event = "mga_death_scream"
 		self.tank_titan.damage.explosion_damage_mul = 1.25
@@ -1587,10 +1575,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.no_retreat = true
 		self.shield.no_arrest = true
 		self.shield.surrender = nil
-		self.shield.ecm_vulnerability = 0.9
+		self.shield.ecm_vulnerability = 1
 		self.shield.suppression = nil
 		self.shield.ecm_hurts = {
-			ears = {min_duration = 7, max_duration = 9}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.shield.priority_shout = "f31"
 		self.shield.bot_priority_shout = "f31x_any"
@@ -1649,7 +1637,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.ignore_medic_revive_animation = true
 		self.phalanx_minion.ecm_vulnerability = 1
 		self.phalanx_minion.ecm_hurts = {
-			ears = {min_duration = 2, max_duration = 3}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.phalanx_minion.use_animation_on_fire_damage = false
 		self.phalanx_minion.can_be_tased = false
@@ -1829,9 +1817,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser.no_retreat = true
 		self.taser.no_arrest = true
 		self.taser.surrender = presets.surrender.special
-		self.taser.ecm_vulnerability = 0.9
+		self.taser.ecm_vulnerability = 1
 		self.taser.ecm_hurts = {
-			ears = {min_duration = 6, max_duration = 8}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.taser.surrender_break_time = {4, 6}
 		self.taser.suppression = nil
@@ -1951,9 +1939,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.no_retreat = true
 		self.boom.no_arrest = true
 		self.boom.surrender = nil
-		self.boom.ecm_vulnerability = 0.9
+		self.boom.ecm_vulnerability = 1
 		self.boom.ecm_hurts = {
-			ears = {min_duration = 6, max_duration = 8}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.boom.surrender_break_time = {4, 6}
 		self.boom.suppression = nil

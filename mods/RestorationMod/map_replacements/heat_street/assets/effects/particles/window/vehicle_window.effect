@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/diamond_heist/apartment/apartment_livingroom/screen_large/screen_large" orientation_object="rp_screen_small" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_screen_small"/>
+      <object name="c_screen_small" collision_type="mesh_mopp"/>
+    </body>
+  </bodies>
+  <decal_surfaces default_material="wood" static="true">
+    <!-- <decal_mesh name="dm_wood" enabled="true" material="wood" /> -->
+  </decal_surfaces>
+  <graphics>
+    <object name="g_screen_small" enabled="true" />
+  </graphics>
+</dynamic_object>

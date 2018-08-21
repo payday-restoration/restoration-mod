@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/ground/ground_io" orientation_object="rp_ground_road_corner_20m" />
+  <bodies>
+    <body name="new_body" enabled="true" template="static">
+      <object name="rp_ground_road_corner_20m" />
+      <object name="c_ground_corner" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_ground_corner" enabled="true"/>
+	<object name="g_line" enabled="true"/>
+  </graphics>
+ 
+ <decal_surfaces default_material="asphalt" static="true">
+    <decal_mesh name="dm_asphalt" enabled="true"  material="asphalt"/>
+  </decal_surfaces>
+  
+  <objects>
+    <object name="snap_01" enabled="true" />
+    <object name="snap_03" enabled="true" />
+    <object name="snap_02" enabled="true" />
+  </objects>
+</dynamic_object>

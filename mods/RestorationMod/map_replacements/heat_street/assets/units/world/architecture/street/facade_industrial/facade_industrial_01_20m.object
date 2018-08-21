@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/architecture/street/facade" orientation_object="rp_facade_industrial_01_20m"/>
+
+	<bodies>
+		<body name="facade_industrial_01" enabled="true" template="static">
+			<object name="rp_facade_industrial_01_20m"/>
+			<object name="c_c" collision_type="mesh_mopp"/>
+		</body>
+	</bodies>
+  
+	<decal_surfaces static="true" default_material="metal">
+		<decal_mesh name="dm_concrete" enabled="true" material="concrete" />
+		<decal_mesh name="dm_glass" enabled="true" material="glass_breakable" />
+	</decal_surfaces>
+  
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="g_g_vtxc" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

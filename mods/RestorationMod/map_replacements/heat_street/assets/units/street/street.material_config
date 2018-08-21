@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="street" version="2" render_template="generic">
+    </material>
+    <material name="stair" version="2" render_template="generic">
+    </material>
+</materials>

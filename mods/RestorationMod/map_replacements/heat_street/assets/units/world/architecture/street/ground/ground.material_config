@@ -1,0 +1,11 @@
+<materials version="3">
+	<material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_D_A:BLEND_SMOOTH:BLEND_TINT_SECOND:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:RL_ENVIRONMENT" decal_material="concrete" version="2" name="ground_blend2">
+		<diffuse_texture file="units/world/architecture/street/ground/ground_blend_df"/>
+		<diffuse_layer0_texture file="units/world/architecture/street/ground/ground_blend_2_df"/>
+		<bump_normal_texture file="units/world/architecture/street/ground/ground_nm"/>
+	</material>
+	<material name="ground_decals" render_template="decal:DIFFUSE_TEXTURE:INSTANCED:OPACITY_TEXTURE" version="2">
+		<diffuse_texture file="units/world/architecture/street/ground/ground_lines_df"/>
+		<opacity_texture file="units/world/architecture/street/ground/ground_lines_op"/>
+	</material>
+</materials>

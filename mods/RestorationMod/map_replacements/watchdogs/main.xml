@@ -1,7 +1,8 @@
 <table name="watchdogs">
-	<level ai_group_type="america" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist">
+	<level ai_group_type="america" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1_res" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist">
+		<add file="levels/watchdogs_1_res/add.xml"/>
 		<assets/>
-		<include directory="levels/watchdogs_1">
+		<include directory="levels/watchdogs_1_res">
 			<file file="world.world" type="binary"/>
 			<file file="continents.continents" type="binary"/>
 			<file file="mission.mission" type="binary"/>
@@ -37,4 +38,105 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
+	<level ai_group_type="america" briefing_assets_gui="@IDbf6d46c88448e692@" briefing_dialog="Play_pln_watchdogs_new_stage2_brief" cube="cube_apply_heist_bank" id="watchdogs_2_res" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_02" max_bags="16" music="heist" repossess_bags="true">
+		<add directory="assets"/>
+		<assets/>
+		<include directory="levels/watchdogs_2_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="day_only/day_only.continent" type="binary"/>
+			<file file="day_only/day_only.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="night_only/night_only.continent" type="binary"/>
+			<file file="night_only/night_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+		</include>
+		<intro_event>
+			<value_node value="Play_pln_watchdogs_new_stage2_intro_a"/>
+			<value_node value="Play_pln_watchdogs_new_stage2_intro_b"/>
+		</intro_event>
+		<outro_event>
+			<value_node value="Play_pln_watchdogs_new_stage2_end_a"/>
+			<value_node value="Play_pln_watchdogs_new_stage2_end_b"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_watchdogs2"/>
+			<value_node value="packages/job_watchdogs"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/world"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/world_sounds"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/day_only/day_only"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/world/world"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/night_only/night_only"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_2/editor_only/editor_only"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<Localization default="english.txt" directory="loc"/>
+	<narrative contact="hector" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01">
+		<chain>
+			<table level_id="watchdogs_1_res" type="d" type_id="heist_type_survive" world_setting="night"/>
+			<table level_id="watchdogs_2_res" type="d" type_id="heist_type_survive" world_setting="night"/>
+		</chain>
+		<contract_cost>
+			<value_node value="4000"/>
+			<value_node value="8000"/>
+			<value_node value="20000"/>
+			<value_node value="40000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="8000"/>
+			<value_node value="8000"/>
+			<value_node value="8000"/>
+			<value_node value="8000"/>
+			<value_node value="8000"/>
+			<value_node value="8000"/>
+			<value_node value="8000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="2000"/>
+			<value_node value="2000"/>
+			<value_node value="2000"/>
+			<value_node value="2000"/>
+			<value_node value="2000"/>
+			<value_node value="2000"/>
+			<value_node value="2000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="6000"/>
+			<value_node value="12000"/>
+			<value_node value="30000"/>
+			<value_node value="50000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+		</payout>
+	</narrative>
 </table>

@@ -11,6 +11,7 @@
 	<texture path="guis/textures/restoration/hud_dot"/>
 	<texture path="guis/textures/restoration/hud_rip"/>
 	<texture path="guis/textures/restoration/hud_rip_bg"/>
+	<texture path="guis/textures/restoration/hud_rip_bg"/>
 	<texture path="guis/textures/restoration/hud_absorb_shield"/>
 	<texture path="guis/textures/restoration/hud_absorb_health"/>
 	<texture path="guis/textures/restoration/hud_absorb_stack_fg"/>
@@ -171,6 +172,7 @@
 	
 	<!--OMNIA Textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_heavy_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df"/>	

@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.menu:active_menu().logic:navigate_back(true)
 
 		local job_data = {
-			difficulty = "sm_wish",
+			difficulty = "overkill_145",
 			job_id = managers.skirmish:random_skirmish_job_id()
 		}
 
@@ -22,7 +22,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		local weekly_skirmish = managers.skirmish:active_weekly()
 		local job_data = {
-			difficulty = "sm_wish",
+			difficulty = "overkill_145",
 			weekly_skirmish = true,
 			job_id = weekly_skirmish.id
 		}

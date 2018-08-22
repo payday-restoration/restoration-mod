@@ -1150,6 +1150,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.immune_to_concussion = true
 		self.biker_boss.must_headshot = true
 		self.biker_boss.static_dodge_preset = true
+		self.biker_boss.always_drop = true
 		self.biker_boss.is_special = true
 		table.insert(self._enemy_list, "biker_boss")
 	end

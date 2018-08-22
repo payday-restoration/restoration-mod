@@ -6,7 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -16,7 +16,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -26,7 +26,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -36,7 +36,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -46,7 +46,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -56,7 +56,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -66,7 +66,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -76,7 +76,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tank = 3,
 				taser = 4,
 				boom = 2,
-				spooc = 4,
+				spooc = 3,
 				shield = 5,
 				medic = 3,
 				spring = 1,
@@ -258,7 +258,99 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function SkirmishTweakData:_init_wave_modifiers()
 		self.wave_modifiers = {}
-		self.wave_modifiers[1] = {{class = "ModifierCloakerArrest"}}
+		local health_damage_multipliers = {
+			{
+				damage = 1,
+				health = 1
+			},
+			{
+				damage = 1,
+				health = 1
+			},
+			{
+				damage = 1,
+				health = 1
+			},
+			{
+				damage = 1.05,
+				health = 1.2
+			},
+			{
+				damage = 1.05,
+				health = 1.2
+			},
+			{
+				damage = 1.1,
+				health = 1.4
+			},
+			{
+				damage = 1.1,
+				health = 1.4
+			},
+			{
+				damage = 1.1,
+				health = 1.4
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			},
+			{
+				damage = 1.15,
+				health = 1.5
+			}
+		}
+		self.wave_modifiers[1] = {
+			{
+				class = "ModifierEnemyHealthAndDamageByWave",
+				data = {waves = health_damage_multipliers}
+			},
+			{class = "ModifierCloakerArrest"}
+		}
 		self.wave_modifiers[3] = {{class = "ModifierSkulldozers"}}
 		self.wave_modifiers[5] = {{
 			class = "ModifierHeavySniper",
@@ -282,17 +374,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wsm02 = {
 				icon = "crime_spree_dozer_rage",
 				class = "ModifierDozerRage",
-				data = {damage = 100}
+				data = {damage = 10}
 			},
 			wsm03 = {
 				icon = "crime_spree_medic_speed",
 				class = "ModifierHealSpeed",
-				data = {speed = 40}
+				data = {speed = 25}
 			},
 			wsm04 = {
 				icon = "crime_spree_medic_rage",
 				class = "ModifierMedicRage",
-				data = {damage = 20}
+				data = {damage = 5}
 			},
 			wsm05 = {
 				icon = "crime_spree_youre_that_ninja",
@@ -303,7 +395,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				icon = "crime_spree_more_dozers",
 				class = "ModifierMoreDozers",
 				data = {inc = {
-					4,
+					2,
 					"add"
 				}}
 			},

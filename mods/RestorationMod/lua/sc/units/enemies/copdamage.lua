@@ -676,16 +676,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local attacker_unit = attack_data.attacker_unit
 		local roll = math.rand(1, 100)
 		local no_ammo_chance = 80
+		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
 		if attacker_unit then
 			if attacker_unit:in_slot(16) then
-				if roll <= no_ammo_chance then
-					self:set_pickup(nil)
+				if not char_tweak.always_drop then
+					if roll <= no_ammo_chance then
+						self:set_pickup(nil)
+					end
 				end
 			end
 		end		
 	
 		old_death(self, attack_data)
-		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
 

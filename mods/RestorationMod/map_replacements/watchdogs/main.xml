@@ -1,5 +1,5 @@
 <table name="watchdogs">
-	<level ai_group_type="america" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1_res" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist">
+	<level ai_group_type="america" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1_res" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist" name_id = "heist_watchdogs_1_hl" brief_id = "heist_watchdogs_1_briefing">
 		<add file="levels/watchdogs_1_res/add.xml"/>
 		<assets/>
 		<include directory="levels/watchdogs_1_res">
@@ -38,7 +38,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="america" briefing_assets_gui="@IDbf6d46c88448e692@" briefing_dialog="Play_pln_watchdogs_new_stage2_brief" cube="cube_apply_heist_bank" id="watchdogs_2_res" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_02" max_bags="16" music="heist" repossess_bags="true">
+	<level ai_group_type="america" briefing_assets_gui="@IDbf6d46c88448e692@" briefing_dialog="Play_pln_watchdogs_new_stage2_brief" cube="cube_apply_heist_bank" id="watchdogs_2_res" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_02" max_bags="16" music="heist" repossess_bags="true" name_id = "heist_watchdogs_2_hl" brief_id = "heist_watchdogs_2_briefing">
 		<add directory="assets"/>
 		<assets/>
 		<include directory="levels/watchdogs_2_res">
@@ -82,7 +82,7 @@
 		<script_data_mods directory="scriptdata"/>
 	</level>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative contact="hector" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01">
+	<narrative contact="hector" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" name_id = "heist_watchdogs" brief_id = "heist_watchdogs_crimenet">
 		<chain>
 			<table level_id="watchdogs_1_res" type="d" type_id="heist_type_survive" world_setting="night"/>
 			<table level_id="watchdogs_2_res" type="d" type_id="heist_type_survive" world_setting="night"/>
@@ -97,10 +97,12 @@
 			<value_node value="100000"/>
 		</contract_cost>
 		<crimenet_callouts>
-			<value_node value="nothing"/>
+			<value_node value="hct_watchdogs_cnc_01"/>
 		</crimenet_callouts>
 		<crimenet_videos>
-			<value_node value="cn_branchbank2"/>
+			<value_node value="cn_watchdog1"/>
+			<value_node value="cn_watchdog2"/>
+			<value_node value="cn_watchdog3"/>
 		</crimenet_videos>
 		<experience_mul>
 			<value_node value="1"/>

@@ -1,5 +1,5 @@
 <table name="watchdogs">
-	<level ai_group_type="america" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1_res" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist" name_id = "heist_watchdogs_1_hl" brief_id = "heist_watchdogs_1_briefing">
+	<level ai_group_type="america" brief_id="heist_watchdogs_1_briefing" briefing_assets_gui="@IDe0da74a0deadfbb3@" briefing_dialog="Play_pln_watchdogs_new_stage1_brief" cube="cube_apply_heist_bank" id="watchdogs_1_res" intro_event="Play_pln_watchdogs_new_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" max_bags="16" music="heist" name_id="heist_watchdogs_1_hl">
 		<add file="levels/watchdogs_1_res/add.xml"/>
 		<assets/>
 		<include directory="levels/watchdogs_1_res">
@@ -38,27 +38,27 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="america" briefing_assets_gui="@IDbf6d46c88448e692@" briefing_dialog="Play_pln_watchdogs_new_stage2_brief" cube="cube_apply_heist_bank" id="watchdogs_2_res" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_02" max_bags="16" music="heist" repossess_bags="true" name_id = "heist_watchdogs_2_hl" brief_id = "heist_watchdogs_2_briefing">
-		<add directory="assets"/>
+	<level ai_group_type="america" brief_id="heist_watchdogs_2_briefing" briefing_assets_gui="@IDbf6d46c88448e692@" briefing_dialog="Play_pln_watchdogs_new_stage2_brief" cube="cube_apply_heist_bank" id="watchdogs_2_res" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_02" max_bags="16" music="heist" name_id="heist_watchdogs_2_hl" repossess_bags="true">
+		<add file="levels/watchdogs_2_res/add.xml"/>
 		<assets/>
 		<include directory="levels/watchdogs_2_res">
 			<file file="world.world" type="binary"/>
 			<file file="continents.continents" type="binary"/>
 			<file file="mission.mission" type="binary"/>
 			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
 			<file file="world_sounds.world_sounds" type="binary"/>
 			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="pc_only/pc_only.continent" type="binary"/>
-			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="night_only/night_only.continent" type="binary"/>
+			<file file="night_only/night_only.mission" type="binary"/>
 			<file file="day_only/day_only.continent" type="binary"/>
 			<file file="day_only/day_only.mission" type="binary"/>
 			<file file="world/world.continent" type="binary"/>
 			<file file="world/world.mission" type="binary"/>
-			<file file="night_only/night_only.continent" type="binary"/>
-			<file file="night_only/night_only.mission" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
 			<file file="editor_only/editor_only.continent" type="binary"/>
 			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
 		</include>
 		<intro_event>
 			<value_node value="Play_pln_watchdogs_new_stage2_intro_a"/>
@@ -82,7 +82,7 @@
 		<script_data_mods directory="scriptdata"/>
 	</level>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative contact="hector" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" name_id = "heist_watchdogs" brief_id = "heist_watchdogs_crimenet">
+	<narrative brief_id="heist_watchdogs_crimenet" contact="hector" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" name_id="heist_watchdogs">
 		<chain>
 			<table level_id="watchdogs_1_res" type="d" type_id="heist_type_survive" world_setting="night"/>
 			<table level_id="watchdogs_2_res" type="d" type_id="heist_type_survive" world_setting="night"/>

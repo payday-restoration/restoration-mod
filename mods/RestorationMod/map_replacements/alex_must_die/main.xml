@@ -1,6 +1,6 @@
 <table name="alex">
 	<level ai_group_type="america" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist">
-		<add directory="assets"/>
+		<add file="levels/alex_1_res/add.xml"/>
 		<assets/>
 		<include directory="levels/alex_1_res">
 			<file file="world.world" type="binary"/>

@@ -8,13 +8,6 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
 
 
-	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1" then
-	if rnd == 1 then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	elseif rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "branchbank" then
 	if rnd == 1 or rnd == 2 then
@@ -74,6 +67,11 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_res" then
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		--"sky_orientation/rotation":"278.53564453125",
 	end
 	
 	--Safehouse Booster

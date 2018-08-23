@@ -826,10 +826,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 			self.city_swat_titan.speech_prefix_count = 4
+		    self.city_swat_titan.custom_voicework = nil
 		else
 			self.city_swat_titan.speech_prefix_p1 = "l5d"
 			self.city_swat_titan.speech_prefix_p2 = nil
 			self.city_swat_titan.speech_prefix_count = nil
+		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
 		self.city_swat_titan.HEALTH_INIT = 15
 		self.city_swat_titan.headshot_dmg_mul = 2.19
@@ -842,7 +844,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
 		self.city_swat_titan.static_melee_preset = true	
-		self.city_swat_titan.custom_voicework = nil
+		self.city_swat_titan.custom_voicework = "pdth"
 		self.city_swat_titan.dodge_with_grenade = {
 			smoke = {duration = {
 				12,
@@ -1460,6 +1462,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.bot_priority_shout = "f45x_any"
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
+		self.tank_titan.custom_voicework = "tdozer"
 		self.tank_titan.ecm_hurts = {}
 		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 		self.tank_titan.die_sound_event = "mga_death_scream"

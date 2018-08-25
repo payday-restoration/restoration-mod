@@ -1305,8 +1305,13 @@
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_husk" load="true"/>		
 	
 	<!--NYPD shield-->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield" load="true"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>	
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_contour"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>			
 	
 	<!--NYPD cop 1-->
 	<object path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
@@ -1374,6 +1379,7 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
+	<texture path="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />	

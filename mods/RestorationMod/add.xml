@@ -1311,7 +1311,15 @@
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield" load="true"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_contour"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>			
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>		
+	
+	<!--NYPD shield acc huge props to Jarey_ for making this and for sending me assets whenever i need them -EvilBobarino-->
+	<object path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<model path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>		
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_acc_shield_lights_df"/>
 	
 	<!--NYPD cop 1-->
 	<object path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
@@ -1463,7 +1471,7 @@
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_nm" />	
 	<!--zeal heavy m4-->
-        <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+    <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" load="true"/>
@@ -1473,8 +1481,21 @@
 	<!--zeal heavy r870-->
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>
-	<!--textures heavy -->
-	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
-	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
+	<!--fbi ready team 1
+    <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_husk" load="true"/>-->
+	<!--fbi ready team 2
+    <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>-->
 	<!--new zeals end-->	
 </table>

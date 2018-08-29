@@ -338,7 +338,7 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
-				<object name="name="g_helmet_glass_crk" 			enabled="true"  max_distance="696969696969"max_draw_lod="0">
+				<object name="g_helmet_glass_crk" 			enabled="false"  max_distance="696969696969" max_draw_lod="0">
 					<material materials="mtr_bulldozer" max_distance="0"/>
 					<material materials="mtr_bulldozer_lod_2" />
 				</object>

@@ -9833,20 +9833,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					6
 				}
 				self.besiege.assault.force_pool = {
-					10,
-					20,
-					30
+					30,
+					40,
+					50
 				}	
 			else
 				self.besiege.assault.force = {
-						4,
-						6,
-						8
+					3,
+					5,
+					7
 				}
 				self.besiege.assault.force_pool = {
-						30,
-						40,
-						50
+					30,
+					40,
+					50
 				}						
 			end
 		end

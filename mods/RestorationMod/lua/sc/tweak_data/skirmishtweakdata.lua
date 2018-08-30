@@ -394,10 +394,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wsm06 = {
 				icon = "crime_spree_more_dozers",
 				class = "ModifierMoreDozers",
-				data = {inc = {
-					2,
-					"add"
-				}}
+				data = {inc = 2}
 			},
 			wsm07 = {
 				icon = "crime_spree_shield_phalanx",

@@ -430,7 +430,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
-		self.omnia_lpf.custom_voicework = "olpf"
+		if job == "mad" or job == "hvh" then 
+			self.omnia_lpf.custom_voicework = nil
+		else
+			self.omnia_lpf.custom_voicework = "olpf"
+		end			
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
 		self.omnia_lpf.tags = {"law", "medic", "special"}
@@ -822,15 +826,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "omnia")
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
+		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
+		self.city_swat_titan.speech_prefix_count = 4		
 		if job == "mad" or job == "hvh" then
-			self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
-			self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
-			self.city_swat_titan.speech_prefix_count = 4
 		    self.city_swat_titan.custom_voicework = nil
 		else
-			self.city_swat_titan.speech_prefix_p1 = "l5d"
-			self.city_swat_titan.speech_prefix_p2 = nil
-			self.city_swat_titan.speech_prefix_count = nil
 		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
 		self.city_swat_titan.HEALTH_INIT = 15
@@ -844,7 +845,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
 		self.city_swat_titan.static_melee_preset = true	
-		self.city_swat_titan.custom_voicework = "pdth"
 		self.city_swat_titan.dodge_with_grenade = {
 			smoke = {duration = {
 				12,
@@ -1462,7 +1462,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.bot_priority_shout = "f45x_any"
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
-		self.tank_titan.custom_voicework = "tdozer"
+		if job == "mad" or job == "hvh" then 
+			self.tank_titan.custom_voicework = nil
+		else
+			self.tank_titan.custom_voicework = "tdozer"
+		end				
 		self.tank_titan.ecm_hurts = {}
 		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 		self.tank_titan.die_sound_event = "mga_death_scream"
@@ -1661,8 +1665,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_phalanx_vip(presets)
 		self.phalanx_vip = deep_clone(self.phalanx_minion)
-		--self.phalanx_vip.LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
-		--self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001		
 		self.phalanx_vip.damage.shield_knocked = false
 		self.phalanx_vip.damage.immune_to_knockback = true
 		self.phalanx_vip.immune_to_knock_down = true
@@ -1670,7 +1672,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.headshot_dmg_mul = 1.25
 		self.phalanx_vip.damage.explosion_damage_mul = 0.05
 		self.phalanx_vip.damage.fire_damage_mul = 0.05
-		self.phalanx_vip.damage.bullet_damage_mul = 0.65
+		self.phalanx_vip.damage.bullet_damage_mul = 0.75
 		self.phalanx_vip.spawn_sound_event = nil
 		self.phalanx_vip.priority_shout = "f45"
 		self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -1679,6 +1681,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.can_be_tased = false
 		self.phalanx_vip.ecm_vulnerability = nil
 		self.phalanx_vip.must_headshot = true
+		self.phalanx_vip.ends_assault_on_death = true
 		self.phalanx_vip.suppression = nil
 		self.phalanx_vip.ecm_hurts = {}
 		self.phalanx_vip.is_special = true
@@ -1703,8 +1706,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spring.EXTRA_HEALTH_BALANCE = 50
 		self.spring.headshot_dmg_mul = 3.997125
 		self.spring.damage.explosion_damage_mul = 1.25
-		self.spring.damage.bullet_damage_mul = 0.65
-		self.spring.damage.fire_damage_mul = 0.65
+		self.spring.damage.bullet_damage_mul = 1
+		self.spring.damage.fire_damage_mul = 1
 		self.spring.priority_shout = "f45"
 		self.spring.bot_priority_shout = "f45x_any"
 		self.spring.priority_shout_max_dis = 3000
@@ -11571,18 +11574,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 				self[enemy_tweak].move_speed = speed_preset
 
-				for pose, hastes in pairs(speed_preset) do
-					for haste, stances in pairs(hastes) do
-						for stance, move_dirs in pairs(stances) do
-							for move_dir, speed in pairs(move_dirs) do
-								speed_preset[pose].walk.hos[move_dir] = speed * walk_mul
-								speed_preset[pose].walk.cbt[move_dir] = speed * walk_mul
-								speed_preset[pose].run.hos[move_dir] = speed * run_mul
-								speed_preset[pose].run.cbt[move_dir] = speed * run_mul
-							end
-						end
-					end
-				end
+				speed_preset.stand.walk.hos.fwd = speed_preset.stand.walk.hos.fwd * walk_mul
+				speed_preset.stand.walk.hos.strafe = speed_preset.stand.walk.hos.strafe * walk_mul
+				speed_preset.stand.walk.hos.bwd = speed_preset.stand.walk.hos.bwd * walk_mul
+				speed_preset.stand.walk.cbt.fwd = speed_preset.stand.walk.cbt.fwd * walk_mul
+				speed_preset.stand.walk.cbt.strafe = speed_preset.stand.walk.cbt.strafe * walk_mul
+				speed_preset.stand.walk.cbt.bwd = speed_preset.stand.walk.cbt.bwd * walk_mul
+				speed_preset.stand.run.hos.fwd = speed_preset.stand.run.hos.fwd * run_mul
+				speed_preset.stand.run.hos.strafe = speed_preset.stand.run.hos.strafe * run_mul
+				speed_preset.stand.run.hos.bwd = speed_preset.stand.run.hos.bwd * run_mul
+				speed_preset.stand.run.cbt.fwd = speed_preset.stand.run.cbt.fwd * run_mul
+				speed_preset.stand.run.cbt.strafe = speed_preset.stand.run.cbt.strafe * run_mul
+				speed_preset.stand.run.cbt.bwd = speed_preset.stand.run.cbt.bwd * run_mul
+				speed_preset.crouch.walk.hos.fwd = speed_preset.crouch.walk.hos.fwd * walk_mul
+				speed_preset.crouch.walk.hos.strafe = speed_preset.crouch.walk.hos.strafe * walk_mul
+				speed_preset.crouch.walk.hos.bwd = speed_preset.crouch.walk.hos.bwd * walk_mul
+				speed_preset.crouch.walk.cbt.fwd = speed_preset.crouch.walk.cbt.fwd * walk_mul
+				speed_preset.crouch.walk.cbt.strafe = speed_preset.crouch.walk.cbt.strafe * walk_mul
+				speed_preset.crouch.walk.cbt.bwd = speed_preset.crouch.walk.cbt.bwd * walk_mul
+				speed_preset.crouch.run.hos.fwd = speed_preset.crouch.run.hos.fwd * run_mul
+				speed_preset.crouch.run.hos.strafe = speed_preset.crouch.run.hos.strafe * run_mul
+				speed_preset.crouch.run.hos.bwd = speed_preset.crouch.run.hos.bwd * run_mul
+				speed_preset.crouch.run.cbt.fwd = speed_preset.crouch.run.cbt.fwd * run_mul
+				speed_preset.crouch.run.cbt.strafe = speed_preset.crouch.run.cbt.strafe * run_mul
+				speed_preset.crouch.run.cbt.bwd = speed_preset.crouch.run.cbt.bwd * run_mul
 			end
 		end
 	end

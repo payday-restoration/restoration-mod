@@ -1,0 +1,199 @@
+<table>
+	<unit>
+		<variables>
+			<var_closed value="1"/>
+		</variables>
+		<filter name="'filter_closed'">
+			<check value="vars.var_closed == 1"/>
+		</filter>
+		<sequence name="'int_seq_spawn_diamond'" startup="true">
+			<function extension="'spawn_manager'" function="'spawn_unit'" param1="'diamond'" param2="'a_diamond'" param3="'units/world/props/diamond_stand/diamond_stand_05_diamond'"/>
+			<run_sequence name="'disable_interaction_diamond'"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_close'" triggable="true">
+			<animation_group enabled="true" filter="'filter_closed'" from="0/30" name="'anim_cage'" once="true" speed="1" to="90/30"/>
+			<run_sequence name="'disable_interaction_diamond'"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<sound action="'play'" event="'dah_display_case_close_sequence'" source="'snd'"/>
+			<body enabled="false" name="'body_glass_01'" start_time="50/30"/>
+			<body enabled="false" name="'body_glass_02'" start_time="50/30"/>
+			<body enabled="false" name="'body_glass_03'" start_time="50/30"/>
+			<body enabled="false" name="'body_glass_04'" start_time="50/30"/>
+			<body enabled="false" name="'body_glass_cut'" start_time="50/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_open'" triggable="true">
+			<animation_group enabled="true" from="90/30" name="'anim_cage'" once="true" speed="-1" to="0/30"/>
+			<run_sequence name="'enable_interaction'" start_time="90/30"/>
+			<sound action="'play'" event="'dah_display_case_open_sequence'" source="'snd'"/>
+		</sequence>
+		<sequence editable_state="true" name="'enable_interaction_diamond'" triggable="true">
+			<function extension="'spawn_manager'" function="'spawn_run_sequence'" param1="'diamond'" param2="'enable_interaction'"/>
+		</sequence>
+		<sequence editable_state="true" name="'disable_interaction_diamond'" triggable="true">
+			<function extension="'spawn_manager'" function="'spawn_run_sequence'" param1="'diamond'" param2="'disable_interaction'"/>
+		</sequence>
+		<sequence editable_state="true" name="'enable_interaction'" triggable="true">
+			<interaction enabled="true"/>
+			<graphic_group name="'grp_icon'" visibility="true"/>
+		</sequence>
+		<sequence editable_state="true" name="'disable_interaction'" triggable="true">
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+		</sequence>
+		<sequence editable_state="false" name="'interact'" triggable="false">
+			<run_sequence name="'int_seq_cut_glass'"/>
+		</sequence>
+		<sequence name="'int_seq_cut_glass'">
+			<object enabled="false" name="'g_glass_03'"/>
+			<object enabled="true" name="'g_glass_cut'"/>
+			<body enabled="true" name="'body_glass_cut'"/>
+			<body enabled="false" name="'body_glass_03'"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<run_sequence name="'enable_interaction_diamond'"/>
+		</sequence>
+		<body name="'body_glass_01'">
+			<endurance bullet="1" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_crack_window_01'"/>
+			</endurance>
+			<endurance bullet="2" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_break_window_01'"/>
+			</endurance>
+		</body>
+		<sequence name="'int_seq_crack_window_01'">
+			<object enabled="false" name="'g_glass_01'"/>
+			<object enabled="true" name="'g_glass_shattered_01'"/>
+			<run_sequence name="'glass_broken'"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+		</sequence>
+		<sequence name="'int_seq_break_window_01'">
+			<body enabled="false" name="'body_glass_01'"/>
+			<object enabled="false" name="'g_glass_01'"/>
+			<object enabled="false" name="'g_glass_shattered_01'"/>
+			<sound action="'play'" event="'window_small_shatter'" object="'e_glass_01'"/>
+			<effect name="'effects/payday2/particles/window/storefront_window_small'" parent="object('e_glass_01')" position="v()"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<run_sequence name="'glass_broken'"/>
+		</sequence>
+		<body name="'body_glass_02'">
+			<endurance bullet="1" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_crack_window_02'"/>
+			</endurance>
+			<endurance bullet="2" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_break_window_02'"/>
+			</endurance>
+		</body>
+		<sequence name="'int_seq_crack_window_02'">
+			<object enabled="false" name="'g_glass_02'"/>
+			<object enabled="true" name="'g_glass_shattered_02'"/>
+			<run_sequence name="'glass_broken'"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+		</sequence>
+		<sequence name="'int_seq_break_window_02'">
+			<body enabled="false" name="'body_glass_02'"/>
+			<object enabled="false" name="'g_glass_02'"/>
+			<object enabled="false" name="'g_glass_shattered_02'"/>
+			<sound action="'play'" event="'window_small_shatter'" object="'e_glass_02'"/>
+			<effect name="'effects/payday2/particles/window/storefront_window_small'" parent="object('e_glass_02')" position="v()"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<run_sequence name="'glass_broken'"/>
+		</sequence>
+		<body name="'body_glass_03'">
+			<endurance bullet="1" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_crack_window_03'"/>
+			</endurance>
+			<endurance bullet="2" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_break_window_03'"/>
+			</endurance>
+		</body>
+		<sequence name="'int_seq_crack_window_03'">
+			<object enabled="false" name="'g_glass_03'"/>
+			<object enabled="true" name="'g_glass_shattered_03'"/>
+			<run_sequence name="'glass_broken'"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+		</sequence>
+		<sequence name="'int_seq_break_window_03'">
+			<body enabled="false" name="'body_glass_03'"/>
+			<object enabled="false" name="'g_glass_03'"/>
+			<object enabled="false" name="'g_glass_shattered_03'"/>
+			<sound action="'play'" event="'window_small_shatter'" object="'e_glass_03'"/>
+			<effect name="'effects/payday2/particles/window/storefront_window_small'" parent="object('e_glass_03')" position="v()"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<run_sequence name="'glass_broken'"/>
+		</sequence>
+		<body name="'body_glass_04'">
+			<endurance bullet="1" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_crack_window_04'"/>
+			</endurance>
+			<endurance bullet="2" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_break_window_04'"/>
+			</endurance>
+		</body>
+		<sequence name="'int_seq_crack_window_04'">
+			<object enabled="false" name="'g_glass_04'"/>
+			<object enabled="true" name="'g_glass_shattered_04'"/>
+			<run_sequence name="'glass_broken'"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+		</sequence>
+		<sequence name="'int_seq_break_window_04'">
+			<body enabled="false" name="'body_glass_04'"/>
+			<object enabled="false" name="'g_glass_04'"/>
+			<object enabled="false" name="'g_glass_shattered_04'"/>
+			<sound action="'play'" event="'window_small_shatter'" object="'e_glass_04'"/>
+			<effect name="'effects/payday2/particles/window/storefront_window_small'" parent="object('e_glass_04')" position="v()"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<run_sequence name="'glass_broken'"/>
+		</sequence>
+		<body name="'body_glass_cut'">
+			<endurance bullet="1" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_crack_window_cut'"/>
+			</endurance>
+			<endurance bullet="2" explosion="1" melee="0.5">
+				<run_sequence name="'int_seq_break_window_cut'"/>
+			</endurance>
+		</body>
+		<sequence name="'int_seq_crack_window_cut'">
+			<object enabled="false" name="'g_glass_cut'"/>
+			<object enabled="true" name="'g_glass_cut_shattered'"/>
+			<run_sequence name="'glass_broken'"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+		</sequence>
+		<sequence name="'int_seq_break_window_cut'">
+			<body enabled="false" name="'body_glass_cut'"/>
+			<object enabled="false" name="'g_glass_cut'"/>
+			<object enabled="false" name="'g_glass_cut_shattered'"/>
+			<sound action="'play'" event="'window_small_shatter'" object="'e_glass_03'"/>
+			<effect name="'effects/payday2/particles/window/storefront_window_small'" parent="object('e_glass_03')" position="v()"/>
+			<interaction enabled="false"/>
+			<graphic_group name="'grp_icon'" visibility="false"/>
+			<run_sequence name="'glass_broken'"/>
+		</sequence>
+		<sequence editable_state="false" name="'glass_broken'" triggable="false">
+			<run_sequence filter="'filter_closed'" name="'anim_close'"/>
+			<set_variables var_closed="0"/>
+			<light enabled="false" name="'li_small'"/>
+			<object enabled="false" name="'g_lights_glow'"/>
+		</sequence>
+		<sequence editable_state="false" name="'glass_cracked'" triggable="false">
+			<run_sequence filter="'filter_closed'" name="'anim_close'"/>
+			<set_variables var_closed="0"/>
+			<light enabled="false" name="'li_small'"/>
+			<object enabled="false" name="'g_lights_glow'"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'light_on' " triggable="true">
+			<light enabled="true" name="'li_small'"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'light_off' " triggable="true">
+			<light enabled="false" name="'li_small'"/>
+		</sequence>
+	</unit>
+</table>

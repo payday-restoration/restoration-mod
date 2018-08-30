@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <assets base_path="assets/">
 
-	<file name="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01.object"/>
-	<file name="units/vehicles/animated_cars/police_ny_bank_anim.object"/>
-	<file name="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il.texture"/>
+
 	<!--Risk Level-->
 	<file name="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc.texture"/>
 	<file name="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc.texture"/>

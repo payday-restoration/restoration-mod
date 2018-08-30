@@ -63,7 +63,7 @@ end
  if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
 
-	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job_res" the
+	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job_res" then
 		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	

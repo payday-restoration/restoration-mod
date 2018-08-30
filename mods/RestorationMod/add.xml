@@ -58,6 +58,8 @@
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
+	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
+	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="false"/>
 
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>

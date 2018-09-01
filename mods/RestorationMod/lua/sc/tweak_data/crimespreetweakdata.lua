@@ -26,10 +26,119 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:init_modifiers(tweak_data)
 		self:init_gage_assets(tweak_data)
 		self:init_gui(tweak_data)
-
-		self.assets.increased_absorption.data = {absorption = 1}
 	end
-
+	
+	function CrimeSpreeTweakData:init_gage_assets(tweak_data)
+		local asset_cost = 18
+		self.max_assets_unlocked = 4
+		self.assets = {increased_health = {}}
+		self.assets.increased_health.name_id = "menu_cs_ga_increased_health"
+		self.assets.increased_health.unlock_desc_id = "menu_cs_ga_increased_health_desc"
+		self.assets.increased_health.icon = "csb_health"
+		self.assets.increased_health.cost = asset_cost
+		self.assets.increased_health.data = {health = 10}
+		self.assets.increased_health.class = "GageModifierMaxHealth"
+		self.assets.increased_armor = {
+			name_id = "menu_cs_ga_increased_armor",
+			unlock_desc_id = "menu_cs_ga_increased_armor_desc",
+			icon = "csb_armor",
+			cost = asset_cost,
+			data = {armor = 10},
+			class = "GageModifierMaxArmor"
+		}
+		self.assets.increased_stamina = {
+			name_id = "menu_cs_ga_increased_stamina",
+			unlock_desc_id = "menu_cs_ga_increased_stamina_desc",
+			icon = "csb_stamina",
+			cost = asset_cost,
+			data = {stamina = 100},
+			class = "GageModifierMaxStamina"
+		}
+		self.assets.increased_ammo = {
+			name_id = "menu_cs_ga_increased_ammo",
+			unlock_desc_id = "menu_cs_ga_increased_ammo_desc",
+			icon = "csb_ammo",
+			cost = asset_cost,
+			data = {ammo = 15},
+			class = "GageModifierMaxAmmo"
+		}
+		self.assets.increased_lives = {
+			name_id = "menu_cs_ga_increased_lives",
+			unlock_desc_id = "menu_cs_ga_increased_lives_desc",
+			icon = "csb_lives",
+			cost = asset_cost,
+			data = {lives = 1},
+			class = "GageModifierMaxLives"
+		}
+		self.assets.increased_throwables = {
+			name_id = "menu_cs_ga_increased_throwables",
+			unlock_desc_id = "menu_cs_ga_increased_throwables_desc",
+			icon = "csb_throwables",
+			cost = asset_cost,
+			data = {throwables = 70},
+			class = "GageModifierMaxThrowables"
+		}
+		self.assets.increased_deployables = {
+			name_id = "menu_cs_ga_increased_deployables",
+			unlock_desc_id = "menu_cs_ga_increased_deployables_desc",
+			icon = "csb_deployables",
+			cost = asset_cost,
+			data = {deployables = 50},
+			class = "GageModifierMaxDeployables"
+		}
+		self.assets.increased_absorption = {
+			name_id = "menu_cs_ga_increased_absorption",
+			unlock_desc_id = "menu_cs_ga_increased_absorption_desc",
+			icon = "csb_absorb",
+			cost = asset_cost,
+			data = {absorption = 0.5},
+			class = "GageModifierDamageAbsorption"
+		}
+		self.assets.quick_reload = {
+			name_id = "menu_cs_ga_quick_reload",
+			unlock_desc_id = "menu_cs_ga_quick_reload_desc",
+			icon = "csb_reload",
+			cost = asset_cost,
+			data = {speed = 10},
+			class = "GageModifierQuickReload"
+		}
+		self.assets.quick_switch = {
+			name_id = "menu_cs_ga_quick_switch",
+			unlock_desc_id = "menu_cs_ga_quick_switch_desc",
+			icon = "csb_switch",
+			cost = asset_cost,
+			data = {speed = 25},
+			class = "GageModifierQuickSwitch"
+		}
+		self.assets.quick_pagers = {
+			name_id = "menu_cs_ga_quick_pagers",
+			unlock_desc_id = "menu_cs_ga_quick_pagers_desc",
+			icon = "csb_pagers",
+			cost = asset_cost,
+			data = {speed = 50},
+			stealth = true,
+			class = "GageModifierQuickPagers"
+		}
+		self.assets.increased_body_bags = {
+			name_id = "menu_cs_ga_increased_body_bags",
+			unlock_desc_id = "menu_cs_ga_increased_body_bags_desc",
+			icon = "csb_bodybags",
+			cost = asset_cost,
+			data = {bags = 2},
+			stealth = true,
+			class = "GageModifierMaxBodyBags"
+		}
+		self.assets.quick_locks = {
+			name_id = "menu_cs_ga_quick_locks",
+			unlock_desc_id = "menu_cs_ga_quick_locks_desc",
+			icon = "csb_locks",
+			cost = asset_cost,
+			data = {speed = 25},
+			stealth = true,
+			class = "GageModifierQuickLocks"
+		}
+	end
+	
 	function CrimeSpreeTweakData:init_modifiers(tweak_data)
 		local health_increase = 0
 		local damage_increase = 15

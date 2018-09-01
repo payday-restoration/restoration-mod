@@ -1458,8 +1458,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.headshot_dmg_mul = 3.997125
 		self.tank_titan.immune_to_concussion = true
 		self.tank_titan.immune_to_knock_down = true
-		self.tank_titan.priority_shout = "f45"
-		self.tank_titan.bot_priority_shout = "f45x_any"
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
 		if job == "mad" or job == "hvh" then 
@@ -1468,7 +1466,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.tank_titan.custom_voicework = "tdozer"
 		end				
 		self.tank_titan.ecm_hurts = {}
-		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 		self.tank_titan.die_sound_event = "mga_death_scream"
 		self.tank_titan.damage.explosion_damage_mul = 1.25
 		self.tank_titan.is_special = true
@@ -1488,6 +1485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
+		self.tank_mini.spawn_sound_event = "bdz_entrance_elite"
 		self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(presets.weapon.normal.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
@@ -1553,8 +1551,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan = deep_clone(self.spooc)
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.spooc_titan.can_be_tased = false
-		self.spooc_titan.priority_shout = "f45"
-		self.spooc_titan.bot_priority_shout = "f45x_any"
 		self.spooc_titan.priority_shout_max_dis = 0
 		self.spooc_titan.unintimidateable = true
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
@@ -1630,8 +1626,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 		self.phalanx_minion.flammable = false
 		self.phalanx_minion.damage.shield_knocked = true
-		self.phalanx_minion.priority_shout = "f45"
-		self.phalanx_minion.bot_priority_shout = "f45x_any"
 		self.phalanx_minion.priority_shout_max_dis = 3000
 		self.phalanx_minion.weapon_voice = "3"
 		self.phalanx_minion.experience.cable_tie = "tie_swat"

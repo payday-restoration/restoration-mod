@@ -381,6 +381,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.damage.explosion_damage_mul = 0.1
 		self.medic_summers.damage.fire_damage_mul = 0.05
 		self.medic_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.medic_summers.ecm_vulnerability = 0
+		self.medic_summers.ecm_hurts = {}			
 		self.medic_summers.immune_to_concussion = true
 		self.medic_summers.no_damage_mission = true
 		self.medic_summers.no_retreat = true
@@ -1874,6 +1876,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.damage.explosion_damage_mul = 0.1
 		self.taser_summers.damage.fire_damage_mul = 0.05
 		self.taser_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.taser_summers.ecm_vulnerability = 0
 		self.taser_summers.ecm_hurts = {}
 		self.taser_summers.chatter = presets.enemy_chatter.summers
 		self.taser_summers.no_retreat = true
@@ -2009,6 +2012,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.use_factory = true
 		self.boom_summers.rescue_hostages = false
 		self.boom_summers.steal_loot = nil
+		self.boom_summers.ecm_vulnerability = 0
+		self.boom_summers.ecm_hurts = {}		
 		self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
 		table.insert(self._enemy_list, "boom_summers")
 	end

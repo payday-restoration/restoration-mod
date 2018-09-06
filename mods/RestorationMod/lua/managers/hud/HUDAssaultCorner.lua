@@ -4,10 +4,10 @@ end
 
 function HUDAssaultCorner:init(hud, full_hud)
 --Control option for alternate indicator, gotta make this less fuck stupid later on
-	if restoration.Options:GetValue("HUD/Extra/AltAssault") then
-		self._v2_corner = true
-	else
+	if restoration.Options:GetValue("HUD/AssaultStyle") == 1 then
 		self._v2_corner = false
+	elseif restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
+		self._v2_corner = true
 	end
 	
 	self._hud_panel = hud.panel
@@ -647,11 +647,9 @@ function HUDAssaultCorner:_start_assault(text_list)
 	text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
 	self:_set_feedback_color(self._assault_color)
 	
-	-- local started_now = not self._assault
-	
-	-- if managers.skirmish:is_skirmish() and started_now then
-		-- self:_popup_wave_started()
-	-- end
+	if managers.skirmish:is_skirmish() then
+		self:_popup_wave_started()
+	end
 
 end
 

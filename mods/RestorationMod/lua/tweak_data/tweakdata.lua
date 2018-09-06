@@ -40,6 +40,8 @@ tweak_data.hud_icons.risk_murder_squad = {
 	}
 end
 
+if restoration:all_enabled("HUD/MainHUD", "HUD/AssaultPanel") then
+
 tweak_data.hud_icons.interaction_trade = {
 		texture = "guis/textures/restoration/hud_icons",
 		texture_rect = {
@@ -49,8 +51,9 @@ tweak_data.hud_icons.interaction_trade = {
 			48
 		}
 	}
+end
 
-if restoration.Options:GetValue("HUD/MainHUD") then
+if restoration:all_enabled("HUD/MainHUD", "HUD/Teammate") then
 --[[tweak_data.hud_icons.equipment_cable_ties = {
 		texture = "guis/textures/restoration/hud_icons",
 		texture_rect = {

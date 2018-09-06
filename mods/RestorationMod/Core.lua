@@ -26,6 +26,11 @@ function RestorationCore.log_shit(to_log)
 	end
 end
 
+RestorationCore.assault_style = {
+	"beta_assault",
+	"alpha_assault"
+}
+
 if not _G.restoration then
 	local success, err = pcall(function() _G.restoration = RestorationCore:new() end)
 	if not success then

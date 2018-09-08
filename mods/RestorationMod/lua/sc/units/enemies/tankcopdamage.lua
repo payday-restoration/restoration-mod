@@ -6,6 +6,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	function TankCopDamage:is_head(body)
 		return body and (body:name() == ids_face_plate or body:name() == ids_visor or TankCopDamage.super.is_head(self, body))
 	end
+
+end
+
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	
 	function TankCopDamage:seq_clbk_vizor_shatter()
 		if not self._unit:character_damage():dead() then

@@ -4,7 +4,7 @@ function CustomSafehouseTweakData:init(tweak_data)
 
 	--We gage coins now
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
-		self.prices.weapon_mod = 1
+		self.prices.weapon_mod = 6
 	end
 
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then

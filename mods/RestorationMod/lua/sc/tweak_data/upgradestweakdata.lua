@@ -125,43 +125,30 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {0.2}
 	--Bot boost stuff stuff--
-	if Global.game_settings and Global.game_settings.single_player then
-		self.values.team.crew_add_health = {2}
-		self.values.team.crew_add_armor = {1}
-		self.values.team.crew_add_dodge = {0.02}
-		self.values.team.crew_add_concealment = {1}
-		self.values.team.crew_add_stamina = {25}
-		self.values.team.crew_reduce_speed_penalty = {1}
-		self.values.team.crew_health_regen = {0.1}
-		self.values.team.crew_throwable_regen = {150}
-		self.values.team.crew_faster_reload = {1.1}
-		self.values.team.crew_faster_swap = {1}	
-	else
-		self.values.team.crew_add_health = {0}
-		self.values.team.crew_add_armor = {0}
-		self.values.team.crew_add_dodge = {0}
-		self.values.team.crew_add_concealment = {0}
-		self.values.team.crew_add_stamina = {0}
-		self.values.team.crew_reduce_speed_penalty = {1}
-		self.values.team.crew_health_regen = {0}
-		self.values.team.crew_throwable_regen = {999999999999999999999999999999999999999999999999999999999999999999}
-		self.values.team.crew_faster_reload = {1}
-		self.values.team.crew_faster_swap = {1}
-	end
+	self.values.team.crew_add_health = {3}
+	self.values.team.crew_add_armor = {1.5}
+	self.values.team.crew_add_dodge = {0.03}
+	self.values.team.crew_add_concealment = {1}
+	self.values.team.crew_add_stamina = {25}
+	self.values.team.crew_reduce_speed_penalty = {1}
+	self.values.team.crew_health_regen = {0.25}
+	self.values.team.crew_throwable_regen = {100}
+	self.values.team.crew_faster_reload = {1.1}
+	self.values.team.crew_faster_swap = {1}	
 
 	--Crew ability stuff
 	self.values.team.crew_inspire = {
 		{
-			30,
-			30,
-			30
+			60,
+			60,
+			60
 		}
 	}
 	self.values.team.crew_scavenge = {
 		{
-			0.15,
-			0.15,
-			0.15
+			0.4,
+			0.4,
+			0.4
 		}
 	}
 	self.values.team.crew_interact = {
@@ -680,9 +667,9 @@ function UpgradesTweakData:_init_pd2_values()
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
 				self.values.akimbo.extra_ammo_multiplier = {1.25, 1.5}
 				self.values.akimbo.recoil_multiplier = {
-					1.5,
-					1.25,
-					1
+					1.2,
+					1.15,
+					1.1
 				}
 
 				--Desperado
@@ -834,11 +821,6 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.temporary.melee_life_leech = {
 		{0.1, 10}
 	}
-	self.values.akimbo.recoil_multiplier = {
-		1.5,
-		1.25,
-		1
-	}
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
@@ -923,13 +905,33 @@ function UpgradesTweakData:_init_pd2_values()
 	--Gambler
  	self.loose_ammo_restore_health_values = {
 		base = 4,
- 		cd = 4,
+ 		cd = 5,
  		multiplier = 0.2,
 		{0, 2},
 		{2, 4},
 		{4, 6}
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5
+	self.loose_ammo_give_team_ratio = 0.5
+	self.values.temporary.loose_ammo_restore_health = {}	
+	
+	for i, data in ipairs(self.loose_ammo_restore_health_values) do
+		local base = self.loose_ammo_restore_health_values.base
+
+		table.insert(self.values.temporary.loose_ammo_restore_health, {
+			{
+				base + data[1],
+				base + data[2]
+			},
+			self.loose_ammo_restore_health_values.cd
+		})
+	end
+
+	self.values.temporary.loose_ammo_give_team = {{
+		true,
+		5
+	}}
+	self.values.player.loose_ammo_restore_health_give_team = {true}	
 
 	--Sociopath nerfs
 	self.values.player.killshot_regen_armor_bonus = {2.5}

@@ -1,25 +1,37 @@
-function MenuCrimeNetFiltersInitiator:update_node(node)
-	if MenuCallbackHandler:is_win32() then
-		local not_friends_only = not Global.game_settings.search_friends_only
-		node:item("toggle_new_servers_only"):set_enabled(not_friends_only)
-		node:item("toggle_server_state_lobby"):set_enabled(not_friends_only)
-		node:item("toggle_job_appropriate_lobby"):set_enabled(not_friends_only)
-		node:item("toggle_mutated_lobby"):set_enabled(not_friends_only)
-		node:item("max_lobbies_filter"):set_enabled(not_friends_only)
-		node:item("server_filter"):set_enabled(not_friends_only)
-		node:item("difficulty_filter"):set_enabled(not_friends_only)
-		node:item("kick_option_filter"):set_enabled(not_friends_only)
-		node:item("job_id_filter"):set_enabled(not_friends_only)
-		node:item("job_plan_filter"):set_enabled(not_friends_only)
-		node:item("toggle_job_appropriate_lobby"):set_visible(self:is_standard() or self:is_heist_war())
-		node:item("toggle_allow_safehouses"):set_visible(self:is_standard() or self:is_heist_war())
-		node:item("toggle_mutated_lobby"):set_visible(self:is_standard() or self:is_heist_war())
-		node:item("difficulty_filter"):set_visible(self:is_standard() or self:is_heist_war())
-		node:item("job_id_filter"):set_visible(self:is_standard() or self:is_heist_war())
-		node:item("max_spree_difference_filter"):set_visible(self:is_crime_spree())
-	end
-end
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-function MenuCrimeNetFiltersInitiator:is_heist_war()
-	return Global.game_settings and Global.game_settings.gamemode_filter == GamemodeHeistWar.id
+	function MenuCallbackHandler:accept_skirmish_contract(item, node)
+		managers.menu:active_menu().logic:navigate_back(true)
+		managers.menu:active_menu().logic:navigate_back(true)
+
+		local job_data = {
+			difficulty = "overkill_145",
+			job_id = managers.skirmish:random_skirmish_job_id()
+		}
+
+		if Global.game_settings.single_player then
+			MenuCallbackHandler:start_single_player_job(job_data)
+		else
+			MenuCallbackHandler:start_job(job_data)
+		end
+	end
+
+	function MenuCallbackHandler:accept_skirmish_weekly_contract(item, node)
+		managers.menu:active_menu().logic:navigate_back(true)
+		managers.menu:active_menu().logic:navigate_back(true)
+
+		local weekly_skirmish = managers.skirmish:active_weekly()
+		local job_data = {
+			difficulty = "overkill_145",
+			weekly_skirmish = true,
+			job_id = weekly_skirmish.id
+		}
+
+		if Global.game_settings.single_player then
+			MenuCallbackHandler:start_single_player_job(job_data)
+		else
+			MenuCallbackHandler:start_job(job_data)
+		end
+	end
+
 end

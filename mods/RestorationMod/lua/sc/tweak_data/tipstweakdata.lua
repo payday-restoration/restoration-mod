@@ -4,6 +4,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function TipsTweakData:init()
 		old_tips_init(self)
 
+		--[[
 		local hints = {	
 			{ category = "sc_tip", cat_index = 1, image = "grenadier_load", force_image = true },	
 			{ category = "sc_tip", cat_index = 2, image = "vet_cop_loading", force_image = true }		
@@ -18,6 +19,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.category_totals[tip.category] = tip.cat_index
 			end
 		end
+		]]--
 
 	end
 

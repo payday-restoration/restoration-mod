@@ -46,6 +46,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			summers = true
 		}
 	end
+	
+	function GroupAIStateBase:_radio_chatter_clbk()
+		if self._ai_enabled and not self:whisper_mode() then
+			local optimal_dist = 500
+			local best_dist, best_cop, radio_msg = nil
+
+			for _, c_record in pairs(self._player_criminals) do
+				for i, e_key in ipairs(c_record.important_enemies) do
+					local cop = self._police[e_key]
+					local use_radio = cop.char_tweak.use_radio
+
+					if use_radio then
+						if cop.char_tweak.radio_prefix then
+							use_radio = cop.char_tweak.radio_prefix .. use_radio
+						end
+
+						local dist = math.abs(mvector3.distance(cop.m_pos, c_record.m_pos))
+
+						if not best_dist or dist < best_dist then
+							best_dist = dist
+							best_cop = cop
+							radio_msg = use_radio
+						end
+					end
+				end
+			end
+
+			if best_cop then
+				best_cop.unit:sound():play(radio_msg, nil, true)
+			end
+		end
+
+		self._radio_clbk = callback(self, self, "_radio_chatter_clbk")
+
+		managers.enemy:add_delayed_clbk("_radio_chatter_clbk", self._radio_clbk, Application:time() + 30 + math.random(0, 20))
+	end	
 
 	function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 		local nr_players = 0
@@ -190,6 +226,81 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		end
+	end
+	
+	--Gameover now happens after ~30 seconds instead of 10 seconds, allowing Stockholm Syndrome and Messiah to function correctly
+	function GroupAIStateBase:check_gameover_conditions()
+		if not Network:is_server() or managers.platform:presence() ~= "Playing" or setup:has_queued_exec() then
+			return false
+		end
+
+		if game_state_machine:current_state().game_ended and game_state_machine:current_state():game_ended() then
+			return false
+		end
+
+		if Global.load_start_menu or Application:editor() then
+			return false
+		end
+
+		if not self:whisper_mode() and self._super_syndrome_peers and self:hostage_count() > 0 then
+			for _, active in pairs(self._super_syndrome_peers) do
+				if active then
+					return false
+				end
+			end
+		end
+
+		local plrs_alive = false
+		local plrs_disabled = true
+
+		for u_key, u_data in pairs(self._player_criminals) do
+			plrs_alive = true
+
+			if u_data.status ~= "dead" and u_data.status ~= "disabled" then
+				plrs_disabled = false
+
+				break
+			end
+		end
+
+		local ai_alive = false
+		local ai_disabled = true
+
+		for u_key, u_data in pairs(self._ai_criminals) do
+			ai_alive = true
+
+			if u_data.status ~= "dead" and u_data.status ~= "disabled" then
+				ai_disabled = false
+
+				break
+			end
+		end
+
+		local gameover = false
+
+		if not plrs_alive and not self:is_ai_trade_possible() then
+			gameover = true
+		elseif plrs_disabled and not ai_alive then
+			gameover = true
+		elseif plrs_disabled and ai_disabled then
+			gameover = true
+		end
+
+		gameover = gameover or managers.skirmish:check_gameover_conditions()
+
+		if gameover then
+			if not self._gameover_clbk then
+				self._gameover_clbk = callback(self, self, "_gameover_clbk_func")
+
+				managers.enemy:add_delayed_clbk("_gameover_clbk", self._gameover_clbk, Application:time() + 25)
+			end
+		elseif self._gameover_clbk then
+			managers.enemy:remove_delayed_clbk("_gameover_clbk")
+
+			self._gameover_clbk = nil
+		end
+
+		return gameover
 	end
 	
 end

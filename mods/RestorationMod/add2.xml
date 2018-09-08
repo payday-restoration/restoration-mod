@@ -1,0 +1,77 @@
+<table directory="assets">
+	
+	<!--In here to guarantee they always load-->
+	<texture path="units/payday2/characters/shared_textures/spook_cloak_df" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_nm" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false" load="true"/>	
+
+	<!--The following assets prevent levels from loading-->
+	<!--HK21-->
+	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="false" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
+	
+	<!--Unshootable Flashbangs-->
+	<sequence_manager path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<model path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<object path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<unit path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="false" force="false"/>
+	
+	<!--Grenadier-->
+	<object path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<sequence_manager path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/glass_op" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/material_body_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_body_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
+	
+	 <!--murky medics-->	
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<model path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_contour" force="false" />
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/murky_heavy_df" force="false" />
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_df" force="false" />
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_nm" force="false" />
+	<!--r870-->
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870" load="true"/>	
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870_husk" load="true"/>
+	
+	<!--Murky Vet Cop-->
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_contour" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_murky_1_df" force="false"/>		
+
+	 <!--murky glass-->
+	<!-- <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	 -->
+	
+    <!--NYPD heavy r870-->	
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870" load="true"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk" load="true"/>
+	
+</table>

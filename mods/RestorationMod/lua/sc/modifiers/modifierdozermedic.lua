@@ -19,7 +19,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function ModifierDozerMedic:modify_value(id, value)
 		if id == "GroupAIStateBesiege:SpawningUnit" then
 			local is_agent = table.contains(ModifierDozerMedic.agents, value)
-			if is_hrt and math.random(0,100) < 10 then
+			if is_hrt and math.random(0,100) < 15 then
 				return Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
 			end
 		end

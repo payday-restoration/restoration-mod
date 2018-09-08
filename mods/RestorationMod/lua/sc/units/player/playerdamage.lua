@@ -2,7 +2,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerDamage:init(unit)
 		self._lives_init = tweak_data.player.damage.LIVES_INIT
-		self._lives_init = managers.crime_spree:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
+		self._lives_init = managers.modifiers:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
 		self._unit = unit
 		self._max_health_reduction = managers.player:upgrade_value("player", "max_health_reduction", 1)
 		self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)
@@ -205,7 +205,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		RestorationCore.log_shit("SC: Bullet, starting damage: " .. attack_data.damage)
 		attack_data.damage = attack_data.damage * dmg_mul
 		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-		attack_data.damage = managers.crime_spree:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
 		local damage_absorption = pm:damage_absorption()
 		if damage_absorption > 0 then
 			attack_data.damage = math.max(0, attack_data.damage - damage_absorption)

@@ -171,10 +171,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			return "friendly_fire"
 		end
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+		--local ap_skill = self._is_team_ai and managers.player:has_category_upgrade("team", "crew_ai_ap_ammo")
+		local ap_skill = managers.player:has_category_upgrade("team", "crew_ai_ap_ammo")
 
 		if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name and not attack_data.armor_piercing and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and not attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
 			local armor_pierce_roll = math.rand(1)
 			local armor_pierce_value = 0
+			if attack_data.attacker_unit:in_slot(16) then
+				if ap_skill then
+					armor_pierce_value = 1
+				end
+			end				
 			if attack_data.attacker_unit == managers.player:player_unit() and not attack_data.weapon_unit:base().thrower_unit then
 				armor_pierce_value = armor_pierce_value + attack_data.weapon_unit:base():armor_piercing_chance()
 				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("player", "armor_piercing_chance", 0)
@@ -663,77 +670,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 end
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
 	local old_death = CopDamage.die
-
-
-	function CopDamage:init(unit)
-		self._unit = unit
-		local char_tweak = tweak_data.character[unit:base()._tweak_table]
-		self._immune_to_knockback = char_tweak.damage.immune_to_knockback
-		self._HEALTH_INIT = char_tweak.HEALTH_INIT
-		self._health = self._HEALTH_INIT
-		self._health_ratio = 1
-		self._HEALTH_INIT_PRECENT = self._HEALTH_INIT / self._HEALTH_GRANULARITY
-		self._autotarget_data = {fast = unit:get_object(Idstring("Spine1"))}
-		self._pickup = "ammo"
-		self._listener_holder = EventListenerHolder:new()
-
-		if char_tweak.permanently_invulnerable or self.immortal then
-			self:set_invulnerable(true)
-		end
-
-		self._char_tweak = char_tweak
-		self._spine2_obj = unit:get_object(Idstring("Spine2"))
-
-		if self._head_body_name then
-			self._ids_head_body_name = Idstring(self._head_body_name)
-			self._head_body_key = self._unit:body(self._head_body_name):key()
-		end
-
-		self._ids_plate_name = Idstring("body_plate")
-		if self._unit:base()._tweak_table == "city_swat" then
-			self._has_plate = false
-		else
-			self._has_plate = true
-		end
-		local body = self._unit:body("mover_blocker")
-
-		if body then
-			body:add_ray_type(Idstring("trip_mine"))
-		end
-
-		self._last_time_unit_got_fire_damage = nil
-		self._last_time_unit_got_fire_effect = nil
-		self._temp_flame_redir_res = nil
-		self._active_fire_bone_effects = {}
-
-		if CopDamage.DEBUG_HP then
-			self:_create_debug_ws()
-		end
-
-		self._tase_effect_table = {
-			effect = Idstring("effects/payday2/particles/character/taser_hittarget"),
-			parent = self._spine2_obj
-		}
-
-		self:_set_lower_health_percentage_limit(self._char_tweak.LOWER_HEALTH_PERCENTAGE_LIMIT)
-
-		self._has_been_staggered = false
-
-		local function clbk()
-			self._has_been_staggered = false
-		end
-
-		managers.player:register_message(Message.ResetStagger, self, clbk)
-
-		self._accuracy_multiplier = 1
-	end
-
 	function CopDamage:die(attack_data)
-		old_death(self, attack_data)
+		local attacker_unit = attack_data.attacker_unit
+		local roll = math.rand(1, 100)
+		local no_ammo_chance = 80
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
+		if attacker_unit then
+			if attacker_unit:in_slot(16) then
+				if not char_tweak.always_drop then
+					if roll <= no_ammo_chance then
+						self:set_pickup(nil)
+					end
+				end
+			end
+		end		
+	
+		old_death(self, attack_data)
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+
 		
 		if self._unit:interaction().tweak_data == "hostage_convert" then
 			self._unit:interaction():set_active(false, true, false)
@@ -766,7 +723,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local t = Application:time()
 		local my_tweak_table = self._unit:base()._tweak_table
 		local cooldown = tweak_data.medic.cooldown
-		cooldown = managers.crime_spree:modify_value("MedicDamage:CooldownTime", cooldown)
+		cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
 		if my_tweak_table == "medic_summers" then
 			cooldown = 0
 		end
@@ -824,7 +781,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 			self._unit:movement():action_request(action_data)
 		end
-		managers.crime_spree:run_func("OnEnemyHealed", self._unit, unit)
+		managers.modifiers:run_func("OnEnemyHealed", self._unit, unit)
 		managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		return true
 	end
@@ -860,7 +817,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		local result
 		local damage = attack_data.damage
-		damage = managers.crime_spree:modify_value("CopDamage:DamageExplosion", damage, self._unit:base()._tweak_table)
+		damage = managers.modifiers:modify_value("CopDamage:DamageExplosion", damage, self._unit:base()._tweak_table)
 		if self._unit:base():char_tweak().DAMAGE_CLAMP_EXPLOSION then
 			damage = math.min(damage, self._unit:base():char_tweak().DAMAGE_CLAMP_EXPLOSION)
 		end

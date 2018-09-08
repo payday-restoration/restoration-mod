@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/ground/ground" orientation_object="rp_ground_road_20x20" />
+  <bodies>
+    <body name="new_body" enabled="true" template="static">
+      <object name="rp_ground_road_20x20" />
+      <object name="c_ground_sidewalk" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_ground_sidewalk" enabled="true" instance_struct="world_tm" />
+	<object name="g_line" enabled="true" instance_struct="world_tm" />
+	<object name="g_line2" enabled="false" instance_struct="world_tm" />
+  </graphics>
+ 
+ <decal_surfaces default_material="asphalt" static="true">
+    <decal_mesh name="dm_asphalt" enabled="true"  material="asphalt"/>
+  </decal_surfaces>
+  
+  <objects>
+    <object name="snap_01" enabled="true" />
+    <object name="snap_03" enabled="true" />
+    <object name="snap_02" enabled="true" />
+  </objects>
+</dynamic_object>

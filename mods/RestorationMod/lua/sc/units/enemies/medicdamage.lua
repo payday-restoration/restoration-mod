@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local my_tweak_table = self._unit:base()._tweak_table
 		local cooldown = tweak_data.medic.cooldown
 
-		cooldown = managers.crime_spree:modify_value("MedicDamage:CooldownTime", cooldown)
+		cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
 			cooldown = tweak_data.medic.cooldown

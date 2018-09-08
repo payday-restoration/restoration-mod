@@ -26,6 +26,11 @@ function RestorationCore.log_shit(to_log)
 	end
 end
 
+RestorationCore.assault_style = {
+	"beta_assault",
+	"alpha_assault"
+}
+
 if not _G.restoration then
 	local success, err = pcall(function() _G.restoration = RestorationCore:new() end)
 	if not success then
@@ -37,7 +42,11 @@ if not _G.restoration then
 		"pbr2",
 		"born",
 		"nail",
-		"peta"
+		"peta",
+		"skm_mus",
+		"skm_red2",
+		"skm_run",
+		"skm_watchdogs_stage2"
 	}
 	_G.restoration.captain_teamwork = {
 		"nightclub",
@@ -66,9 +75,15 @@ if not _G.restoration then
 		"nail",
 		"rvd2",
 		"mia_2",
+		"hox_1",
 		"spa",
 		"chill_combat",
-		"des"
+		"des",
+		"sah",
+		"skm_mus",
+		"skm_red2",
+		"skm_run",
+		"skm_watchdogs_stage2"
 	}
 end
 

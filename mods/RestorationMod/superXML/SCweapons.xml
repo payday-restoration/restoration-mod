@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+	
+	<!--S&W .500-->
+	<file name="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/jeb.texture"/>
+	<file name="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb.cooked_physics"/>
+	<file name="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb.model"/>
+	<file name="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb.object"/>
+	<file name="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb.unit"/>
+	
+	<!--HK21-->
+	<!-- <file name="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc.object"/>
+	<file name="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc.model"/>
+	<file name="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc.unit"/>
+	<file name="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df.texture"/> -->
+
+	<!--OICW-->
+	<file name="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw.object"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw.model"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw.unit"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/oicw_df.texture"/>
+	<file name="units/payday2/weapons/wpn_npc_oicw/oicw_nm.texture"/>
+	
+	<!--Halloween Sword-->
+	<file name="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword.object"/>
+	<file name="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword.model"/>
+	<file name="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword.unit"/>
+	<file name="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword.material_config"/>
+
+	<!--NPC Peacemaker-->	
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker.object"/>
+    <file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker_contour.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker.model"/>
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker.unit"/>
+	<file name="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df.texture"/>
+
+	<!--Taser Shotgun-->
+	<file name="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc.object"/>
+    <file name="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc.model"/>
+	<file name="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc.unit"/>
+	
+	<!--M4 Boom-->
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom.object"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom.model"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom.unit"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom_contour.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_df.texture"/>
+	<file name="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_nm.texture"/>
+
+	<!--NPC AKMSU-->	
+	<file name="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_x_akmsu.unit"/>
+
+	<!--NPC XC45-->	
+	<file name="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45.unit"/>
+
+	<!--Fixed Sniper-->
+	<file name="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper.object"/>
+
+	<!--Unshootable Flashbangs-->
+	<!-- <file name="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang.model"/>
+	<file name="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang.object"/>
+	<file name="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang.material_config"/>
+	<file name="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang.cooked_physics"/>
+	<file name="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang.unit"/> -->
+	
+	<!--Summers Flamethrower-->
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers.material_config"/>
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers.model"/>
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers.object"/>
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers_thq.material_config"/>
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers.cooked_physics"/>
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers.unit"/>
+	<file name="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df.texture"/>
+	<file name="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc.unit"/>
+
+	<!--Omnia LPF Weapon-->
+	<file name="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc.unit"/>
+	
+	<!--Sniper Trails-->
+	<file name="effects/particles/weapons/sniper_trail_sc.effect"/>
+	<file name="effects/particles/weapons/titan_trail_sc.effect"/>
+	
+	<!--Optimized gas-->
+	<file name="effects/particles/explosions/cs_grenade_smoke_sc.effect"/>
+	<file name="effects/particles/explosions/cs_grenade_smoke_ds_sc.effect"/>
+	
+	<!--Stat Boost-->
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc.texture"/>
+	<file name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc.texture"/>
+	
+	<!--Incendiary Slug-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_slug_fire.texture"/>
+	
+	<!--AK drum mag-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum.texture"/>
+
+	<!--M4 Drum-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum.texture"/>
+	
+	<!--Some angled grip, forgot what this one was lol-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg.texture"/>
+	
+	<!--that ugly tan vert grip-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_stubby.texture"/>
+	
+	<!--The other vert grip-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_verticalgrip.texture"/>
+	
+	<!--Saiga Drum-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd.texture"/>
+	
+	<!--MP5 Drum-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum.texture"/>
+	
+	<!--Blank Statboost-->
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none.texture"/>
+	
+	<!--I LOVE TO RELOAD DURING A HEIST-->
+	<file name="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker.unit"/>
+	<file name="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker.cooked_physics"/>
+	<file name="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker.model"/>
+	<file name="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker.object"/>
+	<file name="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc.unit"/>
+
+	<!--Birdshot (unused)-->
+	<file name="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free.texture"/>
+	
+	<!--Saiga Drum Mag fix (note: could probably add a proper THQ config now)-->
+	<file name="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq.material_config"/>
+	
+	<!--M4 Drum Mag fix (note: could probably add a proper THQ config now)-->
+	<file name="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum.material_config"/>
+	<file name="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum.model"/>
+	
+	<!--Test skin texture for M4 Drum, remove? I don't know how well this works.-->
+	<file name="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum_df_cc.texture"/>
+	
+	<!--Not getting rid of my NPC weps dammit-->
+	<!--NPC M4-->
+	<file name="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4.model"/>
+	
+	<!--NPC Mp5-->
+	<file name="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5.model"/>
+	
+	<!--NPC R870-->
+	<file name="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870.model"/>
+	<file name="units/payday2/weapons/wpn_npc_r870/r870_df.texture"/>
+	
+	<!--NPC Saiga-->
+	<file name="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga.model"/>
+	<file name="units/payday2/weapons/wpn_npc_saiga/saiga_df.texture"/>
+	<file name="units/payday2/weapons/wpn_npc_saiga/saiga_nm.texture"/>
+	
+	<!--NPC M308 again? Might need to look into that other texture-->
+	<file name="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater.model"/>
+	<file name="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df.texture"/>
+	<file name="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater.material_config"/>
+
+	<!--NPC Sniper-->
+	<file name="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper.model"/>
+	<file name="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper.object"/>
+	<file name="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df.texture"/>
+	<file name="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper.material_config"/>
+	
+	<!--P90 Tan Body-->
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/body_tan_df.texture"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan.unit"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan.model"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan.material_config"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_cc.material_config"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_cc_thq.material_config"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_thq.material_config"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan.object"/>
+	<file name="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan.cooked_physics"/>
+	<file name="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan.texture"/>
+	
+	<!--Commando Rocket-->
+	<file name="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df.texture"/>
+	<file name="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket.material_config"/>
+	<file name="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket.model"/>
+	
+	<!--Cloaked MP5-->
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak.model"/>
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak.object"/>
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak.unit"/>
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_dead.material_config"/>
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak.sequence_manager"/>
+	<file name="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak.cooked_physics"/>
+
+</assets>

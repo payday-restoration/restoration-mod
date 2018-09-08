@@ -9833,20 +9833,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					6
 				}
 				self.besiege.assault.force_pool = {
-					10,
-					20,
-					30
+					30,
+					40,
+					50
 				}	
 			else
 				self.besiege.assault.force = {
-						4,
-						6,
-						8
+					3,
+					5,
+					7
 				}
 				self.besiege.assault.force_pool = {
-						30,
-						40,
-						50
+					30,
+					40,
+					50
 				}						
 			end
 		end
@@ -10397,51 +10397,51 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx.minions.min_count = 0
 		self.phalanx.minions.amount = 10
 		self.phalanx.minions.distance = 100
-		self.phalanx.vip.health_ratio_flee = 0.05
+		self.phalanx.vip.health_ratio_flee = 0.1
 		if difficulty_index == 4 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.1}
 			self.phalanx.vip.damage_reduction = {
-				start = 0.000001,
-				increase = 0,
-				max = 0.000001,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 		}
 		elseif difficulty_index == 5 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.2}
 			self.phalanx.vip.damage_reduction = {
-				start = 0.000001,
-				increase = 0,
-				max = 0.000001,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		elseif difficulty_index == 6 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.3}
 			self.phalanx.vip.damage_reduction = {
-				start = 0.000001,
-				increase = 0,
-				max = 0.000001,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		elseif difficulty_index == 7 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.4}
 			self.phalanx.vip.damage_reduction = {
-				start = 0.000001,
-				increase = 0,
-				max = 0.000001,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		elseif difficulty_index == 8 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.5}
 			self.phalanx.vip.damage_reduction = {
-				start = 0.000001,
-				increase = 0,
-				max = 0.000001,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		else
 			self.phalanx.vip.force_sprint = nil

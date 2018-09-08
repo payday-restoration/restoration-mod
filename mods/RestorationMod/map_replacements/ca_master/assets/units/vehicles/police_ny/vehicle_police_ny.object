@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/vehicles/police_ny/vehicle_police_ny" orientation_object="rp_police_ny_street_anim" />
+  <sequence_manager file="units/vehicles/police_ny/vehicle_police_ny" />
+  <animations>
+    <animation_group name="ag_tire_front_right">
+      <object name="a_tire_front_right" />
+    </animation_group>
+    <animation_group name="ag_tire_front_left">
+      <object name="a_tire_front_left" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_right">
+      <object name="a_tire_rear_right" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_left">
+      <object name="a_tire_rear_left" />
+    </animation_group>
+	<animation_group name="ag_right_door">
+      <object name="a_right_door" />
+    </animation_group>
+	<animation_group name="ag_left_door">
+      <object name="a_left_door" />
+    </animation_group>
+  </animations>
+
+	<bodies>
+		<body name="left_door_body" enabled="true" collision_class = "disabled" template="animated">
+			<object name="a_left_door" />
+			<object name="c_convex_left_door" collision_type="convex" padding="-2.5"/>			
+			<object name="c_convex_left_door_mirror" collision_type="convex" padding="-2.5"/>
+		</body>
+		<body name="right_door_body" enabled="true" collision_class = "disabled" template="animated">
+			<object name="a_right_door" />
+			<object name="c_convex_right_door" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_right_door_mirror" collision_type="convex" padding="-2.5"/>
+		</body>
+	
+		<!-- Static -->	
+		<body name="vehicle_police_ny" enabled="true" template="static">
+			<object name="rp_police_ny_street_anim" />
+			<object name="c_vehicle_police_ny" collision_type="mesh_mopp" />
+		</body>		
+		<body name="mover_blocker" template="mover_blocker">
+			<object name="c_box_mover_blocker" collision_type="box" padding="-2.5"/>
+		</body>		
+		<body name="graph_blocker" enabled="true" template="graph_blocker">
+			<object name="c_box_graph_blocker" collision_type="box" padding="-2.5"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_right_rear" enabled="true" template="static">
+			<object name="c_convex_window_right_rear" collision_type="convex" padding="-2.5"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_right_front" collision_class = "disabled" enabled="true" template="static">
+			<object name="c_right_door_window" collision_type="mesh_mopp"  two_sided="true"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_left_rear" enabled="true" template="static">
+			<object name="c_convex_window_left_rear" collision_type="convex" padding="-2.5"/>
+		</body>
+		<body remove_ray_type="ai_vision" name="window_left_front" collision_class = "disabled" enabled="true" template="static">
+			<object name="c_left_door_window" collision_type="mesh_mopp"  two_sided="true"/>
+		</body>
+		<body name="window_back" enabled="true" template="static">
+			<object name="c_convex_window_back" collision_type="convex" padding="-2.5"/>
+		</body>
+		<body  name="window_front" enabled="true" template="static">
+			<object name="c_convex_window_front" collision_type="convex" padding="-2.5"/>
+		</body>
+		<body name="tire_front_left" enabled="true" template="static">
+			<object name="c_tire_front_left" collision_type="mesh_mopp" />
+		</body>
+		<body name="tire_rear_left" enabled="true" template="static">
+			<object name="c_tire_rear_left" collision_type="mesh_mopp" />
+		</body>
+		<body name="tire_front_right" enabled="true" template="static">
+			<object name="c_tire_front_right" collision_type="mesh_mopp" />
+		</body>
+		<body name="tire_rear_right" enabled="true" template="static">
+			<object name="c_tire_rear_right" collision_type="mesh_mopp" />
+		</body>
+		<body name="rims" enabled="true" template="static">
+			<object name="a_tire_front_left" />
+			<object name="c_rim_front_left" collision_type="mesh_mopp" />
+			<object name="c_rim_rear_left" collision_type="mesh_mopp" />
+			<object name="c_rim_front_right" collision_type="mesh_mopp" />
+			<object name="c_rim_rear_right" collision_type="mesh_mopp" />
+		</body>
+		<body name="f_l_il" template="static">
+			<object name="a_body" />
+			<object name="g_f_l_il" collision_type="convex" />
+		</body>
+		<body name="f_r_il" template="static">
+			<object name="a_body" />
+			<object name="g_f_r_il" collision_type="convex" />
+		</body>
+		<body name="b_l_il" template="static">
+			<object name="a_body" />
+			<object name="g_b_l_il" collision_type="convex" />
+		</body>
+		<body name="b_r_il" template="static">
+			<object name="a_body" />
+			<object name="g_b_r_il" collision_type="convex" />
+		</body>
+	
+		<body name="siren" enabled="true" template="static">
+			<object name="c_siren" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_window_right_rear" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_right_door_window" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_left_rear" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_left_door_window" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_back" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_window_front" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_right_door" enabled="true" material="metal_chassis" />
+		<decal_mesh name="dm_left_door" enabled="true" material="metal_chassis" />
+		<decal_mesh name="c_rim_front_left" enabled="true" material="metal" />
+		<decal_mesh name="c_rim_rear_left" enabled="true" material="metal" />
+		<decal_mesh name="c_rim_front_right" enabled="true" material="metal" />
+		<decal_mesh name="c_rim_rear_right" enabled="true" material="metal" />
+		<decal_mesh name="c_tire_front_left" enabled="true" material="rubber" />
+		<decal_mesh name="c_tire_rear_left" enabled="true" material="rubber" />
+		<decal_mesh name="c_tire_front_right" enabled="true" material="rubber" />
+		<decal_mesh name="c_tire_rear_right" enabled="true" material="rubber" />
+		<decal_mesh name="dm_vehicle_police_ny" enabled="true" material="metal_chassis" />
+		<decal_mesh name="dm_right_door" enabled="true" material="metal_chassis" />
+		<decal_mesh name="dm_left_door" enabled="true" material="metal_chassis" />
+	</decal_surfaces>
+  
+	<graphics>
+		<lod_object name="police">
+			<object name="g_vehicle_police_ny" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_vehicle_police_ny_lod" lod="1" enabled="true" instance_struct="world_tm" />
+		</lod_object> 
+	
+		<lod_object name="door1">
+			<object name="g_right_door" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_right_door_lod" lod="1" enabled="true" instance_struct="world_tm" />
+		</lod_object> 
+		
+		<lod_object name="door2">
+			<object name="g_left_door" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_left_door_lod" lod="1"  enabled="true" instance_struct="world_tm" />
+		</lod_object>
+		
+		<lod_object name="win1">
+			<object name="g_window_right_rear" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_right_rear_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		<lod_object name="win2">
+			<object name="g_window_right_rear_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_right_rear_dmg_lod" lod="1"  enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win3">
+			<object name="g_right_door_window" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_right_door_window_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win4">
+			<object name="g_left_door_window" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_left_door_window_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win5">
+			<object name="g_window_left_rear_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_left_rear_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win6">
+			<object name="g_left_door_window_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_left_door_window_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win8">
+			<object name="g_window_back_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_back_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win9">
+			<object name="g_window_back" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_back_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win10">
+			<object name="g_window_front_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" />
+			<object name="g_window_front_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win11">
+			<object name="g_window_front" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_window_front_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object> 
+		 <lod_object name="win12">
+			<object name="g_right_door_window_dmg" max_distance="5000" lod="0" enabled="false" instance_struct="world_tm" /> 
+			<object name="g_right_door_window_dmg_lod" lod="1" enabled="false" instance_struct="world_tm" />
+		</lod_object>
+
+		<object name="g_wheels" enabled="true" instance_struct="world_tm" />
+		
+		<object name="g_f_l_il" instance_struct="world_tm" />
+		<object name="g_f_r_il" instance_struct="world_tm" />
+		<object name="g_b_l_il" instance_struct="world_tm" />
+		<object name="g_b_r_il" instance_struct="world_tm" />
+		<object name="g_l_head" instance_struct="world_tm" />
+		<object name="g_r_head" instance_struct="world_tm" />
+		<object name="s_vehicle_police_ny" enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_left_door" enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="s_right_door" enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		
+		<object name="g_orange" enabled="true" instance_struct="world_tm" />
+		<object name="g_base"   enabled="true" instance_struct="world_tm" />
+		<object name="g_illum"  enabled="true" instance_struct="world_tm" />
+		<object name="g_cup"    enabled="true" instance_struct="world_tm" />
+		<object name="g_illum1" enabled="true" instance_struct="world_tm" />
+	</graphics>
+
+	<lights>
+		<light name="ls_left" far_range="2000" type="spot|specular"  end_angle="53" multiplier="match" editable="true" />
+		<light name="ls_right" far_range="2000" type="spot|specular" end_angle="39" multiplier="match" editable="true" />
+	</lights>
+	
+	<objects>
+		<align_point name="e_window_right_rear" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_right_front" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_rear" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_front" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_back" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_front" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+	</objects>
+  
+	<effects>
+		<effect_spawner name="es_e_efx" enabled="true" object="e_efx" effect="effects/particles/environment/cop_car_lights" />
+	</effects>
+</dynamic_object> 

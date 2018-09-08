@@ -835,6 +835,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 5, -4),
 					rotation = Rotation(0, 0, 0)
 				},
+				wpn_fps_smg_shepheard = {
+					translation = Vector3(0, 5, -0.45),
+					rotation = Rotation(0, 0, 0)
+				},				
 				wpn_fps_ass_ching = {
 					translation = Vector3(0, -10, -2.77),
 					rotation = Rotation(0, 0, 0)
@@ -1776,6 +1780,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 15, -4),
 					rotation = Rotation(0, 0, 0)
 				},
+				wpn_fps_smg_shepheard = {
+					translation = Vector3(0, 5, -0.45),
+					rotation = Rotation(0, 0, 0)
+				},				
 				wpn_fps_ass_ching = {
 					translation = Vector3(0, -10, -2.77),
 					rotation = Rotation(0, 0, 0)
@@ -3834,7 +3842,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"wpn_fps_upg_m4_m_quad",
 					"wpn_fps_upg_ak_m_quad",
 					"wpn_fps_upg_m4_m_drum",
-					"wpn_upg_ak_m_drum"
+					"wpn_upg_ak_m_drum",
+					"wpn_fps_m4_upg_m_quick"
 				},
 			},
 			wpn_fps_upg_m4_m_drum = {
@@ -17761,7 +17770,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 1,
 					recoil = -1,
 					total_ammo_mod = -33,
-					damage = 24
+					damage = 25
 				},	
 				custom_stats = {ammo_pickup_min_mul = 0.666666666667, ammo_pickup_max_mul = 0.666666666667},
 			},
@@ -20706,7 +20715,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			forbids = {
 				"wpn_fps_upg_ak_m_quad",
-				"wpn_upg_ak_m_drum"
+				"wpn_upg_ak_m_drum",
+				"wpn_fps_upg_ak_m_quick"
 			},
 			dlc = "akm4_pack"
 		}
@@ -32384,6 +32394,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_ass_corgi = {
 					translation = Vector3(0, 0, -2.3),
 					rotation = Rotation(0, 0, 0)
+				},
+				wpn_fps_smg_shepheard = {
+					translation = Vector3(0, 5, -0.45),
+					rotation = Rotation(0, 0, 0)
 				}				
 			},
 			visibility = {{
@@ -33929,7 +33943,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = 1,
 						recoil = -1,
 						total_ammo_mod = -33,
-						damage = 24
+						damage = 25
 					},	
 					custom_stats = {ammo_pickup_min_mul = 0.666666666667, ammo_pickup_max_mul = 0.666666666667},
 				}
@@ -37424,6 +37438,315 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_fla_system_npc = deep_clone(self.wpn_fps_fla_system)
 		self.wpn_fps_fla_system_npc.unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system/wpn_fps_fla_system_npc"
 	end
+	
+
+	function WeaponFactoryTweakData:_init_shepheard()
+		self.parts.wpn_fps_smg_shepheard_b_standard = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "bm_wp_shepard_b_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_b_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_body = {
+			a_obj = "a_body",
+			type = "foregrip",
+			name_id = "bm_wp_shepheard_body_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_body",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_body_short = {
+			texture_bundle_folder = "joy",
+			a_obj = "a_body",
+			type = "foregrip",
+			dlc = "pd2_clan",
+			name_id = "bm_wp_shepheard_body_short",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_body_short",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			override = {
+				wpn_fps_smg_shepheard_b_standard = {
+					third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_b_short",
+					unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_b_short"
+				},
+				wpn_fps_smg_shepheard_o_standard = {
+					third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_o_short",
+					unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_o_short"
+				}
+			},
+			stats = {
+				concealment = 1,
+				value = 1
+			}
+		}
+		self.parts.wpn_fps_smg_shepheard_dh_standard = {
+			a_obj = "a_dh",
+			type = "drag_handle",
+			name_id = "bm_wp_shepheard_dh_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_dh_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_g_standard = {
+			a_obj = "a_g",
+			type = "grip",
+			name_id = "bm_wp_shepheard_g_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_g_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_mag_standard = {
+			a_obj = "a_m",
+			type = "magazine",
+			name_id = "bm_wp_shepheard_m_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_standard",
+			bullet_objects = {
+				amount = 20,
+				prefix = "g_bullet_"
+			},
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_mag_extended = {
+			type = "magazine",
+			texture_bundle_folder = "joy",
+			a_obj = "a_m",
+			dlc = "pd2_clan",
+			name_id = "bm_wp_shepheard_m_extended",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_extended",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			bullet_objects = {
+				amount = 30,
+				prefix = "g_bullet_"
+			},
+			custom_stats = {reload_speed_mult = 0.9},
+			stats = {
+				value = 1,
+				extra_ammo = 5,
+				reload = -2,
+				concealment = -1				
+			}
+		}
+		self.parts.wpn_fps_smg_shepheard_ns_standard = {
+			parent = "barrel",
+			a_obj = "a_ns",
+			type = "barrel_ext",
+			name_id = "bm_wp_shepheard_ns_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_ns_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_s_standard = {
+			a_obj = "a_s",
+			type = "stock",
+			name_id = "bm_wp_shepheard_s_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_s_standard",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_s_no = {
+			texture_bundle_folder = "joy",
+			dlc = "pd2_clan",
+			type = "stock",
+			name_id = "bm_wp_shepheard_s_no",
+			a_obj = "a_s",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_s_no",
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			stats = {
+				concealment = 3,
+				recoil = -2,
+				value = 1
+			}
+		}
+		self.parts.wpn_fps_smg_shepheard_s_adapter = {
+			a_obj = "a_s",
+			type = "stock_adapter",
+			name_id = "bm_wp_m4_s_adapter",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_s_adapter",
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_smg_shepheard_bolt_standard = {
+			name_id = "bm_wp_ak_s_skfoldable",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_bolt_standard",
+			a_obj = "a_bolt",
+			type = "bolt"
+		}
+		self.parts.wpn_fps_smg_shepheard_o_standard = {
+			a_obj = "a_o",
+			type = "sight",
+			name_id = "bm_wp_ak_s_skfoldable",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_o_standard",
+			forbids = {"wpn_fps_upg_o_xpsg33_magnifier"}
+		}
+		self.parts.wpn_fps_smg_shepheard_b_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_b_standard"
+		self.parts.wpn_fps_smg_shepheard_body.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_body"
+		self.parts.wpn_fps_smg_shepheard_body_short.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_body_short"
+		self.parts.wpn_fps_smg_shepheard_dh_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_dh_standard"
+		self.parts.wpn_fps_smg_shepheard_g_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_g_standard"
+		self.parts.wpn_fps_smg_shepheard_mag_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_mag_standard"
+		self.parts.wpn_fps_smg_shepheard_mag_extended.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_mag_extended"
+		self.parts.wpn_fps_smg_shepheard_ns_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_ns_standard"
+		self.parts.wpn_fps_smg_shepheard_s_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_s_standard"
+		self.parts.wpn_fps_smg_shepheard_s_adapter.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_s_adapter"
+		self.parts.wpn_fps_smg_shepheard_bolt_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_bolt_standard"
+		self.parts.wpn_fps_smg_shepheard_o_standard.third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_o_standard"
+		self.wpn_fps_smg_shepheard = {
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard/wpn_fps_smg_shepheard",
+			animations = {
+				reload = "reload",
+				fire = "recoil",
+				fire_steelsight = "recoil",
+				reload_not_empty = "reload_not_empty"
+			},
+			optional_types = {
+				"barrel_ext",
+				"gadget"
+			},
+			stock_adapter = "wpn_fps_smg_shepheard_s_adapter",
+			default_blueprint = {
+				"wpn_fps_smg_shepheard_b_standard",
+				"wpn_fps_smg_shepheard_body",
+				"wpn_fps_smg_shepheard_mag_standard",
+				"wpn_fps_smg_shepheard_dh_standard",
+				"wpn_fps_smg_shepheard_ns_standard",
+				"wpn_fps_smg_shepheard_s_standard",
+				"wpn_fps_smg_shepheard_g_standard",
+				"wpn_fps_smg_shepheard_bolt_standard",
+				"wpn_fps_smg_shepheard_o_standard"
+			},
+			uses_parts = {
+				"wpn_fps_smg_shepheard_b_standard",
+				"wpn_fps_smg_shepheard_body",
+				"wpn_fps_smg_shepheard_body_short",
+				"wpn_fps_smg_shepheard_g_standard",
+				"wpn_fps_smg_shepheard_dh_standard",
+				"wpn_fps_smg_shepheard_ns_standard",
+				"wpn_fps_smg_shepheard_s_standard",
+				"wpn_fps_smg_shepheard_s_no",
+				"wpn_fps_smg_shepheard_s_adapter",
+				"wpn_fps_smg_shepheard_mag_standard",
+				"wpn_fps_smg_shepheard_mag_extended",
+				"wpn_fps_smg_shepheard_bolt_standard",
+				"wpn_fps_smg_shepheard_o_standard",
+				"wpn_fps_upg_i_singlefire",
+				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ass_ns_battle",
+				"wpn_fps_upg_ass_ns_jprifles",
+				"wpn_fps_upg_ass_ns_linear",
+				"wpn_fps_upg_ass_ns_surefire",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
+				"wpn_fps_upg_ak_ns_ak105",
+				"wpn_fps_upg_o_specter",
+				"wpn_fps_upg_o_aimpoint",
+				"wpn_fps_upg_o_docter",
+				"wpn_fps_upg_o_eotech",
+				"wpn_fps_upg_o_t1micro",
+				"wpn_fps_upg_o_cmore",
+				"wpn_fps_upg_o_aimpoint_2",
+				"wpn_fps_upg_o_acog",
+				"wpn_fps_upg_o_eotech_xps",
+				"wpn_fps_upg_o_reflex",
+				"wpn_fps_upg_o_rx01",
+				"wpn_fps_upg_o_rx30",
+				"wpn_fps_upg_o_cs",
+				"wpn_fps_upg_m4_s_ubr",
+				"wpn_fps_upg_m4_s_crane",
+				"wpn_fps_upg_m4_s_mk46",
+				"wpn_fps_upg_m4_s_standard_vanilla",
+				"wpn_fps_upg_m4_s_pts",
+				"wpn_fps_upg_o_spot",
+				"wpn_fps_upg_o_xpsg33_magnifier",
+				--Custom--
+				"wpn_fps_upg_m4_s_standard"
+			}
+		}
+		self.wpn_fps_smg_shepheard_npc = deep_clone(self.wpn_fps_smg_shepheard)
+		self.wpn_fps_smg_shepheard_npc.unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard/wpn_fps_smg_shepheard_npc"
+	end	
+	
+
+	function WeaponFactoryTweakData:_init_x_shepheard()
+		self.parts.wpn_fps_smg_shepheard_s_no_vanilla = deep_clone(self.parts.wpn_fps_smg_shepheard_s_no)
+		self.parts.wpn_fps_smg_shepheard_s_no_vanilla.stats = nil
+		self.parts.wpn_fps_smg_shepheard_s_no_vanilla.pcs = nil
+		self.wpn_fps_smg_x_shepheard = {
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_x_shepheard/wpn_fps_smg_x_shepheard",
+			optional_types = {
+				"barrel_ext",
+				"gadget",
+				"vertical_grip"
+			},
+			override = {wpn_fps_smg_shepheard_mag_extended = {stats = {
+				value = 1,
+				extra_ammo = 10,
+				reload = -2,
+				concealment = -1
+			}}},
+			default_blueprint = {
+				"wpn_fps_smg_shepheard_b_standard",
+				"wpn_fps_smg_shepheard_body",
+				"wpn_fps_smg_shepheard_mag_standard",
+				"wpn_fps_smg_shepheard_dh_standard",
+				"wpn_fps_smg_shepheard_ns_standard",
+				"wpn_fps_smg_shepheard_s_no_vanilla",
+				"wpn_fps_smg_shepheard_g_standard",
+				"wpn_fps_smg_shepheard_bolt_standard",
+				"wpn_fps_smg_shepheard_o_standard"
+			},
+			uses_parts = {
+				"wpn_fps_smg_shepheard_b_standard",
+				"wpn_fps_smg_shepheard_body",
+				"wpn_fps_smg_shepheard_body_short",
+				"wpn_fps_smg_shepheard_g_standard",
+				"wpn_fps_smg_shepheard_dh_standard",
+				"wpn_fps_smg_shepheard_ns_standard",
+				"wpn_fps_smg_shepheard_s_no_vanilla",
+				"wpn_fps_smg_shepheard_mag_standard",
+				"wpn_fps_smg_shepheard_mag_extended",
+				"wpn_fps_smg_shepheard_bolt_standard",
+				"wpn_fps_smg_shepheard_o_standard",
+				"wpn_fps_upg_i_singlefire",
+				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+				"wpn_fps_upg_fl_ass_smg_sho_surefire",
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_fl_ass_peq15",
+				"wpn_fps_upg_fl_ass_laser",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ass_ns_battle",
+				"wpn_fps_upg_ass_ns_jprifles",
+				"wpn_fps_upg_ass_ns_linear",
+				"wpn_fps_upg_ass_ns_surefire",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
+				"wpn_fps_upg_ak_ns_ak105"
+			}
+		}
+		self.wpn_fps_smg_x_shepheard_npc = deep_clone(self.wpn_fps_smg_x_shepheard)
+		self.wpn_fps_smg_x_shepheard_npc.unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_x_shepheard/wpn_fps_smg_x_shepheard_npc"
+	end	
 					
 	Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 		--Vlad's Rodina--
@@ -38430,31 +38753,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	end
 
-	--MPX--
-	if self.wpn_fps_smg_mpx then
-
-		self.parts.wpn_fps_upg_mpx_barrel_sd.stats = {
-				value = 10,
-				spread_moving = 1,
-				suppression = 12,
-				alert_size = 12,
-				damage = 5,
-				concealment = 1
-			}
-		self.parts.wpn_fps_smg_mpx_ammo_40sw.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
-		self.parts.wpn_fps_smg_mpx_ammo_40sw.stats = {
-				value = 1,
-				damage = 6,
-				recoil = -2,
-				spread = 1,
-				total_ammo_mod = -20,
-				suppression = -1,
-				alert_size = -1,
-				concealment = 1
-			}
-
-	end
-
 	--TOZ66--
 	if self.wpn_fps_shot_toz66 then
 		self.parts.wpn_fps_upg_toz66_ammo_000_magnum.pcs = nil
@@ -38632,52 +38930,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--})
 	end
 
-	--AK12
-	if self.wpn_fps_ass_ak12 then
-
-	self.parts.wpn_fps_upg_ak12_barrel_svk12.custom_stats = {
-			ammo_pickup_min_mul = 0.6,
-			ammo_pickup_max_mul = 0.6
-		}
-	self.parts.wpn_fps_upg_ak12_barrel_svk12.stats = {
-			value = 7,
-			recoil = -1,
-			spread = 3,
-			total_ammo_mod = -40,
-			extra_ammo = -5,
-			damage = 40,
-			suppression = -2,
-			alert_size = -2,
-			concealment = -8
-		}
-	self.parts.wpn_fps_upg_ak12_barrel_svk12.perks = nil
-	self.parts.wpn_fps_upg_ak12_barrel_svk12.forbids = {
-			"wpn_fps_ass_ak12_mag_quad"
-		}
-	self.parts.wpn_fps_upg_ak12_mag_quad.stats = {
-				value = 3,
-				spread_moving = -2,
-				concealment = -3,
-				extra_ammo = 15,
-				reload = -3,
-				recoil = 0,
-				spread = 0
-			}
-	self.parts.wpn_fps_upg_ak12_mag_quad.custom_stats = {reload_speed_mult = 0.85}
-	self.parts.wpn_fps_upg_ak12_mag_quad.desc_id = "bm_wp_upg_quad_desc"
-	self.parts.wpn_fps_upg_ak12_mag_quad.has_description = false
-
-	end
-
-	--M60
-	if self.wpn_fps_lmg_m60 then
-		self.parts.wpn_fps_lmg_m60_body.stance_mod = {
-			wpn_fps_lmg_m60 = {
-				translation = Vector3(0.06, -5, -3.1)
-			}
-		}
-	end
-
 	--Yayo
 	if self.wpn_fps_ass_yayo then
 
@@ -38730,194 +38982,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 
 	end
-
-	--AK12/76
-	if self.wpn_fps_shot_ak12_76 then
-
-		self.wpn_fps_shot_ak12_76.override = {
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -5,
-					damage = 30,	
-					recoil = -1,
-					spread = 11,
-					suppression = -1,
-					alert_size = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-				}
-			},
-			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug_sc",
-				desc_id = "bm_wp_upg_a_slug_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -33,
-					damage = 25,	
-					recoil = -1,
-					spread = 11,
-					suppression = -1,
-					alert_size = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 25,	
-					spread = -1
-				},
-				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
-					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
-				}
-			},	
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 25,	
-					spread = -1
-				},
-				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
-					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
-				}
-			},			
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 10,
-					total_ammo_mod = -67,
-					recoil = -5,
-					damage = 100
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
-				}
-			}
-		}
-
-	end
-
-	--FD338
-
-	if self.wpn_fps_ass_fd338 then
-		self.parts.wpn_fps_upg_fd338_supp.stats = {
-					value = 5,
-					suppression = 12,
-					alert_size = 12,
-					spread = -1,
-					recoil = 1,
-					spread_moving = -2,
-					concealment = 0,
-					damage = 0
-				}
-		self.parts.wpn_fps_upg_fd338_stnd_rounds.pcs = nil
-	end
-
-	--Ultimax
-	if self.wpn_fps_lmg_ultimax then
-		self.parts.wpn_fps_upg_ultimax_stock_folded.stats = {
-					value = 1,
-					concealment = 1
-				}
-		self.parts.wpn_fps_upg_ultimax_barrel_long.stats = {
-					value = 1,
-					spread = 1,
-					concealment = -2
-				}
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_specter"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_aimpoint"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_aimpoint_2"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_docter"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_eotech"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_t1micro"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_cmore"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_acog"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_cs"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_eotech_xps"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_reflex"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_rx01"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_rx30"
-		})
-		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-			"wpn_fps_upg_o_spot"
-		})
-	end
-
+	
 	--HCAR
 	if self.wpn_fps_ass_hcar then
 		self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
@@ -38972,57 +39037,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 5
 				}
 	end
-
-	--Mosin M1895--
-	if self.wpn_fps_pis_m1895 then
-
-		self.parts.wpn_fps_pis_m1895_cylinder.custom_stats = {reload_speed_mult = 1.25}
-		self.parts.wpn_fps_upg_m1895_barrel_long.stats = {
-					value = 0,
-					concealment = -2,
-					spread = 1
-				}
-		self.parts.wpn_fps_upg_m1895_barrel_long.stats = {
-					value = 0,
-					concealment = -2,
-					spread = 1
-				}
-		self.parts.wpn_fps_upg_m1895_body_blued.stats = {
-					value = 0
-				}
-		self.parts.wpn_fps_upg_m1895_body_gold.stats = {
-					value = 0
-				}
-		self.parts.wpn_fps_upg_m1895_body_polished.stats = {
-					value = 0
-				}
-		self.parts.wpn_fps_upg_m1895_body_worn.stats = {
-					value = 0
-				}
-		self.parts.wpn_fps_upg_m1895_irons_radium.stats = {
-					value = 0
-				}
-		self.parts.wpn_fps_upg_m1895_supp_gemtech_gm9.stats = {
-					value = 0,
-					suppression = 8,
-					alert_size = 8,
-					concealment = -2
-				}
-		self.parts.wpn_fps_upg_m1895_supp_osprey.stats = {
-					value = 0,
-					suppression = 10,
-					alert_size = 10,
-					concealment = -3
-				}
-		self.parts.wpn_fps_upg_m1895_supp_ro2.stats = {
-					value = 0,
-					suppression = 6,
-					alert_size = 6,
-					concealment = 1
-				}
-
-	end
-
 
 	--SC mod shit below--
 
@@ -39147,7 +39161,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				recoil = -1,
 				total_ammo_mod = -25,
-				damage = 24
+				damage = 25
 			},
 			custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75},
 			internal_part = true

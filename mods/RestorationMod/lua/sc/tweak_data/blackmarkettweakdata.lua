@@ -2708,6 +2708,31 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.aziz.repeat_expire_t = 0.825
 	self.melee_weapons.aziz.stats.concealment = 28
 	self.melee_weapons.aziz.melee_damage_delay = 0.175
+	
+	--HAHAHA EBIN CODE JOEK :DDDDDD--
+	self.melee_weapons.happy.speed_mult = 1.15
+	self.melee_weapons.happy.stats.min_damage = 2
+	self.melee_weapons.happy.stats.max_damage = 5
+	self.melee_weapons.happy.stats.min_damage_effect = 2.5
+	self.melee_weapons.happy.stats.max_damage_effect = 4
+	self.melee_weapons.happy.stats.charge_time = 1.1
+	self.melee_weapons.happy.stats.range = 155
+	self.melee_weapons.happy.stats.concealment = 30
+	self.melee_weapons.happy.repeat_expire_t = 0.8
+	self.melee_weapons.happy.melee_damage_delay = 0.1	
+	
+	-- https://i.imgur.com/8IJSRPZ.jpg --
+	self.melee_weapons.shock.speed_mult = 0.875
+	self.melee_weapons.shock.stats.min_damage = 3.2
+	self.melee_weapons.shock.stats.max_damage = 7.5
+	self.melee_weapons.shock.stats.min_damage_effect = 2
+	self.melee_weapons.shock.stats.max_damage_effect = 5
+	self.melee_weapons.shock.stats.charge_time = 1.85
+	self.melee_weapons.shock.stats.range = 170
+	self.melee_weapons.shock.repeat_expire_t = 0.8
+	self.melee_weapons.shock.attack_allowed_expire_t = 0.1
+	self.melee_weapons.shock.stats.concealment = 27
+	self.melee_weapons.shock.melee_damage_delay = 0.1
 end	
 
 end

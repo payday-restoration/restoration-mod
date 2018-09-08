@@ -12,6 +12,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if char_tweak.speech_prefix_p1 == "l5d" then
 			self._prefix = (char_tweak.speech_prefix_p1 or "") .. "_"
 		elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") then
+			self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"	
+		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then
 			self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"			
 		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1") then
 			self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"
@@ -30,6 +32,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		elseif self._unit:base():char_tweak().spawn_sound_event then
 			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event, nil, nil)
 		end
+		
+		--Mostly just here in the event we have a unit to have both an 'entrance' line *and* a global spawn in noise
+		if self._unit:base():char_tweak().spawn_sound_event_2 then
+			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_2, nil, nil)
+		end		
 
 		unit:base():post_init()
 	end

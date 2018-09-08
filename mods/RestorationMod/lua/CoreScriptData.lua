@@ -8,13 +8,6 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
 
 
-	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1" then
-	if rnd == 1 then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/dawnorange.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	elseif rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "branchbank" then
 	if rnd == 1 or rnd == 2 then
@@ -70,10 +63,13 @@ end
  if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
 
-	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.mission", "generic_xml", "levels/narratives/vlad/ukrainian_job/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/missions/ukrainian_job.continent", "custom_xml", "levels/narratives/vlad/ukrainian_job/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job_res" then
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_res" then
+		BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		--"sky_orientation/rotation":"278.53564453125",
 	end
 	
 	--Safehouse Booster
@@ -90,6 +86,7 @@ end
     if managers.dyn_resource then
         local skies = {
             "sky_1930_twillight",
+			"sky_1930_sunset_heavy_clouds",
             "sky_1846_low_sun_nice_clouds",
             "sky_0902_overcast",
 			"sky_0200_night_moon_stars",
@@ -113,3 +110,10 @@ Hooks:Add("BeardLibCreateScriptDataMods", "MorePaintingsCallBeardLibSequenceFunc
 BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
 end)
 end
+
+--Blue Sapphire FIX
+--OVK never finished the opening animation, and it was wrongly calling for to activate the diamond (probably leftover from PD:TH), thus this fix
+--probably update instances in heists where I want them to open with the PD:TH one raw
+Hooks:Add("BeardLibCreateScriptDataMods", "DiamondFixCallBeardLibSequenceFuncs", function()
+BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
+end)

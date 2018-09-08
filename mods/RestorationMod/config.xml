@@ -3,7 +3,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="8.02" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="8.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 	   <mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
 			<options merge_mode="script_merge"/>
@@ -154,6 +154,9 @@
 		<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
 		<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
 		<hook file="sc/units/enemies/copsound.lua" source_file="lib/units/enemies/cop/copsound"/>
+		<hook file="sc/managers/mission/elementmissionend.lua" source_file="lib/managers/mission/elementmissionend"/>
+		<hook file="sc/tweak_data/skirmishtweakdata.lua" source_file="lib/tweak_data/skirmishtweakdata"/>
+		<hook file="sc/managers/menumanager.lua" source_file="lib/managers/menumanager"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -220,7 +223,6 @@
 					<merge_data area_bg="half"/>
 					<option type="number" default_value="1" min="0.1" max="1.5" step="0.01" show_value="true" name="Scale"/>
 					<option type="number" default_value="0.936" min="0.1" max="1" step="0.01" show_value="true" name="SizeOnScreen"/>
-					<option type="bool" default_value="false" name="AltAssault"/>
 					<option type="bool" default_value="false" name="StealthOrigPos"/>
 					<option type="bool" default_value="false" name="LowerBag"/>
 				</option_group>
@@ -228,6 +230,7 @@
 				<option type="bool" default_value="true" name="Teammate"/>
 				<option type="bool" default_value="true" name="ObjectivesPanel"/>
 				<option type="bool" default_value="true" name="AssaultPanel"/>
+				<option type="multichoice" default_value="1" name="AssaultStyle" values_tbl="RestorationCore.assault_style"/>
 				<option type="bool" default_value="true" name="StaminaIndicator"/>
 				<option type="bool" default_value="true" name="Waypoints"/>
 				<option type="bool" default_value="true" name="NameLabels"/>

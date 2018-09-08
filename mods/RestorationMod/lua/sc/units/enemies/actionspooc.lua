@@ -170,7 +170,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end				
 				
 				managers.mutators:_run_func("OnPlayerCloakerKicked", self._unit)
-				managers.crime_spree:run_func("OnPlayerCloakerKicked", self._unit)
+				managers.modifiers:run_func("OnPlayerCloakerKicked", self._unit)
 				return
 			end
 			if self:_chk_target_invalid() then
@@ -223,7 +223,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end			
 			
 			managers.mutators:_run_func("OnPlayerCloakerKicked", self._unit)
-			managers.crime_spree:run_func("OnPlayerCloakerKicked", self._unit)
+			managers.modifiers:run_func("OnPlayerCloakerKicked", self._unit)
 			if spooc_res == "countered" then
 				if not Network:is_server() then
 					self._ext_network:send_to_host("action_spooc_stop", self._ext_movement:m_pos(), 1, self._action_id)

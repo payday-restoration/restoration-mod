@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/street/street_sidewalk_5x5" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

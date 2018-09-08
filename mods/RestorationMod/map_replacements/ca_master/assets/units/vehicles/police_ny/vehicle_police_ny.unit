@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<unit type="storm" slot="1">
+  <object file="units/vehicles/police_ny/vehicle_police_ny" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+  	<soundsource name="police_siren" source="a_body" />
+  </sounds>
+</unit>

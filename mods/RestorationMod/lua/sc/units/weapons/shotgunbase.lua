@@ -43,7 +43,7 @@ local old_update_stats_values = ShotgunBase._update_stats_values
 
 	function ShotgunBase:reload_expire_t()
 		local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
-		if self:get_ammo_remaining_in_clip() > 0 and tweak_data.weapon[self._name_id].tactical_reload == true then
+		if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
 			return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
 		else
 			return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
@@ -85,7 +85,7 @@ local old_update_stats_values = ShotgunBase._update_stats_values
 		if t > self._next_shell_reloded_t then
 			local speed_multiplier = self:reload_speed_multiplier()
 			self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
-			if self:get_ammo_remaining_in_clip() > 0 and tweak_data.weapon[self._name_id].tactical_reload == true then
+			if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
 				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
 				return true
 			else
@@ -95,7 +95,6 @@ local old_update_stats_values = ShotgunBase._update_stats_values
 		end
 	end
 	
-	SaigaShotgun = SaigaShotgun or class(ShotgunBase)
 	function SaigaShotgun:reload_expire_t()
 		return nil
 	end
@@ -105,11 +104,11 @@ local old_update_stats_values = ShotgunBase._update_stats_values
 	end
 	
 	function SaigaShotgun:reload_exit_expire_t()
-		return nil
+		return self:weapon_tweak_data().timers.reload_exit_empty or nil
 	end
 	
 	function SaigaShotgun:reload_not_empty_exit_expire_t()
-		return nil
+		return self:weapon_tweak_data().timers.reload_exit_not_empty or nil
 	end
 	
 	function SaigaShotgun:update_reloading(t, dt, time_left)

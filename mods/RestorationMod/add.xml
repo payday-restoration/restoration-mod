@@ -11,6 +11,7 @@
 	<texture path="guis/textures/restoration/hud_dot"/>
 	<texture path="guis/textures/restoration/hud_rip"/>
 	<texture path="guis/textures/restoration/hud_rip_bg"/>
+	<texture path="guis/textures/restoration/hud_rip_bg"/>
 	<texture path="guis/textures/restoration/hud_absorb_shield"/>
 	<texture path="guis/textures/restoration/hud_absorb_health"/>
 	<texture path="guis/textures/restoration/hud_absorb_stack_fg"/>
@@ -57,6 +58,8 @@
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
+	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
+	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="false"/>
 
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
@@ -171,10 +174,13 @@
 	
 	<!--OMNIA Textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_heavy_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_nm"/>	
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_df"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_nm"/>	
 	
 	<!--OICW-->
 	<object path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
@@ -303,7 +309,14 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<!--textures-->
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op" load="true" force="false"/>
 	
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
@@ -931,8 +944,13 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870_husk" force="false" load="true"/>
 	
 	<!--Murky Heavy UMP-->
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_husk" load="true"/>				
+	<object path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump_husk" force="false" load="true"/>			
 	
 	<!--murky heavy textures-->
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_heavy_m4/murky_heavy_df" force="false"/>	
@@ -1289,8 +1307,21 @@
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_husk" load="true"/>		
 	
 	<!--NYPD shield-->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield" load="true"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>	
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_contour"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>		
+	
+	<!--NYPD shield acc huge props to Jarey_ for making this and for sending me assets whenever i need them -EvilBobarino-->
+	<object path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<model path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>		
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_acc_shield_lights_df"/>
 	
 	<!--NYPD cop 1-->
 	<object path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
@@ -1358,6 +1389,7 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
+	<texture path="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />	
@@ -1441,7 +1473,7 @@
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_nm" />	
 	<!--zeal heavy m4-->
-        <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+    <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" load="true"/>
@@ -1450,9 +1482,25 @@
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk" load="true"/>		
 	<!--zeal heavy r870-->
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>	
 	<!--textures heavy -->
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
+	<!--fbi ready team 1
+    <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_husk" load="true"/>-->
+	<!--fbi ready team 2
+    <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>-->
 	<!--new zeals end-->	
 </table>

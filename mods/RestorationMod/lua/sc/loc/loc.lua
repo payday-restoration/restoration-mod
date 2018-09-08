@@ -292,63 +292,60 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_no_hurt"] = "Enemies are 50% resistant to knock down.",
 		["menu_cs_modifier_enemy_health_damage"] = "Enemies deal an additional 15% more damage.",
 		["menu_cs_modifier_health_damage_total"] = "",
-		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 10% chance to become a Skulldozer.",
-		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 10% chance to become an elite UMP unit.",
-		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 10% chance to become a Titan Shotgunner.",
-		["menu_cs_modifier_dozer_medic"] = "All Veteran Agent units have an additional 10% chance to become a Veteran Cop.",
-		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 10% chance to become a Titan Bulldozer.",
-		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 10% chance to become a Titan Shield.",
+		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 15% chance to become a Skulldozer.",
+		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become an elite UMP unit.",
+		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 15% chance to become a Titan Shotgunner.",
+		["menu_cs_modifier_dozer_medic"] = "All Veteran Agent units have an additional 15% chance to become a Veteran Cop.",
+		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 15% chance to become a Titan Bulldozer.",
+		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 15% chance to become a Titan Shield.",
 		["menu_cs_modifier_concealment"] = "Suspicion buildup is increased by 10%.",
 		["menu_cs_modifier_cloaker_smoke"] = "Cloakers will drop a smokebomb when they kick a player.",
-		["menu_cs_modifier_taser_overcharge"] = "All Taser units have an additional 10% chance to become a Titan Taser.",
+		["menu_cs_modifier_taser_overcharge"] = "All Taser units have an additional 15% chance to become a Titan Taser.",
 		["menu_cs_modifier_dozer_rage"] = "When a Bulldozer's faceplate is destroyed, the Bulldozer enters a berserker rage, receiving a 10% increase to their base damage resistance.",
-		["menu_cs_modifier_medic_adrenaline"] = "All Medic units have an additional 10% chance to become an Omnia LPF.",	
+		["menu_cs_modifier_medic_adrenaline"] = "All Medic units have an additional 15% chance to become an Omnia LPF.",	
 		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
-		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 10% chance to become a Titan Cloaker.",
-		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 10% chance to become a Titan HRT.",
+		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 15% chance to become a Titan Cloaker.",
+		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a Titan HRT.",
 		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer.",
 		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 15% faster.\n\nNote: Pager response is not affected by this boost.",
+		["menu_crew_interact_desc"] = "Players interact 20% faster. Note: Pager response is not affected by this boost.",
 
 		["menu_crew_inspire"] = "Inspiring",
-		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 30 seconds.",
+		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds.",
 
 		["menu_crew_scavenge"] = "Sharpeyed",
-		["menu_crew_scavenge_desc"] = "Players pickup 15% more ammunition.",
+		["menu_crew_scavenge_desc"] = "Players pickup 40% more ammunition.",
 
 		["menu_crew_ai_ap_ammo"] = "Piercing",
-		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through body armor and shields.",
+		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through body armor.",
 
 		["menu_crew_healthy"] = "Reinforcer",
-		["menu_crew_healthy_desc"] = "Players' health is increased by 20.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_healthy_desc"] = "Players' health is increased by 30.",
 
 		["menu_crew_sturdy"] = "Protector",
-		["menu_crew_sturdy_desc"] = "Players' armor is increased by 10.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_sturdy_desc"] = "Players' armor is increased by 15.",
 
 		["menu_crew_evasive"] = "Distractor",
-		["menu_crew_evasive_desc"] = "Players' dodge is increased by 2.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_evasive_desc"] = "Players' dodge is increased by 3.",
 
 		["menu_crew_motivated"] = "Invigorator",
-		["menu_crew_motivated_desc"] = "Players have 25 more stamina.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
-		["menu_crew_regen_desc"] = "Players heal 1 health every 5 seconds.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_regen_desc"] = "Players heal 2.5 health every 5 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
-		["menu_crew_quiet_desc"] = "Players gain 3 more concealment.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",
 
 		["menu_crew_generous"] = "Stockpiler ",
-		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 150 kills.\n\nNote: This Boost only works in Crime.net Offline.",
+		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 100 kills.",
 
 		["menu_crew_eager"] = "Accelerator",
-		["menu_crew_eager_desc"] = "Players reload 10% faster.\n\nNote: This Boost only works in Crime.net Offline.",
-
-		["menu_risk_dv"] = "Death Vox",
-		["menu_difficulty_dv"] = "Death Vox",
+		["menu_crew_eager_desc"] = "Players reload 10% faster.",
 		
 		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 20 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
 		
@@ -752,7 +749,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYour akimbo weapons' stability penalty is set to ##25%.##\n\nACE: ##$pro##\nYou no longer have a stability penalty with akimbo weapons and you also carry ##50%## more total ammo for them.",																																																																																																																																																																																																																																		
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYour akimbo weapons' stability penalty is set to ##15%.##\n\nACE: ##$pro##\nYour akimbo weapons' stability penalty is set to ##10%## and you also carry ##25%## more total ammo for them.",																																																																																																																																																																																																																																		
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
@@ -823,10 +820,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
-		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##25%.##",
+		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##15%.##",
 		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.",
 		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.",
-		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYou no longer have a stability penalty with Akimbo weapons.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYour akimbo weapons' stability penalty is set to ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
@@ -855,7 +852,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
-		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\nCannot occur more than once every ##4## seconds.",
+		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\nCannot occur more than once every ##5## seconds.",
+		["menu_deck10_5_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also get healed for ##50%## of the amount.",
 		["menu_deck10_7_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.",
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 

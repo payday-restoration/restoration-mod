@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+	
+	<!--nypd dozer stuff-->	
+	<!--green-->
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1_husk.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_1.sequence_manager"/>	
+	
+	<!--saiga-->
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2_husk.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_bulldozer_2.sequence_manager"/>	
+	<!--dozer end please don't make me make debris SC-->	
+	
+	<!--NYPD heavy m4-->
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4_husk.unit"/>
+	
+	<!--NYPD taser thanks to Jarey_ for the texture-->
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk.unit"/>
+	
+	<!--NYPD heavy r870-->	
+	<!-- <file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk.unit"/> -->
+	
+	<!--NYPD swat mp5-->
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1_husk.unit"/>
+	
+	<!--NYPD swat r870-->
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_husk.unit"/>
+	
+	<!--NYPD shield-->
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk.unit"/>
+	
+	<!--NYPD cop 1-->
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1_husk.unit"/>
+	
+	<!--NYPD cop 2-->
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_husk.unit"/>
+	
+	<!--NYPD cop 3-->
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3_husk.unit"/>
+	
+	<!--NYPD cop 4-->
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4_husk.unit"/>
+	
+	<!--"NYPD" murky (just soft cap guys who look more like vanilla murkies-->
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_husk.unit"/>
+
+	<!--2-->
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_contour.material_config"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2.model"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2.object"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2.cooked_physics"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2.unit"/>
+	<file name="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk.unit"/>
+
+	<!--shared_textures crap-->
+	<file name="units/pd2_mod_nypd/characters/shared_textures/nypd1_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/nypd2_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/police_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df.texture"/>
+	<file name="units/pd2_mod_nypd/characters/shared_textures/caps_murky_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/caps_murky_nm.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/murky_heavy_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df.texture"/>	
+	<file name="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm.texture"/>
+	
+</assets>

@@ -1670,7 +1670,6 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"akimbo_extra_ammo_multiplier_1",
-						"akimbo_extra_ammo_multiplier_2",
 						"akimbo_recoil_multiplier_3"
 					},
 					cost = self.costs.hightierpro
@@ -2591,7 +2590,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 1000,
 				icon_xy = {6, 5},
 				name_id = "menu_deck10_5",
-				desc_id = "menu_deck10_5_desc"
+				desc_id = "menu_deck10_5_desc_sc"
 			},
 			deck6,
 			{
@@ -3270,6 +3269,82 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "ecp",
 			desc_id = "menu_st_spec_20_desc"
 		}
+		
+	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
+	local sc_nip = {
+			{
+				cost = 200,
+				texture_bundle_folder = "joy",
+				desc_id = "menu_deck21_1_desc",
+				name_id = "menu_deck21_1",
+				upgrades = {
+					"pocket_ecm_jammer",
+					"player_pocket_ecm_jammer_base"
+				},
+				icon_xy = {
+					0,
+					0
+				}
+			},
+			deck2,
+			{
+				cost = 400,
+				texture_bundle_folder = "joy",
+				desc_id = "menu_deck21_3_desc",
+				name_id = "menu_deck21_3",
+				upgrades = {
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
+				},
+				icon_xy = {
+					1,
+					0
+				}
+			},
+			deck4,
+			{
+				cost = 1000,
+				texture_bundle_folder = "joy",
+				desc_id = "menu_deck21_5_desc",
+				name_id = "menu_deck21_5",
+				upgrades = {
+					"player_pocket_ecm_heal_on_kill_1"
+				},
+				icon_xy = {
+					2,
+					0
+				}
+			},
+			deck6,
+			{
+				cost = 2400,
+				texture_bundle_folder = "joy",
+				desc_id = "menu_deck21_7_desc",
+				name_id = "menu_deck21_7",
+				upgrades = {"player_pocket_ecm_kill_dodge_1"},
+				icon_xy = {
+					3,
+					0
+				}
+			},
+			deck8,
+			{
+				cost = 4000,
+				texture_bundle_folder = "joy",
+				desc_id = "menu_deck21_9_desc",
+				name_id = "menu_deck21_9",
+				upgrades = {
+					"player_passive_loot_drop_multiplier",
+					"team_pocket_ecm_heal_on_kill_1"
+				},
+				icon_xy = {
+					0,
+					1
+				}
+			},
+			desc_id = "menu_st_spec_21_desc",
+			name_id = "menu_st_spec_21"
+		}	
 
 	--Then we insert our new perk decks into the table--
 	self.specializations[1] = sc_crew_chief
@@ -3292,6 +3367,7 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[18] = sc_wall	
 	self.specializations[19] = sc_august	
 	self.specializations[20] = sc_nose
+	self.specializations[21] = sc_nip
 end
 
 end

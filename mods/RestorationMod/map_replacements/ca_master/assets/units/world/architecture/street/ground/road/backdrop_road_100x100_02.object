@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/ground/ground" orientation_object="rp_backdrop_ground_100_02" />
+  <graphics>
+    <object name="g_g" enabled="true" instance_struct="world_tm" />
+  </graphics>
+  <objects>
+    <object name="snap_01" enabled="true" />
+    <object name="snap_03" enabled="true" />
+    <object name="snap_02" enabled="true" />
+  </objects>
+</dynamic_object>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+	
+	<!--OMNIA City SWAT-->
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city.object"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city.cooked_physics"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city.model"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city.unit"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city.material_config"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_contour.material_config"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_husk.unit"/>	
+	
+	<!--OMNIA City Heavy-->
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy.object"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy.cooked_physics"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy.model"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy.unit"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy.material_config"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_contour.material_config"/>
+	<file name="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk.unit"/>	
+	
+	<!--OMNIA Textures-->
+	<file name="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df.texture"/>
+	<file name="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_heavy_df.texture"/>
+	<file name="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df.texture"/>
+	<file name="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df.texture"/>	
+	<file name="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_nm.texture"/>	
+	<file name="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_df.texture"/>	
+	<file name="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_nm.texture"/>	
+
+	<!--Omnia Buff Effect-->
+	<file name="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff.object"/>
+	<file name="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff.cooked_physics"/>
+	<file name="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff.model"/>
+	<file name="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff.unit"/>
+	<file name="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff.material_config"/>
+	
+	<file name="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff.effect"/>
+	<file name="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01.effect"/>
+	<file name="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02.effect"/>
+	<file name="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03.effect"/>
+</assets>

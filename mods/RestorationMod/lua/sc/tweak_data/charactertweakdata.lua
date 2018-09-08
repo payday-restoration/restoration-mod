@@ -128,7 +128,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.surrender = presets.surrender.easy
 		self.security.ecm_vulnerability = 1
 		self.security.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.security.weapon_voice = "3"
 		self.security.experience.cable_tie = "tie_swat"
@@ -184,7 +184,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.surrender = presets.surrender.easy
 		self.gensec.ecm_vulnerability = 1
 		self.gensec.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.gensec.weapon_voice = "3"
 		self.gensec.experience.cable_tie = "tie_swat"
@@ -218,7 +218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop.surrender = presets.surrender.easy
 		self.cop.ecm_vulnerability = 1
 		self.cop.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.cop.weapon_voice = "1"
 		self.cop.experience.cable_tie = "tie_swat"
@@ -274,7 +274,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.fbi.surrender = presets.surrender.easy
 			self.fbi.ecm_vulnerability = 1
 		self.fbi.ecm_hurts = {
-				ears = {min_duration = 8, max_duration = 10}
+				ears = {min_duration = 10, max_duration = 10}
 			}
 			self.fbi.weapon_voice = "2"
 			self.fbi.experience.cable_tie = "tie_swat"
@@ -344,7 +344,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic.surrender_break_time = {7, 12}
 		self.medic.ecm_vulnerability = 1
 		self.medic.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.medic.weapon_voice = "2"
 		self.medic.experience.cable_tie = "tie_swat"
@@ -381,6 +381,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.damage.explosion_damage_mul = 0.1
 		self.medic_summers.damage.fire_damage_mul = 0.05
 		self.medic_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.medic_summers.ecm_vulnerability = 0
+		self.medic_summers.ecm_hurts = {}			
 		self.medic_summers.immune_to_concussion = true
 		self.medic_summers.no_damage_mission = true
 		self.medic_summers.no_retreat = true
@@ -415,7 +417,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.surrender = nil
 		self.omnia_lpf.ecm_vulnerability = 1
 		self.omnia_lpf.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.omnia_lpf.weapon_voice = "2"
 		self.omnia_lpf.experience.cable_tie = "tie_swat"
@@ -430,12 +432,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
+		if job == "mad" or job == "hvh" then 
+			self.omnia_lpf.custom_voicework = nil
+		else
+			self.omnia_lpf.custom_voicework = "olpf"
+		end			
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
 		self.omnia_lpf.tags = {"law", "medic", "special"}
 		self.omnia_lpf.do_omnia = true
 		self.omnia_lpf.do_aoe_heal = true
-		self.omnia_lpf.spawn_sound_event = "cloaker_spawn"
+		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
 		self.omnia_lpf.die_sound_event = "mga_death_scream"		
 		self.omnia_lpf.is_special = true
 		table.insert(self._enemy_list, "omnia_lpf")
@@ -455,7 +462,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.surrender = presets.surrender.hard
 		self.swat.ecm_vulnerability = 1
 		self.swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.swat.weapon_voice = "2"
 		self.swat.experience.cable_tie = "tie_swat"
@@ -512,7 +519,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.surrender = presets.surrender.hard
 		self.heavy_swat.ecm_vulnerability = 1
 		self.heavy_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.heavy_swat.weapon_voice = "2"
 		self.heavy_swat.experience.cable_tie = "tie_swat"
@@ -627,7 +634,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.no_arrest = true
 		self.heavy_swat_sniper.ecm_vulnerability = 1
 		self.heavy_swat_sniper.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.heavy_swat_sniper.experience.cable_tie = "tie_swat"
 		self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -648,7 +655,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.static_dodge_preset = true
 		self.heavy_swat_sniper.static_melee_preset = true	
 		self.heavy_swat_sniper.custom_voicework = nil
-		self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
+		self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
 		self.heavy_swat_sniper.die_sound_event = "mga_death_scream"	
 		self.heavy_swat_sniper.is_special = true
 		table.insert(self._enemy_list, "heavy_swat_sniper")
@@ -668,7 +675,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.surrender = presets.surrender.hard
 		self.fbi_swat.ecm_vulnerability = 1
 		self.fbi_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.fbi_swat.weapon_voice = "2"
 		self.fbi_swat.experience.cable_tie = "tie_swat"
@@ -714,7 +721,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.surrender = presets.surrender.hard
 		self.fbi_heavy_swat.ecm_vulnerability = 1
 		self.fbi_heavy_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.fbi_heavy_swat.weapon_voice = "2"
 		self.fbi_heavy_swat.experience.cable_tie = "tie_swat"
@@ -773,7 +780,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.no_arrest = false
 		self.city_swat.ecm_vulnerability = 1
 		self.city_swat.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.city_swat.weapon_voice = "2"
 		self.city_swat.experience.cable_tie = "tie_swat"
@@ -821,14 +828,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "omnia")
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
+		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
+		self.city_swat_titan.speech_prefix_count = 4		
 		if job == "mad" or job == "hvh" then
-			self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
-			self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
-			self.city_swat_titan.speech_prefix_count = 4
+		    self.city_swat_titan.custom_voicework = nil
 		else
-			self.city_swat_titan.speech_prefix_p1 = "l5d"
-			self.city_swat_titan.speech_prefix_p2 = nil
-			self.city_swat_titan.speech_prefix_count = nil
+		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
 		self.city_swat_titan.HEALTH_INIT = 15
 		self.city_swat_titan.headshot_dmg_mul = 2.19
@@ -841,7 +847,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
 		self.city_swat_titan.static_melee_preset = true	
-		self.city_swat_titan.custom_voicework = nil
 		self.city_swat_titan.dodge_with_grenade = {
 			smoke = {duration = {
 				12,
@@ -880,7 +885,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.melee_weapon = nil
 		self.sniper.ecm_vulnerability = 1
 		self.sniper.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.sniper.weapon_voice = "1"
 		self.sniper.experience.cable_tie = "tie_swat"
@@ -915,7 +920,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.surrender = nil
 		self.gangster.ecm_vulnerability = 1
 		self.gangster.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.gangster.no_arrest = true
 		self.gangster.no_retreat = true
@@ -995,7 +1000,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_guard.ecm_vulnerability = 1
 		self.biker_guard.no_arrest = false
 		self.biker_guard.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.biker_guard.speech_prefix_p1 = "bik"
 		self.biker_guard.speech_prefix_p2 = nil
@@ -1075,10 +1080,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.no_retreat = true
 		self.mobster_boss.no_arrest = true
 		self.mobster_boss.surrender = nil
-		self.mobster_boss.ecm_vulnerability = 0.85
-		self.mobster_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.mobster_boss.ecm_vulnerability = 0
+		self.mobster_boss.ecm_hurts = {}
 		self.mobster_boss.weapon_voice = "3"
 		self.mobster_boss.experience.cable_tie = "tie_swat"
 		self.mobster_boss.access = "gangster"
@@ -1124,10 +1127,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.no_run_stop = true	
 		self.biker_boss.no_arrest = true
 		self.biker_boss.surrender = nil
-		self.biker_boss.ecm_vulnerability = 0.85
-		self.biker_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.biker_boss.ecm_vulnerability = 0
+		self.biker_boss.ecm_hurts = {}
 		self.biker_boss.weapon_voice = "3"
 		self.biker_boss.experience.cable_tie = "tie_swat"
 		self.biker_boss.access = "gangster"
@@ -1153,6 +1154,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.immune_to_concussion = true
 		self.biker_boss.must_headshot = true
 		self.biker_boss.static_dodge_preset = true
+		self.biker_boss.always_drop = true
 		self.biker_boss.is_special = true
 		table.insert(self._enemy_list, "biker_boss")
 	end
@@ -1209,10 +1211,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.no_run_start = true
 		self.chavez_boss.no_run_stop = true		
 		self.chavez_boss.surrender = nil
-		self.chavez_boss.ecm_vulnerability = 0.85
-		self.chavez_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.chavez_boss.ecm_vulnerability = 0
+		self.chavez_boss.ecm_hurts = {}
 		self.chavez_boss.weapon_voice = "1"
 		self.chavez_boss.experience.cable_tie = "tie_swat"
 		self.chavez_boss.access = "gangster"
@@ -1270,7 +1270,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bolivian_indoors.ecm_vulnerability = 1
 		self.bolivian_indoors.no_arrest = false
 		self.bolivian_indoors.ecm_hurts = {
-			ears = {min_duration = 8, max_duration = 10}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.bolivian_indoors.speech_prefix_p1 = "lt"
 		self.bolivian_indoors.speech_prefix_p2 = nil
@@ -1305,10 +1305,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.no_retreat = true
 		self.drug_lord_boss.no_arrest = true
 		self.drug_lord_boss.surrender = nil
-		self.drug_lord_boss.ecm_vulnerability = 0.85
-		self.drug_lord_boss.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.drug_lord_boss.ecm_vulnerability = 0
+		self.drug_lord_boss.ecm_hurts = {}
 		self.drug_lord_boss.weapon_voice = "3"
 		self.drug_lord_boss.experience.cable_tie = "tie_swat"
 		self.drug_lord_boss.access = "gangster"
@@ -1399,10 +1397,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank.no_retreat = true
 		self.tank.no_arrest = true
 		self.tank.surrender = nil
-		self.tank.ecm_vulnerability = 0.85
-		self.tank.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
+		self.tank.ecm_vulnerability = 0
+		self.tank.ecm_hurts = {}
 		self.tank.weapon_voice = "3"
 		self.tank.experience.cable_tie = "tie_swat"
 		self.tank.access = "tank"
@@ -1464,21 +1460,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.headshot_dmg_mul = 3.997125
 		self.tank_titan.immune_to_concussion = true
 		self.tank_titan.immune_to_knock_down = true
-		self.tank_titan.priority_shout = "f45"
-		self.tank_titan.bot_priority_shout = "f45x_any"
 		self.tank_titan.priority_shout_max_dis = 3000
-		self.tank_titan.ecm_vulnerability = 0.85
-		self.tank_titan.ecm_hurts = {
-			ears = {min_duration = 1, max_duration = 3}
-		}
-		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
+		self.tank_titan.ecm_vulnerability = 0
+		if job == "mad" or job == "hvh" then 
+			self.tank_titan.custom_voicework = nil
+		else
+			self.tank_titan.custom_voicework = "tdozer"
+		end				
+		self.tank_titan.ecm_hurts = {}
 		self.tank_titan.die_sound_event = "mga_death_scream"
 		self.tank_titan.damage.explosion_damage_mul = 1.25
 		self.tank_titan.is_special = true
 		table.insert(self._enemy_list, "tank_titan")
 		
 		self.tank_titan_assault = deep_clone(self.tank_titan)
-		self.tank_titan_assault.spawn_sound_event = "cloaker_spawn"
+		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
 		self.tank_hw = deep_clone(self.tank_titan)
@@ -1491,6 +1487,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
+		self.tank_mini.spawn_sound_event = "bdz_entrance_elite"
 		self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(presets.weapon.normal.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
@@ -1556,8 +1553,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan = deep_clone(self.spooc)
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.spooc_titan.can_be_tased = false
-		self.spooc_titan.priority_shout = "f45"
-		self.spooc_titan.bot_priority_shout = "f45x_any"
 		self.spooc_titan.priority_shout_max_dis = 0
 		self.spooc_titan.unintimidateable = true
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
@@ -1586,10 +1581,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.no_retreat = true
 		self.shield.no_arrest = true
 		self.shield.surrender = nil
-		self.shield.ecm_vulnerability = 0.9
+		self.shield.ecm_vulnerability = 1
 		self.shield.suppression = nil
 		self.shield.ecm_hurts = {
-			ears = {min_duration = 7, max_duration = 9}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.shield.priority_shout = "f31"
 		self.shield.bot_priority_shout = "f31x_any"
@@ -1633,8 +1628,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 		self.phalanx_minion.flammable = false
 		self.phalanx_minion.damage.shield_knocked = true
-		self.phalanx_minion.priority_shout = "f45"
-		self.phalanx_minion.bot_priority_shout = "f45x_any"
 		self.phalanx_minion.priority_shout_max_dis = 3000
 		self.phalanx_minion.weapon_voice = "3"
 		self.phalanx_minion.experience.cable_tie = "tie_swat"
@@ -1648,7 +1641,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.ignore_medic_revive_animation = true
 		self.phalanx_minion.ecm_vulnerability = 1
 		self.phalanx_minion.ecm_hurts = {
-			ears = {min_duration = 2, max_duration = 3}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.phalanx_minion.use_animation_on_fire_damage = false
 		self.phalanx_minion.can_be_tased = false
@@ -1661,15 +1654,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.is_special = true
 		table.insert(self._enemy_list, "phalanx_minion")
 		self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
-		self.phalanx_minion_assault.spawn_sound_event = "cloaker_spawn"
+		self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
 		self.phalanx_minion_assault.die_sound_event = "mga_death_scream"
 		table.insert(self._enemy_list, "phalanx_minion_assault")
 	end
 
 	function CharacterTweakData:_init_phalanx_vip(presets)
 		self.phalanx_vip = deep_clone(self.phalanx_minion)
-		self.phalanx_vip.LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
-		self.phalanx_vip.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = 0.0001
 		self.phalanx_vip.damage.shield_knocked = false
 		self.phalanx_vip.damage.immune_to_knockback = true
 		self.phalanx_vip.immune_to_knock_down = true
@@ -1677,7 +1668,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.headshot_dmg_mul = 1.25
 		self.phalanx_vip.damage.explosion_damage_mul = 0.05
 		self.phalanx_vip.damage.fire_damage_mul = 0.05
-		self.phalanx_vip.damage.bullet_damage_mul = 0.65
+		self.phalanx_vip.damage.bullet_damage_mul = 0.75
 		self.phalanx_vip.spawn_sound_event = nil
 		self.phalanx_vip.priority_shout = "f45"
 		self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -1686,6 +1677,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.can_be_tased = false
 		self.phalanx_vip.ecm_vulnerability = nil
 		self.phalanx_vip.must_headshot = true
+		self.phalanx_vip.ends_assault_on_death = true
 		self.phalanx_vip.suppression = nil
 		self.phalanx_vip.ecm_hurts = {}
 		self.phalanx_vip.is_special = true
@@ -1710,8 +1702,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spring.EXTRA_HEALTH_BALANCE = 50
 		self.spring.headshot_dmg_mul = 3.997125
 		self.spring.damage.explosion_damage_mul = 1.25
-		self.spring.damage.bullet_damage_mul = 0.65
-		self.spring.damage.fire_damage_mul = 0.65
+		self.spring.damage.bullet_damage_mul = 1
+		self.spring.damage.fire_damage_mul = 1
 		self.spring.priority_shout = "f45"
 		self.spring.bot_priority_shout = "f45x_any"
 		self.spring.priority_shout_max_dis = 3000
@@ -1828,9 +1820,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser.no_retreat = true
 		self.taser.no_arrest = true
 		self.taser.surrender = presets.surrender.special
-		self.taser.ecm_vulnerability = 0.9
+		self.taser.ecm_vulnerability = 1
 		self.taser.ecm_hurts = {
-			ears = {min_duration = 6, max_duration = 8}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.taser.surrender_break_time = {4, 6}
 		self.taser.suppression = nil
@@ -1884,6 +1876,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.damage.explosion_damage_mul = 0.1
 		self.taser_summers.damage.fire_damage_mul = 0.05
 		self.taser_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.taser_summers.ecm_vulnerability = 0
 		self.taser_summers.ecm_hurts = {}
 		self.taser_summers.chatter = presets.enemy_chatter.summers
 		self.taser_summers.no_retreat = true
@@ -1915,7 +1908,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
-		self.taser_titan.spawn_sound_event = "cloaker_spawn"
+		self.taser_titan.spawn_sound_event = "tsr_elite"
+		self.taser_titan.spawn_sound_event_2 = "cloaker_spawn"
 		self.taser_titan.die_sound_event = "mga_death_scream"
 		self.taser_titan.custom_voicework = nil
 		self.taser_titan.surrender = nil
@@ -1949,9 +1943,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.no_retreat = true
 		self.boom.no_arrest = true
 		self.boom.surrender = nil
-		self.boom.ecm_vulnerability = 0.9
+		self.boom.ecm_vulnerability = 1
 		self.boom.ecm_hurts = {
-			ears = {min_duration = 6, max_duration = 8}
+			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.boom.surrender_break_time = {4, 6}
 		self.boom.suppression = nil
@@ -2018,6 +2012,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.use_factory = true
 		self.boom_summers.rescue_hostages = false
 		self.boom_summers.steal_loot = nil
+		self.boom_summers.ecm_vulnerability = 0
+		self.boom_summers.ecm_hurts = {}		
 		self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
 		table.insert(self._enemy_list, "boom_summers")
 	end
@@ -2719,6 +2715,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			arrest_timeout = 240
 		}
 	end
+	
+	function CharacterTweakData:_init_joy(presets)
+		self.joy = {
+			damage = presets.gang_member_damage,
+			weapon = deep_clone(presets.weapon.gang_member)
+		}
+		self.joy.weapon.weapons_of_choice = {
+			primary = "wpn_fps_ass_m4_npc",
+			secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
+		}
+		self.joy.always_face_enemy = true
+		self.joy.no_run_start = true
+		self.joy.no_run_stop = true
+		self.joy.flammable = false			
+		self.joy.detection = presets.detection.gang_member
+		self.joy.move_speed = presets.move_speed.gang_member
+		self.joy.crouch_move = false
+		self.joy.speech_prefix = "rb19"
+		self.joy.weapon_voice = "3"
+		self.joy.access = "teamAI1"
+		self.joy.arrest = {
+			timeout = 240,
+			aggression_timeout = 6,
+			arrest_timeout = 240
+		}
+	end	
 
 	function CharacterTweakData:_presets(tweak_data)
 		local presets = {}
@@ -11551,18 +11573,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 				self[enemy_tweak].move_speed = speed_preset
 
-				for pose, hastes in pairs(speed_preset) do
-					for haste, stances in pairs(hastes) do
-						for stance, move_dirs in pairs(stances) do
-							for move_dir, speed in pairs(move_dirs) do
-								speed_preset[pose].walk.hos[move_dir] = speed * walk_mul
-								speed_preset[pose].walk.cbt[move_dir] = speed * walk_mul
-								speed_preset[pose].run.hos[move_dir] = speed * run_mul
-								speed_preset[pose].run.cbt[move_dir] = speed * run_mul
-							end
-						end
-					end
-				end
+				speed_preset.stand.walk.hos.fwd = speed_preset.stand.walk.hos.fwd * walk_mul
+				speed_preset.stand.walk.hos.strafe = speed_preset.stand.walk.hos.strafe * walk_mul
+				speed_preset.stand.walk.hos.bwd = speed_preset.stand.walk.hos.bwd * walk_mul
+				speed_preset.stand.walk.cbt.fwd = speed_preset.stand.walk.cbt.fwd * walk_mul
+				speed_preset.stand.walk.cbt.strafe = speed_preset.stand.walk.cbt.strafe * walk_mul
+				speed_preset.stand.walk.cbt.bwd = speed_preset.stand.walk.cbt.bwd * walk_mul
+				speed_preset.stand.run.hos.fwd = speed_preset.stand.run.hos.fwd * run_mul
+				speed_preset.stand.run.hos.strafe = speed_preset.stand.run.hos.strafe * run_mul
+				speed_preset.stand.run.hos.bwd = speed_preset.stand.run.hos.bwd * run_mul
+				speed_preset.stand.run.cbt.fwd = speed_preset.stand.run.cbt.fwd * run_mul
+				speed_preset.stand.run.cbt.strafe = speed_preset.stand.run.cbt.strafe * run_mul
+				speed_preset.stand.run.cbt.bwd = speed_preset.stand.run.cbt.bwd * run_mul
+				speed_preset.crouch.walk.hos.fwd = speed_preset.crouch.walk.hos.fwd * walk_mul
+				speed_preset.crouch.walk.hos.strafe = speed_preset.crouch.walk.hos.strafe * walk_mul
+				speed_preset.crouch.walk.hos.bwd = speed_preset.crouch.walk.hos.bwd * walk_mul
+				speed_preset.crouch.walk.cbt.fwd = speed_preset.crouch.walk.cbt.fwd * walk_mul
+				speed_preset.crouch.walk.cbt.strafe = speed_preset.crouch.walk.cbt.strafe * walk_mul
+				speed_preset.crouch.walk.cbt.bwd = speed_preset.crouch.walk.cbt.bwd * walk_mul
+				speed_preset.crouch.run.hos.fwd = speed_preset.crouch.run.hos.fwd * run_mul
+				speed_preset.crouch.run.hos.strafe = speed_preset.crouch.run.hos.strafe * run_mul
+				speed_preset.crouch.run.hos.bwd = speed_preset.crouch.run.hos.bwd * run_mul
+				speed_preset.crouch.run.cbt.fwd = speed_preset.crouch.run.cbt.fwd * run_mul
+				speed_preset.crouch.run.cbt.strafe = speed_preset.crouch.run.cbt.strafe * run_mul
+				speed_preset.crouch.run.cbt.bwd = speed_preset.crouch.run.cbt.bwd * run_mul
 			end
 		end
 	end
@@ -12163,7 +12197,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			tag = {
 				path = "units/pd2_dlc_tag/characters/",
 				list = {"ene_male_commissioner"}			
-			},			
+			},	
+			sah = {
+				path = "units/pd2_dlc_sah/characters/",
+				list = {
+					"civ_male_gala_guest_03",
+					"civ_male_gala_guest_04",
+					"civ_male_gala_guest_05",
+					"civ_male_gala_guest_06",
+					"civ_male_auctioneer",
+					"civ_female_gala_guest_04",
+					"civ_female_gala_guest_05",
+					"civ_female_gala_guest_06",
+					"civ_male_shacklethorn_waiter_01",
+					"civ_male_shacklethorn_waiter_02",
+					"civ_male_maintenance_01"
+				}
+			},
+			skm = {
+				path = "units/pd2_skirmish/characters/",
+				list = {
+					"civ_male_bank_manager_hostage",
+					"civ_female_museum_curator_hostage",
+					"civ_female_drug_lord_hostage",
+					"civ_male_prisoner_hostage"
+				}				
+			},
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",
 				list = {

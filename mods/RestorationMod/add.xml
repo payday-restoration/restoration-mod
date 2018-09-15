@@ -175,6 +175,7 @@
 	<!--OMNIA Textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_city_heavy_nm"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_heavy_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df"/>	
@@ -837,6 +838,7 @@
 	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
 	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
+	<effect path="units/payday2/characters/ene_spook_cloak_1/spook_shimmer" load="false"/>
 	<texture path="units/payday2/characters/shared_textures/spook_cloak_df" load="true"/>
 	<texture path="units/payday2/characters/shared_textures/spook_cloak_dead_df"/>
 	<texture path="units/payday2/characters/shared_textures/spook_cloak_nm"/>

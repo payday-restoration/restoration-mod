@@ -358,7 +358,19 @@
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" load="true" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>	
+	
+	<!--Autumn-->
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_decloak" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<object path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" load="true" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_husk" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_head_df" force="false"/>
 
 	<!--Veteran Cop-->	
 	<object path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>

@@ -24,7 +24,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			medic = true,
 			omnia_LPF = true,
 			spring = true,
-			summers = true
+			summers = true,
+			autumn = true
 		}
 	end
 
@@ -43,7 +44,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			medic = true,
 			omnia_LPF = true,
 			spring = true,
-			summers = true
+			summers = true,
+			autumn = true
 		}
 	end
 	

@@ -238,6 +238,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_toggle_one_down"] = "145+",
 		["menu_one_down"] = "145+",
 		
+		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
+		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
+		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
+		["pickup_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
+		["firemode_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
+		["hud_interact_sentry_gun_switch_fire_mode"] = "$BTN_INTERACT $AMMO_LEFT",
+		["hud_action_repair_sentry"] = "Repairing sentry...",		
+		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
 		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
@@ -540,30 +548,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   ENGINEER SUBTREE   ]]--
 			--{
 	
-			--Defense Up
-			["menu_defense_up_beta_sc"] = "Third Law",
-			["menu_defense_up_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns cost ##25%## less ammunition to deploy.\n\nACE: ##$pro##\nYour sentry guns gain a protective shield.",
+			--Logistician
+			["menu_defense_up_beta_sc"] = "Logistician",
+			["menu_defense_up_beta_desc_sc"] = "BASIC: ##$basic##\nYou deploy and interact with all deployables ##50%## faster.\n\nACE: ##$pro##\nYou and your crew deploy and interact with all deployables ##25%## faster.",
 
-			--Sentry Targeting Package
-			["menu_sentry_targeting_package_beta_sc"] = "Sentry Targeting Package",
-			["menu_sentry_targeting_package_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns have ##50%## less spread.\n\nACE: ##$pro##\nYour sentry guns rotation speed is increased by ##150%.## Your sentry guns also have ##50%## more ammunition.",
-
-			--Eco Sentry
-			["menu_eco_sentry_beta_sc"] = "Eco Sentry",
-			["menu_eco_sentry_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns cost an additional ##25%## less ammunition to deploy.\n\nACE: ##$pro##\nYour sentry guns gain ##150%## increased health.",
+			--Nerves of Steel--	
+			["menu_fast_fire_beta_sc"] = "Nerves of Steel",
+			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sight while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
 
 			--Engineering
-			["menu_engineering_beta_sc"] = "Engineering",
-			["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.\n\nACE: ##$pro##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%##, but increasing damage by ##250%## and allowing it to pierce through enemies and shields.",
+			["menu_eco_sentry_beta_sc"] = "Engineering",
+			["menu_eco_sentry_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns gain ##150%## increased health.\n\nACE: ##$pro##\nYour sentry guns gain a protective shield.",
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",
-			["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: ##$basic##\nYou deploy and interact with all deployables ##50%## faster.\n\nACE: ##$pro##\nYou can now equip a second deployable to bring with you. Pressing the ##$BTN_CHANGE_EQ## key will allow you to toggle between deployable.\n\nThe second deployable has ##50%## less uses than normal.",
+			["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now equip a second deployable to bring with you. Pressing the ##'X'## key will allow you to toggle between deployables.\n\nThe second deployable has ##50%## less uses than normal.\n\nACE: ##$pro##\nYour second deployable now has ##100%## of its normal uses.",
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "Tower Defense",	
-			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now carry a maximum of ##2## sentry guns.\n\nACE: ##$pro##\nYou can now carry a maximum of ##3## sentry guns.",																								
+			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now carry a maximum of ##3## sentry guns.\n\nACE: ##$pro##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%##, increasing damage by ##50%## and allowing it to pierce through enemies and shields.",																								
 			
+			--Bulletproof--
+			["menu_iron_man_sc"] = "Bulletproof",
+			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nYour armor recovery rate is increased by ##15%.##",																																																																																																																																																																																																																									
+					
 			--}
 			
 			--[[   BREACHER SUBTREE   ]]--
@@ -591,6 +599,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[  BATTLE SAPPER  SUBTREE   ]]--
 			--{
 			
+			--WIP
+			["menu_engineering_beta_sc"] = "WIP",
+			["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nWIP\n\nACE: ##$pro##\nWIP",			
 			
 			--}
 		--}
@@ -657,8 +668,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_sprinter_beta_sc"] = "Duck and Cover",
 		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYou have a ##10%## increased chance to dodge while sprinting.\n\nYou gain ##15%## chance to dodge while ziplining.",																								
 
-		["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now carry a maximum of ##2## sentry guns.\n\nACE: ##$pro##\nYou can now carry a maximum of ##3## sentry guns.",																								
-
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
 		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability is increased with all rifles by ##4.##\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy while standing still.",
@@ -667,21 +676,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
 		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles and SMGs set to semi-auto by ##5.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
 
-		--Nerves of Steel--	
-		["menu_fast_fire_beta_sc"] = "Nerves of Steel",
-		["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sight while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
-
-		--Graze--
-		["menu_kilmer_sc"] = "Graze",
+		--Explosive Headshot--
+		["menu_kilmer_sc"] = "Explosive Headshot",
 		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nSnipers that headshot their target deal ##30%## of the damage dealt in a ##3## meter radius around the bullet impact.\n\nACE: ##$pro##\nSnipers that headshot their target now deal ##60%## of the damage dealt in a ##5## meter radius around the bullet impact.",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
 		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## killing headshots in less than ##6## seconds will grant ##1## ammo pickup to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nACE: ##$pro##\nGetting ##3## headshots in a row will grant ##1## ammo pickup for your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.",																																																																																																																																																																																																																									
-
-		--Bulletproof--
-		["menu_iron_man_sc"] = "Bulletproof",
-		["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nYour armor recovery rate is increased by ##15%.##",																																																																																																																																																																																																																									
 
 		--Cleaner--
 		["menu_jail_workout_sc"] = "Cleaner",

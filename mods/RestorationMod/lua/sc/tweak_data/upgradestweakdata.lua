@@ -393,27 +393,29 @@ function UpgradesTweakData:_init_pd2_values()
 		--{
 			--[[   ENGINEER SUBTREE   ]]--
 			--{
-				--Defense up
+				--Defense up (RIP)
 				self.values.sentry_gun.cost_reduction = {2, 3}
-				self.values.sentry_gun.shield = {true}	
 				
-				--Sentry Targeting Package
+				--Sentry Targeting Package (RIP)
 				self.values.sentry_gun.spread_multiplier = {2}
 				self.values.sentry_gun.rot_speed_multiplier = {2}
 				self.values.sentry_gun.extra_ammo_multiplier = {2}
-
-				--Eco Sentry
-				self.values.sentry_gun.armor_multiplier = {2.5}
-			
-				--Engineering
-				self.values.sentry_gun.less_noisy = {true}
-				self.values.sentry_gun.ap_bullets = {true}
-				self.values.sentry_gun.fire_rate_reduction = {4}
-				self.values.sentry_gun.damage_multiplier = {2.5}
-
-				--Jack of All Trades
+				
+				--Logistician
 				self.values.player.deploy_interact_faster = {0.5}
+				self.values.team.deploy_interact_faster = {0.25}
+				
+				--Nerves of Steel
+				self.values.player.interacting_damage_multiplier = {0.5}
+				self.values.player.steelsight_when_downed = {true}				
+
+				--Engineering
+				self.values.sentry_gun.armor_multiplier = {2.5}
+				self.values.sentry_gun.shield = {true}	
+		
+				--Jack of All Trades
 				self.values.player.second_deployable = {true}
+				self.values.player.second_deployable_full = {true}
 	
 				--Tower Defence
 				self.values.sentry_gun.quantity = {1, 2}
@@ -423,6 +425,16 @@ function UpgradesTweakData:_init_pd2_values()
 					multibasic = "2",
 					multipro = "3"
 				}
+				self.values.sentry_gun.less_noisy = {true}
+				self.values.sentry_gun.ap_bullets = {true}
+				self.values.sentry_gun.fire_rate_reduction = {4}
+				self.values.sentry_gun.damage_multiplier = {1.5}	
+
+				--Bulletproof
+				self.values.player.armor_multiplier = {1.35, 1.5}
+				self.values.team.armor.regen_time_multiplier = {0.9}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
+				
 			--}
 			
 			--[[   BREACHER SUBTREE   ]]--
@@ -459,11 +471,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--}
 			
 			--[[   BATTLE SAPPER SUBTREE   ]]--
-			--{
-				--Nerves of Steel
-				self.values.player.interacting_damage_multiplier = {0.5}
-				self.values.player.steelsight_when_downed = {true}
-	
+			--{	
 				--Sharpshooter
 				self.values.weapon.single_spread_index_addend = {1}
 				self.values.assault_rifle.recoil_index_addend = {1}
@@ -482,7 +490,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.assault_rifle.move_spread_multiplier = {0.5}
 				self.values.snp.move_spread_multiplier = {0.5}
 				
-				--Graze
+				--Explosive Headshot
 				self.values.snp.graze_damage = {
 					{
 						radius = 300,
@@ -502,10 +510,6 @@ function UpgradesTweakData:_init_pd2_values()
 					{ ammo = 1, time = 6, headshots = 2 }
 				}
 					
-				--Bulletproof
-				self.values.player.armor_multiplier = {1.35, 1.5}
-				self.values.team.armor.regen_time_multiplier = {0.9}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 			--}
 		--}
 		
@@ -1437,7 +1441,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "pick_lock_easy_speed_multiplier",
 			category = "player"
 		}
-	}		
+	}	
+	self.definitions.player_second_deployable_full = {
+		name_id = "menu_second_deployable",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "second_deployable_full",
+			category = "player"
+		}
+	}	
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {

@@ -431,11 +431,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Handling
 			["menu_scavenger_sc"] = "MG Handling",	
-			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs and LMGs by ##50%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
+			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs, LMGs and Assault Rifles by ##50%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy while moving with SMGs and LMGs is increased by ##50%.##\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy while moving with SMGs, LMGs and Assault Rifles is increased by ##50%.##\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -526,7 +526,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear
 			["menu_portable_saw_beta_sc"] = "Rip and Tear",
-			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nYou reload Saws ##25%## faster.\n\nACE: ##$pro##\nYour saw blade wear is reduced by ##50%##",																																																																																																																																																																																																
+			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nReduces the wear down of saw blades by ##50%.##\n\nACE: ##$pro##\nYou reload Saws, Grenade Launchers, and Rocket Launchers ##25%## faster.",																																																																																																																																																																																																
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "Extra Lead",
@@ -550,7 +550,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 			--Logistician
 			["menu_defense_up_beta_sc"] = "Logistician",
-			["menu_defense_up_beta_desc_sc"] = "BASIC: ##$basic##\nYou deploy and interact with all deployables ##50%## faster.\n\nACE: ##$pro##\nYou and your crew deploy and interact with all deployables ##25%## faster.",
+			["menu_defense_up_beta_desc_sc"] = "BASIC: ##$basic##\nYou deploy and interact with all deployables ##25%## faster.\n\nACE: ##$pro##\nYou and your crew deploy and interact with all deployables ##50%## faster.",
 
 			--Nerves of Steel--	
 			["menu_fast_fire_beta_sc"] = "Nerves of Steel",
@@ -599,9 +599,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[  BATTLE SAPPER  SUBTREE   ]]--
 			--{
 			
-			--WIP
-			["menu_engineering_beta_sc"] = "WIP",
-			["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nWIP\n\nACE: ##$pro##\nWIP",			
+			--Rifleman
+			["menu_rifleman_sc"] = "Rifleman",
+			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##25%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##10%## accuracy bonus while aiming down sights with all SMG, Assault Rifles and Sniper Rifles fired in single shot mode.",		
+
+			--Aggressive Reload
+			["menu_engineering_beta_sc"] = "Aggressive Reload",
+			["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nAny killing headshot will reduce your reload time by ##25%## for ##6## seconds. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\n\nACE: ##$pro##\nThe reload speed bonus increases to ##50%## and now lasts ##12## seconds.",					
 			
 			--}
 		--}

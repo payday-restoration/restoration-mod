@@ -388,7 +388,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 3},
 				[1] = {
 					upgrades = {
-						"smg_hip_fire_spread_multiplier"
+						"smg_hip_fire_spread_multiplier",
+						"assault_rifle_hip_fire_spread_multiplier",
 					},
 					cost = self.costs.default
 				},
@@ -407,7 +408,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 0},
 				[1] = {
 					upgrades = {
-						"smg_move_spread_multiplier"
+						"smg_move_spread_multiplier",
+						"assault_rifle_move_spread_multiplier",
 					},
 					cost = self.costs.default
 				},
@@ -773,13 +775,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {0, 1},
 					[1] = {
 						upgrades = {
-							"saw_reload_speed_multiplier"
+							"saw_enemy_slicer"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"saw_enemy_slicer"
+							"saw_reload_speed_multiplier",
+							"grenade_launcher_reload_speed_multiplier"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -856,7 +859,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.defense_up = {
 				["name_id"] = "menu_defense_up_beta_sc",
 				["desc_id"] = "menu_defense_up_beta_desc_sc",
-				["icon_xy"] = {0, 0},
+				["icon_xy"] = {4, 3},
 				[1] = {
 					upgrades = {
 						"deploy_interact_faster_1"
@@ -865,7 +868,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"deploy_interact_faster_1"
+						"deploy_interact_faster_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1140,17 +1143,21 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Nerves of Steel--
+			--Rifleman--
 			self.skills.fire_control = {
-				["name_id"] = "menu_engineering_beta_sc",
-				["desc_id"] = "menu_engineering_beta_desc_sc",
-				["icon_xy"] = {0, 0},
+				["name_id"] = "menu_rifleman_sc",
+				["desc_id"] = "menu_rifleman_desc_sc",
+				["icon_xy"] = {6, 5},
 				[1] = {
-					upgrades = {},
+					upgrades = {
+						"weapon_enter_steelsight_speed_multiplier"
+					},
 					cost = self.costs.hightier
 				},
 				[2] = {
-					upgrades = {},
+					upgrades = {
+						"single_shot_accuracy_inc_1"
+					},
 					cost = self.costs.hightierpro
 				}
 			}
@@ -1193,17 +1200,21 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--WIP--
+			--Aggressive Reload--
 			self.skills.body_expertise = {
 				["name_id"] = "menu_engineering_beta_sc",
 				["desc_id"] = "menu_engineering_beta_desc_sc",
-				["icon_xy"] = {0, 0},
+				["icon_xy"] = {8, 3},
 				[1] = {
-					upgrades = {},
+					upgrades = {
+						"temporary_single_shot_fast_reload_1"
+					},
 					cost = self.costs.hightier
 				},
 				[2] = {
-					upgrades = {},
+					upgrades = {
+						"temporary_single_shot_fast_reload_2"
+					},
 					cost = self.costs.hightierpro
 				}
 			}

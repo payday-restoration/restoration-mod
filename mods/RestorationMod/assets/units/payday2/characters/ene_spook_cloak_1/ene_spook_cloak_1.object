@@ -194,17 +194,35 @@
 	<decal_surfaces default_material="flesh" />
 
 	<effects>
-		<effect_spawner name="es_light" enabled="false" object="e_light" effect="effects/particles/character/cloaker_goggle" />
+		<effect_spawner name="es_light" enabled="false" object="e_light" effect="effects/particles/character/titan_goggle" />
+		<effect_spawner name="shimmer_head" enabled="true" object="Head" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_shoulder_left" enabled="true" object="LeftShoulder" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_shoulder_right" enabled="true" object="RightShoulder" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_torso" enabled="true" object="Spine2" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_hips" enabled="true" object="Hips" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_left_fore" enabled="true" object="LeftForeArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_left_arm" enabled="true" object="LeftArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_left_hand" enabled="true" object="LeftHand" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_right_fore" enabled="true" object="RightForeArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_right_arm" enabled="true" object="RightArm" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_right_hand" enabled="true" object="RightHand" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_left_thigh" enabled="true" object="LeftUpLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_left_leg" enabled="true" object="LeftLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_left_foot" enabled="true" object="LeftFoot" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_right_thigh" enabled="true" object="RightUpLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_right_leg" enabled="true" object="RightLeg" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
+		<effect_spawner name="shimmer_right_foot" enabled="true" object="RightFoot" effect="effects/payday2/particles/spook_cloak/spook_cloak_smoke" />
 	</effects>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="700"  max_draw_lod="0" shadow_caster="true"/>
+				<object name="g_body" 		enabled="true"  max_distance="69696969696969696969696969696969696969696969696969696969696969696969"  max_draw_lod="0" shadow_caster="true"/>
 				<object name="s_body" 	enabled="true" lod="1" >
 				</object>
 			</lod_object>
+			<object name="g_nvg" enabled="true"/>
 	
 			<object name="g_body_lod1" enabled="true"/>
 

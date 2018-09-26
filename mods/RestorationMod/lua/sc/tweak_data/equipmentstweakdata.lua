@@ -32,7 +32,7 @@ function EquipmentsTweakData:init()
 	}	
 
 	--Again just some quality of life stuff to make single player less awful--
-		if Global.game_settings and Global.game_settings.single_player then
+	if Global.game_settings and Global.game_settings.single_player then
 		self.specials.acid.max_quantity=4
 		self.specials.caustic_soda.max_quantity=4
 		self.specials.hydrogen_chloride.max_quantity=4

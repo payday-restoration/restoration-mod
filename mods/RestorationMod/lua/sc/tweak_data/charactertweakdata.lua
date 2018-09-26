@@ -1559,6 +1559,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
+		if job == "mad" or job == "hvh" then 
+			self.spooc_titan.custom_voicework = "rtspook"
+		else
+			self.spooc_titan.custom_voicework = "tspook"
+		end				
 		table.insert(self._enemy_list, "spooc_titan")
 	end
 

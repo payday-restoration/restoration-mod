@@ -7,6 +7,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_unit("grenadier")
 		_G.voiceline_framework:register_unit("olpf")
 		_G.voiceline_framework:register_unit("tdozer")
+		_G.voiceline_framework:register_unit("tspook")
 		_G.voiceline_framework:register_unit("pdth")
 		_G.voiceline_framework:register_unit("autumn")
 		_G.voiceline_framework:register_line_type("grenadier", "death")
@@ -26,6 +27,8 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("tdozer", "spawn")
 		_G.voiceline_framework:register_line_type("tdozer", "gogo")	
 		_G.voiceline_framework:register_line_type("tdozer", "contact")	
+		_G.voiceline_framework:register_line_type("tspook", "death")	
+		_G.voiceline_framework:register_line_type("tspook", "kill")	
 		_G.voiceline_framework:register_line_type("pdth", "buddy_died")
 		_G.voiceline_framework:register_line_type("pdth", "contact")
 		_G.voiceline_framework:register_line_type("pdth", "cover_me")
@@ -109,6 +112,15 @@ if not _G.restorationvoice then
 		end		
 		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("tdozer", "spawn", ModPath .. "assets/oggs/voiceover/tdozer/spawn/spawn" .. i .. ".ogg")
+		end		
+		
+		--tspook temp lines
+		
+		for i = 1, 40 do
+			_G.voiceline_framework:register_voiceline("tspook", "kill", ModPath .. "assets/oggs/voiceover/tspook/kill/kill" .. i .. ".ogg")
+		end		
+		for i = 1, 14 do
+			_G.voiceline_framework:register_voiceline("tspook", "death", ModPath .. "assets/oggs/voiceover/tspook/death/death" .. i .. ".ogg")
 		end
 				
 		--PDTH (Titan SWAT)

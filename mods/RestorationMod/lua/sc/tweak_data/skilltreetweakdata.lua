@@ -96,7 +96,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_rot_speed_multiplier",
 		"sentry_gun_extra_ammo_multiplier_1",	
 		"sentry_gun_silent",
-		"sentry_gun_quantity_1",
 		"x_p226",
 		"x_m45",
 		"x_mp7",
@@ -938,7 +937,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {9, 5},
 				[1] = {
 					upgrades = {
-						"sentry_gun_quantity_2"
+						"sentry_gun_quantity_1"
 					},
 					cost = self.costs.hightier
 				},

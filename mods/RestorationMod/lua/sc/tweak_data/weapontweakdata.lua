@@ -3,6 +3,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local job = Global.level_data and Global.level_data.level_id
 
 	function WeaponTweakData:_init_data_sentry_gun_npc()
+		self.sentry_gun.categories = {}
 		self.sentry_gun.name_id = "debug_sentry_gun"
 		self.sentry_gun.DAMAGE = 2.5
 		self.sentry_gun.SUPPRESSION = 1

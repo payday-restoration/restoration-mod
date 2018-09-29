@@ -949,6 +949,7 @@ function UpgradesTweakData:_init_pd2_values()
 			fire = true,
 			projectile = true,
 			swat_van = true,
+			sentry_gun = false,
 			civilian = false
 		}
 	}

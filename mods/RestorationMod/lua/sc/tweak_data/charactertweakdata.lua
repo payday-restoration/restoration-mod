@@ -12144,6 +12144,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_akan_cs_swat_r870",
 					"ene_akan_cs_swat_sniper_svd_snp",
 					"ene_akan_cs_tazer_ak47_ass",
+					"ene_akan_medic_ak47_ass",
+					"ene_akan_medic_r870",				
 					"ene_akan_fbi_heavy_dw",
 					"ene_akan_fbi_heavy_dw_r870",
 					"ene_akan_fbi_1",
@@ -12151,7 +12153,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_akan_veteran_1",
 					"ene_akan_veteran_2",
 					"ene_akan_grenadier_1",
-					"ene_akan_medic_m4"
+					"ene_akan_medic_bob",
+					"ene_akan_medic_zdann"					
 				}
 			},
 			born = {

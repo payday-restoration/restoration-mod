@@ -521,7 +521,7 @@
 	<object path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
 	<material_config path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
-	<unit path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="false" force="false"/>
+	<unit path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="true" force="false"/>
 
 	<!--Medic w/ Mp5-->
 	<unit path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" force="false" load="true"/>
@@ -617,19 +617,27 @@
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="false"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="false"/>
 			
-	<!--Russian Medic-->
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" load="true"/>
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4_husk" force="false" load="true"/>
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="false" load="true"/>
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870_husk" force="false" load="true"/>
-	<object path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
-	<model path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
-	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
-	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4" force="false" />
-	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/ene_akan_medic_m4_contour" force="false" />
-	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/akan_heavy_df" force="false" />
-	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/maska_df" force="false" />
-	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_m4/maska_nm" force="false" />
+	<!--Russian Medic bob-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob_husk" force="false" load="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<model path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob_contour" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_head_df" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_body_df" force="false" />	
+	
+	<!--Russian Medic zdann-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_husk" force="false" load="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
+	<model path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_contour" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_head_df" force="false" />
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_body_df" force="false" />
 
 	<!--Buzz-->
 	<object path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>

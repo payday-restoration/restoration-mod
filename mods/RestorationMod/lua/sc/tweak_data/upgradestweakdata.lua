@@ -422,6 +422,7 @@ function UpgradesTweakData:_init_pd2_values()
 						amount = 200
 					}
 				}
+				self.values.player.explosive_damage_reduction = {true}
 				
 				--Fully Loaded
 				self.values.player.extra_ammo_multiplier = {1.25}
@@ -1374,6 +1375,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player",
 			upgrade = "real_health_damage_reduction",
 			value = 2
+		}
+	}
+	self.definitions.player_explosive_damage_reduction = {
+		category = "feature",
+		name_id = "menu_player_real_health_damage_reduction",
+		upgrade = {
+			category = "player",
+			upgrade = "explosive_damage_reduction",
+			value = 1
 		}
 	}
 	self.definitions.player_armor_multiplier_1 = {

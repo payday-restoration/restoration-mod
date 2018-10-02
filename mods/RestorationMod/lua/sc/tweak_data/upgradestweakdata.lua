@@ -9,6 +9,46 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 
 ]]--
 
+function UpgradesTweakData:_init_value_tables()
+	self.values = {
+		player = {},
+		carry = {},
+		trip_mine = {},
+		ammo_bag = {},
+		ecm_jammer = {},
+		sentry_gun = {},
+		doctor_bag = {},
+		cable_tie = {},
+		bodybags_bag = {},
+		first_aid_kit = {},
+		weapon = {},
+		pistol = {},
+		assault_rifle = {},
+		smg = {},
+		shotgun = {},
+		grenade_launcher = {},
+		saw = {},
+		lmg = {},
+		snp = {},
+		akimbo = {},
+		minigun = {},
+		melee = {},
+		temporary = {},
+		cooldown = {},
+		team = {}
+	}
+	self.values.team.player = {}
+	self.values.team.weapon = {}
+	self.values.team.pistol = {}
+	self.values.team.akimbo = {}
+	self.values.team.xp = {}
+	self.values.team.armor = {}
+	self.values.team.stamina = {}
+	self.values.team.health = {}
+	self.values.team.cash = {}
+	self.values.team.damage_dampener = {}
+end
+
 local sc_sttd = UpgradesTweakData._init_pd2_values
 function UpgradesTweakData:_init_pd2_values()
 	sc_sttd(self, tweak_data)
@@ -270,10 +310,12 @@ function UpgradesTweakData:_init_pd2_values()
 				--MG Handling
 				self.values.smg.reload_speed_multiplier = {1.25}
 				self.values.smg.hip_fire_spread_multiplier = {0.5}
+				self.values.assault_rifle.hip_fire_spread_multiplier = {0.5}
 
 				--MG Specialist
 				self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 				self.values.smg.move_spread_multiplier = {0.5}
+				self.values.assault_rifle.move_spread_multiplier = {0.5}
 				self.values.smg.damage_multiplier = {1}
 				
 				--Shock and Awe
@@ -363,6 +405,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Portable Saw
 				self.values.saw.reload_speed_multiplier = {1.25}
+				self.values.grenade_launcher.reload_speed_multiplier = {1.25}
 				self.values.saw.damage_multiplier = {1}
 				
 				--Extra Lead
@@ -379,6 +422,7 @@ function UpgradesTweakData:_init_pd2_values()
 						amount = 200
 					}
 				}
+				self.values.player.explosive_damage_reduction = {true}
 				
 				--Fully Loaded
 				self.values.player.extra_ammo_multiplier = {1.25}
@@ -393,27 +437,30 @@ function UpgradesTweakData:_init_pd2_values()
 		--{
 			--[[   ENGINEER SUBTREE   ]]--
 			--{
-				--Defense up
+				--Defense up (RIP)
 				self.values.sentry_gun.cost_reduction = {2, 3}
-				self.values.sentry_gun.shield = {true}	
 				
-				--Sentry Targeting Package
+				--Sentry Targeting Package (RIP)
 				self.values.sentry_gun.spread_multiplier = {2}
 				self.values.sentry_gun.rot_speed_multiplier = {2}
 				self.values.sentry_gun.extra_ammo_multiplier = {2}
+				
+				--Logistician
+				self.values.player.deploy_interact_faster = {0.75, 0.25}
+				self.values.player.extra_equipment = {true}
+				self.values.team.deploy_interact_faster = {0.25}
+				
+				--Nerves of Steel
+				self.values.player.interacting_damage_multiplier = {0.5}
+				self.values.player.steelsight_when_downed = {true}				
 
-				--Eco Sentry
-				self.values.sentry_gun.armor_multiplier = {2.5}
-			
 				--Engineering
-				self.values.sentry_gun.less_noisy = {true}
-				self.values.sentry_gun.ap_bullets = {true}
-				self.values.sentry_gun.fire_rate_reduction = {4}
-				self.values.sentry_gun.damage_multiplier = {2.5}
-
+				self.values.sentry_gun.armor_multiplier = {2.5}
+				self.values.sentry_gun.shield = {true}	
+		
 				--Jack of All Trades
-				self.values.player.deploy_interact_faster = {0.5}
 				self.values.player.second_deployable = {true}
+				self.values.player.second_deployable_full = {true}
 	
 				--Tower Defence
 				self.values.sentry_gun.quantity = {1, 2}
@@ -423,6 +470,16 @@ function UpgradesTweakData:_init_pd2_values()
 					multibasic = "2",
 					multipro = "3"
 				}
+				self.values.sentry_gun.less_noisy = {true}
+				self.values.sentry_gun.ap_bullets = {true}
+				self.values.sentry_gun.fire_rate_reduction = {4}
+				self.values.sentry_gun.damage_multiplier = {1.5}	
+
+				--Bulletproof
+				self.values.player.armor_multiplier = {1.35, 1.5}
+				self.values.team.armor.regen_time_multiplier = {0.9}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
+				
 			--}
 			
 			--[[   BREACHER SUBTREE   ]]--
@@ -459,11 +516,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--}
 			
 			--[[   BATTLE SAPPER SUBTREE   ]]--
-			--{
-				--Nerves of Steel
-				self.values.player.interacting_damage_multiplier = {0.5}
-				self.values.player.steelsight_when_downed = {true}
-	
+			--{	
 				--Sharpshooter
 				self.values.weapon.single_spread_index_addend = {1}
 				self.values.assault_rifle.recoil_index_addend = {1}
@@ -481,8 +534,13 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.snp.reload_speed_multiplier = {1.25}
 				self.values.assault_rifle.move_spread_multiplier = {0.5}
 				self.values.snp.move_spread_multiplier = {0.5}
+
+				--Rifleman
+				self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.5}
+				self.values.weapon.enter_steelsight_speed_multiplier = {1.25}
+				self.values.player.single_shot_accuracy_inc = {0.9}
 				
-				--Graze
+				--Explosive Headshot
 				self.values.snp.graze_damage = {
 					{
 						radius = 300,
@@ -501,11 +559,19 @@ function UpgradesTweakData:_init_pd2_values()
 					{ ammo = 1, time = 6, headshots = 3 },
 					{ ammo = 1, time = 6, headshots = 2 }
 				}
+
+				--Aggressive Reload
+				self.values.temporary.single_shot_fast_reload = {
+					{
+						1.25,
+						6
+					},
+					{
+						1.5,
+						12
+					},
+				}
 					
-				--Bulletproof
-				self.values.player.armor_multiplier = {1.35, 1.5}
-				self.values.team.armor.regen_time_multiplier = {0.9}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 			--}
 		--}
 		
@@ -884,6 +950,7 @@ function UpgradesTweakData:_init_pd2_values()
 			fire = true,
 			projectile = true,
 			swat_van = true,
+			sentry_gun = false,
 			civilian = false
 		}
 	}
@@ -1310,6 +1377,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
+	self.definitions.player_explosive_damage_reduction = {
+		category = "feature",
+		name_id = "menu_player_real_health_damage_reduction",
+		upgrade = {
+			category = "player",
+			upgrade = "explosive_damage_reduction",
+			value = 1
+		}
+	}
 	self.definitions.player_armor_multiplier_1 = {
 		category = "feature",
 		name_id = "menu_player_armor_multiplier",
@@ -1437,7 +1513,52 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "pick_lock_easy_speed_multiplier",
 			category = "player"
 		}
-	}		
+	}	
+	self.definitions.player_second_deployable_full = {
+		name_id = "menu_second_deployable",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "second_deployable_full",
+			category = "player"
+		}
+	}	
+	self.definitions.temporary_single_shot_fast_reload_2 = {
+		name_id = "menu_temporary_single_shot_fast_reload",
+		category = "temporary",
+		upgrade = {
+			value = 2,
+			upgrade = "single_shot_fast_reload",
+			category = "temporary"
+		}
+	}
+	self.definitions.grenade_launcher_reload_speed_multiplier = {
+		name_id = "menu_assault_rifle_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "grenade_launcher"
+		}
+	}
+	self.definitions.deploy_interact_faster_2 = {
+		name_id = "menu_deploy_interact_faster",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "deploy_interact_faster",
+			category = "player"
+		}
+	}
+	self.definitions.player_extra_equipment = {
+		category = "feature",
+		name_id = "menu_player_panic_suppression",
+		upgrade = {
+			category = "player",
+			upgrade = "extra_equipment",
+			value = 1
+		}
+	}
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {

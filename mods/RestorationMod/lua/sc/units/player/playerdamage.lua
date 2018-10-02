@@ -337,7 +337,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if alive(player_unit) then
 						player_unit:movement():on_non_lethal_electrocution()
 						managers.player:set_player_state("tased")
-						self.tase_time = _time + 15
+						self.tase_time = _time + 10
 					end
 				end		
 			end
@@ -465,7 +465,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.statistics:health_subtracted(health_subtracted)
 			return health_subtracted
 	end
-
+	
 	function PlayerDamage:clbk_kill_taunt_spring(attack_data)
 		if attack_data.attacker_unit and attack_data.attacker_unit:alive() then
 			self._kill_taunt_clbk_id = nil

@@ -90,6 +90,12 @@ function SkillTreeTweakData:init(tweak_data)
 		"first_aid_kit_downs_restore_chance",
 		"player_suppression_resist",
 		"player_electrocution_resistance_1",
+		"sentry_gun_cost_reduction_1",
+		"sentry_gun_cost_reduction_2",
+		"sentry_gun_spread_multiplier",
+		"sentry_gun_rot_speed_multiplier",
+		"sentry_gun_extra_ammo_multiplier_1",	
+		"sentry_gun_silent",
 		"x_p226",
 		"x_m45",
 		"x_mp7",
@@ -381,7 +387,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 3},
 				[1] = {
 					upgrades = {
-						"smg_hip_fire_spread_multiplier"
+						"smg_hip_fire_spread_multiplier",
+						"assault_rifle_hip_fire_spread_multiplier",
 					},
 					cost = self.costs.default
 				},
@@ -400,7 +407,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 0},
 				[1] = {
 					upgrades = {
-						"smg_move_spread_multiplier"
+						"smg_move_spread_multiplier",
+						"assault_rifle_move_spread_multiplier",
 					},
 					cost = self.costs.default
 				},
@@ -766,13 +774,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {0, 1},
 					[1] = {
 						upgrades = {
-							"saw_reload_speed_multiplier"
+							"saw_enemy_slicer"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"saw_enemy_slicer"
+							"saw_reload_speed_multiplier",
+							"grenade_launcher_reload_speed_multiplier"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -845,40 +854,39 @@ function SkillTreeTweakData:init(tweak_data)
 			--[[   ENGINEER SUBTREE   ]]--
 			--{
 	
-			--Defense up--
+			--Logistician--
 			self.skills.defense_up = {
 				["name_id"] = "menu_defense_up_beta_sc",
 				["desc_id"] = "menu_defense_up_beta_desc_sc",
-				["icon_xy"] = {9, 0},
+				["icon_xy"] = {4, 3},
 				[1] = {
 					upgrades = {
-						"sentry_gun_cost_reduction_1"
+						"deploy_interact_faster_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_shield"
+						"deploy_interact_faster_2"
 					},
 					cost = self.costs.hightierpro
 				}
 			}
 
-			--Sentry Targeting Package--
+			--Nerves of Steel--
 			self.skills.sentry_targeting_package = {
-				["name_id"] = "menu_sentry_targeting_package_beta_sc",
-				["desc_id"] = "menu_sentry_targeting_package_beta_desc_sc",
-				["icon_xy"] = {9, 1},
+				["name_id"] = "menu_fast_fire_beta_sc",
+				["desc_id"] = "menu_fast_fire_beta_desc_sc",
+				["icon_xy"] = {6, 6},
 				[1] = {
 					upgrades = {
-						"sentry_gun_spread_multiplier"
+						"player_steelsight_when_downed"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_rot_speed_multiplier",
-						"sentry_gun_extra_ammo_multiplier_1"
+						"player_interacting_damage_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -891,26 +899,45 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {9, 2},
 				[1] = {
 					upgrades = {
-						"sentry_gun_cost_reduction_2"
+						"sentry_gun_armor_multiplier"
 					},		
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_armor_multiplier"
+						"sentry_gun_shield"
 					},
 					cost = self.costs.hightierpro
 				}
 			}
 
-			--Engineering--
+			--Jack of All Trades--
 			self.skills.engineering = {
-				["name_id"] = "menu_engineering_beta_sc",
-				["desc_id"] = "menu_engineering_beta_desc_sc",
-				["icon_xy"] = {9, 3},
+				["name_id"] = "menu_jack_of_all_trades_beta_sc",
+				["desc_id"] = "menu_jack_of_all_trades_beta_desc_sc",
+				["icon_xy"] = {9, 4},
 				[1] = {
 					upgrades = {
-						"sentry_gun_silent"
+						"second_deployable_1"
+					},
+					cost = self.costs.hightier
+				},
+				[2] = {
+					upgrades = {
+						"player_second_deployable_full"
+					},
+					cost = self.costs.hightierpro
+				}
+			}
+
+			--Tower Defense--
+			self.skills.jack_of_all_trades = {
+				["name_id"] = "menu_tower_defense_beta_sc",
+				["desc_id"] = "menu_tower_defense_beta_desc_sc",
+				["icon_xy"] = {9, 5},
+				[1] = {
+					upgrades = {
+						"sentry_gun_quantity_1"
 					},
 					cost = self.costs.hightier
 				},
@@ -924,44 +951,26 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Jack of all trades--
-			self.skills.jack_of_all_trades = {
-				["name_id"] = "menu_jack_of_all_trades_beta_sc",
-				["desc_id"] = "menu_jack_of_all_trades_beta_desc_sc",
-				["icon_xy"] = {9, 4},
-				[1] = {
-					upgrades = {
-						"deploy_interact_faster_1"
-					},
-					cost = self.costs.hightier
-				},
-				[2] = {
-					upgrades = {
-						"second_deployable_1"
-					},
-					cost = self.costs.hightierpro
-				}
-			}
-
-			--Tower Defense--
+			--Bulletproof--
 			self.skills.tower_defense = {
-				["name_id"] = "menu_tower_defense_beta_sc",
-				["desc_id"] = "menu_tower_defense_beta_desc_sc",
-				["icon_xy"] = {9, 5},
+				["name_id"] = "menu_iron_man_sc",
+				["desc_id"] = "menu_iron_man_desc_sc",
+				["icon_xy"] = {6, 4},
 				[1] = {
 					upgrades = {
-						"sentry_gun_quantity_1"
+						"player_armor_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_quantity_2"
+						"player_armor_regen_timer_multiplier_tier",
+						"player_armor_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
 			}
-
+						
 			--}
 			
 			--[[   BREACHER SUBTREE   ]]--
@@ -1133,26 +1142,26 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Nerves of Steel--
+			--Rifleman--
 			self.skills.fire_control = {
-				["name_id"] = "menu_fast_fire_beta_sc",
-				["desc_id"] = "menu_fast_fire_beta_desc_sc",
-				["icon_xy"] = {6, 6},
+				["name_id"] = "menu_rifleman_sc",
+				["desc_id"] = "menu_rifleman_desc_sc",
+				["icon_xy"] = {6, 5},
 				[1] = {
 					upgrades = {
-						"player_steelsight_when_downed"
+						"weapon_enter_steelsight_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_interacting_damage_multiplier"
+						"single_shot_accuracy_inc_1"
 					},
 					cost = self.costs.hightierpro
 				}
 			}
 
-			--Graze--
+			--Explosive Headshot--
 			self.skills.shock_and_awe = {
 				["name_id"] = "menu_kilmer_sc",
 				["desc_id"] = "menu_kilmer_desc_sc",
@@ -1190,21 +1199,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Bulletproof--
+			--Aggressive Reload--
 			self.skills.body_expertise = {
-				["name_id"] = "menu_iron_man_sc",
-				["desc_id"] = "menu_iron_man_desc_sc",
-				["icon_xy"] = {6, 4},
+				["name_id"] = "menu_engineering_beta_sc",
+				["desc_id"] = "menu_engineering_beta_desc_sc",
+				["icon_xy"] = {8, 3},
 				[1] = {
 					upgrades = {
-						"player_armor_multiplier_1"
+						"temporary_single_shot_fast_reload_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_armor_regen_timer_multiplier_tier",
-						"player_armor_multiplier_2"
+						"temporary_single_shot_fast_reload_2"
 					},
 					cost = self.costs.hightierpro
 				}

@@ -66,6 +66,21 @@ function InteractionTweakData:init(...)
 	self.res_lvl_assault_shatter.timer = 3
 	
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+		self.start_sentrygun_repairmode = {
+			icon = "icon_repair",
+			timer = 5,
+			text_id = "hud_repair_sentry",
+			blocked_hint = "hint_repair_sentry",
+			sound_start = "bar_turret_ammo",
+			sound_interrupt = "bar_turret_ammo_cancel",
+			sound_done = "bar_turret_ammo_finished",
+			action_text_id = "hud_action_repair_sentry",
+			interact_distance = 180,
+	--		max_interact_distance = 200,
+			no_contour = true,
+			verify_owner = true
+		}	
+	
 		--Skill based shaped charges--
 		self.shaped_sharge = {
 			icon = "equipment_c4",

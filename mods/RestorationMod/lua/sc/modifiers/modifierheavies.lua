@@ -15,8 +15,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	}	
 	ModifierHeavies.murky = {
 		Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4"),
-		Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
-		Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city")
+		Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4")
 	}	
 	--just to make sure the original doesn't do anything
 	ModifierHeavies.unit_swaps = {}

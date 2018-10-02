@@ -66,4 +66,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return body and (self._shield_body_name_ids and (body:name() == self._shield_body_name_ids) or self._bag_body_name_ids and (body:name() == self._bag_body_name_ids))
 	end	
 	
+	local orig_sentry_die = SentryGunDamage.die
+	function SentryGunDamage:die(attacker_unit, variant, options)
+	--this replacement function prevents some on_death sequences because they can glitch the repairs
+		local owner = self._unit:base():get_owner_id()
+		if owner then --no SWAT turrets allowed >:(
+
+			self._health = 0
+			self._dead = true
+
+			self._unit:movement():switch_off()
+			self._unit:brain():switch_off()
+			self._unit:movement():set_active(false)
+			self._unit:brain():set_active(false)
+
+			self._shield_smoke_level = 0
+			
+			self._unit:contour():remove("deployable_active")
+			if owner == managers.network:session():local_peer():id() then
+				self._unit:interaction():set_tweak_data("start_sentrygun_repairmode")
+				self._unit:contour():add("deployable_disabled")
+			end
+			if alive(self._unit) then 
+				--self._turret_destroyed_snd = self._unit:sound_source():post_event("wp_sentrygun_broken_loop")	--this sound loops infinitely and i can't stop it, not sure why
+			end
+		else
+			--called at game join since owner is not set at that point; can result in glitchy sentry repairs for late joins :(
+			return orig_sentry_die(self,attacker_unit,variant,options) 
+		end	
+	end	
+	
 end

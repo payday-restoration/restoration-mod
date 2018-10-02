@@ -11,6 +11,10 @@ function EquipmentsTweakData:init()
 	self.ecm_jammer.deploy_time = 1
 	self.specials.cable_tie.max_quantity = 9
 	
+	self.sentry_gun.repair_time_init = 30
+	self.sentry_gun.repair_time_min = 10
+	self.sentry_gun.repair_blink_interval = 0.5
+	
 	self.max_amount = {
 		trip_mine = 25,
 		asset_sentry_gun = 4,
@@ -28,7 +32,7 @@ function EquipmentsTweakData:init()
 	}	
 
 	--Again just some quality of life stuff to make single player less awful--
-		if Global.game_settings and Global.game_settings.single_player then
+	if Global.game_settings and Global.game_settings.single_player then
 		self.specials.acid.max_quantity=4
 		self.specials.caustic_soda.max_quantity=4
 		self.specials.hydrogen_chloride.max_quantity=4
@@ -61,6 +65,8 @@ function EquipmentsTweakData:init()
 		self.specials.crowbar_stack.max_quantity=4
 		self.specials.liquid_nitrogen.quantity=1
 		self.specials.liquid_nitrogen.max_quantity=4
+		self.specials.thermite.quantity=1
+		self.specials.thermite.max_quantity=4			
    	end
 end
 

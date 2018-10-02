@@ -38,6 +38,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_init_boom(presets)
 		self:_init_spring(presets)
 		self:_init_summers(presets)
+		self:_init_autumn(presets)
 		self:_init_omnia_lpf(presets)
 		self:_init_tank_biker(presets)
 		self:_process_weapon_usage_table()
@@ -1558,6 +1559,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
+		if job == "mad" or job == "hvh" then 
+			self.spooc_titan.custom_voicework = "rtspook"
+		else
+			self.spooc_titan.custom_voicework = "tspook"
+		end				
 		table.insert(self._enemy_list, "spooc_titan")
 	end
 
@@ -1617,7 +1623,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_phalanx_minion(presets)
 		self.phalanx_minion = deep_clone(self.shield)
-		self.phalanx_minion.tags = {"shield", "special"}
+		self.phalanx_minion.tags = {"law", "shield", "special"}
 		self.phalanx_minion.experience = {}
 		self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 		self.phalanx_minion.detection = presets.detection.normal
@@ -1686,7 +1692,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_spring(presets)
 		self.spring = deep_clone(self.tank)
-		self.spring.tags = {"custom", "special"}
+		self.spring.tags = {"law", "custom", "special"}
 		self.spring.move_speed = presets.move_speed.very_slow
 		self.spring.rage_move_speed = presets.move_speed.fast
 		self.spring.no_run_start = true
@@ -1742,7 +1748,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_summers(presets)
 		self.summers = deep_clone(presets.base)
-		self.summers.tags = {"custom", "special"}
+		self.summers.tags = {"law", "custom", "special"}
 		self.summers.experience = {}
 		self.summers.weapon = deep_clone(presets.weapon.normal)
 		self.summers.melee_weapon = "buzzer_summer"
@@ -1804,6 +1810,77 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.is_special = true
 		table.insert(self._enemy_list, "summers")
 	end
+	
+	function CharacterTweakData:_init_autumn(presets)
+		self.autumn = deep_clone(presets.base)
+		self.autumn.tags = {"law", "custom", "special"}
+		self.autumn.experience = {}
+		self.autumn.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.autumn.weapon = deep_clone(presets.weapon.normal)
+		self.autumn.detection = presets.detection.normal
+		self.autumn.damage.immune_to_knockback = true
+		self.autumn.immune_to_knock_down = true		
+		self.autumn.immune_to_concussion = true		
+		self.autumn.HEALTH_INIT = 120
+		self.autumn.headshot_dmg_mul = 2.925
+		self.autumn.damage.explosion_damage_mul = 1
+		self.autumn.move_speed = presets.move_speed.lightning
+		self.autumn.no_retreat = true
+		self.autumn.no_arrest = true
+		self.autumn.surrender_break_time = {4, 6}
+		self.autumn.suppression = nil
+		self.autumn.surrender = nil
+		self.autumn.can_be_tased = false
+		self.autumn.priority_shout_max_dis = 0
+		self.autumn.unintimidateable = true
+		self.autumn.priority_shout_max_dis = 3000
+		self.autumn.rescue_hostages = false
+		self.autumn.spooc_attack_timeout = {3, 3}
+		self.autumn.spooc_attack_beating_time = {0, 0}
+		self.autumn.spooc_attack_use_smoke_chance = 1
+		self.autumn.weapon_voice = "3"
+		self.autumn.experience.cable_tie = "tie_swat"
+		self.autumn.speech_prefix_p1 = "cpa"
+		self.autumn.speech_prefix_count = nil
+		if job == "mad" or job == "hvh" then 
+			self.autumn.custom_voicework = nil
+		else
+			self.autumn.custom_voicework = "autumn"
+		end				
+		self.autumn.access = "spooc"
+		self.autumn.flammable = false
+		self.autumn.dodge = presets.dodge.autumn
+		self.autumn.chatter = {
+			aggressive = true,
+			retreat = true,
+			go_go = true,
+			contact = true,
+			entrance = true
+		}
+		self.autumn.steal_loot = nil
+		self.autumn.melee_weapon = nil
+		self.autumn.use_radio = nil
+		self.autumn.can_be_tased = true
+		self.autumn.static_dodge_preset = true
+		self.autumn.is_special = true
+		self.autumn.dodge_with_grenade = {
+			smoke = {duration = {
+				12,
+				12
+			}},
+			check = function (t, nr_grenades_used)
+				local delay_till_next_use = 30
+				local chance = 0.5
+
+				if math.random() < chance then
+					return true, t + delay_till_next_use
+				end
+
+				return false, t + delay_till_next_use
+			end
+		}		
+		table.insert(self._enemy_list, "autumn")
+	end	
 
 	function CharacterTweakData:_init_taser(presets)
 		self.taser = deep_clone(presets.base)
@@ -9878,6 +9955,75 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				}
 			},
+			autumn = {
+				speed = 1.6,
+				occasions = {
+					hit = {
+						chance = 1,
+						check_timeout = {0, 0},
+						variations = {
+							side_step = {
+								chance = 3,
+								timeout = {1, 2},
+								shoot_chance = 1,
+								shoot_accuracy = 0.7
+							},
+							roll = {
+								chance = 1,
+								timeout = {1.2, 2}
+							},
+							wheel = {
+								chance = 2,
+								timeout = {1.2, 2}
+							}
+						}
+					},
+					preemptive = {
+						chance = 0.9,
+						check_timeout = {0, 0},
+						variations = {
+							side_step = {
+								chance = 3,
+								timeout = {1, 2},
+								shoot_chance = 1,
+								shoot_accuracy = 0.8
+							},
+							roll = {
+								chance = 1,
+								timeout = {1.2, 2}
+							},
+							wheel = {
+								chance = 2,
+								timeout = {1.2, 2}
+							}
+						}
+					},
+					scared = {
+						chance = 0.9,
+						check_timeout = {0, 0},
+						variations = {
+							side_step = {
+								chance = 5,
+								timeout = {1, 2},
+								shoot_chance = 0.8,
+								shoot_accuracy = 0.6
+							},
+							roll = {
+								chance = 3,
+								timeout = {1.2, 2}
+							},
+							wheel = {
+								chance = 3,
+								timeout = {1.2, 2}
+							},
+							dive = {
+								chance = 1,
+								timeout = {1.2, 2}
+							}
+						}
+					}
+				}
+			},			
 			deathwish = {
 				speed = 1.6,
 				occasions = {
@@ -11998,6 +12144,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_akan_cs_swat_r870",
 					"ene_akan_cs_swat_sniper_svd_snp",
 					"ene_akan_cs_tazer_ak47_ass",
+					"ene_akan_medic_ak47_ass",
+					"ene_akan_medic_r870",				
 					"ene_akan_fbi_heavy_dw",
 					"ene_akan_fbi_heavy_dw_r870",
 					"ene_akan_fbi_1",
@@ -12005,7 +12153,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_akan_veteran_1",
 					"ene_akan_veteran_2",
 					"ene_akan_grenadier_1",
-					"ene_akan_medic_m4"
+					"ene_akan_medic_bob",
+					"ene_akan_medic_zdann"					
 				}
 			},
 			born = {

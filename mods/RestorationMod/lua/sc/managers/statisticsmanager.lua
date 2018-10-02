@@ -35,7 +35,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		"tank_mini",
 		"phalanx_minion_assault",
 		"spooc_titan",
-		"taser_titan"
+		"taser_titan",
+		"autumn"
 	}
 
 	local old_stats = StatisticsManager.init
@@ -217,6 +218,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				tied = 0
 			}			
 		self._defaults.killed.omnia_heavy = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}		
+		self._defaults.killed.autumn = {
 				count = 0,
 				head_shots = 0,
 				melee = 0,

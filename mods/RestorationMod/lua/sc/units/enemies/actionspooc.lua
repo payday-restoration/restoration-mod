@@ -137,10 +137,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local ai_type = tweak_data.levels:get_ai_group_type()
 		self._taunt_during_assault = "cloaker_taunt_during_assault"
 		self._taunt_after_assault = "cloaker_taunt_after_assault"
+		
 		if ai_type == r then
 			self._taunt_during_assault = "rcloaker_taunt_during_assault"
 			self._taunt_after_assault = "rcloaker_taunt_after_assault"
 		end
+		
+		if self._unit:base()._tweak_table == "autumn" then 
+			self._taunt_during_assault = "cpa_taunt_during_assault"
+			self._taunt_after_assault = "cpa_taunt_after_assault"
+		end
+		
 		return true
 	end
 
@@ -313,7 +320,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._target_unit:movement():on_targetted_for_attack(false, self._common_data.unit)
 		end
 	end
-
+	
 	function ActionSpooc:_upd_strike_first_frame(t)
 		if self._is_local and self:_chk_target_invalid() then
 			if Network:is_server() then

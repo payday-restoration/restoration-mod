@@ -8279,7 +8279,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if difficulty_index <= 6 then
 			self.enemy_spawn_groups.FBI_tanks = {
-				amount = {3, 4},
+				amount = {2, 3},
 				spawn = {
 					{
 						unit = "FBI_tank",
@@ -8307,7 +8307,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		elseif difficulty_index == 7 then	
 			self.enemy_spawn_groups.FBI_tanks = {
-				amount = {3, 4},
+				amount = {2, 3},
 				spawn = {
 					{
 						unit = "FBI_tank",
@@ -8336,7 +8336,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}		
 		else
 			self.enemy_spawn_groups.FBI_tanks = {
-				amount = {4, 5},
+				amount = {3, 4},
 				spawn = {
 					{
 						unit = "FBI_tank",

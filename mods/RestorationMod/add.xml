@@ -1531,4 +1531,29 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_contour"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>-->
 	<!--new zeals end-->	
+	<!--spooky shit below-->
+	<!--skeleton SWAT m4-->
+    <object path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<model path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_contour"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk" load="true"/>
+	<!--skeleton SWAT saiga-->	
+    <object path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<model path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2_contour"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2_husk" load="true"/>
+	<!--skeleton SWAT textures-->	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spine_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spine_nm" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/skull_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/skull_nm" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />		
 </table>

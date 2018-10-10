@@ -1,5 +1,9 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	local function make_double_hud_string(a, b)
+		return string.format("%01d|%01d", a, b)
+	end
+
 	local function add_hud_item(amount, icon)
 		if #amount > 1 then
 			managers.hud:add_item_from_string({

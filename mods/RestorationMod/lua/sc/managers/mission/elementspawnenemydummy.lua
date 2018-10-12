@@ -132,8 +132,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		} 		
 	local haunted = {
-			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
-			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
+			["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat",
+			["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		}			
 	
 	function ElementSpawnEnemyDummy:init(...)
@@ -197,6 +197,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._values.enemy = fbi_sniper[self._values.enemy]
 			 end
 			 self._values.enemy = fbi_sniper[self._values.enemy] or self._values.enemy
+		end
+		
+		if job == "haunted" then
+			 if haunted[self._values.enemy] then
+				self._values.enemy = haunted[self._values.enemy]
+			 end
+			 self._values.enemy = haunted[self._values.enemy] or self._values.enemy			
 		end
 									
 		self._enemy_name = self._values.enemy and Idstring(self._values.enemy) or Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")

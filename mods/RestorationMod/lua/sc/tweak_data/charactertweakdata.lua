@@ -868,6 +868,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 		table.insert(self._enemy_list, "city_swat_titan_assault")
+		
+		self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
+		self.skeleton_swat_titan.custom_voicework = "skeleton"
+		table.insert(self._enemy_list, "skeleton_swat_titan")		
 	end
 
 	function CharacterTweakData:_init_sniper(presets)
@@ -1552,6 +1556,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
+		self.spooc_titan.speech_prefix_p1 = "t_spk"
+		self.spooc.speech_prefix_count = nil
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.spooc_titan.can_be_tased = false
 		self.spooc_titan.priority_shout_max_dis = 0
@@ -1560,7 +1566,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
 		if job == "mad" or job == "hvh" then 
-			self.spooc_titan.custom_voicework = "rtspook"
+			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
 		end				
@@ -12425,7 +12431,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_cop_3",
 					"ene_cop_4"
 				}
-			}		
+			},
+			halloween = {
+				path = "units/pd2_mod_halloween/characters/",
+				list = {
+					"ene_skele_swat",
+					"ene_skele_swat_2"
+				}
+			}			
 		}
 		return char_map
 	end

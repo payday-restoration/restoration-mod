@@ -167,7 +167,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				melee = 0,
 				explosion = 0,
 				tied = 0
-			}		
+			}
+		self._defaults.killed.skeleton_swat_titan = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}				
 		self._defaults.killed.heavy_swat_sniper = {
 				count = 0,
 				head_shots = 0,

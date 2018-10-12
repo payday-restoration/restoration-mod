@@ -49,6 +49,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
+	CopMovement._action_variants.skeleton_swat_titan = security_variant
 	CopMovement._action_variants.omnia = security_variant
 	CopMovement._action_variants.omnia_heavy = security_variant
 	CopMovement._action_variants.boom = security_variant

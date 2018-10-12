@@ -1555,5 +1555,12 @@
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/skull_nm" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_df" />	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />		
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />
+    <!--skull acc
+    <sequence_manager path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>-->
+    <object path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+	<model path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>	
 </table>

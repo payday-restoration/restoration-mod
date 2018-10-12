@@ -476,9 +476,9 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.sentry_gun.damage_multiplier = {1.5}	
 
 				--Bulletproof
-				self.values.player.armor_multiplier = {1.35, 1.5}
-				self.values.team.armor.regen_time_multiplier = {0.9}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
+				self.values.player.armor_multiplier = {1.2, 1.5}
+				self.values.team.armor.regen_time_multiplier = {0.95}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
 				
 			--}
 			

@@ -33,6 +33,9 @@
 		<hook file="managers/menu/StageEndScreenGUI.lua" source_file="lib/managers/menu/StageEndScreenGUI"/>
 		<hook file="managers/menu/MissionBriefingGUI.lua" source_file="lib/managers/menu/MissionBriefingGUI"/>
 		<hook file="managers/menu/MenuBackdropGUI.lua" source_file="lib/managers/menu/MenuBackdropGUI"/>
+		<!--NIGHTMARE WORLD-->
+		<hook file="managers/menu/MenuPauseRenderer.lua" source_file="lib/managers/menu/MenuPauseRenderer"/>
+		<!--NIGHTMARE WORLD-->
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
 		<!--Scriptdata below-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>

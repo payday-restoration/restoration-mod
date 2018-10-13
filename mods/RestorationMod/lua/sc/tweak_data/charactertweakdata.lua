@@ -1487,14 +1487,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
-		self.tank_hw = deep_clone(self.tank_titan)
-		self.tank_hw.custom_voicework = nil
-		self.tank_hw.priority_shout = "f30"
-		self.tank_hw.bot_priority_shout = "f30x_any"	
+		self.tank_hw = deep_clone(self.tank)
+		self.tank_hw.headshot_dmg_mul = 7.99425
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
-		self.tank_hw.spawn_sound_event = nil
-		self.tank_hw.die_sound_event = nil
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
@@ -1646,6 +1642,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 		self.phalanx_minion.flammable = false
 		self.phalanx_minion.damage.shield_knocked = true
+		self.phalanx_minion.priority_shout = "f31"
+		self.phalanx_minion.bot_priority_shout = "f31x_any"		
 		self.phalanx_minion.priority_shout_max_dis = 3000
 		self.phalanx_minion.weapon_voice = "3"
 		self.phalanx_minion.experience.cable_tie = "tie_swat"
@@ -1991,8 +1989,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.taser_titan = deep_clone(self.taser)
 		self.taser_titan.headshot_dmg_mul = 1.25
-		self.taser_titan.priority_shout = "f45"
-		self.taser_titan.bot_priority_shout = "f45x_any"	
+		self.taser_titan.priority_shout = "f32"
+		self.taser_titan.bot_priority_shout = "f32x_any"	
 		self.taser_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false

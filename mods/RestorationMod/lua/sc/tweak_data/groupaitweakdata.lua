@@ -4050,14 +4050,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
 						},
 						zombie = {
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),	
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),	
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
-							Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),								
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),						
 							Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
 							Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")
 						},						
@@ -4207,7 +4207,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						},
 						zombie = {
 							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
-							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),
+							Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3")
 						},						
 						murky = {
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),

@@ -1478,6 +1478,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.tank_titan.custom_voicework = "tdozer"
 		end				
 		self.tank_titan.ecm_hurts = {}
+		self.tank_titan.spawn_sound_event = nil
 		self.tank_titan.die_sound_event = "mga_death_scream"
 		self.tank_titan.damage.explosion_damage_mul = 1.25
 		self.tank_titan.is_special = true

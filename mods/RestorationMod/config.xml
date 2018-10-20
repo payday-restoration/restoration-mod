@@ -39,6 +39,7 @@
 		<hook file="managers/menu/MenuNodeGUI.lua" source_file="lib/managers/menu/MenuNodeGUI"/>
 		<hook file="managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 		<hook file="managers/menu/TextBoxGUI.lua" source_file="lib/managers/menu/TextBoxGUI"/>
+		<hook file="managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
 		<!--NIGHTMARE WORLD-->
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
 		<!--Scriptdata below-->

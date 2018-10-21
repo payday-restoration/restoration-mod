@@ -868,6 +868,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
 		table.insert(self._enemy_list, "city_swat_titan_assault")
+		
+		self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
+		self.skeleton_swat_titan.custom_voicework = "skeleton"
+		table.insert(self._enemy_list, "skeleton_swat_titan")		
+		
+		--Temp Solution
+		if job == "haunted" then
+			self.city_swat = deep_clone(self.skeleton_swat_titan)
+		end
 	end
 
 	function CharacterTweakData:_init_sniper(presets)
@@ -1469,6 +1478,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.tank_titan.custom_voicework = "tdozer"
 		end				
 		self.tank_titan.ecm_hurts = {}
+		self.tank_titan.spawn_sound_event = nil
 		self.tank_titan.die_sound_event = "mga_death_scream"
 		self.tank_titan.damage.explosion_damage_mul = 1.25
 		self.tank_titan.is_special = true
@@ -1478,13 +1488,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
-		self.tank_hw = deep_clone(self.tank_titan)
-		self.tank_hw.priority_shout = "f30"
-		self.tank_hw.bot_priority_shout = "f30x_any"	
+		self.tank_hw = deep_clone(self.tank)
+		self.tank_hw.headshot_dmg_mul = 7.99425
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
-		self.tank_hw.spawn_sound_event = nil
-		self.tank_hw.die_sound_event = nil
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
@@ -1552,6 +1559,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
+		self.spooc_titan.speech_prefix_p1 = "t_spk"
+		self.spooc.speech_prefix_count = nil
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.spooc_titan.can_be_tased = false
 		self.spooc_titan.priority_shout_max_dis = 0
@@ -1560,7 +1569,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
 		if job == "mad" or job == "hvh" then 
-			self.spooc_titan.custom_voicework = "rtspook"
+			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
 		end				
@@ -1634,6 +1643,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 		self.phalanx_minion.flammable = false
 		self.phalanx_minion.damage.shield_knocked = true
+		self.phalanx_minion.priority_shout = "f31"
+		self.phalanx_minion.bot_priority_shout = "f31x_any"		
 		self.phalanx_minion.priority_shout_max_dis = 3000
 		self.phalanx_minion.weapon_voice = "3"
 		self.phalanx_minion.experience.cable_tie = "tie_swat"
@@ -1979,8 +1990,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.taser_titan = deep_clone(self.taser)
 		self.taser_titan.headshot_dmg_mul = 1.25
-		self.taser_titan.priority_shout = "f45"
-		self.taser_titan.bot_priority_shout = "f45x_any"	
+		self.taser_titan.priority_shout = "f32"
+		self.taser_titan.bot_priority_shout = "f32x_any"	
 		self.taser_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
@@ -10975,6 +10986,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
@@ -11075,6 +11087,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
@@ -11174,7 +11187,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
-		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)	
+		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
@@ -11275,6 +11289,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
@@ -11382,6 +11397,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self:_set_characters_melee_preset("2.1", "2")
@@ -11557,6 +11573,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
+		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
@@ -12425,7 +12442,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_cop_3",
 					"ene_cop_4"
 				}
-			}		
+			},
+			halloween = {
+				path = "units/pd2_mod_halloween/characters/",
+				list = {
+					"ene_skele_swat",
+					"ene_skele_swat_2",
+					"ene_zeal_city_1",
+					"ene_zeal_city_2",
+					"ene_zeal_city_3",
+					"ene_zeal_swat_heavy_sc",
+					"ene_city_swat_1",
+					"ene_city_swat_2",
+					"ene_city_swat_3"
+				}
+			}			
 		}
 		return char_map
 	end

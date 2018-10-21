@@ -2588,7 +2588,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 400,
 				icon_xy = {5, 5},
 				name_id = "menu_deck10_3",
-				desc_id = "menu_deck10_3_desc"
+				desc_id = "menu_deck10_3_desc_sc"
 			},
 			deck4,
 			{
@@ -2837,7 +2837,7 @@ function SkillTreeTweakData:init(tweak_data)
 				icon_xy = {2, 0},
 				texture_bundle_folder = "coco",
 				name_id = "menu_deck14_5",
-				desc_id = "menu_deck14_5_desc"
+				desc_id = "menu_deck14_5_desc_sc"
 			},
 			deck6,
 			{
@@ -2933,7 +2933,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 200,
 				texture_bundle_folder = "wild",
-				desc_id = "menu_deck16_1_desc",
+				desc_id = "menu_deck16_1_desc_sc",
 				name_id = "menu_deck16_1",
 				upgrades = {
 					"player_wild_health_amount_1",

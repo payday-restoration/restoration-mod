@@ -50,9 +50,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--Halloween enemies on halloween maps--
-		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh"}
-		self.nail.package = {"packages/job_nail", "packages/narr_hvh"}
-		self.help.package = {"packages/lvl_help", "packages/narr_hvh"}
+		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+		self.nail.package = {"packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+		self.help.package = {"packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		if restoration and restoration.Options:GetValue("SC/Holiday") then
 			self.haunted.ai_group_type = zombie		
 			self.nail.ai_group_type = zombie

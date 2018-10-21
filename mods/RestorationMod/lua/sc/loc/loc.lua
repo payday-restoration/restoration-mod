@@ -570,7 +570,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
-			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##35%## more armor.\n\nACE: ##$pro##\nYou gain ##15%## more armor.\n\nYour armor recovery rate is increased by ##15%.##",																																																																																																																																																																																																																									
+			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##20%## more armor.\n\nACE: ##$pro##\nYou gain ##30%## more armor.\n\nYour armor recovery rate is increased by ##5%.##",																																																																																																																																																																																																																									
 					
 			--}
 			
@@ -814,8 +814,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by ##20%## for ballistic vests.",
-		["menu_deck6_5_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by ##30%## for ballistic vests.",
-		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.\n\nYour armor is increased by ##40%## for ballistic vests.",
+		["menu_deck6_5_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by an additional ##10%## for ballistic vests.",
+		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.\n\nYour armor is increased by an additional ##10%## for ballistic vests.",
 		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
@@ -858,6 +858,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies and heals you for ##8## to ##12## health.\n\nCannot occur more than once every ##5## seconds.",
+		["menu_deck10_3_desc_sc"] = "When you pick up ammo, you trigger an ammo pickup for ##50%## of normal pickup to other players in your team.\n\nCannot occur more than once every ##5## seconds.",
 		["menu_deck10_5_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also get healed for ##50%## of the amount.",
 		["menu_deck10_7_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.",
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##4##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
@@ -887,7 +888,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.\n\nYou gain ##5%## more health.",	
 		
 		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks, up to ##240## every ##4## seconds. Max amount of stacks is ##600##.\n\nHysteria Stacks:\nYou gain ##0.5## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decays ##60% + 80## every ##8## seconds.",	
+		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks, up to ##240## every ##2## seconds. Max amount of stacks is ##600##.\n\nHysteria Stacks:\nYou gain ##0.5## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decays ##30% + 80## every ##8## seconds.",	
+		["menu_deck14_5_desc_sc"] = "Changes the decay of your Hysteria Stacks to ##30% + 40## every ##8## seconds.",	
 		["menu_deck14_7_desc_sc"] = "Changes the damage absorption of your Hysteria Stacks on you and your crew to ##0.5## damage absorption for every ##25## stacks of Hysteria.",	
 		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##25%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
@@ -914,6 +916,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--it's not a war crime if they're not people--
 		["menu_deck20_3_desc_sc"] = "You gain ##10%## more health.",	
 		["menu_deck20_7_desc_sc"] = "You gain ##15%## more health.",	
+		
+		--Biker--
+		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## health and ##2## armor. This cannot occur more than ##4## times every ##4## seconds.",				
 		
 		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to ##15%## armor recovery rate.\n\nNOTE: Entering this state negates regeneration effects.",	

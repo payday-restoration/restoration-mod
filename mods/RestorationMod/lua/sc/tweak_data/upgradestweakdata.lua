@@ -476,9 +476,9 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.sentry_gun.damage_multiplier = {1.5}	
 
 				--Bulletproof
-				self.values.player.armor_multiplier = {1.35, 1.5}
-				self.values.team.armor.regen_time_multiplier = {0.9}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
+				self.values.player.armor_multiplier = {1.2, 1.5}
+				self.values.team.armor.regen_time_multiplier = {0.95}
+				self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
 				
 			--}
 			
@@ -1037,7 +1037,21 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	--I AM A BAD MOTHERFUCKA--
-	self.cocaine_stacks_dmg_absorption_value = 0.0625
+	self.cocaine_stacks_convert_levels = {
+		30,
+		25
+	}	
+	self.cocaine_stacks_dmg_absorption_value = 0.05
+	self.cocaine_stacks_tick_t = 2
+	self.max_cocaine_stacks_per_tick = 240
+	self.max_total_cocaine_stacks = 600
+	self.cocaine_stacks_decay_t = 8
+	self.cocaine_stacks_decay_amount_per_tick = 80
+	self.cocaine_stacks_decay_percentage_per_tick = 0.3
+	self.values.player.cocaine_stacking = {0.05}
+	self.values.player.sync_cocaine_stacks = {true}
+	self.values.player.cocaine_stacks_decay_multiplier = {0.5}
+	self.values.player.sync_cocaine_upgrade_level = {2}
 	self.values.player.cocaine_stack_absorption_multiplier = {1.25}
 	
 	--Chico--
@@ -1076,6 +1090,28 @@ function UpgradesTweakData:_init_pd2_values()
 		0.3,
 		0.45
 	}
+	
+	--Fat benis :DDDDD
+	self.wild_trigger_time = 4
+	self.wild_max_triggers_per_time = 4	
+	self.values.player.wild_health_amount = {0.1}
+	self.values.player.wild_armor_amount = {0.2}
+	self.values.player.less_health_wild_armor = {{
+		0.1,
+		0.1
+	}}
+	self.values.player.less_health_wild_cooldown = {{
+		0.1,
+		0.1
+	}}
+	self.values.player.less_armor_wild_health = {{
+		0.1,
+		0.1
+	}}
+	self.values.player.less_armor_wild_cooldown = {{
+		0.1,
+		0.1
+	}}	
 end
 
 local sc_utd_init = UpgradesTweakData.init

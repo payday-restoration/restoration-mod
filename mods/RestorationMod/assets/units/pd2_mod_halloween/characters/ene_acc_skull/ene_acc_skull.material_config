@@ -1,0 +1,14 @@
+<materials version="3">
+	<material name="mtr_ene_acc_security_cap" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mcmansion/props/mcm_prop_hector_helmet/mcm_hector_helmet_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df"/>
+	</material>
+	<material name="mtr_ene_acc_security_cap_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_halloween/characters/shared_textures/skull_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/skull_df"/>
+	</material>
+	<material name="mtr_ene_acc_security_cap_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_halloween/characters/shared_textures/skull_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/skull_df"/>
+	</material>
+</materials>

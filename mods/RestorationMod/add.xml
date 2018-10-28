@@ -350,6 +350,7 @@
 	<unit path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
 
 	<!--Spring-->
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_contour" force="false"/>
 	<model path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
@@ -359,6 +360,8 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" load="true" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_il" force="false"/>	
 	
 	<!--Autumn-->
 	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>

@@ -30,6 +30,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		self.des.ai_group_type = murky 
 		
+		self.bph.ai_group_type = murky 
+		
+		
 		--NYPD--
 		self.spa.ai_group_type = nypd
 		self.brb.ai_group_type = nypd

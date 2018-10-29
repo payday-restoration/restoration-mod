@@ -1,0 +1,23 @@
+<materials version="3" group="ene_murkywater_sniper">
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_head" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_head_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_head_df"/>
+    </material>
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_body" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_df"/>
+    </material>
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_head_lod" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_head_nm" mip="3"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_head_df" mip="3"/>
+    </material>
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_body_lod" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_nm" mip="3"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_df" mip="3"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_hat" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_sniper/material_df"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" name="shadow_caster" version="2"/>
+</materials>

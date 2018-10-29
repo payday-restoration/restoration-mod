@@ -12414,7 +12414,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_murky_veteran_1",
 					"ene_grenadier_1",
 					"ene_murky_medic_m4",
-					"ene_murky_tazer"
+					"ene_murky_tazer",
+					"ene_murkywater_light",
+					"ene_murky_sniper"
 				}
 			},
 			omnia = {

@@ -86,7 +86,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._speech_prefix_p2 = "n"
 	end
 
-	function CharacterTweakData:_init_region_murky()
+	function CharacterTweakData:_init_region_murkywater()
 		self._default_chatter = "dsp_radio_russian"
 		self._unit_prefixes = {
 			cop = "l",

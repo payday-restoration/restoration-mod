@@ -43,7 +43,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return group
 	end
 
-	EnemyUnitGroups[LevelsTweakData.LevelType.Murky] = function()
+	EnemyUnitGroups[LevelsTweakData.LevelType.Murkywater] = function()
 		local group = {
 			Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass"),
 			Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg"),

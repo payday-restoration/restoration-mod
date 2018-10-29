@@ -108,6 +108,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		self.damage.TASED_TIME = 5
+		self.damage.STUN_TIME = 15
 	end
 
 	function PlayerTweakData:_set_singleplayer()

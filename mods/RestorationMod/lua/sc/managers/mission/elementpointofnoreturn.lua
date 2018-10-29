@@ -50,5 +50,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			ElementPointOfNoReturn.super.on_executed(self, instigator)
 		end	
-	end
+	elseif job == "bph" then 	
+		function ElementPointOfNoReturn:on_executed(instigator)
+			if not self._values.enabled then
+				return
+			end
+			local diff = Global.game_settings and Global.game_settings.difficulty or "hard"
+			if diff == "easy" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "normal" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "hard" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "overkill" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "overkill_145" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "easy_wish" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "overkill_290" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			elseif diff == "sm_wish" then
+				managers.groupai:state():set_point_of_no_return_timer(420, self._id)
+			end
+			ElementPointOfNoReturn.super.on_executed(self, instigator)
+		end	
+	end	
 end

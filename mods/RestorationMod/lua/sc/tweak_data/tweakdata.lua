@@ -247,7 +247,12 @@ if not tweak_data then return end
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
 	tweak_data.medic.cooldown = 30
-	tweak_data.radius = 900
+	tweak_data.medic.radius = 400
+	if difficulty_index == 8 then
+		tweak_data.medic.lpf_radius = 600
+	else
+		tweak_data.medic.lpf_radius = 400
+	end
 	if difficulty_index == 8 then
 		tweak_data.medic.disabled_units = {
 			"phalanx_minion",

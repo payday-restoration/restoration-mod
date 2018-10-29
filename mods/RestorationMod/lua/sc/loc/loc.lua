@@ -206,7 +206,7 @@ end
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local r = LevelsTweakData.LevelType.Russia
-local m = LevelsTweakData.LevelType.Murky
+local m = LevelsTweakData.LevelType.Murkywater
 local z = LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
 
@@ -235,8 +235,8 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_toggle_one_down"] = "145+",
-		["menu_one_down"] = "145+",
+		["menu_toggle_one_down"] = "Pro Job",
+		["menu_one_down"] = "Pro",
 		
 		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
 		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",

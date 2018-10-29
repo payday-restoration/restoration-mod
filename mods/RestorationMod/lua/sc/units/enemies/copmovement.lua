@@ -247,11 +247,9 @@ function CopMovement:do_omnia(self)
 				"cop_scared",
 				"cop_female",
 				"fbi",
-				"fbi_vet",
-				"swat",
-				"swat_titan"
+				"swat"
 			}
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 1, managers.slot:get_mask("enemies"))
 			if enemies then
 				RestorationCore.log_shit("SC: FOUND ENEMIES")
 				for _,enemy in ipairs(enemies) do
@@ -302,27 +300,21 @@ function CopMovement:do_aoe_heal(self)
 		if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then
 			local cops_to_heal = {
 				"heavy_swat",
-				"heavy_swat_sniper",
 				"fbi_swat",
 				"fbi_heavy_swat",
 				"city_swat",
 				"omnia",
-				"city_swat_titan",
-				"city_swat_titan_assault",
 				"sniper",
 				"tank",
-				"tank_titan_assault",
 				"tank_hw",
 				"tank_mini",
 				"spooc",
-				"spooc_titan",
 				"shield",
-				"phalanx_minion_assault",
 				"taser",
 				"boom",
 				"rboom"
 			}
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.radius * 2, managers.slot:get_mask("enemies"))
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 1, managers.slot:get_mask("enemies"))
 			if enemies then
 				RestorationCore.log_shit("SC: FOUND ENEMIES")
 				for _,enemy in ipairs(enemies) do

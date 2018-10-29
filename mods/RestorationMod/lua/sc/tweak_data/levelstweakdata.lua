@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.America = "america"
 	LevelsTweakData.LevelType.Russia = "russia"
 	LevelsTweakData.LevelType.Zombie = "zombie"
-	LevelsTweakData.LevelType.Murky = "murky"
+	LevelsTweakData.LevelType.Murkywater = "murkywater"
 	LevelsTweakData.LevelType.NYPD = "nypd"
 
 	Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
@@ -13,24 +13,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local america = LevelsTweakData.LevelType.America
 		local russia = LevelsTweakData.LevelType.Russia
 		local zombie = LevelsTweakData.LevelType.Zombie
-		local murky = LevelsTweakData.LevelType.Murky
+		local murkywater = LevelsTweakData.LevelType.Murkywater
 		local nypd = LevelsTweakData.LevelType.NYPD
 		self.ai_groups = {}
 		self.ai_groups.default = america
 		self.ai_groups.america = america
 		self.ai_groups.russia = russia
 		self.ai_groups.zombie  = zombie
-		self.ai_groups.murky = murky
+		self.ai_groups.murkywater = murkywater
 		self.ai_groups.nypd = nypd
 		
-		--Murky faction--
-		self.shoutout_raid.ai_group_type = murky
+		--Murkywater faction--
+		self.shoutout_raid.ai_group_type = murkywater
 		
-		self.pbr.ai_group_type = murky
+		self.pbr.ai_group_type = murkywater
 				
-		self.des.ai_group_type = murky 
+		self.des.ai_group_type = murkywater 
 		
-		self.bph.ai_group_type = murky 
+		self.bph.ai_group_type = murkywater 
 		
 		
 		--NYPD--

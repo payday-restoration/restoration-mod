@@ -32,6 +32,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.bph.ai_group_type = murkywater 
 		
+		self.vit.ai_group_type = murkywater 
+		
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd
@@ -43,6 +45,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.glace.ai_group_type = nypd
 		self.dah.ai_group_type = nypd
 		self.dinner.ai_group_type = nypd
+		self.nmh.ai_group_type = nypd
 		
 		self.skm_run.ai_group_type = nypd
 		self.skm_red2.ai_group_type = nypd

@@ -1573,8 +1573,61 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 			self.spooc_titan.custom_voicework = "tspook"
 		end				
-		table.insert(self._enemy_list, "spooc_titan")
+		table.insert(self._enemy_list, "spooc_titan")	
 	end
+	
+	function CharacterTweakData:_init_shadow_spooc(presets)
+		self.shadow_spooc = deep_clone(presets.base)
+		self.shadow_spooc.tags = {"law", "spooc", "special"}
+		self.shadow_spooc.experience = {}
+		self.shadow_spooc.damage.hurt_severity = presets.hurt_severities.spooc
+		self.shadow_spooc.weapon = deep_clone(presets.weapon.normal)
+		self.shadow_spooc.detection = presets.detection.normal
+		self.shadow_spooc.HEALTH_INIT = 60
+		self.shadow_spooc.headshot_dmg_mul = 5.85
+		self.shadow_spooc.damage.explosion_damage_mul = 1.25
+		self.shadow_spooc.move_speed = presets.move_speed.lightning
+		self.shadow_spooc.no_retreat = true
+		self.shadow_spooc.no_arrest = true
+		self.shadow_spooc.surrender_break_time = {4, 6}
+		self.shadow_spooc.suppression = nil
+		self.shadow_spooc.surrender = nil
+		self.shadow_spooc.priority_shout = "f33"
+		self.shadow_spooc.bot_priority_shout = "f33x_any"
+		self.shadow_spooc.priority_shout_max_dis = 3000
+		self.shadow_spooc.rescue_hostages = false
+		self.shadow_spooc.spooc_attack_timeout = {3, 3}
+		self.shadow_spooc.spooc_attack_beating_time = {3, 3}
+		self.shadow_spooc.spooc_attack_use_smoke_chance = 0
+		self.shadow_spooc.weapon_voice = "3"
+		self.shadow_spooc.experience.cable_tie = "tie_swat"
+		self.shadow_spooc.speech_prefix_p1 = "uno_clk"
+		self.shadow_spooc.speech_prefix_count = nil
+		self.shadow_spooc.use_radio = nil
+		self.shadow_spooc.chatter = presets.enemy_chatter.no_chatter
+		self.shadow_spooc.do_not_drop_ammo = true
+		self.shadow_spooc.steal_loot = nil
+		self.shadow_spooc.spawn_sound_event = "uno_cloaker_presence_loop"
+		self.shadow_spooc.die_sound_event = "uno_cloaker_presence_stop"
+		self.shadow_spooc.spooc_sound_events = {
+			detect_stop = "uno_cloaker_detect_stop",
+			taunt_during_assault = "",
+			taunt_after_assault = "",
+			detect = "uno_cloaker_detect"
+		}
+		self.shadow_spooc.access = "spooc"
+		self.shadow_spooc.flammable = true
+		self.shadow_spooc.dodge = presets.dodge.ninja
+		self.shadow_spooc.chatter = presets.enemy_chatter.no_chatter
+		self.shadow_spooc.steal_loot = nil
+		self.shadow_spooc.melee_weapon = nil
+		self.shadow_spooc.use_radio = nil
+		self.shadow_spooc.can_be_tased = true
+		self.shadow_spooc.static_dodge_preset = true
+		self.shadow_spooc.is_special = true
+		
+		table.insert(self._enemy_list, "shadow_spooc")
+	end	
 
 	function CharacterTweakData:_init_shield(presets)
 		self.shield = deep_clone(presets.base)
@@ -12364,6 +12417,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				path = "units/pd2_dlc_tag/characters/",
 				list = {"ene_male_commissioner"}			
 			},	
+			nmh = {
+				path = "units/pd2_dlc_nmh/characters/",
+				list = {
+					"civ_male_doctor_01",
+					"civ_male_doctor_02",
+					"civ_male_doctor_03",
+					"civ_male_scrubs_01",
+					"civ_male_scrubs_02",
+					"civ_male_scrubs_03",
+					"civ_male_scrubs_04",
+					"civ_female_scrubs_01",
+					"civ_female_scrubs_02",
+					"civ_female_scrubs_03",
+					"civ_female_scrubs_04",
+					"civ_female_doctor_01",
+					"civ_female_hotpants"
+				}
+			},			
 			sah = {
 				path = "units/pd2_dlc_sah/characters/",
 				list = {
@@ -12389,6 +12460,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"civ_male_prisoner_hostage"
 				}				
 			},
+			bph = {
+				path = "units/pd2_dlc_bph/characters/",
+				list = {
+					"civ_male_locke_escort",
+					"civ_male_bain",
+					"ene_male_bain",
+					"ene_murkywater_medic",
+					"ene_murkywater_medic_r870",
+					"ene_murkywater_tazer",
+					"ene_murkywater_cloaker",
+					"ene_murkywater_bulldozer_1",
+					"ene_murkywater_bulldozer_2",
+					"ene_murkywater_bulldozer_3",
+					"ene_murkywater_bulldozer_4",
+					"ene_murkywater_bulldozer_medic",
+					"ene_murkywater_shield",
+					"ene_murkywater_sniper",
+					"ene_murkywater_heavy",
+					"ene_murkywater_heavy_shotgun",
+					"ene_murkywater_heavy_g36",
+					"ene_murkywater_light_city",
+					"ene_murkywater_light_city_r870",
+					"ene_murkywater_light_fbi_r870",
+					"ene_murkywater_light_fbi",
+					"ene_murkywater_light",
+					"ene_murkywater_light_r870"
+				}
+			},
+			vit = {
+				path = "units/pd2_dlc_vit/characters/",
+				list = {"ene_murkywater_secret_service"}
+			},	
+			uno = {
+				path = "units/pd2_dlc_uno/characters/",
+				list = {
+					"ene_shadow_cloaker_1",
+					"ene_shadow_cloaker_2"
+				}
+			},			
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",
 				list = {
@@ -12423,7 +12533,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				path = "units/pd2_mod_omnia/characters/",
 				list = {
 					"ene_omnia_city",
-					"ene_omnia_heavy"
+					"ene_omnia_city_2",
+					"ene_omnia_city_3",
+					"ene_omnia_heavy",
+					"ene_omnia_heavy_r870"
 				}
 			},
 			nypd = {

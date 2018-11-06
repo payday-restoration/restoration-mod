@@ -14,6 +14,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "wetwork")
 		table.insert(self.risk_pd.exclude_stages, "des")
 		table.insert(self.risk_pd.exclude_stages, "bph")
+		table.insert(self.risk_pd.exclude_stages, "vit")
 
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -21,6 +22,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "wetwork")
 		table.insert(self.risk_swat.exclude_stages, "des")	
 		table.insert(self.risk_swat.exclude_stages, "bph")	
+		table.insert(self.risk_swat.exclude_stages, "vit")	
 		
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -28,6 +30,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "wetwork")
 		table.insert(self.risk_fbi.exclude_stages, "des")
 		table.insert(self.risk_fbi.exclude_stages, "bph")
+		table.insert(self.risk_fbi.exclude_stages, "vit")
 
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -35,6 +38,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "wetwork")	
 		table.insert(self.risk_death_squad.exclude_stages, "des")
 		table.insert(self.risk_death_squad.exclude_stages, "bph")
+		table.insert(self.risk_death_squad.exclude_stages, "vit")
 
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -42,6 +46,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_easy_wish.exclude_stages, "des")
 		table.insert(self.risk_easy_wish.exclude_stages, "bph")
+		table.insert(self.risk_easy_wish.exclude_stages, "vit")
 
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -49,6 +54,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_death_wish.exclude_stages, "des")
 		table.insert(self.risk_death_wish.exclude_stages, "bph")
+		table.insert(self.risk_death_wish.exclude_stages, "vit")
 		
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -56,6 +62,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_sm_wish.exclude_stages, "des")
 		table.insert(self.risk_sm_wish.exclude_stages, "bph")
+		table.insert(self.risk_sm_wish.exclude_stages, "vit")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -65,7 +72,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"pbr",
 			"wetwork",
 			"des",
-			"bph"
+			"bph",
+			"vit"
 		}	
 
 		--Adding Bikers to Biker heist cause it makes sense--

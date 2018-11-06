@@ -143,6 +143,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._taunt_after_assault = "rcloaker_taunt_after_assault"
 		end
 		
+		local spooc_sound_events = self._common_data.char_tweak.spooc_sound_events or {}
+		self._taunt_during_assault = spooc_sound_events.taunt_during_assault or self._taunt_during_assault
+		self._taunt_after_assault = spooc_sound_events.taunt_after_assault or self._taunt_after_assault		
+		
 		if self._unit:base()._tweak_table == "autumn" then 
 			self._taunt_during_assault = "cpa_taunt_during_assault"
 			self._taunt_after_assault = "cpa_taunt_after_assault"

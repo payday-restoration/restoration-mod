@@ -84,7 +84,9 @@ if not _G.restoration then
 		"skm_red2",
 		"skm_run",
 		"skm_watchdogs_stage2",
-		"bph"
+		"bph",
+		"nmh",
+		"vit"
 	}
 end
 

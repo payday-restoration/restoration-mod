@@ -2733,6 +2733,36 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.shock.attack_allowed_expire_t = 0.1
 	self.melee_weapons.shock.stats.concealment = 27
 	self.melee_weapons.shock.melee_damage_delay = 0.1
+	
+	--and anotha tanto--
+	self.melee_weapons.hauteur.speed_mult = 1.1
+	self.melee_weapons.hauteur.stats.min_damage = 5
+	self.melee_weapons.hauteur.stats.max_damage = 11
+	self.melee_weapons.hauteur.stats.min_damage_effect = 0.3
+	self.melee_weapons.hauteur.stats.max_damage_effect = 0.5
+	self.melee_weapons.hauteur.stats.charge_time = 1.5
+	self.melee_weapons.hauteur.stats.range = 150
+	self.melee_weapons.hauteur.stats.concealment = 29
+	self.melee_weapons.hauteur.repeat_expire_t = 0.75
+	self.melee_weapons.hauteur.melee_damage_delay = 0.1
+
+	--LET'S GO PRACTICE MEDICINE--
+	self.melee_weapons.fear.dot_data = {
+		type = "poison",
+		custom_data = {dot_length = 1, hurt_animation_chance = 0.75}
+	}
+	self.melee_weapons.fear.speed_mult = 1
+	self.melee_weapons.fear.hit_pre_calculation = false
+	self.melee_weapons.fear.stats.min_damage = 2.5
+	self.melee_weapons.fear.stats.max_damage = 5
+	self.melee_weapons.fear.stats.min_damage_effect = 0.3
+	self.melee_weapons.fear.stats.max_damage_effect = 0.3
+	self.melee_weapons.fear.stats.charge_time = 1.6
+	self.melee_weapons.fear.stats.range = 125
+	self.melee_weapons.fear.repeat_expire_t = 0.5
+	self.melee_weapons.fear.melee_damage_delay = 0.1
+	self.melee_weapons.fear.stats.concealment = 30	
+	self.melee_weapons.fear.info_id = "bm_melee_cqc_info"
 end	
 
 end

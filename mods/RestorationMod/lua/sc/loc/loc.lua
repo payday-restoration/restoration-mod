@@ -314,7 +314,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
 		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 15% chance to become a Titan Cloaker.",
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a Titan HRT.",
-		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer.",
+		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer and whenever a Black Bulldozer spawns, there is a chance that it will be a Medic Bulldozer.",
 		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",

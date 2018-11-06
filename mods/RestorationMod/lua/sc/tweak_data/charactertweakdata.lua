@@ -433,7 +433,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.omnia_lpf.custom_voicework = nil
 		else
 			self.omnia_lpf.custom_voicework = "olpf"
@@ -480,12 +480,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.swat.steal_loot = true
 		else
 			self.swat.steal_loot = true
-		end
-		if job == "mad" or job == "hvh" then 
-			self.swat.custom_voicework = nil
-		else
-			self.swat.custom_voicework = "light"
-		end			
+		end		
 		table.insert(self._enemy_list, "swat")
 		
 		self.swat_titan = deep_clone(self.swat)
@@ -539,11 +534,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
-		if job == "mad" or job == "hvh" then 
-			self.heavy_swat.custom_voicework = nil
-		else
-			self.heavy_swat.custom_voicework = "heavy"
-		end	
 		table.insert(self._enemy_list, "heavy_swat")
 		
 		self.heavy_swat_sniper = deep_clone(self.heavy_swat)
@@ -697,12 +687,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
-		if job == "mad" or job == "hvh" then 
-			self.fbi_swat.custom_voicework = nil
-		else
-			self.fbi_swat.custom_voicework = "light"
-		end
 		table.insert(self._enemy_list, "fbi_swat")
+		
 		self.fbi_swat_vet = deep_clone(self.fbi_swat)
 		self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
 		table.insert(self._enemy_list, "fbi_swat_vet")
@@ -742,16 +728,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
-		self.fbi_heavy_swat.static_melee_preset = true		
-		if job == "mad" or job == "hvh" then 
-			self.fbi_heavy_swat.custom_voicework = nil
-		else
-			self.fbi_heavy_swat.custom_voicework = "heavy"
-		end		
+		self.fbi_heavy_swat.static_melee_preset = true			
 		table.insert(self._enemy_list, "fbi_heavy_swat")
 		
 		self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.omnia_heavy.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia_heavy.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia_heavy.speech_prefix_count = 4
@@ -814,7 +795,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	
-		if job == "mad" or job == "hvh" then
+		if job == "mad" then
 			self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia.speech_prefix_count = 4
@@ -832,7 +813,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4		
-		if job == "mad" or job == "hvh" then
+		if job == "mad" then
 		    self.city_swat_titan.custom_voicework = nil
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
@@ -1117,6 +1098,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.must_headshot = true
 		self.mobster_boss.static_dodge_preset = true
 		self.mobster_boss.is_special = true
+		self.mobster_boss.always_drop = true
 		table.insert(self._enemy_list, "mobster_boss")
 	end
 
@@ -1180,6 +1162,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hector_boss.custom_shout = true
 		self.hector_boss.priority_shout_max_dis = 3000
 		self.hector_boss.is_special = true
+		self.hector_boss.always_drop = true
 		table.insert(self._enemy_list, "hector_boss")
 	end
 
@@ -1196,6 +1179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hector_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
 		self.hector_boss_no_armor.use_radio = nil
 		self.hector_boss_no_armor.can_be_tased = true
+		self.hector_boss_no_armor.always_drop = true
 		table.insert(self._enemy_list, "hector_boss_no_armor")
 	end
 
@@ -1245,6 +1229,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.must_headshot = true
 		self.chavez_boss.static_dodge_preset = true
 		self.chavez_boss.is_special = true
+		self.chavez_boss.always_drop = true
 		table.insert(self._enemy_list, "chavez_boss")
 	end
 
@@ -1344,6 +1329,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.must_headshot = true
 		self.drug_lord_boss.static_dodge_preset = true
 		self.drug_lord_boss.is_special = true
+		self.drug_lord_boss.always_drop = true
 		table.insert(self._enemy_list, "drug_lord_boss")
 	end
 
@@ -1382,6 +1368,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss_stealth.can_be_tased = true
 		self.drug_lord_boss_stealth.immune_to_knock_down = false
 		self.drug_lord_boss_stealth.immune_to_concussion = false
+		self.drug_lord_boss_stealth.always_drop = true
 		table.insert(self._enemy_list, "drug_lord_boss_stealth")
 	end
 
@@ -1472,7 +1459,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.immune_to_knock_down = true
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.tank_titan.custom_voicework = nil
 		else
 			self.tank_titan.custom_voicework = "tdozer"
@@ -1568,7 +1555,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
@@ -1906,7 +1893,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.experience.cable_tie = "tie_swat"
 		self.autumn.speech_prefix_p1 = "cpa"
 		self.autumn.speech_prefix_count = nil
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.autumn.custom_voicework = nil
 		else
 			self.autumn.custom_voicework = "autumn"
@@ -1998,11 +1985,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				special_comment = "x01"
 			}
 		}
-		if job == "mad" or job == "hvh" then 
-			self.taser.custom_voicework = nil
-		else
-			self.taser.custom_voicework = "taser"
-		end		
 		self.taser.is_special = true
 		table.insert(self._enemy_list, "taser")
 		

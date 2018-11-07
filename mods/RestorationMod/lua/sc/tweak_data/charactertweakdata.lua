@@ -12518,7 +12518,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_omnia_city_2",
 					"ene_omnia_city_3",
 					"ene_omnia_heavy",
-					"ene_omnia_heavy_r870"
+					"ene_omnia_heavy_r870",
+					"ene_bulldozer_1",
+					"ene_bulldozer_2",
+					"ene_bulldozer_3"
 				}
 			},
 			nypd = {

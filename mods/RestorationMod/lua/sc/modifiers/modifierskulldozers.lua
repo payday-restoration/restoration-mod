@@ -7,7 +7,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
 		Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
 		Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"),
-		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2")
+		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
+		Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1")
 	}
 	ModifierSkulldozers.blackdozers = {
 		Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
@@ -15,7 +16,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
 		Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
 		Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"),
-		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3")
+		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"),
+		Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
 	}	
 
 	function ModifierSkulldozers:modify_value(id, value)

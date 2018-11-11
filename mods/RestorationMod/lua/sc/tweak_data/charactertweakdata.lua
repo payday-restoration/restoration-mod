@@ -856,7 +856,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Temp Solution
 		if job == "haunted" then
-			self.city_swat = deep_clone(self.skeleton_swat_titan)
+			if Global.game_settings and Global.game_settings.one_down then
+				self.city_swat = deep_clone(self.skeleton_swat_titan)
+			else
+				self.city_swat.custom_voicework = "skeleton"
+			end
 		end
 	end
 

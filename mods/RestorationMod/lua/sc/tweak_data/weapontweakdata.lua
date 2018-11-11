@@ -248,7 +248,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2},
 			{2000, 1},
 			{3000, 1}
-		}		
+		}
+		self.crate_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2},
+			{2000, 1},
+			{3000, 1}
+		}			
 		
 
 		self.ceiling_turret_module.HEALTH_INIT = 1387.5
@@ -258,7 +263,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1387.5
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 300		
 		self.aa_turret_module.HEALTH_INIT = 1387.5
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 300			
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 300		
+		self.crate_turret_module.HEALTH_INIT = 1387.5
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 300			
 	end
 
 	function WeaponTweakData:_set_easy_wish()
@@ -297,7 +304,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2},
 			{2000, 1},
 			{3000, 1}
-		}				
+		}	
+		self.crate_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2},
+			{2000, 1},
+			{3000, 1}
+		}			
 		
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
@@ -310,7 +322,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
 		self.aa_turret_module.HEALTH_INIT = 1618.75
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350	
+		self.crate_turret_module.HEALTH_INIT = 1618.75
+		self.crate_turret_module.BAG_DMG_MUL = 10
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 350			
 	end
 
 	function WeaponTweakData:_set_overkill_290()
@@ -348,7 +363,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2.3},
 			{1800, 2.1},
 			{3000, 1.05}
-		}		
+		}
+		self.crate_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
+		}
+		
 		self.ceiling_turret_module.HEALTH_INIT = 1618.75
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 400
@@ -360,7 +381,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
 		self.aa_turret_module.HEALTH_INIT = 1618.75
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 350	
+		self.crate_turret_module.HEALTH_INIT = 1618.75
+		self.crate_turret_module.BAG_DMG_MUL = 10
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 350			
 	end
 
 	function WeaponTweakData:_set_sm_wish()
@@ -399,7 +423,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1000, 2.3},
 			{1800, 2.1},
 			{3000, 1.05}
-		}				
+		}	
+		self.crate_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 2.3},
+			{1800, 2.1},
+			{3000, 1.05}
+		}			
 		self.ceiling_turret_module.HEALTH_INIT = 1850
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
 		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
@@ -415,6 +444,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa_turret_module.HEALTH_INIT = 1850
 		self.aa_turret_module.BAG_DMG_MUL = 11.4375
 		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
+		
+		self.crate_turret_module.HEALTH_INIT = 1850
+		self.crate_turret_module.BAG_DMG_MUL = 11.4375
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 350			
 		
 		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 3
 		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 3
@@ -730,6 +763,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.asval_smg_npc.usage = "m4"
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 	end
+	
+	function WeaponTweakData:_init_data_smoke_npc()
+		self.smoke_npc.categories = clone(self.new_mp5.categories)
+		self.smoke_npc.sounds.prefix = "mp5_npc"
+		self.smoke_npc.use_data.selection_index = 1
+		self.smoke_npc.DAMAGE = 1.8
+		self.smoke_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.smoke_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.smoke_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.smoke_npc.CLIP_AMMO_MAX = 30
+		self.smoke_npc.NR_CLIPS_MAX = 5
+		self.smoke_npc.auto.fire_rate = 0.075
+		self.smoke_npc.hold = "rifle"
+		self.smoke_npc.alert_size = 2600
+		self.smoke_npc.suppression = 2
+		self.smoke_npc.FIRE_MODE = "auto"
+	end	
 
 	function WeaponTweakData:_init_data_mac11_npc()
 		self.mac11_npc.categories = {"smg"}
@@ -881,6 +931,88 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_van_turret_module.challenges.weapon = "sentry_gun"
 		self.swat_van_turret_module.suppression = 1
 	end
+	
+	function WeaponTweakData:_init_data_crate_turret_module_npc()
+		self.crate_turret_module.name_id = "debug_sentry_gun"
+		self.crate_turret_module.DAMAGE = 1.6
+		self.crate_turret_module.DAMAGE_MUL_RANGE = {
+			{1000, 1},
+			{2000, 1},
+			{3000, 1}
+		}
+		self.crate_turret_module.SUPPRESSION = 1
+		self.crate_turret_module.SPREAD = 3
+		self.crate_turret_module.FIRE_RANGE = 4000
+		self.crate_turret_module.DETECTION_RANGE = self.crate_turret_module.FIRE_RANGE
+		self.crate_turret_module.CLIP_SIZE = 200
+		self.crate_turret_module.AUTO_RELOAD = true
+		self.crate_turret_module.AUTO_RELOAD_DURATION = 8
+		self.crate_turret_module.CAN_GO_IDLE = false
+		self.crate_turret_module.IDLE_WAIT_TIME = 5
+		self.crate_turret_module.AUTO_REPAIR = false
+		self.crate_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
+		self.crate_turret_module.AUTO_REPAIR_DURATION = 30
+		self.crate_turret_module.ECM_HACKABLE = false
+		self.crate_turret_module.HACKABLE_WITH_ECM = false
+		self.crate_turret_module.VELOCITY_COMPENSATION = {
+			OVERCOMPENSATION = 50,
+			SNAPSHOT_INTERVAL = 0.3
+		}
+		self.crate_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.crate_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+		self.crate_turret_module.auto.fire_rate = 0.06
+		self.crate_turret_module.alert_size = 2500
+		self.crate_turret_module.headshot_dmg_mul = 1
+		self.crate_turret_module.EXPLOSION_DMG_MUL = 4
+		self.crate_turret_module.FIRE_DMG_MUL = 1
+		self.crate_turret_module.BAG_DMG_MUL = 12.5
+		self.crate_turret_module.SHIELD_DMG_MUL = 1
+		self.crate_turret_module.HEALTH_INIT = 925
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 200
+		self.crate_turret_module.DEATH_VERIFICATION = {
+			0.4,
+			0.75
+		}
+		self.crate_turret_module.DETECTION_RANGE = 8000
+		self.crate_turret_module.DETECTION_DELAY = {
+			{
+				900,
+				0.3
+			},
+			{
+				3500,
+				1.5
+			}
+		}
+		self.crate_turret_module.KEEP_FIRE_ANGLE = 0.9
+		self.crate_turret_module.MAX_VEL_SPIN = 72
+		self.crate_turret_module.MIN_VEL_SPIN = self.crate_turret_module.MAX_VEL_SPIN * 0.05
+		self.crate_turret_module.SLOWDOWN_ANGLE_SPIN = 30
+		self.crate_turret_module.ACC_SPIN = self.crate_turret_module.MAX_VEL_SPIN * 5
+		self.crate_turret_module.MAX_VEL_PITCH = 60
+		self.crate_turret_module.MIN_VEL_PITCH = self.crate_turret_module.MAX_VEL_PITCH * 0.05
+		self.crate_turret_module.SLOWDOWN_ANGLE_PITCH = 20
+		self.crate_turret_module.ACC_PITCH = self.crate_turret_module.MAX_VEL_PITCH * 5
+		self.crate_turret_module.recoil = {
+			horizontal = {
+				1,
+				1.5,
+				1,
+				1
+			},
+			vertical = {
+				1,
+				1.5,
+				1,
+				1
+			}
+		}
+		self.crate_turret_module.challenges = {
+			group = "sentry_gun",
+			weapon = "sentry_gun"
+		}
+		self.crate_turret_module.suppression = 0.8
+	end	
 
 	function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 		self.ceiling_turret_module.name_id = "debug_sentry_gun"
@@ -2128,6 +2260,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.x_basset_crew.FIRE_MODE = "auto"
 	end
 	
+	function WeaponTweakData:_init_data_komodo_crew()
+		self.komodo_crew.categories = clone(self.komodo.categories)
+		self.komodo_crew.sounds.prefix = "komodo_npc"
+		self.komodo_crew.use_data.selection_index = 2
+		self.komodo_crew.DAMAGE = 1.05
+		self.komodo_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.komodo_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.komodo_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.komodo_crew.CLIP_AMMO_MAX = 30
+		self.komodo_crew.NR_CLIPS_MAX = 5
+		self.komodo_crew.pull_magazine_during_reload = "rifle"
+		self.komodo_crew.auto.fire_rate = 0.07
+		self.komodo_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.komodo_crew.alert_size = 5000
+		self.komodo_crew.suppression = 1
+		self.komodo_crew.FIRE_MODE = "auto"
+	end	
+	
 end
 
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
@@ -2886,12 +3039,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = 1
 			self[wep_id].has_description = false
 		end
-		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow'}
+		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_chinchilla','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy'}
 		for i, wep_id in ipairs(tact_akimbo_pistol) do
 			self[wep_id].tactical_reload = 2
 			self[wep_id].recategorize = "akimbo"
@@ -3163,6 +3316,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.olympic.spread.moving_crouching = 3
 		self.olympic.spread.moving_steelsight = 2
 		self.olympic.panic_suppression_chance = 0.0
+		self.olympic.kick.standing = self.new_m4.kick.standing
+		self.olympic.kick.crouching = self.new_m4.kick.standing
+		self.olympic.kick.steelsight = self.new_m4.kick.standing		
 		self.olympic.stats = {
 			damage = 28,
 			spread = 13,
@@ -8088,6 +8244,172 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.x_shepheard.panic_suppression_chance = 0.1				
+		self.komodo.use_data.selection_index = 1
+		self.komodo.desc_id = "bm_menu_sc_olympic_desc"
+		self.komodo.categories = {
+			"assault_rifle"
+		}
+		self.komodo.CLIP_AMMO_MAX = 30
+		self.komodo.AMMO_MAX = 150
+		self.komodo.fire_mode_data.fire_rate = 0.06666666666
+		self.komodo.auto.fire_rate = 0.06666666666
+		self.komodo.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.komodo.spread.standing = 3
+		self.komodo.spread.crouching = 2
+		self.komodo.spread.steelsight = 1
+		self.komodo.spread.moving_standing = 4
+		self.komodo.spread.moving_crouching = 3
+		self.komodo.spread.moving_steelsight = 2
+		self.komodo.panic_suppression_chance = 0.0
+		self.komodo.kick.standing = self.new_m4.kick.standing
+		self.komodo.kick.crouching = self.new_m4.kick.standing
+		self.komodo.kick.steelsight = self.new_m4.kick.standing		
+		self.komodo.stats = {
+			damage = 29,
+			spread = 15,
+			recoil = 24,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 23,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}		
+		self.elastic.has_description = true
+		self.elastic.desc_id = "bm_ap_2_weapon_sc_desc"
+		self.elastic.spread.standing = 3
+		self.elastic.spread.crouching = 2
+		self.elastic.spread.steelsight = 1
+		self.elastic.spread.moving_standing = 4
+		self.elastic.spread.moving_crouching = 3
+		self.elastic.spread.moving_steelsight = 2
+		self.elastic.kick.standing = self.huntsman.kick.standing
+		self.elastic.kick.crouching = self.huntsman.kick.standing
+		self.elastic.kick.steelsight = self.huntsman.kick.standing
+		self.elastic.charge_data.max_t = 1.5
+		self.elastic.not_allowed_in_bleedout = false
+		self.elastic.AMMO_MAX = 20
+		self.elastic.AMMO_PICKUP = {0.24, 0.6}
+		self.elastic.panic_suppression_chance = 0.0
+		self.elastic.ignore_damage_upgrades = true
+		self.elastic.stats = {
+			damage = 180,
+			spread = 20,
+			recoil = 25,
+			spread_moving = 12,
+			zoom = 5,
+			concealment = 29,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.elastic.stats_modifiers = {damage = 2}
+		self.coach.rays = 9
+		self.coach.spread.standing = 3
+		self.coach.spread.crouching = 2
+		self.coach.spread.steelsight = 1
+		self.coach.spread.moving_standing = 4
+		self.coach.spread.moving_crouching = 3
+		self.coach.spread.moving_steelsight = 2
+		self.coach.kick.standing = self.huntsman.kick.standing
+		self.coach.kick.crouching = self.huntsman.kick.standing
+		self.coach.kick.steelsight = self.huntsman.kick.standing
+		self.coach.AMMO_MAX = 30
+		self.coach.damage_near = 1000
+		self.coach.damage_far = 2000
+		self.coach.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.coach.sounds.fire_single = "coach_fire"
+		self.coach.sounds.fire_auto = "coach_fire"
+		self.coach.CAN_TOGGLE_FIREMODE = false
+		self.coach.auto = {}
+		self.coach.auto.fire_rate = 0.12
+		self.coach.fire_mode_data.fire_rate = 0.12
+		self.coach.stats = {
+			damage = 150,
+			spread = 10,
+			recoil = 17,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 1,
+			suppression = 3,
+			alert_size = 3,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.coach.panic_suppression_chance = 0.0
+		self.coach.stats_modifiers = {damage = 1}		
+		self.legacy.fire_mode_data.fire_rate = 0.075
+		self.legacy.single.fire_rate = 0.075
+		self.legacy.CLIP_AMMO_MAX = 12
+		self.legacy.AMMO_MAX = 120
+		self.legacy.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.legacy.spread.standing = 3
+		self.legacy.spread.crouching = 2
+		self.legacy.spread.steelsight = 1
+		self.legacy.spread.moving_standing = 4
+		self.legacy.spread.moving_crouching = 3
+		self.legacy.spread.moving_steelsight = 2
+		self.legacy.kick.standing = self.glock_17.kick.standing
+		self.legacy.kick.crouching = self.glock_17.kick.standing
+		self.legacy.kick.steelsight = self.glock_17.kick.standing
+		self.legacy.stats = {
+			damage = 35,
+			spread = 17,
+			recoil = 20,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 28,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.legacy.timers = {
+			reload_not_empty = 1.47,
+			reload_empty = 2.12,
+			unequip = 0.5,
+			equip = 0.35
+		}		
+		self.legacy.panic_suppression_chance = 0.0		
+		self.x_legacy.fire_mode_data.fire_rate = 0.075
+		self.x_legacy.single.fire_rate = 0.075
+		self.x_legacy.CLIP_AMMO_MAX = 24
+		self.x_legacy.AMMO_MAX = 150
+		self.x_legacy.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.x_legacy.spread.standing = 3
+		self.x_legacy.spread.crouching = 2
+		self.x_legacy.spread.steelsight = 1
+		self.x_legacy.spread.moving_standing = 4
+		self.x_legacy.spread.moving_crouching = 3
+		self.x_legacy.spread.moving_steelsight = 2
+		self.x_legacy.kick.standing = self.glock_17.kick.standing
+		self.x_legacy.kick.crouching = self.glock_17.kick.standing
+		self.x_legacy.kick.steelsight = self.glock_17.kick.standing
+		self.x_legacy.stats = {
+			damage = 35,
+			spread = 17,
+			recoil = 20,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 28,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}		
+		self.x_legacy.panic_suppression_chance = 0.0			
 		
 		--Restoration Weapons--
 		self.jeb = {
@@ -8621,6 +8943,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			usage = "is_revolver",
 			sounds = {},
 			use_data = {}
+		}	
+		self.smoke_npc = {
+			usage = "is_smg",
+			sounds = {},
+			use_data = {},
+			auto = {}
 		}		
 	end
 

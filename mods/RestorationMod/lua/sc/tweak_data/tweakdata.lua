@@ -119,6 +119,14 @@ if not tweak_data then return end
 	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 10000
 	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 10000
 	tweak_data.projectiles.ecp_arrow.launch_speed = 10000	
+	
+	--The not longbow--
+	tweak_data.projectiles.elastic_arrow.damage = 36
+	tweak_data.projectiles.elastic_arrow_exp.damage = 60
+	tweak_data.projectiles.elastic_arrow_poison.damage = 31
+	tweak_data.projectiles.elastic_arrow_exp.launch_speed = 10000
+	tweak_data.projectiles.elastic_arrow.launch_speed = 10000
+	tweak_data.projectiles.elastic_arrow_poison.launch_speed = 10000	
 
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80
@@ -247,7 +255,12 @@ if not tweak_data then return end
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
 	tweak_data.medic.cooldown = 30
-	tweak_data.radius = 900
+	tweak_data.medic.radius = 400
+	if difficulty_index == 8 then
+		tweak_data.medic.lpf_radius = 600
+	else
+		tweak_data.medic.lpf_radius = 400
+	end
 	if difficulty_index == 8 then
 		tweak_data.medic.disabled_units = {
 			"phalanx_minion",

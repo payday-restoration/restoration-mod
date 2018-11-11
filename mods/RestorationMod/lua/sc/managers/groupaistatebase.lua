@@ -99,12 +99,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+		local job = Global.level_data and Global.level_data.level_id
+				
 		self._smoke_grenades = self._smoke_grenades or {}
 		if not self._smoke_grenades[id] then
 			Application:error("Could not detonate smoke grenade as it was not queued!", id)
 			return
 		end
 		local data = self._smoke_grenades[id]
+		
+		if job == "haunted" then
+			return
+		end		
+		
 		if data.flashbang then
 			if Network:is_client() then
 				return

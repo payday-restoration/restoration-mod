@@ -86,7 +86,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._speech_prefix_p2 = "n"
 	end
 
-	function CharacterTweakData:_init_region_murky()
+	function CharacterTweakData:_init_region_murkywater()
 		self._default_chatter = "dsp_radio_russian"
 		self._unit_prefixes = {
 			cop = "l",
@@ -433,7 +433,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.omnia_lpf.custom_voicework = nil
 		else
 			self.omnia_lpf.custom_voicework = "olpf"
@@ -480,12 +480,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.swat.steal_loot = true
 		else
 			self.swat.steal_loot = true
-		end
-		if job == "mad" or job == "hvh" then 
-			self.swat.custom_voicework = nil
-		else
-			self.swat.custom_voicework = "light"
-		end			
+		end		
 		table.insert(self._enemy_list, "swat")
 		
 		self.swat_titan = deep_clone(self.swat)
@@ -539,11 +534,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
-		if job == "mad" or job == "hvh" then 
-			self.heavy_swat.custom_voicework = nil
-		else
-			self.heavy_swat.custom_voicework = "heavy"
-		end	
 		table.insert(self._enemy_list, "heavy_swat")
 		
 		self.heavy_swat_sniper = deep_clone(self.heavy_swat)
@@ -697,12 +687,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
-		if job == "mad" or job == "hvh" then 
-			self.fbi_swat.custom_voicework = nil
-		else
-			self.fbi_swat.custom_voicework = "light"
-		end
 		table.insert(self._enemy_list, "fbi_swat")
+		
 		self.fbi_swat_vet = deep_clone(self.fbi_swat)
 		self.fbi_swat_vet.melee_weapon_dmg_multiplier = 2
 		table.insert(self._enemy_list, "fbi_swat_vet")
@@ -742,16 +728,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
-		self.fbi_heavy_swat.static_melee_preset = true		
-		if job == "mad" or job == "hvh" then 
-			self.fbi_heavy_swat.custom_voicework = nil
-		else
-			self.fbi_heavy_swat.custom_voicework = "heavy"
-		end		
+		self.fbi_heavy_swat.static_melee_preset = true			
 		table.insert(self._enemy_list, "fbi_heavy_swat")
 		
 		self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.omnia_heavy.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia_heavy.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia_heavy.speech_prefix_count = 4
@@ -814,7 +795,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	
-		if job == "mad" or job == "hvh" then
+		if job == "mad" then
 			self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia.speech_prefix_count = 4
@@ -832,7 +813,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4		
-		if job == "mad" or job == "hvh" then
+		if job == "mad" then
 		    self.city_swat_titan.custom_voicework = nil
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
@@ -875,7 +856,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Temp Solution
 		if job == "haunted" then
-			self.city_swat = deep_clone(self.skeleton_swat_titan)
+			if Global.game_settings and Global.game_settings.one_down then
+				self.city_swat = deep_clone(self.skeleton_swat_titan)
+			else
+				self.city_swat.custom_voicework = "skeleton"
+			end
 		end
 	end
 
@@ -1117,6 +1102,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.must_headshot = true
 		self.mobster_boss.static_dodge_preset = true
 		self.mobster_boss.is_special = true
+		self.mobster_boss.always_drop = true
 		table.insert(self._enemy_list, "mobster_boss")
 	end
 
@@ -1180,6 +1166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hector_boss.custom_shout = true
 		self.hector_boss.priority_shout_max_dis = 3000
 		self.hector_boss.is_special = true
+		self.hector_boss.always_drop = true
 		table.insert(self._enemy_list, "hector_boss")
 	end
 
@@ -1196,6 +1183,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hector_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
 		self.hector_boss_no_armor.use_radio = nil
 		self.hector_boss_no_armor.can_be_tased = true
+		self.hector_boss_no_armor.always_drop = true
 		table.insert(self._enemy_list, "hector_boss_no_armor")
 	end
 
@@ -1245,6 +1233,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.must_headshot = true
 		self.chavez_boss.static_dodge_preset = true
 		self.chavez_boss.is_special = true
+		self.chavez_boss.always_drop = true
 		table.insert(self._enemy_list, "chavez_boss")
 	end
 
@@ -1344,6 +1333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.must_headshot = true
 		self.drug_lord_boss.static_dodge_preset = true
 		self.drug_lord_boss.is_special = true
+		self.drug_lord_boss.always_drop = true
 		table.insert(self._enemy_list, "drug_lord_boss")
 	end
 
@@ -1382,6 +1372,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss_stealth.can_be_tased = true
 		self.drug_lord_boss_stealth.immune_to_knock_down = false
 		self.drug_lord_boss_stealth.immune_to_concussion = false
+		self.drug_lord_boss_stealth.always_drop = true
 		table.insert(self._enemy_list, "drug_lord_boss_stealth")
 	end
 
@@ -1472,7 +1463,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.immune_to_knock_down = true
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.tank_titan.custom_voicework = nil
 		else
 			self.tank_titan.custom_voicework = "tdozer"
@@ -1492,6 +1483,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_hw.headshot_dmg_mul = 7.99425
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
+		if job == "haunted" then
+			if Global.game_settings and Global.game_settings.one_down then
+				self.tank_hw.move_speed = presets.move_speed.slow
+			else
+				self.tank_hw.move_speed = presets.move_speed.very_slow
+			end
+		else
+			self.tank_hw.move_speed = presets.move_speed.slow
+		end
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
@@ -1568,13 +1568,66 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
 		end				
-		table.insert(self._enemy_list, "spooc_titan")
+		table.insert(self._enemy_list, "spooc_titan")	
 	end
+	
+	function CharacterTweakData:_init_shadow_spooc(presets)
+		self.shadow_spooc = deep_clone(presets.base)
+		self.shadow_spooc.tags = {"law", "spooc", "special"}
+		self.shadow_spooc.experience = {}
+		self.shadow_spooc.damage.hurt_severity = presets.hurt_severities.spooc
+		self.shadow_spooc.weapon = deep_clone(presets.weapon.normal)
+		self.shadow_spooc.detection = presets.detection.normal
+		self.shadow_spooc.HEALTH_INIT = 60
+		self.shadow_spooc.headshot_dmg_mul = 5.85
+		self.shadow_spooc.damage.explosion_damage_mul = 1.25
+		self.shadow_spooc.move_speed = presets.move_speed.lightning
+		self.shadow_spooc.no_retreat = true
+		self.shadow_spooc.no_arrest = true
+		self.shadow_spooc.surrender_break_time = {4, 6}
+		self.shadow_spooc.suppression = nil
+		self.shadow_spooc.surrender = nil
+		self.shadow_spooc.priority_shout = "f33"
+		self.shadow_spooc.bot_priority_shout = "f33x_any"
+		self.shadow_spooc.priority_shout_max_dis = 3000
+		self.shadow_spooc.rescue_hostages = false
+		self.shadow_spooc.spooc_attack_timeout = {3, 3}
+		self.shadow_spooc.spooc_attack_beating_time = {3, 3}
+		self.shadow_spooc.spooc_attack_use_smoke_chance = 0
+		self.shadow_spooc.weapon_voice = "3"
+		self.shadow_spooc.experience.cable_tie = "tie_swat"
+		self.shadow_spooc.speech_prefix_p1 = "uno_clk"
+		self.shadow_spooc.speech_prefix_count = nil
+		self.shadow_spooc.use_radio = nil
+		self.shadow_spooc.chatter = presets.enemy_chatter.no_chatter
+		self.shadow_spooc.do_not_drop_ammo = true
+		self.shadow_spooc.steal_loot = nil
+		self.shadow_spooc.spawn_sound_event = "uno_cloaker_presence_loop"
+		self.shadow_spooc.die_sound_event = "uno_cloaker_presence_stop"
+		self.shadow_spooc.spooc_sound_events = {
+			detect_stop = "uno_cloaker_detect_stop",
+			taunt_during_assault = "",
+			taunt_after_assault = "",
+			detect = "uno_cloaker_detect"
+		}
+		self.shadow_spooc.access = "spooc"
+		self.shadow_spooc.flammable = true
+		self.shadow_spooc.dodge = presets.dodge.ninja
+		self.shadow_spooc.chatter = presets.enemy_chatter.no_chatter
+		self.shadow_spooc.steal_loot = nil
+		self.shadow_spooc.melee_weapon = nil
+		self.shadow_spooc.use_radio = nil
+		self.shadow_spooc.can_be_tased = true
+		self.shadow_spooc.static_dodge_preset = true
+		self.shadow_spooc.is_special = true
+		
+		table.insert(self._enemy_list, "shadow_spooc")
+	end	
 
 	function CharacterTweakData:_init_shield(presets)
 		self.shield = deep_clone(presets.base)
@@ -1853,7 +1906,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.experience.cable_tie = "tie_swat"
 		self.autumn.speech_prefix_p1 = "cpa"
 		self.autumn.speech_prefix_count = nil
-		if job == "mad" or job == "hvh" then 
+		if job == "mad" then 
 			self.autumn.custom_voicework = nil
 		else
 			self.autumn.custom_voicework = "autumn"
@@ -1945,11 +1998,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				special_comment = "x01"
 			}
 		}
-		if job == "mad" or job == "hvh" then 
-			self.taser.custom_voicework = nil
-		else
-			self.taser.custom_voicework = "taser"
-		end		
 		self.taser.is_special = true
 		table.insert(self._enemy_list, "taser")
 		
@@ -10924,7 +10972,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"s552_sc",
 			"r870_taser",
 			"oicw",
-			"hmg_spring"
+			"hmg_spring",
+			"smoke"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -10968,7 +11017,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"),
-			Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini")
+			Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
+			Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke")
 		}
 	end
 
@@ -12364,6 +12414,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				path = "units/pd2_dlc_tag/characters/",
 				list = {"ene_male_commissioner"}			
 			},	
+			nmh = {
+				path = "units/pd2_dlc_nmh/characters/",
+				list = {
+					"civ_male_doctor_01",
+					"civ_male_doctor_02",
+					"civ_male_doctor_03",
+					"civ_male_scrubs_01",
+					"civ_male_scrubs_02",
+					"civ_male_scrubs_03",
+					"civ_male_scrubs_04",
+					"civ_female_scrubs_01",
+					"civ_female_scrubs_02",
+					"civ_female_scrubs_03",
+					"civ_female_scrubs_04",
+					"civ_female_doctor_01",
+					"civ_female_hotpants"
+				}
+			},			
 			sah = {
 				path = "units/pd2_dlc_sah/characters/",
 				list = {
@@ -12389,6 +12457,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"civ_male_prisoner_hostage"
 				}				
 			},
+			bph = {
+				path = "units/pd2_dlc_bph/characters/",
+				list = {
+					"civ_male_locke_escort",
+					"civ_male_bain",
+					"ene_male_bain",
+					"ene_murkywater_medic",
+					"ene_murkywater_medic_r870",
+					"ene_murkywater_tazer",
+					"ene_murkywater_cloaker",
+					"ene_murkywater_bulldozer_1",
+					"ene_murkywater_bulldozer_2",
+					"ene_murkywater_bulldozer_3",
+					"ene_murkywater_bulldozer_4",
+					"ene_murkywater_bulldozer_medic",
+					"ene_murkywater_shield",
+					"ene_murkywater_sniper",
+					"ene_murkywater_heavy",
+					"ene_murkywater_heavy_shotgun",
+					"ene_murkywater_heavy_g36",
+					"ene_murkywater_light_city",
+					"ene_murkywater_light_city_r870",
+					"ene_murkywater_light_fbi_r870",
+					"ene_murkywater_light_fbi",
+					"ene_murkywater_light",
+					"ene_murkywater_light_r870"
+				}
+			},
+			vit = {
+				path = "units/pd2_dlc_vit/characters/",
+				list = {"ene_murkywater_secret_service"}
+			},	
+			uno = {
+				path = "units/pd2_dlc_uno/characters/",
+				list = {
+					"ene_shadow_cloaker_1",
+					"ene_shadow_cloaker_2"
+				}
+			},			
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",
 				list = {
@@ -12414,14 +12521,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_murky_veteran_1",
 					"ene_grenadier_1",
 					"ene_murky_medic_m4",
-					"ene_murky_tazer"
+					"ene_murky_tazer",
+					"ene_murkywater_light",
+					"ene_murky_sniper"
 				}
 			},
 			omnia = {
 				path = "units/pd2_mod_omnia/characters/",
 				list = {
 					"ene_omnia_city",
-					"ene_omnia_heavy"
+					"ene_omnia_city_2",
+					"ene_omnia_city_3",
+					"ene_omnia_heavy",
+					"ene_omnia_heavy_r870",
+					"ene_bulldozer_1",
+					"ene_bulldozer_2",
+					"ene_bulldozer_3"
 				}
 			},
 			nypd = {

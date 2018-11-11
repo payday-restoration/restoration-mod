@@ -7,6 +7,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" />
 	</dependencies>
 
 	<extensions>
@@ -20,6 +21,9 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_helmet_lod2" />
+			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" />
+			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

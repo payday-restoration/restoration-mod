@@ -206,7 +206,7 @@ end
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local r = LevelsTweakData.LevelType.Russia
-local m = LevelsTweakData.LevelType.Murky
+local m = LevelsTweakData.LevelType.Murkywater
 local z = LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
 
@@ -235,8 +235,8 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_toggle_one_down"] = "145+",
-		["menu_one_down"] = "145+",
+		["menu_toggle_one_down"] = "Pro Job",
+		["menu_one_down"] = "Pro",
 		
 		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
 		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
@@ -314,7 +314,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
 		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 15% chance to become a Titan Cloaker.",
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a Titan HRT.",
-		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer.",
+		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer and whenever a Black Bulldozer spawns, there is a chance that it will be a Medic Bulldozer.",
 		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",

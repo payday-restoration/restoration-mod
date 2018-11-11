@@ -3,7 +3,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="8.4" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="8.5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 	   <mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
 			<options merge_mode="script_merge"/>
@@ -159,6 +159,7 @@
 		<hook file="sc/managers/menumanager.lua" source_file="lib/managers/menumanager"/>
 		<hook file="sc/network/handlers/unitnetworkhandler.lua" source_file="lib/network/handlers/unitnetworkhandler"/>
 		<hook file="sc/units/equipment/sentrygunbase.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbase"/>
+		<hook file="sc/managers/experiencemanager.lua" source_file="lib/managers/experiencemanager"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

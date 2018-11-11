@@ -763,6 +763,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.asval_smg_npc.usage = "m4"
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 	end
+	
+	function WeaponTweakData:_init_data_smoke_npc()
+		self.smoke_npc.categories = clone(self.new_mp5.categories)
+		self.smoke_npc.sounds.prefix = "mp5_npc"
+		self.smoke_npc.use_data.selection_index = 1
+		self.smoke_npc.DAMAGE = 1.8
+		self.smoke_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.smoke_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.smoke_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.smoke_npc.CLIP_AMMO_MAX = 30
+		self.smoke_npc.NR_CLIPS_MAX = 5
+		self.smoke_npc.auto.fire_rate = 0.075
+		self.smoke_npc.hold = "rifle"
+		self.smoke_npc.alert_size = 2600
+		self.smoke_npc.suppression = 2
+		self.smoke_npc.FIRE_MODE = "auto"
+	end	
 
 	function WeaponTweakData:_init_data_mac11_npc()
 		self.mac11_npc.categories = {"smg"}
@@ -8926,6 +8943,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			usage = "is_revolver",
 			sounds = {},
 			use_data = {}
+		}	
+		self.smoke_npc = {
+			usage = "is_smg",
+			sounds = {},
+			use_data = {},
+			auto = {}
 		}		
 	end
 

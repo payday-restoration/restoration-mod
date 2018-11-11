@@ -1479,6 +1479,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_hw.headshot_dmg_mul = 7.99425
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
+		if job == "haunted" then
+			if Global.game_settings and Global.game_settings.one_down then
+				self.tank_hw.move_speed = presets.move_speed.slow
+			else
+				self.tank_hw.move_speed = presets.move_speed.very_slow
+			end
+		else
+			self.tank_hw.move_speed = presets.move_speed.slow
+		end
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
@@ -10959,7 +10968,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"s552_sc",
 			"r870_taser",
 			"oicw",
-			"hmg_spring"
+			"hmg_spring",
+			"smoke"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11003,7 +11013,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"),
-			Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini")
+			Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
+			Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke")
 		}
 	end
 

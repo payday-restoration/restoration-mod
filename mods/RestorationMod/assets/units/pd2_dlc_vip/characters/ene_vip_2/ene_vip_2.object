@@ -348,7 +348,7 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass">
-				<object name="g_helmet_glass" 			enabled="true"  max_distance="2000"  max_draw_lod="0">
+				<object name="g_helmet_glass" 			enabled="true"  max_distance="999999999999999999999999999999"  max_draw_lod="0">
 					<material materials="mtr_bulldozer" max_distance="0"/>
 					<material materials="mtr_bulldozer_lod_2" />
 				</object>
@@ -359,7 +359,7 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet_glass_crk">
-				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="2000"  max_draw_lod="0">
+				<object name="g_helmet_glass_crk" 		enabled="false"  max_distance="999999999999999999999999999999"  max_draw_lod="0">
 					<!--<material materials="mtr_bulldozer" max_distance="0"/>-->
 					<material materials="mtr_bulldozer_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_bulldozer_lod_2" />

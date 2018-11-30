@@ -46,7 +46,8 @@ if not _G.restoration then
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
-		"skm_watchdogs_stage2"
+		"skm_watchdogs_stage2",
+		"big"
 	}
 	_G.restoration.captain_teamwork = {
 		"nightclub",
@@ -66,7 +67,8 @@ if not _G.restoration then
 		"four_stores",
 		"alex_2",
 		"rat",	
-		"flat"
+		"flat",
+		"big"
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

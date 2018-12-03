@@ -12505,6 +12505,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_murky_hrt_2",
 					"ene_murky_heavy_m4",
 					"ene_murky_heavy_r870",
+					"ene_murky_heavy_ump",
 					"ene_murky_fbi_heavy_m4",
 					"ene_murky_fbi_heavy_r870",
 					"ene_murky_yellow_m4",

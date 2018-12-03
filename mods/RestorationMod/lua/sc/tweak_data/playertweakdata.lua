@@ -49,7 +49,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.suspicion.max_value = 12
 		self.suspicion.range_mul = 1.4
 		self.suspicion.buildup_mul = 1.4
-		self.damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}
@@ -59,7 +59,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.suspicion.max_value = 13
 		self.suspicion.range_mul = 1.4
 		self.suspicion.buildup_mul = 1.4
-		self.damage.MIN_DAMAGE_INTERVAL = 0.3
+		self.damage.MIN_DAMAGE_INTERVAL = 0.25
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}

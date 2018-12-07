@@ -542,18 +542,17 @@
 	<!--Fixed Sniper-->
 	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 
-	<!--National Guard-->
+	<!--National Guard (prolly could be pro job enemies - bob u still got classicbois?) -->
 	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>
-	
-	<!--NOTICE:  these below are broke as of u170, ovk changed something with zeals and it effected only these, fix ASAP-->
-	<!--Zeal Shield Heavy Swat
+		
+	<!--Zeal Shield Heavy Swat-->
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_contour" force="false"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" load="true" force="false"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/>
 
 	<!--Gensec Shield Acc-->
 	<model path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
@@ -1362,6 +1361,13 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" force="false"/>	
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
+
+	<!--gnarly ass titan sniper hat-->
+	<object path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>			
 	
 	<!--nypd dozer stuff-->	
 	<!--green-->
@@ -1402,6 +1408,22 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_contour"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk" load="true"/>
+
+	<!--evilbob's snazzy classic medic + helmet acc -->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_contour"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_husk" load="true"/>	
+	
+	<!--the helmet for the medicine man -->	
+	<object path="units/pd2_mod_nypd/characters/ene_acc_nypd_medic_helmet/ene_acc_nypd_medic_helmet"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_nypd_medic_helmet/ene_acc_nypd_medic_helmet"/>
+	<model path="units/pd2_mod_nypd/characters/ene_acc_nypd_medic_helmet/ene_acc_nypd_medic_helmet"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_acc_nypd_medic_helmet/ene_acc_nypd_medic_helmet" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_acc_nypd_medic_helmet/ene_acc_nypd_medic_helmet"/>
 	
     <!--NYPD heavy r870-->	
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870" load="true"/>
@@ -1499,6 +1521,8 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />		
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_df" />	
@@ -1549,6 +1573,14 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_contour"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>	
+
+	<!--OH MY GOD MY FUCKING HELMET!!! OH GOD!-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>		
+	
 	<!--zeal city 3-->
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
@@ -1557,6 +1589,14 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_contour"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
+
+	<!--zeal city 3 hat-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>			
+	
 	<!--textures city -->
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	

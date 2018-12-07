@@ -6428,7 +6428,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 						}						
 					},
 					access = access_type_all,
@@ -6526,25 +6526,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),	
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),							
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),							
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 						}						
 					},
@@ -6603,15 +6603,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 						}					
 					},
@@ -6670,15 +6670,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 						}					
 					},
@@ -6737,15 +6737,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),	
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
 							Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 						}						
 					},
@@ -6770,7 +6770,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 						}						
 					},
 					access = access_type_all,
@@ -6792,7 +6792,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")				
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 						}
 					},
 					access = access_type_all,
@@ -6814,7 +6814,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")					
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 						}
 					},
 					access = access_type_all,
@@ -6836,7 +6836,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")					
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 						}
 					},
 					access = access_type_all,
@@ -6858,7 +6858,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")					
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 						}
 					},
 					access = access_type_all,

@@ -1747,6 +1747,28 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
+
+	<!--zeal city 1 helm-->
+	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" force="false"/>		
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" load="true"/>
+	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	<object path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	
+	<!--zeal city 2 helm-->
+	<object path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>		
+	
+	<!--zeal city 3 hat-->
+	<object path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>			
+	
 	<!--zeal heavy m4-->
     <object path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
@@ -1758,6 +1780,12 @@
 	<!--zeal heavy r870-->
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>	
+	<!--zeal heavy-->
+	<object path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false"/>				
 	<!--zombie city 1-->
 	<object path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>
@@ -1782,6 +1810,13 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>	
+	<!--city bois omnomnom-->
+	<object path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>				
+	
 	<!--textures -->	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_city_df" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_heavy_df" />	

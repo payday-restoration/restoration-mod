@@ -163,6 +163,12 @@
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_contour" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_husk" force="false" load="true"/>	
 	
+	<!--OMNIA SWAT Helmet-->
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>					
+	
 	<!--OMNIA City Heavy-->
 	<object path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false"/>
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false"/>
@@ -171,6 +177,14 @@
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_contour" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk" force="false" load="true"/>	
+
+	<!--OMNIA heavy helmet (do not look at the inside of the helmet)-->
+	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>			
+	
 	<!--r870 dude-->
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" force="false" load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk" force="false" load="true"/>	
@@ -182,7 +196,13 @@
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false" load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2_contour" force="false"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2_husk" force="false" load="true"/>		
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2_husk" force="false" load="true"/>	
+
+	<!--OMNIA sg man helmet-->
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_city_2_helmet/ene_omnia_city_2_helmet" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_city_2_helmet/ene_omnia_city_2_helmet" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_2_helmet/ene_omnia_city_2_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_2_helmet/ene_omnia_city_2_helmet" force="false"/>				
 	
 	<!--OMNIA city 3-->
 	<object path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
@@ -192,6 +212,12 @@
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3_contour" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3_husk" force="false" load="true"/>	
+
+	<!--OMNIA city 3 hat-->
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_city_3_hat/ene_omnia_city_3_hat" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_city_3_hat/ene_omnia_city_3_hat" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_3_hat/ene_omnia_city_3_hat" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_3_hat/ene_omnia_city_3_hat" force="false"/>						
 	
 	<!--OMNIA Textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>

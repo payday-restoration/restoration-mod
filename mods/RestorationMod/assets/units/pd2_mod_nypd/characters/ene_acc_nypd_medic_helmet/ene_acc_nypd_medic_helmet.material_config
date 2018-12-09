@@ -1,0 +1,12 @@
+<materials version="3">
+	<material name="mtr_ene_acc_swat_medic_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df"/>
+	</material>
+
+	<material name="mtr_ene_acc_swat_medic_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df"/>
+	</material>
+	
+</materials>

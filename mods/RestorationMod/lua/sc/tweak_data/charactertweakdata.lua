@@ -12545,7 +12545,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				list = {
 					"ene_bulldozer_1",
 					"ene_bulldozer_2",
-					"ene_nypd_heavy_m4",
+					"ene_nypd_heavy_m4",					
+					"ene_nypd_medic",
 					"ene_tazer_1",
 					"ene_nypd_heavy_r870",
 					"ene_nypd_swat_1",

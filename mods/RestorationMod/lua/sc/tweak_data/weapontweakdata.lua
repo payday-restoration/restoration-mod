@@ -8794,6 +8794,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.hcar.panic_suppression_chance = 0.1
 
+		end		
+
+		if self.g3m203 then
+
+		self.g3m203.AMMO_MAX = 120
+		self.g3m203.CLIP_AMMO_MAX = 30
+		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.g3m203.fire_mode_data.fire_rate = 0.1
+		self.g3m203.CAN_TOGGLE_FIREMODE = true
+		self.g3m203.auto = {}
+		self.g3m203.auto.fire_rate = 0.1
+		self.g3m203.spread = {}
+		self.g3m203.spread.standing = 3
+		self.g3m203.spread.crouching = 2
+		self.g3m203.spread.steelsight = 1
+		self.g3m203.spread.moving_standing = 4
+		self.g3m203.spread.moving_crouching = 3
+		self.g3m203.spread.moving_steelsight = 2
+		self.g3m203.stats = {
+			damage = 45,
+			spread = 18,
+			recoil = 17,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 12,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
 		end
 
 		if self.evo then

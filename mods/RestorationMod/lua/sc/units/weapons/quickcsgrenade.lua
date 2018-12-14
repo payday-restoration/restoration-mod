@@ -22,7 +22,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._damage_tick_period = 0.35
 		else
 			self._damage_tick_period = 0.3
-			self._damage_per_tick = 0.5
+			self._damage_per_tick = 0.5625
 		end
 	end
 	

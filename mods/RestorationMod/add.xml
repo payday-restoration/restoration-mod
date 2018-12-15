@@ -277,6 +277,8 @@
 	<sequence_manager path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_df" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_nm" force="false"/>	
+	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_sight_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_sight_nm" force="false"/>	
 
 	<!--Headless Dozer-->
 	<object path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>

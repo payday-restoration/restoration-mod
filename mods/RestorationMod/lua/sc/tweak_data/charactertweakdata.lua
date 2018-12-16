@@ -148,6 +148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.steal_loot = nil
 		self.security.static_dodge_preset = true
 		self.security.shooting_death = false
+		self.security.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "security")
 		self.security_undominatable = deep_clone(self.security)
 		self.security_undominatable.surrender = nil
@@ -202,6 +203,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.has_alarm_pager = true
 		self.gensec.melee_weapon = "baton"
 		self.gensec.steal_loot = nil
+		self.gensec.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "gensec")
 	end
 
@@ -239,6 +241,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.cop.steal_loot = true
 		end
 		self.cop.static_dodge_preset = true
+		self.cop.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "cop")
 		self.cop_scared = deep_clone(self.cop)
 		self.cop_scared.surrender = presets.surrender.always
@@ -247,7 +250,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop_female = deep_clone(self.cop)
 		self.cop_female.speech_prefix_p1 = "fl"
 		self.cop_female.speech_prefix_p2 = "n"
+		self.cop_female.die_sound_event = nil
 		self.cop_female.speech_prefix_count = 1
+		self.cop_female.tags = {"law", "female_enemy"}
 		table.insert(self._enemy_list, "cop_female")
 		self.cop_civ = deep_clone(self.cop)
 		self.cop_civ.weapon = presets.weapon.normal
@@ -289,11 +294,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.fbi.chatter = presets.enemy_chatter.cop
 			self.fbi.steal_loot = true
 		self.fbi.no_arrest = false
+		self.fbi.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "fbi")
 		self.fbi_female = deep_clone(self.fbi)
 		self.fbi_female.speech_prefix_p1 = "fl"
 		self.fbi_female.speech_prefix_p2 = "n"
 		self.fbi_female.speech_prefix_count = 1
+		self.fbi_female.die_sound_event = nil
+		self.fbi_female.tags = {"law", "female_enemy"}
 		table.insert(self._enemy_list, "fbi_female")
 		
 		self.fbi_vet = deep_clone(self.fbi)
@@ -328,6 +336,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		}	
 		self.fbi_vet.static_dodge_preset = true
+		self.fbi_vet.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "fbi_vet")
 	end
 
@@ -369,6 +378,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic.bot_priority_shout = "f47x_any"
 		self.medic.priority_shout_max_dis = 3000
 		self.medic.is_special = true
+		if job == "mad" then
+		    self.medic.die_sound_event = "rmdc_x02a_any_3p"
+		else	
+		    self.medic.die_sound_event = "mdc_x02a_any_3p"
+		end	
 		table.insert(self._enemy_list, "medic")
 		self.medic_summers = deep_clone(self.medic)
 		self.medic_summers.HEALTH_INIT = 60
@@ -492,12 +506,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.unintimidateable = true	
 		self.swat_titan.custom_voicework = nil
 		self.swat_titan.static_dodge_preset = true
+		self.swat_titan.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "swat_titan")
 		
 		self.hrt = deep_clone(self.swat)
 		self.hrt.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.hrt.speech_prefix_p2 = "n"
 		self.hrt.speech_prefix_count = 4
+		self.hrt.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "hrt")	
 	end
 
@@ -534,6 +550,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+			self.heavy_swat.die_sound_event = "l1n_x01a_any_3p"
+		else
+			self.heavy_swat.die_sound_event = "l3d_x02a_any_3p"
+		end		
 		table.insert(self._enemy_list, "heavy_swat")
 		
 		self.heavy_swat_sniper = deep_clone(self.heavy_swat)
@@ -647,7 +668,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.static_melee_preset = true	
 		self.heavy_swat_sniper.custom_voicework = nil
 		self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
-		self.heavy_swat_sniper.die_sound_event = "mga_death_scream"	
+		self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
+		if job == "mad" then 
+			self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
+			self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
+			self.heavy_swat_sniper.speech_prefix_count = 4
+		else
+			self.heavy_swat_sniper.speech_prefix_p1 = "l5d"
+			self.heavy_swat_sniper.speech_prefix_p2 = nil
+			self.heavy_swat_sniper.speech_prefix_count = nil
+		end		
 		self.heavy_swat_sniper.is_special = true
 		table.insert(self._enemy_list, "heavy_swat_sniper")
 	end
@@ -687,6 +717,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+			self.fbi_swat.die_sound_event = "l1n_x01a_any_3p"
+		else
+			self.fbi_swat.die_sound_event = "l1d_x02a_any_3p"
+		end
 		table.insert(self._enemy_list, "fbi_swat")
 		
 		self.fbi_swat_vet = deep_clone(self.fbi_swat)
@@ -728,7 +763,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
-		self.fbi_heavy_swat.static_melee_preset = true			
+		self.fbi_heavy_swat.static_melee_preset = true	
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" then
+			self.fbi_heavy_swat.die_sound_event = "l5d_x02a_any_3p"
+		elseif job == "mad" then
+		    self.fbi_heavy_swat.die_sound_event = "l1n_x01a_any_3p"
+		else
+		    self.fbi_heavy_swat.die_sound_event = "l3d_x02a_any_3p"
+		end	
 		table.insert(self._enemy_list, "fbi_heavy_swat")
 		
 		self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
@@ -742,6 +784,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.omnia_heavy.speech_prefix_count = nil
 		end	
 		self.omnia_heavy.custom_voicework = nil
+		self.omnia_heavy.die_sound_event = "x02a_any_3p"
 		table.insert(self._enemy_list, "omnia_heavy")		
 	end
 
@@ -792,10 +835,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.static_dodge_preset = true
 		self.city_swat.static_melee_preset = true	
 		self.city_swat.custom_voicework = nil
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+			self.city_swat.die_sound_event = "l1n_x01a_any_3p"
+		else
+			self.city_swat.die_sound_event = "l1d_x02a_any_3p"
+		end
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	
-		if job == "mad" then
+		--[[if job == "mad" then
 			self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia.speech_prefix_count = 4
@@ -806,7 +854,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end				
 		self.omnia.dodge = presets.dodge.elite
 		self.omnia.move_speed = presets.move_speed.lightning
-		self.omnia.custom_voicework = nil
+		self.omnia.custom_voicework = nil]]--
+		self.omnia.die_sound_event = "l1d_x02a_any_3p"
 		table.insert(self._enemy_list, "omnia")
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
@@ -828,6 +877,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.unintimidateable = true
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
+		self.city_swat_titan.die_sound_event = nil
 		self.city_swat_titan.static_melee_preset = true	
 		self.city_swat_titan.dodge_with_grenade = {
 			smoke = {duration = {
@@ -899,6 +949,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.static_weapon_preset = true
 		self.sniper.static_dodge_preset = true
 		self.sniper.is_special = true
+		self.sniper.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "sniper")
 	end
 
@@ -1441,6 +1492,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank.static_dodge_preset = true
 		self.tank.no_recoil = true
 		self.tank.is_special = true
+		self.tank.die_sound_event = "bdz_x02a_any_3p"
 		table.insert(self._enemy_list, "tank")
 		
 		self.tank_medic = deep_clone(self.tank)
@@ -1456,6 +1508,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_medic")
 		
 		self.tank_titan = deep_clone(self.tank)
+		self.tank_titan.tags = {"law", "tank", "special", "tank_titan"}
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 		self.tank_titan.headshot_dmg_mul = 3.997125
@@ -1476,6 +1529,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_titan")
 		
 		self.tank_titan_assault = deep_clone(self.tank_titan)
+		self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
@@ -1556,6 +1610,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc.can_be_tased = true
 		self.spooc.static_dodge_preset = true
 		self.spooc.is_special = true
+		if job == "mad" then
+		    self.spooc.die_sound_event = "rclk_x02a_any_3p"
+		else
+		    self.spooc.die_sound_event = "clk_x02a_any_3p"
+		end
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
@@ -1680,12 +1739,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.immune_to_knock_down = true
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+			self.shield.die_sound_event = "l1n_x01a_any_3p"
+		else
+			self.shield.die_sound_event = "l4d_x02a_any_3p"
+		end
 		table.insert(self._enemy_list, "shield")
 	end
 
 	function CharacterTweakData:_init_phalanx_minion(presets)
 		self.phalanx_minion = deep_clone(self.shield)
-		self.phalanx_minion.tags = {"law", "shield", "special"}
+		self.phalanx_minion.tags = {"law", "shield", "special", "shield_titan"}
 		self.phalanx_minion.experience = {}
 		self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 		self.phalanx_minion.detection = presets.detection.normal
@@ -1722,15 +1786,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.die_sound_event = "mga_death_scream"
 		self.phalanx_minion.suppression = nil
 		self.phalanx_minion.is_special = true
+		if job == "mad" then 
+			self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
+			self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
+			self.phalanx_minion.speech_prefix_count = 4
+		else
+			self.phalanx_minion.speech_prefix_p1 = "l5d"
+			self.phalanx_minion.speech_prefix_p2 = nil
+			self.phalanx_minion.speech_prefix_count = nil
+		end	
 		table.insert(self._enemy_list, "phalanx_minion")
 		self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 		self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
-		self.phalanx_minion_assault.die_sound_event = "mga_death_scream"
+		self.phalanx_minion.die_sound_event = "mga_death_scream"
 		table.insert(self._enemy_list, "phalanx_minion_assault")
 	end
 
 	function CharacterTweakData:_init_phalanx_vip(presets)
 		self.phalanx_vip = deep_clone(self.phalanx_minion)
+		self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan"}
 		self.phalanx_vip.damage.shield_knocked = false
 		self.phalanx_vip.damage.immune_to_knockback = true
 		self.phalanx_vip.immune_to_knock_down = true
@@ -1812,7 +1886,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_summers(presets)
 		self.summers = deep_clone(presets.base)
-		self.summers.tags = {"law", "custom", "special"}
+		self.summers.tags = {"law", "custom", "special", "summers"}
 		self.summers.experience = {}
 		self.summers.weapon = deep_clone(presets.weapon.normal)
 		self.summers.melee_weapon = "buzzer_summer"
@@ -1999,12 +2073,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		self.taser.is_special = true
+		if job == "mad" then
+		    self.taser.die_sound_event = "rtsr_x02a_any_3p"
+		else	
+		    self.taser.die_sound_event = "tsr_x02a_any_3p"
+		end	
 		table.insert(self._enemy_list, "taser")
 		
 		self.taser_summers = deep_clone(self.taser)
 		self.taser_summers.HEALTH_INIT = 72
 		self.taser_summers.headshot_dmg_mul = 1.25
-		self.taser_summers.tags = {"taser", "medic_summers", "custom", "special"}
+		self.taser_summers.tags = {"female_enemy","taser", "medic_summers", "custom", "special"}
 		self.taser_summers.ignore_medic_revive_animation = false
 		self.taser_summers.flammable = false
 		self.taser_summers.use_animation_on_fire_damage = false
@@ -2037,6 +2116,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "taser_summers")
 		
 		self.taser_titan = deep_clone(self.taser)
+		self.taser_titan.tags = {"taser", "taser_titan", "custom", "special"}
 		self.taser_titan.headshot_dmg_mul = 1.25
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
@@ -2135,7 +2215,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.use_radio = "dsp_radio_russian"
 		self.boom_summers.HEALTH_INIT = 72
 		self.boom_summers.headshot_dmg_mul = 1.25
-		self.boom_summers.tags = {"medic_summers", "custom", "special"}
+		self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
 		self.boom_summers.ignore_medic_revive_animation = false
 		self.boom_summers.no_retreat = true
 		self.boom_summers.no_arrest = true

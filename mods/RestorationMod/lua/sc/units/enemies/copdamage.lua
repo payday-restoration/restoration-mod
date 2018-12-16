@@ -717,7 +717,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				game_state_machine:change_state_by_name( "gameoverscreen" ) 
 			end
 		end 		
-	end
+	       
+	    if self._unit:base():has_tag("sniper") or self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("taser_titan")  then
+		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", nil, nil)
+		else
+	    	self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", nil, nil)
+	    end
+	
 	
 	function CopDamage:heal_unit(unit, override_cooldown)
 		local t = Application:time()
@@ -1152,4 +1158,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return type == "swat" or type == "fbi" or type == "cop" or type == "security"
 	end
 
+end
 end

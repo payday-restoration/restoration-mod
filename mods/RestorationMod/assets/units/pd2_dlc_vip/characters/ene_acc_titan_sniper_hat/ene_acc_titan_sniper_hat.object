@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" orientation_object="rp_ene_acc_phalanx_helmet" />
+	<diesel materials="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" orientation_object="rp_ene_acc_fbi_swat_helmet" />
 	
 	<bodies>
 	<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
-			<object name="rp_ene_acc_phalanx_helmet" />
+			<object name="rp_ene_acc_fbi_swat_helmet" />
 			<object name="c_sphere_front" 	collision_type="sphere" mass="0.6" />
 			<object name="c_sphere_rear" 	collision_type="sphere" mass="0.6" />
 			<object name="c_box" 			collision_type="box" 	mass="0.3" />

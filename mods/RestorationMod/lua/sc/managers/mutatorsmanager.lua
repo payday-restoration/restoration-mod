@@ -20,7 +20,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			MutatorExplodingEnemies:new(self),
 			MutatorHydra:new(self),
 			MutatorEnemyReplacer:new(self),
-			MutatorMediDozer:new(self),
+			MutatorMedicdozers:new(self),
 			MutatorCloakerEffect:new(self),
 			MutatorShieldDozers:new(self),
 			MutatorTitandozers:new(self),

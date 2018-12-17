@@ -1160,6 +1160,13 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4_husk" force="false" load="true"/>    
+
+	<!--murky city helmet-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" load="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" force="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" force="false"/>			
 	
 	<!--murky city bnl -->
 	<object path="units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl" force="false"/>
@@ -1300,6 +1307,14 @@
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/murky_heavy_df" force="false" />
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_df" force="false" />
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_nm" force="false" />
+
+	<!--murky medic helmet-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>	
+	
 	<!--r870-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870" load="true"/>	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870_husk" load="true"/>		

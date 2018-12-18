@@ -40339,6 +40339,71 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end
+		if self.wpn_fps_ass_scarl then
+			self.wpn_fps_ass_scarl.override = {
+				wpn_fps_upg_scarl_mag_pull_assist = {
+				stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					},					
+				},
+				wpn_fps_upg_scarl_barrel_long = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = 1,
+						concealment = -2
+					},					
+				},
+				wpn_fps_upg_scarl_barrel_cqc = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = -1,
+						concealment = 2
+					},					
+				},
+				wpn_fps_upg_scarl_barrel_cqc_mod = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = -1,
+						concealment = 2
+					},	
+					custom_stats = {rof_mult = 1.04},	
+				}
+			}	
+		end		
+		
+		if self.wpn_fps_ass_g3m203 then
+			self.wpn_fps_ass_g3m203.override = {
+				wpn_fps_upg_g3m203_supp_socom762 = {
+					stats = {
+						value = 2,
+						suppression = 11,
+						alert_size = 11,
+						damage = 5,
+						recoil = 1,
+						concealment = -2
+					},					
+				},
+				wpn_fps_upg_g3m203_barrel_g3ka4 = {
+					stats = {
+						value = 2,
+						recoil = 1,
+						spread = -1,
+						concealment = 4,
+						damage = -10,
+						suppression = 1,
+						alert_size = 1,
+						total_ammo_mod = 25
+					},
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25},	
+				}
+			}	
+		end
 		if self.wpn_fps_lmg_ultimax then
 			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
@@ -40359,7 +40424,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
 				}
 			}	
-		end
+		end		
 		if self.wpn_fps_ass_hcar then
 			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"

@@ -12597,6 +12597,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_murky_city_bnl",
 					"ene_murky_city_m4",
 					"ene_murky_fbi_tank_m249",
+					"ene_murky_fbi_tank_medic",
 					"ene_murky_fbi_tank_saiga",
 					"ene_murky_fbi_tank_r870",
 					"ene_murky_spook",

@@ -29,6 +29,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_drum_desc"] = "",
 		["bm_wp_upg_drum2_desc"] = "",
 		["bm_wp_upg_quad_desc"] = "",
+		["bm_wp_wpn_fps_upg_g3m203_barrel_g3ka4"] = "Assault Kit",				
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
@@ -286,9 +287,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medicdozers_desc"] = "Medic Dozers can now spawn.",
 		["mutator_medicdozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a Medic Bulldozer. A Medic Bulldozer counts as both a Medic and a Bulldozer.",
 		
-		["mutator_minidozers"] = "Minigun Dozers",
-		["mutator_minidozers_desc"] = "Minigun Dozers can now spawn.",
-		["mutator_minidozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a slow-moving minigun-wielding Bulldozer.",
+		["mutator_minidozers"] = "Semi-Auto Shotgun Bulldozers",
+		["mutator_minidozers_desc"] = "Semi-Auto Shotgun Bulldozers can now spawn.",
+		["mutator_minidozers_longdesc"] = "Whenever a Bulldozer spawns, there is a chance that it will be a slow-moving M1014-wielding Bulldozer.",
 		
 		["mutator_fatroll"] = "Fat Roll",
 		["mutator_fatroll_desc"] = "Damage Grace disabled.",

@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._tweak_table == "spooc" then
 			self._unit:damage():run_sequence_simple("turn_on_spook_lights")
 		end
-		if self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" then
+		if self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "autumn" then
 			GroupAIStateBesiege:set_assault_endless(true)
 			managers.hud:set_buff_enabled("vip", true)
 		end	

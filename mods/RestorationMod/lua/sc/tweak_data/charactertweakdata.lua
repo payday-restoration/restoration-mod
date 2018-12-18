@@ -1972,9 +1972,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.priority_shout_max_dis = 0
 		self.autumn.unintimidateable = true
 		self.autumn.priority_shout_max_dis = 3000
-		self.autumn.rescue_hostages = false
+		self.autumn.rescue_hostages = true
 		self.autumn.spooc_attack_timeout = {3, 3}
 		self.autumn.spooc_attack_beating_time = {0, 0}
+		self.autumn.spawn_sound_event = "cloaker_spawn"
 		self.autumn.spooc_attack_use_smoke_chance = 1
 		self.autumn.weapon_voice = "3"
 		self.autumn.experience.cable_tie = "tie_swat"
@@ -12596,7 +12597,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_murky_city_bnl",
 					"ene_murky_city_m4",
 					"ene_murky_fbi_tank_m249",
-					"ene_murky_fbi_tank_medic",					
 					"ene_murky_fbi_tank_saiga",
 					"ene_murky_fbi_tank_r870",
 					"ene_murky_spook",

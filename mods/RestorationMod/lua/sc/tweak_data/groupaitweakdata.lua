@@ -182,6 +182,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 2,
 				medic = 0,
 				spring = 0,
+				autumn = 0,
 				summers = 0
 			}
 		elseif difficulty_index == 3 then
@@ -193,6 +194,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 3,
 				medic = 0,
 				spring = 0,
+				autumn = 0,
 				summers = 0
 			}
 		elseif difficulty_index == 4 then
@@ -204,6 +206,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 4,
 				medic = 2,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			}
 		elseif difficulty_index == 5 then
@@ -215,6 +218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			}
 		elseif difficulty_index == 6 then
@@ -226,6 +230,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			}	
 		elseif difficulty_index == 7 then
@@ -237,6 +242,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			}				
 		else
@@ -248,6 +254,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			}
 		end
@@ -7710,6 +7717,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			access = access_type_all,
 			special_type = "spring"
 		}
+		self.unit_categories.Cap_Autumn = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn")
+				},					
+				murkywater = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn")
+				},
+				nypd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn")
+				}				
+			},
+			max_amount = 1,
+			access = access_type_all,
+			special_type = "autumn"
+		}
 		self.unit_categories.Cap_Summers = {
 			unit_types = {
 				america = {
@@ -8021,6 +8050,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Cap_summers = {
 				"charge",
 				"murder"
+			},
+			Cap_autumn = {
+				"flank",
+				"shield_cover",
+				"smoke_grenade",
+				"provide_coverfire",
+				"provide_support",
+				"flash_grenade"
 			},
 
 			--Vanilla shit below
@@ -9077,6 +9114,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					amount_max = 2,
 					tactics = self._tactics.Cap_spring,
 					rank = 2
+				}
+			}
+		}		
+		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = {1, 1},
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
 				}
 			}
 		}
@@ -10896,6 +10946,36 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			0
 		}
 		--Captain stuff here--
+		for _,v in pairs(restoration.captain_stelf) do
+			if job == v then
+				if difficulty_index <= 3 then
+					self.besiege.assault.groups.Cap_Autumn = {
+						0,
+						0,
+						0
+					}
+				elseif difficulty_index == 4 then
+					self.besiege.assault.groups.Cap_Autumn = {
+						0.04,
+						0.04,
+						0.04
+					}
+				elseif difficulty_index == 5 then
+					self.besiege.assault.groups.Cap_Autumn = {
+						0.04,
+						0.04,
+						0.04
+					}
+				else
+					self.besiege.assault.groups.Cap_Autumn = {
+						0.04,
+						0.04,
+						0.04
+					}
+				end
+				break
+			end
+		end		--Captain stuff here--
 		for _,v in pairs(restoration.captain_teamwork) do
 			if job == v then
 				if difficulty_index <= 3 then

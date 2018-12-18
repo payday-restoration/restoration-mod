@@ -44,7 +44,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			end
-		elseif self._unit:base()._tweak_table == "boom_summers" and self._throw_projectile_time < _time then
+		elseif self._unit:base()._tweak_table == "autumn" and self._throw_projectile_time < _time then
+			if self._shooting_player then
+				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
+				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
+				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+				local roll = math.rand(1, 100)
+				local chance_gas = 20
+				if roll <= chance_gas then
+					self._unit:sound():say("i03", true, nil, true)
+					deploy_gas(shoot_from_pos, target_vec)	
+				end
+			else
+				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+			end
+			elseif self._unit:base()._tweak_table == "boom_summers" and self._throw_projectile_time < _time then
 			if self._shooting_player then
 				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
 				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)

@@ -8794,6 +8794,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.hcar.panic_suppression_chance = 0.1
 
+		end		
+
+		if self.g3m203 then
+
+		self.g3m203.AMMO_MAX = 120
+		self.g3m203.CLIP_AMMO_MAX = 30
+		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.g3m203.fire_mode_data.fire_rate = 0.1
+		self.g3m203.CAN_TOGGLE_FIREMODE = true
+		self.g3m203.auto = {}
+		self.g3m203.auto.fire_rate = 0.1
+		self.g3m203.spread = {}
+		self.g3m203.spread.standing = 3
+		self.g3m203.spread.crouching = 2
+		self.g3m203.spread.steelsight = 1
+		self.g3m203.spread.moving_standing = 4
+		self.g3m203.spread.moving_crouching = 3
+		self.g3m203.spread.moving_steelsight = 2
+		self.g3m203.stats = {
+			damage = 45,
+			spread = 18,
+			recoil = 17,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 12,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
 		end
 
 		if self.evo then
@@ -8837,6 +8869,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.evo.panic_suppression_chance = 0.1
 
 		end
+
+		if self.scarl then
+
+			self.scarl.fire_mode_data.fire_rate = 0.096
+			self.scarl.AMMO_MAX = 120
+			self.scarl.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.scarl.spread.standing = 3
+			self.scarl.spread.crouching = 2
+			self.scarl.spread.steelsight = 1
+			self.scarl.spread.moving_standing = 4
+			self.scarl.spread.moving_crouching = 3
+			self.scarl.spread.moving_steelsight = 2
+			self.scarl.kick.standing = self.new_m4.kick.standing
+			self.scarl.kick.crouching = self.new_m4.kick.standing
+			self.scarl.kick.steelsight = self.new_m4.kick.standing
+			self.scarl.stats = {
+				damage = 35,
+				spread = 15,
+				recoil = 20,
+				spread_moving = 13,
+				zoom = 3,
+				concealment = 8,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 4,
+				reload = 11
+			}
+			self.scarl.panic_suppression_chance = 0.0
+
+		end				
 		
 	end)
 else

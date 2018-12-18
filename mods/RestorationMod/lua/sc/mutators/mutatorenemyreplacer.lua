@@ -24,7 +24,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.america, mini_unit_name)
 		table.insert(unit_types.russia, mini_unit_name)
 		table.insert(unit_types.zombie, mini_unit_name)
-		table.insert(unit_types.murky, mini_unit_name)
+		table.insert(unit_types.murkywater, mini_unit_name)
 	end	
 	
 	--Medic Dozers--
@@ -51,7 +51,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.america, medic_unit_name)
 		table.insert(unit_types.russia, medic_unit_name)
 		table.insert(unit_types.zombie, medic_unit_name)
-		table.insert(unit_types.murky, medic_unit_name)
+		table.insert(unit_types.murkywater, medic_unit_name)
 	end		
 
 end

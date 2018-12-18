@@ -477,25 +477,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		if not self._unit:base().nick_name then
-			if action_desc.variant == "fire" then
-				if tweak_table ~= "tank" and tweak_table ~= "tank_hw" and tweak_table ~= "shield" then
+			if action_desc.variant == "fire" then			
+				if tweak_table ~= "tank" and tweak_table ~= "tank_hw" and tweak_table ~= "shield" then					
 					if action_desc.hurt_type == "fire_hurt" and tweak_table ~= "spooc" then
-						self._unit:sound():say("burnhurt")
+						self._unit:sound():say("burnhurt")				
 					elseif action_desc.hurt_type == "death" then
 						self._unit:sound():say("burndeath")
 					end
-				end
-			elseif action_type == "death" then
-				if common_data.char_tweak.speech_prefix_p1 == "l2d" then
-					self._unit:sound():say("x01a_any_3p", true)
-				else
-					self._unit:sound():say("x02a_any_3p", true)
-				end
-			elseif action_type == "counter_tased" or action_type == "taser_tased" then
-				self._unit:sound():say("tasered")
-			else
-				self._unit:sound():say("x01a_any_3p", true)
-			end
+				end				
+                elseif action_type == "death" then
+				if self._unit:base():has_tag("sniper") or self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("taser_titan") or self._unit:base():has_tag("medic_summers_special") or self._unit:base():has_tag("summers") then
+				    self._unit:sound():say("x02a_any_3p", true)						
+				elseif self._unit:base():has_tag("female_enemy") then
+                    self._unit:sound():say("x01a_any_3p", true)					
+				end	
+			    elseif action_type == "counter_tased" or action_type == "taser_tased" then
+		        	if self._unit:base():has_tag("taser") then
+		        		self._unit:sound():say("tasered", true)
+		        	else
+		        		self._unit:sound():say("x01a_any_3p", true) --so that other tased enemies actually react in pain to being tased
+		        	end
+		        elseif action_type == "hurt_sick" then
+		        	local common_cop = self._unit:base():has_tag("law") and not self._unit:base():has_tag("special")
+              
+		        	if common_cop or self._unit:base():has_tag("shield") then
+		        		self._unit:sound():say("ch3", true) --make cops scream in pain when affected ECM feedback
+		        	elseif self._unit:base():has_tag("medic") or self._unit:base():has_tag("taser") then
+		        		self._unit:sound():say("burndeath", true) --same for these specials with a similar sound, since they lack one
+		        	end
+		        else
+		        	self._unit:sound():say("x01a_any_3p", true)
+		        end
 
 			if (tweak_table == "tank" or tweak_table == "tank_hw") and action_type == "death" then
 				local unit_id = self._unit:id()

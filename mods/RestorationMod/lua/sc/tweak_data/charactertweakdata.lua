@@ -11054,7 +11054,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"r870_taser",
 			"oicw",
 			"hmg_spring",
-			"smoke"
+			"smoke",
+			"ak47_ass_elite",
+			"asval_smg_elite"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11099,7 +11101,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw"),
 			Idstring("units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini"),
-			Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke")
+			Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
+			Idstring("units/payday2/weapons/wpn_npc_g36/wpn_npc_g36"),
+			Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval")
 		}
 	end
 
@@ -11199,8 +11203,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
 	end
 
@@ -11300,8 +11303,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")	
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")	
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 	end
 
@@ -11401,8 +11403,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 	end
 
@@ -11502,8 +11503,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 	end
 
@@ -11611,8 +11611,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 	end
 
@@ -11720,8 +11719,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
 	end
 
@@ -11765,8 +11763,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
 	end
 
@@ -11826,8 +11823,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[25] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
-		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")	
+		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
 	end
 

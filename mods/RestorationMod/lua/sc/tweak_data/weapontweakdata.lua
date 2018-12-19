@@ -624,6 +624,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
 		self.m4_secondary_npc.use_data.selection_index = 1
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
+		self.ak47_ass_npc.sounds.prefix = "akm_npc"
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.auto.fire_rate = 0.1
 		self.sg417_npc.CLIP_AMMO_MAX = 20
@@ -755,13 +756,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ump_npc.CLIP_AMMO_MAX = 25
 		self.ump_npc.suppression = 2.8
 		self.asval_smg_npc = deep_clone(self.mp5_npc)
-		self.asval_smg_npc.DAMAGE = 7.5
+		self.asval_smg_npc.DAMAGE = 2.8
 		self.asval_smg_npc.has_suppressor = "suppressed_a"
-		self.asval_smg_npc.auto.fire_rate = 0.07843137254
-		self.asval_smg_npc.CLIP_AMMO_MAX = 20
-		self.asval_smg_npc.suppression = 0.4
-		self.asval_smg_npc.usage = "m4"
+		self.asval_smg_npc.auto.fire_rate = 0.083
+		self.asval_smg_npc.CLIP_AMMO_MAX = 25
+		self.asval_smg_npc.suppression = 2.8
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
+		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()
@@ -1202,9 +1203,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.titan_trail = true
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
-		self.asval_smg_npc = deep_clone(self.scar_npc)
-		self.asval_smg_npc.has_suppressor = "suppressed_a"
-		self.asval_smg_npc.auto.fire_rate = 0.07843137254
 	end
 
 	function WeaponTweakData:_init_data_m249_npc()
@@ -8714,7 +8712,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.storm then
 
 			--MX4
-			self.storm.tactical_reload = true
+			self.storm.tactical_reload = 1
 			self.storm.categories = {"pistol"}
 			self.storm.use_data.selection_index = 2
 			self.storm.recategorize = "pistol_carbine"
@@ -8756,7 +8754,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.hcar then
 
-			self.hcar.tactical_reload = true
+			self.hcar.tactical_reload = 1
 			self.hcar.categories = {
 				"lmg",
 				"smg"
@@ -8798,7 +8796,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.tilt then
 
-			self.tilt.tactical_reload = true
+			self.tilt.tactical_reload = 1
 			self.tilt.AMMO_MAX = 150
 			self.tilt.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.tilt.spread.standing = 3
@@ -8831,7 +8829,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end				
 
 		if self.g3m203 then
-		self.g3m203.tactical_reload = true
+		self.g3m203.tactical_reload = 1
 		self.g3m203.AMMO_MAX = 120
 		self.g3m203.CLIP_AMMO_MAX = 30
 		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8865,7 +8863,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.evo then
 
 			self.evo.use_data.selection_index = 2
-			self.evo.tactical_reload = true
+			self.evo.tactical_reload = 1
 			self.evo.categories = {
 				"smg"
 			}
@@ -8905,7 +8903,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.scarl then
-			self.scarl.tactical_reload = true
+			self.scarl.tactical_reload = 1
 			self.scarl.fire_mode_data.fire_rate = 0.096
 			self.scarl.AMMO_MAX = 120
 			self.scarl.AMMO_PICKUP = self:_pickup_chance(120, 2)

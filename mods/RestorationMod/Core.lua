@@ -70,7 +70,6 @@ if not _G.restoration then
 		"big"
 	}
 	_G.restoration.captain_stelf = {
-		"branchbank"
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

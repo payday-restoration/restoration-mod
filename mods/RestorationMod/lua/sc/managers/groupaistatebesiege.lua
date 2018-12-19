@@ -6,7 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	-- Example contents with haphazardly chosen cooldowns, add more group types and adjust as desired
 	local group_cooldowns = {
 		Cap_Spring = 2700,
-		Cap_Summers = 2700
+		Cap_Summers = 2700,
 		Cap_Autumn = 900
 	}
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"

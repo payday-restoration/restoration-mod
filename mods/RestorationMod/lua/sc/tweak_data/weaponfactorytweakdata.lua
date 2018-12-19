@@ -40404,6 +40404,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end
+		if self.wpn_fps_ass_tilt then
+			self.wpn_fps_ass_tilt.override = {
+				wpn_fps_ass_tilt_a_fuerte = {
+					stats = {
+						value = 10,
+						damage = 10,
+						total_ammo_mod = -20,
+						suppression = -1,
+						alert_size = -1,
+						recoil = -1,
+						spread = 1
+						},	
+					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 0.923},
+				}
+			}	
+		end		
 		if self.wpn_fps_lmg_ultimax then
 			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"

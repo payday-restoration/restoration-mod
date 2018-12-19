@@ -8796,8 +8796,42 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		end		
 
-		if self.g3m203 then
+		if self.tilt then
 
+			self.tilt.tactical_reload = true
+			self.tilt.AMMO_MAX = 150
+			self.tilt.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.tilt.spread.standing = 3
+			self.tilt.spread.crouching = 2
+			self.tilt.spread.steelsight = 1
+			self.tilt.spread.moving_standing = 4
+			self.tilt.spread.moving_crouching = 3
+			self.tilt.spread.moving_steelsight = 2
+			self.tilt.fire_mode_data.fire_rate = 0.0923076923
+			self.tilt.auto.fire_rate = 0.0923076923
+			self.tilt.kick.standing = self.new_m4.kick.standing
+			self.tilt.kick.crouching = self.new_m4.kick.standing
+			self.tilt.kick.steelsight = self.new_m4.kick.standing
+			self.tilt.stats = {
+				damage = 35,
+				spread = 15,
+				recoil = 19,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 16,
+				suppression = 7,
+				alert_size = 7,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.tilt.panic_suppression_chance = 0.1
+
+		end				
+
+		if self.g3m203 then
+		self.g3m203.tactical_reload = true
 		self.g3m203.AMMO_MAX = 120
 		self.g3m203.CLIP_AMMO_MAX = 30
 		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8871,7 +8905,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.scarl then
-
+			self.scarl.tactical_reload = true
 			self.scarl.fire_mode_data.fire_rate = 0.096
 			self.scarl.AMMO_MAX = 120
 			self.scarl.AMMO_PICKUP = self:_pickup_chance(120, 2)

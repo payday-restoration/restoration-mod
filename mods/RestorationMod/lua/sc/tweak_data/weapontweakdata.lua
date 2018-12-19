@@ -4904,8 +4904,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.CAN_TOGGLE_FIREMODE = false
 		self.spas12.single = {}
 		self.spas12.single.fire_rate = 0.13953488372
-		self.spas12.damage_near = 700
-		self.spas12.damage_far = 1400
+		self.spas12.damage_near = 600
+		self.spas12.damage_far = 1200
 		self.spas12.spread.standing = 3
 		self.spas12.spread.crouching = 2
 		self.spas12.spread.steelsight = 1
@@ -4917,8 +4917,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.kick.steelsight = self.new_m4.kick.standing
 		self.spas12.stats = {
 			damage = 70,
-			spread = 7,
-			recoil = 17,
+			spread = 6,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 14,

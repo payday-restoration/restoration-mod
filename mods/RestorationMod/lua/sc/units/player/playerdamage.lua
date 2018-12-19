@@ -371,14 +371,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function PlayerDamage:revive(helped_self)
+	function PlayerDamage:revive(silent)
 		if Application:digest_value(self._revives, false) == 0 then
 			self._revive_health_multiplier = nil
 			return
 		end
 		local arrested = self:arrested()
 		managers.player:set_player_state("standard")
-		if not helped_self then
+		if not silent then
 			PlayerStandard.say_line(self, "s05x_sin")
 		end
 		self._bleed_out = false

@@ -8610,7 +8610,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.scar_m203 then
-
+			self.scar_m203.tactical_reload = 1
 			self.scar_m203.fire_mode_data.fire_rate = 0.096
 			self.scar_m203.AMMO_MAX = 120
 			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8678,7 +8678,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.yayo then
-
+			self.yayo.tactical_reload = 1
 			self.yayo.fire_mode_data.fire_rate = 0.08571428571
 			self.yayo.AMMO_MAX = 150
 			self.yayo.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -8793,6 +8793,108 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hcar.panic_suppression_chance = 0.1
 
 		end		
+
+		if self.owen then
+		self.owen.fire_mode_data.fire_rate = 0.0857
+		self.owen.auto.fire_rate = 0.0857
+		self.owen.AMMO_MAX = 99
+		self.owen.CLIP_AMMO_MAX = 33
+		self.owen.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.owen.spread.standing = 3
+		self.owen.spread.crouching = 2
+		self.owen.spread.steelsight = 1
+		self.owen.spread.moving_standing = 4
+		self.owen.spread.moving_crouching = 3
+		self.owen.spread.moving_steelsight = 2
+		self.owen.kick.standing = self.new_m4.kick.standing
+		self.owen.kick.crouching = self.new_m4.kick.standing
+		self.owen.kick.steelsight = self.new_m4.kick.standing
+		self.owen.stats = {
+			damage = 45,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 14,
+			zoom = 3,
+			concealment = 24,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.owen.panic_suppression_chance = 0.1
+		
+		end		
+
+		if self.hk416 then
+			self.hk416.tactical_reload = 1		
+			self.hk416.AMMO_MAX = 120
+			self.hk416.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.hk416.spread.standing = 3
+			self.hk416.spread.crouching = 2
+			self.hk416.spread.steelsight = 1
+			self.hk416.spread.moving_standing = 4
+			self.hk416.fire_mode_data.fire_rate = 0.08571428571
+			self.hk416.auto.fire_rate = 0.08571428571
+			self.hk416.spread.moving_crouching = 3
+			self.hk416.spread.moving_steelsight = 2
+			self.hk416.kick.standing = self.new_m4.kick.standing
+			self.hk416.kick.crouching = self.new_m4.kick.standing
+			self.hk416.kick.steelsight = self.new_m4.kick.standing
+			self.hk416.stats = {
+				damage = 29,
+				spread = 14,
+				recoil = 19,
+				spread_moving = 7,
+				zoom = 3,
+				concealment = 22,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.hk416.panic_suppression_chance = 0.0
+
+		end						
+
+		if self.f2000 then
+		self.f2000.tactical_reload = 1		
+		self.f2000.CLIP_AMMO_MAX = 30
+		self.f2000.AMMO_MAX = 180
+		self.f2000.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.f2000.fire_mode_data.fire_rate = 0.07058823529
+		self.f2000.CAN_TOGGLE_FIREMODE = true
+		self.f2000.auto = {}
+		self.f2000.auto.fire_rate = 0.07058823529
+		self.f2000.spread.standing = 3
+		self.f2000.spread.crouching = 2
+		self.f2000.spread.steelsight = 1
+		self.f2000.spread.moving_standing = 4
+		self.f2000.spread.moving_crouching = 3
+		self.f2000.spread.moving_steelsight = 2
+		self.f2000.kick.standing = self.new_m4.kick.standing
+		self.f2000.kick.crouching = self.new_m4.kick.standing
+		self.f2000.kick.steelsight = self.new_m4.kick.standing
+		self.f2000.stats = {
+			damage = 29,
+			spread = 15,
+			recoil = 22,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 21,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.f2000.panic_suppression_chance = 0.0		
+		
+		end				
 
 		if self.tilt then
 

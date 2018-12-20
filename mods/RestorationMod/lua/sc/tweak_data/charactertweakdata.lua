@@ -490,7 +490,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.chatter = presets.enemy_chatter.swat
 		self.swat.melee_weapon = nil
 		self.swat.melee_weapon_dmg_multiplier = 1
-		self.swat.die_sound_event = "x01a_any_3p"
+		if job == "mad" then
+		    self.swat.die_sound_event = "l4n_x01a_any_3p"
+		else	
+		    self.swat.die_sound_event = "x01a_any_3p"
+		end	
 		if job == "chill_combat" then
 			self.swat.steal_loot = true
 		else
@@ -878,7 +882,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.unintimidateable = true
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
-		self.city_swat_titan.die_sound_event = nil
+		if job == "mad" then
+		   self.city_swat_titan.die_sound_event = "l4n_x01a_any_3p"
+		else
+		   self.city_swat_titan.die_sound_event = nil
+		end
 		self.city_swat_titan.static_melee_preset = true	
 		self.city_swat_titan.dodge_with_grenade = {
 			smoke = {duration = {

@@ -8877,9 +8877,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}		
 		self.owen.fire_mode_data.fire_rate = 0.0857
 		self.owen.auto.fire_rate = 0.0857
-		self.owen.AMMO_MAX = 99
+		self.owen.AMMO_MAX = 120
 		self.owen.CLIP_AMMO_MAX = 33
-		self.owen.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.owen.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.owen.spread.standing = 3
 		self.owen.spread.crouching = 2
 		self.owen.spread.steelsight = 1
@@ -8913,11 +8913,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cbjms.categories = {
 				"smg"
 			}		
-		self.cbjms.CLIP_AMMO_MAX = 30
-		self.cbjms.auto.fire_rate = 0.0857
-		self.cbjms.fire_mode_data.fire_rate = 0.0857
 		self.cbjms.AMMO_MAX = 150
+		self.cbjms.CLIP_AMMO_MAX = 30		
 		self.cbjms.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.cbjms.fire_mode_data.fire_rate = 0.0857
+		self.cbjms.auto.fire_rate = 0.0857
+		self.cbjms.panic_suppression_chance = 0.1
 		self.cbjms.spread.standing = 3
 		self.cbjms.spread.crouching = 2
 		self.cbjms.spread.steelsight = 1
@@ -8928,12 +8929,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cbjms.kick.crouching = self.new_m4.kick.standing
 		self.cbjms.kick.steelsight = self.new_m4.kick.standing
 		self.cbjms.stats = {
-			damage = 29,
-			spread = 12,
+			damage = 22,
+			spread = 14,
 			recoil = 23,
-			spread_moving = 8,
+			spread_moving = 9,
 			zoom = 3,
-			concealment = 26,
+			concealment = 25,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 51,
@@ -8962,14 +8963,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tm1a1.spread.moving_crouching = 3
 		self.tm1a1.spread.moving_steelsight = 2
 		self.tm1a1.CLIP_AMMO_MAX = 20
-		self.tm1a1.AMMO_MAX = 120
-		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.tm1a1.AMMO_MAX = 150
+		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.tm1a1.kick.standing = self.new_m4.kick.standing
 		self.tm1a1.kick.crouching = self.new_m4.kick.standing
 		self.tm1a1.kick.steelsight = self.new_m4.kick.standing
 		self.tm1a1.panic_suppression_chance = 0.1
 		self.tm1a1.stats = {
-			damage = 30,
+			damage = 29,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 6,
@@ -8988,8 +8989,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.hk416 then
 			self.hk416.tactical_reload = 1		
-			self.hk416.AMMO_MAX = 120
-			self.hk416.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.hk416.AMMO_MAX = 150
+			self.hk416.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.hk416.spread.standing = 3
 			self.hk416.spread.crouching = 2
 			self.hk416.spread.steelsight = 1

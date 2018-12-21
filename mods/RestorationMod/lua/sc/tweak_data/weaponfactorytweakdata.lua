@@ -40364,6 +40364,77 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end		
+	-- Silent Enforcer's Owen Gun		
+		if self.wpn_fps_smg_owen then
+			self.wpn_fps_smg_owen.override = {
+				wpn_fps_smg_owen_m_double = {
+				stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					},					
+				},
+				wpn_fps_smg_owen_sling = {
+					stats = {
+						value = 1
+					},					
+				},
+				wpn_fps_smg_owen_b_43 = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = -1,
+						concealment = -2
+					},					
+				}
+			}	
+		end			
+	-- Killerwolf's Thompson
+		if self.wpn_fps_smg_tm1a1 then
+			self.wpn_fps_smg_tm1a1.override = {
+				wpn_fps_smg_tm1a1_ns_cutts = {
+				stats = {
+					value = 5,
+					damage = 5,
+					recoil = -1,
+					spread = 2,
+					concealment = -4
+					},					
+				},
+				wpn_fps_smg_tm1a1_ns_ext = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = 1,
+						recoil = -1 --gotta some kinda a trade off
+					},					
+				},
+				wpn_fps_smg_tm1a1_b_standard = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = 1,
+						concealment = 2
+					},					
+				}
+			}	
+		end			
+	-- >:3's Cee Bee Jay Em Ess
+		if self.wpn_fps_smg_cbjms then
+			self.wpn_fps_smg_cbjms.override = {
+				wpn_fps_upg_cbjms_ammo_cbj = { --are you ready to le
+				stats = {
+					value = 5,
+					damage = 5,
+					recoil = -2,
+					concealment = -3,
+					total_ammo_mod = -20
+					},	
+					custom_stats = {armor_piercing_add = 0.75},	
+				}
+			}	
+		end								
 	-- >:3's HK416		
 		if self.wpn_fps_ass_hk416 then
 			self.wpn_fps_ass_hk416.override = {

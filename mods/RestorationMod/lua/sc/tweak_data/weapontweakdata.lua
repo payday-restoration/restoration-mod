@@ -8795,7 +8795,86 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		end		
 
+		if self.toz194 then
+		self.toz194.rays = 9
+		self.toz194.CLIP_AMMO_MAX = 8
+		self.toz194.spread.standing = 3
+		self.toz194.spread.crouching = 2
+		self.toz194.spread.steelsight = 1
+		self.toz194.spread.moving_standing = 4
+		self.toz194.spread.moving_crouching = 3
+		self.toz194.spread.moving_steelsight = 2
+		self.toz194.kick.standing = self.new_m4.kick.standing
+		self.toz194.kick.crouching = self.new_m4.kick.standing
+		self.toz194.kick.steelsight = self.new_m4.kick.standing
+		self.toz194.single.fire_rate = 0.5
+		self.toz194.fire_mode_data.fire_rate = 0.5
+		self.toz194.AMMO_MAX = 60
+		self.toz194.damage_near = 800
+		self.toz194.damage_far = 1600
+		self.toz194.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.toz194.stats = {
+			damage = 95,
+			spread = 8,
+			recoil = 17,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 11,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.toz194.stats_modifiers = {damage = 1}
+		self.toz194.panic_suppression_chance = 0.0
+		
+		end				
+
+	if self.trench then
+		self.trench.AMMO_MAX = 40
+		self.trench.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.trench.CLIP_AMMO_MAX = 5
+		self.trench.damage_near = 800
+		self.trench.damage_far = 1600
+		self.trench.fire_mode_data.fire_rate = 0.75
+		self.trench.single.fire_rate = 0.75
+		self.trench.rays = 9
+		self.trench.spread.standing = 3
+		self.trench.spread.crouching = 2
+		self.trench.spread.steelsight = 1
+		self.trench.spread.moving_standing = 4
+		self.trench.spread.moving_crouching = 3
+		self.trench.spread.moving_steelsight = 2
+		self.trench.kick.standing = self.huntsman.kick.standing
+		self.trench.kick.crouching = self.huntsman.kick.standing
+		self.trench.kick.steelsight = self.huntsman.kick.standing
+		self.trench.timers.shotgun_reload_first_shell_offset = 0.12
+		self.trench.stats = {
+			damage = 145,
+			spread = 8,
+			recoil = 15,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 7,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.trench.panic_suppression_chance = 0.0
+		self.trench.stats_modifiers = {damage = 1}
+		end									
+
 		if self.owen then
+		self.owen.use_data.selection_index = 2
+		self.owen.tactical_reload = 1
+		self.owen.categories = {
+				"smg"
+			}		
 		self.owen.fire_mode_data.fire_rate = 0.0857
 		self.owen.auto.fire_rate = 0.0857
 		self.owen.AMMO_MAX = 99
@@ -8826,7 +8905,86 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.owen.panic_suppression_chance = 0.1
 		
-		end		
+		end	
+
+		if self.cbjms then --FUG :-DDDDDD
+		self.cbjms.use_data.selection_index = 2
+		self.cbjms.tactical_reload = 1
+		self.cbjms.categories = {
+				"smg"
+			}		
+		self.cbjms.CLIP_AMMO_MAX = 30
+		self.cbjms.auto.fire_rate = 0.0857
+		self.cbjms.fire_mode_data.fire_rate = 0.0857
+		self.cbjms.AMMO_MAX = 150
+		self.cbjms.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.cbjms.spread.standing = 3
+		self.cbjms.spread.crouching = 2
+		self.cbjms.spread.steelsight = 1
+		self.cbjms.spread.moving_standing = 4
+		self.cbjms.spread.moving_crouching = 3
+		self.cbjms.spread.moving_steelsight = 2
+		self.cbjms.kick.standing = self.new_m4.kick.standing
+		self.cbjms.kick.crouching = self.new_m4.kick.standing
+		self.cbjms.kick.steelsight = self.new_m4.kick.standing
+		self.cbjms.stats = {
+			damage = 29,
+			spread = 12,
+			recoil = 23,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.cbjms.panic_suppression_chance = 0.1
+		
+		end			
+
+		if self.tm1a1 then
+		self.tm1a1.use_data.selection_index = 2
+		self.tm1a1.categories = {
+				"smg"
+			}		
+		self.tm1a1.fire_mode_data.fire_rate = 0.085
+		self.tm1a1.CAN_TOGGLE_FIREMODE = true
+		self.tm1a1.auto = {}
+		self.tm1a1.auto.fire_rate = 0.085
+		self.tm1a1.spread = {}
+		self.tm1a1.spread.standing = 3
+		self.tm1a1.spread.crouching = 2
+		self.tm1a1.spread.steelsight = 1
+		self.tm1a1.spread.moving_standing = 4
+		self.tm1a1.spread.moving_crouching = 3
+		self.tm1a1.spread.moving_steelsight = 2
+		self.tm1a1.CLIP_AMMO_MAX = 20
+		self.tm1a1.AMMO_MAX = 120
+		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.tm1a1.kick.standing = self.new_m4.kick.standing
+		self.tm1a1.kick.crouching = self.new_m4.kick.standing
+		self.tm1a1.kick.steelsight = self.new_m4.kick.standing
+		self.tm1a1.panic_suppression_chance = 0.1
+		self.tm1a1.stats = {
+			damage = 30,
+			spread = 16,
+			recoil = 18,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 18,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.tm1a1.panic_suppression_chance = 0.1
+		
+		end				
 
 		if self.hk416 then
 			self.hk416.tactical_reload = 1		

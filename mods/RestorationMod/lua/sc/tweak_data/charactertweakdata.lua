@@ -11066,7 +11066,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"smoke",
 			"ak47_ass_elite",
 			"asval_smg_elite",
-			"ak47_ass_boom"
+			"ak47_ass_boom",
+			"autumn_smg"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11114,7 +11115,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
 			Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47"),
 			Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval"),
-			Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom")
+			Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
+			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx")
 		}
 	end
 

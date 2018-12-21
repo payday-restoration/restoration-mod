@@ -468,6 +468,13 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_glow_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_head_glow_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_cloak_glow_df" force="false"/>
+	
+	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<model path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<object path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<sequence_manager path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
 
 	<!--Veteran Cop-->	
 	<object path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>

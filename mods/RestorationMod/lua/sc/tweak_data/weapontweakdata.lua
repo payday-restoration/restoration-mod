@@ -763,6 +763,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.asval_smg_npc.suppression = 2.8
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
+		self.mpx_npc = deep_clone(self.mp5_npc)
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()
@@ -8964,6 +8965,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.evo then
 
+			self.evo.sounds.fire = "mp5_fire_single"
+			self.evo.sounds.fire_single = "mp5_fire_single"
+			self.evo.sounds.fire_auto = "mp5_fire"
+			self.evo.sounds.stop_fire = "mp5_stop"		
 			self.evo.use_data.selection_index = 2
 			self.evo.tactical_reload = 1
 			self.evo.categories = {
@@ -9001,7 +9006,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.evo.panic_suppression_chance = 0.1
-
+			self.x_evo.use_data.selection_index = 4
 		end
 
 		if self.scarl then

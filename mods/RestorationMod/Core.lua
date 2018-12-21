@@ -60,7 +60,6 @@ if not _G.restoration then
 		"rvd1"
 	}
 	_G.restoration.captain_murderdozer = {
-		"branchbank",
 		"pal",
 		"firestarter_2",
 		"framing_frame_3",
@@ -69,6 +68,8 @@ if not _G.restoration then
 		"rat",	
 		"flat",
 		"big"
+	}
+	_G.restoration.captain_stelf = {
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

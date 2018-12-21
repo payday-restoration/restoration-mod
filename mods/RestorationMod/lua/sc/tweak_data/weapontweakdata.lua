@@ -624,6 +624,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
 		self.m4_secondary_npc.use_data.selection_index = 1
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
+		self.ak47_ass_npc.sounds.prefix = "akm_npc"
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.auto.fire_rate = 0.1
 		self.sg417_npc.CLIP_AMMO_MAX = 20
@@ -755,13 +756,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ump_npc.CLIP_AMMO_MAX = 25
 		self.ump_npc.suppression = 2.8
 		self.asval_smg_npc = deep_clone(self.mp5_npc)
-		self.asval_smg_npc.DAMAGE = 7.5
+		self.asval_smg_npc.DAMAGE = 2.8
 		self.asval_smg_npc.has_suppressor = "suppressed_a"
-		self.asval_smg_npc.auto.fire_rate = 0.07843137254
-		self.asval_smg_npc.CLIP_AMMO_MAX = 20
-		self.asval_smg_npc.suppression = 0.4
-		self.asval_smg_npc.usage = "m4"
+		self.asval_smg_npc.auto.fire_rate = 0.083
+		self.asval_smg_npc.CLIP_AMMO_MAX = 25
+		self.asval_smg_npc.suppression = 2.8
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
+		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
+		self.mpx_npc = deep_clone(self.mp5_npc)
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()
@@ -1202,9 +1204,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.titan_trail = true
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
-		self.asval_smg_npc = deep_clone(self.scar_npc)
-		self.asval_smg_npc.has_suppressor = "suppressed_a"
-		self.asval_smg_npc.auto.fire_rate = 0.07843137254
 	end
 
 	function WeaponTweakData:_init_data_m249_npc()
@@ -4904,8 +4903,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.CAN_TOGGLE_FIREMODE = false
 		self.spas12.single = {}
 		self.spas12.single.fire_rate = 0.13953488372
-		self.spas12.damage_near = 700
-		self.spas12.damage_far = 1400
+		self.spas12.damage_near = 600
+		self.spas12.damage_far = 1200
 		self.spas12.spread.standing = 3
 		self.spas12.spread.crouching = 2
 		self.spas12.spread.steelsight = 1
@@ -4917,8 +4916,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.kick.steelsight = self.new_m4.kick.standing
 		self.spas12.stats = {
 			damage = 70,
-			spread = 7,
-			recoil = 17,
+			spread = 6,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 14,
@@ -8612,7 +8611,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.scar_m203 then
-
+			self.scar_m203.tactical_reload = 1
 			self.scar_m203.fire_mode_data.fire_rate = 0.096
 			self.scar_m203.AMMO_MAX = 120
 			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8680,7 +8679,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.yayo then
-
+			self.yayo.tactical_reload = 1
 			self.yayo.fire_mode_data.fire_rate = 0.08571428571
 			self.yayo.AMMO_MAX = 150
 			self.yayo.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -8714,7 +8713,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.storm then
 
 			--MX4
-			self.storm.tactical_reload = true
+			self.storm.tactical_reload = 1
 			self.storm.categories = {"pistol"}
 			self.storm.use_data.selection_index = 2
 			self.storm.recategorize = "pistol_carbine"
@@ -8756,7 +8755,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.hcar then
 
-			self.hcar.tactical_reload = true
+			self.hcar.tactical_reload = 1
 			self.hcar.categories = {
 				"lmg",
 				"smg"
@@ -8796,8 +8795,144 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		end		
 
-		if self.g3m203 then
+		if self.owen then
+		self.owen.fire_mode_data.fire_rate = 0.0857
+		self.owen.auto.fire_rate = 0.0857
+		self.owen.AMMO_MAX = 99
+		self.owen.CLIP_AMMO_MAX = 33
+		self.owen.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.owen.spread.standing = 3
+		self.owen.spread.crouching = 2
+		self.owen.spread.steelsight = 1
+		self.owen.spread.moving_standing = 4
+		self.owen.spread.moving_crouching = 3
+		self.owen.spread.moving_steelsight = 2
+		self.owen.kick.standing = self.new_m4.kick.standing
+		self.owen.kick.crouching = self.new_m4.kick.standing
+		self.owen.kick.steelsight = self.new_m4.kick.standing
+		self.owen.stats = {
+			damage = 45,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 14,
+			zoom = 3,
+			concealment = 24,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.owen.panic_suppression_chance = 0.1
+		
+		end		
 
+		if self.hk416 then
+			self.hk416.tactical_reload = 1		
+			self.hk416.AMMO_MAX = 120
+			self.hk416.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.hk416.spread.standing = 3
+			self.hk416.spread.crouching = 2
+			self.hk416.spread.steelsight = 1
+			self.hk416.spread.moving_standing = 4
+			self.hk416.fire_mode_data.fire_rate = 0.08571428571
+			self.hk416.auto.fire_rate = 0.08571428571
+			self.hk416.spread.moving_crouching = 3
+			self.hk416.spread.moving_steelsight = 2
+			self.hk416.kick.standing = self.new_m4.kick.standing
+			self.hk416.kick.crouching = self.new_m4.kick.standing
+			self.hk416.kick.steelsight = self.new_m4.kick.standing
+			self.hk416.stats = {
+				damage = 29,
+				spread = 14,
+				recoil = 19,
+				spread_moving = 7,
+				zoom = 3,
+				concealment = 22,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.hk416.panic_suppression_chance = 0.0
+
+		end						
+
+		if self.f2000 then
+		self.f2000.tactical_reload = 1		
+		self.f2000.CLIP_AMMO_MAX = 30
+		self.f2000.AMMO_MAX = 180
+		self.f2000.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.f2000.fire_mode_data.fire_rate = 0.07058823529
+		self.f2000.CAN_TOGGLE_FIREMODE = true
+		self.f2000.auto = {}
+		self.f2000.auto.fire_rate = 0.07058823529
+		self.f2000.spread.standing = 3
+		self.f2000.spread.crouching = 2
+		self.f2000.spread.steelsight = 1
+		self.f2000.spread.moving_standing = 4
+		self.f2000.spread.moving_crouching = 3
+		self.f2000.spread.moving_steelsight = 2
+		self.f2000.kick.standing = self.new_m4.kick.standing
+		self.f2000.kick.crouching = self.new_m4.kick.standing
+		self.f2000.kick.steelsight = self.new_m4.kick.standing
+		self.f2000.stats = {
+			damage = 29,
+			spread = 15,
+			recoil = 22,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 21,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.f2000.panic_suppression_chance = 0.0		
+		
+		end				
+
+		if self.tilt then
+
+			self.tilt.tactical_reload = 1
+			self.tilt.AMMO_MAX = 150
+			self.tilt.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.tilt.spread.standing = 3
+			self.tilt.spread.crouching = 2
+			self.tilt.spread.steelsight = 1
+			self.tilt.spread.moving_standing = 4
+			self.tilt.spread.moving_crouching = 3
+			self.tilt.spread.moving_steelsight = 2
+			self.tilt.fire_mode_data.fire_rate = 0.0923076923
+			self.tilt.auto.fire_rate = 0.0923076923
+			self.tilt.kick.standing = self.new_m4.kick.standing
+			self.tilt.kick.crouching = self.new_m4.kick.standing
+			self.tilt.kick.steelsight = self.new_m4.kick.standing
+			self.tilt.stats = {
+				damage = 35,
+				spread = 15,
+				recoil = 19,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 16,
+				suppression = 7,
+				alert_size = 7,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.tilt.panic_suppression_chance = 0.1
+
+		end				
+
+		if self.g3m203 then
+		self.g3m203.tactical_reload = 1
 		self.g3m203.AMMO_MAX = 120
 		self.g3m203.CLIP_AMMO_MAX = 30
 		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8830,8 +8965,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.evo then
 
+			self.evo.sounds.fire = "mp5_fire_single"
+			self.evo.sounds.fire_single = "mp5_fire_single"
+			self.evo.sounds.fire_auto = "mp5_fire"
+			self.evo.sounds.stop_fire = "mp5_stop"		
 			self.evo.use_data.selection_index = 2
-			self.evo.tactical_reload = true
+			self.evo.tactical_reload = 1
 			self.evo.categories = {
 				"smg"
 			}
@@ -8867,11 +9006,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.evo.panic_suppression_chance = 0.1
-
+			self.x_evo.use_data.selection_index = 4
 		end
 
 		if self.scarl then
-
+			self.scarl.tactical_reload = 1
 			self.scarl.fire_mode_data.fire_rate = 0.096
 			self.scarl.AMMO_MAX = 120
 			self.scarl.AMMO_PICKUP = self:_pickup_chance(120, 2)

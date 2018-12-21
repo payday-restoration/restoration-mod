@@ -10,6 +10,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -20,6 +21,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -30,6 +32,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -40,6 +43,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -50,6 +54,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -60,6 +65,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -70,6 +76,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -80,6 +87,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -90,6 +98,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -100,6 +109,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -110,6 +120,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -120,6 +131,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -130,6 +142,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -140,6 +153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -150,6 +164,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -160,6 +175,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -170,6 +186,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -180,6 +197,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -190,6 +208,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -200,6 +219,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			},
 			{
@@ -210,6 +230,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shield = 5,
 				medic = 3,
 				spring = 1,
+				autumn = 1,
 				summers = 1
 			}
 		}

@@ -36,19 +36,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_m4_upg_m_quick",
 			"wpn_fps_upg_m4_g_standard_vanilla"
 		}
-		self.wpn_fps_smg_olympic_npc_omnia_lpf = deep_clone(self.wpn_fps_smg_olympic_npc)
-		self.wpn_fps_smg_olympic_npc_omnia_lpf.default_blueprint = {
-			"wpn_fps_m4_uupg_draghandle",
-			"wpn_fps_upg_m4_g_standard_vanilla",
-			"wpn_fps_m4_uupg_b_medium_vanilla",
-			"wpn_fps_m4_upper_reciever_round",
-			"wpn_fps_m4_lower_reciever",
-			"wpn_fps_smg_olympic_fg_olympic",
-			"wpn_fps_upg_ass_ns_jprifles",
-			"wpn_fps_upg_m4_m_drum",
-			"wpn_fps_ass_m16_o_handle_sight",
-			"wpn_fps_smg_olympic_s_short"
-		}
 		self.wpn_fps_smg_p90_npc_summers = deep_clone(self.wpn_fps_smg_p90_npc)
 		self.wpn_fps_smg_p90_npc_summers.default_blueprint = {
 			"wpn_fps_smg_p90_body_p90",
@@ -39935,7 +39922,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--})
 	end
 
-	--Yayo
+	--Montana 5.56
 	if self.wpn_fps_ass_yayo then
 
 		self.parts.wpn_fps_ass_yayo_fg_rail.stats = {
@@ -40339,6 +40326,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end
+	-- >:3's SCAR-L		
 		if self.wpn_fps_ass_scarl then
 			self.wpn_fps_ass_scarl.override = {
 				wpn_fps_upg_scarl_mag_pull_assist = {
@@ -40376,7 +40364,36 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end		
-		
+	-- >:3's HK416		
+		if self.wpn_fps_ass_hk416 then
+			self.wpn_fps_ass_hk416.override = {
+				wpn_fps_upg_hk416_mag_pull_assist = {
+				stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					},					
+				},
+				wpn_fps_upg_hk416_barrel_short = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = -1,
+						concealment = 2
+					},					
+				},
+				wpn_fps_upg_hk416_barrel_long = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = 1,
+						concealment = -2
+				},					
+			}
+		}	
+		end				
+	-- >:3's G3/M203				
 		if self.wpn_fps_ass_g3m203 then
 			self.wpn_fps_ass_g3m203.override = {
 				wpn_fps_upg_g3m203_supp_socom762 = {
@@ -40404,6 +40421,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end
+	-- Grocery's AN-94				
+		if self.wpn_fps_ass_tilt then
+			self.wpn_fps_ass_tilt.override = {
+				wpn_fps_ass_tilt_a_fuerte = {
+					stats = {
+						value = 10,
+						damage = 10,
+						total_ammo_mod = -20,
+						suppression = -1,
+						alert_size = -1,
+						recoil = -1,
+						spread = 1
+						},	
+					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 0.923},
+				}
+			}	
+		end		
+	-- >:3's F2000				
+		if self.wpn_fps_ass_f2000 then
+			self.wpn_fps_ass_f2000.override = {
+				wpn_fps_f2000_uupg_barrel_long = {
+					stats = {
+						value = 4,
+						damage = 5,
+						spread = 1,
+						concealment = -2
+						},	
+					},
+				wpn_fps_f2000_uupg_mag_40 = {
+				stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					},					
+				},					
+			}	
+		end			
+	-- >:3's Ultimax						
 		if self.wpn_fps_lmg_ultimax then
 			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"

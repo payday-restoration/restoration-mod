@@ -396,6 +396,10 @@ if not tweak_data then return end
 				{"assault_rifle"}
 			}
 		}
+		
+		if SystemFS:exists("assets/mod_overrides/Scorpion Evo/main.xml") then
+			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})
+		end
 	end
 	
 	--Sounds of Animals Fighting--

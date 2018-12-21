@@ -6,39 +6,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	-- Example contents with haphazardly chosen cooldowns, add more group types and adjust as desired
 	local group_cooldowns = {
 		Cap_Spring = 2700,
-		Cap_Summers = 2700
+		Cap_Summers = 2700,
+		Cap_Autumn = 900
 	}
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	if difficulty_index == 4 then
 		group_cooldowns = {
 			Cap_Spring = 2700,
-			Cap_Summers = 2700
+			Cap_Summers = 2700,
+		    Cap_Autumn = 900
 		}
 	elseif difficulty_index == 5 then
 		group_cooldowns = {
 			Cap_Spring = 2700,
-			Cap_Summers = 2700
+			Cap_Summers = 2700,
+			Cap_Autumn = 900
 		}
 	elseif difficulty_index == 6 then
 		group_cooldowns = {
 			Cap_Spring = 2700,
-			Cap_Summers = 2700
+			Cap_Summers = 2700,
+			Cap_Autumn = 900
 		}
 	elseif difficulty_index == 7 then
 		group_cooldowns = {
 			Cap_Spring = 2700,
-			Cap_Summers = 2700
+			Cap_Summers = 2700,
+			Cap_Autumn = 900
 		}
 	elseif difficulty_index == 8 then
 		group_cooldowns = {
 			Cap_Spring = 2700,
-			Cap_Summers = 2700
+			Cap_Summers = 2700,
+			Cap_Autumn = 900
 		}
 	else
 		group_cooldowns = {
 			Cap_Spring = 2700,
-			Cap_Summers = 2700
+			Cap_Summers = 2700,
+			Cap_Autumn = 900
 		}
 	end
 	-- Ditto, adjust as desired. Affects all groups not listed in group_cooldowns above
@@ -84,6 +91,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		for _,j2 in ipairs(restoration.captain_murderdozer) do
+			if job == j2 then
+			found_shit = true
+				break
+			end
+		end
+		for _,j2 in ipairs(restoration.captain_stelf) do
 			if job == j2 then
 			found_shit = true
 				break

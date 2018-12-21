@@ -148,8 +148,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._taunt_after_assault = spooc_sound_events.taunt_after_assault or self._taunt_after_assault		
 		
 		if self._unit:base()._tweak_table == "autumn" then 
-			self._taunt_during_assault = "cpa_taunt_during_assault"
-			self._taunt_after_assault = "cpa_taunt_after_assault"
+			self._taunt_during_assault = "cloaker_taunt_during_assault"
+			self._taunt_after_assault = "cloaker_taunt_after_assault"
 		end
 		
 		return true

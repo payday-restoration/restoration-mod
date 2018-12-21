@@ -234,7 +234,6 @@
     <model path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1_husk"load="true"/>
-	<sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1" force="false"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1_contour"/>
 	
@@ -244,7 +243,6 @@
 	<model path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2_husk"load="true"/>
-	<sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2" force="false"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2_contour"/>	
 	
@@ -254,7 +252,6 @@
 	<model path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3_husk"load="true"/>
-	<sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3" force="false"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3_contour"/>
 	<!--dozer end please don't make me make debris SC-->
@@ -307,16 +304,20 @@
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump_husk" load="true"/>
 
 	<!--Akan Gensec Elite-->
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true"/>
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass_husk" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc_husk" load="true"/>
 
 	<!--Akan Gensec Shotgunner this is only here to fix a bug anyway-->
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true"/>
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870_husk" force="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc_husk" load="true"/>
 
 	<!--Akan UMP guy-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump" load="true"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump_husk" load="true"/>
+	
+	<!--Akan "SMG" cop-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc_husk" load="true"/>	
 
 	<!--Akan Blue Swat w/ Silenced SMG-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal" load="true"/>
@@ -467,6 +468,13 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_glow_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_head_glow_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_cloak_glow_df" force="false"/>
+	
+	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<model path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<object path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<sequence_manager path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
 
 	<!--Veteran Cop-->	
 	<object path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>

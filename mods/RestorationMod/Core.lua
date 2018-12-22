@@ -52,24 +52,22 @@ if not _G.restoration then
 		"big"
 	}
 	_G.restoration.captain_teamwork = {
-		"red2",
-		"pal",
-		"welcome_to_the_jungle_2",
-		"crojob2",
-		"firestarter_3",
-		"mad",
-		"jolly",
-		"rvd1"
+		"red2",--first world bank
+		"pal", --counterfeit 
+		"welcome_to_the_jungle_2", --big oil day 2
+		"crojob2", --bomb dockyard
+		"firestarter_3", --firestarter day 3
+		"jolly", --aftershock
+		"rvd1" --highland mortuary 
 	}
 	_G.restoration.captain_murderdozer = {
-		"firestarter_2",
-		"framing_frame_3",
-		"alex_2",
-		"rat",	
-		"arm_for",	
-		"mus",	
-		"friend",	
-		"big"
+		"firestarter_2", --firestarter day 2
+		"framing_frame_3", --framing frame day 3
+		"alex_2", --rats day 2
+		"rat",	--cook off
+		"arm_for",	--train heist
+		"mus",	--the diamond
+		"big" --big bank
 	}
 	_G.restoration.captain_stelf = {
 		--[["nightclub",

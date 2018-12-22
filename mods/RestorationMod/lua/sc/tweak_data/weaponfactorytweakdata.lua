@@ -40471,13 +40471,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	-- >:3's HX-25
 		if self.wpn_fps_gre_hx25 then
 			self.wpn_fps_gre_hx25.override = {
+				wpn_fps_upg_hx25_dragons_breath_ammo = {
+				stats = {
+						value = 5,
+						damage = 20,
+						total_ammo_mod = 40,	--can't seem to increase past 50.
+						spread = 2,
+						recoil = 1
+					},	
+					custom_stats = {rays = 12},	
+				},	
 				wpn_fps_upg_hx25_buckshot_ammo = { 
 				stats = {
 					value = 5,
 					damage = 90,
 					spread = 2,
-					total_ammo_mod = 4,					
-					recoil = 1
+					total_ammo_mod = 50,					
+					recoil = 1,
+					reload = 2
 					},	
 					custom_stats = {armor_piercing_add = 0.75, rays = 20},	
 				}
@@ -40507,7 +40518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						alert_size = 1,
 						total_ammo_mod = 25
 					},
-					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25},	
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, },	
 				}
 			}	
 		end

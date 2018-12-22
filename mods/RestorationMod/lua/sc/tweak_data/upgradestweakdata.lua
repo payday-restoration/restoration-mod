@@ -1000,10 +1000,11 @@ function UpgradesTweakData:_init_pd2_values()
 	}}
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
 
-	--Sociopath nerfs
+	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2.5}
 	self.values.player.killshot_close_regen_armor_bonus = {2.5}
 	self.values.player.killshot_close_panic_chance = {0.25}
+	self.values.player.melee_kill_life_leech = {0.02}
 	self.on_killshot_cooldown = 2
 
 	--Anarchist stuff--

@@ -877,7 +877,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##10%## health.\n\nThis cannot occur more than once every ##2## seconds.",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##25## armor.\n\nThis cannot occur more than once every ##2## seconds.",
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 

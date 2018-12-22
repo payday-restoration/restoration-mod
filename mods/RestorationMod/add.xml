@@ -584,7 +584,14 @@
 	<!--Fixed Sniper-->
 	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 
-	<!--National Guard (prolly could be pro job enemies - bob u still got classicbois?) -->
+	<!--FBI & SWAT Snipers (so you can shoot off their hat)-->	
+	<unit path="units/payday2/characters/ene_sniper_1/ene_sniper_1" load="true" force="true"/>
+	<unit path="units/payday2/characters/ene_sniper_1/ene_sniper_1_husk" load="true" force="true"/>
+
+	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2" load="true" force="true"/>
+	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2_husk" load="true" force="true"/>			
+
+	<!--National Guard -->
 	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>
 		
 	<!--Zeal Shield Heavy Swat-->
@@ -1452,7 +1459,7 @@
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
 	<model path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>			
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>	
 	
 	<!--nypd dozer stuff-->	
 	<!--green-->

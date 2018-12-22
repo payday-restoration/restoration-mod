@@ -47,29 +47,37 @@ if not _G.restoration then
 		"skm_red2",
 		"skm_run",
 		"skm_watchdogs_stage2",
+		"crojob2",
+		"mus",
 		"big"
 	}
 	_G.restoration.captain_teamwork = {
-		"nightclub",
+		"red2",
+		"pal",
 		"welcome_to_the_jungle_2",
-		"gallery",
-		"man",
+		"crojob2",
 		"firestarter_3",
 		"mad",
 		"jolly",
 		"rvd1"
 	}
 	_G.restoration.captain_murderdozer = {
-		"pal",
 		"firestarter_2",
 		"framing_frame_3",
-		"four_stores",
 		"alex_2",
 		"rat",	
-		"flat",
+		"arm_for",	
+		"mus",	
+		"friend",	
 		"big"
 	}
 	_G.restoration.captain_stelf = {
+		--[["nightclub",
+		"gallery",
+		"branchbank",
+		"dah",
+		"four_stores",
+		"family"]]--
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

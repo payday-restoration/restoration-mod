@@ -179,7 +179,7 @@
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_contour" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk" force="false" load="true"/>	
 
-	<!--OMNIA heavy helmet (it is ok to look at the inside of the helmet)-->
+	<!--OMNIA heavy helmet-->
 	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
 	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
@@ -473,6 +473,7 @@
 	<model path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<object path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_autumn_dead"/>	
 	<sequence_manager path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
 
@@ -707,6 +708,13 @@
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_df" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_nm" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false" load="true"/>	
+
+	<!--Omnia LPF Beret-->
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_omnia_beret/ene_acc_omnia_beret" load="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_omnia_beret/ene_acc_omnia_beret" force="false"/>
+	<object path="units/pd2_dlc_vip/characters/ene_acc_omnia_beret/ene_acc_omnia_beret" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_omnia_beret/ene_acc_omnia_beret" load="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_omnia_beret/ene_acc_omnia_beret" force="false"/>					
 	
 	<!--Omnia Buff Effect-->
 	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>

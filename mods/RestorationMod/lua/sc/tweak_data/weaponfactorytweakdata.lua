@@ -40477,10 +40477,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 20,
 						total_ammo_mod = 40,	--can't seem to increase past 50.
 						spread = 2,
-						recoil = 1
+						recoil = 1,
+						reload = 1	
+						
 					},	
-					custom_stats = {rays = 12},	
-				},	
+				custom_stats = {
+					damage_near_mul = 1200,
+					damage_far_mul = 600,
+					rays = 12,
+					ignore_statistic = true,
+					armor_piercing_add = 0.75,
+					bullet_class = "FlameBulletBase",
+					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+					fire_dot_data = {
+						dot_damage = "5",
+						dot_trigger_max_distance = "2500",
+						dot_trigger_chance = "100",
+						dot_length = "8",
+						dot_tick_period = "0.5"
+						},	
+					},			
+				},				
+				wpn_fps_upg_hx25_sight_iron_il = {
+					stats = {
+						value = 1,
+					},					
+				},				
 				wpn_fps_upg_hx25_buckshot_ammo = { 
 				stats = {
 					value = 5,

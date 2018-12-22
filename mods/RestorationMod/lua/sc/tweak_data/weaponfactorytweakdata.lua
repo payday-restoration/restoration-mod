@@ -40019,6 +40019,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 5,
 					concealment = 1
 				}
+		self.parts.wpn_fps_smg_evo_b_long.stats = {
+					value = 1,
+					spread = 1,
+					concealment = -1
+				}				
 		self.parts.wpn_fps_smg_evo_silencer.stats = {
 					value = 10,
 					suppression = 13,
@@ -40383,7 +40388,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_owen_b_43 = {
 					stats = {
 						value = 4,
-						damage = 5,
 						spread = -1,
 						concealment = -2
 					},					
@@ -40429,7 +40433,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 5,
 					recoil = -2,
 					concealment = -3,
-					total_ammo_mod = -20
+					total_ammo_mod = -25
 					},	
 					custom_stats = {armor_piercing_add = 0.75},	
 				}
@@ -40464,6 +40468,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}	
 		end				
+	-- >:3's HX-25
+		if self.wpn_fps_gre_hx25 then
+			self.wpn_fps_gre_hx25.override = {
+				wpn_fps_upg_hx25_buckshot_ammo = { 
+				stats = {
+					value = 5,
+					damage = 90,
+					spread = 2,
+					total_ammo_mod = 4,					
+					recoil = 1
+					},	
+					custom_stats = {armor_piercing_add = 0.75, rays = 20},	
+				}
+			}	
+		end												
 	-- >:3's G3/M203				
 		if self.wpn_fps_ass_g3m203 then
 			self.wpn_fps_ass_g3m203.override = {
@@ -40515,7 +40534,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_f2000_uupg_barrel_long = {
 					stats = {
 						value = 4,
-						damage = 5,
 						spread = 1,
 						concealment = -2
 						},	
@@ -40523,6 +40541,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_f2000_uupg_mag_40 = {
 				stats = {
 						value = 2,
+						extra_ammo = 5,
 						spread = -1,
 						concealment = -1,
 						reload = 2

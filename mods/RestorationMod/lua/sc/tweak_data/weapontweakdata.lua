@@ -8913,9 +8913,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cbjms.categories = {
 				"smg"
 			}		
-		self.cbjms.AMMO_MAX = 150
+		self.cbjms.AMMO_MAX = 200
 		self.cbjms.CLIP_AMMO_MAX = 30		
-		self.cbjms.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.cbjms.AMMO_PICKUP = self:_pickup_chance(200, 1)
 		self.cbjms.fire_mode_data.fire_rate = 0.0857
 		self.cbjms.auto.fire_rate = 0.0857
 		self.cbjms.panic_suppression_chance = 0.1
@@ -8963,16 +8963,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tm1a1.spread.moving_crouching = 3
 		self.tm1a1.spread.moving_steelsight = 2
 		self.tm1a1.CLIP_AMMO_MAX = 20
-		self.tm1a1.AMMO_MAX = 150
-		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.tm1a1.AMMO_MAX = 200
+		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(200, 1)
 		self.tm1a1.kick.standing = self.new_m4.kick.standing
 		self.tm1a1.kick.crouching = self.new_m4.kick.standing
 		self.tm1a1.kick.steelsight = self.new_m4.kick.standing
 		self.tm1a1.panic_suppression_chance = 0.1
 		self.tm1a1.stats = {
 			damage = 29,
-			spread = 16,
-			recoil = 18,
+			spread = 14,
+			recoil = 17,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -9121,6 +9121,43 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		end
+
+		if self.hx25 then 
+		self.hx25.fire_mode_data = {}
+		self.hx25.fire_mode_data.fire_rate = 1.5
+		self.hx25.single = {}
+		self.hx25.single.fire_rate = 1.5
+		self.hx25.spread.standing = 3
+		self.hx25.spread.crouching = 2
+		self.hx25.spread.steelsight = 1
+		self.hx25.spread.moving_standing = 4
+		self.hx25.spread.moving_crouching = 3
+		self.hx25.spread.moving_steelsight = 2
+		self.hx25.AMMO_MAX = 12
+		self.hx25.damage_near = 600
+		self.hx25.damage_far = 1200
+		self.hx25.rays = 7		
+		self.hx25.kick.standing = self.glock_17.kick.standing
+		self.hx25.kick.crouching = self.glock_17.kick.standing
+		self.hx25.kick.steelsight = self.glock_17.kick.standing
+		self.hx25.AMMO_PICKUP = self:_pickup_chance(12, 1)
+		self.hx25.stats = {
+			damage = 30,
+			spread = 2,
+			recoil = 8,
+			spread_moving = 2,
+			zoom = 3,
+			concealment = 25,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.hx25.panic_suppression_chance = 0.0
+		self.hx25.stats_modifiers = {damage = 2}		
+		end		
 
 		if self.evo then
 

@@ -8963,8 +8963,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tm1a1.spread.moving_crouching = 3
 		self.tm1a1.spread.moving_steelsight = 2
 		self.tm1a1.CLIP_AMMO_MAX = 20
-		self.tm1a1.AMMO_MAX = 200
-		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(200, 1)
+		self.tm1a1.AMMO_MAX = 150
+		self.tm1a1.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.tm1a1.kick.standing = self.new_m4.kick.standing
 		self.tm1a1.kick.crouching = self.new_m4.kick.standing
 		self.tm1a1.kick.steelsight = self.new_m4.kick.standing

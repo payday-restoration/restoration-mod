@@ -40389,7 +40389,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					stats = {
 						value = 4,
 						spread = -1,
-						concealment = -2
+						recoil = 2,
 					},					
 				}
 			}	
@@ -40400,25 +40400,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_tm1a1_ns_cutts = {
 				stats = {
 					value = 5,
-					damage = 5,
-					recoil = -1,
-					spread = 2,
-					concealment = -4
+					damage = 11,
+					recoil = 2,
+					spread = -2,
+					concealment = 2
 					},					
 				},
 				wpn_fps_smg_tm1a1_ns_ext = {
 					stats = {
 						value = 4,
-						damage = 5,
+						damage = 11,
 						spread = 1,
-						recoil = -1 --gotta some kinda a trade off
+						recoil = -1 
 					},					
 				},
+				wpn_fps_smg_tm1a1_lower_reciever_30 = {
+					stats = {
+						value = 4,
+						damage = -6,
+						spread = 1,
+						recoil = 2 
+					},					
+				},				
+				wpn_fps_smg_tm1a1_m_jungle = {
+					stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					},					
+				},								
 				wpn_fps_smg_tm1a1_b_standard = {
 					stats = {
 						value = 4,
-						damage = 5,
-						spread = 1,
+						damage = 11,
+						recoil = 2, 
+						spread = -1,
 						concealment = 2
 					},					
 				}
@@ -40430,7 +40447,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_upg_cbjms_ammo_cbj = { --are you ready to le
 				stats = {
 					value = 5,
-					damage = 5,
+					damage = 7,
 					recoil = -2,
 					concealment = -3,
 					total_ammo_mod = -25
@@ -40438,7 +40455,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {armor_piercing_add = 0.75},	
 				}
 			}	
-		end								
+		end				
 	-- >:3's HK416		
 		if self.wpn_fps_ass_hk416 then
 			self.wpn_fps_ass_hk416.override = {
@@ -40453,7 +40470,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_upg_hk416_barrel_short = {
 					stats = {
 						value = 4,
-						damage = 5,
+						damage = 6,
 						spread = -1,
 						concealment = 2
 					},					
@@ -40461,7 +40478,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_upg_hk416_barrel_long = {
 					stats = {
 						value = 4,
-						damage = 5,
+						damage = 6,
 						spread = 1,
 						concealment = -2
 				},					
@@ -40485,6 +40502,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 1200,
 					damage_far_mul = 600,
 					rays = 12,
+					can_shoot_through_enemy = true,
 					ignore_statistic = true,
 					armor_piercing_add = 0.75,
 					bullet_class = "FlameBulletBase",
@@ -40515,7 +40533,78 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {armor_piercing_add = 0.75, rays = 20},	
 				}
 			}	
-		end												
+		end		
+	-- >:3's KS-23				
+		if self.wpn_fps_shot_ks23 then
+			self.wpn_fps_shot_ks23.override = {
+				wpn_fps_upg_ks23_ammo_slug = {
+					stats = {
+						value = 2,
+						damage = 50,
+						recoil = 1,
+						spread = 10,
+					    total_ammo_mod = -25,
+						concealment = -2
+					},	
+					custom_stats = {
+						damage_near_mul = 3.333333333333333,
+						damage_far_mul = 5,
+						rays = 1,
+						can_shoot_through_enemy = true,
+						can_shoot_through_shield = true,
+						can_shoot_through_wall = true,	
+						ignore_statistic = true,
+						armor_piercing_add = 1
+						},	
+					},			
+				wpn_fps_upg_ks23_barrel_short = {
+					stats = {
+						value = 1,
+						recoil = 1,	
+						spread = -2
+					},					
+				},	
+				wpn_fps_upg_ks23_stock_pistolgrip_wire = {
+					stats = {
+						value = 1,
+						spread = 1,
+						recoil = -1,							
+					},					
+				},													
+				wpn_fps_upg_ks23_stock_pistolgrip = {
+					stats = {
+						value = 1,
+						spread = -1,
+						recoil = 1,							
+					},					
+				},									
+				wpn_fps_upg_ks23_ammo_buckshot_20pellet = {
+					stats = {
+						value = 2,
+						spread = -3,
+						recoil = 2,							
+						damage = -75,	
+					},	
+					custom_stats = {
+						damage_near_mul = 0.5,
+						rays = 20
+					},	
+				},								
+				wpn_fps_upg_ks23_ammo_buckshot_8pellet = {
+					stats = {
+						value = 2,
+						recoil = -2,	
+						total_ammo_mod = -25,												
+						spread = 3
+					},	
+					custom_stats = {
+						damage_near_mul = 2,
+						damage_far_mul = 1.33,
+						rays = 8,
+					},	
+				}
+			}	
+		end		
 	-- >:3's G3/M203				
 		if self.wpn_fps_ass_g3m203 then
 			self.wpn_fps_ass_g3m203.override = {

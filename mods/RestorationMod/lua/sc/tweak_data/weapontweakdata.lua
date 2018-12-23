@@ -9159,6 +9159,49 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hx25.stats_modifiers = {damage = 2}		
 		end		
 
+		if self.ks23 then 
+		self.ks23.desc_id = "bm_40mm_weapon_sc_desc"
+		self.ks23.has_description = true
+		self.ks23.use_data.selection_index = 2
+		self.ks23.categories = {
+				"shotgun"
+		}		
+		self.ks23.damage_near = 1400
+		self.ks23.damage_far = 1400
+		self.ks23.tactical_reload = 1		
+		self.ks23.fire_mode_data.fire_rate = 2
+		self.ks23.single.fire_rate = 2
+		self.ks23.rays = 9
+		self.ks23.AMMO_MAX = 16
+		self.ks23.CLIP_AMMO_MAX = 3		
+		self.ks23.spread.standing = 3
+		self.ks23.spread.crouching = 2
+		self.ks23.spread.steelsight = 1
+		self.ks23.spread.moving_standing = 4
+		self.ks23.spread.moving_crouching = 3
+		self.ks23.spread.moving_steelsight = 2
+		self.ks23.kick.standing = self.huntsman.kick.standing
+		self.ks23.kick.crouching = self.huntsman.kick.standing
+		self.ks23.kick.steelsight = self.huntsman.kick.standing
+		self.ks23.AMMO_PICKUP = {0.12, 0.43}
+		self.ks23.stats = {
+			damage = 250,
+			spread = 6,
+			recoil = 6,
+			spread_moving = 16,
+			zoom = 3,
+			concealment = 7,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.ks23.panic_suppression_chance = 0.0
+		self.ks23.stats_modifiers = {damage = 1}
+		end				
+
 		if self.evo then
 
 			self.evo.sounds.fire = "mp5_fire_single"

@@ -19,10 +19,7 @@
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
-			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_cap" />
-			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />
-			<var name="_head_gear_decal_mesh" value="dm_helmet" />						
+			<var name="_head_body_name" value="head" />					
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

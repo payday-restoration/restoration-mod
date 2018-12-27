@@ -11345,7 +11345,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_smg_mp7_s_long = {
-			pcs = {},
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
 			type = "stock",
 			name_id = "bm_wp_mp7_s_long",
 			texture_bundle_folder = "gage_pack",
@@ -11356,6 +11361,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				recoil = 1,
 				spread_moving = -1
 			},
+			is_a_unlockable = true,			
 			dlc = "gage_pack"
 		}
 		self.parts.wpn_fps_smg_mp7_m_short.third_unit = "units/pd2_dlc_dec5/weapons/wpn_third_smg_mp7_pts/wpn_third_smg_mp7_m_short"

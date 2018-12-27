@@ -11345,19 +11345,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_smg_mp7_s_long = {
-			pcs = {
-				10,
-				20,
-				30,
-				40
-			},
+			pcs = {},
 			type = "stock",
 			name_id = "bm_wp_mp7_s_long",
 			texture_bundle_folder = "gage_pack",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_smg_mp7_pts/wpn_fps_smg_mp7_s_long",
 			stats = {
-				value = 1,
+				value = 0,
 				recoil = 1,
 				spread_moving = -1
 			},
@@ -39736,7 +39731,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	--Custom weapon shit here--
 
-	--SCARM203--
+	-->:3's SCARL/M203--
 	if self.wpn_fps_ass_scar_m203 then
 
 		self.parts.wpn_fps_upg_scar_m203_stock_pdw.stats = {
@@ -39746,7 +39741,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	end
 
-	--TOZ66--
+	-->:3's TOZ66--
 	if self.wpn_fps_shot_toz66 then
 		self.parts.wpn_fps_upg_toz66_ammo_000_magnum.pcs = nil
 		self.parts.wpn_fps_upg_toz66_choke.stats = {
@@ -39885,7 +39880,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 
-	-->:3's TOZ
+	-->:3's TOZ 34
 	if self.wpn_fps_shot_toz34 then
 		self.parts.wpn_fps_upg_toz34_ammo_000_magnum.pcs = nil
 		self.parts.wpn_fps_upg_toz34_choke.stats = {
@@ -39922,7 +39917,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--})
 	end
 
-	--Montana 5.56
+	--Montana 5.56 by Matthelzor, Kitsune Jimmy, >:3, and Gambyt
 	if self.wpn_fps_ass_yayo then
 
 		self.parts.wpn_fps_ass_yayo_fg_rail.stats = {
@@ -39975,7 +39970,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	end
 	
-	--HCAR
+	-->:3's HCAR
 	if self.wpn_fps_ass_hcar then
 		self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
 					value = 5,
@@ -39996,7 +39991,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 	end
 
-	--EVO
+	--Gambyt's Scorpion EVO
 	if self.wpn_fps_smg_evo then
 		self.parts.wpn_fps_smg_evo_fg_standard.pcs = nil
 		self.parts.wpn_fps_smg_evo_fg_standard.stats = {
@@ -40024,6 +40019,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 1,
 					concealment = -1
 				}				
+		self.parts.wpn_fps_smg_evo_m_straight.stats = {
+					value = 1,
+					extra_ammo = 5,
+					recoil = -1,					
+					reload = -1
+				}								
 		self.parts.wpn_fps_smg_evo_silencer.stats = {
 					value = 10,
 					suppression = 13,
@@ -40033,8 +40034,524 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = -1,
 					damage = 5
 				}
-	end
+		end
 
+	-- Silent Enforcer's TOZ 194
+		if self.wpn_fps_shot_toz194 then
+			self.parts.wpn_fps_shot_toz194_b_silencer.stats = {
+					value = 7,
+					suppression = 12,
+					alert_size = 12,
+					damage = 5,
+					recoil = 1,
+					concealment = -2
+					}			
+			self.parts.wpn_fps_shot_toz194_fg_plastic.stats = { 
+						value = 2,
+						recoil = 1
+					}					
+			self.parts.wpn_fps_shot_toz194_grip_plastic.stats = { 
+						value = 2,
+						spread = 1
+					}				
+			self.parts.wpn_fps_shot_toz194_fb_short.stats = { 
+						value = 2,
+						extra_ammo = -2,
+						spread = -2,
+						recoil = -2,
+						concealment = 12
+				}			
+			self.wpn_fps_shot_toz194.override = {
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						total_ammo_mod = -66,
+						recoil = -5,
+						concealment = -7,
+						damage = 200
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
+				}
+			}
+		}				
+	end	
+	
+	-- Alcat's Trench Gun
+		if self.wpn_fps_shot_trench then
+			self.wpn_fps_shot_trench.override = {
+				wpn_fps_upg_a_explosive = {
+						stats = {
+						value = 10,
+						recoil = -5,
+						concealment = -7,
+						total_ammo_mod = -62,
+						damage = 250
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
+				}
+			}
+		}				
+	end		
+	
+	--Gambyt's L1A1
+		if self.wpn_fps_ass_l1a1 then
+			self.parts.wpn_fps_ass_l1a1_ns_fal.stats = {
+					value = 5,
+					damage = 5,
+					recoil = -1,
+					spread = 2,
+					concealment = -4
+				}			
+			self.parts.wpn_fps_ass_l1a1_mag_big.stats = {
+					value = 2,
+					extra_ammo = 5,
+					spread_moving = -2,
+					concealment = -1,
+				}		
+			self.parts.wpn_fps_ass_l1a1_mag_short.stats = {
+					value = 2,
+					extra_ammo = -5,
+					concealment = 1,
+				}		
+			self.parts.wpn_fps_ass_l1a1_foregrip_wood.stats = {
+					value = 2,
+					recoil = 2,
+					spread_moving = -2,
+					concealment = -2
+				}		
+			self.parts.wpn_fps_ass_l1a1_grip_wood.stats = {
+					value = 1,
+					recoil = 1,
+					spread_moving = -1,
+				}																			
+			end		
+			
+	-- >:3's G3/M203				
+		if self.wpn_fps_ass_g3m203 then
+				self.parts.wpn_fps_upg_g3m203_supp_socom762.stats = {
+						value = 2,
+						suppression = 11,
+						alert_size = 11,
+						damage = 5,
+						recoil = 1,
+						concealment = -2
+					}			
+				self.parts.wpn_fps_upg_g3m203_barrel_g3ka4.stats = {
+						value = 2,
+						recoil = 1,
+						spread = -1,
+						concealment = 4,
+						damage = -10,
+						suppression = 1,
+						alert_size = 1,
+						total_ammo_mod = 25
+					}
+					self.parts.wpn_fps_upg_g3m203_barrel_g3ka4.custom_stats = 
+					{ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25}	
+				end		
+				
+	-- >:3's SCAR-L		
+		if self.wpn_fps_ass_scarl then
+				self.parts.wpn_fps_upg_scarl_mag_pull_assist.stats = { 
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+				}		
+				self.parts.wpn_fps_upg_scarl_mag_pdw.stats = { 
+						value = 2,
+						spread_moving = 2,
+						concealment = 2,
+						reload = 2,
+						extra_ammo = -5
+				}								
+				self.parts.wpn_fps_upg_scarl_barrel_long.stats = { 
+						value = 4,
+						damage = 5,
+						spread = 1,
+						concealment = -2
+				}			
+				self.parts.wpn_fps_upg_scarl_barrel_cqc.stats = { 
+						value = 4,
+						damage = 5,
+						spread = -1,
+						concealment = 2
+				}			
+				self.parts.wpn_fps_upg_scarl_barrel_cqc_mod.stats = { 
+						value = 4,
+						damage = 5,
+						spread = -1,
+						recoil = -1,						
+						concealment = 2
+				}
+				self.parts.wpn_fps_upg_scarl_barrel_cqc_mod.custom_stats = { 
+						rof_mult = 1.04
+				}
+		end		
+		
+	-- >:3's HX-25
+		if self.wpn_fps_gre_hx25 then
+				self.parts.wpn_fps_upg_hx25_sight_iron_il.stats = {
+						value = 1,
+				}				
+				self.parts.wpn_fps_upg_hx25_buckshot_ammo.stats = { 
+					value = 5,
+					damage = 90,
+					spread = 2,
+					total_ammo_mod = 30, --Fug :-DDDDDDDDDDDDDDD					
+					recoil = 1,
+					reload = 2
+				}	
+				self.parts.wpn_fps_upg_hx25_buckshot_ammo.custom_stats = { 
+					armor_piercing_add = 0.75, 
+					rays = 20
+				}
+				self.wpn_fps_gre_hx25.override = {
+					wpn_fps_upg_hx25_dragons_breath_ammo = {
+					stats = {
+						value = 5,
+						damage = 20,
+						total_ammo_mod = 50,	
+						spread = 2,
+						recoil = 1,
+						reload = 1	
+						
+					},
+					custom_stats = {
+						damage_near_mul = 1200,
+						damage_far_mul = 600,
+						rays = 12,
+						can_shoot_through_enemy = true,
+						ignore_statistic = true,
+						armor_piercing_add = 0.75,
+						bullet_class = "FlameBulletBase",
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+						fire_dot_data = {
+							dot_damage = "5",
+							dot_trigger_max_distance = "2500",
+							dot_trigger_chance = "100",
+							dot_length = "8",
+							dot_tick_period = "0.5"
+						},
+					}					
+				}
+			}				
+		end
+		
+	-- Killerwolf's Thompson
+		if self.wpn_fps_smg_tm1a1 then
+				self.parts.wpn_fps_smg_tm1a1_ns_cutts.stats = {
+						value = 5,
+						damage = 11,
+						recoil = 2,
+						spread = -2,
+						concealment = 2
+					}					
+				self.parts.wpn_fps_smg_tm1a1_ns_ext.stats = {
+						value = 4,
+						damage = 11,
+						spread = 1,
+						recoil = -1 
+					}					
+				self.parts.wpn_fps_smg_tm1a1_lower_reciever_30.stats = {
+						value = 4,
+						damage = -6,
+						spread = 1,
+						recoil = 2 
+					}				
+				self.parts.wpn_fps_smg_tm1a1_m_jungle.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}					
+				self.parts.wpn_fps_smg_tm1a1_b_standard.stats = {
+						value = 4,
+						damage = 11,
+						recoil = 2, 
+						spread = -1,
+						concealment = 2
+					}					
+			end	
+			
+	-- >:3's HK416		
+		if self.wpn_fps_ass_hk416 then
+				self.parts.wpn_fps_upg_hk416_mag_pull_assist.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+				}					
+				self.parts.wpn_fps_upg_hk416_barrel_short.stats = {
+						value = 4,
+						damage = 6,
+						spread = -1,
+						concealment = 2
+				}					
+				self.parts.wpn_fps_upg_hk416_barrel_long.stats = {
+						value = 4,
+						damage = 6,
+						spread = 1,
+						concealment = -2
+				}					
+		end						
+
+	-- >:3's F2000				
+		if self.wpn_fps_ass_f2000 then
+				self.parts.wpn_fps_f2000_uupg_barrel_long.stats = {
+						value = 4,
+						spread = 1,
+						concealment = -2
+						}	
+				self.parts.wpn_fps_f2000_uupg_mag_40.stats = {
+						value = 2,
+						extra_ammo = 5,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}					
+		end	
+		
+	-- >:3's Cee Bee Jay Em Ess
+		if self.wpn_fps_smg_cbjms then
+				self.parts.wpn_fps_upg_cbjms_ammo_cbj.stats = { 
+					value = 3,
+					damage = 3,
+					recoil = -2,
+					concealment = -3,
+					total_ammo_mod = -25
+					}	
+					self.parts.wpn_fps_upg_cbjms_ammo_cbj.custom_stats = {armor_piercing_add = 0.75}	
+			end	
+			
+	-- Silent Enforcer's Rail Covers
+		if self.parts.wpn_fps_m4_rc then
+				self.parts.wpn_fps_m4_rc.stats = { 
+					value = 0
+					}	
+				self.parts.wpn_fps_m4_rc_nob.stats = { 
+					value = 0
+					}			
+				self.parts.wpn_fps_m4_rc_top.stats = { 
+					value = 0
+					}			
+				self.parts.wpn_fps_m4_rc_top_nob.stats = { 
+					value = 0
+					}																
+			end		
+			
+	-- Silent Enforcer's Owen Gun		
+		if self.wpn_fps_smg_owen then
+				self.parts.wpn_fps_smg_owen_m_double.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}					
+				self.parts.wpn_fps_smg_owen_sling.stats = {
+						value = 0
+					}					
+				self.parts.wpn_fps_smg_owen_b_43.stats = {
+						value = 4,
+						spread = -1,
+						recoil = 2,
+					}					
+		end			
+
+	--Alcat's CX4/MX4
+	if self.wpn_fps_smg_storm then
+		self.parts.wpn_fps_smg_storm_b_short.stats = {
+					value = 1,
+					spread = -1,
+					concealment = 2
+				}
+		self.parts.wpn_fps_smg_storm_b_precision.stats = {
+					value = 1,
+					spread = 1,
+					concealment = -2
+				}
+		self.parts.wpn_fps_smg_storm_m_extended.stats = {
+					value = 1,
+					extra_ammo = 5,
+					concealment = -1,
+					reload = -1
+				}
+		self.parts.wpn_fps_upg_storm_flashhider.stats = {
+				value = 4,
+				suppression = -2,
+				alert_size = -2,
+				damage = 5,
+				recoil = 1,
+				concealment = -2
+			}
+		self.parts.wpn_fps_smg_storm_m_extended.custom_stats = {reload_speed_mult = 0.9}
+		table.list_append(self.wpn_fps_smg_storm.default_blueprint, {
+			"wpn_fps_upg_extra_mp_lock"
+		})
+		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
+			"wpn_fps_upg_extra_mp_lock"
+		})
+		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
+			"wpn_fps_upg_extra_mp_unlock"
+		})
+		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
+			"wpn_fps_upg_ammo_40sw"
+		})
+		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
+			"wpn_fps_upg_o_xpsg33_magnifier"
+		})
+	end		
+
+	-- >:3's KS-23				
+		if self.wpn_fps_shot_ks23 then
+			self.wpn_fps_shot_ks23.override = {
+				wpn_fps_upg_ks23_ammo_slug = {
+					stats = {
+						value = 2,
+						damage = 50,
+						recoil = 1,
+						spread = 10,
+					    total_ammo_mod = -25,
+						concealment = -2
+					},	
+					custom_stats = {
+						damage_near_mul = 3.333333333333333,
+						damage_far_mul = 5,
+						rays = 1,
+						can_shoot_through_enemy = true,
+						can_shoot_through_shield = true,
+						can_shoot_through_wall = true,	
+						ignore_statistic = true,
+						armor_piercing_add = 1
+						},	
+					},			
+				wpn_fps_upg_ks23_barrel_short = {
+					stats = {
+						value = 1,
+						recoil = 1,	
+						spread = -2
+					},					
+				},	
+				wpn_fps_upg_ks23_stock_pistolgrip_wire = {
+					stats = {
+						value = 1,
+						spread = 1,
+						recoil = -1,							
+					},					
+				},													
+				wpn_fps_upg_ks23_stock_pistolgrip = {
+					stats = {
+						value = 1,
+						spread = -1,
+						recoil = 1,							
+					},					
+				},									
+				wpn_fps_upg_ks23_ammo_buckshot_20pellet = {
+					stats = {
+						value = 2,
+						spread = -3,
+						recoil = 2,							
+						damage = -75,	
+					},	
+					custom_stats = {
+						damage_near_mul = 0.5,
+						rays = 20
+					},	
+				},								
+				wpn_fps_upg_ks23_ammo_buckshot_8pellet = {
+					stats = {
+						value = 2,
+						recoil = -2,	
+						total_ammo_mod = -25,												
+						spread = 3
+					},	
+					custom_stats = {
+						damage_near_mul = 2,
+						damage_far_mul = 1.33,
+						rays = 8,
+					},	
+				}
+			}	
+		end		
+	-- Grocery's AN-94				
+		if self.wpn_fps_ass_tilt then
+			self.wpn_fps_ass_tilt.override = {
+				wpn_fps_ass_tilt_a_fuerte = {				
+					stats = {
+						value = 10,
+						damage = 10,
+						total_ammo_mod = -20,
+						suppression = -1,
+						alert_size = -1,
+						recoil = -1,
+						spread = 1
+						},	
+					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 0.923},
+				}
+			}	
+		end		
+		
+	-- >:3's Ultimax						
+		if self.wpn_fps_lmg_ultimax then
+			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
+				"wpn_fps_upg_ammo_half_that"
+			})
+			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
+				"wpn_fps_upg_i_singlefire"
+			})
+			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
+				"wpn_fps_upg_i_autofire"
+			})	
+			self.wpn_fps_lmg_ultimax.override = {
+				wpn_fps_upg_ammo_half_that = {
+					stats = {
+						value = 1,
+						total_ammo_mod = -20,
+						recoil = 0
+					},
+					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+				}
+			}	
+		end		
+		
+		if self.wpn_fps_ass_hcar then
+			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
+				"wpn_fps_upg_ammo_half_that"
+			})
+			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
+				"wpn_fps_upg_i_singlefire"
+			})
+			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
+				"wpn_fps_upg_i_autofire"
+			})	
+			self.wpn_fps_ass_hcar.override = {
+				wpn_fps_upg_ammo_half_that = {
+					stats = {
+						value = 1,
+						total_ammo_mod = -25,
+						recoil = 0
+					},
+					custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+				}
+			}	
+		end
+		
 	--SC mod shit below--
 
 		self.parts.wpn_fps_upg_a_slug_fire = {
@@ -40331,389 +40848,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}	
 		end
-	-- >:3's SCAR-L		
-		if self.wpn_fps_ass_scarl then
-			self.wpn_fps_ass_scarl.override = {
-				wpn_fps_upg_scarl_mag_pull_assist = {
-				stats = {
-						value = 2,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					},					
-				},
-				wpn_fps_upg_scarl_barrel_long = {
-					stats = {
-						value = 4,
-						damage = 5,
-						spread = 1,
-						concealment = -2
-					},					
-				},
-				wpn_fps_upg_scarl_barrel_cqc = {
-					stats = {
-						value = 4,
-						damage = 5,
-						spread = -1,
-						concealment = 2
-					},					
-				},
-				wpn_fps_upg_scarl_barrel_cqc_mod = {
-					stats = {
-						value = 4,
-						damage = 5,
-						spread = -1,
-						concealment = 2
-					},	
-					custom_stats = {rof_mult = 1.04},	
-				}
-			}	
-		end		
-	-- Silent Enforcer's Owen Gun		
-		if self.wpn_fps_smg_owen then
-			self.wpn_fps_smg_owen.override = {
-				wpn_fps_smg_owen_m_double = {
-				stats = {
-						value = 2,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					},					
-				},
-				wpn_fps_smg_owen_sling = {
-					stats = {
-						value = 1
-					},					
-				},
-				wpn_fps_smg_owen_b_43 = {
-					stats = {
-						value = 4,
-						spread = -1,
-						recoil = 2,
-					},					
-				}
-			}	
-		end			
-	-- Killerwolf's Thompson
-		if self.wpn_fps_smg_tm1a1 then
-			self.wpn_fps_smg_tm1a1.override = {
-				wpn_fps_smg_tm1a1_ns_cutts = {
-				stats = {
-					value = 5,
-					damage = 11,
-					recoil = 2,
-					spread = -2,
-					concealment = 2
-					},					
-				},
-				wpn_fps_smg_tm1a1_ns_ext = {
-					stats = {
-						value = 4,
-						damage = 11,
-						spread = 1,
-						recoil = -1 
-					},					
-				},
-				wpn_fps_smg_tm1a1_lower_reciever_30 = {
-					stats = {
-						value = 4,
-						damage = -6,
-						spread = 1,
-						recoil = 2 
-					},					
-				},				
-				wpn_fps_smg_tm1a1_m_jungle = {
-					stats = {
-						value = 2,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					},					
-				},								
-				wpn_fps_smg_tm1a1_b_standard = {
-					stats = {
-						value = 4,
-						damage = 11,
-						recoil = 2, 
-						spread = -1,
-						concealment = 2
-					},					
-				}
-			}	
-		end			
-	-- >:3's Cee Bee Jay Em Ess
-		if self.wpn_fps_smg_cbjms then
-			self.wpn_fps_smg_cbjms.override = {
-				wpn_fps_upg_cbjms_ammo_cbj = { --are you ready to le
-				stats = {
-					value = 5,
-					damage = 7,
-					recoil = -2,
-					concealment = -3,
-					total_ammo_mod = -25
-					},	
-					custom_stats = {armor_piercing_add = 0.75},	
-				}
-			}	
-		end				
-	-- >:3's HK416		
-		if self.wpn_fps_ass_hk416 then
-			self.wpn_fps_ass_hk416.override = {
-				wpn_fps_upg_hk416_mag_pull_assist = {
-				stats = {
-						value = 2,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					},					
-				},
-				wpn_fps_upg_hk416_barrel_short = {
-					stats = {
-						value = 4,
-						damage = 6,
-						spread = -1,
-						concealment = 2
-					},					
-				},
-				wpn_fps_upg_hk416_barrel_long = {
-					stats = {
-						value = 4,
-						damage = 6,
-						spread = 1,
-						concealment = -2
-				},					
-			}
-		}	
-		end				
-	-- >:3's HX-25
-		if self.wpn_fps_gre_hx25 then
-			self.wpn_fps_gre_hx25.override = {
-				wpn_fps_upg_hx25_dragons_breath_ammo = {
-				stats = {
-						value = 5,
-						damage = 20,
-						total_ammo_mod = 40,	--can't seem to increase past 50.
-						spread = 2,
-						recoil = 1,
-						reload = 1	
-						
-					},	
-				custom_stats = {
-					damage_near_mul = 1200,
-					damage_far_mul = 600,
-					rays = 12,
-					can_shoot_through_enemy = true,
-					ignore_statistic = true,
-					armor_piercing_add = 0.75,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "5",
-						dot_trigger_max_distance = "2500",
-						dot_trigger_chance = "100",
-						dot_length = "8",
-						dot_tick_period = "0.5"
-						},	
-					},			
-				},				
-				wpn_fps_upg_hx25_sight_iron_il = {
-					stats = {
-						value = 1,
-					},					
-				},				
-				wpn_fps_upg_hx25_buckshot_ammo = { 
-				stats = {
-					value = 5,
-					damage = 90,
-					spread = 2,
-					total_ammo_mod = 50,					
-					recoil = 1,
-					reload = 2
-					},	
-					custom_stats = {armor_piercing_add = 0.75, rays = 20},	
-				}
-			}	
-		end		
-	-- >:3's KS-23				
-		if self.wpn_fps_shot_ks23 then
-			self.wpn_fps_shot_ks23.override = {
-				wpn_fps_upg_ks23_ammo_slug = {
-					stats = {
-						value = 2,
-						damage = 50,
-						recoil = 1,
-						spread = 10,
-					    total_ammo_mod = -25,
-						concealment = -2
-					},	
-					custom_stats = {
-						damage_near_mul = 3.333333333333333,
-						damage_far_mul = 5,
-						rays = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,	
-						ignore_statistic = true,
-						armor_piercing_add = 1
-						},	
-					},			
-				wpn_fps_upg_ks23_barrel_short = {
-					stats = {
-						value = 1,
-						recoil = 1,	
-						spread = -2
-					},					
-				},	
-				wpn_fps_upg_ks23_stock_pistolgrip_wire = {
-					stats = {
-						value = 1,
-						spread = 1,
-						recoil = -1,							
-					},					
-				},													
-				wpn_fps_upg_ks23_stock_pistolgrip = {
-					stats = {
-						value = 1,
-						spread = -1,
-						recoil = 1,							
-					},					
-				},									
-				wpn_fps_upg_ks23_ammo_buckshot_20pellet = {
-					stats = {
-						value = 2,
-						spread = -3,
-						recoil = 2,							
-						damage = -75,	
-					},	
-					custom_stats = {
-						damage_near_mul = 0.5,
-						rays = 20
-					},	
-				},								
-				wpn_fps_upg_ks23_ammo_buckshot_8pellet = {
-					stats = {
-						value = 2,
-						recoil = -2,	
-						total_ammo_mod = -25,												
-						spread = 3
-					},	
-					custom_stats = {
-						damage_near_mul = 2,
-						damage_far_mul = 1.33,
-						rays = 8,
-					},	
-				}
-			}	
-		end		
-	-- >:3's G3/M203				
-		if self.wpn_fps_ass_g3m203 then
-			self.wpn_fps_ass_g3m203.override = {
-				wpn_fps_upg_g3m203_supp_socom762 = {
-					stats = {
-						value = 2,
-						suppression = 11,
-						alert_size = 11,
-						damage = 5,
-						recoil = 1,
-						concealment = -2
-					},					
-				},
-				wpn_fps_upg_g3m203_barrel_g3ka4 = {
-					stats = {
-						value = 2,
-						recoil = 1,
-						spread = -1,
-						concealment = 4,
-						damage = -10,
-						suppression = 1,
-						alert_size = 1,
-						total_ammo_mod = 25
-					},
-					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, },	
-				}
-			}	
-		end
-	-- Grocery's AN-94				
-		if self.wpn_fps_ass_tilt then
-			self.wpn_fps_ass_tilt.override = {
-				wpn_fps_ass_tilt_a_fuerte = {
-					stats = {
-						value = 10,
-						damage = 10,
-						total_ammo_mod = -20,
-						suppression = -1,
-						alert_size = -1,
-						recoil = -1,
-						spread = 1
-						},	
-					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 0.923},
-				}
-			}	
-		end		
-	-- >:3's F2000				
-		if self.wpn_fps_ass_f2000 then
-			self.wpn_fps_ass_f2000.override = {
-				wpn_fps_f2000_uupg_barrel_long = {
-					stats = {
-						value = 4,
-						spread = 1,
-						concealment = -2
-						},	
-					},
-				wpn_fps_f2000_uupg_mag_40 = {
-				stats = {
-						value = 2,
-						extra_ammo = 5,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					},					
-				},					
-			}	
-		end			
-	-- >:3's Ultimax						
-		if self.wpn_fps_lmg_ultimax then
-			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-				"wpn_fps_upg_ammo_half_that"
-			})
-			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
-			})
-			table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-				"wpn_fps_upg_i_autofire"
-			})	
-			self.wpn_fps_lmg_ultimax.override = {
-				wpn_fps_upg_ammo_half_that = {
-					stats = {
-						value = 1,
-						total_ammo_mod = -20,
-						recoil = 0
-					},
-					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
-				}
-			}	
-		end		
-		if self.wpn_fps_ass_hcar then
-			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
-				"wpn_fps_upg_ammo_half_that"
-			})
-			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
-			})
-			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
-				"wpn_fps_upg_i_autofire"
-			})	
-			self.wpn_fps_ass_hcar.override = {
-				wpn_fps_upg_ammo_half_that = {
-					stats = {
-						value = 1,
-						total_ammo_mod = -25,
-						recoil = 0
-					},
-					custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
-				}
-			}	
-		end
 
 		--Incendiary Slugs are awesome--
 
@@ -40749,51 +40883,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--	table.insert(self[factory_id .. "_npc"].uses_parts, "wpn_fps_upg_a_slug_fire")
 			--end
 		--end
-
-	--CX4/MX4
-
-	if self.wpn_fps_smg_storm then
-		self.parts.wpn_fps_smg_storm_b_short.stats = {
-					value = 1,
-					spread = -1,
-					concealment = 2
-				}
-		self.parts.wpn_fps_smg_storm_b_precision.stats = {
-					value = 1,
-					spread = 1,
-					concealment = -2
-				}
-		self.parts.wpn_fps_smg_storm_m_extended.stats = {
-					value = 1,
-					extra_ammo = 5,
-					concealment = -1,
-					reload = -1
-				}
-		self.parts.wpn_fps_upg_storm_flashhider.stats = {
-				value = 4,
-				suppression = -2,
-				alert_size = -2,
-				damage = 5,
-				recoil = 1,
-				concealment = -2
-			}
-		self.parts.wpn_fps_smg_storm_m_extended.custom_stats = {reload_speed_mult = 0.9}
-		table.list_append(self.wpn_fps_smg_storm.default_blueprint, {
-			"wpn_fps_upg_extra_mp_lock"
-		})
-		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
-			"wpn_fps_upg_extra_mp_lock"
-		})
-		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
-			"wpn_fps_upg_extra_mp_unlock"
-		})
-		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
-			"wpn_fps_upg_ammo_40sw"
-		})
-		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
-			"wpn_fps_upg_o_xpsg33_magnifier"
-		})
-	end
 
 	end)
 

@@ -37,9 +37,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.enemy_chatter.clear = {
 			radius = 700,
-			max_nr = 20,
+			max_nr = 10,
 			duration = {2, 4},
-			interval = {0.75, 1.5},
+			interval = {1.5, 2.5},
 			group_min = 0,
 			queue = "clr"
 		}

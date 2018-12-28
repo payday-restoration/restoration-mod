@@ -885,7 +885,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if job == "mad" then
 		   self.city_swat_titan.die_sound_event = "l4n_x01a_any_3p"
 		else
-		   self.city_swat_titan.die_sound_event = nil
+		   self.city_swat_titan.die_sound_event = "bdz_x02a_any_3p"
 		end
 		self.city_swat_titan.static_melee_preset = true	
 		self.city_swat_titan.dodge_with_grenade = {

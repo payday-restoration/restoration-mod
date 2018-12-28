@@ -33,7 +33,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("pdth", "buddy_died")
 		_G.voiceline_framework:register_line_type("pdth", "contact")
 		_G.voiceline_framework:register_line_type("pdth", "cover_me")
-		_G.voiceline_framework:register_line_type("pdth", "death")
+		--_G.voiceline_framework:register_line_type("pdth", "death")
 		_G.voiceline_framework:register_line_type("pdth", "gogo")
 		_G.voiceline_framework:register_line_type("pdth", "pain")
 		_G.voiceline_framework:register_line_type("pdth", "ready")
@@ -64,7 +64,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_1.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_2.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_3.ogg")
-		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")	
 		
 		_G.voiceline_framework:register_unit("medicdozer")
 		_G.voiceline_framework:register_line_type("medicdozer", "heal")
@@ -158,9 +158,9 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("pdth", "contact", ModPath .. "assets/oggs/voiceover/pdth/contact/contact" .. i .. ".ogg")
 		end
 		--GLORORIUS PDTH DEATH SOUND
-		for i = 1, 19 do
+		--[[for i = 1, 19 do
 			_G.voiceline_framework:register_voiceline("pdth", "death", ModPath .. "assets/oggs/voiceover/pdth/death/death" .. i .. ".ogg")
-		end
+		end]]--
         --LETS GOOOOOOO
 		for i = 1, 29 do
 			_G.voiceline_framework:register_voiceline("pdth", "gogo", ModPath .. "assets/oggs/voiceover/pdth/gogo/gogo" .. i .. ".ogg")

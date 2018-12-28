@@ -52,7 +52,6 @@ if not _G.restoration then
 		"big"
 	}
 	_G.restoration.captain_teamwork = {
-		"red2",--first world bank
 		"pal", --counterfeit 
 		"welcome_to_the_jungle_2", --big oil day 2
 		"crojob2", --bomb dockyard
@@ -70,12 +69,13 @@ if not _G.restoration then
 		"big" --big bank
 	}
 	_G.restoration.captain_stelf = {
-		--[["nightclub",
-		"gallery",
-		"branchbank",
-		"dah",
-		"four_stores",
-		"family"]]--
+		--[["nightclub", --and Autumn stay off the dance floor
+		"gallery", --art gallery
+		"branchbank", --well the trees are orange
+		"dah", --diamond heist
+		"four_stores", --do i really need to make a comment here?
+		"pal", --counterfeit probably gonna swap him for summers
+		"family" --diamond store]]--
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

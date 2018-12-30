@@ -9784,7 +9784,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_usp_pts/wpn_fps_pis_usp_m_standard",
 			stats = {value = 1},
 			animations = {
-				reload = "reload",
+				reload = "reload_not_empty",
 				reload_not_empty = "reload_not_empty"
 			}
 		}
@@ -9881,7 +9881,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			custom_stats = {reload_speed_mult = 0.95},
 			animations = {
-				reload = "reload",
+				reload = "reload_not_empty",
 				reload_not_empty = "reload_not_empty"
 			},
 			dlc = "pd2_clan"
@@ -39737,16 +39737,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	--Custom weapon shit here--
 
-	-->:3's SCARL/M203--
-	if self.wpn_fps_ass_scar_m203 then
-
-		self.parts.wpn_fps_upg_scar_m203_stock_pdw.stats = {
-				value = 1,
-				concealment = 1
-			}
-
-	end
-
 	-->:3's TOZ66--
 	if self.wpn_fps_shot_toz66 then
 		self.parts.wpn_fps_upg_toz66_ammo_000_magnum.pcs = nil
@@ -40028,6 +40018,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_evo_m_straight.stats = {
 					value = 1,
 					extra_ammo = 5,
+					concealment = -1,					
 					recoil = -1,					
 					reload = -1
 				}								
@@ -40065,7 +40056,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = -2,
 						spread = -2,
 						recoil = -2,
-						concealment = 12
+						concealment = 9
 				}			
 			self.wpn_fps_shot_toz194.override = {
 				wpn_fps_upg_a_explosive = {
@@ -40189,19 +40180,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}								
 				self.parts.wpn_fps_upg_scarl_barrel_long.stats = { 
 						value = 4,
-						damage = 5,
+						damage = 10,
 						spread = 1,
 						concealment = -2
 				}			
 				self.parts.wpn_fps_upg_scarl_barrel_cqc.stats = { 
 						value = 4,
-						damage = 5,
+						damage = 10,
 						spread = -1,
 						concealment = 2
 				}			
 				self.parts.wpn_fps_upg_scarl_barrel_cqc_mod.stats = { 
 						value = 4,
-						damage = 5,
+						damage = 10,
 						spread = -1,
 						recoil = -1,						
 						concealment = 2
@@ -40210,7 +40201,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						rof_mult = 1.04
 				}
 		end		
-		
+	-->:3's SCARL/M203--
+			if self.wpn_fps_ass_scar_m203 then
+				self.parts.wpn_fps_upg_scar_m203_barrel_long.stats = { 
+						value = 4,
+						damage = 10,
+						spread = 1,
+						concealment = -2
+				}			
+				self.parts.wpn_fps_upg_scar_m203_mag_pull_assist.stats = { 
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+				}						
+				self.parts.wpn_fps_upg_scar_m203_stock_pdw.stats = {
+						value = 1,
+						concealment = 1
+				}	
+
+	end		
 	-- >:3's HX-25
 		if self.wpn_fps_gre_hx25 then
 				self.parts.wpn_fps_upg_hx25_sight_iron_il.stats = {
@@ -40278,6 +40288,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_smg_tm1a1_lower_reciever_30.stats = {
 						value = 4,
 						damage = -6,
+						total_ammo_mod = 20, 																		
 						spread = 1,
 						recoil = 2 
 					}				
@@ -40322,6 +40333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self.wpn_fps_ass_f2000 then
 				self.parts.wpn_fps_f2000_uupg_barrel_long.stats = {
 						value = 4,
+						damage = 6,						
 						spread = 1,
 						concealment = -2
 						}	
@@ -40361,7 +40373,69 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 0
 					}																
 			end		
-			
+	-- Gambyt's Sneaky Suppressor Pack
+		if self.parts.wpn_fps_ass_ns_g_sup1 then
+				self.parts.wpn_fps_ass_ns_g_sup1.stats = { 
+					value = 1,
+					suppression = 11,
+					alert_size = 11,
+					damage = 5,
+					recoil = 1,
+					concealment = -2
+					}	
+				self.parts.wpn_fps_ass_ns_g_sup2.stats = { 
+					value = 1,
+					suppression = 11,
+					alert_size = 11,
+					damage = 5,
+					recoil = 1,
+					concealment = -2
+					}			
+				self.parts.wpn_fps_ass_ns_g_sup3.stats = { 
+					value = 5,
+					suppression = 12,
+					alert_size = 12,
+					damage = 5,
+					spread = 1,
+					spread_moving = -3,
+					concealment = -3
+					}			
+				self.parts.wpn_fps_ass_ns_g_sup4.stats = { 
+					value = 5,
+					suppression = 12,
+					alert_size = 12,
+					damage = 5,
+					spread = 1,
+					spread_moving = -3,
+					concealment = -3
+					}		
+				self.parts.wpn_fps_ass_ns_g_sup5.stats = { 
+					value = 5,
+					suppression = 12,
+					alert_size = 12,
+					damage = 5,
+					spread = 1,
+					spread_moving = -3,
+					concealment = -3
+					}		
+				self.parts.wpn_fps_ass_ns_g_sup6.stats = { 
+					value = 5,
+					suppression = 12,
+					alert_size = 12,
+					damage = 5,
+					spread = 1,
+					spread_moving = -3,
+					concealment = -3
+					}							
+				self.parts.wpn_fps_ass_ns_g_sup7.stats = { 
+					value = 1,
+					suppression = 13,
+					alert_size = 13,
+					spread_moving = -2,
+					concealment = -2
+					}																										
+			end					
+						
 	-- Silent Enforcer's Owen Gun		
 		if self.wpn_fps_smg_owen then
 				self.parts.wpn_fps_smg_owen_m_double.stats = {

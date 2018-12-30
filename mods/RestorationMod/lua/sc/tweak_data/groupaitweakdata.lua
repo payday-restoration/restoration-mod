@@ -756,7 +756,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1")
 					},
 					nypd = {
-						Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+						Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2")
 					}					
 				},
 				access = access_type_all
@@ -777,7 +777,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1")
 					},
 					nypd = {
-						Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+						Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1")
 					}				
 				},
 				access = access_type_all
@@ -2719,7 +2719,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -2935,7 +2935,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -3051,7 +3051,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),	
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),							
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},						
 					},
@@ -3117,7 +3117,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}					
 					},
@@ -3183,7 +3183,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}					
 					},
@@ -3249,7 +3249,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),	
 							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 							Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),							
-							Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},

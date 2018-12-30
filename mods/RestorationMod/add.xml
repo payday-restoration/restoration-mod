@@ -493,10 +493,11 @@
 	<material_config path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
 	<material_config path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2_husk" force="false" load="true"/>
-
-	<texture path="units/payday2/characters/shared_textures/vetcop_body_2_df" force="false"/>
-	<texture path="units/payday2/characters/shared_textures/vetcop_body_df" force="false"/>
-	<texture path="units/payday2/characters/shared_textures/vetcop_head_df" force="false"/>	
+	
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_nm" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
 
 	<!--Grenadier-->
 	<object path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
@@ -1608,7 +1609,24 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_contour" force="false"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk" force="false" load="true"/>
-	
+
+	<!--NYPD Veteran Cop-->	
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1_contour" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1_husk" force="false" load="true"/>
+
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_contour" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_husk" force="false" load="true"/>	
+
 	<!--shared_textures crap-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_df" />	
@@ -1628,6 +1646,9 @@
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" force="false"/>
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" force="false"/>
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" force="false"/>				
 	
 	<!--fuck u183 what a pile of shit-->
 	<object path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>

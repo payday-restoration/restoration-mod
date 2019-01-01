@@ -1627,6 +1627,30 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_contour" force="false"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_husk" force="false" load="true"/>	
 
+	<!--NYPD FBI/HRTs-->
+	<unit path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
+	<unit path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3_husk" load="true"/>					
+	<object path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"	force="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3_contour" force="false"/>
+
+	<unit path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
+	<unit path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
+	<object path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"	force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_contour" force="false"/>	
+
+	<!--NYPD FBI Cap-->
+	<unit path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" load="true"/>	
+	<object path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap"	force="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" force="false"/>	
+	
 	<!--shared_textures crap-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_df" />	
@@ -1646,9 +1670,13 @@
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />	
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" force="false"/>
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" force="false"/>
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" force="false"/>				
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />		
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />				
 	
 	<!--fuck u183 what a pile of shit-->
 	<object path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>

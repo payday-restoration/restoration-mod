@@ -59,11 +59,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.nail.package = {"packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.help.package = {"packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-		if restoration and restoration.Options:GetValue("SC/Holiday") then
+		--if restoration and restoration.Options:GetValue("SC/Holiday") then
 			self.haunted.ai_group_type = zombie		
 			self.nail.ai_group_type = zombie
 			self.help.ai_group_type = zombie
-		end
+		--end
 		
 		self.chill.ghost_bonus = nil
 	end)

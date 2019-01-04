@@ -788,25 +788,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						russia = {
@@ -876,25 +876,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						nypd = {
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -904,25 +904,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						russia = {
@@ -992,25 +992,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						nypd = {
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -1020,15 +1020,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						russia = {
@@ -1068,15 +1068,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 						},
 						nypd = {
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 						}							
 					},
@@ -1154,7 +1154,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault")
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
@@ -1166,7 +1166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light")
 						},
 						nypd = {
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault")
 						}						
 					},
 					access = access_type_all
@@ -1175,7 +1175,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")							
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault")							
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")					
@@ -1187,7 +1187,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light")					
 						},
 						nypd = {
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault")
 						}							
 					},
 					access = access_type_all
@@ -1196,7 +1196,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.unit_categories.CS_swat_MP5 = {
 					unit_types = {
 						america = {
-							Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")							
+							Idstring("units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault")							
 						},
 						russia = {
 							Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")					
@@ -1208,7 +1208,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light")					
 						},
 						nypd = {
-							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1")
+							Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault")
 						}								
 					},
 					access = access_type_all
@@ -1245,7 +1245,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.CS_swat_R870 = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
+						Idstring("units/payday2/characters/ene_swat_2_assault/ene_swat_2_assault")
 					},
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
@@ -1257,7 +1257,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870")
 					},	
 					nypd = {
-						Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2")
+						Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2_assault/ene_nypd_swat_2_assault")
 					}				
 				},
 				access = access_type_all
@@ -1266,7 +1266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.unit_categories.CS_swat_R870 = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
+						Idstring("units/payday2/characters/ene_swat_2_assault/ene_swat_2_assault")
 					},
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870")
@@ -1278,7 +1278,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870")
 					},	
 					nypd = {
-						Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2")
+						Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2_assault/ene_nypd_swat_2_assault")
 					}				
 				},
 				access = access_type_all

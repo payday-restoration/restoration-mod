@@ -420,7 +420,7 @@
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
 	
-     <!--Titan Taser-->	
+    <!--Titan Taser-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
 	<object path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
@@ -592,8 +592,9 @@
 	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2" load="true" force="true"/>
 	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2_husk" load="true" force="true"/>			
 
-	<!--National Guard -->
+	<!--National Guard-->
 	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>
+	<!--never ever-->
 		
 	<!--Zeal Shield Heavy Swat-->
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
@@ -1958,4 +1959,14 @@
 	
 	<!--OVERKILL removed this at somepoint-->
 	<texture path="units/characters/enemies/textures/police_force_nm" />	
+	
+	<!--fixes death line shit without fucking scripted spawns-->
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault" force="false" load="true"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_1_assault/ene_nypd_swat_1_assault_husk" force="false" load="true"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_2_assault/ene_nypd_swat_2_assault" force="false" load="true"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_2_assault/ene_nypd_swat_2_assault_husk" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_swat_1_assault/ene_swat_1_assault_husk" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_swat_2_assault/ene_swat_2_assault" force="false" load="true"/>
+	<unit path="units/payday2/characters/ene_swat_2_assault/ene_swat_2_assault_husk" force="false" load="true"/>
 </table>

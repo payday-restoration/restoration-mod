@@ -27,6 +27,12 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	--"sky_orientation/rotation":"-116.40824890137",
 	
+	end	
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_3" then
+	
+	BeardLib:ReplaceScriptData("mods/RestorationMod/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	--"sky_orientation/rotation":"-116.40824890137",
+	
 	end
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" then
 	if rnd == 1 or rnd == 2 then

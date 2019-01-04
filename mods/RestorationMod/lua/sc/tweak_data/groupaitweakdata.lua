@@ -3624,25 +3624,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -3701,15 +3701,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -3747,10 +3747,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
 							Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 						}						
 					},
@@ -3815,7 +3815,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")
 						}						
 					},
 					access = access_type_all
@@ -3836,7 +3836,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")
 						}							
 					},
 					access = access_type_all
@@ -3857,7 +3857,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")						
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")
 						}						
 					},
 					access = access_type_all
@@ -3878,7 +3878,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")						
 						},
 						nypd = {
-							Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
+							Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")
 						}					
 					},
 					access = access_type_all

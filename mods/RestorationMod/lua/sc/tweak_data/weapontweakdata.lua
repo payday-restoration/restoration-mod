@@ -8501,7 +8501,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		--Custom weapons below--
 		if self.ppsh then -->:3's PPSH
-
 			self.ppsh.AMMO_MAX = 180
 			self.ppsh.AMMO_PICKUP = self:_pickup_chance(180, 1)
 			self.ppsh.panic_suppression_chance = 0.1
@@ -8528,11 +8527,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				reload = 11
 			}
-
 		end
 
 		if self.toz34 then -->:3's TOZ 34
-
 			self.toz34.rays = 9
 			self.toz34.AMMO_MAX = 40
 			self.toz34.AMMO_PICKUP = self:_pickup_chance(40, 2)
@@ -8566,11 +8563,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.toz34.panic_suppression_chance = 0.0
 			self.toz34.stats_modifiers = {damage = 1}
-
 		end
 
 		if self.toz66 then -->:3's TOZ 66
-
 			self.toz66.rays = 9
 			self.toz66.spread.standing = 3
 			self.toz66.spread.crouching = 2
@@ -8607,11 +8602,146 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.toz66.panic_suppression_chance = 0.0
 			self.toz66.stats_modifiers = {damage = 1}
-
 		end
 
-		if self.scar_m203 then -->:3'S SCAR L/M203
+		if self.xm8 then -->:3'S HK XM8
+			self.xm8.has_description = false			
+			self.xm8.tactical_reload = 1						
+			self.xm8.spread.standing = 3
+			self.xm8.spread.crouching = 2
+			self.xm8.spread.steelsight = 1
+			self.xm8.spread.moving_standing = 4
+			self.xm8.spread.moving_crouching = 3
+			self.xm8.spread.moving_steelsight = 2
+			self.xm8.auto.fire_rate = 0.08
+			self.xm8.fire_mode_data.fire_rate = 0.08
+			self.xm8.AMMO_MAX = 180
+			self.xm8.AMMO_PICKUP = self:_pickup_chance(180, 2)
+			self.xm8.CLIP_AMMO_MAX = 30
+			self.xm8.kick.standing = self.new_m4.kick.standing
+			self.xm8.kick.crouching = self.new_m4.kick.standing
+			self.xm8.kick.steelsight = self.new_m4.kick.standing
+			self.xm8.stats = {
+				damage = 29,
+				spread = 16,
+				recoil = 19,
+				spread_moving = 8,
+				zoom = 3,
+				concealment = 20,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+		self.xm8.panic_suppression_chance = 0.0
+		end		
 
+		if self.g36k then -->:3'S HK G36K
+			self.g36k.spread.standing = 3
+			self.g36k.tactical_reload = 1			
+			self.g36k.spread.crouching = 2
+			self.g36k.has_description = false					
+			self.g36k.spread.steelsight = 1
+			self.g36k.spread.moving_standing = 4
+			self.g36k.spread.moving_crouching = 3
+			self.g36k.spread.moving_steelsight = 2
+			self.g36k.auto.fire_rate = 0.08
+			self.g36k.fire_mode_data.fire_rate = 0.08
+			self.g36k.AMMO_MAX = 150
+			self.g36k.AMMO_PICKUP = self:_pickup_chance(180, 2)
+			self.g36k.CLIP_AMMO_MAX = 30
+			self.g36k.kick.standing = self.new_m4.kick.standing
+			self.g36k.kick.crouching = self.new_m4.kick.standing
+			self.g36k.kick.steelsight = self.new_m4.kick.standing
+			self.g36k.stats = {
+				damage = 35,
+				spread = 14,
+				recoil = 19,
+				spread_moving = 7,
+				zoom = 3,
+				concealment = 19,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+		self.g36k.panic_suppression_chance = 0.0
+		end		
+
+	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
+		self.amt.has_description = false							
+		self.amt.spread.standing = 3
+		self.amt.spread.crouching = 2
+		self.amt.spread.steelsight = 1
+		self.amt.spread.moving_standing = 4
+		self.amt.spread.moving_crouching = 3
+		self.amt.spread.moving_steelsight = 2
+		self.amt.kick.standing = self.glock_17.kick.standing
+		self.amt.kick.crouching = self.glock_17.kick.standing
+		self.amt.kick.steelsight = self.glock_17.kick.standing
+		self.amt.AMMO_MAX = 40
+		self.amt.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.amt.stats = {
+			damage = 95,
+			spread = 18,
+			recoil = 18,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 25,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.amt.panic_suppression_chance = 0.0
+		end	
+
+	if self.m1894 then -->:3's Marlin Model 1894 Custom
+		self.m1894.categories = {
+			"snp"
+		}	
+		self.m1894.has_description = true
+		self.m1894.desc_id = "bm_ap_weapon_sc_desc"	
+		self.m1894.AMMO_MAX = 40
+		self.m1894.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.m1894.spread = {}
+		self.m1894.spread.standing = 3
+		self.m1894.spread.crouching = 2
+		self.m1894.spread.steelsight = 1
+		self.m1894.spread.moving_standing = 4
+		self.m1894.spread.moving_crouching = 3
+		self.m1894.spread.moving_steelsight = 2
+		self.m1894.kick.standing = self.huntsman.kick.standing
+		self.m1894.kick.crouching = self.huntsman.kick.standing
+		self.m1894.kick.steelsight = self.huntsman.kick.standing
+		self.m1894.stats = {
+			damage = 145,
+			spread = 17,
+			recoil = 15,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 16,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.m1894.stats_modifiers = nil
+		self.m1894.can_shoot_through_enemy = true
+		self.m1894.can_shoot_through_shield = true
+		self.m1894.can_shoot_through_wall = true		
+		self.m1894.panic_suppression_chance = 0.0
+		end				
+		
+		if self.scar_m203 then -->:3'S SCAR L/M203
 			self.scar_m203.desc_id = "bm_m203_weapon_sc_desc"
 			self.scar_m203.has_description = true		
 			self.scar_m203.tactical_reload = 1
@@ -8642,19 +8772,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.scar_m203.panic_suppression_chance = 0.0
-
 		end
 
 		if self.m60 then -->:3's M60
-
 			self.m60.categories = {
 				"lmg",
 				"smg"
 			}
 			self.m60.has_description = false
 			self.m60.fire_mode_data.fire_rate = 0.12
-			self.m60.AMMO_MAX = 150
-			self.m60.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.m60.AMMO_MAX = 200
+			self.m60.AMMO_PICKUP = self:_pickup_chance(200, 1)
 			self.m60.panic_suppression_chance = 0.1
 			self.m60.spread.standing = 3
 			self.m60.spread.crouching = 2
@@ -8666,7 +8794,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m60.kick.crouching = self.new_m4.kick.standing
 			self.m60.kick.steelsight = self.new_m4.kick.standing
 			self.m60.stats = {
-				damage = 45,
+				damage = 35,
 				spread = 18,
 				recoil = 20,
 				spread_moving = 9,
@@ -8679,7 +8807,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 9,
 				reload = 11
 			}
-
 		end
 
 		if self.yayo then --Montana 5.56 by Matthelzor, Kitsune Jimmy, >:3, & Gambyt
@@ -8713,12 +8840,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.yayo.panic_suppression_chance = 0.0
-
 		end
 
-		if self.storm then
-
-			-- Alcat's MX4
+		if self.storm then -- Alcat's MX4
 			self.storm.tactical_reload = 1
 			self.storm.categories = {"pistol"}
 			self.storm.use_data.selection_index = 2
@@ -8757,11 +8881,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.storm.panic_suppression_chance = 0.0
-
 		end
 
 		if self.hcar then -->:3's HCAR
-
 			self.hcar.tactical_reload = 1
 			self.hcar.categories = {
 				"lmg",
@@ -8800,10 +8922,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.hcar.panic_suppression_chance = 0.1
-
 		end		
 	if self.ak12 then -->:3's AK-12
-	
 		self.ak12.has_description = false																			
 		self.ak12.AMMO_MAX = 150
 		self.ak12.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -8831,11 +8951,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
-		self.ak12.panic_suppression_chance = 0.0
-		
+		self.ak12.panic_suppression_chance = 0.0	
 	end		
 	
-		if self.toz194 then --Silent Enforcer's TOZ-194
+	if self.toz194 then --Silent Enforcer's TOZ-194
 		self.toz194.rays = 9
 		self.toz194.CLIP_AMMO_MAX = 8
 		self.toz194.spread.standing = 3
@@ -8871,11 +8990,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.toz194.stats_modifiers = {damage = 1}
 		self.toz194.panic_suppression_chance = 0.0
-		
-		end				
+	end	
 
 	if self.trench then --Alcat's Trench Gun
-	
 		self.trench.AMMO_MAX = 40
 		self.trench.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.trench.has_description = false																
@@ -8912,10 +9029,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.trench.panic_suppression_chance = 0.0
 		self.trench.stats_modifiers = {damage = 1}
-		end									
+	end									
 
 		if self.owen then -- Silent Enforcer's Owen Gun
-		
 		self.owen.use_data.selection_index = 2
 		self.owen.tactical_reload = 1
 		self.owen.has_description = false														
@@ -8951,8 +9067,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.owen.panic_suppression_chance = 0.1
-		
-		end	
+	end	
 
 		if self.cbjms then -->:3's CBJ-MS
 		
@@ -8992,11 +9107,43 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.cbjms.panic_suppression_chance = 0.1
-		
-		end			
+	end		
+	
+	if self.skspug then -->:3's CBRPS SKS Pug (cursed weapon)
+		self.skspug.categories = {"assault_rifle"}
+		self.skspug.has_description = false			
+		self.skspug.tactical_reload = 1		
+		self.skspug.use_data.selection_index = 2			
+		self.skspug.CLIP_AMMO_MAX = 20
+		self.skspug.spread.standing = 3
+		self.skspug.spread.crouching = 2
+		self.skspug.spread.steelsight = 1
+		self.skspug.spread.moving_standing = 4
+		self.skspug.spread.moving_crouching = 3
+		self.skspug.spread.moving_steelsight = 2
+		self.skspug.kick.standing = self.new_m4.kick.standing
+		self.skspug.kick.crouching = self.new_m4.kick.standing
+		self.skspug.kick.steelsight = self.new_m4.kick.standing
+		self.skspug.AMMO_MAX = 60
+		self.skspug.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.skspug.stats = {
+			zoom = 3,
+			total_ammo_mod = 100,
+			damage = 95,
+			alert_size = 6,
+			spread = 16,
+			spread_moving = 5,
+			recoil = 14,
+			value = 1,
+			extra_ammo = 51,
+			reload = 11,
+			suppression = 6,
+			concealment = 19
+		}
+		self.skspug.panic_suppression_chance = 0.0		
+	end						
 
-		if self.l1a1 then --Gambyt's L1A1
-		
+	if self.l1a1 then --Gambyt's L1A1
 		self.l1a1.CLIP_AMMO_MAX = 20
 		self.l1a1.tactical_reload = 1				
 		self.l1a1.has_description = false											
@@ -9031,11 +9178,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.l1a1.panic_suppression_chance = 0.1
-		
-		end					
+	end					
 
-		if self.tm1a1 then --Killerwolf's Thompson M1A1
-		
+	if self.tm1a1 then --Killerwolf's Thompson M1A1
 		self.tm1a1.use_data.selection_index = 2
 		self.tm1a1.categories = {
 				"smg"
@@ -9075,10 +9220,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.tm1a1.panic_suppression_chance = 0.1
 		self.x_tm1a1.use_data.selection_index = 4 		
-		end				
+	end				
 
 		if self.hk416 then -->:3's HK416
-		
 			self.hk416.has_description = false						
 			self.hk416.tactical_reload = 1		
 			self.hk416.AMMO_MAX = 150
@@ -9109,11 +9253,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.hk416.panic_suppression_chance = 0.0
-
 		end						
 
-		if self.f2000 then -->:3's F2000
-		
+	if self.f2000 then -->:3's F2000
 		self.f2000.has_description = false				
 		self.f2000.tactical_reload = 1		
 		self.f2000.AMMO_MAX = 150
@@ -9146,11 +9288,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.f2000.panic_suppression_chance = 0.0		
-		
 		end				
 
 		if self.tilt then --Gambyt's AN-92
-
 			self.tilt.has_description = false		
 			self.tilt.tactical_reload = 1
 			self.tilt.AMMO_MAX = 150
@@ -9181,11 +9321,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.tilt.panic_suppression_chance = 0.1
-
 		end			
 
-		if self.mac10mpa then --Mira's SMG-11  
-
+	if self.mac10mpa then --Mira's SMG-11  
 		self.mac10mpa.timers.reload_not_empty = 2
 		self.mac10mpa.timers.reload_empty = 2.7
 		self.mac10mpa.CLIP_AMMO_MAX = 30
@@ -9218,11 +9356,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.mac10mpa.panic_suppression_chance = 0.1
+	end				
 
-		end				
-
-		if self.stf12 then --Mira's STF-12 Compact
-		
+	if self.stf12 then --Mira's STF-12 Compact
 		self.stf12.use_data.selection_index = 1
 		self.stf12.rays = 9
 		self.stf12.spread.standing = 3
@@ -9257,13 +9393,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.stf12.panic_suppression_chance = 0.0
+	end		
 
-		end		
-
-		if self.heffy_762 then --Killerwolf & Germantaco's AK-47 (only stats. too much attachments to sort through. cool model tho)
-		
+	if self.heffy_762 then --Killerwolf & Germantaco's AK-47 (only stats. too much attachments to sort through. cool model tho)
 		self.heffy_762.desc_id = "bm_menu_sc_akm_desc"
 		self.heffy_762.AMMO_MAX = 120
+		self.heffy_762.tactical_reload = 1				
 		self.heffy_762.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.heffy_762.fire_mode_data.fire_rate = 0.1
 		self.heffy_762.auto.fire_rate = 0.1
@@ -9288,11 +9423,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.heffy_762.panic_suppression_chance = 0.0
+	end												
 
-		end												
-
-		if self.dp28 then --Killerwolf's DP-28 (feat. Alcat)
-
+	if self.dp28 then --Killerwolf's DP-28 (feat. Kitsune Jimmy)
 		self.dp28.has_description = false		
 		self.dp28.AMMO_MAX = 120
 		self.dp28.tactical_reload = 1		
@@ -9319,11 +9452,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		reload = 11
 		}
 		self.dp28.panic_suppression_chance = 0.0
+	end						
 
-		end						
-
-		if self.g3m203 then -->:3's G3
-		
+	if self.g3m203 then -->:3's G3/M203
 		self.g3m203.desc_id = "bm_m203_weapon_sc_desc"
 		self.g3m203.has_description = true
 		self.g3m203.tactical_reload = 1
@@ -9355,10 +9486,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
-		end
+	end
 
-		if self.hx25 then -->:3's HX25
-		
+	if self.hx25 then -->:3's HX25
 		self.hx25.has_description = false		
 		self.hx25.fire_mode_data = {}
 		self.hx25.fire_mode_data.fire_rate = 1.5
@@ -9394,10 +9524,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.hx25.panic_suppression_chance = 0.0
 		self.hx25.stats_modifiers = {damage = 2}		
-		end		
+	end		
 
-		if self.ks23 then -->:3's KS23
-		
+	if self.ks23 then -->:3's KS23
 		self.ks23.desc_id = "bm_40mm_weapon_sc_desc"
 		self.ks23.has_description = true
 		self.ks23.use_data.selection_index = 2
@@ -9438,10 +9567,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.ks23.panic_suppression_chance = 0.0
 		self.ks23.stats_modifiers = {damage = 1}
-		end				
+	end				
 
 		if self.evo then --Gambyt's Scorpion EVO
-		
 			self.evo.has_description = false					
 			self.evo.sounds.fire = "mp5_fire_single"
 			self.evo.sounds.fire_single = "mp5_fire_single"
@@ -9488,7 +9616,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 		if self.scarl then -->:3's SCAR L
-		
 			self.scarl.has_description = false		
 			self.scarl.tactical_reload = 1
 			self.scarl.fire_mode_data.fire_rate = 0.096
@@ -9518,7 +9645,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.scarl.panic_suppression_chance = 0.0
-
 		end				
 		
 	end)

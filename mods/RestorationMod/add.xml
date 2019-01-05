@@ -232,6 +232,7 @@
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
     <object path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
     <model path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>			
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1_husk"load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
@@ -241,6 +242,7 @@
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>
 	<object path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>
 	<model path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>				
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2_husk"load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>
@@ -250,11 +252,135 @@
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>
 	<object path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>
 	<model path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>					
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3_husk"load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3_contour"/>
-	<!--dozer end please don't make me make debris SC-->
+	<!--OMNIA Green Bulldozer Bits-->
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_back/ene_acc_bulldozer_1_back" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_back/ene_acc_bulldozer_1_back"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_back/ene_acc_bulldozer_1_back" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_back/ene_acc_bulldozer_1_back"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_back/ene_acc_bulldozer_1_back"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_chest/ene_acc_bulldozer_1_chest" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_chest/ene_acc_bulldozer_1_chest"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_chest/ene_acc_bulldozer_1_chest" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_chest/ene_acc_bulldozer_1_chest"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_chest/ene_acc_bulldozer_1_chest"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_helmet_plate/ene_acc_bulldozer_1_helmet_plate" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_helmet_plate/ene_acc_bulldozer_1_helmet_plate"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_helmet_plate/ene_acc_bulldozer_1_helmet_plate" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_helmet_plate/ene_acc_bulldozer_1_helmet_plate"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_helmet_plate/ene_acc_bulldozer_1_helmet_plate"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_stomache/ene_acc_bulldozer_1_stomache" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_stomache/ene_acc_bulldozer_1_stomache"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_stomache/ene_acc_bulldozer_1_stomache" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_stomache/ene_acc_bulldozer_1_stomache"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_stomache/ene_acc_bulldozer_1_stomache"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat"/>
+	
+	<!--OMNIA Saiga Bulldozer Bits-->
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat"/>
+
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_back/ene_acc_bulldozer_2_back" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_back/ene_acc_bulldozer_2_back"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_back/ene_acc_bulldozer_2_back" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_back/ene_acc_bulldozer_2_back"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_back/ene_acc_bulldozer_2_back"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_chest/ene_acc_bulldozer_2_chest" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_chest/ene_acc_bulldozer_2_chest"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_chest/ene_acc_bulldozer_2_chest" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_chest/ene_acc_bulldozer_2_chest"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_chest/ene_acc_bulldozer_2_chest"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_helmet_plate/ene_acc_bulldozer_2_helmet_plate" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_helmet_plate/ene_acc_bulldozer_2_helmet_plate"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_helmet_plate/ene_acc_bulldozer_2_helmet_plate" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_helmet_plate/ene_acc_bulldozer_2_helmet_plate"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_helmet_plate/ene_acc_bulldozer_2_helmet_plate"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_neck/ene_acc_bulldozer_2_neck" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_neck/ene_acc_bulldozer_2_neck"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_neck/ene_acc_bulldozer_2_neck" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_neck/ene_acc_bulldozer_2_neck"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_neck/ene_acc_bulldozer_2_neck"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_stomache/ene_acc_bulldozer_2_stomache" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_stomache/ene_acc_bulldozer_2_stomache"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_stomache/ene_acc_bulldozer_2_stomache" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_stomache/ene_acc_bulldozer_2_stomache"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_stomache/ene_acc_bulldozer_2_stomache"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat"/>	
+
+	<!--OMNIA Skulldozer Bits-->
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>
+
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_back/ene_acc_bulldozer_3_back" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_back/ene_acc_bulldozer_3_back"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_back/ene_acc_bulldozer_3_back" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_back/ene_acc_bulldozer_3_back"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_back/ene_acc_bulldozer_3_back"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_chest/ene_acc_bulldozer_3_chest" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_chest/ene_acc_bulldozer_3_chest"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_chest/ene_acc_bulldozer_3_chest" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_chest/ene_acc_bulldozer_3_chest"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_chest/ene_acc_bulldozer_3_chest"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_helmet_plate/ene_acc_bulldozer_3_helmet_plate" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_helmet_plate/ene_acc_bulldozer_3_helmet_plate"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_helmet_plate/ene_acc_bulldozer_3_helmet_plate" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_helmet_plate/ene_acc_bulldozer_3_helmet_plate"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_helmet_plate/ene_acc_bulldozer_3_helmet_plate"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_stomache/ene_acc_bulldozer_3_stomache" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_stomache/ene_acc_bulldozer_3_stomache"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_stomache/ene_acc_bulldozer_3_stomache" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_stomache/ene_acc_bulldozer_3_stomache"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_stomache/ene_acc_bulldozer_3_stomache"/>
+	
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat" load="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat" />
+	<object path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat"/>			
+	<!--bits end-->
+	
 	<!--OMNIAdozer textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_saiga_df"/>

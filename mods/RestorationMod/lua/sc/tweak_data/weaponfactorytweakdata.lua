@@ -40262,8 +40262,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 1,
 						concealment = 1
 				}	
-
-	end		
+			end	
+		-->:3's Marlin 1894--
+			if self.wpn_fps_snp_m1894 then
+				self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.stats = { 
+						value = 2,
+						suppression = 11,
+						alert_size = 11,
+						damage = 5,
+						recoil = 1,
+						concealment = -2
+				}			
+				self.parts.wpn_fps_upg_m1894_supp_osprey.stats = { 
+						value = 7,
+						suppression = 13,
+						alert_size = 13,
+						damage = 5,
+						spread = -2,
+						recoil = 3,
+						concealment = -4
+				}						
+			end			
 	-- >:3's HX-25
 		if self.wpn_fps_gre_hx25 then
 				self.parts.wpn_fps_upg_hx25_sight_iron_il.stats = {
@@ -40390,12 +40409,96 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}				
 				self.parts.wpn_fps_f2000_uupg_mag_40.custom_stats = {reload_speed_mult = 0.85}															
 			end	
+
+	-- >:3's SKS Pug				
+		if self.wpn_fps_ass_skspug then
+				self.parts.wpn_fps_upg_skspug_mag_30.stats = {
+						value = 1,
+						reload = -1,						
+						extra_ammo = 5,						
+						concealment = -1
+						}	
+				self.parts.wpn_fps_upg_skspug_mag_30.custom_stats = {reload_speed_mult = 0.95}		
+				self.parts.wpn_fps_upg_skspug_handguard_short.stats = {
+						value = 1,
+						recoil = -1,						
+						concealment = 2
+						}		
+				self.parts.wpn_fps_upg_skspug_barrel_short.stats = {
+						value = 1,
+						spread = -1,						
+						concealment = 2
+						}												
+				self.parts.wpn_fps_upg_skspug_ns_dtk1.stats = {
+						value = 5,
+						damage = 5,
+						recoil = -1,
+						spread = 2,
+						concealment = -4
+						}	
+				self.parts.wpn_fps_upg_skspug_ns_dtk2.stats = {
+						value = 5,
+						damage = 5,
+						spread = 1,
+						concealment = -3
+						}													
+				end		
+		-- >:3's HK XM8
+		if self.wpn_fps_ass_xm8 then
+				self.parts.wpn_fps_upg_xm8_cmag.stats = {
+						value = 9,
+						extra_ammo = 35,
+						reload = -6,
+						concealment = -5
+						}				
+				self.parts.wpn_fps_upg_xm8_cmag.custom_stats = {reload_speed_mult = 0.7}		
+				self.parts.wpn_fps_upg_xm8_mag_magpul.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+						}		
+				self.parts.wpn_fps_upg_xm8_mag_magpul.custom_stats = {reload_speed_mult = 1.1}								
+				end		
+		-- >:3's G36K
+		if self.wpn_fps_ass_g36k then
+				self.parts.wpn_fps_ass_g36k_mag_cmag.stats = {
+						value = 9,
+						extra_ammo = 35,
+						reload = -6,
+						concealment = -5
+						}		
+				self.parts.wpn_fps_upg_g36k_fg_g36c.stats = {
+						value = 1,
+						recoil = -2,						
+						concealment = 1
+						}										
+				self.parts.wpn_fps_ass_g36k_mag_cmag.custom_stats = {reload_speed_mult = 0.7}		
+				self.parts.wpn_fps_upg_g36k_mag_magpul.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+						}		
+				self.parts.wpn_fps_upg_g36k_mag_magpul.custom_stats = {reload_speed_mult = 1.1}								
+				end									
 	-- >:3's AK-12				
 		if self.wpn_fps_ass_ak12 then
 			self.parts.wpn_fps_upg_ak12_barrel_svk12.pcs = nil
 			self.parts.wpn_fps_upg_ak12_barrel_svk12.stats = {
 						value = 0
-				}				
+				}			
+				self.parts.wpn_fps_upg_ak12_barrel_ak12u.stats = {
+						value = 2,
+						recoil = -2,						
+						concealment = 3,
+					}		
+				self.parts.wpn_fps_upg_ak12_grip_molot.stats = {
+						value = 1,
+						spread = -1,
+						concealment = 1,
+					}								
+				self.parts.wpn_fps_upg_ak12_barrel_ak12u.custom_stats = {rof_mult = 1.046153846153846}										
 				self.parts.wpn_fps_upg_ak12_mag_magpul.stats = {
 						value = 2,
 						spread = -1,
@@ -40698,8 +40801,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
 				}
 			}	
-		end		
+		end	
 		
+	-- >:3's HCAR								
 		if self.wpn_fps_ass_hcar then
 			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"

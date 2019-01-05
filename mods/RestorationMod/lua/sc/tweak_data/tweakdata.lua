@@ -396,6 +396,9 @@ if not tweak_data then return end
 				{"assault_rifle"}
 			}
 		}
+		if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") then
+			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"snp"})
+		end		
 		
 		if SystemFS:exists("assets/mod_overrides/Scorpion Evo/main.xml") or ("assets/mod_overrides/Owen Gun/main.xml") or ("assets/mod_overrides/Thompson M1A1/main.xml") or ("assets/mod_overrides/CBJ-MS/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})

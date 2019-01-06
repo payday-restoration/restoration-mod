@@ -886,7 +886,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	--infiltrator stuff
 	self.values.temporary.melee_life_leech = {
-		{0.8, 08}
+		{0.08, 08}
 	}
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}

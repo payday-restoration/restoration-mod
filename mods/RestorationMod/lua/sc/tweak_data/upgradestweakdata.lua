@@ -172,7 +172,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
 	self.values.team.crew_health_regen = {0.25}
-	self.values.team.crew_throwable_regen = {100}
+	self.values.team.crew_throwable_regen = {70}
 	self.values.team.crew_faster_reload = {1.1}
 	self.values.team.crew_faster_swap = {1}	
 
@@ -186,16 +186,16 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.team.crew_scavenge = {
 		{
-			0.4,
-			0.4,
-			0.4
+			0.25,
+			0.25,
+			0.25
 		}
 	}
 	self.values.team.crew_interact = {
 		{
-			0.8,
-			0.8,
-			0.8
+			0.85,
+			0.85,
+			0.85
 		}
 	}
 	self.values.team.crew_ai_ap_ammo = {true}
@@ -294,10 +294,10 @@ function UpgradesTweakData:_init_pd2_values()
 				}				
 							
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.015, 0.045}
+				self.values.player.hostage_health_regen_addend = {0.015, 0.035}
 				self.values.team.damage = {
 					hostage_absorption = {0.1},
-					hostage_absorption_limit = 4
+					hostage_absorption_limit = 6
 				}
 			--}
 			
@@ -747,12 +747,12 @@ function UpgradesTweakData:_init_pd2_values()
 				--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
 					{
-						damage_bonus = 1.2,
+						damage_bonus = 1.15,
 						max_stacks = 4,
 						max_time = 10
 					},
 					{	
-						damage_bonus = 1.2,
+						damage_bonus = 1.15,
 						max_stacks = 4,
 						max_time = 20
 					}
@@ -884,8 +884,9 @@ function UpgradesTweakData:_init_pd2_values()
 		1.25,
 		1.25
 	}
+	--infiltrator stuff
 	self.values.temporary.melee_life_leech = {
-		{0.1, 10}
+		{0.8, 08}
 	}
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
@@ -971,7 +972,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
-		base = 4,
+		base = 2,
  		cd = 5,
  		multiplier = 0.2,
 		{0, 2},
@@ -1005,7 +1006,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.killshot_close_regen_armor_bonus = {2.5}
 	self.values.player.killshot_close_panic_chance = {0.25}
 	self.values.player.melee_kill_life_leech = {0.02}
-	self.on_killshot_cooldown = 2
+	self.on_killshot_cooldown = 3
 
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
@@ -1038,6 +1039,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	--I AM A BAD MOTHERFUCKA--
+	--maniac
 	self.cocaine_stacks_convert_levels = {
 		30,
 		25
@@ -1056,6 +1058,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.cocaine_stack_absorption_multiplier = {1.25}
 	
 	--Chico--
+	--kingpin
 	self.values.temporary.chico_injector = {
 		{0.5, 5}
 	}
@@ -1072,6 +1075,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	--Are these the dreamers we were told about?--
+	--sicario
 	self.values.player.dodge_shot_gain = {
 		{0.2, 4}
 	}
@@ -1080,6 +1084,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.sicario_multiplier = {1.5}
 	
 	--alcoholism is no joke
+	--stoic
 	self.values.player.damage_control_passive = {{
 		75,
 		6.25
@@ -1093,6 +1098,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	
 	--Fat benis :DDDDD
+	--biker?
 	self.wild_trigger_time = 4
 	self.wild_max_triggers_per_time = 4	
 	self.values.player.wild_health_amount = {0.1}

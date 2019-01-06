@@ -36,7 +36,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 				local roll = math.rand(1, 100)
-				local chance_gas = 25
+				local chance_gas = 35
 				if roll <= chance_gas then
 					self._unit:sound():say("use_gas", true, nil, true)
 					deploy_gas(shoot_from_pos, target_vec)	

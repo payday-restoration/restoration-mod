@@ -561,7 +561,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" then
 			self.heavy_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.heavy_swat.die_sound_event = "l3d_x02a_any_3p"
@@ -728,7 +728,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" then
 			self.fbi_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.fbi_swat.die_sound_event = "l1d_x02a_any_3p"
@@ -775,7 +775,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
 		self.fbi_heavy_swat.static_melee_preset = true	
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork"  or job =="wetwork_burn"  then
 			self.fbi_heavy_swat.die_sound_event = "l5d_x02a_any_3p"
 		elseif job == "mad" then
 		    self.fbi_heavy_swat.die_sound_event = "l2n_x01a_any_3p"
@@ -846,7 +846,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.static_dodge_preset = true
 		self.city_swat.static_melee_preset = true	
 		self.city_swat.custom_voicework = nil
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" then
 			self.city_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.city_swat.die_sound_event = "l1d_x02a_any_3p"
@@ -1754,7 +1754,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.immune_to_knock_down = true
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" then
 			self.shield.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.shield.die_sound_event = "l4d_x02a_any_3p"
@@ -8432,7 +8432,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {1, 1},
-				dmg_mul = 1.25,
+				dmg_mul = 1.15,
 				recoil = {0.25, 0.45},
 				mode = {
 					0.1,
@@ -8444,7 +8444,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {1, 1},
-				dmg_mul = 1.25,
+				dmg_mul = 0.80,
 				recoil = {2, 3},
 				mode = {
 					0.1,
@@ -8473,7 +8473,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.9, 0.975},
-				dmg_mul = 1.25,
+				dmg_mul = 1.15,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8485,7 +8485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 2000,
 				acc = {0.875, 0.95},
-				dmg_mul = 1.25,
+				dmg_mul = 1,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8497,7 +8497,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.7, 0.9},
-				dmg_mul = 1.25,
+				dmg_mul = 0.8,
 				recoil = {0.35, 0.55},
 				mode = {
 					0,
@@ -8795,7 +8795,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.9, 0.975},
-				dmg_mul = 1.25,
+				dmg_mul = 1.15,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8807,7 +8807,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 2000,
 				acc = {0.875, 0.95},
-				dmg_mul = 1.25,
+				dmg_mul = 1,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8819,7 +8819,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.7, 0.9},
-				dmg_mul = 1.25,
+				dmg_mul = 0.8,
 				recoil = {0.35, 0.55},
 				mode = {
 					0,
@@ -8835,7 +8835,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.7, 0.9},
-				dmg_mul = 1.25,
+				dmg_mul = 1.15,
 				recoil = {0, 0.1},
 				mode = {
 					0,
@@ -8847,7 +8847,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 2000,
 				acc = {0.5, 0.75},
-				dmg_mul = 1.25,
+				dmg_mul = 1,
 				recoil = {0.1, 0.2},
 				mode = {
 					0,
@@ -8859,7 +8859,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.3, 0.6},
-				dmg_mul = 1.25,
+				dmg_mul = 0.8,
 				recoil = {0.4, 0.6},
 				mode = {
 					1,
@@ -8879,7 +8879,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {1, 1},
-				dmg_mul = 1.25,
+				dmg_mul = 1.15,
 				recoil = {1, 1},
 				mode = {
 					1,
@@ -8891,7 +8891,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 3000,
 				acc = {0.95, 1},
-				dmg_mul = 1.25,
+				dmg_mul = 1,
 				recoil = {1, 1},
 				mode = {
 					1,
@@ -8903,7 +8903,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.9, 0.95},
-				dmg_mul = 1.25,
+				dmg_mul = 0.8,
 				recoil = {1, 1},
 				mode = {
 					1,

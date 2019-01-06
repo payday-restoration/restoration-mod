@@ -297,7 +297,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.hostage_health_regen_addend = {0.015, 0.035}
 				self.values.team.damage = {
 					hostage_absorption = {0.1},
-					hostage_absorption_limit = 6
+					hostage_absorption_limit = 4
 				}
 			--}
 			

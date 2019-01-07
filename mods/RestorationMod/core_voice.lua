@@ -28,6 +28,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("tdozer", "spawn")
 		_G.voiceline_framework:register_line_type("tdozer", "gogo")	
 		_G.voiceline_framework:register_line_type("tdozer", "contact")	
+		_G.voiceline_framework:register_line_type("tdozer", "death")	
 		_G.voiceline_framework:register_line_type("tspook", "death")	
 		_G.voiceline_framework:register_line_type("tspook", "kill")	
 		_G.voiceline_framework:register_line_type("pdth", "buddy_died")
@@ -118,7 +119,10 @@ if not _G.restorationvoice then
 		end		
 		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("tdozer", "spawn", ModPath .. "assets/oggs/voiceover/tdozer/spawn/spawn" .. i .. ".ogg")
-		end		
+		end	
+		for i = 1, 19 do
+			_G.voiceline_framework:register_voiceline("tdozer", "death", ModPath .. "assets/oggs/voiceover/pdth/death/death" .. i .. ".ogg")
+		end	
 		
 		--tspook temp lines
 		

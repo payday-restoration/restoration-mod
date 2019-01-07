@@ -2307,6 +2307,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ears = {min_duration = 0, max_duration = 0}
 		}
 		self.civilian.experience.cable_tie = "tie_civ"
+		self.civilian.die_sound_event = "a01x_any"
 		self.civilian.silent_priority_shout = "f37"
 		self.civilian.speech_prefix_p1 = "cm"
 		self.civilian.speech_prefix_count = 2
@@ -2316,6 +2317,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.civilian.calls_in = true
 		self.civilian.hostage_move_speed = 1.5
 		self.civilian_female = deep_clone(self.civilian)
+		self.civilian_female.die_sound_event = "a02x_any"
 		self.civilian_female.speech_prefix_p1 = "cf"
 		self.civilian_female.speech_prefix_count = 5
 		self.civilian_female.female = true
@@ -2338,6 +2340,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			escort = {}
 		}
 		self.bank_manager.tags = {"civilian"}
+		self.bank_manager.die_sound_event = "a01x_any"
 		self.bank_manager.detection = presets.detection.civilian
 		self.bank_manager.HEALTH_INIT = self.civilian.HEALTH_INIT
 		self.bank_manager.headshot_dmg_mul = self.civilian.headshot_dmg_mul

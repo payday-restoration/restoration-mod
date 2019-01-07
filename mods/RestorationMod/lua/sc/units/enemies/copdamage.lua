@@ -717,10 +717,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				game_state_machine:change_state_by_name( "gameoverscreen" ) 
 			end
 		end 		  		   		 
-	    if self._unit:base():has_tag("sniper") or self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("taser_titan")  then
-		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", nil, nil)
+	    if self._unit:base():has_tag("sniper") then
+		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", true)
 		else
-	    	self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x02a_any_3p", nil, nil)
+	    	self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x02a_any_3p", true)
 	    end
 	end
 	

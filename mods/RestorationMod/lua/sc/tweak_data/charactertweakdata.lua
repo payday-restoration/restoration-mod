@@ -1524,6 +1524,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.tank_titan = deep_clone(self.tank)
 		self.tank_titan.tags = {"law", "tank", "special", "tank_titan"}
+		self.tank_titan.speech_prefix_p1 = "heck"
+		self.tank_titan.speech_prefix_count = nil
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 		self.tank_titan.headshot_dmg_mul = 3.997125
@@ -1544,11 +1546,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_titan")
 		
 		self.tank_titan_assault = deep_clone(self.tank_titan)
+		self.tank_titan.speech_prefix_p1 = "heck"
+		self.tank_titan.speech_prefix_count = nil
 		self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
 		self.tank_hw = deep_clone(self.tank)
+		self.tank_hw.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
+		self.tank_hw.speech_prefix_p2 = nil
+		self.tank_hw.speech_prefix_count = nil
 		self.tank_hw.headshot_dmg_mul = 7.99425
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
@@ -8432,7 +8439,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {1, 1},
-				dmg_mul = 1.15,
+				dmg_mul = 1.05,
 				recoil = {0.25, 0.45},
 				mode = {
 					0.1,
@@ -8473,7 +8480,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.9, 0.975},
-				dmg_mul = 1.15,
+				dmg_mul = 1.05,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8526,7 +8533,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {0.6, 0.9},
-				dmg_mul = 1,
+				dmg_mul = 0.8,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8538,7 +8545,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 900,
 				acc = {0.6, 0.9},
-				dmg_mul = 1,
+				dmg_mul = 0.8,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8550,7 +8557,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1000,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.95,
+				dmg_mul = 0.75,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8562,7 +8569,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1100,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.9,
+				dmg_mul = 0.7,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8574,7 +8581,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1200,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.85,
+				dmg_mul = 0.7,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8586,7 +8593,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1300,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 0.7,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8598,7 +8605,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.75,
+				dmg_mul = 0.7,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8795,7 +8802,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.9, 0.975},
-				dmg_mul = 1.15,
+				dmg_mul = 1.05,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8835,7 +8842,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.7, 0.9},
-				dmg_mul = 1.15,
+				dmg_mul = 1.05,
 				recoil = {0, 0.1},
 				mode = {
 					0,
@@ -8879,7 +8886,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {1, 1},
-				dmg_mul = 1.15,
+				dmg_mul = 1.05,
 				recoil = {1, 1},
 				mode = {
 					1,
@@ -8933,7 +8940,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {0.6, 0.9},
-				dmg_mul = 1,
+				dmg_mul = 0.8,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8945,7 +8952,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 900,
 				acc = {0.6, 0.9},
-				dmg_mul = 1,
+				dmg_mul = 0.8,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8957,7 +8964,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1000,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.95,
+				dmg_mul = 0.75,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8969,7 +8976,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1100,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.9,
+				dmg_mul = 0.7,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8981,7 +8988,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1200,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.85,
+				dmg_mul = 0.7,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8993,7 +9000,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1300,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 0.7,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -9005,7 +9012,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.75,
+				dmg_mul = 0.7,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,

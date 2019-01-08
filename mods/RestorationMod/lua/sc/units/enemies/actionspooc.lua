@@ -176,7 +176,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._unit:sound():say(sound_string, true, true)
 				self._beating_end_t = self._stroke_t + 1
 				
-				if Global.game_settings.difficulty == "sm_wish" then
+				if Global.game_settings.difficulty == "sm_wish" or Global.game_settings.difficulty == "overkill_290" then
 					MutatorCloakerEffect.effect_smoke(nil, self._unit)
 				end				
 				

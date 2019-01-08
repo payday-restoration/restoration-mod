@@ -305,7 +305,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "fbi_female")
 		
 		self.fbi_vet = deep_clone(self.fbi)
-			self.fbi_vet.can_shoot_while_dodging = true
+		self.fbi_vet.can_shoot_while_dodging = true
 		self.fbi_vet.HEALTH_INIT = 12
 		self.fbi_vet.headshot_dmg_mul = 3.4
 		self.fbi_vet.damage.bullet_dodge_chance = 65
@@ -11774,11 +11774,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
+		self.shield.damage.explosion_damage_mul = 0.7
+		self.shield.immune_to_concussion = true
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 		
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
+		
+		self.city_swat.can_shoot_while_dodging = true
+		self.omnia.can_shoot_while_dodging = true
+		
 		
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
@@ -11835,7 +11841,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
-		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)			
+		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
+
+		self.city_swat.can_shoot_while_dodging = true
+		self.omnia.can_shoot_while_dodging = true		
 		
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2

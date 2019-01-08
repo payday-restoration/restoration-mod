@@ -79,6 +79,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					unit:contour():add("medic_buff", false)
 				end	
 				
+			end			
+		
+		elseif Global.game_settings.difficulty == "overkill_290" then
+			
+			if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
+		
+				unit:base():add_buff("base_damage", 5 * 0.01)
+				if unit:contour() then
+					unit:contour():add("medic_buff", false)
+				end	
+				
 			end
 		
 		end

@@ -812,6 +812,7 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_nm" force="false"/>
+	<unit path="units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc" load="false" force="false"/>
 
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>

@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+    <object file="units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_m16"/>
+	</dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="m16_crew_summers" />
+		</extension>
+    </extensions>
+</unit>

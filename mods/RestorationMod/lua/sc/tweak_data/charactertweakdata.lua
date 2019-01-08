@@ -307,7 +307,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_vet = deep_clone(self.fbi)
 			self.fbi_vet.can_shoot_while_dodging = true
 		self.fbi_vet.HEALTH_INIT = 12
-		self.fbi_vet.headshot_dmg_mul = 1.7
+		self.fbi_vet.headshot_dmg_mul = 3.4
 		self.fbi_vet.damage.bullet_dodge_chance = 65
 		self.fbi_vet.smoke_dodge_increase = 10
 			self.fbi_vet.dodge = presets.dodge.veteran
@@ -424,8 +424,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 30
-		self.omnia_lpf.headshot_dmg_mul = 1.25
+		self.omnia_lpf.HEALTH_INIT = 60
+		self.omnia_lpf.headshot_dmg_mul = 2.2
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
 		self.omnia_lpf.suppression = nil
@@ -440,7 +440,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.speech_prefix_p2 = nil
 		self.omnia_lpf.speech_prefix_count = nil
 		self.omnia_lpf.access = "swat"
-		self.omnia_lpf.dodge = presets.dodge.athletic
+		self.omnia_lpf.dodge = presets.dodge.elite
 		self.omnia_lpf.no_arrest = true
 		self.omnia_lpf.chatter = presets.enemy_chatter.swat
 		self.omnia_lpf.melee_weapon = "baton"
@@ -507,6 +507,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.use_animation_on_fire_damage = false
 		self.swat_titan.move_speed = presets.move_speed.lightning
 		self.swat_titan.dodge = presets.dodge.elite
+		self.swat_titan.HEALTH_INIT = 16
+		self.swat_titan.headshot_dmg_mul = 4.5		
 		self.swat_titan.surrender = nil
 		self.swat_titan.unintimidateable = true	
 		self.swat_titan.custom_voicework = nil
@@ -520,6 +522,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hrt.speech_prefix_count = 4
 		self.hrt.die_sound_event = "l2n_x01a_any_3p"
 		table.insert(self._enemy_list, "hrt")		
+		
 		self.swat_assault = deep_clone(self.swat)
 		self.swat_assault.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.swat_assault.speech_prefix_p2 = self._speech_prefix_p2
@@ -650,7 +653,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}	
 		self.heavy_swat_sniper.HEALTH_INIT = 12
-		self.heavy_swat_sniper.headshot_dmg_mul = 3.5
+		self.heavy_swat_sniper.headshot_dmg_mul = 3.4
 		self.heavy_swat_sniper.surrender_break_time = {6, 10}
 		self.heavy_swat_sniper.suppression = nil
 		self.heavy_swat_sniper.surrender = nil
@@ -775,7 +778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
 		self.fbi_heavy_swat.static_melee_preset = true	
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork"  or job =="wetwork_burn"  then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork" or job =="wetwork_burn" then
 			self.fbi_heavy_swat.die_sound_event = "l5d_x02a_any_3p"
 		elseif job == "mad" then
 		    self.fbi_heavy_swat.die_sound_event = "l2n_x01a_any_3p"
@@ -878,8 +881,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
-		self.city_swat_titan.HEALTH_INIT = 15
-		self.city_swat_titan.headshot_dmg_mul = 2.19
+		self.city_swat_titan.HEALTH_INIT = 26
+		self.city_swat_titan.headshot_dmg_mul = 2.6
 		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
 		self.city_swat_titan.use_animation_on_fire_damage = false
 		self.city_swat_titan.move_speed = presets.move_speed.very_fast
@@ -1525,10 +1528,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan = deep_clone(self.tank)
 		self.tank_titan.tags = {"law", "tank", "special", "tank_titan"}
 		self.tank_titan.speech_prefix_p1 = "heck"
-		self.tank_titan.speech_prefix_count = nil
+		self.tank_titan.speech_prefix_count = nil		
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
-		self.tank_titan.headshot_dmg_mul = 3.997125
+		self.tank_titan.HEALTH_INIT = 1000
+		self.tank_titan.headshot_dmg_mul = 7.99425
 		self.tank_titan.immune_to_concussion = true
 		self.tank_titan.immune_to_knock_down = true
 		self.tank_titan.priority_shout_max_dis = 3000
@@ -1546,8 +1550,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_titan")
 		
 		self.tank_titan_assault = deep_clone(self.tank_titan)
-		self.tank_titan.speech_prefix_p1 = "heck"
-		self.tank_titan.speech_prefix_count = nil
 		self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
@@ -1555,7 +1557,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_hw = deep_clone(self.tank)
 		self.tank_hw.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
 		self.tank_hw.speech_prefix_p2 = nil
-		self.tank_hw.speech_prefix_count = nil
+		self.tank_hw.speech_prefix_count = nil		
 		self.tank_hw.headshot_dmg_mul = 7.99425
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
@@ -1640,8 +1642,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
+		self.spooc_titan.HEALTH_INIT = 120
+		self.spooc_titan.headshot_dmg_mul = 5.85		
 		self.spooc_titan.speech_prefix_p1 = "t_spk"
-		self.spooc.speech_prefix_count = nil
+		self.spooc_titan.speech_prefix_count = nil
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.spooc_titan.can_be_tased = false
 		self.spooc_titan.priority_shout_max_dis = 0
@@ -1776,7 +1780,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 		self.phalanx_minion.detection = presets.detection.normal
 		self.phalanx_minion.headshot_dmg_mul = 2.2
-		self.phalanx_minion.HEALTH_INIT = 13
+		self.phalanx_minion.HEALTH_INIT = 26
 		self.phalanx_minion.damage.explosion_damage_mul = 0.1
 		self.phalanx_minion.damage.fire_damage_mul = 0.1
 		self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
@@ -2140,7 +2144,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.taser_titan = deep_clone(self.taser)
 		self.taser_titan.tags = {"taser", "taser_titan", "custom", "special"}
-		self.taser_titan.headshot_dmg_mul = 1.25
+		self.taser_titan.HEALTH_INIT = 72
+		self.taser_titan.headshot_dmg_mul = 1.8
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
 		self.taser_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
@@ -8442,7 +8447,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {1, 1},
-				dmg_mul = 1.05,
+				dmg_mul = 1.25,
 				recoil = {0.25, 0.45},
 				mode = {
 					0.1,
@@ -8454,7 +8459,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {1, 1},
-				dmg_mul = 0.80,
+				dmg_mul = 1.25,
 				recoil = {2, 3},
 				mode = {
 					0.1,
@@ -8483,7 +8488,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.9, 0.975},
-				dmg_mul = 1.05,
+				dmg_mul = 1.25,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8495,7 +8500,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 2000,
 				acc = {0.875, 0.95},
-				dmg_mul = 1,
+				dmg_mul = 1.25,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8507,7 +8512,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.7, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 1.25,
 				recoil = {0.35, 0.55},
 				mode = {
 					0,
@@ -8536,7 +8541,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {0.6, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 1,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8548,7 +8553,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 900,
 				acc = {0.6, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 1,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8560,7 +8565,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1000,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.75,
+				dmg_mul = 0.95,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8572,7 +8577,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1100,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.9,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8584,7 +8589,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1200,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.85,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8596,7 +8601,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1300,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.8,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8608,7 +8613,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.75,
 				recoil = {0.75, 0.75},
 				mode = {
 					1,
@@ -8805,7 +8810,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.9, 0.975},
-				dmg_mul = 1.05,
+				dmg_mul = 1.25,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8817,7 +8822,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 2000,
 				acc = {0.875, 0.95},
-				dmg_mul = 1,
+				dmg_mul = 1.25,
 				recoil = {0.25, 0.3},
 				mode = {
 					0,
@@ -8829,7 +8834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.7, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 1.25,
 				recoil = {0.35, 0.55},
 				mode = {
 					0,
@@ -8845,7 +8850,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 300,
 				acc = {0.7, 0.9},
-				dmg_mul = 1.05,
+				dmg_mul = 1.25,
 				recoil = {0, 0.1},
 				mode = {
 					0,
@@ -8857,7 +8862,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 2000,
 				acc = {0.5, 0.75},
-				dmg_mul = 1,
+				dmg_mul = 1.25,
 				recoil = {0.1, 0.2},
 				mode = {
 					0,
@@ -8869,7 +8874,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.3, 0.6},
-				dmg_mul = 0.8,
+				dmg_mul = 1.25,
 				recoil = {0.4, 0.6},
 				mode = {
 					1,
@@ -8889,7 +8894,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {1, 1},
-				dmg_mul = 1.05,
+				dmg_mul = 1.25,
 				recoil = {1, 1},
 				mode = {
 					1,
@@ -8901,7 +8906,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 3000,
 				acc = {0.95, 1},
-				dmg_mul = 1,
+				dmg_mul = 1.25,
 				recoil = {1, 1},
 				mode = {
 					1,
@@ -8913,7 +8918,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 10000,
 				acc = {0.9, 0.95},
-				dmg_mul = 0.8,
+				dmg_mul = 1.25,
 				recoil = {1, 1},
 				mode = {
 					1,
@@ -8943,7 +8948,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 100,
 				acc = {0.6, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 1,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8955,7 +8960,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 900,
 				acc = {0.6, 0.9},
-				dmg_mul = 0.8,
+				dmg_mul = 1,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8967,7 +8972,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1000,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.75,
+				dmg_mul = 0.95,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8979,7 +8984,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1100,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.9,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -8991,7 +8996,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1200,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.85,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -9003,7 +9008,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1300,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.8,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -9015,7 +9020,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.4, 0.9},
-				dmg_mul = 0.7,
+				dmg_mul = 0.75,
 				recoil = {0.4, 0.7},
 				mode = {
 					0,
@@ -11636,7 +11641,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.old_hoxton_mission.HEALTH_INIT = 125
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
-		self:_multiply_all_speeds(1, 1)
+		self:_multiply_all_speeds(1, 1.05)
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11744,7 +11749,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
-		self:_multiply_all_speeds(1, 1)
+		self:_multiply_all_speeds(1, 1.05)
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11788,7 +11793,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
-		self:_multiply_all_speeds(1, 1)
+		self:_multiply_all_speeds(1.05, 1.1)
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -11836,7 +11841,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
 		self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 		
-		self:_multiply_all_speeds(1, 1.05)
+		self:_multiply_all_speeds(1.1, 1.15)
 		self.presets.gang_member_damage.HEALTH_INIT = 200
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.old_hoxton_mission.HEALTH_INIT = 200
@@ -12655,8 +12660,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_nypd_heavy_m4",					
 					"ene_nypd_medic",
 					"ene_tazer_1",
-					"ene_fbi_2",		
-					"ene_fbi_3",										
+					"ene_fbi_2",	
+					"ene_fbi_3",	
 					"ene_nypd_veteran_cop_1",		
 					"ene_nypd_veteran_cop_2",										
 					"ene_nypd_heavy_r870",

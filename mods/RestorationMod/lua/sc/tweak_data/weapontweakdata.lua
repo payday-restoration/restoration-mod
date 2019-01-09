@@ -384,7 +384,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa_turret_module.SHIELD_HEALTH_INIT = 350	
 		self.crate_turret_module.HEALTH_INIT = 1618.75
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 350			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 350	
+
+		--Sniper Trail for Snipers
+		self.m14_sniper_npc.sniper_trail = true		
 	end
 
 	function WeaponTweakData:_set_sm_wish()

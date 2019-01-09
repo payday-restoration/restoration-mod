@@ -3430,8 +3430,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.gang_member_damage.headshot_dmg_mul = 1
 		presets.gang_member_damage.LIVES_INIT = 4
 		presets.gang_member_damage.explosion_damage_mul = 0
-		presets.gang_member_damage.REGENERATE_TIME = 2.25
-		presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.75
+		presets.gang_member_damage.REGENERATE_TIME = 3
+		presets.gang_member_damage.REGENERATE_TIME_AWAY = 1.5
 		presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME
 		presets.gang_member_damage.TASED_TIME = tweak_data.player.damage.TASED_TIME
 		presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -9677,10 +9677,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.detection.blind.ntl.use_uncover_range = false
 		presets.dodge = {
 			poor = {
-				speed = 0.9,
+				speed = 1,
 				occasions = {
 					hit = {
-						chance = 0.9,
+						chance = 0.8,
 						check_timeout = {0, 0},
 						variations = {
 							side_step = {
@@ -9690,7 +9690,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.5,
+						chance = 0.4,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9705,7 +9705,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1,
 				occasions = {
 					hit = {
-						chance = 0.35,
+						chance = 0.8,
 						check_timeout = {0, 0},
 						variations = {
 							side_step = {
@@ -9730,7 +9730,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1,
 				occasions = {
 					hit = {
-						chance = 0.75,
+						chance = 0.65,
 						check_timeout = {0, 0},
 						variations = {
 							side_step = {
@@ -9746,7 +9746,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.1,
+						chance = 0.325,
 						check_timeout = {1, 7},
 						variations = {
 							side_step = {
@@ -9758,7 +9758,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.8,
+						chance = 0.325,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9799,7 +9799,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.35,
+						chance = 0.45,
 						check_timeout = {2, 3},
 						variations = {
 							side_step = {
@@ -9815,7 +9815,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.4,
+						chance = 0.45,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9840,7 +9840,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1.4,
 				occasions = {
 					hit = {
-						chance = 0.9,
+						chance = 1,
 						check_timeout = {0, 0},
 						variations = {
 							side_step = {
@@ -9872,7 +9872,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.4,
+						chance = 0.5,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9913,7 +9913,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.25,
+						chance = 0.375,
 						check_timeout = {1, 7},
 						variations = {
 							side_step = {
@@ -9925,7 +9925,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.8,
+						chance = 0.375,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9950,7 +9950,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1.5,
 				occasions = {
 					hit = {
-						chance = 0.9,
+						chance = 1,
 						check_timeout = {0, 0},
 						variations = {
 							side_step = {
@@ -9966,7 +9966,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.6,
+						chance = 0.75,
 						check_timeout = {2, 3},
 						variations = {
 							side_step = {
@@ -9982,7 +9982,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.4,
+						chance = 0.75,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -10007,7 +10007,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1.2,
 				occasions = {
 					hit = {
-						chance = 0.8,
+						chance = 0.75,
 						check_timeout = {0, 0},
 						variations = {
 							side_step = {
@@ -10023,7 +10023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.3,
+						chance = 0.5,
 						check_timeout = {1, 7},
 						variations = {
 							side_step = {
@@ -10035,7 +10035,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.8,
+						chance = 0.5,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -10198,7 +10198,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1.6,
 				occasions = {
 					hit = {
-						chance = 0.9,
+						chance = 1,
 						check_timeout = {0, 3},
 						variations = {
 							side_step = {
@@ -10214,7 +10214,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.7,
+						chance = 1,
 						check_timeout = {0, 3},
 						variations = {
 							side_step = {
@@ -10230,7 +10230,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.9,
+						chance = 1,
 						check_timeout = {0, 3},
 						variations = {
 							side_step = {
@@ -10255,7 +10255,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				speed = 1.7,
 				occasions = {
 					hit = {
-						chance = 0.9,
+						chance = 1,
 						check_timeout = {0, 3},
 						variations = {
 							side_step = {
@@ -10271,7 +10271,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					preemptive = {
-						chance = 0.8,
+						chance = 0.9,
 						check_timeout = {0, 3},
 						variations = {
 							side_step = {
@@ -11771,12 +11771,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
 		self:_set_characters_melee_preset("2.625", "2.1")
+		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.shield.damage.explosion_damage_mul = 0.7
-		self.shield.immune_to_concussion = true
+		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
+		self.sniper.weapon.is_rifle.use_laser = false
 		
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
@@ -11824,8 +11826,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
+		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 		self.sniper.weapon.is_rifle.use_laser = false
+		self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc")		
+		self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")		
 		
 		self.shield.damage.hurt_severity = self.presets.hurt_severities.no_hurts
 		self.shield.damage.explosion_damage_mul = 0.6

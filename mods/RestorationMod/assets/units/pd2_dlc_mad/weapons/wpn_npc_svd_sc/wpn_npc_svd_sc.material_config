@@ -1,0 +1,9 @@
+<materials version="3" group="wpn_npc_svd">
+    <material name="mtr_svd" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+        <bump_normal_texture file="units/pd2_dlc_mad/weapons/wpn_npc_svd/svd_nm"/>
+        <diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_npc_svd/svd_df"/>
+    </material>
+    <material name="weapon_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+        <diffuse_texture file="units/pd2_dlc_mad/weapons/wpn_npc_svd/svd_df"/>
+    </material>
+</materials>

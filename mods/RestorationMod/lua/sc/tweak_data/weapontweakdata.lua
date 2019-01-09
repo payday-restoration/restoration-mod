@@ -4501,7 +4501,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.striker.stats = {
 			damage = 70,
 			spread = 6,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,

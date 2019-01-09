@@ -39869,10 +39869,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--Striker mods--
 	if self.parts.wpn_fps_sho_striker_s_folding then
 		self.parts.wpn_fps_sho_striker_s_folding.stats = {
-				value = 1,
-				spread_moving = -1,
-				recoil = 1,
-				concealment = -1
+				value = 0,
+				recoil = 0,
+				concealment = 0
 			}
 	end
 

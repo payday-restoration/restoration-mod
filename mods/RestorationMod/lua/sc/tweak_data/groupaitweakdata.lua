@@ -43,6 +43,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			group_min = 0,
 			queue = "clr"
 		}
+		self.enemy_chatter.clear_whisper = {
+			radius = 700,
+			max_nr = 10,
+			duration = {2, 4},
+			interval = {1.5, 2.5},
+			group_min = 0,
+			queue = "a05"
+		}		
 		self.enemy_chatter.go_go = {
 			radius = 700,
 			max_nr = 20,

@@ -10,7 +10,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		--Just to suffer--
-		return false
+		return Global.game_settings.one_down
 	end
 
 end

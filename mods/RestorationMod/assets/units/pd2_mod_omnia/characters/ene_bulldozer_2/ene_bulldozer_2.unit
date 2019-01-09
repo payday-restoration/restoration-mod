@@ -8,11 +8,11 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
-		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_back/ene_acc_bulldozer_2_back" />
-		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_chest/ene_acc_bulldozer_2_chest" />
-		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_helmet_plate/ene_acc_bulldozer_2_helmet_plate" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_back_2/ene_acc_bulldozer_back_2" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_chest_2/ene_acc_bulldozer_chest_2" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_helmet_plate_2/ene_acc_bulldozer_helmet_plate_2" />
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_neck/ene_acc_bulldozer_2_neck" />
-		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_stomache/ene_acc_bulldozer_2_stomache" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache_2/ene_acc_bulldozer_stomache_2" />
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_2_throat/ene_acc_bulldozer_2_throat" />
 	</dependencies>
 

@@ -719,9 +719,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end 		  		   		 
 	    if self._unit:base():has_tag("sniper") then
 		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", true)
+		--big fuck off death line unit check	
+		--blues
+		elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") then
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)
+		--nypd blues	
+		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)
+		--welcome to city swat hell lol
+		--scripted softcap dude with no mask, murky elite shotgunner and elite reapers
+		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump") then
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, nil)	
+		--lots of murkies	
+		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4") or self._unit:name() == Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1") or self._unit:name() == Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2") or self._unit:name() == Idstring("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2") then			
+		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_3, nil, nil)		
+		--omnia	
+		elseif self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3") then
+		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)	
+		--gensec
+	    elseif self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3") then		
+		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)
+		--zeals
+		elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3") then		
+		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)		          		
+		elseif self._unit:base():has_tag("city_swat") then
+		    self._unit:sound():say("", true)
 		else
 	    	self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x02a_any_3p", true)
-	    end
+	    end		
 	end
 	
 	function CopDamage:heal_unit(unit, override_cooldown)

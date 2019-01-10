@@ -495,6 +495,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else	
 		    self.swat.die_sound_event = "x01a_any_3p"
 		end	
+		self.swat.die_sound_event_2 = "l1d_x02a_any_3p"
 		if job == "chill_combat" then
 			self.swat.steal_loot = true
 		else
@@ -804,7 +805,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat = deep_clone(presets.base)
-		self.city_swat.tags = {"law"}
+		self.city_swat.tags = {"law", "city_swat"}
 		self.city_swat.experience = {}
 		self.city_swat.weapon = deep_clone(presets.weapon.expert)
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
@@ -842,18 +843,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.city_swat.use_radio = "dsp_radio_russian"
 		else
 			self.city_swat.shooting_death = true
-		end	
+		end
+		self.city_swat.die_sound_event_2 = "l1d_x02a_any_3p"	
+		self.city_swat.die_sound_event_3 = "l5d_x02a_any_3p"	
+		self.city_swat.die_sound_event_4 = "l2n_x01a_any_3p"	
 		self.city_swat.has_alarm_pager = true
 		self.city_swat.calls_in = true
 		self.city_swat.static_weapon_preset = true
 		self.city_swat.static_dodge_preset = true
 		self.city_swat.static_melee_preset = true	
 		self.city_swat.custom_voicework = nil
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" then
+		--[[if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" then
 			self.city_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.city_swat.die_sound_event = "l1d_x02a_any_3p"
-		end
+		end]]--
+		--all this is manages by the city swat hell in copdamage
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	

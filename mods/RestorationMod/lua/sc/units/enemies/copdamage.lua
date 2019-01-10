@@ -735,6 +735,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_3, nil, nil)		
 		--omnia	
 		elseif self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3") then
+		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)		
+		--fbi ready teams
+		elseif self._unit:name() == Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1") or self._unit:name() == Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2") then
 		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)	
 		--gensec
 	    elseif self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3") then		

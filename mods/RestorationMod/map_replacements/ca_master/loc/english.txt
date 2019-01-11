@@ -1,6 +1,0 @@
-{
-	"heist_street_fuck_name" : "Heat Street True Classic",
-	"heist_street_fuck_brief" : "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?",
-	"heist_fucking_gayday_name" : "Heat Street: The Heist",
-	"heist_fucking_gayday_brief" : "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?"
-}

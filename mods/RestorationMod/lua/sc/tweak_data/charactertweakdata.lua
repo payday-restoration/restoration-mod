@@ -1856,6 +1856,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.suppression = nil
 		self.phalanx_vip.ecm_hurts = {}
 		self.phalanx_vip.is_special = true
+		self.phalanx_vip.speech_prefix_p1 = "cpw"
+		self.phalanx_vip.speech_prefix_p2 = nil
+		self.phalanx_vip.speech_prefix_count = nil
+		self.phalanx_vip.chatter = {
+			aggressive = true,
+			retreat = true,
+			go_go = true,
+			contact = true,
+			entrance = true
+		}		
 		table.insert(self._enemy_list, "phalanx_vip")
 	end
 
@@ -11773,8 +11783,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
+		
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self:_set_characters_melee_preset("2.1", "2")
+		self.fbi.can_shoot_while_dodging = true
+		self.swat.can_shoot_while_dodging = true		
+		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -11869,9 +11883,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
+		
 		self:_set_characters_weapon_preset("expert", "good")
 		self:_set_characters_dodge_preset("athletic_overkill")
-		self:_set_characters_melee_preset("2.5", "2")
+		self.fbi.can_shoot_while_dodging = true
+		self.swat.can_shoot_while_dodging = true		
+		self:_set_characters_melee_preset("2.1", "2")
+				
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -11980,6 +11998,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
 		self:_set_characters_melee_preset("2.625", "2.1")
+		self.fbi.can_shoot_while_dodging = true
+		self.swat.can_shoot_while_dodging = true		
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -11992,11 +12012,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
-		
-		self.city_swat.can_shoot_while_dodging = true
-		self.omnia.can_shoot_while_dodging = true
-		
-		
+						
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
 		self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
@@ -12031,10 +12047,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
-		self:_set_characters_melee_preset("3.125", "2.5")
+		self:_set_characters_melee_preset("2.625", "2.1")
+		self.fbi.can_shoot_while_dodging = true
+		self.swat.can_shoot_while_dodging = true		
+		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
+		self.phalanx_minion_assault.steal_loot = true
 		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 		self.sniper.weapon.is_rifle.use_laser = false
@@ -12073,6 +12093,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		
+		self.tank_titan_assault.move_speed = self.presets.move_speed.slow
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		

@@ -14766,46 +14766,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.1}
 			self.phalanx.vip.damage_reduction = {
-				max = 0.1,
-				start = 0.01,
-				increase_intervall = 20,
-				increase = 0.01
+				start = 0,
+				increase = 0,
+				max = 0,
+				increase_intervall = 0
 		}
 		elseif difficulty_index == 5 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.2}
 			self.phalanx.vip.damage_reduction = {
-				max = 0.1,
-				start = 0.01,
-				increase_intervall = 20,
-				increase = 0.01
+				start = 0,
+				increase = 0,
+				max = 0,
+				increase_intervall = 0
 			}
 		elseif difficulty_index == 6 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.3}
 			self.phalanx.vip.damage_reduction = {
-				max = 0.1,
-				start = 0.01,
-				increase_intervall = 20,
-				increase = 0.01
+				start = 0,
+				increase = 0,
+				max = 0,
+				increase_intervall = 0
 			}
 		elseif difficulty_index == 7 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.4}
 			self.phalanx.vip.damage_reduction = {
-				max = 0.1,
-				start = 0.01,
-				increase_intervall = 20,
-				increase = 0.01
+				start = 0,
+				increase = 0,
+				max = 0,
+				increase_intervall = 0
 			}
 		elseif difficulty_index == 8 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.5}
 			self.phalanx.vip.damage_reduction = {
-				max = 0.1,
-				start = 0.01,
-				increase_intervall = 20,
-				increase = 0.01
+				start = 0,
+				increase = 0,
+				max = 0,
+				increase_intervall = 0
 			}
 		else
 			self.phalanx.vip.force_sprint = nil

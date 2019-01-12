@@ -94,7 +94,7 @@
 						<param key="sky_bottom_color_scale" value="1.864"/>
 						<param key="height_fade" value="-25000 -25000 0"/>
 						<param key="sky_reflection_top_color" value="0 0 0"/>
-						<param key="ambient_scale" value="1.9"/>
+						<param key="ambient_scale" value="0.681"/>
 						<param key="ambient_falloff_scale" value="1.29"/>
 						<param key="fog_height_range" value="0"/>
 						<param key="sky_reflection_bottom_color_scale" value="0"/>

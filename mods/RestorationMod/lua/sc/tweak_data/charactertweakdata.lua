@@ -8450,29 +8450,89 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_pistol.range = presets.weapon.normal.is_pistol.range
 		presets.weapon.gang_member.is_pistol.FALLOFF = {
 			{
-				r = 300,
-				acc = {1, 1},
+				r = 100,
+				acc = {0.9, 1},
 				dmg_mul = 1.25,
-				recoil = {0.25, 0.45},
+				recoil = {0.15, 0.25},
 				mode = {
-					0.1,
-					0.3,
-					4,
-					7
+					0,
+					3,
+					3,
+					1
 				}
 			},
 			{
-				r = 10000,
-				acc = {1, 1},
+				r = 500,
+				acc = {0.8, 0.9},
 				dmg_mul = 1.25,
-				recoil = {2, 3},
+				recoil = {0.15, 0.3},
 				mode = {
-					0.1,
-					0.3,
-					4,
-					7
+					1,
+					0,
+					1,
+					0
 				}
-			}
+			},
+			{
+				r = 1000,
+				acc = {0.7, 0.8},
+				dmg_mul = 1.25,
+				recoil = {0.15, 0.3},
+				mode = {
+					1,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.6, 0.7},
+				dmg_mul = 1.25,
+				recoil = {0.15, 0.3},
+				mode = {
+					1,
+					0,
+					1,
+					0
+				}
+			},
+			{
+				r = 2000,
+				acc = {0.5, 0.6},
+				dmg_mul = 1.25,
+				recoil = {0.4, 0.9},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 3000,
+				acc = {0.4, 0.5},
+				dmg_mul = 1.25,
+				recoil = {0.4, 1.4},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.3, 0.4},
+				dmg_mul = 1.25,
+				recoil = {0.4, 1.4},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}			
 		}
 		presets.weapon.gang_member.is_rifle.aim_delay = {0, 0}
 		presets.weapon.gang_member.is_rifle.focus_delay = 0
@@ -8491,41 +8551,89 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_rifle.autofire_rounds = presets.weapon.normal.is_rifle.autofire_rounds
 		presets.weapon.gang_member.is_rifle.FALLOFF = {
 			{
-				r = 300,
-				acc = {0.9, 0.975},
+				r = 100,
+				acc = {0.9, 1},
 				dmg_mul = 1.25,
-				recoil = {0.25, 0.3},
+				recoil = {0.4, 0.8},
 				mode = {
 					0,
 					3,
 					3,
 					1
+				}
+			},
+			{
+				r = 500,
+				acc = {0.8, 0.9},
+				dmg_mul = 1.25,
+				recoil = {0.45, 0.8},
+				mode = {
+					0,
+					3,
+					3,
+					1
+				}
+			},
+			{
+				r = 1000,
+				acc = {0.7, 0.8},
+				dmg_mul = 1.25,
+				recoil = {0.35, 0.75},
+				mode = {
+					1,
+					2,
+					2,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.6, 0.7},
+				dmg_mul = 1.25,
+				recoil = {0.35, 0.75},
+				mode = {
+					1,
+					2,
+					2,
+					0
 				}
 			},
 			{
 				r = 2000,
-				acc = {0.875, 0.95},
+				acc = {0.5, 0.6},
 				dmg_mul = 1.25,
-				recoil = {0.25, 0.3},
+				recoil = {0.4, 1.2},
 				mode = {
-					0,
 					3,
-					8,
-					1
+					2,
+					2,
+					0
 				}
 			},
 			{
-				r = 10000,
-				acc = {0.7, 0.9},
+				r = 3000,
+				acc = {0.4, 0.5},
 				dmg_mul = 1.25,
-				recoil = {0.35, 0.55},
+				recoil = {1.5, 3},
 				mode = {
-					0,
-					2,
-					5,
-					1
+					3,
+					1,
+					1,
+					0
 				}
-			}
+			},
+			{
+				r = 4000,
+				acc = {0.3, 0.4},
+				dmg_mul = 1.25,
+				recoil = {1.5, 3},
+				mode = {
+					3,
+					1,
+					1,
+					0
+				}
+			}			
 		}
 		presets.weapon.gang_member.is_bullpup = presets.weapon.gang_member.is_rifle	
 		presets.weapon.gang_member.is_shotgun_pump.aim_delay = {0, 0}
@@ -8808,44 +8916,90 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}	
-		presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
-		presets.weapon.gang_member.mossberg.RELOAD_SPEED = 1.5
 		presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.is_smg.FALLOFF = {
 			{
-				r = 300,
-				acc = {0.9, 0.975},
+				r = 100,
+				acc = {0.8, 0.9},
 				dmg_mul = 1.25,
-				recoil = {0.25, 0.3},
+				recoil = {0.4, 0.8},
 				mode = {
 					0,
 					3,
 					3,
 					1
+				}
+			},
+			{
+				r = 500,
+				acc = {0.7, 0.8},
+				dmg_mul = 1.25,
+				recoil = {0.45, 0.8},
+				mode = {
+					0,
+					3,
+					3,
+					1
+				}
+			},
+			{
+				r = 1000,
+				acc = {0.6, 0.7},
+				dmg_mul = 1.25,
+				recoil = {0.35, 0.75},
+				mode = {
+					1,
+					2,
+					2,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.5, 0.6},
+				dmg_mul = 1.25,
+				recoil = {0.35, 0.75},
+				mode = {
+					1,
+					2,
+					2,
+					0
 				}
 			},
 			{
 				r = 2000,
-				acc = {0.875, 0.95},
+				acc = {0.4, 0.5},
 				dmg_mul = 1.25,
-				recoil = {0.25, 0.3},
+				recoil = {0.4, 1.2},
 				mode = {
-					0,
 					3,
-					8,
-					1
+					2,
+					2,
+					0
 				}
 			},
 			{
-				r = 10000,
-				acc = {0.7, 0.9},
+				r = 3000,
+				acc = {0.3, 0.4},
 				dmg_mul = 1.25,
-				recoil = {0.35, 0.55},
+				recoil = {1.5, 3},
 				mode = {
-					0,
-					2,
-					5,
-					1
+					3,
+					1,
+					1,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.2, 0.3},
+				dmg_mul = 1.25,
+				recoil = {1.5, 3},
+				mode = {
+					3,
+					1,
+					1,
+					0
 				}
 			}
 		}
@@ -8853,44 +9007,91 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.is_lmg.FALLOFF = {
 			{
-				r = 300,
-				acc = {0.7, 0.9},
+				r = 100,
+				acc = {0.8, 0.9},
 				dmg_mul = 1.25,
-				recoil = {0, 0.1},
+				recoil = {0.4, 0.8},
 				mode = {
 					0,
-					0,
-					0,
+					3,
+					3,
 					1
+				}
+			},
+			{
+				r = 500,
+				acc = {0.7, 0.8},
+				dmg_mul = 1.25,
+				recoil = {0.45, 0.8},
+				mode = {
+					0,
+					3,
+					3,
+					1
+				}
+			},
+			{
+				r = 1000,
+				acc = {0.6, 0.7},
+				dmg_mul = 1.25,
+				recoil = {0.35, 0.75},
+				mode = {
+					1,
+					2,
+					2,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.5, 0.6},
+				dmg_mul = 1.25,
+				recoil = {0.35, 0.75},
+				mode = {
+					1,
+					2,
+					2,
+					0
 				}
 			},
 			{
 				r = 2000,
-				acc = {0.5, 0.75},
+				acc = {0.4, 0.5},
 				dmg_mul = 1.25,
-				recoil = {0.1, 0.2},
+				recoil = {0.4, 1.2},
 				mode = {
-					0,
-					0,
-					0,
-					1
+					3,
+					2,
+					2,
+					0
 				}
 			},
 			{
-				r = 10000,
-				acc = {0.3, 0.6},
+				r = 3000,
+				acc = {0.3, 0.4},
 				dmg_mul = 1.25,
-				recoil = {0.4, 0.6},
+				recoil = {1.5, 3},
 				mode = {
-					1,
 					3,
-					6,
-					6
+					1,
+					1,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.2, 0.3},
+				dmg_mul = 1.25,
+				recoil = {1.5, 3},
+				mode = {
+					3,
+					1,
+					1,
+					0
 				}
 			}
 		}
 		presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
-		presets.weapon.gang_member.mossberg.RELOAD_SPEED = 3
 		presets.weapon.gang_member.mac11 = presets.weapon.gang_member.is_smg
 		presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.rifle.spread = 5
@@ -11750,11 +11951,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-		self.presets.gang_member_damage.HEALTH_INIT = 150
+		self.presets.gang_member_damage.HEALTH_INIT = 125
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-		self.old_hoxton_mission.HEALTH_INIT = 150
-		self.spa_vip.HEALTH_INIT = 150
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
+		self.old_hoxton_mission.HEALTH_INIT = 125
+		self.spa_vip.HEALTH_INIT = 125
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		self:_multiply_all_speeds(1, 1.05)
@@ -11802,11 +12003,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-		self.presets.gang_member_damage.HEALTH_INIT = 175
+		self.presets.gang_member_damage.HEALTH_INIT = 150
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-		self.old_hoxton_mission.HEALTH_INIT = 175
-		self.spa_vip.HEALTH_INIT = 175
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
+		self.old_hoxton_mission.HEALTH_INIT = 150
+		self.spa_vip.HEALTH_INIT = 150
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		self:_multiply_all_speeds(1.05, 1.1)
@@ -11864,11 +12065,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 		
 		self:_multiply_all_speeds(1.1, 1.15)
-		self.presets.gang_member_damage.HEALTH_INIT = 200
+		self.presets.gang_member_damage.HEALTH_INIT = 150
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-		self.old_hoxton_mission.HEALTH_INIT = 200
-		self.spa_vip.HEALTH_INIT = 200
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
+		self.old_hoxton_mission.HEALTH_INIT = 150
+		self.spa_vip.HEALTH_INIT = 150
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		

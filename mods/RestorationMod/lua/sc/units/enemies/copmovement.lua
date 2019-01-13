@@ -274,6 +274,7 @@ function CopMovement:do_omnia(self)
 								if self._unit:contour() then
 									self._unit:contour():add("medic_show", false)
 									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
 								end										
 								if enemy:contour() then
 									enemy:contour():add("omnia_heal", false)
@@ -339,6 +340,7 @@ function CopMovement:do_aoe_heal(self)
 								if self._unit:contour() then
 									self._unit:contour():add("medic_show", false)
 									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
 								end								
 								if enemy:contour() then
 									enemy:contour():add("medic_heal", true)

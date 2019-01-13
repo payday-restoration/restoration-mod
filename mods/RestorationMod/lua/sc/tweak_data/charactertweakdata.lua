@@ -442,7 +442,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.access = "swat"
 		self.omnia_lpf.dodge = presets.dodge.elite
 		self.omnia_lpf.no_arrest = true
-		self.omnia_lpf.chatter = presets.enemy_chatter.swat
+		self.omnia_lpf.chatter = presets.enemy_chatter.omnia_lpf
 		self.omnia_lpf.melee_weapon = "baton"
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
@@ -929,11 +929,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Temp Solution
 		if job == "haunted" then
-			if Global.game_settings and Global.game_settings.one_down then
-				self.city_swat = deep_clone(self.skeleton_swat_titan)
-			else
-				self.city_swat.custom_voicework = "skeleton"
-			end
+			self.city_swat = deep_clone(self.skeleton_swat_titan)
 		end
 	end
 
@@ -1567,11 +1563,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
 		if job == "haunted" then
-			if Global.game_settings and Global.game_settings.one_down then
-				self.tank_hw.move_speed = presets.move_speed.slow
-			else
-				self.tank_hw.move_speed = presets.move_speed.very_slow
-			end
+			self.tank_hw.move_speed = presets.move_speed.very_slow
 		else
 			self.tank_hw.move_speed = presets.move_speed.slow
 		end
@@ -11233,6 +11225,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				follow_me = true,
 				suppress = true
 			},
+			omnia_lpf = {
+				aggressive = true,
+				retreat = true,
+				contact = true,
+				clear = true,
+				clear_whisper = true,
+				heal_chatter = true,
+				go_go = true,
+				push = true,
+				reload = true,
+				look_for_angle = true,
+				ecm = true,
+				saw = true,
+				trip_mines = true,
+				sentry = true,
+				ready = true,
+				smoke = true,
+				flash_grenade = true,
+				follow_me = true,
+				suppress = true
+			},			
 			summers = {
 				aggressive = true,
 				retreat = true,
@@ -12097,6 +12110,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+		if job == "haunted" then
+			self.tank_hw.move_speed = self.presets.move_speed.slow
+		else
+			self.tank_hw.move_speed = self.presets.move_speed.slow
+		end		
 		
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")

@@ -99,6 +99,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.desertfox_crew.DAMAGE = 15
 		self.tti_crew.DAMAGE = 15
 		self.siltstone_crew.DAMAGE = 15
+		self.ching_crew.DAMAGE = 15
 		self.par_crew.DAMAGE = 0.6
 		self.rpk_crew.DAMAGE = 0.6
 		self.m249_crew.DAMAGE = 0.6
@@ -153,6 +154,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.desertfox_crew.DAMAGE = 15
 		self.tti_crew.DAMAGE = 15
 		self.siltstone_crew.DAMAGE = 15
+		self.ching_crew.DAMAGE = 15
 		self.par_crew.DAMAGE = 0.6
 		self.rpk_crew.DAMAGE = 0.6
 		self.m249_crew.DAMAGE = 0.6
@@ -207,6 +209,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.desertfox_crew.DAMAGE = 16
 		self.tti_crew.DAMAGE = 16
 		self.siltstone_crew.DAMAGE = 16
+		self.ching_crew.DAMAGE = 16
 		self.par_crew.DAMAGE = 1.6
 		self.rpk_crew.DAMAGE = 1.6
 		self.m249_crew.DAMAGE = 1.6
@@ -261,6 +264,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.desertfox_crew.DAMAGE = 17
 		self.tti_crew.DAMAGE = 17
 		self.siltstone_crew.DAMAGE = 17
+		self.ching_crew.DAMAGE = 17
 		self.par_crew.DAMAGE = 2.6
 		self.rpk_crew.DAMAGE = 2.6
 		self.m249_crew.DAMAGE = 2.6
@@ -1585,7 +1589,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m14_crew.suppression = 2.2
 		self.m14_crew.FIRE_MODE = "auto"
 	end
-
+	
 	function WeaponTweakData:_init_data_ak5_crew()
 		self.ak5_crew.categories = clone(self.ak5.categories)
 		self.ak5_crew.sounds.prefix = "ak5_npc"
@@ -2065,7 +2069,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boot_crew.suppression = 3.4
 		self.boot_crew.is_shotgun = true
 		self.boot_crew.rays = 9
-		self.boot_crew.FIRE_MODE = "auto"
+		self.boot_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_model70_crew()
@@ -2171,7 +2175,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.winchester1874_crew.hold = "rifle"
 		self.winchester1874_crew.alert_size = 5000
 		self.winchester1874_crew.suppression = 3.4
-		self.winchester1874_crew.FIRE_MODE = "auto"
+		self.winchester1874_crew.FIRE_MODE = "single"
 		self.winchester1874_secondary_crew = deep_clone(self.winchester1874_crew)
 		self.winchester1874_secondary_crew.use_data.selection_index = 1
 	end
@@ -2191,7 +2195,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wa2000_crew.hold = {"bullpup", "rifle"}
 		self.wa2000_crew.alert_size = 5000
 		self.wa2000_crew.suppression = 3.4
-		self.wa2000_crew.FIRE_MODE = "auto"
+		self.wa2000_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_desertfox_crew()
@@ -2229,7 +2233,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tti_crew.hold = "rifle"
 		self.tti_crew.alert_size = 5000
 		self.tti_crew.suppression = 3.4
-		self.tti_crew.FIRE_MODE = "auto"
+		self.tti_crew.FIRE_MODE = "single"
 	end
 
 	function WeaponTweakData:_init_data_siltstone_crew()
@@ -2246,8 +2250,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.siltstone_crew.hold = "rifle"
 		self.siltstone_crew.alert_size = 5000
 		self.siltstone_crew.suppression = 3.4
-		self.siltstone_crew.FIRE_MODE = "auto"
+		self.siltstone_crew.FIRE_MODE = "single"
 	end
+	
+	function WeaponTweakData:_init_data_ching_crew()
+		self.ching_crew.categories = clone(self.ching.categories)
+		self.ching_crew.sounds.prefix = "ching_npc"
+		self.ching_crew.use_data.selection_index = 2
+		self.ching_crew.DAMAGE = 18
+		self.ching_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.ching_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+		self.ching_crew.CLIP_AMMO_MAX = 10
+		self.ching_crew.NR_CLIPS_MAX = 8
+		self.ching_crew.pull_magazine_during_reload = "rifle"
+		self.ching_crew.reload = "looped"
+		self.ching_crew.looped_reload_speed = 1
+		self.ching_crew.auto.fire_rate = 0.6
+		self.ching_crew.hold = "rifle"
+		self.ching_crew.alert_size = 5000
+		self.ching_crew.suppression = 3.4
+		self.ching_crew.FIRE_MODE = "single"
+	end		
 
 	function WeaponTweakData:_init_data_par_crew()
 		self.par_crew.categories = clone(self.par.categories)
@@ -9782,6 +9805,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			use_data = {},
 			auto = {}
 		}
+		self.ching_crew = {
+			usage = "is_sniper",
+			anim_usage = "is_rifle",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}		
 		self.spas12_crew = {
 			usage = "is_shotgun_mag",
 			anim_usage = "is_shotgun_pump",

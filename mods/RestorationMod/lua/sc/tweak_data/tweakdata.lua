@@ -308,8 +308,6 @@ if not tweak_data then return end
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000
 	tweak_data.medic.whitelisted_units = {
-		"taser_summers",
-		"boom_summers",
 		"summers"
 	}
 	tweak_data.medic.whitelisted_units_summer_squad = {

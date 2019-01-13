@@ -170,7 +170,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {0.5, 1},
 			group_min = 0,
 			queue = "tsr"
-		}	
+		}
+		self.enemy_chatter.heal_chatter = {
+			radius = 700,
+			max_nr = 10,
+			duration = {2, 4},
+			interval = {1.5, 2.5},
+			group_min = 0,
+			queue = "heal"
+		}		
 	end
 
 	function GroupAITweakData:_init_unit_categories(difficulty_index)

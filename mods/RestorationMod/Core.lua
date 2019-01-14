@@ -95,7 +95,9 @@ if not _G.restoration then
 		"skm_watchdogs_stage2",
 		"bph",
 		"nmh",
-		"vit"
+		"vit",
+		"pbr",
+		"pbr2"
 	}
 end
 

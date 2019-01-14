@@ -312,16 +312,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}			
 		
 
-		self.ceiling_turret_module.HEALTH_INIT = 1387.5
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 300
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1387.5
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 300
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1387.5
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 300		
-		self.aa_turret_module.HEALTH_INIT = 1387.5
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 300		
-		self.crate_turret_module.HEALTH_INIT = 1387.5
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 300			
+		self.ceiling_turret_module.HEALTH_INIT = 693.75
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 150
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 693.75
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 150
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 693.75
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 150		
+		self.aa_turret_module.HEALTH_INIT = 693.75
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 150	
+		self.crate_turret_module.HEALTH_INIT = 693.75
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 150		
 	end
 
 	function WeaponTweakData:_set_easy_wish()
@@ -367,21 +367,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{3000, 1}
 		}			
 		
-		self.ceiling_turret_module.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module.HEALTH_INIT = 809.375
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 809.375
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 809.375
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
-		self.aa_turret_module.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175
+		self.aa_turret_module.HEALTH_INIT = 809.375
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350	
-		self.crate_turret_module.HEALTH_INIT = 1618.75
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 175
+		self.crate_turret_module.HEALTH_INIT = 809.375
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 350			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 175			
 	end
 
 	function WeaponTweakData:_set_overkill_290()
@@ -426,21 +426,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{3000, 1.05}
 		}
 		
-		self.ceiling_turret_module.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module.HEALTH_INIT = 809.375
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 400
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 809.375
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 400
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 809.375
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350
-		self.aa_turret_module.HEALTH_INIT = 1618.75
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175
+		self.aa_turret_module.HEALTH_INIT = 809.375
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350	
-		self.crate_turret_module.HEALTH_INIT = 1618.75
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 175	
+		self.crate_turret_module.HEALTH_INIT = 809.375
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 350	
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 175	
 
 		--Sniper Trail for Snipers
 		self.m14_sniper_npc.sniper_trail = true		
@@ -488,25 +488,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1800, 2.1},
 			{3000, 1.05}
 		}			
-		self.ceiling_turret_module.HEALTH_INIT = 1850
+		self.ceiling_turret_module.HEALTH_INIT = 925
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 350
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
 
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 1850
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 925
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 350
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
 		
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 1850
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 925
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 350		
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175		
 		
-		self.aa_turret_module.HEALTH_INIT = 1850
+		self.aa_turret_module.HEALTH_INIT = 925
 		self.aa_turret_module.BAG_DMG_MUL = 11.4375
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 350		
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 175		
 		
-		self.crate_turret_module.HEALTH_INIT = 1850
+		self.crate_turret_module.HEALTH_INIT = 925
 		self.crate_turret_module.BAG_DMG_MUL = 11.4375
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 350			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 175			
 		
 		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 3
 		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 3
@@ -1028,8 +1028,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crate_turret_module.FIRE_DMG_MUL = 1
 		self.crate_turret_module.BAG_DMG_MUL = 12.5
 		self.crate_turret_module.SHIELD_DMG_MUL = 1
-		self.crate_turret_module.HEALTH_INIT = 925
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 200
+		self.crate_turret_module.HEALTH_INIT = 462.5
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 100
 		self.crate_turret_module.DEATH_VERIFICATION = {
 			0.4,
 			0.75
@@ -1113,8 +1113,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.FIRE_DMG_MUL = 1
 		self.ceiling_turret_module.BAG_DMG_MUL = 12.5
 		self.ceiling_turret_module.SHIELD_DMG_MUL = 1
-		self.ceiling_turret_module.HEALTH_INIT = 925
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 200
+		self.ceiling_turret_module.HEALTH_INIT = 462.5
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 100
 		self.ceiling_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
 		self.ceiling_turret_module.DETECTION_RANGE = self.ceiling_turret_module.FIRE_RANGE
 		self.ceiling_turret_module.DETECTION_DELAY = {
@@ -1193,8 +1193,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa_turret_module.FIRE_DMG_MUL = 1
 		self.aa_turret_module.BAG_DMG_MUL = 12.5
 		self.aa_turret_module.SHIELD_DMG_MUL = 1
-		self.aa_turret_module.HEALTH_INIT = 925
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 200
+		self.aa_turret_module.HEALTH_INIT = 462.5
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 100
 		self.aa_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
 		self.aa_turret_module.DETECTION_RANGE = self.aa_turret_module.FIRE_RANGE
 		self.aa_turret_module.DETECTION_DELAY = {

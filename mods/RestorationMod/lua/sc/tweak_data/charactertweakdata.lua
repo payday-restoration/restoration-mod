@@ -412,10 +412,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.spawn_sound_event = "rmdc_entrance"
 		self.medic_summers.die_sound_event = "mga_death_scream"
 		self.medic_summers.use_radio = "dsp_radio_russian"
-		self.medic_summers.chatter = presets.enemy_chatter.summers
-		self.medic_summers.use_factory = true
-		self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
+		self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 		self.medic_summers.is_special = true
+		self.medic_summers.do_summers_heal = true
 		table.insert(self._enemy_list, "medic_summers")
 	end
 
@@ -2141,8 +2140,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.speech_prefix_p2 = "n"
 		self.taser_summers.speech_prefix_count = 1
 		self.taser_summers.die_sound_event = "mga_death_scream"
-		self.taser_summers.use_factory = true
-		self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
 		self.taser_summers.use_radio = "dsp_radio_russian"
 		self.taser_summers.spawn_sound_event = nil
 		self.taser_summers.custom_voicework = nil
@@ -2155,7 +2152,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.headshot_dmg_mul = 1.8
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
-		self.taser_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
@@ -2260,12 +2256,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.priority_shout = "f45"
 		self.boom_summers.bot_priority_shout = "f45x_any"
 		self.boom_summers.custom_shout = false
-		self.boom_summers.use_factory = true
 		self.boom_summers.rescue_hostages = false
 		self.boom_summers.steal_loot = nil
 		self.boom_summers.ecm_vulnerability = 0
 		self.boom_summers.ecm_hurts = {}		
-		self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
 		table.insert(self._enemy_list, "boom_summers")
 	end
 
@@ -9898,7 +9892,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.4,
+						chance = 0.8,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9923,7 +9917,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.4,
+						chance = 0.8,
 						check_timeout = {4, 7},
 						variations = {
 							dive = {
@@ -9966,7 +9960,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.325,
+						chance = 0.65,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -10023,7 +10017,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.45,
+						chance = 0.9,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -10065,7 +10059,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.5,
-						check_timeout = {2, 3},
+						check_timeout = {1, 2},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10080,8 +10074,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.5,
-						check_timeout = {1, 2},
+						chance = 1,
+						check_timeout = {0, 1},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10122,7 +10116,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.375,
-						check_timeout = {1, 7},
+						check_timeout = {0, 6},
 						variations = {
 							side_step = {
 								chance = 1,
@@ -10133,8 +10127,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.375,
-						check_timeout = {1, 2},
+						chance = 0.75,
+						check_timeout = {0, 1},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10175,7 +10169,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.75,
-						check_timeout = {2, 3},
+						check_timeout = {0, 1},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10190,8 +10184,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.75,
-						check_timeout = {1, 2},
+						chance = 1,
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10232,7 +10226,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.5,
-						check_timeout = {1, 7},
+						check_timeout = {0, 5},
 						variations = {
 							side_step = {
 								chance = 1,
@@ -10243,8 +10237,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.5,
-						check_timeout = {1, 2},
+						chance = 0.75,
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10407,7 +10401,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				occasions = {
 					hit = {
 						chance = 1,
-						check_timeout = {0, 3},
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10423,7 +10417,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 1,
-						check_timeout = {0, 3},
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10439,7 +10433,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					scared = {
 						chance = 1,
-						check_timeout = {0, 3},
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10464,7 +10458,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				occasions = {
 					hit = {
 						chance = 1,
-						check_timeout = {0, 3},
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10480,7 +10474,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.9,
-						check_timeout = {0, 3},
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10495,8 +10489,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.9,
-						check_timeout = {0, 3},
+						chance = 1,
+						check_timeout = {0, 0},
 						variations = {
 							side_step = {
 								chance = 5,

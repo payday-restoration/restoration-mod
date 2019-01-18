@@ -75,22 +75,22 @@ if not _G.restorationvoice then
 	   
 	   -- OLPF
 		
-		for i = 1, 11 do
+		for i = 1, 5 do
 			_G.voiceline_framework:register_voiceline("olpf", "contact", ModPath .. "assets/oggs/voiceover/olpf/contact/contact" .. i .. ".ogg")
 		end		
-		for i = 1, 8 do
+		for i = 1, 6 do
 			_G.voiceline_framework:register_voiceline("olpf", "death", ModPath .. "assets/oggs/voiceover/olpf/death/death" .. i .. ".ogg")
 		end		
-		for i = 1, 7 do
+		for i = 1, 5 do
 			_G.voiceline_framework:register_voiceline("olpf", "gogo", ModPath .. "assets/oggs/voiceover/olpf/gogo/gogo" .. i .. ".ogg")
 		end		
-		for i = 1, 6 do
+		for i = 1, 4 do
 			_G.voiceline_framework:register_voiceline("olpf", "heal", ModPath .. "assets/oggs/voiceover/olpf/heal/heal" .. i .. ".ogg")
 		end		
-		for i = 1, 5 do
+		for i = 1, 8 do
 			_G.voiceline_framework:register_voiceline("olpf", "pain", ModPath .. "assets/oggs/voiceover/olpf/pain/pain" .. i .. ".ogg")
 		end		
-		for i = 1, 7 do
+		for i = 1, 6 do
 			_G.voiceline_framework:register_voiceline("olpf", "spawn", ModPath .. "assets/oggs/voiceover/olpf/spawn/spawn" .. i .. ".ogg")
 		end			  
 

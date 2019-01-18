@@ -170,15 +170,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {0.5, 1},
 			group_min = 0,
 			queue = "tsr"
-		}
-		self.enemy_chatter.heal_chatter = {
-			radius = 700,
-			max_nr = 10,
-			duration = {2, 4},
-			interval = {1.5, 2.5},
-			group_min = 0,
-			queue = "heal"
-		}		
+		}	
 	end
 
 	function GroupAITweakData:_init_unit_categories(difficulty_index)
@@ -14774,46 +14766,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.1}
 			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 		}
 		elseif difficulty_index == 5 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.2}
 			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		elseif difficulty_index == 6 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.3}
 			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		elseif difficulty_index == 7 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.4}
 			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		elseif difficulty_index == 8 then
 			self.phalanx.vip.force_sprint = {true}
 			self.phalanx.vip.assault_force_multiplier = {1.5}
 			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
+				max = 0.1,
+				start = 0.01,
+				increase_intervall = 20,
+				increase = 0.01
 			}
 		else
 			self.phalanx.vip.force_sprint = nil

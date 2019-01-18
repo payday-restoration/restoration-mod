@@ -412,9 +412,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.spawn_sound_event = "rmdc_entrance"
 		self.medic_summers.die_sound_event = "mga_death_scream"
 		self.medic_summers.use_radio = "dsp_radio_russian"
-		self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
+		self.medic_summers.chatter = presets.enemy_chatter.summers
+		self.medic_summers.use_factory = true
+		self.medic_summers.factory_weapon_id = {"wpn_fps_smg_p90_npc_summers"}
 		self.medic_summers.is_special = true
-		self.medic_summers.do_summers_heal = true
 		table.insert(self._enemy_list, "medic_summers")
 	end
 
@@ -441,7 +442,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.access = "swat"
 		self.omnia_lpf.dodge = presets.dodge.elite
 		self.omnia_lpf.no_arrest = true
-		self.omnia_lpf.chatter = presets.enemy_chatter.omnia_lpf
+		self.omnia_lpf.chatter = presets.enemy_chatter.swat
 		self.omnia_lpf.melee_weapon = "baton"
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
@@ -928,7 +929,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Temp Solution
 		if job == "haunted" then
-			self.city_swat = deep_clone(self.skeleton_swat_titan)
+			if Global.game_settings and Global.game_settings.one_down then
+				self.city_swat = deep_clone(self.skeleton_swat_titan)
+			else
+				self.city_swat.custom_voicework = "skeleton"
+			end
 		end
 	end
 
@@ -1562,7 +1567,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
 		if job == "haunted" then
-			self.tank_hw.move_speed = presets.move_speed.very_slow
+			if Global.game_settings and Global.game_settings.one_down then
+				self.tank_hw.move_speed = presets.move_speed.slow
+			else
+				self.tank_hw.move_speed = presets.move_speed.very_slow
+			end
 		else
 			self.tank_hw.move_speed = presets.move_speed.slow
 		end
@@ -1847,16 +1856,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.suppression = nil
 		self.phalanx_vip.ecm_hurts = {}
 		self.phalanx_vip.is_special = true
-		self.phalanx_vip.speech_prefix_p1 = "cpw"
-		self.phalanx_vip.speech_prefix_p2 = nil
-		self.phalanx_vip.speech_prefix_count = nil
-		self.phalanx_vip.chatter = {
-			aggressive = true,
-			retreat = true,
-			go_go = true,
-			contact = true,
-			entrance = true
-		}		
 		table.insert(self._enemy_list, "phalanx_vip")
 	end
 
@@ -2140,6 +2139,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.speech_prefix_p2 = "n"
 		self.taser_summers.speech_prefix_count = 1
 		self.taser_summers.die_sound_event = "mga_death_scream"
+		self.taser_summers.use_factory = true
+		self.taser_summers.factory_weapon_id = {"wpn_fps_ass_m16_npc_summers"}
 		self.taser_summers.use_radio = "dsp_radio_russian"
 		self.taser_summers.spawn_sound_event = nil
 		self.taser_summers.custom_voicework = nil
@@ -2152,6 +2153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.headshot_dmg_mul = 1.8
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
+		self.taser_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
@@ -2256,10 +2258,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.priority_shout = "f45"
 		self.boom_summers.bot_priority_shout = "f45x_any"
 		self.boom_summers.custom_shout = false
+		self.boom_summers.use_factory = true
 		self.boom_summers.rescue_hostages = false
 		self.boom_summers.steal_loot = nil
 		self.boom_summers.ecm_vulnerability = 0
 		self.boom_summers.ecm_hurts = {}		
+		self.boom_summers.factory_weapon_id = {"wpn_fps_pis_peacemaker_npc_summers"}
 		table.insert(self._enemy_list, "boom_summers")
 	end
 
@@ -8446,89 +8450,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_pistol.range = presets.weapon.normal.is_pistol.range
 		presets.weapon.gang_member.is_pistol.FALLOFF = {
 			{
-				r = 100,
-				acc = {0.9, 1},
+				r = 300,
+				acc = {1, 1},
 				dmg_mul = 1.25,
-				recoil = {0.15, 0.25},
+				recoil = {0.25, 0.45},
 				mode = {
-					0,
-					3,
-					3,
-					1
+					0.1,
+					0.3,
+					4,
+					7
 				}
 			},
 			{
-				r = 500,
-				acc = {0.8, 0.9},
+				r = 10000,
+				acc = {1, 1},
 				dmg_mul = 1.25,
-				recoil = {0.15, 0.3},
+				recoil = {2, 3},
 				mode = {
-					1,
-					0,
-					1,
-					0
+					0.1,
+					0.3,
+					4,
+					7
 				}
-			},
-			{
-				r = 1000,
-				acc = {0.7, 0.8},
-				dmg_mul = 1.25,
-				recoil = {0.15, 0.3},
-				mode = {
-					1,
-					0,
-					1,
-					0
-				}
-			},
-			{
-				r = 1800,
-				acc = {0.6, 0.7},
-				dmg_mul = 1.25,
-				recoil = {0.15, 0.3},
-				mode = {
-					1,
-					0,
-					1,
-					0
-				}
-			},
-			{
-				r = 2000,
-				acc = {0.5, 0.6},
-				dmg_mul = 1.25,
-				recoil = {0.4, 0.9},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
-			{
-				r = 3000,
-				acc = {0.4, 0.5},
-				dmg_mul = 1.25,
-				recoil = {0.4, 1.4},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
-			{
-				r = 4000,
-				acc = {0.3, 0.4},
-				dmg_mul = 1.25,
-				recoil = {0.4, 1.4},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			}			
+			}
 		}
 		presets.weapon.gang_member.is_rifle.aim_delay = {0, 0}
 		presets.weapon.gang_member.is_rifle.focus_delay = 0
@@ -8547,89 +8491,41 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_rifle.autofire_rounds = presets.weapon.normal.is_rifle.autofire_rounds
 		presets.weapon.gang_member.is_rifle.FALLOFF = {
 			{
-				r = 100,
-				acc = {0.9, 1},
+				r = 300,
+				acc = {0.9, 0.975},
 				dmg_mul = 1.25,
-				recoil = {0.4, 0.8},
+				recoil = {0.25, 0.3},
 				mode = {
 					0,
 					3,
 					3,
 					1
-				}
-			},
-			{
-				r = 500,
-				acc = {0.8, 0.9},
-				dmg_mul = 1.25,
-				recoil = {0.45, 0.8},
-				mode = {
-					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				r = 1000,
-				acc = {0.7, 0.8},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				r = 1800,
-				acc = {0.6, 0.7},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
 				}
 			},
 			{
 				r = 2000,
-				acc = {0.5, 0.6},
+				acc = {0.875, 0.95},
 				dmg_mul = 1.25,
-				recoil = {0.4, 1.2},
+				recoil = {0.25, 0.3},
 				mode = {
+					0,
 					3,
-					2,
-					2,
-					0
+					8,
+					1
 				}
 			},
 			{
-				r = 3000,
-				acc = {0.4, 0.5},
+				r = 10000,
+				acc = {0.7, 0.9},
 				dmg_mul = 1.25,
-				recoil = {1.5, 3},
+				recoil = {0.35, 0.55},
 				mode = {
-					3,
-					1,
-					1,
-					0
+					0,
+					2,
+					5,
+					1
 				}
-			},
-			{
-				r = 4000,
-				acc = {0.3, 0.4},
-				dmg_mul = 1.25,
-				recoil = {1.5, 3},
-				mode = {
-					3,
-					1,
-					1,
-					0
-				}
-			}			
+			}
 		}
 		presets.weapon.gang_member.is_bullpup = presets.weapon.gang_member.is_rifle	
 		presets.weapon.gang_member.is_shotgun_pump.aim_delay = {0, 0}
@@ -8912,90 +8808,44 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}	
+		presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
+		presets.weapon.gang_member.mossberg.RELOAD_SPEED = 1.5
 		presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.is_smg.FALLOFF = {
 			{
-				r = 100,
-				acc = {0.8, 0.9},
+				r = 300,
+				acc = {0.9, 0.975},
 				dmg_mul = 1.25,
-				recoil = {0.4, 0.8},
+				recoil = {0.25, 0.3},
 				mode = {
 					0,
 					3,
 					3,
 					1
-				}
-			},
-			{
-				r = 500,
-				acc = {0.7, 0.8},
-				dmg_mul = 1.25,
-				recoil = {0.45, 0.8},
-				mode = {
-					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				r = 1000,
-				acc = {0.6, 0.7},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				r = 1800,
-				acc = {0.5, 0.6},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
 				}
 			},
 			{
 				r = 2000,
-				acc = {0.4, 0.5},
+				acc = {0.875, 0.95},
 				dmg_mul = 1.25,
-				recoil = {0.4, 1.2},
+				recoil = {0.25, 0.3},
 				mode = {
+					0,
 					3,
-					2,
-					2,
-					0
+					8,
+					1
 				}
 			},
 			{
-				r = 3000,
-				acc = {0.3, 0.4},
+				r = 10000,
+				acc = {0.7, 0.9},
 				dmg_mul = 1.25,
-				recoil = {1.5, 3},
+				recoil = {0.35, 0.55},
 				mode = {
-					3,
-					1,
-					1,
-					0
-				}
-			},
-			{
-				r = 4000,
-				acc = {0.2, 0.3},
-				dmg_mul = 1.25,
-				recoil = {1.5, 3},
-				mode = {
-					3,
-					1,
-					1,
-					0
+					0,
+					2,
+					5,
+					1
 				}
 			}
 		}
@@ -9003,91 +8853,44 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.is_lmg.FALLOFF = {
 			{
-				r = 100,
-				acc = {0.8, 0.9},
+				r = 300,
+				acc = {0.7, 0.9},
 				dmg_mul = 1.25,
-				recoil = {0.4, 0.8},
+				recoil = {0, 0.1},
 				mode = {
 					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				r = 500,
-				acc = {0.7, 0.8},
-				dmg_mul = 1.25,
-				recoil = {0.45, 0.8},
-				mode = {
 					0,
-					3,
-					3,
+					0,
 					1
-				}
-			},
-			{
-				r = 1000,
-				acc = {0.6, 0.7},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				r = 1800,
-				acc = {0.5, 0.6},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
 				}
 			},
 			{
 				r = 2000,
-				acc = {0.4, 0.5},
+				acc = {0.5, 0.75},
 				dmg_mul = 1.25,
-				recoil = {0.4, 1.2},
+				recoil = {0.1, 0.2},
 				mode = {
-					3,
-					2,
-					2,
-					0
+					0,
+					0,
+					0,
+					1
 				}
 			},
 			{
-				r = 3000,
-				acc = {0.3, 0.4},
+				r = 10000,
+				acc = {0.3, 0.6},
 				dmg_mul = 1.25,
-				recoil = {1.5, 3},
+				recoil = {0.4, 0.6},
 				mode = {
+					1,
 					3,
-					1,
-					1,
-					0
-				}
-			},
-			{
-				r = 4000,
-				acc = {0.2, 0.3},
-				dmg_mul = 1.25,
-				recoil = {1.5, 3},
-				mode = {
-					3,
-					1,
-					1,
-					0
+					6,
+					6
 				}
 			}
 		}
 		presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
+		presets.weapon.gang_member.mossberg.RELOAD_SPEED = 3
 		presets.weapon.gang_member.mac11 = presets.weapon.gang_member.is_smg
 		presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.rifle.spread = 5
@@ -9892,7 +9695,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.8,
+						chance = 0.4,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -9917,7 +9720,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.8,
+						chance = 0.4,
 						check_timeout = {4, 7},
 						variations = {
 							dive = {
@@ -9960,7 +9763,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.65,
+						chance = 0.325,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -10017,7 +9820,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.9,
+						chance = 0.45,
 						check_timeout = {1, 2},
 						variations = {
 							side_step = {
@@ -10059,7 +9862,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.5,
-						check_timeout = {1, 2},
+						check_timeout = {2, 3},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10074,8 +9877,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 1,
-						check_timeout = {0, 1},
+						chance = 0.5,
+						check_timeout = {1, 2},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10116,7 +9919,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.375,
-						check_timeout = {0, 6},
+						check_timeout = {1, 7},
 						variations = {
 							side_step = {
 								chance = 1,
@@ -10127,8 +9930,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.75,
-						check_timeout = {0, 1},
+						chance = 0.375,
+						check_timeout = {1, 2},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10169,7 +9972,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.75,
-						check_timeout = {0, 1},
+						check_timeout = {2, 3},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10184,8 +9987,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 1,
-						check_timeout = {0, 0},
+						chance = 0.75,
+						check_timeout = {1, 2},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10226,7 +10029,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.5,
-						check_timeout = {0, 5},
+						check_timeout = {1, 7},
 						variations = {
 							side_step = {
 								chance = 1,
@@ -10237,8 +10040,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 0.75,
-						check_timeout = {0, 0},
+						chance = 0.5,
+						check_timeout = {1, 2},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10401,7 +10204,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				occasions = {
 					hit = {
 						chance = 1,
-						check_timeout = {0, 0},
+						check_timeout = {0, 3},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10417,7 +10220,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 1,
-						check_timeout = {0, 0},
+						check_timeout = {0, 3},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10433,7 +10236,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					scared = {
 						chance = 1,
-						check_timeout = {0, 0},
+						check_timeout = {0, 3},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -10458,7 +10261,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				occasions = {
 					hit = {
 						chance = 1,
-						check_timeout = {0, 0},
+						check_timeout = {0, 3},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10474,7 +10277,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					preemptive = {
 						chance = 0.9,
-						check_timeout = {0, 0},
+						check_timeout = {0, 3},
 						variations = {
 							side_step = {
 								chance = 3,
@@ -10489,8 +10292,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}
 					},
 					scared = {
-						chance = 1,
-						check_timeout = {0, 0},
+						chance = 0.9,
+						check_timeout = {0, 3},
 						variations = {
 							side_step = {
 								chance = 5,
@@ -11219,27 +11022,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				follow_me = true,
 				suppress = true
 			},
-			omnia_lpf = {
-				aggressive = true,
-				retreat = true,
-				contact = true,
-				clear = true,
-				clear_whisper = true,
-				heal_chatter = true,
-				go_go = true,
-				push = true,
-				reload = true,
-				look_for_angle = true,
-				ecm = true,
-				saw = true,
-				trip_mines = true,
-				sentry = true,
-				ready = true,
-				smoke = true,
-				flash_grenade = true,
-				follow_me = true,
-				suppress = true
-			},			
 			summers = {
 				aggressive = true,
 				retreat = true,
@@ -11790,12 +11572,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
-		
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self:_set_characters_melee_preset("2.1", "2")
-		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
-		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -11890,13 +11668,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
-		
 		self:_set_characters_weapon_preset("expert", "good")
 		self:_set_characters_dodge_preset("athletic_overkill")
-		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
-		self:_set_characters_melee_preset("2.1", "2")
-				
+		self:_set_characters_melee_preset("2.5", "2")
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -11976,11 +11750,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-		self.presets.gang_member_damage.HEALTH_INIT = 125
+		self.presets.gang_member_damage.HEALTH_INIT = 150
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-		self.old_hoxton_mission.HEALTH_INIT = 125
-		self.spa_vip.HEALTH_INIT = 125
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
+		self.old_hoxton_mission.HEALTH_INIT = 150
+		self.spa_vip.HEALTH_INIT = 150
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		self:_multiply_all_speeds(1, 1.05)
@@ -12005,8 +11779,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
 		self:_set_characters_melee_preset("2.625", "2.1")
-		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -12019,18 +11791,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
-						
+		
+		self.city_swat.can_shoot_while_dodging = true
+		self.omnia.can_shoot_while_dodging = true
+		
+		
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
 		self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-		self.presets.gang_member_damage.HEALTH_INIT = 150
+		self.presets.gang_member_damage.HEALTH_INIT = 175
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-		self.old_hoxton_mission.HEALTH_INIT = 150
-		self.spa_vip.HEALTH_INIT = 150
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
+		self.old_hoxton_mission.HEALTH_INIT = 175
+		self.spa_vip.HEALTH_INIT = 175
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		self:_multiply_all_speeds(1.05, 1.1)
@@ -12054,14 +11830,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
-		self:_set_characters_melee_preset("2.625", "2.1")
-		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
-		
+		self:_set_characters_melee_preset("3.125", "2.5")
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
-		self.phalanx_minion_assault.steal_loot = true
 		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 		self.sniper.weapon.is_rifle.use_laser = false
@@ -12092,23 +11864,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 		
 		self:_multiply_all_speeds(1.1, 1.15)
-		self.presets.gang_member_damage.HEALTH_INIT = 150
+		self.presets.gang_member_damage.HEALTH_INIT = 200
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-		self.old_hoxton_mission.HEALTH_INIT = 150
-		self.spa_vip.HEALTH_INIT = 150
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
+		self.old_hoxton_mission.HEALTH_INIT = 200
+		self.spa_vip.HEALTH_INIT = 200
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		
-		self.tank_titan_assault.move_speed = self.presets.move_speed.slow
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-		if job == "haunted" then
-			self.tank_hw.move_speed = self.presets.move_speed.slow
-		else
-			self.tank_hw.move_speed = self.presets.move_speed.slow
-		end		
 		
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")

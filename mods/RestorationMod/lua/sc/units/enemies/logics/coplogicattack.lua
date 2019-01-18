@@ -10,7 +10,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				my_data.firing = true
 
 				if not data.unit:in_slot(16) and data.char_tweak.chatter.aggressive then
-					if data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" then
+					if data.unit:base()._tweak_table == "spring" then
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive_captain")
 					else
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")

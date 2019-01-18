@@ -232,6 +232,11 @@ function CopMovement:_upd_actions(t)
 			self:do_aoe_heal(self)		
 		end
 	end	
+	if self._tweak_data.do_summers_heal then
+		if not self._unit:character_damage():dead() then			
+			self:do_summers_heal(self)		
+		end
+	end		
 end
 
 function CopMovement:do_omnia(self)
@@ -274,6 +279,7 @@ function CopMovement:do_omnia(self)
 								if self._unit:contour() then
 									self._unit:contour():add("medic_show", false)
 									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
 								end										
 								if enemy:contour() then
 									enemy:contour():add("omnia_heal", false)
@@ -339,6 +345,63 @@ function CopMovement:do_aoe_heal(self)
 								if self._unit:contour() then
 									self._unit:contour():add("medic_show", false)
 									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
+								end								
+								if enemy:contour() then
+									enemy:contour():add("medic_heal", true)
+									enemy:contour():flash("medic_heal", 0.2)
+								end		
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
+							end
+						end
+					end
+				end
+			end
+		end
+	else
+		RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
+	end
+end
+
+function CopMovement:do_summers_heal(self)
+	local t = TimerManager:main():time()
+	if self._aoe_heal_cooldown > t then
+		return
+	else
+		self._aoe_heal_cooldown = t + 0.4
+	end
+	if self and self._unit then
+		if self._unit:base()._tweak_table == "medic_summers" and not self._unit:character_damage():dead() then
+			local cops_to_heal = {
+				"taser_summers",
+				"boom_summers",
+				"summers"
+			}
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 999, managers.slot:get_mask("enemies"))
+			if enemies then
+				RestorationCore.log_shit("SC: FOUND ENEMIES")
+				for _,enemy in ipairs(enemies) do
+					if enemy ~= self._unit then
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							RestorationCore.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								RestorationCore.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
+							end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 1
+							RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
 								end								
 								if enemy:contour() then
 									enemy:contour():add("medic_heal", true)

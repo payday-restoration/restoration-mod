@@ -53,6 +53,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}
+		self.alarm_pager = {
+			first_call_delay = {2, 4},
+			call_duration = {
+				{4.5, 4.5},
+				{4.5, 4.5}
+			},
+			nr_of_calls = {2, 2},
+			bluff_success_chance = {
+				1,
+				1,
+				1,
+				1,
+				0
+			},
+			bluff_success_chance_w_skill = {
+				1,
+				1,
+				1,
+				1,
+				0
+			}
+		}		
 	end
 
 	function PlayerTweakData:_set_sm_wish()
@@ -65,6 +87,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.damage.TASED_TIME = 5
 		self.damage.STUN_TIME = 15
+		self.alarm_pager = {
+			first_call_delay = {2, 4},
+			call_duration = {
+				{3, 3},
+				{3, 3}
+			},
+			nr_of_calls = {2, 2},
+			bluff_success_chance = {
+				1,
+				1,
+				1,
+				1,
+				0
+			},
+			bluff_success_chance_w_skill = {
+				1,
+				1,
+				1,
+				1,
+				0
+			}
+		}			
 	end
 
 	function PlayerTweakData:_set_singleplayer()
@@ -146,53 +190,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			range_mul = 1,
 			buildup_mul = 1
 		}
-		if Global.game_settings and Global.game_settings.one_down then
-			self.alarm_pager = {
-				first_call_delay = {2, 4},
-				call_duration = {
-					{4.5, 4.5},
-					{4.5, 4.5}
-				},
-				nr_of_calls = {2, 2},
-				bluff_success_chance = {
-					1,
-					1,
-					1,
-					1,
-					0
-				},
-				bluff_success_chance_w_skill = {
-					1,
-					1,
-					1,
-					1,
-					0
-				}
+		self.alarm_pager = {
+			first_call_delay = {2, 4},
+			call_duration = {
+				{6, 6},
+				{6, 6}
+			},
+			nr_of_calls = {2, 2},
+			bluff_success_chance = {
+				1,
+				1,
+				1,
+				1,
+				0
+			},
+			bluff_success_chance_w_skill = {
+				1,
+				1,
+				1,
+				1,
+				0
 			}
-		else
-			self.alarm_pager = {
-				first_call_delay = {2, 4},
-				call_duration = {
-					{6, 6},
-					{6, 6}
-				},
-				nr_of_calls = {2, 2},
-				bluff_success_chance = {
-					1,
-					1,
-					1,
-					1,
-					0
-				},
-				bluff_success_chance_w_skill = {
-					1,
-					1,
-					1,
-					1,
-					0
-				}
-			}
-		end
+		}
 		self.max_nr_following_hostages = 1
 		self.TRANSITION_DURATION = 0.23
 		self.stances = {

@@ -15,7 +15,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if not self._unit:character_damage():dead() then
 			
 			if Global.game_settings.difficulty == "sm_wish" then
-				self._unit:sound():say("g90")
+				self._unit:sound():say("visor_lost")
 				self._unit:sound():play("clk_turn", nil, nil)
 				self._unit:base():add_buff("base_damage", 10 * 0.01)
 				self._unit:movement():play_redirect("use_syringe")

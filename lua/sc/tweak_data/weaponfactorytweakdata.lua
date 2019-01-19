@@ -40600,18 +40600,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = -1
 						}	
 				self.parts.wpn_fps_upg_skspug_mag_30.custom_stats = {reload_speed_mult = 0.95}		
-				self.parts.wpn_fps_upg_sks_barrel_short_sksd.stats = {
+				self.parts.wpn_fps_upg_skspug_barrel_short.stats = {
 						value = 1,
 						recoil = -1,						
 						concealment = 2
 						}		
-				self.parts.wpn_fps_upg_sks_supp_dtk4.stats = {
-						value = 2,
-						suppression = 11,
-						alert_size = 11,
-						damage = 5,
-						recoil = 1,
-						concealment = -2
+				self.parts.wpn_fps_upg_skspug_ns_pbs1.stats = {
+						value = 10,
+						suppression = 13,
+						alert_size = 13,
+						concealment = -4,
+						spread = 2,
+						recoil = -1,
+						damage = 5
 						}												
 				self.parts.wpn_fps_upg_skspug_ns_dtk1.stats = {
 						value = 5,

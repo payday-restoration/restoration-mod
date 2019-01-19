@@ -491,7 +491,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif self._unit:base():has_tag("female_enemy") then
                     self._unit:sound():say("x01a_any_3p", true)						
 				elseif self._unit:base():has_tag("tank_titan") then
-                    self._unit:sound():say("bdz_x02a_any_3p", true)							
+                    self._unit:sound():say("x02a_any_3p", true)								
 				end	
 			    elseif action_type == "counter_tased" or action_type == "taser_tased" then
 		        	if self._unit:base():has_tag("taser") then
@@ -504,9 +504,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
               
 		        	if common_cop or self._unit:base():has_tag("shield") then
 		        		self._unit:sound():say("ch3", true) --make cops scream in pain when affected ECM feedback
-		        	elseif self._unit:base():has_tag("medic") or self._unit:base():has_tag("taser") then
-		        		self._unit:sound():say("burndeath", true) --same for these specials with a similar sound, since they lack one
+		        	elseif self._unit:base():has_tag("medic")then
+		        		self._unit:sound():say("burndeath", true) --same for the medic with a similar sound, since they lack one
+		        	elseif self._unit:base():has_tag("taser") then
+		        		self._unit:sound():say("tasered", true) --same as his tased lines felt they fit best
 		        	end
+		        elseif action_type == "heavy_hurt" then
+		            self._unit:sound():say("lk3a", true) --makes cops panic if they take heavy damage, usually from explosions n stuff "Jeez!" "Christ!" "Fucking hell!"
 		        else
 		        	self._unit:sound():say("x01a_any_3p", true)
 		        end

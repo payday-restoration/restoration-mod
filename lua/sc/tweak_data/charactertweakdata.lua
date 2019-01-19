@@ -1526,9 +1526,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_medic")
 		
 		self.tank_titan = deep_clone(self.tank)
-		self.tank_titan.tags = {"law", "tank", "special", "tank_titan"}
-		self.tank_titan.speech_prefix_p1 = "heck"
-		self.tank_titan.speech_prefix_count = nil		
+		self.tank_titan.tags = {"law", "tank", "special", "tank_titan"}	
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 		self.tank_titan.HEALTH_INIT = 1000
@@ -1541,6 +1539,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.tank_titan.custom_voicework = nil
 		else
 			self.tank_titan.custom_voicework = "tdozer"
+		end		
+		if job == "mad" then 
+		    self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
+		    self.tank.speech_prefix_p2 = nil
+		    self.tank.speech_prefix_count = nil
+		else
+		    self.tank_titan.speech_prefix_p1 = "heck"
+		    self.tank_titan.speech_prefix_count = nil	
 		end				
 		self.tank_titan.ecm_hurts = {}
 		self.tank_titan.spawn_sound_event = nil

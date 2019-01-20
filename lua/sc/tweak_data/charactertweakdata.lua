@@ -3469,7 +3469,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_pistol.focus_delay = 10
 		presets.weapon.normal.is_pistol.focus_dis = 200
 		presets.weapon.normal.is_pistol.spread = 20
-		presets.weapon.normal.is_pistol.miss_dis = 50
+		presets.weapon.normal.is_pistol.miss_dis = 40
 		presets.weapon.normal.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.normal.is_pistol.melee_speed = 1
 		presets.weapon.normal.is_pistol.melee_dmg = 5
@@ -3546,7 +3546,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_rifle.focus_delay = 10
 		presets.weapon.normal.is_rifle.focus_dis = 200
 		presets.weapon.normal.is_rifle.spread = 20
-		presets.weapon.normal.is_rifle.miss_dis = 40
+		presets.weapon.normal.is_rifle.miss_dis = 30
 		presets.weapon.normal.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.normal.is_rifle.melee_speed = 1
 		presets.weapon.normal.is_rifle.melee_dmg = 5
@@ -3563,7 +3563,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_rifle.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 1,
 				recoil = {0.4, 0.8},
 				mode = {
@@ -3575,7 +3575,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.5, 0.9},
 				dmg_mul = 1,
 				recoil = {0.45, 0.8},
 				mode = {
@@ -3587,7 +3587,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.2, 0.8},
+				acc = {0.3, 0.8},
 				dmg_mul = 1,
 				recoil = {0.35, 0.75},
 				mode = {
@@ -3909,7 +3909,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_smg.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 1,
 				recoil = {0.1, 0.3},
 				mode = {
@@ -3921,7 +3921,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.5, 0.9},
 				dmg_mul = 1,
 				recoil = {0.1, 0.3},
 				mode = {
@@ -3933,7 +3933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.2, 0.8},
+				acc = {0.3, 0.8},
 				dmg_mul = 1,
 				recoil = {0.3, 0.4},
 				mode = {
@@ -4670,7 +4670,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_pistol.focus_delay = 2
 		presets.weapon.good.is_pistol.focus_dis = 200
 		presets.weapon.good.is_pistol.spread = 20
-		presets.weapon.good.is_pistol.miss_dis = 50
+		presets.weapon.good.is_pistol.miss_dis = 30
 		presets.weapon.good.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.good.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
 		presets.weapon.good.is_pistol.melee_dmg = 10
@@ -4743,7 +4743,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_rifle.focus_delay = 3
 		presets.weapon.good.is_rifle.focus_dis = 200
 		presets.weapon.good.is_rifle.spread = 20
-		presets.weapon.good.is_rifle.miss_dis = 40
+		presets.weapon.good.is_rifle.miss_dis = 20
 		presets.weapon.good.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.good.is_rifle.melee_speed = 1
 		presets.weapon.good.is_rifle.melee_dmg = 10
@@ -4760,7 +4760,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_rifle.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.85, 0.9},
 				dmg_mul = 2,
 				recoil = {0.4, 0.8},
 				mode = {
@@ -4772,7 +4772,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.75, 0.9},
 				dmg_mul = 2,
 				recoil = {0.45, 0.8},
 				mode = {
@@ -4784,7 +4784,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.2, 0.8},
+				acc = {0.5, 0.8},
 				dmg_mul = 2,
 				recoil = {0.35, 0.75},
 				mode = {
@@ -4796,7 +4796,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 2000,
-				acc = {0.2, 0.5},
+				acc = {0.3, 0.5},
 				dmg_mul = 1,
 				recoil = {0.4, 1.2},
 				mode = {
@@ -5447,7 +5447,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_smg.focus_delay = 3
 		presets.weapon.good.is_smg.focus_dis = 200
 		presets.weapon.good.is_smg.spread = 20
-		presets.weapon.good.is_smg.miss_dis = 40
+		presets.weapon.good.is_smg.miss_dis = 20
 		presets.weapon.good.is_smg.RELOAD_SPEED = 1
 		presets.weapon.good.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
 		presets.weapon.good.is_smg.melee_dmg = 10
@@ -5457,7 +5457,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_smg.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 2,
 				recoil = {0.1, 0.25},
 				mode = {
@@ -5469,7 +5469,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.95},
+				acc = {0.5, 0.95},
 				dmg_mul = 2,
 				recoil = {0.1, 0.3},
 				mode = {
@@ -5481,7 +5481,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.2, 0.75},
+				acc = {0.3, 0.75},
 				dmg_mul = 2,
 				recoil = {0.35, 0.5},
 				mode = {
@@ -5670,7 +5670,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_revolver.focus_delay = 10
 		presets.weapon.good.is_revolver.focus_dis = 200
 		presets.weapon.good.is_revolver.spread = 20
-		presets.weapon.good.is_revolver.miss_dis = 50
+		presets.weapon.good.is_revolver.miss_dis = 30
 		presets.weapon.good.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.good.is_revolver.melee_speed = 1
 		presets.weapon.good.is_revolver.melee_dmg = 10
@@ -5895,7 +5895,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_pistol.focus_delay = 1
 		presets.weapon.expert.is_pistol.focus_dis = 300
 		presets.weapon.expert.is_pistol.spread = 20
-		presets.weapon.expert.is_pistol.miss_dis = 50
+		presets.weapon.expert.is_pistol.miss_dis = 20
 		presets.weapon.expert.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.expert.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
 		presets.weapon.expert.is_pistol.melee_dmg = 10.5
@@ -5980,7 +5980,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_rifle.focus_delay = 2
 		presets.weapon.expert.is_rifle.focus_dis = 300
 		presets.weapon.expert.is_rifle.spread = 20
-		presets.weapon.expert.is_rifle.miss_dis = 40
+		presets.weapon.expert.is_rifle.miss_dis = 10
 		presets.weapon.expert.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.expert.is_rifle.melee_speed = 1
 		presets.weapon.expert.is_rifle.melee_dmg = 10.5
@@ -5997,7 +5997,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_rifle.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.9, 1.0},
 				dmg_mul = 2.3,
 				recoil = {0.4, 0.8},
 				mode = {
@@ -6009,7 +6009,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.55, 0.95},
+				acc = {0.7, 0.95},
 				dmg_mul = 2.3,
 				recoil = {0.45, 0.8},
 				mode = {
@@ -6021,7 +6021,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.525, 0.8},
+				acc = {0.65, 0.8},
 				dmg_mul = 2.3,
 				recoil = {0.35, 0.75},
 				mode = {
@@ -6033,7 +6033,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1800,
-				acc = {0.525, 0.8},
+				acc = {0.6, 0.8},
 				dmg_mul = 2.1,
 				recoil = {0.35, 0.75},
 				mode = {
@@ -6073,7 +6073,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_shotgun_pump.focus_delay = 2
 		presets.weapon.expert.is_shotgun_pump.focus_dis = 200
 		presets.weapon.expert.is_shotgun_pump.spread = 15
-		presets.weapon.expert.is_shotgun_pump.miss_dis = 20
+		presets.weapon.expert.is_shotgun_pump.miss_dis = 10
 		presets.weapon.expert.is_shotgun_pump.RELOAD_SPEED = 0.25
 		presets.weapon.expert.is_shotgun_pump.melee_speed = 1
 		presets.weapon.expert.is_shotgun_pump.melee_dmg = 10.5
@@ -6086,7 +6086,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_shotgun_pump.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 2.3,
 				recoil = {1, 1.5},
 				mode = {
@@ -6098,7 +6098,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.6, 0.9},
 				dmg_mul = 2.185,
 				recoil = {1, 1.5},
 				mode = {
@@ -6341,7 +6341,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_shotgun_mag.focus_delay = 2
 		presets.weapon.expert.is_shotgun_mag.focus_dis = 200
 		presets.weapon.expert.is_shotgun_mag.spread = 15
-		presets.weapon.expert.is_shotgun_mag.miss_dis = 20
+		presets.weapon.expert.is_shotgun_mag.miss_dis = 10
 		presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
 		presets.weapon.expert.is_shotgun_mag.melee_speed = 1
 		presets.weapon.expert.is_shotgun_mag.melee_dmg = 10.5
@@ -6355,7 +6355,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_shotgun_mag.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 2.3,
 				recoil = {0.4, 0.7},
 				mode = {
@@ -6367,7 +6367,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.5, 0.9},
 				dmg_mul = 2.185,
 				recoil = {0.4, 0.7},
 				mode = {
@@ -6682,7 +6682,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_smg.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.95},
+				acc = {0.85, 0.95},
 				dmg_mul = 2.3,
 				recoil = {0.1, 0.25},
 				mode = {
@@ -6694,7 +6694,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.6, 0.9},
+				acc = {0.8, 0.9},
 				dmg_mul = 2.3,
 				recoil = {0.1, 0.3},
 				mode = {
@@ -6706,7 +6706,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.4, 0.65},
+				acc = {0.5, 0.65},
 				dmg_mul = 2.3,
 				recoil = {0.35, 0.5},
 				mode = {
@@ -6931,7 +6931,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_revolver.focus_delay = 10
 		presets.weapon.expert.is_revolver.focus_dis = 200
 		presets.weapon.expert.is_revolver.spread = 20
-		presets.weapon.expert.is_revolver.miss_dis = 50
+		presets.weapon.expert.is_revolver.miss_dis = 30
 		presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.expert.is_revolver.melee_speed = 1
 		presets.weapon.expert.is_revolver.melee_dmg = 10.5
@@ -7193,7 +7193,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.deathwish.is_shotgun_pump.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 2.875,
 				recoil = {1, 1.5},
 				mode = {
@@ -7205,7 +7205,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.6, 0.9},
 				dmg_mul = 2.73125,
 				recoil = {1, 1.5},
 				mode = {
@@ -7510,7 +7510,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.deathwish.is_shotgun_mag.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.7, 0.9},
 				dmg_mul = 2.875,
 				recoil = {0.4, 0.7},
 				mode = {
@@ -7522,7 +7522,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.4, 0.9},
+				acc = {0.5, 0.9},
 				dmg_mul = 2.73125,
 				recoil = {0.4, 0.7},
 				mode = {
@@ -8065,7 +8065,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.deathwish.is_rifle.FALLOFF = {
 			{
 				r = 100,
-				acc = {0.6, 0.9},
+				acc = {0.9, 1.0},
 				dmg_mul = 2.875,
 				recoil = {0.4, 0.8},
 				mode = {
@@ -8077,7 +8077,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 500,
-				acc = {0.55, 0.95},
+				acc = {0.7, 0.95},
 				dmg_mul = 2.875,
 				recoil = {0.45, 0.8},
 				mode = {
@@ -8089,7 +8089,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1000,
-				acc = {0.525, 0.8},
+				acc = {0.65, 0.8},
 				dmg_mul = 2.875,
 				recoil = {0.35, 0.75},
 				mode = {
@@ -8101,7 +8101,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 1800,
-				acc = {0.525, 0.8},
+				acc = {0.6, 0.8},
 				dmg_mul = 2.625,
 				recoil = {0.35, 0.75},
 				mode = {

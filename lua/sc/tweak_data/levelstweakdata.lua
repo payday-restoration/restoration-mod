@@ -52,7 +52,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skm_run.ai_group_type = nypd
 		self.skm_red2.ai_group_type = nypd
 		--"LAPD"--
-		--NYPD used because they're look closer than the DC cops do--
+		--NYPD used because they look closer than the DC cops do--
 		self.jolly.ai_group_type = nypd
 		self.rvd1.ai_group_type = nypd
 		self.rvd2.ai_group_type = nypd

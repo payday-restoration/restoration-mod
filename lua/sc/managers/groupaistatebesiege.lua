@@ -155,6 +155,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 			end
 		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_open_fire_start(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
+			else
+			end
+		end
 	end
 
 	function GroupAIStateBesiege:_voice_push_in(group)
@@ -172,6 +180,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+	
+	function GroupAIStateBesiege:_voice_deathguard_start(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "deathguard") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_smoke(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "smoke") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_flash(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "flash_grenade") then
+			else
+			end
+		end
+	end
 
 	function GroupAIStateBesiege:_voice_dont_delay_assault(group)
 		local time = self._t
@@ -183,7 +215,91 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return false
 	end
-
+	
+	    function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
+    	if task_data.use_smoke and not self:is_smoke_grenade_active() then
+    		local shooter_pos, shooter_u_data = nil
+    		local duration = tweak_data.group_ai.smoke_grenade_lifetime
+    
+    		for u_key, u_data in pairs(group.units) do
+    			if u_data.tactics_map and u_data.tactics_map.smoke_grenade then
+    				if not detonate_pos then
+    					local nav_seg_id = u_data.tracker:nav_segment()
+    					local nav_seg = managers.navigation._nav_segments[nav_seg_id]
+    
+    					for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
+    						local area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
+    
+    						if task_data.target_areas[1].nav_segs[neighbour_nav_seg_id] or next(area.criminal.units) then
+    							local random_door_id = door_list[math.random(#door_list)]
+    							detonate_pos = type(random_door_id) == "number" and managers.navigation._room_doors[random_door_id].center or random_door_id:script_data().element:nav_link_end_pos()
+    							shooter_pos = mvector3.copy(u_data.m_pos)
+    							shooter_u_data = u_data
+    
+    							break
+    						end
+    					end
+    				end
+    
+    				if detonate_pos and shooter_u_data then
+    					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, false)
+    
+    					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.rand(0, 1) ^ 0.5)
+    					task_data.use_smoke = false
+    
+    					--if shooter_u_data.unit:sound():speaking(self._t) then
+    						--self:chk_say_enemy_chatter(shooter_u_data.unit, shooter_u_data.m_pos, "smoke")
+		                self:_voice_smoke(group)
+    					--end
+    
+    					return true
+    				end
+    			end
+    		end
+    	end
+    end
+    
+    function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, detonate_pos)
+    	if task_data.use_smoke and not self:is_smoke_grenade_active() then
+    		local shooter_pos, shooter_u_data = nil
+    		local duration = tweak_data.group_ai.flash_grenade_lifetime
+    
+    		for u_key, u_data in pairs(group.units) do
+    			if u_data.tactics_map and u_data.tactics_map.flash_grenade then
+    				if not detonate_pos then
+    					local nav_seg_id = u_data.tracker:nav_segment()
+    					local nav_seg = managers.navigation._nav_segments[nav_seg_id]
+    
+    					for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
+    						if task_data.target_areas[1].nav_segs[neighbour_nav_seg_id] then
+    							local random_door_id = door_list[math.random(#door_list)]
+    							detonate_pos = type(random_door_id) == "number" and managers.navigation._room_doors[random_door_id].center or random_door_id:script_data().element:nav_link_end_pos()
+    							shooter_pos = mvector3.copy(u_data.m_pos)
+    							shooter_u_data = u_data
+    
+    							break
+    						end
+    					end
+    				end
+    
+    				if detonate_pos and shooter_u_data then
+    					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, true)
+    
+    					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random() ^ 0.5)
+    					task_data.use_smoke = false
+    
+    					--if not shooter_u_data.unit:sound():speaking(self._t) then
+    						--self:chk_say_enemy_chatter(shooter_u_data.unit, shooter_u_data.m_pos, "flash_grenade")
+		                self:_voice_flash(group)
+    					--end
+    
+    					return true
+    				end
+    			end
+    		end
+    	end
+    end
+	
 	function GroupAIStateBesiege:_upd_assault_task()
 		local task_data = self._task_data.assault
 		if not task_data.active then
@@ -556,6 +672,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
 				if tactic_name == "deathguard" and not phase_is_anticipation then
+					self:_voice_deathguard_start(group)
 					if current_objective.tactic == tactic_name then
 						for u_key, u_data in pairs(self._char_criminals) do
 							if u_data.status and current_objective.follow_unit == u_data.unit then
@@ -637,10 +754,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					approach = true
 				elseif not phase_is_anticipation and not current_objective.open_fire then
 					open_fire = true
+			        self:_voice_open_fire_start(group)
 				elseif not phase_is_anticipation and group.in_place_t and (group.is_chasing or not tactics_map or not tactics_map.ranged_fire or self._t - group.in_place_t > 15) then
 					push = true
 				elseif phase_is_anticipation and current_objective.open_fire then
 					pull_back = true
+				elseif phase_is_fade then
+		            self:_voice_gtfo(group)				
 				end
 			end
 		end
@@ -770,6 +890,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		elseif pull_back then
+		    self:_voice_gtfo(group)
 			local retreat_area, do_not_retreat
 			for u_key, u_data in pairs(group.units) do
 				local nav_seg_id = u_data.tracker:nav_segment()

@@ -148,7 +148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.steal_loot = nil
 		self.security.static_dodge_preset = true
 		self.security.shooting_death = false
-		self.security.die_sound_event = "l2n_x01a_any_3p"
+		self.security.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "security")
 		self.security_undominatable = deep_clone(self.security)
 		self.security_undominatable.surrender = nil
@@ -203,7 +203,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.has_alarm_pager = true
 		self.gensec.melee_weapon = "baton"
 		self.gensec.steal_loot = nil
-		self.gensec.die_sound_event = "l2n_x01a_any_3p"
+		self.gensec.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "gensec")
 	end
 
@@ -241,7 +241,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.cop.steal_loot = true
 		end
 		self.cop.static_dodge_preset = true
-		self.cop.die_sound_event = "l2n_x01a_any_3p"
+		self.cop.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "cop")
 		self.cop_scared = deep_clone(self.cop)
 		self.cop_scared.surrender = presets.surrender.always
@@ -294,7 +294,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.fbi.chatter = presets.enemy_chatter.cop
 			self.fbi.steal_loot = true
 		self.fbi.no_arrest = false
-		self.fbi.die_sound_event = "l2n_x01a_any_3p"
+		self.fbi.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "fbi")
 		self.fbi_female = deep_clone(self.fbi)
 		self.fbi_female.speech_prefix_p1 = "fl"
@@ -336,7 +336,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		}	
 		self.fbi_vet.static_dodge_preset = true
-		self.fbi_vet.die_sound_event = "l2n_x01a_any_3p"
+		self.fbi_vet.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "fbi_vet")
 	end
 
@@ -490,7 +490,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.melee_weapon = nil
 		self.swat.melee_weapon_dmg_multiplier = 1
 		if job == "mad" then
-		    self.swat.die_sound_event = "l2n_x01a_any_3p"
+		    self.swat.die_sound_event = "l1n_x01a_any_3p"
 		else	
 		    self.swat.die_sound_event = "x01a_any_3p"
 		end	
@@ -513,14 +513,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.unintimidateable = true	
 		self.swat_titan.custom_voicework = nil
 		self.swat_titan.static_dodge_preset = true
-		self.swat_titan.die_sound_event = "l2n_x01a_any_3p"
+		self.swat_titan.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "swat_titan")
 		
 		self.hrt = deep_clone(self.swat)
 		self.hrt.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.hrt.speech_prefix_p2 = "n"
 		self.hrt.speech_prefix_count = 4
-		self.hrt.die_sound_event = "l2n_x01a_any_3p"
+		self.hrt.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "hrt")		
 		
 		self.swat_assault = deep_clone(self.swat)
@@ -565,7 +565,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
 		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" then
-			self.heavy_swat.die_sound_event = "l2n_x01a_any_3p"
+			self.heavy_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.heavy_swat.die_sound_event = "l3d_x02a_any_3p"
 		end		
@@ -732,7 +732,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
 		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" then
-			self.fbi_swat.die_sound_event = "l2n_x01a_any_3p"
+			self.fbi_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.fbi_swat.die_sound_event = "l1d_x02a_any_3p"
 		end
@@ -781,7 +781,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork" or job =="wetwork_burn"  or job =="wwh"  then
 			self.fbi_heavy_swat.die_sound_event = "l5d_x02a_any_3p"
 		elseif job == "mad" then
-		    self.fbi_heavy_swat.die_sound_event = "l2n_x01a_any_3p"
+		    self.fbi_heavy_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 		    self.fbi_heavy_swat.die_sound_event = "l3d_x02a_any_3p"
 		end	
@@ -845,7 +845,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.city_swat.die_sound_event_2 = "l1d_x02a_any_3p"	
 		self.city_swat.die_sound_event_3 = "l5d_x02a_any_3p"	
-		self.city_swat.die_sound_event_4 = "l2n_x01a_any_3p"	
+		self.city_swat.die_sound_event_4 = "l1n_x01a_any_3p"	
 		self.city_swat.has_alarm_pager = true
 		self.city_swat.calls_in = true
 		self.city_swat.static_weapon_preset = true
@@ -853,7 +853,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.static_melee_preset = true	
 		self.city_swat.custom_voicework = nil
 		--[[if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" then
-			self.city_swat.die_sound_event = "l2n_x01a_any_3p"
+			self.city_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.city_swat.die_sound_event = "l1d_x02a_any_3p"
 		end]]--
@@ -896,7 +896,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
 		if job == "mad" then
-		   self.city_swat_titan.die_sound_event = "l2n_x01a_any_3p"
+		   self.city_swat_titan.die_sound_event = "l1n_x01a_any_3p"
 		else
 		   self.city_swat_titan.die_sound_event = nil
 		end
@@ -967,7 +967,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.static_weapon_preset = true
 		self.sniper.static_dodge_preset = true
 		self.sniper.is_special = true
-		self.sniper.die_sound_event = "l2n_x01a_any_3p"
+		self.sniper.die_sound_event = "l1n_x01a_any_3p"
 		table.insert(self._enemy_list, "sniper")
 	end
 
@@ -1768,7 +1768,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
 		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" then
-			self.shield.die_sound_event = "l2n_x01a_any_3p"
+			self.shield.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.shield.die_sound_event = "l4d_x02a_any_3p"
 		end

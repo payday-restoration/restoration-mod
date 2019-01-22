@@ -10,6 +10,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {0.75, 1.5},
 			group_min = 0,
 			queue = "g90"
+		}		
+		self.enemy_chatter.open_fire = {
+			radius = 700,
+			max_nr = 10,
+			duration = {2, 4},
+			interval = {0.75, 1.5},
+			group_min = 0,
+			queue = "att"
 		}
 		self.enemy_chatter.aggressive_captain = {
 			radius = 700,
@@ -26,6 +34,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {0.75, 1.5},
 			group_min = 0,
 			queue = "m01"
+		}		
+		self.enemy_chatter.deathguard = {
+			radius = 900,
+			max_nr = 5,
+			duration = {2, 4},
+			interval = {2, 3},
+			group_min = 0,
+			queue = "i03"
 		}
 		self.enemy_chatter.contact = {
 			radius = 700,
@@ -39,7 +55,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 10,
 			duration = {2, 4},
-			interval = {1.5, 2.5},
+			interval = {2, 3},
 			group_min = 0,
 			queue = "clr"
 		}
@@ -47,7 +63,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 10,
 			duration = {2, 4},
-			interval = {1.5, 2.5},
+			interval = {2, 3},
 			group_min = 0,
 			queue = "a05"
 		}		
@@ -92,18 +108,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "rdy"
 		}
 		self.enemy_chatter.smoke = {
-			radius = 1000,
+			radius = 2000,
 			max_nr = 20,
 			duration = {2, 4},
-			interval = {0.75, 1.5},
+			interval = {0, 0},
 			group_min = 0,
 			queue = "d01"
 		}
 		self.enemy_chatter.flash_grenade = {
-			radius = 700,
+			radius = 2000,
 			max_nr = 20,
 			duration = {2, 4},
-			interval = {0.75, 1.5},
+			interval = {0, 0},
 			group_min = 0,
 			queue = "d02"
 		}

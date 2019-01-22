@@ -672,8 +672,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
 				if tactic_name == "deathguard" and not phase_is_anticipation then
-					self:_voice_deathguard_start(group)
 					if current_objective.tactic == tactic_name then
+					    self:_voice_deathguard_start(group)
 						for u_key, u_data in pairs(self._char_criminals) do
 							if u_data.status and current_objective.follow_unit == u_data.unit then
 								local crim_nav_seg = u_data.tracker:nav_segment()
@@ -758,9 +758,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif not phase_is_anticipation and group.in_place_t and (group.is_chasing or not tactics_map or not tactics_map.ranged_fire or self._t - group.in_place_t > 15) then
 					push = true
 				elseif phase_is_anticipation and current_objective.open_fire then
-					pull_back = true
-				elseif phase_is_fade then
-		            self:_voice_gtfo(group)				
+					pull_back = true			
 				end
 			end
 		end

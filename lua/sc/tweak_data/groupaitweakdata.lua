@@ -111,7 +111,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 2000,
 			max_nr = 20,
 			duration = {2, 4},
-			interval = {0, 0},
+			interval = {0.1, 0.2},
 			group_min = 0,
 			queue = "d01"
 		}
@@ -119,7 +119,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 2000,
 			max_nr = 20,
 			duration = {2, 4},
-			interval = {0, 0},
+			interval = {0.1, 0.2},
 			group_min = 0,
 			queue = "d02"
 		}

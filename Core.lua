@@ -98,7 +98,8 @@ if not _G.restoration then
 		"nmh",
 		"vit",
 		"pbr",
-		"pbr2"
+		"pbr2",
+		"junk"
 	}
 end
 

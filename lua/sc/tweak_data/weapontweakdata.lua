@@ -8752,11 +8752,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.g36k.kick.steelsight = self.new_m4.kick.standing
 			self.g36k.stats = {
 				damage = 35,
-				spread = 14,
+				spread = 15,
 				recoil = 19,
 				spread_moving = 7,
 				zoom = 3,
-				concealment = 19,
+				concealment = 20,
 				suppression = 8,
 				alert_size = 8,
 				extra_ammo = 51,
@@ -9050,6 +9050,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end		
 	
 	if self.stg44 then --Silent Enforcer's STG-44
+		self.stg44.has_description = false													
 		self.stg44.AMMO_MAX = 120
 		self.stg44.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.stg44.spread.standing = 3
@@ -9265,6 +9266,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end		
 
 	if self.sks then -->:3's SKS 
+		self.sks.has_description = false													
 		self.sks.spread.standing = 3
 		self.sks.spread.crouching = 2
 		self.sks.spread.steelsight = 1
@@ -9473,7 +9475,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.tilt.panic_suppression_chance = 0.1
 		end			
 
-	if self.mac10mpa then --Mira's SMG-11  
+	if self.mac10mpa then --Mira's SMG 11  
 		self.mac10mpa.has_description = false									
 		self.mac10mpa.timers.reload_not_empty = 2
 		self.mac10mpa.timers.reload_empty = 2.7
@@ -9494,11 +9496,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10mpa.kick.steelsight = self.new_m4.kick.standing
 		self.mac10mpa.stats = {
 			damage = 35,
-			spread = 15,
-			recoil = 13,
+			spread = 14,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
-			concealment = 27,
+			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 51,
@@ -9579,6 +9581,64 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obr5.panic_suppression_chance = 0.0
 	end	
 
+	if self.triad then -->:3's Triad
+		self.triad.spread.standing = 3
+		self.triad.spread.crouching = 2
+		self.triad.spread.steelsight = 1
+		self.triad.spread.moving_standing = 4
+		self.triad.spread.moving_crouching = 3
+		self.triad.spread.moving_steelsight = 2
+		self.triad.AMMO_MAX = 40
+		self.triad.kick.standing = self.glock_17.kick.standing
+		self.triad.kick.crouching = self.glock_17.kick.standing
+		self.triad.kick.steelsight = self.glock_17.kick.standing
+		self.triad.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.triad.stats = {
+			damage = 100,
+			spread = 19,
+			recoil = 6,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 25,
+			suppression = 3,
+			alert_size = 3,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end		
+
+	if self.af2011 then --Gambyt's AF 2011
+		self.af2011.CLIP_AMMO_MAX = 8
+		self.af2011.AMMO_MAX = 80
+		self.af2011.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.af2011.spread.standing = 3
+		self.af2011.spread.crouching = 2
+		self.af2011.spread.steelsight = 1
+		self.af2011.spread.moving_standing = 4
+		self.af2011.spread.moving_crouching = 3
+		self.af2011.spread.moving_steelsight = 2
+		self.af2011.kick.standing = self.glock_17.kick.standing
+		self.af2011.kick.crouching = self.glock_17.kick.standing
+		self.af2011.kick.steelsight = self.glock_17.kick.standing
+		self.af2011.stats = {
+			damage = 72,
+			spread = 18,
+			recoil = 18,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 25,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.x_af2011.use_data.selection_index = 4 				
+		end			
+
 		if self.m1912 then -->:3's Winchester M1912
 			self.m1912.has_description = false				
 			self.m1912.damage_near = 900
@@ -9615,6 +9675,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 		end	
 
+
 	if self.temple then --VXWolf's G11	
 		self.temple.AMMO_MAX = 150
 		self.temple.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -9628,23 +9689,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.temple.kick.crouching = self.new_m4.kick.standing
 		self.temple.kick.steelsight = self.new_m4.kick.standing
 		self.temple.stats = {
-			damage = 35,
-			spread = 14,
-			recoil = 19,
-			spread_moving = 7,
-			zoom = 3,
-			concealment = 22,
-			suppression = 8,
-			alert_size = 8,
-			extra_ammo = 51,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
+				damage = 35,
+				spread = 14,
+				recoil = 19,
+				spread_moving = 7,
+				zoom = 3,
+				concealment = 22,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
 		}
 		self.temple.panic_suppression_chance = 0.0
 	end			
 	
-	if self.heffy_762 then --Killerwolf & Germantaco's AK-47 (only stats. too much attachments to sort through. cool model tho)
+	if self.heffy_762 then --Killerwolf & Germantaco's AK-47 
 		self.heffy_762.desc_id = "bm_menu_sc_akm_desc"
 		self.heffy_762.AMMO_MAX = 120
 		self.heffy_762.tactical_reload = 1				
@@ -9674,7 +9735,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.heffy_762.panic_suppression_chance = 0.0
 	end												
 
-	if self.dp28 then --Killerwolf's DP-28 (feat. Kitsune Jimmy)
+	if self.dp28 then --Killerwolf & Kitsune Jimmy's DP-28 
 		self.dp28.has_description = false		
 		self.dp28.AMMO_MAX = 120
 		self.dp28.tactical_reload = 1		
@@ -9818,35 +9879,35 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.stats_modifiers = {damage = 1}
 	end				
 
-		if self.evo then --Gambyt's Scorpion EVO
-			self.evo.has_description = false					
-			self.evo.sounds.fire = "mp5_fire_single"
-			self.evo.sounds.fire_single = "mp5_fire_single"
-			self.evo.sounds.fire_auto = "mp5_fire"
-			self.evo.sounds.stop_fire = "mp5_stop"		
-			self.evo.use_data.selection_index = 2
-			self.evo.tactical_reload = 1
-			self.evo.categories = {
+		if self.czevo then --Gambyt's Scorpion EVO
+			self.czevo.has_description = false					
+			self.czevo.sounds.fire = "mp5_fire_single"
+			self.czevo.sounds.fire_single = "mp5_fire_single"
+			self.czevo.sounds.fire_auto = "mp5_fire"
+			self.czevo.sounds.stop_fire = "mp5_stop"		
+			self.czevo.use_data.selection_index = 2
+			self.czevo.tactical_reload = 1
+			self.czevo.categories = {
 				"smg"
 			}
-			self.evo.CLIP_AMMO_MAX = 30
-			self.evo.AMMO_MAX = 180
-			self.evo.AMMO_PICKUP = self:_pickup_chance(180, 2)
-			self.evo.fire_mode_data.fire_rate = 0.05217391304
-			self.evo.CAN_TOGGLE_FIREMODE = true
-			self.evo.FIRE_MODE = "auto"
-			self.evo.auto = {}
-			self.evo.auto.fire_rate = 0.05217391304
-			self.evo.spread.standing = 3
-			self.evo.spread.crouching = 2
-			self.evo.spread.steelsight = 1
-			self.evo.spread.moving_standing = 4
-			self.evo.spread.moving_crouching = 3
-			self.evo.spread.moving_steelsight = 2
-			self.evo.kick.standing = self.new_m4.kick.standing
-			self.evo.kick.crouching = self.new_m4.kick.standing
-			self.evo.kick.steelsight = self.new_m4.kick.standing
-			self.evo.stats = {
+			self.czevo.CLIP_AMMO_MAX = 30
+			self.czevo.AMMO_MAX = 180
+			self.czevo.AMMO_PICKUP = self:_pickup_chance(180, 2)
+			self.czevo.fire_mode_data.fire_rate = 0.05217391304
+			self.czevo.CAN_TOGGLE_FIREMODE = true
+			self.czevo.FIRE_MODE = "auto"
+			self.czevo.auto = {}
+			self.czevo.auto.fire_rate = 0.05217391304
+			self.czevo.spread.standing = 3
+			self.czevo.spread.crouching = 2
+			self.czevo.spread.steelsight = 1
+			self.czevo.spread.moving_standing = 4
+			self.czevo.spread.moving_crouching = 3
+			self.czevo.spread.moving_steelsight = 2
+			self.czevo.kick.standing = self.new_m4.kick.standing
+			self.czevo.kick.crouching = self.new_m4.kick.standing
+			self.czevo.kick.steelsight = self.new_m4.kick.standing
+			self.czevo.stats = {
 				damage = 29,
 				spread = 16,
 				recoil = 22,
@@ -9860,8 +9921,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				reload = 11
 			}
-			self.evo.panic_suppression_chance = 0.1
-			self.x_evo.use_data.selection_index = 4 
+			self.czevo.panic_suppression_chance = 0.1
+			self.x_czevo.use_data.selection_index = 4 
 		end
 
 		if self.scarl then -->:3's SCAR L

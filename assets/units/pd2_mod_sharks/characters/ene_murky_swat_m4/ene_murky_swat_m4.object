@@ -189,6 +189,10 @@
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
 	</constraints>
+	
+	<decal_surfaces default_material="flesh" >
+		<decal_mesh name="dm_helmet" enabled="false" material="steel_no_decal" />
+	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">

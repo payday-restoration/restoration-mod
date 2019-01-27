@@ -888,6 +888,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.HEALTH_INIT = 26
 		self.city_swat_titan.headshot_dmg_mul = 2.6
 		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
+		self.city_swat_titan.damage.bullet_damage_mul = 1.5
+		self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 		self.city_swat_titan.use_animation_on_fire_damage = false
 		self.city_swat_titan.move_speed = presets.move_speed.very_fast
 		self.city_swat_titan.dodge = presets.dodge.elite

@@ -3107,6 +3107,55 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			0.48,
 			0.49,
 			0.5,
+			0.51,
+			0.52,
+			0.53,
+			0.54,
+			0.55,
+			0.56,
+			0.57,
+			0.58,
+			0.59,
+			0.6,
+			0.61,
+			0.62,
+			0.63,
+			0.64,
+			0.65,
+			0.66,
+			0.67,
+			0.68,
+			0.69,
+			0.7,
+			0.71,
+			0.72,
+			0.73,
+			0.74,
+			0.75,
+			0.76,
+			0.77,
+			0.78,
+			0.79,
+			0.8,
+			0.81,
+			0.82,
+			0.83,
+			0.84,
+			0.85,
+			0.86,
+			0.87,
+			0.88,
+			0.89,
+			0.9,
+			0.91,
+			0.92,
+			0.93,
+			0.94,
+			0.95,
+			0.96,
+			0.97,
+			0.98,
+			0.99
 		}
 		self.stats.reload = {}
 		for i = 5, 20, 0.5 do
@@ -8853,12 +8902,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203.kick.crouching = self.new_m4.kick.standing
 			self.scar_m203.kick.steelsight = self.new_m4.kick.standing
 			self.scar_m203.stats = {
-				damage = 35,
+				damage = 30,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 13,
 				zoom = 3,
-				concealment = 8,
+				concealment = 9,
 				suppression = 8,
 				alert_size = 8,
 				extra_ammo = 51,
@@ -8903,6 +8952,41 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 		end
+
+		if self.rpd then -->:3's RPD
+			self.rpd.categories = {
+				"lmg",
+				"smg"
+			}
+			self.rpd.has_description = false
+			self.rpd.AMMO_MAX = 200
+			self.rpd.AMMO_PICKUP = self:_pickup_chance(200, 1)
+			self.rpd.panic_suppression_chance = 0.1
+			self.rpd.spread.standing = 3
+			self.rpd.spread.crouching = 2
+			self.rpd.spread.steelsight = 1
+			self.rpd.spread.moving_standing = 4
+			self.rpd.spread.moving_crouching = 3
+			self.rpd.spread.moving_steelsight = 2
+			self.rpd.kick.standing = self.new_m4.kick.standing
+			self.rpd.kick.crouching = self.new_m4.kick.standing
+			self.rpd.kick.steelsight = self.new_m4.kick.standing
+			self.rpd.stats = {
+				damage = 35,
+				spread = 12,
+				recoil = 20,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 2,
+				suppression = 7,
+				alert_size = 7,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+			self.rpd.panic_suppression_chance = 0.1			
+		end		
 
 		if self.yayo then --Montana 5.56 by Matthelzor, Kitsune Jimmy, >:3, & Gambyt
 			self.yayo.tactical_reload = 1
@@ -9391,7 +9475,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hk416.kick.crouching = self.new_m4.kick.standing
 			self.hk416.kick.steelsight = self.new_m4.kick.standing
 			self.hk416.stats = {
-				damage = 29,
+				damage = 30,
 				spread = 14,
 				recoil = 19,
 				spread_moving = 7,
@@ -9405,12 +9489,48 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.hk416.panic_suppression_chance = 0.0
-		end						
+		end	
+
+		if self.fortress then --VXWolf's Bavarium Splitter
+			self.fortress.has_description = false						
+			self.fortress.tactical_reload = 1		
+			self.fortress.AMMO_MAX = 80
+			self.fortress.CLIP_AMMO_MAX = 60
+			self.fortress.timers.reload_not_empty = 3.1
+			self.fortress.timers.reload_empty = 4.29			
+			self.fortress.AMMO_PICKUP = self:_pickup_chance(80, 2)
+			self.fortress.spread.standing = 3
+			self.fortress.spread.crouching = 2
+			self.fortress.spread.steelsight = 1
+			self.fortress.spread.moving_standing = 4
+			self.fortress.spread.moving_crouching = 3
+			self.fortress.spread.moving_steelsight = 2
+			self.fortress.kick.standing = self.new_m4.kick.standing
+			self.fortress.kick.crouching = self.new_m4.kick.standing
+			self.fortress.kick.steelsight = self.new_m4.kick.standing
+			self.fortress.stats = {
+				damage = 75,
+				spread = 14,
+				recoil = 18,
+				spread_moving = 5,
+				zoom = 3,
+				concealment = 8,
+				suppression = 6,
+				alert_size = 6,
+				extra_ammo = 51,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+			self.fortress.panic_suppression_chance = 0.0
+		end								
 
 	if self.f2000 then -->:3's F2000
 		self.f2000.has_description = false				
 		self.f2000.tactical_reload = 1		
 		self.f2000.AMMO_MAX = 150
+		self.f2000.timers.reload_not_empty = 2.1
+		self.f2000.timers.reload_empty = 2.9		
 		self.f2000.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.f2000.fire_mode_data.fire_rate = 0.07058823529
 		self.f2000.CAN_TOGGLE_FIREMODE = true
@@ -9426,7 +9546,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.f2000.kick.crouching = self.new_m4.kick.standing
 		self.f2000.kick.steelsight = self.new_m4.kick.standing
 		self.f2000.stats = {
-			damage = 29,
+			damage = 30,
 			spread = 15,
 			recoil = 22,
 			spread_moving = 6,
@@ -9788,7 +9908,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 17,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 12,
+			concealment = 8,
 			suppression = 7,
 			alert_size = 7,
 			extra_ammo = 51,
@@ -9797,6 +9917,35 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 	end
+
+	if self.hk33 then --Mira's HK33  
+		self.hk33.has_description = false
+		self.hk33.tactical_reload = 1
+		self.hk33.AMMO_MAX = 120
+		self.hk33.CLIP_AMMO_MAX = 30
+		self.hk33.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.hk33.spread = {}
+		self.hk33.spread.standing = 3
+		self.hk33.spread.crouching = 2
+		self.hk33.spread.steelsight = 1
+		self.hk33.spread.moving_standing = 4
+		self.hk33.spread.moving_crouching = 3
+		self.hk33.spread.moving_steelsight = 2
+		self.hk33.stats = {
+			damage = 45,
+			spread = 15,
+			recoil = 16,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 12,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 51,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+	end	
 
 	if self.hx25 then -->:3's HX25
 		self.hx25.has_description = false		
@@ -9843,8 +9992,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.categories = {
 				"shotgun"
 		}		
-		self.ks23.damage_near = 1400
-		self.ks23.damage_far = 1400
+		self.ks23.damage_near = 1500
+		self.ks23.damage_far = 1500
 		self.ks23.tactical_reload = 1		
 		self.ks23.fire_mode_data.fire_rate = 2
 		self.ks23.single.fire_rate = 2
@@ -9941,7 +10090,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scarl.kick.crouching = self.new_m4.kick.standing
 			self.scarl.kick.steelsight = self.new_m4.kick.standing
 			self.scarl.stats = {
-				damage = 35,
+				damage = 30,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 13,

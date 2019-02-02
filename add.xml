@@ -373,7 +373,9 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_contour" force="false"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_husk" force="false" load="true"/>
-	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_heavy_dw_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_heavy_dw_df" force="false"/>  
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/k63_df" force="false"/>
+    <texture path="units/pd2_dlc_mad/characters/shared_textures/k63_nm" force="false"/>
 
 	<!--Akan Gensec Tan w/ Shotgun-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870" force="false" load="true"/>

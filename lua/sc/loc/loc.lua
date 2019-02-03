@@ -29,9 +29,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_drum_desc"] = "",
 		["bm_wp_upg_drum2_desc"] = "",
 		["bm_wp_upg_quad_desc"] = "",
-		["bm_wp_wpn_fps_upg_g3m203_barrel_g3ka4"] = "Assault Kit",			
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",	
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",		
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
@@ -108,7 +105,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
-
+		
 		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
 		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
 
@@ -168,7 +165,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_a_p"] = "+P Rounds",
 		["bm_wp_upg_a_p_desc"] = "These rounds are designed to fire at a higher internal pressure than standard ammunition.",
 		["bm_wp_upg_a_40sw"] = ".40S&W Conversion Kit",
-		["bm_wp_upg_a_40sw_desc"] = "",
+		["bm_wp_upg_a_40sw_desc"] = "",		
+		["bm_wp_wpn_fps_upg_g3m203_barrel_g3ka4"] = "Assault Kit",		
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",	
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",				
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 

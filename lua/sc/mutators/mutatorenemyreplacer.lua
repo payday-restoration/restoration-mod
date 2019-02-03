@@ -51,7 +51,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.america, medic_unit_name)
 		table.insert(unit_types.russia, medic_unit_name)
 		table.insert(unit_types.zombie, medic_unit_name)
-		table.insert(unit_types.murkywater, medic_unit_name)
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 	end		
 
 end

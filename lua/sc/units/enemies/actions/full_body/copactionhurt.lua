@@ -509,12 +509,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		        	elseif self._unit:base():has_tag("taser") then
 		        		self._unit:sound():say("tasered", true) --same as his tased lines felt they fit best
 		        	end
-		        elseif action_type == "heavy_hurt" then
-		        	local common_cop = self._unit:base():has_tag("law") and not self._unit:base():has_tag("special")
-                  
-   				    if common_cop then				
-		                self._unit:sound():say("lk3a", true) --makes cops panic if they take heavy damage, usually from explosions n stuff "Jeez!" "Christ!" "Fucking hell!"
-					end	
 		        else
 		        	self._unit:sound():say("x01a_any_3p", true)
 		        end

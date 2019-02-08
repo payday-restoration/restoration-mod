@@ -3,10 +3,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local job = Global.level_data and Global.level_data.level_id
 	function GroupAITweakData:_init_chatter_data()
 		self.enemy_chatter = {}
+		--[[
+		notes:
+		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000
+		max_nr probably how many chatters can go off at once
+		duration ??? longer ones i grabbed from v009/pdth
+		inerval is cooldown
+		group_min seems to be how many cops need to be in a group for the line to play
+		queue what call is used in chatter
+		]]--
 		self.enemy_chatter.aggressive = {
 			radius = 700,
 			max_nr = 10,
-			duration = {2, 4},
+			duration = {3, 4},
 			interval = {0.75, 1.5},
 			group_min = 0,
 			queue = "g90"
@@ -28,7 +37,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "att"
 		}			
 		self.enemy_chatter.retreat = {
-			radius = 2000,
+			radius = 3000,
 			max_nr = 20,
 			duration = {2, 4},
 			interval = {0.75, 1.5},
@@ -36,7 +45,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "m01"
 		}		
 		self.enemy_chatter.deathguard = {
-			radius = 900,
+			radius = 3000,
 			max_nr = 2,
 			duration = {2, 4},
 			interval = {2, 3},
@@ -52,31 +61,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "c01"
 		}
 		self.enemy_chatter.clear = {
-		    radius = 700,
-		    max_nr = 2,
+			radius = 700,
+		    max_nr = 1,
 		    duration = {60, 60},
-		    interval = {2, 2.5},
-		    group_min = 0,
+		    interval = {0.75, 1.5},
+		    group_min = 3,
 		    queue = "clr"
 		}
 		self.enemy_chatter.clear_whisper = {
 		    radius = 700,
 		    max_nr = 2,
 		    duration = {60, 60},
-		    interval = {2, 3},
+		    interval = {4, 5},
 		    group_min = 0,
 		    queue = "a05"
 		}		
 		self.enemy_chatter.go_go = {
-			radius = 700,
+			radius =  1000,
 			max_nr = 20,
-			duration = {2, 2},
+			duration = {1.5, 1.5},
 			interval = {0.75, 1.5},
 			group_min = 0,
 			queue = "mov"
 		}
 		self.enemy_chatter.push = {
-			radius = 700,
+			radius = 1000,
 			max_nr = 20,
 			duration = {2, 4},
 			interval = {0.75, 1.5},
@@ -108,17 +117,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "rdy"
 		}
 		self.enemy_chatter.smoke = {
-			radius = 2000,
+			radius = 9000,
 			max_nr = 3,
-		    duration = {60, 60},
+		    duration = {2, 2},
 		    interval = {0.1, 0.1},
 			group_min = 0,
 			queue = "d01"
 		}
 		self.enemy_chatter.flash_grenade = {
-			radius = 2000,
+			radius = 9000,
 			max_nr = 3,
-		    duration = {60, 60},
+		    duration = {2, 2},
 		    interval = {0.1, 0.1},
 			group_min = 0,
 			queue = "d02"

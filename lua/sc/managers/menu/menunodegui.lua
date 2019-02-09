@@ -99,7 +99,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end 
-    if SystemFS:exists("mods/Monkeepers/mod.txt") then
+    --[[if SystemFS:exists("mods/Monkeepers/mod.txt") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)
 			_setup_item_rows_original(self, node, ...)
@@ -118,7 +118,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				)
 			end
 		end
-	end   
+	end]]--   
 	if SystemFS:exists("assets/mod_overrides/trap medic") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)

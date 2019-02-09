@@ -98,6 +98,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				)
 			end
 		end
+	end 
+    if SystemFS:exists("mods/Monkeepers/mod.txt") then
+		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
+		function MenuNodeGui:_setup_item_rows(node, ...)
+			_setup_item_rows_original(self, node, ...)
+			if not Global._friendsonly_warning_shown then
+				Global._friendsonly_warning_shown = true
+				QuickMenu:new(
+					"SC's Mod",
+					"Warning! You are using Monkeepers (and possibly some other mods) which is known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Monkeepers or SC's Mod before reporting anything to TDLQ or Restoration.",
+					{
+						{
+							text = "ok",
+							is_cancel_button = true
+						}
+					},
+					true
+				)
+			end
+		end
 	end   
 	if SystemFS:exists("assets/mod_overrides/trap medic") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows

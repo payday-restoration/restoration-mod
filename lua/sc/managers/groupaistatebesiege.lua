@@ -215,8 +215,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return false
 	end
-	
-	    function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
+
+    function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
     	if task_data.use_smoke and not self:is_smoke_grenade_active() then
     		local shooter_pos, shooter_u_data = nil
     		local duration = tweak_data.group_ai.smoke_grenade_lifetime
@@ -247,10 +247,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.rand(0, 1) ^ 0.5)
     					task_data.use_smoke = false
     
-    					--if shooter_u_data.unit:sound():speaking(self._t) then
-    						--self:chk_say_enemy_chatter(shooter_u_data.unit, shooter_u_data.m_pos, "smoke")
-		                self:_voice_smoke(group)
-    					--end
+    					u_data.unit:sound():say("d01", true)
+    					u_data.unit:movement():play_redirect("throw_grenade")
     
     					return true
     				end
@@ -288,10 +286,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random() ^ 0.5)
     					task_data.use_smoke = false
     
-    					--if not shooter_u_data.unit:sound():speaking(self._t) then
-    						--self:chk_say_enemy_chatter(shooter_u_data.unit, shooter_u_data.m_pos, "flash_grenade")
-		                self:_voice_flash(group)
-    					--end
+    					u_data.unit:sound():say("d02", true)
+    					u_data.unit:movement():play_redirect("throw_grenade")
     
     					return true
     				end
@@ -416,7 +412,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					task_data.phase = nil
 					task_data.said_retreat = nil
 					task_data.force_end = nil
-
+					for group_id, group in pairs(self._groups) do
+	                     for u_key, u_data in pairs(group.units) do
+	                     		u_data.unit:sound():say("m01", true)
+	                     end
+					end	 
 					if self._draw_drama then
 						self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = t
 					end

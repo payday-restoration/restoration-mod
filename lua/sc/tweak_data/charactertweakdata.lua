@@ -11205,6 +11205,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				smoke = true,
 				flash_grenade = true,
 				follow_me = true,
+				deathguard = true,
+				open_fire = true,
 				suppress = true
 			},
 			swat = {
@@ -11225,6 +11227,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				smoke = true,
 				flash_grenade = true,
 				follow_me = true,
+				deathguard = true,
+				open_fire = true,
 				suppress = true
 			},
 			omnia_lpf = {

@@ -11458,7 +11458,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			CS_shield_flank = {
 				"flank",
 				"charge",
-				"flash_grenade",
+				--"flash_grenade",
 				"provide_coverfire",
 				"provide_support",
 				"shield"
@@ -11512,7 +11512,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			FBI_shield = {
-				"smoke_grenade",
+				--"smoke_grenade",
 				"charge",
 				"provide_coverfire",
 				"provide_support",
@@ -11520,7 +11520,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			Phalanx_minion = {
-				"smoke_grenade",
+				--"smoke_grenade",
 				"charge",
 				"provide_coverfire",
 				"provide_support",
@@ -11528,7 +11528,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			Phalanx_vip = {
-				"smoke_grenade",
+				--"smoke_grenade",
 				"charge",
 				"provide_coverfire",
 				"provide_support",
@@ -11562,8 +11562,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			FBI_shield_flank = {
 				"flank",
-				"smoke_grenade",
-				"flash_grenade",
+				--"smoke_grenade",
+				--"flash_grenade",
 				"charge",
 				"provide_coverfire",
 				"provide_support",

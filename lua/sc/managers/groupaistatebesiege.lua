@@ -248,7 +248,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     					task_data.use_smoke = false
     
     					u_data.unit:sound():say("d01", true)
-    					--u_data.unit:movement():play_redirect("throw_grenade") need to find a way to stop these playing for shields
+    					u_data.unit:movement():play_redirect("throw_grenade")
     
     					return true
     				end
@@ -287,7 +287,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     					task_data.use_smoke = false
     
     					u_data.unit:sound():say("d02", true)	
-    					--u_data.unit:movement():play_redirect("throw_grenade") need to find a way to stop these playing for shields						
+    					u_data.unit:movement():play_redirect("throw_grenade")					
     
     					return true
     				end

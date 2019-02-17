@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.enemy_chatter = {}
 		--[[
 		notes:
-		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000
+		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000, game theory how many cops in a radius can say a cerain chatter
 		max_nr probably how many chatters can go off at once
 		duration ??? longer ones i grabbed from v009/pdth
 		inerval is cooldown
@@ -37,7 +37,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "att"
 		}			
 		self.enemy_chatter.retreat = {
-			radius = 3000,
+			radius = 700,
 			max_nr = 20,
 			duration = {2, 4},
 			interval = {0.75, 1.5},
@@ -79,8 +79,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.enemy_chatter.go_go = {
 			radius =  1000,
 			max_nr = 20,
-			duration = {1.5, 1.5},
-			interval = {0.75, 1.5},
+			duration = {2, 2},
+			interval = {0.75, 1},
 			group_min = 0,
 			queue = "mov"
 		}
@@ -117,7 +117,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "rdy"
 		}
 		self.enemy_chatter.smoke = {
-			radius = 9000,
+			radius = 1000,
 			max_nr = 3,
 		    duration = {2, 2},
 		    interval = {0.1, 0.1},
@@ -125,7 +125,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "d01"
 		}
 		self.enemy_chatter.flash_grenade = {
-			radius = 9000,
+			radius = 1000,
 			max_nr = 3,
 		    duration = {2, 2},
 		    interval = {0.1, 0.1},

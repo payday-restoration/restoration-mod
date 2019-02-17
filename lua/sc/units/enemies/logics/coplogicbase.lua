@@ -232,6 +232,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					data.unit:sound():say("a01", true)					
 				elseif data.char_tweak.speech_prefix_p1 == "l5d" then
 					data.unit:sound():say("i01", true)						
+				elseif data.unit:base()._tweak_table == "gensec" then
+					data.unit:sound():say("a01", true)			
+				elseif data.unit:base()._tweak_table == "security" then
+					data.unit:sound():say("a01", true)			
 				else
 					data.unit:sound():say("c01", true)
 				end

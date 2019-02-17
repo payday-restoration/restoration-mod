@@ -248,7 +248,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     					task_data.use_smoke = false
     
     					u_data.unit:sound():say("d01", true)
-    					u_data.unit:movement():play_redirect("throw_grenade")
+    					--u_data.unit:movement():play_redirect("throw_grenade") need to find a way to stop these playing for shields
     
     					return true
     				end
@@ -286,8 +286,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random() ^ 0.5)
     					task_data.use_smoke = false
     
-    					u_data.unit:sound():say("d02", true)
-    					u_data.unit:movement():play_redirect("throw_grenade")
+    					u_data.unit:sound():say("d02", true)	
+    					--u_data.unit:movement():play_redirect("throw_grenade") need to find a way to stop these playing for shields						
     
     					return true
     				end
@@ -367,9 +367,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			task_spawn_allowance = managers.modifiers:modify_value("GroupAIStateBesiege:SustainSpawnAllowance", task_spawn_allowance, force_pool)
 			if task_spawn_allowance <= 0 then
 				task_data.phase = "fade"
+				local time = self._t
+				    for group_id, group in pairs(self._groups) do
+	                      for u_key, u_data in pairs(group.units) do
+				          local nav_seg_id = u_data.tracker:nav_segment()
+						  local current_objective = group.objective
+				              if current_objective.coarse_path then
+			                      if not u_data.unit:sound():speaking(time) then
+	                      		    u_data.unit:sound():say("m01", true)
+						        end	
+	                        end					   
+				        end	
+				    end		
 				task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
 			elseif t > end_t and not self._hunt_mode then
-				task_data.phase = "fade"
+				task_data.phase = "fade"						
+				local time = self._t
+				    for group_id, group in pairs(self._groups) do
+	                      for u_key, u_data in pairs(group.units) do
+				          local nav_seg_id = u_data.tracker:nav_segment()
+						  local current_objective = group.objective
+				              if current_objective.coarse_path then
+			                      if not u_data.unit:sound():speaking(time) then
+	                      		    u_data.unit:sound():say("m01", true)
+						        end	
+	                        end					   
+				        end	
+				    end		
 				task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
 			end
 		else
@@ -394,7 +418,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						task_data.said_retreat = true
 
 						self:_police_announce_retreat()
-					elseif task_data.phase_end_t < t then
+				        local time = self._t
+				            for group_id, group in pairs(self._groups) do
+	                              for u_key, u_data in pairs(group.units) do
+				                  local nav_seg_id = u_data.tracker:nav_segment()
+				        		  local current_objective = group.objective
+				                    if current_objective.coarse_path then
+			                              if not u_data.unit:sound():speaking(time) then
+	                              		    u_data.unit:sound():say("m01", true)
+				        		        end	
+	                                end					   
+				                end	
+				            end					
+				        	elseif task_data.phase_end_t < t then
 						local drama_pass = self._drama_data.amount < tweak_data.drama.assault_fade_end
 						local engagement_pass = self:_count_criminals_engaged_force(11) <= 10
 						local taking_too_long = task_data.phase_end_t + drama_engagement_time_limit < t
@@ -412,11 +448,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					task_data.phase = nil
 					task_data.said_retreat = nil
 					task_data.force_end = nil
-					for group_id, group in pairs(self._groups) do
-	                     for u_key, u_data in pairs(group.units) do
-	                     		u_data.unit:sound():say("m01", true)
-	                     end
-					end	 
+				    local time = self._t
+				        for group_id, group in pairs(self._groups) do
+	                          for u_key, u_data in pairs(group.units) do
+				              local nav_seg_id = u_data.tracker:nav_segment()
+				    		  local current_objective = group.objective
+				                if current_objective.coarse_path then
+			                        if not u_data.unit:sound():speaking(time) then
+	                          		    u_data.unit:sound():say("m01", true)
+				    		        end	
+	                            end					   
+				            end	
+				        end		
 					if self._draw_drama then
 						self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = t
 					end
@@ -894,8 +937,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local nav_seg_id = u_data.tracker:nav_segment()
 				if current_objective.area.nav_segs[nav_seg_id] then
 					retreat_area = current_objective.area
+		            self:_voice_gtfo(group)
 				elseif self:is_nav_seg_safe(nav_seg_id) then
 					retreat_area = self:get_area_from_nav_seg_id(nav_seg_id)
+		            self:_voice_gtfo(group)
 				else
 				end
 			end
@@ -904,6 +949,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if forwardmost_i_nav_point then
 					local nearest_safe_nav_seg_id = current_objective.coarse_path(forwardmost_i_nav_point)
 					retreat_area = self:get_area_from_nav_seg_id(nearest_safe_nav_seg_id)
+		            self:_voice_gtfo(group)
 				end
 			end
 			if retreat_area then

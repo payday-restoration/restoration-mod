@@ -2954,7 +2954,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		
 		self.stats.extra_ammo = {}
-		for i = -100, 1500, 2 do
+		for i = -100, 1500, 1 do
 			table.insert(self.stats.extra_ammo, i)
 		end
 		
@@ -3253,7 +3253,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3288,7 +3288,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3318,7 +3318,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3351,7 +3351,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 11,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3382,7 +3382,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3412,7 +3412,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3439,7 +3439,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3473,7 +3473,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3501,7 +3501,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 16,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3527,7 +3527,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 13,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3553,7 +3553,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 13,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3582,7 +3582,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3615,7 +3615,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 13,
 			suppression = 6,
 			alert_size = 6,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3641,7 +3641,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 18,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3669,7 +3669,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 20,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3699,7 +3699,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 20,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3729,7 +3729,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3758,7 +3758,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 8,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3789,7 +3789,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3818,7 +3818,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3847,7 +3847,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3878,7 +3878,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3910,7 +3910,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3950,7 +3950,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 7,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -3979,7 +3979,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4009,7 +4009,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4044,7 +4044,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			damage = 100,
 			concealment = 16,
 			value = 1,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			reload = 11
 		}
@@ -4078,7 +4078,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			damage = 100,
 			concealment = 16,
 			value = 1,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			reload = 11
 		}
@@ -4106,7 +4106,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4134,7 +4134,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4164,7 +4164,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4192,7 +4192,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
 			reload = 11
@@ -4220,7 +4220,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4249,7 +4249,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4277,7 +4277,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -4303,7 +4303,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 8,
 			suppression = 6,
 			alert_size = 6,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4332,7 +4332,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -4366,7 +4366,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 2,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4377,7 +4377,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.m249.desc_id = "bm_menu_sc_m249_desc"
 		self.m249.CLIP_AMMO_MAX = 200
-		self.m249.NR_CLIPS_MAX = 2
 		self.m249.AMMO_MAX = 250
 		self.m249.AMMO_PICKUP = self:_pickup_chance(250, 2)
 		self.m249.spread.standing = 3
@@ -4400,7 +4399,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 2,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4435,7 +4434,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 5,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4465,7 +4464,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 1,
 			suppression = 2,
 			alert_size = 2,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4501,7 +4500,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4533,7 +4532,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 5,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -4566,7 +4565,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 9,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -4599,7 +4598,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 11,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4633,7 +4632,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4661,7 +4660,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4690,7 +4689,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 18,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4720,7 +4719,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 12,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -4752,7 +4751,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 17,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -4784,7 +4783,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -4817,7 +4816,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -4851,7 +4850,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -4883,7 +4882,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -4914,7 +4913,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4944,7 +4943,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -4973,7 +4972,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5008,7 +5007,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5036,7 +5035,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5069,7 +5068,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 14,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5101,7 +5100,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 2,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5134,7 +5133,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5165,7 +5164,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -5195,7 +5194,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 11,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5231,7 +5230,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 18,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5265,7 +5264,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 16,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5296,7 +5295,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 17,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5328,7 +5327,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -5369,7 +5368,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 0,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5398,7 +5397,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 5,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5433,7 +5432,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5468,7 +5467,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 5,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5501,7 +5500,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5531,7 +5530,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5561,7 +5560,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5616,7 +5615,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 6,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5643,7 +5642,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 10,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5673,7 +5672,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 9,
 			suppression = 6,
 			alert_size = 6,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5700,7 +5699,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5743,7 +5742,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 12,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5774,7 +5773,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5806,7 +5805,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5843,7 +5842,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 18,
 			alert_size = 18,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5885,7 +5884,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5919,7 +5918,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 16,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -5955,7 +5954,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 20,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -5983,7 +5982,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6019,7 +6018,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6049,7 +6048,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6080,7 +6079,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6112,7 +6111,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6149,7 +6148,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 2,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -6177,7 +6176,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6207,7 +6206,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 6,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -6243,7 +6242,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6272,7 +6271,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 10,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6303,7 +6302,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6332,7 +6331,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6361,7 +6360,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6388,7 +6387,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6416,7 +6415,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6446,7 +6445,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 14,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6477,7 +6476,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6509,7 +6508,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 7,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6539,7 +6538,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6568,7 +6567,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6598,7 +6597,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 19,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 10,
 			reload = 11
@@ -6627,7 +6626,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6663,7 +6662,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6682,7 +6681,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 8,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6725,7 +6724,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 6,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6752,7 +6751,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 18,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6784,7 +6783,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 1,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6823,7 +6822,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 16,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -6856,7 +6855,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -6886,7 +6885,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 17,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -6916,7 +6915,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6940,7 +6939,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.lemming.can_shoot_through_enemy = false
 		self.lemming.can_shoot_through_shield = false
 		self.lemming.can_shoot_through_wall = false
-		self.lemming.armor_piercing_chance = 0
+		self.lemming.armor_piercing_chance = nil
 		self.lemming.stats = {
 			damage = 25,
 			spread = 14,
@@ -6950,7 +6949,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -6977,7 +6976,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7006,7 +7005,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7041,7 +7040,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7077,12 +7076,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 12,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
 		}
-		self.ching.armor_piercing_chance = 0
+		self.ching.armor_piercing_chance = nil
 		self.ching.can_shoot_through_enemy = false
 		self.ching.can_shoot_through_shield = false
 		self.ching.can_shoot_through_wall = false	
@@ -7112,7 +7111,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
 			reload = 11
@@ -7142,7 +7141,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7171,7 +7170,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7200,7 +7199,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7235,7 +7234,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 8,
 			recoil = 20,
 			value = 1,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			reload = 11,
 			suppression = 6,
 			concealment = 21
@@ -7270,7 +7269,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 8,
 			recoil = 20,
 			value = 1,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			reload = 11,
 			suppression = 6,
 			concealment = 21
@@ -7300,7 +7299,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -7329,7 +7328,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7360,7 +7359,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7394,7 +7393,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7427,7 +7426,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7457,7 +7456,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
 			reload = 11
@@ -7487,7 +7486,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7513,7 +7512,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
 			reload = 11
@@ -7544,7 +7543,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 18,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -7573,7 +7572,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7599,7 +7598,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -7628,7 +7627,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7655,7 +7654,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7683,7 +7682,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7713,7 +7712,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 20,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7743,7 +7742,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7772,7 +7771,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -7801,7 +7800,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -7831,7 +7830,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -7859,7 +7858,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
 			reload = 11
@@ -7887,7 +7886,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7920,7 +7919,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7953,7 +7952,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -7982,7 +7981,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8014,7 +8013,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -8043,7 +8042,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -8072,7 +8071,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8101,7 +8100,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 30,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8129,7 +8128,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8161,7 +8160,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8189,7 +8188,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8231,7 +8230,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8271,7 +8270,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 0,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -8325,7 +8324,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 6,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8354,7 +8353,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8383,7 +8382,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8418,7 +8417,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8449,7 +8448,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 20,
 			alert_size = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8484,7 +8483,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 1,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8514,7 +8513,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8549,7 +8548,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 28,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8638,7 +8637,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			recoil = 2,
 			value = 1,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			reload = 11,
 			suppression = 7,
 			concealment = 26
@@ -8669,7 +8668,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 23,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -8704,7 +8703,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 5,
 				suppression = 3,
 				alert_size = 3,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -8744,7 +8743,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 7,
 				suppression = 3,
 				alert_size = 3,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -8779,7 +8778,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 20,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -8813,7 +8812,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 20,
 				suppression = 8,
 				alert_size = 8,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -8844,7 +8843,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -8877,7 +8876,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 1,
 			suppression = 2,
 			alert_size = 2,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -8916,7 +8915,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 16,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -8953,7 +8952,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 9,
 				suppression = 8,
 				alert_size = 8,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 4,
 				reload = 11
@@ -8985,13 +8984,137 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 23,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
 			}
 			self.duke1911.panic_suppression_chance = 0.0			
 		end
+
+		if self.vityaz then --Pawcio's PP19 Vityaz
+			self.vityaz.has_description = false		
+			self.vityaz.tactical_reload = 1
+			self.vityaz.spread.standing = 3
+			self.vityaz.spread.crouching = 2
+			self.vityaz.spread.steelsight = 1
+			self.vityaz.spread.moving_standing = 4
+			self.vityaz.spread.moving_crouching = 3
+			self.vityaz.spread.moving_steelsight = 2
+			self.vityaz.panic_suppression_chance = 0.05
+			self.vityaz.kick.standing = self.new_m4.kick.standing
+			self.vityaz.kick.crouching = self.new_m4.kick.standing
+			self.vityaz.kick.steelsight = self.new_m4.kick.standing
+			self.vityaz.AMMO_MAX = 150
+			self.vityaz.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.vityaz.stats = {
+				damage = 29,
+				spread = 16,
+				recoil = 18,
+				spread_moving = 8,
+				zoom = 3,
+				concealment = 24,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.vityaz.panic_suppression_chance = 0.1		
+		end		
+
+		if self.ots_14_4a then --Pawcio's OTS 14 Groza 
+			self.ots_14_4a.has_description = false		
+			self.ots_14_4a.tactical_reload = 1
+			self.ots_14_4a.AMMO_MAX = 120
+			self.ots_14_4a.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.ots_14_4a.spread.standing = 3
+			self.ots_14_4a.spread.crouching = 2
+			self.ots_14_4a.spread.steelsight = 1
+			self.ots_14_4a.spread.moving_standing = 4
+			self.ots_14_4a.spread.moving_crouching = 3
+			self.ots_14_4a.spread.moving_steelsight = 2
+			self.ots_14_4a.stats = {
+				damage = 45,
+				spread = 16,
+				recoil = 18,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 13,
+				suppression = 5,
+				alert_size = 5,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.ots_14_4a.armor_piercing_chance = nil		
+			self.ots_14_4a.panic_suppression_chance = 0.0
+		end		
+
+		if self.ots_14_4a then --Pawcio's OTS 14 Groza 
+			self.ots_14_4a.has_description = false		
+			self.ots_14_4a.tactical_reload = 1
+			self.ots_14_4a.AMMO_MAX = 120
+			self.ots_14_4a.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.ots_14_4a.spread.standing = 3
+			self.ots_14_4a.spread.crouching = 2
+			self.ots_14_4a.spread.steelsight = 1
+			self.ots_14_4a.spread.moving_standing = 4
+			self.ots_14_4a.spread.moving_crouching = 3
+			self.ots_14_4a.spread.moving_steelsight = 2
+			self.ots_14_4a.stats = {
+				damage = 45,
+				spread = 16,
+				recoil = 18,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 13,
+				suppression = 5,
+				alert_size = 5,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.ots_14_4a.armor_piercing_chance = nil		
+			self.ots_14_4a.panic_suppression_chance = 0.0
+		end			
+
+		if self.mg4 then --Pawcio's HK MG4 
+			self.mg4.categories = {
+				"lmg",
+				"smg"
+			}
+			self.mg4.has_description = false
+			self.mg4.AMMO_MAX = 250
+			self.mg4.AMMO_PICKUP = self:_pickup_chance(250, 1)
+			self.mg4.panic_suppression_chance = 0.1
+			self.mg4.spread.standing = 3
+			self.mg4.spread.crouching = 2
+			self.mg4.spread.steelsight = 1
+			self.mg4.spread.moving_standing = 4
+			self.mg4.spread.moving_crouching = 3
+			self.mg4.spread.moving_steelsight = 2
+			self.mg4.kick.standing = self.new_m4.kick.standing
+			self.mg4.kick.crouching = self.new_m4.kick.standing
+			self.mg4.kick.steelsight = self.new_m4.kick.standing
+			self.mg4.stats = {
+				damage = 25,
+				spread = 15,
+				recoil = 19,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 2,
+				suppression = 7,
+				alert_size = 7,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+		end								
 
 		if self.pm then --Silent Enforcer & Germantaco's Makarov
 			self.pm.has_description = false		
@@ -9016,7 +9139,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 30,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -9046,7 +9169,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 30,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -9078,14 +9201,48 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 25,
 				suppression = 5,
 				alert_size = 5,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
 			}
 			self.rhino.panic_suppression_chance = 0.0			
 		end		
-
+		
+		if self.pecheneg then --Alcat's PKP Pecheneg
+			self.pecheneg.categories = {
+				"lmg",
+				"smg"
+			}
+			self.pecheneg.has_description = false
+			self.pecheneg.AMMO_MAX = 225
+			self.pecheneg.AMMO_PICKUP = self:_pickup_chance(225, 2)
+			self.pecheneg.panic_suppression_chance = 0.1
+			self.pecheneg.spread.standing = 3
+			self.pecheneg.spread.crouching = 2
+			self.pecheneg.spread.steelsight = 1
+			self.pecheneg.spread.moving_standing = 4
+			self.pecheneg.spread.moving_crouching = 3
+			self.pecheneg.spread.moving_steelsight = 2
+			self.pecheneg.kick.standing = self.new_m4.kick.standing
+			self.pecheneg.kick.crouching = self.new_m4.kick.standing
+			self.pecheneg.kick.steelsight = self.new_m4.kick.standing
+			self.pecheneg.stats = {
+				damage = 29,
+				spread = 19,
+				recoil = 16,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 2,
+				suppression = 7,
+				alert_size = 7,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+		end
+		
 		if self.m60 then --Pawcio's M60
 			self.m60.categories = {
 				"lmg",
@@ -9114,7 +9271,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 2,
 				suppression = 7,
 				alert_size = 7,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
 				reload = 11
@@ -9153,7 +9310,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 11,
 				suppression = 4,
 				alert_size = 4,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
 				reload = 11
@@ -9190,7 +9347,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 3,
 				suppression = 7,
 				alert_size = 7,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
 				reload = 11
@@ -9224,7 +9381,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 2,
 				suppression = 7,
 				alert_size = 7,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
 				reload = 11
@@ -9257,7 +9414,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 9,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 4,
 				reload = 11
@@ -9298,7 +9455,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 28,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -9339,7 +9496,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 5,
 				suppression = 5,
 				alert_size = 5,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -9381,7 +9538,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 5,
 				suppression = 5,
 				alert_size = 5,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -9413,7 +9570,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 17,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -9443,7 +9600,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -9475,7 +9632,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9506,7 +9663,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9534,7 +9691,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 13,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9571,7 +9728,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 11,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9610,7 +9767,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 7,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9643,7 +9800,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 9,
 			suppression = 6,
 			alert_size = 6,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9681,7 +9838,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9712,7 +9869,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9743,7 +9900,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9772,7 +9929,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9803,7 +9960,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9832,7 +9989,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9871,7 +10028,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9904,7 +10061,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			recoil = 14,
 			value = 1,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			reload = 11,
 			suppression = 6,
 			concealment = 19
@@ -9935,7 +10092,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 8,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -9972,7 +10129,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 12,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10013,7 +10170,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 18,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -10047,7 +10204,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 22,
 				suppression = 8,
 				alert_size = 8,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -10081,7 +10238,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 8,
 				suppression = 6,
 				alert_size = 6,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
 				reload = 11
@@ -10116,7 +10273,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -10149,7 +10306,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 16,
 				suppression = 7,
 				alert_size = 7,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -10185,7 +10342,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10219,7 +10376,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10254,7 +10411,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10285,7 +10442,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 22,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10324,7 +10481,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 21,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 		}
@@ -10358,7 +10515,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 5,
 			suppression = 3,
 			alert_size = 3,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -10397,7 +10554,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 11,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10429,7 +10586,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 8,
 			suppression = 6,
 			alert_size = 6,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -10461,7 +10618,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10499,7 +10656,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 23,
 				suppression = 4,
 				alert_size = 4,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -10528,7 +10685,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 22,
 				suppression = 8,
 				alert_size = 8,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -10561,13 +10718,118 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 29,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
 		}
 		self.px4.panic_suppression_chance = 0.0
 	end				
+
+	if self.qsz92 then --Gambyt's QSZ 92
+		self.qsz92.AMMO_MAX = 80
+		self.qsz92.has_description = false				
+		self.qsz92.tactical_reload = 1								
+		self.qsz92.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.qsz92.FIRE_MODE = "single"
+		self.qsz92.spread.standing = 3
+		self.qsz92.spread.crouching = 2
+		self.qsz92.spread.steelsight = 1
+		self.qsz92.spread.moving_standing = 4
+		self.qsz92.spread.moving_crouching = 3
+		self.qsz92.spread.moving_steelsight = 2
+		self.qsz92.kick.standing = self.glock_17.kick.standing
+		self.qsz92.kick.crouching = self.glock_17.kick.standing
+		self.qsz92.kick.steelsight = self.glock_17.kick.standing
+		self.qsz92.stats = {
+			damage = 44,
+			spread = 18,
+			recoil = 19,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 26,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+		self.qsz92.panic_suppression_chance = 0.0
+	end			
+
+	if self.hpb then --Gambyt's Browning HP
+		self.hpb.has_description = false				
+		self.hpb.tactical_reload = 1		
+		self.hpb.AMMO_MAX = 80
+		self.hpb.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.hpb.spread.standing = 3
+		self.hpb.spread.crouching = 2
+		self.hpb.spread.steelsight = 1
+		self.hpb.spread.moving_standing = 4
+		self.hpb.spread.moving_crouching = 3
+		self.hpb.spread.moving_steelsight = 2
+		self.hpb.kick.standing = self.glock_17.kick.standing
+		self.hpb.kick.crouching = self.glock_17.kick.standing
+		self.hpb.kick.steelsight = self.glock_17.kick.standing
+		self.hpb.stats = {
+			damage = 42,
+			spread = 18,
+			recoil = 18,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.hpb.panic_suppression_chance = 0.0		
+	end				
+
+	if self.peepee then --Alcat's PP 2000
+		self.peepee.categories = {
+			"smg"
+		}	
+		self.peepee.fire_mode_data.fire_rate = 0.075
+		self.peepee.single = {}						
+		self.peepee.single.fire_rate = 0.075
+		self.peepee.auto = {}			
+		self.peepee.CAN_TOGGLE_FIREMODE = true	
+		self.peepee.FIRE_MODE = "auto"				
+		self.peepee.auto.fire_rate = 0.075				
+		self.peepee.has_description = false				
+		self.peepee.tactical_reload = 1								
+		self.peepee.AMMO_MAX = 150
+		self.peepee.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.peepee.spread.standing = 3
+		self.peepee.spread.crouching = 2
+		self.peepee.spread.steelsight = 1
+		self.peepee.spread.moving_standing = 4
+		self.peepee.spread.moving_crouching = 3
+		self.peepee.spread.moving_steelsight = 2
+		self.peepee.kick = {}
+		self.peepee.kick.standing = self.new_m4.kick.standing
+		self.peepee.kick.crouching = self.new_m4.kick.standing
+		self.peepee.kick.steelsight = self.new_m4.kick.standing
+		self.peepee.stats = {
+			damage = 25,
+			spread = 17,
+			recoil = 19,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.peepee.panic_suppression_chance = 0.1
+	end						
 	
 	if self.heffy_762 then --Killerwolf & Germantaco's AK-47 
 		self.heffy_762.desc_id = "bm_menu_sc_akm_desc"
@@ -10591,7 +10853,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 13,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10620,7 +10882,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		concealment = 8,
 		suppression = 5,
 		alert_size = 5,
-		extra_ammo = 51,
+		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
 		reload = 11
@@ -10655,7 +10917,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 8,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -10684,7 +10946,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 12,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
@@ -10720,7 +10982,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 25,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10751,7 +11013,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
 			reload = 11
@@ -10793,7 +11055,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 20,			
 			concealment = 7,
 			suppression = 20,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10812,11 +11074,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.czevo.CLIP_AMMO_MAX = 30
 			self.czevo.AMMO_MAX = 180
 			self.czevo.AMMO_PICKUP = self:_pickup_chance(180, 2)
-			self.czevo.fire_mode_data.fire_rate = 0.05217391304
-			self.czevo.CAN_TOGGLE_FIREMODE = true
-			self.czevo.FIRE_MODE = "auto"
-			self.czevo.auto = {}
-			self.czevo.auto.fire_rate = 0.05217391304
 			self.czevo.spread.standing = 3
 			self.czevo.spread.crouching = 2
 			self.czevo.spread.steelsight = 1
@@ -10835,7 +11092,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 26,
 				suppression = 9,
 				alert_size = 9,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
 				reload = 11
@@ -10843,6 +11100,45 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.czevo.panic_suppression_chance = 0.1
 			self.x_czevo.use_data.selection_index = 4 
 		end
+
+		if self.fmg9 then --Pawcio's FMG 9
+			self.fmg9.has_description = false					
+			self.fmg9.use_data.selection_index = 2
+			self.fmg9.tactical_reload = 1
+			self.fmg9.categories = {"pistol"}
+			self.fmg9.recategorize = "pistol_carbine"
+			self.fmg9.CLIP_AMMO_MAX = 33
+			self.fmg9.AMMO_MAX = 150
+			self.fmg9.spread.standing = 3
+			self.fmg9.spread.crouching = 2
+			self.fmg9.spread.steelsight = 1
+			self.fmg9.spread.moving_standing = 4
+			self.fmg9.spread.moving_crouching = 3
+			self.fmg9.spread.moving_steelsight = 2
+			self.fmg9.kick.standing = self.new_m4.kick.standing
+			self.fmg9.kick.crouching = self.new_m4.kick.standing
+			self.fmg9.kick.steelsight = self.new_m4.kick.standing
+			self.fmg9.stats = {
+				damage = 35,
+				spread = 17,
+				recoil = 20,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 28,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.fmg9.panic_suppression_chance = 0.1
+		end		
+
+		if self.x_fmg9 then --disabled because primary smgs are not supposed to have akimbos.
+			self.x_fmg9.use_data.selection_index = 4
+		end				
+
 
 		if self.scarl then --Pawcio's SCAR L
 			self.scarl.has_description = false		
@@ -10868,7 +11164,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = 19,
 				suppression = 8,
 				alert_size = 8,
-				extra_ammo = 51,
+				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 4,
 				reload = 11
@@ -10900,7 +11196,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10938,7 +11234,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 13,
 			suppression = 6,
 			alert_size = 6,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -10969,7 +11265,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -11004,7 +11300,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 6,
 			suppression = 7,
 			alert_size = 7,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -11041,7 +11337,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 16,
 			suppression = 4,
 			alert_size = 4,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11
@@ -11085,12 +11381,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 7,
 			suppression = 5,
 			alert_size = 5,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
 		}
-		self.wargoddess.armor_piercing_chance = 0	
+		self.wargoddess.armor_piercing_chance = nil	
 		self.wargoddess.panic_suppression_chance = 0.0
 	end		
 
@@ -11116,7 +11412,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 27,
 			suppression = 9,
 			alert_size = 9,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
@@ -11156,7 +11452,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			concealment = 15,
 			suppression = 8,
 			alert_size = 8,
-			extra_ammo = 51,
+			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
 			reload = 11

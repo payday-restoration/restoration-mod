@@ -716,7 +716,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				managers.network:session():send_to_peers( "mission_ended", false ) 
 				game_state_machine:change_state_by_name( "gameoverscreen" ) 
 			end
-		end 		  		   		 
+		end 		 
+		
+		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan")  then
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
+		end		
+		
 	    if self._unit:base():has_tag("sniper") then
 		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", true)
 		--big fuck off death line unit check	

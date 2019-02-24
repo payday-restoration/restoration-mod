@@ -16,7 +16,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 10,
 			duration = {3, 4},
-			interval = {0.75, 1.5},
+			interval = {1, 2},
 			group_min = 0,
 			queue = "g90"
 		}		
@@ -44,13 +44,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			group_min = 0,
 			queue = "m01"
 		}		
-		self.enemy_chatter.deathguard = {
+		self.enemy_chatter.deathguard = { --this isnt actually kill lines those are done in playerdamage
 			radius = 3000,
 			max_nr = 2,
 			duration = {2, 4},
 			interval = {2, 3},
 			group_min = 0,
-			queue = "i03"
+			queue = "r01"
 		}
 		self.enemy_chatter.contact = {
 			radius = 700,

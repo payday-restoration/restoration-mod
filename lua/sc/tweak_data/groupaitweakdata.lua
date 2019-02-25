@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.enemy_chatter = {}
 		--[[
 		notes:
-		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000, game theory how many cops in a radius can say a cerain chatter
+		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000, game theory how many cops in a radius can say a certain chatter
 		max_nr probably how many chatters can go off at once
 		duration ??? longer ones i grabbed from v009/pdth
 		inerval is cooldown
@@ -16,7 +16,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 10,
 			duration = {3, 4},
-			interval = {1, 2},
+			interval = {1.5, 2},
 			group_min = 0,
 			queue = "g90"
 		}		
@@ -40,13 +40,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 20,
 			duration = {2, 4},
-			interval = {0.75, 1.5},
+			interval = {0.25, 0.75},
 			group_min = 0,
 			queue = "m01"
 		}		
 		self.enemy_chatter.deathguard = { --this isnt actually kill lines those are done in playerdamage
 			radius = 3000,
-			max_nr = 2,
+			max_nr = 5,
 			duration = {2, 4},
 			interval = {2, 3},
 			group_min = 0,
@@ -72,7 +72,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		    radius = 700,
 		    max_nr = 2,
 		    duration = {60, 60},
-		    interval = {4, 5},
+		    interval = {5, 5},
 		    group_min = 0,
 		    queue = "a05"
 		}		

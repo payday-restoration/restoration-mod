@@ -754,6 +754,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    elseif self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3") then	
 	        self._unit:sound_source(source):stop()	
 		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
+		--zeal zombies
+		elseif self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3") then
+	        self._unit:sound_source(source):stop()		
+		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, true)			
+		--gensec zombies
+	    elseif  self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3") then	
+	        self._unit:sound_source(source):stop()	
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, true)
 		--zeals
 		elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3") then
 	        self._unit:sound_source(source):stop()		

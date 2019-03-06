@@ -42,12 +42,18 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("pdth", "rescue_civ")
 		_G.voiceline_framework:register_line_type("pdth", "retreat")
 		_G.voiceline_framework:register_line_type("pdth", "clear")
-		_G.voiceline_framework:register_line_type("pdth", "surrender")
+		_G.voiceline_framework:register_line_type("pdth", "surrender")		
 		_G.voiceline_framework:register_line_type("skeleton", "buddy_died")
 		_G.voiceline_framework:register_line_type("skeleton", "contact")
+		_G.voiceline_framework:register_line_type("skeleton", "cover_me")
 		_G.voiceline_framework:register_line_type("skeleton", "death")
 		_G.voiceline_framework:register_line_type("skeleton", "gogo")
-		_G.voiceline_framework:register_line_type("skeleton", "radio")
+		_G.voiceline_framework:register_line_type("skeleton", "pain")
+		_G.voiceline_framework:register_line_type("skeleton", "ready")
+		_G.voiceline_framework:register_line_type("skeleton", "hostage")
+		_G.voiceline_framework:register_line_type("skeleton", "rescue_civ")
+		_G.voiceline_framework:register_line_type("skeleton", "retreat")
+		_G.voiceline_framework:register_line_type("skeleton", "clear")
 		
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death1.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death2.ogg")
@@ -132,25 +138,50 @@ if not _G.restorationvoice then
 		for i = 1, 14 do
 			_G.voiceline_framework:register_voiceline("tspook", "death", ModPath .. "assets/oggs/voiceover/tspook/death/death" .. i .. ".ogg")
 		end		
+				
+		--spooky scary skeletons
 		
-		--SkeleSWAT
-		
-		for i = 1, 26 do
+
+		for i = 1, 19 do
 			_G.voiceline_framework:register_voiceline("skeleton", "buddy_died", ModPath .. "assets/oggs/voiceover/skeleton/buddy_died/buddy_died" .. i .. ".ogg")
-		end		
-		for i = 1, 18 do
+		end
+
+		for i = 1, 49 do
 			_G.voiceline_framework:register_voiceline("skeleton", "contact", ModPath .. "assets/oggs/voiceover/skeleton/contact/contact" .. i .. ".ogg")
-		end		
-		for i = 1, 20 do
+		end
+
+		for i = 1, 19 do
 			_G.voiceline_framework:register_voiceline("skeleton", "death", ModPath .. "assets/oggs/voiceover/skeleton/death/death" .. i .. ".ogg")
-		end		
-		for i = 1, 17 do
+		end
+
+		for i = 1, 29 do
 			_G.voiceline_framework:register_voiceline("skeleton", "gogo", ModPath .. "assets/oggs/voiceover/skeleton/gogo/gogo" .. i .. ".ogg")
 		end		
-		for i = 1, 36 do
-			_G.voiceline_framework:register_voiceline("skeleton", "radio", ModPath .. "assets/oggs/voiceover/skeleton/radio/radio" .. i .. ".ogg")
+
+		for i = 1, 5 do
+			_G.voiceline_framework:register_voiceline("skeleton", "pain", ModPath .. "assets/oggs/voiceover/skeleton/pain/pain" .. i .. ".ogg")
 		end
-				
+
+		for i = 1, 31 do
+			_G.voiceline_framework:register_voiceline("skeleton", "ready", ModPath .. "assets/oggs/voiceover/skeleton/ready/ready" .. i .. ".ogg")
+		end
+		
+		for i = 1, 17 do
+			_G.voiceline_framework:register_voiceline("skeleton", "rescue_civ", ModPath .. "assets/oggs/voiceover/skeleton/rescue_civ/rescue_civ" .. i .. ".ogg")
+		end
+		
+		for i = 1, 21 do
+			_G.voiceline_framework:register_voiceline("skeleton", "retreat", ModPath .. "assets/oggs/voiceover/skeleton/retreat/retreat" .. i .. ".ogg")
+		end
+		
+		for i = 1, 6 do
+			_G.voiceline_framework:register_voiceline("skeleton", "hostage", ModPath .. "assets/oggs/voiceover/skeleton/hostage/hostage" .. i .. ".ogg")
+		end	
+		
+		for i = 1, 17 do
+			_G.voiceline_framework:register_voiceline("skeleton", "clear", ModPath .. "assets/oggs/voiceover/skeleton/clear/clear" .. i .. ".ogg")
+		end			
+		
 		--PDTH (Titan SWAT)
 		
 		--OH SHIIIIIIIIIIIT

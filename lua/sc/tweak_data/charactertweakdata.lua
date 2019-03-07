@@ -12937,7 +12937,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_omnia_heavy_r870",
 					"ene_bulldozer_1",
 					"ene_bulldozer_2",
-					"ene_bulldozer_3"
+					"ene_bulldozer_3",
+					"ene_omnia_spook",
+					"ene_grenadier_1",
+					"ene_omnia_medic",
+					"ene_omnia_taser",
+					"ene_omnia_shield"					
 				}
 			},
 			nypd = {

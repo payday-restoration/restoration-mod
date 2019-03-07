@@ -493,6 +493,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	function PlayerDamage:clbk_kill_taunt_common(attack_data)
 		if attack_data.attacker_unit and attack_data.attacker_unit:alive() then
+			if not attack_data.attacker_unit:base()._tweak_table then
+				return
+			end
 			self._kill_taunt_clbk_id = nil
 
 			attack_data.attacker_unit:sound():say("i03")

@@ -1299,10 +1299,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_npc.categories = clone(self.contraband.categories)
 		self.contraband_npc.sounds.prefix = "contraband_npc"
 		self.contraband_npc.use_data.selection_index = 2
-		self.contraband_npc.DAMAGE = 4.4
+		self.contraband_npc.DAMAGE = 6.1
 		self.contraband_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.contraband_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-		self.contraband_npc.CLIP_AMMO_MAX = 30
+		self.contraband_npc.CLIP_AMMO_MAX = 20
 		self.contraband_npc.NR_CLIPS_MAX = 5
 		self.contraband_npc.auto.fire_rate = 0.1
 		self.contraband_npc.hold = "rifle"
@@ -6699,8 +6699,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arbiter.kick.steelsight = self.huntsman.kick.standing
 		self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 		self.contraband.has_description = true
-		self.contraband.AMMO_MAX = 80
-		self.contraband.AMMO_PICKUP = self:_pickup_chance(80, 2)
+		self.contraband.AMMO_MAX = 60
+		self.contraband.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.contraband.FIRE_MODE = "auto"
 		self.contraband.fire_mode_data.fire_rate = 0.1
 		self.contraband.CAN_TOGGLE_FIREMODE = true
@@ -6716,9 +6716,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.contraband.kick.crouching = self.new_m4.kick.standing
 		self.contraband.kick.steelsight = self.new_m4.kick.standing
 		self.contraband.stats = {
-			damage = 45,
-			spread = 17,
-			recoil = 19,
+			damage = 70,
+			spread = 18,
+			recoil = 18,
 			spread_moving = 5,
 			zoom = 4,
 			concealment = 6,

@@ -148,6 +148,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		end
 	end
+	
+	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
+		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
+	end
 
 	function GroupAIStateBesiege:_voice_looking_for_angle(group)
 		for u_key, unit_data in pairs(group.units) do

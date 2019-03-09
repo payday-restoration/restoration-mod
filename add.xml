@@ -302,6 +302,66 @@
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_saiga_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
 	<!--powerpuff dozers end-->
+	
+	<!--OMNIA taser-->
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/taser_body_df"/>
+	
+	<!--OMNIA Cloaker Debris-->
+	<!--head-->
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris"/>
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_head_debris" load="false"/>
+	<!--body-->
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_upper_body_debris"/>
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_upper_body_debris"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_upper_body_debris"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_spook/debris/ene_omnia_spook_upper_body_debris" load="false"/>
+	<!--end debris-->
+    
+	<!--OMNIA spooky boi-->
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<sequence_manager path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook" load="true"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook_contour"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook_husk" load="true"/>
+	<texture path="units/pd2_mod_omnia/characters/ene_omnia_spook/spook_heavy_df"/>
+	
+	<!--OMNIA medic-->	
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" load="true"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_contour" force="false" />
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_df"/>
+	
+	<!--OMNIA Grenadier-->
+	<unit path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/grenadier_body_df" force="false"/>	
+	
+	<!--OMNIA Shield-->
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>
 			
 	<!--OICW-->
 	<object path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
@@ -1398,7 +1458,7 @@
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df"/>				
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm"/>				
 
-    <!--murky medics-->	
+    <!--murky medic-->	
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_husk" force="false" load="true"/>
 	<object path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
@@ -1775,6 +1835,12 @@
 	<model path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>	
 	
 	<!--new zeals start-->
+	<!--sg553-->
+	<object path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false" load="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>	
 	<!--zeal city 1-->
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>

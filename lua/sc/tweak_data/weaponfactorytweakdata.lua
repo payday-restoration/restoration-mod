@@ -5946,9 +5946,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "lower_reciever",
 			name_id = "bm_wp_aug_body_aug",
 			a_obj = "a_body",
-			adds = {
-				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
-			},
 			unit = "units/payday2/weapons/wpn_fps_ass_aug_pts/wpn_fps_aug_body_aug",
 			stats = {value = 1},
 			animations = {reload = "reload"}
@@ -6021,6 +6018,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_ass_aug.default_blueprint = {
 			"wpn_fps_aug_body_aug",
 			"wpn_fps_aug_b_medium",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 			"wpn_fps_aug_m_pmag",
 			"wpn_upg_o_marksmansight_rear_vanilla"
 		}
@@ -9000,7 +8998,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_g17.override = {
 			wpn_fps_upg_o_rmr = {parent = "slide"},
 			wpn_upg_o_marksmansight_rear = {parent = "slide"},
-			wpn_fps_pis_g26_body_custom = {
+			wpn_fps_pis_g26_body_custom = {			
 				unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_body_standard",
 				stats = {
 					value = 7,
@@ -40205,6 +40203,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
+		self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil		
 		self.parts.wpn_fps_smg_czevo_barrel_long.stats = {
 					value = 1,
 					spread = 1,
@@ -42162,7 +42161,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					recoil = 1,						
 					concealment = -1
-				}																	
+				}
 			end		
 
 		if self.wpn_fps_ass_ots_14_4a then --Pawcio's OTS 14 Groza 
@@ -42186,13 +42185,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}																					
 			end					
 
-		if self.wpn_fps_ass_heffy_762 then -- Killerwolf & Germantaco's AK 47
+		if self.wpn_fps_ass_heffy_762 then -- Killerwolf & Germantaco's AK 47 (from the ak pack)
 				self.parts.wpn_fps_ass_heffy_762_m_bake_30.stats = { 
 					value = 1
 				}		
-				self.parts.wpn_fps_upg_o_ak47_l_scopemount.stats = { 
-					value = 0
+				self.parts.wpn_fps_ass_heffy_762_m_bake_30.stats = { 
+					value = 1
 				}						
+				self.parts.wpn_fps_upg_o_ak47_l_scopemount.type = "extra" 
+				self.parts.wpn_fps_ass_heffy_762_ro_m92.type = "sight" 		
+				self.parts.wpn_fps_ass_heffy_762_ro_m92.stats = nil 								
 				self.parts.wpn_fps_ass_heffy_762_fm_tabuk.pcs = nil			
 				self.parts.wpn_fps_ass_heffy_762_fm_m92.pcs = nil		
 				self.parts.wpn_fps_ass_heffy_762_fm_rk62.pcs = nil							
@@ -42303,7 +42305,7 @@ self.wpn_fps_pis_x_pm.override = {	--Im not formatting this man....
          
 	}}
 }	
-self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im not formatting this man....
+self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
     wpn_fps_pis_pm_b_standard = {
 	   animations = {
 		reload_not_empty = "reload_not_empty_right",
@@ -42376,37 +42378,37 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 }									
 			end										
 
-		if self.wpn_fps_snp_wargoddess then -- Mira's MK14 EBR
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ns_ass_smg_large"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ns_ass_smg_medium"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ns_ass_smg_small"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ns_ass_smg_firepig"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ns_ass_smg_stubby"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ns_ass_smg_tank"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ass_ns_jprifles"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ass_ns_linear"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ass_ns_surefire"
-			})
-			table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-				"wpn_fps_upg_ass_ns_battle"
-			})
+			if self.wpn_fps_snp_wargoddess then -- Mira's MK14 EBR
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ns_ass_smg_large"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ns_ass_smg_medium"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ns_ass_smg_small"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ns_ass_smg_firepig"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ns_ass_smg_stubby"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ns_ass_smg_tank"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ass_ns_jprifles"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ass_ns_linear"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ass_ns_surefire"
+				})
+				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
+					"wpn_fps_upg_ass_ns_battle"
+				})
 				self.wpn_fps_snp_wargoddess.default_blueprint = {
 					"wpn_fps_snp_wargoddess_b_std",
 					"wpn_fps_snp_wargoddess_body_std",
@@ -42477,8 +42479,25 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 					value = 1,
 					spread = -2,
 					recoil = 2
-					}	
-			end											
+				}	
+			end		
+
+		if self.wpn_fps_ass_bajur then -- carl ruins everything's honey badger
+				self.parts.wpn_fps_upg_bajur_am_grendel.pcs = nil
+				self.parts.wpn_fps_ass_bajur_b_std.stats = {
+					value = 1,
+					suppression = 10,
+					alert_size = 10
+				}												
+				self.parts.wpn_fps_upg_bajur_m_quick.stats = {
+					value = 2,
+					extra_ammo = -10,						
+					spread = -1,
+					concealment = 1,
+					reload = 2
+				}	
+				self.parts.wpn_fps_upg_bajur_m_quick.custom_stats = {reload_speed_mult = 1.1}									
+			end														
 			
 		if self.parts.wpn_fps_ass_ns_g_sup1 then 	-- Gambyt's Sneaky Suppressor Pack
 				self.parts.wpn_fps_ass_ns_g_sup1.stats = { 
@@ -42540,13 +42559,22 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 					spread_moving = -2,
 					concealment = -2
 					}
+				self.parts.wpn_fps_ass_ns_g_sup8.stats = { 
+					value = 4,
+					suppression = 10,
+					alert_size = 10,
+					spread = 2,
+					recoil = -1,
+					concealment = -1,
+					damage = 5
+					}		
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1) --not a good way of fixing it, but it works, yeah?
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)				
+				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)				
 			end		
 
-	-- HONOUR AMOUNGST THIEVES' Speedpull Mag Pack
-		if self.parts.wpn_fps_sho_rota_m_quick then
+		if self.parts.wpn_fps_sho_rota_m_quick then 	-- HONOUR AMOUNGST THIEVES' Speedpull Mag Pack
 				self.parts.wpn_fps_sho_rota_m_quick.stats = {
 						value = 2,
 						spread = -1,
@@ -42988,7 +43016,14 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 						concealment = 2,
 						spread = -1
 					}					
-				self.parts.wpn_fps_upg_ns_pis_ipsccomp.stats = {
+				self.parts.wpn_fps_pis_hpb_thread.stats = {
+						value = 4,
+						damage = 5,
+						recoil = -1,
+						concealment = 2,
+						spread = -1
+					}										
+				self.parts.wpn_fps_pis_hpb_comp.stats = {
 						value = 5,
 						damage = 5,
 						spread_moving = -1,
@@ -43076,24 +43111,168 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 						value = 1,
 						concealment = 1
 					}		
-			end							
+			end	
 
-		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Style Attachment Pack
+		if self.wpn_fps_pis_vp70 then -- VP70M  
+				self.parts.wpn_fps_pis_vp70_ac_9x21imi.pcs = nil
+				self.parts.wpn_fps_pis_vp70_autofire.stats = { 
+						value = 4,
+						recoil = -2	
+					}	
+				self.parts.wpn_fps_pis_vp70_autofire.custom_stats = {rof_mult = 1.15}																				
+				self.parts.wpn_fps_pis_vp70_m_ext.stats = { 
+						value = 2,
+						reload = -1,						
+						extra_ammo = 6
+					}														
+				self.parts.wpn_fps_pis_vp70_m_ext.custom_stats = {reload_speed_mult = 0.95}															
+				self.parts.wpn_fps_pis_vp70_grip_ergo.stats = {
+						value = 2,
+						concealment = 1
+					}
+				self.parts.wpn_fps_pis_vp70_stock_standard.stats = {
+						value = 8,
+						recoil = 1,
+						spread = 1,						
+						concealment = -2
+					}		
+				self.parts.wpn_fps_pis_vp70_autofire.custom_stats = {rof_mult = 1.1}																									
+				self.parts.wpn_fps_pis_vp70_m_speed_std.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}	
+				self.parts.wpn_fps_pis_vp70_m_speed_std.custom_stats = {reload_speed_mult = 1.1}																				
+				self.parts.wpn_fps_pis_vp70_stp_standard.stats = {
+						value = 1,
+						spread = 1
+					}		
+				self.parts.wpn_fps_pis_vp70_lc_stormtrooper.stats = {
+						value = 0
+					}							
+				self.parts.wpn_fps_pis_vp70_body_early.stats = {
+						value = 5,
+						recoil = 1,
+						concealment = -1,
+						damage = 2
+					}	
+				self.parts.wpn_fps_pis_vp70_s_scifi.stats = {
+						value = 3,
+						recoil = 1
+					}																	
+				self.parts.wpn_fps_pis_vp70_so_source.stats = {
+						value = 0
+					}		
+				self.wpn_fps_pis_x_vp70.override = {
+					wpn_fps_pis_vp70_m_ext = {				
+					stats = {
+						value = 4,
+						reload = -1,						
+						extra_ammo = 12
+						},	
+					custom_stats = {reload_speed_mult = 0.95}																					
+					}
+				}						
+			end										
+
+		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Styled Mod Pack
+			self.parts.wpn_fps_ass_flint_g_custom.stats = {
+				value = 2,
+				recoil = 1
+				}	
+			self.parts.wpn_fps_ass_corgi_b_medium.stats = {
+				value = 2,
+				recoil = 1
+				}
+			self.parts.wpn_fps_snp_tti_b_long.stats = {
+				value = 3,
+				recoil = 1,
+				spread = 1,
+				concealment = -2
+				}
+			self.parts.wpn_fps_smg_cobray_m_extended.stats = {
+				value = 2,
+				extra_ammo = 12,
+				concealment = -1,				
+				reload = -2
+				}				
+			self.parts.wpn_fps_smg_cobray_m_extended.custom_stats = {reload_speed_mult = 0.9}	
+			self.parts.wpn_fps_smg_cobray_m_extended_akimbo.stats = {
+				value = 2,
+				concealment = -2,								
+				extra_ammo = 24,
+				reload = -2
+				}
+			self.parts.wpn_fps_smg_cobray_m_extended_akimbo.custom_stats = {reload_speed_mult = 0.9}				
+			self.parts.wpn_fps_ass_scar_m_extended.stats = {
+				value = 2,
+				extra_ammo = 10,
+				reload = -2
+				}
+			self.parts.wpn_fps_ass_scar_m_extended.custom_stats = {reload_speed_mult = 0.9}							
+			self.parts.wpn_fps_pis_c96_b_short.stats = {
+				value = 1,
+				spread = -1,				
+				concealment = 2
+				}	
+			self.parts.wpn_fps_pis_c96_b_short.custom_stats = nil -- just making sure these are removed.
+			self.parts.wpn_fps_pis_breech_g_stealth.stats = {
+				value = 2,
+				concealment = 1
+				}	
+			self.parts.wpn_fps_snp_winchester_b_short.stats = {
+				value = 2,
+				spread = -1,				
+				concealment = 2
+				}	
+			self.parts.wpn_fps_pis_packrat_sl_silver.stats = {
+				value = 10,
+				recoil = 1,
+				concealment = -1
+				}									
 			self.parts.wpn_fps_ass_flint_m_long.stats = {
 				value = 1,
 				extra_ammo = 15,	
 				spread_moving = -1,				
 				concealment = 1
-				}		
+				}						
 			self.parts.wpn_fps_ass_flint_b_short.stats = {
 				value = 1,
 				concealment = 1
-				}						
+				}		
+			self.parts.wpn_fps_ass_contraband_s_tecci.stats = {
+				value = 3,
+				spread_moving = 2,
+				recoil = -1,
+				concealment = 2
+				}				
+			self.parts.wpn_fps_pis_lemming_b_long.stats = {
+				value = 3,
+				spread = 2,
+				concealment = -1,				
+				spread_moving = 1
+				}	
+			self.parts.wpn_fps_snp_siltstone_b_short.stats = {
+				value = 1,
+				concealment = 1
+				}									
+			self.parts.wpn_fps_pis_lemming_body_silver.stats = {
+				value = 5,
+				spread = 1,
+				concealment = -1,
+				recoil = 1
+				}													
+			self.parts.wpn_fps_lmg_shuno_b_long.stats = {
+				value = 3,
+				spread = 2,
+				recoil = 1,
+				concealment = -3
+				}														
 			self.parts.wpn_fps_smg_shepheard_body_long.stats = {
 				value = 2,
 				spread = 1,	
-				recoil = 1,						
-				concealment = -2
+				concealment = -1
 				}		
 			self.parts.wpn_fps_ass_komodo_b_long.stats = {
 				value = 1,
@@ -43134,20 +43313,266 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 
 		if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint CompM2 Sight 
 			self.parts.wpn_fps_upg_o_compm2.stats = {
-						value = 8,
-						zoom = 3,
-						spread_moving = -3,
-						concealment = -3
+				value = 8,
+				zoom = 3,
+				spread_moving = -3,
+				concealment = -3
 				}			
-			end					
+			end				
+
+		if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
+			self.parts.wpn_fps_upg_o_okp7_dove.stats = {
+				value = 5,
+				zoom = 4,
+				spread_moving = -4,
+				concealment = -4
+				}	
+			self.parts.wpn_fps_upg_o_pso1.stats = {
+				value = 5,
+				zoom = 6
+				}				
+			self.parts.wpn_fps_upg_o_pso1_rifle.stats = {
+				value = 5,
+				concealment = -5,								
+				zoom = 6
+				}	
+			self.parts.wpn_fps_upg_o_1pn93.stats = {
+				value = 8,
+				zoom = 3,
+				spread_moving = -3,
+				concealment = -3
+				}	
+			self.parts.wpn_fps_upg_o_ekp_1s_03.stats = {
+				value = 5,
+				zoom = 2,
+				spread_moving = -2,
+				concealment = -2
+				}									
+			self.parts.wpn_fps_upg_o_1p29.stats = {
+				value = 8,
+				zoom = 3,
+				spread_moving = -3,
+				concealment = -3
+				}															
+			end	
+
+		if self.wpn_fps_pis_glawk then --Germantaco's Glock 17 Gen 3  
+			self.parts.wpn_fps_pis_glawk_a1_22lr.pcs = nil			
+			self.parts.wpn_fps_pis_glawk_a2_10mm.pcs = nil
+			self.parts.wpn_fps_pis_glawk_ani_wick.pcs = nil --animations and ironsights don't work. it's best to leave this disable right now.
+			self.parts.wpn_fps_pis_glawk_a3_357sig.pcs = nil 
+			self.parts.wpn_fps_pis_glawk_a5_45gap.pcs = nil	
+			self.parts.wpn_fps_pis_glawk_a4_45acp.pcs = nil			
+			self.parts.wpn_fps_pis_glawk_so_pr.stats = {
+				value = 0
+				}	
+			self.parts.wpn_fps_pis_glawk_fr_wood.stats = {
+				value = 0
+				}			
+			self.parts.wpn_fps_pis_glawk_fr_stp.stats = {
+				value = 5,
+				recoil = 1,
+				concealment = -1
+				}									
+			self.parts.wpn_fps_pis_glawk_md_4port.stats = {
+				value = 4,
+				spread = 1,
+				recoil = -1,
+				concealment = -1,
+				damage = 5
+				}		
+			self.parts.wpn_fps_pis_glawk_tp_diamond.stats = {
+				value = 4,
+				damage = 5,
+				recoil = -1,
+				concealment = 2,
+				spread = -1
+				}		
+			self.parts.wpn_fps_pis_glawk_tp_salient.stats = {
+				value = 4,
+				damage = 5,
+				recoil = -1,
+				concealment = 2,
+				spread = -1
+				}		
+			self.parts.wpn_fps_pis_glawk_tp_wolf.stats = {
+				value = 4,
+				damage = 5,
+				recoil = -1,
+				concealment = 2,
+				spread = -1
+				}						
+			self.parts.wpn_fps_pis_glawk_md_bull.stats = {
+				value = 7,
+				concealment = -1,
+				spread = -1,
+				recoil = 2,
+				damage = 5
+				}	
+			self.parts.wpn_fps_pis_glawk_md_comp9.stats = {
+				value = 5,
+				damage = 5,
+				recoil = -1,
+				spread = -1,
+				concealment = 1
+				}														
+			self.parts.wpn_fps_pis_glawk_md_decelerator.stats = {
+				value = 5,
+				damage = 5,
+				spread = 1,
+				concealment = -1
+				}						
+			self.parts.wpn_fps_pis_glawk_md_g4.stats = {
+				value = 1,
+				damage = 5,
+				spread = 2,
+				recoil = -2,
+				concealment = -2
+				}	
+			self.parts.wpn_fps_pis_glawk_md_diamond.stats = {
+				value = 5,
+				damage = 5,
+				recoil = 1,
+				concealment = -1
+				}																		
+			self.parts.wpn_fps_pis_glawk_so_cof.stats = {
+				value = 0
+				}						
+			self.parts.wpn_fps_pis_glawk_fr_short.stats = {
+				value = 4,
+				recoil = -2,	
+				concealment = 3
+				}		
+			self.parts.wpn_fps_pis_glawk_fr_short.forbids = { 
+				"wpn_fps_pis_glawk_a1_40sw"
+			}				
+			self.parts.wpn_fps_pis_glawk_fr_gen1.stats = {
+				value = 5,
+				recoil = 1,
+				concealment = -1,
+				spread = 1
+				}
+			self.parts.wpn_fps_pis_glawk_fr_gen2.stats = {
+				value = 6,
+				recoil = 1,
+				concealment = 1,
+				spread = -1
+				}										
+			self.parts.wpn_fps_pis_glawk_a1_40sw.stats = {
+				value = 10,
+				alert_size = -1,
+				suppression = -1,
+				total_ammo_mod = -20,
+				spread = 1,
+				concealment = -1,
+				recoil = -1,
+				damage = 16				
+				}						
+			self.parts.wpn_fps_pis_glawk_a1_40sw.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
+			self.parts.wpn_fps_pis_glawk_gr_pachmayr.stats = {
+				value = 4,
+				concealment = 1
+				}	
+			self.parts.wpn_fps_pis_glawk_m_10.stats = {
+				value = 1,
+				extra_ammo = -7,
+				reload = 2,				
+				concealment = 1
+				}	
+			self.parts.wpn_fps_pis_glawk_m_10.custom_stats = {reload_speed_mult = 1.1}	
+			self.parts.wpn_fps_pis_glawk_m_tti0.stats = {
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 2
+				}		
+			self.parts.wpn_fps_pis_glawk_m_tti0.custom_stats = {reload_speed_mult = 1.1}						
+			self.parts.wpn_fps_pis_glawk_m_21.stats = {
+				value = 2,			
+				extra_ammo = 4,
+				reload = -1										
+				}		
+			self.parts.wpn_fps_pis_glawk_m_10.custom_stats = {reload_speed_mult = 0.95}																							
+			self.parts.wpn_fps_pis_glawk_m_23.stats = {
+				value = 3,						
+				extra_ammo = 6,
+				reload = -1,
+				concealment = -1
+				}	
+			self.parts.wpn_fps_pis_glawk_m_23.custom_stats = {reload_speed_mult = 0.95}			
+			self.parts.wpn_fps_pis_glawk_m_33.stats = {
+				value = 6,
+				spread_moving = -3,
+				extra_ammo = 16,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts.wpn_fps_pis_glawk_m_33.custom_stats = {reload_speed_mult = 0.95}
+			end --holy fuck, all this for one gun
 
 		if self.parts.wpn_fps_smg_einhander then --Pawcio's Einhander 
 			self.parts.wpn_fps_upg_einhander_stock_removed.stats = {
-						value = 1,
-						recoil = -1,
-						concealment = 2
+				value = 1,
+				recoil = -1,
+				concealment = 2
 				}			
-			end						
+			end	
+			
+		if self.wpn_fps_smg_vityaz then --Pawcio's PP19 Vityaz
+			self.parts.wpn_fps_upg_vityaz_mag_dual.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 2
+				}	
+				self.parts.wpn_fps_upg_vityaz_mag_dual.custom_stats = {reload_speed_mult = 1.1}	
+				self.parts.wpn_fps_upg_vityaz_stock_caam4.stats = {
+					value = 1,
+					spread_moving = -1,
+					spread = 1,
+					concealment = -1
+				}
+				self.parts.wpn_fps_upg_vityaz_grip_ak.stats = {
+					value = 1,
+					recoil = 1
+				}				
+				self.parts.wpn_fps_upg_vityaz_grip_molot.stats = {
+					value = 1,
+					spread = -1,
+					concealment = 1
+				}			
+				self.parts.wpn_fps_upg_vityaz_supp.stats = {
+					value = 10,
+					suppression = 13,
+					alert_size = 13,
+					damage = 5,
+					spread = 1,
+					recoil = -1,
+					spread_moving = 1,
+					concealment = -3
+				}												
+				self.parts.wpn_fps_upg_vityaz_handguard_zenit.stats = {
+					value = 1, 
+					spread = -1, 
+					concealment = 2				
+				}	
+				self.parts.wpn_fps_upg_vityaz_handguard_redheat.stats = {
+					value = 1, 
+					spread = 1, 
+					concealment = -2				
+				}											
+				self.parts.wpn_fps_upg_vityaz_stock_molot.stats = {
+					value = 3,
+					spread_moving = 2,
+					recoil = -1,
+					concealment = 2
+				}	
+				self.parts.wpn_fps_upg_vityaz_stock_zenit.stats = {
+					value = 3,
+					spread_moving = 2,
+					concealment = 1
+				}													
+			end								
 			
 
 		if self.wpn_fps_smg_m3 then --Silent Enforcer's M3 Grease Gun		
@@ -43184,7 +43609,6 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 					}
 				self.parts.wpn_fps_smg_m3_s_no.stats = {
 						value = 1,
-						spread = -1,
 						recoil = -1,												
 						concealment = 2
 					}							
@@ -43603,30 +44027,14 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 
 
 		if self.parts.wpn_fps_sho_ben_extrashell then 	--Shell Rack for Pump Action Shotguns
-			self.parts.wpn_fps_sho_ben_extrashell.stats = {
-					value = 0,
-					spread_moving = 0,
-					concealment = 0,
-					total_ammo_mod = 0
-				}		
-			self.parts.wpn_fps_sho_spas12_extrashell.stats = {
-					value = 0,
-					spread_moving = 0,
-					concealment = 0,
-					total_ammo_mod = 0
-				}		
-			self.parts.wpn_fps_sho_ksg_extrashell.stats = {
-					value = 0,
-					spread_moving = 0,
-					concealment = 0,
-					total_ammo_mod = 0
-				}		
-			self.parts.wpn_fps_sho_m37_extrashell.stats = {
-					value = 0,
-					spread_moving = 0,
-					concealment = 0,
-					total_ammo_mod = 0
-				}						
+			self.parts.wpn_fps_sho_ben_extrashell.stats = nil
+			self.parts.wpn_fps_sho_ben_extrashell.custom_stats = nil				
+			self.parts.wpn_fps_sho_spas12_extrashell.stats = nil
+			self.parts.wpn_fps_sho_spas12_extrashell.custom_stats = nil							
+			self.parts.wpn_fps_sho_ksg_extrashell.stats = nil
+			self.parts.wpn_fps_sho_ksg_extrashell.custom_stats = nil										
+			self.parts.wpn_fps_sho_m37_extrashell.stats = nil
+			self.parts.wpn_fps_sho_m37_extrashell.custom_stats = nil													
 			end		
 
 		if self.wpn_fps_ass_fortress then 	-- VXWolf's Bavarium Splitter
@@ -44797,39 +45205,129 @@ self.wpn_fps_pis_xs_pm.override = {	--you'll cowards don't even smoke crack Im n
 				"wpn_fps_upg_i_singlefire"
 			})
 			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
+				"wpn_fps_upg_ammo_half_that"
+			})			
+			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
 				"wpn_fps_upg_i_autofire"
 			})	
+			self.parts.wpn_fps_lmg_dp28_bipod.stats = {
+					value = 2, 
+					zoom = 1, 
+					concealment = -5
+				}
+			self.parts.wpn_fps_lmg_dp28_tripod_top.stats = {
+					value = 3, 
+					zoom = 1, 
+					recoil = -1,
+					spread = 2,
+					concealment = -5
+				}
+			self.parts.wpn_fps_lmg_dp28_tripod_top.custom_stats = nil					
 			self.parts.wpn_fps_lmg_dp28_barrel_lord.stats = {
 					damage = 5,
 					recoil = 1,
 					spread = -1,										
 					concealment = 1
-				}
+				}				
 			self.parts.wpn_fps_lmg_dp28_barrel_dpm36.stats = {
 					damage = 5,
 					recoil = -1,
 					spread = 1,										
 					concealment = 2
-				}				
+				}	
+			self.parts.wpn_fps_lmg_dp28_g_dt.stats = {
+					value = 1,
+					concealment = 1
+				}
+			self.parts.wpn_fps_lmg_dp28_g_dpm.stats = {
+					value = 1,
+					recoil = 1
+				}					
+			self.parts.wpn_fps_lmg_dp28_stock_dt.stats = {
+					value = 1,
+					spread = -1,															
+					concealment = 2
+				}	
+			self.parts.wpn_fps_lmg_dp28_stock_dpm.stats = {
+					value = 1,
+					spread = 2,																				
+					concealment = -1
+				}					
+			self.parts.wpn_fps_lmg_dp28_g_dpm.stats = {
+					value = 1,
+					spread = 1
+				}												
 			self.parts.wpn_fps_lmg_dp28_barrel_dt.stats = {
 					damage = 5,
 					recoil = -1,
 					spread = 1,					
 					concealment = -5
 				}
-			self.parts.wpn_fps_lmg_dp28_m_dpm35.stats = {
-					extra_ammo = 80,
-					recoil = -1,
-					spread = -1,					
+			self.parts.wpn_fps_lmg_dp28_m_standard.forbids = {"wpn_fps_upg_ammo_half_that"}
+			self.parts.wpn_fps_lmg_dp28_m_dpm35.stats = { --converts it to an LMG
+					extra_ammo = 153,
+					damage = -10,					
+					total_ammo_mod = 108,					
 					concealment = -5
 				}				
+			self.parts.wpn_fps_lmg_dp28_m_dpm35.custom_stats = {movement_speed = 0.75}			
+			self.parts.wpn_fps_lmg_dp28_m_dpm36.stats = {
+					extra_ammo = -17,
+					recoil = -1,
+					concealment = -1,					
+					reload = 2
+				}			
+			self.parts.wpn_fps_lmg_dp28_m_dpm36.forbids = {"wpn_fps_upg_ammo_half_that"}				
+			self.parts.wpn_fps_lmg_dp28_m_dpm36.custom_stats = {reload_speed_mult = 1.1}												
 			self.parts.wpn_fps_lmg_dp28_m_dt.stats = {
-					extra_ammo = 12,
+					extra_ammo = 13,
 					recoil = -1,
 					spread = -1,					
 					concealment = -5
-				}				
+				}		
+			self.parts.wpn_fps_lmg_dp28_g_dpm.stats = {
+					value = 1,
+					recoil = 1
+				}	
+			self.parts.wpn_fps_lmg_dp28_so_lord.stats = nil
+			self.parts.wpn_fps_lmg_dp28_so_pr.stats = nil
+			self.parts.wpn_fps_lmg_dp28_g_dt.stats = {
+					value = 1,
+					spread = 1
+				}											
+			self.wpn_fps_lmg_dp28.override = {
+				wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = -20
+				},
+				custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1},	
+			}
+		}				
 		end
+		if self.wpn_fps_smg_pdr then --Gambyt's Magpul PDR
+			self.wpn_fps_smg_pdr.default_blueprint = { 
+				"wpn_fps_aug_b_medium", 
+				"wpn_fps_smg_pdr_body_standard",
+				"wpn_fps_smg_pdr_m_standard",
+				"wpn_fps_smg_pdr_o_standard"
+			}	
+			self.parts.wpn_fps_smg_pdr_m_pmag.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 2
+			}	
+			self.parts.wpn_fps_smg_pdr_m_pmag.custom_stats = {reload_speed_mult = 1.1}	
+			self.parts.wpn_fps_smg_pdr_m_short.stats = {
+					value = 2,
+					spread_moving = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -10
+			}	
+			self.parts.wpn_fps_smg_pdr_m_short.custom_stats = {reload_speed_mult = 1.1}						
+		end		
 
 		--Incendiary Slugs are awesome--
 

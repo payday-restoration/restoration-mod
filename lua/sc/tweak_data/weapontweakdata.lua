@@ -3157,7 +3157,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			0.96,
 			0.97,
 			0.98,
-			0.99
+			0.99,
+			1,
+			1.01,
+			1.02,
+			1.03,
+			1.04,
+			1.05,
+			1.06,
+			1.07,
+			1.08,
+			1.09,
+			1.10,
+			1.11,
+			1.12,
+			1.13,
+			1.14,
+			1.15			
 		}
 		self.stats.reload = {}
 		for i = 5, 20, 0.5 do
@@ -9013,7 +9029,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 18,
 				spread_moving = 8,
 				zoom = 3,
-				concealment = 24,
+				concealment = 23,
 				suppression = 9,
 				alert_size = 9,
 				extra_ammo = 101,
@@ -9937,6 +9953,39 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.gtt33.panic_suppression_chance = 0.0
 	end		
 
+	if self.bajur then --carl ruins everything's honey badger
+		self.bajur.use_data.selection_index = 1
+		self.bajur.categories = {
+			"assault_rifle"
+		}
+		self.bajur.AMMO_MAX = 150
+		self.bajur.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.bajur.spread.standing = 3
+		self.bajur.spread.crouching = 2
+		self.bajur.spread.steelsight = 1
+		self.bajur.spread.moving_standing = 4
+		self.bajur.spread.moving_crouching = 3
+		self.bajur.spread.moving_steelsight = 2
+		self.bajur.panic_suppression_chance = 0.0
+		self.bajur.kick.standing = self.new_m4.kick.standing
+		self.bajur.kick.crouching = self.new_m4.kick.standing
+		self.bajur.kick.steelsight = self.new_m4.kick.standing		
+		self.bajur.stats = {
+			damage = 34,
+			spread = 13,
+			recoil = 19,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 24,
+			suppression = 9,
+			alert_size = 18,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end			
+
 	if self.deckard then -- Pawcio's DECK ARD
 		self.deckard.has_description = false															
 		self.deckard.AMMO_MAX = 30
@@ -10756,7 +10805,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.qsz92.panic_suppression_chance = 0.0
-	end			
+	end		
+
+	if self.glawk then --Germantaco's Glock 17 Gen 3
+		self.glawk.AMMO_MAX = 150
+		self.glawk.has_description = false				
+		self.glawk.tactical_reload = 1										
+		self.glawk.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.glawk.spread.standing = 3
+		self.glawk.spread.crouching = 2
+		self.glawk.spread.steelsight = 1
+		self.glawk.spread.moving_standing = 4
+		self.glawk.spread.moving_crouching = 3
+		self.glawk.spread.moving_steelsight = 2
+		self.glawk.kick.standing = self.glock_17.kick.standing		
+		self.glawk.kick.crouching = self.glock_17.kick.standing
+		self.glawk.kick.steelsight = self.glock_17.kick.standing
+		self.glawk.stats = {
+			damage = 29,
+			spread = 15,
+			recoil = 21,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.glawk.panic_suppression_chance = 0.0
+	end				
 
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.has_description = false				
@@ -10862,10 +10942,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end												
 
 	if self.dp28 then --Killerwolf & Kitsune Jimmy's DP-28 
+		self.dp28.categories = {"assault_rifle"}	
 		self.dp28.has_description = false		
 		self.dp28.AMMO_MAX = 120
-		self.dp28.tactical_reload = 1		
-		self.dp28.CLIP_AMMO_MAX = 47		
 		self.dp28.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.dp28.spread.standing = 3
 		self.dp28.spread.crouching = 2
@@ -10875,9 +10954,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.dp28.spread.moving_steelsight = 2
 		self.dp28.stats = {
 		damage = 45,
-		spread = 14,
-		recoil = 8,
-		spread_moving = 6,
+		spread = 15,
+		recoil = 17,
+		spread_moving = 9,
 		zoom = 3,
 		concealment = 8,
 		suppression = 5,
@@ -11101,10 +11180,47 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.x_czevo.use_data.selection_index = 4 
 		end
 
+		if self.pdr then --Gambyt's Magpul PDR
+			self.pdr.categories = {"assault_rifle"}		
+			self.pdr.has_description = false					
+			self.pdr.tactical_reload = 1
+			self.pdr.AMMO_MAX = 150
+			self.pdr.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.pdr.auto.fire_rate = 0.086
+			self.pdr.fire_mode_data.fire_rate = 0.086
+			self.pdr.spread.standing = 3
+			self.pdr.spread.crouching = 2
+			self.pdr.spread.steelsight = 1
+			self.pdr.spread.moving_standing = 4
+			self.pdr.spread.moving_crouching = 3
+			self.pdr.spread.moving_steelsight = 2
+			self.pdr.kick.standing = self.new_m4.kick.standing
+			self.pdr.kick.crouching = self.new_m4.kick.standing
+			self.pdr.kick.steelsight = self.new_m4.kick.standing
+			self.pdr.stats = {
+				damage = 29,
+				spread = 15,
+				recoil = 20,
+				spread_moving = 7,
+				zoom = 3,
+				concealment = 20,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.pdr.panic_suppression_chance = 0.0
+			self.pdr.CLIP_AMMO_MAX = 30
+		end		
+
 		if self.fmg9 then --Pawcio's FMG 9
 			self.fmg9.has_description = false					
 			self.fmg9.use_data.selection_index = 2
 			self.fmg9.tactical_reload = 1
+			self.fmg9.fire_mode_data.fire_rate = 0.05
+			self.fmg9.auto.fire_rate = 0.05
 			self.fmg9.categories = {"pistol"}
 			self.fmg9.recategorize = "pistol_carbine"
 			self.fmg9.CLIP_AMMO_MAX = 33
@@ -11133,11 +11249,70 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.fmg9.panic_suppression_chance = 0.1
+		end				
+
+		if self.x_fmg9 then --disabled because primary smgs are not supposed to have akimbos. 
+			self.x_fmg9.use_data.selection_index = 4
 		end		
 
-		if self.x_fmg9 then --disabled because primary smgs are not supposed to have akimbos.
-			self.x_fmg9.use_data.selection_index = 4
-		end				
+		if self.vp70 then --Mira, Matthelzor, Killerwolf, and carl ruins everything's VP70M
+			self.vp70.AMMO_MAX = 150
+			self.vp70.fire_mode_data.fire_rate = 0.075
+			self.vp70.single.fire_rate = 0.075			
+			self.vp70.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.vp70.spread.standing = 3
+			self.vp70.spread.crouching = 2
+			self.vp70.spread.steelsight = 1
+			self.vp70.spread.moving_standing = 4
+			self.vp70.spread.moving_crouching = 3
+			self.vp70.spread.moving_steelsight = 2
+			self.vp70.kick.standing = self.glock_17.kick.standing
+			self.vp70.kick.crouching = self.glock_17.kick.standing
+			self.vp70.kick.steelsight = self.glock_17.kick.standing
+			self.vp70.stats = {
+				damage = 26,
+				spread = 15,
+				recoil = 22,
+				spread_moving = 9,
+				zoom = 3,
+				concealment = 29,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.x_vp70.panic_suppression_chance = 0.0
+			self.x_vp70.AMMO_MAX = 180
+			self.x_vp70.fire_mode_data.fire_rate = 0.075
+			self.x_vp70.single.fire_rate = 0.075			
+			self.x_vp70.AMMO_PICKUP = self:_pickup_chance(180, 1)
+			self.x_vp70.spread.standing = 3
+			self.x_vp70.spread.crouching = 2
+			self.x_vp70.spread.steelsight = 1
+			self.x_vp70.spread.moving_standing = 4
+			self.x_vp70.spread.moving_crouching = 3
+			self.x_vp70.spread.moving_steelsight = 2
+			self.x_vp70.kick.standing = self.glock_17.kick.standing
+			self.x_vp70.kick.crouching = self.glock_17.kick.standing
+			self.x_vp70.kick.steelsight = self.glock_17.kick.standing
+			self.x_vp70.stats = {
+				damage = 26,
+				spread = 15,
+				recoil = 22,
+				spread_moving = 9,
+				zoom = 3,
+				concealment = 29,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.vp70.panic_suppression_chance = 0.0			
+		end						
 
 
 		if self.scarl then --Pawcio's SCAR L

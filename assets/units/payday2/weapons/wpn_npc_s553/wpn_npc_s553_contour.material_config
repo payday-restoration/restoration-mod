@@ -1,50 +1,11 @@
-<materials version="3" group="wpn_npc_s552">
-	
-    <material name="lambert1" render_template="generic" version="2"/>
-    <material name="mtr_third_barrelassembly" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_barrelassembly_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_barrelassembly_nm"/>
+<materials version="3" group="wpn_npc_m4">
+    <material name="mtr_m4" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+        <bump_normal_texture file="units/payday2/weapons/wpn_npc_s553/sg_zeal_nm"/>
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_s553/sg_zeal_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0.5" type="scalar" name="contour_opacity"/>
     </material>
-    <material name="mtr_third_flashhider" version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE">
-        <diffuse_texture file="units/glass/vehicle_glass_op"/> 
-        <variable value="0" type="scalar" name="intensity"/>
-    </material>
-    <material name="mtr_third_grip" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_grip_green_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_grip_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0.5" type="scalar" name="contour_opacity"/>
-    </material>
-    <material name="mtr_third_mag" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_mag_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_mag_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0.5" type="scalar" name="contour_opacity"/>
-    </material>
-    <material name="mtr_third_railedhandguard" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_handguard_green_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_handguard_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0.5" type="scalar" name="contour_opacity"/>
-    </material>
-    <material name="mtr_third_receiver" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_receiver_black_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_receiver_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0.5" type="scalar" name="contour_opacity"/>
-    </material>
-    <material name="mtr_third_sight" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_sight_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_sight_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0.5" type="scalar" name="contour_opacity"/>
-    </material>
-    <material name="mtr_third_stock" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_stock_green_df"/>
-        <bump_normal_texture file="units/pd2_dlc1/weapons/wpn_third_ass_s552_pts/third_stock_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0.5" type="scalar" name="contour_opacity"/>
+    <material name="weapon_lod1" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_s553/sg_zeal_df"/>
     </material>
 </materials>

@@ -1841,6 +1841,8 @@
 	<model path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>
 	<unit path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false" load="false"/>
 	<material_config path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>	
+	<texture path="units/payday2/weapons/wpn_npc_s553/sg_zeal_df" force="false"/>	
+	<texture path="units/payday2/weapons/wpn_npc_s553/sg_zeal_nm" force="false"/>	
 	<!--zeal city 1-->
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>

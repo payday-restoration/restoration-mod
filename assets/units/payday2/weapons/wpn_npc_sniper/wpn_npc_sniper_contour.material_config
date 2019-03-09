@@ -1,0 +1,17 @@
+<materials version="3" group="wpn_npc_sniper">
+    <material name="p1" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" />
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0.5" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="third_sight" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" />
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0.5" type="scalar" name="contour_opacity"/>
+    </material>
+    <material unique="true" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" name="mtr_glint" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_sniper/material_flare_il"/>
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <variable type="scalar" name="falloff_exp" value="5"/>
+    </material>		
+</materials>

@@ -12982,7 +12982,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_zeal_swat_heavy_sc",
 					"ene_city_swat_1",
 					"ene_city_swat_2",
-					"ene_city_swat_3"
+					"ene_city_swat_3",
+					"ene_fbi_swat_3",
+					"ene_medic_mp5"
 				}
 			}			
 		}

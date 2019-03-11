@@ -1,0 +1,31 @@
+<materials version="3" group="ene_medic_hvh_m4">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_df" mip="1"/>
+	</material>
+	
+
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_df"/>
+	</material>
+	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_df" mip="1"/>
+	</material>
+	
+
+	<material name="mtr_ene_acc_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_df"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_head_hvh_df" mip="1"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

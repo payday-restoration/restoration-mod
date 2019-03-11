@@ -1958,7 +1958,23 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_contour"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>-->
 	<!--new zeals end-->	
-	<!--spooky shit below-->
+	<!--spooky shit below-->	
+	<!--FBI UMP Zombie-->
+	<object path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>
+	<!--zombie med mp5-->
+    <object path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<model path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_contour"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_husk"/>
 	<!--skeleton SWAT m4-->
     <object path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
@@ -1969,7 +1985,7 @@
 	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk" load="true"/>
 	
 	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat_haunted/ene_skele_swat_haunted" load="true"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat_haunted/ene_skele_swat_haunted_husk" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_skele_swat_haunted/ene_skele_swat_haunted_husk" load="true"/>	
 	<!--skeleton SWAT saiga-->	
     <object path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>

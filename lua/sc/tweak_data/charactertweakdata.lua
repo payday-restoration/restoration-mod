@@ -1779,6 +1779,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.immune_to_knock_down = true
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
+		self.shield.die_sound_event_2 = "l4d_x02a_any_3p"
 		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "haunted" or job == "nail" or job == "help" then
 			self.shield.die_sound_event = "l1n_x01a_any_3p"
 		else

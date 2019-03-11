@@ -725,8 +725,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self._unit:base():has_tag("sniper") then
 		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", true)
 		--big fuck off death line unit check	
-		--blues
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") then
+		--blues and omnia shield
+		elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield") then
 	        self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		--nypd blues	

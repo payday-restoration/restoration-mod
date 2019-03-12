@@ -1035,15 +1035,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker.HEALTH_INIT = 4
 		self.biker.headshot_dmg_mul = 2.3	
 		self.biker.calls_in = true
-		if job == "born" or job == "chew" then
-			self.biker.speech_prefix_p1 = "nl"
-			self.biker.speech_prefix_p2 = nil
-			self.biker.speech_prefix_count = 2
-		else
-			self.biker.speech_prefix_p1 = "bik"
-			self.biker.speech_prefix_p2 = nil
-			self.biker.speech_prefix_count = 2	
-		end
+		self.biker.speech_prefix_p1 = "bik"
+		self.biker.speech_prefix_p2 = nil
+		self.biker.speech_prefix_count = 2	
 		self.biker.chatter = {
 			aggressive = true,
 			retreat = true,

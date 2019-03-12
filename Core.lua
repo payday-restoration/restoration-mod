@@ -99,7 +99,10 @@ if not _G.restoration then
 		"vit",
 		"pbr",
 		"pbr2",
-		"junk"
+		"junk",
+		"dinner",
+		"wwh",
+		"born"
 	}
 end
 

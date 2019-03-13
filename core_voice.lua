@@ -84,7 +84,7 @@ if not _G.restorationvoice then
 		for i = 1, 5 do
 			_G.voiceline_framework:register_voiceline("olpf", "contact", ModPath .. "assets/oggs/voiceover/olpf/contact/contact" .. i .. ".ogg")
 		end		
-		for i = 1, 6 do
+		for i = 1, 8 do
 			_G.voiceline_framework:register_voiceline("olpf", "death", ModPath .. "assets/oggs/voiceover/olpf/death/death" .. i .. ".ogg")
 		end		
 		for i = 1, 5 do

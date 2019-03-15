@@ -720,7 +720,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
 				if tactic_name == "deathguard" and not phase_is_anticipation then
 					if current_objective.tactic == tactic_name then
-					    --self:_voice_deathguard_start(group)
+					    self:_voice_deathguard_start(group) --roger/copy that
 						for u_key, u_data in pairs(self._char_criminals) do
 							if u_data.status and current_objective.follow_unit == u_data.unit then
 								local crim_nav_seg = u_data.tracker:nav_segment()

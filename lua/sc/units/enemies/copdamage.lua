@@ -329,10 +329,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			
 			if data.head_shot and data.name == "boom" then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
-			end		
-			
-			if data.head_shot and self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser") then
-				self._unit:damage():run_sequence_simple("omtaser_glass_break")
 			end						
 
 			if managers.groupai:state():all_criminals()[attack_data.attacker_unit:key()] then

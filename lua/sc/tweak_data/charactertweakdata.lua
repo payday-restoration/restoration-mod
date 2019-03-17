@@ -12945,6 +12945,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			nypd = {
 				path = "units/pd2_mod_nypd/characters/",
 				list = {
+					"ene_spook_1",
 					"ene_bulldozer_1",
 					"ene_bulldozer_2",
 					"ene_nypd_heavy_m4",					

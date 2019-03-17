@@ -317,7 +317,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 						},	
 						nypd = {
-							Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+							Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
 						}						
 					},
 					access = access_type_all,
@@ -458,7 +458,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 						},	
 						nypd = {
-							Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
+							Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
 						}						
 					},
 					access = access_type_all,

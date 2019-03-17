@@ -113,6 +113,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self._speech_prefix_p2 = "d"
 	end
+	
+	function CharacterTweakData:_init_region_lapd()
+		self._default_chatter = "dispatch_generic_message"
+		self._unit_prefixes = {
+			cop = "l",
+			swat = "l",
+			heavy_swat = "l",
+			taser = "tsr",
+			cloaker = "clk",
+			bulldozer = "bdz",
+			medic = "mdc"
+		}
+		self._speech_prefix_p2 = "d"
+	end	
 
 	function CharacterTweakData:_init_security(presets)
 		self.security = deep_clone(presets.base)

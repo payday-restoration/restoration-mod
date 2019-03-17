@@ -7,6 +7,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.Zombie = "zombie"
 	LevelsTweakData.LevelType.Murkywater = "murkywater"
 	LevelsTweakData.LevelType.NYPD = "nypd"
+	LevelsTweakData.LevelType.LAPD = "lapd"
 
 	Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		
@@ -15,6 +16,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local zombie = LevelsTweakData.LevelType.Zombie
 		local murkywater = LevelsTweakData.LevelType.Murkywater
 		local nypd = LevelsTweakData.LevelType.NYPD
+		local lapd = LevelsTweakData.LevelType.LAPD
 		self.ai_groups = {}
 		self.ai_groups.default = america
 		self.ai_groups.america = america
@@ -22,6 +24,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.zombie  = zombie
 		self.ai_groups.murkywater = murkywater
 		self.ai_groups.nypd = nypd
+		self.ai_groups.lapd = lapd
 		
 		--Murkywater faction--
 		self.shoutout_raid.ai_group_type = murkywater
@@ -51,11 +54,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.skm_run.ai_group_type = nypd
 		self.skm_red2.ai_group_type = nypd
-		--"LAPD"--
-		--NYPD used because they look closer than the DC cops do--
+		
+		--LAPD--			
+		--Jolly gets mad when trying to use LAPD, and I can't figure out why it crashes even when I load the package. So for now it's just gonna use NYPD (which is the same minus beat cops anyway)
 		self.jolly.ai_group_type = nypd
-		self.rvd1.ai_group_type = nypd
-		self.rvd2.ai_group_type = nypd
+		
+		self.rvd1.ai_group_type = lapd
+		self.rvd2.ai_group_type = lapd
 		
 		
 		--Gangster VO below--

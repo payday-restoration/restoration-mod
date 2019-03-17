@@ -9029,7 +9029,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 18,
 				spread_moving = 8,
 				zoom = 3,
-				concealment = 23,
+				concealment = 24,
 				suppression = 9,
 				alert_size = 9,
 				extra_ammo = 101,
@@ -9971,13 +9971,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.bajur.kick.crouching = self.new_m4.kick.standing
 		self.bajur.kick.steelsight = self.new_m4.kick.standing		
 		self.bajur.stats = {
-			damage = 34,
+			damage = 40,
 			spread = 13,
 			recoil = 19,
 			spread_moving = 8,
 			zoom = 3,
-			concealment = 24,
-			suppression = 9,
+			concealment = 25,
+			suppression = 18,
 			alert_size = 18,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9985,6 +9985,76 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 	end			
+
+	if self.qbz97b then --Mira's QBZ 97B
+		self.qbz97b.use_data.selection_index = 1
+		self.qbz97b.categories = {
+			"assault_rifle"
+		}
+		self.qbz97b.AMMO_MAX = 150
+		self.qbz97b.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.qbz97b.spread.standing = 3
+		self.qbz97b.spread.crouching = 2
+		self.qbz97b.spread.steelsight = 1
+		self.qbz97b.spread.moving_standing = 4
+		self.qbz97b.spread.moving_crouching = 3
+		self.qbz97b.spread.moving_steelsight = 2
+		self.qbz97b.panic_suppression_chance = 0
+		self.qbz97b.kick.standing = self.new_m4.kick.standing
+		self.qbz97b.kick.crouching = self.new_m4.kick.standing
+		self.qbz97b.kick.steelsight = self.new_m4.kick.standing		
+		self.qbz97b.stats = {
+			damage = 35,
+			spread = 12,
+			recoil = 20,
+			spread_moving = 4,
+			zoom = 3,
+			concealment = 25,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+	end				
+
+	if self.drongo then --carl ruins everything's HK416C
+		self.drongo.use_data.selection_index = 1
+		self.drongo.categories = {
+			"assault_rifle"
+		}
+		self.drongo.spread.standing = 3
+		self.drongo.spread.crouching = 2
+		self.drongo.spread.steelsight = 1
+		self.drongo.spread.moving_standing = 4
+		self.drongo.spread.moving_crouching = 3
+		self.drongo.spread.moving_steelsight = 2
+		self.drongo.kick.standing = self.new_m4.kick.standing
+		self.drongo.kick.crouching = self.new_m4.kick.standing
+		self.drongo.kick.steelsight = self.new_m4.kick.standing
+		self.drongo.CLIP_AMMO_MAX = 30
+		self.drongo.AMMO_MAX = 120
+		self.drongo.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.drongo.fire_mode_data.fire_rate = 0.08571428571
+		self.drongo.CAN_TOGGLE_FIREMODE = true
+		self.drongo.auto.fire_rate = 0.08571428571
+		self.drongo.panic_suppression_chance = 0.0
+		self.drongo.stats = {
+			damage = 45,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 10,
+			zoom = 3,
+			concealment = 20,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end				
 
 	if self.deckard then -- Pawcio's DECK ARD
 		self.deckard.has_description = false															

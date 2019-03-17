@@ -15902,7 +15902,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_g_wood",
 			stats = {
 				value = 1,
-				recoil = 1,
 				spread = 2,
 				recoil = 1,
 				concealment = -1
@@ -42477,18 +42476,41 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		if self.wpn_fps_ass_recce then -- carl ruins everything's hk 417
 				self.parts.wpn_fps_upg_recce_s_orig.stats = { 
 					value = 1,
-					spread = -2,
+					spread = -1,
 					recoil = 2
 				}	
 			end		
 
+		if self.wpn_fps_ass_drongo then -- carl ruins everything's hk 416c
+				self.parts.wpn_fps_upg_drongo_s_orig.stats = { 
+					value = 1,
+					spread = -1,
+					recoil = 2
+				}	
+				self.parts.wpn_fps_ass_drongo_s_compact.stats = { 
+					value = 1,
+					spread = -1,
+					recoil = -1,
+					concealment = 2					
+				}					
+			end					
+
 		if self.wpn_fps_ass_bajur then -- carl ruins everything's honey badger
 				self.parts.wpn_fps_upg_bajur_am_grendel.pcs = nil
-				self.parts.wpn_fps_ass_bajur_b_std.stats = {
-					value = 1,
-					suppression = 10,
-					alert_size = 10
-				}												
+				self.parts.wpn_fps_upg_bajur_b_short.stats = {
+					value = 2,
+					spread = -1,
+					recoil = -1,
+					spread_moving = 1,
+					concealment = 2
+				}	
+				self.parts.wpn_fps_upg_bajur_b_long.stats = {
+					value = 2,
+					spread = 1,
+					recoil = 1,
+					spread_moving = -1,
+					concealment = -2
+				}									
 				self.parts.wpn_fps_upg_bajur_m_quick.stats = {
 					value = 2,
 					extra_ammo = -10,						
@@ -42497,7 +42519,35 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					reload = 2
 				}	
 				self.parts.wpn_fps_upg_bajur_m_quick.custom_stats = {reload_speed_mult = 1.1}									
-			end														
+			end		
+
+		if self.wpn_fps_ass_qbz97b then -- Miras's QBZ 97B
+				self.parts.wpn_fps_ass_qbz97b_mag_short.stats = { 
+					value = 2,
+					spread_moving = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -10
+				}	
+				self.parts.wpn_fps_ass_qbz97b_mag_short.custom_stats = {reload_speed_mult = 1.1}
+				self.parts.wpn_fps_ass_qbz97b_mag_pmag.stats = { 
+					value = 1
+				}	
+				self.parts.wpn_fps_ass_qbz97b_95b_body.stats = { 
+					value = 2,
+					damage = -8,
+					total_ammo_mod = 20,
+					recoil = -1,										
+					concealment = 2
+				}		
+				self.parts.wpn_fps_ass_qbz97b_mag_magpul.stats = { 
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 2
+				}		
+				self.parts.wpn_fps_ass_qbz97b_mag_magpul.custom_stats = {reload_speed_mult = 1.1}				
+			end					
 			
 		if self.parts.wpn_fps_ass_ns_g_sup1 then 	-- Gambyt's Sneaky Suppressor Pack
 				self.parts.wpn_fps_ass_ns_g_sup1.stats = { 
@@ -43154,8 +43204,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_pis_vp70_body_early.stats = {
 						value = 5,
 						recoil = 1,
-						concealment = -1,
-						damage = 2
+						concealment = -1
 					}	
 				self.parts.wpn_fps_pis_vp70_s_scifi.stats = {
 						value = 3,
@@ -43177,6 +43226,30 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end										
 
 		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Styled Mod Pack
+			self.parts.wpn_fps_pis_g18c_b_long.stats = {
+				value = 4,
+				spread = 1,
+				recoil = -1,
+				spread_moving = 1
+				}			
+			self.parts.wpn_fps_ass_tecci_vg_ergo.stats = {
+				value = 1,
+				spread = 1,
+				spread_moving = 2,
+				concealment = -2
+				}		
+			self.parts.wpn_fps_shot_shorty_fg_rail.stats = {
+				value = 1,
+				spread = 1,				
+				recoil = 1,
+				spread_moving = -1				
+				}															
+			self.parts.wpn_fps_ass_tecci_s_minicontra.stats = {
+				value = 2,
+				recoil = -1,
+				spread = 2,
+				concealment = -3
+				}							
 			self.parts.wpn_fps_ass_flint_g_custom.stats = {
 				value = 2,
 				recoil = 1
@@ -43508,7 +43581,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				reload = -1
 			}
 			self.parts.wpn_fps_pis_glawk_m_33.custom_stats = {reload_speed_mult = 0.95}
-			end --holy fuck, all this for one gun
+			end 
 
 		if self.parts.wpn_fps_smg_einhander then --Pawcio's Einhander 
 			self.parts.wpn_fps_upg_einhander_stock_removed.stats = {
@@ -43523,7 +43596,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					reload = 2
+					reload = 2 
 				}	
 				self.parts.wpn_fps_upg_vityaz_mag_dual.custom_stats = {reload_speed_mult = 1.1}	
 				self.parts.wpn_fps_upg_vityaz_stock_caam4.stats = {
@@ -43534,13 +43607,30 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}
 				self.parts.wpn_fps_upg_vityaz_grip_ak.stats = {
 					value = 1,
-					recoil = 1
-				}				
+					spread = 1
+				}	
+				self.parts.wpn_fps_upg_vityaz_grip_rk3.stats = {
+					value = 1,
+					concealment = 1
+				}							
+				self.parts.wpn_fps_upg_vityaz_barrel_long.stats = {
+					value = 1,
+					spread = 1,
+					concealment = -1					
+				}												
 				self.parts.wpn_fps_upg_vityaz_grip_molot.stats = {
 					value = 1,
 					spread = -1,
-					concealment = 1
-				}			
+					concealment = 2
+				}		
+				self.parts.wpn_fps_upg_vityaz_bolt_lightweight.stats = {
+					value = 0
+				}		
+				self.parts.wpn_fps_upg_vityaz_bolt_lightweight.custom_stats = nil
+				self.parts.wpn_fps_upg_vityaz_grip_wood.stats = {
+					value = 2,
+					recoil = 1
+				}											
 				self.parts.wpn_fps_upg_vityaz_supp.stats = {
 					value = 10,
 					suppression = 13,
@@ -43550,16 +43640,23 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					recoil = -1,
 					spread_moving = 1,
 					concealment = -3
-				}												
+				}				
+				self.parts.wpn_fps_upg_vityaz_ammo_9mm_p.pcs = nil
 				self.parts.wpn_fps_upg_vityaz_handguard_zenit.stats = {
 					value = 1, 
 					spread = -1, 
-					concealment = 2				
+					concealment = 1			
 				}	
+				self.parts.wpn_fps_upg_vityaz_handguard_akm.stats = {
+					value = 1,
+					spread = 1,
+					recoil = 1,
+					concealment = -2
+				}											
 				self.parts.wpn_fps_upg_vityaz_handguard_redheat.stats = {
 					value = 1, 
 					spread = 1, 
-					concealment = -2				
+					concealment = -1				
 				}											
 				self.parts.wpn_fps_upg_vityaz_stock_molot.stats = {
 					value = 3,
@@ -43567,6 +43664,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					recoil = -1,
 					concealment = 2
 				}	
+				self.parts.wpn_fps_upg_vityaz_stock_akm.stats = {
+					value = 1,
+					recoil = 1,
+					concealment = -1
+				}	
+				self.parts.wpn_fps_smg_vityaz_stock.stats = {
+					value = 0
+				}												
 				self.parts.wpn_fps_upg_vityaz_stock_zenit.stats = {
 					value = 3,
 					spread_moving = 2,

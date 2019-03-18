@@ -57,7 +57,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--LAPD--			
 		--Jolly gets mad when trying to use LAPD, and I can't figure out why it crashes even when I load the package. So for now it's just gonna use NYPD (which is the same minus beat cops anyway)
-		self.jolly.ai_group_type = nypd
+		self.jolly.ai_group_type = lapd
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd"}
 		
 		self.rvd1.ai_group_type = lapd
 		self.rvd2.ai_group_type = lapd

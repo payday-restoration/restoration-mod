@@ -8948,8 +8948,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203.has_description = true		
 			self.scar_m203.tactical_reload = 1
 			self.scar_m203.fire_mode_data.fire_rate = 0.096
-			self.scar_m203.AMMO_MAX = 100
-			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.scar_m203.AMMO_MAX = 90
+			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(90, 2)
 			self.scar_m203.spread.standing = 3
 			self.scar_m203.spread.crouching = 2
 			self.scar_m203.spread.steelsight = 1
@@ -9068,35 +9068,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.ots_14_4a.armor_piercing_chance = nil		
 			self.ots_14_4a.panic_suppression_chance = 0.0
 		end		
-
-		if self.ots_14_4a then --Pawcio's OTS 14 Groza 
-			self.ots_14_4a.has_description = false		
-			self.ots_14_4a.tactical_reload = 1
-			self.ots_14_4a.AMMO_MAX = 120
-			self.ots_14_4a.AMMO_PICKUP = self:_pickup_chance(120, 2)
-			self.ots_14_4a.spread.standing = 3
-			self.ots_14_4a.spread.crouching = 2
-			self.ots_14_4a.spread.steelsight = 1
-			self.ots_14_4a.spread.moving_standing = 4
-			self.ots_14_4a.spread.moving_crouching = 3
-			self.ots_14_4a.spread.moving_steelsight = 2
-			self.ots_14_4a.stats = {
-				damage = 45,
-				spread = 16,
-				recoil = 18,
-				spread_moving = 6,
-				zoom = 3,
-				concealment = 13,
-				suppression = 5,
-				alert_size = 5,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 1,
-				reload = 11
-			}
-			self.ots_14_4a.armor_piercing_chance = nil		
-			self.ots_14_4a.panic_suppression_chance = 0.0
-		end			
 
 		if self.mg4 then --Pawcio's HK MG4 
 			self.mg4.categories = {
@@ -9410,8 +9381,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.yayo.desc_id = "bm_m203_weapon_sc_desc"
 			self.yayo.has_description = true					
 			self.yayo.fire_mode_data.fire_rate = 0.08571428571
-			self.yayo.AMMO_MAX = 130
-			self.yayo.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.yayo.AMMO_MAX = 120
+			self.yayo.AMMO_PICKUP = self:_pickup_chance(120, 2)
 			self.yayo.spread.standing = 3
 			self.yayo.spread.crouching = 2
 			self.yayo.spread.steelsight = 1
@@ -10469,7 +10440,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10mpa.panic_suppression_chance = 0.1
 	end		
 
-	if self.kurz_919 then --Killerwolf & German Shitmonger's MP5K
+	if self.kurz_919 then --Killerwolf & German Taco's MP5K
 		self.kurz_919.has_description = false				
 		self.kurz_919.tactical_reload = 1									
 		self.kurz_919.fire_mode_data.fire_rate = 0.06666666666
@@ -11043,9 +11014,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3m203.desc_id = "bm_m203_weapon_sc_desc"
 		self.g3m203.has_description = true
 		self.g3m203.tactical_reload = 1
-		self.g3m203.AMMO_MAX = 100
+		self.g3m203.AMMO_MAX = 90
 		self.g3m203.CLIP_AMMO_MAX = 30
-		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.g3m203.AMMO_PICKUP = self:_pickup_chance(90, 2)
 		self.g3m203.fire_mode_data.fire_rate = 0.1
 		self.g3m203.CAN_TOGGLE_FIREMODE = true
 		self.g3m203.auto = {}
@@ -11256,8 +11227,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.tactical_reload = 1
 			self.pdr.AMMO_MAX = 150
 			self.pdr.AMMO_PICKUP = self:_pickup_chance(150, 2)
-			self.pdr.auto.fire_rate = 0.086
-			self.pdr.fire_mode_data.fire_rate = 0.086
 			self.pdr.spread.standing = 3
 			self.pdr.spread.crouching = 2
 			self.pdr.spread.steelsight = 1
@@ -11282,7 +11251,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.pdr.panic_suppression_chance = 0.0
-			self.pdr.CLIP_AMMO_MAX = 30
 		end		
 
 		if self.fmg9 then --Pawcio's FMG 9
@@ -11321,7 +11289,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.panic_suppression_chance = 0.1
 		end				
 
-		if self.x_fmg9 then --disabled because primary smgs are not supposed to have akimbos. 
+		if self.x_fmg9 then --disabled because primary smgs are not supposed to have akimbos. sorry friends.
 			self.x_fmg9.use_data.selection_index = 4
 		end		
 

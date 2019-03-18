@@ -8948,7 +8948,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203.has_description = true		
 			self.scar_m203.tactical_reload = 1
 			self.scar_m203.fire_mode_data.fire_rate = 0.096
-			self.scar_m203.AMMO_MAX = 120
+			self.scar_m203.AMMO_MAX = 100
 			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
 			self.scar_m203.spread.standing = 3
 			self.scar_m203.spread.crouching = 2
@@ -9405,12 +9405,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.rpd.panic_suppression_chance = 0.1			
 		end		
 
-		if self.yayo then --Montana 5.56 by Matthelzor, Kitsune Jimmy, >:3, & Gambyt
+		if self.yayo then --Montana 5.56 by Matthelzor, Kitsune Jimmy, >:3, & Gambyt 
 			self.yayo.tactical_reload = 1
 			self.yayo.desc_id = "bm_m203_weapon_sc_desc"
 			self.yayo.has_description = true					
 			self.yayo.fire_mode_data.fire_rate = 0.08571428571
-			self.yayo.AMMO_MAX = 150
+			self.yayo.AMMO_MAX = 130
 			self.yayo.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.yayo.spread.standing = 3
 			self.yayo.spread.crouching = 2
@@ -9865,8 +9865,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.einhander then -- Pawcio's Einhander
 		self.einhander.tactical_reload = 1
 		self.einhander.has_description = false														
-		self.einhander.AMMO_MAX = 120
-		self.einhander.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.einhander.AMMO_MAX = 80
+		self.einhander.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.einhander.spread.standing = 3
 		self.einhander.spread.crouching = 2
 		self.einhander.spread.steelsight = 1
@@ -11043,7 +11043,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3m203.desc_id = "bm_m203_weapon_sc_desc"
 		self.g3m203.has_description = true
 		self.g3m203.tactical_reload = 1
-		self.g3m203.AMMO_MAX = 120
+		self.g3m203.AMMO_MAX = 100
 		self.g3m203.CLIP_AMMO_MAX = 30
 		self.g3m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.g3m203.fire_mode_data.fire_rate = 0.1

@@ -1593,6 +1593,22 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>	
 	
+	<!--NYPD spooc thanks jarey underscore-->
+	<model path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<object path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<sequence_manager path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1_contour"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1_husk" load="true"/>
+	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_il"/>
+	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_df"/>
+	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_gasmask_df"/>
+	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_df"/>
+	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_nm"/>
+	<effect path="units/pd2_mod_nypd/effects/particles/character/cloaker_goggle"/>
+	
 	<!--nypd dozer stuff-->	
 	<!--green-->
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"/>

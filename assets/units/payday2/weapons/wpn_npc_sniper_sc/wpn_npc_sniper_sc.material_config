@@ -1,0 +1,9 @@
+<materials version="3" group="wpn_npc_sniper_sc">
+	<material name="p1" render_template="generic:DIFFUSE_TEXTURE" version="2">
+		<diffuse_texture file="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_p1_df" />
+	</material>
+	<material name="third_sight" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sight_df" />
+		<bump_normal_texture file="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sight_nm" />
+	</material>
+</materials>

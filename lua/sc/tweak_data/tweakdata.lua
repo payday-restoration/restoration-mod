@@ -394,9 +394,13 @@ if not tweak_data then return end
 				{"assault_rifle"}
 			}
 		}
-		if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") then
+		if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") or SystemFS:exists("assets/mod_overrides/Mosin Nagant M9130 Obrez/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"snp"})
 		end		
+
+		if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
+			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
+		end				
 		
 		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})

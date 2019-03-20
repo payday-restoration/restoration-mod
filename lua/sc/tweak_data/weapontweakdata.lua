@@ -8942,6 +8942,47 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.can_shoot_through_wall = true		
 		self.m1894.panic_suppression_chance = 0.0
 		end				
+
+	if self.obrez then --Pawcio's obrez Nagant M91/30 Obrez
+		self.obrez.categories = {
+			"snp"
+		}		
+		self.obrez.has_description = true
+		self.obrez.desc_id = "bm_ap_weapon_sc_desc"
+		self.obrez.CLIP_AMMO_MAX = 10
+		self.obrez.AMMO_MAX = 30
+		self.obrez.uses_clip = 1
+		self.obrez.clip_capacity = 5		
+		self.obrez.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.obrez.fire_mode_data.fire_rate = 1
+		self.obrez.spread.standing = 3
+		self.obrez.spread.crouching = 2
+		self.obrez.spread.steelsight = 1
+		self.obrez.spread.moving_standing = 4
+		self.obrez.spread.moving_crouching = 3
+		self.obrez.spread.moving_steelsight = 2
+		self.obrez.kick.standing = self.huntsman.kick.standing
+		self.obrez.kick.crouching = self.huntsman.kick.standing
+		self.obrez.kick.steelsight = self.huntsman.kick.standing
+		self.obrez.stats = {
+			damage = 200,
+			spread = 19,
+			recoil = 14,
+			spread_moving = 10,
+			zoom = 1,
+			concealment = 15,
+			suppression = 3,
+			alert_size = 3,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.obrez.stats_modifiers = {
+			damage = 1,
+		}
+		self.obrez.panic_suppression_chance = 0.0
+		end						
 		
 		if self.scar_m203 then --Pawcio's SCAR L/M203
 			self.scar_m203.desc_id = "bm_m203_weapon_sc_desc"
@@ -11172,9 +11213,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 6,
 			spread_moving = 6,
 			zoom = 3,
-			alert_size = 20,			
 			concealment = 7,
-			suppression = 20,
+			suppression = 2,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -11350,8 +11391,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.vp70.panic_suppression_chance = 0.0			
-		end						
-
+		end		
 
 		if self.scarl then --Pawcio's SCAR L
 			self.scarl.has_description = false		
@@ -11383,6 +11423,44 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.scarl.panic_suppression_chance = 0.0
+		end			
+
+
+		if self.volmer then --Alcat's HK-something Volmer
+			self.volmer.categories = {
+				"lmg",
+				"smg"
+			}
+			self.volmer.use_data.selection_index = 1			
+			self.volmer.CLIP_AMMO_MAX = 90 --this doesn't make sense mag-wise but whatever
+			self.volmer.AMMO_MAX = 225
+			self.volmer.AMMO_PICKUP = self:_pickup_chance(225, 2)
+			self.volmer.fire_mode_data.fire_rate = 0.06315789473
+			self.volmer.auto.fire_rate = 0.06315789473
+			self.volmer.spread.standing = 3
+			self.volmer.spread.crouching = 2
+			self.volmer.spread.steelsight = 1
+			self.volmer.spread.moving_standing = 4
+			self.volmer.spread.moving_crouching = 3
+			self.volmer.spread.moving_steelsight = 2
+			self.volmer.kick.standing = self.new_m4.kick.standing
+			self.volmer.kick.crouching = self.new_m4.kick.standing
+			self.volmer.kick.steelsight = self.new_m4.kick.standing
+			self.volmer.panic_suppression_chance = 0.1
+			self.volmer.stats = {
+				damage = 29,
+				spread = 15,
+				recoil = 18,
+				spread_moving = 10,
+				zoom = 3,
+				concealment = 5,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+		}
 		end	
 
 	if self.mpx then --Pawcio's MPX

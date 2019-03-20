@@ -40822,6 +40822,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_scar_m203_barrel_long.stats = { 
 						value = 4,
 						spread = 1,
+						damage = 5,												
 						concealment = -2
 				}			
 				self.parts.wpn_fps_upg_scar_m203_mag_pull_assist.stats = { 
@@ -42809,7 +42810,49 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						reload = 2
 					}		
 				self.parts.wpn_fps_ass_fal_m_quick.custom_stats = {reload_speed_mult = 1.1}																																											
-			end								
+			end	
+
+		if self.parts.wpn_fps_pis_beretta_ns_vintage then 	--Alcat & carl ruins everything's Various Attachments for the Beretta	
+				self.parts.wpn_fps_pis_beretta_ns_vintage.stats = {
+						value = 1,
+						suppression = 13,
+						alert_size = 13,
+						spread = 2,
+						recoil = -1,
+						damage = 5,
+						concealment = -4
+					}			
+				self.parts.wpn_fps_pis_beretta_body_sword.stats = {
+						value = 1
+					}
+				self.parts.wpn_fps_pis_b93r_comp_93r.stats = {
+						value = 4,
+						suppression = -2,
+						alert_size = -1,
+						damage = 5,
+						recoil = 2,
+						concealment = -3
+					}					
+				self.parts.wpn_fps_pis_beretta_co_equal.stats = {
+						value = 3,
+						damage = 5,
+						spread = 2,
+						concealment = -3
+					}										
+				self.parts.wpn_fps_pis_beretta_m_spike.stats = {
+						value = 1
+					}	
+				self.parts.wpn_fps_pis_b93r_vertgrip.stats = {
+						value = 1,
+						spread = 1,
+						spread_moving = 2,
+						concealment = -2
+					}																									
+				self.parts.wpn_fps_pis_b93r_stock.stats = {
+						recoil = 1,
+						value = 1						
+					}															
+			end					
 						
 		if self.wpn_fps_smg_owen then 	-- Silent Enforcer's Owen Gun		
 				self.parts.wpn_fps_smg_owen_m_double.stats = {
@@ -42843,6 +42886,32 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						recoil = 2,
 					}					
 			end		
+
+		if self.wpn_fps_lmg_volmer then 	-- Alcat's HK-something Volmer
+				self.parts.wpn_fps_lmg_volmer_s_retract.stats = {
+						value = 0,
+						concealment = 1
+					}							
+				self.parts.wpn_fps_lmg_volmer_b_long.stats = {
+						value = 4,
+						spread = 2,
+						recoil = 1,
+						spread_moving = -2,
+						concealment = -2
+					}					
+			end		
+
+		if self.wpn_fps_snp_obrez then 	-- Pawcio's Obrez
+				self.parts.wpn_fps_upg_obrez_ns_supp.stats = {
+						value = 6,
+						suppression = 13,
+						alert_size = 13,
+						recoil = 1,
+						spread = -2,
+						spread_moving = -1,
+						concealment = 0
+					}					
+			end								
 
 		if self.wpn_fps_shot_mp153 then -- Pawcio's Baikal MP153		
 				self.parts.wpn_fps_upg_mp153_ammo_000_magnum.pcs = nil 
@@ -42969,19 +43038,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end					
 
 		if self.wpn_fps_pis_px4 then -- Pawcio's PX4 Storm		
-				self.parts.wpn_fps_upg_px4_ns_tact_flash.stats = {
-						value = 4,
-						damage = 5,
-						recoil = -1,
-						concealment = 1,
-						spread = -1
-					}					
-				self.parts.wpn_fps_upg_px4_ns_comp_long.stats = {
-						value = 2,
-						recoil = -1,						
-						damage = 5,
-						concealment = 1
-					}										
 				self.parts.wpn_fps_upg_px4_sight_dot.stats = {
 						value = 1
 					}	
@@ -42993,11 +43049,15 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						recoil = 1,
 						concealment = -1
 					}
+				self.parts.wpn_fps_upg_px4_barrel_sd.stats = {
+						value = 1,
+						recoil = 1
+					}			
 				self.parts.wpn_fps_upg_px4_slide_inox.stats = {
 						value = 1,
 						damage = 1,
 						concealment = -1
-					}							
+					}												
 				self.parts.wpn_fps_upg_px4_ammo_9mm.stats = {
 						value = 10,
 						alert_size = -1,

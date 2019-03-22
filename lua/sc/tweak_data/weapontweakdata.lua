@@ -8952,7 +8952,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obrez.desc_id = "bm_ap_weapon_sc_desc"
 		self.obrez.CLIP_AMMO_MAX = 10
 		self.obrez.AMMO_MAX = 30
-		self.obrez.uses_clip = 1
+		self.obrez.uses_clip = true
 		self.obrez.clip_capacity = 5		
 		self.obrez.AMMO_PICKUP = self:_pickup_chance(30, 2)
 		self.obrez.fire_mode_data.fire_rate = 1
@@ -11366,7 +11366,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 5,
 			reload = 11
 		}
-		self.m45.panic_suppression_chance = 0.1	
+		self.m3.panic_suppression_chance = 0.1	
 	end			
 
 	if self.ks23 then --Pawcio's KS23

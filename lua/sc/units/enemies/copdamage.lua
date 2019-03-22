@@ -729,8 +729,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield") then
 	        self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
-		--nypd blues	
-		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then
+		--nypd and lapd blues	
+		elseif self._unit:name() == Idstring("units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1") or self._unit:name() == Idstring("units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then
 	        self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		--welcome to city swat hell lol

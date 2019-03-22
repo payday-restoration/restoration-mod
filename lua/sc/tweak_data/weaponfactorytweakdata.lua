@@ -39912,18 +39912,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = 1,
 					concealment = -2
 				}	
-				self.parts.wpn_fps_upg_obr5_handguard_short.stats = {
-					value = 2,
-					spread = -1,	
-					recoil = -1,						
-					concealment = 2
-				}					
-				self.parts.wpn_fps_upg_obr5_handguard_long.stats = {
-					value = 2,
-					spread = 1,	
-					recoil = 1,						
-					concealment = -2
-				}															
 			self.parts.wpn_fps_ass_stg44_sing.stats = {
 					value = 0
 				}		

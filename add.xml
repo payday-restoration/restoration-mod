@@ -1825,6 +1825,43 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />		
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />				
 	
+	<!--LAPD swat-->
+	<!--LAPD heavy r870-->	
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2" load="true"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2_husk" load="true"/>
+	
+	<!--LAPD heavy m4-->
+	<object path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"/>
+	<model path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1" load="true"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1_contour"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1_husk" load="true"/>		
+	
+	<!--LAPD swat mp5-->
+	<object path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1"/>
+	<model path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1" load="true"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1_contour"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1_husk" load="true"/>	
+	
+	<!--LAPD swat r870-->
+	<object path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2"/>
+	<model path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2" load="true"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2_contour"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2_husk" load="true"/>		
+	
+	<!--LAPD shared_textures crap-->
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_body_df" />	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	
+	
 	<!--fuck u183 what a pile of shit-->
 	<object path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"/>

@@ -12981,6 +12981,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_cop_4"
 				}
 			},
+			lapd = {
+				path = "units/pd2_mod_lapd/characters/",
+				list = {
+					"ene_lapd_light_1",
+					"ene_lapd_light_2",
+					"ene_lapd_heavy_1",
+					"ene_lapd_heavy_2"
+				}
+			},
 			halloween = {
 				path = "units/pd2_mod_halloween/characters/",
 				list = {

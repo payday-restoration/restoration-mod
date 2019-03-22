@@ -761,7 +761,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							}
 							group.is_chasing = true
 							self:_set_objective_to_enemy_group(group, grp_objective)
-							self:_voice_deathguard_start(group)
+							self:_voice_deathguard_start(group) --roger/copy that
 							return
 						end
 					end
@@ -858,6 +858,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 											self:_merge_coarse_path_by_area(alternate_assault_path)
 											alternate_assault_area = search_area
 											alternate_assault_area_from = assault_from_area
+						                	self:_voice_deathguard_start(group) --roger/copy that
 										end
 									end
 									found_areas[search_area] = nil

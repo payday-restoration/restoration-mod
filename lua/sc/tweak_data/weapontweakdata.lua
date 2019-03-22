@@ -6716,6 +6716,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 		self.contraband.has_description = true
 		self.contraband.AMMO_MAX = 60
+		self.contraband.tactical_reload = 1
 		self.contraband.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.contraband.FIRE_MODE = "auto"
 		self.contraband.fire_mode_data.fire_rate = 0.1
@@ -8989,8 +8990,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203.has_description = true		
 			self.scar_m203.tactical_reload = 1
 			self.scar_m203.fire_mode_data.fire_rate = 0.096
-			self.scar_m203.AMMO_MAX = 90
-			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(90, 2)
+			self.scar_m203.AMMO_MAX = 120
+			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
 			self.scar_m203.spread.standing = 3
 			self.scar_m203.spread.crouching = 2
 			self.scar_m203.spread.steelsight = 1
@@ -9015,6 +9016,99 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.scar_m203.panic_suppression_chance = 0.0
+			--Explosive GL
+			self.scar_m203gl.spread.standing = 3
+			self.scar_m203gl.spread.crouching = 2
+			self.scar_m203gl.spread.steelsight = 1
+			self.scar_m203gl.spread.moving_standing = 4
+			self.scar_m203gl.spread.moving_crouching = 3
+			self.scar_m203gl.spread.moving_steelsight = 2
+			self.scar_m203gl.kick.standing = self.huntsman.kick.standing
+			self.scar_m203gl.kick.crouching = self.huntsman.kick.standing
+			self.scar_m203gl.kick.steelsight = self.huntsman.kick.standing
+			self.scar_m203gl.AMMO_PICKUP = {0.12, 0.38}
+			self.scar_m203gl.panic_suppression_chance = 0.0
+			self.scar_m203gl.ignore_damage_upgrades = true
+			self.scar_m203gl.AMMO_MAX = 6
+			self.scar_m203gl.stats = {
+				damage = 200,
+				spread = 21,
+				recoil = 9,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.scar_m203gl.stats_modifiers = {damage = 4}			
+			--40mm Buck GL
+			self.scar_m203buckshot.categories = {"shotgun"}
+			self.scar_m203buckshot.rays = 6
+			self.scar_m203buckshot.damage_near = 900
+			self.scar_m203buckshot.damage_far = 1800			
+			self.scar_m203buckshot.spread.standing = 3
+			self.scar_m203buckshot.spread.crouching = 2
+			self.scar_m203buckshot.spread.steelsight = 1
+			self.scar_m203buckshot.spread.moving_standing = 4
+			self.scar_m203buckshot.spread.moving_crouching = 3
+			self.scar_m203buckshot.spread.moving_steelsight = 2
+			self.scar_m203buckshot.kick.standing = self.huntsman.kick.standing
+			self.scar_m203buckshot.kick.crouching = self.huntsman.kick.standing
+			self.scar_m203buckshot.kick.steelsight = self.huntsman.kick.standing
+			self.scar_m203buckshot.AMMO_PICKUP = {0.3, 0.75}
+			self.scar_m203buckshot.panic_suppression_chance = 0.0
+			self.scar_m203buckshot.ignore_damage_upgrades = false
+			self.scar_m203buckshot.AMMO_MAX = 15
+			self.scar_m203buckshot.stats = {
+				damage = 300,
+				spread = 9,
+				recoil = 15,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}	
+			--40mm Flechette GL
+			self.scar_m203flechette.categories = {"shotgun"}
+			self.scar_m203flechette.rays = 9
+			self.scar_m203flechette.damage_near = 1100
+			self.scar_m203flechette.damage_far = 2200			
+			self.scar_m203flechette.spread.standing = 3
+			self.scar_m203flechette.spread.crouching = 2
+			self.scar_m203flechette.spread.steelsight = 1
+			self.scar_m203flechette.spread.moving_standing = 4
+			self.scar_m203flechette.spread.moving_crouching = 3
+			self.scar_m203flechette.spread.moving_steelsight = 2
+			self.scar_m203flechette.kick.standing = self.huntsman.kick.standing
+			self.scar_m203flechette.kick.crouching = self.huntsman.kick.standing
+			self.scar_m203flechette.kick.steelsight = self.huntsman.kick.standing
+			self.scar_m203flechette.AMMO_PICKUP = {0.4, 1}
+			self.scar_m203flechette.panic_suppression_chance = 0.0
+			self.scar_m203flechette.ignore_damage_upgrades = false
+			self.scar_m203flechette.AMMO_MAX = 20
+			self.scar_m203flechette.stats = {
+				damage = 200,
+				spread = 11,
+				recoil = 14,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}				
 		end
 
 		if self.duke1911 then --Pawcio's Dick Kickem 1911
@@ -11055,9 +11149,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3m203.desc_id = "bm_m203_weapon_sc_desc"
 		self.g3m203.has_description = true
 		self.g3m203.tactical_reload = 1
-		self.g3m203.AMMO_MAX = 90
+		self.g3m203.AMMO_MAX = 80
 		self.g3m203.CLIP_AMMO_MAX = 30
-		self.g3m203.AMMO_PICKUP = self:_pickup_chance(90, 2)
+		self.g3m203.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.g3m203.fire_mode_data.fire_rate = 0.1
 		self.g3m203.CAN_TOGGLE_FIREMODE = true
 		self.g3m203.auto = {}
@@ -11083,6 +11177,99 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
+		--Explosive GL
+		self.g3_m203gl.spread.standing = 3
+		self.g3_m203gl.spread.crouching = 2
+		self.g3_m203gl.spread.steelsight = 1
+		self.g3_m203gl.spread.moving_standing = 4
+		self.g3_m203gl.spread.moving_crouching = 3
+		self.g3_m203gl.spread.moving_steelsight = 2
+		self.g3_m203gl.kick.standing = self.huntsman.kick.standing
+		self.g3_m203gl.kick.crouching = self.huntsman.kick.standing
+		self.g3_m203gl.kick.steelsight = self.huntsman.kick.standing
+		self.g3_m203gl.AMMO_PICKUP = {0.12, 0.38}
+		self.g3_m203gl.panic_suppression_chance = 0.0
+		self.g3_m203gl.ignore_damage_upgrades = true
+		self.g3_m203gl.AMMO_MAX = 6
+		self.g3_m203gl.stats = {
+			damage = 200,
+			spread = 21,
+			recoil = 9,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 18,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.g3_m203gl.stats_modifiers = {damage = 4}	
+		--40mm Buck GL
+		self.g3_m203buckshot.categories = {"shotgun"}
+		self.g3_m203buckshot.rays = 6
+		self.g3_m203buckshot.damage_near = 900
+		self.g3_m203buckshot.damage_far = 1800			
+		self.g3_m203buckshot.spread.standing = 3
+		self.g3_m203buckshot.spread.crouching = 2
+		self.g3_m203buckshot.spread.steelsight = 1
+		self.g3_m203buckshot.spread.moving_standing = 4
+		self.g3_m203buckshot.spread.moving_crouching = 3
+		self.g3_m203buckshot.spread.moving_steelsight = 2
+		self.g3_m203buckshot.kick.standing = self.huntsman.kick.standing
+		self.g3_m203buckshot.kick.crouching = self.huntsman.kick.standing
+		self.g3_m203buckshot.kick.steelsight = self.huntsman.kick.standing
+		self.g3_m203buckshot.AMMO_PICKUP = {0.3, 0.75}
+		self.g3_m203buckshot.panic_suppression_chance = 0.0
+		self.g3_m203buckshot.ignore_damage_upgrades = false
+		self.g3_m203buckshot.AMMO_MAX = 15
+		self.g3_m203buckshot.stats = {
+			damage = 300,
+			spread = 9,
+			recoil = 15,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 18,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}	
+		--40mm Flechette GL
+		self.g3_m203flechette.categories = {"shotgun"}
+		self.g3_m203flechette.rays = 9
+		self.g3_m203flechette.damage_near = 1100
+		self.g3_m203flechette.damage_far = 2200			
+		self.g3_m203flechette.spread.standing = 3
+		self.g3_m203flechette.spread.crouching = 2
+		self.g3_m203flechette.spread.steelsight = 1
+		self.g3_m203flechette.spread.moving_standing = 4
+		self.g3_m203flechette.spread.moving_crouching = 3
+		self.g3_m203flechette.spread.moving_steelsight = 2
+		self.g3_m203flechette.kick.standing = self.huntsman.kick.standing
+		self.g3_m203flechette.kick.crouching = self.huntsman.kick.standing
+		self.g3_m203flechette.kick.steelsight = self.huntsman.kick.standing
+		self.g3_m203flechette.AMMO_PICKUP = {0.4, 1}
+		self.g3_m203flechette.panic_suppression_chance = 0.0
+		self.g3_m203flechette.ignore_damage_upgrades = false
+		self.g3_m203flechette.AMMO_MAX = 20
+		self.g3_m203flechette.stats = {
+			damage = 200,
+			spread = 11,
+			recoil = 14,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 18,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}						
 	end
 
 	if self.hk33 then --Mira's HK33  

@@ -10042,6 +10042,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0.05,
 					0.15
 				},
+				FBI_spoocs = {
+					0,
+					0.05,
+					0.1
+				},				
 				CS_tanks = {
 					0,
 					0.01,

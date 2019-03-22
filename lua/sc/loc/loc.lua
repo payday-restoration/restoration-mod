@@ -200,8 +200,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_hajk"] = "CR 805B Rifle",
 		
-		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle"
-			
+		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
+		
+		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
+		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
+		["bm_wp_wpn_fps_upg_scar_m203_flechette"] = "40MM Flechette Rounds",
+		["bm_wp_wpn_fps_upg_scar_m203_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",		
+
+		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot"] = "40MM Buckshot Rounds",
+		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
+		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
+		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",				
 	})
 end)
 
@@ -915,7 +924,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##75%##. The remaining damage will be applied directly.\n\nThe ##75%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##20## second cooldown but time remaining will be lessened by ##1## second per enemy killed.",		
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##75%##. The remaining damage will be applied directly.\n\nThe ##75%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##30## second cooldown but time remaining will be lessened by ##1## second per enemy killed.",		
 
 		--it's not a war crime if they're not people--
 		["menu_deck20_3_desc_sc"] = "You gain ##10%## more health.",	

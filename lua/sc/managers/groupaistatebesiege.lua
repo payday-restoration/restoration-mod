@@ -378,7 +378,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						  local current_objective = group.objective
 				              if current_objective.coarse_path then
 			                      if not u_data.unit:sound():speaking(time) then
-	                      		    u_data.unit:sound():say("m01", true)
+	                      		    u_data.unit:sound():say("r01", true)
 						        end	
 	                        end					   
 				        end	

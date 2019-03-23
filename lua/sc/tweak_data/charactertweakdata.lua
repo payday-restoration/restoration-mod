@@ -1526,11 +1526,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_medic = deep_clone(self.tank)
 		self.tank_medic.headshot_dmg_mul = 18.75
 		self.tank_medic.HEALTH_INIT = 400
-		if job == "mad" then 
+		--[[if job == "mad" then 
 			self.tank_medic.custom_voicework = nil
 		else
 			self.tank_medic.custom_voicework = "medicdozer"
-		end
+		end]]--
 		self.tank_medic.is_special = true
 		table.insert(self.tank_medic.tags, "medic")
 		table.insert(self._enemy_list, "tank_medic")

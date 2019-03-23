@@ -74,11 +74,11 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_3.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")	
 		
-		_G.voiceline_framework:register_unit("medicdozer")
+		--[[_G.voiceline_framework:register_unit("medicdozer")
 		_G.voiceline_framework:register_line_type("medicdozer", "heal")
 		for i = 1, 31 do
 			_G.voiceline_framework:register_voiceline("medicdozer", "heal", ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg")
-		end
+		end]]--
 	   
 	   --LPF
 		

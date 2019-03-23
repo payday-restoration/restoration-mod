@@ -15,6 +15,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("grenadier", "spawn")
 		_G.voiceline_framework:register_line_type("grenadier", "contact")
 		_G.voiceline_framework:register_line_type("grenadier", "use_gas")	
+		_G.voiceline_framework:register_line_type("grenadier", "pain")	
 		_G.voiceline_framework:register_line_type("olpf", "contact")	
 		_G.voiceline_framework:register_line_type("olpf", "death")
 		_G.voiceline_framework:register_line_type("olpf", "gogo")
@@ -56,6 +57,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("skeleton", "retreat")
 		_G.voiceline_framework:register_line_type("skeleton", "clear")
 		
+		--Grenadier (thanks scruffy)
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death1.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death2.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death3.ogg")
@@ -72,7 +74,14 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_1.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_2.ogg")
 		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_3.ogg")
-		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")	
+		_G.voiceline_framework:register_voiceline("grenadier", "use_gas", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_gas_4.ogg")			
+		
+		_G.voiceline_framework:register_voiceline("grenadier", "pain", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_hurt1.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "pain", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_hurt2.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "pain", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_hurt3.ogg")
+		_G.voiceline_framework:register_voiceline("grenadier", "pain", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_hurt4.ogg")	
+		_G.voiceline_framework:register_voiceline("grenadier", "pain", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_hurt5.ogg")	
+		_G.voiceline_framework:register_voiceline("grenadier", "pain", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_hurt6.ogg")	
 		
 		--[[_G.voiceline_framework:register_unit("medicdozer")
 		_G.voiceline_framework:register_line_type("medicdozer", "heal")
@@ -80,7 +89,7 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("medicdozer", "heal", ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg")
 		end]]--
 	   
-	   --LPF
+	   --LPF (thanks VxWolf)
 		
 		for i = 1, 5 do
 			_G.voiceline_framework:register_voiceline("olpf", "contact", ModPath .. "assets/oggs/voiceover/olpf/contact/contact" .. i .. ".ogg")
@@ -134,7 +143,7 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("tdozer", "death", ModPath .. "assets/oggs/voiceover/pdth/death/death" .. i .. ".ogg")
 		end	
 		
-		--tspook temp lines
+		--Tspook lines
 		
 		for i = 1, 40 do
 			_G.voiceline_framework:register_voiceline("tspook", "kill", ModPath .. "assets/oggs/voiceover/tspook/kill/kill" .. i .. ".ogg")

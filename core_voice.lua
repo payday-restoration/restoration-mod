@@ -21,6 +21,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("olpf", "heal")
 		_G.voiceline_framework:register_line_type("olpf", "pain")
 		_G.voiceline_framework:register_line_type("olpf", "spawn")
+		_G.voiceline_framework:register_line_type("olpf", "kill")
 		_G.voiceline_framework:register_line_type("autumn", "contact")	
 		_G.voiceline_framework:register_line_type("autumn", "death")
 		_G.voiceline_framework:register_line_type("autumn", "gogo")
@@ -79,18 +80,18 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("medicdozer", "heal", ModPath .. "assets/oggs/voiceover/medicdozer/heal" .. i .. ".ogg")
 		end
 	   
-	   -- OLPF
+	   --LPF
 		
 		for i = 1, 5 do
 			_G.voiceline_framework:register_voiceline("olpf", "contact", ModPath .. "assets/oggs/voiceover/olpf/contact/contact" .. i .. ".ogg")
 		end		
-		for i = 1, 8 do
+		for i = 1, 6 do
 			_G.voiceline_framework:register_voiceline("olpf", "death", ModPath .. "assets/oggs/voiceover/olpf/death/death" .. i .. ".ogg")
 		end		
 		for i = 1, 5 do
 			_G.voiceline_framework:register_voiceline("olpf", "gogo", ModPath .. "assets/oggs/voiceover/olpf/gogo/gogo" .. i .. ".ogg")
 		end		
-		for i = 1, 4 do
+		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("olpf", "heal", ModPath .. "assets/oggs/voiceover/olpf/heal/heal" .. i .. ".ogg")
 		end		
 		for i = 1, 8 do
@@ -98,6 +99,9 @@ if not _G.restorationvoice then
 		end		
 		for i = 1, 6 do
 			_G.voiceline_framework:register_voiceline("olpf", "spawn", ModPath .. "assets/oggs/voiceover/olpf/spawn/spawn" .. i .. ".ogg")
+		end	
+		for i = 1, 12 do
+			_G.voiceline_framework:register_voiceline("olpf", "kill", ModPath .. "assets/oggs/voiceover/olpf/kill/kill" .. i .. ".ogg")
 		end			  
 
 		-- Autumn

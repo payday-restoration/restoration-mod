@@ -200,7 +200,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 10,
 			duration = {2, 4},
-			interval = {1.5, 2.5},
+			interval = {1.5, 3.5},
 			group_min = 0,
 			queue = "heal"
 		}		

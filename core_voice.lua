@@ -11,6 +11,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_unit("pdth")
 		_G.voiceline_framework:register_unit("autumn")
 		_G.voiceline_framework:register_unit("skeleton")
+		_G.voiceline_framework:register_unit("bruce")
 		_G.voiceline_framework:register_line_type("grenadier", "death")
 		_G.voiceline_framework:register_line_type("grenadier", "spawn")
 		_G.voiceline_framework:register_line_type("grenadier", "contact")
@@ -56,6 +57,15 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("skeleton", "rescue_civ")
 		_G.voiceline_framework:register_line_type("skeleton", "retreat")
 		_G.voiceline_framework:register_line_type("skeleton", "clear")
+		_G.voiceline_framework:register_line_type("bruce", "buddy_died")
+		_G.voiceline_framework:register_line_type("bruce", "clear")
+		_G.voiceline_framework:register_line_type("bruce", "contact")
+		_G.voiceline_framework:register_line_type("bruce", "death")
+		_G.voiceline_framework:register_line_type("bruce", "gogo")
+		_G.voiceline_framework:register_line_type("bruce", "kill")
+		_G.voiceline_framework:register_line_type("bruce", "pain")
+		_G.voiceline_framework:register_line_type("bruce", "rescue_civ")
+		_G.voiceline_framework:register_line_type("bruce", "spawn")
 		
 		--Grenadier (thanks scruffy)
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death1.ogg")
@@ -193,6 +203,54 @@ if not _G.restorationvoice then
 		
 		for i = 1, 17 do
 			_G.voiceline_framework:register_voiceline("skeleton", "clear", ModPath .. "assets/oggs/voiceover/skeleton/clear/clear" .. i .. ".ogg")
+		end					
+		
+		--Vet Cop thanks JimTheCookie
+		_G.voiceline_framework:register_line_type("bruce", "buddy_died")
+		_G.voiceline_framework:register_line_type("bruce", "clear")
+		_G.voiceline_framework:register_line_type("bruce", "contact")
+		_G.voiceline_framework:register_line_type("bruce", "death")
+		_G.voiceline_framework:register_line_type("bruce", "gogo")
+		_G.voiceline_framework:register_line_type("bruce", "kill")
+		_G.voiceline_framework:register_line_type("bruce", "pain")
+		_G.voiceline_framework:register_line_type("bruce", "rescue_civ")
+		_G.voiceline_framework:register_line_type("bruce", "spawn")
+		
+
+		for i = 1, 10 do
+			_G.voiceline_framework:register_voiceline("bruce", "buddy_died", ModPath .. "assets/oggs/voiceover/bruce/buddy_died/buddy_died" .. i .. ".ogg")
+		end
+
+		for i = 1, 7 do
+			_G.voiceline_framework:register_voiceline("bruce", "contact", ModPath .. "assets/oggs/voiceover/bruce/contact/contact" .. i .. ".ogg")
+		end
+
+		for i = 1, 14 do
+			_G.voiceline_framework:register_voiceline("bruce", "death", ModPath .. "assets/oggs/voiceover/bruce/death/death" .. i .. ".ogg")
+		end
+
+		for i = 1, 5 do
+			_G.voiceline_framework:register_voiceline("bruce", "gogo", ModPath .. "assets/oggs/voiceover/bruce/gogo/gogo" .. i .. ".ogg")
+		end		
+
+		for i = 1, 5 do
+			_G.voiceline_framework:register_voiceline("bruce", "pain", ModPath .. "assets/oggs/voiceover/bruce/pain/pain" .. i .. ".ogg")
+		end
+
+		for i = 1, 9 do
+			_G.voiceline_framework:register_voiceline("bruce", "kill", ModPath .. "assets/oggs/voiceover/bruce/kill/kill" .. i .. ".ogg")
+		end
+		
+		for i = 1, 7 do
+			_G.voiceline_framework:register_voiceline("bruce", "rescue_civ", ModPath .. "assets/oggs/voiceover/bruce/rescue_civ/rescue_civ" .. i .. ".ogg")
+		end
+		
+		for i = 1, 6 do
+			_G.voiceline_framework:register_voiceline("bruce", "spawn", ModPath .. "assets/oggs/voiceover/bruce/spawn/spawn" .. i .. ".ogg")
+		end
+		
+		for i = 1, 7 do
+			_G.voiceline_framework:register_voiceline("bruce", "clear", ModPath .. "assets/oggs/voiceover/bruce/clear/clear" .. i .. ".ogg")
 		end			
 		
 		--PDTH (Titan SWAT)

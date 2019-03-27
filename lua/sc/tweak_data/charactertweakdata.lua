@@ -324,15 +324,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_vet.headshot_dmg_mul = 3.4
 		self.fbi_vet.damage.bullet_dodge_chance = 65
 		self.fbi_vet.smoke_dodge_increase = 10
-			self.fbi_vet.dodge = presets.dodge.veteran
-		self.fbi_vet.allowed_stances = {cbt = true}
+		self.fbi_vet.dodge = presets.dodge.veteran
+		self.fbi_vet.allowed_stances = {cbt = true} --cock and ball torture true xddddd
 		self.fbi_vet.access = "spooc"
 		self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
 		self.fbi_vet.use_animation_on_fire_damage = false
 		self.fbi_vet.move_speed = presets.move_speed.lightning
 		self.fbi_vet.surrender = nil
 		self.fbi_vet.unintimidateable = true	
-		self.fbi_vet.custom_voicework = nil	
+		if job == "mad" then
+		   self.fbi_vet.custom_voicework = nil	
+		else   
+		   self.fbi_vet.custom_voicework = "bruce"
+		end   
 		self.fbi_vet.dodge_with_grenade = {
 			smoke = {duration = {
 				12,
@@ -350,7 +354,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		}	
 		self.fbi_vet.static_dodge_preset = true
-		self.fbi_vet.die_sound_event = "l1n_x01a_any_3p"
+		if job == "mad" then
+		   self.fbi_vet.die_sound_event = "l1n_x01a_any_3p"
+		else   
+		   self.fbi_vet.die_sound_event = nil
+		end   
+		if job == "mad" then 
+		    self.fbi_vet.speech_prefix_p1 = self._prefix_data_p1.swat()
+		    self.fbi_vet.speech_prefix_p2 = self._speech_prefix_p2
+		    self.fbi_vet.speech_prefix_count = 4
+		else
+		    self.fbi_vet.speech_prefix_p1 = "heck"
+		    self.fbi_vet.speech_prefix_count = nil	
+		end
 		table.insert(self._enemy_list, "fbi_vet")
 	end
 

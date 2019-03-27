@@ -519,7 +519,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.chatter = presets.enemy_chatter.swat
 		self.swat.melee_weapon = nil
 		self.swat.melee_weapon_dmg_multiplier = 1
-		if job == "mad" or job == "hvh" or job == "haunted" or job == "nail" or job == "help" then
+		if job == "mad" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
 		    self.swat.die_sound_event = "l1n_x01a_any_3p"
 		else	
 		    self.swat.die_sound_event = "x01a_any_3p"
@@ -594,7 +594,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "haunted" or job == "nail" or job == "help" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
 			self.heavy_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.heavy_swat.die_sound_event = "l3d_x02a_any_3p"
@@ -761,7 +761,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "haunted" or job == "nail" or job == "help" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
 			self.fbi_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.fbi_swat.die_sound_event = "l1d_x02a_any_3p"
@@ -808,9 +808,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
 		self.fbi_heavy_swat.static_melee_preset = true	
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork" or job =="wetwork_burn"  or job =="wwh"  then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork" or job =="wetwork_burn"  or job =="wwh" or job =="arm_for" then
 			self.fbi_heavy_swat.die_sound_event = "l5d_x02a_any_3p"
-		elseif job == "mad" or job == "hvh" or job == "haunted" or job == "nail" or job == "help" then
+		elseif job == "mad" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
 		    self.fbi_heavy_swat.die_sound_event = "l1n_x01a_any_3p"
 		else
 		    self.fbi_heavy_swat.die_sound_event = "l3d_x02a_any_3p"
@@ -1804,7 +1804,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
 		self.shield.die_sound_event_2 = "l4d_x02a_any_3p"
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "haunted" or job == "nail" or job == "help" then
+		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
 			self.shield.die_sound_event = "l1n_x01a_any_3p"
 		else
 			self.shield.die_sound_event = "l4d_x02a_any_3p"

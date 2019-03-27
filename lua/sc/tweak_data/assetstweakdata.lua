@@ -16,6 +16,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "bph")
 		table.insert(self.risk_pd.exclude_stages, "vit")
 		table.insert(self.risk_pd.exclude_stages, "wwh")
+		table.insert(self.risk_pd.exclude_stages, "arm_for")
 
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -25,6 +26,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "bph")	
 		table.insert(self.risk_swat.exclude_stages, "vit")	
 		table.insert(self.risk_swat.exclude_stages, "wwh")
+		table.insert(self.risk_swat.exclude_stages, "arm_for")
 		
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -34,6 +36,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "bph")
 		table.insert(self.risk_fbi.exclude_stages, "vit")
 		table.insert(self.risk_fbi.exclude_stages, "wwh")
+		table.insert(self.risk_fbi.exclude_stages, "arm_for")
 
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -43,6 +46,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "bph")
 		table.insert(self.risk_death_squad.exclude_stages, "vit")
 		table.insert(self.risk_death_squad.exclude_stages, "wwh")
+		table.insert(self.risk_death_squad.exclude_stages, "arm_for")
 
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -52,6 +56,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "bph")
 		table.insert(self.risk_easy_wish.exclude_stages, "vit")
 		table.insert(self.risk_easy_wish.exclude_stages, "wwh")
+		table.insert(self.risk_easy_wish.exclude_stages, "arm_for")
 
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -61,6 +66,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "bph")
 		table.insert(self.risk_death_wish.exclude_stages, "vit")
 		table.insert(self.risk_death_wish.exclude_stages, "wwh")
+		table.insert(self.risk_death_wish.exclude_stages, "arm_for")
 		
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -70,6 +76,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "bph")
 		table.insert(self.risk_sm_wish.exclude_stages, "vit")
 		table.insert(self.risk_sm_wish.exclude_stages, "wwh")
+		table.insert(self.risk_sm_wish.exclude_stages, "arm_for")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -81,6 +88,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"des",
 			"bph",
 			"vit",
+			"arm_for"
 			--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
 		}	
 

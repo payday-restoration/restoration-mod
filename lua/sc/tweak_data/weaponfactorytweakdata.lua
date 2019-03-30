@@ -41981,6 +41981,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					damage = 10,
 					recoil = -2,
+					spread = -1,					
 					concealment = -3,
 					total_ammo_mod = -25
 					}	
@@ -43170,7 +43171,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}						
 			end										
 
-		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Styled Mod Pack
+		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Mod Pack
 			self.parts.wpn_fps_pis_g18c_b_long.stats = {
 				value = 4,
 				spread = 1,
@@ -43238,13 +43239,11 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}	
 			self.parts.wpn_fps_snp_winchester_b_short.stats = {
 				value = 2,
-				spread = -1,				
+				spread = -1,	
 				concealment = 2
 				}	
 			self.parts.wpn_fps_pis_packrat_sl_silver.stats = {
-				value = 10,
-				recoil = 1,
-				concealment = -1
+				value = 6
 				}									
 			self.parts.wpn_fps_ass_flint_m_long.stats = {
 				value = 1,
@@ -43273,10 +43272,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = 1
 				}									
 			self.parts.wpn_fps_pis_lemming_body_silver.stats = {
-				value = 5,
-				spread = 1,
-				concealment = -1,
-				recoil = 1
+				value = 4
 				}													
 			self.parts.wpn_fps_lmg_shuno_b_long.stats = {
 				value = 3,
@@ -43298,7 +43294,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 1,
 				recoil = -2,
 				concealment = 1,				
-				spread = 1
+				spread = 2
 				}						
 			self.parts.wpn_fps_ass_contraband_b_long.stats = {
 				value = 1,
@@ -43314,7 +43310,20 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 1,
 				spread = 1,
 				concealment = -1
-				}							
+				}			
+			self.parts.wpn_fps_shot_m37_o_expert.stats = {
+				value = 0
+				}	
+			self.parts.wpn_fps_sho_b_spas12_small.stats = {
+				value = 1,
+				recoil = -2,
+				spread = -1,
+				concealment = 8
+				}		
+			self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200			
+				}						
 			end		
 
 		if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint CompM4s Sight
@@ -45039,7 +45048,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = 6,
 				concealment = 1
 			}
-		end		
+		end			
 		
 		if self.wpn_fps_lmg_rpd then --Pawcio's RPD
 		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
@@ -45079,7 +45088,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		table.list_append(self.wpn_fps_lmg_zweihander.uses_parts, {
 				"wpn_fps_upg_i_autofire"
 			})	
-		self.parts.wpn_fps_upg_zweihander_o_vanilia.pcs = nil --fuck you
+		self.parts.wpn_fps_upg_zweihander_o_vanilia.pcs = nil 
 		self.wpn_fps_lmg_zweihander.override = { 
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
@@ -45092,7 +45101,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}	
 		end	
 
-		if self.wpn_fps_lmg_mg4 then --Pawcio's MG 4 
+		if self.wpn_fps_lmg_mg4 then --Pawcio's MG 4
 		self.parts.wpn_fps_upg_mg4_mag_pouch.stats = {
 				value = 2,
 				spread_moving = 2,
@@ -45105,7 +45114,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				recoil = 1,
 				concealment = -1,
 			}		
-		self.parts.wpn_fps_upg_mg4_irons.pcs = nil
+		self.parts.wpn_fps_upg_mg4_irons.pcs = nil --wanted to have functional iron sights w/ attachments. I'll probably do something with that later.
 		self.parts.wpn_fps_upg_mg4_barrel_long.stats = {
 				value = 4,
 				spread = 2,
@@ -45359,6 +45368,70 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					extra_ammo = -10
 			}					
 		end		
+
+		if self.wpn_fps_smg_aug9mm then --Pawcio's AUG 9mm(ALL CAPS!!!!) 
+			table.remove(self.wpn_fps_smg_aug9mm.uses_parts, 7)				
+			self.parts.wpn_fps_upg_aug9mm_mag_ext.stats = {
+				value = 2,
+				spread_moving = -1,
+				concealment = -1,
+				extra_ammo = 8,
+				reload = -1
+			}			
+			self.parts.wpn_fps_upg_aug9mm_barrel_long.stats = {
+				value = 2,
+				recoil = 1,
+				spread = 1,				
+				concealment = -2				
+			}			
+			self.parts.wpn_fps_upg_aug9mm_barrel_medium.stats = {
+				value = 2,
+				recoil = 1,
+				concealment = -1				
+			}									
+			self.parts.wpn_fps_upg_aug9mm_supp_osprey.stats = {
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
+				damage = 5,
+				spread = 1,
+				concealment = -3
+			}		
+			self.parts.wpn_fps_upg_aug9mm_supp_gm9.stats = {
+				value = 3,
+				suppression = 8,
+				damage = 5,		
+				recoil = -1,				
+				alert_size = 8
+			}		
+			self.parts.wpn_fps_upg_aug9mm_vg_m900.stats = {
+				value = 1
+			}			
+			self.parts.wpn_fps_upg_aug9mm_vg_bcm.stats = {
+				value = 1,
+				spread = 0,
+				spread_moving = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_upg_aug9mm_vg_fab_reg.stats = {
+				value = 2,
+				recoil = 1,
+				spread_moving = 1,		
+				concealment = -1								
+			}		
+			self.parts.wpn_fps_upg_aug9mm_vg_troy.stats = {
+				value = 1,
+				recoil = 1,
+				spread_moving = 2,
+				concealment = -1
+			}						
+			self.parts.wpn_fps_upg_aug9mm_vg_troy_short.stats = {
+				value = 1,
+				spread = 1,
+				spread_moving = 2,
+				concealment = -2
+			}			
+		end				
 
 		--Incendiary Slugs are awesome--
 

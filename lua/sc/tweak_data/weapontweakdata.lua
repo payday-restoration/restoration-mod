@@ -11115,7 +11115,40 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.heffy_762.panic_suppression_chance = 0.0
-	end												
+	end			
+
+	if self.aug9mm then --Pawcio's Steyr AUG 9mm
+		self.aug9mm.use_data.selection_index = 2	
+		self.aug9mm.categories = {
+			"smg"
+		}		
+		self.aug9mm.AMMO_MAX = 180
+		self.aug9mm.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.aug9mm.spread.standing = 3
+		self.aug9mm.spread.crouching = 2
+		self.aug9mm.spread.steelsight = 1
+		self.aug9mm.spread.moving_standing = 4
+		self.aug9mm.spread.moving_crouching = 3
+		self.aug9mm.spread.moving_steelsight = 2
+		self.aug9mm.kick.standing = self.new_m4.kick.standing
+		self.aug9mm.kick.crouching = self.new_m4.kick.standing
+		self.aug9mm.kick.steelsight = self.new_m4.kick.standing
+		self.aug9mm.stats = {
+			damage = 29,
+			spread = 16,
+			recoil = 18,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.aug9mm.panic_suppression_chance = 0.0	
+	end													
 
 	if self.dp28 then --Killerwolf & Kitsune Jimmy's DP-28 
 		self.dp28.categories = {"assault_rifle"}	

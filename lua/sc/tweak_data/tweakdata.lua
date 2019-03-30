@@ -402,7 +402,11 @@ if not tweak_data then return end
 			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
 		end				
 		
-		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") then
+		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/AUG A3 9mm XS/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})
 		end
 	end

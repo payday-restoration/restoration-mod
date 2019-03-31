@@ -1159,8 +1159,6 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_swat_r870/ene_murky_swat_r870_husk" force="false" load="true"/>-->
 	
-	<!--we need to cleaup the murky files lots of unused shit in there-->
-	
 	<!--murky blue SWAT MP5-->
 	<object path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false"/>
@@ -1170,9 +1168,14 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light_husk" force="false" load="true"/>	
 	
-	<!--murky blue SWAT MP5-->
-	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870" force="false" load="true"/>	
-	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870_husk" force="false" load="true"/>	
+	<!--murky blue SWAT r870-->
+	<object path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870_husk" force="false" load="true"/>		
 	
 	<!--murky yellow m4-->
 	<object path="units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4" force="false"/>
@@ -1477,9 +1480,9 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>	
 	
-	<!--r870-->
+	<!--r870
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870" load="true"/>	
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870_husk" load="true"/>		
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_medic_r870/ene_murky_medic_r870_husk" load="true"/>-->	
 
 	<!--Murky Dozer 1 Armor Bits (the absolute mad man)-->
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_1/ene_acc_bulldozer_back_murky_1" load="false"/>

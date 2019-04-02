@@ -102,7 +102,10 @@ if not _G.restoration then
 		"junk",
 		"dinner",
 		"wwh",
-		"born"
+		"born",
+		--Custom Heists below--
+		"Victor Romeo",
+		"hardware_store"
 	}
 end
 

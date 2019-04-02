@@ -11,7 +11,47 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return playerstandard_exit_old(self, ...)
 	end
+	
+	function PlayerStandard:set_night_vision_state(state)
+		local mask_id = managers.blackmarket:equipped_mask().mask_id
+		local mask_tweak = tweak_data.blackmarket.masks[mask_id]
+		local night_vision = mask_tweak.night_vision 
 
+		if not night_vision then
+			night_vision = {
+				effect = "color_night_vision",
+				light = not _G.IS_VR and 0.3 or 0.1
+			}
+		end
+
+		if not night_vision or not not self._state_data.night_vision_active == state then
+			return
+		end
+
+		local ambient_color_key = CoreEnvironmentFeeder.PostAmbientColorFeeder.DATA_PATH_KEY
+		local default_color_grading = EnvironmentControllerManager._GAME_DEFAULT_COLOR_GRADING
+		local effect = state and night_vision.effect or default_color_grading
+
+		if state then
+			local function light_modifier(handler, feeder)
+				local base_light = feeder._target and mvector3.copy(feeder._target) or Vector3()
+				local light = night_vision.light
+
+				return base_light + Vector3(light, light, light)
+			end
+
+			managers.viewport:create_global_environment_modifier(ambient_color_key, true, light_modifier)
+		else
+			managers.viewport:destroy_global_environment_modifier(ambient_color_key)
+		end
+
+		self._unit:sound():play(state and "night_vision_on" or "night_vision_off", nil, false)
+		managers.environment_controller:set_default_color_grading(effect, state)
+		managers.environment_controller:refresh_render_settings()
+
+		self._state_data.night_vision_active = state
+	end	
+	
 	function PlayerStandard:_start_action_intimidate(t, secondary)
 		if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 			local skip_alert = managers.groupai:state():whisper_mode()

@@ -1633,13 +1633,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {11, 0},
 				[1] = {
 					upgrades = {
-						"pistol_spread_index_addend"
+						"pistol_fire_rate_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"pistol_fire_rate_multiplier"
+						"pistol_spread_index_addend"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -3140,7 +3140,8 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"damage_control",
 					"player_damage_control_passive",
-					"player_damage_control_cooldown_drain_1"
+					"player_damage_control_cooldown_drain_1",
+					"player_armor_to_health_conversion"
 				},
 				icon_xy = {
 					0,
@@ -3151,11 +3152,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 400,
 				texture_bundle_folder = "myh",
-				desc_id = "menu_deck19_3_desc",
+				desc_id = "menu_deck19_3_desc_sc",
 				name_id = "menu_deck19_3",
-				upgrades = {"player_armor_to_health_conversion"},
+				upgrades = {"player_damage_control_auto_shrug_1"},
 				icon_xy = {
-					1,
+					2,
 					0
 				}
 			},
@@ -3163,9 +3164,9 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 1000,
 				texture_bundle_folder = "myh",
-				desc_id = "menu_deck19_5_desc",
+				desc_id = "menu_deck19_5_desc_sc",
 				name_id = "menu_deck19_5",
-				upgrades = {"player_damage_control_auto_shrug"},
+				upgrades = {"player_damage_control_auto_shrug_2"},
 				icon_xy = {
 					2,
 					0

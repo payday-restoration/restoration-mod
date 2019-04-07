@@ -147,13 +147,13 @@ function UpgradesTweakData:_init_pd2_values()
 		2
 	}
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		10,
-		9,
-		8,
-		7,
-		5,
-		4,
-		2
+		14,
+		13.5,
+		12.5,
+		12,
+		10.5,
+		9.5,
+		4
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -724,7 +724,7 @@ function UpgradesTweakData:_init_pd2_values()
 				
 				--Gun Nut
 				self.values.pistol.spread_index_addend = {1}
-				self.values.pistol.fire_rate_multiplier = {1.5}
+				self.values.pistol.fire_rate_multiplier = {1.15}
 
 				--Over Pressurized/Gunfighter (Formerly Akimbo)
 				self.values.pistol.reload_speed_multiplier = {1.25, 1.5}
@@ -1086,9 +1086,13 @@ function UpgradesTweakData:_init_pd2_values()
 	--alcoholism is no joke
 	--stoic
 	self.values.player.damage_control_passive = {{
-		75,
+		25,
 		6.25
 	}}
+	self.values.player.damage_control_auto_shrug = {
+		6,
+		4
+	}	
 	
 	--yoooooooooooooooooo--
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {
@@ -1141,6 +1145,22 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_damage_control_auto_shrug_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_control_auto_shrug",
+			category = "player"
+		}
+	}
+	self.definitions.player_damage_control_auto_shrug_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "damage_control_auto_shrug",
+			category = "player"
+		}
+	}	
         self.definitions.player_detection_risk_add_movement_speed_1 = {
             category = "feature",
             name_id = "menu_player_detection_risk_add_movement_speed",

@@ -931,7 +931,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_van_turret_module.IDLE_WAIT_TIME = 5
 		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 2
 		self.swat_van_turret_module.AUTO_REPAIR_DURATION = 30
-		self.swat_van_turret_module.ECM_HACKABLE = false
+		self.swat_van_turret_module.ECM_HACKABLE = true
 		self.swat_van_turret_module.FLASH_GRENADE = {
 			range = 300,
 			effect_duration = 6,
@@ -939,7 +939,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			check_interval = {1, 1},
 			quiet_time = {10, 13}
 		}
-		self.swat_van_turret_module.HACKABLE_WITH_ECM = false
+		self.swat_van_turret_module.HACKABLE_WITH_ECM = true
 		self.swat_van_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 		self.swat_van_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.swat_van_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
@@ -1013,8 +1013,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crate_turret_module.AUTO_REPAIR = false
 		self.crate_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
 		self.crate_turret_module.AUTO_REPAIR_DURATION = 30
-		self.crate_turret_module.ECM_HACKABLE = false
-		self.crate_turret_module.HACKABLE_WITH_ECM = false
+		self.crate_turret_module.ECM_HACKABLE = true
+		self.crate_turret_module.HACKABLE_WITH_ECM = true
 		self.crate_turret_module.VELOCITY_COMPENSATION = {
 			OVERCOMPENSATION = 50,
 			SNAPSHOT_INTERVAL = 0.3
@@ -1094,7 +1094,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.AUTO_REPAIR = false
 		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 2
 		self.ceiling_turret_module.AUTO_REPAIR_DURATION = 30
-		self.ceiling_turret_module.ECM_HACKABLE = false
+		self.ceiling_turret_module.ECM_HACKABLE = true
 		self.ceiling_turret_module.FLASH_GRENADE = {
 			range = 300,
 			effect_duration = 6,
@@ -1102,7 +1102,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			check_interval = {1, 1},
 			quiet_time = {10, 13}
 		}
-		self.ceiling_turret_module.HACKABLE_WITH_ECM = false
+		self.ceiling_turret_module.HACKABLE_WITH_ECM = true
 		self.ceiling_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 		self.ceiling_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.ceiling_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
@@ -1174,7 +1174,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa_turret_module.AUTO_REPAIR = true
 		self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
 		self.aa_turret_module.AUTO_REPAIR_DURATION = 30
-		self.aa_turret_module.ECM_HACKABLE = false
+		self.aa_turret_module.ECM_HACKABLE = true
 		self.aa_turret_module.FLASH_GRENADE = {
 			range = 300,
 			effect_duration = 6,
@@ -1182,7 +1182,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			check_interval = {1, 1},
 			quiet_time = {10, 13}
 		}
-		self.aa_turret_module.HACKABLE_WITH_ECM = false
+		self.aa_turret_module.HACKABLE_WITH_ECM = true
 		self.aa_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 		self.aa_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.aa_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"

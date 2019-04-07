@@ -106,5 +106,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:add_equipment_amount(equipment, amount[i], i)
 		end
 	end	
-	
+		
 end

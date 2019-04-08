@@ -272,12 +272,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mg42_crew.DAMAGE = 2.6
 		
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1387.5
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 300
+			self.swat_van_turret_module.HEALTH_INIT = 675
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 90
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1387.5
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 300
+			self.swat_van_turret_module.HEALTH_INIT = 1350
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 180
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
@@ -312,26 +312,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}			
 		
 
-		self.ceiling_turret_module.HEALTH_INIT = 693.75
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 150
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 693.75
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 150
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 693.75
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 150		
-		self.aa_turret_module.HEALTH_INIT = 693.75
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 150	
-		self.crate_turret_module.HEALTH_INIT = 693.75
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 150		
+		self.ceiling_turret_module.HEALTH_INIT = 675
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 90
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 675
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 90
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 675
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 90		
+		self.aa_turret_module.HEALTH_INIT = 675
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 90
+		self.crate_turret_module.HEALTH_INIT = 337.5
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 45		
 	end
 
 	function WeaponTweakData:_set_easy_wish()
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 787.5
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 1575
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.BAG_DMG_MUL = 10
@@ -367,34 +367,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{3000, 1}
 		}			
 		
-		self.ceiling_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.HEALTH_INIT = 787.5
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175
-		self.aa_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105
+		self.aa_turret_module.HEALTH_INIT = 787.5
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 175
-		self.crate_turret_module.HEALTH_INIT = 809.375
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 105
+		self.crate_turret_module.HEALTH_INIT = 393.75
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 175			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5			
 	end
 
 	function WeaponTweakData:_set_overkill_290()
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 787.5
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 1575
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.BAG_DMG_MUL = 10
+		
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 			{1000, 2.3},
 			{1800, 2.1},
@@ -426,21 +427,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{3000, 1.05}
 		}
 		
-		self.ceiling_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.HEALTH_INIT = 787.5
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175
-		self.aa_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105
+		self.aa_turret_module.HEALTH_INIT = 787.5
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 175	
-		self.crate_turret_module.HEALTH_INIT = 809.375
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 105
+		self.crate_turret_module.HEALTH_INIT = 393.75
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 175	
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5	
 
 		--Sniper Trail for Snipers
 		self.m14_sniper_npc.sniper_trail = true		
@@ -448,12 +449,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function WeaponTweakData:_set_sm_wish()
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1850
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 900
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1850
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 1800
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 
@@ -488,25 +489,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1800, 2.1},
 			{3000, 1.05}
 		}			
-		self.ceiling_turret_module.HEALTH_INIT = 925
+		self.ceiling_turret_module.HEALTH_INIT = 900
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
 
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 925
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 900
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
 		
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 925
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 900
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175		
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105		
 		
-		self.aa_turret_module.HEALTH_INIT = 925
+		self.aa_turret_module.HEALTH_INIT = 900
 		self.aa_turret_module.BAG_DMG_MUL = 11.4375
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 175		
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 105		
 		
-		self.crate_turret_module.HEALTH_INIT = 925
+		self.crate_turret_module.HEALTH_INIT = 900
 		self.crate_turret_module.BAG_DMG_MUL = 11.4375
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 175			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5			
 		
 		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 3
 		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 3
@@ -946,17 +947,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_van_turret_module.auto.fire_rate = 0.13333333333
 		self.swat_van_turret_module.alert_size = 2500
 		self.swat_van_turret_module.headshot_dmg_mul = 1
-		self.swat_van_turret_module.EXPLOSION_DMG_MUL = 4
+		self.swat_van_turret_module.EXPLOSION_DMG_MUL = 3
 		self.swat_van_turret_module.FIRE_DMG_MUL = 1
 		self.swat_van_turret_module.BAG_DMG_MUL = 12.5
 		self.swat_van_turret_module.SHIELD_DMG_MUL = 1
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 925
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 200
+			self.swat_van_turret_module.HEALTH_INIT = 450
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 60
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 925
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 200
+			self.swat_van_turret_module.HEALTH_INIT = 900
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 120
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
@@ -1024,12 +1025,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crate_turret_module.auto.fire_rate = 0.06
 		self.crate_turret_module.alert_size = 2500
 		self.crate_turret_module.headshot_dmg_mul = 1
-		self.crate_turret_module.EXPLOSION_DMG_MUL = 4
+		self.crate_turret_module.EXPLOSION_DMG_MUL = 3
 		self.crate_turret_module.FIRE_DMG_MUL = 1
 		self.crate_turret_module.BAG_DMG_MUL = 12.5
 		self.crate_turret_module.SHIELD_DMG_MUL = 1
-		self.crate_turret_module.HEALTH_INIT = 462.5
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 100
+		self.crate_turret_module.HEALTH_INIT = 225
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 30
 		self.crate_turret_module.DEATH_VERIFICATION = {
 			0.4,
 			0.75
@@ -1109,12 +1110,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.auto.fire_rate = 0.13333333333
 		self.ceiling_turret_module.alert_size = 2500
 		self.ceiling_turret_module.headshot_dmg_mul = 1
-		self.ceiling_turret_module.EXPLOSION_DMG_MUL = 4
+		self.ceiling_turret_module.EXPLOSION_DMG_MUL = 3
 		self.ceiling_turret_module.FIRE_DMG_MUL = 1
 		self.ceiling_turret_module.BAG_DMG_MUL = 12.5
 		self.ceiling_turret_module.SHIELD_DMG_MUL = 1
-		self.ceiling_turret_module.HEALTH_INIT = 462.5
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 100
+		self.ceiling_turret_module.HEALTH_INIT = 450
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 60
 		self.ceiling_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
 		self.ceiling_turret_module.DETECTION_RANGE = self.ceiling_turret_module.FIRE_RANGE
 		self.ceiling_turret_module.DETECTION_DELAY = {
@@ -1189,12 +1190,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa_turret_module.auto.fire_rate = 0.13333333333
 		self.aa_turret_module.alert_size = 2500
 		self.aa_turret_module.headshot_dmg_mul = 1
-		self.aa_turret_module.EXPLOSION_DMG_MUL = 4
+		self.aa_turret_module.EXPLOSION_DMG_MUL = 3
 		self.aa_turret_module.FIRE_DMG_MUL = 1
 		self.aa_turret_module.BAG_DMG_MUL = 12.5
 		self.aa_turret_module.SHIELD_DMG_MUL = 1
-		self.aa_turret_module.HEALTH_INIT = 462.5
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 100
+		self.aa_turret_module.HEALTH_INIT = 450
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 60
 		self.aa_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
 		self.aa_turret_module.DETECTION_RANGE = self.aa_turret_module.FIRE_RANGE
 		self.aa_turret_module.DETECTION_DELAY = {

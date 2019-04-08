@@ -66,7 +66,13 @@ function EquipmentsTweakData:init()
 		self.specials.liquid_nitrogen.quantity=1
 		self.specials.liquid_nitrogen.max_quantity=4
 		self.specials.thermite.quantity=1
-		self.specials.thermite.max_quantity=4			
+		self.specials.thermite.max_quantity=4	
+		self.specials.blood_sample.quantity=1
+		self.specials.blood_sample.max_quantity=4		
+		self.specials.blood_sample_verified.quantity=1
+		self.specials.blood_sample_verified.max_quantity=4	
+		self.specials.mayan_gold_bar.quantity=4
+		self.specials.mayan_gold_bar.max_quantity=4			
    	end
 end
 

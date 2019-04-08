@@ -1727,7 +1727,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shadow_spooc.speech_prefix_count = nil
 		self.shadow_spooc.use_radio = nil
 		self.shadow_spooc.chatter = presets.enemy_chatter.no_chatter
-		self.shadow_spooc.do_not_drop_ammo = true
+		self.shadow_spooc.do_not_drop_ammo = false
 		self.shadow_spooc.steal_loot = nil
 		self.shadow_spooc.spawn_sound_event = "uno_cloaker_presence_loop"
 		self.shadow_spooc.die_sound_event = "uno_cloaker_presence_stop"

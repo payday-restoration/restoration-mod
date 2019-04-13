@@ -768,6 +768,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.benelli_npc.sounds.prefix = "remington_npc"
 		self.benelli_npc.DAMAGE = 7
 		self.benelli_npc.CLIP_AMMO_MAX = 10
+		self.r870_taser_npc = deep_clone(self.r870_npc)
+		self.r870_taser_npc.sounds.prefix = "remington_npc"
+		self.r870_taser_npc.DAMAGE = 5.9
+		self.r870_taser_npc.CLIP_AMMO_MAX = 8
 	end
 
 	function WeaponTweakData:_init_data_mossberg_npc()
@@ -1294,6 +1298,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_sc_npc.alert_size = 2800
 		self.hk21_sc_npc.suppression = 2.4
 		self.hk21_sc_npc.usage = "is_lmg"
+		self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
+		self.hk23_sc_npc.DAMAGE = 2.2
+		self.hk23_sc_npc.auto.fire_rate = 0.08
+		self.hk23_sc_npc.CLIP_AMMO_MAX = 50		
 	end
 
 	function WeaponTweakData:_init_data_contraband_npc()
@@ -3264,7 +3272,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_m4.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 22,
@@ -3299,7 +3307,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_17.stats = {
 			damage = 27,
 			spread = 15,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -3329,7 +3337,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp9.stats = {
 			damage = 29,
 			spread = 12,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -3362,7 +3370,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.r870.stats = {
 			damage = 95,
 			spread = 8,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 11,
@@ -3393,7 +3401,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_18c.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,
@@ -3423,7 +3431,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amcar.stats = {
 			damage = 28,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 24,
@@ -3450,7 +3458,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.stats = {
 			damage = 39,
 			spread = 16,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 5,
 			zoom = 4,
 			concealment = 21,
@@ -3484,7 +3492,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.olympic.stats = {
 			damage = 28,
 			spread = 13,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 24,
@@ -3512,7 +3520,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak74.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 16,
@@ -3538,7 +3546,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akm.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 13,
@@ -3564,7 +3572,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akm_gold.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 13,
@@ -3593,7 +3601,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akmsu.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 21,
@@ -3626,7 +3634,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.saiga.stats = {
 			damage = 45,
 			spread = 6,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 13,
@@ -3652,7 +3660,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak5.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 18,
@@ -3680,7 +3688,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aug.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 20,
@@ -3710,7 +3718,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g36.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 20,
@@ -3740,7 +3748,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p90.stats = {
 			damage = 22,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 25,
@@ -3769,7 +3777,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_m14.stats = {
 			damage = 95,
 			spread = 20,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 8,
@@ -3800,7 +3808,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deagle.stats = {
 			damage = 95,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 25,
@@ -3829,7 +3837,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_mp5.stats = {
 			damage = 27,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -3858,7 +3866,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.colt_1911.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -3889,7 +3897,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -3921,7 +3929,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.serbu.stats = {
 			damage = 95,
 			spread = 6,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 23,
@@ -3990,7 +3998,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b92fs.stats = {
 			damage = 28,
 			spread = 16,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -4117,7 +4125,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.usp.stats = {
 			damage = 40,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 27,
@@ -4145,7 +4153,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g22c.stats = {
 			damage = 32,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 28,
@@ -4175,7 +4183,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.stats = {
 			damage = 145,
 			spread = 6,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -4203,7 +4211,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m45.stats = {
 			damage = 32,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -4231,7 +4239,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.s552.stats = {
 			damage = 35,
 			spread = 13,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 22,
@@ -4260,7 +4268,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ppk.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -4288,7 +4296,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp7.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 23,
@@ -4314,7 +4322,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.scar.stats = {
 			damage = 67,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 8,
@@ -4343,7 +4351,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p226.stats = {
 			damage = 35,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 28,
@@ -4377,7 +4385,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk21.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 2,
@@ -4410,7 +4418,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m249.stats = {
 			damage = 25,
 			spread = 13,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 2,
@@ -4445,7 +4453,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpk.stats = {
 			damage = 25,
 			spread = 12,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 2,
 			concealment = 5,
@@ -4475,7 +4483,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m95.stats = {
 			damage = 300,
 			spread = 19,
-			recoil = 12,
+			recoil = 13,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 1,
@@ -4511,7 +4519,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.stats = {
 			damage = 100,
 			spread = 20,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 22,
@@ -4543,7 +4551,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.r93.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 14,
+			recoil = 15,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 5,
@@ -4576,7 +4584,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.fal.stats = {
 			damage = 45,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 9,
@@ -4609,7 +4617,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.benelli.stats = {
 			damage = 70,
 			spread = 7,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 11,
@@ -4643,7 +4651,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.striker.stats = {
 			damage = 70,
 			spread = 6,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,
@@ -4671,7 +4679,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ksg.stats = {
 			damage = 95,
 			spread = 8,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 22,
@@ -4730,7 +4738,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3.stats = {
 			damage = 45,
 			spread = 18,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 12,
@@ -4762,7 +4770,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.galil.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 17,
@@ -4794,7 +4802,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.famas.stats = {
 			damage = 26,
 			spread = 12,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 4,
 			zoom = 3,
 			concealment = 24,
@@ -4827,7 +4835,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.scorpion.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 26,
@@ -4861,7 +4869,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tec9.stats = {
 			damage = 34,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 10,
 			zoom = 1,
 			concealment = 27,
@@ -4893,7 +4901,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.uzi.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 24,
@@ -4924,7 +4932,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.jowi.stats = {
 			damage = 26,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -4954,7 +4962,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_1911.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -4983,7 +4991,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_b92fs.stats = {
 			damage = 28,
 			spread = 16,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -5018,7 +5026,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_deagle.stats = {
 			damage = 95,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 25,
@@ -5046,7 +5054,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g26.stats = {
 			damage = 26,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -5079,7 +5087,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.stats = {
 			damage = 70,
 			spread = 6,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 14,
@@ -5111,7 +5119,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mg42.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 2,
@@ -5144,7 +5152,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.c96.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -5175,7 +5183,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sterling.stats = {
 			damage = 32,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 26,
@@ -5205,7 +5213,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mosin.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 15,
+			recoil = 16,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 11,
@@ -5241,7 +5249,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1928.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -5275,7 +5283,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.l85a2.stats = {
 			damage = 35,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 16,
@@ -5306,7 +5314,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vhs.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 17,
@@ -5338,7 +5346,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hs2000.stats = {
 			damage = 44,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 27,
@@ -5379,7 +5387,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m134.stats = {
 			damage = 22,
 			spread = 15,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 0,
@@ -5443,7 +5451,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cobray.stats = {
 			damage = 35,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -5511,7 +5519,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g22c.stats = {
 			damage = 32,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 28,
@@ -5541,7 +5549,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g17.stats = {
 			damage = 27,
 			spread = 15,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -5571,7 +5579,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_usp.stats = {
 			damage = 40,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 27,
@@ -5626,7 +5634,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flamethrower_mk2.stats = {
 			damage = 41,
 			spread = 6,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 6,
@@ -5653,7 +5661,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.stats = {
 			damage = 80,
 			spread = 6,
-			recoil = 7,
+			recoil = 8,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 10,
@@ -5683,7 +5691,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aa12.stats = {
 			damage = 45,
 			spread = 7,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 9,
@@ -5816,7 +5824,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mateba.stats = {
 			damage = 99,
 			spread = 20,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -5853,7 +5861,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.asval.stats = {
 			damage = 75,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 25,
@@ -5895,7 +5903,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sub2000.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 28,
@@ -5929,7 +5937,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.wa2000.stats = {
 			damage = 150,
 			spread = 19,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 16,
@@ -5965,7 +5973,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.polymer.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 20,
@@ -6029,7 +6037,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.baka.stats = {
 			damage = 29,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 29,
@@ -6159,7 +6167,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.par.stats = {
 			damage = 25,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 2,
@@ -6187,7 +6195,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sparrow.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -6217,7 +6225,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.model70.stats = {
 			damage = 200,
 			spread = 21,
-			recoil = 15,
+			recoil = 16,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 6,
@@ -6253,7 +6261,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m37.stats = {
 			damage = 95,
 			spread = 9,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 23,
@@ -6313,7 +6321,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sr2.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -6342,7 +6350,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sr2.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -6371,7 +6379,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.pl14.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -6398,7 +6406,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp5.stats = {
 			damage = 27,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -6426,7 +6434,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_akmsu.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 21,
@@ -6456,7 +6464,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tecci.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 10,
 			zoom = 3,
 			concealment = 14,
@@ -6487,7 +6495,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hajk.stats = {
 			damage = 34,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 24,
@@ -6519,7 +6527,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.stats = {
 			damage = 145,
 			spread = 8,
-			recoil = 15,
+			recoil = 16,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 7,
@@ -6549,7 +6557,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.packrat.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -6578,7 +6586,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.schakal.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 14,
 			zoom = 3,
 			concealment = 24,
@@ -6608,7 +6616,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.desertfox.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 8,
+			recoil = 9,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 19,
@@ -6637,7 +6645,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_packrat.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -6673,7 +6681,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rota.stats = {
 			damage = 70,
 			spread = 8,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,
@@ -6692,7 +6700,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arbiter.stats = {
 			damage = 60,
 			spread = 6,
-			recoil = 7,
+			recoil = 8,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 8,
@@ -6736,7 +6744,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.contraband.stats = {
 			damage = 70,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 4,
 			concealment = 6,
@@ -6834,7 +6842,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tti.stats = {
 			damage = 150,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 24,
 			zoom = 1,
 			concealment = 16,
@@ -6867,7 +6875,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.siltstone.stats = {
 			damage = 150,
 			spread = 19,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 21,
@@ -6897,7 +6905,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flint.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 17,
@@ -6927,7 +6935,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.coal.stats = {
 			damage = 25,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 23,
@@ -6961,7 +6969,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.lemming.stats = {
 			damage = 25,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -6988,7 +6996,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.chinchilla.stats = {
 			damage = 100,
 			spread = 19,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -7017,7 +7025,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_chinchilla.stats = {
 			damage = 100,
 			spread = 19,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -7067,9 +7075,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.categories = {"assault_rifle"}
 		self.ching.recategorize = "rifle"
 		self.ching.FIRE_MODE = "single"
-		self.ching.fire_mode_data = {fire_rate = 0.17142857142}
+		self.ching.fire_mode_data = {fire_rate = 0.1}
 		self.ching.CAN_TOGGLE_FIREMODE = false
-		self.ching.single = {fire_rate = 0.17142857142}	
+		self.ching.single = {fire_rate = 0.1}	
 		self.ching.has_description = false
 		self.ching.desc_id = "bm_ap_weapon_sc_desc"
 		self.ching.CLIP_AMMO_MAX = 8
@@ -7088,7 +7096,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.stats = {
 			damage = 95,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 12,
@@ -7123,7 +7131,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.erma.stats = {
 			damage = 35,
 			spread = 18,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -7182,7 +7190,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shrew.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
@@ -7211,7 +7219,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shrew.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
@@ -7250,7 +7258,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 6,
 			spread = 6,
 			spread_moving = 8,
-			recoil = 20,
+			recoil = 21,
 			value = 1,
 			extra_ammo = 101,
 			reload = 11,
@@ -7285,7 +7293,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 6,
 			spread = 6,
 			spread_moving = 8,
-			recoil = 20,
+			recoil = 21,
 			value = 1,
 			extra_ammo = 101,
 			reload = 11,
@@ -7311,7 +7319,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.corgi.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 21,
@@ -7371,7 +7379,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_coal.stats = {
 			damage = 25,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 23,
@@ -7405,7 +7413,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_baka.stats = {
 			damage = 29,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 29,
@@ -7438,7 +7446,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.stats = {
 			damage = 35,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -7468,7 +7476,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_erma.stats = {
 			damage = 35,
 			spread = 18,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -7498,7 +7506,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hajk.stats = {
 			damage = 34,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 24,
@@ -7524,7 +7532,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m45.stats = {
 			damage = 32,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -7555,7 +7563,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m1928.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -7584,7 +7592,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mac10.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -7610,7 +7618,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp7.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 23,
@@ -7639,7 +7647,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp9.stats = {
 			damage = 29,
 			spread = 12,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -7666,7 +7674,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_olympic.stats = {
 			damage = 28,
 			spread = 13,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 24,
@@ -7694,7 +7702,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p90.stats = {
 			damage = 22,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 25,
@@ -7724,7 +7732,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_polymer.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 20,
@@ -7754,7 +7762,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_schakal.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 14,
 			zoom = 3,
 			concealment = 24,
@@ -7783,7 +7791,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_scorpion.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 26,
@@ -7812,7 +7820,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sterling.stats = {
 			damage = 32,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 26,
@@ -7842,7 +7850,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_tec9.stats = {
 			damage = 34,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 10,
 			zoom = 1,
 			concealment = 27,
@@ -7870,7 +7878,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_uzi.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 24,
@@ -7898,7 +7906,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_2006m.stats = {
 			damage = 99,
 			spread = 20,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -7931,7 +7939,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_breech.stats = {
 			damage = 34,
 			spread = 15,
-			recoil = 24,
+			recoil = 25,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -7964,7 +7972,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_c96.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -7993,7 +8001,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,
@@ -8025,7 +8033,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hs2000.stats = {
 			damage = 44,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 27,
@@ -8054,7 +8062,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p226.stats = {
 			damage = 35,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 28,
@@ -8083,7 +8091,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_pl14.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -8112,7 +8120,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_ppk.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -8172,7 +8180,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sparrow.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -8200,7 +8208,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.stats = {
 			damage = 145,
 			spread = 6,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -8242,7 +8250,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rota.stats = {
 			damage = 70,
 			spread = 8,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,
@@ -8282,7 +8290,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shuno.stats = {
 			damage = 27,
 			spread = 16,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 0,
@@ -8336,7 +8344,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.system.stats = {
 			damage = 41,
 			spread = 5,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 6,
@@ -8365,7 +8373,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shepheard.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -8394,7 +8402,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shepheard.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -8429,7 +8437,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.komodo.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 24,
+			recoil = 25,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -8525,7 +8533,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.legacy.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 28,
@@ -8560,7 +8568,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_legacy.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 28,

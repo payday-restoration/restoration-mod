@@ -194,6 +194,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_damage_p2_mod"] = "Large Damage Modifier",
 		["bm_menu_bonus_total_ammo_p1_mod"] = "Small Total Ammo Modifier",
 		["bm_menu_bonus_total_ammo_p3_mod"] = "Massive Total Ammo Modifier",
+		
+		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
+		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO AUTO-FIRE MODE.",
 
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para Rifle",
@@ -817,6 +820,8 @@ end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
+		["bm_menu_dodge"] = "Dodge",
+	
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",

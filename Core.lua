@@ -103,6 +103,7 @@ if not _G.restoration then
 		"dinner",
 		"wwh",
 		"born",
+		"cane",
 		--Custom Heists below--
 		"Victor Romeo",
 		"hardware_store"

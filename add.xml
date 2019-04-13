@@ -471,6 +471,8 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_rifle_df" force="false"/>
 	
+	<unit path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="false"/>
+	
 	<!--Keep those helmets flying ;)-->	
 	<object path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>

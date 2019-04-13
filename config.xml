@@ -162,6 +162,8 @@
 		<hook file="sc/network/handlers/unitnetworkhandler.lua" source_file="lib/network/handlers/unitnetworkhandler"/>
 		<hook file="sc/units/equipment/sentrygunbase.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbase"/>
 		<hook file="sc/managers/experiencemanager.lua" source_file="lib/managers/experiencemanager"/>
+		<hook file="sc/units/civilians/civilianlogicsurrender.lua" source_file="lib/units/civilians/logics/civilianlogicsurrender"/>
+		<hook file="sc/units/equipment/sentrygunbrain.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbrain"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

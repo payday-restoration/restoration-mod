@@ -441,9 +441,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/payday2/weapons/wpn_fps_upg_fl_ass_smg_sho_surefire/wpn_fps_upg_fl_ass_smg_sho_surefire",
 			stats = {
-				value = 3,
-				spread_moving = -1,
-				concealment = 0
+				value = 3
 			},
 			adds = {
 				"wpn_fps_addon_ris"
@@ -461,7 +459,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/payday2/weapons/wpn_fps_upg_fl_ass_smg_sho_peqbox/wpn_fps_upg_fl_ass_smg_sho_peqbox",
 			stats = {
-				value = 5
+				value = 4
 			},
 			adds = {
 				"wpn_fps_addon_ris"
@@ -479,10 +477,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser",
 			stats = {
-				value = 5,
-				spread_moving = -1,
-				recoil = 1,
-				concealment = -1
+				value = 4
 			}
 		}
 		self.parts.wpn_fps_upg_fl_pis_tlr1 = {
@@ -498,9 +493,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_tlr1/wpn_fps_upg_fl_pis_tlr1",
 			stats = {
-				value = 2,
-				spread_moving = -1,
-				concealment = 0
+				value = 3
 			}
 		}
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_surefire.third_unit = "units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_surefire/wpn_third_upg_fl_ass_smg_sho_surefire"
@@ -1434,18 +1427,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			type = "custom",
 			sub_type = "singlefire",
-			name_id = "bm_wp_upg_i_singlefire_sc",
+			name_id = "bm_wp_upg_i_singlefire",
 			a_obj = "a_body",
 			has_description = true,
-			custom_stats = {rof_mult = 0.85},
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
 				value = 5,
-				damage = 0,
-				spread = 0,
-				recoil = 1
+				spread = 1,
+				recoil = -1
 			},
+			perks = {
+				"fire_mode_single"
+			},			
 			forbids = {
 				"wpn_fps_upg_extra_mp_lock"
 			},
@@ -1461,18 +1455,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			type = "custom",
 			sub_type = "autofire",
-			name_id = "bm_wp_upg_i_autofire_sc",
+			name_id = "bm_wp_upg_i_autofire",
 			a_obj = "a_body",
 			has_description = true,
-			custom_stats = {rof_mult = 1.15},
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
 				value = 5,
-				damage = 0,
-				spread = 0,
-				recoil = -1,
-				spread_moving = 0
+				spread = -1,
+				recoil = 1
 			},
 			forbids = {
 				"wpn_fps_upg_extra_mp_lock"
@@ -2274,9 +2265,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_fl_ass_peq15/wpn_fps_upg_fl_ass_peq15",
 			stats = {
 				value = 5,
-				spread_moving = -1,
-				concealment = -2,
-				recoil = 1
+				concealment = -1
 			},
 			dlc = "gage_pack_jobs",
 			perks = {"gadget"},
@@ -2303,9 +2292,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "gage_pack_jobs",
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_fl_ass_laser/wpn_fps_upg_fl_ass_laser",
 			stats = {
-				value = 2,
-				spread_moving = 1,
-				concealment = 0
+				value = 4
 			},
 			dlc = "gage_pack_jobs",
 			perks = {"gadget"},
@@ -3258,7 +3245,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45rds_v2",
 			--Stuff--
 			"wpn_fps_m16_s_solid",
-			"wpn_fps_upg_m4_s_standard"
+			"wpn_fps_upg_m4_s_standard",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"		
 		}
 		self.wpn_fps_ass_m4_npc = deep_clone(self.wpn_fps_ass_m4)
 		self.wpn_fps_ass_m4_npc.unit = "units/payday2/weapons/wpn_fps_ass_m4/wpn_fps_ass_m4_npc"
@@ -3426,7 +3415,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_pis_jungle",
 			"wpn_fps_upg_i_singlefire",
 			"wpn_fps_upg_i_autofire",
-			"wpn_fps_upg_ammo_p"
+			"wpn_fps_upg_ammo_p",
+			--Custom--
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"				
 		}
 		self.wpn_fps_pis_g18c_npc = deep_clone(self.wpn_fps_pis_g18c)
 		self.wpn_fps_pis_g18c_npc.unit = "units/payday2/weapons/wpn_fps_pis_g18c/wpn_fps_pis_g18c_npc"
@@ -3712,7 +3704,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_xpsg33_magnifier",
 			"wpn_fps_upg_o_45rds_v2",
 			--Hey stuff--
-			"wpn_fps_ass_m16_o_handle_sight"
+			"wpn_fps_ass_m16_o_handle_sight",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"				
 		}
 		self.wpn_fps_ass_amcar_npc = deep_clone(self.wpn_fps_ass_amcar)
 		self.wpn_fps_ass_amcar_npc.unit = "units/payday2/weapons/wpn_fps_ass_amcar/wpn_fps_ass_amcar_npc"
@@ -4003,7 +3997,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_snp_tti_g_grippy",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"				
 		}
 		self.wpn_fps_ass_m16_npc = deep_clone(self.wpn_fps_ass_m16)
 		self.wpn_fps_ass_m16_npc.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_npc"
@@ -4254,7 +4250,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_m4_upg_m_quick",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_snp_tti_g_grippy",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_olympic_npc = deep_clone(self.wpn_fps_smg_olympic)
 		self.wpn_fps_smg_olympic_npc.unit = "units/payday2/weapons/wpn_fps_smg_olympic/wpn_fps_smg_olympic_npc"
@@ -4804,7 +4802,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ak_m_quick",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_74_npc = deep_clone(self.wpn_fps_ass_74)
 		self.wpn_fps_ass_74_npc.unit = "units/payday2/weapons/wpn_fps_ass_74/wpn_fps_ass_74_npc"
@@ -4958,7 +4958,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ak_m_quick",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_upg_o_45rds_v2",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_akm_npc = deep_clone(self.wpn_fps_ass_akm)
 		self.wpn_fps_ass_akm_npc.unit = "units/payday2/weapons/wpn_fps_ass_akm/wpn_fps_ass_akm_npc"
@@ -5108,7 +5110,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ak_m_quick",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_upg_o_45rds_v2",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_akm_gold_npc = deep_clone(self.wpn_fps_ass_akm_gold)
 		self.wpn_fps_ass_akm_gold_npc.unit = "units/payday2/weapons/wpn_fps_ass_akm_gold/wpn_fps_ass_akm_gold_npc"
@@ -5300,7 +5304,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_ak_m_quick",
-			"wpn_fps_snp_tti_s_vltor"
+			"wpn_fps_snp_tti_s_vltor",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_akmsu_npc = deep_clone(self.wpn_fps_smg_akmsu)
 		self.wpn_fps_smg_akmsu_npc.unit = "units/payday2/weapons/wpn_fps_smg_akmsu/wpn_fps_smg_akmsu_npc"
@@ -5618,7 +5624,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_ns_duck",
 			"wpn_fps_snp_tti_s_vltor",
-			"wpn_fps_sho_basset_m_extended"
+			"wpn_fps_sho_basset_m_extended",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_shot_saiga_npc = deep_clone(self.wpn_fps_shot_saiga)
 		self.wpn_fps_shot_saiga_npc.unit = "units/payday2/weapons/wpn_fps_shot_saiga/wpn_fps_shot_saiga_npc"
@@ -5872,7 +5880,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_ak5_npc = deep_clone(self.wpn_fps_ass_ak5)
 		self.wpn_fps_ass_ak5_npc.unit = "units/payday2/weapons/wpn_fps_ass_ak5/wpn_fps_ass_ak5_npc"
@@ -6058,7 +6068,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_ass_aug_m_quick",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_aug_npc = deep_clone(self.wpn_fps_ass_aug)
 		self.wpn_fps_ass_aug_npc.unit = "units/payday2/weapons/wpn_fps_ass_aug/wpn_fps_ass_aug_npc"
@@ -6324,7 +6336,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_ass_g36_m_quick",
 			"wpn_fps_upg_g36_b_ultra",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_g36_npc = deep_clone(self.wpn_fps_ass_g36)
 		self.wpn_fps_ass_g36_npc.unit = "units/payday2/weapons/wpn_fps_ass_g36/wpn_fps_ass_g36_npc"
@@ -6457,7 +6471,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_smg_p90_m_strap",
 			"wpn_fps_smg_p90_body_boxy",
 			--at least it's not Red Stars--
-			"wpn_fps_smg_p90_body_p90_tan"
+			"wpn_fps_smg_p90_body_p90_tan",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_p90_npc = deep_clone(self.wpn_fps_smg_p90)
 		self.wpn_fps_smg_p90_npc.unit = "units/payday2/weapons/wpn_fps_smg_p90/wpn_fps_smg_p90_npc"
@@ -6625,6 +6641,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_vg_ass_smg_verticalgrip",
 			"wpn_fps_upg_vg_ass_smg_stubby",
 			"wpn_fps_upg_vg_ass_smg_afg",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_m14_npc = deep_clone(self.wpn_fps_ass_m14)
 		self.wpn_fps_ass_m14_npc.unit = "units/payday2/weapons/wpn_fps_ass_m14/wpn_fps_ass_m14_npc"
@@ -6778,7 +6796,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
 			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_mp9_npc = deep_clone(self.wpn_fps_smg_mp9)
 		self.wpn_fps_smg_mp9_npc.unit = "units/payday2/weapons/wpn_fps_smg_mp9/wpn_fps_smg_mp9_npc"
@@ -7513,7 +7533,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_smg_mp5_fg_flash",
 			"wpn_fps_smg_mp5_s_folding",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_mp5_npc = deep_clone(self.wpn_fps_smg_mp5)
 		self.wpn_fps_smg_mp5_npc.unit = "units/payday2/weapons/wpn_fps_smg_mp5/wpn_fps_smg_mp5_npc"
@@ -8069,7 +8091,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_smg_mac10_m_quick",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_smg_mac10_body_modern"
+			"wpn_fps_smg_mac10_body_modern",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_mac10_npc = deep_clone(self.wpn_fps_smg_mac10)
 		self.wpn_fps_smg_mac10_npc.unit = "units/payday2/weapons/wpn_fps_smg_mac10/wpn_fps_smg_mac10_npc"
@@ -10677,7 +10701,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_i_autofire",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_upg_o_spot"
+			"wpn_fps_upg_o_spot",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_m45_npc = deep_clone(self.wpn_fps_smg_m45)
 		self.wpn_fps_smg_m45_npc.unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45/wpn_fps_smg_m45_npc"
@@ -10985,7 +11011,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_s552_npc = deep_clone(self.wpn_fps_ass_s552)
 		self.wpn_fps_ass_s552_npc.unit = "units/pd2_dlc1/weapons/wpn_fps_ass_s552/wpn_fps_ass_s552_npc"
@@ -11403,7 +11431,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_mp7_npc = deep_clone(self.wpn_fps_smg_mp7)
 		self.wpn_fps_smg_mp7_npc.unit = "units/pd2_dlc_dec5/weapons/wpn_fps_smg_mp7/wpn_fps_smg_mp7_npc"
@@ -11702,7 +11732,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_snp_tti_g_grippy",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_scar_npc = deep_clone(self.wpn_fps_ass_scar)
 		self.wpn_fps_ass_scar_npc.unit = "units/pd2_dlc_dec5/weapons/wpn_fps_ass_scar/wpn_fps_ass_scar_npc"
@@ -13436,7 +13468,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_fal_npc = deep_clone(self.wpn_fps_ass_fal)
 		self.wpn_fps_ass_fal_npc.unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal/wpn_fps_ass_fal_npc"
@@ -14873,7 +14907,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_g3_npc = deep_clone(self.wpn_fps_ass_g3)
 		self.wpn_fps_ass_g3_npc.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3/wpn_fps_ass_g3_npc"
@@ -15534,7 +15570,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_galil_npc = deep_clone(self.wpn_fps_ass_galil)
 		self.wpn_fps_ass_galil_npc.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_galil/wpn_fps_ass_galil_npc"
@@ -15814,7 +15852,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_ass_famas_npc = deep_clone(self.wpn_fps_ass_famas)
 		self.wpn_fps_ass_famas_npc.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas/wpn_fps_ass_famas_npc"
@@ -16123,7 +16163,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_scorpion_npc = deep_clone(self.wpn_fps_smg_scorpion)
 		self.wpn_fps_smg_scorpion_npc.unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion/wpn_fps_smg_scorpion_npc"
@@ -16343,7 +16385,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_tec9_npc = deep_clone(self.wpn_fps_smg_tec9)
 		self.wpn_fps_smg_tec9_npc.unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_tec9/wpn_fps_smg_tec9_npc"
@@ -16635,7 +16679,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_uzi_npc = deep_clone(self.wpn_fps_smg_uzi)
 		self.wpn_fps_smg_uzi_npc.unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_uzi/wpn_fps_smg_uzi_npc"
@@ -17406,10 +17452,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_upg_fl_pis_crimson/wpn_fps_upg_fl_pis_crimson",
 			stats = {
-				value = 8,
-				recoil = 0,
-				spread = 0,
-				concealment = 0
+				value = 4
 			},
 			dlc = "pd2_clan"
 		}
@@ -17426,10 +17469,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_upg_fl_pis_x400v/wpn_fps_upg_fl_pis_x400v",
 			stats = {
-				value = 8,
-				recoil = 1,
-				spread = 0,
-				concealment = -2
+				value = 5,
+				concealment = -1
 			},
 			perks = {"gadget"},
 			dlc = "pd2_clan",
@@ -18918,6 +18959,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_pis_g18c_co_1",
 			"wpn_fps_upg_i_singlefire",
 			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_pis_c96_npc = deep_clone(self.wpn_fps_pis_c96)
 		self.wpn_fps_pis_c96_npc.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_pis_c96/wpn_fps_pis_c96_npc"
@@ -19302,7 +19345,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
 			--Custom--
-			"wpn_fps_upg_ammo_762_sterling"
+			"wpn_fps_upg_ammo_762_sterling",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_sterling_npc = deep_clone(self.wpn_fps_smg_sterling)
 		self.wpn_fps_smg_sterling_npc.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_smg_sterling/wpn_fps_smg_sterling_npc"
@@ -19937,7 +19982,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"					
 		}
 		self.wpn_fps_smg_thompson_npc = deep_clone(self.wpn_fps_smg_thompson)
 		self.wpn_fps_smg_thompson_npc.unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928/wpn_fps_smg_thompson_npc"
@@ -20185,7 +20232,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_ass_l85a2_npc = deep_clone(self.wpn_fps_ass_l85a2)
 		self.wpn_fps_ass_l85a2_npc.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2/wpn_fps_ass_l85a2_npc"
@@ -20433,7 +20482,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_ass_vhs_npc = deep_clone(self.wpn_fps_ass_vhs)
 		self.wpn_fps_ass_vhs_npc.unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs/wpn_fps_ass_vhs_npc"
@@ -22156,7 +22207,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_lmg_m134_barrel_legendary",
 			"wpn_fps_lmg_m134_body_upper_spikey",
 			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_lmg_m134_npc = deep_clone(self.wpn_fps_lmg_m134)
 		self.wpn_fps_lmg_m134_npc.unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134/wpn_fps_lmg_m134_npc"
@@ -22576,7 +22629,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_smg_mac10_s_skel"
+			"wpn_fps_smg_mac10_s_skel",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_cobray_npc = deep_clone(self.wpn_fps_smg_cobray)
 		self.wpn_fps_smg_cobray_npc.unit = "units/pd2_dlc_hotline2/weapons/wpn_fps_smg_cobray/wpn_fps_smg_cobray_npc"
@@ -23100,8 +23155,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_fl_ass_utg/wpn_fps_upg_fl_ass_utg",
 			stats = {
 				value = 5,
-				concealment = -2,
-				recoil = 1
+				concealment = -1
 			},
 			dlc = "butch_pack_free",
 			texture_bundle_folder = "butcher_pack_mods",
@@ -23119,9 +23173,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_fl",
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_fl_pis_m3x/wpn_fps_upg_fl_pis_m3x",
 			stats = {
-				value = 6,
-				recoil = 1,
-				concealment = -1
+				value = 3
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
@@ -24241,7 +24293,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_sho_salvo_large",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_ns_duck",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_sho_aa12_npc = deep_clone(self.wpn_fps_sho_aa12)
 		self.wpn_fps_sho_aa12_npc.unit = "units/pd2_dlc_bbq/weapons/wpn_fps_sho_aa12/wpn_fps_sho_aa12_npc"
@@ -25126,7 +25180,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_ass_asval_scopemount_lock",
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_ass_asval_npc = deep_clone(self.wpn_fps_ass_asval)
 		self.wpn_fps_ass_asval_npc.unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval/wpn_fps_ass_asval_npc"
@@ -25907,7 +25963,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_snp_tti_s_vltor",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_polymer_npc = deep_clone(self.wpn_fps_smg_polymer)
 		self.wpn_fps_smg_polymer_npc.unit = "units/pd2_dlc_turtles/weapons/wpn_fps_smg_polymer/wpn_fps_smg_polymer_npc"
@@ -26385,7 +26443,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_crimson",
 			"wpn_fps_upg_fl_pis_x400v",
 			"wpn_fps_upg_ass_ns_battle",
-			"wpn_fps_upg_fl_pis_m3x"
+			"wpn_fps_upg_fl_pis_m3x",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_baka_npc = deep_clone(self.wpn_fps_smg_baka)
 		self.wpn_fps_smg_baka_npc.unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka/wpn_fps_smg_baka_npc"
@@ -28011,7 +28071,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_smg_sr2_m_quick"
+			"wpn_fps_smg_sr2_m_quick",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_sr2_npc = deep_clone(self.wpn_fps_smg_sr2)
 		self.wpn_fps_smg_sr2_npc.unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_sr2/wpn_fps_smg_sr2_npc"
@@ -28058,7 +28120,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_laser",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_smg_sr2_m_quick"
+			"wpn_fps_smg_sr2_m_quick",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_x_sr2_npc = deep_clone(self.wpn_fps_smg_x_sr2)
 		self.wpn_fps_smg_x_sr2_npc.unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_x_sr2/wpn_fps_smg_x_sr2_npc"
@@ -28335,7 +28399,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_smg_mp5_m_straight",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_smg_mp5_fg_flash"
+			"wpn_fps_smg_mp5_fg_flash",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_x_mp5_npc = deep_clone(self.wpn_fps_smg_x_mp5)
 		self.wpn_fps_smg_x_mp5_npc.unit = "units/pd2_dlc_dos/weapons/wpn_fps_smg_x_mp5/wpn_fps_smg_x_mp5_npc"
@@ -28452,7 +28518,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_i_singlefire",
 			"wpn_fps_upg_i_autofire",
-			"wpn_fps_upg_ak_m_quick"
+			"wpn_fps_upg_ak_m_quick",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_x_akmsu_npc = deep_clone(self.wpn_fps_smg_x_akmsu)
 		self.wpn_fps_smg_x_akmsu_npc.unit = "units/pd2_dlc_dos/weapons/wpn_fps_smg_x_akmsu/wpn_fps_smg_x_akmsu_npc"
@@ -28701,7 +28769,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--Stuff--
 			"wpn_fps_upg_vg_ass_smg_verticalgrip",
 			"wpn_fps_upg_vg_ass_smg_stubby",
-			"wpn_fps_upg_vg_ass_smg_afg"
+			"wpn_fps_upg_vg_ass_smg_afg",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_ass_tecci_npc = deep_clone(self.wpn_fps_ass_tecci)
 		self.wpn_fps_ass_tecci_npc.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci_npc"
@@ -28895,7 +28965,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_hajk_npc = deep_clone(self.wpn_fps_smg_hajk)
 		self.wpn_fps_smg_hajk_npc.unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk/wpn_fps_smg_hajk_npc"
@@ -29587,7 +29659,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_o_xpsg33_magnifier"
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_schakal_npc = deep_clone(self.wpn_fps_smg_schakal)
 		self.wpn_fps_smg_schakal_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal/wpn_fps_smg_schakal_npc"
@@ -31179,7 +31253,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_s_mk46",
 			"wpn_fps_smg_olympic_s_short",
 			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds_v2"
+			"wpn_fps_upg_o_45rds_v2",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_ass_contraband_npc = deep_clone(self.wpn_fps_ass_contraband)
 		self.wpn_fps_ass_contraband_npc.unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband/wpn_fps_ass_contraband_npc"
@@ -31905,7 +31981,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_upg_ak_s_psl",
 			"wpn_fps_upg_ak_g_rk3",
 			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_ass_flint_npc = deep_clone(self.wpn_fps_ass_flint)
 		self.wpn_fps_ass_flint_npc.unit = "units/pd2_dlc_grv/weapons/wpn_fps_ass_flint/wpn_fps_ass_flint_npc"
@@ -32115,7 +32193,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_s_standard",
 			"wpn_fps_snp_tti_s_vltor",
 			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_i_slower_rof",
+			"wpn_fps_upg_i_faster_rof"	
 		}
 		self.wpn_fps_smg_coal_npc = deep_clone(self.wpn_fps_smg_coal)
 		self.wpn_fps_smg_coal_npc.unit = "units/pd2_dlc_grv/weapons/wpn_fps_smg_coal/wpn_fps_smg_coal_npc"
@@ -32139,8 +32219,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				gadget_zoom = 9,
-				concealment = -1,
-				recoil = 1
+				concealment = -1
 			},
 			texture_bundle_folder = "flip",
 			perks = {"gadget"},
@@ -32421,7 +32500,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_45rds_v2/wpn_fps_upg_o_45rds_v2",
 			stats = {
 				value = 1,
-				gadget_zoom = 1,
+				gadget_zoom = 2,
 				concealment = -1
 			},
 			texture_bundle_folder = "flip",
@@ -33408,7 +33487,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_spot",
 				--Custom stuff--
 				"wpn_fps_upg_i_singlefire",
-				"wpn_fps_upg_i_autofire"			
+				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"				
 			}
 		}
 		self.wpn_fps_smg_erma_npc = deep_clone(self.wpn_fps_smg_erma)
@@ -34231,7 +34312,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ns_duck",
 				"wpn_fps_upg_o_xpsg33_magnifier",
 				--Custom stuff--
-				"wpn_upg_saiga_m_20rnd"
+				"wpn_upg_saiga_m_20rnd",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_sho_basset_npc = deep_clone(self.wpn_fps_sho_basset)
@@ -34370,7 +34453,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ns_sho_salvo_large",
 				"wpn_fps_upg_ns_duck",
 				--Custom stuff--
-				"wpn_upg_saiga_m_20rnd"
+				"wpn_upg_saiga_m_20rnd",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_sho_x_basset_npc = deep_clone(self.wpn_fps_sho_x_basset)
@@ -34647,7 +34732,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_spot",
 				"wpn_fps_m4_upg_m_quick",
 				"wpn_fps_upg_o_xpsg33_magnifier",
-				"wpn_fps_upg_o_45rds_v2"
+				"wpn_fps_upg_o_45rds_v2",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_ass_corgi_npc = deep_clone(self.wpn_fps_ass_corgi)
@@ -34826,7 +34913,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ak_g_hgrip",
 				"wpn_fps_upg_ak_g_pgrip",
 				"wpn_fps_upg_ak_g_wgrip",
-				"wpn_fps_upg_ak_g_rk3"
+				"wpn_fps_upg_ak_g_rk3",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_coal_npc = deep_clone(self.wpn_fps_smg_x_coal)
@@ -34879,7 +34968,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_pis_crimson",
 				"wpn_fps_upg_fl_pis_x400v",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_pis_m3x"
+				"wpn_fps_upg_fl_pis_m3x",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_baka_npc = deep_clone(self.wpn_fps_smg_x_baka)
@@ -34933,7 +35024,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_cobray_npc = deep_clone(self.wpn_fps_smg_x_cobray)
@@ -34988,7 +35081,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_erma_npc = deep_clone(self.wpn_fps_smg_x_erma)
@@ -35084,7 +35179,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_m4_m_l5",
 				"wpn_fps_upg_m4_m_quad",
 				"wpn_fps_upg_m4_m_straight",
-				"wpn_fps_m4_upg_m_quick"
+				"wpn_fps_m4_upg_m_quick",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_hajk_npc = deep_clone(self.wpn_fps_smg_x_hajk)
@@ -35154,7 +35251,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_m45_npc = deep_clone(self.wpn_fps_smg_x_m45)
@@ -35220,7 +35319,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_m1928_npc = deep_clone(self.wpn_fps_smg_x_m1928)
@@ -35282,7 +35383,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_smg_cobray_ns_silencer",
 				"wpn_fps_smg_cobray_ns_barrelextension",
 				"wpn_fps_smg_mac10_m_quick",
-				"wpn_fps_smg_mac10_body_modern"
+				"wpn_fps_smg_mac10_body_modern",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_mac10_npc = deep_clone(self.wpn_fps_smg_x_mac10)
@@ -35330,7 +35433,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_mp7_npc = deep_clone(self.wpn_fps_smg_x_mp7)
@@ -35377,7 +35482,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ns_ass_smg_tank",
 				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 				"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
-				"wpn_fps_upg_vg_ass_smg_afg_vanilla"
+				"wpn_fps_upg_vg_ass_smg_afg_vanilla",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_mp9_npc = deep_clone(self.wpn_fps_smg_x_mp9)
@@ -35494,7 +35601,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_olympic_npc = deep_clone(self.wpn_fps_smg_x_olympic)
@@ -35545,7 +35654,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_p90_npc = deep_clone(self.wpn_fps_smg_x_p90)
@@ -35597,7 +35708,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_polymer_npc = deep_clone(self.wpn_fps_smg_x_polymer)
@@ -35671,7 +35784,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_schakal_npc = deep_clone(self.wpn_fps_smg_x_schakal)
@@ -35729,7 +35844,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_scorpion_npc = deep_clone(self.wpn_fps_smg_x_scorpion)
@@ -35830,7 +35947,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ass_ns_battle",
 				"wpn_fps_upg_fl_ass_utg",
 				--Custom--
-				"wpn_fps_upg_ammo_762_sterling"
+				"wpn_fps_upg_ammo_762_sterling",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_sterling_npc = deep_clone(self.wpn_fps_smg_x_sterling)
@@ -35876,7 +35995,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_tec9_npc = deep_clone(self.wpn_fps_smg_x_tec9)
@@ -35932,7 +36053,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_peq15",
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg"
+				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_uzi_npc = deep_clone(self.wpn_fps_smg_x_uzi)
@@ -37253,7 +37376,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				--Custom--
 				"wpn_fps_upg_i_singlefire",
 				"wpn_fps_upg_i_autofire",
-				"wpn_fps_upg_ammo_half_that"
+				"wpn_fps_upg_ammo_half_that",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"					
 			}
 		}
 		self.wpn_fps_lmg_shuno.override = {
@@ -37660,7 +37785,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_spot",
 				"wpn_fps_upg_o_xpsg33_magnifier",
 				--Custom--
-				"wpn_fps_upg_m4_s_standard"
+				"wpn_fps_upg_m4_s_standard",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_shepheard_npc = deep_clone(self.wpn_fps_smg_shepheard)
@@ -37725,7 +37852,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ns_ass_smg_firepig",
 				"wpn_fps_upg_ns_ass_smg_stubby",
 				"wpn_fps_upg_ns_ass_smg_tank",
-				"wpn_fps_upg_ak_ns_ak105"
+				"wpn_fps_upg_ak_ns_ak105",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_smg_x_shepheard_npc = deep_clone(self.wpn_fps_smg_x_shepheard)
@@ -37876,7 +38005,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_o_spot",
 				"wpn_fps_m4_upg_m_quick",
 				"wpn_fps_upg_o_xpsg33_magnifier",
-				"wpn_fps_upg_o_45rds_v2"
+				"wpn_fps_upg_o_45rds_v2",
+				"wpn_fps_upg_i_slower_rof",
+				"wpn_fps_upg_i_faster_rof"	
 			}
 		}
 		self.wpn_fps_ass_komodo_npc = deep_clone(self.wpn_fps_ass_komodo)
@@ -38713,6 +38844,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 					
 	Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
+		self.parts.wpn_fps_upg_i_slower_rof = {
+			pcs = {},
+			type = "custom",
+			sub_type = "singlefire",
+			name_id = "bm_wp_upg_i_singlefire_sc",
+			a_obj = "a_body",
+			has_description = true,
+			custom_stats = {rof_mult = 0.85},
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			stats = {
+				value = 5,
+				damage = 0,
+				spread = 0,
+				recoil = 1
+			},
+			is_a_unlockable = true,
+			forbids = {
+				"wpn_fps_upg_extra_mp_lock"
+			},
+			internal_part = true,
+			dlc = "sc"
+		}
+		self.parts.wpn_fps_upg_i_faster_rof = {
+			pcs = {},
+			type = "custom",
+			sub_type = "autofire",
+			name_id = "bm_wp_upg_i_autofire_sc",
+			a_obj = "a_body",
+			has_description = true,
+			custom_stats = {rof_mult = 1.15},
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			stats = {
+				value = 5,
+				damage = 0,
+				spread = 0,
+				recoil = -1,
+				spread_moving = 0
+			},
+			is_a_unlockable = true,
+			forbids = {
+				"wpn_fps_upg_extra_mp_lock"
+			},
+			internal_part = true,
+			dlc = "sc"
+		}	
 		--Vlad's Rodina--
 		self.parts.wpn_fps_upg_vlad_rodina_legend = {
 			type = "legendary",

@@ -1158,8 +1158,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.experience = {}
 		self.mobster_boss.detection = presets.detection.normal
 		self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
-		self.mobster_boss.HEALTH_INIT = 500
-		self.mobster_boss.headshot_dmg_mul = 3.997125
+		self.mobster_boss.HEALTH_INIT = 1000
+		self.mobster_boss.headshot_dmg_mul = 7.99425
 		self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 		self.mobster_boss.damage.explosion_damage_mul = 1.25
 		self.mobster_boss.move_speed = presets.move_speed.very_slow
@@ -1207,8 +1207,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.experience = {}
 		self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 		self.biker_boss.detection = presets.detection.normal
-		self.biker_boss.HEALTH_INIT = 500
-		self.biker_boss.headshot_dmg_mul = 3.997125
+		self.biker_boss.HEALTH_INIT = 1000
+		self.biker_boss.headshot_dmg_mul = 7.99425
 		self.biker_boss.damage.explosion_damage_mul = 1.25
 		self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.boss
 		self.biker_boss.move_speed = presets.move_speed.very_slow
@@ -1294,8 +1294,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.custom_shout = true
 		self.chavez_boss.priority_shout_max_dis = 3000
 		self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
-		self.chavez_boss.HEALTH_INIT = 500
-		self.chavez_boss.headshot_dmg_mul = 3.997125
+		self.chavez_boss.HEALTH_INIT = 1000
+		self.chavez_boss.headshot_dmg_mul = 7.99425
 		self.chavez_boss.damage.explosion_damage_mul = 1.25
 		self.chavez_boss.move_speed = presets.move_speed.very_slow
 		self.chavez_boss.allowed_poses = {stand = true}
@@ -1387,8 +1387,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.tags = {"custom", "special"}
 		self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 		self.drug_lord_boss.detection = presets.detection.normal
-		self.drug_lord_boss.HEALTH_INIT = 500
-		self.drug_lord_boss.headshot_dmg_mul = 3.997125
+		self.drug_lord_boss.HEALTH_INIT = 1000
+		self.drug_lord_boss.headshot_dmg_mul = 7.99425
 		self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 		self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.titan
 		self.drug_lord_boss.move_speed = presets.move_speed.very_slow
@@ -11372,7 +11372,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"asval_smg_elite",
 			"ak47_ass_boom",
 			"autumn_smg",
-			"s553_zeal"
+			"s553_zeal",
+			"lmg_titan"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11422,7 +11423,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval"),
 			Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"),
-			Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553")
+			Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"),
+			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc")
 		}
 	end
 
@@ -11519,7 +11521,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 25
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
 		self:_multiply_all_speeds(1, 1)
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
@@ -11619,7 +11621,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 50
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
 		self:_multiply_all_speeds(1, 1)
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")	
@@ -11819,7 +11821,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 100
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 		self:_multiply_all_speeds(1, 1)
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
@@ -11931,7 +11933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 		self:_multiply_all_speeds(1, 1.05)
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
@@ -12043,7 +12045,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		self:_multiply_all_speeds(1, 1.05)
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
@@ -12093,7 +12095,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
 		self:_multiply_all_speeds(1.05, 1.1)
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")
@@ -12169,7 +12171,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.tank_hw.move_speed = self.presets.move_speed.slow
 		end		
 		
-		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
+		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu")

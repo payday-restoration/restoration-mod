@@ -38852,6 +38852,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			has_description = true,
 			custom_stats = {rof_mult = 0.85},
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_slower_rof",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
@@ -38875,6 +38876,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			has_description = true,
 			custom_stats = {rof_mult = 1.15},
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_faster_rof",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {

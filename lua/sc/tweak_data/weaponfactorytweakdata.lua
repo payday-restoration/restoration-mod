@@ -45117,44 +45117,44 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			"wpn_fps_upg_ammo_half_that"
 		})
 		table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
-			"wpn_fps_upg_i_singlefire"
+			"wpn_fps_upg_i_slower_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_m249.uses_parts, {
-			"wpn_fps_upg_i_singlefire"
+			"wpn_fps_upg_i_slower_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_rpk.uses_parts, {
-			"wpn_fps_upg_i_singlefire"
+			"wpn_fps_upg_i_slower_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_mg42.uses_parts, {
-			"wpn_fps_upg_i_singlefire"
+			"wpn_fps_upg_i_slower_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_par.uses_parts, {
-			"wpn_fps_upg_i_singlefire"
+			"wpn_fps_upg_i_slower_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_faster_rof"	
 		})
 		table.list_append(self.wpn_fps_lmg_m249.uses_parts, {
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_faster_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_rpk.uses_parts, {
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_faster_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_mg42.uses_parts, {
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_faster_rof"
 		})
 		table.list_append(self.wpn_fps_lmg_par.uses_parts, {
-			"wpn_fps_upg_i_autofire"
+			"wpn_fps_upg_i_faster_rof"
 		})
 		if self.wpn_fps_lmg_m60 then --Pawcio's M60
 			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
 			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 			self.wpn_fps_lmg_m60.override = { 
 				wpn_fps_upg_ammo_half_that = {
@@ -45173,7 +45173,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_ammo_half_that"
 			})
 			table.list_append(self.wpn_fps_lmg_pecheneg.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 			self.parts.wpn_fps_lmg_pecheneg_a_762.pcs = nil
 			self.parts.wpn_fps_lmg_pecheneg_b_long.stats = {
@@ -45182,7 +45182,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				recoil = 2
 			}			
 			table.list_append(self.wpn_fps_lmg_pecheneg.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 		end				
 
@@ -45235,10 +45235,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_ammo_half_that"
 			})
 		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 		self.parts.wpn_fps_upg_rpd_irons.pcs = nil
 		self.parts.wpn_fps_upg_rpd_bipod.stats = {

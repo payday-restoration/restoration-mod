@@ -1,6 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-	--[[
 	IncendiaryBurstGrenade = IncendiaryBurstGrenade or class(GrenadeBase)
 	
 	function IncendiaryBurstGrenade:init(unit)
@@ -71,6 +70,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_check_achievements(unit, is_dead, damage_percent, 1, 1)
 		end
 	end
-	]]--
 		
 end

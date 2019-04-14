@@ -157,7 +157,6 @@ if not tweak_data then return end
 	tweak_data.projectiles.molotov.player_damage = 3
 	tweak_data.projectiles.molotov.burn_duration = 10
 
-	--[[
 	--Incendiary Nades, idea to make em a mollie (WIP)--
 	tweak_data.projectiles.fir_com.damage = 3
 	--tweak_data.projectiles.fir_com.curve_pow = 2
@@ -171,7 +170,6 @@ if not tweak_data then return end
 	}
 	tweak_data.projectiles.fir_com.range = 75
 	tweak_data.blackmarket.projectiles.fir_com.impact_detonation = true
-	]]--
 	
 	--Incendiary Nades--
 	tweak_data.projectiles.fir_com.damage = 60

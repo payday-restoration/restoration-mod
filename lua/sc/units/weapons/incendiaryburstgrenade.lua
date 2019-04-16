@@ -38,18 +38,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function IncendiaryBurstGrenade:_spawn_environment_fire(normal)
 		local position = self._unit:position()
 		local rotation = self._unit:rotation()
-		local data = tweak_data.env_effect:molotov_fire()
+		local data = tweak_data.env_effect:incendiary_burst_fire()
 
 		EnvironmentFire.spawn(position, rotation, data, normal, self._thrower_unit, 0, 1)
 		self._unit:set_slot(0)
 	end
 
 	function IncendiaryBurstGrenade:bullet_hit()
-		if not Network:is_server() then
-			return
-		end
-
-		self:_detonate()
 	end
 		
 	function IncendiaryBurstGrenade:add_damage_result(unit, is_dead, damage_percent)

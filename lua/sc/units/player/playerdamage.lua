@@ -173,7 +173,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		player_damage_melee(self, attack_data)
 	end
-
+	
+	local orig_dmg_xpl = PlayerDamage.damage_explosion
+	function PlayerDamage:damage_explosion(attack_data,...)
+		local attacker_unit = attack_data and attack_data.attacker_unit
+		if attacker_unit then
+			if (attacker_unit:movement():team() == self._unit:movement():team()) or (self._unit == attacker_unit) then 
+				return
+			end
+		end
+		return orig_dmg_xpl(self,attack_data,...)
+	end	
+	
 	--Lets you heal with full HP--
 	function PlayerDamage.full_revives(self)
 		return Application:digest_value(self._revives, false) >= tweak_data.player.damage.LIVES_INIT + managers.player:upgrade_value("player", "additional_lives", 0)
@@ -510,5 +521,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.hud:pd_start_timer({time = self._arrested_timer})
 		managers.hud:on_arrested()
 	end
-
+	
 end

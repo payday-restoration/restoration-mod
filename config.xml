@@ -164,6 +164,7 @@
 		<hook file="sc/managers/experiencemanager.lua" source_file="lib/managers/experiencemanager"/>
 		<hook file="sc/units/civilians/civilianlogicsurrender.lua" source_file="lib/units/civilians/logics/civilianlogicsurrender"/>
 		<hook file="sc/units/equipment/sentrygunbrain.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbrain"/>
+		<hook file="sc/units/weapons/molotovgrenade.lua" source_file="lib/units/weapons/grenades/molotovgrenade"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

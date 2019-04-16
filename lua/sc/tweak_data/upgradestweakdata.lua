@@ -906,11 +906,15 @@ function UpgradesTweakData:_init_pd2_values()
    	}
 	self.values.player.passive_health_regen = {0.025}
 	self.values.player.passive_health_multiplier = {
+		1.05,
 		1.1,
+		1.15,
 		1.2,
 		1.25,
 		1.3,
+		1.35,
 		1.4,
+		1.45,
 		1.5
 	}
 	self.values.temporary.dmg_dampener_close_contact = {
@@ -1402,6 +1406,42 @@ function UpgradesTweakData:_player_definitions()
 			category = "player",
 			upgrade = "passive_health_multiplier",
 			value = 6
+		}
+	}	
+	self.definitions.player_passive_health_multiplier_7 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 7
+		}
+	}		
+	self.definitions.player_passive_health_multiplier_8 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 8
+		}
+	}	
+	self.definitions.player_passive_health_multiplier_9 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 9
+		}
+	}
+	self.definitions.player_passive_health_multiplier_10 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 10
 		}
 	}	
 	self.definitions.temporary_damage_speed_multiplier_1 = {

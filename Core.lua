@@ -50,7 +50,8 @@ if not _G.restoration then
 		"crojob2",
 		"mus",
 		"big",
-		"wwh"
+		"wwh",
+		"pines"
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 

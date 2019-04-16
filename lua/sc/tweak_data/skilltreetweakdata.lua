@@ -2033,7 +2033,8 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_1_desc",
 			{
 				upgrades = {
-					"player_passive_health_multiplier_1"
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
 				},
 				cost = 200,
 				icon_xy = {0, 0},
@@ -2054,7 +2055,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_2",
+					"player_passive_health_multiplier_3",
 					"team_passive_health_multiplier"
 				},
 				cost = 1000,
@@ -2094,7 +2095,8 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_2_desc",
 			{
 				upgrades = {
-					"player_passive_health_multiplier_1"
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
 				},
 				cost = 200,
 				icon_xy = {0, 0},
@@ -2104,7 +2106,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_2"
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4"
 				},
 				cost = 400,
 				icon_xy = {1, 1},
@@ -2114,8 +2117,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4"
+					"player_passive_health_multiplier_5",
+					"player_passive_health_multiplier_6"
 				},
 				cost = 1000,
 				icon_xy = {2, 1},
@@ -2135,8 +2138,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_5",
-					"player_passive_health_multiplier_6",
+					"player_passive_health_multiplier_7",
+					"player_passive_health_multiplier_8",
 					"player_health_revive_max",
 					"player_passive_loot_drop_multiplier"
 				},
@@ -2675,6 +2678,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_extra_ticks",
+					"player_passive_health_multiplier_4",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
@@ -2759,7 +2763,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_armor_health_store_amount_2",
-					"player_passive_health_multiplier_1"
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
 				},
 				cost = 400,
 				icon_xy = {4, 7},
@@ -2770,7 +2775,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_armor_max_health_store_multiplier",
-					"player_passive_health_multiplier_2",
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4",
 					"player_passive_dodge_chance_1"
 				},
 				cost = 1000,
@@ -2782,7 +2788,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_armor_health_store_amount_3",
-					"player_passive_health_multiplier_3"
+					"player_passive_health_multiplier_5"
 				},
 				cost = 2400,
 				icon_xy = {6, 7},
@@ -3019,7 +3025,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_1"
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
@@ -3030,7 +3037,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_2",
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4",
 					"player_chico_preferred_target"
 				},
 				cost = 1000,
@@ -3042,7 +3050,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_5",
 					"player_chico_injector_low_health_multiplier"
 				},
 				cost = 2400,
@@ -3225,7 +3233,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_3_desc_sc",
 				name_id = "menu_deck20_3",
 				upgrades = {
-					"player_passive_health_multiplier_1"
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
 				},
 				icon_xy = {
 					1,
@@ -3251,8 +3260,9 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_7_desc_sc",
 				name_id = "menu_deck20_7",
 				upgrades = {
-					"player_passive_health_multiplier_2",
-					"player_passive_health_multiplier_3"
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4",
+					"player_passive_health_multiplier_5"
 				},
 				icon_xy = {
 					3,
@@ -3303,7 +3313,9 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck21_3",
 				upgrades = {
 					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"player_passive_health_multiplier_2",
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4"					
 				},
 				icon_xy = {
 					1,

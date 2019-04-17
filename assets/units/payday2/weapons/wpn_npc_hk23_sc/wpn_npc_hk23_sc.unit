@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-	<object file="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" />
+	<object file="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" />
 	<dependencies>
 		<depends_on effect="effects/particles/weapons/rifle/muzzleflash_3dp" />
 		<depends_on effect="effects/particles/weapons/sniper_trail" />

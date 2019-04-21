@@ -2140,7 +2140,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_passive_health_multiplier_7",
 					"player_passive_health_multiplier_8",
-					"player_health_revive_max",
+					"player_revived_health_regain_2",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

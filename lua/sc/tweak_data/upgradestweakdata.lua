@@ -773,7 +773,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Up You Go
 				self.values.temporary.revived_damage_resist = {{0.7, 10}}
-				self.values.player.revived_health_regain = {1.4}
+				self.values.player.revived_health_regain = {1.4, 2.2}
 				
 				--Swan Song
 				self.values.temporary.berserker_damage_multiplier = { {1, 3}, {1, 9} }
@@ -1149,6 +1149,24 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_revived_health_regain_1 = {
+		name_id = "menu_revived_health_regain",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "revived_health_regain",
+			category = "player"
+		}
+	}
+	self.definitions.player_revived_health_regain_2 = {
+		name_id = "menu_revived_health_regain",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "revived_health_regain",
+			category = "player"
+		}
+	}		
 	self.definitions.player_damage_control_auto_shrug_1 = {
 		category = "feature",
 		upgrade = {

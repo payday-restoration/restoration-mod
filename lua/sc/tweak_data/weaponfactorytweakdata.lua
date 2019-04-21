@@ -1465,6 +1465,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = -1,
 				recoil = 1
 			},
+			perks = {
+				"fire_mode_auto"
+			},					
 			forbids = {
 				"wpn_fps_upg_extra_mp_lock"
 			},

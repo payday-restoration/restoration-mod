@@ -84,6 +84,7 @@ if not _G.restoration then
 		"chew",
 		"peta2",
 		"nail",
+		"rvd1",
 		"rvd2",
 		"mia_2",
 		"hox_1",
@@ -105,6 +106,8 @@ if not _G.restoration then
 		"wwh",
 		"born",
 		"cane",
+		"dah",
+		"run",
 		--Custom Heists below--
 		"Victor Romeo",
 		"hardware_store"

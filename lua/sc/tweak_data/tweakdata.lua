@@ -230,7 +230,7 @@ if not tweak_data then return end
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	if difficulty_index == 8 then
-		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
+		tweak_data.interaction.corpse_alarm_pager.timer = 15
 	elseif difficulty_index == 7 then
 		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
 	else

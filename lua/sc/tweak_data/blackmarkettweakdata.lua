@@ -152,6 +152,19 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.smoke_screen_grenade.base_cooldown = 30
 	self.projectiles.damage_control.base_cooldown = 30
 	self.projectiles.concussion.max_amount = 3
+	
+	--Fuck off
+	self.projectiles.frag.no_cheat_count = true
+	self.projectiles.concussion.no_cheat_count = true
+	self.projectiles.molotov.no_cheat_count = true
+	self.projectiles.wpn_prj_four.no_cheat_count = true
+	self.projectiles.wpn_prj_ace.no_cheat_count = true
+	self.projectiles.wpn_prj_jav.no_cheat_count = true
+	self.projectiles.wpn_prj_hur.no_cheat_count = true
+	self.projectiles.wpn_prj_target.no_cheat_count = true
+	self.projectiles.frag_com.no_cheat_count = true
+	self.projectiles.fir_com.no_cheat_count = true
+	self.projectiles.dada_com.no_cheat_count = true
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

@@ -3,9 +3,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerTweakData:_set_easy()
 		self.damage.automatic_respawn_time = 120
 		self.damage.MIN_DAMAGE_INTERVAL = 0.6
-		self.suspicion.max_value = 7
-		self.suspicion.range_mul = 0.9
-		self.suspicion.buildup_mul = 0.9
+		self.suspicion.max_value = 6
+		self.suspicion.range_mul = 0.8
+		self.suspicion.buildup_mul = 0.8
 	end
 
 	function PlayerTweakData:_set_normal()
@@ -19,40 +19,43 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerTweakData:_set_hard()
 		self.damage.automatic_respawn_time = 220
 		self.damage.MIN_DAMAGE_INTERVAL = 0.5
-		self.suspicion.max_value = 9
-		self.suspicion.range_mul = 1.1
-		self.suspicion.buildup_mul = 1.1
+		self.suspicion.max_value = 8
+		self.suspicion.range_mul = 1
+		self.suspicion.buildup_mul = 1	
 	end
 
 	function PlayerTweakData:_set_overkill()
 		self.damage.MIN_DAMAGE_INTERVAL = 0.45
-		self.suspicion.max_value = 10
-		self.suspicion.range_mul = 1.2
-		self.suspicion.buildup_mul = 1.2
+		self.suspicion.max_value = 8
+		self.suspicion.range_mul = 1
+		self.suspicion.buildup_mul = 1	
 	end
 
 	function PlayerTweakData:_set_overkill_145()
 		self.damage.MIN_DAMAGE_INTERVAL = 0.4
-		self.suspicion.max_value = 11
-		self.suspicion.range_mul = 1.3
-		self.suspicion.buildup_mul = 1.3
+		self.suspicion.max_value = 8
+		self.suspicion.range_mul = 1
+		self.suspicion.buildup_mul = 1	
 	end
 
 	function PlayerTweakData:_set_easy_wish()
-		self.suspicion.max_value = 12
-		self.suspicion.range_mul = 1.3
-		self.suspicion.buildup_mul = 1.3
+		self.suspicion.max_value = 8
+		self.suspicion.range_mul = 1
+		self.suspicion.buildup_mul = 1	
 		self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	end
 
 	function PlayerTweakData:_set_overkill_290()
-		self.suspicion.max_value = 12
-		self.suspicion.range_mul = 1.4
-		self.suspicion.buildup_mul = 1.4
+		self.suspicion.max_value = 10
+		self.suspicion.range_mul = 1.2
+		self.suspicion.buildup_mul = 1.2
 		self.damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}
+		self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
+			0.5
+		}			
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
 			call_duration = {
@@ -78,13 +81,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function PlayerTweakData:_set_sm_wish()
-		self.suspicion.max_value = 13
+		self.suspicion.max_value = 12
 		self.suspicion.range_mul = 1.4
 		self.suspicion.buildup_mul = 1.4
 		self.damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}
+		self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
+			0.5
+		}		
 		self.damage.TASED_TIME = 5
 		self.damage.STUN_TIME = 2
 		self.alarm_pager = {
@@ -152,6 +158,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			0.5,
 			0.25
 		}
+		self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
+			1,
+			0.75,
+			0.5
+		}		
 		self.damage.BLEED_OT_TIME = 40
 		self.damage.TASED_TIME = 10
 		self.damage.STUN_TIME = 1

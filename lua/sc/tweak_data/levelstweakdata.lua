@@ -61,6 +61,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jolly.ai_group_type = lapd
 		self.jolly.package = {"packages/jolly", "packages/narr_rvd"}
 		
+		self.pal.ai_group_type = lapd
+		self.pal.package = {"packages/narr_pal", "packages/narr_rvd"}		
+		
+		self.kenaz.ai_group_type = lapd
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd"}			
+		
 		self.rvd1.ai_group_type = lapd
 		self.rvd2.ai_group_type = lapd
 		

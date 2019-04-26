@@ -10810,7 +10810,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obr5.kick.crouching = self.new_m4.kick.standing
 		self.obr5.kick.steelsight = self.new_m4.kick.standing
 		self.obr5.AMMO_MAX = 80
-		self.obr5.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.obr5.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.obr5.stats = {
 			damage = 67,
 			spread = 14,

@@ -57,6 +57,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("skeleton", "rescue_civ")
 		_G.voiceline_framework:register_line_type("skeleton", "retreat")
 		_G.voiceline_framework:register_line_type("skeleton", "clear")
+		_G.voiceline_framework:register_line_type("bruce", "retreat")
 		_G.voiceline_framework:register_line_type("bruce", "buddy_died")
 		_G.voiceline_framework:register_line_type("bruce", "clear")
 		_G.voiceline_framework:register_line_type("bruce", "contact")
@@ -205,20 +206,14 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("skeleton", "clear", ModPath .. "assets/oggs/voiceover/skeleton/clear/clear" .. i .. ".ogg")
 		end					
 		
-		--Vet Cop thanks JimTheCookie
-		_G.voiceline_framework:register_line_type("bruce", "buddy_died")
-		_G.voiceline_framework:register_line_type("bruce", "clear")
-		_G.voiceline_framework:register_line_type("bruce", "contact")
-		_G.voiceline_framework:register_line_type("bruce", "death")
-		_G.voiceline_framework:register_line_type("bruce", "gogo")
-		_G.voiceline_framework:register_line_type("bruce", "kill")
-		_G.voiceline_framework:register_line_type("bruce", "pain")
-		_G.voiceline_framework:register_line_type("bruce", "rescue_civ")
-		_G.voiceline_framework:register_line_type("bruce", "spawn")
-		
+		--Vet Cop thanks JimTheCookie	
 
 		for i = 1, 10 do
 			_G.voiceline_framework:register_voiceline("bruce", "buddy_died", ModPath .. "assets/oggs/voiceover/bruce/buddy_died/buddy_died" .. i .. ".ogg")
+		end		
+		
+		for i = 1, 6 do
+			_G.voiceline_framework:register_voiceline("bruce", "retreat", ModPath .. "assets/oggs/voiceover/bruce/retreat/retreat" .. i .. ".ogg")
 		end
 
 		for i = 1, 7 do

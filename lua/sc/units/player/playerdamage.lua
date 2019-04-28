@@ -355,6 +355,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if alive(attack_data.attacker_unit) then
 				if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
 					if alive(player_unit) then
+	        	        attack_data.attacker_unit:sound():say("post_tasing_taunt")
 						player_unit:movement():on_non_lethal_electrocution()
 						managers.player:set_player_state("tased")
 						self.tase_time = _time + 10
@@ -521,5 +522,43 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.hud:pd_start_timer({time = self._arrested_timer})
 		managers.hud:on_arrested()
 	end
+	
+	function PlayerDamage:damage_tase(attack_data)
+	    if self._god_mode then
+	    	return
+	    end
+        
+	    local cur_state = self._unit:movement():current_state_name()
+        
+	    if cur_state ~= "tased" and cur_state ~= "fatal" then
+	    	self:on_tased(false)
+        
+	    	self._tase_data = attack_data
+        
+	    	managers.player:set_player_state("tased")
+        
+	    	local damage_info = {
+	    		result = {
+	    			variant = "tase",
+	    			type = "hurt"
+	    		}
+	    	}
+        
+	    	self:_call_listeners(damage_info)
+        
+	    	if attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "taser" then
+	    		attack_data.attacker_unit:sound():say("post_tasing_taunt")
+     
+	    		if managers.blackmarket:equipped_mask().mask_id == tweak_data.achievement.its_alive_its_alive.mask then
+	    			managers.achievment:award_progress(tweak_data.achievement.its_alive_its_alive.stat)
+	    		end
+	    	end
+	    end
+		if cur_state == "tased" then
+		    if attack_data.attacker_unit:base()._tweak_table == "taser" or attack_data.attacker_unit:base()._tweak_table == "taser_titan" then
+		       attack_data.attacker_unit:sound():say("post_tasing_taunt")
+			end
+		end	
+    end
 	
 end

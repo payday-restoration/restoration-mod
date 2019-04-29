@@ -1875,7 +1875,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_phalanx_vip(presets)
 		self.phalanx_vip = deep_clone(self.phalanx_minion)
-		self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan"}
+		self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan", "captain"}
 		self.phalanx_vip.damage.shield_knocked = false
 		self.phalanx_vip.damage.immune_to_knockback = true
 		self.phalanx_vip.immune_to_knock_down = true
@@ -1891,6 +1891,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.flammable = false
 		self.phalanx_vip.can_be_tased = false
 		self.phalanx_vip.ecm_vulnerability = nil
+		self.phalanx_vip.die_sound_event_2 = "l1n_x01a_any_3p"
 		self.phalanx_vip.must_headshot = true
 		self.phalanx_vip.ends_assault_on_death = true
 		self.phalanx_vip.suppression = nil
@@ -1911,7 +1912,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_spring(presets)
 		self.spring = deep_clone(self.tank)
-		self.spring.tags = {"law", "custom", "special"}
+		self.spring.tags = {"law", "custom", "special", "captain"}
 		self.spring.move_speed = presets.move_speed.very_slow
 		self.spring.rage_move_speed = presets.move_speed.fast
 		self.spring.no_run_start = true
@@ -1957,6 +1958,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spring.announce_incomming = "incomming_captain"
 		self.spring.spawn_sound_event = "cpa_a02_01"
 		self.spring.die_sound_event = "mga_death_scream"
+		self.spring.die_sound_event_2 = "bdz_x02a_any_3p"
 		self.spring.critical_hits = {
 			damage_mul = 2
 		}
@@ -2056,18 +2058,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.rescue_hostages = true
 		self.autumn.spooc_attack_timeout = {3, 3}
 		self.autumn.spooc_attack_beating_time = {0, 0}
-		--self.autumn.spawn_sound_event = "cloaker_spawn"
-		self.autumn.spawn_sound_event = "cpa_a02_01" --for testing purposes only
+		--self.autumn.spawn_sound_event_2 = "cloaker_spawn"
+		self.autumn.spawn_sound_event_2 = "cpa_a02_01"--for testing purposes only
 		self.autumn.spooc_attack_use_smoke_chance = 1
 		self.autumn.weapon_voice = "3"
 		self.autumn.experience.cable_tie = "tie_swat"
 		self.autumn.speech_prefix_p1 = "cpa"
 		self.autumn.speech_prefix_count = nil
-		if job == "mad" then 
-			self.autumn.custom_voicework = nil
-		else
-			self.autumn.custom_voicework = "autumn"
-		end				
+		self.autumn.custom_voicework = "autumn"		
+		self.autumn.ends_assault_on_death = true	
 		self.autumn.access = "spooc"
 		self.autumn.flammable = false
 		self.autumn.dodge = presets.dodge.autumn

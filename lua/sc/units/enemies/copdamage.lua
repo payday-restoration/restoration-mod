@@ -722,7 +722,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.enemy:end_autumn_blackout()
 		end
 		
-		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan")  then
+		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		end		
 		--big fuck off death line unit check	

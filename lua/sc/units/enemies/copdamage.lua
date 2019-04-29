@@ -718,6 +718,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end 		 
 		
+		if char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
+			managers.enemy:end_autumn_blackout()
+		end
+		
 		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan")  then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		end		

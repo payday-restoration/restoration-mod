@@ -2056,7 +2056,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.rescue_hostages = true
 		self.autumn.spooc_attack_timeout = {3, 3}
 		self.autumn.spooc_attack_beating_time = {0, 0}
-		self.autumn.spawn_sound_event = "cloaker_spawn"
+		--self.autumn.spawn_sound_event = "cloaker_spawn"
+		self.autumn.spawn_sound_event = "cpa_a02_01" --for testing purposes only
 		self.autumn.spooc_attack_use_smoke_chance = 1
 		self.autumn.weapon_voice = "3"
 		self.autumn.experience.cable_tie = "tie_swat"

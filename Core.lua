@@ -71,13 +71,15 @@ if not _G.restoration then
 		"big" --big bank
 	}
 	_G.restoration.captain_stelf = {
-		--[["nightclub", --and Autumn stay off the dance floor
+		"nightclub", --and Autumn stay off the dance floor
 		"gallery", --art gallery
 		"branchbank", --well the trees are orange
 		"dah", --diamond heist
 		"four_stores", --do i really need to make a comment here?
-		"pal", --counterfeit probably gonna swap him for summers
-		"family" --diamond store]]--
+		"family", --diamond store
+		--custom heists
+		"wetwork", --res map package wetworks
+		"lvl_fourmorestores" --four more stores
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

@@ -96,8 +96,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				break
 			end
 		end
-		for _,j2 in ipairs(restoration.captain_stelf) do
-			if job == j2 then
+		for _,j3 in ipairs(restoration.captain_stelf) do
+			if job == j3 then
 			found_shit = true
 				break
 			end

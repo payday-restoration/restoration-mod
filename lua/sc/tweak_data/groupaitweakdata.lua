@@ -8012,7 +8012,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					amount_min = 1,
 					amount_max = 1,
 					tactics = self._tactics.Cap_summers,
-					rank = 3
+					rank = 1
 				},
 				{
 					unit = "taser_summers",
@@ -8020,7 +8020,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					amount_min = 1,
 					amount_max = 1,
 					tactics = self._tactics.Cap_summers,
-					rank = 2
+					rank = 1
 				}
 			}
 		}

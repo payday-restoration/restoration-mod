@@ -1,12 +1,66 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	orig_firemode_interact = SentryGunFireModeInteractionExt.interact
-	function SentryGunFireModeInteractionExt:interact(player)
-		if self._sentry_gun_weapon._unit:base()._is_repairing or (self._sentry_gun_weapon._unit:character_damage() and self._sentry_gun_weapon._unit:character_damage():dead()) then 
-			return 
+
+--	local orig_blocked = BaseInteractionExt._interact_blocked
+	function BaseInteractionExt:_interact_blocked(player) --sentry blocking goes here
+		local name = tostring(self.tweak_data or "nil")
+		if self._unit and self._unit:base() and self._unit:base().blackout_active then --autumn blackout
+			return true
 		end
-		return orig_firemode_interact(self,player)
+		if name == "sentry_gun_fire_mode" then 
+			if self._sentry_gun_weapon and self._sentry_gun_weapon._unit then
+				if self._sentry_gun_weapon._unit:base()._is_repairing then
+					return true
+				end
+			end
+		elseif name == "start_sentrygun_repairmode" then
+			if self._unit and self._unit:base() then 
+				if self._unit:base().get_name_id then 
+					if self._unit:base().is_repairmode then
+						local is_repairmode = self._unit:base():is_repairmode()
+						if is_repairmode then 
+							return true
+						end
+					end
+				end
+			end
+		end		
+		return false
 	end
 
+	local orig_selected = BaseInteractionExt.selected
+	function BaseInteractionExt:selected(player, locator, hand_id,...)
+		local result = orig_selected(self,player,locator,hand_id,...) 
+
+		if result and alive(self._unit) then
+			local tid = self.tweak_data or "none"
+			if self._unit:base() and self._unit:base().blackout_active then 
+				managers.hud:show_interact({
+					text = "Disabled by Captain Autumn!"
+				})
+			end
+		end
+		
+		return result
+	end
+
+	local orig_interact_start = BaseInteractionExt.interact_start
+	function BaseInteractionExt:interact_start(player, data,...)
+		if self._sentry_gun_weapon then
+			if self._sentry_gun_weapon._unit:base()._is_repairing then
+				return false
+			elseif self._sentry_gun_weapon._unit:character_damage():dead() then
+				return false
+			end
+		end
+		if self._unit and self._unit:base() and self._unit:base().blackout_active then 
+			return false
+		else
+			return orig_interact_start(self,player,data,...)
+		end
+	end
+
+
+--offy's sentry repair stuff
 	local function sentry_gun_interaction_add_string_macros(macros, ammo_ratio) --identical, copypasted from vanilla
 		macros.BTN_INTERACT = managers.localization:btn_macro("interact", true)
 

@@ -176,6 +176,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self._omnia_cooldown = 0
 		self._aoe_heal_cooldown = 0
+		self._aoe_blackout_cooldown = 0
 		self:_post_init()
 	end
 
@@ -237,6 +238,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self:do_summers_heal(self)		
 			end
 		end		
+		if self._tweak_data.do_autumn_blackout then 
+			self:do_autumn_blackout(self)
+		end
 	end
 
 	function CopMovement:do_omnia(self)
@@ -295,6 +299,117 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
 		end
 	end
+
+	function CopMovement:do_autumn_blackout(self)	
+		local test_kicker = false 
+		
+	--every [cooldown] seconds:
+		-- check all equipment units with equipment tweakdata tag "blackout_vulnerable"
+		-- for each of these units:
+			-- if (in surrounding [radius] area): set var "blackout_active" to "true
+			-- else: set var "blackout_active" 
+	
+		local blackout_cooldown = 1
+		local blackout_radius = 300000 --target equipment acquisition to apply blackout aoe to
+		local t = TimerManager:main():time()
+		if self._aoe_blackout_cooldown > t then
+			return
+		else
+			self._aoe_blackout_cooldown = t + blackout_cooldown
+		end
+		
+		if self._unit then
+			if self._unit:character_damage():dead() then return end --autumn's corpse will still disable equipment otherwise
+			
+			local all_eq = World:find_units_quick("all",14,25,26)
+			local closest = { --not currently used
+				--unit = false, 
+				--distance = math.huge()
+			}
+			for k,unit in pairs(all_eq) do 
+				if unit and alive(unit) and unit:base() then
+					
+					local dis = mvector3.distance_sq(self._unit:position(),unit:position())
+					if unit:interaction() and unit:interaction()._tweak_data and unit:interaction()._tweak_data.blackout_vulnerable then 
+						if not test_kicker then 
+							if dis < blackout_radius and not unit:base().blackout_active then --within blackout aoe
+								if unit:base().get_name_id then 
+									local eq_id = unit:base():get_name_id() or "ERROR"
+									if eq_id == "sentry_gun" then --perish
+										unit:character_damage():die()
+									elseif eq_id == "ecm_jammer" then 
+										unit:base():set_battery_empty()
+										unit:base():_set_feedback_active(false)
+									end
+								end
+								
+								unit:base().blackout_active = true
+								
+								if unit.contour and unit:contour() then 
+									unit:contour():add("deployable_blackout")
+								end
+							elseif dis >= blackout_radius and unit:base().blackout_active then
+							
+								unit:base().blackout_active = false
+								
+								if unit.contour and unit:contour() then 
+									unit:contour():remove("deployable_blackout")
+								end
+							end
+						elseif (dis < (closest.distance or blackout_radius)) then --do dick kickem
+							closest = {
+								distance = distance,
+								unit = unit
+							}
+						end 
+					end
+				end
+			end
+			if test_kicker then  --unused
+
+				if closest.unit then 
+					local followup_objective = {
+						type = "act",
+						scan = true,
+						action = {type = "act", body_part = 1, variant = "crouch", 
+									blocks = {action = -1, walk = -1, hurt = -1, heavy_hurt = -1, aim = -1}
+								}
+						}
+					local act = "e_so_container_kick"
+					local override_objective = {
+						type = act,
+						follow_unit = self._unit,
+						called = true,
+						destroy_clbk_key = false,
+						nav_seg = self._nav_tracker:nav_segment(),
+						pos = closest.unit:position(),
+						scan = true,
+						action = {
+							type = "act", 
+							variant = act,
+							body_part = 1,
+							blocks = {action = -1, walk = -1, hurt = -1, light_hurt = -1, heavy_hurt = -1 ,aim = -1},
+							align_sync = true,
+							},
+						action_duration = 3,
+						followup_objective = followup_objective,
+						complete_clbk = callback(self,self,"clbk_autumn_blackout_complete"),
+						fail_clbk = callback(self,self,"clbk_autumn_blackout_cancel")
+						
+					}
+					self._ext_brain:set_objective(override_objective)
+				end
+			end
+		end
+	end
+	
+	function CopMovement:clbk_autumn_blackout_cancel(self) --not used
+		--OffyLib:c_log(target,"Cancelled blackout on unit")
+	end
+	function CopMovement:clbk_autumn_blackout_complete(self) --not used
+		--OffyLib:c_log(target,"Done blackout on unit")
+	end
+	
 
 	function CopMovement:do_aoe_heal(self)
 		local t = TimerManager:main():time()

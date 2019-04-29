@@ -2098,7 +2098,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 				return false, t + delay_till_next_use
 			end
-		}		
+		}
+		self.autumn.do_autumn_blackout = true --if true, deployables in a radius around this cop will be disabled
 		table.insert(self._enemy_list, "autumn")
 	end	
 

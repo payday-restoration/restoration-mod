@@ -19,5 +19,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			color = Vector3(255, 140, 0)
 		}	
 		
-
+	ContourExt._types.deployable_blackout = { --for autumn's deployable disabling ability
+			priority = 1,
+			color = Vector3(0.5,0,1)
+		}
 end

@@ -72,6 +72,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local owner = self._unit:base():get_owner_id()
 		if owner then --no SWAT turrets allowed >:(
 
+			--a sentry dying mid-repair cycle (eg from autumn's blackout) now cancels and resets the repair
+			self._unit:base()._is_repairing = false 
+			self._repair_done_t = nil
+			if self._unit:contour() then
+				self._unit:contour():remove("highlight") --remove flash if repairing sentry is disabled by autumn
+				self._unit:contour():flash("highlight",false)
+			end
+			
 			self._health = 0
 			self._dead = true
 

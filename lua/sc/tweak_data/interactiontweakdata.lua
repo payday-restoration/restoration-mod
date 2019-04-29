@@ -78,6 +78,7 @@ function InteractionTweakData:init(...)
 			interact_distance = 180,
 	--		max_interact_distance = 200,
 			no_contour = true,
+			blackout_vulnerable = true,
 			verify_owner = true
 		}	
 	
@@ -563,6 +564,16 @@ function InteractionTweakData:init(...)
 		self.hold_hack_server_room = deep_clone(self.hold_type_in_password)
 		self.hold_hack_server_room.text_id = "hud_int_hack_server_room"
 		self.hold_hack_server_room.action_text_id = "hud_action_hacking_server_room"		
-	
+		
+		 --these are for indicating that this interaction can be disabled by autumn; should only be used for equipment. (start_sentrygun_repairmode is already done, see above)
+		self.sentry_gun.blackout_vulnerable = true
+		self.sentry_gun_fire_mode.blackout_vulnerable = true
+		self.ammo_bag.blackout_vulnerable = true
+		self.doctor_bag.blackout_vulnerable = true
+		self.first_aid_kit.blackout_vulnerable = true
+		self.bodybags_bag.blackout_vulnerable = true
+		self.ecm_jammer.blackout_vulnerable = true
+		self.trip_mine.blackout_vulnerable = true
+		self.grenade_briefcase.blackout_vulnerable = true
 	end
 end

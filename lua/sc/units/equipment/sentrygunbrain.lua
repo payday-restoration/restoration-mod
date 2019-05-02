@@ -146,32 +146,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		local best_focus_attention, best_focus_weight = nil
 		local best_focus_reaction = 0
-	--local hai = 1
 		for u_key, attention_info in pairs(self._detected_attention_objects) do
 			local weight = _get_weight(attention_info)
 
 			if weight and (best_focus_reaction < attention_info.reaction or best_focus_reaction == attention_info.reaction and (not best_focus_weight or best_focus_weight < weight)) then
-				local civ_unit = attention_info.unit
-				if managers.enemy:is_civilian(civ_unit) then 
-	--				local brain = civ_unit:brain()
+				local target_unit = attention_info.unit
+				if managers.enemy:is_civilian(target_unit) then 
+	--				local brain = target_unit:brain()
 	--				local logic_data = brain and brain._logic_data
 	--				local objective = logic_data and logic_data.objective
 	--				local objective_type = objective and objective.type
-					local anim_data = civ_unit:anim_data()
-	--				KineticHUD:_debug("Civ:: drop:" .. tostring(anim_data.drop or "nil") .. ",panic:" .. tostring(anim_data.panic or "nil"),hai)
+					local anim_data = target_unit:anim_data()
 					
 					if not anim_data.drop then 					
 						best_focus_weight = weight
 						best_focus_attention = attention_info
 						best_focus_reaction = attention_info.reaction
 					end
+				elseif target_unit and target_unit:base() and target_unit:base()._tweak_table and target_unit:base()._tweak_table == "autumn" then 
+					--don't add autumn to sentry targets list because he's a goddamn invisible hacker					
+					--todo check for invis tag instead of being autumn specifically? no invis tag in resmod currently though
 				else --is cop
-	--				KineticHUD:_debug("Cop: " .. tostring(attention_info.reaction or "nil"),hai)
 					best_focus_weight = weight
 					best_focus_attention = attention_info
 					best_focus_reaction = attention_info.reaction
 				end
-	--			hai = hai + 1
 			end
 		end
 

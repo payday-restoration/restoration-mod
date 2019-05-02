@@ -43617,7 +43617,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = nil				
 			self.parts.wpn_fps_upg_wellgrip.stats = {
 				value = 2,
-				recoil = 2,
+				recoil = 1,
 				spread_moving = 1,
 				concealment = -1
 				}											

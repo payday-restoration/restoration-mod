@@ -827,7 +827,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.asval_smg_npc.suppression = 2.8
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
-		self.mpx_npc = deep_clone(self.mp5_npc)
+		self.mpx_npc = deep_clone(self.mp5_tactical_npc)
+		self.mpx_npc.auto.fire_rate = 0.07058823529
+		self.mpx_npc.DAMAGE = 3.4
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()

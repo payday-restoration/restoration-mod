@@ -84,6 +84,7 @@ if not _G.restoration then
 	_G.restoration.tiny_levels = {
 		"hvh",
 		"chew",
+		"peta",
 		"peta2",
 		"nail",
 		"rvd1",
@@ -100,6 +101,9 @@ if not _G.restoration then
 		"skm_watchdogs_stage2",
 		"bph",
 		"nmh",
+		"flat",
+		"glace",
+		"man",
 		"vit",
 		"pbr",
 		"pbr2",

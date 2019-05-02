@@ -1979,7 +1979,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.HEALTH_INIT = 72
 		self.summers.HEALTH_SUICIDE_LIMIT = 0.25
 		self.summers.flammable = false
-		self.summers.allowed_stances = {cbt = true}
 		self.summers.use_animation_on_fire_damage = false
 		self.summers.damage.bullet_damage_mul = 0.65
 		self.summers.damage.explosion_damage_mul = 0.1
@@ -1988,9 +1987,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.headshot_dmg_mul = 1.25
 		self.summers.bag_dmg_mul = 6
 		self.summers.move_speed = presets.move_speed.fast
-		self.summers.crouch_move = false
-		self.summers.no_run_start = false
-		self.summers.no_run_stop = false
+		self.summers.crouch_move = true
 		self.summers.no_retreat = true
 		self.summers.no_arrest = true
 		self.summers.ends_assault_on_death = true
@@ -2036,7 +2033,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn = deep_clone(presets.base)
 		self.autumn.tags = {"law", "custom", "special"}
 		self.autumn.experience = {}
-		self.autumn.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.autumn.damage.hurt_severity = presets.hurt_severities.no_hurts
 		self.autumn.weapon = deep_clone(presets.weapon.normal)
 		self.autumn.detection = presets.detection.normal
 		self.autumn.damage.immune_to_knockback = true
@@ -2044,7 +2041,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.immune_to_concussion = true		
 		self.autumn.HEALTH_INIT = 120
 		self.autumn.headshot_dmg_mul = 2.925
-		self.autumn.damage.explosion_damage_mul = 1
+		self.autumn.damage.bullet_damage_mul = 0.65
+		self.autumn.damage.fire_damage_mul = 0.65
+		self.autumn.flammable = false
+		self.autumn.damage.explosion_damage_mul = 0.15
+		self.autumn.damage.bullet_dodge_chance = 50
 		self.autumn.move_speed = presets.move_speed.lightning
 		self.autumn.no_retreat = true
 		self.autumn.no_arrest = true
@@ -2054,10 +2055,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.can_be_tased = false
 		self.autumn.priority_shout_max_dis = 0
 		self.autumn.unintimidateable = true
+		self.autumn.must_headshot = true
 		self.autumn.priority_shout_max_dis = 3000
 		self.autumn.rescue_hostages = true
 		self.autumn.spooc_attack_timeout = {3, 3}
 		self.autumn.spooc_attack_beating_time = {0, 0}
+		self.autumn.no_damage_mission = true
 		--self.autumn.spawn_sound_event_2 = "cloaker_spawn"
 		self.autumn.spawn_sound_event_2 = "cpa_a02_01"--for testing purposes only
 		self.autumn.spooc_attack_use_smoke_chance = 1
@@ -2068,7 +2071,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.custom_voicework = "autumn"		
 		self.autumn.ends_assault_on_death = true	
 		self.autumn.access = "spooc"
-		self.autumn.flammable = false
 		self.autumn.dodge = presets.dodge.autumn
 		self.autumn.chatter = {
 			aggressive = true,
@@ -2080,7 +2082,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.steal_loot = nil
 		self.autumn.melee_weapon = nil
 		self.autumn.use_radio = nil
-		self.autumn.can_be_tased = true
 		self.autumn.static_dodge_preset = true
 		self.autumn.is_special = true
 		self.autumn.dodge_with_grenade = {

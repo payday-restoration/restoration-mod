@@ -37,6 +37,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				damage = self._health * 10
 			end
 		end
+		
+		if self._unit:base()._tweak_table == "autumn" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end
+		
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, 0, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
@@ -271,6 +280,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			local mul = self._char_tweak.headshot_dmg_mul * attack_data.add_head_shot_mul + 1
 			damage = damage * mul
 		end
+		
+		if self._unit:base()._tweak_table == "autumn" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end
+		
 		damage = self:_apply_damage_reduction(damage)
 		attack_data.raw_damage = damage
 		attack_data.headshot = head
@@ -873,6 +891,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				managers.hud:on_hit_confirmed()
 			end
 		end
+
+		if self._unit:base()._tweak_table == "autumn" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end		
+		
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, 0, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)

@@ -168,6 +168,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							managers.player:set_player_state("tased")
 						end
 					end
+				elseif tostring(attack_data.attacker_unit:base()._tweak_table) == "autumn" then
+					if alive(player_unit) then
+						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal then
+						else
+							attack_data.attacker_unit:damage():run_sequence_simple("decloak")
+							attack_data.attacker_unit:sound():say("i03", true, nil, true)
+							managers.player:set_player_state("incapacitated")
+						end
+					end				
 				end		
 			end
 		end

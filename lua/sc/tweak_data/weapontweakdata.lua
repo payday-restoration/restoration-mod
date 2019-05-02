@@ -829,7 +829,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
 		self.mpx_npc = deep_clone(self.mp5_tactical_npc)
 		self.mpx_npc.auto.fire_rate = 0.07058823529
-		self.mpx_npc.DAMAGE = 3.4
+		self.mpx_npc.DAMAGE = 3.4	
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()
@@ -8778,7 +8778,41 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.toz66.panic_suppression_chance = 0.0
 			self.toz66.stats_modifiers = {damage = 1}
-		end		
+		end	
+
+		if self.m1216 then --Alcat's M1216
+		self.m1216.rays = 9
+		self.m1216.spread.standing = 3
+		self.m1216.spread.crouching = 2
+		self.m1216.spread.steelsight = 1
+		self.m1216.spread.moving_standing = 4
+		self.m1216.spread.moving_crouching = 3
+		self.m1216.spread.moving_steelsight = 2
+		self.m1216.AMMO_MAX = 120
+		self.m1216.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.m1216.damage_near = 600
+		self.m1216.damage_far = 1200
+		self.m1216.shake.fire_multiplier = 1
+		self.m1216.shake.fire_steelsight_multiplier = -1
+		self.m1216.kick.standing = self.new_m4.kick.standing
+		self.m1216.kick.crouching = self.new_m4.kick.standing
+		self.m1216.kick.steelsight = self.new_m4.kick.standing
+		self.m1216.stats = {
+			damage = 45,
+			spread = 7,
+			recoil = 18,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 12,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.m1216.panic_suppression_chance = 0.0		
+		end			
 
 		if self.xm8 then --Pawcio's HK XM8
 			self.xm8.has_description = false			

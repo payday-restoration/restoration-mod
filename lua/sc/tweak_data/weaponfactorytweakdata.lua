@@ -41207,7 +41207,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}			
 			end		
 
-		if self.wpn_fps_pis_deckard then -- Pawcio's DECK ARD			
+		if self.wpn_fps_pis_deckard then -- Pawcio's DECK ARD (perfectly balanced) 			
 				self.parts.wpn_fps_upg_deckard_ammo_damage_high.stats = {
 						value = 10,
 						concealment = -17,
@@ -42212,7 +42212,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}	
 			end	
 
-		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden's AK MOE Furniture
+		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden and Alcat's AK MOE Furniture
 				self.parts.wpn_fps_upg_fg_ak_moe.stats = { 
 					value = 5,
 					spread = 2,
@@ -42230,8 +42230,39 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = -1,
 					recoil = -1,					
 					concealment = 2
-				}									
-			end				
+				}			
+				self.parts.wpn_fps_upg_ak556_m_pmag.stats = { 
+					value = 1,
+					spread = -1,
+					recoil = -1,					
+					concealment = 2
+				}													
+			end		
+
+		if self.parts.wpn_fps_upg_fg_moe2 then -- Kden and Alcat's M4 MOE Furniture
+				self.parts.wpn_fps_upg_fg_moe2.stats = { 
+					value = 5,
+					spread = 2,
+					recoil = -2,
+					concealment = -1
+				}	
+				self.parts.wpn_fps_upg_g_m4_moe.stats = { 
+					value = 1,
+					recoil = 1					
+				}		
+				self.parts.wpn_fps_upg_s_m4_sl_c.stats = { 
+					value = 1,
+					recoil = 2,
+					spread = -1,
+					concealment = -2
+				}			
+				self.parts.wpn_fps_upg_m4_m_pmag40.stats = { 
+					value = 3,
+					concealment = -1,
+					reload = -2,
+					extra_ammo = 10
+				}							
+			end							
 
 		if self.wpn_fps_pis_aps then -- Pawcio's Stechkin APS
 				self.parts.wpn_fps_upg_aps_9x18p.pcs = nil
@@ -43270,7 +43301,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						concealment = -3,
 						total_ammo_mod = -20
 					}					
-				self.parts.wpn_fps_mp_peepee_a_7N31.custom_stats = {armor_piercing_add = 0.75, ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75}						
+				self.parts.wpn_fps_mp_peepee_a_7N31.custom_stats = {armor_piercing_add = 0.75, ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75} --ammo conversions are fucking GAY. couldnt figure out a proper equation for this... so?					
 				self.parts.wpn_fps_mp_peepee_s_mag.stats = {
 						value = 1,
 						recoil = 1						
@@ -43294,6 +43325,24 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						concealment = 1
 					}		
 			end	
+
+		if self.wpn_fps_shot_m1216 then -- Alcat's M1216
+				self.parts.wpn_fps_shot_m1216_b_long.stats = { 
+						value = 1,
+						spread = 1,
+						concealment = -1						
+					}	
+				self.parts.wpn_fps_shot_m1216_b_short.stats = { 
+						value = 1,
+						spread = -1,
+						concealment = 1						
+					}		
+				self.parts.wpn_fps_shot_m1216_m_1more.stats = { 
+						value = 1,
+						extra_ammo = 4,
+						reload = -1						
+					}															
+			end				
 
 		if self.wpn_fps_pis_vp70 then -- VP70M  
 				self.parts.wpn_fps_pis_vp70_ac_9x21imi.pcs = nil
@@ -43516,7 +43565,98 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread_moving = -1,
 				concealment = -1
 				}			
+			end	
+
+		if self.parts.wpn_fps_upg_s_devgru then --carl ruins everything's Operator Attachment Pack
+			self.parts.wpn_fps_upg_ching_am_crap.pcs = nil	--temporarily nuking ammo conversions cause that shit's lame			
+			self.parts.wpn_fps_upg_tecci_am_beefy.pcs = nil	--and i'm too retarded to think of any stat shit
+			self.parts.wpn_fps_upg_am_gomerpyle.pcs = nil							
+			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil				
+			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil						
+			self.parts.wpn_fps_upg_s_devgru.stats = {
+				value = 4,
+				recoil = -2,
+				spread = 1,				
+				concealment = 1
+				}	
+			self.parts.wpn_fps_upg_fg_ropup.stats = {
+				value = 5,
+				concealment = -2,
+				spread = -2,
+				recoil = 2
+				}			
+			self.parts.wpn_fps_upg_fg_daniel.stats = {
+				value = 5,
+				concealment = -2,
+				spread = 2,
+				recoil = -2
+				}			
+			self.parts.wpn_fps_upg_fg_deadline.stats = {
+				value = 2,
+				recoil = -1,
+				spread = 1,				
+				concealment = 2
+				}			
+			self.parts.wpn_fps_upg_fg_deadline.custom_stats = {rof_mult = 0.96}	--maybe too little of a penalty?													
+			self.parts.wpn_fps_upg_mp9_s_no.stats = {
+				value = 2,
+				recoil = -2,
+				concealment = 2
+				}																			
+			self.parts.wpn_fps_upg_fg_patrick.stats = {
+				value = 7,
+				spread = -2,
+				recoil = 3,
+				concealment = -1
+				}				
+			self.parts.wpn_fps_upg_sub2000_m_short.stats = { 
+				value = 2,
+				concealment = 2,				
+				extra_ammo = -8
+				}			
+			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = nil				
+			self.parts.wpn_fps_upg_wellgrip.stats = {
+				value = 2,
+				recoil = 2,
+				spread_moving = 1,
+				concealment = -1
+				}											
+			self.parts.wpn_fps_upg_o_amine.stats = { 
+				value = 1,
+				spread = -1 --no comment
+				}							
+			self.parts.wpn_fps_upg_ns_dragon.stats = {
+				value = 5,
+				suppression = -4,
+				alert_size = -4,
+				recoil = 3,
+				spread = -2,
+				damage = 5,
+				concealment = -2
+				}							
+			self.parts.wpn_fps_upg_scar_s_collapsed.stats = {
+				value = 0,
+				concealment = 1
+				}				
+			self.parts.wpn_fps_upg_ns_hock.stats = {
+				value = 4,
+				suppression = -3,
+				alert_size = -3,
+				recoil = 2,
+				spread = -1,
+				damage = 5,
+				concealment = -1
+				}															
+			self.parts.wpn_fps_upg_ns_osprey.stats = {
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
+				damage = 5,
+				spread = 1,
+				concealment = -3
+				}							
 			end					
+			
 
 		if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint CompM2 Sight 
 			self.parts.wpn_fps_upg_o_compm2.stats = {

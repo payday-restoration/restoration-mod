@@ -4425,11 +4425,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
 						Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
 						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
-						Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_city_swat_3"),
+						Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
 						Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
 						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
-						Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_city_swat_3"),
+						Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 						Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
 						Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")							
 					},						

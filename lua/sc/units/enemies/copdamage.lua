@@ -99,6 +99,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				head_shot = head,
 				is_molotov = attack_data.is_molotov
 			}
+
+			if data.name == "swat_titan" then
+				if not data.head_shot then
+					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+				end
+			end				
+			
 			if not attack_data.is_fire_dot_damage or data.is_molotov then
 				managers.statistics:killed_by_anyone(data)
 			end
@@ -347,7 +354,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			
 			if data.head_shot and data.name == "boom" then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
-			end						
+			end			
+
+			if data.name == "swat_titan" then
+				if not data.head_shot then
+					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+				end
+			end			
 
 			if managers.groupai:state():all_criminals()[attack_data.attacker_unit:key()] then
 				managers.statistics:killed_by_anyone(data)
@@ -542,6 +555,21 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				name_id = attack_data.name_id,
 				variant = attack_data.variant
 			}
+
+			if data.name == "boom" then
+				if data.head_shot then
+					self._unit:damage():run_sequence_simple("grenadier_glass_break")
+				end
+			end				
+			
+			if data.head_shot then
+				self:_spawn_head_gadget({
+					position = attack_data.col_ray.body:position(),
+					rotation = attack_data.col_ray.body:rotation(),
+					dir = attack_data.col_ray.ray
+				})
+			end			
+			
 			managers.statistics:killed_by_anyone(data)
 			if attack_data.attacker_unit == managers.player:player_unit() then
 				self:_comment_death(attack_data.attacker_unit, self._unit)
@@ -723,9 +751,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:contour():remove("medic_show", false)
 			self._unit:contour():remove("medic_buff", false)
 		end
-		if self._unit:base()._tweak_table == "swat_titan" then
-			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
-		end
 		if self._unit:base()._tweak_table == "spooc" then
 			self._unit:damage():run_sequence_simple("kill_spook_lights")
 		end 
@@ -901,6 +926,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				managers.hud:on_hit_confirmed()
 			end
 		end
+		
+		if self._unit:base()._tweak_table == "boom" then
+			self._unit:damage():run_sequence_simple("grenadier_glass_break")
+		end				
 
 		if self._unit:base()._tweak_table == "autumn" then
 			local recloak_roll = math.rand(1, 100)
@@ -968,6 +997,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				variant = attack_data.variant,
 				head_shot = head
 			}
+							
+			if data.name == "swat_titan" then
+				if not data.head_shot then
+					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+				end
+			end				
+			
 			managers.statistics:killed_by_anyone(data)
 			local attacker_unit = attack_data.attacker_unit
 			if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then

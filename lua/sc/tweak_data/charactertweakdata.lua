@@ -718,9 +718,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
 			self.heavy_swat_sniper.speech_prefix_count = 4
 		else
-			self.heavy_swat_sniper.speech_prefix_p1 = "l5d"
+			self.heavy_swat_sniper.speech_prefix_p1 = "hek"
 			self.heavy_swat_sniper.speech_prefix_p2 = nil
 			self.heavy_swat_sniper.speech_prefix_count = nil
+		end			
+		if job == "mad" then 
+			self.heavy_swat_sniper.custom_voicework = nil
+		else
+			self.heavy_swat_sniper.custom_voicework = "tsniper"
 		end		
 		self.heavy_swat_sniper.is_special = true
 		table.insert(self._enemy_list, "heavy_swat_sniper")

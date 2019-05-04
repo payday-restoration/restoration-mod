@@ -12,6 +12,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_unit("autumn")
 		_G.voiceline_framework:register_unit("skeleton")
 		_G.voiceline_framework:register_unit("bruce")
+		_G.voiceline_framework:register_unit("tsniper")
 		_G.voiceline_framework:register_line_type("grenadier", "death")
 		_G.voiceline_framework:register_line_type("grenadier", "spawn")
 		_G.voiceline_framework:register_line_type("grenadier", "contact")
@@ -67,6 +68,14 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("bruce", "pain")
 		_G.voiceline_framework:register_line_type("bruce", "rescue_civ")
 		_G.voiceline_framework:register_line_type("bruce", "spawn")
+		_G.voiceline_framework:register_line_type("bruce", "retreat")
+		_G.voiceline_framework:register_line_type("tsniper", "clear")
+		_G.voiceline_framework:register_line_type("tsniper", "contact")
+		_G.voiceline_framework:register_line_type("tsniper", "death")
+		_G.voiceline_framework:register_line_type("tsniper", "gogo")
+		_G.voiceline_framework:register_line_type("tsniper", "pain")
+		_G.voiceline_framework:register_line_type("tsniper", "spawn")
+		_G.voiceline_framework:register_line_type("tsniper", "tasing")
 		
 		--Grenadier (thanks scruffy)
 		_G.voiceline_framework:register_voiceline("grenadier", "death", ModPath .. "assets/oggs/voiceover/grenadier/grenadier_death1.ogg")
@@ -165,46 +174,42 @@ if not _G.restorationvoice then
 				
 		--spooky scary skeletons
 		
-
-		for i = 1, 19 do
+		for i = 1, 10 do
 			_G.voiceline_framework:register_voiceline("skeleton", "buddy_died", ModPath .. "assets/oggs/voiceover/skeleton/buddy_died/buddy_died" .. i .. ".ogg")
 		end
-
-		for i = 1, 49 do
+		for i = 1, 24 do
 			_G.voiceline_framework:register_voiceline("skeleton", "contact", ModPath .. "assets/oggs/voiceover/skeleton/contact/contact" .. i .. ".ogg")
 		end
-
-		for i = 1, 19 do
+		for i = 1, 31 do
 			_G.voiceline_framework:register_voiceline("skeleton", "death", ModPath .. "assets/oggs/voiceover/skeleton/death/death" .. i .. ".ogg")
 		end
-
-		for i = 1, 29 do
+		for i = 1, 24 do
 			_G.voiceline_framework:register_voiceline("skeleton", "gogo", ModPath .. "assets/oggs/voiceover/skeleton/gogo/gogo" .. i .. ".ogg")
 		end		
 
-		for i = 1, 5 do
+		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("skeleton", "pain", ModPath .. "assets/oggs/voiceover/skeleton/pain/pain" .. i .. ".ogg")
 		end
 
-		for i = 1, 31 do
+		for i = 1, 18 do
 			_G.voiceline_framework:register_voiceline("skeleton", "ready", ModPath .. "assets/oggs/voiceover/skeleton/ready/ready" .. i .. ".ogg")
 		end
 		
-		for i = 1, 17 do
+		for i = 1, 7 do
 			_G.voiceline_framework:register_voiceline("skeleton", "rescue_civ", ModPath .. "assets/oggs/voiceover/skeleton/rescue_civ/rescue_civ" .. i .. ".ogg")
 		end
 		
-		for i = 1, 21 do
+		for i = 1, 14 do
 			_G.voiceline_framework:register_voiceline("skeleton", "retreat", ModPath .. "assets/oggs/voiceover/skeleton/retreat/retreat" .. i .. ".ogg")
 		end
 		
-		for i = 1, 6 do
+		for i = 1, 1 do
 			_G.voiceline_framework:register_voiceline("skeleton", "hostage", ModPath .. "assets/oggs/voiceover/skeleton/hostage/hostage" .. i .. ".ogg")
 		end	
 		
-		for i = 1, 17 do
+		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("skeleton", "clear", ModPath .. "assets/oggs/voiceover/skeleton/clear/clear" .. i .. ".ogg")
-		end					
+		end				
 		
 		--Vet Cop thanks JimTheCookie	
 
@@ -251,49 +256,74 @@ if not _G.restorationvoice then
 		--PDTH (Titan SWAT)
 		
 		--OH SHIIIIIIIIIIIT
-		for i = 1, 19 do
+		for i = 1, 10 do
 			_G.voiceline_framework:register_voiceline("pdth", "buddy_died", ModPath .. "assets/oggs/voiceover/pdth/buddy_died/buddy_died" .. i .. ".ogg")
 		end
         --DOUBLE TAP TRIPLE TAP JUST KEEP TAPPING
-		for i = 1, 49 do
+		for i = 1, 24 do
 			_G.voiceline_framework:register_voiceline("pdth", "contact", ModPath .. "assets/oggs/voiceover/pdth/contact/contact" .. i .. ".ogg")
 		end
 		--GLORORIUS PDTH DEATH SOUND
-		for i = 1, 19 do
+		for i = 1, 31 do
 			_G.voiceline_framework:register_voiceline("pdth", "death", ModPath .. "assets/oggs/voiceover/pdth/death/death" .. i .. ".ogg")
 		end
         --LETS GOOOOOOO
-		for i = 1, 29 do
+		for i = 1, 24 do
 			_G.voiceline_framework:register_voiceline("pdth", "gogo", ModPath .. "assets/oggs/voiceover/pdth/gogo/gogo" .. i .. ".ogg")
 		end		
 
-		for i = 1, 5 do
+		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("pdth", "pain", ModPath .. "assets/oggs/voiceover/pdth/pain/pain" .. i .. ".ogg")
 		end
 
-		for i = 1, 31 do
+		for i = 1, 18 do
 			_G.voiceline_framework:register_voiceline("pdth", "ready", ModPath .. "assets/oggs/voiceover/pdth/ready/ready" .. i .. ".ogg")
 		end
 		
-		for i = 1, 17 do
+		for i = 1, 7 do
 			_G.voiceline_framework:register_voiceline("pdth", "rescue_civ", ModPath .. "assets/oggs/voiceover/pdth/rescue_civ/rescue_civ" .. i .. ".ogg")
 		end
 		
-		for i = 1, 21 do
+		for i = 1, 14 do
 			_G.voiceline_framework:register_voiceline("pdth", "retreat", ModPath .. "assets/oggs/voiceover/pdth/retreat/retreat" .. i .. ".ogg")
 		end
 		
-		for i = 1, 6 do
+		for i = 1, 1 do
 			_G.voiceline_framework:register_voiceline("pdth", "hostage", ModPath .. "assets/oggs/voiceover/pdth/hostage/hostage" .. i .. ".ogg")
 		end	
 		
-		for i = 1, 17 do
+		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("pdth", "clear", ModPath .. "assets/oggs/voiceover/pdth/clear/clear" .. i .. ".ogg")
-		end		
+		end	
 		
-		for i = 1, 17 do
-			_G.voiceline_framework:register_voiceline("pdth", "surrender", ModPath .. "assets/oggs/voiceover/pdth/surrender/surrender" .. i .. ".ogg")
+		--Titan Taser	
+
+		for i = 1, 19 do
+			_G.voiceline_framework:register_voiceline("tsniper", "contact", ModPath .. "assets/oggs/voiceover/tsniper/contact/contact" .. i .. ".ogg")
 		end
+
+		for i = 1, 12 do
+			_G.voiceline_framework:register_voiceline("tsniper", "death", ModPath .. "assets/oggs/voiceover/tsniper/death/death" .. i .. ".ogg")
+		end
+
+		for i = 1, 13 do
+			_G.voiceline_framework:register_voiceline("tsniper", "gogo", ModPath .. "assets/oggs/voiceover/tsniper/gogo/gogo" .. i .. ".ogg")
+		end		
+
+		for i = 1, 4 do
+			_G.voiceline_framework:register_voiceline("tsniper", "pain", ModPath .. "assets/oggs/voiceover/tsniper/pain/pain" .. i .. ".ogg")
+		end
+		
+		for i = 1, 2 do
+			_G.voiceline_framework:register_voiceline("tsniper", "spawn", ModPath .. "assets/oggs/voiceover/tsniper/spawn/spawn" .. i .. ".ogg")
+		end		
+		for i = 1, 2 do
+			_G.voiceline_framework:register_voiceline("tsniper", "ready", ModPath .. "assets/oggs/voiceover/tsniper/ready/ready" .. i .. ".ogg")
+		end
+		
+		for i = 1, 9 do
+			_G.voiceline_framework:register_voiceline("tsniper", "clear", ModPath .. "assets/oggs/voiceover/tsniper/clear/clear" .. i .. ".ogg")
+		end	
 	else	
 		log("NO FRAMEWORK!!!")
 	end

@@ -51,7 +51,9 @@ if not _G.restoration then
 		"mus",
 		"big",
 		"wwh",
-		"pines"
+		"pines",
+		--custom heists
+		"hardware_store" --hes fucking awful on this heist pdc why did you think it was ok
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
@@ -79,7 +81,8 @@ if not _G.restoration then
 		"family", --diamond store
 		--custom heists
 		"wetwork", --res map package wetworks
-		"lvl_fourmorestores" --four more stores
+		"lvl_fourmorestores", --four more stores
+		"hntn" --harvest and trusty north
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

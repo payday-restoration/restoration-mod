@@ -15287,7 +15287,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 0,
 				spread = 2,
 				recoil = -2,
-				total_ammo_mod = -40,
+				total_ammo_mod = -47,
 				damage = 35,
 				suppression = -2,
 				alert_size = -2,
@@ -40830,6 +40830,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_g3m203_stock_magpul_prs.stats = {
 						value = 2,
 						spread = 1,
+						recoil = 1,
+						spread_moving = -2,
 						concealment = -1
 					}	
 				self.parts.wpn_fps_upg_g3m203_stock_wood.stats = {
@@ -40847,8 +40849,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}																
 				self.parts.wpn_fps_upg_g3m203_stock_magpul_prs_largepad.stats = {
 						value = 2,
+						spread = 2,
 						recoil = 1,
-						spread = 1,
+						spread_moving = -3,
 						concealment = -2
 					}	
 				self.parts.wpn_fps_upg_g3m203_stock_psg1.stats = {
@@ -42212,7 +42215,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}	
 			end	
 
-		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden and Alcat's AK MOE Furniture
+		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden and Alcat's AK MOE Attachment Pack
 				self.parts.wpn_fps_upg_fg_ak_moe.stats = { 
 					value = 5,
 					spread = 2,
@@ -42239,7 +42242,70 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}													
 			end		
 
-		if self.parts.wpn_fps_upg_fg_moe2 then -- Kden and Alcat's M4 MOE Furniture
+		if self.parts.wpn_fps_upg_fg_moe2_short then -- Kden and Alcat's Universal MOE Attachment Pack
+				self.parts.wpn_fps_upg_fg_moe2_short.stats = { 
+					value = 5,
+					spread_moving = 1,
+					concealment = 1,
+					recoil = 1
+				}	
+				self.parts.wpn_fps_upg_s_m4_ubr.stats = { 
+					value = 1,
+					recoil = 2,
+					spread = -1,
+					concealment = -2
+				}		
+				self.parts.wpn_fps_upg_s_m4_prs.stats = { 
+					value = 2,
+					spread = 2,
+					recoil = 1,
+					spread_moving = -3,
+					concealment = -2
+				}			
+				self.parts.wpn_fps_upg_s_m4_pts.stats = { 
+					value = 3,
+					spread = 1,
+					spread_moving = 1,
+					concealment = -2
+				}
+				self.parts.wpn_fps_upg_s_m4_pts.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+				self.parts.wpn_fps_upg_s_m4_pts_c.stats = { 
+					value = 3,
+					spread = -1,
+					spread_moving = -1,
+					concealment = 2
+				}
+				self.parts.wpn_fps_upg_m4_m_pmag3.stats = { 
+					value = 3,
+					spread_moving = 1,
+					recoil = -1,
+					concealment = 1
+				}				
+				self.parts.wpn_fps_upg_m4_m_pmagsolid.stats = { 
+					value = 3,
+					spread_moving = 1,
+					recoil = -1,
+					concealment = 1
+				}		
+				self.parts.wpn_fps_upg_m4_m_pmag10.stats = { 
+					value = 2,
+					spread_moving = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -10
+				}					
+				self.parts.wpn_fps_upg_m4_m_pmag20.stats = { 
+					value = 1
+				}				
+				self.parts.wpn_fps_upg_s_m4_sl.stats = { 
+					value = 1,
+					recoil = 2,
+					spread = -1,
+					concealment = -2
+				}							
+			end					
+
+		if self.parts.wpn_fps_upg_fg_moe2 then -- Kden and Alcat's M4 MOE Attachment Pack
 				self.parts.wpn_fps_upg_fg_moe2.stats = { 
 					value = 5,
 					spread = 2,

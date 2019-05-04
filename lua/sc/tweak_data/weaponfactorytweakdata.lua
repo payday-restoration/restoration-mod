@@ -6524,7 +6524,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = -1,
 				damage = -25,
 				concealment = 1,
-				total_ammo_mod = 34
+				total_ammo_mod = 33
 			},
 			custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5},
 			forbids = {

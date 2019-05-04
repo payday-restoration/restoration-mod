@@ -310,7 +310,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			-- else: set var "blackout_active" 
 	
 		local blackout_cooldown = 1
-		local blackout_radius = 300000 --target equipment acquisition to apply blackout aoe to
+		local blackout_radius = 600000 --target equipment acquisition to apply blackout aoe to
 		local t = TimerManager:main():time()
 		if self._aoe_blackout_cooldown > t then
 			return

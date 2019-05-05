@@ -82,7 +82,7 @@ if not _G.restoration then
 		--custom heists
 		"wetwork", --res map package wetworks
 		"lvl_fourmorestores", --four more stores
-		"hntn" --harvest and trusty north
+		"hntn" --harvest and trustee north
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",

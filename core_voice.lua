@@ -165,7 +165,7 @@ if not _G.restorationvoice then
 		
 		--Tspook lines
 		
-		for i = 1, 40 do
+		for i = 1, 39 do
 			_G.voiceline_framework:register_voiceline("tspook", "kill", ModPath .. "assets/oggs/voiceover/tspook/kill/kill" .. i .. ".ogg")
 		end		
 		for i = 1, 14 do

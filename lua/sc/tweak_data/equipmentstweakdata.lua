@@ -21,7 +21,7 @@ function EquipmentsTweakData:init()
 		ecm_jammer = 4,
 		asset_doctor_bag = 3,
 		ammo_bag = 2,
-		grenades = 20,
+		grenades = 50,
 		asset_ammo_bag = 4,
 		asset_grenade_crate = 3,
 		first_aid_kit = 14,

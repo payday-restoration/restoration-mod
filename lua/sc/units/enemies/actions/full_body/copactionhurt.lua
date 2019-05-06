@@ -495,7 +495,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end	
 			    elseif action_type == "counter_tased" or action_type == "taser_tased" then
 		        	if self._unit:base():has_tag("taser") then
-		        		self._unit:sound():say("tasered", true)
+		        		self._unit:sound():say("tasered", true)				
+		        	elseif self._unit:base():has_tag("taser_titan") then
+		        		self._unit:sound():say("tasered", true) 	
 		        	else
 		        		self._unit:sound():say("x01a_any_3p", true) --so that other tased enemies actually react in pain to being tased
 		        	end
@@ -507,7 +509,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		        	elseif self._unit:base():has_tag("medic")then
 		        		self._unit:sound():say("burndeath", true) --same for the medic with a similar sound, since they lack one
 		        	elseif self._unit:base():has_tag("taser") then
-		        		self._unit:sound():say("tasered", true) --same as his tased lines felt they fit best
+		        		self._unit:sound():say("tasered", true) --same as his tased lines felt they fit best					
+		        	elseif self._unit:base():has_tag("taser_titan") then
+		        		self._unit:sound():say("tasered", true) 	
 		        	end
 		        else
 		        	self._unit:sound():say("x01a_any_3p", true)

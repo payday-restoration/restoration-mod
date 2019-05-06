@@ -296,6 +296,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end			
 		end
 		
+		if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
+			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "saw")
+		end
+		
+		if attack_data.attacker_unit:base().sentry_gun then
+			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "sentry")
+		end		
+		
 		damage = self:_apply_damage_reduction(damage)
 		attack_data.raw_damage = damage
 		attack_data.headshot = head

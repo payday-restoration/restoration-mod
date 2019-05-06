@@ -550,7 +550,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "Rip and Tear",
-			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nWhen killing an enemy with the saw, you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.",																								
+			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nWhen killing an enemy with the Saw or Grenade Launchers, you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",																								
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",

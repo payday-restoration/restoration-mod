@@ -41303,8 +41303,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = -1,
 						reload = 2
 					}							
-				end			
+				end		
 
+		if self.parts.wpn_fps_smg_mac10_m_casket then -- Alcat's Various Attachments for the MAC 10
+				self.parts.wpn_fps_smg_mac10_m_casket.stats = {
+						value = 2,
+						concealment = -3,
+						extra_ammo = 40,
+						spread = -1,
+						recoil = 1,			
+						reload = -3
+					}	
+				self.parts.wpn_fps_smg_mac10_s_stowed.stats = { 
+						value = 2,
+						spread_moving = -1,
+						concealment = 1,
+					}		
+				self.parts.wpn_fps_smg_mac10_vg_strap.stats = { 
+						value = 0
+					}		
+				self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil --doesn't work. 
+				end		
+
+		if self.parts.wpn_fps_smg_mp5_fg_stripped then -- Alcat's MP5K Foregrip (custom animation stuff is weird atm, can't use ironsights.)
+				self.parts.wpn_fps_smg_mp5_fg_stripped.stats = { 
+						value = 4,
+						damage = 2,
+						spread_moving = -2,
+						recoil = 2,
+						concealment = 2
+					}		
+				self.parts.wpn_fps_smg_mp5_fg_stripped.forbids = { 
+						"wpn_fps_upg_vg_ass_smg_stubby",
+						"wpn_fps_upg_vg_ass_smg_verticalgrip",	
+						"wpn_fps_upg_vg_ass_smg_afg"												
+					}							
+				end	
+				
+		if self.parts.wpn_fps_smg_mp5_fg_stripped and self.parts.wpn_fps_upg_gl_m203 then --underbarrel weapon pack stuff
+				self.parts.wpn_fps_smg_mp5_fg_stripped.forbids = { 
+						"wpn_fps_upg_vg_ass_smg_stubby",
+						"wpn_fps_upg_vg_ass_smg_verticalgrip",	
+						"wpn_fps_upg_vg_ass_smg_afg",
+						"wpn_fps_upg_gl_m203",												
+						"wpn_fps_upg_gl_m203_inc"																	
+					}									
+			end	
+		
 		if self.parts.wpn_fps_galil_m_35r then -- Alcat's Various Magazines for the Galil
 				self.parts.wpn_fps_galil_m_35r.stats = {
 						value = 1,				

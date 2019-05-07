@@ -46,7 +46,8 @@ function SkillTreeTweakData:init(tweak_data)
 		"x_sr2",
 		"x_mp5",
 		"x_akmsu",
-		"akimbo_recoil_multiplier_1",
+		"akimbo_recoil_index_addend_1",
+		"akimbo_spread_index_addend_1",
 		"ecm_jammer_can_activate_feedback",
 		"ecm_jammer_interaction_speed_multiplier",
 		"ecm_jammer_can_retrigger",
@@ -60,6 +61,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_corpse_dispose",
 		"player_corpse_dispose_amount_1",
 		"player_civ_harmless_melee",
+		"player_civ_harmless_bullets",
 		"striker_reload_speed_default",
 		"temporary_first_aid_damage_reduction",
 		"temporary_passive_revive_damage_reduction_2",
@@ -1671,14 +1673,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 11},
 				[1] = {
 					upgrades = {
-						"akimbo_recoil_multiplier_2"
+						"akimbo_recoil_index_addend_2"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
 						"akimbo_extra_ammo_multiplier_1",
-						"akimbo_recoil_multiplier_3"
+						"akimbo_recoil_index_addend_3"
 					},
 					cost = self.costs.hightierpro
 				}	
@@ -2280,7 +2282,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"akimbo_recoil_multiplier_2"
+					"akimbo_recoil_index_addend_2"
 				},
 				cost = 400,
 				icon_xy = {7, 2},
@@ -2312,7 +2314,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_4",
 					"player_passive_loot_drop_multiplier",
-					"akimbo_recoil_multiplier_3"
+					"akimbo_recoil_index_addend_3"
 				},
 				cost = 4000,
 				icon_xy = {3, 3},

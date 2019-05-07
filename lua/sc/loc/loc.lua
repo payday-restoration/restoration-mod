@@ -770,7 +770,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYour akimbo weapons' stability penalty is set to ##15%.##\n\nACE: ##$pro##\nYour akimbo weapons' stability penalty is set to ##10%## and you also carry ##25%## more total ammo for them.",																																																																																																																																																																																																																																		
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYour Akimbo weapons' stability penalty is reduced by ##8.##\n\nACE: ##$pro##\nYour Akimbo weapons' stability penalty is reduced by an additional ##8## and you also carry ##25%## more total ammo for them.",																																																																																																																																																																																																																																		
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
@@ -843,10 +843,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
-		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##15%.##",
+		["menu_deck5_3_desc_sc"] = "Your Akimbo weapons' stability penalty is reduced by ##8.##",
 		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.",
 		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.",
-		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYour akimbo weapons' stability penalty is set to ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYour Akimbo weapons' stability penalty is reduced by an additional ##8.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",

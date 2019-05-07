@@ -723,7 +723,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				
 				--Gun Nut
-				self.values.pistol.spread_index_addend = {1}
+				self.values.pistol.spread_index_addend = {1}			
 				self.values.pistol.fire_rate_multiplier = {1.15}
 
 				--Over Pressurized/Gunfighter (Formerly Akimbo)
@@ -733,10 +733,24 @@ function UpgradesTweakData:_init_pd2_values()
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
 				self.values.akimbo.extra_ammo_multiplier = {1.25, 1.5}
 				self.values.akimbo.recoil_multiplier = {
-					1.2,
-					1.15,
-					1.1
+					1.4,
+					1.3,
+					1.2
 				}
+				self.values.akimbo.recoil_index_addend = {
+					-9,
+					-7,
+					-5,
+					-3,
+					-1
+				}
+				self.values.akimbo.spread_index_addend = {
+					-3,
+					-2,
+					-1,
+					0,
+					1
+				}				
 
 				--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
@@ -1183,7 +1197,52 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}	
-        self.definitions.player_detection_risk_add_movement_speed_1 = {
+	self.definitions.akimbo_spread_index_addend_1 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}	
+	self.definitions.akimbo_spread_index_addend_2 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}	
+	self.definitions.akimbo_spread_index_addend_3 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_spread_index_addend_4 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 4,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_spread_index_addend_5 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 5,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}		
+    self.definitions.player_detection_risk_add_movement_speed_1 = {
             category = "feature",
             name_id = "menu_player_detection_risk_add_movement_speed",
             upgrade = {

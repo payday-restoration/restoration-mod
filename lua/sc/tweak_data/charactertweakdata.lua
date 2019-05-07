@@ -1005,6 +1005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.static_dodge_preset = true
 		self.sniper.is_special = true
 		self.sniper.die_sound_event = "l1n_x01a_any_3p"
+		self.sniper.do_not_drop_ammo = true
 		table.insert(self._enemy_list, "sniper")
 	end
 
@@ -1062,6 +1063,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.calls_in = true
 		self.gangster.static_dodge_preset = true
 		self.gangster.unintimidateable = true
+		self.gangster.always_drop = true
 		table.insert(self._enemy_list, "gangster")
 	end
 
@@ -1081,6 +1083,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.biker.static_dodge_preset = true
+		self.biker.always_drop = true
 		table.insert(self._enemy_list, "biker")
 		self.biker_guard = deep_clone(self.biker)
 		self.biker_guard.suppression = presets.suppression.hard_def
@@ -1154,6 +1157,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.mobster.static_dodge_preset = true
+		self.mobster.always_drop = true
 		table.insert(self._enemy_list, "mobster")
 	end
 
@@ -1356,6 +1360,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.bolivian.static_dodge_preset = true
+		self.bolivian.always_drop = true
 		table.insert(self._enemy_list, "bolivian")
 		self.bolivian_indoors = deep_clone(self.bolivian)
 		self.bolivian_indoors.suppression = presets.suppression.hard
@@ -2320,7 +2325,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.steal_loot = nil
 		self.boom_summers.ecm_vulnerability = 0
 		self.boom_summers.ecm_hurts = {}		
-		table.insert(self._enemy_list, "boom_summers")
+		table.insert(self._enemy_list, "boom_summers")		
+		self.boom_titan = deep_clone(self.boom)
+		table.insert(self._enemy_list, "boom_titan")		
 	end
 
 	function CharacterTweakData:_init_inside_man(presets)

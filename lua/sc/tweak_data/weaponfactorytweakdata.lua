@@ -23445,7 +23445,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 7,
 					recoil = 1,
 					concealment = -1,
-					damage = 1
+					damage = 2
 				},
 			},
 		}

@@ -53,7 +53,11 @@ if not _G.restoration then
 		"wwh",
 		"pines",
 		--custom heists
-		"hardware_store" --hes fucking awful on this heist pdc why did you think it was ok
+		"hardware_store", --hes fucking awful on this heist pdc why did you think it was ok
+		"office_strike",
+		"skmc_mad", --rex's holdout maps
+		"skmc_fish",
+		"skmc_ovengrill"
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
@@ -61,7 +65,9 @@ if not _G.restoration then
 		"crojob2", --bomb dockyard
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
-		"rvd1" --highland mortuary 
+		"rvd1", --highland mortuary 
+		--custom heists		
+		"office_strike" --office strike
 	}
 	_G.restoration.captain_murderdozer = {
 		"firestarter_2", --firestarter day 2
@@ -110,7 +116,6 @@ if not _G.restoration then
 		"vit",
 		"pbr",
 		"pbr2",
-		"junk",
 		"dinner",
 		"wwh",
 		"born",
@@ -119,7 +124,12 @@ if not _G.restoration then
 		"run",
 		--Custom Heists below--
 		"Victor Romeo",
-		"hardware_store"
+		"junk",
+		"wetwork_burn",
+		"hardware_store",
+		"skmc_mad", --rex's holdout maps
+		"skmc_fish",
+		"skmc_ovengrill"
 	}
 end
 

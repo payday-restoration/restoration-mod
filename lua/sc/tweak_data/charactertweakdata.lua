@@ -13019,7 +13019,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_lapd_light_1",
 					"ene_lapd_light_2",
 					"ene_lapd_heavy_1",
-					"ene_lapd_heavy_2"
+					"ene_lapd_heavy_2",
+					"ene_lapd_veteran_cop_1",
+					"ene_lapd_veteran_cop_2"
 				}
 			},
 			halloween = {

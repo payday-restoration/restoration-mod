@@ -266,10 +266,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit then
 			dodge_chance = 0
 		end
+		
 		if roll <= dodge_chance and self._char_tweak.damage.bullet_dodge_chance then
 			self._unit:sound():play("pickup_fak_skill", nil, nil)
 			return
 		end
+		
 		damage = damage * (self._marked_dmg_mul or 1)
 		if self._marked_dmg_mul and self._marked_dmg_dist_mul then
 			local dst = mvector3.distance(attack_data.origin, self._unit:position())
@@ -318,9 +320,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			local chance_recloak = 75	
 			if recloak_roll <= chance_recloak then
 				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end		
+
+			--Just so he's not instagibbed by bots
+			if attack_data.attacker_unit:in_slot(16) then
+				damage = damage * 0.1
 			end			
 		end
-		
+				
 		if self._unit:base()._tweak_table == "spooc_titan" then
 			local recloak_roll = math.rand(1, 100)
 			local chance_recloak = 75	
@@ -337,6 +344,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "sentry")
 		end		
 		
+				
 		damage = self:_apply_damage_reduction(damage)
 		attack_data.raw_damage = damage
 		attack_data.headshot = head

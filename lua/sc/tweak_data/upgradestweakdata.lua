@@ -738,18 +738,18 @@ function UpgradesTweakData:_init_pd2_values()
 					1.2
 				}
 				self.values.akimbo.recoil_index_addend = {
-					-9,
-					-7,
+					-10,
+					-8,
 					-5,
 					-3,
 					-1
 				}
 				self.values.akimbo.spread_index_addend = {
+					-4,
 					-3,
 					-2,
 					-1,
-					0,
-					1
+					0
 				}				
 
 				--Desperado

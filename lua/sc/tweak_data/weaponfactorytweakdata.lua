@@ -40734,7 +40734,93 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-	end			
+	end		
+
+	if self.wpn_fps_shot_prison then -- Deadwood 12g
+		self.parts.wpn_fps_shot_b_prison_long.stats = {
+			value = 1,
+			concealment = -1,				
+			recoil = -1,
+			spread = 1,
+			extra_ammo = 5
+		}
+		self.wpn_fps_shot_prison.override = {
+			wpn_fps_upg_a_slug = {
+				name_id = "bm_wp_upg_a_slug_sc",
+				desc_id = "bm_wp_upg_a_slug_sc_desc",
+				stats = {
+					value = 10,
+					concealment = -5,
+					total_ammo_mod = -33,
+					damage = 25,	
+					recoil = -1,
+					spread = 11,
+					suppression = -1,
+					alert_size = -1,
+					moving_spread = 0
+				},
+				custom_stats = {
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					rays = 1,
+					armor_piercing_add = 0,
+					can_shoot_through_enemy = false,
+					can_shoot_through_shield = false,
+					can_shoot_through_wall = false,
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
+				}
+			},
+			wpn_fps_upg_a_custom = {
+				stats = {
+					value = 9,
+					total_ammo_mod = -33,
+					damage = 25,	
+					spread = -1
+				},
+				custom_stats = {
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					rays = 6,
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
+				}
+			},
+			wpn_fps_upg_a_custom_free = {
+				stats = {
+					value = 9,
+					total_ammo_mod = -33,
+					damage = 25,	
+					spread = -1
+				},
+				custom_stats = {
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					rays = 6,
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
+				}
+			},			
+			wpn_fps_upg_a_explosive = {
+				stats = {
+					value = 10,
+					total_ammo_mod = -67,
+					recoil = -5,
+					damage = 100
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					rays = 1,
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					bullet_class = "InstantExplosiveBulletBase",
+					ammo_pickup_min_mul = 0.333333333333,
+					ammo_pickup_max_mul = 0.333333333333
+				}
+			}
+		}
+	end				
 	
 		if self.wpn_fps_shot_trench then 	-- Alcat's Trench Gun
 			self.wpn_fps_shot_trench.override = {
@@ -40873,10 +40959,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = 4,
 						damage = -10,
 						suppression = 1,
-						total_ammo_mod = 25
+						total_ammo_mod = 50
 					}
-					self.parts.wpn_fps_upg_g3m203_barrel_g3ka4.custom_stats = 
-					{ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25}	
+					self.parts.wpn_fps_upg_g3m203_barrel_g3ka4.custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25}	
 				end						
 				
 		if self.wpn_fps_ass_scarl then 	-- Pawcio's SCAR L		
@@ -41318,11 +41403,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						spread_moving = -1,
 						concealment = 1,
-					}		
+					}	
+				self.parts.wpn_fps_smg_mac10_ns_ghetto.stats = { 
+						value = 10,
+						suppression = 13,
+						alert_size = 13,
+						concealment = -4,
+						spread = -2,
+						recoil = 1,
+						damage = 5
+					}				
 				self.parts.wpn_fps_smg_mac10_vg_strap.stats = { 
 						value = 0
 					}		
-				self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil --doesn't work. 
+				self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil --weaponlib doesn't work with resmod at the moment so??? 
 				end		
 
 		if self.parts.wpn_fps_smg_mp5_fg_stripped then -- Alcat's MP5K Foregrip (custom animation stuff is weird atm, can't use ironsights.)
@@ -43681,10 +43775,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		if self.parts.wpn_fps_upg_s_devgru then --carl ruins everything's Operator Attachment Pack
 			self.parts.wpn_fps_upg_ching_am_crap.pcs = nil	--temporarily nuking ammo conversions cause that shit's lame			
 			self.parts.wpn_fps_upg_tecci_am_beefy.pcs = nil	--and i'm too retarded to think of any stat shit
-			self.parts.wpn_fps_upg_am_gomerpyle.pcs = nil							
-			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil	
-			self.parts.wpn_fps_upg_am_lame.pcs = nil		
-			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil				
+			self.parts.wpn_fps_upg_am_gomerpyle.pcs = nil	
+			self.parts.wpn_fps_upg_am_lame.pcs = nil					
+			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil										
+			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil				
 			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil						
 			self.parts.wpn_fps_upg_s_devgru.stats = {
 				value = 4,

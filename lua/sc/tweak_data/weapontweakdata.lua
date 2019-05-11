@@ -9941,7 +9941,39 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.trench.panic_suppression_chance = 0.0
 		self.trench.stats_modifiers = {damage = 1}
-	end						
+	end			
+
+	if self.prison then --Leon and a Buncha fellas' Deadwood 12g
+		self.prison.rays = 9
+		self.prison.AMMO_MAX = 120
+		self.prison.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.prison.damage_near = 700
+		self.prison.damage_far = 1400
+		self.prison.spread.standing = 3
+		self.prison.spread.crouching = 2
+		self.prison.spread.steelsight = 1
+		self.prison.spread.moving_standing = 4
+		self.prison.spread.moving_crouching = 3
+		self.prison.spread.moving_steelsight = 2
+		self.prison.kick.standing = self.new_m4.kick.standing
+		self.prison.kick.crouching = self.new_m4.kick.standing
+		self.prison.kick.steelsight = self.new_m4.kick.standing
+		self.prison.stats = {
+			damage = 50,
+			spread = 12,
+			recoil = 17,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 16,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.prison.panic_suppression_chance = 0.0	
+	end							
 	
 	if self.spas15 then --Alcat's Max Payne Memegun
 		self.spas15.rays = 9

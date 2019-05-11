@@ -5,11 +5,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.enemy_chatter = {}
 		--[[
 		notes:
-		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000, game theory how many cops in a radius can say a certain chatter
-		max_nr probably how many chatters can go off at once
+		radius seems to do nothing, game theory how many cops in a radius can say a certain chatter (should test this)
+		max_nr how many chatters can go off at once
 		duration ??? longer ones i grabbed from v009/pdth
 		inerval is cooldown
-		group_min seems to be how many cops need to be in a group for the line to play
+		group_min how many cops need to be in a group for the line to play
 		queue what call is used in chatter
 		]]--
 		self.enemy_chatter.aggressive = {
@@ -45,7 +45,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			queue = "m01"
 		}		
 		self.enemy_chatter.deathguard = { --this isnt actually kill lines those are done in playerdamage
-			radius = 3000,
+			radius = 700,
 			max_nr = 5,
 			duration = {2, 4},
 			interval = {2, 3},
@@ -1061,7 +1061,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
-						Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+						Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2"),
 						Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 					},
 					lapd = {

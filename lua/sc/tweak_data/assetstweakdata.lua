@@ -7,8 +7,12 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		self.risk_murky = {}
 		self.risk_murky.name_id = "menu_asset_risk_murky"
 		self.risk_murky.texture = "guis/textures/pd2/mission_briefing/assets/risk_murky"	
+		--BRaIiinsSSSss--
+		self.risk_zombie = {}
+		self.risk_zombie.name_id = "menu_asset_risk_zombie"
+		self.risk_zombie.texture = "guis/textures/pd2/mission_briefing/assets/risk_zombie"	
 	
-		--Kills PD risk level for Murky levels--
+		--Kills PD risk level for Murky and Zombie levels--
 		table.insert(self.risk_pd.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_pd.exclude_stages, "pbr")
 		table.insert(self.risk_pd.exclude_stages, "wetwork")
@@ -17,6 +21,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "vit")
 		table.insert(self.risk_pd.exclude_stages, "wwh")
 		table.insert(self.risk_pd.exclude_stages, "arm_for")
+		table.insert(self.risk_pd.exclude_stages, "haunted")
+		table.insert(self.risk_pd.exclude_stages, "nail")
+		table.insert(self.risk_pd.exclude_stages, "help")
+		table.insert(self.risk_pd.exclude_stages, "hvh")
 
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -27,6 +35,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "vit")	
 		table.insert(self.risk_swat.exclude_stages, "wwh")
 		table.insert(self.risk_swat.exclude_stages, "arm_for")
+		table.insert(self.risk_swat.exclude_stages, "haunted")
+		table.insert(self.risk_swat.exclude_stages, "nail")
+		table.insert(self.risk_swat.exclude_stages, "help")
+		table.insert(self.risk_swat.exclude_stages, "hvh")
 		
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -37,6 +49,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "vit")
 		table.insert(self.risk_fbi.exclude_stages, "wwh")
 		table.insert(self.risk_fbi.exclude_stages, "arm_for")
+		table.insert(self.risk_fbi.exclude_stages, "haunted")
+		table.insert(self.risk_fbi.exclude_stages, "nail")
+		table.insert(self.risk_fbi.exclude_stages, "help")
+		table.insert(self.risk_fbi.exclude_stages, "hvh")
 
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -47,6 +63,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "vit")
 		table.insert(self.risk_death_squad.exclude_stages, "wwh")
 		table.insert(self.risk_death_squad.exclude_stages, "arm_for")
+		table.insert(self.risk_death_squad.exclude_stages, "haunted")
+		table.insert(self.risk_death_squad.exclude_stages, "nail")
+		table.insert(self.risk_death_squad.exclude_stages, "help")
+		table.insert(self.risk_death_squad.exclude_stages, "hvh")
 
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -57,6 +77,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "vit")
 		table.insert(self.risk_easy_wish.exclude_stages, "wwh")
 		table.insert(self.risk_easy_wish.exclude_stages, "arm_for")
+		table.insert(self.risk_easy_wish.exclude_stages, "haunted")
+		table.insert(self.risk_easy_wish.exclude_stages, "nail")
+		table.insert(self.risk_easy_wish.exclude_stages, "help")
+		table.insert(self.risk_easy_wish.exclude_stages, "hvh")
 
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -67,6 +91,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "vit")
 		table.insert(self.risk_death_wish.exclude_stages, "wwh")
 		table.insert(self.risk_death_wish.exclude_stages, "arm_for")
+		table.insert(self.risk_death_wish.exclude_stages, "haunted")
+		table.insert(self.risk_death_wish.exclude_stages, "nail")
+		table.insert(self.risk_death_wish.exclude_stages, "help")
+		table.insert(self.risk_death_wish.exclude_stages, "hvh")
 		
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -77,6 +105,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "vit")
 		table.insert(self.risk_sm_wish.exclude_stages, "wwh")
 		table.insert(self.risk_sm_wish.exclude_stages, "arm_for")
+		table.insert(self.risk_sm_wish.exclude_stages, "haunted")
+		table.insert(self.risk_sm_wish.exclude_stages, "nail")
+		table.insert(self.risk_sm_wish.exclude_stages, "help")
+		table.insert(self.risk_sm_wish.exclude_stages, "hvh")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -90,6 +122,12 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"vit",
 			"arm_for"
 			--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
+		}		
+		self.risk_zombie.stages = {
+			"haunted",
+			"nail",
+			"help",
+			"hvh"
 		}	
 
 		--Adding Bikers to Biker heist cause it makes sense--

@@ -66,6 +66,7 @@
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/risk_murky" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/risk_zombie" force="false"/>
 	
 	<!--Assets-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>

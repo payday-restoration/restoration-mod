@@ -184,6 +184,7 @@
 	"menu_l_global_value_veritas_desc" : "This is an Aletheia item!",
 	"menu_asset_wet_intel" : "Intel",
 	"menu_asset_risk_murky" : "Murkywater Mercenaries",
+	"menu_asset_risk_zombie" : "zOmbIe rEpsondERs",
 	"menu_asset_wet_boat" : "Boat",
 	"menu_asset_wet_boat_desc" : "Buy an additional boat drop-off and escape",
 	"bm_msk_canada" : "Hockey Hell",

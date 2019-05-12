@@ -41,7 +41,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.arm_for.ai_group_type = murkywater 
 		
-		
 		--NYPD--
 		self.spa.ai_group_type = nypd
 		self.brb.ai_group_type = nypd
@@ -93,6 +92,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.help.ai_group_type = zombie
 		
 		self.chill.ghost_bonus = nil
+		
+		self.mad.package = {"packages/lvl_wwh"}
+		self.mad.player_sequence = "spawn_prop_winter_suit"
+	
 	end)
 	
 end

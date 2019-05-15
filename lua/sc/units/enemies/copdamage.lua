@@ -1312,7 +1312,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	Hooks:PostHook(CopDamage, "_on_death", "SCRemoveJoker", function(self)
-		
+
+		if self._char_tweak and self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
+			managers.enemy:end_autumn_blackout()
+		end
+
 		if self._unit:unit_data().is_convert and SC._converts then
 			for i, unit in pairs(SC._converts) do
 				if unit == self._unit then

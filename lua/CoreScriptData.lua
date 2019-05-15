@@ -19,8 +19,41 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
-	end
+	end	
 	--"sky_orientation/rotation":"-116.40824890137",
+	
+	if Global.load_level == true and Global.game_settings.level_id == "rvd1" then
+	if rnd == 1 then
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_interior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_interior", "environment")
+	end
+	if rnd == 2 then
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_interior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_interior", "environment")
+	end
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "rvd2" then
+	if rnd == 1 or rnd == 2 then
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_interior", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_interior", "environment")
+	--"sky_orientation/rotation":"-116.40824890137",
+	end
+	end		
+	
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_1" then
+	if rnd == 1 or rnd == 2 then
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+	--"sky_orientation/rotation":"-116.40824890137",
+	end
+	end	
 	
 	if Global.load_level == true and Global.game_settings.level_id == "mallcrasher" then
 	if rnd == 1 or rnd == 2 then
@@ -60,6 +93,13 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	--"sky_orientation/rotation":"-116.40824890137",
 	
 	end	
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_3" then
+	
+	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	--"sky_orientation/rotation":"-116.40824890137",
+	
+	end
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" then
 	if rnd == 1 or rnd == 2 then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")

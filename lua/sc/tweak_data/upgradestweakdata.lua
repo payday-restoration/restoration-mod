@@ -902,6 +902,28 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.temporary.melee_life_leech = {
 		{0.08, 08}
 	}
+	
+	self.melee_to_hot_data = {
+		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
+		works_with_armor_kit = true,
+		tick_time = 1.25,
+		total_ticks = 8,
+		max_stacks = 5,
+		stacking_cooldown = 0.0,
+		add_stack_sources = {
+			bullet = false,
+			explosion = false,
+			melee = true,
+			taser_tased = false,
+			poison = false,
+			fire = false,
+			projectile = false,
+			swat_van = false,
+			sentry_gun = false,
+			civilian = false
+		}
+	}
+
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
@@ -936,11 +958,11 @@ function UpgradesTweakData:_init_pd2_values()
 		{0.85, 7},
 		{0.8, 7}
 	}
-	self.max_melee_weapon_dmg_mul_stacks = 4
-	self.values.melee.stacking_hit_expire_t = {7}
+	self.max_melee_weapon_dmg_mul_stacks = 5
+	self.values.melee.stacking_hit_expire_t = {10}
 	self.values.melee.stacking_hit_damage_multiplier = {
-		0.1,
-		0.2
+		0.08,
+		0.16
 	}
 	self.values.dmg_dampener_outnumbered_strong = {
 		{0.95, 7}

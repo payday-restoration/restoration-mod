@@ -34,7 +34,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		managers.sequence:add_inflict_updator_body("fire", self._unit:key(), self._inflict_damage_body:key(), self._inflict_damage_body:extension().damage)
 
-		self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
+		--Load alternate heal over time tweakdata if player is using Infiltrator.
+		if player_manager:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+			self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
+		else 
+			self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
+		end
+
 		self._damage_to_hot_stack = {}
 		self._armor_stored_health = 0
 		self._can_take_dmg_timer = 0

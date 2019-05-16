@@ -122,6 +122,12 @@ if not _G.restoration then
 		"cane",
 		"dah",
 		"run",
+		"arm_cro",
+		"arm_hcm",
+		"arm_fac",
+		"arm_par",
+		"arm_und",
+		"arm_for",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",

@@ -77,7 +77,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rvd1.ai_group_type = lapd
 		self.rvd2.ai_group_type = lapd
 		
-		
 		--Gangster VO below--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
@@ -93,7 +92,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.chill.ghost_bonus = nil
 		
-		self.mad.package = {"packages/lvl_wwh"}
+		self.mad.package = {"packages/lvl_mad", "packages/lvl_wwh"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	
 	end)

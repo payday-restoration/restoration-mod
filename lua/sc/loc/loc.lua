@@ -887,9 +887,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Infiltrator--
 		["menu_deck8_1_desc_sc"] = "When you are within ##18## meters of an enemy, you receive ##10%## less damage from enemies.",
 		["menu_deck8_3_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.",
-		["menu_deck8_5_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
-		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more within ##18 meters##, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
-		["menu_deck8_9_desc_sc"] = "Striking an enemy with your melee weapon regenerates ##8%## of your health. This cannot occur more than once every ##10## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck8_5_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
+		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more within ##18 meters##, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
+		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##1## life point every ##1.25## seconds for ##10## seconds, this effect can stack up to ##5## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",

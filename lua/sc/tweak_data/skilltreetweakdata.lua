@@ -2505,7 +2505,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_melee_life_leech",
+					"player_damage_to_hot_1",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

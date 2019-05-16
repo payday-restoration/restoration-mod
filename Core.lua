@@ -96,7 +96,6 @@ if not _G.restoration then
 		"peta",
 		"peta2",
 		"nail",
-		"rvd1",
 		"rvd2",
 		"mia_2",
 		"hox_1",

@@ -584,7 +584,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 0, -0.58)
 				},
 				wpn_fps_lmg_m249 = {
-					translation = Vector3(-0.03, -2.4, -3.55),
+					translation = Vector3(0, -3, -3.4),
 				},
 				wpn_fps_lmg_par = {
 					translation = Vector3(-0.03, -2.4, -3.25),
@@ -1618,7 +1618,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 0, -3.2)
 				},
 				wpn_fps_lmg_m249 = {
-					translation = Vector3(0, 0, -3.2)
+					translation = Vector3(0, 0, -3.4)
 				},
 				wpn_fps_pis_rage = {
 					translation = Vector3(-0.05, -15, -4.65)
@@ -12482,6 +12482,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_s_ubr",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
+			--Custom shit--
 			"wpn_fps_upg_o_specter",
 			"wpn_fps_upg_o_aimpoint",
 			"wpn_fps_upg_o_docter",
@@ -12493,7 +12494,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_rx30",
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
-			"wpn_fps_upg_o_eotech_xps"
+			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_xpsg33_magnifier"
 		}
 		self.wpn_fps_lmg_m249_npc = deep_clone(self.wpn_fps_lmg_m249)
 		self.wpn_fps_lmg_m249_npc.unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249/wpn_fps_lmg_m249_npc"
@@ -32465,6 +32467,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_ass_komodo = {
 					translation = Vector3(0, 15, 0),
 					rotation = Rotation(0, 0, 0)
+				},
+				wpn_fps_lmg_m249 = {
+					translation = Vector3(0, 1, -3.4)
 				}				
 			},
 			visibility = {{

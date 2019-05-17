@@ -215,6 +215,7 @@ end)
 if restoration.Options:GetValue("OTHER/Paintings") then	
 Hooks:Add("BeardLibCreateScriptDataMods", "MorePaintingsCallBeardLibSequenceFuncs", function()
 BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
+BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
 end)
 end
 
@@ -223,4 +224,5 @@ end
 --probably update instances in heists where I want them to open with the PD:TH one raw
 Hooks:Add("BeardLibCreateScriptDataMods", "DiamondFixCallBeardLibSequenceFuncs", function()
 BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
+BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
 end)

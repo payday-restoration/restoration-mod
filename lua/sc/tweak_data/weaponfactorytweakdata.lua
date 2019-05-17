@@ -651,7 +651,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 0, -3)
 				},
 				wpn_fps_smg_mac10 = {
-					translation = Vector3(0, -10, -3)
+					translation = Vector3(0, -10, -3.1)
 				},
 				wpn_fps_ass_s552 = {
 					translation = Vector3(-0.08, 0, -2.1)
@@ -1600,7 +1600,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 0, -3)
 				},
 				wpn_fps_smg_mac10 = {
-					translation = Vector3(0, -10, -3)
+					translation = Vector3(0, -10, -3.1)
 				},
 				wpn_fps_ass_s552 = {
 					translation = Vector3(-0.08, 0, -2.1)
@@ -7886,8 +7886,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stance_mod = {
 				wpn_fps_smg_mac10 = {
-					translation = Vector3(0, 0, -1),
-					rotation = Rotation(0, -0.899, 0)
+					translation = Vector3(0, 0, -1.8),
+					rotation = Rotation(0, 0, 0)
 				}
 			},
 			forbids = {
@@ -7908,8 +7908,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {value = 1},
 			stance_mod = {
 				wpn_fps_smg_mac10 = {
-					translation = Vector3(0, 0, -1),
-					rotation = Rotation(0, -0.899, 0)
+					translation = Vector3(0, 0, -1.8),
+					rotation = Rotation(0, 0, 0)
 				}
 			}
 		}
@@ -22210,10 +22210,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_lmg_m134_barrel_legendary",
 			"wpn_fps_lmg_m134_body_upper_spikey",
-			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire",
 			"wpn_fps_upg_i_slower_rof",
-			"wpn_fps_upg_i_faster_rof"	
+			"wpn_fps_upg_i_faster_rof"
 		}
 		self.wpn_fps_lmg_m134_npc = deep_clone(self.wpn_fps_lmg_m134)
 		self.wpn_fps_lmg_m134_npc.unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134/wpn_fps_lmg_m134_npc"
@@ -32283,7 +32281,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 6, -3)
 				},
 				wpn_fps_smg_mac10 = {
-					translation = Vector3(0, -4, -3)
+					translation = Vector3(0, -4, -3.1)
 				},
 				wpn_fps_ass_s552 = {
 					translation = Vector3(-0.08, 6, -2.1)
@@ -37378,8 +37376,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_fl_ass_utg",
 				--Custom--
-				"wpn_fps_upg_i_singlefire",
-				"wpn_fps_upg_i_autofire",
 				"wpn_fps_upg_ammo_half_that",
 				"wpn_fps_upg_i_slower_rof",
 				"wpn_fps_upg_i_faster_rof"					

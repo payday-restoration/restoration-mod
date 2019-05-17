@@ -135,7 +135,19 @@ if not _G.restoration then
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
 		"skmc_ovengrill"
-	}
+	}	
+	--Meant to be used for heists that use custom suits, since armor clips really badly with them
+	_G.restoration.custom_suit_heists = {
+		"glace", --Green Bridge
+		"dah", --Diamond Heist
+		"wwh", --Alaskan Deal
+		"sah", --Shacklethrorne Heist
+		"bph", --Hell's Island
+		"vit", --White House
+		"dinner", --Slaughterhouse
+		"man", --Undercover
+		"mad" --Boiling Point
+	}	
 end
 
 _G.SC = _G.SC or {}

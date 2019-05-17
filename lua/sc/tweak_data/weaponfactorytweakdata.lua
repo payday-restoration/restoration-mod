@@ -17153,6 +17153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				ignore_statistic = true,
 				bullet_class = "FlameBulletBase",
 				armor_piercing_add = 1,
+				can_shoot_through_shield = false,
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
 					dot_damage = "0.25",

@@ -41402,14 +41402,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = 1,
 					}	
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.stats = { 
-						value = 10,
+						value = 1,
 						suppression = 13,
 						alert_size = 13,
 						concealment = -4,
 						spread = -2,
 						recoil = 1,
 						damage = 5
-					}				
+					}		
+				self.parts.wpn_fps_smg_mac10_ns_ghetto.perks = {"silencer"}
+				self.parts.wpn_fps_smg_mac10_ns_ghetto.sound_switch = {suppressed = "suppressed_c"}					
 				self.parts.wpn_fps_smg_mac10_vg_strap.stats = { 
 						value = 0
 					}		
@@ -43769,6 +43771,33 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}			
 			end	
 
+		if self.parts.wpn_fps_aug_body_aug_a1 then --Pawcio's AUG A1 Kit
+			self.parts.wpn_fps_aug_m_a1_42.stats = {
+				value = 1,
+				extra_ammo = 12,
+				reload = -1,				
+				concealment = -1
+				}		
+			self.parts.wpn_fps_aug_body_aug_a1.stats = {
+				value = 1,
+				recoil = -1,
+				concealment = 1
+				}	
+			self.parts.wpn_fps_aug_body_aug_a1.override = {
+				wpn_fps_aug_b_long = {a_obj = "a_b_a1"},		
+				wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla = {unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"}								
+				}					
+			self.parts.wpn_fps_aug_body_aug_a3.stats = {
+				value = 1,
+				spread = -1,
+				concealment = 1
+				}		
+			self.parts.wpn_fps_aug_body_aug_a3.override = {
+				wpn_fps_aug_b_long = {a_obj = "a_b_a1"},		
+				wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla = {unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"}								
+				}									
+			end							
+
 		if self.parts.wpn_fps_upg_s_devgru then --carl ruins everything's Operator Attachment Pack
 			self.parts.wpn_fps_upg_ching_am_crap.pcs = nil	--temporarily nuking ammo conversions cause that shit's lame			
 			self.parts.wpn_fps_upg_tecci_am_beefy.pcs = nil	--and i'm too retarded to think of any stat shit
@@ -43828,7 +43857,16 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_o_amine.stats = { 
 				value = 1,
 				spread = -1 --no comment
-				}							
+				}			
+			self.parts.wpn_fps_upg_schakal_m_nine.stats = { 
+				value = 1,
+				total_ammo_mod = 88,
+				recoil = 1,				
+				spread = -1,								
+				damage = -15
+				}				
+			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5} --not sure about how to do pickup rate stuff for these.	
+			self.parts.wpn_fps_upg_schakal_m_atai.pcs = nil 
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
 				value = 5,
 				suppression = -4,

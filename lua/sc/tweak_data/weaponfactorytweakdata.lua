@@ -43863,7 +43863,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				total_ammo_mod = 88,
 				recoil = 1,				
 				spread = -1,								
-				damage = -15
+				damage = -16
 				}				
 			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5} --not sure about how to do pickup rate stuff for these.	
 			self.parts.wpn_fps_upg_schakal_m_atai.pcs = nil 

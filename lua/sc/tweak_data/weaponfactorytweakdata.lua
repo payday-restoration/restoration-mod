@@ -42268,15 +42268,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					
 			end	
 
-		if self.wpn_fps_ass_aek971 then 	-- Pawcio's AEK 971
+		if self.wpn_fps_ass_aek971 then -- Pawcio's AEK 971
 				self.parts.wpn_fps_upg_aek971_stock_pad.stats = {
 						value = 1,				
 						recoil = 1
 					}
-				self.parts.wpn_fps_upg_aek971_mag_rpk.stats = {
+				self.parts.wpn_fps_upg_aek971_mag_rpk.stats = { --extra_ammo_new still applies.......
 						value = 2,
 						extra_ammo = 15,
-						extra_ammo_new = 0,												
 						concealment = -1,
 						reload = -2,
 					}							
@@ -42358,11 +42357,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}	
 			end	
 
-		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden and Alcat's AK MOE Attachment Pack
+		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden and Alcat's AK Magpul MOE Attachment Pack
 				self.parts.wpn_fps_upg_fg_ak_moe.stats = { 
 					value = 5,
-					spread = 2,
-					recoil = 1,
+					recoil = 2,
+					spread = -1,
 					concealment = -3
 				}	
 				self.parts.wpn_fps_upg_s_ak_moe.stats = { 
@@ -43761,6 +43760,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = -1,
 				concealment = 8
 				}		
+			self.parts.wpn_fps_ass_ak_m_proto.stats = {
+				value = 1
+				}						
 			self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
 				damage_near_mul = -100,
 				damage_far_mul = -200			

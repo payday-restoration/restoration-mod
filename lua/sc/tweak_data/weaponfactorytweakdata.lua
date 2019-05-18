@@ -43889,8 +43889,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}				
 			self.parts.wpn_fps_upg_ns_hock.stats = {
 				value = 4,
-				suppression = -3,
-				alert_size = -3,
+				suppression = 12,
+				alert_size = 12,
 				recoil = 2,
 				spread = -1,
 				damage = 5,

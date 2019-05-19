@@ -1,6 +1,6 @@
 <table name="ukrainian_job">
 	<Localization default="english.txt" directory="loc"/>
-	<level ai_group_type="america" briefing_assets_gui="@IDbf70ce3b3bc4ae52@" briefing_dialog="Play_pln_ukranian_stage1_brief" cube="cube_apply_heist_bank" ghost_bonus="0.05" group_ai_preset="small_urban" id="ukrainian_job_res" intro_event="Play_pln_ukranian_stage1_intro_a" max_bags="16" music="heist" name_id = "heist_ukrainian_job_hl" brief_id = "heist_ukrainian_job_briefing">
+	<level ai_group_type="america" brief_id="heist_ukrainian_job_briefing" briefing_assets_gui="@IDbf70ce3b3bc4ae52@" briefing_dialog="Play_pln_ukranian_stage1_brief" cube="cube_apply_heist_bank" ghost_bonus="0.05" group_ai_preset="small_urban" id="ukrainian_job_res" intro_event="Play_pln_ukranian_stage1_intro_a" max_bags="16" music="heist" name_id="heist_ukrainian_job_hl">
 		<add file="levels/ukrainian_job_res/add.xml"/>
 		<assets/>
 		<env_params color_grading="color_nice"/>
@@ -44,7 +44,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<narrative briefing_event="vld_ukranian_brf" contact="vlad" debrief_event="vld_ukranian_debrief" id="ukrainian_job_prof" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_jewelry_store" region="street" name_id = "heist_ukrainian_job" brief_id = "heist_ukrainian_job_crimenet">
+	<narrative brief_id="heist_ukrainian_job_crimenet" briefing_event="vld_ukranian_brf" contact="vlad" debrief_event="vld_ukranian_debrief" id="ukrainian_job_prof" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_jewelry_store" name_id="heist_ukrainian_job" region="street">
 		<chain>
 			<table level_id="ukrainian_job_res" type="d" type_id="heist_type_assault"/>
 		</chain>

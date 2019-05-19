@@ -65,13 +65,13 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	end
 	end		
 	
-	if Global.load_level == true and Global.game_settings.level_id == "crojob2" then
+	--[[if Global.load_level == true and Global.game_settings.level_id == "crojob2" then
 	if rnd == 1 or rnd == 2 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
 		--need the inside env here
 	end
-	end		
+	end]]--
 	
 	if Global.load_level == true and Global.game_settings.level_id == "arm_und" then
 	if rnd == 1 or rnd == 2 then

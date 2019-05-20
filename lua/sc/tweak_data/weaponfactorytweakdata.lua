@@ -42468,7 +42468,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					concealment = -1,
 					reload = -2,
-					extra_ammo = 10
+					extra_ammo = 20
 				}							
 			end							
 
@@ -43851,10 +43851,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}				
 			self.parts.wpn_fps_upg_sub2000_m_short.stats = { 
 				value = 2,
+				recoil = 1,	
+				damage = -6,								
 				concealment = 2,				
-				extra_ammo = -8
-				}			
-			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = nil				
+				extra_ammo = -12
+				}	
+			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5}					
+			self.parts.wpn_fps_upg_sub2000_m_short.forbids = {"wpn_fps_upg_ammo_40sw"}										
 			self.parts.wpn_fps_upg_wellgrip.stats = {
 				value = 2,
 				recoil = 1,
@@ -44283,7 +44286,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 2,
 						concealment = 1
 					}					
-		end					
+			end					
 
 	--Alcat's CX4/MX4
 	if self.wpn_fps_smg_storm then
@@ -44328,8 +44331,62 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		})
 	end		
 
-	-- Pawcio's KS-23				
-		if self.wpn_fps_shot_ks23 then
+	if self.wpn_fps_pis_plr16 then 	--Pawcio's PLR16
+		self.parts.wpn_fps_upg_plr16_ammo_556_fmj_light.pcs = nil --nuked
+		self.parts.wpn_fps_upg_plr16_mag_pmag.stats = {
+					value = 1,
+					concealment = -1,
+					extra_ammo = 10					
+				}		
+		self.parts.wpn_fps_upg_plr16_mag_pmag.stats = {
+					value = 1,
+					concealment = -1,
+					extra_ammo = 10					
+				}
+		self.parts.wpn_fps_upg_plr16_mag_stanag.stats = {
+					value = 1,
+					concealment = -1,
+					extra_ammo = 10					
+				}				
+		self.parts.wpn_fps_upg_plr16_mag_pmag30.stats = {
+					value = 1,
+					concealment = -2,
+					extra_ammo = 20					
+				}				
+		self.parts.wpn_fps_upg_plr16_mag_stanag30.stats = {
+					value = 1,
+					concealment = -2,
+					extra_ammo = 20					
+				}								
+		self.parts.wpn_fps_upg_plr16_vg_gp033.stats = {
+					value = 1,
+					spread = 1,
+					spread_moving = 2,
+					concealment = -2
+				}
+		self.parts.wpn_fps_upg_plr16_vg_fab_reg.stats = {
+					value = 2,
+					recoil = 1,
+					spread_moving = 1,		
+					concealment = -1								
+				}
+		self.parts.wpn_fps_upg_plr16_vg_bcm.stats = {
+					value = 1,
+					spread = 0,
+					spread_moving = 2,
+					concealment = 1
+				}				
+		self.parts.wpn_fps_upg_plr16_ns_flashhider.stats = {
+					value = 4,
+					suppression = -2,
+					alert_size = -2,
+					damage = 5,
+					recoil = 1,
+					concealment = -2
+				}
+	end			
+
+		if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23				
 			self.wpn_fps_shot_ks23.override = {
 				wpn_fps_upg_ks23_ammo_slug = {
 					stats = {

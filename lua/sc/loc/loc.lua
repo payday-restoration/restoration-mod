@@ -168,7 +168,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_a_40sw_desc"] = "",		
 		["bm_wp_wpn_fps_upg_g3m203_barrel_g3ka4"] = "Assault Kit",		
 		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",	
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",				
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",		
+		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",	
+		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extra Extended Magazine",		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 

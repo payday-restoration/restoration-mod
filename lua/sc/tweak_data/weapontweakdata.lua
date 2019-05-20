@@ -8914,6 +8914,39 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amt.panic_suppression_chance = 0.0
 		end	
 
+	if self.noodle then --Germantaco's P220
+		self.noodle.has_description = false		
+		self.noodle.AMMO_MAX = 120
+		self.noodle.CLIP_AMMO_MAX = 14
+		self.noodle.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.noodle.fire_mode_data.fire_rate = 0.08571428571
+		self.noodle.single.fire_rate = 0.08571428571
+		self.noodle.spread.standing = 3
+		self.noodle.spread.crouching = 2
+		self.noodle.spread.steelsight = 1
+		self.noodle.spread.moving_standing = 4
+		self.noodle.spread.moving_crouching = 3
+		self.noodle.spread.moving_steelsight = 2
+		self.noodle.kick.standing = self.glock_17.kick.standing
+		self.noodle.kick.crouching = self.glock_17.kick.standing
+		self.noodle.kick.steelsight = self.glock_17.kick.standing
+		self.noodle.stats = {
+			damage = 35,
+			spread = 16,
+			recoil = 21,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 28,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+		self.noodle.panic_suppression_chance = 0.0
+		end			
+
 	if self.lynx then --Alcat's Gepard GM6 Lynx
 		self.lynx.upgrade_blocks = nil
 		self.lynx.has_description = true
@@ -8988,7 +9021,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.can_shoot_through_shield = true
 		self.m1894.can_shoot_through_wall = true		
 		self.m1894.panic_suppression_chance = 0.0
-		end				
+		end		
 
 	if self.obrez then --Pawcio's obrez Nagant M91/30 Obrez
 		self.obrez.categories = {

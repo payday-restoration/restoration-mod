@@ -40105,8 +40105,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}																							
 			end						
 
-	--Pawcio's Winchester M1912
-	if self.wpn_fps_shot_m1912 then
+	if self.wpn_fps_shot_m1912 then --Pawcio's Winchester M1912
 		self.parts.wpn_fps_upg_m1912_ns_cutts.stats = {
 				value = 1,
 				damage = 5,				
@@ -41566,7 +41565,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 1,
 						recoil = 1,
 						spread = 1,						
-						concealment = -1
+						concealment = -2
 					}
 				self.parts.wpn_fps_pis_gtt33_m_extended.stats = {
 						value = 1, 
@@ -42356,6 +42355,137 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread_moving = -2
 				}	
 			end	
+			
+		if self.parts.wpn_fps_shot_m37_s_rack then -- Alcat's GSPS Various Attachments
+				self.parts.wpn_fps_shot_m37_b_trench.stats = { 
+					value = 0
+				}		
+				self.parts.wpn_fps_shot_m37_b_deerslayer.stats = { 
+					value = 1,
+					recoil = -1,
+					spread = 1,				
+					concealment = -2
+				}			
+				self.parts.wpn_fps_shot_m37_s_rack.stats = { 
+					value = 1,
+					concealment = -1,								
+					recoil = 1
+				}	
+				self.parts.wpn_fps_shot_m37_s_rack.custom_stats = nil				
+				self.parts.wpn_fps_shot_m37_s_stakeout.stats = { 
+					value = 1,
+					spread_moving = 1,
+					concealment = 1
+				}																	
+			end		
+
+		if self.parts.wpn_fps_shot_870_fg_surefire then -- Alcat's R870 Various Attachments
+				self.parts.wpn_fps_shot_870_fg_surefire.stats = { 
+					value = 1,
+					recoil = 1,
+					spread = 1,
+					concealment = -2
+				}		
+				self.parts.wpn_fps_shot_870_rail_mcs.stats = { 
+					value = 1
+				}		
+				self.parts.wpn_fps_shot_mossberg_fg_short.stats = { 
+					value = 1,
+					spread = -2,
+					recoil = 1,					
+					concealment = 1
+				}		
+				self.parts.wpn_fps_shot_870_fg_vertical.stats = { 
+					value = 1,
+					spread = 1,
+					spread_moving = 2,
+					concealment = -2
+				}										
+				self.parts.wpn_fps_shot_mossberg_s_grip.stats = { 
+					value = 1,
+					concealment = -3,		
+					spread = 2									
+				}			
+				self.parts.wpn_fps_shot_r870_s_hdtf.stats = { 
+					value = 1,
+					concealment = -3,		
+					recoil = 2									
+				}										
+				self.parts.wpn_fps_shot_mossberg_b_heat.stats = { 
+					value = 1
+				}						
+				self.parts.wpn_fps_shot_870_rail_aftermarket.stats = { 
+					value = 1
+				}							
+				self.parts.wpn_fps_shot_870_fg_rail.stats = { 
+					value = 1,
+					concealment = 1							
+				}					
+				self.parts.wpn_fps_shot_870_fg_vertical.stats = { 
+					value = 1,
+					concealment = 1
+				}														
+				self.parts.wpn_fps_shot_r870_fg_hdtf.stats = { 
+					value = 1,
+					spread = 1
+				}	
+				self.parts.wpn_fps_shot_mossberg_fg_pump.stats = { 
+					value = 1,
+					spread = 1,
+					recoil = -1,					
+					concealment = 1
+				}																	
+			end				
+
+		if self.wpn_fps_pis_noodle then -- Germantaco's P220
+				self.parts.wpn_fps_pis_noodle_a1_10mm.pcs = nil 
+				self.parts.wpn_fps_pis_noodle_m_8.stats = { 
+					value = 1,				
+					extra_ammo = 2,
+					reload = -1
+				}						
+				self.parts.wpn_fps_pis_noodle_gr_ste.stats = { 
+					value = 1,
+					recoil = 1,
+					concealment = -1
+				}			
+				self.parts.wpn_fps_pis_noodle_gr_wor.stats = { 
+					value = 1,
+					recoil = 1,
+					spread = -1,						
+					concealment = 1
+				}			
+				self.parts.wpn_fps_pis_noodle_gr_blu.stats = { 
+					value = 1,
+					recoil = -2,
+					spread = 1,						
+					concealment = 1
+				}			
+				self.parts.wpn_fps_pis_noodle_gr_zom.stats = { 
+					value = 1,
+					concealment = 1
+				}																						
+				self.parts.wpn_fps_pis_noodle_fr_wor.stats = { 
+					value = 0			
+				}		
+				self.parts.wpn_fps_pis_noodle_fr_ste.stats = { 
+					value = 0			
+				}	
+				self.parts.wpn_fps_pis_noodle_sl_wor.stats = { 
+					value = 0			
+				}														
+				self.parts.wpn_fps_pis_noodle_sl_ste.stats = { 
+					value = 0			
+				}						
+				self.parts.wpn_fps_pis_noodle_m_8.override_weapon = nil				
+				self.parts.wpn_fps_pis_noodle_m_10.stats = { 
+					value = 1,				
+					extra_ammo = 4,
+					reload = -1,
+					concealment = -1					
+				}		
+				self.parts.wpn_fps_pis_noodle_m_10.override_weapon = nil								
+			end								
 
 		if self.parts.wpn_fps_upg_fg_ak_moe then -- Kden and Alcat's AK Magpul MOE Attachment Pack
 				self.parts.wpn_fps_upg_fg_ak_moe.stats = { 
@@ -42465,10 +42595,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -2
 				}			
 				self.parts.wpn_fps_upg_m4_m_pmag40.stats = { 
-					value = 3,
-					concealment = -1,
+					value = 4,
+					extra_ammo = 20,
 					reload = -2,
-					extra_ammo = 20
+					concealment = -2
 				}							
 			end							
 
@@ -43095,14 +43225,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}		
 				self.parts.wpn_fps_smg_mp9_m_quick.stats = { 
 						value = 2,
-						spread = -2,
+						spread = -1,
 						extra_ammo = 10,						
 						concealment = -2,
 						reload = 2
 					}		
 				self.parts.wpn_fps_smg_mp7_m_quick.stats = { 
 						value = 2,
-						spread = -2,
+						spread = -1,
 						extra_ammo = 12,						
 						concealment = -2,
 						reload = 2
@@ -43124,7 +43254,35 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						spread = -1,
 						concealment = -1,
 						reload = 2
-					}																																											
+					}		
+				self.wpn_fps_smg_x_mp7.override = {
+				wpn_fps_smg_mp7_m_extended = {stats = {
+						value = 1,
+						concealment = -3,
+						extra_ammo = 24
+					}
+				},				
+				wpn_fps_smg_mp9_m_quick = {stats = {
+						value = 2,
+						spread = -1,
+						extra_ammo = 12,						
+						concealment = -3,
+						reload = 2
+				}}}								
+				self.wpn_fps_smg_x_mp9.override = {
+				wpn_fps_smg_mp9_m_quick = {stats = {
+						value = 2,
+						spread = -2,
+						extra_ammo = 20,						
+						concealment = -2,
+						reload = 2
+					}
+				},				
+				wpn_fps_smg_mp9_m_extended = {stats = {
+					value = 4,
+					concealment = -1,
+					extra_ammo = 20
+				}}}			
 			end	
 
 		if self.parts.wpn_fps_pis_beretta_ns_vintage then 	--Alcat & carl ruins everything's Various Attachments for the Beretta	
@@ -43626,9 +43784,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}		
 			self.parts.wpn_fps_shot_shorty_fg_rail.stats = {
 				value = 1,
-				spread = 1,				
-				recoil = 1,
-				spread_moving = -1				
+				concealment = 1				
 				}															
 			self.parts.wpn_fps_ass_tecci_s_minicontra.stats = {
 				value = 2,
@@ -43750,7 +43906,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 1,
 				spread = 1,
 				concealment = -1
-				}			
+				}	
+			self.parts.wpn_fps_ass_flint_b_long.stats = {
+				value = 1,
+				spread = 1,
+				concealment = -1
+				}							
 			self.parts.wpn_fps_shot_m37_o_expert.stats = {
 				value = 0
 				}	

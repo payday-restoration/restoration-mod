@@ -168,7 +168,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if alive(attack_data.attacker_unit) then
 				if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "taser_titan" then
 					if alive(player_unit) then
-						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal then
+						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 						else
 							player_unit:movement():on_non_lethal_electrocution()
 							managers.player:set_player_state("tased")
@@ -176,7 +176,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				elseif tostring(attack_data.attacker_unit:base()._tweak_table) == "autumn" then
 					if alive(player_unit) then
-						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal then
+						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 						else
 							attack_data.attacker_unit:damage():run_sequence_simple("decloak")
 							attack_data.attacker_unit:sound():say("i03", true, nil, true)
@@ -370,10 +370,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if alive(attack_data.attacker_unit) then
 				if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
 					if alive(player_unit) then
-	        	        attack_data.attacker_unit:sound():say("post_tasing_taunt")
-						player_unit:movement():on_non_lethal_electrocution()
-						managers.player:set_player_state("tased")
-						self.tase_time = _time + 10
+						if not self._unit:movement():is_taser_attack_allowed() then
+						else
+							attack_data.attacker_unit:sound():say("post_tasing_taunt")
+							player_unit:movement():on_non_lethal_electrocution()
+							managers.player:set_player_state("tased")
+							self.tase_time = _time + 10
+						end
 					end
 				end		
 			end

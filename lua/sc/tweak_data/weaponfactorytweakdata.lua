@@ -14944,15 +14944,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_galil_pts/wpn_fps_ass_galil_fg_fab",
 			stats = {
 				value = 0,
-				recoil = -1,
 				spread = 1,
-				total_ammo_mod = -20,
-				damage = 10,
-				suppression = -1,
-				alert_size = -1,
-				concealment = -4
+				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
 			forbids = {
 				"wpn_fps_shot_r870_ris_special"
 			},
@@ -15288,15 +15282,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 0,
 				spread = 2,
-				recoil = -2,
-				total_ammo_mod = -47,
-				damage = 35,
-				suppression = -2,
-				alert_size = -2,
-				extra_ammo = -10,
-				concealment = -8
+				recoil = -1,
+				concealment = -3
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.6, ammo_pickup_max_mul = 0.6},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
 			is_a_unlockable = true,
@@ -15337,7 +15325,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_galil_pts/wpn_fps_ass_galil_g_sniper",
 			stats = {
 				value = 0,
-				spread = 2
+				spread = 1
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",

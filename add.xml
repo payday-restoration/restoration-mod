@@ -530,6 +530,7 @@
 	
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
+	<texture path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
 	
     <!--Titan Taser-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>

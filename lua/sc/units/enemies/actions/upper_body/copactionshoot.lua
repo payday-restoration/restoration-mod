@@ -46,6 +46,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		elseif self._unit:base()._tweak_table == "autumn" and self._throw_projectile_time < _time then
 			if self._shooting_player then
+				GroupAIStateBesiege:set_assault_endless(true)
+				managers.hud:set_buff_enabled("vip", true)			
 				local cloak_roll = math.rand(1, 100)
 				local chance_uncloak = 20		
 				if cloak_roll <= chance_uncloak then
@@ -145,7 +147,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local z_fix = {-0.05, -0.02, -0.05, -0.02, -0.07, -0.07, -0.1}
 		target_vec = target_vec + Vector3(0, 0, z_fix[math.random(7)])
 		if Network:is_server() then
-			ProjectileBase.throw_projectile("molotov", shoot_from_pos, target_vec)
+			ProjectileBase.throw_projectile("fir_com", shoot_from_pos, target_vec)
 		end
 	end
 

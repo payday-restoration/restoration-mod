@@ -169,7 +169,7 @@ if not tweak_data then return end
 		dot_tick_period = 0.5
 	}
 	tweak_data.projectiles.fir_com.range = 75
-	tweak_data.blackmarket.projectiles.fir_com.impact_detonation = true
+	tweak_data.blackmarket.projectiles.fir_com.impact_detonation = false
 	
 	--Incendiary Nades--
 	tweak_data.projectiles.fir_com.damage = 60

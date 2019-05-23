@@ -1,0 +1,189 @@
+<table name="firestarter_res">
+	<level ai_group_type="america" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" max_bags="16" music="heist">
+		<add file="levels/firestarter_1_res/add.xml"/>
+		<assets/>
+		<include directory="levels/firestarter_1_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="env/env.continent" type="binary"/>
+			<file file="env/env.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_firestarter_stage1_end_a"/>
+			<value_node value="Play_pln_firestarter_stage1_end_b"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_firestarter1"/>
+			<value_node value="packages/job_firestarter"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/world_sounds"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/world/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/editor_only/editor_only"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
+			<value_node value="levels/narratives/classics/dinner/lights/lights"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<level ai_group_type="america" briefing_dialog="Play_pln_firestarter_stage2_brief" cube="cube_apply_heist_bank" ghost_bonus="0.15" id="firestarter_2_res" intro_event="Play_pln_firestarter_stage2_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_02" max_bags="34" music="heist">
+		<add file="levels/firestarter_2_res/add.xml"/>
+		<assets/>
+		<include directory="levels/firestarter_2_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="background/background.continent" type="binary"/>
+			<file file="background/background.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_firestarter_stage2_end_a"/>
+			<value_node value="Play_pln_firestarter_stage2_end_b"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_firestarter2"/>
+			<value_node value="packages/job_firestarter"/>
+			<value_node value="levels/narratives/h_firestarter/stage_2/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_2/world_sounds"/>
+			<value_node value="levels/narratives/h_firestarter/stage_2/world/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_2/background/background"/>
+			<value_node value="levels/narratives/h_firestarter/stage_2/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_firestarter/stage_2/editor_only/editor_only"/>
+			<value_node value="levels/narratives/bain/cage/world"/>
+			<value_node value="levels/narratives/escapes/escape_cafe/temp/temp"/>
+			<value_node value="levels/narratives/armadillo/arm_und/pc_only/pc_only"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<level ai_group_type="america" briefing_dialog="Play_pln_firestarter_stage3_brief" cube="cube_apply_heist_bank" ghost_bonus="0.05" id="firestarter_3_res" intro_event="Play_pln_firestarter_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_branchbank" max_bags="54" music="heist">
+		<add file="levels/firestarter_3_res/add.xml"/>
+		<assets/>
+		<include directory="levels/firestarter_3_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+		</include>
+		<mission_data>
+			<table mission="default"/>
+		</mission_data>
+		<outro_event>
+			<value_node value="Play_pln_firestarter_stage3_end_a"/>
+			<value_node value="Play_pln_firestarter_stage3_end_b"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_firestarter3"/>
+			<value_node value="packages/job_firestarter"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/world_sounds"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/world/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/editor_only/editor_only"/>
+		</packages>
+		<preplanning mission_briefing_texture="guis/textures/pd2/pre_planning/mission_briefing_big" total_budget="8">
+			<table map_size="1" map_x="-0.6" map_y="0" name_id="menu_pp_branchbank_loc_a" rotation="0" texture="guis/textures/pd2/pre_planning/branchbank_1" x1="-3500" x2="500" y1="-300" y2="3700">
+				<custom_points/>
+			</table>
+			<table map_size="1" map_x="0.6" map_y="0" name_id="menu_pp_branchbank_loc_b" rotation="0" texture="guis/textures/pd2/pre_planning/branchbank_2" x1="-5500" x2="2500" y1="-3200" y2="4800">
+				<custom_points/>
+			</table>
+			<default_plans vault_plan="branchbank_lance"/>
+			<start_location group="a" x="512" y="512" zoom="1"/>
+		</preplanning>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<Localization default="english.txt" directory="loc"/>
+	<narrative briefing_event="hct_firestarter_brf" contact="hector" debrief_event="hct_firestarter_debrief" id="firestarter_res" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01">
+		<chain>
+			<table level_id="firestarter_1_res" type="d" type_id="heist_type_hijack"/>
+			<table level_id="firestarter_2_res" type="d" type_id="heist_type_stealth"/>
+			<table level_id="firestarter_3_res" mission="default" type="d" type_id="heist_type_knockover">
+				<mission_filter>
+					<value_node value="5"/>
+				</mission_filter>
+			</table>
+		</chain>
+		<contract_cost>
+			<value_node value="39000"/>
+			<value_node value="78000"/>
+			<value_node value="195000"/>
+			<value_node value="390000"/>
+			<value_node value="500000"/>
+			<value_node value="500000"/>
+			<value_node value="500000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_firestarter_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_fires1"/>
+			<value_node value="cn_fires2"/>
+			<value_node value="cn_fires3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="44000"/>
+			<value_node value="44000"/>
+			<value_node value="44000"/>
+			<value_node value="44000"/>
+			<value_node value="44000"/>
+			<value_node value="44000"/>
+			<value_node value="44000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="30000"/>
+			<value_node value="30000"/>
+			<value_node value="30000"/>
+			<value_node value="30000"/>
+			<value_node value="30000"/>
+			<value_node value="30000"/>
+			<value_node value="30000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="70000"/>
+			<value_node value="95000"/>
+			<value_node value="125000"/>
+			<value_node value="200000"/>
+			<value_node value="250000"/>
+			<value_node value="250000"/>
+			<value_node value="250000"/>
+		</payout>
+	</narrative>
+</table>

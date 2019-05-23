@@ -5,10 +5,10 @@
 		<assets/>
 		<env_params color_grading="color_nice"/>
 		<include directory="levels/ukrainian_job_res">
-			<file file="nav_manager_data.nav_data" type="binary"/>
 			<file file="world.world" type="binary"/>
 			<file file="continents.continents" type="binary"/>
 			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
 			<file file="world_sounds.world_sounds" type="binary"/>
 			<file file="world_cameras.world_cameras" type="binary"/>
 			<file file="world/world.continent" type="binary"/>

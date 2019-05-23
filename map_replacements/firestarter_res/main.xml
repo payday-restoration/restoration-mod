@@ -108,6 +108,7 @@
 			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/editor_only/editor_only"/>
+			<value_node value="levels/narratives/butcher/thebomb/stage_3/marac/marac"/>
 		</packages>
 		<preplanning mission_briefing_texture="guis/textures/pd2/pre_planning/mission_briefing_big" total_budget="8">
 			<table map_size="1" map_x="-0.6" map_y="0" name_id="menu_pp_branchbank_loc_a" rotation="0" texture="guis/textures/pd2/pre_planning/branchbank_1" x1="-3500" x2="500" y1="-300" y2="3700">

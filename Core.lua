@@ -57,7 +57,8 @@ if not _G.restoration then
 		"office_strike",
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
-		"skmc_ovengrill"
+		"skmc_ovengrill",
+		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
@@ -67,16 +68,18 @@ if not _G.restoration then
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		--custom heists		
-		"office_strike" --office strike
+		"office_strike", --office strike
+		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	_G.restoration.captain_murderdozer = {
 		"firestarter_2", --firestarter day 2
 		"framing_frame_3", --framing frame day 3
-		"alex_2", --rats day 2
 		"rat",	--cook off
 		"arm_for",	--train heist
 		"mus",	--the diamond
-		"big" --big bank
+		"big", --big bank
+		--custom heists		
+		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	_G.restoration.captain_stelf = {
 		"nightclub", --and Autumn stay off the dance floor

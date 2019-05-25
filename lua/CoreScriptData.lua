@@ -181,6 +181,12 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		--"sky_orientation/rotation":"278.53564453125",
 	end
 	
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_2_res" then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+		--"sky_orientation/rotation":"278.53564453125",
+	end
+	
 	--Safehouse Booster
 	if Global.load_level == true and Global.game_settings.level_id == "safehouse" then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")

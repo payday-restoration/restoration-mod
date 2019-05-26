@@ -9002,7 +9002,70 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.noodle.panic_suppression_chance = 0.0
-		end			
+		end		
+
+	if self.heffy_556 then --Killerwolf & Germantaco's AK 101
+		self.heffy_556.AMMO_MAX = 180
+		self.heffy_556.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.heffy_556.spread.standing = 3
+		self.heffy_556.spread.crouching = 2
+		self.heffy_556.spread.steelsight = 1
+		self.heffy_556.spread.moving_standing = 4
+		self.heffy_556.spread.moving_crouching = 3
+		self.heffy_556.spread.moving_steelsight = 2
+		self.heffy_556.fire_mode_data.fire_rate = 0.1
+		self.heffy_556.auto.fire_rate = 0.1
+		self.heffy_556.kick.standing = self.new_m4.kick.standing
+		self.heffy_556.kick.crouching = self.new_m4.kick.standing
+		self.heffy_556.kick.steelsight = self.new_m4.kick.standing
+		self.heffy_556.stats = {
+			damage = 29,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 16,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.heffy_556.panic_suppression_chance = 0.0
+		end							
+
+	if self.heffy_545 then --Killerwolf & Germantaco's AK 74 (attachment stats FUCKED. some dont even apply @ all)
+		self.heffy_545.desc_id = "bm_menu_sc_heffy_545_desc"
+		self.heffy_545.AMMO_MAX = 150
+		self.heffy_545.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.heffy_545.spread.standing = 3
+		self.heffy_545.spread.crouching = 2
+		self.heffy_545.spread.steelsight = 1
+		self.heffy_545.spread.moving_standing = 4
+		self.heffy_545.spread.moving_crouching = 3
+		self.heffy_545.spread.moving_steelsight = 2
+		self.heffy_545.fire_mode_data.fire_rate = 0.0923076923
+		self.heffy_545.auto.fire_rate = 0.0923076923
+		self.heffy_545.kick.standing = self.new_m4.kick.standing
+		self.heffy_545.kick.crouching = self.new_m4.kick.standing
+		self.heffy_545.kick.steelsight = self.new_m4.kick.standing
+		self.heffy_545.stats = {
+			damage = 35,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 16,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.heffy_545.panic_suppression_chance = 0.0
+		end					
 
 	if self.lynx then --Alcat's Gepard GM6 Lynx
 		self.lynx.upgrade_blocks = nil

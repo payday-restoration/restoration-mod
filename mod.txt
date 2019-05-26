@@ -10,8 +10,8 @@
  "undisablable" : false,
  "disable_safe_mode" : false,
  "pre_hooks" : [
-		{ "hook_id" : "lib/entry", "script_path" : "Corepre.lua" },
-		{ "hook_id" : "lib/entry", "script_path" : "Core.lua" }
+		{ "hook_id" : "lib/entry", "script_path" : "Core.lua" },
+		{ "hook_id" : "lib/entry", "script_path" : "Corepre.lua" }
     ],
  "libraries" : [
         {

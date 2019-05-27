@@ -33,6 +33,7 @@
 			<value_node value="levels/narratives/h_firestarter/stage_1/editor_only/editor_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
 			<value_node value="levels/narratives/classics/dinner/lights/lights"/>
+			<value_node value="levels/narratives/classics/run/world/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>

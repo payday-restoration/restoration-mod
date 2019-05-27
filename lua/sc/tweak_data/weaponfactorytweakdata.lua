@@ -43935,10 +43935,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 6
 				}									
 			self.parts.wpn_fps_ass_flint_m_long.stats = {
-				value = 1,
-				extra_ammo = 15,	
-				spread_moving = -1,				
-				concealment = 1
+				value = 4,
+				extra_ammo = 15,
+				reload = -2,
+				concealment = -2
 				}						
 			self.parts.wpn_fps_ass_flint_b_short.stats = {
 				value = 1,

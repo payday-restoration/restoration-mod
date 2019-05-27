@@ -224,7 +224,8 @@ end
 			"sky_1008_cloudy",
 			"sky_0927_whispy_clouds",
 			"sky_2335_night_moon",
-			"sky_2100_moon"
+			"sky_2100_moon",
+			"sky_1313_cloudy_dark"
 			
         }
         for _, sky in ipairs(skies) do

@@ -144,6 +144,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		map_faction_override["vit"] = "murkywater"		
 		map_faction_override["wwh"] = "murkywater"
 		map_faction_override["arm_for"] = "murkywater"
+		map_faction_override["wetwork"] = "murkywater"
+		map_faction_override["wetwork_burn"] = "murkywater"
 		--Zombies--
 		map_faction_override["haunted"] = "zombie"		
 		map_faction_override["nail"] = "zombie"

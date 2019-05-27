@@ -43981,7 +43981,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}		
 			self.parts.wpn_fps_ass_flint_s_solid.stats = {
 				value = 1,
-				recoil = -2,
+				recoil = -1,
 				concealment = 1,				
 				spread = 2
 				}						

@@ -933,7 +933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 			self._unit:movement():action_request(action_data)
 		end
-		managers.modifiers:run_func("OnEnemyHealed", self._unit, unit)
+
 		managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		return true
 	end

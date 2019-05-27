@@ -41438,19 +41438,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self.parts.wpn_fps_galil_m_35r then -- Alcat's Various Magazines for the Galil
 				self.parts.wpn_fps_galil_m_35r.stats = {
 						value = 1,				
-						extra_ammo = 10,
+						extra_ammo = 5,
 						concealment = -1
 					}
-				self.parts.wpn_fps_galil_m_762c.pcs = nil
-				self.parts.wpn_fps_galil_m_akm.pcs = nil
+				self.parts.wpn_fps_galil_m_762c.stats = {
+						value = 0,
+						spread = 2,
+						recoil = -3,
+						total_ammo_mod = -47,
+						damage = 35,
+						suppression = -2,
+						alert_size = -2,
+						reload = -1,						
+						extra_ammo = -10,
+						concealment = 3
+					}
+				self.parts.wpn_fps_galil_m_762c.custom_stats = {ammo_pickup_min_mul = 0.6, ammo_pickup_max_mul = 0.6}					
+				self.parts.wpn_fps_galil_m_akm.stats = {
+						value = 0,
+						recoil = -1,
+						spread = 1,
+						total_ammo_mod = -20,
+						damage = 10,
+						suppression = -1,
+						alert_size = -1,
+						concealment = -4
+					}
+				self.parts.wpn_fps_galil_m_akm.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
 				self.parts.wpn_fps_galil_m_drum.stats = {
 						value = 5,
-						reload = -5,						
+						reload = -4,						
 						spread_moving = -1,
 						concealment = -4,
 						extra_ammo = 45
-					}				
-				self.parts.wpn_fps_galil_m_drum.alt_icon = {"guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"}																
+					}		
+				self.parts.wpn_fps_galil_m_drum.custom_stats = nil
+				self.parts.wpn_fps_galil_m_drum.alt_icon = {"guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"}	
+				self.parts.wpn_fps_galil_m_drum.forbids = nil
+				self.parts.wpn_fps_galil_m_762c.forbids = nil
+				self.parts.wpn_fps_ass_galil_fg_mar.forbids = nil
+				self.parts.wpn_fps_ass_galil_fg_sar.forbids = nil							
 				end				
 
 		if self.wpn_fps_pis_x_deckard then -- Pawcio's Akimbo DECK ARDs			
@@ -42653,7 +42680,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}																					
 			end					
 
-		if self.wpn_fps_ass_heffy_762 then -- Killerwolf & Germantaco's AK 47 (from the ak pack)
+		if self.wpn_fps_ass_heffy_762 then -- Killerwolf & Germantaco's AK 47
 				self.parts.wpn_fps_ass_heffy_762_m_bake_30.stats = { 
 					value = 1
 				}		
@@ -42668,7 +42695,85 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_heffy_762_fm_rk62.pcs = nil							
 				self.parts.wpn_fps_ass_heffy_762_fm_ty56.pcs = nil			
 				self.parts.wpn_fps_ass_heffy_762_fm_amd65.pcs = nil							
-				end					
+			end	
+				
+		if self.wpn_fps_ass_heffy_556 then -- Killerwolf & Germantaco's AK 101 
+				self.parts.wpn_fps_ass_heffy_556_so_pr.stats = { 
+					value = 0
+				}		
+				self.parts.wpn_fps_ass_heffy_556_fh_ak102.stats = { 
+					value = 5,
+					suppression = -4,
+					alert_size = -4,
+					recoil = 3,
+					spread = -2,
+					damage = 5,
+					concealment = -2
+				}		
+				self.parts.wpn_fps_ass_heffy_556_fh_ak108.stats = { 
+					value = 5,
+					damage = 5,
+					recoil = -1,
+					spread = 2,
+					concealment = -4				
+				}		
+				self.parts.wpn_fps_ass_heffy_556_ba_ak108.stats = { 
+					value = 1,
+					spread = 1,
+					recoil = 1,
+					concealment = -2
+				}					
+				self.parts.wpn_fps_ass_heffy_556_ba_ak108.custom_stats = nil
+				self.parts.wpn_fps_ass_heffy_556_ba_ak102.stats = { 
+					value = 1,
+					spread = -1,
+					recoil = -1,
+					concealment = 2
+				}
+				self.parts.wpn_fps_ass_heffy_556_ba_ak102.custom_stats = nil							
+				self.parts.wpn_fps_ass_heffy_556_st_none.stats = { 
+					value = 0,
+					concealment = 2,
+					spread = -1,		
+					recoil = -1							
+				}										
+			end					
+
+		if self.wpn_fps_ass_heffy_762 then -- Killerwolf & Germantaco's AK 74 (keeping this here)
+				self.parts.wpn_fps_ass_heffy_545_so_pr.stats = { 
+					value = 0
+				}		
+				self.parts.wpn_fps_ass_heffy_545_st_md86.stats = { 
+					value = 3,
+					concealment = 1
+				}						
+				self.parts.wpn_fps_ass_heffy_545_m_poly_45.stats = { 
+					value = 2,
+					extra_ammo = 15,
+					concealment = -1,
+					reload = -2
+				}
+				self.parts.wpn_fps_ass_heffy_545_m_poly_45.override_weapon = nil 		
+				self.parts.wpn_fps_ass_heffy_545_m_poly_60.stats = { 
+					value = 3,
+					spread_moving = -2,
+					concealment = -3,
+					extra_ammo = 30,
+					reload = -3
+				}
+				self.parts.wpn_fps_ass_heffy_545_m_poly_60.override_weapon = nil 		
+				self.parts.wpn_fps_ass_heffy_545_m_bake_45.stats = { 
+					value = 2,
+					extra_ammo = 15,
+					concealment = -1,
+					reload = -2
+				}
+				self.parts.wpn_fps_ass_heffy_545_m_bake_45.override_weapon = nil			
+				self.parts.wpn_fps_ass_heffy_545_m_steel_30.stats = { 
+					value = 1,
+					concealment = 1
+				}				
+				end												
 
 		if self.wpn_fps_pis_pm then -- Silent Enforcer & Germantaco's Makarov
 				self.parts.wpn_fps_pis_pm_fi_steel.stats = { 
@@ -43528,7 +43633,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						damage = -6
 					}
 				self.parts.wpn_fps_upg_px4_ammo_9mm.has_description = false							
-				self.parts.wpn_fps_upg_px4_ammo_9mm.custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, rof_mult = 1.25}										
+				self.parts.wpn_fps_upg_px4_ammo_9mm.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, rof_mult = 1.2}										
 				self.parts.wpn_fps_upg_px4_ammo_45acp.stats = {
 						value = 10,
 						alert_size = -1,
@@ -43830,10 +43935,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 6
 				}									
 			self.parts.wpn_fps_ass_flint_m_long.stats = {
-				value = 1,
-				extra_ammo = 15,	
-				spread_moving = -1,				
-				concealment = 1
+				value = 4,
+				extra_ammo = 15,
+				reload = -2,
+				concealment = -2
 				}						
 			self.parts.wpn_fps_ass_flint_b_short.stats = {
 				value = 1,
@@ -43876,7 +43981,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}		
 			self.parts.wpn_fps_ass_flint_s_solid.stats = {
 				value = 1,
-				recoil = -2,
+				recoil = -1,
 				concealment = 1,				
 				spread = 2
 				}						
@@ -44005,7 +44110,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = 2,				
 				extra_ammo = -12
 				}	
-			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5}					
+			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2}					
 			self.parts.wpn_fps_upg_sub2000_m_short.forbids = {"wpn_fps_upg_ammo_40sw"}										
 			self.parts.wpn_fps_upg_wellgrip.stats = {
 				value = 2,
@@ -44024,7 +44129,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = -1,								
 				damage = -16
 				}				
-			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5} --not sure about how to do pickup rate stuff for these.	
+			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.4, ammo_pickup_max_mul = 1.4} --20% increase/decrease per tier i guess
 			self.parts.wpn_fps_upg_schakal_m_atai.pcs = nil 
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
 				value = 5,

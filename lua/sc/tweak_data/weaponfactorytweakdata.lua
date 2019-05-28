@@ -44144,7 +44144,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = 1,								
 				damage = -10
 				}	
-			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, armor_piercing_add = 0.25}		
+			self.parts.wpn_fps_upg_schakal_m_atai.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, armor_piercing_add = 0.25}		
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
 				value = 5,
 				suppression = -4,

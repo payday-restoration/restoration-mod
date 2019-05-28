@@ -12,7 +12,6 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="taser" />
 			<var name="_default_weapon_id" value="m4_yellow" />
 		</extension>

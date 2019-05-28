@@ -44060,19 +44060,24 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end							
 
 		if self.parts.wpn_fps_upg_s_devgru then --carl ruins everything's Operator Attachment Pack
-			self.parts.wpn_fps_upg_ching_am_crap.pcs = nil	--temporarily nuking ammo conversions cause that shit's lame			
-			self.parts.wpn_fps_upg_tecci_am_beefy.pcs = nil	--and i'm too retarded to think of any stat shit
+			self.parts.wpn_fps_upg_ching_am_crap.pcs = nil	--nuking these ammo conversions
+			self.parts.wpn_fps_upg_tecci_am_beefy.pcs = nil	
 			self.parts.wpn_fps_upg_am_gomerpyle.pcs = nil	
 			self.parts.wpn_fps_upg_am_lame.pcs = nil					
 			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil										
 			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil				
-			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil						
 			self.parts.wpn_fps_upg_s_devgru.stats = {
 				value = 4,
 				recoil = -2,
 				spread = 1,				
 				concealment = 1
 				}	
+			self.parts.wpn_fps_upg_am_hollow_large.stats = {
+				value = 1,
+				recoil = -1,
+				spread = 1				
+				}				
+			self.parts.wpn_fps_upg_am_hollow_large.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, headshot_dmg_mult = 1.15}
 			self.parts.wpn_fps_upg_fg_ropup.stats = {
 				value = 5,
 				concealment = -2,
@@ -44125,12 +44130,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_schakal_m_nine.stats = { 
 				value = 1,
 				total_ammo_mod = 88,
-				recoil = 1,				
+				recoil = 1,		
+				extra_ammo = 5,	
+				concealment = -1,				
 				spread = -1,								
 				damage = -16
 				}				
-			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.4, ammo_pickup_max_mul = 1.4} --20% increase/decrease per tier i guess
-			self.parts.wpn_fps_upg_schakal_m_atai.pcs = nil 
+			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.4, ammo_pickup_max_mul = 1.4, rof_mult = 1.08333333333} --20% increase/decrease per tier i guess
+			self.parts.wpn_fps_upg_schakal_m_atai.stats = {
+				value = 1,
+				total_ammo_mod = 50,  --not sure if thisll work right with fully loaded, total_ammo_mod is weird like that 
+				recoil = -2,		
+				spread = 1,								
+				damage = -10
+				}	
+			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, armor_piercing_add = 0.25}		
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
 				value = 5,
 				suppression = -4,

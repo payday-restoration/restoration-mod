@@ -4780,7 +4780,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
-		self.g3.timers.reload_not_empty = 2.55
 		self.g3.panic_suppression_chance = 0.0
 		self.galil.AMMO_MAX = 150
 		self.galil.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -5441,6 +5440,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		--She’s a gunshot bride
 		self.rpg7.spread.standing = 3
 		self.rpg7.spread.crouching = 2
 		self.rpg7.spread.steelsight = 1

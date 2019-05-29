@@ -44136,15 +44136,28 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = -1,								
 				damage = -16
 				}				
-			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.4, ammo_pickup_max_mul = 1.4, rof_mult = 1.08333333333} --20% increase/decrease per tier i guess
-			self.parts.wpn_fps_upg_schakal_m_atai.stats = {
+			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.875, ammo_pickup_max_mul = 1.875, rof_mult = 1.08333333333}
+			self.parts.wpn_fps_upg_schakal_m_atai.stats = {			
 				value = 1,
-				total_ammo_mod = 50,  --not sure if thisll work right with fully loaded, total_ammo_mod is weird like that 
-				recoil = -2,		
+				extra_ammo = 5,	--it's supposed to be a ump40 conversion kit or something like that				
+				total_ammo_mod = 50, 
+				recoil = -2,
+				concealment = -1,						
 				spread = 1,								
 				damage = -10
-				}	
-			self.parts.wpn_fps_upg_schakal_m_atai.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, armor_piercing_add = 0.25}		
+				}
+				self.parts.wpn_fps_upg_schakal_m_atai.adds = {"wpn_fps_atai_actual_ammo"}
+				self.parts.wpn_fps_atai_actual_ammo = {
+					type = "ammo",
+					a_obj = "a_m",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",					
+					stats = {value = 1},
+					custom_stats = {
+					ammo_pickup_min_mul = 1.05, 
+					ammo_pickup_max_mul = 1.05, 
+					armor_piercing_add = 0.25 --dunno if this is enough.
+				}
+			}			
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
 				value = 5,
 				suppression = -4,

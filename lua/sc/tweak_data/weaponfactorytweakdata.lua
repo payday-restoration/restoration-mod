@@ -45802,6 +45802,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			dlc = "sc",
 			stats = {
 				value = 3,
+				total_ammo_mod = -33,
 				damage = 50
 			},
 			internal_part = true

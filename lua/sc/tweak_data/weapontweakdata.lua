@@ -4534,8 +4534,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.desc_id = "bm_ap_weapon_sc_desc"
 		self.msr.CLIP_AMMO_MAX = 10
 		self.msr.NR_CLIPS_MAX = 5
-		self.msr.AMMO_MAX = 40
-		self.msr.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.msr.AMMO_MAX = 60
+		self.msr.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.msr.fire_mode_data.fire_rate = 0.66666666666
 		self.msr.spread.standing = 3
 		self.msr.spread.crouching = 2

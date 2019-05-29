@@ -45805,6 +45805,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				total_ammo_mod = -33,
 				damage = 50
 			},
+			custom_stats = {
+				ammo_pickup_max_mul = 0.667,
+				ammo_pickup_min_mul = 0.667
+			},			
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_40sw = {

@@ -213,6 +213,17 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 end)
 end
 
+--Restoration Levels
+Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", function()
+
+	if Global.load_level == true and Global.game_settings.level_id == "jackal_surface_tension" then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/platinum.custom_xml", "custom_xml", "core/environments/default", "environment")
+		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/platinum.custom_xml", "custom_xml", "core/environments/default", "environment")
+	end
+
+end)
+
+
 --Environment skies loader
 	
 	Hooks:Add("BeardLibPreProcessScriptData", "RestorationCreateEnvironment", function(PackManager, path, raw_data)

@@ -1164,7 +1164,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.static_weapon_preset = true
 		self.sniper.static_dodge_preset = true
 		self.sniper.is_special = true
-		self.sniper.die_sound_event = "l2n_x01a_any_3p"
+		self.sniper.die_sound_event = "mga_death_scream"
+		self.sniper.spawn_sound_event = "mga_deploy_snipers"
 		self.sniper.do_not_drop_ammo = true
 		table.insert(self._enemy_list, "sniper")
 	end

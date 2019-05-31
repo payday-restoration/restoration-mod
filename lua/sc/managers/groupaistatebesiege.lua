@@ -71,6 +71,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		-- Call the original function with the manipulated list
 		return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
 	end
+	
+    function GroupAIStateBesiege:_get_megaphone_sound_source()
+    	local level_id = Global.level_data.level_id
+    	local pos = nil
+    
+    	if not level_id then
+    		pos = Vector3(0, 0, 0)
+    
+    		Application:error("[TradeManager:_get_megaphone_sound_source] This level has no megaphone position!")
+    	elseif not tweak_data.levels[level_id].megaphone_pos then
+    		pos = Vector3(0, 0, 0)
+    	else
+    		pos = tweak_data.levels[level_id].megaphone_pos
+    	end
+    
+    	local sound_source = SoundDevice:create_source("megaphone")
+    
+    	sound_source:set_position(pos)
+    
+    	return sound_source
+    end
 
 	-- Simple wrapper function to identify the winning candidate group that was actually selected and spawned in, and when they were
 	-- spawned in
@@ -315,6 +336,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
 			elseif t > task_data.phase_end_t then
 				self._assault_number = self._assault_number + 1
+				 self:_get_megaphone_sound_source():post_event("mga_generic_c")
 				managers.mission:call_global_event("start_assault")
 				managers.hud:start_assault(self._assault_number)
 				managers.groupai:dispatch_event("start_assault", self._assault_number)
@@ -372,6 +394,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if task_spawn_allowance <= 0 then
 				task_data.phase = "fade"
 				local time = self._t
+				    self:_get_megaphone_sound_source():post_event("mga_generic_a")
 				    for group_id, group in pairs(self._groups) do
 	                      for u_key, u_data in pairs(group.units) do
 				          local nav_seg_id = u_data.tracker:nav_segment()
@@ -393,7 +416,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						  local current_objective = group.objective
 				              if current_objective.coarse_path then
 			                      if not u_data.unit:sound():speaking(time) then
-	                      		    u_data.unit:sound():say("m01", true)
+	                      		    u_data.unit:sound():say("r01", true)
 						        end	
 	                        end					   
 				        end	
@@ -422,6 +445,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						task_data.said_retreat = true
 
 						self:_police_announce_retreat()
+				        self:_get_megaphone_sound_source():post_event("mga_robbers_clever")
 				        local time = self._t
 				            for group_id, group in pairs(self._groups) do
 	                              for u_key, u_data in pairs(group.units) do
@@ -452,6 +476,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					task_data.phase = nil
 					task_data.said_retreat = nil
 					task_data.force_end = nil
+				    self:_get_megaphone_sound_source():post_event("mga_leave")
 				    local time = self._t
 				        for group_id, group in pairs(self._groups) do
 	                          for u_key, u_data in pairs(group.units) do

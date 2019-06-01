@@ -11537,9 +11537,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_body_standard",
 			stats = {value = 1},
-			adds = {
-				"wpn_fps_upg_vg_ass_smg_afg_vanilla"
-			},
 			animations = {
 				reload = "reload",
 				fire = "recoil",
@@ -11679,6 +11676,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_ass_scar_b_medium",
 			"wpn_fps_ass_scar_body_standard",
 			"wpn_fps_ass_scar_s_standard",
+			"wpn_fps_upg_vg_ass_smg_afg_vanilla",		
 			"wpn_fps_ass_scar_o_flipups_up",
 			"wpn_fps_upg_m4_g_hgrip_vanilla",
 			"wpn_fps_ass_scar_ns_standard"
@@ -44032,6 +44030,48 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}			
 			end	
 
+		if self.parts.wpn_fps_pis_m1911_fg_tommy then --Silent Enforcer's M1911 Attachment Pack
+			self.parts.wpn_fps_pis_m1911_fg_tommy.stats = {
+				value = 1,
+				spread = 1,
+				recoil = 1,
+				concealment = -2
+				}		
+			self.parts.wpn_fps_pis_m1911_s_wooden.stats = {
+				value = 1,
+				recoil = -1,
+				concealment = 1,				
+				spread = 2
+				}			
+			self.parts.wpn_fps_pis_m1911_s_skeletal.stats = {
+				value = 1,
+				recoil = 1,
+				concealment = -1,				
+				spread = 2
+				}														
+			self.parts.wpn_fps_pis_m1911_ns_cutts.stats = {
+				value = 1,
+				damage = 5,				
+				spread_moving = 1,
+				spread = 1,
+				concealment = -2
+				}	
+			self.parts.wpn_fps_pis_1911_m_banana.stats = {
+				value = 2,
+				concealment = -2,
+				extra_ammo = 20,
+				spread = -1,
+				recoil = 1,
+				reload = -2
+				}					
+			self.parts.wpn_fps_pis_m1911_fg_custom.stats = {
+				value = 1,
+				spread = 1,
+				recoil = 2,
+				concealment = -2
+				}		
+			end										
+
 		if self.parts.wpn_fps_aug_body_aug_a1 then --Pawcio's AUG A1 Kit
 			self.parts.wpn_fps_aug_m_a1_42.stats = {
 				value = 1,
@@ -44065,19 +44105,32 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_am_gomerpyle.pcs = nil	
 			self.parts.wpn_fps_upg_am_lame.pcs = nil					
 			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil										
-			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil				
+			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil	
+			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil		
+			self.parts.wpn_fps_upg_vg_jowi.stats = {
+				value = 1,
+				spread = 1,
+				spread_moving = 2,
+				concealment = -2
+				}					
+			self.parts.wpn_fps_upg_vg_cadex.stats = {
+				value = 1,
+				spread = 1,
+				spread_moving = 2,
+				concealment = -2
+				}											
+			self.parts.wpn_fps_upg_vg_angle.stats = {
+				value = 1,
+				spread = 0,
+				spread_moving = 2,
+				concealment = 1
+				}						
 			self.parts.wpn_fps_upg_s_devgru.stats = {
 				value = 4,
 				recoil = -2,
 				spread = 1,				
 				concealment = 1
 				}	
-			self.parts.wpn_fps_upg_am_hollow_large.stats = {
-				value = 1,
-				recoil = -1,
-				spread = 1				
-				}				
-			self.parts.wpn_fps_upg_am_hollow_large.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, headshot_dmg_mult = 1.15}
 			self.parts.wpn_fps_upg_fg_ropup.stats = {
 				value = 5,
 				concealment = -2,
@@ -44096,7 +44149,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = 1,				
 				concealment = 2
 				}			
-			self.parts.wpn_fps_upg_fg_deadline.custom_stats = {rof_mult = 0.96}	--maybe too little of a penalty?													
+			self.parts.wpn_fps_upg_fg_deadline.custom_stats = {rof_mult = 0.96}														
 			self.parts.wpn_fps_upg_mp9_s_no.stats = {
 				value = 2,
 				recoil = -2,
@@ -44155,7 +44208,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					custom_stats = {
 					ammo_pickup_min_mul = 1.05, 
 					ammo_pickup_max_mul = 1.05, 
-					armor_piercing_add = 0.25 --dunno if this is enough.
+					armor_piercing_add = 0.25,
+					can_shoot_through_wall = true
 				}
 			}			
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
@@ -44744,9 +44798,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					spread_moving = -2,
 					concealment = -3,
 					extra_ammo = 30,
-					reload = -3,
-					recoil = 0,
-					spread = 0
+					reload = -3
 				}	
 		self.parts.wpn_fps_ass_tilt_mag_swift.stats = {
 					value = 2,

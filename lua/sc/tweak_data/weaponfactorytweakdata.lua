@@ -40323,7 +40323,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_smg_czevo_a_strong.pcs = nil
-		self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil		
+		self.parts.wpn_fps_smg_czevo_a_classic.pcs = nil	
+		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
+			"wpn_fps_upg_i_slower_rof"
+		})
+		table.list_append(self.wpn_fps_smg_czevo.uses_parts, {
+			"wpn_fps_upg_i_faster_rof"
+		})		
 		self.parts.wpn_fps_smg_czevo_barrel_long.stats = {
 					value = 1,
 					spread = 1,
@@ -40385,6 +40391,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 1,
 					concealment = -3
 				}	
+		table.list_append(self.wpn_fps_smg_fmg9.uses_parts, {
+			"wpn_fps_upg_i_faster_rof"
+		})
+		table.list_append(self.wpn_fps_smg_fmg9.uses_parts, {
+			"wpn_fps_upg_i_slower_rof"
+		})						
 		self.parts.wpn_fps_upg_fmg9_m3x.stats = {
 					value = 1
 				}					
@@ -44103,7 +44115,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_ching_am_crap.pcs = nil	--nuking these ammo conversions
 			self.parts.wpn_fps_upg_tecci_am_beefy.pcs = nil	
 			self.parts.wpn_fps_upg_am_gomerpyle.pcs = nil	
-			self.parts.wpn_fps_upg_am_lame.pcs = nil					
+			self.parts.wpn_fps_upg_am_lame.pcs = nil			
+			self.parts.wpn_fps_upg_pn_over.pcs = nil
+			self.parts.wpn_fps_upg_tr_match.pcs = nil		
+			self.parts.wpn_fps_upg_pn_under.pcs = nil														
 			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil										
 			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil	
 			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil		
@@ -44623,7 +44638,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}					
 			end					
 
-	--Alcat's CX4/MX4
+	--Alcat's CX4/MX4 Storm
 	if self.wpn_fps_smg_storm then
 		self.parts.wpn_fps_smg_storm_b_short.stats = {
 					value = 1,
@@ -46050,10 +46065,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_ammo_half_that"
 			})
 		table.list_append(self.wpn_fps_lmg_zweihander.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 		table.list_append(self.wpn_fps_lmg_zweihander.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 		self.parts.wpn_fps_upg_zweihander_o_vanilia.pcs = nil 
 		self.wpn_fps_lmg_zweihander.override = { 
@@ -46119,10 +46134,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_mg4_irons"
 			})			
 		table.list_append(self.wpn_fps_lmg_mg4.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 		table.list_append(self.wpn_fps_lmg_mg4.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 		self.wpn_fps_lmg_mg4.override = { 
 			wpn_fps_upg_ammo_half_that = {
@@ -46193,10 +46208,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_ammo_half_that"
 			})
 		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 		self.wpn_fps_lmg_ultimax.override = {
 			wpn_fps_upg_ammo_half_that = {
@@ -46212,13 +46227,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		
 		if self.wpn_fps_lmg_dp28 then --Killerwolf's DP-28 
 			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
-				"wpn_fps_upg_i_singlefire"
+				"wpn_fps_upg_i_slower_rof"
 			})
 			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})			
 			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
-				"wpn_fps_upg_i_autofire"
+				"wpn_fps_upg_i_faster_rof"
 			})	
 			self.parts.wpn_fps_lmg_dp28_bipod.stats = {
 					value = 2, 

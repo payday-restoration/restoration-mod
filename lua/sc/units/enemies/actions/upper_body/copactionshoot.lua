@@ -46,6 +46,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		elseif self._unit:base()._tweak_table == "autumn" and self._throw_projectile_time < _time then
 			if self._shooting_player then
+				GroupAIStateBesiege:set_assault_endless(true)
+				managers.hud:set_buff_enabled("vip", true)			
+				local cloak_roll = math.rand(1, 100)
+				local chance_uncloak = 20		
+				if cloak_roll <= chance_uncloak then
+					self._unit:damage():run_sequence_simple("decloak")
+				end
 				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
 				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
@@ -58,7 +65,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			end
-			elseif self._unit:base()._tweak_table == "boom_summers" and self._throw_projectile_time < _time then
+		elseif self._unit:base()._tweak_table == "spooc_titan" and self._throw_projectile_time < _time then
+			if self._shooting_player then
+				local cloak_roll = math.rand(1, 100)
+				local chance_uncloak = 40	
+				if cloak_roll <= chance_uncloak then
+					self._unit:damage():run_sequence_simple("decloak")
+				end
+				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
+				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
+				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+			else
+				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+			end			
+		elseif self._unit:base()._tweak_table == "boom_summers" and self._throw_projectile_time < _time then
 			if self._shooting_player then
 				self._throw_projectile_time = _time + math.round_with_precision(10, 2)
 				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)

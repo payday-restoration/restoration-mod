@@ -13,13 +13,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local old_finalize_values = ElementSpawnEnemyGroup._finalize_values
 	function ElementSpawnEnemyGroup:_finalize_values()
 		old_finalize_values(self)
-
-		-- If we have an ordinary spawn with exactly the old group elements, add all defined groups.
+		
+		local job = Global.level_data and Global.level_data.level_id
+		
 		local groups = self._values.preferred_spawn_groups
-		if groups and #groups == #groupsOLD and table.contains_all(groups, groupsOLD) then
+		--Ugly fix for levels with fucky spawngroups, but it works
+		if job == "Victor Romeo" or job == "hardware_store" or job == "hntn" then
 			for name,_ in pairs(tweak_data.group_ai.enemy_spawn_groups) do
 				if not table.contains(groups, name) then
 					table.insert(groups, name)
+				end
+			end	
+		else
+		-- If we have an ordinary spawn with exactly the old group elements, add all defined groups.
+			if groups and #groups == #groupsOLD and table.contains_all(groups, groupsOLD) then
+				for name,_ in pairs(tweak_data.group_ai.enemy_spawn_groups) do
+					if not table.contains(groups, name) then
+						table.insert(groups, name)
+					end
 				end
 			end
 		end

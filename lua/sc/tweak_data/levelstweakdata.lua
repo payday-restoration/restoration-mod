@@ -39,6 +39,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.wwh.ai_group_type = murkywater 
 		
+		self.arm_for.ai_group_type = murkywater 
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd
@@ -48,21 +49,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.run.ai_group_type = nypd
 		self.flat.ai_group_type = nypd
 		self.glace.ai_group_type = nypd
+		
 		self.dah.ai_group_type = nypd
+		
 		self.dinner.ai_group_type = nypd
+		self.dinner.package = {"packages/narr_dinner", "packages/lvl_dah"}
+		self.dinner.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.man.package = {"packages/narr_man", "packages/lvl_dah"}	
+		self.man.player_sequence = "spawn_prop_sneak_suit"
+		
 		self.nmh.ai_group_type = nypd
 		
 		self.skm_run.ai_group_type = nypd
 		self.skm_red2.ai_group_type = nypd
 		
 		--LAPD--			
-		--Jolly gets mad when trying to use LAPD, and I can't figure out why it crashes even when I load the package. So for now it's just gonna use NYPD (which is the same minus beat cops anyway)
 		self.jolly.ai_group_type = lapd
 		self.jolly.package = {"packages/jolly", "packages/narr_rvd"}
 		
+		self.pal.ai_group_type = lapd
+		self.pal.package = {"packages/narr_pal", "packages/narr_rvd"}		
+		
+		self.kenaz.ai_group_type = lapd
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd"}			
+		
 		self.rvd1.ai_group_type = lapd
 		self.rvd2.ai_group_type = lapd
-		
 		
 		--Gangster VO below--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
@@ -73,13 +86,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.nail.package = {"packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.help.package = {"packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-		--if restoration and restoration.Options:GetValue("SC/Holiday") then
-			self.haunted.ai_group_type = zombie		
-			self.nail.ai_group_type = zombie
-			self.help.ai_group_type = zombie
-		--end
+		self.haunted.ai_group_type = zombie		
+		self.nail.ai_group_type = zombie
+		self.help.ai_group_type = zombie
 		
 		self.chill.ghost_bonus = nil
+		
+		self.mad.package = {"packages/lvl_mad", "packages/lvl_wwh"}
+		self.mad.player_sequence = "spawn_prop_winter_suit"
+	
 	end)
 	
 end

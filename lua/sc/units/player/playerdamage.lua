@@ -34,7 +34,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		managers.sequence:add_inflict_updator_body("fire", self._unit:key(), self._inflict_damage_body:key(), self._inflict_damage_body:extension().damage)
 
-		self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
+		--Load alternate heal over time tweakdata if player is using Infiltrator.
+		if player_manager:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+			self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
+		else 
+			self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
+		end
+
 		self._damage_to_hot_stack = {}
 		self._armor_stored_health = 0
 		self._can_take_dmg_timer = 0
@@ -162,18 +168,38 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if alive(attack_data.attacker_unit) then
 				if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "taser_titan" then
 					if alive(player_unit) then
-						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal then
+						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 						else
 							player_unit:movement():on_non_lethal_electrocution()
 							managers.player:set_player_state("tased")
 						end
 					end
+				elseif tostring(attack_data.attacker_unit:base()._tweak_table) == "autumn" then
+					if alive(player_unit) then
+						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
+						else
+							attack_data.attacker_unit:damage():run_sequence_simple("decloak")
+							attack_data.attacker_unit:sound():say("i03", true, nil, true)
+							managers.player:set_player_state("incapacitated")
+						end
+					end				
 				end		
 			end
 		end
 		player_damage_melee(self, attack_data)
 	end
-
+	
+	local orig_dmg_xpl = PlayerDamage.damage_explosion
+	function PlayerDamage:damage_explosion(attack_data,...)
+		local attacker_unit = attack_data and attack_data.attacker_unit
+		if attacker_unit then
+			if (attacker_unit:movement():team() == self._unit:movement():team()) or (self._unit == attacker_unit) then 
+				return
+			end
+		end
+		return orig_dmg_xpl(self,attack_data,...)
+	end	
+	
 	--Lets you heal with full HP--
 	function PlayerDamage.full_revives(self)
 		return Application:digest_value(self._revives, false) >= tweak_data.player.damage.LIVES_INIT + managers.player:upgrade_value("player", "additional_lives", 0)
@@ -314,10 +340,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_send_damage_drama(attack_data, health_subtracted)
 		elseif self._bleed_out and attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "tank" then
 			self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt", attack_data), TimerManager:game():time() + 0.25 + 3 + 0.8)
+			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)
 		elseif self._bleed_out and attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "spring" then
 			self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_spring", attack_data), TimerManager:game():time() + 0.25 + 3 + 0.8)	
+			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_spring", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)	
 		elseif self._bleed_out and attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "taser" then
 			self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
 			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_tase", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)	
@@ -344,9 +370,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if alive(attack_data.attacker_unit) then
 				if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
 					if alive(player_unit) then
-						player_unit:movement():on_non_lethal_electrocution()
-						managers.player:set_player_state("tased")
-						self.tase_time = _time + 10
+						if not self._unit:movement():is_taser_attack_allowed() then
+						else
+							attack_data.attacker_unit:sound():say("post_tasing_taunt")
+							player_unit:movement():on_non_lethal_electrocution()
+							managers.player:set_player_state("tased")
+							self.tase_time = _time + 10
+						end
 					end
 				end		
 			end
@@ -396,9 +426,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._downed_start_time = nil
 		if not arrested then
 			if managers.player:has_category_upgrade("player", "health_revive_max") then		
-				self:set_health(self:_max_health() * 1)
+				self:set_health(self:_max_health() * tweak_data.player.damage.REVIVE_HEALTH_STEPS_W_SKILL[self._revive_health_i] * (self._revive_health_multiplier or 1) * managers.player:upgrade_value("player", "revived_health_regain", 1))
 			else
-				self:set_health(self:_max_health() * tweak_data.player.damage.REVIVE_HEALTH_STEPS[self._revive_health_i] * (self._revive_health_multiplier or 1))
+				self:set_health(self:_max_health() * tweak_data.player.damage.REVIVE_HEALTH_STEPS[self._revive_health_i] * (self._revive_health_multiplier or 1) * managers.player:upgrade_value("player", "revived_health_regain", 1))
 			end		
 			
 			self:set_armor(self:_max_armor())
@@ -510,5 +540,43 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.hud:pd_start_timer({time = self._arrested_timer})
 		managers.hud:on_arrested()
 	end
-
+	
+	function PlayerDamage:damage_tase(attack_data)
+	    if self._god_mode then
+	    	return
+	    end
+        
+	    local cur_state = self._unit:movement():current_state_name()
+        
+	    if cur_state ~= "tased" and cur_state ~= "fatal" then
+	    	self:on_tased(false)
+        
+	    	self._tase_data = attack_data
+        
+	    	managers.player:set_player_state("tased")
+        
+	    	local damage_info = {
+	    		result = {
+	    			variant = "tase",
+	    			type = "hurt"
+	    		}
+	    	}
+        
+	    	self:_call_listeners(damage_info)
+        
+	    	if attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "taser" then
+	    		attack_data.attacker_unit:sound():say("post_tasing_taunt")
+     
+	    		if managers.blackmarket:equipped_mask().mask_id == tweak_data.achievement.its_alive_its_alive.mask then
+	    			managers.achievment:award_progress(tweak_data.achievement.its_alive_its_alive.stat)
+	    		end
+	    	end
+	    end
+		if cur_state == "tased" then
+		    if attack_data.attacker_unit:base()._tweak_table == "taser" or attack_data.attacker_unit:base()._tweak_table == "taser_titan" then
+		       attack_data.attacker_unit:sound():say("post_tasing_taunt")
+			end
+		end	
+    end
+	
 end

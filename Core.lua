@@ -50,7 +50,15 @@ if not _G.restoration then
 		"crojob2",
 		"mus",
 		"big",
-		"wwh"
+		"wwh",
+		"pines",
+		--custom heists
+		"hardware_store", --hes fucking awful on this heist pdc why did you think it was ok
+		"office_strike",
+		"skmc_mad", --rex's holdout maps
+		"skmc_fish",
+		"skmc_ovengrill",
+		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
@@ -58,29 +66,37 @@ if not _G.restoration then
 		"crojob2", --bomb dockyard
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
-		"rvd1" --highland mortuary 
+		"rvd1", --highland mortuary 
+		--custom heists		
+		"office_strike", --office strike
+		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	_G.restoration.captain_murderdozer = {
 		"firestarter_2", --firestarter day 2
 		"framing_frame_3", --framing frame day 3
-		"alex_2", --rats day 2
 		"rat",	--cook off
 		"arm_for",	--train heist
 		"mus",	--the diamond
-		"big" --big bank
+		"big", --big bank
+		--custom heists		
+		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	_G.restoration.captain_stelf = {
-		--[["nightclub", --and Autumn stay off the dance floor
+		"nightclub", --and Autumn stay off the dance floor
 		"gallery", --art gallery
 		"branchbank", --well the trees are orange
 		"dah", --diamond heist
 		"four_stores", --do i really need to make a comment here?
-		"pal", --counterfeit probably gonna swap him for summers
-		"family" --diamond store]]--
+		"family", --diamond store
+		--custom heists
+		"wetwork", --res map package wetworks
+		"lvl_fourmorestores", --four more stores
+		"hntn" --harvest and trustee north
 	}
 	_G.restoration.tiny_levels = {
 		"hvh",
 		"chew",
+		"peta",
 		"peta2",
 		"nail",
 		"rvd2",
@@ -96,14 +112,45 @@ if not _G.restoration then
 		"skm_watchdogs_stage2",
 		"bph",
 		"nmh",
+		"flat",
+		"glace",
+		"man",
 		"vit",
 		"pbr",
 		"pbr2",
-		"junk",
 		"dinner",
 		"wwh",
-		"born"
-	}
+		"born",
+		"cane",
+		"dah",
+		"run",
+		"arm_cro",
+		"arm_hcm",
+		"arm_fac",
+		"arm_par",
+		"arm_und",
+		"arm_for",
+		--Custom Heists below--
+		"Victor Romeo",
+		"junk",
+		"wetwork_burn",
+		"hardware_store",
+		"skmc_mad", --rex's holdout maps
+		"skmc_fish",
+		"skmc_ovengrill"
+	}	
+	--Meant to be used for heists that use custom suits, since armor clips really badly with them
+	_G.restoration.custom_suit_heists = {
+		"glace", --Green Bridge
+		"dah", --Diamond Heist
+		"wwh", --Alaskan Deal
+		"sah", --Shacklethrorne Heist
+		"bph", --Hell's Island
+		"vit", --White House
+		"dinner", --Slaughterhouse
+		"man", --Undercover
+		"mad" --Boiling Point
+	}	
 end
 
 _G.SC = _G.SC or {}

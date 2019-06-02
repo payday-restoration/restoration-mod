@@ -168,7 +168,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_a_40sw_desc"] = "",		
 		["bm_wp_wpn_fps_upg_g3m203_barrel_g3ka4"] = "Assault Kit",		
 		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",	
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",				
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",		
+		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",	
+		["bm_wp_wpn_fps_galil_m_drum"] = "75 Round Drum",				
+		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can somewhat penetrate armor...right?",		
+		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",								
+		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extra Extended Magazine",		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 
@@ -194,14 +199,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_damage_p2_mod"] = "Large Damage Modifier",
 		["bm_menu_bonus_total_ammo_p1_mod"] = "Small Total Ammo Modifier",
 		["bm_menu_bonus_total_ammo_p3_mod"] = "Massive Total Ammo Modifier",
+		
+		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
+		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO AUTO-FIRE MODE.",
 
 		--Fixed names for SMGS to ARs--
 		["bm_w_olympic"] = "Para Rifle",
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_hajk"] = "CR 805B Rifle",
 		
-		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle"
-			
+		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
+		
+		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
+		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
+		["bm_wp_wpn_fps_upg_scar_m203_flechette"] = "40MM Flechette Rounds",
+		["bm_wp_wpn_fps_upg_scar_m203_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",		
+
+		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot"] = "40MM Buckshot Rounds",
+		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
+		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
+		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",				
 	})
 end)
 
@@ -242,6 +259,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_toggle_one_down"] = "Pro Job",
 		["menu_one_down"] = "Pro",
 		
+		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
+		
 		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
 		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
@@ -255,7 +274,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
 	
 		--Woo Hints--
-		["loading_gameplay_101"] = "Flashbangs make an audible noise when deployed. They cannot be destroyed by gunfire or melee weapons, so it's best to simply look away.",
 		["loading_gameplay_118"] = "Cable Ties are a finite resource, make the most of them.",
 		["loading_gameplay_12"] = "Know your enemy. Cloakers have distinct green, glowing night vision goggles on, and are completely silent. Check your corners and maintain vigilance!",
 		
@@ -265,7 +283,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
 		["skill_uppers_revive"] = "Downs restored!",
-		["hud_ai_traded_in"] = "",
+		--["hud_ai_traded_in"] = "",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		--["hint_short_max_pagers"] = "Max number of pagers scales with difficulty. Be aware of the Pager operator's response.",
 
@@ -282,6 +300,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Combat Engineer",
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
+		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
 				
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",
@@ -538,7 +557,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "Rip and Tear",
-			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nWhen killing an enemy with the saw, you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.",																								
+			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nWhen killing an enemy with the Saw or Grenade Launchers, you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",																								
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
@@ -750,7 +769,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Gun Nut",
-		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## weapon accuracy with pistols.\n\nACE: ##$pro##\nYou gain a ##50%## increased rate of fire with pistols.",																								
+		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##15%## increased rate of fire with pistols.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with pistols.",																								
 
 		--Over Pressurized/Gunfighter--
 		["menu_gun_fighter_sc"] = "Gunfighter",
@@ -758,7 +777,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYour akimbo weapons' stability penalty is set to ##15%.##\n\nACE: ##$pro##\nYour akimbo weapons' stability penalty is set to ##10%## and you also carry ##25%## more total ammo for them.",																																																																																																																																																																																																																																		
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYour Akimbo weapons' stability penalty is reduced by ##8.##\n\nACE: ##$pro##\nYour Akimbo weapons' stability penalty is reduced by an additional ##12## and you also carry ##25%## more total ammo for them.",																																																																																																																																																																																																																																		
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
@@ -809,6 +828,8 @@ end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
+		["bm_menu_dodge"] = "Dodge",
+	
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
@@ -829,16 +850,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
-		["menu_deck5_3_desc_sc"] = "Your akimbo weapons' stability penalty is set to ##15%.##",
+		["menu_deck5_3_desc_sc"] = "Your Akimbo weapons' stability penalty is reduced by ##8.##",
 		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.",
 		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.",
-		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYour akimbo weapons' stability penalty is set to ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYour Akimbo weapons' stability penalty is reduced by an additional ##12.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_7_desc_sc"] = "You can now use light machine guns and submachine guns to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.",
-		["menu_deck2_9_desc_sc"] = "You gain an additional ##20%## more health.\n\nYou now ##always revive with maximum health##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",
 		["menu_deck1_5_desc_sc"] = "You gain ##10%## more health.\n\nYour crew gains ##5%## more health.\n\nNote: Crew perks do not stack.",
 		["menu_deck1_7_desc_sc"] = "You gain ##15%## more armor.\n\nYour crew gains ##5%## more armor.\n\nNote: Crew perks do not stack.",
@@ -870,9 +892,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Infiltrator--
 		["menu_deck8_1_desc_sc"] = "When you are within ##18## meters of an enemy, you receive ##10%## less damage from enemies.",
 		["menu_deck8_3_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.",
-		["menu_deck8_5_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
-		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more within ##18 meters##, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants and additional ##10%## melee damage boost for ##7## seconds and can stack up to ##4## times.",
-		["menu_deck8_9_desc_sc"] = "Striking an enemy with your melee weapon regenerates ##8%## of your health. This cannot occur more than once every ##10## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck8_5_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
+		["menu_deck8_7_desc_sc"] = "When you are surrounded by three enemies or more within ##18 meters##, you receive an additional ##5%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
+		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##1## life point every ##1.25## seconds for ##10## seconds, this effect can stack up to ##5## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
@@ -883,10 +905,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
-		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##10%## more health.",
-		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##10%## more health.",
+		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
+		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
 		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
-		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nYou gain ##5%## more health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Open your mind--	
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYou gain ##5%## more health.",	
@@ -915,7 +937,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##75%##. The remaining damage will be applied directly.\n\nThe ##75%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##20## second cooldown but time remaining will be lessened by ##1## second per enemy killed.",		
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##25%##. The remaining damage will be applied directly.\n\nThe ##25%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##30## second cooldown but time remaining will be lessened by ##1## second per enemy killed.\n\nAll of your ##armor is converted and applied to your health.##",	
+		["menu_deck19_3_desc_sc"] = "After not taking damage for ##6## seconds any damage-over-time you are still waiting to receive will be negated.",	
+		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any damage-over-time you are still waiting to receive will be negated.",	
 
 		--it's not a war crime if they're not people--
 		["menu_deck20_3_desc_sc"] = "You gain ##10%## more health.",	

@@ -14,6 +14,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
                 break
             end
         end
+        for _,j3 in ipairs(restoration.captain_stelf) do
+             if job == j3 then
+                buff_icon = "guis/textures/pd2/hud_buff_spooc"
+                break
+            end
+        end		
         if alive(self._vip_bg_box) and alive(self._vip_bg_box:child("vip_icon")) then
             self._vip_bg_box:child("vip_icon"):set_image(buff_icon)
         end

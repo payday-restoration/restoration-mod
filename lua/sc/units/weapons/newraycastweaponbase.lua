@@ -385,7 +385,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		return multiplier
 	end
 	
-		
 	--[[	Reload stuff	]]--
 	function NewRaycastWeaponBase:reload_speed_multiplier()
 		if self._current_reload_speed_multiplier then
@@ -393,7 +392,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		local multiplier = 1
 		multiplier = multiplier * self._reload_speed_mult
-
+			
 		for _, category in ipairs(self:weapon_tweak_data().categories) do
 			multiplier = multiplier * managers.player:upgrade_value(category, "reload_speed_multiplier", 1)
 		end
@@ -415,11 +414,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		multiplier = multiplier * (managers.player:get_property("shock_and_awe_reload_multiplier", 1))
 		multiplier = multiplier * (managers.player:get_temporary_property("bloodthirst_reload_speed", 1))
 		multiplier = multiplier * (managers.player:upgrade_value("team", "crew_faster_reload", 1))
+		
+		multiplier = multiplier * self:reload_speed_stat()
 		multiplier = managers.modifiers:modify_value("WeaponBase:GetReloadSpeedMultiplier", multiplier)
 	
 		return multiplier
 	end
-
 
 	function NewRaycastWeaponBase:enter_steelsight_speed_multiplier()
 		local multiplier = 1

@@ -150,8 +150,21 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_hur.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
 	self.projectiles.smoke_screen_grenade.base_cooldown = 30
-	self.projectiles.damage_control.base_cooldown = 20
+	self.projectiles.damage_control.base_cooldown = 30
 	self.projectiles.concussion.max_amount = 3
+	
+	--Fuck off
+	self.projectiles.frag.no_cheat_count = true
+	self.projectiles.concussion.no_cheat_count = true
+	self.projectiles.molotov.no_cheat_count = true
+	self.projectiles.wpn_prj_four.no_cheat_count = true
+	self.projectiles.wpn_prj_ace.no_cheat_count = true
+	self.projectiles.wpn_prj_jav.no_cheat_count = true
+	self.projectiles.wpn_prj_hur.no_cheat_count = true
+	self.projectiles.wpn_prj_target.no_cheat_count = true
+	self.projectiles.frag_com.no_cheat_count = true
+	self.projectiles.fir_com.no_cheat_count = true
+	self.projectiles.dada_com.no_cheat_count = true
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins
@@ -2359,7 +2372,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.beardy.repeat_expire_t = 1.2
 	self.melee_weapons.beardy.melee_damage_delay = 0.65
 
-	--Who's plumes are gay now Carl? Who's plumes are gay now?--
+	--Whose plumes are gay now Carl? Whose plumes are gay now?--
 	self.melee_weapons.morning.speed_mult = 0.725
 	self.melee_weapons.morning.stats.min_damage = 8.1
 	self.melee_weapons.morning.stats.max_damage = 16.3

@@ -123,13 +123,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_wait()
 		end
 	
-		if self:is_flying_strike() then
-			if self:_use_christmas_sounds() then
-				self._unit:sound():play("cloaker_detect_christmas_mono", nil, nil)
-			else
-				self._unit:sound():play("cloaker_detect_mono", nil, nil)
-			end
-		end	
+		if self._unit:base()._tweak_table == "spooc_titan" then 
+			self._unit:sound():play("cloaker_detect_mono", nil, nil)
+		else
+			if self:is_flying_strike() then
+				if self:_use_christmas_sounds() then
+					self._unit:sound():play("cloaker_detect_christmas_mono", nil, nil)
+				else
+					self._unit:sound():play("cloaker_detect_mono", nil, nil)
+				end
+			end	
+		end
 		
 		self._unit:damage():run_sequence_simple("decloak")
 		

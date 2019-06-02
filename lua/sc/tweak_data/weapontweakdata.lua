@@ -272,12 +272,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mg42_crew.DAMAGE = 2.6
 		
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1387.5
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 300
+			self.swat_van_turret_module.HEALTH_INIT = 675
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 90
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1387.5
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 300
+			self.swat_van_turret_module.HEALTH_INIT = 1350
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 180
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
@@ -312,26 +312,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}			
 		
 
-		self.ceiling_turret_module.HEALTH_INIT = 693.75
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 150
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 693.75
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 150
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 693.75
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 150		
-		self.aa_turret_module.HEALTH_INIT = 693.75
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 150	
-		self.crate_turret_module.HEALTH_INIT = 693.75
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 150		
+		self.ceiling_turret_module.HEALTH_INIT = 675
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 90
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 675
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 90
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 675
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 90		
+		self.aa_turret_module.HEALTH_INIT = 675
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 90
+		self.crate_turret_module.HEALTH_INIT = 337.5
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 45		
 	end
 
 	function WeaponTweakData:_set_easy_wish()
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 787.5
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 1575
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.BAG_DMG_MUL = 10
@@ -367,34 +367,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{3000, 1}
 		}			
 		
-		self.ceiling_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.HEALTH_INIT = 787.5
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175
-		self.aa_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105
+		self.aa_turret_module.HEALTH_INIT = 787.5
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 175
-		self.crate_turret_module.HEALTH_INIT = 809.375
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 105
+		self.crate_turret_module.HEALTH_INIT = 393.75
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 175			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5			
 	end
 
 	function WeaponTweakData:_set_overkill_290()
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 787.5
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1618.75
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 1575
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.BAG_DMG_MUL = 10
+		
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 			{1000, 2.3},
 			{1800, 2.1},
@@ -426,21 +427,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{3000, 1.05}
 		}
 		
-		self.ceiling_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.HEALTH_INIT = 787.5
 		self.ceiling_turret_module.BAG_DMG_MUL = 10
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 809.375
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 787.5
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 10
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175
-		self.aa_turret_module.HEALTH_INIT = 809.375
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105
+		self.aa_turret_module.HEALTH_INIT = 787.5
 		self.aa_turret_module.BAG_DMG_MUL = 10
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 175	
-		self.crate_turret_module.HEALTH_INIT = 809.375
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 105
+		self.crate_turret_module.HEALTH_INIT = 393.75
 		self.crate_turret_module.BAG_DMG_MUL = 10
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 175	
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5	
 
 		--Sniper Trail for Snipers
 		self.m14_sniper_npc.sniper_trail = true		
@@ -448,12 +449,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function WeaponTweakData:_set_sm_wish()
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 1850
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 900
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 1850
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 350
+			self.swat_van_turret_module.HEALTH_INIT = 1800
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 210
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 
@@ -488,25 +489,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{1800, 2.1},
 			{3000, 1.05}
 		}			
-		self.ceiling_turret_module.HEALTH_INIT = 925
+		self.ceiling_turret_module.HEALTH_INIT = 900
 		self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
 
-		self.ceiling_turret_module_no_idle.HEALTH_INIT = 925
+		self.ceiling_turret_module_no_idle.HEALTH_INIT = 900
 		self.ceiling_turret_module_no_idle.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 175
+		self.ceiling_turret_module_no_idle.SHIELD_HEALTH_INIT = 105
 		
-		self.ceiling_turret_module_longer_range.HEALTH_INIT = 925
+		self.ceiling_turret_module_longer_range.HEALTH_INIT = 900
 		self.ceiling_turret_module_longer_range.BAG_DMG_MUL = 11.4375
-		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 175		
+		self.ceiling_turret_module_longer_range.SHIELD_HEALTH_INIT = 105		
 		
-		self.aa_turret_module.HEALTH_INIT = 925
+		self.aa_turret_module.HEALTH_INIT = 900
 		self.aa_turret_module.BAG_DMG_MUL = 11.4375
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 175		
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 105		
 		
-		self.crate_turret_module.HEALTH_INIT = 925
+		self.crate_turret_module.HEALTH_INIT = 900
 		self.crate_turret_module.BAG_DMG_MUL = 11.4375
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 175			
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 52.5			
 		
 		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 3
 		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 3
@@ -767,6 +768,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.benelli_npc.sounds.prefix = "remington_npc"
 		self.benelli_npc.DAMAGE = 7
 		self.benelli_npc.CLIP_AMMO_MAX = 10
+		self.r870_taser_npc = deep_clone(self.r870_npc)
+		self.r870_taser_npc.sounds.prefix = "remington_npc"
+		self.r870_taser_npc.DAMAGE = 5.9
+		self.r870_taser_npc.CLIP_AMMO_MAX = 8
 	end
 
 	function WeaponTweakData:_init_data_mossberg_npc()
@@ -822,7 +827,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.asval_smg_npc.suppression = 2.8
 		self.akmsu_smg_npc = deep_clone(self.mp5_npc)
 		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
-		self.mpx_npc = deep_clone(self.mp5_npc)
+		self.mpx_npc = deep_clone(self.mp5_tactical_npc)
+		self.mpx_npc.auto.fire_rate = 0.07058823529
+		self.mpx_npc.DAMAGE = 3.4	
 	end
 	
 	function WeaponTweakData:_init_data_smoke_npc()
@@ -931,7 +938,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_van_turret_module.IDLE_WAIT_TIME = 5
 		self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 2
 		self.swat_van_turret_module.AUTO_REPAIR_DURATION = 30
-		self.swat_van_turret_module.ECM_HACKABLE = false
+		self.swat_van_turret_module.ECM_HACKABLE = true
 		self.swat_van_turret_module.FLASH_GRENADE = {
 			range = 300,
 			effect_duration = 6,
@@ -939,24 +946,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			check_interval = {1, 1},
 			quiet_time = {10, 13}
 		}
-		self.swat_van_turret_module.HACKABLE_WITH_ECM = false
+		self.swat_van_turret_module.HACKABLE_WITH_ECM = true
 		self.swat_van_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 		self.swat_van_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.swat_van_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 		self.swat_van_turret_module.auto.fire_rate = 0.13333333333
 		self.swat_van_turret_module.alert_size = 2500
 		self.swat_van_turret_module.headshot_dmg_mul = 1
-		self.swat_van_turret_module.EXPLOSION_DMG_MUL = 4
+		self.swat_van_turret_module.EXPLOSION_DMG_MUL = 3
 		self.swat_van_turret_module.FIRE_DMG_MUL = 1
 		self.swat_van_turret_module.BAG_DMG_MUL = 12.5
 		self.swat_van_turret_module.SHIELD_DMG_MUL = 1
 		if job == "chew" or job == "glace" then
-			self.swat_van_turret_module.HEALTH_INIT = 925
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 200
+			self.swat_van_turret_module.HEALTH_INIT = 450
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 60
 			self.swat_van_turret_module.AUTO_REPAIR = false
 		else
-			self.swat_van_turret_module.HEALTH_INIT = 925
-			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 200
+			self.swat_van_turret_module.HEALTH_INIT = 900
+			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 120
 			self.swat_van_turret_module.AUTO_REPAIR = true
 		end
 		self.swat_van_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
@@ -1013,8 +1020,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crate_turret_module.AUTO_REPAIR = false
 		self.crate_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
 		self.crate_turret_module.AUTO_REPAIR_DURATION = 30
-		self.crate_turret_module.ECM_HACKABLE = false
-		self.crate_turret_module.HACKABLE_WITH_ECM = false
+		self.crate_turret_module.ECM_HACKABLE = true
+		self.crate_turret_module.HACKABLE_WITH_ECM = true
 		self.crate_turret_module.VELOCITY_COMPENSATION = {
 			OVERCOMPENSATION = 50,
 			SNAPSHOT_INTERVAL = 0.3
@@ -1024,12 +1031,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crate_turret_module.auto.fire_rate = 0.06
 		self.crate_turret_module.alert_size = 2500
 		self.crate_turret_module.headshot_dmg_mul = 1
-		self.crate_turret_module.EXPLOSION_DMG_MUL = 4
+		self.crate_turret_module.EXPLOSION_DMG_MUL = 3
 		self.crate_turret_module.FIRE_DMG_MUL = 1
 		self.crate_turret_module.BAG_DMG_MUL = 12.5
 		self.crate_turret_module.SHIELD_DMG_MUL = 1
-		self.crate_turret_module.HEALTH_INIT = 462.5
-		self.crate_turret_module.SHIELD_HEALTH_INIT = 100
+		self.crate_turret_module.HEALTH_INIT = 225
+		self.crate_turret_module.SHIELD_HEALTH_INIT = 30
 		self.crate_turret_module.DEATH_VERIFICATION = {
 			0.4,
 			0.75
@@ -1094,7 +1101,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ceiling_turret_module.AUTO_REPAIR = false
 		self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 2
 		self.ceiling_turret_module.AUTO_REPAIR_DURATION = 30
-		self.ceiling_turret_module.ECM_HACKABLE = false
+		self.ceiling_turret_module.ECM_HACKABLE = true
 		self.ceiling_turret_module.FLASH_GRENADE = {
 			range = 300,
 			effect_duration = 6,
@@ -1102,19 +1109,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			check_interval = {1, 1},
 			quiet_time = {10, 13}
 		}
-		self.ceiling_turret_module.HACKABLE_WITH_ECM = false
+		self.ceiling_turret_module.HACKABLE_WITH_ECM = true
 		self.ceiling_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 		self.ceiling_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.ceiling_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 		self.ceiling_turret_module.auto.fire_rate = 0.13333333333
 		self.ceiling_turret_module.alert_size = 2500
 		self.ceiling_turret_module.headshot_dmg_mul = 1
-		self.ceiling_turret_module.EXPLOSION_DMG_MUL = 4
+		self.ceiling_turret_module.EXPLOSION_DMG_MUL = 3
 		self.ceiling_turret_module.FIRE_DMG_MUL = 1
 		self.ceiling_turret_module.BAG_DMG_MUL = 12.5
 		self.ceiling_turret_module.SHIELD_DMG_MUL = 1
-		self.ceiling_turret_module.HEALTH_INIT = 462.5
-		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 100
+		self.ceiling_turret_module.HEALTH_INIT = 450
+		self.ceiling_turret_module.SHIELD_HEALTH_INIT = 60
 		self.ceiling_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
 		self.ceiling_turret_module.DETECTION_RANGE = self.ceiling_turret_module.FIRE_RANGE
 		self.ceiling_turret_module.DETECTION_DELAY = {
@@ -1174,7 +1181,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa_turret_module.AUTO_REPAIR = true
 		self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
 		self.aa_turret_module.AUTO_REPAIR_DURATION = 30
-		self.aa_turret_module.ECM_HACKABLE = false
+		self.aa_turret_module.ECM_HACKABLE = true
 		self.aa_turret_module.FLASH_GRENADE = {
 			range = 300,
 			effect_duration = 6,
@@ -1182,19 +1189,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			check_interval = {1, 1},
 			quiet_time = {10, 13}
 		}
-		self.aa_turret_module.HACKABLE_WITH_ECM = false
+		self.aa_turret_module.HACKABLE_WITH_ECM = true
 		self.aa_turret_module.VELOCITY_COMPENSATION = {SNAPSHOT_INTERVAL = 0.3, OVERCOMPENSATION = 50}
 		self.aa_turret_module.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.aa_turret_module.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 		self.aa_turret_module.auto.fire_rate = 0.13333333333
 		self.aa_turret_module.alert_size = 2500
 		self.aa_turret_module.headshot_dmg_mul = 1
-		self.aa_turret_module.EXPLOSION_DMG_MUL = 4
+		self.aa_turret_module.EXPLOSION_DMG_MUL = 3
 		self.aa_turret_module.FIRE_DMG_MUL = 1
 		self.aa_turret_module.BAG_DMG_MUL = 12.5
 		self.aa_turret_module.SHIELD_DMG_MUL = 1
-		self.aa_turret_module.HEALTH_INIT = 462.5
-		self.aa_turret_module.SHIELD_HEALTH_INIT = 100
+		self.aa_turret_module.HEALTH_INIT = 450
+		self.aa_turret_module.SHIELD_HEALTH_INIT = 60
 		self.aa_turret_module.DEATH_VERIFICATION = {0.4, 0.75}
 		self.aa_turret_module.DETECTION_RANGE = self.aa_turret_module.FIRE_RANGE
 		self.aa_turret_module.DETECTION_DELAY = {
@@ -1293,6 +1300,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk21_sc_npc.alert_size = 2800
 		self.hk21_sc_npc.suppression = 2.4
 		self.hk21_sc_npc.usage = "is_lmg"
+		self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
+		self.hk23_sc_npc.DAMAGE = 2.2
+		self.hk23_sc_npc.auto.fire_rate = 0.08
+		self.hk23_sc_npc.CLIP_AMMO_MAX = 50		
 	end
 
 	function WeaponTweakData:_init_data_contraband_npc()
@@ -3263,7 +3274,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_m4.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 22,
@@ -3274,6 +3285,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.new_m4.timers.reload_empty = 3.5		
 		self.new_m4.panic_suppression_chance = 0.0
 		self.glock_17.desc_id = "bm_menu_sc_glock17_desc"
 		self.glock_17.fire_mode_data.fire_rate = 0.075
@@ -3298,7 +3310,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_17.stats = {
 			damage = 27,
 			spread = 15,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -3328,7 +3340,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp9.stats = {
 			damage = 29,
 			spread = 12,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -3361,7 +3373,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.r870.stats = {
 			damage = 95,
 			spread = 8,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 11,
@@ -3392,7 +3404,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_18c.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,
@@ -3422,7 +3434,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amcar.stats = {
 			damage = 28,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 24,
@@ -3433,6 +3445,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.amcar.timers.reload_not_empty = 2.10
+		self.amcar.timers.reload_empty = 2.9 		
 		self.amcar.panic_suppression_chance = 0.0
 		self.m16.desc_id = "bm_menu_sc_m16_desc"
 		self.m16.fire_mode_data.fire_rate = 0.08571428571
@@ -3449,7 +3463,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.stats = {
 			damage = 39,
 			spread = 16,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 5,
 			zoom = 4,
 			concealment = 21,
@@ -3483,7 +3497,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.olympic.stats = {
 			damage = 28,
 			spread = 13,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 24,
@@ -3511,7 +3525,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak74.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 16,
@@ -3537,7 +3551,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akm.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 13,
@@ -3548,6 +3562,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.akm.timers.reload_not_empty = 2
 		self.akm.panic_suppression_chance = 0.0
 		self.akm_gold.desc_id = "bm_menu_sc_akm_gold_desc"
 		self.akm_gold.spread.standing = 3
@@ -3560,10 +3575,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akm_gold.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.akm_gold.fire_mode_data.fire_rate = 0.1
 		self.akm_gold.auto.fire_rate = 0.1
+		self.akm_gold.timers.reload_not_empty = 2
 		self.akm_gold.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 13,
@@ -3592,7 +3608,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akmsu.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 21,
@@ -3603,6 +3619,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.akmsu.timers.reload_not_empty = 1.95 
+		self.akmsu.timers.reload_empty = 3.7 
 		self.saiga.rays = 9
 		self.saiga.spread.standing = 3
 		self.saiga.spread.crouching = 2
@@ -3625,7 +3643,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.saiga.stats = {
 			damage = 45,
 			spread = 6,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 13,
@@ -3651,7 +3669,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak5.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 18,
@@ -3662,6 +3680,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.ak5.timers.reload_empty = 3.15
 		self.ak5.panic_suppression_chance = 0.0
 		self.aug.AMMO_MAX = 150
 		self.aug.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -3679,7 +3698,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aug.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 20,
@@ -3690,6 +3709,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.aug.timers.reload_empty = 3.4
 		self.aug.panic_suppression_chance = 0.0
 		self.aug.CLIP_AMMO_MAX = 30
 		self.g36.spread.standing = 3
@@ -3709,7 +3729,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g36.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 20,
@@ -3720,6 +3740,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.g36.timers.reload_not_empty = 2.4
 		self.g36.panic_suppression_chance = 0.0
 		self.p90.desc_id = "bm_ap_weapon_sc_desc"
 		self.p90.AMMO_MAX = 180
@@ -3739,7 +3760,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p90.stats = {
 			damage = 22,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 25,
@@ -3768,7 +3789,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_m14.stats = {
 			damage = 95,
 			spread = 20,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 8,
@@ -3779,6 +3800,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.new_m14.timers.reload_not_empty = 2.60
 		self.new_m14.panic_suppression_chance = 0.0
 		self.deagle.has_description = false
 		self.deagle.desc_id = "bm_ap_weapon_sc_desc"
@@ -3799,7 +3821,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deagle.stats = {
 			damage = 95,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 25,
@@ -3828,7 +3850,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_mp5.stats = {
 			damage = 27,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -3857,7 +3879,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.colt_1911.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -3888,7 +3910,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -3899,6 +3921,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.mac10.timers.reload_not_empty = 1.55
+		self.mac10.timers.reload_empty = 2.4	
 		self.mac10.panic_suppression_chance = 0.1
 		self.serbu.rays = 9
 		self.serbu.spread.standing = 3
@@ -3920,7 +3944,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.serbu.stats = {
 			damage = 95,
 			spread = 6,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 23,
@@ -3971,6 +3995,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.huntsman.timers.reload_not_empty = 2.3
+		self.huntsman.timers.reload_empty = 2.3	
 		self.huntsman.panic_suppression_chance = 0.0
 		self.huntsman.stats_modifiers = {damage = 1}
 		self.b92fs.AMMO_MAX = 150
@@ -3989,7 +4015,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b92fs.stats = {
 			damage = 28,
 			spread = 16,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -4030,6 +4056,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.new_raging_bull.timers.reload_not_empty = 2
+		self.new_raging_bull.timers.reload_empty = 2		
 		self.new_raging_bull.panic_suppression_chance = 0.0
 		self.saw.has_description = true
 		self.saw.spread.standing = 0
@@ -4116,7 +4144,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.usp.stats = {
 			damage = 40,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 27,
@@ -4144,7 +4172,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g22c.stats = {
 			damage = 32,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 28,
@@ -4174,7 +4202,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.stats = {
 			damage = 145,
 			spread = 6,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -4202,7 +4230,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m45.stats = {
 			damage = 32,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -4213,6 +4241,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 5,
 			reload = 11
 		}
+		self.m45.timers.reload_not_empty = 2.8
+		self.m45.timers.reload_empty = 3.8		
 		self.m45.panic_suppression_chance = 0.1
 		self.s552.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.s552.fire_mode_data.fire_rate = 0.08571428571
@@ -4230,7 +4260,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.s552.stats = {
 			damage = 35,
 			spread = 13,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 22,
@@ -4241,6 +4271,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.s552.timers.reload_not_empty = 1.7
+		self.s552.timers.reload_empty = 2.35	
 		self.s552.panic_suppression_chance = 0.0
 		self.ppk.AMMO_MAX = 150
 		self.ppk.CLIP_AMMO_MAX = 12
@@ -4259,7 +4291,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ppk.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -4270,6 +4302,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.ppk.timers.reload_not_empty = 1.45
+		self.ppk.timers.reload_empty = 2.2	
 		self.ppk.panic_suppression_chance = 0.0
 		self.mp7.desc_id = "bm_ap_weapon_sc_desc"
 		self.mp7.AMMO_MAX = 120
@@ -4287,7 +4321,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp7.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 23,
@@ -4298,6 +4332,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 7,
 			reload = 11
 		}
+		self.mp7.timers.reload_not_empty = 1.75
+		self.mp7.timers.reload_empty = 2.4	
 		self.mp7.panic_suppression_chance = 0.1
 		self.scar.AMMO_MAX = 80
 		self.scar.AMMO_PICKUP = self:_pickup_chance(80, 2)
@@ -4313,7 +4349,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.scar.stats = {
 			damage = 67,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 8,
@@ -4324,6 +4360,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.scar.timers.reload_not_empty = 1.75
 		self.scar.panic_suppression_chance = 0.0
 		self.p226.AMMO_MAX = 120
 		self.p226.CLIP_AMMO_MAX = 14
@@ -4342,7 +4379,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p226.stats = {
 			damage = 35,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 28,
@@ -4376,7 +4413,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk21.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 2,
@@ -4409,7 +4446,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m249.stats = {
 			damage = 25,
 			spread = 13,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 2,
@@ -4420,6 +4457,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.m249.timers.reload_not_empty = 5.5
+		self.m249.timers.reload_empty = 5.5	
 		self.m249.panic_suppression_chance = 0.1
 		self.rpk.categories = {
 			"lmg",
@@ -4444,7 +4483,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpk.stats = {
 			damage = 25,
 			spread = 12,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 2,
 			concealment = 5,
@@ -4474,7 +4513,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m95.stats = {
 			damage = 300,
 			spread = 19,
-			recoil = 12,
+			recoil = 13,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 1,
@@ -4495,8 +4534,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.desc_id = "bm_ap_weapon_sc_desc"
 		self.msr.CLIP_AMMO_MAX = 10
 		self.msr.NR_CLIPS_MAX = 5
-		self.msr.AMMO_MAX = 40
-		self.msr.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.msr.AMMO_MAX = 60
+		self.msr.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.msr.fire_mode_data.fire_rate = 0.66666666666
 		self.msr.spread.standing = 3
 		self.msr.spread.crouching = 2
@@ -4510,7 +4549,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.stats = {
 			damage = 100,
 			spread = 20,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 22,
@@ -4542,7 +4581,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.r93.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 14,
+			recoil = 15,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 5,
@@ -4575,7 +4614,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.fal.stats = {
 			damage = 45,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 9,
@@ -4608,7 +4647,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.benelli.stats = {
 			damage = 70,
 			spread = 7,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 11,
@@ -4642,7 +4681,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.striker.stats = {
 			damage = 70,
 			spread = 6,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,
@@ -4654,6 +4693,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.striker.panic_suppression_chance = 0.0
+		self.striker.timers.shotgun_reload_first_shell_offset = 0.4
 		self.ksg.AMMO_MAX = 60
 		self.ksg.damage_near = 800
 		self.ksg.damage_far = 1600
@@ -4670,7 +4710,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ksg.stats = {
 			damage = 95,
 			spread = 8,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 22,
@@ -4729,7 +4769,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3.stats = {
 			damage = 45,
 			spread = 18,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 12,
@@ -4761,7 +4801,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.galil.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 17,
@@ -4772,6 +4812,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
+		self.galil.timers.reload_not_empty = 2.6
+		self.galil.timers.reload_empty = 3.9
 		self.galil.panic_suppression_chance = 0.0
 		self.famas.AMMO_MAX = 180
 		self.famas.AMMO_PICKUP = self:_pickup_chance(180, 2)
@@ -4793,7 +4835,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.famas.stats = {
 			damage = 26,
 			spread = 12,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 4,
 			zoom = 3,
 			concealment = 24,
@@ -4804,6 +4846,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
+		self.famas.timers.reload_not_empty = 2.6
 		self.famas.panic_suppression_chance = 0.0
 		self.scorpion.AMMO_MAX = 150
 		self.scorpion.AMMO_PICKUP = self:_pickup_chance(150, 1)
@@ -4826,7 +4869,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.scorpion.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 26,
@@ -4837,6 +4880,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 7,
 			reload = 11
 		}
+		self.scorpion.timers.reload_not_empty = 1.95		
 		self.scorpion.panic_suppression_chance = 0.1
 		self.tec9.AMMO_MAX = 120
 		self.tec9.CLIP_AMMO_MAX = 32
@@ -4860,7 +4904,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tec9.stats = {
 			damage = 34,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 10,
 			zoom = 1,
 			concealment = 27,
@@ -4892,7 +4936,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.uzi.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 24,
@@ -4923,7 +4967,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.jowi.stats = {
 			damage = 26,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -4953,7 +4997,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_1911.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -4982,7 +5026,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_b92fs.stats = {
 			damage = 28,
 			spread = 16,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -5017,7 +5061,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_deagle.stats = {
 			damage = 95,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 25,
@@ -5045,7 +5089,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g26.stats = {
 			damage = 26,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -5078,7 +5122,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.stats = {
 			damage = 70,
 			spread = 6,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 14,
@@ -5110,7 +5154,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mg42.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 2,
@@ -5121,6 +5165,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.mg42.timers.reload_not_empty = 6.25
+		self.mg42.timers.reload_empty = 6.25	
 		self.mg42.panic_suppression_chance = 0.1
 		self.c96.AMMO_MAX = 80
 		self.c96.AMMO_PICKUP = self:_pickup_chance(80, 1)
@@ -5143,7 +5189,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.c96.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -5154,6 +5200,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.c96.timers.reload_not_empty = 3.7
 		self.c96.panic_suppression_chance = 0.0
 		self.sterling.CLIP_AMMO_MAX = 30
 		self.sterling.AMMO_MAX = 120
@@ -5174,7 +5221,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sterling.stats = {
 			damage = 32,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 26,
@@ -5204,7 +5251,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mosin.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 15,
+			recoil = 16,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 11,
@@ -5240,7 +5287,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1928.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -5251,6 +5298,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.m1928.timers.reload_not_empty = 3.3
 		self.m1928.panic_suppression_chance = 0.1
 		self.l85a2.CLIP_AMMO_MAX = 30
 		self.l85a2.AMMO_MAX = 150
@@ -5274,7 +5322,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.l85a2.stats = {
 			damage = 35,
 			spread = 16,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 16,
@@ -5285,6 +5333,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.l85a2.timers.reload_not_empty = 3
+		self.l85a2.timers.reload_empty = 4	
 		self.l85a2.panic_suppression_chance = 0.0
 		self.vhs.CLIP_AMMO_MAX = 30
 		self.vhs.AMMO_MAX = 180
@@ -5305,7 +5355,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vhs.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 17,
@@ -5316,6 +5366,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.vhs.timers.reload_empty = 4.6
 		self.vhs.panic_suppression_chance = 0.0
 		self.hs2000.CLIP_AMMO_MAX = 14
 		self.hs2000.AMMO_MAX = 80
@@ -5337,7 +5388,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hs2000.stats = {
 			damage = 44,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 27,
@@ -5378,7 +5429,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m134.stats = {
 			damage = 22,
 			spread = 15,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 0,
@@ -5389,6 +5440,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		--She’s a gunshot bride
 		self.rpg7.spread.standing = 3
 		self.rpg7.spread.crouching = 2
 		self.rpg7.spread.steelsight = 1
@@ -5402,8 +5454,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpg7.fire_mode_data.fire_rate = 3
 		self.rpg7.AMMO_MAX = 3
 		self.rpg7.AMMO_PICKUP = {0.06, 0.41}
-		self.rpg7.timers.reload_not_empty = 6.3
-		self.rpg7.timers.reload_empty = 6.3
+		self.rpg7.timers.reload_not_empty = 3.25
+		self.rpg7.timers.reload_empty = 3.25
 		self.rpg7.stats = {
 			damage = 400,
 			spread = 21,
@@ -5420,8 +5472,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.rpg7.panic_suppression_chance = 0.0
 		self.rpg7.stats_modifiers = {damage = 3}
-		self.cobray.timers.reload_not_empty = 2.00
-		self.cobray.timers.reload_empty = 2.7
+		self.cobray.timers.reload_not_empty = 2
+		self.cobray.timers.reload_empty = 2.8
 		self.cobray.CLIP_AMMO_MAX = 60
 		self.cobray.NR_CLIPS_MAX = 4
 		self.cobray.AMMO_MAX = 120
@@ -5442,7 +5494,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cobray.stats = {
 			damage = 35,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -5510,7 +5562,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g22c.stats = {
 			damage = 32,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 28,
@@ -5540,7 +5592,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g17.stats = {
 			damage = 27,
 			spread = 15,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -5570,7 +5622,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_usp.stats = {
 			damage = 40,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 27,
@@ -5589,8 +5641,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flamethrower_mk2.recategorize = "wpn_special"
 		self.flamethrower_mk2.has_description = true
 		self.flamethrower_mk2.desc_id = "bm_ap_flamethrower_sc_desc"
-		self.flamethrower_mk2.timers.reload_not_empty = 8
-		self.flamethrower_mk2.timers.reload_empty = 8
+		self.flamethrower_mk2.timers.reload_not_empty = 7.7
+		self.flamethrower_mk2.timers.reload_empty = 7.7
 		self.flamethrower_mk2.rays = 9
 		self.flamethrower_mk2.CLIP_AMMO_MAX = 70
 		self.flamethrower_mk2.AMMO_MAX = 150
@@ -5625,7 +5677,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flamethrower_mk2.stats = {
 			damage = 41,
 			spread = 6,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 6,
@@ -5652,7 +5704,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.stats = {
 			damage = 80,
 			spread = 6,
-			recoil = 7,
+			recoil = 8,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 10,
@@ -5665,6 +5717,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.m32.stats_modifiers = {damage = 10}
 		self.m32.panic_suppression_chance = 0.0
+		self.m32.timers.shotgun_reload_first_shell_offset = 1
 		self.aa12.rays = 9
 		self.aa12.AMMO_MAX = 120
 		self.aa12.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -5682,7 +5735,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aa12.stats = {
 			damage = 45,
 			spread = 7,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 9,
@@ -5728,6 +5781,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.peacemaker.can_shoot_through_wall = true
 		self.peacemaker.armor_piercing_chance = 1
 		self.peacemaker.stats_modifiers = {damage = 1}
+		self.peacemaker.timers.shotgun_reload_first_shell_offset = 0.5
 		self.winchester1874.upgrade_blocks = nil
 		self.winchester1874.has_description = true
 		self.winchester1874.desc_id = "bm_ap_weapon_sc_desc"
@@ -5763,6 +5817,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25		
 		self.winchester1874.stats_modifiers = nil
 		self.winchester1874.panic_suppression_chance = 0.0
 		self.plainsrider.has_description = true
@@ -5815,7 +5870,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mateba.stats = {
 			damage = 99,
 			spread = 20,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -5852,7 +5907,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.asval.stats = {
 			damage = 75,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 25,
@@ -5894,7 +5949,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sub2000.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 28,
@@ -5928,7 +5983,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.wa2000.stats = {
 			damage = 150,
 			spread = 19,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 16,
@@ -5964,7 +6019,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.polymer.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 20,
@@ -6028,7 +6083,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.baka.stats = {
 			damage = 29,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 29,
@@ -6069,6 +6124,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.arblast.timers.reload_not_empty = 3.05
+		self.arblast.timers.reload_empty = 3.05		
 		self.arblast.stats_modifiers = {damage =  2}
 		self.frankish.has_description = true
 		self.frankish.desc_id = "bm_ap_3_weapon_sc_desc"
@@ -6100,6 +6157,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.frankish.timers.reload_not_empty = 1.6
+		self.frankish.timers.reload_empty = 1.6		
 		self.frankish.stats_modifiers = {damage = 2}
 		self.long.has_description = true
 		self.long.desc_id = "bm_ap_2_weapon_sc_desc"
@@ -6158,7 +6217,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.par.stats = {
 			damage = 25,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 2,
@@ -6186,7 +6245,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sparrow.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -6216,7 +6275,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.model70.stats = {
 			damage = 200,
 			spread = 21,
-			recoil = 15,
+			recoil = 16,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 6,
@@ -6227,6 +6286,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 9,
 			reload = 11
 		}
+		self.model70.timers.reload_empty = 4.3	
 		self.model70.panic_suppression_chance = 0.0
 		self.model70.stats_modifiers = {
 			damage = 1,
@@ -6252,7 +6312,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m37.stats = {
 			damage = 95,
 			spread = 9,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 23,
@@ -6294,6 +6354,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.china.panic_suppression_chance = 0.0
 		self.china.stats_modifiers = {damage = 10}
+		self.china.timers.shotgun_reload_first_shell_offset = 0.5
 		self.sr2.auto.fire_rate = 0.06666666666
 		self.sr2.fire_mode_data.fire_rate = 0.06666666666
 		self.sr2.CLIP_AMMO_MAX = 30
@@ -6312,7 +6373,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sr2.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -6323,6 +6384,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.sr2.timers.reload_not_empty = 2
 		self.sr2.panic_suppression_chance = 0.1
 		self.x_sr2.fire_mode_data.fire_rate = 0.06666666666
 		self.x_sr2.single.fire_rate = 0.06666666666
@@ -6341,7 +6403,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sr2.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -6370,7 +6432,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.pl14.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -6397,7 +6459,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp5.stats = {
 			damage = 27,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -6409,6 +6471,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.x_mp5.panic_suppression_chance = 0.1
+		self.x_mp5.timers.reload_not_empty = 1.95
+		self.x_mp5.timers.reload_empty = 2.6	
 		self.x_akmsu.AMMO_MAX = 120
 		self.x_akmsu.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
@@ -6425,7 +6489,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_akmsu.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 21,
@@ -6436,6 +6500,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.x_akmsu.timers.reload_not_empty = 2.75
+		self.x_akmsu.timers.reload_empty = 3.4		
 		self.tecci.spread.standing = 3
 		self.tecci.spread.crouching = 2
 		self.tecci.spread.steelsight = 1
@@ -6455,7 +6521,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tecci.stats = {
 			damage = 45,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 10,
 			zoom = 3,
 			concealment = 14,
@@ -6486,7 +6552,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hajk.stats = {
 			damage = 34,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 24,
@@ -6497,6 +6563,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.hajk.timers.reload_not_empty = 1.9 
+		self.hajk.timers.reload_empty = 3.4		
 		self.boot.AMMO_MAX = 40
 		self.boot.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.boot.CLIP_AMMO_MAX = 6
@@ -6514,11 +6582,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.kick.standing = self.huntsman.kick.standing
 		self.boot.kick.crouching = self.huntsman.kick.standing
 		self.boot.kick.steelsight = self.huntsman.kick.standing
-		self.boot.timers.shotgun_reload_first_shell_offset = 0.12
+		self.boot.timers.shotgun_reload_first_shell_offset = 0.15
 		self.boot.stats = {
 			damage = 145,
 			spread = 8,
-			recoil = 15,
+			recoil = 16,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 7,
@@ -6548,7 +6616,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.packrat.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -6577,7 +6645,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.schakal.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 14,
 			zoom = 3,
 			concealment = 24,
@@ -6607,7 +6675,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.desertfox.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 8,
+			recoil = 9,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 19,
@@ -6636,7 +6704,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_packrat.stats = {
 			damage = 29,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 29,
@@ -6672,7 +6740,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rota.stats = {
 			damage = 70,
 			spread = 8,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,
@@ -6691,7 +6759,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arbiter.stats = {
 			damage = 60,
 			spread = 6,
-			recoil = 7,
+			recoil = 8,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 8,
@@ -6716,6 +6784,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 		self.contraband.has_description = true
 		self.contraband.AMMO_MAX = 60
+		self.contraband.tactical_reload = 1
 		self.contraband.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.contraband.FIRE_MODE = "auto"
 		self.contraband.fire_mode_data.fire_rate = 0.1
@@ -6734,7 +6803,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.contraband.stats = {
 			damage = 70,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 4,
 			concealment = 6,
@@ -6832,7 +6901,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tti.stats = {
 			damage = 150,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 24,
 			zoom = 1,
 			concealment = 16,
@@ -6865,7 +6934,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.siltstone.stats = {
 			damage = 150,
 			spread = 19,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 21,
@@ -6895,7 +6964,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flint.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 17,
@@ -6925,7 +6994,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.coal.stats = {
 			damage = 25,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 23,
@@ -6959,7 +7028,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.lemming.stats = {
 			damage = 25,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -6986,7 +7055,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.chinchilla.stats = {
 			damage = 100,
 			spread = 19,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -7015,7 +7084,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_chinchilla.stats = {
 			damage = 100,
 			spread = 19,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -7065,9 +7134,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.categories = {"assault_rifle"}
 		self.ching.recategorize = "rifle"
 		self.ching.FIRE_MODE = "single"
-		self.ching.fire_mode_data = {fire_rate = 0.17142857142}
+		self.ching.fire_mode_data = {fire_rate = 0.1}
 		self.ching.CAN_TOGGLE_FIREMODE = false
-		self.ching.single = {fire_rate = 0.17142857142}	
+		self.ching.single = {fire_rate = 0.1}	
 		self.ching.has_description = false
 		self.ching.desc_id = "bm_ap_weapon_sc_desc"
 		self.ching.CLIP_AMMO_MAX = 8
@@ -7086,7 +7155,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.stats = {
 			damage = 95,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 12,
@@ -7121,7 +7190,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.erma.stats = {
 			damage = 35,
 			spread = 18,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -7180,7 +7249,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shrew.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
@@ -7209,7 +7278,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shrew.stats = {
 			damage = 42,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
@@ -7248,7 +7317,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 6,
 			spread = 6,
 			spread_moving = 8,
-			recoil = 20,
+			recoil = 21,
 			value = 1,
 			extra_ammo = 101,
 			reload = 11,
@@ -7283,7 +7352,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			alert_size = 6,
 			spread = 6,
 			spread_moving = 8,
-			recoil = 20,
+			recoil = 21,
 			value = 1,
 			extra_ammo = 101,
 			reload = 11,
@@ -7309,7 +7378,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.corgi.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 21,
@@ -7369,7 +7438,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_coal.stats = {
 			damage = 25,
 			spread = 14,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 23,
@@ -7403,7 +7472,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_baka.stats = {
 			damage = 29,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 29,
@@ -7436,7 +7505,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.stats = {
 			damage = 35,
 			spread = 13,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -7466,7 +7535,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_erma.stats = {
 			damage = 35,
 			spread = 18,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -7496,7 +7565,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hajk.stats = {
 			damage = 34,
 			spread = 17,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 24,
@@ -7522,7 +7591,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m45.stats = {
 			damage = 32,
 			spread = 14,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -7553,7 +7622,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m1928.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -7582,7 +7651,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mac10.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -7608,7 +7677,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp7.stats = {
 			damage = 35,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 23,
@@ -7637,7 +7706,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp9.stats = {
 			damage = 29,
 			spread = 12,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -7664,7 +7733,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_olympic.stats = {
 			damage = 28,
 			spread = 13,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 24,
@@ -7692,7 +7761,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p90.stats = {
 			damage = 22,
 			spread = 14,
-			recoil = 23,
+			recoil = 24,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 25,
@@ -7722,7 +7791,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_polymer.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 20,
@@ -7752,7 +7821,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_schakal.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 14,
 			zoom = 3,
 			concealment = 24,
@@ -7781,7 +7850,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_scorpion.stats = {
 			damage = 29,
 			spread = 14,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 26,
@@ -7810,7 +7879,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sterling.stats = {
 			damage = 32,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 26,
@@ -7840,7 +7909,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_tec9.stats = {
 			damage = 34,
 			spread = 14,
-			recoil = 21,
+			recoil = 22,
 			spread_moving = 10,
 			zoom = 1,
 			concealment = 27,
@@ -7868,7 +7937,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_uzi.stats = {
 			damage = 35,
 			spread = 15,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 24,
@@ -7896,7 +7965,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_2006m.stats = {
 			damage = 99,
 			spread = 20,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 26,
@@ -7929,7 +7998,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_breech.stats = {
 			damage = 34,
 			spread = 15,
-			recoil = 24,
+			recoil = 25,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -7962,7 +8031,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_c96.stats = {
 			damage = 45,
 			spread = 17,
-			recoil = 19,
+			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -7991,7 +8060,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,
@@ -8023,7 +8092,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hs2000.stats = {
 			damage = 44,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 27,
@@ -8052,7 +8121,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p226.stats = {
 			damage = 35,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 28,
@@ -8081,7 +8150,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_pl14.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -8110,7 +8179,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_ppk.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 30,
@@ -8170,7 +8239,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sparrow.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 29,
@@ -8198,7 +8267,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.stats = {
 			damage = 145,
 			spread = 6,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -8240,7 +8309,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rota.stats = {
 			damage = 70,
 			spread = 8,
-			recoil = 17,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 21,
@@ -8280,7 +8349,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shuno.stats = {
 			damage = 27,
 			spread = 16,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 0,
@@ -8334,7 +8403,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.system.stats = {
 			damage = 41,
 			spread = 5,
-			recoil = 22,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 6,
@@ -8363,7 +8432,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shepheard.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -8392,7 +8461,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shepheard.stats = {
 			damage = 29,
 			spread = 16,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 22,
@@ -8427,7 +8496,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.komodo.stats = {
 			damage = 29,
 			spread = 15,
-			recoil = 24,
+			recoil = 25,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -8523,7 +8592,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.legacy.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 28,
@@ -8558,7 +8627,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_legacy.stats = {
 			damage = 35,
 			spread = 17,
-			recoil = 20,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 28,
@@ -8766,7 +8835,42 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.toz66.panic_suppression_chance = 0.0
 			self.toz66.stats_modifiers = {damage = 1}
-		end		
+		end	
+
+	if self.m1216 then --Alcat's M1216
+		self.m1216.rays = 9
+		self.m1216.tactical_reload = 1				
+		self.m1216.spread.standing = 3
+		self.m1216.spread.crouching = 2
+		self.m1216.spread.steelsight = 1
+		self.m1216.spread.moving_standing = 4
+		self.m1216.spread.moving_crouching = 3
+		self.m1216.spread.moving_steelsight = 2
+		self.m1216.AMMO_MAX = 120
+		self.m1216.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.m1216.damage_near = 600
+		self.m1216.damage_far = 1200
+		self.m1216.shake.fire_multiplier = 1
+		self.m1216.shake.fire_steelsight_multiplier = -1
+		self.m1216.kick.standing = self.new_m4.kick.standing
+		self.m1216.kick.crouching = self.new_m4.kick.standing
+		self.m1216.kick.steelsight = self.new_m4.kick.standing
+		self.m1216.stats = {
+			damage = 45,
+			spread = 7,
+			recoil = 18,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 12,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.m1216.panic_suppression_chance = 0.0		
+		end			
 
 		if self.xm8 then --Pawcio's HK XM8
 			self.xm8.has_description = false			
@@ -8867,6 +8971,102 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amt.panic_suppression_chance = 0.0
 		end	
 
+	if self.noodle then --Germantaco's P220
+		self.noodle.has_description = false		
+		self.noodle.AMMO_MAX = 120
+		self.noodle.CLIP_AMMO_MAX = 14
+		self.noodle.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.noodle.fire_mode_data.fire_rate = 0.08571428571
+		self.noodle.single.fire_rate = 0.08571428571
+		self.noodle.spread.standing = 3
+		self.noodle.spread.crouching = 2
+		self.noodle.spread.steelsight = 1
+		self.noodle.spread.moving_standing = 4
+		self.noodle.spread.moving_crouching = 3
+		self.noodle.spread.moving_steelsight = 2
+		self.noodle.kick.standing = self.glock_17.kick.standing
+		self.noodle.kick.crouching = self.glock_17.kick.standing
+		self.noodle.kick.steelsight = self.glock_17.kick.standing
+		self.noodle.stats = {
+			damage = 35,
+			spread = 16,
+			recoil = 21,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 28,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+		self.noodle.panic_suppression_chance = 0.0
+		end		
+
+	if self.heffy_556 then --Killerwolf & Germantaco's AK 101
+		self.heffy_556.AMMO_MAX = 180
+		self.heffy_556.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.heffy_556.spread.standing = 3
+		self.heffy_556.spread.crouching = 2
+		self.heffy_556.spread.steelsight = 1
+		self.heffy_556.spread.moving_standing = 4
+		self.heffy_556.spread.moving_crouching = 3
+		self.heffy_556.spread.moving_steelsight = 2
+		self.heffy_556.fire_mode_data.fire_rate = 0.1
+		self.heffy_556.auto.fire_rate = 0.1
+		self.heffy_556.kick.standing = self.new_m4.kick.standing
+		self.heffy_556.kick.crouching = self.new_m4.kick.standing
+		self.heffy_556.kick.steelsight = self.new_m4.kick.standing
+		self.heffy_556.stats = {
+			damage = 29,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 16,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.heffy_556.panic_suppression_chance = 0.0
+		end							
+
+	if self.heffy_545 then --Killerwolf & Germantaco's AK 74 (attachment stats FUCKED. some dont even apply @ all)
+		self.heffy_545.desc_id = "bm_menu_sc_heffy_545_desc"
+		self.heffy_545.AMMO_MAX = 150
+		self.heffy_545.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.heffy_545.spread.standing = 3
+		self.heffy_545.spread.crouching = 2
+		self.heffy_545.spread.steelsight = 1
+		self.heffy_545.spread.moving_standing = 4
+		self.heffy_545.spread.moving_crouching = 3
+		self.heffy_545.spread.moving_steelsight = 2
+		self.heffy_545.fire_mode_data.fire_rate = 0.0923076923
+		self.heffy_545.auto.fire_rate = 0.0923076923
+		self.heffy_545.kick.standing = self.new_m4.kick.standing
+		self.heffy_545.kick.crouching = self.new_m4.kick.standing
+		self.heffy_545.kick.steelsight = self.new_m4.kick.standing
+		self.heffy_545.stats = {
+			damage = 35,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 16,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.heffy_545.panic_suppression_chance = 0.0
+		end					
+
 	if self.lynx then --Alcat's Gepard GM6 Lynx
 		self.lynx.upgrade_blocks = nil
 		self.lynx.has_description = true
@@ -8941,15 +9141,56 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.can_shoot_through_shield = true
 		self.m1894.can_shoot_through_wall = true		
 		self.m1894.panic_suppression_chance = 0.0
-		end				
+		end		
+
+	if self.obrez then --Pawcio's obrez Nagant M91/30 Obrez
+		self.obrez.categories = {
+			"snp"
+		}		
+		self.obrez.has_description = true
+		self.obrez.desc_id = "bm_ap_weapon_sc_desc"
+		self.obrez.CLIP_AMMO_MAX = 10
+		self.obrez.AMMO_MAX = 30
+		self.obrez.uses_clip = true
+		self.obrez.clip_capacity = 5		
+		self.obrez.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.obrez.fire_mode_data.fire_rate = 1
+		self.obrez.spread.standing = 3
+		self.obrez.spread.crouching = 2
+		self.obrez.spread.steelsight = 1
+		self.obrez.spread.moving_standing = 4
+		self.obrez.spread.moving_crouching = 3
+		self.obrez.spread.moving_steelsight = 2
+		self.obrez.kick.standing = self.huntsman.kick.standing
+		self.obrez.kick.crouching = self.huntsman.kick.standing
+		self.obrez.kick.steelsight = self.huntsman.kick.standing
+		self.obrez.stats = {
+			damage = 200,
+			spread = 19,
+			recoil = 14,
+			spread_moving = 10,
+			zoom = 1,
+			concealment = 15,
+			suppression = 3,
+			alert_size = 3,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.obrez.stats_modifiers = {
+			damage = 1,
+		}
+		self.obrez.panic_suppression_chance = 0.0
+		end						
 		
 		if self.scar_m203 then --Pawcio's SCAR L/M203
 			self.scar_m203.desc_id = "bm_m203_weapon_sc_desc"
 			self.scar_m203.has_description = true		
 			self.scar_m203.tactical_reload = 1
 			self.scar_m203.fire_mode_data.fire_rate = 0.096
-			self.scar_m203.AMMO_MAX = 90
-			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(90, 2)
+			self.scar_m203.AMMO_MAX = 120
+			self.scar_m203.AMMO_PICKUP = self:_pickup_chance(120, 2)
 			self.scar_m203.spread.standing = 3
 			self.scar_m203.spread.crouching = 2
 			self.scar_m203.spread.steelsight = 1
@@ -8974,6 +9215,99 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.scar_m203.panic_suppression_chance = 0.0
+			--Explosive GL
+			self.scar_m203gl.spread.standing = 3
+			self.scar_m203gl.spread.crouching = 2
+			self.scar_m203gl.spread.steelsight = 1
+			self.scar_m203gl.spread.moving_standing = 4
+			self.scar_m203gl.spread.moving_crouching = 3
+			self.scar_m203gl.spread.moving_steelsight = 2
+			self.scar_m203gl.kick.standing = self.huntsman.kick.standing
+			self.scar_m203gl.kick.crouching = self.huntsman.kick.standing
+			self.scar_m203gl.kick.steelsight = self.huntsman.kick.standing
+			self.scar_m203gl.AMMO_PICKUP = {0.12, 0.38}
+			self.scar_m203gl.panic_suppression_chance = 0.0
+			self.scar_m203gl.ignore_damage_upgrades = true
+			self.scar_m203gl.AMMO_MAX = 6
+			self.scar_m203gl.stats = {
+				damage = 200,
+				spread = 21,
+				recoil = 9,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.scar_m203gl.stats_modifiers = {damage = 4}			
+			--40mm Buck GL
+			self.scar_m203buckshot.categories = {"shotgun"}
+			self.scar_m203buckshot.rays = 6
+			self.scar_m203buckshot.damage_near = 900
+			self.scar_m203buckshot.damage_far = 1800			
+			self.scar_m203buckshot.spread.standing = 3
+			self.scar_m203buckshot.spread.crouching = 2
+			self.scar_m203buckshot.spread.steelsight = 1
+			self.scar_m203buckshot.spread.moving_standing = 4
+			self.scar_m203buckshot.spread.moving_crouching = 3
+			self.scar_m203buckshot.spread.moving_steelsight = 2
+			self.scar_m203buckshot.kick.standing = self.huntsman.kick.standing
+			self.scar_m203buckshot.kick.crouching = self.huntsman.kick.standing
+			self.scar_m203buckshot.kick.steelsight = self.huntsman.kick.standing
+			self.scar_m203buckshot.AMMO_PICKUP = {0.3, 0.75}
+			self.scar_m203buckshot.panic_suppression_chance = 0.0
+			self.scar_m203buckshot.ignore_damage_upgrades = false
+			self.scar_m203buckshot.AMMO_MAX = 15
+			self.scar_m203buckshot.stats = {
+				damage = 300,
+				spread = 9,
+				recoil = 15,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}	
+			--40mm Flechette GL
+			self.scar_m203flechette.categories = {"shotgun"}
+			self.scar_m203flechette.rays = 9
+			self.scar_m203flechette.damage_near = 1100
+			self.scar_m203flechette.damage_far = 2200			
+			self.scar_m203flechette.spread.standing = 3
+			self.scar_m203flechette.spread.crouching = 2
+			self.scar_m203flechette.spread.steelsight = 1
+			self.scar_m203flechette.spread.moving_standing = 4
+			self.scar_m203flechette.spread.moving_crouching = 3
+			self.scar_m203flechette.spread.moving_steelsight = 2
+			self.scar_m203flechette.kick.standing = self.huntsman.kick.standing
+			self.scar_m203flechette.kick.crouching = self.huntsman.kick.standing
+			self.scar_m203flechette.kick.steelsight = self.huntsman.kick.standing
+			self.scar_m203flechette.AMMO_PICKUP = {0.4, 1}
+			self.scar_m203flechette.panic_suppression_chance = 0.0
+			self.scar_m203flechette.ignore_damage_upgrades = false
+			self.scar_m203flechette.AMMO_MAX = 20
+			self.scar_m203flechette.stats = {
+				damage = 200,
+				spread = 11,
+				recoil = 14,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}				
 		end
 
 		if self.duke1911 then --Pawcio's Dick Kickem 1911
@@ -9140,6 +9474,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.x_pm.AMMO_PICKUP = self:_pickup_chance(180, 1)
 			self.xs_pm.spread.standing = 3
 			self.xs_pm.spread.crouching = 2
+			self.x_pm.tactical_reload = 2						
 			self.xs_pm.spread.steelsight = 1
 			self.xs_pm.spread.moving_standing = 4
 			self.xs_pm.spread.moving_crouching = 3
@@ -9567,6 +9902,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.aek971 then --Pawcio's AEK 971
 		self.aek971.CLIP_AMMO_MAX = 30
+		self.aek971.tactical_reload = 1												
 		self.aek971.AMMO_MAX = 180
 		self.aek971.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.aek971.spread.standing = 3
@@ -9597,7 +9933,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.x_gsh18 then --Mira & Killerwolf's Akimbo GSh 18s
 		self.x_gsh18.has_description = false		
-		self.x_gsh18.tactical_reload = 1												
+		self.x_gsh18.tactical_reload = 2												
 		self.x_gsh18.spread.standing = 3
 		self.x_gsh18.spread.crouching = 2
 		self.x_gsh18.spread.steelsight = 1
@@ -9688,13 +10024,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	
 	if self.toz194 then --Silent Enforcer's TOZ-194
 		self.toz194.rays = 9
+		self.toz194.tactical_reload = 1		
 		self.toz194.CLIP_AMMO_MAX = 8
 		self.toz194.spread.standing = 3
 		self.toz194.spread.crouching = 2
 		self.toz194.has_description = false																		
 		self.toz194.spread.steelsight = 1
 		self.toz194.spread.moving_standing = 4
-		self.toz194.tactical_reload = 1								
 		self.toz194.spread.moving_crouching = 3
 		self.toz194.spread.moving_steelsight = 2
 		self.toz194.kick.standing = self.new_m4.kick.standing
@@ -9726,10 +10062,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.trench then --Alcat's Trench Gun
 		self.trench.AMMO_MAX = 40
+		self.trench.tactical_reload = 1				
 		self.trench.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.trench.has_description = false																
 		self.trench.CLIP_AMMO_MAX = 5
-		self.trench.tactical_reload = 1						
 		self.trench.damage_near = 800
 		self.trench.damage_far = 1600
 		self.trench.fire_mode_data.fire_rate = 0.75
@@ -9761,10 +10097,44 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.trench.panic_suppression_chance = 0.0
 		self.trench.stats_modifiers = {damage = 1}
-	end						
+	end			
+
+	if self.prison then --Leon and a Buncha fellas' Deadwood 12g
+		self.prison.rays = 9
+		self.prison.tactical_reload = 1						
+		self.prison.AMMO_MAX = 120
+		self.prison.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.prison.damage_near = 700
+		self.prison.damage_far = 1400
+		self.prison.spread.standing = 3
+		self.prison.spread.crouching = 2
+		self.prison.spread.steelsight = 1
+		self.prison.spread.moving_standing = 4
+		self.prison.spread.moving_crouching = 3
+		self.prison.spread.moving_steelsight = 2
+		self.prison.kick.standing = self.new_m4.kick.standing
+		self.prison.kick.crouching = self.new_m4.kick.standing
+		self.prison.kick.steelsight = self.new_m4.kick.standing
+		self.prison.stats = {
+			damage = 50,
+			spread = 12,
+			recoil = 17,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 16,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.prison.panic_suppression_chance = 0.0	
+	end							
 	
 	if self.spas15 then --Alcat's Max Payne Memegun
 		self.spas15.rays = 9
+		self.spas15.tactical_reload = 1		
 		self.spas15.AMMO_MAX = 120
 		self.spas15.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.spas15.damage_near = 700
@@ -9897,6 +10267,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.gtt33 then --Gambyt's TT 33 
 		self.gtt33.AMMO_MAX = 80
+		self.gtt33.tactical_reload = 1									
 		self.gtt33.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.gtt33.spread.standing = 3
 		self.gtt33.spread.crouching = 2
@@ -9930,6 +10301,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"assault_rifle"
 		}
 		self.bajur.AMMO_MAX = 150
+		self.bajur.tactical_reload = 1							
 		self.bajur.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.bajur.spread.standing = 3
 		self.bajur.spread.crouching = 2
@@ -9959,6 +10331,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.qbz97b then --Mira's QBZ 97B
 		self.qbz97b.use_data.selection_index = 1
+		self.qbz97b.tactical_reload = 1					
 		self.qbz97b.categories = {
 			"assault_rifle"
 		}
@@ -9998,6 +10371,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.drongo.spread.standing = 3
 		self.drongo.spread.crouching = 2
 		self.drongo.spread.steelsight = 1
+		self.drongo.tactical_reload = 1				
 		self.drongo.spread.moving_standing = 4
 		self.drongo.spread.moving_crouching = 3
 		self.drongo.spread.moving_steelsight = 2
@@ -10228,6 +10602,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end					
 
 	if self.tm1a1 then --Killerwolf's Thompson M1A1
+		self.tm1a1.tactical_reload = 1		
 		self.tm1a1.use_data.selection_index = 2
 		self.tm1a1.categories = {
 				"smg"
@@ -10542,14 +10917,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.stf12 then --Mira's STF-12 Compact
 		self.stf12.use_data.selection_index = 1
 		self.stf12.has_description = false				
-		self.stf12.tactical_reload = 1							
 		self.stf12.rays = 9
+		self.stf12.tactical_reload = 1												
 		self.stf12.spread.standing = 3
 		self.stf12.spread.crouching = 2
 		self.stf12.spread.steelsight = 1
 		self.stf12.spread.moving_standing = 4
 		self.stf12.spread.moving_crouching = 3
-		self.stf12.tactical_reload = 1				
 		self.stf12.spread.moving_steelsight = 2
 		self.stf12.CLIP_AMMO_MAX = 4
 		self.stf12.AMMO_MAX = 40
@@ -10579,8 +10953,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end	
 
 	if self.l115 then --Pawcio's L115
+		self.l115.tactical_reload = 1													
 		self.l115.upgrade_blocks = nil
-		self.l115.tactical_reload = 1									
 		self.l115.has_description = true
 		self.l115.desc_id = "bm_ap_weapon_sc_desc"
 		self.l115.CLIP_AMMO_MAX = 5
@@ -10618,10 +10992,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.mp153 then --Pawcio's Baikal MP 153
 		self.mp153.has_description = false				
-		self.mp153.tactical_reload = 1
 		self.mp153.AMMO_MAX = 80
 		self.mp153.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.mp153.rays = 9
+		self.mp153.tactical_reload = 1								
 		self.mp153.CAN_TOGGLE_FIREMODE = false
 		self.mp153.single = {}
 		self.mp153.damage_near = 600
@@ -10666,7 +11040,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obr5.kick.crouching = self.new_m4.kick.standing
 		self.obr5.kick.steelsight = self.new_m4.kick.standing
 		self.obr5.AMMO_MAX = 80
-		self.obr5.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.obr5.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.obr5.stats = {
 			damage = 67,
 			spread = 14,
@@ -10980,7 +11354,41 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.heffy_762.panic_suppression_chance = 0.0
-	end												
+	end			
+
+	if self.aug9mm then --Pawcio's Steyr AUG 9mm
+		self.aug9mm.use_data.selection_index = 2	
+		self.aug9mm.categories = {
+			"smg"
+		}		
+		self.aug9mm.AMMO_MAX = 180
+		self.aug9mm.tactical_reload = 1										
+		self.aug9mm.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.aug9mm.spread.standing = 3
+		self.aug9mm.spread.crouching = 2
+		self.aug9mm.spread.steelsight = 1
+		self.aug9mm.spread.moving_standing = 4
+		self.aug9mm.spread.moving_crouching = 3
+		self.aug9mm.spread.moving_steelsight = 2
+		self.aug9mm.kick.standing = self.new_m4.kick.standing
+		self.aug9mm.kick.crouching = self.new_m4.kick.standing
+		self.aug9mm.kick.steelsight = self.new_m4.kick.standing
+		self.aug9mm.stats = {
+			damage = 29,
+			spread = 16,
+			recoil = 18,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.aug9mm.panic_suppression_chance = 0.0	
+	end													
 
 	if self.dp28 then --Killerwolf & Kitsune Jimmy's DP-28 
 		self.dp28.categories = {"assault_rifle"}	
@@ -11014,9 +11422,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3m203.desc_id = "bm_m203_weapon_sc_desc"
 		self.g3m203.has_description = true
 		self.g3m203.tactical_reload = 1
-		self.g3m203.AMMO_MAX = 90
+		self.g3m203.AMMO_MAX = 80
 		self.g3m203.CLIP_AMMO_MAX = 30
-		self.g3m203.AMMO_PICKUP = self:_pickup_chance(90, 2)
+		self.g3m203.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.g3m203.fire_mode_data.fire_rate = 0.1
 		self.g3m203.CAN_TOGGLE_FIREMODE = true
 		self.g3m203.auto = {}
@@ -11042,6 +11450,99 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 4,
 			reload = 11
 		}
+		--Explosive GL
+		self.g3_m203gl.spread.standing = 3
+		self.g3_m203gl.spread.crouching = 2
+		self.g3_m203gl.spread.steelsight = 1
+		self.g3_m203gl.spread.moving_standing = 4
+		self.g3_m203gl.spread.moving_crouching = 3
+		self.g3_m203gl.spread.moving_steelsight = 2
+		self.g3_m203gl.kick.standing = self.huntsman.kick.standing
+		self.g3_m203gl.kick.crouching = self.huntsman.kick.standing
+		self.g3_m203gl.kick.steelsight = self.huntsman.kick.standing
+		self.g3_m203gl.AMMO_PICKUP = {0.12, 0.38}
+		self.g3_m203gl.panic_suppression_chance = 0.0
+		self.g3_m203gl.ignore_damage_upgrades = true
+		self.g3_m203gl.AMMO_MAX = 6
+		self.g3_m203gl.stats = {
+			damage = 200,
+			spread = 21,
+			recoil = 9,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 18,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.g3_m203gl.stats_modifiers = {damage = 4}	
+		--40mm Buck GL
+		self.g3_m203buckshot.categories = {"shotgun"}
+		self.g3_m203buckshot.rays = 6
+		self.g3_m203buckshot.damage_near = 900
+		self.g3_m203buckshot.damage_far = 1800			
+		self.g3_m203buckshot.spread.standing = 3
+		self.g3_m203buckshot.spread.crouching = 2
+		self.g3_m203buckshot.spread.steelsight = 1
+		self.g3_m203buckshot.spread.moving_standing = 4
+		self.g3_m203buckshot.spread.moving_crouching = 3
+		self.g3_m203buckshot.spread.moving_steelsight = 2
+		self.g3_m203buckshot.kick.standing = self.huntsman.kick.standing
+		self.g3_m203buckshot.kick.crouching = self.huntsman.kick.standing
+		self.g3_m203buckshot.kick.steelsight = self.huntsman.kick.standing
+		self.g3_m203buckshot.AMMO_PICKUP = {0.3, 0.75}
+		self.g3_m203buckshot.panic_suppression_chance = 0.0
+		self.g3_m203buckshot.ignore_damage_upgrades = false
+		self.g3_m203buckshot.AMMO_MAX = 15
+		self.g3_m203buckshot.stats = {
+			damage = 300,
+			spread = 9,
+			recoil = 15,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 18,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}	
+		--40mm Flechette GL
+		self.g3_m203flechette.categories = {"shotgun"}
+		self.g3_m203flechette.rays = 9
+		self.g3_m203flechette.damage_near = 1100
+		self.g3_m203flechette.damage_far = 2200			
+		self.g3_m203flechette.spread.standing = 3
+		self.g3_m203flechette.spread.crouching = 2
+		self.g3_m203flechette.spread.steelsight = 1
+		self.g3_m203flechette.spread.moving_standing = 4
+		self.g3_m203flechette.spread.moving_crouching = 3
+		self.g3_m203flechette.spread.moving_steelsight = 2
+		self.g3_m203flechette.kick.standing = self.huntsman.kick.standing
+		self.g3_m203flechette.kick.crouching = self.huntsman.kick.standing
+		self.g3_m203flechette.kick.steelsight = self.huntsman.kick.standing
+		self.g3_m203flechette.AMMO_PICKUP = {0.4, 1}
+		self.g3_m203flechette.panic_suppression_chance = 0.0
+		self.g3_m203flechette.ignore_damage_upgrades = false
+		self.g3_m203flechette.AMMO_MAX = 20
+		self.g3_m203flechette.stats = {
+			damage = 200,
+			spread = 11,
+			recoil = 14,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 18,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}						
 	end
 
 	if self.hk33 then --Mira's HK33  
@@ -11113,6 +11614,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.m3 then --Silent Enforcer's M3 Grease Gun
 		self.m3.AMMO_MAX = 120
+		self.m3.tactical_reload = 1								
 		self.m3.has_description = false																							
 		self.m3.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.m3.spread.standing = 3
@@ -11138,7 +11640,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 5,
 			reload = 11
 		}
-		self.m45.panic_suppression_chance = 0.1	
+		self.m3.panic_suppression_chance = 0.1	
 	end			
 
 	if self.ks23 then --Pawcio's KS23
@@ -11172,9 +11674,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 6,
 			spread_moving = 6,
 			zoom = 3,
-			alert_size = 20,			
 			concealment = 7,
-			suppression = 20,
+			suppression = 2,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -11289,12 +11791,48 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.panic_suppression_chance = 0.1
 		end				
 
+		if self.plr16 then --Pawcio's PLR 16
+			self.plr16.tactical_reload = 1
+			self.plr16.categories = {"pistol"}
+			self.plr16.use_data.selection_index = 2
+			self.plr16.has_description = false																								
+			self.plr16.recategorize = "pistol_carbine"
+			self.plr16.AMMO_MAX = 150
+			self.plr16.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.plr16.spread.standing = 3
+			self.plr16.spread.crouching = 2
+			self.plr16.spread.steelsight = 1
+			self.plr16.spread.moving_standing = 4
+			self.plr16.spread.moving_crouching = 3
+			self.plr16.spread.moving_steelsight = 2
+			self.plr16.kick = {}
+			self.plr16.kick.standing = self.glock_17.kick.standing
+			self.plr16.kick.crouching = self.glock_17.kick.standing
+			self.plr16.kick.steelsight = self.glock_17.kick.standing
+			self.plr16.stats = {
+				damage = 35,
+				spread = 16,
+				recoil = 21,
+				spread_moving = 5,
+				zoom = 3,
+				concealment = 30,
+				suppression = 8,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.plr16.panic_suppression_chance = 0.0
+		end						
+
 		if self.x_fmg9 then --disabled because primary smgs are not supposed to have akimbos. sorry friends.
 			self.x_fmg9.use_data.selection_index = 4
 		end		
 
 		if self.vp70 then --Mira, Matthelzor, Killerwolf, and carl ruins everything's VP70M
 			self.vp70.AMMO_MAX = 150
+			self.vp70.tactical_reload = 1			
 			self.vp70.fire_mode_data.fire_rate = 0.075
 			self.vp70.single.fire_rate = 0.075			
 			self.vp70.AMMO_PICKUP = self:_pickup_chance(150, 1)
@@ -11323,6 +11861,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.x_vp70.panic_suppression_chance = 0.0
 			self.x_vp70.AMMO_MAX = 180
+			self.x_vp70.tactical_reload = 2						
 			self.x_vp70.fire_mode_data.fire_rate = 0.075
 			self.x_vp70.single.fire_rate = 0.075			
 			self.x_vp70.AMMO_PICKUP = self:_pickup_chance(180, 1)
@@ -11350,8 +11889,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.vp70.panic_suppression_chance = 0.0			
-		end						
-
+		end		
 
 		if self.scarl then --Pawcio's SCAR L
 			self.scarl.has_description = false		
@@ -11383,6 +11921,44 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.scarl.panic_suppression_chance = 0.0
+		end			
+
+
+		if self.volmer then --Alcat's HK-something Volmer
+			self.volmer.categories = {
+				"lmg",
+				"smg"
+			}
+			self.volmer.use_data.selection_index = 1			
+			self.volmer.CLIP_AMMO_MAX = 90 --this doesn't make sense mag-wise but whatever
+			self.volmer.AMMO_MAX = 225
+			self.volmer.AMMO_PICKUP = self:_pickup_chance(225, 2)
+			self.volmer.fire_mode_data.fire_rate = 0.06315789473
+			self.volmer.auto.fire_rate = 0.06315789473
+			self.volmer.spread.standing = 3
+			self.volmer.spread.crouching = 2
+			self.volmer.spread.steelsight = 1
+			self.volmer.spread.moving_standing = 4
+			self.volmer.spread.moving_crouching = 3
+			self.volmer.spread.moving_steelsight = 2
+			self.volmer.kick.standing = self.new_m4.kick.standing
+			self.volmer.kick.crouching = self.new_m4.kick.standing
+			self.volmer.kick.steelsight = self.new_m4.kick.standing
+			self.volmer.panic_suppression_chance = 0.1
+			self.volmer.stats = {
+				damage = 29,
+				spread = 15,
+				recoil = 18,
+				spread_moving = 10,
+				zoom = 3,
+				concealment = 5,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+		}
 		end	
 
 	if self.mpx then --Pawcio's MPX
@@ -11487,6 +12063,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	
 
 	if self.recce then --carl ruins everything's hk417 standalone
+		self.recce.tactical_reload = 1	
 		self.recce.has_description = true
 		self.recce.AMMO_MAX = 120
 		self.recce.AMMO_PICKUP = self:_pickup_chance(120, 2)

@@ -157,7 +157,6 @@ if not tweak_data then return end
 	tweak_data.projectiles.molotov.player_damage = 3
 	tweak_data.projectiles.molotov.burn_duration = 10
 
-	--[[
 	--Incendiary Nades, idea to make em a mollie (WIP)--
 	tweak_data.projectiles.fir_com.damage = 3
 	--tweak_data.projectiles.fir_com.curve_pow = 2
@@ -170,8 +169,7 @@ if not tweak_data then return end
 		dot_tick_period = 0.5
 	}
 	tweak_data.projectiles.fir_com.range = 75
-	tweak_data.blackmarket.projectiles.fir_com.impact_detonation = true
-	]]--
+	tweak_data.blackmarket.projectiles.fir_com.impact_detonation = false
 	
 	--Incendiary Nades--
 	tweak_data.projectiles.fir_com.damage = 60
@@ -232,7 +230,7 @@ if not tweak_data then return end
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	if difficulty_index == 8 then
-		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
+		tweak_data.interaction.corpse_alarm_pager.timer = 15
 	elseif difficulty_index == 7 then
 		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
 	else
@@ -394,11 +392,19 @@ if not tweak_data then return end
 				{"assault_rifle"}
 			}
 		}
-		if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") then
+		if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") or SystemFS:exists("assets/mod_overrides/Mosin Nagant M9130 Obrez/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"snp"})
 		end		
+
+		if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
+			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
+		end				
 		
-		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") then
+		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") 
+			or SystemFS:exists("assets/mod_overrides/AUG A3 9mm XS/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})
 		end
 	end

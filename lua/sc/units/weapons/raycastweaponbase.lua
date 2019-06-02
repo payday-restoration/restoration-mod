@@ -179,7 +179,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return self._name_id
 	end
-
+	
+	function FlameBulletBase:bullet_slotmask()
+		return managers.slot:get_mask("bullet_impact_targets")
+	end	
 
 	function RaycastWeaponBase:set_laser_enabled(state)
 		if state then

@@ -1,5 +1,9 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	Hooks:PostHook(SentryGunBase, "post_init", "sentrybase_postinit_repairsentries", function(self)
+		self._is_repairing = false
+	end)
+	
 	Hooks:PostHook(SentryGunBase, "update", "sentrybase_update_repairsentries", function(self,unit,t,dt)
 		if Network:is_server() then --only runs for host anyway
 			if self._unit:interaction() then
@@ -8,6 +12,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if self._removed then return end
 		--	if self._removed or not self:get_owner_id() then return end --kool kids only, no swat turrets allowed >:(
 
+			--[[ if afflicted by autumn, extend completion time each frame (i opted for repair cancellation instead)
+				self._repair_done_t = self._repair_done_t + dt
+			--]]
+		
 			if self._is_repairing then 
 				if self._repair_done_t <= Application:time() then
 					self:finish_repairmode()
@@ -16,6 +24,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end)
 
+	function SentryGunBase:is_repairmode()
+		return self._is_repairing and true or false
+	end
+	
 	function SentryGunBase:on_interaction(dead) --on interaction is the callback for both picking up and repairing sentries. interaction tweak data is set on death event/repair complete event.
 	--previously, player acquired 0 ammo from dead sentries. now, players must repair sentries before picking them up
 		if Network:is_server() then
@@ -144,22 +156,4 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end		
 		
 	end
-
-
-	--[[ Old notes on repair time calculation:
-
-	- repair time is calculated as a multiplier:
-	- default repair time (30s base) reduced by a multiplier of health_ratio, down to a minimum of 1% of the repair time
-	- repair time is then multiplied by the upgrade value from rail_faster_repair (0.5x as of this writing)
-	- lower bound of repair time is then applied (10s as of this writing)
-
-	local repair_done_t = math.max(tweak_data.equipments.sentry_gun.repair_time_init * (1-hp_r),tweak_data.equipments.sentry_gun.repair_time_min)
-	self._repair_time_total = repair_done_t --only used for preview of repair progress
-	self._repair_done_t = Application:time() + repair_done_t
-
-	--counts down from 1
-	--self._sim_health_init * (((self._repair_done_t - Application:time()) / self._repair_done_t))
-
-	--]]
-
 end

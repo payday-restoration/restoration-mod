@@ -8,7 +8,7 @@
   <extensions>
   	<extension name="unit_data" class="ScriptUnitData" />
     <extension name="base" class="NPCShotgunBase" >
-		<var name="name_id" value="benelli_npc" />
+		<var name="name_id" value="r870_taser_npc" />
     </extension>
   <extension name="damage" class="UnitDamage" />
   </extensions>

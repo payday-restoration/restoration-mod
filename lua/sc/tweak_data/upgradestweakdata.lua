@@ -147,13 +147,13 @@ function UpgradesTweakData:_init_pd2_values()
 		2
 	}
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		10,
-		9,
-		8,
-		7,
-		5,
-		4,
-		2
+		14,
+		13.5,
+		12.5,
+		12,
+		10.5,
+		9.5,
+		4
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -723,8 +723,8 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				
 				--Gun Nut
-				self.values.pistol.spread_index_addend = {1}
-				self.values.pistol.fire_rate_multiplier = {1.5}
+				self.values.pistol.spread_index_addend = {1}			
+				self.values.pistol.fire_rate_multiplier = {1.15}
 
 				--Over Pressurized/Gunfighter (Formerly Akimbo)
 				self.values.pistol.reload_speed_multiplier = {1.25, 1.5}
@@ -733,10 +733,24 @@ function UpgradesTweakData:_init_pd2_values()
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
 				self.values.akimbo.extra_ammo_multiplier = {1.25, 1.5}
 				self.values.akimbo.recoil_multiplier = {
-					1.2,
-					1.15,
-					1.1
+					1.4,
+					1.3,
+					1.2
 				}
+				self.values.akimbo.recoil_index_addend = {
+					-10,
+					-8,
+					-5,
+					-3,
+					-1
+				}
+				self.values.akimbo.spread_index_addend = {
+					-4,
+					-3,
+					-2,
+					-1,
+					0
+				}				
 
 				--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
@@ -773,7 +787,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Up You Go
 				self.values.temporary.revived_damage_resist = {{0.7, 10}}
-				self.values.player.revived_health_regain = {1.4}
+				self.values.player.revived_health_regain = {1.4, 2.2}
 				
 				--Swan Song
 				self.values.temporary.berserker_damage_multiplier = { {1, 3}, {1, 9} }
@@ -888,6 +902,28 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.temporary.melee_life_leech = {
 		{0.08, 08}
 	}
+	
+	self.melee_to_hot_data = {
+		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
+		works_with_armor_kit = true,
+		tick_time = 1.25,
+		total_ticks = 8,
+		max_stacks = 5,
+		stacking_cooldown = 0.0,
+		add_stack_sources = {
+			bullet = false,
+			explosion = false,
+			melee = true,
+			taser_tased = false,
+			poison = false,
+			fire = false,
+			projectile = false,
+			swat_van = false,
+			sentry_gun = false,
+			civilian = false
+		}
+	}
+
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
@@ -906,11 +942,15 @@ function UpgradesTweakData:_init_pd2_values()
    	}
 	self.values.player.passive_health_regen = {0.025}
 	self.values.player.passive_health_multiplier = {
+		1.05,
 		1.1,
+		1.15,
 		1.2,
 		1.25,
 		1.3,
+		1.35,
 		1.4,
+		1.45,
 		1.5
 	}
 	self.values.temporary.dmg_dampener_close_contact = {
@@ -918,11 +958,11 @@ function UpgradesTweakData:_init_pd2_values()
 		{0.85, 7},
 		{0.8, 7}
 	}
-	self.max_melee_weapon_dmg_mul_stacks = 4
-	self.values.melee.stacking_hit_expire_t = {7}
+	self.max_melee_weapon_dmg_mul_stacks = 5
+	self.values.melee.stacking_hit_expire_t = {10}
 	self.values.melee.stacking_hit_damage_multiplier = {
-		0.1,
-		0.2
+		0.08,
+		0.16
 	}
 	self.values.dmg_dampener_outnumbered_strong = {
 		{0.95, 7}
@@ -1086,9 +1126,13 @@ function UpgradesTweakData:_init_pd2_values()
 	--alcoholism is no joke
 	--stoic
 	self.values.player.damage_control_passive = {{
-		75,
+		25,
 		6.25
 	}}
+	self.values.player.damage_control_auto_shrug = {
+		6,
+		4
+	}	
 	
 	--yoooooooooooooooooo--
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {
@@ -1141,7 +1185,86 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
-        self.definitions.player_detection_risk_add_movement_speed_1 = {
+	self.definitions.player_revived_health_regain_1 = {
+		name_id = "menu_revived_health_regain",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "revived_health_regain",
+			category = "player"
+		}
+	}
+	self.definitions.player_revived_health_regain_2 = {
+		name_id = "menu_revived_health_regain",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "revived_health_regain",
+			category = "player"
+		}
+	}		
+	self.definitions.player_damage_control_auto_shrug_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_control_auto_shrug",
+			category = "player"
+		}
+	}
+	self.definitions.player_damage_control_auto_shrug_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "damage_control_auto_shrug",
+			category = "player"
+		}
+	}	
+	self.definitions.akimbo_spread_index_addend_1 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}	
+	self.definitions.akimbo_spread_index_addend_2 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}	
+	self.definitions.akimbo_spread_index_addend_3 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_spread_index_addend_4 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 4,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_spread_index_addend_5 = {
+		name_id = "menu_pistol_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 5,
+			upgrade = "spread_index_addend",
+			category = "akimbo"
+		}
+	}		
+    self.definitions.player_detection_risk_add_movement_speed_1 = {
             category = "feature",
             name_id = "menu_player_detection_risk_add_movement_speed",
             upgrade = {
@@ -1382,6 +1505,42 @@ function UpgradesTweakData:_player_definitions()
 			category = "player",
 			upgrade = "passive_health_multiplier",
 			value = 6
+		}
+	}	
+	self.definitions.player_passive_health_multiplier_7 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 7
+		}
+	}		
+	self.definitions.player_passive_health_multiplier_8 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 8
+		}
+	}	
+	self.definitions.player_passive_health_multiplier_9 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 9
+		}
+	}
+	self.definitions.player_passive_health_multiplier_10 = {
+		category = "feature",
+		name_id = "menu_player_health_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "passive_health_multiplier",
+			value = 10
 		}
 	}	
 	self.definitions.temporary_damage_speed_multiplier_1 = {

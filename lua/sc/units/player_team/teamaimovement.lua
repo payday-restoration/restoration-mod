@@ -2,10 +2,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	TeamAIMovement.update = TeamAIMovement.super.update
 	
-	function TeamAIMovement:on_jump_SPOOCed(enemy_unit)
+	function TeamAIMovement:on_jump_SPOOCed(enemy_unit)		
 		if self._unit:character_damage()._god_mode then
 			return
 		end
+		
 		self._unit:brain():set_logic("surrender")
 		self._unit:network():send("arrested")
 		self._unit:character_damage():on_arrested()
@@ -13,12 +14,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return true
 	end	
 	
-	function TeamAIMovement:on_SPOOCed(enemy_unit)
+	function TeamAIMovement:on_SPOOCed(enemy_unit)			
 		self._unit:character_damage():on_incapacitated()
 
 		return true
 	end	
-		
+			
 	local old_throw = TeamAIMovement.throw_bag
 	function TeamAIMovement:throw_bag(...)
 		local data = self._ext_brain._logic_data

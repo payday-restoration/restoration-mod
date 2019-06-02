@@ -3,7 +3,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="9.0" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 	   <mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
 			<options merge_mode="script_merge"/>
@@ -162,6 +162,12 @@
 		<hook file="sc/network/handlers/unitnetworkhandler.lua" source_file="lib/network/handlers/unitnetworkhandler"/>
 		<hook file="sc/units/equipment/sentrygunbase.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbase"/>
 		<hook file="sc/managers/experiencemanager.lua" source_file="lib/managers/experiencemanager"/>
+		<hook file="sc/units/civilians/civilianlogicsurrender.lua" source_file="lib/units/civilians/logics/civilianlogicsurrender"/>
+		<hook file="sc/units/equipment/sentrygunbrain.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbrain"/>
+		<hook file="sc/units/weapons/molotovgrenade.lua" source_file="lib/units/weapons/grenades/molotovgrenade"/>
+		<hook file="sc/managers/trademanager.lua" source_file="lib/managers/trademanager"/>
+		<hook file="sc/network/base/networkpeer.lua" source_file="lib/network/base/networkpeer"/>
+		<hook file="sc/tweak_data/attentiontweakdata.lua" source_file="lib/tweak_data/attentiontweakdata"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

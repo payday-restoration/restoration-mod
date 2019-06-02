@@ -2,6 +2,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	function CopDamage:damage_fire(attack_data)
 		self._attack_data = attack_data
+		
+		if attack_data.attacker_unit ~= managers.player:player_unit() then
+			return
+		end		
+		
 		if self._dead or self._invulnerable then
 			return
 		end
@@ -37,6 +42,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				damage = self._health * 10
 			end
 		end
+		
+		if self._unit:base()._tweak_table == "autumn" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end
+		
+		if self._unit:base()._tweak_table == "spooc_titan" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end		
+		
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, 0, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
@@ -90,6 +112,30 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				head_shot = head,
 				is_molotov = attack_data.is_molotov
 			}
+			
+			if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("flamethrower") then
+			else
+				if data.name == "boom" then
+					if data.head_shot then
+						self._unit:damage():run_sequence_simple("grenadier_glass_break")
+					end
+				end				
+				
+				if data.head_shot then
+					self:_spawn_head_gadget({
+						position = attack_data.col_ray.body:position(),
+						rotation = attack_data.col_ray.body:rotation(),
+						dir = attack_data.col_ray.ray
+					})
+				end
+			end
+
+			if data.name == "swat_titan" then
+				if not data.head_shot then
+					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+				end
+			end				
+								
 			if not attack_data.is_fire_dot_damage or data.is_molotov then
 				managers.statistics:killed_by_anyone(data)
 			end
@@ -225,10 +271,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit then
 			dodge_chance = 0
 		end
+		
 		if roll <= dodge_chance and self._char_tweak.damage.bullet_dodge_chance then
 			self._unit:sound():play("pickup_fak_skill", nil, nil)
 			return
 		end
+		
 		damage = damage * (self._marked_dmg_mul or 1)
 		if self._marked_dmg_mul and self._marked_dmg_dist_mul then
 			local dst = mvector3.distance(attack_data.origin, self._unit:position())
@@ -271,6 +319,37 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			local mul = self._char_tweak.headshot_dmg_mul * attack_data.add_head_shot_mul + 1
 			damage = damage * mul
 		end
+		
+		if self._unit:base()._tweak_table == "autumn" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end		
+
+			--Just so he's not instagibbed by bots
+			if attack_data.attacker_unit:in_slot(16) then
+				damage = damage * 0.1
+			end			
+		end
+				
+		if self._unit:base()._tweak_table == "spooc_titan" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end			
+		
+		if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
+			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "saw")
+		end
+		
+		if attack_data.attacker_unit:base().sentry_gun then
+			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "sentry")
+		end		
+		
+				
 		damage = self:_apply_damage_reduction(damage)
 		attack_data.raw_damage = damage
 		attack_data.headshot = head
@@ -329,7 +408,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			
 			if data.head_shot and data.name == "boom" then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
-			end						
+			end			
+
+			if data.name == "swat_titan" then
+				if not data.head_shot then
+					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+				end
+			end			
 
 			if managers.groupai:state():all_criminals()[attack_data.attacker_unit:key()] then
 				managers.statistics:killed_by_anyone(data)
@@ -524,6 +609,21 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				name_id = attack_data.name_id,
 				variant = attack_data.variant
 			}
+
+			if data.name == "boom" then
+				if data.head_shot then
+					self._unit:damage():run_sequence_simple("grenadier_glass_break")
+				end
+			end				
+			
+			if data.head_shot then
+				self:_spawn_head_gadget({
+					position = attack_data.col_ray.body:position(),
+					rotation = attack_data.col_ray.body:rotation(),
+					dir = attack_data.col_ray.ray
+				})
+			end			
+			
 			managers.statistics:killed_by_anyone(data)
 			if attack_data.attacker_unit == managers.player:player_unit() then
 				self:_comment_death(attack_data.attacker_unit, self._unit)
@@ -705,9 +805,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:contour():remove("medic_show", false)
 			self._unit:contour():remove("medic_buff", false)
 		end
-		if self._unit:base()._tweak_table == "swat_titan" then
-			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
-		end
 		if self._unit:base()._tweak_table == "spooc" then
 			self._unit:damage():run_sequence_simple("kill_spook_lights")
 		end 
@@ -718,54 +815,55 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end 		 
 		
-		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan")  then
+		if char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
+			managers.enemy:end_autumn_blackout()
+		end
+		
+		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		end		
-		
-	    if self._unit:base():has_tag("sniper") then
-		    self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x01a_any_3p", true)
 		--big fuck off death line unit check	
 		--blues and omnia shield
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield") then
-	        self._unit:sound_source(source):stop()
+		if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield") then	        
+			self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
-		--nypd blues	
-		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then
-	        self._unit:sound_source(source):stop()
+		--nypd and lapd blues	
+		elseif self._unit:name() == Idstring("units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1") or self._unit:name() == Idstring("units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then	        
+			self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		--welcome to city swat hell lol
 		--scripted softcap dude with no mask, murky elite shotgunner and elite reapers
-		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump") then
-	        self._unit:sound_source(source):stop()
+		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump") then	        
+			self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, true)	
 		--lots of murkies	
-		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4") or self._unit:name() == Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1") or self._unit:name() == Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2") or self._unit:name() == Idstring("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2") then
-	       self._unit:sound_source(source):stop()			
+		elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4") or self._unit:name() == Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1") or self._unit:name() == Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2") or self._unit:name() == Idstring("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1") or self._unit:name() == Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2") then	       			
+		   self._unit:sound_source(source):stop()
 		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_3, nil, true)		
 		--omnia	
-		elseif self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3") then
-	       self._unit:sound_source(source):stop()
+		elseif self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3") then	       
+		   self._unit:sound_source(source):stop()
 		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)		
 		--fbi ready teams
-		elseif self._unit:name() == Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1") or self._unit:name() == Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2") then
-	       self._unit:sound_source(source):stop()
+		elseif self._unit:name() == Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1") or self._unit:name() == Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2") then	       
+		   self._unit:sound_source(source):stop()
 		   self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)	
 		--gensec
-	    elseif self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3") then	
-	        self._unit:sound_source(source):stop()	
-		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
+	    elseif self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3") then		        	
+		    self._unit:sound_source(source):stop()
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
 		--zeal zombies
-		elseif self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3") then
-	        self._unit:sound_source(source):stop()		
-		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, true)			
+		elseif self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3") then	        		
+		    self._unit:sound_source(source):stop()
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, true)			
 		--gensec zombies
-	    elseif  self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3") then	
-	        self._unit:sound_source(source):stop()	
+	    elseif  self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2") or self._unit:name() == Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3") then		  
+			self._unit:sound_source(source):stop()
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_4, nil, true)
-		--zeals
-		elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3") then
-	        self._unit:sound_source(source):stop()		
-		    self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)		          		
+		--zeal
+		elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3") then		
+		    self._unit:sound_source(source):stop()
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)		          		
 		elseif self._unit:base():has_tag("city_swat") then
 		    self._unit:sound():say("", true)
 		else
@@ -835,7 +933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 			self._unit:movement():action_request(action_data)
 		end
-		managers.modifiers:run_func("OnEnemyHealed", self._unit, unit)
+
 		managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		return true
 	end
@@ -864,6 +962,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 		
 	function CopDamage:damage_explosion(attack_data)
+		if attack_data.attacker_unit ~= managers.player:player_unit() then
+			return
+		end
+	
 		if self._dead or self._invulnerable then
 			return
 		end
@@ -882,6 +984,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				managers.hud:on_hit_confirmed()
 			end
 		end
+		
+		if self._unit:base()._tweak_table == "boom" then
+			self._unit:damage():run_sequence_simple("grenadier_glass_break")
+		end				
+
+		if self._unit:base()._tweak_table == "autumn" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end		
+		
+		if self._unit:base()._tweak_table == "spooc_titan" then
+			local recloak_roll = math.rand(1, 100)
+			local chance_recloak = 75	
+			if recloak_roll <= chance_recloak then
+				self._unit:damage():run_sequence_simple("cloak_engaged")
+			end			
+		end			
+		
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, 0, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
@@ -940,6 +1063,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				variant = attack_data.variant,
 				head_shot = head
 			}
+							
+			if data.name == "swat_titan" then
+				if not data.head_shot then
+					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, nil, 7.5)
+				end
+			end				
+			
 			managers.statistics:killed_by_anyone(data)
 			local attacker_unit = attack_data.attacker_unit
 			if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
@@ -1191,7 +1321,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	Hooks:PostHook(CopDamage, "_on_death", "SCRemoveJoker", function(self)
-		
+
+		if self._char_tweak and self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
+			managers.enemy:end_autumn_blackout()
+		end
+
 		if self._unit:unit_data().is_convert and SC._converts then
 			for i, unit in pairs(SC._converts) do
 				if unit == self._unit then

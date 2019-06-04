@@ -202,7 +202,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.silent_priority_shout = "f37"
 		self.security.dodge = presets.dodge.poor
 		self.security.deathguard = false
-		self.security.chatter = presets.enemy_chatter.cop
+		self.security.chatter = presets.enemy_chatter.guard
 		self.security.has_alarm_pager = true
 		self.security.melee_weapon = nil
 		self.security.steal_loot = nil
@@ -271,7 +271,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.silent_priority_shout = "f37"
 		self.gensec.dodge = presets.dodge.athletic
 		self.gensec.deathguard = false
-		self.gensec.chatter = presets.enemy_chatter.cop
+		self.gensec.chatter = presets.enemy_chatter.guard
 		self.gensec.has_alarm_pager = true
 		self.gensec.melee_weapon = "baton"
 		self.gensec.steal_loot = nil
@@ -539,6 +539,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 		self.medic_summers.is_special = true
 		self.medic_summers.do_summers_heal = true
+		self.medic_summers.follower = true
 		table.insert(self._enemy_list, "medic_summers")
 	end
 
@@ -2245,6 +2246,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
 		self.summers.steal_loot = nil
 		self.summers.is_special = true
+	    self.summers.leader = {max_nr_followers = 3}
 		table.insert(self._enemy_list, "summers")
 	end
 	
@@ -2426,6 +2428,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.spawn_sound_event = nil
 		self.taser_summers.custom_voicework = nil
 		self.taser_summers.is_special = true	
+		self.taser_summers.follower = true
 		table.insert(self._enemy_list, "taser_summers")
 		
 		self.taser_titan = deep_clone(self.taser)
@@ -2558,6 +2561,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.steal_loot = nil
 		self.boom_summers.ecm_vulnerability = 0
 		self.boom_summers.ecm_hurts = {}		
+		self.boom_summers.follower = true
 		table.insert(self._enemy_list, "boom_summers")		
 		self.boom_titan = deep_clone(self.boom)
 		table.insert(self._enemy_list, "boom_titan")		
@@ -3700,6 +3704,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.submission_intimidate = 15
 		presets.base.speech_prefix = "po"
 		presets.base.speech_prefix_count = 1
+	    presets.base.follower = false
+	    presets.base.leader = false
 		presets.base.rescue_hostages = true
 		presets.base.use_radio = self._default_chatter
 		presets.base.dodge = nil
@@ -3707,7 +3713,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.calls_in = true
 		presets.base.ignore_medic_revive_animation = false
 		presets.base.spotlight_important = false
-		presets.base.follower = true
 		presets.base.experience = {}
 		presets.base.experience.cable_tie = "tie_swat"
 		presets.base.damage = {}
@@ -11479,6 +11484,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		presets.enemy_chatter = {
 			no_chatter = {},
+			guard = {
+				aggressive = true,
+				--retreat = true,
+				contact = true,
+				clear = true,
+				clear_whisper = true,
+				--go_go = true,
+				---push = true,
+				reload = true,
+				look_for_angle = true,
+				ecm = true,
+				saw = true,
+				trip_mines = true,
+				sentry = true
+				--ready = true,
+				--smoke = true,
+				--flash_grenade = true,
+				--follow_me = true,
+				--deathguard = true,
+				--open_fire = true,
+				--suppress = true
+			},
 			cop = {
 				aggressive = true,
 				retreat = true,

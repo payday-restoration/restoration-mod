@@ -84,6 +84,132 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		managers.enemy:add_delayed_clbk("_radio_chatter_clbk", self._radio_clbk, Application:time() + 30 + math.random(0, 20))
 	end	
+	
+	function GroupAIStateBase:find_followers_to_unit(leader_key, leader_data)
+	local leader_u_data = self._police[leader_key]
+	if not leader_u_data then
+		return
+	end
+
+	leader_u_data.followers = leader_u_data.followers or {}
+	local followers = leader_u_data.followers
+	local nr_followers = #followers
+	local max_nr_followers = leader_data.max_nr_followers
+	if nr_followers >= max_nr_followers then
+		return
+	end
+
+	local wanted_nr_new_followers = max_nr_followers - nr_followers
+	local leader_unit = leader_u_data.unit
+	local leader_nav_seg = leader_u_data.tracker:nav_segment()
+	local objective = {
+		type = "follow",
+		follow_unit = leader_unit,
+		scan = true,
+		nav_seg = leader_nav_seg,
+		stance = "cbt",
+		distance = 600
+	}
+	local candidates = {}
+	local (for generator), (for state), (for control) = pairs(self._police)
+	do
+		do break end
+		if u_data.assigned_area and not u_data.follower and u_data.char_tweak.follower and u_data.tracker:nav_segment() == leader_nav_seg and u_data.unit:brain():is_available_for_assignment(objective) then
+			table.insert(followers, u_key)
+			u_data.follower = leader_key
+			local new_follow_objective = clone(objective)
+			new_follow_objective.fail_clbk = callback(self, self, "clbk_follow_objective_failed", {
+				leader_u_data = leader_u_data,
+				follower_unit = u_data.unit
+			})
+			u_data.unit:brain():set_objective(new_follow_objective)
+			if #candidates == wanted_nr_new_followers then
+			end
+
+	end
+
+	else
+	end
+
+    end
+    
+    function GroupAIStateBase:chk_has_followers(leader_key)
+    	local leader_u_data = self._police[leader_key]
+    	if leader_u_data and next(leader_u_data.followers) then
+    		return true
+    	end
+    
+    end
+    
+    function GroupAIStateBase:are_followers_ready(leader_key)
+    	local leader_u_data = self._police[leader_key]
+    	if not leader_u_data or not leader_u_data.followers then
+    		return true
+    	end
+    
+    	do
+    		local (for generator), (for state), (for control) = ipairs(leader_u_data.followers)
+    		do
+    			do break end
+    			local follower_u_data = self._police[follower_key]
+    			local objective = follower_u_data.unit:brain():objective()
+    			if objective and not objective.in_place then
+    				return
+    			end
+    
+    		end
+    
+    	end
+    
+    	return true
+    end
+    
+    function GroupAIStateBase:dismiss_followers(leader_key)
+    	local leader_u_data = self._police[leader_key]
+    	if leader_u_data.followers then
+    		do
+    			local (for generator), (for state), (for control) = ipairs(leader_u_data.followers)
+    			do
+    				do break end
+    				local follower_u_data = self._police[follower_key]
+    				local follower_objective = follower_u_data.unit:brain():objective()
+    				if follower_u_data then
+    					follower_u_data.follower = nil
+    				end
+    
+    				self:on_objective_complete(follower_u_data.unit, follower_objective)
+    			end
+    
+    		end
+    
+    		leader_u_data.followers = nil
+    	end
+    
+    end
+    
+    function GroupAIStateBase:clbk_follow_objective_failed(data)
+    	local leader_u_data = data.leader_u_data
+    	local follower_unit = data.follower_unit
+    	local follower_key = follower_unit:key()
+    	do
+    		local (for generator), (for state), (for control) = ipairs(leader_u_data.followers)
+    		do
+    			do break end
+    			if _follower_key == follower_key then
+    				table.remove(leader_u_data.followers, i)
+    		end
+    
+    		else
+    		end
+    
+    	end
+    
+    	local follower_u_data = self._police[follower_key]
+    	if follower_u_data then
+    		follower_u_data.follower = nil
+    	end
+    
+    end
 
 	function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 		local nr_players = 0

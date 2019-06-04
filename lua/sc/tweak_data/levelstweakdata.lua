@@ -43,6 +43,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd
+		self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		
 		self.brb.ai_group_type = nypd
 		
 		self.red2.ai_group_type = nypd
@@ -66,7 +68,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--LAPD--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd"}
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd"}		

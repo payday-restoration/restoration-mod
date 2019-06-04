@@ -62,7 +62,6 @@ if not _G.restoration then
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
-		"welcome_to_the_jungle_2", --big oil day 2
 		"crojob2", --bomb dockyard
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock

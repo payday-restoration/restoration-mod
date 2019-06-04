@@ -1190,7 +1190,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.no_retreat = true
 		self.gangster.weapon_voice = "3"
 		self.gangster.experience.cable_tie = "tie_swat"
-		if job == "nightclub" or job == "short2_stage1" or job == "jolly" then
+		if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 			self.gangster.speech_prefix_p1 = "rt"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
@@ -2266,7 +2266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.damage.fire_damage_mul = 0.65
 		self.autumn.flammable = false
 		self.autumn.damage.explosion_damage_mul = 0.15
-		self.autumn.damage.bullet_dodge_chance = 50
+		self.autumn.damage.bullet_dodge_chance = 40
 		self.autumn.move_speed = presets.move_speed.lightning
 		self.autumn.no_retreat = true
 		self.autumn.no_arrest = true
@@ -3368,8 +3368,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						explode = 0.02
+						light = 0.995,
+						explode = 0.005
 					}
 				}
 		}
@@ -3390,8 +3390,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						explode = 0.02
+						light = 0.995,
+						explode = 0.005
 					}
 				}
 		}	
@@ -3400,8 +3400,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						moderate = 0.02
+						light = 0.995,
+						moderate = 0.005
 					}
 				}
 		}		

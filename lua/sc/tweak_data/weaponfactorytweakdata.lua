@@ -42555,7 +42555,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_s_m4_prs.stats = { 
 					value = 2,
 					spread = 2,
-					recoil = 1,
+					recoil = -1,
 					spread_moving = -3,
 					concealment = -2
 				}			

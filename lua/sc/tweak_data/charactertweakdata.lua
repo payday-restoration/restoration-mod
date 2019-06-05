@@ -539,7 +539,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 		self.medic_summers.is_special = true
 		self.medic_summers.do_summers_heal = true
-		self.medic_summers.follower = true
 		table.insert(self._enemy_list, "medic_summers")
 	end
 
@@ -2246,7 +2245,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
 		self.summers.steal_loot = nil
 		self.summers.is_special = true
-	    self.summers.leader = {max_nr_followers = 3}
 		table.insert(self._enemy_list, "summers")
 	end
 	
@@ -2428,7 +2426,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.spawn_sound_event = nil
 		self.taser_summers.custom_voicework = nil
 		self.taser_summers.is_special = true	
-		self.taser_summers.follower = true
 		table.insert(self._enemy_list, "taser_summers")
 		
 		self.taser_titan = deep_clone(self.taser)
@@ -2561,7 +2558,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.steal_loot = nil
 		self.boom_summers.ecm_vulnerability = 0
 		self.boom_summers.ecm_hurts = {}		
-		self.boom_summers.follower = true
 		table.insert(self._enemy_list, "boom_summers")		
 		self.boom_titan = deep_clone(self.boom)
 		table.insert(self._enemy_list, "boom_titan")		
@@ -3704,8 +3700,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.submission_intimidate = 15
 		presets.base.speech_prefix = "po"
 		presets.base.speech_prefix_count = 1
-	    presets.base.follower = false
-	    presets.base.leader = false
+	    presets.base.follower = true
 		presets.base.rescue_hostages = true
 		presets.base.use_radio = self._default_chatter
 		presets.base.dodge = nil

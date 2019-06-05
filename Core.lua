@@ -66,6 +66,7 @@ if not _G.restoration then
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
+		"watchdogs_2", --watch dogs 2
 		--custom heists		
 		"office_strike", --office strike
 		"firestarter_3_res" --firestarter day 3 res edit version

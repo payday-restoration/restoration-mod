@@ -193,7 +193,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerDamage:damage_explosion(attack_data,...)
 		local attacker_unit = attack_data and attack_data.attacker_unit
 		if attacker_unit then
-			if (attacker_unit:movement():team().id == self._unit:movement():team().id) then 
+			if attacker_unit:movement():team() == self._unit:movement():team() then 
 				return
 			end
 		end

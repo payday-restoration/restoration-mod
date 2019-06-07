@@ -190,15 +190,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 	
 	local orig_dmg_xpl = PlayerDamage.damage_explosion
-	function PlayerDamage:damage_explosion(attack_data,...)
-		local attacker_unit = attack_data and attack_data.attacker_unit
-		if attacker_unit then
-			if attacker_unit:movement():team() == self._unit:movement():team() then 
-				return
-			end
-		end
-		return orig_dmg_xpl(self,attack_data,...)
-	end	
+    function PlayerDamage:damage_explosion(attack_data,...)
+        local attacker_unit = attack_data and attack_data.attacker_unit
+        if attacker_unit then
+            log("RES DEBUG STUFF: attacker team id is [" .. tostring(attacker_unit:movement():team().id) .. "], own team id is [" .. tostring(self._unit:movement():team().id) .. "]")
+            if (attacker_unit:movement():team().id == self._unit:movement():team().id) or (self._unit == attacker_unit) then 
+                return
+            end
+        end
+        return orig_dmg_xpl(self,attack_data,...)
+    end 
 	
 	--Lets you heal with full HP--
 	function PlayerDamage.full_revives(self)

@@ -94,9 +94,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.enemy_chatter.reload = {
 			radius = 700,
-			max_nr = 20,
+			max_nr = 5,
 			duration = {2, 4},
-			interval = {0.75, 1.5},
+			interval = {2.0, 10.0},
 			group_min = 0,
 			queue = "rrl"
 		}

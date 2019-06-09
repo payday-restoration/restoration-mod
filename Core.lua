@@ -55,6 +55,7 @@ if not _G.restoration then
 		--custom heists
 		"hardware_store", --hes fucking awful on this heist pdc why did you think it was ok
 		"office_strike",
+		"spa_CD",		
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
 		"skmc_ovengrill",
@@ -67,6 +68,7 @@ if not _G.restoration then
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
+		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"office_strike", --office strike
 		"firestarter_3_res" --firestarter day 3 res edit version
@@ -138,6 +140,8 @@ if not _G.restoration then
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
 		"skmc_ovengrill",
+		"spa_CD",		
+		"wwh_CD",		
 		"street" --whurr's hs edit
 	}	
 	--Meant to be used for heists that use custom suits, since armor clips really badly with them

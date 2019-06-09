@@ -5786,6 +5786,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.winchester1874.has_description = true
 		self.winchester1874.desc_id = "bm_ap_weapon_sc_desc"
 		self.winchester1874.AMMO_MAX = 40
+		self.winchester1874.CLIP_AMMO_MAX = 12
 		self.winchester1874.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.winchester1874.FIRE_MODE = "single"
 		self.winchester1874.fire_mode_data = {}
@@ -6325,8 +6326,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.china.desc_id = "bm_40mm_weapon_sc_desc"
 		self.china.has_description = true
-		self.china.fire_mode_data.fire_rate = 2
-		self.china.single.fire_rate = 2
+		self.china.fire_mode_data.fire_rate = 1.5
+		self.china.single.fire_rate = 1.5
 		self.china.AMMO_MAX = 6
 		self.china.spread.standing = 3
 		self.china.spread.crouching = 2
@@ -11653,8 +11654,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.damage_near = 1500
 		self.ks23.damage_far = 1500
 		self.ks23.tactical_reload = 1		
-		self.ks23.fire_mode_data.fire_rate = 2
-		self.ks23.single.fire_rate = 2
+		self.ks23.fire_mode_data.fire_rate = 1.5
+		self.ks23.single.fire_rate = 1.5
 		self.ks23.rays = 9
 		self.ks23.AMMO_MAX = 16
 		self.ks23.CLIP_AMMO_MAX = 3		

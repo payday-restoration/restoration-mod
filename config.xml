@@ -3,9 +3,12 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="9.5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.5.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 	   <mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
+			<options merge_mode="script_merge"/>
+		</mod>
+	   <mod file="post_processor.xml" type="xml" target_file="core/shaders/post_processor" target_type="post_processor">
 			<options merge_mode="script_merge"/>
 	   </mod>
 	</ScriptMods>	

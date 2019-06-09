@@ -12,7 +12,7 @@ RestorationCoreHooks:Post(HUDObjectives, "init", function(self)
 	hide_shit(objectives_panel:child("icon_objectivebox"))
 	hide_shit(self._bg_box)
 	
-	local t = "guis/textures/ammocounter"
+	local t = "guis/textures/restoration/objective"
 	local objectives_pad_panel = objectives_panel:panel({name = "objectives_pad_panel", h = 64, w = 200})
 	objectives_pad_panel:bitmap({name = "objective_start", texture = t, texture_rect = {0, 0, 13, 64}, layer = 0})
 	local objective_mid = objectives_pad_panel:bitmap({name = "objective_mid", x = objectives_pad_panel:h(), texture_rect = {19, 0, 33, 64}, layer = 0, texture = t})

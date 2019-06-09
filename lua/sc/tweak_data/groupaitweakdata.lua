@@ -94,9 +94,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.enemy_chatter.reload = {
 			radius = 700,
-			max_nr = 20,
+			max_nr = 5,
 			duration = {2, 4},
-			interval = {0.75, 1.5},
+			interval = {2.0, 10.0},
 			group_min = 0,
 			queue = "rrl"
 		}
@@ -7563,7 +7563,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					{
 						unit = "medic_M4",
-						freq = 0.8,
+						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
@@ -7598,7 +7598,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					{
 						unit = "medic_M4",
-						freq = 0.8,
+						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
@@ -7675,7 +7675,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},						
 					{
 						unit = "medic_M4",
-						freq = 0.8,
+						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
@@ -7711,7 +7711,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},						
 					{
 						unit = "medic_M4",
-						freq = 0.8,
+						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
@@ -7791,7 +7791,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					{
 						unit = "medic_M4",
-						freq = 0.8,
+						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
@@ -7834,7 +7834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					{
 						unit = "medic_M4",
-						freq = 0.8,
+						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_swat_rifle,
@@ -7879,7 +7879,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_tank",
 						freq = 1,
 						amount_min = 1,
-						amount_max = 2,
+						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3
 					},
@@ -7908,7 +7908,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_tank",
 						freq = 1,
 						amount_min = 1,
-						amount_max = 2,
+						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3
 					},

@@ -202,7 +202,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.silent_priority_shout = "f37"
 		self.security.dodge = presets.dodge.poor
 		self.security.deathguard = false
-		self.security.chatter = presets.enemy_chatter.cop
+		self.security.chatter = presets.enemy_chatter.guard
 		self.security.has_alarm_pager = true
 		self.security.melee_weapon = nil
 		self.security.steal_loot = nil
@@ -271,7 +271,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.silent_priority_shout = "f37"
 		self.gensec.dodge = presets.dodge.athletic
 		self.gensec.deathguard = false
-		self.gensec.chatter = presets.enemy_chatter.cop
+		self.gensec.chatter = presets.enemy_chatter.guard
 		self.gensec.has_alarm_pager = true
 		self.gensec.melee_weapon = "baton"
 		self.gensec.steal_loot = nil
@@ -1189,7 +1189,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.no_retreat = true
 		self.gangster.weapon_voice = "3"
 		self.gangster.experience.cable_tie = "tie_swat"
-		if job == "nightclub" or job == "short2_stage1" or job == "jolly" then
+		if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 			self.gangster.speech_prefix_p1 = "rt"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
@@ -2264,7 +2264,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.damage.fire_damage_mul = 0.65
 		self.autumn.flammable = false
 		self.autumn.damage.explosion_damage_mul = 0.15
-		self.autumn.damage.bullet_dodge_chance = 50
+		self.autumn.damage.bullet_dodge_chance = 40
 		self.autumn.move_speed = presets.move_speed.lightning
 		self.autumn.no_retreat = true
 		self.autumn.no_arrest = true
@@ -3364,8 +3364,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						explode = 0.02
+						light = 0.995,
+						explode = 0.005
 					}
 				}
 		}
@@ -3386,8 +3386,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						explode = 0.02
+						light = 0.995,
+						explode = 0.005
 					}
 				}
 		}	
@@ -3396,8 +3396,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						moderate = 0.02
+						light = 0.995,
+						moderate = 0.005
 					}
 				}
 		}		
@@ -3700,6 +3700,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.submission_intimidate = 15
 		presets.base.speech_prefix = "po"
 		presets.base.speech_prefix_count = 1
+	    presets.base.follower = true
 		presets.base.rescue_hostages = true
 		presets.base.use_radio = self._default_chatter
 		presets.base.dodge = nil
@@ -3707,7 +3708,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.calls_in = true
 		presets.base.ignore_medic_revive_animation = false
 		presets.base.spotlight_important = false
-		presets.base.follower = true
 		presets.base.experience = {}
 		presets.base.experience.cable_tie = "tie_swat"
 		presets.base.damage = {}
@@ -11479,6 +11479,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		presets.enemy_chatter = {
 			no_chatter = {},
+			guard = {
+				aggressive = true,
+				--retreat = true,
+				contact = true,
+				clear = true,
+				clear_whisper = true,
+				--go_go = true,
+				---push = true,
+				reload = true,
+				look_for_angle = true,
+				ecm = true,
+				saw = true,
+				trip_mines = true,
+				sentry = true
+				--ready = true,
+				--smoke = true,
+				--flash_grenade = true,
+				--follow_me = true,
+				--deathguard = true,
+				--open_fire = true,
+				--suppress = true
+			},
 			cop = {
 				aggressive = true,
 				retreat = true,

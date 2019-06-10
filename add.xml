@@ -1806,13 +1806,6 @@
 	<model path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"	force="false"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_contour" force="false"/>	
-
-	<!--NYPD FBI Cap-->
-	<unit path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" load="true"/>	
-	<object path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" force="false"/>
-	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" force="false"/>
-	<model path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap"	force="true"/>
-	<material_config path="units/pd2_mod_nypd/characters/ene_acc_fbi_cap/ene_acc_fbi_cap" force="false"/>	
 	
 	<!--shared_textures crap-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
@@ -2094,8 +2087,7 @@
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_df" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />
-    <!--skull acc
-    <sequence_manager path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>-->
+    <sequence_manager path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
     <object path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
 	<model path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>

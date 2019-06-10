@@ -121,15 +121,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		delay = 1
     	end
     	
-    	if my_data.coarse_path then
-    		if data.char_tweak.chatter.clear and data.unit:anim_data().idle and not ( data.attention_obj and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified_t and data.attention_obj.verified_t < 10 ) then
-				if data.unit:movement():cool() then
-					managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
-				else
-					managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear" )
-				end
-    		end
-    	end		
+        if my_data.coarse_path then
+          	if data.char_tweak.chatter.clear and data.char_tweak.chatter.retreat and data.unit:anim_data().idle and not ( data.attention_obj and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified_t and data.attention_obj.verified_t < 5 ) then
+       			if data.unit:movement():cool() then
+       				managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
+       			else
+       				local clearchk = math.random(1, 100)
+       				local say_clear = 50
+       				if clearchk <= say_clear then
+       					managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear" )
+       				else
+       					if not managers.groupai:state():chk_assault_active_atm() then
+       						managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "retreat" )
+       					end
+       				end
+       			end
+       		end
+        end	
+
+		if data.char_tweak.leader then
+			managers.groupai:state():find_followers_to_unit(data.key, data.char_tweak.leader)
+			if managers.groupai:state():are_followers_ready(data.key) then
+			else
+				start_pathing = nil
+			end
+		end	
     	  
     	CopLogicTravel.queue_update(data, data.internal_data, delay)
     end	

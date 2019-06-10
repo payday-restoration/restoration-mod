@@ -38,9 +38,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}			
 		self.enemy_chatter.retreat = {
 			radius = 700,
-			max_nr = 20,
+			max_nr = 5,
 			duration = {2, 4},
-			interval = {0.25, 0.75},
+			interval = {1.25, 2.75},
 			group_min = 0,
 			queue = "m01"
 		}		
@@ -62,7 +62,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.enemy_chatter.clear = {
 			radius = 700,
-		    max_nr = 1,
+		    max_nr = 3,
 		    duration = {60, 60},
 		    interval = {0.75, 1.5},
 		    group_min = 3,
@@ -96,7 +96,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 5,
 			duration = {2, 4},
-			interval = {2.0, 10.0},
+			interval = {2.0, 7.0},
 			group_min = 0,
 			queue = "rrl"
 		}
@@ -6710,7 +6710,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			CS_cop_stealth = {
 				"flank",
 				"provide_coverfire",
-				"provide_support"
+				"provide_support",
+			    "hitnrun"  --the idea is after they open fire, and you're near, they'll run away to a safe spot before striking again since they'll only decide to back off after opening fire
 			},
 			CS_swat_rifle = {
 				"smoke_grenade",
@@ -6755,7 +6756,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"smoke_grenade",
 				"charge",
 				"provide_coverfire",
-				"provide_support"
+				"provide_support",
+			    "hitnrun"
 			},
 			CS_swat_heavy_flank = {
 				"flank",
@@ -6790,13 +6792,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			FBI_suit = {
 				"flank",
 				"ranged_fire",
-				"flash_grenade"
+				"flash_grenade",
+			    "hitnrun"
 			},
 			FBI_suit_stealth = {
 				"provide_coverfire",
 				"provide_support",
 				"flash_grenade",
-				"flank"
+				"flank",
+			    "hitnrun"
 			},
 			FBI_swat_rifle = {
 				"smoke_grenade",
@@ -6860,7 +6864,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flash_grenade",
 				"charge",
 				"provide_coverfire",
-				"provide_support"
+				"provide_support",
+			    "hitnrun"
 			},
 			FBI_heavy_flank = {
 				"flank",
@@ -6914,7 +6919,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"smoke_grenade",
 				"provide_coverfire",
 				"provide_support",
-				"flash_grenade"
+				"flash_grenade",
+			    "hitnrun"
 			},
 
 			--Vanilla shit below

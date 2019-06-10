@@ -184,6 +184,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 	
+	function GroupAIStateBesiege:chk_assault_active_atm()  
+	   if not self._task_data.assault.active then
+	     	return
+	   	--log("not assault active")
+	   end
+	   
+	   return true
+    end
+	
 	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 	end
@@ -415,7 +424,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						  local current_objective = group.objective
 				              if current_objective.coarse_path then
 			                      if not u_data.unit:sound():speaking(time) then
-	                      		    u_data.unit:sound():say("m01", true)
+	                      		    u_data.unit:sound():say("r01", true)
 						        end	
 	                        end					   
 				        end	

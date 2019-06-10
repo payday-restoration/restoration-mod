@@ -8,7 +8,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		radius seems to do nothing, game theory how many cops in a radius can say a certain chatter (should test this)
 		max_nr how many chatters can go off at once
 		duration ??? longer ones i grabbed from v009/pdth
-		inerval is cooldown
+		interval is cooldown
 		group_min how many cops need to be in a group for the line to play
 		queue what call is used in chatter
 		]]--
@@ -19,6 +19,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {1.5, 2},
 			group_min = 0,
 			queue = "g90"
+		}
+		self.enemy_chatter.aggressive_assault = {
+			radius = 700,
+			max_nr = 8,
+			duration = {3, 4},
+			interval = {2, 2.25},
+			group_min = 0,
+			queue = "i01" --maybe something better here?
 		}		
 		self.enemy_chatter.open_fire = {
 			radius = 1000,
@@ -6936,7 +6944,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support",
 				"flank",
-				"deathguard"
+				"deathguard",
+			    "hitnrun"
 			},
 			swat_rifle = {
 				"ranged_fire",
@@ -6947,7 +6956,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"ranged_fire",
 				"provide_coverfire",
 				"provide_support",
-				"flank"
+				"flank",
+			    "hitnrun"
 			},
 			shield_wall_ranged = {
 				"shield",

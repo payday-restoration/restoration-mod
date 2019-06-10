@@ -11507,6 +11507,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			cop = {
 				aggressive = true,
+				aggressive_assault = true,
 				retreat = true,
 				contact = true,
 				clear = true,
@@ -11529,6 +11530,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			swat = {
 				aggressive = true,
+				aggressive_assault = true,
 				retreat = true,
 				contact = true,
 				clear = true,
@@ -11590,7 +11592,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				follow_me = true,
 				suppress = true
 			},
-			shield = {follow_me = true}
+			shield = {
+			    follow_me = true,
+				aggressive_assault = true,
+				retreat = true,
+				go_go = true,
+				push = true,
+				clear = true,
+				reload = true
+			},
 		}
 		return presets
 	end

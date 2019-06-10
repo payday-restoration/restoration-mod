@@ -2,6 +2,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 		local focus_enemy = data.attention_obj
+        local common_cop = data.unit:base():has_tag("law") and not data.unit:base():has_tag("special")
 
 		if shoot then
 			if not my_data.firing then
@@ -12,8 +13,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if not data.unit:in_slot(16) and data.char_tweak.chatter.aggressive then
 					if data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" then
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive_captain")
-					else
+					elseif managers.groupai:state():chk_assault_active_atm() and common_cop or data.unit:base():has_tag("shield") then
+						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive_assault") --common cops use different aggressive chatter for assaults
+						--log("assault g90 works")
+					else	
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
+						--log("between assault g90 works")
 					end	
 				end
 			end
@@ -70,9 +75,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		if retreat_to then
     			CopLogicAttack._cancel_cover_pathing(data, my_data)
     			
-    			--[[if data.tactics and data.tactics.hitnrun then
-    				log("hitnrun or eliteranged just backed up properly")
-    			end]]--
+    			--if data.tactics and data.tactics.hitnrun then
+    			    --log("hitnrun or eliteranged just backed up properly")
+    			--end
     
     			local new_action_data = {
     				variant = "walk",

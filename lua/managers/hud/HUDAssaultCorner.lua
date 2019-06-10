@@ -358,7 +358,7 @@ function HUDAssaultCorner:RestorationValueChanged()
 	hostages:child("num_hostages"):set_color(hostages_color)
 end
 
-function HUDAssaultCorner:_animate_text(text_panel, bg_box, color)
+function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_function)
 	local text_list = (text_panel or self._hud_panel:child("assault_panel")):script().text_list
 	local text_index = 0
 	local texts = {}
@@ -394,14 +394,14 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color)
 				end
 			end
 		end
-	   
+	    local mod_color = color_function and color_function() or color or self._assault_color
 		local text = text_panel:text({
 			text = text_string,
 			layer = 1,
 			align = "center",
 			vertical = "center",
 			--blend_mode = "add",
-			color = Color("000000") or self._assault_color,
+			color = restoration.Options:GetValue("HUD/Colors/AssaultFG"),
 			font_size = tweak_data.hud_corner.assault_size * 1.1,
 			font = tweak_data.hud_corner.assault_font,
 			w = 10,
@@ -875,79 +875,83 @@ function HUDAssaultCorner:flash_point_of_no_return_timer(beep)
 end
 
 function HUDAssaultCorner:show_casing(mode)
-	local delay_time = self._assault and 2 or 0
-	self:_end_assault()
-	local casing_panel = self._hud_panel:child("casing_panel")
-	local white_tape = casing_panel:child("white_tape")
-	white_tape:set_visible(true)
-	white_tape:animate( callback( white_tape, self, "animate_casing_show" ) )
-	local text_panel = casing_panel:child("text_panel")
-	text_panel:set_visible(restoration.Options:GetValue("HUD/AssaultStyle") == 1)
-	text_panel:script().text_list = {}
-	self._casing_bg_box:script().text_list = {}
-	local msg = nil
+	if restoration.Options:GetValue(HUD/Extra/SCasingTicker") then
+		local delay_time = self._assault and 2 or 0
+		self:_end_assault()
+		local casing_panel = self._hud_panel:child("casing_panel")
+		local white_tape = casing_panel:child("white_tape")
+		white_tape:set_visible(true)
+		white_tape:animate( callback( white_tape, self, "animate_casing_show" ) )
+		local text_panel = casing_panel:child("text_panel")
+		text_panel:set_visible(restoration.Options:GetValue("HUD/AssaultStyle") == 1)
+		text_panel:script().text_list = {}
+		self._casing_bg_box:script().text_list = {}
+		local msg = nil
 
-	if mode == "civilian" then
-		for _, text_id in ipairs({
-			managers.localization:to_upper_text("hud_casing_mode_ticker_clean"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker_clean"),
-			managers.localization:to_upper_text("hud_assault_end_line")
-		}) do
-			table.insert(text_panel:script().text_list, text_id)
-			table.insert(self._casing_bg_box:script().text_list, text_id)
+		if mode == "civilian" then
+			for _, text_id in ipairs({
+				managers.localization:to_upper_text("hud_casing_mode_ticker_clean"),
+				managers.localization:to_upper_text("hud_assault_end_line"),
+				managers.localization:to_upper_text("hud_casing_mode_ticker_clean"),
+				managers.localization:to_upper_text("hud_assault_end_line")
+			}) do
+				table.insert(text_panel:script().text_list, text_id)
+				table.insert(self._casing_bg_box:script().text_list, text_id)
+			end
+		else
+			for _, text_id in ipairs({
+				managers.localization:to_upper_text("hud_casing_mode_ticker"),
+				managers.localization:to_upper_text("hud_assault_end_line"),
+				managers.localization:to_upper_text("hud_casing_mode_ticker"),
+				managers.localization:to_upper_text("hud_assault_end_line"),
+				managers.localization:to_upper_text("hud_casing_mode_ticker"),
+				managers.localization:to_upper_text("hud_assault_end_line"),
+				managers.localization:to_upper_text("hud_casing_mode_ticker"),
+				managers.localization:to_upper_text("hud_assault_end_line"),
+			}) do
+				table.insert(text_panel:script().text_list, text_id)
+				table.insert(self._casing_bg_box:script().text_list, text_id)
+			end
 		end
-	else
-		for _, text_id in ipairs({
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-		}) do
-			table.insert(text_panel:script().text_list, text_id)
-			table.insert(self._casing_bg_box:script().text_list, text_id)
+		if self._casing_bg_box:child("text_panel") then
+			self._casing_bg_box:child("text_panel"):stop()
+			self._casing_bg_box:child("text_panel"):clear()
+		else
+			self._casing_bg_box:panel({name = "text_panel"})
 		end
+		self._casing_bg_box:child("bg"):stop()
+		if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
+			self._hud_panel:child("hostages_panel"):set_visible(true)
+		else
+			self._hud_panel:child("hostages_panel"):set_visible(false)
+		end
+		casing_panel:stop()
+		casing_panel:animate(callback(self, self, "_animate_show_casing"), delay_time)
+		self._casing = true
 	end
-	if self._casing_bg_box:child("text_panel") then
-		self._casing_bg_box:child("text_panel"):stop()
-		self._casing_bg_box:child("text_panel"):clear()
-	else
-		self._casing_bg_box:panel({name = "text_panel"})
-	end
-	self._casing_bg_box:child("bg"):stop()
-	if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
-		self._hud_panel:child("hostages_panel"):set_visible(true)
-	else
-		self._hud_panel:child("hostages_panel"):set_visible(false)
-	end
-	casing_panel:stop()
-	casing_panel:animate(callback(self, self, "_animate_show_casing"), delay_time)
-	self._casing = true
 end
 
 function HUDAssaultCorner:hide_casing()
-	if self._casing_bg_box:child("text_panel") then
-		self._casing_bg_box:child("text_panel"):stop()
-		self._casing_bg_box:child("text_panel"):clear()
-	end
-	local casing_panel = self._hud_panel:child("casing_panel")
-	local icon_casingbox = casing_panel:child("icon_casingbox")
-	local white_tape = casing_panel:child("white_tape")
-	white_tape:animate( callback( white_tape, self, "animate_casing_hide" ) )
-	icon_casingbox:stop()
-	local function close_done()
-		self._casing_bg_box:set_visible(false)
-		local icon_casingbox = self._hud_panel:child("casing_panel"):child("icon_casingbox")
+	if restoration.Options:GetValue(HUD/Extra/SCasingTicker") then
+		if self._casing_bg_box:child("text_panel") then
+			self._casing_bg_box:child("text_panel"):stop()
+			self._casing_bg_box:child("text_panel"):clear()
+		end
+		local casing_panel = self._hud_panel:child("casing_panel")
+		local icon_casingbox = casing_panel:child("icon_casingbox")
+		local white_tape = casing_panel:child("white_tape")
+		white_tape:animate( callback( white_tape, self, "animate_casing_hide" ) )
 		icon_casingbox:stop()
-		icon_casingbox:animate(callback(self, self, "_hide_icon_assaultbox"))
+		local function close_done()
+			self._casing_bg_box:set_visible(false)
+			local icon_casingbox = self._hud_panel:child("casing_panel"):child("icon_casingbox")
+			icon_casingbox:stop()
+			icon_casingbox:animate(callback(self, self, "_hide_icon_assaultbox"))
+		end
+		self._casing_bg_box:stop()
+		self._casing_bg_box:animate(callback(nil, _G, "HUDBGBox_animate_close_left"), close_done and not restoration.Options:GetValue("HUD/AssaultStyle") == 2)
+		self._casing = false
 	end
-	self._casing_bg_box:stop()
-	self._casing_bg_box:animate(callback(nil, _G, "HUDBGBox_animate_close_left"), close_done and not restoration.Options:GetValue("HUD/AssaultStyle") == 2)
-	self._casing = false
 end
 function HUDAssaultCorner:_animate_simple_text(text)
 	local _, _, w, _ = text:text_rect()

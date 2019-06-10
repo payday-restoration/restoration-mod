@@ -5786,7 +5786,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.winchester1874.has_description = true
 		self.winchester1874.desc_id = "bm_ap_weapon_sc_desc"
 		self.winchester1874.AMMO_MAX = 40
-		self.winchester1874.CLIP_AMMO_MAX = 12
 		self.winchester1874.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.winchester1874.FIRE_MODE = "single"
 		self.winchester1874.fire_mode_data = {}
@@ -9606,6 +9605,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.winchester1894.upgrade_blocks = nil
 			self.winchester1894.has_description = true
 			self.winchester1894.desc_id = "bm_ap_weapon_sc_desc"
+			self.winchester1894.CLIP_AMMO_MAX = 12			
 			self.winchester1894.AMMO_MAX = 40
 			self.winchester1894.AMMO_PICKUP = self:_pickup_chance(40, 2)
 			self.winchester1894.FIRE_MODE = "single"

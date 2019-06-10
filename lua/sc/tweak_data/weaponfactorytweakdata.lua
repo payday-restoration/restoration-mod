@@ -45059,62 +45059,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end		
 
 		if self.wpn_fps_ass_fortress then 	-- VXWolf's Bavarium Splitter
-				self.wpn_fps_ass_fortress.override = {
-				wpn_fps_upg_a_fortress_poison = {
-					stats = {
+				self.parts.wpn_fps_upg_a_fortress_poison.stats = {
 						value = 5,
 						damage = -35,
-						total_ammo_mod = 88, --Don't blame me, blame the franchise. 	
+						total_ammo_mod = 88, 
 						spread = 1,
 						recoil = 1	
-						},
-					},
-					custom_stats = {
-						can_shoot_through_enemy = false,
-						can_shoot_through_shield = false,	
-						can_shoot_through_wall = false,												
-						ignore_statistic = true,
-						rays = 1,						
-						bullet_class = "PoisonBulletBase",
-						muzzleflash = "effects/payday2/particles/weapons/assault/ass_muzzleflash_poison",
-						dot_data = { 
-							type = "poison",
-							dot_length = "3",
-							dot_trigger_chance = "20",							
-							hurt_animation_chance = "0.35", 
-							dot_damage = "2",
-							dot_trigger_max_distance = "12000", 
-							dot_tick_period = "0.5"							
-						},						
-					},		
-					wpn_fps_upg_a_fortress_argent = {
-					stats = {
+					}
+				self.parts.wpn_fps_upg_a_fortress_argent.stats = {
 						value = 5,
 						damage = -25,
 						total_ammo_mod = 50,	
-						spread = -2,
-						recoil = -3
-					},
-					custom_stats = {
-						can_shoot_through_enemy = false,
-						can_shoot_through_shield = false,	
-						can_shoot_through_wall = false,												
-						ignore_statistic = true,
-						rays = 1,						
-						armor_piercing_add = 0.30,
-						bullet_class = "FlameBulletBase",
-						muzzleflash = "effects/payday2/particles/weapons/assault/ass_muzzleflash_argent",
-						fire_dot_data = {
-							dot_damage = "3",
-							dot_trigger_max_distance = "6000",
-							dot_trigger_chance = "15",
-							dot_length = "2",
-							dot_tick_period = "0.5"
-						},
-					}					
-				}
-			}			
-		end					
+						spread = -1,
+						recoil = 1
+					}																			
+			end					
 
 	if SystemFS:exists("assets/mod_overrides/Color Coded Shotgun Shell/main.xml") and self.parts.wpn_fps_sho_ben_extrashell  then --Shellrack for Pump Action Shotguns & Color Coded Shotgun Shells
 		self.wpn_fps_sho_ben.override = { 

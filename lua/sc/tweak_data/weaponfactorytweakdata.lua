@@ -39886,6 +39886,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				concealment = -1
 		}
+		self.parts.wpn_fps_upg_toz66_choke_modified.stats = {
+				value = 0,
+				recoil = 1,
+				spread = 1,
+				concealment = -2
+		}		
 		self.parts.wpn_fps_upg_toz66_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
 		self.parts.wpn_fps_upg_toz66_duckbill.stats = {
 				value = 1,
@@ -43357,7 +43363,26 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						spread = -1,
 						concealment = -1,
 						reload = 2
+					}	
+				self.parts.wpn_fps_smg_scorpion_m_quick.pcs = nil 
+				self.parts.wpn_fps_smg_shepheard_m_quick.stats = { 
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
 					}		
+				self.parts.wpn_fps_smg_erma_m_quick.stats = { 
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}							
+				self.parts.wpn_fps_smg_coal_m_quick.stats = { 
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}												
 				self.wpn_fps_smg_x_mp7.override = {
 				wpn_fps_smg_mp7_m_extended = {stats = {
 						value = 1,
@@ -44589,6 +44614,16 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						spread = 1,		
 						concealment = -1						
 					}
+				self.parts.wpn_fps_smg_m3_b_suppressor.stats = {
+						value = 10,
+						suppression = 13,
+						alert_size = 13,
+						damage = 5,
+						spread_moving = -2,
+						spread = 2,
+						recoil = -1,
+						concealment = -4
+					}					
 				self.parts.wpn_fps_smg_m3_a_9mm.stats = {
 						value = 10,
 						total_ammo_mod = 25,

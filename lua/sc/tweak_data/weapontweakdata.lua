@@ -9141,7 +9141,37 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.can_shoot_through_shield = true
 		self.m1894.can_shoot_through_wall = true		
 		self.m1894.panic_suppression_chance = 0.0
-		end		
+	end
+
+	if self.mk18s then --Gambyt's MK18 Specialist
+		self.mk18s.use_data.selection_index = 1
+		self.mk18s.tactical_reload = 1	
+		self.mk18s.AMMO_MAX = 150
+		self.mk18s.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.mk18s.spread.standing = 3
+		self.mk18s.spread.crouching = 2
+		self.mk18s.spread.steelsight = 1
+		self.mk18s.spread.moving_standing = 4
+		self.mk18s.spread.moving_crouching = 3
+		self.mk18s.spread.moving_steelsight = 2
+		self.mk18s.kick.standing = self.new_m4.kick.standing
+		self.mk18s.kick.crouching = self.new_m4.kick.standing
+		self.mk18s.kick.steelsight = self.new_m4.kick.standing
+		self.mk18s.stats = {
+			damage = 29,
+			spread = 14,
+			recoil = 20,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 23,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}	
+	end			
 
 	if self.obrez then --Pawcio's obrez Nagant M91/30 Obrez
 		self.obrez.categories = {
@@ -9497,7 +9527,70 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.xs_pm.panic_suppression_chance = 0.0						
-		end				
+		end		
+
+		if self.pb then --Germantaco's PB
+			self.pb.has_description = false		
+			self.pb.tactical_reload = 1
+			self.pb.AMMO_MAX = 120
+			self.pb.AMMO_PICKUP = self:_pickup_chance(120, 1)
+			self.pb.spread.standing = 3
+			self.pb.spread.crouching = 2
+			self.pb.spread.steelsight = 1
+			self.pb.spread.moving_standing = 4
+			self.pb.spread.moving_crouching = 3
+			self.pb.spread.moving_steelsight = 2
+			self.pb.kick.standing = self.glock_17.kick.standing
+			self.pb.kick.crouching = self.glock_17.kick.standing
+			self.pb.kick.steelsight = self.glock_17.kick.standing
+			self.pb.stats = {
+				damage = 40,
+				spread = 16,
+				recoil = 22,
+				spread_moving = 9,
+				zoom = 3,
+				concealment = 30,
+				suppression = 12,
+				alert_size = 12,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.pb.panic_suppression_chance = 0.0		
+		end			
+
+		if self.hshdm then --Killerwolf's High Standard HDM
+			self.hshdm.AMMO_MAX = 150
+			self.hshdm.CLIP_AMMO_MAX = 12
+			self.hshdm.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.hshdm.fire_mode_data.fire_rate = 0.06666666666
+			self.hshdm.single.fire_rate = 0.06666666666
+			self.hshdm.spread.standing = 3
+			self.hshdm.spread.crouching = 2
+			self.hshdm.spread.steelsight = 1
+			self.hshdm.spread.moving_standing = 4
+			self.hshdm.spread.moving_crouching = 3
+			self.hshdm.spread.moving_steelsight = 2
+			self.hshdm.kick.standing = self.glock_17.kick.standing
+			self.hshdm.kick.crouching = self.glock_17.kick.standing
+			self.hshdm.kick.steelsight = self.glock_17.kick.standing
+			self.hshdm.stats = {
+				damage = 34,
+				spread = 15,
+				recoil = 24,
+				spread_moving = 9,
+				zoom = 3,
+				concealment = 30,
+				suppression = 18,
+				alert_size = 18,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.hshdm.panic_suppression_chance = 0.0	
+		end								
 
 		if self.rhino then --Pawcio's Chiappa Rhino 60DS
 			self.rhino.has_description = false		
@@ -10989,7 +11082,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.l115.stats_modifiers = {
 			damage = 1
 		}
-	end				
+	end	
 
 	if self.mp153 then --Pawcio's Baikal MP 153
 		self.mp153.has_description = false				

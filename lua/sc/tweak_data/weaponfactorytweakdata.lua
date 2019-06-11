@@ -40095,7 +40095,61 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_ass_stg44_so_doi.stats = {
 					value = 0
 				}																							
-			end						
+			end		
+
+		if self.wpn_fps_ass_mk18s then 	--Gambyt's MK18 Spc.
+			self.parts.wpn_fps_ass_mk18s_a_strong.pcs = nil
+			self.parts.wpn_fps_ass_mk18s_a_classic.pcs = nil
+			self.parts.wpn_fps_ass_mk18s_a_dmr.pcs = nil
+			self.parts.wpn_fps_ass_mk18s_a_weak.stats = {
+				value = 3,			
+				total_ammo_mod = -20,
+				damage = 6,
+				spread = 1,
+				recoil = -1					
+				}	
+			self.parts.wpn_fps_ass_mk18s_a_weak.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}								
+			self.parts.wpn_fps_ass_mk18s_fg_black.stats = {
+					value = 0
+				}	
+			self.parts.wpn_fps_ass_mk18s_grip_black.stats = {
+					value = 0
+				}	
+			self.parts.wpn_fps_ass_mk18s_carry.stats = {
+					value = 0
+				}		
+			self.parts.wpn_fps_ass_mk18s_mag_smol.stats = {
+					value = 2,
+					spread_moving = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -10
+				}	
+			self.parts.wpn_fps_ass_mk18s_vg_ptk.stats = {
+					value = 1,
+					spread = 1,
+					recoil = 1,
+					concealment = -2
+				}															
+			self.parts.wpn_fps_ass_mk18s_mag_big.stats = {
+					value = 3,
+					concealment = -3,
+					reload = -3,
+					extra_ammo = 30
+				}
+			self.parts.wpn_fps_ass_mk18s_tacstock.stats = {
+					value = 3,
+					spread = 1,
+					spread_moving = 1,
+					concealment = -2
+				}					
+			self.parts.wpn_fps_ass_mk18s_mag_speed.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 2				
+				}																			
+			end									
 
 	if self.wpn_fps_shot_m1912 then --Pawcio's Winchester M1912
 		self.parts.wpn_fps_upg_m1912_ns_cutts.stats = {
@@ -40356,7 +40410,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
 					value = 1,
 					spread = 1,
-					spread_moving = 2,
+					recoil = 1,
 					concealment = -2
 				}		
 		self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
@@ -42006,7 +42060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_obr5_vg_ptk.stats = {
 						value = 1,
 						spread = 1,
-						spread_moving = 2,
+						recoil = 1,
 						concealment = -2
 					}
 				self.parts.wpn_fps_upg_obr5_vg_afg2.stats = {
@@ -42959,7 +43013,140 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
          
 	}}
 }									
-			end										
+			end
+
+		if self.wpn_fps_pis_hshdm then --Killerwolf's High Standard HDM
+				self.parts.wpn_fps_pis_hshdm_frame_gold.stats = { 
+					value = 5
+				}
+			end		
+			
+		if self.parts.wpn_fps_upg_m4_m_x15drum then --Pawcio's M4 X15 Drum Magazine
+				self.parts.wpn_fps_upg_m4_m_x15drum.stats = { 
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 30 --maybe should've set this to 20 but *shrug*
+				}
+				self.wpn_fps_ass_komodo.override = { --why would you even consider using the tempest with those animations?
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 20
+				}}}											
+				self.wpn_fps_ass_ak5.override = {
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 20
+				}}}							
+				self.wpn_fps_ass_l85a2.override = {
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 20
+				}}}			
+				self.wpn_fps_smg_hajk.override = { --fuck akimbos
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 20
+				}}}			
+				self.wpn_fps_smg_x_hajk.override = {
+				wpn_fps_smg_hajk_body_standard = {animations = {
+					fire = "recoil",
+					fire_steelsight = "recoil",
+					magazine_empty = "last_recoil"
+				}},
+				wpn_fps_ass_l85a2_m_emag = {stats = {
+					value = 0,
+					extra_ammo = 0
+				}},
+				wpn_fps_upg_m4_m_pmag = {stats = {
+					value = 3,
+					recoil = -1,
+					concealment = 1
+				}},
+				wpn_fps_upg_m4_m_l5 = {stats = {
+					value = 0
+				}},
+				wpn_fps_upg_m4_m_quad = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -3,
+					extra_ammo = 60
+				}},
+				wpn_fps_upg_m4_m_straight = {stats = {
+					value = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -20
+				}},
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 40
+				}}}				
+			self.wpn_fps_smg_x_olympic.override = {
+				wpn_fps_m4_uupg_b_short_vanilla = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short"},
+				wpn_fps_m4_uupg_b_medium = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_medium"},
+				wpn_fps_ass_l85a2_m_emag = {stats = {
+					value = 1,
+					extra_ammo = 20,
+					concealment = -1,
+					reload = -2
+				}},
+				wpn_fps_upg_m4_m_pmag = {stats = {
+					extra_ammo = 20,
+					recoil = -1,
+					reload = -2
+				}},
+				wpn_fps_upg_m4_m_l5 = {stats = {
+					value = 1,
+					extra_ammo = 20,
+					concealment = -1,
+					reload = -2
+				}},
+				wpn_fps_upg_m4_m_quad = {stats = {
+					extra_ammo = 80,
+					concealment = -3,
+					reload = -3
+				}},
+				wpn_fps_m4_uupg_m_std = {stats = {
+					value = 1,
+					extra_ammo = 20,
+					reload = -2,
+					concealment = -1
+				}},
+				wpn_fps_upg_m4_m_drum = {stats = {
+					value = 9,
+					extra_ammo = 80,
+					reload = -6,
+					concealment = -5
+				}},
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 60
+				}}}				
+			end						
+
+		if self.wpn_fps_pis_pb then --Germantaco's PB
+				self.parts.wpn_fps_pis_pb_ns_std.stats = { 
+					value = 5,
+					suppression = 9,
+					alert_size = 9,
+					spread = 1,
+					spread_moving = -2,
+					concealment = -2
+				}
+			end																
 
 			if self.wpn_fps_snp_wargoddess then -- Mira's MK14 EBR
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {

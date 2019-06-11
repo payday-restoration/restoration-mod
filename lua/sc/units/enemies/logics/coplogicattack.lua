@@ -13,7 +13,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if not data.unit:in_slot(16) and data.char_tweak.chatter.aggressive then
 					if data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" then
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive_captain")
-					elseif managers.groupai:state():chk_assault_active_atm() and common_cop or data.unit:base():has_tag("shield") then
+					elseif managers.groupai:state():chk_assault_active_atm() and common_cop or data.unit:base():has_tag("shield") or data.unit:base():has_tag("customvo") then
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive_assault") --common cops use different aggressive chatter for assaults
 						--log("assault g90 works")
 					else	

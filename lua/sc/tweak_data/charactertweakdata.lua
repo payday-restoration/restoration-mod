@@ -579,7 +579,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end			
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
-		self.omnia_lpf.tags = {"law", "medic", "special"}
+		self.omnia_lpf.tags = {"law", "medic", "special", "customvo"}
 		self.omnia_lpf.do_omnia = true
 		self.omnia_lpf.do_aoe_heal = true
 		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
@@ -722,7 +722,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "heavy_swat")
 		
 		self.heavy_swat_sniper = deep_clone(self.heavy_swat)
-		self.heavy_swat_sniper.tags = {"law", "sniper", "special"}
+		self.heavy_swat_sniper.tags = {"law", "sniper", "special", "customvo"}
 		self.heavy_swat_sniper.priority_shout = "f34"
 		self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
 		self.heavy_swat_sniper.priority_shout_max_dis = 3000
@@ -1737,7 +1737,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "tank_medic")
 		
 		self.tank_titan = deep_clone(self.tank)
-		self.tank_titan.tags = {"law", "tank", "special", "tank_titan"}	
+		self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 		self.tank_titan.HEALTH_INIT = 1000
@@ -2205,7 +2205,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.damage.explosion_damage_mul = 0.1
 		self.summers.damage.fire_damage_mul = 0.05
 		self.summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
-		self.summers.headshot_dmg_mul = 1.25
+		self.summers.headshot_dmg_mul = 1.5
 		self.summers.bag_dmg_mul = 6
 		self.summers.move_speed = presets.move_speed.fast
 		self.summers.crouch_move = true
@@ -2253,7 +2253,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	function CharacterTweakData:_init_autumn(presets)
 		self.autumn = deep_clone(presets.base)
-		self.autumn.tags = {"law", "custom", "special"}
+		self.autumn.tags = {"law", "custom", "special", "customvo"}
 		self.autumn.experience = {}
 		self.autumn.damage.hurt_severity = presets.hurt_severities.no_hurts
 		self.autumn.weapon = deep_clone(presets.weapon.normal)
@@ -2400,7 +2400,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.taser_summers = deep_clone(self.taser)
 		self.taser_summers.HEALTH_INIT = 72
-		self.taser_summers.headshot_dmg_mul = 1.25
+		self.taser_summers.headshot_dmg_mul = 1.5
 		self.taser_summers.tags = {"female_enemy","taser", "medic_summers", "custom", "special"}
 		self.taser_summers.ignore_medic_revive_animation = false
 		self.taser_summers.flammable = false
@@ -2435,7 +2435,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan = deep_clone(self.taser)
 		self.taser_titan.tags = {"taser", "taser_titan", "custom", "special"}
 		self.taser_titan.HEALTH_INIT = 72
-		self.taser_titan.headshot_dmg_mul = 1.8
+		self.taser_titan.headshot_dmg_mul = 2
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
 		self.taser_titan.immune_to_concussion = true	
@@ -2472,7 +2472,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    	is_zombie = true
 	    end
 		self.boom = deep_clone(presets.base)
-		self.boom.tags = {"law", "custom", "special"}
+		self.boom.tags = {"law", "custom", "special", "customvo"}
 		self.boom.experience = {}
 		self.boom.weapon = deep_clone(presets.weapon.normal)
 		self.boom.melee_weapon = "knife_1"
@@ -2547,7 +2547,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.die_sound_event = "mga_death_scream"
 		self.boom_summers.use_radio = "dsp_radio_russian"
 		self.boom_summers.HEALTH_INIT = 72
-		self.boom_summers.headshot_dmg_mul = 1.25
+		self.boom_summers.headshot_dmg_mul = 1.5
 		self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
 		self.boom_summers.ignore_medic_revive_animation = false
 		self.boom_summers.no_retreat = true

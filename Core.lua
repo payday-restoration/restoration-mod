@@ -52,6 +52,7 @@ if not _G.restoration then
 		"big",
 		"wwh",
 		"pines",
+		"hox_3",
 		--custom heists
 		"hardware_store", --hes fucking awful on this heist pdc why did you think it was ok
 		"office_strike",

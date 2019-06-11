@@ -22,9 +22,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.enemy_chatter.aggressive_assault = {
 			radius = 700,
-			max_nr = 8,
+			max_nr = 10,
 			duration = {3, 4},
-			interval = {2, 2.25},
+			interval = {1.5, 2},
 			group_min = 0,
 			queue = "i01" --maybe something better here?
 		}		

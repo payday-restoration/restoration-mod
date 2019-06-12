@@ -9145,6 +9145,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.mk18s then --Gambyt's MK18 Specialist
 		self.mk18s.use_data.selection_index = 1
+		self.mk18s.auto.fire_rate = 0.08108108108
+		self.mk18s.fire_mode_data.fire_rate = 0.08108108108
 		self.mk18s.tactical_reload = 1	
 		self.mk18s.AMMO_MAX = 150
 		self.mk18s.AMMO_PICKUP = self:_pickup_chance(150, 2)

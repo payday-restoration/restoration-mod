@@ -40101,6 +40101,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_ass_mk18s_a_strong.pcs = nil
 			self.parts.wpn_fps_ass_mk18s_a_classic.pcs = nil
 			self.parts.wpn_fps_ass_mk18s_a_dmr.pcs = nil
+			table.list_append(self.wpn_fps_ass_mk18s.uses_parts, {
+				"wpn_fps_upg_i_slower_rof"
+			})
+			table.list_append(self.wpn_fps_ass_mk18s.uses_parts, {
+				"wpn_fps_upg_i_faster_rof"
+			})					
 			self.parts.wpn_fps_ass_mk18s_a_weak.stats = {
 				value = 3,			
 				total_ammo_mod = -20,

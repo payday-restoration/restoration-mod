@@ -8565,7 +8565,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 17,
 			spread_moving = 6,
 			zoom = 3,
-			concealment = 1,
+			concealment = 7,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,
@@ -8821,11 +8821,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz66.fire_mode_data.fire_rate = 0.001
 			self.toz66.stats = {
 				damage = 150,
-				spread = 7,
-				recoil = 16,
+				spread = 6,
+				recoil = 15,
 				spread_moving = 6,
 				zoom = 3,
-				concealment = 7,
+				concealment = 27,
 				suppression = 3,
 				alert_size = 3,
 				extra_ammo = 101,

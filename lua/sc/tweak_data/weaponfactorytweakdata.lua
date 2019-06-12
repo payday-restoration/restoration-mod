@@ -38625,9 +38625,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			stats = {
-				value = 1,
-				concealment = 1,
-				spread = -1
+				value = 10,
+				spread = -1,
+				concealment = 10
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -38654,9 +38654,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			stats = {
-				recoil = -1,
-				value = 1,
-				concealment = 1
+				value = 10,
+				recoil = -3,
+				concealment = 10
 			}
 		}
 		self.parts.wpn_fps_sho_coach_body_standard = {

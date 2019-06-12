@@ -322,11 +322,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		
 		if self._unit:base()._tweak_table == "autumn" then
-			local recloak_roll = math.rand(1, 100)
-			local chance_recloak = 75	
-			if recloak_roll <= chance_recloak then
-				self._unit:damage():run_sequence_simple("cloak_engaged")
-			end		
+		    if not attack_data.attacker_unit:in_slot(16) then
+			    local recloak_roll = math.rand(1, 100)
+			    local chance_recloak = 75	
+			    if recloak_roll <= chance_recloak then
+			    	self._unit:damage():run_sequence_simple("cloak_engaged")
+			    end	
+			end	
 
 			--Just so he's not instagibbed by bots
 			if attack_data.attacker_unit:in_slot(16) then
@@ -335,12 +337,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 				
 		if self._unit:base()._tweak_table == "spooc_titan" then
-			local recloak_roll = math.rand(1, 100)
-			local chance_recloak = 75	
-			if recloak_roll <= chance_recloak then
-				self._unit:damage():run_sequence_simple("cloak_engaged")
-			end			
-		end			
+		    if not attack_data.attacker_unit:in_slot(16) then
+			    local recloak_roll = math.rand(1, 100)
+			    local chance_recloak = 75	
+			    if recloak_roll <= chance_recloak then
+			    	self._unit:damage():run_sequence_simple("cloak_engaged")
+			    end	
+			end					
+		end		
 		
 		if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
 			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "saw")

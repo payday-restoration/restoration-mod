@@ -875,7 +875,7 @@ function HUDAssaultCorner:flash_point_of_no_return_timer(beep)
 end
 
 function HUDAssaultCorner:show_casing(mode)
-	if restoration.Options:GetValue(HUD/Extra/SCasingTicker") then
+	if restoration.Options:GetValue("HUD/Extra/CasingTicker") then
 		local delay_time = self._assault and 2 or 0
 		self:_end_assault()
 		local casing_panel = self._hud_panel:child("casing_panel")
@@ -932,7 +932,7 @@ function HUDAssaultCorner:show_casing(mode)
 end
 
 function HUDAssaultCorner:hide_casing()
-	if restoration.Options:GetValue(HUD/Extra/SCasingTicker") then
+	if restoration.Options:GetValue("HUD/Extra/CasingTicker") then
 		if self._casing_bg_box:child("text_panel") then
 			self._casing_bg_box:child("text_panel"):stop()
 			self._casing_bg_box:child("text_panel"):clear()

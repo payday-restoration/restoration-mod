@@ -1,0 +1,20 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_bdrop_docks" materials="units/pd2_dlc_skm/props/skm_bdrop_docks" />
+    <bodies>
+        <body enabled="true" template="editor" name="static_body" >
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+        <!-- object enabled="true" name="g_street_lights_strip" / -->
+        <object enabled="true" name="g_buildings" />
+        <object enabled="true" name="g_trees" />
+        <object enabled="true" name="g_docks" />
+        <!-- object enabled="true" shadow_caster="true" name="s_s" / -->
+        <object enabled="true" name="g_stadium" />
+        <object enabled="true" name="g_water" />
+        <object enabled="true" name="g_road" />
+        <object enabled="true" name="g_cars" />
+    </graphics>
+</dynamic_object>

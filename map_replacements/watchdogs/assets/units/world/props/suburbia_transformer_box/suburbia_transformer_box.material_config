@@ -1,0 +1,12 @@
+<materials version="3" group="suburbia_transformer_box">
+    <material name="mtr_transformer_box" render_template="generic:DIFFUSE_TEXTURE:GLOSS_CONTROL_VALUE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/suburbia_transformer_box/suburbia_transformer_box_df"/>
+        <variable value="0.031000001356006" type="scalar" name="glossiness_control"/>
+    </material>
+    <material name="mtr_transformer_il" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/world/props/suburbia_transformer_box/suburbia_transformer_pad_df"/>
+        <self_illumination_texture file="units/world/props/suburbia_transformer_box/suburbia_transformer_box_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="mat_light_red_mat2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/world/architecture/hospital/props/rooftop/light_red/light_red2_material_0_df"/>
+        <self_illumination_texture file="units/world/architecture/hospital/props/rooftop/light_red/light_red2_material_0_il"/>
+        <variable value="megatron" type="scalar" name="il_multiplier"/>
+    </material>
+	<material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

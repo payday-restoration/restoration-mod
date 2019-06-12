@@ -1,0 +1,165 @@
+<table directory="assets">
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101976"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102707"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102564"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/dome_occlusion"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102874"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101060"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102464"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102723"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101521"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101062"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102728"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101846"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102409"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102705"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101802"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102160"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102818"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102230"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102359"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/103424"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/100853"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102396"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/100898"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102161"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102937"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102002"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/100881"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/100867"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102703"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/102726"/>
+	<texture path="levels/mods/watchdogs_1_res/cube_lights/101061"/>
+	<add path="units/vehicles/animated_cars/police_ny_bank_anim" type="unit">
+		<effect force="true" load="true" path="effects/particles/environment/cop_car_lights" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<material_config force="true" path="units/vehicles/animated_cars/police_ny_suburbia" unload="true"/>
+		<object force="true" path="units/vehicles/animated_cars/police_ny_bank_anim" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/animated_cars/police_ny_bank_anim" unload="true"/>
+		<unit force="true" path="units/vehicles/animated_cars/police_ny_bank_anim" unload="true"/>
+	</add>
+	<add path="units/vehicles/charger/low/vehicle_charger_low" type="unit">
+		<material_config force="true" path="units/vehicles/charger/low/vehicle_charger_low" unload="true"/>
+		<object force="true" path="units/vehicles/charger/low/vehicle_charger_low" unload="true"/>
+		<unit force="true" path="units/vehicles/charger/low/vehicle_charger_low" unload="true"/>
+	</add>
+	<add path="units/vehicles/mondeo/low/vehicle_mondeo_low" type="unit">
+		<material_config force="true" path="units/vehicles/mondeo/low/vehicle_mondeo_low" unload="true"/>
+		<object force="true" path="units/vehicles/mondeo/low/vehicle_mondeo_low" unload="true"/>
+		<unit force="true" path="units/vehicles/mondeo/low/vehicle_mondeo_low" unload="true"/>
+	</add>
+	<add path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" type="unit">
+		<unit force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<animation_state_machine force="true" path="anims/units/helicopter/helicopter" unload="true"/>
+		<animation_states force="true" path="anims/units/helicopter/std" unload="true"/>
+		<object force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<animation_def force="true" path="anims/units/helicopter/helicopter" unload="true"/>
+		<animation_subset force="true" path="anims/units/helicopter/std" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_bwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_bwd_to_l" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_bwd_to_r" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_exit" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_fwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_fwd_to_l" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_fwd_to_r" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/chew/chew_start" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_l_bwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_l_escape" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_l_fwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_r_bwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_r_escape" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_r_fwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_start" unload="true"/>
+		<animation force="true" path="anims/helicopter/glace/glace_exit" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_enter" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_exit" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_turretheli1_enter" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_turretheli1_exit" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_turretheli1_loop" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_helispotlight_enter" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_helispotlight_fwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_helispotlight_exit" unload="true"/>
+		<animation force="true" path="anims/helicopter/spa/spa_helispotlight_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/rvd/rvd_enter" unload="true"/>
+		<animation force="true" path="anims/helicopter/rvd/rvd_exit" unload="true"/>
+		<animation force="true" path="anims/helicopter/rvd/rvd_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/jry_hover_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_idle_2" unload="true"/>
+		<animation force="true" path="anims/helicopter/circulate" unload="true"/>
+		<animation force="true" path="anims/helicopter/circulate_to_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/flyin_from_behind_to_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/flyin_from_left_to_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/flyin_from_right_to_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_to_circulate" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_to_fly_bwd" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_to_fly_left" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_to_fly_right" unload="true"/>
+		<animation force="true" path="anims/helicopter/hover_to_land" unload="true"/>
+		<animation force="true" path="anims/helicopter/takeoff_backwards" unload="true"/>
+		<animation force="true" path="anims/helicopter/takeoff_forward" unload="true"/>
+		<animation force="true" path="anims/helicopter/takeoff_left" unload="true"/>
+		<animation force="true" path="anims/helicopter/takeoff_right" unload="true"/>
+		<animation force="true" path="anims/helicopter/takeoff_to_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_1_enter" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_2_hover_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_3_land" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_4_land_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_5_backout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_6_hover_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_7_land" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_8_hover_idle" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_first_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_first_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_first_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_second_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_second_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_second_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_third_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_third_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_third_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_third_flyin2" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_third_hover2" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_third_flyout2" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_fourth_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_fourth_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_fourth_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_fifth_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_fifth_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_fifth_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_sixth_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_sixth_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_sixth_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_seventh_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_seventh_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_seventh_flyout" unload="true"/>
+		<animation force="true" path="anims/helicopter/street_news_sweep" unload="true"/>
+		<animation force="true" path="anims/helicopter/dh_circulate" unload="true"/>
+		<animation force="true" path="anims/helicopter/dh_circulate_2" unload="true"/>
+		<animation force="true" path="anims/helicopter/pos_pickup" unload="true"/>
+		<animation force="true" path="anims/helicopter/suburbia_flyin" unload="true"/>
+		<animation force="true" path="anims/helicopter/suburbia_hover" unload="true"/>
+		<animation force="true" path="anims/helicopter/suburbia_flyaway" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_flyin_1" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_circulate_1" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_flyin_2" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_circulate_2" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_flyin_3" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_circulate_3" unload="true"/>
+		<animation force="true" path="anims/helicopter/framing3_flyin_4" unload="true"/>
+		<animation force="true" path="anims/helicopter/aprt_enter_circulate" unload="true"/>
+		<animation force="true" path="anims/helicopter/aprt_drop_bag" unload="true"/>
+		<animation force="true" path="anims/helicopter/aprt_circulate" unload="true"/>
+		<animation force="true" path="anims/helicopter/aprt_exit_circulate" unload="true"/>
+		<animation force="true" path="anims/helicopter/aprt_flyoff_panicroom" unload="true"/>
+		<animation force="true" path="anims/helicopter/aprt_hover_repel_cable" unload="true"/>
+		<material_config force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/weapons/flashlight/flashlight" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+	</add>
+</table>

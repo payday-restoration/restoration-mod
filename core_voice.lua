@@ -45,9 +45,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("pdth", "hostage")
 		_G.voiceline_framework:register_line_type("pdth", "rescue_civ")
 		_G.voiceline_framework:register_line_type("pdth", "retreat")
-		_G.voiceline_framework:register_line_type("pdth", "clear")
-		_G.voiceline_framework:register_line_type("pdth", "aggro_no_assault")
-		_G.voiceline_framework:register_line_type("pdth", "panic_no_assault")		
+		_G.voiceline_framework:register_line_type("pdth", "clear")	
 		_G.voiceline_framework:register_line_type("skeleton", "buddy_died")
 		_G.voiceline_framework:register_line_type("skeleton", "contact")
 		_G.voiceline_framework:register_line_type("skeleton", "cover_me")
@@ -59,8 +57,6 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("skeleton", "rescue_civ")
 		_G.voiceline_framework:register_line_type("skeleton", "retreat")
 		_G.voiceline_framework:register_line_type("skeleton", "clear")
-		_G.voiceline_framework:register_line_type("skeleton", "aggro_no_assault")
-		_G.voiceline_framework:register_line_type("skeleton", "panic_no_assault")
 		_G.voiceline_framework:register_line_type("bruce", "retreat")
 		_G.voiceline_framework:register_line_type("bruce", "buddy_died")
 		_G.voiceline_framework:register_line_type("bruce", "clear")
@@ -212,15 +208,7 @@ if not _G.restorationvoice then
 		
 		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("skeleton", "clear", ModPath .. "assets/oggs/voiceover/skeleton/clear/clear" .. i .. ".ogg")
-		end
-		
-		for i = 1, 9 do
-			_G.voiceline_framework:register_voiceline("skeleton", "aggro_no_assault", ModPath .. "assets/oggs/voiceover/skeleton/aggro_no_assault/aggro_no_assault" .. i .. ".ogg")
-		end	
-		
-		for i = 1, 6 do
-			_G.voiceline_framework:register_voiceline("skeleton", "panic_no_assault", ModPath .. "assets/oggs/voiceover/skeleton/panic_no_assault/panic_no_assault" .. i .. ".ogg")
-		end				
+		end			
 		
 		--Vet Cop thanks JimTheCookie	
 
@@ -305,14 +293,6 @@ if not _G.restorationvoice then
 		
 		for i = 1, 12 do
 			_G.voiceline_framework:register_voiceline("pdth", "clear", ModPath .. "assets/oggs/voiceover/pdth/clear/clear" .. i .. ".ogg")
-		end	
-		
-		for i = 1, 9 do
-			_G.voiceline_framework:register_voiceline("pdth", "aggro_no_assault", ModPath .. "assets/oggs/voiceover/pdth/aggro_no_assault/aggro_no_assault" .. i .. ".ogg")
-		end	
-		
-		for i = 1, 6 do
-			_G.voiceline_framework:register_voiceline("pdth", "panic_no_assault", ModPath .. "assets/oggs/voiceover/pdth/panic_no_assault/panic_no_assault" .. i .. ".ogg")
 		end	
 		
 		--Titan Taser	

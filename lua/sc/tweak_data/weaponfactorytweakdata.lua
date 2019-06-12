@@ -40101,6 +40101,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_ass_mk18s_a_strong.pcs = nil
 			self.parts.wpn_fps_ass_mk18s_a_classic.pcs = nil
 			self.parts.wpn_fps_ass_mk18s_a_dmr.pcs = nil
+			table.remove(self.wpn_fps_ass_mk18s.default_blueprint, 13)
 			table.list_append(self.wpn_fps_ass_mk18s.uses_parts, {
 				"wpn_fps_upg_i_slower_rof"
 			})
@@ -40114,7 +40115,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				recoil = -1					
 				}	
-			self.parts.wpn_fps_ass_mk18s_a_weak.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}								
+			self.parts.wpn_fps_ass_mk18s_a_weak.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}	
+			self.parts.wpn_fps_ass_mk18s_vg_magwell.pcs = {}							
+			self.parts.wpn_fps_ass_mk18s_vg_magwell.stats = {
+				value = 2,
+				recoil = 1,
+				spread_moving = 1,
+				concealment = -1
+				}				
 			self.parts.wpn_fps_ass_mk18s_fg_black.stats = {
 					value = 0
 				}	

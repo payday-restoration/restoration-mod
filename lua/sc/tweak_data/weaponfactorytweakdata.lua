@@ -40456,6 +40456,72 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			end
 
+	if self.wpn_fps_ass_bulldoge then 	--Gambyt's Vertical Grip Assortment Pack
+		table.list_append(self.wpn_fps_ass_bulldoge.uses_parts, {
+			"wpn_fps_upg_i_slower_rof"
+		})
+		table.list_append(self.wpn_fps_ass_bulldoge.uses_parts, {
+			"wpn_fps_upg_i_faster_rof"
+		})		
+		self.parts.wpn_fps_ass_bulldoge_vg_mallninja.stats = { --its got a cool laser ok
+					value = 1,
+				}	
+		self.parts.wpn_fps_ass_bulldoge_vg_mallninja.desc_id = nil
+		self.parts.wpn_fps_ass_bulldoge_grip_hk.stats = {
+					value = 1,
+					spread = 1,
+					recoil = -1
+				}	
+		self.parts.wpn_fps_ass_bulldoge_mag_ext.stats = {
+					value = 2,
+					extra_ammo = 20,
+					reload = -2,
+					concealment = -2
+				}		
+		self.parts.wpn_fps_ass_bulldoge_mag_short.stats = {
+					value = 2,
+					spread_moving = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -5
+				}			
+		self.parts.wpn_fps_ass_bulldoge_vg_lt_fug.pcs = nil
+		self.parts.wpn_fps_ass_bulldoge_vg_lt_fug.stats = {
+					value = 0
+				}		
+		self.parts.wpn_fps_ass_bulldoge_irons_hk.stats = {
+					value = 0
+				}
+		self.parts.wpn_fps_ass_bulldoge_irons_mbus.stats = {
+					value = 0
+				}							
+		self.parts.wpn_fps_ass_bulldoge_irons_kac.stats = {
+					value = 0
+				}											
+		self.parts.wpn_fps_ass_bulldoge_vg_grippod.stats = {
+					value = 1,		
+					spread = 1,
+					concealment = -1
+				}	
+		self.parts.wpn_fps_ass_bulldoge_vg_worn.stats = {
+					value = 1,
+					spread = -1,
+					recoil = 2,					
+					concealment = -1
+				}														
+		self.parts.wpn_fps_ass_bulldoge_vg_smol.stats = {
+					value = 1,
+					recoil = -1,
+					concealment = 1
+				}	
+		self.parts.wpn_fps_ass_bulldoge_vg_ergo.stats = {
+					value = 1,
+					spread = -1,
+					recoil = 1,
+					concealment = 2					
+				}																															
+			end			
+
 	if self.wpn_fps_smg_fmg9 then 	--Pawcio's FMG 9
 		self.parts.wpn_fps_upg_fmg9_supp_osprey.stats = {
 					value = 5,
@@ -44958,7 +45024,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}
 		self.parts.wpn_fps_upg_plr16_vg_bcm.stats = {
 					value = 1,
-					spread = 0,
 					spread_moving = 2,
 					concealment = 1
 				}				

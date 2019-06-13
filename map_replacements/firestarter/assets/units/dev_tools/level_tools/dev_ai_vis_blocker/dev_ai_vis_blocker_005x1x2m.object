@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="core/material_configs/hub_elements" orientation_object="rp_dev_ai_vis_blocker_005x1x2m" />
+<sequence_manager file="units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_005x1x2m"/>
+  <bodies>
+	<body name="editor" enabled="true" template="editor">
+		<object name="g_g" collision_type="box" />
+	</body>
+	<body name="static_body" enabled="true" add_ray_type="ai_vision" remove_ray_type="mover walk" template="nav_walk" editable="true" collides_with_mover="false">
+		<object name="g_g" collision_type="box" />
+	</body>
+  </bodies>
+  <graphics>
+    <object name="g_g" enabled="true" instance_struct="world_tm" />
+  </graphics>
+</dynamic_object>

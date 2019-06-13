@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/lcm/lcm_ext_storefront_4x8m_a1" orientation_object="rp_lcm_ext_storefront_4x8m_a1" />
+	<sequence_manager file="units/payday2/architecture/lcm/lcm_ext_storefront_4x8m_a1" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_lcm_ext_storefront_4x8m_a1"/>
+
+			<object name="c_box_storefront_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_06" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_07" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_08" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_09" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_12" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_13" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_14" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_15" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_16" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_17" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_18" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_19" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_20" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_23" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_24" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_25" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_26" collision_type="box" padding="-2.5"/>
+			<object name="c_box_storefront_27" collision_type="box" padding="-2.5"/>
+			
+        </body>
+        <body name="glass_body_01" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_01" />
+			<object name="c_box_glass_01" collision_type="box" padding="-2.5"/>
+        </body>
+        <body name="glass_body_02" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_02" />
+			<object name="c_box_glass_02" collision_type="box" padding="-2.5"/>
+        </body>
+        <body name="glass_body_03" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_03" />
+			<object name="c_box_glass_03" collision_type="box" padding="-2.5"/>
+        </body>
+        <body name="glass_body_04" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_04" />
+			<object name="c_box_glass_04" collision_type="box" padding="-2.5"/>
+        </body>
+        <body name="glass_body_05" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_05" />
+			<object name="c_box_glass_05" collision_type="box" padding="-2.5"/>
+        </body>
+        <body name="glass_body_06" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_06" />
+			<object name="c_box_glass_06" collision_type="box" padding="-2.5"/>
+        </body>
+        <body name="glass_body_07" template="static" enabled="true" remove_ray_type="vis_graph ai_vision" >
+			<object name="a_centerofmass_fix_07" />
+			<object name="c_box_glass_07" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="glass_breakable" static="true">
+		<decal_mesh name="g_lcm_ext_storefront_4x8m_a1" material="wood" enabled="true"/>
+		<decal_mesh name="g_glass_01" material="glass_breakable" enabled="true"/>
+		<decal_mesh name="g_glass_02" material="glass_breakable" enabled="true"/>
+		<decal_mesh name="g_glass_03" material="glass_breakable" enabled="true"/>
+		<decal_mesh name="g_glass_04" material="glass_breakable" enabled="true"/>
+		<decal_mesh name="g_glass_05" material="glass_breakable" enabled="true"/>
+		<decal_mesh name="g_glass_06" material="glass_breakable" enabled="true"/>
+		<decal_mesh name="g_glass_07" material="glass_breakable" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_lcm_ext_storefront_4x8m_a1" />
+		<object enabled="true" name="s_s" shadow_caster="true"/>
+		<object name="g_glass_01" enabled="true"/>
+		<object name="g_glass_02" enabled="true"/>
+		<object name="g_glass_03" enabled="true"/>
+		<object name="g_glass_04" enabled="true"/>
+		<object name="g_glass_05" enabled="true"/>
+		<object name="g_glass_06" enabled="true"/>
+		<object name="g_glass_07" enabled="true"/>
+    </graphics>
+</dynamic_object> 

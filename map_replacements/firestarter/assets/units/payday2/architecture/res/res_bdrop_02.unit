@@ -1,0 +1,6 @@
+<unit type="res" slot="1" >
+    <object file="units/payday2/architecture/res/res_bdrop_02" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

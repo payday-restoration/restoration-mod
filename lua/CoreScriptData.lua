@@ -224,7 +224,11 @@ Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", fu
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/platinum.custom_xml", "custom_xml", "core/environments/default", "environment")
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/platinum.custom_xml", "custom_xml", "core/environments/default", "environment")
 	end
-
+	
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_3_res" then
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	end	
 end)
 
 

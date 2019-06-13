@@ -207,15 +207,15 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	end
 	
 		if Global.load_level == true and Global.game_settings.level_id == "firestarter_1_res" then
-				if rnd == 1 or rnd == 2 then
-			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-			if rnd == 3 then
+				--if rnd == 1 or rnd == 2 then
+			--BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--if rnd == 3 then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 		--"sky_orientation/rotation":"278.53564453125",
-			end
-		end
+			--end
+		--end
 	end
 	
 	--Safehouse Booster

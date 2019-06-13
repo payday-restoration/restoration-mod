@@ -255,10 +255,16 @@
 		<unit force="true" path="units/payday2/equipment/gen_interactable_zipline/gen_interactable_zipline_mount_wall" unload="true"/>
 	</add>
 	<add path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" type="unit">
-		<unit force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
-		<object force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
-		<material_config force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
 		<bnk force="true" path="soundbanks/zipline" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+	</add>
+	<add path="units/world/props/container/container" type="unit">
+		<unit force="true" path="units/world/props/container/container" unload="true"/>
+		<object force="true" path="units/world/props/container/container" unload="true"/>
+		<material_config force="true" path="units/world/props/container/container" unload="true"/>
+		<sequence_manager force="true" path="units/world/props/container/container" unload="true"/>
 	</add>
 </table>

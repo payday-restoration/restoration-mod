@@ -10610,8 +10610,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.skspug.kick.standing = self.new_m4.kick.standing
 		self.skspug.kick.crouching = self.new_m4.kick.standing
 		self.skspug.kick.steelsight = self.new_m4.kick.standing
-		self.skspug.AMMO_MAX = 60
-		self.skspug.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.skspug.AMMO_MAX = 40
+		self.skspug.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.skspug.stats = {
 			zoom = 3,
 			total_ammo_mod = 100,
@@ -10658,7 +10658,37 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.sks.panic_suppression_chance = 0.0
-	end							
+	end			
+
+	if self.bulldoge then --Gambyt's Bulldog 7.62 
+		self.bulldoge.use_data.selection_index = 1		
+		self.bulldoge.categories = {
+			"assault_rifle"
+		}
+		self.bulldoge.AMMO_MAX = 80
+		self.bulldoge.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.bulldoge.spread.standing = 3
+		self.bulldoge.spread.crouching = 2
+		self.bulldoge.spread.steelsight = 1
+		self.bulldoge.spread.moving_standing = 4
+		self.bulldoge.spread.moving_crouching = 3
+		self.bulldoge.spread.moving_steelsight = 2
+		self.bulldoge.panic_suppression_chance = 0.0
+		self.bulldoge.stats = {
+			damage = 45,
+			spread = 18,
+			recoil = 17,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 19,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end								
 
 	if self.l1a1 then --Gambyt's L1A1
 		self.l1a1.CLIP_AMMO_MAX = 20

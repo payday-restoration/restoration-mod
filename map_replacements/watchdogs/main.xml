@@ -81,7 +81,7 @@
 		<script_data_mods directory="scriptdata"/>
 	</level>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative brief_id="heist_watchdogs_crimenet" contact="hector" briefing_event="hct_watchdogs_brf_speak" debrief_event="hct_watchdogs_debrief" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" name_id="heist_watchdogs" icon="guis/dlcs/bro/textures/pd2/crimenet/watchdogs">
+	<narrative brief_id="heist_watchdogs_crimenet" briefing_event="hct_watchdogs_brf_speak" contact="hector" debrief_event="hct_watchdogs_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/watchdogs" id="watchdogs_wrapper" load_screen="guis/dlcs/pic/textures/loading/job_watchdogs_01" name_id="heist_watchdogs">
 		<chain>
 			<table level_id="watchdogs_1_res" type="d" type_id="heist_type_survive" world_setting="night"/>
 			<table level_id="watchdogs_2_res" type="d" type_id="heist_type_survive" world_setting="night"/>

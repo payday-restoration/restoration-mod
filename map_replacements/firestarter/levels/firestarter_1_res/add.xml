@@ -241,12 +241,24 @@
 		<unit force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
 	</add>
 	<add path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" type="unit">
-		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
 		<material_config force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/window/storefront_window_small" unload="true"/>
 		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
 		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_zipline/gen_interactable_zipline_mount_wall" type="unit">
+		<material_config force="true" path="units/payday2/equipment/gen_interactable_zipline/gen_interactable_zipline_mount_wall" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_interactable_zipline/gen_interactable_zipline_mount_wall" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_interactable_zipline/gen_interactable_zipline_mount_wall" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" type="unit">
+		<unit force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
+		<bnk force="true" path="soundbanks/zipline" unload="true"/>
 	</add>
 </table>

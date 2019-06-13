@@ -109,12 +109,8 @@
 			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/editor_only/editor_only"/>
-			<value_node value="levels/narratives/butcher/thebomb/stage_3/marac/marac"/>
 			<value_node value="levels/narratives/vlad/ukrainian_job/world/world"/>
-			<value_node value="levels/narratives/armadillo/arm_und/world/world"/>
 			<value_node value="levels/instances/unique/sah/sah_office/world/world"/>
-			<value_node value="levels/narratives/vlad/nightclub/world/world"/>
-			<value_node value="levels/instances/unique/holly_2/safe_van/world/world"/>
 			<value_node value="levels/narratives/classics/pal/world"/>
 			<value_node value="packages/narr_firestarter1"/>
 			<value_node value="levels/narratives/classics/flat/world_sounds"/>

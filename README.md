@@ -8,14 +8,19 @@ All of the functions of the HUD are toggleable, but the Overhaul is all or nothi
 Mods required for Restoration to function
 
 SuperBLT: https://superblt.znix.xyz
+
 Voiceline Framework: https://modworkshop.net/mydownloads.php?action=view_down&did=22076
+
 Beardlib: https://modworkshop.net/mydownloads.php?action=view_down&did=14924
 
 Other Restoration Links
 
-Mod Workshop download (links to Gold vranch): https://modworkshop.net/mydownloads.php?action=view_down&did=428
+Mod Workshop download (links to Gold branch): https://modworkshop.net/mydownloads.php?action=view_down&did=428
+
 Restoration Mod Maps add-on: https://modworkshop.net/mydownloads.php?action=view_down&did=21004
+
 Restoration Mod discord: https://discord.gg/5xu9WCC
+
 Restoration Mod soundtrack: https://soundcloud.com/vxwolf/sets/restoration-mod-soundtrack
 
 This github is open to the public, and you are free to submit issue reports or pull requests, where they may find their way into the `dev` branch.

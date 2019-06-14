@@ -6799,7 +6799,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			FBI_suit = {
 				"flank",
-				"ranged_fire",
+				"elite_ranged_fire",
 				"flash_grenade",
 			    "hitnrun"
 			},
@@ -6816,7 +6816,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"charge",
 				"provide_support",
-				"ranged_fire"
+				"elite_ranged_fire"
 			},
 			FBI_swat_shotgun = {
 				"smoke_grenade",
@@ -6900,7 +6900,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"smoke_grenade"
 			},
 			spooc = {
-				"charge",
+				"spoocavoidance",
 				"shield_cover",
 				"smoke_grenade",
 				"flash_grenade"
@@ -6922,6 +6922,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"murder"
 			},
 			Cap_autumn = {
+				"spoocavoidance",
 				"flank",
 				"shield_cover",
 				"smoke_grenade",
@@ -6953,7 +6954,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support"
 			},
 			swat_rifle_flank = {
-				"ranged_fire",
+				"elite_ranged_fire",
 				"provide_coverfire",
 				"provide_support",
 				"flank",

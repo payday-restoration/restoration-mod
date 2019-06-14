@@ -18,6 +18,7 @@
 			<file file="env/env.continent" type="binary"/>
 			<file file="env/env.mission" type="binary"/>
 			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/firestarter1.environment" type="custom_xml"/>
 		</include>
 		<outro_event>
 			<value_node value="Play_pln_firestarter_stage1_end_a"/>

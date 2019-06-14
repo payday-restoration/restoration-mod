@@ -1,6 +1,6 @@
 # Restoration Mod
 
-Restoration Mod is a multi-functional mod that restores an older version of Payday 2's HUD, as well as including a Total Game Overhaul aimed at restoring the good parts of old Payday 2 
+Restoration Mod is a multi-functional mod that restores an older version of Payday 2's HUD, as well as offers a Total Game Overhaul aimed at restoring the good parts of old Payday 2 
 while implementing the good parts of new Payday 2 seamlessly along with some new, fully custom content, and a few other small cosmetic features.
 
 All of the functions of the HUD are toggleable, but the Overhaul is all or nothing. The way it is designed makes it virtually impossible to disable any part of it without severe balance issues.

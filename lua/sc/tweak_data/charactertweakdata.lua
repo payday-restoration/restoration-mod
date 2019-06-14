@@ -2267,7 +2267,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.damage.fire_damage_mul = 0.65
 		self.autumn.flammable = false
 		self.autumn.damage.explosion_damage_mul = 0.15
-		self.autumn.damage.bullet_dodge_chance = 40
+		self.autumn.damage.bullet_dodge_chance = 10
 		self.autumn.move_speed = presets.move_speed.lightning
 		self.autumn.no_retreat = true
 		self.autumn.no_arrest = true
@@ -4859,7 +4859,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 1,
+				dmg_mul = 0.7,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -5718,7 +5718,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 2,
+				dmg_mul = 1.7,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -6943,7 +6943,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 2.3,
+				dmg_mul = 2.0,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -7755,7 +7755,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 250,
 				acc = {1, 1},
-				dmg_mul = 2.875,
+				dmg_mul = 2.5,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -7768,7 +7768,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 500,
 				acc = {0.5, 0.5},
-				dmg_mul = 2.875,
+				dmg_mul = 2.5,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -7781,7 +7781,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 2.875,
+				dmg_mul = 2.2,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -11720,6 +11720,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("normal", "normal")
+		self.autumn.damage.bullet_dodge_chance = 10
 		self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -11820,6 +11821,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("normal", "normal")
+		self.autumn.damage.bullet_dodge_chance = 10
 		self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -11920,6 +11922,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("normal", "normal")
+		self.autumn.damage.bullet_dodge_chance = 10
 		self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -12020,6 +12023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("good", "normal")
+		self.autumn.damage.bullet_dodge_chance = 10
 		self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
@@ -12144,6 +12148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
+		self.autumn.damage.bullet_dodge_chance = 15
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 10
@@ -12320,7 +12325,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
-		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+		self.autumn.damage.bullet_dodge_chance = 20	
 		self.presets.gang_member_damage.HEALTH_INIT = 125
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.old_hoxton_mission.HEALTH_INIT = 125
@@ -12371,6 +12377,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+		self.autumn.damage.bullet_dodge_chance = 25
 		self.presets.gang_member_damage.HEALTH_INIT = 150
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.old_hoxton_mission.HEALTH_INIT = 150
@@ -12453,7 +12460,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.tank_hw.move_speed = self.presets.move_speed.slow
 		else
 			self.tank_hw.move_speed = self.presets.move_speed.slow
-		end		
+		end	
+		self.autumn.damage.bullet_dodge_chance = 30	
 		
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")

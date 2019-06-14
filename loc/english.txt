@@ -266,6 +266,8 @@
 	"RestorationModAssaultStyleDescID" : "Allows you to choose the style of assault panel you want to use",
 	"RestorationModCasingTickerTitleID" : "Alpha Casing Tape",
 	"RestorationModCasingTickerDescID" : "Enable or disable the Alpha Casing Tape (Requires Alpha Tape Style).",
+	"RestorationModCustodyTitleID" : "Alpha Custody",
+	"RestorationModCustodyDescID" : "Enable or disable alpha custody panel",
 	"alpha_assault" : "Early Alpha Corner",
 	"beta_assault" : "Alpha Tape",
 	"menu_asset_wet_add_saw" : "Additional Saw",

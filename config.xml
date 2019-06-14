@@ -30,6 +30,7 @@
 		<hook file="managers/hud/HUDPlayerDowned.lua" source_file="lib/managers/hud/HUDPlayerDowned"/>
 		<hook file="managers/hud/HUDPresenter.lua" source_file="lib/managers/hud/HUDPresenter"/>
 		<hook file="managers/hud/HUDSuspicion.lua" source_file="lib/managers/hud/HUDSuspicion"/>
+		<hook file="managers/hud/hudplayercustody.lua" source_file="lib/managers/hud/HUDPlayerCustody"/>
 		<!--<hook file="managers/hud/HUDStageEndScreen.lua" source_file="lib/managers/hud/HUDStageEndScreen"/>-->
 		<hook file="managers/hud/HUDMissionBriefing.lua" source_file="lib/managers/hud/HUDMissionBriefing"/>
 		<hook file="managers/menu/CircleGUIObject.lua" source_file="lib/managers/menu/CircleGUIObject"/>
@@ -258,6 +259,7 @@
 				<option type="bool" default_value="true" name="Hint"/>
 				<option type="bool" default_value="true" name="MaskOn"/>
 				<option type="bool" default_value="false" name="Hostage"/>
+				<option type="bool" default_value="false" name="Custody"/>
 				<option type="bool" default_value="false" name="DifficultyMarkers"/>
 				<option type="bool" default_value="false" name="BlackScreen"/>
 				<option type="bool" default_value="false" name="Loadouts"/>

@@ -262,9 +262,32 @@
 		<unit force="true" path="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor" unload="true"/>
 	</add>
 	<add path="units/world/props/container/container" type="unit">
-		<unit force="true" path="units/world/props/container/container" unload="true"/>
-		<object force="true" path="units/world/props/container/container" unload="true"/>
 		<material_config force="true" path="units/world/props/container/container" unload="true"/>
+		<object force="true" path="units/world/props/container/container" unload="true"/>
 		<sequence_manager force="true" path="units/world/props/container/container" unload="true"/>
+		<unit force="true" path="units/world/props/container/container" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" type="unit">
+		<unit force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/gen_interactable_door_reinforced" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/spawn_debris_door_reinforced" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/spawn_debris_door_reinforced" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_interactable_door_reinforced/spawn_debris_door_reinforced" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/wood/wood_door_shotgun_dmg_in" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/wood/wood_door_shotgun_dmg_out" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<effect force="true" load="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/explosions/shapecharger_explosion" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/explosions/smoke_explosion/smoke" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/explosions/smoke_explosion/fire_smoke_mid" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/explosions/sparks/sparks" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/explosions/smoke_explosion/dark_smoke_big" unload="true"/>
+		<physic_effect force="true" path="physic_effects/push_sphere" unload="true"/>
 	</add>
 </table>

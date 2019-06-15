@@ -606,16 +606,15 @@
 		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_mercedes/str_vehicle_car_mercedes" unload="true"/>
 	</add>
 	<add path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" type="unit">
-		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
 		<material_config force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
 		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
 	</add>
 	<cooked_physics path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<material_config path="units/world/props/red_diamond_room/big_red_diamond_stand" unload="true"/>
 	<model path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<object path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<sequence_manager path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
-	<unit path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 </table>

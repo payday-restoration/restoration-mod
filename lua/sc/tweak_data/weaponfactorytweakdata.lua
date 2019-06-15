@@ -22,7 +22,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_fla_mk2_npc_summers.default_blueprint = {
 			"wpn_fps_fla_mk2_empty",
 			"wpn_fps_fla_mk2_body_fierybeast_summer",
-			"wpn_fps_fla_mk2_mag_welldone"
+			"wpn_fps_fla_mk2_mag_rare"
 		}
 		self.wpn_fps_ass_m16_npc_summers = deep_clone(self.wpn_fps_ass_m16_npc)
 		self.wpn_fps_ass_m16_npc_summers.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc"

@@ -1358,7 +1358,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flamethrower_mk2_crew.sounds.fire = "flamethrower_npc_fire"
 		self.flamethrower_mk2_crew.sounds.stop_fire = "flamethrower_npc_fire_stop"
 		self.flamethrower_mk2_crew.use_data.selection_index = 2
-		self.flamethrower_mk2_crew.DAMAGE = 5
+		self.flamethrower_mk2_crew.DAMAGE = 3.7
 		self.flamethrower_mk2_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.flamethrower_mk2_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.flamethrower_mk2_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"

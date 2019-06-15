@@ -517,9 +517,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic_summers.surrender = nil
 		self.medic_summers.flammable = false
 		self.medic_summers.use_animation_on_fire_damage = false
-		self.medic_summers.damage.bullet_damage_mul = 0.65
-		self.medic_summers.damage.explosion_damage_mul = 0.1
-		self.medic_summers.damage.fire_damage_mul = 0.05
+		self.medic_summers.damage.explosion_damage_mul = 0.25
+		self.medic_summers.damage.fire_damage_mul = 0.25
 		self.medic_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.medic_summers.ecm_vulnerability = 0
 		self.medic_summers.ecm_hurts = {}			
@@ -2198,17 +2197,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.weapon_safety_range = 1
 		self.summers.detection = presets.detection.normal
 		self.summers.HEALTH_INIT = 72
-		self.summers.HEALTH_SUICIDE_LIMIT = 0.25
 		self.summers.flammable = false
 		self.summers.use_animation_on_fire_damage = false
-		self.summers.damage.bullet_damage_mul = 0.65
-		self.summers.damage.explosion_damage_mul = 0.1
-		self.summers.damage.fire_damage_mul = 0.05
+		self.summers.damage.bullet_damage_mul = 0.75
+		self.summers.damage.explosion_damage_mul = 0.25
+		self.summers.damage.fire_damage_mul = 0.25
 		self.summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.summers.headshot_dmg_mul = 1.5
 		self.summers.bag_dmg_mul = 6
 		self.summers.move_speed = presets.move_speed.fast
-		self.summers.crouch_move = true
+		self.summers.crouch_move = false
 		self.summers.no_retreat = true
 		self.summers.no_arrest = true
 		self.summers.ends_assault_on_death = true
@@ -2263,10 +2261,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.immune_to_concussion = true		
 		self.autumn.HEALTH_INIT = 120
 		self.autumn.headshot_dmg_mul = 2.925
-		self.autumn.damage.bullet_damage_mul = 0.65
-		self.autumn.damage.fire_damage_mul = 0.65
+		self.autumn.damage.bullet_damage_mul = 0.75
+		self.autumn.damage.fire_damage_mul = 0.75
 		self.autumn.flammable = false
-		self.autumn.damage.explosion_damage_mul = 0.15
+		self.autumn.damage.explosion_damage_mul = 0.25
 		self.autumn.damage.bullet_dodge_chance = 10
 		self.autumn.move_speed = presets.move_speed.lightning
 		self.autumn.no_retreat = true
@@ -2405,9 +2403,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_summers.ignore_medic_revive_animation = false
 		self.taser_summers.flammable = false
 		self.taser_summers.use_animation_on_fire_damage = false
-		self.taser_summers.damage.bullet_damage_mul = 0.65
-		self.taser_summers.damage.explosion_damage_mul = 0.1
-		self.taser_summers.damage.fire_damage_mul = 0.05
+		self.taser_summers.damage.explosion_damage_mul = 0.25
+		self.taser_summers.damage.fire_damage_mul = 0.25
 		self.taser_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.taser_summers.ecm_vulnerability = 0
 		self.taser_summers.ecm_hurts = {}
@@ -2536,8 +2533,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers = deep_clone(self.boom)
 		self.boom_summers.spawn_sound_event = "clk_c01x_plu"
 		self.boom_summers.use_animation_on_fire_damage = false
-		self.boom_summers.damage.explosion_damage_mul = 0.1
-		self.boom_summers.damage.fire_damage_mul = 0.05
+		self.boom_summers.damage.explosion_damage_mul = 0.25
+		self.boom_summers.damage.fire_damage_mul = 0.25
 		self.boom_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.boom_summers.chatter = presets.enemy_chatter.summers
 		self.boom_summers.speech_prefix_p1 = "fl"
@@ -4859,7 +4856,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 0.7,
+				dmg_mul = 1,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -5718,7 +5715,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 1.7,
+				dmg_mul = 2,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -6943,7 +6940,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 2.0,
+				dmg_mul = 2.3,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -7755,7 +7752,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 250,
 				acc = {1, 1},
-				dmg_mul = 2.5,
+				dmg_mul = 2.875,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -7768,7 +7765,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 500,
 				acc = {0.5, 0.5},
-				dmg_mul = 2.5,
+				dmg_mul = 2.875,
 				recoil = {0, 0},
 				mode = {
 					0,
@@ -7781,7 +7778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			{
 				r = 1400,
 				acc = {0.25, 0.25},
-				dmg_mul = 2.2,
+				dmg_mul = 2.875,
 				recoil = {0, 0},
 				mode = {
 					0,

@@ -16,6 +16,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					elseif managers.groupai:state():chk_assault_active_atm() and common_cop then
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive_assault") --common cops use aggressive chatter less often in assaults
 						--log("assault chatter works")
+					elseif data.unit:base()._tweak_table == "spooc" or data.unit:base()._tweak_table == "spooc_titan" then
+					    data.unit:sound():say("clk_c01x_plu", true, true)
+						--log("cloaker chatter works")
 					else	
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
 						--log("between assault chatter works")

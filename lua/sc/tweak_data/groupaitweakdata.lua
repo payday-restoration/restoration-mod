@@ -7895,7 +7895,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3
@@ -7924,7 +7924,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3

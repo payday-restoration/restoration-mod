@@ -60,23 +60,25 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end			
 		end		
 		
-		if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("flamethrower") then
-		else
-			local helmet_pop_roll = math.rand(1, 100)
-			local chance_pop = 10	
-			if helmet_pop_roll <= chance_pop then
-				if head then
-					if self._unit:base()._tweak_table == "boom" then
-						self._unit:damage():run_sequence_simple("grenadier_glass_break")
-					else	
-						self:_spawn_head_gadget({
-							position = attack_data.col_ray.body:position(),
-							rotation = attack_data.col_ray.body:rotation(),
-							dir = attack_data.col_ray.ray
-						})
-					end
-				end	
-			end		
+		if not attack_data.is_molotov then
+			if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("flamethrower") then
+			else
+				local helmet_pop_roll = math.rand(1, 100)
+				local chance_pop = 10	
+				if helmet_pop_roll <= chance_pop then
+					if head then
+						if self._unit:base()._tweak_table == "boom" then
+							self._unit:damage():run_sequence_simple("grenadier_glass_break")
+						else	
+							self:_spawn_head_gadget({
+								position = attack_data.col_ray.body:position(),
+								rotation = attack_data.col_ray.body:rotation(),
+								dir = attack_data.col_ray.ray
+							})
+						end
+					end	
+				end		
+			end
 		end
 		
 		damage = self:_apply_damage_reduction(damage)
@@ -133,20 +135,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				is_molotov = attack_data.is_molotov
 			}
 			
-			if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("flamethrower") then
-			else
-				if data.name == "boom" then
+			if not attack_data.is_molotov then
+				if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("flamethrower") then
+				else
+					if data.name == "boom" then
+						if data.head_shot then
+							self._unit:damage():run_sequence_simple("grenadier_glass_break")
+						end
+					end				
+					
 					if data.head_shot then
-						self._unit:damage():run_sequence_simple("grenadier_glass_break")
+						self:_spawn_head_gadget({
+							position = attack_data.col_ray.body:position(),
+							rotation = attack_data.col_ray.body:rotation(),
+							dir = attack_data.col_ray.ray
+						})
 					end
-				end				
-				
-				if data.head_shot then
-					self:_spawn_head_gadget({
-						position = attack_data.col_ray.body:position(),
-						rotation = attack_data.col_ray.body:rotation(),
-						dir = attack_data.col_ray.ray
-					})
 				end
 			end
 

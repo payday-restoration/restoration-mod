@@ -40,5 +40,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:base():setup_hud_offset(self)
 		end
 	end
+	
+	function NetworkPeer:mark_cheater(reason, auto_kick)
+		--fuck
+		return
+	end	
 
 end

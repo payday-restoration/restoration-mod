@@ -235,7 +235,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif data.unit:base()._tweak_table == "gensec" then
 					data.unit:sound():say("a01", true)			
 				elseif data.unit:base()._tweak_table == "security" then
-					data.unit:sound():say("a01", true)			
+					data.unit:sound():say("a01", true)		
+				elseif data.unit:base()._tweak_table == "spooc" then
+					data.unit:sound():say("clk_c01x_plu", true, true)						
 				else
 					data.unit:sound():say("c01", true)
 				end

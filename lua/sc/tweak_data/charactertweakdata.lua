@@ -1860,7 +1860,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc.access = "spooc"
 		self.spooc.flammable = true
 		self.spooc.dodge = presets.dodge.ninja
-		self.spooc.chatter = presets.enemy_chatter.no_chatter
+		self.spooc.chatter = presets.enemy_chatter.cloaker
 		self.spooc.steal_loot = nil
 		self.spooc.melee_weapon = nil
 		self.spooc.use_radio = nil
@@ -1872,6 +1872,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.spooc.die_sound_event = "clk_x02a_any_3p"
 		end
+		self.spooc.spooc_sound_events = {
+			detect_stop = "cloaker_detect_stop",
+			detect = "cloaker_detect_mono"
+		}
+		
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
@@ -2517,13 +2522,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			entrance = true
 		}
 		self.boom.announce_incomming = "incomming_gren"
-		self.boom.spawn_sound_event = "clk_c01x_plu"
 		self.boom.steal_loot = nil
 		self.boom.custom_voicework = "grenadier"
 		self.boom.is_special = true		
 		table.insert(self._enemy_list, "boom")
 		self.rboom = deep_clone(self.boom)
-		self.rboom.spawn_sound_event = "clk_c01x_plu"
 		self.rboom.die_sound_event = "mdc_x02a_any_3p"
 		self.rboom.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.rboom.speech_prefix_p2 = self._speech_prefix_p2
@@ -2531,7 +2534,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rboom.custom_voicework = nil
 		table.insert(self._enemy_list, "rboom")
 		self.boom_summers = deep_clone(self.boom)
-		self.boom_summers.spawn_sound_event = "clk_c01x_plu"
 		self.boom_summers.use_animation_on_fire_damage = false
 		self.boom_summers.damage.explosion_damage_mul = 0.25
 		self.boom_summers.damage.fire_damage_mul = 0.25
@@ -11599,6 +11601,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				clear = true,
 				reload = true
 			},
+			cloaker = {
+				contact = true
+			},			
 		}
 		return presets
 	end

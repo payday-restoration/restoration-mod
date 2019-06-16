@@ -1701,6 +1701,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.tank.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.tank.chatter = {
+			reload = true, --this is just here for tdozers
 			aggressive = true,
 			retreat = true,
 			go_go = true,

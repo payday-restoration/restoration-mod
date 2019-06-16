@@ -316,14 +316,64 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local update_original = PlayerStandard.update
 	local start_steelsight_original = PlayerStandard._start_action_steelsight
 	local end_steelsight_original = PlayerStandard._end_action_steelsight
-
+	local _check_action_primary_attack_original = PlayerStandard._check_action_primary_attack
+	local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel	
+	
 	function PlayerStandard:update(...)
 		local weapon = self._unit:inventory():equipped_unit():base()
+		
+		self:_update_burst_fire(t)
+		
 		if weapon:get_name_id() == "m134" then
 			weapon:update_spin()
 		end
 		
 		return update_original(self, ...)
+	end
+	
+	function PlayerStandard:_check_action_primary_attack(t, input, ...)
+		if self._trigger_down and not input.btn_primary_attack_state then
+			self._equipped_unit:base():cancel_burst(true)
+		end
+		self._trigger_down = input.btn_primary_attack_state
+		
+		return _check_action_primary_attack_original(self, t, input, ...)
+	end
+	
+	function PlayerStandard:_check_action_deploy_underbarrel(...)
+		local new_action = _check_action_deploy_underbarrel_original(self, ...)
+		
+		if new_action and alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base():in_burst_mode() then
+			managers.hud:set_teammate_weapon_firemode_burst(self._equipped_unit:base():selection_index())
+		end
+		
+		return new_action
+	end	
+	
+	function PlayerStandard:_check_action_weapon_firemode(t, input)
+		local wbase = self._equipped_unit:base()
+		if input.btn_weapon_firemode_press and wbase.toggle_firemode then
+			self:_check_stop_shooting()
+			if wbase:toggle_firemode() then
+				if wbase:in_burst_mode() then
+					managers.hud:set_teammate_weapon_firemode_burst(self._unit:inventory():equipped_selection())
+				else
+					managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), wbase:fire_mode())
+				end
+			end
+		end
+	end
+		
+	function PlayerStandard:_update_burst_fire(t)
+		if alive(self._equipped_unit) and self._equipped_unit:base():burst_rounds_remaining() then
+			self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true })
+		end
+	end
+	
+	function PlayerStandard:force_recoil_kick(weap_base, manual_multiplier)
+		local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (manual_multiplier or 1)
+		local up, down, left, right = unpack(weap_base:weapon_tweak_data().kick[self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
+		self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
 	end
 	
 	function PlayerStandard:_start_action_steelsight(...)

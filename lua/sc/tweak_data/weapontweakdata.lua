@@ -4848,6 +4848,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.famas.timers.reload_not_empty = 2.6
 		self.famas.panic_suppression_chance = 0.0
+		self.famas.BURST_FIRE = 3
+		self.famas.ADAPTIVE_BURST_SIZE = false
 		self.scorpion.AMMO_MAX = 150
 		self.scorpion.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.scorpion.FIRE_MODE = "auto"

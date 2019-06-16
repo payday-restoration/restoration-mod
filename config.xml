@@ -173,6 +173,9 @@
 		<hook file="sc/network/base/networkpeer.lua" source_file="lib/network/base/networkpeer"/>
 		<hook file="sc/tweak_data/attentiontweakdata.lua" source_file="lib/tweak_data/attentiontweakdata"/>
 		<hook file="sc/managers/gameplaycentralmanager.lua" source_file="lib/managers/gameplaycentralmanager"/>
+		<hook file="sc/units/weapons/akimboweaponbase.lua" source_file="lib/units/weapons/akimboweaponbase"/>
+		<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
+		<hook file="sc/managers/hud/hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

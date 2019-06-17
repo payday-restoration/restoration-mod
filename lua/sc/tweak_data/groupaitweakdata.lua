@@ -260,7 +260,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		elseif difficulty_index == 5 then
 			self.special_unit_spawn_limits = {
-				tank = 2,
+				tank = 3,
 				taser = 4,
 				boom = 2,
 				spooc = 3,
@@ -272,7 +272,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		elseif difficulty_index == 6 then
 			self.special_unit_spawn_limits = {
-				tank = 2,
+				tank = 3,
 				taser = 4,
 				boom = 2,
 				spooc = 4,
@@ -284,7 +284,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}	
 		elseif difficulty_index == 7 then
 			self.special_unit_spawn_limits = {
-				tank = 2,
+				tank = 3,
 				taser = 4,
 				boom = 2,
 				spooc = 4,
@@ -296,7 +296,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}				
 		else
 			self.special_unit_spawn_limits = {
-				tank = 2,
+				tank = 3,
 				taser = 4,
 				boom = 2,
 				spooc = 4,
@@ -7797,7 +7797,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3
@@ -7826,7 +7826,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3
@@ -7884,7 +7884,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "BLACK_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.BLACK_tank,
 						rank = 3
@@ -7913,7 +7913,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "BLACK_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.FBI_tank,
 						rank = 3
@@ -7971,7 +7971,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "SKULL_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.SKULL_tank,
 						rank = 3
@@ -8000,7 +8000,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "SKULL_tank",
 						freq = 1,
-						amount_min = 1,
+						amount_min = 0,
 						amount_max = 1,
 						tactics = self._tactics.SKULL_tank,
 						rank = 3
@@ -9775,7 +9775,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				CS_tanks = {
 					0,
 					0.05,
-					0.05
+					0.1
 				}
 			}
 		elseif difficulty_index == 4 then
@@ -9797,13 +9797,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				FBI_tanks = {
 					0,
-					0.05,
-					0.075
-				},
-				BLACK_tanks = {
-					0,
-					0.05,
-					0.075
+					0.1,
+					0.15
 				},
 				FBI_spoocs = {
 					0,
@@ -9835,12 +9830,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				FBI_tanks = {
 					0,
-					0.075,
+					0.125,
 					0.15
 				},
 				BLACK_tanks = {
 					0,
-					0.075,
+					0.125,
 					0.15
 				},
 				FBI_spoocs = {
@@ -9873,13 +9868,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				FBI_tanks = {
 					0,
-					0.055,
-					0.1
+					0.125,
+					0.15
 				},
 				BLACK_tanks = {
 					0,
-					0.055,
-					0.1
+					0.125,
+					0.15
 				},
 				FBI_spoocs = {
 					0,
@@ -9910,19 +9905,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0.3
 				},
 				FBI_tanks = {
-					0,
-					0.1,
-					0.125
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
 				},
 				BLACK_tanks = {
-					0,
-					0.1,
-					0.125
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
 				},
 				SKULL_tanks = {
-					0,
-					0.1,
-					0.1
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
 				},
 				CS_tazers = {
 					0.1,
@@ -9953,24 +9948,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0.3
 				},
 				FBI_tanks = {
-					0,
-					0.1,
-					0.125
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
 				},
 				BLACK_tanks = {
-					0,
-					0.1,
-					0.125
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
 				},
 				SKULL_tanks = {
-					0,
-					0.1,
-					0.1
-				},
-				TIT_tanks = {
-					0,
-					0.05,
-					0.05
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
 				},
 				CS_tazers = {
 					0.1,

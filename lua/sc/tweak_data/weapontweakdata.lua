@@ -4266,7 +4266,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.s552.spread.crouching = 2
 		self.s552.spread.steelsight = 1
 		self.s552.spread.moving_standing = 4
-		self.s552.BURST_FIRE = 2
+		self.s552.BURST_FIRE = 3
 		self.s552.ADAPTIVE_BURST_SIZE = false															
 		self.s552.spread.moving_crouching = 3
 		self.s552.spread.moving_steelsight = 2

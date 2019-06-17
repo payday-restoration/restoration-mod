@@ -7850,30 +7850,180 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		end
-		self.enemy_spawn_groups.BLACK_tanks = {
-			amount = {1, 1},
-			spawn = {
-				{
-					unit = "BLACK_tank",
-					freq = 1,
-					amount_max = 1,
-					tactics = self._tactics.BLACK_tank,
-					rank = 1
+		if difficulty_index <= 6 then
+			self.enemy_spawn_groups.BLACK_tanks = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "BLACK_tank",
+						freq = 1,
+						amount_max = 1,
+						tactics = self._tactics.BLACK_tank,
+						rank = 1
+					},
+					{
+						unit = "FBI_shield",
+						freq = 0.5,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield_flank,
+						rank = 3
+					},
+					{
+						unit = "FBI_heavy_G36_w",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_heavy_flank,
+						rank = 1
+					}
 				}
 			}
-		}
-		self.enemy_spawn_groups.SKULL_tanks = {
-			amount = {1, 1},
-			spawn = {
-				{
-					unit = "SKULL_tank",
-					freq = 1,
-					amount_max = 1,
-					tactics = self._tactics.SKULL_tank,
-					rank = 1
+		elseif difficulty_index == 7 then	
+			self.enemy_spawn_groups.BLACK_tanks = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "BLACK_tank",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.BLACK_tank,
+						rank = 3
+					},
+					{
+						unit = "FBI_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield_flank,
+						rank = 3
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
+				}
+			}		
+		else
+			self.enemy_spawn_groups.BLACK_tanks = {
+				amount = {3, 4},
+				spawn = {
+					{
+						unit = "BLACK_tank",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.FBI_tank,
+						rank = 3
+					},
+					{
+						unit = "FBI_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield_flank,
+						rank = 3
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
 				}
 			}
-		}
+		end
+		if difficulty_index <= 6 then
+			self.enemy_spawn_groups.SKULL_tanks = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "SKULL_tank",
+						freq = 1,
+						amount_max = 1,
+						tactics = self._tactics.SKULL_tank,
+						rank = 1
+					},
+					{
+						unit = "FBI_shield",
+						freq = 0.5,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield,
+						rank = 3
+					},
+					{
+						unit = "FBI_heavy_G36_w",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_heavy,
+						rank = 1
+					}
+				}
+			}
+		elseif difficulty_index == 7 then	
+			self.enemy_spawn_groups.SKULL_tanks = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "SKULL_tank",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.SKULL_tank,
+						rank = 3
+					},
+					{
+						unit = "FBI_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield,
+						rank = 3
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
+				}
+			}		
+		else
+			self.enemy_spawn_groups.SKULL_tanks = {
+				amount = {3, 4},
+				spawn = {
+					{
+						unit = "SKULL_tank",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.SKULL_tank,
+						rank = 3
+					},
+					{
+						unit = "FBI_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield_flank,
+						rank = 3
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
+				}
+			}
+		end
 		self.enemy_spawn_groups.TIT_tanks = {
 			amount = {1, 1},
 			spawn = {

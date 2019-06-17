@@ -9339,6 +9339,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_pis_jungle",
 			"wpn_fps_pis_beretta_body_modern",
 			--Mod stuff below--
+			--"wpn_fps_upg_i_93r",
 			"wpn_fps_upg_ammo_p"
 		}
 		self.wpn_fps_pis_beretta_npc = deep_clone(self.wpn_fps_pis_beretta)
@@ -38859,6 +38860,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			internal_part = true,
 			dlc = "sc"
 		}
+		self.parts.wpn_fps_upg_i_93r = {
+			pcs = {},
+			type = "custom",
+			name_id = "bm_wp_wpn_fps_upg_i_93r",
+			desc_id = "bm_wp_wpn_fps_upg_i_93r_desc",			
+			a_obj = "a_body",
+			has_description = true,
+			custom_stats = {rof_mult = 1.375},
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_slower_rof",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			stats = {
+				value = 2,
+				spread = -1
+			},
+			is_a_unlockable = true,
+			internal_part = true,
+			dlc = "sc"
+		}		
 		self.parts.wpn_fps_upg_i_faster_rof = {
 			pcs = {},
 			type = "custom",

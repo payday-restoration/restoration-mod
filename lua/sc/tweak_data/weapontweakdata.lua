@@ -3252,6 +3252,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				weap.stats.total_ammo_mod = 100
 			end
 		end
+		
+		--burst fire
+		for _, weap in pairs(self) do
+			if weap.CAN_TOGGLE_FIREMODE then
+				weap.BURST_FIRE = false
+			end
+		end			
 
 		self.new_m4.desc_id = "bm_menu_sc_m4_desc"
 		self.new_m4.AMMO_MAX = 150
@@ -3453,6 +3460,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.auto.fire_rate = 0.08571428571
 		self.m16.CLIP_AMMO_MAX = 20
 		self.m16.AMMO_MAX = 120
+		self.m16.FIRE_MODE = "single"		
+		self.m16.BURST_FIRE = 3			
+		self.m16.CAN_TOGGLE_FIREMODE = false		
+		self.m16.ADAPTIVE_BURST_SIZE = false					
 		self.m16.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.m16.spread.standing = 3
 		self.m16.spread.crouching = 2
@@ -3718,6 +3729,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g36.spread.moving_standing = 4
 		self.g36.spread.moving_crouching = 3
 		self.g36.spread.moving_steelsight = 2
+		self.g36.BURST_FIRE = 2
+		self.g36.ADAPTIVE_BURST_SIZE = false																	
 		self.g36.auto.fire_rate = 0.08
 		self.g36.fire_mode_data.fire_rate = 0.08
 		self.g36.AMMO_MAX = 180
@@ -3837,6 +3850,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_mp5.auto.fire_rate = 0.075
 		self.new_mp5.spread.standing = 3
 		self.new_mp5.spread.crouching = 2
+		self.new_mp5.BURST_FIRE = 3
+		self.new_mp5.ADAPTIVE_BURST_SIZE = false			
 		self.new_mp5.spread.steelsight = 1
 		self.new_mp5.spread.moving_standing = 4
 		self.new_mp5.spread.moving_crouching = 3
@@ -4251,6 +4266,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.s552.spread.crouching = 2
 		self.s552.spread.steelsight = 1
 		self.s552.spread.moving_standing = 4
+		self.s552.BURST_FIRE = 2
+		self.s552.ADAPTIVE_BURST_SIZE = false															
 		self.s552.spread.moving_crouching = 3
 		self.s552.spread.moving_steelsight = 2
 		self.s552.kick.standing = self.new_m4.kick.standing
@@ -6008,6 +6025,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.polymer.CAN_TOGGLE_FIREMODE = true
 		self.polymer.auto = {}
 		self.polymer.auto.fire_rate = 0.05
+		self.polymer.BURST_FIRE = 2
+		self.polymer.ADAPTIVE_BURST_SIZE = false													
 		self.polymer.spread = {}
 		self.polymer.spread.standing = 3
 		self.polymer.spread.crouching = 2
@@ -6537,6 +6556,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hajk.fire_mode_data.fire_rate = 0.075
 		self.hajk.auto.fire_rate = 0.075
 		self.hajk.AMMO_MAX = 120
+		self.hajk.BURST_FIRE = 2
+		self.hajk.ADAPTIVE_BURST_SIZE = false											
 		self.hajk.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.hajk.spread.standing = 3
 		self.hajk.spread.crouching = 2
@@ -6633,6 +6654,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.schakal.auto.fire_rate = 0.1
 		self.schakal.AMMO_MAX = 80
 		self.schakal.CLIP_AMMO_MAX = 25
+		self.schakal.BURST_FIRE = 2
+		self.schakal.ADAPTIVE_BURST_SIZE = false											
 		self.schakal.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.schakal.spread.standing = 3
 		self.schakal.spread.crouching = 2
@@ -6952,6 +6975,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flint.AMMO_MAX = 150
 		self.flint.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.flint.CLIP_AMMO_MAX = 30
+		self.flint.BURST_FIRE = 3
+		self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.42857142857		
+		self.flint.ADAPTIVE_BURST_SIZE = false									
 		self.flint.fire_mode_data.fire_rate = 0.08571428571
 		self.flint.auto.fire_rate = 0.08571428571
 		self.flint.spread.standing = 3

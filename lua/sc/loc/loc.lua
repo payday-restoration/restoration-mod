@@ -176,6 +176,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extra Extended Magazine",	
 		["bm_menu_weirdmagthing"] = "Magwell Grip",		
 		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",	
+		["bm_wp_wpn_fps_upg_i_93r"] = "Bernetti 93r Conversion Kit",
+		["bm_wp_wpn_fps_upg_i_93r_desc"] = "Allows the Bernetti to fire in 3 round bursts, sacrificing accuracy for higher rate of fire.",										
 		["bm_wp_wpn_fps_ass_mk18s_a_weak_desc"] = "An ammunition type that mimics medium tier rifles. Lowers ammo count and stability in trade for higher damage and accuracy.",				
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",

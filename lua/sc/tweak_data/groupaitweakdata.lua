@@ -6799,8 +6799,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			TIT_tank = {
 				"spoocavoidance",
 				"murder",
-				"elite_ranged_fire",
-				"ranged_fire"
+				"elite_ranged_fire"
 			},
 			spooc = {
 				"spoocavoidance",

@@ -124,7 +124,7 @@
 		<script_data_mods directory="scriptdata"/>
 	</level>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative brief_id="heist_firestarter_crimenet" briefing_event="hct_firestarter_brf" contact="hector" debrief_event="hct_firestarter_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter" id="firestarter" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" name_id="heist_firestarter">
+	<narrative brief_id="heist_firestarter_crimenet" briefing_event="hct_firestarter_brf" contact="hector" debrief_event="hct_firestarter_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter_01" id="firestarter" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" name_id="heist_firestarter">
 		<chain>
 			<table level_id="firestarter_1_res" type="d" type_id="heist_type_hijack"/>
 			<table level_id="firestarter_2_res" type="d" type_id="heist_type_stealth"/>

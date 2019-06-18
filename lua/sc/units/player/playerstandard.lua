@@ -319,7 +319,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local _check_action_primary_attack_original = PlayerStandard._check_action_primary_attack
 	local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel	
 	
-	function PlayerStandard:update(...)
+	function PlayerStandard:update(t, ...)
 		local weapon = self._unit:inventory():equipped_unit():base()
 		
 		self:_update_burst_fire(t)
@@ -328,7 +328,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			weapon:update_spin()
 		end
 		
-		return update_original(self, ...)
+		return update_original(self,t, ...)
 	end
 	
 	function PlayerStandard:_check_action_primary_attack(t, input, ...)

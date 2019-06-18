@@ -5422,6 +5422,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 11,
 					suppression = -1,
 					alert_size = -1,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0
 				},
 				custom_stats = {
@@ -5440,7 +5441,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						dot_trigger_chance = "100",
 						dot_length = "3",
 						dot_tick_period = "0.5"
-					},
+					},				
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -5457,6 +5458,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 11,
 					suppression = -1,
 					alert_size = -1,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0
 				},
 				custom_stats = {
@@ -5481,7 +5483,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -5496,7 +5498,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -5506,6 +5508,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -67,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					damage = 100
 				},
 				custom_stats = {
@@ -8507,6 +8510,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -8535,7 +8539,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,		
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -8551,7 +8555,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,		
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -8564,6 +8568,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 57,	
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -8595,6 +8600,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -66,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					damage = 200
 				},
@@ -8779,6 +8785,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -8807,7 +8814,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -8823,7 +8830,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -8834,6 +8841,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -63,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					damage = 200
 				},
@@ -9426,6 +9434,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					total_ammo_mod = -62,
 					damage = 250
@@ -10179,6 +10188,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					total_ammo_mod = -60,
 					damage = 250
@@ -10202,6 +10212,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 74,	
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -10214,7 +10225,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
-					bullet_class = "FlameBulletBase",
+					bullet_class = "FlameBulletBase",	
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 					fire_dot_data = {
 						dot_damage = "0",
@@ -10235,6 +10246,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,	
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -10261,7 +10273,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -10276,7 +10288,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -13614,6 +13626,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 25,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -13639,7 +13652,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -13654,7 +13667,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -13667,6 +13680,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -7,
 					damage = 31,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -13697,6 +13711,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -62,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					damage = 125
 				},
 				custom_stats = {
@@ -13848,6 +13863,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -5,
 					damage = 31,
 					spread = 14,
+					spread_multi = {0.5, 0.5},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -13858,7 +13874,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
 					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
+					can_shoot_through_wall = false,	
 					bullet_class = "FlameBulletBase",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 					fire_dot_data = {
@@ -13881,6 +13897,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -33,
 					damage = 25,
 					spread = 14,
+					spread_multi = {0.5, 0.5},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -13906,7 +13923,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -13921,7 +13938,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -13932,6 +13949,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -66,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					damage = 125
 				},
 				custom_stats = {
@@ -13939,7 +13957,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					block_b_storm = true,
 					rays = 1,
 					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_far_mul = 999999999,	
 					bullet_class = "InstantExplosiveBulletBase",
 					ammo_pickup_min_mul = 0.333333333333,
 					ammo_pickup_max_mul = 0.333333333333
@@ -14270,6 +14288,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -14298,7 +14317,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -14314,7 +14333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -14325,6 +14344,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -66,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					damage = 200
 				},
@@ -17019,6 +17039,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				damage = 50,	
 				recoil = -2,
 				spread = 12,
+				spread_multi = {0.5, 0.5},	
 				suppression = -1,
 				alert_size = -1,
 				moving_spread = 0
@@ -17056,7 +17077,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			custom_stats = {
 				damage_near_mul = -100,
 				damage_far_mul = -200,
-				rays = 6,
+				rays = 9,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
 			},
@@ -17083,6 +17104,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				total_ammo_mod = -16,
 				damage = 50,
 				spread = 0,
+				spread_multi = {0.5, 0.5},	
 				concealment = 0,
 				moving_spread = 3
 			},
@@ -17112,11 +17134,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 9,
 				spread = 1,
-				spread_multi = {0.5, 0.5},
 				recoil = -1
 			},
 			custom_stats = {
-				rays = 12,
+				rays = 6,
 				damage_near_mul = 100,
 				damage_far_mul = 200
 			},
@@ -18365,6 +18386,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 25,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -18390,7 +18412,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -18405,7 +18427,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -18418,6 +18440,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 31,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -18448,6 +18471,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -62,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					damage = 125
 				},
 				custom_stats = {
@@ -22743,6 +22767,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					total_ammo_mod = -62,
 					damage = 250
@@ -24095,6 +24120,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 30,	
 					recoil = -1,
 					spread = 11,
+					spread_multi = {0.5, 0.5},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -24130,6 +24156,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 25,	
 					recoil = -1,
 					spread = 11,
+					spread_multi = {0.5, 0.5},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -24156,7 +24183,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -24171,7 +24198,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -24181,6 +24208,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -67,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					damage = 100
 				},
 				custom_stats = {
@@ -27621,6 +27649,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -27649,7 +27678,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -27665,7 +27694,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -27676,6 +27705,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -63,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					damage = 200
 				},
@@ -29124,6 +29154,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					recoil = -5,
 					concealment = -7,
+					spread_multi = {0.5, 0.5},	
 					total_ammo_mod = -62,
 					damage = 250
 				},
@@ -30022,6 +30053,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -5,
 					damage = 31,
 					spread = 14,
+					spread_multi = {0.5, 0.5},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -30055,6 +30087,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -33,
 					damage = 25,
 					spread = 14,
+					spread_multi = {0.5, 0.5},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -30075,12 +30108,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 9,
 					total_ammo_mod = -33,
 					damage = 25,
+					spread_multi = {0.5, 0.5},	
 					spread = -1
 				},
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -30095,7 +30129,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -30105,6 +30139,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -66,
+					spread_multi = {0.5, 0.5},	
 					recoil = -5,
 					damage = 125
 				},
@@ -34189,6 +34224,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 25,	
 						recoil = -1,
 						spread = 11,
+						spread_multi = {0.5, 0.5},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -34215,7 +34251,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -34230,7 +34266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -34240,6 +34276,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = -63,
 						recoil = -5,
+						spread_multi = {0.5, 0.5},	
 						damage = 100
 					},
 					custom_stats = {
@@ -34337,6 +34374,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 25,	
 						recoil = -1,
 						spread = 11,
+						spread_multi = {0.5, 0.5},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -34363,7 +34401,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					}
@@ -34378,7 +34416,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					}
@@ -34388,6 +34426,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = -67,
 						recoil = -5,
+						spread_multi = {0.5, 0.5},	
 						damage = 100
 					},
 					custom_stats = {
@@ -36943,6 +36982,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						recoil = -5,
 						concealment = -7,
+						spread_multi = {0.5, 0.5},	
 						total_ammo_mod = -62,
 						damage = 250
 					},
@@ -36965,6 +37005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 50,	
 						recoil = -2,
 						spread = 12,
+						spread_multi = {0.5, 0.5},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -36991,7 +37032,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -37006,7 +37047,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -37129,6 +37170,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 25,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -37154,7 +37196,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -37169,7 +37211,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -37182,6 +37224,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -7,
 					damage = 31,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -37212,6 +37255,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -62,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					damage = 125
 				},
 				custom_stats = {
@@ -38706,6 +38750,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						recoil = -5,
 						concealment = -7,
+						spread_multi = {0.5, 0.5},	
 						total_ammo_mod = -60,
 						damage = 250
 					},
@@ -38728,6 +38773,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 74,	
 						recoil = -2,
 						spread = 12,
+						spread_multi = {0.5, 0.5},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -38761,6 +38807,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 50,	
 						recoil = -2,
 						spread = 12,
+						spread_multi = {0.5, 0.5},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -38787,7 +38834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					},
@@ -38802,7 +38849,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 6,
+						rays = 9,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					},
@@ -39932,6 +39979,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					recoil = -5,
 					concealment = -7,
+					spread_multi = {0.5, 0.5},	
 					total_ammo_mod = -60,
 					damage = 250
 				},
@@ -39954,6 +40002,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 74,	
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -39987,6 +40036,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,	
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -40013,7 +40063,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				},
@@ -40028,7 +40078,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				},
@@ -40249,6 +40299,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -40277,7 +40328,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -40293,7 +40344,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -40304,6 +40355,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -63,
 					recoil = -5,
+					spread_multi = {0.5, 0.5},	
 					concealment = -7,
 					damage = 200
 				},
@@ -40345,6 +40397,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					recoil = -5,
 					concealment = -7,
+					spread_multi = {0.5, 0.5},	
 					total_ammo_mod = -62,
 					damage = 250
 				},
@@ -40602,6 +40655,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
+					spread_multi = {0.5, 0.5},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,	
@@ -40630,7 +40684,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,		
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -40646,7 +40700,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,		
-					rays = 6,
+					rays = 9,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -40657,6 +40711,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = -66,
 						recoil = -5,
+						spread_multi = {0.5, 0.5},	
 						concealment = -7,
 						damage = 200
 					},

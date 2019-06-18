@@ -3254,7 +3254,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		
 		--burst fire
-		for _, weap in pairs(self) do
+		for i, weap in pairs(self) do
 			if weap.CAN_TOGGLE_FIREMODE then
 				weap.BURST_FIRE = false
 			end

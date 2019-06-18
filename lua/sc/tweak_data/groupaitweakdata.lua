@@ -6605,7 +6605,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flank",
 				"provide_coverfire",
 				"provide_support",
-			    "hitnrun"  --the idea is after they open fire, and you're near, they'll run away to a safe spot before striking again since they'll only decide to back off after opening fire
+			    "hitnrun"
 			},
 			CS_swat_rifle = {
 				"smoke_grenade",
@@ -6694,6 +6694,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support",
 				"flash_grenade",
 				"flank",
+				"elite_ranged_fire",
 			    "hitnrun"
 			},
 			FBI_swat_rifle = {
@@ -6702,7 +6703,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"charge",
 				"provide_support",
-				"elite_ranged_fire"
+				"ranged_fire"
 			},
 			FBI_swat_shotgun = {
 				"smoke_grenade",
@@ -6750,7 +6751,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flash_grenade",
 				"charge",
 				"provide_coverfire",
-				"provide_support"
+				"provide_support",
+				"elite_ranged_fire"
 			},
 			FBI_swat_shotgun_flank = {
 				"flank",
@@ -6781,13 +6783,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			FBI_tank = {
 				"murder",
-				"charge",
+				"hitnrun",
+				"flank",
 				"shield_cover"
 			},
 			BLACK_tank = {
 				"murder",
-				"hitnrun",
-				"flank",
+				"charge",
 				"shield_cover"
 			},
 			SKULL_tank = {
@@ -6859,8 +6861,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"elite_ranged_fire",
 				"provide_coverfire",
 				"provide_support",
-				"flank",
-			    "hitnrun"
+				"flank"
 			},
 			shield_wall_ranged = {
 				"shield",

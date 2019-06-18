@@ -181,24 +181,46 @@ if restoration.Options:GetValue("HUD/Waypoints") then
 		local _,_,w,_ = text:text_rect()
 		text:set_w( w )
 		local w, h = bitmap:size()
-		self._hud.waypoints[ id ] = {
-										init_data		= data,
-										state			= "present",
-										present_timer 	= 2, 
-										bitmap 			= bitmap,
-										arrow			= arrow,
-										size			= Vector3( w, h, 0 ),
-										text			= text,
-										distance		= distance,
-										timer_gui		= timer,
-										timer			= data.timer,
-										pause_timer = not data.pause_timer and data.timer and 0,
-										position		= data.position,
-										unit			= data.unit,
-										no_sync			= data.no_sync,
-										move_speed		= 1,
-										radius			= data.radius or 160
-									}
+		
+		if managers.groupai:state():whisper_mode() then
+			self._hud.waypoints[id] = {
+							move_speed = 1,
+							init_data = data,
+							state = data.state or "present",
+							present_timer = data.present_timer or 2,
+							bitmap = bitmap,
+							arrow = arrow,
+							size = Vector3(w, h, 0),
+							text = text,
+							distance = distance,
+							timer_gui = timer,
+							timer = data.timer,
+							pause_timer = data.pause_timer or data.timer and 0,
+							position = data.position,
+							unit = data.unit,
+							no_sync = data.no_sync,
+							radius = data.radius or 160
+						}
+		else
+			self._hud.waypoints[ id ] = {
+							init_data		= data,
+							state			= "present",
+							present_timer 	= 2, 
+							bitmap 			= bitmap,
+							arrow			= arrow,
+							size			= Vector3( w, h, 0 ),
+							text			= text,
+							distance		= distance,
+							timer_gui		= timer,
+							timer			= data.timer,
+							pause_timer = not data.pause_timer and data.timer and 0,
+							position		= data.position,
+							unit			= data.unit,
+							no_sync			= data.no_sync,
+							move_speed		= 1,
+							radius			= data.radius or 160
+						}
+		end
 		self._hud.waypoints[ id ].init_data.position = data.position or data.unit:position() -- Stupid drop in fix
 		
 		-- The code below is not easy to follow, what it does is calculates where the waypoint should be presented if there are other being presented at the same time

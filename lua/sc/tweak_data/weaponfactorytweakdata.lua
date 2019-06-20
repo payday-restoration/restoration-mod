@@ -41660,13 +41660,101 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}									
 			end	
 		
-		if self.parts.wpn_fps_galil_m_35r then -- Alcat's Various Magazines for the Galil
-				self.parts.wpn_fps_galil_m_35r.stats = {
-						value = 1,				
-						extra_ammo = 5,
+		if self.parts.wpn_fps_upg_g3_bipod then --Alcat's Various Attachments for the G3
+				self.parts.wpn_fps_upg_g3_bipod.stats = {		
+						value = 1, 
+						zoom = 1, 
+						concealment = -5	
+					}	
+				self.parts.wpn_fps_ass_g3_g_ergo.stats = {		
+						value = 3,
+						recoil = 1
+					}	
+				self.parts.wpn_fps_ass_g3_m_50drum.stats = {		
+						value = 3,
+						concealment = -3,
+						reload = -2,
+						extra_ammo = 20
+					}	
+				self.parts.wpn_fps_ass_g3_m_30mag.stats = {		
+						value = 4,
+						extra_ammo = 10,
+						reload = -1,
+						concealment = -2
+					}						
+				self.parts.wpn_fps_ass_g3_s_retractable.stats = {		
+						value = 1,
+						concealment = 1						
+					}	
+				self.parts.wpn_fps_ass_g3_s_polymer.stats = {		
+						value = 1,
+						spread = 1,						
+						recoil = 1,	
+						concealment = -2						
+					}							
+			end							
+
+		if self.parts.wpn_fps_upg_l85a2_bipod then --Alcat's Various Attachments for the L85A2
+				self.parts.wpn_fps_upg_l85a2_bipod.stats = {		
+						value = 1, 
+						zoom = 1, 
+						concealment = -5	
+					}	
+				self.parts.wpn_fps_ass_l85a2_vg_back.stats = {		
+						value = 1, 
+						recoil = 1, 
+						concealment = -1	
+					}	
+				self.parts.wpn_fps_ass_l85a2_fg_flush.stats = {		
+						value = 1, 
+						recoil = -1, 
+						spread = -1, 						
+						concealment = 2	
+					}	
+				self.parts.wpn_fps_ass_l85a2_b_heavy.stats = {		
+						value = 3, 
+						spread = -2, 
+						recoil = 2, 						
+						concealment = -4	
+					}						
+				self.parts.wpn_fps_ass_l85a2_m_drum.stats = {		
+						value = 9,
+						extra_ammo = 45,
+						reload = -4,
+						concealment = -4
+					}		
+				self.parts.wpn_fps_ass_l85a2_fg_short.forbids = { --these require weaponlib to work by default. might remove these soon 
+						"wpn_fps_upg_l85a2_bipod"
+					}							
+				self.parts.wpn_fps_ass_l85a2_fg_medium.forbids = { 
+						"wpn_fps_upg_l85a2_bipod"
+					}												
+				self.parts.wpn_fps_ass_l85a2_m_drum.custom_stats = nil		
+			end				
+
+		
+		if self.parts.wpn_fps_ass_galil_m_35r then -- Alcat's Various Attachments for the Galil
+				self.parts.wpn_fps_ass_galil_m_35r.stats = {
+						value = 1,			
+						extra_ammo = 5,										
 						concealment = -1
 					}
-				self.parts.wpn_fps_galil_m_762c.stats = {
+				self.parts.wpn_fps_upg_galil_bipod.stats = {
+						value = 1, 
+						zoom = 1, 
+						concealment = -5
+					}				
+				self.parts.wpn_fps_ass_galil_o_galatz.stats = {
+						value = 8,
+						zoom = 5,
+						spread_moving = -5,
+						concealment = -4
+					}				
+				self.parts.wpn_fps_upg_galil_o_galatz_backup.stats = {
+						value = 1,
+						gadget_zoom = 3
+					}															
+				self.parts.wpn_fps_ass_galil_m_762c.stats = {
 						value = 0,
 						spread = 2,
 						recoil = -3,
@@ -41678,32 +41766,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = -10,
 						concealment = 3
 					}
-				self.parts.wpn_fps_galil_m_762c.custom_stats = {ammo_pickup_min_mul = 0.6, ammo_pickup_max_mul = 0.6}					
-				self.parts.wpn_fps_galil_m_akm.stats = {
-						value = 0,
-						recoil = -1,
-						spread = 1,
-						total_ammo_mod = -20,
-						damage = 10,
-						suppression = -1,
-						alert_size = -1,
-						concealment = -4
-					}
-				self.parts.wpn_fps_galil_m_akm.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
-				self.parts.wpn_fps_galil_m_drum.stats = {
+				self.parts.wpn_fps_ass_galil_m_762c.custom_stats = {ammo_pickup_min_mul = 0.6, ammo_pickup_max_mul = 0.6}					
+				self.parts.wpn_fps_ass_galil_m_drum.stats = {
 						value = 5,
 						reload = -4,						
 						spread_moving = -1,
 						concealment = -4,
 						extra_ammo = 45
 					}		
-				self.parts.wpn_fps_galil_m_drum.custom_stats = nil
-				self.parts.wpn_fps_galil_m_drum.alt_icon = {"guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"}	
-				self.parts.wpn_fps_galil_m_drum.forbids = nil
-				self.parts.wpn_fps_galil_m_762c.forbids = nil
+				self.parts.wpn_fps_ass_galil_m_35r.override_weapon_add = nil	
+				self.parts.wpn_fps_ass_galil_m_drum.override_weapon_add = nil					
+				self.parts.wpn_fps_ass_galil_m_762c.override_weapon_add = nil	
+				self.parts.wpn_fps_ass_galil_m_drum.custom_stats = nil
+				self.parts.wpn_fps_ass_galil_m_drum.alt_icon = {"guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"}	
+				self.parts.wpn_fps_ass_galil_m_drum.forbids = nil
+				self.parts.wpn_fps_ass_galil_m_762c.forbids = nil
 				self.parts.wpn_fps_ass_galil_fg_mar.forbids = nil
 				self.parts.wpn_fps_ass_galil_fg_sar.forbids = nil							
-				end				
+			end				
 
 		if self.wpn_fps_pis_x_deckard then -- Pawcio's Akimbo DECK ARDs			
 			self.wpn_fps_pis_x_deckard.override = {

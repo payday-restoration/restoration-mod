@@ -6467,6 +6467,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.pl14.panic_suppression_chance = 0.0
 		self.x_mp5.fire_mode_data.fire_rate = 0.075
 		self.x_mp5.spread.standing = 3
+		self.x_mp5.BURST_FIRE = 6
+		self.x_mp5.ADAPTIVE_BURST_SIZE = false					
 		self.x_mp5.spread.crouching = 2
 		self.x_mp5.spread.steelsight = 1
 		self.x_mp5.spread.moving_standing = 4
@@ -7579,6 +7581,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hajk.single.fire_rate = 0.075
 		self.x_hajk.CLIP_AMMO_MAX = 60
 		self.x_hajk.AMMO_MAX = 150
+		self.x_hajk.ADAPTIVE_BURST_SIZE = false						
+		self.x_hajk.BURST_FIRE = 4				
 		self.x_hajk.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_hajk.spread.standing = 3
 		self.x_hajk.spread.crouching = 2
@@ -7806,6 +7810,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_polymer.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_polymer.fire_mode_data.fire_rate = 0.05
 		self.x_polymer.single.fire_rate = 0.05
+		self.x_polymer.BURST_FIRE = 4										
+		self.x_polymer.ADAPTIVE_BURST_SIZE = false										
 		self.x_polymer.spread = {}
 		self.x_polymer.spread.standing = 3
 		self.x_polymer.spread.crouching = 2
@@ -7834,6 +7840,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_schakal.fire_mode_data.fire_rate = 0.1
 		self.x_schakal.single.fire_rate = 0.1
 		self.x_schakal.AMMO_MAX = 120
+		self.x_schakal.BURST_FIRE = 4
+		self.x_schakal.ADAPTIVE_BURST_SIZE = false				
 		self.x_schakal.CLIP_AMMO_MAX = 50
 		self.x_schakal.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_schakal.spread.standing = 3

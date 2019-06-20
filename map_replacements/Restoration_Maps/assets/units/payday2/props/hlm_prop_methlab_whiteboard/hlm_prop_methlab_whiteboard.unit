@@ -1,0 +1,7 @@
+<unit type="hlm" slot="1" >
+    <object file="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" 		class="UnitDamage" />
+    </extensions>
+</unit>

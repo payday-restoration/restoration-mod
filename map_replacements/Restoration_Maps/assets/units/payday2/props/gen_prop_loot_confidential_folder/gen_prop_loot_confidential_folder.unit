@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<network sync="spawn"/>
+	<object file="units/payday2/props/gen_prop_loot_confidential_folder/gen_prop_loot_confidential_folder" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="take_wetwork_folder" />
+		</extension>
+	</extensions>
+</unit>

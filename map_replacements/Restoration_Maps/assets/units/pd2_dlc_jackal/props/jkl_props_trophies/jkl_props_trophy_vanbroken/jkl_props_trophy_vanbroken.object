@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_vanbroken/jkl_props_trophy_vanbroken" orientation_object="rp_chl_props_trophy_van" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_chl_props_trophy_van" />
+			<object name="c_body" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="thin_layer">
+		<decal_mesh name="dm_body" enabled="true" material="thin_layer" />
+		<decal_mesh name="dm_glass" enabled="true" material="glass" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_van" enabled="true" />
+	</graphics>
+</dynamic_object>

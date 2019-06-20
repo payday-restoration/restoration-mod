@@ -1,0 +1,47 @@
+<materials version="3">
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+    <material name="mat_ind_ext_01b" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_01a_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_01a_nm"/>
+    </material>
+    <material name="mat_ind_ext_01b_cube" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_01a_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_01a_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_str_ext"/>
+    </material>
+    <material name="mat_ind_ext_01_cinderblock_a" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_01_cinderblock_a_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_01_cinderblock_a_nm"/>
+    </material>
+    <material name="mat_ind_ext_garagedoor01" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_garagedoor01_df"/>
+        <reflection_texture file="environments/cubemaps/cubemap_steel" type="cubemap"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_garagedoor01_nm"/>
+    </material>
+    <material name="mat_ind_ext_garagedoor02" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_garagedoor02_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_garagedoor02_nm"/>
+    </material>
+    <material name="mat_ind_int_door_window_metal_01" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_int_door_window_metal_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_int_door_window_metal_01_nm"/>
+    </material>
+    <material name="mat_ind_int_door_window_metal_01_cube" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_int_door_window_metal_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_int_door_window_metal_01_nm"/>
+    </material>
+    <material name="mat_ind_ext_level_0" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_level/ind_ext_level_0_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_level/ind_ext_level_0_nm"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_lcm_b_ext_rooftar_a">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_rooftar_a_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_rooftar_a_nm"/>
+    </material>
+	<material name="mat_ind_ext_level_floor" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_level/ind_ext_level_floor_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_level/ind_ext_level_floor_nm"/>
+    </material>
+</materials>

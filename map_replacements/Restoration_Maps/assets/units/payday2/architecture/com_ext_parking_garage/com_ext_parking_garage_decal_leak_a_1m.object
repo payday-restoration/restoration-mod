@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel orientation_object="rp_com_ext_parking_garage_decal_leak_a_1m" materials="units/payday2/architecture/com_ext_parking_garage/com_ext_parking_garage_decals" />
+	
+    <bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+			<object name="rp_com_ext_parking_garage_decal_leak_a_1m"/>
+			<object name="c_box_editor" collision_type="box"/>
+		
+        </body>
+    </bodies>
+	
+    <graphics>
+        <object enabled="true" name="g_g" instance_struct="world_tm" shadow_caster="false"/>
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,13 @@
+<dynamic_object>
+    <diesel orientation_object="rp_sentry_static" materials="units/payday2/props/gen_prop_sentry_static/gen_prop_sentry_static" />
+	<bodies>
+        <body name="editor_box" enabled="true" template="editor" >
+            <object name="c_box_editor" collision_type="box" />
+        </body>
+    </bodies>
+    <graphics>
+		<graphic_group name="group_sentry" enabled="true" culling_object="g_sentry">
+			<object name="g_sentry" enabled="true" />
+		</graphic_group>
+    </graphics>
+</dynamic_object>

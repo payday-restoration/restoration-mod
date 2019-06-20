@@ -1,0 +1,6 @@
+<unit type="com" slot="1" >
+    <object file="units/payday2/architecture/com_ext_parking_garage/com_ext_parking_garage_decal_leak_a_1m" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

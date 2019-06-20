@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mtr_blueprints" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_safehouse_clues_blueprints/blueprints_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_safehouse_clues_blueprints/blueprints_nm"/>
+    </material>
+</materials>

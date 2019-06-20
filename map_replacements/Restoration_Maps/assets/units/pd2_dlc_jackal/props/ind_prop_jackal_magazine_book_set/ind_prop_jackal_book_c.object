@@ -1,0 +1,18 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jackal/props/ind_prop_jackal_magazine_book_set/ind_prop_jackal_books_magazines" orientation_object="rp_mcm_prop_livingroom_book_c" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_mcm_prop_livingroom_book_c" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="paper">
+		<decal_mesh name="dm_paper" enabled="true" material="paper" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="grp_lod_g_j">
+			<object name="g_j_lod0" enabled="true" max_distance="2500" />
+			<object name="g_j_lod1" enabled="true" />
+		</lod_object>
+	</graphics>
+</dynamic_object>

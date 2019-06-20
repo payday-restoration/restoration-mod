@@ -1,0 +1,12 @@
+<materials version="3">
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:OPACITY_TEXTURE" name="mat_doormat" version="2">
+        <diffuse_texture file="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_doormat/jkl_props_trophy_doormat_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_doormat/jkl_props_trophy_doormat_nm" mip="2"/>
+        <variable type="scalar" name="alpha_ref" value="0.14700000698213"/>
+        <variable type="scalar" name="alpha_ref" value="0.14700000698213"/>
+        <opacity_texture file="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_doormat/jkl_props_trophy_doormat_op" />
+    </material>
+    <material render_template="decal:DIFFUSE_TEXTURE" name="mat_ao" version="2">
+        <diffuse_texture file="units/pd2_dlc_chill/architecture/chl_int_mullplan/ch_int_mullplan_circle_df"/>
+    </material>
+</materials>

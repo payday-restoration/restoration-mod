@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/equipment/apartment_saw/apartment_saw" orientation_object="rp_vault_drill" />
+  <sequence_manager file="units/pd2_dlc_glace/equipment/gen_interactable_saw_no_jam/gen_interactable_saw_no_jam" />
+  <animations>
+    <animation_group name="drilling">
+      <object name="g_drill" enabled="true" />
+      <object name="a_drill" enabled="true" />
+    </animation_group>
+  </animations>
+  <bodies>
+    <body name="editor_body" enabled="true" template="editor" >
+      <object name="rp_vault_drill"/>
+        <object name="c_drill_unit_mesh_mopp" collision_type="mesh_mopp" />
+    </body>
+    <body name="static_body" enabled="false" template="static">
+	     <object name="rp_vault_drill"/>
+        <object name="c_drill_unit_mesh_mopp" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="metal">
+    <decal_mesh name="c_drill_unit_mesh_mopp" enabled="true" material="metal_hollow" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_drill" enabled="false" />
+    <object name="g_drill_outline" enabled="true" />
+    <object name="g_drill_base_outline" enabled="true"/>
+    <object name="g_drill_base" enabled="false" />
+    <object name="timer_gui" enabled="false" />
+  </graphics>
+  <objects>
+    <align_point name="e_drill_particles" parent="rp_vault_drill" position="0 0 0" rotation="0 0 0" />
+  </objects>
+</dynamic_object>

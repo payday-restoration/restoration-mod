@@ -1,0 +1,16 @@
+<materials version="3">
+    <material version="2" name="mtr_pulver_alpha" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:OPACITY_TEXTURE">
+        <variable value="0.37000000476837" type="scalar" name="alpha_ref"/>
+        <diffuse_texture file="units/equipment/thermite/thermite_df"/>
+        <opacity_texture file="units/equipment/thermite/thermite_op"/>
+    </material>
+    <material name="mtr_thermite_decal" version="2" render_template="generic:DIFFUSE_TEXTURE">
+        <diffuse_texture file="units/equipment/thermite/thermite_txt_df"/>
+    </material>
+    <material version="2" name="mat_des_prop_gascan" unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
+        <bump_normal_texture file="units/world/props/desert/des_prop_gascan/des_prop_gascan_nm"/>
+        <diffuse_texture file="units/world/props/desert/des_prop_gascan/des_prop_gascan_df"/>
+        <!--variable value="1 0.5 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/-->
+    </material>
+</materials>

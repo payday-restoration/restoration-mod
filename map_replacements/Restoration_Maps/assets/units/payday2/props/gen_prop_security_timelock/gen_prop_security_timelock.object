@@ -1,0 +1,17 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_prop_security_timelock" materials="units/payday2/props/gen_prop_security_timelock/gen_prop_security_timelock" />
+	<sequence_manager file="units/payday2/props/gen_prop_security_timelock/gen_prop_security_timelock" />	
+	<bodies>
+		<body enabled="true" template="static" name="body0" >
+			<object name="rp_gen_prop_security_timelock" />
+			<object collision_type="box" name="c_box_01" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="plastic">
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic" />
+	</decal_surfaces>	
+    <graphics>
+        <object enabled="true" name="g_g" />
+        <object enabled="false" name="g_display" />
+    </graphics>
+</dynamic_object>

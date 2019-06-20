@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<unit type="wwburn" slot="1">
+    <object file="units/pd2_mod_wwburn/equipment/wwburn_interactable_saw/wwburn_interactable_saw" />
+    <network sync="spawn"/>
+    <dependencies>
+        <depends_on gui="guis/timer_gui" />
+        <depends_on bnk="soundbanks/regular_sfx" />
+        <depends_on effect="effects/particles/equipment/vault_drill/drill_active" />
+        <depends_on effect="effects/particles/equipment/apartment_saw/saw_active" />
+        <!--<depends_on effect="effects/particles/equipment/vault_drill/drill_jammed" />-->
+        <depends_on effect="effects/payday2/environment/drill_jammed" />
+    </dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="damage" class="UnitDamage" />
+        <extension name="base" class="Drill">
+            <var name="_active_effect_name"         value="effects/particles/equipment/apartment_saw/saw_active" />
+            <var name="is_saw"                      value="true" />
+            <var name="_attention_obj_name"         value="detection_point" />
+            <var name="_sabotage_align_obj_name"    value="align_point" />
+            <var name="_kickstarter_success_sequence" value="interact" />
+        </extension>
+        <extension name="interaction" class="MissionDoorDeviceInteractionExt">
+            <var name="tweak_data" value="gen_int_saw" />
+        </extension>
+        <extension name="timer_gui" class="TimerGui">
+            <var name="_gui_object"             value="timer_gui" />
+            <var name="_jammed_tweak_data"      value="gen_int_saw_jammed" />
+            <var name="_upgrade_tweak_data"     value="gen_int_saw_upgrade" />
+            <var name="_start_event"            value="buzz_saw" />
+            <var name="_jam_event"              value="buzz_saw_jam" />
+            <var name="_resume_event"           value="buzz_saw_resume" />
+            <var name="_done_event"             value="buzz_saw_end" />
+            <var name="_can_jam"                value="true" />
+            <var name="_gui_start"              value="prop_timer_saw_gui_start" />
+            <var name="_gui_working"            value="prop_timer_saw_gui_working" />
+            <var name="_gui_done"               value="prop_timer_saw_gui_done" />
+            <var name="_gui_malfunction"        value="prop_timer_saw_gui_malfunction" />
+            <var name="_jam_times" value="1" />
+        </extension>
+    </extensions>
+    <sounds>
+	<default_soundsource source="rp_vault_drill"/>
+    </sounds>
+</unit>

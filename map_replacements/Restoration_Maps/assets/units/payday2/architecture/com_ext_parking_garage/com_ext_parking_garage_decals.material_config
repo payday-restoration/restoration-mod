@@ -1,0 +1,6 @@
+<materials version="3">
+    <material render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE:INSTANCED" name="mat_decals_mull" version="2">
+        <diffuse_texture file="units/payday2/architecture/com_ext_parking_garage/com_ext_parking_garage_dirt_decals_mull_df"/>
+        <variable type="scalar" name="intensity" value="identity"/>
+    </material>
+</materials>

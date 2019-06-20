@@ -1,0 +1,20 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_arena/architecture/are_int_stage/are_int_stage_mic" orientation_object="rp_are_int_stage_spot_light" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_are_int_stage_spot_light" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+			<object name="c_convex" collision_type="convex" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="plastic">
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="grp_lod_g_light_stand">
+			<object name="g_light_stand_lod0" enabled="true" max_distance="1000" />
+			<object name="g_light_stand_lod1" enabled="true" />
+		</lod_object>
+	</graphics>
+</dynamic_object>

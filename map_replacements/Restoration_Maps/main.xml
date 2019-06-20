@@ -1,0 +1,396 @@
+<table name="Restoration_Maps">
+	<HeistMusic directory="assets/sounds/burnout" id="resmusic_burnout">
+		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+	</HeistMusic>
+	<HeistMusic directory="assets/sounds/wetwork" id="resmusic_wetwork">
+		<event name="setup" source="stealth.ogg"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+	</HeistMusic>
+	<HeistMusic directory="assets/sounds/doghouse" id="resmusic_doghouse">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg"/>
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
+	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork" id="int_dock" jc="25">
+		<chain>
+			<table level_id="wetwork" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="4000"/>
+			<value_node value="8000"/>
+			<value_node value="20000"/>
+			<value_node value="40000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_veritasgroup1"/>
+		</crimenet_videos>
+		<debrief_event>
+			<value_node value=""/>
+		</debrief_event>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="6000"/>
+			<value_node value="12000"/>
+			<value_node value="30000"/>
+			<value_node value="50000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+		</payout>
+	</narrative>
+	<level ai_group_type="murkywater" bonus_escape="true" briefing_dialog="" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54">
+		<add file="levels/wetwork/add.xml"/>
+		<assets>
+			<asset name="ammo_bag"/>
+			<asset name="health_bag"/>
+			<asset name="grenade_crate"/>
+			<asset name="bodybags_bag"/>
+			<asset name="wet_intel"/>
+			<asset name="wet_boat"/>
+		</assets>
+		<include directory="levels/wetwork">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="occluders_only/occluders_only.continent" type="binary"/>
+			<file file="occluders_only/occluders_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/wetwork_basement.environment" type="custom_xml"/>
+			<file file="environments/wetwork.environment" type="custom_xml"/>
+			<file file="environments/default.environment" type="custom_xml"/>
+		</include>
+		<intro_event>
+			<value_node value=""/>
+		</intro_event>
+		<outro_event>
+			<value_node value=""/>
+		</outro_event>
+		<packages>
+			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
+			<value_node value="packages/narr_jerry2"/>
+			<value_node value="levels/instances/unique/friend/computer_usb/world/world"/>
+			<value_node value="levels/narratives/armadillo/arm_for/pc_only/pc_only"/>
+			<value_node value="levels/instances/unique/dark/thermal_paste/world/world"/>
+			<value_node value="levels/narratives/dentist/hox/stage_2/effects/effects"/>
+			<value_node value="levels/instances/unique/shout_crate/world/world"/>
+			<value_node value="levels/narratives/short1/stage1/lighting/lighting"/>
+			<value_node value="levels/narratives/armadillo/arm_fac/tags/tags"/>
+			<value_node value="levels/instances/unique/mad/mad_server_room/world/world"/>
+			<value_node value="levels/narratives/elephant/mad/art1/art1"/>
+			<value_node value="levels/narratives/continental/fish/editor_only/editor_only"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/world/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/world/world"/>
+			<value_node value="levels/narratives/e_election_day/stage_1/world/world"/>
+			<value_node value="levels/narratives/vlad/cane/world/world"/>
+			<value_node value="levels/narratives/vlad/cane/world"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="" contact="vlad" icon="guis/textures/customheist_gui/junk" id="junker" jc="5">
+		<chain>
+			<table level_id="junk" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="4000"/>
+			<value_node value="8000"/>
+			<value_node value="20000"/>
+			<value_node value="40000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_veritasgroup1"/>
+		</crimenet_videos>
+		<debrief_event>
+			<value_node value=""/>
+		</debrief_event>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="16000"/>
+			<value_node value="16000"/>
+			<value_node value="16000"/>
+			<value_node value="16000"/>
+			<value_node value="16000"/>
+			<value_node value="16000"/>
+			<value_node value="16000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="2000"/>
+			<value_node value="2500"/>
+			<value_node value="2750"/>
+			<value_node value="3000"/>
+			<value_node value="4000"/>
+			<value_node value="4500"/>
+			<value_node value="5000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="6000"/>
+			<value_node value="12000"/>
+			<value_node value="30000"/>
+			<value_node value="50000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+		</payout>
+	</narrative>
+	<level ai_group_type="america" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
+		<add file="levels/junk/add.xml"/>
+		<assets>
+			<asset name="ammo_bag"/>
+			<asset name="health_bag"/>
+			<asset name="grenade_crate"/>
+		</assets>
+		<include directory="levels/junk">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="occluder_only/occluder_only.continent" type="binary"/>
+			<file file="occluder_only/occluder_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/junk.environment" type="custom_xml"/>
+		</include>
+		<intro_event/>
+		<outro_event/>
+		<packages>
+			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
+			<value_node value="levels/narratives/e_framing_frame/stage_2/world/world"/>
+			<value_node value="levels/narratives/bain/rat/world/world"/>
+			<value_node value="levels/instances/unique/pbr/pbr_ladder_placed/world/world"/>
+			<value_node value="levels/narratives/vlad/cane/new_geo/new_geo"/>
+			<value_node value="levels/narratives/bain/help/exterior/exterior"/>
+			<value_node value="levels/narratives/e_election_day/stage_1/pc_only/pc_only"/>
+			<value_node value="levels/narratives/bain/help/world"/>
+			<value_node value="levels/narratives/vlad/cane/world"/>
+			<value_node value="levels/instances/unique/chill/bodhi_stage_01/world/world"/>
+			<value_node value="levels/narratives/dentist/mia/stage2/world"/>
+			<value_node value="levels/instances/unique/chew/chew_swat_van/world/world"/>
+			<value_node value="levels/instances/unique/mad/mad_gas_intake/world/world"/>
+			<value_node value="levels/narratives/continental/fish/editor_only/editor_only"/>
+			<value_node value="packages/jolly"/>
+			<value_node value="packages/job_spa"/>
+			<value_node value="levels/narratives/h_firestarter/stage_1/world_sounds"/>
+			<value_node value="levels/narratives/butcher/thebomb/stage_2/occluders/occluders"/>
+			<value_node value="levels/instances/unique/chill/pile/world"/>
+			<value_node value="levels/instances/unique/chill/pile/world/world"/>
+			<value_node value="levels/instances/shared/helicopter_secure_escape/world"/>
+			<value_node value="levels/instances/shared/helicopter_secure_escape/world/world"/>
+			<value_node value="levels/instances/unique/nail_flare/world"/>
+			<value_node value="levels/instances/unique/nail_flare/world/world"/>
+			<value_node value="levels/instances/unique/nail_flare/world_sounds"/>
+			<value_node value="levels/instances/unique/crojob/meth_lab/world"/>
+			<value_node value="levels/instances/unique/crojob/meth_lab/world/world"/>
+			<value_node value="levels/instances/unique/crojob/meth_lab/world_sounds"/>
+			<value_node value="levels/instances/unique/friend/painting_stack_burn/world/world"/>
+			<value_node value="levels/narratives/vlad/mallcrasher/world"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork_burn" id="int_dock_burn" jc="50">
+		<chain>
+			<table level_id="wetwork_burn" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="4000"/>
+			<value_node value="8000"/>
+			<value_node value="20000"/>
+			<value_node value="40000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_veritasgroup1"/>
+		</crimenet_videos>
+		<debrief_event>
+			<value_node value=""/>
+		</debrief_event>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+			<value_node value="8800"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+			<value_node value="4400"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="6000"/>
+			<value_node value="12000"/>
+			<value_node value="30000"/>
+			<value_node value="50000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+			<value_node value="60000"/>
+		</payout>
+	</narrative>
+	<level ai_group_type="murkywater" briefing_dialog="" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true">
+		<add file="levels/wetwork_burn/add.xml"/>
+		<assets>
+			<asset name="ammo_bag"/>
+			<asset name="health_bag"/>
+			<asset name="grenade_crate"/>
+		</assets>
+		<include directory="levels/wetwork_burn">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="occluders_only/occluders_only.continent" type="binary"/>
+			<file file="occluders_only/occluders_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/wetwork_burn.environment" type="custom_xml"/>
+		</include>
+		<intro_event>
+			<value_node value=""/>
+		</intro_event>
+		<outro_event>
+			<value_node value=""/>
+		</outro_event>
+		<packages>
+			<value_node value="levels/narratives/e_election_day/stage_1/world/world"/>
+			<value_node value="levels/narratives/vlad/cane/world/world"/>
+			<value_node value="levels/narratives/vlad/cane/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/world/world"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/editor_only/editor_only"/>
+			<value_node value="levels/narratives/continental/fish/editor_only/editor_only"/>
+			<value_node value="packages/narr_jerry2"/>
+			<value_node value="levels/narratives/bain/shadow_raid/world_sounds"/>
+			<value_node value="levels/narratives/h_watchdogs/stage_1/world/world"/>
+			<value_node value="levels/instances/unique/shout_crate/world/world"/>
+			<value_node value="levels/narratives/armadillo/arm_fac/tags/tags"/>
+			<value_node value="levels/instances/unique/wwh/wwh_garage_door/world/world"/>
+			<value_node value="levels/instances/unique/dark/murky_computer/world/world"/>
+			<value_node value="levels/instances/unique/are_store_shield/world/world"/>
+			<value_node value="levels/narratives/classics/glace/world"/>
+			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
+			<value_node value="levels/instances/unique/mad/mad_server_room/world/world"/>
+			<value_node value="levels/narratives/short1/stage1/lighting/lighting"/>
+			<value_node value="levels/instances/unique/dark/thermal_paste/world/world"/>
+			<value_node value="levels/narratives/elephant/mad/art1/art1"/>
+			<value_node value="levels/instances/unique/friend/painting_stack_burn/world/world"/>
+			<value_node value="levels/instances/unique/are_elevator/world/world"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<AddFiles directory="assets">
+		<texture force="true" path="guis/dlcs/big_bank/textures/pd2/pre_planning/preplan_icon_types"/>
+		<texture force="true" path="guis/textures/customheist_gui/junk"/>
+		<texture force="true" path="guis/textures/customheist_gui/junk_loading"/>
+		<texture force="true" path="guis/textures/customheist_gui/wetwork"/>
+		<texture force="true" path="guis/textures/customheist_gui/wetwork_loading"/>
+		<texture force="true" path="guis/textures/customheist_gui/wetwork_burn"/>
+		<texture force="true" path="guis/textures/customheist_gui/wetwork_burn_loading"/>
+		<texture force="true" path="guis/textures/customheist_gui/rush"/>
+		<texture force="true" path="guis/textures/customheist_gui/rush_loading"/>
+		<texture force="true" path="guis/textures/customheist_gui/fort"/>
+		<texture force="true" path="guis/textures/customheist_gui/fort_loading"/>
+		<texture force="true" path="guis/textures/customheist_gui/gem"/>
+		<texture force="true" path="guis/textures/customheist_gui/gem_loading"/>
+		<movie force="true" path="movies/cn_test"/>
+	</AddFiles>
+	<Localization default="english.txt" directory="loc"/>
+	<contact assets_gui="guis/mission_briefing/preload_contact_hector" id="shatter" name_id="install_restoration" package="packages/contact_hector"/>
+</table>

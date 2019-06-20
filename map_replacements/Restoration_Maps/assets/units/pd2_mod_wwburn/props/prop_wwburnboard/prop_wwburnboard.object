@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_prop_warehouse_whiteboard_standing_long" materials="units/pd2_mod_wwburn/props/prop_wwburnboard/prop_wwburnboard" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="rp_ind_prop_warehouse_whiteboard_standing_long" />
+            <object collision_type="box" name="c_01" />
+            <object collision_type="box" name="c_02" />
+            <object collision_type="box" name="c_03" />
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="c_01" material="plastic" />
+        <decal_mesh enabled="true" name="c_02" material="metal" />
+        <decal_mesh enabled="true" name="c_03" material="metal" />
+    </decal_surfaces>	
+    <graphics>
+        <object enabled="true" name="g_mesh" />
+    </graphics>
+</dynamic_object>

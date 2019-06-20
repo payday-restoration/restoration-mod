@@ -1,0 +1,15 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_chill/props/chl_prop_drill_small/chl_prop_drill_small" orientation_object="rp_chl_prop_drill_small_pieces" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_chl_prop_drill_small_pieces" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_drill" enabled="true" />
+		<object name="g_drill_drill" enabled="true" />
+		<object name="g_base" enabled="true" />
+		<object name="g_screen_off" enabled="true" />
+	</graphics>
+</dynamic_object>

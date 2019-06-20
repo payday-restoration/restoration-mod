@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/ind/ind_ext_backdrop_building" orientation_object="rp_ind_ext_backdrop_building_2" />
+    <bodies>
+        <body name="static_body" template="editor" enabled="true" >
+            <object name="rp_ind_ext_backdrop_building_2"/>
+            <object name="c_box_01" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+    <graphics>
+        <object enabled="true" name="g_g" shadow_caster="false" />
+        <object enabled="true" name="s_s" shadow_caster="true" />
+    </graphics>
+</dynamic_object> 

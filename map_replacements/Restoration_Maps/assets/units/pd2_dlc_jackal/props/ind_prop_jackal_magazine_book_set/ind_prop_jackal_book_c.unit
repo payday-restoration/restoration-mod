@@ -1,0 +1,6 @@
+<unit type="ind" slot="1">
+	<object file="units/pd2_dlc_jackal/props/ind_prop_jackal_magazine_book_set/ind_prop_jackal_book_c" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

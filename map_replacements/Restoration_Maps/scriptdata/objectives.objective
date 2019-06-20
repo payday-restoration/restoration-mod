@@ -1,0 +1,20 @@
+<table>
+	<objective description="junk_01_desc" id="junk_01" prio="1" text="junk_01" xp_weight="1"/>
+	<objective description="junk_02_desc" id="junk_02" prio="1" text="junk_02" xp_weight="1"/>
+	<objective description="junk_03_desc" id="junk_03" prio="1" text="junk_03" xp_weight="1"/>
+	<objective description="junk_04_desc" id="junk_04" prio="1" text="junk_04" xp_weight="1"/>
+	<objective description="junk_05_desc" id="junk_05" prio="1" text="junk_05" xp_weight="1"/>
+	<objective description="obj1_enterwarehouse_desc" id="obj1_enterwarehouse" prio="1" text="obj1_enterwarehouse" xp_weight="1"/>
+	<objective description="obj2_findsecuritydoor_desc" id="obj2_findsecuritydoor" prio="1" text="obj2_findsecuritydoor" xp_weight="1"/>
+	<objective description="obj3_getsecuritydooropen_desc" id="obj3_getsecuritydooropen" prio="1" text="obj3_getsecuritydooropen" xp_weight="1"/>
+	<objective description="obj4_openseconddoor_desc" id="obj4_openseconddoor" prio="1" text="obj4_openseconddoor" xp_weight="1"/>
+	<objective description="obj5_hack_desc" id="obj5_hack" prio="1" text="obj5_hack" xp_weight="1"/>
+	<objective description="obj6_wait_desc" id="obj6_wait" prio="1" text="obj6_wait" xp_weight="1"/>
+	<objective description="obj7_escapeorloot_desc" id="obj7_escapeorloot" prio="1" text="obj7_escapeorloot" xp_weight="1"/>
+	<objective description="obj5b_explode_desc" id="obj5b_explode" prio="1" text="obj5b_explode" xp_weight="1"/>
+	<objective description="wwburn_01_desc" id="wwburn_01" prio="1" text="wwburn_01" xp_weight="1"/>
+	<objective description="wwburn_02_desc" id="wwburn_02" prio="1" text="wwburn_02" xp_weight="1"/>
+	<objective description="wwburn_03_desc" id="wwburn_03" prio="1" text="wwburn_03" xp_weight="1"/>
+	<objective description="wwburn_04_desc" id="wwburn_04" prio="1" text="wwburn_04" xp_weight="1"/>
+	<objective description="wwburn_05_desc" id="wwburn_05" prio="1" text="wwburn_05" xp_weight="1"/>
+</table>

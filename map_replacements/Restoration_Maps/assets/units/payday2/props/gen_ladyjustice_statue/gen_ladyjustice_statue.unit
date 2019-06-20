@@ -1,0 +1,11 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/props/gen_ladyjustice_statue/gen_ladyjustice_statue" />
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="gen_ladyjustice_statue" />
+			<var name="_interact_object" value="int_location"/>
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

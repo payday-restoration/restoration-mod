@@ -1,0 +1,21 @@
+<materials version="3">
+	<material name="mtr_exterior" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_vanbroken/jkl_props_trophy_vanbroken_df" />
+		<bump_normal_texture file="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_vanbroken/jkl_props_trophy_vanbroken_nm" />
+		<reflection_texture file="environments/cubemaps/cubemap_midday_hcm" type="cubemap" />
+	</material>
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE" version="2">
+		<variable name="fresnel_settings" type="vector3" value="0 1 0.59999996423721" />
+		<opacity_texture file="units/payday2/glass/glass_clear_vehicle_op" />
+		<diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df" />
+		<reflection_texture global_texture="current_global_texture" type="cubemap" />
+		<variable name="opacity_fade" type="vector3" value="10 4000 0" />
+	</material>
+	<material name="mtr_interior" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/payday2/vehicles/str_vehicle_van_player/interior_df" />
+		<bump_normal_texture file="units/payday2/vehicles/str_vehicle_van_player/interior_nm" />
+	</material>
+	 <material render_template="decal:DIFFUSE_TEXTURE" name="mat_ao" version="2">
+        <diffuse_texture file="units/pd2_dlc_chill/architecture/chl_int_mullplan/ch_int_mullplan_circle_df"/>
+    </material>
+</materials>

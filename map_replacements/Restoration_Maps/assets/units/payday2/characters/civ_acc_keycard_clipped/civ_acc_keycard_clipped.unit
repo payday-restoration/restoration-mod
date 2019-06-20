@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="spawn" slot="1">
+	<object file="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

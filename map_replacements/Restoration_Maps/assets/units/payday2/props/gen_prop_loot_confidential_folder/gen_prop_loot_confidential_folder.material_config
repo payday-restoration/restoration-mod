@@ -1,0 +1,5 @@
+<materials version="3">
+	<material name="mat_paper" render_template="generic:DIFFUSE_TEXTURE">
+		<diffuse_texture file="units/payday2/props/gen_prop_loot_confidential_folder/gen_prop_loot_confidential_folder_df"/>
+	</material>
+</materials>

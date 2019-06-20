@@ -2646,8 +2646,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_damage_to_hot_2",
-					"player_passive_health_multiplier_1"
+					"player_damage_to_hot_2"
 				},
 				cost = 400,
 				icon_xy = {2, 6},
@@ -2657,8 +2656,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_damage_to_hot_3",
-					"player_passive_health_multiplier_2"
+					"player_damage_to_hot_3"
 				},
 				cost = 1000,
 				icon_xy = {3, 6},
@@ -2668,8 +2666,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_damage_to_hot_4",
-					"player_passive_health_multiplier_3"
+					"player_damage_to_hot_4"
 				},
 				cost = 2400,
 				icon_xy = {4, 6},
@@ -2680,7 +2677,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_extra_ticks",
-					"player_passive_health_multiplier_4",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
@@ -2764,33 +2760,28 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_armor_health_store_amount_2",
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"player_armor_health_store_amount_2"
 				},
 				cost = 400,
 				icon_xy = {4, 7},
 				name_id = "menu_deck13_3",
-				desc_id = "menu_deck13_3_desc"
+				desc_id = "menu_deck13_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
 					"player_armor_max_health_store_multiplier",
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4",
 					"player_passive_dodge_chance_1"
 				},
 				cost = 1000,
 				icon_xy = {5, 7},
 				name_id = "menu_deck13_5",
-				desc_id = "menu_deck13_5_desc"
+				desc_id = "menu_deck13_5_desc_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"player_armor_health_store_amount_3",
-					"player_passive_health_multiplier_5"
+					"player_armor_health_store_amount_3"
 				},
 				cost = 2400,
 				icon_xy = {6, 7},
@@ -2879,14 +2870,13 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "opera",
 			{
 				upgrades = {
-					"player_armor_grinding_1",
-					"temporary_armor_break_invulnerable_1"
+					"player_armor_grinding_1"
 				},
 				cost = 200,
 				icon_xy = {0, 0},
 				texture_bundle_folder = "opera",
 				name_id = "menu_deck15_1",
-				desc_id = "menu_deck15_1_desc"
+				desc_id = "menu_deck15_1_desc_sc"
 			},
 			deck2,
 			{

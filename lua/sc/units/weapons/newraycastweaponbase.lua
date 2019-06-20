@@ -79,13 +79,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	function NewRaycastWeaponBase:_get_spread(user_unit)
 		local current_state = user_unit:movement()._current_state
+		
 		if not current_state then
 			return 0, 0
 		end
+		
 		local spread_values = tweak_data.weapon[self._name_id].spread
+		
 		if not spread_values then
 			return 0, 0
 		end
+		
 		local cond_spread_addend = self:conditional_accuracy_addend(current_state) or 0
 		local spread_addend = (self:spread_index_addend(current_state) or 0) + cond_spread_addend
 		local current_spread_value = spread_values[current_state:get_movement_state()]
@@ -99,15 +103,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		else
 			spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)
 		end
+		
 		if self._spread_multiplier then
 			spread_x = spread_x * self._spread_multiplier[1]
 			spread_y = spread_y * self._spread_multiplier[2]
 		end
+		
 		local spread_mult = 1
 		spread_mult = spread_mult * self:spread_multiplier(current_state)
 		spread_mult = spread_mult * self:conditional_accuracy_multiplier(current_state)
 		spread_x = spread_x * spread_mult
 		spread_y = spread_y * spread_mult
+		
 		return spread_x, spread_y
 	end
 	

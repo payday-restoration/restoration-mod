@@ -127,8 +127,54 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self._speech_prefix_p2 = "d"
 	end	
-
+	
+    function CharacterTweakData:get_ai_group_type()	
+	    if Global.level_data and Global.level_data.level_id then
+	    	level_id = Global.level_data.level_id
+	    end	    
+	    if not Global.game_settings then
+	    	return group_to_use
+	    end
+	    local map_faction_override = {}
+		--Murkywater faction--
+		map_faction_override["shoutout_raid"] = "murkywater"		
+		map_faction_override["pbr"] = "murkywater"				
+		map_faction_override["des"] = "murkywater"		
+		map_faction_override["bph"] = "murkywater"		
+		map_faction_override["vit"] = "murkywater"		
+		map_faction_override["wwh"] = "murkywater"
+		map_faction_override["arm_for"] = "murkywater"
+		map_faction_override["wetwork"] = "murkywater"
+		map_faction_override["wetwork_burn"] = "murkywater"
+		--Zombies--
+		map_faction_override["haunted"] = "zombie"		
+		map_faction_override["nail"] = "zombie"
+		map_faction_override["help"] = "zombie"
+		map_faction_override["hvh"] = "zombie"  
+		--Reapers--
+		map_faction_override["mad"] = "russia"  
+	   
+	    if level_id then
+	    	if map_faction_override[level_id] then
+	    		group_to_use = map_faction_override[level_id]
+	    	end
+	    end
+	    return group_to_use
+	end
+	
 	function CharacterTweakData:_init_security(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.security = deep_clone(presets.base)
 		self.security.tags = {"law"}
 		self.security.experience = {}
@@ -156,7 +202,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.silent_priority_shout = "f37"
 		self.security.dodge = presets.dodge.poor
 		self.security.deathguard = false
-		self.security.chatter = presets.enemy_chatter.cop
+		self.security.chatter = presets.enemy_chatter.guard
 		self.security.has_alarm_pager = true
 		self.security.melee_weapon = nil
 		self.security.steal_loot = nil
@@ -186,6 +232,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_gensec(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.gensec = deep_clone(presets.base)
 		self.gensec.tags = {"law"}
 		self.gensec.experience = {}
@@ -213,7 +271,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.silent_priority_shout = "f37"
 		self.gensec.dodge = presets.dodge.athletic
 		self.gensec.deathguard = false
-		self.gensec.chatter = presets.enemy_chatter.cop
+		self.gensec.chatter = presets.enemy_chatter.guard
 		self.gensec.has_alarm_pager = true
 		self.gensec.melee_weapon = "baton"
 		self.gensec.steal_loot = nil
@@ -222,6 +280,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_cop(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.cop = deep_clone(presets.base)
 		self.cop.tags = {"law"}
 		self.cop.experience = {}
@@ -281,6 +351,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_fbi(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.fbi = deep_clone(presets.base)
 		self.fbi.tags = {"law"}
 		self.fbi.experience = {}
@@ -332,7 +414,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_vet.move_speed = presets.move_speed.lightning
 		self.fbi_vet.surrender = nil
 		self.fbi_vet.unintimidateable = true	
-		if job == "mad" then
+		if is_reaper then
 		   self.fbi_vet.custom_voicework = nil	
 		else   
 		   self.fbi_vet.custom_voicework = "bruce"
@@ -354,12 +436,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		}	
 		self.fbi_vet.static_dodge_preset = true
-		if job == "mad" then
+		if is_reaper then
 		   self.fbi_vet.die_sound_event = "l2n_x01a_any_3p"
 		else   
 		   self.fbi_vet.die_sound_event = nil
 		end   
-		if job == "mad" then 
+		if is_reaper then
 		    self.fbi_vet.speech_prefix_p1 = self._prefix_data_p1.swat()
 		    self.fbi_vet.speech_prefix_p2 = self._speech_prefix_p2
 		    self.fbi_vet.speech_prefix_count = 4
@@ -371,6 +453,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_medic(presets)
+	    local is_murky
+        if self:get_ai_group_type() == "murkywater" then
+            is_murky = true
+        end
+        local is_reaper
+        if self:get_ai_group_type() == "russia" then
+            is_reaper = true
+        end
+        local is_zombie
+        if self:get_ai_group_type() == "zombie" then
+            is_zombie = true
+        end
 		self.medic = deep_clone(presets.base)
 		self.medic.tags = {"law", "medic", "special"}
 		self.medic.experience = {}
@@ -408,7 +502,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic.bot_priority_shout = "f47x_any"
 		self.medic.priority_shout_max_dis = 3000
 		self.medic.is_special = true
-		if job == "mad" then
+		if is_reaper then
 		    self.medic.die_sound_event = "rmdc_x02a_any_3p"
 		else	
 		    self.medic.die_sound_event = "mdc_x02a_any_3p"
@@ -476,7 +570,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
-		if job == "mad" then 
+		if is_reaper then
 			self.omnia_lpf.custom_voicework = nil
 		else
 			self.omnia_lpf.custom_voicework = "olpf"
@@ -493,6 +587,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_swat(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.swat = deep_clone(presets.base)
 		self.swat.tags = {"law"}
 		self.swat.experience = {}
@@ -519,7 +625,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.chatter = presets.enemy_chatter.swat
 		self.swat.melee_weapon = nil
 		self.swat.melee_weapon_dmg_multiplier = 1
-		if job == "mad" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
+		if is_murky or is_zombie or is_reaper then
 		    self.swat.die_sound_event = "l2n_x01a_any_3p"
 		else	
 		    self.swat.die_sound_event = "x01a_any_3p"
@@ -562,6 +668,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_heavy_swat(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.heavy_swat = deep_clone(presets.base)
 		self.heavy_swat.tags = {"law"}
 		self.heavy_swat.experience = {}
@@ -594,8 +712,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
-			self.heavy_swat.die_sound_event = "l2n_x01a_any_3p"
+        if is_murky or is_zombie or is_reaper then 			
+            self.heavy_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.heavy_swat.die_sound_event = "l3d_x02a_any_3p"
 		end		
@@ -713,7 +831,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.custom_voicework = nil
 		self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
 		self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
-		if job == "mad" then 
+		if is_reaper then
 			self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
 			self.heavy_swat_sniper.speech_prefix_count = 4
@@ -722,7 +840,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.heavy_swat_sniper.speech_prefix_p2 = nil
 			self.heavy_swat_sniper.speech_prefix_count = nil
 		end			
-		if job == "mad" then 
+		if is_reaper then
 			self.heavy_swat_sniper.custom_voicework = nil
 		else
 			self.heavy_swat_sniper.custom_voicework = "tsniper"
@@ -732,6 +850,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_fbi_swat(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.fbi_swat = deep_clone(presets.base)
 		self.fbi_swat.tags = {"law"}
 		self.fbi_swat.experience = {}
@@ -766,7 +896,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
+		if is_murky or is_zombie or is_reaper then
 			self.fbi_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.fbi_swat.die_sound_event = "l1d_x02a_any_3p"
@@ -779,6 +909,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_fbi_heavy_swat(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.fbi_heavy_swat = deep_clone(presets.base)
 		self.fbi_heavy_swat.tags = {"law"}
 		self.fbi_heavy_swat.experience = {}
@@ -813,9 +955,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
 		self.fbi_heavy_swat.static_melee_preset = true	
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job =="wetwork" or job =="wetwork_burn"  or job =="wwh" or job =="arm_for" then
+		if is_murky then
 			self.fbi_heavy_swat.die_sound_event = "l5d_x02a_any_3p"
-		elseif job == "mad" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
+		elseif is_zombie or is_reaper then
 		    self.fbi_heavy_swat.die_sound_event = "l2n_x01a_any_3p"
 		else
 		    self.fbi_heavy_swat.die_sound_event = "l3d_x02a_any_3p"
@@ -823,7 +965,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "fbi_heavy_swat")
 		
 		self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
-		if job == "mad" then 
+		if is_reaper then
 			self.omnia_heavy.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia_heavy.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia_heavy.speech_prefix_count = 4
@@ -838,6 +980,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_city_swat(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.city_swat = deep_clone(presets.base)
 		self.city_swat.tags = {"law", "city_swat"}
 		self.city_swat.experience = {}
@@ -887,16 +1041,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.static_dodge_preset = true
 		self.city_swat.static_melee_preset = true	
 		self.city_swat.custom_voicework = nil
-		--[[if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" then
-			self.city_swat.die_sound_event = "l2n_x01a_any_3p"
-		else
-			self.city_swat.die_sound_event = "l1d_x02a_any_3p"
-		end]]--
-		--all this is manages by the city swat hell in copdamage
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	
-		--[[if job == "mad" then
+		--[[if is_reaper then
 			self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.omnia.speech_prefix_p2 = self._speech_prefix_p2
 			self.omnia.speech_prefix_count = 4
@@ -915,7 +1063,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4		
-		if job == "mad" then
+		if is_reaper then
 		    self.city_swat_titan.custom_voicework = nil
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
@@ -932,7 +1080,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.unintimidateable = true
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
-		if job == "mad" then
+		if is_reaper then
 		   self.city_swat_titan.die_sound_event = "l2n_x01a_any_3p"
 		else
 		   self.city_swat_titan.die_sound_event = nil
@@ -970,6 +1118,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_sniper(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.sniper = deep_clone(presets.base)
 		self.sniper.tags = {"law", "sniper", "special"}
 		self.sniper.experience = {}
@@ -1004,7 +1164,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.static_weapon_preset = true
 		self.sniper.static_dodge_preset = true
 		self.sniper.is_special = true
-		self.sniper.die_sound_event = "l2n_x01a_any_3p"
+		self.sniper.die_sound_event = "mga_death_scream"
+		self.sniper.spawn_sound_event = "mga_deploy_snipers"
 		self.sniper.do_not_drop_ammo = true
 		table.insert(self._enemy_list, "sniper")
 	end
@@ -1028,7 +1189,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.no_retreat = true
 		self.gangster.weapon_voice = "3"
 		self.gangster.experience.cable_tie = "tie_swat"
-		if job == "nightclub" or job == "short2_stage1" or job == "jolly" then
+		if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 			self.gangster.speech_prefix_p1 = "rt"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
@@ -1482,6 +1643,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_tank(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.tank = deep_clone(presets.base)
 		self.tank.tags = {"law", "tank", "special"}
 		self.tank.experience = {}
@@ -1552,7 +1725,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_medic = deep_clone(self.tank)
 		self.tank_medic.headshot_dmg_mul = 18.75
 		self.tank_medic.HEALTH_INIT = 400
-		--[[if job == "mad" then 
+		--[[if is_reaper then
 			self.tank_medic.custom_voicework = nil
 		else
 			self.tank_medic.custom_voicework = "medicdozer"
@@ -1571,22 +1744,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.immune_to_knock_down = true
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
-		if job == "mad" then 
+		if is_reaper then
 			self.tank_titan.die_sound_event_2 = "bdz_x02a_any_3p"
 		else
 			self.tank_titan.die_sound_event_2 = nil
 		end			
-		if job == "mad" then 
+		if is_reaper then
 			self.tank_titan.custom_voicework = nil
 		else
 			self.tank_titan.custom_voicework = "tdozer"
 		end			
-		if job == "mad" then 
+		if is_reaper then
 		    self.tank_titan.spawn_sound_event = "rbdz_entrance_elite"
 		else
 		    self.tank_titan.spawn_sound_event = "bdz_entrance"
 		end		
-		if job == "mad" then 
+		if is_reaper then
 		    self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
 		    self.tank.speech_prefix_p2 = nil
 		    self.tank.speech_prefix_count = nil
@@ -1645,6 +1818,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_spooc(presets)
+	    local is_murky
+        if self:get_ai_group_type() == "murkywater" then
+            is_murky = true
+        end
+        local is_reaper
+        if self:get_ai_group_type() == "russia" then
+            is_reaper = true
+        end
+        local is_zombie
+        if self:get_ai_group_type() == "zombie" then
+            is_zombie = true
+        end
 		self.spooc = deep_clone(presets.base)
 		self.spooc.tags = {"law", "spooc", "special"}
 		self.spooc.experience = {}
@@ -1681,7 +1866,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc.can_be_tased = true
 		self.spooc.static_dodge_preset = true
 		self.spooc.is_special = true
-		if job == "mad" then
+		if is_reaper then
 		    self.spooc.die_sound_event = "rclk_x02a_any_3p"
 		else
 		    self.spooc.die_sound_event = "clk_x02a_any_3p"
@@ -1700,7 +1885,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
-		if job == "mad" then 
+		if is_reaper then
 			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
@@ -1762,6 +1947,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 
 	function CharacterTweakData:_init_shield(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.shield = deep_clone(presets.base)
 		self.shield.tags = {"law", "shield", "special"}
 		self.shield.experience = {}
@@ -1814,8 +2011,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
 		self.shield.die_sound_event_2 = "l4d_x02a_any_3p"
-		if job == "shoutout_raid" or job == "pbr" or job == "des" or job == "bph" or job == "vit" or job == "mad" or job =="wetwork"  or job =="wetwork_burn" or job =="wwh" or job == "hvh" or job == "arm_for" or job == "haunted" or job == "nail" or job == "help" then
-			self.shield.die_sound_event = "l2n_x01a_any_3p"
+        if is_murky or is_zombie or is_reaper then
+     		self.shield.die_sound_event = "l2n_x01a_any_3p"
 		else
 			self.shield.die_sound_event = "l4d_x02a_any_3p"
 		end
@@ -1860,14 +2057,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--self.phalanx_minion.spawn_sound_event = "prm"
 		self.phalanx_minion.spawn_sound_event = "shield_identification"
 		self.phalanx_minion.die_sound_event = "mga_death_scream"		
-		if job == "mad" then 
+		if is_reaper then
 			self.phalanx_minion.die_sound_event_2 = "l2n_x01a_any_3p"
 		else
 			self.phalanx_minion.die_sound_event_2 = nil
 		end	
 		self.phalanx_minion.suppression = nil
 		self.phalanx_minion.is_special = true
-		if job == "mad" then 
+		if is_reaper then
 			self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
 			self.phalanx_minion.speech_prefix_count = 4
@@ -1978,6 +2175,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_summers(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.summers = deep_clone(presets.base)
 		self.summers.tags = {"law", "custom", "special", "summers"}
 		self.summers.experience = {}
@@ -2025,7 +2234,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.summers.deathguard = true
 		self.summers.chatter = presets.enemy_chatter.summers
 		self.summers.announce_incomming = "incomming_captain"
-		if job == "mad" then
+		if is_reaper then
 			self.summers.spawn_sound_event = "cloaker_spawn"
 		else
 			self.summers.spawn_sound_event = "cpa_a02_01"
@@ -2055,7 +2264,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.damage.fire_damage_mul = 0.65
 		self.autumn.flammable = false
 		self.autumn.damage.explosion_damage_mul = 0.15
-		self.autumn.damage.bullet_dodge_chance = 50
+		self.autumn.damage.bullet_dodge_chance = 40
 		self.autumn.move_speed = presets.move_speed.lightning
 		self.autumn.no_retreat = true
 		self.autumn.no_arrest = true
@@ -2115,6 +2324,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 
 	function CharacterTweakData:_init_taser(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.taser = deep_clone(presets.base)
 		self.taser.tags = {"law", "taser", "special"}
 		self.taser.experience = {}
@@ -2167,7 +2388,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		self.taser.is_special = true
-		if job == "mad" then
+		if is_reaper then
 		    self.taser.die_sound_event = "rtsr_x02a_any_3p"
 		else	
 		    self.taser.die_sound_event = "tsr_x02a_any_3p"
@@ -2216,7 +2437,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
-		if job == "mad" then 
+		if is_reaper then
 		    self.taser_titan.spawn_sound_event = "rtsr_elite"
 		else
 		    self.taser_titan.spawn_sound_event = "tsr_elite"
@@ -2234,6 +2455,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_boom(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.boom = deep_clone(presets.base)
 		self.boom.tags = {"law", "custom", "special"}
 		self.boom.experience = {}
@@ -3131,8 +3364,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						explode = 0.02
+						light = 0.995,
+						explode = 0.005
 					}
 				}
 		}
@@ -3153,8 +3386,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						explode = 0.02
+						light = 0.995,
+						explode = 0.005
 					}
 				}
 		}	
@@ -3163,8 +3396,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				health_reference = "current",
 				zones = {
 					{
-						light = 0.98,
-						moderate = 0.02
+						light = 0.995,
+						moderate = 0.005
 					}
 				}
 		}		
@@ -3467,6 +3700,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.submission_intimidate = 15
 		presets.base.speech_prefix = "po"
 		presets.base.speech_prefix_count = 1
+	    presets.base.follower = true
 		presets.base.rescue_hostages = true
 		presets.base.use_radio = self._default_chatter
 		presets.base.dodge = nil
@@ -3474,7 +3708,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.base.calls_in = true
 		presets.base.ignore_medic_revive_animation = false
 		presets.base.spotlight_important = false
-		presets.base.follower = true
 		presets.base.experience = {}
 		presets.base.experience.cable_tie = "tie_swat"
 		presets.base.damage = {}
@@ -11246,6 +11479,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		presets.enemy_chatter = {
 			no_chatter = {},
+			guard = {
+				aggressive = true,
+				--retreat = true,
+				contact = true,
+				clear = true,
+				clear_whisper = true,
+				--go_go = true,
+				---push = true,
+				reload = true,
+				look_for_angle = true,
+				ecm = true,
+				saw = true,
+				trip_mines = true,
+				sentry = true
+				--ready = true,
+				--smoke = true,
+				--flash_grenade = true,
+				--follow_me = true,
+				--deathguard = true,
+				--open_fire = true,
+				--suppress = true
+			},
 			cop = {
 				aggressive = true,
 				retreat = true,

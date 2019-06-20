@@ -150,6 +150,17 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		self.bomb_loot.texture = "guis/textures/pd2/mission_briefing/assets/crojob/stage_1/assets_crojob_insiderinfo_bomb"
 		self.bomb_loot.stages = {"crojob2"}
 		
+		--UK Job, Resmod edit
+		table.insert(self.safe_escape.stages, "ukrainian_job_res")
+		table.insert(self.bodybags_bag.stages, "ukrainian_job_res")
+		table.insert(self.sniper_spot_jewelery.stages, "ukrainian_job_res")
+		table.insert(self.ukrainian_job_tiara.stages, "ukrainian_job_res")
+		table.insert(self.ukrainian_job_front.stages, "ukrainian_job_res")
+		table.insert(self.ukrainian_job_cam.stages, "ukrainian_job_res")
+		table.insert(self.ukrainian_job_metal_detector.stages, "ukrainian_job_res")
+		table.insert(self.ukrainian_job_shutter.stages, "ukrainian_job_res")
+		table.insert(self.security_safe_05x05.stages, "ukrainian_job_res")
+		
 	end
 	
 	--Restoration Heist assets--

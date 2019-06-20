@@ -3,9 +3,12 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="9.0" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.5.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 	   <mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
+			<options merge_mode="script_merge"/>
+		</mod>
+	   <mod file="post_processor.xml" type="xml" target_file="core/shaders/post_processor" target_type="post_processor">
 			<options merge_mode="script_merge"/>
 	   </mod>
 	</ScriptMods>	
@@ -121,7 +124,6 @@
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/enemies/securitycamera.lua" source_file="lib/units/props/securitycamera"/>
 		<hook file="sc/states/ingamewaitingforplayers.lua" source_file="lib/states/ingamewaitingforplayers"/>
-		<hook file="sc/states/ingameParachuting.lua" source_file="lib/states/ingameParachuting"/>
 		<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
 		<hook file="sc/tweak_data/dramatweakdata.lua" source_file="lib/tweak_data/dramatweakdata"/>
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
@@ -167,6 +169,8 @@
 		<hook file="sc/units/equipment/sentrygunbrain.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbrain"/>
 		<hook file="sc/units/weapons/molotovgrenade.lua" source_file="lib/units/weapons/grenades/molotovgrenade"/>
 		<hook file="sc/managers/trademanager.lua" source_file="lib/managers/trademanager"/>
+		<hook file="sc/network/base/networkpeer.lua" source_file="lib/network/base/networkpeer"/>
+		<hook file="sc/tweak_data/attentiontweakdata.lua" source_file="lib/tweak_data/attentiontweakdata"/>
 		<!--Crime Spree-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

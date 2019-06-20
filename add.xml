@@ -37,6 +37,7 @@
 	<texture path="guis/textures/restoration/hud_pickups"/>
 	<texture path="guis/textures/restoration/throwables"/>
 	<texture path="guis/textures/restoration/equipment"/>
+	<texture path="guis/textures/restoration/objective"/>
 	<texture path="guis/textures/restoration/risklevel_blackscreen"/>
 	<gui path="guis/mask_off_hud" force="true"/>
 	<texture path="guis/textures/restoration/mission_briefing/bain"/>
@@ -60,6 +61,8 @@
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
 	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="false"/>
+	<font path="fonts/font_medium_shadow" force="true"/>
+	<merged_font path="fonts/font_medium_shadow_mf" force="true"/>
 
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
@@ -530,6 +533,7 @@
 	
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
+	<texture path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
 	
     <!--Titan Taser-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
@@ -1555,6 +1559,7 @@
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/bulldozer_medic_df" force="false"/>		
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/bulldozer_saiga_df" force="false"/>
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/bulldozer_city_df" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/bulldozer_glass_op" force="false"/>
 	
 	<!--Murky Grenadier-->
 	<unit path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
@@ -1835,6 +1840,7 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />		
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />				
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/joker_heavy_df" />				
 	
 	<!--LAPD swat-->
 	<!--LAPD heavy r870-->	

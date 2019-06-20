@@ -168,7 +168,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_a_40sw_desc"] = "",		
 		["bm_wp_wpn_fps_upg_g3m203_barrel_g3ka4"] = "Assault Kit",		
 		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",	
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",				
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",		
+		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",	
+		["bm_wp_wpn_fps_galil_m_drum"] = "75 Round Drum",				
+		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can somewhat penetrate armor...right?",		
+		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",								
+		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extra Extended Magazine",		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 
@@ -405,7 +410,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",
-			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##30## seconds.",																								
+			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##60## seconds.",																								
 
 
 			--}
@@ -900,13 +905,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
-		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
-		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
-		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.\n\nYou gain ##5%## more health.",
-		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nYou gain ##5%## more health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.",
+		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds.",
+		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.",
+		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##6## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Open your mind--	
-		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYou gain ##5%## more health.",	
+		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##4##.",	
+		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##50%##.\n\nYour chance to dodge is increased by ##10%##.",			
+		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.",	
 		
 		--THIS IS WAR BABY--
 		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks, up to ##240## every ##2## seconds. Max amount of stacks is ##600##.\n\nHysteria Stacks:\nYou gain ##0.5## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decays ##30% + 80## every ##8## seconds.",	
@@ -915,9 +922,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##25%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Anarchist--
-		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
-		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##55%## armor.",
-		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##60%## armor.",
+		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\n\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
+		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##30%## armor.",
+		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##40%## armor.",
+		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##3## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--

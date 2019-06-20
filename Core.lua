@@ -55,28 +55,33 @@ if not _G.restoration then
 		--custom heists
 		"hardware_store", --hes fucking awful on this heist pdc why did you think it was ok
 		"office_strike",
+		"spa_CD",		
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
-		"skmc_ovengrill"
+		"skmc_ovengrill",
+		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
-		"welcome_to_the_jungle_2", --big oil day 2
 		"crojob2", --bomb dockyard
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
+		"watchdogs_2", --watch dogs 2
+		"jolly_CD", --jolly crackdown edit
 		--custom heists		
-		"office_strike" --office strike
+		"office_strike", --office strike
+		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	_G.restoration.captain_murderdozer = {
 		"firestarter_2", --firestarter day 2
 		"framing_frame_3", --framing frame day 3
-		"alex_2", --rats day 2
 		"rat",	--cook off
 		"arm_for",	--train heist
 		"mus",	--the diamond
-		"big" --big bank
+		"big", --big bank
+		--custom heists		
+		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	_G.restoration.captain_stelf = {
 		"nightclub", --and Autumn stay off the dance floor
@@ -96,7 +101,6 @@ if not _G.restoration then
 		"peta",
 		"peta2",
 		"nail",
-		"rvd1",
 		"rvd2",
 		"mia_2",
 		"hox_1",
@@ -122,6 +126,12 @@ if not _G.restoration then
 		"cane",
 		"dah",
 		"run",
+		"arm_cro",
+		"arm_hcm",
+		"arm_fac",
+		"arm_par",
+		"arm_und",
+		"arm_for",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",
@@ -129,8 +139,23 @@ if not _G.restoration then
 		"hardware_store",
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
-		"skmc_ovengrill"
-	}
+		"skmc_ovengrill",
+		"spa_CD",		
+		"wwh_CD",		
+		"street" --whurr's hs edit
+	}	
+	--Meant to be used for heists that use custom suits, since armor clips really badly with them
+	_G.restoration.custom_suit_heists = {
+		"glace", --Green Bridge
+		"dah", --Diamond Heist
+		"wwh", --Alaskan Deal
+		"sah", --Shacklethrorne Heist
+		"bph", --Hell's Island
+		"vit", --White House
+		"dinner", --Slaughterhouse
+		"man", --Undercover
+		"mad" --Boiling Point
+	}	
 end
 
 _G.SC = _G.SC or {}

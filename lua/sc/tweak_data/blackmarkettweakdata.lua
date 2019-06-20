@@ -2372,7 +2372,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.beardy.repeat_expire_t = 1.2
 	self.melee_weapons.beardy.melee_damage_delay = 0.65
 
-	--Who's plumes are gay now Carl? Who's plumes are gay now?--
+	--Whose plumes are gay now Carl? Whose plumes are gay now?--
 	self.melee_weapons.morning.speed_mult = 0.725
 	self.melee_weapons.morning.stats.min_damage = 8.1
 	self.melee_weapons.morning.stats.max_damage = 16.3

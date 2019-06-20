@@ -43,6 +43,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd
+		self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		
 		self.brb.ai_group_type = nypd
 		
 		self.red2.ai_group_type = nypd
@@ -66,7 +68,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--LAPD--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd"}
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd"}		
@@ -76,7 +78,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.rvd1.ai_group_type = lapd
 		self.rvd2.ai_group_type = lapd
-		
 		
 		--Gangster VO below--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
@@ -93,7 +94,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.chill.ghost_bonus = nil
 		
-		self.mad.package = {"packages/lvl_wwh"}
+		self.mad.package = {"packages/lvl_mad", "packages/lvl_wwh"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	
 	end)

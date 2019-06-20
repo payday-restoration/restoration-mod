@@ -2,6 +2,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	function CopDamage:damage_fire(attack_data)
 		self._attack_data = attack_data
+		
+        if not (attack_data and attack_data.attacker_unit) or not managers.criminals:character_peer_id_by_unit(attack_data.attacker_unit) then 
+        -- no friendly fire >:(
+            return
+        end
+		
 		if self._dead or self._invulnerable then
 			return
 		end
@@ -928,7 +934,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 			self._unit:movement():action_request(action_data)
 		end
-		managers.modifiers:run_func("OnEnemyHealed", self._unit, unit)
+
 		managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		return true
 	end
@@ -957,6 +963,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 		
 	function CopDamage:damage_explosion(attack_data)
+        if not (attack_data and attack_data.attacker_unit) or not managers.criminals:character_peer_id_by_unit(attack_data.attacker_unit) then 
+        -- no friendly fire >:(
+            return
+        end
+	
 		if self._dead or self._invulnerable then
 			return
 		end

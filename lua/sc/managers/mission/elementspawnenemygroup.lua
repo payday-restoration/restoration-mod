@@ -18,7 +18,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		local groups = self._values.preferred_spawn_groups
 		--Ugly fix for levels with fucky spawngroups, but it works
-		if job == "Victor Romeo" or job == "hardware_store" or job == "hntn" then
+		if job == "Victor Romeo" or job == "hardware_store" or job == "hntn" or job == "bookmakers_office" then
 			for name,_ in pairs(tweak_data.group_ai.enemy_spawn_groups) do
 				if not table.contains(groups, name) then
 					table.insert(groups, name)

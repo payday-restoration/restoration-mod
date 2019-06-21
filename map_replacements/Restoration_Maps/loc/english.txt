@@ -36,9 +36,9 @@
 	"obj7_escapeorloot_desc" : "Leave the area as soon as you're satisfied with the take.",
 	
 	"heist_int_dock_burn_name" : "BURNOUT",
-	"heist_int_dock_burn_brief" : "No time for detailed plans theyre going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.",
+	"heist_int_dock_burn_brief" : "No time for detailed plans, they're going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.",
 	"heist_wetwork_burn_name" : "BURNOUT",
-	"heist_wetwork_burn_brief" : "No time for detailed plans theyre going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.\n\nKeep an eye out for anything you can use to see whats inside what, cameras, containers and so on.",
+	"heist_wetwork_burn_brief" : "No time for detailed plans, they're going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.\n\nKeep an eye out for anything you can use to see whats inside what, cameras, containers and so on.",
 	"wwburn_01" : "READY UP",
 	"wwburn_01_desc" : "Were in the front gate, Murkywater will be all over so get your guns out.",
 	"wwburn_02" : "LOCATE SERVERS",
@@ -57,8 +57,14 @@
     "menu_jukebox_screen_resmusic_wetwork" : "Spectre Shark",
     "menu_jukebox_resmusic_burnout" : "Brute Force",
     "menu_jukebox_screen_resmusic_burnout" : "Brute Force",
-    "menu_jukebox_resmusic_doghouse" : "Insane",
-    "menu_jukebox_screen_resmusic_doghouse" : "Insane",
+    "menu_jukebox_resmusic_doghouse" : "Bleeding Edge",
+    "menu_jukebox_screen_resmusic_doghouse" : "Bleeding Edge",
+	"menu_jukebox_resmusic_lethalforce" : "Lethal Force",
+    "menu_jukebox_screen_resmusic_lethalforce" : "Lethal Force",
+	"menu_jukebox_resmusic_redmarks" : "Red Marks",
+    "menu_jukebox_screen_resmusic_redmarks" : "Red Marks",
+	"menu_jukebox_resmusic_speciesnova" : "Species Nova",
+    "menu_jukebox_screen_resmusic_speciesnova" : "Species Nova",
 	
 	"look_dad" : "no_errors"
 }

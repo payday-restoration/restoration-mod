@@ -17,6 +17,18 @@
 		<event name="assault" source="assault.ogg"/>
 		<event name="control" source="control.ogg"/>
 	</HeistMusic>
+	<HeistMusic directory="assets/sounds/lethalforce" id="resmusic_lethalforce">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
+	<HeistMusic directory="assets/sounds/redmarks" id="resmusic_redmarks">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
 	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork" id="int_dock" jc="25">
 		<chain>
 			<table level_id="wetwork" type="d" type_id="heist_type_assault"/>

@@ -138,15 +138,8 @@ if restoration.Options:GetValue("HUD/Waypoints") then
 			self:remove_waypoint( id )
 		end
 		
-		-- local hud = managers.hud:script( PlayerBase.PLAYER_INFO_HUD )
 		local hud = managers.hud:script( PlayerBase.PLAYER_INFO_HUD_PD2 )
 		if not hud then
-			--[[if Application:editor() then
-				managers.editor:output_error( "Player hud not loaded, can't add waypoint "..id.."." )
-			else
-				Application:error( "Player hud not loaded, can't add waypoint "..id.."." )
-			end]]
-			
 			self._hud.stored_waypoints[ id ] = data
 			return
 		end
@@ -188,29 +181,30 @@ if restoration.Options:GetValue("HUD/Waypoints") then
 		local _,_,w,_ = text:text_rect()
 		text:set_w( w )
 		local w, h = bitmap:size()
+		
 		self._hud.waypoints[ id ] = {
-										init_data		= data,
-										state			= "present",
-										present_timer 	= 2, 
-										bitmap 			= bitmap,
-										arrow			= arrow,
-										size			= Vector3( w, h, 0 ),
-										text			= text,
-										distance		= distance,
-										timer_gui		= timer,
-										timer			= data.timer,
-										pause_timer = not data.pause_timer and data.timer and 0,
-										position		= data.position,
-										unit			= data.unit,
-										no_sync			= data.no_sync,
-										move_speed		= 1,
-										radius			= data.radius or 160
-									}
+			init_data		= data,
+			state			= "present",
+			present_timer 	= managers.groupai:state():whisper_mode() and data.present_timer or 2, 
+			bitmap 			= bitmap,
+			arrow			= arrow,
+			size			= Vector3( w, h, 0 ),
+			text			= text,
+			distance		= distance,
+			timer_gui		= timer,
+			timer			= data.timer,
+			pause_timer = not data.pause_timer and data.timer and 0,
+			position		= data.position,
+			unit			= data.unit,
+			no_sync			= data.no_sync,
+			move_speed		= 1,
+			radius			= data.radius or 160
+		}
 		self._hud.waypoints[ id ].init_data.position = data.position or data.unit:position() -- Stupid drop in fix
 		
 		-- The code below is not easy to follow, what it does is calculates where the waypoint should be presented if there are other being presented at the same time
 		local slot = 1
-			local t = {}
+		local t = {}
 		for _,data in pairs( self._hud.waypoints ) do
 			if data.slot then
 				t[ data.slot ] = data.text:w()

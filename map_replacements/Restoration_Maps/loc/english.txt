@@ -65,8 +65,8 @@
     "menu_jukebox_screen_resmusic_redmarks" : "Red Marks",
 	"menu_jukebox_resmusic_speciesnova" : "Species Nova",
     "menu_jukebox_screen_resmusic_speciesnova" : "Species Nova",
-    "menu_jukebox_screen_m1" : "M1",
-	"menu_jukebox_screen_m2" : "M2",
+    "menu_jukebox_screen_m1" : "Criminal Intent (Old Version)",
+	"menu_jukebox_screen_m2" : "Preparations (Old Version)",
 	
 	"look_dad" : "no_errors"
 }

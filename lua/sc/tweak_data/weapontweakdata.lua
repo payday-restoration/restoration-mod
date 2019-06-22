@@ -11938,8 +11938,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.kick.steelsight = self.new_m4.kick.standing
 			self.fmg9.stats = {
 				damage = 35,
-				spread = 17,
-				recoil = 20,
+				spread = 16,
+				recoil = 19,
 				spread_moving = 9,
 				zoom = 1,
 				concealment = 28,

@@ -8781,7 +8781,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.ppsh.kick.crouching = self.new_m4.kick.standing
 			self.ppsh.kick.steelsight = self.new_m4.kick.standing
 			self.ppsh.stats = {
-				damage = 25,
+				damage = 30,
 				spread = 15,
 				recoil = 22,
 				spread_moving = 9,
@@ -10881,6 +10881,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.f2000.fire_mode_data.fire_rate = 0.07058823529
 		self.f2000.CAN_TOGGLE_FIREMODE = true
 		self.f2000.auto = {}
+		self.f2000.sounds.fire = "vhs_fire_single"
+		self.f2000.sounds.fire_single = "vhs_fire_single"
+		self.f2000.sounds.fire_auto = "vhs_fire"
+		self.f2000.sounds.stop_fire = "vhs_stop"
 		self.f2000.auto.fire_rate = 0.07058823529
 		self.f2000.spread.standing = 3
 		self.f2000.spread.crouching = 2

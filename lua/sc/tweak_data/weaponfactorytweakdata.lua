@@ -41913,10 +41913,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						zoom = 5,
 						concealment = -5
 						}	
+				self.parts.wpn_fps_ass_f2000_mag.stats = {
+						reload = 6
+						}							
 				self.parts.wpn_fps_f2000_uupg_mag_40.stats = {
 						value = 2,
 						concealment = -2,
-						reload = -2,
+						reload = 4,
 						extra_ammo = 10
 					}				
 				self.parts.wpn_fps_f2000_uupg_mag_40.has_description = false																																																							
@@ -44487,7 +44490,38 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread_moving = -1,
 				concealment = -1
 				}			
-			end	
+			end
+
+		if self.wpn_fps_smg_ppsh then --Pawcio's PPSH 41
+			self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp.stats = {	
+				value = 1,
+				spread = -1,
+				damage = -5,				
+				concealment = 2
+				}	
+			self.parts.wpn_fps_upg_ppsh_barrel_k50m.stats = {	
+				value = 2,
+				recoil = -1,
+				damage = -5,				
+				concealment = 2
+				}			
+			self.parts.wpn_fps_upg_ppsh_mag_drum.stats = {	
+				value = 3,
+				concealment = -4,
+				reload = -2,
+				extra_ammo = 36
+				}		
+			self.parts.wpn_fps_upg_ppsh_stock_k50m.stats = {	
+				value = 1,
+				concealment = 1,
+				recoil = -1,
+				}
+			self.parts.wpn_fps_upg_ppsh_stock_k50m_ext.stats = {	
+				value = 1,
+				concealment = 1,
+				spread = -1				
+				}										
+			end				
 
 		if self.parts.wpn_fps_pis_m1911_fg_tommy then --Silent Enforcer's M1911 Attachment Pack
 			self.parts.wpn_fps_pis_m1911_fg_tommy.stats = {

@@ -1,36 +1,36 @@
 <table name="Restoration_Maps">
-	<HeistMusic directory="assets/sounds/burnout" id="resmusic_burnout">
+	<HeistMusic directory="assets/sounds/burnout" id="resmusic_burnout" volume="0.5">
 		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg"/>
 		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
 		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="assets/sounds/wetwork" id="resmusic_wetwork">
+	<HeistMusic directory="assets/sounds/wetwork" id="resmusic_wetwork" volume="0.5">
 		<event name="setup" source="stealth.ogg"/>
 		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
 		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="assets/sounds/doghouse" id="resmusic_doghouse">
+	<HeistMusic directory="assets/sounds/doghouse" id="resmusic_doghouse" volume="0.5">
 		<event name="setup" source="setup.ogg"/>
 		<event name="anticipation" source="anticipation.ogg"/>
 		<event name="assault" source="assault.ogg"/>
 		<event name="control" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="assets/sounds/lethalforce" id="resmusic_lethalforce">
+	<HeistMusic directory="assets/sounds/lethalforce" id="resmusic_lethalforce" volume="0.5">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" />
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
+	<HeistMusic directory="assets/sounds/redmarks" id="resmusic_redmarks" volume="0.5">
 		<event name="setup" source="setup.ogg"/>
 		<event name="anticipation" source="anticipation.ogg"/>
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
 		<event name="control" source="control.ogg"/>
 	</HeistMusic>
-	<HeistMusic directory="assets/sounds/redmarks" id="resmusic_redmarks">
-		<event name="setup" source="setup.ogg"/>
-		<event name="anticipation" source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
-		<event name="control" source="control.ogg"/>
-	</HeistMusic>
-	<MenuMusic id="m1" start_source="m1intro.ogg" source="m1.ogg"/>
-	<MenuMusic id="m2" start_source="m2intro.ogg" source="m2.ogg"/>
+	<MenuMusic id="m1" start_source="m1intro.ogg" source="m1.ogg" volume="0.5"/>
+	<MenuMusic id="m2" start_source="m2intro.ogg" source="m2.ogg" volume="0.5"/>
 	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork" id="int_dock" jc="25">
 		<chain>
 			<table level_id="wetwork" type="d" type_id="heist_type_assault"/>

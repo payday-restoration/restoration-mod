@@ -26,6 +26,12 @@ function RestorationCore.log_shit(to_log)
 	end
 end
 
+function RestorationCore:LoadSCAssets()
+	if restoration and restoration.Options:GetValue("SC/SC") then
+		return true
+	end
+end
+
 RestorationCore.assault_style = {
 	"beta_assault",
 	"alpha_assault"

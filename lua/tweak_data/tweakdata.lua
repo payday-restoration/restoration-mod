@@ -1,6 +1,9 @@
 --if not RestorationTweak then
 restoration.textures = {}
-
+-- Always load
+if not PackageManager:loaded("packages/addhudmisc") then
+	PackageManager:load("packages/addhudmisc")
+end
 if restoration.Options:GetValue("HUD/DifficultyMarkers") then	
 tweak_data.hud_icons.risk_swat = {
 		texture = "guis/textures/restoration/hud_difficultymarkers",

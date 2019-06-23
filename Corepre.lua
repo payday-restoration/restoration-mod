@@ -6,4 +6,7 @@ RestorationMapFramework.type_name = "restoration"
 
 if restoration and restoration.Options:GetValue("SC/SC") then
 RestorationMapFramework:new()
+if not PackageManager:loaded("packages/scassets") then
+	PackageManager:load("packages/scassets")
+end
 end

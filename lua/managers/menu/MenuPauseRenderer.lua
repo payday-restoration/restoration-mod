@@ -26,7 +26,7 @@ function MenuPauseRenderer:show_node( node )
     if node:parameters().name == "jukebox_menu_playlist" or node:parameters().name == "jukebox_heist_playlist" or node:parameters().name == "base_lua_mods_menu" then
    	 alignment = "right"
     else
-   	 alignment = "left"
+   	 alignment = "right" --this needs to be "left" once alignment list above is completed & no other alignment issues remain
     end
 	local parameters = { 	font = tweak_data.menu.default_font_no_outline,
 							row_item_color = tweak_data.menu.default_font_row_item_color, 

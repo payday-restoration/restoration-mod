@@ -27,18 +27,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.lapd = lapd
 		
 		--Murkywater faction--
+		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
 		
+		self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
 		self.pbr.ai_group_type = murkywater
-				
+		
+		self.des.package = {"packages/murkyassets", "packages/job_des"}
 		self.des.ai_group_type = murkywater 
 		
+		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
 		
+		self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vi"}
 		self.vit.ai_group_type = murkywater 
 		
+		self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}
 		self.wwh.ai_group_type = murkywater 
 		
+		self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for"}
 		self.arm_for.ai_group_type = murkywater 
 		
 		--NYPD--
@@ -88,6 +95,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+		self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
 		self.haunted.ai_group_type = zombie		
 		self.nail.ai_group_type = zombie
 		self.help.ai_group_type = zombie

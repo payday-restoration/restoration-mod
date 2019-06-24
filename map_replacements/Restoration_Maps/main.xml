@@ -405,6 +405,4 @@
 		<texture force="true" path="guis/textures/customheist_gui/gem_loading"/>
 		<movie force="true" path="movies/cn_test"/>
 	</AddFiles>
-	<Localization default="english.txt" directory="loc"/>
-	<contact assets_gui="guis/mission_briefing/preload_contact_hector" id="shatter" name_id="install_restoration" package="packages/contact_hector"/>
 </table>

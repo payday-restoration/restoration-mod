@@ -195,6 +195,7 @@
 	"heist_titanium_name" : "TURF WAR",
 	"heist_steel_name" : "DEAD RECKONING",
 	"heist_platinum_name" : "SURFACE TENSION",
+	"heist_cursed_name" : "GREEN HARVEST",
 	"heist_platinum_brief" : "Placeholder Briefing for Crimenet. Heist the yacht. Shoot some people.",
 	"heist_jackal_surface_tension_name" : "OMNIA Research Vessel SN-XR-LETHE",
 	"heist_jackal_surface_tension_brief" : "Placeholder Briefing For Loadouts. Don't forget a medic bag.",

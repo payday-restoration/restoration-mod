@@ -73,11 +73,11 @@
 	<unit path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc" load="false"/>	
 	
 	<!--S&W .500-->
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/jeb"/>
+	<!--<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/jeb"/>
 	<cooked_physics path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
 	<model path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
 	<object path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
-	<unit path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" load="false"/>
+	<unit path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" load="false"/>-->
 	
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
@@ -2086,44 +2086,7 @@
 	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false" load="true"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="false"/>-->				
-	<!--zombie city 1-->
-	<object path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>
-	<cooked_physics path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>
-	<model path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1" load="true"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1_contour"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1_husk" load="true"/>	
-	<!--zombie city 2-->
-	<object path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<cooked_physics path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<model path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2_contour"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>	
-	<!--zombie city 3-->
-	<object path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<cooked_physics path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<model path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3_contour"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>	
-	<!--zombie city hat
-	<object path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>
-	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>
-	<model path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false" load="true"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_acc_city_swat_helmet/ene_acc_city_swat_helmet" force="false"/>-->				
 	
-	<!--textures -->	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_city_df" />	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_heavy_df" />	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc" />	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_city_head_df" />	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df" />	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_heavy_head_df" />	
 	
 	<!--OVERKILL removed this at somepoint-->
 	<texture path="units/characters/enemies/textures/police_force_nm" />	

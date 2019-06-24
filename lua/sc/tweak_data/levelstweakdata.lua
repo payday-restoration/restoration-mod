@@ -1,6 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	Month = os.date("%m")
-
+--TODO: Load player outfits in our mods in their own packages, so we're loading even less BS--
 	LevelsTweakData.LevelType = {}
 	LevelsTweakData.LevelType.America = "america"
 	LevelsTweakData.LevelType.Russia = "russia"
@@ -94,7 +94,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.chill.ghost_bonus = nil
 		
-		self.mad.package = {"packages/lvl_mad", "packages/lvl_wwh"}
+		--Russian Reapers--
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/lvl_wwh"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	
 	end)

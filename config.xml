@@ -282,6 +282,6 @@
         </options>
     </Options>
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
-	<Package id="packages/zombieassets" file="addzombie.xml" use_clbk="self:LoadSCAssets"/>
+	<Package id="packages/zombieassets" file="addzombie.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 </mod>

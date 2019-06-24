@@ -1,0 +1,18 @@
+<table directory="assets">	
+	<!--murky HRT MP5-->
+	<object path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4_husk" force="false" load="true"/>
+	<!--murky blue SWAT MP5-->
+	<object path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light_contour" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light_husk" force="false" load="true"/>		
+</table>

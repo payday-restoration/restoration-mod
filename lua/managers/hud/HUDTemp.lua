@@ -1,6 +1,8 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	
-	function HUDTemp:dodge_init()
+	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
+		if restoration.Options:GetValue("HUD/MainHUD") then --The stamina bar doesn't show up without these. Why? Beats me!
+			RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
+		end
 		self._dodge_panel = self._temp_panel:panel({
 			visible = true,
 			name = "dodge_panel",
@@ -58,7 +60,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if restoration.Options:GetValue("HUD/MainHUD") then
 			self:RestorationValueChanged()
 		end
-	end
+	end)
 
 	function HUDTemp:set_dodge_value(value, total_dodge)
 		self._dodge_panel:set_alpha(1) --Display dodge panel when needed.
@@ -103,9 +105,6 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 			bag_panel:set_bottom(self._temp_panel:h() - 152)
 			self._stamina_panel:set_alpha(1)
 			self._bag_panel_w, self._bag_panel_h = bag_panel:size()
-		end
-		if restoration and restoration.Options:GetValue("SC/SC") and restoration.Options:GetValue("HUD/MainHUD") then
-			self:dodge_init()
 		end
 		RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 		self:RestorationValueChanged()

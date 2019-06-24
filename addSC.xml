@@ -1219,5 +1219,87 @@
 	<!--new zeals end-->	
 	
 	<!--OVERKILL removed this at somepoint-->
-	<texture path="units/characters/enemies/textures/police_force_nm" />	
+	<texture path="units/characters/enemies/textures/police_force_nm" />
+	
+	<!--OMNIA SWAT Helmet-->
+	<object path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>		
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" force="false"/>
+	
+	<!--OMNIA heavy helmet-->
+	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>			
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
+	
+	<!--OMNIA Textures-->
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_city_heavy_nm"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_heavy_df"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_df"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_nm"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_df"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_nm"/>
+	
+	<!--murky heavy hat-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false" load="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>	
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>	
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>		
+	
+	<!--MOTHER FUCKING BERET ACC FUCK YEAH BEST FEATURE-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false" load="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>
+	
+	<!--murky glass-->
+    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>
+	
+	<!--murky city helmet-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" load="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" force="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" force="false"/>
+
+	<!--murky city ump helmet -->
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
+
+	<!--murky city textures-->    
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/murky_heavy_df" force="false"/>	
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/helmets_atlas_df" force="false"/>	
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/helmets_atlas_nm" force="false"/>		
+	
+	<!--Murky Shield Acc-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+
+	<!--murky medic helmet-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+
+    <!--Murky light NM-->
+    <texture path="units/pd2_mod_sharks/characters/shared_textures/murky_light_nm" force="false"/>		
+	
 </table>

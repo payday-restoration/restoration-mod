@@ -1,4 +1,4 @@
-
+if restoration.Options:GetValue("HUD/UI/Pause") then
 function MenuPauseRenderer:open( ... )
 	MenuPauseRenderer.super.super.open( self, ... )
 		
@@ -56,3 +56,4 @@ function MenuPauseRenderer:update( t, dt )
 end
 
 
+end

@@ -39,7 +39,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
 		
-		self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vi"}
+		self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vit"}
 		self.vit.ai_group_type = murkywater 
 		
 		self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}

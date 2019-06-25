@@ -259,50 +259,31 @@ if not tweak_data then return end
 	else
 		tweak_data.medic.lpf_radius = 400
 	end
-	if difficulty_index == 8 then
-		tweak_data.medic.disabled_units = {
-			"phalanx_minion",
-			"phalanx_vip",
-			"spring",
-			"taser_summers",
-			"boom_summers",
-			"medic_summers",
-			"summers",
-			"autumn",
-			"medic",
-			"tank_titan",
-			"tank_medic",
-			"omnia_lpf",
-			"swat_titan",
-			"tank_titan_assault",
-			"spooc_titan",
-			"phalanx_minion_assault",
-			"taser_titan"
-		}
-	else
-		tweak_data.medic.disabled_units = {
-			"phalanx_minion",
-			"phalanx_vip",
-			"spring",
-			"taser_summers",
-			"boom_summers",
-			"medic_summers",
-			"summers",
-			"autumn",
-			"medic",
-			"tank_titan",
-			"tank_medic",
-			"omnia_lpf",
-			"swat_titan",
-			"city_swat_titan",
-			"city_swat_titan_assault",
-			"skeleton_swat_titan",
-			"tank_titan_assault",
-			"spooc_titan",
-			"phalanx_minion_assault",
-			"taser_titan"
-		}
-	end
+	tweak_data.medic.disabled_units = {
+		"phalanx_minion",
+		"phalanx_vip",
+		"spring",
+		"taser_summers",
+		"boom_summers",
+		"medic_summers",
+		"summers",
+		"autumn",
+		"medic",
+		"tank_titan",
+		"tank_medic",
+		"omnia_lpf",
+		"swat_titan",
+		"city_swat_titan",
+		"city_swat_titan_assault",
+		"skeleton_swat_titan",
+		"tank_titan_assault",
+		"spooc_titan",
+		"phalanx_minion_assault",
+		"heavy_swat_sniper",
+		"fbi_vet",
+		"boom_titan",
+		"taser_titan"
+	}
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000
 	tweak_data.medic.whitelisted_units = {

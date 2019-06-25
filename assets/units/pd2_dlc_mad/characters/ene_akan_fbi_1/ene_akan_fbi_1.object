@@ -190,6 +190,8 @@
 		</constraint>
 	</constraints>
 
+	<decal_surfaces default_material="flesh" />
+
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 

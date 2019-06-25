@@ -41688,10 +41688,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}	
 				self.parts.wpn_fps_ass_g3_s_polymer.stats = {		
 						value = 1,
-						spread = 1,						
 						recoil = 1,	
-						concealment = -2						
-					}							
+						concealment = -1						
+					}				
+				self.parts.wpn_fps_ass_g3_fg_carbine.stats = {		
+						value = 2,
+						spread = -1,
+						concealment = 2
+					}												
 			end							
 
 		if self.parts.wpn_fps_upg_l85a2_bipod then --Alcat's Various Attachments for the L85A2
@@ -43631,12 +43635,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end		
 
 		if self.parts.wpn_fps_sho_rota_m_quick then 	-- HONOUR AMOUNGST THIEVES' Speedpull Mag Pack
-				self.parts.wpn_fps_sho_rota_m_quick.stats = {
-						value = 2,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					}							
+				self.parts.wpn_fps_sho_rota_m_quick.pcs = nil
 				self.parts.wpn_fps_sho_aa12_m_quick.stats = {
 						value = 2,
 						spread = -1,
@@ -44491,6 +44490,46 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = -1
 				}			
 			end
+			
+		if self.parts.wpn_fps_upg_b92fs_o_tritium then --Pawcio's Illuminated Ironsights Pack
+			self.parts.wpn_fps_upg_b92fs_o_tritium.stats = {
+				value = 0
+				}			
+			self.parts.wpn_fps_upg_colt_def_o_tritium.stats = {
+				value = 0
+				}		
+			self.parts.wpn_fps_upg_fs_o_tritium.stats = {
+				value = 0
+				}	
+			self.parts.wpn_fps_upg_g18c_o_tritium.stats = {
+				value = 0
+				}	
+			self.parts.wpn_fps_upg_g26_o_tritium.stats = {
+				value = 0
+				}	
+			self.parts.wpn_fps_upg_hs2000_o_tritium.stats = {
+				value = 0
+				}
+			self.parts.wpn_fps_upg_pl14_o_tritium.stats = {
+				value = 0
+				}
+			self.parts.wpn_fps_upg_usp_o_tritium.stats = {
+				value = 0
+				}																							
+			self.parts.wpn_fps_upg_jericho_941_pl_o_tritium.stats = {
+				value = 0
+				}																											
+			self.parts.wpn_fps_upg_p226_o_tritium.stats = {
+				value = 0
+				}																											
+			self.parts.wpn_fps_upg_g22c_o_tritium.stats = {
+				value = 0
+				}															
+			self.parts.wpn_fps_upg_deagle_o_tritium.stats = {
+				value = 0
+				}							
+			end
+			
 
 		if self.wpn_fps_smg_ppsh then --Pawcio's PPSH 41
 			self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp.stats = {	

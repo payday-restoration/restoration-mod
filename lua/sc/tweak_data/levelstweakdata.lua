@@ -50,41 +50,57 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd
-		self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.brb.ai_group_type = nypd
+		self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
 		
 		self.red2.ai_group_type = nypd
+		self.red2.package = {"packages/narr_red2", "packages/nypdassets"}
+		
 		self.run.ai_group_type = nypd
+		self.run.package = {"packages/narr_run", "packages/nypdassets"}
+		
 		self.flat.ai_group_type = nypd
+		self.flat.package = {"packages/narr_flat", "packages/nypdassets"}
+		
 		self.glace.ai_group_type = nypd
+		self.glace.package = {"packages/narr_glace", "packages/nypdassets"}
 		
 		self.dah.ai_group_type = nypd
+		self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}
 		
 		self.dinner.ai_group_type = nypd
-		self.dinner.package = {"packages/narr_dinner", "packages/lvl_dah"}
+		self.dinner.package = {"packages/narr_dinner", "packages/lvl_dah", "packages/nypdassets"}
 		self.dinner.player_sequence = "spawn_prop_sneak_suit"
 		
 		self.man.package = {"packages/narr_man", "packages/lvl_dah"}	
 		self.man.player_sequence = "spawn_prop_sneak_suit"
 		
 		self.nmh.ai_group_type = nypd
+		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
 		
 		self.skm_run.ai_group_type = nypd
+		self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
+		
 		self.skm_red2.ai_group_type = nypd
+		self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 		
 		--LAPD--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
 		
 		self.pal.ai_group_type = lapd
-		self.pal.package = {"packages/narr_pal", "packages/narr_rvd"}		
+		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}		
 		
 		self.kenaz.ai_group_type = lapd
-		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd"}			
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets"}			
 		
 		self.rvd1.ai_group_type = lapd
+		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
+		
 		self.rvd2.ai_group_type = lapd
+		self.rvd2.package = {"packages/job_rvd", "packages/nypdassets"}			
 		
 		--Gangster VO below--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}

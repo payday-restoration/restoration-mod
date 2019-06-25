@@ -245,9 +245,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		end
     	end
     		
-    	if not action_taken and want_to_take_cover and not best_cover or hitnrunmovementqualify and not pantsdownchk or eliterangedfiremovementqualify and not pantsdownchk or spoocavoidancemovementqualify and not pantsdownchk then
-    		action_taken = CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, false)
-    	end
+    	if not action_taken and want_to_take_cover and not best_cover or not action_taken and hitnrunmovementqualify and not pantsdownchk or not action_taken and eliterangedfiremovementqualify and not pantsdownchk or not action_taken and spoocavoidancemovementqualify and not pantsdownchk then
+			action_taken = CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, false)
+		end
     
     	action_taken = action_taken or CopLogicAttack._chk_start_action_move_out_of_the_way(data, my_data)
     end
@@ -271,57 +271,61 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     			end
     		end
     	end
+		
+		local can_perform_walking_action = not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") and not my_data.has_old_action and not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos
     	
+		if can_perform_walking_action then
     	--what the fuck is my code rn tbh
-    	if focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.dis < 250 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.verified_dis <= 1500 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.spoocavoidance and focus_enemy.verified and focus_enemy.aimed_at then
-    		
-    		local from_pos = mvector3.copy(data.m_pos)
-    		local threat_tracker = focus_enemy.nav_tracker
-    		local threat_head_pos = focus_enemy.m_head_pos
-    		local max_walk_dis = nil
-    		local vis_required = engage
-    			
-    		if data.tactics and data.tactics.hitnrun then
-    			max_walk_dis = 800
-    		elseif data.tactics and data.tactics.elite_ranged_fire then
-    			max_walk_dis = 1000
-    		elseif data.tactics and data.tactics.spoocavoidance then
-    			max_walk_dis = 1500
-    		else
-    			max_walk_dis = 400
-    		end
-    			
-    		local retreat_to = CopLogicAttack._find_retreat_position(from_pos, focus_enemy.m_pos, threat_head_pos, threat_tracker, max_walk_dis, vis_required)
-    
-    		if retreat_to then
-    			CopLogicAttack._cancel_cover_pathing(data, my_data)
-    				
-    			--if data.tactics and data.tactics.elite_ranged_fire then
-    				--log("eliteranged just backed up properly")
-    			--end    			
+			if focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.dis < 250 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.verified_dis <= 1500 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.spoocavoidance and focus_enemy.verified and focus_enemy.aimed_at then
 				
-				--if data.tactics and data.tactics.hitnrun then
-    				--log("hitnrun just backed up properly")
-    			--end
-    
-    			local new_action_data = {
-    				variant = "walk",
-    				body_part = 2,
-    				type = "walk",
-    				nav_path = {
-    					from_pos,
-    					retreat_to
-    				}
-    			}
-    			my_data.advancing = data.unit:brain():action_request(new_action_data)
-    				
-    			if my_data.advancing then
-    				my_data.surprised = true
-    
-    				return true
-    			end
-    		end
-    	end
+				local from_pos = mvector3.copy(data.m_pos)
+				local threat_tracker = focus_enemy.nav_tracker
+				local threat_head_pos = focus_enemy.m_head_pos
+				local max_walk_dis = nil
+				local vis_required = engage
+					
+				if data.tactics and data.tactics.hitnrun then
+					max_walk_dis = 800
+				elseif data.tactics and data.tactics.elite_ranged_fire then
+					max_walk_dis = 1000
+				elseif data.tactics and data.tactics.spoocavoidance then
+					max_walk_dis = 1500
+				else
+					max_walk_dis = 400
+				end
+					
+				local retreat_to = CopLogicAttack._find_retreat_position(from_pos, focus_enemy.m_pos, threat_head_pos, threat_tracker, max_walk_dis, vis_required)
+		
+				if retreat_to then
+					CopLogicAttack._cancel_cover_pathing(data, my_data)
+						
+					--if data.tactics and data.tactics.elite_ranged_fire then
+						--log("eliteranged just backed up properly")
+					--end    			
+					
+					--if data.tactics and data.tactics.hitnrun then
+						--log("hitnrun just backed up properly")
+					--end
+		
+					local new_action_data = {
+						variant = "walk",
+						body_part = 2,
+						type = "walk",
+						nav_path = {
+							from_pos,
+							retreat_to
+						}
+					}
+					my_data.advancing = data.unit:brain():action_request(new_action_data)
+						
+					if my_data.advancing then
+						my_data.surprised = true
+		
+						return true
+					end
+				end
+			end
+		end
     end
     
     function CopLogicAttack.action_complete_clbk(data, action)

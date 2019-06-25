@@ -8024,17 +8024,94 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		end
-		self.enemy_spawn_groups.TIT_tanks = {
-			amount = {1, 1},
-			spawn = {
-				{
-					unit = "TIT_tank",
-					freq = 1,
-					tactics = self._tactics.TIT_tank,
-					rank = 1
+		if difficulty_index <= 6 then
+			self.enemy_spawn_groups.TIT_tanks = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "TIT_tank",
+						freq = 1,
+						amount_min = 0,
+						amount_max = 1,
+						tactics = self._tactics.TIT_tank,
+						rank = 1
+					},
+					{
+						unit = "FBI_shield",
+						freq = 0.5,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield,
+						rank = 3
+					},
+					{
+						unit = "FBI_heavy_G36_w",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_heavy,
+						rank = 1
+					}
 				}
 			}
-		}
+		elseif difficulty_index == 7 then	
+			self.enemy_spawn_groups.TIT_tanks = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "TIT_tank",
+						freq = 1,
+						amount_min = 0,
+						amount_max = 1,
+						tactics = self._tactics.TIT_tank,
+						rank = 3
+					},
+					{
+						unit = "FBI_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield,
+						rank = 3
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
+				}
+			}		
+		else
+			self.enemy_spawn_groups.TIT_tanks = {
+				amount = {3, 4},
+				spawn = {
+					{
+						unit = "TIT_tank",
+						freq = 1,
+						amount_min = 0,
+						amount_max = 1,
+						tactics = self._tactics.TIT_tank,
+						rank = 3
+					},
+					{
+						unit = "FBI_shield",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.FBI_shield_flank,
+						rank = 3
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.75,
+						amount_min = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 2
+					}
+				}
+			}
+		end		
 		self.enemy_spawn_groups.Phalanx = {
 			amount = {
 				self.phalanx.minions.amount + 1,
@@ -9949,20 +10026,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0.3
 				},
 				FBI_tanks = {
-					0.03333333333,
-					0.11666666666,
-					0.13333333333
+					0.03166666666,
+					0.11083333333,
+					0.12666666666
 				},
 				BLACK_tanks = {
-					0.03333333333,
-					0.11666666666,
-					0.13333333333
+					0.03166666666,
+					0.11083333333,
+					0.12666666666
 				},
 				SKULL_tanks = {
-					0.03333333333,
-					0.11666666666,
-					0.13333333333
+					0.03166666666,
+					0.11083333333,
+					0.12666666666
 				},
+				TIT_tanks = {
+					0.005,
+					0.0175,
+					0.02
+				},				
 				CS_tazers = {
 					0.1,
 					0.4,

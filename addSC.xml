@@ -1865,4 +1865,15 @@
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_df" />	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />
+	
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_heavy_dw_df" force="false"/>  
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/k63_df" force="false"/>
+    <texture path="units/pd2_dlc_mad/characters/shared_textures/k63_nm" force="false"/>
+	
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_df"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_nm" />
+	
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_veteran_akan_1_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_veteran_akan_head_df" force="false"/>
 </table>

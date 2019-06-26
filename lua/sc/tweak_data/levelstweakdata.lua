@@ -100,7 +100,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
 		
 		self.rvd2.ai_group_type = lapd
-		self.rvd2.package = {"packages/job_rvd", "packages/nypdassets"}			
+		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}			
 		
 		--Gangster VO below--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}

@@ -54,6 +54,7 @@
 		<hook file="sc/tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
 		<hook file="sc/units/vehicles/vehicledrivingext.lua" source_file="lib/units/vehicles/vehicledrivingext"/>
 		<hook file="sc/tweak_data/economytweakdata.lua" source_file="lib/tweak_data/economytweakdata"/>
+		<hook file="sc/tweak_data/narrativetweakdata.lua" source_file="lib/tweak_data/narrativetweakdata"/>		
 		<hook file="sc/tweak_data/customsafehousetweakdata.lua" source_file="lib/tweak_data/customsafehousetweakdata"/>
 		<hook file="sc/units/equipment/grenadecratebase.lua" source_file="lib/units/equipment/grenade_crate/grenadecratebase"/>
 		<hook file="sc/tweak_data/infamytweakdata.lua" source_file="lib/tweak_data/infamytweakdata"/>

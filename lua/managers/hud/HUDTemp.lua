@@ -142,9 +142,7 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 		local type_text = carry_data.name_id and managers.localization:text(carry_data.name_id)
 		local bag_text = bag_panel:child("bag_text")
 		local real_value = managers.money:get_secured_bonus_bag_value(carry_id, value)
-		bag_text:set_text(utf8.to_upper(type_text .. [[
-	 
-	 ]] .. managers.experience:cash_string(real_value)))
+		bag_text:set_text(utf8.to_upper(type_text .. "\n" .. managers.experience:cash_string(real_value)))
 		bag_panel:set_x(self._temp_panel:parent():w() / 2)
 		bag_panel:set_visible(true)
 		bag_panel:stop()

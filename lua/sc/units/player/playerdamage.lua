@@ -297,7 +297,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:play_whizby(attack_data.col_ray.position)
 			self:_hit_direction(attack_data.attacker_unit:position())
 			self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
-			self._last_received_dmg = attack_data.damage
+			self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
 			managers.player:send_message(Message.OnPlayerDodge)
 			managers.hud:set_dodge_value(self._dodge_meter, dodge_value) --Update dodge meter hud element, goes through Hudmanager.lua then HUDtemp.lua.
 			return

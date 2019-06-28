@@ -5542,9 +5542,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b682.spread.moving_steelsight = 2 * 2
 		self.b682.damage_near = 1100
 		self.b682.damage_far = 2200
-		self.b682.BURST_FIRE = 2			
-		self.b682.BURST_FIRE_RATE_MULTIPLIER = 120				
-		self.b682.ADAPTIVE_BURST_SIZE = false		
 		self.b682.fire_mode_data = {}
 		self.b682.CAN_TOGGLE_FIREMODE = false										
 		self.b682.fire_mode_data.fire_rate = 0.12

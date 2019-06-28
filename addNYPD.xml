@@ -191,7 +191,7 @@
 	<!--NYPD spooc thanks jarey underscore-->
 	<model path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
 	<object path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
-	<sequence_manager path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
+	<!--sequence_manager path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"--> 
 	<unit path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>

@@ -43862,7 +43862,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 3,
 						damage = 5,
 						spread = 2,
-						concealment = -3
+						recoil = -1,						
+						concealment = -4
 					}										
 				self.parts.wpn_fps_pis_beretta_m_spike.stats = {
 						value = 1

@@ -41847,7 +41847,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 					self.parts.wpn_fps_upg_triad_bullets_44ap.stats = {
 						value = 10,
-						recoil = 1,
+						recoil = -1,
 						damage = -50,
 						spread = 2						
 					}				
@@ -41858,9 +41858,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						can_shoot_through_enemy = true,
 						can_shoot_through_shield = true,
 						can_shoot_through_wall = true,						
-						rof_mult = 1.2,						
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
+						rof_mult = 1.2				
 					}					
 					self.parts.wpn_fps_upg_triad_bullets_44normal.stats = {
 						value = 10,
@@ -44639,7 +44637,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_am_lame.pcs = nil			
 			self.parts.wpn_fps_upg_pn_over.pcs = nil
 			self.parts.wpn_fps_upg_tr_match.pcs = nil		
-			self.parts.wpn_fps_upg_pn_under.pcs = nil														
+			self.parts.wpn_fps_upg_pn_under.pcs = nil			
+			self.parts.wpn_fps_upg_mp5_m_ten.pcs = nil																	
 			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil										
 			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil	
 			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil		

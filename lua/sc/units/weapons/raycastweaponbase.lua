@@ -76,7 +76,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					break
 				elseif not self._can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
 					break
-				elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' then
+				elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and self._name_id ~= "m95" then
 					break
 				elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then
 					break						

@@ -639,6 +639,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Deep Pockets
 				self.values.player.melee_concealment_modifier = {2}
 				self.values.player.ballistic_vest_concealment = {4}
+				self.values.player.level_1_armor_addend = {2}
 				self.values.player.level_2_armor_addend = {2}
 				self.values.player.level_3_armor_addend = {2}
 				self.values.player.level_4_armor_addend = {2}
@@ -875,18 +876,18 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.level_2_armor_multiplier = {
+		1.1,
 		1.2,
-		1.3,
 		1.4
 	}
 	self.values.player.level_3_armor_multiplier = {
+		1.1,
 		1.2,
-		1.3,
 		1.4
 	}
 	self.values.player.level_4_armor_multiplier = {
+		1.1,
 		1.2,
-		1.3,
 		1.4
 	}
 
@@ -1083,6 +1084,9 @@ function UpgradesTweakData:_init_pd2_values()
 		0.4,
 		0.8,
 		1.2
+	}	
+	self.values.player.armor_max_health_store_multiplier = {
+		1.25
 	}	
 
 	--I AM A BAD MOTHERFUCKA--
@@ -1475,6 +1479,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "electrocution_resistance_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.player_level_1_armor_addend = {
+		name_id = "menu_player_level_1_armor_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "level_1_armor_addend",
 			category = "player"
 		}
 	}	

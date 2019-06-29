@@ -181,7 +181,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						else
 							attack_data.attacker_unit:damage():run_sequence_simple("decloak")
 							attack_data.attacker_unit:sound():say("i03", true, nil, true)
-							managers.player:set_player_state("incapacitated")
+							managers.player:set_player_state("arrested")
 						end
 					end				
 				end		

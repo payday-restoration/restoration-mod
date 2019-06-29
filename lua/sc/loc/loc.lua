@@ -32,6 +32,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 		["bm_m203_weapon_sc_desc"] = "Press the [Bipod Key/Alt-Fire Key] to switch to the mounted Grenade Launcher.",
 		["bm_40mm_weapon_sc_desc"] = "Press the [Gadget Key] to toggle Flip Up Sight.",
 		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
@@ -694,7 +695,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Deep Pockets--
 		["menu_thick_skin_beta_sc"] = "Deep Pockets",
-		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the armor of all ballistic vests by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
+		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the armor of all ballistic vests and the suit by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
 
 		--Duck and Cover--
 		["menu_sprinter_beta_sc"] = "Duck and Cover",
@@ -843,9 +844,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 	
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
-		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by ##20%## for ballistic vests.",
+		["menu_deck6_3_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.\n\nYour armor is increased by ##10%## for ballistic vests.",
 		["menu_deck6_5_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by an additional ##10%## for ballistic vests.",
-		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##10%## for ballistic vests.\n\nYour armor is increased by an additional ##10%## for ballistic vests.",
+		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by an additional ##20%## for ballistic vests.",
 		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
@@ -917,7 +918,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		--Open your mind--	
 		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##4##.",	
-		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##50%##.\n\nYour chance to dodge is increased by ##10%##.",			
+		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.\n\nYour chance to dodge is increased by ##10%##.",			
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.",	
 		
 		--THIS IS WAR BABY--

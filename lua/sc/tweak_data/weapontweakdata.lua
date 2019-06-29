@@ -615,7 +615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}	
 		self.x_c45_npc.sounds.prefix = "c45_npc"
 		self.x_c45_npc.use_data.selection_index = 1
-		self.x_c45_npc.DAMAGE = 2.4
+		self.x_c45_npc.DAMAGE = 1.8
 		self.x_c45_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.x_c45_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.x_c45_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
@@ -3253,6 +3253,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 		end
 		
+		--Test to just give everything sniper auto hit cause reasons
+		for i, weap in pairs(self) do
+			if weap.autohit then
+				weap.autohit.INIT_RATIO = 0.05
+				weap.autohit.MAX_RATIO = 0.4
+				weap.autohit.far_angle = 0.2
+				weap.autohit.far_dis = 5000
+				weap.autohit.MIN_RATIO = 0.2
+				weap.autohit.near_angle = 2				
+			end
+		end		
+		
 		--burst fire
 		for i, weap in pairs(self) do
 			if weap.CAN_TOGGLE_FIREMODE then
@@ -4520,7 +4532,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpk.panic_suppression_chance = 0.1
 		self.m95.upgrade_blocks = nil
 		self.m95.has_description = true
-		self.m95.desc_id = "bm_ap_weapon_sc_desc"
+		self.m95.desc_id = "bm_heavy_ap_weapon_sc_desc"
 		self.m95.AMMO_PICKUP = self:_pickup_chance(20, 2)
 		self.m95.AMMO_MAX = 20
 		self.m95.spread.standing = 3

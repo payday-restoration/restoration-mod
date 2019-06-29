@@ -640,9 +640,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "swat")
 		
 		self.swat_titan = deep_clone(self.swat)
-		self.swat_titan.damage.hurt_severity = presets.hurt_severities.elite
-		self.swat_titan.use_animation_on_fire_damage = false
-		self.swat_titan.move_speed = presets.move_speed.lightning
+		self.swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
+		self.swat_titan.use_animation_on_fire_damage = true
+		self.swat_titan.move_speed = presets.move_speed.very_fast
 		self.swat_titan.dodge = presets.dodge.elite
 		self.swat_titan.HEALTH_INIT = 16
 		self.swat_titan.headshot_dmg_mul = 4.5		
@@ -1071,10 +1071,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end				
 		self.city_swat_titan.HEALTH_INIT = 26
 		self.city_swat_titan.headshot_dmg_mul = 2.6
-		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite
+		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
 		self.city_swat_titan.damage.bullet_damage_mul = 1.5
 		self.city_swat_titan.damage.explosion_damage_mul = 0.8		
-		self.city_swat_titan.use_animation_on_fire_damage = false
+		self.city_swat_titan.use_animation_on_fire_damage = true
 		self.city_swat_titan.move_speed = presets.move_speed.very_fast
 		self.city_swat_titan.dodge = presets.dodge.elite
 		self.city_swat_titan.surrender = nil
@@ -1087,22 +1087,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		   self.city_swat_titan.die_sound_event = nil
 		end
 		self.city_swat_titan.static_melee_preset = true	
-		self.city_swat_titan.dodge_with_grenade = {
-			smoke = {duration = {
-				12,
-				12
-			}},
-			check = function (t, nr_grenades_used)
-				local delay_till_next_use = 30
-				local chance = 0.25
-
-				if math.random() < chance then
-					return true, t + delay_till_next_use
-				end
-
-				return false, t + delay_till_next_use
-			end
-		}		
 		table.insert(self._enemy_list, "city_swat_titan")
 		
 		self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
@@ -3517,6 +3501,90 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
+		presets.hurt_severities.elite_easy = deep_clone(presets.hurt_severities.light_hurt_fire_poison)
+		presets.hurt_severities.elite_easy.fire = {
+			health_reference = "current",
+			zones = {
+				{
+					health_limit = 0.3,
+					none = 0.2,
+					light = 0.7,
+					fire = 0.05
+				},
+				{
+					health_limit = 0.6,
+					light = 0.4,
+					fire = 0.4
+				},
+				{
+					health_limit = 0.9,
+					light = 0.2,
+					fire = 0.2
+				},
+				{
+					light = 0,
+					fire = 1
+				}
+			}
+		}
+		presets.hurt_severities.elite_easy.bullet = {
+			health_reference = "current",
+			zones = {
+				{
+					health_limit = 0.3,
+					none = 0.2,
+					light = 0.7,
+					moderate = 0.05,
+					heavy = 0
+				},
+				{
+					health_limit = 0.6,
+					light = 0.4,
+					moderate = 0.4,
+					heavy = 0
+				},
+				{
+					health_limit = 0.9,
+					light = 0.2,
+					moderate = 0.2,
+					heavy = 0
+				},
+				{
+					light = 0,
+					moderate = 1,
+					heavy = 0
+				}
+			}
+		}	
+		presets.hurt_severities.elite_easy.melee = {
+			health_reference = "current",
+			zones = {
+				{
+					health_limit = 0.3,
+					none = 0.3,
+					light = 0.7,
+					moderate = 0,
+					heavy = 0
+				},
+				{
+					health_limit = 0.8,
+					light = 1,
+					moderate = 0,
+					heavy = 0
+				},
+				{
+					health_limit = 0.9,
+					light = 0.8,
+					moderate = 0.2,
+					heavy = 0
+				},
+				{
+					light = 0,
+					moderate = 9,
+					heavy = 0
+				}
+			}
+		}		
 		presets.hurt_severities.only_explosion_hurts = {
 			bullet = {
 				health_reference = 1,
@@ -12322,8 +12390,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
-		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
+		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25				
+		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)			
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
@@ -12374,6 +12442,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
+		
+		--Titan SWAT stun resistance
+		self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.city_swat_titan.use_animation_on_fire_damage = false
+		self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.city_swat_titan_assault.use_animation_on_fire_damage = false
+		self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.skeleton_swat_titan.use_animation_on_fire_damage = false			
+		
+		--Fast Titan HRTs
+		self.swat_titan.move_speed = self.presets.move_speed.lightning
 						
 		self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia_heavy.melee_weapon_dmg_multiplier = 2
@@ -12425,7 +12504,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")		
 		
 		self.shield.damage.hurt_severity = self.presets.hurt_severities.no_hurts
-		self.shield.damage.explosion_damage_mul = 0.6
+		self.shield.damage.explosion_damage_mul = 0.8
 		self.shield.immune_to_concussion = true
 		
 		self.security.no_arrest = true
@@ -12455,6 +12534,67 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 2
+		
+		--Titan SWAT smoke dodging
+		self.city_swat_titan.dodge_with_grenade = {
+			smoke = {duration = {
+				12,
+				12
+			}},
+			check = function (t, nr_grenades_used)
+				local delay_till_next_use = 30
+				local chance = 0.25
+
+				if math.random() < chance then
+					return true, t + delay_till_next_use
+				end
+
+				return false, t + delay_till_next_use
+			end
+		}	
+		self.city_swat_titan_assault.dodge_with_grenade = {
+			smoke = {duration = {
+				12,
+				12
+			}},
+			check = function (t, nr_grenades_used)
+				local delay_till_next_use = 30
+				local chance = 0.25
+
+				if math.random() < chance then
+					return true, t + delay_till_next_use
+				end
+
+				return false, t + delay_till_next_use
+			end
+		}	
+		self.skeleton_swat_titan.dodge_with_grenade = {
+			smoke = {duration = {
+				12,
+				12
+			}},
+			check = function (t, nr_grenades_used)
+				local delay_till_next_use = 30
+				local chance = 0.25
+
+				if math.random() < chance then
+					return true, t + delay_till_next_use
+				end
+
+				return false, t + delay_till_next_use
+			end
+		}
+		
+		--Titan SWAT stun resistance
+		self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.city_swat_titan.use_animation_on_fire_damage = false
+		self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.city_swat_titan_assault.use_animation_on_fire_damage = false
+		self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.skeleton_swat_titan.use_animation_on_fire_damage = false			
+
+		--Fast Titan HRTs
+		self.swat_titan.move_speed = self.presets.move_speed.lightning		
 		
 		self.tank_titan_assault.move_speed = self.presets.move_speed.slow
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)

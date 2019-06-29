@@ -55,7 +55,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
 			0.5
-		}			
+		}	
+		self.damage.STUN_TIME = 1.25
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
 			call_duration = {
@@ -92,7 +93,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			0.5
 		}		
 		self.damage.TASED_TIME = 5
-		self.damage.STUN_TIME = 2
+		self.damage.STUN_TIME = 1.5
 		self.alarm_pager = {
 			first_call_delay = {2, 4},
 			call_duration = {

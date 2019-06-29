@@ -6,8 +6,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	MutatorMinidozers.name_id = "mutator_minidozers"
 	MutatorMinidozers.desc_id = "mutator_minidozers_desc"
 	MutatorMinidozers.reductions = {
-		money = 0,
-		exp = 0
+		money = -0.1,
+		exp = -0.1
 	}
 	MutatorMinidozers.disables_achievements = false
 	MutatorMinidozers.categories = {"enemies"}
@@ -17,12 +17,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	}
 
 	function MutatorMinidozers:setup(data)
+		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 		local unit_types = tweak_data.group_ai.unit_categories.FBI_tank.unit_types
 		local unit_types_black = tweak_data.group_ai.unit_categories.BLACK_tank.unit_types
 		local unit_types_skull = tweak_data.group_ai.unit_categories.SKULL_tank.unit_types
 		local mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-
+		local classic_mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+		
+		if difficulty_index <= 7 then --really fr*ckin ugly
+		table.insert(unit_types.america, classic_mini_unit_name) 
+		table.insert(unit_types.russia, classic_mini_unit_name)
+		table.insert(unit_types.zombie, classic_mini_unit_name)
+		table.insert(unit_types.murkywater, classic_mini_unit_name)
+		table.insert(unit_types.nypd, classic_mini_unit_name)
+		table.insert(unit_types.lapd, classic_mini_unit_name)
+		
+		table.insert(unit_types_black.america, classic_mini_unit_name)
+		table.insert(unit_types_black.russia, classic_mini_unit_name)
+		table.insert(unit_types_black.zombie, classic_mini_unit_name)
+		table.insert(unit_types_black.murkywater, classic_mini_unit_name)
+		table.insert(unit_types_black.nypd, classic_mini_unit_name)
+		table.insert(unit_types_black.lapd, classic_mini_unit_name)		
+		
+		table.insert(unit_types_skull.america, classic_mini_unit_name)
+		table.insert(unit_types_skull.russia, classic_mini_unit_name)
+		table.insert(unit_types_skull.zombie, classic_mini_unit_name)
+		table.insert(unit_types_skull.murkywater, classic_mini_unit_name)
+		table.insert(unit_types_skull.nypd, classic_mini_unit_name)
+		table.insert(unit_types_skull.lapd, classic_mini_unit_name)		
+		else
 		table.insert(unit_types.america, mini_unit_name)
 		table.insert(unit_types.russia, mini_unit_name)
 		table.insert(unit_types.zombie, mini_unit_name)
@@ -42,8 +67,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_skull.zombie, mini_unit_name)
 		table.insert(unit_types_skull.murkywater, mini_unit_name)
 		table.insert(unit_types_skull.nypd, mini_unit_name)
-		table.insert(unit_types_skull.lapd, mini_unit_name)		
-		
+		table.insert(unit_types_skull.lapd, mini_unit_name)				
+		end
 	end	
 	
 	--Medic Dozers--

@@ -6,8 +6,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	MutatorMinidozers.name_id = "mutator_minidozers"
 	MutatorMinidozers.desc_id = "mutator_minidozers_desc"
 	MutatorMinidozers.reductions = {
-		money = -0.1,
-		exp = -0.1
+		money = 0,
+		exp = 0
 	}
 	MutatorMinidozers.disables_achievements = false
 	MutatorMinidozers.categories = {"enemies"}

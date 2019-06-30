@@ -79,7 +79,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	local hitnrunmovementqualify = data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000 and math.abs(data.m_pos.z - data.attention_obj.m_pos.z) < 200
     	local spoocavoidancemovementqualify = data.tactics and data.tactics.spoocavoidance and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 2000 and focus_enemy.aimed_at
     	local eliterangedfiremovementqualify = data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1500
-    	local want_to_take_cover = my_data.want_to_take_cover
+    	
+	--reloadingretreat: retreat as fast as possible if the ammo is running dry and the enemy is visible
+	local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
+	local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
+	
+	local want_to_take_cover = my_data.want_to_take_cover
     	action_taken = action_taken or CopLogicAttack._upd_pose(data, my_data)
     	local move_to_cover, want_flank_cover, taken_flank_cover = nil
     
@@ -245,7 +250,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		end
     	end
     		
-    	if not action_taken and want_to_take_cover and not best_cover or not action_taken and hitnrunmovementqualify and not pantsdownchk or not action_taken and eliterangedfiremovementqualify and not pantsdownchk or not action_taken and spoocavoidancemovementqualify and not pantsdownchk then
+    	if not action_taken and want_to_take_cover and not best_cover or not action_taken and hitnrunmovementqualify and not pantsdownchk or not action_taken and eliterangedfiremovementqualify and not pantsdownchk or not action_taken and spoocavoidancemovementqualify and not pantsdownchk or not action_taken and reloadingretreatmovementqualify then
 			action_taken = CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, false)
 		end
     
@@ -276,7 +281,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	
 		if can_perform_walking_action then
     	--what the fuck is my code rn tbh
-			if focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.dis < 250 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.verified_dis <= 1500 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.spoocavoidance and focus_enemy.verified and focus_enemy.aimed_at then
+			if focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.dis < 250 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.nav_tracker and focus_enemy.verified and focus_enemy.verified_dis <= 1500 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000 and CopLogicAttack._can_move(data) or data.tactics and data.tactics.spoocavoidance and focus_enemy.verified and focus_enemy.aimed_at or data.tactics and data.tactics.reloadingretreat and focus_enemy.verified then
 				
 				local from_pos = mvector3.copy(data.m_pos)
 				local threat_tracker = focus_enemy.nav_tracker

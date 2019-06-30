@@ -104,7 +104,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 3,
 			duration = {2, 4},
-			interval = {7, 7},
+			interval = {10, 10},
 			group_min = 0,
 			queue = "rrl"
 		}
@@ -6686,15 +6686,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			FBI_suit = {
 				"flank",
 				"elite_ranged_fire",
-				"flash_grenade",
-			    "hitnrun"
+				"flash_grenade"
 			},
 			FBI_suit_stealth = {
+			    "reloadingretreat",
 				"provide_coverfire",
 				"provide_support",
 				"flash_grenade",
 				"flank",
-				"elite_ranged_fire",
 			    "hitnrun"
 			},
 			FBI_swat_rifle = {
@@ -6782,23 +6781,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"shield"
 			},
 			FBI_tank = {
+			    "reloadingretreat",
 				"murder",
 				"hitnrun",
 				"flank",
 				"shield_cover"
 			},
 			BLACK_tank = {
+			    "reloadingretreat",
 				"murder",
 				"charge",
 				"shield_cover"
 			},
 			SKULL_tank = {
+			    "reloadingretreat",
 				"murder",
 				"provide_support",
 				"provide_coverfire",
 				"shield_cover"
 			},
 			TIT_tank = {
+			    "reloadingretreat",
 				"spoocavoidance",
 				"murder",
 				"elite_ranged_fire"

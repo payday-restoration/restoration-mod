@@ -61,7 +61,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end		
 
 		local helmet_pop_roll = math.rand(1, 100)
-		local chance_pop = 10	
+		local chance_pop = 5
 		if helmet_pop_roll <= chance_pop then
 			if head then
 				if self._unit:base()._tweak_table == "boom" then
@@ -397,7 +397,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end		
 		
 		local helmet_pop_roll = math.rand(1, 100)
-		local chance_pop = 10	
+		local chance_pop = 5
 		if helmet_pop_roll <= chance_pop then
 			if head then
 				if self._unit:base()._tweak_table == "boom" then
@@ -616,7 +616,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		
 		local helmet_pop_roll = math.rand(1, 100)
-		local chance_pop = 10	
+		local chance_pop = 5
 		if helmet_pop_roll <= chance_pop then
 			if head then
 				if self._unit:base()._tweak_table == "boom" then

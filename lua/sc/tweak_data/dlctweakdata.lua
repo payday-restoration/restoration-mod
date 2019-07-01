@@ -156,11 +156,6 @@ function DLCTweakData:init(...)
 			},	
 			{
 				type_items = "weapon_mods",
-				item_entry = "wpn_fps_upg_i_93r",
-				amount = 3
-			},				
-			{
-				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_i_faster_rof",
 				amount = 3
 			}					

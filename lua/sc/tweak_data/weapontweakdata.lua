@@ -12106,8 +12106,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.volmer.use_data.selection_index = 1			
 			self.volmer.CLIP_AMMO_MAX = 90 --this doesn't make sense mag-wise but whatever
-			self.volmer.AMMO_MAX = 225
-			self.volmer.AMMO_PICKUP = self:_pickup_chance(225, 2)
+			self.volmer.AMMO_MAX = 200
+			self.volmer.AMMO_PICKUP = self:_pickup_chance(200, 2)
 			self.volmer.fire_mode_data.fire_rate = 0.06315789473
 			self.volmer.auto.fire_rate = 0.06315789473
 			self.volmer.spread.standing = 3

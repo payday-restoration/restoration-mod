@@ -42043,65 +42043,115 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_xm8_mag_magpul.has_description = false																																											
 				end		
 				
-		if self.wpn_fps_ass_g36k then 	-- Pawcio's G36K
+			if self.wpn_fps_ass_g36k then 	-- Pawcio's G36K
+				self.parts.wpn_fps_ass_g36k_stock.pcs = nil
+				self.parts.wpn_fps_ass_g36k_stock.stats = {
+						value = 0
+					}				
+				self.parts.wpn_fps_upg_g36k_stock_sl8.stats = {
+						value = 6,
+						spread = 2,
+						spread_moving = -3,
+						concealment = -1					
+					}
+				self.parts.wpn_fps_upg_g36k_grip_rubber1.stats = {
+						value = 1
+					}
+				self.parts.wpn_fps_upg_g36k_grip_rubber2.stats = {
+						value = 1
+					}					
+				self.parts.wpn_fps_upg_g36k_grip_rubber3.stats = {
+						value = 1
+					}					
+				self.parts.wpn_fps_upg_g36k_stock_collapsed.stats = {
+						value = 0,
+						concealment = 1					
+					}														
 				self.parts.wpn_fps_upg_g36k_mag_cmag.stats = {
 						value = 9,
 						extra_ammo = 70,
 						reload = -6,
 						concealment = -5
-						}		
-				self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = false																																				
-				self.parts.wpn_fps_upg_g36k_fg_g36c.stats = {
-						value = 4,
-						spread_moving = 2,
+					}		
+				self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = false	
+				self.parts.wpn_fps_upg_g36k_fg_hk243.stats = {
+						value = 1
+					}					
+				self.parts.wpn_fps_upg_g36k_fg_bt.stats = {
+						value = 1
+					}						
+				self.parts.wpn_fps_upg_g36k_fg_hkg36.stats = {
+						value = 1
+					}				
+				self.parts.wpn_fps_upg_g36k_fg_hkg36c.stats = {
+						value = 1
+					}				
+				self.parts.wpn_fps_upg_g36k_fg_kac.stats = {
+						value = 1
+					}																											
+				self.parts.wpn_fps_upg_g36k_fg_hk243short.stats = {
+						value = 1,
 						recoil = -1,
-						concealment = 2
-						}		
-				self.parts.wpn_fps_upg_g36k_export_sight.stats = {
-						value = 1,				
-						zoom = 3,
-						concealment = -4
-						}		
-				self.parts.wpn_fps_ass_g36k_zf_sight.stats = {
-						zoom = 5,
-						concealment = -5
-						}
-				self.parts.wpn_fps_upg_g36k_zf_sight_reddot.stats = {
-						value = 1,				
-						zoom = 3,
-						concealment = -5
-						}							
-				self.parts.wpn_fps_upg_g36k_zf_sight_switch.stats = {
-						value = 1,								
-						zoom = 5,
-						gadget_zoom = 2,						
-						concealment = -5
-						}		
-				self.parts.wpn_fps_upg_g36k_zf_sight_dual.stats = {
-						value = 1,								
-						zoom = 5,
-						concealment = -5
-						}								
+						concealment = 1				
+					}			
+				self.parts.wpn_fps_upg_g36k_fg_quadshort.stats = {
+						value = 1,
+						recoil = -1,
+						concealment = 1				
+					}																							
+				self.parts.wpn_fps_upg_g36k_fg_kacshort.stats = {
+						value = 1,
+						recoil = -1,
+						concealment = 1				
+					}																												
+				self.parts.wpn_fps_upg_g36k_fg_hk243long.stats = {
+						value = 1,
+						recoil = 1,
+						concealment = -1
+					}		
+				self.parts.wpn_fps_upg_g36k_fg_quad.stats = {
+						value = 1,
+						recoil = 1,
+						concealment = -1
+					}		
+				self.parts.wpn_fps_upg_g36k_fg_kaclong.stats = {
+						value = 1,
+						recoil = 1,
+						concealment = -1
+					}					
+				self.parts.wpn_fps_upg_g36k_fg_btlong.stats = {
+						value = 1,
+						recoil = 1,
+						concealment = -1
+					}																	
 				self.parts.wpn_fps_upg_g36k_irons.stats = {
 						value = 1								
-						}																										
-				self.parts.wpn_fps_upg_g36k_stock_folded.stats = {
-						value = 0,
-						concealment = 1
-						}														
-				self.parts.wpn_fps_upg_g36k_fg_g36.stats = {
-						value = 1,
-						spread = 2,
-						recoil = -1,
-						concealment = -3
-						}																						
-				self.parts.wpn_fps_upg_g36k_mag_magpul.stats = {
+					}																										
+				self.parts.wpn_fps_upg_g36k_mag20.stats = {
+						value = 2,
+						spread_moving = 2,
+						concealment = 2,
+						reload = 2,
+						extra_ammo = -10
+					}		
+				self.parts.wpn_fps_upg_g36k_mag20.has_description = false																																	
+				self.parts.wpn_fps_upg_g36k_mag_dual30.stats = {
 						value = 2,
 						spread = -1,
 						concealment = -1,
 						reload = 2
-						}		
-				self.parts.wpn_fps_upg_g36k_mag_magpul.has_description = false																											
+					}		
+				self.parts.wpn_fps_upg_g36k_mag_dual30.has_description = false			
+				self.parts.wpn_fps_upg_g36k_barrel_medium.stats = {
+						value = 2,
+						recoil = 1
+					}	
+				self.parts.wpn_fps_upg_g36k_barrel_long.stats = {
+						value = 3,
+						spread = 2,
+						recoil = 1,						
+						concealment = -2
+					}			
 				end
 				
 		if self.wpn_fps_ass_obr5 then -- Pawcio's Larue OBR 5.56
@@ -43860,7 +43910,26 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						recoil = 1,
 						spread_moving = -2,
 						concealment = -2
-					}					
+					}		
+				table.list_append(self.wpn_fps_lmg_volmer.uses_parts, {
+					"wpn_fps_upg_ammo_half_that"
+				})
+				table.list_append(self.wpn_fps_lmg_volmer.uses_parts, {
+					"wpn_fps_upg_i_slower_rof"
+				})
+				table.list_append(self.wpn_fps_lmg_volmer.uses_parts, {
+					"wpn_fps_upg_i_faster_rof"
+				})	
+				self.wpn_fps_lmg_volmer.override = { 
+					wpn_fps_upg_ammo_half_that = {
+						stats = {
+							value = 1,
+							total_ammo_mod = -25,
+							recoil = 0
+						},
+						custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+					}
+				}				
 			end		
 
 		if self.wpn_fps_snp_obrez then 	-- Pawcio's Obrez

@@ -42124,7 +42124,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						recoil = 1,
 						concealment = -1
 					}																	
-				self.parts.wpn_fps_upg_g36k_irons.stats = {
+				self.parts.wpn_fps_ass_g36k_irons.stats = {
 						value = 1								
 					}																										
 				self.parts.wpn_fps_upg_g36k_mag20.stats = {

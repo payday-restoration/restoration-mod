@@ -9347,7 +9347,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_pis_jungle",
 			"wpn_fps_pis_beretta_body_modern",
 			--Mod stuff below--
-			--"wpn_fps_upg_i_93r",
 			"wpn_fps_upg_ammo_p"
 		}
 		self.wpn_fps_pis_beretta_npc = deep_clone(self.wpn_fps_pis_beretta)
@@ -38907,25 +38906,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			internal_part = true,
 			dlc = "sc"
 		}
-		self.parts.wpn_fps_upg_i_93r = {
-			pcs = {},
-			type = "custom",
-			name_id = "bm_wp_wpn_fps_upg_i_93r",
-			desc_id = "bm_wp_wpn_fps_upg_i_93r_desc",			
-			a_obj = "a_body",
-			has_description = true,
-			custom_stats = {rof_mult = 1.375},
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_slower_rof",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {
-				value = 2,
-				spread = -1
-			},
-			is_a_unlockable = true,
-			internal_part = true,
-			dlc = "sc"
-		}		
 		self.parts.wpn_fps_upg_i_faster_rof = {
 			pcs = {},
 			type = "custom",
@@ -41517,7 +41497,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = -2,												
 						recoil = -4,
 						damage = 150,
-						spread = -4						
+						spread = -5						
 						}	
 					self.parts.wpn_fps_upg_deckard_ammo_damage_high.custom_stats = {
 						damage_near_mul = 999999999,
@@ -41527,8 +41507,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						can_shoot_through_enemy = true,
 						can_shoot_through_shield = true,
 						can_shoot_through_wall = true,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
+						ammo_pickup_min_mul = 0.33333333333,
+						ammo_pickup_max_mul = 0.33333333333
 					}
 					self.parts.wpn_fps_upg_deckard_ammo_damage_high.forbids	= {
 						"wpn_fps_upg_deckard_burst"
@@ -41537,12 +41517,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = 34,	
 						extra_ammo = 4,												
-						recoil = 3,
-						damage = -50,
-						spread = 2						
+						damage = -50
 						}	
 					self.parts.wpn_fps_upg_deckard_ammo_damage_med.custom_stats = {	
-						rof_mult = 1.052, ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25										
+						rof_mult = 1.052, ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33										
 						}						
 					self.parts.wpn_fps_upg_deckard_burst.stats = {
 						value = 4,
@@ -41789,67 +41767,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_galil_fg_sar.forbids = nil							
 			end				
 
-		if self.wpn_fps_pis_x_deckard then -- Pawcio's Akimbo DECK ARDs			
-			self.wpn_fps_pis_x_deckard.override = {
-				wpn_fps_upg_deckard_ammo_damage_high = {
-					stats = {
-						value = 10,
-						concealment = -17,
-						total_ammo_mod = -50,	
-						extra_ammo = -2,												
-						recoil = -4,
-						damage = 150,
-						spread = -4						
-					},
-					custom_stats = {
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						rof_mult = 0.632,						
-						armor_piercing_add = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
-					}
-				},
-				wpn_fps_upg_deckard_ammo_damage_med = {
-					stats = {
-						value = 10,
-						total_ammo_mod = 34,	
-						extra_ammo = 8,												
-						recoil = 3,
-						damage = -50,
-						spread = 2						
-					},
-					custom_stats = {
-						rof_mult = 1.052, ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25											
-						},
-					}	
-				}		
-			end			
-
 		if self.wpn_fps_pis_triad then -- Pawcio's Triad			
 				self.parts.wpn_fps_upg_triad_bullets_44hollow.stats = {
 						value = 10,
 						concealment = -17,
 						total_ammo_mod = -50,	
-						recoil = -4,
+						recoil = -2,
 						damage = 100,
-						spread = -4						
+						spread = -2						
 					}	
 					self.parts.wpn_fps_upg_triad_bullets_44hollow.custom_stats = {
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rof_mult = 0.9,						
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
+						ammo_pickup_min_mul = 0.33333333333,
+						ammo_pickup_max_mul = 0.33333333333
 					}
 					self.parts.wpn_fps_upg_triad_bullets_44ap.stats = {
 						value = 10,
-						recoil = -1,
+						recoil = 2,
 						damage = -50,
-						spread = 2						
+						spread = 1						
 					}				
 					self.parts.wpn_fps_upg_triad_bullets_44ap.custom_stats = {
 						damage_near_mul = 999999999,
@@ -41863,11 +41801,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					self.parts.wpn_fps_upg_triad_bullets_44normal.stats = {
 						value = 10,
 						total_ammo_mod = 33,	
-						recoil = 3,
+						recoil = 2,
 						damage = -100,
 						spread = 2						
 					}	
-					self.parts.wpn_fps_upg_triad_bullets_44normal.custom_stats = {rof_mult = 2, ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25}						
+					self.parts.wpn_fps_upg_triad_bullets_44normal.custom_stats = 
+					{rof_mult = 2, ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33}						
 				end													
 
 		if self.wpn_fps_pis_gtt33 then 	-- Gambyt's TT 33
@@ -44491,9 +44430,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end
 			
 		if self.parts.wpn_fps_upg_b92fs_o_tritium then --Pawcio's Illuminated Ironsights Pack
+			self.parts.wpn_fps_upg_1911_o_tritium.stats = {
+				value = 0
+				}	
 			self.parts.wpn_fps_upg_b92fs_o_tritium.stats = {
 				value = 0
-				}			
+				}							
 			self.parts.wpn_fps_upg_colt_def_o_tritium.stats = {
 				value = 0
 				}		
@@ -45265,77 +45207,55 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}
 	end			
 
-		if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23				
-			self.wpn_fps_shot_ks23.override = {
-				wpn_fps_upg_ks23_ammo_slug = {
-					stats = {
-						value = 2,
-						damage = 50,
-						recoil = 1,
-						spread = 10,
-					    total_ammo_mod = -25,
-						concealment = -2
-					},	
-					custom_stats = {
-						damage_near_mul = 3.333333333333333,
-						damage_far_mul = 5,
-						rays = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,	
-						ignore_statistic = true,
-						armor_piercing_add = 1
-						},	
-					},			
-				wpn_fps_upg_ks23_barrel_short = {
-					stats = {
-						value = 1,
-						recoil = 1,	
-						spread = -2
-					},					
-				},	
-				wpn_fps_upg_ks23_stock_pistolgrip_wire = {
-					stats = {
-						value = 1,
-						spread = 1,
-						recoil = -1,							
-					},					
-				},													
-				wpn_fps_upg_ks23_stock_pistolgrip = {
-					stats = {
-						value = 1,
-						spread = -1,
-						recoil = 1,							
-					},					
-				},									
-				wpn_fps_upg_ks23_ammo_buckshot_20pellet = {
-					stats = {
-						value = 2,
-						spread = -3,
-						recoil = 2,							
-						damage = -75,	
-					},	
-					custom_stats = {
-						damage_near_mul = 0.5,
-						rays = 20
-					},	
-				},								
-				wpn_fps_upg_ks23_ammo_buckshot_8pellet = {
-					stats = {
-						value = 2,
-						recoil = -2,	
-						damage = 50,							
-						total_ammo_mod = -25,												
-						spread = 3
-					},	
-					custom_stats = {
-						damage_near_mul = 2,
-						damage_far_mul = 1.33,
-						rays = 8,
-					},	
+		if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23	
+		self.parts.wpn_fps_upg_ks23_ammo_slug.stats = {
+					value = 2,
+					damage = 50,
+					recoil = 1,
+					spread = 7,
+					total_ammo_mod = -25,
+					concealment = -2
 				}
-			}	
+		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
+					damage_near_mul = 3.333333333333333,
+					damage_far_mul = 5,
+					rays = 1,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,	
+					ignore_statistic = true,
+					armor_piercing_add = 1
+				}
+		self.parts.wpn_fps_upg_ks23_barrel_short.stats = {
+					value = 1,
+					recoil = -2,							
+					concealment = 2
+				}	
+		self.parts.wpn_fps_upg_ks23_stock_pistolgrip.stats = {
+					value = 1,
+					spread = 1,
+					recoil = -1							
+				}
+		self.parts.wpn_fps_upg_ks23_stock_pistolgrip_wire.stats = {
+					value = 1,
+					spread = 1,
+					recoil = -1							
+				}					
+		self.parts.wpn_fps_upg_ks23_ammo_buckshot_20pellet.pcs = nil
+		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.stats = {
+					value = 2,
+					recoil = -2,	
+					damage = 50,							
+					total_ammo_mod = -25,												
+					spread = 3
+				}	
+		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.custom_stats = {
+					damage_near_mul = 2,
+					damage_far_mul = 1.33,
+					rays = 8
+				}																
 		end		
+		
 		if self.wpn_fps_ass_tilt then -- Grocery's AN-94				
 		self.parts.wpn_fps_ass_tilt_mag_big.stats = {
 					value = 3,

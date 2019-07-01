@@ -10406,37 +10406,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.einhander.panic_suppression_chance = 0.1
 	end	
 
-	if self.x_deckard then -- Pawcio's Akimbo DECK ARD
-		self.x_deckard.has_description = false															
-		self.x_deckard.AMMO_MAX = 60
-		self.x_deckard.AMMO_PICKUP = self:_pickup_chance(60, 1)
-		self.x_deckard.spread = {}
-		self.x_deckard.spread.standing = 3
-		self.x_deckard.spread.crouching = 2
-		self.x_deckard.spread.steelsight = 1
-		self.x_deckard.spread.moving_standing = 4
-		self.x_deckard.spread.moving_crouching = 3
-		self.x_deckard.spread.moving_steelsight = 2
-		self.x_deckard.kick.standing = self.huntsman.kick.standing
-		self.x_deckard.kick.crouching = self.huntsman.kick.standing
-		self.x_deckard.kick.steelsight = self.huntsman.kick.standing
-		self.x_deckard.stats = {
-			damage = 150,
-			spread = 16,
-			recoil = 12,
-			spread_moving = 9,
-			zoom = 5,
-			concealment = 23,
-			suppression = 4,
-			alert_size = 4,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-		self.x_deckard.panic_suppression_chance = 0.0
-	end	
-
 	if self.gtt33 then --Gambyt's TT 33 
 		self.gtt33.AMMO_MAX = 80
 		self.gtt33.tactical_reload = 1									
@@ -10589,8 +10558,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deckard.kick.steelsight = self.huntsman.kick.standing
 		self.deckard.stats = {
 			damage = 150,
-			spread = 20,
-			recoil = 16,
+			spread = 14,
+			recoil = 19,
 			spread_moving = 9,
 			zoom = 5,
 			concealment = 23,
@@ -10619,7 +10588,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.triad.stats = {
 			damage = 200,
 			spread = 16,
-			recoil = 20,
+			recoil = 16,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,
@@ -11862,7 +11831,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.fire_mode_data.fire_rate = 1.5
 		self.ks23.single.fire_rate = 1.5
 		self.ks23.rays = 12
-		self.ks23.AMMO_MAX = 16
+		self.ks23.AMMO_MAX = 20
 		self.ks23.CLIP_AMMO_MAX = 3		
 		self.ks23.spread.standing = 3 * 2
 		self.ks23.spread.crouching = 2 * 2

@@ -13210,6 +13210,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				path = "units/pd2_dlc_drm/characters/",
 				list = {
 					"ene_bulldozer_medic",
+					"ene_bulldozer_medic_classic",
 					"ene_bulldozer_minigun",
 					"ene_bulldozer_minigun_classic",
 					"ene_zeal_swat_heavy_sniper"

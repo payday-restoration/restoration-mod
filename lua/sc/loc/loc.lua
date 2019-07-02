@@ -317,7 +317,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
 		["mutator_medicdozers"] = "Medic Dozers",
 		["mutator_medicdozers_desc"] = "Medic Dozers can now spawn.",
-		["mutator_medicdozers_longdesc"] = "Whenever a Bulldozer spawns of any variety spawns, there is a 50% chance that it will be replaced by a Medic Bulldozer. \n\nNote: If the Semi-Auto Shotgun Bulldozer mutator is enabled, then the Medic Dozer will have a 33.3% chance of replacing a Black Bulldozer.",
+		["mutator_medicdozers_longdesc"] = "Whenever a Bulldozer of any variety spawns, there is a 50% chance that it will be replaced by a Medic Bulldozer. \n\nNote: If the Semi-Auto Shotgun Bulldozer mutator is enabled, then the Medic Dozer will have a 33.3% chance of replacing a Black Bulldozer.",
 		
 		["mutator_minidozers"] = "Semi-Auto Shotgun Bulldozers",
 		["mutator_minidozers_desc"] = "Semi-Auto Shotgun Bulldozers can now spawn.",

@@ -41040,7 +41040,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}				
 	end		
 
-		if self.wpn_fps_ass_l1a1 then 	--Gambyt's L1A1
+		if self.wpn_fps_ass_l1a1 then 	--Gambyt's L1A1		
 			self.parts.wpn_fps_ass_l1a1_ns_fal.stats = {
 					value = 5,
 					damage = 5,
@@ -41074,7 +41074,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}																			
 			end		
 			
-		if self.wpn_fps_ass_g3m203 then 	-- Pawcio's G3/M203				
+		if self.wpn_fps_ass_g3m203 then 	-- Pawcio's G3/M203		
+				table.list_append(self.wpn_fps_ass_g3m203.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_g3m203.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})									
 				self.parts.wpn_fps_upg_g3m203_supp_socom762.stats = {
 						value = 2,
 						suppression = 11,
@@ -41159,6 +41165,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end						
 				
 		if self.wpn_fps_ass_scarl then 	-- Pawcio's SCAR L		
+				table.list_append(self.wpn_fps_ass_scarl.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_scarl.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})							
 				self.parts.wpn_fps_upg_scarl_mag_pull_assist.stats = { 
 						value = 2,
 						spread = -1,
@@ -41231,6 +41243,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end	
 		
 			if self.wpn_fps_ass_scar_m203 then 	--Pawcio's SCARL/M203
+				table.list_append(self.wpn_fps_ass_scar_m203.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_scar_m203.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})					
 				self.parts.wpn_fps_upg_scar_m203_barrel_long.stats = { 
 						value = 4,
 						spread = 1,
@@ -41381,6 +41399,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end				
 			
 		if self.wpn_fps_ass_hk416 then 	-- Pawcio's HK 416		
+				table.list_append(self.wpn_fps_ass_hk416.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_hk416.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})											
 				self.parts.wpn_fps_upg_hk416_mag_pull_assist.stats = {
 						value = 2,
 						spread = -1,
@@ -41531,6 +41555,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 
 		if self.wpn_fps_ass_vsk94 then -- Gambyt's 9A 91
+				table.list_append(self.wpn_fps_ass_vsk94.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_vsk94.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})													
 				self.parts.wpn_fps_ass_vsk94_grip_sniper.stats = {
 						value = 6,
 						recoil = 1,
@@ -41842,7 +41872,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}									
 			end
 				
-		if self.wpn_fps_ass_f2000 then 	-- Pawcio's F2000				
+		if self.wpn_fps_ass_f2000 then 	-- Pawcio's F2000			
+				table.list_append(self.wpn_fps_ass_f2000.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_f2000.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})															
 				self.parts.wpn_fps_f2000_uupg_barrel_long.stats = {
 						value = 4,
 						damage = 5,						
@@ -42000,6 +42036,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end			
 				
 		if self.wpn_fps_ass_xm8 then -- Pawcio's HK XM8
+				table.list_append(self.wpn_fps_ass_xm8.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_xm8.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})																	
 				self.parts.wpn_fps_upg_xm8_cmag.stats = {
 						value = 9,
 						extra_ammo = 70,
@@ -42044,6 +42086,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end		
 				
 			if self.wpn_fps_ass_g36k then 	-- Pawcio's G36K
+				table.list_append(self.wpn_fps_ass_g36k.uses_parts, {
+						"wpn_fps_upg_i_slower_rof"
+					})
+					table.list_append(self.wpn_fps_ass_g36k.uses_parts, {
+						"wpn_fps_upg_i_faster_rof"
+					})																				
 				self.parts.wpn_fps_ass_g36k_stock.pcs = nil
 				self.parts.wpn_fps_ass_g36k_stock.stats = {
 						value = 0

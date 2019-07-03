@@ -2019,9 +2019,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fairbair.melee_damage_delay = 0.1
 
 	--FREEEEEEEDOM--
-	self.melee_weapons.freedom.anim_global_param = "melee_baseballbat"
-	self.melee_weapons.freedom.align_objects = {"a_weapon_right"}
-	self.melee_weapons.freedom.anim_attack_vars = {"var1","var2"}
+	self.melee_weapons.freedom.anim_global_param = "melee_freedom"
+	self.melee_weapons.freedom.align_objects = {"a_weapon_left"}
+	self.melee_weapons.freedom.anim_attack_vars = {"var1","var2","var3","var4"}
 	self.melee_weapons.freedom.speed_mult = 0.85
 	self.melee_weapons.freedom.stats.min_damage = 5
 	self.melee_weapons.freedom.stats.max_damage = 10

@@ -3999,7 +3999,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.huntsman.BURST_FIRE = 2			
 		self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 120				
 		self.huntsman.ADAPTIVE_BURST_SIZE = false	
-		self.huntsman.CAN_TOGGLE_FIREMODE = false						
+		self.huntsman.CAN_TOGGLE_FIREMODE = false			
+		self.huntsman.DELAYED_BURST_RECOIL = true
 		self.huntsman.fire_mode_data = {}
 		self.huntsman.fire_mode_data.fire_rate = 0.12
 		self.huntsman.single = {}
@@ -8614,7 +8615,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.coach.sounds.fire_auto = "coach_fire"		
 		self.coach.BURST_FIRE = 2			
 		self.coach.CAN_TOGGLE_FIREMODE = false								
-		self.coach.BURST_FIRE_RATE_MULTIPLIER = 120				
+		self.coach.BURST_FIRE_RATE_MULTIPLIER = 120
+		self.coach.DELAYED_BURST_RECOIL = true
 		self.coach.ADAPTIVE_BURST_SIZE = false		
 		self.coach.fire_mode_data = {}
 		self.coach.fire_mode_data.fire_rate = 0.12
@@ -8840,7 +8842,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz34.BURST_FIRE_RATE_MULTIPLIER = 120				
 			self.toz34.ADAPTIVE_BURST_SIZE = false		
 			self.toz34.fire_mode_data = {}
-			self.toz34.CAN_TOGGLE_FIREMODE = false										
+			self.toz34.CAN_TOGGLE_FIREMODE = false	
+			self.toz34.DELAYED_BURST_RECOIL = true
 			self.toz34.fire_mode_data.fire_rate = 0.12
 			self.toz34.single = {}
 			self.toz34.single.fire_rate = 0.12			
@@ -8886,6 +8889,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz66.BURST_FIRE_RATE_MULTIPLIER = 120				
 			self.toz66.ADAPTIVE_BURST_SIZE = false		
 			self.toz66.CAN_TOGGLE_FIREMODE = false			
+			self.toz66.DELAYED_BURST_RECOIL = true
 			self.toz66.fire_mode_data = {}
 			self.toz66.fire_mode_data.fire_rate = 0.12
 			self.toz66.single = {}

@@ -1870,20 +1870,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Bloodthirst--
+			--Counter Strike, formally bloodthirst--
 			self.skills.bloodthirst = {
-				["name_id"] = "menu_bloodthirst_sc",
-				["desc_id"] = "menu_bloodthirst_desc_sc",
-				["icon_xy"] = {11, 6},
+				["name_id"] = "menu_drop_soap_beta_sc",
+				["desc_id"] = "menu_drop_soap_beta_desc_sc",
+				["icon_xy"] = {4, 12},
 				[1] = {
 					upgrades = {
-						"player_melee_damage_stacking_1"
+						"player_counter_strike_melee"
 					},		
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_temp_melee_kill_increase_reload_speed_1"
+						"player_counter_strike_spooc"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1910,20 +1910,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Counter-Strike--
+			--Bloodthirst, formally counter-strike--
 			self.skills.drop_soap = {
-				["name_id"] = "menu_drop_soap_beta",
-				["desc_id"] = "menu_drop_soap_beta_desc",
-				["icon_xy"] = {4, 12},
+				["name_id"] = "menu_bloodthirst_sc",
+				["desc_id"] = "menu_bloodthirst_desc_sc",
+				["icon_xy"] = {11, 6},
 				[1] = {
 					upgrades = {
-						"player_counter_strike_melee"
+						"player_temp_melee_kill_increase_reload_speed_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_counter_strike_spooc"
+						"player_melee_damage_stacking_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -2082,6 +2082,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
+					"player_passive_health_multiplier_4",
 					"team_hostage_health_multiplier",
 					"team_hostage_stamina_multiplier"
 				},

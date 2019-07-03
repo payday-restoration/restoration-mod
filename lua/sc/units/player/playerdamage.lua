@@ -162,6 +162,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}	
 	end
 	PlayerDamage._UPPERS_COOLDOWN = 60
+	
 	local player_damage_melee = PlayerDamage.damage_melee
 	function PlayerDamage:damage_melee(attack_data)
 		local player_unit = managers.player:player_unit()
@@ -487,6 +488,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerDamage:_calc_health_damage(attack_data)
 		local health_subtracted = 0
 		health_subtracted = self:get_real_health()
+		
+		--Deflection--
+		if managers.blackmarket:equipped_armor() == "level_7" then
+			attack_data.damage = attack_data.damage * 0
+		elseif managers.blackmarket:equipped_armor() == "level_6" then
+			attack_data.damage = attack_data.damage * 0.85
+		elseif managers.blackmarket:equipped_armor() == "level_5" then
+			attack_data.damage = attack_data.damage * 0.8
+		elseif managers.blackmarket:equipped_armor() == "level_4" then
+			attack_data.damage = attack_data.damage * 0.85		
+		elseif managers.blackmarket:equipped_armor() == "level_3" then
+			attack_data.damage = attack_data.damage * 0.9	
+		elseif managers.blackmarket:equipped_armor() == "level_2" then
+			attack_data.damage = attack_data.damage * 0.95		
+		else
+			attack_data.damage = attack_data.damage * 1
+		end
+		
 		attack_data.damage = attack_data.damage * managers.player:upgrade_value("player", "real_health_damage_reduction", 1)
 		self:change_health(-attack_data.damage)
 		health_subtracted = health_subtracted - self:get_real_health()

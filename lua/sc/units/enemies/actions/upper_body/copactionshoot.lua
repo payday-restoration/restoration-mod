@@ -158,7 +158,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ProjectileBase.throw_projectile("molotov", shoot_from_pos, target_vec)
 		end
 	end
-
+	
 	function CopActionShoot:update(t)
 		local vis_state = self._ext_base:lod_stage()
 		vis_state = vis_state or 4
@@ -433,5 +433,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._ext_movement:upd_m_head_pos()
 		end
 	end
-
+		
 end

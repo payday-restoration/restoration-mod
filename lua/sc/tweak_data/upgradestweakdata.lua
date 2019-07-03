@@ -383,7 +383,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.armor_carry_bonus = {1.005}
 				
 				--More Blood To Bleed
-				self.values.player.health_multiplier = {1.2, 1.4}
+				self.values.player.health_multiplier = {1.15, 1.4}
 
 				--Bullseye
 				self.values.player.headshot_regen_armor_bonus = {0.05, 3.5}
@@ -808,7 +808,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.melee_knockdown_mul = {1.5}
 				
 				--Bloodthirst
-				self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 1.50}}
+				self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 2}}
 				self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
 
 				--Pumping Iron	
@@ -933,7 +933,7 @@ function UpgradesTweakData:_init_pd2_values()
 		stamina = 4,
 		damage_dampener = 1
 	}
-	self.values.team.health.hostage_multiplier = {1.05}
+	self.values.team.health.hostage_multiplier = {1.025}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
 		0.1,
@@ -1095,13 +1095,13 @@ function UpgradesTweakData:_init_pd2_values()
 		30,
 		25
 	}	
-	self.cocaine_stacks_dmg_absorption_value = 0.05
-	self.cocaine_stacks_tick_t = 2
-	self.max_cocaine_stacks_per_tick = 240
-	self.max_total_cocaine_stacks = 600
-	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 80
-	self.cocaine_stacks_decay_percentage_per_tick = 0.3
+	self.cocaine_stacks_dmg_absorption_value = 0.125
+	self.cocaine_stacks_tick_t = 0
+	self.max_cocaine_stacks_per_tick = 300
+	self.max_total_cocaine_stacks = 300
+	self.cocaine_stacks_decay_t = 10
+	self.cocaine_stacks_decay_amount_per_tick = 10
+	self.cocaine_stacks_decay_percentage_per_tick = 0.05
 	self.values.player.cocaine_stacking = {0.05}
 	self.values.player.sync_cocaine_stacks = {true}
 	self.values.player.cocaine_stacks_decay_multiplier = {0.5}
@@ -1154,7 +1154,7 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Fat benis :DDDDD
 	--biker?
-	self.wild_trigger_time = 5
+	self.wild_trigger_time = 10
 	self.wild_max_triggers_per_time = 5	
 	self.values.player.wild_health_amount = {0.1}
 	self.values.player.wild_armor_amount = {0.1}

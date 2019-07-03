@@ -71,10 +71,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}
 		
 		self.dinner.ai_group_type = nypd
-		self.dinner.package = {"packages/narr_dinner", "packages/lvl_dah", "packages/nypdassets"}
+		self.dinner.package = {"packages/narr_dinner", "packages/outfitassets", "packages/nypdassets"}
+		-- self.dinner.package = {"packages/narr_dinner", "packages/lvl_dah", "packages/nypdassets"}
 		self.dinner.player_sequence = "spawn_prop_sneak_suit"
 		
-		self.man.package = {"packages/narr_man", "packages/lvl_dah"}	
+		self.man.package = {"packages/narr_man", "packages/outfitassets"}
+		-- self.man.package = {"packages/narr_man", "packages/lvl_dah"}	
 		self.man.player_sequence = "spawn_prop_sneak_suit"
 		
 		self.nmh.ai_group_type = nypd
@@ -119,7 +121,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chill.ghost_bonus = nil
 		
 		--Russian Reapers--
-		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/lvl_wwh"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
+		-- self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/lvl_wwh"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	
 	end)

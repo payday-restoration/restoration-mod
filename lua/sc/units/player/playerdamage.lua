@@ -497,7 +497,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Deflection--
 		if managers.blackmarket:equipped_armor() == "level_7" then
-			attack_data.damage = attack_data.damage * 0
+			attack_data.damage = attack_data.damage * 0.85
 		elseif managers.blackmarket:equipped_armor() == "level_6" then
 			attack_data.damage = attack_data.damage * 0.85
 		elseif managers.blackmarket:equipped_armor() == "level_5" then

@@ -44,7 +44,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._damage_to_hot_stack = {}
 		self._armor_stored_health = 0
 		self._can_take_dmg_timer = 0
-		self._dodge_meter = 0 --Amount of dodge built up as meter.
+		--self._dodge_meter = 0 --Amount of dodge built up as meter.
 		self._regen_on_the_side_timer = 0
 		self._regen_on_the_side = false
 		self._interaction = managers.interaction
@@ -276,6 +276,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self._last_received_dmg = attack_data.damage
 		self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
+		local dodge_roll = math.random()
 		local dodge_value = tweak_data.player.damage.DODGE_INIT or 0
 		local armor_dodge_chance = pm:body_armor_value("dodge")
 		local skill_dodge_chance = pm:skill_dodge_chance(self._unit:movement():running(), self._unit:movement():crouching(), self._unit:movement():zipline_unit())
@@ -287,26 +288,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		dodge_value = 1 - (1 - dodge_value) * (1 - smoke_dodge)
-		self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Getting attacked gives half your dodge in meter.
-		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-			self._unit:sound():play("pickup_fak_skill") --Auditory feedback, feel free to replace. It looks like play_whizby() is broken.
+		--Uncomment this shit to undo legacy dodge
+		--self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Getting attacked gives half your dodge in meter.
+		--if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
+		if dodge_roll < dodge_value then
+			--self._unit:sound():play("pickup_fak_skill") --Auditory feedback, feel free to replace. It looks like play_whizby() is broken.
 			if attack_data.damage > 0 then
-				self._dodge_meter = self._dodge_meter - 1.0 --Dodging an attack lets excess dodge above '100' to roll over, so that dodge above 67 is still relevant.
+				--self._dodge_meter = self._dodge_meter - 1.0 --Dodging an attack lets excess dodge above '100' to roll over, so that dodge above 67 is still relevant.
 				self:_send_damage_drama(attack_data, 0) --Resetting the meter feels bad to play with anyway.
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
 			self:_hit_direction(attack_data.attacker_unit:position())
 			self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
-			self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
+			--self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
+			self._last_received_dmg = attack_data.damage
 			managers.player:send_message(Message.OnPlayerDodge)
-			managers.hud:set_dodge_value(self._dodge_meter, dodge_value) --Update dodge meter hud element, goes through Hudmanager.lua then HUDtemp.lua.
+			--managers.hud:set_dodge_value(self._dodge_meter, dodge_value) --Update dodge meter hud element, goes through Hudmanager.lua then HUDtemp.lua.
 			return
+		--[[	
 		else
 			self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Taking damage gives the other half.
 			if dodge_value > 0 then
 				managers.hud:set_dodge_value(self._dodge_meter, dodge_value)
 			end
+		]]--
 		end
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)

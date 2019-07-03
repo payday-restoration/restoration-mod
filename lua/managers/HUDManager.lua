@@ -1,9 +1,13 @@
+--[[
+
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	function HUDManager:set_dodge_value(value, total_dodge)
 		--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua
 		self._hud_temp:set_dodge_value(value, total_dodge)
 	end
 end
+
+]]--
 
 if not restoration.Options:GetValue("HUD/MainHUD") then
 	return

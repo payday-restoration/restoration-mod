@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<mod name="Restoration" global_key="restorationnew">
+	<:include src="restorationmod_tweak.xml" />
+</mod>

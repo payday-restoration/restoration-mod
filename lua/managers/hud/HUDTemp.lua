@@ -85,8 +85,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 end
 
-]]--
-
 if not restoration.Options:GetValue("HUD/MainHUD") then
 	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
 		if restoration and restoration.Options:GetValue("SC/SC") then
@@ -95,6 +93,7 @@ if not restoration.Options:GetValue("HUD/MainHUD") then
 
 	end)
 end
+]]--
 if restoration.Options:GetValue("HUD/MainHUD") then
 	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
 		if restoration.Options:GetValue("HUD/Bag") then

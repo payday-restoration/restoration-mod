@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<tweak name="settings/network" extension="network_settings">
+    <search>
+        <network/>
+    </search>
+
+    <target>
+		<!-- RestorationMod RECIEVERS -->
+
+		<!-- Connection -->
+		<rpc>
+			<message name="RestorationMod__sync_player_installed_mod" delivery="reliable" receiver="RestorationMod__connection">
+				<param type="int" min="0" max="15" />  <!-- Player -->
+				<param type="string" step="0.01" />     <!-- Mod id -->
+				<param type="longstring" step="0.01" /> <!-- Mod friendly name -->
+			</message>
+		</rpc>
+
+		<!-- END OF NETWORK BASE -->	<!-- END OF NETWORK BASE -->	<!-- END OF NETWORK BASE -->
+
+		<!-- Unit -->
+		<rpc>
+			<message name="RestorationMod__set_unit" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="unit" />
+				<param type="string" />                <!-- character name -->
+				<param type="longstring" />            <!-- outfit_string -->
+				<param type="int" min="0" max="100" /> <!-- outfit_version -->
+				<param type="int" min="0" max="15" /> <!-- Peer id. 0 means its an AI -->
+				<param type="string" />                <!-- team_id string -->
+			</message>
+
+			<message name="RestorationMod__remove_corpse_by_id" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="int" min="0" max="4094" /> <!-- in engine: MAX_UNIT_ID = 4094 -->
+				<param type="bool" />                   <!-- create body bag -->
+				<param type="int" min="1" max="15" />  <!-- peer_id -->
+			</message>
+
+			<message name="RestorationMod__from_server_sentry_gun_place_result" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="int" min="1" max="15" /> <!-- owner peer_id -->
+				<param type="int" min="0" max="32" />  <!-- equipment selection index. zero means fail -->
+				<param type="unit" />                  <!-- sentry gun -->
+				<param type="int" min="1" max="2" />   <!-- rotation speed upgrade level -->
+				<param type="int" min="1" max="2" />   <!-- spread upgrade level -->
+				<param type="bool" />                  <!-- shield -->
+				<param type="int" min="1" max="2" />   <!-- ammo upgrade level -->
+			</message>
+
+			<message name="RestorationMod__sync_equipment_setup" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="unit" />
+				<param type="float" min="0" max="255" />
+				<param type="int" min="0" max="15" /> <!-- Peer id -->
+			</message>
+
+			<message name="RestorationMod__sync_ammo_bag_setup" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="unit" />
+				<param type="int" min="0" max="255" /> <!-- uint8 -->
+				<param type="int" min="0" max="15" /> <!-- Peer id -->
+				<param type="int" min="0" max="2" />   <!-- Bullet storm level -->
+			</message>
+
+			<message name="RestorationMod__on_sole_criminal_respawned" delivery="ordered" receiver="unit">
+				<param type="int" min="0" max="15" /> <!-- Peer id -->
+			</message>
+
+			<message name="RestorationMod__sync_grenades" delivery="ordered" receiver="RestorationMod__unit">
+				<param type="string" />                <!-- Grenade id -->
+				<param type="int" min="0" max="50" />  <!-- Amount of grenades  -->
+				<param type="int" min="0" max="15" /> <!-- Peer id -->
+			</message>
+
+			<message name="RestorationMod__sync_carry_data" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="unit" />
+				<param type="string" />                <!-- Carry id -->
+				<param type="int" min="0" max="2" />   <!-- multiplier upgrade level for small loot -->
+				<param type="bool" />                  <!-- dye_initiated -->
+				<param type="bool" />                  <!-- has_dye_pack -->
+				<param type="int" min="0" max="100" /> <!-- dye_value_multiplier -->
+				<param type="vector3" />               <!-- position -->
+				<param type="vector3" />               <!-- direction -->
+				<param type="int" min="0" max="1" />   <!-- Upgrade level of throw distance multiplier -->
+				<param type="unit" />                  <!-- If attach to zipline -->
+				<param type="int" min="0" max="15" /> <!-- peer_id -->
+			</message>
+
+			<message name="RestorationMod__sync_throw_projectile" delivery="ordered" receiver="RestorationMod__unit">
+				<param type="unit" />
+				<param type="vector3" />               <!-- position -->
+				<param type="vector3" />               <!-- direction -->
+				<param type="int" min="1" max="64" />  <!-- Projectile type index -->
+				<param type="int" min="0" max="15" /> <!-- Peer id -->
+			</message>
+
+			<message name="RestorationMod__sync_attach_projectile" delivery="ordered" receiver="RestorationMod__unit">
+				<param type="unit" />                  <!-- projectile unit -->
+				<param type="bool" />                  <!-- Instant dynamic pickup -->
+				<param type="unit" />                  <!-- attach to unit -->
+				<param type="body" />                  <!-- attach to body -->
+				<param type="object3d" />              <!-- attach object -->
+				<param type="vector3" />               <!-- local position -->
+				<param type="vector3" />               <!-- direction -->
+				<param type="int" min="1" max="64" />  <!-- Projectile type index -->
+				<param type="int" min="0" max="15" /> <!-- Peer id -->
+			</message>
+
+			<message name="RestorationMod__sync_equipment_possession" delivery="ordered" receiver="RestorationMod__unit">
+				<param type="int" min="1" max="15" />
+				<!--<param type="unit" />-->
+				<param type="string" />
+				<param type="int" min="0" max="10" />
+			</message>
+
+			<message name="RestorationMod__sync_remove_equipment_possession" delivery="ordered" receiver="RestorationMod__unit">
+				<param type="int" min="1" max="15" />
+				<!--<param type="unit" />-->
+				<param type="string" />
+			</message>
+
+			<message name="RestorationMod__mark_minion" delivery="reliable" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="unit" />                   <!-- converted minion -->
+				<param type="int"  min="1" max="15" /> <!-- minion_owner_peer_id -->
+				<param type="int" min="0" max="3" />    <!-- convert_enemies_health_multiplier -->
+				<param type="int" min="0" max="3" />    <!-- passive_convert_enemies_health_multiplier -->
+			</message>
+
+			<message name="RestorationMod__suspicion" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="int" min="1" max="15" /> <!-- peer ID of the player under suspicion -->
+				<param type="int" min="0" max="255" /> <!-- suspicion ratio. 0 means no suspicion, 255 means uncovered. values in between mean suspicion in progress -->
+			</message>
+
+			<message name="RestorationMod__sync_crime_spree_level" receiver="RestorationMod__connection" delivery="ordered">
+				<param type="int" min="0" max="15" /> <!-- Peer ID -->
+				<param type="int" />                   <!-- Crime Spree Level -->
+				<param type="bool" />                  <!-- Has failed, host only -->
+			</message>
+
+			<message name="RestorationMod__server_secure_loot" delivery="ordered" receiver="RestorationMod__unit" check="client_to_server">
+				<param type="string" />               <!-- Carry id -->
+				<param type="int" min="0" max="2" />  <!-- multiplier upgrade level for small loot -->
+				<param type="int" min="0" max="15"/> <!-- peer_id -->
+			</message>
+
+			<message name="RestorationMod__sync_secure_loot" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">
+				<param type="string" />               <!-- Carry id -->
+				<param type="int" min="0" max="2" />  <!-- multiplier upgrade level for small loot -->
+				<param type="bool" />                 <!-- silent, no presetation message -->
+				<param type="int" min="0" max="15"/> <!-- peer_id -->
+			</message>
+		</rpc>
+    </target>
+</tweak>

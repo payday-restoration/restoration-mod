@@ -37,6 +37,58 @@ RestorationCore.assault_style = {
 	"alpha_assault"
 }
 
+-- These tables show the network messages we've modified in the network settings pdmod
+-- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
+local connection_network_handler_funcs = {
+	'sync_player_installed_mod'
+}
+
+local unit_network_handler_funcs = {
+	'sync_grenades'
+}
+
+--[[ local unit_network_handler_funcs = {
+	'set_unit',
+	'remove_corpse_by_id',
+	'mission_ended',
+	'from_server_sentry_gun_place_result',
+	'sync_equipment_setup',
+	'sync_ammo_bag_setup',
+	'on_sole_criminal_respawned',
+	'sync_grenades',
+	'sync_carry_data',
+	'sync_throw_projectile',
+	'sync_attach_projectile',
+	'sync_unlock_asset',
+	'sync_equipment_possession',
+	'sync_remove_equipment_possession',
+	'mark_minion',
+	'suspicion',
+	'server_secure_loot',
+	'sync_secure_loot'
+} ]]
+
+-- Builds a single table from our two string based keys for each handler above
+RestorationCore.network_handler_funcs = {}
+function add_handler_funcs(handler_funcs)
+	for i = 1, #handler_funcs do
+		RestorationCore.network_handler_funcs[handler_funcs[i]] = true
+	end
+end
+
+add_handler_funcs(connection_network_handler_funcs)
+add_handler_funcs(unit_network_handler_funcs)
+
+
+-- Takes the network keys we defined above and prefixes any matches on the given handler
+function RestorationCore:rename_handler_funcs(NetworkHandler)
+	for key, value in pairs(RestorationCore.network_handler_funcs) do
+		if NetworkHandler[key] then
+			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+		end
+	end
+end
+
 if not _G.restoration then
 	local success, err = pcall(function() _G.restoration = RestorationCore:new() end)
 	if not success then

@@ -12428,11 +12428,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	}
 	end	
 	
-	if self.sonny then --Bren Ten
+	if self.sonny then --Carl's Bren Ten
 		self.sonny.has_description = true
 		self.sonny.tactical_reload = 1		
 		self.sonny.AMMO_MAX = 60
-		self.sonny.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.sonny.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.sonny.spread.standing = 3
 		self.sonny.spread.crouching = 2
 		self.sonny.spread.steelsight = 1
@@ -12443,13 +12443,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sonny.kick.crouching = self.glock_17.kick.standing
 		self.sonny.kick.steelsight = self.glock_17.kick.standing
 		self.sonny.stats = {
-			damage = 65,
-			spread = 14,
-			recoil = 8,
-			spread_moving = 10,
+			damage = 70,
+			spread = 16,
+			recoil = 14,
+			spread_moving = 8,
 			zoom = 3,
 			concealment = 30,
-			suppression = 9,
+			suppression = 8,
 			alert_size = 9,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -12459,7 +12459,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sonny.panic_suppression_chance = 0.0
 		self.x_sonny.panic_suppression_chance = 0.0
 		self.x_sonny.AMMO_MAX = 90			
-		self.x_sonny.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.x_sonny.AMMO_PICKUP = self:_pickup_chance(90, 2)
 		self.x_sonny.spread.standing = 3
 		self.x_sonny.spread.crouching = 2
 		self.x_sonny.spread.steelsight = 1
@@ -12470,13 +12470,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sonny.kick.crouching = self.glock_17.kick.standing
 		self.x_sonny.kick.steelsight = self.glock_17.kick.standing
 		self.x_sonny.stats = {
-			damage = 65,
-			spread = 14,
-			recoil = 8,
-			spread_moving = 10,
+			damage = 70,
+			spread = 16,
+			recoil = 14,
+			spread_moving = 8,
 			zoom = 3,
 			concealment = 29,
-			suppression = 9,
+			suppression = 8,
 			alert_size = 9,
 			extra_ammo = 101,
 			total_ammo_mod = 100,

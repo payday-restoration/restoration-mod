@@ -46536,17 +46536,16 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 0
 			}
 		self.parts.wpn_fps_upg_m1895_supp_gemtech_gm9.stats = {
-				value = 2,
-				suppression = 10,
-				alert_size = 10,
-				recoil = 1,
+				value = 0,
+				suppression = 8,
+				alert_size = 8,
 				concealment = -2
 			}
 		self.parts.wpn_fps_upg_m1895_supp_osprey.stats = {
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 0,
+				damage = 5,
 				spread = 1,
 				concealment = -3
 			}

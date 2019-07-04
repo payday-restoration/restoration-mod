@@ -46545,7 +46545,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
+				damage = 0,
 				spread = 1,
 				concealment = -3
 			}

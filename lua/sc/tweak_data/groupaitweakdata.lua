@@ -6,7 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--[[
 		notes:
 		radius seems to do nothing, game theory how many cops in a radius can say a certain chatter (should test this)
-		max_nr how many chatters can go off at once
+		max_nr how many chatter calls can go off at once
 		duration ??? longer ones i grabbed from v009/pdth
 		interval is cooldown
 		group_min how many cops need to be in a group for the line to play
@@ -20,7 +20,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			group_min = 0,
 			queue = "g90"
 		}
-		self.enemy_chatter.aggressive_assault = {
+		self.enemy_chatter.aggressive_assault = {--cops use less idle chatter during assaults 
 			radius = 700,
 			max_nr = 10,
 			duration = {3, 4},
@@ -6785,6 +6785,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"murder",
 				"hitnrun",
 				"flank",
+				"provide_coverfire",
+				"provide_support",
 				"shield_cover"
 			},
 			BLACK_tank = {
@@ -6795,6 +6797,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			SKULL_tank = {
 			    "reloadingretreat",
+			    "ranged_fire",
 				"murder",
 				"provide_support",
 				"provide_coverfire",
@@ -6804,7 +6807,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "reloadingretreat",
 				"spoocavoidance",
 				"murder",
-				"elite_ranged_fire"
+				"elite_ranged_fire",
+				"shield_cover"
 			},
 			spooc = {
 				"spoocavoidance",

@@ -1111,7 +1111,9 @@ function UpgradesTweakData:_init_pd2_values()
 	--Chico--
 	--kingpin
 	self.values.temporary.chico_injector = {
-		{0.5, 5}
+		{0.5, 4},
+		{0.5, 5},
+		{0.5, 6}
 	}
 	self.values.player.chico_armor_multiplier = {
 		1.05,
@@ -1174,6 +1176,39 @@ function UpgradesTweakData:_init_pd2_values()
 		0.1,
 		0.1
 	}}	
+	
+	--Tag Team--
+	self.values.player.tag_team_base = {
+		{
+			kill_health_gain = 2.5,
+			radius = 0.6,
+			distance = 18,
+			kill_extension = 2,
+			duration = 12,
+			tagged_health_gain_ratio = 0.5
+		}
+	}	
+	self.values.player.tag_team_cooldown_drain = {
+		{
+			tagged = 0,
+			owner = 2
+		},
+		{
+			tagged = 2,
+			owner = 2
+		}
+	}
+	self.values.player.tag_team_damage_absorption = {
+		{
+			kill_gain = 0.05,
+			max = 2
+		},
+		{
+			kill_gain = 0.1,
+			max = 2
+		}		
+	}	
+	
 end
 
 local sc_utd_init = UpgradesTweakData.init
@@ -1781,6 +1816,53 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_tag_team_damage_absorption_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "tag_team_damage_absorption",
+			category = "player"
+		}
+	}	
+	self.definitions.player_tag_team_damage_absorption_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "tag_team_damage_absorption",
+			category = "player"
+		}
+	}		
+	
+	self.definitions.temporary_chico_injector_1 = {
+		name_id = "menu_temporary_chico_injector_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}
+	self.definitions.temporary_chico_injector_2 = {
+		name_id = "menu_temporary_chico_injector_1",
+		category = "temporary",
+		upgrade = {
+			value = 2,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}
+	self.definitions.temporary_chico_injector_3 = {
+		name_id = "menu_temporary_chico_injector_1",
+		category = "temporary",
+		upgrade = {
+			value = 3,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}		
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {

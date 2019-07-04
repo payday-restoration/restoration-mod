@@ -1310,7 +1310,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.contraband_npc.categories = clone(self.contraband.categories)
 		self.contraband_npc.sounds.prefix = "contraband_npc"
 		self.contraband_npc.use_data.selection_index = 2
-		self.contraband_npc.DAMAGE = 6.1
+		self.contraband_npc.DAMAGE = 2.3
 		self.contraband_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 		self.contraband_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.contraband_npc.CLIP_AMMO_MAX = 20

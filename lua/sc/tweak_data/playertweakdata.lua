@@ -151,7 +151,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			0.98,
 			0.99
 		}
-		self.damage.HEALTH_INIT = 23
+		self.damage.HEALTH_INIT = 20
 		self.damage.LIVES_INIT = 4
 		self.damage.REGENERATE_TIME = 3
 		self.damage.REVIVE_HEALTH_STEPS = {
@@ -168,7 +168,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.damage.TASED_TIME = 10
 		self.damage.STUN_TIME = 1
 		self.damage.TASED_RECOVER_TIME = 1
-		self.damage.BLEED_OUT_HEALTH_INIT = 23
+		self.damage.BLEED_OUT_HEALTH_INIT = 20
 		self.damage.DOWNED_TIME = 30
 		self.damage.DOWNED_TIME_DEC = 10
 		self.damage.DOWNED_TIME_MIN = 10

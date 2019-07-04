@@ -12616,6 +12616,63 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.welrod.panic_suppression_chance = 0.0
 	end
 	
+	if self.sonny then --Bren Ten
+		self.sonny.has_description = true
+		self.sonny.tactical_reload = 1		
+		self.sonny.AMMO_MAX = 60
+		self.sonny.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.sonny.spread.standing = 3
+		self.sonny.spread.crouching = 2
+		self.sonny.spread.steelsight = 1
+		self.sonny.spread.moving_standing = 4
+		self.sonny.spread.moving_crouching = 3
+		self.sonny.spread.moving_steelsight = 2
+		self.sonny.kick.standing = self.glock_17.kick.standing
+		self.sonny.kick.crouching = self.glock_17.kick.standing
+		self.sonny.kick.steelsight = self.glock_17.kick.standing
+		self.sonny.stats = {
+			damage = 65,
+			spread = 14,
+			recoil = 8,
+			spread_moving = 10,
+			zoom = 3,
+			concealment = 30,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+		self.sonny.panic_suppression_chance = 0.0
+		self.x_sonny.panic_suppression_chance = 0.0
+		self.x_sonny.AMMO_MAX = 90			
+		self.x_sonny.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.x_sonny.spread.standing = 3
+		self.x_sonny.spread.crouching = 2
+		self.x_sonny.spread.steelsight = 1
+		self.x_sonny.spread.moving_standing = 4
+		self.x_sonny.spread.moving_crouching = 3
+		self.x_sonny.spread.moving_steelsight = 2
+		self.x_sonny.kick.standing = self.glock_17.kick.standing
+		self.x_sonny.kick.crouching = self.glock_17.kick.standing
+		self.x_sonny.kick.steelsight = self.glock_17.kick.standing
+		self.x_sonny.stats = {
+			damage = 65,
+			spread = 14,
+			recoil = 8,
+			spread_moving = 10,
+			zoom = 3,
+			concealment = 29,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}	
+	end
+
 	end)
 else
 end

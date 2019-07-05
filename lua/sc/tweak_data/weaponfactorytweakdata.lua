@@ -46237,6 +46237,31 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75},
 			internal_part = true
 		}
+		self.parts.wpn_fps_upg_ammo_45custom = { --45 ACP for Bren Ten
+			pcs = {},
+			type = "ammo",
+			name_id = "bm_wp_upg_a_45custom",
+			desc_id = "bm_wp_upg_a_45custom_desc",
+			a_obj = "a_body",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			is_a_unlockable = true,
+			has_description = true,
+			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
+			dlc = "sc",
+			stats = {
+				value = 3,
+				spread = -1,
+				recoil = 6,
+				extra_ammo = -3,
+				total_ammo_mod = 33,
+				damage = -27,
+				suppression = 1,
+				alert_size = 1
+			},
+			custom_stats = {ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33},
+			internal_part = true
+		}
 		self.parts.wpn_fps_upg_ammo_65grendel = {
 			type = "ammo",
 			name_id = "bm_wp_upg_a_65grendel",
@@ -46879,6 +46904,16 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				ammo_pickup_max_mul = 0.8
 			}
 		end
+		
+		if self.wpn_fps_pis_sonny then --Alcat's Bren Ten
+			table.list_append( self.wpn_fps_pis_sonny.uses_parts, {
+				"wpn_fps_upg_ammo_45custom"
+			})
+			table.list_append( self.wpn_fps_pis_x_sonny.uses_parts, {
+				"wpn_fps_upg_ammo_45custom"
+			})
+		end
+
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

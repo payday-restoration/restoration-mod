@@ -162,6 +162,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_a_slug_fire_sc_desc"] = "Fires a single slug that goes up in sparks and flames.",
 		["bm_wp_upg_a_46custom"] = ".460 Rowland",
 		["bm_wp_upg_a_46custom_desc"] = "When .45acp isn't enough, reach for this custom 1911A1 chambered in the powerful .460 Rowland Magnum. Top shelf brutality.",
+		["bm_wp_upg_a_45custom"] = ".45 ACP",
+		["bm_wp_upg_a_45custom_desc"] = "Rechambers the gun for .45 ACP, providing better pickup and handling at the cost of power. Might as well just use the Crosskill instead at this point.",
 		["bm_wp_upg_a_762_sterling"] = "7.62mm Conversion Kit",
 		["bm_wp_upg_a_762_sterling_desc"] =  "You asked me to cram 7.62 rounds into a 27-inch submachine gun, and I delivered. I don't know why, but I did. Say goodbye to your magazine size and recoil management and say hello to heavy-caliber lead projectile vomiting. I never asked for this, but you did, and I aim to please.",
 		["bm_wp_upg_a_65grendel"] = "6.5mm Grendel",

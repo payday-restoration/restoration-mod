@@ -6476,6 +6476,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				access = access_type_all,
 				special_type = "medic"
 			}
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
+			table.insert(self.unit_categories.TIT_tank.unit_types.america, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.america, 1)				
+			table.insert(self.unit_categories.TIT_tank.unit_types.zombie, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))
+			table.remove(self.unit_categories.TIT_tank.unit_types.zombie, 1)						
+			table.insert(self.unit_categories.TIT_tank.unit_types.russia, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.russia, 1)								
+			table.insert(self.unit_categories.TIT_tank.unit_types.murkywater, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.murkywater, 1)										
+			table.insert(self.unit_categories.TIT_tank.unit_types.nypd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.nypd, 1)												
+			table.insert(self.unit_categories.TIT_tank.unit_types.lapd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.lapd, 1)														
+			end			
 		end			
 		self.unit_categories.medic_R870 = {
 			unit_types = {

@@ -12673,6 +12673,145 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 	end
 
+	if self.czauto then --Alcat's CZ Auto (defaulting to the IMI round for now)
+		self.czauto.has_description = true
+		self.czauto.tactical_reload = 1		
+		self.czauto.AMMO_MAX = 180
+		self.czauto.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.czauto.spread.standing = 3
+		self.czauto.spread.crouching = 2
+		self.czauto.spread.steelsight = 1
+		self.czauto.spread.moving_standing = 4
+		self.czauto.spread.moving_crouching = 3
+		self.czauto.spread.moving_steelsight = 2
+		self.czauto.kick.standing = self.glock_17.kick.standing
+		self.czauto.kick.crouching = self.glock_17.kick.standing
+		self.czauto.kick.steelsight = self.glock_17.kick.standing
+		self.czauto.stats = {
+			damage = 25,
+			spread = 14,
+			recoil = 20,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 30,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end
+
+	if self.bar then --Alcat's Browning Auto Rifle (lmg and ar for the time being)
+		self.bar.categories = {
+			"lmg",
+			"smg",
+			"assault_rifle"
+		}
+		self.bar.has_description = false
+		self.bar.fire_mode_data.fire_rate = 0.12
+		self.bar.AMMO_MAX = 200
+		self.bar.AMMO_PICKUP = self:_pickup_chance(200, 1)
+		self.bar.panic_suppression_chance = 0.1
+		self.bar.spread.standing = 3
+		self.bar.spread.crouching = 2
+		self.bar.spread.steelsight = 1
+		self.bar.spread.moving_standing = 4
+		self.bar.spread.moving_crouching = 3
+		self.bar.spread.moving_steelsight = 2
+		self.bar.kick.standing = self.new_m4.kick.standing
+		self.bar.kick.crouching = self.new_m4.kick.standing
+		self.bar.kick.steelsight = self.new_m4.kick.standing
+		self.bar.stats = {
+			damage = 35,
+			spread = 18,
+			recoil = 20,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 8,
+			suppression = 7,
+			alert_size = 7,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 2,
+			reload = 11
+		}
+	end
+
+	if self.k1a7 then --Alcat's K1A7
+		self.k1a7.use_data.selection_index = 2														
+		self.k1a7.categories = {
+				"smg"
+			}
+		self.k1a7.AMMO_MAX = 150
+		self.k1a7.tactical_reload = 1								
+		self.k1a7.has_description = true																							
+		self.k1a7.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.k1a7.spread.standing = 3
+		self.k1a7.spread.crouching = 2
+		self.k1a7.spread.steelsight = 1
+		self.k1a7.spread.moving_standing = 4
+		self.k1a7.spread.moving_crouching = 3
+		self.k1a7.spread.moving_steelsight = 2
+		self.k1a7.kick.standing = self.new_m4.kick.standing
+		self.k1a7.kick.crouching = self.new_m4.kick.standing
+		self.k1a7.kick.steelsight = self.new_m4.kick.standing
+		self.k1a7.stats = {
+			damage = 35,
+			spread = 13,
+			recoil = 16,
+			spread_moving = 14,
+			zoom = 1,
+			concealment = 22,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 2,
+			reload = 11
+		}
+		self.k1a7.panic_suppression_chance = 0.1
+	end
+
+	if self.calico then --Alcat's Calico
+		--self.bm_w_calico = "Calico M9L Machine Pistol" gotta figure out how to rename the darned gun
+		self.calico.has_description = true					
+		self.calico.use_data.selection_index = 2
+		self.calico.tactical_reload = 1
+		--self.calico.fire_mode_data.fire_rate = 0.05
+		--self.calico.auto.fire_rate = 0.08
+		self.calico.categories = {"pistol"}
+		self.calico.recategorize = "pistol_carbine"
+		self.calico.CLIP_AMMO_MAX = 50
+		self.calico.AMMO_MAX = 200
+		self.calico.AMMO_PICKUP = self:_pickup_chance(200, 1)
+		self.calico.spread.standing = 3
+		self.calico.spread.crouching = 2
+		self.calico.spread.steelsight = 1
+		self.calico.spread.moving_standing = 4
+		self.calico.spread.moving_crouching = 3
+		self.calico.spread.moving_steelsight = 2
+		self.calico.kick.standing = self.new_m4.kick.standing
+		self.calico.kick.crouching = self.new_m4.kick.standing
+		self.calico.kick.steelsight = self.new_m4.kick.standing
+		self.calico.stats = {
+			damage = 25,
+			spread = 16,
+			recoil = 13,
+			spread_moving = 15,
+			zoom = 1,
+			concealment = 22,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 3,
+			reload = 11
+		}
+		self.calico.panic_suppression_chance = 0.1
+	end
+
 	end)
 else
 end

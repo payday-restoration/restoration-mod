@@ -222,6 +222,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local tweak = job_id and tweak_data.narrative.jobs[job_id]
 		local job = Global.level_data and Global.level_data.level_id
 		Month = os.date("%m")
+		Day = os.date("%d")		
 		if difficulty_index <= 2 then
 			self.special_unit_spawn_limits = {
 				tank = 1,
@@ -1087,6 +1088,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.america, 10)				
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.zombie, 10)						
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.russia, 10)								
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.murkywater, 10)										
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.nypd, 10)												
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.lapd, 10)														
+			end			
 		end
 		self.unit_categories.CS_swat_R870 = {
 			unit_types = {
@@ -3019,6 +3034,114 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index <= 3 then		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 40)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 40)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 40)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 40)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 40)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 40)													
+			end			
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 4 then		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 20)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 20)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 20)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 20)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 20)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 20)													
+			end		
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 5 then --purple's pretty. itsa good color.
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 40)				
+			end				
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 6 then
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 10)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 10)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 10)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 10)													
+			end													
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 7 then 
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 10)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 10)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 10)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 10)													
+			end	
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 8 then 
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 7)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 7)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 7)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 7)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 7)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 7)													
+			end																					
 		end		
 		if difficulty_index <= 3 then
 			self.unit_categories.FBI_suit_stealth_MP5 = {
@@ -6592,6 +6715,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			access = access_type_all
 		}
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
+			table.insert(self.unit_categories.Tank_Titan.unit_types.america, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.america, 1)				
+			table.insert(self.unit_categories.Tank_Titan.unit_types.zombie, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))
+			table.remove(self.unit_categories.Tank_Titan.unit_types.zombie, 1)						
+			table.insert(self.unit_categories.Tank_Titan.unit_types.russia, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.russia, 1)								
+			table.insert(self.unit_categories.Tank_Titan.unit_types.murkywater, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.murkywater, 1)										
+			table.insert(self.unit_categories.Tank_Titan.unit_types.nypd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.nypd, 1)												
+			table.insert(self.unit_categories.Tank_Titan.unit_types.lapd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.lapd, 1)														
+		end
 	end
 
 	function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)

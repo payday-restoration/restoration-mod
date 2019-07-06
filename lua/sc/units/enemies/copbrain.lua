@@ -37,6 +37,7 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.medic_summers = security_variant
 	CopBrain._logic_variants.rboom = security_variant
 	CopBrain._logic_variants.fbi_vet = security_variant
+	CopBrain._logic_variants.meme_man = security_variant	
 	CopBrain._logic_variants.spring = clone(security_variant)
 	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
 	CopBrain._logic_variants.summers = clone(security_variant)

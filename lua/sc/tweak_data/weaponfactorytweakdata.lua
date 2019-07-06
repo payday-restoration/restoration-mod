@@ -46974,6 +46974,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			})
 		end
 
+		if self.wpn_fps_ass_bar then --Alcat's BAR
+			table.list_append(self.wpn_fps_ass_bar.uses_parts, {
+				"wpn_fps_upg_ammo_half_that"
+			})
+		end
+
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

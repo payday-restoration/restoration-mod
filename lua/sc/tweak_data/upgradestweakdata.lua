@@ -162,6 +162,7 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.suppression_resist = {true}
     	self.values.player.ignore_suppression_flinch = {true}
     	self.values.player.health_revive_max = {true}
+		self.values.player.no_deflection = {true}
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {1}
 	--Bot boost stuff stuff--
@@ -1209,6 +1210,20 @@ function UpgradesTweakData:_init_pd2_values()
 		}		
 	}	
 	
+	--Hacker
+	self.values.player.pocket_ecm_jammer_base = {
+		{
+			cooldown_drain = 5,
+			duration = 12
+		}
+	}	
+	self.values.player.pocket_ecm_heal_on_kill = {
+		2
+	}	
+	self.values.team.pocket_ecm_heal_on_kill = {
+		1
+	}	
+	
 end
 
 local sc_utd_init = UpgradesTweakData.init
@@ -1544,6 +1559,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_no_deflection = {
+		category = "feature",
+		name_id = "menu_player_panic_suppression",
+		upgrade = {
+			category = "player",
+			upgrade = "no_deflection",
+			value = 1
+		}
+	}	
 	self.definitions.player_passive_health_multiplier_5 = {
 		category = "feature",
 		name_id = "menu_player_health_multiplier",

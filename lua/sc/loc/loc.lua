@@ -857,6 +857,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_7_desc_sc"] = "Your chance to dodge is increased by ##5%## for ballistic vests.\n\nYour armor is increased by an additional ##20%## for ballistic vests.",
 		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
+		--Rogue
 		["menu_deck4_1_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck4_3_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
 		["menu_deck4_5_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
@@ -918,7 +919,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every ##0.5## seconds for ##5## seconds.\n\nThis effect stacks but cannot occur more than once every ##1.5## seconds and only while wearing the ##Flak Jacket##.\n\nYou lose ##70## armor while wearing the Flak Jacket.\n\n##Armor Deflection is disabled while using this perk deck.##",
 		["menu_deck11_3_desc_sc"] = "Damaging an enemy now heals ##2## life points every ##0.5## seconds for ##5## seconds.",
 		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##3## life points every ##0.5## seconds for ##5## seconds.",
 		["menu_deck11_7_desc_sc"] = "Damaging an enemy now heals ##4## life points every ##0.5## seconds for ##5## seconds.",
@@ -954,7 +955,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##25%##. The remaining damage will be applied directly.\n\nThe ##25%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##30## second cooldown but time remaining will be lessened by ##1## second per enemy killed.\n\nAll of your ##armor is converted and applied to your health.##",	
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##25%##. The remaining damage will be applied directly.\n\nThe ##25%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##30## second cooldown but time remaining will be lessened by ##1## second per enemy killed.\n\nAll of your ##armor is converted and applied to your health.##\n\n##Armor Deflection is disabled while using this perk deck.##",	
 		["menu_deck19_3_desc_sc"] = "After not taking damage for ##6## seconds any damage-over-time you are still waiting to receive will be negated.",	
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any damage-over-time you are still waiting to receive will be negated.",	
 
@@ -972,6 +973,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_1_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to ##15%## armor recovery rate.\n\nNOTE: Entering this state negates regeneration effects.",	
 		["menu_deck12_5_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to an additional ##15%## armor recovery rate.",	
 		["menu_deck12_7_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to an additional ##15%## armor recovery rate.",	
+
+		--Hacker--
+		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device##.\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##12## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a ##12## second duration.\n\nThe Pocket ECM Device has ##1## charge with a ##50## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##5## seconds.",	
+		["menu_deck21_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
+		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##20## health.",
+		["menu_deck21_7_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
+		["menu_deck21_9_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.\n\nCrew members killing enemies while the feedback effect is active will regenerate ##10## health.",
 	})
 end)
 

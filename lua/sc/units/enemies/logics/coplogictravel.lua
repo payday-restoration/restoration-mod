@@ -253,5 +253,49 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	  
     	CopLogicTravel.queue_update(data, data.internal_data, delay)
     end	
+	
+	function CopLogicTravel._find_cover(data, search_nav_seg, near_pos)
+		local cover = nil
+		local search_area = managers.groupai:state():get_area_from_nav_seg_id(search_nav_seg)
+
+		if data.unit:movement():cool() then
+			cover = managers.navigation:find_cover_in_nav_seg_1(search_area.nav_segs)
+		else
+			local optimal_threat_dis, threat_pos = nil
+			
+			if data.tactics and data.tactics.aggressor and data.objective.attitude == "engage" then --Aggressor, ridiculously aggressive enemy movement
+				optimal_threat_dis = 300
+			elseif data.objective.attitude == "engage" then
+				optimal_threat_dis = data.internal_data.weapon_range.optimal
+			else
+				optimal_threat_dis = data.internal_data.weapon_range.far
+			end
+
+			near_pos = near_pos or search_area.pos
+			local all_criminals = managers.groupai:state():all_char_criminals()
+			local closest_crim_u_data, closest_crim_dis = nil
+
+			for u_key, u_data in pairs(all_criminals) do
+				local crim_area = managers.groupai:state():get_area_from_nav_seg_id(u_data.tracker:nav_segment())
+
+				if crim_area == search_area then
+					threat_pos = u_data.m_pos
+
+					break
+				else
+					local crim_dis = mvector3.distance_sq(near_pos, u_data.m_pos)
+
+					if not closest_crim_dis or crim_dis < closest_crim_dis then
+						threat_pos = u_data.m_pos
+						closest_crim_dis = crim_dis
+					end
+				end
+			end
+
+			cover = managers.navigation:find_cover_from_threat(search_area.nav_segs, optimal_threat_dis, near_pos, threat_pos)
+		end
+
+		return cover
+	end
 end
 

@@ -222,6 +222,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local tweak = job_id and tweak_data.narrative.jobs[job_id]
 		local job = Global.level_data and Global.level_data.level_id
 		Month = os.date("%m")
+		Day = os.date("%d")	
 		if difficulty_index <= 2 then
 			self.special_unit_spawn_limits = {
 				tank = 1,
@@ -1087,6 +1088,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.america, 10)				
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.zombie, 10)						
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.russia, 10)								
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.murkywater, 10)										
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.nypd, 10)												
+			table.insert(self.unit_categories.CS_swat_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.CS_swat_MP5.unit_types.lapd, 10)														
+			end			
 		end
 		self.unit_categories.CS_swat_R870 = {
 			unit_types = {
@@ -3019,7 +3034,118 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				access = access_type_all
 			}
-		end		
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index <= 3 then		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 40)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 40)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 40)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 40)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 40)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 40)													
+			end			
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 4 then		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 20)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 20)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 20)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 20)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 20)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 20)													
+			end		
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 5 then --purple's pretty. itsa good color.
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 40)				
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"))				
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 36)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 38)	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 40)				
+			end				
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 6 then
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 10)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 10)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 10)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 10)													
+			end													
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 7 then 
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 10)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 10)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 10)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 10)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 10)													
+			end	
+		if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") and difficulty_index == 8 then 
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.america, 7)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.russia, 7)		
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd, 7)	
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie, 7)																			
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater, 7)																
+			table.insert(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"))	
+			table.remove(self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd, 7)													
+			end																					
+
+			
+	
+	end		
 		if difficulty_index <= 3 then
 			self.unit_categories.FBI_suit_stealth_MP5 = {
 				unit_types = {
@@ -6350,6 +6476,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				access = access_type_all,
 				special_type = "medic"
 			}
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
+			table.insert(self.unit_categories.TIT_tank.unit_types.america, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.america, 1)				
+			table.insert(self.unit_categories.TIT_tank.unit_types.zombie, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))
+			table.remove(self.unit_categories.TIT_tank.unit_types.zombie, 1)						
+			table.insert(self.unit_categories.TIT_tank.unit_types.russia, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.russia, 1)								
+			table.insert(self.unit_categories.TIT_tank.unit_types.murkywater, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.murkywater, 1)										
+			table.insert(self.unit_categories.TIT_tank.unit_types.nypd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.nypd, 1)												
+			table.insert(self.unit_categories.TIT_tank.unit_types.lapd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.TIT_tank.unit_types.lapd, 1)														
+			end			
 		end			
 		self.unit_categories.medic_R870 = {
 			unit_types = {
@@ -6592,6 +6732,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			access = access_type_all
 		}
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
+			table.insert(self.unit_categories.Tank_Titan.unit_types.america, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.america, 1)				
+			table.insert(self.unit_categories.Tank_Titan.unit_types.zombie, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))
+			table.remove(self.unit_categories.Tank_Titan.unit_types.zombie, 1)						
+			table.insert(self.unit_categories.Tank_Titan.unit_types.russia, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.russia, 1)								
+			table.insert(self.unit_categories.Tank_Titan.unit_types.murkywater, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.murkywater, 1)										
+			table.insert(self.unit_categories.Tank_Titan.unit_types.nypd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.nypd, 1)												
+			table.insert(self.unit_categories.Tank_Titan.unit_types.lapd, Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"))	
+			table.remove(self.unit_categories.Tank_Titan.unit_types.lapd, 1)														
+		end
 	end
 
 	function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -6783,6 +6937,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			FBI_tank = {
 			    "reloadingretreat",
 				"murder",
+				"harass",
 				"hitnrun",
 				"flank",
 				"provide_coverfire",
@@ -6793,12 +6948,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "reloadingretreat",
 				"murder",
 				"charge",
+				"harass",
 				"shield_cover"
 			},
 			SKULL_tank = {
 			    "reloadingretreat",
 			    "ranged_fire",
 				"murder",
+				"harass",
 				"provide_support",
 				"provide_coverfire",
 				"shield_cover"
@@ -6842,7 +6999,75 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flash_grenade",
 			    "hitnrun"
 			},
-
+			--mean DW/DS tactics below
+			ELITE_suit_stealth = {
+			    "reloadingretreat",
+			    "spoocavoidance",
+				"provide_coverfire",
+				"provide_support",
+				"smoke_grenade",
+				"flash_grenade",
+				"flank",
+			    "hitnrun"
+			},
+			ELITE_swat_rifle = {
+				"smoke_grenade",
+				"flash_grenade",
+				"provide_coverfire",
+				"charge",
+				"harass",
+				"aggressor",
+				"provide_support",
+				"elite_ranged_fire"
+			},
+			ELITE_heavy = {
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"harass",
+				"aggressor",
+				"provide_coverfire",
+				"provide_support",
+				"shield_cover",
+				"deathguard"
+			},
+			ELITE_swat_shotgun = {
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support"
+			},
+			ELITE_swat_rifle_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"elite_ranged_fire",
+			    "hitnrun"
+			},
+			ELITE_swat_shotgun_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"aggressor",
+				"provide_coverfire",
+				"provide_support",
+			    "hitnrun"
+			},
+			ELITE_heavy_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"shield_cover",
+			    "hitnrun"
+			},
 			--Vanilla shit below
 			swat_shotgun_rush = {
 				"charge",
@@ -7323,7 +7548,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_suit_stealth_MP5",
 						freq = 1,
 						amount_min = 1,
-						tactics = self._tactics.FBI_suit_stealth,
+						tactics = self._tactics.ELITE_suit_stealth,
 						rank = 2
 					},
 					{
@@ -7337,7 +7562,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "medic_M4",
 						freq = 0.35,
 						amount_max = 1,
-						tactics = self._tactics.FBI_suit_stealth,
+						tactics = self._tactics.ELITE_suit_stealth,
 						rank = 2
 					}
 				}
@@ -7403,7 +7628,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_suit_stealth_MP5",
 						freq = 1,
 						amount_min = 1,
-						tactics = self._tactics.FBI_suit_stealth,
+						tactics = self._tactics.ELITE_suit_stealth,
 						rank = 1
 					},
 					{
@@ -7416,7 +7641,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "medic_M4",
 						freq = 0.35,
 						amount_max = 1,
-						tactics = self._tactics.FBI_suit_stealth,
+						tactics = self._tactics.ELITE_suit_stealth,
 						rank = 2
 					}
 				}
@@ -7506,13 +7731,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_swat_M4",
 						freq = 1,
 						amount_min = 3,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					},
 					{
 						unit = "FBI_suit_M4_MP5",
 						freq = 1,
-						tactics = self._tactics.FBI_swat_rifle_flank,
+						tactics = self._tactics.ELITE_swat_rifle_flank,
 						rank = 2
 					},					
 					{
@@ -7528,7 +7753,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					}
 				}
@@ -7618,14 +7843,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 1,
 						amount_min = 4,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					},
 					{
 						unit = "FBI_swat_M4",
 						freq = 1,
 						amount_min = 3,
-						tactics = self._tactics.FBI_heavy_flank,
+						tactics = self._tactics.ELITE_heavy_flank,
 						rank = 2
 					},
 					{
@@ -7633,7 +7858,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_min = 1,
 						amount_max = 2,
 						freq = 1,
-						tactics = self._tactics.FBI_swat_shotgun,
+						tactics = self._tactics.ELITE_swat_shotgun,
 						rank = 3
 					},						
 					{
@@ -7641,7 +7866,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					}
 				}
@@ -7742,7 +7967,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_suit_stealth_MP5",
 						freq = 1,
 						amount_min = 1,
-						tactics = self._tactics.FBI_suit_stealth,
+						tactics = self._tactics.ELITE_suit_stealth,
 						rank = 1
 					},
 					{
@@ -7764,7 +7989,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					}
 				}
@@ -7967,7 +8192,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 0.75,
 						amount_min = 1,
-						tactics = self._tactics.FBI_heavy,
+						tactics = self._tactics.ELITE_heavy,
 						rank = 1
 					}
 				}
@@ -8055,7 +8280,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 0.75,
 						amount_min = 1,
-						tactics = self._tactics.FBI_heavy,
+						tactics = self._tactics.ELITE_heavy,
 						rank = 1
 					}
 				}
@@ -8479,7 +8704,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 3,
 						amount_min = 3,
 						amount_max = 3,
-						tactics = self._tactics.swat_shotgun_flank,
+						tactics = self._tactics.FBI_swat_shotgun_flank,
 						rank = 2
 					},
 					{
@@ -8487,7 +8712,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 1,
 						amount_max = 1,
-						tactics = self._tactics.swat_shotgun_flank,
+						tactics = self._tactics.FBI_swat_shotgun_flank,
 						rank = 3
 					}
 				}
@@ -8501,7 +8726,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 2,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.swat_shotgun_flank,
+						tactics = self._tactics.FBI_swat_shotgun_flank,
 						rank = 2
 					},
 					{
@@ -8509,7 +8734,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 2,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.swat_shotgun_flank,
+						tactics = self._tactics.FBI_swat_shotgun_flank,
 						rank = 3
 					}
 				}
@@ -8523,7 +8748,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 1,
 						amount_max = 1,
-						tactics = self._tactics.swat_shotgun_flank,
+						tactics = self._tactics.ELITE_swat_shotgun_flank,
 						rank = 2
 					},
 					{
@@ -8531,7 +8756,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 3,
 						amount_min = 3,
 						amount_max = 3,
-						tactics = self._tactics.swat_shotgun_flank,
+						tactics = self._tactics.ELITE_swat_shotgun_flank,
 						rank = 3
 					}
 				}
@@ -8634,7 +8859,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 3,
 						amount_min = 3,
 						amount_max = 3,
-						tactics = self._tactics.swat_rifle,
+						tactics = self._tactics.FBI_swat_rifle,
 						rank = 2
 					},
 					{
@@ -8642,7 +8867,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 1,
 						amount_max = 1,
-						tactics = self._tactics.swat_rifle,
+						tactics = self._tactics.FBI_swat_rifle,
 						rank = 3
 					}
 				}
@@ -8656,7 +8881,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 2,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.swat_rifle,
+						tactics = self._tactics.FBI_swat_rifle,
 						rank = 2
 					},
 					{
@@ -8664,7 +8889,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 2,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.swat_rifle,
+						tactics = self._tactics.FBI_swat_rifle,
 						rank = 3
 					}
 				}
@@ -8678,7 +8903,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 1,
 						amount_max = 1,
-						tactics = self._tactics.swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 2
 					},
 					{
@@ -8686,7 +8911,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 3,
 						amount_min = 3,
 						amount_max = 3,
-						tactics = self._tactics.swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 3
 					}
 				}
@@ -8789,7 +9014,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 3,
 						amount_min = 3,
 						amount_max = 3,
-						tactics = self._tactics.swat_rifle_flank,
+						tactics = self._tactics.FBI_swat_rifle_flank,
 						rank = 2
 					},
 					{
@@ -8797,7 +9022,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 1,
 						amount_max = 1,
-						tactics = self._tactics.swat_rifle_flank,
+						tactics = self._tactics.FBI_swat_rifle_flank,
 						rank = 3
 					}
 				}
@@ -8811,7 +9036,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 2,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.swat_rifle_flank,
+						tactics = self._tactics.FBI_swat_rifle_flank,
 						rank = 2
 					},
 					{
@@ -8819,7 +9044,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 2,
 						amount_min = 2,
 						amount_max = 2,
-						tactics = self._tactics.swat_rifle_flank,
+						tactics = self._tactics.FBI_swat_rifle_flank,
 						rank = 3
 					}
 				}
@@ -8833,7 +9058,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 1,
 						amount_max = 1,
-						tactics = self._tactics.swat_rifle_flank,
+						tactics = self._tactics.ELITE_swat_rifle_flank,
 						rank = 2
 					},
 					{
@@ -8841,7 +9066,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 3,
 						amount_min = 3,
 						amount_max = 3,
-						tactics = self._tactics.swat_rifle_flank,
+						tactics = self._tactics.ELITE_swat_rifle_flank,
 						rank = 3
 					}
 				}

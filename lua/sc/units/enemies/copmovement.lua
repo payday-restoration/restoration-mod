@@ -56,6 +56,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopMovement._action_variants.boom = security_variant
 		CopMovement._action_variants.rboom = security_variant
 		CopMovement._action_variants.fbi_vet = security_variant
+		CopMovement._action_variants.meme_man = security_variant		
 		CopMovement._action_variants.spring = clone(security_variant)
 		CopMovement._action_variants.summers = clone(security_variant)
 		CopMovement._action_variants.boom_summers = clone(security_variant)

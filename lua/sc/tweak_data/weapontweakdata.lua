@@ -1349,6 +1349,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mini_npc.alert_size = 2600
 		self.mini_npc.suppression = 2
 		self.mini_npc.FIRE_MODE = "auto"
+		self.x_mini_npc = deep_clone(self.mini_npc)		
+		self.x_mini_npc.categories = {
+			"akimbo",
+			"minigun"
+		}	
+		self.x_mini_npc.sounds.prefix = "minigun_npc"
+		self.x_mini_npc.use_data.selection_index = 1
+		self.x_mini_npc.DAMAGE = 2.2
+		self.x_mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.x_mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+		self.x_mini_npc.CLIP_AMMO_MAX = 600
+		self.x_mini_npc.NR_CLIPS_MAX = 2
+		self.x_mini_npc.auto.fire_rate = 0.01
+		self.x_mini_npc.hold = "akimbo_pistol"
+		self.x_mini_npc.alert_size = 2600
+		self.x_mini_npc.suppression = 2
+		self.x_mini_npc.FIRE_MODE = "auto"		
 	end
 
 	--Crew weapons but not really--
@@ -12213,8 +12230,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.m1895 then --Pawcio's M1895 Nagant
 		self.m1895.has_description = false								
 		self.m1895.fire_mode_data.fire_rate = 0.08571428571
-		self.m1895.AMMO_MAX = 60
-		self.m1895.AMMO_PICKUP = self:_pickup_chance(60, 1)
+		self.m1895.AMMO_MAX = 40
+		self.m1895.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.m1895.spread.standing = 3.5
 		self.m1895.spread.crouching = 2.5
 		self.m1895.spread.steelsight = 1
@@ -12225,7 +12242,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1895.kick.crouching = self.glock_17.kick.standing
 		self.m1895.kick.steelsight = self.glock_17.kick.standing
 		self.m1895.stats = {
-			damage = 75,
+			damage = 95,
 			spread = 20,
 			recoil = 19,
 			spread_moving = 8,

@@ -88,6 +88,19 @@
 	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="false" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
 
+	<!--MEME MAN-->
+	<object path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
+	<sequence_manager path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
+	<model path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
+	<unit path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
+	<material_config path="units/payday2/characters/ene_mememan_1/ene_mememan_1_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_mememan_1/ene_mememan_1_husk" force="false" load="true"/>
+	
+	<unit path="units/payday2/weapons/wpn_npc_mini/x_mini_npc" load="false" force="false"/>
+	
+
 	<!--Headless Dozer-->
 	<object path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
 	<sequence_manager path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
@@ -260,6 +273,24 @@
 	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_autumn_dead"/>	
 	<sequence_manager path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
 	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
+
+	<!--RAPHAEL CHRIST IS EVILBOBARINO-->	
+	<!--LOD Vet Cop-->		
+	<object path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_husk" force="false" load="true"/>
+
+	<object path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>	
 
 	<!--Veteran Cop-->	
 	<object path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>

@@ -2638,6 +2638,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
+					"player_no_deflection",
 					"player_level_5_armor_addend"
 				},
 				cost = 200,
@@ -3138,6 +3139,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_1",
 				upgrades = {
 					"damage_control",
+					"player_no_deflection",
 					"player_damage_control_passive",
 					"player_damage_control_cooldown_drain_1",
 					"player_armor_to_health_conversion"
@@ -3279,11 +3281,12 @@ function SkillTreeTweakData:init(tweak_data)
 		}
 		
 	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
+	--Hacker--
 	local sc_nip = {
 			{
 				cost = 200,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_1_desc",
+				desc_id = "menu_deck21_1_desc_sc",
 				name_id = "menu_deck21_1",
 				upgrades = {
 					"pocket_ecm_jammer",
@@ -3298,13 +3301,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 400,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_3_desc",
+				desc_id = "menu_deck21_3_desc_sc",
 				name_id = "menu_deck21_3",
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2",
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4"					
+					"player_passive_dodge_chance_1"
 				},
 				icon_xy = {
 					1,
@@ -3315,7 +3315,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 1000,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_5_desc",
+				desc_id = "menu_deck21_5_desc_sc",
 				name_id = "menu_deck21_5",
 				upgrades = {
 					"player_pocket_ecm_heal_on_kill_1"
@@ -3329,9 +3329,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 2400,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_7_desc",
+				desc_id = "menu_deck21_7_desc_sc",
 				name_id = "menu_deck21_7",
-				upgrades = {"player_pocket_ecm_kill_dodge_1"},
+				upgrades = {
+					"player_passive_dodge_chance_2"
+				},
 				icon_xy = {
 					3,
 					0
@@ -3341,10 +3343,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 4000,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_9_desc",
+				desc_id = "menu_deck21_9_desc_sc",
 				name_id = "menu_deck21_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
+					"player_passive_dodge_chance_3",
 					"team_pocket_ecm_heal_on_kill_1"
 				},
 				icon_xy = {

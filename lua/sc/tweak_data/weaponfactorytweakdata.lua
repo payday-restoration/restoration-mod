@@ -42719,25 +42719,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end	
 			
 		if self.parts.wpn_fps_shot_m37_s_rack then -- Alcat's GSPS Various Attachments
+				self.parts.wpn_fps_shot_m37_b_short.stats = { 
+					value = 1,
+					recoil = 1,
+					spread = -1
+				}				
 				self.parts.wpn_fps_shot_m37_b_trench.stats = { 
-					value = 0
+					value = 1,
+					spread = -1,
+					spread_moving = -1,					
+					recoil = 2
 				}		
 				self.parts.wpn_fps_shot_m37_b_deerslayer.stats = { 
 					value = 1,
 					recoil = -1,
-					spread = 1,				
-					concealment = -2
+					spread = 2,				
+					concealment = -1
 				}			
 				self.parts.wpn_fps_shot_m37_s_rack.stats = { 
 					value = 1,
-					concealment = -1,								
-					recoil = 1
+					recoil = -1,								
+					spread = 1
 				}	
 				self.parts.wpn_fps_shot_m37_s_rack.custom_stats = nil				
 				self.parts.wpn_fps_shot_m37_s_stakeout.stats = { 
 					value = 1,
-					spread_moving = 1,
-					concealment = 1
+					spread = -1,
+					recoil = 1
 				}																	
 			end		
 
@@ -43305,7 +43313,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					reload = -2,
 					extra_ammo = 30 --maybe should've set this to 20 but *shrug*
 				}
-				self.wpn_fps_ass_komodo.override = { --why would you even consider using the tempest with those animations?
+				self.wpn_fps_ass_komodo.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
@@ -46561,7 +46569,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 0
 			}
 		self.parts.wpn_fps_upg_m1895_supp_gemtech_gm9.stats = {
-				value = 0,
+				value = 3,
+				damage = 5,
 				suppression = 8,
 				alert_size = 8,
 				concealment = -2
@@ -46575,7 +46584,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = -3
 			}
 		self.parts.wpn_fps_upg_m1895_supp_ro2.stats = {
-				value = 0,
+				value = 4,
+				damage = 5,
 				suppression = 6,
 				alert_size = 6,
 				concealment = 1

@@ -1,0 +1,19 @@
+<materials version="3" group="ene_bulldozer_1">
+    <material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture 	file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture 		file="units/payday2/characters/shared_textures/bulldozer_df"/>
+    </material>
+    <material name="mtr_mememan_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/veteran_cop_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/veteran_cop_df"/>
+    </material>	
+    <material name="mtr_bulldozer_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture 	file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1"/>
+        <diffuse_texture 		file="units/payday2/characters/shared_textures/bulldozer_df" mip="1"/>
+    </material>
+    <material name="mtr_bulldozer_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture	file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
+        <diffuse_texture 		file="units/payday2/characters/shared_textures/bulldozer_df" mip="4"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -9347,7 +9347,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_pis_jungle",
 			"wpn_fps_pis_beretta_body_modern",
 			--Mod stuff below--
-			"wpn_fps_upg_ammo_p"
+			"wpn_fps_upg_ammo_p",
+			"wpn_fps_upg_i_93r"
 		}
 		self.wpn_fps_pis_beretta_npc = deep_clone(self.wpn_fps_pis_beretta)
 		self.wpn_fps_pis_beretta_npc.unit = "units/payday2/weapons/wpn_fps_pis_b92fs/wpn_fps_pis_beretta_npc"
@@ -28800,7 +28801,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_vg_ass_smg_afg",
 			"wpn_fps_upg_i_slower_rof",
 			"wpn_fps_upg_i_faster_rof",	
-			"wpn_fps_upg_ammo_half_that"
+			--"wpn_fps_upg_ammo_half_that"
 		}
 		self.wpn_fps_ass_tecci_npc = deep_clone(self.wpn_fps_ass_tecci)
 		self.wpn_fps_ass_tecci_npc.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci_npc"
@@ -38940,6 +38941,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			internal_part = true,
 			dlc = "sc"
 		}	
+		
+		self.parts.wpn_fps_upg_i_93r = {
+			pcs = {},
+			type = "custom",
+			sub_type = "autofire",
+			name_id = "bm_wp_upg_i_93r",
+			a_obj = "a_body",
+			has_description = true,
+			custom_stats = {
+				beretta_burst = true,
+				use_auto_kick = true
+			},
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			stats = {
+				value = 0,
+			},
+			is_a_unlockable = true,
+			internal_part = true,
+			dlc = "sc"
+		}			
+		
 		--Vlad's Rodina--
 		self.parts.wpn_fps_upg_vlad_rodina_legend = {
 			type = "legendary",

@@ -333,6 +333,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					self:weapon_tweak_data().animations.reload_name_id = "akm"
 				end
 			end
+			
+			if stats.beretta_burst then
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
+			end			
 
 			if stats.use_pistol_kick then
 				if self:weapon_tweak_data().kick then

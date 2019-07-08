@@ -42086,6 +42086,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end		
 				
 			if self.wpn_fps_ass_g36k then 	-- Pawcio's G36K
+				self.parts.wpn_fps_ass_g36k_mag.stats = {
+						value = 0
+					}		
+				self.parts.wpn_fps_upg_g36k_export_sight.stats = {
+						value = 1,
+						zoom = 3,
+						concealment = -3
+					}												
 				table.list_append(self.wpn_fps_ass_g36k.uses_parts, {
 						"wpn_fps_upg_i_slower_rof"
 					})
@@ -42189,7 +42197,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = -1,
 						reload = 2
 					}		
-				self.parts.wpn_fps_upg_g36k_mag_dual30.has_description = false			
+				self.parts.wpn_fps_upg_g36k_mag_dual30.has_description = false
+				self.parts.wpn_fps_upg_g36k_mag20magpul.pcs = nil				
+				self.parts.wpn_fps_upg_g36k_mag30magpul.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}				
+				self.parts.wpn_fps_upg_g36k_mag30magpul.has_description = false								
 				self.parts.wpn_fps_upg_g36k_barrel_medium.stats = {
 						value = 2,
 						recoil = 1

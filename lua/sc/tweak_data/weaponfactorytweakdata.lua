@@ -46262,6 +46262,31 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			custom_stats = {ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33},
 			internal_part = true
 		}
+		self.parts.wpn_fps_upg_ammo_imito9mm = { --9mm for CZAuto
+			pcs = {},
+			type = "ammo",
+			name_id = "bm_wp_upg_a_45custom",
+			desc_id = "bm_wp_upg_a_45custom_desc",
+			a_obj = "a_body",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			is_a_unlockable = true,
+			has_description = true,
+			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
+			dlc = "sc",
+			stats = {
+				value = 3,
+				spread = -1,
+				recoil = 6,
+				extra_ammo = -3,
+				total_ammo_mod = 33,
+				damage = -27,
+				suppression = 1,
+				alert_size = 1
+			},
+			custom_stats = {ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33},
+			internal_part = true
+		}
 		self.parts.wpn_fps_upg_ammo_65grendel = {
 			type = "ammo",
 			name_id = "bm_wp_upg_a_65grendel",
@@ -46914,10 +46939,38 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			})
 		end
 
-		if self.wpn_fps_ass_bar then --Alcat's BAR
-			table.list_append(self.wpn_fps_ass_bar.uses_parts, {
-				"wpn_fps_upg_ammo_half_that"
+		if self.wpn_fps_pis_czauto then --Alcat's CZAuto
+			table.list_append(self.wpn_fps_pis_czauto.uses_parts, {
+				"wpn_fps_upg_ammo_imito9mm"
 			})
+		end
+
+		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7
+			table.list_append(self.wpn_fps_smg_k1a7, {
+				"wpn_fps_upg_i_faster_rof"
+			})
+			table.list_append(self.wpn_fps_smg_k1a7, {
+				"wpn_fps_upg_i_slower_rof"
+			})
+		end
+
+		if self.wpn_fps_smg_calico then --Alcat's Calico
+			table.list_append(self.wpn_fps_smg_calico, {
+				"wpn_fps_upg_i_faster_rof"
+			})
+			table.list_append(self.wpn_fps_smg_calico, {
+				"wpn_fps_upg_i_slower_rof"
+			})
+		end
+
+		if self.wpn_fps_snp_vss then --Pwacio's VSS
+			self.parts.wpn_fps_snp_vss_mag.stats = {
+				extra_ammo = 10,
+				reload = -4
+			}
+		end
+
+		if self.wpn_fps_pis_derringer then --Pwacio's Derringer; does it even have mods???
 		end
 
 		--Incendiary Slugs are awesome--

@@ -4,6 +4,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",
 		["bm_menu_bain_akan"] =  "We are formless. We have no defined bodies or characteristics. We are the American way of life manifested as an influential power.",
 		["bm_menu_bain_crazy"] =  "$preferredcharacter$ TURN OFF THE COMPUTER NOW",
+		["bm_wp_r870_s_folding_ext"] = "Muldon Stock (Retracted)",								
 		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",

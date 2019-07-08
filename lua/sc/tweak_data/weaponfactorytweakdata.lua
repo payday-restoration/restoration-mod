@@ -8640,6 +8640,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_aimpoint_2",
 			"wpn_fps_upg_o_acog",
 			"wpn_fps_shot_r870_s_folding",
+			"wpn_fps_shot_r870_s_folding_ext",			
 			"wpn_fps_shot_r870_s_m4",
 			"wpn_fps_shot_r870_s_nostock_big",
 			"wpn_fps_shot_r870_s_nostock_single",
@@ -8940,6 +8941,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_aimpoint_2",
 			"wpn_fps_upg_o_acog",
 			"wpn_fps_shot_r870_s_folding",
+			"wpn_fps_shot_r870_s_folding_ext",						
 			"wpn_fps_shot_r870_s_m4",
 			"wpn_fps_shot_shorty_s_nostock_short",
 			"wpn_fps_shot_r870_s_nostock_single",
@@ -38963,7 +38965,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			internal_part = true,
 			dlc = "sc"
 		}			
-		
+		self.parts.wpn_fps_shot_r870_s_folding_ext = {
+			pcs = {},
+			type = "stock",
+			name_id = "bm_wp_r870_s_folding_ext",
+			a_obj = "a_s",
+			alt_icon = "guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_shot_r870_s_muldonunfolded",
+			unit = "units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded",
+			stats = {
+				value = 5,
+				spread_moving = 1,
+				recoil = -1,
+				concealment = 2
+			},
+			dlc = "sc"			
+		}						
 		--Vlad's Rodina--
 		self.parts.wpn_fps_upg_vlad_rodina_legend = {
 			type = "legendary",

@@ -29,6 +29,17 @@
 	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm" force="false"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true" force="false"/>	
 	
+	<!--Muldon Stock Unfolded (thx Jarey_!!!!)-->
+	<cooked_physics path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<model path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<object path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<unit path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_thq"/>
+	<material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc"/>
+    <material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc_thq"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_shot_r870_s_muldonunfolded"/> 	
+	
 	<!--Mask: Hockey Hell-->
 	<material_config path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
 	<unit path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" load="false"/>

@@ -28704,8 +28704,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = "reload",
 					reload_not_empty = "reload_not_empty"
 				}
-			}
-		}
+			},
+			wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = -20,
+					recoil = 0
+				},
+				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+			}			
+		}	
 		self.wpn_fps_ass_tecci.default_blueprint = {
 			"wpn_fps_ass_tecci_b_standard",
 			"wpn_fps_ass_tecci_dh_standard",
@@ -28791,7 +28799,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_vg_ass_smg_stubby",
 			"wpn_fps_upg_vg_ass_smg_afg",
 			"wpn_fps_upg_i_slower_rof",
-			"wpn_fps_upg_i_faster_rof"	
+			"wpn_fps_upg_i_faster_rof",	
+			"wpn_fps_upg_ammo_half_that"
 		}
 		self.wpn_fps_ass_tecci_npc = deep_clone(self.wpn_fps_ass_tecci)
 		self.wpn_fps_ass_tecci_npc.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci_npc"
@@ -42086,6 +42095,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end		
 				
 			if self.wpn_fps_ass_g36k then 	-- Pawcio's G36K
+				self.parts.wpn_fps_ass_g36k_mag.stats = {
+						value = 0
+					}		
+				self.parts.wpn_fps_upg_g36k_export_sight.stats = {
+						value = 1,
+						zoom = 3,
+						concealment = -3
+					}												
 				table.list_append(self.wpn_fps_ass_g36k.uses_parts, {
 						"wpn_fps_upg_i_slower_rof"
 					})
@@ -42189,7 +42206,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = -1,
 						reload = 2
 					}		
-				self.parts.wpn_fps_upg_g36k_mag_dual30.has_description = false			
+				self.parts.wpn_fps_upg_g36k_mag_dual30.has_description = false
+				self.parts.wpn_fps_upg_g36k_mag20magpul.pcs = nil				
+				self.parts.wpn_fps_upg_g36k_mag30magpul.stats = {
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}				
+				self.parts.wpn_fps_upg_g36k_mag30magpul.has_description = false								
 				self.parts.wpn_fps_upg_g36k_barrel_medium.stats = {
 						value = 2,
 						recoil = 1
@@ -46439,7 +46464,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_mag_msr = {
-			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_mag_msr",
 			desc_id = "bm_wp_upg_a_mag_msr_desc",
@@ -46451,14 +46475,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 			dlc = "sc",
 			stats = {
-				value = 3,
-				total_ammo_mod = -33,
-				damage = 50
-			},
-			custom_stats = {
-				ammo_pickup_max_mul = 0.667,
-				ammo_pickup_min_mul = 0.667
-			},			
+				value = 0,
+				total_ammo_mod = 0,
+				damage = 0
+			},		
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_40sw = {

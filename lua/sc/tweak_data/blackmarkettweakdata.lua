@@ -154,7 +154,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.concussion.max_amount = 3
 	
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
-	self.projectiles.pocket_ecm_jammer.base_cooldown = 50
+	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
 	
 	--Fuck off
 	self.projectiles.frag.no_cheat_count = true

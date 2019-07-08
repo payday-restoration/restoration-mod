@@ -395,6 +395,8 @@ if not tweak_data then return end
 		infamous_chance = 3
 	}	
 	
+	tweak_data.experience_manager.stage_failed_multiplier = 1
+	
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 		tweak_data.gui.buy_weapon_categories = {
 			primaries = {

@@ -161,6 +161,17 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.ukrainian_job_shutter.stages, "ukrainian_job_res")
 		table.insert(self.security_safe_05x05.stages, "ukrainian_job_res")
 		
+		--FS Day 1, Resmod edit
+		table.insert(self.grenade_crate.stages, "firestarter_1_res")
+		table.insert(self.sniper_spot_firestarter1.stages, "firestarter_1_res")
+		table.insert(self.firestarter_1_ammo.stages, "firestarter_1_res")
+		table.insert(self.firestarter_1_health.stages, "firestarter_1_res")
+		
+		--FS Day 2, Resmod edit
+		table.insert(self.bodybags_bag.stages, "firestarter_2_res")
+		table.insert(self.spotter.stages, "firestarter_2_res")
+		table.insert(self.grenade_crate.stages, "firestarter_2_res")
+		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")
 	end
 	
 	--Restoration Heist assets--

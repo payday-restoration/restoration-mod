@@ -12460,7 +12460,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sonny.kick.crouching = self.glock_17.kick.standing
 		self.sonny.kick.steelsight = self.glock_17.kick.standing
 		self.sonny.stats = {
-			damage = 70,
+			damage = 67,
 			spread = 16,
 			recoil = 14,
 			spread_moving = 8,
@@ -12532,42 +12532,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 	end
 
-	if self.bar then --Alcat's Browning Auto Rifle (lmg and ar for the time being)
-		self.bar.categories = {
-			"lmg",
-			"smg",
-			"assault_rifle"
-		}
-		self.bar.has_description = false
-		self.bar.fire_mode_data.fire_rate = 0.12
-		self.bar.AMMO_MAX = 200
-		self.bar.AMMO_PICKUP = self:_pickup_chance(200, 1)
-		self.bar.panic_suppression_chance = 0.1
-		self.bar.spread.standing = 3
-		self.bar.spread.crouching = 2
-		self.bar.spread.steelsight = 1
-		self.bar.spread.moving_standing = 4
-		self.bar.spread.moving_crouching = 3
-		self.bar.spread.moving_steelsight = 2
-		self.bar.kick.standing = self.new_m4.kick.standing
-		self.bar.kick.crouching = self.new_m4.kick.standing
-		self.bar.kick.steelsight = self.new_m4.kick.standing
-		self.bar.stats = {
-			damage = 35,
-			spread = 18,
-			recoil = 20,
-			spread_moving = 9,
-			zoom = 1,
-			concealment = 8,
-			suppression = 7,
-			alert_size = 7,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 2,
-			reload = 11
-		}
-	end
-
 	if self.k1a7 then --Alcat's K1A7
 		self.k1a7.use_data.selection_index = 2														
 		self.k1a7.categories = {
@@ -12604,7 +12568,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	if self.calico then --Alcat's Calico
-		--self.bm_w_calico = "Calico M9L Machine Pistol" gotta figure out how to rename the darned gun
 		self.calico.has_description = true					
 		self.calico.use_data.selection_index = 2
 		self.calico.tactical_reload = 1
@@ -12613,8 +12576,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.calico.categories = {"pistol"}
 		self.calico.recategorize = "pistol_carbine"
 		self.calico.CLIP_AMMO_MAX = 50
-		self.calico.AMMO_MAX = 200
-		self.calico.AMMO_PICKUP = self:_pickup_chance(200, 1)
+		self.calico.AMMO_MAX = 180
+		self.calico.AMMO_PICKUP = self:_pickup_chance(180, 1)
 		self.calico.spread.standing = 3
 		self.calico.spread.crouching = 2
 		self.calico.spread.steelsight = 1
@@ -12639,6 +12602,83 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.calico.panic_suppression_chance = 0.1
+	end
+
+	if self.vss then --Pawcio's VSS   --this is definitely not going to make it into upstream until the autofire is removed or something
+		self.vss.upgrade_blocks = nil
+		self.vss.tactical_reload = 1		
+		self.vss.has_description = true
+		self.vss.desc_id = "bm_ap_weapon_sc_desc"
+		self.vss.AMMO_MAX = 40
+		self.vss.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.vss.FIRE_MODE = "single"
+		self.vss.spread.standing = 3
+		self.vss.spread.crouching = 2
+		self.vss.spread.steelsight = 1
+		self.vss.spread.moving_standing = 4
+		self.vss.spread.moving_crouching = 3
+		self.vss.spread.moving_steelsight = 2
+		self.vss.kick.standing = self.huntsman.kick.standing
+		self.vss.kick.crouching = self.huntsman.kick.standing
+		self.vss.kick.steelsight = self.huntsman.kick.standing
+		self.vss.can_shoot_through_enemy = true
+		self.vss.can_shoot_through_shield = true
+		self.vss.can_shoot_through_wall = true
+		self.vss.stats = {
+			damage = 150,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 24,
+			zoom = 1,
+			concealment = 20,
+			suppression = 17,
+			alert_size = 17,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
+		}
+		self.vss.armor_piercing_chance = 1
+		self.vss.stats_modifiers = {damage = 1}
+		self.vss.panic_suppression_chance = 0.0
+	end
+
+	if self.derringer then --Pwacio's Derringer
+		self.derringer.AMMO_MAX = 30
+		self.derringer.AMMO_PICKUP = self:_pickup_chance(30, 1)
+		self.derringer.spread = {}
+		self.derringer.spread.standing = 3
+		self.derringer.spread.crouching = 2
+		self.derringer.spread.steelsight = 1
+		self.derringer.spread.moving_standing = 4
+		self.derringer.spread.moving_crouching = 3
+		self.derringer.spread.moving_steelsight = 2
+		self.derringer.kick.standing = self.huntsman.kick.standing
+		self.derringer.kick.crouching = self.huntsman.kick.standing
+		self.derringer.kick.steelsight = self.huntsman.kick.standing
+		self.derringer.stats = {
+			damage = 150,
+			spread = 20,
+			recoil = 16,
+			spread_moving = 9,
+			zoom = 5,
+			concealment = 30,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 10
+		}
+		self.derringer.panic_suppression_chance = 0.0
+		self.derringer.has_description = true
+		self.derringer.desc_id = "bm_ap_weapon_sc_desc"
+		self.derringer.can_shoot_through_enemy = true
+		self.derringer.can_shoot_through_shield = true
+		self.derringer.can_shoot_through_wall = true
+		self.derringer.armor_piercing_chance = 1
+		self.derringer.stats_modifiers = {damage = 1}
+		self.derringer.timers.shotgun_reload_first_shell_offset = 0.5
 	end
 
 	end)

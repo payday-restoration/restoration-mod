@@ -1869,6 +1869,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc.can_be_tased = true
 		self.spooc.static_dodge_preset = true
 		self.spooc.is_special = true
+		self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
 		if is_reaper then
 		    self.spooc.die_sound_event = "rclk_x02a_any_3p"
 		else

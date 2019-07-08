@@ -185,6 +185,7 @@ if not _G.restoration then
 		"cane",
 		"dah",
 		"run",
+		"help",
 		"arm_cro",
 		"arm_hcm",
 		"arm_fac",

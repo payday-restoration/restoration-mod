@@ -4587,8 +4587,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.desc_id = "bm_ap_weapon_sc_desc"
 		self.msr.CLIP_AMMO_MAX = 10
 		self.msr.NR_CLIPS_MAX = 5
-		self.msr.AMMO_MAX = 60
-		self.msr.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.msr.AMMO_MAX = 40
+		self.msr.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.msr.fire_mode_data.fire_rate = 0.66666666666
 		self.msr.spread.standing = 3
 		self.msr.spread.crouching = 2
@@ -4600,7 +4600,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.kick.crouching = self.huntsman.kick.standing
 		self.msr.kick.steelsight = self.huntsman.kick.standing
 		self.msr.stats = {
-			damage = 100,
+			damage = 150,
 			spread = 20,
 			recoil = 18,
 			spread_moving = 8,
@@ -6564,6 +6564,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_akmsu.timers.reload_not_empty = 2.75
 		self.x_akmsu.timers.reload_empty = 3.4		
+		self.tecci.categories = {
+			"lmg",
+			"assault_rifle"
+		}		
+		self.tecci.recategorize = "rifle"
 		self.tecci.spread.standing = 3
 		self.tecci.spread.crouching = 2
 		self.tecci.spread.steelsight = 1
@@ -6574,21 +6579,21 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tecci.kick.crouching = self.new_m4.kick.standing
 		self.tecci.kick.steelsight = self.new_m4.kick.standing
 		self.tecci.CLIP_AMMO_MAX = 100
-		self.tecci.AMMO_MAX = 120
-		self.tecci.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.tecci.AMMO_MAX = 250
+		self.tecci.AMMO_PICKUP = self:_pickup_chance(250, 2)
 		self.tecci.fire_mode_data.fire_rate = 0.08571428571
 		self.tecci.CAN_TOGGLE_FIREMODE = true
 		self.tecci.auto.fire_rate = 0.08571428571
-		self.tecci.panic_suppression_chance = 0.0
+		self.tecci.panic_suppression_chance = 0.1
 		self.tecci.stats = {
-			damage = 45,
-			spread = 16,
-			recoil = 19,
-			spread_moving = 10,
+			damage = 25,
+			spread = 14,
+			recoil = 21,
+			spread_moving = 6,
 			zoom = 3,
-			concealment = 14,
-			suppression = 7,
-			alert_size = 7,
+			concealment = 9,
+			suppression = 8,
+			alert_size = 8,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,

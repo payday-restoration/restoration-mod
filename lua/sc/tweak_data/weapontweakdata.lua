@@ -6565,10 +6565,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_akmsu.timers.reload_not_empty = 2.75
 		self.x_akmsu.timers.reload_empty = 3.4		
 		self.tecci.categories = {
-			"lmg",
 			"assault_rifle"
 		}		
-		self.tecci.recategorize = "rifle"
+		self.tecci.recategorize = "assault_rifle"
 		self.tecci.spread.standing = 3
 		self.tecci.spread.crouching = 2
 		self.tecci.spread.steelsight = 1
@@ -6579,8 +6578,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tecci.kick.crouching = self.new_m4.kick.standing
 		self.tecci.kick.steelsight = self.new_m4.kick.standing
 		self.tecci.CLIP_AMMO_MAX = 100
-		self.tecci.AMMO_MAX = 250
-		self.tecci.AMMO_PICKUP = self:_pickup_chance(250, 2)
+		self.tecci.AMMO_MAX = 200
+		self.tecci.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.tecci.fire_mode_data.fire_rate = 0.08571428571
 		self.tecci.CAN_TOGGLE_FIREMODE = true
 		self.tecci.auto.fire_rate = 0.08571428571

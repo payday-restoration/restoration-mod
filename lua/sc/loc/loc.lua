@@ -4,10 +4,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",
 		["bm_menu_bain_akan"] =  "We are formless. We have no defined bodies or characteristics. We are the American way of life manifested as an influential power.",
 		["bm_menu_bain_crazy"] =  "$preferredcharacter$ TURN OFF THE COMPUTER NOW",
+		["bm_wp_r870_s_folding_ext"] = "Muldon Stock (Retracted)",								
 		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
 		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
+		["bm_wp_upg_i_93r"] = "B93r Kit",
+		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.",		
 		["menu_jowi"] = "Wick",
 		["bm_wp_upg_a_slug_sc"] = "Slug",
 		["bm_wp_upg_a_op_sc"] = "+P Rounds",
@@ -273,8 +276,8 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_toggle_one_down"] = "Pro Job",
-		["menu_one_down"] = "Pro",
+		["menu_toggle_one_down"] = "Pro-Job",
+		["menu_one_down"] = "Pro-Job",
 		
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		

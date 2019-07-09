@@ -151,9 +151,19 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "weapon_mods",
+				item_entry = "wpn_fps_shot_r870_s_folding_ext",
+				amount = 3
+			},						
+			{
+				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_i_slower_rof",
 				amount = 3
-			},	
+			},										
+			{
+				type_items = "weapon_mods",
+				item_entry = "wpn_fps_upg_i_93r",
+				amount = 3
+			},				
 			{
 				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_i_faster_rof",

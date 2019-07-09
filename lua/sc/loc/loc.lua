@@ -269,8 +269,8 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_toggle_one_down"] = "Pro Job",
-		["menu_one_down"] = "Pro",
+		["menu_toggle_one_down"] = "Pro-Job",
+		["menu_one_down"] = "Pro-Job",
 		
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		

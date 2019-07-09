@@ -46265,8 +46265,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		self.parts.wpn_fps_upg_ammo_imito9mm = { --9mm for CZAuto
 			pcs = {},
 			type = "ammo",
-			name_id = "bm_wp_upg_a_45custom",
-			desc_id = "bm_wp_upg_a_45custom_desc",
+			name_id = "bm_wp_upg_a_imito9mm",
+			desc_id = "bm_wp_upg_a_imito9mm_desc",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -46276,15 +46276,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			dlc = "sc",
 			stats = {
 				value = 3,
-				spread = -1,
-				recoil = 6,
-				extra_ammo = -3,
-				total_ammo_mod = 33,
-				damage = -27,
-				suppression = 1,
-				alert_size = 1
+				spread = 1,
+				recoil = 1,
+				total_ammo_mod = -16,
+				damage = 4,
+				suppression = -1,
+				alert_size = -1
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33},
+			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_65grendel = {
@@ -46945,32 +46944,86 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			})
 		end
 
-		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7
-			table.list_append(self.wpn_fps_smg_k1a7, {
+		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7; for some reason, the integrated suppressor allows supported custom barrel attachments. Wierd...
+			self.parts.wpn_fps_smg_k1a7_m_9mm.stats = {
+				damage = -6,
+				recoil = 1,
+				extra_ammo = 5,
+				reload = 2,
+				concealment = 1,
+				total_ammo_mod = 20,
+				suppression = 1,
+				alert_size = 1
+			}
+			self.parts.wpn_fps_smg_k1a7_m_9mm.custom_stats = {
+				ammo_pickup_min_mul = 1.2,
+				ammo_pickup_max_mul = 1.2
+			}
+			self.parts.wpn_fps_smg_k1a7_b_sd.stats = {
+				damage = 5,
+				spread = 1,
+				recoil = -1,
+				concealment = 1,
+				suppression = 12,
+				alert_size = 12
+			}
+			table.list_append(self.wpn_fps_smg_k1a7.uses_parts, {
 				"wpn_fps_upg_i_faster_rof"
 			})
-			table.list_append(self.wpn_fps_smg_k1a7, {
+			table.list_append(self.wpn_fps_smg_k1a7.uses_parts, {
 				"wpn_fps_upg_i_slower_rof"
 			})
 		end
 
 		if self.wpn_fps_smg_calico then --Alcat's Calico
-			table.list_append(self.wpn_fps_smg_calico, {
+			table.list_append(self.wpn_fps_smg_calico.uses_parts, {
 				"wpn_fps_upg_i_faster_rof"
 			})
-			table.list_append(self.wpn_fps_smg_calico, {
+			table.list_append(self.wpn_fps_smg_calico.uses_parts, {
 				"wpn_fps_upg_i_slower_rof"
 			})
-		end
-
-		if self.wpn_fps_snp_vss then --Pwacio's VSS
-			self.parts.wpn_fps_snp_vss_mag.stats = {
-				extra_ammo = 10,
-				reload = -4
+			self.parts.wpn_fps_smg_calico_body_carbine.stats = {
+				damage = 6,
+				recoil = 1,
+				spread = -1,
+				concealment= -2,
+				total_ammo_mod= -16,
+				suppression = -1,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_smg_calico_body_carbine.desc_id = {"bm_wp_wpn_fps_smg_calico_body_carbine_desc"} --doesn't work as of current
+			self.parts.wpn_fps_smg_calico_body_carbine.custom_stats = {
+				ammo_pickup_min_mul = 0.8,
+				ammo_pickup_max_mul = 0.8
+			}
+			self.parts.wpn_fps_smg_calico_body_full.stats = {
+				damage = 15,
+				recoil = -4,
+				spread = 5,
+				concealment= -5,
+				total_ammo_mod= -33,
+				suppression = -2,
+				alert_size = -2
+			}
+			self.parts.wpn_fps_smg_calico_body_full.desc_id = {"bm_wp_wpn_fps_smg_calico_body_full_desc"} --doesn't work as of current
+			self.parts.wpn_fps_smg_calico_body_full.custom_stats = {
+				ammo_pickup_min_mul = 0.64,
+				ammo_pickup_max_mul = 0.64
+			}
+			self.parts.wpn_fps_smg_calico_m_half.stats = {
+				extra_ammo = -25,
+				concealment = 3,
+				recoil = 1,
+				reload = 2
 			}
 		end
 
-		if self.wpn_fps_pis_derringer then --Pwacio's Derringer; does it even have mods???
+		if self.wpn_fps_snp_vss then --Pwacio's VSS
+			self.parts.wpn_fps_upg_vss_mag_20rnd.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -2
+			}
 		end
 
 		--Incendiary Slugs are awesome--

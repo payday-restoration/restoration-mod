@@ -40558,6 +40558,97 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			end
 
+	if self.wpn_fps_pis_degle then 	--degle
+		self.parts.wpn_fps_pis_degle_am_soo.stats = {
+					value = math.huge
+				}	
+			self.parts.wpn_fps_pis_degle_gr_camo.stats = {
+					value = 0
+				}					
+			self.parts.wpn_fps_pis_degle_gr_wood.stats = {
+					value = 0
+				}		
+		self.parts.wpn_fps_pis_degle_m_big.stats = {
+					value = 4,
+					extra_ammo = 50,
+					concealment = -12
+				}		
+		self.parts.wpn_fps_pis_degle_fr_big.stats = {
+					value = 4,
+					spread = math.huge,
+					concealment = -12
+				}													
+		self.parts.wpn_fps_pis_degle_am_poi.stats = {
+					value = 4,
+					damage = 50,
+					spread = 1,
+					total_ammo_mod = -25,					
+					recoil = -2					
+				}					
+			self.parts.wpn_fps_pis_degle_am_poi.custom_stats = {ammo_pickup_max_mul = 0.75, ammo_pickup_min_mul = 0.75, rof_mult = 0.8}		
+			self.parts.wpn_fps_pis_degle_am_meg.stats = {
+					value = 4,
+					damage = math.huge,
+					spread = -20,
+					total_ammo_mod = -90,
+					recoil = -20					
+				}					
+			self.parts.wpn_fps_pis_degle_am_meg.custom_stats = {ammo_pickup_max_mul = 0.1, ammo_pickup_min_mul = 0.1, rof_mult = 0.01}	
+			self.parts.wpn_fps_pis_degle_am_fla.stats = {
+					value = 4,
+					damage = -30,
+					spread = -2,
+					total_ammo_mod = -25,
+					recoil = -3					
+				}					
+			self.parts.wpn_fps_pis_degle_am_fla.custom_stats = {ammo_pickup_max_mul = 0.75, ammo_pickup_min_mul = 0.75, rof_mult = math.huge}													
+			end						
+
+	if self.wpn_fps_ass_sar21 then 	--Pawcio's SAR 21
+		table.list_append(self.wpn_fps_ass_sar21.uses_parts, {
+			"wpn_fps_upg_i_slower_rof"
+		})
+		table.list_append(self.wpn_fps_ass_sar21.uses_parts, {
+			"wpn_fps_upg_i_faster_rof"
+		})		
+		self.parts.wpn_fps_upg_sar21_mag_magpul_assist.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1
+				}	
+		self.parts.wpn_fps_upg_sar21_barrel_long.stats = {
+					value = 6,
+					spread_moving = -2,
+					spread = 1,
+					concealment = -2,
+					damage = 3
+				}	
+		self.parts.wpn_fps_upg_sar21_barrel_short.stats = {
+					value = 4,
+					spread_moving = 0,
+					spread = -1,
+					concealment = 2,
+					damage = 3
+				}					
+		self.parts.wpn_fps_upg_sar21_vg_m900.stats = {
+					value = 1
+				}				
+		self.parts.wpn_fps_upg_sar21_vg_bcm.stats = {
+					value = 1,
+					spread_moving = 2,
+					concealment = 1
+				}								
+		self.parts.wpn_fps_upg_sar21_vg_fab_reg.stats = {
+					value = 2,
+					recoil = 1,
+					spread_moving = 1,		
+					concealment = -1								
+				}												
+		self.parts.wpn_fps_ass_sar21_mag.stats = {
+					reload = -3
+				}																																			
+			end			
+
 	if self.wpn_fps_ass_bulldoge then 	--Gambyt's Vertical Grip Assortment Pack
 		table.list_append(self.wpn_fps_ass_bulldoge.uses_parts, {
 			"wpn_fps_upg_i_slower_rof"

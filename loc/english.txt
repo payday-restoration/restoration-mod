@@ -349,5 +349,8 @@
     "menu_jukebox_screen_m1" : "Criminal Intent (Old Version)",
 	"menu_jukebox_screen_m2" : "Preparations (Old Version)",
 	
-	"look_dad" : "no_errors"
+	"look_dad" : "no_errors",
+	
+	"menu_color_plus" : "Color Plus",
+	"menu_color_force" : "Color Force"
 }

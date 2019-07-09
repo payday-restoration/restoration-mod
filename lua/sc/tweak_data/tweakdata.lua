@@ -299,66 +299,6 @@ if not tweak_data then return end
 	tweak_data.achievement.complete_heist_statistics_achievements.immortal_ballot.num_players = nil
 	tweak_data.achievement.complete_heist_statistics_achievements.full_two_twenty.num_players = nil
 	
-	--[[
-	tweak_data.color_grading = {
-			{
-				value = "color_payday",
-				text_id = "menu_color_off"
-			},
-			{
-				text_id = "menu_color_default"
-			},
-			{
-				value = "color_heat",
-				text_id = "menu_color_heat"
-			},
-			{
-				value = "color_nice",
-				text_id = "menu_color_nice"
-			},
-			{
-				value = "color_bhd",
-				text_id = "menu_color_bhd"
-			},
-			{
-				value = "color_xgen",
-				text_id = "menu_color_xgen"
-			},
-			{
-				value = "color_xxxgen",
-				text_id = "menu_color_xxxgen"
-			},
-			{
-				value = "color_matrix_classic",
-				text_id = "menu_color_matrix_classic"
-			},
-			{
-				value = "color_sin_classic",
-				text_id = "menu_color_sin_classic"
-			},
-			{
-				value = "color_sepia",
-				text_id = "menu_color_sepia"
-			},
-			{
-				value = "color_sunsetstrip",
-				text_id = "menu_color_sunsetstrip"
-			},
-			{
-				value = "color_colorful",
-				text_id = "menu_color_colorful"
-			},
-			{
-				value = "color_madplanet",
-				text_id = "menu_color_madplanet"
-			},
-			{
-				value = "color_plus",
-				text_id = "menu_color_plus"		
-			}
-	}
-	]]--
-	
 	tweak_data.casino = {
 		unlock_level = 0,
 		entrance_level = {

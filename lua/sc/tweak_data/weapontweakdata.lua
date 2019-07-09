@@ -8817,6 +8817,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		--Custom weapons below--
 		if self.ppsh then --Pawcio's PPSH
+			self.ppsh.tactical_reload = 1									
 			self.ppsh.has_description = false									
 			self.ppsh.AMMO_MAX = 180
 			self.ppsh.AMMO_PICKUP = self:_pickup_chance(180, 1)
@@ -8845,6 +8846,39 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 		end
+
+		if self.sar21 then --Pawcio's SAR 21
+			self.sar21.tactical_reload = 1											
+			self.sar21.CLIP_AMMO_MAX = 30		
+			self.sar21.AMMO_MAX = 150
+			self.sar21.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.sar21.auto.fire_rate = 0.0923076923
+			self.sar21.fire_mode_data.fire_rate = 0.0923076923
+			self.sar21.spread.standing = 3
+			self.sar21.spread.crouching = 2
+			self.sar21.spread.steelsight = 1
+			self.sar21.spread.moving_standing = 4
+			self.sar21.spread.moving_crouching = 3
+			self.sar21.spread.moving_steelsight = 2
+			self.sar21.kick.standing = self.new_m4.kick.standing
+			self.sar21.kick.crouching = self.new_m4.kick.standing
+			self.sar21.kick.steelsight = self.new_m4.kick.standing
+			self.sar21.stats = {
+				damage = 32,
+				spread = 17,
+				recoil = 19,
+				spread_moving = 7,
+				zoom = 3,
+				concealment = 20,
+				suppression = 8,
+				alert_size = 8,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.sar21.panic_suppression_chance = 0.0
+		end		
 
 		if self.toz34 then --Pawcio's TOZ 34
 			self.toz34.has_description = false							
@@ -9132,8 +9166,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.heffy_556.panic_suppression_chance = 0.0
 		end							
+		
 
-	if self.heffy_545 then --Killerwolf & Germantaco's AK 74 (attachment stats FUCKED. some dont even apply @ all)
+	if self.heffy_545 then 	
 		self.heffy_545.desc_id = "bm_menu_sc_heffy_545_desc"
 		self.heffy_545.AMMO_MAX = 150
 		self.heffy_545.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -9241,6 +9276,39 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.panic_suppression_chance = 0.0
 	end
 
+	if self.degle then --degle
+		self.degle.has_description = false
+		self.degle.fire_mode_data.fire_rate = 0.2
+		self.degle.single.fire_rate = 0.2
+		self.degle.spread.standing = 3
+		self.degle.spread.crouching = 2
+		self.degle.spread.steelsight = 1
+		self.degle.spread.moving_standing = 4
+		self.degle.spread.moving_crouching = 3
+		self.degle.spread.moving_steelsight = 2
+		self.degle.kick.standing = self.glock_17.kick.standing
+		self.degle.kick.crouching = self.glock_17.kick.standing
+		self.degle.kick.steelsight = self.glock_17.kick.standing
+		self.degle.CLIP_AMMO_MAX = 8
+		self.degle.AMMO_MAX = 40
+		self.degle.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.degle.stats = {
+			damage = 95,
+			spread = 18,
+			recoil = 19,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 25,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.degle.panic_suppression_chance = 0.0
+	end				
+
 	if self.mk18s then --Gambyt's MK18 Specialist
 		self.mk18s.use_data.selection_index = 1
 		self.mk18s.auto.fire_rate = 0.08108108108
@@ -9312,7 +9380,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			damage = 1,
 		}
 		self.obrez.panic_suppression_chance = 0.0
-		end						
+	end						
 		
 		if self.scar_m203 then --Pawcio's SCAR L/M203
 			self.scar_m203.desc_id = "bm_m203_weapon_sc_desc"
@@ -12132,7 +12200,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.volmer.use_data.selection_index = 1			
 			self.volmer.CLIP_AMMO_MAX = 90 --this doesn't make sense mag-wise but whatever
 			self.volmer.AMMO_MAX = 200
-			self.volmer.AMMO_PICKUP = self:_pickup_chance(200, 2)
+			self.volmer.AMMO_PICKUP = self:_pickup_chance(200, 1)
 			self.volmer.fire_mode_data.fire_rate = 0.06315789473
 			self.volmer.auto.fire_rate = 0.06315789473
 			self.volmer.spread.standing = 3
@@ -12338,6 +12406,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end	
 
 	if self.wargoddess then --Mira's MK14 EBR
+		self.wargoddess.tactical_reload = 1		
 		self.wargoddess.CLIP_AMMO_MAX = 20
 		self.wargoddess.has_description = false																				
 		self.wargoddess.fire_mode_data.fire_rate = 0.08275862068
@@ -12381,6 +12450,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end		
 
 	if self.aps then --Pawcio's Stechkin APS
+		self.aps.tactical_reload = 1			
 		self.aps.desc_id = "bm_menu_sc_glock18c_desc"
 		self.aps.AMMO_MAX = 150
 		self.aps.AMMO_PICKUP = self:_pickup_chance(150, 1)

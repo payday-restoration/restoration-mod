@@ -1,9 +1,20 @@
 --if not RestorationTweak then
 restoration.textures = {}
--- Always load
-if not PackageManager:loaded("packages/addhudmisc") then
-	PackageManager:load("packages/addhudmisc")
-end
+
+table.insert(tweak_data.color_grading, 
+	{
+		value = "color_plus",
+		text_id = "menu_color_plus"		
+	}
+)
+
+table.insert(tweak_data.color_grading,
+	{
+		value = "color_force",
+		text_id = "menu_color_force"		
+	}
+)
+
 if restoration.Options:GetValue("HUD/DifficultyMarkers") then	
 tweak_data.hud_icons.risk_swat = {
 		texture = "guis/textures/restoration/hud_difficultymarkers",

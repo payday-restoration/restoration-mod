@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <mod name="Restoration" global_key="restorationnew">
-	<:include src="restorationmod_tweak.xml" />
+	<tweak definition="restorationmod_network_tweak.xml" />
+	<tweak definition="restorationmod_postprocessor_tweak.xml" />
 </mod>

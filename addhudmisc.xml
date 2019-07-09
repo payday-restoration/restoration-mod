@@ -65,5 +65,9 @@
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_burn_add_saw" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/rush_asset_sentrygun" force="false"/>
+	
+	<!-- New Color Gradings -->
+	<texture path="core/textures/cg_plus"/>
+	<texture path="core/textures/cg_force"/>
 			
 </table>

@@ -22,7 +22,6 @@
             <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
             <filter_color_texture file="core/textures/cg_force"/>
         </material>
-    </materials>
         <!-- Color RVD1 -->
         <material name="cg_rvd1">
             <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>

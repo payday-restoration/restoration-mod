@@ -4193,7 +4193,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.usp.kick.steelsight = self.glock_17.kick.standing
 		self.usp.CLIP_AMMO_MAX = 12
 		self.usp.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -5678,7 +5678,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_usp.single = {}
 		self.x_usp.single.fire_rate = 0.1
 		self.x_usp.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -7986,7 +7986,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_tec9.kick.crouching = self.new_m4.kick.standing
 		self.x_tec9.kick.steelsight = self.new_m4.kick.standing
 		self.x_tec9.stats = {
-			damage = 34,
+			damage = 39,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 10,

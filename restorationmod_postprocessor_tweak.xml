@@ -22,6 +22,14 @@
             <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
             <filter_color_texture file="core/textures/cg_force"/>
         </material>
+		<!-- Color E3 Nice -->
+		 <material name="cg_e3nice">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_e3nice"/>
+        </material>
         <!-- Color RVD1 -->
         <material name="cg_rvd1">
             <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
@@ -50,6 +58,16 @@
             <else/>
                 <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_force" scriptable="lut_settings"/>
                 <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_force" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+		 <!-- Color E3 Nice -->
+        <effect name="color_e3nice">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_e3nice" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_e3nice" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_e3nice" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_e3nice" scriptable="lut_settings"/>
             </defined>
         </effect>
 		 <!-- Color RVD1 -->

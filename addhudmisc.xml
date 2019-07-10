@@ -69,5 +69,6 @@
 	<!-- New Color Gradings -->
 	<texture path="core/textures/cg_plus"/>
 	<texture path="core/textures/cg_force"/>
+	<texture path="core/textures/cg_e3nice"/>
 			
 </table>

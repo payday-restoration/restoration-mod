@@ -3347,8 +3347,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_g18c_pts/wpn_fps_pis_g18c_s_stock",
 			stats = {
 				value = 8,
-				recoil = 1,
-				concealment = -1
+				recoil = 4,
+				concealment = -4
 			}
 		}
 		self.parts.wpn_fps_pis_g18c_g_ergo = {
@@ -45049,7 +45049,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		if self.wpn_fps_pis_glawk then --Germantaco's Glock 17 Gen 3  
 			self.parts.wpn_fps_pis_glawk_a1_22lr.pcs = nil			
 			self.parts.wpn_fps_pis_glawk_a2_10mm.pcs = nil
-			self.parts.wpn_fps_pis_glawk_ani_wick.pcs = nil --animations and ironsights don't work. it's best to leave this disable right now.
+			self.parts.wpn_fps_pis_glawk_ani_wick.pcs = nil
 			self.parts.wpn_fps_pis_glawk_a3_357sig.pcs = nil 
 			self.parts.wpn_fps_pis_glawk_a5_45gap.pcs = nil	
 			self.parts.wpn_fps_pis_glawk_a4_45acp.pcs = nil			

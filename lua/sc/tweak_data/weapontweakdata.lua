@@ -3426,8 +3426,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_18c.fire_mode_data.fire_rate = 0.05
 		self.glock_18c.auto.fire_rate = 0.05
 		self.glock_18c.CLIP_AMMO_MAX = 18
-		self.glock_18c.AMMO_MAX = 150
-		self.glock_18c.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.glock_18c.AMMO_MAX = 180
+		self.glock_18c.AMMO_PICKUP = self:_pickup_chance(180, 1)
 		self.glock_18c.spread.standing = 3
 		self.glock_18c.spread.crouching = 2
 		self.glock_18c.spread.steelsight = 1
@@ -3438,9 +3438,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_18c.kick.crouching = self.new_m4.kick.standing
 		self.glock_18c.kick.steelsight = self.new_m4.kick.standing
 		self.glock_18c.stats = {
-			damage = 29,
+			damage = 25,
 			spread = 16,
-			recoil = 21,
+			recoil = 18,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,

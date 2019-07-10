@@ -15,12 +15,12 @@ table.insert(tweak_data.color_grading,
 	}
 )
 
-table.insert(tweak_data.color_grading,
+--[[table.insert(tweak_data.color_grading,
 	{
 		value = "color_rvd1",
 		text_id = "menu_color_rvd1"		
 	}
-)
+)]]--
 
 if restoration.Options:GetValue("HUD/DifficultyMarkers") then	
 tweak_data.hud_icons.risk_swat = {

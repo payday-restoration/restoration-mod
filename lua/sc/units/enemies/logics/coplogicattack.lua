@@ -1,3 +1,16 @@
+local mvec3_set = mvector3.set
+local mvec3_set_z = mvector3.set_z
+local mvec3_sub = mvector3.subtract
+local mvec3_dir = mvector3.direction
+local mvec3_dot = mvector3.dot
+local mvec3_dis = mvector3.distance
+local mvec3_dis_sq = mvector3.distance_sq
+local mvec3_lerp = mvector3.lerp
+local mvec3_norm = mvector3.normalize
+local temp_vec1 = Vector3()
+local temp_vec2 = Vector3()
+local temp_vec3 = Vector3()
+
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
@@ -80,7 +93,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	local spoocavoidancemovementqualify = data.tactics and data.tactics.spoocavoidance and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 2000 and focus_enemy.aimed_at
     	local eliterangedfiremovementqualify = data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1500
     	
-	--reloadingretreat: retreat as fast as possible if the ammo is running dry and the enemy is visible
+        --reloadingretreat: retreat as fast as possible if the ammo is running dry and the enemy is visible
 	local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
 	local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
 	
@@ -393,6 +406,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	return not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") and not my_data.has_old_action and not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos
     end
     
+    local temp_vec4 = Vector3()
+    local temp_vec5 = Vector3()
+    local temp_vec6 = Vector3()
     function CopLogicAttack._update_cover(data)
     	local my_data = data.internal_data
     	local cover_release_dis_sq = 10000
@@ -406,6 +422,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		if find_new then
     			local enemy_tracker = data.attention_obj.nav_tracker
     			local threat_pos = enemy_tracker:field_position()
+			local heister_pos = data.attention_obj.m_pos --the threat
     
     			if data.objective and data.objective.type == "follow" then
     				local near_pos = data.objective.follow_unit:movement():m_pos()
@@ -434,6 +451,40 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     						end
     					end
     				end
+				elseif data.objective and data.objective.type == "follow" and data.tactics and data.tactics.shield_cover and not data.unit:base()._tweak_table == "shield" then
+					local shield_pos = data.objective.follow_unit:movement():m_pos() --the pillar
+					mvector3.direction(temp_vec4, my_pos, shield_pos)
+					mvector3.direction(temp_vec5, my_pos, heister_pos)
+					mvector3.direction(temp_vec6, temp_vec4, temp_vec5)
+					local following_dis = temp_vec6 * 200
+					local near_pos = data.objective.follow_unit:movement():m_pos() + following_dis
+					
+					--unit would take the heister's angle to both the pillar, and the unit, the unit would attempt to line up the pillar and the heister together, since they're following the pillar, they should frequently position themselves behind the pillar, which would keep them in cover, its hacky, but it would work
+					
+					if (not best_cover or not CopLogicAttack._verify_follow_cover(best_cover[1], near_pos, threat_pos, 60, 200)) and not my_data.processing_cover_path and not my_data.charge_path_search_id then
+						local follow_unit_area = managers.groupai:state():get_area_from_nav_seg_id(data.objective.follow_unit:movement():nav_tracker():nav_segment())
+						local found_cover = managers.navigation:find_cover_in_nav_seg_3(follow_unit_area.nav_segs, data.objective.distance and data.objective.distance * 0.9 or nil, near_pos, threat_pos)
+
+						if found_cover then
+							if not follow_unit_area.nav_segs[found_cover[3]:nav_segment()] then
+								debug_pause_unit(data.unit, "cover in wrong area")
+							end
+
+							satisfied = true
+							local better_cover = {
+								found_cover
+							}
+
+							CopLogicAttack._set_best_cover(data, my_data, better_cover)
+
+							local offset_pos, yaw = CopLogicAttack._get_cover_offset_pos(data, better_cover, threat_pos)
+
+							if offset_pos then
+								better_cover[5] = offset_pos
+								better_cover[6] = yaw
+							end
+						end
+					end
     			else
     				local want_to_take_cover = my_data.want_to_take_cover
     				local flank_cover = my_data.flank_cover

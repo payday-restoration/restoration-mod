@@ -6905,6 +6905,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"charge",
 				"provide_coverfire",
 				"provide_support",
+				"shield_cover",
 				"elite_ranged_fire"
 			},
 			FBI_swat_shotgun_flank = {
@@ -6914,6 +6915,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"charge",
 				"provide_coverfire",
 				"provide_support",
+				"shield_cover",
 			    "hitnrun"
 			},
 			FBI_heavy_flank = {
@@ -7018,6 +7020,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"harass",
 				"aggressor",
 				"provide_support",
+				"shield_cover",
 				"elite_ranged_fire"
 			},
 			ELITE_heavy = {
@@ -7035,7 +7038,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
+				"aggressor",
 				"provide_coverfire",
+				"shield_cover",
 				"provide_support"
 			},
 			ELITE_swat_rifle_flank = {
@@ -7046,6 +7051,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support",
 				"elite_ranged_fire",
+				"shield_cover",
 			    "hitnrun"
 			},
 			ELITE_swat_shotgun_flank = {
@@ -7056,6 +7062,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"aggressor",
 				"provide_coverfire",
 				"provide_support",
+				"shield_cover",
 			    "hitnrun"
 			},
 			ELITE_heavy_flank = {

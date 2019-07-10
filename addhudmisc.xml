@@ -54,9 +54,6 @@
 	<movie path="movies/codex/shatter1" force="true"/>
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
-	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
-	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
-	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="false"/>
 	<font path="fonts/font_medium_shadow" force="true"/>
 	<merged_font path="fonts/font_medium_shadow_mf" force="true"/>
 
@@ -69,5 +66,6 @@
 	<!-- New Color Gradings -->
 	<texture path="core/textures/cg_plus"/>
 	<texture path="core/textures/cg_force"/>
+	<texture path="core/textures/cg_e3nice"/>
 			
 </table>

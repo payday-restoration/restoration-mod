@@ -14,13 +14,14 @@ table.insert(tweak_data.color_grading,
 		text_id = "menu_color_force"		
 	}
 )
-
---[[table.insert(tweak_data.color_grading,
+--OVERKILL had this for RVD1 for some reason, but it's just inverted default grading?
+--i guess restore it.  who give a shit, fuck all life
+table.insert(tweak_data.color_grading,
 	{
 		value = "color_rvd1",
 		text_id = "menu_color_rvd1"		
 	}
-)]]--
+)
 
 if restoration.Options:GetValue("HUD/DifficultyMarkers") then	
 tweak_data.hud_icons.risk_swat = {

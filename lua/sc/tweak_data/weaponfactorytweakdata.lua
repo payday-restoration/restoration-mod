@@ -47237,14 +47237,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 		end
 
-		if self.wpn_fps_snp_vss then --Pwacio's VSS
-			self.parts.wpn_fps_upg_vss_mag_20rnd.stats = {
-				extra_ammo = 10,
-				concealment = -1,
-				reload = -2
-			}
-		end
-
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

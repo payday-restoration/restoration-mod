@@ -12678,45 +12678,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.calico.panic_suppression_chance = 0.1
 	end
 
-	if self.vss then --Pawcio's VSS   --this is definitely not going to make it into upstream until the autofire is removed or something
-		self.vss.upgrade_blocks = nil
-		self.vss.tactical_reload = 1		
-		self.vss.has_description = true
-		self.vss.desc_id = "bm_ap_weapon_sc_desc"
-		self.vss.AMMO_MAX = 40
-		self.vss.AMMO_PICKUP = self:_pickup_chance(40, 2)
-		self.vss.FIRE_MODE = "single"
-		self.vss.spread.standing = 3
-		self.vss.spread.crouching = 2
-		self.vss.spread.steelsight = 1
-		self.vss.spread.moving_standing = 4
-		self.vss.spread.moving_crouching = 3
-		self.vss.spread.moving_steelsight = 2
-		self.vss.kick.standing = self.huntsman.kick.standing
-		self.vss.kick.crouching = self.huntsman.kick.standing
-		self.vss.kick.steelsight = self.huntsman.kick.standing
-		self.vss.can_shoot_through_enemy = true
-		self.vss.can_shoot_through_shield = true
-		self.vss.can_shoot_through_wall = true
-		self.vss.stats = {
-			damage = 150,
-			spread = 17,
-			recoil = 18,
-			spread_moving = 24,
-			zoom = 1,
-			concealment = 20,
-			suppression = 17,
-			alert_size = 17,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 9,
-			reload = 11
-		}
-		self.vss.armor_piercing_chance = 1
-		self.vss.stats_modifiers = {damage = 1}
-		self.vss.panic_suppression_chance = 0.0
-	end
-
 	if self.derringer then --Pwacio's Derringer
 		self.derringer.AMMO_MAX = 30
 		self.derringer.AMMO_PICKUP = self:_pickup_chance(30, 1)

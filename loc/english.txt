@@ -351,6 +351,6 @@
 	
 	"look_dad" : "no_errors",
 	
-	"menu_color_plus" : "Color Plus",
-	"menu_color_force" : "Color Force"
+	"menu_color_plus" : "E3 PAYDAY+",
+	"menu_color_force" : "E3 BHD"
 }

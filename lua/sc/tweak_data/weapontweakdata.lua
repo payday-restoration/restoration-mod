@@ -12626,8 +12626,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.k1a7.kick.steelsight = self.new_m4.kick.standing
 		self.k1a7.stats = {
 			damage = 35,
-			spread = 13,
-			recoil = 16,
+			spread = 16,
+			recoil = 20,
 			spread_moving = 14,
 			zoom = 1,
 			concealment = 24,
@@ -12667,7 +12667,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 13,
 			spread_moving = 15,
 			zoom = 1,
-			concealment = 22,
+			concealment = 25,
 			suppression = 10,
 			alert_size = 10,
 			extra_ammo = 101,
@@ -12693,9 +12693,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.derringer.kick.steelsight = self.huntsman.kick.standing
 		self.derringer.stats = {
 			damage = 150,
-			spread = 20,
+			spread = 19,
 			recoil = 16,
-			spread_moving = 9,
+			spread_moving = 10,
 			zoom = 5,
 			concealment = 30,
 			suppression = 4,

@@ -1,0 +1,233 @@
+<table>
+	<unit>
+		<!--VAR SAW UNLOCKING-->
+		<variables>
+			<var_unlocked value="0"/>
+		</variables>
+		
+		<filter name="'filter_unlock_security'">
+			<check value="vars.var_unlocked == 4"/>
+		</filter>
+		
+		<!--VAR LOOT AMOUNT-->
+		<variables>
+			<var_lootables value="0"/>
+		</variables>
+		
+		<filter name="'filter_lootable_none'">
+			<check value="vars.var_lootables == 0"/>
+		</filter>
+		<filter name="'filter_lootable_1'">
+			<check value="vars.var_lootables > 0"/>
+		</filter>
+		<filter name="'filter_lootable_2'">
+			<check value="vars.var_lootables > 1"/>
+		</filter>
+		<filter name="'filter_lootable_3'">
+			<check value="vars.var_lootables > 2"/>
+		</filter>
+		<filter name="'filter_lootable_4'">
+			<check value="vars.var_lootables > 3"/>
+		</filter>
+
+		<!--SKINS-->
+		<sequence editable_state="true" name=" 'harvest' " triggable="true">
+			<material_config name=" 'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing' "/>
+		</sequence>
+		<sequence editable_state="true" name=" 'capitol' " triggable="true">
+			<material_config name=" 'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_v2' "/>
+		</sequence>
+		<sequence editable_state="true" name=" 'generic' " triggable="true">
+			<material_config name=" 'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_v3' "/>
+		</sequence>
+		
+		
+		<!--SET LOOT AMOUNT-->
+		<sequence editable_state="true" name="'set_lootables_random'" startup="true" triggable="true">
+			<run_sequence name=" 'set_lootables_'..pick('1','2','2','3','3','4' )"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'set_lootables_0' " triggable="true">
+			<set_variables var_lootables="0"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'set_lootables_1' " triggable="true">
+			<set_variables var_lootables="1"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'set_lootables_2' " triggable="true">
+			<set_variables var_lootables="2"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'set_lootables_3' " triggable="true">
+			<set_variables var_lootables="3"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'set_lootables_4' " triggable="true">
+			<set_variables var_lootables="4"/>
+		</sequence>
+		
+		<!--ENABLE/DISABLE ATM-->
+		<sequence editable_state="true" name=" 'activate_door' " triggable="true">
+			<function extension="'base'" function="'activate'"/>
+			<object enabled="true" filter="'filter_lootable_1'" name="'g_money_box_1'"/>
+			<object enabled="true" filter="'filter_lootable_2'" name="'g_money_box_2'"/>
+			<object enabled="true" filter="'filter_lootable_3'" name="'g_money_box_3'"/>
+			<object enabled="true" filter="'filter_lootable_4'" name="'g_money_box_4'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name=" 'deactivate_door' " triggable="true">
+			<function extension="'base'" function="'deactivate'"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'hide_prop_loot' " triggable="true">
+			<object enabled="false" name="'g_money_box_1'"/>
+			<object enabled="false" name="'g_money_box_2'"/>
+			<object enabled="false" name="'g_money_box_3'"/>
+			<object enabled="false" name="'g_money_box_4'"/>
+		</sequence>
+		
+		<!--OPENED-->
+		<sequence name="'open_door'" triggable="true">
+			<sound action="'play'" event="'atm_open'" object="'anim_upper_door'"/>
+			<animation_group enabled="true" end_time="70/30" name="'door'" time="0/30"/>
+			<animation_group enabled="true" end_time="70/30" name="'upper_door'" time="0/30"/>
+			<body enabled="true" name="'security_br'"/>
+			<body enabled="true" name="'security_bl'"/>
+			<body enabled="true" name="'security_ur'"/>
+			<body enabled="true" name="'security_ul'"/>
+			<body enabled="false" name="'first_lock'"/>
+			<graphic_group name="'sawicongroup'" visibility="false"/>
+			<graphic_group name="'iconbr'" visibility="true"/>
+			<graphic_group name="'iconbl'" visibility="true"/>
+			<graphic_group name="'iconur'" visibility="true"/>
+			<graphic_group name="'iconul'" visibility="true"/>
+			<run_sequence name="'deactivate_door'"/>
+		</sequence>
+		<sequence name="'open_door_forced'" triggable="true">
+			<sound action="'play'" event="'atm_open'" object="'anim_upper_door'"/>
+			<animation_group enabled="true" end_time="70/30" name="'door'" time="0/30"/>
+			<animation_group enabled="true" end_time="20/30" name="'upper_door'" time="0/30"/>
+			<body enabled="true" name="'security_br'"/>
+			<body enabled="true" name="'security_bl'"/>
+			<body enabled="true" name="'security_ur'"/>
+			<body enabled="true" name="'security_ul'"/>
+			<body enabled="false" name="'first_lock'"/>
+			<graphic_group name="'sawicongroup'" visibility="false"/>
+			<graphic_group name="'iconbr'" visibility="true"/>
+			<graphic_group name="'iconbl'" visibility="true"/>
+			<graphic_group name="'iconur'" visibility="true"/>
+			<graphic_group name="'iconul'" visibility="true"/>
+			<run_sequence name="'deactivate_door'"/>
+		</sequence>
+		
+		<!--SECURITY LOCKS-->
+		<body name="'first_lock'">
+			<endurance lock="15">
+				<run_sequence name="'open_door_forced'"/>
+			</endurance>
+		</body>
+		
+		<!--BOT RIGHT-->
+		<body name="'security_br'">
+			<endurance lock="5">
+				<run_sequence name="'unlock_security_br'"/>
+			</endurance>
+		</body>
+		<sequence name="'unlock_security_br'">
+			<set_variables var_unlocked="vars.var_unlocked + 1"/>
+			<object enabled="false" name="'g_security_br'"/>
+			<object enabled="true" name="'g_security_br_broken'"/>
+			<body enabled="false" name="'security_br'"/>
+			<run_sequence filter="'filter_unlock_security'" name="'security_door_fall'"/>
+			<graphic_group name="'iconbr'" visibility="false"/>
+		</sequence>
+		
+		<!--BOT LEFT-->
+		<body name="'security_bl'">
+			<endurance lock="5">
+				<run_sequence name="'unlock_security_bl'"/>
+			</endurance>
+		</body>
+		<sequence name="'unlock_security_bl'">
+			<set_variables var_unlocked="vars.var_unlocked + 1"/>
+			<object enabled="false" name="'g_security_bl'"/>
+			<object enabled="true" name="'g_security_bl_broken'"/>
+			<body enabled="false" name="'security_bl'"/>
+			<run_sequence filter="'filter_unlock_security'" name="'security_door_fall'"/>
+			<graphic_group name="'iconbl'" visibility="false"/>
+		</sequence>
+		
+		<!--TOP RIGHT-->
+		<body name="'security_ur'">
+			<endurance lock="5">
+				<run_sequence name="'unlock_security_ur'"/>
+			</endurance>
+		</body>
+		<sequence name="'unlock_security_ur'">
+			<set_variables var_unlocked="vars.var_unlocked + 1"/>
+			<object enabled="false" name="'g_security_ur'"/>
+			<object enabled="true" name="'g_security_ur_broken'"/>
+			<body enabled="false" name="'security_ur'"/>
+			<run_sequence filter="'filter_unlock_security'" name="'security_door_fall'"/>
+			<graphic_group name="'iconur'" visibility="false"/>
+		</sequence>
+		
+		<!--TOP LEFT-->		
+		<body name="'security_ul'">
+			<endurance lock="5">
+				<run_sequence name="'unlock_security_ul'"/>
+			</endurance>
+		</body>
+		<sequence name="'unlock_security_ul'">
+			<set_variables var_unlocked="vars.var_unlocked + 1"/>
+			<object enabled="false" name="'g_security_ul'"/>
+			<object enabled="true" name="'g_security_ul_broken'"/>
+			<body enabled="false" name="'security_ul'"/>
+			<run_sequence filter="'filter_unlock_security'" name="'security_door_fall'"/>
+			<graphic_group name="'iconul'" visibility="false"/>
+		</sequence>
+		
+		
+		<!--UNLOCKED SECURITY (opened with ECM or finally Sawed)-->
+		<sequence name="'security_door_fall'" once="true">
+			<body enabled="true" name="'security_door'"/>
+			<physic_effect name="'physic_effects/push_sphere'" param1="30" param2="30" target="dest_unit:get_object( Idstring('a_security') )"/>
+			<object enabled="false" name="'g_security_ul_broken'"/>
+			<object enabled="false" name="'g_security_ur_broken'"/>
+			<object enabled="false" name="'g_security_bl_broken'"/>
+			<object enabled="false" name="'g_security_br_broken'"/>
+			<object enabled="false" name="'g_security_ul'"/>
+			<object enabled="false" name="'g_security_ur'"/>
+			<object enabled="false" name="'g_security_bl'"/>
+			<object enabled="false" name="'g_security_br'"/>
+			<graphic_group name="'sawicongroup'" visibility="false"/>
+			<run_sequence name="'spawn_loot_items'"/>
+		</sequence>
+		
+		
+		<sequence name="'spawn_loot_items'" once="true">
+			<spawn_unit filter="'filter_lootable_1'" name="'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_1'" position="object_pos('rp_atm_standing')" rotation="object_rot('rp_atm_standing')"/>
+			<spawn_unit filter="'filter_lootable_2'" name="'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_2'" position="object_pos('rp_atm_standing')" rotation="object_rot('rp_atm_standing')"/>
+			<spawn_unit filter="'filter_lootable_3'" name="'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_3'" position="object_pos('rp_atm_standing')" rotation="object_rot('rp_atm_standing')"/>
+			<spawn_unit filter="'filter_lootable_4'" name="'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_4'" position="object_pos('rp_atm_standing')" rotation="object_rot('rp_atm_standing')"/>
+			<run_sequence name="'hide_prop_loot'"/>
+		</sequence>
+		
+		<!--ECM UNLOCKED-->
+		<sequence name=" 'open_door_ecm' ">
+			<run_sequence name="'open_door'"/>
+			<body enabled="false" name="'security_br'"/>
+			<body enabled="false" name="'security_bl'"/>
+			<body enabled="false" name="'security_ur'"/>
+			<body enabled="false" name="'security_ul'"/>
+			<run_sequence name="'unlock_security_br'"/>
+			<run_sequence name="'unlock_security_bl'"/>
+			<run_sequence name="'unlock_security_ur'"/>
+			<run_sequence name="'unlock_security_ul'"/>
+			<run_sequence name="'security_door_fall'" start_time="2"/>
+			<object enabled="false" name="'g_security_door'"/>
+		</sequence>
+		
+		<!--MISC-->
+		<sequence name=" 'door_opened' "/>
+		<sequence name=" 'door_closed' "/>
+		<sequence name=" 'ecm_placed' "/>
+		<sequence name=" 'all_ecm_placed' "/>
+		<sequence name=" 'ecm_completed' "/>
+	</unit>
+</table>

@@ -10,6 +10,10 @@
 	
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="false"/>
 	
+	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="false"/>
+	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="false"/>
+	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="false"/>
+	
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>

@@ -422,6 +422,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		if find_new then
     			local enemy_tracker = data.attention_obj.nav_tracker
     			local threat_pos = enemy_tracker:field_position()
+			local heister_pos = data.attention_obj.m_pos --the threat
     
     			if data.objective and data.objective.type == "follow" then
     				local near_pos = data.objective.follow_unit:movement():m_pos()

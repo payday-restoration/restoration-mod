@@ -9225,9 +9225,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_sl",
 			unit = "units/payday2/weapons/wpn_fps_pis_b92fs_pts/wpn_fps_pis_beretta_sl_brigadier",
 			stats = {
-				value = 1,
-				damage = 1,
-				concealment = -1
+				value = 1
 			},
 			animations = {
 				reload = "reload",

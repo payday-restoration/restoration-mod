@@ -4064,12 +4064,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b92fs.kick.crouching = self.glock_17.kick.standing
 		self.b92fs.kick.steelsight = self.glock_17.kick.standing
 		self.b92fs.stats = {
-			damage = 28,
+			damage = 29,
 			spread = 16,
 			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 29,
+			concealment = 28,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,

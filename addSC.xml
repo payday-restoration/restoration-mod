@@ -14,6 +14,43 @@
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
 	
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" unload="true"/>
+		<sequence_manager	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" unload="true"/>
+		<cooked_physics		force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" unload="true"/>
+		<material_config	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" unload="true"/>
+		<material_config	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_v2" unload="true"/>
+		<material_config	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_v3" unload="true"/>
+		
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn" unload="true"/>
+		<sequence_manager	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn" unload="true"/>
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_1" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_1" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_1" unload="true"/>
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_2" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_2" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_2" unload="true"/>
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_3" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_3" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_3" unload="true"/>
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_4" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_4" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_4" unload="true"/>
+		
+		<unit				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
+		<object				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
+		<model				force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
+		<cooked_physics		force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
+		<sequence_manager	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
+		<material_config	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
+		
+		<physic_effect		force="true" path="physic_effects/push_sphere" unload="true"/>
+		<bnk				force="true" path="soundbanks/regular_sfx" unload="true"/>
+
+	
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>

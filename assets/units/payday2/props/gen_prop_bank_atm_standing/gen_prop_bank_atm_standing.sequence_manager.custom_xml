@@ -65,6 +65,7 @@
 		<!--ENABLE/DISABLE ATM-->
 		<sequence editable_state="true" name=" 'activate_door' " triggable="true">
 			<function extension="'base'" function="'activate'"/>
+			<interaction enabled="true"/>
 			<object enabled="true" filter="'filter_lootable_1'" name="'g_money_box_1'"/>
 			<object enabled="true" filter="'filter_lootable_2'" name="'g_money_box_2'"/>
 			<object enabled="true" filter="'filter_lootable_3'" name="'g_money_box_3'"/>
@@ -73,6 +74,7 @@
 		
 		<sequence editable_state="true" name=" 'deactivate_door' " triggable="true">
 			<function extension="'base'" function="'deactivate'"/>
+			<interaction enabled="false"/>
 		</sequence>
 		<sequence editable_state="true" name=" 'hide_prop_loot' " triggable="true">
 			<object enabled="false" name="'g_money_box_1'"/>
@@ -81,7 +83,15 @@
 			<object enabled="false" name="'g_money_box_4'"/>
 		</sequence>
 		
+		<!--INTERACT w/ KEYS-->
+		<sequence name="'interact'" triggable="true">
+			<run_sequence name=" 'open_'..pick('door_ecm','fail','fail','fail','fail' )"/>
+		</sequence>
+		
 		<!--OPENED-->
+		<sequence name="'open_fail'" triggable="true">
+			<interaction enabled="true" start_time="15/30"/>
+		</sequence>
 		<sequence name="'open_door'" triggable="true">
 			<sound action="'play'" event="'atm_open'" object="'anim_upper_door'"/>
 			<animation_group enabled="true" end_time="70/30" name="'door'" time="0/30"/>
@@ -200,6 +210,7 @@
 		</sequence>
 		
 		
+		<!--SPAWN LOOT ONCE OPENED-->
 		<sequence name="'spawn_loot_items'" once="true">
 			<spawn_unit filter="'filter_lootable_1'" name="'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_1'" position="object_pos('rp_atm_standing')" rotation="object_rot('rp_atm_standing')"/>
 			<spawn_unit filter="'filter_lootable_2'" name="'units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_2'" position="object_pos('rp_atm_standing')" rotation="object_rot('rp_atm_standing')"/>

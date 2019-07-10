@@ -157,7 +157,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
 				spread = 1,
 				spread_moving = -3,
 				concealment = -3
@@ -184,7 +183,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				suppression = 11,
 				alert_size = 11,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			},
@@ -210,7 +208,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 3,
 				suppression = 10,
 				alert_size = 10,
-				damage = 5,
 				concealment = 1
 			},
 			perks = {"silencer"},
@@ -235,7 +232,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
 				spread = 1,
 				concealment = -3
 			},
@@ -261,7 +257,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				suppression = 11,
 				alert_size = 11,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			},
@@ -287,7 +282,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 3,
 				suppression = 10,
 				alert_size = 10,
-				damage = 5,
 				concealment = 1
 			},
 			perks = {"silencer"},
@@ -312,7 +306,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 7,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			},
@@ -350,7 +343,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				suppression = -2,
 				alert_size = -2,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			}
@@ -369,7 +361,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_ns_ass_smg_stubby/wpn_fps_upg_ns_ass_smg_stubby",
 			stats = {
 				value = 4,
-				damage = 5,
 				concealment = 1
 			}
 		}
@@ -387,7 +378,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_ns_ass_smg_tank/wpn_fps_upg_ns_ass_smg_tank",
 			stats = {
 				value = 5,
-				damage = 5,
 				spread = 1,
 				concealment = -3
 			}
@@ -408,7 +398,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				suppression = -2,
 				alert_size = -2,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			}
@@ -2146,7 +2135,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_barrel_extentions/wpn_fps_upg_ass_ns_jprifles",
 			stats = {
 				value = 5,
-				damage = 5,
 				recoil = -1,
 				spread = -1,
 				concealment = 2
@@ -2165,7 +2153,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				suppression = -3,
 				alert_size = -3,
-				damage = 5,
 				spread = -1,
 				recoil = 2,
 				concealment = -1
@@ -2182,7 +2169,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_barrel_extentions/wpn_fps_upg_ass_ns_surefire",
 			stats = {
 				value = 5,
-				damage = 5,
 				recoil = -1,
 				spread = 2,
 				concealment = -4
@@ -2199,7 +2185,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_barrel_extentions/wpn_fps_upg_pis_ns_flash",
 			stats = {
 				value = 4,
-				damage = 5,
 				recoil = -1,
 				concealment = 2,
 				spread = -1
@@ -2217,7 +2202,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				suppression = -2,
-				damage = 5,
 				recoil = 2,
 				spread = -1,
 				concealment = 0
@@ -2248,7 +2232,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 2,
 				recoil = -1,
-				damage = 5,
 				concealment = -4
 			},
 			perks = {"silencer"},
@@ -2686,7 +2669,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long",
 			stats = {
 				value = 4,
-				damage = 5,
+				damage = 5,				
 				spread = 1,
 				concealment = -2
 			}
@@ -2704,7 +2687,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_short",
 			stats = {
 				value = 4,
-				damage = 5,
+				damage = 5,								
 				spread = -1,
 				concealment = 2
 			}
@@ -3291,7 +3274,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				alert_size = -2,
 				suppression = -2,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			}
@@ -3306,7 +3288,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				spread = 1,
-				damage = 5,
 				concealment = -3
 			}
 		}
@@ -6872,7 +6853,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_co_long",
 			stats = {
 				value = 6,
-				damage = 5,
 				spread = 2,
 				concealment = -5
 			}
@@ -6890,7 +6870,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_co_short",
 			stats = {
 				value = 7,
-				damage = 5,
 				spread = 1,
 				recoil = 1,
 				alert_size = -2,
@@ -7273,7 +7252,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_fg_m5k",
 			stats = {
 				value = 4,
-				damage = 2,
+				damage = 7,
 				spread_moving = 3,
 				recoil = -2,
 				concealment = 2
@@ -7301,7 +7280,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = 0,
 				recoil = 1,
 				concealment = -2,
-				damage = 2
+				damage = 7
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_mp5a5"
@@ -7645,7 +7624,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_co_1",
 			stats = {
 				value = 5,
-				damage = 5,
 				spread_moving = -1,
 				suppression = -2,
 				alert_size = -2,
@@ -7667,7 +7645,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_co_2",
 			stats = {
 				value = 2,
-				damage = 5,
 				spread_moving = 1,
 				spread = 1,
 				concealment = -3
@@ -9119,7 +9096,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_b92fs_pts/wpn_fps_pis_beretta_co_co1",
 			stats = {
 				value = 4,
-				damage = 5,
 				recoil = 1,
 				suppression = -2,
 				alert_size = -2,
@@ -9141,7 +9117,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_b92fs_pts/wpn_fps_pis_beretta_co_co2",
 			stats = {
 				value = 3,
-				damage = 5,
 				spread = 1,
 				spread_moving = 2,
 				concealment = -3
@@ -9845,8 +9820,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				recoil = 1,
-				concealment = 2,
-				damage = 5
+				concealment = 2
 			},
 			animations = {
 				reload = "reload",
@@ -9871,8 +9845,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				recoil = 1,
 				spread = 1,
-				concealment = -2,
-				damage = 5
+				concealment = -2
 			},
 			animations = {
 				reload = "reload",
@@ -9924,7 +9897,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_usp_pts/wpn_fps_pis_usp_co_comp_1",
 			stats = {
 				value = 4,
-				damage = 5,
 				spread = 1,
 				concealment = -3
 			},
@@ -9945,7 +9917,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				recoil = 1,
-				damage = 5,
 				suppression = -2,
 				alert_size = -2,
 				concealment = -2
@@ -11334,7 +11305,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 7,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				recoil = -1,
 				spread = 2,
 				spread_moving = -2,
@@ -11949,7 +11919,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_pis_p226_pts/wpn_fps_pis_p226_co_comp_1",
 			stats = {
 				value = 4,
-				damage = 5,
 				spread = 1,
 				concealment = -3
 			},
@@ -11970,7 +11939,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				recoil = 1,
-				damage = 5,
 				alert_size = -2,
 				suppression = -2,
 				concealment = -2
@@ -13802,7 +13770,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				recoil = 1,
 				spread_moving = 1
 			},
@@ -15892,7 +15859,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				spread = 2,
 				recoil = -1,
 				spread_moving = 1,
@@ -16433,7 +16399,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				spread = 2,
 				recoil = -1,
 				spread_moving = 1,
@@ -17511,8 +17476,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 10,
 				spread = -1,
 				recoil = 2,
-				concealment = -1,
-				damage = 5
+				concealment = -1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -17537,8 +17501,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 7,
 				suppression = 10,
 				alert_size = 10,
-				concealment = 1,
-				damage = 5
+				concealment = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -17562,8 +17525,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 7,
 				concealment = -1,
 				spread = -1,
-				recoil = 2,
-				damage = 5
+				recoil = 2
 			},
 			dlc = "pd2_clan"
 		}
@@ -17583,8 +17545,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				spread = 2,
 				recoil = -1,
-				concealment = -4,
-				damage = 5
+				concealment = -4
 			},
 			dlc = "pd2_clan"
 		}
@@ -18575,8 +18536,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				recoil = 2,
 				suppression = 13,
-				alert_size = 13,
-				damage = 5
+				alert_size = 13
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -18759,7 +18719,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
-				damage = 5,
 				alert_size = -2,
 				suppression = -2,
 				concealment = -2
@@ -20347,8 +20306,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				concealment = -1,
 				spread = 2,
-				recoil = -1,
-				damage = 5
+				recoil = -1
 			},
 			texture_bundle_folder = "character_pack_dragan",
 			dlc = "character_pack_dragan",
@@ -21465,8 +21423,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				concealment = -4,
 				spread = 2,
-				recoil = -1,
-				damage = 5
+				recoil = -1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -22451,7 +22408,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_hotline2/weapons/wpn_fps_smg_cobray_pts/wpn_fps_smg_cobray_ns_barrelextension",
 			stats = {
 				value = 1,
-				damage = 5,
 				recoil = 1,
 				concealment = -2,
 				alert_size = -2,
@@ -22480,8 +22436,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				concealment = -4,
 				spread = 2,
-				recoil = -1,
-				damage = 5
+				recoil = -1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -22938,7 +22893,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				spread_moving = -2,
 				spread = 2,
 				recoil = -1,
@@ -23207,7 +23161,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = -4,
 				recoil = 3,
 				spread = -2,
-				damage = 5,
 				concealment = -2
 			},
 			texture_bundle_folder = "butcher_pack_mods",
@@ -23225,7 +23178,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				suppression = 10,
 				alert_size = 10,
-				damage = 5,
 				spread = -1,
 				recoil = -1,
 				concealment = 2
@@ -23249,7 +23201,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				spread = 2,
 				recoil = -1,
 				concealment = -4
@@ -23273,7 +23224,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 7,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				spread = -2,
 				recoil = 3,
 				concealment = -4
@@ -23987,7 +23937,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppression = 13,
 				alert_size = 13,
 				spread = -1,
-				damage = 5,
 				spread_moving = 1,
 				concealment = -3
 			},
@@ -24949,7 +24898,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_b_proto",
 			stats = {
 				value = 1,
-				damage = -5,
 				concealment = 2,
 				suppression = -10,
 				alert_size = -10
@@ -25314,7 +25262,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
 				spread_moving = 1,
 				concealment = -1
 			},
@@ -25839,8 +25786,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = 3,
 				recoil = -2,
-				concealment = -5,
-				damage = 5
+				concealment = -5
 			},
 			texture_bundle_folder = "turtles",
 			dlc = "turtles"
@@ -25873,8 +25819,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				recoil = -1,
 				spread = 2,
-				concealment = -4,
-				damage = 5
+				concealment = -4
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -26247,7 +26192,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 3,
 				concealment = -3,
-				damage = 5,
 				spread = 1,
 				suppression = 11,
 				alert_size = 11
@@ -26276,8 +26220,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -2,
 				suppression = 10,
 				alert_size = 10,
-				recoil = 1,
-				damage = 5
+				recoil = 1
 			},
 			texture_bundle_folder = "dragon",
 			dlc = "dragon",
@@ -26301,7 +26244,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 8,
 				concealment = -4,
-				damage = 5,
 				spread = 2,
 				recoil = -1,
 				suppression = 13,
@@ -26993,7 +26935,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "rip",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_rip/weapons/wpn_fps_pis_sparrow_pts/wpn_fps_pis_sparrow_b_comp",
-			stats = {value = 1, spread = 2, recoil = -1, concealment = -3, damage = 5},
+			stats = {
+				value = 1,
+				spread = 2, 
+				recoil = -1, 
+				concealment = -3
+				},
 			dlc = "berry",
 			forbids = {
 				"wpn_fps_upg_ns_pis_large",
@@ -27962,7 +27909,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 5,
 				spread = 2,
 				recoil = -1,
 				spread_moving = -2,
@@ -28638,7 +28584,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				suppression = -2,
 				alert_size = -2,
-				damage = 5,
 				recoil = 1,
 				concealment = -2
 			},
@@ -29286,7 +29231,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_ns_wick",
 			stats = {
 				value = 1,
-				damage = 5,
 				spread = 3,
 				recoil = -2,
 				concealment = -5
@@ -29496,8 +29440,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 2,
 				recoil = -1,
-				concealment = -4,
-				damage = 5
+				concealment = -4
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -29959,7 +29902,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppression = 13,
 				alert_size = 13,
 				spread = -1,
-				damage = 5,
 				recoil = 1,
 				concealment = -1
 			},
@@ -30675,7 +30617,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_smg_mp5_fg_flash/wpn_fps_smg_mp5_fg_flash",
 			stats = {
 				value = 1,
-				damage = 2,
+				damage = 7,
 				spread = 1,
 				concealment = -3
 			},
@@ -30721,8 +30663,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_multi = {2.25, 0.5},
 				concealment = -3,
 				spread = -2,
-				recoil = 3,
-				damage = 5
+				recoil = 3
 			},
 			custom_stats = {
 				damage_near_mul = -200,
@@ -40265,7 +40206,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	if self.wpn_fps_shot_m1912 then --Pawcio's Winchester M1912
 		self.parts.wpn_fps_upg_m1912_ns_cutts.stats = {
 				value = 1,
-				damage = 5,				
 				spread_moving = -1,
 				spread = 1,
 				concealment = -2
@@ -40313,7 +40253,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread_multi = {2.25, 0.5},
 				concealment = -3,
-				damage = 5,								
 				spread = -2,
 				recoil = 3
 		}		
@@ -40551,8 +40490,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					alert_size = 13,
 					concealment = -4,
 					spread = 2,
-					recoil = -1,
-					damage = 5
+					recoil = -1
 				}
 			end
 
@@ -40718,7 +40656,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 5,
 					suppression = 12,
 					alert_size = 12,
-					damage = 5,
 					spread = 1,
 					concealment = -3
 				}	
@@ -40738,7 +40675,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 7,
 						suppression = 12,
 						alert_size = 12,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 					}			
@@ -40857,7 +40793,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_shot_stf12_choke.stats = {
 						value = 5,
 						suppression = -2,
-						damage = 5,
 						recoil = 2,
 						spread = -1
 					}			
@@ -41181,7 +41116,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self.wpn_fps_ass_l1a1 then 	--Gambyt's L1A1		
 			self.parts.wpn_fps_ass_l1a1_ns_fal.stats = {
 					value = 5,
-					damage = 5,
 					recoil = -1,
 					spread = 2,
 					concealment = -4
@@ -41223,7 +41157,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						suppression = 11,
 						alert_size = 11,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 					}
@@ -41327,19 +41260,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_scarl_barrel_long.stats = { 
 						value = 4,
 						spread = 1,
-						damage = 5,						
 						concealment = -2
 				}			
 				self.parts.wpn_fps_upg_scarl_barrel_cqc.stats = { 
 						value = 3,
 						spread = -1,
-						damage = 5,												
 						concealment = 2
 				}			
 				self.parts.wpn_fps_upg_scarl_barrel_cqc_mod.stats = { 
 						value = 4,
 						spread = -1,
-						damage = 5,						
 						recoil = -1,						
 						concealment = 2
 				}
@@ -41390,7 +41320,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_scar_m203_barrel_long.stats = { 
 						value = 4,
 						spread = 1,
-						damage = 5,												
 						concealment = -2
 				}			
 				self.parts.wpn_fps_upg_scar_m203_mag_pull_assist.stats = { 
@@ -41416,7 +41345,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						suppression = 10,
 						alert_size = 10,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 				}			
@@ -41424,7 +41352,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 5,
 						suppression = 12,
 						alert_size = 12,
-						damage = 5,
 						spread = 1,
 						concealment = -3
 				}						
@@ -41552,7 +41479,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_hk416_mag_pull_assist.has_description = false																																													
 				self.parts.wpn_fps_upg_hk416_barrel_short.stats = {
 						value = 4,
-						damage = 5,
 						spread = -1,
 						concealment = 2
 				}	
@@ -41582,7 +41508,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}																																																								
 				self.parts.wpn_fps_upg_hk416_barrel_long.stats = {
 						value = 4,
-						damage = 5,
 						spread = 1,
 						concealment = -2
 				}					
@@ -41707,7 +41632,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}	
 				self.parts.wpn_fps_ass_vsk94_sil.stats = {
 						value = 1,
-						damage = 5,
 						spread = 1,
 						alert_size = 1,
 						concealment = -1
@@ -41770,8 +41694,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						alert_size = 13,
 						concealment = -4,
 						spread = -2,
-						recoil = 1,
-						damage = 5
+						recoil = 1
 					}		
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.perks = {"silencer"}
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.sound_switch = {suppressed = "suppressed_c"}					
@@ -42006,7 +41929,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = -1,
 						spread = -1,
 						recoil = 2,
-						damage = 5
 					}									
 			end
 				
@@ -42019,7 +41941,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					})															
 				self.parts.wpn_fps_f2000_uupg_barrel_long.stats = {
 						value = 4,
-						damage = 5,						
 						spread = 1,
 						concealment = -2
 						}	
@@ -42096,13 +42017,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						suppression = 11,
 						alert_size = 11,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 						}												
 				self.parts.wpn_fps_upg_skspug_ns_dtk1.stats = {
 						value = 5,
-						damage = 5,
 						recoil = -1,
 						spread = 2,
 						concealment = -1
@@ -42111,7 +42030,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 5,
 						suppression = -3,
 						alert_size = -3,
-						damage = 5,
 						spread = -1,
 						recoil = 2,
 						concealment = -1
@@ -42134,7 +42052,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						suppression = 11,
 						alert_size = 11,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 						}	
@@ -42152,12 +42069,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						alert_size = 13,
 						concealment = -4,
 						spread = 2,
-						recoil = -1,
-						damage = 5
+						recoil = -1
 						}	
 				self.parts.wpn_fps_upg_sks_dtk1.stats = {
 						value = 5,
-						damage = 5,
 						recoil = -1,
 						spread = 2,
 						concealment = -4
@@ -42166,7 +42081,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 5,
 						suppression = -3,
 						alert_size = -3,
-						damage = 5,
 						spread = -1,
 						recoil = 2,
 						concealment = -1
@@ -42359,14 +42273,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self.wpn_fps_ass_obr5 then -- Pawcio's Larue OBR 5.56
 			self.parts.wpn_fps_upg_obr5_ns_sf_flash_hider.stats = {
 						value = 5,
-						damage = 5,
 						recoil = -1,
 						spread = 2,
 						concealment = -4
 					}			
 				self.parts.wpn_fps_upg_obr5_ns_sf_mb556ar.stats = {
 						value = 5,
-						damage = 5,
 						recoil = -1,
 						spread = -1,
 						concealment = 2
@@ -42508,14 +42420,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 3,
 						suppression = 10,
 						alert_size = 10,
-						damage = 5,
 						concealment = 1
 					}	
 				self.parts.wpn_fps_upg_obr5_supp_m4_2000.stats = {
 						value = 2,
 						suppression = 11,
 						alert_size = 11,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 					}						
@@ -42527,7 +42437,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread_moving = 1,
 						suppression = 12,
 						alert_size = 12,
-						damage = 5,
 						concealment = 1
 					}
 				self.parts.wpn_fps_upg_mpx_grip_polymer.stats = {
@@ -42629,7 +42538,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 5,
 					suppression = -2,
 					alert_size = -2,
-					damage = 5,
 					recoil = 1,
 					concealment = -2
 				}		
@@ -42776,7 +42684,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						suppression = 11,
 						alert_size = 11,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 					}	
@@ -42803,7 +42710,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_aek971_mag_magpul.has_description = false														
 				self.parts.wpn_fps_upg_aek971_dtk1.stats = {
 						value = 5,
-						damage = 5,
 						recoil = -1,
 						spread = 2,
 						concealment = -1
@@ -42812,7 +42718,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						suppression = 11,
 						alert_size = 11,
-						damage = 5,
 						recoil = 1,
 						concealment = -2
 					}	
@@ -43146,13 +43051,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 7,
 					concealment = -1,
 					spread = -1,
-					recoil = 2,
-					damage = 5
+					recoil = 2
 				}											
 				self.parts.wpn_fps_upg_aps_comp_long.stats = { 
 					value = 2,
 					recoil = -1,						
-					damage = 5,
 					concealment = 1
 				}															
 			end	
@@ -43175,8 +43078,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					alert_size = 13,
 					concealment = -4,
 					spread = 2,
-					recoil = -1,
-					damage = 5
+					recoil = -1
 				}				
 				self.parts.wpn_fps_upg_ots_14_4a_supp.stats = { 
 					value = 4,
@@ -43184,8 +43086,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					alert_size = 10,
 					spread = -1,
 					recoil = 2,
-					concealment = -1,
-					damage = 5
+					concealment = -1
 				}																					
 			end					
 
@@ -43216,12 +43117,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					alert_size = -4,
 					recoil = 3,
 					spread = -2,
-					damage = 5,
 					concealment = -2
 				}		
 				self.parts.wpn_fps_ass_heffy_556_fh_ak108.stats = { 
 					value = 5,
-					damage = 5,
 					recoil = -1,
 					spread = 2,
 					concealment = -4				
@@ -43636,7 +43535,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					alert_size = 13,
 					spread = -1,
 					concealment = 1,					
-					damage = 5,					
 					recoil = 1,
 					spread_moving = -2
 				}	
@@ -43743,7 +43641,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}	
 				self.parts.wpn_fps_ass_qbz97b_95b_body.stats = { 
 					value = 2,
-					damage = -8,
+					damage = -6,
 					total_ammo_mod = 20,
 					recoil = -1,										
 					concealment = 2
@@ -43761,8 +43659,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 7,
 					suppression = 10,
 					alert_size = 10,
-					concealment = 1,
-					damage = 5
+					concealment = 1
 					}	
 				self.parts.wpn_fps_ass_ns_g_sup2.stats = { 
 					value = 1,
@@ -43770,14 +43667,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					alert_size = 13,
 					spread = 2,
 					recoil = -1,
-					damage = 5,
 					concealment = -4
 					}			
 				self.parts.wpn_fps_ass_ns_g_sup3.stats = { 
 					value = 5,
 					suppression = 12,
 					alert_size = 12,
-					damage = 5,
 					spread = 1,
 					spread_moving = -3,
 					concealment = -3
@@ -43786,7 +43681,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 5,
 					suppression = 12,
 					alert_size = 12,
-					damage = 5,
 					spread = 1,
 					spread_moving = -3,
 					concealment = -3
@@ -43795,7 +43689,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 5,
 					suppression = 12,
 					alert_size = 12,
-					damage = 5,
 					spread = 1,
 					spread_moving = -3,
 					concealment = -3
@@ -43804,7 +43697,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 5,
 					suppression = 12,
 					alert_size = 12,
-					damage = 5,
 					spread = 1,
 					spread_moving = -3,
 					concealment = -3
@@ -43822,8 +43714,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					alert_size = 10,
 					spread = 2,
 					recoil = -1,
-					concealment = -1,
-					damage = 5
+					concealment = -1
 					}		
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1) --not a good way of fixing it, but it works, yeah?
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)
@@ -44041,7 +43932,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						alert_size = 13,
 						spread = 2,
 						recoil = -1,
-						damage = 5,
 						concealment = -4
 					}			
 				self.parts.wpn_fps_pis_beretta_body_sword.stats = {
@@ -44051,13 +43941,11 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 4,
 						suppression = -2,
 						alert_size = -1,
-						damage = 5,
 						recoil = 2,
 						concealment = -3
 					}					
 				self.parts.wpn_fps_pis_beretta_co_equal.stats = {
 						value = 3,
-						damage = 5,
 						spread = 2,
 						recoil = -1,						
 						concealment = -4
@@ -44180,14 +44068,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 5,
 						suppression = -2,
 						alert_size = -2,
-						damage = 5,
 						spread = 1,
 						recoil = 1,						
 						concealment = -3
 					}
 				self.parts.wpn_fps_upg_mp153_gk_01.stats = {
 						value = 5,
-						damage = 5,
 						recoil = -1,
 						spread = 2,
 						concealment = -2
@@ -44327,7 +44213,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		if self.wpn_fps_pis_qsz92 then -- Gambyt's QSZ 92
 				self.parts.wpn_fps_pis_qsz92_comp.stats = {
 						value = 4,
-						damage = 5,
 						recoil = -1,
 						concealment = 1,
 						spread = -1
@@ -44335,7 +44220,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_pis_qsz92_comp2.stats = {
 						value = 2,
 						recoil = -1,						
-						damage = 5,
 						concealment = 1
 					}		
 				self.parts.wpn_fps_pis_qsz92_mag_big.stats = {
@@ -44361,21 +44245,18 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					})				
 				self.parts.wpn_fps_pis_hpb_comp2.stats = {
 						value = 4,
-						damage = 5,
 						recoil = -1,
 						concealment = 2,
 						spread = -1
 					}					
 				self.parts.wpn_fps_pis_hpb_thread.stats = {
 						value = 4,
-						damage = 5,
 						recoil = -1,
 						concealment = 2,
 						spread = -1
 					}										
 				self.parts.wpn_fps_pis_hpb_comp.stats = {
 						value = 5,
-						damage = 5,
 						spread_moving = -1,
 						suppression = -2,
 						alert_size = -2,
@@ -44755,13 +44636,11 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_ppsh_barrel_sawnoffcomp.stats = {	
 				value = 1,
 				spread = -1,
-				damage = -5,				
 				concealment = 2
 				}	
 			self.parts.wpn_fps_upg_ppsh_barrel_k50m.stats = {	
 				value = 2,
 				recoil = -1,
-				damage = -5,				
 				concealment = 2
 				}			
 			self.parts.wpn_fps_upg_ppsh_mag_drum.stats = {	
@@ -44803,7 +44682,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}														
 			self.parts.wpn_fps_pis_m1911_ns_cutts.stats = {
 				value = 1,
-				damage = 5,				
 				spread_moving = 1,
 				spread = 1,
 				concealment = -2
@@ -44974,7 +44852,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = -4,
 				recoil = 3,
 				spread = -2,
-				damage = 5,
 				concealment = -2
 				}							
 			self.parts.wpn_fps_upg_scar_s_collapsed.stats = {
@@ -44987,14 +44864,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = 12,
 				recoil = 2,
 				spread = -1,
-				damage = 5,
 				concealment = -1
 				}															
 			self.parts.wpn_fps_upg_ns_osprey.stats = {
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
 				spread = 1,
 				concealment = -3
 				}							
@@ -45069,25 +44944,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = 1,
 				recoil = -1,
 				concealment = -1,
-				damage = 5
 				}		
 			self.parts.wpn_fps_pis_glawk_tp_diamond.stats = {
 				value = 4,
-				damage = 5,
 				recoil = -1,
 				concealment = 2,
 				spread = -1
 				}		
 			self.parts.wpn_fps_pis_glawk_tp_salient.stats = {
 				value = 4,
-				damage = 5,
 				recoil = -1,
 				concealment = 2,
 				spread = -1
 				}		
 			self.parts.wpn_fps_pis_glawk_tp_wolf.stats = {
 				value = 4,
-				damage = 5,
 				recoil = -1,
 				concealment = 2,
 				spread = -1
@@ -45097,31 +44968,26 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = -1,
 				spread = -1,
 				recoil = 2,
-				damage = 5
 				}	
 			self.parts.wpn_fps_pis_glawk_md_comp9.stats = {
 				value = 5,
-				damage = 5,
 				recoil = -1,
 				spread = -1,
 				concealment = 1
 				}														
 			self.parts.wpn_fps_pis_glawk_md_decelerator.stats = {
 				value = 5,
-				damage = 5,
 				spread = 1,
 				concealment = -1
 				}						
 			self.parts.wpn_fps_pis_glawk_md_g4.stats = {
 				value = 1,
-				damage = 5,
 				spread = 2,
 				recoil = -2,
 				concealment = -2
 				}	
 			self.parts.wpn_fps_pis_glawk_md_diamond.stats = {
 				value = 5,
-				damage = 5,
 				recoil = 1,
 				concealment = -1
 				}																		
@@ -45246,7 +45112,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 10,
 					suppression = 13,
 					alert_size = 13,
-					damage = 5,
 					spread = 1,
 					recoil = -1,
 					spread_moving = 1,
@@ -45334,7 +45199,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 10,
 						suppression = 13,
 						alert_size = 13,
-						damage = 5,
 						spread_moving = -2,
 						spread = 2,
 						recoil = -1,
@@ -45411,7 +45275,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 4,
 					suppression = -2,
 					alert_size = -2,
-					damage = 5,
 					recoil = 1,
 					concealment = -2
 			}
@@ -45480,7 +45343,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 4,
 					suppression = -2,
 					alert_size = -2,
-					damage = 5,
 					recoil = 1,
 					concealment = -2
 				}
@@ -45667,15 +45529,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					recoil = 1,
 					spread_moving = -2,
 					concealment = 0,
-					damage = 5
 				}
 		self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
 					value = 5,
 					spread = -1,
 					recoil = 1,
 					spread_moving = -2,
-					concealment = 0,
-					damage = 5
+					concealment = 0
 				}				
 		self.parts.wpn_fps_upg_hcar_high_cyclic.pcs = nil
 		self.parts.wpn_fps_upg_hcar_stock_ctr_riser.stats = {
@@ -45731,14 +45591,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}	
 			self.parts.wpn_fps_ass_bar_ns_cutts.stats = {
 					value = 1,
-					damage = 5,				
 					spread_moving = 1,
 					spread = 1,
 					concealment = -2
 				}								
 			self.parts.wpn_fps_ass_bar_ns_cutts.stats = {
 					value = 1,
-					damage = 5,				
 					spread_moving = 1,
 					spread = 1,
 					concealment = -2
@@ -45754,7 +45612,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						suppression = 13,
 						alert_size = 13,
 						spread = -1,
-						damage = 5,						
 						recoil = 1,
 						spread_moving = -2
 						},
@@ -46743,7 +46600,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 		self.parts.wpn_fps_upg_m1895_supp_gemtech_gm9.stats = {
 				value = 3,
-				damage = 5,
 				suppression = 8,
 				alert_size = 8,
 				concealment = -2
@@ -46752,13 +46608,11 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 0,
 				spread = 1,
 				concealment = -3
 			}
 		self.parts.wpn_fps_upg_m1895_supp_ro2.stats = {
 				value = 4,
-				damage = 5,
 				suppression = 6,
 				alert_size = 6,
 				concealment = 1
@@ -46982,13 +46836,11 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}
 			self.parts.wpn_fps_lmg_dp28_tripod_top.custom_stats = nil					
 			self.parts.wpn_fps_lmg_dp28_barrel_lord.stats = {
-					damage = 5,
 					recoil = 1,
 					spread = -1,										
 					concealment = 1
 				}				
 			self.parts.wpn_fps_lmg_dp28_barrel_dpm36.stats = {
-					damage = 5,
 					recoil = -1,
 					spread = 1,										
 					concealment = 2
@@ -47016,7 +46868,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					spread = 1
 				}												
 			self.parts.wpn_fps_lmg_dp28_barrel_dt.stats = {
-					damage = 5,
 					recoil = -1,
 					spread = 1,					
 					concealment = -5
@@ -47108,14 +46959,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				damage = 5,
 				spread = 1,
 				concealment = -3
 			}		
 			self.parts.wpn_fps_upg_aug9mm_supp_gm9.stats = {
 				value = 3,
 				suppression = 8,
-				damage = 5,		
 				recoil = -1,				
 				alert_size = 8
 			}		

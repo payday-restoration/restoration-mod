@@ -3308,7 +3308,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			1
 		}
 		self.new_m4.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 20,
 			spread_moving = 7,
@@ -3344,7 +3344,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_17.kick.crouching = self.glock_17.kick.standing
 		self.glock_17.kick.steelsight = self.glock_17.kick.standing
 		self.glock_17.stats = {
-			damage = 27,
+			damage = 32,
 			spread = 15,
 			recoil = 22,
 			spread_moving = 7,
@@ -3374,7 +3374,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp9.kick.crouching = self.new_m4.kick.standing
 		self.mp9.kick.steelsight = self.new_m4.kick.standing
 		self.mp9.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 12,
 			recoil = 24,
 			spread_moving = 8,
@@ -3407,7 +3407,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.r870.damage_far = 1600
 		self.r870.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.r870.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 8,
 			recoil = 18,
 			spread_moving = 6,
@@ -3438,7 +3438,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glock_18c.kick.crouching = self.new_m4.kick.standing
 		self.glock_18c.kick.steelsight = self.new_m4.kick.standing
 		self.glock_18c.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 9,
@@ -3468,7 +3468,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amcar.kick.crouching = self.new_m4.kick.standing
 		self.amcar.kick.steelsight = self.new_m4.kick.standing
 		self.amcar.stats = {
-			damage = 28,
+			damage = 33,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 6,
@@ -3501,7 +3501,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.spread.moving_crouching = 3
 		self.m16.spread.moving_steelsight = 2
 		self.m16.stats = {
-			damage = 39,
+			damage = 44,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 5,
@@ -3535,7 +3535,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.olympic.kick.crouching = self.new_m4.kick.standing
 		self.olympic.kick.steelsight = self.new_m4.kick.standing		
 		self.olympic.stats = {
-			damage = 28,
+			damage = 33,
 			spread = 13,
 			recoil = 20,
 			spread_moving = 8,
@@ -3563,7 +3563,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak74.kick.crouching = self.new_m4.kick.standing
 		self.ak74.kick.steelsight = self.new_m4.kick.standing
 		self.ak74.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 15,
 			recoil = 20,
 			spread_moving = 6,
@@ -3589,7 +3589,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akm.spread.moving_crouching = 3
 		self.akm.spread.moving_steelsight = 2
 		self.akm.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 16,
 			recoil = 19,
 			spread_moving = 6,
@@ -3617,7 +3617,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akm_gold.auto.fire_rate = 0.1
 		self.akm_gold.timers.reload_not_empty = 2
 		self.akm_gold.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 16,
 			recoil = 19,
 			spread_moving = 6,
@@ -3646,7 +3646,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akmsu.spread.moving_steelsight = 2
 		self.akmsu.panic_suppression_chance = 0.0
 		self.akmsu.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 16,
 			recoil = 19,
 			spread_moving = 9,
@@ -3681,7 +3681,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.saiga.kick.crouching = self.new_m4.kick.standing
 		self.saiga.kick.steelsight = self.new_m4.kick.standing
 		self.saiga.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 6,
 			recoil = 19,
 			spread_moving = 7,
@@ -3707,7 +3707,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak5.kick.crouching = self.new_m4.kick.standing
 		self.ak5.kick.steelsight = self.new_m4.kick.standing
 		self.ak5.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 15,
 			recoil = 20,
 			spread_moving = 6,
@@ -3736,7 +3736,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aug.kick.crouching = self.new_m4.kick.standing
 		self.aug.kick.steelsight = self.new_m4.kick.standing
 		self.aug.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 7,
@@ -3769,7 +3769,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g36.kick.crouching = self.new_m4.kick.standing
 		self.g36.kick.steelsight = self.new_m4.kick.standing
 		self.g36.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 8,
@@ -3800,7 +3800,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p90.kick.crouching = self.new_m4.kick.standing
 		self.p90.kick.steelsight = self.new_m4.kick.standing
 		self.p90.stats = {
-			damage = 22,
+			damage = 27,
 			spread = 14,
 			recoil = 24,
 			spread_moving = 9,
@@ -3829,7 +3829,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_m14.AMMO_MAX = 60
 		self.new_m14.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.new_m14.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 20,
 			recoil = 17,
 			spread_moving = 5,
@@ -3861,7 +3861,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deagle.AMMO_MAX = 40
 		self.deagle.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.deagle.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 18,
 			recoil = 19,
 			spread_moving = 6,
@@ -3921,7 +3921,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.colt_1911.kick.crouching = self.glock_17.kick.standing
 		self.colt_1911.kick.steelsight = self.glock_17.kick.standing
 		self.colt_1911.stats = {
-			damage = 42,
+			damage = 47,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 5,
@@ -3952,7 +3952,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.kick.crouching = self.new_m4.kick.standing
 		self.mac10.kick.steelsight = self.new_m4.kick.standing
 		self.mac10.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 8,
@@ -3986,7 +3986,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.serbu.kick.crouching = self.new_m4.kick.standing 
 		self.serbu.kick.steelsight = self.new_m4.kick.standing	
 		self.serbu.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 6,
 			recoil = 18,
 			spread_moving = 6,
@@ -4064,7 +4064,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b92fs.kick.crouching = self.glock_17.kick.standing
 		self.b92fs.kick.steelsight = self.glock_17.kick.standing
 		self.b92fs.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 22,
 			spread_moving = 5,
@@ -4094,7 +4094,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_raging_bull.kick.steelsight = self.glock_17.kick.standing
 		self.new_raging_bull.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.new_raging_bull.stats = {
-			damage = 85,
+			damage = 90,
 			spread = 18,
 			recoil = 17,
 			spread_moving = 5,
@@ -4136,7 +4136,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread = 1,
 			recoil = 1,
 			spread_moving = 7,
-			damage = 100,
+			damage = 105,
 			concealment = 16,
 			value = 1,
 			extra_ammo = 101,
@@ -4170,7 +4170,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread = 1,
 			recoil = 1,
 			spread_moving = 7,
-			damage = 100,
+			damage = 105,
 			concealment = 16,
 			value = 1,
 			extra_ammo = 101,
@@ -4193,7 +4193,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.usp.kick.steelsight = self.glock_17.kick.standing
 		self.usp.CLIP_AMMO_MAX = 12
 		self.usp.stats = {
-			damage = 40,
+			damage = 50,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -4221,7 +4221,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g22c.kick.steelsight = self.glock_17.kick.standing
 		self.g22c.CLIP_AMMO_MAX = 16
 		self.g22c.stats = {
-			damage = 32,
+			damage = 37,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 8,
@@ -4251,7 +4251,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.damage_far = 1200
 		self.judge.AMMO_PICKUP = self:_pickup_chance(30, 1)
 		self.judge.stats = {
-			damage = 145,
+			damage = 150,
 			spread = 6,
 			recoil = 17,
 			spread_moving = 5,
@@ -4279,7 +4279,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m45.kick.crouching = self.new_m4.kick.standing
 		self.m45.kick.steelsight = self.new_m4.kick.standing
 		self.m45.stats = {
-			damage = 32,
+			damage = 37,
 			spread = 14,
 			recoil = 19,
 			spread_moving = 8,
@@ -4311,7 +4311,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.s552.kick.steelsight = self.new_m4.kick.standing
 		self.s552.AMMO_MAX = 150
 		self.s552.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 13,
 			recoil = 22,
 			spread_moving = 5,
@@ -4342,7 +4342,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ppk.kick.crouching = self.glock_17.kick.standing
 		self.ppk.kick.steelsight = self.glock_17.kick.standing
 		self.ppk.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 23,
 			spread_moving = 9,
@@ -4372,7 +4372,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp7.spread.moving_crouching = 3
 		self.mp7.spread.moving_steelsight = 2
 		self.mp7.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 24,
 			spread_moving = 7,
@@ -4400,7 +4400,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.scar.CAN_TOGGLE_FIREMODE = true
 		self.scar.auto.fire_rate = 0.09523809523
 		self.scar.stats = {
-			damage = 67,
+			damage = 72,
 			spread = 14,
 			recoil = 19,
 			spread_moving = 5,
@@ -4430,7 +4430,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p226.kick.crouching = self.glock_17.kick.standing
 		self.p226.kick.steelsight = self.glock_17.kick.standing
 		self.p226.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 7,
@@ -4464,7 +4464,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk21.kick.steelsight = self.new_m4.kick.standing
 		self.hk21.panic_suppression_chance = 0.1
 		self.hk21.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 21,
 			spread_moving = 8,
@@ -4497,7 +4497,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m249.kick.crouching = self.new_m4.kick.standing
 		self.m249.kick.steelsight = self.new_m4.kick.standing
 		self.m249.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 13,
 			recoil = 22,
 			spread_moving = 9,
@@ -4534,7 +4534,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpk.kick.crouching = self.new_m4.kick.standing
 		self.rpk.kick.steelsight = self.new_m4.kick.standing
 		self.rpk.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 12,
 			recoil = 21,
 			spread_moving = 6,
@@ -4665,7 +4665,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.fal.spread.moving_crouching = 3
 		self.fal.spread.moving_steelsight = 3
 		self.fal.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 14,
 			recoil = 19,
 			spread_moving = 5,
@@ -4698,7 +4698,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.benelli.kick.crouching = self.new_m4.kick.standing
 		self.benelli.kick.steelsight = self.new_m4.kick.standing
 		self.benelli.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 7,
 			recoil = 18,
 			spread_moving = 7,
@@ -4732,7 +4732,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.striker.kick.crouching = self.new_m4.kick.standing
 		self.striker.kick.steelsight = self.new_m4.kick.standing
 		self.striker.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 6,
 			recoil = 20,
 			spread_moving = 7,
@@ -4761,7 +4761,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ksg.fire_mode_data.fire_rate = 0.6
 		self.ksg.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.ksg.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 8,
 			recoil = 19,
 			spread_moving = 7,
@@ -4820,7 +4820,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3.spread.moving_crouching = 3
 		self.g3.spread.moving_steelsight = 2
 		self.g3.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 18,
 			recoil = 18,
 			spread_moving = 7,
@@ -4852,7 +4852,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.galil.kick.crouching = self.new_m4.kick.standing
 		self.galil.kick.steelsight = self.new_m4.kick.standing
 		self.galil.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 5,
@@ -4886,7 +4886,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.famas.kick.crouching = self.new_m4.kick.standing
 		self.famas.kick.steelsight = self.new_m4.kick.standing
 		self.famas.stats = {
-			damage = 26,
+			damage = 31,
 			spread = 12,
 			recoil = 21,
 			spread_moving = 4,
@@ -4922,7 +4922,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.scorpion.kick.crouching = self.new_m4.kick.standing
 		self.scorpion.kick.steelsight = self.new_m4.kick.standing
 		self.scorpion.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 21,
 			spread_moving = 7,
@@ -4957,7 +4957,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tec9.kick.crouching = self.new_m4.kick.standing
 		self.tec9.kick.steelsight = self.new_m4.kick.standing
 		self.tec9.stats = {
-			damage = 34,
+			damage = 39,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 10,
@@ -4989,7 +4989,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.uzi.kick.crouching = self.new_m4.kick.standing
 		self.uzi.kick.steelsight = self.new_m4.kick.standing
 		self.uzi.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 8,
@@ -5020,7 +5020,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.jowi.single = {}
 		self.jowi.single.fire_rate = 0.075
 		self.jowi.stats = {
-			damage = 26,
+			damage = 31,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 9,
@@ -5050,7 +5050,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_1911.kick.crouching = self.glock_17.kick.standing
 		self.x_1911.kick.steelsight = self.glock_17.kick.standing
 		self.x_1911.stats = {
-			damage = 42,
+			damage = 47,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 5,
@@ -5079,7 +5079,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_b92fs.fire_mode_data.fire_rate = 0.075
 		self.x_b92fs.single.fire_rate = 0.075
 		self.x_b92fs.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 22,
 			spread_moving = 5,
@@ -5114,7 +5114,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_deagle.kick.steelsight = self.glock_17.kick.standing
 		self.x_deagle.animations.has_steelsight_stance = true
 		self.x_deagle.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 18,
 			recoil = 19,
 			spread_moving = 6,
@@ -5142,7 +5142,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g26.spread.moving_crouching = 3
 		self.g26.spread.moving_steelsight = 2
 		self.g26.stats = {
-			damage = 26,
+			damage = 31,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 9,
@@ -5175,7 +5175,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.kick.crouching = self.new_m4.kick.standing
 		self.spas12.kick.steelsight = self.new_m4.kick.standing
 		self.spas12.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 6,
 			recoil = 19,
 			spread_moving = 7,
@@ -5207,7 +5207,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mg42.kick.crouching = self.new_m4.kick.standing
 		self.mg42.kick.steelsight = self.new_m4.kick.standing
 		self.mg42.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 9,
@@ -5242,7 +5242,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.c96.kick.crouching = self.new_m4.kick.standing
 		self.c96.kick.steelsight = self.new_m4.kick.standing
 		self.c96.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -5274,7 +5274,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sterling.kick.crouching = self.new_m4.kick.standing
 		self.sterling.kick.steelsight = self.new_m4.kick.standing
 		self.sterling.stats = {
-			damage = 32,
+			damage = 37,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 8,
@@ -5340,7 +5340,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1928.kick.steelsight = self.new_m4.kick.standing
 		self.m1928.panic_suppression_chance = 0.1
 		self.m1928.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 19,
 			spread_moving = 6,
@@ -5375,7 +5375,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.l85a2.kick.crouching = self.new_m4.kick.standing
 		self.l85a2.kick.steelsight = self.new_m4.kick.standing
 		self.l85a2.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 6,
@@ -5408,7 +5408,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vhs.kick.crouching = self.new_m4.kick.standing
 		self.vhs.kick.steelsight = self.new_m4.kick.standing
 		self.vhs.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 6,
@@ -5441,7 +5441,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hs2000.kick.crouching = self.glock_17.kick.standing
 		self.hs2000.kick.steelsight = self.glock_17.kick.standing
 		self.hs2000.stats = {
-			damage = 44,
+			damage = 49,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 7,
@@ -5482,7 +5482,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m134.kick.steelsight = self.new_m4.kick.standing
 		self.m134.panic_suppression_chance = 0.1
 		self.m134.stats = {
-			damage = 22,
+			damage = 27,
 			spread = 15,
 			recoil = 22,
 			spread_moving = 9,
@@ -5547,7 +5547,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cobray.auto = {}
 		self.cobray.auto.fire_rate = 0.06
 		self.cobray.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 13,
 			recoil = 23,
 			spread_moving = 8,
@@ -5618,7 +5618,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g22c.single = {}
 		self.x_g22c.single.fire_rate = 0.08571428571
 		self.x_g22c.stats = {
-			damage = 32,
+			damage = 37,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 8,
@@ -5648,7 +5648,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g17.fire_mode_data.fire_rate = 0.075
 		self.x_g17.single.fire_rate = 0.075
 		self.x_g17.stats = {
-			damage = 27,
+			damage = 32,
 			spread = 15,
 			recoil = 22,
 			spread_moving = 7,
@@ -5678,7 +5678,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_usp.single = {}
 		self.x_usp.single.fire_rate = 0.1
 		self.x_usp.stats = {
-			damage = 40,
+			damage = 50,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -5791,7 +5791,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aa12.kick.crouching = self.new_m4.kick.standing
 		self.aa12.kick.steelsight = self.new_m4.kick.standing
 		self.aa12.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 7,
 			recoil = 19,
 			spread_moving = 7,
@@ -6005,7 +6005,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sub2000.kick.crouching = self.glock_17.kick.standing
 		self.sub2000.kick.steelsight = self.glock_17.kick.standing
 		self.sub2000.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -6077,7 +6077,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.polymer.kick.crouching = self.new_m4.kick.standing
 		self.polymer.kick.steelsight = self.new_m4.kick.standing
 		self.polymer.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 8,
@@ -6141,7 +6141,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.baka.kick.crouching = self.new_m4.kick.standing
 		self.baka.kick.steelsight = self.new_m4.kick.standing
 		self.baka.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 13,
 			recoil = 23,
 			spread_moving = 8,
@@ -6275,7 +6275,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.par.kick.steelsight = self.new_m4.kick.standing
 		self.par.panic_suppression_chance = 0.1
 		self.par.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 9,
@@ -6303,7 +6303,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sparrow.fire_mode_data.fire_rate = 0.075
 		self.sparrow.single.fire_rate = 0.075
 		self.sparrow.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 5,
@@ -6431,7 +6431,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sr2.kick.crouching = self.new_m4.kick.standing
 		self.sr2.kick.steelsight = self.new_m4.kick.standing
 		self.sr2.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -6461,7 +6461,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sr2.AMMO_MAX = 180
 		self.x_sr2.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_sr2.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -6490,7 +6490,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.pl14.kick.crouching = self.glock_17.kick.standing
 		self.pl14.kick.steelsight = self.glock_17.kick.standing
 		self.pl14.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -6519,7 +6519,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp5.AMMO_MAX = 180
 		self.x_mp5.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_mp5.stats = {
-			damage = 27,
+			damage = 32,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 8,
@@ -6549,7 +6549,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_akmsu.kick.crouching = self.new_m4.kick.standing
 		self.x_akmsu.kick.steelsight = self.new_m4.kick.standing
 		self.x_akmsu.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 16,
 			recoil = 19,
 			spread_moving = 9,
@@ -6585,7 +6585,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tecci.auto.fire_rate = 0.08571428571
 		self.tecci.panic_suppression_chance = 0.1
 		self.tecci.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 14,
 			recoil = 21,
 			spread_moving = 6,
@@ -6618,7 +6618,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.hajk.panic_suppression_chance = 0.0
 		self.hajk.stats = {
-			damage = 34,
+			damage = 39,
 			spread = 17,
 			recoil = 22,
 			spread_moving = 6,
@@ -6652,7 +6652,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.kick.steelsight = self.huntsman.kick.standing
 		self.boot.timers.shotgun_reload_first_shell_offset = 0.15
 		self.boot.stats = {
-			damage = 145,
+			damage = 150,
 			spread = 8,
 			recoil = 16,
 			spread_moving = 5,
@@ -6682,7 +6682,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.packrat.kick.steelsight = self.glock_17.kick.standing
 		self.packrat.panic_suppression_chance = 0.0
 		self.packrat.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 17,
 			recoil = 22,
 			spread_moving = 7,
@@ -6713,7 +6713,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.schakal.kick.steelsight = self.new_m4.kick.standing
 		self.schakal.panic_suppression_chance = 0.1
 		self.schakal.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 14,
@@ -6772,7 +6772,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_packrat.kick.steelsight = self.glock_17.kick.standing
 		self.x_packrat.panic_suppression_chance = 0.0
 		self.x_packrat.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 17,
 			recoil = 22,
 			spread_moving = 7,
@@ -6808,7 +6808,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rota.damage_near = 800
 		self.rota.damage_far = 1600
 		self.rota.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 8,
 			recoil = 18,
 			spread_moving = 7,
@@ -6871,7 +6871,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.contraband.kick.crouching = self.new_m4.kick.standing
 		self.contraband.kick.steelsight = self.new_m4.kick.standing
 		self.contraband.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 18,
 			recoil = 19,
 			spread_moving = 5,
@@ -7035,7 +7035,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flint.kick.crouching = self.new_m4.kick.standing
 		self.flint.kick.steelsight = self.new_m4.kick.standing
 		self.flint.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 5,
@@ -7065,7 +7065,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.coal.kick.crouching = self.new_m4.kick.standing
 		self.coal.kick.steelsight = self.new_m4.kick.standing
 		self.coal.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 9,
@@ -7099,7 +7099,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.lemming.can_shoot_through_wall = false
 		self.lemming.armor_piercing_chance = nil
 		self.lemming.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 9,
@@ -7226,7 +7226,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.kick.crouching = self.glock_17.kick.standing
 		self.ching.kick.steelsight = self.glock_17.kick.standing
 		self.ching.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 6,
@@ -7261,7 +7261,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.erma.kick.crouching = self.new_m4.kick.standing
 		self.erma.kick.steelsight = self.new_m4.kick.standing
 		self.erma.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 18,
 			recoil = 21,
 			spread_moving = 8,
@@ -7320,7 +7320,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shrew.kick.crouching = self.glock_17.kick.standing
 		self.shrew.kick.steelsight = self.glock_17.kick.standing
 		self.shrew.stats = {
-			damage = 42,
+			damage = 47,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -7349,7 +7349,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shrew.kick.crouching = self.glock_17.kick.standing
 		self.x_shrew.kick.steelsight = self.glock_17.kick.standing
 		self.x_shrew.stats = {
-			damage = 42,
+			damage = 47,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -7386,7 +7386,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.basset.stats = {
 			zoom = 3,
 			total_ammo_mod = 100,
-			damage = 45,
+			damage = 50,
 			alert_size = 6,
 			spread = 6,
 			spread_moving = 8,
@@ -7421,7 +7421,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_basset.stats = {
 			zoom = 3,
 			total_ammo_mod = 100,
-			damage = 45,
+			damage = 50,
 			alert_size = 6,
 			spread = 6,
 			spread_moving = 8,
@@ -7449,7 +7449,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.corgi.kick.crouching = self.new_m4.kick.standing
 		self.corgi.kick.steelsight = self.new_m4.kick.standing
 		self.corgi.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 23,
 			spread_moving = 6,
@@ -7509,7 +7509,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_coal.kick.crouching = self.new_m4.kick.standing
 		self.x_coal.kick.steelsight = self.new_m4.kick.standing
 		self.x_coal.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 9,
@@ -7543,7 +7543,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_baka.kick.crouching = self.new_m4.kick.standing
 		self.x_baka.kick.steelsight = self.new_m4.kick.standing
 		self.x_baka.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 13,
 			recoil = 23,
 			spread_moving = 8,
@@ -7576,7 +7576,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.CAN_TOGGLE_FIREMODE = true
 		self.x_cobray.single.fire_rate = 0.06
 		self.x_cobray.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 13,
 			recoil = 23,
 			spread_moving = 8,
@@ -7606,7 +7606,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_erma.kick.crouching = self.new_m4.kick.standing
 		self.x_erma.kick.steelsight = self.new_m4.kick.standing
 		self.x_erma.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 18,
 			recoil = 21,
 			spread_moving = 8,
@@ -7638,7 +7638,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hajk.kick.steelsight = self.new_m4.kick.standing
 		self.x_hajk.panic_suppression_chance = 0.0
 		self.x_hajk.stats = {
-			damage = 34,
+			damage = 40,
 			spread = 17,
 			recoil = 22,
 			spread_moving = 6,
@@ -7664,7 +7664,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m45.kick.crouching = self.new_m4.kick.standing
 		self.x_m45.kick.steelsight = self.new_m4.kick.standing
 		self.x_m45.stats = {
-			damage = 32,
+			damage = 37,
 			spread = 14,
 			recoil = 19,
 			spread_moving = 8,
@@ -7695,7 +7695,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_m1928.kick.crouching = self.new_m4.kick.standing
 		self.x_m1928.kick.steelsight = self.new_m4.kick.standing
 		self.x_m1928.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 19,
 			spread_moving = 6,
@@ -7724,7 +7724,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mac10.kick.crouching = self.new_m4.kick.standing
 		self.x_mac10.kick.steelsight = self.new_m4.kick.standing
 		self.x_mac10.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 8,
@@ -7750,7 +7750,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp7.spread.moving_crouching = 3
 		self.x_mp7.spread.moving_steelsight = 2
 		self.x_mp7.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 24,
 			spread_moving = 7,
@@ -7779,7 +7779,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp9.kick.crouching = self.new_m4.kick.standing
 		self.x_mp9.kick.steelsight = self.new_m4.kick.standing
 		self.x_mp9.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 12,
 			recoil = 24,
 			spread_moving = 8,
@@ -7806,7 +7806,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_olympic.spread.moving_steelsight = 2
 		self.x_olympic.panic_suppression_chance = 0.0
 		self.x_olympic.stats = {
-			damage = 28,
+			damage = 33,
 			spread = 13,
 			recoil = 20,
 			spread_moving = 8,
@@ -7834,7 +7834,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p90.kick.crouching = self.new_m4.kick.standing
 		self.x_p90.kick.steelsight = self.new_m4.kick.standing
 		self.x_p90.stats = {
-			damage = 22,
+			damage = 27,
 			spread = 14,
 			recoil = 24,
 			spread_moving = 9,
@@ -7866,7 +7866,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_polymer.kick.crouching = self.new_m4.kick.standing
 		self.x_polymer.kick.steelsight = self.new_m4.kick.standing
 		self.x_polymer.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 8,
@@ -7898,7 +7898,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_schakal.kick.steelsight = self.new_m4.kick.standing
 		self.x_schakal.panic_suppression_chance = 0.1
 		self.x_schakal.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 14,
@@ -7927,7 +7927,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_scorpion.kick.crouching = self.new_m4.kick.standing
 		self.x_scorpion.kick.steelsight = self.new_m4.kick.standing
 		self.x_scorpion.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 21,
 			spread_moving = 7,
@@ -7956,7 +7956,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sterling.kick.crouching = self.new_m4.kick.standing
 		self.x_sterling.kick.steelsight = self.new_m4.kick.standing
 		self.x_sterling.stats = {
-			damage = 32,
+			damage = 37,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 8,
@@ -7986,7 +7986,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_tec9.kick.crouching = self.new_m4.kick.standing
 		self.x_tec9.kick.steelsight = self.new_m4.kick.standing
 		self.x_tec9.stats = {
-			damage = 34,
+			damage = 39,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 10,
@@ -8014,7 +8014,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_uzi.kick.crouching = self.new_m4.kick.standing
 		self.x_uzi.kick.steelsight = self.new_m4.kick.standing
 		self.x_uzi.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 8,
@@ -8108,7 +8108,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_c96.kick.crouching = self.new_m4.kick.standing
 		self.x_c96.kick.steelsight = self.new_m4.kick.standing
 		self.x_c96.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 8,
@@ -8137,7 +8137,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.kick.crouching = self.new_m4.kick.standing
 		self.x_g18c.kick.steelsight = self.new_m4.kick.standing
 		self.x_g18c.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 9,
@@ -8169,7 +8169,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_hs2000.kick.crouching = self.glock_17.kick.standing
 		self.x_hs2000.kick.steelsight = self.glock_17.kick.standing
 		self.x_hs2000.stats = {
-			damage = 44,
+			damage = 49,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 7,
@@ -8198,7 +8198,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p226.kick.crouching = self.glock_17.kick.standing
 		self.x_p226.kick.steelsight = self.glock_17.kick.standing
 		self.x_p226.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 7,
@@ -8227,7 +8227,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_pl14.kick.crouching = self.glock_17.kick.standing
 		self.x_pl14.kick.steelsight = self.glock_17.kick.standing
 		self.x_pl14.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -8256,7 +8256,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_ppk.kick.crouching = self.glock_17.kick.standing
 		self.x_ppk.kick.steelsight = self.glock_17.kick.standing
 		self.x_ppk.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 23,
 			spread_moving = 9,
@@ -8284,7 +8284,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rage.kick.steelsight = self.glock_17.kick.standing
 		self.x_rage.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.x_rage.stats = {
-			damage = 85,
+			damage = 90,
 			spread = 18,
 			recoil = 17,
 			spread_moving = 5,
@@ -8316,7 +8316,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sparrow.fire_mode_data.fire_rate = 0.075
 		self.x_sparrow.single.fire_rate = 0.075
 		self.x_sparrow.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 5,
@@ -8344,7 +8344,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.damage_far = 1200
 		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.x_judge.stats = {
-			damage = 145,
+			damage = 150,
 			spread = 6,
 			recoil = 17,
 			spread_moving = 5,
@@ -8386,7 +8386,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rota.damage_near = 800
 		self.x_rota.damage_far = 1600
 		self.x_rota.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 8,
 			recoil = 18,
 			spread_moving = 7,
@@ -8426,7 +8426,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shuno.kick.steelsight = self.new_m4.kick.standing
 		self.shuno.panic_suppression_chance = 0.1
 		self.shuno.stats = {
-			damage = 27,
+			damage = 32,
 			spread = 16,
 			recoil = 23,
 			spread_moving = 9,
@@ -8509,7 +8509,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shepheard.AMMO_MAX = 150
 		self.shepheard.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.shepheard.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 8,
@@ -8538,7 +8538,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shepheard.AMMO_MAX = 180
 		self.x_shepheard.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_shepheard.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 8,
@@ -8573,7 +8573,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.komodo.kick.crouching = self.new_m4.kick.standing
 		self.komodo.kick.steelsight = self.new_m4.kick.standing		
 		self.komodo.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 25,
 			spread_moving = 8,
@@ -8676,7 +8676,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.legacy.kick.crouching = self.glock_17.kick.standing
 		self.legacy.kick.steelsight = self.glock_17.kick.standing
 		self.legacy.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -8711,7 +8711,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_legacy.kick.crouching = self.glock_17.kick.standing
 		self.x_legacy.kick.steelsight = self.glock_17.kick.standing
 		self.x_legacy.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 17,
 			recoil = 21,
 			spread_moving = 5,
@@ -8864,7 +8864,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.sar21.kick.crouching = self.new_m4.kick.standing
 			self.sar21.kick.steelsight = self.new_m4.kick.standing
 			self.sar21.stats = {
-				damage = 32,
+				damage = 37,
 				spread = 17,
 				recoil = 19,
 				spread_moving = 7,
@@ -8988,7 +8988,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1216.kick.crouching = self.new_m4.kick.standing
 		self.m1216.kick.steelsight = self.new_m4.kick.standing
 		self.m1216.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 7,
 			recoil = 18,
 			spread_moving = 8,
@@ -9022,7 +9022,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.xm8.kick.crouching = self.new_m4.kick.standing
 			self.xm8.kick.steelsight = self.new_m4.kick.standing
 			self.xm8.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 19,
 				recoil = 16,
 				spread_moving = 8,
@@ -9056,7 +9056,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.g36k.kick.crouching = self.new_m4.kick.standing
 			self.g36k.kick.steelsight = self.new_m4.kick.standing
 			self.g36k.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 15,
 				recoil = 19,
 				spread_moving = 7,
@@ -9087,7 +9087,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amt.AMMO_MAX = 40
 		self.amt.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.amt.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 18,
 			recoil = 18,
 			spread_moving = 6,
@@ -9104,6 +9104,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end	
 
 	if self.noodle then --Germantaco's P220
+		self.noodle.tactical_reload = 1										
 		self.noodle.has_description = false		
 		self.noodle.AMMO_MAX = 120
 		self.noodle.CLIP_AMMO_MAX = 14
@@ -9120,7 +9121,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.noodle.kick.crouching = self.glock_17.kick.standing
 		self.noodle.kick.steelsight = self.glock_17.kick.standing
 		self.noodle.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 7,
@@ -9137,6 +9138,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end		
 
 	if self.heffy_556 then --Killerwolf & Germantaco's AK 101
+		self.heffy_556.tactical_reload = 1											
 		self.heffy_556.AMMO_MAX = 180
 		self.heffy_556.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.heffy_556.spread.standing = 3
@@ -9151,7 +9153,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.heffy_556.kick.crouching = self.new_m4.kick.standing
 		self.heffy_556.kick.steelsight = self.new_m4.kick.standing
 		self.heffy_556.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 20,
 			spread_moving = 6,
@@ -9169,6 +9171,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 
 	if self.heffy_545 then 	
+		self.heffy_545.tactical_reload = 1												
 		self.heffy_545.desc_id = "bm_menu_sc_heffy_545_desc"
 		self.heffy_545.AMMO_MAX = 150
 		self.heffy_545.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -9184,7 +9187,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.heffy_545.kick.crouching = self.new_m4.kick.standing
 		self.heffy_545.kick.steelsight = self.new_m4.kick.standing
 		self.heffy_545.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 15,
 			recoil = 20,
 			spread_moving = 6,
@@ -9256,7 +9259,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.kick.crouching = self.huntsman.kick.standing
 		self.m1894.kick.steelsight = self.huntsman.kick.standing
 		self.m1894.stats = {
-			damage = 145,
+			damage = 150,
 			spread = 17,
 			recoil = 15,
 			spread_moving = 9,
@@ -9293,7 +9296,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.degle.AMMO_MAX = 40
 		self.degle.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.degle.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 18,
 			recoil = 19,
 			spread_moving = 6,
@@ -9326,7 +9329,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mk18s.kick.crouching = self.new_m4.kick.standing
 		self.mk18s.kick.steelsight = self.new_m4.kick.standing
 		self.mk18s.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 20,
 			spread_moving = 8,
@@ -9399,7 +9402,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203.kick.crouching = self.new_m4.kick.standing
 			self.scar_m203.kick.steelsight = self.new_m4.kick.standing
 			self.scar_m203.stats = {
-				damage = 30,
+				damage = 35,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 13,
@@ -9524,7 +9527,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.duke1911.kick.crouching = self.glock_17.kick.standing
 			self.duke1911.kick.steelsight = self.glock_17.kick.standing
 			self.duke1911.stats = {
-				damage = 45,
+				damage = 50,
 				spread = 19,
 				recoil = 18,
 				spread_moving = 5,
@@ -9556,7 +9559,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.vityaz.AMMO_MAX = 150
 			self.vityaz.AMMO_PICKUP = self:_pickup_chance(150, 1)
 			self.vityaz.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 16,
 				recoil = 18,
 				spread_moving = 8,
@@ -9584,7 +9587,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.ots_14_4a.spread.moving_crouching = 3
 			self.ots_14_4a.spread.moving_steelsight = 2
 			self.ots_14_4a.stats = {
-				damage = 45,
+				damage = 50,
 				spread = 16,
 				recoil = 18,
 				spread_moving = 6,
@@ -9620,7 +9623,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.mg4.kick.crouching = self.new_m4.kick.standing
 			self.mg4.kick.steelsight = self.new_m4.kick.standing
 			self.mg4.stats = {
-				damage = 25,
+				damage = 30,
 				spread = 15,
 				recoil = 19,
 				spread_moving = 8,
@@ -9650,7 +9653,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pm.kick.crouching = self.glock_17.kick.standing
 			self.pm.kick.steelsight = self.glock_17.kick.standing
 			self.pm.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 16,
 				recoil = 22,
 				spread_moving = 9,
@@ -9681,7 +9684,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.xs_pm.kick.crouching = self.glock_17.kick.standing
 			self.xs_pm.kick.steelsight = self.glock_17.kick.standing
 			self.x_pm.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 16,
 				recoil = 22,
 				spread_moving = 9,
@@ -9744,7 +9747,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hshdm.kick.crouching = self.glock_17.kick.standing
 			self.hshdm.kick.steelsight = self.glock_17.kick.standing
 			self.hshdm.stats = {
-				damage = 34,
+				damage = 39,
 				spread = 15,
 				recoil = 24,
 				spread_moving = 9,
@@ -9811,7 +9814,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pecheneg.kick.crouching = self.new_m4.kick.standing
 			self.pecheneg.kick.steelsight = self.new_m4.kick.standing
 			self.pecheneg.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 19,
 				recoil = 16,
 				spread_moving = 9,
@@ -9846,7 +9849,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m60.kick.crouching = self.new_m4.kick.standing
 			self.m60.kick.steelsight = self.new_m4.kick.standing
 			self.m60.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 18,
 				recoil = 20,
 				spread_moving = 9,
@@ -9923,7 +9926,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.zweihander.kick.crouching = self.new_m4.kick.standing
 			self.zweihander.kick.steelsight = self.new_m4.kick.standing
 			self.zweihander.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 16,
 				recoil = 19,
 				spread_moving = 8,
@@ -9957,7 +9960,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.rpd.kick.crouching = self.new_m4.kick.standing
 			self.rpd.kick.steelsight = self.new_m4.kick.standing
 			self.rpd.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 12,
 				recoil = 20,
 				spread_moving = 6,
@@ -9990,7 +9993,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.yayo.kick.crouching = self.new_m4.kick.standing
 			self.yayo.kick.steelsight = self.new_m4.kick.standing
 			self.yayo.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 14,
 				recoil = 21,
 				spread_moving = 13,
@@ -10031,7 +10034,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.storm.kick.crouching = self.glock_17.kick.standing
 			self.storm.kick.steelsight = self.glock_17.kick.standing
 			self.storm.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 15,
 				recoil = 22,
 				spread_moving = 5,
@@ -10072,7 +10075,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hcar.kick.crouching = self.new_m4.kick.standing
 			self.hcar.kick.steelsight = self.new_m4.kick.standing
 			self.hcar.stats = {
-				damage = 95,
+				damage = 100,
 				spread = 20,
 				recoil = 17,
 				spread_moving = 5,
@@ -10114,7 +10117,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.bar.kick.crouching = self.new_m4.kick.standing
 			self.bar.kick.steelsight = self.new_m4.kick.standing
 			self.bar.stats = {
-				damage = 95,
+				damage = 100,
 				spread = 19,
 				recoil = 16,
 				spread_moving = 5,
@@ -10149,7 +10152,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak12.kick.crouching = self.new_m4.kick.standing
 		self.ak12.kick.steelsight = self.new_m4.kick.standing
 		self.ak12.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 4,
@@ -10180,7 +10183,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aek971.kick.crouching = self.new_m4.kick.standing
 		self.aek971.kick.steelsight = self.new_m4.kick.standing
 		self.aek971.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 6,
@@ -10212,7 +10215,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_gsh18.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.x_gsh18.FIRE_MODE = "single"
 		self.x_gsh18.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 21,
 			spread_moving = 5,
@@ -10243,7 +10246,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.gsh18.kick.crouching = self.glock_17.kick.standing
 		self.gsh18.kick.steelsight = self.glock_17.kick.standing
 		self.gsh18.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 18,
 			recoil = 19,
 			spread_moving = 5,
@@ -10271,7 +10274,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stg44.spread.moving_crouching = 3
 		self.stg44.spread.moving_steelsight = 2
 		self.stg44.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 6,
@@ -10308,7 +10311,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.toz194.damage_far = 1600
 		self.toz194.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.toz194.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 8,
 			recoil = 18,
 			spread_moving = 8,
@@ -10347,7 +10350,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.trench.kick.steelsight = self.huntsman.kick.standing
 		self.trench.timers.shotgun_reload_first_shell_offset = 0.12
 		self.trench.stats = {
-			damage = 145,
+			damage = 150,
 			spread = 8,
 			recoil = 15,
 			spread_moving = 5,
@@ -10414,7 +10417,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas15.kick.crouching = self.new_m4.kick.standing
 		self.spas15.kick.steelsight = self.new_m4.kick.standing
 		self.spas15.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 9,
 			recoil = 16,
 			spread_moving = 7,
@@ -10452,7 +10455,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.owen.kick.crouching = self.new_m4.kick.standing
 		self.owen.kick.steelsight = self.new_m4.kick.standing
 		self.owen.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 18,
 			spread_moving = 7,
@@ -10513,7 +10516,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.gtt33.kick.crouching = self.glock_17.kick.standing
 		self.gtt33.kick.steelsight = self.glock_17.kick.standing
 		self.gtt33.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 5,
@@ -10582,7 +10585,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.qbz97b.kick.crouching = self.new_m4.kick.standing
 		self.qbz97b.kick.steelsight = self.new_m4.kick.standing		
 		self.qbz97b.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 12,
 			recoil = 20,
 			spread_moving = 4,
@@ -10620,7 +10623,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.drongo.auto.fire_rate = 0.08571428571
 		self.drongo.panic_suppression_chance = 0.0
 		self.drongo.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 17,
 			recoil = 18,
 			spread_moving = 10,
@@ -10718,7 +10721,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cbjms.kick.crouching = self.new_m4.kick.standing
 		self.cbjms.kick.steelsight = self.new_m4.kick.standing
 		self.cbjms.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 9,
@@ -10753,7 +10756,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.skspug.stats = {
 			zoom = 3,
 			total_ammo_mod = 100,
-			damage = 95,
+			damage = 100,
 			alert_size = 6,
 			spread = 16,
 			spread_moving = 5,
@@ -10782,7 +10785,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sks.AMMO_MAX = 60
 		self.sks.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.sks.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 5,
@@ -10813,7 +10816,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.bulldoge.spread.moving_steelsight = 2
 		self.bulldoge.panic_suppression_chance = 0.0
 		self.bulldoge.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 18,
 			recoil = 17,
 			spread_moving = 9,
@@ -10849,7 +10852,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.l1a1.AMMO_MAX = 60
 		self.l1a1.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.l1a1.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 4,
@@ -10891,7 +10894,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tm1a1.kick.steelsight = self.new_m4.kick.standing
 		self.tm1a1.panic_suppression_chance = 0.1
 		self.tm1a1.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 17,
 			spread_moving = 6,
@@ -10925,7 +10928,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hk416.kick.crouching = self.new_m4.kick.standing
 			self.hk416.kick.steelsight = self.new_m4.kick.standing
 			self.hk416.stats = {
-				damage = 30,
+				damage = 35,
 				spread = 14,
 				recoil = 19,
 				spread_moving = 7,
@@ -10998,7 +11001,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.f2000.kick.crouching = self.new_m4.kick.standing
 		self.f2000.kick.steelsight = self.new_m4.kick.standing
 		self.f2000.stats = {
-			damage = 30,
+			damage = 35,
 			spread = 15,
 			recoil = 22,
 			spread_moving = 6,
@@ -11031,7 +11034,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.tilt.kick.crouching = self.new_m4.kick.standing
 			self.tilt.kick.steelsight = self.new_m4.kick.standing
 			self.tilt.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 15,
 				recoil = 19,
 				spread_moving = 6,
@@ -11067,7 +11070,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10mpa.kick.crouching = self.new_m4.kick.standing
 		self.mac10mpa.kick.steelsight = self.new_m4.kick.standing
 		self.mac10mpa.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 14,
 			recoil = 20,
 			spread_moving = 8,
@@ -11101,7 +11104,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.kurz_919.AMMO_MAX = 150
 		self.kurz_919.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.kurz_919.stats = {
-			damage = 27,
+			damage = 32,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 6,
@@ -11136,7 +11139,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.op68.panic_suppression_chance = 0.0
 		self.op68.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 16,
 			recoil = 22,
 			spread_moving = 6,
@@ -11204,7 +11207,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.kick.crouching = self.new_m4.kick.standing
 		self.stf12.kick.steelsight = self.new_m4.kick.standing		
 		self.stf12.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 8,
 			recoil = 15,
 			spread_moving = 6,
@@ -11310,7 +11313,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obr5.AMMO_MAX = 80
 		self.obr5.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.obr5.stats = {
-			damage = 67,
+			damage = 72,
 			spread = 14,
 			recoil = 18,
 			spread_moving = 5,
@@ -11380,7 +11383,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m1912.kick.steelsight = self.new_m4.kick.standing
 			self.m1912.panic_suppression_chance = 0.0
 			self.m1912.stats = {
-				damage = 95,
+				damage = 100,
 				spread = 10,
 				recoil = 15,
 				spread_moving = 6,
@@ -11442,7 +11445,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.px4.kick.crouching = self.glock_17.kick.standing
 		self.px4.kick.steelsight = self.glock_17.kick.standing
 		self.px4.stats = {
-			damage = 34,
+			damage = 39,
 			spread = 19,
 			recoil = 17,
 			spread_moving = 5,
@@ -11474,7 +11477,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.qsz92.kick.crouching = self.glock_17.kick.standing
 		self.qsz92.kick.steelsight = self.glock_17.kick.standing
 		self.qsz92.stats = {
-			damage = 44,
+			damage = 49,
 			spread = 18,
 			recoil = 19,
 			spread_moving = 8,
@@ -11505,7 +11508,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glawk.kick.crouching = self.glock_17.kick.standing
 		self.glawk.kick.steelsight = self.glock_17.kick.standing
 		self.glawk.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 15,
 			recoil = 21,
 			spread_moving = 7,
@@ -11536,7 +11539,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hpb.kick.crouching = self.glock_17.kick.standing
 		self.hpb.kick.steelsight = self.glock_17.kick.standing
 		self.hpb.stats = {
-			damage = 42,
+			damage = 47,
 			spread = 18,
 			recoil = 18,
 			spread_moving = 5,
@@ -11578,7 +11581,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.peepee.kick.crouching = self.new_m4.kick.standing
 		self.peepee.kick.steelsight = self.new_m4.kick.standing
 		self.peepee.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 17,
 			recoil = 19,
 			spread_moving = 9,
@@ -11608,7 +11611,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.heffy_762.spread.moving_crouching = 3
 		self.heffy_762.spread.moving_steelsight = 2
 		self.heffy_762.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 6,
@@ -11642,7 +11645,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aug9mm.kick.crouching = self.new_m4.kick.standing
 		self.aug9mm.kick.steelsight = self.new_m4.kick.standing
 		self.aug9mm.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 7,
@@ -11670,7 +11673,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.dp28.spread.moving_crouching = 3
 		self.dp28.spread.moving_steelsight = 2
 		self.dp28.stats = {
-		damage = 45,
+		damage = 50,
 		spread = 15,
 		recoil = 17,
 		spread_moving = 9,
@@ -11705,7 +11708,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3m203.spread.moving_crouching = 3
 		self.g3m203.spread.moving_steelsight = 2
 		self.g3m203.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 18,
 			recoil = 17,
 			spread_moving = 7,
@@ -11827,7 +11830,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk33.spread.moving_crouching = 3
 		self.hk33.spread.moving_steelsight = 2
 		self.hk33.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 15,
 			recoil = 16,
 			spread_moving = 5,
@@ -11895,7 +11898,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m3.kick.crouching = self.new_m4.kick.standing
 		self.m3.kick.steelsight = self.new_m4.kick.standing
 		self.m3.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 19,
 			recoil = 15,
 			spread_moving = 8,
@@ -11974,7 +11977,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.czevo.kick.crouching = self.new_m4.kick.standing
 			self.czevo.kick.steelsight = self.new_m4.kick.standing
 			self.czevo.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 16,
 				recoil = 22,
 				spread_moving = 8,
@@ -12007,7 +12010,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.kick.crouching = self.new_m4.kick.standing
 			self.pdr.kick.steelsight = self.new_m4.kick.standing
 			self.pdr.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 7,
@@ -12043,7 +12046,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.kick.crouching = self.new_m4.kick.standing
 			self.fmg9.kick.steelsight = self.new_m4.kick.standing
 			self.fmg9.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 16,
 				recoil = 19,
 				spread_moving = 9,
@@ -12078,7 +12081,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.plr16.kick.crouching = self.glock_17.kick.standing
 			self.plr16.kick.steelsight = self.glock_17.kick.standing
 			self.plr16.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 16,
 				recoil = 21,
 				spread_moving = 5,
@@ -12114,7 +12117,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.vp70.kick.crouching = self.glock_17.kick.standing
 			self.vp70.kick.steelsight = self.glock_17.kick.standing
 			self.vp70.stats = {
-				damage = 26,
+				damage = 31,
 				spread = 15,
 				recoil = 22,
 				spread_moving = 9,
@@ -12143,7 +12146,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.x_vp70.kick.crouching = self.glock_17.kick.standing
 			self.x_vp70.kick.steelsight = self.glock_17.kick.standing
 			self.x_vp70.stats = {
-				damage = 26,
+				damage = 31,
 				spread = 15,
 				recoil = 22,
 				spread_moving = 9,
@@ -12175,7 +12178,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scarl.kick.crouching = self.new_m4.kick.standing
 			self.scarl.kick.steelsight = self.new_m4.kick.standing
 			self.scarl.stats = {
-				damage = 30,
+				damage = 35,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 13,
@@ -12214,7 +12217,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.volmer.kick.steelsight = self.new_m4.kick.standing
 			self.volmer.panic_suppression_chance = 0.1
 			self.volmer.stats = {
-				damage = 29,
+				damage = 34,
 				spread = 15,
 				recoil = 18,
 				spread_moving = 10,
@@ -12245,7 +12248,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mpx.kick.crouching = self.new_m4.kick.standing
 		self.mpx.kick.steelsight = self.new_m4.kick.standing
 		self.mpx.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 8,
@@ -12283,7 +12286,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak12_76.kick.crouching = self.new_m4.kick.standing
 		self.ak12_76.kick.steelsight = self.new_m4.kick.standing
 		self.ak12_76.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 8,
 			recoil = 19,
 			spread_moving = 7,
@@ -12314,7 +12317,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1895.kick.crouching = self.glock_17.kick.standing
 		self.m1895.kick.steelsight = self.glock_17.kick.standing
 		self.m1895.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 20,
 			recoil = 19,
 			spread_moving = 8,
@@ -12350,7 +12353,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.recce.kick.crouching = self.new_m4.kick.standing
 		self.recce.kick.steelsight = self.new_m4.kick.standing
 		self.recce.stats = {
-			damage = 45,
+			damage = 50,
 			spread = 20,
 			recoil = 16,
 			spread_moving = 5,
@@ -12432,7 +12435,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.wargoddess.AMMO_MAX = 60
 		self.wargoddess.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.wargoddess.stats = {
-			damage = 95,
+			damage = 100,
 			spread = 20,
 			recoil = 17,
 			spread_moving = 5,
@@ -12464,7 +12467,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aps.kick.crouching = self.new_m4.kick.standing
 		self.aps.kick.steelsight = self.new_m4.kick.standing
 		self.aps.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 20,
 			recoil = 18,
 			spread_moving = 9,
@@ -12504,7 +12507,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ultimax.kick.crouching = self.new_m4.kick.standing
 		self.ultimax.kick.steelsight = self.new_m4.kick.standing
 		self.ultimax.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 13,
 			recoil = 24,
 			spread_moving = 6,

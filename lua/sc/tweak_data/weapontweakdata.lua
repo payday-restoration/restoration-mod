@@ -5079,12 +5079,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_b92fs.fire_mode_data.fire_rate = 0.075
 		self.x_b92fs.single.fire_rate = 0.075
 		self.x_b92fs.stats = {
-			damage = 28,
+			damage = 29,
 			spread = 16,
 			recoil = 22,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 29,
+			concealment = 28,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -8125,8 +8125,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.fire_mode_data.fire_rate = 0.05
 		self.x_g18c.single.fire_rate = 0.05
 		self.x_g18c.CLIP_AMMO_MAX = 36
-		self.x_g18c.AMMO_MAX = 180
-		self.x_g18c.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.x_g18c.AMMO_MAX = 200
+		self.x_g18c.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.x_g18c.spread.standing = 3
 		self.x_g18c.spread.crouching = 2
 		self.x_g18c.spread.steelsight = 1
@@ -8137,9 +8137,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_g18c.kick.crouching = self.new_m4.kick.standing
 		self.x_g18c.kick.steelsight = self.new_m4.kick.standing
 		self.x_g18c.stats = {
-			damage = 29,
+			damage = 25,
 			spread = 16,
-			recoil = 21,
+			recoil = 18,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,

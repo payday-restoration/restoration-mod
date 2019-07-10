@@ -1053,30 +1053,33 @@ function UpgradesTweakData:_init_pd2_values()
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
 		{
-			{1.5, 4},
-			{2.5, 4.5},
-			{3.5, 5},
-			{4.5, 5.5},
-			{5.5, 6},
-			{6.5, 6.5},
-			{7.5, 7}
+			{3.0, 3.0},
+			{3.5, 3.5},
+			{4.0, 4.0},
+			{4.5, 4.5},
+			{5.0, 5.0},
+			{5.5, 5.5},
+			{6.0, 6.0}
 		}
 	}
+	
 	self.values.player.health_decrease = {0.5}
+	
 	self.values.player.armor_increase = {
-		0.3,
-		0.4,
-		0.5
+		0.45,
+		0.6,
+		0.75
 	}
+
 	self.values.player.damage_to_armor = {
 		{
-			{0.5, 3},
-			{0.75, 3},
-			{1, 3},
-			{1.25, 3},
 			{1.5, 3},
-			{1.75, 3},
-			{2, 3}
+			{1.8, 3},
+			{2.1, 3},
+			{2.4, 3},
+			{2.6, 3},
+			{2.8, 3},
+			{3.0, 3}
 		}
 	}
 	
@@ -1213,7 +1216,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Hacker
 	self.values.player.pocket_ecm_jammer_base = {
 		{
-			cooldown_drain = 4,
+			cooldown_drain = 5,
 			duration = 12
 		}
 	}	

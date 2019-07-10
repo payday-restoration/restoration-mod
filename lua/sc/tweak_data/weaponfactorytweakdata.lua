@@ -46255,7 +46255,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				recoil = 6,
 				extra_ammo = -3,
 				total_ammo_mod = 33,
-				damage = -27,
+				damage = -22,
 				suppression = 1,
 				alert_size = 1
 			},
@@ -46962,7 +46962,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_smg_k1a7_b_sd.stats = {
 				damage = 5,
 				spread = 1,
-				recoil = -1,
+				recoil = 0,
 				concealment = 1,
 				suppression = 12,
 				alert_size = 12

@@ -12163,8 +12163,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scarl.has_description = false		
 			self.scarl.tactical_reload = 1
 			self.scarl.fire_mode_data.fire_rate = 0.096
-			self.scarl.AMMO_MAX = 120
-			self.scarl.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.scarl.AMMO_MAX = 150
+			self.scarl.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.scarl.spread.standing = 3
 			self.scarl.spread.crouching = 2
 			self.scarl.spread.steelsight = 1

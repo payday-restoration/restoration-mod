@@ -12724,7 +12724,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vss.AMMO_MAX = 40
 		self.vss.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.vss.FIRE_MODE = "single"
-		self.vss.CAN_TOGGLE_FIREMODE = false
+		--self.vss.CAN_TOGGLE_FIREMODE = false
 		self.vss.spread.standing = 3
 		self.vss.spread.crouching = 2
 		self.vss.spread.steelsight = 1

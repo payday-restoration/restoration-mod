@@ -362,5 +362,10 @@
 	"menu_color_plus" : "E3 PAYDAY+",
 	"menu_color_rvd1" : "Inverted",
 	"menu_color_e3nice" : "E3 Nice",
-	"menu_color_force" : "E3 BHD"
+	"menu_color_force" : "E3 BHD",
+
+	"color_plus" : "E3 PAYDAY+",
+	"color_rvd1" : "Inverted",
+	"color_e3nice" : "E3 Nice",
+	"color_force" : "E3 BHD"
 }

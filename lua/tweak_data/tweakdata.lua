@@ -1,5 +1,34 @@
 --if not RestorationTweak then
 restoration.textures = {}
+
+-- Color Grading Changer Standalone V3 Support
+if gradient_filter then
+	table.insert(gradient_filter.colour_gradings, 
+		"color_plus"
+	)
+	table.insert(gradient_filter.colour_gradings, 
+		"color_force"
+	)
+	table.insert(gradient_filter.colour_gradings, 
+		"color_e3nice"
+	)
+	table.insert(gradient_filter.colour_gradings, 
+		"color_rvd1"
+	)
+	table.insert(gradient_filter.heist_colour_gradings, 
+		"color_plus"
+	)
+	table.insert(gradient_filter.heist_colour_gradings, 
+		"color_force"
+	)
+	table.insert(gradient_filter.heist_colour_gradings, 
+		"color_e3nice"
+	)
+	table.insert(gradient_filter.heist_colour_gradings, 
+		"color_rvd1"
+	)
+end
+
 --E3 PAYDAY+
 table.insert(tweak_data.color_grading, 
 	{

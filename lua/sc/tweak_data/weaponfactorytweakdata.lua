@@ -2726,7 +2726,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 1,
 				recoil = -1,
-				damage = 10,
+				damage = 5,
 				spread_moving = 1,
 				concealment = -2
 			},
@@ -22933,7 +22933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 2,
 				recoil = -1,
 				concealment = -4,
-				damage = 8
+				damage = 3
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",

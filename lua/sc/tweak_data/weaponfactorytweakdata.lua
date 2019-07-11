@@ -19014,7 +19014,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 8,
+				damage = 3,
 				recoil = -1,
 				spread = 2,
 				spread_moving = 0,
@@ -19060,7 +19060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				recoil = -1,
 				spread = 2,
-				damage = 8,
+				damage = 3,
 				spread_moving = 0,
 				concealment = -3
 			},

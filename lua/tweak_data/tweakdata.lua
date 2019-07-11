@@ -258,16 +258,20 @@ table.insert (tweak_data.gui.crime_net.codex,
 				{
 					desc_id = "heist_contact_shatter_description",
 					videos = {"shatter1"}
+				},
+				id = "shatter",
+				name_id = "heist_contact_shatter",
+				{
+					desc_id = "heist_contact_raze_description",
+					videos = {"shatter1"}
+				},
+				id = "shatter",
+				name_id = "heist_contact_shatter",
+				{
+					desc_id = "heist_contact_jackal_description",
+					videos = {"shatter1"}
 				}
-			}
-
-		} )
---Sin codex entry		
-		table.insert (tweak_data.gui.crime_net.codex,
-
-		{
-			id = "contacts",
-			name_id = "menu_contacts_shatter",
+			},
 			{
 				id = "sina",
 				name_id = "heist_contact_sin",
@@ -278,6 +282,7 @@ table.insert (tweak_data.gui.crime_net.codex,
 			}
 
 		} )
+
 --Jackal narrative entry
 tweak_data.narrative.contacts.shatter				= {}
 tweak_data.narrative.contacts.shatter.name_id					= "heist_contact_shatter"
@@ -290,9 +295,9 @@ tweak_data.narrative.contacts.shatter.assets_gui = Idstring( "guis/mission_brief
 tweak_data.narrative.contacts.sina				= {}
 tweak_data.narrative.contacts.sina.name_id					= "heist_contact_sin"
 tweak_data.narrative.contacts.sina.description_id	= "heist_contact_shatter_description"
-tweak_data.narrative.contacts.sina.image		= "guis/textures/pd2/crimenet_portrait_interupt"
-tweak_data.narrative.contacts.sina.package = "packages/contact_interupt"
-tweak_data.narrative.contacts.sina.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
+tweak_data.narrative.contacts.sina.image		= "guis/textures/pd2/crimenet_portrait_hector"
+tweak_data.narrative.contacts.sina.package = "packages/contact_hector"
+tweak_data.narrative.contacts.sina.assets_gui = Idstring( "guis/mission_briefing/preload_contact_hector" )
 --District descriptions
 if restoration.Options:GetValue("HUD/District") then
 	tweak_data.gui.crime_net.regions = {

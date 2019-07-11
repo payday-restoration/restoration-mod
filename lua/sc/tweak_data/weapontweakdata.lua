@@ -4136,7 +4136,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread = 1,
 			recoil = 1,
 			spread_moving = 7,
-			damage = 105,
+			damage = 100,
 			concealment = 16,
 			value = 1,
 			extra_ammo = 101,
@@ -4170,7 +4170,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread = 1,
 			recoil = 1,
 			spread_moving = 7,
-			damage = 105,
+			damage = 100,
 			concealment = 16,
 			value = 1,
 			extra_ammo = 101,
@@ -8426,7 +8426,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shuno.kick.steelsight = self.new_m4.kick.standing
 		self.shuno.panic_suppression_chance = 0.1
 		self.shuno.stats = {
-			damage = 32,
+			damage = 30,
 			spread = 16,
 			recoil = 23,
 			spread_moving = 9,
@@ -11446,7 +11446,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.px4.kick.steelsight = self.glock_17.kick.standing
 		self.px4.stats = {
 			damage = 39,
-			spread = 19,
+			spread = 17,
 			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
@@ -11459,7 +11459,40 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.px4.panic_suppression_chance = 0.0
-	end				
+	end			
+
+	if self.p99 then --Pawcio's P99 AS
+		self.p99.AMMO_MAX = 150
+		self.p99.has_description = false				
+		self.p99.tactical_reload = 1						
+		self.p99.fire_mode_data.fire_rate = 0.1
+		self.p99.single.fire_rate = 0.1		
+		self.p99.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.p99.spread.standing = 3
+		self.p99.spread.crouching = 2
+		self.p99.spread.steelsight = 1
+		self.p99.spread.moving_standing = 4
+		self.p99.spread.moving_crouching = 3
+		self.p99.spread.moving_steelsight = 2
+		self.p99.kick.standing = self.glock_17.kick.standing
+		self.p99.kick.crouching = self.glock_17.kick.standing
+		self.p99.kick.steelsight = self.glock_17.kick.standing
+		self.p99.stats = {
+			damage = 33,
+			spread = 18,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 29,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.p99.panic_suppression_chance = 0.0
+	end					
 
 	if self.qsz92 then --Gambyt's QSZ 92
 		self.qsz92.AMMO_MAX = 80

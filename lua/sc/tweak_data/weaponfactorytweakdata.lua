@@ -44697,7 +44697,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				total_ammo_mod = 20,
 				damage = -6,								
 				concealment = 2,				
-				extra_ammo = -12
+				extra_ammo = -12,
+				total_ammo_mod = 20 --it is a conversion kit to light pistol, so why not a max ammo buff?
 				}	
 			self.parts.wpn_fps_upg_sub2000_m_short.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2}					
 			self.parts.wpn_fps_upg_sub2000_m_short.forbids = {"wpn_fps_upg_ammo_40sw"}										

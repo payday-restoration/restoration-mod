@@ -41942,6 +41942,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_f2000_uupg_barrel_long.stats = {
 						value = 4,
 						spread = 1,
+						damage = 5,
 						concealment = -2
 						}	
 				self.parts.wpn_fps_f2000_uupg_o_fnoptic.stats = {
@@ -44797,7 +44798,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}				
 			self.parts.wpn_fps_upg_sub2000_m_short.stats = { 
 				value = 2,
-				recoil = 1,	
+				recoil = 1,
+				total_ammo_mod = 20,
 				damage = -6,								
 				concealment = 2,				
 				extra_ammo = -12

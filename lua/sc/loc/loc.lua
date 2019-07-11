@@ -190,8 +190,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_calico"] = "Calico M9L Machine Pistol",
 		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",			
 		["bm_wp_wpn_fps_ass_galil_m_drum"] = "75 Round Drum Magazine",
-		["bm_wp_upg_a_imito9mm"] = "9mm Conversion Kit",
-		["bm_wp_upg_a_imito9mm_desc"] =	"A proper luger round goes a long way. Min and Max pickup rate: 0.8x",
 		["bm_wp_wpn_fps_smg_calico_body_carbine_desc"] = "Custom medium pistol round conversion. Min and Max pickup rate: 0.8x", 
 		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Custom heavy pistol round conversion. Min and Max pickup rate: 0.64x",
 		--String override for the stungun--

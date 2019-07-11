@@ -46262,30 +46262,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			custom_stats = {ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33},
 			internal_part = true
 		}
-		self.parts.wpn_fps_upg_ammo_imito9mm = { --9mm for CZAuto
-			pcs = {},
-			type = "ammo",
-			name_id = "bm_wp_upg_a_imito9mm",
-			desc_id = "bm_wp_upg_a_imito9mm_desc",
-			a_obj = "a_body",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			is_a_unlockable = true,
-			has_description = true,
-			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
-			dlc = "sc",
-			stats = {
-				value = 3,
-				spread = 1,
-				recoil = 1,
-				total_ammo_mod = -16,
-				damage = 4,
-				suppression = -1,
-				alert_size = -1
-			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
-			internal_part = true
-		}
 		self.parts.wpn_fps_upg_ammo_65grendel = {
 			type = "ammo",
 			name_id = "bm_wp_upg_a_65grendel",
@@ -46936,12 +46912,41 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.list_append( self.wpn_fps_pis_x_sonny.uses_parts, {
 				"wpn_fps_upg_ammo_45custom"
 			})
+			self.parts.wpn_fps_pis_sonny_sl_runt.stats = {
+				spread = -1,
+				recoil = -1,
+				concealment = 2
+			}
 		end
 
 		if self.wpn_fps_pis_czauto then --Alcat's CZAuto
-			table.list_append(self.wpn_fps_pis_czauto.uses_parts, {
-				"wpn_fps_upg_ammo_imito9mm"
-			})
+			self.parts.wpn_fps_pis_czauto_ns_compensated.stats = {
+				recoil = 1,
+				spread = 1,
+				concealment = -1,
+				spread_moving = 1
+			}
+			self.parts.wpn_fps_pis_czauto_m_extended.stats = {
+				recoil = 1,
+				extra_ammo = 8,
+				concealment = -2,
+				reload = -1,
+				spread_moving = 0
+			}
+			self.parts.wpn_fps_pis_czauto_vg_mag.stats = {
+				recoil = 3,
+				concealment = -2,
+				reload = 3
+			}
+			self.parts.wpn_fps_pis_czauto_g_wooden.stats = {
+				recoil = 0
+			}
+			self.parts.wpn_fps_pis_czauto_g_walnut.stats = {
+				recoil = 0
+			}
+			self.parts.wpn_fps_pis_czauto_g_pearl.stats = {
+				recoil = 0
+			}
 		end
 
 		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7; for some reason, the integrated suppressor allows supported custom barrel attachments. Wierd...
@@ -46960,12 +46965,15 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				ammo_pickup_max_mul = 1.2
 			}
 			self.parts.wpn_fps_smg_k1a7_b_sd.stats = {
-				damage = 5,
 				spread = 1,
 				recoil = 0,
 				concealment = 1,
 				suppression = 12,
 				alert_size = 12
+			}
+			self.parts.wpn_fps_smg_k1a7_s_pulled.stats = {
+				recoil = 1,
+				concealment = -1
 			}
 			table.list_append(self.wpn_fps_smg_k1a7.uses_parts, {
 				"wpn_fps_upg_i_faster_rof"
@@ -46985,7 +46993,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_smg_calico_body_carbine.stats = {
 				damage = 6,
 				recoil = 1,
-				spread = -1,
 				concealment= -2,
 				total_ammo_mod= -16,
 				suppression = -1,
@@ -46997,9 +47004,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				ammo_pickup_max_mul = 0.8
 			}
 			self.parts.wpn_fps_smg_calico_body_full.stats = {
-				damage = 15,
-				recoil = -4,
-				spread = 5,
+				damage = 16,
+				recoil = 2,
+				spread = 3,
 				concealment= -5,
 				total_ammo_mod= -33,
 				suppression = -2,

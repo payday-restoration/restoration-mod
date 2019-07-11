@@ -12631,7 +12631,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sonny.kick.crouching = self.glock_17.kick.standing
 		self.sonny.kick.steelsight = self.glock_17.kick.standing
 		self.sonny.stats = {
-			damage = 67,
+			damage = 72,
 			spread = 16,
 			recoil = 14,
 			spread_moving = 8,
@@ -12658,7 +12658,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sonny.kick.crouching = self.glock_17.kick.standing
 		self.x_sonny.kick.steelsight = self.glock_17.kick.standing
 		self.x_sonny.stats = {
-			damage = 70,
+			damage = 72,
 			spread = 16,
 			recoil = 14,
 			spread_moving = 8,
@@ -12688,12 +12688,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.czauto.kick.crouching = self.glock_17.kick.standing
 		self.czauto.kick.steelsight = self.glock_17.kick.standing
 		self.czauto.stats = {
-			damage = 25,
+			damage = 30,
 			spread = 14,
 			recoil = 20,
 			spread_moving = 9,
 			zoom = 3,
-			concealment = 30,
+			concealment = 28,
 			suppression = 10,
 			alert_size = 10,
 			extra_ammo = 101,
@@ -12722,7 +12722,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.k1a7.kick.crouching = self.new_m4.kick.standing
 		self.k1a7.kick.steelsight = self.new_m4.kick.standing
 		self.k1a7.stats = {
-			damage = 35,
+			damage = 40,
 			spread = 16,
 			recoil = 20,
 			spread_moving = 14,
@@ -12759,7 +12759,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.calico.kick.crouching = self.new_m4.kick.standing
 		self.calico.kick.steelsight = self.new_m4.kick.standing
 		self.calico.stats = {
-			damage = 29,
+			damage = 34,
 			spread = 16,
 			recoil = 13,
 			spread_moving = 15,

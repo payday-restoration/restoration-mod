@@ -46972,6 +46972,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				suppression = 12,
 				alert_size = 12
 			}
+			self.parts.wpn_fps_smg_k1a7_b_sd.forbids = {
+				"wpn_fps_upg_ns_hock",
+				"wpn_fps_upg_ns_osprey",
+				"wpn_fps_upg_ns_dragon",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
+				"wpn_fps_upg_ass_ns_jprifles",
+				"wpn_fps_upg_ass_ns_linear",
+				"wpn_fps_upg_ass_ns_surefire",
+				"wpn_fps_upg_ass_ns_battle"
+			}
 			self.parts.wpn_fps_smg_k1a7_s_pulled.stats = {
 				recoil = 1,
 				concealment = -1
@@ -47023,6 +47038,42 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = 3,
 				recoil = 1,
 				reload = 2
+			}
+		end
+
+		if self.wpn_fps_snp_vss then --Pwacio's VSS
+			self.parts.wpn_fps_upg_vss_mag_20rnd.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -2
+			}
+			self.parts.wpn_fps_upg_vss_cover_rail.stats = {
+				recoil = -1,
+				concealment = 1
+			}
+			self.parts.wpn_fps_upg_vss_irons.stats = {
+				recoil = -1,
+				concealment = 3,
+				zoom = 2
+			}
+			self.parts.wpn_fps_upg_vss_irons_il.stats = {
+				recoil = -1,
+				concealment = 3,
+				zoom = 2
+			}
+			self.parts.wpn_fps_upg_vss_leupold_pro.stats = {
+				recoil = 0,
+				concealment = 0,
+				zoom = 2
+			}
+			self.parts.wpn_fps_upg_vss_stock_black.stats = {
+				recoil = -1,
+				concealment = 2
+			}
+			self.parts.wpn_fps_upg_vss_stock_folding.stats = {
+				spread = -1,
+				recoil = -2,
+				concealment = 5
 			}
 		end
 

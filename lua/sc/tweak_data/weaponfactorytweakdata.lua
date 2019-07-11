@@ -47148,42 +47148,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 		end
 
-		if self.wpn_fps_snp_vss then --Pwacio's VSS
-			self.parts.wpn_fps_upg_vss_mag_20rnd.stats = {
-				extra_ammo = 10,
-				concealment = -1,
-				reload = -2
-			}
-			self.parts.wpn_fps_upg_vss_cover_rail.stats = {
-				recoil = -1,
-				concealment = 1
-			}
-			self.parts.wpn_fps_upg_vss_irons.stats = {
-				recoil = -1,
-				concealment = 3,
-				zoom = 2
-			}
-			self.parts.wpn_fps_upg_vss_irons_il.stats = {
-				recoil = -1,
-				concealment = 3,
-				zoom = 2
-			}
-			self.parts.wpn_fps_upg_vss_leupold_pro.stats = {
-				recoil = 0,
-				concealment = 0,
-				zoom = 2
-			}
-			self.parts.wpn_fps_upg_vss_stock_black.stats = {
-				recoil = -1,
-				concealment = 2
-			}
-			self.parts.wpn_fps_upg_vss_stock_folding.stats = {
-				spread = -1,
-				recoil = -2,
-				concealment = 5
-			}
-		end
-
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

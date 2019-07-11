@@ -44163,9 +44163,58 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}
 				}
 			}					
-			end					
+			end
+
+		if self.wpn_fps_pis_p99 then -- Pawcio's P99 AS		
+				self.parts.wpn_fps_upg_p99_ammo_40sw.stats = {
+						value = 10,
+						alert_size = -1,
+						suppression = -1,
+						total_ammo_mod = -20,
+						spread = 1,
+						concealment = -1,
+						recoil = -1,
+						damage = 6
+					}	
+				self.parts.wpn_fps_upg_p99_ammo_40sw.has_description = false							
+				self.parts.wpn_fps_upg_p99_ammo_40sw.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 1}									
+				self.parts.wpn_fps_upg_p99_sight_tritium.stats = {
+						value = 1
+					}	
+				self.parts.wpn_fps_upg_p99_sight_ghostring.stats = {
+						value = 1
+					}	
+				self.parts.wpn_fps_upg_p99_mag_ext.stats = {
+						value = 2,
+						extra_ammo = 5,
+						reload = -1
+					}
+				self.parts.wpn_fps_upg_p99_mag_ext.has_description = false												
+				self.parts.wpn_fps_upg_p99_barrel_ported.stats = {
+						value = 1,
+						recoil = -1,
+						damage = 1
+					}	
+				self.parts.wpn_fps_upg_p99_barrel_threaded.stats = {
+						value = 1,
+						spread = -1,
+						damage = 1
+					}																					
+			end				
 
 		if self.wpn_fps_pis_px4 then -- Pawcio's PX4 Storm		
+				self.parts.wpn_fps_upg_px4_ammo_45acp.stats = {
+						value = 10,
+						alert_size = -1,
+						suppression = -1,
+						total_ammo_mod = -33,
+						spread = 1,
+						concealment = -1,
+						recoil = -1,
+						damage = 10
+					}	
+				self.parts.wpn_fps_upg_px4_ammo_45acp.has_description = false							
+				self.parts.wpn_fps_upg_px4_ammo_45acp.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}							
 				self.parts.wpn_fps_upg_px4_sight_dot.stats = {
 						value = 1
 					}	
@@ -44197,18 +44246,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}
 				self.parts.wpn_fps_upg_px4_ammo_9mm.has_description = false							
 				self.parts.wpn_fps_upg_px4_ammo_9mm.custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, rof_mult = 1.2}										
-				self.parts.wpn_fps_upg_px4_ammo_45acp.stats = {
-						value = 10,
-						alert_size = -1,
-						suppression = -1,
-						total_ammo_mod = -33,
-						spread = 1,
-						concealment = -1,
-						recoil = -1,
-						damage = 10
-					}	
-				self.parts.wpn_fps_upg_px4_ammo_45acp.has_description = false							
-				self.parts.wpn_fps_upg_px4_ammo_45acp.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 1}					
 			end	
 
 		if self.wpn_fps_pis_qsz92 then -- Gambyt's QSZ 92

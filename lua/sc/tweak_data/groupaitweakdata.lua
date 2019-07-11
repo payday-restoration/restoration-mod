@@ -7703,7 +7703,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_swat_M4",
 						freq = 1,
 						amount_min = 3,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					},
 					{
@@ -7717,7 +7717,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_min = 1,
 						amount_max = 2,
 						freq = 1,
-						tactics = self._tactics.FBI_swat_shotgun,
+						tactics = self._tactics.ELITE_swat_shotgun,
 						rank = 3
 					},
 					{
@@ -7752,7 +7752,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_min = 1,
 						amount_max = 2,
 						freq = 1,
-						tactics = self._tactics.FBI_swat_shotgun,
+						tactics = self._tactics.ELITE_swat_shotgun,
 						rank = 3
 					},
 					{
@@ -7814,7 +7814,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 1,
 						amount_min = 4,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.ELITE_swat_rifle,
 						rank = 1
 					},
 					{

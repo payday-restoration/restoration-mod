@@ -1,20 +1,20 @@
 --if not RestorationTweak then
 restoration.textures = {}
-
+--E3 PAYDAY+
 table.insert(tweak_data.color_grading, 
 	{
 		value = "color_plus",
 		text_id = "menu_color_plus"		
 	}
 )
-
+--E3 BHD
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_force",
 		text_id = "menu_color_force"		
 	}
 )
-
+--E3 Nice
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_e3nice",
@@ -23,7 +23,6 @@ table.insert(tweak_data.color_grading,
 )
 
 --OVERKILL had this for RVD1 for some reason, but it's just inverted default grading?
---i guess restore it.  who give a shit, fuck all life
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_rvd1",
@@ -263,6 +262,22 @@ table.insert (tweak_data.gui.crime_net.codex,
 			}
 
 		} )
+--Sin codex entry		
+		table.insert (tweak_data.gui.crime_net.codex,
+
+		{
+			id = "contacts",
+			name_id = "menu_contacts_shatter",
+			{
+				id = "sina",
+				name_id = "heist_contact_sin",
+				{
+					desc_id = "heist_contact_sin_description",
+					videos = {"shatter1"}
+				}
+			}
+
+		} )
 --Jackal narrative entry
 tweak_data.narrative.contacts.shatter				= {}
 tweak_data.narrative.contacts.shatter.name_id					= "heist_contact_shatter"
@@ -271,13 +286,13 @@ tweak_data.narrative.contacts.shatter.image		= "guis/textures/pd2/crimenet_portr
 tweak_data.narrative.contacts.shatter.package = "packages/contact_interupt"
 tweak_data.narrative.contacts.shatter.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
 
---Sinaloan
-tweak_data.narrative.contacts.sin				= {}
-tweak_data.narrative.contacts.sin.name_id					= "heist_contact_sin"
-tweak_data.narrative.contacts.sin.description_id	= "heist_contact_shatter_description"
-tweak_data.narrative.contacts.sin.image		= "guis/textures/pd2/crimenet_portrait_interupt"
-tweak_data.narrative.contacts.sin.package = "packages/contact_interupt"
-tweak_data.narrative.contacts.sin.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
+--Sin narrative entry
+tweak_data.narrative.contacts.sina				= {}
+tweak_data.narrative.contacts.sina.name_id					= "heist_contact_sin"
+tweak_data.narrative.contacts.sina.description_id	= "heist_contact_shatter_description"
+tweak_data.narrative.contacts.sina.image		= "guis/textures/pd2/crimenet_portrait_interupt"
+tweak_data.narrative.contacts.sina.package = "packages/contact_interupt"
+tweak_data.narrative.contacts.sina.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
 --District descriptions
 if restoration.Options:GetValue("HUD/District") then
 	tweak_data.gui.crime_net.regions = {

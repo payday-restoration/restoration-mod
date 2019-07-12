@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_mod_beta/msk_voodoo/msk_voodoo" orientation_object="rp_msk_voodoo" />
+	<!--<sequence_manager file="units/payday2/masks/msk_voodoo/msk_voodoo" /> -->
+
+	<bodies>
+		<body name="body_root" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" >
+			<object name="a_root" />
+			<object name="c_cube0" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_02" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint2" />
+			<object name="c_cube2" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_03" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint3" />
+			<object name="c_cube3" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_04" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint4" />
+			<object name="c_cube4" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_05" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint5" />
+			<object name="c_cube5" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_06" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint6" />
+			<object name="c_cube6" collision_type="capsule"  mass="0.01" />
+		</body>
+
+		<body name="body_09" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint9" />
+			<object name="c_cube9" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_10" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint10" />
+			<object name="c_cube10" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_11" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint11" />
+			<object name="c_cube11" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_12" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint12" />
+			<object name="c_cube12" collision_type="capsule"  mass="0.01" />
+		</body>
+
+		<body name="body_16" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint16" />
+			<object name="c_cube16" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_17" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint17" />
+			<object name="c_cube17" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_18" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint18" />
+			<object name="c_cube18" collision_type="capsule"  mass="0.01" />
+		</body>
+
+		<body name="body_22" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint22" />
+			<object name="c_cube22" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_23" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint23" />
+			<object name="c_cube23" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_24" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint24" />
+			<object name="c_cube24" collision_type="capsule"  mass="0.01" />
+		</body>
+		
+		<body name="body_28" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint28" />
+			<object name="c_cube28" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_29" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint29" />
+			<object name="c_cube29" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_30" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint30" />
+			<object name="c_cube30" collision_type="capsule"  mass="0.01" />
+		</body>
+		
+		<body name="body_34" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint34" />
+			<object name="c_cube34" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_35" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint35" />
+			<object name="c_cube35" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_36" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint36" />
+			<object name="c_cube36" collision_type="capsule"  mass="0.01" />
+		</body>
+		
+		<body name="body_40" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint40" />
+			<object name="c_cube40" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_41" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint41" />
+			<object name="c_cube41" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_42" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint42" />
+			<object name="c_cube42" collision_type="capsule"  mass="0.01" />
+		</body>
+		
+		<body name="body_45" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint45" />
+			<object name="c_cube45" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_46" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint46" />
+			<object name="c_cube46" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_47" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint47" />
+			<object name="c_cube47" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_48" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint48" />
+			<object name="c_cube48" collision_type="capsule"  mass="0.01" />
+		</body>
+		
+		<body name="body_50" enabled="true" template="no_collision_no_ray" friction="1" keyframed="true" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint50" />
+			<object name="c_cube50" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_51" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint51" />
+			<object name="c_cube51" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_52" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint52" />
+			<object name="c_cube52" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_53" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint53" />
+			<object name="c_cube53" collision_type="capsule"  mass="0.01" />
+		</body>
+		<body name="body_54" enabled="true" template="no_collision_no_ray" friction="1" keyframed="false" collision_script_quiet_time="0.1" collision_script_tag="small" lin_damping="10" ang_damping="20" restitution="0" collision_class="ragdoll">
+			<object name="a_joint54" />
+			<object name="c_cube54" collision_type="capsule"  mass="0.01" />
+		</body>
+	</bodies>
+
+	<constraints>
+		<constraint type="limited_hinge" name="dread2" enabled="true">
+			<param body_a="body_02" body_b="body_03"/>
+			<param pivot="position:a_joint3"/>
+			<!-- <param twist_axis="xaxis:a_joint3" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint3" /><!-- Y axis -->
+			<param min_angle="-20" max_angle="0" axis="yaxis:a_joint3" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread3" enabled="true">
+			<param body_a="body_03" body_b="body_04"/>
+			<param pivot="position:a_joint4"/>
+			<param twist_axis="xaxis:a_joint4" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint4"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread4" enabled="true">
+			<param body_a="body_04" body_b="body_05"/>
+			<param pivot="position:a_joint5"/>
+			<param twist_axis="xaxis:a_joint4" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint5"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread5" enabled="true">
+			<param body_a="body_05" body_b="body_06"/>
+			<param pivot="position:a_joint6"/>
+			<param twist_axis="xaxis:a_joint4" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint6"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread9" enabled="true">
+			<param body_a="body_09" body_b="body_10"/>
+			<param pivot="position:a_joint10"/>
+			<!-- <param twist_axis="xaxis:a_joint10" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint10"/><!-- Y axis -->
+			<param min_angle="-15" max_angle="5" axis="yaxis:a_joint10" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread10" enabled="true">
+			<param body_a="body_10" body_b="body_11"/>
+			<param pivot="position:a_joint11"/>
+			<param twist_axis="xaxis:a_joint11" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint11"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread11" enabled="true">
+			<param body_a="body_11" body_b="body_12"/>
+			<param pivot="position:a_joint12"/>
+			<param twist_axis="xaxis:a_joint12" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint12"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread16" enabled="true">
+			<param body_a="body_16" body_b="body_17"/>
+			<param pivot="position:a_joint17"/>
+			<!-- <param twist_axis="xaxis:a_joint17" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint17"/><!-- Y axis -->
+			<param min_angle="-10" max_angle="10" axis="yaxis:a_joint17" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread17" enabled="true">
+			<param body_a="body_17" body_b="body_18"/>
+			<param pivot="position:a_joint18"/>
+			<param twist_axis="xaxis:a_joint18" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint18"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread22" enabled="true">
+			<param body_a="body_22" body_b="body_23"/>
+			<param pivot="position:a_joint23"/>
+			<!-- <param twist_axis="xaxis:a_joint23" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint23"/><!-- Y axis -->
+			<param min_angle="-10" max_angle="10" axis="yaxis:a_joint23" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread23" enabled="true">
+			<param body_a="body_23" body_b="body_24"/>
+			<param pivot="position:a_joint24"/>
+			<param twist_axis="xaxis:a_joint24" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint24"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread28" enabled="true">
+			<param body_a="body_28" body_b="body_29"/>
+			<param pivot="position:a_joint29"/>
+			<!-- <param twist_axis="xaxis:a_joint29" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint29"/><!-- Y axis -->
+			<param min_angle="-10" max_angle="10" axis="yaxis:a_joint29" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread29" enabled="true">
+			<param body_a="body_29" body_b="body_30"/>
+			<param pivot="position:a_joint30"/>
+			<param twist_axis="xaxis:a_joint30" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint30"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread34" enabled="true">
+			<param body_a="body_34" body_b="body_35"/>
+			<param pivot="position:a_joint35"/>
+			<!-- <param twist_axis="xaxis:a_joint35" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint35"/><!-- Y axis -->
+			<param min_angle="-10" max_angle="10" axis="yaxis:a_joint35" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread35" enabled="true">
+			<param body_a="body_35" body_b="body_36"/>
+			<param pivot="position:a_joint36"/>
+			<param twist_axis="xaxis:a_joint36" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint36"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread40" enabled="true">
+			<param body_a="body_40" body_b="body_41"/>
+			<param pivot="position:a_joint41"/>
+			<!-- <param twist_axis="xaxis:a_joint41" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint41"/><!-- Y axis -->
+			<param min_angle="-1" max_angle="20" axis="yaxis:a_joint41" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread41" enabled="true">
+			<param body_a="body_41" body_b="body_42"/>
+			<param pivot="position:a_joint42"/>
+			<param twist_axis="xaxis:a_joint42" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint42"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread45" enabled="true">
+			<param body_a="body_45" body_b="body_46"/>
+			<param pivot="position:a_joint46"/>
+			<!-- <param twist_axis="xaxis:a_joint46" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint46"/><!-- Y axis -->
+			<param min_angle="-5" max_angle="15" axis="yaxis:a_joint46" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread46" enabled="true">
+			<param body_a="body_46" body_b="body_47"/>
+			<param pivot="position:a_joint47"/>
+			<param twist_axis="xaxis:a_joint47" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint47"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread47" enabled="true">
+			<param body_a="body_47" body_b="body_48"/>
+			<param pivot="position:a_joint48"/>
+			<param twist_axis="xaxis:a_joint48" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint48"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+
+		<constraint type="limited_hinge" name="dread50" enabled="true">
+			<param body_a="body_50" body_b="body_51"/>
+			<param pivot="position:a_joint51"/>
+			<!-- <param twist_axis="xaxis:a_joint51" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis --> -->
+			<param plane_axis="xaxis:a_joint51" /><!-- Y axis -->
+			<param min_angle="-0" max_angle="20" axis="yaxis:a_joint51" twist_freedom="0"/>
+			<!-- <param cone_y="10" cone_z="10" cone_freedom="10"/> -->
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread51" enabled="true">
+			<param body_a="body_51" body_b="body_52"/>
+			<param pivot="position:a_joint52"/>
+			<param twist_axis="xaxis:a_joint52" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint52"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread52" enabled="true">
+			<param body_a="body_52" body_b="body_53"/>
+			<param pivot="position:a_joint53"/>
+			<param twist_axis="xaxis:a_joint53" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint53"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+		<constraint type="ragdoll" name="dread53" enabled="true">
+			<param body_a="body_53" body_b="body_54"/>
+			<param pivot="position:a_joint54"/>
+			<param twist_axis="xaxis:a_joint54" twist_min="-5" twist_max="5" twist_freedom="1"/><!-- X axis -->
+			<param plane_axis="xaxis:a_joint54"/><!-- Y axis -->
+			<param cone_y="10" cone_z="10" cone_freedom="10"/>
+			<param damping="200" spring_constant="25000" min_restitution="1"/>
+		</constraint>
+	</constraints>
+
+	<graphics>
+		<object name="g_mask" enabled="true"  />
+		<object name="g_dreads" enabled="true"  />
+	</graphics>
+</dynamic_object>

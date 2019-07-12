@@ -39,6 +39,56 @@ function DLCTweakData:init(...)
 				type_items = "masks",
 				item_entry = "courier_stash",
 				amount = 1
+			},		
+			{
+				type_items = "masks",
+				item_entry = "female_mask",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "female_mask_blood",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "female_mask_clown",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "male_mask",
+				amount = 1
+			},		
+			{
+				type_items = "masks",
+				item_entry = "male_mask_blood",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "male_mask_clown",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "twister_mask",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "voodoo_mask",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "f1",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "sweettooth",
+				amount = 1
 			},
 			{
 				type_items = "materials",

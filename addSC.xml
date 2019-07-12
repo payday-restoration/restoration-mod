@@ -126,6 +126,106 @@
 	<model path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
 	<texture path="units/pd2_mod_sharks/masks/msk_zipper_sc/zipper_df" force="false"/>	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/courier_stash" force="false"/>
+
+	<!--Masks: Beta Female Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<model path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<object path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<unit path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<material_config path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	
+	<texture path="units/pd2_mod_beta/msk_female_mask/female_mask_01_df"/>
+	<texture path="units/pd2_mod_beta/msk_female_mask/female_mask_01_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/female_mask"/>
+
+	<!--Masks: Beta Female Blood Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<model path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<object path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<unit path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<material_config path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	
+	<texture path="units/pd2_mod_beta/msk_female_mask_blood/female_mask_01_blood_df"/>
+	<texture path="units/pd2_mod_beta/msk_female_mask_blood/female_mask_01_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/female_mask_blood"/>
+
+	<!--Masks: Beta Female Clown Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<model path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<object path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<unit path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<material_config path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	
+	<texture path="units/pd2_mod_beta/msk_female_mask_clown/female_mask_01_clown_df"/>
+	<texture path="units/pd2_mod_beta/msk_female_mask_clown/female_mask_01_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/female_mask_clown"/>
+	
+	<!--Masks: Beta Male Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<model path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<object path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<unit path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<material_config path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	
+	<texture path="units/pd2_mod_beta/msk_male_mask/male_mask_df"/>
+	<texture path="units/pd2_mod_beta/msk_male_mask/male_mask_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/male_mask"/>
+	
+	<!--Masks: Beta Male Blood Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<model path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<object path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<unit path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<material_config path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	
+	<texture path="units/pd2_mod_beta/msk_male_mask_blood/male_mask_blood_df"/>
+	<texture path="units/pd2_mod_beta/msk_male_mask_blood/male_mask_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/male_mask_blood"/>
+	
+	<!--Masks: Beta Male Clown Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<model path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<object path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<unit path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<material_config path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	
+	<texture path="units/pd2_mod_beta/msk_male_mask_clown/male_mask_clown_df"/>
+	<texture path="units/pd2_mod_beta/msk_male_mask_clown/male_mask_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/male_mask_clown"/>
+	
+	<!--Masks: Beta Twister Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<model path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<object path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<unit path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<material_config path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	
+	<texture path="units/pd2_mod_beta/msk_twister/twister_df"/>
+	<texture path="units/pd2_mod_beta/msk_twister/twister_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/twister_mask"/>
+	
+	<!--Masks: Beta Voodoo Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<model path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<object path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<unit path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<material_config path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	
+	<texture path="units/pd2_mod_beta/msk_voodoo/msk_voodoo_df"/>
+	<texture path="units/pd2_mod_beta/msk_voodoo/msk_voodoo_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/voodoo_mask"/>
+	
+	<!--Mask: PS3 Sweet Tooth Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<model path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<object path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<unit path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<material_config path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	
+	<texture path="units/pd2_mod_beta/msk_sweettooth/sweettooth_df"/>
+	<texture path="units/pd2_mod_beta/msk_sweettooth/sweettooth_nm"/>
+	<texture path="units/pd2_mod_beta/msk_sweettooth/hair_df"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/sweettooth"/>
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

@@ -282,12 +282,22 @@
 		<material_config force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
 		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
 		<effect force="true" load="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/explosions/shapecharger_explosion" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/explosions/smoke_explosion/smoke" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/explosions/smoke_explosion/fire_smoke_mid" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/explosions/sparks/sparks" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/explosions/smoke_explosion/dark_smoke_big" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
 		<physic_effect force="true" path="physic_effects/push_sphere" unload="true"/>
+	</add>
+	<add path="units/world/street/concrete_barrier/concrete_barrier_01" type="unit">
+		<material_config force="true" path="units/world/street/concrete_barrier/concrete_barrier" unload="true"/>
+		<object force="true" path="units/world/street/concrete_barrier/concrete_barrier_01" unload="true"/>
+		<unit force="true" path="units/world/street/concrete_barrier/concrete_barrier_01" unload="true"/>
+	</add>
+	<add path="units/world/street/concrete_barrier/concrete_barrier_destr_01" type="unit">
+		<unit force="true" path="units/world/street/concrete_barrier/concrete_barrier_destr_01" unload="true"/>
+		<object force="true" path="units/world/street/concrete_barrier/concrete_barrier_destr_01" unload="true"/>
+		<material_config force="true" path="units/world/street/concrete_barrier/concrete_barrier" unload="true"/>
 	</add>
 </table>

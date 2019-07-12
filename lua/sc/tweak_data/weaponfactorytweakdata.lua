@@ -41945,6 +41945,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 5,
 						concealment = -2
 						}	
+				self.parts.wpn_fps_f2000_uupg_barrel_long.has_description = false																													
 				self.parts.wpn_fps_f2000_uupg_o_fnoptic.stats = {
 						value = 1,
 						zoom = 5,
@@ -43959,7 +43960,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						spread = 1,
 						spread_moving = 2,
 						concealment = -2
-					}																									
+					}						
+				self.parts.wpn_fps_pis_b93r_vertgrip.custom_stats = nil
 				self.parts.wpn_fps_pis_b93r_stock.stats = {
 						recoil = 1,
 						value = 1						
@@ -44177,7 +44179,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						damage = 6
 					}	
 				self.parts.wpn_fps_upg_p99_ammo_40sw.has_description = false							
-				self.parts.wpn_fps_upg_p99_ammo_40sw.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 1}									
+				self.parts.wpn_fps_upg_p99_ammo_40sw.custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}									
 				self.parts.wpn_fps_upg_p99_sight_tritium.stats = {
 						value = 1
 					}	

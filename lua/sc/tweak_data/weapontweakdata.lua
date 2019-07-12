@@ -12068,8 +12068,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.categories = {"pistol"}
 			self.fmg9.recategorize = "pistol_carbine"
 			self.fmg9.CLIP_AMMO_MAX = 33
-			self.fmg9.AMMO_MAX = 150
+			self.fmg9.AMMO_PICKUP = self:_pickup_chance(200, 2)			
+			self.fmg9.AMMO_MAX = 200
 			self.fmg9.spread.standing = 3
+			self.fmg9.sounds.fire = "sr2_fire_single"
+			self.fmg9.sounds.fire_single = "sr2_fire_single"
+			self.fmg9.sounds.fire_auto = "sr2_fire"
+			self.fmg9.sounds.stop_fire = "sr2_stop"			
 			self.fmg9.spread.crouching = 2
 			self.fmg9.spread.steelsight = 1
 			self.fmg9.spread.moving_standing = 4
@@ -12079,9 +12084,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.kick.crouching = self.new_m4.kick.standing
 			self.fmg9.kick.steelsight = self.new_m4.kick.standing
 			self.fmg9.stats = {
-				damage = 40,
+				damage = 30,
 				spread = 16,
-				recoil = 19,
+				recoil = 18,
 				spread_moving = 9,
 				zoom = 1,
 				concealment = 28,

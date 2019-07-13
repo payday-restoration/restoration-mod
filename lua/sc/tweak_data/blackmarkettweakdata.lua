@@ -66,6 +66,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_msk_female_mask",
 			desc_id = "bm_msk_female_mask_desc",
 			pcs = {},
+			type = "helmet",
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
@@ -77,6 +78,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_msk_female_mask_blood",
 			desc_id = "bm_msk_female_mask_blood_desc",
 			pcs = {},
+			type = "helmet",
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
@@ -88,6 +90,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_msk_female_mask_clown",
 			desc_id = "bm_msk_female_mask_clown_desc",
 			pcs = {},
+			type = "helmet",
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
@@ -99,6 +102,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_msk_male_mask",
 			desc_id = "bm_msk_male_mask_desc",
 			pcs = {},
+			type = "helmet",
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
@@ -110,6 +114,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_msk_male_mask_blood",
 			desc_id = "bm_msk_male_mask_blood_desc",
 			pcs = {},
+			type = "helmet",
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
@@ -121,6 +126,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_msk_male_mask_clown",
 			desc_id = "bm_msk_male_mask_clown_desc",
 			pcs = {},
+			type = "helmet",
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"

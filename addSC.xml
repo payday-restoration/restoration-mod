@@ -682,16 +682,16 @@
 	<effect path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	
 	<!--Stat Boost-->
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc" force="true"/>
-	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc" force="true"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc"/>
 	
 	<!--Incendiary Grenade-->
 	<effect path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>
@@ -740,27 +740,6 @@
 	<!--Birdshot (unused)-->
 	<!--<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>-->
 	
-	<!--Restoration sound replacements (is this even supported by Beardlib? Here just in case.)-->
-	<!--These were for Green Harvest, and some are for Out of Frame.  If Luffy updates the sound module to support contractor voiceover OR we
-	find a solution to soundbanks, these can be removed. ~Martini-->
-	<!--<stream path="soundbanks/streamed/job_h_watchdogs_stage1/99542904" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/342216271" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/566618683" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/641377974" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/781884718" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/876924888" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage1/991751405" force="true"/>
-	
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/29569825" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/244684289" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/351647302" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/458068934" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/576160481" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/616866572" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/896790363" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/969288357" force="true"/>
-	<stream path="soundbanks/streamed/job_h_watchdogs_stage2/1045867404" force="true"/>-->
-		
 	<!--Saiga Drum Mag fix-->
 	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq"/>
 		

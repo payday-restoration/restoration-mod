@@ -1,6 +1,6 @@
 local idealVersion = Application:version()
 local GameVersion = Application:version()
-
+--///MAIN MENU STARTUP NOTIFICATION\\\--
 if restoration.Options:GetValue("OTHER/Notify") then
 local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 function MenuNodeGui:_setup_item_rows(node, ...)
@@ -22,7 +22,8 @@ function MenuNodeGui:_setup_item_rows(node, ...)
 end
 end
 
---Probably gonna repurpose this set of functions to talk about major updates to the mod. We'll see though, feel free to mess with stuff here.
+--///MOD PANEL NOTIFICATION\\\--
+--This isn't used currently
 local res_sc_text = "RESTORATION MOD NOTICE:."
 local res_sc_text_desc = "Nothing here at the moment. Carry on!"
 
@@ -43,7 +44,7 @@ end
 
 Hooks:Add("MenuManagerOnOpenMenu", "MenuManagerOnOpenMenu_CanaryWarning", function( menu_manager, menu, position )
 
-	--Uncomment the stuff below if you want the BLT notif to be there.
+	--UNCOMMENT BELOW TO DISPLAY NOTIFICATION'S IN MOD PANEL
 	if menu == "menu_main" then
 		--DisplayNotification()
 	end

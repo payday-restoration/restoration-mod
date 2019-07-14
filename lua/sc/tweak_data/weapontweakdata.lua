@@ -12559,6 +12559,41 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 	}
 	end	
+
+	if self.wpn_fps_pis_welrod then --Silent Enforcer's Welrod
+		self.parts.wpn_fps_pis_welrod_glow.stats = {
+			value = 0,
+			spread = 0
+		}
+		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
+			value = 0,
+			spread = 0
+		}
+		self.parts.wpn_fps_pis_welrod_b_short.stats = {
+			concealment = 2,
+			spread = -2,
+			suppression = -1,
+			alert_size = -1,
+			value = 1
+		}
+		self.parts.wpn_fps_pis_welrod_a_ap.stats = {
+			damage = 50,
+			total_ammo_mod = -25,
+			spread = 2,
+			recoil = -5,
+			suppression = -1,
+			alert_size = -1,
+			value = 2
+		}
+		self.parts.wpn_fps_pis_welrod_a_ap.custom_stats = {
+			armor_piercing_add = 1,
+			can_shoot_through_wall = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_enemy = true,
+			ammo_pickup_min_mul = 0.8,
+			ammo_pickup_max_mul = 0.8
+		}
+	end
 	
 	end)
 else

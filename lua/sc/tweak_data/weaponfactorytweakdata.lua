@@ -46918,6 +46918,63 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}			
 		end				
 
+		if self.derringer then --Pwacio's Derringer
+			self.derringer.AMMO_MAX = 30
+			self.derringer.AMMO_PICKUP = self:_pickup_chance(30, 1)
+			self.derringer.spread = {}
+			self.derringer.spread.standing = 3
+			self.derringer.spread.crouching = 2
+			self.derringer.spread.steelsight = 1
+			self.derringer.spread.moving_standing = 4
+			self.derringer.spread.moving_crouching = 3
+			self.derringer.spread.moving_steelsight = 2
+			self.derringer.kick.standing = self.huntsman.kick.standing
+			self.derringer.kick.crouching = self.huntsman.kick.standing
+			self.derringer.kick.steelsight = self.huntsman.kick.standing
+			self.derringer.stats = {
+				damage = 150,
+				spread = 19,
+				recoil = 16,
+				spread_moving = 10,
+				zoom = 5,
+				concealment = 30,
+				suppression = 4,
+				alert_size = 4,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 4,
+				reload = 11
+			}
+			self.derringer.panic_suppression_chance = 0.0
+			self.derringer.has_description = true
+			self.derringer.desc_id = "bm_ap_weapon_sc_desc"
+			self.derringer.can_shoot_through_enemy = true
+			self.derringer.can_shoot_through_shield = true
+			self.derringer.can_shoot_through_wall = true
+			self.derringer.armor_piercing_chance = 1
+			self.derringer.stats_modifiers = {damage = 1}
+			self.derringer.timers.shotgun_reload_first_shell_offset = 0.5
+		end
+	
+		if self.welrod then --Silent Enforcer's Welrod
+			self.welrod.AMMO_MAX = 40
+			self.welrod.AMMO_PICKUP = self:_pickup_chance(40, 1)
+			self.welrod.stats = {
+				damage = 100,
+				spread = 20,
+				recoil = 10,
+				spread_moving = 10,
+				zoom = 3,
+				concealment = 29,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+			self.welrod.panic_suppression_chance = 0.0
+		end
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

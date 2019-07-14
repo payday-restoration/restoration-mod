@@ -12560,39 +12560,62 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	}
 	end	
 
-	if self.wpn_fps_pis_welrod then --Silent Enforcer's Welrod
-		self.parts.wpn_fps_pis_welrod_glow.stats = {
-			value = 0,
-			spread = 0
+	if self.derringer then --Pwacio's Derringer
+		self.derringer.AMMO_MAX = 30
+		self.derringer.AMMO_PICKUP = self:_pickup_chance(30, 1)
+		self.derringer.spread = {}
+		self.derringer.spread.standing = 3
+		self.derringer.spread.crouching = 2
+		self.derringer.spread.steelsight = 1
+		self.derringer.spread.moving_standing = 4
+		self.derringer.spread.moving_crouching = 3
+		self.derringer.spread.moving_steelsight = 2
+		self.derringer.kick.standing = self.huntsman.kick.standing
+		self.derringer.kick.crouching = self.huntsman.kick.standing
+		self.derringer.kick.steelsight = self.huntsman.kick.standing
+		self.derringer.stats = {
+			damage = 150,
+			spread = 19,
+			recoil = 16,
+			spread_moving = 10,
+			zoom = 5,
+			concealment = 30,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
 		}
-		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
-			value = 0,
-			spread = 0
+		self.derringer.panic_suppression_chance = 0.0
+		self.derringer.has_description = true
+		self.derringer.desc_id = "bm_ap_weapon_sc_desc"
+		self.derringer.can_shoot_through_enemy = true
+		self.derringer.can_shoot_through_shield = true
+		self.derringer.can_shoot_through_wall = true
+		self.derringer.armor_piercing_chance = 1
+		self.derringer.stats_modifiers = {damage = 1}
+		self.derringer.timers.shotgun_reload_first_shell_offset = 0.5
+	end
+
+	if self.welrod then --Silent Enforcer's Welrod
+		self.welrod.AMMO_MAX = 40
+		self.welrod.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.welrod.stats = {
+			damage = 100,
+			spread = 20,
+			recoil = 10,
+			spread_moving = 10,
+			zoom = 3,
+			concealment = 29,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 11
 		}
-		self.parts.wpn_fps_pis_welrod_b_short.stats = {
-			concealment = 2,
-			spread = -2,
-			suppression = -1,
-			alert_size = -1,
-			value = 1
-		}
-		self.parts.wpn_fps_pis_welrod_a_ap.stats = {
-			damage = 50,
-			total_ammo_mod = -25,
-			spread = 2,
-			recoil = -5,
-			suppression = -1,
-			alert_size = -1,
-			value = 2
-		}
-		self.parts.wpn_fps_pis_welrod_a_ap.custom_stats = {
-			armor_piercing_add = 1,
-			can_shoot_through_wall = true,
-			can_shoot_through_shield = true,
-			can_shoot_through_enemy = true,
-			ammo_pickup_min_mul = 0.8,
-			ammo_pickup_max_mul = 0.8
-		}
+		self.welrod.panic_suppression_chance = 0.0
 	end
 	
 	end)

@@ -569,6 +569,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
+		local old_PlayerStandard_stance_entered = PlayerStandard._stance_entered
+
 		function PlayerStandard:_stance_entered(unequipped)
 			local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
 			local head_stance = self._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
@@ -600,6 +602,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local new_fov = self:get_zoom_fov(misc_attribs) + 0
 			self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
 			managers.menu:set_mouse_sensitivity(self:in_steelsight())
+			old_PlayerStandard_stance_entered(self, unequipped)			
 		end
 		
 		local melee_vars = {

@@ -41994,10 +41994,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 1,
 						concealment = 1						
 						}
-				self.parts.wpn_fps_upg_sks_leupold_pro.stats = {
-						value = 1,
-						concealment = -1						
-						}																
 				self.parts.wpn_fps_upg_sks_supp_pbs1.stats = {
 						value = 10,
 						suppression = 13,

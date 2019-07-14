@@ -2639,7 +2639,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",
 			stats = {
 				value = 1,
-				damage = 1
+				spread = 1,
+				recoil = -1
 			},
 			forbids = {
 				"wpn_fps_m4_upper_reciever_round_vanilla",
@@ -2705,7 +2706,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_medium",
 			stats = {
 				value = 1,
-				spread = 2,
+				spread = 1,
 				concealment = -1
 			}
 		}
@@ -6137,7 +6138,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_g36_pts/wpn_fps_ass_g36_fg_c",
 			stats = {
 				value = 4,
-				spread_moving = 2,
 				recoil = -1,
 				concealment = 2
 			},
@@ -6175,7 +6175,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_g36_pts/wpn_fps_ass_g36_fg_ksk",
 			stats = {
 				value = 5,
-				spread_moving = -2,
 				recoil = 1,
 				concealment = -2
 			},
@@ -6198,8 +6197,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_g36_pts/wpn_fps_ass_g36_s_kv",
 			stats = {
 				value = 4,
-				spread_moving = 2,
-				concealment = 3
+				concealment = 1
 			},
 			adds = {
 				"wpn_fps_ass_g36_body_standard",
@@ -6221,8 +6219,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_g36_pts/wpn_fps_ass_g36_s_sl8",
 			stats = {
 				value = 6,
-				spread = 2,
-				spread_moving = -3,
+				recoil = 1,
 				concealment = -1
 			},
 			adds = {
@@ -15579,8 +15576,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				spread = 1,
-				concealment = -2,
-				damage = 3
+				concealment = -2
 			},
 			override = {
 				wpn_fps_upg_ns_ass_smg_large = {a_obj = "a_ns_s"},
@@ -15601,8 +15597,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				spread = -1,
-				concealment = 2,
-				damage = 3
+				concealment = 2
 			},
 			override = {
 				wpn_fps_upg_ns_ass_smg_large = {a_obj = "a_ns_s"},
@@ -15624,8 +15619,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				recoil = -1,
 				spread = 2,
-				concealment = -3,
-				damage = 3
+				concealment = -3
 			},
 			override = {
 				wpn_fps_upg_ns_ass_smg_large = {a_obj = "a_ns_s"},
@@ -15648,7 +15642,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 3,
 				spread = 2,
 				recoil = -1,
 				spread_moving = 1,
@@ -15704,7 +15697,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				recoil = 1,
-				spread = 4,
 				concealment = -1
 			},
 			texture_bundle_folder = "gage_pack_assault",
@@ -20237,9 +20229,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 3},
 			unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_fps_ass_vhs_m",
 			stats = {
-				value = 1,
-				recoil = 0,
-				extra_ammo = 0
+				value = 1
 			},
 			texture_bundle_folder = "character_pack_dragan",
 			dlc = "character_pack_dragan",
@@ -20281,9 +20271,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_fps_ass_vhs_b_short",
 			stats = {
 				value = 1,
-				concealment = 3,
-				recoil = 1,
-				spread = -2
+				concealment = 2,
+				spread = -1
 			},
 			texture_bundle_folder = "character_pack_dragan",
 			dlc = "character_pack_dragan"
@@ -20304,7 +20293,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				concealment = -1,
+				concealment = -2,
 				spread = 2,
 				recoil = -1
 			},
@@ -20347,7 +20336,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_fps_ass_vhs_b_sniper",
 			stats = {
 				value = 1,
-				spread = 2,
+				spread = 1,
 				concealment = -2
 			},
 			texture_bundle_folder = "character_pack_dragan",
@@ -21889,9 +21878,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_upper_reciever_ballos/wpn_fps_upg_ass_m4_upper_reciever_ballos",
 			stats = {
 				value = 1,
-				damage = 1,
-				recoil = -1,
-				spread = 1
+				recoil = -2,
+				spread = 2
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -21915,7 +21903,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_upper_reciever_core/wpn_fps_upg_ass_m4_upper_reciever_core",
 			stats = {
 				value = 1,
-				damage = 1,
 				recoil = 1,
 				spread = -1
 			},
@@ -38834,21 +38821,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					
 	Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 		self.parts.wpn_fps_upg_i_slower_rof = {
-			pcs = {},
 			type = "custom",
-			sub_type = "singlefire",
+			--sub_type = "singlefire",
 			name_id = "bm_wp_upg_i_singlefire_sc",
 			a_obj = "a_body",
 			has_description = true,
-			custom_stats = {rof_mult = 0.85},
+			custom_stats = {rof_mult = 1},
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_slower_rof",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
-				value = 5,
+				value = 0,
 				damage = 0,
 				spread = 0,
-				recoil = 1
+				recoil = 0
 			},
 			is_a_unlockable = true,
 			forbids = {
@@ -38858,21 +38844,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			dlc = "sc"
 		}
 		self.parts.wpn_fps_upg_i_faster_rof = {
-			pcs = {},
 			type = "custom",
-			sub_type = "autofire",
+			--sub_type = "autofire",
 			name_id = "bm_wp_upg_i_autofire_sc",
 			a_obj = "a_body",
 			has_description = true,
-			custom_stats = {rof_mult = 1.15},
+			custom_stats = {rof_mult = 1},
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_faster_rof",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
-				value = 5,
+				value = 0,
 				damage = 0,
 				spread = 0,
-				recoil = -1,
+				recoil = 0,
 				spread_moving = 0
 			},
 			is_a_unlockable = true,

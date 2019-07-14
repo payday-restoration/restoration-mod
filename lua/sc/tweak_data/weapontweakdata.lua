@@ -3308,7 +3308,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			1
 		}
 		self.new_m4.stats = {
-			damage = 34,
+			damage = 35,
 			spread = 14,
 			recoil = 20,
 			spread_moving = 7,
@@ -3468,7 +3468,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amcar.kick.crouching = self.new_m4.kick.standing
 		self.amcar.kick.steelsight = self.new_m4.kick.standing
 		self.amcar.stats = {
-			damage = 33,
+			damage = 34,
 			spread = 14,
 			recoil = 22,
 			spread_moving = 6,
@@ -3501,7 +3501,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.spread.moving_crouching = 3
 		self.m16.spread.moving_steelsight = 2
 		self.m16.stats = {
-			damage = 44,
+			damage = 45,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 5,
@@ -3535,8 +3535,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.olympic.kick.crouching = self.new_m4.kick.standing
 		self.olympic.kick.steelsight = self.new_m4.kick.standing		
 		self.olympic.stats = {
-			damage = 33,
-			spread = 13,
+			damage = 34,
+			spread = 14,
 			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
@@ -3770,11 +3770,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g36.kick.steelsight = self.new_m4.kick.standing
 		self.g36.stats = {
 			damage = 34,
-			spread = 16,
-			recoil = 20,
+			spread = 18,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
-			concealment = 20,
+			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -4886,9 +4886,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.famas.kick.crouching = self.new_m4.kick.standing
 		self.famas.kick.steelsight = self.new_m4.kick.standing
 		self.famas.stats = {
-			damage = 31,
-			spread = 12,
-			recoil = 21,
+			damage = 34,
+			spread = 16,
+			recoil = 20,
 			spread_moving = 4,
 			zoom = 3,
 			concealment = 24,
@@ -5409,11 +5409,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vhs.kick.steelsight = self.new_m4.kick.standing
 		self.vhs.stats = {
 			damage = 34,
-			spread = 16,
-			recoil = 21,
+			spread = 19,
+			recoil = 23,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 17,
+			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -7451,10 +7451,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.corgi.stats = {
 			damage = 34,
 			spread = 15,
-			recoil = 23,
+			recoil = 21,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 21,
+			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -7806,8 +7806,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_olympic.spread.moving_steelsight = 2
 		self.x_olympic.panic_suppression_chance = 0.0
 		self.x_olympic.stats = {
-			damage = 33,
-			spread = 13,
+			damage = 34,
+			spread = 14,
 			recoil = 20,
 			spread_moving = 8,
 			zoom = 3,
@@ -8574,8 +8574,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.komodo.kick.steelsight = self.new_m4.kick.standing		
 		self.komodo.stats = {
 			damage = 34,
-			spread = 15,
-			recoil = 25,
+			spread = 14,
+			recoil = 22,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 23,

@@ -2669,8 +2669,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_b",
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long",
 			stats = {
-				value = 4,
-				damage = 5,				
+				value = 4,			
 				spread = 1,
 				concealment = -2
 			}
@@ -2687,8 +2686,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_b",
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_short",
 			stats = {
-				value = 4,
-				damage = 5,								
+				value = 4,					
 				spread = -1,
 				concealment = 2
 			}
@@ -2727,8 +2725,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 1,
 				recoil = -1,
-				damage = 5,
-				spread_moving = 1,
 				concealment = -2
 			},
 			perks = {"silencer"},
@@ -2885,8 +2881,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_g_sniper",
 			stats = {
 				value = 6,
-				spread = 1,
-				spread_moving = 2
+				spread = 1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -2925,10 +2920,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_pmag",
 			stats = {
 				value = 3,
-				spread_moving = 1,
 				recoil = -1,
-				concealment = 1,
-				extra_ammo = 0
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_upg_m4_m_straight = {
@@ -2945,8 +2938,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_straight",
 			stats = {
 				value = 2,
-				spread_moving = 2,
-				concealment = 2,
+				concealment = 1,
 				reload = 2,
 				extra_ammo = -10
 			}
@@ -2964,7 +2956,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_s_standard",
 			stats = {
 				value = 1,
-				spread_moving = -1,
 				recoil = 1,
 				concealment = -1
 			},
@@ -3078,7 +3069,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_m4_upper_reciever_round",
 			"wpn_fps_m4_uupg_b_medium_vanilla",
 			"wpn_fps_m4_uupg_fg_rail",
-			"wpn_fps_upg_m4_m_straight_vanilla",
+			"wpn_fps_m4_uupg_m_std_vanilla",
 			"wpn_fps_m16_s_solid",
 			"wpn_fps_m4_uupg_draghandle",
 			"wpn_fps_m4_uupg_o_flipup",
@@ -3091,7 +3082,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_m4_m_drum = {
 				stats = {
 					value = 9,
-					extra_ammo = 80,
+					extra_ammo = 70,
 					reload = -6,
 					concealment = -5
 				},
@@ -3100,11 +3091,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			wpn_fps_upg_m4_m_l5 = {
 				stats = {
-					value = 1,
-					extra_ammo = 10,
-					recoil = 0,
-					concealment = -1,
-					reload = -2
+					value = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3114,34 +3101,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					extra_ammo = 10,
 					reload = 2
 				}
 			},
 			wpn_fps_ass_l85a2_m_emag = {
 				stats = {
-					value = 1,
-					extra_ammo = 10,
-					recoil = 0,
-					concealment = -1,
-					reload = -2
+					value = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
 			},
 			wpn_fps_upg_m4_m_pmag = {
 				stats = {
-					extra_ammo = 10,
 					recoil = -1,
-					concealment = 0,
-					reload = -2
+					concealment = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
 			},
 			wpn_fps_upg_m4_m_quad = {
 				stats = {
-					extra_ammo = 40,
+					extra_ammo = 30,
 					concealment = -3,
 					reload = -3
 				},
@@ -3162,10 +3142,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_ns_ass_smg_small",
 			"wpn_fps_m4_uupg_fg_rail",
 			"wpn_fps_m4_uupg_fg_lr300",
-			"wpn_fps_upg_m4_m_straight_vanilla",
+			"wpn_fps_upg_m4_m_straight",
 			"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_upg_m4_m_pmag",
-			"wpn_fps_m4_uupg_m_std",
+			"wpn_fps_m4_uupg_m_std_vanilla",
 			"wpn_fps_m4_uupg_s_fold",
 			"wpn_fps_upg_m4_s_standard_vanilla",
 			"wpn_fps_upg_m4_s_pts",
@@ -3536,8 +3516,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 9,
 					extra_ammo = 80,
-					reload = -6,
-					concealment = -5
+					reload = -7,
+					concealment = -7
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_drum2_desc"
@@ -3559,9 +3539,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 2,
 					spread = -1,
-					concealment = -1,
-					extra_ammo = 10,
-					reload = 2
+					concealment = -2,
+					extra_ammo = 10
 				}
 			},
 			wpn_fps_ass_l85a2_m_emag = {
@@ -3593,8 +3572,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_m4_m_quad = {
 				stats = {
 					extra_ammo = 40,
-					concealment = -3,
-					reload = -3
+					concealment = -4,
+					reload = -4
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -4092,7 +4071,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_m4_m_drum = {
 				stats = {
 					value = 9,
-					extra_ammo = 80,
+					extra_ammo = 70,
 					reload = -6,
 					concealment = -5
 				},
@@ -4101,29 +4080,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			wpn_fps_upg_m4_m_l5 = {
 				stats = {
-					value = 1,
-					extra_ammo = 10,
-					concealment = -1,
-					reload = -2
+					value = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
 			},
 			wpn_fps_ass_l85a2_m_emag = {
 				stats = {
-					value = 1,
-					extra_ammo = 10,
-					concealment = -1,
-					reload = -2
+					value = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
 			},
 			wpn_fps_upg_m4_m_pmag = {
 				stats = {
-					extra_ammo = 10,
 					recoil = -1,
-					reload = -2
+					concealment = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -4133,13 +4105,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					extra_ammo = 10,
 					reload = 2
 				}
 			},
 			wpn_fps_upg_m4_m_quad = {
 				stats = {
-					extra_ammo = 40,
+					extra_ammo = 30,
 					concealment = -3,
 					reload = -3
 				},
@@ -4151,7 +4122,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_smg_olympic.default_blueprint = {
 			"wpn_fps_smg_olympic_s_adjust",
 			"wpn_fps_m4_uupg_draghandle",
-			"wpn_fps_upg_m4_m_straight_vanilla",
+			"wpn_fps_m4_uupg_m_std_vanilla",
 			"wpn_fps_upg_m4_g_standard_vanilla",
 			"wpn_fps_m4_uupg_b_short_vanilla",
 			"wpn_fps_m4_upper_reciever_round",
@@ -4173,10 +4144,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_m4_s_pts",
 			"wpn_fps_m4_uupg_b_short_vanilla",
 			"wpn_fps_m4_uupg_b_medium",
-			"wpn_fps_m4_uupg_m_std",
+			"wpn_fps_m4_uupg_m_std_vanilla",
 			"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_upg_m4_m_pmag",
-			"wpn_fps_upg_m4_m_straight_vanilla",
+			"wpn_fps_upg_m4_m_straight",
 			"wpn_fps_ass_m16_o_handle_sight",
 			"wpn_fps_upg_o_specter",
 			"wpn_fps_upg_o_aimpoint",
@@ -5668,7 +5639,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 7,
 				recoil = 1,
-				spread_moving = -2,
 				concealment = -1
 			},
 			forbids = {
@@ -5688,7 +5658,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_ak5_pts/wpn_fps_ass_ak5_fg_fnc",
 			stats = {
 				value = 7,
-				spread_moving = 2,
 				recoil = -1,
 				concealment = 1
 			}
@@ -5713,8 +5682,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_ak5_pts/wpn_fps_ass_ak5_s_ak5b",
 			stats = {
 				value = 5,
-				spread_moving = -3,
-				spread = 2,
+				recoil = 1,
 				concealment = -1
 			},
 			adds = {
@@ -5739,8 +5707,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_ak5_pts/wpn_fps_ass_ak5_s_ak5c",
 			stats = {
 				value = 7,
-				recoil = 1,
-				spread_moving = 2,
 				concealment = 1
 			}
 		}
@@ -5890,10 +5856,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_aug_pts/wpn_fps_aug_b_long",
 			stats = {
 				value = 6,
-				spread_moving = -2,
 				spread = 1,
-				concealment = -2,
-				damage = 3
+				concealment = -2
 			}
 		}
 		self.parts.wpn_fps_aug_b_medium = {
@@ -5916,10 +5880,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_ass_aug_pts/wpn_fps_aug_b_short",
 			stats = {
 				value = 4,
-				spread_moving = 0,
 				spread = -1,
-				concealment = 2,
-				damage = 3
+				concealment = 2
 			}
 		}
 		self.parts.wpn_fps_aug_m_pmag = {
@@ -5952,8 +5914,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 7,
 				recoil = 1,
-				damage = 3,
-				spread_moving = -2,
 				concealment = -2
 			},
 			override = {
@@ -10774,7 +10734,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_ass_s552_pts/wpn_fps_ass_s552_body_standard_black",
 			stats = {
 				value = 7,
-				concealment = 4
+				concealment = 1
 			},
 			animations = {
 				reload = "reload",
@@ -10854,7 +10814,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_ass_s552_pts/wpn_fps_ass_s552_g_standard_green",
 			stats = {
 				value = 1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "armored_transport"
 		}
@@ -21997,13 +21957,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = 2,
 				recoil = -1,
-				total_ammo_mod = -20,
-				damage = 15,
-				concealment = -4,
-				alert_size = -1,
-				suppression = -1
+				concealment = -3,
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
 			sound_switch = {suppressed = "regular_b"},
 			is_a_unlockable = true,
 			texture_bundle_folder = "dlc_akm4",
@@ -35469,32 +35424,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_m4_uupg_b_short_vanilla = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short"},
 				wpn_fps_m4_uupg_b_medium = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_medium"},
 				wpn_fps_ass_l85a2_m_emag = {stats = {
-					value = 1,
-					extra_ammo = 20,
-					concealment = -1,
-					reload = -2
+					value = 1
 				}},
 				wpn_fps_upg_m4_m_pmag = {stats = {
-					extra_ammo = 20,
 					recoil = -1,
-					reload = -2
+					concealment = 1
 				}},
 				wpn_fps_upg_m4_m_l5 = {stats = {
-					value = 1,
-					extra_ammo = 20,
-					concealment = -1,
-					reload = -2
+					value = 1
 				}},
 				wpn_fps_upg_m4_m_quad = {stats = {
-					extra_ammo = 80,
+					extra_ammo = 60,
 					concealment = -3,
 					reload = -3
 				}},
-				wpn_fps_m4_uupg_m_std = {stats = {
+				wpn_fps_upg_m4_m_straight = {stats = {
 					value = 1,
-					extra_ammo = 20,
-					reload = -2,
-					concealment = -1
+					extra_ammo = -20,
+					reload = 2,
+					concealment = 1
 				}},
 				wpn_fps_upg_m4_m_drum = {stats = {
 					value = 9,
@@ -35511,7 +35459,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			default_blueprint = {
 				"wpn_fps_smg_olympic_s_short_vanilla",
 				"wpn_fps_m4_uupg_draghandle",
-				"wpn_fps_upg_m4_m_straight_vanilla",
+				"wpn_fps_m4_uupg_m_std_vanilla",
 				"wpn_fps_upg_m4_g_standard_vanilla",
 				"wpn_fps_m4_uupg_b_short_vanilla",
 				"wpn_fps_m4_upper_reciever_round",
@@ -35538,10 +35486,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_smg_olympic_fg_lr300",
 				"wpn_fps_m4_uupg_b_short_vanilla",
 				"wpn_fps_m4_uupg_b_medium",
-				"wpn_fps_m4_uupg_m_std",
+				"wpn_fps_m4_uupg_m_std_vanilla",
 				--"wpn_fps_upg_m4_m_drum",
 				"wpn_fps_upg_m4_m_pmag",
-				"wpn_fps_upg_m4_m_straight_vanilla",
+				"wpn_fps_upg_m4_m_straight",
 				"wpn_fps_upg_m4_m_quad",
 				"wpn_fps_ass_l85a2_m_emag",
 				"wpn_fps_m4_upg_m_quick",

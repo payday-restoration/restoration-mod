@@ -9,6 +9,20 @@
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu">
 			<options merge_mode="script_merge"/>
 		</mod>
+		<!-- Res Suits -->
+		<mod file="res_suit_tps.xml" type="custom_xml" target_file="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps_fem.xml" type="custom_xml" target_file="units/payday2/characters/npc_criminal_female_1/npc_criminal_female_1" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps_bon.xml" type="custom_xml" target_file="units/pd2_dlc_bonnie/characters/npc_criminal_bonnie/npc_criminal_bonnie" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps_fem.xml" type="custom_xml" target_file="units/pd2_dlc_opera/characters/npc_criminals_fem_3/npc_criminal_sydney" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps.xml" type="custom_xml" target_file="units/pd2_dlc_wild/characters/npc_criminals_wild_1/npc_criminal_wild_1" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps.xml" type="custom_xml" target_file="units/pd2_dlc_chico/characters/npc_criminals_terry/npc_criminal_terry" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps.xml" type="custom_xml" target_file="units/pd2_dlc_max/characters/npc_criminals_max/npc_criminal_max" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps_fem.xml" type="custom_xml" target_file="units/pd2_dlc_joy/characters/npc_criminals_joy_1/npc_criminal_joy_1" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps.xml" type="custom_xml" target_file="units/pd2_dlc_myh/characters/npc_criminals_myh/npc_criminal_myh" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps_fem.xml" type="custom_xml" target_file="units/pd2_dlc_ecp/characters/npc_criminals_ecp_female/npc_criminal_ecp_female" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suit_tps_ethan.xml" type="custom_xml" target_file="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male" target_type="sequence_manager" merge_mode="script_merge"/>
+
+		<mod file="res_suits_fps.xml" type="custom_xml" target_file="units/payday2/characters/fps_criminals_suit_1/fps_criminals_suit_1" target_type="sequence_manager" merge_mode="script_merge"/>
 	</ScriptMods>	
     <Hooks directory="lua">
 		<!--///RESTORATION HUD & UI\\\-->

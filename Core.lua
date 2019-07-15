@@ -212,10 +212,17 @@ if not _G.restoration then
 		"sah", --Shacklethrorne Heist
 		"bph", --Hell's Island
 		"vit", --White House
-		"dinner", --Slaughterhouse
-		"man", --Undercover
-		"mad" --Boiling Point
-	}	
+		"mad" --Boiling Point	
+		
+		--"dinner", --Slaughterhouse
+		--"man", --Undercover
+		--"arm_cro", --Transport Heists
+		--"arm_hcm", --Transport Heists
+		--"arm_fac", --Transport Heists
+		--"arm_par", --Transport Heists
+		--"arm_und", --Transport Heists
+		--"arm_for"  --Transport Heists
+	}
 end
 
 _G.SC = _G.SC or {}

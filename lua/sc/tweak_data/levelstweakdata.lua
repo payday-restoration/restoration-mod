@@ -27,8 +27,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.lapd = lapd
 		
 		--Murkywater faction--
-		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
+		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
+		self.shoutout_raid.player_sequence = "spawn_prop_raincoat"
 		
 		self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
 		self.pbr.ai_group_type = murkywater
@@ -45,8 +46,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}
 		self.wwh.ai_group_type = murkywater 
 		
-		self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for"}
+		self.arm_for.package = {"packages/murkyassets", "packages/outfitassets", "packages/narr_arm_for"}
 		self.arm_for.ai_group_type = murkywater 
+		self.arm_for.player_sequence = "spawn_prop_sneak_suit"
 		
 		--NYPD--
 		self.spa.ai_group_type = nypd
@@ -72,12 +74,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.dinner.ai_group_type = nypd
 		self.dinner.package = {"packages/narr_dinner", "packages/outfitassets", "packages/nypdassets"}
-		-- self.dinner.package = {"packages/narr_dinner", "packages/lvl_dah", "packages/nypdassets"}
-		self.dinner.player_sequence = "spawn_prop_sneak_suit"
+		self.dinner.player_sequence = "spawn_prop_loud_suit"
 		
 		self.man.package = {"packages/narr_man", "packages/outfitassets"}
-		-- self.man.package = {"packages/narr_man", "packages/lvl_dah"}	
-		self.man.player_sequence = "spawn_prop_sneak_suit"
+		self.man.player_sequence = "spawn_prop_loud_suit"
 		
 		self.nmh.ai_group_type = nypd
 		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
@@ -102,7 +102,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
 		
 		self.rvd2.ai_group_type = lapd
-		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}			
+		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
+
+        --Custom suit bs--
+		
+		self.arm_cro.package = {"packages/outfitassets", "packages/narr_arm_cro"}
+		self.arm_cro.player_sequence = "spawn_prop_loud_suit"	
+		
+		self.arm_hcm.package = {"packages/outfitassets", "packages/narr_arm_hcm"}
+		self.arm_hcm.player_sequence = "spawn_prop_loud_suit"		
+		
+		self.arm_fac.package = {"packages/outfitassets", "packages/narr_arm_fac"}
+		self.arm_fac.player_sequence = "spawn_prop_loud_suit"	
+		
+		self.arm_par.package = {"packages/outfitassets", "packages/narr_arm_par"}
+		self.arm_par.player_sequence = "spawn_prop_loud_suit"			
+		
+		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
+		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
+		
+		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
+		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
+		
+		--[[self.crojob2.package = {"packages/outfitassets", "narr goes here"}
+		self.crojob2.player_sequence = "spawn_prop_sneak_suit"	
+		
+		self.crojob3.package = {"packages/outfitassets", "narr goes here"}
+		self.crojob3.player_sequence = "spawn_prop_loud_suit"]]--
+        --commented out becuase i really dont nkow how to find the correct narr package		
 		
 		--Gangster VO below--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
@@ -122,7 +149,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Russian Reapers--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
-		-- self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/lvl_wwh"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	
 	end)

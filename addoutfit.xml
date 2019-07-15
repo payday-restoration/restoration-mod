@@ -1,7 +1,8 @@
 <table directory="assets">
 
     <sequence_manager path="units/payday2/characters/ragdoll" force="true"/>
-
+    
+	<!--sneak suit-->
 	<unit path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
 	<object path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
 	<model path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
@@ -34,7 +35,48 @@
 	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
 	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+    
+	<!--loud suit-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_nm" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_gsma" force="true"/>
 
+	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_loud_suit/player_tactical_outfit_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_loud_suit/player_tactical_outfit_nm" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_loud_suit/player_tactical_outfit_gsma" force="true"/>
+
+	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big_contour" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big" force="true"/>
+
+	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_contour" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" force="true"/>
+
+	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big_contour" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
+    
+	<!--snow suits-->
     <unit path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
 	<object path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
 	<model path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
@@ -67,5 +109,29 @@
 	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
 	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
+    
+	<!--raincoats-->
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat_bonnie" force="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
+
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 </table>

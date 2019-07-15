@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<unit type="glc" slot="1">
+	<object file="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" />
+
+	<dependencies>
+		
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+
+</unit>

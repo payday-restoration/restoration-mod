@@ -31,8 +31,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shoutout_raid.ai_group_type = murkywater
 		self.shoutout_raid.player_sequence = "spawn_prop_raincoat"
 		
-		self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
+		self.pbr.package = {"packages/murkyassets", "packages/outfitassets", "packages/narr_jerry1"}
 		self.pbr.ai_group_type = murkywater
+		self.pbr.player_sequence = "spawn_prop_loud_suit"
 		
 		self.des.package = {"packages/murkyassets", "packages/job_des"}
 		self.des.ai_group_type = murkywater 
@@ -129,7 +130,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.crojob3.package = {"packages/outfitassets", "narr goes here"}
 		self.crojob3.player_sequence = "spawn_prop_loud_suit"]]--
-        --commented out becuase i really dont nkow how to find the correct narr package		
+        --commented out becuase i really dont know how to find the correct narr package		
 		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}

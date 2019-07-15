@@ -94,7 +94,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
 		
 		self.pal.ai_group_type = lapd
-		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}		
+		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/outfitassets", "packages/nypdassets"}
+		self.pal.player_sequence = "spawn_prop_pool_repair_suit"		
 		
 		self.kenaz.ai_group_type = lapd
 		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets"}			

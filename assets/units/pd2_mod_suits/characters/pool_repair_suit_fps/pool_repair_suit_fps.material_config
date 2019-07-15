@@ -1,0 +1,10 @@
+<materials version="3" group="fps_criminals_suit_1">
+    <material name="mtr_hands" version="2" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
+        <diffuse_texture 		file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_df"/>
+        <bump_normal_texture 	file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_nm"/>
+    </material>
+    <material name="mtr_suit" version="2" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
+        <diffuse_texture 		file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_df"/>
+        <bump_normal_texture 	file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_nm"/>
+    </material>
+</materials>

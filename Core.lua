@@ -94,9 +94,10 @@ if not _G.restoration then
 	if not success then
 		RestorationCore.log_shit("[ERROR] Something bad happened with Restoration. " .. tostring(err))
 	end
-	RestorationCore.log_shit("SC: FUCKING LOADING: " .. ModPath)
+	RestorationCore.log_shit("SC: LOADING: " .. ModPath)
 	_G.restoration.ModPath = ModPath
 	_G.restoration.disable_captain_camper = {
+		--///BASE LEVELS\\\--
 		"pbr2",
 		"born",
 		"nail",
@@ -111,14 +112,16 @@ if not _G.restoration then
 		"wwh",
 		"pines",
 		"hox_3",
-		--custom heists
-		"hardware_store", --hes fucking awful on this heist pdc why did you think it was ok
+		--///CUSTOM HEISTS\\\--
+		"hardware_store", 
 		"office_strike",
-		"spa_CD",		
-		"skmc_mad", --rex's holdout maps
+		"spa_CD",
+		--///REX'S HOLDOUT LEVELS\\\--
+		"skmc_mad",
 		"skmc_fish",
 		"skmc_ovengrill",
-		"firestarter_2_res" --firestarter day 2 res edit version
+		--///RESTORATION EDITS\\\--
+		"firestarter_2_res"
 	}
 	_G.restoration.captain_teamwork = {
 		"pal", --counterfeit 
@@ -216,12 +219,12 @@ if not _G.restoration then
 		
 		--"dinner", --Slaughterhouse
 		--"man", --Undercover
-		--"arm_cro", --Transport Heists
-		--"arm_hcm", --Transport Heists
-		--"arm_fac", --Transport Heists
-		--"arm_par", --Transport Heists
-		--"arm_und", --Transport Heists
-		--"arm_for"  --Transport Heists
+		--"arm_cro", --Transport CROSSROADS
+		--"arm_hcm", --Transport DOWNTOWN
+		--"arm_fac", --Transport HARBOR
+		--"arm_par", --Transport PARK
+		--"arm_und", --Transport UNDERPASS
+		--"arm_for"  --Transport TRAIN HEIST
 	}
 end
 

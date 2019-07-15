@@ -2,7 +2,7 @@
 
     <sequence_manager path="units/payday2/characters/ragdoll" force="true"/>
     
-	<!--sneak suit-->
+	<!--///SNEAKING OUTFIT\\\-->
 	<unit path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
 	<object path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
 	<model path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
@@ -36,7 +36,7 @@
 	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
     
-	<!--loud suit-->
+	<!--///COMBAT OUTFIT\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>
@@ -76,7 +76,7 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
     
-	<!--snow suits-->
+	<!--///ARCTIC GEAR\\\-->
     <unit path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
 	<object path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
 	<model path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
@@ -110,7 +110,7 @@
 	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
     
-	<!--raincoats-->
+	<!--///RAINCOATS\\\-->
 	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>

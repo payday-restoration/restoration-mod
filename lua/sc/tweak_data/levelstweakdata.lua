@@ -1,6 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	Month = os.date("%m")
---TODO: Load player outfits in our mods in their own packages, so we're loading even less BS--
+	--///LEVEL TYPES\\\--
 	LevelsTweakData.LevelType = {}
 	LevelsTweakData.LevelType.America = "america"
 	LevelsTweakData.LevelType.Russia = "russia"
@@ -8,7 +8,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.Murkywater = "murkywater"
 	LevelsTweakData.LevelType.NYPD = "nypd"
 	LevelsTweakData.LevelType.LAPD = "lapd"
-
+	--///LEVELS\\\--
 	Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		
 		local america = LevelsTweakData.LevelType.America
@@ -26,7 +26,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.nypd = nypd
 		self.ai_groups.lapd = lapd
 		
-		--Murkywater faction--
+		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
 		self.shoutout_raid.player_sequence = "spawn_prop_raincoat"
@@ -50,7 +50,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.arm_for.ai_group_type = murkywater 
 		self.arm_for.player_sequence = "spawn_prop_sneak_suit"
 		
-		--NYPD--
+		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
@@ -88,7 +88,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skm_red2.ai_group_type = nypd
 		self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 		
-		--LAPD--			
+		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
 		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
 		
@@ -104,7 +104,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rvd2.ai_group_type = lapd
 		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
 
-        --Custom suit bs--
+        --///NEW OUTFITS\\\--
 		
 		self.arm_cro.package = {"packages/outfitassets", "packages/narr_arm_cro"}
 		self.arm_cro.player_sequence = "spawn_prop_loud_suit"	
@@ -131,12 +131,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crojob3.player_sequence = "spawn_prop_loud_suit"]]--
         --commented out becuase i really dont nkow how to find the correct narr package		
 		
-		--Gangster VO below--
+		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
-		--Halloween enemies on halloween maps--
+		--///ZOMBIE LEVELS\\\--
 		self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
@@ -144,10 +144,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.haunted.ai_group_type = zombie		
 		self.nail.ai_group_type = zombie
 		self.help.ai_group_type = zombie
-		
+		--///SAFEHOUSE\\\--
 		self.chill.ghost_bonus = nil
 		
-		--Russian Reapers--
+		--///REAPER LEVELS\\\--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	

@@ -19997,8 +19997,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_b_long",
 			stats = {
 				value = 1,
-				spread = 2,
-				concealment = -3
+				spread = 1,
+				concealment = -2
 			},
 			texture_bundle_folder = "character_pack_clover",
 			dlc = "character_pack_clover"
@@ -20023,7 +20023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_l85a2_b_short",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_b_short",
-			stats = {value = 1, concealment = 3},
+			stats = {value = 1, concealment = 2, spread = -1},
 			texture_bundle_folder = "character_pack_clover",
 			dlc = "character_pack_clover"
 		}
@@ -28716,7 +28716,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				spread = -1,
-				damage = 1,
 				concealment = 2
 			},
 			dlc = "born",
@@ -28735,7 +28734,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_b_medium",
 			stats = {
 				value = 1,
-				damage = 1,
 				concealment = 1
 			},
 			dlc = "born",

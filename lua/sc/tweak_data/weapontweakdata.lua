@@ -7244,6 +7244,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ching.stats_modifiers = nil
 		self.ching.panic_suppression_chance = 0.0	
 		self.erma.CLIP_AMMO_MAX = 32
+		self.erma.BURST_FIRE = false
 		self.erma.AMMO_MAX = 120
 		self.erma.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.erma.fire_mode_data.fire_rate = 0.10909090909
@@ -9799,8 +9800,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"smg"
 			}
 			self.pecheneg.has_description = false
-			self.pecheneg.AMMO_MAX = 225
-			self.pecheneg.AMMO_PICKUP = self:_pickup_chance(225, 2)
+			self.pecheneg.AMMO_MAX = 180
+			self.pecheneg.AMMO_PICKUP = self:_pickup_chance(180, 2)
 			self.pecheneg.panic_suppression_chance = 0.1
 			self.pecheneg.spread.standing = 3
 			self.pecheneg.spread.crouching = 2
@@ -9911,8 +9912,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"smg"
 			}
 			self.zweihander.has_description = false
-			self.zweihander.AMMO_MAX = 200
-			self.zweihander.AMMO_PICKUP = self:_pickup_chance(200, 1)
+			self.zweihander.AMMO_MAX = 150
+			self.zweihander.AMMO_PICKUP = self:_pickup_chance(150, 1)
 			self.zweihander.panic_suppression_chance = 0.1
 			self.zweihander.spread.standing = 3
 			self.zweihander.spread.crouching = 2

@@ -46426,14 +46426,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
 				"wpn_fps_upg_i_faster_rof"
 			})	
-			self.wpn_fps_lmg_m60.override = { 
-				wpn_fps_upg_ammo_half_that = {
-					stats = {
-						value = 1,
-						total_ammo_mod = -25,
-						recoil = 0
-					},
-					custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+		self.wpn_fps_lmg_m60.override = { 
+			wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = 20,
+					recoil = 0
+				},
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
 			}				
 		end		
@@ -46442,18 +46442,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.list_append(self.wpn_fps_lmg_pecheneg.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
-			table.list_append(self.wpn_fps_lmg_pecheneg.uses_parts, {
-				"wpn_fps_upg_i_slower_rof"
-			})
 			self.parts.wpn_fps_lmg_pecheneg_a_762.pcs = nil
 			self.parts.wpn_fps_lmg_pecheneg_b_long.stats = {
 				value = 0,
 				concealment = -1,
 				recoil = 2
 			}			
-			table.list_append(self.wpn_fps_lmg_pecheneg.uses_parts, {
-				"wpn_fps_upg_i_faster_rof"
-			})	
 		end				
 
 	if self.wpn_fps_pis_m1895 then --Pawcio's Mosin M1895
@@ -46503,12 +46497,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
-		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
-				"wpn_fps_upg_i_slower_rof"
-			})
-		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
-				"wpn_fps_upg_i_faster_rof"
-			})	
 		self.parts.wpn_fps_upg_rpd_irons.pcs = nil
 		self.parts.wpn_fps_upg_rpd_bipod.stats = {
 				value = 0, 
@@ -46519,10 +46507,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = -25,
+						total_ammo_mod = 25,
 						recoil = 0
 					},
-					custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},	
 				}
 			}	
 		end	
@@ -46610,10 +46598,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = -20,
+					total_ammo_mod = 20,
 					recoil = 0
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
 			}	
 		end			
@@ -46684,10 +46672,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = -20,
-					recoil = 0
+					total_ammo_mod = 20
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 			}
 		}			
 		end	

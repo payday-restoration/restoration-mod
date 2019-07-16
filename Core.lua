@@ -215,6 +215,7 @@ if not _G.restoration then
 		"sah", --Shacklethrorne Heist
 		"bph", --Hell's Island
 		"vit", --White House
+		"crojob2", --Bomb Dockyard
 		"mad" --Boiling Point	
 		
 		--"dinner", --Slaughterhouse

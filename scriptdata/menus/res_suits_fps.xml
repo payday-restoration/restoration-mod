@@ -59,6 +59,10 @@
 		<filter name="'is_jacket'">
 			<check value="(dest_unit:parent() or dest_unit):base():character_name() == 'jacket'"/>
 		</filter>
+		
+		<filter name="'is_jimmy'">
+			<check value="(dest_unit:parent() or dest_unit):base():character_name() == 'jimmy'"/>
+		</filter>
 
 		<filter name="'use_female_gloves'">
 			<check value="( (dest_unit:parent() or dest_unit):base():character_name() == 'female_1' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'bonnie' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'sydney' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'ecp_female' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'joy' )"/>
@@ -113,6 +117,7 @@
 			<run_sequence filter="'is_joy'" name="'int_seq_show_fem_arms'" start_time="5/30"/>
 			<run_sequence filter="'is_wild'" name="'int_seq_show_arms'" start_time="5/30"/>
 			<run_sequence filter="'is_jacket'" name="'int_seq_show_arms'" start_time="5/30"/>
+			<run_sequence filter="'is_jimmy'" name="'int_seq_show_arms'" start_time="5/30"/>
 			<run_sequence name="'int_seq_hide_gloves_sleeves'" start_time="5/30"/>
 		</sequence>
 

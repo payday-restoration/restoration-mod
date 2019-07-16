@@ -4477,6 +4477,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_upg_ak_s_folding_vanilla = deep_clone(self.parts.wpn_upg_ak_s_folding)
 		self.parts.wpn_upg_ak_s_folding_vanilla.stats = nil
 		self.parts.wpn_upg_ak_s_folding_vanilla.pcs = nil
+		self.parts.wpn_upg_ak_m_drum_vanilla = deep_clone(self.parts.wpn_upg_ak_m_drum)
+		self.parts.wpn_upg_ak_m_drum_vanilla.stats = nil
+		self.parts.wpn_upg_ak_m_drum_vanilla.pcs = nil		
 		self.parts.wpn_upg_ak_s_skfoldable_vanilla = deep_clone(self.parts.wpn_upg_ak_s_skfoldable)
 		self.parts.wpn_upg_ak_s_skfoldable_vanilla.stats = nil
 		self.parts.wpn_upg_ak_s_skfoldable_vanilla.pcs = nil
@@ -11995,9 +11998,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_b_long",
 			stats = {
 				value = 4,
-				spread = 2,
-				recoil = 1,
-				spread_moving = -2,
+				spread = 1,
 				concealment = -2
 			},
 			texture_bundle_folder = "gage_pack_lmg",
@@ -12055,8 +12056,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_fg_short",
 			stats = {
 				value = 6,
-				spread_moving = 2,
-				concealment = 3
+				concealment = 1
 			},
 			texture_bundle_folder = "gage_pack_lmg",
 			dlc = "gage_pack_lmg",
@@ -12080,9 +12080,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_g_ergo",
 			stats = {
 				value = 3,
-				recoil = 1,
-				spread_moving = 2,
-				concealment = -1
+				recoil = 1
 			},
 			texture_bundle_folder = "gage_pack_lmg",
 			dlc = "gage_pack_lmg"
@@ -12141,6 +12139,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_o_45iron = { "wpn_fps_ass_g3_body_rail" },
 			wpn_fps_upg_o_leupold = { "wpn_fps_ass_g3_body_rail" },
 		}
+		self.wpn_fps_lmg_hk21.override = {
+			wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = 11,
+					concealment = -3
+				},
+				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.8},	
+			}
+		}		
 		self.wpn_fps_lmg_hk21.optional_types = {"barrel_ext", "gadget"}
 		self.wpn_fps_lmg_hk21.default_blueprint = {
 			"wpn_fps_lmg_hk21_b_short",
@@ -12208,8 +12216,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/wpn_fps_lmg_m249_b_long",
 			stats = {
 				value = 4,
-				spread = 2,
-				concealment = -2
+				spread = 1,
+				concealment = -1
 			},
 			dlc = "gage_pack_lmg",
 			texture_bundle_folder = "gage_pack_lmg"
@@ -12300,7 +12308,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
-				spread_moving = -2,
 				concealment = -1
 			},
 			dlc = "gage_pack_lmg",
@@ -12340,10 +12347,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = -20,
-					recoil = 0
+					total_ammo_mod = 20,
+					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 			}
 		}
 		self.wpn_fps_lmg_m249.default_blueprint = {
@@ -12445,10 +12452,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_fps_lmg_rpk_fg_standard",
 			stats = {
 				value = 6,
-				spread = 2,
-				recoil = 2,
-				spread_moving = 0,
-				concealment = -1,
+				recoil = 1,
+				concealment = -2
 			},
 			forbids = {
 				"wpn_fps_addon_ris"
@@ -12464,7 +12469,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "magazine",
 			name_id = "bm_wp_rpk_m_drum",
 			a_obj = "a_m",
-				custom_stats = {reload_speed_mult = 1.05},
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_fps_lmg_rpk_m_standard",
 			stats = {value = 1}
@@ -12491,9 +12495,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "gage_pack_lmg",
 			dlc = "gage_pack_lmg",
 			stats = {
-				value = 3,
+				value = 1,
 				recoil = 1,
-				concealment = 1
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_lmg_rpk_s_wood = {
@@ -12539,14 +12543,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire_steelsight = "recoil"
 		}
 		self.wpn_fps_lmg_rpk.override = {
-			wpn_upg_ak_m_drum = {
-					 stats = {
+			wpn_lmg_rpk_m_ban = {
+					unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_fps_lmg_rpk_m_standard",
+					third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_standard",
+					stats = {
 						value = 5,
-							concealment = -3,
-							reload = -1,
-							extra_ammo = 40,
-					 },
-					 custom_stats = {reload_speed_mult = 1}
+						concealment = 2,
+						reload = 2,
+						extra_ammo = -40,
+					}
 			},
 		}
 		self.wpn_fps_lmg_rpk.optional_types = {
@@ -12558,7 +12563,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_lmg_rpk.default_blueprint = {
 			"wpn_fps_lmg_rpk_b_standard",
 			"wpn_fps_lmg_rpk_fg_wood",
-			"wpn_lmg_rpk_m_drum",
+			"wpn_upg_ak_m_drum_vanilla",
 			"wpn_fps_lmg_rpk_s_wood",
 			"wpn_fps_ass_74_body_upperreceiver",
 			"wpn_fps_lmg_rpk_body_lowerreceiver",
@@ -12568,7 +12573,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_lmg_rpk_b_standard",
 			"wpn_fps_lmg_rpk_fg_standard",
 			"wpn_fps_lmg_rpk_fg_wood",
-			"wpn_lmg_rpk_m_drum",
+			"wpn_upg_ak_m_drum_vanilla",
 			"wpn_fps_lmg_rpk_s_standard",
 			"wpn_fps_lmg_rpk_s_wood",
 			"wpn_fps_ass_74_body_upperreceiver",
@@ -12616,7 +12621,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_eotech_xps",
 			"wpn_upg_ak_s_psl",
 			"wpn_lmg_rpk_m_drum_upgrade",
-			"wpn_upg_ak_m_drum"
+			"wpn_lmg_rpk_m_ban"
 		}
 		self.wpn_fps_lmg_rpk_npc = deep_clone(self.wpn_fps_lmg_rpk)
 		self.wpn_fps_lmg_rpk_npc.unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk/wpn_fps_lmg_rpk_npc"
@@ -18403,9 +18408,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
-				recoil = 1,
-				spread = 2
+				recoil = 4
 			},
+			custom_stats = {rof_mult = 0.667},
+			has_description = true,
+			desc_id = "bm_wp_mg42_b_mg34_desc_sc",			
 			override = {
 				wpn_fps_lmg_mg42_n42 = {
 					unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n34",
@@ -18425,7 +18432,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 10,
-				spread = 1,
+				spread = -1,
 				recoil = 2,
 				suppression = 13,
 				alert_size = 13
@@ -18457,7 +18464,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "lower_reciever",
 			name_id = "bm_wp_mg42_b_long",
 			a_obj = "a_body",
-			custom_stats = {reload_speed_mult = 1.2},
 			unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever",
 			stats = {value = 1},
 			animations = {
@@ -18507,10 +18513,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = -25,
+					total_ammo_mod = 20,
 					recoil = 0
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 			}
 		}
 		self.wpn_fps_lmg_mg42.adds = { 
@@ -26603,7 +26609,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_par_b_short",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_b_short",
-			stats = {value = 1, concealment = 2},
+			stats = {value = 1, concealment = 1},
 			texture_bundle_folder = "par"
 		}
 		self.parts.wpn_fps_lmg_par_b_standard = {
@@ -26651,8 +26657,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
-				spread = 2,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "par"
 		}
@@ -26690,6 +26695,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"sight",
 			"vertical_grip"
 		}
+		self.wpn_fps_lmg_par.override = {
+			wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = 11,
+					concealment = -3
+				},
+				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.8},	
+			}
+		}		
 		self.wpn_fps_lmg_par.default_blueprint = {
 			"wpn_fps_lmg_par_b_standard",
 			"wpn_fps_lmg_par_body_standard",
@@ -46172,12 +46187,29 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			dlc = "sc",
 			stats = {
 				value = 1,
-				total_ammo_mod = -20,
-				recoil = 0
+				concealment = -3,
+				total_ammo_mod = 20
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},
+			custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},
 			internal_part = true
 		}
+		self.parts.wpn_lmg_rpk_m_ban = {
+			pcs = {},
+			type = "magazine",
+			name_id = "bm_wp_rpk_m_ban_sc",
+			a_obj = "a_m",
+			bullet_objects = {prefix = "g_bullet_", amount = 1},
+			dlc = "sc",
+			is_a_unlockable = true,		
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_lmg_rpk_m_standard",
+			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_fps_lmg_rpk_m_standard",
+			stats = {
+				value = 5,
+				concealment = 2,
+				reload = 2,
+				extra_ammo = -40,
+			}
+		}		
 		self.parts.wpn_fps_upg_extra_mp_lock = {
 			type = "extra",
 			name_id = "bm_wp_upg_extra_mp_lock",

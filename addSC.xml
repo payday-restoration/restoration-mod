@@ -699,6 +699,9 @@
 	<!--Incendiary Slug-->
 	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_slug_fire"/>
 	
+	<!--RPK banana mag-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_lmg_rpk_m_standard"/>	
+	
 	<!--AK drum mag-->
 	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"/>
 

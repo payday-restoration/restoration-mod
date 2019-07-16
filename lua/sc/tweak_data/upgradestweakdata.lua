@@ -65,8 +65,8 @@ function UpgradesTweakData:_init_pd2_values()
 		self.explosive_bullet.camera_shake_max_mul = 4
 
 		--Restoring movement penalties--
-		self.weapon_movement_penalty.minigun = 0.8
-		self.weapon_movement_penalty.lmg = 0.8
+		self.weapon_movement_penalty.minigun = 1
+		self.weapon_movement_penalty.lmg = 1
 
 	end
 

@@ -46924,7 +46924,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 		end
 
-		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7; for some reason, the integrated suppressor allows supported custom barrel attachments. Wierd...
+		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7
 			self.parts.wpn_fps_smg_k1a7_m_9mm.stats = {
 				damage = -6,
 				recoil = 1,
@@ -47014,7 +47014,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				reload = 2
 			}
 		end
-		
+
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

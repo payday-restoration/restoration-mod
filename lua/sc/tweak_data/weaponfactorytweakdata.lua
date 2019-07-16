@@ -46879,6 +46879,142 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				ammo_pickup_max_mul = 0.8
 			}
 		end
+
+		if self.wpn_fps_pis_sonny then --Alcat's Bren Ten
+			table.list_append( self.wpn_fps_pis_sonny.uses_parts, {
+				"wpn_fps_upg_ammo_45custom"
+			})
+			table.list_append( self.wpn_fps_pis_x_sonny.uses_parts, {
+				"wpn_fps_upg_ammo_45custom"
+			})
+			self.parts.wpn_fps_pis_sonny_sl_runt.stats = {
+				spread = -1,
+				recoil = -1,
+				concealment = 2
+			}
+		end
+
+		if self.wpn_fps_pis_czauto then --Alcat's CZAuto
+			self.parts.wpn_fps_pis_czauto_ns_compensated.stats = {
+				recoil = 1,
+				spread = 1,
+				concealment = -1,
+				spread_moving = 1
+			}
+			self.parts.wpn_fps_pis_czauto_m_extended.stats = {
+				recoil = 1,
+				extra_ammo = 8,
+				concealment = -2,
+				reload = -1,
+				spread_moving = 0
+			}
+			self.parts.wpn_fps_pis_czauto_vg_mag.stats = {
+				recoil = 3,
+				concealment = -2,
+				reload = 3
+			}
+			self.parts.wpn_fps_pis_czauto_g_wooden.stats = {
+				recoil = 0
+			}
+			self.parts.wpn_fps_pis_czauto_g_walnut.stats = {
+				recoil = 0
+			}
+			self.parts.wpn_fps_pis_czauto_g_pearl.stats = {
+				recoil = 0
+			}
+		end
+
+		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7
+			self.parts.wpn_fps_smg_k1a7_m_9mm.stats = {
+				damage = -6,
+				recoil = 1,
+				extra_ammo = 5,
+				reload = 2,
+				concealment = 1,
+				total_ammo_mod = 20,
+				suppression = 1,
+				alert_size = 1
+			}
+			self.parts.wpn_fps_smg_k1a7_m_9mm.custom_stats = {
+				ammo_pickup_min_mul = 1.2,
+				ammo_pickup_max_mul = 1.2
+			}
+			self.parts.wpn_fps_smg_k1a7_b_sd.stats = {
+				spread = 1,
+				recoil = 0,
+				concealment = 1,
+				suppression = 12,
+				alert_size = 12
+			}
+			self.parts.wpn_fps_smg_k1a7_b_sd.forbids = {
+				"wpn_fps_upg_ns_hock",
+				"wpn_fps_upg_ns_osprey",
+				"wpn_fps_upg_ns_dragon",
+				"wpn_fps_upg_ns_ass_smg_large",
+				"wpn_fps_upg_ns_ass_smg_medium",
+				"wpn_fps_upg_ns_ass_smg_small",
+				"wpn_fps_upg_ns_ass_smg_firepig",
+				"wpn_fps_upg_ns_ass_smg_stubby",
+				"wpn_fps_upg_ns_ass_smg_tank",
+				"wpn_fps_upg_ass_ns_jprifles",
+				"wpn_fps_upg_ass_ns_linear",
+				"wpn_fps_upg_ass_ns_surefire",
+				"wpn_fps_upg_ass_ns_battle"
+			}
+			self.parts.wpn_fps_smg_k1a7_s_pulled.stats = {
+				recoil = 1,
+				concealment = -1
+			}
+			table.list_append(self.wpn_fps_smg_k1a7.uses_parts, {
+				"wpn_fps_upg_i_faster_rof"
+			})
+			table.list_append(self.wpn_fps_smg_k1a7.uses_parts, {
+				"wpn_fps_upg_i_slower_rof"
+			})
+		end
+
+		if self.wpn_fps_smg_calico then --Alcat's Calico
+			table.list_append(self.wpn_fps_smg_calico.uses_parts, {
+				"wpn_fps_upg_i_faster_rof"
+			})
+			table.list_append(self.wpn_fps_smg_calico.uses_parts, {
+				"wpn_fps_upg_i_slower_rof"
+			})
+			self.parts.wpn_fps_smg_calico_body_carbine.stats = {
+				damage = 6,
+				recoil = 1,
+				concealment= -2,
+				total_ammo_mod= -16,
+				suppression = -1,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_smg_calico_body_carbine.desc_id = {"bm_wp_wpn_fps_smg_calico_body_carbine_desc"} --doesn't work as of current
+			self.parts.wpn_fps_smg_calico_body_carbine.custom_stats = {
+				ammo_pickup_min_mul = 0.8,
+				ammo_pickup_max_mul = 0.8
+			}
+			self.parts.wpn_fps_smg_calico_body_full.stats = {
+				damage = 16,
+				recoil = 2,
+				spread = 3,
+				concealment= -5,
+				total_ammo_mod= -33,
+				suppression = -2,
+				alert_size = -2
+			}
+			self.parts.wpn_fps_smg_calico_body_full.desc_id = {"bm_wp_wpn_fps_smg_calico_body_full_desc"} --doesn't work as of current
+			self.parts.wpn_fps_smg_calico_body_full.custom_stats = {
+				ammo_pickup_min_mul = 0.64,
+				ammo_pickup_max_mul = 0.64
+			}
+			self.parts.wpn_fps_smg_calico_m_half.stats = {
+				extra_ammo = -25,
+				concealment = 3,
+				recoil = 1,
+				reload = 2
+			}
+		end
+
 		--Incendiary Slugs are awesome--
 
 		local colt_weapons = {

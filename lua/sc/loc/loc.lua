@@ -187,6 +187,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_weirdmagthing"] = "Magwell Grip",		
 		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",			
 		["bm_wp_wpn_fps_ass_galil_m_drum"] = "75 Round Drum Magazine",				
+		["bm_wp_upg_a_45custom"] = ".45 ACP",
+		["bm_wp_upg_a_45custom_desc"] = "Rechambers the gun for .45 ACP, providing better pickup and handling at the cost of power. Might as well just use the Crosskill instead at this point. Min and Max ammo pickup rate: 1.33x",
+		["bm_w_calico"] = "Calico M9L Machine Pistol",
+		["bm_wp_wpn_fps_smg_calico_body_carbine_desc"] = "Custom medium pistol round conversion. Min and Max pickup rate: 0.8x", 
+		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Custom heavy pistol round conversion. Min and Max pickup rate: 0.64x",
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 

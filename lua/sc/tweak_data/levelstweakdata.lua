@@ -35,8 +35,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pbr.ai_group_type = murkywater
 		self.pbr.player_sequence = "spawn_prop_loud_suit"
 		
-		self.des.package = {"packages/murkyassets", "packages/job_des"}
+		self.des.package = {"packages/murkyassets", "packages/outfitassets", "packages/job_des"}
 		self.des.ai_group_type = murkywater 
+		self.des.player_sequence = "spawn_prop_loud_suit"
 		
 		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
@@ -56,7 +57,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.brb.ai_group_type = nypd
-		self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
+		self.brb.package = {"packages/lvl_brb", "packages/outfitassets", "packages/nypdassets"}
+		self.brb.player_sequence = "spawn_prop_winter_suit"
 		
 		self.red2.ai_group_type = nypd
 		self.red2.package = {"packages/narr_red2", "packages/nypdassets"}
@@ -91,7 +93,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/outfitassets", "packages/nypdassets"}
+		self.jolly.player_sequence = "spawn_prop_loud_suit"
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/outfitassets", "packages/nypdassets"}

@@ -169,6 +169,7 @@ if not _G.restoration then
 		"spa",
 		"chill_combat",
 		"des",
+		"brb",
 		"sah",
 		"skm_mus",
 		"skm_red2",
@@ -217,8 +218,11 @@ if not _G.restoration then
 		"vit", --White House
 		"crojob2", --Bomb Dockyard
 		"pal", --Counterfeit
+		"brb", --Brooklyn Bank
 		"mad" --Boiling Point	
 		
+		--holding loud suit levels here in case we need an extra check for them in the future
+		--"des", --Henry's Rock
 		--"dinner", --Slaughterhouse
 		--"man", --Undercover
 		--"arm_cro", --Transport CROSSROADS

@@ -9609,8 +9609,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"smg"
 			}
 			self.mg4.has_description = false
-			self.mg4.AMMO_MAX = 250
-			self.mg4.AMMO_PICKUP = self:_pickup_chance(250, 1)
+			self.mg4.AMMO_MAX = 200
+			self.mg4.AMMO_PICKUP = self:_pickup_chance(200, 2)
 			self.mg4.panic_suppression_chance = 0.1
 			self.mg4.spread.standing = 3
 			self.mg4.spread.crouching = 2
@@ -9835,8 +9835,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.m60.has_description = false
 			self.m60.fire_mode_data.fire_rate = 0.12
-			self.m60.AMMO_MAX = 200
-			self.m60.AMMO_PICKUP = self:_pickup_chance(200, 1)
+			self.m60.AMMO_MAX = 150
+			self.m60.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.m60.panic_suppression_chance = 0.1
 			self.m60.spread.standing = 3
 			self.m60.spread.crouching = 2
@@ -9913,7 +9913,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.zweihander.has_description = false
 			self.zweihander.AMMO_MAX = 150
-			self.zweihander.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.zweihander.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.zweihander.panic_suppression_chance = 0.1
 			self.zweihander.spread.standing = 3
 			self.zweihander.spread.crouching = 2
@@ -9946,8 +9946,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"smg"
 			}
 			self.rpd.has_description = false
-			self.rpd.AMMO_MAX = 200
-			self.rpd.AMMO_PICKUP = self:_pickup_chance(200, 1)
+			self.rpd.AMMO_MAX = 150
+			self.rpd.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.rpd.panic_suppression_chance = 0.1
 			self.rpd.spread.standing = 3
 			self.rpd.spread.crouching = 2
@@ -12237,10 +12237,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"lmg",
 				"smg"
 			}
-			self.volmer.use_data.selection_index = 1			
+			self.volmer.use_data.selection_index = 1
+			self.volmer.has_description = false		
 			self.volmer.CLIP_AMMO_MAX = 90 --this doesn't make sense mag-wise but whatever
-			self.volmer.AMMO_MAX = 200
-			self.volmer.AMMO_PICKUP = self:_pickup_chance(200, 1)
+			self.volmer.AMMO_MAX = 150
+			self.volmer.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.volmer.fire_mode_data.fire_rate = 0.06315789473
 			self.volmer.auto.fire_rate = 0.06315789473
 			self.volmer.spread.standing = 3
@@ -12527,8 +12528,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		"smg"
 		}
 		self.ultimax.CLIP_AMMO_MAX = 100
-		self.ultimax.AMMO_MAX = 250
-		self.ultimax.AMMO_PICKUP = self:_pickup_chance(250, 2)
+		self.ultimax.AMMO_MAX = 200
+		self.ultimax.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.ultimax.fire_mode_data.fire_rate = 0.10909090909
 		self.ultimax.CAN_TOGGLE_FIREMODE = true
 		self.ultimax.auto = {}

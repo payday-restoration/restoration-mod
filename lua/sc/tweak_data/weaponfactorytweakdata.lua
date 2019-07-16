@@ -43896,10 +43896,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					wpn_fps_upg_ammo_half_that = {
 						stats = {
 							value = 1,
-							total_ammo_mod = -25,
+							total_ammo_mod = 20,
 							recoil = 0
 						},
-						custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+						custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 					}
 				}				
 			end		
@@ -46507,10 +46507,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = 25,
+						total_ammo_mod = 20,
 						recoil = 0
 					},
-					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},	
+					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
 			}	
 		end	
@@ -46530,10 +46530,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 						value = 1,
-						total_ammo_mod = -25,
+						total_ammo_mod = 20,
 						recoil = 0
 					},
-				custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
 			}	
 		end	
@@ -46745,8 +46745,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					damage = -10,					
 					total_ammo_mod = 108,					
 					concealment = -5
-				}				
-			self.parts.wpn_fps_lmg_dp28_m_dpm35.custom_stats = {movement_speed = 0.75}			
+				}		
 			self.parts.wpn_fps_lmg_dp28_m_dpm36.stats = {
 					extra_ammo = -17,
 					recoil = -1,
@@ -46774,9 +46773,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = -20
+					total_ammo_mod = 20
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 			}
 		}				
 		end

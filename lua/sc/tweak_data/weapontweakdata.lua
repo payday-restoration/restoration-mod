@@ -12616,6 +12616,165 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.welrod.panic_suppression_chance = 0.0
 	end
 	
+	if self.sonny then --Carl's Bren Ten
+		self.sonny.has_description = true
+		self.sonny.tactical_reload = 1		
+		self.sonny.AMMO_MAX = 60
+		self.sonny.AMMO_PICKUP = self:_pickup_chance(60, 1)
+		self.sonny.spread.standing = 3
+		self.sonny.spread.crouching = 2
+		self.sonny.spread.steelsight = 1
+		self.sonny.spread.moving_standing = 4
+		self.sonny.spread.moving_crouching = 3
+		self.sonny.spread.moving_steelsight = 2
+		self.sonny.kick.standing = self.glock_17.kick.standing
+		self.sonny.kick.crouching = self.glock_17.kick.standing
+		self.sonny.kick.steelsight = self.glock_17.kick.standing
+		self.sonny.stats = {
+			damage = 72,
+			spread = 16,
+			recoil = 14,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 28,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}
+		self.sonny.panic_suppression_chance = 0.0
+		self.x_sonny.panic_suppression_chance = 0.0
+		self.x_sonny.AMMO_MAX = 90			
+		self.x_sonny.AMMO_PICKUP = self:_pickup_chance(90, 2)
+		self.x_sonny.spread.standing = 3
+		self.x_sonny.spread.crouching = 2
+		self.x_sonny.spread.steelsight = 1
+		self.x_sonny.spread.moving_standing = 4
+		self.x_sonny.spread.moving_crouching = 3
+		self.x_sonny.spread.moving_steelsight = 2
+		self.x_sonny.kick.standing = self.glock_17.kick.standing
+		self.x_sonny.kick.crouching = self.glock_17.kick.standing
+		self.x_sonny.kick.steelsight = self.glock_17.kick.standing
+		self.x_sonny.stats = {
+			damage = 72,
+			spread = 16,
+			recoil = 14,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 28,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 4,
+			reload = 11
+		}	
+	end
+
+	if self.czauto then --Alcat's CZ Auto
+		self.czauto.has_description = true
+		self.czauto.tactical_reload = 1		
+		self.czauto.AMMO_MAX = 180
+		self.czauto.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.czauto.spread.standing = 3
+		self.czauto.spread.crouching = 2
+		self.czauto.spread.steelsight = 1
+		self.czauto.spread.moving_standing = 4
+		self.czauto.spread.moving_crouching = 3
+		self.czauto.spread.moving_steelsight = 2
+		self.czauto.kick.standing = self.glock_17.kick.standing
+		self.czauto.kick.crouching = self.glock_17.kick.standing
+		self.czauto.kick.steelsight = self.glock_17.kick.standing
+		self.czauto.stats = {
+			damage = 30,
+			spread = 14,
+			recoil = 20,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 28,
+			suppression = 10,
+			alert_size = 10,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end
+
+	if self.k1a7 then --Alcat's K1A7
+		self.k1a7.use_data.selection_index = 2														
+		self.k1a7.categories = {
+				"smg"
+			}
+		self.k1a7.AMMO_MAX = 150
+		self.k1a7.tactical_reload = 1								
+		self.k1a7.has_description = true																							
+		self.k1a7.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.k1a7.spread.standing = 3
+		self.k1a7.spread.crouching = 2
+		self.k1a7.spread.steelsight = 1
+		self.k1a7.spread.moving_standing = 4
+		self.k1a7.spread.moving_crouching = 3
+		self.k1a7.spread.moving_steelsight = 2
+		self.k1a7.kick.standing = self.new_m4.kick.standing
+		self.k1a7.kick.crouching = self.new_m4.kick.standing
+		self.k1a7.kick.steelsight = self.new_m4.kick.standing
+		self.k1a7.stats = {
+			damage = 40,
+			spread = 16,
+			recoil = 20,
+			spread_moving = 14,
+			zoom = 1,
+			concealment = 24,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 2,
+			reload = 11
+		}
+		self.k1a7.panic_suppression_chance = 0.1
+	end
+
+	if self.calico then --Alcat's Calico
+		self.calico.has_description = false					
+		self.calico.use_data.selection_index = 2
+		self.calico.tactical_reload = 1
+		--self.calico.fire_mode_data.fire_rate = 0.05
+		--self.calico.auto.fire_rate = 0.08
+		self.calico.categories = {"pistol"}
+		self.calico.recategorize = "pistol_carbine"
+		self.calico.CLIP_AMMO_MAX = 50
+		self.calico.AMMO_MAX = 180
+		self.calico.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.calico.spread.standing = 3
+		self.calico.spread.crouching = 2
+		self.calico.spread.steelsight = 1
+		self.calico.spread.moving_standing = 4
+		self.calico.spread.moving_crouching = 3
+		self.calico.spread.moving_steelsight = 2
+		self.calico.kick.standing = self.new_m4.kick.standing
+		self.calico.kick.crouching = self.new_m4.kick.standing
+		self.calico.kick.steelsight = self.new_m4.kick.standing
+		self.calico.stats = {
+			damage = 34,
+			spread = 16,
+			recoil = 13,
+			spread_moving = 15,
+			zoom = 1,
+			concealment = 25,
+			suppression = 10,
+			alert_size = 10,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 3,
+			reload = 11
+		}
+		self.calico.panic_suppression_chance = 0.1
+	end
+
 	end)
 else
 end

@@ -194,6 +194,11 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	
+	if Global.load_level == true and Global.game_settings.level_id == "family_res" then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+	end
+	
 	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_res" then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")

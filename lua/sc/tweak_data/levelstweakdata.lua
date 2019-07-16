@@ -126,12 +126,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
 		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
 		
-		--[[self.crojob2.package = {"packages/outfitassets", "narr goes here"}
+		self.crojob2.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_2"}
 		self.crojob2.player_sequence = "spawn_prop_sneak_suit"	
 		
-		self.crojob3.package = {"packages/outfitassets", "narr goes here"}
-		self.crojob3.player_sequence = "spawn_prop_loud_suit"]]--
-        --commented out becuase i really dont know how to find the correct narr package		
+		self.crojob3.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_3"}
+		self.crojob3.player_sequence = "spawn_prop_loud_suit"
 		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}

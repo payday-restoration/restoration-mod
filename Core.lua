@@ -216,6 +216,7 @@ if not _G.restoration then
 		"bph", --Hell's Island
 		"vit", --White House
 		"crojob2", --Bomb Dockyard
+		"pal", --Counterfeit
 		"mad" --Boiling Point	
 		
 		--"dinner", --Slaughterhouse

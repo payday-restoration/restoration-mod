@@ -8941,8 +8941,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz66.kick.crouching = self.huntsman.kick.standing
 			self.toz66.kick.steelsight = self.huntsman.kick.standing
 			self.toz66.AMMO_MAX = 30
-			self.toz66.damage_near = 700
-			self.toz66.damage_far = 1400
+			self.toz66.damage_near = 1000
+			self.toz66.damage_far = 2000
 			self.toz66.AMMO_PICKUP = self:_pickup_chance(30, 2)
 			self.toz66.BURST_FIRE = 2			
 			self.toz66.BURST_FIRE_RATE_MULTIPLIER = 120				
@@ -9250,8 +9250,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 		self.m1894.has_description = true
 		self.m1894.desc_id = "bm_ap_weapon_sc_desc"	
-		self.m1894.AMMO_MAX = 40
-		self.m1894.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.m1894.AMMO_MAX = 30
+		self.m1894.AMMO_PICKUP = self:_pickup_chance(30, 2)
 		self.m1894.spread = {}
 		self.m1894.spread.standing = 3
 		self.m1894.spread.crouching = 2
@@ -9355,10 +9355,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obrez.has_description = true
 		self.obrez.desc_id = "bm_ap_weapon_sc_desc"
 		self.obrez.CLIP_AMMO_MAX = 10
-		self.obrez.AMMO_MAX = 30
+		self.obrez.AMMO_MAX = 20
 		self.obrez.uses_clip = true
 		self.obrez.clip_capacity = 5		
-		self.obrez.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.obrez.AMMO_PICKUP = self:_pickup_chance(20, 2)
 		self.obrez.fire_mode_data.fire_rate = 1
 		self.obrez.spread.standing = 3
 		self.obrez.spread.crouching = 2
@@ -9878,10 +9878,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.winchester1894.AMMO_PICKUP = self:_pickup_chance(40, 2)
 			self.winchester1894.FIRE_MODE = "single"
 			self.winchester1894.fire_mode_data = {}
-			self.winchester1894.fire_mode_data.fire_rate = 0.5
+			self.winchester1894.fire_mode_data.fire_rate = 0.375
 			self.winchester1894.CAN_TOGGLE_FIREMODE = false
 			self.winchester1894.single = {}
-			self.winchester1894.single.fire_rate = 0.5
+			self.winchester1894.single.fire_rate = 0.375
 			self.winchester1894.spread = {}
 			self.winchester1894.spread.standing = 3
 			self.winchester1894.spread.crouching = 2
@@ -9909,6 +9909,48 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.winchester1894.stats_modifiers = nil
 			self.winchester1894.panic_suppression_chance = 0.0
 		end
+
+		if self.moss464spx then --Pawcio's SPX Centerfire
+			self.moss464spx.has_description = false
+			self.moss464spx.upgrade_blocks = nil
+			self.moss464spx.has_description = true
+			self.moss464spx.desc_id = "bm_ap_weapon_sc_desc"
+			self.moss464spx.CLIP_AMMO_MAX = 10			
+			self.moss464spx.AMMO_MAX = 40
+			self.moss464spx.AMMO_PICKUP = self:_pickup_chance(40, 2)
+			self.moss464spx.FIRE_MODE = "single"
+			self.moss464spx.fire_mode_data = {}
+			self.moss464spx.fire_mode_data.fire_rate = 0.375
+			self.moss464spx.CAN_TOGGLE_FIREMODE = false
+			self.moss464spx.single = {}
+			self.moss464spx.single.fire_rate = 0.375
+			self.moss464spx.spread = {}
+			self.moss464spx.spread.standing = 3
+			self.moss464spx.spread.crouching = 2
+			self.moss464spx.spread.steelsight = 1
+			self.moss464spx.spread.moving_standing = 4
+			self.moss464spx.spread.moving_crouching = 3
+			self.moss464spx.spread.moving_steelsight = 2
+			self.moss464spx.kick.standing = self.huntsman.kick.standing
+			self.moss464spx.kick.crouching = self.huntsman.kick.standing
+			self.moss464spx.kick.steelsight = self.huntsman.kick.standing
+			self.moss464spx.stats = {
+				damage = 150,
+				spread = 19,
+				recoil = 18,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 11,
+				suppression = 4,
+				alert_size = 4,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+			self.moss464spx.stats_modifiers = nil
+			self.moss464spx.panic_suppression_chance = 0.0
+		end		
 		
 
 		if self.zweihander then --Pawcio's Zweihander
@@ -10376,8 +10418,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.prison.tactical_reload = 1						
 		self.prison.AMMO_MAX = 120
 		self.prison.AMMO_PICKUP = self:_pickup_chance(120, 2)
-		self.prison.damage_near = 700
-		self.prison.damage_far = 1400
+		self.prison.damage_near = 800
+		self.prison.damage_far = 1600
 		self.prison.spread.standing = 3 * 2
 		self.prison.spread.crouching = 2 * 2
 		self.prison.spread.steelsight = 1 * 2
@@ -10409,8 +10451,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas15.tactical_reload = 1		
 		self.spas15.AMMO_MAX = 120
 		self.spas15.AMMO_PICKUP = self:_pickup_chance(120, 2)
-		self.spas15.damage_near = 700
-		self.spas15.damage_far = 1400
+		self.spas15.damage_near = 800
+		self.spas15.damage_far = 1600
 		self.spas15.spread.standing = 3 * 2
 		self.spas15.spread.crouching = 2 * 2
 		self.spas15.spread.steelsight = 1 * 2
@@ -10932,8 +10974,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hk416.kick.crouching = self.new_m4.kick.standing
 			self.hk416.kick.steelsight = self.new_m4.kick.standing
 			self.hk416.stats = {
-				damage = 35,
-				spread = 14,
+				damage = 40,
+				spread = 17,
 				recoil = 19,
 				spread_moving = 7,
 				zoom = 3,
@@ -11006,11 +11048,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.f2000.kick.steelsight = self.new_m4.kick.standing
 		self.f2000.stats = {
 			damage = 35,
-			spread = 15,
-			recoil = 22,
+			spread = 16,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 21,
+			concealment = 24,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -11039,11 +11081,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.tilt.kick.steelsight = self.new_m4.kick.standing
 			self.tilt.stats = {
 				damage = 40,
-				spread = 15,
-				recoil = 19,
+				spread = 16,
+				recoil = 20,
 				spread_moving = 6,
 				zoom = 3,
-				concealment = 16,
+				concealment = 19,
 				suppression = 7,
 				alert_size = 7,
 				extra_ammo = 101,

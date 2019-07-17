@@ -41202,6 +41202,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = 2
 				}					
 			end	
+
 			if self.wpn_fps_snp_m1894 then 	--Pawcio's Marlin 1894
 				self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.stats = { 
 						value = 2,
@@ -41217,7 +41218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = 1,
 						concealment = -3
 				}						
-			end			
+			end						
 			
 		if self.wpn_fps_gre_hx25 then 	-- Pawcio's HX-25
 				self.parts.wpn_fps_upg_hx25_sight_iron_il.stats = {
@@ -41353,11 +41354,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}		
 				self.parts.wpn_fps_upg_hk416_stock_hk416c.stats = {
 						value = 1,
-						concealment = 1
+						spread = -1,						
+						concealment = 2
 				}
 				self.parts.wpn_fps_upg_hk416_stock_hk416c_collapsed.stats = {
 						value = 1,
-						concealment = 1
+						spread = -1,	
+						recoil = -1,												
+						concealment = 3
 				}										
 				self.parts.wpn_fps_upg_hk416_grip_magpul_moe.stats = {
 						value = 1,
@@ -41957,7 +41961,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 5,
 						zoom = 6,
 						concealment = -5
-					}					
+					}
+					
 				self.parts.wpn_fps_pis_amt_m_short.stats = {
 						value = 5,
 						concealment = -1,
@@ -41980,6 +41985,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 1,
 						concealment = 1						
 					}																				
+				end		
+
+		if self.wpn_fps_snp_moss464spx then -- Pawcio's SPX Centerfire
+				table.remove(self.wpn_fps_snp_moss464spx.uses_parts, 14)
+				self.parts.wpn_fps_snp_moss464spx_stock.stats = nil
+				self.parts.wpn_fps_snp_moss464spx_stock.pcs = nil		
+				self.parts.wpn_fps_upg_moss464spx_barrel_short.stats = {
+						value = 2,
+						extra_ammo = -1,							
+						concealment = 2
+					}				
+				self.parts.wpn_fps_upg_moss464spx_barrel_short.override_weapon_add = nil
+				self.parts.wpn_fps_upg_moss464spx_stock_cheekpiece.stats = {
+						value = 0,
+						recoil = 1,
+						concealment = -1
+					}					
+				end											
+
+		if self.wpn_fps_snp_winchester1894 then -- Pawcio's Winchester 1894				
+				self.parts.wpn_fps_upg_winchester1894_body_synthetic.stats = {
+						value = 0
+					}
+				self.parts.wpn_fps_upg_winchester1894_stock_shellholder.has_description = false
+				self.parts.wpn_fps_upg_winchester1894_stock_shellholder.stats = {
+						value = 0
+					}	
+				self.parts.wpn_fps_upg_winchester1894_stock_shellholder.override_weapon_add = nil
 				end							
 				
 		if self.wpn_fps_ass_xm8 then -- Pawcio's HK XM8
@@ -44405,7 +44438,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}	
 			self.parts.wpn_fps_snp_winchester_b_short.stats = {
 				value = 2,
-				spread = -1,	
+				extra_ammo = -1,	
 				concealment = 2
 				}	
 			self.parts.wpn_fps_pis_packrat_sl_silver.stats = {
@@ -45262,7 +45295,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					recoil = 1,
 					concealment = -2
 				}
-	end			
+			end			
 
 		if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23	
 		self.parts.wpn_fps_upg_ks23_ammo_slug.stats = {

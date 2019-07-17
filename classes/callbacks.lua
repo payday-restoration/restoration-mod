@@ -5,8 +5,7 @@ RestorationCoreCallbacks._value_changed_funcs = {}
 function RestorationCoreCallbacks:Restart(key, value)
 	DelayedCalls:Add("SCRestartGame", 1, function()
 		log("Game closing in 1 second[s]!")
-		setup:quit()
-		-- Application:close()
+		Application:close()
 	end)
 end
 

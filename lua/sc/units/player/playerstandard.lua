@@ -368,7 +368,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			self:_perform_jump(jump_vec)
 		end		
-
+		
 		function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			self._state_data.meleeing = nil
 			local melee_entry = managers.blackmarket:equipped_melee_weapon()
@@ -422,14 +422,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._melee_attack_var = 0
 			if instant_hit then
 				local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
+
 				if hit then
-					if not bayonet_melee or not self:get_animation("melee_bayonet") then
-					end
-					self._ext_camera:play_redirect((self:get_animation("melee")))
+					self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_bayonet") or self:get_animation("melee"))
 				else
-					if not bayonet_melee or not self:get_animation("melee_miss_bayonet") then
-					end
-					self._ext_camera:play_redirect((self:get_animation("melee_miss")))
+					self._ext_camera:play_redirect(bayonet_melee and self:get_animation("melee_miss_bayonet") or self:get_animation("melee_miss"))
 				end
 			else
 				local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars

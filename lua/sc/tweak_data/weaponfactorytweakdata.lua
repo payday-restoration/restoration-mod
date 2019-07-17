@@ -12965,8 +12965,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 0,
-				spread_moving = 3,
-				concealment = 3
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_snp_r93_b_suppressed = {
@@ -19347,10 +19346,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				concealment = 0,
-				min_damage = 8,
-				max_damage = 8,
-				min_damage_effect = 1.75,
-				max_damage_effect = 1.75
+				min_damage = 5,
+				max_damage = 5,
+				min_damage_effect = 2,
+				max_damage_effect = 2
 			},
 			dlc = "gage_pack_historical",
 			texture_bundle_folder = "gage_pack_historical",

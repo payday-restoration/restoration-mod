@@ -8837,7 +8837,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.ppsh.kick.steelsight = self.new_m4.kick.standing
 			self.ppsh.stats = {
 				damage = 30,
-				spread = 15,
+				spread = 14,
 				recoil = 22,
 				spread_moving = 9,
 				zoom = 3,
@@ -8895,8 +8895,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz34.spread.moving_standing = 4 * 2
 			self.toz34.spread.moving_crouching = 3 * 2
 			self.toz34.spread.moving_steelsight = 2 * 2
-			self.toz34.damage_near = 900
-			self.toz34.damage_far = 1800
+			self.toz34.damage_near = 1300
+			self.toz34.damage_far = 2600
 			self.toz34.BURST_FIRE = 2			
 			self.toz34.BURST_FIRE_RATE_MULTIPLIER = 120				
 			self.toz34.ADAPTIVE_BURST_SIZE = false		
@@ -8911,12 +8911,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz34.sounds.fire_single = "b682_fire"
 			self.toz34.sounds.fire_auto = "b682_fire"
 			self.toz34.stats = {
-				damage = 150,
-				spread = 9,
-				recoil = 17,
+				damage = 150,			
+				spread = 12,
+				recoil = 19,
 				spread_moving = 6,
 				zoom = 3,
-				concealment = 5,
+				concealment = 21,
 				suppression = 3,
 				alert_size = 3,
 				extra_ammo = 101,
@@ -9027,11 +9027,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.xm8.kick.steelsight = self.new_m4.kick.standing
 			self.xm8.stats = {
 				damage = 34,
-				spread = 19,
-				recoil = 16,
+				spread = 17,
+				recoil = 22,
 				spread_moving = 8,
 				zoom = 3,
-				concealment = 20,
+				concealment = 24,
 				suppression = 9,
 				alert_size = 9,
 				extra_ammo = 101,
@@ -9054,7 +9054,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.g36k.auto.fire_rate = 0.08
 			self.g36k.fire_mode_data.fire_rate = 0.08
 			self.g36k.AMMO_MAX = 150
-			self.g36k.AMMO_PICKUP = self:_pickup_chance(180, 2)
+			self.g36k.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.g36k.CLIP_AMMO_MAX = 30
 			self.g36k.kick.standing = self.new_m4.kick.standing
 			self.g36k.kick.crouching = self.new_m4.kick.standing
@@ -9093,10 +9093,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amt.stats = {
 			damage = 100,
 			spread = 18,
-			recoil = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
-			concealment = 25,
+			concealment = 26,
 			suppression = 4,
 			alert_size = 4,
 			extra_ammo = 101,
@@ -10338,8 +10338,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.trench.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.trench.has_description = false																
 		self.trench.CLIP_AMMO_MAX = 5
-		self.trench.damage_near = 800
-		self.trench.damage_far = 1600
+		self.trench.damage_near = 900
+		self.trench.damage_far = 1800
 		self.trench.fire_mode_data.fire_rate = 0.75
 		self.trench.single.fire_rate = 0.75
 		self.trench.rays = 12
@@ -10356,10 +10356,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.trench.stats = {
 			damage = 150,
 			spread = 8,
-			recoil = 15,
+			recoil = 18,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 7,
+			concealment = 15,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -11202,8 +11202,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.spread.moving_steelsight = 2 * 2
 		self.stf12.CLIP_AMMO_MAX = 4
 		self.stf12.AMMO_MAX = 40
-		self.stf12.damage_near = 600
-		self.stf12.damage_far = 1200
+		self.stf12.damage_near = 800
+		self.stf12.damage_far = 1600
 		self.stf12.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.stf12.fire_mode_data.fire_rate = 0.4
 		self.stf12.single.fire_rate = 0.4
@@ -11212,17 +11212,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.kick.steelsight = self.new_m4.kick.standing		
 		self.stf12.stats = {
 			damage = 100,
-			spread = 8,
-			recoil = 15,
+			spread = 7,
+			recoil = 20,
 			spread_moving = 6,
 			zoom = 3,
-			reload = 11,							
-			concealment = 21,
+			concealment = 18,
 			suppression = 4,
 			alert_size = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
+			reload = 11			
 		}
 		self.stf12.panic_suppression_chance = 0.0
 	end	
@@ -11273,8 +11273,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp153.tactical_reload = 1								
 		self.mp153.CAN_TOGGLE_FIREMODE = false
 		self.mp153.single = {}
-		self.mp153.damage_near = 600
-		self.mp153.damage_far = 1500
+		self.mp153.damage_near = 800
+		self.mp153.damage_far = 1600
 		self.mp153.spread.standing = 3 * 2
 		self.mp153.spread.crouching = 2 * 2
 		self.mp153.spread.steelsight = 1 * 2
@@ -11285,12 +11285,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp153.kick.crouching = self.new_m4.kick.standing
 		self.mp153.kick.steelsight = self.new_m4.kick.standing
 		self.mp153.stats = {
-			damage = 70,
-			spread = 12,
-			recoil = 15,
+			damage = 75,
+			spread = 9,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 11,
+			concealment = 19,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -11368,8 +11368,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.m1912 then --Pawcio's Winchester M1912
 			self.m1912.has_description = false				
 			self.m1912.tactical_reload = 1						
-			self.m1912.damage_near = 900
-			self.m1912.damage_far = 1800
+			self.m1912.damage_near = 800
+			self.m1912.damage_far = 1600
 			self.m1912.rays = 12
 			self.m1912.CLIP_AMMO_MAX = 6
 			self.m1912.AMMO_MAX = 40
@@ -11388,13 +11388,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m1912.panic_suppression_chance = 0.0
 			self.m1912.stats = {
 				damage = 100,
-				spread = 10,
-				recoil = 15,
+				spread = 9,
+				recoil = 20,
 				spread_moving = 6,
 				zoom = 3,
-				concealment = 23,
-				suppression = 4,
-				alert_size = 4,
+				concealment = 17,
+				suppression = 5,
+				alert_size = 5,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
@@ -12497,7 +12497,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.aps then --Pawcio's Stechkin APS
 		self.aps.tactical_reload = 1			
-		self.aps.desc_id = "bm_menu_sc_glock18c_desc"
 		self.aps.AMMO_MAX = 150
 		self.aps.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.aps.spread.standing = 3
@@ -12510,12 +12509,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aps.kick.crouching = self.new_m4.kick.standing
 		self.aps.kick.steelsight = self.new_m4.kick.standing
 		self.aps.stats = {
-			damage = 40,
-			spread = 20,
-			recoil = 18,
+			damage = 34,
+			spread = 17,
+			recoil = 16,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 27,
+			concealment = 28,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -12565,9 +12564,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	}
 	end	
 
-	if self.derringer then --Pwacio's Derringer
-		self.derringer.AMMO_MAX = 30
-		self.derringer.AMMO_PICKUP = self:_pickup_chance(30, 1)
+	if self.derringer then --Pawcio's Derringer
+		self.derringer.AMMO_MAX = 40
+		self.derringer.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.derringer.spread = {}
 		self.derringer.spread.standing = 3
 		self.derringer.spread.crouching = 2
@@ -12579,7 +12578,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.derringer.kick.crouching = self.huntsman.kick.standing
 		self.derringer.kick.steelsight = self.huntsman.kick.standing
 		self.derringer.stats = {
-			damage = 150,
+			damage = 100,
 			spread = 19,
 			recoil = 16,
 			spread_moving = 10,
@@ -12595,12 +12594,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.derringer.panic_suppression_chance = 0.0
 		self.derringer.has_description = true
 		self.derringer.desc_id = "bm_ap_weapon_sc_desc"
-		self.derringer.can_shoot_through_enemy = true
-		self.derringer.can_shoot_through_shield = true
-		self.derringer.can_shoot_through_wall = true
+		self.derringer.can_shoot_through_wall = true 
 		self.derringer.armor_piercing_chance = 1
 		self.derringer.stats_modifiers = {damage = 1}
-		self.derringer.timers.shotgun_reload_first_shell_offset = 0.5
 	end
 
 	if self.welrod then --Silent Enforcer's Welrod
@@ -12609,11 +12605,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.welrod.stats = {
 			damage = 100,
 			spread = 20,
-			recoil = 10,
-			spread_moving = 10,
+			recoil = 19,
+			spread_moving = 5,
 			zoom = 3,
-			concealment = 29,
-			suppression = 20,
+			concealment = 21,
+			suppression = 18,
 			alert_size = 20,
 			extra_ammo = 101,
 			total_ammo_mod = 100,

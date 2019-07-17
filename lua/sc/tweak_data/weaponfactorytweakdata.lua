@@ -41945,19 +41945,48 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						recoil = 2,
 						concealment = -1
 						}													
-				end			
+				end
+
+		if self.wpn_fps_pis_amt then -- Matthelzor, Gambyt, >:3, and Alcat's Automag .44				
+				self.parts.wpn_fps_upg_amt_visionking.stats = {
+						value = 5,
+						zoom = 6,
+						concealment = -5
+					}
+				self.parts.wpn_fps_upg_amt_visionking.stats = {
+						value = 5,
+						zoom = 6,
+						concealment = -5
+					}					
+				self.parts.wpn_fps_pis_amt_m_short.stats = {
+						value = 5,
+						concealment = -1,
+						reload = -2,
+						extra_ammo = 4
+					}			
+				self.parts.wpn_fps_pis_amt_b_long.stats = {
+						value = 5,
+						spread_moving = -3,
+						spread = 1,
+						concealment = -2
+					}	
+				self.parts.wpn_fps_pis_amt_g_smooth.stats = {
+						value = 5,
+						spread_moving = 2,
+						spread = 1,
+						concealment = -2
+					}		
+				self.parts.wpn_fps_pis_amt_g_rosewood.stats = {
+						value = 1,
+						concealment = 1						
+					}																				
+				end							
 				
 		if self.wpn_fps_ass_xm8 then -- Pawcio's HK XM8
-				table.list_append(self.wpn_fps_ass_xm8.uses_parts, {
-						"wpn_fps_upg_i_slower_rof"
-					})
-					table.list_append(self.wpn_fps_ass_xm8.uses_parts, {
-						"wpn_fps_upg_i_faster_rof"
-					})																	
 				self.parts.wpn_fps_upg_xm8_cmag.stats = {
 						value = 9,
 						extra_ammo = 70,
-						reload = -6,
+						reload = -5,
 						concealment = -5
 						}							
 				self.parts.wpn_fps_upg_xm8_cmag.has_description = false		
@@ -41974,17 +42003,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						}																						
 				self.parts.wpn_fps_upg_xm8_stock_collapsed.stats = {
 						value = 0,
+						spread = -1,
 						concealment = 1
 						}	
 				self.parts.wpn_fps_upg_xm8_barrel_long.stats = {
 						value = 2,
 						spread = 1,
-						recoil = 1,												
 						concealment = -2
 					}		
 				self.parts.wpn_fps_upg_xm8_handguard_compact.stats = {
 						value = 2,
-						spread = -1,	
 						recoil = -1,						
 						concealment = 2
 					}																
@@ -42006,21 +42034,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						zoom = 3,
 						concealment = -3
 					}												
-				table.list_append(self.wpn_fps_ass_g36k.uses_parts, {
-						"wpn_fps_upg_i_slower_rof"
-					})
-					table.list_append(self.wpn_fps_ass_g36k.uses_parts, {
-						"wpn_fps_upg_i_faster_rof"
-					})																				
 				self.parts.wpn_fps_ass_g36k_stock.pcs = nil
 				self.parts.wpn_fps_ass_g36k_stock.stats = {
 						value = 0
 					}				
 				self.parts.wpn_fps_upg_g36k_stock_sl8.stats = {
 						value = 6,
-						spread = 2,
-						spread_moving = -3,
-						concealment = -1					
+						recoil = 1,
+						concealment = -1
 					}
 				self.parts.wpn_fps_upg_g36k_grip_rubber1.stats = {
 						value = 1
@@ -42030,9 +42051,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}					
 				self.parts.wpn_fps_upg_g36k_grip_rubber3.stats = {
 						value = 1
-					}					
+					}		
+				self.parts.wpn_fps_upg_g36k_stock_classic.stats = {
+						value = 0,
+						recoil = -1,						
+						concealment = 2				
+					}																			
 				self.parts.wpn_fps_upg_g36k_stock_collapsed.stats = {
 						value = 0,
+						spread = -1,						
 						concealment = 1					
 					}														
 				self.parts.wpn_fps_upg_g36k_mag_cmag.stats = {
@@ -42119,14 +42146,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}				
 				self.parts.wpn_fps_upg_g36k_mag30magpul.has_description = false								
 				self.parts.wpn_fps_upg_g36k_barrel_medium.stats = {
-						value = 2,
-						recoil = 1
+						value = 1,
+						recoil = 1,
+						concealment = -1						
 					}	
 				self.parts.wpn_fps_upg_g36k_barrel_long.stats = {
-						value = 3,
+						value = 1,
 						spread = 2,
-						recoil = 1,						
-						concealment = -2
+						recoil = -1,
+						concealment = -3
 					}			
 				end
 				
@@ -42396,10 +42424,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}	
 			self.parts.wpn_fps_upg_ak12_76_gk_01.stats = {
 					value = 5,
-					suppression = -2,
-					alert_size = -2,
-					recoil = 1,
-					concealment = -2
+					spread = 1,
+					concealment = -3
 				}		
 			self.parts.wpn_fps_upg_ak12_76_stock_folding.stats = {
 					value = 3,
@@ -43916,10 +43942,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						extra_ammo = 4
 					}		
 				self.parts.wpn_fps_upg_mp153_barrel_short.stats = {
-						value = 1,
-						recoil = -2,
+						value = 0,
 						spread = -1,
-						concealment = 9
+						concealment = 3
 					}
 				self.parts.wpn_fps_upg_mp153_barrel_short.custom_stats = {
 						damage_near_mul = -100,
@@ -43927,17 +43952,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}					
 				self.parts.wpn_fps_upg_mp153_nomad.stats = {
 						value = 5,
-						suppression = -2,
-						alert_size = -2,
-						spread = 1,
-						recoil = 1,						
-						concealment = -3
+						recoil = -1,
+						spread = 2,
+						concealment = -4
 					}
 				self.parts.wpn_fps_upg_mp153_gk_01.stats = {
 						value = 5,
-						recoil = -1,
-						spread = 2,
-						concealment = -2
+						spread = 1,
+						concealment = -3
 					}				
 				self.parts.wpn_fps_upg_mp153_forend_plastic.stats = {
 						value = 1,
@@ -43945,8 +43967,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}										
 				self.parts.wpn_fps_upg_mp153_stock_folding.stats = {
 						value = 0,
-						recoil = -3,
-						concealment = 5
+						recoil = -1,
+						concealment = 2
 					}	
 				self.wpn_fps_shot_mp153.override = {
 					wpn_fps_upg_a_slug = {
@@ -43957,7 +43979,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						concealment = -5,
 						total_ammo_mod = -25,
 						damage = 25,
-						spread = 12,
+						spread = 10,
 						recoil = -1,
 						moving_spread = 0
 					},
@@ -44725,7 +44747,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_schakal_m_nine.custom_stats = {ammo_pickup_min_mul = 1.875, ammo_pickup_max_mul = 1.875, rof_mult = 1.08333333333}
 			self.parts.wpn_fps_upg_schakal_m_atai.stats = {			
 				value = 1,
-				extra_ammo = 5,	--it's supposed to be a ump40 conversion kit or something like that				
+				extra_ammo = 5,					
 				total_ammo_mod = 50, 
 				recoil = -2,
 				concealment = -1,						
@@ -44738,12 +44760,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					a_obj = "a_m",
 					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",					
 					stats = {value = 1},
-					custom_stats = {
-					ammo_pickup_min_mul = 1.05, 
-					ammo_pickup_max_mul = 1.05, 
-					armor_piercing_add = 0.25,
-					can_shoot_through_wall = true
-				}
+					custom_stats = {ammo_pickup_min_mul = 1.05, armor_piercing_add = 1, can_shoot_through_wall = true}
 			}			
 			self.parts.wpn_fps_upg_ns_dragon.stats = {
 				value = 5,

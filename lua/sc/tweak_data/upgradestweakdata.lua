@@ -157,7 +157,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.rep_upgrades.values = {0}
-
+	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
     	self.values.player.suppression_resist = {true}
     	self.values.player.ignore_suppression_flinch = {true}
@@ -1227,6 +1227,9 @@ function UpgradesTweakData:_init_pd2_values()
 		1
 	}	
 	
+end
+
+function UpgradesTweakData:_rep_definitions()
 end
 
 local sc_utd_init = UpgradesTweakData.init

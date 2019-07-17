@@ -995,7 +995,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##20## health.",
 		["menu_deck21_7_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
-		["menu_deck21_9_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.\n\nCrew members killing enemies while the feedback effect is active will regenerate ##10## health.",
+		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##10## health.",
 	})
 end)
 

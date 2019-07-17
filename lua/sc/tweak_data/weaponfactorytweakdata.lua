@@ -5315,7 +5315,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
 			unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
 			custom_stats = {is_drum_aa12 = true},
-			stats = {value = 1, extra_ammo = 14, reload = -3}
+			stats = {value = 1, extra_ammo = 14, reload = -3, concealment = -3}
 		}
 		self.parts.wpn_fps_shot_saiga_b_standard.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_b_standard"
 		self.parts.wpn_fps_shot_saiga_m_5rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_m_5rnd"
@@ -8063,7 +8063,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_r870_fg_railed",
 			a_obj = "a_fg",
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_fg_railed",
-			stats = {value = 1, spread_moving = 2},
+			stats = {value = 1},
 			animations = {
 				reload_exit = "reload_exit",
 				fire = "recoil",
@@ -8096,7 +8096,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				recoil = 1,
-				spread_moving = 0
+				concealment = -1
 			},
 			animations = {
 				reload_exit = "reload_exit",
@@ -8117,8 +8117,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_m_extended",
 			stats = {
 				value = 7,
-				concealment = 0,
-				spread_moving = -1,
+				concealment = -1,
 				extra_ammo = 2
 			}
 		}
@@ -8135,7 +8134,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_folding",
 			stats = {
 				value = 5,
-				spread_moving = 1,
 				recoil = -2,
 				concealment = 3
 			},
@@ -8180,7 +8178,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_solid",
 			stats = {
 				value = 1,
-				spread_moving = -2,
 				recoil = 1,
 				concealment = -1
 			}
@@ -8198,7 +8195,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_nostock_big",
 			stats = {
 				value = 4,
-				spread_moving = 1,
 				concealment = 1
 			},
 			forbids = {
@@ -8212,7 +8208,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_nostock_single",
 			stats = {
 				value = 3,
-				spread_moving = 2,
 				recoil = -1,
 				concealment = 2
 			},
@@ -8233,7 +8228,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_nostock",
 			stats = {
 				value = 2,
-				spread_moving = 1,
 				recoil = -1,
 				concealment = 2
 			}
@@ -8251,7 +8245,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_solid_big",
 			stats = {
 				value = 3,
-				spread_moving = -2,
 				recoil = -1,
 				spread = 1,
 				concealment = -2
@@ -8271,7 +8264,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_s_solid_single",
 			stats = {
 				value = 3,
-				spread_moving = -1,
 				recoil = 1,
 				concealment = -1
 			},
@@ -8599,7 +8591,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_shorty_m_extended_short",
 			a_obj = "a_m",
 			unit = "units/payday2/weapons/wpn_fps_shot_shorty_pts/wpn_fps_shot_shorty_m_extended_short",
-			stats = {value = 1, extra_ammo = 2}
+			stats = {value = 1, extra_ammo = 2, concealment = -1}
 		}
 		self.parts.wpn_fps_shot_r870_b_short = {
 			type = "barrel",
@@ -8620,7 +8612,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_shorty_pts/wpn_fps_shot_shorty_s_nostock_short",
 			stats = {
 				value = 4,
-				spread_moving = 2,
 				recoil = -1,
 				concealment = 2
 			},
@@ -8640,7 +8631,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_shorty_pts/wpn_fps_shot_shorty_s_solid_short",
 			stats = {
 				value = 3,
-				spread_moving = -2,
 				recoil = -1,
 				spread = 1,
 				concealment = -2
@@ -9286,7 +9276,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 10,
 				spread = -1,
-				concealment = 10
+				concealment = 2
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -9322,8 +9312,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_s_short",
 			stats = {
 				value = 10,
-				recoil = -3,
-				concealment = 10
+				recoil = -1,
+				concealment = 2
 			}
 		}
 		self.parts.wpn_fps_shot_huntsman_b_long.third_unit = "units/payday2/weapons/wpn_third_shot_huntsman_pts/wpn_third_shot_huntsman_b_long"
@@ -13391,7 +13381,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben_pts/wpn_fps_sho_ben_b_long",
 			stats = {
 				value = 0,
-				recoil = 1,
 				spread = 1,
 				concealment = -2,
 				extra_ammo = 2
@@ -13421,11 +13410,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben_pts/wpn_fps_sho_ben_b_short",
 			stats = {
 				value = 0,
-				recoil = -2,
 				spread = -1,
-				concealment = 9,
-				damage = 0,
-				extra_ammo = 0
+				concealment = 3,
+				extra_ammo = -2
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -13469,8 +13456,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben_pts/wpn_fps_sho_ben_s_collapsed",
 			stats = {
 				value = 0,
-				recoil = -3,
-				concealment = 5
+				recoil = -1,
+				concealment = 2
 			},
 			dlc = "gage_pack_shotgun",
 			texture_bundle_folder = "gage_pack_shotgun",
@@ -13904,7 +13891,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 7,
 				spread = 1,
-				concealment = -2,
+				concealment = -3,
 				extra_ammo = 2
 			},
 			custom_stats = {
@@ -13949,8 +13936,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				spread = -1,
-				concealment = 4,
-				extra_ammo = -1
+				concealment = 3,
+				extra_ammo = -2
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -14003,7 +13990,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_upg_o_mbus_rear",
 			a_obj = "a_o_r",
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_upg_o_mbus/wpn_fps_upg_o_mbus_rear",
-			stats = {value = 3, concealment = 2},
+			stats = {value = 3, concealment = 1},
 			perks = {"scope"},
 			stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
 			dlc = "gage_pack_shotgun",
@@ -18062,9 +18049,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_crimefest_2014/oct26/weapons/wpn_fps_sho_spas12_pts/wpn_fps_sho_b_spas12_long",
 			stats = {
 				value = 1,
-				recoil = 1,
 				spread = 1,
-				extra_ammo = 4
+				concealment = -2,
+				extra_ammo = 2
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -22501,7 +22488,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 10
+				concealment = 2
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -22564,8 +22551,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_s_short",
 			stats = {
 				value = 1,
-				recoil = -3,
-				concealment = 10
+				recoil = -1,
+				concealment = 2
 			},
 			texture_bundle_folder = "character_pack_bonnie",
 			dlc = "pd2_clan"
@@ -23786,13 +23773,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_sho_aa12_pts/wpn_fps_sho_aa12_barrel_long",
 			stats = {
 				value = 1,
-				spread = 2,
-				recoil = 2,
+				spread = 1,
 				concealment = -2
 			},
 			custom_stats = {
-				damage_near_mul = 200,
-				damage_far_mul = 400
+				damage_near_mul = 100,
+				damage_far_mul = 200
 			},
 			texture_bundle_folder = "bbq",
 			dlc = "bbq"
@@ -23814,7 +23800,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppression = 13,
 				alert_size = 13,
 				spread = -1,
-				spread_moving = 1,
 				concealment = -3
 			},
 			custom_stats = {
@@ -23898,7 +23883,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 12,
 				reload = -3,
-				concealment = -4
+				concealment = -3
 			},
 			animations = {fire = "recoil", fire_steelsight = "recoil"},
 			texture_bundle_folder = "bbq",
@@ -28965,7 +28950,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_m_standard",
 			bullet_objects = {prefix = "g_bullet_", amount = 2},
-			custom_stats = {reload_speed_mult = 0.75},
+			custom_stats = {reload_speed_mult = 0.8},
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_sho_boot_em_extra = {
@@ -29840,7 +29825,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "magazine",
 			name_id = "bm_wp_rota_b_standard",
 			a_obj = "a_m",
-			custom_stats = {reload_speed_mult = 1.2},
 			unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_m_standard",
 			stats = {value = 1}
 		}
@@ -34011,7 +33995,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			stats = {value = 1, extra_ammo = 2, reload = -1}
+			stats = {value = 1, extra_ammo = 2, reload = -1, concealment = -1}
 		}
 		self.parts.wpn_fps_sho_basset_o_standard = {
 			a_obj = "a_o",
@@ -34278,11 +34262,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					stats = {
 						extra_ammo = 4,
 						value = 1,
-						reload = -1
+						reload = -1,
+						concealment = -1
 					}
 				},
 				wpn_upg_saiga_m_20rnd = {
-					stats = {value = 1, extra_ammo = 28, reload = -3},
+					stats = {value = 1, extra_ammo = 28, reload = -3, concealment = -3},
 					custom_stats = {is_drum_aa12 = false}
 				}	
 			},
@@ -38499,7 +38484,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 10,
 				spread = -1,
-				concealment = 10
+				concealment = 2
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -38527,8 +38512,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stats = {
 				value = 10,
-				recoil = -3,
-				concealment = 10
+				recoil = -1,
+				concealment = 2
 			}
 		}
 		self.parts.wpn_fps_sho_coach_body_standard = {

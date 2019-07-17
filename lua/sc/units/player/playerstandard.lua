@@ -210,7 +210,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		end	
 		
-		Hooks:PostHook( PlayerStandard , "_start_action_running" , "MeleeOverhaulExtrasPlayerStandardPostStartActionRunning" , function( self , t )
+		Hooks:PostHook( PlayerStandard , "_start_action_running" , "ResPlayerStandardPostStartActionRunning" , function( self , t )
 
 				if not self._move_dir then
 					self._running_wanted = true
@@ -268,30 +268,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			
 		end )
 
-		function PlayerStandard:_end_action_running( t )
+		function PlayerStandard:_end_action_running(t)
 			if not self._end_running_expire_t then
 				local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
-				
 				self._end_running_expire_t = t + 0.4 / speed_multiplier
+				local stop_running = not self._equipped_unit:base():run_and_shoot_allowed() and (not self.RUN_AND_RELOAD or not self:_is_reloading())
+				
 				if not self:_is_meleeing() then
-					if not managers.player.RUN_AND_SHOOT and ( not managers.player.RUN_AND_RELOAD or not self:_is_reloading() ) then
-						self._ext_camera:play_redirect( self:get_animation("stop_running") , speed_multiplier )
+					if stop_running then
+						self._ext_camera:play_redirect(self:get_animation("stop_running"), speed_multiplier)
 					end
 				end
 			end
-			
-			if self._sprint_delay and not self._camera_unit:base()._melee_item_units then
-				self._ext_camera:play_redirect( self:get_animation("idle") )
-			end
 		end
 
-		Hooks:PreHook( PlayerStandard , "_start_action_melee" , "MeleeOverhaulExtrasPlayerStandardPreStartActionMelee" , function( self , t , input , instant )
+
+		Hooks:PreHook( PlayerStandard , "_start_action_melee" , "ResPlayerStandardPreStartActionMelee" , function( self , t , input , instant )
 
 			self._state_data.melee_running_wanted = true and self._running and not self._end_running_expire_t
 
 		end )
 
-		Hooks:PostHook( PlayerStandard , "_start_action_melee" , "MeleeOverhaulExtrasPlayerStandardPostStartActionMelee" , function( self , t , input , instant )
+		Hooks:PostHook( PlayerStandard , "_start_action_melee" , "ResPlayerStandardPostStartActionMelee" , function( self , t , input , instant )
 
 			if self._state_data.melee_running_wanted then
 				self._running_wanted = true
@@ -300,7 +298,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		end )
 
-		Hooks:PreHook( PlayerStandard , "_update_melee_timers" , "MeleeOverhaulExtrasPlayerStandardPreUpdateMeleeTimers" , function( self , t , input )
+		Hooks:PreHook( PlayerStandard , "_update_melee_timers" , "ResPlayerStandardPreUpdateMeleeTimers" , function( self , t , input )
 
 			local melee_entry = managers.blackmarket:equipped_melee_weapon()
 			local instant = tweak_data.blackmarket.melee_weapons[ melee_entry ].instant
@@ -335,7 +333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		end )
 
-		Hooks:PostHook( PlayerStandard , "_interupt_action_melee" , "MeleeOverhaulExtrasPlayerStandardPostInteruptActionMelee" , function( self , t )
+		Hooks:PostHook( PlayerStandard , "_interupt_action_melee" , "ResPlayerStandardPostInteruptActionMelee" , function( self , t )
 
 			local running = self._running and not self._end_running_expire_t
 			

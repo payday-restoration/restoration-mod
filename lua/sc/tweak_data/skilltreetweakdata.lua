@@ -3347,7 +3347,6 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck21_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_passive_dodge_chance_3",
 					"team_pocket_ecm_heal_on_kill_1"
 				},
 				icon_xy = {

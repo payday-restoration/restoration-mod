@@ -2,9 +2,9 @@ if restoration and restoration.Options:GetValue("SC/SC") then
 function PlayerInventory:add_unit_by_factory_name(factory_name, equip, instant, blueprint, cosmetics, texture_switches)
 	if cosmetics then
 		for _,v in pairs(cosmetics) do
-			RestorationCore.log_shit("SC: cosmetic string: " .. _ .. " " .. tostring(v))
+			restoration.log_shit("SC: cosmetic string: " .. _ .. " " .. tostring(v))
 		end
-		RestorationCore.log_shit("SC: cosmetic string: " .. tostring(cosmetics))
+		restoration.log_shit("SC: cosmetic string: " .. tostring(cosmetics))
 	end
 	local factory_weapon = tweak_data.weapon.factory[factory_name]
 	local ids_unit_name = Idstring(factory_weapon.unit)

@@ -785,7 +785,7 @@ function HUDTeammate:set_grenades(data)
 					noflashing = true,
                     amount = data.amount
                 })
-				RestorationCore.log_shit("[RESTORATION] Added a grenade panel.")
+				restoration.log_shit("[RESTORATION] Added a grenade panel.")
             else
                 return
             end
@@ -872,7 +872,7 @@ function HUDTeammate:layout_special_equipments()
 		else
 			local j = i < 7 and (1 + math.mod( i-1, 3 )) or i - 3
 			local y = i > 3 and 0 or panel:h()
-			RestorationCore.log_shit("J = " .. j .. "I = " .. i)
+			restoration.log_shit("J = " .. j .. "I = " .. i)
 			local x_offset = i > 3 and panel:w()/2 or 0
 			panel:set_x( w - (panel:w() + 0) * (j) - x_offset )
 			panel:set_y( y )

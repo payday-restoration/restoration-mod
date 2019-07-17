@@ -222,7 +222,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerDamage:damage_bullet(attack_data, ...)
 		if not self:_chk_can_take_dmg() then
-			RestorationCore.log_shit("SC: Bullet, cant take damage")
+			restoration.log_shit("SC: Bullet, cant take damage")
 			return
 		end
 		local damage_info = {
@@ -231,7 +231,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		local pm = managers.player
 		local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
-		RestorationCore.log_shit("SC: Bullet, starting damage: " .. attack_data.damage)
+		restoration.log_shit("SC: Bullet, starting damage: " .. attack_data.damage)
 		attack_data.damage = attack_data.damage * dmg_mul
 		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
 		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
@@ -241,12 +241,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if managers.enemy:is_enemy(attack_data.attacker_unit) then
 			local dicks = tweak_data.character[attack_data.attacker_unit:base()._tweak_table]
-			RestorationCore.log_shit("SC DICKS: " .. tostring(dicks.use_factory))
+			restoration.log_shit("SC DICKS: " .. tostring(dicks.use_factory))
 			if dicks.use_factory then
 				attack_data.damage = attack_data.damage * 1
 			end
 		end
-		RestorationCore.log_shit("SC: Bullet, ending damage: " .. attack_data.damage)
+		restoration.log_shit("SC: Bullet, ending damage: " .. attack_data.damage)
 		if self._god_mode then
 			if attack_data.damage > 0 then
 				self:_send_damage_drama(attack_data, attack_data.damage)
@@ -255,22 +255,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		elseif self._invulnerable or self._mission_damage_blockers.invulnerable then
 			self:_call_listeners(damage_info)
-			RestorationCore.log_shit("SC: Bullet, Invulnerable")
+			restoration.log_shit("SC: Bullet, Invulnerable")
 			return
 		elseif self:incapacitated() then
-			RestorationCore.log_shit("SC: Bullet, Incapacitated")
+			restoration.log_shit("SC: Bullet, Incapacitated")
 			return
 		elseif self:is_friendly_fire(attack_data.attacker_unit) then
-			RestorationCore.log_shit("SC: Bullet, Friendly Fire")
+			restoration.log_shit("SC: Bullet, Friendly Fire")
 			return
 		elseif self:_chk_dmg_too_soon(attack_data.damage) then
-			RestorationCore.log_shit("SC: Bullet, Damage is too soon")
+			restoration.log_shit("SC: Bullet, Damage is too soon")
 			return
 		elseif self._unit:movement():current_state().immortal then
-			RestorationCore.log_shit("SC: Bullet, I AM IMMORTAL")
+			restoration.log_shit("SC: Bullet, I AM IMMORTAL")
 			return
 		elseif self._revive_miss and math.random() < self._revive_miss then
-			RestorationCore.log_shit("SC: Bullet, Whizzing by like shitty bumper stickers")
+			restoration.log_shit("SC: Bullet, Whizzing by like shitty bumper stickers")
 			self:play_whizby(attack_data.col_ray.position)
 			return
 		end

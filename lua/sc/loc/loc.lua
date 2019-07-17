@@ -10,6 +10,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
 		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
 		["bm_wp_corgi_b_short"] = "MSG Barrel",
+		["menu_es_rep_upgrade"] = "",				
 		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
 		["bm_wp_1911_m_big"] = "Casket Magazine",		
 		["bm_wp_usp_m_big"] = "Casket Magazine",		

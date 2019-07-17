@@ -11105,10 +11105,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				a_obj = "a_ns",
 				parent = "barrel"
 			},
-			wpn_fps_upg_ns_pis_ipsccomp = {
+			wpn_fps_pis_g18c_co_1 = {
 				a_obj = "a_ns",
 				parent = "barrel"
 			},
+			wpn_fps_pis_g18c_co_comp_2 = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},
+			wpn_fps_upg_ns_pis_ipsccomp = {
+				a_obj = "a_ns",
+				parent = "barrel"
+			},			
 			wpn_fps_upg_ns_pis_meatgrinder = {
 				a_obj = "a_ns",
 				parent = "barrel"

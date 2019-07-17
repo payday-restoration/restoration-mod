@@ -134,18 +134,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(event_list, "healed")
 		self._unit:character_damage():add_listener("movement", event_list, callback(self, self, "damage_clbk"))
 		self._unit:inventory():add_listener("movement", {"equip", "unequip"}, callback(self, self, "clbk_inventory"))
-		RestorationCore.log_shit("SC: ADDING WEAPONS")
+		restoration.log_shit("SC: ADDING WEAPONS")
 		self:add_weapons()
-		RestorationCore.log_shit("SC: WEAPONS ADDED")
+		restoration.log_shit("SC: WEAPONS ADDED")
 		if self._unit:inventory():is_selection_available(1) then
 			self._unit:inventory():equip_selection(1, true)
 		elseif self._unit:inventory():is_selection_available(2) then
 			self._unit:inventory():equip_selection(2, true)
 		end
 		if self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
-			RestorationCore.log_shit("SC: Stealth with secondary equipped, disabling weapon")
+			restoration.log_shit("SC: Stealth with secondary equipped, disabling weapon")
 			self._ext_inventory:set_weapon_enabled(false)
-			RestorationCore.log_shit("SC: Secondary disabled")
+			restoration.log_shit("SC: Secondary disabled")
 		end
 		local weap_name = self._ext_base:default_weapon_name(managers.groupai:state():enemy_weapons_hot() and "primary" or "secondary")
 		local fwd = self._m_rot:y()
@@ -261,25 +261,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 1, managers.slot:get_mask("enemies"))
 				if enemies then
-					RestorationCore.log_shit("SC: FOUND ENEMIES")
+					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
 						if enemy ~= self._unit then
 							local found_dat_shit = false
 							for __,enemy_type in ipairs(cops_to_heal) do
-								RestorationCore.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
 								if enemy:base()._tweak_table == enemy_type then
-									RestorationCore.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
 									found_dat_shit = true
 								end
 							end
 							if found_dat_shit then
 								local health_left = enemy:character_damage()._health
-								RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
+								restoration.log_shit("SC: health_left: " .. tostring(health_left))
 								local max_health = enemy:character_damage()._HEALTH_INIT * 2
-								RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
+								restoration.log_shit("SC: max_health: " .. tostring(max_health))
 								if health_left < max_health then
 									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
 									if self._unit:contour() then
 										self._unit:contour():add("medic_show", false)
 										self._unit:contour():flash("medic_show", 0.2)
@@ -296,7 +296,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		else
-			RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
+			restoration.log_shit("SC: UNIT NOT FOUND WTF")
 		end
 	end
 
@@ -438,25 +438,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 1, managers.slot:get_mask("enemies"))
 				if enemies then
-					RestorationCore.log_shit("SC: FOUND ENEMIES")
+					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
 						if enemy ~= self._unit then
 							local found_dat_shit = false
 							for __,enemy_type in ipairs(cops_to_heal) do
-								RestorationCore.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
 								if enemy:base()._tweak_table == enemy_type then
-									RestorationCore.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
 									found_dat_shit = true
 								end
 							end
 							if found_dat_shit then
 								local health_left = enemy:character_damage()._health
-								RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
+								restoration.log_shit("SC: health_left: " .. tostring(health_left))
 								local max_health = enemy:character_damage()._HEALTH_INIT * 1
-								RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
+								restoration.log_shit("SC: max_health: " .. tostring(max_health))
 								if health_left < max_health then
 									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
 									if self._unit:contour() then
 										self._unit:contour():add("medic_show", false)
 										self._unit:contour():flash("medic_show", 0.2)
@@ -474,7 +474,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		else
-			RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
+			restoration.log_shit("SC: UNIT NOT FOUND WTF")
 		end
 	end
 
@@ -494,25 +494,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 999, managers.slot:get_mask("enemies"))
 				if enemies then
-					RestorationCore.log_shit("SC: FOUND ENEMIES")
+					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
 						if enemy ~= self._unit then
 							local found_dat_shit = false
 							for __,enemy_type in ipairs(cops_to_heal) do
-								RestorationCore.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
 								if enemy:base()._tweak_table == enemy_type then
-									RestorationCore.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
 									found_dat_shit = true
 								end
 							end
 							if found_dat_shit then
 								local health_left = enemy:character_damage()._health
-								RestorationCore.log_shit("SC: health_left: " .. tostring(health_left))
+								restoration.log_shit("SC: health_left: " .. tostring(health_left))
 								local max_health = enemy:character_damage()._HEALTH_INIT * 1
-								RestorationCore.log_shit("SC: max_health: " .. tostring(max_health))
+								restoration.log_shit("SC: max_health: " .. tostring(max_health))
 								if health_left < max_health then
 									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									RestorationCore.log_shit("SC: HEALING FOR " .. amount_to_heal)
+									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
 									if self._unit:contour() then
 										self._unit:contour():add("medic_show", false)
 										self._unit:contour():flash("medic_show", 0.2)
@@ -530,7 +530,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		else
-			RestorationCore.log_shit("SC: UNIT NOT FOUND WTF")
+			restoration.log_shit("SC: UNIT NOT FOUND WTF")
 		end
 	end
 
@@ -538,14 +538,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._tweak_data.use_factory then
 			local weapon_to_use = self._tweak_data.factory_weapon_id[ math.random( #self._tweak_data.factory_weapon_id ) ]
 			local weapon_cosmetic = self._tweak_data.weapon_cosmetic_string
-			RestorationCore.log_shit("SC: WEAPON TO USE " .. weapon_to_use)
+			restoration.log_shit("SC: WEAPON TO USE " .. weapon_to_use)
 			if weapon_to_use then
 				if weapon_cosmetic then
 					self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, weapon_cosmetic, "")
 				else
 					self._unit:inventory():add_unit_by_factory_name(weapon_to_use, false, false, nil, "")
 				end
-				RestorationCore.log_shit("SC: PRIMARY ADDED")
+				restoration.log_shit("SC: PRIMARY ADDED")
 			end
 		else
 			local prim_weap_name = self._ext_base:default_weapon_name("primary")
@@ -566,7 +566,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local weapon_unit = self._ext_inventory:equipped_unit()
 				if weapon_unit then
 					local weap_tweak = weapon_unit:base():weapon_tweak_data()
-					RestorationCore.log_shit("SC: Weapon tweak found! " .. tostring(weap_tweak.sounds.prefix))
+					restoration.log_shit("SC: Weapon tweak found! " .. tostring(weap_tweak.sounds.prefix))
 					local weapon_hold = weap_tweak.hold
 					if type(weap_tweak.hold) == "table" then
 						local num = #weap_tweak.hold + 1

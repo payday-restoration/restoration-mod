@@ -6,7 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	-- Will add a prefix of `RestorationMod__` to all functions our definitions use
 	-- Required to maintain compatibility with normal lobbies.
-	RestorationCore:rename_handler_funcs(RestorationMod__UnitNetworkHandler)
+	restoration:rename_handler_funcs(RestorationMod__UnitNetworkHandler)
 	
 	local orig_sync_player = UnitNetworkHandler.sync_player_movement_state
 	function UnitNetworkHandler:sync_player_movement_state(unit, state, down_time, unit_id_str,...) --i can't reverse engineer RPC stuff and make my own unitnetworkhandler functions so... guess i'll die

@@ -19,42 +19,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function WeaponFactoryManager:assemble_default(factory_id, p_unit, third_person, npc, done_cb, skip_queue)
-		RestorationCore.log_shit("SC: Assemble Default factory_id: " .. factory_id .. ", third_person: " .. tostring(third_person))
+		restoration.log_shit("SC: Assemble Default factory_id: " .. factory_id .. ", third_person: " .. tostring(third_person))
 		local blueprint = clone(tweak_data.weapon.factory[factory_id].default_blueprint)
 		if blueprint then
-			RestorationCore.log_shit("SC: Found Blueprint!")
+			restoration.log_shit("SC: Found Blueprint!")
 		end
 		return self:_assemble(factory_id, p_unit, blueprint, third_person, npc, done_cb, skip_queue), blueprint
 	end
 	
 	function WeaponFactoryManager:assemble_from_blueprint(factory_id, p_unit, blueprint, third_person, npc, done_cb, skip_queue)
-		RestorationCore.log_shit("SC: Assemble Blueprint factory_id: " .. factory_id .. ", third_person: " .. tostring(third_person))
+		restoration.log_shit("SC: Assemble Blueprint factory_id: " .. factory_id .. ", third_person: " .. tostring(third_person))
 		return self:_assemble(factory_id, p_unit, blueprint, third_person, npc, done_cb, skip_queue)
 	end
 	
 	function WeaponFactoryManager:_assemble(factory_id, p_unit, blueprint, third_person, npc, done_cb, skip_queue)
-		RestorationCore.log_shit("SC: Beginning _assemble! " .. factory_id .. ", third_person: " .. tostring(third_person))
+		restoration.log_shit("SC: Beginning _assemble! " .. factory_id .. ", third_person: " .. tostring(third_person))
 		if not done_cb then
 			Application:error("-----------------------------")
 			Application:stack_dump()
 		end
-		RestorationCore.log_shit("SC: Passed the callback check")
+		restoration.log_shit("SC: Passed the callback check")
 		local factory = tweak_data.weapon.factory
 		local factory_weapon = factory[factory_id]
-		RestorationCore.log_shit("SC: Checking for Forbidden Parts")
+		restoration.log_shit("SC: Checking for Forbidden Parts")
 		local forbidden = self:_get_forbidden_parts(factory_id, blueprint)
-		RestorationCore.log_shit("SC: Finished!")
+		restoration.log_shit("SC: Finished!")
 		return self:_add_parts(p_unit, factory_id, factory_weapon, blueprint, forbidden, third_person, npc, done_cb, skip_queue)
 	end
 
 	function WeaponFactoryManager:_add_parts(p_unit, factory_id, factory_weapon, blueprint, forbidden, third_person, npc, done_cb, skip_queue)
-		RestorationCore.log_shit("SC: Beginning _add_parts! " .. factory_id .. ", third_person: " .. tostring(third_person))
+		restoration.log_shit("SC: Beginning _add_parts! " .. factory_id .. ", third_person: " .. tostring(third_person))
 		self._tasks = self._tasks or {}
 		local parts = {}
 		local need_parent = {}
-		RestorationCore.log_shit("SC: Getting override parts")
+		restoration.log_shit("SC: Getting override parts")
 		local override = self:_get_override_parts(factory_id, blueprint)
-		RestorationCore.log_shit("SC: Finished!")
+		restoration.log_shit("SC: Finished!")
 		if self._uses_tasks and not skip_queue then
 			table.insert(self._tasks, {
 				done_cb = done_cb,
@@ -85,24 +85,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._async_load_tasks[async_task_data] = true
 			end
 			for _, part_id in ipairs(blueprint) do
-				RestorationCore.log_shit("SC: Adding part: ".. part_id)
+				restoration.log_shit("SC: Adding part: ".. part_id)
 				self:_add_part(p_unit, factory_id, part_id, forbidden, override, parts, third_person, need_parent, async_task_data)
-				RestorationCore.log_shit("SC: Finished!")
+				restoration.log_shit("SC: Finished!")
 			end
 			for _, part_id in ipairs(need_parent) do
-				RestorationCore.log_shit("SC: Adding need parent part: ".. part_id)
+				restoration.log_shit("SC: Adding need parent part: ".. part_id)
 				self:_add_part(p_unit, factory_id, part_id, forbidden, override, parts, third_person, need_parent, async_task_data)
-				RestorationCore.log_shit("SC: Finished!")
+				restoration.log_shit("SC: Finished!")
 			end
 			if async_task_data then
 				async_task_data.all_requests_sent = true
 				self:clbk_part_unit_loaded(async_task_data, false, Idstring(), Idstring())
 			else
-				RestorationCore.log_shit("SC: Done callback!")
+				restoration.log_shit("SC: Done callback!")
 				done_cb(parts, blueprint)
-				RestorationCore.log_shit("SC: Finished!")
+				restoration.log_shit("SC: Finished!")
 			end
-			RestorationCore.log_shit("SC: Finished Load!")
+			restoration.log_shit("SC: Finished Load!")
 		end
 		return parts, blueprint
 	end

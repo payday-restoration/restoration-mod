@@ -1,7 +1,7 @@
 if not restoration:all_enabled("HUD/MainHUD", "HUD/ObjectivesPanel") then
 	return
 end
-RestorationCore.log_shit("[RESTORATION] LOADED OBJECTIVES")
+restoration.log_shit("[RESTORATION] LOADED OBJECTIVES")
 RestorationCoreHooks:Post(HUDObjectives, "init", function(self)
 	local objectives_panel = self._hud_panel:child("objectives_panel")
 	local function hide_shit(o)

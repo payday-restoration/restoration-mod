@@ -48,7 +48,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	Hooks:PostHook( NetworkPeer, "send", "SC_Network", function(self, func_name, ...)
 		-- In SC mode if the func is matched, call the prefixed version instead
-		if RestorationCore.network_handler_funcs[func_name] then
+		if restoration.network_handler_funcs[func_name] then
 			func_name = 'RestorationMod__' .. func_name
 		end
 	end)

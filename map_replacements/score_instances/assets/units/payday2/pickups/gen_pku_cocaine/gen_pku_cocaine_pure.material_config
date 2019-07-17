@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="pure" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
+        <diffuse_texture file="units/payday2/pickups/gen_pku_cocaine/gen_pku_cocaine_pure_df"/>
+        <bump_normal_texture file="units/payday2/pickups/gen_pku_cocaine/gen_pku_cocaine_pure_nm"/>
+    </material>
+</materials>

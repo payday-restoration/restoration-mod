@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel orientation_object="rp_gen_pku_tf2_turret_ammo_closed" materials="units/payday2/pickups/gen_pku_tf2_turret_ammo/gen_pku_tf2_turret_ammo_closed" />
+	<sequence_manager file="units/payday2/pickups/gen_pku_tf2_turret_ammo/gen_pku_tf2_turret_ammo_closed" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static" >
+			<object name="c_box" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_metal" enabled="true" material="metal"/>
+	</decal_surfaces>
+	<graphics>
+		<object name="g_ammo" 		enabled="true" />
+		<object name="g_pelican" 	enabled="true" />
+	</graphics>
+</dynamic_object>

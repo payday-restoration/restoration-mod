@@ -1,0 +1,69 @@
+<dynamic_object>
+	<diesel materials="units/payday2/equipment/item_door_drill_small/item_door_drill_small" orientation_object="rp_gen_interactable_drill_small" />
+	<sequence_manager file="units/payday2/equipment/item_door_drill_small/item_door_drill_small" />
+	<animations>
+		<animation_group name="anim" enabled="false" loop="true" >
+			<object name="a_anim_drill" />
+			<object name="a_anim_drill_drill" />
+		</animation_group>
+		<animation_group name="anim_collision" enabled="false" >
+			<object name="anim_drill_collision_01" />
+			<object name="anim_drill_collision_02" />
+			<object name="anim_drill_collision_03" />
+			<object name="anim_drill_collision_04" />
+			<object name="anim_drill_collision_05" />
+			<object name="anim_drill_collision_06" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="body_editor" enabled="true" template="editor">
+			<object name="rp_gen_interactable_drill_small" />
+			<object name="c_drill" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_static" enabled="false" template="static" collides_with_mover="false" remove_ray_type="walk vis_graph ai_vision equipment_placement">
+			<object name="rp_gen_interactable_drill_small" />
+			<object name="c_drill" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_animated_01" enabled="false" template="mover_blocker" collides_with_mover="true" keyframed="true">
+			<object name="anim_drill_collision_01" />
+			<object name="c_box_01" collision_type="box" />
+		</body>
+		<body name="body_animated_02" enabled="false" template="mover_blocker" collides_with_mover="true" keyframed="true">
+			<object name="anim_drill_collision_02" />
+			<object name="c_box_02" collision_type="box" />
+		</body>
+		<body name="body_animated_03" enabled="false" template="mover_blocker" collides_with_mover="true" keyframed="true">
+			<object name="anim_drill_collision_03" />
+			<object name="c_box_03" collision_type="box" />
+		</body>
+		<body name="body_animated_04" enabled="false" template="mover_blocker" collides_with_mover="true" keyframed="true">
+			<object name="anim_drill_collision_04" />
+			<object name="c_box_04" collision_type="box" />
+		</body>
+		<body name="body_animated_05" enabled="false" template="mover_blocker" collides_with_mover="true" keyframed="true">
+			<object name="anim_drill_collision_05" />
+			<object name="c_box_05" collision_type="box" />
+		</body>
+		<body name="body_animated_06" enabled="false" template="mover_blocker" collides_with_mover="true" keyframed="true">
+			<object name="anim_drill_collision_06" />
+			<object name="c_box_06" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="thin_layer">
+		<decal_mesh name="g_base" enabled="false" material="steel_no_decal" />
+		<decal_mesh name="g_drill" enabled="false" material="steel_no_decal" />
+	</decal_surfaces>
+	<graphics>
+		<graphic_group name="icon" enabled="true" culling_object="g_drill_icon">
+			<lod_object name="drill_icon">
+				<object name="g_drill_icon" 			enabled="true"  max_distance="450"  max_draw_lod="0" />
+				<object name="g_drill_icon_lod1" 		enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<object name="g_base" 					enabled="false"  />
+		<object name="g_drill" 					enabled="false"  />
+		<object name="g_drill_drill" 			enabled="false"  />
+		<object name="g_screen_off"				enabled="false"  />
+		<object name="timer_gui" 				enabled="false"  />
+	</graphics>
+</dynamic_object>

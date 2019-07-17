@@ -1,0 +1,38 @@
+<materials version="3">
+	<material name="barrel" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/assembly_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/assembly_nm" />
+	</material>
+	<material name="body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/upper_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/upper_nm" />
+	</material>
+	<material name="grip" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/hoguear_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/hoguear_nm" />
+	</material>
+	<material name="lower1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/lower_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/lower_nm" />
+	</material>
+	<material name="lower_reciever" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/wpn_fps_upg_vg_ass_smg_afg_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/wpn_fps_upg_vg_ass_smg_afg_nm" />
+	</material>
+	<material name="magazine" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/mag_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/mag_nm" />
+	</material>
+	<material name="optic" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/rear_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/rear_nm" />
+	</material>
+	<material name="silencer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/flash_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/flash_nm" />
+	</material>
+	<material name="stock" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/stock_df" />
+		<bump_normal_texture file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/stock_nm" />
+	</material>
+</materials>

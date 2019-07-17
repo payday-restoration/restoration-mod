@@ -1,0 +1,57 @@
+<materials version="3">
+    <material name="moneyprinter_material" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/moneyprinter_df"/>
+        <bump_normal_texture file="units/world/props/moneyprinter/moneyprinter_nm"/>
+    </material>
+    <material name="breaker" unique="true" version="2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP">
+        <diffuse_texture file="units/world/props/moneyprinter/moneyprinter_df"/>
+        <bump_normal_texture file="units/world/props/moneyprinter/moneyprinter_nm"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="moneyprinter_material_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/moneyprinter_df"/>
+        <bump_normal_texture file="units/world/props/moneyprinter/moneyprinter_nm"/>
+    </material>
+    <material name="paper_roll_material_skinned" render_template="generic:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/moneyprinter_df"/>
+    </material>
+    <material name="moneyprinter_material_il" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture                file="units/world/props/moneyprinter/moneyprinter_df"/>
+        <bump_normal_texture            file="units/world/props/moneyprinter/moneyprinter_nm"/>
+        <self_illumination_texture      file="units/world/props/moneyprinter/moneyprinter_il"/>
+        <variable                       value="reddot" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="money_material" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/money_planes_df"/>
+    </material>
+    <material name="moneyprinted_material" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/money_printed_df"/>
+    </material>
+    <material name="moneybrush_material" render_template="generic:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/money_planes_df"/>
+    </material>
+    <material name="badprint_material" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/badprint_df"/>
+    </material>
+    <material name="paperroll_material" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/moneyprinter/animated_paperroll_df"/>
+    </material>
+    <material name="mtr_screen" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture                file="units/world/props/moneyprinter/printing_df"/>
+        <self_illumination_texture      file="units/world/props/moneyprinter/printing_df"/>
+        <variable                       value="neonsign" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="mat_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+    <material name="mtr_outline" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="1.0 0.5 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+</materials>

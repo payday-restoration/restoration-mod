@@ -1,0 +1,35 @@
+<generic_scriptdata type="table">
+	<entry key="door_high_pos" type="table">
+	</entry>
+	<entry key="door_high_rooms" type="table">
+	</entry>
+	<entry key="door_low_pos" type="table">
+	</entry>
+	<entry key="door_low_rooms" type="table">
+	</entry>
+	<entry key="helper_blockers" type="table">
+	</entry>
+	<entry key="nav_segments" type="table">
+	</entry>
+	<entry key="room_borders_x_neg" type="table">
+	</entry>
+	<entry key="room_borders_x_pos" type="table">
+	</entry>
+	<entry key="room_borders_y_neg" type="table">
+	</entry>
+	<entry key="room_borders_y_pos" type="table">
+	</entry>
+	<entry key="room_heights_xn_yn" type="table">
+	</entry>
+	<entry key="room_heights_xn_yp" type="table">
+	</entry>
+	<entry key="room_heights_xp_yn" type="table">
+	</entry>
+	<entry key="room_heights_xp_yp" type="table">
+	</entry>
+	<entry key="room_vis_groups" type="table">
+	</entry>
+	<entry key="version" type="number" value="5"/>
+	<entry key="vis_groups" type="table">
+	</entry>
+</generic_scriptdata>

@@ -1,0 +1,39 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jfr/props/jfr_crate_wine/jfr_crate_wine" orientation_object="rp_prop_crate_wine_01" /><!-- 
+	<sequence_manager file="units/pd2_dlc_jfr/props/jfr_crate_wine_bag/jfr_crate_wine_bag" /> -->
+	<bodies>
+
+
+RAID STUFF
+<!-- 		<body name="body_wine_crate" enabled="true" template="dynamic" friction="0.5" lin_damping="0.4" ang_damping="20" restitution="0" collision_class="bag" pushed_by_mover="false" sweep="true" tag="bag"  collision_script_tag="small" >
+			<object name="rp_prop_crate_wine_01" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" mass="100" />
+		</body>
+		<body name="body_wine_crate_animated" enabled="false" template="animated" friction="0.5" lin_damping="0.4" ang_damping="20" restitution="0" collision_class="bag" pushed_by_mover="false" sweep="true" tag="bag"  collision_script_tag="small" >
+			<object name="rp_prop_crate_wine_01" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" mass="100" />
+		</body>
+		<body name="body_wine_crate_vehicle" enabled="false" template="vehicle" collision_script_filter="1" collision_script_quiet_time="0.5" collision_script_tag="vehicle_collision" give_standing_velocity="false">
+			<object name="rp_prop_crate_wine_01" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" mass="100" />
+		</body>
+ -->
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_prop_crate_wine_01" />			
+			<object name="c_box_01" collision_type="box" padding="-2.5" mass="100" />
+		</body>
+
+	</bodies>
+	<decal_surfaces default_material="wood">
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+		<decal_mesh name="dm_wood" enabled="true" material="wood" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="lod_g">
+			<object name="g_lod0" enabled="true" max_distance="1500" />
+			<object name="g_lod1" enabled="true" max_distance="3000" />
+			<object name="g_lod2" enabled="true" />
+		</lod_object>
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

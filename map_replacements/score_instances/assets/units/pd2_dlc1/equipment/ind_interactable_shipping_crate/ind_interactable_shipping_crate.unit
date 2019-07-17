@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<unit type="ind" slot="1">
+	<object file="units/pd2_dlc1/equipment/ind_interactable_shipping_crate/ind_interactable_shipping_crate" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on unit="units/payday2/pickups/gen_pku_diamonds/gen_pku_diamonds" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_money" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_gold" />
+		<depends_on unit="units/payday2/pickups/gen_pku_toolbag/gen_pku_toolbag" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" 	class="ScriptUnitData" />
+		<extension name="damage" 		class="UnitDamage" />
+		<!--<extension name="attention" class="AIAttentionObject" />-->
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="crate_loot" />
+			<var name="_interact_object" value="spawn"/>
+			<var name="drop_in_sync_tweak_data" value="true" />
+		</extension>
+	</extensions>
+</unit>

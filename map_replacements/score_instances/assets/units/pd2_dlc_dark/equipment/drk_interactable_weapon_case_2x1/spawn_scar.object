@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/spawn_scar" orientation_object="rp_spawn_scar" />
+	<sequence_manager file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_2x1/spawn_scar" />
+	<bodies>
+		<body name="body" enabled="false" template="static" >
+		<object name="rp_spawn_scar" />
+		<object name="g_scar" collision_type="box" />
+		<object name="g_mag" collision_type="box" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_scar" enabled="true" />
+		<object name="g_mag" enabled="true" />
+	</graphics>
+</dynamic_object>

@@ -219,6 +219,7 @@ if not _G.restoration then
 		"crojob2", --Bomb Dockyard
 		"pal", --Counterfeit
 		"brb", --Brooklyn Bank
+		"arm_for",  --Transport TRAIN HEIST
 		"mad" --Boiling Point	
 		
 		--holding loud suit levels here in case we need an extra check for them in the future
@@ -230,7 +231,6 @@ if not _G.restoration then
 		--"arm_fac", --Transport HARBOR
 		--"arm_par", --Transport PARK
 		--"arm_und", --Transport UNDERPASS
-		--"arm_for"  --Transport TRAIN HEIST
 	}
 end
 

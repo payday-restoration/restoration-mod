@@ -17,7 +17,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
 		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference the weapon's handling or its function as a pea-shooting lead vomiting machine, but its block-like aesthetic makes it look a hell of a lot cooler.",				
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality as a pea-shooting lead vomiting machine, but its block-like aesthetic makes it look a hell of a lot cooler.",				
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",			

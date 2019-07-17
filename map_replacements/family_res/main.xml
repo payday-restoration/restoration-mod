@@ -41,7 +41,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<narrative briefing_event="pln_fj1_cbf_01" contact="bain" id="family" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_diamondstore" region="street" name_id="heist_family" brief_id="heist_family_crimenet" >
+	<narrative briefing_event="pln_fj1_cbf_01" contact="bain" id="family" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_diamondstore" region="street" name_id="heist_family" icon="guis/dlcs/bro/textures/pd2/crimenet/diamondstore"  brief_id="heist_family_crimenet" >
 		<chain>
 			<table level_id="family_res" type="d" type_id="heist_type_assault"/>
 		</chain>

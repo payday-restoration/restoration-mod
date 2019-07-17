@@ -1229,9 +1229,6 @@ function UpgradesTweakData:_init_pd2_values()
 	
 end
 
-function UpgradesTweakData:_rep_definitions()
-end
-
 local sc_utd_init = UpgradesTweakData.init
 function UpgradesTweakData:init(tweak_data)
 	sc_utd_init(self, tweak_data)

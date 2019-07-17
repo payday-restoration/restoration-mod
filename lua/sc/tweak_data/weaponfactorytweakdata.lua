@@ -34318,8 +34318,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_p90_body_boxy = {
 			texture_bundle_folder = "icc",
 			a_obj = "a_body",
+			has_description = true,
 			type = "lower_reciever",
 			name_id = "bm_wp_90_body_boxy",
+			desc_id = "bm_wp_90_body_boxy_desc",			
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_p90_body_boxy/wpn_fps_smg_p90_body_boxy",
 			pcs = {},
 			stats = {value = 1},
@@ -46865,23 +46867,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = -1,
 				value = 1
 			}
-			self.parts.wpn_fps_pis_welrod_a_ap.stats = {
-				damage = 50,
-				total_ammo_mod = -25,
-				spread = 2,
-				recoil = -5,
-				suppression = -1,
-				alert_size = -1,
-				value = 2
-			}
-			self.parts.wpn_fps_pis_welrod_a_ap.custom_stats = {
-				armor_piercing_add = 1,
-				can_shoot_through_wall = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_enemy = true,
-				ammo_pickup_min_mul = 0.8,
-				ammo_pickup_max_mul = 0.8
-			}
+			self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil
 		end
 
 		if self.wpn_fps_pis_sonny then --Alcat's Bren Ten

@@ -9,10 +9,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
 		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
-		["bm_wp_1911_m_big"] = "Casket Magazine",
+		["bm_wp_corgi_b_short"] = "MSG Barrel",
+		["bm_wp_pis_usp_b_match"] = "Freeman Barrel",		
+		["bm_wp_1911_m_big"] = "Casket Magazine",		
 		["bm_wp_usp_m_big"] = "Casket Magazine",		
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long(er) Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
+		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
+		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference the weapon's handling or its function as a pea-shooting lead vomiting machine, but its block-like aesthetic makes it look a hell of a lot cooler.",				
+		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
+		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
+		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",			
+		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",								
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",			
 		["bm_wp_g3_b_short"] = "Micro Barrel",						
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
@@ -253,6 +262,8 @@ end
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local r = LevelsTweakData.LevelType.Russia
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = LevelsTweakData.LevelType.Murkywater
 local z = LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
@@ -271,13 +282,20 @@ elseif ai_type == z then
 			["hud_assault_alpha"] = "PCILOE ASUASLT"
 		})
 	end)	
-elseif ai_type == m then	
+elseif ai_type == m and difficulty_index <= 7 then	
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Murkywater Assault in Progress",
 			["hud_assault_alpha"] = "MURKYWATER ASSAULT"
 		})
 	end)	
+elseif ai_type == m then	
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Omnia Assault in Progress",
+			["hud_assault_alpha"] = "OMNIA ASSAULT"
+		})
+	end)		
 end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)

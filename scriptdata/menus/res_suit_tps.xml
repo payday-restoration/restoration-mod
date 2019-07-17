@@ -11,7 +11,7 @@
 			<run_sequence filter="'armor_state_6'" name="'var_model_06'"/>
 			<run_sequence filter="'armor_state_7'" name="'var_model_07'"/>
 			
-			<object enabled="false" name="'g_vest_small'"/>
+			<object enabled="false" name="'g_vest_small'" start_time="10/30"/>
 			
 			<object enabled="false" name="'g_body'" start_time="10/30"/>
 			<object enabled="false" name="'g_body_jacket'" start_time="10/30"/>

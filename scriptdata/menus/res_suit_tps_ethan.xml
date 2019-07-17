@@ -14,12 +14,12 @@
 			<object enabled="false" name="'g_body_terry'" start_time="10/30"/>
 			<object enabled="false" name="'g_body_myh'" start_time="10/30"/>
 			
-			<object enabled="false" name="'g_vest_small'"/>
-			<object enabled="false" name="'g_vest_body'"/>
-			<object enabled="false" name="'g_vest_shoulder'"/>
-			<object enabled="false" name="'g_vest_neck'"/>
-			<object enabled="false" name="'g_vest_thies'"/>
-			<object enabled="false" name="'g_vest_leg_arm'"/>
+			<object enabled="false" name="'g_vest_small'"start_time="10/30"/>
+			<object enabled="false" name="'g_vest_body'"start_time="10/30"/>
+			<object enabled="false" name="'g_vest_shoulder'"start_time="10/30"/>
+			<object enabled="false" name="'g_vest_neck'"start_time="10/30"/>
+			<object enabled="false" name="'g_vest_thies'"start_time="10/30"/>
+			<object enabled="false" name="'g_vest_leg_arm'"start_time="10/30"/>
 		</sequence>
 
 		<sequence editable="true" editable_state="false" name="'despawn_prop_loud_suit'" triggable="true">

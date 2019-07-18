@@ -11361,7 +11361,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obr5.AMMO_MAX = 80
 		self.obr5.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.obr5.stats = {
-			damage = 72,
+			damage = 75,
 			spread = 14,
 			recoil = 18,
 			spread_moving = 5,

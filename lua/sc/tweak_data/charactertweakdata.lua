@@ -565,7 +565,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 60
+		self.omnia_lpf.HEALTH_INIT = 45
 		self.omnia_lpf.headshot_dmg_mul = 2.2
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
@@ -661,7 +661,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.use_animation_on_fire_damage = true
 		self.swat_titan.move_speed = presets.move_speed.very_fast
 		self.swat_titan.dodge = presets.dodge.elite
-		self.swat_titan.HEALTH_INIT = 16
+		self.swat_titan.HEALTH_INIT = 8
 		self.swat_titan.headshot_dmg_mul = 4.5		
 		self.swat_titan.surrender = nil
 		self.swat_titan.unintimidateable = true	
@@ -818,7 +818,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}	
-		self.heavy_swat_sniper.HEALTH_INIT = 12
+		self.heavy_swat_sniper.HEALTH_INIT = 9
 		self.heavy_swat_sniper.headshot_dmg_mul = 3.4
 		self.heavy_swat_sniper.surrender_break_time = {6, 10}
 		self.heavy_swat_sniper.suppression = nil
@@ -1086,10 +1086,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
-		self.city_swat_titan.HEALTH_INIT = 26
-		self.city_swat_titan.headshot_dmg_mul = 2.6
+		self.city_swat_titan.HEALTH_INIT = 15
+		self.city_swat_titan.headshot_dmg_mul = 2.19
 		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
-		self.city_swat_titan.damage.bullet_damage_mul = 1.5
+		self.city_swat_titan.damage.bullet_damage_mul = 1
 		self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 		self.city_swat_titan.use_animation_on_fire_damage = true
 		self.city_swat_titan.move_speed = presets.move_speed.very_fast
@@ -1330,11 +1330,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.experience = {}
 		self.mobster_boss.detection = presets.detection.normal
 		self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
-		self.mobster_boss.HEALTH_INIT = 1000
+		self.mobster_boss.HEALTH_INIT = 750
 		self.mobster_boss.headshot_dmg_mul = 7.99425
 		self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 		self.mobster_boss.damage.explosion_damage_mul = 1.25
-		self.mobster_boss.move_speed = presets.move_speed.very_slow
+		self.mobster_boss.move_speed = presets.move_speed.slow
 		self.mobster_boss.allowed_poses = {stand = true}
 		self.mobster_boss.crouch_move = false
 		self.mobster_boss.no_run_start = true
@@ -1379,7 +1379,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.experience = {}
 		self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 		self.biker_boss.detection = presets.detection.normal
-		self.biker_boss.HEALTH_INIT = 1000
+		self.biker_boss.HEALTH_INIT = 750
 		self.biker_boss.headshot_dmg_mul = 7.99425
 		self.biker_boss.damage.explosion_damage_mul = 1.25
 		self.biker_boss.damage.hurt_severity = self.presets.hurt_severities.boss
@@ -1466,7 +1466,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.custom_shout = true
 		self.chavez_boss.priority_shout_max_dis = 3000
 		self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
-		self.chavez_boss.HEALTH_INIT = 1000
+		self.chavez_boss.HEALTH_INIT = 750
 		self.chavez_boss.headshot_dmg_mul = 7.99425
 		self.chavez_boss.damage.explosion_damage_mul = 1.25
 		self.chavez_boss.move_speed = presets.move_speed.very_slow
@@ -1560,7 +1560,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.tags = {"custom", "special"}
 		self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 		self.drug_lord_boss.detection = presets.detection.normal
-		self.drug_lord_boss.HEALTH_INIT = 1000
+		self.drug_lord_boss.HEALTH_INIT = 750
 		self.drug_lord_boss.headshot_dmg_mul = 7.99425
 		self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 		self.drug_lord_boss.damage.hurt_severity = presets.hurt_severities.titan
@@ -1741,7 +1741,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
-		self.tank_titan.HEALTH_INIT = 1000
+		self.tank_titan.HEALTH_INIT = 750
 		self.tank_titan.headshot_dmg_mul = 7.99425
 		self.tank_titan.immune_to_concussion = true
 		self.tank_titan.immune_to_knock_down = true
@@ -1883,7 +1883,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
-		self.spooc_titan.HEALTH_INIT = 120
+		self.spooc_titan.HEALTH_INIT = 90
 		self.spooc_titan.headshot_dmg_mul = 5.85		
 		self.spooc_titan.speech_prefix_p1 = "t_spk"
 		self.spooc_titan.speech_prefix_count = nil
@@ -2035,14 +2035,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.weapon = deep_clone(presets.weapon.normal)
 		self.phalanx_minion.detection = presets.detection.normal
 		self.phalanx_minion.headshot_dmg_mul = 2.2
-		self.phalanx_minion.HEALTH_INIT = 26
-		self.phalanx_minion.damage.explosion_damage_mul = 0.1
-		self.phalanx_minion.damage.fire_damage_mul = 0.1
+		self.phalanx_minion.HEALTH_INIT = 19.5
+		self.phalanx_minion.damage.explosion_damage_mul = 0.3
+		self.phalanx_minion.damage.fire_damage_mul = 0.3
 		self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 		self.phalanx_minion.flammable = false
 		self.phalanx_minion.damage.shield_knocked = true
 		self.phalanx_minion.priority_shout = "f31"
 		self.phalanx_minion.bot_priority_shout = "f31x_any"		
+		self.phalanx_minion.move_speed = presets.move_speed.normal
 		self.phalanx_minion.priority_shout_max_dis = 3000
 		self.phalanx_minion.weapon_voice = "3"
 		self.phalanx_minion.experience.cable_tie = "tie_swat"
@@ -2439,8 +2440,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.taser_titan = deep_clone(self.taser)
 		self.taser_titan.tags = {"taser", "taser_titan", "custom", "special"}
-		self.taser_titan.HEALTH_INIT = 72
-		self.taser_titan.headshot_dmg_mul = 2
+		self.taser_titan.HEALTH_INIT = 36
+		self.taser_titan.headshot_dmg_mul = 1.8
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
 		self.taser_titan.immune_to_concussion = true	
@@ -11891,7 +11892,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 25
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.6
 		self.old_hoxton_mission.HEALTH_INIT = 25
@@ -11992,7 +11993,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 50
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
 		self.old_hoxton_mission.HEALTH_INIT = 50
@@ -12093,7 +12094,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 75
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
 		self.old_hoxton_mission.HEALTH_INIT = 75
@@ -12194,7 +12195,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 100
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 		self.old_hoxton_mission.HEALTH_INIT = 100
@@ -12307,7 +12308,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}	
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 125
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 		self.old_hoxton_mission.HEALTH_INIT = 125
@@ -12425,7 +12426,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self:_multiply_all_speeds(1, 1.05)
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -12455,6 +12456,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.shield.damage.explosion_damage_mul = 0.7
+		
+		--Less damage from throwables on higher difficulties--
+		self.phalanx_minion.damage.explosion_damage_mul = 0.2
+		self.phalanx_minion.damage.fire_damage_mul = 0.2	
+		self.phalanx_minion_assault.damage.explosion_damage_mul = 0.2
+		self.phalanx_minion_assault.damage.fire_damage_mul = 0.2			
 		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 		self.sniper.weapon.is_rifle.use_laser = false
@@ -12487,7 +12494,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 150
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		self:_multiply_all_speeds(1.05, 1.1)
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -12516,7 +12523,102 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
-		self.phalanx_minion_assault.steal_loot = true
+		
+		--Full auto on Titan Snipers within 10 meters
+		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.expert)
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 12
+		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+			{
+				r = 500,
+				acc = {0.3, 0.6},
+				dmg_mul = 2.3,
+				recoil = {0.4, 0.8},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},			
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.3,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2.1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1.05,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1.05,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}			
+		
+		--Even less damage from these things--
+		self.phalanx_minion.damage.explosion_damage_mul = 0.1
+		self.phalanx_minion.damage.fire_damage_mul = 0.1
+		self.phalanx_minion_assault.damage.explosion_damage_mul = 0.1
+		self.phalanx_minion_assault.damage.fire_damage_mul = 0.1
 		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 		self.sniper.weapon.is_rifle.use_laser = false
@@ -12553,7 +12655,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa_vip.HEALTH_INIT = 150
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
 		self.flashbang_multiplier = 2
-		self.concussion_multiplier = 2
+		self.concussion_multiplier = 1
 		
 		--Titan SWAT smoke dodging
 		self.city_swat_titan.dodge_with_grenade = {
@@ -12620,12 +12722,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+		self.autumn.damage.bullet_dodge_chance = 30	
+		
 		if job == "haunted" then
-			self.tank_hw.move_speed = self.presets.move_speed.slow
+			self.tank_hw.move_speed = self.presets.move_speed.very_slow
 		else
 			self.tank_hw.move_speed = self.presets.move_speed.slow
-		end	
-		self.autumn.damage.bullet_dodge_chance = 30	
+		end		
 		
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")

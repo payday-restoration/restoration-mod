@@ -46410,8 +46410,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = -1,
 				suppression = -1,
 				total_ammo_mod = -20,
-				spread = 1,
-				concealment = -1,
+				concealment = -2,
 				recoil = -1,
 				damage = 10
 			},

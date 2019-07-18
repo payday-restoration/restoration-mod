@@ -1266,7 +1266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.scar_npc.hold = "rifle"
 		self.scar_npc.alert_size = 3400
 		self.scar_npc.suppression = 2.8
-		self.scar_npc.FIRE_MODE = "auto"
+		self.scar_npc.FIRE_MODE = "single"
 		self.scar_npc.titan_trail = true
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
 		self.scar_secondary_npc.use_data.selection_index = 1
@@ -5992,11 +5992,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sub2000.sounds.stop_fire = "mac10_stop"
 		self.sub2000.sounds.enter_steelsight = "primary_steel_sight_enter"
 		self.sub2000.sounds.leave_steelsight = "primary_steel_sight_exit"
-		self.sub2000.fire_mode_data.fire_rate = 0.08571428571
+		self.sub2000.fire_mode_data.fire_rate = 0.07142857142
 		self.sub2000.CAN_TOGGLE_FIREMODE = false
 		self.sub2000.FIRE_MODE = "single"
 		self.sub2000.single = {}
-		self.sub2000.single.fire_rate = 0.08571428571
+		self.sub2000.single.fire_rate = 0.07142857142
 		self.sub2000.spread.standing = 3
 		self.sub2000.spread.crouching = 2
 		self.sub2000.spread.steelsight = 1
@@ -6013,7 +6013,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 28,
+			concealment = 24,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,

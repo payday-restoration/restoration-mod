@@ -565,7 +565,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 45
+		self.omnia_lpf.HEALTH_INIT = 60
 		self.omnia_lpf.headshot_dmg_mul = 2.2
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
@@ -661,7 +661,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.use_animation_on_fire_damage = true
 		self.swat_titan.move_speed = presets.move_speed.very_fast
 		self.swat_titan.dodge = presets.dodge.elite
-		self.swat_titan.HEALTH_INIT = 8
+		self.swat_titan.HEALTH_INIT = 16
 		self.swat_titan.headshot_dmg_mul = 4.5		
 		self.swat_titan.surrender = nil
 		self.swat_titan.unintimidateable = true	
@@ -1086,10 +1086,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
-		self.city_swat_titan.HEALTH_INIT = 15
-		self.city_swat_titan.headshot_dmg_mul = 2.19
+		self.city_swat_titan.HEALTH_INIT = 26
+		self.city_swat_titan.headshot_dmg_mul = 2.6
 		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
-		self.city_swat_titan.damage.bullet_damage_mul = 1
+		self.city_swat_titan.damage.bullet_damage_mul = 1.5
 		self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 		self.city_swat_titan.use_animation_on_fire_damage = true
 		self.city_swat_titan.move_speed = presets.move_speed.very_fast
@@ -1741,7 +1741,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
-		self.tank_titan.HEALTH_INIT = 750
+		self.tank_titan.HEALTH_INIT = 1000
 		self.tank_titan.headshot_dmg_mul = 7.99425
 		self.tank_titan.immune_to_concussion = true
 		self.tank_titan.immune_to_knock_down = true

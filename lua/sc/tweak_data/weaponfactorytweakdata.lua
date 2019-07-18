@@ -40425,15 +40425,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					spread_moving = -2,
 					spread = 1,
-					concealment = -2,
-					damage = 3
+					concealment = -2
 				}	
 		self.parts.wpn_fps_upg_sar21_barrel_short.stats = {
 					value = 4,
 					spread_moving = 0,
 					spread = -1,
-					concealment = 2,
-					damage = 3
+					concealment = 2
 				}					
 		self.parts.wpn_fps_upg_sar21_vg_m900.stats = {
 					value = 1
@@ -41815,7 +41813,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_f2000_uupg_barrel_long.stats = {
 						value = 4,
 						spread = 1,
-						damage = 5,
 						concealment = -2
 						}	
 				self.parts.wpn_fps_f2000_uupg_barrel_long.has_description = false																													
@@ -41995,9 +41992,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end		
 
 		if self.wpn_fps_snp_moss464spx then -- Pawcio's SPX Centerfire
-				table.remove(self.wpn_fps_snp_moss464spx.uses_parts, 14)
+				table.remove(self.wpn_fps_snp_moss464spx.uses_parts, 15)
 				self.parts.wpn_fps_snp_moss464spx_stock.stats = nil
-				self.parts.wpn_fps_snp_moss464spx_stock.pcs = nil		
+				self.parts.wpn_fps_snp_moss464spx_stock.pcs = nil --already comes with this pre-attached, so it's disabled from being selectable in the stocks category.	
+				self.parts.wpn_fps_upg_moss464spx_barrel_short.stats = {
+						value = 2,
+						extra_ammo = -1,							
+						concealment = 2
+					}								
 				self.parts.wpn_fps_upg_moss464spx_barrel_short.stats = {
 						value = 2,
 						extra_ammo = -1,							

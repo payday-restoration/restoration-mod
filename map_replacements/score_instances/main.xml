@@ -358,13 +358,13 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="america" id="arm_cafe" max_bags="54">
+	<level ai_group_type="america" id="arm_cafe" max_bags="24">
 		<add file="levels/arm_cafe/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
 			<asset name="health_bag"/>
 			<asset name="grenade_crate"/>
-			<asset name="bodybags_bag"/>
+			<asset name="safe_escape"/>
 		</assets>
 		<include directory="levels/arm_cafe">
 			<file file="world.world" type="generic_xml"/>

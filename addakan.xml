@@ -22,10 +22,6 @@
 	<!--Akan UMP guy-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump" load="true"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump_husk" load="true"/>
-
-	<!--Akan UMP guy-->
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump" load="true"/>
-	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump_husk" load="true"/>
 	
 	<!--Akan "SMG" cop-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg_sc/ene_akan_cs_cop_akmsu_smg_sc" load="true"/>

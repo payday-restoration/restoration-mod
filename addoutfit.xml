@@ -45,6 +45,10 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_df" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_nm" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_gsma" force="true"/>
+	
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_nm" force="true"/>
 
 	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>
 	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" force="true"/>

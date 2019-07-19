@@ -1,0 +1,10 @@
+<materials version="3" group="fps_criminals_suit_1">
+    <material name="mtr_arms" version="2" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
+        <diffuse_texture        file="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_df"/>
+        <bump_normal_texture    file="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_nm"/>
+    </material>
+    <material name="mtr_hands" version="2" render_template="generic">
+    </material>
+    <material name="mtr_suit" version="2" render_template="generic">
+    </material>
+</materials>

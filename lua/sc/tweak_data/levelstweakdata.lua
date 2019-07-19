@@ -135,6 +135,55 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crojob3.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_3"}
 		self.crojob3.player_sequence = "spawn_prop_loud_suit"
 		
+		self.dark.package = {"packages/outfitassets", "packages/job_dark"}
+		self.dark.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.kosugi.package = {"packages/outfitassets", "packages/kosugi"}
+		self.kosugi.player_sequence = "spawn_prop_sneak_suit"		
+		
+		self.kosugi.package = {"packages/outfitassets", "packages/kosugi"}
+		self.kosugi.player_sequence = "spawn_prop_sneak_suit"	
+		
+		self.hox_3.package = {"packages/outfitassets", "packages/narr_hox_3"}
+		self.hox_3.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.election_day_1.package = {"packages/outfitassets", "packages/narr_election1"}
+		self.election_day_1.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.election_day_2.package = {"packages/outfitassets", "packages/narr_election2"}
+		self.election_day_2.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.gallery.package = {"packages/outfitassets", "packages/narr_framing_1"}
+		self.gallery.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.framing_frame_1.package = {"packages/outfitassets", "packages/narr_framing_1"}
+		self.framing_frame_1.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.framing_frame_3.package = {"packages/outfitassets", "packages/narr_framing_3"}
+		self.framing_frame_3.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.welcome_to_the_jungle_2.package = {"packages/outfitassets", "packages/narr_jungle2"}
+		self.welcome_to_the_jungle_2.player_sequence = "spawn_prop_sneak_suit"
+		
+		self.pines.package = {"packages/outfitassets", "packages/narr_pines"}
+		self.pines.player_sequence = "spawn_prop_loud_suit"		
+		
+		self.chew.package = {"packages/outfitassets", "packages/lvl_chew"}
+		self.chew.player_sequence = "spawn_prop_loud_suit"
+		
+		self.pbr2.package = {"packages/outfitassets", "packages/narr_jerry2"}
+		self.pbr2.player_sequence = "spawn_prop_loud_suit"
+		
+		self.watchdogs_2.package = {"packages/outfitassets", "packages/narr_watchdogs2"}
+		self.watchdogs_2.player_sequence = "spawn_prop_loud_suit"
+		
+		self.watchdogs_2_day.package = {"packages/outfitassets", "packages/narr_watchdogs_2_day"}
+		self.watchdogs_2_day.player_sequence = "spawn_prop_loud_suit"
+		
+		self.cane.package = {"packages/outfitassets", "packages/cane"}
+		--reminder to add the biker vo package here
+		self.cane.player_sequence = "spawn_prop_winter_suit"
+		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}

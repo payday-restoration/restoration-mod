@@ -129,17 +129,34 @@ function restoration:Init()
 		"pal", --Counterfeit
 		"brb", --Brooklyn Bank
 		"arm_for",  --Transport TRAIN HEIST
+		"dark",  --Murky Station
+		"kosugi",  --Shadow Raid
+		"election_day_1",  --Election Day Docks
+		"election_day_2",  --Election Day Warehouse
+		"gallery",  --Art Gallery
+		"framing_frame_1",  --Framing Frame Day 1
+		"framing_frame_3",  --Framing Frame Day 3
+		"welcome_to_the_jungle_2",  --Big oil day 2
+		"cane",  --Santa's Workshop
 		"mad" --Boiling Point	
 		
 		--holding loud suit levels here in case we need an extra check for them in the future
 		--"des", --Henry's Rock
 		--"dinner", --Slaughterhouse
 		--"man", --Undercover
+		--"crojob3", --Bomb Forest
 		--"arm_cro", --Transport CROSSROADS
 		--"arm_hcm", --Transport DOWNTOWN
 		--"arm_fac", --Transport HARBOR
 		--"arm_par", --Transport PARK
 		--"arm_und", --Transport UNDERPASS
+		--"jolly", --Aftershock
+		--"des", --Henry's Rock
+		--"pbr", --Beneath The Mountain
+		--"pines", --White Xmas
+		--"watchdogs_2", --Watchdogs Day 2
+		--"watchdogs_2_day", --Watchdogs Day 2
+		--"chew", --Biker Day 2
 	}
 
 	_G.SC = _G.SC or {}

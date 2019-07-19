@@ -567,9 +567,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.detection = presets.detection.normal
 		self.omnia_lpf.HEALTH_INIT = 60
 		self.omnia_lpf.headshot_dmg_mul = 2.2
-		self.omnia_lpf.damage.bullet_damage_mul = 0.9
-		self.omnia_lpf.damage.explosion_damage_mul = 0.9
-		self.omnia_lpf.damage.fire_damage_mul = 0.9
+		--self.omnia_lpf.damage.bullet_damage_mul = 0.9
+		--self.omnia_lpf.damage.explosion_damage_mul = 0.9
+		--self.omnia_lpf.damage.fire_damage_mul = 0.9
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
 		self.omnia_lpf.suppression = nil

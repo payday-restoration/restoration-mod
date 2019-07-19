@@ -177,7 +177,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.watchdogs_2.package = {"packages/outfitassets", "packages/narr_watchdogs2"}
 		self.watchdogs_2.player_sequence = "spawn_prop_loud_suit"
 		
-		self.watchdogs_2_day.package = {"packages/outfitassets", "packages/narr_watchdogs_2_day"}
+		self.watchdogs_2_day.package = {"packages/outfitassets", "packages/narr_watchdogs2_day"}
 		self.watchdogs_2_day.player_sequence = "spawn_prop_loud_suit"
 		
 		self.cane.package = {"packages/outfitassets", "packages/cane"}

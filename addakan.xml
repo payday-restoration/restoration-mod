@@ -10,6 +10,18 @@
 	<!--Akan Gensec Shotgunner this is only here to fix a bug anyway-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc" load="true"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc_husk" load="true"/>
+	
+	<!--Akan Bronco guy-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc_husk" load="true"/>
+	
+	<!--Akan Glock lad-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_c45_sc/ene_akan_cs_cop_c45_sc_husk" load="true"/>
+	
+	<!--Akan UMP guy-->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump_husk" load="true"/>
 
 	<!--Akan UMP guy-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump" load="true"/>

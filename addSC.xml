@@ -203,7 +203,7 @@
 	<texture path="units/pd2_mod_beta/msk_twister/twister_df"/>
 	<texture path="units/pd2_mod_beta/msk_twister/twister_nm"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/twister_mask"/>
-	
+		
 	<!--Masks: Beta Voodoo Mask-->
 	<cooked_physics path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
 	<model path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
@@ -742,6 +742,9 @@
 			
 	<!--Birdshot (unused)-->
 	<!--<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>-->
+	
+	<!--G3 Sniper Barrel Icon-->	
+	<texture path="guis/dlcs/gage_pack_assault/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_g3_b_sniper" force="true"/>
 	
 	<!--Saiga Drum Mag fix-->
 	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq"/>

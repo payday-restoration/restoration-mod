@@ -488,8 +488,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.medic.experience = {}
 		self.medic.weapon = deep_clone(presets.weapon.normal)
 		self.medic.detection = presets.detection.normal
-		self.medic.HEALTH_INIT = 30
-		self.medic.headshot_dmg_mul = 2.2
+		self.medic.HEALTH_INIT = 20
+		self.medic.headshot_dmg_mul = 2
 		self.medic.suppression = nil
 		self.medic.surrender = presets.surrender.special
 		self.medic.move_speed = presets.move_speed.very_fast
@@ -527,7 +527,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
 		table.insert(self._enemy_list, "medic")
 		self.medic_summers = deep_clone(self.medic)
-		self.medic_summers.HEALTH_INIT = 60
+		self.medic_summers.HEALTH_INIT = 40
 		self.medic_summers.headshot_dmg_mul = 1.25
 		self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom", "special"}
 		self.medic_summers.ignore_medic_revive_animation = false
@@ -565,8 +565,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 60
+		self.omnia_lpf.HEALTH_INIT = 40
 		self.omnia_lpf.headshot_dmg_mul = 2.2
+		self.omnia_lpf.damage.bullet_damage_mul = 0.9
+		self.omnia_lpf.damage.explosion_damage_mul = 0.9
+		self.omnia_lpf.damage.fire_damage_mul = 0.9
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
 		self.omnia_lpf.suppression = nil
@@ -661,7 +664,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.use_animation_on_fire_damage = true
 		self.swat_titan.move_speed = presets.move_speed.very_fast
 		self.swat_titan.dodge = presets.dodge.elite
-		self.swat_titan.HEALTH_INIT = 16
+		self.swat_titan.HEALTH_INIT = 12
 		self.swat_titan.headshot_dmg_mul = 4.5		
 		self.swat_titan.surrender = nil
 		self.swat_titan.unintimidateable = true	
@@ -885,8 +888,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.experience = {}
 		self.fbi_swat.weapon = presets.weapon.good
 		self.fbi_swat.detection = presets.detection.normal
-		self.fbi_swat.HEALTH_INIT = 13
-		self.fbi_swat.headshot_dmg_mul = 2.6
+		self.fbi_swat.HEALTH_INIT = 15
+		self.fbi_swat.headshot_dmg_mul = 3
 		self.fbi_swat.move_speed = presets.move_speed.very_fast
 		self.fbi_swat.surrender_break_time = {6, 10}
 		self.fbi_swat.suppression = presets.suppression.hard_def
@@ -1017,8 +1020,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(presets.weapon.expert.is_shotgun_mag)
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25
 		self.city_swat.detection = presets.detection.normal
-		self.city_swat.HEALTH_INIT = 13
-		self.city_swat.headshot_dmg_mul = 2.6
+		self.city_swat.HEALTH_INIT = 15
+		self.city_swat.headshot_dmg_mul = 3
 		self.city_swat.move_speed = presets.move_speed.very_fast
 		self.city_swat.surrender_break_time = {6, 10}
 		self.city_swat.suppression = presets.suppression.hard_def
@@ -1086,10 +1089,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
-		self.city_swat_titan.HEALTH_INIT = 26
-		self.city_swat_titan.headshot_dmg_mul = 2.6
+		self.city_swat_titan.HEALTH_INIT = 22.5
+		self.city_swat_titan.headshot_dmg_mul = 3
 		self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
-		self.city_swat_titan.damage.bullet_damage_mul = 1.5
+		self.city_swat_titan.damage.bullet_damage_mul = 1.1
 		self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 		self.city_swat_titan.use_animation_on_fire_damage = true
 		self.city_swat_titan.move_speed = presets.move_speed.very_fast
@@ -1741,7 +1744,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 		self.tank_titan.move_speed = presets.move_speed.very_slow
 		self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
-		self.tank_titan.HEALTH_INIT = 1000
+		self.tank_titan.HEALTH_INIT = 750
 		self.tank_titan.headshot_dmg_mul = 7.99425
 		self.tank_titan.immune_to_concussion = true
 		self.tank_titan.immune_to_knock_down = true
@@ -2354,8 +2357,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser.weapon.is_rifle.aim_delay_tase = {0, 0.5}
 		self.taser.weapon.is_rifle.tase_sphere_cast_radius = 30
 		self.taser.detection = presets.detection.normal
-		self.taser.HEALTH_INIT = 36
-		self.taser.headshot_dmg_mul = 1.8
+		self.taser.HEALTH_INIT = 30
+		self.taser.headshot_dmg_mul = 2.2
 		self.taser.move_speed = presets.move_speed.fast
 		self.taser.no_retreat = true
 		self.taser.no_arrest = true
@@ -2406,7 +2409,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "taser")
 		
 		self.taser_summers = deep_clone(self.taser)
-		self.taser_summers.HEALTH_INIT = 72
+		self.taser_summers.HEALTH_INIT = 60
 		self.taser_summers.headshot_dmg_mul = 1.5
 		self.taser_summers.tags = {"female_enemy","taser", "medic_summers", "custom", "special"}
 		self.taser_summers.ignore_medic_revive_animation = false
@@ -2440,8 +2443,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.taser_titan = deep_clone(self.taser)
 		self.taser_titan.tags = {"taser", "taser_titan", "custom", "special"}
-		self.taser_titan.HEALTH_INIT = 36
-		self.taser_titan.headshot_dmg_mul = 1.8
+		self.taser_titan.HEALTH_INIT = 45
+		self.taser_titan.headshot_dmg_mul = 2.2
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
 		self.taser_titan.immune_to_concussion = true	
@@ -2485,14 +2488,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.melee_weapon_dmg_multiplier = 1
 		self.boom.weapon_safety_range = 1000
 		self.boom.detection = presets.detection.normal
-		self.boom.HEALTH_INIT = 36
+		self.boom.HEALTH_INIT = 30
 		self.boom.HEALTH_SUICIDE_LIMIT = 0.25
 		self.boom.flammable = true
 		self.boom.use_animation_on_fire_damage = true
 		self.boom.damage.explosion_damage_mul = 0.5
 		self.boom.damage.fire_damage_mul = 1
 		self.boom.damage.hurt_severity = presets.hurt_severities.boom
-		self.boom.headshot_dmg_mul = 1.8
+		self.boom.headshot_dmg_mul = 2.2
 		self.boom.bag_dmg_mul = 6
 		self.boom.move_speed = presets.move_speed.fast
 		self.boom.no_retreat = true
@@ -2549,7 +2552,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.custom_voicework = nil
 		self.boom_summers.die_sound_event = "mga_death_scream"
 		self.boom_summers.use_radio = "dsp_radio_russian"
-		self.boom_summers.HEALTH_INIT = 72
+		self.boom_summers.HEALTH_INIT = 60
 		self.boom_summers.headshot_dmg_mul = 1.5
 		self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
 		self.boom_summers.ignore_medic_revive_animation = false

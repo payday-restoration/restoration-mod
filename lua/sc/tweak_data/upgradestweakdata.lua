@@ -956,8 +956,8 @@ function UpgradesTweakData:_init_pd2_values()
 		1.5
 	}
 	self.values.temporary.dmg_dampener_close_contact = {
+		{0.95, 7},
 		{0.9, 7},
-		{0.85, 7},
 		{0.8, 7}
 	}
 	self.max_melee_weapon_dmg_mul_stacks = 5

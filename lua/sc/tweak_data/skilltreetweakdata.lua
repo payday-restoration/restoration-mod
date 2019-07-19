@@ -2496,7 +2496,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_damage_dampener_outnumbered_strong",
 					"melee_stacking_hit_damage_multiplier_2"
 				},
 				cost = 2400,
@@ -2524,12 +2523,12 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "hlm2_deluxe",
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_1"
+					"player_damage_dampener_outnumbered_strong",
 				},
 				cost = 200,
 				icon_xy = {3, 4},
 				name_id = "menu_deck9_1_sc",
-				desc_id = "menu_deck8_1_desc_sc"
+				desc_id = "menu_deck9_1_desc_sc"
 			},
 			deck2,
 			{

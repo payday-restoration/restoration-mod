@@ -44520,16 +44520,15 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}	
 			self.parts.wpn_fps_sho_b_spas12_small.stats = {
 				value = 1,
-				recoil = -2,
 				spread = -1,
-				concealment = 8
+				concealment = 2
 				}		
-			self.parts.wpn_fps_ass_ak_m_proto.stats = {
-				value = 1
-				}						
 			self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
 				damage_near_mul = -100,
 				damage_far_mul = -200			
+				}										
+			self.parts.wpn_fps_ass_ak_m_proto.stats = {
+				value = 1
 				}						
 			end		
 

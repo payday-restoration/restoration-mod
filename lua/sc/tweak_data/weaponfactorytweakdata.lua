@@ -14462,12 +14462,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = 1,
 				concealment = -2
 			},
-			override = {
-				wpn_fps_ass_g3_m_mag = {
-					unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg",
-					third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_m_mag_psg"
-				}
-			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
 			is_a_unlockable = true,

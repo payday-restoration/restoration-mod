@@ -13491,6 +13491,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",
 				list = {
+					"ene_murky_cs_cop_c45",
+					"ene_murky_cs_cop_mp5",
+					"ene_murky_cs_cop_r870",
+					"ene_murky_cs_cop_raging_bull",
 					"ene_murky_swat_m4",
 					"ene_murky_swat_r870",
 					"ene_murky_hrt_1",

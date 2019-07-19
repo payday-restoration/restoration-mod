@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
-<mod name="Restoration" global_key="restorationnew">
-	<tweak definition="restorationmod_network_tweak.xml" />
-	<tweak definition="restorationmod_postprocessor_tweak.xml" />
-	<tweak definition="restorationmod_defaultrendertemplates_tweak.xml" />
+<mod name="Restoration" global_key="restoration">
+	<tweak definition="restorationmod_network_tweak.xml"/>
+	<tweak definition="restorationmod_postprocessor_tweak.xml"/>
+	<tweak definition="restorationmod_defaultrendertemplates_tweak.xml"/>
+	<!-- <:include src="superblt/assets.xml"/>
+	<:include src="superblt/assets2.xml"/>
+	<:include src="superblt/assets3.xml"/> -->
 </mod>

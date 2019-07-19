@@ -235,11 +235,13 @@
 	<unit path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc" load="false"/>	
 	
 	<!--S&W .500-->
-	<!--<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/jeb"/>
+	<!--
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/jeb"/>
 	<cooked_physics path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
 	<model path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
 	<object path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
-	<unit path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" load="false"/>-->
+	<unit path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb" load="false"/>
+	-->
 	
 	<!--HK21-->
 	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
@@ -741,7 +743,9 @@
 	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="false"/>
 			
 	<!--Birdshot (unused)-->
-	<!--<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>-->
+	<!--
+	<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/
+	>-->
 	
 	<!--G3 Sniper Barrel Icon-->	
 	<texture path="guis/dlcs/gage_pack_assault/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_g3_b_sniper" force="true"/>
@@ -1144,12 +1148,14 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_contour"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>	
 
-	<!--zeal city 2 helm
+	<!--zeal city 2 helm -->
+	<!--
 	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false" load="true"/>
-	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>-->		
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	-->		
 	
 	<!--zeal city 3-->
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
@@ -1217,22 +1223,26 @@
 	<!--textures heavy -->
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
-	<!--fbi ready team 1
+	<!--fbi ready team 1 -->
+	<!--
     <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1" load="true"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_contour"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_husk" load="true"/>-->
-	<!--fbi ready team 2
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_husk" load="true"/>
+	-->
+	<!--fbi ready team 2 -->
+	<!--
     <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2" load="true"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_contour"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>
+	-->
 	<!--new zeals end-->
 	
 	<!--textures to always load-->
@@ -1249,7 +1259,8 @@
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" />		
-	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />	<!--hey you probably won't see him close, but it'll be nice to have, yeah?-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />	
+	<!-- ene_akan_cs_swat_sniper_svd_snp hey you probably won't see him close, but it'll be nice to have, yeah?-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" />		
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" />

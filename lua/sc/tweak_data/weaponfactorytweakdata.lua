@@ -42679,21 +42679,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_cbjms_drum_mag_half.has_description = false																							
 			end	
 			
-	-- Silent Enforcer's Rail Covers
-		if self.parts.wpn_fps_m4_rc then
-				self.parts.wpn_fps_m4_rc.stats = { 
+		if self.parts.wpn_fps_rail_covers then 	-- Silent Enforcer's Rail Covers
+				self.parts.wpn_fps_rail_covers.stats = { 
 					value = 0
 					}	
-				self.parts.wpn_fps_m4_rc_nob.stats = { 
-					value = 0
-					}			
-				self.parts.wpn_fps_m4_rc_top.stats = { 
-					value = 0
-					}			
-				self.parts.wpn_fps_m4_rc_top_nob.stats = { 
-					value = 0
-					}	
-			end		
+				end		
  
 		if self.wpn_fps_ass_fd338 then -- Pawcio's FD 338
 				self.parts.wpn_fps_upg_fd338_supp.stats = { 

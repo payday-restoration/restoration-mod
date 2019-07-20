@@ -43878,7 +43878,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		if self.wpn_fps_lmg_volmer then 	-- Alcat's HK-something Volmer
 				self.parts.wpn_fps_lmg_volmer_s_retract.stats = {
 						value = 0,
-						concealment = 1
+						spread = 1,						
+						concealment = -2
 					}							
 				self.parts.wpn_fps_lmg_volmer_b_long.stats = {
 						value = 4,
@@ -43887,6 +43888,11 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						spread_moving = -2,
 						concealment = -2
 					}		
+				self.parts.wpn_fps_lmg_volmer_ironsight.stance_mod = {
+					wpn_fps_lmg_volmer = {
+						translation = Vector3(0.25, 2, -0.75)
+						}
+					}					
 				table.list_append(self.wpn_fps_lmg_volmer.uses_parts, {
 					"wpn_fps_upg_ammo_half_that"
 				})

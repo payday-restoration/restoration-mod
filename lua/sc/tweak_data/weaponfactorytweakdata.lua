@@ -41718,21 +41718,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						ammo_pickup_min_mul = 0.33333333333,
 						ammo_pickup_max_mul = 0.33333333333
 					}
-					self.parts.wpn_fps_upg_triad_bullets_44ap.stats = {
-						value = 10,
-						recoil = 2,
-						damage = -50,
-						spread = 1						
-					}				
-					self.parts.wpn_fps_upg_triad_bullets_44ap.custom_stats = {
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						armor_piercing_add = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,						
-						rof_mult = 1.2				
-					}					
+					self.parts.wpn_fps_upg_triad_bullets_44ap.pcs = nil
 					self.parts.wpn_fps_upg_triad_bullets_44normal.stats = {
 						value = 10,
 						total_ammo_mod = 33,	

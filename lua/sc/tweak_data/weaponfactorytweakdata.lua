@@ -41144,6 +41144,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end	
 
 			if self.wpn_fps_snp_m1894 then 	--Pawcio's Marlin 1894
+				table.list_append(self.wpn_fps_snp_m1894.uses_parts, {
+						"wpn_fps_upg_o_box"
+					})
+					table.list_append(self.wpn_fps_snp_m1894.uses_parts, {
+						"wpn_fps_upg_o_leupold"
+					})																	
 				self.parts.wpn_fps_upg_m1894_supp_gemtech_gm45.stats = { 
 						value = 2,
 						suppression = 10,
@@ -43877,6 +43883,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end		
 
 		if self.wpn_fps_snp_obrez then 	-- Pawcio's Obrez
+			table.list_append(self.wpn_fps_snp_obrez.uses_parts, {
+						"wpn_fps_upg_o_box"
+					})
+					table.list_append(self.wpn_fps_snp_obrez.uses_parts, {
+						"wpn_fps_upg_o_leupold"
+					})																
 				self.parts.wpn_fps_upg_obrez_ns_supp.stats = {
 						value = 6,
 						suppression = 13,
@@ -46495,6 +46507,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 
 		if self.wpn_fps_lmg_mg4 then -- Pawcio's MG4
 		self.parts.wpn_fps_upg_mg4_vanilia_ads.pcs = nil
+		self.parts.wpn_fps_lmg_mg4_mag.stats = {
+				value = 1
+			}	
 		self.parts.wpn_fps_upg_mg4_mag_pouch.stats = {
 				value = 2,
 				spread_moving = 2,

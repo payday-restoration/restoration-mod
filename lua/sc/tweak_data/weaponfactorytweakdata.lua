@@ -3283,7 +3283,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -3,
 				extra_ammo = 15,
 				concealment = -1,
-				reload = -1
+				reload = -2
 			},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -8918,15 +8918,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_pis_g17.override = {
 			wpn_fps_upg_o_rmr = {parent = "slide"},
 			wpn_upg_o_marksmansight_rear = {parent = "slide"},
-			wpn_fps_pis_g26_body_custom = {			
-				unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_body_standard",
-				stats = {
-					value = 7,
-					recoil = 1,
-					concealment = -1,
-					damage = 2
-				},
-			},
 			wpn_upg_o_marksmansight_rear = {
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
@@ -8964,7 +8955,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_pis_g26_body_custom",
 			"wpn_fps_pis_g18c_g_ergo",
 			"wpn_fps_pis_g18c_co_comp_2",
 			"wpn_fps_pis_g18c_co_1",
@@ -9019,7 +9009,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				recoil = 1,
 				suppression = -2,
 				alert_size = -2,
-				spread_moving = 1,
 				concealment = -2
 			}
 		}
@@ -9038,7 +9027,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 3,
 				spread = 1,
-				spread_moving = 2,
 				concealment = -3
 			}
 		}
@@ -9081,8 +9069,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				concealment = -1,
-				extra_ammo = 16,
-				reload = -1
+				extra_ammo = 14,
+				reload = -2
 			},
 			animations = {
 				reload = "reload",
@@ -17175,7 +17163,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_pis_g26_pts/wpn_fps_pis_g26_b_custom",
 			stats = {
 				value = 4,
-				recoil = 1
+				spread = 1,
+				concealment = -1
 			},
 			dlc = "pd2_clan",
 			animations = {
@@ -17210,9 +17199,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 7,
 				recoil = 1,
-				spread = 0,
-				concealment = -1,
-				damage = 3
+				concealment = -1
 			},
 			dlc = "pd2_clan"
 		}
@@ -17282,9 +17269,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_crimefest_2014/oct22/weapons/wpn_fps_pis_g26_pts/wpn_fps_pis_g26_m_contour",
 			stats = {
 				value = 5,
-				extra_ammo = 2
+				extra_ammo = 2,
+				concealment = -1,
+				reload = -1
 			},
-			custom_stats = {rof_mult = 1.125},
 			dlc = "pd2_clan",
 			animations = {
 				reload = "reload",
@@ -17480,7 +17468,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					extra_ammo = 23,
 					concealment = -2,
-					reload = -1
+					reload = -2
 				}
 			},
 			wpn_fps_upg_o_rmr = {parent = "slide"}
@@ -17516,7 +17504,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_pis_g18c_m_mag_33rnd",
+			--"wpn_fps_pis_g18c_m_mag_33rnd",
 			"wpn_fps_pis_g18c_co_1",
 			"wpn_fps_pis_g18c_co_comp_2"
 		}
@@ -17568,8 +17556,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 5,
+					extra_ammo = 4,
 					concealment = -1,
-					extra_ammo = 4
+					reload = -1
 				}
 			},
 			wpn_fps_pis_g18c_m_mag_33rnd = {
@@ -17633,7 +17622,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_pis_g18c_m_mag_33rnd",
+			--"wpn_fps_pis_g18c_m_mag_33rnd",
 			"wpn_fps_pis_g18c_co_1",
 			"wpn_fps_pis_g18c_co_comp_2"
 		}
@@ -17831,9 +17820,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				stats = {
 					value = 2,
-					extra_ammo = 32,
 					concealment = -1,
-					reload = -1
+					extra_ammo = 28,
+					reload = -2
 				}
 			},
 			wpn_fps_pis_beretta_sl_std = {
@@ -23255,10 +23244,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_pis_g18c_m_mag_33rnd = {
 				stats = {
 					value = 6,
-					spread_moving = -3,
 					extra_ammo = 30,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				},
 				animations = {
 					reload = "reload_right",
@@ -23266,16 +23254,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload_left = "reload_left",
 					reload_not_empty_left = "reload_not_empty_left"
 				}
-			},
-			wpn_fps_pis_g26_body_custom = {
-				unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_body_standard",
-				stats = {
-					value = 7,
-					recoil = 1,
-					concealment = -1,
-					damage = 2
-				},
-			},
+			}
 		}
 		self.wpn_fps_pis_x_g17.default_blueprint = {
 			"wpn_fps_pis_g17_body_standard",
@@ -23304,7 +23283,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_pis_m3x",
 			"wpn_fps_upg_ns_ass_filter",
 			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_pis_g26_body_custom",
 			"wpn_fps_pis_g18c_m_mag_33rnd",
 			"wpn_fps_pis_g18c_co_comp_2",
 			"wpn_fps_pis_g18c_co_1",
@@ -29078,7 +29056,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 10,
 				concealment = -1,
-				reload = -1
+				reload = -2
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -29685,7 +29663,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 20,
 					concealment = -1,
-					reload = -1
+					reload = -2
 				}
 			}
 		}

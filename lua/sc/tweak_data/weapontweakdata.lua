@@ -11901,6 +11901,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk33.has_description = false
 		self.hk33.tactical_reload = 1
 		self.hk33.AMMO_MAX = 120
+		self.hk33.sounds.fire = "G3_fire_single"
+		self.hk33.sounds.fire_single = "g3_fire_single"
+		self.hk33.sounds.fire_auto = "g3_fire"
+		self.hk33.sounds.stop_fire = "g3_stop"		
 		self.hk33.CLIP_AMMO_MAX = 30
 		self.hk33.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.hk33.spread = {}

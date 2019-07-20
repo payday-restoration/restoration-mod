@@ -9628,13 +9628,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.mg4.kick.steelsight = self.new_m4.kick.standing
 			self.mg4.stats = {
 				damage = 30,
-				spread = 15,
-				recoil = 19,
-				spread_moving = 8,
+				spread = 16,
+				recoil = 20,
+				spread_moving = 9,
 				zoom = 1,
-				concealment = 2,
-				suppression = 7,
-				alert_size = 7,
+				concealment = 12,
+				suppression = 10,
+				alert_size = 10,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
@@ -12309,18 +12309,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.volmer.panic_suppression_chance = 0.1
 			self.volmer.stats = {
 				damage = 34,
-				spread = 15,
-				recoil = 18,
-				spread_moving = 10,
+				spread = 14,
+				recoil = 22,
+				spread_moving = 8,
 				zoom = 3,
-				concealment = 5,
+				concealment = 20,
 				suppression = 9,
 				alert_size = 9,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
 				reload = 11
-		}
+			}
 		end	
 
 	if self.mpx then --Pawcio's MPX

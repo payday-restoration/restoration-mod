@@ -43906,8 +43906,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					wpn_fps_upg_ammo_half_that = {
 						stats = {
 							value = 1,
-							total_ammo_mod = 20,
-							recoil = 0
+							concealment = -3,							
+							total_ammo_mod = 20
 						},
 						custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 					}
@@ -46507,7 +46507,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					stats = {
 						value = 1,
 						total_ammo_mod = 20,
-						recoil = 0
+						concealment = -3					
 					},
 					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
@@ -46530,14 +46530,15 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				stats = {
 						value = 1,
 						total_ammo_mod = 20,
-						recoil = 0
+						concealment = -3
 					},
 				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
 			}	
 		end	
 
-		if self.wpn_fps_lmg_mg4 then --Pawcio's MG 4
+		if self.wpn_fps_lmg_mg4 then -- Pawcio's MG4
+		self.parts.wpn_fps_upg_mg4_vanilia_ads.pcs = nil
 		self.parts.wpn_fps_upg_mg4_mag_pouch.stats = {
 				value = 2,
 				spread_moving = 2,
@@ -46550,15 +46551,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				recoil = 1,
 				concealment = -1,
 			}		
-		self.parts.wpn_fps_upg_mg4_irons.pcs = nil --wanted to have functional iron sights w/ attachments. I'll probably do something with that later.
 		self.parts.wpn_fps_upg_mg4_barrel_long.stats = {
 				value = 4,
-				spread = 2,
+				spread = 1,
 				concealment = -2
 			}						
 		self.parts.wpn_fps_upg_mg4_barrel_short.stats = {
-				value = 4,
-				spread = -2,
+				value = 6,
+				spread = -1,
 				concealment = 2
 			}									
 		self.parts.wpn_fps_upg_mg4_bipod.stats = {
@@ -46580,13 +46580,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = 2,
 				spread = -1								
 			}		
-		self.parts.wpn_fps_upg_mg4_scope.perks = {"scope"}		
 		table.list_append(self.wpn_fps_lmg_mg4.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
-		table.list_append(self.wpn_fps_lmg_mg4.default_blueprint, {
-				"wpn_fps_upg_mg4_irons"
-			})			
 		table.list_append(self.wpn_fps_lmg_mg4.uses_parts, {
 				"wpn_fps_upg_i_slower_rof"
 			})
@@ -46598,7 +46594,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				stats = {
 					value = 1,
 					total_ammo_mod = 20,
-					recoil = 0
+					concealment = -3
 				},
 				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}

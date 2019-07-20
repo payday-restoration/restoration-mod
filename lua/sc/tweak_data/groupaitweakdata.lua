@@ -6936,7 +6936,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support",
 				"shield"
 			},
-			FBI_tank = {
+			FBI_tank = { --set up to try and flank the player
 			    "reloadingretreat",
 				"murder",
 				"harass",
@@ -6946,23 +6946,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support",
 				"shield_cover"
 			},
-			BLACK_tank = {
+			BLACK_tank = { --set up to be hyper aggressive and charge the player
 			    "reloadingretreat",
 				"murder",
 				"charge",
 				"harass",
+				"aggressor",
 				"shield_cover"
 			},
-			SKULL_tank = {
+			SKULL_tank = { --set up as titan dozer lite
 			    "reloadingretreat",
 			    "ranged_fire",
 				"murder",
 				"harass",
-				"provide_support",
-				"provide_coverfire",
 				"shield_cover"
 			},
-			TIT_tank = {
+			TIT_tank = { --set up to use passive suppressive fire against players
 			    "reloadingretreat",
 				"spoocavoidance",
 				"murder",
@@ -7038,12 +7037,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
+				"harass",
 				"aggressor",
 				"provide_coverfire",
 				"shield_cover",
 				"provide_support"
 			},
 			ELITE_swat_rifle_flank = {
+				"reloadingretreat",
+			    "spoocavoidance",
 				"flank",
 				"smoke_grenade",
 				"flash_grenade",
@@ -7055,17 +7057,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			ELITE_swat_shotgun_flank = {
+				"reloadingretreat",
+			    "spoocavoidance",
 				"flank",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
-				"aggressor",
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",
 			    "hitnrun"
 			},
 			ELITE_heavy_flank = {
+				"reloadingretreat",
+			    "spoocavoidance",
 				"flank",
 				"smoke_grenade",
 				"flash_grenade",

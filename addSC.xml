@@ -48,7 +48,7 @@
 		<material_config	force="true" path="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" unload="true"/>
 		
 		<physic_effect		force="true" path="physic_effects/push_sphere" unload="true"/>
-		<bnk				force="true" path="soundbanks/regular_sfx" unload="true"/>
+		<!--<bnk				force="true" path="soundbanks/regular_sfx" unload="true"/>-->
 
 	
 	<!--Risk Level-->

@@ -6983,6 +6983,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"murder"
 			},
 			Cap_spring = {
+				"aggressor", --this is to help him not lag behind the player too much
 				"charge",
 				"murder"
 			},
@@ -7046,6 +7047,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ELITE_swat_rifle_flank = {
 				"reloadingretreat",
 			    "spoocavoidance",
+				"harass",
 				"flank",
 				"smoke_grenade",
 				"flash_grenade",
@@ -7059,6 +7061,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ELITE_swat_shotgun_flank = {
 				"reloadingretreat",
 			    "spoocavoidance",
+				"harass",
 				"flank",
 				"smoke_grenade",
 				"flash_grenade",
@@ -7071,6 +7074,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ELITE_heavy_flank = {
 				"reloadingretreat",
 			    "spoocavoidance",
+				"harass",
 				"flank",
 				"smoke_grenade",
 				"flash_grenade",

@@ -9126,8 +9126,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.noodle.AMMO_MAX = 120
 		self.noodle.CLIP_AMMO_MAX = 14
 		self.noodle.AMMO_PICKUP = self:_pickup_chance(120, 1)
-		self.noodle.fire_mode_data.fire_rate = 0.08571428571
-		self.noodle.single.fire_rate = 0.08571428571
+		self.noodle.fire_mode_data.fire_rate = 0.07142857142
+		self.noodle.single.fire_rate = 0.07142857142
 		self.noodle.spread.standing = 3
 		self.noodle.spread.crouching = 2
 		self.noodle.spread.steelsight = 1
@@ -9139,19 +9139,19 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.noodle.kick.steelsight = self.glock_17.kick.standing
 		self.noodle.stats = {
 			damage = 40,
-			spread = 16,
-			recoil = 21,
+			spread = 15,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 28,
-			suppression = 7,
-			alert_size = 7,
+			concealment = 26,
+			suppression = 8,
+			alert_size = 8,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
 		}
-		self.noodle.panic_suppression_chance = 0.0
+		self.noodle.panic_suppression_chance = 0.0		
 		end		
 
 	if self.heffy_556 then --Killerwolf & Germantaco's AK 101
@@ -9361,13 +9361,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 	end			
 
-	if self.obrez then --Pawcio's obrez Nagant M91/30 Obrez
+	if self.obrez then --Pawcio's Obrez
 		self.obrez.categories = {
 			"snp"
 		}		
 		self.obrez.has_description = true
 		self.obrez.desc_id = "bm_ap_weapon_sc_desc"
-		self.obrez.CLIP_AMMO_MAX = 10
+		self.obrez.CLIP_AMMO_MAX = 5
 		self.obrez.AMMO_MAX = 20
 		self.obrez.uses_clip = true
 		self.obrez.clip_capacity = 5		
@@ -11490,11 +11490,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end	
 
 	if self.px4 then --Pawcio's PX4 Storm
+		self.px4.tactical_reload = 1							
 		self.px4.AMMO_MAX = 120
-		self.px4.has_description = false				
-		self.px4.tactical_reload = 1						
-		self.px4.fire_mode_data.fire_rate = 0.1
-		self.px4.single.fire_rate = 0.1		
 		self.px4.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.px4.spread.standing = 3
 		self.px4.spread.crouching = 2
@@ -11502,24 +11499,26 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.px4.spread.moving_standing = 4
 		self.px4.spread.moving_crouching = 3
 		self.px4.spread.moving_steelsight = 2
+		self.px4.kick = {}
 		self.px4.kick.standing = self.glock_17.kick.standing
 		self.px4.kick.crouching = self.glock_17.kick.standing
 		self.px4.kick.steelsight = self.glock_17.kick.standing
+		self.px4.fire_mode_data.fire_rate = 0.07142857142
+		self.px4.single.fire_rate = 0.07142857142
 		self.px4.stats = {
-			damage = 39,
+			damage = 40,
 			spread = 17,
-			recoil = 17,
+			recoil = 21,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 29,
-			suppression = 9,
-			alert_size = 9,
+			concealment = 26,
+			suppression = 8,
+			alert_size = 8,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
 		}
-		self.px4.panic_suppression_chance = 0.0
 	end			
 
 	if self.p99 then --Pawcio's P99 AS
@@ -11556,11 +11555,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end					
 
 	if self.qsz92 then --Gambyt's QSZ 92
-		self.qsz92.AMMO_MAX = 80
-		self.qsz92.has_description = false				
+		self.qsz92.CLIP_AMMO_MAX = 14
 		self.qsz92.tactical_reload = 1								
+		self.qsz92.AMMO_MAX = 80
 		self.qsz92.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.qsz92.FIRE_MODE = "single"
+		self.qsz92.fire_mode_data = {}
+		self.qsz92.fire_mode_data.fire_rate = 0.07142857142
+		self.qsz92.single = {}
+		self.qsz92.single.fire_rate = 0.07142857142
 		self.qsz92.spread.standing = 3
 		self.qsz92.spread.crouching = 2
 		self.qsz92.spread.steelsight = 1
@@ -11571,14 +11574,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.qsz92.kick.crouching = self.glock_17.kick.standing
 		self.qsz92.kick.steelsight = self.glock_17.kick.standing
 		self.qsz92.stats = {
-			damage = 49,
-			spread = 18,
-			recoil = 19,
-			spread_moving = 8,
+			damage = 50,
+			spread = 16,
+			recoil = 21,
+			spread_moving = 7,
 			zoom = 3,
-			concealment = 26,
-			suppression = 8,
-			alert_size = 8,
+			concealment = 24,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
@@ -11589,7 +11592,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.glawk then --Germantaco's Glock 17 Gen 3
 		self.glawk.AMMO_MAX = 150
+		self.glawk.tactical_reload = 1										
 		self.glawk.has_description = false				
+		self.glawk.fire_mode_data.fire_rate = 0.0625
+		self.glawk.single.fire_rate = 0.0625		
 		self.glawk.tactical_reload = 1										
 		self.glawk.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.glawk.spread.standing = 3
@@ -11603,11 +11609,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.glawk.kick.steelsight = self.glock_17.kick.standing
 		self.glawk.stats = {
 			damage = 34,
-			spread = 15,
-			recoil = 21,
+			spread = 16,
+			recoil = 22,
 			spread_moving = 7,
 			zoom = 1,
-			concealment = 27,
+			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -11619,10 +11625,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end				
 
 	if self.hpb then --Gambyt's Browning HP
-		self.hpb.has_description = false				
-		self.hpb.tactical_reload = 1		
-		self.hpb.AMMO_MAX = 80
-		self.hpb.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.hpb.tactical_reload = 1											
+		self.hpb.fire_mode_data.fire_rate = 0.07692307692
+		self.hpb.single.fire_rate = 0.07692307692
+		self.hpb.CLIP_AMMO_MAX = 10
+		self.hpb.AMMO_MAX = 60
+		self.hpb.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.hpb.spread.standing = 3
 		self.hpb.spread.crouching = 2
 		self.hpb.spread.steelsight = 1
@@ -11633,12 +11641,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hpb.kick.crouching = self.glock_17.kick.standing
 		self.hpb.kick.steelsight = self.glock_17.kick.standing
 		self.hpb.stats = {
-			damage = 47,
+			damage = 75,
 			spread = 18,
-			recoil = 18,
+			recoil = 20,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 26,
+			concealment = 23,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -11646,7 +11654,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.hpb.panic_suppression_chance = 0.0		
+		self.hpb.panic_suppression_chance = 0.0			
 	end				
 
 	if self.peepee then --Alcat's PP 2000
@@ -11755,41 +11763,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aug9mm.panic_suppression_chance = 0.0	
 	end													
 
-	if self.dp28 then --Killerwolf & Kitsune Jimmy's DP-28 
-		self.dp28.categories = {"assault_rifle"}	
-		self.dp28.has_description = false		
-		self.dp28.AMMO_MAX = 120
-		self.dp28.AMMO_PICKUP = self:_pickup_chance(120, 2)
-		self.dp28.spread.standing = 3
-		self.dp28.spread.crouching = 2
-		self.dp28.spread.steelsight = 1
-		self.dp28.spread.moving_standing = 4
-		self.dp28.spread.moving_crouching = 3
-		self.dp28.spread.moving_steelsight = 2
-		self.dp28.stats = {
-		damage = 50,
-		spread = 15,
-		recoil = 17,
-		spread_moving = 9,
-		zoom = 3,
-		concealment = 8,
-		suppression = 5,
-		alert_size = 5,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 1,
-		reload = 11
-		}
-		self.dp28.panic_suppression_chance = 0.0
-	end						
-
 	if self.g3m203 then --Pawcio's G3/M203
+		self.g3m203.AMMO_MAX = 40 --oh god
 		self.g3m203.desc_id = "bm_m203_weapon_sc_desc"
 		self.g3m203.has_description = true
-		self.g3m203.tactical_reload = 1
-		self.g3m203.AMMO_MAX = 80
-		self.g3m203.CLIP_AMMO_MAX = 30
-		self.g3m203.AMMO_PICKUP = self:_pickup_chance(80, 2)
+		self.g3m203.tactical_reload = 1		
+		self.g3m203.CLIP_AMMO_MAX = 20
+		self.g3m203.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.g3m203.fire_mode_data.fire_rate = 0.1
 		self.g3m203.CAN_TOGGLE_FIREMODE = true
 		self.g3m203.auto = {}
@@ -11802,19 +11782,20 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3m203.spread.moving_crouching = 3
 		self.g3m203.spread.moving_steelsight = 2
 		self.g3m203.stats = {
-			damage = 50,
-			spread = 18,
-			recoil = 17,
+			damage = 100,
+			spread = 15,
+			recoil = 20,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 8,
-			suppression = 7,
-			alert_size = 7,
+			concealment = 16,
+			suppression = 5,
+			alert_size = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
 			reload = 11
 		}
+		self.g3m203.panic_suppression_chance = 0.0
 		--Explosive GL
 		self.g3_m203gl.spread.standing = 3
 		self.g3_m203gl.spread.crouching = 2
@@ -11918,7 +11899,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk33.sounds.fire_single = "g3_fire_single"
 		self.hk33.sounds.fire_auto = "g3_fire"
 		self.hk33.sounds.stop_fire = "g3_stop"				
-		self.hk33.CLIP_AMMO_MAX = 30
 		self.hk33.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.hk33.spread = {}
 		self.hk33.spread.standing = 3
@@ -12220,12 +12200,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.vp70.kick.crouching = self.glock_17.kick.standing
 			self.vp70.kick.steelsight = self.glock_17.kick.standing
 			self.vp70.stats = {
-				damage = 31,
-				spread = 15,
+				damage = 34,
+				spread = 16,
 				recoil = 22,
-				spread_moving = 9,
+				spread_moving = 5,
 				zoom = 3,
-				concealment = 29,
+				concealment = 27,
 				suppression = 9,
 				alert_size = 9,
 				extra_ammo = 101,
@@ -12249,7 +12229,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.x_vp70.kick.crouching = self.glock_17.kick.standing
 			self.x_vp70.kick.steelsight = self.glock_17.kick.standing
 			self.x_vp70.stats = {
-				damage = 31,
+				damage = 34,
 				spread = 15,
 				recoil = 22,
 				spread_moving = 9,
@@ -12572,10 +12552,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aps.stats = {
 			damage = 34,
 			spread = 17,
-			recoil = 16,
+			recoil = 17,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 28,
+			concealment = 26,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,

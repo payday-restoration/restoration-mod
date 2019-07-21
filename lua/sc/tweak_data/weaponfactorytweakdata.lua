@@ -46689,12 +46689,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		end
 
 		if self.wpn_fps_pis_sonny then --Alcat's Bren Ten
-			table.list_append( self.wpn_fps_pis_sonny.uses_parts, {
-				"wpn_fps_upg_ammo_45custom"
-			})
-			table.list_append( self.wpn_fps_pis_x_sonny.uses_parts, {
-				"wpn_fps_upg_ammo_45custom"
-			})
 			self.parts.wpn_fps_pis_sonny_sl_runt.stats = {
 				spread = -1,
 				recoil = -1,

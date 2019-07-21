@@ -12675,7 +12675,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sonny.kick.crouching = self.glock_17.kick.standing
 		self.sonny.kick.steelsight = self.glock_17.kick.standing
 		self.sonny.stats = {
-			damage = 72,
+			damage = 75,
 			spread = 16,
 			recoil = 14,
 			spread_moving = 8,
@@ -12702,7 +12702,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sonny.kick.crouching = self.glock_17.kick.standing
 		self.x_sonny.kick.steelsight = self.glock_17.kick.standing
 		self.x_sonny.stats = {
-			damage = 72,
+			damage = 75,
 			spread = 16,
 			recoil = 14,
 			spread_moving = 8,

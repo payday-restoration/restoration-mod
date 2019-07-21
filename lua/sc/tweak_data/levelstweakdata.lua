@@ -183,6 +183,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cane.package = {"packages/outfitassets", "packages/cane"}
 		--reminder to add the biker vo package here
 		self.cane.player_sequence = "spawn_prop_winter_suit"
+								
+		self.mus.package = {"packages/outfitassets", "packages/narr_mus"}
+		self.mus.player_sequence = "spawn_prop_sneak_suit"
 		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}

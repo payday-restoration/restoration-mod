@@ -138,6 +138,7 @@ function restoration:Init()
 		"framing_frame_3",  --Framing Frame Day 3
 		"welcome_to_the_jungle_2",  --Big oil day 2
 		"cane",  --Santa's Workshop
+		"mus",  --The Diamond
 		"mad" --Boiling Point	
 		
 		--holding loud suit levels here in case we need an extra check for them in the future

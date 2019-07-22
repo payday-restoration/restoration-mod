@@ -23,4 +23,6 @@ Restoration Mod discord: https://discord.gg/5xu9WCC
 
 Restoration Mod soundtrack: https://soundcloud.com/vxwolf/sets/restoration-mod-soundtrack
 
+Restoration Steam Group (For changelog): https://steamcommunity.com/groups/restorationmod
+
 This github is open to the public, and you are free to submit issue reports or pull requests, where they may find their way into the `dev` branch.

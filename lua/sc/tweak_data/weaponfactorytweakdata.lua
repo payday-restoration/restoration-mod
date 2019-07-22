@@ -45393,44 +45393,43 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_i_autofire"
 			})		
 			self.parts.wpn_fps_ass_bar_m_extended.stats = {
-					value = 0,
-					reload = -3,
-					extra_ammo = 20,
-					concealment = -2
-				}				
+				value = 0,
+				reload = -3,
+				extra_ammo = 20,
+				concealment = -2
+			}				
 			self.parts.wpn_fps_ass_bar_b_para.stats = {
-					value = 1,
-					concealment = 2,
-					recoil = -1,
-					spread = -1										
-				}				
+				value = 1,
+				concealment = 2,
+				recoil = -1,
+				spread = -1										
+			}				
 			self.parts.wpn_fps_ass_bar_carryhandle.stats = {
-					value = 1,
-					concealment = -1,
-					recoil = 1
-				}								
+				value = 1,
+				concealment = -1,
+				recoil = 1
+			}
+			self.parts.wpn_fps_ass_bar_bipod.stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -5
+			}	
 			self.parts.wpn_fps_ass_bar_fg_sleeve.stats = {
-					value = 1,
-					concealment = 1,
-					recoil = -1,
-					spread = 1										
-				}	
+				value = 1,
+				concealment = 1,
+				recoil = -1,
+				spread = 1										
+			}	
 			self.parts.wpn_fps_ass_bar_ns_cutts.stats = {
-					value = 1,
-					spread_moving = 1,
-					spread = 1,
-					concealment = -2
-				}								
-			self.parts.wpn_fps_ass_bar_ns_cutts.stats = {
-					value = 1,
-					spread_moving = 1,
-					spread = 1,
-					concealment = -2
-				}																
+				value = 1,
+				spread_moving = 1,
+				spread = 1,
+				concealment = -2
+			}															
 			self.parts.wpn_fps_ass_bar_g_monitor.stats = {
-					value = 1,
-					spread = 1
-				}
+				value = 1,
+				spread = 1
+			}
 			self.wpn_fps_ass_bar.override = {
 				wpn_fps_snp_msr_ns_suppressor = {
 					stats = {
@@ -45449,10 +45448,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = -25,
+						total_ammo_mod = 25,
 						recoil = 0
 					},
-					custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = .80},	
 				}
 			}					
 			end	
@@ -46523,6 +46522,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = 1,
 				concealment = -2
 			}
+		self.parts.wpn_fps_upg_ultimax_stanag.stats = {
+			spread = 1,
+			recoil = -2,
+			concealment = 4,
+			extra_ammo = -70,
+			reload = 4
+		}
 		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
 			"wpn_fps_upg_o_specter"
 			})
@@ -46578,7 +46584,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = 20
+					total_ammo_mod = 20,
+					concealment = -3
 				},
 				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 			}
@@ -46815,6 +46822,111 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				recoil = 1,
 				reload = 2
 			}
+		end
+
+		if self.wpn_fps_lmg_dp28 then --Killerwolf's DP-28 
+			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
+				"wpn_fps_upg_i_slower_rof"
+			})
+			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
+				"wpn_fps_upg_ammo_half_that"
+			})			
+			table.list_append(self.wpn_fps_lmg_dp28.uses_parts, {
+				"wpn_fps_upg_i_faster_rof"
+			})
+			self.parts.wpn_fps_lmg_dp28_bipod.stats = {
+					value = 2, 
+					zoom = 1, 
+					concealment = -5
+				}
+			self.parts.wpn_fps_lmg_dp28_tripod_top.stats = {
+					value = 3, 
+					zoom = 1, 
+					recoil = -1,
+					spread = 2,
+					concealment = -8,
+					total_ammo_mod = 20
+				}
+			self.parts.wpn_fps_lmg_dp28_tripod_top.custom_stats = {
+				ammo_pickup_min_mul = 1.2,
+				ammo_pickup_max_mul = 1.2,
+				movement_speed = 0.8
+			}
+			self.parts.wpn_fps_lmg_dp28_tripod_top.forbids = {"wpn_fps_upg_ammo_half_that", "wpn_fps_lmg_dp28_barrel_dpm36"}				
+			self.parts.wpn_fps_lmg_dp28_barrel_lord.stats = {
+					recoil = 1,
+					spread = -1,										
+					concealment = 1
+				}				
+			self.parts.wpn_fps_lmg_dp28_barrel_dpm36.stats = {
+					recoil = -1,
+					spread = 1,										
+					concealment = 2
+				}
+			self.parts.wpn_fps_lmg_dp28_barrel_dpm36.forbids = {"wpn_fps_upg_ammo_half_that", "wpn_fps_lmg_dp28_m_dpm35", "wpn_fps_lmg_dp28_tripod_top"}
+			self.parts.wpn_fps_lmg_dp28_g_dt.stats = {
+					value = 1,
+					concealment = 1
+				}
+			self.parts.wpn_fps_lmg_dp28_g_dpm.stats = {
+					value = 1,
+					recoil = 1
+				}					
+			self.parts.wpn_fps_lmg_dp28_stock_dt.stats = {
+					value = 1,
+					spread = -1,															
+					concealment = 2
+				}	
+			self.parts.wpn_fps_lmg_dp28_stock_dpm.stats = {
+					value = 1,
+					spread = 2,																				
+					concealment = -1
+				}					
+			self.parts.wpn_fps_lmg_dp28_g_dpm.stats = {
+					value = 1,
+					spread = 1
+				}												
+			self.parts.wpn_fps_lmg_dp28_barrel_dt.stats = {
+					recoil = -1,
+					spread = 1,					
+					concealment = -2
+				}
+			self.parts.wpn_fps_lmg_dp28_m_dpm35.stats = {
+					extra_ammo = 153,
+					concealment = -5
+				}		
+			self.parts.wpn_fps_lmg_dp28_m_dpm36.stats = {
+					extra_ammo = -17,
+					recoil = -1,
+					concealment = 1,					
+					reload = 2
+				}																		
+			self.parts.wpn_fps_lmg_dp28_m_dt.stats = {
+					extra_ammo = 13,
+					recoil = -1,
+					spread = -1,					
+					concealment = -3
+				}		
+			self.parts.wpn_fps_lmg_dp28_g_dpm.stats = {
+					value = 1,
+					recoil = 1
+				}	
+			self.parts.wpn_fps_lmg_dp28_so_lord.stats = nil
+			self.parts.wpn_fps_lmg_dp28_so_pr.stats = nil
+			self.parts.wpn_fps_lmg_dp28_g_dt.stats = {
+					value = 1,
+					spread = 1
+				}											
+			self.wpn_fps_lmg_dp28.override = {
+				wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = 20,
+					concealment = -3
+				},
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+			}
+		}				
 		end
 
 		--Incendiary Slugs are awesome--

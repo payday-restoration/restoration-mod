@@ -206,6 +206,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_ass_galil_m_drum"] = "75 Round Drum Magazine",				
 		["bm_wp_wpn_fps_smg_calico_body_carbine_desc"] = "Custom medium pistol round conversion. Min and Max pickup rate: 0.8x", 
 		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Custom heavy pistol round conversion. Min and Max pickup rate: 0.64x",
+		["bm_wp_wpn_fps_lmg_dp28_tripod_top_desc"] = "Tripod with additional ammo mounted to the side.\nThe Tripod is carried on the back while not in use.\nHas a movement speed penalty of 20%",
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 

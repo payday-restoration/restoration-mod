@@ -9361,6 +9361,39 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 	end			
 
+	if self.sr3m then --Pawcio's SR3M Vikhr
+		self.sr3m.use_data.selection_index = 1
+		self.sr3m.tactical_reload = 1		
+		self.sr3m.categories = {
+			"assault_rifle"
+		}
+		self.sr3m.AMMO_MAX = 120
+		self.sr3m.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.sr3m.fire_mode_data.fire_rate = 0.06666666666
+		self.sr3m.auto.fire_rate = 0.06666666666
+		self.sr3m.spread.standing = 3
+		self.sr3m.spread.crouching = 2
+		self.sr3m.spread.steelsight = 1
+		self.sr3m.spread.moving_standing = 4
+		self.sr3m.spread.moving_crouching = 3
+		self.sr3m.spread.moving_steelsight = 2
+		self.sr3m.panic_suppression_chance = 0.0
+		self.sr3m.stats = {
+			damage = 40,
+			spread = 16,
+			recoil = 19,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 20,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end				
+
 	if self.obrez then --Pawcio's Obrez
 		self.obrez.categories = {
 			"snp"
@@ -9832,13 +9865,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pecheneg.kick.steelsight = self.new_m4.kick.standing
 			self.pecheneg.stats = {
 				damage = 34,
-				spread = 19,
-				recoil = 16,
+				spread = 18,
+				recoil = 21,
 				spread_moving = 9,
 				zoom = 1,
-				concealment = 2,
-				suppression = 7,
-				alert_size = 7,
+				concealment = 18,
+				suppression = 9,
+				alert_size = 9,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
@@ -9852,7 +9885,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"smg"
 			}
 			self.m60.has_description = false
-			self.m60.fire_mode_data.fire_rate = 0.12
+			self.m60.fire_mode_data.fire_rate = 0.0923076923
+			self.m60.auto.fire_rate = 0.0923076923		
 			self.m60.AMMO_MAX = 150
 			self.m60.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.m60.panic_suppression_chance = 0.1
@@ -9867,11 +9901,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m60.kick.steelsight = self.new_m4.kick.standing
 			self.m60.stats = {
 				damage = 40,
-				spread = 18,
-				recoil = 20,
+				spread = 17,
+				recoil = 22,
 				spread_moving = 9,
 				zoom = 1,
-				concealment = 5,
+				concealment = 18,
 				suppression = 7,
 				alert_size = 7,
 				extra_ammo = 101,
@@ -10022,11 +10056,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.rpd.kick.steelsight = self.new_m4.kick.standing
 			self.rpd.stats = {
 				damage = 40,
-				spread = 12,
-				recoil = 20,
-				spread_moving = 6,
+				spread = 19,
+				recoil = 22,
+				spread_moving = 9,
 				zoom = 1,
-				concealment = 5,
+				concealment = 18,
 				suppression = 7,
 				alert_size = 7,
 				extra_ammo = 101,
@@ -10117,10 +10151,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"lmg",
 				"smg"
 			}
-			self.hcar.CLIP_AMMO_MAX = 20
-			self.hcar.AMMO_MAX = 80
+			self.hcar.AMMO_MAX = 120
 			self.hcar.has_description = false																					
-			self.hcar.AMMO_PICKUP = self:_pickup_chance(80, 2)
+			self.hcar.AMMO_PICKUP = self:_pickup_chance(120, 2)
 			self.hcar.fire_mode_data.fire_rate = 0.12
 			self.hcar.CAN_TOGGLE_FIREMODE = true
 			self.hcar.FIRE_MODE = "auto"
@@ -10136,12 +10169,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hcar.kick.crouching = self.new_m4.kick.standing
 			self.hcar.kick.steelsight = self.new_m4.kick.standing
 			self.hcar.stats = {
-				damage = 100,
-				spread = 20,
-				recoil = 17,
+				damage = 50,
+				spread = 17,
+				recoil = 18,
 				spread_moving = 5,
 				zoom = 3,
-				concealment = 5,
+				concealment = 20,
 				suppression = 5,
 				alert_size = 5,
 				extra_ammo = 101,
@@ -10167,7 +10200,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.bar.auto = {}
 			self.bar.auto.fire_rate = 0.12			
 			self.bar.AMMO_PICKUP = self:_pickup_chance(120, 2)
-			self.bar.CAN_TOGGLE_FIREMODE = true
 			self.bar.spread.standing = 3
 			self.bar.spread.crouching = 2
 			self.bar.spread.steelsight = 1
@@ -11047,10 +11079,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.f2000.fire_mode_data.fire_rate = 0.07058823529
 		self.f2000.CAN_TOGGLE_FIREMODE = true
 		self.f2000.auto = {}
-		self.f2000.sounds.fire = "vhs_fire_single"
-		self.f2000.sounds.fire_single = "vhs_fire_single"
-		self.f2000.sounds.fire_auto = "vhs_fire"
-		self.f2000.sounds.stop_fire = "vhs_stop"
 		self.f2000.auto.fire_rate = 0.07058823529
 		self.f2000.spread.standing = 3
 		self.f2000.spread.crouching = 2
@@ -11305,10 +11333,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.l115.stats = {
 			damage = 200,
 			spread = 20,
-			recoil = 14,
+			recoil = 16,
 			spread_moving = 8,
 			zoom = 1,
-			concealment = 5,
+			concealment = 13,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,
@@ -11895,10 +11923,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk33.has_description = false
 		self.hk33.tactical_reload = 1
 		self.hk33.AMMO_MAX = 120
-		self.hk33.sounds.fire = "G3_fire_single"
-		self.hk33.sounds.fire_single = "g3_fire_single"
-		self.hk33.sounds.fire_auto = "g3_fire"
-		self.hk33.sounds.stop_fire = "g3_stop"				
 		self.hk33.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.hk33.spread = {}
 		self.hk33.spread.standing = 3
@@ -12116,10 +12140,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.AMMO_PICKUP = self:_pickup_chance(200, 2)			
 			self.fmg9.AMMO_MAX = 200
 			self.fmg9.spread.standing = 3
-			self.fmg9.sounds.fire = "sr2_fire_single"
-			self.fmg9.sounds.fire_single = "sr2_fire_single"
-			self.fmg9.sounds.fire_auto = "sr2_fire"
-			self.fmg9.sounds.stop_fire = "sr2_stop"			
 			self.fmg9.spread.crouching = 2
 			self.fmg9.spread.steelsight = 1
 			self.fmg9.spread.moving_standing = 4

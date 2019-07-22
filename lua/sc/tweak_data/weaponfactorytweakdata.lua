@@ -40005,7 +40005,48 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -1,
 					reload = 2				
 				}																			
-			end									
+			end	
+
+		if self.wpn_fps_ass_sr3m then --Pawcio's SR3M Vikhr
+			self.parts.wpn_fps_upg_sr3m_vertgrip_cover.stats = {
+					value = 0,
+					spread = -1,
+					concealment = 2
+				}			
+			self.parts.wpn_fps_upg_sr3m_supp_groza.stats = {
+					value = 4,
+					suppression = 10,
+					alert_size = 10,
+					spread = -1,
+					recoil = 2,
+					concealment = -1
+				}
+			self.parts.wpn_fps_upg_sr3m_supp_groza.stats = {
+					value = 4,
+					suppression = 10,
+					alert_size = 10,
+					spread = -1,
+					recoil = 2,
+					concealment = -1
+				}				
+			self.parts.wpn_fps_upg_sr3m_mag_20rnd.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -10
+				}				
+			self.parts.wpn_fps_upg_sr3m_nostock.stats = {
+					concealment = 3,
+					recoil = -2,
+					value = 0
+				}	
+			self.parts.wpn_fps_upg_sr3m_stock_caam4.stats = {
+					value = 1,
+					spread_moving = -1,
+					spread = 1,
+					concealment = -1
+				}												
+			end
 
 	if self.wpn_fps_shot_m1912 then --Pawcio's Winchester M1912
 		self.parts.wpn_fps_upg_m1912_ns_cutts.stats = {
@@ -41506,13 +41547,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_smg_mac10_vg_strap.stats = { 
 						value = 0
 					}		
-				self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil --weaponlib doesn't work with resmod at the moment so??? 
+				self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil
 				end		
 
 		if self.parts.wpn_fps_smg_mp5_fg_stripped then -- Alcat's MP5K Foregrip (custom animation stuff is weird atm, can't use ironsights.)
 				self.parts.wpn_fps_smg_mp5_fg_stripped.stats = { 
 						value = 4,
-						damage = 2,
 						spread_moving = -2,
 						recoil = 2,
 						concealment = 2
@@ -41532,7 +41572,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						"wpn_fps_upg_gl_m203",												
 						"wpn_fps_upg_gl_m203_inc"																	
 					}									
-			end	
+				end	
 		
 		if self.parts.wpn_fps_upg_g3_bipod then --Alcat's Various Attachments for the G3
 				self.parts.wpn_fps_upg_g3_bipod.stats = {		
@@ -41607,26 +41647,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		
 		if self.parts.wpn_fps_ass_galil_m_35r then -- Alcat's Various Attachments for the Galil
+				self.parts.wpn_fps_ass_galil_m_762c.pcs = nil
 				self.parts.wpn_fps_ass_galil_m_35r.stats = {
 						value = 1,			
 						extra_ammo = 5,										
 						concealment = -1
 					}
-				self.parts.wpn_fps_upg_galil_bipod.stats = {
-						value = 1, 
-						zoom = 1, 
-						concealment = -5
-					}				
-				self.parts.wpn_fps_ass_galil_o_galatz.stats = {
-						value = 8,
-						zoom = 5,
-						spread_moving = -5,
-						concealment = -4
-					}				
-				self.parts.wpn_fps_upg_galil_o_galatz_backup.stats = {
-						value = 1,
-						gadget_zoom = 3
-					}															
+				self.parts.wpn_fps_upg_galil_bipod.pcs = nil
+				self.parts.wpn_fps_ass_galil_o_galatz.pcs = nil
 				self.parts.wpn_fps_ass_galil_m_762c.stats = {
 						value = 0,
 						spread = 2,
@@ -41639,7 +41667,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = -10,
 						concealment = 3
 					}
-				self.parts.wpn_fps_ass_galil_m_762c.custom_stats = {ammo_pickup_min_mul = 0.6, ammo_pickup_max_mul = 0.6}					
+				self.parts.wpn_fps_ass_galil_m_762c.custom_stats = {ammo_pickup_min_mul = 0.53, ammo_pickup_max_mul = 0.53}					
 				self.parts.wpn_fps_ass_galil_m_drum.stats = {
 						value = 5,
 						reload = -4,						
@@ -45411,10 +45439,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = -25,
-						recoil = 0
+						total_ammo_mod = 25,
+						concealment = -3
 					},
-					custom_stats = {ammo_pickup_min_mul = 0.75, ammo_pickup_max_mul = 0.75, movement_speed = 1.25},	
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},	
 				}
 			}	
 		end
@@ -46363,34 +46391,41 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
-			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
-				"wpn_fps_upg_i_slower_rof"
+			table.list_append(self.wpn_fps_lmg_m60.default_blueprint, {
+				"wpn_fps_upg_m60_irons"
 			})
-			table.list_append(self.wpn_fps_lmg_m60.uses_parts, {
-				"wpn_fps_upg_i_faster_rof"
-			})	
-		self.wpn_fps_lmg_m60.override = { 
-			wpn_fps_upg_ammo_half_that = {
-				stats = {
-					value = 1,
-					total_ammo_mod = 20,
-					recoil = 0
-				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+			self.parts.wpn_fps_upg_m60_irons.pcs = nil
+			self.wpn_fps_lmg_m60.override = { 
+				wpn_fps_upg_ammo_half_that = {
+					stats = {
+						value = 1,
+						total_ammo_mod = 20
+					},
+					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
 			}				
 		end		
 
-		if self.wpn_fps_lmg_pecheneg then -- Alcat's Pecheneg
+		if self.wpn_fps_lmg_pecheneg then -- Alcat's PKP Pecheneg
 			table.list_append(self.wpn_fps_lmg_pecheneg.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
 			self.parts.wpn_fps_lmg_pecheneg_a_762.pcs = nil
 			self.parts.wpn_fps_lmg_pecheneg_b_long.stats = {
-				value = 0,
-				concealment = -1,
-				recoil = 2
+				value = 4,
+				spread = 1,
+				concealment = -2
 			}			
+			self.wpn_fps_lmg_pecheneg.override = {
+				wpn_fps_upg_ammo_half_that = {
+					stats = {
+						value = 1,
+						total_ammo_mod = 11,
+						concealment = -3
+					},
+				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.8},	
+				}
+			}					
 		end				
 
 	if self.wpn_fps_pis_m1895 then --Pawcio's Mosin M1895
@@ -46440,6 +46475,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		table.list_append(self.wpn_fps_lmg_rpd.uses_parts, {
 				"wpn_fps_upg_ammo_half_that"
 			})
+			table.list_append(self.wpn_fps_lmg_rpd.default_blueprint, {
+				"wpn_fps_upg_rpd_irons"
+			})			
 		self.parts.wpn_fps_upg_rpd_irons.pcs = nil
 		self.parts.wpn_fps_upg_rpd_bipod.stats = {
 				value = 0, 
@@ -46450,8 +46488,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = 20,
-						concealment = -3	
+						total_ammo_mod = 20
 					},
 					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
@@ -46473,8 +46510,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 						value = 1,
-						total_ammo_mod = 20,
-						concealment = -3
+						total_ammo_mod = 20
 					},
 				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
@@ -46565,7 +46601,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			concealment = 4,
 			extra_ammo = -70,
 			reload = 4
-		}
+			}
 		table.list_append(self.wpn_fps_lmg_ultimax.uses_parts, {
 			"wpn_fps_upg_o_specter"
 			})

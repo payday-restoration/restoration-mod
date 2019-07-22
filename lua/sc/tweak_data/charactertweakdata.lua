@@ -12507,6 +12507,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_set_sm_wish()
+		if not PackageManager:loaded("packages/zealassets") then
+			PackageManager:load("packages/zealassets")
+		end
 		if SystemInfo:platform() == Idstring("PS3") then
 			self:_multiply_all_hp(2, 0.915)
 		else

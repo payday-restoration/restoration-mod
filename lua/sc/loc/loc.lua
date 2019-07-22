@@ -18,7 +18,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
 		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality as a pea-shooting lead vomiting machine, but its block-like aesthetic makes it look a hell of a lot cooler.",				
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",				
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",			
@@ -200,12 +200,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",	
 		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can penetrate both armor and walls.",		
 		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",								
-		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extra Extended Magazine",	
+		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extend-o Magazine",	
 		["bm_menu_weirdmagthing"] = "Magwell Grip",		
 		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",			
 		["bm_wp_wpn_fps_ass_galil_m_drum"] = "75 Round Drum Magazine",				
 		["bm_wp_wpn_fps_smg_calico_body_carbine_desc"] = "Custom medium pistol round conversion. Min and Max pickup rate: 0.8x", 
 		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Custom heavy pistol round conversion. Min and Max pickup rate: 0.64x",
+		["bm_wp_wpn_fps_lmg_dp28_tripod_top_desc"] = "A tripod with additional ammo mounted on its side.\nReduces movement speed by 20% when equipped.",		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 
@@ -289,7 +290,7 @@ elseif ai_type == m and difficulty_index <= 7 then
 elseif ai_type == m then	
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Omnia Assault in Progress",
+			["hud_assault_assault"] = "OMNIA Assault in Progress",
 			["hud_assault_alpha"] = "OMNIA ASSAULT"
 		})
 	end)		
@@ -356,7 +357,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_fatroll"] = "Fat Roll",
 		["mutator_fatroll_desc"] = "Damage Grace disabled.",
-		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0. Meaning there is no delay on instances of damage.",
+		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0, meaning that there is no delay on instances of damage.",
 				
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
@@ -378,7 +379,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
 		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 15% chance to become a Titan Cloaker.",
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a Titan HRT.",
-		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be a semi-automatic shotgun wielding Bulldozer and whenever a Black Bulldozer spawns, there is a chance that it will be a Medic Bulldozer.",
+		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be replaced by a Bulldozer wielding an M1014, and whenever a Black Bulldozer spawns, there is a chance that it will be replaced by a Medic Bulldozer..",
 		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
 
 		["bm_menu_skill"] = "Crew Boosts",

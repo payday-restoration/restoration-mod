@@ -9419,7 +9419,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203.kick.crouching = self.new_m4.kick.standing
 			self.scar_m203.kick.steelsight = self.new_m4.kick.standing
 			self.scar_m203.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 13,
@@ -9871,7 +9871,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 20,
 				spread_moving = 9,
 				zoom = 1,
-				concealment = 2,
+				concealment = 5,
 				suppression = 7,
 				alert_size = 7,
 				extra_ammo = 101,
@@ -10026,7 +10026,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 20,
 				spread_moving = 6,
 				zoom = 1,
-				concealment = 2,
+				concealment = 5,
 				suppression = 7,
 				alert_size = 7,
 				extra_ammo = 101,
@@ -10042,8 +10042,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.yayo.desc_id = "bm_m203_weapon_sc_desc"
 			self.yayo.has_description = true					
 			self.yayo.fire_mode_data.fire_rate = 0.08571428571
-			self.yayo.AMMO_MAX = 120
-			self.yayo.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.yayo.AMMO_MAX = 150
+			self.yayo.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.yayo.spread.standing = 3
 			self.yayo.spread.crouching = 2
 			self.yayo.spread.steelsight = 1
@@ -10159,14 +10159,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"smg"
 			}
 			self.bar.CLIP_AMMO_MAX = 20
-			self.bar.AMMO_MAX = 80
+			self.bar.AMMO_MAX = 120
 			self.bar.has_description = false
 			self.bar.fire_mode_data.fire_rate = 0.12
 			self.bar.CAN_TOGGLE_FIREMODE = true
 			self.bar.FIRE_MODE = "auto"
 			self.bar.auto = {}
 			self.bar.auto.fire_rate = 0.12			
-			self.bar.AMMO_PICKUP = self:_pickup_chance(80, 2)
+			self.bar.AMMO_PICKUP = self:_pickup_chance(120, 2)
 			self.bar.CAN_TOGGLE_FIREMODE = true
 			self.bar.spread.standing = 3
 			self.bar.spread.crouching = 2
@@ -10178,12 +10178,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.bar.kick.crouching = self.new_m4.kick.standing
 			self.bar.kick.steelsight = self.new_m4.kick.standing
 			self.bar.stats = {
-				damage = 100,
-				spread = 19,
-				recoil = 16,
+				damage = 50,
+				spread = 18,
+				recoil = 17,
 				spread_moving = 5,
 				zoom = 3,
-				concealment = 5,
+				concealment = 20,
 				suppression = 5,
 				alert_size = 5,
 				extra_ammo = 101,
@@ -12261,7 +12261,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scarl.kick.crouching = self.new_m4.kick.standing
 			self.scarl.kick.steelsight = self.new_m4.kick.standing
 			self.scarl.stats = {
-				damage = 35,
+				damage = 40,
 				spread = 15,
 				recoil = 20,
 				spread_moving = 13,
@@ -12595,7 +12595,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 24,
 			spread_moving = 6,
 			zoom = 2,
-			concealment = 15,
+			concealment = 18,
 			suppression = 8,
 			alert_size = 8,
 			extra_ammo = 101,
@@ -12809,14 +12809,45 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 15,
 			zoom = 1,
 			concealment = 25,
-			suppression = 10,
-			alert_size = 10,
+			suppression = 9,
+			alert_size = 9,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 3,
 			reload = 11
 		}
 		self.calico.panic_suppression_chance = 0.1
+	end
+
+	if self.dp28 then --Killerwolf & Kitsune Jimmy's DP-28 "Its an lmg I swear this time"
+		self.dp28.categories = {
+			"lmg",
+			"smg"
+		}	
+		self.dp28.has_description = false		
+		self.dp28.AMMO_MAX = 150
+		self.dp28.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.dp28.spread.standing = 3
+		self.dp28.spread.crouching = 2
+		self.dp28.spread.steelsight = 1
+		self.dp28.spread.moving_standing = 4
+		self.dp28.spread.moving_crouching = 3
+		self.dp28.spread.moving_steelsight = 2
+		self.dp28.stats = {
+		damage = 40,
+		spread = 15,
+		recoil = 17,
+		spread_moving = 9,
+		zoom = 3,
+		concealment = 18,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 11
+		}
+		self.dp28.panic_suppression_chance = 0.1
 	end
 
 	end)

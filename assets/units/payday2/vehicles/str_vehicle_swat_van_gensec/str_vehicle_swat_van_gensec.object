@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/vehicles/str_vehicle_swat_van_gensec/str_vehicle_swat_van_gensec" orientation_object="rp_police_truck" />
+  <sequence_manager file="units/payday2/vehicles/str_vehicle_swat_van_gensec/str_vehicle_swat_van_gensec" />
+	<animations>
+	
+		<!-- Slaughterhouyse Ambush Event Animations -->
+		<animation_group name="main_animation">
+			<object name="a_main_animation" />
+			<object name="a_body" />
+			<object name="a_front_right_wheel" />
+			<object name="a_front_left_wheel" />
+			<object name="a_rear_wheels" />
+		</animation_group>
+		<animation_group name="crash1">
+			<object name="a_crash1" />
+			<object name="a_body_crash1" />
+			<object name="a_rear_wheels_crash1" />
+			<object name="a_front_left_wheel_crash1" />
+			<object name="a_front_right_wheel_crash1" />
+		</animation_group>
+		
+		<animation_group name="crash2">
+			<object name="a_crash2" />
+			<object name="a_body_crash2" />
+			<object name="a_rear_wheels_crash2" />
+			<object name="a_front_left_wheel_crash2" />
+			<object name="a_front_right_wheel_crash2" />
+		</animation_group>
+		<!-- //Slaughterhouyse Ambush Event Animations END -->
+		
+		<animation_group name="ag_right_door">
+			<object name="anim_right_door" />
+		</animation_group>
+
+		<animation_group name="ag_left_door">
+			<object name="anim_left_door" />
+		</animation_group>
+		
+		<animation_group name="ag_tire_front_right">
+		  <object name="a_tire_front_right" />
+		</animation_group>
+		<animation_group name="ag_tire_front_left">
+		  <object name="a_tire_front_left" />
+		</animation_group>
+		<animation_group name="ag_tire_rear_right">
+		  <object name="a_tire_rear_right" />
+		</animation_group>
+		<animation_group name="ag_tire_rear_left">
+		  <object name="a_tire_rear_left" />
+		</animation_group>
+		<animation_group name="anim_door_top">
+			<object name="align_top_lid" />
+		</animation_group>
+	</animations>
+	
+	<bodies>
+		<body name="animated_body" enabled="true" template="animated">
+		  <object name="a_body_crash2"/>
+		  <object name="c_body" collision_type="mesh_mopp" padding="-2"/>
+		</body>
+		<!-- remove_ray_type="body" -->
+		<body name="player_nono" enabled="true" template="mover_blocker" keyframed="true">
+		  <object name="c_player_nono" collision_type="box" />
+		</body>
+		
+		<body name="static_body2" enabled="true" template="animated">
+		  <object name="anim_left_door" />
+		  <object name="c_left_door" collision_type="box" padding="-2"/>
+		</body>
+		
+		<body name="static_body3" enabled="true" template="animated">
+		  <object name="anim_right_door" />
+		  <object name="c_right_door" collision_type="box" padding="-2"/>
+		</body>
+
+		<body name="bag_blocker" enabled="true" template="fence" collision_class="bag_blocker" keyframed="true">
+			<object name="c_box_bag_blocker" collision_type="box" />
+		</body>
+	</bodies>  
+	
+	<effects>
+		<effect_spawner name="scene_flare_small_01" enabled="false" object="ls_left" effect="effects/payday2/particles/flares/scene_flare_small_01" />
+		<effect_spawner name="scene_flare_small_02" enabled="false" object="ls_right" effect="effects/payday2/particles/flares/scene_flare_small_01" />
+		<effect_spawner name="scene_flare_small_03" enabled="false" object="ls_t_left" effect="effects/payday2/particles/flares/scene_flare_small_01" />
+		<effect_spawner name="scene_flare_small_04" enabled="false" object="ls_t_right" effect="effects/payday2/particles/flares/scene_flare_small_01" />
+		<!--effect_spawner name="scene_spotlight_01" enabled="true" object="ls_left" effect="effects/payday2/particles/spotlight/scene_spotlight_01" />
+		<effect_spawner name="scene_spotlight_02" enabled="true" object="ls_right" effect="effects/payday2/particles/spotlight/scene_spotlight_01" />
+		<effect_spawner name="scene_spotlight_03" enabled="true" object="ls_t_left" effect="effects/payday2/particles/spotlight/scene_spotlight_01" />
+		<effect_spawner name="scene_spotlight_04" enabled="true" object="ls_t_right" effect="effects/payday2/particles/spotlight/scene_spotlight_01" /-->
+    </effects>
+	
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="g_body" 		enabled="true" material="metal"/>
+	</decal_surfaces>
+  
+	<graphics>
+        <object name="g_cone_light" enabled="false" />
+        <object name="g_lamp" enabled="false" />
+        <object name="g_body" enabled="true" shadow_caster="true" />
+        <object name="g_left_door" enabled="true" shadow_caster="true" />
+        <object name="g_left_door_net" enabled="true" shadow_caster="true" />
+        <object name="g_right_door" enabled="true" shadow_caster="true" />
+        <object name="g_right_door_net" enabled="true" shadow_caster="true" />
+        <object name="g_top_door" enabled="true" shadow_caster="true" />
+        <object name="g_net" enabled="true" shadow_caster="true" />		
+        <object name="g_tires_back" enabled="true" shadow_caster="true" />		
+        <object name="g_tire_left" enabled="true" shadow_caster="true" />		
+        <object name="g_tire_right" enabled="true" shadow_caster="true" />		
+	</graphics>
+  
+	<lights>
+		<light name="ls_left" far_range="2000" type="spot|specular"   end_angle="53" multiplier="identity" editable="true" />
+		<light name="ls_right" far_range="2000" type="spot|specular"   end_angle="39" multiplier="identity" editable="true" />
+		<light name="ls_t_left" far_range="1000" type="spot|specular"  end_angle="53" multiplier="identity" editable="true" />
+		<light name="ls_t_right" far_range="1000" type="spot|specular" end_angle="39" multiplier="identity" editable="true" />
+	</lights>
+</dynamic_object>

@@ -1252,15 +1252,14 @@
     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
 
-	<!--Fixes for various enemies not having blood effects-->
-	<!--Reapers Start-->	
+	<!--Fixes for various stuff-->
+	<!--Reaper bullet impact fixes-->	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" />		
-	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />	
-	<!-- ene_akan_cs_swat_sniper_svd_snp hey you probably won't see him close, but it'll be nice to have, yeah?-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />	<!--hey you probably won't see him close, but it'll be nice to have, yeah?-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" />		
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" />
@@ -1268,20 +1267,25 @@
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />	
-	<!--Reapers End-->	
-	<!--Panic Room Guys-->		
+	
+	<!--Panic Room bullet impact fixes-->		
 	<object path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
 	<object path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
-	<!--Panic Room Guys END-->			
-	<!--Scarface-->		
+	
+	<!--Scarface bullet impact fixes-->		
 	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
 	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
 	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
 	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
 	<object path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
-	<!--Scarface END-->				
-	<!--Hector MISC Shix-->		
+	
+	<!--Hector Visor Texture Change-->		
 	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1" force="true" />
-	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1_contour" force="true" />		
-	<!--Hector MISC-->					
+	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1_contour" force="true" />	
+	
+	<!--Fixes for a bunch of objects not casting shadows-->		
+	<object path="units/payday2/architecture/air_hangar_segment/air_shed_welcometothejungle_a" force="true" />	
+	<object path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" force="true" />
+	<object path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" force="true" />	
+	<object path="units/payday2/vehicles/str_vehicle_swat_van_gensec/str_vehicle_swat_van_gensec" force="true" />		
 </table>

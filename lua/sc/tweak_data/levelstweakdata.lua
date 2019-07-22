@@ -193,10 +193,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--///ZOMBIE LEVELS\\\--
-		self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-		self.nail.package = {"packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-		self.help.package = {"packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-		self.hvh.package = {"packages/narr_hvh"}
+		self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+		self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+		self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+		self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
 		self.haunted.ai_group_type = zombie		
 		self.nail.ai_group_type = zombie
 		self.help.ai_group_type = zombie
@@ -204,7 +204,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chill.ghost_bonus = nil
 		
 		--///REAPER LEVELS\\\--
-		self.mad.package = {"packages/lvl_mad", "packages/outfitassets"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 	
 	end)

@@ -306,9 +306,9 @@
     </Options>
 	<!--///PACKAGES\\\-->
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
-	<!-- <Package id="packages/zombieassets" file="addzombie.xml"use_clbk="self:DebugLoadAssets"/> -->
+	<Package id="packages/zombieassets" file="addzombie.xml"use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/nypdassets" file="addNYPD.xml" use_clbk="self:DebugLoadAssets"/>	
-	<!-- <Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/> -->
+	<Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/murkyassets" file="addmurky.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>

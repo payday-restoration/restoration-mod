@@ -22734,6 +22734,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_p90_b_civilian/wpn_fps_smg_p90_b_civilian",
 			stats = {
 				value = 1,
+				damage = 3,
 				spread = -1,
 				concealment = 2
 			},
@@ -22753,7 +22754,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 2,
 				recoil = -1,
-				concealment = -4
+				concealment = -4,
+				damage = 3
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",
@@ -46821,10 +46823,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				"wpn_fps_upg_ass_ns_jprifles",
 				"wpn_fps_upg_ass_ns_linear",
 				"wpn_fps_upg_ass_ns_surefire",
-				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_ass_ns_g_sup3",
-				"wpn_fps_ass_ns_g_sup4",
-				"wpn_fps_ass_ns_g_sup5"
+				"wpn_fps_upg_ass_ns_battle"
 			}
 			self.parts.wpn_fps_smg_k1a7_s_pulled.stats = {
 				recoil = 1,

@@ -3798,7 +3798,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.p90.kick.crouching = self.new_m4.kick.standing
 		self.p90.kick.steelsight = self.new_m4.kick.standing
 		self.p90.stats = {
-			damage = 30,
+			damage = 27,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 9,
@@ -7854,7 +7854,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_p90.kick.crouching = self.new_m4.kick.standing
 		self.x_p90.kick.steelsight = self.new_m4.kick.standing
 		self.x_p90.stats = {
-			damage = 30,
+			damage = 27,
 			spread = 14,
 			recoil = 23,
 			spread_moving = 9,
@@ -11311,8 +11311,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 18,
-			suppression = 5,
-			alert_size = 5,
+			suppression = 4,
+			alert_size = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,

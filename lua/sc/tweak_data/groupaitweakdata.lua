@@ -46,9 +46,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}			
 		self.enemy_chatter.retreat = {
 			radius = 700,
-			max_nr = 5,
+			max_nr = 3,
 			duration = {2, 4},
-			interval = {1.25, 2.75},
+			interval = {2, 4},
 			group_min = 0,
 			queue = "m01"
 		}		

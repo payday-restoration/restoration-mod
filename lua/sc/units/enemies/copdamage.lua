@@ -389,11 +389,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end		
 		
 		if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
-			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "saw")
+			managers.groupai:state():_voice_saw() --THAT MADMAN HAS A FUCKIN' SAW
 		end
 		
-		if attack_data.attacker_unit:base().sentry_gun then
-			managers.groupai:state():chk_say_enemy_chatter(self._unit, self._unit:movement():m_pos(), "sentry")
+		if attack_data.attacker_unit:base().sentry_gun and not self:is_friendly_fire(attack_data.attacker_unit) then
+			managers.groupai:state():_voice_sentry() --FUCKING SCI-FI ROBOT GUNS
 		end		
 		
 		local helmet_pop_roll = math.rand(1, 100)

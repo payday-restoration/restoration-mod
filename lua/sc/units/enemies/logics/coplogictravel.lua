@@ -251,6 +251,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
     	  
     	CopLogicTravel.queue_update(data, data.internal_data, delay)
-    end	
+    end
+    function CopLogicTravel.chk_group_ready_to_move(data, my_data)
+		local my_objective = data.objective
+		
+		if data.tactics and data.tactics.obstacle then
+			return false
+		end
+		
+		if not my_objective.grp_objective and not (data.tactics and data.tactics.obstacle) then
+			return true
+		end
+
+		if not CopLogicTravel._chk_close_to_criminal(data, my_data) and not (data.tactics and data.tactics.obstacle) then
+			return true
+		end
+
+		local my_dis = mvector3.distance_sq(my_objective.area.pos, data.m_pos)
+
+		if my_dis > 4000000 and not (data.tactics and data.tactics.obstacle) then
+			return true
+		end
+
+		my_dis = my_dis * 1.15 * 1.15
+
+		for u_key, u_data in pairs(data.group.units) do
+			if u_key ~= data.key then
+				local his_objective = u_data.unit:brain():objective()
+
+				if his_objective and his_objective.grp_objective == my_objective.grp_objective and not his_objective.in_place then
+					local his_dis = mvector3.distance_sq(his_objective.area.pos, u_data.m_pos)
+
+					if my_dis < his_dis then
+						return false
+					end
+				end
+			end
+		end
+
+		return true
+	end
 end
 

@@ -6925,6 +6925,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"charge",
 				"provide_coverfire",
 				"provide_support",
+				"obstacle",
 				"shield_cover"
 			},
 			FBI_shield_flank = {
@@ -6966,6 +6967,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"spoocavoidance",
 				"murder",
 				"elite_ranged_fire",
+				"obstacle",
 				"shield_cover"
 			},
 			spooc = {
@@ -7032,6 +7034,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",
+				"obstacle",
 				"deathguard"
 			},
 			ELITE_swat_shotgun = {

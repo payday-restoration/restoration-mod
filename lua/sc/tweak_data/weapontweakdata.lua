@@ -11106,19 +11106,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.f2000.panic_suppression_chance = 0.0		
 		end				
 
-		if self.tilt then --Gambyt's AN-92
+		if self.tilt then --Gambyt's AN 92
 			self.tilt.has_description = false		
 			self.tilt.tactical_reload = 1
 			self.tilt.AMMO_MAX = 150
 			self.tilt.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.tilt.spread.standing = 3
+			self.tilt.BURST_FIRE = 2
+			self.tilt.BURST_FIRE_RATE_MULTIPLIER = 3		
+			self.tilt.ADAPTIVE_BURST_SIZE = false														
 			self.tilt.spread.crouching = 2
 			self.tilt.spread.steelsight = 1
 			self.tilt.spread.moving_standing = 4
 			self.tilt.spread.moving_crouching = 3
 			self.tilt.spread.moving_steelsight = 2
-			self.tilt.fire_mode_data.fire_rate = 0.0923076923
-			self.tilt.auto.fire_rate = 0.0923076923
+			self.tilt.fire_mode_data.fire_rate = 0.1
+			self.tilt.auto.fire_rate = 0.1
 			self.tilt.kick.standing = self.new_m4.kick.standing
 			self.tilt.kick.crouching = self.new_m4.kick.standing
 			self.tilt.kick.steelsight = self.new_m4.kick.standing
@@ -12585,6 +12588,36 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}		
 		self.aps.panic_suppression_chance = 0.0
 	end			
+
+	if self.mas49 then --Pawcio's MAS 49
+		self.mas49.spread.standing = 3
+		self.mas49.spread.crouching = 2
+		self.mas49.spread.steelsight = 1
+		self.mas49.spread.moving_standing = 4
+		self.mas49.spread.moving_crouching = 3
+		self.mas49.spread.moving_steelsight = 2
+		self.mas49.kick.standing = self.new_m4.kick.standing
+		self.mas49.kick.crouching = self.new_m4.kick.standing
+		self.mas49.kick.steelsight = self.new_m4.kick.standing
+		self.mas49.AMMO_MAX = 60
+		self.mas49.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.mas49.stats = {
+			damage = 100,
+			spread = 20,
+			recoil = 17,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 16,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.mas49.panic_suppression_chance = 0.0
+		self.mas49.stats_modifiers = {damage = 1}		
+	end				
 
 	if self.ultimax then --Pawcio's Ultimax
 		self.ultimax.has_description = false									

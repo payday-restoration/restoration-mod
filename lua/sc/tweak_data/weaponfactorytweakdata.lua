@@ -40021,7 +40021,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = 2,
 					concealment = -1
 				}
-			self.parts.wpn_fps_upg_sr3m_supp_groza.stats = {
+			self.parts.wpn_fps_upg_sr3m_supp.stats = {
 					value = 4,
 					suppression = 10,
 					alert_size = 10,
@@ -45288,7 +45288,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}																
 		end		
 		
-		if self.wpn_fps_ass_tilt then -- Grocery's AN-94				
+		if self.wpn_fps_ass_tilt then -- Grocery's AN 92	
+		self.parts.wpn_fps_ass_tilt_a_fuerte.pcs = nil		
 		self.parts.wpn_fps_ass_tilt_mag_big.stats = {
 					value = 3,
 					spread_moving = -2,
@@ -45333,21 +45334,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					spread = -2,					
 					concealment = 3
 				}																		
-			self.wpn_fps_ass_tilt.override = {
-				wpn_fps_ass_tilt_a_fuerte = {				
-					stats = {
-						value = 10,
-						damage = 10,
-						total_ammo_mod = -20,
-						suppression = -1,
-						alert_size = -1,
-						recoil = -1,
-						spread = 1
-						},	
-					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, rof_mult = 0.923},
-				}
-			}	
-		end	
+			end	
 
 		if self.wpn_fps_pis_af2011 then --Grocery's AF 2011
 		table.list_append(self.wpn_fps_pis_af2011.uses_parts, {

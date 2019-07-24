@@ -196,7 +196,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 	end
+	
+	function GroupAIStateBesiege:_voice_saw()
+		for group_id, group in pairs(self._groups) do
+			for u_key, u_data in pairs(group.units) do
+				if u_data.char_tweak.chatter.saw then
+					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "saw")
+				else
+					
+				end
+			end
+		end
+	end
 
+
+	function GroupAIStateBesiege:_voice_sentry()
+		for group_id, group in pairs(self._groups) do
+			for u_key, u_data in pairs(group.units) do
+				if u_data.char_tweak.chatter.sentry then
+					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "sentry")
+				else
+					
+				end
+			end
+		end
+	end
+	
 	function GroupAIStateBesiege:_voice_looking_for_angle(group)
 		for u_key, unit_data in pairs(group.units) do
 			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "look_for_angle") then

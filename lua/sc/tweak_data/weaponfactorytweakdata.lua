@@ -11168,7 +11168,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				concealment = -3,
-				extra_ammo = 12
+				extra_ammo = 10
 			},
 			animations = {
 				reload = "reload",

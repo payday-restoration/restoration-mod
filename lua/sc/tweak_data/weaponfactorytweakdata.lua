@@ -6281,8 +6281,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 7,
 				spread = 1,
-				spread_moving = -1,
-				damage = 3,
 				concealment = -2
 			}
 		}
@@ -6594,6 +6592,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 4,
 				concealment = -1,
+				reload = -1,
 				extra_ammo = 10
 			},
 			animations = {
@@ -6633,9 +6632,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				recoil = 1,
-				spread = 2,
-				spread_moving = -3,
-				concealment = -3
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_smg_mp9_b_dummy = {
@@ -19489,8 +19486,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_barrel_long",
 			stats = {
 				value = 4,
-				spread = 2,
-				concealment = -3
+				spread = 1,
+				concealment = -2
 			},
 			texture_bundle_folder = "pines"
 		}
@@ -19508,8 +19505,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_barrel_short",
 			stats = {
 				value = 2,
-				spread = -2,
-				concealment = 3
+				spread = -1,
+				concealment = 2
 			},
 			texture_bundle_folder = "pines",
 			override = {
@@ -19579,7 +19576,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_foregrip_discrete",
 			stats = {
 				value = 2,
-				recoil = 0,
 				concealment = 1
 			},
 			texture_bundle_folder = "pines"
@@ -19606,7 +19602,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_grip_discrete",
 			stats = {
 				value = 2,
-				recoil = 1,
 				concealment = 1
 			},
 			texture_bundle_folder = "pines"
@@ -19650,7 +19645,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_stock_discrete",
 			stats = {
 				value = 3,
-				recoil = 1,
 				concealment = 1
 			},
 			texture_bundle_folder = "pines"
@@ -22740,7 +22734,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_p90_b_civilian/wpn_fps_smg_p90_b_civilian",
 			stats = {
 				value = 1,
-				damage = 3,
 				spread = -1,
 				concealment = 2
 			},
@@ -22760,8 +22753,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 2,
 				recoil = -1,
-				concealment = -4,
-				damage = 3
+				concealment = -4
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",
@@ -35241,6 +35233,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			override = {wpn_fps_smg_mp9_m_extended = {stats = {
 				value = 4,
 				concealment = -1,
+				reload = -1,
 				extra_ammo = 20
 			}}},
 			default_blueprint = {

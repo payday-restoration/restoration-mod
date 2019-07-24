@@ -3356,6 +3356,130 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_21_desc",
 			name_id = "menu_st_spec_21"
 		}	
+		
+	--Blank Perk Deck
+	local sc_blank = {
+			name_id = "menu_st_spec_0",
+			desc_id = "menu_st_spec_0_desc",
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},			
+			{
+				upgrades = {
+					},
+				cost = 0,
+				icon_xy = {900, 5},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 0},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+					{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			}
+		}		
+		
+	--Wildcard Perk Deck--
+	local sc_yes_man = {
+			name_id = "menu_st_spec_00",
+			desc_id = "menu_st_spec_00_desc",
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck2,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck4,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck6,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck8,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			}
+		}		
 
 	--Then we insert our new perk decks into the table--
 	self.specializations[1] = sc_crew_chief
@@ -3379,6 +3503,8 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[19] = sc_august	
 	self.specializations[20] = sc_nose
 	self.specializations[21] = sc_nip
+	self.specializations[22] = sc_blank
+	self.specializations[23] = sc_yes_man
 end
 
 end

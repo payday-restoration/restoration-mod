@@ -1013,6 +1013,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##20## health.",
 		["menu_deck21_7_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
 		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##10## health.",
+
+		--Blank Perk Deck--
+		["menu_st_spec_0"] = "Blank Deck",
+		["menu_st_spec_0_desc"] = "This deck has no benefits at all.",
+		["menu_st_spec_00"] = "Wildcard Deck",
+		["menu_st_spec_00_desc"] = "This deck only has the shared skills.",
+		["menu_deck0_1"] = "",
+		["menu_deck0_1_desc"] = "",		
 	})
 end)
 

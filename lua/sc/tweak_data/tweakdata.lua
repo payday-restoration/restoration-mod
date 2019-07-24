@@ -361,7 +361,8 @@ if not tweak_data then return end
 					"akimbo",
 					"assault_rifle"
 				},			
-				{"wpn_special"}
+				{"wpn_special"},
+				{"smg"}
 			},
 			secondaries = {
 				{"pistol"},
@@ -377,15 +378,7 @@ if not tweak_data then return end
 
 		if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
-		end				
-		
-		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/AUG A3 9mm XS/main.xml") then
-			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})
-		end
+		end						
 	end
 	
 	--Sounds of Animals Fighting--

@@ -838,7 +838,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							return
 						end
 					end
-				elseif tactic_name == "charge" and not current_objective.moving_out and group.in_place_t and (self._t - group.in_place_t > 15 or self._t - group.in_place_t > 4 and self._drama_data.amount <= tweak_data.drama.low) and next(current_objective.area.criminal.units) and group.is_chasing and not current_objective.charge then
+				elseif tactic_name == "charge" and not current_objective.moving_out and group.in_place_t and (self._t - group.in_place_t > 15 or self._t - group.in_place_t > 4 and self._drama_data.amount <= tweak_data.drama.low) and next(current_objective.area.criminal.units) and group.is_chasing and not current_objective.charge and not (tactics_map and tactics_map.obstacle) then
 					charge = true
 				end
 			end
@@ -868,14 +868,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						end
 					end
 				end
-				if charge then
+				if charge and not (tactics_map and tactics_map.obstacle) then
 					push = true
 				elseif not has_criminals_close or not group.in_place_t then
 					approach = true
 				elseif not phase_is_anticipation and not current_objective.open_fire then
 					open_fire = true
 			        self:_voice_open_fire_start(group)
-				elseif not phase_is_anticipation and group.in_place_t and (group.is_chasing or not tactics_map or not tactics_map.ranged_fire or self._t - group.in_place_t > 15) then
+				elseif not phase_is_anticipation and group.in_place_t and (group.is_chasing and not tactics_map and not tactics_map.obstacle or not tactics_map or not tactics_map.ranged_fire or not tactics_map.obstacle or self._t - group.in_place_t > 15) and not (tactics_map and tactics_map.obstacle) then
 					push = true
 				elseif phase_is_anticipation and current_objective.open_fire then
 					pull_back = true			

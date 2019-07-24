@@ -67,6 +67,17 @@
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2" force="false" load="true"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_husk" force="false" load="true"/>
 
+    <!--Titan Sniper-->	
+	<unit path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/helmets_snp_df" force="false"/>	
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
+
 	<!--akan LPF-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
 	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
@@ -76,13 +87,11 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_lightsout" force="false"/>	
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_contour" force="false"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk" force="false" load="true"/>
-	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_lpf_df" force="false"/>
-	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_lpf_nm" force="false"/>
 	<sequence_manager path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf"/> 
 	
 	<texture path="units/pd2_dlc_mad/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
-	<texture path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_maska_df" force="false" load="true"/>
-	<texture path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_maska_il" force="false" load="true"/>	
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_il" force="false" load="true"/>	
 	
 	<!--Russian Vet-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>

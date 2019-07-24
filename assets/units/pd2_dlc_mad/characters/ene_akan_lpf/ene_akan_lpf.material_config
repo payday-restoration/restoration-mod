@@ -18,7 +18,7 @@
 	</material>
 
 	<material name="mtr_helmet_lod0" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_nm"/>
+        <bump_normal_texture file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/maska_nm"/>
 		<diffuse_texture 		file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df"/>
 		<self_illumination_texture 	file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_il"/>
         <variable type="scalar" name="il_bloom" value="10"/>
@@ -26,8 +26,8 @@
 	</material>
 	
 	<material name="mtr_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_nm" mip="1"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/maska_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df"/>
 		<self_illumination_texture 	file="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_il"/>
         <variable type="scalar" name="il_bloom" value="10"/>
         <variable type="scalar" name="il_multiplier" value="reddot"/>			

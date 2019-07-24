@@ -152,7 +152,7 @@ function restoration:Init()
 		--"arm_par", --Transport PARK
 		--"arm_und", --Transport UNDERPASS
 		--"jolly", --Aftershock
-		--"des", --Henry's Rock
+		--"pbr2", --Birth of Sky
 		--"pbr", --Beneath The Mountain
 		--"pines", --White Xmas
 		--"watchdogs_2", --Watchdogs Day 2

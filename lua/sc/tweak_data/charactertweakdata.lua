@@ -11615,6 +11615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				contact = true,
 				clear = true,
 				clear_whisper = true,
+				clear_whisper_2 = true,
 				--go_go = true,
 				---push = true,
 				reload = true,
@@ -11622,14 +11623,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				ecm = true,
 				saw = true,
 				trip_mines = true,
-				sentry = true
+				sentry = true,
 				--ready = true,
 				--smoke = true,
 				--flash_grenade = true,
 				--follow_me = true,
 				--deathguard = true,
 				--open_fire = true,
-				--suppress = true
+				suppress = true
 			},
 			cop = {
 				aggressive = true,

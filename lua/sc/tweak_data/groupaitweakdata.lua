@@ -84,6 +84,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		    group_min = 0,
 		    queue = "a05"
 		}		
+		self.enemy_chatter.clear_whisper_2 = {
+		    radius = 700,
+		    max_nr = 2,
+		    duration = {60, 60},
+		    interval = {5, 5},
+		    group_min = 0,
+		    queue = "a06"
+		}		
 		self.enemy_chatter.go_go = {
 			radius =  1000,
 			max_nr = 20,
@@ -7034,7 +7042,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",
-				"obstacle",
 				"deathguard"
 			},
 			ELITE_swat_shotgun = {
@@ -7085,6 +7092,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",
+				"obstacle",
 			    "hitnrun"
 			},
 			--Vanilla shit below

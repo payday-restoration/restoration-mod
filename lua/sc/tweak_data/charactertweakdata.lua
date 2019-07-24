@@ -561,6 +561,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_omnia_lpf(presets)
+	    local is_murky
+        if self:get_ai_group_type() == "murkywater" then
+            is_murky = true
+        end
+        local is_reaper
+        if self:get_ai_group_type() == "russia" then
+            is_reaper = true
+        end
+        local is_zombie
+        if self:get_ai_group_type() == "zombie" then
+            is_zombie = true
+        end
 		self.omnia_lpf = deep_clone(presets.base)
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
@@ -579,10 +591,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.omnia_lpf.weapon_voice = "2"
-		self.omnia_lpf.experience.cable_tie = "tie_swat"
-		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
-		self.omnia_lpf.speech_prefix_p2 = nil
-		self.omnia_lpf.speech_prefix_count = nil
+		self.omnia_lpf.experience.cable_tie = "tie_swat"	
+		if is_reaper then
+		    self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
+		    self.omnia_lpf.speech_prefix_count = nil
+		    self.omnia_lpf.spawn_sound_event = self._prefix_data_p1.medic() .. "_entrance"
+		else
+		    self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
+		    self.omnia_lpf.speech_prefix_p2 = nil
+		    self.omnia_lpf.speech_prefix_count = nil
+		    self.omnia_lpf.spawn_sound_event = nil
+		end				
 		self.omnia_lpf.access = "swat"
 		self.omnia_lpf.dodge = presets.dodge.elite
 		self.omnia_lpf.no_arrest = true
@@ -604,6 +623,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
 		self.omnia_lpf.die_sound_event = "mga_death_scream"		
 		self.omnia_lpf.is_special = true
+		if is_reaper then
+		    self.omnia_lpf.die_sound_event = "rmdc_x02a_any_3p"
+		else	
+		    self.omnia_lpf.die_sound_event = "mga_death_scream"
+		end	
 		table.insert(self._enemy_list, "omnia_lpf")
 	end
 
@@ -1887,9 +1911,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.spooc_titan = deep_clone(self.spooc)
 		self.spooc_titan.HEALTH_INIT = 90
-		self.spooc_titan.headshot_dmg_mul = 5.85		
-		self.spooc_titan.speech_prefix_p1 = "t_spk"
-		self.spooc_titan.speech_prefix_count = nil
+		self.spooc_titan.headshot_dmg_mul = 5.85	
+		if is_reaper then	
+		    self.spooc.speech_prefix_p1 = self._prefix_data_p1.cloaker()
+		    self.spooc.speech_prefix_count = nil
+		    self.spooc.access = "spooc"
+		else
+		    self.spooc_titan.speech_prefix_p1 = "t_spk"
+		    self.spooc_titan.speech_prefix_count = nil
+		end
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 		self.spooc_titan.can_be_tased = false
 		self.spooc_titan.priority_shout_max_dis = 0
@@ -1901,7 +1931,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
-		end				
+		end		
+		if is_reaper then
+		    self.spooc_titan.die_sound_event = "rclk_x02a_any_3p"
+		else
+		    self.spooc_titan.die_sound_event = "mga_death_scream"
+		end		
 		table.insert(self._enemy_list, "spooc_titan")	
 	end
 	
@@ -13215,7 +13250,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_akan_veteran_2",
 					"ene_akan_grenadier_1",
 					"ene_akan_medic_bob",
-					"ene_akan_medic_zdann"					
+					"ene_akan_medic_zdann",	
+					"ene_vip_2",
+					"ene_titan_shotgun",
+					"ene_titan_rifle",
+					"ene_akan_lpf",
+					"ene_fbi_titan_1",
+					"ene_titan_sniper",
+					"ene_titan_taser"				
 				}
 			},
 			born = {

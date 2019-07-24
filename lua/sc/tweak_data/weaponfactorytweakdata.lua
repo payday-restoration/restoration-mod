@@ -22734,7 +22734,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_p90_b_civilian/wpn_fps_smg_p90_b_civilian",
 			stats = {
 				value = 1,
-				damage = 3,
 				spread = -1,
 				concealment = 2
 			},
@@ -22754,8 +22753,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 2,
 				recoil = -1,
-				concealment = -4,
-				damage = 3
+				concealment = -4
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",

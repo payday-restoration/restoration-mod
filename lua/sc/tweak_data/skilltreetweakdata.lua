@@ -783,6 +783,8 @@ function SkillTreeTweakData:init(tweak_data)
 					[2] = {
 						upgrades = {
 							"saw_reload_speed_multiplier",
+							"crossbow_reload_speed_multiplier",
+							"bow_reload_speed_multiplier",
 							"grenade_launcher_reload_speed_multiplier"
 						},
 						cost = self.costs.hightierpro

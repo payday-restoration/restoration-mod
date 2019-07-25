@@ -63,7 +63,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._saw_panic_when_kill and variant ~= "melee" then
 			local equipped_unit = self:get_current_state()._equipped_unit:base()
 
-			if equipped_unit:is_category("saw") or equipped_unit:is_category("grenade_launcher") then
+			if equipped_unit:is_category("saw") or equipped_unit:is_category("grenade_launcher") or equipped_unit:is_category("bow") or equipped_unit:is_category("crossbow") then
 				local pos = player_unit:position()
 				local skill = self:upgrade_value("saw", "panic_when_kill")
 

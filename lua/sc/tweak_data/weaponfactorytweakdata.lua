@@ -7179,9 +7179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_fg_m5k",
 			stats = {
 				value = 4,
-				damage = 7,
-				spread_moving = 3,
-				recoil = -2,
+				recoil = -1,
 				concealment = 2
 			},
 			adds = {
@@ -7204,10 +7202,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_fg_mp5a5",
 			stats = {
 				value = 1,
-				spread_moving = 0,
 				recoil = 1,
-				concealment = -2,
-				damage = 7
+				concealment = -2
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_mp5a5"
@@ -7233,7 +7229,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread_moving = -1,
 				suppression = 13,
 				alert_size = 13,
-				damage = 7,
 				spread = 1,
 				recoil = -1,
 				concealment = -2
@@ -7272,7 +7267,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 9,
 				extra_ammo = 20,
 				concealment = -2,
-				reload = -3
+				reload = -2
 			}
 		}
 		self.parts.wpn_fps_smg_mp5_m_std = {
@@ -7295,7 +7290,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_s_adjust",
 			stats = {
 				value = 3,
-				spread_moving = 1,
 				recoil = -1,
 				concealment = 2
 			}
@@ -7312,7 +7306,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_s_ring",
 			stats = {
 				value = 3,
-				spread_moving = 3,
 				recoil = -2,
 				concealment = 3
 			}
@@ -7829,9 +7822,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mac10_pts/wpn_fps_smg_mac10_m_extended",
 			stats = {
 				value = 2,
-				concealment = -3,
-				extra_ammo = 30,
-				reload = -3
+				concealment = -1,
+				extra_ammo = 10,
+				reload = -1
 			},		
 			animations = {
 				reload = "reload",
@@ -10285,8 +10278,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 4,
 				concealment = -1,
-				reload = -3,
-				extra_ammo = 20
+				reload = -1,
+				extra_ammo = 6
 			},
 			animations = {
 				reload = "reload",
@@ -10316,9 +10309,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_b_green",
 			stats = {
 				value = 6,
-				spread = 2,
-				concealment = -1,
-				damage = 3
+				spread = 1,
+				concealment = -2
 			},
 			dlc = "armored_transport"
 		}
@@ -10336,9 +10328,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_b_small",
 			stats = {
 				value = 2,
-				spread = -2,
-				concealment = 2,
-				damage = 3
+				spread = 1,
+				concealment = 2
 			},
 			dlc = "armored_transport"
 		}
@@ -10370,8 +10361,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 3,
 				recoil = 1,
-				concealment = -1,			
-				damage = 0
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -10401,7 +10391,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_s",
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_s_folded",
 			stats = {
-				value = 0,
+				value = 1,
 				concealment = 1
 			},
 			is_a_unlockable = true,						
@@ -10429,8 +10419,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_g_ergo",
 			stats = {
 				value = 2,
-				spread = 2,
-				recoil = 1
+				concealment = 1
 			},
 			dlc = "armored_transport"
 		}
@@ -10449,7 +10438,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				recoil = 1,
-				concealment = 1
+				concealment = -1
 			},
 			dlc = "armored_transport"
 		}
@@ -11167,7 +11156,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},				
 			stats = {
 				value = 1,
-				concealment = -3,
+				concealment = -1,
+				reload = -1,
 				extra_ammo = 10
 			},
 			animations = {
@@ -11251,9 +11241,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_smg_mp7_pts/wpn_fps_smg_mp7_s_long",
 			stats = {
-				value = 0,
+				value = 1,
 				recoil = 1,
-				spread_moving = -1
+				concealment = -1
 			},
 			is_a_unlockable = true,			
 			dlc = "gage_pack"
@@ -15729,7 +15719,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "upper_reciever",
 			name_id = "bm_wp_serbu_s_nostock_short",
 			texture_bundle_folder = "dlc1",
-			custom_stats = {reload_speed_mult = 1.1},
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_body_standard",
 			stats = {value = 1},
@@ -15756,7 +15745,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_g_wood",
 			stats = {
 				value = 1,
-				spread = 2,
 				recoil = 1,
 				concealment = -1
 			},
@@ -15773,7 +15761,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_g_ergo",
 			stats = {
 				value = 1,
-				recoil = 1,
 				concealment = 1
 			},
 			dlc = "hl_miami",
@@ -15849,7 +15836,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_s_unfolded",
 			stats = {
 				value = 1,
-				recoil = 1
+				recoil = 1,
+				concealment = -1
 			},
 			dlc = "hl_miami",
 			texture_bundle_folder = "hl_miami",
@@ -16025,9 +16013,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_tec9_pts/wpn_fps_smg_tec9_b_standard",
 			stats = {
 				value = 3,
-				spread = -2,
-				concealment = 2,
-				damage = 1
+				spread = -1,
+				concealment = 2
 			},
 			animations = {
 				reload = "reload",
@@ -16047,9 +16034,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_tec9_pts/wpn_fps_smg_tec9_ns_ext",
 			stats = {
 				value = 5,
-				spread = 2,
-				concealment = -2,
-				damage = 1
+				spread = 1,
+				concealment = -2
 			},
 			animations = {
 				reload = "reload",
@@ -16078,8 +16064,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_tec9_pts/wpn_fps_smg_tec9_m_extended",
 			stats = {
 				value = 4,
-				extra_ammo = 18,
-				concealment = -2
+				extra_ammo = 12,
+				reload = -1,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -16337,7 +16324,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_uzi_pts/wpn_fps_smg_uzi_s_leather",
 			stats = {
 				value = 6,
-				spread = 4,
+				spread = 2,
 				recoil = -1,
 				concealment = -3
 			},
@@ -16355,7 +16342,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
-				spread = 2,
 				concealment = -1
 			},
 			dlc = "hl_miami",
@@ -18389,6 +18375,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppression = 13,
 				alert_size = 13
 			},
+			custom_stats = {
+				is_laser_gun = true
+			},					
 			perks = {"silencer"},
 			sound_switch = {
 				suppressed = "suppressed_d"
@@ -18804,8 +18793,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
-				spread = 2,
-				damage = 3,
+				spread = 1,
 				concealment = -2
 			},
 			animations = {
@@ -18827,8 +18815,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				spread = -1,
-				damage = 3,
-				concealment = 1
+				concealment = 2
 			},
 			animations = {
 				reload = "reload",
@@ -18864,10 +18851,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 10,
 				suppression = 13,
 				alert_size = 13,
-				damage = 3,
 				recoil = -1,
 				spread = 2,
-				spread_moving = 0,
 				concealment = -3
 			},
 			perks = {"silencer"},
@@ -18910,10 +18895,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				recoil = -1,
 				spread = 2,
-				damage = 3,
-				spread_moving = 0,
 				concealment = -3
 			},
+			custom_stats = {
+				is_laser_gun = true
+			},			
 			perks = {"silencer"},
 			sound_switch = {
 				suppressed = "suppressed_d"
@@ -18957,7 +18943,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = 10,
-				concealment = -2
+				reload = -1,
+				concealment = -1
 			},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -18989,7 +18976,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = -10,
-				concealment = 2
+				reload = 1,
+				concealment = 1
 			},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -22690,15 +22678,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_mp5_m_straight/wpn_fps_smg_mp5_m_straight",
 			stats = {
 				value = 1,
-				damage = 6,
-				recoil = -1,
-				spread = 1,
-				total_ammo_mod = -20,
-				suppression = -1,
-				alert_size = -1,
+				recoil = -2,
+				spread = 2,
 				concealment = 1
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
 		}
@@ -25936,7 +25919,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_body_standard",
 			stats = {value = 1},
-			custom_stats = {reload_speed_mult = 1.05},
 			animations = {
 				reload = "reload",
 				fire_steelsight = "recoil",
@@ -25968,8 +25950,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_b_comp",
 			stats = {
 				value = 1,
-				spread = 2,
-				concealment = -1
+				concealment = 1
 			},
 			texture_bundle_folder = "dragon",
 			dlc = "dragon"
@@ -26109,7 +26090,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_s_unfolded",
 			stats = {
 				value = 1,
-				recoil = 1
+				recoil = 1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_smg_baka_o_adapter = {
@@ -27689,7 +27671,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_sr2_s_unfolded",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_sr2_parts/wpn_fps_smg_sr2_s_unfolded",
-			stats = {value = 0, recoil = 1},
+			stats = {value = 1, recoil = 1, concealment = -1},
 			is_a_unlockable = true,
 			texture_bundle_folder = "coco"
 		}
@@ -28061,6 +28043,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 9,
 					extra_ammo = 40,
+					reload = -2,
 					concealment = -2
 				},
 			},
@@ -28082,15 +28065,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_smg_mp5_m_straight = {
 				stats = {
 					value = 1,
-					damage = 6,
 					recoil = -2,
-					spread = 1,
-					total_ammo_mod = -16,
-					suppression = -1,
-					alert_size = -1,
+					spread = 2,
 					concealment = 1
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.833333333333, ammo_pickup_max_mul = 0.833333333333},
 				animations = {}
 			},
 			wpn_fps_smg_mp5_body_mp5 = {
@@ -29161,7 +29139,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -1
+				concealment = -2
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -29201,7 +29179,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = 10,
-				concealment = -2
+				reload = -1,
+				concealment = -1
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -29217,7 +29196,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = -10,
-				concealment = 2
+				reload = 1,
+				concealment = 1,
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -30422,7 +30402,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_smg_mp5_fg_flash/wpn_fps_smg_mp5_fg_flash",
 			stats = {
 				value = 1,
-				damage = 7,
 				spread = 1,
 				concealment = -3
 			},
@@ -30536,7 +30515,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 1
 			},
 			animations = {
 				reload = "reload",
@@ -30557,7 +30536,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -30573,7 +30552,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -30589,7 +30568,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -30605,7 +30584,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 1
 			},
 			animations = {
 				reload = "reload",
@@ -30624,8 +30603,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				spread = -1,
-				concealment = -1,
-				reload = 2
+				extra_ammo = 10,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -30645,7 +30624,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 1
 			},
 			animations = {
 				reload = "reload",
@@ -34987,8 +34966,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_m45_m_extended = {stats = {
 					value = 4,
 					concealment = -1,
-					reload = -3,
-					extra_ammo = 40
+					reload = -1,
+					extra_ammo = 12
 				}}
 			},
 			adds = {
@@ -35119,15 +35098,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			override = {
 				wpn_fps_smg_mac10_m_extended = {stats = {
 					value = 2,
-					concealment = -3,
-					extra_ammo = 60,
-					reload = -3
+					concealment = -1,
+					extra_ammo = 20,
+					reload = -1
 				}},
 				wpn_fps_smg_mac10_m_quick = {stats = {
 					value = 2,
 					spread = -1,
-					concealment = -1,
-					reload = 2
+					extra_ammo = 20,
+					concealment = -1
 				}}
 			},
 			default_blueprint = {
@@ -35182,8 +35161,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_mp7/wpn_fps_smg_x_mp7",
 			override = {wpn_fps_smg_mp7_m_extended = {stats = {
 					value = 1,
-					concealment = -3,
-					extra_ammo = 24
+					concealment = -1,
+					reload = -1,
+					extra_ammo = 20
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_mp7_m_short",
@@ -35506,12 +35486,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_schakal_m_short = {stats = {
 					value = 1,
 					extra_ammo = -20,
-					concealment = 2
+					reload = 1,
+					concealment = 1
 				}},
 				wpn_fps_smg_schakal_m_long = {stats = {
 					value = 1,
 					extra_ammo = 20,
-					concealment = -2
+					reload = -1,
+					concealment = -1
 				}}
 			},
 			animations = {
@@ -35667,25 +35649,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_smg_sterling_m_short = {stats = {
 					value = 1,
 					extra_ammo = -20,
-					concealment = 2
+					reload = 1,
+					concealment = 1
 				}},
 				wpn_fps_smg_sterling_m_long = {stats = {
 					value = 1,
 					extra_ammo = 20,
-					concealment = -2
+					reload = -1,
+					concealment = -1
 				}},
 				wpn_fps_upg_ammo_762_sterling = {
 					stats = {
-						value = 10,
-						damage = 10,
-						extra_ammo = -20,
-						total_ammo_mod = -20,
-						suppression = -1,
-						alert_size = -1,
-						recoil = -1,
-						spread = 1
-					},
-					custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
+						value = 1
+					}
 				}				
 			},
 			default_blueprint = {
@@ -35740,8 +35716,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_tec9/wpn_fps_smg_x_tec9",
 			override = {wpn_fps_smg_tec9_m_extended = {stats = {
 				value = 4,
-				extra_ammo = 36,
-				concealment = -2
+				extra_ammo = 24,
+				reload = -1,
+				concealment = -1
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_tec9_m_standard",
@@ -46239,7 +46216,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_762_sterling = {
-			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_762_sterling",
 			desc_id = "bm_wp_upg_a_762_sterling_desc",
@@ -46251,16 +46227,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 			dlc = "sc",
 			stats = {
-				value = 10,
-				damage = 10,
-				extra_ammo = -10,
-				total_ammo_mod = -33,
-				suppression = -1,
-				alert_size = -1,
-				recoil = -1,
-				spread = 1
+				value = 0
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.666666666667, ammo_pickup_max_mul = 0.666666666667},
 			internal_part = true
 		}
 		self.parts.wpn_fps_upg_ammo_p = {

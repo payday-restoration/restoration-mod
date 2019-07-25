@@ -27,6 +27,8 @@ function UpgradesTweakData:_init_value_tables()
 		smg = {},
 		shotgun = {},
 		grenade_launcher = {},
+		bow = {},
+		crossbow = {},
 		saw = {},
 		lmg = {},
 		snp = {},
@@ -407,8 +409,10 @@ function UpgradesTweakData:_init_pd2_values()
 				--Portable Saw
 				self.values.saw.reload_speed_multiplier = {1.25}
 				self.values.grenade_launcher.reload_speed_multiplier = {1.25}
+				self.values.crossbow.reload_speed_multiplier = {1.25}
+				self.values.bow.reload_speed_multiplier = {1.25}
 				self.values.saw.damage_multiplier = {1}
-				
+								
 				--Extra Lead
 				self.values.ammo_bag.ammo_increase = {2}
 				self.values.ammo_bag.quantity = {1}
@@ -1825,6 +1829,24 @@ function UpgradesTweakData:_player_definitions()
 			category = "grenade_launcher"
 		}
 	}
+	self.definitions.crossbow_reload_speed_multiplier = {
+		name_id = "menu_assault_rifle_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "crossbow"
+		}
+	}	
+	self.definitions.bow_reload_speed_multiplier = {
+		name_id = "menu_assault_rifle_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "bow"
+		}
+	}		
 	self.definitions.deploy_interact_faster_2 = {
 		name_id = "menu_deploy_interact_faster",
 		category = "feature",

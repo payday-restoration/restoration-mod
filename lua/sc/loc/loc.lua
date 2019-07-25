@@ -138,6 +138,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
+
+		--Safe House Test
+		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
+		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should you might find something new.\nWould you like to go there now?",
 		
 	})
 end)

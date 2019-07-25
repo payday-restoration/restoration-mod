@@ -121,7 +121,7 @@
 	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 
-	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat_bonnie" force="true"/>
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
 	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
 	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
 	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>

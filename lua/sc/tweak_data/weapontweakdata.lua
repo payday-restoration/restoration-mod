@@ -3934,8 +3934,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.colt_1911.panic_suppression_chance = 0.0
 		self.mac10.CLIP_AMMO_MAX = 20
-		self.mac10.AMMO_MAX = 120
-		self.mac10.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.mac10.AMMO_MAX = 80
+		self.mac10.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.mac10.spread.standing = 3
 		self.mac10.spread.crouching = 2
 		self.mac10.spread.steelsight = 1
@@ -5546,8 +5546,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.cobray.timers.reload_empty = 4.25
 		self.cobray.CLIP_AMMO_MAX = 30
 		self.cobray.NR_CLIPS_MAX = 4
-		self.cobray.AMMO_MAX = 120
-		self.cobray.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.cobray.AMMO_MAX = 80
+		self.cobray.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.cobray.spread.standing = 3
 		self.cobray.spread.crouching = 2
 		self.cobray.spread.steelsight = 1
@@ -7579,8 +7579,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.timers.reload_empty = 2.7
 		self.x_cobray.CLIP_AMMO_MAX = 120
 		self.x_cobray.NR_CLIPS_MAX = 4
-		self.x_cobray.AMMO_MAX = 150
-		self.x_cobray.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.x_cobray.AMMO_MAX = 120
+		self.x_cobray.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_cobray.spread.standing = 3
 		self.x_cobray.spread.crouching = 2
 		self.x_cobray.spread.steelsight = 1
@@ -7594,14 +7594,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_cobray.CAN_TOGGLE_FIREMODE = true
 		self.x_cobray.single.fire_rate = 0.06
 		self.x_cobray.stats = {
-			damage = 40,
-			spread = 13,
-			recoil = 23,
+			damage = 50,
+			spread = 19,
+			recoil = 17,
 			spread_moving = 8,
 			zoom = 3,
-			concealment = 22,
-			suppression = 9,
-			alert_size = 9,
+			concealment = 21,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -7729,8 +7729,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_m1928.panic_suppression_chance = 0.1		
 		self.x_mac10.CLIP_AMMO_MAX = 40
-		self.x_mac10.AMMO_MAX = 150
-		self.x_mac10.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.x_mac10.AMMO_MAX = 120
+		self.x_mac10.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_mac10.spread.standing = 3
 		self.x_mac10.spread.crouching = 2
 		self.x_mac10.spread.steelsight = 1

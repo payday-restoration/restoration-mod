@@ -3,7 +3,4 @@
 	<tweak definition="restorationmod_network_tweak.xml"/>
 	<tweak definition="restorationmod_postprocessor_tweak.xml"/>
 	<tweak definition="restorationmod_defaultrendertemplates_tweak.xml"/>
-	<!-- <:include src="superblt/akan.xml"/>
-	<:include src="superblt/zombie.xml"/>
-	<:include src="superblt/assets3.xml"/> -->
 </mod>

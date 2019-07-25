@@ -1159,4 +1159,137 @@
     <!--murky glass-->
     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
+		
+	<!--Zeal Heavy Swat Shield-->
+	<!-- Disabled, since he's no longer in use.
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_contour" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" load="true" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/>
+	-->		
+	
+	<!--zeal city 1-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk" load="true"/>	
+
+	<!--zeal city 1 helm-->
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" force="false"/>		
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" load="true"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	
+	<!--zeal city 2-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>	
+
+	<!--zeal city 2 helm -->
+	<!--
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_2_helmet/ene_acc_zeal_city_2_helmet" force="false"/>
+	-->		
+	
+	<!--zeal city 3-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
+
+	<!--zeal city 3 hat-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>			
+	
+	<!--textures city -->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />	
+	<!--zeal fbi-->
+	<!--zeal fbi m4-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk" load="true"/>	
+	<!--zeal fbi mp5-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk" load="true"/>	
+	<!--mask acc-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask" load="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_fbi_mask/ene_acc_zeal_fbi_mask"/>
+	<!--textures fbi -->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_soldier_zeal_head_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_soldier_zeal_head_nm" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_nm" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_nm" />	
+	<!--zeal heavy m4-->
+    <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk" load="true"/>		
+	<!--imagine getting your head blown off by 4 dumbass invincible robbers-->
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="true" />
+	<!--zeal heavy r870-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>	
+	<!--textures heavy -->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
+	<!--fbi ready team 1 -->
+	<!--
+    <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1_husk" load="true"/>
+	-->
+	<!--fbi ready team 2 -->
+	<!--
+    <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_contour"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_2/ene_fbi_ready_guard_2_husk" load="true"/>
+	-->
+	<!--new zeals end-->
 </table>

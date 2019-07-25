@@ -3296,11 +3296,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_m4.fire_mode_data.fire_rate = 0.08571428571
 		self.new_m4.auto.fire_rate = 0.08571428571
 		self.new_m4.spread.standing = 3
-		self.new_m4.spread.crouching = 2
-		self.new_m4.spread.steelsight = 1
-		self.new_m4.spread.moving_standing = 4
-		self.new_m4.spread.moving_crouching = 3
-		self.new_m4.spread.moving_steelsight = 2
+		self.new_m4.spread.crouching = self.new_m4.spread.standing / 1.5
+		self.new_m4.spread.steelsight = 1 / 1.5
+		self.new_m4.spread.moving_standing = self.new_m4.spread.standing * 1.5
+		self.new_m4.spread.moving_crouching = self.new_m4.spread.standing
+		self.new_m4.spread.moving_steelsight = 1
 		self.new_m4.kick.standing = {
 			0.6,
 			0.8,

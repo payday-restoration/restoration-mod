@@ -2085,9 +2085,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.priority_shout_max_dis = 3000
 		self.phalanx_minion.weapon_voice = "3"
 		self.phalanx_minion.experience.cable_tie = "tie_swat"
-		self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
-		self.phalanx_minion.speech_prefix_count = 4
 		self.phalanx_minion.access = "shield"
 		self.phalanx_minion.chatter = presets.enemy_chatter.shield
 		self.phalanx_minion.announce_incomming = "incomming_shield"
@@ -2120,11 +2117,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.phalanx_minion.speech_prefix_p1 = "l5d"
 			self.phalanx_minion.speech_prefix_p2 = nil
 			self.phalanx_minion.speech_prefix_count = nil
-		end	
+		end
 		table.insert(self._enemy_list, "phalanx_minion")
 		self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
-		self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
-		self.phalanx_minion.die_sound_event = "mga_death_scream"
+		self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"	
+		if is_reaper then
+			self.phalanx_minion_assault.die_sound_event_2 = "l2n_x01a_any_3p"
+		else
+			self.phalanx_minion_assault.die_sound_event_2 = nil
+		end	
 		table.insert(self._enemy_list, "phalanx_minion_assault")
 	end
 

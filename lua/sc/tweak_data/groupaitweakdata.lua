@@ -6933,7 +6933,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"charge",
 				"provide_coverfire",
 				"provide_support",
-				--"obstacle",
+				"obstacle",
 				"shield_cover"
 			},
 			FBI_shield_flank = {
@@ -6975,7 +6975,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"spoocavoidance",
 				"murder",
 				"elite_ranged_fire",
-				--"obstacle",
+				"obstacle",
 				"shield_cover"
 			},
 			spooc = {
@@ -7092,7 +7092,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",
-				--"obstacle",
+				"obstacle",
 			    "hitnrun"
 			},
 			--Vanilla shit below
@@ -7834,7 +7834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 1,
 						amount_min = 4,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.FBI_heavy,
 						rank = 1
 					},
 					{
@@ -7870,7 +7870,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 1,
 						amount_min = 4,
-						tactics = self._tactics.ELITE_swat_rifle,
+						tactics = self._tactics.ELITE_heavy,
 						rank = 1
 					},
 					{

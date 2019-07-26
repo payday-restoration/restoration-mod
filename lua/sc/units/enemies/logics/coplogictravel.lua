@@ -4,7 +4,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local my_data = data.internal_data
 		local action_type = action:type()
         
-		if data.tactics and data.tactics.hitnrun or data.tactics and data.tactics.elite_ranged_fire or data.tactics and data.tactics.spoocavoidance or data.tactics and data.tactics.reloadingretreat or data.tactics and data.tactics.obstacle or data.tactics and data.tactics.shield then
+		if data.tactics and data.tactics.hitnrun or data.tactics and data.tactics.elite_ranged_fire or data.tactics and data.tactics.spoocavoidance or data.tactics and data.tactics.reloadingretreat or data.tactics and data.tactics.shield then
 	            --cover point changes are a little fucky wucky with these tactics
 	        if action_type == "walk" then
 	        	if action:expired() and not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
@@ -225,15 +225,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	end
     	
         if my_data.coarse_path then
-          	if data.char_tweak.chatter.clear and data.unit:anim_data().idle and not ( data.attention_obj and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified_t and data.attention_obj.verified_t < 5 ) then
+          	if data.char_tweak.chatter.clear and data.char_tweak.chatter.retreat and data.unit:anim_data().idle and not ( data.attention_obj and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified_t and data.attention_obj.verified_t < 5 ) then
        			if data.unit:movement():cool() then
-		            local roll = math.rand(1, 100)
-			        local chance_report = 50
-			         	if roll <= chance_report then
-       				        managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
-						else	
-       				        managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper_2" )
-					    end	
+       				managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
        			else
        				local clearchk = math.random(1, 100)
        				local say_clear = 50
@@ -258,44 +252,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	  
     	CopLogicTravel.queue_update(data, data.internal_data, delay)
     end
-    function CopLogicTravel.chk_group_ready_to_move(data, my_data)
-		local my_objective = data.objective
-		
-		if data.tactics and data.tactics.obstacle then
-			return false
-		end
-		
-		if not my_objective.grp_objective and not (data.tactics and data.tactics.obstacle) then
-			return true
-		end
-
-		if not CopLogicTravel._chk_close_to_criminal(data, my_data) and not (data.tactics and data.tactics.obstacle) then
-			return true
-		end
-
-		local my_dis = mvector3.distance_sq(my_objective.area.pos, data.m_pos)
-
-		if my_dis > 4000000 and not (data.tactics and data.tactics.obstacle) then
-			return true
-		end
-
-		my_dis = my_dis * 1.15 * 1.15
-
-		for u_key, u_data in pairs(data.group.units) do
-			if u_key ~= data.key then
-				local his_objective = u_data.unit:brain():objective()
-
-				if his_objective and his_objective.grp_objective == my_objective.grp_objective and not his_objective.in_place then
-					local his_dis = mvector3.distance_sq(his_objective.area.pos, u_data.m_pos)
-
-					if my_dis < his_dis then
-						return false
-					end
-				end
-			end
-		end
-
-		return true
-	end
 end
 

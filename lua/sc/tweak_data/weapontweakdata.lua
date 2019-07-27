@@ -4548,8 +4548,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 6,
 			zoom = 2,
 			concealment = 20,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -7088,8 +7088,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 22,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -7533,8 +7533,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 22,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8862,8 +8862,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				spread_moving = 9,
 				zoom = 3,
 				concealment = 23,
-				suppression = 9,
-				alert_size = 9,
+				suppression = 10,
+				alert_size = 10,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
@@ -10109,6 +10109,34 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.yayo.panic_suppression_chance = 0.0
+			self.yayo_m203gl.spread.standing = 3
+			self.yayo_m203gl.spread.crouching = 2
+			self.yayo_m203gl.spread.steelsight = 1
+			self.yayo_m203gl.spread.moving_standing = 4
+			self.yayo_m203gl.spread.moving_crouching = 3
+			self.yayo_m203gl.spread.moving_steelsight = 2
+			self.yayo_m203gl.kick.standing = self.huntsman.kick.standing
+			self.yayo_m203gl.kick.crouching = self.huntsman.kick.standing
+			self.yayo_m203gl.kick.steelsight = self.huntsman.kick.standing
+			self.yayo_m203gl.AMMO_PICKUP = {0.12, 0.38}
+			self.yayo_m203gl.panic_suppression_chance = 0.0
+			self.yayo_m203gl.ignore_damage_upgrades = true
+			self.yayo_m203gl.AMMO_MAX = 6
+			self.yayo_m203gl.stats = {
+				damage = 200,
+				spread = 21,
+				recoil = 9,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 18,
+				suppression = 20,
+				alert_size = 20,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.yayo_m203gl.stats_modifiers = {damage = 4}
 		end
 
 		if self.storm then -- Alcat's MX4
@@ -10827,8 +10855,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 25,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -11708,8 +11736,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.peepee.auto.fire_rate = 0.075				
 		self.peepee.has_description = false				
 		self.peepee.tactical_reload = 1								
-		self.peepee.AMMO_MAX = 150
-		self.peepee.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.peepee.AMMO_MAX = 180
+		self.peepee.AMMO_PICKUP = self:_pickup_chance(180, 1)
 		self.peepee.spread.standing = 3
 		self.peepee.spread.crouching = 2
 		self.peepee.spread.steelsight = 1
@@ -11727,8 +11755,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -12165,8 +12193,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				spread_moving = 9,
 				zoom = 1,
 				concealment = 28,
-				suppression = 9,
-				alert_size = 9,
+				suppression = 10,
+				alert_size = 10,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
@@ -12200,7 +12228,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				spread_moving = 5,
 				zoom = 3,
 				concealment = 30,
-				suppression = 8,
+				suppression = 9,
 				alert_size = 9,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
@@ -12656,8 +12684,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 6,
 			zoom = 2,
 			concealment = 18,
-			suppression = 8,
-			alert_size = 8,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -12706,12 +12734,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.welrod.stats = {
 			damage = 100,
 			spread = 20,
-			recoil = 19,
+			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 21,
-			suppression = 18,
-			alert_size = 20,
+			concealment = 27,
+			suppression = 0,
+			alert_size = 0,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -12721,7 +12749,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 	
 	if self.sonny then --Carl's Bren Ten
-		self.sonny.has_description = true
+		self.sonny.has_description = false
 		self.sonny.tactical_reload = 1		
 		self.sonny.AMMO_MAX = 60
 		self.sonny.AMMO_PICKUP = self:_pickup_chance(60, 1)
@@ -12778,7 +12806,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	if self.czauto then --Alcat's CZ Auto
-		self.czauto.has_description = true
+		self.czauto.has_description = false
 		self.czauto.tactical_reload = 1		
 		self.czauto.AMMO_MAX = 180
 		self.czauto.AMMO_PICKUP = self:_pickup_chance(180, 1)
@@ -12805,6 +12833,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.czauto.panic_suppression_chance = 0.0
 	end
 
 	if self.k1a7 then --Alcat's K1A7
@@ -12812,9 +12841,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.k1a7.categories = {
 				"smg"
 			}
+		self.k1a7.has_description = false
 		self.k1a7.AMMO_MAX = 150
-		self.k1a7.tactical_reload = 1								
-		self.k1a7.has_description = true																							
+		self.k1a7.tactical_reload = 1																						
 		self.k1a7.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.k1a7.spread.standing = 3
 		self.k1a7.spread.crouching = 2
@@ -12865,7 +12894,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.calico.stats = {
 			damage = 34,
 			spread = 16,
-			recoil = 13,
+			recoil = 19,
 			spread_moving = 15,
 			zoom = 1,
 			concealment = 25,

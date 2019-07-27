@@ -43786,7 +43786,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					}										
 				self.parts.wpn_fps_pis_beretta_m_spike.stats = {
 						value = 1
-					}	
+					}
+				self.parts.wpn_fps_pis_b93r_vertgrip.pcs = nil --the vertical grip breaks ADS
 				self.parts.wpn_fps_pis_b93r_vertgrip.stats = {
 						value = 1,
 						spread = 1,
@@ -46698,16 +46699,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		end				
 
 		if self.wpn_fps_pis_welrod then --Silent Enforcer's Welrod
+			self.parts.wpn_fps_pis_welrod_b_bolt.stats = {
+				suppression = 19,
+				alert_size = 19
+			}
 			self.parts.wpn_fps_pis_welrod_glow.stats = {
 				value = 0,
 				spread = 0
 			}
 			self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
-				value = 0,
-				spread = 0
+				value = 1,
+				recoil = 2,
+				concealment = -1
 			}
 			self.parts.wpn_fps_pis_welrod_b_short.stats = {
-				concealment = 2,
+				concealment = 3,
 				spread = -2,
 				suppression = -1,
 				alert_size = -1,
@@ -46776,21 +46782,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				suppression = 12,
 				alert_size = 12
 			}
-			self.parts.wpn_fps_smg_k1a7_b_sd.forbids = {
-				"wpn_fps_upg_ns_hock",
-				"wpn_fps_upg_ns_osprey",
-				"wpn_fps_upg_ns_dragon",
-				"wpn_fps_upg_ns_ass_smg_large",
-				"wpn_fps_upg_ns_ass_smg_medium",
-				"wpn_fps_upg_ns_ass_smg_small",
-				"wpn_fps_upg_ns_ass_smg_firepig",
-				"wpn_fps_upg_ns_ass_smg_stubby",
-				"wpn_fps_upg_ns_ass_smg_tank",
-				"wpn_fps_upg_ass_ns_jprifles",
-				"wpn_fps_upg_ass_ns_linear",
-				"wpn_fps_upg_ass_ns_surefire",
-				"wpn_fps_upg_ass_ns_battle"
-			}
+			table.insert(self.parts.wpn_fps_smg_k1a7_b_sd.forbids, "wpn_fps_upg_ns_hock")
+			table.insert(self.parts.wpn_fps_smg_k1a7_b_sd.forbids, "wpn_fps_upg_ns_osprey")
+			table.insert(self.parts.wpn_fps_smg_k1a7_b_sd.forbids, "wpn_fps_upg_ns_dragon")
+			if self.parts.wpn_fps_ass_ns_g_sup3 then
+				table.insert(self.parts.wpn_fps_smg_k1a7_b_sd.forbids, "wpn_fps_ass_ns_g_sup3")
+				table.insert(self.parts.wpn_fps_smg_k1a7_b_sd.forbids, "wpn_fps_ass_ns_g_sup4")
+				table.insert(self.parts.wpn_fps_smg_k1a7_b_sd.forbids, "wpn_fps_ass_ns_g_sup5")
+			end
 			self.parts.wpn_fps_smg_k1a7_s_pulled.stats = {
 				recoil = 1,
 				concealment = -1

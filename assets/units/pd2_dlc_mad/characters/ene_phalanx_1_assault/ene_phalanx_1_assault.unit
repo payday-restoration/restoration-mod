@@ -5,7 +5,7 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" />
+		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" />
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
@@ -25,7 +25,7 @@
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod1" />
-			<var name="_head_gear" value="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" />
+			<var name="_head_gear" value="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >

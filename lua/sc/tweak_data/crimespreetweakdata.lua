@@ -42,11 +42,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					level = tweak_data.narrative.stages.branchbank_cash
 				},
 				{
-					stage_id = "firestarter_2",
+					stage_id = "firestarter_2_res",
 					add = 5,
 					id = "fs_2",
 					icon = "csm_fs_2",
-					level = tweak_data.narrative.stages.firestarter_2
+					level = tweak_data.narrative.stages.firestarter_2_res
 				},
 				{
 					stage_id = "hox_3",
@@ -198,11 +198,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					level = tweak_data.narrative.stages.chew
 				},
 				{
-					stage_id = "firestarter_1",
+					stage_id = "firestarter_1_res",
 					add = 4,
 					id = "fs_1",
 					icon = "csm_fs_1",
-					level = tweak_data.narrative.stages.firestarter_1
+					level = tweak_data.narrative.stages.firestarter_1_res
 				},
 				{
 					stage_id = "nail",

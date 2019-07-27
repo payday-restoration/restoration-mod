@@ -369,7 +369,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_no_hurt"] = "Enemies are 50% resistant to knock down.",
 		["menu_cs_modifier_enemy_health_damage"] = "Enemies deal an additional 15% more damage.",
 		["menu_cs_modifier_health_damage_total"] = "",
-		["menu_cs_modifier_dozer_lmg"] = "All Bulldozer units have an additional 15% chance to become a Skulldozer.",
 		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become an elite UMP unit.",
 		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 15% chance to become a Titan Shotgunner.",
 		["menu_cs_modifier_dozer_medic"] = "All Veteran Agent units have an additional 15% chance to become a Veteran Cop.",

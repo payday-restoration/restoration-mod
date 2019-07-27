@@ -5540,6 +5540,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.rpg7.can_shoot_through_shield = true --ToDo: add proper titan shield piercing
 		self.rpg7.panic_suppression_chance = 0.0
 		self.rpg7.stats_modifiers = {damage = 3}
 		self.cobray.timers.reload_not_empty = 2
@@ -6961,6 +6962,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.ray.panic_suppression_chance = 0.0
+		self.ray.can_shoot_through_shield = true --ToDo: add proper Titan Shield Piercing
 		self.ray.stats_modifiers = {damage = 3}
 		self.tti.upgrade_blocks = nil
 		self.tti.has_description = true
@@ -9230,7 +9232,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.lynx then --Alcat's Gepard GM6 Lynx
 		self.lynx.upgrade_blocks = nil
 		self.lynx.has_description = true
-		self.lynx.desc_id = "bm_ap_weapon_sc_desc"
+		self.lynx.desc_id = "bm_heavy_ap_weapon_sc_desc"
 		self.lynx.AMMO_PICKUP = self:_pickup_chance(20, 2)
 		self.lynx.AMMO_MAX = 20
 		self.lynx.spread.standing = 3
@@ -12067,7 +12069,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.fire_mode_data.fire_rate = 1.5
 		self.ks23.single.fire_rate = 1.5
 		self.ks23.rays = 12
-		self.ks23.AMMO_MAX = 20
+		self.ks23.AMMO_MAX = 30
 		self.ks23.CLIP_AMMO_MAX = 3		
 		self.ks23.spread.standing = 3 * 2
 		self.ks23.spread.crouching = 2 * 2
@@ -12078,9 +12080,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.kick.standing = self.huntsman.kick.standing
 		self.ks23.kick.crouching = self.huntsman.kick.standing
 		self.ks23.kick.steelsight = self.huntsman.kick.standing
-		self.ks23.AMMO_PICKUP = {0.12, 0.43}
+		self.ks23.AMMO_PICKUP = self:_pickup_chance(30,1) --{0.12, 0.43}
 		self.ks23.stats = {
-			damage = 250,
+			damage = 200, --250,
 			spread = 16,
 			recoil = 6,
 			spread_moving = 6,
@@ -12093,6 +12095,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.ks23.armor_piercing_chance = 1
 		self.ks23.panic_suppression_chance = 0.0
 		self.ks23.stats_modifiers = {damage = 1}
 	end				
@@ -12694,8 +12697,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end	
 
 	if self.derringer then --Pawcio's Derringer
-		self.derringer.AMMO_MAX = 40
-		self.derringer.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.derringer.AMMO_MAX = 30
+		self.derringer.AMMO_PICKUP = self:_pickup_chance(30, 1)
+		self.derringer.fire_mode_data.fire_rate = 0.25
+		self.derringer.single.fire_rate = 0.25
 		self.derringer.spread = {}
 		self.derringer.spread.standing = 3
 		self.derringer.spread.crouching = 2
@@ -12707,9 +12712,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.derringer.kick.crouching = self.huntsman.kick.standing
 		self.derringer.kick.steelsight = self.huntsman.kick.standing
 		self.derringer.stats = {
-			damage = 100,
-			spread = 19,
-			recoil = 16,
+			damage = 150,
+			spread = 17,
+			recoil = 15,
 			spread_moving = 10,
 			zoom = 5,
 			concealment = 30,
@@ -12723,7 +12728,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.derringer.panic_suppression_chance = 0.0
 		self.derringer.has_description = true
 		self.derringer.desc_id = "bm_ap_weapon_sc_desc"
-		self.derringer.can_shoot_through_wall = true 
+		self.derringer.can_shoot_through_wall = true
+		self.derringer.can_shoot_through_enemy = true
+		self.derringer.can_shoot_through_shield = true
 		self.derringer.armor_piercing_chance = 1
 		self.derringer.stats_modifiers = {damage = 1}
 	end

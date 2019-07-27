@@ -45213,13 +45213,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23	
 		self.parts.wpn_fps_upg_ks23_ammo_slug.stats = {
 					value = 2,
-					damage = 50,
+					damage = 100,
 					recoil = 1,
 					spread = 7,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					concealment = -2
 				}
-		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
+		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = { --ToDo: get proper Titan Shield Piercing
 					damage_near_mul = 3.333333333333333,
 					damage_far_mul = 5,
 					rays = 1,
@@ -45227,7 +45227,9 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,	
 					ignore_statistic = true,
-					armor_piercing_add = 1
+					--armor_piercing_add = 1,
+					ammo_pickup_min_mul = 0.67,
+					ammo_pickup_max_mul = 0.67
 				}
 		self.parts.wpn_fps_upg_ks23_barrel_short.stats = {
 					value = 1,
@@ -45248,14 +45250,16 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.stats = {
 					value = 2,
 					recoil = -2,	
-					damage = 50,							
-					total_ammo_mod = -25,												
+					damage = 100,							
+					total_ammo_mod = -33,												
 					spread = 3
 				}	
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.custom_stats = {
 					damage_near_mul = 2,
 					damage_far_mul = 1.33,
-					rays = 8
+					rays = 8,
+					ammo_pickup_min_mul = 0.67,
+					ammo_pickup_max_mul = 0.67
 				}																
 		end		
 		

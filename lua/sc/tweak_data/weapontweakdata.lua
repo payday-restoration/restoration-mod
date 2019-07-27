@@ -12894,7 +12894,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.calico.stats = {
 			damage = 34,
 			spread = 16,
-			recoil = 13,
+			recoil = 19,
 			spread_moving = 15,
 			zoom = 1,
 			concealment = 25,

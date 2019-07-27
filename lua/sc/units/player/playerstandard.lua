@@ -764,5 +764,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			return col_ray
 		end
-
+		
+		function PlayerStandard:get_movement_state()
+			if self._state_data.in_steelsight then
+				return self._moving and "moving_steelsight" or "steelsight"
+			end
+	
+			if self._state_data.ducking then
+				return self._moving and "moving_crouching" or "crouching"
+			else
+				return self._moving and "moving_standing" or "standing"
+			end
+		end
 end

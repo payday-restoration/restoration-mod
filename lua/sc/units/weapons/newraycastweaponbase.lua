@@ -102,7 +102,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._spread = tweak_data.weapon.stats.spread[new_spread]
 		local spread_x, spread_y
 		if type(current_spread_value) == "number" then
-			spread_x = self._spread --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
+			spread_x = self._spread * current_spread_value --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
 			spread_y = spread_x
 		else
 			spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)

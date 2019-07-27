@@ -12843,8 +12843,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 		self.k1a7.has_description = false
 		self.k1a7.AMMO_MAX = 150
-		self.k1a7.tactical_reload = 1								
-		self.k1a7.has_description = true																							
+		self.k1a7.tactical_reload = 1																						
 		self.k1a7.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.k1a7.spread.standing = 3
 		self.k1a7.spread.crouching = 2

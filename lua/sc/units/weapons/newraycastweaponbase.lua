@@ -107,22 +107,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		else
 			spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)
 		end
-
-		if current_state:in_steelsight() then
-			local steelsight_tweak = spread_values.steelsight
-			local multi_x, multi_y = nil
-	
-			if type(steelsight_tweak) == "number" then
-				multi_x = steelsight_tweak
-				multi_y = multi_x
-			else
-				multi_x = steelsight_tweak[1]
-				multi_y = steelsight_tweak[2]
-			end
-	
-			spread_x = spread_x * multi_x
-			spread_y = spread_y * multi_y
-		end
 		
 		if self._spread_multiplier then
 			spread_x = spread_x * self._spread_multiplier[1]

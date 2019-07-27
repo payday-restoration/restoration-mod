@@ -11736,8 +11736,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.peepee.auto.fire_rate = 0.075				
 		self.peepee.has_description = false				
 		self.peepee.tactical_reload = 1								
-		self.peepee.AMMO_MAX = 150
-		self.peepee.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.peepee.AMMO_MAX = 180
+		self.peepee.AMMO_PICKUP = self:_pickup_chance(180, 1)
 		self.peepee.spread.standing = 3
 		self.peepee.spread.crouching = 2
 		self.peepee.spread.steelsight = 1

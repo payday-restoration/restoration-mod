@@ -3444,8 +3444,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -3925,8 +3925,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 24,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -5069,8 +5069,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 24,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -7346,8 +7346,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -7375,8 +7375,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8167,8 +8167,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -11715,8 +11715,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 23,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -12468,8 +12468,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
-			suppression = 7,
-			alert_size = 7,
+			suppression = 5,
+			alert_size = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -12738,6 +12738,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.welrod then --Silent Enforcer's Welrod
 		self.welrod.AMMO_MAX = 40
 		self.welrod.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.welrod.spread.standing = 3
+		self.welrod.spread.crouching = 2
+		self.welrod.spread.steelsight = 1
+		--self.welrod.spread.crouching_steelsight = 
+		self.welrod.spread.moving_standing = 4
+		self.welrod.spread.moving_crouching = 3
+		self.welrod.spread.moving_steelsight = 2
+		--self.welrod.spread.moving_crouching_steelsight = 
 		self.welrod.stats = {
 			damage = 100,
 			spread = 20,
@@ -12776,8 +12784,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 28,
-			suppression = 8,
-			alert_size = 8,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
@@ -12803,8 +12811,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 28,
-			suppression = 8,
-			alert_size = 8,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
@@ -12944,6 +12952,100 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		reload = 11
 		}
 		self.dp28.panic_suppression_chance = 0.1
+	end
+
+	if self.g19 then --Pwacio's Glock 19
+		self.g19.has_description = false
+		self.g19.tactical_reload = 1		
+		self.g19.AMMO_MAX = 150
+		self.g19.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.g19.spread.standing = 3
+		self.g19.spread.crouching = 2
+		self.g19.spread.steelsight = 1
+		self.g19.spread.moving_standing = 4
+		self.g19.spread.moving_crouching = 3
+		self.g19.spread.moving_steelsight = 2
+		self.g19.kick.standing = self.glock_17.kick.standing
+		self.g19.kick.crouching = self.glock_17.kick.standing
+		self.g19.kick.steelsight = self.glock_17.kick.standing
+		self.g19.stats = {
+			damage = 34,
+			spread = 17,
+			recoil = 21,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 28,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.g19.panic_suppression_chance = 0.0
+	end
+
+	if self.inkunzi then --Alcat's Neopup
+		self.inkunzi.desc_id = "bm_heavy_ap_weapon_sc_desc"
+		self.inkunzi.CLIP_AMMO_MAX = 6
+		self.inkunzi.AMMO_MAX = 10
+		self.inkunzi.AMMO_PICKUP = {0.18, 0.45}
+		self.inkunzi.stats = {
+			damage = 60,
+			spread = 16,
+			recoil = 10,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 8,
+			suppression = 20,
+			alert_size = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.inkunzi.stats_modifiers = {damage = 10}
+		self.inkunzi.panic_suppression_chance = 0.0
+		self.inkunzi.spread.standing = 3
+		self.inkunzi.spread.crouching = 2
+		self.inkunzi.spread.steelsight = 1
+		self.inkunzi.spread.moving_standing = 4
+		self.inkunzi.spread.moving_crouching = 3
+		self.inkunzi.spread.moving_steelsight = 2
+		self.inkunzi.kick.standing = self.g3.kick.standing
+		self.inkunzi.kick.crouching = self.g3.kick.standing
+		self.inkunzi.kick.steelsight = self.g3.kick.standing
+	end
+
+	if self.pps43 then --Pwacio's PPS-43
+		self.pps43.tactical_reload = 1									
+		self.pps43.has_description = false									
+		self.pps43.AMMO_MAX = 180
+		self.pps43.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.pps43.panic_suppression_chance = 0.1
+		self.pps43.spread.standing = 3
+		self.pps43.spread.crouching = 2
+		self.pps43.spread.steelsight = 1
+		self.pps43.spread.moving_standing = 4
+		self.pps43.spread.moving_crouching = 3
+		self.pps43.spread.moving_steelsight = 2
+		self.pps43.kick.standing = self.new_m4.kick.standing
+		self.pps43.kick.crouching = self.new_m4.kick.standing
+		self.pps43.kick.steelsight = self.new_m4.kick.standing
+		self.pps43.stats = {
+			damage = 30,
+			spread = 16,
+			recoil = 24,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 21,
+			suppression = 10,
+			alert_size = 10,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
 	end
 
 	end)

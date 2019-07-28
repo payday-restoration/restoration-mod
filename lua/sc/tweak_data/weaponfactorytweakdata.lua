@@ -46833,13 +46833,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 			self.parts.wpn_fps_smg_calico_body_carbine.custom_stats = nil
 			self.parts.wpn_fps_smg_calico_body_full.stats = {
-				damage = 6,
+				--damage = 6,
 				recoil = 2,
 				spread = 3,
 				concealment= -4,
-				total_ammo_mod= -16,
-				suppression = -1,
-				alert_size = -1
+				--total_ammo_mod= -16,
+				--suppression = -1,
+				--alert_size = -1
 			}
 			self.parts.wpn_fps_smg_calico_body_full.has_description = true
 			self.parts.wpn_fps_smg_calico_body_full.custom_stats = {

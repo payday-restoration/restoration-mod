@@ -47022,6 +47022,59 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 		end
 
+		if self.parts.wpn_fps_upg_o_prismatic then --Pwacio's SIGtac CP1
+			self.parts.wpn_fps_upg_o_prismatic.stats = {
+				concealment = -3,
+				spread_moving = -3,
+				zoom = 3,
+				value = 5
+			}
+		end
+
+		if self.parts.wpn_fps_upg_o_rmr_riser then --Pwacio's Trijicon RMR
+			self.parts.wpn_fps_upg_o_rmr_riser.stats = {
+				concealment = 0,
+				zoom = 0,
+				value = 0
+			}
+		end
+
+		if self.parts.wpn_fps_upg_o_pkas then --Pwacio's PKA-S
+			self.parts.wpn_fps_upg_o_pkas.stats = {
+				concealment = -1,
+				spread_moving = -1,
+				zoom = 1,
+				value = 3
+			}
+		end
+
+		if self.parts.wpn_fps_upg_o_m145 then --Pwacio's ELCAN C79
+			self.parts.wpn_fps_upg_o_m145.stats = {
+				concealment = -5,
+				spread_moving = -5,
+				zoom = 5,
+				value = 8
+			}
+		end
+
+		if self.parts.wpn_fps_upg_o_anpas13d then --Pwacio's ANPAS-13D Night Vision
+			self.parts.wpn_fps_upg_o_anpas13d.stats = {
+				concealment = -3,
+				spread_moving = -3,
+				zoom = 3,
+				value = 5
+			}
+		end
+
+		if self.parts.wpn_fps_upg_o_pn23 then --Silent Enforcer's PN 23 Night
+			self.parts.wpn_fps_upg_o_pn23.stats = {
+				concealment = -5,
+				spread_moving = -5,
+				zoom = 5,
+				value = 8
+			}
+		end
+
 		if self.wpn_fps_pis_g19 then --Pwacio's Glock 19
 			self.parts.wpn_fps_upg_g19_ammo_9mm_p.pcs = nil
 			self.parts.wpn_fps_upg_g19_barrel_ported.stats = {

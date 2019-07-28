@@ -5540,7 +5540,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.rpg7.can_shoot_through_shield = true --ToDo: add proper titan shield piercing
 		self.rpg7.panic_suppression_chance = 0.0
 		self.rpg7.stats_modifiers = {damage = 3}
 		self.cobray.timers.reload_not_empty = 2
@@ -6962,7 +6961,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.ray.panic_suppression_chance = 0.0
-		self.ray.can_shoot_through_shield = true --ToDo: add proper Titan Shield Piercing
 		self.ray.stats_modifiers = {damage = 3}
 		self.tti.upgrade_blocks = nil
 		self.tti.has_description = true

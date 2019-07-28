@@ -11286,9 +11286,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vsk94.categories = {
 			"assault_rifle"
 		}
-		self.vsk94.AMMO_MAX = 80
+		self.vsk94.AMMO_MAX = 60
 		self.vsk94.tactical_reload = 1										
-		self.vsk94.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.vsk94.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.vsk94.spread.standing = 3
 		self.vsk94.spread.crouching = 2
 		self.vsk94.spread.steelsight = 1
@@ -11297,7 +11297,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.vsk94.spread.moving_steelsight = 2
 		self.vsk94.panic_suppression_chance = 0.0
 		self.vsk94.stats = {
-			damage = 70,
+			damage = 75,
 			spread = 17,
 			recoil = 17,
 			spread_moving = 9,

@@ -45147,13 +45147,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			"wpn_fps_upg_extra_mp_unlock"
 		})
 		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
-			"wpn_fps_upg_ammo_40sw"
-		})
-		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
 			"wpn_fps_upg_o_xpsg33_magnifier"
-		})
-		table.list_append(self.wpn_fps_smg_storm.uses_parts, {
-			"wpn_fps_upg_storm_ammo_45acp"
 		})
 	end		
 

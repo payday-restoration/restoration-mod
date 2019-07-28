@@ -45356,27 +45356,33 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.list_append(self.wpn_fps_ass_hcar.uses_parts, {
 				"wpn_fps_upg_i_autofire"
 			})	
-		self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
-					value = 5,
-					spread = -1,
-					recoil = 1,
-					spread_moving = -2,
-					concealment = 0,
-				}
-		self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
-					value = 5,
-					spread = -1,
-					recoil = 1,
-					spread_moving = -2,
-					concealment = 0
-				}				
-		self.parts.wpn_fps_upg_hcar_high_cyclic.pcs = nil
-		self.parts.wpn_fps_upg_hcar_stock_ctr_riser.stats = {
-					value = 1,
-					spread = -1,
-					recoil = 2,
-					concealment = -2
-				}			
+			self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
+				value = 5,
+				spread = -1,
+				recoil = 1,
+				spread_moving = -2,
+				concealment = 0,
+			}
+			self.parts.wpn_fps_upg_hcar_aac_90t.stats = {
+				value = 5,
+				spread = -1,
+				recoil = 1,
+				spread_moving = -2,
+				concealment = 0
+			}				
+			self.parts.wpn_fps_upg_hcar_high_cyclic.pcs = nil
+			self.parts.wpn_fps_upg_hcar_stock_ctr_riser.stats = {
+				value = 1,
+				spread = -1,
+				recoil = 2,
+				concealment = -2
+			}
+			self.parts.wpn_fps_upg_hcar_mag_30.stats = {
+				value = 2,
+				concealment = -2,
+				reload = -1,
+				extra_ammo = 10
+			}
 			self.wpn_fps_ass_hcar.override = {
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
@@ -45398,7 +45404,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			})
 			table.list_append(self.wpn_fps_ass_bar.uses_parts, {
 				"wpn_fps_upg_i_autofire"
-			})		
+			})
+			self.parts.wpn_fps_ass_bar_bipod.pcs = nil
 			self.parts.wpn_fps_ass_bar_m_extended.stats = {
 				value = 0,
 				reload = -3,
@@ -46855,6 +46862,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_lmg_dp28_m_dpm36.pcs = nil
 			self.parts.wpn_fps_lmg_dp28_bayonet_svt.pcs = nil
 			self.parts.wpn_fps_lmg_dp28_carry_dpm36_1.pcs = nil
+			self.parts.wpn_fps_lmg_dp28_bipod.pcs = nil
+			self.parts.wpn_fps_lmg_dp28_tripod_top.pcs = nil
 			self.parts.wpn_fps_lmg_dp28_bipod.stats = {
 					value = 2, 
 					zoom = 1, 
@@ -46873,7 +46882,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				ammo_pickup_max_mul = 1.2,
 				movement_speed = 0.8
 			}
-			self.parts.wpn_fps_lmg_dp28_tripod_top.forbids = {"wpn_fps_upg_ammo_half_that"}				
+			--self.parts.wpn_fps_lmg_dp28_tripod_top.forbids = {"wpn_fps_upg_ammo_half_that"}				
 			self.parts.wpn_fps_lmg_dp28_barrel_lord.stats = {
 					recoil = 1,
 					spread = -1,										
@@ -46925,7 +46934,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					concealment = -3
 				}		]]
 			self.parts.wpn_fps_lmg_dp28_so_lord.stats = nil
-			self.parts.wpn_fps_lmg_dp28_so_pr.stats = nil											
+			self.parts.wpn_fps_lmg_dp28_so_pr.stats = nil
 			self.wpn_fps_lmg_dp28.override = {
 				wpn_fps_upg_ammo_half_that = {
 				stats = {
@@ -47052,6 +47061,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = -20
 			}
 			self.parts.wpn_fps_special_inkunzi_a_denel.custom_stats = {
+				rof_mult = 0.8,
 				armor_piercing_add = 1,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
@@ -47084,8 +47094,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 
 		if self.parts.wpn_fps_gre_arbiter_o_smart then --Alcat's Arbiter Scope
 			self.parts.wpn_fps_gre_arbiter_o_smart.stats = {
-				recoil = 1,
-				concealment = -3
+				spread = 2,
+				concealment = -4
 			}
 			self.parts.wpn_fps_gre_arbiter_o_smart.has_description = true
 			self.parts.wpn_fps_gre_arbiter_o_smart.forbids = {"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter"}

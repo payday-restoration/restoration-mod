@@ -84,10 +84,12 @@
 	<!--Fixes for Objects not Casting Shadows-->		
 	<object path="units/payday2/architecture/air_hangar_segment/air_shed_welcometothejungle_a" force="true" />	
 	<object path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" force="true" />
-	<object path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" force="true" />	
 	<object path="units/payday2/vehicles/str_vehicle_swat_van_gensec/str_vehicle_swat_van_gensec" force="true" />	
-	<!--disabled because rotor blade shadows don't work, so you'll just see the rotor on the heli spinning, but no actual rotor blades spinning. it's kinda better than no shadow, but it looks DUMB.-->			
-	<!--<object path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" force="true" /-->	
+	<object path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" force="true" />	
+	<object path="units/payday2/vehicles/air_vehicle_blackhawk/vehicle_blackhawk" force="true" />		
+	<object path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_ref_bag_catcher" force="true" />		
+	<object path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_ref" force="true" />		
+	<object path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_light_target" force="true" />		
 
 	
 	<!--Risk Level-->

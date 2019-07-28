@@ -46834,18 +46834,15 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_smg_calico_body_carbine.custom_stats = nil
 			self.parts.wpn_fps_smg_calico_body_full.stats = {
 				--damage = 6,
-				recoil = 2,
+				recoil = 3,
 				spread = 3,
 				concealment= -4,
 				--total_ammo_mod= -16,
 				--suppression = -1,
 				--alert_size = -1
 			}
-			self.parts.wpn_fps_smg_calico_body_full.has_description = true
-			self.parts.wpn_fps_smg_calico_body_full.custom_stats = {
-				ammo_pickup_min_mul = 0.8,
-				ammo_pickup_max_mul = 0.8
-			}
+			--self.parts.wpn_fps_smg_calico_body_full.has_description = true
+			self.parts.wpn_fps_smg_calico_body_full.custom_stats = nil
 			self.parts.wpn_fps_smg_calico_m_half.stats = {
 				extra_ammo = -25,
 				concealment = 2,
@@ -46946,6 +46943,83 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				forbids = {"wpn_fps_lmg_dp28_tripod_top"}
 			}
 		}				
+		end
+
+		if self.wpn_fps_shot_toz106 then --Silent Enforcer's TOZ-106
+			self.parts.wpn_fps_shot_toz106_b_long.stats = {
+				spread = 2,
+				recoil = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_shot_toz106_m_2.stats = {
+				concealment = 2,
+				extra_ammo = -2,
+				reload = 2
+			}
+			self.parts.wpn_fps_shot_toz106_stock_full.stats = {
+				recoil = 5,
+				concealment = -4
+			}
+			self.parts.wpn_fps_shot_toz106_stock_folded.stats = {
+				recoil = -2,
+				concealment = 2
+			}
+			self.parts.wpn_fps_shot_toz106_stock_no.stats = {
+				recoil = -3,
+				concealment = 3
+			}
+			self.parts.wpn_fps_shot_toz106_grip_ak101.stats = {
+				spread = -1,
+				recoil = 1,
+				concealment = 1
+			}
+			self.parts.wpn_fps_shot_toz106_body_black.stats = nil
+		end
+
+		if self.wpn_fps_sho_littlest then --Killerwolf's Ultra Short
+			self.parts.wpn_fps_sho_littlest_body_long.stats = {
+				recoil = 3,
+				concealment = -3
+			}
+			self.parts.wpn_fps_sho_littlest_barrel_long.stats = {
+				spread = 5,
+				concealment = -3
+			}
+		end
+
+		if self.wpn_fps_shot_auto5 then --Alcat's Browning Auto-5
+			self.parts.wpn_fps_shot_auto5_b_short.stats = {
+				spread = -2,
+				recoil = 2,
+				concealment = 2
+			}
+			self.parts.wpn_fps_shot_auto5_b_reinforced.stats = {
+				spread = 2,
+				recoil = -2,
+				concealment = -2
+			}
+			self.parts.wpn_fps_shot_auto5_s_sawed.stats = {
+				recoil = -2,
+				concealment = 3
+			}
+			self.parts.wpn_fps_shot_auto5_ammorack.stats = nil
+			self.parts.wpn_fps_shot_auto5_m_extended.stats = {
+				extra_ammo = 2,
+				concealment = -2
+			}
+			self.parts.wpn_fps_shot_auto5_m_long.stats = {
+				extra_ammo = 4,
+				concealment = -3
+			}
+			self.parts.wpn_fps_shot_auto5_s_pad.stats = {
+				recoil = 1,
+				concealment = 1
+			}
+			self.parts.wpn_fps_shot_auto5_s_grip.stats = {
+				spread = -1,
+				recoil = 1,
+				concealment = -1
+			}
 		end
 
 		if self.wpn_fps_pis_g19 then --Pwacio's Glock 19

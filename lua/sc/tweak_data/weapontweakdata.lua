@@ -4265,8 +4265,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 21,
-			suppression = 5,
-			alert_size = 5,
+			suppression = 3,
+			alert_size = 3,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -10166,7 +10166,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.storm.stats = {
 				damage = 50,
 				spread = 15,
-				recoil = 22,
+				recoil = 21,
 				spread_moving = 5,
 				zoom = 3,
 				concealment = 28,
@@ -12194,8 +12194,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				spread_moving = 9,
 				zoom = 1,
 				concealment = 28,
-				suppression = 10,
-				alert_size = 10,
+				suppression = 11,
+				alert_size = 11,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
@@ -12911,8 +12911,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 15,
 			zoom = 1,
 			concealment = 25,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 3,
@@ -12950,6 +12950,123 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		reload = 11
 		}
 		self.dp28.panic_suppression_chance = 0.1
+	end
+
+	if self.toz106 then --Silent Enforcer's TOZ-106
+		self.toz106.has_description = false							
+		self.toz106.rays = 12
+		self.toz106.AMMO_MAX = 40
+		self.toz106.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.toz106.tactical_reload = 1
+		self.toz106.spread.standing = 3 * 2
+		self.toz106.spread.crouching = 2 * 2
+		self.toz106.spread.steelsight = 1 * 2
+		self.toz106.spread.moving_standing = 4 * 2
+		self.toz106.spread.moving_crouching = 3 * 2
+		self.toz106.spread.moving_steelsight = 2 * 2
+		self.toz106.damage_near = 1300
+		self.toz106.damage_far = 2600	
+		--self.toz106.fire_mode_data.fire_rate = 0.12
+		--self.toz106.single.fire_rate = 0.12
+		self.toz106.stats = {
+			damage = 150,
+			spread = 14,
+			recoil = 15,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 25,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.toz106.panic_suppression_chance = 0.0
+		self.toz106.stats_modifiers = {damage = 1}
+	end
+
+	if self.littlest then --Killerwolf's Ultra Short
+		self.littlest.use_data.selection_index = 1
+		self.littlest.categories = {"shotgun"}
+		self.littlest.has_description = false		
+		self.littlest.rays = 12
+		self.littlest.spread.standing = 3 * 2
+		self.littlest.spread.crouching = 2 * 2
+		self.littlest.spread.steelsight = 1 * 2
+		self.littlest.spread.moving_standing = 4 * 2
+		self.littlest.spread.moving_crouching = 3 * 2
+		self.littlest.spread.moving_steelsight = 2 * 2
+		self.littlest.kick.standing = self.huntsman.kick.standing
+		self.littlest.kick.crouching = self.huntsman.kick.standing
+		self.littlest.kick.steelsight = self.huntsman.kick.standing
+		self.littlest.AMMO_MAX = 30
+		self.littlest.damage_near = 1000
+		self.littlest.damage_far = 2000
+		self.littlest.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.littlest.BURST_FIRE = 2			
+		self.littlest.BURST_FIRE_RATE_MULTIPLIER = 120				
+		self.littlest.ADAPTIVE_BURST_SIZE = false		
+		self.littlest.CAN_TOGGLE_FIREMODE = false			
+		self.littlest.DELAYED_BURST_RECOIL = true
+		--self.littlest.fire_mode_data = {}
+		--self.littlest.fire_mode_data.fire_rate = 0.12
+		--self.littlest.single = {}
+		--self.littlest.single.fire_rate = 0.12		
+		--self.littlest.auto = {}		
+		--self.littlest.auto.fire_rate = 0.00
+		self.littlest.stats = {
+			damage = 150,
+			spread = 3,
+			recoil = 13,
+			spread_moving = 3,
+			zoom = 3,
+			concealment = 30,
+			suppression = 3,
+			alert_size = 3,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.littlest.panic_suppression_chance = 0.0
+		self.littlest.stats_modifiers = {damage = 1}
+	end
+
+	if self.auto5 then --Alcat's Browning Auto-5
+		self.auto5.has_description = false				
+		self.auto5.AMMO_MAX = 60
+		self.auto5.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.auto5.rays = 12
+		self.auto5.tactical_reload = 1								
+		self.auto5.CAN_TOGGLE_FIREMODE = false
+		self.auto5.single = {}
+		self.auto5.damage_near = 800
+		self.auto5.damage_far = 1600
+		self.auto5.spread.standing = 3 * 2
+		self.auto5.spread.crouching = 2 * 2
+		self.auto5.spread.steelsight = 1 * 2
+		self.auto5.spread.moving_standing = 4 * 2
+		self.auto5.spread.moving_crouching = 3 * 2
+		self.auto5.spread.moving_steelsight = 2 * 2
+		self.auto5.kick.standing = self.new_m4.kick.standing
+		self.auto5.kick.crouching = self.new_m4.kick.standing
+		self.auto5.kick.steelsight = self.new_m4.kick.standing
+		self.auto5.stats = {
+			damage = 75,
+			spread = 9,
+			recoil = 20,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 19,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.auto5.panic_suppression_chance = 0.0	
 	end
 
 	if self.g19 then --Pwacio's Glock 19

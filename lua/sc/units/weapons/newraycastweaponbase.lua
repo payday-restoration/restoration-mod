@@ -278,7 +278,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._hipfire_mod = 1
 		self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 		self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
-		if self.heavy_AP then --for convenience
+		if self:weapon_tweak_data().heavy_AP then --for convenience
 			self._can_shoot_through_titan_shield = true
 			self._can_shoot_through_shield = true
 			self._can_shoot_through_wall = true
@@ -286,7 +286,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self:weapon_tweak_data().armor_piercing_chance = 1
 		end
 
-		if self.standard_AP then --for convenience
+		if self:weapon_tweak_data().standard_AP then --for convenience
 			self._can_shoot_through_shield = true
 			self._can_shoot_through_wall = true
 			self._can_shoot_through_enemies = true

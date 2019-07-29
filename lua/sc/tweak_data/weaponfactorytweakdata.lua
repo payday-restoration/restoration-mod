@@ -45217,11 +45217,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					damage_near_mul = 3.333333333333333,
 					damage_far_mul = 5,
 					rays = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,	
-					ignore_statistic = true,
-					--armor_piercing_add = 1,
+					heavy_AP = true,
 					ammo_pickup_min_mul = 0.67,
 					ammo_pickup_max_mul = 0.67
 				}
@@ -47189,10 +47185,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 			self.parts.wpn_fps_special_inkunzi_a_denel.custom_stats = {
 				rof_mult = 0.8,
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
+				heavy_AP = true,
 				ammo_pickup_min_mul = 2.2,
 				ammo_pickup_max_mul = 2.2
 			}

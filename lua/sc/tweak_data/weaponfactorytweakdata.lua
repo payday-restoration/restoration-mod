@@ -41466,8 +41466,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 1,
 						concealment = -1,
 						recoil = 1,
-						spread = 1												
-					}						
+						spread = 1
+					}
+				self.parts.wpn_fps_ass_vsk94_sil.stats = {
+					value = 1,
+					concealment = -4,
+					spread = 2,
+					recoil = -1,
+					suppression = 13,
+					alert_size = 13
+				}	
 				end				
 
 		if self.parts.wpn_fps_ass_famas_body_feline then -- Alcat's Various Attachments for the Famas
@@ -43473,6 +43481,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 
 		if self.wpn_fps_ass_bajur then -- carl ruins everything's honey badger
 				self.parts.wpn_fps_upg_bajur_am_grendel.pcs = nil
+				self.parts.wpn_fps_upg_bajur_fg_dmr.pcs = nil
 				self.parts.wpn_fps_upg_bajur_b_short.stats = {
 					value = 2,
 					spread = -1,
@@ -44591,6 +44600,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_upg_m14_m_tape.pcs = nil										
 			self.parts.wpn_fps_upg_am_hollow_small.pcs = nil	
 			self.parts.wpn_fps_upg_am_hollow_large.pcs = nil		
+			self.parts.wpn_fps_upg_schakal_m_nine.pcs = nil
+			self.parts.wpn_fps_upg_schakal_m_atai.pcs = nil
 			self.parts.wpn_fps_upg_vg_jowi.stats = {
 				value = 1,
 				spread = 1,
@@ -45043,6 +45054,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 
 		if self.wpn_fps_smg_m3 then --Silent Enforcer's M3 Grease Gun		
 				self.parts.wpn_fps_smg_m3_a_ovk_9mm.pcs = nil
+				self.parts.wpn_fps_smg_m3_a_9mm.pcs = nil
 				self.parts.wpn_fps_smg_m3_sling.stats = {
 						value = 1
 					}										

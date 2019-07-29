@@ -76,7 +76,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_pis_adam"
 		}
 		self.wpn_fps_x_six_shots_npc.unit = "units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc"		
-		self:_init_jeb()
+		--self:_init_jeb()
 	end
 
 	function WeaponFactoryTweakData:_init_jeb()
@@ -111,6 +111,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_pis_jeb_b_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_b_standard"
 		self.parts.wpn_fps_pis_jeb_body_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_body_standard"
 		self.parts.wpn_fps_pis_jeb_g_standard.third_unit = "units/payday2/weapons/wpn_third_pis_rage_pts/wpn_third_pis_rage_g_standard"
+		self.parts.wpn_fps_pis_jeb_b_long = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "wpn_fps_pis_rage_b_long",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_long",
+			texture_bundle_folder = "mods",
+			is_a_unlockable = true,
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_jeb_b_short = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "wpn_fps_pis_rage_b_short",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_short",
+			is_a_unlockable = true,
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_jeb_b_comp1 = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "wpn_fps_pis_rage_b_comp1",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_comp1",
+			is_a_unlockable = true,
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_jeb_b_comp2 = {
+			a_obj = "a_b",
+			type = "barrel",
+			name_id = "wpn_fps_pis_rage_b_comp2",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_b_comp2",
+			is_a_unlockable = true,
+			stats = {value = 1}
+		}
+		self.parts.wpn_fps_pis_jeb_g_ergo = {
+			a_obj = "a_g",
+			type = "grip",
+			name_id = "wpn_fps_pis_rage_g_ergo",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_g_ergo",
+			is_a_unlockable = true,
+		}
+		self.parts.wpn_fps_pis_jeb_body_smooth = {
+			a_obj = "a_body",
+			type = "upper_reciever",
+			name_id = "wpn_fps_pis_rage_body_smooth",
+			unit = "units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_body_smooth",
+			is_a_unlockable = true,
+		}
 		self.wpn_fps_pis_jeb = {
 			unit = "units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb",
 			optional_types = {
@@ -125,13 +172,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			uses_parts = {
 				"wpn_fps_pis_jeb_body_standard",
 				"wpn_fps_pis_jeb_b_standard",
-				"wpn_fps_pis_jeb_g_standard"
+				"wpn_fps_pis_jeb_g_standard",
+				"wpn_fps_pis_rage_o_adapter",
+				"wpn_fps_pis_rage_lock",
+				"wpn_fps_pis_rage_extra",
+				"wpn_fps_pis_jeb_b_long",
+				"wpn_fps_pis_jeb_b_short",
+				"wpn_fps_pis_jeb_b_comp1",
+				"wpn_fps_pis_jeb_b_comp2",
+				"wpn_fps_pis_jeb_g_ergo",
+				"wpn_fps_pis_jeb_body_smooth",
+				"wpn_fps_upg_o_specter",
+				"wpn_fps_upg_o_docter",
+				"wpn_fps_upg_o_eotech",
+				"wpn_fps_upg_o_t1micro",
+				"wpn_fps_upg_o_cmore",
+				"wpn_fps_upg_o_aimpoint_2",
+				"wpn_fps_upg_o_acog",
+				"wpn_fps_upg_o_eotech_xps",
+				"wpn_fps_upg_o_reflex",
+				"wpn_fps_upg_o_rx01",
+				"wpn_fps_upg_o_rx30",
+				"wpn_fps_upg_o_cs",
+				"wpn_fps_upg_o_spot"
 			}
 		}
 		self.wpn_fps_pis_jeb_npc = deep_clone(self.wpn_fps_pis_rage)
 		self.wpn_fps_pis_jeb_npc.unit = "units/payday2/weapons/wpn_fps_pis_rage/wpn_fps_pis_rage_npc"
 	end
-		
+
 	end
 
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then 

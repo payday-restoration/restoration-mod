@@ -8752,50 +8752,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_legacy.panic_suppression_chance = 0.0			
 		
 		--Restoration Weapons--
-
-		--[[self.jeb = deep_clone(self.new_raging_bull) --if it would only not crash the game everytime
-		self.jeb.name_id = "bm_w_jeb"
-		self.jeb.has_description = true
-		self.jeb.desc_id = "bm_w_jeb_desc"
-		self.jeb.AMMO_PICKUP = self:_pickup_chance(30, 1)
-		self.jeb.CLIP_AMMO_MAX = 3
-		self.jeb.NR_CLIPS_MAX = 6
-		self.jeb.AMMO_MAX = 30
-		self.jeb.FIRE_MODE = "single"
-		self.jeb.CAN_TOGGLE_FIREMODE = false
-		self.jeb.single = {fire_rate = 1}
-		self.jeb.fire_mode_data = {fire_rate = 1}
-		self.jeb.stats_modifiers = {damage = 1}
-		self.jeb.muzzleflash = "effects/payday2/particles/weapons/762_auto_fps"
-		self.jeb.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
-		self.jeb.sounds.fire = "rbull_fire"
-		self.jeb.sounds.fire_single = "rbull_fire"
-		self.jeb.sounds.dryfire = "secondary_dryfire"
-		self.jeb.timers = {
-			reload_not_empty = 2.25,
-			reload_empty = 2.25,
-			unequip = 0.5,
-			equip = 0.45
-		}
-		self.jeb.animations.reload_name_id = "new_raging_bull"
-		self.jeb.weapon_hold = "new_raging_bull"
-		self.jeb.use_data = {selection_index = 1}
-		self.jeb.stats = {
-			zoom = 3,
-			total_ammo_mod = 100,
-			damage = 150,
-			spread = 20,
-			spread_moving = 9,
-			recoil = 14,
-			value = 1,
-			extra_ammo = 101,
-			reload = 11,
-			suppression = 7,
-			alert_size = 7,
-			concealment = 16
-		}]]
-
-		--[[self.jeb = deep_clone(self.new_raging_bull)
 		self.jeb = {
 			categories = {
 				"pistol",
@@ -8882,7 +8838,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			suppression = 7,
 			concealment = 26
 		}		
-		self.jeb.custom = true]]
+		self.jeb.custom = true
 		
 		--Custom weapons below--
 		if self.ppsh then --Pawcio's PPSH

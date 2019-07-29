@@ -1,6 +1,0 @@
-<unit type="wpn" slot="1" >
-    <object file="units/mods/weapons/wpn_fps_pis_jeb_pts/wpn_fps_pis_jeb_body_standard" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

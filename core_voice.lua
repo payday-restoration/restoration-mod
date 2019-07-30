@@ -7,17 +7,21 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_unit("grenadier")
 		_G.voiceline_framework:register_unit("olpf")
 		_G.voiceline_framework:register_unit("tdozer")
+		_G.voiceline_framework:register_unit("tdozer_ru")
 		_G.voiceline_framework:register_unit("tspook")
 		_G.voiceline_framework:register_unit("pdth")
+		_G.voiceline_framework:register_unit("tswat_ru")
 		_G.voiceline_framework:register_unit("autumn")
 		_G.voiceline_framework:register_unit("skeleton")
 		_G.voiceline_framework:register_unit("bruce")
 		_G.voiceline_framework:register_unit("tsniper")
+		--hive man
 		_G.voiceline_framework:register_line_type("grenadier", "death")
 		_G.voiceline_framework:register_line_type("grenadier", "spawn")
 		_G.voiceline_framework:register_line_type("grenadier", "contact")
 		_G.voiceline_framework:register_line_type("grenadier", "use_gas")	
 		_G.voiceline_framework:register_line_type("grenadier", "pain")	
+		--olpf
 		_G.voiceline_framework:register_line_type("olpf", "contact")	
 		_G.voiceline_framework:register_line_type("olpf", "death")
 		_G.voiceline_framework:register_line_type("olpf", "gogo")
@@ -25,16 +29,25 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("olpf", "pain")
 		_G.voiceline_framework:register_line_type("olpf", "spawn")
 		_G.voiceline_framework:register_line_type("olpf", "kill")
-		_G.voiceline_framework:register_line_type("autumn", "contact")	
+	    --autumn
+	    _G.voiceline_framework:register_line_type("autumn", "contact")	
 		_G.voiceline_framework:register_line_type("autumn", "death")
 		_G.voiceline_framework:register_line_type("autumn", "gogo")
 		_G.voiceline_framework:register_line_type("autumn", "kill")
+		--tdozer
 		_G.voiceline_framework:register_line_type("tdozer", "spawn")
 		_G.voiceline_framework:register_line_type("tdozer", "gogo")	
 		_G.voiceline_framework:register_line_type("tdozer", "contact")	
 		_G.voiceline_framework:register_line_type("tdozer", "death")	
+		--russian tdozer
+		_G.voiceline_framework:register_line_type("tdozer_ru", "spawn")
+		_G.voiceline_framework:register_line_type("tdozer_ru", "gogo")	
+		_G.voiceline_framework:register_line_type("tdozer_ru", "contact")	
+		_G.voiceline_framework:register_line_type("tdozer_ru", "death")	
+		--tspook
 		_G.voiceline_framework:register_line_type("tspook", "death")	
 		_G.voiceline_framework:register_line_type("tspook", "kill")	
+		--tswat
 		_G.voiceline_framework:register_line_type("pdth", "buddy_died")
 		_G.voiceline_framework:register_line_type("pdth", "contact")
 		_G.voiceline_framework:register_line_type("pdth", "cover_me")
@@ -46,6 +59,15 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("pdth", "rescue_civ")
 		_G.voiceline_framework:register_line_type("pdth", "retreat")
 		_G.voiceline_framework:register_line_type("pdth", "clear")	
+		--russian tswat
+		_G.voiceline_framework:register_line_type("tswat_ru", "buddy_died")
+		_G.voiceline_framework:register_line_type("tswat_ru", "contact")
+		_G.voiceline_framework:register_line_type("tswat_ru", "death")
+		_G.voiceline_framework:register_line_type("tswat_ru", "gogo")
+		_G.voiceline_framework:register_line_type("tswat_ru", "ready")
+		_G.voiceline_framework:register_line_type("tswat_ru", "hostage")
+		_G.voiceline_framework:register_line_type("tswat_ru", "retreat")
+		--sans undertale
 		_G.voiceline_framework:register_line_type("skeleton", "buddy_died")
 		_G.voiceline_framework:register_line_type("skeleton", "contact")
 		_G.voiceline_framework:register_line_type("skeleton", "cover_me")
@@ -57,6 +79,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("skeleton", "rescue_civ")
 		_G.voiceline_framework:register_line_type("skeleton", "retreat")
 		_G.voiceline_framework:register_line_type("skeleton", "clear")
+		--bruce willis (real)
 		_G.voiceline_framework:register_line_type("bruce", "retreat")
 		_G.voiceline_framework:register_line_type("bruce", "buddy_died")
 		_G.voiceline_framework:register_line_type("bruce", "clear")
@@ -68,6 +91,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("bruce", "rescue_civ")
 		_G.voiceline_framework:register_line_type("bruce", "spawn")
 		_G.voiceline_framework:register_line_type("bruce", "retreat")
+		--tsniper
 		_G.voiceline_framework:register_line_type("tsniper", "clear")
 		_G.voiceline_framework:register_line_type("tsniper", "contact")
 		_G.voiceline_framework:register_line_type("tsniper", "death")
@@ -162,6 +186,21 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("tdozer", "death", ModPath .. "assets/oggs/voiceover/pdth/death/death" .. i .. ".ogg")
 		end	
 		
+		--Laugh...and grow Fat!
+		
+		for i = 1, 9 do
+			_G.voiceline_framework:register_voiceline("tdozer_ru", "contact", ModPath .. "assets/oggs/voiceover/tdozer_ru/contact/contact" .. i .. ".ogg")
+		end		
+		for i = 1, 5 do
+			_G.voiceline_framework:register_voiceline("tdozer_ru", "gogo", ModPath .. "assets/oggs/voiceover/tdozer_ru/gogo/gogo" .. i .. ".ogg")
+		end		
+		for i = 1, 6 do
+			_G.voiceline_framework:register_voiceline("tdozer_ru", "spawn", ModPath .. "assets/oggs/voiceover/tdozer_ru/spawn/spawn" .. i .. ".ogg")
+		end	
+		for i = 1, 3 do
+			_G.voiceline_framework:register_voiceline("tdozer_ru", "death", ModPath .. "assets/oggs/voiceover/tdozer_ru/death/death" .. i .. ".ogg")
+		end	
+		
 		--Tspook lines
 		
 		for i = 1, 39 do
@@ -170,6 +209,33 @@ if not _G.restorationvoice then
 		for i = 1, 14 do
 			_G.voiceline_framework:register_voiceline("tspook", "death", ModPath .. "assets/oggs/voiceover/tspook/death/death" .. i .. ".ogg")
 		end		
+				
+		--Russian Titan SWAT
+		
+		for i = 1, 3 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "buddy_died", ModPath .. "assets/oggs/voiceover/tswat_ru/buddy_died/buddy_died" .. i .. ".ogg")
+		end
+		for i = 1, 6 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "contact", ModPath .. "assets/oggs/voiceover/tswat_ru/contact/contact" .. i .. ".ogg")
+		end
+		for i = 1, 31 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "death", ModPath .. "assets/oggs/voiceover/tswat_ru/death/death" .. i .. ".ogg")
+		end
+		for i = 1, 7 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "gogo", ModPath .. "assets/oggs/voiceover/tswat_ru/gogo/gogo" .. i .. ".ogg")
+		end		
+
+		for i = 1, 4 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "ready", ModPath .. "assets/oggs/voiceover/tswat_ru/ready/ready" .. i .. ".ogg")
+		end
+		
+		for i = 1, 2 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "retreat", ModPath .. "assets/oggs/voiceover/tswat_ru/retreat/retreat" .. i .. ".ogg")
+		end
+		
+		for i = 1, 2 do
+			_G.voiceline_framework:register_voiceline("tswat_ru", "hostage", ModPath .. "assets/oggs/voiceover/tswat_ru/hostage/hostage" .. i .. ".ogg")
+		end	
 				
 		--spooky scary skeletons
 		

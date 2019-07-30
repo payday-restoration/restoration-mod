@@ -1109,7 +1109,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4		
 		if is_reaper then
-		    self.city_swat_titan.custom_voicework = nil
+		    self.city_swat_titan.custom_voicework = "tswat_ru"
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
 		end				
@@ -1126,7 +1126,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
 		if is_reaper then
-		   self.city_swat_titan.die_sound_event = "l2n_x01a_any_3p"
+		   self.city_swat_titan.die_sound_event = nil
 		else
 		   self.city_swat_titan.die_sound_event = nil
 		end
@@ -1775,12 +1775,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
 		if is_reaper then
-			self.tank_titan.die_sound_event_2 = "bdz_x02a_any_3p"
+			self.tank_titan.die_sound_event_2 = nil
 		else
 			self.tank_titan.die_sound_event_2 = nil
 		end			
 		if is_reaper then
-			self.tank_titan.custom_voicework = nil
+			self.tank_titan.custom_voicework = "tdozer_ru"
 		else
 			self.tank_titan.custom_voicework = "tdozer"
 		end			
@@ -2067,6 +2067,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_phalanx_minion(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.phalanx_minion = deep_clone(self.shield)
 		self.phalanx_minion.tags = {"law", "shield", "special", "shield_titan"}
 		self.phalanx_minion.experience = {}
@@ -2109,7 +2121,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
 		self.phalanx_minion.suppression = nil
 		self.phalanx_minion.is_special = true
-		if is_reaper then
+		if is_reaper or is_zombie then
 			self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
 			self.phalanx_minion.speech_prefix_count = 4

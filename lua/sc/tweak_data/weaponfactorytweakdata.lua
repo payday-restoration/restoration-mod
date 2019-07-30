@@ -41955,10 +41955,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_xm8_insight_ismv.stats = {
 						zoom = 5,
 						concealment = -4	
-						}		
-				self.parts.wpn_fps_upg_xm8_irons.stats = {
-						value = 1
-						}																						
+						}																					
 				self.parts.wpn_fps_upg_xm8_stock_collapsed.stats = {
 						value = 0,
 						spread = -1,
@@ -43907,18 +43904,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_upg_mp153_barrel_short.custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200
-					}					
-				self.parts.wpn_fps_upg_mp153_nomad.stats = {
-						value = 5,
-						recoil = -1,
-						spread = 2,
-						concealment = -4
-					}
-				self.parts.wpn_fps_upg_mp153_gk_01.stats = {
-						value = 5,
-						spread = 1,
-						concealment = -3
-					}				
+					}		
 				self.parts.wpn_fps_upg_mp153_forend_plastic.stats = {
 						value = 1,
 						concealment = 1

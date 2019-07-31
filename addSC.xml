@@ -263,6 +263,8 @@
 	<texture path="units/pd2_mod_beta/msk_sweettooth/hair_df"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/sweettooth"/>
 	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/fl"/>
+	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
 	<model path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

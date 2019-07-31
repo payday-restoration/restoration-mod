@@ -42774,7 +42774,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}													
 			end		
 
-		if self.parts.wpn_fps_upg_fg_moe2_short then -- Kden and Alcat's Universal MOE Attachment Pack
+		if self.parts.wpn_fps_upg_fg_moe2_short then -- Kden and Alcat's Universal Magpul MOE Attachment Pack
 				self.parts.wpn_fps_upg_fg_moe2_short.stats = { 
 					value = 5,
 					spread_moving = 1,
@@ -42812,7 +42812,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread_moving = 1,
 					recoil = -1,
 					concealment = 1
-				}				
+				}	
+				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag3 = { --this specific override ain't working while the rest does, at least on my side -Boo
+					stats = {
+						extra_ammo = 10,
+						value = 3,
+						spread_moving = 0,
+						reload = -1
+					}
+				}			
 				self.parts.wpn_fps_upg_m4_m_pmagsolid.stats = { 
 					value = 3,
 					spread_moving = 1,
@@ -42821,14 +42829,38 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}		
 				self.parts.wpn_fps_upg_m4_m_pmag10.stats = { 
 					value = 2,
+					spread_moving = 3,
+					recoil = -1,
+					concealment = 3,
+					reload = 4,
+					extra_ammo = -20
+				}			
+				self.parts.wpn_fps_upg_m4_m_pmag20.stats = { 
+					value = 1,
 					spread_moving = 2,
+					recoil = -1,
 					concealment = 2,
 					reload = 2,
 					extra_ammo = -10
-				}					
-				self.parts.wpn_fps_upg_m4_m_pmag20.stats = { 
-					value = 1
-				}				
+				}
+				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag10 = {
+					stats = {
+						value = 2,
+						spread_moving = 2,
+						recoil = -1,
+						concealment = 2,
+						reload = 2,
+						extra_ammo = -10
+					}
+				}
+				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag20 = {
+					stats = {
+						value = 1,
+						spread_moving = 1,
+						recoil = -1,
+						concealment = 1
+					}
+				}
 				self.parts.wpn_fps_upg_s_m4_sl.stats = { 
 					value = 1,
 					recoil = 2,
@@ -42837,7 +42869,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}							
 			end					
 
-		if self.parts.wpn_fps_upg_fg_moe2 then -- Kden and Alcat's M4 MOE Attachment Pack
+		if self.parts.wpn_fps_upg_fg_moe2 then -- Kden and Alcat's M4 Magpul MOE Attachment Pack
 				self.parts.wpn_fps_upg_fg_moe2.stats = { 
 					value = 5,
 					spread = 2,
@@ -42850,16 +42882,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}		
 				self.parts.wpn_fps_upg_s_m4_sl_c.stats = { 
 					value = 1,
-					recoil = 2,
-					spread = -1,
-					concealment = -2
+					recoil = 1,
+					concealment = -1
 				}			
 				self.parts.wpn_fps_upg_m4_m_pmag40.stats = { 
 					value = 4,
-					extra_ammo = 20,
-					reload = -2,
-					concealment = -2
-				}							
+					extra_ammo = 10,
+					reload = -1,
+					concealment = -1
+				}
+				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag40 = {
+					stats = {
+						value = 4,
+						extra_ammo = 20,
+						reload = -3,
+						concealment = -2
+					}
+				}
 			end							
 
 		if self.wpn_fps_pis_aps then -- Pawcio's Stechkin APS

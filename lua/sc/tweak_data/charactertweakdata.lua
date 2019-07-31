@@ -153,6 +153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		map_faction_override["hvh"] = "zombie"  
 		--Reapers--
 		map_faction_override["mad"] = "russia"  
+		map_faction_override["pines"] = "russia"  
 	   
 	    if level_id then
 	    	if map_faction_override[level_id] then
@@ -2067,6 +2068,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CharacterTweakData:_init_phalanx_minion(presets)
+	    local is_murky
+	    if self:get_ai_group_type() == "murkywater" then
+	    	is_murky = true
+	    end
+	    local is_reaper
+	    if self:get_ai_group_type() == "russia" then
+	    	is_reaper = true
+	    end
+	    local is_zombie
+	    if self:get_ai_group_type() == "zombie" then
+	    	is_zombie = true
+	    end
 		self.phalanx_minion = deep_clone(self.shield)
 		self.phalanx_minion.tags = {"law", "shield", "special", "shield_titan"}
 		self.phalanx_minion.experience = {}
@@ -2109,7 +2122,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
 		self.phalanx_minion.suppression = nil
 		self.phalanx_minion.is_special = true
-		if is_reaper then
+		if is_reaper or is_zombie then
 			self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
 			self.phalanx_minion.speech_prefix_count = 4

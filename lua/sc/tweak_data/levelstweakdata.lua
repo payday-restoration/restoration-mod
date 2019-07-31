@@ -165,9 +165,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.welcome_to_the_jungle_2.package = {"packages/outfitassets", "packages/narr_jungle2"}
 		self.welcome_to_the_jungle_2.player_sequence = "spawn_prop_sneak_suit"
 		
-		self.pines.package = {"packages/outfitassets", "packages/narr_pines"}
-		self.pines.player_sequence = "spawn_prop_loud_suit"		
-		
 		self.chew.package = {"packages/outfitassets", "packages/lvl_chew"}
 		self.chew.player_sequence = "spawn_prop_loud_suit"
 		
@@ -206,6 +203,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///REAPER LEVELS\\\--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
+		--We're never actually told where the forest is ;)
+		self.pines.package = {"packages/outfitassets", "packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
+		self.pines.player_sequence = "spawn_prop_loud_suit"	
+		self.pines.ai_group_type = russia	
 	
 	end)
 	

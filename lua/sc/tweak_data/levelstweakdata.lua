@@ -207,7 +207,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pines.package = {"packages/outfitassets", "packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
 		self.pines.player_sequence = "spawn_prop_loud_suit"	
 		self.pines.ai_group_type = russia	
-	
+		
+		--///BAG FIXES\\\--
+		self.pbr2.max_bags = 20
+		self.spa.max_bags = 8
+		self.fish.max_bags = 20
+		--White House Heist Stelf Bonus--		
+		self.vit.ghost_bonus = 0.15
 	end)
 	
 end

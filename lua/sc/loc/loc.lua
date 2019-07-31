@@ -113,6 +113,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
 		["bm_sc_bipod_desc"] = "Deploy/Undeploy by pressing $BTN_BIPOD.",
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
+		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects",				
+		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",		
 		["bm_wskn_ak74_rodina_desc_sc"] = "A special-issue AK that - in war and crime - has demonstrated an unquenchable thirst for blood.",
 		["bm_wskn_deagle_bling_desc_sc"] = "A hand-crafted Deagle built as testament to the finest gaming-trained crackshot in the world.",
 

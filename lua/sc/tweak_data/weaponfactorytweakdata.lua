@@ -42888,15 +42888,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_m4_m_pmag40.stats = { 
 					value = 4,
 					extra_ammo = 10,
-					reload = -1,
-					concealment = -1
+					recoil = -1,
+					reload = -1
 				}
 				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag40 = {
 					stats = {
 						value = 4,
+						recoil = -1,
 						extra_ammo = 20,
 						reload = -3,
-						concealment = -2
+						concealment = -1
 					}
 				}
 			end							

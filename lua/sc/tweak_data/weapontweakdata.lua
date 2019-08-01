@@ -665,6 +665,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.peacemaker_npc.armor_piercing = true
 		self.raging_bull_primary_npc = deep_clone(self.raging_bull_npc)
 		self.raging_bull_primary_npc.use_data.selection_index = 2
+		self.x_raging_bull_npc = deep_clone(self.raging_bull_npc)		
+		self.x_raging_bull_npc.categories = clone(self.x_rage.categories)		
+		self.x_raging_bull_npc.use_data.selection_index = 1
+		self.x_raging_bull_npc.CLIP_AMMO_MAX = 12
+		self.x_raging_bull_npc.NR_CLIPS_MAX = 5
+		self.x_raging_bull_npc.hold = "akimbo_pistol"
+		self.x_raging_bull_npc.alert_size = 2600
+		self.x_raging_bull_npc.suppression = 2
+		self.x_raging_bull_npc.FIRE_MODE = "single"		
 	end
 
 	function WeaponTweakData:_init_data_m4_npc()

@@ -459,16 +459,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.meme_man.can_shoot_while_dodging = true
 		self.meme_man.damage.bullet_dodge_chance = 65
 		self.meme_man.smoke_dodge_increase = 10
+		self.meme_man.priority_shout = "f30"
+		self.meme_man.bot_priority_shout = "f30x_any"
+		self.meme_man.priority_shout_max_dis = 3000		
 		self.meme_man.dodge = presets.dodge.veteran
 		self.meme_man.allowed_stances = {cbt = true} 
-		self.meme_man.access = "spooc"
-		self.meme_man.damage.hurt_severity = presets.hurt_severities.elite
+		self.meme_man.access = "gangster"
 		self.meme_man.use_animation_on_fire_damage = false
 		self.meme_man.move_speed = presets.move_speed.lightning
 		self.meme_man.surrender = nil
-		self.meme_man.is_special = true		
-		self.meme_man.unintimidateable = true		
-		table.insert(self._enemy_list, "meme_man")					
+		self.meme_man.is_special = true
+		self.meme_man.unintimidateable = true
+		table.insert(self._enemy_list, "meme_man")	
+		self.meme_man_shield = deep_clone(self.fbi_vet)		
+		self.meme_man_shield.tags = {"medic", "special", "shield"}		
+		self.meme_man_shield.HEALTH_INIT = 500
+		self.meme_man_shield.headshot_dmg_mul = 12.5		
+		self.meme_man_shield.can_shoot_while_dodging = true
+		self.meme_man_shield.damage.bullet_dodge_chance = 65
+		self.meme_man_shield.smoke_dodge_increase = 10
+		self.meme_man_shield.dodge = presets.dodge.veteran
+		self.meme_man_shield.priority_shout = "f30"
+		self.meme_man_shield.bot_priority_shout = "f30x_any"
+		self.meme_man_shield.priority_shout_max_dis = 3000				
+		self.meme_man_shield.access = "gangster"
+		self.meme_man_shield.use_animation_on_fire_damage = false
+		self.meme_man_shield.move_speed = presets.move_speed.lightning
+		self.meme_man_shield.surrender = nil
+		self.meme_man_shield.is_special = true
+		self.meme_man_shield.unintimidateable = true
+		self.meme_man_shield.allowed_stances = {cbt = true}
+		self.meme_man_shield.allowed_poses = {crouch = true}
+		self.meme_man_shield.always_face_enemy = true
+		self.meme_man_shield.move_speed = presets.move_speed.fast
+		self.meme_man_shield.no_run_start = true
+		self.meme_man_shield.no_run_stop = true
+		self.meme_man_shield.no_retreat = true
+		self.meme_man_shield.no_arrest = true
+		self.meme_man_shield.no_equip_anim = true
+		self.meme_man_shield.wall_fwd_offset = 100
+		self.meme_man_shield.calls_in = nil
+		self.meme_man_shield.ignore_medic_revive_animation = true
+		self.meme_man_shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
+		self.meme_man_shield.damage.shield_knocked = true		
+		table.insert(self._enemy_list, "meme_man_shield")				
+		self.vetlod = deep_clone(self.fbi_vet)		
+		self.vetlod.custom_voicework = "tdozer"
+		table.insert(self._enemy_list, "vetlod")							
 	end
 
 	function CharacterTweakData:_init_medic(presets)
@@ -11802,7 +11839,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"autumn_smg",
 			"s553_zeal",
 			"lmg_titan",
-			"x_mini_npc"			
+			"x_mini_npc",
+			"x_raging_bull_npc"			
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11854,7 +11892,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"),
 			Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"),
 			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
-			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc")			
+			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
+			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc")			
 		}
 	end
 
@@ -13071,13 +13110,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_grenadier_1",
 					"ene_veteran_cop_1",
 					"ene_veteran_cop_2",
+					"ene_veteran_lod_1",
+					"ene_veteran_lod_2",					
 					"npc_old_hoxton_prisonsuit_1",
 					"npc_old_hoxton_prisonsuit_2",
 					"ene_medic_r870",
 					"ene_medic_m4",
 					"ene_city_heavy_r870",
 					"ene_city_heavy_g36",
-					"ene_mememan_1",					
+					"ene_mememan_1",	
+					"ene_mememan_2",										
 					"ene_bulldozer_biker_1",
 					"ene_guard_biker_1",
 					"ene_murky_heavy_m4",

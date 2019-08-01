@@ -471,14 +471,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.meme_man.is_special = true
 		self.meme_man.unintimidateable = true
 		table.insert(self._enemy_list, "meme_man")	
-		self.meme_man_shield = deep_clone(self.fbi_vet)		
+		self.meme_man_shield = deep_clone(self.meme_man)		
 		self.meme_man_shield.tags = {"medic", "special", "shield"}		
-		self.meme_man_shield.HEALTH_INIT = 500
-		self.meme_man_shield.headshot_dmg_mul = 12.5		
-		self.meme_man_shield.can_shoot_while_dodging = true
-		self.meme_man_shield.damage.bullet_dodge_chance = 65
-		self.meme_man_shield.smoke_dodge_increase = 10
-		self.meme_man_shield.dodge = presets.dodge.veteran
 		self.meme_man_shield.priority_shout = "f30"
 		self.meme_man_shield.bot_priority_shout = "f30x_any"
 		self.meme_man_shield.priority_shout_max_dis = 3000				
@@ -488,7 +482,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.meme_man_shield.surrender = nil
 		self.meme_man_shield.is_special = true
 		self.meme_man_shield.unintimidateable = true
-		self.meme_man_shield.allowed_stances = {cbt = true}
 		self.meme_man_shield.allowed_poses = {crouch = true}
 		self.meme_man_shield.always_face_enemy = true
 		self.meme_man_shield.move_speed = presets.move_speed.fast

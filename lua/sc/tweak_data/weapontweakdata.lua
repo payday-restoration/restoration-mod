@@ -10674,9 +10674,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.bajur.categories = {
 			"assault_rifle"
 		}
-		self.bajur.AMMO_MAX = 150
+		self.bajur.AMMO_MAX = 120
 		self.bajur.tactical_reload = 1							
-		self.bajur.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.bajur.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.bajur.spread.standing = 3
 		self.bajur.spread.crouching = 2
 		self.bajur.spread.steelsight = 1

@@ -47243,12 +47243,34 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		end
 
 		if self.parts.wpn_fps_gre_arbiter_o_smart then --Alcat's Arbiter Scope
+			table.insert(self.wpn_fps_gre_arbiter.uses_parts, "wpn_fps_gre_arbiter_e_smart")
 			self.parts.wpn_fps_gre_arbiter_o_smart.stats = {
+				value = 1,
 				spread = 2,
+				spread_moving = 1,
 				concealment = -4
 			}
 			self.parts.wpn_fps_gre_arbiter_o_smart.has_description = true
-			self.parts.wpn_fps_gre_arbiter_o_smart.forbids = {"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter"}
+			self.parts.wpn_fps_gre_arbiter_o_smart.forbids = {"wpn_fps_gre_arbiter_e_smart"} --{"wpn_fps_upg_a_grenade_launcher_incendiary_arbiter"}
+			self.parts.wpn_fps_gre_arbiter_e_smart = { -- Modification option for those who want to use different sights
+				pcs = {},
+				type = "extra",
+				name_id = "bm_wp_wpn_fps_gre_arbiter_e_smart",
+				desc_id = "bm_wp_wpn_fps_gre_arbiter_e_smart_desc",
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				is_a_unlockable = false, --putting it to true somehow makes the attachment unable to get
+				has_description = true,
+				alt_icon = "guis/dlcs/tng/textures/pd2/blackmarket/icons/side_job_rewards/gage_mod_rewards",
+				dlc = "sc",
+				stats = {value = 1, spread = 2, spread_moving = 1, recoil = -1},
+				custom_stats = {},
+				internal_part = true
+			}
+			self.parts.wpn_fps_gre_arbiter_o_smart.override_weapon.enable_airburst_grenades = true
+			self.parts.wpn_fps_gre_arbiter_e_smart.override_weapon = {enable_airburst_grenades = true}
+			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.override_weapon = {enable_airburst_grenades = false} --fix to prevent incendiary grenades being airburst
 		end
 
 		--Incendiary Slugs are awesome--

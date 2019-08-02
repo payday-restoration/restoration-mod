@@ -42680,7 +42680,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = -2,
 					recoil = 1,					
 					concealment = 1
-				}		
+				}	
+				self.parts.wpn_fps_shot_870_fg_vertical.pcs = nil
 				self.parts.wpn_fps_shot_870_fg_vertical.stats = { 
 					value = 1,
 					spread = 1,

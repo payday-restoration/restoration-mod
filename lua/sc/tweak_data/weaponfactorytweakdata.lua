@@ -18455,6 +18455,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 1,
 					total_ammo_mod = 20,
+					concealment = -3,
 					recoil = 0
 				},
 				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
@@ -21887,15 +21888,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			type = "extra",
-			name_id = "bm_wp_m134_body_upper_light",
+			name_id = "bm_wp_upg_a_halfthatkit", --"bm_wp_m134_body_upper_light",
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_body_upper_light",
 			stats = {
 				value = 1,
-				total_ammo_mod = -20
+				extra_ammo = 60,
+				total_ammo_mod = 20,
+				concealment = -3
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},
+			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},
 			has_description = true,
+			desc_id = "bm_wp_upg_a_halfthatkit_desc",
 			texture_bundle_folder = "dlc_pack_overkill",
 			dlc = "overkill_pack"
 		}
@@ -28441,6 +28445,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 1,
 					total_ammo_mod = -20,
+					concealment = -3,
 					recoil = 0
 				},
 				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
@@ -37146,10 +37151,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					total_ammo_mod = -20,
+					extra_ammo = 60,
+					total_ammo_mod = 20,
+					concealment = -3,
 					recoil = 0
 				},
-				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 			}
 		}		
 		self.wpn_fps_lmg_shuno_npc = deep_clone(self.wpn_fps_lmg_shuno)
@@ -42574,6 +42581,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end				
 			
 		if self.wpn_fps_smg_cbjms then 	-- Pawcio's CBJ MS
+				self.parts.wpn_fps_upg_cbjms_ammo_cbj.pcs = nil
 				self.parts.wpn_fps_upg_cbjms_ammo_cbj.stats = { 
 					value = 3,
 					damage = 10,
@@ -42592,8 +42600,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_cbjms_drum_mag.has_description = false																							
 				self.parts.wpn_fps_upg_cbjms_drum_mag_half.stats = { 
 					value = 8,
-					reload = -5,
-					concealment = -4,
+					reload = -3,
+					concealment = -3,
 					extra_ammo = 20
 				}
 				self.parts.wpn_fps_upg_cbjms_drum_mag_half.has_description = false																							
@@ -46402,7 +46410,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = 20
+						total_ammo_mod = 20,
+						concealment = -3
 					},
 					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
@@ -46492,7 +46501,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_upg_ammo_half_that = {
 					stats = {
 						value = 1,
-						total_ammo_mod = 20
+						total_ammo_mod = 20,
+						concealment = -3
 					},
 					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
@@ -46514,7 +46524,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 						value = 1,
-						total_ammo_mod = 20
+						total_ammo_mod = 20,
+						concealment = -3
 					},
 				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
 				}
@@ -46816,6 +46827,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		end
 
 		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7
+			self.parts.wpn_fps_smg_k1a7_m_9mm.pcs = nil
 			self.parts.wpn_fps_smg_k1a7_m_9mm.stats = {
 				damage = -6,
 				recoil = 1,

@@ -41423,25 +41423,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					self.parts.wpn_fps_upg_deckard_ammo_damage_high.custom_stats = {
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
-						rof_mult = 0.632,						
-						armor_piercing_add = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,
-						ammo_pickup_min_mul = 0.33333333333,
-						ammo_pickup_max_mul = 0.33333333333
+						rof_mult = 0.632,
+						ammo_pickup_min_mul = 0.50,
+						ammo_pickup_max_mul = 0.50
 					}
 					self.parts.wpn_fps_upg_deckard_ammo_damage_high.forbids	= {
 						"wpn_fps_upg_deckard_burst"
 					}						
 					self.parts.wpn_fps_upg_deckard_ammo_damage_med.stats = {
 						value = 10,
-						total_ammo_mod = 34,	
+						total_ammo_mod = 50,	
 						extra_ammo = 4,												
 						damage = -50
 						}	
 					self.parts.wpn_fps_upg_deckard_ammo_damage_med.custom_stats = {	
-						rof_mult = 1.052, ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33										
+						rof_mult = 1.052, ammo_pickup_min_mul = 1.50, ammo_pickup_max_mul = 1.50,
+						armor_piercing_add = -1,
+						can_shoot_through_enemy = false,
+						can_shoot_through_shield = false,
+						can_shoot_through_wall = false,									
 						}						
 					self.parts.wpn_fps_upg_deckard_burst.stats = {
 						value = 4,
@@ -41686,7 +41686,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_triad_bullets_44hollow.stats = {
 						value = 10,
 						concealment = -17,
-						total_ammo_mod = -50,	
+						total_ammo_mod = -33,	
 						recoil = -2,
 						damage = 100,
 						spread = -2						
@@ -41701,13 +41701,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					self.parts.wpn_fps_upg_triad_bullets_44ap.pcs = nil
 					self.parts.wpn_fps_upg_triad_bullets_44normal.stats = {
 						value = 10,
-						total_ammo_mod = 33,	
+						total_ammo_mod = 100,	
 						recoil = 2,
 						damage = -100,
 						spread = 2						
 					}	
 					self.parts.wpn_fps_upg_triad_bullets_44normal.custom_stats = 
-					{rof_mult = 2, ammo_pickup_min_mul = 1.33, ammo_pickup_max_mul = 1.33}						
+					{rof_mult = 2, ammo_pickup_min_mul = 2, ammo_pickup_max_mul = 2,
+					armor_piercing_add = -1,
+					can_shoot_through_enemy = false,
+					can_shoot_through_shield = false,
+					can_shoot_through_wall = false
+				}						
 				end													
 
 		if self.wpn_fps_pis_gtt33 then 	-- Gambyt's TT 33
@@ -47509,7 +47514,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = 5
 			}
 			self.parts.wpn_fps_special_inkunzi_m_box.stats = {
-				extra_ammo = 3,
+				extra_ammo = 4,
 				reload = -3,
 				concealment = -2
 			}
@@ -47592,6 +47597,44 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_gre_arbiter_o_smart.override_weapon.enable_airburst_grenades = true
 			self.parts.wpn_fps_gre_arbiter_e_smart.override_weapon = {enable_airburst_grenades = true}
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.override_weapon = {enable_airburst_grenades = false} --fix to prevent incendiary grenades being airburst
+		end
+
+		if self.wpn_fps_pis_shatters_fury then --temp Beardlib support for S&W, remove when Jeb is added
+			self.parts.wpn_fps_pis_rage_b_long.stats = {
+				value = 3,
+				spread = 4,
+				spread_moving = -2,
+				recoil = -2,
+				concealment = -3
+			}
+			self.parts.wpn_fps_pis_rage_b_short.stats = {
+				value = 1,
+				spread = -2,
+				spread_moving = 3,
+				recoil = 4,
+				concealment = 3
+			}
+			self.parts.wpn_fps_pis_rage_b_comp1.stats = {
+				values = 2,
+				spread = -1,
+				spread_moving = 2,
+				recoil = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_pis_rage_b_comp2.stats = {
+				values = 4,
+				spread = 2,
+				spread_moving = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_pis_rage_g_ergo.stats = {
+				value = 1,
+				recoil = 1
+			}
+			self.parts.wpn_fps_pis_rage_body_smooth.stats = {
+				value = 1,
+				concealment = 1
+			}
 		end
 
 		--Incendiary Slugs are awesome--

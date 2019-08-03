@@ -8849,6 +8849,51 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}		
 		self.jeb.custom = true
 		
+		if self.shatters_fury then --Beardlib Implementation, until we can get the vanilla method working
+			self.shatters_fury.timers = {
+				reload_not_empty = 2.25,
+				reload_empty = 2.25,
+				unequip = 0.5,
+				equip = 0.45
+			}
+			self.shatters_fury.AMMO_MAX = 40
+			self.shatters_fury.AMMO_PICKUP = self:_pickup_chance(40, 1)
+			self.shatters_fury.fire_mode_data.fire_rate = 0.166
+			self.shatters_fury.single.fire_rate = 0.166
+			self.shatters_fury.spread = {}
+			self.shatters_fury.spread.standing = 3
+			self.shatters_fury.spread.crouching = 2
+			self.shatters_fury.spread.steelsight = 1
+			self.shatters_fury.spread.moving_standing = 4
+			self.shatters_fury.spread.moving_crouching = 3
+			self.shatters_fury.spread.moving_steelsight = 2
+			self.shatters_fury.kick.standing = self.glock_17.kick.standing
+			self.shatters_fury.kick.crouching = self.new_raging_bull.kick.standing
+			self.shatters_fury.kick.steelsight = self.new_raging_bull.kick.standing
+			self.shatters_fury.stats = {
+				damage = 150,
+				spread = 17,
+				recoil = 10,
+				spread_moving = 5,
+				zoom = 5,
+				concealment = 16,
+				suppression = 5,
+				alert_size = 5,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 4,
+				reload = 11
+			}
+			self.shatters_fury.panic_suppression_chance = 0.0
+			self.shatters_fury.has_description = true
+			self.shatters_fury.desc_id = "bm_ap_weapon_sc_desc"
+			self.shatters_fury.can_shoot_through_wall = true
+			self.shatters_fury.can_shoot_through_enemy = true
+			self.shatters_fury.can_shoot_through_shield = true
+			self.shatters_fury.armor_piercing_chance = 1
+			self.shatters_fury.stats_modifiers = {damage = 1}
+		end
+		
 		--Custom weapons below--
 		if self.ppsh then --Pawcio's PPSH
 			self.ppsh.tactical_reload = 1									
@@ -9199,8 +9244,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 26,
-			suppression = 4,
-			alert_size = 4,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -10822,8 +10867,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deckard.has_description = false			
 		self.deckard.categories = {"pistol"}
 		self.deckard.use_data.selection_index = 2		
-		self.deckard.AMMO_MAX = 30
-		self.deckard.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.deckard.AMMO_MAX = 40
+		self.deckard.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.deckard.has_description = true
+		self.deckard.desc_id = "bm_ap_weapon_sc_desc"
 		self.deckard.spread = {}
 		self.deckard.spread.standing = 3
 		self.deckard.spread.crouching = 2
@@ -10841,13 +10888,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 5,
 			concealment = 23,
-			suppression = 4,
-			alert_size = 4,
+			suppression = 5,
+			alert_size = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
 		}
+		self.deckard.armor_piercing = 1
+		self.deckard.can_shoot_through_enemy = true
+		self.deckard.can_shoot_through_shield = true
+		self.deckard.can_shoot_through_wall = true
 		self.deckard.panic_suppression_chance = 0.0
 	end				
 
@@ -10859,6 +10910,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.triad.spread.moving_standing = 4
 		self.triad.spread.moving_crouching = 3
 		self.triad.spread.moving_steelsight = 2
+		self.triad.has_description = true
+		self.triad.desc_id = "bm_ap_weapon_sc_desc"
 		self.triad.AMMO_MAX = 30
 		self.triad.kick.standing = self.glock_17.kick.standing
 		self.triad.kick.crouching = self.glock_17.kick.standing
@@ -10878,6 +10931,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		self.triad.armor_piercing = 1
+		self.triad.can_shoot_through_enemy = true
+		self.triad.can_shoot_through_shield = true
+		self.triad.can_shoot_through_wall = true
 		self.triad.stats_modifiers = {damage = 1}				
 	end			
 	
@@ -11808,8 +11865,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 9,
 			zoom = 3,
 			concealment = 26,
-			suppression = 10,
-			alert_size = 10,
+			suppression = 11,
+			alert_size = 11,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,

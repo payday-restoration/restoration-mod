@@ -47600,38 +47600,38 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		end
 
 		if self.wpn_fps_pis_shatters_fury then --temp Beardlib support for S&W, remove when Jeb is added
-			self.parts.wpn_fps_pis_rage_b_long.stats = {
+			self.parts.wpn_fps_pis_shatters_fury_b_long.stats = {
 				value = 3,
 				spread = 4,
 				spread_moving = -2,
 				recoil = -2,
 				concealment = -3
 			}
-			self.parts.wpn_fps_pis_rage_b_short.stats = {
+			self.parts.wpn_fps_pis_shatters_fury_b_short.stats = {
 				value = 1,
 				spread = -2,
 				spread_moving = 3,
 				recoil = 4,
 				concealment = 3
 			}
-			self.parts.wpn_fps_pis_rage_b_comp1.stats = {
+			self.parts.wpn_fps_pis_shatters_fury_b_comp1.stats = {
 				values = 2,
 				spread = -1,
 				spread_moving = 2,
 				recoil = 2,
 				concealment = 1
 			}
-			self.parts.wpn_fps_pis_rage_b_comp2.stats = {
+			self.parts.wpn_fps_pis_shatters_fury_b_comp2.stats = {
 				values = 4,
 				spread = 2,
 				spread_moving = 1,
 				concealment = -2
 			}
-			self.parts.wpn_fps_pis_rage_g_ergo.stats = {
+			self.parts.wpn_fps_pis_shatters_fury_g_ergo.stats = {
 				value = 1,
 				recoil = 1
 			}
-			self.parts.wpn_fps_pis_rage_body_smooth.stats = {
+			self.parts.wpn_fps_pis_shatters_fury_body_smooth.stats = {
 				value = 1,
 				concealment = 1
 			}

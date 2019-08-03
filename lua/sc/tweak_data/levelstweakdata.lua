@@ -27,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.lapd = lapd
 		
 		--///MURKYWATER LEVELS\\\--
-		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets", "packages/vlad_shout"}
+		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets2", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
 		self.shoutout_raid.player_sequence = "spawn_prop_raincoat"
 		
@@ -57,7 +57,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.brb.ai_group_type = nypd
-		self.brb.package = {"packages/lvl_brb", "packages/outfitassets", "packages/nypdassets"}
+		self.brb.package = {"packages/lvl_brb", "packages/outfitassets2", "packages/nypdassets"}
 		self.brb.player_sequence = "spawn_prop_winter_suit"
 		
 		self.red2.ai_group_type = nypd
@@ -177,7 +177,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.watchdogs_2_day.package = {"packages/outfitassets", "packages/narr_watchdogs2_day"}
 		self.watchdogs_2_day.player_sequence = "spawn_prop_loud_suit"
 		
-		self.cane.package = {"packages/outfitassets", "packages/cane"}
+		self.cane.package = {"packages/outfitassets2", "packages/cane"}
 		--reminder to add the biker vo package here
 		self.cane.player_sequence = "spawn_prop_winter_suit"
 								
@@ -201,7 +201,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chill.ghost_bonus = nil
 		
 		--///REAPER LEVELS\\\--
-		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets2"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 		--We're never actually told where the forest is ;)
 		self.pines.package = {"packages/outfitassets", "packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}

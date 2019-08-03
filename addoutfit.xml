@@ -1,6 +1,47 @@
 <table directory="assets">
 
     <sequence_manager path="units/payday2/characters/ragdoll" force="true"/>
+	
+	<!--///POOL REPAIR SUITS\\\-->
+	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
+	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
+
+	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_2" force="true"/>
+	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_2" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_2" force="true"/>
+
+	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_3" force="true"/>
+	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_3" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_3" force="true"/>
+
+	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_4" force="true"/>
+	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_4" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_4" force="true"/>
+
+	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_contour" force="true"/>
+
+	<texture path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_nm" force="true"/>
+
+	<!-- First Person -->
+	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
+	<model path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
+	<object path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
+
+	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
+	<model path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
+	<object path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
+
+	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
+
+	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_nm" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_df" force="true"/>	
+    <texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_nm" force="true"/>
     
 	<!--///SNEAKING OUTFIT\\\-->
 	<unit path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
@@ -79,104 +120,4 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" force="true"/>
-    
-	<!--///ARCTIC GEAR\\\-->
-    <unit path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
-	<object path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
-	<model path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
-	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
-
-	<unit path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" force="true"/>
-	<object path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" force="true"/>
-	<model path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" force="true"/>
-	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" force="true"/>
-
-	<unit path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<object path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<model path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big_contour" force="true"/>
-	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-
-	<unit path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_thin/wwh_acc_stealth_suit_female_thin" force="true"/>
-	<object path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_thin/wwh_acc_stealth_suit_female_thin" force="true"/>
-	<model path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_thin/wwh_acc_stealth_suit_female_thin" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_thin/wwh_acc_stealth_suit_female_thin" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_thin/wwh_acc_stealth_suit_female_thin_contour" force="true"/>
-	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_female_thin/wwh_acc_stealth_suit_female_thin" force="true"/>
-
-	<unit path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
-	<object path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
-	<model path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
-	<material_config path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big_contour" force="true"/>
-	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
-    
-	<!--///RAINCOATS\\\-->
-	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
-	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
-	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
-	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
-	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
-
-	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
-	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
-	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
-	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
-	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" force="true"/>
-
-	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
-	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
-	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
-	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
-	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
-	
-	<unit path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<object path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<model path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<material_config path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	
-	<!--///POOL REPAIR SUITS\\\-->
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
-
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_2" force="true"/>
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_2" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_2" force="true"/>
-
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_3" force="true"/>
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_3" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_3" force="true"/>
-
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_4" force="true"/>
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_4" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_4" force="true"/>
-
-	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" force="true"/>
-	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_contour" force="true"/>
-
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_df" force="true"/>
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_nm" force="true"/>
-
-	<!-- First Person -->
-	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
-
-	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_female" force="true"/>
-
-	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
-
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_df" force="true"/>
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_nm" force="true"/>
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_df" force="true"/>	
-    <texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_nm" force="true"/>
 </table>

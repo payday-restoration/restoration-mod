@@ -11814,6 +11814,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.peepee.panic_suppression_chance = 0.1
+		self.x_peepee.use_data.selection_index = 4
 	end						
 	
 	if self.heffy_762 then --Killerwolf & Germantaco's AK-47 
@@ -12634,7 +12635,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 7,
+			concealment = 16,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -13183,7 +13184,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.inkunzi.kick.steelsight = self.g3.kick.standing
 	end
 
-	if self.pps43 then --Pwacio's PPS-43
+	if self.pps43 then --Pawcio's PPS-43
 		self.pps43.tactical_reload = 1									
 		self.pps43.has_description = false									
 		self.pps43.AMMO_MAX = 180

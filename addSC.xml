@@ -811,6 +811,9 @@
 	<!--
 	<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/
 	>-->
+
+	<!--SKR-7 SPREE BABY!!!-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mac10_s_no"/> 			
 	
 	<!--G3 Sniper Barrel Icon-->	
 	<texture path="guis/dlcs/gage_pack_assault/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_g3_b_sniper" force="true"/>

@@ -7988,6 +7988,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_smg_mac10_m_quick",
+			"wpn_fps_smg_mac10_s_no",
 			"wpn_fps_upg_o_xpsg33_magnifier",
 			"wpn_fps_smg_mac10_body_modern",
 			"wpn_fps_upg_i_slower_rof",
@@ -38684,7 +38685,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			internal_part = true,
 			dlc = "sc"
-		}			
+		}	
+		self.parts.wpn_fps_smg_mac10_s_no = {
+			pcs = {},
+			type = "stock",
+			name_id = "bm_wp_shepheard_s_no",
+			a_obj = "a_s",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mac10_s_no",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			stats = {
+				value = 1,
+				concealment = 2,
+				recoil = -1			
+			},
+			dlc = "sc"			
+		}								
 		self.parts.wpn_fps_shot_r870_s_folding_ext = {
 			pcs = {},
 			type = "stock",
@@ -40362,7 +40377,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	if self.wpn_fps_ass_r0991 then 	--Pawcio's Colt 9MM Submachine Gun
 		self.parts.wpn_fps_upg_r0991_ammo_9mm_p.pcs = nil
 		self.parts.wpn_fps_ass_r0991_stock_moe.stats = nil
-		table.remove(self.wpn_fps_ass_r0991.uses_parts, 7)
+		self.parts.wpn_fps_ass_r0991_stock_moe.pcs = nil		
 		self.parts.wpn_fps_ass_r0991_mag.stats = nil
 		self.parts.wpn_fps_upg_r0991_barrel_supp.stats = {	
 					value = 10,
@@ -41921,7 +41936,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end		
 
 		if self.wpn_fps_snp_moss464spx then -- Pawcio's SPX Centerfire
-				table.remove(self.wpn_fps_snp_moss464spx.uses_parts, 15)
 				self.parts.wpn_fps_snp_moss464spx_stock.stats = nil
 				self.parts.wpn_fps_snp_moss464spx_stock.pcs = nil --already comes with this pre-attached, so it's disabled from being selectable in the stocks category.	
 				self.parts.wpn_fps_upg_moss464spx_barrel_short.stats = {
@@ -43369,8 +43383,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					spread_moving = -2,
 					concealment = -2
 				}
-			end																
-
+			end			
+			
 			if self.wpn_fps_snp_wargoddess then -- Mira's MK14 EBR
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
 					"wpn_fps_upg_ns_ass_smg_large"
@@ -43382,62 +43396,33 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					"wpn_fps_upg_ns_ass_smg_small"
 				})
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-					"wpn_fps_upg_ns_ass_smg_firepig"
-				})
-				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
 					"wpn_fps_upg_ns_ass_smg_stubby"
 				})
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
 					"wpn_fps_upg_ns_ass_smg_tank"
 				})
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-					"wpn_fps_upg_ass_ns_jprifles"
-				})
+					"wpn_fps_upg_ns_ass_smg_firepig"
+				})	
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-					"wpn_fps_upg_ass_ns_linear"
-				})
+					"wpn_fps_upg_ass_ns_jprifles"
+				})				
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
 					"wpn_fps_upg_ass_ns_surefire"
-				})
+				})				
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {
-					"wpn_fps_upg_ass_ns_battle"
-				})
-				self.wpn_fps_snp_wargoddess.default_blueprint = {
-					"wpn_fps_snp_wargoddess_b_std",
-					"wpn_fps_snp_wargoddess_body_std",
-					"wpn_fps_snp_wargoddess_hg_std",
-					"wpn_fps_snp_wargoddess_m_20rnd",		
-					"wpn_fps_snp_wargoddess_o_dummy",										
-					"wpn_fps_snp_wargoddess_g_std",
-					"wpn_fps_snp_wargoddess_s_crane",					
-					"wpn_fps_snp_wargoddess_s_base"
-				}	
-				self.parts.wpn_fps_snp_wargoddess_o_dummy.stats = {}	
-				self.parts.wpn_fps_snp_wargoddess_o_dummy.pcs = nil
+					"wpn_fps_upg_ass_ns_linear"
+				})								
 				self.parts.wpn_fps_snp_wargoddess_supp.stats = { 
-					value = 5,
-					suppression = 13,
-					alert_size = 13,
-					spread = -1,
-					concealment = 1,					
-					recoil = 1,
-					spread_moving = -2
+					value = 3,
+					suppression = 10,
+					alert_size = 10,
+					concealment = 1
 				}	
-				self.parts.wpn_fps_snp_wargoddess_s_mod0_unfolded.stats = { 
+				self.parts.wpn_fps_snp_wargoddess_s_mod0_in.stats = { 
 					value = 1,
-					spread = 1,
-					concealment = -1					
+					concealment = 1
 				}			
-				self.parts.wpn_fps_snp_wargoddess_s_mod0_unfolded.stats = { 
-					value = 1,
-					spread = 1,
-					concealment = -1					
-				}							
-				self.parts.wpn_fps_snp_wargoddess_b_ebr.stats = { 
-					value = 1,
-					spread = -1,
-					concealment = 2
-				}									
 			end				
 
 		if self.wpn_fps_pis_rhino then -- Pawcio's Chiappa Rhino whatever number is here

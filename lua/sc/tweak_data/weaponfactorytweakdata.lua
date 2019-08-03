@@ -40315,53 +40315,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = -1
 				}
 			end
-
-	if self.wpn_fps_pis_degle then 	--degle
-		self.parts.wpn_fps_pis_degle_am_soo.stats = {
-					value = math.huge
-				}	
-			self.parts.wpn_fps_pis_degle_gr_camo.stats = {
-					value = 0
-				}					
-			self.parts.wpn_fps_pis_degle_gr_wood.stats = {
-					value = 0
-				}		
-		self.parts.wpn_fps_pis_degle_m_big.stats = {
-					value = 4,
-					extra_ammo = 50,
-					concealment = -12
-				}		
-		self.parts.wpn_fps_pis_degle_fr_big.stats = {
-					value = 4,
-					spread = math.huge,
-					concealment = -12
-				}													
-		self.parts.wpn_fps_pis_degle_am_poi.stats = {
-					value = 4,
-					damage = 50,
-					spread = 1,
-					total_ammo_mod = -25,					
-					recoil = -2					
-				}					
-			self.parts.wpn_fps_pis_degle_am_poi.custom_stats = {ammo_pickup_max_mul = 0.75, ammo_pickup_min_mul = 0.75, rof_mult = 0.8}		
-			self.parts.wpn_fps_pis_degle_am_meg.stats = {
-					value = 4,
-					damage = math.huge,
-					spread = -20,
-					total_ammo_mod = -90,
-					recoil = -20					
-				}					
-			self.parts.wpn_fps_pis_degle_am_meg.custom_stats = {ammo_pickup_max_mul = 0.1, ammo_pickup_min_mul = 0.1, rof_mult = 0.01}	
-			self.parts.wpn_fps_pis_degle_am_fla.stats = {
-					value = 4,
-					damage = -30,
-					spread = -2,
-					total_ammo_mod = -25,
-					recoil = -3					
-				}					
-			self.parts.wpn_fps_pis_degle_am_fla.custom_stats = {ammo_pickup_max_mul = 0.75, ammo_pickup_min_mul = 0.75, rof_mult = math.huge}													
-			end						
-
+			
 	if self.wpn_fps_ass_sar21 then 	--Pawcio's SAR 21
 		table.list_append(self.wpn_fps_ass_sar21.uses_parts, {
 			"wpn_fps_upg_i_slower_rof"
@@ -40403,9 +40357,56 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_ass_sar21_mag.stats = {
 					reload = -3
 				}																																			
-			end			
+		end	
 
-	if self.wpn_fps_ass_bulldoge then 	--Gambyt's Vertical Grip Assortment Pack
+	if self.wpn_fps_ass_r0991 then 	--Pawcio's Colt 9MM Submachine Gun
+		self.parts.wpn_fps_upg_r0991_ammo_9mm_p.pcs = nil
+		self.parts.wpn_fps_ass_r0991_stock_moe.stats = nil
+		table.remove(self.wpn_fps_ass_r0991.uses_parts, 7)
+		self.parts.wpn_fps_ass_r0991_mag.stats = nil
+		self.parts.wpn_fps_upg_r0991_barrel_supp.stats = {	
+					value = 10,
+					suppression = 13,
+					alert_size = 13,
+					spread = 1,
+					recoil = -1,
+					concealment = -2
+				}	
+		self.parts.wpn_fps_upg_r0991_barrel_long.stats = {	
+					value = 4,			
+					spread = 1,
+					concealment = -2
+				}						
+		end
+
+	if self.wpn_fps_ass_gcar then 	--Gambyt, Kitsune Jimmy, and carl ruins everything's DDM4V5
+		table.remove(self.wpn_fps_ass_gcar.uses_parts, 11)
+		self.parts.wpn_fps_ass_gcar_vg_standard.stats = nil
+		self.parts.wpn_fps_ass_gcar_s_classic.stats = {	
+					value = 1,
+					spread = 1,
+					concealment = -2
+				}				
+		self.parts.wpn_fps_ass_gcar_vg_new.stats = {	
+					value = 1,
+					spread_moving = 2,
+					concealment = 1
+				}		
+		self.parts.wpn_fps_ass_gcar_vg_ergo.stats = {	
+					value = 1,
+					spread = -1,
+					recoil = 1,
+					concealment = 2					
+				}	
+		self.parts.wpn_fps_ass_gcar_vg_simple.stats = {	
+					value = 1,
+					spread = -1,
+					recoil = 1,
+					concealment = 2					
+				}									
+		end								
+
+	if self.wpn_fps_ass_bulldoge then 	--Gambyt's Bulldog
 		table.list_append(self.wpn_fps_ass_bulldoge.uses_parts, {
 			"wpn_fps_upg_i_slower_rof"
 		})
@@ -46740,7 +46741,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}			
 			self.parts.wpn_fps_upg_aug9mm_vg_bcm.stats = {
 				value = 1,
-				spread = 0,
 				spread_moving = 2,
 				concealment = 1
 			}

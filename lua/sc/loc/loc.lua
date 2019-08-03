@@ -13,6 +13,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_es_rep_upgrade"] = "",				
 		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
 		["bm_wp_1911_m_big"] = "Casket Magazine",		
+		["bm_w_lemming"] = "5/7 Pistol",				
 		["bm_wp_usp_m_big"] = "Casket Magazine",		
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		

@@ -8911,7 +8911,77 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.sar21.panic_suppression_chance = 0.0
+		end
+
+		if self.r0991 then --Pawcio's Colt 9MM Submachine Gun (even though it's an SMG. realism? thog dont caare)
+			self.r0991.categories = {"pistol"}
+			self.r0991.tactical_reload = 1											
+			self.r0991.CLIP_AMMO_MAX = 32		
+			self.r0991.AMMO_MAX = 150
+			self.r0991.BURST_FIRE = 3
+			self.r0991.BURST_FIRE_RATE_MULTIPLIER = 1.26666666667
+			self.r0991.ADAPTIVE_BURST_SIZE = false					
+			self.r0991.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.r0991.auto.fire_rate = 0.08
+			self.r0991.fire_mode_data.fire_rate = 0.08
+			self.r0991.spread.standing = 3
+			self.r0991.spread.crouching = 2
+			self.r0991.spread.steelsight = 1
+			self.r0991.spread.moving_standing = 4
+			self.r0991.spread.moving_crouching = 3
+			self.r0991.spread.moving_steelsight = 2
+			self.r0991.kick.standing = self.new_m4.kick.standing
+			self.r0991.kick.crouching = self.new_m4.kick.standing
+			self.r0991.kick.steelsight = self.new_m4.kick.standing
+			self.r0991.stats = {
+				damage = 40,
+				spread = 13,
+				recoil = 20,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 24,
+				suppression = 9,
+				alert_size = 9,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.r0991.panic_suppression_chance = 0.0
 		end		
+
+		if self.gcar then --Gambyt, Kitsune Jimmy, and carl ruins everything's DDM4V5
+			self.gcar.spread.standing = 3
+			self.gcar.spread.crouching = 2
+			self.gcar.spread.steelsight = 1
+			self.gcar.spread.moving_standing = 4
+			self.gcar.spread.moving_crouching = 3
+			self.gcar.spread.moving_steelsight = 2
+			self.gcar.kick.standing = self.new_m4.kick.standing
+			self.gcar.kick.crouching = self.new_m4.kick.standing
+			self.gcar.kick.steelsight = self.new_m4.kick.standing
+			self.gcar.CLIP_AMMO_MAX = 100
+			self.gcar.AMMO_MAX = 120
+			self.gcar.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.gcar.fire_mode_data.fire_rate = 0.08571428571
+			self.gcar.CAN_TOGGLE_FIREMODE = true
+			self.gcar.auto.fire_rate = 0.08571428571
+			self.gcar.panic_suppression_chance = 0.0
+			self.gcar.stats = {
+				damage = 50,
+				spread = 16,
+				recoil = 19,
+				spread_moving = 10,
+				zoom = 3,
+				concealment = 14,
+				suppression = 7,
+				alert_size = 7,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+		end						
 
 		if self.toz34 then --Pawcio's TOZ 34
 			self.toz34.has_description = false							
@@ -9075,7 +9145,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.g36k.spread.standing = 3
 			self.g36k.tactical_reload = 1			
 			self.g36k.spread.crouching = 2
-			self.g36k.has_description = false					
+			self.g36k.has_description = false				
 			self.g36k.spread.steelsight = 1
 			self.g36k.spread.moving_standing = 4
 			self.g36k.spread.moving_crouching = 3
@@ -9110,6 +9180,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amt.tactical_reload = 1									
 		self.amt.spread.standing = 3
 		self.amt.spread.crouching = 2
+		self.amt.use_data.selection_index = 2
+		self.amt.tactical_reload = 1		
 		self.amt.spread.steelsight = 1
 		self.amt.spread.moving_standing = 4
 		self.amt.spread.moving_crouching = 3
@@ -9117,8 +9189,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amt.kick.standing = self.glock_17.kick.standing
 		self.amt.kick.crouching = self.glock_17.kick.standing
 		self.amt.kick.steelsight = self.glock_17.kick.standing
-		self.amt.AMMO_MAX = 40
-		self.amt.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.amt.AMMO_MAX = 60
+		self.amt.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.amt.stats = {
 			damage = 100,
 			spread = 18,
@@ -9311,39 +9383,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.can_shoot_through_wall = true		
 		self.m1894.panic_suppression_chance = 0.0
 	end
-
-	if self.degle then --degle
-		self.degle.has_description = false
-		self.degle.fire_mode_data.fire_rate = 0.2
-		self.degle.single.fire_rate = 0.2
-		self.degle.spread.standing = 3
-		self.degle.spread.crouching = 2
-		self.degle.spread.steelsight = 1
-		self.degle.spread.moving_standing = 4
-		self.degle.spread.moving_crouching = 3
-		self.degle.spread.moving_steelsight = 2
-		self.degle.kick.standing = self.glock_17.kick.standing
-		self.degle.kick.crouching = self.glock_17.kick.standing
-		self.degle.kick.steelsight = self.glock_17.kick.standing
-		self.degle.CLIP_AMMO_MAX = 8
-		self.degle.AMMO_MAX = 40
-		self.degle.AMMO_PICKUP = self:_pickup_chance(40, 1)
-		self.degle.stats = {
-			damage = 100,
-			spread = 18,
-			recoil = 19,
-			spread_moving = 6,
-			zoom = 3,
-			concealment = 25,
-			suppression = 4,
-			alert_size = 4,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-		self.degle.panic_suppression_chance = 0.0
-	end				
 
 	if self.mk18s then --Gambyt's MK18 Specialist
 		self.mk18s.use_data.selection_index = 1
@@ -10641,7 +10680,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.gtt33 then --Gambyt's TT 33 
 		self.gtt33.AMMO_MAX = 80
-		self.gtt33.tactical_reload = 1									
+		self.gtt33.tactical_reload = 1				
+		self.gtt33.fire_mode_data.fire_rate = 0.07692307692
+		self.gtt33.single.fire_rate = 0.07692307692		
 		self.gtt33.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.gtt33.spread.standing = 3
 		self.gtt33.spread.crouching = 2
@@ -10776,9 +10817,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end				
 
 	if self.deckard then -- Pawcio's DECK ARD
-		self.deckard.has_description = false															
+		self.deckard.has_description = false			
+		self.deckard.categories = {"pistol"}
+		self.deckard.use_data.selection_index = 2		
 		self.deckard.AMMO_MAX = 30
-		self.deckard.AMMO_PICKUP = self:_pickup_chance(30, 1)
+		self.deckard.AMMO_PICKUP = self:_pickup_chance(30, 2)
 		self.deckard.spread = {}
 		self.deckard.spread.standing = 3
 		self.deckard.spread.crouching = 2
@@ -10810,6 +10853,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.triad.spread.standing = 3
 		self.triad.spread.crouching = 2
 		self.triad.spread.steelsight = 1
+		self.triad.use_data.selection_index = 2				
 		self.triad.spread.moving_standing = 4
 		self.triad.spread.moving_crouching = 3
 		self.triad.spread.moving_steelsight = 2
@@ -10817,7 +10861,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.triad.kick.standing = self.glock_17.kick.standing
 		self.triad.kick.crouching = self.glock_17.kick.standing
 		self.triad.kick.steelsight = self.glock_17.kick.standing
-		self.triad.AMMO_PICKUP = self:_pickup_chance(30, 1)
+		self.triad.AMMO_PICKUP = self:_pickup_chance(30, 2)
 		self.triad.stats = {
 			damage = 200,
 			spread = 16,
@@ -11733,9 +11777,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end				
 
 	if self.peepee then --Alcat's PP 2000
-		self.peepee.categories = {
-			"smg"
-		}	
+		self.peepee.use_data.selection_index = 2						
 		self.peepee.fire_mode_data.fire_rate = 0.075
 		self.peepee.single = {}						
 		self.peepee.single.fire_rate = 0.075
@@ -11745,8 +11787,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.peepee.auto.fire_rate = 0.075				
 		self.peepee.has_description = false				
 		self.peepee.tactical_reload = 1								
-		self.peepee.AMMO_MAX = 180
-		self.peepee.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.peepee.AMMO_MAX = 200
+		self.peepee.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.peepee.spread.standing = 3
 		self.peepee.spread.crouching = 2
 		self.peepee.spread.steelsight = 1
@@ -12903,7 +12945,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.calico.recategorize = "pistol_carbine"
 		self.calico.CLIP_AMMO_MAX = 50
 		self.calico.AMMO_MAX = 180
-		self.calico.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.calico.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.calico.spread.standing = 3
 		self.calico.spread.crouching = 2
 		self.calico.spread.steelsight = 1

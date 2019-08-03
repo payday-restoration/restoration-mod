@@ -284,7 +284,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self._can_shoot_through_wall = true
 			self._can_shoot_through_enemies = true
 			self:weapon_tweak_data().armor_piercing_chance = 1
-			self.standard_AP = false
 		end
 
 		if self:weapon_tweak_data().standard_AP then --for convenience
@@ -293,7 +292,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self._can_shoot_through_wall = true
 			self._can_shoot_through_enemies = true
 			self:weapon_tweak_data().armor_piercing_chance = 1
-			self.heavy_AP = false
+		end
+
+		if self:weapon_tweak_data().no_AP then --for convenience
+			self._can_shoot_through_titan_shield = false
+			self._can_shoot_through_shield = false
+			self._can_shoot_through_wall = false
+			self._can_shoot_through_enemies = false
+			self:weapon_tweak_data().armor_piercing_chance = 0
 		end
 		
 		if not self:is_npc() then
@@ -372,10 +378,19 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 
 			if stats.standard_AP then --for convenience
+				self._can_shoot_through_titan_shield = false
 				self._can_shoot_through_shield = true
 				self._can_shoot_through_wall = true
 				self._can_shoot_through_enemies = true
 				self:weapon_tweak_data().armor_piercing_chance = 1
+			end
+
+			if stats.no_AP then --for convenience
+				self._can_shoot_through_titan_shield = false
+				self._can_shoot_through_shield = false
+				self._can_shoot_through_wall = false
+				self._can_shoot_through_enemies = false
+				self:weapon_tweak_data().armor_piercing_chance = 0
 			end
 
 			if stats.use_pistol_kick then

@@ -41425,7 +41425,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_far_mul = 999999999,
 						rof_mult = 0.632,
 						ammo_pickup_min_mul = 0.50,
-						ammo_pickup_max_mul = 0.50
+						ammo_pickup_max_mul = 0.50,
+						can_shoot_through_titan_shield = true
 					}
 					self.parts.wpn_fps_upg_deckard_ammo_damage_high.forbids	= {
 						"wpn_fps_upg_deckard_burst"
@@ -41696,7 +41697,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_far_mul = 999999999,
 						rof_mult = 0.9,						
 						ammo_pickup_min_mul = 0.33333333333,
-						ammo_pickup_max_mul = 0.33333333333
+						ammo_pickup_max_mul = 0.33333333333,
+						can_shoot_through_titan_shield = true
 					}
 					self.parts.wpn_fps_upg_triad_bullets_44ap.pcs = nil
 					self.parts.wpn_fps_upg_triad_bullets_44normal.stats = {

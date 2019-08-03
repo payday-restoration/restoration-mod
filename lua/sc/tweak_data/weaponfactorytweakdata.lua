@@ -44211,7 +44211,83 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 1,
 						extra_ammo = 4,
 						reload = -1						
-					}															
+					}			
+				self.wpn_fps_shot_m1216.override = {
+					wpn_fps_upg_a_slug = {
+						name_id = "bm_wp_upg_a_slug_sc",
+						desc_id = "bm_wp_upg_a_slug_sc_desc",
+						stats = {
+							value = 10,
+							concealment = -5,
+							total_ammo_mod = -33,
+							damage = 25,
+							recoil = -1,
+							spread = 11,
+							suppression = -1,
+							alert_size = -1,
+							moving_spread = 0
+						},
+						custom_stats = {
+							damage_near_mul = 999999999,
+							damage_far_mul = 999999999,
+							rays = 1,
+							armor_piercing_add = 0,
+							can_shoot_through_enemy = false,
+							can_shoot_through_shield = false,
+							can_shoot_through_wall = false,
+							ammo_pickup_min_mul = 0.666666666667,
+							ammo_pickup_max_mul = 0.666666666667
+						}
+					},
+					wpn_fps_upg_a_custom = {
+						stats = {
+							value = 9,
+							total_ammo_mod = -33,
+							damage = 25,
+							spread = -1
+						},
+						custom_stats = {
+							damage_near_mul = -100,
+							damage_far_mul = -200,
+							rays = 6,
+							ammo_pickup_min_mul = 0.666666666667,
+							ammo_pickup_max_mul = 0.666666666667
+						}
+					},	
+					wpn_fps_upg_a_custom_free = {
+						stats = {
+							value = 9,
+							total_ammo_mod = -33,
+							damage = 25,
+							spread = -1
+						},
+						custom_stats = {
+							damage_near_mul = -100,
+							damage_far_mul = -200,
+							rays = 6,
+							ammo_pickup_min_mul = 0.666666666667,
+							ammo_pickup_max_mul = 0.666666666667
+						}
+					},			
+					wpn_fps_upg_a_explosive = {
+						stats = {
+							value = 10,
+							total_ammo_mod = -67,
+							recoil = -5,
+							damage = 100
+						},
+						custom_stats = {
+							ignore_statistic = true,
+							block_b_storm = true,
+							rays = 1,
+							damage_near_mul = 999999999,
+							damage_far_mul = 999999999,
+							bullet_class = "InstantExplosiveBulletBase",
+							ammo_pickup_min_mul = 0.333333333333,
+							ammo_pickup_max_mul = 0.333333333333
+							}
+						}
+					}												
 			end				
 
 		if self.wpn_fps_pis_vp70 then -- VP70M  
@@ -47001,6 +47077,28 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = 1
 			}
 			self.parts.wpn_fps_shot_toz106_body_black.stats = nil
+			self.wpn_fps_shot_toz106.override = { 
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						recoil = -5,
+						concealment = -7,
+						total_ammo_mod = -62,
+						damage = 250
+					},
+					override = {wpn_fps_shot_r870_body_rack = {unit = "units/mods/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_HErack"}},																
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
+					}
+				}
+			}
 		end
 
 		if self.wpn_fps_sho_littlest then --Killerwolf's Ultra Short
@@ -47011,6 +47109,117 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_sho_littlest_barrel_long.stats = {
 				spread = 5,
 				concealment = -3
+			}
+			self.wpn_fps_sho_littlest.override = {
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						recoil = -5,
+						concealment = -7,
+						spread_multi = {0.5, 0.5},	
+						total_ammo_mod = -60,
+						damage = 250
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.4,
+						ammo_pickup_max_mul = 0.4
+					}
+				},
+				wpn_fps_upg_a_slug_fire = {
+					stats = {
+						value = 10,
+						concealment = -5,
+						total_ammo_mod = -7,
+						damage = 74,	
+						recoil = -2,
+						spread = 12,
+						spread_multi = {0.5, 0.5},	
+						suppression = -1,
+						alert_size = -1,
+						moving_spread = 0
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 1,
+						armor_piercing_add = 1,
+						can_shoot_through_enemy = true,
+						can_shoot_through_shield = true,
+						can_shoot_through_wall = true,
+						bullet_class = "FlameBulletBase",
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+						fire_dot_data = {
+							dot_damage = "0",
+							dot_trigger_max_distance = "9999",
+							dot_trigger_chance = "100",
+							dot_length = "3",
+							dot_tick_period = "0.5"
+						},
+						ammo_pickup_min_mul = 0.66,
+						ammo_pickup_max_mul = 0.66
+					}
+				},
+				wpn_fps_upg_a_slug = {
+					stats = {
+						value = 10,
+						concealment = -5,
+						total_ammo_mod = -33,
+						damage = 50,	
+						recoil = -2,
+						spread = 12,
+						spread_multi = {0.5, 0.5},	
+						suppression = -1,
+						alert_size = -1,
+						moving_spread = 0
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 1,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667,
+						armor_piercing_add = 1,
+						can_shoot_through_enemy = true,
+						can_shoot_through_shield = true,
+						can_shoot_through_wall = true,
+					},
+				},
+				wpn_fps_upg_a_custom = {
+					stats = {
+						value = 9,
+						total_ammo_mod = -33,
+						damage = 50,	
+						spread = -1
+					},
+					custom_stats = {
+						damage_near_mul = -100,
+						damage_far_mul = -200,
+						rays = 9,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					},
+				},
+				wpn_fps_upg_a_custom_free = {
+					stats = {
+						value = 9,
+						total_ammo_mod = -33,
+						damage = 50,	
+						spread = -1
+					},
+					custom_stats = {
+						damage_near_mul = -100,
+						damage_far_mul = -200,
+						rays = 9,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					},
+				}			
 			}
 		end
 
@@ -47046,6 +47255,117 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = -1,
 				recoil = 1,
 				concealment = -1
+			}
+			self.wpn_fps_shot_auto5.override = {
+				wpn_fps_upg_a_slug_fire = {
+					desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
+					stats = {
+						value = 10,
+						concealment = 0,
+						total_ammo_mod = -5,
+						damage = 31,
+						spread = 14,
+						spread_multi = {0.5, 0.5},	
+						recoil = -3,
+						moving_spread = 0
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 1,
+						armor_piercing_add = 0,
+						can_shoot_through_enemy = false,
+						can_shoot_through_shield = false,
+						can_shoot_through_wall = false,
+						bullet_class = "FlameBulletBase",
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+						fire_dot_data = {
+							dot_damage = "0",
+							dot_trigger_max_distance = "9999",
+							dot_trigger_chance = "100",
+							dot_length = "3",
+							dot_tick_period = "0.5"
+						},
+						ammo_pickup_min_mul = 0.75,
+						ammo_pickup_max_mul = 0.75
+					}
+				},
+				wpn_fps_upg_a_slug = {
+					name_id = "bm_wp_upg_a_slug_sc",
+					desc_id = "bm_wp_upg_a_slug_sc_desc",
+					stats = {
+						value = 10,
+						concealment = 0,
+						total_ammo_mod = -33,
+						damage = 25,
+						spread = 14,
+						spread_multi = {0.5, 0.5},	
+						recoil = -3,
+						moving_spread = 0
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 1,
+						armor_piercing_add = 0,
+						can_shoot_through_enemy = false,
+						can_shoot_through_shield = false,
+						can_shoot_through_wall = false,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					}
+				},
+				wpn_fps_upg_a_custom = {
+					stats = {
+						value = 9,
+						total_ammo_mod = -33,
+						damage = 25,
+						spread_multi = {0.5, 0.5},	
+						spread = -1
+					},
+					custom_stats = {
+						damage_near_mul = -100,
+						damage_far_mul = -200,
+						rays = 9,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					}
+				},
+				wpn_fps_upg_a_custom_free = {
+					stats = {
+						value = 9,
+						total_ammo_mod = -33,
+						damage = 25,
+						spread = -1
+					},
+					custom_stats = {
+						damage_near_mul = -100,
+						damage_far_mul = -200,
+						rays = 9,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					}
+				},			
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						concealment = -5,
+						total_ammo_mod = -66,
+						spread_multi = {0.5, 0.5},	
+						recoil = -5,
+						damage = 125
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.333333333333,
+						ammo_pickup_max_mul = 0.333333333333
+					}
+				}
 			}
 		end
 

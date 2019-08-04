@@ -7692,17 +7692,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		self._tactics = {
 			CS_cop = {
+			    "groupcsr",
 				"provide_coverfire",
 				"provide_support",
 				"ranged_fire"
 			},
 			CS_cop_stealth = {
+			    "grouphrtr",
 				"flank",
 				"provide_coverfire",
 				"provide_support",
 			    "hitnrun"
 			},
 			CS_swat_rifle = {
+			    "groupcsr",
 				"smoke_grenade",
 				"charge",
 				"provide_coverfire",
@@ -7711,6 +7714,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			CS_swat_shotgun = {
+			    "groupcsr",
 				"smoke_grenade",
 				"charge",
 				"provide_coverfire",
@@ -7718,6 +7722,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"shield_cover"
 			},
 			CS_swat_heavy = {
+			    "groupcsr",
 				"smoke_grenade",
 				"charge",
 				"flash_grenade",
@@ -7779,11 +7784,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support"
 			},
 			FBI_suit = {
+			    "grouphrtr",
 				"flank",
 				"elite_ranged_fire",
 				"flash_grenade"
 			},
 			FBI_suit_stealth = {
+			    "grouphrtr",
 			    "reloadingretreat",
 				"provide_coverfire",
 				"provide_support",
@@ -7792,6 +7799,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			FBI_swat_rifle = {
+				"groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"provide_coverfire",
@@ -7800,6 +7808,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"ranged_fire"
 			},
 			FBI_swat_shotgun = {
+				"groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7807,6 +7816,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support"
 			},
 			FBI_heavy = {
+				"groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7946,6 +7956,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			--mean DS tactics below
 			ELITE_suit_stealth = {
+			    "grouphrtr",
 			    "reloadingretreat",
 			    "spoocavoidance",
 				"provide_coverfire",
@@ -7956,6 +7967,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			ELITE_swat_rifle = {
+			    "groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"provide_coverfire",
@@ -7967,6 +7979,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"elite_ranged_fire"
 			},
 			ELITE_heavy = {
+			    "groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7978,6 +7991,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			ELITE_swat_shotgun = {
+			    "groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -8030,6 +8044,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			--Vanilla shit below
 			swat_shotgun_rush = {
+				"groupcsr",
 				"charge",
 				"provide_coverfire",
 				"provide_support",
@@ -8045,6 +8060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			swat_rifle = {
+				"groupcsr",
 				"ranged_fire",
 				"provide_coverfire",
 				"provide_support"

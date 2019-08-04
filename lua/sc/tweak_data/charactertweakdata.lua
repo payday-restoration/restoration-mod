@@ -11655,28 +11655,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			no_chatter = {},
 			guard = {
 				aggressive = true,
-				--retreat = true,
 				contact = true,
 				clear = true,
 				clear_whisper = true,
 				clear_whisper_2 = true,
-				--go_go = true,
-				---push = true,
 				reload = true,
 				look_for_angle = true,
 				ecm = true,
 				saw = true,
 				trip_mines = true,
 				sentry = true,
-				--ready = true,
-				--smoke = true,
-				--flash_grenade = true,
-				--follow_me = true,
-				--deathguard = true,
-				--open_fire = true,
 				suppress = true
 			},
 			cop = {
+				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11700,6 +11692,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			swat = {
+				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11720,8 +11713,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				follow_me = true,
 				deathguard = true,
 				open_fire = true,
-				suppress = true,
-				entry = true
+				suppress = true
 			},
 			omnia_lpf = {
 				aggressive = true,
@@ -11765,14 +11757,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			shield = {
+				entry = true,
 			    follow_me = true,
 				aggressive_assault = true,
 				retreat = true,
 				go_go = true,
 				push = true,
 				clear = true,
-				reload = true,
-				entry = true
+				reload = true
 			},
 			cloaker = {
 				contact = true,

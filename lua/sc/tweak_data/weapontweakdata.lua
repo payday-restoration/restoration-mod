@@ -10895,10 +10895,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.deckard.armor_piercing = 1
-		self.deckard.can_shoot_through_enemy = true
-		self.deckard.can_shoot_through_shield = true
-		self.deckard.can_shoot_through_wall = true
+		self.deckard.standard_AP = true
 		self.deckard.panic_suppression_chance = 0.0
 	end				
 
@@ -10931,10 +10928,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.triad.armor_piercing = 1
-		self.triad.can_shoot_through_enemy = true
-		self.triad.can_shoot_through_shield = true
-		self.triad.can_shoot_through_wall = true
+		self.triad.standard_AP = true
 		self.triad.stats_modifiers = {damage = 1}				
 	end			
 	

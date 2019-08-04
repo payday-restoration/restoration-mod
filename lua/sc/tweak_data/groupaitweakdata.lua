@@ -12,6 +12,70 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		group_min how many cops need to be in a group for the line to play
 		queue what call is used in chatter
 		]]--
+		self.enemy_chatter.csalpha = {
+			radius = 6000,
+		    max_nr = 1,
+		    duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    queue = "gr2a"
+		}
+		self.enemy_chatter.csbravo = {
+			radius = 6000,
+		   	max_nr = 1,
+		   	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    queue = "gr2b"
+		}
+		self.enemy_chatter.cscharlie = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr2c"
+		}
+		self.enemy_chatter.csdelta = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr2d"
+		}
+		self.enemy_chatter.hrtalpha = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+			queue = "gr1a"
+		}
+		self.enemy_chatter.hrtbravo = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr1b"
+		}
+		self.enemy_chatter.hrtcharlie = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr1c"
+		}
+		self.enemy_chatter.hrtdelta = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr1d"
+		}
 		self.enemy_chatter.aggressive = {
 			radius = 700,
 			max_nr = 10,

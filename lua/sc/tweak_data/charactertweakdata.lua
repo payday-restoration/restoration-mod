@@ -11720,7 +11720,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				follow_me = true,
 				deathguard = true,
 				open_fire = true,
-				suppress = true
+				suppress = true,
+				entry = true
 			},
 			omnia_lpf = {
 				aggressive = true,
@@ -11770,7 +11771,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				go_go = true,
 				push = true,
 				clear = true,
-				reload = true
+				reload = true,
+				entry = true
 			},
 			cloaker = {
 				contact = true,

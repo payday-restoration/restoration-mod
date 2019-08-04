@@ -191,6 +191,7 @@
 		<hook file="sc/units/weapons/akimboweaponbase.lua" source_file="lib/units/weapons/akimboweaponbase"/>
 		<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
 		<hook file="sc/managers/hud/hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
+		<hook file="sc/managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

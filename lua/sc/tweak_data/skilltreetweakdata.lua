@@ -3142,7 +3142,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"damage_control",
 					"player_no_deflection",
 					"player_damage_control_passive",
-					"player_damage_control_cooldown_drain_1",
+					"player_damage_control_healing",
 					"player_armor_to_health_conversion"
 				},
 				icon_xy = {
@@ -3156,9 +3156,11 @@ function SkillTreeTweakData:init(tweak_data)
 				texture_bundle_folder = "myh",
 				desc_id = "menu_deck19_3_desc_sc",
 				name_id = "menu_deck19_3",
-				upgrades = {"player_damage_control_auto_shrug_1"},
+				upgrades = {
+					"player_damage_control_cooldown_drain_1"
+				},
 				icon_xy = {
-					2,
+					3,
 					0
 				}
 			},
@@ -3168,7 +3170,7 @@ function SkillTreeTweakData:init(tweak_data)
 				texture_bundle_folder = "myh",
 				desc_id = "menu_deck19_5_desc_sc",
 				name_id = "menu_deck19_5",
-				upgrades = {"player_damage_control_auto_shrug_2"},
+				upgrades = {"player_damage_control_auto_shrug_1"},
 				icon_xy = {
 					2,
 					0
@@ -3178,7 +3180,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 2400,
 				texture_bundle_folder = "myh",
-				desc_id = "menu_deck19_7_desc",
+				desc_id = "menu_deck19_7_desc_sc",
 				name_id = "menu_deck19_7",
 				upgrades = {"player_damage_control_cooldown_drain_2"},
 				icon_xy = {
@@ -3190,11 +3192,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 4000,
 				texture_bundle_folder = "myh",
-				desc_id = "menu_deck19_9_desc",
+				desc_id = "menu_deck19_9_desc_sc",
 				name_id = "menu_deck19_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_damage_control_healing"
+					"player_health_revive_max"
 				},
 				icon_xy = {
 					0,

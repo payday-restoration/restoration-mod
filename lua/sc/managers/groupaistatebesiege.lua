@@ -193,6 +193,76 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	   return true
     end
 	
+	function GroupAIStateBesiege:_voice_groupentry(group)
+	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
+	if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
+		for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
+			local randomgroupcallout = math.random(1, 100)
+			--assign tactic-identifiers for this in groupaistatebesiege on a group-to-group basis
+			--groupcs is for assault team, grouphrt is for rescue team,groupcsr/grouphrtr picks a random letter, groupany depends on whether assault is active and picks a random letter or not
+			if tactic_name == "groupcs1" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+			elseif tactic_name == "groupcs2" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+			elseif tactic_name == "groupcs3" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+			elseif tactic_name == "groupcs4" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+			elseif tactic_name == "grouphrt1" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+			elseif tactic_name == "grouphrt2" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+			elseif tactic_name == "grouphrt3" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+			elseif tactic_name == "grouphrt4" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+			elseif tactic_name == "groupcsr" then
+				if randomgroupcallout < 25 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+				elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+				else
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+				end
+			elseif tactic_name == "grouphrtr" then
+				if randomgroupcallout < 25 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+				elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+				else
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+				end
+			elseif tactic_name == "groupany" then
+				if self._task_data.assault.active then
+					if randomgroupcallout < 25 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+					else
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+					end
+				else
+					if randomgroupcallout < 25 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+					else
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+					end
+				end
+			end
+		end
+	end
+end
+	
 	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 	end
@@ -1053,3 +1123,150 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 end
+
+function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last)
+	local nr_units_spawned = 0
+	local produce_data = {
+		name = true,
+		spawn_ai = {}
+	}
+	local group_ai_tweak = tweak_data.group_ai
+	local spawn_points = spawn_task.spawn_group.spawn_pts
+
+	local function _try_spawn_unit(u_type_name, spawn_entry)
+		if GroupAIStateBesiege._MAX_SIMULTANEOUS_SPAWNS <= nr_units_spawned and not force then
+			return
+		end
+
+		local hopeless = true
+		local current_unit_type = tweak_data.levels:get_ai_group_type()
+
+		for _, sp_data in ipairs(spawn_points) do
+			local category = group_ai_tweak.unit_categories[u_type_name]
+
+			if (sp_data.accessibility == "any" or category.access[sp_data.accessibility]) and (not sp_data.amount or sp_data.amount > 0) and sp_data.mission_element:enabled() then
+				hopeless = false
+
+				if sp_data.delay_t < self._t then
+					local units = category.unit_types[current_unit_type]
+					produce_data.name = units[math.random(#units)]
+					produce_data.name = managers.modifiers:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
+					local spawned_unit = sp_data.mission_element:produce(produce_data)
+					local u_key = spawned_unit:key()
+					local objective = nil
+
+					if spawn_task.objective then
+						objective = self.clone_objective(spawn_task.objective)
+					else
+						objective = spawn_task.group.objective.element:get_random_SO(spawned_unit)
+
+						if not objective then
+							spawned_unit:set_slot(0)
+
+							return true
+						end
+
+						objective.grp_objective = spawn_task.group.objective
+					end
+
+					local u_data = self._police[u_key]
+
+					self:set_enemy_assigned(objective.area, u_key)
+
+					if spawn_entry.tactics then
+						u_data.tactics = spawn_entry.tactics
+						u_data.tactics_map = {}
+
+						for _, tactic_name in ipairs(u_data.tactics) do
+							u_data.tactics_map[tactic_name] = true
+						end
+					end
+
+					spawned_unit:brain():set_spawn_entry(spawn_entry, u_data.tactics_map)
+
+					u_data.rank = spawn_entry.rank
+
+					self:_add_group_member(spawn_task.group, u_key)
+
+					if spawned_unit:brain():is_available_for_assignment(objective) then
+						if objective.element then
+							objective.element:clbk_objective_administered(spawned_unit)
+						end
+
+						spawned_unit:brain():set_objective(objective)
+					else
+						spawned_unit:brain():set_followup_objective(objective)
+					end
+
+					nr_units_spawned = nr_units_spawned + 1
+
+					if spawn_task.ai_task then
+						spawn_task.ai_task.force_spawned = spawn_task.ai_task.force_spawned + 1
+						spawned_unit:brain()._logic_data.spawned_in_phase = spawn_task.ai_task.phase
+					end
+
+					sp_data.delay_t = self._t + sp_data.interval
+
+					if sp_data.amount then
+						sp_data.amount = sp_data.amount - 1
+					end
+
+					return true
+				end
+			end
+		end
+
+		if hopeless then
+			debug_pause("[GroupAIStateBesiege:_upd_group_spawning] spawn group", spawn_task.spawn_group.id, "failed to spawn unit", u_type_name)
+
+			return true
+		end
+	end
+
+	for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+		if not group_ai_tweak.unit_categories[u_type_name].access.acrobatic then
+			for i = spawn_info.amount, 1, -1 do
+				local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
+
+				if success then
+					spawn_info.amount = spawn_info.amount - 1
+				end
+
+				break
+			end
+		end
+	end
+
+	for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+		for i = spawn_info.amount, 1, -1 do
+			local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
+
+			if success then
+				spawn_info.amount = spawn_info.amount - 1
+			end
+
+			break
+		end
+	end
+
+	local complete = true
+
+	for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+		if spawn_info.amount > 0 then
+			complete = false
+
+			break
+		end
+	end
+
+	if complete then
+		spawn_task.group.has_spawned = true
+		self:_voice_groupentry(spawn_task.group)
+		table.remove(self._spawning_groups, use_last and #self._spawning_groups or 1)
+
+		if spawn_task.group.size <= 0 then
+			self._groups[spawn_task.group.id] = nil
+		end
+	end
+end
+

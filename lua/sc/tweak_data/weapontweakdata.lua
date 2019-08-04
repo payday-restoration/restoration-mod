@@ -4595,6 +4595,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.m95.armor_piercing_chance = 1
+		self.m95.can_shoot_through_titan_shield = true
 		self.m95.stats_modifiers = {
 			damage = 1
 		}
@@ -9339,6 +9340,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.lynx.armor_piercing_chance = 1
+		self.lynx.can_shoot_through_titan_shield = true
 		self.lynx.stats_modifiers = {
 			damage = 1
 		}

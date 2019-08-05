@@ -608,11 +608,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 60
-		self.omnia_lpf.headshot_dmg_mul = 2.2
-		--self.omnia_lpf.damage.bullet_damage_mul = 0.9
-		--self.omnia_lpf.damage.explosion_damage_mul = 0.9
-		--self.omnia_lpf.damage.fire_damage_mul = 0.9
+		self.omnia_lpf.HEALTH_INIT = 30
+		self.omnia_lpf.headshot_dmg_mul = 2
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
 		self.omnia_lpf.suppression = nil
@@ -12805,6 +12802,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.autumn.damage.bullet_dodge_chance = 30	
+		
+		--LPF DR from ranged attacks--
+		self.omnia_lpf.damage.bullet_damage_mul = 0.75
+		self.omnia_lpf.damage.explosion_damage_mul = 0.75
+		self.omnia_lpf.damage.fire_damage_mul = 0.75	
 		
 		if job == "haunted" then
 			self.tank_hw.move_speed = self.presets.move_speed.very_slow

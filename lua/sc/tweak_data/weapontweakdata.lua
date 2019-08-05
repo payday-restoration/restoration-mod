@@ -5485,10 +5485,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"smg"
 		}
 		self.m134.has_description = false
-		self.m134.CLIP_AMMO_MAX = 300
+		self.m134.CLIP_AMMO_MAX = 200
 		self.m134.NR_CLIPS_MAX = 1
-		self.m134.AMMO_MAX = 300
-		self.m134.AMMO_PICKUP = self:_pickup_chance(300, 2)
+		self.m134.AMMO_MAX = 200
+		self.m134.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.m134.FIRE_MODE = "auto"
 		self.m134.fire_mode_data = {}
 		self.m134.fire_mode_data.fire_rate = 0.03
@@ -5507,12 +5507,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m134.kick.steelsight = self.new_m4.kick.standing
 		self.m134.panic_suppression_chance = 0.1
 		self.m134.stats = {
-			damage = 27,
-			spread = 15,
-			recoil = 22,
+			damage = 30,
+			spread = 18,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 0,
+			concealment = 10,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -8436,16 +8436,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"smg"
 		}
 		self.shuno.has_description = false
-		self.shuno.CLIP_AMMO_MAX = 300
+		self.shuno.CLIP_AMMO_MAX = 200
 		self.shuno.NR_CLIPS_MAX = 1
-		self.shuno.AMMO_MAX = 300
-		self.shuno.AMMO_PICKUP = self:_pickup_chance(300, 2)
+		self.shuno.AMMO_MAX = 200
+		self.shuno.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.shuno.FIRE_MODE = "auto"
 		self.shuno.fire_mode_data = {}
-		self.shuno.fire_mode_data.fire_rate = 0.04
+		self.shuno.fire_mode_data.fire_rate = 0.05
 		self.shuno.CAN_TOGGLE_FIREMODE = false
 		self.shuno.auto = {}
-		self.shuno.auto.fire_rate = 0.04
+		self.shuno.auto.fire_rate = 0.05
 		self.shuno.spread = {}
 		self.shuno.spread.standing = 3
 		self.shuno.spread.crouching = 2
@@ -8463,7 +8463,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 23,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 0,
+			concealment = 10,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,

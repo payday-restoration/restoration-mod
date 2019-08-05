@@ -21925,10 +21925,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_barrel_short",
 			stats = {
 				value = 3,
-				spread = -2,
-				recoil = 1,
-				concealment = 3,
-				damage = 3
+				spread = -1,
+				concealment = 2
 			},
 			has_description = false,
 			texture_bundle_folder = "dlc_pack_overkill",
@@ -21948,10 +21946,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_barrel_extreme",
 			stats = {
 				value = 3,
-				spread = 2,
-				recoil = 1,
-				concealment = -3,
-				damage = 3
+				spread = 1,
+				concealment = -2
 			},
 			texture_bundle_folder = "dlc_pack_overkill",
 			dlc = "overkill_pack",
@@ -23522,7 +23518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/wpn_fps_gre_m32_barrel_short",
 			stats = {
 				value = 1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "bbq",
 			dlc = "bbq",
@@ -27575,8 +27571,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = -1,
-				spread = 0,
-				concealment = 4
+				concealment = 2
 			},
 			texture_bundle_folder = "lupus",
 			dlc = "pal"

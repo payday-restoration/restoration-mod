@@ -407,7 +407,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 15% faster. Note: Pager response is not affected by this boost.",
+		["menu_crew_interact_desc"] = "Players interact 15% faster.",
 
 		["menu_crew_inspire"] = "Inspiring",
 		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds.",

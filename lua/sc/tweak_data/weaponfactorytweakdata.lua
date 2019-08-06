@@ -21894,7 +21894,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_body_upper_light",
 			stats = {
 				value = 1,
-				extra_ammo = 60,
+				extra_ammo = 100,
 				total_ammo_mod = 20,
 				concealment = -3
 			},
@@ -37147,7 +37147,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					extra_ammo = 60,
+					extra_ammo = 100,
 					total_ammo_mod = 20,
 					concealment = -3,
 					recoil = 0

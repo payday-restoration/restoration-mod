@@ -41487,13 +41487,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = 1
 					}
 				self.parts.wpn_fps_ass_vsk94_sil.stats = {
-					value = 1,
-					concealment = -4,
-					spread = 2,
-					recoil = -1,
-					suppression = 13,
-					alert_size = 13
-				}	
+						value = 1,
+						concealment = -4,
+						spread = 2,
+						recoil = -1,
+						suppression = 13,
+						alert_size = 13
+					}	
 				end				
 
 		if self.parts.wpn_fps_ass_famas_body_feline then -- Alcat's Various Attachments for the Famas
@@ -41514,15 +41514,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = -1,
 						reload = 2
 					}							
-				end		
+				end
+
+		if self.parts.wpn_fps_ass_amcar_b_long then -- Alcat's Various Attachments for the AMCAR
+				self.parts.wpn_fps_ass_amcar_b_long.stats = {
+						value = 4,			
+						spread = 1,
+						concealment = -2
+					}	
+				self.parts.wpn_fps_ass_amcar_ns_viet.stats = {
+						value = 5,
+						recoil = -1,
+						spread = 2,
+						concealment = -4
+					}		
+				self.parts.wpn_fps_ass_amcar_m_9mm.pcs = nil --disabled, until conversions are brought back. 
+				end									
 
 		if self.parts.wpn_fps_smg_mac10_m_casket then -- Alcat's Various Attachments for the MAC 10
+				self.parts.wpn_fps_smg_mac10_s_nil.pcs = nil --already have a no stock attachment BABEYYYYY!!!
+				self.parts.wpn_fps_smg_mac10_ns_blade.stats = { 
+						value = 5,
+						suppression = 12,
+						alert_size = 12,
+						spread = 1,
+						spread_moving = -3,
+						concealment = -3
+					}						
 				self.parts.wpn_fps_smg_mac10_m_casket.stats = {
 						value = 2,
 						concealment = -3,
-						extra_ammo = 40,
-						spread = -1,
-						recoil = 1,			
+						extra_ammo = 34,
 						reload = -3
 					}	
 				self.parts.wpn_fps_smg_mac10_s_stowed.stats = { 
@@ -42617,7 +42639,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_cbjms_drum_mag_half.has_description = false																							
 			end	
 			
-		if self.parts.wpn_fps_rail_covers then 	-- Silent Enforcer's Rail Covers
+		if self.parts.wpn_fps_rail_covers then 	--Kden and Silent Enforcer's Rail Covers
+				self.parts.wpn_fps_rc_dd.stats = { 
+					value = 0
+					}			
 				self.parts.wpn_fps_rail_covers.stats = { 
 					value = 0
 					}	

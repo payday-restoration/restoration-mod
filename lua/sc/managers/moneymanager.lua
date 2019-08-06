@@ -48,7 +48,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 
 			if success then
-				bag_value = bonus_bags --* total_stages
+				bag_value = bonus_bags * total_stages
 				bag_risk = math.round(bag_value * money_multiplier * bag_skill_bonus)
 				bag_value = (bag_value + mandatory_bags) * bag_skill_bonus
 				vehicle_value = bonus_vehicles
@@ -98,7 +98,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			if on_last_stage then
 				job_value = self:get_job_payout_by_stars(total_stars) or 0
-				bonus_bag_value = bonus_bags --* total_stages
+				bonus_bag_value = bonus_bags * total_stages
 				mandatory_bag_value = mandatory_bags
 			end
 
@@ -200,4 +200,38 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return unpack(ret)
 	end
+
+	function MoneyManager:get_secured_bonus_bags_money()
+		local job_id = managers.job:current_job_id()
+		local stars = managers.job:has_active_job() and managers.job:current_difficulty_stars() or 0
+		local money_multiplier = self:get_contract_difficulty_multiplier(stars)
+		local total_stages = job_id and #tweak_data.narrative:job_chain(job_id) or 1
+		local bag_skill_bonus = managers.player:upgrade_value("player", "secured_bags_money_multiplier", 1)
+		local bonus_bags = managers.loot:get_secured_bonus_bags_value(managers.job:current_level_id()) + managers.loot:get_secured_bonus_bags_value(managers.job:current_level_id(), true)
+		local bag_value = bonus_bags * total_stages
+		local bag_risk = math.round(bag_value * money_multiplier)
+	
+		return math.round((bag_value + bag_risk) * bag_skill_bonus / self:get_tweak_value("money_manager", "offshore_rate"))
+	end
+
+	function MoneyManager:get_secured_bonus_bag_value(carry_id, multiplier)
+		local carry_value = managers.money:get_bag_value(carry_id, multiplier)
+		local bag_value = 0
+		local bag_risk = 0
+		local bag_skill_bonus = managers.player:upgrade_value("player", "secured_bags_money_multiplier", 1)
+	
+		if managers.loot:is_bonus_bag(carry_id) then
+			local job_id = managers.job:current_job_id()
+			local stars = managers.job:has_active_job() and managers.job:current_difficulty_stars() or 0
+			local money_multiplier = self:get_contract_difficulty_multiplier(stars)
+			local total_stages = job_id and #tweak_data.narrative:job_chain(job_id) or 1
+			bag_value = carry_value * total_stages
+			bag_risk = math.round(bag_value * money_multiplier)
+		else
+			bag_value = carry_value
+		end
+	
+		return math.round((bag_value + bag_risk) * bag_skill_bonus / self:get_tweak_value("money_manager", "offshore_rate"))
+	end
+
 end

@@ -346,6 +346,15 @@ if not tweak_data then return end
 		475,
 		550
 	}
+	tweak_data.experience_manager.job_completion = {
+		2000,
+		4000,
+		10000,
+		16000,
+		20000,
+		28000,
+		32000
+	}
 	
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 		tweak_data.gui.buy_weapon_categories = {

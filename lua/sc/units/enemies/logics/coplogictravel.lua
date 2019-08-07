@@ -132,7 +132,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		    			local high_ray = CopLogicTravel._chk_cover_height(data, my_data.best_cover[1], data.visibility_slotmask)
 		    			my_data.best_cover[4] = high_ray
 		    			my_data.in_cover = true
-		    			local cover_wait_time = my_data.coarse_path_index == #my_data.coarse_path - 1 and 0.3 or 0.6 + 0.4 * math.random()
+						local nr_players = 0
+
+						for u_key, u_data in pairs(managers.groupai:state():all_player_criminals()) do
+							if not u_data.status then
+								nr_players = nr_players + 1
+							end
+						end
+						
+						local cover_wait_time = nil
+						
+						if nr_players > 2 then
+							cover_wait_time = 0
+						else
+							cover_wait_time = my_data.coarse_path_index == #my_data.coarse_path - 1 and 0.3 or 0.6 + 0.4 * math.random()
+						end
             
 		    			my_data.cover_leave_t = data.t + cover_wait_time
 		    		else
@@ -259,4 +273,3 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	CopLogicTravel.queue_update(data, data.internal_data, delay)
     end
 end
-

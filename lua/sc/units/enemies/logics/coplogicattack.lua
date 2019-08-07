@@ -79,10 +79,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	local in_cover = my_data.in_cover
     	local best_cover = my_data.best_cover
     	local enemy_visible = focus_enemy.verified
-    	local enemy_visible_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 2
-    	local enemy_visible_mild_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 7
-    	local flank_cover_charge_time = focus_enemy.verified_t and t - focus_enemy.verified_t < 4
-    	local enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 15
     	local alert_soft = data.is_suppressed
     	local action_taken = data.logic.action_taken(data, my_data)
     	
@@ -94,16 +90,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	local eliterangedfiremovementqualify = data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1500
     	
         --reloadingretreat: retreat as fast as possible if the ammo is running dry and the enemy is visible
-	local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
-	local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
-	
-	local want_to_take_cover = my_data.want_to_take_cover
+		local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
+		local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
+		
+		local want_to_take_cover = my_data.want_to_take_cover
     	action_taken = action_taken or CopLogicAttack._upd_pose(data, my_data)
     	local move_to_cover, want_flank_cover, taken_flank_cover = nil
+		local enemy_visible_mild_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 7
+    	local flank_cover_charge_time = focus_enemy.verified_t and t - focus_enemy.verified_t < 4
+		local enemy_visible_soft = nil
+    	local enemy_visible_softer = nil
     
     	if my_data.cover_test_step ~= 1 and not enemy_visible_softer and (action_taken or want_to_take_cover or not in_cover) then
     		my_data.cover_test_step = 1
     	end
+		
+		--increased ai aggressiveness and speed when more players are around
+		local nr_players = 0
+
+		for u_key, u_data in pairs(managers.groupai:state():all_player_criminals()) do
+			if not u_data.status then
+				nr_players = nr_players + 1
+			end
+		end
+		
+		if nr_players > 2 then
+			enemy_visible_soft = not focus_enemy.verified
+			enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 1
+		else
+			enemy_visible_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 2
+			enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 15
+		end
+	
+		if not enemy_visible_soft then
+			enemy_visible_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 2
+		end
+		
+		if not enemy_visible_softer then
+			enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 15
+		end
     
     	if my_data.stay_out_time and (enemy_visible_soft or not my_data.at_cover_shoot_pos or action_taken or want_to_take_cover) then
     		my_data.stay_out_time = nil

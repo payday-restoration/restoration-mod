@@ -9,7 +9,7 @@
 	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
 	
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
-	
+		
 	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
@@ -295,7 +295,7 @@
 	<texture path="units/pd2_mod_beta/msk_sweettooth/hair_df"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/sweettooth"/>
 	
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/fl"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/f1"/>
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

@@ -1,4 +1,17 @@
 <table directory="assets">
+	<!--COPS FAEC!!!-->		
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4_contour" force="true" />
+	<!--COPS FAEC!!!!!!!-->		
 	
 	<!--nypd dozer stuff-->	
 	<!--green-->

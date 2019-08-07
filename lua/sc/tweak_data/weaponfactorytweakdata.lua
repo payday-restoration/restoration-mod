@@ -41553,12 +41553,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = 1,
 					}	
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.stats = { 
-						value = 1,
-						suppression = 13,
-						alert_size = 13,
-						concealment = -4,
-						spread = -2,
-						recoil = 1
+						value = 5,
+						suppression = 12,
+						alert_size = 12,
+						spread = 1,
+						spread_moving = -3,
+						concealment = -3
 					}		
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.perks = {"silencer"}
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.sound_switch = {suppressed = "suppressed_c"}					

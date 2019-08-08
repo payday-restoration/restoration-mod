@@ -41464,12 +41464,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = 2,
 						concealment = -2
 					}	
-				self.parts.wpn_fps_ass_vsk94_sil.stats = {
-						value = 1,
-						spread = 1,
-						alert_size = 1,
-						concealment = -1
-					}						
 				self.parts.wpn_fps_ass_vsk94_mag_ext.stats = {
 						value = 1,
 						extra_ammo = 10,
@@ -41533,13 +41527,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if self.parts.wpn_fps_smg_mac10_m_casket then -- Alcat's Various Attachments for the MAC 10
 				self.parts.wpn_fps_smg_mac10_s_nil.pcs = nil --already have a no stock attachment BABEYYYYY!!!
-				self.parts.wpn_fps_smg_mac10_ns_blade.stats = { 
-						value = 5,
-						suppression = 12,
-						alert_size = 12,
+					self.parts.wpn_fps_smg_mac10_ns_blade.stats = { 
+						value = 1,
 						spread = 1,
-						spread_moving = -3,
-						concealment = -3
+						concealment = -2
 					}						
 				self.parts.wpn_fps_smg_mac10_m_casket.stats = {
 						value = 2,
@@ -41553,18 +41544,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						concealment = 1,
 					}	
 				self.parts.wpn_fps_smg_mac10_ns_ghetto.stats = { 
-						value = 5,
-						suppression = 12,
-						alert_size = 12,
+						value = 1,
 						spread = 1,
-						spread_moving = -3,
-						concealment = -3
+						concealment = -2,
+						alert_size = -2,
+						suppression = -2
 					}		
-				self.parts.wpn_fps_smg_mac10_ns_ghetto.perks = {"silencer"}
-				self.parts.wpn_fps_smg_mac10_ns_ghetto.sound_switch = {suppressed = "suppressed_c"}					
 				self.parts.wpn_fps_smg_mac10_vg_strap.stats = { 
 						value = 0
-					}		
+					}
+				self.parts.wpn_fps_smg_mac10_vg_strap.override_weapon = nil				
 				self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil
 				end		
 

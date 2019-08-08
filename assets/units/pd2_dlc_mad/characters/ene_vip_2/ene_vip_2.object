@@ -8,7 +8,7 @@
 			<object name="Spine1"/>
 			<object name="c_capsule_body" collision_type="capsule" padding="-5" />
 		</body>
-		<body name="head" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_sphere_head" collision_type="sphere" padding="-12" />
 		</body>
@@ -16,16 +16,14 @@
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
-
-		<body name="body_helmet" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
 		</body>
-		<body name="body_helmet_glass" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet_glass" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_helmet_glass" collision_type="convex"/>
 		</body>
-
 		<body name="body_armor_chest" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
 			<object name="c_armor_chest" collision_type="convex"/>

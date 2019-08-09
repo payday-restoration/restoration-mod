@@ -50,6 +50,12 @@
 		
 		<physic_effect		force="true" path="physic_effects/push_sphere" unload="true"/>
 		<!--<bnk				force="true" path="soundbanks/regular_sfx" unload="true"/>-->
+		
+	<!--Tiny Heist Edits that Change like a few things (Just so I don't clutter up actual map replacements. feel free to delete these if y'all are gonna get working on real heist edits.)-->	
+	<mission path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
+	<mission path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--adds a bikerdozer to the bunker, removes swat turret.-->	
+	<continent path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--fixes cars clipping into ground-->		
+	<mission path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>	 <!--adds a ds-specific surprise :)-->		
 
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	<!--Reaper Bullet Impact Fixes-->	

@@ -175,7 +175,7 @@
 	"restoration_level_data_wwh" : "TIME UNKNOWN, SOMEWHERE IN ALASKA...",
 	"restoration_level_data_rvd1" : "TIME CLASSIFIED, LOCATION CLASSIFIED",
 	"restoration_level_data_rvd2" : "TIME CLASSIFIED, LOCATION CLASSIFIED",
-	"restoration_level_data_brb" : "6:53 PM, NEW YORK, BROOKLYN - HARVEST & TRUSTEE BRANCH",
+	"restoration_level_data_brb" : "6:53 PM, NEW YORK, BROOKLYN - HARVEST & TRUSTEE BRANCHBANK",
 	"restoration_level_data_des" : "TIME CLASSIFIED, NEVADA - HENRY'S ROCK",
 	"restoration_level_data_sah" : "TIME CLASSIFIED, SHACKLETHORNE ESTATE",
 	"restoration_level_data_tag" : "12:43 AM, J. Edgar Hoover Building",

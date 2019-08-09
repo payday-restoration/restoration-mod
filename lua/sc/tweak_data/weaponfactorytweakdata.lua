@@ -5353,7 +5353,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 11,
 					suppression = -1,
 					alert_size = -1,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0
 				},
 				custom_stats = {
@@ -5389,7 +5389,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread = 11,
 					suppression = -1,
 					alert_size = -1,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0
 				},
 				custom_stats = {
@@ -5439,7 +5439,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -67,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					damage = 100
 				},
 				custom_stats = {
@@ -8395,7 +8395,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -8453,7 +8453,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 57,	
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -8485,7 +8485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -66,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					damage = 200
 				},
@@ -8669,7 +8669,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -8725,7 +8725,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -63,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					damage = 200
 				},
@@ -9303,7 +9303,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					total_ammo_mod = -62,
 					damage = 250
@@ -10042,7 +10042,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					total_ammo_mod = -60,
 					damage = 250
@@ -10066,7 +10066,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 74,	
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -10100,7 +10100,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,	
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -13469,7 +13469,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 25,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -13523,7 +13523,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -7,
 					damage = 31,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -13554,7 +13554,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -62,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					damage = 125
 				},
 				custom_stats = {
@@ -13705,7 +13705,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -5,
 					damage = 31,
 					spread = 14,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -13739,7 +13739,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -33,
 					damage = 25,
 					spread = 14,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -13791,7 +13791,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -66,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					damage = 125
 				},
 				custom_stats = {
@@ -14130,7 +14130,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -14186,7 +14186,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -66,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					damage = 200
 				},
@@ -16844,7 +16844,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				damage = 50,	
 				recoil = -2,
 				spread = 12,
-				spread_multi = {0.5, 0.5},	
+				spread_multi = {1, 1},	
 				suppression = -1,
 				alert_size = -1,
 				moving_spread = 0
@@ -16909,7 +16909,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				total_ammo_mod = -16,
 				damage = 50,
 				spread = 0,
-				spread_multi = {0.5, 0.5},	
+				spread_multi = {1, 1},	
 				concealment = 0,
 				moving_spread = 3
 			},
@@ -18183,7 +18183,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 25,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -18237,7 +18237,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 31,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -18268,7 +18268,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -62,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					damage = 125
 				},
 				custom_stats = {
@@ -22533,7 +22533,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					total_ammo_mod = -62,
 					damage = 250
@@ -23860,7 +23860,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 30,	
 					recoil = -1,
 					spread = 11,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -23896,7 +23896,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 25,	
 					recoil = -1,
 					spread = 11,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -23948,7 +23948,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -67,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					damage = 100
 				},
 				custom_stats = {
@@ -27387,7 +27387,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -27443,7 +27443,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -63,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					damage = 200
 				},
@@ -28893,7 +28893,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					recoil = -5,
 					concealment = -7,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					total_ammo_mod = -62,
 					damage = 250
 				},
@@ -29790,7 +29790,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -5,
 					damage = 31,
 					spread = 14,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -29824,7 +29824,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -33,
 					damage = 25,
 					spread = 14,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -3,
 					moving_spread = 0
 				},
@@ -29845,7 +29845,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 9,
 					total_ammo_mod = -33,
 					damage = 25,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					spread = -1
 				},
 				custom_stats = {
@@ -29876,7 +29876,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -66,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -5,
 					damage = 125
 				},
@@ -33953,7 +33953,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 25,	
 						recoil = -1,
 						spread = 11,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -34005,7 +34005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = -63,
 						recoil = -5,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						damage = 100
 					},
 					custom_stats = {
@@ -34103,7 +34103,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 25,	
 						recoil = -1,
 						spread = 11,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -34155,7 +34155,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = -67,
 						recoil = -5,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						damage = 100
 					},
 					custom_stats = {
@@ -36708,7 +36708,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						recoil = -5,
 						concealment = -7,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						total_ammo_mod = -62,
 						damage = 250
 					},
@@ -36731,7 +36731,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 50,	
 						recoil = -2,
 						spread = 12,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -36896,7 +36896,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -25,
 					damage = 25,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -36950,7 +36950,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = -7,
 					damage = 31,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
 				},
@@ -36981,7 +36981,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5,
 					total_ammo_mod = -62,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					damage = 125
 				},
 				custom_stats = {
@@ -38478,7 +38478,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						recoil = -5,
 						concealment = -7,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						total_ammo_mod = -60,
 						damage = 250
 					},
@@ -38501,7 +38501,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 74,	
 						recoil = -2,
 						spread = 12,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -38535,7 +38535,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage = 50,	
 						recoil = -2,
 						spread = 12,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						suppression = -1,
 						alert_size = -1,
 						moving_spread = 0
@@ -39738,7 +39738,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					recoil = -5,
 					concealment = -7,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					total_ammo_mod = -60,
 					damage = 250
 				},
@@ -39761,7 +39761,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 74,	
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -39795,7 +39795,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,	
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					suppression = -1,
 					alert_size = -1,
 					moving_spread = 0
@@ -40097,7 +40097,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,
@@ -40153,7 +40153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					total_ammo_mod = -63,
 					recoil = -5,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					concealment = -7,
 					damage = 200
 				},
@@ -40195,7 +40195,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 10,
 					recoil = -5,
 					concealment = -7,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					total_ammo_mod = -62,
 					damage = 250
 				},
@@ -40540,7 +40540,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage = 50,
 					recoil = -2,
 					spread = 12,
-					spread_multi = {0.5, 0.5},	
+					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					alert_size = -1,	
@@ -40596,7 +40596,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 10,
 						total_ammo_mod = -66,
 						recoil = -5,
-						spread_multi = {0.5, 0.5},	
+						spread_multi = {1, 1},	
 						concealment = -7,
 						damage = 200
 					},

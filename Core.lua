@@ -140,7 +140,7 @@ function restoration:Init()
 		"cane",  --Santa's Workshop
 		"mus",  --The Diamond
 		"mad", --Boiling Point	
-		"mad_res" --Boiling Point (Edited Version)			
+		"mad_res" --Boiling Point Edited		
 		--holding loud suit levels here in case we need an extra check for them in the future
 		--"des", --Henry's Rock
 		--"dinner", --Slaughterhouse

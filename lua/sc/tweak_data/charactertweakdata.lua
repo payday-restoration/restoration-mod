@@ -152,8 +152,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		map_faction_override["help"] = "zombie"
 		map_faction_override["hvh"] = "zombie"  
 		--Reapers--
-		map_faction_override["mad"] = "russia"
-		map_faction_override["mad_res"] = "russia"  		
+		map_faction_override["mad"] = "russia"  
 		map_faction_override["pines"] = "russia"  
 	   
 	    if level_id then

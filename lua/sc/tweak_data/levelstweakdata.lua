@@ -203,7 +203,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///REAPER LEVELS\\\--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets2"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
-		
 		--We're never actually told where the forest is ;)
 		self.pines.package = {"packages/outfitassets", "packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
 		self.pines.player_sequence = "spawn_prop_loud_suit"	

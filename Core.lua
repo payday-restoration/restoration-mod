@@ -139,8 +139,8 @@ function restoration:Init()
 		"welcome_to_the_jungle_2",  --Big oil day 2
 		"cane",  --Santa's Workshop
 		"mus",  --The Diamond
-		"mad", --Boiling Point	
-		"mad_res" --Boiling Point Edited		
+		"mad" --Boiling Point	
+		
 		--holding loud suit levels here in case we need an extra check for them in the future
 		--"des", --Henry's Rock
 		--"dinner", --Slaughterhouse

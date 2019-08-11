@@ -15,7 +15,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--Kills PD risk level for Murky and Zombie levels--
 		table.insert(self.risk_pd.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_pd.exclude_stages, "pbr")
-		table.insert(self.risk_pd.exclude_stages, "mad_res")		
 		table.insert(self.risk_pd.exclude_stages, "wetwork")
 		table.insert(self.risk_pd.exclude_stages, "des")
 		table.insert(self.risk_pd.exclude_stages, "bph")
@@ -31,7 +30,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_swat.exclude_stages, "pbr")
-		table.insert(self.risk_swat.exclude_stages, "mad_res")		
 		table.insert(self.risk_swat.exclude_stages, "wetwork")
 		table.insert(self.risk_swat.exclude_stages, "des")	
 		table.insert(self.risk_swat.exclude_stages, "bph")	
@@ -47,7 +45,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_fbi.exclude_stages, "pbr")
-		table.insert(self.risk_fbi.exclude_stages, "mad_res")		
 		table.insert(self.risk_fbi.exclude_stages, "wetwork")
 		table.insert(self.risk_fbi.exclude_stages, "des")
 		table.insert(self.risk_fbi.exclude_stages, "bph")
@@ -63,7 +60,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_death_squad.exclude_stages, "pbr")
-		table.insert(self.risk_death_squad.exclude_stages, "mad_res")		
 		table.insert(self.risk_death_squad.exclude_stages, "wetwork")	
 		table.insert(self.risk_death_squad.exclude_stages, "des")
 		table.insert(self.risk_death_squad.exclude_stages, "pines")								
@@ -79,7 +75,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_easy_wish.exclude_stages, "pbr")
-		table.insert(self.risk_easy_wish.exclude_stages, "mad_res")
 		table.insert(self.risk_easy_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_easy_wish.exclude_stages, "des")
 		table.insert(self.risk_easy_wish.exclude_stages, "bph")
@@ -95,7 +90,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_death_wish.exclude_stages, "pbr")
-		table.insert(self.risk_death_wish.exclude_stages, "mad_res")		
 		table.insert(self.risk_death_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_death_wish.exclude_stages, "des")
 		table.insert(self.risk_death_wish.exclude_stages, "bph")
@@ -111,7 +105,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
 		table.insert(self.risk_sm_wish.exclude_stages, "pbr")
-		table.insert(self.risk_sm_wish.exclude_stages, "mad_res")		
 		table.insert(self.risk_sm_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_sm_wish.exclude_stages, "des")
 		table.insert(self.risk_sm_wish.exclude_stages, "bph")
@@ -126,7 +119,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		
 		-- Reaper Risk Asset
 		table.insert(self.mad_russian_merc_cameras.stages, "pines")
-		table.insert(self.mad_russian_merc_cameras.stages, "mad_res")		
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -153,7 +145,6 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"welcome_to_the_jungle_1",
 			"welcome_to_the_jungle_1_night",
 			"born",
-			"born_res",			
 			"chew"
 		}
 		
@@ -173,43 +164,19 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		self.dinner_safe = {}
 		self.dinner_safe.name_id = "menu_asset_dinner_safe"
 		self.dinner_safe.texture = "guis/textures/pd2/mission_briefing/assets/heist_vlad_asset04_df"
-		self.dinner_safe.stages = {"dinner", "dinner_res"}
+		self.dinner_safe.stages = {"dinner"}
 		
 		--Boiling Point Test Subjects--
 		self.mad_cyborg_test_subject = {}		
 		self.mad_cyborg_test_subject.name_id = "menu_asset_mad_cyborg_test_subject"
 		self.mad_cyborg_test_subject.texture = "guis/dlcs/mad/textures/pd2/mission_briefing/assets/mad_cyborg_test_subject"
-		self.mad_cyborg_test_subject.stages = {"mad", "mad_res"}
+		self.mad_cyborg_test_subject.stages = {"mad"}
 
 		--Oh my god JC--
 		self.bomb_loot = {}
 		self.bomb_loot.name_id = "menu_asset_bomb_inside_info"
 		self.bomb_loot.texture = "guis/textures/pd2/mission_briefing/assets/crojob/stage_1/assets_crojob_insiderinfo_bomb"
 		self.bomb_loot.stages = {"crojob2"}
-		
-		-- Slaughterhouse (Resmod Edit)
-		table.insert(self.grenade_crate.stages, "dinner_res")		
-		table.insert(self.ammo_bag.stages, "dinner_res")		
-		table.insert(self.health_bag.stages, "dinner_res")		
-		
-		-- Boiling Point (Resmod Edit)
-		table.insert(self.grenade_crate.stages, "mad_res")		
-		table.insert(self.ammo_bag.stages, "mad_res")		
-		table.insert(self.health_bag.stages, "mad_res")		
-		table.insert(self.mad_briefcase.stages, "mad_res")		
-
-		-- Biker Heist Day 1 (Resmod Edit)
-		table.insert(self.grenade_crate.stages, "born_res")		
-		table.insert(self.ammo_bag.stages, "born_res")		
-		table.insert(self.health_bag.stages, "born_res")		
-		table.insert(self.framing_frame_2_sniper.stages, "born_res")	
-		table.insert(self.sniper_spot_born.stages, "born_res")		
-
-		-- Biker Heist Day 2 (Resmod Edit)
-		table.insert(self.grenade_crate.stages, "chew_res")		
-		table.insert(self.ammo_bag.stages, "chew_res")		
-		table.insert(self.health_bag.stages, "chew_res")		
-		
 		
 		--UK Job, Resmod edit
 		table.insert(self.safe_escape.stages, "ukrainian_job_res")
@@ -281,5 +248,5 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 end
 
 Hooks:PostHook( AssetsTweakData, "_init_gage_assets", "SC_GageAssetFix", function(self, tweak_data)	
-	table.insert(self.gage_assignment.exclude_stages, "hvh")	
+	table.insert(self.gage_assignment.exclude_stages, "hvh")
 end)

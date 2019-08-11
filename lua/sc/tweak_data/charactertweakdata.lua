@@ -128,40 +128,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._speech_prefix_p2 = "d"
 	end	
 	
-    function CharacterTweakData:get_ai_group_type()	
-	    if Global.level_data and Global.level_data.level_id then
-	    	level_id = Global.level_data.level_id
-	    end	    
-	    if not Global.game_settings then
-	    	return group_to_use
-	    end
-	    local map_faction_override = {}
-		--Murkywater faction--
-		map_faction_override["shoutout_raid"] = "murkywater"		
-		map_faction_override["pbr"] = "murkywater"				
-		map_faction_override["des"] = "murkywater"		
-		map_faction_override["bph"] = "murkywater"		
-		map_faction_override["vit"] = "murkywater"		
-		map_faction_override["wwh"] = "murkywater"
-		map_faction_override["arm_for"] = "murkywater"
-		map_faction_override["wetwork"] = "murkywater"
-		map_faction_override["wetwork_burn"] = "murkywater"
-		--Zombies--
-		map_faction_override["haunted"] = "zombie"		
-		map_faction_override["nail"] = "zombie"
-		map_faction_override["help"] = "zombie"
-		map_faction_override["hvh"] = "zombie"  
-		--Reapers--
-		map_faction_override["mad"] = "russia"  
-		map_faction_override["pines"] = "russia"  
-	   
-	    if level_id then
-	    	if map_faction_override[level_id] then
-	    		group_to_use = map_faction_override[level_id]
-	    	end
-	    end
-	    return group_to_use
-	end
+    function CharacterTweakData:get_ai_group_type()    
+        local bullshit = self.tweak_data.levels:get_ai_group_type()
+        if not Global.game_settings then
+            return group_to_use
+        end
+        local ai_group_type = {}
+        ai_group_type["murkywater"] = "murkywater"        
+        ai_group_type["zombie"] = "zombie"                
+        ai_group_type["russia"] = "russia"        
+       
+        if bullshit then
+            if ai_group_type[bullshit] then
+                group_to_use = ai_group_type[bullshit]
+            end
+        end
+        return group_to_use
+    end
 	
 	function CharacterTweakData:_init_security(presets)
 	    local is_murky

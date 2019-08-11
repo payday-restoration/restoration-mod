@@ -58,7 +58,9 @@
 	<mission path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
 	<mission path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--adds a bikerdozer to the bunker, removes swat turret.-->	
 	<continent path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--fixes cars clipping into ground-->		
-	<mission path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>	 <!--adds a ds-specific surprise :)-->		
+	<mission path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>	 <!--adds a ds-specific surprise :)-->	
+	<continent path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	
 
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	<!--Reaper Bullet Impact Fixes-->	

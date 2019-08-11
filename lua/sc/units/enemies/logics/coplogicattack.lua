@@ -12,6 +12,76 @@ local temp_vec2 = Vector3()
 local temp_vec3 = Vector3()
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	
+	function CopLogicAttack.enter(data, new_logic_name, enter_params)
+		CopLogicBase.enter(data, new_logic_name, enter_params)
+		data.unit:brain():cancel_all_pathing_searches()
+
+		local old_internal_data = data.internal_data
+		local my_data = {
+			unit = data.unit
+		}
+		data.internal_data = my_data
+		my_data.detection = data.char_tweak.detection.combat
+
+		if old_internal_data then
+			my_data.turning = old_internal_data.turning
+			my_data.firing = old_internal_data.firing
+			my_data.shooting = old_internal_data.shooting
+			my_data.attention_unit = old_internal_data.attention_unit
+
+			CopLogicAttack._set_best_cover(data, my_data, old_internal_data.best_cover)
+		end
+
+		my_data.cover_test_step = 1
+		local key_str = tostring(data.key)
+		my_data.detection_task_key = "CopLogicAttack._upd_enemy_detection" .. key_str
+
+		CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicAttack._upd_enemy_detection, data, data.t)
+		CopLogicIdle._chk_has_old_action(data, my_data)
+
+		my_data.attitude = data.objective and data.objective.attitude or "avoid"
+
+		local safety_range = nil
+
+		safety_range = {
+			optimal = 3500,
+			far = 6000,
+			close = 2000
+		}
+
+		if data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range then
+			my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		else
+			my_data.weapon_range = safety_range
+		end
+
+		data.unit:brain():set_update_enabled_state(true)
+
+		if data.cool then
+			data.unit:movement():set_cool(false)
+		end
+
+		if (not data.objective or not data.objective.stance) and data.unit:movement():stance_code() == 1 then
+			data.unit:movement():set_stance("hos")
+		end
+
+		if my_data ~= data.internal_data then
+			return
+		end
+
+		if data.objective and (data.objective.action_duration or data.objective.action_timeout_t and data.t < data.objective.action_timeout_t) then
+			my_data.action_timeout_clbk_id = "CopLogicIdle_action_timeout" .. tostring(data.key)
+			local action_timeout_t = data.objective.action_timeout_t or data.t + data.objective.action_duration
+			data.objective.action_timeout_t = action_timeout_t
+
+			CopLogicBase.add_delayed_clbk(my_data, my_data.action_timeout_clbk_id, callback(CopLogicIdle, CopLogicIdle, "clbk_action_timeout", data), action_timeout_t)
+		end
+
+		data.unit:brain():set_attention_settings({
+			cbt = true
+		})
+	end
 
 	function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 		local focus_enemy = data.attention_obj

@@ -981,35 +981,42 @@ end
 				local search_area = table.remove(to_search_areas, 1)
 				if next(search_area.criminal.units) then
 					local assault_from_here = true
-					if not push and tactics_map and tactics_map.flank then
+					if tactics_map and tactics_map.flank then --for the love of frick just let flankers flank
 						local assault_from_area = found_areas[search_area]
+
 						if assault_from_area ~= "init" then
 							local cop_units = assault_from_area.police.units
+
 							for u_key, u_data in pairs(cop_units) do
-								if u_data.group and u_data.group ~= group and u_data.group.objective.type == "assault_area" then
+								if u_data.group and u_data.group.objective.type == "assault_area" then
 									assault_from_here = false
-									if not alternate_assault_area or math.random() < 0.5 then
+
+									if not alternate_assault_area then
 										local search_params = {
+											id = "GroupAI_assault",
 											from_seg = current_objective.area.pos_nav_seg,
 											to_seg = search_area.pos_nav_seg,
-											id = "GroupAI_assault",
 											access_pos = self._get_group_acces_mask(group),
 											verify_clbk = callback(self, self, "is_nav_seg_safe")
 										}
 										alternate_assault_path = managers.navigation:search_coarse(search_params)
+
 										if alternate_assault_path then
 											self:_merge_coarse_path_by_area(alternate_assault_path)
+
 											alternate_assault_area = search_area
 											alternate_assault_area_from = assault_from_area
-						                	self:_voice_deathguard_start(group) --roger/copy that
 										end
 									end
+
 									found_areas[search_area] = nil
-								else
+
+									break
 								end
 							end
 						end
 					end
+					
 					if assault_from_here then
 						local search_params = {
 							from_seg = current_objective.area.pos_nav_seg,
@@ -1034,11 +1041,13 @@ end
 					end
 				end
 			until #to_search_areas == 0
-			if not assault_area and alternate_assault_area then
+			
+			if not assault_area and alternate_assault_area or tactics_map and tactics_map.flank and alternate_assault_area then
 				assault_area = alternate_assault_area
 				found_areas[assault_area] = alternate_assault_area_from
 				assault_path = alternate_assault_path
 			end
+			
 			if assault_area and assault_path then
 				local assault_area = push and assault_area or found_areas[assault_area] == "init" and objective_area or found_areas[assault_area]
 				if #assault_path > 2 and assault_area.nav_segs[assault_path[#assault_path - 1][1]] then
@@ -1059,6 +1068,7 @@ end
 					used_grenade = used_grenade or second_chk(self, group, self._task_data.assault, detonate_pos)
 					self:_voice_push_in(group)
 				end
+				
 				if not push or used_grenade then
 					local grp_objective = {
 						type = "assault_area",
@@ -1121,110 +1131,121 @@ end
 			end
 		end
 	end
+	
+	function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last)
+		local nr_units_spawned = 0
+		local produce_data = {
+			name = true,
+			spawn_ai = {}
+		}
+		local group_ai_tweak = tweak_data.group_ai
+		local spawn_points = spawn_task.spawn_group.spawn_pts
 
-end
+		local function _try_spawn_unit(u_type_name, spawn_entry)
+			if GroupAIStateBesiege._MAX_SIMULTANEOUS_SPAWNS <= nr_units_spawned and not force then
+				return
+			end
 
-function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last)
-	local nr_units_spawned = 0
-	local produce_data = {
-		name = true,
-		spawn_ai = {}
-	}
-	local group_ai_tweak = tweak_data.group_ai
-	local spawn_points = spawn_task.spawn_group.spawn_pts
+			local hopeless = true
+			local current_unit_type = tweak_data.levels:get_ai_group_type()
 
-	local function _try_spawn_unit(u_type_name, spawn_entry)
-		if GroupAIStateBesiege._MAX_SIMULTANEOUS_SPAWNS <= nr_units_spawned and not force then
-			return
+			for _, sp_data in ipairs(spawn_points) do
+				local category = group_ai_tweak.unit_categories[u_type_name]
+
+				if (sp_data.accessibility == "any" or category.access[sp_data.accessibility]) and (not sp_data.amount or sp_data.amount > 0) and sp_data.mission_element:enabled() then
+					hopeless = false
+
+					if sp_data.delay_t < self._t then
+						local units = category.unit_types[current_unit_type]
+						produce_data.name = units[math.random(#units)]
+						produce_data.name = managers.modifiers:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
+						local spawned_unit = sp_data.mission_element:produce(produce_data)
+						local u_key = spawned_unit:key()
+						local objective = nil
+
+						if spawn_task.objective then
+							objective = self.clone_objective(spawn_task.objective)
+						else
+							objective = spawn_task.group.objective.element:get_random_SO(spawned_unit)
+
+							if not objective then
+								spawned_unit:set_slot(0)
+
+								return true
+							end
+
+							objective.grp_objective = spawn_task.group.objective
+						end
+
+						local u_data = self._police[u_key]
+
+						self:set_enemy_assigned(objective.area, u_key)
+
+						if spawn_entry.tactics then
+							u_data.tactics = spawn_entry.tactics
+							u_data.tactics_map = {}
+
+							for _, tactic_name in ipairs(u_data.tactics) do
+								u_data.tactics_map[tactic_name] = true
+							end
+						end
+
+						spawned_unit:brain():set_spawn_entry(spawn_entry, u_data.tactics_map)
+
+						u_data.rank = spawn_entry.rank
+
+						self:_add_group_member(spawn_task.group, u_key)
+
+						if spawned_unit:brain():is_available_for_assignment(objective) then
+							if objective.element then
+								objective.element:clbk_objective_administered(spawned_unit)
+							end
+
+							spawned_unit:brain():set_objective(objective)
+						else
+							spawned_unit:brain():set_followup_objective(objective)
+						end
+
+						nr_units_spawned = nr_units_spawned + 1
+
+						if spawn_task.ai_task then
+							spawn_task.ai_task.force_spawned = spawn_task.ai_task.force_spawned + 1
+							spawned_unit:brain()._logic_data.spawned_in_phase = spawn_task.ai_task.phase
+						end
+
+						sp_data.delay_t = self._t + sp_data.interval
+
+						if sp_data.amount then
+							sp_data.amount = sp_data.amount - 1
+						end
+
+						return true
+					end
+				end
+			end
+
+			if hopeless then
+				debug_pause("[GroupAIStateBesiege:_upd_group_spawning] spawn group", spawn_task.spawn_group.id, "failed to spawn unit", u_type_name)
+
+				return true
+			end
 		end
 
-		local hopeless = true
-		local current_unit_type = tweak_data.levels:get_ai_group_type()
+		for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+			if not group_ai_tweak.unit_categories[u_type_name].access.acrobatic then
+				for i = spawn_info.amount, 1, -1 do
+					local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
 
-		for _, sp_data in ipairs(spawn_points) do
-			local category = group_ai_tweak.unit_categories[u_type_name]
-
-			if (sp_data.accessibility == "any" or category.access[sp_data.accessibility]) and (not sp_data.amount or sp_data.amount > 0) and sp_data.mission_element:enabled() then
-				hopeless = false
-
-				if sp_data.delay_t < self._t then
-					local units = category.unit_types[current_unit_type]
-					produce_data.name = units[math.random(#units)]
-					produce_data.name = managers.modifiers:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
-					local spawned_unit = sp_data.mission_element:produce(produce_data)
-					local u_key = spawned_unit:key()
-					local objective = nil
-
-					if spawn_task.objective then
-						objective = self.clone_objective(spawn_task.objective)
-					else
-						objective = spawn_task.group.objective.element:get_random_SO(spawned_unit)
-
-						if not objective then
-							spawned_unit:set_slot(0)
-
-							return true
-						end
-
-						objective.grp_objective = spawn_task.group.objective
+					if success then
+						spawn_info.amount = spawn_info.amount - 1
 					end
 
-					local u_data = self._police[u_key]
-
-					self:set_enemy_assigned(objective.area, u_key)
-
-					if spawn_entry.tactics then
-						u_data.tactics = spawn_entry.tactics
-						u_data.tactics_map = {}
-
-						for _, tactic_name in ipairs(u_data.tactics) do
-							u_data.tactics_map[tactic_name] = true
-						end
-					end
-
-					spawned_unit:brain():set_spawn_entry(spawn_entry, u_data.tactics_map)
-
-					u_data.rank = spawn_entry.rank
-
-					self:_add_group_member(spawn_task.group, u_key)
-
-					if spawned_unit:brain():is_available_for_assignment(objective) then
-						if objective.element then
-							objective.element:clbk_objective_administered(spawned_unit)
-						end
-
-						spawned_unit:brain():set_objective(objective)
-					else
-						spawned_unit:brain():set_followup_objective(objective)
-					end
-
-					nr_units_spawned = nr_units_spawned + 1
-
-					if spawn_task.ai_task then
-						spawn_task.ai_task.force_spawned = spawn_task.ai_task.force_spawned + 1
-						spawned_unit:brain()._logic_data.spawned_in_phase = spawn_task.ai_task.phase
-					end
-
-					sp_data.delay_t = self._t + sp_data.interval
-
-					if sp_data.amount then
-						sp_data.amount = sp_data.amount - 1
-					end
-
-					return true
+					break
 				end
 			end
 		end
 
-		if hopeless then
-			debug_pause("[GroupAIStateBesiege:_upd_group_spawning] spawn group", spawn_task.spawn_group.id, "failed to spawn unit", u_type_name)
-
-			return true
-		end
-	end
-
-	for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
-		if not group_ai_tweak.unit_categories[u_type_name].access.acrobatic then
+		for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
 			for i = spawn_info.amount, 1, -1 do
 				local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
 
@@ -1235,38 +1256,26 @@ function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last
 				break
 			end
 		end
-	end
 
-	for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
-		for i = spawn_info.amount, 1, -1 do
-			local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
+		local complete = true
 
-			if success then
-				spawn_info.amount = spawn_info.amount - 1
+		for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+			if spawn_info.amount > 0 then
+				complete = false
+
+				break
 			end
+		end
 
-			break
+		if complete then
+			spawn_task.group.has_spawned = true
+			self:_voice_groupentry(spawn_task.group)
+			table.remove(self._spawning_groups, use_last and #self._spawning_groups or 1)
+
+			if spawn_task.group.size <= 0 then
+				self._groups[spawn_task.group.id] = nil
+			end
 		end
 	end
-
-	local complete = true
-
-	for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
-		if spawn_info.amount > 0 then
-			complete = false
-
-			break
-		end
-	end
-
-	if complete then
-		spawn_task.group.has_spawned = true
-		self:_voice_groupentry(spawn_task.group)
-		table.remove(self._spawning_groups, use_last and #self._spawning_groups or 1)
-
-		if spawn_task.group.size <= 0 then
-			self._groups[spawn_task.group.id] = nil
-		end
-	end
+	
 end
-

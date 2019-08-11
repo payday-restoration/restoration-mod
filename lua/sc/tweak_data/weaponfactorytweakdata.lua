@@ -10329,7 +10329,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_b_small",
 			stats = {
 				value = 2,
-				spread = 1,
+				spread = -1,
 				concealment = 2
 			},
 			dlc = "armored_transport"
@@ -26545,6 +26545,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_par_m_standard",
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_m_standard",
+			bullet_objects = {
+				amount = 15,
+				prefix = "g_bullet_"
+			},			
 			stats = {value = 1},
 			animations = {
 				reload = "reload",
@@ -30581,6 +30585,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_g36_m_quick",
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_g36_m_quick/wpn_fps_ass_g36_m_quick",
+			bullet_objects = {
+				amount = 28,
+				prefix = "g_bullet_"
+			},			
 			stats = {
 				value = 2,
 				spread = -1,
@@ -41114,19 +41122,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						recoil = -1,
 						concealment = 3
 				}										
-				self.parts.wpn_fps_upg_scarl_grip_magpul_moe.stats = {
-						value = 2,
-						spread = 2,
-						recoil = -1
-				}					
-				self.parts.wpn_fps_upg_scarl_grip_vindicator.stats = {
-						value = 2,
-						concealment = 1
-				}						
-				self.parts.wpn_fps_upg_scarl_grip_magpul_miad.stats = {
-						value = 1,
-						recoil = 1					
-				}										
 				self.parts.wpn_fps_upg_scarl_barrel_cqc_mod.custom_stats = { 
 						rof_mult = 1.04
 				}
@@ -41150,19 +41145,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = -1,							
 						concealment = 2
 				}
-				self.parts.wpn_fps_upg_scar_m203_grip_magpul_moe.stats = {
-						value = 2,
-						spread = 2,
-						recoil = -1
-				}			
-				self.parts.wpn_fps_upg_scar_m203_grip_vindicator.stats = {
-						value = 2,
-						concealment = 1
-				}					
-				self.parts.wpn_fps_upg_scar_m203_grip_magpul_miad.stats = {
-						value = 1,
-						recoil = 1
-				}									
 			end	
 
 			if self.wpn_fps_snp_m1894 then 	--Pawcio's Marlin 1894
@@ -41313,10 +41295,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = -1,
 						concealment = 2
 				}	
-				self.parts.wpn_fps_upg_hk416_grip_magpul_miad.stats = {
-						value = 1,
-						recoil = 1					
-				}		
 				self.parts.wpn_fps_upg_hk416_sights_frontfold.stats = {
 						value = 1
 				}		
@@ -41331,20 +41309,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						recoil = -1,												
 						concealment = 3
 				}										
-				self.parts.wpn_fps_upg_hk416_grip_magpul_moe.stats = {
-						value = 1,
-						recoil = 1
-				}	
-				self.parts.wpn_fps_upg_hk416_grip_vindicator.stats = {
-						value = 2,
-						spread_moving = 2,
-						concealment = 1
-				}																																																								
-				self.parts.wpn_fps_upg_hk416_barrel_long.stats = {
-						value = 4,
-						spread = 1,
-						concealment = -2
-				}					
 		end		
 
 		if self.wpn_fps_smg_kurz_919 then 	-- German Shitmonger & Killerwolf's MP5k	
@@ -42242,15 +42206,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						recoil = -1,
 						spread = 2
 					}	
-				self.parts.wpn_fps_upg_obr5_grip_magpul_moe.stats = {
-						value = 1,
-						recoil = 1
-					}	
-				self.parts.wpn_fps_upg_obr5_grip_vindicator.stats = {
-						value = 2,
-						spread_moving = 2,
-						concealment = 1
-					}																																																				
 				self.parts.wpn_fps_upg_obr5_mag_stanag30.stats = {
 						value = 1,
 						extra_ammo = 10,						

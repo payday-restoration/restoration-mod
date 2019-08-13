@@ -44405,6 +44405,37 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				concealment = -1
 				}			
 			end
+
+		if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
+			self.parts.wpn_fps_upg_o_snp_m4flipup_rear.stats = {
+				value = 0,
+				concealment = 2
+				}		
+			self.parts.wpn_fps_upg_o_snp_mbus_rear.stats = {
+				value = 0,
+				concealment = 2
+				}
+			self.parts.wpn_fps_upg_o_snp_troy_rear.stats = {
+				value = 0,
+				concealment = 2
+				}			
+			self.parts.wpn_fps_upg_o_snp_troym4_rear.stats = {
+				value = 0,
+				concealment = 2
+				}								
+			self.parts.wpn_fps_upg_o_snp_scorpionevo_rear.stats = {
+				value = 0,
+				concealment = 2
+				}				
+			self.parts.wpn_fps_upg_o_snp_kac_rear.stats = {
+				value = 0,
+				concealment = 2
+				}				
+			self.parts.wpn_fps_upg_o_snp_dd_a1_rear.stats = {
+				value = 0,
+				concealment = 2
+				}											
+			end			
 			
 		if self.parts.wpn_fps_upg_b92fs_o_tritium then --Pawcio's Illuminated Ironsights Pack
 			self.parts.wpn_fps_upg_1911_o_tritium.stats = {

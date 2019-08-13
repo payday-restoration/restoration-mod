@@ -56,10 +56,10 @@
 	<mission path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
 	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
 	<mission path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
+	<mission path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<mission path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--adds a bikerdozer to the bunker, removes swat turret.-->	
 	<continent path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--fixes cars clipping into ground-->		
-	<mission path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>	 <!--adds a ds-specific surprise :)-->	
-	<continent path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	
 
 	<!--Misc. Changes and Fixes to Base Game Objects-->
@@ -102,6 +102,13 @@
 	<texture path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" force="true" />
 
 	<!--More Cop Facial Variety (Thanks AGAIN Wekk!!!!)-->		
+	
+	<!-- disabled because one of the cops that appear in the car use the wrong face. -->
+	<!-- <material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_1/bnk_vehicle_car_police_anim_1" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_2/bnk_vehicle_car_police_anim_2" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_3/bnk_vehicle_car_police_anim_3" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_4/bnk_vehicle_car_police_anim_4" force="true" />-->
+	
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1" force="true" />
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1_contour" force="true" />
 	

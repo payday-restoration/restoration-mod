@@ -774,7 +774,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.spread = 3
 		self.r870_npc.FIRE_MODE = "single"
 		self.benelli_npc = deep_clone(self.r870_npc)
-		self.benelli_npc.sounds.prefix = "remington_npc"
+		self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 		self.benelli_npc.DAMAGE = 7
 		self.benelli_npc.CLIP_AMMO_MAX = 10
 		self.r870_taser_npc = deep_clone(self.r870_npc)
@@ -825,7 +825,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ump_npc = deep_clone(self.mp5_npc)
 		self.ump_npc.DAMAGE = 2.8
 		self.ump_npc.auto.fire_rate = 0.083
-		self.ump_npc.sounds.prefix = "mp5_npc"
+		self.ump_npc.sounds.prefix = "schakal_npc"
 		self.ump_npc.CLIP_AMMO_MAX = 25
 		self.ump_npc.suppression = 2.8
 		self.asval_smg_npc = deep_clone(self.mp5_npc)
@@ -860,7 +860,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function WeaponTweakData:_init_data_mac11_npc()
 		self.mac11_npc.categories = {"smg"}
-		self.mac11_npc.sounds.prefix = "mp5_npc"
+		self.mac11_npc.sounds.prefix = "mac10_npc"
 		self.mac11_npc.use_data.selection_index = 1
 		self.mac11_npc.DAMAGE = 2.6
 		self.mac11_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
@@ -908,6 +908,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp9_npc.suppression = 2
 		self.mp9_npc.FIRE_MODE = "auto"
 		self.sr2_smg_npc = deep_clone(self.mp9_npc)
+		self.sr2_smg_npc.sounds.prefix = "sr2_npc"		
 	end
 
 	function WeaponTweakData:_init_data_saiga_npc()
@@ -1250,7 +1251,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.s552_npc.sounds.prefix = "sig552_npc"
 		self.s552_npc.use_data.selection_index = 2
 		self.s552_npc.DAMAGE = 2.3
-		self.s552_npc.muzzleflash = "effects/payday2/particles/weapons/556_auto"
+		self.s552_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.s552_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.s552_npc.CLIP_AMMO_MAX = 30
 		self.s552_npc.NR_CLIPS_MAX = 5
@@ -1296,8 +1297,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_npc.suppression = 2
 		self.m249_npc.FIRE_MODE = "auto"
 		self.rpk_lmg_npc = deep_clone(self.m249_npc)
+		self.rpk_lmg_npc.sounds.prefix = "rpk_npc"		
 		self.hk21_sc_npc = deep_clone(self.m249_npc)
-		self.hk21_sc_npc.sounds.prefix = "m249_npc"
+		self.hk21_sc_npc.sounds.prefix = "hk23e_npc"
 		self.hk21_sc_npc.use_data.selection_index = 2
 		self.hk21_sc_npc.DAMAGE = 2.5
 		self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
@@ -13253,6 +13255,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	WeaponTweakData.clone__create_table_structure = WeaponTweakData._create_table_structure
 	function WeaponTweakData:_create_table_structure()
 		self:clone__create_table_structure()
+		self.hk23_sc_npc = {
+			usage = "is_lmg",
+			anim_usage = "is_rifle",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}		
 		self.hk21_sc_npc = {
 			usage = "is_lmg",
 			anim_usage = "is_rifle",

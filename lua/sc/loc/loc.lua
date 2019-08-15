@@ -365,10 +365,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans_desc"] = "Disables Titan Units.",
 		["mutator_notitans_longdesc"] = "All spawn instances of Titan Units are disabled.",
 
-		["MutatorTitansOnly"] = "Clash of the Titans",
-		["MutatorTitansOnly_desc"] = "Only Titan Units can spawn.",
-		["MutatorTitansOnly_longdesc"] = "All cops are replaced with their Titan variations.\n\n WARNING: This mutator may cause crashes on some maps.",		
-
 		["mutator_mememanonly"] = "HAHAHAHAHA, FOOLED YOU GUYS!",
 		["mutator_mememanonly_desc"] = "SUFFERING",
 		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",		

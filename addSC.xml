@@ -77,6 +77,11 @@
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />	
+
+	<!--Corrected NPC Weapon Sounds-->	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" />		
+	<unit path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" />		
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" />			
 	
 	<!--Panic Room Bullet Impact Fixes-->		
 	<object path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
@@ -101,14 +106,7 @@
 	<!--Zeal Heavy Shield Illumination Fix (Thanks Wekk!!!!)-->		
 	<texture path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" force="true" />
 
-	<!--More Cop Facial Variety (Thanks AGAIN Wekk!!!!)-->		
-	
-	<!-- disabled because one of the cops that appear in the car use the wrong face. -->
-	<!-- <material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_1/bnk_vehicle_car_police_anim_1" force="true" />
-	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_2/bnk_vehicle_car_police_anim_2" force="true" />
-	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_3/bnk_vehicle_car_police_anim_3" force="true" />
-	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_4/bnk_vehicle_car_police_anim_4" force="true" />-->
-	
+	<!--More Cop Facial Variety (Thanks AGAIN Wekk!!!!)-->			
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1" force="true" />
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1_contour" force="true" />
 	

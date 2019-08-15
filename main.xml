@@ -55,6 +55,8 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
+		<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
+		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/hud/hudtemp.lua" source_file="lib/managers/hud/HUDTemp"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
@@ -229,11 +231,6 @@
 		
 		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
 		
-		<!--///SC MOD/HUD Tweaks\\\-->
-		<!-- <hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/> -->
-		<hook file="sc/managers/hud/hudstageendscreen.lua" source_file="lib/managers/hud/hudstageendscreen"/>
-		<hook file="sc/managers/menu/stageendscreengui.lua" source_file="lib/managers/menu/stageendscreengui"/>
-		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
     </Hooks>
     <Localization directory="loc" default="english.txt">
     </Localization>

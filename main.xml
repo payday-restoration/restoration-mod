@@ -55,8 +55,8 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
-		<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
-		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
+		<!-- <hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
+		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/> -->
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/hud/hudtemp.lua" source_file="lib/managers/hud/HUDTemp"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
@@ -221,6 +221,8 @@
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>
+		<hook file="sc/network/base/clientnetworksession.lua" source_file="lib/network/base/clientnetworksession"/>
+		<hook file="sc/network/base/basenetworksession.lua" source_file="lib/network/base/basenetworksession"/>
 		<!--hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"-->
 		<!--///INGAME MANUAL\\\-->
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>

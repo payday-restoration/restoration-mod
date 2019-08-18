@@ -60,6 +60,7 @@
 	<continent path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<mission path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--adds a bikerdozer to the bunker, removes swat turret.-->	
 	<continent path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--fixes cars clipping into ground-->		
+	<mission path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->	
 	
 
 	<!--Misc. Changes and Fixes to Base Game Objects-->
@@ -87,11 +88,13 @@
 	<object path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
 	<object path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
 	
-	<!--Scarface Guard Bullet Impact Fixes-->		
+	<!--Scarface Guys-->		
 	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
 	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
 	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
 	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
+	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
+	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
 	<object path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
 	
 	<!--Change to Armored Hector's Visor Texture (now uses the Hard Hat's visor texture, for consistency reasons.)-->		

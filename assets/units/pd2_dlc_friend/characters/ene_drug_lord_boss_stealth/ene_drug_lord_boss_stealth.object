@@ -1,29 +1,35 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" orientation_object="root_point" />
-	<sequence_manager file="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
-
-	<effects>
-		<effect_spawner name="fire_torso" enabled="false" object="Spine2" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_arm" enabled="false" object="RightForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_arm" enabled="false" object="LeftForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_leg" enabled="false" object="LeftLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_leg" enabled="false" object="RightLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-	</effects>
+	<diesel materials="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" orientation_object="root_point" />
+	<sequence_manager file="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
-			<object name="c_capsule_body" collision_type="capsule"/>
+			<object name="c_capsule_body" collision_type="capsule" padding="-5" />
 		</body>
+
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere"/>
+			<object name="c_sphere_head" collision_type="sphere" padding="-12" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
+
+		<body name="body_vest" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine1"/>
+			<object name="c_vest_back" collision_type="convex"/>
+			<object name="c_vest_front" collision_type="convex"/>
+		</body>
+
+		<body name="body_ammo" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine"/>
+			<object name="c_ammo_back" collision_type="convex"/>
+			<object name="c_ammo_front" collision_type="convex"/>
+		</body>
+
 
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
@@ -199,38 +205,86 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+
+		<decal_mesh name="dm_ammo_front" 		enabled="true" 	material="steel_no_decal" />
+		<decal_mesh name="dm_ammo_back" 	enabled="true" 	material="steel_no_decal" />
+		<decal_mesh name="dm_vest_front" 		enabled="true" 	material="steel_no_decal" />
+		<decal_mesh name="dm_vest_back" 			enabled="true" 	material="steel_no_decal" />
 	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
-            <lod_object name="lod_body">
-                <object name="g_body"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="1000" />
-                </object>
-                <object name="g_body_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="0"/>
-                </object>
-            </lod_object>
+			<lod_object name="lod_body">
+				<object name="g_body" 					enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
 
-			<object name="g_helmet_lod1" 	enabled="true" cpy_material_vars="contour_color, contour_opacity" />
+				</object>
+				<object name="g_body_lod1" 				enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 
-			<object name="g_helmet_lod2" 	enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-	
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_head">
+				<object name="g_head" 					enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1000" />
+
+				</object>
+				<object name="g_head_lod1" 				enabled="true" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+
+				</object>
+			</lod_object>
+
+
+<!-- 			<lod_object name="lod_ammo_back">
+				<object name="g_ammo_back" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+
+				</object>
+				<object name="g_ammo_back_lod1" 		enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_ammo_front">
+				<object name="g_ammo_front" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="g_body" max_distance="1000" />
+
+				</object>
+				<object name="g_ammo_front_lod1" 	enabled="true" lod="1" >
+					<material materials="g_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_vest_back">
+				<object name="g_vest_back" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="g_body" max_distance="1000" />
+
+				</object>
+				<object name="g_vest_back_lod1" 		enabled="true" lod="1" >
+					<material materials="g_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_vest_front">
+				<object name="g_vest_front" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="g_body" max_distance="1000" />
+
+				</object>
+				<object name="g_vest_front_lod1" 			enabled="true" lod="1" >
+					<material materials="g_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+
+				</object>
+			</lod_object> -->
+
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-		</graphic_group>
 
-		<graphic_group name="head" enabled="true" culling_object="g_head">
-			
-            <object name="g_head"       enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-			<object name="g_head_lod1"  enabled="false" cpy_material_vars="contour_color, contour_opacity" />
-			
-			<object name="s_head" enabled="true" shadow_caster="true"/>
 		</graphic_group>
-		
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
 	</graphics>
 
 </dynamic_object>

@@ -1,8 +1,8 @@
 <table directory="assets">
 
 	<!--Updated Assets-->
-	<object	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
-	<sequence_manager	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
+	<!-- <object	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/> -->
+	<!-- <sequence_manager	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/> -->
 	
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
 	

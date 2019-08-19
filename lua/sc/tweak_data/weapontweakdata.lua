@@ -12666,13 +12666,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aps.kick.steelsight = self.new_m4.kick.standing
 		self.aps.stats = {
 			damage = 34,
-			spread = 17,
+			spread = 16,
 			recoil = 17,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -13219,7 +13219,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 	end
 	
-	if BeardLib.Utils:FindMod("Custom Attachment Points") then	--fixes lmg sights not following the dustcover/lid when reloading, but ONLY if the mod user has CAP installed.
+	if BeardLib.Utils:FindMod("Custom Attachment Points") or BeardLib.Utils:FindMod("WeaponLib") then	--fixes lmg sights not following the dustcover/lid when reloading, but ONLY if the mod user has CAP/WeaponLib installed.
 		self:SetupAttachmentPoint( "par", {
 			name = "a_o",
 			base_a_obj = "a_o",

@@ -42899,31 +42899,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if self.wpn_fps_pis_aps then -- Pawcio's Stechkin APS
 				self.parts.wpn_fps_upg_aps_9x18p.pcs = nil
-				self.parts.wpn_fps_upg_aps_supp.stats = { 
+				self.parts.wpn_fps_upg_aps_supp.stats = {
 					value = 5,
 					suppression = 13,
 					alert_size = 13,
 					spread = -1,
 					recoil = 1,
 					spread_moving = -2
-				}	
-				self.parts.wpn_fps_upg_aps_leupold_pro.stats = { 
-					value = 6
-				}		
-				self.parts.wpn_fps_upg_aps_ncstar_4.stats = { 
-					value = 7
-				}	
-				self.parts.wpn_fps_upg_aps_flash_hider_tact.stats = { 
-					value = 7,
-					concealment = -1,
-					spread = -1,
-					recoil = 2
-				}											
-				self.parts.wpn_fps_upg_aps_comp_long.stats = { 
-					value = 2,
-					recoil = -1,						
-					concealment = 1
-				}															
+				}
+			--[[ 
+			New attachments:
+				self.parts.wpn_fps_upg_aps_barrel_ported
+				self.parts.wpn_fps_upg_aps_barrel_portedextra
+				self.parts.wpn_fps_upg_aps_barrel_threaded
+				self.parts.wpn_fps_upg_aps_sight_fiber
+				self.parts.wpn_fps_upg_aps_stock
+			]]
 			end	
 
 		if self.wpn_fps_pis_duke1911 then -- Pawcio's Dick Kickem 1911	

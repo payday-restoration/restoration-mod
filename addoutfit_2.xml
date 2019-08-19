@@ -1,6 +1,6 @@
 <table directory="assets">
 
-    <sequence_manager path="units/payday2/characters/ragdoll" force="true"/>
+    <!-- <sequence_manager path="units/payday2/characters/ragdoll" force="true"/> -->
 	
 	<!--///ARCTIC GEAR\\\-->
     <unit path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>

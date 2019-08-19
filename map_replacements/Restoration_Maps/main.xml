@@ -403,8 +403,8 @@
 		<texture force="true" path="guis/textures/customheist_gui/rush_loading"/>
 		<texture force="true" path="guis/textures/customheist_gui/fort"/>
 		<texture force="true" path="guis/textures/customheist_gui/fort_loading"/>
-		<texture force="true" path="guis/textures/customheist_gui/gem"/>
-		<texture force="true" path="guis/textures/customheist_gui/gem_loading"/>
+		<!-- <texture force="true" path="guis/textures/customheist_gui/gem"/>
+		<texture force="true" path="guis/textures/customheist_gui/gem_loading"/> -->
 		<movie force="true" path="movies/cn_test"/>
 	</AddFiles>
 </table>

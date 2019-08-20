@@ -261,8 +261,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
-end
-	
+
 	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 	end
@@ -1278,4 +1277,7 @@ end
 		end
 	end
 	
+end
+
+
 end

@@ -265,100 +265,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 	end
-	
-	function GroupAIStateBesiege:_voice_saw()
-		for group_id, group in pairs(self._groups) do
-			for u_key, u_data in pairs(group.units) do
-				if u_data.char_tweak.chatter.saw then
-					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "saw")
-				else
-					
-				end
-			end
-		end
-	end
 
-
-	function GroupAIStateBesiege:_voice_sentry()
-		for group_id, group in pairs(self._groups) do
-			for u_key, u_data in pairs(group.units) do
-				if u_data.char_tweak.chatter.sentry then
-					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "sentry")
-				else
-					
-				end
-			end
-		end
-	end
-	
-	function GroupAIStateBesiege:_voice_looking_for_angle(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "look_for_angle") then
-			else
-			end
-		end
-	end	
-	
-	function GroupAIStateBesiege:_voice_open_fire_start(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
-			else
-			end
-		end
-	end
-
-	function GroupAIStateBesiege:_voice_push_in(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "push") then
-			else
-			end
-		end
-	end
-
-	function GroupAIStateBesiege:_voice_gtfo(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "retreat") then
-			else
-			end
-		end
-	end
-	
-	function GroupAIStateBesiege:_voice_deathguard_start(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "deathguard") then
-			else
-			end
-		end
-	end	
-	
-	function GroupAIStateBesiege:_voice_smoke(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "smoke") then
-			else
-			end
-		end
-	end	
-	
-	function GroupAIStateBesiege:_voice_flash(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "flash_grenade") then
-			else
-			end
-		end
-	end
-
-	function GroupAIStateBesiege:_voice_dont_delay_assault(group)
-		local time = self._t
-		for u_key, unit_data in pairs(group.units) do
-			if not unit_data.unit:sound():speaking(time) then
-				unit_data.unit:sound():say("p01", true, nil)
-				return true
-			end
-		end
-		return false
-	end
-
-    function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
+	function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
     	if task_data.use_smoke and not self:is_smoke_grenade_active() then
     		local shooter_pos, shooter_u_data = nil
     		local duration = tweak_data.group_ai.smoke_grenade_lifetime
@@ -1327,8 +1235,99 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
-	
+
 end
+	
+	function GroupAIStateBesiege:_voice_saw()
+		for group_id, group in pairs(self._groups) do
+			for u_key, u_data in pairs(group.units) do
+				if u_data.char_tweak.chatter.saw then
+					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "saw")
+				else
+					
+				end
+			end
+		end
+	end
 
 
+	function GroupAIStateBesiege:_voice_sentry()
+		for group_id, group in pairs(self._groups) do
+			for u_key, u_data in pairs(group.units) do
+				if u_data.char_tweak.chatter.sentry then
+					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "sentry")
+				else
+					
+				end
+			end
+		end
+	end
+	
+	function GroupAIStateBesiege:_voice_looking_for_angle(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "look_for_angle") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_open_fire_start(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
+			else
+			end
+		end
+	end
+
+	function GroupAIStateBesiege:_voice_push_in(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "push") then
+			else
+			end
+		end
+	end
+
+	function GroupAIStateBesiege:_voice_gtfo(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "retreat") then
+			else
+			end
+		end
+	end
+	
+	function GroupAIStateBesiege:_voice_deathguard_start(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "deathguard") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_smoke(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "smoke") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_flash(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "flash_grenade") then
+			else
+			end
+		end
+	end
+
+	function GroupAIStateBesiege:_voice_dont_delay_assault(group)
+		local time = self._t
+		for u_key, unit_data in pairs(group.units) do
+			if not unit_data.unit:sound():speaking(time) then
+				unit_data.unit:sound():say("p01", true, nil)
+				return true
+			end
+		end
+		return false
+	end
+	
 end

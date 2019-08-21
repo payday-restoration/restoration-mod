@@ -43232,7 +43232,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 10
+					extra_ammo = 20
 				}}}															
 				self.wpn_fps_ass_ak5.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {

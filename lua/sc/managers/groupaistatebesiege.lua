@@ -907,6 +907,57 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							return
 						end
 					end
+				elseif tactic_name == "hunter" and not phase_is_anticipation then
+					if current_objective.tactic == tactic_name then
+						for u_key, u_data in pairs(self._char_criminals) do
+							if u_data.unit then
+								local players_nearby = managers.player:_chk_fellow_crimin_proximity(u_data.unit)
+								local crim_nav_seg = u_data.tracker:nav_segment()
+								if players_nearby and players_nearby <= 0 then
+									if current_objective.area.nav_segs[crim_nav_seg] then
+										return
+									end
+								end
+							end
+						end
+					end
+					local closest_crim_u_data, closest_crim_dis_sq = nil
+					for u_key, u_data in pairs(self._char_criminals) do
+						if u_data.unit then
+							local players_nearby = managers.player:_chk_fellow_crimin_proximity(u_data.unit)
+							local closest_u_id, closest_u_data, closest_u_dis_sq = self._get_closest_group_unit_to_pos(u_data.m_pos, group.units)
+							if players_nearby and players_nearby <= 0 then
+								if closest_u_dis_sq and (not closest_crim_dis_sq or closest_crim_dis_sq > closest_u_dis_sq) then
+									closest_crim_u_data = u_data
+									closest_crim_dis_sq = closest_u_dis_sq
+								end
+							end
+						end
+					end
+					if closest_crim_u_data then
+						local search_params = {
+							from_tracker = group_leader_u_data.unit:movement():nav_tracker(),
+							to_tracker = closest_crim_u_data.tracker,
+							id = "GroupAI_deathguard",
+							access_pos = self._get_group_acces_mask(group)
+						}
+						local coarse_path = managers.navigation:search_coarse(search_params)
+						if coarse_path then
+							local grp_objective = {
+								type = "assault_area",
+								tactic = "hunter",
+								distance = 9999,
+								follow_unit = closest_crim_u_data.unit,
+								area = self:get_area_from_nav_seg_id(coarse_path[#coarse_path][1]),
+								coarse_path = coarse_path,
+								attitude = "engage",
+								moving_in = true
+							}
+							group.is_chasing = true
+							self:_set_objective_to_enemy_group(group, grp_objective)
+							return
+						end
+					end
 				elseif tactic_name == "charge" and not current_objective.moving_out and group.in_place_t and (self._t - group.in_place_t > 15 or self._t - group.in_place_t > 4 and self._drama_data.amount <= tweak_data.drama.low) and next(current_objective.area.criminal.units) and group.is_chasing and not current_objective.charge and not (tactics_map and tactics_map.obstacle) then
 					charge = true
 				end

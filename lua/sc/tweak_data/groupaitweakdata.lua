@@ -7922,6 +7922,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"shield_cover"
 			},
 			spooc = {
+				"hunter",
 				"spoocavoidance",
 				"shield_cover",
 				"smoke_grenade",

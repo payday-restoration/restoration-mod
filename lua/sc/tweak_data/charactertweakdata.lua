@@ -628,16 +628,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end			
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
-		self.omnia_lpf.tags = {"law", "medic", "special", "customvo"}
+		self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
 		self.omnia_lpf.do_omnia = true
 		self.omnia_lpf.do_aoe_heal = true
 		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
-		self.omnia_lpf.die_sound_event = "mga_death_scream"		
+		self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 		self.omnia_lpf.is_special = true
 		if is_reaper then
 		    self.omnia_lpf.die_sound_event = "rmdc_x02a_any_3p"
 		else	
-		    self.omnia_lpf.die_sound_event = "mga_death_scream"
+		    self.omnia_lpf.die_sound_event = nil
 		end	
 		table.insert(self._enemy_list, "omnia_lpf")
 	end

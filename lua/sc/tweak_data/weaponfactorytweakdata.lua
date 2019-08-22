@@ -41479,14 +41479,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 4,			
 						spread = 1,
 						concealment = -2
-					}	
+					}
 				self.parts.wpn_fps_ass_amcar_ns_viet.stats = {
 						value = 5,
 						recoil = -1,
 						spread = 2,
 						concealment = -4
 					}		
-				self.parts.wpn_fps_ass_amcar_m_9mm.pcs = nil --disabled, until conversions are brought back. 
+				self.parts.wpn_fps_ass_amcar_ns_viet.override_weapon = nil
+				self.parts.wpn_fps_ass_amcar_m_9mm.stats = {
+						value = 2,
+						damage = -4,
+						total_ammo_mod = 11,
+						extra_ammo = 25
+					}
+				self.parts.wpn_fps_ass_amcar_m_9mm.custom_stats = {
+						is_pistol = true			
+					}
+				self.parts.wpn_fps_ass_amcar_m_9mm.sound_switch = {
+						fire = "akm_fire_single",
+						fire_single = "akm_fire_single",
+						fire_auto = "akm_fire",
+						stop_fire = "akm_stop"						
+					}					
+				self.parts.wpn_fps_ass_amcar_m_9mm.override_weapon = nil			
 				end									
 
 		if self.parts.wpn_fps_smg_mac10_m_casket then -- Alcat's Various Attachments for the MAC 10

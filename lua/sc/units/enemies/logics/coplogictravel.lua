@@ -143,6 +143,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						local cover_wait_time = nil
 						
 						if nr_players > 2 then
+							cover_wait_time = my_data.coarse_path_index == #my_data.coarse_path - 1 and 0.15 or 0.3 + 0.2 * math.random()
+						elseif nr_players > 5 then
 							cover_wait_time = 0
 						else
 							cover_wait_time = my_data.coarse_path_index == #my_data.coarse_path - 1 and 0.3 or 0.6 + 0.4 * math.random()

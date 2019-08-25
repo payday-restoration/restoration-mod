@@ -9245,72 +9245,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.noodle.panic_suppression_chance = 0.0		
 		end		
 
-	if self.heffy_556 then --Killerwolf & Germantaco's AK 101
-		self.heffy_556.tactical_reload = 1											
-		self.heffy_556.AMMO_MAX = 180
-		self.heffy_556.AMMO_PICKUP = self:_pickup_chance(180, 2)
-		self.heffy_556.spread.standing = 3
-		self.heffy_556.spread.crouching = 2
-		self.heffy_556.spread.steelsight = 1
-		self.heffy_556.spread.moving_standing = 4
-		self.heffy_556.spread.moving_crouching = 3
-		self.heffy_556.spread.moving_steelsight = 2
-		self.heffy_556.fire_mode_data.fire_rate = 0.1
-		self.heffy_556.auto.fire_rate = 0.1
-		self.heffy_556.kick.standing = self.new_m4.kick.standing
-		self.heffy_556.kick.crouching = self.new_m4.kick.standing
-		self.heffy_556.kick.steelsight = self.new_m4.kick.standing
-		self.heffy_556.stats = {
-			damage = 34,
-			spread = 15,
-			recoil = 20,
-			spread_moving = 6,
-			zoom = 3,
-			concealment = 16,
-			suppression = 7,
-			alert_size = 7,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-		self.heffy_556.panic_suppression_chance = 0.0
-		end							
-		
-
-	if self.heffy_545 then 	
-		self.heffy_545.tactical_reload = 1												
-		self.heffy_545.desc_id = "bm_menu_sc_heffy_545_desc"
-		self.heffy_545.AMMO_MAX = 150
-		self.heffy_545.AMMO_PICKUP = self:_pickup_chance(150, 2)
-		self.heffy_545.spread.standing = 3
-		self.heffy_545.spread.crouching = 2
-		self.heffy_545.spread.steelsight = 1
-		self.heffy_545.spread.moving_standing = 4
-		self.heffy_545.spread.moving_crouching = 3
-		self.heffy_545.spread.moving_steelsight = 2
-		self.heffy_545.fire_mode_data.fire_rate = 0.0923076923
-		self.heffy_545.auto.fire_rate = 0.0923076923
-		self.heffy_545.kick.standing = self.new_m4.kick.standing
-		self.heffy_545.kick.crouching = self.new_m4.kick.standing
-		self.heffy_545.kick.steelsight = self.new_m4.kick.standing
-		self.heffy_545.stats = {
-			damage = 40,
-			spread = 15,
-			recoil = 20,
-			spread_moving = 6,
-			zoom = 3,
-			concealment = 16,
-			suppression = 7,
-			alert_size = 7,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-		self.heffy_545.panic_suppression_chance = 0.0
-		end					
-
 	if self.lynx then --Alcat's Gepard GM6 Lynx
 		self.lynx.upgrade_blocks = nil
 		self.lynx.has_description = true
@@ -11713,39 +11647,41 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.qsz92.panic_suppression_chance = 0.0
 	end		
 
-	if self.glawk then --Germantaco's Glock 17 Gen 3
-		self.glawk.AMMO_MAX = 150
-		self.glawk.tactical_reload = 1										
-		self.glawk.has_description = false				
-		self.glawk.fire_mode_data.fire_rate = 0.0625
-		self.glawk.single.fire_rate = 0.0625		
-		self.glawk.tactical_reload = 1										
-		self.glawk.AMMO_PICKUP = self:_pickup_chance(150, 1)
-		self.glawk.spread.standing = 3
-		self.glawk.spread.crouching = 2
-		self.glawk.spread.steelsight = 1
-		self.glawk.spread.moving_standing = 4
-		self.glawk.spread.moving_crouching = 3
-		self.glawk.spread.moving_steelsight = 2
-		self.glawk.kick.standing = self.glock_17.kick.standing		
-		self.glawk.kick.crouching = self.glock_17.kick.standing
-		self.glawk.kick.steelsight = self.glock_17.kick.standing
-		self.glawk.stats = {
-			damage = 34,
-			spread = 16,
-			recoil = 22,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+	if self.m590 then --Silent Enforcer and GT's Mossberg 590
+		self.m590.rays = 12
+		self.m590.CLIP_AMMO_MAX = 8
+		self.m590.spread.standing = 3 * 1
+		self.m590.spread.crouching = 2 * 1 
+		self.m590.spread.steelsight = 1 * 1
+		self.m590.spread.moving_standing = 4 * 1
+		self.m590.spread.moving_crouching = 3 * 1
+		self.m590.spread.moving_steelsight = 2 * 1
+		self.m590.kick.standing = self.new_m4.kick.standing
+		self.m590.kick.crouching = self.new_m4.kick.standing
+		self.m590.kick.steelsight = self.new_m4.kick.standing
+		self.m590.single.fire_rate = 0.5
+		self.m590.fire_mode_data.fire_rate = 0.5
+		self.m590.AMMO_MAX = 60
+		self.m590.damage_near = 800
+		self.m590.damage_far = 1600
+		self.m590.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.m590.stats = {
+			damage = 100,
+			spread = 9,
+			recoil = 19,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 16,
+			suppression = 5,
+			alert_size = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
 		}
-		self.glawk.panic_suppression_chance = 0.0
-	end				
+		self.m590.stats_modifiers = {damage = 1}
+		self.m590.panic_suppression_chance = 0.0
+	end					
 
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.tactical_reload = 1											

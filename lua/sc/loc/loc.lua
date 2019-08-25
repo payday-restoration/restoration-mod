@@ -13,7 +13,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_es_rep_upgrade"] = "",				
 		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
 		["bm_wp_1911_m_big"] = "Casket Magazine",		
-		["bm_w_lemming"] = "5/7 Pistol",				
+		["bm_w_lemming"] = "5/7 Pistol",
+		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
+		["bm_w_x_shrew"] = "Barry & Paul",
+		["bm_w_x_1911"] = "Mustang & Sally",		
 		["bm_wp_usp_m_big"] = "Casket Magazine",		
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
@@ -23,7 +26,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",			
-		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",								
+		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",			
 		["bm_wp_g3_b_short"] = "Micro Barrel",						
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
@@ -365,10 +368,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans_desc"] = "Disables Titan Units.",
 		["mutator_notitans_longdesc"] = "All spawn instances of Titan Units are disabled.",
 
-		["mutator_mememanonly"] = "HAHAHAHAHA, FOOLED YOU GUYS!",
+		["mutator_mememanonly"] = "HAHAHA, FOOLED YOU GUYS!",
 		["mutator_mememanonly_desc"] = "SUFFERING",
 		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",		
 
+		["MutatorMoreDonutsPlus"] = "More Donuts+",
+		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by OMNIA L.P.Fs.",
+		["MutatorMoreDonutsPlus_longdesc"] = "All common enemies are replaced by NYPD Bronco Cops, and all specials are replaced with OMNIA L.P.Fs. \n\nWARNING: By enabling this mutator, you are committing an atrocity.",
+
+		["MutatorJungleInferno"] = "Jungle Inferno",
+		["MutatorJungleInferno_desc"] = "All enemies are replaced by Captain Summers.",
+		["MutatorJungleInferno_longdesc"] = "All non-scripted spawn enemies are replaced by clones of Captain Summers.",						
 		
 		["mutator_minidozers"] = "Semi-Auto Shotgun Bulldozers",
 		["mutator_minidozers_desc"] = "Semi-Auto Shotgun Bulldozers can now spawn.",
@@ -546,7 +556,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB	
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased steel sight speed when using Shotguns.\n\nACE: ##$pro##\nYou reload Shotguns ##25%## faster.",																								
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster with shotguns.\n\nACE: ##$pro##\nYou reload shotguns ##25%## faster.",																								
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
@@ -554,7 +564,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting	
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour shotgun's accuracy increased by ##40%## when aiming down your sights.\n\nACE: ##$pro##\nYour shotgun's range increased by ##50%## when aiming down your sights.",																																																																																																																																																																																																
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour shotgun's accuracy is increased by ##40%## while aiming down sights.\n\nACE: ##$pro##\nYour shotgun's range is increased by ##50%## while aiming down sights.",																																																																																																																																																																																																
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -637,7 +647,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Nerves of Steel--	
 			["menu_fast_fire_beta_sc"] = "Nerves of Steel",
-			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sight while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
+			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use ironsights while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "Engineering",
@@ -744,7 +754,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "Counter Strike",
-			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nWhen charging your melee weapon you will counterattack enemies that try to strike you.\n\nACE: ##$pro##\nYou gain the ability to counter attack cloackers and their kicks, knocking them down.",																								
+			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nWhen charging your melee weapon you will counterattack enemies that try to strike you.\n\nACE: ##$pro##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down.",																								
 
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "Bloodthirst",

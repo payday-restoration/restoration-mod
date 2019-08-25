@@ -129,7 +129,7 @@ function restoration:Init()
 		"pal", --Counterfeit
 		"brb", --Brooklyn Bank
 		"arm_for",  --Transport TRAIN HEIST
-		--"arm_und", --Transport UNDERPASS
+		"arm_und", --Transport UNDERPASS
 		"dark",  --Murky Station
 		"kosugi",  --Shadow Raid
 		"election_day_1",  --Election Day Docks

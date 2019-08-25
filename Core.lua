@@ -129,6 +129,7 @@ function restoration:Init()
 		"pal", --Counterfeit
 		"brb", --Brooklyn Bank
 		"arm_for",  --Transport TRAIN HEIST
+		--"arm_und", --Transport UNDERPASS
 		"dark",  --Murky Station
 		"kosugi",  --Shadow Raid
 		"election_day_1",  --Election Day Docks
@@ -139,6 +140,8 @@ function restoration:Init()
 		"welcome_to_the_jungle_2",  --Big oil day 2
 		"cane",  --Santa's Workshop
 		"mus",  --The Diamond
+		"kenaz",  --Golden Grin Casino
+		"fish",  --Yacht Heist
 		"mad" --Boiling Point	
 		
 		--holding loud suit levels here in case we need an extra check for them in the future
@@ -150,7 +153,6 @@ function restoration:Init()
 		--"arm_hcm", --Transport DOWNTOWN
 		--"arm_fac", --Transport HARBOR
 		--"arm_par", --Transport PARK
-		--"arm_und", --Transport UNDERPASS
 		--"jolly", --Aftershock
 		--"pbr2", --Birth of Sky
 		--"pbr", --Beneath The Mountain

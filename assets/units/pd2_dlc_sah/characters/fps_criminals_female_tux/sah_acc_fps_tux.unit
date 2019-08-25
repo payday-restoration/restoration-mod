@@ -1,0 +1,11 @@
+<unit type="sah" slot="1">
+	<object file="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" />
+	<dependencies>	
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="contour" class="ContourExt" />
+	</extensions>
+</unit>

@@ -1,0 +1,32 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" orientation_object="root_point" />
+	<sequence_manager file="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" />
+	<graphics>
+		<graphic_group name="grp_all" enabled="true" culling_object="co_box">
+			<object name="g_gloves" 				enabled="false" />
+			<object name="g_gloves_wick" 			enabled="false" />
+			<object name="g_gloves_jacket" 			enabled="false" />
+			<object name="g_gloves_female" 			enabled="false" />
+			<object name="g_arms_female" 			enabled="false" />
+			<object name="g_arms_female_2" 			enabled="false" />
+			<object name="g_arms_bodhi" 			enabled="false" />
+			<object name="g_gloves_female_2" 		enabled="false" />
+			<object name="g_arm_sydney" 			enabled="false" />
+			<object name="g_gloves_wild" 			enabled="false" />
+			<object name="g_gloves_terry" 			enabled="false" />
+			<object name="g_arms_max" 				enabled="false" />
+			<object name="g_arms" 					enabled="false" />
+			<object name="g_arms_jiro" 				enabled="false" />
+			<object name="g_arms_hoxton" 			enabled="false" />
+			<object name="g_arms_wolf" 				enabled="false" />
+			<object name="g_arms_chains" 			enabled="false" />
+			<object name="g_gloves_joy" 			enabled="false" />
+			<object name="g_gloves_ecp_female" 		enabled="false" />
+			<object name="g_gloves_myh" 			enabled="false" />
+			<object name="g_female_tux_01" 			enabled="false" />
+			<object name="g_female_tux_02" 			enabled="false" />
+			<object name="g_male_tux_01" 			enabled="false" />
+			<object name="g_male_tux_02" 			enabled="false" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

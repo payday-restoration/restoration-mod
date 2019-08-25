@@ -1,0 +1,7 @@
+<materials version="3">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_fps_scrubs" version="2">
+        <bump_normal_texture file="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs_nm"/>
+        <diffuse_texture file="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs_df"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2" name="shadow_caster"/>
+</materials>

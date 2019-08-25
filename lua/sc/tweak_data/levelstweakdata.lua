@@ -101,7 +101,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pal.player_sequence = "spawn_prop_pool_repair_suit"		
 		
 		self.kenaz.ai_group_type = lapd
-		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets"}			
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/outfitassets3"}	
+		self.kenaz.player_sequence = "spawn_prop_tux"				
 		
 		self.rvd1.ai_group_type = lapd
 		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
@@ -110,6 +111,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
 
         --///NEW OUTFITS\\\--
+		
+		self.fish.package = {"packages/outfitassets3", "packages/lvl_fish"}
+		self.fish.player_sequence = "spawn_prop_tux"	
 		
 		self.arm_cro.package = {"packages/outfitassets", "packages/narr_arm_cro"}
 		self.arm_cro.player_sequence = "spawn_prop_loud_suit"	
@@ -123,11 +127,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.arm_par.package = {"packages/outfitassets", "packages/narr_arm_par"}
 		self.arm_par.player_sequence = "spawn_prop_loud_suit"			
 		
-		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
-		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
-		
-		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
-		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
+		self.arm_und.package = {"packages/outfitassets3", "packages/narr_arm_und"}
+		self.arm_und.player_sequence = "spawn_prop_scrub"	
 		
 		self.crojob2.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_2"}
 		self.crojob2.player_sequence = "spawn_prop_sneak_suit"	

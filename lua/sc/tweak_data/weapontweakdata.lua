@@ -11648,9 +11648,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end		
 
 	if self.m590 then --Silent Enforcer and GT's Mossberg 590
+		self.m590.has_description = true
+		self.m590.desc_id = "bm_w_m590_desc"		
 		self.m590.rays = 12
+		self.m590.timers = {}
+		self.m590.timers.unequip = 0.5
+		self.m590.timers.equip = 0.5
 		self.m590.CLIP_AMMO_MAX = 8
 		self.m590.spread.standing = 3 * 1
+		self.m590.muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath"		
 		self.m590.spread.crouching = 2 * 1 
 		self.m590.spread.steelsight = 1 * 1
 		self.m590.spread.moving_standing = 4 * 1
@@ -11659,19 +11665,19 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.kick.standing = self.new_m4.kick.standing
 		self.m590.kick.crouching = self.new_m4.kick.standing
 		self.m590.kick.steelsight = self.new_m4.kick.standing
-		self.m590.single.fire_rate = 0.5
-		self.m590.fire_mode_data.fire_rate = 0.5
-		self.m590.AMMO_MAX = 60
-		self.m590.damage_near = 800
-		self.m590.damage_far = 1600
-		self.m590.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.m590.single.fire_rate = 0.8
+		self.m590.fire_mode_data.fire_rate = 0.8
+		self.m590.AMMO_MAX = 40 
+		self.m590.damage_near = 900
+		self.m590.damage_far = 1800
+		self.m590.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.m590.stats = {
-			damage = 100,
+			damage = 150,
 			spread = 9,
-			recoil = 19,
-			spread_moving = 6,
+			recoil = 17,
+			spread_moving = 5,
 			zoom = 3,
-			concealment = 16,
+			concealment = 15,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -12131,6 +12137,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.categories = {"assault_rifle"}		
 			self.pdr.has_description = false					
 			self.pdr.tactical_reload = 1
+			self.pdr.use_data.selection_index = 2
 			self.pdr.AMMO_MAX = 150
 			self.pdr.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.pdr.spread.standing = 3

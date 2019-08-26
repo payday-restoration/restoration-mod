@@ -40786,119 +40786,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -2
 			}						
 			self.wpn_fps_shot_m590.override = { 		
-				wpn_fps_upg_a_slug = {
-					stats = {
-						value = 10,
-						total_ammo_mod = -33,
-						damage = 50,
-						recoil = -2,
-						spread = 12,
-						spread_multi = {1, 1},	
-						moving_spread = 0,
-						suppression = -1,
-						alert_size = -1,
-						concealment = -5
-					},
-					custom_stats = {
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						rays = 1,
-						armor_piercing_add = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,
-						use_heavy_kick = true,
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
-					}
-				},
-				wpn_fps_upg_a_custom = {
-					stats = {
-						value = 9,
-						spread = -1,
-						total_ammo_mod = -33,
-						damage = 50
-					},
-					custom_stats = {
-						damage_near_mul = -100,
-						damage_far_mul = -200,		
-						rays = 9,
-						use_heavy_kick = true,
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
-					}
-				},	
-				wpn_fps_upg_a_custom_free = {
-					stats = {
-						value = 9,
-						spread = -1,
-						total_ammo_mod = -33,
-						damage = 50
-					},
-					custom_stats = {
-						damage_near_mul = -100,
-						damage_far_mul = -200,		
-						rays = 9,
-						use_heavy_kick = true,
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
-					}
-				},			
-				wpn_fps_upg_a_slug_fire = {
-					stats = {
-						value = 10,
-						total_ammo_mod = -7,
-						damage = 57,	
-						recoil = -2,
-						spread = 12,
-						spread_multi = {1, 1},	
-						moving_spread = 0,
-						suppression = -1,
-						alert_size = -1,
-						concealment = -5
-				},
-				custom_stats = {
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						rays = 1,
-						armor_piercing_add = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,
-						bullet_class = "FlameBulletBase",
-						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-						fire_dot_data = {
-							dot_damage = "0",
-							dot_trigger_max_distance = "9999",
-							dot_trigger_chance = "100",
-							dot_length = "3",
-							dot_tick_period = "0.5"
-						},
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
-					}
-				},
 				wpn_fps_upg_a_explosive = {
 					stats = {
 						value = 10,
-						total_ammo_mod = -66,
 						recoil = -5,
-						spread_multi = {1, 1},	
 						concealment = -7,
-						damage = 200
+						spread_multi = {1, 1},	
+						total_ammo_mod = -62,
+						damage = 250
 					},
 					custom_stats = {
 						ignore_statistic = true,
 						block_b_storm = true,
 						rays = 1,
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
 						bullet_class = "InstantExplosiveBulletBase",
-						ammo_pickup_min_mul = 0.333333333333,
-						ammo_pickup_max_mul = 0.333333333333
-					}
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
 				}
 			}
+		}
 		end			
 
 		if self.wpn_fps_shot_spas15 then -- Alcat's SPAS 15

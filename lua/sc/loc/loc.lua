@@ -44,6 +44,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
+		["bm_w_m590"] = "Reinbeck 890 Shotgun",
+		["bm_w_m590_desc"] = "The criminal underworld's most popular shotgun is back and better than ever. With 8 rounds and nothing but raw power, the Reinbeck has finally returned to America's most infamous criminal crew.",				
 		["bm_wp_upg_vintage_desc"] = "",
 		["bm_sc_scorpion_double_mag"] = "",
 		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
@@ -647,7 +649,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Nerves of Steel--	
 			["menu_fast_fire_beta_sc"] = "Nerves of Steel",
-			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use ironsights while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
+			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sights while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "Engineering",

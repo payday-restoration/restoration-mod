@@ -11651,9 +11651,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.has_description = true
 		self.m590.desc_id = "bm_w_m590_desc"		
 		self.m590.rays = 12
-		self.m590.timers = {}
-		self.m590.timers.unequip = 0.5
-		self.m590.timers.equip = 0.5
+		self.m590.timers = {
+			shotgun_reload_enter = 0.4,
+			shotgun_reload_exit_empty = 1.3,
+			shotgun_reload_exit_not_empty = 1,
+			shotgun_reload_shell = 0.6666667,
+			shotgun_reload_first_shell_offset = 0.33666667,
+			unequip = 0.5,
+			equip = 0.5
+		}
 		self.m590.CLIP_AMMO_MAX = 8
 		self.m590.spread.standing = 3 * 1
 		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		
@@ -11687,7 +11693,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.m590.stats_modifiers = {damage = 1}
 		self.m590.panic_suppression_chance = 0.0
-	end					
+	end
 
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.tactical_reload = 1											

@@ -11649,9 +11649,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.m590 then --Silent Enforcer and GT's Mossberg 590
 		self.m590.has_description = true
+		self.m590.tactical_reload = 0
 		self.m590.desc_id = "bm_w_m590_desc"		
 		self.m590.rays = 12
-		self.m590.timers = {
+		--[[self.m590.timers = {
 			shotgun_reload_enter = 0.4,
 			shotgun_reload_exit_empty = 1.3,
 			shotgun_reload_exit_not_empty = 1,
@@ -11659,7 +11660,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			shotgun_reload_first_shell_offset = 0.33666667,
 			unequip = 0.5,
 			equip = 0.5
-		}
+		}]]--
 		self.m590.CLIP_AMMO_MAX = 8
 		self.m590.spread.standing = 3 * 1
 		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		

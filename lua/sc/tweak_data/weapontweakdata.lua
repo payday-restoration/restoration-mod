@@ -11668,8 +11668,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.single.fire_rate = 0.8
 		self.m590.fire_mode_data.fire_rate = 0.8
 		self.m590.AMMO_MAX = 40 
-		self.m590.damage_near = 900
-		self.m590.damage_far = 1800
+		self.m590.damage_near = 600
+		self.m590.damage_far = 1200
 		self.m590.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.m590.stats = {
 			damage = 150,

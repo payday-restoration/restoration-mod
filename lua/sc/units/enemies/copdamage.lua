@@ -1039,11 +1039,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 		
 	function CopDamage:damage_explosion(attack_data)
-		if attack_data and attack_data.attacker_unit then
---			if attack_data.attacker_unit:movement():team().id == self._unit:movement():team().id then
+		if attack_data and attack_data.weapon_unit then
+			if attack_data.weapon_unit:base()._variant == "explosion" and not attack_data.weapon_unit:base()._thrower_unit then
 				-- no friendly fire >:(
---				return
---			end
+				return
+			end
 		end
 	
 		if self._dead or self._invulnerable then

@@ -7914,12 +7914,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"shield_cover"
 			},
 			TIT_tank = { --set up to use passive suppressive fire against players they'll also use the hunter tactic to hunt rambo players :)
+				"obstacle",
 			    "reloadingretreat",
 				"spoocavoidance",
+				"hunter",
 				"murder",
 				"elite_ranged_fire",
-				"obstacle",
-				"hunter",
 				"shield_cover"
 			},
 			spooc = {
@@ -7939,7 +7939,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			Cap_spring = {
 				"aggressor", --this is to help him not lag behind the player too much
-				"charge",
 				"murder"
 			},
 			Cap_summers = {
@@ -7947,6 +7946,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"murder"
 			},
 			Cap_autumn = {
+				"hunter",
 				"spoocavoidance",
 				"flank",
 				"shield_cover",

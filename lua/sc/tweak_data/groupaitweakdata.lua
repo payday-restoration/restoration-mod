@@ -7913,12 +7913,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"harass",
 				"shield_cover"
 			},
-			TIT_tank = { --set up to use passive suppressive fire against players
+			TIT_tank = { --set up to use passive suppressive fire against players they'll also use the hunter tactic to hunt rambo players :)
 			    "reloadingretreat",
 				"spoocavoidance",
 				"murder",
 				"elite_ranged_fire",
 				"obstacle",
+				"hunter",
 				"shield_cover"
 			},
 			spooc = {

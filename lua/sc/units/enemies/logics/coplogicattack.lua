@@ -82,7 +82,74 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			cbt = true
 		})
 	end
+	
+	function CopLogicAttack._upd_enemy_detection(data, is_synchronous)
+		managers.groupai:state():on_unit_detection_updated(data.unit)
 
+		data.t = TimerManager:game():time()
+		local my_data = data.internal_data
+		local delay = CopLogicBase._upd_attention_obj_detection(data, nil, nil)
+		local new_attention, new_prio_slot, new_reaction = CopLogicIdle._get_priority_attention(data, data.detected_attention_objects, nil)
+		local old_att_obj = data.attention_obj
+
+		CopLogicBase._set_attention_obj(data, new_attention, new_reaction)
+		data.logic._chk_exit_attack_logic(data, new_reaction)
+
+		if my_data ~= data.internal_data then
+			return
+		end
+
+		if new_attention then
+			if old_att_obj and old_att_obj.u_key ~= new_attention.u_key then
+				CopLogicAttack._cancel_charge(data, my_data)
+
+				my_data.flank_cover = nil
+
+				if not data.unit:movement():chk_action_forbidden("walk") then
+					CopLogicAttack._cancel_walking_to_cover(data, my_data)
+				end
+
+				CopLogicAttack._set_best_cover(data, my_data, nil)
+			end
+		elseif old_att_obj then
+			CopLogicAttack._cancel_charge(data, my_data)
+
+			my_data.flank_cover = nil
+		end
+
+		CopLogicBase._chk_call_the_police(data)
+
+		if my_data ~= data.internal_data then
+			return
+		end
+		
+		if (not my_data._intimidate_t or my_data._intimidate_t + 2 < data.t) and not data.cool and not my_data._turning_to_intimidate and not my_data.acting and (not new_attention or AIAttentionObject.REACT_SCARED > new_reaction) and managers.groupai:state():chk_assault_active_atm() then
+			local can_turn = not data.unit:movement():chk_action_forbidden("turn")
+			local civ = CopLogicIdle.find_civilian_to_intimidate(data)
+
+			if civ then
+				my_data._intimidate_t = data.t
+				new_attention, new_prio_slot, new_reaction = nil
+
+				if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then
+					my_data._turning_to_intimidate = true
+					my_data._primary_intimidation_target = civ
+				else
+					CopLogicIdle.intimidate_civilians(data)
+				end
+			end
+		end
+
+		data.logic._upd_aim(data, my_data)
+
+		if not is_synchronous then
+			CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicAttack._upd_enemy_detection, data, delay and data.t + delay, data.important and true)
+		end
+
+		CopLogicBase._report_detections(data.detected_attention_objects)
+	end
+
+	
 	function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 		local focus_enemy = data.attention_obj
         local common_cop = data.unit:base():has_tag("law") and not data.unit:base():has_tag("special")

@@ -219,4 +219,187 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
       return best_target, best_target_priority_slot, best_target_reaction
   end
+
+	function CopLogicIdle.find_civilian_to_intimidate(data)
+		local best_civ = CopLogicIdle._find_intimidateable_civilians(data)
+
+		return best_civ
+	end
+
+	function CopLogicIdle._find_intimidateable_civilians(data)
+		local head_pos = data.unit:movement():m_head_pos()
+		local look_vec = data.unit:movement():m_rot():y()
+		local close_dis = 400
+		local intimidateable_civilians = {}
+		local best_civ = nil
+		local best_civ_wgt = false
+		local best_civ_angle = nil
+		local highest_wgt = 1
+		local my_tracker = data.unit:movement():nav_tracker()
+		local chk_vis_func = my_tracker.check_visibility
+		local my_unit = data.unit
+
+		for key, unit in pairs(managers.groupai:state():fleeing_civilians()) do
+			if chk_vis_func(my_tracker, unit:movement():nav_tracker()) and tweak_data.character[unit:base()._tweak_table].intimidateable and not unit:base().unintimidateable and not unit:anim_data().unintimidateable and not unit:brain():is_tied() and not unit:unit_data().disable_shout then
+				local u_head_pos = unit:movement():m_head_pos() + math.UP * 30
+				local vec = u_head_pos - head_pos
+				local dis = mvector3.normalize(vec)
+				local angle = vec:angle(look_vec)
+
+				max_angle = math.max(8, math.lerp(90, 30, dis / 1200))
+				max_dis = 1200
+
+				if dis < close_dis or dis < max_dis and angle < max_angle then
+					local slotmask = managers.slot:get_mask("AI_visibility")
+					local ray = World:raycast("ray", head_pos, u_head_pos, "slot_mask", slotmask, "ray_type", "ai_vision")
+
+					if not ray then
+						local inv_wgt = dis * dis * (1 - vec:dot(look_vec))
+
+						table.insert(intimidateable_civilians, {
+							unit = unit,
+							key = key,
+							inv_wgt = inv_wgt
+						})
+
+						if not best_civ_wgt or inv_wgt < best_civ_wgt then
+							best_civ_wgt = inv_wgt
+							best_civ = unit
+							best_civ_angle = angle
+						end
+
+						if highest_wgt < inv_wgt then
+							highest_wgt = inv_wgt
+						end
+					end
+				end
+			end
+		end
+
+		return best_civ, highest_wgt, intimidateable_civilians
+	end
+
+	function CopLogicIdle.intimidate_civilians(data)
+		local my_unit = data.unit
+		if alive(primary_target) and primary_target:unit_data().disable_shout then
+			return false
+		end
+
+		if primary_target and (not alive(primary_target) or not managers.groupai:state():fleeing_civilians()[primary_target:key()]) then
+			primary_target = nil
+		end
+
+		local best_civ, highest_wgt, intimidateable_civilians = CopLogicIdle._find_intimidateable_civilians(data)
+		local plural = false
+
+		if #intimidateable_civilians > 1 then
+			plural = true
+		elseif #intimidateable_civilians <= 0 then
+			return false
+		end
+		
+		data.unit:sound():say("cr1", true)
+
+		if not data.unit:movement():chk_action_forbidden("action") then
+			data.unit:movement():play_redirect("arrest")
+		end
+
+		local intimidated_primary_target = false
+
+		for _, civ in ipairs(intimidateable_civilians) do
+			local amount = civ.inv_wgt / highest_wgt
+
+			if best_civ == civ.unit then
+				amount = 1
+			end
+
+			if primary_target == civ.unit then
+				intimidated_primary_target = true
+				amount = 1
+			end
+
+			civ.unit:brain():on_intimidated(amount, my_unit)
+		end
+
+		if not intimidated_primary_target and primary_target then
+			primary_target:brain():on_intimidated(1, my_unit)
+		end
+
+		if not managers.groupai:state():enemy_weapons_hot() then
+			local alert = {
+				"vo_intimidate",
+				data.m_pos,
+				800,
+				data.SO_access,
+				data.unit
+			}
+
+			managers.groupai:state():propagate_alert(alert)
+		end
+
+		if not primary_target and best_civ and best_civ:unit_data().disable_shout then
+			return false
+		end
+
+		return primary_target or best_civ
+	end
+	
+	function CopLogicIdle._upd_enemy_detection(data)
+		managers.groupai:state():on_unit_detection_updated(data.unit)
+
+		data.t = TimerManager:game():time()
+		local my_data = data.internal_data
+		local delay = CopLogicBase._upd_attention_obj_detection(data, nil, nil)
+		local new_attention, new_prio_slot, new_reaction = CopLogicIdle._get_priority_attention(data, data.detected_attention_objects)
+
+		CopLogicBase._set_attention_obj(data, new_attention, new_reaction)
+
+		if new_reaction and AIAttentionObject.REACT_SUSPICIOUS < new_reaction then
+			local objective = data.objective
+			local wanted_state = nil
+			local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, new_attention)
+
+			if allow_trans then
+				wanted_state = CopLogicBase._get_logic_state_from_reaction(data)
+			end
+
+			if wanted_state and wanted_state ~= data.name then
+				if obj_failed then
+					data.objective_failed_clbk(data.unit, data.objective)
+				end
+
+				if my_data == data.internal_data then
+					CopLogicBase._exit(data.unit, wanted_state)
+				end
+			end
+		end
+		
+		if (not my_data._intimidate_t or my_data._intimidate_t + 2 < data.t) and not data.cool and not my_data._turning_to_intimidate and not my_data.acting and (not new_attention or AIAttentionObject.REACT_SCARED > new_reaction) and managers.groupai:state():chk_assault_active_atm() then
+			local can_turn = not data.unit:movement():chk_action_forbidden("turn")
+			local civ = CopLogicIdle.find_civilian_to_intimidate(data)
+
+			if civ then
+				my_data._intimidate_t = data.t
+				new_attention, new_prio_slot, new_reaction = nil
+
+				if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then
+					my_data._turning_to_intimidate = true
+					my_data._primary_intimidation_target = civ
+				else
+					CopLogicIdle.intimidate_civilians(data)
+				end
+			end
+		end
+		
+		if my_data == data.internal_data then
+			CopLogicBase._chk_call_the_police(data)
+
+			if my_data ~= data.internal_data then
+				return delay
+			end
+		end
+
+		return delay
+	end
+	
 end

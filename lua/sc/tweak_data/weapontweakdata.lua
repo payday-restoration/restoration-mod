@@ -11656,7 +11656,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.timers.equip = 0.5
 		self.m590.CLIP_AMMO_MAX = 8
 		self.m590.spread.standing = 3 * 1
-		self.m590.muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath"		
+		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		
 		self.m590.spread.crouching = 2 * 1 
 		self.m590.spread.steelsight = 1 * 1
 		self.m590.spread.moving_standing = 4 * 1

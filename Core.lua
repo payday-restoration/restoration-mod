@@ -142,6 +142,7 @@ function restoration:Init()
 		"mus",  --The Diamond
 		"kenaz",  --Golden Grin Casino
 		"fish",  --Yacht Heist
+		"firestarter_2_res",  --Firestarter Day 2
 		"mad" --Boiling Point	
 		
 		--holding loud suit levels here in case we need an extra check for them in the future

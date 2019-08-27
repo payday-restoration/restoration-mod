@@ -1499,4 +1499,7 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_contour"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_husk" load="true"/>	
 	
+	<!--reinbeck muzzleflash-->
+	<effect path="effects/particles/shotgun/muzzleflash" load="false"/>
+	
 </table>

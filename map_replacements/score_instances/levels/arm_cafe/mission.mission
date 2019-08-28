@@ -1,6 +1,0 @@
-<table>
-	<editor_only file="editor_only/editor_only"/>
-	<pc_only file="pc_only/pc_only"/>
-	<temp file="temp/temp"/>
-	<world file="world/world"/>
-</table>

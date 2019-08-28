@@ -12,6 +12,70 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		group_min how many cops need to be in a group for the line to play
 		queue what call is used in chatter
 		]]--
+		self.enemy_chatter.csalpha = {
+			radius = 6000,
+		    max_nr = 1,
+		    duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    queue = "gr2a"
+		}
+		self.enemy_chatter.csbravo = {
+			radius = 6000,
+		   	max_nr = 1,
+		   	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    queue = "gr2b"
+		}
+		self.enemy_chatter.cscharlie = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr2c"
+		}
+		self.enemy_chatter.csdelta = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr2d"
+		}
+		self.enemy_chatter.hrtalpha = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+			queue = "gr1a"
+		}
+		self.enemy_chatter.hrtbravo = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr1b"
+		}
+		self.enemy_chatter.hrtcharlie = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr1c"
+		}
+		self.enemy_chatter.hrtdelta = {
+			radius = 6000,
+		    	max_nr = 1,
+		    	duration = {3, 4},
+			interval = {2, 4},
+			group_min = 0,
+		    	queue = "gr1d"
+		}
 		self.enemy_chatter.aggressive = {
 			radius = 700,
 			max_nr = 10,
@@ -7628,17 +7692,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		self._tactics = {
 			CS_cop = {
+			    "groupcsr",
 				"provide_coverfire",
 				"provide_support",
 				"ranged_fire"
 			},
 			CS_cop_stealth = {
+			    "grouphrtr",
 				"flank",
 				"provide_coverfire",
 				"provide_support",
 			    "hitnrun"
 			},
 			CS_swat_rifle = {
+			    "groupcsr",
 				"smoke_grenade",
 				"charge",
 				"provide_coverfire",
@@ -7647,6 +7714,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			CS_swat_shotgun = {
+			    "groupcsr",
 				"smoke_grenade",
 				"charge",
 				"provide_coverfire",
@@ -7654,6 +7722,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"shield_cover"
 			},
 			CS_swat_heavy = {
+			    "groupcsr",
 				"smoke_grenade",
 				"charge",
 				"flash_grenade",
@@ -7715,11 +7784,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support"
 			},
 			FBI_suit = {
+			    "grouphrtr",
 				"flank",
 				"elite_ranged_fire",
 				"flash_grenade"
 			},
 			FBI_suit_stealth = {
+			    "grouphrtr",
 			    "reloadingretreat",
 				"provide_coverfire",
 				"provide_support",
@@ -7728,6 +7799,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			FBI_swat_rifle = {
+				"groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"provide_coverfire",
@@ -7736,6 +7808,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"ranged_fire"
 			},
 			FBI_swat_shotgun = {
+				"groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7743,6 +7816,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support"
 			},
 			FBI_heavy = {
+				"groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7839,15 +7913,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"harass",
 				"shield_cover"
 			},
-			TIT_tank = { --set up to use passive suppressive fire against players
+			TIT_tank = { --set up to use passive suppressive fire against players they'll also use the hunter tactic to hunt rambo players :)
+				"obstacle",
 			    "reloadingretreat",
 				"spoocavoidance",
+				"hunter",
 				"murder",
 				"elite_ranged_fire",
-				"obstacle",
 				"shield_cover"
 			},
 			spooc = {
+				"hunter",
 				"spoocavoidance",
 				"shield_cover",
 				"smoke_grenade",
@@ -7863,7 +7939,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			Cap_spring = {
 				"aggressor", --this is to help him not lag behind the player too much
-				"charge",
 				"murder"
 			},
 			Cap_summers = {
@@ -7871,6 +7946,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"murder"
 			},
 			Cap_autumn = {
+				"hunter",
 				"spoocavoidance",
 				"flank",
 				"shield_cover",
@@ -7882,6 +7958,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			--mean DS tactics below
 			ELITE_suit_stealth = {
+			    "grouphrtr",
 			    "reloadingretreat",
 			    "spoocavoidance",
 				"provide_coverfire",
@@ -7892,6 +7969,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			ELITE_swat_rifle = {
+			    "groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"provide_coverfire",
@@ -7903,6 +7981,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"elite_ranged_fire"
 			},
 			ELITE_heavy = {
+			    "groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7914,6 +7993,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			ELITE_swat_shotgun = {
+			    "groupcsr",
 				"smoke_grenade",
 				"flash_grenade",
 				"charge",
@@ -7966,6 +8046,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			--Vanilla shit below
 			swat_shotgun_rush = {
+				"groupcsr",
 				"charge",
 				"provide_coverfire",
 				"provide_support",
@@ -7981,6 +8062,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			swat_rifle = {
+				"groupcsr",
 				"ranged_fire",
 				"provide_coverfire",
 				"provide_support"

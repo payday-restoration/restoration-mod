@@ -771,10 +771,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.suppression = 2.8
 		self.r870_npc.is_shotgun = true
 		self.r870_npc.rays = 12
-		self.r870_npc.spread = 6
+		self.r870_npc.spread = 3
 		self.r870_npc.FIRE_MODE = "single"
 		self.benelli_npc = deep_clone(self.r870_npc)
-		self.benelli_npc.sounds.prefix = "remington_npc"
+		self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 		self.benelli_npc.DAMAGE = 7
 		self.benelli_npc.CLIP_AMMO_MAX = 10
 		self.r870_taser_npc = deep_clone(self.r870_npc)
@@ -825,7 +825,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ump_npc = deep_clone(self.mp5_npc)
 		self.ump_npc.DAMAGE = 2.8
 		self.ump_npc.auto.fire_rate = 0.083
-		self.ump_npc.sounds.prefix = "mp5_npc"
+		self.ump_npc.sounds.prefix = "schakal_npc"
 		self.ump_npc.CLIP_AMMO_MAX = 25
 		self.ump_npc.suppression = 2.8
 		self.asval_smg_npc = deep_clone(self.mp5_npc)
@@ -860,7 +860,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function WeaponTweakData:_init_data_mac11_npc()
 		self.mac11_npc.categories = {"smg"}
-		self.mac11_npc.sounds.prefix = "mp5_npc"
+		self.mac11_npc.sounds.prefix = "mac10_npc"
 		self.mac11_npc.use_data.selection_index = 1
 		self.mac11_npc.DAMAGE = 2.6
 		self.mac11_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
@@ -908,6 +908,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp9_npc.suppression = 2
 		self.mp9_npc.FIRE_MODE = "auto"
 		self.sr2_smg_npc = deep_clone(self.mp9_npc)
+		self.sr2_smg_npc.sounds.prefix = "sr2_npc"		
 	end
 
 	function WeaponTweakData:_init_data_saiga_npc()
@@ -1250,7 +1251,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.s552_npc.sounds.prefix = "sig552_npc"
 		self.s552_npc.use_data.selection_index = 2
 		self.s552_npc.DAMAGE = 2.3
-		self.s552_npc.muzzleflash = "effects/payday2/particles/weapons/556_auto"
+		self.s552_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.s552_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.s552_npc.CLIP_AMMO_MAX = 30
 		self.s552_npc.NR_CLIPS_MAX = 5
@@ -1296,8 +1297,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m249_npc.suppression = 2
 		self.m249_npc.FIRE_MODE = "auto"
 		self.rpk_lmg_npc = deep_clone(self.m249_npc)
+		self.rpk_lmg_npc.sounds.prefix = "rpk_npc"		
 		self.hk21_sc_npc = deep_clone(self.m249_npc)
-		self.hk21_sc_npc.sounds.prefix = "m249_npc"
+		self.hk21_sc_npc.sounds.prefix = "hk23e_npc"
 		self.hk21_sc_npc.use_data.selection_index = 2
 		self.hk21_sc_npc.DAMAGE = 2.5
 		self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
@@ -3400,12 +3402,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.r870.desc_id = "bm_menu_sc_r870_desc"
 		self.r870.rays = 12
 		self.r870.CLIP_AMMO_MAX = 8
-		self.r870.spread.standing = 3 * 2
-		self.r870.spread.crouching = 2 * 2 
-		self.r870.spread.steelsight = 1 * 2
-		self.r870.spread.moving_standing = 4 * 2
-		self.r870.spread.moving_crouching = 3 * 2
-		self.r870.spread.moving_steelsight = 2 * 2
+		self.r870.spread.standing = 3 * 1
+		self.r870.spread.crouching = 2 * 1 
+		self.r870.spread.steelsight = 1 * 1
+		self.r870.spread.moving_standing = 4 * 1
+		self.r870.spread.moving_crouching = 3 * 1
+		self.r870.spread.moving_steelsight = 2 * 1
 		self.r870.kick.standing = self.new_m4.kick.standing
 		self.r870.kick.crouching = self.new_m4.kick.standing
 		self.r870.kick.steelsight = self.new_m4.kick.standing
@@ -3669,12 +3671,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akmsu.timers.reload_not_empty = 1.95 
 		self.akmsu.timers.reload_empty = 3.7 
 		self.saiga.rays = 12
-		self.saiga.spread.standing = 3 * 2
-		self.saiga.spread.crouching = 2 * 2 
-		self.saiga.spread.steelsight = 1 * 2
-		self.saiga.spread.moving_standing = 4 * 2
-		self.saiga.spread.moving_crouching = 3 * 2
-		self.saiga.spread.moving_steelsight = 2 * 2
+		self.saiga.spread.standing = 3 * 1
+		self.saiga.spread.crouching = 2 * 1 
+		self.saiga.spread.steelsight = 1 * 1
+		self.saiga.spread.moving_standing = 4 * 1
+		self.saiga.spread.moving_crouching = 3 * 1
+		self.saiga.spread.moving_steelsight = 2 * 1
 		self.saiga.CLIP_AMMO_MAX = 6
 		self.saiga.AMMO_MAX = 120
 		self.saiga.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -3974,12 +3976,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.timers.reload_empty = 2.4	
 		self.mac10.panic_suppression_chance = 0.1
 		self.serbu.rays = 12
-		self.serbu.spread.standing = 3 * 2
-		self.serbu.spread.crouching = 2 * 2
-		self.serbu.spread.steelsight = 1 * 2
-		self.serbu.spread.moving_standing = 4 * 2 
-		self.serbu.spread.moving_crouching = 3 * 2 
-		self.serbu.spread.moving_steelsight = 2 * 2
+		self.serbu.spread.standing = 3 * 1
+		self.serbu.spread.crouching = 2 * 1
+		self.serbu.spread.steelsight = 1 * 1
+		self.serbu.spread.moving_standing = 4 * 1 
+		self.serbu.spread.moving_crouching = 3 * 1 
+		self.serbu.spread.moving_steelsight = 2 * 1
 		self.serbu.CLIP_AMMO_MAX = 4
 		self.serbu.AMMO_MAX = 40
 		self.serbu.damage_near = 600
@@ -4006,12 +4008,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.serbu.panic_suppression_chance = 0.0
 		self.huntsman.rays = 12
-		self.huntsman.spread.standing = 3 * 2
-		self.huntsman.spread.crouching = 2 * 2
-		self.huntsman.spread.steelsight = 1 * 2
-		self.huntsman.spread.moving_standing = 4 * 2
-		self.huntsman.spread.moving_crouching = 3 * 2
-		self.huntsman.spread.moving_steelsight = 2 * 2
+		self.huntsman.spread.standing = 3 * 1
+		self.huntsman.spread.crouching = 2 * 1
+		self.huntsman.spread.steelsight = 1 * 1
+		self.huntsman.spread.moving_standing = 4 * 1
+		self.huntsman.spread.moving_crouching = 3 * 1
+		self.huntsman.spread.moving_steelsight = 2 * 1
 		self.huntsman.AMMO_MAX = 40
 		self.huntsman.damage_near = 1200
 		self.huntsman.damage_far = 2400
@@ -4257,12 +4259,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.single = {}
 		self.judge.single.fire_rate = 0.4
 		self.judge.rays = 12
-		self.judge.spread.standing = 3 * 2
-		self.judge.spread.crouching = 2 * 2
-		self.judge.spread.steelsight = 1 * 2
-		self.judge.spread.moving_standing = 4 * 2 
-		self.judge.spread.moving_crouching = 3 * 2 
-		self.judge.spread.moving_steelsight = 2 * 2
+		self.judge.spread.standing = 3 * 1
+		self.judge.spread.crouching = 2 * 1
+		self.judge.spread.steelsight = 1 * 1
+		self.judge.spread.moving_standing = 4 * 1 
+		self.judge.spread.moving_crouching = 3 * 1 
+		self.judge.spread.moving_steelsight = 2 * 1
 		self.judge.AMMO_MAX = 30
 		self.judge.damage_near = 600
 		self.judge.damage_far = 1200
@@ -4706,12 +4708,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.benelli.single.fire_rate = 0.13953488372
 		self.benelli.damage_near = 700
 		self.benelli.damage_far = 1400
-		self.benelli.spread.standing = 3 * 2
-		self.benelli.spread.crouching = 2 * 2
-		self.benelli.spread.steelsight = 1 * 2
-		self.benelli.spread.moving_standing = 4 * 2
-		self.benelli.spread.moving_crouching = 3 * 2
-		self.benelli.spread.moving_steelsight = 2 * 2
+		self.benelli.spread.standing = 3 * 1
+		self.benelli.spread.crouching = 2 * 1
+		self.benelli.spread.steelsight = 1 * 1
+		self.benelli.spread.moving_standing = 4 * 1
+		self.benelli.spread.moving_crouching = 3 * 1
+		self.benelli.spread.moving_steelsight = 2 * 1
 		self.benelli.kick.standing = self.new_m4.kick.standing
 		self.benelli.kick.crouching = self.new_m4.kick.standing
 		self.benelli.kick.steelsight = self.new_m4.kick.standing
@@ -4740,12 +4742,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.striker.CLIP_AMMO_MAX = 12
 		self.striker.damage_near = 500
 		self.striker.damage_far = 1000
-		self.striker.spread.standing = 3 * 2
-		self.striker.spread.crouching = 2 * 2
-		self.striker.spread.steelsight = 1 * 2
-		self.striker.spread.moving_standing = 4 * 2
-		self.striker.spread.moving_crouching = 3 * 2
-		self.striker.spread.moving_steelsight = 2 * 2
+		self.striker.spread.standing = 3 * 1
+		self.striker.spread.crouching = 2 * 1
+		self.striker.spread.steelsight = 1 * 1
+		self.striker.spread.moving_standing = 4 * 1
+		self.striker.spread.moving_crouching = 3 * 1
+		self.striker.spread.moving_steelsight = 2 * 1
 		self.striker.kick.standing = self.new_m4.kick.standing
 		self.striker.kick.crouching = self.new_m4.kick.standing
 		self.striker.kick.steelsight = self.new_m4.kick.standing
@@ -4770,12 +4772,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ksg.damage_near = 700
 		self.ksg.damage_far = 1400
 		self.ksg.CLIP_AMMO_MAX = 12
-		self.ksg.spread.standing = 3 * 2
-		self.ksg.spread.crouching = 2 * 2
-		self.ksg.spread.steelsight = 1 * 2
-		self.ksg.spread.moving_standing = 4 * 2
-		self.ksg.spread.moving_crouching = 3 * 2
-		self.ksg.spread.moving_steelsight = 2 * 2
+		self.ksg.spread.standing = 3 * 1
+		self.ksg.spread.crouching = 2 * 1
+		self.ksg.spread.steelsight = 1 * 1
+		self.ksg.spread.moving_standing = 4 * 1
+		self.ksg.spread.moving_crouching = 3 * 1
+		self.ksg.spread.moving_steelsight = 2 * 1
 		self.ksg.single.fire_rate = 0.6
 		self.ksg.fire_mode_data.fire_rate = 0.6
 		self.ksg.kick.standing = self.new_m4.kick.standing
@@ -5189,12 +5191,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas12.single.fire_rate = 0.13953488372
 		self.spas12.damage_near = 700
 		self.spas12.damage_far = 1400
-		self.spas12.spread.standing = 3 * 2
-		self.spas12.spread.crouching = 2 * 2
-		self.spas12.spread.steelsight = 1 * 2
-		self.spas12.spread.moving_standing = 4 * 2
-		self.spas12.spread.moving_crouching = 3 * 2
-		self.spas12.spread.moving_steelsight = 2 * 2
+		self.spas12.spread.standing = 3 * 1
+		self.spas12.spread.crouching = 2 * 1
+		self.spas12.spread.steelsight = 1 * 1
+		self.spas12.spread.moving_standing = 4 * 1
+		self.spas12.spread.moving_crouching = 3 * 1
+		self.spas12.spread.moving_steelsight = 2 * 1
 		self.spas12.kick.standing = self.new_m4.kick.standing
 		self.spas12.kick.crouching = self.new_m4.kick.standing
 		self.spas12.kick.steelsight = self.new_m4.kick.standing
@@ -5485,10 +5487,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"smg"
 		}
 		self.m134.has_description = false
-		self.m134.CLIP_AMMO_MAX = 300
+		self.m134.CLIP_AMMO_MAX = 200
 		self.m134.NR_CLIPS_MAX = 1
-		self.m134.AMMO_MAX = 300
-		self.m134.AMMO_PICKUP = self:_pickup_chance(300, 2)
+		self.m134.AMMO_MAX = 200
+		self.m134.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.m134.FIRE_MODE = "auto"
 		self.m134.fire_mode_data = {}
 		self.m134.fire_mode_data.fire_rate = 0.03
@@ -5507,12 +5509,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m134.kick.steelsight = self.new_m4.kick.standing
 		self.m134.panic_suppression_chance = 0.1
 		self.m134.stats = {
-			damage = 27,
-			spread = 15,
-			recoil = 22,
+			damage = 30,
+			spread = 18,
+			recoil = 21,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 0,
+			concealment = 10,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -5589,12 +5591,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b682.rays = 12
 		self.b682.AMMO_MAX = 40
 		self.b682.AMMO_PICKUP = self:_pickup_chance(40, 2)
-		self.b682.spread.standing = 3 * 2
-		self.b682.spread.crouching = 2 * 2
-		self.b682.spread.steelsight = 1 * 2
-		self.b682.spread.moving_standing = 4 * 2
-		self.b682.spread.moving_crouching = 3 * 2
-		self.b682.spread.moving_steelsight = 2 * 2
+		self.b682.spread.standing = 3 * 1
+		self.b682.spread.crouching = 2 * 1
+		self.b682.spread.steelsight = 1 * 1
+		self.b682.spread.moving_standing = 4 * 1
+		self.b682.spread.moving_crouching = 3 * 1
+		self.b682.spread.moving_steelsight = 2 * 1
 		self.b682.damage_near = 1300
 		self.b682.damage_far = 2600
 		self.b682.fire_mode_data = {}
@@ -5739,12 +5741,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flamethrower_mk2.can_shoot_through_enemy = false
 		self.flamethrower_mk2.can_shoot_through_shield = false
 		self.flamethrower_mk2.can_shoot_through_wall = false
-		self.flamethrower_mk2.spread.standing = 3 * 2
-		self.flamethrower_mk2.spread.crouching = 2 * 2
-		self.flamethrower_mk2.spread.steelsight = 1 * 2
-		self.flamethrower_mk2.spread.moving_standing = 4 * 2
-		self.flamethrower_mk2.spread.moving_crouching = 3 * 2
-		self.flamethrower_mk2.spread.moving_steelsight = 2 * 2
+		self.flamethrower_mk2.spread.standing = 3 * 1
+		self.flamethrower_mk2.spread.crouching = 2 * 1
+		self.flamethrower_mk2.spread.steelsight = 1 * 1
+		self.flamethrower_mk2.spread.moving_standing = 4 * 1
+		self.flamethrower_mk2.spread.moving_crouching = 3 * 1
+		self.flamethrower_mk2.spread.moving_steelsight = 2 * 1
 		self.flamethrower_mk2.damage_near = 600
 		self.flamethrower_mk2.damage_far = 1200
 		self.flamethrower_mk2.kick.standing = self.new_m4.kick.standing
@@ -5806,12 +5808,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aa12.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.aa12.damage_near = 800
 		self.aa12.damage_far = 1600
-		self.aa12.spread.standing = 3 * 2
-		self.aa12.spread.crouching = 2 * 2
-		self.aa12.spread.steelsight = 1 * 2
-		self.aa12.spread.moving_standing = 4 * 2
-		self.aa12.spread.moving_crouching = 3 * 2
-		self.aa12.spread.moving_steelsight = 2 * 2
+		self.aa12.spread.standing = 3 * 1
+		self.aa12.spread.crouching = 2 * 1
+		self.aa12.spread.steelsight = 1 * 1
+		self.aa12.spread.moving_standing = 4 * 1
+		self.aa12.spread.moving_crouching = 3 * 1
+		self.aa12.spread.moving_steelsight = 2 * 1
 		self.aa12.kick.standing = self.new_m4.kick.standing
 		self.aa12.kick.crouching = self.new_m4.kick.standing
 		self.aa12.kick.steelsight = self.new_m4.kick.standing
@@ -6386,12 +6388,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m37.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.m37.fire_mode_data.fire_rate = 0.4
 		self.m37.single.fire_rate = 0.4
-		self.m37.spread.standing = 3 * 2
-		self.m37.spread.crouching = 2 * 2
-		self.m37.spread.steelsight = 1 * 2
-		self.m37.spread.moving_standing = 4 * 2
-		self.m37.spread.moving_crouching = 3 * 2
-		self.m37.spread.moving_steelsight = 2 * 2
+		self.m37.spread.standing = 3 * 1
+		self.m37.spread.crouching = 2 * 1
+		self.m37.spread.steelsight = 1 * 1
+		self.m37.spread.moving_standing = 4 * 1
+		self.m37.spread.moving_crouching = 3 * 1
+		self.m37.spread.moving_steelsight = 2 * 1
 		self.m37.kick.standing = self.new_m4.kick.standing
 		self.m37.kick.crouching = self.new_m4.kick.standing
 		self.m37.kick.steelsight = self.new_m4.kick.standing
@@ -6668,12 +6670,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.fire_mode_data.fire_rate = 0.75
 		self.boot.single.fire_rate = 0.75
 		self.boot.rays = 12
-		self.boot.spread.standing = 3 * 2
-		self.boot.spread.crouching = 2 * 2
-		self.boot.spread.steelsight = 1 * 2
-		self.boot.spread.moving_standing = 4 * 2
-		self.boot.spread.moving_crouching = 3 * 2
-		self.boot.spread.moving_steelsight = 2 * 2
+		self.boot.spread.standing = 3 * 1
+		self.boot.spread.crouching = 2 * 1
+		self.boot.spread.steelsight = 1 * 1
+		self.boot.spread.moving_standing = 4 * 1
+		self.boot.spread.moving_crouching = 3 * 1
+		self.boot.spread.moving_steelsight = 2 * 1
 		self.boot.kick.standing = self.huntsman.kick.standing
 		self.boot.kick.crouching = self.huntsman.kick.standing
 		self.boot.kick.steelsight = self.huntsman.kick.standing
@@ -6820,12 +6822,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rota.AMMO_MAX = 60
 		self.rota.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.rota.rays = 12
-		self.rota.spread.standing = 3 * 2
-		self.rota.spread.crouching = 2 * 2
-		self.rota.spread.steelsight = 1 * 2
-		self.rota.spread.moving_standing = 4 * 2
-		self.rota.spread.moving_crouching = 3 * 2
-		self.rota.spread.moving_steelsight = 2 * 2
+		self.rota.spread.standing = 3 * 1
+		self.rota.spread.crouching = 2 * 1
+		self.rota.spread.steelsight = 1 * 1
+		self.rota.spread.moving_standing = 4 * 1
+		self.rota.spread.moving_crouching = 3 * 1
+		self.rota.spread.moving_steelsight = 2 * 1
 		self.rota.kick.standing = self.new_m4.kick.standing
 		self.rota.kick.crouching = self.new_m4.kick.standing
 		self.rota.kick.steelsight = self.new_m4.kick.standing
@@ -7400,12 +7402,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.basset.fire_mode_data = {fire_rate = 0.1}
 		self.basset.auto = {fire_rate = 0.1}
 		self.basset.spread = {
-			standing = 3 * 2,
-			crouching = 2 * 2,
-			steelsight = 1 * 2,
-			moving_standing = 4 * 2,
-			moving_crouching = 3 * 2,
-			moving_steelsight = 2 * 2
+			standing = 3 * 1,
+			crouching = 2 * 1,
+			steelsight = 1 * 1,
+			moving_standing = 4 * 1,
+			moving_crouching = 3 * 1,
+			moving_steelsight = 2 * 1
 		}		
 		self.basset.kick.standing = self.new_m4.kick.standing
 		self.basset.kick.crouching = self.new_m4.kick.standing
@@ -7435,12 +7437,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_basset.fire_mode_data = {fire_rate = 0.1}
 		self.x_basset.auto = {fire_rate = 0.1}
 		self.x_basset.spread = {
-			standing = 3 * 2,
-			crouching = 2 * 2,
-			steelsight = 1 * 2,
-			moving_standing = 4 * 2,
-			moving_crouching = 3 * 2,
-			moving_steelsight = 2 * 2
+			standing = 3 * 1,
+			crouching = 2 * 1,
+			steelsight = 1 * 1,
+			moving_standing = 4 * 1,
+			moving_crouching = 3 * 1,
+			moving_steelsight = 2 * 1
 		}		
 		self.x_basset.kick.standing = self.new_m4.kick.standing
 		self.x_basset.kick.crouching = self.new_m4.kick.standing
@@ -8365,12 +8367,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.fire_mode_data.fire_rate = 0.4
 		self.x_judge.single.fire_rate = 0.4
 		self.x_judge.rays = 12
-		self.x_judge.spread.standing = 3 * 2
-		self.x_judge.spread.crouching = 2 * 2
-		self.x_judge.spread.steelsight = 1 * 2
-		self.x_judge.spread.moving_standing = 4 * 2
-		self.x_judge.spread.moving_crouching = 3 * 2
-		self.x_judge.spread.moving_steelsight = 2 * 2
+		self.x_judge.spread.standing = 3 * 1
+		self.x_judge.spread.crouching = 2 * 1
+		self.x_judge.spread.steelsight = 1 * 1
+		self.x_judge.spread.moving_standing = 4 * 1
+		self.x_judge.spread.moving_crouching = 3 * 1
+		self.x_judge.spread.moving_steelsight = 2 * 1
 		self.x_judge.AMMO_MAX = 40
 		self.x_judge.damage_near = 600
 		self.x_judge.damage_far = 1200
@@ -8403,12 +8405,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rota.AMMO_MAX = 80
 		self.x_rota.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.x_rota.rays = 12
-		self.x_rota.spread.standing = 3 * 2
-		self.x_rota.spread.crouching = 2 * 2
-		self.x_rota.spread.steelsight = 1 * 2
-		self.x_rota.spread.moving_standing = 4 * 2
-		self.x_rota.spread.moving_crouching = 3 * 2
-		self.x_rota.spread.moving_steelsight = 2 * 2
+		self.x_rota.spread.standing = 3 * 1
+		self.x_rota.spread.crouching = 2 * 1
+		self.x_rota.spread.steelsight = 1 * 1
+		self.x_rota.spread.moving_standing = 4 * 1
+		self.x_rota.spread.moving_crouching = 3 * 1
+		self.x_rota.spread.moving_steelsight = 2 * 1
 		self.x_rota.kick.standing = self.new_m4.kick.standing
 		self.x_rota.kick.crouching = self.new_m4.kick.standing
 		self.x_rota.kick.steelsight = self.new_m4.kick.standing
@@ -8436,16 +8438,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"smg"
 		}
 		self.shuno.has_description = false
-		self.shuno.CLIP_AMMO_MAX = 300
+		self.shuno.CLIP_AMMO_MAX = 200
 		self.shuno.NR_CLIPS_MAX = 1
-		self.shuno.AMMO_MAX = 300
-		self.shuno.AMMO_PICKUP = self:_pickup_chance(300, 2)
+		self.shuno.AMMO_MAX = 200
+		self.shuno.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.shuno.FIRE_MODE = "auto"
 		self.shuno.fire_mode_data = {}
-		self.shuno.fire_mode_data.fire_rate = 0.04
+		self.shuno.fire_mode_data.fire_rate = 0.05
 		self.shuno.CAN_TOGGLE_FIREMODE = false
 		self.shuno.auto = {}
-		self.shuno.auto.fire_rate = 0.04
+		self.shuno.auto.fire_rate = 0.05
 		self.shuno.spread = {}
 		self.shuno.spread.standing = 3
 		self.shuno.spread.crouching = 2
@@ -8463,7 +8465,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 23,
 			spread_moving = 9,
 			zoom = 1,
-			concealment = 0,
+			concealment = 10,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -8493,12 +8495,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.system.can_shoot_through_enemy = false
 		self.system.can_shoot_through_shield = false
 		self.system.can_shoot_through_wall = false
-		self.system.spread.standing = 3 * 2
-		self.system.spread.crouching = 2 * 2
-		self.system.spread.steelsight = 1 * 2
-		self.system.spread.moving_standing = 4 * 2
-		self.system.spread.moving_crouching = 3 * 2
-		self.system.spread.moving_steelsight = 2 * 2
+		self.system.spread.standing = 3 * 1
+		self.system.spread.crouching = 2 * 1
+		self.system.spread.steelsight = 1 * 1
+		self.system.spread.moving_standing = 4 * 1
+		self.system.spread.moving_crouching = 3 * 1
+		self.system.spread.moving_steelsight = 2 * 1
 		self.system.damage_near = 500
 		self.system.damage_far = 1000
 		self.system.kick.standing = self.new_m4.kick.standing
@@ -8653,12 +8655,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.elastic.stats_modifiers = {damage = 2}
 		self.coach.rays = 12
-		self.coach.spread.standing = 3 * 2
-		self.coach.spread.crouching = 2 * 2
-		self.coach.spread.steelsight = 1 * 2
-		self.coach.spread.moving_standing = 4 * 2
-		self.coach.spread.moving_crouching = 3 * 2
-		self.coach.spread.moving_steelsight = 2 * 2
+		self.coach.spread.standing = 3 * 1
+		self.coach.spread.crouching = 2 * 1
+		self.coach.spread.steelsight = 1 * 1
+		self.coach.spread.moving_standing = 4 * 1
+		self.coach.spread.moving_crouching = 3 * 1
+		self.coach.spread.moving_steelsight = 2 * 1
 		self.coach.kick.standing = self.huntsman.kick.standing
 		self.coach.kick.crouching = self.huntsman.kick.standing
 		self.coach.kick.steelsight = self.huntsman.kick.standing
@@ -8989,12 +8991,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.toz34.rays = 12
 			self.toz34.AMMO_MAX = 40
 			self.toz34.AMMO_PICKUP = self:_pickup_chance(40, 2)
-			self.toz34.spread.standing = 3 * 2
-			self.toz34.spread.crouching = 2 * 2
-			self.toz34.spread.steelsight = 1 * 2
-			self.toz34.spread.moving_standing = 4 * 2
-			self.toz34.spread.moving_crouching = 3 * 2
-			self.toz34.spread.moving_steelsight = 2 * 2
+			self.toz34.spread.standing = 3 * 1
+			self.toz34.spread.crouching = 2 * 1
+			self.toz34.spread.steelsight = 1 * 1
+			self.toz34.spread.moving_standing = 4 * 1
+			self.toz34.spread.moving_crouching = 3 * 1
+			self.toz34.spread.moving_steelsight = 2 * 1
 			self.toz34.damage_near = 1300
 			self.toz34.damage_far = 2600
 			self.toz34.BURST_FIRE = 2			
@@ -9031,12 +9033,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.toz66 then --Pawcio's TOZ 66
 			self.toz66.has_description = false					
 			self.toz66.rays = 12
-			self.toz66.spread.standing = 3 * 2
-			self.toz66.spread.crouching = 2 * 2
-			self.toz66.spread.steelsight = 1 * 2
-			self.toz66.spread.moving_standing = 4 * 2
-			self.toz66.spread.moving_crouching = 3 * 2
-			self.toz66.spread.moving_steelsight = 2 * 2
+			self.toz66.spread.standing = 3 * 1
+			self.toz66.spread.crouching = 2 * 1
+			self.toz66.spread.steelsight = 1 * 1
+			self.toz66.spread.moving_standing = 4 * 1
+			self.toz66.spread.moving_crouching = 3 * 1
+			self.toz66.spread.moving_steelsight = 2 * 1
 			self.toz66.kick.standing = self.huntsman.kick.standing
 			self.toz66.kick.crouching = self.huntsman.kick.standing
 			self.toz66.kick.steelsight = self.huntsman.kick.standing
@@ -9076,12 +9078,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.m1216 then --Alcat's M1216
 		self.m1216.rays = 12
 		self.m1216.tactical_reload = 1				
-		self.m1216.spread.standing = 3 * 2 
-		self.m1216.spread.crouching = 2 * 2
-		self.m1216.spread.steelsight = 1 * 2
-		self.m1216.spread.moving_standing = 4 * 2
-		self.m1216.spread.moving_crouching = 3 * 2 
-		self.m1216.spread.moving_steelsight = 2 * 2
+		self.m1216.spread.standing = 3 * 1 
+		self.m1216.spread.crouching = 2 * 1
+		self.m1216.spread.steelsight = 1 * 1
+		self.m1216.spread.moving_standing = 4 * 1
+		self.m1216.spread.moving_crouching = 3 * 1 
+		self.m1216.spread.moving_steelsight = 2 * 1
 		self.m1216.AMMO_MAX = 120
 		self.m1216.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.m1216.damage_near = 600
@@ -9242,72 +9244,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.noodle.panic_suppression_chance = 0.0		
 		end		
-
-	if self.heffy_556 then --Killerwolf & Germantaco's AK 101
-		self.heffy_556.tactical_reload = 1											
-		self.heffy_556.AMMO_MAX = 180
-		self.heffy_556.AMMO_PICKUP = self:_pickup_chance(180, 2)
-		self.heffy_556.spread.standing = 3
-		self.heffy_556.spread.crouching = 2
-		self.heffy_556.spread.steelsight = 1
-		self.heffy_556.spread.moving_standing = 4
-		self.heffy_556.spread.moving_crouching = 3
-		self.heffy_556.spread.moving_steelsight = 2
-		self.heffy_556.fire_mode_data.fire_rate = 0.1
-		self.heffy_556.auto.fire_rate = 0.1
-		self.heffy_556.kick.standing = self.new_m4.kick.standing
-		self.heffy_556.kick.crouching = self.new_m4.kick.standing
-		self.heffy_556.kick.steelsight = self.new_m4.kick.standing
-		self.heffy_556.stats = {
-			damage = 34,
-			spread = 15,
-			recoil = 20,
-			spread_moving = 6,
-			zoom = 3,
-			concealment = 16,
-			suppression = 7,
-			alert_size = 7,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-		self.heffy_556.panic_suppression_chance = 0.0
-		end							
-		
-
-	if self.heffy_545 then 	
-		self.heffy_545.tactical_reload = 1												
-		self.heffy_545.desc_id = "bm_menu_sc_heffy_545_desc"
-		self.heffy_545.AMMO_MAX = 150
-		self.heffy_545.AMMO_PICKUP = self:_pickup_chance(150, 2)
-		self.heffy_545.spread.standing = 3
-		self.heffy_545.spread.crouching = 2
-		self.heffy_545.spread.steelsight = 1
-		self.heffy_545.spread.moving_standing = 4
-		self.heffy_545.spread.moving_crouching = 3
-		self.heffy_545.spread.moving_steelsight = 2
-		self.heffy_545.fire_mode_data.fire_rate = 0.0923076923
-		self.heffy_545.auto.fire_rate = 0.0923076923
-		self.heffy_545.kick.standing = self.new_m4.kick.standing
-		self.heffy_545.kick.crouching = self.new_m4.kick.standing
-		self.heffy_545.kick.steelsight = self.new_m4.kick.standing
-		self.heffy_545.stats = {
-			damage = 40,
-			spread = 15,
-			recoil = 20,
-			spread_moving = 6,
-			zoom = 3,
-			concealment = 16,
-			suppression = 7,
-			alert_size = 7,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-		self.heffy_545.panic_suppression_chance = 0.0
-		end					
 
 	if self.lynx then --Alcat's Gepard GM6 Lynx
 		self.lynx.upgrade_blocks = nil
@@ -9557,12 +9493,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203buckshot.rays = 12
 			self.scar_m203buckshot.damage_near = 900
 			self.scar_m203buckshot.damage_far = 1800			
-			self.scar_m203buckshot.spread.standing = 3 * 2
-			self.scar_m203buckshot.spread.crouching = 2 * 2
-			self.scar_m203buckshot.spread.steelsight = 1 * 2
-			self.scar_m203buckshot.spread.moving_standing = 4 * 2
-			self.scar_m203buckshot.spread.moving_crouching = 3 * 2
-			self.scar_m203buckshot.spread.moving_steelsight = 2 * 2
+			self.scar_m203buckshot.spread.standing = 3 * 1
+			self.scar_m203buckshot.spread.crouching = 2 * 1
+			self.scar_m203buckshot.spread.steelsight = 1 * 1
+			self.scar_m203buckshot.spread.moving_standing = 4 * 1
+			self.scar_m203buckshot.spread.moving_crouching = 3 * 1
+			self.scar_m203buckshot.spread.moving_steelsight = 2 * 1
 			self.scar_m203buckshot.kick.standing = self.huntsman.kick.standing
 			self.scar_m203buckshot.kick.crouching = self.huntsman.kick.standing
 			self.scar_m203buckshot.kick.steelsight = self.huntsman.kick.standing
@@ -9589,12 +9525,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203flechette.rays = 12
 			self.scar_m203flechette.damage_near = 1100
 			self.scar_m203flechette.damage_far = 2200			
-			self.scar_m203flechette.spread.standing = 3 * 2
-			self.scar_m203flechette.spread.crouching = 2 * 2
-			self.scar_m203flechette.spread.steelsight = 1 * 2
-			self.scar_m203flechette.spread.moving_standing = 4 * 2
-			self.scar_m203flechette.spread.moving_crouching = 3 * 2
-			self.scar_m203flechette.spread.moving_steelsight = 2 * 2
+			self.scar_m203flechette.spread.standing = 3 * 1
+			self.scar_m203flechette.spread.crouching = 2 * 1
+			self.scar_m203flechette.spread.steelsight = 1 * 1
+			self.scar_m203flechette.spread.moving_standing = 4 * 1
+			self.scar_m203flechette.spread.moving_crouching = 3 * 1
+			self.scar_m203flechette.spread.moving_steelsight = 2 * 1
 			self.scar_m203flechette.kick.standing = self.huntsman.kick.standing
 			self.scar_m203flechette.kick.crouching = self.huntsman.kick.standing
 			self.scar_m203flechette.kick.steelsight = self.huntsman.kick.standing
@@ -10472,13 +10408,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.toz194.rays = 12
 		self.toz194.tactical_reload = 1		
 		self.toz194.CLIP_AMMO_MAX = 8
-		self.toz194.spread.standing = 3 * 2
-		self.toz194.spread.crouching = 2 * 2
+		self.toz194.spread.standing = 3 * 1
+		self.toz194.spread.crouching = 2 * 1
 		self.toz194.has_description = false																		
-		self.toz194.spread.steelsight = 1 * 2
-		self.toz194.spread.moving_standing = 4 * 2
-		self.toz194.spread.moving_crouching = 3 * 2
-		self.toz194.spread.moving_steelsight = 2 * 2
+		self.toz194.spread.steelsight = 1 * 1
+		self.toz194.spread.moving_standing = 4 * 1
+		self.toz194.spread.moving_crouching = 3 * 1
+		self.toz194.spread.moving_steelsight = 2 * 1
 		self.toz194.kick.standing = self.new_m4.kick.standing
 		self.toz194.kick.crouching = self.new_m4.kick.standing
 		self.toz194.kick.steelsight = self.new_m4.kick.standing
@@ -10517,12 +10453,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.trench.fire_mode_data.fire_rate = 0.75
 		self.trench.single.fire_rate = 0.75
 		self.trench.rays = 12
-		self.trench.spread.standing = 3 * 2
-		self.trench.spread.crouching = 2 * 2
-		self.trench.spread.steelsight = 1 * 2
-		self.trench.spread.moving_standing = 4 * 2
-		self.trench.spread.moving_crouching = 3 * 2
-		self.trench.spread.moving_steelsight = 2 * 2
+		self.trench.spread.standing = 3 * 1
+		self.trench.spread.crouching = 2 * 1
+		self.trench.spread.steelsight = 1 * 1
+		self.trench.spread.moving_standing = 4 * 1
+		self.trench.spread.moving_crouching = 3 * 1
+		self.trench.spread.moving_steelsight = 2 * 1
 		self.trench.kick.standing = self.huntsman.kick.standing
 		self.trench.kick.crouching = self.huntsman.kick.standing
 		self.trench.kick.steelsight = self.huntsman.kick.standing
@@ -10552,12 +10488,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.prison.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.prison.damage_near = 800
 		self.prison.damage_far = 1600
-		self.prison.spread.standing = 3 * 2
-		self.prison.spread.crouching = 2 * 2
-		self.prison.spread.steelsight = 1 * 2
-		self.prison.spread.moving_standing = 4 * 2 
-		self.prison.spread.moving_crouching = 3 * 2
-		self.prison.spread.moving_steelsight = 2 * 2
+		self.prison.spread.standing = 3 * 1
+		self.prison.spread.crouching = 2 * 1
+		self.prison.spread.steelsight = 1 * 1
+		self.prison.spread.moving_standing = 4 * 1 
+		self.prison.spread.moving_crouching = 3 * 1
+		self.prison.spread.moving_steelsight = 2 * 1
 		self.prison.kick.standing = self.new_m4.kick.standing
 		self.prison.kick.crouching = self.new_m4.kick.standing
 		self.prison.kick.steelsight = self.new_m4.kick.standing
@@ -10585,12 +10521,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.spas15.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.spas15.damage_near = 800
 		self.spas15.damage_far = 1600
-		self.spas15.spread.standing = 3 * 2
-		self.spas15.spread.crouching = 2 * 2
-		self.spas15.spread.steelsight = 1 * 2
-		self.spas15.spread.moving_standing = 4 * 2
-		self.spas15.spread.moving_crouching = 3 * 2
-		self.spas15.spread.moving_steelsight = 2 * 2
+		self.spas15.spread.standing = 3 * 1
+		self.spas15.spread.crouching = 2 * 1
+		self.spas15.spread.steelsight = 1 * 1
+		self.spas15.spread.moving_standing = 4 * 1
+		self.spas15.spread.moving_crouching = 3 * 1
+		self.spas15.spread.moving_steelsight = 2 * 1
 		self.spas15.kick.standing = self.new_m4.kick.standing
 		self.spas15.kick.crouching = self.new_m4.kick.standing
 		self.spas15.kick.steelsight = self.new_m4.kick.standing
@@ -11372,12 +11308,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.has_description = false				
 		self.stf12.rays = 12
 		self.stf12.tactical_reload = 1	 											
-		self.stf12.spread.standing = 3 * 2
-		self.stf12.spread.crouching = 2 * 2
-		self.stf12.spread.steelsight = 1 * 2
-		self.stf12.spread.moving_standing = 4 * 2
-		self.stf12.spread.moving_crouching = 3 * 2
-		self.stf12.spread.moving_steelsight = 2 * 2
+		self.stf12.spread.standing = 3 * 1
+		self.stf12.spread.crouching = 2 * 1
+		self.stf12.spread.steelsight = 1 * 1
+		self.stf12.spread.moving_standing = 4 * 1
+		self.stf12.spread.moving_crouching = 3 * 1
+		self.stf12.spread.moving_steelsight = 2 * 1
 		self.stf12.CLIP_AMMO_MAX = 4
 		self.stf12.AMMO_MAX = 40
 		self.stf12.damage_near = 800
@@ -11453,12 +11389,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp153.single = {}
 		self.mp153.damage_near = 800
 		self.mp153.damage_far = 1600
-		self.mp153.spread.standing = 3 * 2
-		self.mp153.spread.crouching = 2 * 2
-		self.mp153.spread.steelsight = 1 * 2
-		self.mp153.spread.moving_standing = 4 * 2
-		self.mp153.spread.moving_crouching = 3 * 2
-		self.mp153.spread.moving_steelsight = 2 * 2
+		self.mp153.spread.standing = 3 * 1
+		self.mp153.spread.crouching = 2 * 1
+		self.mp153.spread.steelsight = 1 * 1
+		self.mp153.spread.moving_standing = 4 * 1
+		self.mp153.spread.moving_crouching = 3 * 1
+		self.mp153.spread.moving_steelsight = 2 * 1
 		self.mp153.kick.standing = self.new_m4.kick.standing
 		self.mp153.kick.crouching = self.new_m4.kick.standing
 		self.mp153.kick.steelsight = self.new_m4.kick.standing
@@ -11554,12 +11490,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m1912.AMMO_PICKUP = self:_pickup_chance(40, 1)
 			self.m1912.fire_mode_data.fire_rate = 0.4
 			self.m1912.single.fire_rate = 0.4
-			self.m1912.spread.standing = 3 * 2
-			self.m1912.spread.crouching = 2 * 2
-			self.m1912.spread.steelsight = 1 * 2
-			self.m1912.spread.moving_standing = 4 * 2
-			self.m1912.spread.moving_crouching = 3 * 2
-			self.m1912.spread.moving_steelsight = 2 * 2
+			self.m1912.spread.standing = 3 * 1
+			self.m1912.spread.crouching = 2 * 1
+			self.m1912.spread.steelsight = 1 * 1
+			self.m1912.spread.moving_standing = 4 * 1
+			self.m1912.spread.moving_crouching = 3 * 1
+			self.m1912.spread.moving_steelsight = 2 * 1
 			self.m1912.kick.standing = self.new_m4.kick.standing
 			self.m1912.kick.crouching = self.new_m4.kick.standing
 			self.m1912.kick.steelsight = self.new_m4.kick.standing
@@ -11711,39 +11647,54 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.qsz92.panic_suppression_chance = 0.0
 	end		
 
-	if self.glawk then --Germantaco's Glock 17 Gen 3
-		self.glawk.AMMO_MAX = 150
-		self.glawk.tactical_reload = 1										
-		self.glawk.has_description = false				
-		self.glawk.fire_mode_data.fire_rate = 0.0625
-		self.glawk.single.fire_rate = 0.0625		
-		self.glawk.tactical_reload = 1										
-		self.glawk.AMMO_PICKUP = self:_pickup_chance(150, 1)
-		self.glawk.spread.standing = 3
-		self.glawk.spread.crouching = 2
-		self.glawk.spread.steelsight = 1
-		self.glawk.spread.moving_standing = 4
-		self.glawk.spread.moving_crouching = 3
-		self.glawk.spread.moving_steelsight = 2
-		self.glawk.kick.standing = self.glock_17.kick.standing		
-		self.glawk.kick.crouching = self.glock_17.kick.standing
-		self.glawk.kick.steelsight = self.glock_17.kick.standing
-		self.glawk.stats = {
-			damage = 34,
-			spread = 16,
-			recoil = 22,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+	if self.m590 then --Silent Enforcer and GT's Mossberg 590
+		self.m590.has_description = true
+		self.m590.tactical_reload = 0
+		self.m590.desc_id = "bm_w_m590_desc"		
+		self.m590.rays = 12
+		--[[self.m590.timers = {
+			shotgun_reload_enter = 0.4,
+			shotgun_reload_exit_empty = 1.3,
+			shotgun_reload_exit_not_empty = 1,
+			shotgun_reload_shell = 0.6666667,
+			shotgun_reload_first_shell_offset = 0.33666667,
+			unequip = 0.5,
+			equip = 0.5
+		}]]--
+		self.m590.CLIP_AMMO_MAX = 8
+		self.m590.spread.standing = 3 * 1
+		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		
+		self.m590.spread.crouching = 2 * 1 
+		self.m590.spread.steelsight = 1 * 1
+		self.m590.spread.moving_standing = 4 * 1
+		self.m590.spread.moving_crouching = 3 * 1
+		self.m590.spread.moving_steelsight = 2 * 1
+		self.m590.kick.standing = self.new_m4.kick.standing
+		self.m590.kick.crouching = self.new_m4.kick.standing
+		self.m590.kick.steelsight = self.new_m4.kick.standing
+		self.m590.single.fire_rate = 0.8
+		self.m590.fire_mode_data.fire_rate = 0.8
+		self.m590.AMMO_MAX = 40 
+		self.m590.damage_near = 600
+		self.m590.damage_far = 1200
+		self.m590.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.m590.stats = {
+			damage = 150,
+			spread = 9,
+			recoil = 17,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 15,
+			suppression = 5,
+			alert_size = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 11
 		}
-		self.glawk.panic_suppression_chance = 0.0
-	end				
+		self.m590.stats_modifiers = {damage = 1}
+		self.m590.panic_suppression_chance = 0.0
+	end
 
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.tactical_reload = 1											
@@ -11950,12 +11901,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3_m203buckshot.rays = 12
 		self.g3_m203buckshot.damage_near = 900
 		self.g3_m203buckshot.damage_far = 1800			
-		self.g3_m203buckshot.spread.standing = 3 * 2
-		self.g3_m203buckshot.spread.crouching = 2 * 2
-		self.g3_m203buckshot.spread.steelsight = 1 * 2
-		self.g3_m203buckshot.spread.moving_standing = 4 * 2
-		self.g3_m203buckshot.spread.moving_crouching = 3 * 2
-		self.g3_m203buckshot.spread.moving_steelsight = 2 * 2
+		self.g3_m203buckshot.spread.standing = 3 * 1
+		self.g3_m203buckshot.spread.crouching = 2 * 1
+		self.g3_m203buckshot.spread.steelsight = 1 * 1
+		self.g3_m203buckshot.spread.moving_standing = 4 * 1
+		self.g3_m203buckshot.spread.moving_crouching = 3 * 1
+		self.g3_m203buckshot.spread.moving_steelsight = 2 * 1
 		self.g3_m203buckshot.kick.standing = self.huntsman.kick.standing
 		self.g3_m203buckshot.kick.crouching = self.huntsman.kick.standing
 		self.g3_m203buckshot.kick.steelsight = self.huntsman.kick.standing
@@ -11982,12 +11933,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3_m203flechette.rays = 12
 		self.g3_m203flechette.damage_near = 1100
 		self.g3_m203flechette.damage_far = 2200			
-		self.g3_m203flechette.spread.standing = 3 * 2
-		self.g3_m203flechette.spread.crouching = 2 * 2
-		self.g3_m203flechette.spread.steelsight = 1 * 2
-		self.g3_m203flechette.spread.moving_standing = 4 * 2
-		self.g3_m203flechette.spread.moving_crouching = 3 * 2
-		self.g3_m203flechette.spread.moving_steelsight = 2 * 2
+		self.g3_m203flechette.spread.standing = 3 * 1
+		self.g3_m203flechette.spread.crouching = 2 * 1
+		self.g3_m203flechette.spread.steelsight = 1 * 1
+		self.g3_m203flechette.spread.moving_standing = 4 * 1
+		self.g3_m203flechette.spread.moving_crouching = 3 * 1
+		self.g3_m203flechette.spread.moving_steelsight = 2 * 1
 		self.g3_m203flechette.kick.standing = self.huntsman.kick.standing
 		self.g3_m203flechette.kick.crouching = self.huntsman.kick.standing
 		self.g3_m203flechette.kick.steelsight = self.huntsman.kick.standing
@@ -12123,12 +12074,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.rays = 12
 		self.ks23.AMMO_MAX = 30
 		self.ks23.CLIP_AMMO_MAX = 3		
-		self.ks23.spread.standing = 3 * 2
-		self.ks23.spread.crouching = 2 * 2
-		self.ks23.spread.steelsight = 1 * 2
-		self.ks23.spread.moving_standing = 4 * 2
-		self.ks23.spread.moving_crouching = 3 * 2
-		self.ks23.spread.moving_steelsight = 2 * 2
+		self.ks23.spread.standing = 3 * 1
+		self.ks23.spread.crouching = 2 * 1
+		self.ks23.spread.steelsight = 1 * 1
+		self.ks23.spread.moving_standing = 4 * 1
+		self.ks23.spread.moving_crouching = 3 * 1
+		self.ks23.spread.moving_steelsight = 2 * 1
 		self.ks23.kick.standing = self.huntsman.kick.standing
 		self.ks23.kick.crouching = self.huntsman.kick.standing
 		self.ks23.kick.steelsight = self.huntsman.kick.standing
@@ -12193,6 +12144,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.categories = {"assault_rifle"}		
 			self.pdr.has_description = false					
 			self.pdr.tactical_reload = 1
+			self.pdr.use_data.selection_index = 2
 			self.pdr.AMMO_MAX = 150
 			self.pdr.AMMO_PICKUP = self:_pickup_chance(150, 2)
 			self.pdr.spread.standing = 3
@@ -12465,12 +12417,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak12_76.has_description = false							
 		self.ak12_76.tactical_reload = 1
 		self.ak12_76.rays = 12
-		self.ak12_76.spread.standing = 3 * 2
-		self.ak12_76.spread.crouching = 2 * 2
-		self.ak12_76.spread.steelsight = 1 * 2
-		self.ak12_76.spread.moving_standing = 4 * 2
-		self.ak12_76.spread.moving_crouching = 3 * 2
-		self.ak12_76.spread.moving_steelsight = 2 * 2
+		self.ak12_76.spread.standing = 3 * 1
+		self.ak12_76.spread.crouching = 2 * 1
+		self.ak12_76.spread.steelsight = 1 * 1
+		self.ak12_76.spread.moving_standing = 4 * 1
+		self.ak12_76.spread.moving_crouching = 3 * 1
+		self.ak12_76.spread.moving_steelsight = 2 * 1
 		self.ak12_76.CLIP_AMMO_MAX = 10
 		self.ak12_76.AMMO_MAX = 120
 		self.ak12_76.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -12664,13 +12616,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aps.kick.steelsight = self.new_m4.kick.standing
 		self.aps.stats = {
 			damage = 34,
-			spread = 17,
+			spread = 16,
 			recoil = 17,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 26,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 10,
+			alert_size = 10,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -13012,12 +12964,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.toz106.AMMO_MAX = 40
 		self.toz106.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.toz106.tactical_reload = 1
-		self.toz106.spread.standing = 3 * 2
-		self.toz106.spread.crouching = 2 * 2
-		self.toz106.spread.steelsight = 1 * 2
-		self.toz106.spread.moving_standing = 4 * 2
-		self.toz106.spread.moving_crouching = 3 * 2
-		self.toz106.spread.moving_steelsight = 2 * 2
+		self.toz106.spread.standing = 3 * 1
+		self.toz106.spread.crouching = 2 * 1
+		self.toz106.spread.steelsight = 1 * 1
+		self.toz106.spread.moving_standing = 4 * 1
+		self.toz106.spread.moving_crouching = 3 * 1
+		self.toz106.spread.moving_steelsight = 2 * 1
 		self.toz106.damage_near = 1300
 		self.toz106.damage_far = 2600	
 		--self.toz106.fire_mode_data.fire_rate = 0.12
@@ -13045,12 +12997,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.littlest.categories = {"shotgun"}
 		self.littlest.has_description = false		
 		self.littlest.rays = 12
-		self.littlest.spread.standing = 3 * 2
-		self.littlest.spread.crouching = 2 * 2
-		self.littlest.spread.steelsight = 1 * 2
-		self.littlest.spread.moving_standing = 4 * 2
-		self.littlest.spread.moving_crouching = 3 * 2
-		self.littlest.spread.moving_steelsight = 2 * 2
+		self.littlest.spread.standing = 3 * 1
+		self.littlest.spread.crouching = 2 * 1
+		self.littlest.spread.steelsight = 1 * 1
+		self.littlest.spread.moving_standing = 4 * 1
+		self.littlest.spread.moving_crouching = 3 * 1
+		self.littlest.spread.moving_steelsight = 2 * 1
 		self.littlest.kick.standing = self.huntsman.kick.standing
 		self.littlest.kick.crouching = self.huntsman.kick.standing
 		self.littlest.kick.steelsight = self.huntsman.kick.standing
@@ -13097,12 +13049,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.auto5.single = {}
 		self.auto5.damage_near = 800
 		self.auto5.damage_far = 1600
-		self.auto5.spread.standing = 3 * 2
-		self.auto5.spread.crouching = 2 * 2
-		self.auto5.spread.steelsight = 1 * 2
-		self.auto5.spread.moving_standing = 4 * 2
-		self.auto5.spread.moving_crouching = 3 * 2
-		self.auto5.spread.moving_steelsight = 2 * 2
+		self.auto5.spread.standing = 3 * 1
+		self.auto5.spread.crouching = 2 * 1
+		self.auto5.spread.steelsight = 1 * 1
+		self.auto5.spread.moving_standing = 4 * 1
+		self.auto5.spread.moving_crouching = 3 * 1
+		self.auto5.spread.moving_steelsight = 2 * 1
 		self.auto5.kick.standing = self.new_m4.kick.standing
 		self.auto5.kick.crouching = self.new_m4.kick.standing
 		self.auto5.kick.steelsight = self.new_m4.kick.standing
@@ -13216,6 +13168,33 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 	end
+	
+	if BeardLib.Utils:FindMod("Custom Attachment Points") or BeardLib.Utils:FindMod("WeaponLib") then	--fixes lmg sights not following the dustcover/lid when reloading, but ONLY if the mod user has CAP/WeaponLib installed.
+		self:SetupAttachmentPoint( "par", {
+			name = "a_o",
+			base_a_obj = "a_o",
+			part_attach_data = {
+				{"wpn_fps_lmg_par_upper_reciever"}, 
+				"g_cover"
+			}
+		})	 
+		self:SetupAttachmentPoint( "m249", {
+			name = "a_o",
+			base_a_obj = "a_o",
+			part_attach_data = {
+				{"wpn_fps_lmg_m249_upper_reciever"}, 
+				"g_dustcover"
+			}
+		})
+		self:SetupAttachmentPoint( "mg42", {
+			name = "a_o",
+			base_a_obj = "a_o",
+			part_attach_data = {
+				{"wpn_fps_lmg_mg42_reciever"}, 
+				"g_lid"
+			}
+		})
+	end		
 
 	end)
 else
@@ -13226,6 +13205,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	WeaponTweakData.clone__create_table_structure = WeaponTweakData._create_table_structure
 	function WeaponTweakData:_create_table_structure()
 		self:clone__create_table_structure()
+		self.hk23_sc_npc = {
+			usage = "is_lmg",
+			anim_usage = "is_rifle",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}		
 		self.hk21_sc_npc = {
 			usage = "is_lmg",
 			anim_usage = "is_rifle",

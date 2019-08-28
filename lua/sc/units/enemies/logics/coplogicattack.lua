@@ -12,7 +12,144 @@ local temp_vec2 = Vector3()
 local temp_vec3 = Vector3()
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	
+	function CopLogicAttack.enter(data, new_logic_name, enter_params)
+		CopLogicBase.enter(data, new_logic_name, enter_params)
+		data.unit:brain():cancel_all_pathing_searches()
 
+		local old_internal_data = data.internal_data
+		local my_data = {
+			unit = data.unit
+		}
+		data.internal_data = my_data
+		my_data.detection = data.char_tweak.detection.combat
+
+		if old_internal_data then
+			my_data.turning = old_internal_data.turning
+			my_data.firing = old_internal_data.firing
+			my_data.shooting = old_internal_data.shooting
+			my_data.attention_unit = old_internal_data.attention_unit
+
+			CopLogicAttack._set_best_cover(data, my_data, old_internal_data.best_cover)
+		end
+
+		my_data.cover_test_step = 1
+		local key_str = tostring(data.key)
+		my_data.detection_task_key = "CopLogicAttack._upd_enemy_detection" .. key_str
+
+		CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicAttack._upd_enemy_detection, data, data.t)
+		CopLogicIdle._chk_has_old_action(data, my_data)
+
+		my_data.attitude = data.objective and data.objective.attitude or "avoid"
+
+		local safety_range = nil
+
+		safety_range = {
+			optimal = 3500,
+			far = 6000,
+			close = 2000
+		}
+
+		if data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range then
+			my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		else
+			my_data.weapon_range = safety_range
+		end
+
+		data.unit:brain():set_update_enabled_state(true)
+
+		if data.cool then
+			data.unit:movement():set_cool(false)
+		end
+
+		if (not data.objective or not data.objective.stance) and data.unit:movement():stance_code() == 1 then
+			data.unit:movement():set_stance("hos")
+		end
+
+		if my_data ~= data.internal_data then
+			return
+		end
+
+		if data.objective and (data.objective.action_duration or data.objective.action_timeout_t and data.t < data.objective.action_timeout_t) then
+			my_data.action_timeout_clbk_id = "CopLogicIdle_action_timeout" .. tostring(data.key)
+			local action_timeout_t = data.objective.action_timeout_t or data.t + data.objective.action_duration
+			data.objective.action_timeout_t = action_timeout_t
+
+			CopLogicBase.add_delayed_clbk(my_data, my_data.action_timeout_clbk_id, callback(CopLogicIdle, CopLogicIdle, "clbk_action_timeout", data), action_timeout_t)
+		end
+
+		data.unit:brain():set_attention_settings({
+			cbt = true
+		})
+	end
+	
+	function CopLogicAttack._upd_enemy_detection(data, is_synchronous)
+		managers.groupai:state():on_unit_detection_updated(data.unit)
+
+		data.t = TimerManager:game():time()
+		local my_data = data.internal_data
+		local delay = CopLogicBase._upd_attention_obj_detection(data, nil, nil)
+		local new_attention, new_prio_slot, new_reaction = CopLogicIdle._get_priority_attention(data, data.detected_attention_objects, nil)
+		local old_att_obj = data.attention_obj
+
+		CopLogicBase._set_attention_obj(data, new_attention, new_reaction)
+		data.logic._chk_exit_attack_logic(data, new_reaction)
+
+		if my_data ~= data.internal_data then
+			return
+		end
+
+		if new_attention then
+			if old_att_obj and old_att_obj.u_key ~= new_attention.u_key then
+				CopLogicAttack._cancel_charge(data, my_data)
+
+				my_data.flank_cover = nil
+
+				if not data.unit:movement():chk_action_forbidden("walk") then
+					CopLogicAttack._cancel_walking_to_cover(data, my_data)
+				end
+
+				CopLogicAttack._set_best_cover(data, my_data, nil)
+			end
+		elseif old_att_obj then
+			CopLogicAttack._cancel_charge(data, my_data)
+
+			my_data.flank_cover = nil
+		end
+
+		CopLogicBase._chk_call_the_police(data)
+
+		if my_data ~= data.internal_data then
+			return
+		end
+		
+		if (not my_data._intimidate_t or my_data._intimidate_t + 2 < data.t) and not data.cool and not my_data._turning_to_intimidate and not my_data.acting and (not new_attention or AIAttentionObject.REACT_SCARED > new_reaction) and managers.groupai:state():chk_assault_active_atm() then
+			local can_turn = not data.unit:movement():chk_action_forbidden("turn")
+			local civ = CopLogicIdle.find_civilian_to_intimidate(data)
+
+			if civ then
+				my_data._intimidate_t = data.t
+				new_attention, new_prio_slot, new_reaction = nil
+
+				if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then
+					my_data._turning_to_intimidate = true
+					my_data._primary_intimidation_target = civ
+				else
+					CopLogicIdle.intimidate_civilians(data)
+				end
+			end
+		end
+
+		data.logic._upd_aim(data, my_data)
+
+		if not is_synchronous then
+			CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicAttack._upd_enemy_detection, data, delay and data.t + delay, data.important and true)
+		end
+
+		CopLogicBase._report_detections(data.detected_attention_objects)
+	end
+
+	
 	function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 		local focus_enemy = data.attention_obj
         local common_cop = data.unit:base():has_tag("law") and not data.unit:base():has_tag("special")
@@ -79,10 +216,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	local in_cover = my_data.in_cover
     	local best_cover = my_data.best_cover
     	local enemy_visible = focus_enemy.verified
-    	local enemy_visible_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 2
-    	local enemy_visible_mild_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 7
-    	local flank_cover_charge_time = focus_enemy.verified_t and t - focus_enemy.verified_t < 4
-    	local enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 15
     	local alert_soft = data.is_suppressed
     	local action_taken = data.logic.action_taken(data, my_data)
     	
@@ -94,16 +227,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	local eliterangedfiremovementqualify = data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1500
     	
         --reloadingretreat: retreat as fast as possible if the ammo is running dry and the enemy is visible
-	local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
-	local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
-	
-	local want_to_take_cover = my_data.want_to_take_cover
+		local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
+		local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
+		
+		local want_to_take_cover = my_data.want_to_take_cover
     	action_taken = action_taken or CopLogicAttack._upd_pose(data, my_data)
     	local move_to_cover, want_flank_cover, taken_flank_cover = nil
+		local enemy_visible_mild_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 7
+    	local flank_cover_charge_time = focus_enemy.verified_t and t - focus_enemy.verified_t < 4
+		local enemy_visible_soft = nil
+    	local enemy_visible_softer = nil
     
     	if my_data.cover_test_step ~= 1 and not enemy_visible_softer and (action_taken or want_to_take_cover or not in_cover) then
     		my_data.cover_test_step = 1
     	end
+		
+		--increased ai aggressiveness and speed when more players are around
+		local nr_players = 0
+
+		for u_key, u_data in pairs(managers.groupai:state():all_player_criminals()) do
+			if not u_data.status then
+				nr_players = nr_players + 1
+			end
+		end
+		
+		if nr_players > 2 then
+			enemy_visible_soft = not focus_enemy.verified
+			enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 1
+		else
+			enemy_visible_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 2
+			enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 15
+		end
+	
+		if not enemy_visible_soft then
+			enemy_visible_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 2
+		end
+		
+		if not enemy_visible_softer then
+			enemy_visible_softer = focus_enemy.verified_t and t - focus_enemy.verified_t < 15
+		end
     
     	if my_data.stay_out_time and (enemy_visible_soft or not my_data.at_cover_shoot_pos or action_taken or want_to_take_cover) then
     		my_data.stay_out_time = nil

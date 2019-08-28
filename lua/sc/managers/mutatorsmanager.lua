@@ -26,7 +26,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			MutatorTitandozers:new(self),
 			MutatorMinidozers:new(self),
 			MutatorFatRoll:new(self),
-			MutatorMememanOnly:new(self),			
+			MutatorMememanOnly:new(self),	
+			MutatorMoreDonutsPlus:new(self),
+			MutatorJungleInferno:new(self),
 			MutatorNoTitans:new(self)
 		}
 		self._active_mutators = {}

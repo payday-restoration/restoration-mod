@@ -128,40 +128,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._speech_prefix_p2 = "d"
 	end	
 	
-    function CharacterTweakData:get_ai_group_type()	
-	    if Global.level_data and Global.level_data.level_id then
-	    	level_id = Global.level_data.level_id
-	    end	    
-	    if not Global.game_settings then
-	    	return group_to_use
-	    end
-	    local map_faction_override = {}
-		--Murkywater faction--
-		map_faction_override["shoutout_raid"] = "murkywater"		
-		map_faction_override["pbr"] = "murkywater"				
-		map_faction_override["des"] = "murkywater"		
-		map_faction_override["bph"] = "murkywater"		
-		map_faction_override["vit"] = "murkywater"		
-		map_faction_override["wwh"] = "murkywater"
-		map_faction_override["arm_for"] = "murkywater"
-		map_faction_override["wetwork"] = "murkywater"
-		map_faction_override["wetwork_burn"] = "murkywater"
-		--Zombies--
-		map_faction_override["haunted"] = "zombie"		
-		map_faction_override["nail"] = "zombie"
-		map_faction_override["help"] = "zombie"
-		map_faction_override["hvh"] = "zombie"  
-		--Reapers--
-		map_faction_override["mad"] = "russia"  
-		map_faction_override["pines"] = "russia"  
-	   
-	    if level_id then
-	    	if map_faction_override[level_id] then
-	    		group_to_use = map_faction_override[level_id]
-	    	end
-	    end
-	    return group_to_use
-	end
+    function CharacterTweakData:get_ai_group_type()    
+        local bullshit = self.tweak_data.levels:get_ai_group_type()
+        if not Global.game_settings then
+            return group_to_use
+        end
+        local ai_group_type = {}
+        ai_group_type["murkywater"] = "murkywater"        
+        ai_group_type["zombie"] = "zombie"                
+        ai_group_type["russia"] = "russia"        
+       
+        if bullshit then
+            if ai_group_type[bullshit] then
+                group_to_use = ai_group_type[bullshit]
+            end
+        end
+        return group_to_use
+    end
 	
 	function CharacterTweakData:_init_security(presets)
 	    local is_murky
@@ -608,11 +591,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 60
-		self.omnia_lpf.headshot_dmg_mul = 2.2
-		--self.omnia_lpf.damage.bullet_damage_mul = 0.9
-		--self.omnia_lpf.damage.explosion_damage_mul = 0.9
-		--self.omnia_lpf.damage.fire_damage_mul = 0.9
+		self.omnia_lpf.HEALTH_INIT = 30
+		self.omnia_lpf.headshot_dmg_mul = 2
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
 		self.omnia_lpf.suppression = nil
@@ -648,16 +628,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end			
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
-		self.omnia_lpf.tags = {"law", "medic", "special", "customvo"}
+		self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
 		self.omnia_lpf.do_omnia = true
 		self.omnia_lpf.do_aoe_heal = true
 		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
-		self.omnia_lpf.die_sound_event = "mga_death_scream"		
+		self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 		self.omnia_lpf.is_special = true
 		if is_reaper then
 		    self.omnia_lpf.die_sound_event = "rmdc_x02a_any_3p"
 		else	
-		    self.omnia_lpf.die_sound_event = "mga_death_scream"
+		    self.omnia_lpf.die_sound_event = nil
 		end	
 		table.insert(self._enemy_list, "omnia_lpf")
 	end
@@ -11655,28 +11635,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			no_chatter = {},
 			guard = {
 				aggressive = true,
-				--retreat = true,
 				contact = true,
 				clear = true,
 				clear_whisper = true,
 				clear_whisper_2 = true,
-				--go_go = true,
-				---push = true,
 				reload = true,
 				look_for_angle = true,
 				ecm = true,
 				saw = true,
 				trip_mines = true,
 				sentry = true,
-				--ready = true,
-				--smoke = true,
-				--flash_grenade = true,
-				--follow_me = true,
-				--deathguard = true,
-				--open_fire = true,
 				suppress = true
 			},
 			cop = {
+				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11700,6 +11672,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			swat = {
+				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11764,6 +11737,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			shield = {
+				entry = true,
 			    follow_me = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -12811,6 +12785,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.autumn.damage.bullet_dodge_chance = 30	
+		
+		--LPF DR from ranged attacks--
+		self.omnia_lpf.damage.bullet_damage_mul = 0.75
+		self.omnia_lpf.damage.explosion_damage_mul = 0.75
+		self.omnia_lpf.damage.fire_damage_mul = 0.75	
 		
 		if job == "haunted" then
 			self.tank_hw.move_speed = self.presets.move_speed.very_slow

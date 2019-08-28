@@ -725,6 +725,8 @@ function HUDAssaultCorner:_end_assault()
 	end
 end
 
+
+local _close_assault_box_original = HUDAssaultCorner._close_assault_box
 function HUDAssaultCorner:_close_assault_box()
 	local corner_panel = self._hud_panel:child("corner_panel")
 	corner_panel:set_visible(false)
@@ -735,6 +737,9 @@ function HUDAssaultCorner:_close_assault_box()
 		self:_set_hostage_offseted(false)
 		local hostage_panel = self._hud_panel:child("hostages_panel")
 		hostage_panel:animate(callback(self, self, "_offset_hostage", false))
+	end
+	if not restoration:all_enabled("HUD/MainHUD", "HUD/AssaultPanel") then
+		_close_assault_box_original(self)
 	end
 end
 function HUDAssaultCorner:_show_icon_assaultbox(icon_assaultbox)

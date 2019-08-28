@@ -369,6 +369,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				self._can_shoot_through_titan_shield = true
 			end
 
+			if stats.is_pistol then
+				if self:weapon_tweak_data().categories then
+					self:weapon_tweak_data().categories = {"pistol"}
+				end
+			end
+
 			if stats.heavy_AP then --for convenience
 				self._can_shoot_through_titan_shield = true
 				self._can_shoot_through_shield = true

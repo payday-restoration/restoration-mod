@@ -16,7 +16,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_lemming"] = "5/7 Pistol",
 		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
 		["bm_w_x_shrew"] = "Barry & Paul",
-		["bm_w_x_1911"] = "Mustang & Sally",		
+		["bm_w_x_1911"] = "Mustang & Sally",
+		["bm_w_tec9"] = "T3K Urban Submachine Gun",
 		["bm_wp_usp_m_big"] = "Casket Magazine",		
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		

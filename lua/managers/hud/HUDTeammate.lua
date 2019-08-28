@@ -1039,7 +1039,3 @@ function HUDTeammate:teammate_progress(enabled, tweak_data_id, timer, success)
 		bitmap:animate(callback(HUDInteraction, HUDInteraction, "_animate_interaction_complete"), circle)
 	end
 end
-
-function HUDTeammate:_animate_damage_taken(damage_indicator)
-	damage_indicator:set_alpha(0)
-end

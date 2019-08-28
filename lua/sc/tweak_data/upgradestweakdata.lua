@@ -1151,17 +1151,17 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.player.damage_control_passive = {{
 		30,
-		5
+		6.25
 	}}
 	self.values.player.damage_control_auto_shrug = {
-		5
+		4
 	}
 	self.values.player.damage_control_healing = {
 		300
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 2},
+		{ 0, 1},
 		{50, 6}
 	}
 	

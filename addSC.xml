@@ -1236,6 +1236,14 @@
 	
 	<texture path="units/payday2/characters/shared_textures/mask_df" force="true"/>	
 	
+	<!--ben guy acc-->	
+	<material_config path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
+	<cooked_physics path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />	
+	<unit path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" load="true" />		
+	<object path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
+	<model path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />	
+	
+	
 	<!--new zeals start-->
 	<!--sg553-->
 	<object path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>

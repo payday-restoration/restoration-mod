@@ -1,4 +1,19 @@
 <table directory="assets">
+	<!--COPS FAEC!!!-->		
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />	
+	<!--COPS FAEC!!!!!!!-->		
 	
 	<!--nypd dozer stuff-->	
 	<!--green-->
@@ -165,12 +180,6 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_contour" force="false"/>	
 	
-	<!--shared_textures crap-->
-	<!--
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />
-	--><!--these are used by murkies pls dont have them here
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
-	-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
@@ -189,8 +198,8 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />		
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />	
-
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
+	
 	<!--NYPD spooc thanks jarey underscore-->
 	<model path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
 	<object path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"/>
@@ -258,6 +267,9 @@
 	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_husk" load="true"/>			
 	
 	<!--LAPD shared_textures crap-->
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_df" />	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_nm" />	
+	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_body_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	

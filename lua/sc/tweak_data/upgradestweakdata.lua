@@ -1146,14 +1146,24 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--alcoholism is no joke
 	--stoic
+	self.values.player.armor_to_health_conversion = {
+		40
+	}
 	self.values.player.damage_control_passive = {{
-		25,
+		30,
 		6.25
 	}}
 	self.values.player.damage_control_auto_shrug = {
-		6,
-		4
-	}	
+		5
+	}
+	self.values.player.damage_control_healing = {
+		300
+	}
+
+	self.values.player.damage_control_cooldown_drain = {
+		{ 0, 1},
+		{50, 6}
+	}
 	
 	--yoooooooooooooooooo--
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {

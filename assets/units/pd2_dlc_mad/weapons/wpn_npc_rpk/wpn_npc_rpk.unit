@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+	<object file="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" />
+  <dependencies>
+	<depends_on bnk="soundbanks/weapon_rpk"/>  
+ 	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCRaycastWeaponBase" >
+		<var name="name_id" value="rpk_lmg_npc" />
+    </extension>
+  <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_wpn_npc_rpk" />
+    <default_soundsource source="rp_wpn_npc_rpk" />
+  </sounds>
+</unit>
+

@@ -128,40 +128,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._speech_prefix_p2 = "d"
 	end	
 	
-    function CharacterTweakData:get_ai_group_type()	
-	    if Global.level_data and Global.level_data.level_id then
-	    	level_id = Global.level_data.level_id
-	    end	    
-	    if not Global.game_settings then
-	    	return group_to_use
-	    end
-	    local map_faction_override = {}
-		--Murkywater faction--
-		map_faction_override["shoutout_raid"] = "murkywater"		
-		map_faction_override["pbr"] = "murkywater"				
-		map_faction_override["des"] = "murkywater"		
-		map_faction_override["bph"] = "murkywater"		
-		map_faction_override["vit"] = "murkywater"		
-		map_faction_override["wwh"] = "murkywater"
-		map_faction_override["arm_for"] = "murkywater"
-		map_faction_override["wetwork"] = "murkywater"
-		map_faction_override["wetwork_burn"] = "murkywater"
-		--Zombies--
-		map_faction_override["haunted"] = "zombie"		
-		map_faction_override["nail"] = "zombie"
-		map_faction_override["help"] = "zombie"
-		map_faction_override["hvh"] = "zombie"  
-		--Reapers--
-		map_faction_override["mad"] = "russia"  
-		map_faction_override["pines"] = "russia"  
-	   
-	    if level_id then
-	    	if map_faction_override[level_id] then
-	    		group_to_use = map_faction_override[level_id]
-	    	end
-	    end
-	    return group_to_use
-	end
+    function CharacterTweakData:get_ai_group_type()    
+        local bullshit = self.tweak_data.levels:get_ai_group_type()
+        if not Global.game_settings then
+            return group_to_use
+        end
+        local ai_group_type = {}
+        ai_group_type["murkywater"] = "murkywater"        
+        ai_group_type["zombie"] = "zombie"                
+        ai_group_type["russia"] = "russia"        
+       
+        if bullshit then
+            if ai_group_type[bullshit] then
+                group_to_use = ai_group_type[bullshit]
+            end
+        end
+        return group_to_use
+    end
 	
 	function CharacterTweakData:_init_security(presets)
 	    local is_murky
@@ -459,16 +442,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.meme_man.can_shoot_while_dodging = true
 		self.meme_man.damage.bullet_dodge_chance = 65
 		self.meme_man.smoke_dodge_increase = 10
+		self.meme_man.priority_shout = "f30"
+		self.meme_man.bot_priority_shout = "f30x_any"
+		self.meme_man.priority_shout_max_dis = 3000		
 		self.meme_man.dodge = presets.dodge.veteran
 		self.meme_man.allowed_stances = {cbt = true} 
-		self.meme_man.access = "spooc"
-		self.meme_man.damage.hurt_severity = presets.hurt_severities.elite
+		self.meme_man.access = "gangster"
 		self.meme_man.use_animation_on_fire_damage = false
 		self.meme_man.move_speed = presets.move_speed.lightning
 		self.meme_man.surrender = nil
-		self.meme_man.is_special = true		
-		self.meme_man.unintimidateable = true		
-		table.insert(self._enemy_list, "meme_man")					
+		self.meme_man.is_special = true
+		self.meme_man.unintimidateable = true
+		table.insert(self._enemy_list, "meme_man")	
+		self.meme_man_shield = deep_clone(self.meme_man)		
+		self.meme_man_shield.tags = {"medic", "special", "shield"}		
+		self.meme_man_shield.priority_shout = "f30"
+		self.meme_man_shield.bot_priority_shout = "f30x_any"
+		self.meme_man_shield.priority_shout_max_dis = 3000				
+		self.meme_man_shield.access = "gangster"
+		self.meme_man_shield.use_animation_on_fire_damage = false
+		self.meme_man_shield.move_speed = presets.move_speed.lightning
+		self.meme_man_shield.surrender = nil
+		self.meme_man_shield.is_special = true
+		self.meme_man_shield.unintimidateable = true
+		self.meme_man_shield.allowed_poses = {crouch = true}
+		self.meme_man_shield.always_face_enemy = true
+		self.meme_man_shield.move_speed = presets.move_speed.fast
+		self.meme_man_shield.no_run_start = true
+		self.meme_man_shield.no_run_stop = true
+		self.meme_man_shield.no_retreat = true
+		self.meme_man_shield.no_arrest = true
+		self.meme_man_shield.no_equip_anim = true
+		self.meme_man_shield.wall_fwd_offset = 100
+		self.meme_man_shield.calls_in = nil
+		self.meme_man_shield.ignore_medic_revive_animation = true
+		self.meme_man_shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
+		self.meme_man_shield.damage.shield_knocked = true		
+		table.insert(self._enemy_list, "meme_man_shield")				
+		self.vetlod = deep_clone(self.fbi_vet)		
+		self.vetlod.custom_voicework = "tdozer"
+		table.insert(self._enemy_list, "vetlod")							
 	end
 
 	function CharacterTweakData:_init_medic(presets)
@@ -578,11 +591,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 		self.omnia_lpf.detection = presets.detection.normal
-		self.omnia_lpf.HEALTH_INIT = 60
-		self.omnia_lpf.headshot_dmg_mul = 2.2
-		--self.omnia_lpf.damage.bullet_damage_mul = 0.9
-		--self.omnia_lpf.damage.explosion_damage_mul = 0.9
-		--self.omnia_lpf.damage.fire_damage_mul = 0.9
+		self.omnia_lpf.HEALTH_INIT = 30
+		self.omnia_lpf.headshot_dmg_mul = 2
 		self.omnia_lpf.move_speed = presets.move_speed.very_fast
 		self.omnia_lpf.surrender_break_time = {7, 12}
 		self.omnia_lpf.suppression = nil
@@ -618,16 +628,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end			
 		self.omnia_lpf.priority_shout = "f47"
 		self.omnia_lpf.bot_priority_shout = "f47x_any"
-		self.omnia_lpf.tags = {"law", "medic", "special", "customvo"}
+		self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
 		self.omnia_lpf.do_omnia = true
 		self.omnia_lpf.do_aoe_heal = true
 		self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
-		self.omnia_lpf.die_sound_event = "mga_death_scream"		
+		self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 		self.omnia_lpf.is_special = true
 		if is_reaper then
 		    self.omnia_lpf.die_sound_event = "rmdc_x02a_any_3p"
 		else	
-		    self.omnia_lpf.die_sound_event = "mga_death_scream"
+		    self.omnia_lpf.die_sound_event = nil
 		end	
 		table.insert(self._enemy_list, "omnia_lpf")
 	end
@@ -11625,28 +11635,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			no_chatter = {},
 			guard = {
 				aggressive = true,
-				--retreat = true,
 				contact = true,
 				clear = true,
 				clear_whisper = true,
 				clear_whisper_2 = true,
-				--go_go = true,
-				---push = true,
 				reload = true,
 				look_for_angle = true,
 				ecm = true,
 				saw = true,
 				trip_mines = true,
 				sentry = true,
-				--ready = true,
-				--smoke = true,
-				--flash_grenade = true,
-				--follow_me = true,
-				--deathguard = true,
-				--open_fire = true,
 				suppress = true
 			},
 			cop = {
+				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11670,6 +11672,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			swat = {
+				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11734,6 +11737,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			shield = {
+				entry = true,
 			    follow_me = true,
 				aggressive_assault = true,
 				retreat = true,
@@ -11802,7 +11806,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"autumn_smg",
 			"s553_zeal",
 			"lmg_titan",
-			"x_mini_npc"			
+			"x_mini_npc",
+			"x_raging_bull_npc"			
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11854,7 +11859,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"),
 			Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"),
 			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
-			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc")			
+			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
+			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc")			
 		}
 	end
 
@@ -12780,6 +12786,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.autumn.damage.bullet_dodge_chance = 30	
 		
+		--LPF DR from ranged attacks--
+		self.omnia_lpf.damage.bullet_damage_mul = 0.75
+		self.omnia_lpf.damage.explosion_damage_mul = 0.75
+		self.omnia_lpf.damage.fire_damage_mul = 0.75	
+		
 		if job == "haunted" then
 			self.tank_hw.move_speed = self.presets.move_speed.very_slow
 		else
@@ -13071,13 +13082,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_grenadier_1",
 					"ene_veteran_cop_1",
 					"ene_veteran_cop_2",
+					"ene_veteran_lod_1",
+					"ene_veteran_lod_2",					
 					"npc_old_hoxton_prisonsuit_1",
 					"npc_old_hoxton_prisonsuit_2",
 					"ene_medic_r870",
 					"ene_medic_m4",
 					"ene_city_heavy_r870",
 					"ene_city_heavy_g36",
-					"ene_mememan_1",					
+					"ene_mememan_1",	
+					"ene_mememan_2",										
 					"ene_bulldozer_biker_1",
 					"ene_guard_biker_1",
 					"ene_murky_heavy_m4",

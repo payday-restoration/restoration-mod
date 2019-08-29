@@ -139,7 +139,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end]]--   
-	if SystemFS:exists("assets/mod_overrides/trap medic") then
+	if SystemFS:exists("assets/mod_overrides/improved medic") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)
 			_setup_item_rows_original(self, node, ...)
@@ -147,7 +147,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				Global._friendsonly_warning_shown = true
 				QuickMenu:new(
 					"SC's Mod",
-					"Are you seriously using trap medic? Jesus H. fucking Christ! What the FUCK is wrong with you!?",
+					"Oh cool, an improved medic! Wait, that's not an improvement! Jesus H. fucking Christ! What the FUCK is wrong with you!?",
 					{
 						{
 							text = "ok",

@@ -24,6 +24,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:contour():remove("omnia_heal", false)
 			self._unit:contour():remove("medic_show", false)
 		end 	
+		
+		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") then
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
+		end	
 	
         --client husk checks
         --blues and omnia shield
@@ -66,7 +70,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         --zeals
         elseif self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk") then	                		
             self._unit:sound_source(source):stop()
-			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, true)	          		
+		elseif self._unit:base():has_tag("city_swat") then
+		    self._unit:sound():say("", true)
+		else
+	    	self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "x02a_any_3p", true)
+	    		
 	   	end
 	end
 

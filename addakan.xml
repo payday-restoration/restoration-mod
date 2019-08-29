@@ -50,6 +50,7 @@
 	<model path="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" force="false"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" force="false" load="true"/>
 	<material_config path="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" force="false"/>
+	<sequence_manager path="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" force="false"/>		
 	
 	<!--Russian Grenadier-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
@@ -168,6 +169,14 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_rifle_df" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/k63_tit_df" force="false"/>
+
+	<!--Titan SWAT K63 Acc.-->
+	<object path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
+	<sequence_manager path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
+	<unit path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
 	
 	<!--Titan HRT-->	
 	<unit path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
@@ -178,7 +187,6 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<material_config path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_fbi_df" force="false"/>	
-	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>		
 	
 	<!--Titandozer-->	
 	<object path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
@@ -194,6 +202,7 @@
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_il" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_hurt_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_hurt_nm" force="false"/>
 	
     <!--Titan Taser-->	
 	<unit path="units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>

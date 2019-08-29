@@ -4,7 +4,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="9.5.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.6" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<!-- Res Suits -->
@@ -55,6 +55,8 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
+		<!-- <hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
+		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/> -->
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/hud/hudtemp.lua" source_file="lib/managers/hud/HUDTemp"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
@@ -193,6 +195,7 @@
 		<hook file="sc/units/weapons/akimboweaponbase.lua" source_file="lib/units/weapons/akimboweaponbase"/>
 		<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
 		<hook file="sc/managers/hud/hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
+		<hook file="sc/managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -221,6 +224,8 @@
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>
+		<hook file="sc/network/base/clientnetworksession.lua" source_file="lib/network/base/clientnetworksession"/>
+		<hook file="sc/network/base/basenetworksession.lua" source_file="lib/network/base/basenetworksession"/>
 		<!--hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"-->
 		<!--///INGAME MANUAL\\\-->
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
@@ -314,5 +319,7 @@
 	<Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/murkyassets" file="addmurky.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/outfitassets2" file="addoutfit_2.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/outfitassets3" file="addoutfit_3.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 </mod>

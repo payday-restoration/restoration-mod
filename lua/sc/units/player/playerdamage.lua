@@ -619,3 +619,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     end
 	
 end
+
+function PlayerDamage:_max_armor()
+	local max_armor = self:_raw_max_armor()
+
+	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
+		max_armor = 0
+	end
+
+	return max_armor
+end

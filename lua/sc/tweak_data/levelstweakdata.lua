@@ -27,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.lapd = lapd
 		
 		--///MURKYWATER LEVELS\\\--
-		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets", "packages/vlad_shout"}
+		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets2", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
 		self.shoutout_raid.player_sequence = "spawn_prop_raincoat"
 		
@@ -57,7 +57,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		self.brb.ai_group_type = nypd
-		self.brb.package = {"packages/lvl_brb", "packages/outfitassets", "packages/nypdassets"}
+		self.brb.package = {"packages/lvl_brb", "packages/outfitassets2", "packages/nypdassets"}
 		self.brb.player_sequence = "spawn_prop_winter_suit"
 		
 		self.red2.ai_group_type = nypd
@@ -101,7 +101,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pal.player_sequence = "spawn_prop_pool_repair_suit"		
 		
 		self.kenaz.ai_group_type = lapd
-		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets"}			
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/outfitassets3"}	
+		self.kenaz.player_sequence = "spawn_prop_tux"				
 		
 		self.rvd1.ai_group_type = lapd
 		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
@@ -110,6 +111,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
 
         --///NEW OUTFITS\\\--
+		
+		self.fish.package = {"packages/outfitassets3", "packages/lvl_fish"}
+		self.fish.player_sequence = "spawn_prop_tux"	
 		
 		self.arm_cro.package = {"packages/outfitassets", "packages/narr_arm_cro"}
 		self.arm_cro.player_sequence = "spawn_prop_loud_suit"	
@@ -123,11 +127,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.arm_par.package = {"packages/outfitassets", "packages/narr_arm_par"}
 		self.arm_par.player_sequence = "spawn_prop_loud_suit"			
 		
-		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
-		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
-		
-		self.arm_und.package = {"packages/outfitassets", "packages/narr_arm_und"}
-		self.arm_und.player_sequence = "spawn_prop_loud_suit"	
+		self.arm_und.package = {"packages/outfitassets3", "packages/narr_arm_und"}
+		self.arm_und.player_sequence = "spawn_prop_scrub"	
 		
 		self.crojob2.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_2"}
 		self.crojob2.player_sequence = "spawn_prop_sneak_suit"	
@@ -177,7 +178,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.watchdogs_2_day.package = {"packages/outfitassets", "packages/narr_watchdogs2_day"}
 		self.watchdogs_2_day.player_sequence = "spawn_prop_loud_suit"
 		
-		self.cane.package = {"packages/outfitassets", "packages/cane"}
+		self.cane.package = {"packages/outfitassets2", "packages/cane"}
 		--reminder to add the biker vo package here
 		self.cane.player_sequence = "spawn_prop_winter_suit"
 								
@@ -186,7 +187,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
-		self.friend.package = {"packages/lvl_friend", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
+		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend"}
 		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--///ZOMBIE LEVELS\\\--
@@ -201,13 +202,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chill.ghost_bonus = nil
 		
 		--///REAPER LEVELS\\\--
-		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets2"}
 		self.mad.player_sequence = "spawn_prop_winter_suit"
 		--We're never actually told where the forest is ;)
 		self.pines.package = {"packages/outfitassets", "packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
 		self.pines.player_sequence = "spawn_prop_loud_suit"	
 		self.pines.ai_group_type = russia	
-	
+		
+		--///BAG FIXES\\\--
+		self.pbr2.max_bags = 20
+		self.spa.max_bags = 8
+		self.fish.max_bags = 20
+		--White House Heist Stelf Bonus--		
+		self.vit.ghost_bonus = 0.15
 	end)
 	
 end

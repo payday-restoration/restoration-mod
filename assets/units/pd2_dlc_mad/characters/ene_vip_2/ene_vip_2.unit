@@ -27,7 +27,7 @@
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="TankCopDamage">
-			<var name="_head_body_name" value="body_helmet_glass" />
+			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="bulldozer" />

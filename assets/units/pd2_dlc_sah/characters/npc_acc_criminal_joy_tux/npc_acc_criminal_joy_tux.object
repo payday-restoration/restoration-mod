@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_sah/characters/npc_acc_criminal_joy_tux/npc_acc_criminal_joy_tux" orientation_object="root_point" />
+	<graphics>
+		<object name="g_body" enabled="true" />
+	</graphics>
+</dynamic_object>

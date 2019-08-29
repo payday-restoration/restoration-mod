@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" orientation_object="root_point" />
+	<sequence_manager file="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" />
+
+<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="g_hands" enabled="true" />
+		<object name="g_stethoscope" enabled="true" />	
+		<object name="g_anna" enabled="true" />
+		<object name="g_melanie" enabled="true" />
+		<object name="g_david" enabled="true" />
+		<object name="g_simon" enabled="true" />
+		<object name="g_lucas" enabled="true" />
+		<object name="g_malin" enabled="true" />	
+		<object name="g_clip" enabled="true" />	
+	</graphics>
+
+</dynamic_object>

@@ -277,6 +277,30 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._rof_mult = 1
 		self._hipfire_mod = 1
 		self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
+		self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
+		if self:weapon_tweak_data().heavy_AP then --for convenience
+			self._can_shoot_through_titan_shield = true
+			self._can_shoot_through_shield = true
+			self._can_shoot_through_wall = true
+			self._can_shoot_through_enemies = true
+			self:weapon_tweak_data().armor_piercing_chance = 1
+		end
+
+		if self:weapon_tweak_data().standard_AP then --for convenience
+			self._can_shoot_through_titan_shield = false
+			self._can_shoot_through_shield = true
+			self._can_shoot_through_wall = true
+			self._can_shoot_through_enemies = true
+			self:weapon_tweak_data().armor_piercing_chance = 1
+		end
+
+		if self:weapon_tweak_data().no_AP then --for convenience
+			self._can_shoot_through_titan_shield = false
+			self._can_shoot_through_shield = false
+			self._can_shoot_through_wall = false
+			self._can_shoot_through_enemies = false
+			self:weapon_tweak_data().armor_piercing_chance = 0
+		end
 		
 		if not self:is_npc() then
 			self._burst_rounds_remaining = 0
@@ -290,6 +314,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 			
 			self._burst_rounds_fired = 0
+		else
+			self._can_shoot_through_titan_shield = false --to prevent npc abuse
 		end		
 		
 		local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
@@ -338,6 +364,40 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
 			end			
+
+			if stats.can_shoot_through_titan_shield then
+				self._can_shoot_through_titan_shield = true
+			end
+
+			if stats.is_pistol then
+				if self:weapon_tweak_data().categories then
+					self:weapon_tweak_data().categories = {"pistol"}
+				end
+			end
+
+			if stats.heavy_AP then --for convenience
+				self._can_shoot_through_titan_shield = true
+				self._can_shoot_through_shield = true
+				self._can_shoot_through_wall = true
+				self._can_shoot_through_enemies = true
+				self:weapon_tweak_data().armor_piercing_chance = 1
+			end
+
+			if stats.standard_AP then --for convenience
+				self._can_shoot_through_titan_shield = false
+				self._can_shoot_through_shield = true
+				self._can_shoot_through_wall = true
+				self._can_shoot_through_enemies = true
+				self:weapon_tweak_data().armor_piercing_chance = 1
+			end
+
+			if stats.no_AP then --for convenience
+				self._can_shoot_through_titan_shield = false
+				self._can_shoot_through_shield = false
+				self._can_shoot_through_wall = false
+				self._can_shoot_through_enemies = false
+				self:weapon_tweak_data().armor_piercing_chance = 0
+			end
 
 			if stats.use_pistol_kick then
 				if self:weapon_tweak_data().kick then

@@ -19,6 +19,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "des")
 		table.insert(self.risk_pd.exclude_stages, "bph")
 		table.insert(self.risk_pd.exclude_stages, "vit")
+		table.insert(self.risk_pd.exclude_stages, "pines")		
 		table.insert(self.risk_pd.exclude_stages, "wwh")
 		table.insert(self.risk_pd.exclude_stages, "arm_for")
 		table.insert(self.risk_pd.exclude_stages, "haunted")
@@ -32,6 +33,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "wetwork")
 		table.insert(self.risk_swat.exclude_stages, "des")	
 		table.insert(self.risk_swat.exclude_stages, "bph")	
+		table.insert(self.risk_swat.exclude_stages, "pines")				
 		table.insert(self.risk_swat.exclude_stages, "vit")	
 		table.insert(self.risk_swat.exclude_stages, "wwh")
 		table.insert(self.risk_swat.exclude_stages, "arm_for")
@@ -47,6 +49,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "des")
 		table.insert(self.risk_fbi.exclude_stages, "bph")
 		table.insert(self.risk_fbi.exclude_stages, "vit")
+		table.insert(self.risk_fbi.exclude_stages, "pines")						
 		table.insert(self.risk_fbi.exclude_stages, "wwh")
 		table.insert(self.risk_fbi.exclude_stages, "arm_for")
 		table.insert(self.risk_fbi.exclude_stages, "haunted")
@@ -59,6 +62,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "pbr")
 		table.insert(self.risk_death_squad.exclude_stages, "wetwork")	
 		table.insert(self.risk_death_squad.exclude_stages, "des")
+		table.insert(self.risk_death_squad.exclude_stages, "pines")								
 		table.insert(self.risk_death_squad.exclude_stages, "bph")
 		table.insert(self.risk_death_squad.exclude_stages, "vit")
 		table.insert(self.risk_death_squad.exclude_stages, "wwh")
@@ -75,6 +79,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "des")
 		table.insert(self.risk_easy_wish.exclude_stages, "bph")
 		table.insert(self.risk_easy_wish.exclude_stages, "vit")
+		table.insert(self.risk_easy_wish.exclude_stages, "pines")										
 		table.insert(self.risk_easy_wish.exclude_stages, "wwh")
 		table.insert(self.risk_easy_wish.exclude_stages, "arm_for")
 		table.insert(self.risk_easy_wish.exclude_stages, "haunted")
@@ -90,6 +95,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "bph")
 		table.insert(self.risk_death_wish.exclude_stages, "vit")
 		table.insert(self.risk_death_wish.exclude_stages, "wwh")
+		table.insert(self.risk_death_wish.exclude_stages, "pines")												
 		table.insert(self.risk_death_wish.exclude_stages, "arm_for")
 		table.insert(self.risk_death_wish.exclude_stages, "haunted")
 		table.insert(self.risk_death_wish.exclude_stages, "nail")
@@ -102,6 +108,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "wetwork")	
 		table.insert(self.risk_sm_wish.exclude_stages, "des")
 		table.insert(self.risk_sm_wish.exclude_stages, "bph")
+		table.insert(self.risk_sm_wish.exclude_stages, "pines")														
 		table.insert(self.risk_sm_wish.exclude_stages, "vit")
 		table.insert(self.risk_sm_wish.exclude_stages, "wwh")
 		table.insert(self.risk_sm_wish.exclude_stages, "arm_for")
@@ -109,6 +116,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "nail")
 		table.insert(self.risk_sm_wish.exclude_stages, "help")
 		table.insert(self.risk_sm_wish.exclude_stages, "hvh")
+		
+		-- Reaper Risk Asset
+		table.insert(self.mad_russian_merc_cameras.stages, "pines")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -128,7 +138,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"nail",
 			"help",
 			"hvh"
-		}	
+		}			
 
 		--Adding Bikers to Biker heist cause it makes sense--
 		self.jungle_1_bikers.stages = {
@@ -155,6 +165,12 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		self.dinner_safe.name_id = "menu_asset_dinner_safe"
 		self.dinner_safe.texture = "guis/textures/pd2/mission_briefing/assets/heist_vlad_asset04_df"
 		self.dinner_safe.stages = {"dinner"}
+		
+		--Boiling Point Test Subjects--
+		self.mad_cyborg_test_subject = {}		
+		self.mad_cyborg_test_subject.name_id = "menu_asset_mad_cyborg_test_subject"
+		self.mad_cyborg_test_subject.texture = "guis/dlcs/mad/textures/pd2/mission_briefing/assets/mad_cyborg_test_subject"
+		self.mad_cyborg_test_subject.stages = {"mad"}
 
 		--Oh my god JC--
 		self.bomb_loot = {}
@@ -183,7 +199,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.bodybags_bag.stages, "firestarter_2_res")
 		table.insert(self.spotter.stages, "firestarter_2_res")
 		table.insert(self.grenade_crate.stages, "firestarter_2_res")
-		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")
+		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")		
 	end
 	
 	--Restoration Heist assets--
@@ -230,3 +246,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		category = "player"
 	}	
 end
+
+Hooks:PostHook( AssetsTweakData, "_init_gage_assets", "SC_GageAssetFix", function(self, tweak_data)	
+	table.insert(self.gage_assignment.exclude_stages, "hvh")
+end)

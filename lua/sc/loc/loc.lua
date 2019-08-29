@@ -13,6 +13,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_es_rep_upgrade"] = "",				
 		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
 		["bm_wp_1911_m_big"] = "Casket Magazine",		
+		["bm_w_lemming"] = "5/7 Pistol",
+		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
+		["bm_w_x_shrew"] = "Barry & Paul",
+		["bm_w_x_1911"] = "Mustang & Sally",
+		["bm_w_tec9"] = "T3K Urban Submachine Gun",
 		["bm_wp_usp_m_big"] = "Casket Magazine",		
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
@@ -22,7 +27,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",			
-		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",								
+		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",			
 		["bm_wp_g3_b_short"] = "Micro Barrel",						
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
@@ -40,6 +45,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
+		["bm_w_m590"] = "Reinbeck 890 Shotgun",
+		["bm_w_m590_desc"] = "The criminal underworld's most popular shotgun is back and better than ever. With 8 rounds and nothing but raw power, the Reinbeck has finally returned to America's most infamous criminal crew.",				
 		["bm_wp_upg_vintage_desc"] = "",
 		["bm_sc_scorpion_double_mag"] = "",
 		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
@@ -113,6 +120,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
 		["bm_sc_bipod_desc"] = "Deploy/Undeploy by pressing $BTN_BIPOD.",
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
+		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects",				
+		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",		
 		["bm_wskn_ak74_rodina_desc_sc"] = "A special-issue AK that - in war and crime - has demonstrated an unquenchable thirst for blood.",
 		["bm_wskn_deagle_bling_desc_sc"] = "A hand-crafted Deagle built as testament to the finest gaming-trained crackshot in the world.",
 
@@ -357,6 +366,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medicdozers"] = "Medic Dozers",
 		["mutator_medicdozers_desc"] = "Medic Dozers can now spawn.",
 		["mutator_medicdozers_longdesc"] = "Whenever a Bulldozer of any variety spawns, there is a 50% chance that it will be replaced by a Medic Bulldozer. \n\nNote: If the Semi-Auto Shotgun Bulldozer mutator is enabled, then the Medic Dozer will have a 33.3% chance of replacing a Black Bulldozer.",
+
+		["mutator_notitans"] = "Budget Cuts",
+		["mutator_notitans_desc"] = "Disables Titan Units.",
+		["mutator_notitans_longdesc"] = "All spawn instances of Titan Units are disabled.",
+
+		["mutator_mememanonly"] = "HAHAHA, FOOLED YOU GUYS!",
+		["mutator_mememanonly_desc"] = "SUFFERING",
+		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",		
+
+		["MutatorMoreDonutsPlus"] = "More Donuts+",
+		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by OMNIA L.P.Fs.",
+		["MutatorMoreDonutsPlus_longdesc"] = "All common enemies are replaced by NYPD Bronco Cops, and all specials are replaced with OMNIA L.P.Fs. \n\nWARNING: By enabling this mutator, you are committing an atrocity.",
+
+		["MutatorJungleInferno"] = "Jungle Inferno",
+		["MutatorJungleInferno_desc"] = "All enemies are replaced by Captain Summers.",
+		["MutatorJungleInferno_longdesc"] = "All non-scripted spawn enemies are replaced by clones of Captain Summers.",						
 		
 		["mutator_minidozers"] = "Semi-Auto Shotgun Bulldozers",
 		["mutator_minidozers_desc"] = "Semi-Auto Shotgun Bulldozers can now spawn.",
@@ -391,7 +416,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 15% faster. Note: Pager response is not affected by this boost.",
+		["menu_crew_interact_desc"] = "Players interact 15% faster.",
 
 		["menu_crew_inspire"] = "Inspiring",
 		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds.",
@@ -534,7 +559,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB	
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased steel sight speed when using Shotguns.\n\nACE: ##$pro##\nYou reload Shotguns ##25%## faster.",																								
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster with shotguns.\n\nACE: ##$pro##\nYou reload shotguns ##25%## faster.",																								
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
@@ -542,7 +567,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting	
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour shotgun's accuracy increased by ##40%## when aiming down your sights.\n\nACE: ##$pro##\nYour shotgun's range increased by ##50%## when aiming down your sights.",																																																																																																																																																																																																
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour shotgun's accuracy is increased by ##40%## while aiming down sights.\n\nACE: ##$pro##\nYour shotgun's range is increased by ##50%## while aiming down sights.",																																																																																																																																																																																																
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -625,7 +650,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Nerves of Steel--	
 			["menu_fast_fire_beta_sc"] = "Nerves of Steel",
-			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sight while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
+			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sights while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "Engineering",
@@ -732,7 +757,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "Counter Strike",
-			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nWhen charging your melee weapon you will counterattack enemies that try to strike you.\n\nACE: ##$pro##\nYou gain the ability to counter attack cloackers and their kicks, knocking them down.",																								
+			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nWhen charging your melee weapon you will counterattack enemies that try to strike you.\n\nACE: ##$pro##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down.",																								
 
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "Bloodthirst",
@@ -994,9 +1019,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "Smoke Bomb effects are increased by ##50%## while you or your allies are standing in the smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\nDamage taken is now reduced by ##25%##. The remaining damage will be applied directly.\n\nThe ##25%## reduced damage will be applied over-time (##16## seconds) instead.\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a ##30## second cooldown but time remaining will be lessened by ##1## second per enemy killed.\n\nAll of your ##armor is converted and applied to your health.##\n\n##Armor Deflection is disabled while using this perk deck.##",	
-		["menu_deck19_3_desc_sc"] = "After not taking damage for ##6## seconds any damage-over-time you are still waiting to receive will be negated.",	
-		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any damage-over-time you are still waiting to receive will be negated.",	
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##16## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\n Whenever damage-over-time is negated, you heal for ##300%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 40% health.##\n\n##Armor Deflection is disabled while using this perk deck.##",	
+		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##1## second for each enemy you kill.",	
+		["menu_deck19_5_desc_sc"] = "After not taking damage for ##5## seconds any remaining damage-over-time will be negated.",
+		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask will be reduced by ##6## seconds for each enemy you kill.",
+		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--
 		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nEach enemy you or the tagged unit kills will now heal you for ##25## health and the tagged unit for ##12.5## health.\n\nEnemies you kill will extend the duration by ##2## seconds.\n\nThe effect will last for a duration of ##12## seconds and has a cooldown of ##60## seconds.",

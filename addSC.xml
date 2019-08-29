@@ -1206,7 +1206,7 @@
 
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_nm" />	
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/murky_heavy_df" />	
+	<texture path="units/pd2_mod_nypd/characters//murky_heavy_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/joker_heavy_df" />			
 	
 	<!--fuck u183 what a pile of shit-->
@@ -1233,6 +1233,8 @@
 	<unit path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" load="true" force="true"/>				
 	<material_config path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2_contour" force="true"/>
 	<model path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>	
+	
+	<texture path="units/payday2/characters/shared_textures/mask_df" force="true"/>	
 	
 	<!--new zeals start-->
 	<!--sg553-->

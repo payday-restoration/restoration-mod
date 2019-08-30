@@ -39,6 +39,56 @@ function DLCTweakData:init(...)
 				type_items = "masks",
 				item_entry = "courier_stash",
 				amount = 1
+			},		
+			{
+				type_items = "masks",
+				item_entry = "female_mask",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "female_mask_blood",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "female_mask_clown",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "male_mask",
+				amount = 1
+			},		
+			{
+				type_items = "masks",
+				item_entry = "male_mask_blood",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "male_mask_clown",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "twister_mask",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "voodoo_mask",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "f1",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "sweettooth",
+				amount = 1
 			},
 			{
 				type_items = "materials",
@@ -151,9 +201,24 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "weapon_mods",
+				item_entry = "wpn_fps_shot_r870_s_folding_ext",
+				amount = 3
+			},						
+			{
+				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_i_slower_rof",
 				amount = 3
 			},	
+			{
+				type_items = "weapon_mods",
+				item_entry = "wpn_lmg_rpk_m_ban",
+				amount = 3
+			},				
+			{
+				type_items = "weapon_mods",
+				item_entry = "wpn_fps_upg_i_93r",
+				amount = 3
+			},				
 			{
 				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_i_faster_rof",

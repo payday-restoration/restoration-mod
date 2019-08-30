@@ -1,0 +1,16 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/props/gen_prop_security_timelock/gen_prop_security_timelock" />
+	<network sync="spawn"/>
+	<dependencies>
+			<depends_on font="fonts/font_digital" />
+	</dependencies>	
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension class="UnitDamage" name="damage" />		
+		<extension class="DigitalGui" name="digital_gui" >
+			<var name="_gui_object" value="g_display" />
+		</extension>
+	</extensions>
+	<sounds>
+	</sounds>
+</unit>

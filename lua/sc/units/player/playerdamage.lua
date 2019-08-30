@@ -44,6 +44,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._damage_to_hot_stack = {}
 		self._armor_stored_health = 0
 		self._can_take_dmg_timer = 0
+		--self._dodge_meter = 0 --Amount of dodge built up as meter.
 		self._regen_on_the_side_timer = 0
 		self._regen_on_the_side = false
 		self._interaction = managers.interaction
@@ -161,6 +162,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}	
 	end
 	PlayerDamage._UPPERS_COOLDOWN = 60
+	
 	local player_damage_melee = PlayerDamage.damage_melee
 	function PlayerDamage:damage_melee(attack_data)
 		local player_unit = managers.player:player_unit()
@@ -180,7 +182,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						else
 							attack_data.attacker_unit:damage():run_sequence_simple("decloak")
 							attack_data.attacker_unit:sound():say("i03", true, nil, true)
-							managers.player:set_player_state("incapacitated")
+							managers.player:set_player_state("arrested")
 						end
 					end				
 				end		
@@ -199,7 +201,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
             end
         end
         return orig_dmg_xpl(self,attack_data,...)
-    end 
+	end 
 	
 	--Lets you heal with full HP--
 	function PlayerDamage.full_revives(self)
@@ -220,7 +222,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerDamage:damage_bullet(attack_data, ...)
 		if not self:_chk_can_take_dmg() then
-			RestorationCore.log_shit("SC: Bullet, cant take damage")
+			restoration.log_shit("SC: Bullet, cant take damage")
 			return
 		end
 		local damage_info = {
@@ -229,7 +231,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		local pm = managers.player
 		local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
-		RestorationCore.log_shit("SC: Bullet, starting damage: " .. attack_data.damage)
+		restoration.log_shit("SC: Bullet, starting damage: " .. attack_data.damage)
 		attack_data.damage = attack_data.damage * dmg_mul
 		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
 		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
@@ -239,12 +241,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if managers.enemy:is_enemy(attack_data.attacker_unit) then
 			local dicks = tweak_data.character[attack_data.attacker_unit:base()._tweak_table]
-			RestorationCore.log_shit("SC DICKS: " .. tostring(dicks.use_factory))
+			restoration.log_shit("SC DICKS: " .. tostring(dicks.use_factory))
 			if dicks.use_factory then
 				attack_data.damage = attack_data.damage * 1
 			end
 		end
-		RestorationCore.log_shit("SC: Bullet, ending damage: " .. attack_data.damage)
+		restoration.log_shit("SC: Bullet, ending damage: " .. attack_data.damage)
 		if self._god_mode then
 			if attack_data.damage > 0 then
 				self:_send_damage_drama(attack_data, attack_data.damage)
@@ -253,22 +255,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		elseif self._invulnerable or self._mission_damage_blockers.invulnerable then
 			self:_call_listeners(damage_info)
-			RestorationCore.log_shit("SC: Bullet, Invulnerable")
+			restoration.log_shit("SC: Bullet, Invulnerable")
 			return
 		elseif self:incapacitated() then
-			RestorationCore.log_shit("SC: Bullet, Incapacitated")
+			restoration.log_shit("SC: Bullet, Incapacitated")
 			return
 		elseif self:is_friendly_fire(attack_data.attacker_unit) then
-			RestorationCore.log_shit("SC: Bullet, Friendly Fire")
+			restoration.log_shit("SC: Bullet, Friendly Fire")
 			return
 		elseif self:_chk_dmg_too_soon(attack_data.damage) then
-			RestorationCore.log_shit("SC: Bullet, Damage is too soon")
+			restoration.log_shit("SC: Bullet, Damage is too soon")
 			return
 		elseif self._unit:movement():current_state().immortal then
-			RestorationCore.log_shit("SC: Bullet, I AM IMMORTAL")
+			restoration.log_shit("SC: Bullet, I AM IMMORTAL")
 			return
 		elseif self._revive_miss and math.random() < self._revive_miss then
-			RestorationCore.log_shit("SC: Bullet, Whizzing by like shitty bumper stickers")
+			restoration.log_shit("SC: Bullet, Whizzing by like shitty bumper stickers")
 			self:play_whizby(attack_data.col_ray.position)
 			return
 		end
@@ -286,17 +288,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		dodge_value = 1 - (1 - dodge_value) * (1 - smoke_dodge)
+		--Uncomment this shit to undo legacy dodge
+		--self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Getting attacked gives half your dodge in meter.
+		--if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
 		if dodge_roll < dodge_value then
+			--self._unit:sound():play("pickup_fak_skill") --Auditory feedback, feel free to replace. It looks like play_whizby() is broken.
 			if attack_data.damage > 0 then
-				self:_send_damage_drama(attack_data, 0)
+				--self._dodge_meter = self._dodge_meter - 1.0 --Dodging an attack lets excess dodge above '100' to roll over, so that dodge above 67 is still relevant.
+				self:_send_damage_drama(attack_data, 0) --Resetting the meter feels bad to play with anyway.
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
 			self:_hit_direction(attack_data.attacker_unit:position())
 			self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
+			--self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
 			self._last_received_dmg = attack_data.damage
 			managers.player:send_message(Message.OnPlayerDodge)
+			--managers.hud:set_dodge_value(self._dodge_meter, dodge_value) --Update dodge meter hud element, goes through Hudmanager.lua then HUDtemp.lua.
 			return
+		--[[	
+		else
+			self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Taking damage gives the other half.
+			if dodge_value > 0 then
+				managers.hud:set_dodge_value(self._dodge_meter, dodge_value)
+			end
+		]]--
 		end
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)
@@ -478,6 +494,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerDamage:_calc_health_damage(attack_data)
 		local health_subtracted = 0
 		health_subtracted = self:get_real_health()
+		
+		if managers.player:has_category_upgrade("player", "no_deflection") then		
+			--Nothing
+		else
+			--Deflection--
+			if managers.blackmarket:equipped_armor() == "level_7" then
+				attack_data.damage = attack_data.damage * 0.85
+			elseif managers.blackmarket:equipped_armor() == "level_6" then
+				attack_data.damage = attack_data.damage * 0.85
+			elseif managers.blackmarket:equipped_armor() == "level_5" then
+				attack_data.damage = attack_data.damage * 0.8
+			elseif managers.blackmarket:equipped_armor() == "level_4" then
+				attack_data.damage = attack_data.damage * 0.85		
+			elseif managers.blackmarket:equipped_armor() == "level_3" then
+				attack_data.damage = attack_data.damage * 0.9	
+			elseif managers.blackmarket:equipped_armor() == "level_2" then
+				attack_data.damage = attack_data.damage * 0.95		
+			else
+				attack_data.damage = attack_data.damage * 1
+			end
+		end
+		
 		attack_data.damage = attack_data.damage * managers.player:upgrade_value("player", "real_health_damage_reduction", 1)
 		self:change_health(-attack_data.damage)
 		health_subtracted = health_subtracted - self:get_real_health()
@@ -580,4 +618,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
     end
 	
+end
+
+function PlayerDamage:_max_armor()
+	local max_armor = self:_raw_max_armor()
+
+	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
+		max_armor = 0
+	end
+
+	return max_armor
 end

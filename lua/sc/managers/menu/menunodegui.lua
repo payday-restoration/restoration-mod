@@ -27,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				Global._friendsonly_warning_shown = true
 				QuickMenu:new(
 					"SC's Mod",
-					"Warning! You are using Spawn Faster or Harder Difficulty (and possibly some other mods) which is known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Spawn Faster/Harder Difficulty or SC's Mod before reporting anything to BRAND0 or Restoration.",
+					"Warning! You are using Spawn Faster or Harder Difficulty (and possibly some other mods) which are known to have some incompatibilities with SC's Mod! If you are experiencing issues, please disable Spawn Faster/Harder Difficulty or SC's Mod before reporting anything to BRAND0 or Restoration.",
 					{
 						{
 							text = "ok",
@@ -99,6 +99,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end 
+    if not SystemFS:exists("mods/voiceline-framework-master/mod.txt") then
+		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
+		function MenuNodeGui:_setup_item_rows(node, ...)
+			_setup_item_rows_original(self, node, ...)
+			if not Global._friendsonly_warning_shown then
+				Global._friendsonly_warning_shown = true
+				QuickMenu:new(
+					"SC's Mod",
+					"Warning! You are missing Voiceline Framework, which is required for the mod to function correctly. Neglecting to install Voiceline Framework will result in the game crashing frequently.",
+					{
+						{
+							text = "ok",
+							is_cancel_button = true
+						}
+					},
+					true
+				)
+			end
+		end
+	end 	
     --[[if SystemFS:exists("mods/Monkeepers/mod.txt") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)
@@ -119,7 +139,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end]]--   
-	if SystemFS:exists("assets/mod_overrides/trap medic") then
+	if SystemFS:exists("assets/mod_overrides/improved medic") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)
 			_setup_item_rows_original(self, node, ...)
@@ -127,7 +147,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				Global._friendsonly_warning_shown = true
 				QuickMenu:new(
 					"SC's Mod",
-					"you are using trap medic seriously what the fuck",
+					"Oh cool, an improved medic! Wait, that's not an improvement! Jesus H. fucking Christ! What the FUCK is wrong with you!?",
 					{
 						{
 							text = "ok",

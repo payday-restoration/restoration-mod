@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_glace/architecture/glc_ext_bridge/glc_ext_bridge" orientation_object="rp_glc_ext_glow_plane" />
+	<graphics>
+		<object name="g_glow_plane" enabled="true" />
+	</graphics>
+</dynamic_object>

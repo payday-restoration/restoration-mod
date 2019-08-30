@@ -1,0 +1,44 @@
+<materials version="3">
+    <material name="mat_box" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_box_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_box_nm"/>
+    </material>
+    <material name="mat_jewels" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_nm"/>
+        <self_illumination_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_il"/>
+        <variable value="match" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="mat_jewels_vtc" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_nm"/>
+        <self_illumination_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_il"/>
+        <variable value="match" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="mat_chains" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_chains_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_chains_nm"/>
+    </material>
+    <material name="mat_chains_vtc" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_chains_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_chains_nm"/>
+    </material>
+    <material name="mat_jewels_alpha" render_template="generic:ALPHA_MASKED:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_df"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+        <variable value="0.18300001323223" type="scalar" name="alpha_ref"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_nm"/>
+        <self_illumination_texture file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_jewels_il"/>
+        <variable value="match" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

@@ -1,0 +1,8 @@
+<dynamic_object>
+    <diesel orientation_object="rp_female_mask_01" materials="units/pd2_mod_beta/msk_female_mask/msk_female_mask" />
+    <graphics>
+        <object enabled="true" name="g_female_mask_01" />
+    </graphics>
+	
+
+</dynamic_object>

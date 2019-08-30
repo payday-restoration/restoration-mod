@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage" orientation_object="rp_stn_prop_lamp_garage" />
+  <sequence_manager file="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_stn_prop_lamp_garage" />
+      <object name="c_stn_prop_lamp_garage" collision_type="convex" padding="-2"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="metal">
+    <decal_mesh name="g_stn_prop_lamp_garage" enabled="true" material="metal"/>
+	<decal_mesh name="g_stn_prop_lamp_garage_lamp" enabled="true" material="glass_breakable"/>
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_stn_prop_lamp_garage" enabled="true" />
+    <object name="g_stn_prop_lamp_garage_lamp" enabled="true" />
+  </graphics>
+  <objects>
+    <object name="e_01" enabled="true" />
+    <object name="snap_stn_prop_lamp_garage" enabled="true" />
+  </objects>
+</dynamic_object>

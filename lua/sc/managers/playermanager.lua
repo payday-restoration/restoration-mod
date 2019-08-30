@@ -63,7 +63,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._saw_panic_when_kill and variant ~= "melee" then
 			local equipped_unit = self:get_current_state()._equipped_unit:base()
 
-			if equipped_unit:is_category("saw") or equipped_unit:is_category("grenade_launcher") then
+			if equipped_unit:is_category("saw") or equipped_unit:is_category("grenade_launcher") or equipped_unit:is_category("bow") or equipped_unit:is_category("crossbow") then
 				local pos = player_unit:position()
 				local skill = self:upgrade_value("saw", "panic_when_kill")
 
@@ -291,6 +291,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		for i = 1, #amount, 1 do
 			self:add_equipment_amount(equipment, amount[i], i)
 		end
-	end	
+	end
+	
+	function PlayerManager:_chk_fellow_crimin_proximity(unit)
+		local players_nearby = 0
+		
+		local enemies = World:find_units_quick(unit, "sphere", unit:position(), 1500, managers.slot:get_mask("criminals_no_deployables"))
+
+		for _, enemy in ipairs(enemies) do
+			players_nearby = players_nearby + 1
+		end
+		
+		if players_nearby <= 0 then
+			--log("uhohstinky")
+		end
+		
+		return players_nearby
+	end
 		
 end

@@ -14,7 +14,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local orig_upd_fire = SentryGunBrain._upd_fire
 	function SentryGunBrain:_upd_fire(t,...)
 		local attention = self._ext_movement:attention()
-		if not (attention and managers.enemy:is_civilian(attention.unit)) then
+		if not (attention and managers.enemy:is_civilian(attention.unit) and not tweak_data.character[attention.unit:base()._tweak_table].is_escort) then
 			return orig_upd_fire(self,t,...)
 		end 
 		
@@ -94,7 +94,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--local orig_target = SentryGunBrain._select_focus_attention 
 
 	--caution: overrides original function, so at increased risk of mod conflict or breaking upon pd2 update
+	local orig_focus = SentryGunBrain._select_focus_attention
 	function SentryGunBrain:_select_focus_attention(t,...)
+		
+		
+		
 		local current_focus = self._attention_obj
 		local current_pos = self._ext_movement:m_head_pos()
 		local current_fwd = nil
@@ -158,7 +162,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--				local objective_type = objective and objective.type
 					local anim_data = target_unit:anim_data()
 					
-					if not anim_data.drop then 					
+					if not (anim_data.drop or tweak_data.character[target_unit:base()._tweak_table].is_escort) then 					
 						best_focus_weight = weight
 						best_focus_attention = attention_info
 						best_focus_reaction = attention_info.reaction
@@ -166,7 +170,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif target_unit and target_unit:base() and target_unit:base()._tweak_table and target_unit:base()._tweak_table == "autumn" then 
 					--don't add autumn to sentry targets list because he's a goddamn invisible hacker					
 					--todo check for invis tag instead of being autumn specifically? no invis tag in resmod currently though
-				else --is cop
+				else
 					best_focus_weight = weight
 					best_focus_attention = attention_info
 					best_focus_reaction = attention_info.reaction

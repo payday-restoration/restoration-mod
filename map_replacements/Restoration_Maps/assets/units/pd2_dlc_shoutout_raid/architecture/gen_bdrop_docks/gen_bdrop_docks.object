@@ -1,0 +1,12 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_shoutout_raid/architecture/gen_bdrop_docks/gen_bdrop_docks" orientation_object="rp_gen_bdrop_docks" />
+	<bodies>
+		<body name="body_static" enabled="true" template="editor">
+			<object name="rp_gen_bdrop_docks" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

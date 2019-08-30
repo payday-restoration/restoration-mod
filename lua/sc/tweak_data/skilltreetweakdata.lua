@@ -783,6 +783,8 @@ function SkillTreeTweakData:init(tweak_data)
 					[2] = {
 						upgrades = {
 							"saw_reload_speed_multiplier",
+							"crossbow_reload_speed_multiplier",
+							"bow_reload_speed_multiplier",
 							"grenade_launcher_reload_speed_multiplier"
 						},
 						cost = self.costs.hightierpro
@@ -1412,6 +1414,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
+						"player_level_1_armor_addend",
 						"player_level_2_armor_addend",
 						"player_level_3_armor_addend",
 						"player_level_4_armor_addend",
@@ -1869,20 +1872,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Bloodthirst--
+			--Counter Strike, formally bloodthirst--
 			self.skills.bloodthirst = {
-				["name_id"] = "menu_bloodthirst_sc",
-				["desc_id"] = "menu_bloodthirst_desc_sc",
-				["icon_xy"] = {11, 6},
+				["name_id"] = "menu_drop_soap_beta_sc",
+				["desc_id"] = "menu_drop_soap_beta_desc_sc",
+				["icon_xy"] = {4, 12},
 				[1] = {
 					upgrades = {
-						"player_melee_damage_stacking_1"
+						"player_counter_strike_melee"
 					},		
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_temp_melee_kill_increase_reload_speed_1"
+						"player_counter_strike_spooc"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1909,20 +1912,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Counter-Strike--
+			--Bloodthirst, formally counter-strike--
 			self.skills.drop_soap = {
-				["name_id"] = "menu_drop_soap_beta",
-				["desc_id"] = "menu_drop_soap_beta_desc",
-				["icon_xy"] = {4, 12},
+				["name_id"] = "menu_bloodthirst_sc",
+				["desc_id"] = "menu_bloodthirst_desc_sc",
+				["icon_xy"] = {11, 6},
 				[1] = {
 					upgrades = {
-						"player_counter_strike_melee"
+						"player_temp_melee_kill_increase_reload_speed_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_counter_strike_spooc"
+						"player_melee_damage_stacking_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -2081,6 +2084,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
+					"player_passive_health_multiplier_4",
 					"team_hostage_health_multiplier",
 					"team_hostage_stamina_multiplier"
 				},
@@ -2141,7 +2145,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_health_multiplier_7",
-					"player_passive_health_multiplier_8",
+					"player_passive_health_multiplier_8",			
 					"player_health_revive_max",
 					"player_passive_loot_drop_multiplier"
 				},
@@ -2494,7 +2498,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_damage_dampener_outnumbered_strong",
 					"melee_stacking_hit_damage_multiplier_2"
 				},
 				cost = 2400,
@@ -2522,12 +2525,12 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "hlm2_deluxe",
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_1"
+					"player_damage_dampener_outnumbered_strong",
 				},
 				cost = 200,
 				icon_xy = {3, 4},
 				name_id = "menu_deck9_1_sc",
-				desc_id = "menu_deck8_1_desc_sc"
+				desc_id = "menu_deck9_1_desc_sc"
 			},
 			deck2,
 			{
@@ -2636,6 +2639,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
+					"player_no_deflection",
 					"player_level_5_armor_addend"
 				},
 				cost = 200,
@@ -3017,8 +3021,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"temporary_chico_injector_2"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
@@ -3029,8 +3032,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4",
+					"temporary_chico_injector_3",
 					"player_chico_preferred_target"
 				},
 				cost = 1000,
@@ -3042,7 +3044,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_5",
 					"player_chico_injector_low_health_multiplier"
 				},
 				cost = 2400,
@@ -3139,8 +3140,9 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_1",
 				upgrades = {
 					"damage_control",
+					"player_no_deflection",
 					"player_damage_control_passive",
-					"player_damage_control_cooldown_drain_1",
+					"player_damage_control_healing",
 					"player_armor_to_health_conversion"
 				},
 				icon_xy = {
@@ -3154,9 +3156,11 @@ function SkillTreeTweakData:init(tweak_data)
 				texture_bundle_folder = "myh",
 				desc_id = "menu_deck19_3_desc_sc",
 				name_id = "menu_deck19_3",
-				upgrades = {"player_damage_control_auto_shrug_1"},
+				upgrades = {
+					"player_damage_control_cooldown_drain_1"
+				},
 				icon_xy = {
-					2,
+					3,
 					0
 				}
 			},
@@ -3166,7 +3170,7 @@ function SkillTreeTweakData:init(tweak_data)
 				texture_bundle_folder = "myh",
 				desc_id = "menu_deck19_5_desc_sc",
 				name_id = "menu_deck19_5",
-				upgrades = {"player_damage_control_auto_shrug_2"},
+				upgrades = {"player_damage_control_auto_shrug_1"},
 				icon_xy = {
 					2,
 					0
@@ -3176,7 +3180,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 2400,
 				texture_bundle_folder = "myh",
-				desc_id = "menu_deck19_7_desc",
+				desc_id = "menu_deck19_7_desc_sc",
 				name_id = "menu_deck19_7",
 				upgrades = {"player_damage_control_cooldown_drain_2"},
 				icon_xy = {
@@ -3188,11 +3192,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 4000,
 				texture_bundle_folder = "myh",
-				desc_id = "menu_deck19_9_desc",
+				desc_id = "menu_deck19_9_desc_sc",
 				name_id = "menu_deck19_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_damage_control_healing"
+					"player_health_revive_max"
 				},
 				icon_xy = {
 					0,
@@ -3206,12 +3210,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 200,
 				texture_bundle_folder = "ecp",
-				desc_id = "menu_deck20_1_desc",
+				desc_id = "menu_deck20_1_desc_sc",
 				name_id = "menu_deck20_1",
 				upgrades = {
 					"tag_team",
-					"player_tag_team_base",
-					"player_tag_team_cooldown_drain_1"
+					"player_tag_team_base"
 				},
 				icon_xy = {
 					0,
@@ -3225,21 +3228,22 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_3_desc_sc",
 				name_id = "menu_deck20_3",
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"player_tag_team_cooldown_drain_1"
 				},
 				icon_xy = {
-					1,
-					0
+					0,
+					1
 				}
 			},
 			deck4,
 			{
 				cost = 1000,
 				texture_bundle_folder = "ecp",
-				desc_id = "menu_deck20_5_desc",
+				desc_id = "menu_deck20_5_desc_sc",
 				name_id = "menu_deck20_5",
-				upgrades = {"player_tag_team_damage_absorption"},
+				upgrades = {
+					"player_tag_team_damage_absorption_1"
+				},
 				icon_xy = {
 					2,
 					0
@@ -3252,12 +3256,10 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_7_desc_sc",
 				name_id = "menu_deck20_7",
 				upgrades = {
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4",
-					"player_passive_health_multiplier_5"
+					"player_tag_team_damage_absorption_2"
 				},
 				icon_xy = {
-					3,
+					2,
 					0
 				}
 			},
@@ -3265,7 +3267,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 4000,
 				texture_bundle_folder = "ecp",
-				desc_id = "menu_deck20_9_desc",
+				desc_id = "menu_deck20_9_desc_sc",
 				name_id = "menu_deck20_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
@@ -3282,11 +3284,12 @@ function SkillTreeTweakData:init(tweak_data)
 		}
 		
 	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
+	--Hacker--
 	local sc_nip = {
 			{
 				cost = 200,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_1_desc",
+				desc_id = "menu_deck21_1_desc_sc",
 				name_id = "menu_deck21_1",
 				upgrades = {
 					"pocket_ecm_jammer",
@@ -3301,13 +3304,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 400,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_3_desc",
+				desc_id = "menu_deck21_3_desc_sc",
 				name_id = "menu_deck21_3",
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2",
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4"					
+					"player_passive_dodge_chance_1"
 				},
 				icon_xy = {
 					1,
@@ -3318,7 +3318,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 1000,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_5_desc",
+				desc_id = "menu_deck21_5_desc_sc",
 				name_id = "menu_deck21_5",
 				upgrades = {
 					"player_pocket_ecm_heal_on_kill_1"
@@ -3332,9 +3332,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 2400,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_7_desc",
+				desc_id = "menu_deck21_7_desc_sc",
 				name_id = "menu_deck21_7",
-				upgrades = {"player_pocket_ecm_kill_dodge_1"},
+				upgrades = {
+					"player_passive_dodge_chance_2"
+				},
 				icon_xy = {
 					3,
 					0
@@ -3344,7 +3346,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				cost = 4000,
 				texture_bundle_folder = "joy",
-				desc_id = "menu_deck21_9_desc",
+				desc_id = "menu_deck21_9_desc_sc",
 				name_id = "menu_deck21_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
@@ -3358,6 +3360,130 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_21_desc",
 			name_id = "menu_st_spec_21"
 		}	
+		
+	--Blank Perk Deck
+	local sc_blank = {
+			name_id = "menu_st_spec_0",
+			desc_id = "menu_st_spec_0_desc",
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},			
+			{
+				upgrades = {
+					},
+				cost = 0,
+				icon_xy = {900, 5},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 0},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+					{
+				upgrades = {
+				},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			}
+		}		
+		
+	--Wildcard Perk Deck--
+	local sc_yes_man = {
+			name_id = "menu_st_spec_00",
+			desc_id = "menu_st_spec_00_desc",
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck2,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck4,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck6,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			},
+			deck8,
+			{
+				upgrades = {},
+				cost = 0,
+				icon_xy = {900, 8},
+				name_id = "menu_deck0_1",
+				desc_id = "menu_deck0_1_desc"
+			}
+		}		
 
 	--Then we insert our new perk decks into the table--
 	self.specializations[1] = sc_crew_chief
@@ -3381,6 +3507,8 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[19] = sc_august	
 	self.specializations[20] = sc_nose
 	self.specializations[21] = sc_nip
+	self.specializations[22] = sc_blank
+	self.specializations[23] = sc_yes_man
 end
 
 end

@@ -184,78 +184,89 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 	
+	function GroupAIStateBesiege:chk_assault_active_atm()  
+	   if not self._task_data.assault.active then
+	     	return
+	   	--log("not assault active")
+	   end
+	   
+	   return true
+    end
+	
+	function GroupAIStateBesiege:_voice_groupentry(group)
+	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
+	if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
+		for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
+			local randomgroupcallout = math.random(1, 100)
+			--assign tactic-identifiers for this in groupaistatebesiege on a group-to-group basis
+			--groupcs is for assault team, grouphrt is for rescue team,groupcsr/grouphrtr picks a random letter, groupany depends on whether assault is active and picks a random letter or not
+			if tactic_name == "groupcs1" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+			elseif tactic_name == "groupcs2" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+			elseif tactic_name == "groupcs3" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+			elseif tactic_name == "groupcs4" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+			elseif tactic_name == "grouphrt1" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+			elseif tactic_name == "grouphrt2" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+			elseif tactic_name == "grouphrt3" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+			elseif tactic_name == "grouphrt4" then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+			elseif tactic_name == "groupcsr" then
+				if randomgroupcallout < 25 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+				elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+				else
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+				end
+			elseif tactic_name == "grouphrtr" then
+				if randomgroupcallout < 25 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+				elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+				else
+					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+				end
+			elseif tactic_name == "groupany" then
+				if self._task_data.assault.active then
+					if randomgroupcallout < 25 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+					else
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+					end
+				else
+					if randomgroupcallout < 25 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+					else
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+					end
+				end
+			end
+		end
+	end
+
 	function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 		--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 	end
 
-	function GroupAIStateBesiege:_voice_looking_for_angle(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "look_for_angle") then
-			else
-			end
-		end
-	end	
-	
-	function GroupAIStateBesiege:_voice_open_fire_start(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
-			else
-			end
-		end
-	end
-
-	function GroupAIStateBesiege:_voice_push_in(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "push") then
-			else
-			end
-		end
-	end
-
-	function GroupAIStateBesiege:_voice_gtfo(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "retreat") then
-			else
-			end
-		end
-	end
-	
-	function GroupAIStateBesiege:_voice_deathguard_start(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "deathguard") then
-			else
-			end
-		end
-	end	
-	
-	function GroupAIStateBesiege:_voice_smoke(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "smoke") then
-			else
-			end
-		end
-	end	
-	
-	function GroupAIStateBesiege:_voice_flash(group)
-		for u_key, unit_data in pairs(group.units) do
-			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "flash_grenade") then
-			else
-			end
-		end
-	end
-
-	function GroupAIStateBesiege:_voice_dont_delay_assault(group)
-		local time = self._t
-		for u_key, unit_data in pairs(group.units) do
-			if not unit_data.unit:sound():speaking(time) then
-				unit_data.unit:sound():say("p01", true, nil)
-				return true
-			end
-		end
-		return false
-	end
-
-    function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
+	function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, detonate_pos)
     	if task_data.use_smoke and not self:is_smoke_grenade_active() then
     		local shooter_pos, shooter_u_data = nil
     		local duration = tweak_data.group_ai.smoke_grenade_lifetime
@@ -415,7 +426,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						  local current_objective = group.objective
 				              if current_objective.coarse_path then
 			                      if not u_data.unit:sound():speaking(time) then
-	                      		    u_data.unit:sound():say("m01", true)
+	                      		    u_data.unit:sound():say("r01", true)
 						        end	
 	                        end					   
 				        end	
@@ -430,7 +441,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						  local current_objective = group.objective
 				              if current_objective.coarse_path then
 			                      if not u_data.unit:sound():speaking(time) then
-	                      		    u_data.unit:sound():say("m01", true)
+	                      		    u_data.unit:sound():say("r01", true)
 						        end	
 	                        end					   
 				        end	
@@ -804,7 +815,58 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							return
 						end
 					end
-				elseif tactic_name == "charge" and not current_objective.moving_out and group.in_place_t and (self._t - group.in_place_t > 15 or self._t - group.in_place_t > 4 and self._drama_data.amount <= tweak_data.drama.low) and next(current_objective.area.criminal.units) and group.is_chasing and not current_objective.charge then
+				elseif tactic_name == "hunter" and not phase_is_anticipation then
+					if current_objective.tactic == tactic_name then
+						for u_key, u_data in pairs(self._char_criminals) do
+							if u_data.unit then
+								local players_nearby = managers.player:_chk_fellow_crimin_proximity(u_data.unit)
+								local crim_nav_seg = u_data.tracker:nav_segment()
+								if players_nearby and players_nearby <= 0 then
+									if current_objective.area.nav_segs[crim_nav_seg] then
+										return
+									end
+								end
+							end
+						end
+					end
+					local closest_crim_u_data, closest_crim_dis_sq = nil
+					for u_key, u_data in pairs(self._char_criminals) do
+						if u_data.unit then
+							local players_nearby = managers.player:_chk_fellow_crimin_proximity(u_data.unit)
+							local closest_u_id, closest_u_data, closest_u_dis_sq = self._get_closest_group_unit_to_pos(u_data.m_pos, group.units)
+							if players_nearby and players_nearby <= 0 then
+								if closest_u_dis_sq and (not closest_crim_dis_sq or closest_crim_dis_sq > closest_u_dis_sq) then
+									closest_crim_u_data = u_data
+									closest_crim_dis_sq = closest_u_dis_sq
+								end
+							end
+						end
+					end
+					if closest_crim_u_data then
+						local search_params = {
+							from_tracker = group_leader_u_data.unit:movement():nav_tracker(),
+							to_tracker = closest_crim_u_data.tracker,
+							id = "GroupAI_deathguard",
+							access_pos = self._get_group_acces_mask(group)
+						}
+						local coarse_path = managers.navigation:search_coarse(search_params)
+						if coarse_path then
+							local grp_objective = {
+								type = "assault_area",
+								tactic = "hunter",
+								distance = 9999,
+								follow_unit = closest_crim_u_data.unit,
+								area = self:get_area_from_nav_seg_id(coarse_path[#coarse_path][1]),
+								coarse_path = coarse_path,
+								attitude = "engage",
+								moving_in = true
+							}
+							group.is_chasing = true
+							self:_set_objective_to_enemy_group(group, grp_objective)
+							return
+						end
+					end
+				elseif tactic_name == "charge" and not current_objective.moving_out and group.in_place_t and (self._t - group.in_place_t > 15 or self._t - group.in_place_t > 4 and self._drama_data.amount <= tweak_data.drama.low) and next(current_objective.area.criminal.units) and group.is_chasing and not current_objective.charge and not (tactics_map and tactics_map.obstacle) then
 					charge = true
 				end
 			end
@@ -841,7 +903,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif not phase_is_anticipation and not current_objective.open_fire then
 					open_fire = true
 			        self:_voice_open_fire_start(group)
-				elseif not phase_is_anticipation and group.in_place_t and (group.is_chasing or not tactics_map or not tactics_map.ranged_fire or self._t - group.in_place_t > 15) then
+				elseif not phase_is_anticipation and group.in_place_t and (group.is_chasing or not tactics_map or not tactics_map.ranged_fire or not tactics_map.obstacle or self._t - group.in_place_t > 15) then
 					push = true
 				elseif phase_is_anticipation and current_objective.open_fire then
 					pull_back = true			
@@ -877,35 +939,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local search_area = table.remove(to_search_areas, 1)
 				if next(search_area.criminal.units) then
 					local assault_from_here = true
-					if not push and tactics_map and tactics_map.flank then
+					if tactics_map and tactics_map.flank then --for the love of frick just let flankers flank
 						local assault_from_area = found_areas[search_area]
+
 						if assault_from_area ~= "init" then
 							local cop_units = assault_from_area.police.units
+
 							for u_key, u_data in pairs(cop_units) do
-								if u_data.group and u_data.group ~= group and u_data.group.objective.type == "assault_area" then
+								if u_data.group and u_data.group.objective.type == "assault_area" then
 									assault_from_here = false
-									if not alternate_assault_area or math.random() < 0.5 then
+
+									if not alternate_assault_area then
 										local search_params = {
+											id = "GroupAI_assault",
 											from_seg = current_objective.area.pos_nav_seg,
 											to_seg = search_area.pos_nav_seg,
-											id = "GroupAI_assault",
 											access_pos = self._get_group_acces_mask(group),
 											verify_clbk = callback(self, self, "is_nav_seg_safe")
 										}
 										alternate_assault_path = managers.navigation:search_coarse(search_params)
+
 										if alternate_assault_path then
 											self:_merge_coarse_path_by_area(alternate_assault_path)
+
 											alternate_assault_area = search_area
 											alternate_assault_area_from = assault_from_area
-						                	self:_voice_deathguard_start(group) --roger/copy that
 										end
 									end
+
 									found_areas[search_area] = nil
-								else
+
+									break
 								end
 							end
 						end
 					end
+					
 					if assault_from_here then
 						local search_params = {
 							from_seg = current_objective.area.pos_nav_seg,
@@ -930,11 +999,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end
 			until #to_search_areas == 0
-			if not assault_area and alternate_assault_area then
+			
+			if not assault_area and alternate_assault_area or tactics_map and tactics_map.flank and alternate_assault_area then
 				assault_area = alternate_assault_area
 				found_areas[assault_area] = alternate_assault_area_from
 				assault_path = alternate_assault_path
 			end
+			
 			if assault_area and assault_path then
 				local assault_area = push and assault_area or found_areas[assault_area] == "init" and objective_area or found_areas[assault_area]
 				if #assault_path > 2 and assault_area.nav_segs[assault_path[#assault_path - 1][1]] then
@@ -955,6 +1026,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					used_grenade = used_grenade or second_chk(self, group, self._task_data.assault, detonate_pos)
 					self:_voice_push_in(group)
 				end
+				
 				if not push or used_grenade then
 					local grp_objective = {
 						type = "assault_area",
@@ -1017,5 +1089,245 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+	
+	function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last)
+		local nr_units_spawned = 0
+		local produce_data = {
+			name = true,
+			spawn_ai = {}
+		}
+		local group_ai_tweak = tweak_data.group_ai
+		local spawn_points = spawn_task.spawn_group.spawn_pts
 
+		local function _try_spawn_unit(u_type_name, spawn_entry)
+			if GroupAIStateBesiege._MAX_SIMULTANEOUS_SPAWNS <= nr_units_spawned and not force then
+				return
+			end
+
+			local hopeless = true
+			local current_unit_type = tweak_data.levels:get_ai_group_type()
+
+			for _, sp_data in ipairs(spawn_points) do
+				local category = group_ai_tweak.unit_categories[u_type_name]
+
+				if (sp_data.accessibility == "any" or category.access[sp_data.accessibility]) and (not sp_data.amount or sp_data.amount > 0) and sp_data.mission_element:enabled() then
+					hopeless = false
+
+					if sp_data.delay_t < self._t then
+						local units = category.unit_types[current_unit_type]
+						produce_data.name = units[math.random(#units)]
+						produce_data.name = managers.modifiers:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
+						local spawned_unit = sp_data.mission_element:produce(produce_data)
+						local u_key = spawned_unit:key()
+						local objective = nil
+
+						if spawn_task.objective then
+							objective = self.clone_objective(spawn_task.objective)
+						else
+							objective = spawn_task.group.objective.element:get_random_SO(spawned_unit)
+
+							if not objective then
+								spawned_unit:set_slot(0)
+
+								return true
+							end
+
+							objective.grp_objective = spawn_task.group.objective
+						end
+
+						local u_data = self._police[u_key]
+
+						self:set_enemy_assigned(objective.area, u_key)
+
+						if spawn_entry.tactics then
+							u_data.tactics = spawn_entry.tactics
+							u_data.tactics_map = {}
+
+							for _, tactic_name in ipairs(u_data.tactics) do
+								u_data.tactics_map[tactic_name] = true
+							end
+						end
+
+						spawned_unit:brain():set_spawn_entry(spawn_entry, u_data.tactics_map)
+
+						u_data.rank = spawn_entry.rank
+
+						self:_add_group_member(spawn_task.group, u_key)
+
+						if spawned_unit:brain():is_available_for_assignment(objective) then
+							if objective.element then
+								objective.element:clbk_objective_administered(spawned_unit)
+							end
+
+							spawned_unit:brain():set_objective(objective)
+						else
+							spawned_unit:brain():set_followup_objective(objective)
+						end
+
+						nr_units_spawned = nr_units_spawned + 1
+
+						if spawn_task.ai_task then
+							spawn_task.ai_task.force_spawned = spawn_task.ai_task.force_spawned + 1
+							spawned_unit:brain()._logic_data.spawned_in_phase = spawn_task.ai_task.phase
+						end
+
+						sp_data.delay_t = self._t + sp_data.interval
+
+						if sp_data.amount then
+							sp_data.amount = sp_data.amount - 1
+						end
+
+						return true
+					end
+				end
+			end
+
+			if hopeless then
+				debug_pause("[GroupAIStateBesiege:_upd_group_spawning] spawn group", spawn_task.spawn_group.id, "failed to spawn unit", u_type_name)
+
+				return true
+			end
+		end
+
+		for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+			if not group_ai_tweak.unit_categories[u_type_name].access.acrobatic then
+				for i = spawn_info.amount, 1, -1 do
+					local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
+
+					if success then
+						spawn_info.amount = spawn_info.amount - 1
+					end
+
+					break
+				end
+			end
+		end
+
+		for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+			for i = spawn_info.amount, 1, -1 do
+				local success = _try_spawn_unit(u_type_name, spawn_info.spawn_entry)
+
+				if success then
+					spawn_info.amount = spawn_info.amount - 1
+				end
+
+				break
+			end
+		end
+
+		local complete = true
+
+		for u_type_name, spawn_info in pairs(spawn_task.units_remaining) do
+			if spawn_info.amount > 0 then
+				complete = false
+
+				break
+			end
+		end
+
+		if complete then
+			spawn_task.group.has_spawned = true
+			self:_voice_groupentry(spawn_task.group)
+			table.remove(self._spawning_groups, use_last and #self._spawning_groups or 1)
+
+			if spawn_task.group.size <= 0 then
+				self._groups[spawn_task.group.id] = nil
+			end
+		end
+	end
+
+end
+	
+	function GroupAIStateBesiege:_voice_saw()
+		for group_id, group in pairs(self._groups) do
+			for u_key, u_data in pairs(group.units) do
+				if u_data.char_tweak.chatter.saw then
+					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "saw")
+				else
+					
+				end
+			end
+		end
+	end
+
+
+	function GroupAIStateBesiege:_voice_sentry()
+		for group_id, group in pairs(self._groups) do
+			for u_key, u_data in pairs(group.units) do
+				if u_data.char_tweak.chatter.sentry then
+					self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "sentry")
+				else
+					
+				end
+			end
+		end
+	end
+	
+	function GroupAIStateBesiege:_voice_looking_for_angle(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "look_for_angle") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_open_fire_start(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
+			else
+			end
+		end
+	end
+
+	function GroupAIStateBesiege:_voice_push_in(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "push") then
+			else
+			end
+		end
+	end
+
+	function GroupAIStateBesiege:_voice_gtfo(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "retreat") then
+			else
+			end
+		end
+	end
+	
+	function GroupAIStateBesiege:_voice_deathguard_start(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "deathguard") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_smoke(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "smoke") then
+			else
+			end
+		end
+	end	
+	
+	function GroupAIStateBesiege:_voice_flash(group)
+		for u_key, unit_data in pairs(group.units) do
+			if unit_data.char_tweak.chatter.ready and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "flash_grenade") then
+			else
+			end
+		end
+	end
+
+	function GroupAIStateBesiege:_voice_dont_delay_assault(group)
+		local time = self._t
+		for u_key, unit_data in pairs(group.units) do
+			if not unit_data.unit:sound():speaking(time) then
+				unit_data.unit:sound():say("p01", true, nil)
+				return true
+			end
+		end
+		return false
+	end
+	
 end

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini" />
+   <dependencies>
+	<depends_on bnk="soundbanks/weapon_minigun"/>
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="EnemyAkimboWeaponBase" >
+			<var name="name_id" value="x_mini_npc" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

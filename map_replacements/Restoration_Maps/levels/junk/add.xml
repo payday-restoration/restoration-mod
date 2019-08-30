@@ -1,0 +1,15 @@
+<table directory="assets">
+	<unit_load name="units/payday2/equipment/gen_pku_gas_can_2/gen_pku_gas_can_2">
+		<cooked_physics force="true" path="units/payday2/equipment/gen_pku_gas_can_2/gen_pku_gas_can_2" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_pku_gas_can_2/gen_pku_gas_can_2" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_pku_gas_can_2/gen_pku_gas_can_2" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_pku_gas_can_2/gen_pku_gas_can_2" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_pku_gas_can_2/gen_pku_gas_can_2" unload="true"/>
+	</unit_load>
+	<unit_load name="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard">
+		<unit force="true" path="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" unload="true"/>
+		<object force="true" path="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" unload="true"/>
+		<material_config force="true" path="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" unload="true"/>
+	</unit_load>
+</table>

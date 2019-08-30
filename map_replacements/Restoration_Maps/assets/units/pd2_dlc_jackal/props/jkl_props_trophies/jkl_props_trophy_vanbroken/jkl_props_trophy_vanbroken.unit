@@ -1,0 +1,6 @@
+<unit type="chl" slot="1">
+	<object file="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_vanbroken/jkl_props_trophy_vanbroken" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

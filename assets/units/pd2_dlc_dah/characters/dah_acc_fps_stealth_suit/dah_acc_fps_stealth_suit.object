@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" orientation_object="root_point" />
+
+<graphics>
+	<graphic_group name="GraphicGroupName" enabled="true" culling_object="c_cull">
+		<object name="g_arms" enabled="true" />
+	</graphic_group>
+</graphics>
+
+</dynamic_object>

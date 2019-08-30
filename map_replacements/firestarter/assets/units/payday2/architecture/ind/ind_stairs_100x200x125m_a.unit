@@ -1,0 +1,6 @@
+<unit type="ind" slot="1" >
+    <object file="units/payday2/architecture/ind/ind_stairs_100x200x125m_a" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

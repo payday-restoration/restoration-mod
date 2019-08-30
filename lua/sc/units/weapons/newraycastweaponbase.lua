@@ -13,7 +13,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if _G.IS_VR then
 		--I might have to do something unique for VR, but we'll see.
-	else
+	else	
 		function NewRaycastWeaponBase:clip_full()
 			if self:ammo_base():weapon_tweak_data().tactical_reload then
 				return self:ammo_base():get_ammo_remaining_in_clip() == self:ammo_base():get_ammo_max_per_clip() + self:ammo_base():weapon_tweak_data().tactical_reload
@@ -76,6 +76,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 		end	
 	end
+	
+	NewRaycastWeaponBase.DEFAULT_BURST_SIZE = 3
+	NewRaycastWeaponBase.IDSTRING_SINGLE = Idstring("single")
+	NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 
 	function NewRaycastWeaponBase:_get_spread(user_unit)
 		local current_state = user_unit:movement()._current_state
@@ -98,7 +102,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._spread = tweak_data.weapon.stats.spread[new_spread]
 		local spread_x, spread_y
 		if type(current_spread_value) == "number" then
-			spread_x = self._spread --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
+			spread_x = self._spread * current_spread_value --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
 			spread_y = spread_x
 		else
 			spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)
@@ -173,13 +177,35 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	function NewRaycastWeaponBase:recoil_multiplier(...)
+		local mult = 1
+		if self._delayed_burst_recoil and self:in_burst_mode() and self:burst_rounds_remaining() then
+			mult = 0
+		end
+		
 		if self._name_id == "m134" and not self._vulcan_firing then
-			--return 0
+			return 0
 		end
 
 		return recoil_multiplier_original(self, ...)
 	end
 
+	local on_enabled_original = NewRaycastWeaponBase.on_enabled
+	function NewRaycastWeaponBase:on_enabled(...)
+		self:cancel_burst()
+		return on_enabled_original(self, ...)
+	end
+	
+	local on_disabled_original = NewRaycastWeaponBase.on_disabled
+	function NewRaycastWeaponBase:on_disabled(...)
+		self:cancel_burst()
+		return on_disabled_original(self, ...)
+	end
+	
+	local start_reload_original = NewRaycastWeaponBase.start_reload
+	function NewRaycastWeaponBase:start_reload(...)
+		self:cancel_burst()
+		return start_reload_original(self, ...)
+	end
 
 	function RaycastWeaponBase:_start_spin()
 		if not self._spinning then
@@ -251,6 +277,46 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._rof_mult = 1
 		self._hipfire_mod = 1
 		self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
+		self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
+		if self:weapon_tweak_data().heavy_AP then --for convenience
+			self._can_shoot_through_titan_shield = true
+			self._can_shoot_through_shield = true
+			self._can_shoot_through_wall = true
+			self._can_shoot_through_enemies = true
+			self:weapon_tweak_data().armor_piercing_chance = 1
+		end
+
+		if self:weapon_tweak_data().standard_AP then --for convenience
+			self._can_shoot_through_titan_shield = false
+			self._can_shoot_through_shield = true
+			self._can_shoot_through_wall = true
+			self._can_shoot_through_enemies = true
+			self:weapon_tweak_data().armor_piercing_chance = 1
+		end
+
+		if self:weapon_tweak_data().no_AP then --for convenience
+			self._can_shoot_through_titan_shield = false
+			self._can_shoot_through_shield = false
+			self._can_shoot_through_wall = false
+			self._can_shoot_through_enemies = false
+			self:weapon_tweak_data().armor_piercing_chance = 0
+		end
+		
+		if not self:is_npc() then
+			self._burst_rounds_remaining = 0
+			self._has_auto = not self._locked_fire_mode and (self:can_toggle_firemode() or self:weapon_tweak_data().FIRE_MODE == "auto")
+			self._has_burst_fire = (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
+			--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
+			--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
+			self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
+			self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
+			self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
+			self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
+			
+			self._burst_rounds_fired = 0
+		else
+			self._can_shoot_through_titan_shield = false --to prevent npc abuse
+		end		
 		
 		local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 		for part_id, stats in pairs(custom_stats) do
@@ -292,6 +358,45 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				if self:weapon_tweak_data().animations then
 					self:weapon_tweak_data().animations.reload_name_id = "akm"
 				end
+			end
+			
+			if stats.beretta_burst then
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
+			end			
+
+			if stats.can_shoot_through_titan_shield then
+				self._can_shoot_through_titan_shield = true
+			end
+
+			if stats.is_pistol then
+				if self:weapon_tweak_data().categories then
+					self:weapon_tweak_data().categories = {"pistol"}
+				end
+			end
+
+			if stats.heavy_AP then --for convenience
+				self._can_shoot_through_titan_shield = true
+				self._can_shoot_through_shield = true
+				self._can_shoot_through_wall = true
+				self._can_shoot_through_enemies = true
+				self:weapon_tweak_data().armor_piercing_chance = 1
+			end
+
+			if stats.standard_AP then --for convenience
+				self._can_shoot_through_titan_shield = false
+				self._can_shoot_through_shield = true
+				self._can_shoot_through_wall = true
+				self._can_shoot_through_enemies = true
+				self:weapon_tweak_data().armor_piercing_chance = 1
+			end
+
+			if stats.no_AP then --for convenience
+				self._can_shoot_through_titan_shield = false
+				self._can_shoot_through_shield = false
+				self._can_shoot_through_wall = false
+				self._can_shoot_through_enemies = false
+				self:weapon_tweak_data().armor_piercing_chance = 0
 			end
 
 			if stats.use_pistol_kick then
@@ -370,6 +475,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	--[[	fire rate multipler in-game stuff	]]--
 	function NewRaycastWeaponBase:fire_rate_multiplier()
 		local multiplier = self._rof_mult or 1
+		
+		if self:in_burst_mode() then
+			multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
+		end		
 				
 		if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "fire_rate_multiplier") then
 			if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
@@ -391,6 +500,74 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		return multiplier
 	end
+	
+	local fire_original = NewRaycastWeaponBase.fire
+	function NewRaycastWeaponBase:fire(...)
+		local result = fire_original(self, ...)
+		
+		if result and not self.AKIMBO and self:in_burst_mode() then
+			if self:clip_empty() then
+				self:cancel_burst()
+			else
+				self._burst_rounds_fired = self._burst_rounds_fired + 1
+				self._burst_rounds_remaining = (self._burst_rounds_remaining <= 0 and self._burst_size or self._burst_rounds_remaining) - 1
+				if self._burst_rounds_remaining <= 0 then
+					self:cancel_burst()
+				end
+			end
+		end
+		
+		return result
+	end	
+	
+	local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
+	function NewRaycastWeaponBase:toggle_firemode(...)
+		return self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+	end
+
+	function NewRaycastWeaponBase:_check_toggle_burst()
+		if self:in_burst_mode() then
+			self:_set_burst_mode(false, self.AKIMBO and not self._has_auto)
+			return true
+		elseif (self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE) or (self._fire_mode == NewRaycastWeaponBase.IDSTRING_AUTO and not self:can_toggle_firemode()) then
+			self:_set_burst_mode(true, self.AKIMBO)
+			return true
+		end
+	end
+
+	function NewRaycastWeaponBase:_set_burst_mode(status, skip_sound)
+		self._in_burst_mode = status
+		self._fire_mode = NewRaycastWeaponBase["IDSTRING_" .. (status and "SINGLE" or self._has_auto and "AUTO" or "SINGLE")]
+		
+		if not skip_sound then
+			self._sound_fire:post_event(status and "wp_auto_switch_on" or self._has_auto and "wp_auto_switch_on" or "wp_auto_switch_off")
+		end
+		
+		self:cancel_burst()
+	end
+	
+	function NewRaycastWeaponBase:can_use_burst_mode()
+		return self._has_burst_fire
+	end
+	
+	function NewRaycastWeaponBase:in_burst_mode()
+		return self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions()
+	end
+	
+	function NewRaycastWeaponBase:burst_rounds_remaining()
+		return self._burst_rounds_remaining > 0 and self._burst_rounds_remaining or false
+	end
+	
+	function NewRaycastWeaponBase:cancel_burst(soft_cancel)
+		if self._adaptive_burst_size or not soft_cancel then
+			self._burst_rounds_remaining = 0
+			
+			if self._delayed_burst_recoil and self._burst_rounds_fired > 0 then
+				self._setup.user_unit:movement():current_state():force_recoil_kick(self, self._burst_rounds_fired)
+			end
+			self._burst_rounds_fired = 0
+		end
+	end	
 	
 	--[[	Reload stuff	]]--
 	function NewRaycastWeaponBase:reload_speed_multiplier()

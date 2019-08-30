@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_cas_gen_prop_square_drop_marker_2x2_4" materials="units/pd2_dlc_casino/dev/cas_gen_prop_square_drop_marker_2x2_4/cas_gen_prop_square_drop_marker_2x2_4" />
+  <sequence_manager file="units/pd2_dlc_casino/dev/cas_gen_prop_square_drop_marker_2x2_4/cas_gen_prop_square_drop_marker_2x2_4" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" template="editor">
+        	<object name="rp_cas_gen_prop_square_drop_marker_2x2_4"/>
+        	<object collision_type="box" name="c_cube" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_goal" />
+        <object enabled="true" name="g_icon" />
+    </graphics>
+</dynamic_object>

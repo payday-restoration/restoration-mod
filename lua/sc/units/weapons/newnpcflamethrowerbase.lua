@@ -10,7 +10,7 @@ function SummersFlamethrowerBase:setup_default()
 	self._use_trails = false
 end
 function SummersFlamethrowerBase:_spawn_muzzle_effect(from_pos, direction)
-	RestorationCore.log_shit("SC: Making flames")
+	restoration.log_shit("SC: Making flames")
 	self._unit:set_extension_update_enabled(Idstring("base"), true)
 	self._unit:flamethrower_effect_extension():_spawn_muzzle_effect(from_pos, direction)
 end

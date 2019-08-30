@@ -4,6 +4,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	ModifierHeavies.america = {
 		Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 		Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
+		Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"),
+		Idstring("units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"),	
 		Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
 	}
 	ModifierHeavies.russia = {

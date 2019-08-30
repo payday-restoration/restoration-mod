@@ -1,0 +1,59 @@
+<materials version="3">
+    <material name="mat_air_ext_terminal_01" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_01_nm"/>
+    </material>
+    <material name="mat_air_ext_terminal_02" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_02_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_02_nm"/>
+    </material>
+    <material name="mat_air_int_terminal_01" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_int_terminal/air_int_terminal_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_int_terminal/air_int_terminal_01_nm"/>
+    </material>
+    <material name="mat_air_int_terminal_02" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_int_terminal/air_int_terminal_02_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_int_terminal/air_int_terminal_02_nm"/>
+    </material>
+    <material name="mat_air_int_terminal_03" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_int_terminal/air_int_terminal_03_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_int_terminal/air_int_terminal_03_nm"/>
+    </material>
+    <material name="mat_ext_tower_control" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_tower_control/air_ext_tower_control_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_tower_control/air_ext_tower_control_nm"/>
+    </material>
+    <material name="mat_air_ext_ground_asphalt_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_ground/air_ext_ground_asphalt_2_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_ground/air_ext_ground_asphalt_2_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_air_terminal_pieces_wall_1_color">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_1_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_1_nm"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_air_terminal_pieces_wall_2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_2_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_2_nm"/>
+    </material>
+    <material name="mat_air_terminal_pieces_wall_3" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_3_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_3_nm"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_air_terminal_pieces_wall_3_color">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_3_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_3_nm"/>
+    </material>
+    <material name="mat_air_terminal_pieces_tower" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_tower_control_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_tower_control_nm"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_air_terminal_pieces_wall_4">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_4_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_4_nm"/>
+    </material>
+    <material name="mat_air_terminal_pieces_wall_4_color" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_4_df"/>
+        <bump_normal_texture file="units/payday2/architecture/air_ext_terminal/air_ext_terminal_wall_4_nm"/>
+    </material>
+</materials>

@@ -1,5 +1,5 @@
 <effect force_synch="false">
-    <atom name="trail" min_size="1" max_size="1" lifetime="6" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+    <atom name="trail" min_size="1" max_size="1" lifetime="12" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
         <initializerstack>
             <boxrandomposition relative="effect" min="-1 -1 -1" max="1 1 1"/>
             <boxrandomvelocity relative="effect" min="0 0 1000" max="0 0 1000"/>
@@ -42,7 +42,7 @@
             </billboard>
         </visualizerstack>
     </atom>
-    <atom name="Glow" min_size="1" max_size="1" lifetime="12" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+    <atom name="Glow" min_size="1" max_size="1" lifetime="24" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
         <initializerstack>
             <localboxrandomposition min="0 0 0" max="0 0 0"/>
             <boxrandomcolor min="253.00001525879 136 57.000003814697" max="251.00001525879 209.00001525879 168"/>

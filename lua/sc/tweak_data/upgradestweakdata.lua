@@ -27,6 +27,8 @@ function UpgradesTweakData:_init_value_tables()
 		smg = {},
 		shotgun = {},
 		grenade_launcher = {},
+		bow = {},
+		crossbow = {},
 		saw = {},
 		lmg = {},
 		snp = {},
@@ -65,8 +67,8 @@ function UpgradesTweakData:_init_pd2_values()
 		self.explosive_bullet.camera_shake_max_mul = 4
 
 		--Restoring movement penalties--
-		self.weapon_movement_penalty.minigun = 0.8
-		self.weapon_movement_penalty.lmg = 0.8
+		self.weapon_movement_penalty.minigun = 1
+		self.weapon_movement_penalty.lmg = 1
 
 	end
 
@@ -157,11 +159,12 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.rep_upgrades.values = {0}
-
+	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
     	self.values.player.suppression_resist = {true}
     	self.values.player.ignore_suppression_flinch = {true}
     	self.values.player.health_revive_max = {true}
+		self.values.player.no_deflection = {true}
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {1}
 	--Bot boost stuff stuff--
@@ -383,7 +386,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.armor_carry_bonus = {1.005}
 				
 				--More Blood To Bleed
-				self.values.player.health_multiplier = {1.2, 1.4}
+				self.values.player.health_multiplier = {1.15, 1.4}
 
 				--Bullseye
 				self.values.player.headshot_regen_armor_bonus = {0.05, 3.5}
@@ -406,8 +409,10 @@ function UpgradesTweakData:_init_pd2_values()
 				--Portable Saw
 				self.values.saw.reload_speed_multiplier = {1.25}
 				self.values.grenade_launcher.reload_speed_multiplier = {1.25}
+				self.values.crossbow.reload_speed_multiplier = {1.25}
+				self.values.bow.reload_speed_multiplier = {1.25}
 				self.values.saw.damage_multiplier = {1}
-				
+								
 				--Extra Lead
 				self.values.ammo_bag.ammo_increase = {2}
 				self.values.ammo_bag.quantity = {1}
@@ -639,6 +644,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Deep Pockets
 				self.values.player.melee_concealment_modifier = {2}
 				self.values.player.ballistic_vest_concealment = {4}
+				self.values.player.level_1_armor_addend = {2}
 				self.values.player.level_2_armor_addend = {2}
 				self.values.player.level_3_armor_addend = {2}
 				self.values.player.level_4_armor_addend = {2}
@@ -807,7 +813,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.melee_knockdown_mul = {1.5}
 				
 				--Bloodthirst
-				self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 1.50}}
+				self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 2}}
 				self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
 
 				--Pumping Iron	
@@ -875,18 +881,18 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.level_2_armor_multiplier = {
+		1.1,
 		1.2,
-		1.3,
 		1.4
 	}
 	self.values.player.level_3_armor_multiplier = {
+		1.1,
 		1.2,
-		1.3,
 		1.4
 	}
 	self.values.player.level_4_armor_multiplier = {
+		1.1,
 		1.2,
-		1.3,
 		1.4
 	}
 
@@ -932,7 +938,7 @@ function UpgradesTweakData:_init_pd2_values()
 		stamina = 4,
 		damage_dampener = 1
 	}
-	self.values.team.health.hostage_multiplier = {1.05}
+	self.values.team.health.hostage_multiplier = {1.025}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
 		0.1,
@@ -954,8 +960,8 @@ function UpgradesTweakData:_init_pd2_values()
 		1.5
 	}
 	self.values.temporary.dmg_dampener_close_contact = {
+		{0.95, 7},
 		{0.9, 7},
-		{0.85, 7},
 		{0.8, 7}
 	}
 	self.max_melee_weapon_dmg_mul_stacks = 5
@@ -1051,30 +1057,33 @@ function UpgradesTweakData:_init_pd2_values()
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
 		{
-			{1.5, 4},
-			{2.5, 4.5},
-			{3.5, 5},
-			{4.5, 5.5},
-			{5.5, 6},
-			{6.5, 6.5},
-			{7.5, 7}
+			{3.0, 3.0},
+			{3.5, 3.5},
+			{4.0, 4.0},
+			{4.5, 4.5},
+			{5.0, 5.0},
+			{5.5, 5.5},
+			{6.0, 6.0}
 		}
 	}
+	
 	self.values.player.health_decrease = {0.5}
+	
 	self.values.player.armor_increase = {
-		0.3,
-		0.4,
-		0.5
+		0.45,
+		0.6,
+		0.75
 	}
+
 	self.values.player.damage_to_armor = {
 		{
-			{0.5, 3},
-			{0.75, 3},
-			{1, 3},
-			{1.25, 3},
 			{1.5, 3},
-			{1.75, 3},
-			{2, 3}
+			{1.8, 3},
+			{2.1, 3},
+			{2.4, 3},
+			{2.6, 3},
+			{2.8, 3},
+			{3.0, 3}
 		}
 	}
 	
@@ -1084,6 +1093,9 @@ function UpgradesTweakData:_init_pd2_values()
 		0.8,
 		1.2
 	}	
+	self.values.player.armor_max_health_store_multiplier = {
+		1.25
+	}	
 
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
@@ -1091,13 +1103,13 @@ function UpgradesTweakData:_init_pd2_values()
 		30,
 		25
 	}	
-	self.cocaine_stacks_dmg_absorption_value = 0.05
-	self.cocaine_stacks_tick_t = 2
-	self.max_cocaine_stacks_per_tick = 240
-	self.max_total_cocaine_stacks = 600
-	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 80
-	self.cocaine_stacks_decay_percentage_per_tick = 0.3
+	self.cocaine_stacks_dmg_absorption_value = 0.125
+	self.cocaine_stacks_tick_t = 0
+	self.max_cocaine_stacks_per_tick = 300
+	self.max_total_cocaine_stacks = 300
+	self.cocaine_stacks_decay_t = 10
+	self.cocaine_stacks_decay_amount_per_tick = 10
+	self.cocaine_stacks_decay_percentage_per_tick = 0.05
 	self.values.player.cocaine_stacking = {0.05}
 	self.values.player.sync_cocaine_stacks = {true}
 	self.values.player.cocaine_stacks_decay_multiplier = {0.5}
@@ -1107,7 +1119,9 @@ function UpgradesTweakData:_init_pd2_values()
 	--Chico--
 	--kingpin
 	self.values.temporary.chico_injector = {
-		{0.5, 5}
+		{0.5, 4},
+		{0.5, 5},
+		{0.5, 6}
 	}
 	self.values.player.chico_armor_multiplier = {
 		1.05,
@@ -1132,14 +1146,24 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--alcoholism is no joke
 	--stoic
+	self.values.player.armor_to_health_conversion = {
+		40
+	}
 	self.values.player.damage_control_passive = {{
-		25,
+		30,
 		6.25
 	}}
 	self.values.player.damage_control_auto_shrug = {
-		6,
-		4
-	}	
+		5
+	}
+	self.values.player.damage_control_healing = {
+		300
+	}
+
+	self.values.player.damage_control_cooldown_drain = {
+		{ 0, 1},
+		{50, 6}
+	}
 	
 	--yoooooooooooooooooo--
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {
@@ -1150,7 +1174,7 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Fat benis :DDDDD
 	--biker?
-	self.wild_trigger_time = 5
+	self.wild_trigger_time = 10
 	self.wild_max_triggers_per_time = 5	
 	self.values.player.wild_health_amount = {0.1}
 	self.values.player.wild_armor_amount = {0.1}
@@ -1170,6 +1194,53 @@ function UpgradesTweakData:_init_pd2_values()
 		0.1,
 		0.1
 	}}	
+	
+	--Tag Team--
+	self.values.player.tag_team_base = {
+		{
+			kill_health_gain = 2.5,
+			radius = 0.6,
+			distance = 18,
+			kill_extension = 2,
+			duration = 12,
+			tagged_health_gain_ratio = 0.5
+		}
+	}	
+	self.values.player.tag_team_cooldown_drain = {
+		{
+			tagged = 0,
+			owner = 2
+		},
+		{
+			tagged = 2,
+			owner = 2
+		}
+	}
+	self.values.player.tag_team_damage_absorption = {
+		{
+			kill_gain = 0.05,
+			max = 2
+		},
+		{
+			kill_gain = 0.1,
+			max = 2
+		}		
+	}	
+	
+	--Hacker
+	self.values.player.pocket_ecm_jammer_base = {
+		{
+			cooldown_drain = 4,
+			duration = 12
+		}
+	}	
+	self.values.player.pocket_ecm_heal_on_kill = {
+		2
+	}	
+	self.values.team.pocket_ecm_heal_on_kill = {
+		1
+	}	
+	
 end
 
 local sc_utd_init = UpgradesTweakData.init
@@ -1478,6 +1549,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}	
+	self.definitions.player_level_1_armor_addend = {
+		name_id = "menu_player_level_1_armor_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "level_1_armor_addend",
+			category = "player"
+		}
+	}	
 	self.definitions.player_level_5_armor_addend = {
 		category = "feature",
 		name_id = "menu_player_level_5_armor_addend",
@@ -1496,6 +1576,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_no_deflection = {
+		category = "feature",
+		name_id = "menu_player_panic_suppression",
+		upgrade = {
+			category = "player",
+			upgrade = "no_deflection",
+			value = 1
+		}
+	}	
 	self.definitions.player_passive_health_multiplier_5 = {
 		category = "feature",
 		name_id = "menu_player_health_multiplier",
@@ -1750,6 +1839,24 @@ function UpgradesTweakData:_player_definitions()
 			category = "grenade_launcher"
 		}
 	}
+	self.definitions.crossbow_reload_speed_multiplier = {
+		name_id = "menu_assault_rifle_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "crossbow"
+		}
+	}	
+	self.definitions.bow_reload_speed_multiplier = {
+		name_id = "menu_assault_rifle_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "bow"
+		}
+	}		
 	self.definitions.deploy_interact_faster_2 = {
 		name_id = "menu_deploy_interact_faster",
 		category = "feature",
@@ -1768,6 +1875,53 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_tag_team_damage_absorption_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "tag_team_damage_absorption",
+			category = "player"
+		}
+	}	
+	self.definitions.player_tag_team_damage_absorption_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "tag_team_damage_absorption",
+			category = "player"
+		}
+	}		
+	
+	self.definitions.temporary_chico_injector_1 = {
+		name_id = "menu_temporary_chico_injector_1",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}
+	self.definitions.temporary_chico_injector_2 = {
+		name_id = "menu_temporary_chico_injector_1",
+		category = "temporary",
+		upgrade = {
+			value = 2,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}
+	self.definitions.temporary_chico_injector_3 = {
+		name_id = "menu_temporary_chico_injector_1",
+		category = "temporary",
+		upgrade = {
+			value = 3,
+			upgrade = "chico_injector",
+			synced = true,
+			category = "temporary"
+		}
+	}		
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {

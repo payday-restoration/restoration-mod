@@ -220,7 +220,7 @@ if not tweak_data then return end
 	tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
 	--Had to include this in here due to some BS with it being in upgradestweakdata
-	tweak_data.upgrades.values.player.health_multiplier = {1.2, 1.4}
+	tweak_data.upgrades.values.player.health_multiplier = {1.15, 1.4}
 	tweak_data.upgrades.values.trip_mine.quantity = {3, 7}
 
 	tweak_data.interaction.drill_upgrade.timer = 3
@@ -252,57 +252,34 @@ if not tweak_data then return end
 	tweak_data.team_ai.stop_action.delay = 0.8
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
-	tweak_data.medic.cooldown = 30
+	tweak_data.medic.cooldown = 60
 	tweak_data.medic.radius = 400
-	if difficulty_index == 8 then
-		tweak_data.medic.lpf_radius = 600
-	else
-		tweak_data.medic.lpf_radius = 400
-	end
-	if difficulty_index == 8 then
-		tweak_data.medic.disabled_units = {
-			"phalanx_minion",
-			"phalanx_vip",
-			"spring",
-			"taser_summers",
-			"boom_summers",
-			"medic_summers",
-			"summers",
-			"autumn",
-			"medic",
-			"tank_titan",
-			"tank_medic",
-			"omnia_lpf",
-			"swat_titan",
-			"tank_titan_assault",
-			"spooc_titan",
-			"phalanx_minion_assault",
-			"taser_titan"
-		}
-	else
-		tweak_data.medic.disabled_units = {
-			"phalanx_minion",
-			"phalanx_vip",
-			"spring",
-			"taser_summers",
-			"boom_summers",
-			"medic_summers",
-			"summers",
-			"autumn",
-			"medic",
-			"tank_titan",
-			"tank_medic",
-			"omnia_lpf",
-			"swat_titan",
-			"city_swat_titan",
-			"city_swat_titan_assault",
-			"skeleton_swat_titan",
-			"tank_titan_assault",
-			"spooc_titan",
-			"phalanx_minion_assault",
-			"taser_titan"
-		}
-	end
+	tweak_data.medic.lpf_radius = 800
+	tweak_data.medic.disabled_units = {
+		"phalanx_minion",
+		"phalanx_vip",
+		"spring",
+		"taser_summers",
+		"boom_summers",
+		"medic_summers",
+		"summers",
+		"autumn",
+		"medic",
+		"tank_titan",
+		"tank_medic",
+		"omnia_lpf",
+		"swat_titan",
+		"city_swat_titan",
+		"city_swat_titan_assault",
+		"skeleton_swat_titan",
+		"tank_titan_assault",
+		"spooc_titan",
+		"phalanx_minion_assault",
+		"heavy_swat_sniper",
+		"fbi_vet",
+		"boom_titan",
+		"taser_titan"
+	}
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000
 	tweak_data.medic.whitelisted_units = {
@@ -321,66 +298,6 @@ if not tweak_data then return end
 	tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
 	tweak_data.achievement.complete_heist_statistics_achievements.immortal_ballot.num_players = nil
 	tweak_data.achievement.complete_heist_statistics_achievements.full_two_twenty.num_players = nil
-	
-	--[[
-	tweak_data.color_grading = {
-			{
-				value = "color_payday",
-				text_id = "menu_color_off"
-			},
-			{
-				text_id = "menu_color_default"
-			},
-			{
-				value = "color_heat",
-				text_id = "menu_color_heat"
-			},
-			{
-				value = "color_nice",
-				text_id = "menu_color_nice"
-			},
-			{
-				value = "color_bhd",
-				text_id = "menu_color_bhd"
-			},
-			{
-				value = "color_xgen",
-				text_id = "menu_color_xgen"
-			},
-			{
-				value = "color_xxxgen",
-				text_id = "menu_color_xxxgen"
-			},
-			{
-				value = "color_matrix_classic",
-				text_id = "menu_color_matrix_classic"
-			},
-			{
-				value = "color_sin_classic",
-				text_id = "menu_color_sin_classic"
-			},
-			{
-				value = "color_sepia",
-				text_id = "menu_color_sepia"
-			},
-			{
-				value = "color_sunsetstrip",
-				text_id = "menu_color_sunsetstrip"
-			},
-			{
-				value = "color_colorful",
-				text_id = "menu_color_colorful"
-			},
-			{
-				value = "color_madplanet",
-				text_id = "menu_color_madplanet"
-			},
-			{
-				value = "color_plus",
-				text_id = "menu_color_plus"		
-			}
-	}
-	]]--
 	
 	tweak_data.casino = {
 		unlock_level = 0,
@@ -418,6 +335,27 @@ if not tweak_data then return end
 		infamous_chance = 3
 	}	
 	
+	tweak_data.experience_manager.stage_failed_multiplier = 1
+	-- From update 34
+	tweak_data.experience_manager.stage_completion = {
+		200,
+		250,
+		300,
+		350,
+		425,
+		475,
+		550
+	}
+	tweak_data.experience_manager.job_completion = {
+		2000,
+		4000,
+		10000,
+		16000,
+		20000,
+		28000,
+		32000
+	}
+	
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 		tweak_data.gui.buy_weapon_categories = {
 			primaries = {
@@ -442,7 +380,8 @@ if not tweak_data then return end
 					"akimbo",
 					"assault_rifle"
 				},			
-				{"wpn_special"}
+				{"wpn_special"},
+				{"smg"}
 			},
 			secondaries = {
 				{"pistol"},
@@ -458,15 +397,7 @@ if not tweak_data then return end
 
 		if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
-		end				
-		
-		if SystemFS:exists("assets/mod_overrides/CZ Scorpion Evo A1/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/Owen Gun/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/Thompson M1A1/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/CBJ-MS/main.xml") 
-			or SystemFS:exists("assets/mod_overrides/AUG A3 9mm XS/main.xml") then
-			table.insert(tweak_data.gui.buy_weapon_categories.primaries, {"smg"})
-		end
+		end						
 	end
 	
 	--Sounds of Animals Fighting--

@@ -1,0 +1,6 @@
+<unit type="ind" slot="1" >
+    <object file="units/pd2_mod_wwburn/props/prop_wwburnboard/prop_wwburnboard" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

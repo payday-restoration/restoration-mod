@@ -1,0 +1,6 @@
+<unit type="chl" slot="1">
+	<object file="units/pd2_dlc_chill/props/chl_prop_drill_small/chl_prop_drill_small_pieces" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

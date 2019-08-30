@@ -111,6 +111,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			end
+		elseif self._unit:base()._tweak_table == "taser_titan" and self._throw_projectile_time < _time then
+			if self._shooting_player then
+				self._throw_projectile_time = _time + math.round_with_precision(5, 2)
+				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+				self._unit:sound():play("taser_charge", nil, true)
+			else
+				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
+			end			
 		else
 			target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 		end
@@ -150,7 +158,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ProjectileBase.throw_projectile("molotov", shoot_from_pos, target_vec)
 		end
 	end
-
+	
 	function CopActionShoot:update(t)
 		local vis_state = self._ext_base:lod_stage()
 		vis_state = vis_state or 4
@@ -425,5 +433,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._ext_movement:upd_m_head_pos()
 		end
 	end
-
+		
 end

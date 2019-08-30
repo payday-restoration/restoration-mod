@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mat_bdrop_docks" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_shoutout_raid/architecture/gen_bdrop_docks/gen_bdrop_docks_df"/>
+    </material>
+</materials>

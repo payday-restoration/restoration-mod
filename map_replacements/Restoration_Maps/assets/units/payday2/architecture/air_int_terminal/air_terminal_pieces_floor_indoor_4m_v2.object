@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/air_ext_terminal/air_ext_terminal" orientation_object="rp_air_terminal_pieces_floor_indoor_4m_v2" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_air_terminal_pieces_floor_indoor_4m_v2"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+
+
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="carpet" static="true">
+		<decal_mesh name="dm_carpet" material="carpet" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_air_terminal_pieces_floor_indoor_4m_v2" />
+		<object enabled="true" name="s_s" shadow_caster="true"/>
+    </graphics>
+</dynamic_object> 

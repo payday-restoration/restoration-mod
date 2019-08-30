@@ -25,9 +25,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local is_green = table.contains(ModifierSkulldozers.greendozers, value)
 			local is_black = table.contains(ModifierSkulldozers.blackdozers, value)
 			if is_green and math.random(0,100) < 50 then
-				return Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+				return Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
 			elseif is_black and math.random(0,100) < 50 then
-				return Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+				return Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic")
 			end			
 		end
 		return value

@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/gen_prop_safehouse_clues_blueprints/gen_prop_safehouse_clues_blueprints" orientation_object="rp_gen_prop_safehouse_clues_blueprints" />
+	<bodies>
+        <body enabled="true" template="editor" name="static_body" >
+            <object collision_type="box" name="c_c" padding="-2.5"/>
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

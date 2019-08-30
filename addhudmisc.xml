@@ -1,0 +1,71 @@
+<table directory="assets">
+	
+	<!-- HUD and map assets -->
+	<texture path="guis/textures/restoration/hud_icons"/>
+	<texture path="guis/textures/restoration/icon_carrybag"/>
+	<texture path="guis/textures/restoration/hud_health"/>
+	<texture path="guis/textures/restoration/hud_dot"/>
+	<texture path="guis/textures/restoration/hud_rip"/>
+	<texture path="guis/textures/restoration/hud_rip_bg"/>
+	<texture path="guis/textures/restoration/hud_rip_bg"/>
+	<texture path="guis/textures/restoration/hud_absorb_shield"/>
+	<texture path="guis/textures/restoration/hud_absorb_health"/>
+	<texture path="guis/textures/restoration/hud_absorb_stack_fg"/>
+	<texture path="guis/textures/restoration/hud_absorb_stack_bg"/>
+	<texture path="guis/textures/restoration/hud_radial_rim"/>
+	<texture path="guis/textures/restoration/hud_radialbg"/>
+	<texture path="guis/textures/restoration/hud_shield"/>
+	<texture path="guis/textures/restoration/hud_progress_active"/>
+	<texture path="guis/textures/restoration/hud_progress_invalid"/>
+	<texture path="guis/textures/restoration/hud_progress_bg"/>
+	<texture path="guis/textures/restoration/hud_tabs"/>
+	<texture path="guis/textures/restoration/hud_alertbox_start"/>
+	<texture path="guis/textures/restoration/hud_alertbox_mid"/>
+	<texture path="guis/textures/restoration/hud_alertbox_end"/>
+	<texture path="guis/textures/restoration/hud_glow"/>
+	<texture path="guis/textures/restoration/hud_stroke"/>
+	<texture path="guis/textures/restoration/hud_stealth_exclam"/>
+	<texture path="guis/textures/restoration/hud_stealth_eye"/>
+	<texture path="guis/textures/restoration/hud_stealthmeter"/>
+	<texture path="guis/textures/restoration/hud_stealthmeter_bg"/>
+	<texture path="guis/textures/restoration/pd2_waypoints"/>
+	<texture path="guis/textures/restoration/hud_difficultymarkers"/>
+	<texture path="guis/textures/restoration/hud_pickups"/>
+	<texture path="guis/textures/restoration/throwables"/>
+	<texture path="guis/textures/restoration/equipment"/>
+	<texture path="guis/textures/restoration/objective"/>
+	<texture path="guis/textures/restoration/risklevel_blackscreen"/>
+	<gui path="guis/mask_off_hud" force="true"/>
+	<texture path="guis/textures/restoration/mission_briefing/bain"/>
+	<texture path="guis/textures/restoration/mission_briefing/dentist"/>
+	<texture path="guis/textures/restoration/mission_briefing/butcher"/>
+	<texture path="guis/textures/restoration/mission_briefing/jimmy"/>
+	<texture path="guis/textures/restoration/mission_briefing/locke"/>
+	<texture path="guis/textures/restoration/mission_briefing/hoxton"/>
+	<texture path="guis/textures/restoration/mission_briefing/shatter"/>
+	<texture path="guis/textures/restoration/mission_briefing/shatter_pattern"/>
+	<texture path="guis/textures/restoration/mission_briefing/calendar_payday"/>
+	<texture path="guis/textures/restoration/mission_briefing/the_continental"/>
+	<texture path="guis/textures/restoration/mission_briefing/the_andre"/>
+	<texture path="guis/textures/restoration/mission_briefing/event"/>
+	<texture path="guis/textures/restoration/mission_briefing/classic"/>
+	<texture path="guis/textures/restoration/mission_briefing/hector"/>
+	<texture path="guis/textures/restoration/crimenet/crimenet_portrait_gen"/>
+	<movie path="movies/codex/shatter1" force="true"/>
+	<movie path="movies/contact_shatter1" force="true"/>
+	<movie path="movies/cn_veritasgroup1" force="true"/>
+	<font path="fonts/font_medium_shadow" force="true"/>
+	<merged_font path="fonts/font_medium_shadow_mf" force="true"/>
+
+	<!--Assets-->
+	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_burn_add_saw" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/rush_asset_sentrygun" force="false"/>
+	
+	<!-- New Color Gradings -->
+	<texture path="core/textures/cg_plus"/>
+	<texture path="core/textures/cg_force"/>
+	<texture path="core/textures/cg_e3nice"/>
+			
+</table>

@@ -1,0 +1,25 @@
+<dynamic_object>
+    <diesel orientation_object="rp_hlm_prop_methlab_whiteboard" materials="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" />
+	<sequence_manager file="units/payday2/props/hlm_prop_methlab_whiteboard/hlm_prop_methlab_whiteboard" />
+	
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="box" name="c_box_01" padding="-2.5" />
+        </body>
+    </bodies>
+	
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_dm" material="sheet_metal" />
+    </decal_surfaces>
+	
+    <graphics>
+        <object enabled="true" 	name="g_g" />
+        <object enabled="true" 	name="g_intact_1" />
+        <object enabled="true" 	name="g_intact_2" />
+        <object enabled="true" 	name="g_intact_3" />
+        <object enabled="false" name="g_erased_1" />
+        <object enabled="false" name="g_erased_2" />
+        <object enabled="false" name="g_erased_3" />
+    </graphics>
+	
+</dynamic_object>

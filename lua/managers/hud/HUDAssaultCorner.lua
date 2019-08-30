@@ -239,24 +239,22 @@ function HUDAssaultCorner:init(hud, full_hud)
 	if self._hud_panel:child("casing_panel") then
 		self._hud_panel:remove(self._hud_panel:child("casing_panel"))
 	end
-	local size = 200
+	local size = 300
 	local casing_panel = self._hud_panel:panel({
 		visible = false,
 		name = "casing_panel",
-		w = 400,
-		h = 100,
-		x = self._hud_panel:w()
+		w = size,
+		h = 40,
+		x = self._hud_panel:w() - size
 	})
-	casing_panel:set_top(0)
-	casing_panel:set_right(self._hud_panel:w())
 	self._casing_color = Color.white
 	local icon_casingbox = casing_panel:bitmap({
 		halign = "right",
 		valign = "top",
-		color = self._casing_color:with_alpha(0.80),
+		color = self._casing_color,
 		name = "icon_casingbox",
-		blend_mode = "alpha",
-		visible = false,
+		blend_mode = "add",
+		visible = true,
 		layer = 0,
 		texture = "guis/textures/pd2/hud_icon_stealthbox",
 		x = 0,
@@ -264,27 +262,15 @@ function HUDAssaultCorner:init(hud, full_hud)
 		w = 24,
 		h = 24
 	})
-   
-	local white_tape = casing_panel:rect({
-		visible = false,
-		name = "white_tape",
-		h = tweak_data.hud.location_font_size * 1.5,
-		w = size * 3,
-		color = Color(0.8, 0.8, 0.8, 0.8),
-		layer = 1
-	})
-	white_tape:set_rotation(30)
-	white_tape:set_blend_mode("alpha")
-   
+	icon_casingbox:set_right(icon_casingbox:parent():w())
 	self._casing_bg_box = HUDBGBox_create(casing_panel, {
 		w = 242,
 		h = 38,
 		x = 0,
-		y = 0,
-		visible = false
+		y = 0
 	}, {
-		color = self._casing_color:with_alpha(0.80),
-		blend_mode = "alpha"
+		color = self._casing_color,
+		blend_mode = "add"
 	})
 	self._casing_bg_box:set_right(icon_casingbox:left() - 3)
 	local w = casing_panel:w()
@@ -292,8 +278,8 @@ function HUDAssaultCorner:init(hud, full_hud)
 	casing_panel:panel({
 		name = "text_panel",
 		layer = 1,
-		w = white_tape:w()
-	}):set_center(white_tape:center())
+		w = yellow_tape:w()
+	}):set_center(yellow_tape:center())
 	if self._hud_panel:child("buffs_panel") then
 		self._hud_panel:remove(self._hud_panel:child("buffs_panel"))
 	end
@@ -358,13 +344,12 @@ function HUDAssaultCorner:RestorationValueChanged()
 	hostages:child("num_hostages"):set_color(hostages_color)
 end
 
-function HUDAssaultCorner:_animate_text(text_panel, bg_box, color)
-	local text_list = (text_panel or self._hud_panel:child("assault_panel")):script().text_list
+function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_function)
+	local text_list = text_panel:script().text_list
 	local text_index = 0
 	local texts = {}
 	local padding = 10
-	local y = 15
-   
+	local y = 27
 	local function create_new_text(text_panel, text_list, text_index, texts)
 		if texts[text_index] and texts[text_index].text then
 			text_panel:remove(texts[text_index].text)
@@ -373,13 +358,7 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color)
 		local text_id = text_list[text_index]
 		local text_string = ""
 		if type(text_id) == "string" then
-			
-			if self._casing then
-				text_string = text_id
-			else 
-				text_string = managers.localization:to_upper_text(text_id)
-			end
-			
+			text_string = managers.localization:to_upper_text(text_id)
 		elseif text_id == Idstring("risk") then
 			local use_stars = true
 			if managers.crime_spree:is_active() then
@@ -393,23 +372,23 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color)
 					text_string = text_string .. managers.localization:get_default_macro("BTN_SKULL")
 				end
 			end
+
 		end
-	   
+		local mod_color = color_function and color_function() or color or self._assault_color
 		local text = text_panel:text({
 			text = text_string,
 			layer = 1,
 			align = "center",
 			vertical = "center",
-			--blend_mode = "add",
-			color = Color("000000") or self._assault_color,
-			font_size = tweak_data.hud_corner.assault_size * 1.1,
+			rotation = 30,
+			color = restoration.Options:GetValue("HUD/Colors/AssaultFG"),
+			font_size = tweak_data.hud_corner.assault_size * 1.2,
 			font = tweak_data.hud_corner.assault_font,
 			w = 10,
 			h = 10
 		})
 		local _, _, w, h = text:text_rect()
 		text:set_size(w, h)
-		text:set_rotation(30)
 		texts[text_index] = {
 			x = text_panel:w() + w * 0.5 + padding * 2,
 			text = text
@@ -427,22 +406,21 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color)
 			text_index = text_index % #text_list + 1
 			create_new_text(text_panel, text_list, text_index, texts)
 		end
-		local speed = self.TAPE_SPEED
+		--self._tape_speed = 90
 		for i, data in pairs(texts) do
-			if data.text then
-				data.x = data.x - dt * speed
-				data.text:set_center_x( math.cos(30) * (data.x + 15) )
-				data.text:set_center_y( math.sin(30) * (data.x - text_panel:w()*0.5 + 100) - y )
-				--data.text:set_center_y(text_panel:h() * 0.5)
-				if data.x + data.text:w() * math.cos(30) < 0 then
-					text_panel:remove(data.text)
+			if( data.text ) then
+				data.x = data.x - dt * self._tape_speed
+				data.text:set_center_x( math.cos(30) * data.x )
+				data.text:set_center_y( math.sin(30) * (data.x - text_panel:w()*0.5) + y )
+				
+				if( data.x + data.text:w()*0.5 < 0 ) then
+					text_panel:remove( data.text )
 					data.text = nil
 				end
 			end
 		end
 	end
 end
-
 function HUDAssaultCorner:set_buff_enabled(buff_name, enabled)
 	self._hud_panel:child("buffs_pad_panel"):set_visible(enabled)
 end
@@ -747,6 +725,8 @@ function HUDAssaultCorner:_end_assault()
 	end
 end
 
+
+local _close_assault_box_original = HUDAssaultCorner._close_assault_box
 function HUDAssaultCorner:_close_assault_box()
 	local corner_panel = self._hud_panel:child("corner_panel")
 	corner_panel:set_visible(false)
@@ -757,6 +737,9 @@ function HUDAssaultCorner:_close_assault_box()
 		self:_set_hostage_offseted(false)
 		local hostage_panel = self._hud_panel:child("hostages_panel")
 		hostage_panel:animate(callback(self, self, "_offset_hostage", false))
+	end
+	if not restoration:all_enabled("HUD/MainHUD", "HUD/AssaultPanel") then
+		_close_assault_box_original(self)
 	end
 end
 function HUDAssaultCorner:_show_icon_assaultbox(icon_assaultbox)
@@ -873,44 +856,32 @@ function HUDAssaultCorner:flash_point_of_no_return_timer(beep)
 	local point_of_no_return_timer = self._hud_panel:child( "point_of_no_return_panel" ):child( "point_of_no_return_timer" )
 	point_of_no_return_timer:animate(flash_timer)
 end
-
 function HUDAssaultCorner:show_casing(mode)
-	local delay_time = self._assault and 2 or 0
+	local delay_time = self._assault and 1.2 or 0
 	self:_end_assault()
 	local casing_panel = self._hud_panel:child("casing_panel")
-	local white_tape = casing_panel:child("white_tape")
-	white_tape:set_visible(true)
-	white_tape:animate( callback( white_tape, self, "animate_casing_show" ) )
 	local text_panel = casing_panel:child("text_panel")
-	text_panel:set_visible(restoration.Options:GetValue("HUD/AssaultStyle") == 1)
 	text_panel:script().text_list = {}
 	self._casing_bg_box:script().text_list = {}
-	local msg = nil
-
+	local msg
 	if mode == "civilian" then
-		for _, text_id in ipairs({
-			managers.localization:to_upper_text("hud_casing_mode_ticker_clean"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker_clean"),
-			managers.localization:to_upper_text("hud_assault_end_line")
-		}) do
-			table.insert(text_panel:script().text_list, text_id)
-			table.insert(self._casing_bg_box:script().text_list, text_id)
-		end
+		msg = {
+			"hud_casing_mode_ticker_clean",
+			"hud_assault_end_line",
+			"hud_casing_mode_ticker_clean",
+			"hud_assault_end_line"
+		}
 	else
-		for _, text_id in ipairs({
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-			managers.localization:to_upper_text("hud_casing_mode_ticker"),
-			managers.localization:to_upper_text("hud_assault_end_line"),
-		}) do
-			table.insert(text_panel:script().text_list, text_id)
-			table.insert(self._casing_bg_box:script().text_list, text_id)
-		end
+		msg = {
+			"hud_casing_mode_ticker",
+			"hud_assault_end_line",
+			"hud_casing_mode_ticker",
+			"hud_assault_end_line"
+		}
+	end
+	for _, text_id in ipairs(msg) do
+		table.insert(text_panel:script().text_list, text_id)
+		table.insert(self._casing_bg_box:script().text_list, text_id)
 	end
 	if self._casing_bg_box:child("text_panel") then
 		self._casing_bg_box:child("text_panel"):stop()
@@ -918,26 +889,13 @@ function HUDAssaultCorner:show_casing(mode)
 	else
 		self._casing_bg_box:panel({name = "text_panel"})
 	end
-	self._casing_bg_box:child("bg"):stop()
-	if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
-		self._hud_panel:child("hostages_panel"):set_visible(true)
-	else
-		self._hud_panel:child("hostages_panel"):set_visible(false)
-	end
-	casing_panel:stop()
-	casing_panel:animate(callback(self, self, "_animate_show_casing"), delay_time)
-	self._casing = true
 end
-
 function HUDAssaultCorner:hide_casing()
 	if self._casing_bg_box:child("text_panel") then
 		self._casing_bg_box:child("text_panel"):stop()
 		self._casing_bg_box:child("text_panel"):clear()
 	end
-	local casing_panel = self._hud_panel:child("casing_panel")
-	local icon_casingbox = casing_panel:child("icon_casingbox")
-	local white_tape = casing_panel:child("white_tape")
-	white_tape:animate( callback( white_tape, self, "animate_casing_hide" ) )
+	local icon_casingbox = self._hud_panel:child("casing_panel"):child("icon_casingbox")
 	icon_casingbox:stop()
 	local function close_done()
 		self._casing_bg_box:set_visible(false)
@@ -946,7 +904,7 @@ function HUDAssaultCorner:hide_casing()
 		icon_casingbox:animate(callback(self, self, "_hide_icon_assaultbox"))
 	end
 	self._casing_bg_box:stop()
-	self._casing_bg_box:animate(callback(nil, _G, "HUDBGBox_animate_close_left"), close_done and not restoration.Options:GetValue("HUD/AssaultStyle") == 2)
+	self._casing_bg_box:animate(callback(nil, _G, "HUDBGBox_animate_close_left"), close_done)
 	self._casing = false
 end
 function HUDAssaultCorner:_animate_simple_text(text)
@@ -974,9 +932,16 @@ function HUDAssaultCorner:_animate_show_casing(casing_panel, delay_time)
 	casing_panel:set_visible(true)
 	icon_casingbox:stop()
 	icon_casingbox:animate(callback(self, self, "_show_icon_assaultbox"))
-	local text_panel = casing_panel:child("text_panel")
+	local open_done = function()
+	end
+	self._casing_bg_box:stop()
+	self._casing_bg_box:animate(callback(nil, _G, "HUDBGBox_animate_open_left"), 0.75, 242, open_done, {
+		attention_color = self._casing_color,
+		attention_forever = true
+	})
+	local text_panel = self._casing_bg_box:child("text_panel")
 	text_panel:stop()
-	text_panel:animate(callback(self, self, "_animate_text"))
+	text_panel:animate(callback(self, self, "_animate_text"), self._casing_bg_box, Color.white)
 end
 function HUDAssaultCorner:_animate_show_noreturn(point_of_no_return_panel, delay_time)
 	local point_of_no_return_text = point_of_no_return_panel:child("point_of_no_return_text")
@@ -1063,80 +1028,4 @@ end
 
 function HUDAssaultCorner:get_completed_waves_string()
 	return tostring(managers.groupai:state():get_assault_number() or 0)
-end
-
-HUDAssaultCorner.TAPE_SPEED = 90
-
-function HUDAssaultCorner:animate_casing_show( tape )
-	local TOTAL_T = 2
-	local t = TOTAL_T
-	tape:set_visible(restoration.Options:GetValue("HUD/AssaultStyle") == 1)
-	
-	local hud_panel = tape:parent():parent()
-	
-	managers.hud._hud_assault_corner.TAPE_SPEED = 90
-	
-	hud_panel:child("casing_panel"):child("text_panel"):stop()
-	hud_panel:child("casing_panel"):child("text_panel"):clear()
-	hud_panel:child("hostages_panel"):hide()
-	
-	while t > 0 do
-		local dt = coroutine.yield()
-		t = t - dt
-		
-		local rott = math.min( TOTAL_T - 1, t - 1 )
-		local val = math.sin( math.max(rott * 180, 90) )
-		
-		tape:set_x(500 - val * 500)
-		tape:set_y(-100 + val * 100)
-		
-		tape:set_rotation(val * 30)
-		
-		if t < (TOTAL_T-0.4) then
-			managers.hud._hud_assault_corner.TAPE_SPEED = 90 + t * 400
-		end
-	end
-	tape:set_rotation(30)
-	
-	tape:set_x(0)
-	tape:set_y(0)
-	managers.hud._hud_assault_corner.TAPE_SPEED = 90
-end
-
-function HUDAssaultCorner:animate_casing_hide( tape )
-	local TOTAL_T = 2
-	local t = 0
-	if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then return end
-	local hud_panel = tape:parent():parent()
-	hud_panel:child("hostages_panel"):hide()
-	
-	managers.hud._hud_assault_corner.TAPE_SPEED = 90
-	
-	while t < TOTAL_T do
-		local dt = coroutine.yield()
-		t = t + dt
-		
-		local rott = math.min( TOTAL_T - 1, t - 1 )
-		local val = math.sin( math.max(rott * 180, 90) )
-		
-		tape:set_x(500 - val * 500)
-		tape:set_y(-100 + val * 100)
-		
-		tape:set_rotation(val * 30)
-		
-		if t < (TOTAL_T-0.4) then
-			managers.hud._hud_assault_corner.TAPE_SPEED = 90 - (t * 1000)
-		end
-	end
-	tape:set_visible(false)
-	tape:set_rotation(30)
-	
-	tape:set_x(0)
-	tape:set_y(0)
-	
-	hud_panel:child("casing_panel"):child("text_panel"):stop()
-	hud_panel:child("casing_panel"):child("text_panel"):clear()
-	hud_panel:child("hostages_panel"):show()
-	
-	managers.hud._hud_assault_corner.TAPE_SPEED = 90
 end

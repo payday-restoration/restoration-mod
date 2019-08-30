@@ -1,0 +1,7 @@
+<materials version="3" group="stn_prop_lamp_garage">
+	<material name="stn_prop_lamp_garage" decal_material="metal" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage_df"/>
+        <bump_normal_texture file="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage_nm"/>
+		</material>
+</materials>

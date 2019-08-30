@@ -1,0 +1,19 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_glace/props/glc_prop_backdrop/glc_backdrop" orientation_object="rp_glc_prop_backdrop" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_glc_prop_backdrop" />
+			<object name="c_water" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_water" enabled="true" />
+		<object name="g_city3" enabled="true" />
+		<object name="g_city1" enabled="true" />
+		<object name="g_city2" enabled="true" />
+		<object name="g_backdrop" enabled="true" />
+		<object name="g_traffic" enabled="true" />
+		<object name="g_ground" enabled="true" />
+		<object name="g_cars" enabled="true" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,15 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jackal/props/jkl_props_trophies/jkl_props_trophy_doormat/jkl_props_trophy_doormat" orientation_object="rp_chl_prop_trophy_doormat" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_chl_prop_trophy_doormat" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="cloth">
+		<decal_mesh name="dm_cloth" enabled="true" material="cloth" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

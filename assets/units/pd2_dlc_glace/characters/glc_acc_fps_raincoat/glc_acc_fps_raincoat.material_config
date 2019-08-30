@@ -1,0 +1,7 @@
+<materials version="3">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_raincoat" version="2">
+        <bump_normal_texture file="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat_nm"/>
+        <diffuse_texture file="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat_df"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2" name="shadow_caster"/>
+</materials>

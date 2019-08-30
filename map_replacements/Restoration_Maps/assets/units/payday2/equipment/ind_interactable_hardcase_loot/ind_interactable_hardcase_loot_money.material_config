@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mtr_money" render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/equipment/ind_interactable_hardcase_loot/money_df"/>
+        <bump_normal_texture file="units/payday2/equipment/ind_interactable_hardcase_loot/money_nm"/>
+    </material>
+</materials>

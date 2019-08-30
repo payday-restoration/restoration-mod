@@ -1,0 +1,17 @@
+<unit type="bnk" slot="1" >
+    <object file="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn_2" />
+    <network sync="spawn"/>
+    <extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="base" class="SmallLootBase">
+			<var name="small_loot" value="gen_atm" />
+			<var name="skip_remove_unit" value="false" />
+		</extension>
+		<extension name="interaction" class="SmallLootInteractionExt">
+			<var name="tweak_data" value="money_wrap_active" />
+			<var name="_interact_object" value="g_money_box_2"/>
+			<var name="_global_event" value="pku_atm" />
+		</extension>
+	</extensions>
+</unit>

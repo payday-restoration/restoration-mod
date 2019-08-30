@@ -1,0 +1,6 @@
+<unit type="glc" slot="1">
+	<object file="units/pd2_dlc_glace/architecture/glc_ext_bridge/glc_ext_glow_plane" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

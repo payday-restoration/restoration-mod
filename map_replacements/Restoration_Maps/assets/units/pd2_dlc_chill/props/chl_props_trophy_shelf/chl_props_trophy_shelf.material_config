@@ -1,0 +1,8 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_shelf" version="2">
+        <diffuse_texture file="units/pd2_dlc_chill/props/chl_prop_livingroom_sideboard_b/chl_prop_livingroom_sideboard_b_df"/>
+        <bump_normal_texture file="units/pd2_dlc_chill/props/chl_prop_livingroom_sideboard_b/chl_prop_livingroom_sideboard_b_nm"/>
+        <material_texture file="units/pd2_dlc_chill/props/chl_prop_livingroom_sideboard_b/chl_prop_livingroom_sideboard_b_gsma"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+</materials>

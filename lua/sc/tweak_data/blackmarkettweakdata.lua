@@ -58,7 +58,124 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
-		}						
+		}		
+		
+		--Beta Female Mask
+		self.masks.female_mask = {
+			unit = "units/pd2_mod_beta/msk_female_mask/msk_female_mask",
+			name_id = "bm_msk_female_mask",
+			desc_id = "bm_msk_female_mask_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Female Blood Mask
+		self.masks.female_mask_blood = {
+			unit = "units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood",
+			name_id = "bm_msk_female_mask_blood",
+			desc_id = "bm_msk_female_mask_blood_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Female Clown Mask
+		self.masks.female_mask_clown = {
+			unit = "units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown",
+			name_id = "bm_msk_female_mask_clown",
+			desc_id = "bm_msk_female_mask_clown_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Male Mask
+		self.masks.male_mask = {
+			unit = "units/pd2_mod_beta/msk_male_mask/msk_male_mask",
+			name_id = "bm_msk_male_mask",
+			desc_id = "bm_msk_male_mask_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Male Blood Mask
+		self.masks.male_mask_blood = {
+			unit = "units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood",
+			name_id = "bm_msk_male_mask_blood",
+			desc_id = "bm_msk_male_mask_blood_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Male Clown Mask
+		self.masks.male_mask_clown = {
+			unit = "units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown",
+			name_id = "bm_msk_male_mask_clown",
+			desc_id = "bm_msk_male_mask_clown_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Twister Mask
+		self.masks.twister_mask = {
+			unit = "units/pd2_mod_beta/msk_twister/msk_twister",
+			name_id = "bm_msk_twister_mask",
+			desc_id = "bm_msk_twister_mask_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}		
+
+		--Beta Voodoo Mask
+		self.masks.voodoo_mask = {
+			unit = "units/pd2_mod_beta/msk_voodoo/msk_voodoo",
+			name_id = "bm_msk_voodoo_mask",
+			desc_id = "bm_msk_voodoo_mask_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}	
+		
+		--Unused F1 Mask
+		self.masks.f1 = {
+			unit = "units/pd2_dlc_cage/masks/f1/msk_f1_mask",
+			name_id = "bm_msk_f1",
+			desc_id = "bm_msk_f1_desc",
+			pcs = {},
+			type = "helmet",
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+
+		--PS3 Sweet Tooth Mask
+		self.masks.sweettooth = {
+			unit = "units/pd2_mod_beta/msk_sweettooth/msk_sweettooth",
+			name_id = "bm_msk_sweettooth",
+			desc_id = "bm_msk_sweettooth_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}	
 	end
 	
 	--we all know alligator skin's the best material right--
@@ -152,6 +269,9 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.smoke_screen_grenade.base_cooldown = 30
 	self.projectiles.damage_control.base_cooldown = 30
 	self.projectiles.concussion.max_amount = 3
+	
+	self.projectiles.pocket_ecm_jammer.max_amount = 1
+	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
 	
 	--Fuck off
 	self.projectiles.frag.no_cheat_count = true
@@ -1595,7 +1715,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.weapon.stats.max_damage = 5
 	self.melee_weapons.weapon.stats.min_damage_effect = 2
 	self.melee_weapons.weapon.stats.max_damage_effect = 2
-	self.melee_weapons.weapon.stats.charge_time = 0
 	self.melee_weapons.weapon.stats.range = 120
 	self.melee_weapons.weapon.repeat_expire_t = 0.55
 	self.melee_weapons.weapon.stats.concealment = 30
@@ -2019,9 +2138,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fairbair.melee_damage_delay = 0.1
 
 	--FREEEEEEEDOM--
-	self.melee_weapons.freedom.anim_global_param = "melee_baseballbat"
-	self.melee_weapons.freedom.align_objects = {"a_weapon_right"}
-	self.melee_weapons.freedom.anim_attack_vars = {"var1","var2"}
+	self.melee_weapons.freedom.anim_global_param = "melee_freedom"
+	self.melee_weapons.freedom.align_objects = {"a_weapon_left"}
+	self.melee_weapons.freedom.anim_attack_vars = {"var1","var2","var3","var4"}
 	self.melee_weapons.freedom.speed_mult = 0.85
 	self.melee_weapons.freedom.stats.min_damage = 5
 	self.melee_weapons.freedom.stats.max_damage = 10

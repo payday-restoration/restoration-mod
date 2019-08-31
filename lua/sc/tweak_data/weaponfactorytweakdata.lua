@@ -40290,27 +40290,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}	
 		self.parts.wpn_fps_smg_czevo_vg_tti.stats = {
 					value = 1,
-					spread = 1,
-					spread_moving = 2,
+					recoil = 1,
 					concealment = -2
 				}					
 		self.parts.wpn_fps_smg_czevo_vg_handstop.stats = {
 					value = 1,
-					spread = 0,
-					spread_moving = 2,
-					concealment = 1
+					recoil = -1,
+					concealment = 2
 				}		
 		self.parts.wpn_fps_smg_czevo_vg_ptk.stats = {
 					value = 1,
 					spread = 1,
-					recoil = 1,
 					concealment = -2
 				}		
 		self.parts.wpn_fps_smg_czevo_vg_angled.stats = {
 					value = 1,
-					spread = 0,
-					spread_moving = 2,
-					concealment = 1
+					recoil = -1,
+					concealment = 2
 				}																	
 		self.parts.wpn_fps_smg_czevo_sight_troy.stats = {
 					value = 1
@@ -40318,12 +40314,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_czevo_vg_cover.stats = {
 					value = 1
 				}					
-		self.parts.wpn_fps_smg_czevo_mag_speed.stats = {
-					value = 2,
-					spread = -1,
-					concealment = -1,
-					reload = 2
-				}																											
+		self.parts.wpn_fps_smg_czevo_mag_speed.pcs = nil
 		self.parts.wpn_fps_smg_czevo_barrel_silenced.stats = {
 					value = 10,
 					suppression = 13,

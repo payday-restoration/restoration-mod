@@ -360,7 +360,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		if not head and attack_data.add_head_shot_mul and self._char_tweak and not self._char_tweak.must_headshot then
 			local tweak_headshot_mul = math.max(0, self._char_tweak.headshot_dmg_mul - 1)
-			local mul = tweak_headshot_mul * add_head_shot_mul + 1
+			local mul = tweak_headshot_mul * attack_data.add_head_shot_mul + 1
 			damage = damage * mul
 		end
 		

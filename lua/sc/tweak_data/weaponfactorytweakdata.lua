@@ -44141,14 +44141,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_pis_hpb_comp2.stats = {
 						value = 4,
 						recoil = -1,
-						concealment = 2,
-						spread = -1
+						concealment = 2
 					}					
 				self.parts.wpn_fps_pis_hpb_thread.stats = {
 						value = 4,
-						recoil = -1,
-						concealment = 2,
-						spread = -1
+						concealment = -2,
+						spread = 1
 					}										
 				self.parts.wpn_fps_pis_hpb_comp.stats = {
 						value = 5,

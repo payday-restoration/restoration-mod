@@ -293,6 +293,65 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	buffs_panel:set_top(0)
 	buffs_panel:set_right(self._hud_panel:w())
+	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+		self.buff_icon = "guis/textures/pd2/hud_buff_shield"
+		local job = Global.level_data and Global.level_data.level_id        
+		for _,j in ipairs(restoration.captain_teamwork) do
+			if job == j then
+				self.buff_icon = "guis/textures/pd2/hud_buff_fire"
+				break
+			end
+		end
+		for _,j2 in ipairs(restoration.captain_murderdozer) do
+			if job == j2 then
+				self.buff_icon = "guis/textures/pd2/hud_buff_skull"
+				break
+			end
+		end
+		for _,j3 in ipairs(restoration.captain_stelf) do
+			if job == j3 then
+				self.buff_icon = "guis/textures/pd2/hud_buff_spooc"
+				break
+			end
+		end
+	else
+		self.buff_icon = "guis/textures/pd2/hud_buff_shield"
+	end		
+		local vip_icon = buffs_panel:bitmap({
+			halign = "center",
+			valign = "center",
+			color = Color.white,
+			name = "vip_icon",
+			blend_mode = "add",
+			visible = restoration.Options:GetValue("HUD/AssaultStyle") == 1,
+			layer = 3,
+			texture = self.buff_icon,
+			x = 0,
+			y = 0,
+			w = 38,
+			h = 38
+		})
+			vip_icon:set_right(buffs_panel:w())
+			vip_icon:set_rotation(30)
+			vip_icon:set_top(0)
+	
+		local vip_corner_icon = corner_panel:bitmap({
+			halign = "center",
+			valign = "center",
+			color = Color.white,
+			name = "vip_corner_icon",
+			blend_mode = "add",
+			visible = restoration.Options:GetValue("HUD/AssaultStyle") == 2,
+			layer = 3,
+			texture = self.buff_icon,
+			x = 0,
+			y = 0,
+			w = 38,
+			h = 38
+		})
+			vip_corner_icon:set_right(corner_panel:w())
+			vip_corner_icon:set_rotation(30)
+			vip_corner_icon:set_top(0)
 	local buffs_pad_panel = self._hud_panel:panel({
 		visible = false,
 		name = "buffs_pad_panel",
@@ -422,6 +481,7 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 	end
 end
 function HUDAssaultCorner:set_buff_enabled(buff_name, enabled)
+	self._hud_panel:child("buffs_panel"):set_visible(enabled)
 	self._hud_panel:child("buffs_pad_panel"):set_visible(enabled)
 end
 function HUDAssaultCorner:get_assault_mode()

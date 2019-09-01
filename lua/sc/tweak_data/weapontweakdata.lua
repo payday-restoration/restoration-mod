@@ -3501,7 +3501,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m16.CLIP_AMMO_MAX = 30
 		self.m16.AMMO_MAX = 120
 		self.m16.FIRE_MODE = "auto"				
-		self.m16.CAN_TOGGLE_FIREMODE = true							
+		self.m16.CAN_TOGGLE_FIREMODE = true
 		self.m16.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.m16.spread.standing = 3
 		self.m16.spread.crouching = 2
@@ -5699,8 +5699,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_usp.kick.crouching = self.glock_17.kick.standing
 		self.x_usp.kick.steelsight = self.glock_17.kick.standing
 		self.x_usp.CLIP_AMMO_MAX = 24
-		self.x_usp.AMMO_MAX = 150
-		self.x_usp.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.x_usp.AMMO_MAX = 120
+		self.x_usp.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_usp.fire_mode_data.fire_rate = 0.07142857142
 		self.x_usp.single = {}
 		self.x_usp.single.fire_rate = 0.07142857142
@@ -8919,14 +8919,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.r0991 then --Pawcio's Colt 9MM Submachine Gun (even though it's an SMG. realism? thog dont caare)
 			self.r0991.categories = {"pistol"}
 			self.r0991.tactical_reload = 1											
-			self.r0991.CLIP_AMMO_MAX = 32		
+			self.r0991.CLIP_AMMO_MAX = 20
 			self.r0991.AMMO_MAX = 150
+			self.r0991.FIRE_MODE = "single"					
 			self.r0991.BURST_FIRE = 3
-			self.r0991.BURST_FIRE_RATE_MULTIPLIER = 1.26666666667
-			self.r0991.ADAPTIVE_BURST_SIZE = false					
+			self.r0991.BURST_FIRE_RATE_MULTIPLIER = 0.5
+			self.r0991.CAN_TOGGLE_FIREMODE = false
+			self.r0991.ADAPTIVE_BURST_SIZE = false
 			self.r0991.AMMO_PICKUP = self:_pickup_chance(150, 2)
-			self.r0991.auto.fire_rate = 0.08
-			self.r0991.fire_mode_data.fire_rate = 0.08
+			self.r0991.fire_mode_data.fire_rate = 0.06
+			self.r0991.single = {}			
+			self.r0991.single.fire_rate = 0.06
 			self.r0991.spread.standing = 3
 			self.r0991.spread.crouching = 2
 			self.r0991.spread.steelsight = 1
@@ -11652,7 +11655,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.tactical_reload = 0
 		self.m590.desc_id = "bm_w_m590_desc"		
 		self.m590.rays = 12
-		--[[self.m590.timers = {
+		self.m590.timers = {
 			shotgun_reload_enter = 0.4,
 			shotgun_reload_exit_empty = 1.3,
 			shotgun_reload_exit_not_empty = 1,
@@ -11660,7 +11663,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			shotgun_reload_first_shell_offset = 0.33666667,
 			unequip = 0.5,
 			equip = 0.5
-		}]]--
+		}
 		self.m590.CLIP_AMMO_MAX = 8
 		self.m590.spread.standing = 3 * 1
 		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		

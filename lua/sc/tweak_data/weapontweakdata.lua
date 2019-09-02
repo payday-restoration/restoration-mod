@@ -3386,8 +3386,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp9.kick.steelsight = self.new_m4.kick.standing
 		self.mp9.stats = {
 			damage = 30,
-			spread = 13,
-			recoil = 24,
+			spread = 14,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,
@@ -3480,7 +3480,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amcar.kick.steelsight = self.new_m4.kick.standing
 		self.amcar.stats = {
 			damage = 34,
-			spread = 14,
+			spread = 15,
 			recoil = 22,
 			spread_moving = 6,
 			zoom = 3,
@@ -4912,7 +4912,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.famas.kick.steelsight = self.new_m4.kick.standing
 		self.famas.stats = {
 			damage = 34,
-			spread = 16,
+			spread = 17,
 			recoil = 20,
 			spread_moving = 4,
 			zoom = 3,
@@ -7813,8 +7813,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp9.kick.steelsight = self.new_m4.kick.standing
 		self.x_mp9.stats = {
 			damage = 30,
-			spread = 13,
-			recoil = 24,
+			spread = 14,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 27,

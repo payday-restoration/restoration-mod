@@ -3834,7 +3834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_m4_m_pmag = {
 				stats = {
 					recoil = -1,
-					concealment = 2
+					concealment = 1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",

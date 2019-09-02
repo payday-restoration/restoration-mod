@@ -1985,7 +1985,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 3,
 				concealment = -3,
 				reload = -3,
-				extra_ammo = 30
+				extra_ammo = 30,
+				spread = -2
 			},
 			dlc = "gage_pack_jobs",
 			has_description = false,
@@ -2055,12 +2056,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_ak_m_quad/wpn_fps_upg_ak_m_quad",
 			stats = {
 				value = 3,
-				spread_moving = -2,
 				concealment = -3,
 				extra_ammo = 30,
 				reload = -3,
 				recoil = 0,
-				spread = 0
+				spread = -2
 			},
 			dlc = "gage_pack_jobs",
 			has_description = false,
@@ -2794,7 +2794,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 10,
 				reload = -2,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			},
 			forbids = {
 				"wpn_fps_upg_m4_m_straight_vanilla"
@@ -2938,7 +2939,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_straight",
 			stats = {
 				value = 2,
-				concealment = 1,
+				concealment = 2,
 				reload = 2,
 				extra_ammo = -10
 			}
@@ -3123,7 +3124,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 30,
 					concealment = -3,
-					reload = -3
+					reload = -3,
+					spread = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -3280,10 +3282,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_g18c_pts/wpn_fps_pis_g18c_m_mag_33rnd",
 			stats = {
 				value = 6,
-				spread_moving = -3,
 				extra_ammo = 15,
 				concealment = -1,
-				reload = -2
+				reload = -2,
+				spread = -1
 			},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -3309,8 +3311,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_pis_g18c_pts/wpn_fps_pis_g18c_s_stock",
 			stats = {
 				value = 1,
-				recoil = 1,
-				concealment = -1
+				recoil = 2,
+				concealment = -2
 			}
 		}
 		self.parts.wpn_fps_pis_g18c_g_ergo = {
@@ -3527,7 +3529,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 10,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3540,7 +3543,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 2,
 					spread = -1,
 					concealment = -2,
-					extra_ammo = 10
+					extra_ammo = 10,
+					spread = -2
 				}
 			},
 			wpn_fps_ass_l85a2_m_emag = {
@@ -3548,7 +3552,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 10,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3561,7 +3566,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 10,
 					recoil = -1,
 					concealment = 0,
-					reload = -2
+					reload = -2,
+					spread = -1
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_mil_desc",
@@ -3573,7 +3579,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 40,
 					concealment = -4,
-					reload = -4
+					reload = -4,
+					spread = -3
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -3841,7 +3848,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 30,
 					concealment = -3,
-					reload = -3
+					reload = -3,
+					spread = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -4089,7 +4097,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					extra_ammo = 30,
 					concealment = -3,
-					reload = -3
+					reload = -3,
+					spread = -2
 				},
 				has_description = true,
 				desc_id = "bm_wp_upg_quad2_desc",
@@ -6593,7 +6602,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				concealment = -1,
 				reload = -1,
-				extra_ammo = 10
+				extra_ammo = 10,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -6869,7 +6879,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				concealment = -1,
 				reload = -1,
-				extra_ammo = 2
+				extra_ammo = 2,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -7180,7 +7191,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 4,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_m5k"
@@ -7203,7 +7214,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -2
+				concealment = -1
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_mp5a5"
@@ -7231,7 +7242,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				alert_size = 13,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -7266,8 +7277,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 9,
 				extra_ammo = 20,
-				concealment = -2,
-				reload = -2
+				concealment = -3,
+				reload = -2,
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_smg_mp5_m_std = {
@@ -7621,7 +7633,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 3,
 				concealment = -1,
 				extra_ammo = 4,
-				reload = -1
+				reload = -1,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -7824,7 +7837,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				concealment = -1,
 				extra_ammo = 10,
-				reload = -1
+				reload = -1,
+				spread = -1
 			},		
 			animations = {
 				reload = "reload",
@@ -9056,7 +9070,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				concealment = -1,
 				extra_ammo = 14,
-				reload = -2
+				reload = -2,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -9756,7 +9771,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				concealment = -1,
 				extra_ammo = 8,
-				reload = -2
+				reload = -2,
+				spread = -1
 			},
 			animations = {
 				reload = "reload_not_empty",
@@ -9942,7 +9958,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					extra_ammo = 12,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_g26_g_gripforce = {a_obj = "a_g_2"},
@@ -10280,7 +10297,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				concealment = -1,
 				reload = -1,
-				extra_ammo = 6
+				extra_ammo = 6,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -11159,7 +11177,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				concealment = -1,
 				reload = -1,
-				extra_ammo = 10
+				extra_ammo = 10,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -11771,7 +11790,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 12,
 				reload = -2,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			},
 			dlc = "gage_pack"
 		}
@@ -12054,7 +12074,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_hk21_body_rail",
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_m_standard",
-			stats = {value = 1},
+			stats = {value = 1, reload = 1},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty"
@@ -13180,8 +13200,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 2,
 				extra_ammo = 10,
-				concealment = -1,
-				reload = -2
+				concealment = -2,
+				reload = -2,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -15792,7 +15813,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 3,
 				concealment = -2,
-				reload = 4
+				reload = 4,
+				spread = -1
 			},
 			has_description = true,
 			desc_id = "bm_sc_scorpion_double_mag",
@@ -16067,7 +16089,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				extra_ammo = 12,
 				reload = -1,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -17238,7 +17261,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 5,
 				extra_ammo = 2,
 				concealment = -1,
-				reload = -1
+				reload = -1,
+				recoil = -1
 			},
 			dlc = "pd2_clan",
 			animations = {
@@ -17435,7 +17459,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					extra_ammo = 23,
 					concealment = -2,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}
 			},
 			wpn_fps_upg_o_rmr = {parent = "slide"}
@@ -17525,7 +17550,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 5,
 					extra_ammo = 4,
 					concealment = -1,
-					reload = -1
+					reload = -1,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_g18c_m_mag_33rnd = {
@@ -17539,7 +17565,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					extra_ammo = 22,
 					concealment = -2,
-					reload = -1
+					reload = -1,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_g26_b_standard = {
@@ -17632,7 +17659,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					concealment = -1,
 					extra_ammo = 8,
-					reload = -1
+					reload = -1,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_1911_b_standard = {
@@ -17784,7 +17812,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 2,
 					concealment = -1,
 					extra_ammo = 28,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_beretta_sl_std = {
@@ -17916,7 +17945,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 5,
 					concealment = -1,
 					reload = -1,
-					extra_ammo = 4
+					extra_ammo = 4,
+					spread = -1
 				}
 			},
 			wpn_fps_upg_o_rmr = {
@@ -18347,7 +18377,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
-				recoil = 4
+				recoil = 4,
+				concealment = 2
 			},
 			custom_stats = {rof_mult = 0.667},
 			has_description = true,
@@ -18662,7 +18693,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				concealment = -1,
-				extra_ammo = 10
+				extra_ammo = 10,
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -18946,7 +18978,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 10,
 				reload = -1,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -18979,7 +19012,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = -10,
 				reload = 1,
-				concealment = 1
+				concealment = 2,
+				spread = 1
 			},
 			animations = {
 				reload_not_empty = "reload_not_empty",
@@ -20415,7 +20449,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 8,
 				reload = -2,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			},
 			dlc = "the_bomb"
 		}
@@ -22680,8 +22715,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = -2,
-				spread = 2,
-				concealment = 1
+				spread = 2
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
@@ -23090,7 +23124,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					extra_ammo = 24,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_g18c_m_mag_17rnd = {
@@ -23196,7 +23231,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 6,
 					extra_ammo = 30,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				},
 				animations = {
 					reload = "reload_right",
@@ -23291,7 +23327,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					reload = -2,
 					concealment = -1,
-					extra_ammo = 16
+					extra_ammo = 16,
+					spread = -1
 				}
 			},
 			wpn_fps_pis_usp_b_tactical = {
@@ -23333,8 +23370,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -2,
 					extra_ammo = 20,
 					spread = -1,
-					recoil = 1,
-					reload = -2
+					recoil = -1,
+					reload = -2,
 				}
 			}
 		}
@@ -27942,7 +27979,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				extra_ammo = 2,
-				concealment = -1
+				concealment = -1,
+				reload = -1,
+				recoil = -1
 			}
 		}
 		self.parts.wpn_fps_pis_pl14_m_standard = {
@@ -28048,7 +28087,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 9,
 					extra_ammo = 40,
 					reload = -2,
-					concealment = -2
+					concealment = -3,
+					spread = -1
 				},
 			},
 			wpn_fps_smg_mp5_fg_m5k = {
@@ -28070,8 +28110,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 1,
 					recoil = -2,
-					spread = 2,
-					concealment = 1
+					spread = 2
 				},
 				animations = {}
 			},
@@ -28177,7 +28216,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_ak_m_quad = {
 				stats = {
 					value = 3,
-					spread_moving = -2,
+					spread = -2,
 					concealment = -3,
 					extra_ammo = 60,
 					reload = -2,
@@ -28997,7 +29036,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 10,
 				concealment = -1,
-				reload = -2
+				reload = -2,
+				spread = -1
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -29185,7 +29225,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 10,
 				reload = -1,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -29202,7 +29243,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = -10,
 				reload = 1,
-				concealment = 1,
+				concealment = 2,
+				spread = 1
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -29606,7 +29648,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 20,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}
 			}
 		}
@@ -30473,7 +30516,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -2,
 				extra_ammo = 10,
 				spread = -1,
-				recoil = 1,
+				recoil = -1,
 				reload = -2
 			},
 			animations = {
@@ -30495,7 +30538,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -2,
 				extra_ammo = 6,
 				spread = -1,
-				recoil = 1,			
+				recoil = -1,			
 				reload = -2
 			},
 			animations = {
@@ -30611,9 +30654,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_smg_mac10_m_quick/wpn_fps_smg_mac10_m_quick",
 			stats = {
 				value = 2,
-				spread = -1,
+				spread = -2,
 				extra_ammo = 10,
-				concealment = -1
+				concealment = -1,
+				reload = 2
 			},
 			animations = {
 				reload = "reload",
@@ -31424,7 +31468,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_grv/weapons/wpn_fps_snp_siltstone_pts/wpn_fps_snp_siltstone_s_polymer",
 			stats = {
 				value = 1,
-				concealment = 1
+				concealment = 1,
+				recoil = -1
 			},
 			dlc = "grv",
 			texture_bundle_folder = "grv"
@@ -32346,7 +32391,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1, 
 				extra_ammo = 10,
 				concealment = -1,
-				reload = -2
+				reload = -2,
+				spread = -1
 			},
 			dlc = "pd2_clan",
 			texture_bundle_folder = "fi7"
@@ -33599,7 +33645,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				extra_ammo = 2,
 				concealment = -1,
-				value = 1
+				value = 1,
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_shrew_m_standard = {
@@ -33772,7 +33819,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					stats = {
 						extra_ammo = 4,
 						concealment = -1,
-						value = 1
+						value = 1,
+						spread = -1
 					}
 				},
 				wpn_fps_upg_ammo_46custom = {
@@ -33914,7 +33962,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			stats = {value = 1, extra_ammo = 2, reload = -1, concealment = -1}
+			stats = {value = 1, extra_ammo = 2, reload = -1, concealment = -1, spread = -1}
 		}
 		self.parts.wpn_fps_sho_basset_o_standard = {
 			a_obj = "a_o",
@@ -34186,7 +34234,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				},
 				wpn_upg_saiga_m_20rnd = {
-					stats = {value = 1, extra_ammo = 28, reload = -3, concealment = -3},
+					stats = {value = 1, extra_ammo = 28, reload = -3, concealment = -3, recoil = -3},
 					custom_stats = {is_drum_aa12 = false}
 				}	
 			},
@@ -34895,7 +34943,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					concealment = -3,
 					reload = -3,
-					extra_ammo = 60
+					extra_ammo = 60,
+					spread = -2
 				}},
 				wpn_fps_upg_m4_m_straight = {stats = {
 					value = 2,
@@ -34976,7 +35025,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 4,
 					concealment = -1,
 					reload = -1,
-					extra_ammo = 12
+					extra_ammo = 12,
+					spread = -1
 				}}
 			},
 			adds = {
@@ -35109,11 +35159,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 2,
 					concealment = -1,
 					extra_ammo = 20,
-					reload = -1
+					reload = -1,
+					spread = -1
 				}},
 				wpn_fps_smg_mac10_m_quick = {stats = {
 					value = 2,
 					spread = -1,
+					recoil = -1,
+					reload = 1,
 					extra_ammo = 20,
 					concealment = -1
 				}}
@@ -35172,7 +35225,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					concealment = -1,
 					reload = -1,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_mp7_m_short",
@@ -35223,7 +35277,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				concealment = -1,
 				reload = -1,
-				extra_ammo = 20
+				extra_ammo = 20,
+				spread = -1
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_mp9_body_mp9",
@@ -35286,13 +35341,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_upg_m4_m_quad = {stats = {
 					extra_ammo = 60,
 					concealment = -3,
-					reload = -3
+					reload = -3,
+					spread = -2
 				}},
 				wpn_fps_upg_m4_m_straight = {stats = {
 					value = 1,
 					extra_ammo = -20,
 					reload = 2,
-					concealment = 1
+					concealment = 2
 				}},
 				wpn_fps_upg_m4_m_drum = {stats = {
 					value = 9,
@@ -35496,13 +35552,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = -20,
 					reload = 1,
-					concealment = 1
+					concealment = 2,
+					spread = 1
 				}},
 				wpn_fps_smg_schakal_m_long = {stats = {
 					value = 1,
 					extra_ammo = 20,
 					reload = -1,
-					concealment = -1
+					concealment = -1,
+					spread = -1
 				}}
 			},
 			animations = {
@@ -35569,7 +35627,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			override = {wpn_fps_smg_scorpion_m_extended = {stats = {
 					value = 3,
 					concealment = -2,
-					reload = 4
+					reload = 4,
+					spread = -1
 			}}},
 			adds = {
 				wpn_fps_upg_fl_pis_laser = {"wpn_fps_smg_scorpion_extra_rail_gadget"},
@@ -35659,13 +35718,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = -20,
 					reload = 1,
-					concealment = 1
+					concealment = 2,
+					spread = 1
 				}},
 				wpn_fps_smg_sterling_m_long = {stats = {
 					value = 1,
 					extra_ammo = 20,
 					reload = -1,
-					concealment = -1
+					concealment = -1,
+					spread = -1
 				}},
 				wpn_fps_upg_ammo_762_sterling = {
 					stats = {
@@ -35727,7 +35788,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 4,
 				extra_ammo = 24,
 				reload = -1,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_tec9_m_standard",
@@ -35979,7 +36041,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					stats = {
 						value = 1,
 						concealment = -1,
-						extra_ammo = 20
+						extra_ammo = 20,
+						spread = -1
 					}
 				},
 				wpn_fps_pis_c96_b_standard = {animations = {
@@ -36050,7 +36113,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 6,
 						extra_ammo = 30,
 						concealment = -1,
-						reload = -2
+						reload = -2,
+						spread = -1
 					}
 				},
 				wpn_fps_pis_g18c_m_mag_17rnd = {animations = {
@@ -36166,7 +36230,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 16,
 					reload = -2,
-					concealment = -1
+					concealment = -1,
+					spread = -1
 				}}
 			},
 			animations = {
@@ -36277,7 +36342,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,
 					extra_ammo = 28,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}}
 			},
 			default_blueprint = {
@@ -36385,7 +36451,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_pis_pl14_m_extended = {stats = {
 					value = 1,
 					extra_ammo = 4,
-					concealment = -1
+					concealment = -1,
+					recoil = -1,
+					reload = -1
 				}}
 			},
 			default_blueprint = {
@@ -37411,7 +37479,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 10,
 				reload = -2,
-				concealment = -1				
+				concealment = -1,
+				spread = -1				
 			}
 		}
 		self.parts.wpn_fps_smg_shepheard_ns_standard = {
@@ -37582,7 +37651,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				extra_ammo = 20,
 				reload = -2,
-				concealment = -1
+				concealment = -1,
+				spread = -1
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_shepheard_b_standard",
@@ -38094,7 +38164,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			stats = {value = 1}
+			stats = {value = 1, reload = -2}
 		}
 		self.parts.wpn_fps_pis_legacy_safety_standard = {
 			a_obj = "a_safety",
@@ -38683,7 +38753,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
 				value = 0,
-				recoil = -2				
+				recoil = -4,
+				concealment = -2				
 			},
 			is_a_unlockable = true,
 			internal_part = true,
@@ -39882,7 +39953,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					concealment = -3,
 					reload = -3,
-					extra_ammo = 10
+					extra_ammo = 10,
+					spread = -1
 				}					
 			self.parts.wpn_fps_ass_stg44_m_long.has_description = false																																																																			
 			self.parts.wpn_fps_ass_stg44_m_double.stats = {
@@ -39986,7 +40058,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					concealment = -3,
 					reload = -3,
-					extra_ammo = 30
+					extra_ammo = 30,
+					spread = -1
 				}
 			self.parts.wpn_fps_ass_mk18s_tacstock.stats = {
 					value = 3,
@@ -40435,7 +40508,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 2,
 					extra_ammo = 20,
 					reload = -2,
-					concealment = -2
+					concealment = -2,
+					spread = -1
 				}		
 		self.parts.wpn_fps_ass_bulldoge_mag_short.stats = {
 					value = 2,
@@ -41098,15 +41172,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_ass_l1a1_mag_big.stats = {
 					value = 2,
 					extra_ammo = 10,
-					spread_moving = -2,
 					reload = -3,
 					concealment = -1,
+					spread = -1
 				}																				
 			self.parts.wpn_fps_ass_l1a1_mag_short.stats = {
 					value = 2,
 					extra_ammo = -10,
 					reload = 2,
-					concealment = 1,
+					concealment = 2,
 				}																			
 			self.parts.wpn_fps_ass_l1a1_foregrip_wood.stats = {
 					value = 2,
@@ -41506,7 +41580,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_smg_kurz_919_m_curve_30.stats = {
 						value = 1,
 						concealment = -1,
-						extra_ammo = 15
+						extra_ammo = 15,
+						spread = -1
 					}			
 			end		
 
@@ -41567,7 +41642,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_vsk94_mag_ext.stats = {
 						value = 1,
 						extra_ammo = 10,
-						concealment = -1						
+						concealment = -1,
+						spread = -1						
 					}						
 				self.parts.wpn_fps_ass_vsk94_stock_none.stats = {
 						value = 1,
@@ -41599,8 +41675,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_famas_m_long.stats = { 
 						value = 2,
 						extra_ammo = 15,
-						spread_moving = -2,
 						concealment = -1,
+						spread = -1
 					}		
 				self.parts.wpn_fps_ass_famas_m_dual.stats = { 
 						value = 2,
@@ -41626,7 +41702,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						damage = -4,
 						total_ammo_mod = 11,
-						extra_ammo = 25
+						extra_ammo = 25,
+						spread = -1
 					}
 				self.parts.wpn_fps_ass_amcar_m_9mm.custom_stats = {
 						is_pistol = true			
@@ -41645,7 +41722,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						concealment = -3,
 						extra_ammo = 34,
-						reload = -3
+						reload = -3,
+						spread = -2
 					}	
 				self.parts.wpn_fps_smg_mac10_s_stowed.stats = { 
 						value = 2,
@@ -41705,7 +41783,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 4,
 						extra_ammo = 10,
 						reload = -1,
-						concealment = -2
+						concealment = -2,
+						spread = -1
 					}						
 				self.parts.wpn_fps_ass_g3_s_retractable.stats = {		
 						value = 1,
@@ -41750,7 +41829,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 9,
 						extra_ammo = 45,
 						reload = -4,
-						concealment = -4
+						concealment = -4,
+						spread = -2
 					}		
 				self.parts.wpn_fps_ass_l85a2_fg_short.forbids = { --these require weaponlib to work by default. might remove these soon 
 						"wpn_fps_upg_l85a2_bipod"
@@ -41767,7 +41847,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_galil_m_35r.stats = {
 						value = 1,			
 						extra_ammo = 5,										
-						concealment = -1
+						concealment = -1,
+						spread = -1
 					}
 				self.parts.wpn_fps_upg_galil_bipod.pcs = nil
 				self.parts.wpn_fps_ass_galil_o_galatz.pcs = nil
@@ -41789,7 +41870,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						reload = -4,						
 						spread_moving = -1,
 						concealment = -4,
-						extra_ammo = 45
+						extra_ammo = 45,
+						spread = -3
 					}		
 				self.parts.wpn_fps_ass_galil_m_35r.override_weapon_add = nil	
 				self.parts.wpn_fps_ass_galil_m_drum.override_weapon_add = nil					
@@ -41852,7 +41934,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_pis_gtt33_m_extended.stats = {
 						value = 1, 
 						extra_ammo = 8,
-						reload = -1
+						reload = -1,
+						spread = -1
 					}
 				self.parts.wpn_fps_pis_gtt33_comp2.stats = {
 						value = 7,
@@ -41887,7 +41970,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						concealment = -2,
 						reload = 4,
-						extra_ammo = 10
+						extra_ammo = 10,
+						spread = -1
 					}				
 				self.parts.wpn_fps_f2000_uupg_mag_40.has_description = false																																																							
 			end	
@@ -41928,7 +42012,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 1,
 						reload = -1,						
 						extra_ammo = 10,						
-						concealment = -1
+						concealment = -1,
+						spread = -1
 						}		
 				self.parts.wpn_fps_upg_skspug_barrel_short.stats = {
 						value = 1,
@@ -42030,7 +42115,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 5,
 						concealment = -1,
 						reload = -2,
-						extra_ammo = 4
+						extra_ammo = 4,
+						spread = -1
 					}			
 				self.parts.wpn_fps_pis_amt_b_long.stats = {
 						value = 5,
@@ -42090,7 +42176,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 9,
 						extra_ammo = 70,
 						reload = -5,
-						concealment = -5
+						concealment = -5,
+						spread = -3
 						}							
 				self.parts.wpn_fps_upg_xm8_cmag.has_description = false		
 				self.parts.wpn_fps_ass_xm8_insight_ismv.stats = {
@@ -42166,7 +42253,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 9,
 						extra_ammo = 70,
 						reload = -6,
-						concealment = -5
+						concealment = -5,
+						spread = -3
 					}		
 				self.parts.wpn_fps_upg_g36k_mag_cmag.has_description = false	
 				self.parts.wpn_fps_upg_g36k_fg_hk243.stats = {
@@ -42276,7 +42364,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = 10,
 						recoil = 0,
 						concealment = -1,
-						reload = -2
+						reload = -2,
+						spread = -1
 					}		
 				self.parts.wpn_fps_upg_obr5_mag_pmag30.has_description = false															
 				self.parts.wpn_fps_upg_obr5_handguard_short.stats = {
@@ -42356,7 +42445,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = 10,						
 						recoil = 0,
 						concealment = -1,
-						reload = -2
+						reload = -2,
+						spread = -1
 					}			
 				self.parts.wpn_fps_upg_obr5_mag_stanag30.has_description = false										
 				self.parts.wpn_fps_upg_obr5_mag_pmag20.stats = {
@@ -42368,7 +42458,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = 10,												
 						spread = -2,
 						concealment = -2,
-						reload = 2
+						reload = 2,
+						spread = -1
 					}	
 				self.parts.wpn_fps_upg_obr5_mag_pmag30_assist.has_description = false
 				self.parts.wpn_fps_upg_obr5_mag_stanag30_duct_tape.stats = {
@@ -42376,7 +42467,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = 10,						
 						spread = -2,
 						concealment = -2,
-						reload = 2
+						reload = 2,
+						spread = -1
 					}	
 				self.parts.wpn_fps_upg_obr5_mag_stanag30_duct_tape.has_description = false										
 				self.parts.wpn_fps_upg_obr5_vg_ptk.stats = {
@@ -42447,7 +42539,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_mpx_mag_modern_40.stats = {
 						value = 2,
 						extra_ammo = 10,						
-						reload = -1
+						reload = -1,
+						spread = -1
 					}	
 				self.parts.wpn_fps_upg_mpx_mag_translucent.stats = {
 						value = 1
@@ -42455,7 +42548,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_mpx_mag_extension.stats = {
 						value = 1,
 						extra_ammo = 10,						
-						reload = -1
+						reload = -1,
+						spread = -1
 					}																						
 			    self.parts.wpn_fps_upg_mpx_mag_modern.has_description = false																																																																	
 				self.parts.wpn_fps_upg_mpx_mag_dual.stats = {
@@ -42650,12 +42744,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_upg_ak12_mag_magpul.has_description = false														
 				self.parts.wpn_fps_upg_ak12_mag_quad.stats = {
 						value = 3,
-						spread_moving = -2,
 						concealment = -3,
 						extra_ammo = 30,
 						reload = -3,
 						recoil = 0,
-						spread = 0
+						spread = -2
 					}															
 				self.parts.wpn_fps_upg_ak12_supp_tgp_a.stats = {
 						value = 2,
@@ -42677,6 +42770,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = 15,
 						concealment = -1,
 						reload = -2,
+						spread = -1
 					}							
 				self.parts.wpn_fps_upg_aek971_mag_magpul.stats = {
 						value = 2,
@@ -42716,14 +42810,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 9,
 					reload = -6,
 					concealment = -5,
-					extra_ammo = 70
+					extra_ammo = 70,
+					spread = -3
 				}
 				self.parts.wpn_fps_upg_cbjms_drum_mag.has_description = false																							
 				self.parts.wpn_fps_upg_cbjms_drum_mag_half.stats = { 
 					value = 8,
 					reload = -3,
 					concealment = -3,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -2
 				}
 				self.parts.wpn_fps_upg_cbjms_drum_mag_half.has_description = false																							
 			end	
@@ -42842,7 +42938,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_pis_noodle_m_8.stats = { 
 					value = 1,				
 					extra_ammo = 2,
-					reload = -1
+					reload = -1,
+					recoil = -1
 				}						
 				self.parts.wpn_fps_pis_noodle_gr_ste.stats = { 
 					value = 1,
@@ -42882,7 +42979,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 1,				
 					extra_ammo = 4,
 					reload = -1,
-					concealment = -1					
+					concealment = -1,
+					spread = -1					
 				}		
 				self.parts.wpn_fps_pis_noodle_m_10.override_weapon = nil								
 			end								
@@ -42958,7 +43056,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						extra_ammo = 10,
 						value = 3,
 						spread_moving = 0,
-						reload = -1
+						reload = -1,
+						spread = -1
 					}
 				}			
 				self.parts.wpn_fps_upg_m4_m_pmagsolid.stats = { 
@@ -43035,6 +43134,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					stats = {
 						value = 4,
 						recoil = -1,
+						spread = -1,
 						extra_ammo = 20,
 						reload = -3,
 						concealment = -1
@@ -43111,12 +43211,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 3,
 					concealment = -2,
 					extra_ammo = 8,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}		
 				self.parts.wpn_fps_pis_pm_m_drum.stats = {
 					value = 9,
 					extra_ammo = 76,
 					reload = -6,
+					spread = -3,
 					concealment = -5
 				}							
 				self.parts.wpn_fps_pis_pm_m_custom.stats = {
@@ -43167,7 +43269,8 @@ self.wpn_fps_pis_x_pm.override = {	--Im not formatting this man....
 		value = 3,
 		concealment = -4,
 		extra_ammo = 16,
-		reload = -4
+		reload = -4,
+		spread = -1
         },				
 	animations = {
 		reload_not_empty = "reload_not_empty_right",
@@ -43181,7 +43284,8 @@ self.wpn_fps_pis_x_pm.override = {	--Im not formatting this man....
         spread = -2,
         extra_ammo = 152,
 		reload = -6,
-		concealment = -5
+		concealment = -5,
+		spread = -3
 		},						
 	animations = {
 		reload_not_empty = "reload_not_empty_right",
@@ -43236,7 +43340,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		value = 3,
 		concealment = -4,
 		extra_ammo = 16,
-		reload = -4
+		reload = -4,
+		spread = -1
         },				
 	animations = {
 		reload_not_empty = "reload_not_empty_right",
@@ -43250,7 +43355,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
         spread = -2,
         extra_ammo = 152,
 		reload = -6,
-		concealment = -5
+		concealment = -5,
+		spread = -3
 		},							
 	animations = {
 		reload_not_empty = "reload_not_empty_right",
@@ -43284,42 +43390,48 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 30 --maybe should've set this to 20 but *shrug*
+					extra_ammo = 30, --maybe should've set this to 20 but *shrug*
+					spread = -2
 				}
 				self.wpn_fps_ass_komodo.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 				}}}	
 				self.wpn_fps_smg_olympic.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 				}}}															
 				self.wpn_fps_ass_ak5.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 				}}}							
 				self.wpn_fps_ass_l85a2.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 				}}}			
 				self.wpn_fps_smg_hajk.override = { --fuck akimbos
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 				}}}			
 				self.wpn_fps_smg_x_hajk.override = {
 				wpn_fps_smg_hajk_body_standard = {animations = {
@@ -43343,7 +43455,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 3,
 					concealment = -3,
 					reload = -3,
-					extra_ammo = 60
+					extra_ammo = 60,
+					spread = -2
 				}},
 				wpn_fps_upg_m4_m_straight = {stats = {
 					value = 2,
@@ -43355,7 +43468,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 40
+					extra_ammo = 40,
+					spread = -3
 				}}}				
 			self.wpn_fps_smg_x_olympic.override = {
 				wpn_fps_m4_uupg_b_short_vanilla = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short"},
@@ -43364,41 +43478,49 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 1,
 					extra_ammo = 20,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}},
 				wpn_fps_upg_m4_m_pmag = {stats = {
 					extra_ammo = 20,
 					recoil = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}},
 				wpn_fps_upg_m4_m_l5 = {stats = {
 					value = 1,
 					extra_ammo = 20,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}},
 				wpn_fps_upg_m4_m_quad = {stats = {
 					extra_ammo = 80,
 					concealment = -3,
-					reload = -3
+					reload = -3,
+					spread = -2,
+					spread = -2
 				}},
 				wpn_fps_m4_uupg_m_std = {stats = {
 					value = 1,
 					extra_ammo = 20,
 					reload = -2,
-					concealment = -1
+					concealment = -1,
+					spread = -1
 				}},
 				wpn_fps_upg_m4_m_drum = {stats = {
 					value = 9,
 					extra_ammo = 80,
 					reload = -6,
-					concealment = -5
+					concealment = -5,
+					spread = -3
 				}},
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 60
+					extra_ammo = 60,
+					spread = -3
 				}}}				
 			end						
 
@@ -43522,7 +43644,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 2,
 					extra_ammo = -10,						
 					spread = -1,
-					concealment = 1,
+					concealment = 2,
 					reload = 2
 				}									
 			end		
@@ -43755,7 +43877,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						spread = -1,
 						extra_ammo = 12,						
 						concealment = -2,
-						reload = 2
+						reload = 2,
+						spread = -1
 					}				
 				self.parts.wpn_fps_smg_sterling_m_quick.stats = { 
 						value = 2,
@@ -43798,7 +43921,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_smg_mp7_m_extended = {stats = {
 						value = 1,
 						concealment = -3,
-						extra_ammo = 24
+						extra_ammo = 24,
+						spread = -1
 					}
 				},				
 				wpn_fps_smg_mp9_m_quick = {stats = {
@@ -43820,7 +43944,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				wpn_fps_smg_mp9_m_extended = {stats = {
 					value = 4,
 					concealment = -1,
-					extra_ammo = 20
+					extra_ammo = 20,
+					spread = -1
 				}}}			
 			end	
 
@@ -43960,12 +44085,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_upg_mp153_tube_ext_2.stats = {
 						value = 1,
 						concealment = -1,
-						extra_ammo = 2
+						extra_ammo = 2,
+						recoil = -1
 					}					
 				self.parts.wpn_fps_upg_mp153_tube_ext_4.stats = {
 						value = 2,
 						concealment = -2,
-						extra_ammo = 4
+						extra_ammo = 4,
+						spread = -1
 					}		
 				self.parts.wpn_fps_upg_mp153_barrel_short.stats = {
 						value = 0,
@@ -44073,7 +44200,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_upg_p99_mag_ext.stats = {
 						value = 2,
 						extra_ammo = 5,
-						reload = -1
+						reload = -1,
+						spread = -1
 					}
 				self.parts.wpn_fps_upg_p99_mag_ext.has_description = false												
 				self.parts.wpn_fps_upg_p99_barrel_ported.stats = {
@@ -44126,7 +44254,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 1,
 						extra_ammo = 8,
 						reload = -2,
-						concealment = -1
+						concealment = -1,
+						spread = -1
 					}
 				self.parts.wpn_fps_pis_qsz92_slide_silver.stats = {
 						value = 4,
@@ -44172,7 +44301,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 3,
 						concealment = -1,
 						extra_ammo = 4,
-						reload = -1
+						reload = -1,
+						spread = -1
 					}
 				self.parts.wpn_fps_pis_hpb_g_white.stats = {
 						value = 10,
@@ -44217,7 +44347,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 8,
 						reload = -5,
 						concealment = -4,
-						extra_ammo = 24
+						extra_ammo = 24,
+						spread = -1
 					}
 				self.parts.wpn_fps_mp_peepee_m_extended.has_description = false																							
 				self.parts.wpn_fps_mp_peepee_b_conceal.stats = {
@@ -44250,7 +44381,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_pis_vp70_m_ext.stats = { 
 						value = 2,
 						reload = -1,						
-						extra_ammo = 6
+						extra_ammo = 6,
+						spread = -1
 					}																												
 				self.parts.wpn_fps_pis_vp70_grip_ergo.stats = {
 						value = 2,
@@ -44293,7 +44425,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					stats = {
 						value = 4,
 						reload = -1,						
-						extra_ammo = 12
+						extra_ammo = 12,
+						spread = -1
 						}																			
 					}
 				}						
@@ -44340,18 +44473,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 2,
 				extra_ammo = 12,
 				concealment = -1,				
-				reload = -2
+				reload = -2,
+				spread = -1
 				}				
 			self.parts.wpn_fps_smg_cobray_m_extended_akimbo.stats = {
 				value = 2,
 				concealment = -2,								
 				extra_ammo = 24,
-				reload = -2
+				reload = -2,
+				spread = -1
 				}				
 			self.parts.wpn_fps_ass_scar_m_extended.stats = {
 				value = 2,
 				extra_ammo = 10,
-				reload = -2
+				reload = -2,
+				spread = -1
 				}						
 			self.parts.wpn_fps_pis_c96_b_short.stats = {
 				value = 1,
@@ -44375,7 +44511,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 4,
 				extra_ammo = 15,
 				reload = -2,
-				concealment = -2
+				concealment = -2,
+				spread = -1
 				}						
 			self.parts.wpn_fps_ass_flint_b_short.stats = {
 				value = 1,
@@ -44557,7 +44694,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 3,
 				concealment = -4,
 				reload = -2,
-				extra_ammo = 36
+				extra_ammo = 36,
+				spread = -1
 				}		
 			self.parts.wpn_fps_upg_ppsh_stock_k50m.stats = {	
 				value = 1,
@@ -44617,7 +44755,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 1,
 				extra_ammo = 12,
 				reload = -1,				
-				concealment = -1
+				concealment = -1,
+				spread = -1
 				}		
 			self.parts.wpn_fps_aug_body_aug_a1.stats = {
 				value = 1,
@@ -44986,7 +45125,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 4,
 						concealment = -1,
 						reload = -3,
-						extra_ammo = 20
+						extra_ammo = 20,
+						spread = -1
 					}												
 				self.parts.wpn_fps_smg_m3_b_small.stats = {
 						value = 2,
@@ -45028,7 +45168,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 3,
 						concealment = -3,
 						extra_ammo = 10,						
-						reload = -3
+						reload = -3,
+						spread = -1
 					}					
 				self.parts.wpn_fps_ass_hk33_mag_25.stats = {
 						value = 2,
@@ -45077,7 +45218,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					value = 1,
 					extra_ammo = 10,
 					concealment = -1,
-					reload = -2
+					reload = -2,
+					spread = -1
 				}
 		self.parts.wpn_fps_upg_storm_flashhider.stats = {
 					value = 4,
@@ -45105,27 +45247,32 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		self.parts.wpn_fps_upg_plr16_mag_pmag.stats = {
 					value = 1,
 					concealment = -1,
-					extra_ammo = 10					
+					extra_ammo = 10,
+					spread = -1					
 				}		
 		self.parts.wpn_fps_upg_plr16_mag_pmag.stats = {
 					value = 1,
 					concealment = -1,
-					extra_ammo = 10					
+					extra_ammo = 10,
+					spread = -1				
 				}
 		self.parts.wpn_fps_upg_plr16_mag_stanag.stats = {
 					value = 1,
 					concealment = -1,
-					extra_ammo = 10					
+					extra_ammo = 10,
+					spread = -1			
 				}				
 		self.parts.wpn_fps_upg_plr16_mag_pmag30.stats = {
 					value = 1,
 					concealment = -2,
-					extra_ammo = 20					
+					extra_ammo = 20,
+					spread = -2					
 				}				
 		self.parts.wpn_fps_upg_plr16_mag_stanag30.stats = {
 					value = 1,
 					concealment = -2,
-					extra_ammo = 20					
+					extra_ammo = 20,
+					spread = -2					
 				}								
 		self.parts.wpn_fps_upg_plr16_vg_gp033.stats = {
 					value = 1,
@@ -45206,10 +45353,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		self.parts.wpn_fps_ass_tilt_a_fuerte.pcs = nil		
 		self.parts.wpn_fps_ass_tilt_mag_big.stats = {
 					value = 3,
-					spread_moving = -2,
 					concealment = -3,
 					extra_ammo = 30,
-					reload = -3
+					reload = -3,
+					spread = -2
 				}	
 		self.parts.wpn_fps_ass_tilt_mag_swift.stats = {
 					value = 2,
@@ -45326,7 +45473,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 2,
 				concealment = -2,
 				reload = -1,
-				extra_ammo = 10
+				extra_ammo = 10,
+				spread = -1
 			}
 			self.wpn_fps_ass_hcar.override = {
 				wpn_fps_upg_ammo_half_that = {
@@ -45355,7 +45503,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 0,
 				reload = -3,
 				extra_ammo = 20,
-				concealment = -2
+				concealment = -2,
+				spread = -1
 			}				
 			self.parts.wpn_fps_ass_bar_b_para.stats = {
 				value = 1,
@@ -46606,10 +46755,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.remove(self.wpn_fps_smg_aug9mm.uses_parts, 7)				
 			self.parts.wpn_fps_upg_aug9mm_mag_ext.stats = {
 				value = 2,
-				spread_moving = -1,
 				concealment = -1,
 				extra_ammo = 8,
-				reload = -1
+				reload = -1,
+				spread = -1
 			}			
 			self.parts.wpn_fps_upg_aug9mm_barrel_long.stats = {
 				value = 2,
@@ -46707,7 +46856,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				extra_ammo = 8,
 				concealment = -2,
 				reload = -1,
-				spread_moving = 0
+				spread_moving = 0,
+				spread = -1
 			}
 			self.parts.wpn_fps_pis_czauto_vg_mag.stats = {
 				recoil = 3,
@@ -46865,7 +47015,8 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				}																
 			self.parts.wpn_fps_lmg_dp28_m_dpm35.stats = {
 					extra_ammo = 153,
-					concealment = -5
+					concealment = -5,
+					spread = -3
 				}		
 			--[[self.parts.wpn_fps_lmg_dp28_m_dpm36.stats = {
 					extra_ammo = -17,
@@ -46954,7 +47105,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_shot_auto5_ammorack.stats = nil
 			self.parts.wpn_fps_shot_auto5_m_extended.stats = {
 				extra_ammo = 2,
-				concealment = -2
+				concealment = -2,
 			}
 			self.parts.wpn_fps_shot_auto5_m_long.stats = {
 				extra_ammo = 4,
@@ -47065,18 +47216,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}
 			self.parts.wpn_fps_upg_g19_mag17.stats = {
 				reload = -2,
-				extra_ammo = 2
+				extra_ammo = 2,
+				recoil = -1
 			}
 			self.parts.wpn_fps_upg_g19_mag32.stats = {
 				reload = -5,
 				extra_ammo = 17,
-				concealment = -2
+				concealment = -2,
+				spread = -1
 			}
 			self.parts.wpn_fps_upg_g19_mag33.stats = {
 				recoil = 1,
 				reload = -6,
 				extra_ammo = 18,
-				concealment = -2
+				concealment = -2,
+				spread = -1
 			}
 			self.parts.wpn_fps_upg_g19_magwell.stats = {
 				concealment = -1,

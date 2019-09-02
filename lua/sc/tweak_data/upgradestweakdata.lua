@@ -1209,6 +1209,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.tag_team_cooldown_drain = {
 		{
 			tagged = 0,
+			owner = 0
+		},	
+		{
+			tagged = 0,
 			owner = 2
 		},
 		{
@@ -1585,6 +1589,30 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}	
+	self.definitions.player_tag_team_cooldown_drain_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "tag_team_cooldown_drain",
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_cooldown_drain_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "tag_team_cooldown_drain",
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_cooldown_drain_3 = {
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "tag_team_cooldown_drain",
+			category = "player"
+		}
+	}		
 	self.definitions.player_passive_health_multiplier_5 = {
 		category = "feature",
 		name_id = "menu_player_health_multiplier",

@@ -72,6 +72,8 @@
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas_nm"/>	
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_df"/>	
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_heavy_atlas_nm"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/omshot_df"/>	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/omshot_nm"/>	
 	
 	<!--powerpuff dozers start-->
 	<!--OMNIA dozer stuff-->

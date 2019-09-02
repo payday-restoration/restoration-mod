@@ -4996,7 +4996,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.tec9.panic_suppression_chance = 0.1
-		self.uzi.AMMO_MAX = 80
+		self.uzi.AMMO_MAX = 90
 		self.uzi.CLIP_AMMO_MAX = 22
 		self.uzi.AMMO_PICKUP = self:_pickup_chance(80, 1)
 		self.uzi.FIRE_MODE = "auto"

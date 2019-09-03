@@ -7268,7 +7268,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				extra_ammo = 20,
 				concealment = -3,
 				reload = -2,
-				spread = -1
+				spread = -1,
+				recoil = -1
 			}
 		}
 		self.parts.wpn_fps_smg_mp5_m_std = {
@@ -27700,7 +27701,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_sr2_s_unfolded",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_sr2_parts/wpn_fps_smg_sr2_s_unfolded",
-			stats = {value = 1, recoil = 1, concealment = -1},
+			stats = {value = 1, recoil = 2, concealment = -2},
 			is_a_unlockable = true,
 			texture_bundle_folder = "coco"
 		}
@@ -28076,7 +28077,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					extra_ammo = 40,
 					reload = -2,
 					concealment = -3,
-					spread = -1
+					spread = -1,
+					recoil = -1
 				},
 			},
 			wpn_fps_smg_mp5_fg_m5k = {

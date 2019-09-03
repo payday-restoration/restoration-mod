@@ -4392,7 +4392,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp7.spread.moving_steelsight = 2
 		self.mp7.stats = {
 			damage = 40,
-			spread = 15,
+			spread = 16,
 			recoil = 20,
 			spread_moving = 7,
 			zoom = 1,
@@ -4983,7 +4983,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.tec9.kick.steelsight = self.new_m4.kick.standing
 		self.tec9.stats = {
 			damage = 40,
-			spread = 16,
+			spread = 17,
 			recoil = 19,
 			spread_moving = 10,
 			zoom = 1,
@@ -6745,7 +6745,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.schakal.stats = {
 			damage = 50,
 			spread = 17,
-			recoil = 20,
+			recoil = 19,
 			spread_moving = 14,
 			zoom = 3,
 			concealment = 22,
@@ -7784,7 +7784,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_mp7.spread.moving_steelsight = 2
 		self.x_mp7.stats = {
 			damage = 40,
-			spread = 15,
+			spread = 16,
 			recoil = 20,
 			spread_moving = 7,
 			zoom = 1,
@@ -7934,7 +7934,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_schakal.stats = {
 			damage = 50,
 			spread = 17,
-			recoil = 20,
+			recoil = 19,
 			spread_moving = 14,
 			zoom = 3,
 			concealment = 22,
@@ -8021,7 +8021,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_tec9.kick.steelsight = self.new_m4.kick.standing
 		self.x_tec9.stats = {
 			damage = 40,
-			spread = 16,
+			spread = 17,
 			recoil = 19,
 			spread_moving = 10,
 			zoom = 1,

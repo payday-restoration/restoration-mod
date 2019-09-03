@@ -309,8 +309,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return players_nearby
 	end
 	
-	function PlayerManager:speak(message, arg1, arg2)
-		self:player_unit():sound():say(message, arg1, arg2)
-	end
+	--function PlayerManager:speak(message, arg1, arg2)
+	--	self:player_unit():sound():say(message, arg1, arg2)
+	--end
 		
 end

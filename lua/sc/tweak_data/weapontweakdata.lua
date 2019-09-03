@@ -8036,7 +8036,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_tec9.panic_suppression_chance = 0.1
 		self.x_uzi.AMMO_MAX = 120
 		self.x_uzi.CLIP_AMMO_MAX = 44
-		self.x_uzi.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.x_uzi.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_uzi.fire_mode_data.fire_rate = 0.086
 		self.x_uzi.single.fire_rate = 0.086
 		self.x_uzi.spread.standing = 3

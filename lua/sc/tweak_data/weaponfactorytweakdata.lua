@@ -30505,7 +30505,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -2,
 				extra_ammo = 10,
 				spread = -1,
-				recoil = -1,
 				reload = -2
 			},
 			animations = {
@@ -30526,8 +30525,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 2,
 				concealment = -2,
 				extra_ammo = 6,
-				spread = -1,
-				recoil = -1,			
+				spread = -1,			
 				reload = -2
 			},
 			animations = {

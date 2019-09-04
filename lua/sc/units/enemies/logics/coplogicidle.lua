@@ -300,7 +300,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		data.unit:sound():say("cr1", true)
 
-		if not data.unit:movement():chk_action_forbidden("action") then
+		if not data.unit:movement():chk_action_forbidden("action") and data.unit:base():has_tag("law") and not data.unit:base():has_tag("shield") then
 			data.unit:movement():play_redirect("arrest")
 		end
 

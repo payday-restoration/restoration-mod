@@ -138,41 +138,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return
 	end
 
-	local dodge_side = nil
-
-	if face_attention then
-		if dodge_dir_reversed then
-			dodge_side = "l"
-		else
-			dodge_side = "r"
-		end
-	else
-		local fwd_dot = mvec3_dot(dodge_dir, data.unit:movement():m_fwd())
-		local my_right = tmp_vec1
-
-		mrotation.x(data.unit:movement():m_rot(), my_right)
-
-		local right_dot = mvec3_dot(dodge_dir, my_right)
-
-		if math.abs(fwd_dot) > 0.7071067690849 then
-			if fwd_dot > 0 then
-				dodge_side = "fwd"
-			else
-				dodge_side = "bwd"
-			end
-		elseif right_dot > 0 then
-			dodge_side = "r"
-		else
-			dodge_side = "l"
-		end
-	end
-
-	local body_part = 1
-	local shoot_chance = variation_data.shoot_chance
-
-	if shoot_chance and shoot_chance > 0 and math.random() < shoot_chance then
-		body_part = 2
-	end
+    --[[local dodge_side = nil    -- Default, below is the modified part
+    if face_attention then -- choose side that rotates us towards our attention
+        dodge_side = dodge_dir_reversed and "l" or "r"
+    else -- choose side closest to the wanted rotation
+        local fwd_dot = mvec3_dot(dodge_dir, data.unit:movement():m_fwd())
+        local my_right = tmp_vec1
+        mrotation.x(data.unit:movement():m_rot(), my_right)
+        local right_dot = mvec3_dot(dodge_dir, my_right)
+        --print( "fwd_dot", fwd_dot )
+        --print( "right_dot", right_dot )
+        dodge_side = math.abs(fwd_dot) > 0.7071067690849 and (fwd_dot > 0 and "fwd" or "bwd") or right_dot > 0 and "r" or "l"
+    end]]
+   
+    local dodge_side
+    local fwd_dot = mvec3_dot(dodge_dir, data.unit:movement():m_fwd())
+    local my_right = tmp_vec1
+    mrotation.x(data.unit:movement():m_rot(), my_right)
+    local right_dot = mvec3_dot(dodge_dir, my_right)
+    --print( "fwd_dot", fwd_dot )
+    --print( "right_dot", right_dot )
+    dodge_side = math.abs(fwd_dot) > 0.7071067690849 and (fwd_dot > 0 and "fwd" or "bwd") or right_dot > 0 and "r" or "l"
+    local body_part = 1
+    local shoot_chance = variation_data.shoot_chance
+    if shoot_chance and shoot_chance > 0 and math.random() < shoot_chance then
+        body_part = 2
+    end
 
 	local action_data = {
 		type = "dodge",

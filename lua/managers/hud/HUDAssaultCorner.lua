@@ -341,7 +341,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 			color = Color.white,
 			name = "vip_corner_icon",
 			blend_mode = "add",
-			visible = restoration.Options:GetValue("HUD/AssaultStyle") == 2,
+			visible = false,
 			layer = 3,
 			texture = self.buff_icon,
 			x = 0,

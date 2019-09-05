@@ -8919,7 +8919,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.r0991 then --Pawcio's Colt 9MM Submachine Gun (even though it's an SMG. realism? thog dont caare)
 			self.r0991.categories = {"pistol"}
 			self.r0991.tactical_reload = 1											
-			self.r0991.CLIP_AMMO_MAX = 20
+			self.r0991.CLIP_AMMO_MAX = 30
 			self.r0991.AMMO_MAX = 150
 			self.r0991.FIRE_MODE = "single"					
 			self.r0991.BURST_FIRE = 3

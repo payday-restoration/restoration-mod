@@ -915,7 +915,7 @@ function UpgradesTweakData:_init_pd2_values()
 		tick_time = 1.25,
 		total_ticks = 8,
 		max_stacks = 5,
-		stacking_cooldown = 0.0,
+		stacking_cooldown = 0.1,
 		add_stack_sources = {
 			bullet = false,
 			explosion = false,

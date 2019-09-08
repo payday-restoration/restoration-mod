@@ -31,6 +31,9 @@
 		},
 		{ 	"hook_id" : "lib/entry",
 			"script_path" : "core_voice.lua"
-		}		
+		},
+		{ 	"hook_id" : "lib/utils/levelloadingscreenguiscript",
+			"script_path" : "lua/levelloadingscreenguiscript.lua"
+		}
 	]
 }

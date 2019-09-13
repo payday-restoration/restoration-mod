@@ -29,7 +29,7 @@
 						<param key="ambient_color" value="0.80392158031464 0.86274510622025 0.90196079015732"/>
 						<param key="fog_max_range" value="108989.7578125"/>
 						<param key="bloom_threshold" value="0.65823376178741"/>
-						<param key="sky_top_color_scale" value="2.1797950267792"/>
+						<param key="sky_top_color_scale" value="1.1059999465942"/>
 						<param key="sky_top_color" value="0.80392158031464 0.86274510622025 0.90196079015732"/>
 						<param key="fog_min_range" value="2217.3779296875"/>
 						<param key="fog_max_density" value="1"/>

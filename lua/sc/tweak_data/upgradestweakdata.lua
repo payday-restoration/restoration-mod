@@ -1198,7 +1198,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 2.5,
+			kill_health_gain = 1.5,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 2,

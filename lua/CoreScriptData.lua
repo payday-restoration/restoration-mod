@@ -159,6 +159,13 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	end
 	end
 	
+	if Global.load_level == true and Global.game_settings.level_id == "big" then
+	if rnd2 == 1 then	    
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
+	end
+	end
+	
 	if Global.load_level == true and Global.game_settings.level_id == "four_stores" then
 	if rnd3 == 1 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")

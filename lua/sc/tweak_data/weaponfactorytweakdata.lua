@@ -38703,7 +38703,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			dlc = "sc"			
 		}								
-		self.parts.wpn_fps_shot_r870_s_folding_ext = {
+		self.parts.wpn_fps_shot_r870_s_folding_ext = { -- thanks jarey_!
 			pcs = {},
 			type = "stock",
 			name_id = "bm_wp_r870_s_folding_ext",
@@ -41615,7 +41615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 4,			
 						spread = 1,
 						concealment = -2
-					}	
+					}
 				self.parts.wpn_fps_ass_amcar_ns_viet.stats = {
 						value = 5,
 						recoil = -1,
@@ -41625,9 +41625,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_amcar_m_9mm.stats = {
 						value = 2,
 						damage = -4,
+						spread = -1,
 						total_ammo_mod = 11,
-						extra_ammo = 25
-					}
+						extra_ammo = 15
+					}					
 				self.parts.wpn_fps_ass_amcar_m_9mm.custom_stats = {
 						is_pistol = true			
 					}

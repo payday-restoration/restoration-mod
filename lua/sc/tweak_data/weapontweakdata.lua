@@ -12199,7 +12199,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.fmg9.stats = {
 				damage = 30,
 				spread = 16,
-				recoil = 18,
+				recoil = 19,
 				spread_moving = 9,
 				zoom = 1,
 				concealment = 28,

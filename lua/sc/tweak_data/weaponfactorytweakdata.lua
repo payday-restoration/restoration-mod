@@ -44780,7 +44780,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = 12,
 				spread = 1,
 				concealment = -3
-				}							
+				}
+			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_hock")
+			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_osprey")
+			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_dragon")
 			end					
 			
 

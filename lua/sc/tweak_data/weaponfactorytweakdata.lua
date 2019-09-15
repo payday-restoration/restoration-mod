@@ -44326,29 +44326,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_ass_flint_g_custom.stats = {
 				value = 2,
 				recoil = 1
-				}
-			self.parts.wpn_fps_ass_m4_s_russian.stats = {
-				value = 1,
-				spread = 1,				
-				concealment = -2
-				}
-			self.parts.wpn_fps_pis_chinchilla_b_short.stats = {
-				value = 1,
-				spread = -1,				
-				concealment = 2
-				}
-			self.parts.wpn_fps_pis_chinchilla_g_pearl.stats = {
-				value = 1
-				}
-			self.parts.wpn_fps_snp_model70_s_discrete.stats = {
-				value = 1,
-				concealment = 1
-				}				
-			self.parts.wpn_fps_snp_model70_b_smol.stats = {
-				value = 1,
-				spread = -1,
-				concealment = 2
-				}								
+				}	
 			self.parts.wpn_fps_ass_corgi_b_medium.stats = {
 				value = 2,
 				recoil = 1

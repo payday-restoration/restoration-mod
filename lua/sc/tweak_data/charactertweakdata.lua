@@ -13359,7 +13359,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_zeal_tazer",
 					"ene_zeal_fbi_m4",
 					"ene_zeal_fbi_mp5",
-					"ene_zeal_swat_heavy_sc"
+					"ene_zeal_swat_heavy_sc",
+					"ene_zeal_swat_heavy_r870_sc"
 				}
 			},
 			spa = {

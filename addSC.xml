@@ -1368,8 +1368,15 @@
 	<!--imagine getting your head blown off by 4 dumbass invincible robbers-->
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet" force="true" />
 	<!--zeal heavy r870-->
+    <object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_contour"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/swat_heavy_head_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/swat_heavy_head_nm" />	
 	<!--textures heavy -->
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
@@ -1508,9 +1515,8 @@
 	<unit path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2" load="true"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_contour"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_husk" load="true"/>	
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
-	
+	<unit path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_husk" load="true"/>
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />	
 	
 	<!--reinbeck muzzleflash-->
 	<effect path="effects/particles/shotgun/muzzleflash" load="false"/>

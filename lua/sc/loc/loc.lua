@@ -777,7 +777,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Duck and Cover--
 		["menu_sprinter_beta_sc"] = "Duck and Cover",
-		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYou have a ##10%## increased chance to dodge while sprinting.\n\nYou gain ##15%## chance to dodge while ziplining.",																								
+		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",																								
+
+		--Sneaky Bastard--
+		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
@@ -918,17 +921,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 	
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##5## points.",
-		["menu_deck6_3_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by ##10%## for ballistic vests.",
-		["menu_deck6_5_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##10%## for ballistic vests.",
+		["menu_deck6_3_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by ##15%## for ballistic vests.",
+		["menu_deck6_5_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##15%## for ballistic vests.",
 		["menu_deck6_7_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##20%## for ballistic vests.",
 		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Rogue
 		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYou swap between your weapons ##80%## faster.",
 		["menu_deck4_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck4_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYour dodge meter is filled to ##200%## when you are revived.",
+		["menu_deck4_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYour dodge meter is filled when you are revived.",
 		["menu_deck4_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck4_9_desc_sc"] = "Dodging an attack while your armor is broken regenerates health equal to ##40%## of the damage you would have taken.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck4_9_desc_sc"] = "Dodging an attack while your armor is broken regenerates health equal to ##20%## of the damage you would have taken.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",

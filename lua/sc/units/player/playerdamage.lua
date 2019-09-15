@@ -44,7 +44,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._damage_to_hot_stack = {}
 		self._armor_stored_health = 0
 		self._can_take_dmg_timer = 0
-		self._dodge_meter = 0.0 --Amount of dodge built up as meter.
 		self._regen_on_the_side_timer = 0
 		self._regen_on_the_side = false
 		self._interaction = managers.interaction
@@ -52,6 +51,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dire_need = managers.player:has_category_upgrade("player", "armor_depleted_stagger_shot")
 		self._has_damage_speed = managers.player:has_inactivate_temporary_upgrade("temporary", "damage_speed_multiplier")
 		self._has_damage_speed_team = managers.player:upgrade_value("player", "team_damage_speed_multiplier_send", 0) ~= 0
+
+		self._dodge_meter = 0.0 --Amount of dodge built up as meter.
+		self._meter_from_running = 0.0
+		if player_manager:has_category_upgrade("player", "run_dodge_chance") then
+			self._meter_from_running = tweak_data.upgrades.values.player.run_dodge_chance[1]
+		end
+		self._meter_from_zipline = 0.0
+		if player_manager:has_category_upgrade("player", "zipline_dodge_chance") then
+			self._meter_from_zipline = tweak_data.upgrades.values.player.zipline_dodge_chance[1]
+		end
 
 
 		local function revive_player()
@@ -632,7 +641,7 @@ function PlayerDamage:_update_regenerate_timer(t, dt)
 end
 
 function PlayerDamage:fill_dodge_meter(dodge_added)
-	if dodge_added > 0.0 then
+	if dodge_added > 0.0 and not self:is_downed() then
 		self._dodge_meter = math.min(self._dodge_meter + dodge_added, 2.0)
 		managers.hud:set_dodge_value(self._dodge_meter, self:get_dodge_stat())
 	end
@@ -644,3 +653,20 @@ function PlayerDamage:get_dodge_stat()
 				+managers.player:skill_dodge_chance(false, false, false)
 				) or 0.0
 end
+
+Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)
+	if self._unit:movement():running() then
+		self:fill_dodge_meter(self:get_dodge_stat() * dt * self._meter_from_running)
+	end
+
+	if self._unit:movement():zipline_unit() then
+		self:fill_dodge_meter(self:get_dodge_stat() * dt * self._meter_from_zipline)
+	end
+end)
+
+Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)
+	if self._dodge_meter > 0.0 then
+		self._dodge_meter = 0.0
+		managers.hud:set_dodge_value(self._dodge_meter, self:get_dodge_stat())
+	end
+end)

@@ -1466,7 +1466,7 @@ function SkillTreeTweakData:init(tweak_data)
 			--Sneaky Bastard--
 			self.skills.jail_diet = {
 				["name_id"] = "menu_jail_diet_beta",
-				["desc_id"] = "menu_jail_diet_beta_desc",
+				["desc_id"] = "menu_jail_diet_beta_desc_sc",
 				["icon_xy"] = {1, 12},
 				[1] = {
 					upgrades = {

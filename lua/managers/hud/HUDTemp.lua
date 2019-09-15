@@ -24,7 +24,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local dodge_threshold = self._dodge_panel:rect({
 			name = "dodge_threshold",
 			color = Color(1, 1, 1),
-			layer = 2,
+			layer = 4,
 			h = 2
 		})
 		self._dodge_panel:rect({
@@ -62,9 +62,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function HUDTemp:set_dodge_value(value, total_dodge)
 		self._dodge_panel:set_alpha(1) --Display dodge panel when needed.
-		self._dodge_panel:child("dodge_bar"):set_h((value / (1.0 - (total_dodge / 2.0))) * self._dodge_panel:h())
+		self._dodge_panel:child("dodge_bar"):set_h((value / (2.0 - total_dodge)) * self._dodge_panel:h())
 		self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
-		if value >= 1.0 - (total_dodge / 2.0) then
+		if value >= 1.0 - total_dodge then
 			self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
 		else
 			self._dodge_panel:stop()

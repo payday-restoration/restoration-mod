@@ -98,8 +98,8 @@ function UpgradesTweakData:_init_pd2_values()
 		0.2,
 		0.1,
 		0,
-		-0.05,
 		-0.1,
+		-0.15,
 		-0.2,
 		-0.3
 	}
@@ -632,7 +632,8 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   COMMANDO SUBTREE   ]]--
 			--{
 				--Duck and Cover
-				self.values.player.run_dodge_chance = {0.1}
+				self.values.player.run_dodge_chance = {0.10}
+				self.values.player.zipline_dodge_chance = {0.3}
 				self.values.player.run_speed_multiplier = {1.25}
 				self.values.player.crouch_dodge_chance = {0.05, 0.15}
 
@@ -883,19 +884,19 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.level_2_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_3_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_4_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 
 	self.values.player.tier_armor_multiplier = {
@@ -1020,7 +1021,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Rogue
 	self.dodge_to_heal = {
-		0.4
+		0.2
 	}
 
 	--Gambler

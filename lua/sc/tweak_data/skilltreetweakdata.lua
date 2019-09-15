@@ -2335,7 +2335,8 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_6_desc",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_1",
+					"player_perk_armor_regen_timer_multiplier_1"
 				},
 				cost = 200,
 				icon_xy = {1, 2},
@@ -2362,10 +2363,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_dodge_addend_2",
 					"player_level_3_dodge_addend_2",
-					"player_level_4_dodge_addend_2",
-					"player_level_2_armor_multiplier_2",
-					"player_level_3_armor_multiplier_2",
-					"player_level_4_armor_multiplier_2"						
+					"player_level_4_dodge_addend_2"					
 				},
 				cost = 1000,
 				icon_xy = {5, 3},
@@ -2378,9 +2376,9 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_level_2_dodge_addend_3",
 					"player_level_3_dodge_addend_3",
 					"player_level_4_dodge_addend_3",
-					"player_level_2_armor_multiplier_3",
-					"player_level_3_armor_multiplier_3",
-					"player_level_4_armor_multiplier_3"						
+					"player_level_2_armor_multiplier_2",
+					"player_level_3_armor_multiplier_2",
+					"player_level_4_armor_multiplier_2"						
 				},
 				cost = 2400,
 				icon_xy = {6, 3},
@@ -2391,10 +2389,12 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_perk_armor_regen_timer_multiplier_1"
+					"player_level_2_armor_multiplier_3",
+					"player_level_3_armor_multiplier_3",
+					"player_level_4_armor_multiplier_3"	
 				},
 				cost = 4000,
-				icon_xy = {6, 2},
+				icon_xy = {7, 1},
 				name_id = "menu_deck6_9",
 				desc_id = "menu_deck6_9_desc_sc"
 			}

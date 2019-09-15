@@ -920,11 +920,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 	
 		--Crook--
-		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##5## points.",
-		["menu_deck6_3_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by ##15%## for ballistic vests.",
-		["menu_deck6_5_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##15%## for ballistic vests.",
-		["menu_deck6_7_desc_sc"] = "Your dodge is increased by ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##20%## for ballistic vests.",
-		["menu_deck6_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYour armor recovery rate is increased by ##5%##.",
+		["menu_deck6_3_desc_sc"] = "Your dodge is increased by an additional ##5## points for ballistic vests.\n\nYour armor is increased by ##10%## for ballistic vests.",
+		["menu_deck6_5_desc_sc"] = "Your dodge is increased by an additional ##5## points for ballistic vests.",
+		["menu_deck6_7_desc_sc"] = "Your dodge is increased by an additional ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##10%## for ballistic vests.",
+		["menu_deck6_9_desc_sc"] = "Your armor is increased by an additional ##20%## for ballistic vests.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Rogue
 		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYou swap between your weapons ##80%## faster.",

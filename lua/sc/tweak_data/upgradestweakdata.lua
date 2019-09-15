@@ -885,19 +885,19 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.level_2_armor_multiplier = {
-		1.15,
-		1.3,
-		1.5
+		1.1,
+		1.2,
+		1.4
 	}
 	self.values.player.level_3_armor_multiplier = {
-		1.15,
-		1.3,
-		1.5
+		1.1,
+		1.2,
+		1.4
 	}
 	self.values.player.level_4_armor_multiplier = {
-		1.15,
-		1.3,
-		1.5
+		1.1,
+		1.2,
+		1.4
 	}
 
 	self.values.player.tier_armor_multiplier = {

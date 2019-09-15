@@ -38703,7 +38703,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			dlc = "sc"			
 		}								
-		self.parts.wpn_fps_shot_r870_s_folding_ext = {
+		self.parts.wpn_fps_shot_r870_s_folding_ext = { -- thanks jarey_!
 			pcs = {},
 			type = "stock",
 			name_id = "bm_wp_r870_s_folding_ext",
@@ -41615,7 +41615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 4,			
 						spread = 1,
 						concealment = -2
-					}	
+					}
 				self.parts.wpn_fps_ass_amcar_ns_viet.stats = {
 						value = 5,
 						recoil = -1,
@@ -41625,9 +41625,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_amcar_m_9mm.stats = {
 						value = 2,
 						damage = -4,
+						spread = -1,
 						total_ammo_mod = 11,
-						extra_ammo = 25
-					}
+						extra_ammo = 15
+					}					
 				self.parts.wpn_fps_ass_amcar_m_9mm.custom_stats = {
 						is_pistol = true			
 					}
@@ -44325,7 +44326,29 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_ass_flint_g_custom.stats = {
 				value = 2,
 				recoil = 1
-				}	
+				}
+			self.parts.wpn_fps_ass_m4_s_russian.stats = {
+				value = 1,
+				spread = 1,				
+				concealment = -2
+				}
+			self.parts.wpn_fps_pis_chinchilla_b_short.stats = {
+				value = 1,
+				spread = -1,				
+				concealment = 2
+				}
+			self.parts.wpn_fps_pis_chinchilla_g_pearl.stats = {
+				value = 1
+				}
+			self.parts.wpn_fps_snp_model70_s_discrete.stats = {
+				value = 1,
+				concealment = 1
+				}				
+			self.parts.wpn_fps_snp_model70_b_smol.stats = {
+				value = 1,
+				spread = -1,
+				concealment = 2
+				}								
 			self.parts.wpn_fps_ass_corgi_b_medium.stats = {
 				value = 2,
 				recoil = 1
@@ -44780,7 +44803,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				alert_size = 12,
 				spread = 1,
 				concealment = -3
-				}							
+				}
+			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_hock")
+			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_osprey")
+			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_dragon")
 			end					
 			
 

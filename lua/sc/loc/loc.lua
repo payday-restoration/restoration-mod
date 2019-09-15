@@ -931,7 +931,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck4_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck4_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYour dodge meter is filled when you are revived.",
 		["menu_deck4_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck4_9_desc_sc"] = "Dodging an attack while your armor is broken regenerates health equal to ##20%## of the damage you would have taken.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck4_9_desc_sc"] = "Dodging an attack while your armor is broken regenerates health equal to ##25%## of the damage you would have taken.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##5%##.",
@@ -959,9 +959,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Burglar--
-		["menu_deck7_1_desc_sc"] = "Your dodge is increased by ##5## points.",
+		["menu_deck7_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.",
 		["menu_deck7_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYou bag corpses ##20%## faster.",
-		["menu_deck7_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYou pick locks ##20%## faster.",
+		["menu_deck7_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYou pick locks ##20%## faster.\n\nYour dodge meter fills up by an additional ##5%## of your dodge every second while crouching.",
 		["menu_deck7_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYou answer pagers ##10%## faster.",
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##5%##.\n\nYou gain a ##10%## boost in your movement speed when crouching.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
@@ -1020,11 +1020,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "For every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke grenade, you and your allies regenerate armor ##50%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nAfter the smoke dissipates, the Smoke Bomb is on a cooldown for ##30## seconds, but killing enemies will reduce this cooldown by ##1## second.",
+		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##twice## as fast. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nThe Smoke Bomb has a ##45## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
 		["menu_deck18_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck18_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck18_9_desc_sc"] = "##(TODO)## Every ally inside the smoke grenade increases the armor regneration speed bonus by ##25%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##50%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
 		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##16## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\n Whenever damage-over-time is negated, you heal for ##300%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 40% health.##\n\n##Armor Deflection is disabled while using this perk deck.##",	

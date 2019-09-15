@@ -146,16 +146,17 @@ function UpgradesTweakData:_init_pd2_values()
 		7,
 		5,
 		4,
-		2
+		3
 	}
+	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		14,
-		13.5,
-		12.5,
-		12,
-		10.5,
-		9.5,
-		4
+		3.00,
+		2.75,
+		2.50,
+		2.25,
+		2.00,
+		1.75,
+		1.50
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -635,7 +636,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.run_dodge_chance = {0.10}
 				self.values.player.zipline_dodge_chance = {0.3}
 				self.values.player.run_speed_multiplier = {1.25}
-				self.values.player.crouch_dodge_chance = {0.05, 0.15}
+				self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
 				--Evasion
 				self.values.player.movement_speed_multiplier = {1.05, 1.1}
@@ -1021,7 +1022,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Rogue
 	self.dodge_to_heal = {
-		0.2
+		0.25
 	}
 
 	--Gambler
@@ -1150,7 +1151,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.player.dodge_replenish_armor = {true}
 	self.values.player.smoke_screen_ally_dodge_bonus = {0.25}
-	self.values.player.sicario_multiplier = {1.5}
+	self.values.player.sicario_multiplier = {0.5}
 	
 	--alcoholism is no joke
 	--stoic

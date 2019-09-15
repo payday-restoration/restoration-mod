@@ -2407,7 +2407,8 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "character_pack_clover",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_1",
+					"player_crouch_dodge_chance_1"
 				},
 				cost = 200,
 				icon_xy = {1, 2},
@@ -2429,7 +2430,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_dodge_chance_2",
-					"player_pick_lock_speed_multiplier"
+					"player_pick_lock_speed_multiplier",
+					"player_crouch_dodge_chance_2"
 				},
 				cost = 1000,
 				icon_xy = {7, 3},
@@ -3119,7 +3121,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_smoke_screen_ally_dodge_bonus",
+					"player_sicario_multiplier",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

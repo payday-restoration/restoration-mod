@@ -52,7 +52,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._has_damage_speed = managers.player:has_inactivate_temporary_upgrade("temporary", "damage_speed_multiplier")
 		self._has_damage_speed_team = managers.player:upgrade_value("player", "team_damage_speed_multiplier_send", 0) ~= 0
 
-		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '200' dodge.
+		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 
 		local function revive_player()
 			self:revive(true)
@@ -459,7 +459,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
 		end
 		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
-			self:fill_dodge_meter(2.0)
+			self:fill_dodge_meter(1.5)
 		end
 	end
 
@@ -635,7 +635,7 @@ end
 --Adds to dodge meter and updates hud element.
 function PlayerDamage:fill_dodge_meter(dodge_added)
 	if dodge_added > 0.0 and not self:is_downed() then
-		self._dodge_meter = math.min(self._dodge_meter + dodge_added, 2.0)
+		self._dodge_meter = math.min(self._dodge_meter + dodge_added, 1.5)
 		managers.hud:set_dodge_value(self._dodge_meter, self:get_dodge_stat())
 	end
 end

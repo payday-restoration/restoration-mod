@@ -150,13 +150,13 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		3.00,
-		2.75,
 		2.50,
 		2.25,
 		2.00,
-		1.75,
-		1.50
+		1.80,
+		1.60,
+		1.40,
+		1.20
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -861,11 +861,11 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
-		0.95,
 		0.9,
-		0.85,
 		0.8,
-		0.75
+		0.7,
+		0.65,
+		0.6
 	}
 
 	self.values.player.level_2_dodge_addend = {
@@ -885,19 +885,19 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.level_2_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_3_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_4_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 
 	self.values.player.tier_armor_multiplier = {
@@ -1151,7 +1151,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.values.player.dodge_replenish_armor = {true}
 	self.values.player.smoke_screen_ally_dodge_bonus = {0.25}
-	self.values.player.sicario_multiplier = {0.5}
+	self.values.player.sicario_multiplier = {0.35}
 	
 	--alcoholism is no joke
 	--stoic
@@ -1176,9 +1176,9 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--yoooooooooooooooooo--
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {
-		0.15,
-		0.3,
-		0.45
+		0.20,
+		0.35,
+		0.50
 	}
 	
 	--Fat benis :DDDDD

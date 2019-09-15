@@ -95,11 +95,11 @@ function UpgradesTweakData:_init_pd2_values()
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
+		0.2,
 		0.1,
-		0.05,
 		0,
 		-0.05,
-		-0.15,
+		-0.1,
 		-0.2,
 		-0.3
 	}
@@ -167,6 +167,8 @@ function UpgradesTweakData:_init_pd2_values()
 		self.values.player.no_deflection = {true}
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {1}
+		self.values.player.dodge_to_heal = {true}
+		self.values.player.dodge_on_revive = {true}
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
 	self.values.team.crew_add_armor = {1.5}
@@ -865,19 +867,19 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.level_2_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 	self.values.player.level_3_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 	self.values.player.level_4_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 
 	self.values.player.level_2_armor_multiplier = {
@@ -941,10 +943,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.health.hostage_multiplier = {1.025}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
+		0.05,
 		0.1,
-		0.2,
-		0.3,
-		0.4
+		0.15,
+		0.2
    	}
 	self.values.player.passive_health_regen = {0.025}
 	self.values.player.passive_health_multiplier = {
@@ -1014,6 +1016,11 @@ function UpgradesTweakData:_init_pd2_values()
 		0.9,
 		0.85,
 		0.8
+	}
+
+	--Rogue
+	self.dodge_to_heal = {
+		0.4
 	}
 
 	--Gambler
@@ -1141,7 +1148,7 @@ function UpgradesTweakData:_init_pd2_values()
 		{0.2, 4}
 	}
 	self.values.player.dodge_replenish_armor = {true}
-	self.values.player.smoke_screen_ally_dodge_bonus = {0.05}
+	self.values.player.smoke_screen_ally_dodge_bonus = {0.25}
 	self.values.player.sicario_multiplier = {1.5}
 	
 	--alcoholism is no joke
@@ -1589,6 +1596,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}	
+	self.definitions.player_dodge_to_heal = {
+		category = "feature",
+		name_id = "menu_player_dodge_to_heal",
+		upgrade = {
+			category = "player",
+			upgrade = "dodge_to_heal",
+			value = 1
+		}
+	}
+	self.definitions.player_dodge_on_revive = {
+		category = "feature",
+		name_id = "menu_player_dodge_on_revive",
+		upgrade = {
+			category = "player",
+			upgrade = "dodge_on_revive",
+			value = 1
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {

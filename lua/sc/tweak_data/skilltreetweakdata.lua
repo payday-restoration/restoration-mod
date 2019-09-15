@@ -2220,7 +2220,8 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_4_desc",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_1",
+					"weapon_passive_swap_speed_multiplier_1"
 				},
 				cost = 200,
 				icon_xy = {1, 2},
@@ -2240,7 +2241,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3"
+					"player_passive_dodge_chance_3",
+					"player_dodge_on_revive"
 				},
 				cost = 1000,
 				icon_xy = {2, 2},
@@ -2261,7 +2263,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"weapon_passive_swap_speed_multiplier_1"
+					"player_dodge_to_heal"
 				},
 				cost = 4000,
 				icon_xy = {5, 2},
@@ -3072,7 +3074,7 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_18_desc",
 			{
 				upgrades = {
-					"player_tier_dodge_chance_1",
+					"player_passive_dodge_chance_1",
 					"smoke_screen_grenade"
 				},
 				cost = 200,
@@ -3084,7 +3086,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
@@ -3095,7 +3097,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_2"
+					"player_passive_dodge_chance_3"
 				},
 				cost = 1000,
 				icon_xy = {2, 0},
@@ -3106,7 +3108,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3"
+					"player_passive_dodge_chance_4"
 				},
 				cost = 2400,
 				icon_xy = {3, 0},
@@ -3118,7 +3120,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_smoke_screen_ally_dodge_bonus",
-					"player_sicario_multiplier",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
@@ -3336,7 +3337,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck21_7_desc_sc",
 				name_id = "menu_deck21_7",
 				upgrades = {
-					"player_passive_dodge_chance_2"
+					"player_armor_regen_timer_multiplier_passive"
 				},
 				icon_xy = {
 					3,

@@ -1,5 +1,3 @@
---[[
-
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	
 	function HUDTemp:dodge_init()
@@ -93,7 +91,7 @@ if not restoration.Options:GetValue("HUD/MainHUD") then
 
 	end)
 end
-]]--
+
 if restoration.Options:GetValue("HUD/MainHUD") then
 	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
 		if restoration.Options:GetValue("HUD/Bag") then
@@ -115,11 +113,9 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 			self._stamina_panel:set_alpha(1)
 			self._bag_panel_w, self._bag_panel_h = bag_panel:size()
 		end
-		--[[
 		if restoration and restoration.Options:GetValue("SC/SC") and restoration.Options:GetValue("HUD/MainHUD") then
 			self:dodge_init()
 		end
-		]]--
 		RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 		self:RestorationValueChanged()
 	end)

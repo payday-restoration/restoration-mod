@@ -21,9 +21,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			color = Color(0.5, 0.5, 0.8),
 			layer = 1
 		})
-		local dodge_threshold = self._dodge_panel:rect({
-			name = "dodge_threshold",
-			color = Color(1, 1, 1),
+		local dodge_threshold_1 = self._dodge_panel:rect({
+			name = "dodge_threshold_1",
+			color = Color(0.0, 0.0, 0.0),
+			layer = 4,
+			h = 2
+		})
+		local dodge_threshold_2 = self._dodge_panel:rect({
+			name = "dodge_threshold_2",
+			color = Color(0.0, 0.0, 0.0),
 			layer = 4,
 			h = 2
 		})
@@ -64,6 +70,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_panel:set_alpha(1) --Display dodge panel when needed.
 		self._dodge_panel:child("dodge_bar"):set_h((value / (2.0 - total_dodge)) * self._dodge_panel:h())
 		self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
+		self._dodge_panel:child("dodge_threshold_1"):set_center_y((1.0 / (2.0 - total_dodge)) * self._dodge_panel:h())
+		self._dodge_panel:child("dodge_threshold_2"):set_center_y((total_dodge / (2.0 - total_dodge)) * self._dodge_panel:h())
 		if value >= 1.0 - total_dodge then
 			self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
 		else

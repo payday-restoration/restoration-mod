@@ -1022,7 +1022,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Rogue
 	self.dodge_to_heal = {
-		0.5
+		0.4
 	}
 
 	--Gambler

@@ -53,6 +53,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._has_damage_speed_team = managers.player:upgrade_value("player", "team_damage_speed_multiplier_send", 0) ~= 0
 
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
+		self._dodge_heal_cooldown = 0.0 --rogue dodge_to_heal skill
 
 		local function revive_player()
 			self:revive(true)
@@ -283,8 +284,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if attack_data.damage > 0 then
 				self._dodge_meter = self._dodge_meter - 1.0 --Dodging an attack lets excess dodge above '100' to roll over, so that dodge above 67 is still relevant.
 				self:_send_damage_drama(attack_data, 0) --Resetting the meter feels bad to play with anyway.
-				if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 then --Rogue health regen.
+				if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 and self._dodge_heal_cooldown == 0.0 then --Rogue health regen.
 					self:restore_health(tweak_data.upgrades.dodge_to_heal[1] * attack_data.damage, true)
+					self._dodge_heal_cooldown = 3.0
 				end
 			end
 			self:_call_listeners(damage_info)
@@ -671,6 +673,8 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function
 	if self._unit:movement():zipline_unit() then
 		self:fill_dodge_meter(self:get_dodge_stat() * dt * managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0))
 	end
+
+	self._dodge_heal_cooldown = math.max(self._dodge_heal_cooldown - dt, 0.0)
 end)
 
 Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)

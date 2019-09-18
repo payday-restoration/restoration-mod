@@ -1120,9 +1120,9 @@
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
 	<sequence_manager path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky"/>
-    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>	
-    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>		
-    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>		
+        <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>	
+        <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>		
+        <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>		
 	<sequence_manager path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>		
@@ -1161,7 +1161,7 @@
 	
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_heavy_dw_df" force="false"/>  
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/k63_df" force="false"/>
-    <texture path="units/pd2_dlc_mad/characters/shared_textures/k63_nm" force="false"/>
+        <texture path="units/pd2_dlc_mad/characters/shared_textures/k63_nm" force="false"/>
 	
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_df"/>
@@ -1258,9 +1258,9 @@
 	<!--textures to always load-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
-    <!--murky glass-->
-    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
-    <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
+        <!--murky glass-->
+        <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+        <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
 		
 	<!--Zeal Heavy Swat Shield-->
 	<!-- Disabled, since he's no longer in use.
@@ -1516,6 +1516,7 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
 	<material_config path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_contour"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2_husk" load="true"/>	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />	
 	
 	<!--reinbeck muzzleflash-->
 	<effect path="effects/particles/shotgun/muzzleflash" load="false"/>
@@ -1526,25 +1527,25 @@
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />	
 	<!--fbi heavy r870-->
-    <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
-    <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
-    <object path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
+        <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
+        <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
+        <object path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_contour"/>
 	<!--city heavy r870-->
-    <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
-    <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
-    <object path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
+        <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
+        <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
+        <object path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_contour"/>
 	<!--swat heavy r870-->
-    <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc" load="true"/>
-    <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk" load="true"/>
-    <object path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
+        <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc" load="true"/>
+        <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk" load="true"/>
+        <object path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>

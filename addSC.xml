@@ -79,6 +79,9 @@
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />	
+	
+	<!--Security Guard 7 fixed cap (Thanks Baddy!) el chupacabras-->	
+	<object path="units/payday2/characters/ene_security_7/ene_security_7" force="true" />	
 
 	<!--Corrected NPC Weapon Sounds-->	
 	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" />		

@@ -1022,7 +1022,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Rogue
 	self.dodge_to_heal = {
-		0.4
+		0.4, --% healed
+		3.0 --cooldown
 	}
 
 	--Gambler
@@ -1146,12 +1147,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Are these the dreamers we were told about?--
 	--sicario
-	self.values.player.dodge_shot_gain = {
-		{0.2, 4}
-	}
-	self.values.player.dodge_replenish_armor = {true}
-	self.values.player.smoke_screen_ally_dodge_bonus = {0.25}
-	self.values.player.sicario_multiplier = {0.35}
+	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
+	self.values.player.sicario_multiplier = {0.35} --Multiplier for dodge gained per second while inside grenade.
 	
 	--alcoholism is no joke
 	--stoic

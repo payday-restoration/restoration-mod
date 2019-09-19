@@ -218,7 +218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._next_allowed_doh_t = t + data.stacking_cooldown
 	end	
 
-	function PlayerManager:fadjfbasjhas()
+	function PlayerManager:refill_messiah_charges()
 		if self._max_messiah_charges then
 			self._messiah_charges = self._max_messiah_charges
 		end
@@ -315,25 +315,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 end
 
+--Leaving stance stuff in parameters for compatability.
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
 	local dodge_shot_gain = self:_dodge_shot_gain()
 
 	chance = chance + dodge_shot_gain
 	chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
-
-	--Leaving this stuff here to avoid potentially breaking other mods that rely on this function.
-	--[[if running then
-		chance = chance + self:upgrade_value("player", "run_dodge_chance", 0)
-	end
-
-	if crouching then
-		chance = chance + self:upgrade_value("player", "crouch_dodge_chance", 0)
-	end
-
-	if on_zipline then
-		chance = chance + self:upgrade_value("player", "on_zipline_dodge_chance", 0)
-	end]]--
 
 	local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
 	chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)

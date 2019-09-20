@@ -2769,7 +2769,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_armor_health_store_amount_2"
+					"player_armor_health_store_amount_2",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {4, 7},
@@ -2778,9 +2779,8 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			deck4,
 			{
-				upgrades = {
-					"player_armor_max_health_store_multiplier",
-					"player_passive_dodge_chance_1"
+				upgrades =
+					"player_armor_max_health_store_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {5, 7},
@@ -2790,7 +2790,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_armor_health_store_amount_3"
+					"player_armor_health_store_amount_3",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 7},

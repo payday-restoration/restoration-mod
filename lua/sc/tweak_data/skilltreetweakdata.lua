@@ -2779,7 +2779,7 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			deck4,
 			{
-				upgrades =
+				upgrades = {
 					"player_armor_max_health_store_multiplier"
 				},
 				cost = 1000,

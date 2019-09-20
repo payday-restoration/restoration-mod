@@ -5342,41 +5342,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				forbids = table.list_add(self.parts.wpn_upg_o_marksmansight_rear_vanilla.forbids, {"wpn_fps_upg_o_ak_scopemount"})
 			},
 			wpn_upg_o_marksmansight_front = {a_obj = "a_of"},
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -5,
-					damage = 30,	
-					recoil = -1,
-					spread = 11,
-					suppression = -1,
-					alert_size = -1,
-					spread_multi = {1, 1},	
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},				
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-				}
-			},
 			wpn_fps_upg_a_slug = {
 				name_id = "bm_wp_upg_a_slug_sc",
 				desc_id = "bm_wp_upg_a_slug_sc_desc",
@@ -5414,7 +5379,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -5429,7 +5394,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -5437,10 +5402,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -67,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 100
+					damage = 50
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -5449,8 +5414,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -8018,11 +7983,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_body_rack",
 			stats = {
-				value = 0,
-				spread_moving = 0,
-				concealment = 0,
-				total_ammo_mod = 0
-			}
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 1
+			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			}	
 		}
 		self.parts.wpn_fps_shot_r870_body_standard = {
 			type = "lower_reciever",
@@ -8423,8 +8392,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				custom_stats = {
 					damage_near_mul = -100,
-					damage_far_mul = -200,		
-					rays = 9,
+					damage_far_mul = -200,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -8439,55 +8408,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				custom_stats = {
 					damage_near_mul = -100,
-					damage_far_mul = -200,		
-					rays = 9,
+					damage_far_mul = -200,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
 			},			
-			wpn_fps_upg_a_slug_fire = {
-				stats = {
-					value = 10,
-					total_ammo_mod = -7,
-					damage = 57,	
-					recoil = -2,
-					spread = 12,
-					spread_multi = {1, 1},	
-					moving_spread = 0,
-					suppression = -1,
-					alert_size = -1,
-					concealment = -5
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
-				}
-			},
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -66,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 200
+					damage = 100
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -8495,9 +8430,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					rays = 1,
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
+					use_heavy_kick = true,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -8698,7 +8634,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -8714,7 +8650,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -9303,10 +9239,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
-					spread_multi = {1, 1},	
 					concealment = -7,
-					total_ammo_mod = -62,
-					damage = 250
+					spread_multi = {1, 1},	
+					total_ammo_mod = -50,
+					damage = 150
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -9315,8 +9251,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -10058,40 +9994,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					ammo_pickup_max_mul = 0.4
 				}
 			},
-			wpn_fps_upg_a_slug_fire = {
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -7,
-					damage = 74,	
-					recoil = -2,
-					spread = 12,
-					spread_multi = {1, 1},	
-					suppression = -1,
-					alert_size = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					bullet_class = "FlameBulletBase",	
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.66,
-					ammo_pickup_max_mul = 0.66
-				}
-			},
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 10,
@@ -10127,7 +10029,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -10142,7 +10044,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -13495,7 +13397,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -13510,52 +13412,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
 			},			
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -7,
-					damage = 31,
-					spread = 12,
-					spread_multi = {1, 1},	
-					recoil = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.66,
-					ammo_pickup_max_mul = 0.66
-				}
-			},
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
 					concealment = -5,
-					total_ammo_mod = -62,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 125
+					damage = 75
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -13564,8 +13433,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -13697,39 +13566,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wpn_fps_sho_striker.override = {
 			wpn_upg_o_marksmansight_rear_vanilla = {a_obj = "a_o_r"},
 			wpn_upg_o_marksmansight_front = {a_obj = "a_o_f"},
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = 0,
-					total_ammo_mod = -5,
-					damage = 31,
-					spread = 14,
-					spread_multi = {1, 1},	
-					recoil = -3,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,	
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-				}
-			},
 			wpn_fps_upg_a_slug = {
 				name_id = "bm_wp_upg_a_slug_sc",
 				desc_id = "bm_wp_upg_a_slug_sc_desc",
@@ -13765,7 +13601,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -13780,7 +13616,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -14159,7 +13995,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -14175,7 +14011,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -14184,11 +14020,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -66,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 200
+					damage = 100
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -14198,8 +14034,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_far_mul = 999999999,
 					use_heavy_kick = true,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -16882,7 +16718,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			custom_stats = {
 				damage_near_mul = -100,
 				damage_far_mul = -200,
-				rays = 9,
+				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
 			},
@@ -18209,7 +18045,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -18224,52 +18060,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
 			},				
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -25,
-					damage = 31,
-					spread = 12,
-					spread_multi = {1, 1},	
-					recoil = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-				}
-			},
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
 					concealment = -5,
-					total_ammo_mod = -62,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 125
+					damage = 75
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -18278,8 +18081,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -22515,7 +22318,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_b682_s_ammopouch",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_s_ammopouch",
-			stats = {value = 0, total_ammo_mod = 0},
+			stats = {
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 1
+			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},
 			texture_bundle_folder = "character_pack_bonnie",
 			dlc = "pd2_clan"
 		}
@@ -22533,10 +22345,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 10,
 					recoil = -5,
-					spread_multi = {1, 1},	
 					concealment = -7,
-					total_ammo_mod = -62,
-					damage = 250
+					spread_multi = {1, 1},	
+					total_ammo_mod = -50,
+					damage = 150
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -22545,8 +22357,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -23851,41 +23663,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"vertical_grip"
 		}
 		self.wpn_fps_sho_aa12.override = {
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -5,
-					damage = 30,	
-					recoil = -1,
-					spread = 11,
-					spread_multi = {1, 1},	
-					suppression = -1,
-					alert_size = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-				}
-			},
 			wpn_fps_upg_a_slug = {
 				name_id = "bm_wp_upg_a_slug_sc",
 				desc_id = "bm_wp_upg_a_slug_sc_desc",
@@ -23923,7 +23700,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -23938,7 +23715,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -23946,10 +23723,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -67,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 100
+					damage = 50
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -23958,8 +23735,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -27420,7 +27197,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -27436,7 +27213,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -28898,8 +28675,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = -5,
 					concealment = -7,
 					spread_multi = {1, 1},	
-					total_ammo_mod = -62,
-					damage = 250
+					total_ammo_mod = -50,
+					damage = 150
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -28908,8 +28685,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -29786,39 +29563,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire_steelsight = "recoil"
 		}
 		self.wpn_fps_sho_rota.override = {
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = 0,
-					total_ammo_mod = -5,
-					damage = 31,
-					spread = 14,
-					spread_multi = {1, 1},	
-					recoil = -3,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-				}
-			},
 			wpn_fps_upg_a_slug = {
 				name_id = "bm_wp_upg_a_slug_sc",
 				desc_id = "bm_wp_upg_a_slug_sc_desc",
@@ -29855,7 +29599,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -29870,7 +29614,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				}
@@ -32968,7 +32712,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			stats = {
-				value = 1
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 1
 			}
 		}
 		self.parts.wpn_fps_ass_ching_s_standard = {
@@ -33988,7 +33735,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -34003,7 +33750,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -34138,7 +33885,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					}
@@ -34153,7 +33900,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					}
@@ -34161,10 +33908,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				wpn_fps_upg_a_explosive = {
 					stats = {
 						value = 10,
-						total_ammo_mod = -67,
+						total_ammo_mod = -50,
 						recoil = -5,
 						spread_multi = {1, 1},	
-						damage = 100
+						damage = 50
 					},
 					custom_stats = {
 						ignore_statistic = true,
@@ -34173,8 +33920,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						bullet_class = "InstantExplosiveBulletBase",
-						ammo_pickup_min_mul = 0.333333333333,
-						ammo_pickup_max_mul = 0.333333333333
+						ammo_pickup_min_mul = 0.5,
+						ammo_pickup_max_mul = 0.5
 					}
 				},
 				wpn_fps_sho_basset_m_extended = {
@@ -36766,7 +36513,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -36781,7 +36528,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.75,
 						ammo_pickup_max_mul = 0.75
 					}
@@ -36930,7 +36677,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
@@ -36945,52 +36692,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
 				}
 			},			
-			wpn_fps_upg_a_slug_fire = {
-				desc_id = "bm_wp_upg_a_slug_fire_sc_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -7,
-					damage = 31,
-					spread = 12,
-					spread_multi = {1, 1},	
-					recoil = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.66,
-					ammo_pickup_max_mul = 0.66
-				}
-			},
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
 					concealment = -5,
-					total_ammo_mod = -62,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 125
+					damage = 75
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -36999,8 +36713,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}		
@@ -38501,40 +38215,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						ammo_pickup_max_mul = 0.4
 					}
 				},
-				wpn_fps_upg_a_slug_fire = {
-					stats = {
-						value = 10,
-						concealment = -5,
-						total_ammo_mod = -7,
-						damage = 74,	
-						recoil = -2,
-						spread = 12,
-						spread_multi = {1, 1},	
-						suppression = -1,
-						alert_size = -1,
-						moving_spread = 0
-					},
-					custom_stats = {
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						rays = 1,
-						armor_piercing_add = 1,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,
-						bullet_class = "FlameBulletBase",
-						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-						fire_dot_data = {
-							dot_damage = "0",
-							dot_trigger_max_distance = "9999",
-							dot_trigger_chance = "100",
-							dot_length = "3",
-							dot_tick_period = "0.5"
-						},
-						ammo_pickup_min_mul = 0.66,
-						ammo_pickup_max_mul = 0.66
-					}
-				},
 				wpn_fps_upg_a_slug = {
 					stats = {
 						value = 10,
@@ -38570,7 +38250,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					},
@@ -38585,7 +38265,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					custom_stats = {
 						damage_near_mul = -100,
 						damage_far_mul = -200,
-						rays = 9,
+						rays = 6,
 						ammo_pickup_min_mul = 0.666666666667,
 						ammo_pickup_max_mul = 0.666666666667
 					},
@@ -39761,40 +39441,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					ammo_pickup_max_mul = 0.4
 				}
 			},
-			wpn_fps_upg_a_slug_fire = {
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -7,
-					damage = 74,	
-					recoil = -2,
-					spread = 12,
-					spread_multi = {1, 1},	
-					suppression = -1,
-					alert_size = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					bullet_class = "FlameBulletBase",
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "0",
-						dot_trigger_max_distance = "9999",
-						dot_trigger_chance = "100",
-						dot_length = "3",
-						dot_tick_period = "0.5"
-					},
-					ammo_pickup_min_mul = 0.66,
-					ammo_pickup_max_mul = 0.66
-				}
-			},
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 10,
@@ -39830,7 +39476,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				},
@@ -39845,7 +39491,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
 				},
@@ -40134,7 +39780,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -40150,7 +39796,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -40568,7 +40214,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,		
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -40584,7 +40230,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,		
-					rays = 9,
+					rays = 6,
 					use_heavy_kick = true,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667

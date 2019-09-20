@@ -13021,6 +13021,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_fbi_female_4",
 					"ene_fbi_heavy_1",
 					"ene_fbi_heavy_r870",
+					"ene_fbi_heavy_r870_sc",
 					"ene_fbi_office_1",
 					"ene_fbi_office_2",
 					"ene_fbi_office_3",
@@ -13078,6 +13079,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_swat_2",
 					"ene_swat_heavy_1",
 					"ene_swat_heavy_r870",
+					"ene_swat_heavy_r870_sc",
 					"ene_tazer_1",
 					"ene_grenadier_1",
 					"ene_veteran_cop_1",
@@ -13088,6 +13090,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"npc_old_hoxton_prisonsuit_2",
 					"ene_medic_r870",
 					"ene_medic_m4",
+					"ene_city_heavy_r870_sc",
 					"ene_city_heavy_r870",
 					"ene_city_heavy_g36",
 					"ene_mememan_1",	
@@ -13359,7 +13362,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_zeal_tazer",
 					"ene_zeal_fbi_m4",
 					"ene_zeal_fbi_mp5",
-					"ene_zeal_swat_heavy_sc"
+					"ene_zeal_swat_heavy_sc",
+					"ene_zeal_swat_heavy_r870_sc"
 				}
 			},
 			spa = {

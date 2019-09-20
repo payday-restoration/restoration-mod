@@ -107,9 +107,14 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "mia_1" then
-	if rnd2 == 1 then
+	if rnd3 == 1 or rnd3 == 2  or rnd3 == 3 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+	--"sky_orientation/rotation":"-116.40824890137",
+	end
+	if rnd3 == 4 then
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
 	--"sky_orientation/rotation":"-116.40824890137",
 	end
 	end

@@ -373,6 +373,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							attack_data.attacker_unit:sound():say("post_tasing_taunt")
 							player_unit:movement():on_non_lethal_electrocution()
 							managers.player:set_player_state("tased")
+							attack_data.damage = attack_data.damage * 0
 							self.tase_time = _time + 10
 						end
 					end

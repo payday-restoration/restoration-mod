@@ -564,7 +564,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.npc_melee.helloween_sword.armor_piercing = true
 		self.npc_melee.buzzer_summer = {}
 		self.npc_melee.buzzer_summer.unit_name = Idstring("units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1")
-		self.npc_melee.buzzer_summer.damage = 3.8
+		self.npc_melee.buzzer_summer.damage = 0
 		self.npc_melee.buzzer_summer.animation_param = "melee_freedom"
 		self.npc_melee.buzzer_summer.player_blood_effect = true
 		self.npc_melee.buzzer_summer.armor_piercing = true
@@ -770,7 +770,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.alert_size = 3400
 		self.r870_npc.suppression = 2.8
 		self.r870_npc.is_shotgun = true
-		self.r870_npc.rays = 12
+		self.r870_npc.rays = 9
 		self.r870_npc.spread = 3
 		self.r870_npc.FIRE_MODE = "single"
 		self.benelli_npc = deep_clone(self.r870_npc)
@@ -796,7 +796,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mossberg_npc.alert_size = 3800
 		self.mossberg_npc.suppression = 3.4
 		self.mossberg_npc.is_shotgun = true
-		self.mossberg_npc.rays = 12
+		self.mossberg_npc.rays = 9
 		self.mossberg_npc.spread = 6
 		self.mossberg_npc.FIRE_MODE = "single"
 	end
@@ -925,7 +925,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_npc.alert_size = 3200
 		self.saiga_npc.suppression = 3.1
 		self.saiga_npc.is_shotgun = true
-		self.saiga_npc.rays = 12
+		self.saiga_npc.rays = 9
 		self.saiga_npc.spread = 6
 		self.saiga_npc.FIRE_MODE = "auto"
 	end
@@ -1958,7 +1958,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spas12_crew.hold = "rifle"
 		self.spas12_crew.alert_size = 5000
 		self.spas12_crew.suppression = 3.4
-		self.spas12_crew.rays = 12
+		self.spas12_crew.rays = 9
 		self.spas12_crew.is_shotgun = true
 		self.spas12_crew.FIRE_MODE = "single"
 	end
@@ -1976,7 +1976,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.b682_crew.hold = "rifle"
 		self.b682_crew.alert_size = 5000
 		self.b682_crew.suppression = 3.4
-		self.b682_crew.rays = 12
+		self.b682_crew.rays = 9
 		self.b682_crew.is_shotgun = true
 		self.b682_crew.FIRE_MODE = "single"
 	end
@@ -1994,7 +1994,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_crew.alert_size = 5000
 		self.r870_crew.suppression = 3.4
 		self.r870_crew.is_shotgun = true
-		self.r870_crew.rays = 12
+		self.r870_crew.rays = 9
 		self.r870_crew.FIRE_MODE = "single"
 		self.benelli_crew = deep_clone(self.r870_crew)
 	end
@@ -2013,7 +2013,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_crew.hold = "rifle"
 		self.saiga_crew.alert_size = 4500
 		self.saiga_crew.suppression = 3.4
-		self.saiga_crew.rays = 12
+		self.saiga_crew.rays = 9
 		self.saiga_crew.is_shotgun = true
 		self.saiga_crew.FIRE_MODE = "auto"
 	end
@@ -2032,7 +2032,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.huntsman_crew.alert_size = 5000
 		self.huntsman_crew.suppression = 3.4
 		self.huntsman_crew.is_shotgun = true
-		self.huntsman_crew.rays = 12
+		self.huntsman_crew.rays = 9
 		self.huntsman_crew.FIRE_MODE = "single"
 	end
 
@@ -2051,7 +2051,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ben_crew.alert_size = 5000
 		self.ben_crew.suppression = 3.4
 		self.ben_crew.is_shotgun = true
-		self.ben_crew.rays = 12
+		self.ben_crew.rays = 9
 		self.ben_crew.FIRE_MODE = "auto"
 	end
 
@@ -2069,7 +2069,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ksg_crew.alert_size = 5000
 		self.ksg_crew.suppression = 3.4
 		self.ksg_crew.is_shotgun = true
-		self.ksg_crew.rays = 12
+		self.ksg_crew.rays = 9
 		self.ksg_crew.FIRE_MODE = "auto"
 	end
 
@@ -2088,7 +2088,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa12_crew.alert_size = 5000
 		self.aa12_crew.suppression = 3.4
 		self.aa12_crew.is_shotgun = true
-		self.aa12_crew.rays = 12
+		self.aa12_crew.rays = 9
 		self.aa12_crew.FIRE_MODE = "auto"
 	end
 
@@ -2107,7 +2107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boot_crew.alert_size = 5000
 		self.boot_crew.suppression = 3.4
 		self.boot_crew.is_shotgun = true
-		self.boot_crew.rays = 12
+		self.boot_crew.rays = 9
 		self.boot_crew.FIRE_MODE = "single"
 	end
 
@@ -3400,7 +3400,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.mp9.panic_suppression_chance = 0.1
 		self.r870.desc_id = "bm_menu_sc_r870_desc"
-		self.r870.rays = 12
+		self.r870.rays = 9
 		self.r870.CLIP_AMMO_MAX = 8
 		self.r870.spread.standing = 3 * 1
 		self.r870.spread.crouching = 2 * 1 
@@ -3670,7 +3670,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.akmsu.timers.reload_not_empty = 1.95 
 		self.akmsu.timers.reload_empty = 3.7 
-		self.saiga.rays = 12
+		self.saiga.rays = 9
 		self.saiga.spread.standing = 3 * 1
 		self.saiga.spread.crouching = 2 * 1 
 		self.saiga.spread.steelsight = 1 * 1
@@ -3975,7 +3975,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.timers.reload_not_empty = 1.55
 		self.mac10.timers.reload_empty = 2.4	
 		self.mac10.panic_suppression_chance = 0.1
-		self.serbu.rays = 12
+		self.serbu.rays = 9
 		self.serbu.spread.standing = 3 * 1
 		self.serbu.spread.crouching = 2 * 1
 		self.serbu.spread.steelsight = 1 * 1
@@ -4007,7 +4007,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.serbu.panic_suppression_chance = 0.0
-		self.huntsman.rays = 12
+		self.huntsman.rays = 9
 		self.huntsman.spread.standing = 3 * 1
 		self.huntsman.spread.crouching = 2 * 1
 		self.huntsman.spread.steelsight = 1 * 1
@@ -4258,7 +4258,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.fire_mode_data.fire_rate = 0.4
 		self.judge.single = {}
 		self.judge.single.fire_rate = 0.4
-		self.judge.rays = 12
+		self.judge.rays = 9
 		self.judge.spread.standing = 3 * 1
 		self.judge.spread.crouching = 2 * 1
 		self.judge.spread.steelsight = 1 * 1
@@ -4701,7 +4701,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.fal.panic_suppression_chance = 0.0
 		self.benelli.AMMO_MAX = 80
 		self.benelli.AMMO_PICKUP = self:_pickup_chance(80, 2)
-		self.benelli.rays = 12
+		self.benelli.rays = 9
 		self.benelli.fire_mode_data.fire_rate = 0.13953488372
 		self.benelli.CAN_TOGGLE_FIREMODE = false
 		self.benelli.single = {}
@@ -4732,7 +4732,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.benelli.panic_suppression_chance = 0.0
-		self.striker.rays = 12
+		self.striker.rays = 9
 		self.striker.AMMO_MAX = 60
 		self.striker.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.striker.fire_mode_data.fire_rate = 0.13953488372
@@ -4767,7 +4767,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.striker.panic_suppression_chance = 0.0
 		self.striker.timers.shotgun_reload_first_shell_offset = 0.4
-		self.ksg.rays = 12
+		self.ksg.rays = 9
 		self.ksg.AMMO_MAX = 60
 		self.ksg.damage_near = 700
 		self.ksg.damage_far = 1400
@@ -5181,7 +5181,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.g26.panic_suppression_chance = 0.0
-		self.spas12.rays = 12
+		self.spas12.rays = 9
 		self.spas12.AMMO_MAX = 80
 		self.spas12.CLIP_AMMO_MAX = 8
 		self.spas12.AMMO_PICKUP = self:_pickup_chance(80, 2)
@@ -5588,7 +5588,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.cobray.panic_suppression_chance = 0.1
-		self.b682.rays = 12
+		self.b682.rays = 9
 		self.b682.AMMO_MAX = 40
 		self.b682.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.b682.spread.standing = 3 * 1
@@ -5728,7 +5728,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.flamethrower_mk2.desc_id = "bm_ap_flamethrower_sc_desc"
 		self.flamethrower_mk2.timers.reload_not_empty = 7.7
 		self.flamethrower_mk2.timers.reload_empty = 7.7
-		self.flamethrower_mk2.rays = 12
+		self.flamethrower_mk2.rays = 9
 		self.flamethrower_mk2.CLIP_AMMO_MAX = 70
 		self.flamethrower_mk2.AMMO_MAX = 150
 		self.flamethrower_mk2.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -5803,7 +5803,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.stats_modifiers = {damage = 10}
 		self.m32.panic_suppression_chance = 0.0
 		self.m32.timers.shotgun_reload_first_shell_offset = 1
-		self.aa12.rays = 12
+		self.aa12.rays = 9
 		self.aa12.AMMO_MAX = 120
 		self.aa12.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.aa12.damage_near = 800
@@ -6382,7 +6382,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.m37.damage_near = 800
 		self.m37.damage_far = 1600
-		self.m37.rays = 12
+		self.m37.rays = 9
 		self.m37.CLIP_AMMO_MAX = 6
 		self.m37.AMMO_MAX = 40
 		self.m37.AMMO_PICKUP = self:_pickup_chance(40, 1)
@@ -6669,7 +6669,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.damage_far = 1800
 		self.boot.fire_mode_data.fire_rate = 0.75
 		self.boot.single.fire_rate = 0.75
-		self.boot.rays = 12
+		self.boot.rays = 9
 		self.boot.spread.standing = 3 * 1
 		self.boot.spread.crouching = 2 * 1
 		self.boot.spread.steelsight = 1 * 1
@@ -6821,7 +6821,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.rota.AMMO_MAX = 60
 		self.rota.AMMO_PICKUP = self:_pickup_chance(60, 1)
-		self.rota.rays = 12
+		self.rota.rays = 9
 		self.rota.spread.standing = 3 * 1
 		self.rota.spread.crouching = 2 * 1
 		self.rota.spread.steelsight = 1 * 1
@@ -7395,7 +7395,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_shrew.panic_suppression_chance = 0.0		
 		self.basset.damage_near = 500	
 		self.basset.damage_far = 1000
-		self.basset.rays = 12
+		self.basset.rays = 9
 		self.basset.CLIP_AMMO_MAX = 6
 		self.basset.AMMO_MAX = 80
 		self.basset.AMMO_PICKUP = self:_pickup_chance(80, 1)
@@ -7430,7 +7430,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_basset.tactical_akimbo = true
 		self.x_basset.damage_near = 500
 		self.x_basset.damage_far = 1000
-		self.x_basset.rays = 12
+		self.x_basset.rays = 9
 		self.x_basset.CLIP_AMMO_MAX = 12
 		self.x_basset.AMMO_MAX = 120
 		self.x_basset.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8366,7 +8366,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_sparrow.panic_suppression_chance = 0.0
 		self.x_judge.fire_mode_data.fire_rate = 0.4
 		self.x_judge.single.fire_rate = 0.4
-		self.x_judge.rays = 12
+		self.x_judge.rays = 9
 		self.x_judge.spread.standing = 3 * 1
 		self.x_judge.spread.crouching = 2 * 1
 		self.x_judge.spread.steelsight = 1 * 1
@@ -8404,7 +8404,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_rota.AMMO_MAX = 80
 		self.x_rota.AMMO_PICKUP = self:_pickup_chance(80, 2)
-		self.x_rota.rays = 12
+		self.x_rota.rays = 9
 		self.x_rota.spread.standing = 3 * 1
 		self.x_rota.spread.crouching = 2 * 1
 		self.x_rota.spread.steelsight = 1 * 1
@@ -8482,7 +8482,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.system.desc_id = "bm_ap_flamethrower_sc_desc"
 		self.system.timers.reload_not_empty = 8
 		self.system.timers.reload_empty = 8
-		self.system.rays = 12
+		self.system.rays = 9
 		self.system.CLIP_AMMO_MAX = 40
 		self.system.AMMO_MAX = 120
 		self.system.AMMO_PICKUP = self:_pickup_chance(120, 1)
@@ -8654,7 +8654,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.elastic.stats_modifiers = {damage = 2}
-		self.coach.rays = 12
+		self.coach.rays = 9
 		self.coach.spread.standing = 3 * 1
 		self.coach.spread.crouching = 2 * 1
 		self.coach.spread.steelsight = 1 * 1
@@ -8991,7 +8991,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.toz34 then --Pawcio's TOZ 34
 			self.toz34.has_description = false							
-			self.toz34.rays = 12
+			self.toz34.rays = 9
 			self.toz34.AMMO_MAX = 40
 			self.toz34.AMMO_PICKUP = self:_pickup_chance(40, 2)
 			self.toz34.spread.standing = 3 * 1
@@ -9035,7 +9035,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.toz66 then --Pawcio's TOZ 66
 			self.toz66.has_description = false					
-			self.toz66.rays = 12
+			self.toz66.rays = 9
 			self.toz66.spread.standing = 3 * 1
 			self.toz66.spread.crouching = 2 * 1
 			self.toz66.spread.steelsight = 1 * 1
@@ -9079,7 +9079,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end	
 
 	if self.m1216 then --Alcat's M1216
-		self.m1216.rays = 12
+		self.m1216.rays = 9
 		self.m1216.tactical_reload = 1				
 		self.m1216.spread.standing = 3 * 1 
 		self.m1216.spread.crouching = 2 * 1
@@ -9493,7 +9493,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.scar_m203gl.stats_modifiers = {damage = 4}			
 			--40mm Buck GL
 			self.scar_m203buckshot.categories = {"shotgun"}
-			self.scar_m203buckshot.rays = 12
+			self.scar_m203buckshot.rays = 9
 			self.scar_m203buckshot.damage_near = 900
 			self.scar_m203buckshot.damage_far = 1800			
 			self.scar_m203buckshot.spread.standing = 3 * 1
@@ -9525,7 +9525,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}	
 			--40mm Flechette GL
 			self.scar_m203flechette.categories = {"shotgun"}
-			self.scar_m203flechette.rays = 12
+			self.scar_m203flechette.rays = 9
 			self.scar_m203flechette.damage_near = 1100
 			self.scar_m203flechette.damage_far = 2200			
 			self.scar_m203flechette.spread.standing = 3 * 1
@@ -10408,7 +10408,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end		
 	
 	if self.toz194 then --Silent Enforcer's TOZ-194
-		self.toz194.rays = 12
+		self.toz194.rays = 9
 		self.toz194.tactical_reload = 1		
 		self.toz194.CLIP_AMMO_MAX = 8
 		self.toz194.spread.standing = 3 * 1
@@ -10455,7 +10455,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.trench.damage_far = 1800
 		self.trench.fire_mode_data.fire_rate = 0.75
 		self.trench.single.fire_rate = 0.75
-		self.trench.rays = 12
+		self.trench.rays = 9
 		self.trench.spread.standing = 3 * 1
 		self.trench.spread.crouching = 2 * 1
 		self.trench.spread.steelsight = 1 * 1
@@ -10485,7 +10485,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end			
 
 	if self.prison then --Leon and a Buncha fellas' Deadwood 12g
-		self.prison.rays = 12
+		self.prison.rays = 9
 		self.prison.tactical_reload = 1						
 		self.prison.AMMO_MAX = 120
 		self.prison.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -10518,7 +10518,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end							
 	
 	if self.spas15 then --Alcat's Max Payne Memegun
-		self.spas15.rays = 12
+		self.spas15.rays = 9
 		self.spas15.tactical_reload = 1		
 		self.spas15.AMMO_MAX = 120
 		self.spas15.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -11309,7 +11309,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.stf12 then --Mira's STF-12 Compact
 		self.stf12.use_data.selection_index = 1
 		self.stf12.has_description = false				
-		self.stf12.rays = 12
+		self.stf12.rays = 9
 		self.stf12.tactical_reload = 1	 											
 		self.stf12.spread.standing = 3 * 1
 		self.stf12.spread.crouching = 2 * 1
@@ -11386,7 +11386,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mp153.has_description = false				
 		self.mp153.AMMO_MAX = 80
 		self.mp153.AMMO_PICKUP = self:_pickup_chance(80, 2)
-		self.mp153.rays = 12
+		self.mp153.rays = 9
 		self.mp153.tactical_reload = 1								
 		self.mp153.CAN_TOGGLE_FIREMODE = false
 		self.mp153.single = {}
@@ -11487,7 +11487,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.m1912.tactical_reload = 1						
 			self.m1912.damage_near = 800
 			self.m1912.damage_far = 1600
-			self.m1912.rays = 12
+			self.m1912.rays = 9
 			self.m1912.CLIP_AMMO_MAX = 6
 			self.m1912.AMMO_MAX = 40
 			self.m1912.AMMO_PICKUP = self:_pickup_chance(40, 1)
@@ -11654,7 +11654,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.has_description = true
 		self.m590.tactical_reload = 0
 		self.m590.desc_id = "bm_w_m590_desc"		
-		self.m590.rays = 12
+		self.m590.rays = 9
 		self.m590.timers = {
 			shotgun_reload_enter = 0.4,
 			shotgun_reload_exit_empty = 1.3,
@@ -11901,7 +11901,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.g3_m203gl.stats_modifiers = {damage = 4}	
 		--40mm Buck GL
 		self.g3_m203buckshot.categories = {"shotgun"}
-		self.g3_m203buckshot.rays = 12
+		self.g3_m203buckshot.rays = 9
 		self.g3_m203buckshot.damage_near = 900
 		self.g3_m203buckshot.damage_far = 1800			
 		self.g3_m203buckshot.spread.standing = 3 * 1
@@ -11933,7 +11933,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 		--40mm Flechette GL
 		self.g3_m203flechette.categories = {"shotgun"}
-		self.g3_m203flechette.rays = 12
+		self.g3_m203flechette.rays = 9
 		self.g3_m203flechette.damage_near = 1100
 		self.g3_m203flechette.damage_far = 2200			
 		self.g3_m203flechette.spread.standing = 3 * 1
@@ -12074,7 +12074,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ks23.tactical_reload = 1		
 		self.ks23.fire_mode_data.fire_rate = 1.5
 		self.ks23.single.fire_rate = 1.5
-		self.ks23.rays = 12
+		self.ks23.rays = 9
 		self.ks23.AMMO_MAX = 30
 		self.ks23.CLIP_AMMO_MAX = 3		
 		self.ks23.spread.standing = 3 * 1
@@ -12419,7 +12419,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.ak12_76 then --Pawcio's AK12 76
 		self.ak12_76.has_description = false							
 		self.ak12_76.tactical_reload = 1
-		self.ak12_76.rays = 12
+		self.ak12_76.rays = 9
 		self.ak12_76.spread.standing = 3 * 1
 		self.ak12_76.spread.crouching = 2 * 1
 		self.ak12_76.spread.steelsight = 1 * 1
@@ -12963,7 +12963,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.toz106 then --Silent Enforcer's TOZ-106
 		self.toz106.has_description = false							
-		self.toz106.rays = 12
+		self.toz106.rays = 9
 		self.toz106.AMMO_MAX = 40
 		self.toz106.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.toz106.tactical_reload = 1
@@ -12999,7 +12999,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.littlest.use_data.selection_index = 1
 		self.littlest.categories = {"shotgun"}
 		self.littlest.has_description = false		
-		self.littlest.rays = 12
+		self.littlest.rays = 9
 		self.littlest.spread.standing = 3 * 1
 		self.littlest.spread.crouching = 2 * 1
 		self.littlest.spread.steelsight = 1 * 1
@@ -13046,7 +13046,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.auto5.has_description = false				
 		self.auto5.AMMO_MAX = 60
 		self.auto5.AMMO_PICKUP = self:_pickup_chance(60, 2)
-		self.auto5.rays = 12
+		self.auto5.rays = 9
 		self.auto5.tactical_reload = 1								
 		self.auto5.CAN_TOGGLE_FIREMODE = false
 		self.auto5.single = {}

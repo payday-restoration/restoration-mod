@@ -998,7 +998,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##4##.\n\nYour dodge is increased by ##5## points.",	
 		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",			
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##4##.\n\nYour dodge is increased by ##5## points.",
-		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equiped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
+		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 		
 		--THIS IS WAR BABY--
 		["menu_deck14_1_desc_sc"] = "##100%## of damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##300##.\n\nHysteria Stacks:\nYou gain ##1## damage absorption for every ##30## stacks of Hysteria. Hysteria Stacks decay by ##5% + 10## every ##10## seconds.",	

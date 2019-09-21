@@ -8860,8 +8860,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.ppsh then --Pawcio's PPSH
 			self.ppsh.tactical_reload = 1									
 			self.ppsh.has_description = false									
-			self.ppsh.AMMO_MAX = 180
-			self.ppsh.AMMO_PICKUP = self:_pickup_chance(180, 1)
+			self.ppsh.AMMO_MAX = 150
+			self.ppsh.AMMO_PICKUP = self:_pickup_chance(150, 1)
 			self.ppsh.panic_suppression_chance = 0.1
 			self.ppsh.spread.standing = 3
 			self.ppsh.spread.crouching = 2
@@ -9184,7 +9184,37 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 		self.g36k.panic_suppression_chance = 0.0
-		end		
+		end
+
+		if self.rk62 then --Pawcio's Valmet RK 62.
+			self.rk62.tactical_reload = 1			
+			self.rk62.AMMO_MAX = 120
+			self.rk62.AMMO_PICKUP = self:_pickup_chance(120, 2)
+			self.rk62.fire_mode_data.fire_rate = 0.08571428571
+			self.rk62.auto.fire_rate = 0.08571428571
+			self.rk62.spread.standing = 3
+			self.rk62.spread.crouching = 2
+			self.rk62.spread.steelsight = 1
+			self.rk62.spread.moving_standing = 4
+			self.rk62.spread.moving_crouching = 3
+			self.rk62.spread.moving_steelsight = 2
+			self.rk62.stats = {
+				damage = 50,
+				spread = 16,
+				recoil = 20,
+				spread_moving = 6,
+				zoom = 3,
+				concealment = 19,
+				suppression = 5,
+				alert_size = 5,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 11
+			}
+			self.rk62.timers.reload_not_empty = 2
+			self.rk62.panic_suppression_chance = 0.0
+		end				
 
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 		self.amt.has_description = false		
@@ -9222,9 +9252,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.noodle then --Germantaco's P220
 		self.noodle.tactical_reload = 1										
 		self.noodle.has_description = false		
-		self.noodle.AMMO_MAX = 120
+		self.noodle.AMMO_MAX = 113
 		self.noodle.CLIP_AMMO_MAX = 14
-		self.noodle.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.noodle.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.noodle.fire_mode_data.fire_rate = 0.07142857142
 		self.noodle.single.fire_rate = 0.07142857142
 		self.noodle.spread.standing = 3
@@ -9402,10 +9432,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.obrez.has_description = true
 		self.obrez.desc_id = "bm_ap_weapon_sc_desc"
 		self.obrez.CLIP_AMMO_MAX = 5
-		self.obrez.AMMO_MAX = 20
+		self.obrez.AMMO_MAX = 23
 		self.obrez.uses_clip = true
 		self.obrez.clip_capacity = 5		
-		self.obrez.AMMO_PICKUP = self:_pickup_chance(20, 2)
+		self.obrez.AMMO_PICKUP = self:_pickup_chance(23, 2)
 		self.obrez.fire_mode_data.fire_rate = 1
 		self.obrez.spread.standing = 3
 		self.obrez.spread.crouching = 2
@@ -9566,8 +9596,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.duke1911.has_description = false		
 			self.duke1911.tactical_reload = 1
 			self.duke1911.CLIP_AMMO_MAX = 10
-			self.duke1911.AMMO_MAX = 80
-			self.duke1911.AMMO_PICKUP = self:_pickup_chance(80, 1)
+			self.duke1911.AMMO_MAX = 60
+			self.duke1911.AMMO_PICKUP = self:_pickup_chance(60, 1)
 			self.duke1911.spread.standing = 3
 			self.duke1911.spread.crouching = 2
 			self.duke1911.spread.steelsight = 1
@@ -9692,8 +9722,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.pm then --Silent Enforcer & Germantaco's Makarov
 			self.pm.has_description = false		
 			self.pm.tactical_reload = 1
-			self.pm.AMMO_MAX = 150
-			self.pm.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.pm.AMMO_MAX = 135
+			self.pm.AMMO_PICKUP = self:_pickup_chance(135, 1)
 			self.pm.spread.standing = 3
 			self.pm.spread.crouching = 2
 			self.pm.spread.steelsight = 1
@@ -9816,8 +9846,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		if self.rhino then --Pawcio's Chiappa Rhino 60DS
 			self.rhino.has_description = false		
-			self.rhino.AMMO_MAX = 40
-			self.rhino.AMMO_PICKUP = self:_pickup_chance(40, 1)
+			self.rhino.AMMO_MAX = 45
+			self.rhino.AMMO_PICKUP = self:_pickup_chance(45, 1)
 			self.rhino.timers.reload_not_empty = 3.6
 			self.rhino.timers.reload_empty = 3.6
 			self.rhino.spread.standing = 3
@@ -10356,8 +10386,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.gsh18 then --Mira & Killerwolf's GSh 18
 		self.gsh18.has_description = false		
 		self.gsh18.tactical_reload = 1											
-		self.gsh18.AMMO_MAX = 150
-		self.gsh18.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.gsh18.AMMO_MAX = 135
+		self.gsh18.AMMO_PICKUP = self:_pickup_chance(135, 1)
 		self.gsh18.spread.standing = 3
 		self.gsh18.spread.crouching = 2
 		self.gsh18.spread.steelsight = 1
@@ -10596,8 +10626,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.einhander then -- Pawcio's Einhander
 		self.einhander.tactical_reload = 1
 		self.einhander.has_description = false														
-		self.einhander.AMMO_MAX = 80
-		self.einhander.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.einhander.AMMO_MAX = 90
+		self.einhander.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.einhander.spread.standing = 3
 		self.einhander.spread.crouching = 2
 		self.einhander.spread.steelsight = 1
@@ -10625,11 +10655,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end	
 
 	if self.gtt33 then --Gambyt's TT 33 
-		self.gtt33.AMMO_MAX = 80
+		self.gtt33.AMMO_MAX = 90
 		self.gtt33.tactical_reload = 1				
 		self.gtt33.fire_mode_data.fire_rate = 0.07692307692
 		self.gtt33.single.fire_rate = 0.07692307692		
-		self.gtt33.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.gtt33.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.gtt33.spread.standing = 3
 		self.gtt33.spread.crouching = 2
 		self.gtt33.spread.steelsight = 1
@@ -10656,48 +10686,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.gtt33.panic_suppression_chance = 0.0
 	end		
 
-	if self.bajur then --carl ruins everything's honey badger
-		self.bajur.use_data.selection_index = 1
-		self.bajur.categories = {
-			"assault_rifle"
-		}
-		self.bajur.AMMO_MAX = 120
-		self.bajur.tactical_reload = 1							
-		self.bajur.AMMO_PICKUP = self:_pickup_chance(120, 1)
-		self.bajur.spread.standing = 3
-		self.bajur.spread.crouching = 2
-		self.bajur.spread.steelsight = 1
-		self.bajur.spread.moving_standing = 4
-		self.bajur.spread.moving_crouching = 3
-		self.bajur.spread.moving_steelsight = 2
-		self.bajur.panic_suppression_chance = 0.0
-		self.bajur.kick.standing = self.new_m4.kick.standing
-		self.bajur.kick.crouching = self.new_m4.kick.standing
-		self.bajur.kick.steelsight = self.new_m4.kick.standing		
-		self.bajur.stats = {
-			damage = 40,
-			spread = 13,
-			recoil = 19,
-			spread_moving = 8,
-			zoom = 3,
-			concealment = 25,
-			suppression = 18,
-			alert_size = 18,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 11
-		}
-	end			
-
 	if self.qbz97b then --Mira's QBZ 97B
 		self.qbz97b.use_data.selection_index = 1
 		self.qbz97b.tactical_reload = 1					
 		self.qbz97b.categories = {
 			"assault_rifle"
 		}
-		self.qbz97b.AMMO_MAX = 150
-		self.qbz97b.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.qbz97b.AMMO_MAX = 113
+		self.qbz97b.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.qbz97b.spread.standing = 3
 		self.qbz97b.spread.crouching = 2
 		self.qbz97b.spread.steelsight = 1
@@ -11181,8 +11177,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10mpa.timers.reload_not_empty = 2
 		self.mac10mpa.timers.reload_empty = 2.7
 		self.mac10mpa.CLIP_AMMO_MAX = 30
-		self.mac10mpa.AMMO_MAX = 120
-		self.mac10mpa.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.mac10mpa.AMMO_MAX = 113
+		self.mac10mpa.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.mac10mpa.spread.standing = 3
 		self.mac10mpa.tactical_reload = 1									
 		self.mac10mpa.spread.crouching = 2
@@ -11246,11 +11242,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.kurz_919.panic_suppression_chance = 0.1
 	end				
 
-	if self.op68 then --Mira's ACR-C Carbine
+	if self.op68 then --Mira's ACR CQB Carbine
 		self.op68.has_description = false				
 		self.op68.tactical_reload = 1								
-		self.op68.AMMO_MAX = 120
-		self.op68.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.op68.AMMO_MAX = 113
+		self.op68.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.op68.spread.standing = 3
 		self.op68.spread.crouching = 2
 		self.op68.spread.steelsight = 1
@@ -11323,10 +11319,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.spread.moving_crouching = 3 * 1
 		self.stf12.spread.moving_steelsight = 2 * 1
 		self.stf12.CLIP_AMMO_MAX = 4
-		self.stf12.AMMO_MAX = 40
+		self.stf12.AMMO_MAX = 45
 		self.stf12.damage_near = 800
 		self.stf12.damage_far = 1600
-		self.stf12.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.stf12.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.stf12.fire_mode_data.fire_rate = 0.4
 		self.stf12.single.fire_rate = 0.4
 		self.stf12.kick.standing = self.new_m4.kick.standing
@@ -11556,8 +11552,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.px4 then --Pawcio's PX4 Storm
 		self.px4.tactical_reload = 1							
-		self.px4.AMMO_MAX = 120
-		self.px4.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.px4.AMMO_MAX = 113
+		self.px4.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.px4.spread.standing = 3
 		self.px4.spread.crouching = 2
 		self.px4.spread.steelsight = 1
@@ -11622,8 +11618,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.qsz92 then --Gambyt's QSZ 92
 		self.qsz92.CLIP_AMMO_MAX = 14
 		self.qsz92.tactical_reload = 1								
-		self.qsz92.AMMO_MAX = 80
-		self.qsz92.AMMO_PICKUP = self:_pickup_chance(80, 1)
+		self.qsz92.AMMO_MAX = 90
+		self.qsz92.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.qsz92.FIRE_MODE = "single"
 		self.qsz92.fire_mode_data = {}
 		self.qsz92.fire_mode_data.fire_rate = 0.07142857142
@@ -12153,8 +12149,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.has_description = false					
 			self.pdr.tactical_reload = 1
 			self.pdr.use_data.selection_index = 2
-			self.pdr.AMMO_MAX = 150
-			self.pdr.AMMO_PICKUP = self:_pickup_chance(150, 2)
+			self.pdr.AMMO_MAX = 135
+			self.pdr.AMMO_PICKUP = self:_pickup_chance(135, 2)
 			self.pdr.spread.standing = 3
 			self.pdr.spread.crouching = 2
 			self.pdr.spread.steelsight = 1
@@ -12258,11 +12254,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end		
 
 		if self.vp70 then --Mira, Matthelzor, Killerwolf, and carl ruins everything's VP70M
-			self.vp70.AMMO_MAX = 150
+			self.vp70.AMMO_MAX = 135
 			self.vp70.tactical_reload = 1			
 			self.vp70.fire_mode_data.fire_rate = 0.075
 			self.vp70.single.fire_rate = 0.075			
-			self.vp70.AMMO_PICKUP = self:_pickup_chance(150, 1)
+			self.vp70.AMMO_PICKUP = self:_pickup_chance(135, 1)
 			self.vp70.spread.standing = 3
 			self.vp70.spread.crouching = 2
 			self.vp70.spread.steelsight = 1
@@ -12392,8 +12388,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.mpx then --Pawcio's MPX
 		self.mpx.has_description = false						
 		self.mpx.tactical_reload = 1
-		self.mpx.AMMO_MAX = 150
-		self.mpx.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.mpx.AMMO_MAX = 135
+		self.mpx.AMMO_PICKUP = self:_pickup_chance(135, 1)
 		self.mpx.panic_suppression_chance = 0.1
 		self.mpx.spread.standing = 3.5
 		self.mpx.spread.crouching = 2.5
@@ -12462,8 +12458,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.m1895 then --Pawcio's M1895 Nagant
 		self.m1895.has_description = false								
 		self.m1895.fire_mode_data.fire_rate = 0.08571428571
-		self.m1895.AMMO_MAX = 40
-		self.m1895.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.m1895.AMMO_MAX = 45
+		self.m1895.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.m1895.spread.standing = 3.5
 		self.m1895.spread.crouching = 2.5
 		self.m1895.spread.steelsight = 1
@@ -12611,8 +12607,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.aps then --Pawcio's Stechkin APS
 		self.aps.tactical_reload = 1			
-		self.aps.AMMO_MAX = 150
-		self.aps.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.aps.AMMO_MAX = 135
+		self.aps.AMMO_PICKUP = self:_pickup_chance(135, 1)
 		self.aps.spread.standing = 3
 		self.aps.spread.crouching = 2
 		self.aps.spread.steelsight = 1
@@ -13086,8 +13082,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.g19 then --Pwacio's Glock 19
 		self.g19.has_description = false
 		self.g19.tactical_reload = 1		
-		self.g19.AMMO_MAX = 150
-		self.g19.AMMO_PICKUP = self:_pickup_chance(150, 1)
+		self.g19.AMMO_MAX = 135
+		self.g19.AMMO_PICKUP = self:_pickup_chance(135, 1)
 		self.g19.spread.standing = 3
 		self.g19.spread.crouching = 2
 		self.g19.spread.steelsight = 1
@@ -13149,8 +13145,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.pps43 then --Pawcio's PPS-43
 		self.pps43.tactical_reload = 1									
 		self.pps43.has_description = false									
-		self.pps43.AMMO_MAX = 180
-		self.pps43.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.pps43.AMMO_MAX = 150
+		self.pps43.AMMO_PICKUP = self:_pickup_chance(150, 1)
 		self.pps43.panic_suppression_chance = 0.1
 		self.pps43.spread.standing = 3
 		self.pps43.spread.crouching = 2

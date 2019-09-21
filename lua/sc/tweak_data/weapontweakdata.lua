@@ -8992,7 +8992,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				reload = 11
 			}
-		end						
+		end
+
+		if self.hmcar then --highly Modified Car 4 By zDanN  :)
+			self.hmcar.CLIP_AMMO_MAX = 5
+			self.hmcar.spread.standing = 3
+			self.hmcar.spread.crouching = 2
+			self.hmcar.spread.steelsight = 1
+			self.hmcar.spread.moving_standing = 4
+			self.hmcar.spread.moving_crouching = 3
+			self.hmcar.spread.moving_steelsight = 2
+			self.hmcar.fire_mode_data.fire_rate = 1.2
+			self.hmcar.kick.standing = self.huntsman.kick.standing
+			self.hmcar.kick.crouching = self.huntsman.kick.standing
+			self.hmcar.kick.steelsight = self.huntsman.kick.standing
+			self.hmcar.armor_piercing_chance = 1
+			self.hmcar.can_shoot_through_titan_shield = true
+			self.hmcar.AMMO_PICKUP = self:_pickup_chance(7200, 2)
+			self.hmcar.panic_suppression_chance = 0.0
+			self.hmcar.stats = {
+				spread = 19,
+				recoil = 14,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 12,
+				suppression = 2,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 11
+			}
+		end										
 
 		if self.toz34 then --Pawcio's TOZ 34
 			self.toz34.has_description = false							

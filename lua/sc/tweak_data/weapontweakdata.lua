@@ -9011,6 +9011,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hmcar.AMMO_PICKUP = self:_pickup_chance(7200, 2)
 			self.hmcar.panic_suppression_chance = 0.0
 			self.hmcar.stats = {
+				damage = 1,
 				spread = 19,
 				recoil = 14,
 				spread_moving = 8,

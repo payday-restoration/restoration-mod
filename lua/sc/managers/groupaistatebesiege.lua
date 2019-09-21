@@ -86,6 +86,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
 	end
 	
+	function GroupAIStateBesiege:not_assault_0_check()
+		if self._assault_number and self._assault_number <= 0 then
+			return
+		end
+		
+		return true
+	end
+	
     function GroupAIStateBesiege:_get_megaphone_sound_source()
     	local level_id = Global.level_data.level_id
     	local pos = nil

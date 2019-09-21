@@ -5928,6 +5928,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_t1micro",
 			"wpn_fps_upg_o_cmore",
 			"wpn_fps_upg_o_aimpoint_2",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",			
 			"wpn_fps_upg_o_acog",
 			"wpn_upg_o_marksmansight_rear_vanilla",
 			"wpn_upg_o_marksmansight_front_vanilla",

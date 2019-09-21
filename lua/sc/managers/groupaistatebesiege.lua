@@ -1047,16 +1047,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		elseif pull_back then
-		    self:_voice_gtfo(group)
+		    if self._assault_number and self._assault_number > 0 then
+				self:_voice_gtfo(group)
+			end
 			local retreat_area, do_not_retreat
 			for u_key, u_data in pairs(group.units) do
 				local nav_seg_id = u_data.tracker:nav_segment()
 				if current_objective.area.nav_segs[nav_seg_id] then
 					retreat_area = current_objective.area
-		            self:_voice_gtfo(group)
+					if self._assault_number and self._assault_number > 0 then
+						self:_voice_gtfo(group)
+					end
 				elseif self:is_nav_seg_safe(nav_seg_id) then
 					retreat_area = self:get_area_from_nav_seg_id(nav_seg_id)
-		            self:_voice_gtfo(group)
+		            if self._assault_number and self._assault_number > 0 then
+						self:_voice_gtfo(group)
+					end
 				else
 				end
 			end
@@ -1065,7 +1071,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if forwardmost_i_nav_point then
 					local nearest_safe_nav_seg_id = current_objective.coarse_path(forwardmost_i_nav_point)
 					retreat_area = self:get_area_from_nav_seg_id(nearest_safe_nav_seg_id)
-		            self:_voice_gtfo(group)
+		            if self._assault_number and self._assault_number > 0 then
+						self:_voice_gtfo(group)
+					end
 				end
 			end
 			if retreat_area then
@@ -1084,7 +1092,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 				group.is_chasing = nil
 				self:_set_objective_to_enemy_group(group, new_grp_objective)
-				self:_voice_gtfo(group)
+				if self._assault_number and self._assault_number > 0 then
+					self:_voice_gtfo(group)
+				end
 				return
 			end
 		end

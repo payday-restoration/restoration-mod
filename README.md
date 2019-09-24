@@ -100,6 +100,7 @@ including:
 PDTH Styled Enemies assets used for the NYPD faction
 The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker
 Femcloaker - Used as a shrinkwrap base for female enemies
+Jarey_ ZEALS Used for our ZEAL sepcials
 Sniper Glint - Sniper Glint
 
 Nelson01023 Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Basically doing all the jobs no one else wanted to do.

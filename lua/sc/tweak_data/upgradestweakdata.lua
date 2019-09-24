@@ -62,7 +62,7 @@ function UpgradesTweakData:_init_pd2_values()
 		--Explosives hurt--
 		self.explosive_bullet.curve_pow = 3
 		self.explosive_bullet.player_dmg_mul = 0.5
-		self.explosive_bullet.range = 200
+		self.explosive_bullet.range = 250
 		self.explosive_bullet.feedback_range = self.explosive_bullet.range
 		self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -300,7 +300,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}				
 							
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.015, 0.035}
+				self.values.player.hostage_health_regen_addend = {0.01, 0.02}
 				self.values.team.damage = {
 					hostage_absorption = {0.1},
 					hostage_absorption_limit = 4

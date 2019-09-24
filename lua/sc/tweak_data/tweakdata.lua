@@ -87,9 +87,9 @@
 	tweak_data.projectiles.crossbow_arrow.damage = 24
 	tweak_data.projectiles.crossbow_poison_arrow.damage = 20
 	tweak_data.projectiles.crossbow_arrow_exp.damage = 48
-	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.crossbow_arrow.launch_speed = 10000
-	tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 2000
+	tweak_data.projectiles.crossbow_arrow.launch_speed = 2000
+	tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 2000
 
 	--Arblast Heavy Crossbow--
 	tweak_data.projectiles.arblast_arrow.damage = 36

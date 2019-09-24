@@ -21,7 +21,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	}
 	local security_variant = action_variants.security
 	function CopMovement:init(unit)
-		old_init(self, unit)
 		CopMovement._action_variants.cop_civ = security_variant
 		CopMovement._action_variants.fbi_female = security_variant
 		CopMovement._action_variants.hrt = security_variant

@@ -5928,6 +5928,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_t1micro",
 			"wpn_fps_upg_o_cmore",
 			"wpn_fps_upg_o_aimpoint_2",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",			
 			"wpn_fps_upg_o_acog",
 			"wpn_upg_o_marksmansight_rear_vanilla",
 			"wpn_upg_o_marksmansight_front_vanilla",
@@ -8601,7 +8602,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					damage = 50,
 					recoil = -2,
 					spread = 12,
@@ -8620,14 +8621,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
 				}
 			},
 			wpn_fps_upg_a_custom = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					damage = 50,
 					spread = -1
 				},
@@ -8636,14 +8637,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_far_mul = -200,
 					rays = 6,
 					use_heavy_kick = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
 				}
 			},	
 			wpn_fps_upg_a_custom_free = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					damage = 50,
 					spread = -1
 				},
@@ -8652,18 +8653,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_far_mul = -200,
 					rays = 6,
 					use_heavy_kick = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
 				}
 			},			
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -63,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 200
+					damage = 100
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -8673,8 +8674,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -25511,7 +25512,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_bow_hunter_b_carbon",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_b_carbon",
-			stats = {value = 1, spread = 2},
+			stats = {value = 1, spread = 1, concealment = -1},
 			texture_bundle_folder = "turtles",
 			dlc = "turtles",
 			animations = {reload = "recoil"}
@@ -25613,7 +25614,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			custom_stats = {
 				launcher_grenade = "crossbow_poison_arrow",
-				ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67,
+				ammo_pickup_min_mul = 1, ammo_pickup_max_mul = 1,
 				dot_data = {
 					type = "poison",
 					custom_data = {dot_length = nil, hurt_animation_chance = nil}
@@ -25631,9 +25632,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_m_explosive",
 			third_unit = "units/pd2_dlc_turtles/weapons/wpn_third_bow_hunter_pts/wpn_third_bow_hunter_m_explosive",
-			stats = {damage = 120, total_ammo_mod = -40, spread = -8, recoil = -5},
+			stats = {damage = 120, total_ammo_mod = -50, spread = -8, recoil = -5},
 			custom_stats = {
 				launcher_grenade = "crossbow_arrow_exp",
+				ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5,
 				block_b_storm = true
 			},
 			texture_bundle_folder = "turtles",
@@ -27164,7 +27166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					damage = 50,
 					recoil = -2,
 					spread = 12,
@@ -27183,14 +27185,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
 				}
 			},
 			wpn_fps_upg_a_custom = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					damage = 50,
 					spread = -1
 				},
@@ -27199,14 +27201,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_far_mul = -200,
 					rays = 6,
 					use_heavy_kick = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
 				}
 			},	
 			wpn_fps_upg_a_custom_free = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -25,
+					total_ammo_mod = -33,
 					damage = 50,
 					spread = -1
 				},
@@ -27215,29 +27217,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					damage_far_mul = -200,
 					rays = 6,
 					use_heavy_kick = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
 				}
 			},			
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					total_ammo_mod = -63,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 200
+					damage = 100
 				},
 				custom_stats = {
 					ignore_statistic = true,
 					block_b_storm = true,
-					rays = 1,
 					use_heavy_kick = true,
+					rays = 1,
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			},
 			wpn_fps_upg_fl_ass_smg_sho_peqbox = {parent = "foregrip", a_obj = "a_fl"},
@@ -33704,7 +33706,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					stats = {
 						value = 10,
 						concealment = -5,
-						total_ammo_mod = -25,
+						total_ammo_mod = -33,
 						damage = 25,	
 						recoil = -1,
 						spread = 11,
@@ -33721,14 +33723,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						can_shoot_through_enemy = false,
 						can_shoot_through_shield = false,
 						can_shoot_through_wall = false,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
 					}
 				},
 				wpn_fps_upg_a_custom = {
 					stats = {
 						value = 9,
-						total_ammo_mod = -25,
+						total_ammo_mod = -33,
 						damage = 25,	
 						spread = -1
 					},
@@ -33736,14 +33738,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_near_mul = -100,
 						damage_far_mul = -200,
 						rays = 6,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
 					}
 				},
 				wpn_fps_upg_a_custom_free = {
 					stats = {
 						value = 9,
-						total_ammo_mod = -25,
+						total_ammo_mod = -33,
 						damage = 25,	
 						spread = -1
 					},
@@ -33751,17 +33753,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_near_mul = -100,
 						damage_far_mul = -200,
 						rays = 6,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
 					}
 				},					
 				wpn_fps_upg_a_explosive = {
 					stats = {
 						value = 10,
-						total_ammo_mod = -63,
+						total_ammo_mod = -50,
 						recoil = -5,
 						spread_multi = {1, 1},	
-						damage = 100
+						damage = 50
 					},
 					custom_stats = {
 						ignore_statistic = true,
@@ -33770,8 +33772,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						bullet_class = "InstantExplosiveBulletBase",
-						ammo_pickup_min_mul = 0.375,
-						ammo_pickup_max_mul = 0.375
+						ammo_pickup_min_mul = 0.5,
+						ammo_pickup_max_mul = 0.5
 					}
 				},
 				wpn_upg_saiga_m_20rnd = {
@@ -40279,105 +40281,107 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						recoil = 1
 					}					
 			self.wpn_fps_shot_stf12.override = { 
-				wpn_fps_upg_a_slug = {
-					stats = {
-						value = 10,
-						total_ammo_mod = -25,
-						damage = 50,
-						recoil = -2,
-						spread = 12,
-						moving_spread = 0,
-						suppression = -1,
-						alert_size = -1,
-						concealment = -5
-					},
-					custom_stats = {
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						rays = 1,
-						armor_piercing_add = 1,
-						use_heavy_kick = true,
-						can_shoot_through_enemy = true,
-						can_shoot_through_shield = true,
-						can_shoot_through_wall = true,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
-						}
-					},
-					wpn_fps_upg_m4_g_sniper = {
-					stats = {
-						value = 2,
-						spread = 1
-					},
-					custom_stats = {
-						damage_near_mul = 100,
-						damage_far_mul = 200
-					}
+			wpn_fps_upg_m4_g_sniper = {
+				stats = {
+					value = 2,
+					spread = 1
 				},
-				wpn_fps_upg_m4_g_hgrip = {
-					stats = {
-						value = 2,
-						spread = 2,
-						recoil = -1,
+				custom_stats = {
+					damage_near_mul = 100,
+					damage_far_mul = 200
+				}
+			},
+			wpn_fps_upg_m4_g_hgrip = {
+				stats = {
+					value = 2,
+					spread = 2,
+					recoil = -1,
 				},
 				custom_stats = {
 					damage_near_mul = 200,
 					damage_far_mul = 400
-					}
-				},
-				wpn_fps_upg_a_custom = {
-					stats = {
-						value = 9,
-						total_ammo_mod = -25,
-						damage = 50,
-						spread = -1
+				}
+			},
+			wpn_fps_upg_a_slug = {
+				stats = {
+					value = 10,
+					total_ammo_mod = -33,
+					damage = 50,
+					recoil = -2,
+					spread = 12,
+					spread_multi = {1, 1},	
+					moving_spread = 0,
+					suppression = -1,
+					alert_size = -1,
+					concealment = -5
 				},
 				custom_stats = {
-						damage_near_mul = -100,
-						damage_far_mul = -200,
-						rays = 6,
-						use_heavy_kick = true,
-						ammo_pickup_min_mul = 0.75,
-						ammo_pickup_max_mul = 0.75
-					}
-				},	
-				wpn_fps_upg_a_custom_free = {
-					stats = {
-						value = 9,
-						total_ammo_mod = -25,
-						damage = 50,
-						spread = -1
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					rays = 1,
+					armor_piercing_add = 1,
+					use_heavy_kick = true,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
+				}
+			},
+			wpn_fps_upg_a_custom = {
+				stats = {
+					value = 9,
+					total_ammo_mod = -33,
+					damage = 50,
+					spread = -1
 				},
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
 					rays = 6,
 					use_heavy_kick = true,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
-					}
-				},						
-				wpn_fps_upg_a_explosive = {
-					stats = {
-						value = 10,
-						total_ammo_mod = -63,
-						recoil = -5,
-						concealment = -7,
-						damage = 200
-					},
-					custom_stats = {
-						ignore_statistic = true,
-						block_b_storm = true,
-						use_heavy_kick = true,
-						rays = 1,
-						damage_near_mul = 999999999,
-						damage_far_mul = 999999999,
-						bullet_class = "InstantExplosiveBulletBase",
-						ammo_pickup_min_mul = 0.375,
-						ammo_pickup_max_mul = 0.375
-						}
-					}
-				}						
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
+				}
+			},	
+			wpn_fps_upg_a_custom_free = {
+				stats = {
+					value = 9,
+					total_ammo_mod = -33,
+					damage = 50,
+					spread = -1
+				},
+				custom_stats = {
+					damage_near_mul = -100,
+					damage_far_mul = -200,
+					rays = 6,
+					use_heavy_kick = true,
+					ammo_pickup_min_mul = 0.666666666667,
+					ammo_pickup_max_mul = 0.666666666667
+				}
+			},			
+			wpn_fps_upg_a_explosive = {
+				stats = {
+					value = 10,
+					total_ammo_mod = -50,
+					recoil = -5,
+					spread_multi = {1, 1},	
+					concealment = -7,
+					damage = 100
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					use_heavy_kick = true,
+					rays = 1,
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					bullet_class = "InstantExplosiveBulletBase",
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
+				}
+			}
+		}
 		end	
 
 		if self.wpn_fps_shot_m590 then -- Silent Enforcer & GT's Mossberg 590
@@ -41001,6 +41005,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}				
 		end
+
+		if self.wpn_fps_ass_rk62 then 	-- Pawcio's Valmet RK 62
+				self.parts.wpn_fps_upg_rk62_stock_rk95.stats = {
+					value = 1,
+					concealment = -2,
+					spread = 1
+				}
+				self.parts.wpn_fps_upg_rk62_mag_rk95.stats = {
+					value = 1,
+					concealment = 1
+				}
+				self.parts.wpn_fps_upg_rk62_grip_rk95.stats = {
+					value = 1,
+					recoil = 1
+				}
+				self.parts.wpn_fps_upg_rk62_barrel_short.stats = {
+					value = 1,
+					concealment = 2,
+					spread = -1
+				}								
+				self.parts.wpn_fps_upg_rk62_stock_removed.stats = {
+					value = 1,
+					concealment = 3,
+					recoil = -2	
+				}
+				self.parts.wpn_fps_upg_rk62_handguard_rk95.stats = {
+					value = 2,
+					recoil = 1,
+					concealment = -1
+				}
+				self.parts.wpn_fps_upg_rk62_handguard_railed.stats = {
+					value = 3,
+					concealment = 1
+				}
+		end
+		
 		
 		if self.wpn_fps_smg_tm1a1 then 	-- Killerwolf's Thompson
 				self.parts.wpn_fps_smg_tm1a1_ns_cutts.stats = {
@@ -43147,32 +43187,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					concealment = 2					
 				}					
 			end					
-
-		if self.wpn_fps_ass_bajur then -- carl ruins everything's honey badger
-				self.parts.wpn_fps_upg_bajur_am_grendel.pcs = nil
-				self.parts.wpn_fps_upg_bajur_fg_dmr.pcs = nil
-				self.parts.wpn_fps_upg_bajur_b_short.stats = {
-					value = 2,
-					spread = -1,
-					recoil = -1,
-					spread_moving = 1,
-					concealment = 2
-				}	
-				self.parts.wpn_fps_upg_bajur_b_long.stats = {
-					value = 2,
-					spread = 1,
-					recoil = 1,
-					spread_moving = -1,
-					concealment = -2
-				}									
-				self.parts.wpn_fps_upg_bajur_m_quick.stats = {
-					value = 2,
-					extra_ammo = -10,						
-					spread = -1,
-					concealment = 1,
-					reload = 2
-				}									
-			end		
 
 		if self.wpn_fps_ass_qbz97b then -- Miras's QBZ 97B
 				self.parts.wpn_fps_ass_qbz97b_mag_short.stats = { 

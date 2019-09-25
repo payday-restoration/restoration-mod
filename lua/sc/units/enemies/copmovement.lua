@@ -726,7 +726,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 
 				self:action_request(action_desc)
-			elseif self._ext_anim.run and not self:chk_action_forbidden("act") then  --add "and self._tweak_data.can_slide_on_suppress" to this if you follow the steps below at any point
+			elseif self._ext_anim.run and not self:chk_action_forbidden("act") and self._tweak_data.can_slide_on_suppress then  --add "and self._tweak_data.can_slide_on_suppress" to this if you follow the steps below at any point
 				local action_desc = {
 					clamp_to_graph = true,
 					type = "act",

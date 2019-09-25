@@ -11015,6 +11015,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				3.8
 			}
 		end
+		
+		--assault groups
 		if difficulty_index <= 2 then
 			self.besiege.assault.groups = {
 				CS_cops = {
@@ -11267,6 +11269,261 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}				
 		end
+		
+		--point of no return groups
+		if difficulty_index <= 2 then
+			self.besiege.assault.coolhunting = {
+				CS_cops = {
+					0,
+					1,
+					0.85
+				},
+				CS_swats = {
+					0,
+					0.1,
+					0.35
+				},
+				CS_shields = {
+					0,
+					0,
+					0.15
+				}
+			}
+		elseif difficulty_index == 3 then
+			self.besiege.assault.coolhunting = {
+				CS_swats = {
+					0,
+					1,
+					1
+				},
+				CS_heavys = {
+					0,
+					0.2,
+					0.7
+				},
+				CS_shields = {
+					0,
+					0.02,
+					0.2
+				},
+				CS_tazers = {
+					0,
+					0.05,
+					0.15
+				},
+				FBI_spoocs = {
+                    0,
+                    0.05,
+                    0.1
+                },
+				CS_tanks = {
+					0,
+					0.05,
+					0.1
+				}
+			}
+		elseif difficulty_index == 4 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats = {
+					0.1,
+					1,
+					1
+				},
+				FBI_heavys = {
+					0.05,
+					0.25,
+					0.5
+				},
+				FBI_shields = {
+					0.1,
+					0.2,
+					0.2
+				},
+				FBI_tanks = {
+					0,
+					0.1,
+					0.15
+				},
+				FBI_spoocs = {
+					0,
+					0.1,
+					0.2
+				},
+				CS_tazers = {
+					0.05,
+					0.15,
+					0.2
+				}
+			}
+		elseif difficulty_index == 5 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats = {
+					0.2,
+					1,
+					1
+				},
+				FBI_heavys = {
+					0.1,
+					0.5,
+					0.75
+				},
+				FBI_shields = {
+					0.1,
+					0.3,
+					0.4
+				},
+				FBI_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				BLACK_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				FBI_spoocs = {
+					0,
+					0.1,
+					0.2
+				},				
+				CS_tazers = {
+					0.1,
+					0.25,
+					0.25
+				}
+			}	
+		elseif difficulty_index == 6 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats = {
+					0.2,
+					1,
+					1
+				},
+				FBI_heavys = {
+					0.1,
+					0.5,
+					0.75
+				},
+				FBI_shields = {
+					0.1,
+					0.3,
+					0.4
+				},
+				FBI_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				BLACK_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				FBI_spoocs = {
+					0,
+					0.1,
+					0.2
+				},				
+				CS_tazers = {
+					0.1,
+					0.25,
+					0.25
+				}
+			}			
+		elseif difficulty_index == 7 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats = {
+					0.2,
+					0.9,
+					0.9
+				},
+				FBI_heavys = {
+					0.1,
+					0.4,
+					0.65
+				},
+				FBI_shields = {
+					0.1,
+					0.4,
+					0.3
+				},
+				FBI_tanks = {
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
+				},
+				BLACK_tanks = {
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
+				},
+				SKULL_tanks = {
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
+				},
+				CS_tazers = {
+					0.1,
+					0.4,
+					0.35
+				},
+				FBI_spoocs = {
+					0,
+					0.35,
+					0.35
+				}
+			}
+		else
+			self.besiege.assault.coolhunting = {
+				FBI_swats = {
+					0,
+					0,
+					0
+				},
+				FBI_heavys = {
+					0,
+					0,
+					0
+				},
+				FBI_shields = {
+					1,
+					1,
+					1
+				},
+				FBI_tanks = {
+					0,
+					0,
+					0
+				},
+				BLACK_tanks = {
+					0,
+					0,
+					0
+				},
+				SKULL_tanks = {
+					0,
+					0,
+					0
+				},
+				TIT_tanks = {
+					1,
+					1,
+					1
+				},				
+				CS_tazers = {
+					0,
+					0,
+					0
+				},
+				FBI_spoocs = {
+					0,
+					0,
+					0
+				}
+			}				
+		end
+		
 		self.besiege.assault.groups.single_spooc = {
 			0,
 			0,

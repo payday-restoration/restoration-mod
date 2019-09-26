@@ -9397,8 +9397,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mk18s.auto.fire_rate = 0.08108108108
 		self.mk18s.fire_mode_data.fire_rate = 0.08108108108
 		self.mk18s.tactical_reload = 1	
-		self.mk18s.AMMO_MAX = 150
-		self.mk18s.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.mk18s.AMMO_MAX = 135
+		self.mk18s.AMMO_PICKUP = self:_pickup_chance(135, 2)
 		self.mk18s.spread.standing = 3
 		self.mk18s.spread.crouching = 2
 		self.mk18s.spread.steelsight = 1
@@ -9430,8 +9430,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sr3m.categories = {
 			"assault_rifle"
 		}
-		self.sr3m.AMMO_MAX = 120
-		self.sr3m.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.sr3m.AMMO_MAX = 113
+		self.sr3m.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.sr3m.fire_mode_data.fire_rate = 0.06666666666
 		self.sr3m.auto.fire_rate = 0.06666666666
 		self.sr3m.spread.standing = 3

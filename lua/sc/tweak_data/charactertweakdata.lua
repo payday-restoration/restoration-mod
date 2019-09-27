@@ -1152,7 +1152,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
 		self.skeleton_swat_titan.custom_voicework = "skeleton"
-		table.insert(self._enemy_list, "skeleton_swat_titan")		
+		table.insert(self._enemy_list, "skeleton_swat_titan")	
+
+		self.weekend = deep_clone(self.city_swat_titan)
+		table.insert(self._enemy_list, "weekend")				
 		
 		--Temp Solution
 		if job == "haunted" then

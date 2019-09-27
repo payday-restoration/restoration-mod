@@ -4,7 +4,7 @@
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
     </Classes>
-	<AssetUpdates id="428" version="9.6" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.6.2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<!-- Res Suits -->
@@ -49,6 +49,7 @@
 		<hook file="managers/menu/MissionBriefingGUI.lua" source_file="lib/managers/menu/MissionBriefingGUI"/>
 		<hook file="managers/menu/MenuBackdropGUI.lua" source_file="lib/managers/menu/MenuBackdropGUI"/>
 		<hook file="managers/menu/MenuPauseRenderer.lua" source_file="lib/managers/menu/MenuPauseRenderer"/>
+		<hook file="managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
@@ -141,6 +142,7 @@
 		<hook file="sc/utils/inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 		<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
 		<hook file="sc/player_actions/skills/playeractionstockholmsyndrometrade.lua" source_file="lib/player_actions/skills/playeractionstockholmsyndrometrade"/>
+		<hook file="sc/player_actions/skills/playeractiondamagecontrol.lua" source_file="lib/player_actions/skills/playeractiondamagecontrol"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/enemies/securitycamera.lua" source_file="lib/units/props/securitycamera"/>
 		<hook file="sc/states/ingamewaitingforplayers.lua" source_file="lib/states/ingamewaitingforplayers"/>

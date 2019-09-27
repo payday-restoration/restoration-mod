@@ -12,6 +12,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local sc_group_misc_data = GroupAIStateBase._init_misc_data
 	function GroupAIStateBase:_init_misc_data()
 		sc_group_misc_data(self)
+		self._ponr_is_on = nil
 		self._special_unit_types = {
 			tank = true,
 			spooc = true,
@@ -32,6 +33,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local sc_group_base = GroupAIStateBase.on_simulation_started
 	function GroupAIStateBase:on_simulation_started()
 		sc_group_base(self)
+		self._ponr_is_on = nil
 		self._special_unit_types = {
 			tank = true,
 			spooc = true,
@@ -47,6 +49,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			summers = true,
 			autumn = true
 		}
+	end
+	
+	function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id)
+		if time == nil or setup:has_queued_exec() then
+			return
+		end
+
+		self._forbid_drop_in = true
+		self._ponr_is_on = true
+		managers.network.matchmake:set_server_joinable(false)
+
+		if not self._peers_inside_point_of_no_return then
+			self._peers_inside_point_of_no_return = {}
+		end
+
+		self._point_of_no_return_timer = time
+		self._point_of_no_return_id = point_of_no_return_id
+		self._point_of_no_return_areas = nil
+
+		managers.hud:show_point_of_no_return_timer()
+		managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
 	end
 	
 	function GroupAIStateBase:_radio_chatter_clbk()

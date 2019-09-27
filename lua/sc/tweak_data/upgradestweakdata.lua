@@ -62,7 +62,7 @@ function UpgradesTweakData:_init_pd2_values()
 		--Explosives hurt--
 		self.explosive_bullet.curve_pow = 3
 		self.explosive_bullet.player_dmg_mul = 0.5
-		self.explosive_bullet.range = 500
+		self.explosive_bullet.range = 250
 		self.explosive_bullet.feedback_range = self.explosive_bullet.range
 		self.explosive_bullet.camera_shake_max_mul = 4
 
@@ -297,7 +297,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}				
 							
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.015, 0.035}
+				self.values.player.hostage_health_regen_addend = {0.01, 0.02}
 				self.values.team.damage = {
 					hostage_absorption = {0.1},
 					hostage_absorption_limit = 4
@@ -364,8 +364,8 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.shotgun.swap_speed_multiplier = {1.8}
 				self.values.saw.swap_speed_multiplier = {1.8}
 				self.values.temporary.overkill_damage_multiplier = {
-					{1.75, 2},
-					{1.75, 10}
+					{1.5, 2},
+					{1.5, 10}
 				}
 			--}
 			
@@ -915,7 +915,7 @@ function UpgradesTweakData:_init_pd2_values()
 		tick_time = 1.25,
 		total_ticks = 8,
 		max_stacks = 5,
-		stacking_cooldown = 0.0,
+		stacking_cooldown = 0.1,
 		add_stack_sources = {
 			bullet = false,
 			explosion = false,
@@ -1198,7 +1198,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 2.5,
+			kill_health_gain = 1.5,
 			radius = 0.6,
 			distance = 18,
 			kill_extension = 2,

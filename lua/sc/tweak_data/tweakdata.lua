@@ -1,4 +1,7 @@
-if not tweak_data then return end
+	if not tweak_data then 
+		return 
+	end
+
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	tweak_data.ammo = {}
@@ -335,7 +338,7 @@ if not tweak_data then return end
 		infamous_chance = 3
 	}	
 	
-	tweak_data.experience_manager.stage_failed_multiplier = 1
+	tweak_data.experience_manager.stage_failed_multiplier = 0.5
 	-- From update 34
 	tweak_data.experience_manager.stage_completion = {
 		200,
@@ -356,7 +359,6 @@ if not tweak_data then return end
 		32000
 	}
 	
-	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 		tweak_data.gui.buy_weapon_categories = {
 			primaries = {
 				{"assault_rifle"},
@@ -398,7 +400,6 @@ if not tweak_data then return end
 		if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
 			table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
 		end						
-	end
 	
 	--Sounds of Animals Fighting--
 	local animal_fight = {

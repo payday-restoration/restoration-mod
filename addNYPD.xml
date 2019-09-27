@@ -72,8 +72,13 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_acc_nypd_medic_helmet/ene_acc_nypd_medic_helmet"/>
 	
     <!--NYPD heavy r870-->	
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
 	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870" load="true"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_contour"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk" load="true"/>	
 	
 	<!--NYPD swat mp5-->
 	<object path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"/>
@@ -218,8 +223,13 @@
 
 	<!--LAPD swat-->
 	<!--LAPD heavy r870-->	
+	<object path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2"/>
+	<model path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2"/>
 	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2" load="true"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2_husk" load="true"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2_contour"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2_husk" load="true"/>		
 	
 	<!--LAPD heavy m4-->
 	<object path="units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"/>

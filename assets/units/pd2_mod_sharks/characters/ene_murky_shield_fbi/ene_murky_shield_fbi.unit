@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4" />
+	<object file="units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump" />
 	<dependencies>
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" />	
 		<depends_on bnk="soundbanks/regular_vox" />

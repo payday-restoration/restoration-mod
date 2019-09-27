@@ -14,7 +14,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local orig_upd_fire = SentryGunBrain._upd_fire
 	function SentryGunBrain:_upd_fire(t,...)
 		local attention = self._ext_movement:attention()
-		if not (attention and managers.enemy:is_civilian(attention.unit) and not tweak_data.character[attention.unit:base()._tweak_table].is_escort) then
+		if not (attention and alive(attention.unit) and managers.enemy:is_civilian(attention.unit) and not tweak_data.character[attention.unit:base()._tweak_table].is_escort) then
 			return orig_upd_fire(self,t,...)
 		end 
 		

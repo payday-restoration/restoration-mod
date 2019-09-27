@@ -86,6 +86,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
 	end
 	
+	function GroupAIStateBesiege:not_assault_0_check()
+		if self._assault_number and self._assault_number <= 0 then
+			return
+		end
+		
+		return true
+	end
+	
     function GroupAIStateBesiege:_get_megaphone_sound_source()
     	local level_id = Global.level_data.level_id
     	local pos = nil
@@ -571,7 +579,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			if used_event or next(self._spawning_groups) then
 			else
-				local spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
+				local spawn_group, spawn_group_type = nil
+				
+				--local yes = true
+				--uncomment to test ponr groups
+				--uncomment on get_force_spawn_group as well
+				if self._ponr_is_on or yes then
+					spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.coolhunting, nil, nil, nil)
+				else
+					spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
+				end
+				
 				if spawn_group then
 					local grp_objective = {
 						type = "assault_area",
@@ -1088,6 +1106,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return
 			end
 		end
+	end
+	
+	function GroupAIStateBesiege:get_force_spawn_group(group, group_types)
+		local best_groups = {}
+		local total_weight = nil
+		
+		--local yes = true
+		--uncomment to test ponr groups
+		if self._ponr_is_on or yes then
+			total_weight = self:_choose_best_groups(best_groups, group, group_types, self._tweak_data.assault.coolhunting, 1)
+		elseif self._task_data.assault.active then
+			total_weight = self:_choose_best_groups(best_groups, group, group_types, self._tweak_data.assault.groups, 1)
+		else
+			total_weight = self:_choose_best_groups(best_groups, group, group_types, self._tweak_data[self._task_data.assault.active and "assault" or "recon"].groups, 1)
+		end
+		
+
+		if total_weight > 0 then
+			local spawn_group, spawn_group_type = self:_choose_best_group(best_groups, total_weight)
+
+			if spawn_group then
+				return spawn_group, spawn_group_type
+			end
+		end
+
+		return nil
 	end
 	
 	function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last)

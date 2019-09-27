@@ -316,42 +316,25 @@ function HUDAssaultCorner:init(hud, full_hud)
 		end
 	else
 		self.buff_icon = "guis/textures/pd2/hud_buff_shield"
-	end		
-		local vip_icon = buffs_panel:bitmap({
-			halign = "center",
-			valign = "center",
-			color = Color.white,
-			name = "vip_icon",
-			blend_mode = "add",
-			visible = restoration.Options:GetValue("HUD/AssaultStyle") == 1,
-			layer = 3,
-			texture = self.buff_icon,
-			x = 0,
-			y = 0,
-			w = 38,
-			h = 38
-		})
-			vip_icon:set_right(buffs_panel:w())
-			vip_icon:set_rotation(30)
-			vip_icon:set_top(0)
+	end
 	
-		local vip_corner_icon = corner_panel:bitmap({
-			halign = "center",
-			valign = "center",
-			color = Color.white,
-			name = "vip_corner_icon",
-			blend_mode = "add",
-			visible = restoration.Options:GetValue("HUD/AssaultStyle") == 2,
-			layer = 3,
-			texture = self.buff_icon,
-			x = 0,
-			y = 0,
-			w = 38,
-			h = 38
-		})
-			vip_corner_icon:set_right(corner_panel:w())
-			vip_corner_icon:set_rotation(30)
-			vip_corner_icon:set_top(0)
+	local vip_icon_ = buffs_panel:bitmap({
+		halign = "center",
+		valign = "center",
+		color = Color.white,
+		name = "vip_icon_tape",
+		blend_mode = "add",
+		layer = 3,
+		texture = self.buff_icon,
+		x = 0,
+		y = 0,
+		w = 38,
+		h = 38
+	})
+	vip_icon_:set_right(buffs_panel:w())
+	vip_icon_:set_rotation(30)
+	vip_icon_:set_top(0)
+
 	local buffs_pad_panel = self._hud_panel:panel({
 		visible = false,
 		name = "buffs_pad_panel",
@@ -359,6 +342,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		w = 200,
 		h = 64
 	})
+	
 	local texture_new = "guis/textures/restoration/objective"
 	local buff_start = buffs_pad_panel:bitmap( { name = "buff_start", texture = texture_new, color = self._vip_assault_color, texture_rect = { 0, 0, 13, 64 }, layer = 1} )
 	local buff_mid = buffs_pad_panel:bitmap( { name = "buff_mid", texture_rect = { 19, 0, 33, 64 }, color = self._vip_assault_color, layer = 1, texture = texture_new} )

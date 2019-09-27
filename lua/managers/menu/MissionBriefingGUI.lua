@@ -46,7 +46,11 @@ end
 
 function MissionBriefingTabItem:reduce_to_small_font()
 	--self._tab_text:set_font(tweak_data.menu.pd2_small_font_id)
-	self._tab_text:set_font_size(24)
+	if managers.crime_spree:is_active() or managers.mutators:are_mutators_active() then
+		self._tab_text:set_font_size(20)
+	else
+		self._tab_text:set_font_size(tweak_data.menu.pd2_medium_font_size)
+	end
 	local prev_item_title_text = self._main_panel:child("tab_text_" .. tostring(self._index - 1))
 	local offset = prev_item_title_text and prev_item_title_text:right() or 0
 	local x, y, w, h = self._tab_text:text_rect()
@@ -328,7 +332,8 @@ function MissionBriefingGui:init(saferect_ws, fullrect_ws, node)
 		self._next_page = next_page
 		max_x = next_page:left() - 5
 	end
-	self._reduced_to_small_font = not managers.menu:is_pc_controller()
+	self._reduced_to_small_font_cs = managers.crime_spree:is_active()
+	self._reduced_to_small_font_mut = managers.mutators:are_mutators_active()
 	self:chk_reduce_to_small_font()
 	self._selected_item = 0
 	self:set_tab(self._node:parameters().menu_component_data.selected_tab, true)
@@ -363,6 +368,23 @@ function MissionBriefingGui:init(saferect_ws, fullrect_ws, node)
 	self._lobby_mutators_text:set_visible(mutators_active)
 	self._enabled = true
 	--self:flash_ready()
+end
+
+function MissionBriefingGui:chk_reduce_to_small_font()
+	local max_x = alive(self._next_page) and self._next_page:left() - 5 or self._panel:w()
+
+	if self._reduced_to_small_font or self._reduced_to_small_font_mut or self._items[#self._items] and alive(self._items[#self._items]._tab_text) and max_x < self._items[#self._items]._tab_text:right() then
+		
+		for i, tab in ipairs(self._items) do
+			tab:reduce_to_small_font()
+		end
+
+		self._reduced_to_small_font_cs = true
+		self._reduced_to_small_font_mut = true
+	else
+		self._reduced_to_small_font_cs = false
+		self._reduced_to_small_font_mut = false
+	end
 end
 
 function MissionBriefingGui:ready_text()
@@ -412,31 +434,54 @@ function MissionBriefingGui:mouse_pressed(button, x, y)
 	if self._displaying_asset then
 		if button == Idstring("mouse wheel down") then
 			self:zoom_asset("out")
+
 			return
 		elseif button == Idstring("mouse wheel up") then
 			self:zoom_asset("in")
+
 			return
 		end
+
 		self:close_asset()
+
 		return
 	end
-	if button == Idstring("mouse wheel down") then
+
+	local mwheel_down = button == Idstring("mouse wheel down")
+	local mwheel_up = button == Idstring("mouse wheel up")
+
+	if (mwheel_down or mwheel_up) and managers.menu:is_pc_controller() then
+		local mouse_pos_x, mouse_pos_y = managers.mouse_pointer:modified_mouse_pos()
+
+		if mouse_pos_x < self._panel:x() then
+			return
+		end
+	end
+
+	if mwheel_down then
 		self:next_tab(true)
+
 		return
-	elseif button == Idstring("mouse wheel up") then
+	elseif mwheel_up then
 		self:prev_tab(true)
+
 		return
 	end
+
 	if button ~= Idstring("0") then
 		return
 	end
+
 	if MenuCallbackHandler:is_overlay_enabled() then
 		local fx, fy = managers.mouse_pointer:modified_fullscreen_16_9_mouse_pos()
+
 		for peer_id = 1, CriminalsManager.MAX_NR_CRIMINALS do
 			if managers.hud:is_inside_mission_briefing_slot(peer_id, "name", fx, fy) then
 				local peer = managers.network:session() and managers.network:session():peer(peer_id)
+
 				if peer then
 					Steam:overlay_activate("url", tweak_data.gui.fbi_files_webpage .. "/suspect/" .. peer:user_id() .. "/")
+
 					return
 				end
 			end

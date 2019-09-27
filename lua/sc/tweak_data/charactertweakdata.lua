@@ -386,6 +386,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.fbi_vet = deep_clone(self.fbi)
 		self.fbi_vet.can_shoot_while_dodging = true
+		self.fbi_vet.can_slide_on_suppress = true
 		self.fbi_vet.HEALTH_INIT = 12
 		self.fbi_vet.headshot_dmg_mul = 3.4
 		self.fbi_vet.damage.bullet_dodge_chance = 65
@@ -695,6 +696,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "swat")
 		
 		self.swat_titan = deep_clone(self.swat)
+		self.swat_titan.can_slide_on_suppress = true
 		self.swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
 		self.swat_titan.use_animation_on_fire_damage = true
 		self.swat_titan.move_speed = presets.move_speed.very_fast
@@ -1116,6 +1118,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "omnia")
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
+		self.city_swat_titan.can_slide_on_suppress = true
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4		
@@ -1149,7 +1152,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
 		self.skeleton_swat_titan.custom_voicework = "skeleton"
-		table.insert(self._enemy_list, "skeleton_swat_titan")		
+		table.insert(self._enemy_list, "skeleton_swat_titan")	
+
+		self.weekend = deep_clone(self.city_swat_titan)
+		table.insert(self._enemy_list, "weekend")				
 		
 		--Temp Solution
 		if job == "haunted" then
@@ -12295,7 +12301,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self:_set_characters_melee_preset("2.1", "2")
 		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
+		self.swat.can_shoot_while_dodging = true
+		self.fbi.can_slide_on_suppress = true		
+		self.swat.can_slide_on_suppress = true		
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -12396,7 +12404,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_weapon_preset("expert", "good")
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
+		self.swat.can_shoot_while_dodging = true	
+		self.fbi.can_slide_on_suppress = true		
+		self.swat.can_slide_on_suppress = true		
+		self.fbi_swat.can_slide_on_suppress = true		
+		self.city_swat.can_slide_on_suppress = true		
 		self:_set_characters_melee_preset("2.1", "2")
 				
 		self.shield.weapon.is_pistol.melee_speed = nil
@@ -12509,7 +12521,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_dodge_preset("deathwish")
 		self:_set_characters_melee_preset("2.625", "2.1")
 		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
+		self.swat.can_shoot_while_dodging = true	
+		self.fbi.can_slide_on_suppress = true		
+		self.swat.can_slide_on_suppress = true		
+		self.fbi_swat.can_slide_on_suppress = true		
+		self.city_swat.can_slide_on_suppress = true		
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -12580,7 +12596,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_set_characters_dodge_preset("deathwish")
 		self:_set_characters_melee_preset("2.625", "2.1")
 		self.fbi.can_shoot_while_dodging = true
-		self.swat.can_shoot_while_dodging = true		
+		self.swat.can_shoot_while_dodging = true	
+		self.fbi.can_slide_on_suppress = true		
+		self.swat.can_slide_on_suppress = true		
+		self.fbi_swat.can_slide_on_suppress = true		
+		self.city_swat.can_slide_on_suppress = true		
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -13021,6 +13041,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_fbi_female_4",
 					"ene_fbi_heavy_1",
 					"ene_fbi_heavy_r870",
+					"ene_fbi_heavy_r870_sc",
 					"ene_fbi_office_1",
 					"ene_fbi_office_2",
 					"ene_fbi_office_3",
@@ -13078,6 +13099,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_swat_2",
 					"ene_swat_heavy_1",
 					"ene_swat_heavy_r870",
+					"ene_swat_heavy_r870_sc",
 					"ene_tazer_1",
 					"ene_grenadier_1",
 					"ene_veteran_cop_1",
@@ -13088,6 +13110,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"npc_old_hoxton_prisonsuit_2",
 					"ene_medic_r870",
 					"ene_medic_m4",
+					"ene_city_heavy_r870_sc",
 					"ene_city_heavy_r870",
 					"ene_city_heavy_g36",
 					"ene_mememan_1",	
@@ -13359,7 +13382,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_zeal_tazer",
 					"ene_zeal_fbi_m4",
 					"ene_zeal_fbi_mp5",
-					"ene_zeal_swat_heavy_sc"
+					"ene_zeal_swat_heavy_sc",
+					"ene_zeal_swat_heavy_r870_sc"
 				}
 			},
 			spa = {

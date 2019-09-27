@@ -9,29 +9,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
 		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
-		["bm_wp_corgi_b_short"] = "MSG Barrel",
-		["menu_es_rep_upgrade"] = "",				
-		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
-		["bm_wp_1911_m_big"] = "Casket Magazine",		
-		["bm_w_lemming"] = "5/7 Pistol",
-		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
-		["bm_w_x_shrew"] = "Barry & Paul",
-		["bm_w_x_1911"] = "Mustang & Sally",
-		["bm_w_tec9"] = "T3K Urban Submachine Gun",
-		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",		
-		["bm_wp_usp_m_big"] = "Casket Magazine",		
-		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
-		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
-		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
-		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",				
-		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
-		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
-		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
-		["bm_w_r0991"] = "AR-15 Varmint Pistol",
-		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
-		["bm_wp_g3_b_sniper"] = "Macro Barrel",			
-		["bm_wp_g3_b_short"] = "Micro Barrel",						
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
 		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.",
 		["menu_jowi"] = "Wick",
@@ -47,8 +24,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
-		["bm_w_m590"] = "Reinbeck 890 Shotgun",
-		["bm_w_m590_desc"] = "The criminal underworld's most popular shotgun is back and better than ever. With 8 rounds and nothing but raw power, the Reinbeck has finally returned to America's most infamous criminal crew.",				
 		["bm_wp_upg_vintage_desc"] = "",
 		["bm_sc_scorpion_double_mag"] = "",
 		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
@@ -152,7 +127,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Safe House Test
 		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
-		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should you might find something new.\nWould you like to go there now?",
+		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",
 		
 	})
 end)
@@ -227,6 +202,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bp_lmg_lionbipod_desc"] = "Deploy/Undeploy by pressing the [Bipod Key/Alt-Fire Key]",
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
+		-- Renamed default weapons
+		["bm_wp_corgi_b_short"] = "MSG Barrel",
+		["menu_es_rep_upgrade"] = "",				
+		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
+		["bm_wp_1911_m_big"] = "Casket Magazine",		
+		["bm_w_lemming"] = "5/7 Pistol",
+		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
+		["bm_w_x_shrew"] = "Barry & Paul",
+		["bm_w_x_1911"] = "Mustang & Sally",
+		["bm_w_tec9"] = "T3K Urban Submachine Gun",
+		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",		
+		["bm_wp_usp_m_big"] = "Casket Magazine",		
+		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
+		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
+		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
+		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",				
+		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
+		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
+		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
+		["bm_w_r0991"] = "AR-15 Varmint Pistol",
+		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
+		["bm_wp_g3_b_sniper"] = "Macro Barrel",
+		["bm_w_m590"] = "Reinbeck 890 Shotgun",
+		["bm_w_m590_desc"] = "The criminal underworld's most popular shotgun is back and better than ever. With 8 rounds and nothing but raw power, the Reinbeck has finally returned to America's most infamous criminal crew.",		
+		["bm_wp_g3_b_short"] = "Micro Barrel",								
 
 		--Modifiers--
 		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Accuracy/Stability penalty",
@@ -378,8 +379,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",		
 
 		["MutatorMoreDonutsPlus"] = "More Donuts+",
-		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by OMNIA L.P.Fs.",
-		["MutatorMoreDonutsPlus_longdesc"] = "All common enemies are replaced by NYPD Bronco Cops, and all specials are replaced with OMNIA L.P.Fs. \n\nWARNING: By enabling this mutator, you are committing an atrocity.",
+		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by OMNIA LPFs.",
+		["MutatorMoreDonutsPlus_longdesc"] = "All common enemies are replaced by NYPD Bronco Cops, and all specials are replaced with OMNIA LPFs. \n\nWARNING: By enabling this mutator, you are committing an atrocity.",
 
 		["MutatorJungleInferno"] = "Jungle Inferno",
 		["MutatorJungleInferno_desc"] = "All enemies are replaced by Captain Summers.",
@@ -515,7 +516,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1.5%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##3.5%## health every ##5## seconds.\n\nYou and your crew gain ##1## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\nNote: This skill does not stack.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##2%## health every ##5## seconds.\n\nYou and your crew gain ##1## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\nNote: This skill does not stack.",
 		
 
 			--}
@@ -1028,11 +1029,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--
-		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nEach enemy you or the tagged unit kills will now heal you for ##25## health and the tagged unit for ##12.5## health.\n\nEnemies you kill will extend the duration by ##2## seconds.\n\nThe effect will last for a duration of ##12## seconds and has a cooldown of ##60## seconds.",
+		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nEach enemy you or the tagged unit kills will now heal you for ##15## health and the tagged unit for ##7.5## health.\n\nEnemies you kill will extend the duration by ##2## seconds.\n\nThe effect will last for a duration of ##12## seconds and has a cooldown of ##60## seconds.",
 		["menu_deck20_3_desc_sc"] = "Enemies you kill will now reduce the cooldown timer by ##2## seconds.",
 		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills will now grant you ##0.5## absorption up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",		
 		["menu_deck20_7_desc_sc"] = "Each enemy you or the tagged unit kills will now grant you ##1## absorption up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",	
-		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.",
+		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Biker--
 		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## health and ##1## armor. This cannot occur more than ##5## times every ##10## seconds.",				
@@ -1047,7 +1048,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_3_desc_sc"] = "Your chance to dodge is increased by ##10%##.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##20## health.",
 		["menu_deck21_7_desc_sc"] = "Your chance to dodge is increased by an additional ##10%##.",
-		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##10## health.",
+		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##10## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Blank Deck",

@@ -256,7 +256,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
        				if clearchk <= say_clear then
        					managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear" )
        				else
-       					if not managers.groupai:state():chk_assault_active_atm() then
+       					if not managers.groupai:state():chk_assault_active_atm() and managers.groupai:state():not_assault_0_check() then
        						managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "retreat" )
        					end
        				end

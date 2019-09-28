@@ -227,5 +227,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			small_risk = small_risk
 		}
 	end
+	function MoneyManager:get_potential_payout_from_current_stage()
+		local stage_value, job_value, bag_value, small_value, crew_value, total_payout = self:get_real_job_money_values(1)
+		return total_payout
+	end
 end
 

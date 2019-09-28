@@ -7687,6 +7687,54 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				special_type = "tank"
 			}
 		end
+				
+		self.unit_categories.Weekend_rifle = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},					
+				russia = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},
+				murkywater = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},
+				nypd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				}				
+			},
+			access = access_type_all
+		}
+		self.unit_categories.Weekend_shotgun = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},					
+				russia = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},
+				murkywater = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},
+				nypd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+				}				
+			},
+			access = access_type_all
+		}		
+		
 	end
 
 	function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -9437,20 +9485,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					amount = {3, 4},
 					spawn = {
 						{
-							unit = "FBI_swat_M4",
+							unit = "Weekend_rifle",
 							freq = 1,
 							amount_min = 1,
 							tactics = self._tactics.FBI_swat_rifle,
 							rank = 2
 						},
 						{
-							unit = "FBI_swat_M4",
+							unit = "Weekend_rifle",
 							freq = 0.75,
 							tactics = self._tactics.FBI_swat_rifle_flank,
 							rank = 3
 						},
 						{
-							unit = "FBI_swat_R870",
+							unit = "Weekend_shotgun",
 							freq = 0.5,
 							amount_max = 1,
 							tactics = self._tactics.FBI_swat_shotgun,
@@ -9478,7 +9526,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					amount = {3, 4},
 					spawn = {
 						{
-							unit = "FBI_swat_M4",
+							unit = "Weekend_rifle",
 							freq = 1,
 							amount_min = 3,
 							tactics = self._tactics.FBI_swat_rifle,
@@ -9491,7 +9539,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 2
 						},					
 						{
-							unit = "FBI_swat_R870",
+							unit = "Weekend_shotgun",
 							amount_min = 1,
 							amount_max = 2,
 							freq = 1,
@@ -9513,7 +9561,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					amount = {4, 5},
 					spawn = {
 						{
-							unit = "FBI_swat_M4",
+							unit = "Weekend_rifle",
 							freq = 1,
 							amount_min = 3,
 							tactics = self._tactics.ELITE_swat_rifle,
@@ -9526,7 +9574,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							rank = 2
 						},					
 						{
-							unit = "FBI_swat_R870",
+							unit = "Weekend_shotgun",
 							amount_min = 1,
 							amount_max = 2,
 							freq = 1,

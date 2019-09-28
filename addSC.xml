@@ -540,7 +540,8 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>	
 	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_df" force="false"/>	
-	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_il" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_il" force="false"/>	   
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/spring_glass_op" force="false" load="true"/>    
 	
 	<!--Autumn-->
 	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
@@ -1530,28 +1531,120 @@
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />	
 	<!--fbi heavy r870-->
-        <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
-        <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
-        <object path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
+    <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
+    <unit path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
+    <object path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_contour"/>
 	<!--city heavy r870-->
-        <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
-        <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
-        <object path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
+    <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
+    <unit path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
+    <object path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_contour"/>
 	<!--swat heavy r870-->
-        <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc" load="true"/>
-        <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk" load="true"/>
-        <object path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
+    <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc" load="true"/>
+    <unit path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk" load="true"/>
+    <object path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<cooked_physics path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"/>
 	<material_config path="units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_contour"/>
+	
+	<!--Jarey_ zeals shit below-->
+	<!--GREEN-->
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/bulldozer_2_df" force="true"/>	
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
+	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_throat/ene_acc_bulldozer_throat" force="false"/>	
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_back/ene_acc_bulldozer_back" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" force="false"/>	
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_stomache/ene_acc_bulldozer_stomache" force="false"/>		
+
+	<!--BLACK-->
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/bulldozer_3_df" force="true"/>	
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>	
+	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>		
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" force="false"/>	
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_back/ene_acc_bulldozer_back" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_chest/ene_acc_bulldozer_chest" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" load="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>	
+
+	<!--SKULL-->
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_df" force="true"/>	
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
+	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>
+	
+	<!--shield-->
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_contour" force="true"/>
+	
+	<!--swat-->
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_contour" force="true"/>	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" force="true"/>	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_df" force="true"/>	
+	
+	<!--taser-->
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df" force="true"/>	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" force="true"/>	
+	
+	<!--cloaker-->
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/zeal_cloaker_body_df" force="true"/>	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/zeal_cloaker_head_df" force="true"/>	
+	
+	<!-- i was too lazy to map this to the hrt acc Xd-->
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>
+	<!--Fixed acc LOD Jaaaaareeeyyy >:( !!!!! -->	
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>	
 	
 </table>

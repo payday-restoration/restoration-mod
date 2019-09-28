@@ -29,6 +29,7 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.city_swat_titan = security_variant
 	CopBrain._logic_variants.city_swat_titan_assault = security_variant
 	CopBrain._logic_variants.skeleton_swat_titan = security_variant
+	CopBrain._logic_variants.weekend = security_variant
 	CopBrain._logic_variants.omnia = security_variant
 	CopBrain._logic_variants.omnia_heavy = security_variant
 	CopBrain._logic_variants.boom = security_variant

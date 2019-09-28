@@ -9429,6 +9429,236 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
+		
+		--Cool Hunt Groups--
+		if Global.game_settings and Global.game_settings.one_down then
+			if difficulty_index <= 6 then
+				self.enemy_spawn_groups.FBI_swats_weekend = {
+					amount = {3, 4},
+					spawn = {
+						{
+							unit = "FBI_swat_M4",
+							freq = 1,
+							amount_min = 1,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 2
+						},
+						{
+							unit = "FBI_swat_M4",
+							freq = 0.75,
+							tactics = self._tactics.FBI_swat_rifle_flank,
+							rank = 3
+						},
+						{
+							unit = "FBI_swat_R870",
+							freq = 0.5,
+							amount_max = 1,
+							tactics = self._tactics.FBI_swat_shotgun,
+							rank = 1
+						},
+						{
+							unit = "spooc",
+							freq = 0.15,
+							amount_max = 2,
+							tactics = self._tactics.spooc,
+							rank = 1
+						},
+						{
+							unit = "medic_M4",
+							freq = 0.2,
+							amount_min = 0,
+							amount_max = 1,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 1
+						}
+					}
+				}
+			elseif difficulty_index == 7 then	
+				self.enemy_spawn_groups.FBI_swats_weekend = {
+					amount = {3, 4},
+					spawn = {
+						{
+							unit = "FBI_swat_M4",
+							freq = 1,
+							amount_min = 3,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 1
+						},
+						{
+							unit = "FBI_suit_M4_MP5",
+							freq = 1,
+							tactics = self._tactics.FBI_swat_rifle_flank,
+							rank = 2
+						},					
+						{
+							unit = "FBI_swat_R870",
+							amount_min = 1,
+							amount_max = 2,
+							freq = 1,
+							tactics = self._tactics.FBI_swat_shotgun,
+							rank = 3
+						},
+						{
+							unit = "medic_M4",
+							freq = 0.7,
+							amount_min = 0,
+							amount_max = 1,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 1
+						}
+					}
+				}		
+			else
+				self.enemy_spawn_groups.FBI_swats_weekend = {
+					amount = {4, 5},
+					spawn = {
+						{
+							unit = "FBI_swat_M4",
+							freq = 1,
+							amount_min = 3,
+							tactics = self._tactics.ELITE_swat_rifle,
+							rank = 1
+						},
+						{
+							unit = "FBI_suit_M4_MP5",
+							freq = 1,
+							tactics = self._tactics.ELITE_swat_rifle_flank,
+							rank = 2
+						},					
+						{
+							unit = "FBI_swat_R870",
+							amount_min = 1,
+							amount_max = 2,
+							freq = 1,
+							tactics = self._tactics.ELITE_swat_shotgun,
+							rank = 3
+						},
+						{
+							unit = "medic_M4",
+							freq = 0.7,
+							amount_min = 0,
+							amount_max = 1,
+							tactics = self._tactics.ELITE_swat_rifle,
+							rank = 1
+						}
+					}
+				}
+			end		
+		else
+			if difficulty_index <= 6 then
+				self.enemy_spawn_groups.FBI_swats_weekend = {
+					amount = {3, 4},
+					spawn = {
+						{
+							unit = "FBI_swat_M4",
+							freq = 1,
+							amount_min = 1,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 2
+						},
+						{
+							unit = "FBI_swat_M4",
+							freq = 0.75,
+							tactics = self._tactics.FBI_swat_rifle_flank,
+							rank = 3
+						},
+						{
+							unit = "FBI_swat_R870",
+							freq = 0.5,
+							amount_max = 1,
+							tactics = self._tactics.FBI_swat_shotgun,
+							rank = 1
+						},
+						{
+							unit = "spooc",
+							freq = 0.15,
+							amount_max = 2,
+							tactics = self._tactics.spooc,
+							rank = 1
+						},
+						{
+							unit = "medic_M4",
+							freq = 0.2,
+							amount_min = 0,
+							amount_max = 1,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 1
+						}
+					}
+				}
+			elseif difficulty_index == 7 then	
+				self.enemy_spawn_groups.FBI_swats_weekend = {
+					amount = {3, 4},
+					spawn = {
+						{
+							unit = "FBI_swat_M4",
+							freq = 1,
+							amount_min = 3,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 1
+						},
+						{
+							unit = "FBI_suit_M4_MP5",
+							freq = 1,
+							tactics = self._tactics.FBI_swat_rifle_flank,
+							rank = 2
+						},					
+						{
+							unit = "FBI_swat_R870",
+							amount_min = 1,
+							amount_max = 2,
+							freq = 1,
+							tactics = self._tactics.FBI_swat_shotgun,
+							rank = 3
+						},
+						{
+							unit = "medic_M4",
+							freq = 0.7,
+							amount_min = 0,
+							amount_max = 1,
+							tactics = self._tactics.FBI_swat_rifle,
+							rank = 1
+						}
+					}
+				}		
+			else
+				self.enemy_spawn_groups.FBI_swats_weekend = {
+					amount = {4, 5},
+					spawn = {
+						{
+							unit = "FBI_swat_M4",
+							freq = 1,
+							amount_min = 3,
+							tactics = self._tactics.ELITE_swat_rifle,
+							rank = 1
+						},
+						{
+							unit = "FBI_suit_M4_MP5",
+							freq = 1,
+							tactics = self._tactics.ELITE_swat_rifle_flank,
+							rank = 2
+						},					
+						{
+							unit = "FBI_swat_R870",
+							amount_min = 1,
+							amount_max = 2,
+							freq = 1,
+							tactics = self._tactics.ELITE_swat_shotgun,
+							rank = 3
+						},
+						{
+							unit = "medic_M4",
+							freq = 0.7,
+							amount_min = 0,
+							amount_max = 1,
+							tactics = self._tactics.ELITE_swat_rifle,
+							rank = 1
+						}
+					}
+				}
+			end
+		end
+				
 		--Vanilla shit below--
 		if difficulty_index <= 2 then
 			self.enemy_spawn_groups.tac_swat_shotgun_rush = {
@@ -11015,6 +11245,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				3.8
 			}
 		end
+		
+		--assault groups
 		if difficulty_index <= 2 then
 			self.besiege.assault.groups = {
 				CS_cops = {
@@ -11267,6 +11499,261 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}				
 		end
+		
+		--point of no return groups
+		if difficulty_index <= 2 then
+			self.besiege.assault.coolhunting = {
+				CS_cops = {
+					0,
+					1,
+					0.85
+				},
+				CS_swats = {
+					0,
+					0.1,
+					0.35
+				},
+				CS_shields = {
+					0,
+					0,
+					0.15
+				}
+			}
+		elseif difficulty_index == 3 then
+			self.besiege.assault.coolhunting = {
+				CS_swats = {
+					0,
+					1,
+					1
+				},
+				CS_heavys = {
+					0,
+					0.2,
+					0.7
+				},
+				CS_shields = {
+					0,
+					0.02,
+					0.2
+				},
+				CS_tazers = {
+					0,
+					0.05,
+					0.15
+				},
+				FBI_spoocs = {
+                    0,
+                    0.05,
+                    0.1
+                },
+				CS_tanks = {
+					0,
+					0.05,
+					0.1
+				}
+			}
+		elseif difficulty_index == 4 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats_weekend = {
+					0.1,
+					1,
+					1
+				},
+				FBI_heavys = {
+					0.05,
+					0.25,
+					0.5
+				},
+				FBI_shields = {
+					0.1,
+					0.2,
+					0.2
+				},
+				FBI_tanks = {
+					0,
+					0.1,
+					0.15
+				},
+				FBI_spoocs = {
+					0,
+					0.1,
+					0.2
+				},
+				CS_tazers = {
+					0.05,
+					0.15,
+					0.2
+				}
+			}
+		elseif difficulty_index == 5 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats_weekend = {
+					0.2,
+					1,
+					1
+				},
+				FBI_heavys = {
+					0.1,
+					0.5,
+					0.75
+				},
+				FBI_shields = {
+					0.1,
+					0.3,
+					0.4
+				},
+				FBI_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				BLACK_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				FBI_spoocs = {
+					0,
+					0.1,
+					0.2
+				},				
+				CS_tazers = {
+					0.1,
+					0.25,
+					0.25
+				}
+			}	
+		elseif difficulty_index == 6 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats_weekend = {
+					0.2,
+					1,
+					1
+				},
+				FBI_heavys = {
+					0.1,
+					0.5,
+					0.75
+				},
+				FBI_shields = {
+					0.1,
+					0.3,
+					0.4
+				},
+				FBI_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				BLACK_tanks = {
+					0,
+					0.125,
+					0.15
+				},
+				FBI_spoocs = {
+					0,
+					0.1,
+					0.2
+				},				
+				CS_tazers = {
+					0.1,
+					0.25,
+					0.25
+				}
+			}			
+		elseif difficulty_index == 7 then
+			self.besiege.assault.coolhunting = {
+				FBI_swats_weekend = {
+					0.2,
+					0.9,
+					0.9
+				},
+				FBI_heavys = {
+					0.1,
+					0.4,
+					0.65
+				},
+				FBI_shields = {
+					0.1,
+					0.4,
+					0.3
+				},
+				FBI_tanks = {
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
+				},
+				BLACK_tanks = {
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
+				},
+				SKULL_tanks = {
+					0.03333333333,
+					0.11666666666,
+					0.13333333333
+				},
+				CS_tazers = {
+					0.1,
+					0.4,
+					0.35
+				},
+				FBI_spoocs = {
+					0,
+					0.35,
+					0.35
+				}
+			}
+		else
+			self.besiege.assault.groups = {
+				FBI_swats_weekend = {
+					0.2,
+					0.9,
+					0.9
+				},
+				FBI_heavys = {
+					0.1,
+					0.4,
+					0.65
+				},
+				FBI_shields = {
+					0.1,
+					0.4,
+					0.3
+				},
+				FBI_tanks = {
+					0.03166666666,
+					0.11083333333,
+					0.12666666666
+				},
+				BLACK_tanks = {
+					0.03166666666,
+					0.11083333333,
+					0.12666666666
+				},
+				SKULL_tanks = {
+					0.03166666666,
+					0.11083333333,
+					0.12666666666
+				},
+				TIT_tanks = {
+					0.005,
+					0.0175,
+					0.02
+				},				
+				CS_tazers = {
+					0.1,
+					0.4,
+					0.35
+				},
+				FBI_spoocs = {
+					0,
+					0.35,
+					0.35
+				}
+			}	
+		end
+		
 		self.besiege.assault.groups.single_spooc = {
 			0,
 			0,

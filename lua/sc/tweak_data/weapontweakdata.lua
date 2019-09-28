@@ -5369,11 +5369,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1928.panic_suppression_chance = 0.1
 		self.m1928.stats = {
 			damage = 40,
-			spread = 17,
-			recoil = 21,
+			spread = 16,
+			recoil = 22,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 17,
+			concealment = 16,
 			suppression = 9,
 			alert_size = 9,
 			extra_ammo = 101,
@@ -7298,7 +7298,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.erma.stats = {
 			damage = 40,
 			spread = 16,
-			recoil = 24,
+			recoil = 23,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 22,
@@ -9397,8 +9397,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mk18s.auto.fire_rate = 0.08108108108
 		self.mk18s.fire_mode_data.fire_rate = 0.08108108108
 		self.mk18s.tactical_reload = 1	
-		self.mk18s.AMMO_MAX = 150
-		self.mk18s.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.mk18s.AMMO_MAX = 135
+		self.mk18s.AMMO_PICKUP = self:_pickup_chance(135, 2)
 		self.mk18s.spread.standing = 3
 		self.mk18s.spread.crouching = 2
 		self.mk18s.spread.steelsight = 1
@@ -9430,8 +9430,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sr3m.categories = {
 			"assault_rifle"
 		}
-		self.sr3m.AMMO_MAX = 120
-		self.sr3m.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.sr3m.AMMO_MAX = 113
+		self.sr3m.AMMO_PICKUP = self:_pickup_chance(113, 1)
 		self.sr3m.fire_mode_data.fire_rate = 0.06666666666
 		self.sr3m.auto.fire_rate = 0.06666666666
 		self.sr3m.spread.standing = 3

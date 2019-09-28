@@ -40505,7 +40505,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_upg_o_xpsg33_magnifier.stance_mod.wpn_fps_shot_m590 = {translation = Vector3(-0, 7, -3.7),rotation = Rotation(0.1, 0, 0)
 			}
 			self.wpn_fps_shot_m590.override = { 
-				wpn_fps_shot_r870_body_rack = {stats = {}, a_obj="a_rack"},		
+				wpn_fps_shot_r870_body_rack = {
+					stats = {				
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 1
+					}, 
+					a_obj="a_rack"
+				},		
 				wpn_fps_upg_a_explosive = {
 					stats = {
 						value = 10,
@@ -42455,8 +42463,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}			
 				self.parts.wpn_fps_shot_m37_s_rack.stats = { 
 					value = 1,
-					recoil = -1,								
-					spread = 1
+					recoil = -2,								
+					spread = 1,
+					reload = 1
 				}	
 				self.parts.wpn_fps_shot_m37_s_rack.custom_stats = nil				
 				self.parts.wpn_fps_shot_m37_s_stakeout.stats = { 
@@ -45103,13 +45112,33 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 
 
 		if self.parts.wpn_fps_sho_ben_extrashell then 	--Shell Rack for Pump Action Shotguns
-			self.parts.wpn_fps_sho_ben_extrashell.stats = nil
+			self.parts.wpn_fps_sho_ben_extrashell.stats = {				
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 1
+			}
 			self.parts.wpn_fps_sho_ben_extrashell.custom_stats = nil				
-			self.parts.wpn_fps_sho_spas12_extrashell.stats = nil
+			self.parts.wpn_fps_sho_spas12_extrashell.stats = {				
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 1
+			}
 			self.parts.wpn_fps_sho_spas12_extrashell.custom_stats = nil							
-			self.parts.wpn_fps_sho_ksg_extrashell.stats = nil
+			self.parts.wpn_fps_sho_ksg_extrashell.stats = {				
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 1
+			}
 			self.parts.wpn_fps_sho_ksg_extrashell.custom_stats = nil										
-			self.parts.wpn_fps_sho_m37_extrashell.stats = nil
+			self.parts.wpn_fps_sho_m37_extrashell.stats = {				
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 1
+			}
 			self.parts.wpn_fps_sho_m37_extrashell.custom_stats = nil													
 			end		
 
@@ -46637,7 +46666,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				recoil = -2,
 				concealment = 3
 			}
-			self.parts.wpn_fps_shot_auto5_ammorack.stats = nil
+			self.parts.wpn_fps_shot_auto5_ammorack.stats = {				
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 1
+			}
 			self.parts.wpn_fps_shot_auto5_m_extended.stats = {
 				extra_ammo = 2,
 				concealment = -2

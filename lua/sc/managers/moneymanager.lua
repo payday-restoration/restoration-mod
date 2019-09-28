@@ -220,23 +220,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		local bag_value = math.round((bonus_bag_value + mandatory_bag_value) / offshore_rate)
 		bag_risk = math.round(bag_risk / offshore_rate)
-		local ret = {
-			stage_value,
-			job_value,
-			bag_value,
-			small_value,
-			crew_value,
-			total_payout,
-			{
-				stage_risk = stage_risk,
-				job_risk = job_risk,
-				bag_risk = bag_risk,
-				small_risk = small_risk
-			},
-			mutators_reduction
+		return stage_value, job_value, bag_value, small_value, crew_value, total_payout, {
+			stage_risk = stage_risk,
+			job_risk = job_risk,
+			bag_risk = bag_risk,
+			small_risk = small_risk
 		}
-	
-		return unpack(ret)
 	end
 end
 

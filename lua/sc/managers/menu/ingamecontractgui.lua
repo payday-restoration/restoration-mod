@@ -668,6 +668,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		})
 
 		managers.hud:make_fine_text(payday_text)
-		payday_text:set_bottom(self._rewards_panel:h())
-    end
+		payday_text:set_bottom(self._rewards_panel:h() + 4)
+	end
 end

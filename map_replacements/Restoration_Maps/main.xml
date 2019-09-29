@@ -8,7 +8,7 @@
 	<HeistMusic directory="assets/sounds/wetwork" id="resmusic_wetwork" volume="0.7">
 		<event name="setup" source="stealth.ogg"/>
 		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
-		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.05"/>
 		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
 	</HeistMusic>
 	<HeistMusic directory="assets/sounds/doghouse" id="resmusic_doghouse" volume="0.7">

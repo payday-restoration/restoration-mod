@@ -3336,7 +3336,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck21_7_desc_sc",
 				name_id = "menu_deck21_7",
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1"
+					"player_perk_armor_regen_timer_multiplier_1",
+					"player_passive_dodge_chance_2"
 				},
 				icon_xy = {
 					6,

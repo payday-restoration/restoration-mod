@@ -31,6 +31,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopMovement._action_variants.city_swat_titan_assault = security_variant
 		CopMovement._action_variants.skeleton_swat_titan = security_variant
 		CopMovement._action_variants.weekend = security_variant
+		CopMovement._action_variants.weekend_dmr = security_variant
+		CopMovement._action_variants.weekend_lmg = security_variant
 		CopMovement._action_variants.omnia = security_variant
 		CopMovement._action_variants.omnia_heavy = security_variant
 		CopMovement._action_variants.boom = security_variant

@@ -447,7 +447,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
-		["menu_crew_regen_desc"] = "Players heal 2.5 health every 5 seconds.",
+		["menu_crew_regen_desc"] = "Players heal 1.5 health every 5 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
 		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",

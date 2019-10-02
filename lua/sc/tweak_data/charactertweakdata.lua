@@ -905,6 +905,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end		
 		self.heavy_swat_sniper.is_special = true
 		table.insert(self._enemy_list, "heavy_swat_sniper")
+		
+		--Weekend Snipers
+		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)
+		table.insert(self._enemy_list, "weekend_dmr")
 	end
 
 	function CharacterTweakData:_init_fbi_swat(presets)
@@ -1117,6 +1121,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia.die_sound_event = "l1d_x02a_any_3p"
 		table.insert(self._enemy_list, "omnia")
 		
+		--Weekend
+		self.weekend = deep_clone(self.city_swat)
+		table.insert(self._enemy_list, "weekend")				
+		
 		self.city_swat_titan = deep_clone(self.city_swat)
 		self.city_swat_titan.can_slide_on_suppress = true
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -1153,10 +1161,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
 		self.skeleton_swat_titan.custom_voicework = "skeleton"
 		table.insert(self._enemy_list, "skeleton_swat_titan")	
-
-		self.weekend = deep_clone(self.city_swat_titan)
-		table.insert(self._enemy_list, "weekend")				
 		
+		--Weekend LMG
+		self.weekend_lmg = deep_clone(self.city_swat_titan)
+		table.insert(self._enemy_list, "weekend_lmg")						
+				
 		--Temp Solution
 		if job == "haunted" then
 			self.city_swat = deep_clone(self.skeleton_swat_titan)
@@ -11887,6 +11896,83 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}				
+		
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -11988,6 +12074,82 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}						
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -12089,6 +12251,83 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}				
+		
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -12190,6 +12429,82 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}						
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -12298,6 +12613,81 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
 		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 10
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}								
+				
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self:_set_characters_melee_preset("2.1", "2")
 		self.fbi.can_shoot_while_dodging = true
@@ -12410,6 +12800,81 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
 		self:_set_characters_melee_preset("2.1", "2")
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 10
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}		
 				
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -12551,7 +13016,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 		self.city_swat_titan_assault.use_animation_on_fire_damage = false
 		self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
-		self.skeleton_swat_titan.use_animation_on_fire_damage = false			
+		self.skeleton_swat_titan.use_animation_on_fire_damage = false	
+		self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.weekend_lmg.use_animation_on_fire_damage = false				
 		
 		--Fast Titan HRTs
 		self.swat_titan.move_speed = self.presets.move_speed.lightning
@@ -12788,6 +13255,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return false, t + delay_till_next_use
 			end
 		}
+		self.weekend_lmg.dodge_with_grenade = {
+			smoke = {duration = {
+				12,
+				12
+			}},
+			check = function (t, nr_grenades_used)
+				local delay_till_next_use = 30
+				local chance = 0.25
+
+				if math.random() < chance then
+					return true, t + delay_till_next_use
+				end
+
+				return false, t + delay_till_next_use
+			end
+		}		
 		
 		--Titan SWAT stun resistance
 		self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
@@ -12796,6 +13279,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.use_animation_on_fire_damage = false
 		self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
 		self.skeleton_swat_titan.use_animation_on_fire_damage = false			
+		self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.weekend_lmg.use_animation_on_fire_damage = false				
 
 		--Fast Titan HRTs
 		self.swat_titan.move_speed = self.presets.move_speed.lightning		

@@ -174,7 +174,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_add_concealment = {1}
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
-	self.values.team.crew_health_regen = {0.25}
+	self.values.team.crew_health_regen = {0.15}
 	self.values.team.crew_throwable_regen = {70}
 	self.values.team.crew_faster_reload = {1.1}
 	self.values.team.crew_faster_swap = {1}	

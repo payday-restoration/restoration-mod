@@ -26,18 +26,20 @@
     </material>
 
      <material name="mtr_helmet_lod0" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_nm"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
         <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-     <material name="mtr_helmet_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_nm" mip="1"/>
-        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" mip="1"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
+
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2" name="mtr_helmet_lod1" unique="true">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/characters/shared_textures/glass_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_small_dark_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>   
+
 
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

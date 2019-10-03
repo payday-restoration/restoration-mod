@@ -1,4 +1,17 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
+	function GroupAIStateBesiege:init(group_ai_state)
+		GroupAIStateBesiege.super.init(self)
+
+		if Network:is_server() and managers.navigation:is_data_ready() then
+			self:_queue_police_upd_task()
+		end
+
+		self._tweak_data = tweak_data.group_ai[group_ai_state]
+		self._spawn_group_timers = {}
+		self._graph_distance_cache = {}
+		self._ponr_is_on = nil
+	end	
     
 	--[[function GroupAIStateBesiege:init(group_ai_state)
     	GroupAIStateBesiege.super.init(self)
@@ -10,10 +23,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	self._tweak_data = tweak_data.group_ai[group_ai_state]
     	self._spawn_group_timers = {}
     	self._graph_distance_cache = {}
+		self._ponr_is_on = nil
 		self:set_debug_draw_state(true)
     end]]--
 	--uncomment to test ai debug stuff
-
+	
 	-- Tracks the cooldowns of each group type, will be populated by the GroupAIStateBesiege:_spawn_in_group() hook 
 	local group_timestamps = {}
 

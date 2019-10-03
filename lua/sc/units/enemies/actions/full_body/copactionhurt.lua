@@ -20,6 +20,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local ignite_character = action_desc.ignite_character
 		local start_dot_dance_antimation = action_desc.fire_dot_data and action_desc.fire_dot_data.start_dot_dance_antimation
 
+		local char_tweak = tweak_data.character[tweak_table]
+		local has_death_animation = char_tweak.death_animation
+
 		if action_type == "knock_down" then
 			action_type = "heavy_hurt"
 		end
@@ -247,6 +250,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._machine:set_parameter(redir_res, "var" .. tostring(variant), 1)
 		elseif action_type == "death" and (self._ext_anim.run or self._ext_anim.ragdoll) and self:_start_ragdoll() then
 			self.update = self._upd_ragdolled
+		elseif action_type == "death" and has_death_animation then
+			self:force_ragdoll()
 		elseif action_type == "heavy_hurt" and (self._ext_anim.run or self._ext_anim.sprint) and not common_data.is_suppressed and not crouching then
 			redir_res = self._ext_movement:play_redirect("heavy_run")
 

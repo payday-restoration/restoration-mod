@@ -908,6 +908,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Snipers
 		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)
+		self.weekend_dmr.custom_voicework = "pdth"
 		table.insert(self._enemy_list, "weekend_dmr")
 	end
 
@@ -1123,6 +1124,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend
 		self.weekend = deep_clone(self.city_swat)
+		self.weekend.custom_voicework = "pdth"
 		table.insert(self._enemy_list, "weekend")				
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
@@ -1164,6 +1166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend LMG
 		self.weekend_lmg = deep_clone(self.city_swat_titan)
+		self.weekend_lmg.custom_voicework = "pdth"
 		table.insert(self._enemy_list, "weekend_lmg")						
 				
 		--Temp Solution
@@ -2194,6 +2197,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.speech_prefix_p1 = "cpw"
 		self.phalanx_vip.speech_prefix_p2 = nil
 		self.phalanx_vip.speech_prefix_count = nil
+		self.phalanx_vip.death_animation = "death_run" 
+		self.phalanx_vip.death_animation_vars = {"var3", "heavy", "fwd", "high"}
 		self.phalanx_vip.chatter = {
 			aggressive = true,
 			retreat = true,

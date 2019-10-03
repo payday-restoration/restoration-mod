@@ -908,7 +908,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Snipers
 		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)
-		self.weekend_dmr.custom_voicework = "pdth"
+		self.weekend_dmr.custom_voicework = "bravo"
 		table.insert(self._enemy_list, "weekend_dmr")
 	end
 
@@ -1124,7 +1124,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend
 		self.weekend = deep_clone(self.city_swat)
-		self.weekend.custom_voicework = "pdth"
+		self.weekend.custom_voicework = "bravo"
 		table.insert(self._enemy_list, "weekend")				
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
@@ -1166,7 +1166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend LMG
 		self.weekend_lmg = deep_clone(self.city_swat_titan)
-		self.weekend_lmg.custom_voicework = "pdth"
+		self.weekend_lmg.custom_voicework = "bravo"
 		table.insert(self._enemy_list, "weekend_lmg")						
 				
 		--Temp Solution

@@ -8,7 +8,7 @@
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" />
 	</dependencies>
 
 	<extensions>
@@ -25,7 +25,7 @@
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" />
+			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

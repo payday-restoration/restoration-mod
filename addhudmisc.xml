@@ -67,5 +67,8 @@
 	<texture path="core/textures/cg_plus"/>
 	<texture path="core/textures/cg_force"/>
 	<texture path="core/textures/cg_e3nice"/>
+
+	<!-- Banners -->
+	<texture path="guis/textures/restoration/discord"/>
 			
 </table>

@@ -319,6 +319,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
+
+		["cn_menu_contract_daypay_header"] = "Day Rate:",
+		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
+		["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract.",
 		
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		
@@ -443,7 +447,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
-		["menu_crew_regen_desc"] = "Players heal 2.5 health every 5 seconds.",
+		["menu_crew_regen_desc"] = "Players heal 1.5 health every 5 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
 		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",

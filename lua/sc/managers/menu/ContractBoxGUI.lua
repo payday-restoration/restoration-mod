@@ -1,5 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-    function ContractBoxGui:init(ws, fullscreen_ws)
+    --[[
+	function ContractBoxGui:init(ws, fullscreen_ws)
 		self._ws = ws
 		self._fullscreen_ws = fullscreen_ws
 		self._panel = self._ws:panel():panel()
@@ -129,6 +130,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function ContractBoxGui:_crewpage_text()
 		return managers.localization:to_upper_text("menu_crewpage")
 	end
+	--]]
 
 	function ContractBoxGui:create_contract_box()
 		if not managers.network:session() then

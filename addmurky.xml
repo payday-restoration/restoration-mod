@@ -479,6 +479,15 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer_husk" force="false" load="true"/> 
+
+	<!--Murky Taser Helmet -->
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>	
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	
 	
 	<!--Murky Cloaker Debris-->
 	<!--head-->

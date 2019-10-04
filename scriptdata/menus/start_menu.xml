@@ -1,7 +1,7 @@
 <table>
     <menu search="menu;id='start_menu'">
         <node search="node;name='main'">
-			<item index="after:item;name='options'" callback="on_visit_res_guide" help_id="menu_ingame_manual_help" name="ingame_manual" text_id="menu_ingame_manual" visible_callback="SCEnabled"/>
+			<item index="after:item;name='options'" callback="on_visit_res_guide" help_id="menu_ingame_manual_help" name="ingame_manual" text_id="menu_ingame_manual" trial_buy="true" visible_callback="SCEnabled"/>
         </node>
     </menu>
 </table>

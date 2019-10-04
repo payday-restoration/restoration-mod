@@ -43804,7 +43804,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						concealment = 2
 					}		
 				self.parts.wpn_fps_pis_qsz92_a_gen.pcs = nil
+			end
+
+		if self.parts.wpn_fps_upg_o_ghostring_pis then -- Ghost Ring Sight Compatibility bullshit or something
+				self.parts.wpn_fps_upg_o_ghostring_pis.stats = {
+						value = 1
+					}					
 			end				
+			
 
 		if self.wpn_fps_pis_hpb then -- Gambyt's Browning HP
 				self.parts.wpn_fps_pis_hpb_a_c45.pcs = nil		
@@ -43827,16 +43834,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						concealment = -2
 					}		
 				self.parts.wpn_fps_pis_hpb_body_pearl.stats = {
-						value = 4,
-						spread_moving = 2,
-						spread = -1,
-						concealment = 2
+						value = 1
 					}	
 				self.parts.wpn_fps_pis_hpb_body_gold.stats = {
-						value = 10,
-						spread_moving = -2,
-						spread = 1,
-						concealment = -2
+						value = 10
 					}		
 				self.parts.wpn_fps_pis_hpb_m_extended.stats = {
 						value = 3,
@@ -43862,11 +43863,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						concealment = -3
 					}										
 				self.parts.wpn_fps_pis_hpb_body_blued.stats = {
-						value = 2,
-						spread_moving = -2,
-						concealment = -1,						
-						spread = 1,
-						recoil = 1
+						value = 2
 					}							
 			end							
 
@@ -44663,7 +44660,10 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_smg_m3_a_9mm.pcs = nil
 				self.parts.wpn_fps_smg_m3_sling.stats = {
 						value = 1
-					}										
+					}
+				self.parts.wpn_fps_smg_m3_sling_l.stats = {
+						value = 1
+					}					
 				self.parts.wpn_fps_smg_m3_m_short.stats = {
 						value = 2,
 						spread_moving = 2,

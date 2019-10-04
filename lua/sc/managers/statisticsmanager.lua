@@ -20,6 +20,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		"phalanx_minion",
 		"phalanx_vip",
 		"heavy_swat_sniper",
+		"weekend_dmr",
 		"tank_titan",
 		"tank_titan_assault",
 		"spring",
@@ -244,7 +245,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				melee = 0,
 				explosion = 0,
 				tied = 0
-			}			
+			}	
+			
+		--Weekend	
+		self._defaults.killed.weekend_dmr = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}
+		self._defaults.killed.weekend = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}
+		self._defaults.killed.weekend_lmg = {
+				count = 0,
+				head_shots = 0,
+				melee = 0,
+				explosion = 0,
+				tied = 0
+			}				
+			
 	end
 
 end

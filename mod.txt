@@ -34,6 +34,10 @@
 		},
 		{ 	"hook_id" : "lib/utils/levelloadingscreenguiscript",
 			"script_path" : "lua/levelloadingscreenguiscript.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/playerdamage",
+			"script_path" : "lua/sc/units/player/playerdamage.lua"
 		}
 	]
 }

@@ -3220,6 +3220,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				table.insert(self.stats.reload, i / 10)
 			end
 		end
+		
+		self.spread = {
+			dispersion = 1.0
+		}
 	end
 
 	function WeaponTweakData:_pickup_chance(max_ammo, selection_index)

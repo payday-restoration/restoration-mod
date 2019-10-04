@@ -44661,7 +44661,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				self.parts.wpn_fps_smg_m3_sling.stats = {
 						value = 1
 					}
-				self.parts.wpn_fps_smg_m3_sling_1.stats = {
+				self.parts.wpn_fps_smg_m3_sling_l.stats = {
 						value = 1
 					}					
 				self.parts.wpn_fps_smg_m3_m_short.stats = {

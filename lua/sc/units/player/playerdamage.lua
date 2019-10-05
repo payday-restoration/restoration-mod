@@ -278,8 +278,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self._last_received_dmg = attack_data.damage
 		self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
-		local dodge_value = self._dodge_points
-		self:fill_dodge_meter(dodge_value) --Getting attacked fills your dodge meter by your dodge stat.
+		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
 			self._unit:sound():play("pickup_fak_skill") --Feel free to replace if you know a better sound.
 			if attack_data.damage > 0 then

@@ -216,7 +216,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local old_player_regenerated = PlayerDamage._regenerated
 	function PlayerDamage:_regenerated(no_messiah)
 		old_player_regenerated(self, no_messiah)
-		managers.player:refill_messiah_charges()
+		if not no_messiah then
+			managers.player:refill_messiah_charges()
+		end
 	end
 
 	local damage_bullet_original = PlayerDamage.damage_bullet

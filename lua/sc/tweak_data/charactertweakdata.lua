@@ -412,7 +412,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}},
 			check = function (t, nr_grenades_used)
 				local delay_till_next_use = 30
-				local chance = 0.5
+				local chance = 0.05
 
 				if math.random() < chance then
 					return true, t + delay_till_next_use

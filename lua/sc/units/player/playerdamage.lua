@@ -44,7 +44,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._damage_to_hot_stack = {}
 		self._armor_stored_health = 0
 		self._can_take_dmg_timer = 0
-		--self._dodge_meter = 0 --Amount of dodge built up as meter.
 		self._regen_on_the_side_timer = 0
 		self._regen_on_the_side = false
 		self._interaction = managers.interaction
@@ -53,6 +52,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._has_damage_speed = managers.player:has_inactivate_temporary_upgrade("temporary", "damage_speed_multiplier")
 		self._has_damage_speed_team = managers.player:upgrade_value("player", "team_damage_speed_multiplier_send", 0) ~= 0
 
+		self._dodge_points = (tweak_data.player.damage.DODGE_INIT 
+			+managers.player:body_armor_value("dodge")
+			+managers.player:skill_dodge_chance(false, false, false))
+			or 0.0
+		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
+		self._dodge_heal_cooldown = 0.0 --rogue dodge_to_heal skill
 
 		local function revive_player()
 			self:revive(true)
@@ -211,10 +216,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local old_player_regenerated = PlayerDamage._regenerated
 	function PlayerDamage:_regenerated(no_messiah)
 		old_player_regenerated(self, no_messiah)
-		if not no_messiah then
-			--Nice function name DMC--
-			managers.player:fadjfbasjhas()
-		end
+		managers.player:refill_messiah_charges()
 	end
 
 	local damage_bullet_original = PlayerDamage.damage_bullet
@@ -276,43 +278,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self._last_received_dmg = attack_data.damage
 		self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
-		local dodge_roll = math.random()
-		local dodge_value = tweak_data.player.damage.DODGE_INIT or 0
-		local armor_dodge_chance = pm:body_armor_value("dodge")
-		local skill_dodge_chance = pm:skill_dodge_chance(self._unit:movement():running(), self._unit:movement():crouching(), self._unit:movement():zipline_unit())
-		dodge_value = dodge_value + armor_dodge_chance + skill_dodge_chance
-		local smoke_dodge = 0
-		for _, smoke_screen in ipairs(managers.player._smoke_screen_effects or {}) do
-			if smoke_screen:is_in_smoke(self._unit) then
-				smoke_dodge = tweak_data.projectiles.smoke_screen_grenade.dodge_chance
-			end
-		end
-		dodge_value = 1 - (1 - dodge_value) * (1 - smoke_dodge)
-		--Uncomment this shit to undo legacy dodge
-		--self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Getting attacked gives half your dodge in meter.
-		--if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-		if dodge_roll < dodge_value then
-			--self._unit:sound():play("pickup_fak_skill") --Auditory feedback, feel free to replace. It looks like play_whizby() is broken.
+		local dodge_value = self._dodge_points
+		self:fill_dodge_meter(dodge_value) --Getting attacked fills your dodge meter by your dodge stat.
+		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
+			self._unit:sound():play("pickup_fak_skill") --Feel free to replace if you know a better sound.
 			if attack_data.damage > 0 then
-				--self._dodge_meter = self._dodge_meter - 1.0 --Dodging an attack lets excess dodge above '100' to roll over, so that dodge above 67 is still relevant.
-				self:_send_damage_drama(attack_data, 0) --Resetting the meter feels bad to play with anyway.
+				self:fill_dodge_meter(-1.0)
+				self:_send_damage_drama(attack_data, 0)
+				if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 and self._dodge_heal_cooldown == 0.0 then --Rogue health regen.
+					self:restore_health(tweak_data.upgrades.dodge_to_heal[1] * attack_data.damage, true)
+					self._dodge_heal_cooldown = tweak_data.upgrades.dodge_to_heal[2]
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
 			self:_hit_direction(attack_data.attacker_unit:position())
 			self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
-			--self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
-			self._last_received_dmg = attack_data.damage
+			self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
 			managers.player:send_message(Message.OnPlayerDodge)
-			--managers.hud:set_dodge_value(self._dodge_meter, dodge_value) --Update dodge meter hud element, goes through Hudmanager.lua then HUDtemp.lua.
-			return
-		--[[	
-		else
-			self._dodge_meter = self._dodge_meter + (dodge_value / 2) --Taking damage gives the other half.
-			if dodge_value > 0 then
-				managers.hud:set_dodge_value(self._dodge_meter, dodge_value)
-			end
-		]]--
+			return	
 		end
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)
@@ -342,6 +326,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 		self:_check_chico_heal(attack_data)
+
 		local armor_reduction_multiplier = 0
 		if 0 >= self:get_real_armor() then
 			armor_reduction_multiplier = 1
@@ -476,6 +461,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if managers.player:has_inactivate_temporary_upgrade("temporary", "reload_weapon_faster") then
 			managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
+		end
+		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
+			self:fill_dodge_meter(1.5)
 		end
 	end
 
@@ -630,3 +618,59 @@ function PlayerDamage:_max_armor()
 
 	return max_armor
 end
+
+function PlayerDamage:_update_regenerate_timer(t, dt)
+	local regenerate_timer_tick = dt * (self._regenerate_speed or 1)
+
+	--Smoke grenade armor regen bonus.
+	for _, smoke_screen in ipairs(managers.player._smoke_screen_effects or {}) do
+		if smoke_screen:is_in_smoke(self._unit) then
+			regenerate_timer_tick = regenerate_timer_tick * tweak_data.upgrades.smoke_screen_armor_regen[1]
+		end
+	end
+
+	self._regenerate_timer = math.max(self._regenerate_timer - regenerate_timer_tick, 0)
+
+	if self._regenerate_timer <= 0 then
+		self:_regenerate_armor()
+	end
+end
+
+--Adds to/Subtracts from dodge meter and updates hud element.
+function PlayerDamage:fill_dodge_meter(dodge_added)
+	if self._dodge_points > 0 and not self:is_downed() then
+		self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
+		managers.hud:set_dodge_value(self._dodge_meter, self._dodge_points) --Goes through Hudmanager.lua then HUDtemp.lua.
+	end
+end
+
+Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)
+	--Smoke grenade capstone skill.
+	for _, smoke_screen in ipairs(managers.player._smoke_screen_effects or {}) do
+		if smoke_screen:is_in_smoke(self._unit) then
+			if smoke_screen:mine() then
+				self:fill_dodge_meter(self._dodge_points * dt * managers.player:upgrade_value("player", "sicario_multiplier", 0))
+			end
+		end
+	end
+
+	--Burglar capstone skill.
+	if self._unit:movement():crouching() then
+		self:fill_dodge_meter(self._dodge_points * dt * managers.player:upgrade_value("player", "crouch_dodge_chance", 0))
+	end
+
+	--Duck and Cover aced.
+	if self._unit:movement():running() then
+		self:fill_dodge_meter(self._dodge_points * dt * managers.player:upgrade_value("player", "run_dodge_chance", 0))
+	end
+
+	if self._unit:movement():zipline_unit() then
+		self:fill_dodge_meter(self._dodge_points * dt * managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0))
+	end
+
+	self._dodge_heal_cooldown = math.max(self._dodge_heal_cooldown - dt, 0.0)
+end)
+
+Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)
+	self:fill_dodge_meter(-self._dodge_meter)
+end)

@@ -20,6 +20,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local ignite_character = action_desc.ignite_character
 		local start_dot_dance_antimation = action_desc.fire_dot_data and action_desc.fire_dot_data.start_dot_dance_antimation
 
+		local char_tweak = tweak_data.character[tweak_table]
+		local has_death_animation = char_tweak.death_animation
+
 		if action_type == "knock_down" then
 			action_type = "heavy_hurt"
 		end
@@ -247,6 +250,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._machine:set_parameter(redir_res, "var" .. tostring(variant), 1)
 		elseif action_type == "death" and (self._ext_anim.run or self._ext_anim.ragdoll) and self:_start_ragdoll() then
 			self.update = self._upd_ragdolled
+		elseif action_type == "death" and has_death_animation then
+			self:force_ragdoll()
 		elseif action_type == "heavy_hurt" and (self._ext_anim.run or self._ext_anim.sprint) and not common_data.is_suppressed and not crouching then
 			redir_res = self._ext_movement:play_redirect("heavy_run")
 
@@ -579,6 +584,80 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return true
 	end
+	
+	function CopActionHurt:_start_ragdoll()
+		local death_animation = tweak_data.character[self._unit:base()._tweak_table].death_animation
+		local anim_vars = tweak_data.character[self._unit:base()._tweak_table].death_animation_vars or {"var1"}
+		if self._ragdolled then
+			return true
+		end
+
+		if self._unit:damage() and self._unit:damage():has_sequence("switch_to_ragdoll") then
+			self:on_death_drop(self._unit, 2)
+
+			self._ragdolled = true
+
+			self._unit:base():set_visibility_state(1)
+			self._unit:set_driving("orientation_object")
+			
+			if death_animation then
+				redir_res = self._ext_movement:play_redirect(death_animation)
+
+				if not redir_res then
+					debug_pause("[CopActionHurt:init] death_run redirect failed in", self._machine:segment_state(Idstring("base")))
+
+					return
+				end
+				for _, anim_var in ipairs(anim_vars) do
+					self._machine:set_parameter(redir_res, anim_var, 1)
+				end
+			else
+				self._unit:anim_state_machine():set_enabled(false)
+				self._unit:set_animations_enabled(false)
+
+				local res = self._unit:damage():run_sequence_simple("switch_to_ragdoll")
+
+				self._unit:add_body_activation_callback(callback(self, self, "clbk_body_active_state"))
+
+				self._root_act_tags = {}
+				local hips_body = self._unit:body("rag_Hips")
+				local tag = hips_body:activate_tag()
+
+				if tag == Idstring("") then
+					tag = Idstring("root_follow")
+
+					hips_body:set_activate_tag(tag)
+				end
+
+				self._root_act_tags[tag:key()] = true
+				tag = hips_body:deactivate_tag()
+
+				if tag == Idstring("") then
+					tag = Idstring("root_follow")
+
+					hips_body:set_deactivate_tag(tag)
+				end
+
+				self._root_act_tags[tag:key()] = true
+				self._hips_obj = self._unit:get_object(Idstring("Hips"))
+				self._ragdoll_active = true
+
+				self._ext_movement:enable_update()
+
+				local hips_pos = self._hips_obj:position()
+				self._rag_pos = hips_pos
+				self._ragdoll_freeze_clbk_id = "freeze_rag" .. tostring(self._unit:key())
+
+				managers.enemy:add_delayed_clbk(self._ragdoll_freeze_clbk_id, callback(self, self, "clbk_chk_freeze_ragdoll"), TimerManager:game():time() + 3)
+			end
+
+			if self._unit:anim_data().repel_loop then
+				self._unit:sound():anim_clbk_play_sound(self._unit, "repel_end")
+			end
+
+			return true
+		end
+	end	
 
 	function CopActionHurt:clbk_shooting_hurt()
 		self._delayed_shooting_hurt_clbk_id = nil

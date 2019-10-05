@@ -1466,7 +1466,7 @@ function SkillTreeTweakData:init(tweak_data)
 			--Sneaky Bastard--
 			self.skills.jail_diet = {
 				["name_id"] = "menu_jail_diet_beta",
-				["desc_id"] = "menu_jail_diet_beta_desc",
+				["desc_id"] = "menu_jail_diet_beta_desc_sc",
 				["icon_xy"] = {1, 12},
 				[1] = {
 					upgrades = {
@@ -2194,7 +2194,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_armor_regen_timer_multiplier_passive"
+					"player_perk_armor_regen_timer_multiplier_1"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},
@@ -2204,11 +2204,11 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1",
+					"player_perk_armor_regen_timer_multiplier_2",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
-				icon_xy = {0, 2},
+				icon_xy = {0, 3},
 				name_id = "menu_deck3_9",
 				desc_id = "menu_deck3_9_desc_sc"
 			}
@@ -2220,10 +2220,11 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_4_desc",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_1",
+					"weapon_passive_swap_speed_multiplier_1"
 				},
 				cost = 200,
-				icon_xy = {1, 2},
+				icon_xy = {4, 2},
 				name_id = "menu_deck4_1",
 				desc_id = "menu_deck4_1_desc_sc"
 			},
@@ -2233,14 +2234,15 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
-				icon_xy = {4, 2},
+				icon_xy = {1, 2},
 				name_id = "menu_deck4_3",
 				desc_id = "menu_deck4_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3"
+					"player_passive_dodge_chance_3",
+					"player_dodge_on_revive"
 				},
 				cost = 1000,
 				icon_xy = {2, 2},
@@ -2261,10 +2263,11 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"weapon_passive_swap_speed_multiplier_1"
+					"player_dodge_to_heal"
 				},
 				cost = 4000,
-				icon_xy = {5, 2},
+				icon_xy = {1, 0},
+				texture_bundle_folder = "max",
 				name_id = "menu_deck4_9",
 				desc_id = "menu_deck4_9_desc_sc"
 			}
@@ -2333,10 +2336,13 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_6_desc",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_1",
+					"player_level_2_armor_multiplier_1",
+					"player_level_3_armor_multiplier_1",
+					"player_level_4_armor_multiplier_1"	
 				},
 				cost = 200,
-				icon_xy = {1, 2},
+				icon_xy = {4, 3},
 				name_id = "menu_deck6_1",
 				desc_id = "menu_deck6_1_desc_sc"
 			},
@@ -2345,13 +2351,11 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_dodge_addend_1",
 					"player_level_3_dodge_addend_1",
-					"player_level_4_dodge_addend_1",
-					"player_level_2_armor_multiplier_1",
-					"player_level_3_armor_multiplier_1",
-					"player_level_4_armor_multiplier_1"					
+					"player_level_4_dodge_addend_1"
+				
 				},
 				cost = 400,
-				icon_xy = {4, 3},
+				icon_xy = {1, 2},
 				name_id = "menu_deck6_3",
 				desc_id = "menu_deck6_3_desc_sc"
 			},
@@ -2363,7 +2367,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_level_4_dodge_addend_2",
 					"player_level_2_armor_multiplier_2",
 					"player_level_3_armor_multiplier_2",
-					"player_level_4_armor_multiplier_2"						
+					"player_level_4_armor_multiplier_2"				
 				},
 				cost = 1000,
 				icon_xy = {5, 3},
@@ -2375,13 +2379,10 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_level_2_dodge_addend_3",
 					"player_level_3_dodge_addend_3",
-					"player_level_4_dodge_addend_3",
-					"player_level_2_armor_multiplier_3",
-					"player_level_3_armor_multiplier_3",
-					"player_level_4_armor_multiplier_3"						
+					"player_level_4_dodge_addend_3"						
 				},
 				cost = 2400,
-				icon_xy = {6, 3},
+				icon_xy = {2, 2},
 				name_id = "menu_deck6_7",
 				desc_id = "menu_deck6_7_desc_sc"
 			},
@@ -2389,10 +2390,12 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_perk_armor_regen_timer_multiplier_1"
+					"player_level_2_armor_multiplier_3",
+					"player_level_3_armor_multiplier_3",
+					"player_level_4_armor_multiplier_3"	
 				},
 				cost = 4000,
-				icon_xy = {6, 2},
+				icon_xy = {6, 3},
 				name_id = "menu_deck6_9",
 				desc_id = "menu_deck6_9_desc_sc"
 			}
@@ -2405,7 +2408,8 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "character_pack_clover",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_1",
+					"player_crouch_dodge_chance_1"
 				},
 				cost = 200,
 				icon_xy = {1, 2},
@@ -2427,7 +2431,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_dodge_chance_2",
-					"player_pick_lock_speed_multiplier"
+					"player_pick_lock_speed_multiplier",
+					"player_crouch_dodge_chance_2"
 				},
 				cost = 1000,
 				icon_xy = {7, 3},
@@ -2764,7 +2769,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_armor_health_store_amount_2"
+					"player_armor_health_store_amount_2",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {4, 7},
@@ -2774,8 +2780,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_armor_max_health_store_multiplier",
-					"player_passive_dodge_chance_1"
+					"player_armor_max_health_store_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {5, 7},
@@ -2785,7 +2790,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_armor_health_store_amount_3"
+					"player_armor_health_store_amount_3",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 7},
@@ -2801,7 +2807,7 @@ function SkillTreeTweakData:init(tweak_data)
 				cost = 4000,
 				icon_xy = {7, 7},
 				name_id = "menu_deck13_9",
-				desc_id = "menu_deck13_9_desc"
+				desc_id = "menu_deck13_9_desc_sc"
 			}
 		}
 
@@ -3072,7 +3078,7 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_18_desc",
 			{
 				upgrades = {
-					"player_tier_dodge_chance_1",
+					"player_passive_dodge_chance_1",
 					"smoke_screen_grenade"
 				},
 				cost = 200,
@@ -3084,40 +3090,36 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
-				icon_xy = {1, 0},
-				texture_bundle_folder = "max",
+				icon_xy = {1, 2},
 				name_id = "menu_deck18_3",
 				desc_id = "menu_deck4_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_2"
+					"player_passive_dodge_chance_3"
 				},
 				cost = 1000,
-				icon_xy = {2, 0},
-				texture_bundle_folder = "max",
+				icon_xy = {2, 2},
 				name_id = "menu_deck18_5",
 				desc_id = "menu_deck4_3_desc_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3"
+					"player_passive_dodge_chance_4"
 				},
 				cost = 2400,
-				icon_xy = {3, 0},
-				texture_bundle_folder = "max",
+				icon_xy = {3, 2},
 				name_id = "menu_deck18_7",
 				desc_id = "menu_deck4_3_desc_sc"
 			},
 			deck8,
 			{
 				upgrades = {
-					"player_smoke_screen_ally_dodge_bonus",
 					"player_sicario_multiplier",
 					"player_passive_loot_drop_multiplier"
 				},
@@ -3304,7 +3306,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				cost = 400,
-				texture_bundle_folder = "joy",
 				desc_id = "menu_deck21_3_desc_sc",
 				name_id = "menu_deck21_3",
 				upgrades = {
@@ -3312,7 +3313,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				icon_xy = {
 					1,
-					0
+					2
 				}
 			},
 			deck4,
@@ -3332,15 +3333,15 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				cost = 2400,
-				texture_bundle_folder = "joy",
 				desc_id = "menu_deck21_7_desc_sc",
 				name_id = "menu_deck21_7",
 				upgrades = {
+					"player_perk_armor_regen_timer_multiplier_1",
 					"player_passive_dodge_chance_2"
 				},
 				icon_xy = {
-					3,
-					0
+					6,
+					1
 				}
 			},
 			deck8,

@@ -3220,6 +3220,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				table.insert(self.stats.reload, i / 10)
 			end
 		end
+		
+		self.spread = {
+			dispersion = 1.0
+		}
 	end
 
 	function WeaponTweakData:_pickup_chance(max_ammo, selection_index)
@@ -9002,6 +9006,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hmcar.spread.moving_standing = 4
 			self.hmcar.spread.moving_crouching = 3
 			self.hmcar.spread.moving_steelsight = 2
+			self.hmcar.AMMO_MAX = 7200
 			self.hmcar.fire_mode_data.fire_rate = 1.2
 			self.hmcar.kick.standing = self.huntsman.kick.standing
 			self.hmcar.kick.crouching = self.huntsman.kick.standing
@@ -9011,7 +9016,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.hmcar.AMMO_PICKUP = self:_pickup_chance(7200, 2)
 			self.hmcar.panic_suppression_chance = 0.0
 			self.hmcar.stats = {
-				damage = 1,
+				damage = 0.5,
 				spread = 19,
 				recoil = 14,
 				spread_moving = 8,
@@ -9024,6 +9029,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 9,
 				reload = 11
 			}
+			self.hmcar.stats_modifiers = {
+				damage = 0.8
+			}			
 		end										
 
 		if self.toz34 then --Pawcio's TOZ 34
@@ -11751,12 +11759,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hpb.stats = {
 			damage = 75,
 			spread = 18,
-			recoil = 20,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 23,
-			suppression = 7,
-			alert_size = 7,
+			concealment = 24,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,

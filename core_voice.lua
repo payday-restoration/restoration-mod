@@ -15,6 +15,7 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_unit("skeleton")
 		_G.voiceline_framework:register_unit("bruce")
 		_G.voiceline_framework:register_unit("tsniper")
+		_G.voiceline_framework:register_unit("bravo")
 		--hive man
 		_G.voiceline_framework:register_line_type("grenadier", "death")
 		_G.voiceline_framework:register_line_type("grenadier", "spawn")
@@ -58,7 +59,16 @@ if not _G.restorationvoice then
 		_G.voiceline_framework:register_line_type("pdth", "hostage")
 		_G.voiceline_framework:register_line_type("pdth", "rescue_civ")
 		_G.voiceline_framework:register_line_type("pdth", "retreat")
-		_G.voiceline_framework:register_line_type("pdth", "clear")	
+		_G.voiceline_framework:register_line_type("pdth", "clear")
+		--bravo
+		_G.voiceline_framework:register_line_type("bravo", "buddy_died")
+		_G.voiceline_framework:register_line_type("bravo", "contact")
+		_G.voiceline_framework:register_line_type("bravo", "death")
+		_G.voiceline_framework:register_line_type("bravo", "gogo")
+		_G.voiceline_framework:register_line_type("bravo", "pain")
+		_G.voiceline_framework:register_line_type("bravo", "ready")
+		_G.voiceline_framework:register_line_type("bravo", "clear")	
+		_G.voiceline_framework:register_line_type("bravo", "kill")	
 		--russian tswat
 		_G.voiceline_framework:register_line_type("tswat_ru", "buddy_died")
 		_G.voiceline_framework:register_line_type("tswat_ru", "contact")
@@ -361,7 +371,37 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("pdth", "clear", ModPath .. "assets/oggs/voiceover/pdth/clear/clear" .. i .. ".ogg")
 		end	
 		
-		--Titan Taser	
+		--bravo
+		
+		for i = 1, 4 do
+			_G.voiceline_framework:register_voiceline("bravo", "buddy_died", ModPath .. "assets/oggs/voiceover/bravo/buddy_died/buddy_died" .. i .. ".ogg")
+		end
+
+		for i = 1, 22 do
+			_G.voiceline_framework:register_voiceline("bravo", "contact", ModPath .. "assets/oggs/voiceover/bravo/contact/contact" .. i .. ".ogg")
+		end
+        --these have no filter cus hecu meme
+		for i = 1, 14 do
+			_G.voiceline_framework:register_voiceline("bravo", "death", ModPath .. "assets/oggs/voiceover/bravo/death/death" .. i .. ".ogg")
+		end
+
+		for i = 1, 11 do
+			_G.voiceline_framework:register_voiceline("bravo", "gogo", ModPath .. "assets/oggs/voiceover/bravo/gogo/gogo" .. i .. ".ogg")
+		end		
+
+		for i = 1, 5 do
+			_G.voiceline_framework:register_voiceline("bravo", "pain", ModPath .. "assets/oggs/voiceover/bravo/pain/pain" .. i .. ".ogg")
+		end	
+
+		for i = 1, 6 do
+			_G.voiceline_framework:register_voiceline("bravo", "kill", ModPath .. "assets/oggs/voiceover/bravo/kill/kill" .. i .. ".ogg")
+		end
+		
+		for i = 1, 8 do
+			_G.voiceline_framework:register_voiceline("bravo", "clear", ModPath .. "assets/oggs/voiceover/bravo/clear/clear" .. i .. ".ogg")
+		end	
+		
+		--Titan Sniper	
 
 		for i = 1, 19 do
 			_G.voiceline_framework:register_voiceline("tsniper", "contact", ModPath .. "assets/oggs/voiceover/tsniper/contact/contact" .. i .. ".ogg")

@@ -218,7 +218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._next_allowed_doh_t = t + data.stacking_cooldown
 	end	
 
-	function PlayerManager:fadjfbasjhas()
+	function PlayerManager:refill_messiah_charges()
 		if self._max_messiah_charges then
 			self._messiah_charges = self._max_messiah_charges
 		end
@@ -313,4 +313,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--	self:player_unit():sound():say(message, arg1, arg2)
 	--end
 		
+end
+
+--Leaving stance stuff in parameters for compatability.
+function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
+	local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
+	local dodge_shot_gain = self:_dodge_shot_gain()
+
+	chance = chance + dodge_shot_gain
+	chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
+
+	local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
+	chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
+	chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
+	chance = chance + self:upgrade_value("team", "crew_add_dodge", 0)
+	chance = chance + self:temporary_upgrade_value("temporary", "pocket_ecm_kill_dodge", 0)
+
+	return chance
 end

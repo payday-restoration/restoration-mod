@@ -95,10 +95,10 @@ function UpgradesTweakData:_init_pd2_values()
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
+		0.2,
 		0.1,
-		0.05,
 		0,
-		-0.05,
+		-0.1,
 		-0.15,
 		-0.2,
 		-0.3
@@ -146,16 +146,17 @@ function UpgradesTweakData:_init_pd2_values()
 		7,
 		5,
 		4,
-		2
+		3
 	}
+	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		14,
-		13.5,
-		12.5,
-		12,
-		10.5,
-		9.5,
-		4
+		1.50,
+		1.45,
+		1.40,
+		1.35,
+		1.30,
+		1.25,
+		1.20
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -167,6 +168,8 @@ function UpgradesTweakData:_init_pd2_values()
 		self.values.player.no_deflection = {true}
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {1}
+		self.values.player.dodge_to_heal = {true}
+		self.values.player.dodge_on_revive = {true}
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
 	self.values.team.crew_add_armor = {1.5}
@@ -174,7 +177,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_add_concealment = {1}
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
-	self.values.team.crew_health_regen = {0.25}
+	self.values.team.crew_health_regen = {0.15}
 	self.values.team.crew_throwable_regen = {70}
 	self.values.team.crew_faster_reload = {1.1}
 	self.values.team.crew_faster_swap = {1}	
@@ -630,9 +633,10 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   COMMANDO SUBTREE   ]]--
 			--{
 				--Duck and Cover
-				self.values.player.run_dodge_chance = {0.1}
+				self.values.player.run_dodge_chance = {0.10}
+				self.values.player.zipline_dodge_chance = {0.3}
 				self.values.player.run_speed_multiplier = {1.25}
-				self.values.player.crouch_dodge_chance = {0.05, 0.15}
+				self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
 				--Evasion
 				self.values.player.movement_speed_multiplier = {1.05, 1.1}
@@ -857,43 +861,43 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
-		0.95,
 		0.9,
-		0.85,
 		0.8,
-		0.75
+		0.7,
+		0.65,
+		0.6
 	}
 
 	self.values.player.level_2_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 	self.values.player.level_3_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 	self.values.player.level_4_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 
 	self.values.player.level_2_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_3_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_4_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 
 	self.values.player.tier_armor_multiplier = {
@@ -941,10 +945,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.health.hostage_multiplier = {1.025}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
+		0.05,
 		0.1,
-		0.2,
-		0.3,
-		0.4
+		0.15,
+		0.2
    	}
 	self.values.player.passive_health_regen = {0.025}
 	self.values.player.passive_health_multiplier = {
@@ -1014,6 +1018,12 @@ function UpgradesTweakData:_init_pd2_values()
 		0.9,
 		0.85,
 		0.8
+	}
+
+	--Rogue
+	self.dodge_to_heal = {
+		0.4, --% healed
+		3.0 --cooldown
 	}
 
 	--Gambler
@@ -1137,12 +1147,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Are these the dreamers we were told about?--
 	--sicario
-	self.values.player.dodge_shot_gain = {
-		{0.2, 4}
-	}
-	self.values.player.dodge_replenish_armor = {true}
-	self.values.player.smoke_screen_ally_dodge_bonus = {0.05}
-	self.values.player.sicario_multiplier = {1.5}
+	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
+	self.values.player.sicario_multiplier = {0.35} --Multiplier for dodge gained per second while inside grenade.
 	
 	--alcoholism is no joke
 	--stoic
@@ -1167,9 +1173,9 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--yoooooooooooooooooo--
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {
-		0.15,
-		0.3,
-		0.45
+		0.20,
+		0.35,
+		0.50
 	}
 	
 	--Fat benis :DDDDD
@@ -1589,6 +1595,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}	
+	self.definitions.player_dodge_to_heal = {
+		category = "feature",
+		name_id = "menu_player_dodge_to_heal",
+		upgrade = {
+			category = "player",
+			upgrade = "dodge_to_heal",
+			value = 1
+		}
+	}
+	self.definitions.player_dodge_on_revive = {
+		category = "feature",
+		name_id = "menu_player_dodge_on_revive",
+		upgrade = {
+			category = "player",
+			upgrade = "dodge_on_revive",
+			value = 1
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {

@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/MainHUD") then
+
 	require("lib/managers/menu/MenuBackdropGUI")
 
 	function MenuBackdropGUI:animate_bg_text( text )
@@ -24,4 +24,3 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 		
 		text:animate( animate_text )
 	end
-end

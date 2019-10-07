@@ -1,4 +1,33 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	
+	function MoneyManager:on_mission_completed(num_winners)
+		if managers.crime_spree:is_active() then
+			managers.loot:clear_postponed_small_loot()
+	
+			return
+		end
+	
+		if managers.job:skip_money() then
+			managers.loot:set_postponed_small_loot()
+	
+			return
+		end
+	
+		local stage_value, job_value, bag_value, vehicle_value, small_value, crew_value, total_payout, risk_table, payout_table, mutators_reduction = self:get_real_job_money_values(num_winners)
+	
+		managers.loot:clear_postponed_small_loot()
+		self:_set_stage_payout(stage_value + risk_table.stage_risk)
+		self:_set_job_payout(job_value + risk_table.job_risk)
+		self:_set_bag_payout(bag_value + risk_table.bag_risk)
+		self:_set_vehicle_payout(vehicle_value + risk_table.vehicle_risk)
+		self:_set_small_loot_payout(small_value + risk_table.small_risk)
+		self:_set_crew_payout(crew_value)
+	
+		self._mutators_reduction = mutators_reduction
+	
+		self:_add_to_total(total_payout)
+	end
+	
 	function MoneyManager:get_contract_money_by_stars(job_stars, risk_stars, job_days, job_id, level_id, extra_params)
 		local job_and_difficulty_stars = job_stars + risk_stars
 		local job_stars = job_stars
@@ -91,12 +120,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		
 		if on_last_stage then
+			job_value = self:get_job_payout_by_stars(total_stars) or 0
+			bonus_bag_value = bonus_bags
+			mandatory_bag_value = mandatory_bags
 			bag_value = bonus_bags
 			bag_risk = math.round(bag_value * money_multiplier * bag_skill_bonus)
 			bag_value = (bag_value + mandatory_bags) * bag_skill_bonus
 			vehicle_value = bonus_vehicles
 			vehicle_risk = math.round(vehicle_value * money_multiplier)
-			total_payout = math.max(0, math.round((bag_value + bag_risk + vehicle_value + vehicle_risk) / offshore_rate + small_value))
+			total_payout = math.round((bag_value + bag_risk + vehicle_value + vehicle_risk) / offshore_rate + small_value)
 			bag_value = math.max(0, math.round(bag_value / offshore_rate))
 			bag_risk = math.max(0, math.round(bag_risk / offshore_rate))
 			vehicle_value = math.max(0, math.round(vehicle_value / offshore_rate))
@@ -106,10 +138,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			crew_value = total_payout - crew_value
 		end
 
-		if on_last_stage then
-			job_value = self:get_job_payout_by_stars(total_stars) or 0
-			bonus_bag_value = bonus_bags
-			mandatory_bag_value = mandatory_bags
+		local limited_bonus = self:get_tweak_value("money_manager", "limited_bonus_multiplier") or 1
+
+		if limited_bonus > 1 then
+			stage_value = stage_value * limited_bonus
+			stage_risk = stage_risk * limited_bonus
+			bag_value = bag_value * limited_bonus
+			bag_risk = bag_risk * limited_bonus
+			vehicle_value = vehicle_value * limited_bonus
+			vehicle_risk = vehicle_risk * limited_bonus
+			small_value = small_value * limited_bonus
+			small_risk = small_risk * limited_bonus
+			crew_value = crew_value * limited_bonus
+			total_payout = total_payout * limited_bonus
 		end
 		
 		local is_level_limited = player_stars < job_stars
@@ -184,13 +225,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		small_risk = small_risk * mutators_multiplier
 		local mutators_reduction = original_total_payout - total_payout
 		
-		return stage_value, job_value, bag_value, vehicle_value, small_value, crew_value, total_payout, {
-			stage_risk = stage_risk,
-			job_risk = job_risk,
-			bag_risk = bag_risk,
-			vehicle_risk = vehicle_risk,
-			small_risk = small_risk
+		local ret = {
+			stage_value,
+			job_value,
+			bag_value,
+			vehicle_value,
+			small_value,
+			crew_value,
+			total_payout,
+			{
+				stage_risk = stage_risk,
+				job_risk = job_risk,
+				bag_risk = bag_risk,
+				vehicle_risk = vehicle_risk,
+				small_risk = small_risk
+			},
+			{
+				job_base_payout = total_payout
+			},
+			mutators_reduction
 		}
+	
+		return unpack(ret)
+	end
+	function MoneyManager:get_contract_difficulty_multiplier(stars)
+		local multiplier = tweak_data:get_value("money_manager", "difficulty_multiplier_payout", stars)
+		return multiplier or 0
 	end
 end
-

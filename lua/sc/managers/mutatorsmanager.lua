@@ -29,7 +29,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			MutatorMememanOnly:new(self),	
 			MutatorMoreDonutsPlus:new(self),
 			MutatorJungleInferno:new(self),
-			MutatorNoTitans:new(self)
+			MutatorNoTitans:new(self),
+			MutatorFactionsReplacer:new(self),
+			MutatorZombieOutbreak:new(self)
 		}
 		self._active_mutators = {}
 		local activate = Global.mutators and Global.mutators.active_on_load

@@ -358,6 +358,20 @@
 		28000,
 		32000
 	}
+
+	tweak_data.experience_manager.pro_day_multiplier = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+		1
+	}
+
+	if Global.game_settings and Global.game_settings.one_down then
+		tweak_data.experience_manager.limited_bonus_multiplier = 1.2
+	end
 	
 		tweak_data.gui.buy_weapon_categories = {
 			primaries = {

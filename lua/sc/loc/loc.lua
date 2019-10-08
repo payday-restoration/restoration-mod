@@ -399,9 +399,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll_desc"] = "Damage Grace disabled.",
 		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0, meaning that there is no delay on instances of damage.",
 
-		["mutator_zombie_outbreak"] = "Zombie OutBreak",
-		["mutator_zombie_outbreak_desc"] = "Replaces all units with Zombie units",
-		["mutator_zombie_outbreak_longdesc"] = "",
+		["mutator_zombie_outbreak"] = "The Dead Walking",
+		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
+		["mutator_zombie_outbreak_longdesc"] = "The dead have risen! Replaces all enemies with Zombie units",
 
 		["mutator_faction_override"] = "Enemy Factor Override",
 		["mutator_faction_override_desc"] = "",

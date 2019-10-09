@@ -788,7 +788,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mossberg_npc.sounds.prefix = "remington_npc"
 		self.mossberg_npc.use_data.selection_index = 2
 		self.mossberg_npc.DAMAGE = 15
-		self.mossberg_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.mossberg_npc.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.mossberg_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.mossberg_npc.CLIP_AMMO_MAX = 2
 		self.mossberg_npc.NR_CLIPS_MAX = 6
@@ -2023,7 +2023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.huntsman_crew.sounds.prefix = "huntsman_npc"
 		self.huntsman_crew.use_data.selection_index = 2
 		self.huntsman_crew.DAMAGE = 15
-		self.huntsman_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.huntsman_crew.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.huntsman_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 		self.huntsman_crew.CLIP_AMMO_MAX = 10
 		self.huntsman_crew.NR_CLIPS_MAX = 4
@@ -4015,7 +4015,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.serbu.panic_suppression_chance = 0.0
 		self.huntsman.rays = 9
-		self.huntsman.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.huntsman.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.huntsman.spread.standing = 3 * 1
 		self.huntsman.spread.crouching = 2 * 1
 		self.huntsman.spread.steelsight = 1 * 1
@@ -4268,7 +4268,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.single = {}
 		self.judge.single.fire_rate = 0.4
 		self.judge.rays = 9
-		self.judge.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.judge.spread.standing = 3 * 1
 		self.judge.spread.crouching = 2 * 1
 		self.judge.spread.steelsight = 1 * 1
@@ -5603,7 +5603,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.cobray.panic_suppression_chance = 0.05
 		self.b682.rays = 9
-		self.b682.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.b682.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.b682.AMMO_MAX = 40
 		self.b682.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.b682.spread.standing = 3 * 1
@@ -6690,7 +6690,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.fire_mode_data.fire_rate = 0.75
 		self.boot.single.fire_rate = 0.75
 		self.boot.rays = 9
-		self.boot.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.boot.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.boot.spread.standing = 3 * 1
 		self.boot.spread.crouching = 2 * 1
 		self.boot.spread.steelsight = 1 * 1
@@ -8678,7 +8678,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.elastic.stats_modifiers = {damage = 2}
-		self.coach.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.coach.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.coach.rays = 9
 		self.coach.spread.standing = 3 * 1
 		self.coach.spread.crouching = 2 * 1
@@ -9053,7 +9053,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.toz34 then --Pawcio's TOZ 34
 			self.toz34.has_description = false							
 			self.toz34.rays = 9
-		    self.toz34.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		    self.toz34.muzzleflash = "effects/particles/shotgun/muzzleflash"
 			self.toz34.AMMO_MAX = 40
 			self.toz34.AMMO_PICKUP = self:_pickup_chance(40, 2)
 			self.toz34.spread.standing = 3 * 1
@@ -10542,7 +10542,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.trench then --Alcat's Trench Gun
 		self.trench.AMMO_MAX = 40
-		self.trench.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.trench.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.trench.tactical_reload = 1				
 		self.trench.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.trench.has_description = false																
@@ -13068,7 +13068,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.littlest then --Killerwolf's Ultra Short
 		self.littlest.use_data.selection_index = 1
 		self.littlest.categories = {"shotgun"}
-		self.littlest.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.littlest.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.littlest.has_description = false		
 		self.littlest.rays = 9
 		self.littlest.spread.standing = 3 * 1

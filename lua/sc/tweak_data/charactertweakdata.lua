@@ -14172,6 +14172,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_lapd_veteran_cop_2"
 				}
 			},
+			bravo = {
+				path = "units/pd2_mod_bravo/characters/",
+				list = {
+					"ene_bravo_dmr",
+					"ene_bravo_lmg",
+					"ene_bravo_rifle",
+					"ene_bravo_shotgun"
+				}
+			},
 			halloween = {
 				path = "units/pd2_mod_halloween/characters/",
 				list = {

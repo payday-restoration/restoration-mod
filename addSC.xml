@@ -1529,6 +1529,8 @@
 	
 	<!--reinbeck muzzleflash-->
 	<effect path="effects/particles/shotgun/muzzleflash" load="false"/>
+	<!--shotgun muzzleflash-->
+	<effect path="effects/particles/shotgun/shotgun_gen" load="false"/>
 	
 	<!--unique vanilla heavy shotgunner assets-->
 	<!--textures-->

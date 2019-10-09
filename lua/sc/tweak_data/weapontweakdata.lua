@@ -762,7 +762,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.sounds.prefix = "remington_npc"
 		self.r870_npc.use_data.selection_index = 2
 		self.r870_npc.DAMAGE = 9.5
-		self.r870_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.r870_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.r870_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.r870_npc.CLIP_AMMO_MAX = 8
 		self.r870_npc.NR_CLIPS_MAX = 4
@@ -788,7 +788,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mossberg_npc.sounds.prefix = "remington_npc"
 		self.mossberg_npc.use_data.selection_index = 2
 		self.mossberg_npc.DAMAGE = 15
-		self.mossberg_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.mossberg_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.mossberg_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.mossberg_npc.CLIP_AMMO_MAX = 2
 		self.mossberg_npc.NR_CLIPS_MAX = 6
@@ -916,7 +916,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_npc.sounds.prefix = "saiga_npc"
 		self.saiga_npc.use_data.selection_index = 2
 		self.saiga_npc.DAMAGE = 5
-		self.saiga_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.saiga_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.saiga_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.saiga_npc.auto.fire_rate = 0.1
 		self.saiga_npc.CLIP_AMMO_MAX = 20
@@ -1951,7 +1951,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spas12_crew.sounds.prefix = "spas_npc"
 		self.spas12_crew.use_data.selection_index = 2
 		self.spas12_crew.DAMAGE = 7.5
-		self.spas12_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.spas12_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.spas12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.spas12_crew.CLIP_AMMO_MAX = 20
 		self.spas12_crew.NR_CLIPS_MAX = 4
@@ -1968,7 +1968,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.b682_crew.sounds.prefix = "b682_npc"
 		self.b682_crew.use_data.selection_index = 2
 		self.b682_crew.DAMAGE = 15
-		self.b682_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.b682_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.b682_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 		self.b682_crew.CLIP_AMMO_MAX = 10
 		self.b682_crew.NR_CLIPS_MAX = 4
@@ -1986,7 +1986,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_crew.sounds.prefix = "remington_npc"
 		self.r870_crew.use_data.selection_index = 2
 		self.r870_crew.DAMAGE = 15
-		self.r870_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.r870_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.r870_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 		self.r870_crew.CLIP_AMMO_MAX = 10
 		self.r870_crew.NR_CLIPS_MAX = 4
@@ -2004,7 +2004,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.saiga_crew.sounds.prefix = "saiga_npc"
 		self.saiga_crew.use_data.selection_index = 2
 		self.saiga_crew.DAMAGE = 7.5
-		self.saiga_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.saiga_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.saiga_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.saiga_crew.auto.fire_rate = 0.1
 		self.saiga_crew.CLIP_AMMO_MAX = 20
@@ -2023,7 +2023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.huntsman_crew.sounds.prefix = "huntsman_npc"
 		self.huntsman_crew.use_data.selection_index = 2
 		self.huntsman_crew.DAMAGE = 15
-		self.huntsman_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.huntsman_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.huntsman_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 		self.huntsman_crew.CLIP_AMMO_MAX = 10
 		self.huntsman_crew.NR_CLIPS_MAX = 4
@@ -2041,7 +2041,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ben_crew.sounds.prefix = "benelli_m4_npc"
 		self.ben_crew.use_data.selection_index = 2
 		self.ben_crew.DAMAGE = 7.5
-		self.ben_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.ben_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.ben_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.ben_crew.CLIP_AMMO_MAX = 20
 		self.ben_crew.NR_CLIPS_MAX = 4
@@ -2060,7 +2060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ksg_crew.sounds.prefix = "keltec_npc"
 		self.ksg_crew.use_data.selection_index = 2
 		self.ksg_crew.DAMAGE = 15
-		self.ksg_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.ksg_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.ksg_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.ksg_crew.auto.fire_rate = 0.75
 		self.ksg_crew.CLIP_AMMO_MAX = 10
@@ -2078,7 +2078,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.aa12_crew.sounds.prefix = "aa12_npc"
 		self.aa12_crew.use_data.selection_index = 2
 		self.aa12_crew.DAMAGE = 7.5
-		self.aa12_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+		self.aa12_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.aa12_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 		self.aa12_crew.auto.fire_rate = 0.1
 		self.aa12_crew.CLIP_AMMO_MAX = 20
@@ -2097,7 +2097,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boot_crew.sounds.prefix = "boot_npc"
 		self.boot_crew.use_data.selection_index = 2
 		self.boot_crew.DAMAGE = 15
-		self.boot_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.boot_crew.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.boot_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.boot_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 		self.boot_crew.CLIP_AMMO_MAX = 10
@@ -3404,6 +3404,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.mp9.panic_suppression_chance = 0.05
 		self.r870.desc_id = "bm_menu_sc_r870_desc"
+		self.r870.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.r870.rays = 9
 		self.r870.CLIP_AMMO_MAX = 8
 		self.r870.spread.standing = 3 * 1
@@ -3675,6 +3676,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akmsu.timers.reload_not_empty = 1.95 
 		self.akmsu.timers.reload_empty = 3.7 
 		self.saiga.rays = 9
+		self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.saiga.spread.standing = 3 * 1
 		self.saiga.spread.crouching = 2 * 1 
 		self.saiga.spread.steelsight = 1 * 1
@@ -3980,6 +3982,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mac10.timers.reload_empty = 2.4	
 		self.mac10.panic_suppression_chance = 0.05
 		self.serbu.rays = 9
+		self.serbu.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.serbu.spread.standing = 3 * 1
 		self.serbu.spread.crouching = 2 * 1
 		self.serbu.spread.steelsight = 1 * 1
@@ -4012,6 +4015,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.serbu.panic_suppression_chance = 0.0
 		self.huntsman.rays = 9
+		self.huntsman.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.huntsman.spread.standing = 3 * 1
 		self.huntsman.spread.crouching = 2 * 1
 		self.huntsman.spread.steelsight = 1 * 1
@@ -4264,6 +4268,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.single = {}
 		self.judge.single.fire_rate = 0.4
 		self.judge.rays = 9
+		self.judge.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.judge.spread.standing = 3 * 1
 		self.judge.spread.crouching = 2 * 1
 		self.judge.spread.steelsight = 1 * 1
@@ -4707,6 +4712,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.benelli.AMMO_MAX = 80
 		self.benelli.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.benelli.rays = 9
+		self.benelli.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.benelli.fire_mode_data.fire_rate = 0.13953488372
 		self.benelli.CAN_TOGGLE_FIREMODE = false
 		self.benelli.single = {}
@@ -4738,6 +4744,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.benelli.panic_suppression_chance = 0.0
 		self.striker.rays = 9
+		self.striker.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.striker.AMMO_MAX = 60
 		self.striker.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.striker.fire_mode_data.fire_rate = 0.13953488372
@@ -4773,6 +4780,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.striker.panic_suppression_chance = 0.0
 		self.striker.timers.shotgun_reload_first_shell_offset = 0.4
 		self.ksg.rays = 9
+		self.ksg.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.ksg.AMMO_MAX = 60
 		self.ksg.damage_near = 700
 		self.ksg.damage_far = 1400
@@ -5187,6 +5195,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.g26.panic_suppression_chance = 0.0
 		self.spas12.rays = 9
+		self.spas12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.spas12.AMMO_MAX = 80
 		self.spas12.CLIP_AMMO_MAX = 8
 		self.spas12.AMMO_PICKUP = self:_pickup_chance(80, 2)
@@ -5594,6 +5603,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.cobray.panic_suppression_chance = 0.05
 		self.b682.rays = 9
+		self.b682.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.b682.AMMO_MAX = 40
 		self.b682.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.b682.spread.standing = 3 * 1
@@ -5809,6 +5819,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.panic_suppression_chance = 0.0
 		self.m32.timers.shotgun_reload_first_shell_offset = 1
 		self.aa12.rays = 9
+		self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.aa12.AMMO_MAX = 120
 		self.aa12.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.aa12.damage_near = 800
@@ -6391,6 +6402,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m37.damage_near = 800
 		self.m37.damage_far = 1600
 		self.m37.rays = 9
+		self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.m37.CLIP_AMMO_MAX = 6
 		self.m37.AMMO_MAX = 45
 		self.m37.AMMO_PICKUP = self:_pickup_chance(45, 1)
@@ -6678,6 +6690,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.fire_mode_data.fire_rate = 0.75
 		self.boot.single.fire_rate = 0.75
 		self.boot.rays = 9
+		self.boot.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.boot.spread.standing = 3 * 1
 		self.boot.spread.crouching = 2 * 1
 		self.boot.spread.steelsight = 1 * 1
@@ -6830,6 +6843,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rota.AMMO_MAX = 60
 		self.rota.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.rota.rays = 9
+		self.rota.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.rota.spread.standing = 3 * 1
 		self.rota.spread.crouching = 2 * 1
 		self.rota.spread.steelsight = 1 * 1
@@ -7405,6 +7419,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.basset.damage_near = 500	
 		self.basset.damage_far = 1000
 		self.basset.rays = 9
+		self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.basset.CLIP_AMMO_MAX = 6
 		self.basset.AMMO_MAX = 90
 		self.basset.AMMO_PICKUP = self:_pickup_chance(90, 1)
@@ -8663,6 +8678,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.elastic.stats_modifiers = {damage = 2}
+		self.coach.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.coach.rays = 9
 		self.coach.spread.standing = 3 * 1
 		self.coach.spread.crouching = 2 * 1
@@ -9037,6 +9053,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.toz34 then --Pawcio's TOZ 34
 			self.toz34.has_description = false							
 			self.toz34.rays = 9
+		    self.toz34.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 			self.toz34.AMMO_MAX = 40
 			self.toz34.AMMO_PICKUP = self:_pickup_chance(40, 2)
 			self.toz34.spread.standing = 3 * 1
@@ -9081,6 +9098,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.toz66 then --Pawcio's TOZ 66
 			self.toz66.has_description = false					
 			self.toz66.rays = 9
+		    self.toz66.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 			self.toz66.spread.standing = 3 * 1
 			self.toz66.spread.crouching = 2 * 1
 			self.toz66.spread.steelsight = 1 * 1
@@ -9125,6 +9143,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.m1216 then --Alcat's M1216
 		self.m1216.rays = 9
+		self.m1216.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.m1216.tactical_reload = 1				
 		self.m1216.spread.standing = 3 * 1 
 		self.m1216.spread.crouching = 2 * 1
@@ -10484,6 +10503,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	
 	if self.toz194 then --Silent Enforcer's TOZ-194
 		self.toz194.rays = 9
+		self.toz194.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.toz194.tactical_reload = 1		
 		self.toz194.CLIP_AMMO_MAX = 8
 		self.toz194.spread.standing = 3 * 1
@@ -10522,6 +10542,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.trench then --Alcat's Trench Gun
 		self.trench.AMMO_MAX = 40
+		self.trench.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.trench.tactical_reload = 1				
 		self.trench.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.trench.has_description = false																
@@ -10561,6 +10582,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.prison then --Leon and a Buncha fellas' Deadwood 12g
 		self.prison.rays = 9
+		self.prison.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.prison.tactical_reload = 1						
 		self.prison.AMMO_MAX = 120
 		self.prison.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -10593,6 +10615,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end							
 	
 	if self.spas15 then --Alcat's Max Payne Memegun
+		self.spas15.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.spas15.rays = 9
 		self.spas15.tactical_reload = 1		
 		self.spas15.AMMO_MAX = 120
@@ -11348,6 +11371,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end				
 
 	if self.stf12 then --Mira's STF-12 Compact
+		self.stf12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.stf12.use_data.selection_index = 1
 		self.stf12.has_description = false				
 		self.stf12.rays = 9
@@ -11424,6 +11448,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end	
 
 	if self.mp153 then --Pawcio's Baikal MP 153
+		self.mp153.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.mp153.has_description = false				
 		self.mp153.AMMO_MAX = 80
 		self.mp153.AMMO_PICKUP = self:_pickup_chance(80, 2)
@@ -11524,6 +11549,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end			
 
 		if self.m1912 then --Pawcio's Winchester M1912
+	     	self.m1912.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 			self.m1912.has_description = false				
 			self.m1912.tactical_reload = 1						
 			self.m1912.damage_near = 800
@@ -12104,6 +12130,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end			
 
 	if self.ks23 then --Pawcio's KS23
+		self.ks23.muzzleflash = "effects/particles/shotgun/muzzleflash"	
 		self.ks23.desc_id = "bm_40mm_weapon_sc_desc"
 		self.ks23.has_description = true
 		self.ks23.use_data.selection_index = 2
@@ -12458,6 +12485,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 
 	if self.ak12_76 then --Pawcio's AK12 76
+		self.ak12_76.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.ak12_76.has_description = false							
 		self.ak12_76.tactical_reload = 1
 		self.ak12_76.rays = 9
@@ -13005,6 +13033,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.toz106 then --Silent Enforcer's TOZ-106
 		self.toz106.has_description = false							
 		self.toz106.rays = 9
+		self.toz106.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.toz106.AMMO_MAX = 40
 		self.toz106.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.toz106.tactical_reload = 1
@@ -13039,6 +13068,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.littlest then --Killerwolf's Ultra Short
 		self.littlest.use_data.selection_index = 1
 		self.littlest.categories = {"shotgun"}
+		self.littlest.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.littlest.has_description = false		
 		self.littlest.rays = 9
 		self.littlest.spread.standing = 3 * 1
@@ -13084,7 +13114,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	if self.auto5 then --Alcat's Browning Auto-5
-		self.auto5.has_description = false				
+		self.auto5.has_description = false			
+		self.auto5.muzzleflash = "effects/particles/shotgun/shotgun_gen"	
 		self.auto5.AMMO_MAX = 60
 		self.auto5.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.auto5.rays = 9

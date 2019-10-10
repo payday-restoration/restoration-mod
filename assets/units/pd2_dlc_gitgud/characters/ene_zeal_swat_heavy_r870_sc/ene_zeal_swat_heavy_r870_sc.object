@@ -201,7 +201,7 @@
 	</decal_surfaces>
 
 	<graphics>
-		<graphic_group name="character" enabled="true">
+		<graphic_group name="character" enabled="true" culling_object="c_cullblock">
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" />
@@ -221,7 +221,7 @@
 		
 		</graphic_group>
 		
-		<graphic_group name="pouches_n_shit" enabled="true" culling_object="g_head">
+		<graphic_group name="pouches_n_shit" enabled="true" culling_object="c_cullblock">
 			<lod_object name="lod_bag">
 		         <object name="g_bag" enabled="true" />
 			</lod_object>	 

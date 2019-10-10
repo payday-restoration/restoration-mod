@@ -93,6 +93,8 @@ and the creation of the map package.
 
 fuglore doing all the crazy AI and tactic changes.
 
+Ravicle reworking some perk decks and overhauling dodge.
+
 Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
 
 Jarey_ Letting us steal his mods and helping with the OMNIA heavy assets
@@ -118,7 +120,7 @@ Scruffy Voicing the Grenadier.
 
 VxWolf Creating the songs used in Wetworks and Burnout and voicing the OMNIA LPF.
 
-Skwuruhl fixing stance modifiers.
+Skwuruhl fixing stance modifiers and making spread work better.
 
 JimTheCookie voicing the Vet Cop.
 

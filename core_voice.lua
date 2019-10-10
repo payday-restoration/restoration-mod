@@ -380,7 +380,7 @@ if not _G.restorationvoice then
 		for i = 1, 22 do
 			_G.voiceline_framework:register_voiceline("bravo", "contact", ModPath .. "assets/oggs/voiceover/bravo/contact/contact" .. i .. ".ogg")
 		end
-        --these have no filter cus hecu meme
+
 		for i = 1, 14 do
 			_G.voiceline_framework:register_voiceline("bravo", "death", ModPath .. "assets/oggs/voiceover/bravo/death/death" .. i .. ".ogg")
 		end
@@ -389,7 +389,7 @@ if not _G.restorationvoice then
 			_G.voiceline_framework:register_voiceline("bravo", "gogo", ModPath .. "assets/oggs/voiceover/bravo/gogo/gogo" .. i .. ".ogg")
 		end		
 
-		for i = 1, 5 do
+		for i = 1, 4 do
 			_G.voiceline_framework:register_voiceline("bravo", "pain", ModPath .. "assets/oggs/voiceover/bravo/pain/pain" .. i .. ".ogg")
 		end	
 

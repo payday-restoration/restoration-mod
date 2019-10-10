@@ -1189,5 +1189,415 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end					
 		
 	end	
+
+	MutatorZombieOutbreak = MutatorZombieOutbreak or class(BaseMutator)
+	MutatorZombieOutbreak._type = "MutatorZombieOutbreak"
+	MutatorZombieOutbreak.name_id = "mutator_zombie_outbreak"
+	MutatorZombieOutbreak.desc_id = "mutator_zombie_outbreak_desc"
+	MutatorZombieOutbreak.has_options = false
+	MutatorZombieOutbreak.reductions = {
+		money = 0.35,
+		exp = 0.35
+	}
+	MutatorZombieOutbreak.disables_achievements = false
+	MutatorZombieOutbreak.categories = {
+		"enemies"
+	}
+	MutatorZombieOutbreak.incompatibility_tags = {
+		"replaces_units"
+	}
+	MutatorZombieOutbreak.icon_coords = {
+		6,
+		1
+	}
+
+	function MutatorZombieOutbreak:setup()
+		if not PackageManager:loaded("packages/zombieassets") then
+			PackageManager:load("packages/zombieassets")
+		end
+		if not PackageManager:loaded("packages/narr_hvh") then
+			PackageManager:load("packages/narr_hvh")
+		end
+		if not PackageManager:loaded("levels/narratives/bain/hvh/world_sounds") then
+			PackageManager:load("levels/narratives/bain/hvh/world_sounds")
+		end
+		local group_ai_tweak = tweak_data.group_ai
+		for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+			if v.unit_types and v.unit_types.zombie then
+				group_ai_tweak.unit_categories[k].unit_types.america = {}
+				group_ai_tweak.unit_categories[k].unit_types.russia = {}
+				-- group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+				group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+				group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+				group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+
+				group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.zombie)
+				group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.zombie)
+				group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.zombie)
+				group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.zombie)
+				group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.zombie)
+				group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.zombie)
+			end
+		end
+	end
+
+	MutatorFactionsReplacer = MutatorFactionsReplacer or class(BaseMutator)
+	MutatorFactionsReplacer._type = "MutatorFactionsReplacer"
+	MutatorFactionsReplacer.name_id = "mutator_faction_override"
+	MutatorFactionsReplacer.desc_id = "mutator_faction_override_desc"
+	MutatorFactionsReplacer.has_options = true
+	MutatorFactionsReplacer.reductions = {
+		money = 0.35,
+		exp = 0.35
+	}
+	MutatorFactionsReplacer.disables_achievements = false
+	MutatorFactionsReplacer.categories = {
+		"enemies"
+	}
+	MutatorFactionsReplacer.incompatibility_tags = {
+		"replaces_units"
+	}
+	MutatorFactionsReplacer.icon_coords = {
+		6,
+		1
+	}
+
+	function MutatorFactionsReplacer:setup()
+		self._groups = self._groups or {}
+		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	
+		self._groups.america = america
+		self._groups.russia = russia
+		self._groups.zombie = zombie
+		self._groups.murkywater = murkywater
+		self._groups.nypd = nypd
+		self._groups.lapd = lapd
+		
+		-- self:_get_unit_group_america()
+		-- self:_get_unit_group_russia()
+		-- self:_get_unit_group_zombie()
+		-- self:_get_unit_group_murkywater()
+		-- self:_get_unit_group_nypd()
+		-- self:_get_unit_group_lapd()
+	end
+
+	function MutatorFactionsReplacer:register_values(mutator_manager)
+		self:register_value("faction_override", self:default_faction_override(), "oe")
+	end
+
+	function MutatorFactionsReplacer:modify_value(id, value)
+		if id == "LevelsTweakData:get_ai_group_type" then
+			if self._groups.america and value and value.ai_group_type == "america" then
+				if value and value.ai_group_type == "america" then
+					value.ai_group_type = "america"
+				end
+				if value and value.ai_group_type == "russia" then
+					value.ai_group_type = "america"
+				end
+				if value and value.ai_group_type == "zombie" then
+					value.ai_group_type = "america"
+				end
+				if value and value.ai_group_type == "murkywater" then
+					value.ai_group_type = "america"
+				end
+				if value and value.ai_group_type == "nypd" then
+					value.ai_group_type = "america"
+				end
+				if value and value.ai_group_type == "lapd" then
+					value.ai_group_type = "america"
+				end
+				return value
+			end
+			-- if self._groups.russia and value.ai_group_type == "russia" then
+			-- 	if not PackageManager:loaded("packages/akanassets") then
+			-- 		PackageManager:load("packages/akanassets")
+			-- 	end
+			-- 	if not PackageManager:loaded("packages/lvl_mad") then
+			-- 		PackageManager:load("packages/lvl_mad")
+			-- 	end
+			-- 	if not PackageManager:loaded("levels/narratives/elephant/mad/world_sounds") then
+			-- 		PackageManager:load("levels/narratives/elephant/mad/world_sounds")
+			-- 	end
+			-- 	value.ai_group_type = "russia"
+			-- 	return value
+			-- elseif self._groups.america and value.ai_group_type == "zombie" then
+			-- 	value.ai_group_type = "zombie"
+			-- 	return value
+			-- elseif self._groups.murkywater and value.ai_group_type == "murkywater" then
+			-- 	value.ai_group_type = "murkywater"
+			-- 	return value
+			-- elseif self._groups.nypd and value.ai_group_type == "nypd" then
+			-- 	value.ai_group_type = "nypd"
+			-- 	return value
+			-- elseif self._groups.lapd and value.ai_group_type == "lapd" then
+			-- 	value.ai_group_type = "lapd"
+			-- end
+			-- return value
+		end
+	end
+
+	function MutatorFactionsReplacer:name(lobby_data)
+		local name = MutatorFactionsReplacer.super.name(self)
+
+		if self:_mutate_name("faction_override") then
+			return string.format("%s - %s", name, managers.localization:text("mutator_faction_override_" .. tostring(self:value("faction_override"))))
+		else
+			return name
+		end
+	end
+
+	function MutatorFactionsReplacer:get_faction_override()
+		return self:value("faction_override")
+	end
+	
+	-- Lines 54-56
+	function MutatorFactionsReplacer:default_faction_override()
+		return "america"
+	end
+
+	function MutatorFactionsReplacer:setup_options_gui(node)
+		local params = {
+			callback = "_update_mutator_value",
+			name = "faction_selector_choice",
+			text_id = "mutator_faction_override_select",
+			filter = true,
+			update_callback = callback(self, self, "_update_selected_faction")
+		}
+	
+		local data_node = {
+			{
+				value = "america",
+				text_id = "mutator_faction_override_america",
+				_meta = "option"
+			},
+			{
+				value = "russia",
+				text_id = "mutator_faction_override_russia",
+				_meta = "option"
+			},
+			{
+				value = "zombie",
+				text_id = "mutator_faction_override_zombie",
+				_meta = "option"
+			},
+			{
+				value = "murkywater",
+				text_id = "mutator_faction_override_murkywater",
+				_meta = "option"
+			},
+			{
+				value = "nypd",
+				text_id = "mutator_faction_override_nypd",
+				_meta = "option"
+			},
+			{
+				value = "lapd",
+				text_id = "mutator_faction_override_lapd",
+				_meta = "option"
+			},
+			type = "MenuItemMultiChoice"
+		}
+		local new_item = node:create_item(data_node, params)
+
+		new_item:set_value(self:get_faction_override())
+		node:add_item(new_item)
+
+		self._node = node
+
+		return new_item
+	end
+
+	function MutatorFactionsReplacer:_update_selected_faction(item)
+		self:set_value("faction_override", item:value())
+	end
+
+	function MutatorFactionsReplacer:reset_to_default()
+		self:clear_values()
+
+		if self._node then
+			local slider = self._node:item("faction_selector_choice")
+
+			if slider then
+				slider:set_value(self:default_faction_override())
+			end
+		end
+	end
+
+	function MutatorFactionsReplacer:_get_unit_group_america(ai_groups)
+		if not self._groups.america then
+			local group_ai_tweak = tweak_data.group_ai
+			for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+				if v.unit_types and v.unit_types.america then
+					-- group_ai_tweak.unit_categories[k].unit_types.america = {}
+					group_ai_tweak.unit_categories[k].unit_types.russia = {}
+					group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+					group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+					group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+					group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.america)
+					group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.america)
+					group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.america)
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.america)
+					group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.america)
+					group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.america)
+				end
+			end
+			return self._groups.america
+		end
+	end
+
+	function MutatorFactionsReplacer:_get_unit_group_russia(ai_groups)
+		if not self._groups.russia then
+			if not PackageManager:loaded("packages/akanassets") then
+				PackageManager:load("packages/akanassets")
+			end
+			if not PackageManager:loaded("packages/lvl_mad") then
+				PackageManager:load("packages/lvl_mad")
+			end
+			if not PackageManager:loaded("levels/narratives/elephant/mad/world_sounds") then
+				PackageManager:load("levels/narratives/elephant/mad/world_sounds")
+			end
+			local group_ai_tweak = tweak_data.group_ai
+			for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+				if v.unit_types and v.unit_types.russia then
+					group_ai_tweak.unit_categories[k].unit_types.america = {}
+					-- group_ai_tweak.unit_categories[k].unit_types.russia = {}
+					group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+					group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+					group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+					
+					group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.russia)
+					group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.russia)
+					group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.russia)
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.russia)
+					group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.russia)
+					group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.russia)
+				end
+			end
+			return self._groups.russia
+		end
+	end
+
+	function MutatorFactionsReplacer:_get_unit_group_zombie(ai_groups)
+		if not self._groups.zombie then
+			if not PackageManager:loaded("packages/zombieassets") then
+				PackageManager:load("packages/zombieassets")
+			end
+			if not PackageManager:loaded("packages/narr_hvh") then
+				PackageManager:load("packages/narr_hvh")
+			end
+			if not PackageManager:loaded("levels/narratives/bain/hvh/world_sounds") then
+				PackageManager:load("levels/narratives/bain/hvh/world_sounds")
+			end
+			local group_ai_tweak = tweak_data.group_ai
+			for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+				if v.unit_types and v.unit_types.zombie then
+					group_ai_tweak.unit_categories[k].unit_types.america = {}
+					group_ai_tweak.unit_categories[k].unit_types.russia = {}
+					-- group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+					group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+					group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+
+					group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.zombie)
+					group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.zombie)
+					group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.zombie)
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.zombie)
+					group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.zombie)
+					group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.zombie)
+				end
+			end
+			return self._groups.zombie
+		end
+	end
+
+	function MutatorFactionsReplacer:_get_unit_group_murkywater(ai_groups)
+		if not self._groups.murkywater then
+			if not PackageManager:loaded("packages/murkyassets") then
+				PackageManager:load("packages/murkyassets")
+			end
+			if not PackageManager:loaded("packages/dlcs/bph/job_bph") then
+				PackageManager:load("packages/dlcs/bph/job_bph")
+			end
+			if not PackageManager:loaded("levels/narratives/locke/bph/world_sounds") then
+				PackageManager:load("levels/narratives/locke/bph/world_sounds")
+			end
+			local group_ai_tweak = tweak_data.group_ai
+			for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+				if v.unit_types and v.unit_types.murkywater then
+					group_ai_tweak.unit_categories[k].unit_types.america = {}
+					group_ai_tweak.unit_categories[k].unit_types.russia = {}
+					group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+					-- group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+					group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+					group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+
+					group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.murkywater)
+					group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.murkywater)
+					group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.murkywater)
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.murkywater)
+					group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.murkywater)
+					group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.murkywater)
+				end
+			end
+			return self._groups.murkywater
+		end
+	end
+
+	function MutatorFactionsReplacer:_get_unit_group_nypd(ai_groups)
+		if not self._groups.nypd then
+			if not PackageManager:loaded("packages/nypdassets") then
+				PackageManager:load("packages/nypdassets")
+			end
+			local group_ai_tweak = tweak_data.group_ai
+			for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+				if v.unit_types and v.unit_types.nypd then
+					group_ai_tweak.unit_categories[k].unit_types.america = {}
+					group_ai_tweak.unit_categories[k].unit_types.russia = {}
+					group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+					-- group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+					group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+
+					group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.nypd)
+					group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.nypd)
+					group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.nypd)
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.nypd)
+					group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.nypd)
+					group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.nypd)
+				end
+			end
+			return self._groups.nypd
+		end
+	end
+
+	function MutatorFactionsReplacer:_get_unit_group_lapd(ai_groups)
+		if not self._groups.lapd then
+			if not PackageManager:loaded("packages/nypdassets") then
+				PackageManager:load("packages/nypdassets")
+			end
+			local group_ai_tweak = tweak_data.group_ai
+			for k, v in pairs(group_ai_tweak.unit_categories or {}) do
+				if v.unit_types and v.unit_types.lapd then
+					group_ai_tweak.unit_categories[k].unit_types.america = {}
+					group_ai_tweak.unit_categories[k].unit_types.russia = {}
+					group_ai_tweak.unit_categories[k].unit_types.zombie = {}
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = {}
+					group_ai_tweak.unit_categories[k].unit_types.nypd = {}
+					-- group_ai_tweak.unit_categories[k].unit_types.lapd = {}
+
+					group_ai_tweak.unit_categories[k].unit_types.america = deep_clone(v.unit_types.lapd)
+					group_ai_tweak.unit_categories[k].unit_types.russia = deep_clone(v.unit_types.lapd)
+					group_ai_tweak.unit_categories[k].unit_types.zombie = deep_clone(v.unit_types.lapd)
+					group_ai_tweak.unit_categories[k].unit_types.murkywater = deep_clone(v.unit_types.lapd)
+					group_ai_tweak.unit_categories[k].unit_types.nypd = deep_clone(v.unit_types.lapd)
+					group_ai_tweak.unit_categories[k].unit_types.lapd = deep_clone(v.unit_types.lapd)
+				end
+			end
+			return self._groups.lapd
+		end
+	end
 	
 end

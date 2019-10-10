@@ -319,6 +319,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
+		["menu_es_extra_bonus"] = "Pro-Job Bonus",
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
@@ -397,6 +398,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll"] = "Fat Roll",
 		["mutator_fatroll_desc"] = "Damage Grace disabled.",
 		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0, meaning that there is no delay on instances of damage.",
+
+		["mutator_zombie_outbreak"] = "The Dead Walking",
+		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
+		["mutator_zombie_outbreak_longdesc"] = "The dead have risen! Replaces all enemies with Zombie units",
+
+		["mutator_faction_override"] = "Enemy Factor Override",
+		["mutator_faction_override_desc"] = "",
+		["mutator_faction_override_longdesc"] = "",
+		["mutator_faction_override_"] = "",
+		["mutator_faction_override_select"] = "",
+		["mutator_faction_override_america"] = "America",
+		["mutator_faction_override_russia"] = "Russia",
+		["mutator_faction_override_zombie"] = "Zombie",
+		["mutator_faction_override_murkywater"] = "MurkyWater",
+		["mutator_faction_override_nypd"] = "NYPD",
+		["mutator_faction_override_lapd"] = "LAPD",
+		["faction_selector_choice"] = "Faction: ",
 				
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",

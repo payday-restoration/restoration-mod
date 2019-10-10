@@ -412,7 +412,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}},
 			check = function (t, nr_grenades_used)
 				local delay_till_next_use = 30
-				local chance = 0.5
+				local chance = 0.05
 
 				if math.random() < chance then
 					return true, t + delay_till_next_use
@@ -14170,6 +14170,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_lapd_heavy_2",
 					"ene_lapd_veteran_cop_1",
 					"ene_lapd_veteran_cop_2"
+				}
+			},
+			bravo = {
+				path = "units/pd2_mod_bravo/characters/",
+				list = {
+					"ene_bravo_dmr",
+					"ene_bravo_lmg",
+					"ene_bravo_rifle",
+					"ene_bravo_shotgun"
 				}
 			},
 			halloween = {

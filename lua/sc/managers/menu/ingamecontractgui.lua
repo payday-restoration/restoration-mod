@@ -1,5 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-    function IngameContractGui:init(ws, node)
+	function IngameContractGui:init(ws, node)
 		local padding = SystemInfo:platform() == Idstring("WIN32") and 10 or 5
 		self._panel = ws:panel():panel({
 			w = math.round(ws:panel():w() * 0.6),
@@ -668,6 +668,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		})
 
 		managers.hud:make_fine_text(payday_text)
-		payday_text:set_bottom(self._rewards_panel:h() + 4)
+		payday_text:set_bottom(self._rewards_panel:h() + 7.5)
+		payday_text:set_x(300)
 	end
 end

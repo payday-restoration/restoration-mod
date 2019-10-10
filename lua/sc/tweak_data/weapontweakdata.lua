@@ -12215,7 +12215,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.categories = {"assault_rifle"}		
 			self.pdr.has_description = false					
 			self.pdr.tactical_reload = 1
-			self.pdr.use_data.selection_index = 2
+			self.pdr.use_data.selection_index = 1
 			self.pdr.AMMO_MAX = 135
 			self.pdr.AMMO_PICKUP = self:_pickup_chance(135, 2)
 			self.pdr.spread.standing = 3

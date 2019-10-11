@@ -120,6 +120,9 @@
 	<!--More Cop Facial Variety (Thanks AGAIN Wekk!!!!)-->			
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1" force="true" />
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1_contour" force="true" />
+
+	<material_config path="units/payday2/characters/ene_fbi_2/ene_fbi_2" force="true" />
+	<material_config path="units/payday2/characters/ene_fbi_2/ene_fbi_2_contour" force="true" />	
 	
 	<material_config path="units/payday2/characters/ene_cop_2/ene_cop_2" force="true" />
 	<material_config path="units/payday2/characters/ene_cop_2/ene_cop_2_contour" force="true" />
@@ -139,6 +142,9 @@
 	<material_config path="units/payday2/characters/ene_security_5/ene_security_5" force="true" />
 	<material_config path="units/payday2/characters/ene_security_5/ene_security_5_contour" force="true" />	
 
+	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true" />
+	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="true" />	
+	
 	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true" />
 	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_contour" force="true" />	
 	
@@ -146,8 +152,8 @@
 	<texture path="units/payday2/characters/shared_textures/murkyhead_nm"/>
 	<!--More Cop Facial Variety END-->	
 	
-	<texture path="units/payday2/characters/shared_textures/heads_cop_df"/>
-	<texture path="units/payday2/characters/shared_textures/heads_cop_nm"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop_nm" force="true"/>
 	<texture path="units/payday2/characters/shared_textures/heads_sec_df"/>
 	<texture path="units/payday2/characters/shared_textures/heads_sec_nm"/>
 	<texture path="units/payday2/characters/shared_textures/heads_fbi_df"/>
@@ -669,8 +675,7 @@
 	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2_husk" load="true" force="true"/>			
 
 	<!--National Guard-->
-	<texture path="units/payday2/characters/ene_guard_national_1/national_guard_df" force="false"/>
-	<!--never ever-->
+	<!--never ever ;)-->
 	
 	<!--Gensec Shield Acc-->
 	<model path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>

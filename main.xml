@@ -104,6 +104,7 @@
 		<hook file="sc/units/weapons/weaponunderbarrellauncher.lua" source_file="lib/units/weapons/weaponunderbarrellauncher"/>
 		<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>
 		<hook file="sc/units/player/playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
+		<hook file="sc/units/player/playermaskoff.lua" source_file="lib/units/beings/player/states/playermaskoff"/>
 		<hook file="sc/units/player/playercarry.lua" source_file="lib/units/beings/player/states/playercarry"/>
 		<hook file="sc/units/player/playerbleedout.lua" source_file="lib/units/beings/player/states/playerbleedout"/>
 		<hook file="sc/units/player/playertased.lua" source_file="lib/units/beings/player/states/playertased"/>

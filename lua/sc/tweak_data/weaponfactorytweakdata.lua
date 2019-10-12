@@ -39518,7 +39518,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_smg_ump_m_ump9.stats = {
 				value = 2,
 				extra_ammo = 5,
-				spread = -2,				
+				spread = -2,
+				recoil =  2,				
 				damage = -16,				
 				total_ammo_mod = 50
 		}

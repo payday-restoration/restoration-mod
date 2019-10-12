@@ -37,6 +37,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Load alternate heal over time tweakdata if player is using Infiltrator.
 		if player_manager:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 			self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
+		elseif player_manager:has_category_upgrade("player", "dodge_to_heal") then
+			self._doh_data = tweak_data.upgrades.dodge_to_hot_data or {}
 		else 
 			self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
 		end
@@ -54,8 +56,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self._dodge_points = 0.0
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
-		self._dodge_heal_cooldown = 0.0 --rogue dodge_to_heal skill
-		self._in_smoke_bomb = 0.0 --0 = not in any smoke, 1 = inside smoke, 2 = inside own smoke
+		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
 
 		local function revive_player()
 			self:revive(true)
@@ -284,9 +285,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0)
 				self:_send_damage_drama(attack_data, 0)
-				if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 and self._dodge_heal_cooldown == 0.0 then --Rogue health regen.
-					self:restore_health(tweak_data.upgrades.dodge_to_heal[1] * attack_data.damage, true)
-					self._dodge_heal_cooldown = tweak_data.upgrades.dodge_to_heal[2]
+				if pm:has_category_upgrade("player", "dodge_to_heal") then --Rogue health regen.
+					self:add_damage_to_hot()
 				end
 			end
 			self:_call_listeners(damage_info)
@@ -296,6 +296,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
 			managers.player:send_message(Message.OnPlayerDodge)
 			return	
+		end
+		if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 then --Rogue health regen.
+			self._damage_to_hot_stack = {}
 		end
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)
@@ -679,7 +682,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0)
 		end
 
-		self._dodge_heal_cooldown = math.max(self._dodge_heal_cooldown - dt, 0.0)
 		self:fill_dodge_meter(self._dodge_points * dt * passive_dodge)
 	end)
 

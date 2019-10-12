@@ -1026,27 +1026,6 @@ function UpgradesTweakData:_init_pd2_values()
 		3.0 --cooldown
 	}
 
-	self.dodge_to_hot_data = {
-		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
-		works_with_armor_kit = true,
-		tick_time = 0.25,
-		total_ticks = 12,
-		max_stacks = 4,
-		stacking_cooldown = 0.0,
-		add_stack_sources = {
-			bullet = false,
-			explosion = false,
-			melee = false,
-			taser_tased = false,
-			poison = false,
-			fire = false,
-			projectile = false,
-			swat_van = false,
-			sentry_gun = false,
-			civilian = false
-		}
-	}
-
 	--Gambler
  	self.loose_ammo_restore_health_values = {
 		base = 2,

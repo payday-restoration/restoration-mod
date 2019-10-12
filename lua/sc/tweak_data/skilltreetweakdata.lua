@@ -2263,8 +2263,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_dodge_to_heal",
-					"player_damage_to_hot_1"
+					"player_dodge_to_heal"
 				},
 				cost = 4000,
 				icon_xy = {1, 0},

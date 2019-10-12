@@ -9306,40 +9306,43 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.amt.panic_suppression_chance = 0.0
-		end	
+	end	
 
-	if self.noodle then --Germantaco's P220
-		self.noodle.tactical_reload = 1										
-		self.noodle.has_description = false		
-		self.noodle.AMMO_MAX = 113
-		self.noodle.CLIP_AMMO_MAX = 14
-		self.noodle.AMMO_PICKUP = self:_pickup_chance(113, 1)
-		self.noodle.fire_mode_data.fire_rate = 0.07142857142
-		self.noodle.single.fire_rate = 0.07142857142
-		self.noodle.spread.standing = 3
-		self.noodle.spread.crouching = 2
-		self.noodle.spread.steelsight = 1
-		self.noodle.spread.moving_standing = 4
-		self.noodle.spread.moving_crouching = 3
-		self.noodle.spread.moving_steelsight = 2
-		self.noodle.kick.standing = self.glock_17.kick.standing
-		self.noodle.kick.crouching = self.glock_17.kick.standing
-		self.noodle.kick.steelsight = self.glock_17.kick.standing
-		self.noodle.stats = {
-			damage = 40,
-			spread = 15,
-			recoil = 22,
-			spread_moving = 7,
+	if self.ump then --Matthelzor's UMP 45
+		self.ump.tactical_reload = 1
+		self.ump.use_data.selection_index = 2
+		self.x_ump.use_data.selection_index = 4
+		self.ump.fire_mode_data.fire_rate = 0.1
+		self.ump.auto.fire_rate = 0.1
+		self.ump.AMMO_MAX = 120
+		self.ump.CLIP_AMMO_MAX = 25
+		self.ump.BURST_FIRE = 2
+		self.ump.ADAPTIVE_BURST_SIZE = false
+		self.ump.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.ump.spread.standing = 3
+		self.ump.spread.crouching = 2
+		self.ump.spread.steelsight = 1
+		self.ump.spread.moving_standing = 4
+		self.ump.spread.moving_crouching = 3
+		self.ump.spread.moving_steelsight = 2
+		self.ump.kick.standing = self.new_m4.kick.standing
+		self.ump.kick.crouching = self.new_m4.kick.standing
+		self.ump.kick.steelsight = self.new_m4.kick.standing
+		self.ump.panic_suppression_chance = 0.05
+		self.ump.stats = {
+			damage = 50,
+			spread = 17,
+			recoil = 19,
+			spread_moving = 14,
 			zoom = 3,
-			concealment = 26,
+			concealment = 24,
 			suppression = 8,
 			alert_size = 8,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
-			value = 4,
+			value = 1,
 			reload = 11
 		}
-		self.noodle.panic_suppression_chance = 0.0		
 		end		
 
 	if self.lynx then --Alcat's Gepard GM6 Lynx
@@ -13114,16 +13117,19 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	if self.auto5 then --Alcat's Browning Auto-5
+		self.auto5.use_data.selection_index = 2	
 		self.auto5.has_description = false			
-		self.auto5.muzzleflash = "effects/particles/shotgun/shotgun_gen"	
-		self.auto5.AMMO_MAX = 60
-		self.auto5.AMMO_PICKUP = self:_pickup_chance(60, 2)
+		self.auto5.AMMO_MAX = 80
+		self.auto5.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.auto5.rays = 9
-		self.auto5.tactical_reload = 1								
+		self.auto5.tactical_reload = 1
+		self.auto5.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.auto5.fire_mode_data.fire_rate = 0.15
 		self.auto5.CAN_TOGGLE_FIREMODE = false
 		self.auto5.single = {}
-		self.auto5.damage_near = 800
-		self.auto5.damage_far = 1600
+		self.auto5.single.fire_rate = 0.15
+		self.auto5.damage_near = 700
+		self.auto5.damage_far = 1400
 		self.auto5.spread.standing = 3 * 1
 		self.auto5.spread.crouching = 2 * 1
 		self.auto5.spread.steelsight = 1 * 1
@@ -13135,11 +13141,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.auto5.kick.steelsight = self.new_m4.kick.standing
 		self.auto5.stats = {
 			damage = 75,
-			spread = 9,
-			recoil = 20,
+			spread = 8,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 19,
+			concealment = 20,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -13147,7 +13153,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.auto5.panic_suppression_chance = 0.0	
+		self.auto5.panic_suppression_chance = 0.0
 	end
 
 	if self.g19 then --Pwacio's Glock 19

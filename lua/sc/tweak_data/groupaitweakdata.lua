@@ -12374,7 +12374,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		else
-			self.besiege.assault.groups = {
+			self.besiege.assault.coolhunting = {
 				FBI_swats_weekend = {
 					0.2,
 					0.9,

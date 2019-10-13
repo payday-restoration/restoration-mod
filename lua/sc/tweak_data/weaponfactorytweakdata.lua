@@ -43843,10 +43843,12 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 10
 					}		
 				self.parts.wpn_fps_pis_hpb_m_extended.stats = {
-						value = 3,
-						concealment = -1,
-						extra_ammo = 4,
-						reload = -1
+						value = 2,
+						concealment = -2,
+						extra_ammo = 12,
+						spread = -1,
+						recoil = 1,			
+						reload = -2
 					}
 				self.parts.wpn_fps_pis_hpb_g_white.stats = {
 						value = 10,

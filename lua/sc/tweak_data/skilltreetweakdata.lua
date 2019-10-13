@@ -2704,7 +2704,8 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "dragon",
 			{
 				upgrades = {
-					"player_armor_regen_damage_health_ratio_multiplier_1"
+					"player_armor_regen_damage_health_ratio_multiplier_1",
+					"player_armor_regen_damage_health_ratio_threshold_multiplier"
 				},
 				cost = 200,
 				icon_xy = {6, 6},
@@ -2714,17 +2715,19 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_movement_speed_damage_health_ratio_multiplier"
+					"player_movement_speed_damage_health_ratio_multiplier",
+					"player_movement_speed_damage_health_ratio_threshold_multiplier",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {7, 6},
 				name_id = "menu_deck12_3",
-				desc_id = "menu_deck12_3_desc"
+				desc_id = "menu_deck12_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_armor_regen_damage_health_ratio_multiplier_2"
+					"player_dodge_regen_damage_health_ratio_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {0, 7},
@@ -2734,7 +2737,9 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_armor_regen_damage_health_ratio_multiplier_3"
+					"player_melee_kill_dodge_regen",
+					"player_kill_dodge_regen",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {1, 7},
@@ -2744,14 +2749,13 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_armor_regen_damage_health_ratio_threshold_multiplier",
-					"player_movement_speed_damage_health_ratio_threshold_multiplier",
+					"player_survive_one_hit",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
 				icon_xy = {2, 7},
 				name_id = "menu_deck12_9",
-				desc_id = "menu_deck12_9_desc"
+				desc_id = "menu_deck12_9_desc_sc"
 			}
 		}
 

@@ -951,7 +951,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Rogue
 		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYou swap between your weapons ##80%## faster.",
 		["menu_deck4_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck4_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYour dodge meter is filled when you are revived.",
+		["menu_deck4_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nYour dodge meter is refilled when you are revived.",
 		["menu_deck4_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck4_9_desc_sc"] = "Dodging an attack causes you to regenerate ##1## life point every ##2## seconds for the next ##30## seconds. This effect can stack, but all stacks are lost when a bullet damages your health.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
@@ -1044,7 +1044,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nThe Smoke Bomb has a ##30## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
-		["menu_deck18_3_desc_sc"] = "Your dodge is increased by ##5## points.",
+		["menu_deck18_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##35%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
@@ -1067,9 +1067,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## health and ##1## armor. This cannot occur more than ##5## times every ##10## seconds.",				
 		
 		--Yakuza--
-		["menu_deck12_1_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to ##20%## armor recovery rate.\n\nNOTE: Entering this state negates regeneration effects.",	
-		["menu_deck12_5_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to an additional ##15%## armor recovery rate.",	
-		["menu_deck12_7_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##25%##, you will gain up to an additional ##15%## armor recovery rate.",	
+		["menu_deck12_1_desc_sc"] = "The lower your health, the more armor recovery rate you have. When your health is below ##50%##, you will gain up to ##25%## armor recovery rate.\n\nNOTE: Entering this state negates other armor regeneration effects.",	
+		["menu_deck12_3_desc_sc"] = "Your dodge is increased by ##5## points.\n\nThe lower your health, the faster you will move. When your health is below ##50%##, you will move up to ##20%## Faster.",	
+		["menu_deck12_5_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills up by up to ##10%## of your dodge every second.",	
+		["menu_deck12_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nKilling an enemy fills your dodge meter. The lower your health the more the dodge meter is filled, up to ##50%## of your dodge. Melee kills are worth double.",
+		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed, you survive with ##1## life point and your dodge meter is refilled.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Hacker--
 		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device##.\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##12## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a ##12## second duration.\n\nThe Pocket ECM Device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##4## seconds.",

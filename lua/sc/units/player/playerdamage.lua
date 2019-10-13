@@ -60,6 +60,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_points = 0.0
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
+		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
+		self._was_downed = false
 
 		local function revive_player()
 			self:revive(true)
@@ -652,6 +654,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+	function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
+		self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
+	end
+
 	Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)
 		self._in_smoke_bomb = 0.0
 		for _, smoke_screen in ipairs(managers.player._smoke_screen_effects or {}) do
@@ -664,7 +670,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
+		--Add passive dodge increases.
 		local passive_dodge = 0.0
+
+		--Yakuza capstone skill.
+		if self:health_ratio() < 0.5 then
+			passive_dodge = passive_dodge + (1 - self:health_ratio()) * managers.player:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
+		end
 
 		--Sicario capstone skill.
 		if self._in_smoke_bomb == 2.0 then
@@ -679,9 +691,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Duck and Cover aced.
 		if self._unit:movement():running() then
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "run_dodge_chance", 0)
-		end
-
-		if self._unit:movement():zipline_unit() then
+		elseif self._unit:movement():zipline_unit() then
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0)
 		end
 
@@ -735,6 +745,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end)
 				end
 			until done
+		end
+	end
+
+	Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
+		if self:get_real_health() == 0 and not self._check_berserker_done then
+			if self._can_survive_one_hit then
+				self:change_health(0.1)
+				self._can_survive_one_hit = false
+				self:fill_dodge_meter(1.5)
+			else
+				self._was_downed = true
+			end
+		end
+	end)
+
+	function PlayerDamage:set_survive_one_hit() --For some reason, I couldn't posthook playerdamage:revive(), so this will have to do. If I can get it to work, then self._was_downed can be removed.
+		if self._was_downed then
+			self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
+			self._was_downed = false
 		end
 	end
 end

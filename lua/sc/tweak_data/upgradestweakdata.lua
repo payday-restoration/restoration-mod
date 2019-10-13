@@ -1192,11 +1192,25 @@ function UpgradesTweakData:_init_pd2_values()
 		{50, 6}
 	}
 	
-	--yoooooooooooooooooo--
+	--Yakuza--
+	self.values.player.survive_one_hit = {true}
+
 	self.values.player.armor_regen_damage_health_ratio_multiplier = {
-		0.20,
-		0.35,
-		0.50
+		0.25,
+		0.25,
+		0.25
+	}
+
+	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
+		0.10
+	}
+
+	self.values.player.melee_kill_dodge_regen = {
+		1.0
+	}
+
+	self.values.player.kill_dodge_regen = {
+		0.5
 	}
 	
 	--Fat benis :DDDDD
@@ -2307,6 +2321,42 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "heal_over_time",
+			category = "player"
+		}
+	}
+	self.definitions.player_survive_one_hit = {
+		name_id = "menu_player_survive_one_hit",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "survive_one_hit",
+			category = "player"
+		}
+	}
+	self.definitions.player_dodge_regen_damage_health_ratio_multiplier = {
+		name_id = "menu_player_dodge_regen_damage_health_ratio_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "dodge_regen_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_melee_kill_dodge_regen = {
+		name_id = "menu_player_melee_kill_dodge_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "melee_kill_dodge_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_kill_dodge_regen = {
+		name_id = "menu_player_kill_dodge_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "kill_dodge_regen",
 			category = "player"
 		}
 	}

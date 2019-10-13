@@ -104,6 +104,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
+		if variant == "melee" then
+			player_unit:character_damage():fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen"))
+		else
+			player_unit:character_damage():fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
+		end
+
 		if self._on_killshot_t and t < self._on_killshot_t then
 			return
 		end

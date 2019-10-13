@@ -2264,7 +2264,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
 					"player_dodge_to_heal",
-					"player_damage_to_hot_1"
+					"player_heal_over_time"
 				},
 				cost = 4000,
 				icon_xy = {1, 0},
@@ -2514,7 +2514,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_damage_to_hot_1",
+					"player_heal_over_time",
+					"player_melee_to_heal",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

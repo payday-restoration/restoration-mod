@@ -85,7 +85,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local total_stars = math.min(job_stars, player_stars)
 		local total_difficulty_stars = difficulty_stars
 		local money_multiplier = self:get_contract_difficulty_multiplier(total_difficulty_stars)
-		local contract_money_multiplier = 1 + money_multiplier / 10
+		local contract_money_multiplier = 1 + money_multiplier / 3
 		local small_loot_multiplier = managers.money:get_small_loot_difficulty_multiplier(total_difficulty_stars) or 0
 		local cash_skill_bonus, bag_skill_bonus = managers.player:get_skill_money_multiplier(managers.groupai and managers.groupai:state():whisper_mode())
 		local bonus_bags = params.bonus_bags_value or managers.loot:get_secured_bonus_bags_value(params.level_id)
@@ -188,9 +188,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			job_value = job_value + rounding_error
 		end
 		
-		local stage_risk = math.round(stage_value * money_multiplier)
-		local job_risk = math.round(job_value * money_multiplier)
-		local bag_risk = math.round(bag_value * money_multiplier)
+		local stage_risk = math.round(stage_value * contract_money_multiplier)
+		local job_risk = math.round(job_value * contract_money_multiplier)
+		local bag_risk = math.round(bag_value * contract_money_multiplier)
 		local small_risk = math.round(small_value * small_loot_multiplier)
 		total_payout = stage_value + job_value + bonus_bag_value + mandatory_bag_value + small_value
 		total_payout = total_payout + stage_risk + job_risk + bag_risk + small_risk
@@ -249,7 +249,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return unpack(ret)
 	end
 	function MoneyManager:get_contract_difficulty_multiplier(stars)
-		local multiplier = tweak_data:get_value("money_manager", "difficulty_multiplier_payout", stars)
+		local multiplier = tweak_data:get_value("money_manager", "difficulty_multiplier", stars)
 		return multiplier or 0
 	end
 end

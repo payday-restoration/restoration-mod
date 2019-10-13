@@ -341,7 +341,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		name = "buffs_pad_panel",
 		y = 42,
 		w = 200,
-		h = 64
+		h = 128
 	})
 
 	local vip_icon_buff = buffs_pad_panel:bitmap({

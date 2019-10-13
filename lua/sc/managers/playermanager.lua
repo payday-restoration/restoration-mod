@@ -179,7 +179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		--Load alternate heal over time tweakdata if player is using Infiltrator.
 		local data = tweak_data.upgrades.damage_to_hot_data
-		if self:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then --Load alternate heal over time tweakdata if player is using Infiltrator.
+		if self:has_category_upgrade("player", "melee_to_heal") then --Load alternate heal over time tweakdata if player is using Infiltrator.
 			data = tweak_data.upgrades.melee_to_hot_data
 		elseif self:has_category_upgrade("player", "dodge_to_heal") then --Or Rogue
 			data = tweak_data.upgrades.dodge_to_hot_data

@@ -106,10 +106,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.body_armor.concealment = {
 		30,
 		25,
-		20,
+		23,
+		21,
 		15,
 		5,
-		1,
 		0
 	}
 	self.values.player.body_armor.damage_shake = { 

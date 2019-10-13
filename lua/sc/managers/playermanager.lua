@@ -157,7 +157,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 		local player_unit = self:player_unit()
 
-		if not self:has_category_upgrade("player", "damage_to_hot") then
+		if not self:has_category_upgrade("player", "damage_to_hot") and not self:has_category_upgrade("player", "heal_over_time") then
 			return
 		end
 		

@@ -35,12 +35,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.sequence:add_inflict_updator_body("fire", self._unit:key(), self._inflict_damage_body:key(), self._inflict_damage_body:extension().damage)
 
 		--Load alternate heal over time tweakdata if player is using Infiltrator.
-		if player_manager:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+		if player_manager:has_category_upgrade("player", "melee_to_heal") then
 			self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
+			self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 		elseif player_manager:has_category_upgrade("player", "dodge_to_heal") then
 			self._doh_data = tweak_data.upgrades.dodge_to_hot_data or {}
+			self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 		else 
 			self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
+			self._hot_amount = managers.player:upgrade_value("player", "damage_to_hot", 0)
 		end
 
 		self._damage_to_hot_stack = {}
@@ -688,4 +691,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)
 		self:fill_dodge_meter(-self._dodge_meter)
 	end)
+
+	function PlayerDamage:_upd_health_regen(t, dt)
+		if self._health_regen_update_timer then
+			self._health_regen_update_timer = self._health_regen_update_timer - dt
+
+			if self._health_regen_update_timer <= 0 then
+				self._health_regen_update_timer = nil
+			end
+		end
+
+		if not self._health_regen_update_timer then
+			local max_health = self:_max_health()
+
+			if self:get_real_health() < max_health then
+				self:restore_health(managers.player:health_regen(), false)
+				self:restore_health(managers.player:fixed_health_regen(self:health_ratio()), true)
+
+				self._health_regen_update_timer = 5
+			end
+		end
+
+		if #self._damage_to_hot_stack > 0 then
+			repeat
+				local next_doh = self._damage_to_hot_stack[1]
+				local done = not next_doh or TimerManager:game():time() < next_doh.next_tick
+
+				if not done then
+					local regen_rate = self._hot_amount
+
+					self:restore_health(regen_rate, true)
+
+					next_doh.ticks_left = next_doh.ticks_left - 1
+
+					if next_doh.ticks_left == 0 then
+						table.remove(self._damage_to_hot_stack, 1)
+					else
+						next_doh.next_tick = next_doh.next_tick + (self._doh_data.tick_time or 1)
+					end
+
+					table.sort(self._damage_to_hot_stack, function (x, y)
+						return x.next_tick < y.next_tick
+					end)
+				end
+			until done
+		end
+	end
 end

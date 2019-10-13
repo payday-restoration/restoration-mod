@@ -169,6 +169,7 @@ function UpgradesTweakData:_init_pd2_values()
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {1}
 		self.values.player.dodge_to_heal = {true}
+		self.values.player.melee_to_heal = {true}
 		self.values.player.dodge_on_revive = {true}
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
@@ -934,6 +935,10 @@ function UpgradesTweakData:_init_pd2_values()
 		}
 	}
 
+	self.values.player.heal_over_time = {
+		0.1
+	}	
+
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
@@ -1620,6 +1625,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_melee_to_heal = {
+		category = "feature",
+		name_id = "menu_player_melee_to_heal",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_to_heal",
+			value = 1
+		}
+	}
 	self.definitions.player_dodge_on_revive = {
 		category = "feature",
 		name_id = "menu_player_dodge_on_revive",
@@ -2285,6 +2299,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "shotgun",
 			upgrade = "swap_speed_multiplier",
 			value = 1
+		}
+	}
+	self.definitions.player_heal_over_time = {
+		name_id = "menu_player_heal_over_time",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "heal_over_time",
+			category = "player"
 		}
 	}
 end

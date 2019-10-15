@@ -317,25 +317,83 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return players_nearby
 	end
 	
+	function PlayerManager:damage_reduction_skill_multiplier(damage_type)
+		local multiplier = 1
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_outnumbered", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_outnumbered_strong", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_close_contact", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "revived_damage_resist", 1)
+		multiplier = multiplier * self:upgrade_value("player", "damage_dampener", 1)
+		multiplier = multiplier * self:upgrade_value("player", "health_damage_reduction", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "first_aid_damage_reduction", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "revive_damage_reduction", 1)
+		multiplier = multiplier * self:get_hostage_bonus_multiplier("damage_dampener")
+		multiplier = multiplier * self._properties:get_property("revive_damage_reduction", 1)
+		multiplier = multiplier * self._temporary_properties:get_property("revived_damage_reduction", 1)
+		local dmg_red_mul = self:team_upgrade_value("damage_dampener", "team_damage_reduction", 1)
+
+		local health_ratio = self:player_unit():character_damage():health_ratio()
+		local min_ratio = self:upgrade_value("player", "passive_damage_reduction")
+		if health_ratio < min_ratio and self:has_category_upgrade("player", "passive_damage_reduction") then
+			dmg_red_mul = dmg_red_mul - (1 - dmg_red_mul)
+		end
+		multiplier = multiplier * dmg_red_mul
+
+		if self:is_damage_health_ratio_active(health_ratio) then
+			multiplier = multiplier * (1 - managers.player:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
+		end
+
+		if damage_type == "melee" then
+			multiplier = multiplier * managers.player:upgrade_value("player", "melee_damage_dampener", 1)
+		end
+
+		local current_state = self:get_current_state()
+
+		if current_state and current_state:_interacting() then
+			multiplier = multiplier * managers.player:upgrade_value("player", "interacting_damage_multiplier", 1)
+		end
+		
+
+		return multiplier
+	end
+
+
+	function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
+		local multiplier = 1
+		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_tier", 1)
+		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier", 1)
+		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_passive", 1)
+		multiplier = multiplier * self:team_upgrade_value("armor", "regen_time_multiplier", 1)
+		multiplier = multiplier * self:team_upgrade_value("armor", "passive_regen_time_multiplier", 1)
+		multiplier = multiplier * self:upgrade_value("player", "perk_armor_regen_timer_multiplier", 1)
+
+		if not moving then
+			multiplier = multiplier * managers.player:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
+		end
+
+		return multiplier
+	end
+
+	--Leaving stance stuff in parameters for compatability.
+	function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
+		local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
+		
+		chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
+
+		local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
+		chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
+		chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
+		chance = chance + self:upgrade_value("team", "crew_add_dodge", 0)
+
+		return chance
+	end
+
+	function PlayerManager:is_damage_health_ratio_active(health_ratio)
+		return self:has_category_upgrade("player", "melee_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "melee") > 0 or self:has_category_upgrade("player", "resistance_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "armor_regen") > 0 or self:has_category_upgrade("player", "damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "damage") > 0 or self:has_category_upgrade("player", "movement_speed_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "movement_speed") > 0
+	end
+
 	--function PlayerManager:speak(message, arg1, arg2)
 	--	self:player_unit():sound():say(message, arg1, arg2)
 	--end
 		
-end
-
---Leaving stance stuff in parameters for compatability.
-function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
-	local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
-	local dodge_shot_gain = self:_dodge_shot_gain()
-
-	chance = chance + dodge_shot_gain
-	chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
-
-	local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
-	chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
-	chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
-	chance = chance + self:upgrade_value("team", "crew_add_dodge", 0)
-	chance = chance + self:temporary_upgrade_value("temporary", "pocket_ecm_kill_dodge", 0)
-
-	return chance
 end

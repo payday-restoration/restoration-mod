@@ -61,7 +61,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
-		self._was_downed = false
 
 		local function revive_player()
 			self:revive(true)
@@ -302,9 +301,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.player:send_message(Message.OnPlayerDodge)
 			return	
 		end
-		if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 then --Rogue health regen.
-			self._damage_to_hot_stack = {}
-		end
+
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)
 		end
@@ -472,6 +469,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
 			self:fill_dodge_meter(1.5)
 		end
+		self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 	end
 
 	function PlayerDamage:band_aid_health()
@@ -510,6 +508,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				attack_data.damage = attack_data.damage * 1
 			end
+		end
+
+		if managers.player:has_category_upgrade("player", "dodge_to_heal") and attack_data.damage > 0.0 then --Rogue health regen.
+			self._damage_to_hot_stack = {}
 		end
 		
 		attack_data.damage = attack_data.damage * managers.player:upgrade_value("player", "real_health_damage_reduction", 1)
@@ -728,7 +730,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local done = not next_doh or TimerManager:game():time() < next_doh.next_tick
 
 				if not done then
-					local regen_rate = self._hot_amount
+					local regen_rate = self._hot_amount --All this for a single line change so stacking health regen isn't coupled to grinder. :)
 
 					self:restore_health(regen_rate, true)
 
@@ -753,17 +755,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if self._can_survive_one_hit then
 				self:change_health(0.1)
 				self._can_survive_one_hit = false
-				self:fill_dodge_meter(1.5)
-			else
-				self._was_downed = true
+				self._regenerate_timer = 0.0
 			end
 		end
 	end)
-
-	function PlayerDamage:set_survive_one_hit() --For some reason, I couldn't posthook playerdamage:revive(), so this will have to do. If I can get it to work, then self._was_downed can be removed.
-		if self._was_downed then
-			self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
-			self._was_downed = false
-		end
-	end
 end

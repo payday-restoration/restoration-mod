@@ -2704,8 +2704,7 @@ function SkillTreeTweakData:init(tweak_data)
 			dlc = "dragon",
 			{
 				upgrades = {
-					"player_armor_regen_damage_health_ratio_multiplier_1",
-					"player_armor_regen_damage_health_ratio_threshold_multiplier"
+					"player_dodge_regen_damage_health_ratio_multiplier"
 				},
 				cost = 200,
 				icon_xy = {6, 6},
@@ -2727,7 +2726,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_dodge_regen_damage_health_ratio_multiplier"
+					"player_resistance_damage_health_ratio_multiplier",
+					"player_armor_regen_damage_health_ratio_threshold_multiplier"
 				},
 				cost = 1000,
 				icon_xy = {0, 7},

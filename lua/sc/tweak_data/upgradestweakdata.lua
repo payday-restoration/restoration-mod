@@ -1195,9 +1195,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Yakuza--
 	self.values.player.survive_one_hit = {true}
 
-	self.values.player.armor_regen_damage_health_ratio_multiplier = {
-		0.25,
-		0.25,
+	self.values.player.resistance_damage_health_ratio_multiplier = {
 		0.25
 	}
 
@@ -2339,6 +2337,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "dodge_regen_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_resistance_damage_health_ratio_multiplier = {
+		name_id = "menu_player_resistance_damage_health_ratio_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "resistance_damage_health_ratio_multiplier",
 			category = "player"
 		}
 	}

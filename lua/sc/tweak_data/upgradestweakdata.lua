@@ -1205,11 +1205,11 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
-		0.6
+		0.5
 	}
 
 	self.values.player.kill_dodge_regen = {
-		0.6
+		0.5
 	}
 	
 	--Fat benis :DDDDD

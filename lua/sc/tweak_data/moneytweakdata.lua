@@ -9,15 +9,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.limited_bonus_multiplier = 1.2
 			end
 		end
-		self.difficulty_multiplier_payout = {
-			1,
-			2,
-			3,
-			3.5,
-			4,
-			4.5,
-			5
-		}
+		-- self.difficulty_multiplier_payout = {
+		-- 	1,
+		-- 	2,
+		-- 	3,
+		-- 	3.5,
+		-- 	4,
+		-- 	4.5,
+		-- 	5
+		-- }
 		local smallest_cashout = (self.stage_completion[1] + self.job_completion[1]) * self.offshore_rate
 		local biggest_weapon_mod_cost = math.round(self.biggest_cashout * 0.5)
 		local smallest_weapon_mod_cost = math.round(smallest_cashout * 3)

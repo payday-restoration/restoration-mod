@@ -18,11 +18,10 @@
 		<event name="control" source="control.ogg"/>
 	</HeistMusic>
 	<HeistMusic directory="assets/sounds/madvlad" id="resmusic_madvlad" volume="0.7">
-		<event name="setup" source="setup.ogg"/>
+		<event name="setup" start_source="stealthintro.ogg" source="stealth.ogg"/>	
 		<event name="anticipation" start_source="anticiloop.ogg" source="anticipation.ogg"/>
 		<event name="assault" start_source="assaultintro.ogg"source="assault.ogg"/>
 		<event name="control" start_source="controlintro.ogg" source="control.ogg"/>
-		<event name="setup" start_source="stealthintro.ogg" source="setup.ogg"/>
 	</HeistMusic>
 	<HeistMusic directory="assets/sounds/lethalforce" id="resmusic_lethalforce" volume="0.7">
 		<event name="setup" source="setup.ogg"/>

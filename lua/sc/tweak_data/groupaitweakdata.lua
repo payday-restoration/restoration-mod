@@ -8265,6 +8265,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"provide_support"
 			},
+			--hard flank light rifle
+			CS_swat_rifle_flank_hard = {
+				"flank",
+				"flash_grenade",
+				"smoke_grenade",
+				"charge",
+				"provide_coverfire",
+				"elite_ranged_fire",
+				"provide_support"
+			},			
+			--very hard flank light rifle
+			VH_swat_rifle = {
+			    "groupcsr",
+				"smoke_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"elite_ranged_fire",
+				"deathguard"
+			},
+			VH_swat_rifle_flank = {
+				"flank",
+				"flash_grenade",
+				"smoke_grenade",
+				"charge",
+				"provide_coverfire",
+				"elite_ranged_fire",
+				"provide_support"
+			},
 			FBI_suit = {
 			    "grouphrtr",
 				"flank",
@@ -8287,7 +8316,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_coverfire",
 				"charge",
 				"provide_support",
-				"ranged_fire"
+				"elite_ranged_fire"
 			},
 			FBI_swat_shotgun = {
 				"groupcsr",
@@ -8304,7 +8333,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"charge",
 				"provide_coverfire",
 				"provide_support",
-				"shield_cover",
 				"deathguard"
 			},
 			FBI_shield = {
@@ -8360,6 +8388,90 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"provide_support",
 				"obstacle",
 				"shield_cover"
+			},
+			--mayhem tactics
+			MH_swat_rifle = {
+				"groupcsr",
+				"smoke_grenade",
+				"flash_grenade",
+				"provide_coverfire",
+				"charge",
+				"provide_support",
+				"shield_cover",
+				"elite_ranged_fire"
+			},
+			MH_swat_shotgun = {
+				"groupcsr",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support"
+			},
+			MH_heavy = {
+				"groupcsr",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"shield_cover",
+				"deathguard",
+				"elite_ranged_fire"
+			},
+			MH_swat_rifle_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"shield_cover",
+				"elite_ranged_fire"
+			},
+			MH_swat_shotgun_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"shield_cover",
+			    "hitnrun"
+			},
+			MH_heavy_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"obstacle",
+				"shield_cover",
+				"elite_ranged_fire"
+			},
+			MH_heavy_shotgun_flank = {
+				"flank",
+				"smoke_grenade",
+				"flash_grenade",
+				"charge",
+				"provide_coverfire",
+				"provide_support",
+				"obstacle",
+				"reloadingretreat",
+				"shield_cover"
+			},
+			--death wish tactics
+			DW_swat_rifle = {
+				"groupcsr",
+				"smoke_grenade",
+				"flash_grenade",
+				"provide_coverfire",
+				"charge",
+				"provide_support",
+				"shield_cover",
+				"aggressor",
+				"elite_ranged_fire"
 			},
 			FBI_shield_flank = {
 				"flank",
@@ -8699,7 +8811,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				{
 					unit = "CS_swat_MP5",
 					freq = 0.33,
-					tactics = self._tactics.CS_swat_rifle_flank,
+					tactics = self._tactics.CS_swat_rifle_flank_hard,
 					rank = 3
 				}
 			}
@@ -8807,7 +8919,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36",
 						freq = 1,
 						amount_max = 2,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.FBI_heavy,
 						rank = 1
 					}
 				}
@@ -8835,7 +8947,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36",
 						freq = 1,
 						amount_max = 2,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.FBI_heavy,
 						rank = 1
 					}
 				}
@@ -9107,7 +9219,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		end
-		if difficulty_index <= 6 then
+		if difficulty_index <= 5 then
 			self.enemy_spawn_groups.FBI_swats = {
 				amount = {3, 4},
 				spawn = {
@@ -9148,6 +9260,41 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				}
 			}
+		elseif difficulty_index == 6 then	
+			self.enemy_spawn_groups.FBI_swats = {
+				amount = {3, 4},
+				spawn = {
+					{
+						unit = "FBI_swat_M4",
+						freq = 1,
+						amount_min = 3,
+						tactics = self._tactics.MH_swat_rifle,
+						rank = 1
+					},
+					{
+						unit = "FBI_swat_M4",
+						freq = 1,
+						tactics = self._tactics.MH_swat_rifle,
+						rank = 2
+					},					
+					{
+						unit = "FBI_swat_R870",
+						amount_min = 1,
+						amount_max = 2,
+						freq = 1,
+						tactics = self._tactics.MH_swat_shotgun,
+						rank = 3
+					},
+					{
+						unit = "medic_M4",
+						freq = 0.7,
+						amount_min = 0,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}		
 		elseif difficulty_index == 7 then	
 			self.enemy_spawn_groups.FBI_swats = {
 				amount = {3, 4},
@@ -9156,13 +9303,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_swat_M4",
 						freq = 1,
 						amount_min = 3,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.DW_swat_rifle,
 						rank = 1
 					},
 					{
 						unit = "FBI_suit_M4_MP5",
 						freq = 1,
-						tactics = self._tactics.FBI_swat_rifle_flank,
+						tactics = self._tactics.MH_swat_rifle,
 						rank = 2
 					},					
 					{
@@ -9170,7 +9317,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_min = 1,
 						amount_max = 2,
 						freq = 1,
-						tactics = self._tactics.FBI_swat_shotgun,
+						tactics = self._tactics.MH_swat_shotgun,
 						rank = 3
 					},
 					{
@@ -9219,20 +9366,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		end
-		if difficulty_index <= 6 then
+		if difficulty_index <= 5 then
 			self.enemy_spawn_groups.FBI_heavys = {
 				amount = {3, 4},
 				spawn = {
 					{
 						unit = "FBI_heavy_G36",
 						freq = 1,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.FBI_heavy,
 						rank = 1
 					},
 					{
 						unit = "FBI_heavy_G36",
 						freq = 0.75,
-						tactics = self._tactics.FBI_swat_rifle_flank,
+						tactics = self._tactics.FBI_heavy_flank,
 						rank = 2
 					},
 					{
@@ -9259,6 +9406,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}
 				}
 			}
+		elseif difficulty_index == 6 then	
+			self.enemy_spawn_groups.FBI_heavys = {
+				amount = {3, 4},
+				spawn = {
+					{
+						unit = "FBI_heavy_G36",
+						freq = 1,
+						tactics = self._tactics.MH_heavy,
+						rank = 1
+					},
+					{
+						unit = "FBI_heavy_G36",
+						freq = 0.75,
+						tactics = self._tactics.MH_heavy_flank,
+						rank = 2
+					},
+					{
+						unit = "FBI_heavy_R870",
+						freq = 0.5,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_shotgun,
+						rank = 1
+					},
+					{
+						unit = "CS_tazer",
+						freq = 0.25,
+						amount_max = 1,
+						tactics = self._tactics.CS_tazer,
+						rank = 3
+					},
+					{
+						unit = "medic_M4",
+						freq = 0.2,
+						amount_min = 0,
+						amount_max = 1,
+						tactics = self._tactics.FBI_swat_rifle,
+						rank = 1
+					}
+				}
+			}		
 		elseif difficulty_index == 7 then	
 			self.enemy_spawn_groups.FBI_heavys = {
 				amount = {3, 4},
@@ -9267,14 +9454,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						unit = "FBI_heavy_G36_w",
 						freq = 1,
 						amount_min = 4,
-						tactics = self._tactics.FBI_heavy,
+						tactics = self._tactics.MH_heavy,
 						rank = 1
 					},
 					{
 						unit = "FBI_swat_M4",
 						freq = 1,
 						amount_min = 3,
-						tactics = self._tactics.FBI_heavy_flank,
+						tactics = self._tactics.MH_heavy_flank,
 						rank = 2
 					},
 					{
@@ -12187,7 +12374,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		else
-			self.besiege.assault.groups = {
+			self.besiege.assault.coolhunting = {
 				FBI_swats_weekend = {
 					0.2,
 					0.9,

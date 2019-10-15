@@ -60,6 +60,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_points = 0.0
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
+		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
 
 		local function revive_player()
 			self:revive(true)
@@ -300,9 +301,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.player:send_message(Message.OnPlayerDodge)
 			return	
 		end
-		if pm:has_category_upgrade("player", "dodge_to_heal") and self:get_real_armor() == 0 then --Rogue health regen.
-			self._damage_to_hot_stack = {}
-		end
+
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)
 		end
@@ -468,8 +467,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
 		end
 		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
-			self:fill_dodge_meter(1.5)
+			self:fill_dodge_meter(3.0, true)
 		end
+		self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 	end
 
 	function PlayerDamage:band_aid_health()
@@ -508,6 +508,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				attack_data.damage = attack_data.damage * 1
 			end
+		end
+
+		if managers.player:has_category_upgrade("player", "dodge_to_heal") and attack_data.damage > 0.0 then --Rogue health regen.
+			self._damage_to_hot_stack = {}
 		end
 		
 		attack_data.damage = attack_data.damage * managers.player:upgrade_value("player", "real_health_damage_reduction", 1)
@@ -645,11 +649,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	--Adds to/Subtracts from dodge meter and updates hud element.
-	function PlayerDamage:fill_dodge_meter(dodge_added)
+	function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
 		if self._dodge_points > 0 and not self:is_downed() then
-			self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
-			managers.hud:set_dodge_value(self._dodge_meter, self._dodge_points) --Goes through Hudmanager.lua then HUDtemp.lua.
+			if overfill or (self._dodge_meter >= 1.5 and dodge_added < 0) then
+				self._dodge_meter = math.max(self._dodge_meter + dodge_added, 0.0)
+			elseif self._dodge_meter < 1.5 then
+				self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
+			end
+			managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5), self._dodge_points) --Goes through Hudmanager.lua then HUDtemp.lua.
 		end
+	end
+
+	function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
+		self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 	end
 
 	Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)
@@ -664,7 +676,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
+		--Add passive dodge increases.
 		local passive_dodge = 0.0
+
+		--Yakuza capstone skill.
+		if self:health_ratio() < 0.5 then
+			passive_dodge = passive_dodge + (1 - self:health_ratio()) * managers.player:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
+		end
 
 		--Sicario capstone skill.
 		if self._in_smoke_bomb == 2.0 then
@@ -679,9 +697,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Duck and Cover aced.
 		if self._unit:movement():running() then
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "run_dodge_chance", 0)
-		end
-
-		if self._unit:movement():zipline_unit() then
+		elseif self._unit:movement():zipline_unit() then
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0)
 		end
 
@@ -718,7 +734,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local done = not next_doh or TimerManager:game():time() < next_doh.next_tick
 
 				if not done then
-					local regen_rate = self._hot_amount
+					local regen_rate = self._hot_amount --All this for a single line change so stacking health regen isn't coupled to grinder. :)
 
 					self:restore_health(regen_rate, true)
 
@@ -737,4 +753,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			until done
 		end
 	end
+
+	Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
+		if self:get_real_health() == 0 and not self._check_berserker_done then
+			if self._can_survive_one_hit then
+				self:change_health(0.1)
+				self._can_survive_one_hit = false
+				self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
+			end
+		end
+	end)
 end

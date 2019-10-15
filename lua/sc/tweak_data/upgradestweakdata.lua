@@ -106,10 +106,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.body_armor.concealment = {
 		30,
 		25,
-		20,
+		23,
+		21,
 		15,
 		5,
-		1,
 		0
 	}
 	self.values.player.body_armor.damage_shake = { 
@@ -393,7 +393,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.health_multiplier = {1.15, 1.4}
 
 				--Bullseye
-				self.values.player.headshot_regen_armor_bonus = {0.05, 3.5}
+				self.values.player.headshot_regen_armor_bonus = {0.5, 3.5}
 				self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
@@ -1030,8 +1030,8 @@ function UpgradesTweakData:_init_pd2_values()
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
 		tick_time = 2.0,
-		total_ticks = 15.0,
-		max_stacks = 100,
+		total_ticks = 10.0,
+		max_stacks = 67,
 		stacking_cooldown = 0.0,
 		add_stack_sources = {
 			bullet = false,
@@ -1192,11 +1192,24 @@ function UpgradesTweakData:_init_pd2_values()
 		{50, 6}
 	}
 	
-	--yoooooooooooooooooo--
-	self.values.player.armor_regen_damage_health_ratio_multiplier = {
-		0.20,
-		0.35,
-		0.50
+	--Yakuza--
+	self.values.player.survive_one_hit = {true}
+	self.values.survive_one_hit_armor = {5.0}
+
+	self.values.player.resistance_damage_health_ratio_multiplier = {
+		0.2
+	}
+
+	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
+		0.10
+	}
+
+	self.values.player.melee_kill_dodge_regen = {
+		0.5
+	}
+
+	self.values.player.kill_dodge_regen = {
+		0.5
 	}
 	
 	--Fat benis :DDDDD
@@ -2307,6 +2320,51 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "heal_over_time",
+			category = "player"
+		}
+	}
+	self.definitions.player_survive_one_hit = {
+		name_id = "menu_player_survive_one_hit",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "survive_one_hit",
+			category = "player"
+		}
+	}
+	self.definitions.player_dodge_regen_damage_health_ratio_multiplier = {
+		name_id = "menu_player_dodge_regen_damage_health_ratio_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "dodge_regen_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_resistance_damage_health_ratio_multiplier = {
+		name_id = "menu_player_resistance_damage_health_ratio_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "resistance_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_melee_kill_dodge_regen = {
+		name_id = "menu_player_melee_kill_dodge_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "melee_kill_dodge_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_kill_dodge_regen = {
+		name_id = "menu_player_kill_dodge_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "kill_dodge_regen",
 			category = "player"
 		}
 	}

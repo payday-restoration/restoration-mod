@@ -2714,8 +2714,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_movement_speed_damage_health_ratio_multiplier",
-					"player_movement_speed_damage_health_ratio_threshold_multiplier",
+					"player_kill_dodge_regen",
 					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
@@ -2738,7 +2737,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_melee_kill_dodge_regen",
-					"player_kill_dodge_regen",
 					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,

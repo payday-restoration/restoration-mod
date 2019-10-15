@@ -1197,19 +1197,19 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.survive_one_hit_armor = {7.0}
 
 	self.values.player.resistance_damage_health_ratio_multiplier = {
-		0.25
+		0.2
 	}
 
 	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
-		0.15
+		0.10
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
-		1.0
+		0.6
 	}
 
 	self.values.player.kill_dodge_regen = {
-		0.5
+		0.6
 	}
 	
 	--Fat benis :DDDDD

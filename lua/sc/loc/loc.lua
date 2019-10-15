@@ -1068,9 +1068,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		
 		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills up by up to ##15%## of your dodge every second.",	
-		["menu_deck12_3_desc_sc"] = "Your dodge is increased by ##5## points.\n\nThe lower your health, the faster you will move. When your health is below ##50%##, you will move up to ##20%## Faster.",	
-		["menu_deck12_5_desc_sc"] = "The lower your health, the more damage resistance you have. When your health is below ##50%##, you will gain up to ##25%## damage resistance.",	
-		["menu_deck12_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nKilling an enemy fills your dodge meter. The lower your health the more the dodge meter is filled, up to ##50%## of your dodge. Melee kills are worth double.",
+		["menu_deck12_3_desc_sc"] = "The lower your health the more the dodge meter is filled when you kill an enemy. When your health is below ##50%##, your meter fills by up to ##60%## of your dodge.\n\nYour dodge is increased by ##5## points.",
+		["menu_deck12_5_desc_sc"] = "The lower your health, the more damage resistance you have. When your health is below ##50%##, you will gain up to ##15%## damage resistance.",
+		["menu_deck12_7_desc_sc"] = "The lower your health the more the dodge meter is filled when you kill an enemy in melee. When your health is below ##50%##, your meter fills by up to an additional ##60%## of your dodge.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed, you survive with ##1## life point and you regain ##70## armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Hacker--

@@ -467,7 +467,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
 		end
 		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
-			self:fill_dodge_meter(1.5)
+			self:fill_dodge_meter(3.0, true)
 		end
 		self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 	end
@@ -649,10 +649,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	--Adds to/Subtracts from dodge meter and updates hud element.
-	function PlayerDamage:fill_dodge_meter(dodge_added)
+	function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
 		if self._dodge_points > 0 and not self:is_downed() then
-			self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
-			managers.hud:set_dodge_value(self._dodge_meter, self._dodge_points) --Goes through Hudmanager.lua then HUDtemp.lua.
+			if overfill or (self._dodge_meter >= 1.5 and dodge_added < 0) then
+				self._dodge_meter = math.max(self._dodge_meter + dodge_added, 0.0)
+			elseif self._dodge_meter < 1.5 then
+				self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
+			end
+			managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5), self._dodge_points) --Goes through Hudmanager.lua then HUDtemp.lua.
 		end
 	end
 

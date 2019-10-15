@@ -759,7 +759,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if self._can_survive_one_hit then
 				self:change_health(0.1)
 				self._can_survive_one_hit = false
-				self._regenerate_timer = 0.0
+				self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
 			end
 		end
 	end)

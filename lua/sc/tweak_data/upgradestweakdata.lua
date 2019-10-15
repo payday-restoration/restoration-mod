@@ -393,7 +393,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.health_multiplier = {1.15, 1.4}
 
 				--Bullseye
-				self.values.player.headshot_regen_armor_bonus = {0.05, 3.5}
+				self.values.player.headshot_regen_armor_bonus = {0.5, 3.5}
 				self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
@@ -1194,13 +1194,14 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Yakuza--
 	self.values.player.survive_one_hit = {true}
+	self.values.survive_one_hit_armor = {7.0}
 
 	self.values.player.resistance_damage_health_ratio_multiplier = {
 		0.25
 	}
 
 	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
-		0.10
+		0.15
 	}
 
 	self.values.player.melee_kill_dodge_regen = {

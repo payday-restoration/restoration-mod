@@ -1194,7 +1194,7 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Yakuza--
 	self.values.player.survive_one_hit = {true}
-	self.values.survive_one_hit_armor = {7.0}
+	self.values.survive_one_hit_armor = {5.0}
 
 	self.values.player.resistance_damage_health_ratio_multiplier = {
 		0.2

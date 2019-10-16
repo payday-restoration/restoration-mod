@@ -1,0 +1,7 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wolf_mask" materials="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" />
+    <graphics>
+        <object enabled="true" name="g_wolf" />
+    </graphics>
+</dynamic_object>
+

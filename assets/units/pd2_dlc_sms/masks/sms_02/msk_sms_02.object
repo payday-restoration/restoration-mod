@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_chains_mask" materials="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" />
+    <graphics>
+        <object enabled="true" name="g_chains" />
+    </graphics>
+</dynamic_object>

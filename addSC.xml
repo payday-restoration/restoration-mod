@@ -1716,4 +1716,25 @@
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_df"/>
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_nm"/>
+    <!--not shit secret masks-->
+	<object path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
+    <object path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>
+    <object path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
+    <object path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
+	<model path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
+    <model path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>
+    <model path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
+    <model path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_01/sms_01_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_01/sms_01_nm" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_02/sms_02_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_02/sms_02_nm" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_nm" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/>
 </table>

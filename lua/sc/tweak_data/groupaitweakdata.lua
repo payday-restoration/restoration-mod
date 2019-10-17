@@ -8878,7 +8878,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		if difficulty_index <= 6 then
+		if difficulty_index <= 5 then
 			self.enemy_spawn_groups.CS_tazers = {
 				amount = {2, 3},
 				spawn = {
@@ -8896,6 +8896,35 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						amount_min = 1,
 						amount_max = 2,
 						tactics = self._tactics.CS_cop_stealth,
+						rank = 1
+					},
+					{
+						unit = "medic_M4",
+						freq = 0.2,
+						amount_max = 1,
+						tactics = self._tactics.CS_cop_stealth,
+						rank = 2
+					}
+				}
+			}
+		elseif difficulty_index == 6 then
+			self.enemy_spawn_groups.CS_tazers = {
+				amount = {2, 3},
+				spawn = {
+					{
+						unit = "CS_tazer",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.CS_tazer,
+						rank = 2
+					},
+					{
+						unit = "CS_swat_MP5",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 2,
+						tactics = self._tactics.HRT_attack,
 						rank = 1
 					},
 					{
@@ -9285,7 +9314,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_swat_M4",
 						freq = 1,
-						tactics = self._tactics.HRT_attack,
+						tactics = self._tactics.MH_swat_rifle_flank,
 						rank = 2
 					},					
 					{

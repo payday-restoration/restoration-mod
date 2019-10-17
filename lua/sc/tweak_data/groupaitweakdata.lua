@@ -9285,7 +9285,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_swat_M4",
 						freq = 1,
-						tactics = self._tactics.MH_swat_rifle,
+						tactics = self._tactics.HRT_attack,
 						rank = 2
 					},					
 					{
@@ -9320,7 +9320,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_suit_M4_MP5",
 						freq = 1,
-						tactics = self._tactics.MH_swat_rifle,
+						tactics = self._tactics.HRT_attack,
 						rank = 2
 					},					
 					{
@@ -9355,7 +9355,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					{
 						unit = "FBI_suit_M4_MP5",
 						freq = 1,
-						tactics = self._tactics.ELITE_swat_rifle_flank,
+						tactics = self._tactics.HRT_attack,
 						rank = 2
 					},					
 					{

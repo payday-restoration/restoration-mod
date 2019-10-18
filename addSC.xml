@@ -1737,4 +1737,7 @@
     <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_nm" force="true"/>
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_df" force="true"/>
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/>
+
+    <!--Perk Decks-->
+    <texture path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
 </table>

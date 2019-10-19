@@ -469,7 +469,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
 			self:fill_dodge_meter(3.0, true)
 		end
-		self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 	end
 
 	function PlayerDamage:band_aid_health()
@@ -760,6 +759,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self:change_health(0.1)
 				self._can_survive_one_hit = false
 				self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
+			else
+				self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 			end
 		end
 	end)

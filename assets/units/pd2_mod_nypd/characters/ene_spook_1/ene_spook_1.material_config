@@ -38,5 +38,13 @@
         <bump_normal_texture file="units/payday2/textures/blank_nm"/>
     </material>
 
+    <material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
+	<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_il"/>
+	<self_illumination_texture 	file="units/payday2/characters/shared_textures/spook_il"/>
+	<opacity_texture 		file="units/payday2/characters/shared_textures/spook_il"/>
+	<variable 		value="reddot" type="scalar" name="il_multiplier"/>
+    </material>
+	
+
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

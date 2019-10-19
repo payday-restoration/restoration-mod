@@ -113,6 +113,9 @@
 	<object path="units/payday2/architecture/air_hangar_segment/air_shed_welcometothejungle_a" force="true" />	
 	<object path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" force="true" />
 	<object path="units/payday2/vehicles/str_vehicle_swat_van_gensec/str_vehicle_swat_van_gensec" force="true" />	
+	
+	<!--epic hd cloaker eyes thanks jarey-->
+	<texture path="units/payday2/characters/shared_textures/spook_il"/>
 
 	<!--Zeal Heavy Shield Illumination Fix (Thanks Wekk!!!!)-->		
 	<texture path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" force="true" />

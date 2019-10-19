@@ -43510,17 +43510,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 						value = 1
 					}
 				self.parts.wpn_fps_pis_b93r_comp_93r.stats = {
-						value = 4,
-						suppression = -2,
-						alert_size = -1,
-						recoil = 2,
-						concealment = -3
+						value = 1
 					}					
 				self.parts.wpn_fps_pis_beretta_co_equal.stats = {
-						value = 3,
-						spread = 2,
-						recoil = -1,						
-						concealment = -4
+						value = 7,
+						concealment = -1,
+						spread = -1,
+						recoil = 2
 					}										
 				self.parts.wpn_fps_pis_beretta_m_spike.stats = {
 						value = 1
@@ -43972,9 +43968,93 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end										
 
 		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Mod Pack
+			table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
+				"wpn_fps_upg_o_cqb"
+			})
+			self.wpn_fps_lmg_hk21.adds = { 
+				wpn_fps_upg_o_specter = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_aimpoint = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_docter = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_eotech = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_t1micro = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_cmore = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_acog = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_cs = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_eotech_xps = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_reflex = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_rx01 = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_rx30 = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_45iron = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_leupold = { "wpn_fps_ass_g3_body_rail" },
+				wpn_fps_upg_o_cqb = { "wpn_fps_ass_g3_body_rail" }, --is there a fuckin table.insert equivalent to this shit? who knows. fuck you.
+			}
 			self.parts.wpn_fps_upg_o_cqb.stats = {
+				value = 5
+				}
+			self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
 				value = 1
 				}
+			self.parts.wpn_fps_lmg_shuno_body_red.stats = {
+				value = 0
+				}
+			self.parts.wpn_fps_ass_amcar_fg_cylinder.stats = {
+				value = 5,
+				spread_moving = 1,
+				concealment = 1,
+				spread = 1
+				}
+			self.parts.wpn_fps_pis_2006m_g_pearl.stats = {
+				value = 2
+				}
+			self.parts.wpn_fps_smg_mp7_b_long.stats = {
+				value = 1,
+				spread = 1,
+				concealment = -2
+				}
+			self.parts.wpn_fps_smg_uzi_b_carbine.stats = {
+				value = 1,
+				spread = 1,
+				concealment = -2
+				}								
+			self.parts.wpn_fps_pis_chinchilla_cylinder_smooth.stats = {
+				value = 2,
+				concealment = 1				
+				}
+			self.parts.wpn_fps_pis_legacy_sl_chrome.stats = {
+				value = 1
+				}
+			self.parts.wpn_fps_pis_pl14_sl_chrome.stats = {
+				value = 1
+				}
+			self.parts.wpn_fps_pis_chinchilla_b_longboy.stats = {
+				value = 5,
+				spread = 2,
+				recoil = -1,
+				concealment = -3
+				}									
+			self.parts.wpn_fps_ass_m16_s_op.stats = {
+				value = 2,
+				spread = 2,
+				recoil = -1,
+				concealment = -3
+				}
+			self.parts.wpn_fps_pis_deagle_g_wooden.stats = {
+				value = 1,
+				recoil = 1,
+				concealment = -2
+				}
+			self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
+				value = 1
+				}				
+			self.parts.wpn_fps_pis_peacemaker_g_black.stats = {
+				value = 1
+				}								
+			self.parts.wpn_fps_ass_74_upper_receiver_bump.stats = {
+				value = 1,
+				recoil = 1,
+				concealment = -2
+				}				
 			self.parts.wpn_fps_pis_g18c_b_long.stats = {
 				value = 4,
 				spread = 1,
@@ -44129,11 +44209,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = -1,	
 				concealment = 1
 				}																		
-			self.parts.wpn_fps_ass_flint_b_long.stats = {
-				value = 1,
-				spread = 1,
-				concealment = -1
-				}	
 			self.parts.wpn_fps_ass_flint_b_long.stats = {
 				value = 1,
 				spread = 1,

@@ -233,7 +233,7 @@
 	</graphics>
 
 	<effects>
-		<effect_spawner name="es_light" enabled="false" object="Head" effect="effects/particles/character/cloaker_goggle" />
+		<effect_spawner name="es_light" enabled="false" object="Head" effect="units/pd2_mod_nypd/effects/particles/character/cloaker_goggle" />
 	</effects>	
 
 	<!--<lights>

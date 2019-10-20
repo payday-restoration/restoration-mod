@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wolf_mask" materials="units/mods/masks/msk_wolf_stone/msk_wolf_stone" />
+    <graphics>
+        <object enabled="true" name="g_wolf" />
+    </graphics>
+</dynamic_object>

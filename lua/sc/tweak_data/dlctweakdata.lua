@@ -91,6 +91,11 @@ function DLCTweakData:init(...)
 				amount = 1
 			},
 			{
+				type_items = "masks",
+				item_entry = "wolf_stone",
+				amount = 1
+			},
+			{
 				type_items = "materials",
 				item_entry = "jkl_matt01",
 				amount = 1

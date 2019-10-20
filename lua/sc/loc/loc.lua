@@ -224,6 +224,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
 		["bm_w_r0991"] = "AR-15 Varmint Pistol",
 		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
+		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",				
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",
 		["bm_w_m590"] = "Reinbeck 890 Shotgun",
 		["bm_w_m590_desc"] = "The criminal underworld's most popular shotgun is back and better than ever. With 8 rounds and nothing but raw power, the Reinbeck has finally returned to America's most infamous criminal crew.",		

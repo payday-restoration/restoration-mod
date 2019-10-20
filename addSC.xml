@@ -345,6 +345,16 @@
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/sweettooth"/>
 	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/f1"/>
+
+	<!--Mask: Stonecold Wolf-->	
+	<cooked_physics path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <model path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <object path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <unit path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <material_config path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <texture path="units/mods/masks/msk_wolf_stone/wolf_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_stone"/>      
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
@@ -1740,7 +1750,6 @@
     <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_nm" force="true"/>
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_df" force="true"/>
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/>
-
-    <!--Perk Decks-->
+	<!--Perk Decks-->
     <texture path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
 </table>

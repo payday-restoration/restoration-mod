@@ -61,6 +61,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
+		self._keep_health_on_revive = false
 
 		local function revive_player()
 			self:revive(true)
@@ -431,7 +432,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._incapacitated = nil
 		self._downed_timer = nil
 		self._downed_start_time = nil
-		if not arrested then
+		if not arrested and not self._keep_health_on_revive then
 			if managers.player:has_category_upgrade("player", "health_revive_max") then		
 				self:set_health(self:_max_health() * tweak_data.player.damage.REVIVE_HEALTH_STEPS_W_SKILL[self._revive_health_i] * (self._revive_health_multiplier or 1) * managers.player:upgrade_value("player", "revived_health_regain", 1))
 			else
@@ -454,6 +455,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.hud:pd_stop_progress()
 		self._revive_health_multiplier = nil
 		self._listener_holder:call("on_revive")
+		self._keep_health_on_revive = false
 		if managers.player:has_inactivate_temporary_upgrade("temporary", "revived_damage_resist") then
 			managers.player:activate_temporary_upgrade("temporary", "revived_damage_resist")
 		end
@@ -661,6 +663,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 		self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
+	end
+
+	function PlayerDamage:cloak_or_shock_incap()
+		self._keep_health_on_revive = true
 	end
 
 	Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)

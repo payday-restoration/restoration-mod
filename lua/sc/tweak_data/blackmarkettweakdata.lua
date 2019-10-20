@@ -176,6 +176,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}	
+		
+		--Stonecold Wolf
+		self.masks.wolf_stone = {
+			unit = "units/mods/masks/msk_wolf_stone/msk_wolf_stone",
+			name_id = "bm_msk_wolf_stone",
+			desc_id = "bm_msk_wolf_stone_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
 	end
 	
 	--we all know alligator skin's the best material right--

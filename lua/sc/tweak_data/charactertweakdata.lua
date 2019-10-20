@@ -11674,6 +11674,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			cop = {
+				incomming_captain = true,
+				incomming_gren = true,
+				incomming_tank = true,
+				incomming_spooc = true,
+				incomming_shield = true,
+				incomming_taser = true,
 				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
@@ -11698,6 +11704,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			swat = {
+				incomming_captain = true,
+				incomming_gren = true,
+				incomming_tank = true,
+				incomming_spooc = true,
+				incomming_shield = true,
+				incomming_taser = true,
 				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
@@ -11763,6 +11775,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			shield = {
+				incomming_captain = true,
+				incomming_gren = true,
+				incomming_tank = true,
+				incomming_spooc = true,
+				incomming_taser = true,
 				entry = true,
 			    follow_me = true,
 				aggressive_assault = true,

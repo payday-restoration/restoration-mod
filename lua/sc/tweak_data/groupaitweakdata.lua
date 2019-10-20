@@ -244,37 +244,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			group_min = 0,
 			queue = "ch2"
 		}
-		self.enemy_chatter.incomming_tank = {
+		self.enemy_chatter.incomming_captain = {
 			radius = 1500,
-			max_nr = 0,
+			max_nr = 1,
 			duration = {10, 10},
 			interval = {0.5, 1},
 			group_min = 0,
-			queue = "bdz"
+			queue = "att"
+		}
+		self.enemy_chatter.incomming_gren = {
+			radius = 1500,
+			max_nr = 1,
+			duration = {10, 10},
+			interval = {0.5, 1},
+			group_min = 0,
+			queue = "bak"
+		}
+		self.enemy_chatter.incomming_tank = {
+			radius = 1500,
+			max_nr = 1,
+			duration = {10, 10},
+			interval = {0.5, 1},
+			group_min = 0,
+			queue = "mov"
 		}
 		self.enemy_chatter.incomming_spooc = {
 			radius = 1200,
-			max_nr = 0,
+			max_nr = 1,
 			duration = {10, 10},
 			interval = {0.5, 1},
 			group_min = 0,
-			queue = "clk"
+			queue = "r01"
 		}
 		self.enemy_chatter.incomming_shield = {
 			radius = 1500,
-			max_nr = 0,
+			max_nr = 1,
 			duration = {10, 10},
 			interval = {0.5, 1},
 			group_min = 0,
-			queue = "shd"
+			queue = "pos"
 		}
 		self.enemy_chatter.incomming_taser = {
 			radius = 1500,
-			max_nr = 0,
+			max_nr = 1,
 			duration = {60, 60},
 			interval = {0.5, 1},
 			group_min = 0,
-			queue = "tsr"
+			queue = "bak"
 		}
 		self.enemy_chatter.heal_chatter = {
 			radius = 700,

@@ -279,11 +279,11 @@ end
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-local r = LevelsTweakData.LevelType.Russia
+local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local m = LevelsTweakData.LevelType.Murkywater
-local z = LevelsTweakData.LevelType.Zombie
+local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -368,6 +368,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
+
+		-- Ad Banner Change
+		["menu_changelog"] = "Latest Changelog",
+		["menu_discord"] = "Discord for finding crew mates, reporting bugs, giving feedback",
+		["menu_guide"] = "Steam Guide",
+		["menu_captains"] = "Information on Captains",
 				
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",

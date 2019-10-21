@@ -1,0 +1,230 @@
+<table directory="assets">
+	
+	<!-- Mutator Test -->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass_contour" force="true" />
+	
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass_contour" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass_contour" force="true" />
+
+	<!-- Mutator Test w/objects -->
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg" force="true" />
+
+	<sequence_manager path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg" force="true" />
+
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_head_debris" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_head_debris" force="true" />
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_head_debris" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_head_debris" force="true" />
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_head_debris" force="true" load="false"/>
+
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_upper_body_debris" force="true" />
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_upper_body_debris" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_upper_body_debris" force="true" />
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_upper_body_debris" force="true" load="false"/>
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870_contour" force="true" />
+
+	<sequence_manager path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg_contour" force="true" />
+
+	<sequence_manager path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga_contour" force="true" />
+
+	<sequence_manager path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass" force="true" />
+
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870_contour" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870" force="true" />
+
+    <unit path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" load="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" />
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" />
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" />
+    <sequence_manager path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" />
+
+    <unit path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" force="true" load="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" force="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" force="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" force="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" force="true"/>
+
+	<unit path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" force="true" load="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" force="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" force="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" force="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" force="true"/>
+
+    <unit path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" force="true" load="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" force="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" force="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" force="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" force="true"/>
+
+    <unit path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" force="true" load="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" force="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" force="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" force="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" force="true"/>
+
+    <unit path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" force="true" load="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" force="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" force="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" force="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" force="true"/>
+
+    <unit path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" force="true" load="false"/>
+	<cooked_physics path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" force="true"/>
+	<model path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" force="true"/>
+	<object path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" force="true"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" force="true"/>
+</table>

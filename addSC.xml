@@ -354,7 +354,37 @@
     <material_config path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
     <texture path="units/mods/masks/msk_wolf_stone/wolf_df"/>
 	
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_stone"/>      
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_stone"/>  
+	
+	<!--Aged Crew Masks-->	
+    <cooked_physics path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <model path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <object path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <unit path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <material_config path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+	
+	<cooked_physics path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <model path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <object path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <unit path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <material_config path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+	
+	<cooked_physics path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <model path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <object path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <unit path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <material_config path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+	
+	<cooked_physics path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <model path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <object path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <unit path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <material_config path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+
+    <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/dallas_aged"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/chains_aged"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/hoxton_aged"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_aged"/>       
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

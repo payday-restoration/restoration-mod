@@ -186,6 +186,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			value = 0,
 			global_value = "rest",
 			texture_bundle_folder = "mods"
+		}	
+		
+		--Aged Dallas
+		self.masks.dallas_aged = {
+			unit = "units/mods/masks/msk_dallas_aged/msk_dallas_aged",
+			name_id = "bm_msk_dallas_aged",
+			desc_id = "bm_msk_dallas_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Aged Chains
+		self.masks.chains_aged = {
+			unit = "units/mods/masks/msk_chains_aged/msk_chains_aged",
+			name_id = "bm_msk_chains_aged",
+			desc_id = "bm_msk_chains_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Aged Hoxton
+		self.masks.hoxton_aged = {
+			unit = "units/mods/masks/msk_hoxton_aged/msk_hoxton_aged",
+			name_id = "bm_msk_hoxton_aged",
+			desc_id = "bm_msk_hoxton_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Aged Wolf
+		self.masks.wolf_aged = {
+			unit = "units/mods/masks/msk_wolf_aged/msk_wolf_aged",
+			name_id = "bm_msk_wolf_aged",
+			desc_id = "bm_msk_wolf_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
 		}
 	end
 	

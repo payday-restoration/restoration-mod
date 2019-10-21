@@ -92,6 +92,26 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "masks",
+				item_entry = "dallas_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "chains_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "hoxton_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "wolf_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
 				item_entry = "wolf_stone",
 				amount = 1
 			},

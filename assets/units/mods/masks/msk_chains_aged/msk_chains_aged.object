@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_chains_mask" materials="units/mods/masks/msk_chains_aged/msk_chains_aged" />
+    <graphics>
+        <object enabled="true" name="g_chains" />
+    </graphics>
+</dynamic_object>

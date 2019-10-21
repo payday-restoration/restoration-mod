@@ -275,6 +275,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
+		
+		--Vyse Dallas
+		self.masks.vyse_dallas = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas",
+			name_id = "bm_msk_vyse_dallas",
+			desc_id = "bm_msk_vyse_dallas_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Chains
+		self.masks.vyse_chains = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains",
+			name_id = "bm_msk_vyse_chains",
+			desc_id = "bm_msk_vyse_chains_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Hoxton
+		self.masks.vyse_hoxton = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton",
+			name_id = "bm_msk_vyse_hoxton",
+			desc_id = "bm_msk_vyse_hoxton_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Wolf
+		self.masks.vyse_wolf = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf",
+			name_id = "bm_msk_vyse_wolf",
+			desc_id = "bm_msk_vyse_wolf_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
 	end
 	
 	--we all know alligator skin's the best material right--

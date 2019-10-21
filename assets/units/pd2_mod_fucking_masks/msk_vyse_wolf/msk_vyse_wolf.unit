@@ -1,0 +1,7 @@
+<unit type="static" slot="1" >
+    <object file="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="MaskExt" name="base" />
+    </extensions>
+</unit>

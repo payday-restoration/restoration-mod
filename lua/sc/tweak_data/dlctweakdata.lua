@@ -132,6 +132,26 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "masks",
+				item_entry = "vyse_dallas",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_chains",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_hoxton",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_wolf",
+				amount = 1
+			},
+			{
+				type_items = "masks",
 				item_entry = "wolf_stone",
 				amount = 1
 			},

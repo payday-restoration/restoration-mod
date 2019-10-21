@@ -423,6 +423,41 @@
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/beef_hoxton"/> 
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/beef_wolf"/> 
 	
+	<!--Vyse Masks-->		
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas_df"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains_df"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton_df"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/> 
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf_df"/> 
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf_nm"/> 
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_dallas"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_chains"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_hoxton"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_wolf"/> 
+	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
 	<model path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

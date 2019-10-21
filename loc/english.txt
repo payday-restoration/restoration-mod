@@ -268,6 +268,15 @@
 	"bm_msk_beef_hoxton_desc" : "The Crew used these when doing the Slaughterhouse job. Hoxton wanted something efficient and protective but still stylish and thus the mask was born.",
 	"bm_msk_beef_wolf" : "Beeef Wolf",
 	"bm_msk_beef_wolf_desc" : "The Crew used these when doing the Slaughterhouse job. Wolf's design was inspired by one of his favourite character designs from his game developer days.",
+   
+    "bm_msk_vyse_dallas" : "The Source",	
+	"bm_msk_vyse_dallas_desc" : "Vyse stood face to face with the devil of pepper extracts and survived, this mask was made out of the bones of that devil.",
+	"bm_msk_vyse_chains" : "Childs Play",
+	"bm_msk_vyse_chains_desc" : "Although Vyse stole more money and gold than Fort Knox could hold, he had a decency to show some of share some of the contents with sick children. Bain visited some of the children and this mask is their thanks for Vyse.",
+	"bm_msk_vyse_hoxton" : "The Three Stooges",
+	"bm_msk_vyse_hoxton_desc" : "They say when you mess up you should face pain and try again. Not Vyse, every time he fucked up he got slapped by the hands of former military and kept going. Not even Larry, Curley, and Moe could take such a beating.",
+	"bm_msk_vyse_wolf" : "Bear Grylls",
+	"bm_msk_vyse_wolf_desc" : "Vyse challenged Bear Grylls to a piss drinking completion... Vyse won, and Mr. Grylls used his survival skills to help make this mask.",
 	
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",

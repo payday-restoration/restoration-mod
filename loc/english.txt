@@ -261,9 +261,9 @@
 	"bm_msk_wolf_aged_desc" : "You found this mask in the strange Egyptian box at Henry's Rock, and decided to take it home as a souvenir. You have no idea where it originally came from or who made it....", 
    
     "bm_msk_beef_dallas" : "Beeef Dallas",	
-	"bm_msk_beef_dallas_desc" : "The Crew used these when doing the Slaughterhouse job. Dallas chose to keep the design similar to his iconic clown mask",
+	"bm_msk_beef_dallas_desc" : "The Crew used these when doing the Slaughterhouse job. Dallas chose to keep the design similar to his iconic clown mask.",
 	"bm_msk_beef_chains" : "Beeef Chains",
-	"bm_msk_beef_chains_desc" : "The Crew used these when doing the Slaughterhouse job. Chains being the enforcer type based the design off the most intimidating and what's more intimidating than a dinosaur?.",
+	"bm_msk_beef_chains_desc" : "The Crew used these when doing the Slaughterhouse job. Chains being the enforcer type based the design off the most intimidating and what's more intimidating than a dinosaur?",
 	"bm_msk_beef_hoxton" : "Beeef Hoxton",
 	"bm_msk_beef_hoxton_desc" : "The Crew used these when doing the Slaughterhouse job. Hoxton wanted something efficient and protective but still stylish and thus the mask was born.",
 	"bm_msk_beef_wolf" : "Beeef Wolf",

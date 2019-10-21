@@ -231,6 +231,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
+		
+		--Beeef Dallas
+		self.masks.beef_dallas = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas",
+			name_id = "bm_msk_beef_dallas",
+			desc_id = "bm_msk_beef_dallas_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Chains
+		self.masks.beef_chains = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains",
+			name_id = "bm_msk_beef_chains",
+			desc_id = "bm_msk_beef_chains_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Hoxton
+		self.masks.beef_hoxton = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton",
+			name_id = "bm_msk_beef_hoxton",
+			desc_id = "bm_msk_beef_hoxton_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Wolf
+		self.masks.beef_wolf = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf",
+			name_id = "bm_msk_beef_wolf",
+			desc_id = "bm_msk_beef_wolf_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
 	end
 	
 	--we all know alligator skin's the best material right--

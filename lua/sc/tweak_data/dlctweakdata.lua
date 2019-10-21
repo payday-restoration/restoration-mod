@@ -112,6 +112,26 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "masks",
+				item_entry = "beef_dallas",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_chains",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_hoxton",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_wolf",
+				amount = 1
+			},
+			{
+				type_items = "masks",
 				item_entry = "wolf_stone",
 				amount = 1
 			},

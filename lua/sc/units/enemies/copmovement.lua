@@ -480,7 +480,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"boom_summers",
 					"summers"
 				}
-				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 999, managers.slot:get_mask("enemies"))
+				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.doc_radius * 1, managers.slot:get_mask("enemies"))
 				if enemies then
 					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do

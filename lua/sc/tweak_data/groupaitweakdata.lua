@@ -7725,6 +7725,55 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			access = access_type_all
 		}
+		if difficulty_index <= 7 then
+			self.unit_categories.Tank_Ben = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},					
+					russia = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},
+					murkywater = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},
+					nypd = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},	
+					lapd = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					}				
+				},
+				access = access_type_all
+			}	
+		else
+			self.unit_categories.Tank_Ben = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},					
+					russia = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},
+					murkywater = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+					},
+					nypd = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+					},	
+					lapd = {
+						Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+					}				
+				},
+				access = access_type_all
+			}		
+		end
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("SC/Holiday") then		
 			self.unit_categories.Tank_Titan = {
 				unit_types = {
@@ -10070,27 +10119,73 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		self.enemy_spawn_groups.Cap_Spring = {
-			amount = {3, 3},
-			spawn = {
-				{
-					unit = "Cap_Spring",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.Cap_spring,
-					rank = 1
-				},
-				{
-					unit = "Tank_Titan",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_spring,
-					rank = 2
+		if difficulty_index <= 5 then
+			self.enemy_spawn_groups.Cap_Spring = {
+				amount = {1, 1},
+				spawn = {
+					{
+						unit = "Cap_Spring",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_spring,
+						rank = 1
+					}
 				}
-			}
-		}		
+			}	
+		elseif difficulty_index == 6 or difficulty_index == 7 then
+			self.enemy_spawn_groups.Cap_Spring = {
+				amount = {3, 3},
+				spawn = {
+					{
+						unit = "Cap_Spring",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_spring,
+						rank = 1
+					},
+					{
+						unit = "Tank_Titan",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.Cap_spring,
+						rank = 2
+					}
+				}
+			}				
+		else
+			self.enemy_spawn_groups.Cap_Spring = {
+				amount = {5, 5},
+				spawn = {
+					{
+						unit = "Cap_Spring",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_spring,
+						rank = 1
+					},
+					{
+						unit = "Tank_Titan",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.Cap_spring,
+						rank = 2
+					},
+					{
+						unit = "Tank_Ben",
+						freq = 1,
+						amount_min = 2,
+						amount_max = 2,
+						tactics = self._tactics.Cap_spring,
+						rank = 2
+					},					
+				}
+			}			
+		end
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {1, 1},
 			spawn = {

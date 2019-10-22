@@ -11925,6 +11925,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 		
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0
+		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
@@ -12103,6 +12106,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 		
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0
+		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
@@ -12279,6 +12285,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0		
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12457,6 +12466,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
+		
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0		
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)

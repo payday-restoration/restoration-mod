@@ -457,6 +457,16 @@
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_chains"/> 
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_hoxton"/> 
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_wolf"/> 
+   
+    <!--secret hoxton reborn-->
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <model path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <object path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_old_hoxton"/> 
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

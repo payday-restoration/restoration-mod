@@ -278,6 +278,9 @@
 	"bm_msk_vyse_wolf" : "Bear Grylls",
 	"bm_msk_vyse_wolf_desc" : "Vyse challenged Bear Grylls to a piss drinking completion... Vyse won, and Mr. Grylls used his survival skills to help make this mask.",
 	
+	"bm_msk_secret_old_hoxton" : "Secret Hoxton Reborn",
+	"bm_msk_secret_old_hoxton_desc" : "Hoxton left the Old Country to get his Payday in the new. When Bain first told him about the Secret, he fancied the idea of going after ancient items for their potential value, never really caring whether or not the legendary power Bain talked about was real or not.",	
+   
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",
 	"material_jkl_matt01_title" : "Fighting Feathers",

@@ -319,6 +319,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
+		
+		--Secret Hoxton Reborn
+		self.masks.secret_old_hoxton = {
+			unit = "units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn",
+			name_id = "bm_msk_secret_old_hoxton",
+			desc_id = "bm_msk_secret_old_hoxton_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
 	end
 	
 	--we all know alligator skin's the best material right--

@@ -11200,7 +11200,47 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 11
 		}
 		self.f2000.panic_suppression_chance = 0.0		
-		end				
+		end
+
+	if self.bajur then --carl ruins everything's Honey Badger
+		self.bajur.has_description = false
+		self.bajur.categories = {
+			"assault_rifle"
+		}
+		self.bajur.CLIP_AMMO_MAX = 30
+		self.bajur.AMMO_MAX = 135
+		self.bajur.tactical_reload = 1
+		self.bajur.fire_mode_data.fire_rate = 0.075
+		self.bajur.auto.fire_rate = 0.075
+		self.bajur.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.bajur.spread.standing = 3
+		self.bajur.use_data.selection_index = 1
+		self.bajur.spread.crouching = 2
+		self.bajur.spread.steelsight = 1
+		self.bajur.spread.moving_standing = 4
+		self.bajur.spread.moving_crouching = 3
+		self.bajur.spread.moving_steelsight = 2
+		self.bajur.panic_suppression_chance = 0.0
+		self.bajur.kick.standing = self.new_m4.kick.standing
+		self.bajur.kick.crouching = self.new_m4.kick.standing
+		self.bajur.kick.steelsight = self.new_m4.kick.standing		
+		self.bajur.stats = {
+			damage = 34,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 8,
+			zoom = 3,
+			concealment = 21,
+			suppression = 24,
+			alert_size = 24,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	
+	end				
+		
 
 		if self.tilt then --Gambyt's AN 92
 			self.tilt.has_description = false		
@@ -11387,8 +11427,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.spread.moving_steelsight = 2 * 1
 		self.stf12.CLIP_AMMO_MAX = 4
 		self.stf12.AMMO_MAX = 45
-		self.stf12.damage_near = 800
-		self.stf12.damage_far = 1600
+		self.stf12.damage_near = 600
+		self.stf12.damage_far = 1200
 		self.stf12.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.stf12.fire_mode_data.fire_rate = 0.4
 		self.stf12.single.fire_rate = 0.4
@@ -11397,17 +11437,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.stf12.kick.steelsight = self.new_m4.kick.standing		
 		self.stf12.stats = {
 			damage = 100,
-			spread = 7,
+			spread = 6,
 			recoil = 20,
 			spread_moving = 6,
 			zoom = 3,
-			concealment = 18,
+			concealment = 19,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11			
+			reload = 11
 		}
 		self.stf12.panic_suppression_chance = 0.0
 	end	
@@ -12815,25 +12855,32 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	if self.welrod then --Silent Enforcer's Welrod
-		self.welrod.AMMO_MAX = 40
-		self.welrod.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.welrod.has_description = false
+		self.welrod.desc_id = "bm_ap_weapon_sc_desc"
+		self.welrod.fire_mode_data.fire_rate = 0.1
+		self.welrod.single.fire_rate = 0.1
 		self.welrod.spread.standing = 3
 		self.welrod.spread.crouching = 2
+		self.welrod.tactical_reload = 1 --HELL YEAH FUCKING TACTICAL WELROD FUCK REALISM
 		self.welrod.spread.steelsight = 1
-		--self.welrod.spread.crouching_steelsight = 
 		self.welrod.spread.moving_standing = 4
 		self.welrod.spread.moving_crouching = 3
 		self.welrod.spread.moving_steelsight = 2
-		--self.welrod.spread.moving_crouching_steelsight = 
+		self.welrod.kick.standing = self.glock_17.kick.standing
+		self.welrod.kick.crouching = self.glock_17.kick.standing
+		self.welrod.kick.steelsight = self.glock_17.kick.standing
+		self.welrod.CLIP_AMMO_MAX = 8
+		self.welrod.AMMO_MAX = 45
+		self.welrod.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.welrod.stats = {
-			damage = 100,
+			damage = 100, --pretend this is cod ww2
 			spread = 20,
 			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
-			suppression = 0,
-			alert_size = 0,
+			suppression = 24,
+			alert_size = 24,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,

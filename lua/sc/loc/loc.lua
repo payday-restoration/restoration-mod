@@ -217,6 +217,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
 		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
+		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",		
+		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",				
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",				
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				

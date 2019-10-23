@@ -40298,43 +40298,117 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_smg_mac10mpa_front_ris.stats = {
 					value = 1
 			}
+		end
+
+		if self.wpn_fps_ass_bajur then -- Carl Ruins Everything's Honey Badger
+			self.parts.wpn_fps_upg_bajur_m_usgi.stats = {
+					value = 1
+			}
+			self.parts.wpn_fps_upg_bajur_m_smol.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 2,
+					extra_ammo = -10
+			}
+			self.parts.wpn_fps_upg_bajur_b_short.stats = {
+					concealment = 2,
+					spread = -1
+			}
+			self.parts.wpn_fps_upg_bajur_b_long.stats = {
+					concealment = -2,
+					spread = 1
+			}
+			self.parts.wpn_fps_upg_bajur_s_ext.stats = {
+					value = 0,
+					concealment = -1,
+					recoil = 1
+			}
+			self.parts.wpn_fps_upg_bajur_s_nope.stats = {
+					value = 0,
+					concealment = 1,
+					recoil = -1
+			}									
+			self.parts.wpn_fps_upg_bajur_fg_dmr.stats = { --alright this is pretty cool, I'm giving this one a pass
+					value = 2,
+					recoil = -1,
+					damage = 66,
+					spread = 2,
+					suppression = -3,
+					alert_size = -3,					
+					extra_ammo = -10,
+					concealment = -3,					
+					total_ammo_mod = -67
+			}
+			self.parts.wpn_fps_upg_bajur_fg_dmr.adds = {"wpn_fps_upg_bajur_m_statless"}			
+			self.parts.wpn_fps_upg_bajur_fg_dmr.forbids = {
+				"wpn_fps_upg_bajur_m_usgi",
+				"wpn_fps_upg_bajur_m_quick",
+				"wpn_fps_upg_bajur_m_plate",
+				"wpn_fps_upg_i_autofire",
+				"wpn_fps_upg_i_singlefire",				
+				"wpn_fps_upg_bajur_m_smol"
+			}
+			self.parts.wpn_fps_upg_bajur_m_statless = {
+					type = "magazine",
+					a_obj = "a_m",
+					forbids = {"wpn_fps_ass_bajur_m_mag"},
+					unit = "units/mods/weapons/wpn_fps_ass_bajur_pts/wpn_fps_upg_bajur_m_smol",					
+					stats = {value = 0}
+			}						
+			self.parts.wpn_fps_upg_bajur_fg_dmr.perks = {"fire_mode_single"}
+			self.parts.wpn_fps_upg_bajur_am_grendel.pcs = nil
+			self.parts.wpn_fps_upg_bajur_fg_dmr.custom_stats = { 
+				rof_mult = 0.75, ammo_pickup_min_mul = 0.3333, ammo_pickup_max_mul = 0.3333
+			}
+			self.parts.wpn_fps_ass_bajur_b_std.stats = nil --koral why didn't you change alert_size in <weapon/>???? does beardlib not support this?
+			self.parts.wpn_fps_upg_bajur_m_quick.stats = { --cosmetic stat change of normal small mag, not sure what to do with this cause I'm dumb
+					value = 2,
+					concealment = -2,
+					reload = 2,
+					extra_ammo = -10
+			}
+			self.parts.wpn_fps_upg_bajur_m_plate.stats = {
+					value = 2,
+					concealment = -1,
+					reload = 1
+			}			
 		end	
 		
+		
 		if self.wpn_fps_shot_stf12 then -- Mira's STF 12 Compact
-			self.parts.wpn_fps_shot_stf12_choke.stats = {
-						value = 5,
-						suppression = -2,
-						recoil = 2,
-						spread = -1
-					}			
-			self.parts.wpn_fps_shot_stf12_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}							
-			self.parts.wpn_fps_shot_stf12_b_long.stats = { 
-						value = 2,
-						concealment = 1,						
-						recoil = 1
-					}					
-			self.wpn_fps_shot_stf12.override = { 
-			wpn_fps_upg_m4_g_sniper = {
-				stats = {
-					value = 2,
-					spread = 1
-				},
-				custom_stats = {
-					damage_near_mul = 100,
-					damage_far_mul = 200
-				}
-			},
-			wpn_fps_upg_m4_g_hgrip = {
-				stats = {
-					value = 2,
-					spread = 2,
-					recoil = -1,
-				},
-				custom_stats = {
-					damage_near_mul = 200,
-					damage_far_mul = 400
-				}
-			},
+		self.parts.wpn_fps_shot_stf12_choke.stats = {
+				value = 5,
+				suppression = -2,
+				recoil = 2,
+				spread = -1
+			}
+		self.parts.wpn_fps_shot_stf12_stock_folded.stats = {
+				value = 0,
+				recoil = -1,
+				concealment = 2
+			}
+		self.parts.wpn_fps_shot_stf12_stock_none.stats = {
+				value = 0,
+				recoil = -1,
+				spread = -1,
+				concealment = 3
+			}									
+		self.parts.wpn_fps_shot_stf12_choke.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}							
+		self.parts.wpn_fps_shot_stf12_b_long.stats = { 
+			value = 2,
+			spread = 1,
+			concealment = -3,
+			extra_ammo = 2
+		}
+		self.parts.wpn_fps_shot_stf12_b_long.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+		self.parts.wpn_fps_shot_stf12_b_short.stats = { 
+			value = 2,
+			spread = -1,
+			concealment = 3,
+			extra_ammo = -2
+		}
+		self.parts.wpn_fps_shot_stf12_b_short.custom_stats = {damage_near_mul = -100, damage_far_mul = -200}
+		self.wpn_fps_shot_stf12.override = { 
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 10,
@@ -42979,6 +43053,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end		
 			
 		if self.parts.wpn_fps_upg_m4_m_x15drum then --Pawcio's M4 X 15 Drum Magazine
+		
 				self.parts.wpn_fps_upg_m4_m_x15drum.stats = { 
 					value = 3,
 					concealment = -3,
@@ -42998,7 +43073,21 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 					concealment = -3,
 					reload = -2,
 					extra_ammo = 20
-				}}}															
+				}}}
+				self.wpn_fps_ass_m16.override = {
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 20
+				}}}
+				self.wpn_fps_ass_m4.override = {
+				wpn_fps_upg_m4_m_x15drum = {stats = {
+					value = 3,
+					concealment = -3,
+					reload = -2,
+					extra_ammo = 20
+				}}}																							
 				self.wpn_fps_ass_ak5.override = {
 				wpn_fps_upg_m4_m_x15drum = {stats = {
 					value = 3,
@@ -46462,10 +46551,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 		end				
 
 		if self.wpn_fps_pis_welrod then --Silent Enforcer's Welrod
-			self.parts.wpn_fps_pis_welrod_b_bolt.stats = {
-				suppression = 17,
-				alert_size = 17
-			}
+			self.parts.wpn_fps_pis_welrod_b_bolt.stats = nil
 			self.parts.wpn_fps_pis_welrod_glow.stats = {
 				value = 0,
 				spread = 0

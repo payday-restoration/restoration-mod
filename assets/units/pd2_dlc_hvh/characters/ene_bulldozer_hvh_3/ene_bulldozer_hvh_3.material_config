@@ -1,0 +1,15 @@
+<materials version="3" group="ene_bulldozer_hvh_3">
+    <material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_nm"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_df"/>
+    </material>
+    <material name="mtr_bulldozer_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_nm" mips="1"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_df" mips="1"/>
+    </material>
+    <material name="mtr_bulldozer_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_nm" mips="4"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_df" mips="4"/>
+    </material> 
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

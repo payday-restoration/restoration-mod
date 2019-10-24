@@ -1,0 +1,195 @@
+<table directory="assets">
+	
+	<!-- Mutator Test -->
+	<unit path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" force="true" />
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" force="true" />
+	<sequence_manager path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1" force="true" />
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4" force="true" />
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870_husk" force="true" load="true"/>
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1" force="true" />
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1" force="true" />
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2" force="true" />
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870_husk" force="true" load="true"/>
+	
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" force="true" />
+
+	<unit path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1" force="true" />
+
+</table>

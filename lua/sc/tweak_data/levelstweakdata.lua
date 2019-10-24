@@ -223,17 +223,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if MutatorCheck and MutatorCheck:get_faction_override() and MutatorCheck:get_faction_override() == "america" then
 				return self.ai_groups.america
 			elseif MutatorCheck and MutatorCheck:get_faction_override() and MutatorCheck:get_faction_override() == "russia" then
-					if not PackageManager:loaded("packages/akanassets") then
-						PackageManager:load("packages/akanassets")
-					end
-					if not PackageManager:loaded("packages/akanassetsnew") then
-						PackageManager:load("packages/akanassetsnew")
-					end
-					if not PackageManager:loaded("levels/narratives/elephant/mad/world_sounds") then
-						PackageManager:load("levels/narratives/elephant/mad/world_sounds")
-					end
-					return self.ai_groups.russia
+				if not PackageManager:loaded("packages/akanassets") then
+					PackageManager:load("packages/akanassets")
 				end
+				if not PackageManager:loaded("packages/akanassetsnew") then
+					PackageManager:load("packages/akanassetsnew")
+				end
+				if not PackageManager:loaded("levels/narratives/elephant/mad/world_sounds") then
+					PackageManager:load("levels/narratives/elephant/mad/world_sounds")
+				end
+				return self.ai_groups.russia
+			elseif MutatorCheck and MutatorCheck:get_faction_override() and MutatorCheck:get_faction_override() == "murkywater" then
+				if not PackageManager:loaded("packages/murkyassets") then
+					PackageManager:load("packages/murkyassets")
+				end
+				if not PackageManager:loaded("levels/narratives/locke/bph/world_sounds") then
+					PackageManager:load("levels/narratives/locke/bph/world_sounds")
+				end
+				return self.ai_groups.murkywater
+			end
 		else
 			local level_data = Global.level_data and Global.level_data.level_id and self[Global.level_data.level_id]
 	

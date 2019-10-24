@@ -425,7 +425,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._values.enemy = murkywater[self._values.enemy] or self._values.enemy
 		end
 
-		if ai_type == "russia" then
+		if ai_type == "russia" and not managers.mutators and managers.mutators:is_mutator_active(MutatorFactionsReplacer) then
 				if russia[self._values.enemy] then
 					self._values.enemy = russia[self._values.enemy]
 				end

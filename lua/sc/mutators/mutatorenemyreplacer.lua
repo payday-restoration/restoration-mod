@@ -1215,8 +1215,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if not PackageManager:loaded("packages/zombieassets") then
 			PackageManager:load("packages/zombieassets")
 		end
-		if not PackageManager:loaded("packages/narr_hvh") then
-			PackageManager:load("packages/narr_hvh")
+		if not PackageManager:loaded("packages/zombieassetsnew") then
+			PackageManager:load("packages/zombieassetsnew")
 		end
 		if not PackageManager:loaded("levels/narratives/bain/hvh/world_sounds") then
 			PackageManager:load("levels/narratives/bain/hvh/world_sounds")

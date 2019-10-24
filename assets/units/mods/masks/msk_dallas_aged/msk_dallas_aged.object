@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_dallas_mask" materials="units/mods/masks/msk_dallas_aged/msk_dallas_aged" />
+    <graphics>
+        <object enabled="true" name="g_dallas" />
+    </graphics>
+</dynamic_object>

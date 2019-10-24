@@ -92,6 +92,71 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "masks",
+				item_entry = "dallas_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "chains_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "hoxton_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "wolf_aged",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_dallas",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_chains",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_hoxton",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "beef_wolf",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_dallas",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_chains",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_hoxton",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "vyse_wolf",
+				amount = 1
+			},
+			{
+				type_items = "masks",
+				item_entry = "secret_old_hoxton",
+				amount = 1
+			},
+			{
+				type_items = "masks",
 				item_entry = "wolf_stone",
 				amount = 1
 			},

@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mad/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" orientation_object="rp_ene_acc_bulldozer_chest" />
+	<bodies>
+		<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_bulldozer_chest" />
+			<object name="c_armor_chest" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<graphic_group name="grp_bulldozer_chest" enabled="true">
+			<object name="g_armor_chest" enabled="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

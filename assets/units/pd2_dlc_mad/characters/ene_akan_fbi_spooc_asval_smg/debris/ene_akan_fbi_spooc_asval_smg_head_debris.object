@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/debris/ene_akan_fbi_spooc_asval_smg_head_debris" orientation_object="rp_ene_spook_head_debris" />
+	<bodies>
+		<body name="body_c_sphere" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_spook_head_debris" />
+			<object name="c_sphere" collision_type="sphere" padding="-13"/>
+			<object name="c_cube" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="flesh" />
+	<graphics>
+		<object name="g_head" enabled="true" />
+		<object name="g_nvg" enabled="true"/>
+		<object name="s_mesh_mopp" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

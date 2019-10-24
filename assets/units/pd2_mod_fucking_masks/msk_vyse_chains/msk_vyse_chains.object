@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_hockey_b_mask" materials="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains" />
+    <graphics>
+        <object enabled="true" name="g_hockey_b" />
+    </graphics>
+</dynamic_object>

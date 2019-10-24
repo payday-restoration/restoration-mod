@@ -328,5 +328,7 @@
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets2" file="addoutfit_2.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets3" file="addoutfit_3.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/akanassetsnew" file="addakannew.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/zombieassetsnew" file="addzombienew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 </mod>

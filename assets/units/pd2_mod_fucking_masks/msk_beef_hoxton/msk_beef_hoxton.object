@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gage_blade_mask" materials="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton" />
+    <graphics>
+        <object enabled="true" name="g_gage_blade" />
+    </graphics>
+</dynamic_object>

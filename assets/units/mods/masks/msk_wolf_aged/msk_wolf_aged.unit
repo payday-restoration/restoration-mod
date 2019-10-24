@@ -1,0 +1,7 @@
+<unit type="static" slot="1" >
+    <object file="units/mods/masks/msk_wolf_aged/msk_wolf_aged" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="MaskExt" name="base" />
+    </extensions>
+</unit>

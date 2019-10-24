@@ -217,6 +217,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
 		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
+		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",		
+		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",				
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",				
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
@@ -279,11 +281,11 @@ end
 
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-local r = LevelsTweakData.LevelType.Russia
+local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local m = LevelsTweakData.LevelType.Murkywater
-local z = LevelsTweakData.LevelType.Zombie
+local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
@@ -368,6 +370,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
+
+		-- Ad Banner Change
+		["menu_changelog"] = "Latest Changelog",
+		["menu_discord"] = "Discord Server",
+		["menu_guide"] = "Steam Guide",
+		["menu_captains"] = "Information on Captains",
 				
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",

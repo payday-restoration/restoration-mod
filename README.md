@@ -93,7 +93,7 @@ and the creation of the map package.
 
 fuglore doing all the crazy AI and tactic changes.
 
-Ravicle reworking some perk decks and overhauling dodge.
+Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
 
 Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
 

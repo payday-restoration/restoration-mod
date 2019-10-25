@@ -1,0 +1,21 @@
+<materials version="3" group="ene_bulldozer_hvh_3">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_nm"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_1">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_nm" mips="1"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_df" mips="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_2">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_nm" mips="4"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/bulldozer_city_hvh_df" mips="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

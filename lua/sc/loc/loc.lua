@@ -373,7 +373,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		-- Ad Banner Change
 		["menu_changelog"] = "Latest Changelog",
-		["menu_discord"] = "Discord for finding crew mates, reporting bugs, giving feedback",
+		["menu_discord"] = "Discord Server",
 		["menu_guide"] = "Steam Guide",
 		["menu_captains"] = "Information on Captains",
 				

@@ -70,5 +70,6 @@
 
 	<!-- Banners -->
 	<texture path="guis/textures/restoration/discord"/>
+	<texture path="guis/textures/restoration/discord_new"/>
 			
 </table>

@@ -374,8 +374,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		-- Ad Banner Change
 		["menu_changelog"] = "Latest Changelog",
 		["menu_discord"] = "Discord Server",
-		["menu_guide"] = "Steam Guide",
+		["menu_guide"] = "Overhaul Guide",
 		["menu_captains"] = "Information on Captains",
+		["menu_content_updates"] = "Guide/Support",
+		["menu_content_updates_previous"] = "",
 				
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",

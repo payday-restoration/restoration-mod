@@ -12857,8 +12857,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.welrod then --Silent Enforcer's Welrod
 		self.welrod.has_description = false
 		self.welrod.desc_id = "bm_ap_weapon_sc_desc"
-		self.welrod.fire_mode_data.fire_rate = 0.1
-		self.welrod.single.fire_rate = 0.1
 		self.welrod.spread.standing = 3
 		self.welrod.spread.crouching = 2
 		self.welrod.tactical_reload = 1 --HELL YEAH FUCKING TACTICAL WELROD FUCK REALISM
@@ -12878,7 +12876,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 17,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 27,
+			concealment = 30,
 			suppression = 24,
 			alert_size = 24,
 			extra_ammo = 101,

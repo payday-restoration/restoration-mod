@@ -12292,6 +12292,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 3.0
+		self.taser.shock_damage = 2.0
+
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0		
 		
@@ -12474,7 +12478,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 		--Set damage dealt for false downs.
-		self.spooc.kick_damage = 3.0
+		self.spooc.kick_damage = 4.0
 		self.taser.shock_damage = 2.0
 
 		--No normal tase for Elektra on lower difficulties

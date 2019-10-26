@@ -44,4 +44,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+	Hooks:PostHook(PlayerTased, "clbk_exit_to_fatal", "ResTaseNoHealthChange", function(self)
+		self._unit:character_damage():cloak_or_shock_incap(tweak_data.character.taser.shock_damage)
+	end)
 end

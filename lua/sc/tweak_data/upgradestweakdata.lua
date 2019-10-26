@@ -830,6 +830,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Counter Strike
 				self.values.player.counter_strike_melee = {true}
 				self.values.player.counter_strike_spooc = {true}
+				self.values.player.spooc_damage_resist = {0.5}
 
 				--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
@@ -2365,6 +2366,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "kill_dodge_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_spooc_damage_resist = {
+		name_id = "menu_player_spooc_damage_resist",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "spooc_damage_resist",
 			category = "player"
 		}
 	}

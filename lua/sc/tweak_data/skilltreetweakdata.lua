@@ -1885,7 +1885,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_counter_strike_spooc"
+						"player_counter_strike_spooc",
+						"player_spooc_damage_resist"
 					},
 					cost = self.costs.hightierpro
 				}

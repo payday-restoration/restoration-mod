@@ -1931,6 +1931,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc.can_be_tased = true
 		self.spooc.static_dodge_preset = true
 		self.spooc.is_special = true
+		self.spooc.kick_damage = 5.0 --Amount of damage dealt when cloakers hick players.
 		self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
 		if is_reaper then
 		    self.spooc.die_sound_event = "rclk_x02a_any_3p"
@@ -2467,6 +2468,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser.priority_shout_max_dis = 3000
 		self.taser.rescue_hostages = false
 		self.taser.deathguard = true
+		self.taser.shock_damage = 4.0 --Amount of damage dealt when taser shocks down.
 		self.taser.chatter = {
 			aggressive = true,
 			retreat = true,
@@ -12106,6 +12108,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 3.0
+		self.taser.shock_damage = 2.0
+
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0
 		
@@ -12285,7 +12291,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
-		
+
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 3.0
+		self.taser.shock_damage = 2.0
+
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0		
 		
@@ -12466,7 +12476,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
-		
+
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 4.0
+		self.taser.shock_damage = 2.0
+
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0		
 		
@@ -12652,6 +12666,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
+	
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 4.0
+		self.taser.shock_damage = 2.0
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
@@ -12831,6 +12849,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 5.0
+		self.taser.shock_damage = 3.0
+
 		self:_set_characters_weapon_preset("expert", "good")
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self.fbi.can_shoot_while_dodging = true
@@ -13032,6 +13054,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
 		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 5.0
+		self.taser.shock_damage = 3.0
+
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -13108,6 +13134,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
+		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 6.0
+		self.taser.shock_damage = 4.0
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil

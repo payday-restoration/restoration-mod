@@ -665,7 +665,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 	end
 
-	function PlayerDamage:cloak_or_shock_incap()
+	function PlayerDamage:cloak_or_shock_incap(damage)
+		self:change_health(-1.0 * damage * managers.player:upgrade_value("player", "spooc_damage_resist", 1.0) or 0.0)
+
+		if self:get_real_health() == 0 then
+			self:change_health(0.1)
+		end
 		self._keep_health_on_revive = true
 	end
 

@@ -266,7 +266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			duration = {10, 10},
 			interval = {0.5, 1},
 			group_min = 0,
-			queue = "mov"
+			queue = "lk3b"
 		}
 		self.enemy_chatter.incomming_spooc = {
 			radius = 1200,

@@ -145,6 +145,7 @@ function restoration:Init()
 		"kenaz",  --Golden Grin Casino
 		"fish",  --Yacht Heist
 		"firestarter_2_res",  --Firestarter Day 2
+		"shoutout_raid",  --Meltdown
 		"hox_3",  --Hoxton's Revenge
 		"mad" --Boiling Point	
 		

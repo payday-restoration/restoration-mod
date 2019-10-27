@@ -42327,7 +42327,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						reload = 2
 					}	
 				self.parts.wpn_fps_ass_op68_mag_rangerplate.has_description = false														
-			end			
+			end
+
+		if self.wpn_fps_ass_acwr and self.wpn_fps_ass_acwr2 then -- Gambyt's ACR
+				self.parts.wpn_fps_ass_acwr_mag_smol.stats = {
+						value = 1,
+						extra_ammo = -10,
+						reload = 2,
+						concealment = 1
+					}
+				self.parts.wpn_fps_ass_acwr_b_short.stats = {
+						value = 0,
+						concealment = 1,
+						recoil = -2
+					}
+				self.parts.wpn_fps_ass_acwr_mag_pmag.stats = {
+						value = 1
+					}					
+				self.parts.wpn_fps_ass_acwr_expert.stats = {
+						value = 1
+					}
+				self.parts.wpn_fps_ass_acwr_gl_fire.pcs = nil
+				self.parts.wpn_fps_ass_acwr_a_strong.pcs = nil
+				self.parts.wpn_fps_ass_acwr_covers.stats = {
+						value = 1
+					}													
+			end						
 
 		if self.wpn_fps_shot_ak12_76 then --Pawcio's AK12 76
 			self.parts.wpn_fps_upg_ak12_76_grip_molot.stats = {

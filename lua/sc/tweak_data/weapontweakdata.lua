@@ -11276,7 +11276,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				reload = 11
 			}
 			self.tilt.panic_suppression_chance = 0.05
-		end			
+		end
 
 	if self.mac10mpa then --Mira's SMG 11  
 		self.mac10mpa.has_description = false									
@@ -11380,7 +11380,70 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
+		end
+
+	if self.acwr2 and self.acwr then --Gambyt's ACR
+		self.acwr.tactical_reload = 1
+		self.acwr.AMMO_MAX = 150
+		self.acwr.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.acwr.fire_mode_data.fire_rate = 0.0923076923
+		self.acwr.auto.fire_rate = 0.0923076923
+		self.acwr.spread.standing = 3
+		self.acwr.spread.crouching = 2
+		self.acwr.spread.steelsight = 1
+		self.acwr.spread.moving_standing = 4
+		self.acwr.spread.moving_crouching = 3
+		self.acwr.spread.moving_steelsight = 2
+		self.acwr.kick.standing = self.new_m4.kick.standing
+		self.acwr.kick.crouching = self.new_m4.kick.standing
+		self.acwr.kick.steelsight = self.new_m4.kick.standing
+		self.acwr.stats = {
+			damage = 34,
+			spread = 16,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 4,
+			concealment = 12,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.acwr.panic_suppression_chance = 0.0				
+		self.acwr2.tactical_reload = 1
+		self.acwr2.use_data.selection_index = 1	
+		self.acwr2.AMMO_MAX = 135
+		self.acwr2.AMMO_PICKUP = self:_pickup_chance(135, 2)
+		self.acwr2.fire_mode_data.fire_rate = 0.0923076923
+		self.acwr2.auto.fire_rate = 0.0923076923
+		self.acwr2.spread.standing = 3
+		self.acwr2.spread.crouching = 2
+		self.acwr2.spread.steelsight = 1
+		self.acwr2.spread.moving_standing = 4
+		self.acwr2.spread.moving_crouching = 3
+		self.acwr2.spread.moving_steelsight = 2
+		self.acwr2.kick.standing = self.new_m4.kick.standing
+		self.acwr2.kick.crouching = self.new_m4.kick.standing
+		self.acwr2.kick.steelsight = self.new_m4.kick.standing
+		self.acwr2.stats = {
+			damage = 34,
+			spread = 16,
+			recoil = 21,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 23,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}	
+		self.acwr2.panic_suppression_chance = 0.0		
 		end		
+		
 
 	if self.vsk94 then --Gambyt's 9A 91
 		self.vsk94.use_data.selection_index = 1	
@@ -12272,8 +12335,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.pdr.kick.steelsight = self.new_m4.kick.standing
 			self.pdr.stats = {
 				damage = 34,
-				spread = 15,
-				recoil = 20,
+				spread = 16,
+				recoil = 22,
 				spread_moving = 7,
 				zoom = 3,
 				concealment = 20,

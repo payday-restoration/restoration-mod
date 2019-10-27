@@ -133,11 +133,11 @@
 	<material_config path="units/payday2/characters/ene_cop_4/ene_cop_4" force="true" />
 	<material_config path="units/payday2/characters/ene_cop_4/ene_cop_4_contour" force="true" />
 
+	<material_config path="units/pd2_dlc_casino/characters/ene_secret_service_1_casino/ene_secret_service_1_casino" force="true" />
+	<material_config path="units/pd2_dlc_casino/characters/ene_secret_service_1_casino/ene_secret_service_1_casino_contour" force="true" />	
+
 	<material_config path="units/payday2/characters/ene_murkywater_2/ene_murkywater_2" force="true" />
 	<material_config path="units/payday2/characters/ene_murkywater_2/ene_murkywater_2_contour" force="true" />
-
-	<material_config path="units/payday2/characters/ene_secret_service_1_casino/ene_secret_service_1_casino" force="true" />
-	<material_config path="units/payday2/characters/ene_secret_service_1_casino/ene_secret_service_1_casino_contour" force="true" />	
 
 	<material_config path="units/payday2/characters/ene_security_2/ene_security_2" force="true" />
 	<material_config path="units/payday2/characters/ene_security_2/ene_security_2_contour" force="true" />	

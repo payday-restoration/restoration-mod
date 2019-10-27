@@ -64,9 +64,9 @@ function GuiTweakData:init()
     }
     
     self.content_updates.item_list = {
-        changelog,
-        discord,
+        captains,
         guide,
-        captains
+        discord,
+        changelog
     }
 end

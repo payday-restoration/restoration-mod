@@ -549,7 +549,9 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/ene_murky_grenadier_df" force="false"/>	
-	<texture path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" force="false"/>		
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_hood_df" force="false"/>	
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_hood_nm" force="false"/>		
 	
 	<!--Murky Vet Cop-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false" load="true"/>

@@ -299,6 +299,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			interval = {1.5, 3.5},
 			group_min = 0,
 			queue = "heal"
+		}	
+		self.enemy_chatter.heal_chatter_winters = {
+			radius = 700,
+			max_nr = 10,
+			duration = {2, 4},
+			interval = {1.5, 3.5},
+			group_min = 0,
+			queue = "a05"
 		}		
 	end
 
@@ -319,6 +327,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 0,
 				shield = 2,
 				medic = 0,
+				phalanx_vip = 0,
 				spring = 0,
 				autumn = 0,
 				summers = 0
@@ -331,6 +340,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 1,
 				shield = 3,
 				medic = 0,
+				phalanx_vip = 0,
 				spring = 0,
 				autumn = 0,
 				summers = 0
@@ -343,6 +353,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 2,
 				shield = 4,
 				medic = 2,
+				phalanx_vip = 1,
 				spring = 1,
 				autumn = 1,
 				summers = 1
@@ -355,6 +366,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 3,
 				shield = 5,
 				medic = 3,
+				phalanx_vip = 1,
 				spring = 1,
 				autumn = 1,
 				summers = 1
@@ -367,6 +379,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 4,
 				shield = 5,
 				medic = 3,
+				phalanx_vip = 1,
 				spring = 1,
 				autumn = 1,
 				summers = 1
@@ -379,6 +392,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 4,
 				shield = 5,
 				medic = 3,
+				phalanx_vip = 1,
 				spring = 1,
 				autumn = 1,
 				summers = 1
@@ -391,6 +405,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spooc = 4,
 				shield = 5,
 				medic = 3,
+				phalanx_vip = 1,
 				spring = 1,
 				autumn = 1,
 				summers = 1
@@ -7558,6 +7573,54 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			special_type = "shield",
 			is_captain = true
 		}
+		self.unit_categories.Phalanx_minion_new = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				},					
+				murkywater = {
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				},
+				nypd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				},
+				lapd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				}				
+			},
+			access = access_type_all
+		}		
+		self.unit_categories.Phalanx_vip_new = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+				},					
+				murkywater = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+				},
+				nypd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1")
+				}				
+			},
+			max_amount = 1,
+			access = access_type_all,
+			special_type = "phalanx_vip"
+		}		
 		self.unit_categories.Cap_Spring = {
 			unit_types = {
 				america = {
@@ -8615,6 +8678,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flash_grenade",
 			    "hitnrun"
 			},
+			Cap_winters = {
+				"aggressor", --Placeholder, pls edit
+				"murder"
+			},			
 			--hunter hrt tactics
 			HRT_attack = {
 				"hunter",
@@ -10119,6 +10186,51 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
+		if difficulty_index <= 5 then
+			self.enemy_spawn_groups.Cap_Winters = {
+				amount = {5, 5},
+				spawn = {
+					{
+						unit = "Phalanx_vip_new",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_winters,
+						rank = 1
+					},
+					{
+						unit = "Phalanx_minion_new",
+						freq = 1,
+						amount_min = 4,
+						amount_max = 4,
+						tactics = self._tactics.Cap_winters,
+						rank = 2
+					}					
+				}
+			}			
+		else
+			self.enemy_spawn_groups.Cap_Winters = {
+				amount = {7, 7},
+				spawn = {
+					{
+						unit = "Phalanx_vip_new",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_winters,
+						rank = 1
+					},
+					{
+						unit = "Phalanx_minion_new",
+						freq = 1,
+						amount_min = 6,
+						amount_max = 6,
+						tactics = self._tactics.Cap_winters,
+						rank = 2
+					}					
+				}
+			}				
+		end		
 		if difficulty_index <= 5 then
 			self.enemy_spawn_groups.Cap_Spring = {
 				amount = {1, 1},
@@ -12614,7 +12726,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 				break
 			end
-		end		--Captain stuff here--
+		end		
+		--Captain stuff here--
 		for _,v in pairs(restoration.captain_teamwork) do
 			if job == v then
 				if difficulty_index <= 3 then
@@ -12878,112 +12991,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx.minions.amount = 10
 		self.phalanx.minions.distance = 100
 		self.phalanx.vip.health_ratio_flee = 0.1
-		if difficulty_index == 4 then
-			self.phalanx.vip.force_sprint = {true}
-			self.phalanx.vip.assault_force_multiplier = {1.1}
-			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
+		self.phalanx.vip.force_sprint = nil
+		self.phalanx.vip.assault_force_multiplier = {1}
+		self.phalanx.vip.damage_reduction = {
+			start = 0,
+			increase = 0,
+			max = 0,
+			increase_intervall = 0
 		}
-		elseif difficulty_index == 5 then
-			self.phalanx.vip.force_sprint = {true}
-			self.phalanx.vip.assault_force_multiplier = {1.2}
-			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
-			}
-		elseif difficulty_index == 6 then
-			self.phalanx.vip.force_sprint = {true}
-			self.phalanx.vip.assault_force_multiplier = {1.3}
-			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
-			}
-		elseif difficulty_index == 7 then
-			self.phalanx.vip.force_sprint = {true}
-			self.phalanx.vip.assault_force_multiplier = {1.4}
-			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
-			}
-		elseif difficulty_index == 8 then
-			self.phalanx.vip.force_sprint = {true}
-			self.phalanx.vip.assault_force_multiplier = {1.5}
-			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
-			}
-		else
-			self.phalanx.vip.force_sprint = nil
-			self.phalanx.vip.assault_force_multiplier = {1}
-			self.phalanx.vip.damage_reduction = {
-				start = 0,
-				increase = 0,
-				max = 0,
-				increase_intervall = 0
-			}
-		end
 		self.phalanx.check_spawn_intervall = 120
 		self.phalanx.chance_increase_intervall = 120
-		if difficulty_index == 4 then
-			self.phalanx.spawn_chance = {
-				start = 0,
-				increase = 0.05,
-				decrease = 0.7,
-				max = 1,
-				respawn_delay = 2700
-			}
-		elseif difficulty_index == 5 then
-			self.phalanx.spawn_chance = {
-				start = 0.01,
-				increase = 0.09,
-				decrease = 0.7,
-				max = 1,
-				respawn_delay = 2700
-			}
-		elseif difficulty_index == 6 then
-			self.phalanx.spawn_chance = {
-				start = 0.05,
-				increase = 0.09,
-				decrease = 1,
-				max = 1,
-				respawn_delay = 2700
-			}
-		elseif difficulty_index == 7 then
-			self.phalanx.spawn_chance = {
-				start = 0.05,
-				increase = 0.09,
-				decrease = 1,
-				max = 1,
-				respawn_delay = 2700
-			}
-		elseif difficulty_index == 8 then
-			self.phalanx.spawn_chance = {
-				start = 0.05,
-				increase = 0.09,
-				decrease = 1,
-				max = 1,
-				respawn_delay = 2700
-			}
-		else
-			self.phalanx.spawn_chance = {
-				start = 0,
-				increase = 0,
-				decrease = 0,
-				max = 0,
-				respawn_delay = 120
-			}
-		end
+		self.phalanx.spawn_chance = {
+			start = 0,
+			increase = 0,
+			decrease = 0,
+			max = 0,
+			respawn_delay = 120
+		}
 		self.safehouse = deep_clone(self.besiege)	
 	end
 	

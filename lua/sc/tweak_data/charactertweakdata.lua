@@ -2198,6 +2198,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
 		self.phalanx_vip.must_headshot = true
 		self.phalanx_vip.ends_assault_on_death = true
+		self.phalanx_vip.do_winters_aoe_heal = true
 		self.phalanx_vip.suppression = nil
 		self.phalanx_vip.ecm_hurts = {}
 		self.phalanx_vip.is_special = true
@@ -2211,6 +2212,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			retreat = true,
 			go_go = true,
 			contact = true,
+			heal_chatter_winters = true,
 			entrance = true
 		}		
 		table.insert(self._enemy_list, "phalanx_vip")
@@ -13355,7 +13357,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Fast Titan HRTs
 		self.swat_titan.move_speed = self.presets.move_speed.lightning		
 		
-		self.tank_titan_assault.move_speed = self.presets.move_speed.slow
+		--Titandozers become immune to stunning
+		self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
+		self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
+		
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		

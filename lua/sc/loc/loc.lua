@@ -1041,9 +1041,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Anarchist--
 		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##10## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
-		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##45%## armor.",
-		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##60%## armor.",
-		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##75%## armor.",
+		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
+		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##70%## armor.",
+		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##90%## armor.",
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##3## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--

@@ -34,7 +34,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		managers.sequence:add_inflict_updator_body("fire", self._unit:key(), self._inflict_damage_body:key(), self._inflict_damage_body:extension().damage)
 
-		--Load alternate heal over time tweakdata if player is using Infiltrator.
+		--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
 		if player_manager:has_category_upgrade("player", "melee_to_heal") then
 			self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
 			self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)

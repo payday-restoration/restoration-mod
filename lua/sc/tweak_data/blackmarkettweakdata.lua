@@ -341,16 +341,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "material_jkl_matt01_title",
 			pcs = {},
 			texture = "units/pd2_mod_jack/matcaps/jkl_matt01",
-			material_amount = 0,
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}
 		self.materials.jkl_matt02 = {
 			name_id = "material_jkl_matt02_title",
 			pcs = {},
 			texture = "units/pd2_mod_jack/matcaps/jkl_matt02",
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}		
 				
 	end	
@@ -365,7 +364,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			texture = "patterns/jkl_patt01",
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}
 
 		self.textures.jkl_patt02 = {
@@ -373,7 +372,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			texture = "patterns/jkl_patt02",
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}			
 				
 	end		

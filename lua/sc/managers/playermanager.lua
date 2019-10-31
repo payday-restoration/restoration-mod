@@ -397,5 +397,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--function PlayerManager:speak(message, arg1, arg2)
 	--	self:player_unit():sound():say(message, arg1, arg2)
 	--end
-		
+	
+	function PlayerManager:health_skill_multiplier()
+		local multiplier = 1
+		multiplier = multiplier + self:upgrade_value("player", "health_multiplier", 1) - 1
+		multiplier = multiplier + self:upgrade_value("player", "passive_health_multiplier", 1) - 1
+		multiplier = multiplier + self:team_upgrade_value("health", "passive_multiplier", 1) - 1
+		multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
+		multiplier = multiplier * self:upgrade_value("player", "health_decrease", 0)
+
+		if self:num_local_minions() > 0 then
+			multiplier = multiplier + self:upgrade_value("player", "minion_master_health_multiplier", 1) - 1
+		end
+
+		return multiplier
+	end
+
 end

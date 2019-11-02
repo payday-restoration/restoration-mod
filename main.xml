@@ -199,6 +199,7 @@
 		<hook file="sc/managers/hud/hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 		<hook file="sc/managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>
 		<hook file="sc/managers/dialogmanager.lua" source_file="lib/managers/dialogmanager"/>
+		<hook file="sc/units/player/playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

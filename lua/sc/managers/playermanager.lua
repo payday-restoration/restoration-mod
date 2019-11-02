@@ -1,5 +1,19 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	function PlayerManager:check_selected_equipment_placement_valid(player)
+		local equipment_data = managers.player:selected_equipment()
+		if not equipment_data then
+			return false
+		end
+		
+		if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" then
+			return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
+		else
+			return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
+		end
+		return player:equipment():valid_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
+	end
+
 	local function make_double_hud_string(a, b)
 		return string.format("%01d|%01d", a, b)
 	end
@@ -413,5 +427,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		return multiplier
 	end
-
+	
 end

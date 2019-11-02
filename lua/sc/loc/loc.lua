@@ -330,6 +330,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		
+		["menu_equipment_armor_kit"] = "Throwable Case",
+		["bm_equipment_armor_kit"] = "Throwable Case",
+		["debug_equipment_armor_kit"] = "Throwable Case",
+		["bm_equipment_armor_kit_desc"] = "To use the throwable case, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your throwables. It can only be used three times.\n\nYou can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.",
+		
 		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
 		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
@@ -949,7 +954,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
-		["menu_deckall_6_desc_sc"] = "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\n\nIncreases your ammo pickup to ##135%## of the normal rate.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nIncreases your ammo pickup to ##135%## of the normal rate.\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##5%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 	
 		--Crook--

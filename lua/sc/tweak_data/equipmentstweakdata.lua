@@ -3,6 +3,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 local sc_etd = EquipmentsTweakData.init
 function EquipmentsTweakData:init()
 	sc_etd(self, tweak_data)
+	
+	self.armor_kit = {
+		icon = "equipment_armor_kit",
+		use_function_name = "use_armor_kit",
+		quantity = {1},
+		text_id = "debug_equipment_armor_kit",
+		description_id = "des_armor_kit",
+		dummy_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		deploy_time = 2,
+		visual_object = "g_armorbag"
+	}	
 
 	--Because you're not getting 6 fucking sentries--
 	self.sentry_gun.quantity = {1}

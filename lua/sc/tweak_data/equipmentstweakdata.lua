@@ -10,7 +10,7 @@ function EquipmentsTweakData:init()
 		quantity = {1},
 		text_id = "debug_equipment_armor_kit",
 		description_id = "des_armor_kit",
-		dummy_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		dummy_unit = "units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate_dummy_unit",	
 		deploy_time = 2,
 		visual_object = "g_armorbag"
 	}	

@@ -1879,9 +1879,10 @@
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/>
 	<!--Perk Decks-->
     <texture path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
-	<!--grenade throwable case texture-->
+	<!--grenade throwable case-->
 	<texture path="guis/textures/pd2/equipment" force="true"/>
 	<texture path="guis/textures/pd2/blackmarket/icons/deployables/armor_kit" force="true"/>
 	<texture path="guis/textures/pd2/blackmarket/icons/deployables/outline/armor_kit" force="true"/>	
-	
+	<unit path="units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate_dummy_unit" load="true" />	
+	<texture path="units/payday2/characters/shared_textures/equipment_armor_bag_df" force="true"/>
 </table>

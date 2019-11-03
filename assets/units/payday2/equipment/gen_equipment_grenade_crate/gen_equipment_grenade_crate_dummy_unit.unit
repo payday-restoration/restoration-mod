@@ -1,0 +1,12 @@
+<unit type="item" slot="14" >
+    <object file="units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate" />
+
+	<extensions>
+	</extensions>
+	
+	<dependencies>
+	</dependencies>
+   <sounds>
+    <default_soundsource source="rp_gen_equipment_ammobag"/>
+  </sounds>	
+</unit>

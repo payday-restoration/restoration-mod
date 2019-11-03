@@ -890,15 +890,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",
-		["menu_equilibrium_beta_desc_sc"] = "BASIC: ##$basic##\nDecreases the time it takes to draw and holster pistols by ##80%.##\n\nACE: ##$pro##\nYou and your crew's weapon stability with pistols is increased by ##4.##",																								
+		["menu_equilibrium_beta_desc_sc"] = "BASIC: ##$basic##\nYou and your crew's weapon stability with pistols is increased by ##4.##\n\nACE: ##$pro##\nDecreases the time it takes to draw and holster pistols by ##100%.##",																								
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Gun Nut",
-		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##15%## increased rate of fire with pistols.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with pistols.",																								
+		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##15%## increased rate of fire with pistols.\n\nTightens the hipfire accuracy of Pistols by ##50%##.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with pistols.",																								
 
 		--Over Pressurized/Gunfighter--
 		["menu_gun_fighter_sc"] = "Gunfighter",
-		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##25%## faster.\n\nACE: ##$pro##\nYou reload pistols an additional ##25%## faster.",																								
+		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##15%## faster.\n\nYour weapon accuracy while moving with Pistols is increased by ##50%##.\n\nACE: ##$pro##\nYou reload pistols an additional ##25%## faster.",																								
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
@@ -906,11 +906,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit gives you a ##10%## increased accuracy bonus for ##10## seconds and can stack ##4## times.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##20## seconds.",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit gives you a ##10%## increased accuracy bonus for ##10## seconds and can stack ##5## times.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##20## seconds.",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit grants a ##15%## damage boost for ##10## seconds and can stack ##4## times.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##20## seconds.",																								
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit grants a ##10%## damage boost for ##10## seconds and can stack ##5## times.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##20## seconds.",																								
 				
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",

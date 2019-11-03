@@ -729,16 +729,23 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   GUNSLINGER SUBTREE   ]]--
 			--{
 				--Equilibrium
-				self.values.pistol.swap_speed_multiplier = {1.8}
+				self.values.pistol.swap_speed_multiplier = {1.5, 3}
 				self.values.team.pistol.recoil_index_addend = {1}
 				self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				
-				--Gun Nut
-				self.values.pistol.spread_index_addend = {1}			
+				--Gun Nut	
 				self.values.pistol.fire_rate_multiplier = {1.15}
+				self.values.pistol.move_spread_multiplier = {0.5}
+				self.values.pistol.spread_index_addend = {1}						
 
 				--Over Pressurized/Gunfighter (Formerly Akimbo)
-				self.values.pistol.reload_speed_multiplier = {1.25, 1.5}
+				self.values.pistol.magazine_capacity_inc = {
+					5
+				}				
+				self.values.pistol.hip_fire_spread_multiplier = {
+					0.5
+				}				
+				self.values.pistol.reload_speed_multiplier = {1.15, 1.4}
 				self.values.pistol.damage_multiplier = {1}
 				
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
@@ -765,20 +772,20 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 1.1, max_stacks = 4, max_time = 10},
-					{accuracy_bonus = 1.1, max_stacks = 4, max_time = 20}
+					{accuracy_bonus = 1.1, max_stacks = 5, max_time = 10},
+					{accuracy_bonus = 1.1, max_stacks = 5, max_time = 20}
 				}
 				
 				--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
 					{
-						damage_bonus = 1.15,
-						max_stacks = 4,
+						damage_bonus = 1.1,
+						max_stacks = 5,
 						max_time = 10
 					},
 					{	
-						damage_bonus = 1.15,
-						max_stacks = 4,
+						damage_bonus = 1.1,
+						max_stacks = 5,
 						max_time = 20
 					}
 				}
@@ -2016,6 +2023,33 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "chico_injector",
 			synced = true,
 			category = "temporary"
+		}
+	}		
+	self.definitions.pistol_swap_speed_multiplier_1 = {
+		name_id = "menu_pistol_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "swap_speed_multiplier",
+			category = "pistol"
+		}
+	}	
+	self.definitions.pistol_swap_speed_multiplier_2 = {
+		name_id = "menu_pistol_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "swap_speed_multiplier",
+			category = "pistol"
+		}
+	}	
+	self.definitions.pistol_move_spread_multiplier = {
+		name_id = "menu_snp_move_spread_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "move_spread_multiplier",
+			category = "pistol"
 		}
 	}		
 	

@@ -98,6 +98,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_rot_speed_multiplier",
 		"sentry_gun_extra_ammo_multiplier_1",	
 		"sentry_gun_silent",
+		"pistol_swap_speed_multiplier_1",
 		"x_p226",
 		"x_m45",
 		"x_mp7",
@@ -1618,14 +1619,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 9},
 				[1] = {
 					upgrades = {
-						"pistol_swap_speed_multiplier"
+						"team_pistol_recoil_index_addend",
+						"team_pistol_suppression_recoil_index_addend"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"team_pistol_recoil_index_addend",
-						"team_pistol_suppression_recoil_index_addend"
+						"pistol_swap_speed_multiplier_2"
 					},
 					cost = self.costs.pro
 				}
@@ -1638,7 +1639,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {11, 0},
 				[1] = {
 					upgrades = {
-						"pistol_fire_rate_multiplier"
+						"pistol_fire_rate_multiplier",
+						"pistol_hip_fire_spread_multiplier"
 					},
 					cost = self.costs.hightier
 				},
@@ -1658,6 +1660,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"pistol_reload_speed_multiplier_1",
+						"pistol_move_spread_multiplier"
 					},
 					cost = self.costs.hightier
 				},

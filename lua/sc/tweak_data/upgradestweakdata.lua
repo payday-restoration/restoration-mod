@@ -681,21 +681,43 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Second Wind--
 				self.values.temporary.damage_speed_multiplier = {
-					{1.15, 5},
-					{1.3, 8}
+					{1.1, 3},
+					{1.2, 3}
 				}
+				self.values.player.armor_depleted_stagger_shot = {0, 3}
 
 				--Optical Illusions
+				self.values.player.silencer_concealment_penalty_decrease = {1}
 				self.values.player.silencer_concealment_increase = {1}
-				self.values.player.silencer_concealment_penalty_decrease = {2}
 
 				--The Professional
 				self.values.weapon.silencer_spread_index_addend = {1}
 				self.values.weapon.silencer_recoil_index_addend = {1}
 				self.values.weapon.silencer_enter_steelsight_speed_multiplier = {1.5}
 
-				--Dire Need
-				self.values.player.armor_depleted_stagger_shot = {0, 5}
+				--Unseen Strike, formally Dire Need
+				self.values.temporary.unseen_strike = {
+					{
+						1.15,
+						3
+					},
+					{
+						1.15,
+						6
+					}
+				}
+				self.values.player.unseen_increased_crit_chance = {
+					{
+						min_time = 4,
+						max_duration = 3,
+						crit_chance = 1.15
+					},
+					{
+						min_time = 4,
+						max_duration = 6,
+						crit_chance = 1.15
+					}
+				}				
 				
 				--Spotter
 				self.values.weapon.silencer_damage_multiplier = {1, 1}

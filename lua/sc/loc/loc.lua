@@ -767,7 +767,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Second Wind
 			["menu_scavenger_beta_sc"] = "Second Wind",
-			["menu_scavenger_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor breaks you gain ##15%## speed for ##5## seconds.\n\nACE: ##$pro##\nWhen your armor breaks you gain ##30%## speed for ##8## seconds.",
+			["menu_scavenger_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor breaks you gain ##10%## speed for ##3## seconds.\n\nACE: ##$pro##\nWhen your armor is fully depleted, the first shot on every enemy will cause them to stagger.\n\nThis effect persists for ##3## seconds after your armor has regenerated.",
 
 
 
@@ -870,15 +870,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",
-		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## concealment for each suppressed weapon you equip.\n\nACE: ##$pro##\nReduces the concealment penalty of suppressors by ##2.##",																								
+		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nReduces the concealment penalty of suppressors by ##1.##\n\nACE: ##$pro##\nYou gain ##1## concealment for each suppressed weapon you equip.",																								
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##4## weapon stability with silenced weapons.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy and ##50%## snap to zoom speed increase with silenced weapons.",																								
+		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##4## weapon stability with silenced weapons.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with silenced weapons.",																								
 
-		--Dire Need--
-		["menu_backstab_beta_sc"] = "Dire Need",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor is fully depleted, the first shot on every enemy will cause that enemy to stagger.\n\nThis effect ends when your armor regenerates.\n\nACE: ##$pro##\nThe effect persists for ##5## seconds after your armor has regenerated. ",																								
+		--Unseen Strike, formally Dire Need--
+		["menu_backstab_beta_sc"] = "Unseen Strike",
+		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not lose any armor or health for ##4## seconds, you gain ##15%## critical hit chance for ##3## seconds.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nThe critical hit chance duration is increased to ##6## seconds.",																								
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
@@ -886,7 +886,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",
-		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits have a damage multiplier of ##2##.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##",																								
+		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##",																								
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",

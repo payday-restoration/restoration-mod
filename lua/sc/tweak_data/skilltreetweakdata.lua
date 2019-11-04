@@ -1502,7 +1502,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"temporary_damage_speed_multiplier_2"
+						"player_armor_depleted_stagger_shot_1",
+						"player_armor_depleted_stagger_shot_2"
 					},
 					cost = self.costs.pro
 				}
@@ -1515,13 +1516,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 10},
 				[1] = {
 					upgrades = {
-						"player_silencer_concealment_increase_1"
+						"player_silencer_concealment_penalty_decrease_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_silencer_concealment_penalty_decrease_1"
+						"player_silencer_concealment_increase_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1540,27 +1541,28 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"weapon_silencer_spread_index_addend",
-						"weapon_silencer_enter_steelsight_speed_multiplier"
+						"weapon_silencer_spread_index_addend"
 					},
 					cost = self.costs.hightierpro
 				}
 			}
 
-			--Dire Need--
+			--Unseen Strike, formally Dire Need--
 			self.skills.backstab = {
 				["name_id"] = "menu_backstab_beta_sc",
 				["desc_id"] = "menu_backstab_beta_desc_sc",
-				["icon_xy"] = {10, 8},
+				["icon_xy"] = {10, 11},
 				[1] = {
 					upgrades = {
-						"player_armor_depleted_stagger_shot_1"
+						"player_unseen_increased_crit_chance_1",
+						"player_unseen_temp_increased_crit_chance_1"
 					},	
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_armor_depleted_stagger_shot_2"
+						"player_unseen_increased_crit_chance_2",
+						"player_unseen_temp_increased_crit_chance_2"
 					},
 					cost = self.costs.hightierpro
 				}

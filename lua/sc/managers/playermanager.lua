@@ -613,7 +613,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local variant = attack_data.variant
 
 			if attacker_unit == self:player_unit() and variant ~= "melee" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
-				log("First Headshot!")
 				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 			end
 		end
@@ -627,7 +626,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local data = self:upgrade_value("pistol", "stacked_accuracy_bonus", nil)
 
 			if data and type(data) ~= "number" then
-				log("BEES!")
 				self._coroutine_mgr:add_coroutine(PlayerAction.ExpertHandling, PlayerAction.ExpertHandling, self, data.accuracy_bonus, data.max_stacks, Application:time() + data.max_time, data.max_time)
 			end
 		end

@@ -11,7 +11,7 @@ PlayerAction.ExpertHandling = {
 
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" then
 				current_stacks = current_stacks + 1
-				log("WowWow!")
+
 				if current_stacks <= max_stacks then
 					player_manager:mul_to_property("desperado", accuracy_bonus)
 				end
@@ -23,7 +23,7 @@ PlayerAction.ExpertHandling = {
 		local function on_hit(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
-			log("Rough Rider!")
+
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" then
 				max_time = current_time + add_time
 			end

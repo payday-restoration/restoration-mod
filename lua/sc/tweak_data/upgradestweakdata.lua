@@ -772,23 +772,25 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 1.1, max_stacks = 5, max_time = 10},
-					{accuracy_bonus = 1.1, max_stacks = 5, max_time = 20}
+					{accuracy_bonus = 0.85, max_stacks = 5, max_time = 6},
+					{accuracy_bonus = 0.85, max_stacks = 5, max_time = 9}
 				}
+				self.values.player.desperado_bodyshot_refresh = {true}
 				
 				--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
 					{
 						damage_bonus = 1.1,
 						max_stacks = 5,
-						max_time = 10
+						max_time = 6
 					},
 					{	
 						damage_bonus = 1.1,
 						max_stacks = 5,
-						max_time = 20
+						max_time = 9
 					}
 				}
+				self.values.player.trigger_happy_bodyshot_refresh = {true}
 
 			--}
 			
@@ -2409,6 +2411,24 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "spooc_damage_resist",
+			category = "player"
+		}
+	}
+	self.definitions.player_trigger_happy_bodyshot_refresh = {
+		name_id = "menu_player_trigger_happy_bodyshot_refresh",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "trigger_happy_bodyshot_refresh",
+			category = "player"
+		}
+	}
+	self.definitions.player_desperado_bodyshot_refresh = {
+		name_id = "menu_player_desperado_bodyshot_refresh",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "desperado_bodyshot_refresh",
 			category = "player"
 		}
 	}

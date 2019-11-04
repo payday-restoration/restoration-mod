@@ -428,4 +428,208 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return multiplier
 	end
 	
+	function PlayerManager:check_skills()
+		self:send_message_now("check_skills")
+		self._coroutine_mgr:clear()
+
+		self._saw_panic_when_kill = self:has_category_upgrade("saw", "panic_when_kill")
+		self._unseen_strike = self:has_category_upgrade("player", "unseen_increased_crit_chance")
+
+		if self:has_category_upgrade("pistol", "stacked_accuracy_bonus") then
+			self._message_system:register(Message.OnHeadShot, self, callback(self, self, "_on_expert_handling_event"))
+		else
+			self._message_system:unregister(Message.OnHeadShot, self)
+		end
+
+		if self:has_category_upgrade("pistol", "stacking_hit_damage_multiplier") then
+			self._message_system:register(Message.OnHeadShot, "trigger_happy", callback(self, self, "_on_enter_trigger_happy_event"))
+		else
+			self._message_system:unregister(Message.OnHeadShot, "trigger_happy")
+		end
+
+		if self:has_category_upgrade("player", "melee_damage_stacking") then
+			local function start_bloodthirst_base(weapon_unit, variant)
+				if variant ~= "melee" and not self._coroutine_mgr:is_running(PlayerAction.BloodthirstBase) then
+					local data = self:upgrade_value("player", "melee_damage_stacking", nil)
+
+					if data and type(data) ~= "number" then
+						self._coroutine_mgr:add_coroutine(PlayerAction.BloodthirstBase, PlayerAction.BloodthirstBase, self, data.melee_multiplier, data.max_multiplier)
+					end
+				end
+			end
+
+			self._message_system:register(Message.OnEnemyKilled, "bloodthirst_base", start_bloodthirst_base)
+		else
+			self._message_system:unregister(Message.OnEnemyKilled, "bloodthirst_base")
+		end
+
+		if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
+			self._messiah_charges = self:upgrade_value("player", "messiah_revive_from_bleed_out", 0)
+			self._max_messiah_charges = self._messiah_charges
+
+			self._message_system:register(Message.OnEnemyKilled, "messiah_revive_from_bleed_out", callback(self, self, "_on_messiah_event"))
+		else
+			self._messiah_charges = 0
+			self._max_messiah_charges = self._messiah_charges
+
+			self._message_system:unregister(Message.OnEnemyKilled, "messiah_revive_from_bleed_out")
+		end
+
+		if self:has_category_upgrade("player", "recharge_messiah") then
+			self._message_system:register(Message.OnDoctorBagUsed, "recharge_messiah", callback(self, self, "_on_messiah_recharge_event"))
+		else
+			self._message_system:unregister(Message.OnDoctorBagUsed, "recharge_messiah")
+		end
+
+		if self:has_category_upgrade("player", "double_drop") then
+			self._target_kills = self:upgrade_value("player", "double_drop", 0)
+
+			self._message_system:register(Message.OnEnemyKilled, "double_ammo_drop", callback(self, self, "_on_spawn_extra_ammo_event"))
+		else
+			self._target_kills = 0
+
+			self._message_system:unregister(Message.OnEnemyKilled, "double_ammo_drop")
+		end
+
+		if self:has_category_upgrade("temporary", "single_shot_fast_reload") then
+			self._message_system:register(Message.OnLethalHeadShot, "activate_aggressive_reload", callback(self, self, "_on_activate_aggressive_reload_event"))
+		else
+			self._message_system:unregister(Message.OnLethalHeadShot, "activate_aggressive_reload")
+		end
+
+		if self:has_category_upgrade("player", "head_shot_ammo_return") then
+			self._ammo_efficiency = self:upgrade_value("player", "head_shot_ammo_return", nil)
+
+			self._message_system:register(Message.OnHeadShot, "ammo_efficiency", callback(self, self, "_on_enter_ammo_efficiency_event"))
+		else
+			self._ammo_efficiency = nil
+
+			self._message_system:unregister(Message.OnHeadShot, "ammo_efficiency")
+		end
+
+		if self:has_category_upgrade("player", "melee_kill_increase_reload_speed") then
+			self._message_system:register(Message.OnEnemyKilled, "bloodthirst_reload_speed", callback(self, self, "_on_enemy_killed_bloodthirst"))
+		else
+			self._message_system:unregister(Message.OnEnemyKilled, "bloodthirst_reload_speed")
+		end
+
+		if self:has_category_upgrade("player", "super_syndrome") then
+			self._super_syndrome_count = self:upgrade_value("player", "super_syndrome")
+		else
+			self._super_syndrome_count = 0
+		end
+
+		if self:has_category_upgrade("player", "dodge_shot_gain") then
+			local last_gain_time = 0
+			local dodge_gain = self:upgrade_value("player", "dodge_shot_gain")[1]
+			local cooldown = self:upgrade_value("player", "dodge_shot_gain")[2]
+
+			local function on_player_damage(attack_data)
+				local t = TimerManager:game():time()
+
+				if attack_data.variant == "bullet" and t > last_gain_time + cooldown then
+					last_gain_time = t
+
+					managers.player:_dodge_shot_gain(managers.player:_dodge_shot_gain() + dodge_gain)
+				end
+			end
+
+			self:register_message(Message.OnPlayerDodge, "dodge_shot_gain_dodge", callback(self, self, "_dodge_shot_gain", 0))
+			self:register_message(Message.OnPlayerDamage, "dodge_shot_gain_damage", on_player_damage)
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_shot_gain_dodge")
+			self:unregister_message(Message.OnPlayerDamage, "dodge_shot_gain_damage")
+		end
+
+		if self:has_category_upgrade("player", "dodge_replenish_armor") then
+			self:register_message(Message.OnPlayerDodge, "dodge_replenish_armor", callback(self, self, "_dodge_replenish_armor"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_replenish_armor")
+		end
+
+		if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
+			local function speed_up_on_kill()
+				if #managers.player:smoke_screens() == 0 then
+					managers.player:speed_up_grenade_cooldown(1)
+				end
+			end
+
+			self:register_message(Message.OnEnemyKilled, "speed_up_smoke_grenade", speed_up_on_kill)
+		else
+			self:unregister_message(Message.OnEnemyKilled, "speed_up_smoke_grenade")
+		end
+
+		self:add_coroutine("damage_control", PlayerAction.DamageControl)
+
+		if self:has_category_upgrade("snp", "graze_damage") then
+			self:register_message(Message.OnWeaponFired, "graze_damage", callback(SniperGrazeDamage, SniperGrazeDamage, "on_weapon_fired"))
+		else
+			self:unregister_message(Message.OnWeaponFired, "graze_damage")
+		end
+	end
+
+	function PlayerManager:on_headshot_dealt(unit, attack_data)
+		local player_unit = self:player_unit()
+
+		if not player_unit then
+			return
+		end
+
+		self._message_system:notify(Message.OnHeadShot, nil, unit, attack_data)
+
+		local t = Application:time()
+
+		if self._on_headshot_dealt_t and t < self._on_headshot_dealt_t then
+			return
+		end
+
+		self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
+		local damage_ext = player_unit:character_damage()
+		local regen_armor_bonus = managers.player:upgrade_value("player", "headshot_regen_armor_bonus", 0)
+
+		if damage_ext and regen_armor_bonus > 0 then
+			damage_ext:restore_armor(regen_armor_bonus)
+		end
+	end
+
+	function PlayerManager:_on_enter_trigger_happy_event(unit, attack_data)
+		local attacker_unit = attack_data.attacker_unit
+		local variant = attack_data.variant
+
+		if attacker_unit == self:player_unit() and variant == "bullet" and not self._coroutine_mgr:is_running("trigger_happy") and self:is_current_weapon_of_category("pistol") then
+			local data = self:upgrade_value("pistol", "stacking_hit_damage_multiplier", 0)
+
+			if data ~= 0 then
+				self._coroutine_mgr:add_coroutine("trigger_happy", PlayerAction.TriggerHappy, self, data.damage_bonus, data.max_stacks, Application:time() + data.max_time, data.max_time)
+			end
+		end
+	end
+
+
+	function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
+		if not self._coroutine_mgr:is_running("ammo_efficiency") then
+			local weapon_unit = self:equipped_weapon_unit()
+			local attacker_unit = attack_data.attacker_unit
+			local variant = attack_data.variant
+
+			if attacker_unit == self:player_unit() and variant ~= "melee" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
+				log("First Headshot!")
+				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
+			end
+		end
+	end
+
+	function PlayerManager:_on_expert_handling_event(unit, attack_data)
+		local attacker_unit = attack_data.attacker_unit
+		local variant = attack_data.variant
+
+		if attacker_unit == self:player_unit() and self:is_current_weapon_of_category("pistol") and variant == "bullet" and not self._coroutine_mgr:is_running(PlayerAction.ExpertHandling) then
+			local data = self:upgrade_value("pistol", "stacked_accuracy_bonus", nil)
+
+			if data and type(data) ~= "number" then
+				log("BEES!")
+				self._coroutine_mgr:add_coroutine(PlayerAction.ExpertHandling, PlayerAction.ExpertHandling, self, data.accuracy_bonus, data.max_stacks, Application:time() + data.max_time, data.max_time)
+			end
+		end
+	end
 end

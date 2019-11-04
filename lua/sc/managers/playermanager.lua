@@ -605,14 +605,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-
 	function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 		if not self._coroutine_mgr:is_running("ammo_efficiency") then
 			local weapon_unit = self:equipped_weapon_unit()
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
 
-			if attacker_unit == self:player_unit() and variant ~= "melee" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
+			if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
 				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 			end
 		end

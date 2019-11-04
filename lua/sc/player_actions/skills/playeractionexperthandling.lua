@@ -3,7 +3,7 @@ PlayerAction.ExpertHandling = {
 	Function = function (player_manager, accuracy_bonus, max_stacks, max_time, add_time)
 		local co = coroutine.running()
 		local current_time = Application:time()
-		local current_stacks = 0
+		local current_stacks = 1
 
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit

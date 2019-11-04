@@ -906,11 +906,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit gives you a ##10%## increased accuracy bonus for ##10## seconds and can stack ##5## times.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##20## seconds.",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol headshot grants a ##10%## accuracy boost for ##4## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on successful pistol headshots.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##6## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol hit grants a ##10%## damage boost for ##10## seconds and can stack ##5## times.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##20## seconds.",																								
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol headshot grants a ##10%## damage boost for ##4## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on successful pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##6## seconds, and all pistol hits refresh the duration.",																								
 				
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",

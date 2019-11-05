@@ -794,8 +794,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 4},
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 6}
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 6},
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 8}
 				}
 				self.values.player.desperado_bodyshot_refresh = {true}
 				
@@ -804,12 +804,12 @@ function UpgradesTweakData:_init_pd2_values()
 					{
 						damage_bonus = 1.1,
 						max_stacks = 5,
-						max_time = 4
+						max_time = 6
 					},
 					{	
 						damage_bonus = 1.1,
 						max_stacks = 5,
-						max_time = 6
+						max_time = 8
 					}
 				}
 				self.values.player.trigger_happy_bodyshot_refresh = {true}

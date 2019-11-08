@@ -4110,7 +4110,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_raging_bull.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.new_raging_bull.stats = {
 			damage = 100,
-			spread = 18,
+			spread = 16,
 			recoil = 18,
 			spread_moving = 5,
 			zoom = 3,
@@ -8343,7 +8343,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rage.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.x_rage.stats = {
 			damage = 100,
-			spread = 18,
+			spread = 16,
 			recoil = 18,
 			spread_moving = 5,
 			zoom = 3,

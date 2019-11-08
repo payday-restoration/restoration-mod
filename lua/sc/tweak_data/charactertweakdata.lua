@@ -1615,7 +1615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bolivian_indoors.unintimidateable = false
 		table.insert(self._enemy_list, "bolivian_indoors")
 		
-		self.bolivian_indoors_mex = deep_clone(self.bolivian)
+		self.bolivian_indoors_mex = deep_clone(self.bolivian_indoors)
 		self.bolivian_indoors_mex.has_alarm_pager = true
 		self.bolivian_indoors_mex.access = "gangster"
 

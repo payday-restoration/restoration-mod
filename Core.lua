@@ -107,6 +107,8 @@ function restoration:Init()
 		"arm_par",
 		"arm_und",
 		"arm_for",
+		"mex",
+		"mex_cooking",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",

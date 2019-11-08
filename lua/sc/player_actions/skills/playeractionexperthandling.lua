@@ -1,10 +1,11 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	PlayerAction.ExpertHandling = {
 		Priority = 1,
-		Function = function (player_manager, accuracy_bonus, max_stacks, max_time, add_time)
+		Function = function (player_manager, accuracy_bonus, max_stacks, max_time)
 			local co = coroutine.running()
 			local current_time = Application:time()
 			local current_stacks = 1
+			local add_time = player_manager:upgrade_value("pistol", "stacked_accuracy_bonus", nil).max_time
 
 			local function on_headshot(unit, attack_data)
 				local attacker_unit = attack_data.attacker_unit

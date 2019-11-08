@@ -1614,6 +1614,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bolivian_indoors.static_dodge_preset = false
 		self.bolivian_indoors.unintimidateable = false
 		table.insert(self._enemy_list, "bolivian_indoors")
+		
+		self.bolivian_indoors_mex = deep_clone(self.bolivian)
+		self.bolivian_indoors_mex.has_alarm_pager = true
+		self.bolivian_indoors_mex.access = "gangster"
+
+		table.insert(self._enemy_list, "bolivian_indoors_mex")		
 	end
 
 	function CharacterTweakData:_init_drug_lord_boss(presets)
@@ -14145,6 +14151,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_shadow_cloaker_1",
 					"ene_shadow_cloaker_2"
 				}
+			},
+			mex = {
+				path = "units/pd2_dlc_mex/characters/",
+				list = {
+					"ene_mex_security_guard",
+					"ene_mex_security_guard_2",
+					"ene_mex_security_guard_3",
+					"ene_mex_thug_outdoor_01",
+					"ene_mex_thug_outdoor_02",
+					"ene_mex_thug_outdoor_03",
+					"civ_male_italian"
+				}				
 			},			
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",

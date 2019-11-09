@@ -579,7 +579,7 @@ function InteractionTweakData:init(...)
 		self.invisible_interaction_open_superfast = {
 			icon = "develop",
 			text_id = "hud_int_invisible_interaction_open",
-			timer = 0.001
+			timer = 0
 		}	
 		self.grenade_briefcase = deep_clone(self.invisible_interaction_open_superfast)
 		self.grenade_briefcase.contour = "deployable"		

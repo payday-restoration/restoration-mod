@@ -32,7 +32,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 
 			if head then
-				managers.player:on_headshot_dealt()
+				managers.player:on_headshot_dealt(self._unit, attack_data)
 			end
 		end
 
@@ -344,7 +344,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 			end
 			if head then
-				managers.player:on_headshot_dealt()
+				managers.player:on_headshot_dealt(self._unit, attack_data)
 				headshot = true
 			end
 		end
@@ -600,7 +600,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 			end
 			if head then
-				managers.player:on_headshot_dealt()
+				managers.player:on_headshot_dealt(self._unit, attack_data)
 			end
 		end
 		if self._damage_reduction_multiplier then

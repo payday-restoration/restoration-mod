@@ -1,0 +1,12 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mad/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" orientation_object="rp_ene_acc_bulldozer_back" />
+	<bodies>
+		<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_bulldozer_back" />
+			<object name="c_armor_back" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_armor_back" enabled="true" />
+	</graphics>
+</dynamic_object>

@@ -326,6 +326,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		blend_mode = "add",
 		layer = 3,
 		texture = self.buff_icon,
+		visible = false,
 		x = 0,
 		y = 0,
 		w = 38,
@@ -340,8 +341,20 @@ function HUDAssaultCorner:init(hud, full_hud)
 		name = "buffs_pad_panel",
 		y = 42,
 		w = 200,
-		h = 64
+		h = 128
 	})
+
+	local vip_icon_buff = buffs_pad_panel:bitmap({
+		color = self._vip_assault_color,
+		name = "vip_icon_pad",
+		blend_mode = "add",
+		layer = 3,
+		texture = self.buff_icon,
+		w = 38,
+		h = 38
+	})
+	vip_icon_buff:set_y(45)
+	vip_icon_buff:set_x(0)
 	
 	local texture_new = "guis/textures/restoration/objective"
 	local buff_start = buffs_pad_panel:bitmap( { name = "buff_start", texture = texture_new, color = self._vip_assault_color, texture_rect = { 0, 0, 13, 64 }, layer = 1} )
@@ -465,6 +478,7 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 	end
 end
 function HUDAssaultCorner:set_buff_enabled(buff_name, enabled)
+	-- self:_set_hostage_offseted(true)
 	self._hud_panel:child("buffs_panel"):set_visible(enabled)
 	self._hud_panel:child("buffs_pad_panel"):set_visible(enabled)
 end

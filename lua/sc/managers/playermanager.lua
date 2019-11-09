@@ -1,5 +1,19 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	function PlayerManager:check_selected_equipment_placement_valid(player)
+		local equipment_data = managers.player:selected_equipment()
+		if not equipment_data then
+			return false
+		end
+		
+		if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" then
+			return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
+		else
+			return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
+		end
+		return player:equipment():valid_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
+	end
+
 	local function make_double_hud_string(a, b)
 		return string.format("%01d|%01d", a, b)
 	end
@@ -104,6 +118,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
+		if damage_ext:health_ratio() < 0.5 then
+			if variant == "melee" and self:has_category_upgrade("player", "melee_kill_dodge_regen") then
+				damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen") + self:upgrade_value("player", "kill_dodge_regen"))
+			else
+				damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
+			end
+		end
+
 		if self._on_killshot_t and t < self._on_killshot_t then
 			return
 		end
@@ -157,7 +179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 		local player_unit = self:player_unit()
 
-		if not self:has_category_upgrade("player", "damage_to_hot") then
+		if not self:has_category_upgrade("player", "damage_to_hot") and not self:has_category_upgrade("player", "heal_over_time") then
 			return
 		end
 		
@@ -179,8 +201,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		--Load alternate heal over time tweakdata if player is using Infiltrator.
 		local data = tweak_data.upgrades.damage_to_hot_data
-		if self:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+		if self:has_category_upgrade("player", "melee_to_heal") then --Load alternate heal over time tweakdata if player is using Infiltrator.
 			data = tweak_data.upgrades.melee_to_hot_data
+		elseif self:has_category_upgrade("player", "dodge_to_heal") then --Or Rogue
+			data = tweak_data.upgrades.dodge_to_hot_data
 		end
 
 		if not data then
@@ -218,7 +242,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._next_allowed_doh_t = t + data.stacking_cooldown
 	end	
 
-	function PlayerManager:fadjfbasjhas()
+	function PlayerManager:refill_messiah_charges()
 		if self._max_messiah_charges then
 			self._messiah_charges = self._max_messiah_charges
 		end
@@ -309,8 +333,274 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return players_nearby
 	end
 	
+	function PlayerManager:damage_reduction_skill_multiplier(damage_type)
+		local multiplier = 1
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_outnumbered", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_outnumbered_strong", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_close_contact", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "revived_damage_resist", 1)
+		multiplier = multiplier * self:upgrade_value("player", "damage_dampener", 1)
+		multiplier = multiplier * self:upgrade_value("player", "health_damage_reduction", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "first_aid_damage_reduction", 1)
+		multiplier = multiplier * self:temporary_upgrade_value("temporary", "revive_damage_reduction", 1)
+		multiplier = multiplier * self:get_hostage_bonus_multiplier("damage_dampener")
+		multiplier = multiplier * self._properties:get_property("revive_damage_reduction", 1)
+		multiplier = multiplier * self._temporary_properties:get_property("revived_damage_reduction", 1)
+		local dmg_red_mul = self:team_upgrade_value("damage_dampener", "team_damage_reduction", 1)
+
+		local health_ratio = self:player_unit():character_damage():health_ratio()
+		local min_ratio = self:upgrade_value("player", "passive_damage_reduction")
+		if health_ratio < min_ratio and self:has_category_upgrade("player", "passive_damage_reduction") then
+			dmg_red_mul = dmg_red_mul - (1 - dmg_red_mul)
+		end
+		multiplier = multiplier * dmg_red_mul
+
+		if self:is_damage_health_ratio_active(health_ratio) then
+			multiplier = multiplier * (1 - managers.player:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
+		end
+
+		if damage_type == "melee" then
+			multiplier = multiplier * managers.player:upgrade_value("player", "melee_damage_dampener", 1)
+		end
+
+		local current_state = self:get_current_state()
+
+		if current_state and current_state:_interacting() then
+			multiplier = multiplier * managers.player:upgrade_value("player", "interacting_damage_multiplier", 1)
+		end
+		
+
+		return multiplier
+	end
+
+
+	function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
+		local multiplier = 1
+		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_tier", 1)
+		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier", 1)
+		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_passive", 1)
+		multiplier = multiplier * self:team_upgrade_value("armor", "regen_time_multiplier", 1)
+		multiplier = multiplier * self:team_upgrade_value("armor", "passive_regen_time_multiplier", 1)
+		multiplier = multiplier * self:upgrade_value("player", "perk_armor_regen_timer_multiplier", 1)
+
+		if not moving then
+			multiplier = multiplier * managers.player:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
+		end
+
+		return multiplier
+	end
+
+	--Leaving stance stuff in parameters for compatability.
+	function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
+		local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
+		
+		chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
+
+		local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
+		chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
+		chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
+		chance = chance + self:upgrade_value("team", "crew_add_dodge", 0)
+
+		return chance
+	end
+
+	function PlayerManager:is_damage_health_ratio_active(health_ratio)
+		return self:has_category_upgrade("player", "melee_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "melee") > 0 or self:has_category_upgrade("player", "resistance_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "armor_regen") > 0 or self:has_category_upgrade("player", "damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "damage") > 0 or self:has_category_upgrade("player", "movement_speed_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "movement_speed") > 0
+	end
+
 	--function PlayerManager:speak(message, arg1, arg2)
 	--	self:player_unit():sound():say(message, arg1, arg2)
 	--end
+	
+	function PlayerManager:health_skill_multiplier()
+		local multiplier = 1
+		multiplier = multiplier + self:upgrade_value("player", "health_multiplier", 1) - 1
+		multiplier = multiplier + self:upgrade_value("player", "passive_health_multiplier", 1) - 1
+		multiplier = multiplier + self:team_upgrade_value("health", "passive_multiplier", 1) - 1
+		multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
+
+		if self:num_local_minions() > 0 then
+			multiplier = multiplier + self:upgrade_value("player", "minion_master_health_multiplier", 1) - 1
+		end
+
+		multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0)
 		
+		return multiplier
+	end
+	
+	function PlayerManager:check_skills()
+		self:send_message_now("check_skills")
+		self._coroutine_mgr:clear()
+
+		self._saw_panic_when_kill = self:has_category_upgrade("saw", "panic_when_kill")
+		self._unseen_strike = self:has_category_upgrade("player", "unseen_increased_crit_chance")
+
+		if self:has_category_upgrade("pistol", "stacked_accuracy_bonus") then
+			self._message_system:register(Message.OnHeadShot, self, callback(self, self, "_on_expert_handling_event"))
+		else
+			self._message_system:unregister(Message.OnHeadShot, self)
+		end
+
+		if self:has_category_upgrade("pistol", "stacking_hit_damage_multiplier") then
+			self._message_system:register(Message.OnHeadShot, "trigger_happy", callback(self, self, "_on_enter_trigger_happy_event"))
+		else
+			self._message_system:unregister(Message.OnHeadShot, "trigger_happy")
+		end
+
+		if self:has_category_upgrade("player", "melee_damage_stacking") then
+			local function start_bloodthirst_base(weapon_unit, variant)
+				if variant ~= "melee" and not self._coroutine_mgr:is_running(PlayerAction.BloodthirstBase) then
+					local data = self:upgrade_value("player", "melee_damage_stacking", nil)
+
+					if data and type(data) ~= "number" then
+						self._coroutine_mgr:add_coroutine(PlayerAction.BloodthirstBase, PlayerAction.BloodthirstBase, self, data.melee_multiplier, data.max_multiplier)
+					end
+				end
+			end
+
+			self._message_system:register(Message.OnEnemyKilled, "bloodthirst_base", start_bloodthirst_base)
+		else
+			self._message_system:unregister(Message.OnEnemyKilled, "bloodthirst_base")
+		end
+
+		if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
+			self._messiah_charges = self:upgrade_value("player", "messiah_revive_from_bleed_out", 0)
+			self._max_messiah_charges = self._messiah_charges
+
+			self._message_system:register(Message.OnEnemyKilled, "messiah_revive_from_bleed_out", callback(self, self, "_on_messiah_event"))
+		else
+			self._messiah_charges = 0
+			self._max_messiah_charges = self._messiah_charges
+
+			self._message_system:unregister(Message.OnEnemyKilled, "messiah_revive_from_bleed_out")
+		end
+
+		if self:has_category_upgrade("player", "recharge_messiah") then
+			self._message_system:register(Message.OnDoctorBagUsed, "recharge_messiah", callback(self, self, "_on_messiah_recharge_event"))
+		else
+			self._message_system:unregister(Message.OnDoctorBagUsed, "recharge_messiah")
+		end
+
+		if self:has_category_upgrade("player", "double_drop") then
+			self._target_kills = self:upgrade_value("player", "double_drop", 0)
+
+			self._message_system:register(Message.OnEnemyKilled, "double_ammo_drop", callback(self, self, "_on_spawn_extra_ammo_event"))
+		else
+			self._target_kills = 0
+
+			self._message_system:unregister(Message.OnEnemyKilled, "double_ammo_drop")
+		end
+
+		if self:has_category_upgrade("temporary", "single_shot_fast_reload") then
+			self._message_system:register(Message.OnLethalHeadShot, "activate_aggressive_reload", callback(self, self, "_on_activate_aggressive_reload_event"))
+		else
+			self._message_system:unregister(Message.OnLethalHeadShot, "activate_aggressive_reload")
+		end
+
+		if self:has_category_upgrade("player", "head_shot_ammo_return") then
+			self._ammo_efficiency = self:upgrade_value("player", "head_shot_ammo_return", nil)
+
+			self._message_system:register(Message.OnHeadShot, "ammo_efficiency", callback(self, self, "_on_enter_ammo_efficiency_event"))
+		else
+			self._ammo_efficiency = nil
+
+			self._message_system:unregister(Message.OnHeadShot, "ammo_efficiency")
+		end
+
+		if self:has_category_upgrade("player", "melee_kill_increase_reload_speed") then
+			self._message_system:register(Message.OnEnemyKilled, "bloodthirst_reload_speed", callback(self, self, "_on_enemy_killed_bloodthirst"))
+		else
+			self._message_system:unregister(Message.OnEnemyKilled, "bloodthirst_reload_speed")
+		end
+
+		if self:has_category_upgrade("player", "super_syndrome") then
+			self._super_syndrome_count = self:upgrade_value("player", "super_syndrome")
+		else
+			self._super_syndrome_count = 0
+		end
+
+		if self:has_category_upgrade("player", "dodge_shot_gain") then
+			local last_gain_time = 0
+			local dodge_gain = self:upgrade_value("player", "dodge_shot_gain")[1]
+			local cooldown = self:upgrade_value("player", "dodge_shot_gain")[2]
+
+			local function on_player_damage(attack_data)
+				local t = TimerManager:game():time()
+
+				if attack_data.variant == "bullet" and t > last_gain_time + cooldown then
+					last_gain_time = t
+
+					managers.player:_dodge_shot_gain(managers.player:_dodge_shot_gain() + dodge_gain)
+				end
+			end
+
+			self:register_message(Message.OnPlayerDodge, "dodge_shot_gain_dodge", callback(self, self, "_dodge_shot_gain", 0))
+			self:register_message(Message.OnPlayerDamage, "dodge_shot_gain_damage", on_player_damage)
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_shot_gain_dodge")
+			self:unregister_message(Message.OnPlayerDamage, "dodge_shot_gain_damage")
+		end
+
+		if self:has_category_upgrade("player", "dodge_replenish_armor") then
+			self:register_message(Message.OnPlayerDodge, "dodge_replenish_armor", callback(self, self, "_dodge_replenish_armor"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_replenish_armor")
+		end
+
+		if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
+			local function speed_up_on_kill()
+				if #managers.player:smoke_screens() == 0 then
+					managers.player:speed_up_grenade_cooldown(1)
+				end
+			end
+
+			self:register_message(Message.OnEnemyKilled, "speed_up_smoke_grenade", speed_up_on_kill)
+		else
+			self:unregister_message(Message.OnEnemyKilled, "speed_up_smoke_grenade")
+		end
+
+		self:add_coroutine("damage_control", PlayerAction.DamageControl)
+
+		if self:has_category_upgrade("snp", "graze_damage") then
+			self:register_message(Message.OnWeaponFired, "graze_damage", callback(SniperGrazeDamage, SniperGrazeDamage, "on_weapon_fired"))
+		else
+			self:unregister_message(Message.OnWeaponFired, "graze_damage")
+		end
+	end
+
+	function PlayerManager:on_headshot_dealt(unit, attack_data)
+		local player_unit = self:player_unit()
+
+		if not player_unit then
+			return
+		end
+
+		self._message_system:notify(Message.OnHeadShot, nil, unit, attack_data)
+
+		local t = Application:time()
+
+		if self._on_headshot_dealt_t and t < self._on_headshot_dealt_t then
+			return
+		end
+
+		self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
+		local damage_ext = player_unit:character_damage()
+		local regen_armor_bonus = managers.player:upgrade_value("player", "headshot_regen_armor_bonus", 0)
+
+		if damage_ext and regen_armor_bonus > 0 then
+			damage_ext:restore_armor(regen_armor_bonus)
+		end
+	end
+
+	function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
+		if not self._coroutine_mgr:is_running("ammo_efficiency") then
+			local weapon_unit = self:equipped_weapon_unit()
+			local attacker_unit = attack_data.attacker_unit
+			local variant = attack_data.variant
+
+			if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
+				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
+			end
+		end
+	end
 end

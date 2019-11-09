@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_dallas_mask" materials="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" />
+    <graphics>
+        <object enabled="true" name="g_dallas" />
+    </graphics>
+</dynamic_object>

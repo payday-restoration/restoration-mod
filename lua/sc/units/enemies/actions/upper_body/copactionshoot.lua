@@ -25,6 +25,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	}
  
 	local _f_CopActionShoot__get_target_pos = CopActionShoot._get_target_pos
+	
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
 
 	function CopActionShoot:_get_target_pos(shoot_from_pos, ...)
 		local target_pos, target_vec, target_dis, autotarget
@@ -106,8 +109,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._throw_projectile_time = _time + math.round_with_precision(30, 2)
 				shoot_from_pos = shoot_from_pos + Vector3(50, 50, 0)
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
-				throw_frag(shoot_from_pos, target_vec)
-				self._ext_movement:play_redirect("throw_grenade")
+				if difficulty_index <= 4 then
+					--Could maybe have him do something else, leaving it like this for now
+				else
+					throw_frag(shoot_from_pos, target_vec)
+					self._ext_movement:play_redirect("throw_grenade")
+				end
 			else
 				target_pos, target_vec, target_dis, autotarget = _f_CopActionShoot__get_target_pos(self, shoot_from_pos, ...)
 			end

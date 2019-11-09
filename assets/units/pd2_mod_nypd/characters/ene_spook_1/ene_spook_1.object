@@ -196,7 +196,7 @@
 
 	<graphics>
 		
-		<graphic_group name="character" enabled="true" culling_object="g_body">
+		<graphic_group name="character" enabled="true" culling_object="c_cullblock">
 
 			<lod_object name="g_body_lod">
 				<object name="g_body_lod0" enabled="true"  max_distance="1000" />
@@ -208,7 +208,7 @@
 			<object name="s_body" 			enabled="true" shadow_caster="true"/>	
 		</graphic_group>		
 
-		<graphic_group name="grp_body_no_head" enabled="false" >
+		<graphic_group name="grp_body_no_head" enabled="false" culling_object="c_cullblock">
 			<lod_object name="lod_no_head">
 				<object name="g_body_lod0" enabled="true"  max_distance="1000">
 				</object>
@@ -218,7 +218,7 @@
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 		</graphic_group>
 
-		<graphic_group name="grp_body_bottom" enabled="false" >
+		<graphic_group name="grp_body_bottom" enabled="false" culling_object="c_cullblock">
 			<lod_object name="lod_bottom">
 				<object name="g_body_lod0" enabled="true"  max_distance="1000">
 				</object>
@@ -227,11 +227,13 @@
 			</lod_object>
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 		</graphic_group>		
-
+		
+		<object name="g_il" 	enabled="false" culling_object="c_cullblock"/>
+		
 	</graphics>
 
 	<effects>
-		<effect_spawner name="eye" enabled="true" object="Head" effect="units/pd2_mod_nypd/effects/particles/character/cloaker_goggle" />
+		<effect_spawner name="es_light" enabled="false" object="Head" effect="units/pd2_mod_nypd/effects/particles/character/cloaker_goggle" />
 	</effects>	
 
 	<!--<lights>

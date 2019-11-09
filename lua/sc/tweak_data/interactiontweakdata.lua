@@ -575,5 +575,13 @@ function InteractionTweakData:init(...)
 		self.ecm_jammer.blackout_vulnerable = true
 		self.trip_mine.blackout_vulnerable = true
 		self.grenade_briefcase.blackout_vulnerable = true
+		--Grenade crate
+		self.invisible_interaction_open_superfast = {
+			icon = "develop",
+			text_id = "hud_int_invisible_interaction_open",
+			timer = 0
+		}	
+		self.grenade_briefcase = deep_clone(self.invisible_interaction_open_superfast)
+		self.grenade_briefcase.contour = "deployable"		
 	end
 end

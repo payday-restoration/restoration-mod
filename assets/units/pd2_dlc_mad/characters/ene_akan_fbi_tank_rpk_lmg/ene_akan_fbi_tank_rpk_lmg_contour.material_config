@@ -1,0 +1,15 @@
+<materials version="3" group="ene_akan_fbi_tank_rpk_lmg">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_akan_bulldozer">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_mad/characters/shared_textures/ene_bulldozer_akan_2_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_helmet">
+        <bump_normal_texture file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/maska_nm"/>
+        <diffuse_texture file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/maska_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

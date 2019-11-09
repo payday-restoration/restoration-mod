@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas" orientation_object="rp_grv_02_mask" />
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

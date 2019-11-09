@@ -1,5 +1,3 @@
---[[
-
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	
 	function HUDTemp:dodge_init()
@@ -25,8 +23,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		})
 		local dodge_threshold = self._dodge_panel:rect({
 			name = "dodge_threshold",
-			color = Color(1, 1, 1),
-			layer = 2,
+			color = Color(0.0, 0.0, 0.0),
+			layer = 4,
 			h = 2
 		})
 		self._dodge_panel:rect({
@@ -64,9 +62,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function HUDTemp:set_dodge_value(value, total_dodge)
 		self._dodge_panel:set_alpha(1) --Display dodge panel when needed.
-		self._dodge_panel:child("dodge_bar"):set_h((value / (1.0 - (total_dodge / 2.0))) * self._dodge_panel:h())
+		self._dodge_panel:child("dodge_bar"):set_h((value / (1.5-total_dodge)) * self._dodge_panel:h())
 		self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
-		if value >= 1.0 - (total_dodge / 2.0) then
+		self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0-total_dodge) / (1.5-total_dodge))) * self._dodge_panel:h())
+		if value >= 1.0 - total_dodge then
 			self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
 		else
 			self._dodge_panel:stop()
@@ -93,7 +92,7 @@ if not restoration.Options:GetValue("HUD/MainHUD") then
 
 	end)
 end
-]]--
+
 if restoration.Options:GetValue("HUD/MainHUD") then
 	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
 		if restoration.Options:GetValue("HUD/Bag") then
@@ -115,11 +114,9 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 			self._stamina_panel:set_alpha(1)
 			self._bag_panel_w, self._bag_panel_h = bag_panel:size()
 		end
-		--[[
 		if restoration and restoration.Options:GetValue("SC/SC") and restoration.Options:GetValue("HUD/MainHUD") then
 			self:dodge_init()
 		end
-		]]--
 		RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 		self:RestorationValueChanged()
 	end)

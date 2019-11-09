@@ -15,6 +15,10 @@
 		<filter name="'use_female_gloves'">
 			<check value="( (dest_unit:parent() or dest_unit):base():character_name() == 'female_1' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'bonnie' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'sydney' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'ecp_female' ) or ( (dest_unit:parent() or dest_unit):base():character_name() == 'joy' )"/>
 		</filter>
+		
+		<filter name="'is_jimmy'">
+			<check value="(dest_unit:parent() or dest_unit):base():character_name() == 'jimmy'"/>
+		</filter>
 
 		<sequence editable_state="false" name="'int_seq_hide_sleeves_loud'" triggable="false">
 			<object enabled="false" name="'g_sleeve'"/>
@@ -40,10 +44,16 @@
 		<sequence editable_state="false" name="'int_seq_jacket_swap'" triggable="false">
 			<material_config name="'units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket'"/>
 		</sequence>
+
+		<sequence editable_state="false" name="'int_seq_show_arms'" triggable="false">
+			<material_config name="'units/payday2/characters/fps_criminals_suit_1/mtr_dallas'"/>
+			<object enabled="true" name="'g_arms'"/>
+		</sequence>
 		
 		<sequence editable_state="false" name="'spawn_prop_loud_suit'" triggable="true">
 			<function extension="'spawn_manager'" function="'spawn_and_link_unit'" param1="'_char_joint_names'" param2="'char_mesh'" param3="'units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit'"/>
 			<run_sequence name="'int_seq_hide_sleeves_loud'" start_time="5/30"/>
+			<run_sequence filter="'is_jimmy'" name="'int_seq_show_arms'" start_time="5/30"/>
 			<run_sequence filter="'is_jacket'" name="'despawn_prop_loud_suit'" start_time="5/30"/>
 			<run_sequence filter="'is_jacket'" name="'int_seq_fuck_you_jacket'" start_time="5/30"/>
 			<run_sequence filter="'is_jacket'" name="'int_seq_jacket_swap'" start_time="5/30"/>

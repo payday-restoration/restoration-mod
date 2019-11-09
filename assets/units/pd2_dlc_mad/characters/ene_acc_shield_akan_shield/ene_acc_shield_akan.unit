@@ -1,0 +1,7 @@
+<unit type="items" slot="8">
+	<object file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

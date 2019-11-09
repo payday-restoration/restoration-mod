@@ -776,4 +776,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return self._moving and "moving_standing" or "standing"
 			end
 		end
+
+		Hooks:PostHook(PlayerStandard, "_enter", "ResDodgeInit", function(self, enter_data)
+			self._ext_damage:set_dodge_points()
+		end)
 end

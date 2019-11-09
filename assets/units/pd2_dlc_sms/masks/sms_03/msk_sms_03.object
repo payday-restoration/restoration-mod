@@ -1,0 +1,7 @@
+<dynamic_object>
+    <diesel orientation_object="rp_hoxton_mask" materials="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" />
+    <graphics>
+        <object enabled="true" name="g_hoxton" />
+    </graphics>
+</dynamic_object>
+

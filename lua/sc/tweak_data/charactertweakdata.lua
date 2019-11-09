@@ -412,7 +412,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}},
 			check = function (t, nr_grenades_used)
 				local delay_till_next_use = 30
-				local chance = 0.5
+				local chance = 0.05
 
 				if math.random() < chance then
 					return true, t + delay_till_next_use
@@ -905,6 +905,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end		
 		self.heavy_swat_sniper.is_special = true
 		table.insert(self._enemy_list, "heavy_swat_sniper")
+		
+		--Weekend Snipers
+		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)
+		self.weekend_dmr.custom_voicework = "bravo"
+        self.weekend_dmr.speech_prefix_p1 = "uwu"
+        self.weekend_dmr.speech_prefix_count = nil    
+		table.insert(self._enemy_list, "weekend_dmr")
 	end
 
 	function CharacterTweakData:_init_fbi_swat(presets)
@@ -1117,6 +1124,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia.die_sound_event = "l1d_x02a_any_3p"
 		table.insert(self._enemy_list, "omnia")
 		
+		--Weekend
+		self.weekend = deep_clone(self.city_swat)
+		self.weekend.custom_voicework = "bravo"
+        self.weekend.speech_prefix_p1 = "uwu"
+        self.weekend.speech_prefix_count = nil 
+		table.insert(self._enemy_list, "weekend")				
+		
 		self.city_swat_titan = deep_clone(self.city_swat)
 		self.city_swat_titan.can_slide_on_suppress = true
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -1153,10 +1167,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.skeleton_swat_titan = deep_clone(self.city_swat_titan)
 		self.skeleton_swat_titan.custom_voicework = "skeleton"
 		table.insert(self._enemy_list, "skeleton_swat_titan")	
-
-		self.weekend = deep_clone(self.city_swat_titan)
-		table.insert(self._enemy_list, "weekend")				
 		
+		--Weekend LMG
+		self.weekend_lmg = deep_clone(self.city_swat_titan)
+		self.weekend_lmg.custom_voicework = "bravo"
+        self.weekend_lmg.speech_prefix_p1 = "uwu"
+        self.weekend_lmg.speech_prefix_count = nil 
+		table.insert(self._enemy_list, "weekend_lmg")						
+				
 		--Temp Solution
 		if job == "haunted" then
 			self.city_swat = deep_clone(self.skeleton_swat_titan)
@@ -1596,6 +1614,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bolivian_indoors.static_dodge_preset = false
 		self.bolivian_indoors.unintimidateable = false
 		table.insert(self._enemy_list, "bolivian_indoors")
+		
+		self.bolivian_indoors_mex = deep_clone(self.bolivian_indoors)
+		self.bolivian_indoors_mex.has_alarm_pager = true
+		self.bolivian_indoors_mex.access = "gangster"
+
+		table.insert(self._enemy_list, "bolivian_indoors_mex")		
 	end
 
 	function CharacterTweakData:_init_drug_lord_boss(presets)
@@ -1913,6 +1937,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc.can_be_tased = true
 		self.spooc.static_dodge_preset = true
 		self.spooc.is_special = true
+		self.spooc.kick_damage = 5.0 --Amount of damage dealt when cloakers hick players.
 		self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
 		if is_reaper then
 		    self.spooc.die_sound_event = "rclk_x02a_any_3p"
@@ -2179,17 +2204,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
 		self.phalanx_vip.must_headshot = true
 		self.phalanx_vip.ends_assault_on_death = true
+		self.phalanx_vip.do_winters_aoe_heal = true
 		self.phalanx_vip.suppression = nil
 		self.phalanx_vip.ecm_hurts = {}
 		self.phalanx_vip.is_special = true
 		self.phalanx_vip.speech_prefix_p1 = "cpw"
 		self.phalanx_vip.speech_prefix_p2 = nil
 		self.phalanx_vip.speech_prefix_count = nil
+		self.phalanx_vip.death_animation = "death_run" 
+		self.phalanx_vip.death_animation_vars = {"var3", "heavy", "fwd", "high"}
 		self.phalanx_vip.chatter = {
 			aggressive = true,
 			retreat = true,
 			go_go = true,
 			contact = true,
+			heal_chatter_winters = true,
 			entrance = true
 		}		
 		table.insert(self._enemy_list, "phalanx_vip")
@@ -2447,6 +2476,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser.priority_shout_max_dis = 3000
 		self.taser.rescue_hostages = false
 		self.taser.deathguard = true
+		self.taser.shock_damage = 4.0 --Amount of damage dealt when taser shocks down.
 		self.taser.chatter = {
 			aggressive = true,
 			retreat = true,
@@ -11654,6 +11684,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			cop = {
+				incomming_captain = true,
+				incomming_gren = true,
+				incomming_tank = true,
+				incomming_spooc = true,
+				incomming_shield = true,
+				incomming_taser = true,
 				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
@@ -11678,6 +11714,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			swat = {
+				incomming_captain = true,
+				incomming_gren = true,
+				incomming_tank = true,
+				incomming_spooc = true,
+				incomming_shield = true,
+				incomming_taser = true,
 				entry = true,
 				aggressive = true,
 				aggressive_assault = true,
@@ -11743,6 +11785,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				suppress = true
 			},
 			shield = {
+				incomming_captain = true,
+				incomming_gren = true,
+				incomming_tank = true,
+				incomming_spooc = true,
+				incomming_taser = true,
 				entry = true,
 			    follow_me = true,
 				aggressive_assault = true,
@@ -11887,6 +11934,86 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}				
+		
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -11988,6 +12115,89 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 3.0
+		self.taser.shock_damage = 2.0
+
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}						
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -12089,6 +12299,90 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 3.0
+		self.taser.shock_damage = 2.0
+
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0		
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}				
+		
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -12190,6 +12484,89 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
+
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 4.0
+		self.taser.shock_damage = 2.0
+
+		--No normal tase for Elektra on lower difficulties
+		self.taser_summers.weapon.is_rifle.tase_distance = 0		
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}						
+		
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
@@ -12297,7 +12674,86 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 		self.omnia.weapon = deep_clone(self.presets.weapon.good)
+	
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 4.0
+		self.taser.shock_damage = 2.0
 		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 10
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}								
+				
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self:_set_characters_melee_preset("2.1", "2")
 		self.fbi.can_shoot_while_dodging = true
@@ -12401,6 +12857,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 5.0
+		self.taser.shock_damage = 3.0
+
 		self:_set_characters_weapon_preset("expert", "good")
 		self:_set_characters_dodge_preset("athletic_overkill")
 		self.fbi.can_shoot_while_dodging = true
@@ -12410,6 +12870,81 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
 		self:_set_characters_melee_preset("2.1", "2")
+		
+		--Weekend Rifles/Shotguns
+		self.weekend.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend.dodge = self.presets.dodge.athletic_very_hard
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+		self.weekend.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+		
+		--Weekend LMG Variants
+		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Weekend Snipers
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 10
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}		
 				
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -12527,6 +13062,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
 		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 5.0
+		self.taser.shock_damage = 3.0
+
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
@@ -12551,7 +13090,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 		self.city_swat_titan_assault.use_animation_on_fire_damage = false
 		self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
-		self.skeleton_swat_titan.use_animation_on_fire_damage = false			
+		self.skeleton_swat_titan.use_animation_on_fire_damage = false	
+		self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.weekend_lmg.use_animation_on_fire_damage = false				
 		
 		--Fast Titan HRTs
 		self.swat_titan.move_speed = self.presets.move_speed.lightning
@@ -12601,6 +13142,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
+		
+		--Set damage dealt for false downs.
+		self.spooc.kick_damage = 6.0
+		self.taser.shock_damage = 4.0
 		
 		self.shield.weapon.is_pistol.melee_speed = nil
 		self.shield.weapon.is_pistol.melee_dmg = nil
@@ -12788,6 +13333,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return false, t + delay_till_next_use
 			end
 		}
+		self.weekend_lmg.dodge_with_grenade = {
+			smoke = {duration = {
+				12,
+				12
+			}},
+			check = function (t, nr_grenades_used)
+				local delay_till_next_use = 30
+				local chance = 0.25
+
+				if math.random() < chance then
+					return true, t + delay_till_next_use
+				end
+
+				return false, t + delay_till_next_use
+			end
+		}		
 		
 		--Titan SWAT stun resistance
 		self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
@@ -12796,11 +13357,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan_assault.use_animation_on_fire_damage = false
 		self.skeleton_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
 		self.skeleton_swat_titan.use_animation_on_fire_damage = false			
+		self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+		self.weekend_lmg.use_animation_on_fire_damage = false				
 
 		--Fast Titan HRTs
 		self.swat_titan.move_speed = self.presets.move_speed.lightning		
 		
-		self.tank_titan_assault.move_speed = self.presets.move_speed.slow
+		--Titandozers become immune to stunning
+		self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
+		self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
+		
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
@@ -13585,6 +14151,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_shadow_cloaker_1",
 					"ene_shadow_cloaker_2"
 				}
+			},
+			mex = {
+				path = "units/pd2_dlc_mex/characters/",
+				list = {
+					"ene_mex_security_guard",
+					"ene_mex_security_guard_2",
+					"ene_mex_security_guard_3",
+					"ene_mex_thug_outdoor_01",
+					"ene_mex_thug_outdoor_02",
+					"ene_mex_thug_outdoor_03",
+					"civ_male_italian"
+				}				
 			},			
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",
@@ -13674,6 +14252,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_lapd_heavy_2",
 					"ene_lapd_veteran_cop_1",
 					"ene_lapd_veteran_cop_2"
+				}
+			},
+			bravo = {
+				path = "units/pd2_mod_bravo/characters/",
+				list = {
+					"ene_bravo_dmr",
+					"ene_bravo_lmg",
+					"ene_bravo_rifle",
+					"ene_bravo_shotgun"
 				}
 			},
 			halloween = {

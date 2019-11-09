@@ -223,7 +223,7 @@
 
 		<graphic_group name="head" enabled="true" culling_object="g_head">
 			
-            <object name="g_head"       enabled="true" cpy_material_vars="contour_color, contour_opacity" />
+            <object name="g_head"       enabled="false" cpy_material_vars="contour_color, contour_opacity" />
 			<object name="g_head_lod1"  enabled="false" cpy_material_vars="contour_color, contour_opacity" />
 			
 			<object name="s_head" enabled="true" shadow_caster="true"/>

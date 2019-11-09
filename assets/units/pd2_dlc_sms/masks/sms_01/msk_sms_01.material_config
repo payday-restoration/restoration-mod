@@ -1,0 +1,11 @@
+<materials version="3">
+    <material name="mtr_dallas_mask" unique="true" render_template="solid_mask" version="2">
+		<diffuse_texture file="units/pd2_dlc_sms/masks/sms_01/sms_01_df" />
+		<bump_normal_texture file="units/pd2_dlc_sms/masks/sms_01/sms_01_nm" />
+        <reflection_texture file="units/payday2/matcaps/matcap_plastic_df"/>
+        <material_texture file="units/payday2/masks/shared_textures/patterns/pattern_no_color_no_material_df"/>
+        <variable value="0 0 0" type="vector3" name="tint_color_a"/>
+        <variable value="0 0 0" type="vector3" name="tint_color_b"/>
+        <variable value="1" type="scalar" name="material_amount"/>
+    </material>
+</materials>

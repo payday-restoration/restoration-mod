@@ -11,6 +11,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if self._equipped_armor_id ~= new_armor_id then
 			self._equipped_armor_id = new_armor_id
+			
+			--[[
+			
 			local armor_sequence = tweak_data.blackmarket.armors[new_armor_id].sequence
 			local job = Global.level_data and Global.level_data.level_id
 
@@ -32,6 +35,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if self._unit:armor_skin() and self._unit:armor_skin().set_armor_id then
 				self._unit:armor_skin():set_armor_id(new_armor_id)
 			end
+			
+			]]--
 
 			local con_mul, index = managers.blackmarket:get_concealment_of_peer(self)
 

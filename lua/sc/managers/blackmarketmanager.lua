@@ -1,3 +1,25 @@
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+
+	function BlackMarketManager:equipped_armor(chk_armor_kit, chk_player_state)
+		if chk_player_state and managers.player:current_state() == "civilian" then
+			return self._defaults.armor
+		end
+		local armor
+		for armor_id, data in pairs(tweak_data.blackmarket.armors) do
+			armor = Global.blackmarket_manager.armors[armor_id]
+			if armor.equipped and armor.unlocked and armor.owned then
+				local forced_armor = self:forced_armor()
+				if forced_armor then
+					return forced_armor
+				end
+				return armor_id
+			end
+		end
+		return self._defaults.armor
+	end
+
+end	
+
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 	--fire rate multiplier blackmarket statchart stuff	

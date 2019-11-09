@@ -17,8 +17,8 @@
     </material>	
     <material version="2" name="glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
-        <opacity_texture file="units/payday2/characters/shared_textures/tank_glass_op"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/tank_glass_df"/>
+        <opacity_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_op"/>
+        <diffuse_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
     </material>   
 </materials>

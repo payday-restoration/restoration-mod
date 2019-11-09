@@ -12,8 +12,8 @@
         <variable value="0"     type="scalar" name="contour_opacity"/>
 	</material>
 	<material name="mtr_ene_acc_swat_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/material_body_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/material_body_df"/>
+		<bump_normal_texture 	file="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0"     type="scalar" name="contour_opacity"/>
 	</material>
@@ -21,7 +21,7 @@
     <material version="2" name="mtr_ene_acc_swat_helmet_lod" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE">
         <variable value="0 1 0" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/payday2/characters/shared_textures/glass_op"/>
-        <diffuse_texture file="units/payday2/glass/glass_clear_small_dark_df"/>
+        <diffuse_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
         <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
     </material>  
@@ -29,7 +29,7 @@
     <material version="2" name="mtr_ene_acc_swat_helmet_lod1" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE">
         <variable value="0 1 0" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/payday2/characters/shared_textures/glass_op"/>
-        <diffuse_texture file="units/payday2/glass/glass_clear_small_dark_df"/>
+        <diffuse_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
         <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
     </material>  
@@ -37,7 +37,7 @@
     <material version="2" name="mtr_head_lod" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS">
         <variable value="0 1 0" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/payday2/characters/shared_textures/glass_op"/>
-        <diffuse_texture file="units/payday2/glass/glass_clear_small_dark_df"/>
+        <diffuse_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
     </material>  
 

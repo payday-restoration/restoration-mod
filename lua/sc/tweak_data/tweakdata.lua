@@ -258,6 +258,17 @@
 	tweak_data.medic.cooldown = 60
 	tweak_data.medic.radius = 400
 	tweak_data.medic.lpf_radius = 800
+	
+	if difficulty_index <= 4 then
+		tweak_data.medic.doc_radius = 1500
+	elseif difficulty_index == 5 then
+		tweak_data.medic.doc_radius = 2500
+	elseif difficulty_index == 6 then
+		tweak_data.medic.doc_radius = 5000
+	else
+		tweak_data.medic.doc_radius = 9999999
+	end			
+	
 	tweak_data.medic.disabled_units = {
 		"phalanx_minion",
 		"phalanx_vip",
@@ -358,6 +369,20 @@
 		28000,
 		32000
 	}
+
+	tweak_data.experience_manager.pro_day_multiplier = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+		1
+	}
+
+	if Global.game_settings and Global.game_settings.one_down then
+		tweak_data.experience_manager.limited_bonus_multiplier = 1.2
+	end
 	
 		tweak_data.gui.buy_weapon_categories = {
 			primaries = {

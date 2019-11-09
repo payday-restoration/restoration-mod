@@ -1,0 +1,41 @@
+<materials version="3" group="ene_swat_hvh_1">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_df" mip="4"/>
+	</material>
+
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_df"/>
+	</material>
+	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_df" mip="1"/>
+	</material>
+	<material name="mtr_swat_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_df" mip="4"/>
+	</material>
+
+	<material name="mtr_ene_acc_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/helmets_atlas_hvh_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/helmets_atlas_hvh_df"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/helmets_atlas_hvh_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/helmets_atlas_hvh_df" mip="1"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/helmets_atlas_hvh_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/helmets_atlas_hvh_df" mip="4"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -176,6 +176,160 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}	
+		
+		--Stonecold Wolf
+		self.masks.wolf_stone = {
+			unit = "units/mods/masks/msk_wolf_stone/msk_wolf_stone",
+			name_id = "bm_msk_wolf_stone",
+			desc_id = "bm_msk_wolf_stone_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}	
+		
+		--Aged Dallas
+		self.masks.dallas_aged = {
+			unit = "units/mods/masks/msk_dallas_aged/msk_dallas_aged",
+			name_id = "bm_msk_dallas_aged",
+			desc_id = "bm_msk_dallas_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Aged Chains
+		self.masks.chains_aged = {
+			unit = "units/mods/masks/msk_chains_aged/msk_chains_aged",
+			name_id = "bm_msk_chains_aged",
+			desc_id = "bm_msk_chains_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Aged Hoxton
+		self.masks.hoxton_aged = {
+			unit = "units/mods/masks/msk_hoxton_aged/msk_hoxton_aged",
+			name_id = "bm_msk_hoxton_aged",
+			desc_id = "bm_msk_hoxton_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Aged Wolf
+		self.masks.wolf_aged = {
+			unit = "units/mods/masks/msk_wolf_aged/msk_wolf_aged",
+			name_id = "bm_msk_wolf_aged",
+			desc_id = "bm_msk_wolf_aged_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Dallas
+		self.masks.beef_dallas = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas",
+			name_id = "bm_msk_beef_dallas",
+			desc_id = "bm_msk_beef_dallas_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Chains
+		self.masks.beef_chains = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains",
+			name_id = "bm_msk_beef_chains",
+			desc_id = "bm_msk_beef_chains_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Hoxton
+		self.masks.beef_hoxton = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton",
+			name_id = "bm_msk_beef_hoxton",
+			desc_id = "bm_msk_beef_hoxton_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Beeef Wolf
+		self.masks.beef_wolf = {
+			unit = "units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf",
+			name_id = "bm_msk_beef_wolf",
+			desc_id = "bm_msk_beef_wolf_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Dallas
+		self.masks.vyse_dallas = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas",
+			name_id = "bm_msk_vyse_dallas",
+			desc_id = "bm_msk_vyse_dallas_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Chains
+		self.masks.vyse_chains = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains",
+			name_id = "bm_msk_vyse_chains",
+			desc_id = "bm_msk_vyse_chains_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Hoxton
+		self.masks.vyse_hoxton = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton",
+			name_id = "bm_msk_vyse_hoxton",
+			desc_id = "bm_msk_vyse_hoxton_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Vyse Wolf
+		self.masks.vyse_wolf = {
+			unit = "units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf",
+			name_id = "bm_msk_vyse_wolf",
+			desc_id = "bm_msk_vyse_wolf_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
+		
+		--Secret Hoxton Reborn
+		self.masks.secret_old_hoxton = {
+			unit = "units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn",
+			name_id = "bm_msk_secret_old_hoxton",
+			desc_id = "bm_msk_secret_old_hoxton_desc",
+			pcs = {},
+			value = 0,
+			global_value = "rest",
+			texture_bundle_folder = "mods"
+		}
 	end
 	
 	--we all know alligator skin's the best material right--
@@ -187,16 +341,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "material_jkl_matt01_title",
 			pcs = {},
 			texture = "units/pd2_mod_jack/matcaps/jkl_matt01",
-			material_amount = 0,
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}
 		self.materials.jkl_matt02 = {
 			name_id = "material_jkl_matt02_title",
 			pcs = {},
 			texture = "units/pd2_mod_jack/matcaps/jkl_matt02",
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}		
 				
 	end	
@@ -211,7 +364,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			texture = "patterns/jkl_patt01",
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}
 
 		self.textures.jkl_patt02 = {
@@ -219,7 +372,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			pcs = {},
 			texture = "patterns/jkl_patt02",
 			value = 0,
-			dlc = "rest"
+			global_value = "rest"
 		}			
 				
 	end		

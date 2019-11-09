@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" orientation_object="rp_ene_acc_bulldozer_stomache" />
+
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_bulldozer_stomache" />
+			<object name="c_armor_stomache" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+
+	<graphics>
+		<object name="g_armor_stomache" enabled="true" />
+	</graphics>
+</dynamic_object>

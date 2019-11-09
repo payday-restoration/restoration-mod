@@ -21,6 +21,7 @@ function restoration:Init()
 		"wwh",
 		"pines",
 		"hox_3",
+		"framing_frame_1",
 		--///CUSTOM HEISTS\\\--
 		"hardware_store", 
 		"office_strike",
@@ -57,6 +58,7 @@ function restoration:Init()
 	restoration.captain_stelf = {
 		"nightclub", --and Autumn stay off the dance floor
 		"gallery", --art gallery
+		"framing_frame_1", --art gallery but ff
 		"branchbank", --well the trees are orange
 		"dah", --diamond heist
 		"four_stores", --do i really need to make a comment here?
@@ -105,6 +107,8 @@ function restoration:Init()
 		"arm_par",
 		"arm_und",
 		"arm_for",
+		"mex",
+		"mex_cooking",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",
@@ -143,6 +147,8 @@ function restoration:Init()
 		"kenaz",  --Golden Grin Casino
 		"fish",  --Yacht Heist
 		"firestarter_2_res",  --Firestarter Day 2
+		"shoutout_raid",  --Meltdown
+		"hox_3",  --Hoxton's Revenge
 		"mad" --Boiling Point	
 		
 		--holding loud suit levels here in case we need an extra check for them in the future

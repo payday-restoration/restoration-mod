@@ -95,10 +95,10 @@ function UpgradesTweakData:_init_pd2_values()
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
+		0.2,
 		0.1,
-		0.05,
 		0,
-		-0.05,
+		-0.1,
 		-0.15,
 		-0.2,
 		-0.3
@@ -106,10 +106,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.body_armor.concealment = {
 		30,
 		25,
-		20,
+		23,
+		21,
 		15,
 		5,
-		1,
 		0
 	}
 	self.values.player.body_armor.damage_shake = { 
@@ -146,16 +146,17 @@ function UpgradesTweakData:_init_pd2_values()
 		7,
 		5,
 		4,
-		2
+		3
 	}
+	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		14,
-		13.5,
-		12.5,
-		12,
-		10.5,
-		9.5,
-		4
+		1.50,
+		1.45,
+		1.40,
+		1.35,
+		1.30,
+		1.25,
+		1.20
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -167,6 +168,9 @@ function UpgradesTweakData:_init_pd2_values()
 		self.values.player.no_deflection = {true}
     	self.values.player.yakuza_berserker = {true}
 		self.values.player.electrocution_resistance_multiplier = {1}
+		self.values.player.dodge_to_heal = {true}
+		self.values.player.melee_to_heal = {true}
+		self.values.player.dodge_on_revive = {true}
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
 	self.values.team.crew_add_armor = {1.5}
@@ -174,7 +178,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_add_concealment = {1}
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
-	self.values.team.crew_health_regen = {0.25}
+	self.values.team.crew_health_regen = {0.15}
 	self.values.team.crew_throwable_regen = {70}
 	self.values.team.crew_faster_reload = {1.1}
 	self.values.team.crew_faster_swap = {1}	
@@ -389,7 +393,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.health_multiplier = {1.15, 1.4}
 
 				--Bullseye
-				self.values.player.headshot_regen_armor_bonus = {0.05, 3.5}
+				self.values.player.headshot_regen_armor_bonus = {0.5, 3.5}
 				self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
@@ -630,9 +634,10 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   COMMANDO SUBTREE   ]]--
 			--{
 				--Duck and Cover
-				self.values.player.run_dodge_chance = {0.1}
+				self.values.player.run_dodge_chance = {0.10}
+				self.values.player.zipline_dodge_chance = {0.3}
 				self.values.player.run_speed_multiplier = {1.25}
-				self.values.player.crouch_dodge_chance = {0.05, 0.15}
+				self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
 				--Evasion
 				self.values.player.movement_speed_multiplier = {1.05, 1.1}
@@ -676,21 +681,43 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Second Wind--
 				self.values.temporary.damage_speed_multiplier = {
-					{1.15, 5},
-					{1.3, 8}
+					{1.1, 3},
+					{1.2, 3}
 				}
+				self.values.player.armor_depleted_stagger_shot = {0, 3}
 
 				--Optical Illusions
+				self.values.player.silencer_concealment_penalty_decrease = {1}
 				self.values.player.silencer_concealment_increase = {1}
-				self.values.player.silencer_concealment_penalty_decrease = {2}
 
 				--The Professional
 				self.values.weapon.silencer_spread_index_addend = {1}
 				self.values.weapon.silencer_recoil_index_addend = {1}
 				self.values.weapon.silencer_enter_steelsight_speed_multiplier = {1.5}
 
-				--Dire Need
-				self.values.player.armor_depleted_stagger_shot = {0, 5}
+				--Unseen Strike, formally Dire Need
+				self.values.temporary.unseen_strike = {
+					{
+						1.15,
+						3
+					},
+					{
+						1.15,
+						6
+					}
+				}
+				self.values.player.unseen_increased_crit_chance = {
+					{
+						min_time = 4,
+						max_duration = 3,
+						crit_chance = 1.15
+					},
+					{
+						min_time = 4,
+						max_duration = 6,
+						crit_chance = 1.15
+					}
+				}				
 				
 				--Spotter
 				self.values.weapon.silencer_damage_multiplier = {1, 1}
@@ -724,16 +751,23 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   GUNSLINGER SUBTREE   ]]--
 			--{
 				--Equilibrium
-				self.values.pistol.swap_speed_multiplier = {1.8}
+				self.values.pistol.swap_speed_multiplier = {1.5, 3}
 				self.values.team.pistol.recoil_index_addend = {1}
 				self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				
-				--Gun Nut
-				self.values.pistol.spread_index_addend = {1}			
+				--Gun Nut	
 				self.values.pistol.fire_rate_multiplier = {1.15}
+				self.values.pistol.move_spread_multiplier = {0.5}
+				self.values.pistol.spread_index_addend = {1}						
 
 				--Over Pressurized/Gunfighter (Formerly Akimbo)
-				self.values.pistol.reload_speed_multiplier = {1.25, 1.5}
+				self.values.pistol.magazine_capacity_inc = {
+					5
+				}				
+				self.values.pistol.hip_fire_spread_multiplier = {
+					0.5
+				}				
+				self.values.pistol.reload_speed_multiplier = {1.15, 1.4}
 				self.values.pistol.damage_multiplier = {1}
 				
 				--Akimbo (Formerly Over Pressurized/Custom Ammo)
@@ -760,23 +794,25 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 1.1, max_stacks = 4, max_time = 10},
-					{accuracy_bonus = 1.1, max_stacks = 4, max_time = 20}
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 6},
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 8}
 				}
+				self.values.player.desperado_bodyshot_refresh = {true}
 				
 				--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
 					{
-						damage_bonus = 1.15,
-						max_stacks = 4,
-						max_time = 10
+						damage_bonus = 1.1,
+						max_stacks = 5,
+						max_time = 6
 					},
 					{	
-						damage_bonus = 1.15,
-						max_stacks = 4,
-						max_time = 20
+						damage_bonus = 1.1,
+						max_stacks = 5,
+						max_time = 8
 					}
 				}
+				self.values.player.trigger_happy_bodyshot_refresh = {true}
 
 			--}
 			
@@ -825,6 +861,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Counter Strike
 				self.values.player.counter_strike_melee = {true}
 				self.values.player.counter_strike_spooc = {true}
+				self.values.player.spooc_damage_resist = {0.5}
 
 				--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
@@ -857,43 +894,43 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
-		0.95,
 		0.9,
-		0.85,
 		0.8,
-		0.75
+		0.7,
+		0.65,
+		0.6
 	}
 
 	self.values.player.level_2_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 	self.values.player.level_3_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 	self.values.player.level_4_dodge_addend = {
+		0.05,
 		0.1,
-		0.15,
-		0.2
+		0.15
 	}
 
 	self.values.player.level_2_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_3_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 	self.values.player.level_4_armor_multiplier = {
-		1.1,
-		1.2,
-		1.4
+		1.15,
+		1.3,
+		1.5
 	}
 
 	self.values.player.tier_armor_multiplier = {
@@ -930,6 +967,10 @@ function UpgradesTweakData:_init_pd2_values()
 		}
 	}
 
+	self.values.player.heal_over_time = {
+		0.1
+	}	
+
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
@@ -941,10 +982,10 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.health.hostage_multiplier = {1.025}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
+		0.05,
 		0.1,
-		0.2,
-		0.3,
-		0.4
+		0.15,
+		0.2
    	}
 	self.values.player.passive_health_regen = {0.025}
 	self.values.player.passive_health_multiplier = {
@@ -1016,6 +1057,28 @@ function UpgradesTweakData:_init_pd2_values()
 		0.8
 	}
 
+	--Rogue
+	self.dodge_to_hot_data = {
+		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
+		works_with_armor_kit = true,
+		tick_time = 2.0,
+		total_ticks = 10.0,
+		max_stacks = 67,
+		stacking_cooldown = 0.0,
+		add_stack_sources = {
+			bullet = false,
+			explosion = false,
+			melee = false,
+			taser_tased = false,
+			poison = false,
+			fire = false,
+			projectile = false,
+			swat_van = false,
+			sentry_gun = false,
+			civilian = false
+		}
+	}
+
 	--Gambler
  	self.loose_ammo_restore_health_values = {
 		base = 2,
@@ -1070,9 +1133,9 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.health_decrease = {0.5}
 	
 	self.values.player.armor_increase = {
-		0.45,
-		0.6,
-		0.75
+		0.50,
+		0.70,
+		0.90
 	}
 
 	self.values.player.damage_to_armor = {
@@ -1137,12 +1200,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 	--Are these the dreamers we were told about?--
 	--sicario
-	self.values.player.dodge_shot_gain = {
-		{0.2, 4}
-	}
-	self.values.player.dodge_replenish_armor = {true}
-	self.values.player.smoke_screen_ally_dodge_bonus = {0.05}
-	self.values.player.sicario_multiplier = {1.5}
+	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
+	self.values.player.sicario_multiplier = {0.35} --Multiplier for dodge gained per second while inside grenade.
 	
 	--alcoholism is no joke
 	--stoic
@@ -1165,11 +1224,24 @@ function UpgradesTweakData:_init_pd2_values()
 		{50, 6}
 	}
 	
-	--yoooooooooooooooooo--
-	self.values.player.armor_regen_damage_health_ratio_multiplier = {
-		0.15,
-		0.3,
-		0.45
+	--Yakuza--
+	self.values.player.survive_one_hit = {true}
+	self.values.survive_one_hit_armor = {5.0}
+
+	self.values.player.resistance_damage_health_ratio_multiplier = {
+		0.2
+	}
+
+	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
+		0.10
+	}
+
+	self.values.player.melee_kill_dodge_regen = {
+		0.5
+	}
+
+	self.values.player.kill_dodge_regen = {
+		0.5
 	}
 	
 	--Fat benis :DDDDD
@@ -1589,6 +1661,33 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}	
+	self.definitions.player_dodge_to_heal = {
+		category = "feature",
+		name_id = "menu_player_dodge_to_heal",
+		upgrade = {
+			category = "player",
+			upgrade = "dodge_to_heal",
+			value = 1
+		}
+	}
+	self.definitions.player_melee_to_heal = {
+		category = "feature",
+		name_id = "menu_player_melee_to_heal",
+		upgrade = {
+			category = "player",
+			upgrade = "melee_to_heal",
+			value = 1
+		}
+	}
+	self.definitions.player_dodge_on_revive = {
+		category = "feature",
+		name_id = "menu_player_dodge_on_revive",
+		upgrade = {
+			category = "player",
+			upgrade = "dodge_on_revive",
+			value = 1
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {
@@ -1950,6 +2049,33 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}		
+	self.definitions.pistol_swap_speed_multiplier_1 = {
+		name_id = "menu_pistol_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "swap_speed_multiplier",
+			category = "pistol"
+		}
+	}	
+	self.definitions.pistol_swap_speed_multiplier_2 = {
+		name_id = "menu_pistol_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "swap_speed_multiplier",
+			category = "pistol"
+		}
+	}	
+	self.definitions.pistol_move_spread_multiplier = {
+		name_id = "menu_snp_move_spread_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "move_spread_multiplier",
+			category = "pistol"
+		}
+	}		
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {
@@ -2245,6 +2371,87 @@ function UpgradesTweakData:_saw_definitions()
 			category = "shotgun",
 			upgrade = "swap_speed_multiplier",
 			value = 1
+		}
+	}
+	self.definitions.player_heal_over_time = {
+		name_id = "menu_player_heal_over_time",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "heal_over_time",
+			category = "player"
+		}
+	}
+	self.definitions.player_survive_one_hit = {
+		name_id = "menu_player_survive_one_hit",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "survive_one_hit",
+			category = "player"
+		}
+	}
+	self.definitions.player_dodge_regen_damage_health_ratio_multiplier = {
+		name_id = "menu_player_dodge_regen_damage_health_ratio_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "dodge_regen_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_resistance_damage_health_ratio_multiplier = {
+		name_id = "menu_player_resistance_damage_health_ratio_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "resistance_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_melee_kill_dodge_regen = {
+		name_id = "menu_player_melee_kill_dodge_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "melee_kill_dodge_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_kill_dodge_regen = {
+		name_id = "menu_player_kill_dodge_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "kill_dodge_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_spooc_damage_resist = {
+		name_id = "menu_player_spooc_damage_resist",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "spooc_damage_resist",
+			category = "player"
+		}
+	}
+	self.definitions.player_trigger_happy_bodyshot_refresh = {
+		name_id = "menu_player_trigger_happy_bodyshot_refresh",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "trigger_happy_bodyshot_refresh",
+			category = "player"
+		}
+	}
+	self.definitions.player_desperado_bodyshot_refresh = {
+		name_id = "menu_player_desperado_bodyshot_refresh",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "desperado_bodyshot_refresh",
+			category = "player"
 		}
 	}
 end

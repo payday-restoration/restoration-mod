@@ -355,4 +355,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return delay
 	end
 	
+	function CopLogicTravel._try_anounce(data, my_data)
+	    local my_pos = data.m_pos
+	    local max_dis_sq = 500000
+	    local my_key = data.key
+	    local announce_type = data.char_tweak.announce_incomming
+	    
+	    for u_key, u_data in pairs(managers.enemy:all_enemies()) do
+	    	if u_key ~= my_key and tweak_data.character[u_data.unit:base()._tweak_table].chatter[announce_type] and mvector3.distance_sq(my_pos, u_data.m_pos) < max_dis_sq and not u_data.unit:sound():speaking(data.t) and (u_data.unit:anim_data().idle or u_data.unit:anim_data().move) then
+	    		managers.groupai:state():chk_say_enemy_chatter(u_data.unit, u_data.m_pos, announce_type)
+        		--log("announced arrival")
+	    
+	    		my_data.announce_t = data.t + 15
+	    
+	    		break
+	    	end
+	    end
+    end
+	
 end

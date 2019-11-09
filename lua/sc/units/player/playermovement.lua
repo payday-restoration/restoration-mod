@@ -25,6 +25,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local state = "incapacitated"
 			
 			managers.player:set_player_state(state)
+			self._unit:character_damage():cloak_or_shock_incap(tweak_data.character.spooc.kick_damage)
 			managers.achievment:award(tweak_data.achievement.finally.award)
 
 			return true

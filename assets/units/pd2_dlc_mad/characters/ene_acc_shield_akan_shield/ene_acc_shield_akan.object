@@ -1,0 +1,28 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" orientation_object="rp_ene_acc_shield_akan" />
+	<sequence_manager file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+
+	<bodies>
+		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_akan" />
+			<object name="c_convex_1" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_2" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_3" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_akan" />
+			<object name="c_convex_1" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_2" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_3" collision_type="convex" padding="-2.5" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_cloth_stuffed" enabled="true" material="carpet" />
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_shield" enabled="true" />
+	</graphics>
+</dynamic_object>

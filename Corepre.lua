@@ -9,6 +9,9 @@ if restoration and restoration.Options:GetValue("SC/SC") then
 	if not PackageManager:loaded("packages/scassets") then
 		PackageManager:load("packages/scassets")
 	end
+	if not PackageManager:loaded("packages/outfitassets") then
+		PackageManager:load("packages/outfitassets")
+	end	
 end
 -- Always load
 if not PackageManager:loaded("packages/addhudmisc") then

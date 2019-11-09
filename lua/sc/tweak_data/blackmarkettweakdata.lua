@@ -375,7 +375,92 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest"
 		}			
 				
-	end		
+	end	
+
+	--Making this less awful--
+	local old_styles = BlackMarketTweakData._init_player_styles
+	function BlackMarketTweakData:_init_player_styles(tweak_data)
+		old_styles(self, tweak_data)
+		
+		--Gotta redefine these
+		local characters_female = {
+			"female_1",
+			"sydney",
+			"joy",
+			"ecp_female"
+		}
+		local characters_female_big = {
+			"bonnie",
+			"ecp_male"
+		}
+		local characters_male = {
+			"dallas",
+			"wolf",
+			"hoxton",
+			"chains",
+			"jowi",
+			"old_hoxton",
+			"dragan",
+			"jacket",
+			"sokol",
+			"dragon",
+			"bodhi",
+			"jimmy",
+			"chico",
+			"myh"
+		}
+		local characters_male_big = {
+			"wild",
+			"max"
+		}
+		local characters_all = table.list_union(characters_female, characters_male, characters_female_big, characters_male_big)
+		local body_replacement_standard = {
+			head = false,
+			armor = true,
+			body = true,
+			hands = true,
+			vest = true
+		}	
+		local body_replacement_armor = {
+			head = false,
+			armor = false,
+			body = true,
+			hands = true,
+			vest = true
+		}			
+		
+		local function set_characters_data(player_style, characters, data)
+			self.player_styles[player_style].characters = self.player_styles[player_style].characters or {}
+
+			for _, key in ipairs(characters) do
+				self.player_styles[player_style].characters[key] = data
+			end
+		end		
+		
+		--Resmod Loud Suit
+		self.player_styles.loud_suit = {
+			name_id = "bm_suit_loud_suit",
+			desc_id = "bm_suit_loud_suit_desc",
+			texture_bundle_folder = "trd",
+			unlocked = true,
+			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
+			characters = {}
+		}
+		set_characters_data("loud_suit", characters_male, {
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
+		})
+		set_characters_data("loud_suit", characters_male_big, {
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
+		})
+		set_characters_data("loud_suit", characters_female, {
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
+		})
+		set_characters_data("loud_suit", characters_female_big, {
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big"
+		})		
+	end	
 
 end
 

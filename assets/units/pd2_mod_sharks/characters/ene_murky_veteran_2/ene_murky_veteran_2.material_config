@@ -1,0 +1,28 @@
+<materials version="3" group="ene_mex_security_guard_3">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture 	file= "units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_head_01_nm"/>
+        <diffuse_texture 		file= "units/pd2_mod_sharks/characters/shared_textures/ene_veteran_head_1_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_head_01_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_head_1_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_head_01_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_head_1_df" mip="4"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture 	file= "units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01_nm"/>
+        <diffuse_texture 		file= "units/pd2_mod_sharks/characters/shared_textures/ene_veteran_body_2_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture 	file= "units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01_nm" mip="1"/>
+        <diffuse_texture 		file= "units/pd2_mod_sharks/characters/shared_textures/ene_veteran_body_2_df" mip="1"/>
+	</material>
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture 	file= "units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01_nm" mip="4"/>
+        <diffuse_texture 		file= "units/pd2_mod_sharks/characters/shared_textures/ene_veteran_body_2_df" mip="4"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -201,7 +201,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_gre_arbiter_o_smart_desc"] = "Experimental scope that provides airburst capabilites to the Arbiter.\nIncompatible with incendiary rounds.",
 		["bm_wp_upg_bp_lmg_lionbipod_desc"] = "Deploy/Undeploy by pressing the [Bipod Key/Alt-Fire Key]",
 		--String override for the stungun--
-		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
+		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch once every 15 seconds.",
 		-- Renamed default weapons
 		["bm_wp_corgi_b_short"] = "MSG Barrel",
 		["menu_es_rep_upgrade"] = "",				

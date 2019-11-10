@@ -425,7 +425,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			head = false,
 			armor = false,
 			body = true,
-			hands = true,
+			hands = false,
 			vest = true
 		}			
 		

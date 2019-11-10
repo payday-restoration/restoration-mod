@@ -56,7 +56,7 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
-		<!-- <hook file="sc/managers/dlcmanager.lua" source_file="lib/managers/dlcmanager"/> -->
+		<hook file="sc/managers/dlcmanager.lua" source_file="lib/managers/dlcmanager"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/hud/hudtemp.lua" source_file="lib/managers/hud/HUDTemp"/>

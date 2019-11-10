@@ -3835,9 +3835,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"gadget",
 			"vertical_grip"
 		}
-		self.wpn_fps_ass_m16.adds = {
-			wpn_fps_upg_ass_m4_b_beowulf = { "wpn_fps_upg_m4_m_straight_vanilla" },
-		}
+		self.wpn_fps_ass_m16.adds = {}
 		self.wpn_fps_ass_m16.override = {
 			wpn_fps_upg_ass_m4_b_beowulf = {
 				stats = {
@@ -4728,20 +4726,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			fire_steelsight = "recoil"
 		}
 		self.wpn_fps_ass_74.override = {
-			wpn_fps_upg_ass_ak_b_zastava = {
-				stats = {
-					value = 1,
-					spread = 1,
-					recoil = -1,
-					total_ammo_mod = -20,
-					damage = 10,
-					suppression = -1,
-					alert_size = -1,
-					concealment = -4
-				},
-				forbids = {},
-				custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8}
-			},
 			wpn_upg_ak_m_drum = {
 				forbids = {},
 			},
@@ -21269,12 +21253,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			dlc = "akm4_pack"
 		}
 		self.parts.wpn_fps_upg_ak_b_ak105 = {
-			pcs = {},
-			type = "barrel",
-			name_id = "bm_wp_upg_ak_b_ak105",
-			a_obj = "a_b",
 			is_a_unlockable = true,
+			texture_bundle_folder = "dlc_akm4",
+			type = "barrel",
+			a_obj = "a_b",
+			dlc = "akm4_pack",
+			name_id = "bm_wp_upg_ak_b_ak105",
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ak_b_ak105/wpn_fps_upg_ak_b_ak105",
+			pcs = {},
 			stats = {
 				value = 1,
 				concealment = 1
@@ -21349,14 +21335,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		self.parts.wpn_fps_upg_ak_ns_ak105 = {
+			parent = "barrel",
+			dlc = "akm4_pack",
 			type = "barrel_ext",
 			name_id = "bm_wp_upg_ak_ns_ak105",
-			a_obj = "a_ns",
-			parent = "barrel",
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ak_b_ak105/wpn_fps_upg_ak_ns_ak105",
-			stats = {value = 1},
 			texture_bundle_folder = "dlc_akm4",
-			dlc = "akm4_pack"
+			a_obj = "a_ns",
+			stats = {
+				value = 1
+			}
 		}
 		self.parts.wpn_fps_upg_ak_fg_krebs = {
 			pcs = {},

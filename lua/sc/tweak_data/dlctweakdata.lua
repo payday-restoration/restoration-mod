@@ -184,11 +184,18 @@ function DLCTweakData:init(...)
 	end
 	
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
-		self.sc = {}
-		self.sc.free = true
-		self.sc.content = {}
-		self.sc.content.loot_global_value = "sc"
-		self.sc.content.loot_drops = {
+		self.sc = {
+			content = {},
+			free = true
+		}
+		self.sc.content.loot_drops = {}
+		self.sc.content.upgrades = {}	
+		self.sc_weapon_mods = {
+			content = {},
+			dlc = "has_sc"
+		}
+		self.sc_weapon_mods.content.loot_global_value = "sc"
+		self.sc_weapon_mods.content.loot_drops = {
 			{
 				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_ammo_half_that",

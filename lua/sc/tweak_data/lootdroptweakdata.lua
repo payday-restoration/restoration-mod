@@ -19,7 +19,7 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.sc.chance = 0.84
     self.global_values.sc.value_multiplier = tweak_data:get_value("money_manager", "global_value_multipliers", "normal")
     self.global_values.sc.durability_multiplier = 1
-    self.global_values.sc.drops = false
+    self.global_values.sc.custom = true
     self.global_values.sc.track = false
     self.global_values.sc.sort_number = 30
     self.global_values.sc.category = "sc"

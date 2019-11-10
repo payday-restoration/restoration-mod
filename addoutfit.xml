@@ -1,6 +1,12 @@
 <table directory="assets">
 
     <!-- <sequence_manager path="units/payday2/characters/ragdoll" force="true"/> -->
+
+	<!--Blank FPS Model-->
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
 	
 	<!--///POOL REPAIR SUITS\\\-->
 	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_1" force="true"/>
@@ -77,6 +83,62 @@
 	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
 	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+    
+	<!--///Sunny-Side Robber FPS Chains\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains_df" force="true"/>
+    
+	<!--///Sunny-Side Robber FPS\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit_df" force="true"/>
+    
+	<!--///Sunny-Side Robber Female FPS\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" force="true"/>
+    
+	<!--///Sunny-Side Robber\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_nm" force="true"/>
+    
+	<!--///Sunny-Side Robber Female\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
+    
+	<!--///Sunny-Side Robber Chains\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains_df" force="true"/>
+    
+	<!--///Sunny-Side Robber Sangres\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_nm" force="true"/>
     
 	<!--///COMBAT OUTFIT\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" force="true"/>

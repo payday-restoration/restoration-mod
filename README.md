@@ -97,14 +97,15 @@ Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks
 
 Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
 
-Jarey_ Letting us steal his mods and helping with the OMNIA heavy assets
+Jarey Major asset contributions to the mod 
 including:
 PDTH Styled Enemies assets used for the NYPD faction
 The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker
 Femcloaker - Used as a shrinkwrap base for female enemies
 Jarey_ ZEALS Used for our ZEAL sepcials
 Updating Captain Sprung and Russian Titan Dozer assets
-Sniper Glint - Sniper Glint
+Sniper Glint
+Russian Titan Cloaker textures
 
 Nelson01023 Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Basically doing all the jobs no one else wanted to do.
 
@@ -134,7 +135,7 @@ Wekk Telling us what LPF should mean and allowing us to implement "Less Clones, 
 
 ShinyHopip Created the Explosive Headshot graze rework.
 
-Baddy fixing the cap on security 7 and providing inspiration for the FBI/GenSec heavy shotgunner assets.
+Baddy fixing the cap on security 7, providing the model for the Russian Titan Cloaker and providing inspiration for the FBI/GenSec heavy shotgunner assets.
 
 Testers:
 ShortonComedyGamer (made sure neslon added support to the custom owen) 

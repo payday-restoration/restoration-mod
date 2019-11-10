@@ -508,7 +508,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_suit_sunny_desc",
 			texture_bundle_folder = "trd",
 			unlocked = true,
-			third_body_replacement = body_replacement_hands,
+			third_body_replacement = body_replacement_standard,
 			characters = {}
 		}
 		set_characters_data("suit_sunny", characters_male, {

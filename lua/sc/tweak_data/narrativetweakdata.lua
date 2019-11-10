@@ -1,5 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)	
+		self.jobs.mex.jc = 60
+		self.jobs.mex_cooking.jc = 60
 		self.jobs.kenaz.payout = {			
 			250000,
 			300000,

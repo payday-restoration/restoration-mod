@@ -129,6 +129,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_loud_suit"] = "Combat Harness",
 		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.\n\nThis outfit can be worn on loud heists.",		
 		
+		["bm_suit_sunny"] = "Sunny-Side Robber",
+		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
+		
 
 		--Safe House Test
 		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",

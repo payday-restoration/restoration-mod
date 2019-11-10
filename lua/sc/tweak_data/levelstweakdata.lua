@@ -86,7 +86,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dinner.player_style = "loud_suit"
 		
 		self.man.package = {"packages/narr_man"}
-		self.man.player_style = "loud_suit"
+		self.man.player_style = "suit_sunny"
 		
 		self.nmh.ai_group_type = nypd
 		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
@@ -104,7 +104,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}
-		--self.pal.player_style = "jumpsuit"		
+		self.pal.player_style = "suit_sunny"		
 		
 		self.kenaz.ai_group_type = lapd
 		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/outfitassets3"}	
@@ -118,74 +118,65 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
         --///NEW OUTFITS\\\--
 		
-		self.fish.package = {"packages/outfitassets3", "packages/lvl_fish"}
 		self.fish.player_style = "tux"
 		
-		self.arm_cro.package = {"packages/narr_arm_cro"}
 		self.arm_cro.player_style = "sneak_suit"
 		
-		self.arm_hcm.package = {"packages/narr_arm_hcm"}
 		self.arm_hcm.player_style = "sneak_suit"	
 		
-		self.arm_fac.package = {"packages/narr_arm_fac"}
 		self.arm_fac.player_style = "loud_suit"
 		
-		self.arm_par.package = {"packages/narr_arm_par"}
 		self.arm_par.player_style = "loud_suit"		
 		
-		self.arm_und.package = {"packages/outfitassets3", "packages/narr_arm_und"}
 		self.arm_und.player_style = "scrub"
 		
-		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2"}
 		self.crojob2.player_style = "sneak_suit"
 		
-		self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3"}
 		self.crojob3.player_style = "sneak_suit"
 		
-		self.dark.package = {"packages/job_dark"}
 		self.dark.player_style = "sneak_suit"
 		
-		self.kosugi.package = {"packages/kosugi"}
 		self.kosugi.player_style = "sneak_suit"		
 				
-		self.hox_3.package = {"packages/narr_hox_3"}
-		self.hox_3.player_style = "sneak_suit"
+		self.mex.player_style = "suit_sunny"
+		self.mex_cooking.player_style = "suit_sunny"
 		
-		self.election_day_1.package = {"packages/narr_election1"}
+		self.hox_1.player_style = "suit_sunny"
+		self.hox_2.player_style = "suit_sunny"
+		self.hox_3.player_style = "suit_sunny"
+		
+		self.rat.player_style = "suit_sunny"
+		
 		self.election_day_1.player_style = "sneak_suit"
 		
-		self.election_day_2.package = {"packages/narr_election2"}
 		self.election_day_2.player_style = "sneak_suit"
 		
-		self.gallery.package = {"packages/narr_framing_1"}
 		self.gallery.player_style = "sneak_suit"
 		
-		self.framing_frame_1.package = {"packages/narr_framing_1"}
 		self.framing_frame_1.player_style = "sneak_suit"
 		
-		self.framing_frame_3.package = {"packages/narr_framing_3"}
 		self.framing_frame_3.player_style = "sneak_suit"
+				
+		self.alex_1.player_style = "suit_sunny"
+		self.alex_3.player_style = "suit_sunny"
 		
-		self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2"}
+		self.friend.player_style = "suit_sunny"
+		
+		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
+		
 		self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 		
-		self.chew.package = {"packages/lvl_chew"}
 		self.chew.player_style = "loud_suit"
 		
-		self.pbr2.package = {"packages/narr_jerry2"}
 		self.pbr2.player_style = "loud_suit"
 		
-		self.watchdogs_2.package = {"packages/narr_watchdogs2"}
 		self.watchdogs_2.player_style = "loud_suit"
 		
-		self.watchdogs_2_day.package = {"packages/narr_watchdogs2_day"}
 		self.watchdogs_2_day.player_style = "loud_suit"
 		
-		self.cane.package = {"packages/outfitassets2", "packages/cane"}
 		--reminder to add the biker vo package here
 		self.cane.player_style = "winter_suit"
 								
-		self.mus.package = {"packages/narr_mus"}
 		self.mus.player_style = "sneak_suit"
 		
 		--///GANGSTER VOICEOVER\\\--

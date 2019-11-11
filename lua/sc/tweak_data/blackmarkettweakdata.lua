@@ -473,61 +473,71 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "mods",
 			unlocked = true,
 			keep_wrists = true,
-			third_body_replacement = body_replacement_armor,
 			characters = {}
 		}
 		set_characters_data("loud_suit", characters_male, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_bodhi, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_jimmy, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_chains, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_sangres, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
 		})
 		set_characters_data("loud_suit", characters_jacket, {
 			body_replacement = body_replacement_fps,
+			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_male_big, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_standard,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
 		})
 		set_characters_data("loud_suit", characters_female, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_standard,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
 		})
 		set_characters_data("loud_suit", characters_sydney, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_standard,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
 		})
 		set_characters_data("loud_suit", characters_joy, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_standard,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
 		})
 		set_characters_data("loud_suit", characters_female_big, {
 			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_standard,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big"
 		})	

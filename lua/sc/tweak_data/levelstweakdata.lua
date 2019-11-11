@@ -111,18 +111,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.kenaz.player_style = "tux"				
 		
 		self.rvd1.ai_group_type = lapd
-		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
+		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}	
+		self.rvd1.player_style = "suit_sunny"		
 		
 		self.rvd2.ai_group_type = lapd
 		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
+		self.rvd2.player_style = "suit_sunny"
 
         --///NEW OUTFITS\\\--
 		
 		self.fish.player_style = "tux"
 		
-		self.arm_cro.player_style = "sneak_suit"
+		self.arm_cro.player_style = "loud_suit"
 		
-		self.arm_hcm.player_style = "sneak_suit"	
+		self.arm_hcm.player_style = "loud_suit"	
 		
 		self.arm_fac.player_style = "loud_suit"
 		

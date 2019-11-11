@@ -173,8 +173,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.pbr2.player_style = "loud_suit"
 		
+		self.watchdogs_1.player_style = "suit_sunny"
 		self.watchdogs_2.player_style = "loud_suit"
 		
+		self.watchdogs_1_day.player_style = "suit_sunny"
 		self.watchdogs_2_day.player_style = "loud_suit"
 		
 		--reminder to add the biker vo package here

@@ -470,7 +470,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.player_styles.loud_suit = {
 			name_id = "bm_suit_loud_suit",
 			desc_id = "bm_suit_loud_suit_desc",
-			texture_bundle_folder = "trd",
+			texture_bundle_folder = "mods",
 			unlocked = true,
 			keep_wrists = true,
 			third_body_replacement = body_replacement_armor,
@@ -536,7 +536,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.player_styles.suit_sunny = {
 			name_id = "bm_suit_sunny",
 			desc_id = "bm_suit_sunny_desc",
-			texture_bundle_folder = "trd",
+			texture_bundle_folder = "mods",
 			unlocked = true,
 			third_body_replacement = body_replacement_standard,
 			characters = {}

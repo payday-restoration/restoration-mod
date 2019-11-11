@@ -9500,7 +9500,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ak5s.desc_id = nil
 		self.ak5s.categories = {"pistol"}
 		self.ak5s.use_data.selection_index = 2
-		self.ak5s.CLIP_AMMO_MAX = 40
+		self.ak5s.CLIP_AMMO_MAX = 35
 		self.ak5s.AMMO_MAX = 180
 		self.ak5s.AMMO_PICKUP = self:_pickup_chance(180, 2)
 		self.ak5s.auto.fire_rate = 0.08275862068

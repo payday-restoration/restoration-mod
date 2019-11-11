@@ -46834,6 +46834,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			self.parts.wpn_fps_smg_ak5s_m_curve.stats = {
 				value = 1,
 				reload = 1,
+				spread = -1, 
 				concealment = -1
 			}
 			self.parts.wpn_fps_smg_ak5s_nostock.stats = {

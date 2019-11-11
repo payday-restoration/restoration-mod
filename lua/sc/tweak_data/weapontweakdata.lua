@@ -9480,8 +9480,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.sg416.kick.steelsight = self.new_m4.kick.standing
 		self.sg416.stats = {
 			damage = 40,
-			spread = 17,
-			recoil = 19,
+			spread = 16,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 22,

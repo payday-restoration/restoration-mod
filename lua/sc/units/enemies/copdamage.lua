@@ -1305,6 +1305,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return result
 	end
+	
+	function CopDamage:_on_damage_received(damage_info)
+		self:build_suppression("max", nil)
+		self:_call_listeners(damage_info)
+		CopDamage._notify_listeners("on_damage", damage_info)
+		
+		if damage_info.damage and damage_info.damage > 0.01 then
+			self._unit:sound():say("x01a_any_3p", nil, nil)
+		end
+		
+		if damage_info.result.type == "death" then
+			managers.enemy:on_enemy_died(self._unit, damage_info)
+
+			for c_key, c_data in pairs(managers.groupai:state():all_char_criminals()) do
+				if c_data.engaged[self._unit:key()] then
+					debug_pause_unit(self._unit:key(), "dead AI engaging player", self._unit, c_data.unit)
+				end
+			end
+		end
+
+		if self._dead and self._unit:movement():attention() then
+			debug_pause_unit(self._unit, "[CopDamage:_on_damage_received] dead AI", self._unit, inspect(self._unit:movement():attention()))
+		end
+
+		local attacker_unit = damage_info and damage_info.attacker_unit
+
+		if alive(attacker_unit) and attacker_unit:base() then
+			if attacker_unit:base().thrower_unit then
+				attacker_unit = attacker_unit:base():thrower_unit()
+			elseif attacker_unit:base().sentry_gun then
+				attacker_unit = attacker_unit:base():get_owner()
+			end
+		end
+
+		if attacker_unit == managers.player:player_unit() and damage_info then
+			managers.player:on_damage_dealt(self._unit, damage_info)
+		end
+
+		if damage_info.variant == "melee" then
+			managers.statistics:register_melee_hit()
+		end
+
+		self:_update_debug_ws(damage_info)
+	end
 		
 	function CopDamage:damage_mission(attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]

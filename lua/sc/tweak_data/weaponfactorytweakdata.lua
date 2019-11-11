@@ -46814,7 +46814,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			}			
 			self.parts.wpn_fps_ass_sg416_fg_custom.stats = {
 				value = 2,
-				spread = 1,
 				recoil = 2,
 				concealment = -2
 			}						

@@ -9499,6 +9499,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.ak5s then --Gambyt's AK5 Pistol
 		self.ak5s.desc_id = nil
 		self.ak5s.categories = {"pistol"}
+		self.ak5s.tactical_reload = 1		
 		self.ak5s.use_data.selection_index = 2
 		self.ak5s.CLIP_AMMO_MAX = 35
 		self.ak5s.AMMO_MAX = 180

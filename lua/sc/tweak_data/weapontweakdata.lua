@@ -9421,6 +9421,114 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m1894.can_shoot_through_wall = true		
 		self.m1894.panic_suppression_chance = 0.0
 	end
+	
+	if self.amr12 then --Gambyt's AMR 12G Shotgun
+		self.amr12.rays = 9
+		self.amr12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+		self.amr12.AMMO_MAX = 80
+		self.amr12.tactical_reload = 1		
+		self.amr12.CLIP_AMMO_MAX = 5
+		self.amr12.AMMO_PICKUP = self:_pickup_chance(80, 2)
+		self.amr12.fire_mode_data.fire_rate = 0.08571428571
+		self.amr12.CAN_TOGGLE_FIREMODE = false
+		self.amr12.single = {}
+		self.amr12.single.fire_rate = 0.08571428571
+		self.amr12.damage_near = 700
+		self.amr12.damage_far = 1400
+		self.amr12.spread.standing = 3 * 1
+		self.amr12.spread.crouching = 2 * 1
+		self.amr12.spread.steelsight = 1 * 1
+		self.amr12.spread.moving_standing = 4 * 1
+		self.amr12.spread.moving_crouching = 3 * 1
+		self.amr12.spread.moving_steelsight = 2 * 1
+		self.amr12.kick.standing = self.new_m4.kick.standing
+		self.amr12.kick.crouching = self.new_m4.kick.standing
+		self.amr12.kick.steelsight = self.new_m4.kick.standing
+		self.amr12.stats = {
+			damage = 75,
+			spread = 8,
+			recoil = 20,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 18,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.amr12.panic_suppression_chance = 0.0
+		self.amr12.stats_modifiers = {damage = 1}	
+	end
+
+	if self.sg416 then --Gambyt's SG416
+		self.sg416.has_description = false						
+		self.sg416.tactical_reload = 1		
+		self.sg416.AMMO_MAX = 150
+		self.sg416.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.sg416.spread.standing = 3
+		self.sg416.spread.crouching = 2
+		self.sg416.spread.steelsight = 1
+		self.sg416.spread.moving_standing = 4
+		self.sg416.fire_mode_data.fire_rate = 0.08571428571
+		self.sg416.auto.fire_rate = 0.08571428571
+		self.sg416.spread.moving_crouching = 3
+		self.sg416.spread.moving_steelsight = 2
+		self.sg416.kick.standing = self.new_m4.kick.standing
+		self.sg416.kick.crouching = self.new_m4.kick.standing
+		self.sg416.kick.steelsight = self.new_m4.kick.standing
+		self.sg416.stats = {
+			damage = 40,
+			spread = 17,
+			recoil = 19,
+			spread_moving = 7,
+			zoom = 3,
+			concealment = 22,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.sg416.panic_suppression_chance = 0.0
+	end
+
+
+	if self.ak5s then --Gambyt's AK5 Pistol
+		self.ak5s.desc_id = nil
+		self.ak5s.categories = {"pistol"}
+		self.ak5s.use_data.selection_index = 2
+		self.ak5s.CLIP_AMMO_MAX = 40
+		self.ak5s.AMMO_MAX = 180
+		self.ak5s.AMMO_PICKUP = self:_pickup_chance(180, 2)
+		self.ak5s.auto.fire_rate = 0.08275862068
+		self.ak5s.fire_mode_data.fire_rate = 0.08275862068
+		self.ak5s.spread.standing = 3
+		self.ak5s.spread.crouching = 2
+		self.ak5s.spread.steelsight = 1
+		self.ak5s.spread.moving_standing = 4
+		self.ak5s.spread.moving_crouching = 3
+		self.ak5s.spread.moving_steelsight = 2
+		self.ak5s.kick.standing = self.new_m4.kick.standing
+		self.ak5s.kick.crouching = self.new_m4.kick.standing
+		self.ak5s.kick.steelsight = self.new_m4.kick.standing
+		self.ak5s.stats = {
+			damage = 34,
+			spread = 13,
+			recoil = 22,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 25,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+	end			
 
 	if self.mk18s then --Gambyt's MK18 Specialist
 		self.mk18s.use_data.selection_index = 1

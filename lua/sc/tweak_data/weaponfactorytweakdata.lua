@@ -12504,6 +12504,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_o_rx30 = { "wpn_fps_ass_g3_body_rail" },
 			wpn_fps_upg_o_45iron = { "wpn_fps_ass_g3_body_rail" },
 			wpn_fps_upg_o_leupold = { "wpn_fps_ass_g3_body_rail" },
+			wpn_fps_upg_o_sig = { "wpn_fps_ass_g3_body_rail" },
+			wpn_fps_upg_o_bmg = { "wpn_fps_ass_g3_body_rail" },
+			wpn_fps_upg_o_uh = { "wpn_fps_ass_g3_body_rail" },
+			wpn_fps_upg_o_fc1 = { "wpn_fps_ass_g3_body_rail" },
+			
 		}
 		self.wpn_fps_lmg_hk21.override = {
 			wpn_fps_upg_ammo_half_that = {
@@ -12563,6 +12568,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_sig",
+			"wpn_fps_upg_o_uh",
+			"wpn_fps_upg_o_fc1",			
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_ns_ass_smg_v6"			
 		}
@@ -12774,6 +12782,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_sig",
+			"wpn_fps_upg_o_uh",
+			"wpn_fps_upg_o_fc1",
 			"wpn_fps_upg_o_xpsg33_magnifier"
 		}
 		self.wpn_fps_lmg_m249_npc = deep_clone(self.wpn_fps_lmg_m249)
@@ -12903,6 +12914,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_o_rx30 = { "wpn_fps_ak_extra_ris" },
 			wpn_fps_upg_o_45iron = { "wpn_fps_ak_extra_ris" },
 			wpn_fps_upg_o_leupold = { "wpn_fps_ak_extra_ris" },
+			wpn_fps_upg_o_sig = { "wpn_fps_ak_extra_ris" },
+			wpn_fps_upg_o_uh = { "wpn_fps_ak_extra_ris" },
+			wpn_fps_upg_o_fc1 = { "wpn_fps_ak_extra_ris" },			
 		}
 		self.wpn_fps_lmg_rpk.unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk/wpn_fps_lmg_rpk"
 		self.wpn_fps_lmg_rpk.stock_adapter = "wpn_upg_ak_s_adapter"
@@ -12989,6 +13003,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_sig",
+			"wpn_fps_upg_o_uh",
+			"wpn_fps_upg_o_fc1",			
 			"wpn_upg_ak_s_psl",
 			"wpn_lmg_rpk_m_drum_upgrade",
 			"wpn_lmg_rpk_m_ban",
@@ -19080,6 +19097,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			wpn_fps_upg_o_rx30 = { "wpn_fps_snp_mosin_rail" },
 			wpn_fps_upg_o_45iron = { "wpn_fps_snp_mosin_rail" },
 			wpn_fps_upg_o_leupold = { "wpn_fps_snp_mosin_rail" },
+			wpn_fps_upg_o_sig = { "wpn_fps_snp_mosin_rail" },
+			wpn_fps_upg_o_uh = { "wpn_fps_snp_mosin_rail" },
+			wpn_fps_upg_o_fc1 = { "wpn_fps_snp_mosin_rail" },
 			shortdot_normal = { "wpn_fps_snp_mosin_rail" },
 		}
 		self.wpn_fps_lmg_mg42.default_blueprint = {
@@ -19120,6 +19140,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_sig",
+			"wpn_fps_upg_o_uh",
+			"wpn_fps_upg_o_fc1",
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_upg_ns_ass_smg_v6"
 		}
@@ -27780,6 +27803,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_sig",
+			"wpn_fps_upg_o_uh",
+			"wpn_fps_upg_o_fc1",
 			"wpn_fps_lmg_svinet_b_standard",
 			"wpn_fps_lmg_svinet_s_legend",
 			"wpn_fps_upg_ns_ass_smg_v6"
@@ -42123,7 +42149,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					reload = 2				
 				}																			
 			end	
-
+			
 		if self.wpn_fps_ass_sr3m then --Pawcio's SR3M Vikhr
 			self.parts.wpn_fps_upg_sr3m_vertgrip_cover.stats = {
 					value = 0,
@@ -46526,264 +46552,387 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
 				"wpn_fps_upg_o_cqb"
 			})
-			self.wpn_fps_lmg_hk21.adds = { 
-				wpn_fps_upg_o_specter = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_aimpoint = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_docter = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_eotech = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_t1micro = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_cmore = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_acog = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_cs = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_eotech_xps = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_reflex = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_rx01 = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_rx30 = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_45iron = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_leupold = { "wpn_fps_ass_g3_body_rail" },
-				wpn_fps_upg_o_cqb = { "wpn_fps_ass_g3_body_rail" }, --is there a fuckin table.insert equivalent to this shit? who knows. fuck you.
-			}
+			self.wpn_fps_lmg_hk21.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ass_g3_body_rail"} --FUCK YEAH, I'M SO DUMB THAT I'M A GENIUS
 			self.parts.wpn_fps_upg_o_cqb.stats = {
 				value = 5
-				}
+			}
 			self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
 				value = 1
-				}
+			}
 			self.parts.wpn_fps_lmg_shuno_body_red.stats = {
 				value = 0
-				}
+			}
 			self.parts.wpn_fps_ass_amcar_fg_cylinder.stats = {
 				value = 5,
 				spread_moving = 1,
 				concealment = 1,
 				spread = 1
-				}
+			}
 			self.parts.wpn_fps_pis_2006m_g_pearl.stats = {
 				value = 2
-				}
+			}
 			self.parts.wpn_fps_smg_mp7_b_long.stats = {
 				value = 1,
 				spread = 1,
 				concealment = -2
-				}
+			}
 			self.parts.wpn_fps_smg_uzi_b_carbine.stats = {
 				value = 1,
 				spread = 1,
 				concealment = -2
-				}								
+			}								
 			self.parts.wpn_fps_pis_chinchilla_cylinder_smooth.stats = {
 				value = 2,
 				concealment = 1				
-				}
+			}
 			self.parts.wpn_fps_pis_legacy_sl_chrome.stats = {
 				value = 1
-				}
+			}
 			self.parts.wpn_fps_pis_pl14_sl_chrome.stats = {
 				value = 1
-				}
+			}
 			self.parts.wpn_fps_pis_chinchilla_b_longboy.stats = {
 				value = 5,
 				spread = 2,
 				recoil = -1,
 				concealment = -3
-				}									
+			}									
 			self.parts.wpn_fps_ass_m16_s_op.stats = {
 				value = 2,
 				spread = 2,
 				recoil = -1,
 				concealment = -3
-				}
+			}
 			self.parts.wpn_fps_pis_deagle_g_wooden.stats = {
 				value = 1,
 				recoil = 1,
 				concealment = -2
-				}
+			}
 			self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
 				value = 1
-				}				
+			}				
 			self.parts.wpn_fps_pis_peacemaker_g_black.stats = {
 				value = 1
-				}								
+			}								
 			self.parts.wpn_fps_ass_74_upper_receiver_bump.stats = {
 				value = 1,
 				recoil = 1,
 				concealment = -2
-				}				
+			}				
 			self.parts.wpn_fps_pis_g18c_b_long.stats = {
 				value = 4,
 				spread = 1,
 				recoil = -1,
 				spread_moving = 1
-				}			
+			}			
 			self.parts.wpn_fps_ass_tecci_vg_ergo.stats = {
 				value = 1,
 				spread = 1,
 				spread_moving = 2,
 				concealment = -2
-				}		
+			}		
 			self.parts.wpn_fps_shot_shorty_fg_rail.stats = {
 				value = 1,
 				concealment = 1				
-				}															
+			}															
 			self.parts.wpn_fps_ass_tecci_s_minicontra.stats = {
 				value = 2,
 				recoil = -1,
 				spread = 2,
 				concealment = -3
-				}							
+			}							
 			self.parts.wpn_fps_ass_flint_g_custom.stats = {
 				value = 2,
 				recoil = 1
-				}
+			}
 			self.parts.wpn_fps_ass_m4_s_russian.stats = {
 				value = 1,
 				spread = 1,				
 				concealment = -2
-				}
+			}
 			self.parts.wpn_fps_pis_chinchilla_b_short.stats = {
 				value = 1,
 				spread = -1,				
 				concealment = 2
-				}
+			}
 			self.parts.wpn_fps_pis_chinchilla_g_pearl.stats = {
 				value = 1
-				}
+			}
 			self.parts.wpn_fps_snp_model70_s_discrete.stats = {
 				value = 1,
 				concealment = 1
-				}				
+			}				
 			self.parts.wpn_fps_snp_model70_b_smol.stats = {
 				value = 1,
 				spread = -1,
 				concealment = 2
-				}								
+			}								
 			self.parts.wpn_fps_ass_corgi_b_medium.stats = {
 				value = 2,
 				recoil = 1
-				}
+			}
 			self.parts.wpn_fps_snp_tti_b_long.stats = {
 				value = 3,
 				recoil = 1,
 				spread = 1,
 				concealment = -2
-				}
+			}
 			self.parts.wpn_fps_smg_cobray_m_extended.stats = {
 				value = 2,
 				extra_ammo = 12,
 				concealment = -1,				
 				reload = -2
-				}				
+			}				
 			self.parts.wpn_fps_smg_cobray_m_extended_akimbo.stats = {
 				value = 2,
 				concealment = -2,								
 				extra_ammo = 24,
 				reload = -2
-				}				
+			}				
 			self.parts.wpn_fps_ass_scar_m_extended.stats = {
 				value = 2,
 				extra_ammo = 10,
 				reload = -2
-				}						
+			}						
 			self.parts.wpn_fps_pis_c96_b_short.stats = {
 				value = 1,
 				spread = -1,				
 				concealment = 2
-				}	
+			}	
 			self.parts.wpn_fps_pis_c96_b_short.custom_stats = nil -- just making sure these are removed.
 			self.parts.wpn_fps_pis_breech_g_stealth.stats = {
 				value = 2,
 				concealment = 1
-				}	
+			}	
 			self.parts.wpn_fps_snp_winchester_b_short.stats = {
 				value = 2,
 				extra_ammo = -1,	
 				concealment = 2
-				}	
+			}	
 			self.parts.wpn_fps_pis_packrat_sl_silver.stats = {
 				value = 6
-				}									
+			}									
 			self.parts.wpn_fps_ass_flint_m_long.stats = {
 				value = 4,
 				extra_ammo = 15,
 				reload = -2,
 				concealment = -2
-				}						
+			}						
 			self.parts.wpn_fps_ass_flint_b_short.stats = {
 				value = 1,
 				concealment = 1
-				}		
+			}		
 			self.parts.wpn_fps_ass_contraband_s_tecci.stats = {
 				value = 3,
 				spread_moving = 2,
 				recoil = -1,
 				concealment = 2
-				}				
+			}				
 			self.parts.wpn_fps_pis_lemming_b_long.stats = {
 				value = 3,
 				spread = 2,
 				concealment = -1,				
 				spread_moving = 1
-				}	
+			}	
 			self.parts.wpn_fps_snp_siltstone_b_short.stats = {
 				value = 1,
 				concealment = 1
-				}									
+			}									
 			self.parts.wpn_fps_pis_lemming_body_silver.stats = {
 				value = 4
-				}													
+			}													
 			self.parts.wpn_fps_lmg_shuno_b_long.stats = {
 				value = 3,
 				spread = 2,
 				recoil = 1,
 				concealment = -3
-				}														
+			}														
 			self.parts.wpn_fps_smg_shepheard_body_long.stats = {
 				value = 2,
 				spread = 1,	
 				concealment = -1
-				}		
+			}		
 			self.parts.wpn_fps_ass_komodo_b_long.stats = {
 				value = 1,
 				spread = 1,	
 				concealment = -1
-				}		
+			}		
 			self.parts.wpn_fps_ass_flint_s_solid.stats = {
 				value = 1,
 				recoil = -1,
 				concealment = 1,				
 				spread = 2
-				}						
+			}						
 			self.parts.wpn_fps_ass_contraband_b_long.stats = {
 				value = 1,
 				spread = 1,	
 				concealment = -1
-				}					
+			}					
 			self.parts.wpn_fps_ass_contraband_b_short.stats = {
 				value = 1,
 				spread = -1,	
 				concealment = 1
-				}																		
+			}																		
 			self.parts.wpn_fps_ass_flint_b_long.stats = {
 				value = 1,
 				spread = 1,
 				concealment = -1
-				}							
+			}							
 			self.parts.wpn_fps_shot_m37_o_expert.stats = {
 				value = 0
-				}	
+			}	
 			self.parts.wpn_fps_sho_b_spas12_small.stats = {
 				value = 1,
 				spread = -1,
 				concealment = 2
-				}		
+			}		
 			self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
 				damage_near_mul = -100,
 				damage_far_mul = -200			
-				}										
+			}
 			self.parts.wpn_fps_ass_ak_m_proto.stats = {
 				value = 1
-				}						
+			}
+			self.parts.wpn_fps_shot_amr12_m_extended.stats = {
+				value = 1, 
+				extra_ammo = 3, 
+				reload = -1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_shot_amr12_s_wire.stats = {
+				value = 5,
+				spread = -1,
+				concealment = 2
+			}
+			self.parts.wpn_fps_ass_sg416_b_long.stats = {
+				value = 4,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_sg416_dh_custom.stats = {
+				value = 0
+			}			
+			self.parts.wpn_fps_ass_sg416_fg_custom.stats = {
+				value = 2,
+				spread = 1,
+				recoil = 2,
+				concealment = -2
+			}						
+			self.parts.wpn_fps_smg_ak5s_b_long.stats = {
+				value = 3,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_smg_ak5s_m_new.stats = {
+				value = 5,
+				damage = 6,
+				total_ammo_mod = -16,
+				spread = 1, 
+				recoil = -1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_smg_ak5s_m_curve.stats = {
+				value = 1,
+				reload = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_smg_ak5s_nostock.stats = {
+				value = 1,
+				recoil = -2,
+				concealment = 3
+			}															
+			self.parts.wpn_fps_shot_amr12_fg_railed.stats = {
+				value = 7,
+				spread_moving = -2,
+				recoil = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_shot_amr12_fg_short.stats = {
+				value = 4,
+				spread = -1,
+				recoil = -1,
+				concealment = 3
+			}
+			self.parts.wpn_fps_shot_amr12_fg_short.custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200			
+			}			
+			self.wpn_fps_shot_amr12.override = {
+				wpn_fps_upg_a_slug = {
+					name_id = "bm_wp_upg_a_slug_sc",
+					desc_id = "bm_wp_upg_a_slug_sc_desc",
+					stats = {
+						value = 10,
+						concealment = -5,
+						total_ammo_mod = -33,
+						damage = 25,	
+						recoil = -1,
+						spread = 11,
+						suppression = -1,
+						alert_size = -1,
+						moving_spread = 0
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 1,
+						armor_piercing_add = 0,
+						can_shoot_through_enemy = false,
+						can_shoot_through_shield = false,
+						can_shoot_through_wall = false,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					}
+				},
+				wpn_fps_upg_a_custom = {
+					stats = {
+						value = 9,
+						total_ammo_mod = -33,
+						damage = 25,	
+						spread = -1
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 6,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					}
+				},
+				wpn_fps_upg_a_custom_free = {
+					stats = {
+						value = 9,
+						total_ammo_mod = -33,
+						damage = 25,	
+						spread = -1
+					},
+					custom_stats = {
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						rays = 6,
+						ammo_pickup_min_mul = 0.666666666667,
+						ammo_pickup_max_mul = 0.666666666667
+					}
+				},			
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						total_ammo_mod = -67,
+						recoil = -5,
+						damage = 100
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 999999999,
+						damage_far_mul = 999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.333333333333,
+						ammo_pickup_max_mul = 0.333333333333
+					}
+				}
+			}									
 			end		
 
 		if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint CompM4s Sight

@@ -46549,10 +46549,14 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end										
 
 		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Mod Pack
-			table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
-				"wpn_fps_upg_o_cqb"
-			})
-			self.wpn_fps_lmg_hk21.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ass_g3_body_rail"} --FUCK YEAH, I'M SO DUMB THAT I'M A GENIUS
+			table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cqb")			
+			table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_cqb")			
+			table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cqb")			
+			table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_cqb")			
+			table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_cqb")						
+			self.wpn_fps_lmg_rpk.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ak_extra_ris"} --hk21 only meme is over
+			self.wpn_fps_lmg_mg42.adds.wpn_fps_upg_o_cqb = {"wpn_fps_snp_mosin_rail"}
+			self.wpn_fps_lmg_hk21.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ass_g3_body_rail"}
 			self.parts.wpn_fps_upg_o_cqb.stats = {
 				value = 5
 			}
@@ -46809,8 +46813,20 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				spread = 1,
 				concealment = -2
 			}
+			self.parts.wpn_fps_ass_sg416_s_standard.stats = {
+				value = 1	
+			}
+			self.parts.wpn_fps_ass_sg416_m_standard.stats = {
+				value = 1
+			}	
 			self.parts.wpn_fps_ass_sg416_dh_custom.stats = {
 				value = 0
+			}
+			table.insert(self.wpn_fps_ass_sg416.uses_parts, "wpn_fps_m4_uupg_m_std")	
+			self.wpn_fps_ass_sg416.override.wpn_fps_m4_uupg_m_std = {
+				stats = {
+					value = 1
+				}
 			}			
 			self.parts.wpn_fps_ass_sg416_fg_custom.stats = {
 				value = 2,

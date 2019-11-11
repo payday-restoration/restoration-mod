@@ -1,12 +1,7 @@
 <table directory="assets">
 
     <!-- <sequence_manager path="units/payday2/characters/ragdoll" force="true"/> -->
-
-	<!--Custom inventory icons-->
-	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/rm_combat" force="true"/>
-	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/rm_pool" force="true"/>
-	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/rm_sunny" force="true"/>	
-
+	
 	<!--Blank FPS Model-->
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>

@@ -1885,4 +1885,9 @@
 	<texture path="guis/textures/pd2/blackmarket/icons/deployables/outline/armor_kit" force="true"/>	
 	<unit path="units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate_dummy_unit" load="true" />	
 	<texture path="units/payday2/characters/shared_textures/equipment_armor_bag_df" force="true"/>
+	
+	<!--suit inventory icons-->
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_pool"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny"/>
 </table>

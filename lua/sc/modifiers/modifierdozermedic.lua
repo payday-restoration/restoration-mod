@@ -61,7 +61,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif is_lapd and difficulty_index <= 6 and math.random(0,100) < 15 then
 				return Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2")	
 			elseif is_lapd and math.random(0,100) < 15 then
-				return Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1")										
+				return Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1")
+			elseif is_murky and difficulty_index <= 6 and math.random(0,100) < 15 then
+				return Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2")					
 			elseif is_murky and math.random(0,100) < 15 then
 				return Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1")								
 			end

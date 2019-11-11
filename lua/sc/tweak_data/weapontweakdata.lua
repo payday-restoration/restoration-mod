@@ -9446,8 +9446,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amr12.kick.steelsight = self.new_m4.kick.standing
 		self.amr12.stats = {
 			damage = 75,
-			spread = 8,
-			recoil = 20,
+			spread = 4,
+			recoil = 18,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 18,

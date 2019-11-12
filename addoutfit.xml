@@ -1,7 +1,5 @@
 <table directory="assets">
 
-    <!-- <sequence_manager path="units/payday2/characters/ragdoll" force="true"/> -->
-	
 	<!--Blank FPS Model-->
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
@@ -9,6 +7,7 @@
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
 	
 	<!--///POOL REPAIR SUITS\\\-->
+	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" force="true"/>
 	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" force="true"/>
 	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" force="true"/>
 	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" force="true"/>

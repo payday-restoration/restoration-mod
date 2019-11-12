@@ -27832,6 +27832,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {value = 0, zoom = 1, concealment = -5},
 			animations = {deploy = "deploy", undeploy = "undeploy"},
 			texture_bundle_folder = "par",
+			forbids = {}, --g3 various attachments workaround
 			perks = {"bipod"}
 		}
 		self.parts.wpn_fps_upg_bp_lmg_lionbipod.third_unit = "units/pd2_crimefest_2015/update_5/weapons/wpn_fps_upg_bp_lmg_lionbipod/wpn_third_upg_bp_lmg_lionbipod"
@@ -43988,7 +43989,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self.parts.wpn_fps_ass_g3_g_ergo.stats = {		
 						value = 3,
 						recoil = 1
-					}	
+					}
+				self.parts.wpn_fps_lmg_hk21_fg_mp5.stats = {		
+						value = 4,
+						spread = -1,
+						concealment = 2
+					}
+				self.parts.wpn_fps_lmg_hk21_s_low.stats = {		
+						value = 3,
+						recoil = -1,
+						concealment = 2
+					}					
 				self.parts.wpn_fps_ass_g3_m_50drum.pcs = nil		
 				self.parts.wpn_fps_ass_g3_m_30mag.stats = {		
 						value = 4,

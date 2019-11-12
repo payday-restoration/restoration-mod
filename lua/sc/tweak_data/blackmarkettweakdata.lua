@@ -510,7 +510,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			body_replacement = body_replacement_armor,
 			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
-			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_jacket, {
 			body_replacement = body_replacement_fps,

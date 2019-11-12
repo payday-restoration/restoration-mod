@@ -383,6 +383,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		old_styles(self, tweak_data)
 		
 		--Gotta redefine these
+		
+		local characters_chungette = { --generic stuff
+			"female_1",
+			"sydney",
+			"joy",
+			"ecp_female"
+		}		
+		local characters_chungette_big = {
+			"bonnie",
+			"ecp_male"
+		}
+		local characters_chungus = {
+			"dallas",
+			"wolf",
+			"hoxton",
+			"chains",
+			"jowi",
+			"old_hoxton",
+			"dragan",
+			"jacket",
+			"sokol",
+			"dragon",
+			"bodhi",
+			"jimmy",
+			"chico",
+			"myh"
+		}		
+		local characters_big_chungus = {
+			"wild",
+			"max"
+		}
 		local characters_female = {
 			"female_1",
 			"ecp_female"
@@ -467,6 +498,39 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end		
 		
+		-- Flecktarn Jumpsuit 
+		self.player_styles.jumpsuit.material_variations.flecktarn = {
+			name_id = "bm_suit_var_jumpsuit_flecktarn",
+			global_value = "sc",
+			unlocked = true,
+			material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn",			
+			desc_id = "bm_suit_var_jumpsuit_flecktarn_desc"
+		}
+		
+		for i, character in ipairs(characters_chungette) do --thanks Zed Daniels
+			self.player_styles.jumpsuit.characters[character].material_variations.flecktarn = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_average/trd_acc_jumpsuit_female_average_flecktarn"
+			}
+		end
+
+		for i, character in ipairs(characters_chungette_big) do
+			self.player_styles.jumpsuit.characters[character].material_variations.flecktarn = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_big/trd_acc_jumpsuit_female_big_flecktarn"
+			}
+		end
+
+		for i, character in ipairs(characters_chungus) do
+			self.player_styles.jumpsuit.characters[character].material_variations.flecktarn = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flecktarn"
+			}
+
+		for i, character in ipairs(characters_big_chungus) do
+			self.player_styles.jumpsuit.characters[character].material_variations.flecktarn = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flecktarn"
+			}			
+			end
+		end		
+
 		--Resmod Loud Suit
 		self.player_styles.loud_suit = {
 			name_id = "bm_suit_loud_suit",

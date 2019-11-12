@@ -134,8 +134,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
 		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",		
-		
 
+		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",		
+		
 		--Safe House Test
 		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
 		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",

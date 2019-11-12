@@ -91,7 +91,7 @@ Captain Summers
 The still unused Biker Dozer
 and the creation of the map package.
 
-fuglore doing all the crazy AI and tactic changes.
+fuglore doing all the crazy AI and tactic changes and providing Less Flat "The Classic" Lighting for implementation.
 
 Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
 
@@ -99,11 +99,12 @@ Teacyn Writing the overhaul steam guide and providing valuable feedback to overh
 
 Jarey Major asset contributions to the mod 
 including:
+Tweaking Boiler Suit assets, Flecktarn Camo
 PDTH Styled Enemies assets used for the NYPD faction
 The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker
 Femcloaker - Used as a shrinkwrap base for female enemies
 Jarey_ ZEALS Used for our ZEAL sepcials
-Updating Captain Sprung and Russian Titan Dozer assets
+Updating Captain Spring and Russian Titan Dozer assets
 Sniper Glint
 Russian Titan Cloaker textures
 
@@ -136,6 +137,8 @@ Wekk Telling us what LPF should mean and allowing us to implement "Less Clones, 
 ShinyHopip Created the Explosive Headshot graze rework.
 
 Baddy fixing the cap on security 7, providing the model for the Russian Titan Cloaker and providing inspiration for the FBI/GenSec heavy shotgunner assets.
+
+Nardo Allowing us to include "First-person Stealth Suit Fixes".
 
 Testers:
 ShortonComedyGamer (made sure neslon added support to the custom owen) 

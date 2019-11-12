@@ -1,0 +1,7 @@
+<materials version="3" group="trd_acc_jumpsuit_fpp">
+    <material unique="true" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mat_jumpsuit" version="2">
+        <bump_normal_texture file="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn_df"/>
+        <material_texture file="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_gsma"/>
+    </material>
+</materials>

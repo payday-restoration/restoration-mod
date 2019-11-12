@@ -51,6 +51,11 @@
 		<hook file="managers/menu/MenuPauseRenderer.lua" source_file="lib/managers/menu/MenuPauseRenderer"/>
 		<hook file="managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>
 		<hook file="managers/menu/renderers/menunodejukeboxgui.lua" source_file="lib/managers/menu/renderers/menunodejukeboxgui"/>
+		<hook file="managers/menu/PlayerProfileGUIObject.lua" source_file="lib/managers/menu/playerprofileguiobject"/>
+		<hook file="managers/menu/renderers/MenuNodeCrimeNetGUI.lua" source_file="lib/managers/menu/renderers/menunodecrimenetgui"/>
+		<hook file="managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
+		<hook file="managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
+		<hook file="managers/menu/NewsFeedGUI.lua" source_file="lib/managers/menu/NewsFeedGUI"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<!--///NOTIFICATIONS\\\-->
@@ -289,6 +294,9 @@
 				<option_group name="UI">
 					<merge_data area_bg="half"/>
 						<option type="bool" default_value="false" name="Pause"/>
+						<option type="bool" default_value="false" name="Profile"/>
+						<option type="bool" default_value="false" name="Crimenet"/>
+						<option type="bool" default_value="false" name="Newsfeed"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>
 				<option type="bool" default_value="true" name="Teammate"/>

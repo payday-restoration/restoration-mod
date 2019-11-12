@@ -60,7 +60,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
-		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}	
+		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		self.spa.player_style = "tux"		
 		
 		self.brb.ai_group_type = nypd
 		self.brb.package = {"packages/lvl_brb", "packages/outfitassets2", "packages/nypdassets"}
@@ -104,7 +105,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}
-		self.pal.player_style = "suit_sunny"		
+		self.pal.player_style = "suit_pool"		
 		
 		self.kenaz.ai_group_type = lapd
 		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/outfitassets3"}	

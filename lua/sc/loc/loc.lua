@@ -127,10 +127,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Player Outfits
 		["bm_suit_loud_suit"] = "Combat Harness",
-		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.\n\nThis outfit can be worn on loud heists.",		
+		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
 		
 		["bm_suit_sunny"] = "Sunny-Side Robber",
 		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
+		
+		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
+		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",		
 		
 
 		--Safe House Test

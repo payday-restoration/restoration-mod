@@ -401,12 +401,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"dallas",
 			"wolf",
 			"hoxton",
-			"jowi",
 			"old_hoxton",
 			"dragan",
 			"sokol",
-			"dragon",
-			"jimmy",
+			"dragon"
+		}
+		local characters_black_gloves = {
+			"jowi",
 			"chico",
 			"myh"
 		}
@@ -476,6 +477,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			characters = {}
 		}
 		set_characters_data("loud_suit", characters_male, {
+			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
+		})
+		set_characters_data("loud_suit", characters_black_gloves, {
 			body_replacement = body_replacement_armor,
 			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
@@ -556,6 +563,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit"
 		})
+		set_characters_data("suit_sunny", characters_black_gloves, {
+			body_replacement = body_replacement_hands,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
+		})
 		set_characters_data("suit_sunny", characters_jimmy, {
 			body_replacement = body_replacement_hands,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
@@ -594,7 +606,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		set_characters_data("suit_sunny", characters_sydney, {
 			body_replacement = body_replacement_hands,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female_2",
-			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female"
+			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney"
 		})
 		set_characters_data("suit_sunny", characters_joy, {
 			body_replacement = body_replacement_standard,
@@ -603,9 +615,58 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		})
 		set_characters_data("suit_sunny", characters_female_big, {
 			body_replacement = body_replacement_hands,
-			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female",
-			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female"
-		})		
+			unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
+		})	
+		
+		--Resmod Pool Suit
+		self.player_styles.suit_pool = {
+			name_id = "bm_suit_pool",
+			desc_id = "bm_suit_pool_desc",
+			texture_bundle_folder = "mods",
+			unlocked = true,
+			body_replacement = body_replacement_standard,
+			third_body_replacement = body_replacement_standard,
+			unit = "units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps",
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit",
+			characters = {}
+		}
+		--[[set_characters_data("suit_pool", characters_male, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_black_gloves, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_jimmy, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_chains, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_sangres, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_bodhi, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_jacket, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_male_big, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_female, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_sydney, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_joy, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})
+		set_characters_data("suit_pool", characters_female_big, {
+			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		})]]--		
 	end	
 
 end

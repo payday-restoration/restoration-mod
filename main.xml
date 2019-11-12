@@ -7,7 +7,7 @@
 	<AssetUpdates id="428" version="9.6.3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
-		<!-- Res Suits -->
+		<!-- Res Suits
 		<mod file="res_suit_tps.xml" type="custom_xml" target_file="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" target_type="sequence_manager" merge_mode="script_merge"/>
 		<mod file="res_suit_tps_fem.xml" type="custom_xml" target_file="units/payday2/characters/npc_criminal_female_1/npc_criminal_female_1" target_type="sequence_manager" merge_mode="script_merge"/>
 		<mod file="res_suit_tps_bon.xml" type="custom_xml" target_file="units/pd2_dlc_bonnie/characters/npc_criminal_bonnie/npc_criminal_bonnie" target_type="sequence_manager" merge_mode="script_merge"/>
@@ -20,7 +20,7 @@
 		<mod file="res_suit_tps_fem.xml" type="custom_xml" target_file="units/pd2_dlc_ecp/characters/npc_criminals_ecp_female/npc_criminal_ecp_female" target_type="sequence_manager" merge_mode="script_merge"/>
 		<mod file="res_suit_tps_ethan.xml" type="custom_xml" target_file="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male" target_type="sequence_manager" merge_mode="script_merge"/>
 
-		<mod file="res_suits_fps.xml" type="custom_xml" target_file="units/payday2/characters/fps_criminals_suit_1/fps_criminals_suit_1" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="res_suits_fps.xml" type="custom_xml" target_file="units/payday2/characters/fps_criminals_suit_1/fps_criminals_suit_1" target_type="sequence_manager" merge_mode="script_merge"/>-->
 	</ScriptMods>	
     <Hooks directory="lua">
 		<!--///RESTORATION HUD & UI\\\-->

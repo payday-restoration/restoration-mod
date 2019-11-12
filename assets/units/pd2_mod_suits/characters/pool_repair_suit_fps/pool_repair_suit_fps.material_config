@@ -1,10 +1,7 @@
-<materials version="3" group="fps_criminals_suit_1">
-    <material name="mtr_hands" version="2" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
-        <diffuse_texture 		file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_df"/>
-        <bump_normal_texture 	file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_gloves_nm"/>
-    </material>
-    <material name="mtr_suit" version="2" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
-        <diffuse_texture 		file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_df"/>
-        <bump_normal_texture 	file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_sleeves_nm"/>
+<materials version="3" group="trd_acc_fps_miami">
+    <material unique="true" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_miami" version="2">
+        <bump_normal_texture file="units/pd2_dlc_trd/characters/trd_acc_miami/trd_acc_fps_miami/trd_acc_fps_miami_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_df"/>
+        <material_texture file="units/pd2_dlc_trd/characters/trd_acc_miami/trd_acc_fps_miami/trd_acc_fps_miami_gsma"/>
     </material>
 </materials>

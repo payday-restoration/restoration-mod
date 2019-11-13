@@ -1306,14 +1306,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return result
 	end
 	
-	--[[function CopDamage:_on_damage_received(damage_info)
+	function CopDamage:_on_damage_received(damage_info)
 		self:build_suppression("max", nil)
 		self:_call_listeners(damage_info)
 		CopDamage._notify_listeners("on_damage", damage_info)
-		
-		if damage_info.damage and damage_info.damage > 0.01 then
-			self._unit:sound():say("x01a_any_3p", nil, nil)
-		end
 		
 		if damage_info.result.type == "death" then
 			managers.enemy:on_enemy_died(self._unit, damage_info)
@@ -1342,13 +1338,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if attacker_unit == managers.player:player_unit() and damage_info then
 			managers.player:on_damage_dealt(self._unit, damage_info)
 		end
+		
+		local dmg_chk = not self._dead and not self._unit:base():has_tag("special") and self._health > 0
+	
+		if damage_info.damage and damage_info.damage > 0.01 and dmg_chk then
+			if not damage_info.result_type or damage_info.result_type ~= "healed" and damage_info.result_type ~= "death" then
+				self._unit:sound():say("x01a_any_3p", nil, nil, nil, nil)
+			end
+		end
 
 		if damage_info.variant == "melee" then
 			managers.statistics:register_melee_hit()
 		end
 
 		self:_update_debug_ws(damage_info)
-	end]]--
+	end
 		
 	function CopDamage:damage_mission(attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]

@@ -196,16 +196,6 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "weapon_mods",
-				item_entry = "wpn_fps_upg_ammo_mag_msr",
-				amount = 3
-			},
-			{
-				type_items = "weapon_mods",
-				item_entry = "wpn_fps_upg_ammo_46custom",
-				amount = 3
-			},
-			{
-				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_vg_ass_smg_verticalgrip",
 				amount = 3
 			},
@@ -236,22 +226,12 @@ function DLCTweakData:init(...)
 			},
 			{
 				type_items = "weapon_mods",
-				item_entry = "wpn_fps_upg_ammo_762_sterling",
-				amount = 3
-			},
-			{
-				type_items = "weapon_mods",
 				item_entry = "wpn_fps_upg_bonus_sc_none",
 				amount = 3
 			},
 			{
 				type_items = "weapon_mods",
 				item_entry = "wpn_upg_saiga_m_20rnd",
-				amount = 3
-			},
-			{
-				type_items = "weapon_mods",
-				item_entry = "wpn_fps_upg_ammo_p",
 				amount = 3
 			},
 			{

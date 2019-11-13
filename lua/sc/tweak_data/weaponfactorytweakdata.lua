@@ -40833,6 +40833,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
 				value = 0,
+				spread = -1,
 				recoil = -2				
 			},
 			is_a_unlockable = true,

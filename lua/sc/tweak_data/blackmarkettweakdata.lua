@@ -692,7 +692,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		})
 		set_characters_data("suit_sunny", characters_female_big, {
 			body_replacement = body_replacement_hands,
-			unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit",
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 		})	
 		

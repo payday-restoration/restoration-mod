@@ -253,7 +253,7 @@
 	<cooked_physics path="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit_male_big/wwh_acc_stealth_suit_male_big" force="true"/>
     
 	<!--///RAINCOATS\\\-->
-	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<!--<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
 	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
@@ -275,7 +275,7 @@
 	<object path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 	<model path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 	<material_config path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/> -->
 	
 	<!--///TUXES\\\-->
     <unit path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>

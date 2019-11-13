@@ -1306,7 +1306,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return result
 	end
 	
-	function CopDamage:_on_damage_received(damage_info)
+	--[[function CopDamage:_on_damage_received(damage_info)
 		self:build_suppression("max", nil)
 		self:_call_listeners(damage_info)
 		CopDamage._notify_listeners("on_damage", damage_info)
@@ -1348,7 +1348,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		self:_update_debug_ws(damage_info)
-	end
+	end]]--
 		
 	function CopDamage:damage_mission(attack_data)
 		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]

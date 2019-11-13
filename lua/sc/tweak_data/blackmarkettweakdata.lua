@@ -439,8 +439,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		local characters_black_gloves = {
 			"jowi",
-			"chico",
 			"myh"
+		}
+		local characters_tony = {
+			"chico"
 		}
 		local characters_bodhi = {
 			"bodhi"
@@ -552,6 +554,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
+		set_characters_data("loud_suit", characters_tony, {
+			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_armor,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
+		})
 		set_characters_data("loud_suit", characters_bodhi, {
 			body_replacement = body_replacement_armor,
 			third_body_replacement = body_replacement_armor,
@@ -630,6 +638,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		set_characters_data("suit_sunny", characters_black_gloves, {
 			body_replacement = body_replacement_hands,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
+		})
+		set_characters_data("suit_sunny", characters_tony, {
+			body_replacement = body_replacement_hands,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust", -- fuck you and your stupid fucking long tight ass gloves
 			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 		})
 		set_characters_data("suit_sunny", characters_jimmy, {

@@ -87,6 +87,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_df" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_nm" force="true"/>
@@ -96,6 +97,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" force="true"/>
     
 	<!--///Sunny-Side Robber Female\\\-->
@@ -103,6 +105,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" force="true"/>
     
 	<!--///Sunny-Side Robber Sydney\\\-->
@@ -110,6 +113,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney_df" force="true"/>
     
@@ -118,6 +122,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains_df" force="true"/>
     
@@ -126,6 +131,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_df" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_nm" force="true"/>
@@ -135,6 +141,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_df" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_nm" force="true"/>
@@ -144,6 +151,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_df" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_nm" force="true"/>
@@ -153,6 +161,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy_df" force="true"/>
     
@@ -161,6 +170,7 @@
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_contour" force="true"/>	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_df" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_nm" force="true"/>

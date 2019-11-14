@@ -756,6 +756,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
+		set_characters_data("suit_prison", characters_tony, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
+		})
 		set_characters_data("suit_prison", characters_jacket, {
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"

@@ -1,0 +1,9 @@
+<dynamic_object>
+    <diesel materials="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded" orientation_object="rp_wpn_fps_shot_r870_s_folding"/>
+    <graphics>
+        <object enabled="true" name="g_folding" />
+		<graphic_group name="stockcull" enabled="true" culling_object="g_folding">
+			<object enabled="true" inherit_bounding_volume="co_culling" name="g_folding" />
+		</graphic_group>		
+    </graphics>
+</dynamic_object>

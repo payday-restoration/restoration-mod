@@ -163,6 +163,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.friend.player_style = "suit_sunny"
 		
 		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
+		self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 		self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 		
 		self.chew.player_style = "loud_suit"

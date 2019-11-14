@@ -1,0 +1,24 @@
+<materials version="3" group="ene_zeal_swat_shield">
+    <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_nm"/>
+        <diffuse_texture        file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+        <bump_normal_texture    file="units/payday2/textures/blank_nm"/>
+        <diffuse_texture        file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_swat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm"/>
+        <diffuse_texture file="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>   
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

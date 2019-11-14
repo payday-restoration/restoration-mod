@@ -14272,11 +14272,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_zeal_city_2",
 					"ene_zeal_city_3",
 					"ene_zeal_swat_heavy_sc",
+					"ene_zeal_swat_heavy_r870_sc",
 					"ene_city_swat_1",
 					"ene_city_swat_2",
 					"ene_city_swat_3",
 					"ene_fbi_swat_3",
-					"ene_medic_mp5"
+					"ene_medic_mp5",
+					"ene_zeal_fbi_m4",
+					"ene_zeal_fbi_mp5",
+					"ene_zeal_swat_shield",
+					"ene_zeal_bulldozer",
+					"ene_zeal_bulldozer_2",
+					"ene_zeal_bulldozer_3",
+					"ene_zeal_cloaker",
+					"ene_grenadier_1",
+					"ene_zeal_tazer",
+					"ene_shield_gensec",
+					"ene_fbi_heavy_r870_sc",
+					"ene_city_heavy_r870_sc",
+					"ene_swat_heavy_r870_sc"
 				}
 			}			
 		}

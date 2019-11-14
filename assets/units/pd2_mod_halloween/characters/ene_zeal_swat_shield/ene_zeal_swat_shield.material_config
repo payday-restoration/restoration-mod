@@ -1,0 +1,18 @@
+<materials version="3" group="ene_zeal_swat_shield">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df"/>
+	</material>
+
+		<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/textures/blank_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df"/>
+	</material>
+	
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_df"/>
+	</material>
+	
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

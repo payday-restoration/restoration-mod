@@ -13,15 +13,15 @@
 	</material>
 
 	<material name="mtr_city_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm"/>
+		<bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/swat_fbi_body_hvh_nm"/>
 		<diffuse_texture file="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc"/>
 	</material>
 	<material name="mtr_city_swat_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="1"/>
+		<bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/swat_fbi_body_hvh_nm" mip="1"/>
 		<diffuse_texture file="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc" mip="1"/>
 	</material>
 	<material name="mtr_city_swat_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="4"/>
+		<bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/swat_fbi_body_hvh_nm" mip="4"/>
 		<diffuse_texture file="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc" mip="4"/>
 	</material>
 

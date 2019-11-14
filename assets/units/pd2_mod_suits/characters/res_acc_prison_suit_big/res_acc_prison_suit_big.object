@@ -4,11 +4,11 @@
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
-		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
 			<object name="c_capsule_body" collision_type="capsule"/>
 		</body>
-		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="head" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_sphere_head" collision_type="sphere"/>
 		</body>

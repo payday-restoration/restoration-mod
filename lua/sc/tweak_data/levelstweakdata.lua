@@ -27,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.lapd = lapd
 		
 		--///MURKYWATER LEVELS\\\--
-		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets2", "packages/vlad_shout"}
+		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
 		self.shoutout_raid.player_style = "raincoat"
 		
@@ -64,7 +64,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa.player_style = "tux"		
 		
 		self.brb.ai_group_type = nypd
-		self.brb.package = {"packages/lvl_brb", "packages/outfitassets2", "packages/nypdassets"}
+		self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
 		self.brb.player_style = "winter_suit"
 		
 		self.red2.ai_group_type = nypd
@@ -108,7 +108,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pal.player_style = "suit_pool"		
 		
 		self.kenaz.ai_group_type = lapd
-		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/outfitassets3"}	
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets"}	
 		self.kenaz.player_style = "tux"				
 		
 		self.rvd1.ai_group_type = lapd
@@ -150,14 +150,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.rat.player_style = "suit_sunny"
 		
-		self.election_day_1.player_style = "sneak_suit"
-		
+		self.election_day_1.player_style = "sneak_suit"	
 		self.election_day_2.player_style = "sneak_suit"
 		
 		self.gallery.player_style = "sneak_suit"
-		
 		self.framing_frame_1.player_style = "sneak_suit"
-		
 		self.framing_frame_3.player_style = "sneak_suit"
 				
 		self.alex_1.player_style = "suit_sunny"
@@ -166,7 +163,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.friend.player_style = "suit_sunny"
 		
 		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
-		
 		self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 		
 		self.chew.player_style = "loud_suit"
@@ -194,14 +190,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
+		
 		self.haunted.ai_group_type = zombie		
 		self.nail.ai_group_type = zombie
 		self.help.ai_group_type = zombie
+		
+		self.hvh.player_style = "suit_prison"	
+		self.haunted.player_style = "suit_prison"	
+		self.nail.player_style = "suit_prison"
+		self.help.player_style = "suit_prison"
 		--///SAFEHOUSE\\\--
 		self.chill.ghost_bonus = nil
 		
 		--///REAPER LEVELS\\\--
-		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets2"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad"}
 		self.mad.player_style = "winter_suit"
 		--We're never actually told where the forest is ;)
 		self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}

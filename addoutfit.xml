@@ -24,6 +24,85 @@
 	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" force="true"/>
 	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_df" force="true"/>
     
+	<!--///Prison Suit FPS\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_df" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_gsma" force="true"/>
+    
+	<!--///Prison Suit FPS Chains\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains_df" force="true"/>
+    
+	<!--///Prison Suit FPS Syndey\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney_df" force="true"/>
+    
+	<!--///Prison Suit FPS Sangres\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres_df" force="true"/>
+    
+	<!--///Prison Suit\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" force="true"/>
+    
+	<!--///Prison Suit Female\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" force="true"/>
+    
+	<!--///Prison Suit Big\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" force="true"/
+    
+	<!--///Prison Suit Chains\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains_df" force="true"/>
+    
+	<!--///Prison Suit Sydney\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney_df" force="true"/>
+    
+	<!--///Prison Suit Sangres\\\-->
+	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" force="true"/>
+	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" force="true"/>
+	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" force="true"/>
+	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" force="true"/>
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" force="true"/>
+	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres_df" force="true"/>
+    
 	<!--///Sunny-Side Robber FPS Chains\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" force="true"/>

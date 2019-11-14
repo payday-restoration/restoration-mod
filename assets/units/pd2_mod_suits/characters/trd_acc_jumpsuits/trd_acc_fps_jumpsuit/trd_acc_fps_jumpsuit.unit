@@ -1,0 +1,11 @@
+<unit type="trd" slot="1">
+	<object file="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit" />
+
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="contour" class="ContourExt" />
+	</extensions>
+</unit>

@@ -708,42 +708,65 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit",
 			characters = {}
 		}
-		--[[set_characters_data("suit_pool", characters_male, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		
+		--Resmod Prison Suit
+		self.player_styles.suit_prison = {
+			name_id = "bm_suit_prison",
+			desc_id = "bm_suit_prison_desc",
+			texture_bundle_folder = "mods",
+			unlocked = true,
+			body_replacement = body_replacement_standard,
+			third_body_replacement = body_replacement_standard,
+			characters = {}
+		}
+		set_characters_data("suit_prison", characters_male, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
-		set_characters_data("suit_pool", characters_black_gloves, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_black_gloves, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
-		set_characters_data("suit_pool", characters_jimmy, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_jimmy, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
-		set_characters_data("suit_pool", characters_chains, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_chains, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains"
 		})
-		set_characters_data("suit_pool", characters_sangres, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_sangres, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres"
 		})
-		set_characters_data("suit_pool", characters_bodhi, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_bodhi, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
-		set_characters_data("suit_pool", characters_jacket, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_jacket, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
-		set_characters_data("suit_pool", characters_male_big, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_male_big, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
 		})
-		set_characters_data("suit_pool", characters_female, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_female, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female"
 		})
-		set_characters_data("suit_pool", characters_sydney, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_sydney, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney"
 		})
-		set_characters_data("suit_pool", characters_joy, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
+		set_characters_data("suit_prison", characters_joy, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female"
 		})
-		set_characters_data("suit_pool", characters_female_big, {
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit"
-		})]]--		
+		set_characters_data("suit_prison", characters_female_big, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
+		})		
 	end	
 
 end

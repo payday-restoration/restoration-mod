@@ -133,7 +133,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
 		
 		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
-		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",		
+		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",	
+		
+		["bm_suit_prison"] = "Prison Suit",
+		["bm_suit_prison_desc"] = "You've been taken into custody!",		
 
 		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
 		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",		

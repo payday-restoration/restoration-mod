@@ -1,0 +1,11 @@
+<materials version="3" group="npc_old_hoxton_prisonsuit_1">
+
+    <material name="mtr_old_hoxton_prison_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/old_hoxton_prisonsuit_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+	
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

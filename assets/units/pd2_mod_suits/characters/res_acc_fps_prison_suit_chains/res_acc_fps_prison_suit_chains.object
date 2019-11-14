@@ -1,0 +1,9 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" orientation_object="root_point" />
+	<graphics>
+		<graphic_group name="grp_jumpsuit" enabled="true" culling_object="c_cull">
+			<object name="g_jumpsuit" enabled="true" />
+			<object name="g_hands" enabled="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

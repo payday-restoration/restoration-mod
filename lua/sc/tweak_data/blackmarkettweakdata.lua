@@ -391,9 +391,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"ecp_female"
 		}		
 		local characters_chungette_big = {
-			"bonnie",
-			"ecp_male"
-		}
+			"bonnie"
+		}	
 		local characters_chungus = {
 			"dallas",
 			"wolf",
@@ -412,7 +411,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}		
 		local characters_big_chungus = {
 			"wild",
-			"max"
+			"max",
+			"ecp_male"
 		}
 		local characters_female = {
 			"female_1",
@@ -425,7 +425,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"sydney"
 		}
 		local characters_female_big = {
-			"bonnie",
+			"bonnie"
+		}
+		local characters_worst_addition = {
 			"ecp_male"
 		}
 		local characters_male = {
@@ -596,6 +598,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
 		})
+		set_characters_data("loud_suit", characters_worst_addition, {
+			body_replacement = body_replacement_armor,
+			third_body_replacement = body_replacement_standard,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
+		})
 		set_characters_data("loud_suit", characters_female, {
 			body_replacement = body_replacement_armor,
 			third_body_replacement = body_replacement_standard,
@@ -675,6 +683,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 		})
+		set_characters_data("suit_sunny", characters_worst_addition, {
+			body_replacement = body_replacement_hands,
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
+		})
 		set_characters_data("suit_sunny", characters_female, {
 			body_replacement = body_replacement_hands,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female",
@@ -748,6 +761,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 		})
 		set_characters_data("suit_prison", characters_male_big, {
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
+		})
+		set_characters_data("suit_prison", characters_worst_addition, {
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big"
 		})

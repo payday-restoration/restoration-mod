@@ -1364,25 +1364,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")						
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
+					Idstring("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
 				},					
 				murkywater = {
@@ -5769,7 +5769,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 					},
 					zombie = {
-						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+						Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 					},							
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")
@@ -6347,7 +6347,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
 					},
 					zombie = {
-						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+						Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 					},							
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4")

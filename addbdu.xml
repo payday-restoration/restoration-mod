@@ -1,0 +1,36 @@
+<table directory="assets">
+	<!--///SNEAKING OUTFIT\\\-->
+	<unit path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
+	<object path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
+	<model path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
+	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>
+	<texture path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/player_tactical_outfit_fp_df" force="true"/>
+
+	<unit path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit/dah_acc_stealth_suit" force="true"/>
+	<object path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit/dah_acc_stealth_suit" force="true"/>
+	<model path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit/dah_acc_stealth_suit" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit/dah_acc_stealth_suit" force="true"/>
+	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit/dah_acc_stealth_suit" force="true"/>
+
+	<unit path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big" force="true"/>
+	<object path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big" force="true"/>
+	<model path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big_contour" force="true"/>
+	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big" force="true"/>
+
+	<unit path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_thin/dah_acc_stealth_suit_female_thin" force="true"/>
+	<object path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_thin/dah_acc_stealth_suit_female_thin" force="true"/>
+	<model path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_thin/dah_acc_stealth_suit_female_thin" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_thin/dah_acc_stealth_suit_female_thin" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_thin/dah_acc_stealth_suit_female_thin_contour" force="true"/>
+	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_thin/dah_acc_stealth_suit_female_thin" force="true"/>
+
+	<unit path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+	<object path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+	<model path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+	<material_config path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big_contour" force="true"/>
+	<cooked_physics path="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big" force="true"/>
+</table>

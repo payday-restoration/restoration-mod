@@ -1,0 +1,105 @@
+<table directory="assets">
+	<!--///TUXES\\\-->
+    <unit path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>
+	<sequence_manager path="units/pd2_dlc_sah/characters/fps_criminals_female_tux/sah_acc_fps_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_bodhi_tux/npc_acc_criminal_bodhi_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_bodhi_tux/npc_acc_criminal_bodhi_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_bodhi_tux/npc_acc_criminal_bodhi_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_bodhi_tux/npc_acc_criminal_bodhi_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_bodhi_tux/npc_acc_criminal_bodhi_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_bonnie_tux/npc_acc_criminal_bonnie_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_bonnie_tux/npc_acc_criminal_bonnie_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_bonnie_tux/npc_acc_criminal_bonnie_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_bonnie_tux/npc_acc_criminal_bonnie_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_bonnie_tux/npc_acc_criminal_bonnie_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_chains_tux/npc_acc_criminal_chains_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_chains_tux/npc_acc_criminal_chains_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_chains_tux/npc_acc_criminal_chains_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_chains_tux/npc_acc_criminal_chains_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_chains_tux/npc_acc_criminal_chains_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_clover_tux/npc_acc_criminal_clover_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_clover_tux/npc_acc_criminal_clover_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_clover_tux/npc_acc_criminal_clover_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_clover_tux/npc_acc_criminal_clover_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_clover_tux/npc_acc_criminal_clover_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_ethan_tux/npc_acc_criminal_ethan_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_ethan_tux/npc_acc_criminal_ethan_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_ethan_tux/npc_acc_criminal_ethan_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_ethan_tux/npc_acc_criminal_ethan_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_ethan_tux/npc_acc_criminal_ethan_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_hila_tux/npc_acc_criminal_hila_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_hila_tux/npc_acc_criminal_hila_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_hila_tux/npc_acc_criminal_hila_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_hila_tux/npc_acc_criminal_hila_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_hila_tux/npc_acc_criminal_hila_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_jacket_tux/npc_acc_criminal_jacket_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_jacket_tux/npc_acc_criminal_jacket_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_jacket_tux/npc_acc_criminal_jacket_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_jacket_tux/npc_acc_criminal_jacket_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_jacket_tux/npc_acc_criminal_jacket_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_john_wick_tux/npc_acc_criminal_john_wick_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_john_wick_tux/npc_acc_criminal_john_wick_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_john_wick_tux/npc_acc_criminal_john_wick_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_john_wick_tux/npc_acc_criminal_john_wick_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_john_wick_tux/npc_acc_criminal_john_wick_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_joy_tux/npc_acc_criminal_joy_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_joy_tux/npc_acc_criminal_joy_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_joy_tux/npc_acc_criminal_joy_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_joy_tux/npc_acc_criminal_joy_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_joy_tux/npc_acc_criminal_joy_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_max_tux/npc_acc_criminal_max_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_max_tux/npc_acc_criminal_max_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_max_tux/npc_acc_criminal_max_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_max_tux/npc_acc_criminal_max_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_max_tux/npc_acc_criminal_max_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_myh_tux/npc_acc_criminal_myh_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_myh_tux/npc_acc_criminal_myh_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_myh_tux/npc_acc_criminal_myh_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_myh_tux/npc_acc_criminal_myh_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_myh_tux/npc_acc_criminal_myh_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_rust_tux/npc_acc_criminal_rust_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_rust_tux/npc_acc_criminal_rust_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_rust_tux/npc_acc_criminal_rust_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_rust_tux/npc_acc_criminal_rust_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_rust_tux/npc_acc_criminal_rust_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_scarface_tux/npc_acc_criminal_scarface_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_scarface_tux/npc_acc_criminal_scarface_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_scarface_tux/npc_acc_criminal_scarface_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_scarface_tux/npc_acc_criminal_scarface_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_scarface_tux/npc_acc_criminal_scarface_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_1/npc_acc_criminals_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_1/npc_acc_criminals_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_1/npc_acc_criminals_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_1/npc_acc_criminals_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_1/npc_acc_criminals_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_white_1/npc_acc_criminals_white_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_white_1/npc_acc_criminals_white_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_white_1/npc_acc_criminals_white_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_white_1/npc_acc_criminals_white_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_suit_white_1/npc_acc_criminals_white_tux" force="true"/>
+
+	<unit path="units/pd2_dlc_sah/characters/npc_acc_criminal_sydney_tux/npc_acc_criminal_sydney_tux" force="true"/>
+	<object path="units/pd2_dlc_sah/characters/npc_acc_criminal_sydney_tux/npc_acc_criminal_sydney_tux" force="true"/>
+	<model path="units/pd2_dlc_sah/characters/npc_acc_criminal_sydney_tux/npc_acc_criminal_sydney_tux" force="true"/>
+	<material_config path="units/pd2_dlc_sah/characters/npc_acc_criminal_sydney_tux/npc_acc_criminal_sydney_tux" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sah/characters/npc_acc_criminal_sydney_tux/npc_acc_criminal_sydney_tux" force="true"/>
+</table>

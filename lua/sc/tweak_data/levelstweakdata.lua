@@ -29,7 +29,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
-		self.shoutout_raid.player_style = "raincoat"
 		
 		self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
 		self.pbr.ai_group_type = murkywater
@@ -64,7 +63,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spa.player_style = "tux"		
 		
 		self.brb.ai_group_type = nypd
-		self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
+		self.brb.package = {"packages/lvl_brb", "packages/nypdassets", "packages/addsnow"}
 		self.brb.player_style = "winter_suit"
 		
 		self.red2.ai_group_type = nypd
@@ -100,7 +99,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets", "packages/addbdu"}
 		self.jolly.player_style = "sneak_suit"
 		
 		self.pal.ai_group_type = lapd
@@ -108,7 +107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pal.player_style = "suit_pool"		
 		
 		self.kenaz.ai_group_type = lapd
-		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets"}	
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/addtux"}	
 		self.kenaz.player_style = "tux"				
 		
 		self.rvd1.ai_group_type = lapd
@@ -121,6 +120,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
         --///NEW OUTFITS\\\--
 		
+		self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
 		self.fish.player_style = "tux"
 		
 		self.arm_cro.player_style = "loud_suit"
@@ -131,17 +131,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.arm_par.player_style = "loud_suit"		
 		
+		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
 		
+		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu"}
 		self.crojob2.player_style = "sneak_suit"
 		
-		self.crojob3.player_style = "sneak_suit"
+		self.crojob3.player_style = "loud_suit"
 		
+		self.dark.package = {"packages/job_dark", "packages/addbdu"}
 		self.dark.player_style = "sneak_suit"
 		
+		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
 		self.kosugi.player_style = "sneak_suit"		
 				
-		self.mex.player_style = "suit_sunny"
 		self.mex_cooking.player_style = "suit_sunny"
 		
 		self.hox_1.player_style = "suit_sunny"
@@ -150,12 +153,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.rat.player_style = "suit_sunny"
 		
+		self.election_day_1.package = {"packages/narr_election1", "packages/addbdu"}
 		self.election_day_1.player_style = "sneak_suit"	
+		self.election_day_2.package = {"packages/narr_election2", "packages/addbdu"}
 		self.election_day_2.player_style = "sneak_suit"
 		
+		self.gallery.package = {"packages/narr_framing_1", "packages/addbdu"}
 		self.gallery.player_style = "sneak_suit"
 		self.framing_frame_1.player_style = "sneak_suit"
+		self.framing_frame_1.package = {"packages/narr_framing_1", "packages/addbdu"}
 		self.framing_frame_3.player_style = "sneak_suit"
+		self.framing_frame_3.package = {"packages/narr_framing_3", "packages/addbdu"}
 				
 		self.alex_1.player_style = "suit_sunny"
 		self.alex_3.player_style = "suit_sunny"
@@ -164,6 +172,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 		self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
+		
+		self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/addbdu"}
 		self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 		
 		self.chew.player_style = "loud_suit"
@@ -177,8 +187,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.watchdogs_2_day.player_style = "loud_suit"
 		
 		--reminder to add the biker vo package here
+		self.cane.package = {"packages/cane", "packages/addsnow"}
 		self.cane.player_style = "winter_suit"
 								
+		self.mus.package = {"packages/narr_mus", "packages/addbdu"}
 		self.mus.player_style = "sneak_suit"
 		
 		--///GANGSTER VOICEOVER\\\--
@@ -204,7 +216,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chill.ghost_bonus = nil
 		
 		--///REAPER LEVELS\\\--
-		self.mad.package = {"packages/akanassets", "packages/lvl_mad"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/addsnow"}
 		self.mad.player_style = "winter_suit"
 		--We're never actually told where the forest is ;)
 		self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}

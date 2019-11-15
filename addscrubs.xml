@@ -1,0 +1,85 @@
+<table directory="assets">
+	<!--///DOCTOR SCRUBS\\\-->
+    <unit path="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female/nmh_acc_scrubs_female" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_big/nmh_acc_scrubs_female_big" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_big/nmh_acc_scrubs_female_big" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_big/nmh_acc_scrubs_female_big" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_big/nmh_acc_scrubs_female_big" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_big/nmh_acc_scrubs_female_big" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_big/nmh_acc_scrubs_female_big" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_darkblue/nmh_acc_scrubs_female_darkblue" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_darkblue/nmh_acc_scrubs_female_darkblue" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_darkblue/nmh_acc_scrubs_female_darkblue" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_darkblue/nmh_acc_scrubs_female_darkblue" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_darkblue/nmh_acc_scrubs_female_darkblue" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_darkblue/nmh_acc_scrubs_female_darkblue" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_lightblue/nmh_acc_scrubs_female_lightblue" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_lightblue/nmh_acc_scrubs_female_lightblue" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_lightblue/nmh_acc_scrubs_female_lightblue" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_lightblue/nmh_acc_scrubs_female_lightblue" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_lightblue/nmh_acc_scrubs_female_lightblue" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_lightblue/nmh_acc_scrubs_female_lightblue" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_sydney/nmh_acc_scrubs_female_sydney" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_sydney/nmh_acc_scrubs_female_sydney" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_sydney/nmh_acc_scrubs_female_sydney" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_sydney/nmh_acc_scrubs_female_sydney" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_sydney/nmh_acc_scrubs_female_sydney" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_female_sydney/nmh_acc_scrubs_female_sydney" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male/nmh_acc_scrubs_male" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male/nmh_acc_scrubs_male" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male/nmh_acc_scrubs_male" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male/nmh_acc_scrubs_male" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male/nmh_acc_scrubs_male" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male/nmh_acc_scrubs_male" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_big/nmh_acc_scrubs_male_big" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_big/nmh_acc_scrubs_male_big" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_big/nmh_acc_scrubs_male_big" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_big/nmh_acc_scrubs_male_big" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_big/nmh_acc_scrubs_male_big" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_big/nmh_acc_scrubs_male_big" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_darkblue/nmh_acc_scrubs_male_darkblue" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_darkblue/nmh_acc_scrubs_male_darkblue" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_darkblue/nmh_acc_scrubs_male_darkblue" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_darkblue/nmh_acc_scrubs_male_darkblue" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_darkblue/nmh_acc_scrubs_male_darkblue" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_darkblue/nmh_acc_scrubs_male_darkblue" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_ethan/nmh_acc_scrubs_male_ethan" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_ethan/nmh_acc_scrubs_male_ethan" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_ethan/nmh_acc_scrubs_male_ethan" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_ethan/nmh_acc_scrubs_male_ethan" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_ethan/nmh_acc_scrubs_male_ethan" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_ethan/nmh_acc_scrubs_male_ethan" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_green/nmh_acc_scrubs_male_green" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_green/nmh_acc_scrubs_male_green" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_green/nmh_acc_scrubs_male_green" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_green/nmh_acc_scrubs_male_green" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_green/nmh_acc_scrubs_male_green" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_green/nmh_acc_scrubs_male_green" force="true"/>
+
+	<unit path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_purple/nmh_acc_scrubs_male_purple" force="true"/>
+	<object path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_purple/nmh_acc_scrubs_male_purple" force="true"/>
+	<model path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_purple/nmh_acc_scrubs_male_purple" force="true"/>
+	<material_config path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_purple/nmh_acc_scrubs_male_purple" force="true"/>
+	<cooked_physics path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_purple/nmh_acc_scrubs_male_purple" force="true"/>
+	<sequence_manager path="units/pd2_dlc_nmh/characters/nmh_acc_scrubs_male_purple/nmh_acc_scrubs_male_purple" force="true"/>
+</table>

@@ -828,7 +828,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     
     		if data.unit:brain():action_request(new_action_data) then
     			my_data.turning = new_action_data.angle
-    			my_data.turning = new_action_data.speed
     
     			return true
     		end

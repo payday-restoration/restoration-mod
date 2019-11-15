@@ -172,7 +172,7 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk" load="true"/>
-	<!--dozer 1-->
+	<!--dozer 1
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
@@ -180,7 +180,7 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_husk"/>
-	<!--dozer 2-->
+	<!--dozer 2
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
@@ -188,7 +188,7 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_husk"/>
-	<!--dozer 3-->
+	<!--dozer 3
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
@@ -196,7 +196,7 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_husk"/>
-	<!--ztaser-->
+	<!--ztaser
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
@@ -204,7 +204,7 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_husk"/>
-	<!--zcloaker-->
+	<!--zcloaker
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
@@ -212,12 +212,12 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_husk"/>
-	<!--zshield-->
+	<!--zshield
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_contour"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk"/>-->
 </table>

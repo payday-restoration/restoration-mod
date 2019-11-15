@@ -497,14 +497,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "vertical_grip",
 			name_id = "bm_wp_upg_vg_tac",
 			a_obj = "a_vg",
-			is_a_unlockable = true,
 			dlc = "sc",
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_verticalgrip",
 			unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_verticalgrip/wpn_fps_upg_vg_ass_smg_verticalgrip",
 			stats = {
 				value = 1,
 				recoil = 1,
-				spread_moving = 2,
 				concealment = -1
 			}
 		}
@@ -513,14 +511,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "vertical_grip",
 			name_id = "bm_wp_upg_vg_stubby",
 			a_obj = "a_vg",
-			is_a_unlockable = true,
 			dlc = "sc",
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_stubby",
 			unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_stubby/wpn_fps_upg_vg_ass_smg_stubby",
 			stats = {
 				value = 1,
 				spread = 1,
-				spread_moving = 2,
 				concealment = -2
 			}
 		}
@@ -529,14 +525,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "vertical_grip",
 			name_id = "bm_wp_upg_vg_afg",
 			a_obj = "a_vg",
-			is_a_unlockable = true,
 			dlc = "sc",
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg",
 			unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_afg/wpn_fps_upg_vg_ass_smg_afg",
 			stats = {
 				value = 1,
-				spread = 0,
-				spread_moving = 2,
 				concealment = 1
 			}
 		}
@@ -563,7 +556,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_o_specter/wpn_fps_upg_o_specter",
 			stats = {
 				value = 8,
-				zoom = 3,
+				zoom = 6,
 				concealment = -3
 			},
 			perks = {"scope"},
@@ -900,7 +893,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint",
 			stats = {
 				value = 8,
-				zoom = 3,
+				zoom = 6,
 				spread_moving = -3,
 				concealment = -3
 			},
@@ -933,7 +926,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint_preorder",
 			stats = {
 				value = 1,
-				zoom = 3,
+				zoom = 6,
 				spread_moving = -3,
 				concealment = -3
 			},
@@ -991,7 +984,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_o_eotech/wpn_fps_upg_o_eotech",
 			stats = {
 				value = 3,
-				zoom = 2,
+				zoom = 4,
 				concealment = -2
 			},
 			perks = {"scope"},
@@ -1297,7 +1290,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 8,
 				zoom = 10,
 				spread_moving = -3,
-				concealment = -2
+				concealment = -5
 			},
 			perks = {"scope", "highlight"},
 			stance_mod = {
@@ -1428,8 +1421,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {
 				value = 5,
-				spread = 1,
-				recoil = -1
+				spread = 1
 			},
 			perks = {
 				"fire_mode_single"
@@ -1534,7 +1526,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/wpn_fps_upg_o_acog",
 			stats = {
 				value = 8,
-				zoom = 5,
+				zoom = 10,
 				concealment = -5
 			},
 			perks = {"scope"},
@@ -2435,7 +2427,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_reflex/wpn_fps_upg_o_reflex",
 			stats = {
 				value = 5,
-				zoom = 1,
+				zoom = 2,
 				spread_moving = -1,
 				concealment = -1
 			},
@@ -2462,7 +2454,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx01/wpn_fps_upg_o_rx01",
 			stats = {
 				value = 5,
-				zoom = 4,
+				zoom = 8,
 				spread_moving = -4,
 				concealment = -4
 			},
@@ -2489,8 +2481,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx30/wpn_fps_upg_o_rx30",
 			stats = {
 				value = 5,
-				zoom = 2,
-				spread_moving = -2,
+				zoom = 4,
 				concealment = -2
 			},
 			perks = {"scope"},
@@ -2517,8 +2508,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/wpn_fps_upg_o_cs",
 			stats = {
 				value = 3,
-				zoom = 1,
-				spread_moving = -1,
+				zoom = 2,
 				concealment = -1
 			},
 			perks = {"scope"},
@@ -2911,7 +2901,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_aa12_mag_drum",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 98},
-			is_a_unlockable = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum",
 			dlc = "sc",
 			unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum",
@@ -4474,18 +4463,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_aa12_mag_drum",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
-			is_a_unlockable = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum",
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_lmg_rpk_m_drum",
 			dlc = "sc",
 			stats = {
 				value = 5,
-				spread_moving = -2,
 				concealment = -5,
 				extra_ammo = 70,
-				reload = -6,
-				recoil = 0,
-				spread = 0
+				reload = -6
 			}
 		}
 		self.parts.wpn_upg_ak_s_adapter = {
@@ -5519,7 +5504,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_saiga_m_20rnd",
 			a_obj = "a_m",
 			dlc = "sc",
-			is_a_unlockable = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
 			unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
 			custom_stats = {is_drum_aa12 = true},
@@ -6521,7 +6505,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_p90_body_p90_tan",
 			a_obj = "a_body",
 			dlc = "sc",
-			is_a_unlockable = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan",
 			unit = "units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan",
 			stats = {value = 0},
@@ -7520,7 +7503,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			type = "magazine",
 			name_id = "bm_wp_aa12_mag_drum",
 			a_obj = "a_m",
-			is_a_unlockable = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum",
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_drum",
 			dlc = "sc",
@@ -19202,7 +19184,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
-				zoom = 5,
+				zoom = 10,
 				concealment = -5
 			},
 			perks = {"scope"},
@@ -25389,7 +25371,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 0,
 				zoom = 8,
-				concealment = -8
+				concealment = -4
 			},
 			stance_mod = {
 				wpn_fps_snp_winchester = {
@@ -31418,8 +31400,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_spot/wpn_fps_upg_o_spot",
 			stats = {
 				value = 8,
-				zoom = 4,
-				spread_moving = -4,
+				zoom = 8,
 				concealment = -4
 			},
 			perks = {"scope"},
@@ -31475,8 +31456,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 8,
 				zoom = 10,
-				spread_moving = -10,
-				concealment = -2
+				concealment = -4
 			},
 			perks = {"scope", "highlight"},
 			stance_mod = {
@@ -31551,7 +31531,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			reticle_obj = "g_reticle",
 			stats = {
 				value = 1,
-				zoom = 5,
+				zoom = 10,
 				concealment = -5
 			},
 			perks = {"scope"},
@@ -40218,7 +40198,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			stats = {
-				zoom = 3,
+				zoom = 6,
 				concealment = -3,
 				value = 8
 			},
@@ -40659,7 +40639,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stats = {
 				value = 3,
-				zoom = 2,
+				zoom = 4,
 				concealment = -2
 			},
 			perks = {
@@ -40865,7 +40845,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded",			
 			stats = {
 				value = 5,
-				spread_moving = 1,
 				recoil = -1,
 				concealment = 2
 			},
@@ -48531,7 +48510,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 	--SC mod shit below--
 
 		self.parts.wpn_fps_upg_a_slug_fire = {
-			pcs = {},
 			type = "ammo",
 			name_id = "bm_wp_upg_a_slug_sc_fire",
 			desc_id = "bm_wp_upg_a_slug_fire_desc",
@@ -48540,7 +48518,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			dlc = "sc",
-			is_a_unlockable = true,
 			stats = {
 				value = 10,
 				concealment = -5,
@@ -48585,7 +48562,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			is_a_unlockable = true,
 			has_description = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 			dlc = "sc",
@@ -48604,7 +48580,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			dlc = "sc",
-			is_a_unlockable = true,		
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_lmg_rpk_m_standard",
 			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk_pts/wpn_fps_lmg_rpk_m_standard",
 			stats = {
@@ -48643,7 +48618,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			is_a_unlockable = true,
 			has_description = true,
 			alt_icon = "guis/dlcs/tng/textures/pd2/blackmarket/icons/side_job_rewards/gage_mod_rewards",
 			dlc = "sc",
@@ -48674,7 +48648,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			is_a_unlockable = true,
 			has_description = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 			dlc = "sc",
@@ -48743,7 +48716,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			is_a_unlockable = true,
 			has_description = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 			dlc = "sc",
@@ -48767,7 +48739,6 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			is_a_unlockable = true,
 			has_description = true,
 			alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 			dlc = "sc",

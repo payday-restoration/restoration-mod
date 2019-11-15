@@ -505,8 +505,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		-- Flecktarn Jumpsuit 
 		self.player_styles.jumpsuit.material_variations.flecktarn = {
 			name_id = "bm_suit_var_jumpsuit_flecktarn",
-			global_value = "sc",
 			unlocked = true,
+			global_value = "sc",
 			material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn",			
 			desc_id = "bm_suit_var_jumpsuit_flecktarn_desc"
 		}
@@ -541,6 +541,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_suit_loud_suit_desc",
 			texture_bundle_folder = "mods",
 			unlocked = true,
+			global_value = "sc",
 			keep_wrists = true,
 			characters = {}
 		}
@@ -635,6 +636,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_suit_sunny_desc",
 			texture_bundle_folder = "mods",
 			unlocked = true,
+			global_value = "sc",
 			third_body_replacement = body_replacement_standard,
 			characters = {}
 		}
@@ -715,6 +717,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_suit_pool_desc",
 			texture_bundle_folder = "mods",
 			unlocked = true,
+			global_value = "sc",
 			body_replacement = body_replacement_standard,
 			third_body_replacement = body_replacement_standard,
 			unit = "units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps",
@@ -728,6 +731,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			desc_id = "bm_suit_prison_desc",
 			texture_bundle_folder = "mods",
 			unlocked = true,
+			global_value = "sc",
 			body_replacement = body_replacement_standard,
 			third_body_replacement = body_replacement_standard,
 			characters = {}

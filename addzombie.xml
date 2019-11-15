@@ -168,10 +168,10 @@
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
 	<model path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5" load="true"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_contour"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk" load="true"/>
 	<!--dozer 1-->
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"/>

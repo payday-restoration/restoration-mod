@@ -83,6 +83,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.dinner.ai_group_type = nypd
 		self.dinner.package = {"packages/narr_dinner", "packages/nypdassets"}
+
 		self.dinner.player_style = "loud_suit"
 		
 		self.man.package = {"packages/narr_man"}
@@ -185,6 +186,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.watchdogs_1_night.player_style = "suit_sunny"
 		self.watchdogs_2_day.player_style = "loud_suit"
+		
+		self.mia_1.player_style = "suit_sunny"
+		self.mia_2.player_style = "suit_sunny"
 		
 		--reminder to add the biker vo package here
 		self.cane.package = {"packages/cane", "packages/addsnow"}

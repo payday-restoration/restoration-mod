@@ -893,9 +893,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint",
 			stats = {
 				value = 8,
-				zoom = 6,
-				spread_moving = -3,
-				concealment = -3
+				zoom = 2,
+				concealment = -2
 			},
 			perks = {"scope"},
 			stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -927,7 +926,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				zoom = 6,
-				spread_moving = -3,
 				concealment = -3
 			},
 			perks = {"scope"},
@@ -1206,7 +1204,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_upg_o_specter",
 			a_obj = "a_o",
 			unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot",
-			stats = {value = 1, zoom = 6},
+			stats = {value = 1, zoom = 8},
 			perks = {"scope"},
 			stance_mod = {
 				wpn_fps_snp_m95 = {
@@ -1288,9 +1286,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_fps_upg_o_leupold",
 			stats = {
 				value = 8,
-				zoom = 10,
-				spread_moving = -3,
-				concealment = -5
+				zoom = 8,
+				concealment = -2
 			},
 			perks = {"scope", "highlight"},
 			stance_mod = {
@@ -1366,7 +1363,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.parts.wpn_fps_upg_o_shortdot.third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_third_upg_o_shortdot"
 		self.parts.wpn_fps_upg_o_leupold.third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_third_upg_o_leupold"
 		self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
-		self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {zoom = 6}
+		self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {zoom = 8}
 		self.parts.wpn_fps_upg_o_shortdot_vanilla.dlc = nil
 		self.parts.wpn_fps_upg_o_shortdot_vanilla.pcs = nil
 	end
@@ -1526,8 +1523,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/wpn_fps_upg_o_acog",
 			stats = {
 				value = 8,
-				zoom = 10,
-				concealment = -5
+				zoom = 6,
+				concealment = -3
 			},
 			perks = {"scope"},
 			stance_mod = {
@@ -2428,7 +2425,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 5,
 				zoom = 2,
-				spread_moving = -1,
 				concealment = -1
 			},
 			perks = {"scope"},
@@ -2454,9 +2450,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx01/wpn_fps_upg_o_rx01",
 			stats = {
 				value = 5,
-				zoom = 8,
-				spread_moving = -4,
-				concealment = -4
+				zoom = 4,
+				concealment = -2
 			},
 			perks = {"scope"},
 			stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -19184,8 +19179,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
-				zoom = 10,
-				concealment = -5
+				zoom = 8,
+				concealment = -4
 			},
 			perks = {"scope"},
 			stance_mod = {
@@ -31400,8 +31395,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_spot/wpn_fps_upg_o_spot",
 			stats = {
 				value = 8,
-				zoom = 8,
-				concealment = -4
+				zoom = 6,
+				concealment = -3
 			},
 			perks = {"scope"},
 			stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -31455,8 +31450,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_box/wpn_fps_upg_o_box",
 			stats = {
 				value = 8,
-				zoom = 10,
-				concealment = -4
+				zoom = 8,
+				concealment = -2
 			},
 			perks = {"scope", "highlight"},
 			stance_mod = {
@@ -31531,8 +31526,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			reticle_obj = "g_reticle",
 			stats = {
 				value = 1,
-				zoom = 10,
-				concealment = -5
+				zoom = 8,
+				concealment = -4
 			},
 			perks = {"scope"},
 			texture_bundle_folder = "tng",
@@ -40639,8 +40634,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stats = {
 				value = 3,
-				zoom = 4,
-				concealment = -2
+				zoom = 2,
+				concealment = -1
 			},
 			perks = {
 				"scope"

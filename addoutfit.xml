@@ -581,25 +581,4 @@
 <file name="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big_contour.material_config"/>
 <file name="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_male_big/dah_acc_stealth_suit_male_big.cooked_physics"/>
 
-<!--///NEW FUCKTARN (FLECKTARN) CAMO AND BOILER JUMPSUIT TWEAKS\\\-->
-
-<file name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_green_df.texture"/>
-<file name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_gsma.texture"/>
-<file name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_red_df.texture"/>
-<file name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_gsma.texture"/>
-<file name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_green_df.texture"/>
-
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn.material_config"/>
-
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_big/trd_acc_jumpsuit_female_big_flecktarn.material_config"/>
-
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_average/trd_acc_jumpsuit_female_average_flecktarn.material_config"/>
-
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flecktarn.material_config"/>
-
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flecktarn.material_config"/>
-
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn_df.texture"/>
-<file name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flecktarn_df.texture"/>
-
 </assets>

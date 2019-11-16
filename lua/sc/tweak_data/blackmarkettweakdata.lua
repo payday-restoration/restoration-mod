@@ -533,7 +533,40 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flecktarn"
 			}			
 			end
-		end		
+		end
+
+		-- FLAT GREEN JUMPSUIT
+		self.player_styles.jumpsuit.material_variations.flatgreen = {
+			name_id = "bm_suit_var_jumpsuit_flatgreen",
+			unlocked = true,
+			global_value = "sc",
+			material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flatgreen",			
+			desc_id = "bm_suit_var_jumpsuit_flatgreen_desc"
+		}
+		
+		for i, character in ipairs(characters_chungette) do --thanks Zed Daniels
+			self.player_styles.jumpsuit.characters[character].material_variations.flatgreen = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_average/trd_acc_jumpsuit_female_average_flatgreen"
+			}
+		end
+
+		for i, character in ipairs(characters_chungette_big) do
+			self.player_styles.jumpsuit.characters[character].material_variations.flatgreen = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_big/trd_acc_jumpsuit_female_big_flatgreen"
+			}
+		end
+
+		for i, character in ipairs(characters_chungus) do
+			self.player_styles.jumpsuit.characters[character].material_variations.flatgreen = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flatgreen"
+			}
+
+		for i, character in ipairs(characters_big_chungus) do
+			self.player_styles.jumpsuit.characters[character].material_variations.flatgreen = {
+				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flatgreen"
+			}			
+			end
+		end						
 
 		--Resmod Loud Suit
 		self.player_styles.loud_suit = {

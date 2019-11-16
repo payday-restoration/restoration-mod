@@ -1,0 +1,7 @@
+<materials version="3">
+	<material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/bulldozer_3_df"/>
+	</material>
+
+</materials>

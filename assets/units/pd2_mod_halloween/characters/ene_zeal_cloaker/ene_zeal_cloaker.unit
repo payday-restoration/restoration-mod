@@ -10,8 +10,8 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on effect="effects/particles/character/cloaker_goggle" />
 		<depends_on unit="units/payday2/characters/ene_acc_baton/ene_acc_baton" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/debris/ene_spook_head_debris" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/debris/ene_spook_upper_body_debris" />
+		<depends_on unit="units/pd2_mod_halloween/characters/ene_zeal_cloaker/debris/ene_spook_head_debris" />
+		<depends_on unit="units/pd2_mod_halloween/characters/ene_zeal_cloaker/debris/ene_spook_upper_body_debris" />
 	</dependencies>
 
 	<extensions>

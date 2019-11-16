@@ -1,11 +1,9 @@
 <table directory="assets">
 
 	<!--/// FUCKTARN CAMO AND BOILER JUMPSUIT TWEAKS\\\-->
-	<texture path="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_green_df" force="true"/>
 	<texture path="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_gsma" force="true"/>
 	<texture path="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_red_df" force="true"/>
 	<texture path="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_gsma" force="true"/>
-	<texture path="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_green_df" force="true"/>
 	
 	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn"/>
 	

@@ -45386,144 +45386,144 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					value = 0
 				}				
 				self.parts.wpn_fps_pis_pm_fi_re.alt_icon = {"guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_pm_fi_re"}		
-self.wpn_fps_pis_x_pm.override = {	--Im not formatting this man....
-    wpn_fps_pis_pm_b_standard = {
-	   animations = {
-		reload_not_empty = "reload_not_empty_right",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left",
-		reload = "reload_right",
-		magazine_empty = "last_recoil"
-	}},
-	wpn_fps_pis_pm_b_custom = {
-	   animations = {
-		reload_not_empty = "reload_not_empty_right",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left",
-		reload = "reload_right",
-		magazine_empty = "last_recoil"
-	}},
-	wpn_fps_pis_pm_m_standard  = { 
-	 animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	  }},
-	wpn_fps_pis_pm_m_extended  = { 
-     stats= {
-		value = 3,
-		concealment = -4,
-		extra_ammo = 16,
-		reload = -4
-        },				
-	animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	  }},
-   wpn_fps_pis_pm_m_drum  = { 
-     stats= {
-        spread = -2,
-        extra_ammo = 152,
-		reload = -6,
-		concealment = -5
-		},						
-	animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	  }},
-   wpn_fps_pis_pm_m_custom  = { 
-    stats= {
-        value = 2
-	},
-	animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	}}
-}	
-self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
-    wpn_fps_pis_pm_b_standard = {
-	   animations = {
-		reload_not_empty = "reload_not_empty_right",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left",
-		reload = "reload_right",
-		magazine_empty = "last_recoil"
-	}},
-	wpn_fps_pis_pm_b_custom = {
-	   animations = {
-		reload_not_empty = "reload_not_empty_right",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left",
-		reload = "reload_right",
-		magazine_empty = "last_recoil"
-	}},
-	wpn_fps_pis_pm_m_standard  = { 
-	 animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	  }},
-	wpn_fps_pis_pm_m_extended  = { 
-     stats= {
-		value = 3,
-		concealment = -4,
-		extra_ammo = 16,
-		reload = -4
-        },				
-	animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	  }},
-   wpn_fps_pis_pm_m_drum  = { 
-     stats= {
-        spread = -2,
-        extra_ammo = 152,
-		reload = -6,
-		concealment = -5
-		},							
-	animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	  }},
-   wpn_fps_pis_pm_m_custom  = { 
-    stats= {
-        value = 2
-	},
-	animations = {
-		reload_not_empty = "reload_not_empty_right",
-		reload = "reload_right",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left"
-         
-	}}
-}									
+				self.wpn_fps_pis_x_pm.override = {
+					wpn_fps_pis_pm_b_standard = {
+					   animations = {
+						reload_not_empty = "reload_not_empty_right",
+						fire = "recoil",
+						fire_steelsight = "recoil",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left",
+						reload = "reload_right",
+						magazine_empty = "last_recoil"
+					}},
+					wpn_fps_pis_pm_b_custom = {
+					   animations = {
+						reload_not_empty = "reload_not_empty_right",
+						fire = "recoil",
+						fire_steelsight = "recoil",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left",
+						reload = "reload_right",
+						magazine_empty = "last_recoil"
+					}},
+					wpn_fps_pis_pm_m_standard  = { 
+					 animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					  }},
+					wpn_fps_pis_pm_m_extended  = { 
+					 stats= {
+						value = 3,
+						concealment = -4,
+						extra_ammo = 16,
+						reload = -4
+						},				
+					animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					  }},
+				   wpn_fps_pis_pm_m_drum  = { 
+					 stats= {
+						spread = -2,
+						extra_ammo = 152,
+						reload = -6,
+						concealment = -5
+						},						
+					animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					  }},
+				   wpn_fps_pis_pm_m_custom  = { 
+					stats= {
+						value = 2
+					},
+					animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					}}
+				}	
+				self.wpn_fps_pis_xs_pm.override = {
+					wpn_fps_pis_pm_b_standard = {
+					   animations = {
+						reload_not_empty = "reload_not_empty_right",
+						fire = "recoil",
+						fire_steelsight = "recoil",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left",
+						reload = "reload_right",
+						magazine_empty = "last_recoil"
+					}},
+					wpn_fps_pis_pm_b_custom = {
+					   animations = {
+						reload_not_empty = "reload_not_empty_right",
+						fire = "recoil",
+						fire_steelsight = "recoil",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left",
+						reload = "reload_right",
+						magazine_empty = "last_recoil"
+					}},
+					wpn_fps_pis_pm_m_standard  = { 
+					 animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					  }},
+					wpn_fps_pis_pm_m_extended  = { 
+					 stats= {
+						value = 3,
+						concealment = -4,
+						extra_ammo = 16,
+						reload = -4
+						},				
+					animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					  }},
+				   wpn_fps_pis_pm_m_drum  = { 
+					 stats= {
+						spread = -2,
+						extra_ammo = 152,
+						reload = -6,
+						concealment = -5
+						},							
+					animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					  }},
+				   wpn_fps_pis_pm_m_custom  = { 
+					stats= {
+						value = 2
+					},
+					animations = {
+						reload_not_empty = "reload_not_empty_right",
+						reload = "reload_right",
+						reload_left = "reload_left",
+						reload_not_empty_left = "reload_not_empty_left"
+						 
+					}}
+				}									
 			end
 
 		if self.wpn_fps_pis_hshdm then --Killerwolf's High Standard HDM
@@ -45533,141 +45533,20 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 			end		
 			
 		if self.parts.wpn_fps_upg_m4_m_x15drum then --Pawcio's M4 X 15 Drum Magazine
-		
 				self.parts.wpn_fps_upg_m4_m_x15drum.stats = { 
 					value = 3,
 					concealment = -3,
 					reload = -2,
-					extra_ammo = 30 --maybe should've set this to 20 but *shrug*
+					extra_ammo = 20
 				}
-				self.wpn_fps_ass_komodo.override = {
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}	
-				self.wpn_fps_smg_olympic.override = {
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}
-				self.wpn_fps_ass_m16.override = {
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}
-				self.wpn_fps_ass_m4.override = {
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}																							
-				self.wpn_fps_ass_ak5.override = {
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}							
-				self.wpn_fps_ass_l85a2.override = {
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}			
-				self.wpn_fps_smg_hajk.override = { --fuck akimbos
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 20
-				}}}			
-				self.wpn_fps_smg_x_hajk.override = {
-				wpn_fps_smg_hajk_body_standard = {animations = {
-					fire = "recoil",
-					fire_steelsight = "recoil",
-					magazine_empty = "last_recoil"
-				}},
-				wpn_fps_ass_l85a2_m_emag = {stats = {
-					value = 0,
-					extra_ammo = 0
-				}},
-				wpn_fps_upg_m4_m_pmag = {stats = {
-					value = 3,
-					recoil = -1,
-					concealment = 1
-				}},
-				wpn_fps_upg_m4_m_l5 = {stats = {
-					value = 0
-				}},
-				wpn_fps_upg_m4_m_quad = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -3,
-					extra_ammo = 60
-				}},
-				wpn_fps_upg_m4_m_straight = {stats = {
-					value = 2,
-					concealment = 2,
-					reload = 2,
-					extra_ammo = -20
-				}},
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 40
-				}}}				
-			self.wpn_fps_smg_x_olympic.override = {
-				wpn_fps_m4_uupg_b_short_vanilla = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short"},
-				wpn_fps_m4_uupg_b_medium = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_medium"},
-				wpn_fps_ass_l85a2_m_emag = {stats = {
-					value = 1,
-					extra_ammo = 20,
-					concealment = -1,
-					reload = -2
-				}},
-				wpn_fps_upg_m4_m_pmag = {stats = {
-					extra_ammo = 20,
-					recoil = -1,
-					reload = -2
-				}},
-				wpn_fps_upg_m4_m_l5 = {stats = {
-					value = 1,
-					extra_ammo = 20,
-					concealment = -1,
-					reload = -2
-				}},
-				wpn_fps_upg_m4_m_quad = {stats = {
-					extra_ammo = 80,
-					concealment = -3,
-					reload = -3
-				}},
-				wpn_fps_m4_uupg_m_std = {stats = {
-					value = 1,
-					extra_ammo = 20,
-					reload = -2,
-					concealment = -1
-				}},
-				wpn_fps_upg_m4_m_drum = {stats = {
-					value = 9,
-					extra_ammo = 80,
-					reload = -6,
-					concealment = -5
-				}},
-				wpn_fps_upg_m4_m_x15drum = {stats = {
-					value = 3,
-					concealment = -3,
-					reload = -2,
-					extra_ammo = 60
-				}}}				
+				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag20 = {
+					stats = {
+						value = 3,
+						concealment = -3,
+						reload = -2,
+						extra_ammo = 30
+					}
+				}				
 			end						
 
 		if self.wpn_fps_pis_pb then --Germantaco's PB
@@ -46607,10 +46486,13 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 1
 			}								
 			self.parts.wpn_fps_ass_74_upper_receiver_bump.stats = {
+				value = 1
+			}
+			self.parts.wpn_fps_ass_ak_fg_waffle.stats = {
 				value = 1,
-				recoil = 1,
-				concealment = -2
-			}				
+				spread = -2,
+				concealment = 3
+			}							
 			self.parts.wpn_fps_pis_g18c_b_long.stats = {
 				value = 4,
 				spread = 1,
@@ -46753,7 +46635,7 @@ self.wpn_fps_pis_xs_pm.override = {	--Im not formatting this man....
 				value = 1,
 				recoil = -1,
 				concealment = 1,				
-				spread = 2
+				spread = 1
 			}						
 			self.parts.wpn_fps_ass_contraband_b_long.stats = {
 				value = 1,

@@ -12410,8 +12410,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.czevo.kick.steelsight = self.new_m4.kick.standing
 			self.czevo.stats = {
 				damage = 34,
-				spread = 14,
-				recoil = 22,
+				spread = 16,
+				recoil = 19,
 				spread_moving = 8,
 				zoom = 3,
 				concealment = 26,

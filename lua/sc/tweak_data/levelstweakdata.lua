@@ -29,6 +29,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
+		self.shoutout_raid.player_style = "loud_suit" --using this until we sort out the coats
 		
 		self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
 		self.pbr.ai_group_type = murkywater

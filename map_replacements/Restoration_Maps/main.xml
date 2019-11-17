@@ -96,7 +96,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="murkywater"  bonus_escape="true" briefing_dialog="" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54">
+	<level ai_group_type="murkywater" player_style="loud_suit" bonus_escape="true" briefing_dialog="" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54">
 		<add file="levels/wetwork/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -149,7 +149,6 @@
 			<value_node value="levels/narratives/vlad/cane/world/world"/>
 			<value_node value="levels/narratives/vlad/cane/world"/>
 			<value_node value="packages/murkyassets"/>
-			<value_node value="packages/outfitassets"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
@@ -216,7 +215,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="america" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
+	<level ai_group_type="america" player_style = "suit_sunny" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
 		<add file="levels/junk/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -338,7 +337,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="murkywater"  briefing_dialog="" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true">
+	<level ai_group_type="murkywater" player_style="loud_suit" briefing_dialog="" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true">
 		<add file="levels/wetwork_burn/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -391,7 +390,6 @@
 			<value_node value="levels/instances/unique/friend/painting_stack_burn/world/world"/>
 			<value_node value="levels/instances/unique/are_elevator/world/world"/>
 			<value_node value="packages/murkyassets"/>
-			<value_node value="packages/outfitassets"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">

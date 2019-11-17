@@ -343,7 +343,7 @@
 	<Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/murkyassets" file="addmurky.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/boilersuitsXD" file="boilersuitsXD.xml" use_clbk="self:DebugLoadAssets"/>
-	<!--<Package id="packages/outfitassets2" file="addoutfit_2.xml" use_clbk="self:DebugLoadAssets"/>--> 
+	<Package id="packages/outfits" file="customoutfits.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addscrubs" file="addscrubs.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addsnow" file="addsnow.xml" use_clbk="self:DebugLoadAssets"/> 

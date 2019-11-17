@@ -4,7 +4,7 @@
 		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_2_df"/>
 	</material>
 	<material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_df" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_2_df" mip="1"/>
 	</material>
 
 	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">

@@ -816,6 +816,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
             speed = 1.5
         elseif diff_index == 7 and is_mook then
             speed = 1.25
+        else
+            speed = 1.00 --Just in case it ever ends up here so you don't get a dirty nil value?
         end
     	
     	if math.abs(error_spin) > 27 then

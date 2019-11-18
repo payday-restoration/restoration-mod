@@ -1,5 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	--[[
+
 	--examples: first item is the unit to be replaced, second is the replacement unit that should spawn instead
 	local replacement_table = {
 		--Bravo Rifle
@@ -24,5 +26,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return result
 	end
+	
+	]]--
 	
 end

@@ -270,6 +270,7 @@ end)
 			"sky_1930_sunset_heavy_clouds",
             "sky_1846_low_sun_nice_clouds",
             "sky_0902_overcast",
+			"sky_1345_clear_sky",
 			"sky_0200_night_moon_stars",
 			"sky_2000_twilight_mad",
 			"sky_2100_moon",

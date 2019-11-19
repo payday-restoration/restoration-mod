@@ -1,6 +1,6 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	
-	HUDDodgeMeter = HUDDodgeMeter or class(HUDTemp)
+	HUDDodgeMeter = HUDDodgeMeter or class()
 	function HUDDodgeMeter:init(hud)
 		self._hud_panel = hud.panel
 		
@@ -62,12 +62,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			w = 2
 		}):set_right(16)
 		--Move slightly closer to center of screen for readability and so it doesn't overlap with stamina.
-		self._dodge_panel:set_right(32)
-		self._dodge_panel:set_center_y(500)
+		self._dodge_panel:set_right(1263)
+		self._dodge_panel:set_center_y(360)
 		self._dodge_panel:set_alpha(0) --Hide dodge panel until players actually get dodge.
-		if restoration.Options:GetValue("HUD/MainHUD") then
-			self:RestorationValueChanged()
-		end
 	end
 
 	function HUDDodgeMeter:set_dodge_value(value, total_dodge)

@@ -288,6 +288,13 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin_contour" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin" />
 
+	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />
+	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />
+	<model path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />
+	<material_config path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female_contour" />
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_loud_suit_female/res_acc_loud_suit_female" />
+
 	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" />
 	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" />
 	<model path="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big" />

@@ -1,0 +1,10 @@
+<materials version="3" group="stealth_suit_female_thin">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS" unique="true" name="mat_player_tactical_outfit" version="2">
+        <bump_normal_texture file="units/pd2_mod_suits/characters/res_acc_loud_suit/player_tactical_outfit_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/res_acc_loud_suit/player_tactical_outfit_df"/>
+        <material_texture file="units/pd2_mod_suits/characters/res_acc_loud_suit/player_tactical_outfit_gsma"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2" name="shadow_caster"/>
+</materials>

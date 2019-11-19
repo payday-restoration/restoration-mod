@@ -802,21 +802,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
     	
-    	if data.is_converted or data.unit:in_slot(16) then
-    		speed = 1.5
-    	elseif diff_index == 8 and is_mook then
-    		speed = 1.5
-    	elseif diff_index == 7 and is_mook then
-    		speed = 1.25
-		elseif nr_players > 2 and diff_index == 8 and is_mook  then
-    		speed = 2
-    	elseif nr_players > 2 and diff_index == 7 and is_mook  then
-    		speed = 1.75
-    	elseif nr_players > 2 and diff_index <= 6 and is_mook  then
-    		speed = 1.5
-    	elseif nr_players > 5 then
-    		speed = 3
-    	end
+        if data.is_converted or data.unit:in_slot(16) then
+            speed = 1.5
+        elseif nr_players > 5 then
+            speed = 3
+        elseif nr_players > 2 and diff_index == 8 and is_mook  then
+            speed = 2
+        elseif nr_players > 2 and diff_index == 7 and is_mook  then
+            speed = 1.75
+        elseif nr_players > 2 and diff_index <= 6 and is_mook  then
+            speed = 1.5
+        elseif diff_index == 8 and is_mook then
+            speed = 1.5
+        elseif diff_index == 7 and is_mook then
+            speed = 1.25
+        else
+            speed = 1.00 --Just in case it ever ends up here so you don't get a dirty nil value?
+        end
     	
     	if math.abs(error_spin) > 27 then
     		local new_action_data = {

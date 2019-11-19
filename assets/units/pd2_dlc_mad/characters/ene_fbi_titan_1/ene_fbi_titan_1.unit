@@ -6,7 +6,7 @@
     <dependencies>
         
         <depends_on bnk="soundbanks/regular_vox" />
-        <depends_on unit="units/payday2/characters/ene_acc_medic_helmet/ene_acc_medic_helmet" />
+        <depends_on unit="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" />
     </dependencies>
 
     <extensions>
@@ -19,8 +19,10 @@
         <extension name="inventory" class="CopInventory" />
         <extension name="brain" class="CopBrain" />
         <extension name="anim_data" class="PlayerAnimationData" />
-        <extension name="character_damage" class="MedicDamage">
-            <var name="_head_body_name" value="head" />
+		<extension name="character_damage" class="CopDamage">
+			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_helmet_lod1" />
+			<var name="_head_gear" value="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" />
         </extension>
         <extension name="movement" class="CopMovement" >
             <var name="_footwear" value="hardsole" />

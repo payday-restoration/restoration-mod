@@ -630,8 +630,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		set_characters_data("loud_suit", characters_male_big, {
 			body_replacement = body_replacement_hands,
 			third_body_replacement = body_replacement_armor,
-			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
-			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/res_acc_loud_suit_male_big"
+			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
+			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_worst_addition, {
 			body_replacement = body_replacement_hands,
@@ -659,8 +659,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin"
 		})
 		set_characters_data("loud_suit", characters_female_big, {
-			body_replacement = body_replacement_armor,
-			third_body_replacement = body_replacement_standard,
+			body_replacement = body_replacement_hands,
+			third_body_replacement = body_replacement_armor,
 			disable_wrists = true,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit_2",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/res_acc_loud_suit_female_big"

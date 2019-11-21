@@ -68,6 +68,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_desc"] = "ADDS A 20% MOVEMENT SPEED PENALTY WHILE THE WEAPON IS EQUIPPED.",
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
+		
+		["menu_l_global_value_omnia"] = "OMNIA",
+		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",		
+		
 		["sc_menu"] = "SC's Mod",
 		["sc_menu_desc"] = "Options for SC's mod.",
 		["sc_deploy_title"] = "Deployable Changes",

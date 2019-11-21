@@ -127,9 +127,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Wrist stuff (Thanks Zdann!)
 		player_style = tweak_data.blackmarket.player_styles[player_style]
 		keep_wrists = player_style.keep_wrists
-		if player_style.characters and player_style.characters[character_name] and player_style.characters[character_name].disable_wrists then
-			keep_wrists = false
-		end
 		
 		char_wrist_object = 
 		{

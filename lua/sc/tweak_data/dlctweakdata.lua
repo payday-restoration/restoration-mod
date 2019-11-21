@@ -181,8 +181,24 @@ function DLCTweakData:init(...)
 				amount = 1
 			}			
 		}
+		
+		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
+			self.omnia = {
+				content = {},
+				free = true
+			}
+			self.omnia.content.loot_global_value = "rest_omnia"
+			self.omnia.content.loot_drops = {}		
+			self.omnia.content.loot_drops = {
+				{
+					type_items = "masks",
+					item_entry = "omnia_mask",
+					amount = 1
+				}
+			}	
+		end
 	end
-	
+				
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 		self.sc = {}
 		self.sc.free = true

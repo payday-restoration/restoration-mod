@@ -2211,8 +2211,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.speech_prefix_p1 = "cpw"
 		self.phalanx_vip.speech_prefix_p2 = nil
 		self.phalanx_vip.speech_prefix_count = nil
-		self.phalanx_vip.death_animation = "death_run" 
-		self.phalanx_vip.death_animation_vars = {"var3", "heavy", "fwd", "high"}
+		--self.phalanx_vip.death_animation = "death_run" 
+		--self.phalanx_vip.death_animation_vars = {"var3", "heavy", "fwd", "high"}
 		self.phalanx_vip.chatter = {
 			aggressive = true,
 			retreat = true,

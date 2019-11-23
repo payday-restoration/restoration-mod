@@ -96,7 +96,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="murkywater" player_style="loud_suit" bonus_escape="true" briefing_dialog="" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54">
+	<level ai_group_type="murkywater" briefing_dialog="wetworks_brief" player_style="loud_suit" bonus_escape="true" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54">
 		<add file="levels/wetwork/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -155,6 +155,9 @@
 				<options merge_mode="add" mode="add"/>
 			</mod>
 		</script_data_mods>
+		<sounds directory="assets/vo">
+			<sound id="wetworks_brief" path="wetworks.ogg" volume="1"/>
+		</sounds>
 	</level>
 	<narrative briefing_event="" contact="vlad" icon="guis/textures/customheist_gui/junk" id="junker" jc="5">
 		<chain>
@@ -337,7 +340,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="murkywater" player_style="loud_suit" briefing_dialog="" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true">
+	<level ai_group_type="murkywater" player_style="loud_suit" briefing_dialog="burnout_brief" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true">
 		<add file="levels/wetwork_burn/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -396,6 +399,9 @@
 				<options merge_mode="add" mode="add"/>
 			</mod>
 		</script_data_mods>
+		<sounds directory="assets/vo">
+			<sound id="burnout_brief" path="burnout.ogg" volume="1"/>
+		</sounds>
 	</level>
 	<AddFiles directory="assets">
 		<texture force="true" path="guis/dlcs/big_bank/textures/pd2/pre_planning/preplan_icon_types"/>

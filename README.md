@@ -121,13 +121,13 @@ Cpone Allowing us to add their pool repair suits to the mod.
 
 Offyerrocker Helping redesign Sentries. Making Autumn's special abilities work.
 
-Scruffy Voicing the Grenadier.
+Scruffy A huge thanks for voicing the Grenadier.
 
 VxWolf Creating the songs used in Wetworks and Burnout and voicing the OMNIA LPF.
 
 Skwuruhl fixing stance modifiers and making spread work better.
 
-JimTheCookie voicing the Vet Cop.
+Major Pyatosin A huge thanks for voicing the Vet Cop and Jackal.
 
 Whurr Helping create the Firestarter Day 3 edit.
 

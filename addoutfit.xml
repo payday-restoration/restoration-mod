@@ -71,6 +71,7 @@
 	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
+	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_pale_df" />	
     
 	<!--///Prison Suit Big\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" />

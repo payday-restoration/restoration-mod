@@ -29,7 +29,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local dodge_bar = self._dodge_panel:rect({
 			name = "dodge_bar",
 			color = Color(0.5, 0.5, 0.8),
-			layer = 1
+			layer = 1,
+			h = 0
 		})
 		local dodge_threshold = self._dodge_panel:rect({
 			name = "dodge_threshold",
@@ -65,14 +66,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_panel:set_right(1263)
 		self._dodge_panel:set_center_y(360)
 		self._dodge_panel:set_alpha(0) --Hide dodge panel until players actually get dodge.
+		self._dodge_points = 0
 	end
 
-	function HUDDodgeMeter:set_dodge_value(value, total_dodge)
-		self._dodge_panel:set_alpha(1) --Display dodge panel when needed.
-		self._dodge_panel:child("dodge_bar"):set_h((value / (1.5-total_dodge)) * self._dodge_panel:h())
+	function HUDDodgeMeter:unhide_dodge_panel(dodge_points)
+		self._dodge_panel:set_alpha(1)
+		self._dodge_points = dodge_points
+		self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0 - dodge_points) / (1.5 - dodge_points))) * self._dodge_panel:h())
+	end
+
+	function HUDDodgeMeter:set_dodge_value(value)
+		self._dodge_panel:child("dodge_bar"):set_h(self._dodge_panel:h() * value / (1.5 - self._dodge_points))
 		self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
-		self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0-total_dodge) / (1.5-total_dodge))) * self._dodge_panel:h())
-		if value >= 1.0 - total_dodge then
+		if value >= 1.0 - self._dodge_points then
 			self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
 		else
 			self._dodge_panel:stop()

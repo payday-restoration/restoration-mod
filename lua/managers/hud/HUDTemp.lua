@@ -5,7 +5,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._hud_panel = hud.panel
 		
 		self._dodge_meter_panel = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel:panel({
-			name 	= "dodge_meter_init",
+			name = "dodge_meter_init",
 			layer = 0,
 			visible = true,
 			valign = "scale",
@@ -18,7 +18,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			w = 16,
 			h = 128,
 			halign = "right",
-			valign = "center",
+			valign = "bottom",
 			alpha = 0
 		})
 		local dodge_bar_bg = self._dodge_panel:rect({
@@ -63,8 +63,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			w = 2
 		}):set_right(16)
 		--Move slightly closer to center of screen for readability and so it doesn't overlap with stamina.
-		self._dodge_panel:set_right(1263)
-		self._dodge_panel:set_center_y(360)
+		self._dodge_panel:set_right(self._hud_panel:w() - 16)
+		self._dodge_panel:set_center_y(self._hud_panel:center_y())
 		self._dodge_panel:set_alpha(0) --Hide dodge panel until players actually get dodge.
 		self._dodge_points = 0
 	end

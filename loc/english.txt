@@ -366,7 +366,7 @@
 	"heist_int_dock_name" : "Wetworks",
 	"heist_int_dock_brief" : "This warehouse is owned by Murkywater Logistics.  At least, for the moment. They've been using it as a loot lockup for a while, but recently, they were spotted moving some 'classified' servers. Intel suggests that they're holding some information regarding the alliance between them, and OMNIA.\n\nLoud or silent, the only objective here is to get to those servers, and retrieve the data. Expect resistance no matter the method.",
 	"heist_wetwork_name" : "Wetworks",
-	"heist_wetwork_brief" : "Warehouse is in sight. Murkies probably got a ton of loot around the place, but be sure to prioritize that server first. Intel suggests that they've got a lot of guards on duty, and there's some civs on site too. Civs might have keycards on them.\n\nYou can do this however you'd like, but Murks probably got a trick or two if things get ugly too soon.",
+	"heist_wetwork_brief" : "This warehouse is owned by Murkywater Logistics.  At least, for the moment. They've been using it as a loot lockup for a while, but recently, they were spotted moving some 'classified' servers. Intel suggests that they're holding some information regarding the alliance between them, and OMNIA.\n\nLoud or silent, the only objective here is to get to those servers, and retrieve the data. Expect resistance no matter the method.",
 	"obj1_enterwarehouse" : "ENTER THE WAREHOUSE",
 	"obj1_enterwarehouse_desc" : "Enter the warehouse.",
 	"obj2_findsecuritydoor" : "LOCATE THE SERVER ROOM",

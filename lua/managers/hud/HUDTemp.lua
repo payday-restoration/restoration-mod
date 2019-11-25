@@ -29,7 +29,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local dodge_bar = self._dodge_panel:rect({
 			name = "dodge_bar",
 			color = Color(0.5, 0.5, 0.8),
-			layer = 1
+			layer = 1,
+			h = 0
 		})
 		local dodge_threshold = self._dodge_panel:rect({
 			name = "dodge_threshold",

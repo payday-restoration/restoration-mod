@@ -266,9 +266,7 @@ end
 				if data.unit:base()._tweak_table == "phalanx_vip" then
 					data.unit:sound():say("a01", true)
 				elseif data.unit:base()._tweak_table == "spring" then
-					data.unit:sound():say("a01", true)					
-				elseif data.char_tweak.speech_prefix_p1 == "l5d" then
-					data.unit:sound():say("i01", true)						
+					data.unit:sound():say("a01", true)						
 				elseif data.unit:base()._tweak_table == "gensec" then
 					data.unit:sound():say("a01", true)			
 				elseif data.unit:base()._tweak_table == "security" then

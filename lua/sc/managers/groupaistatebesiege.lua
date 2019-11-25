@@ -595,14 +595,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			else
 				local spawn_group, spawn_group_type = nil
 				
-				--local yes = true
-				--uncomment to test ponr groups
-				--uncomment on get_force_spawn_group as well
-				if self._ponr_is_on or yes then
-					spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.coolhunting, nil, nil, nil)
-				else
-					spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
-				end
+				spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
 				
 				if spawn_group then
 					local grp_objective = {
@@ -1121,33 +1114,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
-	
-	function GroupAIStateBesiege:get_force_spawn_group(group, group_types)
-		local best_groups = {}
-		local total_weight = nil
 		
-		--local yes = true
-		--uncomment to test ponr groups
-		if self._ponr_is_on or yes then
-			total_weight = self:_choose_best_groups(best_groups, group, group_types, self._tweak_data.assault.coolhunting, 1)
-		elseif self._task_data.assault.active then
-			total_weight = self:_choose_best_groups(best_groups, group, group_types, self._tweak_data.assault.groups, 1)
-		else
-			total_weight = self:_choose_best_groups(best_groups, group, group_types, self._tweak_data[self._task_data.assault.active and "assault" or "recon"].groups, 1)
-		end
-		
-
-		if total_weight > 0 then
-			local spawn_group, spawn_group_type = self:_choose_best_group(best_groups, total_weight)
-
-			if spawn_group then
-				return spawn_group, spawn_group_type
-			end
-		end
-
-		return nil
-	end
-	
 	function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last)
 		local nr_units_spawned = 0
 		local produce_data = {

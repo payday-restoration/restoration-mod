@@ -61,6 +61,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		self.spa.player_style = "suit_sunny"
 		
 		self.brb.ai_group_type = nypd
 		self.brb.package = {"packages/lvl_brb", "packages/nypdassets", "packages/addsnow"}
@@ -191,7 +192,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mia_2.player_style = "suit_sunny"
 		
 		--reminder to add the biker vo package here
-		self.cane.package = {"packages/cane", "packages/addsnow"}
+		self.cane.package = {"packages/cane", "packages/addsnow", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 		self.cane.player_style = "winter_suit"
 								
 		self.mus.package = {"packages/narr_mus", "packages/addbdu"}

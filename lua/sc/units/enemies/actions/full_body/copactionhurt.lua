@@ -491,8 +491,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end				
                 elseif action_type == "death" then
-                    self._unit:sound():say("x02a_any_3p", true)								
-				end	
+					self._unit:sound():say("x02a_any_3p", true)								
 			    elseif action_type == "counter_tased" or action_type == "taser_tased" then
 		        	if self._unit:base():has_tag("taser") then
 		        		self._unit:sound():say("tasered", true)				

@@ -11392,8 +11392,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				15
 			}
 		end
-		for _,v in pairs(restoration.tiny_levels) do
-			if job == v then
+		self.besiege.assault.force = {
+			3,
+			5,
+			7
+		}
+		self.besiege.assault.force_pool = {
+			30,
+			40,
+			50
+		}			
+		for _,t in pairs(restoration.tiny_levels) do
+			if job == t then
 				self.besiege.assault.force = {
 					2,
 					4,
@@ -11404,19 +11414,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					30,
 					40
 				}	
-			else
-				self.besiege.assault.force = {
-					3,
-					5,
-					7
-				}
-				self.besiege.assault.force_pool = {
-					30,
-					40,
-					50
-				}						
 			end
 		end
+		for _,vt in pairs(restoration.very_tiny_levels) do
+			if job == vt then
+				self.besiege.assault.force = {
+					1,
+					2,
+					3
+				}
+				self.besiege.assault.force_pool = {
+					10,
+					20,
+					30
+				}	
+			end
+		end		
 		if difficulty_index <= 2 then
 			self.besiege.assault.force_balance_mul = {
 				0.9,

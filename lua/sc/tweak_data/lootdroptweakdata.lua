@@ -41,11 +41,7 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.rest_omnia.name_id = "menu_l_global_value_omnia"
     self.global_values.rest_omnia.desc_id = "menu_l_global_value_omnia_desc"
     self.global_values.rest_omnia.color = Color('314E52')
-	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
-		self.global_values.rest_omnia.dlc = false
-	else
-		self.global_values.rest_omnia.dlc = true
-	end
+	self.global_values.rest_omnia.dlc = false
     self.global_values.rest_omnia.chance = 0
     self.global_values.rest_omnia.value_multiplier = tweak_data:get_value("money_manager", "global_value_multipliers", "normal")
     self.global_values.rest_omnia.durability_multiplier = 1

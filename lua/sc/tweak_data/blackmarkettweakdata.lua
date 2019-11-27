@@ -330,20 +330,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
-		
-		self.masks.omnia_mask = {}
-		self.masks.omnia_mask.unit = "units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc"
-			
-		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
-			self.masks.omnia_mask = {
-				unit = "units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc",
-				name_id = "bm_msk_omnia",
-				desc_id = "bm_msk_omnia_desc",
-				value = 0,
-				global_value = "rest_omnia",
-				texture_bundle_folder = "mods"
-			}		
-		end
 	end
 	
 	--we all know alligator skin's the best material right--

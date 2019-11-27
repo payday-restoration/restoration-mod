@@ -69,29 +69,20 @@ function restoration:Init()
 		"hntn" --harvest and trustee north
 	}
 	restoration.tiny_levels = {
-		"hvh",
-		"chew",
 		"peta",
-		"peta2",
-		"nail",
 		"rvd2",
-		"mia_2",
 		"hox_1",
-		"spa",
 		"chill_combat",
 		"des",
 		"brb",
-		"sah",
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
 		"skm_watchdogs_stage2",
 		"bph",
 		"nmh",
-		"flat",
 		"glace",
 		"man",
-		"vit",
 		"pbr",
 		"pbr2",
 		"dinner",
@@ -120,54 +111,19 @@ function restoration:Init()
 		"spa_CD",		
 		"wwh_CD",		
 		"street" --whurr's hs edit
-	}	
-	--Meant to be used for heists that use custom suits, since armor clips really badly with them
-	restoration.custom_suit_heists = {
-		"glace", --Green Bridge
-		"dah", --Diamond Heist
-		"wwh", --Alaskan Deal
-		"sah", --Shacklethrorne Heist
-		"bph", --Hell's Island
-		"vit", --White House
-		"crojob2", --Bomb Dockyard
-		"pal", --Counterfeit
-		"brb", --Brooklyn Bank
-		"arm_for",  --Transport TRAIN HEIST
-		"arm_und", --Transport UNDERPASS
-		"dark",  --Murky Station
-		"kosugi",  --Shadow Raid
-		"election_day_1",  --Election Day Docks
-		"election_day_2",  --Election Day Warehouse
-		"gallery",  --Art Gallery
-		"framing_frame_1",  --Framing Frame Day 1
-		"framing_frame_3",  --Framing Frame Day 3
-		"welcome_to_the_jungle_2",  --Big oil day 2
-		"cane",  --Santa's Workshop
-		"mus",  --The Diamond
-		"kenaz",  --Golden Grin Casino
-		"fish",  --Yacht Heist
-		"firestarter_2_res",  --Firestarter Day 2
-		"shoutout_raid",  --Meltdown
-		"hox_3",  --Hoxton's Revenge
-		"mad" --Boiling Point	
-		
-		--holding loud suit levels here in case we need an extra check for them in the future
-		--"des", --Henry's Rock
-		--"dinner", --Slaughterhouse
-		--"man", --Undercover
-		--"crojob3", --Bomb Forest
-		--"arm_cro", --Transport CROSSROADS
-		--"arm_hcm", --Transport DOWNTOWN
-		--"arm_fac", --Transport HARBOR
-		--"arm_par", --Transport PARK
-		--"jolly", --Aftershock
-		--"pbr2", --Birth of Sky
-		--"pbr", --Beneath The Mountain
-		--"pines", --White Xmas
-		--"watchdogs_2", --Watchdogs Day 2
-		--"watchdogs_2_day", --Watchdogs Day 2
-		--"chew", --Biker Day 2
 	}
+	--Mostly for stuff like Cursed Killed Room and other crap heists
+	restoration.very_tiny_levels = {
+		"hvh",
+		"chew",
+		"sah",
+		"nail",		
+		"peta2",
+		"vit",
+		"spa",		
+		"flat",		
+		"mia_2"
+	}		
 
 	_G.SC = _G.SC or {}
 	SC._path = self.ModPath

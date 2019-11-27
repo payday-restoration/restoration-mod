@@ -61,7 +61,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
-		self.spa.player_style = "tux"		
 		
 		self.brb.ai_group_type = nypd
 		self.brb.package = {"packages/lvl_brb", "packages/nypdassets", "packages/addsnow"}

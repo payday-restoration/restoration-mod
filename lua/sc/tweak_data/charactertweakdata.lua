@@ -1215,7 +1215,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.gangster.silent_priority_shout = "f37"
-		self.gangster.access = "gangster"
+		if job == "mex" or job == "mex_cooking" then
+			self.gangster.access = "security"
+		else
+			self.gangster.access = "gangster"
+		end
 		self.gangster.rescue_hostages = false
 		self.gangster.use_radio = nil
 		self.gangster.dodge = presets.dodge.average
@@ -1231,6 +1235,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_biker(presets)
 		self.biker = deep_clone(self.gangster)
+		if job == "mex" or job == "mex_cooking" then
+			self.biker.access = "security"
+		else
+			self.biker.access = "gangster"
+		end		
 		self.biker.HEALTH_INIT = 4
 		self.biker.headshot_dmg_mul = 2.3	
 		self.biker.calls_in = true
@@ -1524,6 +1533,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bolivian.static_dodge_preset = true
 		self.bolivian.always_drop = true
 		table.insert(self._enemy_list, "bolivian")
+		
 		self.bolivian_indoors = deep_clone(self.bolivian)
 		self.bolivian_indoors.suppression = presets.suppression.hard
 		self.bolivian_indoors.has_alarm_pager = true
@@ -1554,7 +1564,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.bolivian_indoors_mex = deep_clone(self.bolivian_indoors)
 		self.bolivian_indoors_mex.has_alarm_pager = true
-		self.bolivian_indoors_mex.access = "gangster"
+		if job == "mex" or job == "mex_cooking" then
+			self.bolivian_indoors_mex.access = "security"
+		else
+			self.bolivian_indoors_mex.access = "gangster"
+		end				
 
 		table.insert(self._enemy_list, "bolivian_indoors_mex")		
 	end

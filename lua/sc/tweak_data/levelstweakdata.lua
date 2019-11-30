@@ -108,6 +108,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}
 		self.pal.player_style = "suit_pool"		
 		
+		self.friend.ai_group_type = lapd
+		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets"}
+		self.friend.player_style = "suit_sunny"
+		
 		self.kenaz.ai_group_type = lapd
 		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/addtux"}	
 		self.kenaz.player_style = "tux"				
@@ -170,8 +174,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.alex_1.player_style = "suit_sunny"
 		self.alex_3.player_style = "suit_sunny"
 		
-		self.friend.player_style = "suit_sunny"
-		
 		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 		self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 		
@@ -200,7 +202,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
-		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend"}
 		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--///ZOMBIE LEVELS\\\--

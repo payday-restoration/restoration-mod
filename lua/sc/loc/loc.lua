@@ -850,9 +850,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
 		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles and SMGs set to semi-auto by ##5.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
 
-		--Explosive Headshot--
-		["menu_kilmer_sc"] = "Explosive Headshot",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nSnipers that headshot their target deal ##30%## of the damage dealt in a ##3## meter radius around the bullet impact.\n\nACE: ##$pro##\nSnipers that headshot their target now deal ##60%## of the damage dealt in a ##5## meter radius around the bullet impact.",																																																																																																																																																																																																																									
+		--Mind Blown, formerly Explosive Headshot--
+		["menu_kilmer_sc"] = "Mind Blown",
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Sniper Rifles deal ##50%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nThis effect chains up to ##4## times, with subsequent damage equaling the damage of the previous hit.\n\nACE: ##$pro##\nAny killing headshot with Sniper Rifles now deal ##100%## of the damage to the closest enemy in the effect radius.\n\nThis effect can now chain up to ##8## times.",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",

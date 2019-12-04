@@ -48,7 +48,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}
 		self.wwh.ai_group_type = murkywater 
 		
-		self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for"}
+		self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for", "packages/addbdu"}
 		self.arm_for.ai_group_type = murkywater 
 		self.arm_for.player_style = "sneak_suit"
 		

@@ -27,10 +27,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	for _, hit in ipairs(result.rays) do
 	  local is_turret = hit.unit:in_slot(sentry_mask)
 	  local is_ally = hit.unit:in_slot(ally_mask)
+	  local is_cuff = hit.unit:in_slot(16, 21, 22)
 
 	  local result = hit.damage_result
 	  local attack_data = result and result.attack_data
-	  if attack_data and attack_data.headshot and not is_turret and not is_ally then
+	  if attack_data and attack_data.headshot and not is_turret and not is_ally and not is_cuff then
 		local multiplier = (result.type == "death" or result.type == "healed") and upgrade_value.damage_factor_kill or upgrade_value.damage_factor
 		local key = hit.unit:key()
 		hit_enemies[key] = {

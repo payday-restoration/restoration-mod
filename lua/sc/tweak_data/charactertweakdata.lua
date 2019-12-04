@@ -1089,7 +1089,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.damage.bullet_damage_mul = 1.1
 		self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 		self.city_swat_titan.use_animation_on_fire_damage = true
-		self.city_swat_titan.move_speed = presets.move_speed.very_fast
+		self.city_swat_titan.move_speed = presets.move_speed.fast
 		self.city_swat_titan.dodge = presets.dodge.elite
 		self.city_swat_titan.surrender = nil
 		self.city_swat_titan.unintimidateable = true

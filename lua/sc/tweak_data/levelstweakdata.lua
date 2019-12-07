@@ -54,9 +54,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.mex.package = {"packages/murkyassets", "packages/job_mex"}
 		self.mex.ai_group_type = murkywater 
+		self.mex.player_style = "suit_sunny"
 
 		self.mex_cooking.package = {"packages/murkyassets", "packages/job_mex2"}
-		self.mex_cooking.ai_group_type = murkywater 				
+		self.mex_cooking.ai_group_type = murkywater 
+		self.mex_cooking.player_style = "suit_sunny"				
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
@@ -150,8 +152,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
 		self.kosugi.player_style = "sneak_suit"		
-				
-		self.mex_cooking.player_style = "suit_sunny"
 		
 		self.hox_1.player_style = "suit_sunny"
 		self.hox_2.player_style = "suit_sunny"

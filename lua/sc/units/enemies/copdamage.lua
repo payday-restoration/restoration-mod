@@ -259,6 +259,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self:is_friendly_fire(attack_data.attacker_unit) then
 			return "friendly_fire"
 		end
+		
+		if attack_data.attacker_unit:in_slot(16) then
+			if self._unit:anim_data() and self._unit:anim_data().hands_tied then
+				return
+			elseif self._unit:anim_data() and self._unit:anim_data().surrender then
+				return
+			elseif self._unit:anim_data() and self._unit:anim_data().hands_back then
+				return
+			end		
+		end
+			
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 		--local ap_skill = self._is_team_ai and managers.player:has_category_upgrade("team", "crew_ai_ap_ammo")
 		local ap_skill = managers.player:has_category_upgrade("team", "crew_ai_ap_ammo")
@@ -1151,6 +1162,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:in_slot(16, 21, 22) then
 			return
 		end		
+		
+		if self._unit:anim_data() and self._unit:anim_data().hands_tied then
+			return
+		elseif self._unit:anim_data() and self._unit:anim_data().surrender then
+			return
+		elseif self._unit:anim_data() and self._unit:anim_data().hands_back then
+			return
+		end				
 		
 		if self._unit:brain() and self._unit:brain().is_current_logic and self._unit:brain():is_current_logic("intimidated") then
 			return

@@ -27,6 +27,7 @@
 				<param type="int" min="0" max="100" /> <!-- outfit_version -->
 				<param type="int" min="0" max="15" /> <!-- Peer id. 0 means its an AI -->
 				<param type="string" />                <!-- team_id string -->
+				<param type="int" min="0" max="32767" /> <!-- random seed -->
 			</message>
 
 			<message name="RestorationMod__remove_corpse_by_id" delivery="ordered" receiver="RestorationMod__unit" check="server_to_client">

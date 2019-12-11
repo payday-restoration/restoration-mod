@@ -46572,7 +46572,80 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = -1,				
 				concealment = 2
-			}	
+			}
+			self.parts.wpn_fps_smg_thompson_fg_custom.stats = {
+				value = 1,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_smg_thompson_stock_fold.stats = {
+				value = 1,
+				spread = -1,
+				concealment = 2
+			}
+			self.parts.wpn_fps_shot_m37_s_ergo.stats = {
+				spread = -1,
+				value = 1,
+				recoil = 1
+			}
+			self.parts.wpn_fps_shot_m37_fg_tactical.stats = {
+				value = 0
+			}
+			self.parts.wpn_fps_shot_m37_fg_long.stats = {
+				value = 0
+			}
+			self.parts.wpn_fps_ass_m4_g_sg.stats = {
+				value = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_snp_mosin_body_grip.stats = {
+				value = 1,
+				recoil = 1
+			}			
+			self.parts.wpn_fps_pis_c96_b_finned.stats = {
+				value = 2,
+				spread = 1,
+				recoil = -2
+			}
+			self.parts.wpn_fps_pis_peacemaker_m_smooth.stats = {
+				value = 5,
+				concealment = 1
+			}
+			self.parts.wpn_fps_smg_mp5_m_custom.stats = {
+				value = 0
+			}
+			self.parts.wpn_fps_upg_ns_ass_smg_russian.stats = {
+				value = 4,
+				suppression = -2,
+				alert_size = -2,
+				recoil = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_upg_ns_pis_cloth.stats = {
+				value = 7,
+				suppression = 10,
+				alert_size = 10,
+				concealment = 1
+			}			
+			self.parts.wpn_fps_ass_ching_s_why.stats = {
+				value = 1,
+				spread = -1,
+				concealment = 2
+			}						
+			self.parts.wpn_fps_shot_m37_b_ridge.stats = { --I mean, this and the riot barrel are nearly the exact same length :)
+				value = 1,
+				concealment = 1
+			}			
+			self.parts.wpn_fps_shot_m37_s_tactical.stats = {
+				value = 1,
+				concealment = 1
+			}			
+			self.parts.wpn_fps_upg_ns_shot_grinder.stats = {
+				value = 5,
+				suppression = -2,
+				recoil = 2,
+				spread = -1
+			}									
 			self.parts.wpn_fps_pis_c96_b_short.custom_stats = nil -- just making sure these are removed.
 			self.parts.wpn_fps_pis_breech_g_stealth.stats = {
 				value = 2,

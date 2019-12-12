@@ -27,7 +27,7 @@ This github is open to the public, and you are free to submit issue reports or p
 
 # Credits
 
-Rhynne Helped in development of the Restoration HUD and was the original project lead. Creating the Ukranian Job edit.
+Rhynne Helped in development of the Restoration HUD and was the original project lead. Creating the map edits.
 
 DoktorAkcel Majority of the HUD and UI setup, asset work, incredibly useful research to help with mod development.
 
@@ -105,7 +105,7 @@ Captain Summers
 The still unused Biker Dozer
 and the creation of the map package.
 
-fuglore doing all the crazy AI and tactic changes and providing Less Flat "The Classic" Lighting for implementation.
+fuglore doing all the crazy AI and tactic changes, adding the common enemy pain lines stuff, making the Voiceline Framework function better and providing Less Flat "The Classic" Lighting for implementation.
 
 Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
 
@@ -123,7 +123,7 @@ Offyerrocker Helping redesign Sentries. Making Autumn's special abilities work.
 
 Scruffy A huge thanks for voicing the Grenadier.
 
-VxWolf Creating the songs used in Wetworks and Burnout and voicing the OMNIA LPF.
+VxWolf Creating the songs used in Doghouse, Wetworks and Burnout and voicing the OMNIA LPF.
 
 Skwuruhl fixing stance modifiers and making spread work better.
 
@@ -137,7 +137,7 @@ Porky da Corgi creating the base textures for the grenadier and OMNIA Light
 
 Wekk Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" to the mod.
 
-ShinyHopip Created the Explosive Headshot graze rework.
+ShinyHopip Created the Mind Blown graze rework.
 
 Baddy fixing the cap on security 7, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
 

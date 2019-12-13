@@ -153,7 +153,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
 		self.kosugi.player_style = "sneak_suit"		
 		
-		self.hox_1.player_style = "suit_sunny"
 		self.hox_2.player_style = "suit_sunny"
 		self.hox_3.player_style = "suit_sunny"
 		

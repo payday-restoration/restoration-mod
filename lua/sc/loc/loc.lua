@@ -316,7 +316,7 @@ if russia_guide then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_RU_Guide", function(loc)
 		LocalizationManager:add_localized_strings({
 			["menu_ingame_manual"] = "Overhaul Guide",
-			["menu_ingame_manual_help"] = "Если вы разговариваете на русском языке, у нас есть русская версия руководства здесь:"
+			["menu_ingame_manual_help"] = "Открыть руководство по переработке геймплея Restoration"
 		})
 	end)
 elseif english_guide then

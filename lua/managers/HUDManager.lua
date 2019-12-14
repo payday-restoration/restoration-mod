@@ -1,7 +1,16 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	function HUDManager:set_dodge_value(value, total_dodge)
+	local _setup_player_info_hud_pd2_original = HUDManager._setup_player_info_hud_pd2
+
+	function HUDManager:_setup_player_info_hud_pd2()
+		_setup_player_info_hud_pd2_original(self)
+		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
+	end
+	function HUDManager:set_dodge_value(value)
 		--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua
-		self._hud_temp:set_dodge_value(value, total_dodge)
+		self._dodge_meter:set_dodge_value(value)
+	end
+	function HUDManager:unhide_dodge_panel(dodge_points)
+		self._dodge_meter:unhide_dodge_panel(dodge_points)
 	end
 end
 

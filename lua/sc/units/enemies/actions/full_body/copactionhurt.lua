@@ -491,13 +491,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end				
                 elseif action_type == "death" then
-				if self._unit:base():has_tag("sniper") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("taser_titan") or self._unit:base():has_tag("medic_summers_special") or self._unit:base():has_tag("summers") then
-				    self._unit:sound():say("x02a_any_3p", true)						
-				elseif self._unit:base():has_tag("female_enemy") then
-                    self._unit:sound():say("x01a_any_3p", true)						
-				elseif self._unit:base():has_tag("tank_titan") then
-                    self._unit:sound():say("x02a_any_3p", true)								
-				end	
+					self._unit:sound():say("x02a_any_3p", true)								
 			    elseif action_type == "counter_tased" or action_type == "taser_tased" then
 		        	if self._unit:base():has_tag("taser") then
 		        		self._unit:sound():say("tasered", true)				

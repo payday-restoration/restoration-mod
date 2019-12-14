@@ -59,6 +59,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self._dodge_points = 0.0
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
+		self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
 		self._keep_health_on_revive = false
@@ -647,6 +648,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			+managers.player:body_armor_value("dodge")
 			+managers.player:skill_dodge_chance(false, false, false))
 			or 0.0
+		if self._dodge_points > 0 then
+			managers.hud:unhide_dodge_panel(self._dodge_points)
+		end
 	end
 
 	--Adds to/Subtracts from dodge meter and updates hud element.
@@ -657,7 +661,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif self._dodge_meter < 1.5 then
 				self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
 			end
-			managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5), self._dodge_points) --Goes through Hudmanager.lua then HUDtemp.lua.
 		end
 	end
 
@@ -712,6 +715,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		self:fill_dodge_meter(self._dodge_points * dt * passive_dodge)
+
+		if self._dodge_meter ~= self._dodge_meter_prev then
+			managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5)) --Update UI element once per frame.
+			self._dodge_meter_prev = self._dodge_meter
+		end
 	end)
 
 	Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)

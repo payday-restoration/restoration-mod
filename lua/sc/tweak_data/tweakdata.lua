@@ -379,7 +379,7 @@
 		1,
 		1
 	}
-
+	
 	if Global.game_settings and Global.game_settings.one_down then
 		tweak_data.experience_manager.limited_bonus_multiplier = 1.2
 	end

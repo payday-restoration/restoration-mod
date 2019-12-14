@@ -1,6 +1,0 @@
-<unit type="str" slot="1" >
-    <object file="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_b_il" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

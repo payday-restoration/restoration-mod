@@ -66,8 +66,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_difficulty_suicidal"] = "Deathwish 145+",
 		["bm_wp_upg_a_halfthatkit"] = "I'll Take Double That Kit",
 		["bm_wp_upg_a_halfthatkit_desc"] = "ADDS A 20% MOVEMENT SPEED PENALTY WHILE THE WEAPON IS EQUIPPED.",
-		["loot_sc"] = "SC Mod",
-		["loot_sc_desc"] = "THIS IS AN SC MOD ITEM!",
+		["loot_sc"] = "Restoration Overhaul",
+		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
+		
+		["menu_l_global_value_omnia"] = "OMNIA",
+		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",		
+		
 		["sc_menu"] = "SC's Mod",
 		["sc_menu_desc"] = "Options for SC's mod.",
 		["sc_deploy_title"] = "Deployable Changes",
@@ -124,7 +128,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
+		
+		--Player Outfits
+		["bm_suit_loud_suit"] = "Combat Harness",
+		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
+		
+		["bm_suit_sunny"] = "Sunny-Side Robber",
+		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
+		
+		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
+		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",	
+		
+		["bm_suit_prison"] = "Prison Suit",
+		["bm_suit_prison_desc"] = "You've been taken into custody!",		
 
+		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",		
+
+		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",				
 		--Safe House Test
 		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
 		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",
@@ -287,6 +309,24 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
+local russia_guide = Idstring("russian"):key() == SystemInfo:language():key()
+local english_guide = Idstring("english"):key() == SystemInfo:language():key()
+
+if russia_guide then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_RU_Guide", function(loc)
+		LocalizationManager:add_localized_strings({
+			["menu_ingame_manual"] = "Overhaul Guide",
+			["menu_ingame_manual_help"] = "Открыть руководство по переработке геймплея Restoration"
+		})
+	end)
+elseif english_guide then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_EN_Guide", function(loc)
+		LocalizationManager:add_localized_strings({
+			["menu_ingame_manual"] = "Overhaul Guide",
+			["menu_ingame_manual_help"] = "View the guide for Restoration's Overhaul."
+		})
+	end)
+end
 
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
@@ -334,6 +374,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit"] = "Throwable Case",
 		["debug_equipment_armor_kit"] = "Throwable Case",
 		["bm_equipment_armor_kit_desc"] = "To use the throwable case, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your throwables. It can only be used three times.\n\nYou can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.",
+
+		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
 		
 		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
 		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
@@ -828,9 +870,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
 		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles and SMGs set to semi-auto by ##5.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
 
-		--Explosive Headshot--
-		["menu_kilmer_sc"] = "Explosive Headshot",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nSnipers that headshot their target deal ##30%## of the damage dealt in a ##3## meter radius around the bullet impact.\n\nACE: ##$pro##\nSnipers that headshot their target now deal ##60%## of the damage dealt in a ##5## meter radius around the bullet impact.",																																																																																																																																																																																																																									
+		--Mind Blown, formerly Explosive Headshot--
+		["menu_kilmer_sc"] = "Mind Blown",
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Sniper Rifles deal ##50%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nThis effect chains up to ##4## times, with subsequent damage equaling the damage of the previous hit.\n\nACE: ##$pro##\nAny killing headshot with Sniper Rifles now deal ##100%## of the damage to the closest enemy in the effect radius.\n\nThis effect can now chain up to ##8## times.",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",

@@ -3,14 +3,6 @@
 	<diesel materials="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
-	<effects>
-		<effect_spawner name="fire_torso" enabled="false" object="Spine2" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_arm" enabled="false" object="RightForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_arm" enabled="false" object="LeftForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_leg" enabled="false" object="LeftLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_leg" enabled="false" object="RightLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-	</effects>
-
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
@@ -24,11 +16,15 @@
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
+		<body name="body_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine1" />
+			<object name="c_body_plate" collision_type="capsule" />
+		</body>
 
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-5" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
 		</body>
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
@@ -200,59 +196,38 @@
 
 	<decal_surfaces default_material="flesh" >
 		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="c_body_plate" 			enabled="true" material="flesh" /> <!--heavy_swat_steel_no_decal-->
 	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
-            <lod_object name="lod_body">
-                <object name="g_body"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-<!--                     <material materials="mtr_body" max_distance="1000" />
-                    <material materials="mtr_body_lod" max_distance="1500" />
-                    <material materials="mtr_body_lod1" /> -->
-                </object>
-                <object name="g_body_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-<!--                     <material materials="mtr_body" max_distance="0"/>
-                    <material materials="mtr_body_lod1" /> -->
-                </object>
-            </lod_object>
+			<lod_object name="lod_body">
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
+				<object name="g_body_lod1" 	enabled="true" lod="1" />
+			</lod_object>
 
-			<!-- <lod_object name="lod_helmet"> -->
-				<!-- <object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_ene_acc_swat_helmet" max_distance="1000" />
-                    <material materials="mtr_ene_acc_swat_helmet_lod" max_distance="1500" />
-                    <material materials="mtr_ene_acc_swat_helmet_lod1" />
-                </object>
-				<object name="g_helmet_lod2" 	enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_ene_acc_swat_helmet" max_distance="0" />
-                    <material materials="mtr_ene_acc_swat_helmet_lod1" />
-                </object> -->
-			<!-- </lod_object> -->
-			
+			<lod_object name="lod_head">
+				<object name="g_head" 		enabled="true"  max_distance="9999999"  max_draw_lod="0"/>
+				<object name="g_head_lod1" 	enabled="true" lod="1" />
+			</lod_object>
+
+			<lod_object name="lod_helmet">
+				<object name="g_helmet_lod1" 		enabled="true"  max_distance="9999999"  max_draw_lod="0"/>
+				<object name="g_helmet_lod2" 	enabled="true" lod="1" />
+			</lod_object>
+
+				<!--<object name="g_helmet_lod1" 	enabled="true"/>
+				<object name="g_helmet_lod2" 	enabled="true"/>-->
+
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+
 		</graphic_group>
 
-		<graphic_group name="head" enabled="true" culling_object="g_head">
-            <lod_object name="lod_head">
-                <object name="g_head"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-<!--                     <material materials="mtr_head" max_distance="1000" />
-                    <material materials="mtr_head_lod" max_distance="1500" />
-                    <material materials="mtr_head_lod1" /> -->
-                </object>
-                <object name="g_head_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-<!--                     <material materials="mtr_head" max_distance="0" />
-                    <material materials="mtr_head_lod1" /> -->
-                </object>
-            </lod_object>
-			<!-- <object name="s_head" enabled="true" shadow_caster="true"/> -->
-		</graphic_group>
-		
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
-	</graphics>
+		</graphics>
 
-	<lights>
-		<light multiplier="identity" far_range="400" name="ls_light" enabled="false" type="spot|specular" />
+		<lights>
+		<light multiplier="identity" far_range="0" name="ls_light" enabled="false" type="spot|specular" />
 	</lights>
-	
+
 </dynamic_object>

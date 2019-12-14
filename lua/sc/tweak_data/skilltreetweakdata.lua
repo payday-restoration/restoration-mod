@@ -1166,7 +1166,7 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Explosive Headshot--
+			--Mind Blown, formerly Explosive Headshot--
 			self.skills.shock_and_awe = {
 				["name_id"] = "menu_kilmer_sc",
 				["desc_id"] = "menu_kilmer_desc_sc",

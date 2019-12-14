@@ -27,17 +27,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.lapd = lapd
 		
 		--///MURKYWATER LEVELS\\\--
-		self.shoutout_raid.package = {"packages/murkyassets", "packages/outfitassets2", "packages/vlad_shout"}
+		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater
-		self.shoutout_raid.player_style = "raincoat"
+		self.shoutout_raid.player_style = "loud_suit" --using this until we sort out the coats
 		
-		self.pbr.package = {"packages/murkyassets", "packages/outfitassets", "packages/narr_jerry1"}
+		self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
 		self.pbr.ai_group_type = murkywater
-		self.pbr.player_style = "sneak_suit"
+		self.pbr.player_style = "loud_suit"
 		
-		self.des.package = {"packages/murkyassets", "packages/outfitassets", "packages/job_des"}
+		self.des.package = {"packages/murkyassets", "packages/job_des"}
 		self.des.ai_group_type = murkywater 
-		self.des.player_style = "sneak_suit"
+		self.des.player_style = "loud_suit"
 		
 		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
@@ -48,22 +48,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}
 		self.wwh.ai_group_type = murkywater 
 		
-		self.arm_for.package = {"packages/murkyassets", "packages/outfitassets", "packages/narr_arm_for"}
+		self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for", "packages/addbdu"}
 		self.arm_for.ai_group_type = murkywater 
 		self.arm_for.player_style = "sneak_suit"
 		
 		self.mex.package = {"packages/murkyassets", "packages/job_mex"}
 		self.mex.ai_group_type = murkywater 
+		self.mex.player_style = "suit_sunny"
 
 		self.mex_cooking.package = {"packages/murkyassets", "packages/job_mex2"}
-		self.mex_cooking.ai_group_type = murkywater 				
+		self.mex_cooking.ai_group_type = murkywater 
+		self.mex_cooking.player_style = "suit_sunny"				
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
 		self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
+		self.spa.player_style = "suit_sunny"
 		
 		self.brb.ai_group_type = nypd
-		self.brb.package = {"packages/lvl_brb", "packages/outfitassets2", "packages/nypdassets"}
+		self.brb.package = {"packages/lvl_brb", "packages/nypdassets", "packages/addsnow"}
 		self.brb.player_style = "winter_suit"
 		
 		self.red2.ai_group_type = nypd
@@ -82,11 +85,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}
 		
 		self.dinner.ai_group_type = nypd
-		self.dinner.package = {"packages/narr_dinner", "packages/outfitassets", "packages/nypdassets"}
-		self.dinner.player_style = "sneak_suit"
+		self.dinner.package = {"packages/narr_dinner", "packages/nypdassets"}
+
+		self.dinner.player_style = "loud_suit"
 		
-		self.man.package = {"packages/narr_man", "packages/outfitassets"}
-		self.man.player_style = "sneak_suit"
+		self.man.package = {"packages/narr_man"}
+		self.man.player_style = "loud_suit"
 		
 		self.nmh.ai_group_type = nypd
 		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
@@ -99,101 +103,105 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/outfitassets", "packages/nypdassets"}
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets", "packages/addbdu"}
 		self.jolly.player_style = "sneak_suit"
 		
 		self.pal.ai_group_type = lapd
-		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/outfitassets", "packages/nypdassets"}
-		--self.pal.player_style = "jumpsuit"		
+		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}
+		self.pal.player_style = "suit_pool"		
+		
+		self.friend.ai_group_type = lapd
+		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets"}
+		self.friend.player_style = "suit_sunny"
 		
 		self.kenaz.ai_group_type = lapd
-		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/outfitassets3"}	
+		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/addtux"}	
 		self.kenaz.player_style = "tux"				
 		
 		self.rvd1.ai_group_type = lapd
-		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}			
+		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}	
+		self.rvd1.player_style = "suit_sunny"		
 		
 		self.rvd2.ai_group_type = lapd
 		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
+		self.rvd2.player_style = "suit_sunny"
 
         --///NEW OUTFITS\\\--
 		
-		self.fish.package = {"packages/outfitassets3", "packages/lvl_fish"}
+		self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
 		self.fish.player_style = "tux"
 		
-		self.arm_cro.package = {"packages/outfitassets", "packages/narr_arm_cro"}
-		self.arm_cro.player_style = "sneak_suit"
+		self.arm_cro.player_style = "loud_suit"
 		
-		self.arm_hcm.package = {"packages/outfitassets", "packages/narr_arm_hcm"}
-		self.arm_hcm.player_style = "sneak_suit"	
+		self.arm_hcm.player_style = "loud_suit"	
 		
-		self.arm_fac.package = {"packages/outfitassets", "packages/narr_arm_fac"}
-		self.arm_fac.player_style = "sneak_suit"
+		self.arm_fac.player_style = "loud_suit"
 		
-		self.arm_par.package = {"packages/outfitassets", "packages/narr_arm_par"}
-		self.arm_par.player_style = "sneak_suit"			
+		self.arm_par.player_style = "loud_suit"		
 		
-		self.arm_und.package = {"packages/outfitassets3", "packages/narr_arm_und"}
+		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
 		
-		self.crojob2.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_2"}
+		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu"}
 		self.crojob2.player_style = "sneak_suit"
 		
-		self.crojob3.package = {"packages/outfitassets", "packages/dlcs/the_bomb/crojob_stage_3"}
-		self.crojob3.player_style = "sneak_suit"
+		self.crojob3.player_style = "loud_suit"
 		
-		self.dark.package = {"packages/outfitassets", "packages/job_dark"}
+		self.dark.package = {"packages/job_dark", "packages/addbdu"}
 		self.dark.player_style = "sneak_suit"
 		
-		self.kosugi.package = {"packages/outfitassets", "packages/kosugi"}
+		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
 		self.kosugi.player_style = "sneak_suit"		
 		
-		self.kosugi.package = {"packages/outfitassets", "packages/kosugi"}
-		self.kosugi.player_style = "sneak_suit"
+		self.hox_1.player_style = "suit_sunny"
+		self.hox_2.player_style = "suit_sunny"
+		self.hox_3.player_style = "suit_sunny"
 		
-		self.hox_3.package = {"packages/outfitassets", "packages/narr_hox_3"}
-		self.hox_3.player_style = "sneak_suit"
+		self.rat.player_style = "suit_sunny"
 		
-		self.election_day_1.package = {"packages/outfitassets", "packages/narr_election1"}
-		self.election_day_1.player_style = "sneak_suit"
-		
-		self.election_day_2.package = {"packages/outfitassets", "packages/narr_election2"}
+		self.election_day_1.package = {"packages/narr_election1", "packages/addbdu"}
+		self.election_day_1.player_style = "sneak_suit"	
+		self.election_day_2.package = {"packages/narr_election2", "packages/addbdu"}
 		self.election_day_2.player_style = "sneak_suit"
 		
-		self.gallery.package = {"packages/outfitassets", "packages/narr_framing_1"}
+		self.gallery.package = {"packages/narr_framing_1", "packages/addbdu"}
 		self.gallery.player_style = "sneak_suit"
-		
-		self.framing_frame_1.package = {"packages/outfitassets", "packages/narr_framing_1"}
 		self.framing_frame_1.player_style = "sneak_suit"
-		
-		self.framing_frame_3.package = {"packages/outfitassets", "packages/narr_framing_3"}
+		self.framing_frame_1.package = {"packages/narr_framing_1", "packages/addbdu"}
 		self.framing_frame_3.player_style = "sneak_suit"
+		self.framing_frame_3.package = {"packages/narr_framing_3", "packages/addbdu"}
+				
+		self.alex_1.player_style = "suit_sunny"
+		self.alex_3.player_style = "suit_sunny"
 		
-		self.welcome_to_the_jungle_2.package = {"packages/outfitassets", "packages/narr_jungle2"}
+		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
+		self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
+		
+		self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/addbdu"}
 		self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 		
-		self.chew.package = {"packages/outfitassets", "packages/lvl_chew"}
-		self.chew.player_style = "sneak_suit"
+		self.chew.player_style = "loud_suit"
 		
-		self.pbr2.package = {"packages/outfitassets", "packages/narr_jerry2"}
-		self.pbr2.player_style = "sneak_suit"
+		self.pbr2.player_style = "loud_suit"
 		
-		self.watchdogs_2.package = {"packages/outfitassets", "packages/narr_watchdogs2"}
-		self.watchdogs_2.player_style = "sneak_suit"
+		self.watchdogs_1.player_style = "suit_sunny"
+		self.watchdogs_2.player_style = "loud_suit"
 		
-		self.watchdogs_2_day.package = {"packages/outfitassets", "packages/narr_watchdogs2_day"}
-		self.watchdogs_2_day.player_style = "sneak_suit"
+		self.watchdogs_1_night.player_style = "suit_sunny"
+		self.watchdogs_2_day.player_style = "loud_suit"
 		
-		self.cane.package = {"packages/outfitassets2", "packages/cane"}
+		self.mia_1.player_style = "suit_sunny"
+		self.mia_2.player_style = "suit_sunny"
+		
 		--reminder to add the biker vo package here
+		self.cane.package = {"packages/cane", "packages/addsnow", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 		self.cane.player_style = "winter_suit"
 								
-		self.mus.package = {"packages/outfitassets", "packages/narr_mus"}
+		self.mus.package = {"packages/narr_mus", "packages/addbdu"}
 		self.mus.player_style = "sneak_suit"
 		
 		--///GANGSTER VOICEOVER\\\--
 		self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
-		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend"}
 		self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 		
 		--///ZOMBIE LEVELS\\\--
@@ -201,18 +209,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 		self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
+		
 		self.haunted.ai_group_type = zombie		
 		self.nail.ai_group_type = zombie
 		self.help.ai_group_type = zombie
+		
+		self.hvh.player_style = "suit_prison"	
+		self.haunted.player_style = "suit_prison"	
+		self.nail.player_style = "suit_prison"
+		self.help.player_style = "suit_prison"
 		--///SAFEHOUSE\\\--
 		self.chill.ghost_bonus = nil
 		
 		--///REAPER LEVELS\\\--
-		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/outfitassets2"}
+		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/addsnow"}
 		self.mad.player_style = "winter_suit"
 		--We're never actually told where the forest is ;)
-		self.pines.package = {"packages/outfitassets", "packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
-		self.pines.player_style = "sneak_suit"
+		self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
+		self.pines.player_style = "loud_suit"
 		self.pines.ai_group_type = russia	
 		
 		--///BAG FIXES\\\--

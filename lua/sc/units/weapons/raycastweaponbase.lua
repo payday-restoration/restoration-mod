@@ -82,8 +82,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					break						
 				end
 				
-				local has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)
-				
+				local has_hit_wall = has_hit_wall or hit.unit:in_slot(wall_mask)				
 			end
 		end
 

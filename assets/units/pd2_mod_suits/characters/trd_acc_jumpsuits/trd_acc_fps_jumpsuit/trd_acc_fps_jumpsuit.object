@@ -1,0 +1,9 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit" orientation_object="root_point" />
+	<graphics>
+		<graphic_group name="grp_jumpsuit" enabled="true" culling_object="c_cull">
+			<object name="g_jumpsuit" enabled="true" />
+			<object name="g_hands" enabled="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

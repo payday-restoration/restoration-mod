@@ -1,0 +1,9 @@
+<materials version="3" group="trd_acc_jumpsuit_male_average">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" name="mat_jumpsuit" version="2">
+        <bump_normal_texture file="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flatgreen_df"/>
+        <material_texture file="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_gsma"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+</materials>

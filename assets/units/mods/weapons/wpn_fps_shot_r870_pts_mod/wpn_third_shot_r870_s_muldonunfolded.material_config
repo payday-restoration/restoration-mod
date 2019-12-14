@@ -1,0 +1,6 @@
+<materials version="3" group="weapon_group">
+	<material name="folding_stock" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_shot_r870_pts/folding_df" mip="4"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_shot_r870_pts/folding_nm" mip="4"/>
+    </material>
+</materials>

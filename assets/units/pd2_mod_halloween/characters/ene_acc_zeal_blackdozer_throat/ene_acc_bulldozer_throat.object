@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_mod_halloween/characters/ene_acc_zeal_blackdozer_throat/ene_acc_bulldozer_throat" orientation_object="rp_ene_acc_bulldozer_throat" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_bulldozer_throat" />
+			<object name="c_throat" collision_type="convex" mass="100" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal">
+	</decal_surfaces>
+
+	<graphics>
+		<lod_object name="grp_bulldozer_throat">
+			<object name="g_throat" enabled="true" >
+				<material materials="mtr_bulldozer" max_distance="1000" />
+
+			</object>
+		</lod_object>
+	</graphics>
+	
+</dynamic_object>

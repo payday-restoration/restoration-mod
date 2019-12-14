@@ -1,0 +1,12 @@
+<materials version="3" group="ene_zeal_bulldozer_3">
+    <material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/bulldozer_3_df"/>
+    </material>
+    <material name="mtr_bulldozer_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/bulldozer_saiga_hvh_nm"/>
+        <diffuse_texture file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/bulldozer_saiga_hvh_df"/>
+    </material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

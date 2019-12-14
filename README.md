@@ -27,7 +27,7 @@ This github is open to the public, and you are free to submit issue reports or p
 
 # Credits
 
-Rhynne Helped in development of the Restoration HUD and was the original project lead. Creating the Ukranian Job edit.
+Rhynne Helped in development of the Restoration HUD and was the original project lead. Creating the map edits.
 
 DoktorAkcel Majority of the HUD and UI setup, asset work, incredibly useful research to help with mod development.
 
@@ -57,8 +57,10 @@ LAPD SWAT
 LAPD Vet Cop
 Captain Autumn
 Russian Titan enemies
-GenSec Shotgunner and UMP guy assets
-Heavy shotgunner assets.
+GenSec Shotgunner and UMP guy
+Heavy shotgunner assets
+Heister "Sunny-Side Robber" suits
+Heister "Combat Harness"
 and providing many promotional screenshots.
 Creation of some alternate environments and minor code additions, mostly the enemy chatter stuff.
 
@@ -76,6 +78,18 @@ The above Death Wish difficulty Russian Medic
 Getting the Titan Cloaker working
 Shovelposting.
 
+Jarey Major asset contributions to the mod 
+including:
+Tweaking Boiler Suit assets, Flecktarn Camo
+PDTH Styled Enemies assets used for the NYPD faction
+The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker
+Femcloaker - Used as a shrinkwrap base for female enemies
+Jarey_ ZEALS Used for our ZEAL sepcials
+Updating Captain Spring and Russian Titan Dozer assets
+Sniper Glint
+Murky Vetcop
+Russian Titan Cloaker textures
+
 Splish Asset contributions to the mod 
 including: 
 The Grenadier
@@ -91,20 +105,11 @@ Captain Summers
 The still unused Biker Dozer
 and the creation of the map package.
 
-fuglore doing all the crazy AI and tactic changes.
+fuglore doing all the crazy AI and tactic changes, adding the common enemy pain lines stuff, making the Voiceline Framework function better and providing Less Flat "The Classic" Lighting for implementation.
 
 Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
 
 Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
-
-Jarey_ Letting us steal his mods and helping with the OMNIA heavy assets
-including:
-PDTH Styled Enemies assets used for the NYPD faction
-The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker
-Femcloaker - Used as a shrinkwrap base for female enemies
-Jarey_ ZEALS Used for our ZEAL sepcials
-Updating Captain Sprung and Russian Titan Dozer assets
-Sniper Glint - Sniper Glint
 
 Nelson01023 Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Basically doing all the jobs no one else wanted to do.
 
@@ -116,13 +121,13 @@ Cpone Allowing us to add their pool repair suits to the mod.
 
 Offyerrocker Helping redesign Sentries. Making Autumn's special abilities work.
 
-Scruffy Voicing the Grenadier.
+Scruffy A huge thanks for voicing the Grenadier.
 
-VxWolf Creating the songs used in Wetworks and Burnout and voicing the OMNIA LPF.
+VxWolf Creating the songs used in Doghouse, Wetworks and Burnout and voicing the OMNIA LPF.
 
 Skwuruhl fixing stance modifiers and making spread work better.
 
-JimTheCookie voicing the Vet Cop.
+Major Pyatosin A huge thanks for voicing the Vet Cop and Jackal.
 
 Whurr Helping create the Firestarter Day 3 edit.
 
@@ -132,9 +137,13 @@ Porky da Corgi creating the base textures for the grenadier and OMNIA Light
 
 Wekk Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" to the mod.
 
-ShinyHopip Created the Explosive Headshot graze rework.
+ShinyHopip Created the Mind Blown graze rework.
 
-Baddy fixing the cap on security 7 and providing inspiration for the FBI/GenSec heavy shotgunner assets.
+Baddy fixing the cap on security 7, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
+
+Nardo Allowing us to include "First-person Stealth Suit Fixes".
+
+KLEITON and Tom Blaine taking on the huge task of translating the steam guide into Russian.
 
 Testers:
 ShortonComedyGamer (made sure neslon added support to the custom owen) 

@@ -1,0 +1,12 @@
+<materials version="3">
+	<material name="mtr_ene_acc_zeal_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df"/>
+	</material>
+
+	<material name="mtr_ene_acc_zeal_swat_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df"/>
+	</material>
+	
+</materials>

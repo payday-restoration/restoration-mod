@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="debris" slot="18">
+	<object file="units/pd2_mod_halloween/characters/ene_acc_zeal_greendozer_chest/ene_acc_bulldozer_chest" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

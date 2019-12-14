@@ -752,4 +752,88 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	end
     end
 
+    function CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, my_pos, enemy_pos)
+    	local fwd = data.unit:movement():m_rot():y()
+    	local target_vec = enemy_pos - my_pos
+    	local error_spin = target_vec:to_polar_with_reference(fwd, math.UP).spin
+    	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+    	local speed = nil
+		local nr_players = 0	
+	    local mook_units = {
+	    	"security",
+	    	"security_undominatable",
+	    	"cop",
+	    	"cop_scared",
+	    	"cop_female",
+	    	"gensec",
+	    	"fbi",
+	    	"swat",
+	    	"heavy_swat",
+	    	"fbi_swat",
+	    	"fbi_heavy_swat",
+	    	"city_swat",
+	    	"gangster",
+	    	"biker",
+	    	"mobster",
+	    	"bolivian",
+	    	"bolivian_indoors",
+	    	"medic",
+	    	"omnia_lpf",
+	    	"city_swat_titan",
+	    	"swat_titan",
+	    	"heavy_swat_sniper",
+	    	"skeleton_swat_titan",
+	    	"taser_titan",
+	    	"weekend_lmg",
+	    	"weekend_dmr",
+	    	"weekend",
+	    	"taser"
+	    }
+	    local is_mook = nil
+	    for _, name in ipairs(mook_units) do
+	    	if data.unit:base()._tweak_table == name then
+	    		is_mook = true
+	    	end
+	    end
+
+		for u_key, u_data in pairs(managers.groupai:state():all_player_criminals()) do
+			if not u_data.status then
+				nr_players = nr_players + 1
+			end
+		end
+    	
+        if data.is_converted or data.unit:in_slot(16) then
+            speed = 1.5
+        elseif nr_players > 5 then
+            speed = 3
+        elseif nr_players > 2 and diff_index == 8 and is_mook  then
+            speed = 2
+        elseif nr_players > 2 and diff_index == 7 and is_mook  then
+            speed = 1.75
+        elseif nr_players > 2 and diff_index <= 6 and is_mook  then
+            speed = 1.5
+        elseif diff_index == 8 and is_mook then
+            speed = 1.5
+        elseif diff_index == 7 and is_mook then
+            speed = 1.25
+        else
+            speed = 1.00 --Just in case it ever ends up here so you don't get a dirty nil value?
+        end
+    	
+    	if math.abs(error_spin) > 27 then
+    		local new_action_data = {
+    			type = "turn",
+    			body_part = 2,
+    			speed = speed or 1,
+    			angle = error_spin
+    		}
+    
+    		if data.unit:brain():action_request(new_action_data) then
+    			my_data.turning = new_action_data.angle
+    
+    			return true
+    		end
+    	end
+    end
+
 end

@@ -190,38 +190,25 @@
 		</constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" />
+	<decal_surfaces default_material="flesh" >
+		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
-			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_security_body, mtr_security_head" max_distance="1000" />
-					<material materials="mtr_security_body_lod_1, mtr_security_head_lod_1" max_distance="1500" />
-					<material materials="mtr_security_body_lod_2, mtr_security_head_lod_2" />
-				</object>
-				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_security_body, mtr_security_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_security_body_lod_2, mtr_security_head_lod_2" />
-				</object>
+			<lod_object name="g_body_lod">
+				<object name="g_body_lod0" enabled="true"  max_distance="1000" />
+				<object name="g_body_lod1" enabled="true" />
 			</lod_object>
 
-			<lod_object name="lod_head">
-				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_jonte" max_distance="1000" />
-					<material materials="mtr_jonte_lod_1" max_distance="1500" />
-					<material materials="mtr_jonte_lod_2" />
-				</object>
-				<object name="g_head_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_jonte" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_jonte_lod_2" />
-				</object>
+			<lod_object name="g_head_lod">
+				<object name="g_head_lod0" enabled="true"  max_distance="1000" />
+				<object name="g_head_lod1" enabled="true" />
 			</lod_object>
-			<object name="s_body" enabled="true" shadow_caster="true"/>
-			
+		    <object name="g_helmet_lod1"    enabled="true"/>
+			<object name="s_body" 			enabled="true" shadow_caster="true"/>	
 		</graphic_group>
-			<object name="g_hat_lod1" enabled="true"/>
 	</graphics>
 
 </dynamic_object>

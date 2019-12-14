@@ -12,23 +12,19 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 
 	
 	if Global.load_level == true and Global.game_settings.level_id == "branchbank" then
-	if rnd4 == 1 then
+	if rnd3 == 1 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
-	if rnd4 == 2 then
+	if rnd3 == 2 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
-	if rnd4 == 3 then
+	if rnd3 == 3 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
-	if rnd4 == 4 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd4 == 5 then
+	if rnd3 == 4 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
@@ -211,7 +207,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	
-	if Global.load_level == true and Global.game_settings.level_id == "family_res" then
+	if Global.load_level == true and Global.game_settings.level_id == "family" then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
 	end
@@ -274,6 +270,7 @@ end)
 			"sky_1930_sunset_heavy_clouds",
             "sky_1846_low_sun_nice_clouds",
             "sky_0902_overcast",
+			"sky_1345_clear_sky",
 			"sky_0200_night_moon_stars",
 			"sky_2000_twilight_mad",
 			"sky_2100_moon",

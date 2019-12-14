@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<unit type="dah" slot="1">
+	<object file="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
+
+	<dependencies>
+		
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="contour" class="ContourExt" />
+	</extensions>
+
+</unit>

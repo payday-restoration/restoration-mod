@@ -36,4 +36,18 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.rest.track = false
     self.global_values.rest.sort_number = 30
     self.global_values.rest.category = "rest"	
+
+    self.global_values.rest_omnia = {}
+    self.global_values.rest_omnia.name_id = "menu_l_global_value_omnia"
+    self.global_values.rest_omnia.desc_id = "menu_l_global_value_omnia_desc"
+    self.global_values.rest_omnia.color = Color('314E52')
+	self.global_values.rest_omnia.dlc = false
+    self.global_values.rest_omnia.chance = 0
+    self.global_values.rest_omnia.value_multiplier = tweak_data:get_value("money_manager", "global_value_multipliers", "normal")
+    self.global_values.rest_omnia.durability_multiplier = 1
+    self.global_values.rest_omnia.drops = false
+    self.global_values.rest_omnia.track = false
+	self.global_values.rest_omnia.hide_unavailable = true
+    self.global_values.rest_omnia.sort_number = 30
+    self.global_values.rest_omnia.category = "rest"		
 end

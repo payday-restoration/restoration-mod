@@ -3,4 +3,5 @@
 	<tweak definition="restorationmod_network_tweak.xml"/>
 	<tweak definition="restorationmod_postprocessor_tweak.xml"/>
 	<tweak definition="restorationmod_defaultrendertemplates_tweak.xml"/>
+	<!-- <:include src="addoutfit.xml"/> -->
 </mod>

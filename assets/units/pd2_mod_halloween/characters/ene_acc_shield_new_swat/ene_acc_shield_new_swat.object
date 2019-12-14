@@ -1,0 +1,34 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" orientation_object="rp_ene_acc_shield_new_swat" />
+	<sequence_manager file="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
+
+	<bodies>
+		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_new_swat" />
+			<object name="c_convex_1" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_2" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_3" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_new_swat" />
+			<object name="c_convex_1" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_2" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_3" collision_type="convex" padding="-2.5" />
+		</body>
+				
+		<body name="light_01" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_new_swat" />
+			<object name="c_light_01" collision_type="box" />
+		</body>
+		
+	</bodies>
+
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_lights_01" enabled="true" />
+		<object name="g_shield" enabled="false" />
+	</graphics>
+</dynamic_object>

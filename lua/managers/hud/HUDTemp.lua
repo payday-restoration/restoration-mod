@@ -1,14 +1,24 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	
-	function HUDTemp:dodge_init()
-		self._dodge_panel = self._temp_panel:panel({
+	HUDDodgeMeter = HUDDodgeMeter or class()
+	function HUDDodgeMeter:init(hud)
+		self._hud_panel = hud.panel
+		
+		self._dodge_meter_panel = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel:panel({
+			name = "dodge_meter_init",
+			layer = 0,
+			visible = true,
+			valign = "scale",
+			y = 0
+		})
+		self._dodge_panel = self._dodge_meter_panel:panel({
 			visible = true,
 			name = "dodge_panel",
 			layer = 0,
 			w = 16,
 			h = 128,
 			halign = "right",
-			valign = "center",
+			valign = "bottom",
 			alpha = 0
 		})
 		local dodge_bar_bg = self._dodge_panel:rect({
@@ -19,7 +29,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local dodge_bar = self._dodge_panel:rect({
 			name = "dodge_bar",
 			color = Color(0.5, 0.5, 0.8),
-			layer = 1
+			layer = 1,
+			h = 0
 		})
 		local dodge_threshold = self._dodge_panel:rect({
 			name = "dodge_threshold",
@@ -52,20 +63,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			w = 2
 		}):set_right(16)
 		--Move slightly closer to center of screen for readability and so it doesn't overlap with stamina.
-		self._dodge_panel:set_right(self._temp_panel:w() - 16)
-		self._dodge_panel:set_center_y(self._temp_panel:center_y())
+		self._dodge_panel:set_right(self._hud_panel:w() - 16)
+		self._dodge_panel:set_center_y(self._hud_panel:center_y())
 		self._dodge_panel:set_alpha(0) --Hide dodge panel until players actually get dodge.
-		if restoration.Options:GetValue("HUD/MainHUD") then
-			self:RestorationValueChanged()
-		end
+		self._dodge_points = 0
 	end
 
-	function HUDTemp:set_dodge_value(value, total_dodge)
-		self._dodge_panel:set_alpha(1) --Display dodge panel when needed.
-		self._dodge_panel:child("dodge_bar"):set_h((value / (1.5-total_dodge)) * self._dodge_panel:h())
+	function HUDDodgeMeter:unhide_dodge_panel(dodge_points)
+		self._dodge_panel:set_alpha(1)
+		self._dodge_points = dodge_points
+		self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0 - dodge_points) / (1.5 - dodge_points))) * self._dodge_panel:h())
+	end
+
+	function HUDDodgeMeter:set_dodge_value(value)
+		self._dodge_panel:child("dodge_bar"):set_h(self._dodge_panel:h() * value / (1.5 - self._dodge_points))
 		self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
-		self._dodge_panel:child("dodge_threshold"):set_center_y((1.0 - ((1.0-total_dodge) / (1.5-total_dodge))) * self._dodge_panel:h())
-		if value >= 1.0 - total_dodge then
+		if value >= 1.0 - self._dodge_points then
 			self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
 		else
 			self._dodge_panel:stop()
@@ -73,7 +86,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function HUDTemp:_animate_high_dodge(input_panel)
+	function HUDDodgeMeter:_animate_high_dodge(input_panel)
 		--Flashing animation for when next hit will be dodged.
 		local dodge_bar = input_panel:child("dodge_bar")
 		while true do
@@ -82,15 +95,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			coroutine.yield()
 		end
 	end
-end
-
-if not restoration.Options:GetValue("HUD/MainHUD") then
-	RestorationCoreHooks:Post(HUDTemp, "init", function(self)
-		if restoration and restoration.Options:GetValue("SC/SC") then
-			self:dodge_init()
-		end
-
-	end)
 end
 
 if restoration.Options:GetValue("HUD/MainHUD") then
@@ -113,9 +117,6 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 			bag_panel:set_bottom(self._temp_panel:h() - 152)
 			self._stamina_panel:set_alpha(1)
 			self._bag_panel_w, self._bag_panel_h = bag_panel:size()
-		end
-		if restoration and restoration.Options:GetValue("SC/SC") and restoration.Options:GetValue("HUD/MainHUD") then
-			self:dodge_init()
 		end
 		RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 		self:RestorationValueChanged()

@@ -1,0 +1,14 @@
+<materials version="3">
+	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<diffuse_texture file="units/pd2_crimefest_2015/update_2/masks/rus_hat/fur_hat_df" />
+		<bump_normal_texture file="units/pd2_crimefest_2015/update_2/masks/rus_hat/fur_hat_nm" />
+	</material>
+	<material name="mtr_helmet_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_crimefest_2015/update_2/masks/rus_hat/fur_hat_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_crimefest_2015/update_2/masks/rus_hat/fur_hat_df" mip="1"/>
+	</material>
+	<material name="mtr_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_crimefest_2015/update_2/masks/rus_hat/fur_hat_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_crimefest_2015/update_2/masks/rus_hat/fur_hat_df" mip="4"/>
+	</material>
+</materials>

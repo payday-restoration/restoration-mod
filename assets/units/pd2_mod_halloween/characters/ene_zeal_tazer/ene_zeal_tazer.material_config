@@ -1,0 +1,16 @@
+<materials version="3" group="ene_tazer_1">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_head_df"/>
+	</material>
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_df"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_head_df"/>
+	</material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

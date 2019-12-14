@@ -71,6 +71,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			total_job_risk_value
 		}
 	end
+	
+	local get_money_by_params_original = MoneyManager.get_money_by_params
 	function MoneyManager:get_money_by_params(params)
 		local job_id = params.job_id
 		local job_stars = params.job_stars or 0
@@ -114,9 +116,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			small_value = tweak_data:get_value("money_manager", "max_small_loot_value")
 		end
 		
-		if managers.skirmish:is_skirmish() then
-			local skirmish_payout = managers.skirmish:current_ransom_amount()
-			total_payout = math.max(0, math.round(total_payout + skirmish_payout))
+		if managers.skirmish:is_skirmish() or managers.crime_spree:is_active() then
+			return get_money_by_params_original(self, params)
 		end
 		
 		if on_last_stage then

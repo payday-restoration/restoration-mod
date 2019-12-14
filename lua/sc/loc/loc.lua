@@ -309,6 +309,24 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local ai_type = tweak_data.levels:get_ai_group_type()
+local russia_guide = Idstring("russian"):key() == SystemInfo:language():key()
+local english_guide = Idstring("english"):key() == SystemInfo:language():key()
+
+if russia_guide then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_RU_Guide", function(loc)
+		LocalizationManager:add_localized_strings({
+			["menu_ingame_manual"] = "Overhaul Guide",
+			["menu_ingame_manual_help"] = "Если вы разговариваете на русском языке, у нас есть русская версия руководства здесь:"
+		})
+	end)
+elseif english_guide then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_EN_Guide", function(loc)
+		LocalizationManager:add_localized_strings({
+			["menu_ingame_manual"] = "Overhaul Guide",
+			["menu_ingame_manual_help"] = "View the guide for Restoration's Overhaul."
+		})
+	end)
+end
 
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)

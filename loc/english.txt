@@ -62,8 +62,6 @@
 	"RestorationModNotifyDescID" : "Enable or disable the notification for this feature.",
 	"RestorationModPauseTitleID" : "Alpha Pause Menu",
 	"RestorationModPauseDescID" : "Enable or disable the Alpha Pause Menu.",
-	"menu_ingame_manual" : "Overhaul Guide",
-	"menu_ingame_manual_help" : "View the guide for Restoration's Overhaul.",
 	"menu_support" : "Overhaul Guide/Support",
 	"menu_support_help" : "View the guide for Restoration's Overhaul, get support, find crew mates.",
 	"menu_manual_header" : "Placeholder Text",

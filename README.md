@@ -143,6 +143,8 @@ Baddy fixing the cap on security 7, providing the model for the Russian Titan Cl
 
 Nardo Allowing us to include "First-person Stealth Suit Fixes".
 
+KLEITON and Tom Blaine taking on the huge task of translating the steam guide into Russian.
+
 Testers:
 ShortonComedyGamer (made sure neslon added support to the custom owen) 
 K4_Kydure

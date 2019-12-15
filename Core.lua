@@ -166,6 +166,15 @@ restoration.assault_style = {
 	"alpha_assault"
 }
 
+restoration.environments_choice_bank = {
+	"default",
+	"random",
+	"mellowday",
+	"xbox_bank",
+	"bank_day",
+	"env_trailer_bank"
+}
+
 -- These tables show the network messages we've modified in the network settings pdmod
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
 local connection_network_handler_funcs = {

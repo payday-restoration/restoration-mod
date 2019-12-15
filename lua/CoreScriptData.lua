@@ -8,26 +8,39 @@ local rnd4 = math.random (5)
 --Time of Day Loader
 if restoration.Options:GetValue("OTHER/TimeOfDay") then
 Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
-
-
 	
-	if Global.load_level == true and Global.game_settings.level_id == "branchbank" then
-	if rnd3 == 1 then
+	
+	if Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Bank") == 1 then
+		return
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Bank") == 2 then
+		if rnd3 == 1 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 4 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Bank") == 3 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 2 then
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Bank") == 4 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 3 then
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Bank") == 5 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 4 then
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Bank") == 6 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
 	end	
 	--"sky_orientation/rotation":"-116.40824890137",
 	

@@ -747,20 +747,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 		})	
 		
-		--Resmod Pool Suit
-		self.player_styles.suit_pool = {
-			name_id = "bm_suit_pool",
-			desc_id = "bm_suit_pool_desc",
-			texture_bundle_folder = "mods",
-			unlocked = true,
-			global_value = "sc",
-			body_replacement = body_replacement_standard,
-			third_body_replacement = body_replacement_standard,
-			unit = "units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps",
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit",
-			characters = {}
-		}
-		
 		--Resmod Prison Suit
 		self.player_styles.suit_prison = {
 			name_id = "bm_suit_prison",

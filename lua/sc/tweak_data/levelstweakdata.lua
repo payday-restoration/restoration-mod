@@ -107,8 +107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jolly.player_style = "sneak_suit"
 		
 		self.pal.ai_group_type = lapd
-		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}
-		self.pal.player_style = "suit_pool"		
+		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	
 		
 		self.friend.ai_group_type = lapd
 		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets"}

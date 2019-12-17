@@ -486,6 +486,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			hands = false,
 			vest = true
 		}
+		local body_replacement_hands_bodhi = {
+			head = false,
+			armor = true,
+			body = false,
+			hands = false,
+			vest = true
+		}
 		local body_replacement_fps = {
 			head = true,
 			armor = true,
@@ -597,7 +604,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_bodhi, {
-			body_replacement = body_replacement_hands,
+			body_replacement = body_replacement_hands_bodhi,
 			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"

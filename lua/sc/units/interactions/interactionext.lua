@@ -1,5 +1,14 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	function GageAssignmentInteractionExt:interact(player)
+		GageAssignmentInteractionExt.super.super.interact(self, player)
 
+		if alive(player) and player:sound() and not (managers.groupai:state() and managers.groupai:state():whisper_mode()) then
+			player:sound():say("g92", true, false)
+		end
+
+		return self._unit:base():pickup(player)
+	end
+	
 	function BaseInteractionExt:_get_timer()
 		local modified_timer = self:_get_modified_timer()
 

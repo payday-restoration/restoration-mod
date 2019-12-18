@@ -85,7 +85,7 @@
 	<!--Reduced Sicario Smoke-->	
 	<effect path="effects/particles/explosions/smoke_screen" force="true"/>
 	<texture path="units/pd2_dlc_max/weapons/wpn_fps_smoke_screen_grenade/incendiary_third_df" force="true"/>
-	
+
 	<!--Security Guard 7 fixed cap (Thanks Baddy!) el chupacabras-->	
 	<object path="units/payday2/characters/ene_security_7/ene_security_7" force="true" />	
 
@@ -143,6 +143,12 @@
 
 	<material_config path="units/payday2/characters/ene_security_2/ene_security_2" force="true" />
 	<material_config path="units/payday2/characters/ene_security_2/ene_security_2_contour" force="true" />	
+
+	<material_config path="units/payday2/characters/ene_security_4/ene_security_4" force="true" />
+	<material_config path="units/payday2/characters/ene_security_4/ene_security_4_contour" force="true" />	
+
+	<material_config path="units/payday2/characters/ene_security_7/ene_security_7" force="true" />
+	<material_config path="units/payday2/characters/ene_security_7/ene_security_7_contour" force="true" />	
 	
 	<material_config path="units/payday2/characters/ene_security_5/ene_security_5" force="true" />
 	<material_config path="units/payday2/characters/ene_security_5/ene_security_5_contour" force="true" />	
@@ -155,10 +161,29 @@
 	
 	<texture path="units/payday2/characters/shared_textures/murkyhead_df"/>
 	<texture path="units/payday2/characters/shared_textures/murkyhead_nm"/>
+	
+	<!--LAPD Dudes-->	
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4" force="true" />
+	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />	
+	
+	
 	<!--More Cop Facial Variety END-->	
 	
 	<texture path="units/payday2/characters/shared_textures/heads_cop_df" force="true"/>
 	<texture path="units/payday2/characters/shared_textures/heads_cop_nm" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop2_nm"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop2_df"/>	
 	<texture path="units/payday2/characters/shared_textures/heads_sec_df"/>
 	<texture path="units/payday2/characters/shared_textures/heads_sec_nm"/>
 	<texture path="units/payday2/characters/shared_textures/heads_fbi_df"/>

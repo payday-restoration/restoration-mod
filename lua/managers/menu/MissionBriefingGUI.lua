@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/Loadouts") then
+if restoration.Options:GetValue("HUD/UI/Loadouts") then
 function MissionBriefingTabItem:init(panel, text, i)
 	self._main_panel = panel
 	self._panel = self._main_panel:panel({})

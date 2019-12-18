@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/Loadouts") then
+if restoration.Options:GetValue("HUD/UI/Loadouts") then
 function MenuNodeJukeboxGui:init(node, layer, parameters)
 	parameters.align = "left"
 	parameters._align_line_proportions = 0.5

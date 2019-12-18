@@ -1,4 +1,4 @@
-if restoration.Options:GetValue("HUD/Loadouts") then
+if restoration.Options:GetValue("HUD/UI/Loadouts") then
 ChatGui.PRESETS.default = {
 	left = 0,
 	bottom = 120,

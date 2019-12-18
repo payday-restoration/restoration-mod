@@ -6,7 +6,7 @@ local maps = {
 	nomercy = true
 }
 
-if restoration.Options:GetValue("HUD/Loadouts") then
+if restoration.Options:GetValue("HUD/UI/Loadouts") then
 function HUDMissionBriefing:init(hud, workspace)
 	self._backdrop = MenuBackdropGUI:new(workspace)
 	self._backdrop:create_black_borders()
@@ -754,7 +754,7 @@ end
 end]]--
  
 local init_actual = HUDMissionBriefing.init
-if not restoration.Options:GetValue("HUD/Loadouts") then
+if not restoration.Options:GetValue("HUD/UI/Loadouts") then
 function HUDMissionBriefing:init(hud, workspace, ...)
  
     self._current_contact = managers.job:current_contact_id()

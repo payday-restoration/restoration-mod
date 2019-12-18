@@ -300,6 +300,10 @@
 						<option type="bool" default_value="false" name="Profile"/>
 						<option type="bool" default_value="false" name="Crimenet"/>
 						<option type="bool" default_value="false" name="Newsfeed"/>
+						<option type="bool" default_value="false" name="DifficultyMarkers"/>
+						<option type="bool" default_value="false" name="BlackScreen"/>
+						<option type="bool" default_value="false" name="Loadouts"/>
+						<option type="bool" default_value="false" name="District"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>
 				<option type="bool" default_value="true" name="Teammate"/>
@@ -319,10 +323,6 @@
 				<option type="bool" default_value="true" name="MaskOn"/>
 				<option type="bool" default_value="false" name="Hostage"/>
 				<option type="bool" default_value="false" name="Custody"/>
-				<option type="bool" default_value="false" name="DifficultyMarkers"/>
-				<option type="bool" default_value="false" name="BlackScreen"/>
-				<option type="bool" default_value="false" name="Loadouts"/>
-				<option type="bool" default_value="false" name="District"/>
 			</option_group>
 			<option_group name="SC">
 				<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>

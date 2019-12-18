@@ -17,7 +17,9 @@ function HUDPresenter:init(hud)
 		layer = 10
 	})
 	local message_panel = present_panel:panel( { visible = true, alpha = 0, name = "message_panel", h = h, w = w, x = x, y = y, valign = {1/5,0} } )
-	
+
+	self._active_notifications = 0
+
 	-- present_panel:set_debug( true )
 	
 	-- local y = self._hud_panel:h()/3
@@ -65,6 +67,8 @@ end
 function HUDPresenter:_present_information(params)
 	local present_panel = self._hud_panel:child("present_panel")
 	local message_panel = present_panel:child( "message_panel" )
+
+	self._active_notifications = self._active_notifications + 1
 	
 	local title = message_panel:child( "title" )
 	local text = message_panel:child( "text" )
@@ -107,6 +111,14 @@ function HUDPresenter:_present_information(params)
 	
 	present_panel:animate( callback( self, self, "_animate_present_information" ), { done_cb = callback( self, self, "_present_done" ), seconds = params.time or 4, use_icon = params.icon } )
 	self._presenting = true
+end
+
+function HUDPresenter:_do_it(queued)
+	if self._active_notifications > 4 then
+		table.insert(self._present_queue, params)
+		return
+	end
+	self:_present_information(queued)
 end
 
 function HUDPresenter:_animate_present_information(present_panel, params)

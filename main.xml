@@ -331,7 +331,24 @@
 			</option_group>
 			<option_group name="OTHER">
 				<option type="bool" default_value="true" name="TimeOfDay"/>
-				<option type="multichoice" default_value="1" name="Env_Bank" values_tbl="restoration.environments_choice_bank"/>
+				<divider name="tod_divider" size="30"/>
+				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
+				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
+				<option type="multichoice" default_value="2" name="Env_RVD2" values_tbl="restoration.environments_choice_rvd2"/>
+				<option type="multichoice" default_value="2" name="Env_FSD1" values_tbl="restoration.environments_choice_firestarter_1"/>
+				<option type="multichoice" default_value="2" name="Env_PBR2" values_tbl="restoration.environments_choice_pbr2"/>
+				<option type="multichoice" default_value="2" name="Env_CJ2" values_tbl="restoration.environments_choice_crojob2"/>
+				<option type="multichoice" default_value="2" name="Env_UnderPass" values_tbl="restoration.environments_choice_arm_und"/>
+				<option type="multichoice" default_value="2" name="Env_MallCrasher" values_tbl="restoration.environments_choice_mallcrasher"/>
+				<option type="multichoice" default_value="2" name="Env_Mia_1" values_tbl="restoration.environments_choice_mia_1"/>
+				<option type="multichoice" default_value="2" name="Env_FSD3" values_tbl="restoration.environments_choice_firestarter_3"/>
+				<option type="multichoice" default_value="2" name="Env_WDD1N" values_tbl="restoration.environments_choice_watchdogs_1_night"/>
+				<option type="multichoice" default_value="2" name="Env_WDD2D" values_tbl="restoration.environments_choice_watchdogs_2_day"/>
+				<option type="multichoice" default_value="2" name="Env_Alex3" values_tbl="restoration.environments_choice_alex_3"/>
+				<option type="multichoice" default_value="2" name="Env_Big" values_tbl="restoration.environments_choice_big"/>
+				<option type="multichoice" default_value="2" name="Env_FS" values_tbl="restoration.environments_choice_four_stores"/>
+				<option type="multichoice" default_value="2" name="Env_Ukra" values_tbl="restoration.environments_choice_ukrainian_job"/>
+				<divider name="tod_divider" size="30"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>

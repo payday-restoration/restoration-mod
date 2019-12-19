@@ -175,6 +175,107 @@ restoration.environments_choice_bank = {
 	"env_trailer_bank"
 }
 
+restoration.environments_choice_bank = {
+	"default",
+	"random",
+	"mellowday",
+	"xbox_bank",
+	"bank_day",
+	"env_trailer_bank"
+}
+
+restoration.environments_choice_rvd1 = {
+	"default",
+	"random",
+	"rvd1_alt1",
+	"rvd1_alt2"
+}
+
+restoration.environments_choice_rvd2 = {
+	"default",
+	"random",
+	"rvd2_alt"
+}
+
+restoration.environments_choice_firestarter_1 = {
+	"default",
+	"random",
+	"fsd1_eve"
+}
+
+restoration.environments_choice_pbr2 = {
+	"default",
+	"random",
+	"bos_alt"
+}
+
+restoration.environments_choice_crojob2 = {
+	"default",
+	"random",
+	"dockyard_alt"
+}
+
+restoration.environments_choice_arm_und = {
+	"default",
+	"random",
+	"underpass_foggyday"
+}
+
+restoration.environments_choice_mallcrasher = {
+	"default",
+	"random",
+	"mall_alt"
+}
+
+restoration.environments_choice_mia_1 = {
+	"default",
+	"random",
+	"hlm_morn",
+	"funny_and_epic_synthwave_very_eighties"
+}
+
+restoration.environments_choice_firestarter_3 = {
+	"default",
+	"env_trailer_bank"
+}
+
+restoration.environments_choice_watchdogs_1_night = {
+	"default",
+	"brightnight"
+}
+
+restoration.environments_choice_watchdogs_2_day = {
+	"default",
+	"random",
+	"docks"
+}
+
+restoration.environments_choice_alex_3 = {
+	"default",
+	"random",
+	"docks"
+}
+
+restoration.environments_choice_big = {
+	"default",
+	"random",
+	"xbox_bank"
+}
+
+restoration.environments_choice_four_stores = {
+	"default",
+	"random",
+	"mellowday",
+	"xbox_bank",
+	"bank_day",
+	"bank_green"
+}
+
+restoration.environments_choice_ukrainian_job = {
+	"default",
+	"cloudy_day"
+}
+
 -- These tables show the network messages we've modified in the network settings pdmod
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
 local connection_network_handler_funcs = {

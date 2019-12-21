@@ -71,7 +71,6 @@ function restoration:Init()
 	restoration.tiny_levels = {
 		"peta",
 		"rvd2",
-		"hox_1",
 		"chill_combat",
 		"brb",
 		"skm_mus",
@@ -113,6 +112,7 @@ function restoration:Init()
 		"hvh",
 		"chew",
 		"sah",
+		"hox_1",		
 		"nail",		
 		"nmh",		
 		"peta2",

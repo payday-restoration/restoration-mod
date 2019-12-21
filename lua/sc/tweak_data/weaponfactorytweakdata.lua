@@ -16512,6 +16512,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_smg_scorpion_s_nostock",
 			"wpn_fps_smg_scorpion_s_standard",
 			"wpn_fps_smg_scorpion_s_unfolded",
+			"wpn_fps_smg_scorpion_extra_rail_gadget",
+			"wpn_fps_smg_scorpion_extra_rail",			
 			"wpn_fps_upg_o_specter",
 			"wpn_fps_upg_o_aimpoint",
 			"wpn_fps_upg_o_docter",
@@ -16845,6 +16847,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload_not_empty",
+				fire_steelsight = "recoil",
 				fire = "recoil"
 			}
 		}
@@ -30801,7 +30804,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_upg_o_sig",
 			"wpn_fps_upg_o_bmg",
 			"wpn_fps_upg_o_uh",
-			"wpn_fps_upg_o_fc1"
+			"wpn_fps_upg_o_fc1",
+			"wpn_fps_upg_o_45steel"
 		}
 		self.wpn_fps_snp_desertfox_npc = deep_clone(self.wpn_fps_snp_desertfox)
 		self.wpn_fps_snp_desertfox_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox/wpn_fps_snp_desertfox_npc"
@@ -36774,6 +36778,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_upg_ass_ns_battle",
 				"wpn_fps_upg_fl_ass_utg",
 				"wpn_fps_upg_ns_ass_smg_v6",
+				"wpn_fps_upg_g_m4_surgeon",
 				"wpn_fps_upg_i_slower_rof",
 				"wpn_fps_upg_i_faster_rof"	
 			}
@@ -37002,26 +37007,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_smg_scorpion_m_standard",
 				"wpn_fps_smg_scorpion_m_extended",
 				"wpn_fps_smg_scorpion_s_standard",
+				"wpn_fps_smg_scorpion_extra_rail_gadget",
+				"wpn_fps_smg_scorpion_extra_rail",
 				"wpn_fps_upg_ns_ass_smg_large",
 				"wpn_fps_upg_ns_ass_smg_medium",
 				"wpn_fps_upg_ns_ass_smg_small",
 				"wpn_fps_upg_ns_ass_smg_firepig",
 				"wpn_fps_upg_ns_ass_smg_stubby",
 				"wpn_fps_upg_ns_ass_smg_tank",
-				"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-				"wpn_fps_upg_fl_ass_smg_sho_surefire",
-				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
-				"wpn_fps_upg_vg_ass_smg_stubby_vanilla",
-				"wpn_fps_upg_vg_ass_smg_afg_vanilla",
+				"wpn_fps_upg_vg_ass_smg_verticalgrip",
+				"wpn_fps_upg_vg_ass_smg_stubby",
+				"wpn_fps_upg_vg_ass_smg_afg",
 				"wpn_fps_upg_i_singlefire",
 				"wpn_fps_upg_i_autofire",
 				"wpn_fps_upg_ass_ns_jprifles",
 				"wpn_fps_upg_ass_ns_linear",
 				"wpn_fps_upg_ass_ns_surefire",
-				"wpn_fps_upg_fl_ass_peq15",
-				"wpn_fps_upg_fl_ass_laser",
 				"wpn_fps_upg_ass_ns_battle",
-				"wpn_fps_upg_fl_ass_utg",
+				"wpn_fps_upg_fl_pis_laser",
+				"wpn_fps_upg_fl_pis_tlr1",
+				"wpn_fps_upg_fl_pis_crimson",
+				"wpn_fps_upg_fl_pis_x400v",
+				"wpn_fps_upg_fl_pis_m3x",
 				"wpn_fps_upg_ns_ass_smg_v6",
 				"wpn_fps_upg_i_slower_rof",
 				"wpn_fps_upg_i_faster_rof"	
@@ -38020,6 +38027,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_pis_rage_g_ergo",
 				"wpn_fps_upg_pis_ns_flash",
 				"wpn_fps_pis_rage_lock",
+				"wpn_fps_upg_ns_pis_typhoon",
 				--custom--
 				"wpn_fps_pis_g18c_co_comp_2",
 				"wpn_fps_pis_g18c_co_1",
@@ -40183,7 +40191,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "mwm",
 			dlc = "mwm",
 			a_obj = "a_o",
-			reticle_obj = "g_reticle",
+			reticle_obj = "g_reddot",
 			name_id = "bm_wp_upg_o_bmg",
 			unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_bmg/wpn_fps_upg_o_bmg",
 			pcs = {
@@ -40456,7 +40464,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_switch = {
 				channel = "diffuse_texture",
 				material = {
-					"gfx_reddot1",
+					"gfx_reddot",
 					"screen"
 				}
 			},
@@ -40509,7 +40517,74 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			perks = {
 				"scope"
 			},
-			stance_mod = deep_clone(self.parts.wpn_fps_upg_o_rmr.stance_mod),
+			stance_mod = {
+				wpn_fps_pis_1911 = {
+					translation = Vector3(0, 0, -0.7)
+				},
+				wpn_fps_pis_beretta = {
+					translation = Vector3(0, 0, -0.42),
+					rotation = Rotation(0, -0.5, 0)
+				},
+				wpn_fps_pis_deagle = {
+					translation = Vector3(0, 0, -0.6),
+					rotation = Rotation(0, -0.5, 0)
+				},
+				wpn_fps_pis_g17 = {
+					translation = Vector3(0, 0, -1.02)
+				},
+				wpn_fps_pis_g18c = {
+					translation = Vector3(0, 0, -0.7)
+				},
+				wpn_fps_pis_usp = {
+					translation = Vector3(-0.015, 0, -0.64)
+				},
+				wpn_fps_pis_ppk = {
+					translation = Vector3(0, 0, -1.25)
+				},
+				wpn_fps_pis_p226 = {
+					translation = Vector3(0, 0, -0.8)
+				},
+				wpn_fps_pis_g22c = {
+					translation = Vector3(0, 0, -0.7),
+					rotation = Rotation(0, -0.3, 0)
+				},
+				wpn_fps_pis_g26 = {
+					translation = Vector3(-0.01, 0, -0.5)
+				},
+				wpn_fps_pis_c96 = {
+					translation = Vector3(0, 0, -1.5)
+				},
+				wpn_fps_pis_hs2000 = {
+					translation = Vector3(0, 0, -0.95)
+				},
+				wpn_fps_bow_hunter = {
+					translation = Vector3(0, 8, 0.5)
+				},
+				wpn_fps_pis_sparrow = {
+					translation = Vector3(0, 0, -1.1)
+				},
+				wpn_fps_pis_pl14 = {
+					translation = Vector3(0, 0, -1.1)
+				},
+				wpn_fps_pis_packrat = {
+					translation = Vector3(0, 0, -1.35)
+				},
+				wpn_fps_pis_lemming = {
+					translation = Vector3(0, 5, -0.9)
+				},
+				wpn_fps_pis_chinchilla = {
+					translation = Vector3(0, 5, -0.75)
+				},
+				wpn_fps_pis_breech = {
+					translation = Vector3(0, 5, -0.9)
+				},
+				wpn_fps_pis_shrew = {
+					translation = Vector3(0, 5, -0.8)
+				},
+				wpn_fps_pis_legacy = {
+					translation = Vector3(0, 5, -0.9)
+				}
+			},
 			texture_switch = {
 				material = "gfx_reddot",
 				channel = "diffuse_texture"
@@ -40582,7 +40657,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					translation = Vector3(0, 0, -1.35)
 				},
 				wpn_fps_bow_hunter = {
-					translation = Vector3(0, 8, 1.4)
+					translation = Vector3(0, 12, 0.2)
 				},
 				wpn_fps_pis_sparrow = {
 					translation = Vector3(0, 0, -1.53)

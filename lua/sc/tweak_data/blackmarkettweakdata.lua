@@ -486,6 +486,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			hands = false,
 			vest = true
 		}
+		local body_replacement_hands_bodhi = {
+			head = false,
+			armor = true,
+			body = false,
+			hands = false,
+			vest = true
+		}
 		local body_replacement_fps = {
 			head = true,
 			armor = true,
@@ -597,7 +604,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_bodhi, {
-			body_replacement = body_replacement_hands,
+			body_replacement = body_replacement_hands_bodhi,
 			third_body_replacement = body_replacement_armor,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
@@ -746,20 +753,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 		})	
-		
-		--Resmod Pool Suit
-		self.player_styles.suit_pool = {
-			name_id = "bm_suit_pool",
-			desc_id = "bm_suit_pool_desc",
-			texture_bundle_folder = "mods",
-			unlocked = true,
-			global_value = "sc",
-			body_replacement = body_replacement_standard,
-			third_body_replacement = body_replacement_standard,
-			unit = "units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps",
-			third_unit = "units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit",
-			characters = {}
-		}
 		
 		--Resmod Prison Suit
 		self.player_styles.suit_prison = {

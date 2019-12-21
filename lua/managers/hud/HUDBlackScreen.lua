@@ -1,4 +1,4 @@
-if not restoration.Options:GetValue("HUD/BlackScreen") then
+if not restoration.Options:GetValue("HUD/UI/BlackScreen") then
 	return
 end
 

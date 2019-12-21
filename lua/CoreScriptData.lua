@@ -8,187 +8,270 @@ local rnd4 = math.random (5)
 --Time of Day Loader
 if restoration.Options:GetValue("OTHER/TimeOfDay") then
 Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
-
-
 	
-	if Global.load_level == true and Global.game_settings.level_id == "branchbank" then
-	if rnd3 == 1 then
+	
+	if Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 1 then
+		return
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 2 then
+		if rnd3 == 1 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 4 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 3 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 2 then
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 4 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 3 then
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 5 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 4 then
+	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 6 then
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 2 then
+		if rnd == 1 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+		end
+		if rnd == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 3 then
+	    	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 4 then
+	    	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 	end	
-	--"sky_orientation/rotation":"-116.40824890137",
-	
-	if Global.load_level == true and Global.game_settings.level_id == "rvd1" then
-	if rnd == 1 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
-	end
-	if rnd == 2 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
-	end
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "rvd2" then
-	if rnd2 == 1 then	    
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	end		
-	
-	if Global.load_level == true and Global.game_settings.level_id == "firestarter_1" then
-	if rnd == 1 or rnd == 2 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	end		
-	
-	if Global.load_level == true and Global.game_settings.level_id == "pbr2" then
-	if rnd2 == 1 then	    
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	end		
-	
-	if Global.load_level == true and Global.game_settings.level_id == "crojob2" then
-	if rnd2 == 1 then	    
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_hox1_02/pd2_env_hox1_02", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_hox1_02/pd2_env_hox1_02", "environment")
-		--need the inside env here
-	end
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "arm_und" then
-	if rnd2 == 1 then	    
-	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	end	
-	
-	if Global.load_level == true and Global.game_settings.level_id == "mallcrasher" then
-	if rnd2 == 1 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "mia_1" then
-	if rnd3 == 1 or rnd3 == 2  or rnd3 == 3 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	if rnd3 == 4 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	end
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "firestarter_3" then
-	
-	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_night" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
+
+	if Global.load_level == true and Global.game_settings.level_id == "rvd2" and restoration.Options:GetValue("OTHER/Env_RVD2") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd2" and restoration.Options:GetValue("OTHER/Env_RVD2") == 2 then
+		if rnd2 == 1 then	    
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd2" and restoration.Options:GetValue("OTHER/Env_RVD2") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_exterior", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
 	end
 
-	
-	if Global.load_level == true and Global.game_settings.level_id == "bronze" then
-	
-	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_1" and restoration.Options:GetValue("OTHER/Env_FSD1") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "firestarter_1" and restoration.Options:GetValue("OTHER/Env_FSD1") == 2 then
+		if rnd == 1 or rnd == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "firestarter_1" and restoration.Options:GetValue("OTHER/Env_FSD1") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 	end	
-	if Global.load_level == true and Global.game_settings.level_id == "firestarter_3" then
-	
-	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	--"sky_orientation/rotation":"-116.40824890137",
-	
+
+	if Global.load_level == true and Global.game_settings.level_id == "pbr2" and restoration.Options:GetValue("OTHER/Env_PBR2") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "pbr2" and restoration.Options:GetValue("OTHER/Env_PBR2") == 2 then
+		if rnd2 == 1 then	    
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "pbr2" and restoration.Options:GetValue("OTHER/Env_PBR2") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
+	end	
+
+	if Global.load_level == true and Global.game_settings.level_id == "crojob2" and restoration.Options:GetValue("OTHER/Env_CJ2") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "crojob2" and restoration.Options:GetValue("OTHER/Env_CJ2") == 2 then
+		if rnd2 == 1 then	    
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_hox1_02/pd2_env_hox1_02", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_hox1_02/pd2_env_hox1_02", "environment")
+			--need the inside env here
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "crojob2" and restoration.Options:GetValue("OTHER/Env_CJ2") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_sunset/pd2_env_sunset", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_hox1_02/pd2_env_hox1_02", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/dockyard_alt.custom_xml", "custom_xml", "environments/pd2_env_hox1_02/pd2_env_hox1_02", "environment")
+			--need the inside env here
+	end	
+
+	if Global.load_level == true and Global.game_settings.level_id == "arm_und" and restoration.Options:GetValue("OTHER/Env_UnderPass") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "arm_und" and restoration.Options:GetValue("OTHER/Env_UnderPass") == 2 then
+		if rnd2 == 1 then	    
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "arm_und" and restoration.Options:GetValue("OTHER/Env_UnderPass") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
 	end
-	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" then
-	if rnd == 1 or rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
+
+	if Global.load_level == true and Global.game_settings.level_id == "mallcrasher" and restoration.Options:GetValue("OTHER/Env_MallCrasher") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "mallcrasher" and restoration.Options:GetValue("OTHER/Env_MallCrasher") == 2 then
+		if rnd2 == 1 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "mallcrasher" and restoration.Options:GetValue("OTHER/Env_MallCrasher") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
+
+	if Global.load_level == true and Global.game_settings.level_id == "mia_1" and restoration.Options:GetValue("OTHER/Env_Mia_1") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "mia_1" and restoration.Options:GetValue("OTHER/Env_Mia_1") == 2 then
+		if rnd3 == 1 or rnd3 == 2  or rnd3 == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+		end
+		if rnd3 == 4 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "mia_1" and restoration.Options:GetValue("OTHER/Env_Mia_1") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/hlm_morn.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+	elseif Global.load_level == true and Global.game_settings.level_id == "mia_1" and restoration.Options:GetValue("OTHER/Env_Mia_1") == 4 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
 	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "alex_3" then
-	if rnd == 1 or rnd == 2 then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
+
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_3" and restoration.Options:GetValue("OTHER/Env_FSD3") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "firestarter_3" and restoration.Options:GetValue("OTHER/Env_FSD3") == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
+
+	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_night" and restoration.Options:GetValue("OTHER/Env_WDD1N") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_night" and restoration.Options:GetValue("OTHER/Env_WDD1N") == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "big" then
-	if rnd2 == 1 then	    
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
+
+	if Global.load_level == true and Global.game_settings.level_id == "bronze" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	end	
+
+	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" and restoration.Options:GetValue("OTHER/Env_WDD2D") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" and restoration.Options:GetValue("OTHER/Env_WDD2D") == 2 then
+		if rnd == 1 or rnd == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "watchdogs_2_day" and restoration.Options:GetValue("OTHER/Env_WDD2D") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
 	end
+
+	if Global.load_level == true and Global.game_settings.level_id == "alex_3" and restoration.Options:GetValue("OTHER/Env_Alex3") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "alex_3" and restoration.Options:GetValue("OTHER/Env_Alex3") == 2 then
+		if rnd == 1 or rnd == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "alex_3" and restoration.Options:GetValue("OTHER/Env_Alex3") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
 	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "four_stores" then
-	if rnd3 == 1 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+
+	if Global.load_level == true and Global.game_settings.level_id == "big" and restoration.Options:GetValue("OTHER/Env_Big") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "big" and restoration.Options:GetValue("OTHER/Env_Big") == 2 then
+		if rnd2 == 1 then	    
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "big" and restoration.Options:GetValue("OTHER/Env_Big") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
 	end
-	if rnd3 == 2 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+
+	if Global.load_level == true and Global.game_settings.level_id == "four_stores" and restoration.Options:GetValue("OTHER/Env_FS") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "four_stores" and restoration.Options:GetValue("OTHER/Env_FS") == 2 then
+		if rnd3 == 1 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		if rnd3 == 4 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+	elseif Global.load_level == true and Global.game_settings.level_id == "four_stores" and restoration.Options:GetValue("OTHER/Env_FS") == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/mellowday.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	elseif Global.load_level == true and Global.game_settings.level_id == "four_stores" and restoration.Options:GetValue("OTHER/Env_FS") == 4 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	elseif Global.load_level == true and Global.game_settings.level_id == "four_stores" and restoration.Options:GetValue("OTHER/Env_FS") == 5 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	elseif Global.load_level == true and Global.game_settings.level_id == "four_stores" and restoration.Options:GetValue("OTHER/Env_FS") == 6 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
-	if rnd3 == 3 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	if rnd3 == 4 then
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+
+	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" and restoration.Options:GetValue("OTHER/Env_Ukra") == 1 then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "ukrainian_job" and restoration.Options:GetValue("OTHER/Env_Ukra") == 2 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 
 	if Global.load_level == true and Global.game_settings.level_id == "cult_murky" then
@@ -207,7 +290,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 	end
 	
-	if Global.load_level == true and Global.game_settings.level_id == "family" then
+	if Global.load_level == true and Global.game_settings.level_id == "family_res" then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
 		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
 	end

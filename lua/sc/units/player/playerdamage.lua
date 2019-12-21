@@ -773,6 +773,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
+		if self._check_berserker_done then
+			if self._can_survive_one_hit then
+				self._can_survive_one_hit = false
+			end
+		end
 		if self:get_real_health() == 0 and not self._check_berserker_done then
 			if self._can_survive_one_hit then
 				self:change_health(0.1)

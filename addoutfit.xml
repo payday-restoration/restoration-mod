@@ -5,24 +5,6 @@
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
-	
-	<!--///POOL REPAIR SUITS\\\-->
-	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" />
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" />
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" />
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" />
-	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit" />
-	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_contour" />
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_df" />
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit/pool_repair_suit_nm" />
-
-	<!-- First Person -->
-	<cooked_physics path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" />
-	<model path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" />
-	<object path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" />
-	<unit path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" />
-	<material_config path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps" />
-	<texture path="units/pd2_mod_suits/characters/pool_repair_suit_fps/pool_repair_suit_fps_df" />
     
 	<!--///Prison Suit FPS\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />

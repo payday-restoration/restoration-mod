@@ -1,6 +1,6 @@
 <table name="family_res">
 	<Localization default="english.txt" directory="loc"/>
-	<level ai_group_type="america" briefing_dialog="pln_fj1_brf_01" cube="cube_apply_heist_bank" brief_id="heist_family_briefing" name_id="heist_family_hl" ghost_bonus="0.05" id="family_res" intro_event="Play_pln_fj1_intro_01" load_screen="guis/dlcs/pic/textures/loading/job_diamondstore" max_bags="24" music="heist">
+	<level ai_group_type="america" brief_id="heist_family_briefing" briefing_dialog="pln_fj1_brf_01" cube="cube_apply_heist_bank" ghost_bonus="0.05" id="family_res" intro_event="Play_pln_fj1_intro_01" load_screen="guis/dlcs/pic/textures/loading/job_diamondstore" max_bags="24" music="heist" name_id="heist_family_hl">
 		<add file="levels/family_res/add.xml"/>
 		<assets/>
 		<include directory="levels/family_res">
@@ -41,7 +41,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<narrative briefing_event="pln_fj1_cbf_01" contact="bain" id="family" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_diamondstore" region="street" name_id="heist_family" icon="guis/dlcs/bro/textures/pd2/crimenet/diamondstore"  brief_id="heist_family_crimenet" >
+	<narrative brief_id="heist_family_crimenet" briefing_event="pln_fj1_cbf_01" contact="bain" icon="guis/dlcs/bro/textures/pd2/crimenet/diamondstore" id="family" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_diamondstore" name_id="heist_family" region="street">
 		<chain>
 			<table level_id="family_res" type="d" type_id="heist_type_assault"/>
 		</chain>

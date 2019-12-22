@@ -239,6 +239,8 @@
 	else
 		tweak_data.interaction.corpse_alarm_pager.timer = 10
 	end	
+	
+	tweak_data.narrative.jobs["chill_combat"].contact = "events"
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0

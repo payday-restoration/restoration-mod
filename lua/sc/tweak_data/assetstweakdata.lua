@@ -234,6 +234,111 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.sniper_spot_rats3.stages, "alex_3_res")		
 		table.insert(self.rat_3_pilot.stages, "alex_3_res")
 		
+		--Pro Job changes--
+		if Global.game_settings and Global.game_settings.one_down then
+		
+			--Generic Ammo asset
+			self.ammo_bag.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}
+			
+			--Generic Doctor asset
+			self.health_bag.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}
+
+			--Generic BodyBag asset
+			self.bodybags_bag.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Generic Grenade Crate asset
+			self.grenade_crate.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Watchdogs D1 Bags
+			self.watchdogs_1_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.watchdogs_1_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Watchdogs D2 Bags
+			self.watchdogs_2_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.watchdogs_2_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Firestarter D1 Bags
+			self.firestarter_1_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.firestarter_1_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			
+			--Big Oil Day 2 Ammo
+			self.jungle_2_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}				
+
+			--Rats D1 Bags
+			self.rat_1_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.rat_1_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Mallcrasher bags
+			self.mallcrasher_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.mallcrasher_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Nightclub bags
+			self.nightclub_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.nightclub_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}				
+		
+			--Armored Transport Heists Bags
+			self.arm_for_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.arm_for_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}		
+		
+		end
+		
 	end
 	
 	--Restoration Heist assets--

@@ -71,7 +71,6 @@ function restoration:Init()
 	restoration.tiny_levels = {
 		"peta",
 		"rvd2",
-		"chill_combat",
 		"brb",
 		"skm_mus",
 		"skm_red2",
@@ -119,6 +118,7 @@ function restoration:Init()
 		"des",		
 		"vit",
 		"spa",		
+		"chill_combat",		
 		"flat",	
 		"mex",
 		"mex_cooking",		

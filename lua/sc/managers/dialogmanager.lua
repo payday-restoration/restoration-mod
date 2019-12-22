@@ -1,5 +1,3 @@
---[[
-
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	local old_queue_dialog = DialogManager.queue_dialog
@@ -7,6 +5,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local escape_time = 0
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+		
+		log("SC: Found Event! " .. id)
 				
 		if Global.game_settings and Global.game_settings.one_down then
 			
@@ -104,5 +104,3 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 end
-
-]]--

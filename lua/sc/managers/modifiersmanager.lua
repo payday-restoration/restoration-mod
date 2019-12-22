@@ -1,7 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
---[[
-
 --this table is for humans. edit this one
 --first item is the unit to be replaced, second is the replacement unit that should spawn instead. 
 --also, no need to include Idstring here anymore
@@ -44,7 +42,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return result
 	end
-
-]]--	
 	
 end

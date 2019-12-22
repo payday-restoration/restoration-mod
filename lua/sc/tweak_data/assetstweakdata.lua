@@ -214,7 +214,26 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.bodybags_bag.stages, "firestarter_2_res")
 		table.insert(self.spotter.stages, "firestarter_2_res")
 		table.insert(self.grenade_crate.stages, "firestarter_2_res")
-		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")		
+		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")	
+
+		--Diamond Store, Resmod Edit
+		table.insert(self.safe_escape.stages, "family_res")
+		table.insert(self.bodybags_bag.stages, "family_res")
+		
+		--Rats Day 1, Resmod Edit
+		table.insert(self.grenade_crate.stages, "alex_1_res")		
+		table.insert(self.sniper_spot_rats1.stages, "alex_1_res")
+		table.insert(self.rat_1_ammo.stages, "alex_1_res")
+		table.insert(self.rat_1_health.stages, "alex_1_res")
+		table.insert(self.rat_1_lights.stages, "alex_1_res")
+		
+		--Rats Day 2, Resmod Edit
+		--Nothing!
+		
+		--Rats Day 3, Resmod Edit
+		table.insert(self.sniper_spot_rats3.stages, "alex_3_res")		
+		table.insert(self.rat_3_pilot.stages, "alex_3_res")
+		
 	end
 	
 	--Restoration Heist assets--

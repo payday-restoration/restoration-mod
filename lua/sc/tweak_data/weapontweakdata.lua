@@ -8941,7 +8941,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.sar21.panic_suppression_chance = 0.0
 		end
 
-		if self.r0991 then --Pawcio's Colt 9MM Submachine Gun (even though it's an SMG. realism? thog dont caare)
+		if self.r0991 then --Pawcio's Varmint Submachine Gun (even though it's an SMG. realism? thog dont caare)
 			self.r0991.categories = {"pistol"}
 			self.r0991.tactical_reload = 1											
 			self.r0991.CLIP_AMMO_MAX = 30
@@ -9496,9 +9496,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 
-	if self.ak5s then --Gambyt's AK5 Pistol
+	if self.ak5s then --Gambyt's AK5 SMG
 		self.ak5s.desc_id = nil
-		self.ak5s.categories = {"pistol"}
+		self.ak5s.categories = {"smg"}
 		self.ak5s.tactical_reload = 1		
 		self.ak5s.use_data.selection_index = 2
 		self.ak5s.CLIP_AMMO_MAX = 35
@@ -11934,7 +11934,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	if self.m590 then --Silent Enforcer and GT's Mossberg 590
 		self.m590.has_description = true
-		self.m590.tactical_reload = 0
+		self.m590.tactical_reload = 1
 		self.m590.desc_id = "bm_w_m590_desc"		
 		self.m590.rays = 9
 		self.m590.timers = {
@@ -11966,7 +11966,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.stats = {
 			damage = 150,
 			spread = 9,
-			recoil = 17,
+			recoil = 16,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 15,
@@ -11981,6 +11981,139 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m590.panic_suppression_chance = 0.0
 	end
 
+	if self.beck then --Gambyt's Reinbeck M1 Shotgun
+		self.beck.has_description = true
+		self.beck.desc_id = "bm_w_beck_desc"		
+		self.beck.tactical_reload = 1
+		self.beck.rays = 9
+		self.beck.timers = {
+			shotgun_reload_enter = 0.4,
+			shotgun_reload_exit_empty = 1.3,
+			shotgun_reload_exit_not_empty = 1,
+			shotgun_reload_shell = 0.6666667,
+			shotgun_reload_first_shell_offset = 0.33666667,
+			unequip = 0.5,
+			equip = 0.5
+		}
+		self.beck.CLIP_AMMO_MAX = 8
+		self.beck.spread.standing = 3 * 1
+		self.beck.muzzleflash = "effects/particles/shotgun/muzzleflash"		
+		self.beck.spread.crouching = 2 * 1 
+		self.beck.spread.steelsight = 1 * 1
+		self.beck.spread.moving_standing = 4 * 1
+		self.beck.spread.moving_crouching = 3 * 1
+		self.beck.spread.moving_steelsight = 2 * 1
+		self.beck.kick.standing = self.new_m4.kick.standing
+		self.beck.kick.crouching = self.new_m4.kick.standing
+		self.beck.kick.steelsight = self.new_m4.kick.standing
+		self.beck.single.fire_rate = 0.8
+		self.beck.fire_mode_data.fire_rate = 0.8
+		self.beck.AMMO_MAX = 40 
+		self.beck.damage_near = 600
+		self.beck.damage_far = 1200
+		self.beck.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.beck.stats = {
+			damage = 150,
+			spread = 9,
+			recoil = 17,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 15,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.beck.stats_modifiers = {damage = 1}
+		self.beck.panic_suppression_chance = 0.0
+	end
+
+	if self.car9 then --Gambyt's ACAR 9
+		self.car9.desc_id = "bm_menu_sc_amcar_desc"
+		self.car9.CLIP_AMMO_MAX = 20
+		self.car9.AMMO_MAX = 135
+		self.car9.tactical_reload = 1		
+		self.car9.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.car9.fire_mode_data.fire_rate = 0.06315789473
+		self.car9.auto.fire_rate = 0.06315789473
+		self.car9.spread.standing = 3
+		self.car9.spread.crouching = 2
+		self.car9.spread.steelsight = 1
+		self.car9.spread.moving_standing = 4
+		self.car9.spread.moving_crouching = 3
+		self.car9.spread.moving_steelsight = 2
+		self.car9.kick.standing = self.new_m4.kick.standing
+		self.car9.kick.crouching = self.new_m4.kick.standing
+		self.car9.kick.steelsight = self.new_m4.kick.standing
+		self.car9.stats = {
+			damage = 34,
+			spread = 12,
+			recoil = 23,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.car9.timers.reload_not_empty = 2.10
+		self.car9.timers.reload_empty = 2.9 		
+		self.car9.panic_suppression_chance = 0.0
+	end
+
+	if self.smolak then --Gambyt's AK Draco Pistol
+		self.smolak.categories = {
+			"assault_rifle"
+		}
+		self.smolak.use_data.selection_index = 2
+		self.smolak.tactical_reload = 1
+		self.smolak.categories = {"pistol"}		
+		self.smolak.AMMO_MAX = 150
+		self.smolak.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.smolak.fire_mode_data.fire_rate = 0.0923076923
+		self.smolak.auto.fire_rate = 0.0923076923
+		self.smolak.spread.standing = 3
+		self.smolak.spread.crouching = 2
+		self.smolak.spread.steelsight = 1
+		self.smolak.spread.moving_standing = 4
+		self.smolak.spread.moving_crouching = 3
+		self.smolak.spread.moving_steelsight = 2
+		self.smolak.panic_suppression_chance = 0.0
+		self.smolak.stats = {
+			damage = 40,
+			spread = 16,
+			recoil = 18,
+			spread_moving = 9,
+			zoom = 3,
+			concealment = 21,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.smolak.timers.reload_not_empty = 1.95 
+		self.smolak.timers.reload_empty = 3.7 
+	end		
+
+	if self.x_car9 then --disabled vmp akimbos
+		self.x_car9.use_data.selection_index = 4
+	end	
+
+	if self.x_smolak then --disabled vmp akimbos
+		self.x_smolak.use_data.selection_index = 4
+	end	
+
+	if self.x_ak5s then --disabled vmp akimbos
+		self.x_ak5s.use_data.selection_index = 4
+	end	
+	
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.tactical_reload = 1											
 		self.hpb.fire_mode_data.fire_rate = 0.07692307692

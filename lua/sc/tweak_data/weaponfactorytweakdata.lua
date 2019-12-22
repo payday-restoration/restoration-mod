@@ -43162,7 +43162,56 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		end			
+		end
+
+		if self.wpn_fps_shot_beck then -- Gambyt's Reinbeck M1 Shotgun
+			self.parts.wpn_fps_shot_beck_b_heat_dummy.stats = {
+					value = 0
+			}
+			self.parts.wpn_fps_shot_beck_s_tac.stats = {
+					value = 3,
+					spread = 1,
+					spread_moving = 1,
+					concealment = -2
+			}
+			self.parts.wpn_fps_shot_beck_s_wrist.stats = {
+					value = 4,
+					concealment = 1
+			}						
+			self.parts.wpn_fps_shot_beck_ext.stats = {
+					value = 7,
+					concealment = -1,
+					extra_ammo = 2
+			}
+			self.parts.wpn_fps_shot_beck_shells.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 1
+			}			
+			self.wpn_fps_shot_beck.override = { 
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						recoil = -5,
+						concealment = -7,
+						spread_multi = {1, 1},	
+						total_ammo_mod = -62,
+						damage = 250
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
+				}
+			}
+		}
+		end					
 
 		if self.wpn_fps_shot_spas15 then -- Alcat's SPAS 15
 			self.parts.wpn_fps_shot_spas15_s_solid.stats = {
@@ -43424,7 +43473,38 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					recoil = 1,
 					spread_moving = -1,
 				}																			
-			end		
+			end
+
+		if self.wpn_fps_smg_car9 then 	--Gambyt's CAR 9
+			self.parts.wpn_fps_smg_car9_b_long.stats = {
+					value = 3,
+					spread = 1,
+					recoil = -2
+				}
+			self.parts.wpn_fps_smg_car9_m_extended.stats = {
+					value = 1,
+					extra_ammo = 10,
+					reload = -2,
+					concealment = -1
+				}
+			self.parts.wpn_fps_smg_car9_fg_rail.stats = {
+					value = 2,
+					spread = -1,
+					recoil = 1
+				}				
+			end
+
+		if self.wpn_fps_pis_smolak then --Gambyt's Draco Pistol
+			self.parts.wpn_fps_pis_smolak_m_custom.stats = {
+					value = 1,
+					concealment = 1
+				}
+			self.parts.wpn_fps_pis_smolak_fg_polymer.stats = {
+					value = 1,
+					concealment = 1
+				}				
+			end					
+			
 			
 		if self.wpn_fps_ass_g3m203 then -- Pawcio's G3/M203		
 				table.list_append(self.wpn_fps_ass_g3m203.uses_parts, {
@@ -46526,7 +46606,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = 1,
 				concealment = -2
-			}								
+			}
+			self.parts.wpn_fps_smg_cobray_body_upper_long.stats = {
+				value = 1,
+				spread = 1,
+				concealment = -2
+			}											
 			self.parts.wpn_fps_pis_chinchilla_cylinder_smooth.stats = {
 				value = 2,
 				concealment = 1				
@@ -46778,6 +46863,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = 1,	
 				concealment = -1
+			}
+			self.parts.wpn_fps_ass_m4_g_fancy.stats = {
+				value = 1,
+				recoil = 1	
+			}					
+			self.parts.wpn_fps_ass_m16_fg_smooth.stats = {
+				value = 5,
+				spread_moving = -1,
+				concealment = 1,
+				spread = 1
 			}		
 			self.parts.wpn_fps_ass_flint_s_solid.stats = {
 				value = 1,
@@ -46870,6 +46965,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				spread = -1, 
 				concealment = -1
 			}
+			self.parts.wpn_fps_smg_ak5s_m_new.stats = {
+				value = 1,
+				reload = 1,
+				spread = -1, 
+				concealment = -1
+			}			
 			self.parts.wpn_fps_smg_ak5s_nostock.stats = {
 				value = 1,
 				recoil = -2,

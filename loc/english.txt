@@ -170,6 +170,7 @@
 	"restoration_level_data_arm_und" : "8:15 PM, Underpass",
 	"restoration_level_data_arm_for" : "12:25 PM, Armadillo Train",
 	"restoration_level_data_family" : "11:25 AM, Gioelli di Famiglia",
+	"restoration_level_data_family_res" : "11:25 AM, Gioelli di Famiglia",
 	"restoration_level_data_big" : "2:15 PM, Benevolent Bank",
 	"restoration_level_data_big_res" : "2:15 PM, Benevolent Bank",
 	"restoration_level_data_roberts" : "8:47 AM, Robert's Bank of Savings & Trust",

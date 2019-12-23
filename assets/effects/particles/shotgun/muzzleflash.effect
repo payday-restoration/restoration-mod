@@ -105,4 +105,61 @@
             </billboard>
         </visualizerstack>
     </atom>
+    <atom name="smoke base" min_size="5" max_size="5" lifetime=".5" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomvelocity relative="effect" min="-150 500 -150" max="150 400 150"/>
+            <boxrandomrotation relative="effect" min="1 1 0" max="1 1 1" min_rot="0365" max_rot="0"/>
+            <boxrandomaspectsize size="40 40" min="1" max="1.2"/>
+            <boxrandomposition relative="effect" min="0 -32 0" max="0 -25 0"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0.0625" primary_step_direction="+x" secondary_step_direction="+y" num_frames="3"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomanglevelocity min="4" max="-4"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <anglevelocityintegrator/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 0.5" per_particle_age="false" size_input="scaled_channel" color_input="constant" color="152 138 120.00000762939" opacity_input="keys" rotation_input="channel" rotation_axis="1 0 5" uv_size="0.25 0.25" uv_offset_input="constant" uv_offset="0.75 0.5">               
+                <size_scale_keys loop="false">
+                    <key t="0" v="1 1"/>
+                    <key t="0.41308090090752" v="3 3"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="50"/>
+                    <key t="0.26506024599075" v="40"/>
+                    <key t="0.44406196475029" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="smoke base0" min_size="4" max_size="4" lifetime="0.4" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomvelocity relative="effect" min="0 600 25" max="0 500 25"/>
+            <boxrandomrotation relative="effect" min="1 1 0" max="1 1 1" min_rot="0365" max_rot="0"/>
+            <boxrandomaspectsize size="40 40" min="1" max="1.2"/>
+            <boxrandomposition relative="effect" min="0 -32 0" max="0 -25 0"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0.0625" primary_step_direction="+x" secondary_step_direction="+y" num_frames="3"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 0.5" per_particle_age="false" size_input="scaled_channel" color_input="constant" color="152 138 120.00000762939" opacity_input="keys" rotation_input="channel" rotation_axis="1 0 5" uv_size="0.25 0.25" uv_offset_input="constant" uv_offset="0.75 0.5">               
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.80000001192093 0.80000001192093"/>
+                    <key t="0.39931198954582" v="2 2"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="50"/>
+                    <key t="0.26506024599075" v="40"/>
+                    <key t="0.44406196475029" v="0"/>
+                </opacity_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="2"/>
+                    <key t="1.209876537323" v="0"/>
+                </rotation_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
 </effect>

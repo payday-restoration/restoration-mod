@@ -13,7 +13,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="weekend_dmr" />
-			<var name="_default_weapon_id" value="heavy_zeal_sniper" />
+			<var name="_default_weapon_id" value="bravo_dmr" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

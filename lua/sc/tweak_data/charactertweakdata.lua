@@ -11773,7 +11773,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"s553_zeal",
 			"lmg_titan",
 			"x_mini_npc",
-			"x_raging_bull_npc"			
+			"x_raging_bull_npc",
+			"bravo_rifle",
+			"bravo_shotgun",
+			"bravo_lmg",
+			"bravo_dmr"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11826,7 +11830,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"),
 			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
-			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc")			
+			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
+			Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
+			Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
+			Idstring("units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249"),
+			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 		}
 	end
 

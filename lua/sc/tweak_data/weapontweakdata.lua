@@ -11992,6 +11992,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.beck.rays = 9
 		self.beck.timers = {
 			shotgun_reload_enter = 0.4,
+			shotgun_reload_exit_empty = 1.3,
+			shotgun_reload_exit_not_empty = 1,
 			shotgun_reload_shell = 0.6666667,
 			shotgun_reload_first_shell_offset = 0.33666667,
 			unequip = 0.5,

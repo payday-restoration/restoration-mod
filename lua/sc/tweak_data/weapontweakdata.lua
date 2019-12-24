@@ -12071,8 +12071,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.smolak.use_data.selection_index = 2
 		self.smolak.tactical_reload = 1
 		self.smolak.categories = {"pistol"}		
-		self.smolak.AMMO_MAX = 150
-		self.smolak.AMMO_PICKUP = self:_pickup_chance(150, 2)
+		self.smolak.AMMO_MAX = 80
+		self.smolak.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.smolak.fire_mode_data.fire_rate = 0.0923076923
 		self.smolak.auto.fire_rate = 0.0923076923
 		self.smolak.spread.standing = 3
@@ -12083,7 +12083,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.smolak.spread.moving_steelsight = 2
 		self.smolak.panic_suppression_chance = 0.0
 		self.smolak.stats = {
-			damage = 40,
+			damage = 75,
 			spread = 16,
 			recoil = 18,
 			spread_moving = 9,

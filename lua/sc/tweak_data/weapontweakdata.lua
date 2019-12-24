@@ -1314,7 +1314,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
 		self.hk23_sc_npc.DAMAGE = 2.2
 		self.hk23_sc_npc.auto.fire_rate = 0.08
-		self.hk23_sc_npc.CLIP_AMMO_MAX = 50		
+		self.hk23_sc_npc.CLIP_AMMO_MAX = 50	
+
+		--Bravo LMG--
+		self.m249_bravo_npc = deep_clone(self.hk23_sc_npc)	
+		self.m249_bravo_npc.sounds.prefix = "m249_npc"
 	end
 
 	function WeaponTweakData:_init_data_contraband_npc()
@@ -13640,7 +13644,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			sounds = {},
 			use_data = {},
 			auto = {}
-		}		
+		}	
+		self.m249_bravo_npc = {
+			usage = "is_lmg",
+			anim_usage = "is_rifle",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}			
 		self.hk21_sc_npc = {
 			usage = "is_lmg",
 			anim_usage = "is_rifle",

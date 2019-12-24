@@ -10,8 +10,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		if Global.game_settings and Global.game_settings.one_down then
 		
-			--H&T Bank Heist (all versions)--
-			if id == "pln_branchbank_stage1_08" or id == "pln_branchbank_stage1_13" or id == "pln_branchbank_stage1_44" or id == "pln_branchbank_stage1_29" then
+			--Big Oil Day 1--
+			if id == "pln_bo1_05" then
+				if difficulty_index <= 2 then
+					escape_time = 390
+				elseif difficulty_index == 3 then
+					escape_time = 360
+				elseif difficulty_index == 4 then
+					escape_time = 330
+				elseif difficulty_index == 5 then
+					escape_time = 300	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 270						
+				else
+					escape_time = 240
+				end	
+			end	
+		
+			--Big Oil Day 2--
+			if id == "pln_bo2_36" then
+				if difficulty_index <= 2 then
+					escape_time = 1200 
+				elseif difficulty_index == 3 then
+					escape_time = 1170
+				elseif difficulty_index == 4 then
+					escape_time = 1140
+				elseif difficulty_index == 5 then
+					escape_time = 1080	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 1080						
+				else
+					escape_time = 1050
+				end
+			end	
+		
+			--Bank Heist: Cash--
+			if id == "Play_pln_branchbank_stage1_13" then
 				if difficulty_index <= 2 then
 					escape_time = 450
 				elseif difficulty_index == 3 then

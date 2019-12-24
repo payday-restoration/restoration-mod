@@ -69,6 +69,8 @@ function restoration:Init()
 		"hntn" --harvest and trustee north
 	}
 	restoration.tiny_levels = {
+		"welcome_to_the_jungle_2",
+		"election_day_2",
 		"peta",
 		"rvd2",
 		"brb",

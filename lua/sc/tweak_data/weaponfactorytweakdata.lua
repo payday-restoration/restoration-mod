@@ -47078,6 +47078,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -1
 				}			
 			end
+	
+		if self.parts.wpn_fps_ass_komodo_o_tele then --Alcat's F2000 Sight
+			self.parts.wpn_fps_ass_komodo_o_tele.stats = {
+				value = 1,
+				concealment = -3
+				}			
+			end	
 
 		if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
 			self.parts.wpn_fps_upg_o_snp_m4flipup_rear.stats = {

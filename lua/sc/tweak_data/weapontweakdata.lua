@@ -3306,7 +3306,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			if weap.CAN_TOGGLE_FIREMODE then
 				weap.BURST_FIRE = false
 			end
-		end			
+		end	
+
+		--No more upgrade blocks!
+		for i, weap in pairs(self) do
+			if weap.upgrade_blocks then
+				weap.upgrade_blocks = nil
+			end
+		end				
 
 		self.new_m4.desc_id = "bm_menu_sc_m4_desc"
 		self.new_m4.AMMO_MAX = 150
@@ -6839,11 +6846,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 11
 		}
-		self.rota.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}
+		self.rota.upgrade_blocks = nil
 		self.rota.AMMO_MAX = 60
 		self.rota.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.rota.rays = 9
@@ -8425,11 +8428,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.animations.reload_name_id = "x_chinchilla"
 		self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
 		self.x_judge.animations.second_gun_versions.reload = "reload"		
-		self.x_rota.upgrade_blocks = {
-			weapon = {
-				"clip_ammo_increase"
-			}
-		}
+		self.x_rota.upgrade_blocks = nil
 		self.x_rota.AMMO_MAX = 80
 		self.x_rota.AMMO_PICKUP = self:_pickup_chance(80, 2)
 		self.x_rota.rays = 9
@@ -8797,7 +8796,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"pistol",
 				"revolver"
 			},
-			upgrade_blocks = {weapon = {"clip_ammo_increase"}},
+			upgrade_blocks = nil,
 			damage_melee = 3,
 			damage_melee_effect_mul = 1,
 			sounds = {}

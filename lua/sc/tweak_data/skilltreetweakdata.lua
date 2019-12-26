@@ -942,15 +942,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {9, 5},
 				[1] = {
 					upgrades = {
-						"sentry_gun_quantity_1"
+						"sentry_gun_ap_bullets",
+						"sentry_gun_damage_multiplier",
+						"sentry_gun_fire_rate_reduction_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_ap_bullets",
-						"sentry_gun_damage_multiplier",
-						"sentry_gun_fire_rate_reduction_1"
+						"sentry_gun_quantity_1"
 					},
 					cost = self.costs.hightierpro
 				}

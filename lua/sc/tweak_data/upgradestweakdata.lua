@@ -326,7 +326,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.smg.damage_multiplier = {1}
 				
 				--Shock and Awe
-				self.values.weapon.clip_ammo_increase = {1.3, 1.5}
+				self.values.weapon.clip_ammo_increase = {1.2, 1.5}
 
 				--Heavy Impact
 				self.values.weapon.knock_down = {0.1, 0.25}
@@ -471,7 +471,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.second_deployable = {true}
 				self.values.player.second_deployable_full = {true}
 	
-				--Tower Defence
+				--Tower Defense
 				self.values.sentry_gun.quantity = {1, 2}
 				self.skill_descs.tower_defense = { 
 					[1] = 1, 
@@ -482,7 +482,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.sentry_gun.less_noisy = {true}
 				self.values.sentry_gun.ap_bullets = {true}
 				self.values.sentry_gun.fire_rate_reduction = {4}
-				self.values.sentry_gun.damage_multiplier = {1.5}	
+				self.values.sentry_gun.damage_multiplier = {0.5}	
 
 				--Bulletproof
 				self.values.player.armor_multiplier = {1.2, 1.5}

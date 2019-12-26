@@ -7573,6 +7573,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			special_type = "shield",
 			is_captain = true
 		}
+		--New Winters Minions
 		self.unit_categories.Phalanx_minion_new = {
 			unit_types = {
 				america = {
@@ -7595,7 +7596,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}				
 			},
 			access = access_type_all
-		}		
+		}
+		--New Winters
 		self.unit_categories.Phalanx_vip_new = {
 			unit_types = {
 				america = {
@@ -8252,8 +8254,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			    "hitnrun"
 			},
 			Cap_winters = {
-				"aggressor", --Placeholder, pls edit
-				"murder"
+				"obstacle",
+				"elite_ranged_fire",
+				"hitnrun",
+				"spoocavoidance",
+				"reloadingretreat",
+				"shield"
+			},	
+			Cap_winters_minion = {
+				"obstacle",
+				"elite_ranged_fire",
+				"hitnrun",
+				"spoocavoidance",
+				"reloadingretreat",
+				"shield_cover"
 			},			
 			--hunter hrt tactics
 			HRT_attack = {
@@ -9776,7 +9790,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 4,
 						amount_max = 4,
-						tactics = self._tactics.Cap_winters,
+						tactics = self._tactics.Cap_winters_minion,
 						rank = 2
 					}					
 				}
@@ -9798,7 +9812,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 6,
 						amount_max = 6,
-						tactics = self._tactics.Cap_winters,
+						tactics = self._tactics.Cap_winters_minion,
 						rank = 2
 					}					
 				}
@@ -11800,7 +11814,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			0,
 			0
 		}
-		--Captain stuff here--
+		--Captain Autumn stuff here--
 		for _,v in pairs(restoration.captain_stelf) do
 			if job == v then
 				if difficulty_index <= 3 then
@@ -11831,7 +11845,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				break
 			end
 		end		
-		--Captain stuff here--
+		--Captain Summers stuff here--
 		for _,v in pairs(restoration.captain_teamwork) do
 			if job == v then
 				if difficulty_index <= 3 then
@@ -11862,7 +11876,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				break
 			end
 		end
-		--Captain stuff here--
+		--Captain Spring stuff here--
 		for _,v in pairs(restoration.captain_murderdozer) do
 			if job == v then
 				if difficulty_index <= 3 then
@@ -11893,6 +11907,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				break
 			end
 		end
+		--Captain Winters stuff here--
+		for _,v in pairs(restoration.captain_camper) do
+			if job == v then
+				if difficulty_index <= 3 then
+					self.besiege.assault.groups.Cap_Winters = {
+						0,
+						0,
+						0
+					}
+				elseif difficulty_index == 4 then
+					self.besiege.assault.groups.Cap_Winters = {
+						0.05,
+						0.05,
+						0.05
+					}
+				elseif difficulty_index == 5 then
+					self.besiege.assault.groups.Cap_Winters = {
+						0.05,
+						0.05,
+						0.05
+					}
+				else
+					self.besiege.assault.groups.Cap_Winters = {
+						0.05,
+						0.05,
+						0.05
+					}
+				end
+				break
+			end
+		end		
 		self.besiege.reenforce.interval = {
 			10,
 			20,

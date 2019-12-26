@@ -5,34 +5,31 @@ end
 
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
-	restoration.disable_captain_camper = {
-		--///BASE LEVELS\\\--
-		"pbr2",
-		"born",
-		"nail",
-		"peta",
-		"skm_mus",
-		"skm_red2",
-		"skm_run",
-		"skm_watchdogs_stage2",
-		"crojob2",
-		"mus",
-		"big",
-		"wwh",
-		"pines",
-		"hox_3",
-		"framing_frame_1",
-		--///CUSTOM HEISTS\\\--
-		"hardware_store", 
-		"office_strike",
-		"spa_CD",
-		--///REX'S HOLDOUT LEVELS\\\--
-		"skmc_mad",
-		"skmc_fish",
-		"skmc_ovengrill",
-		--///RESTORATION EDITS\\\--
-		"firestarter_2_res"
-	}
+	restoration.captain_camper = {
+		"arena", --Alesso
+		"welcome_to_the_jungle_1", --Big Oil Day 1
+		"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
+		"welcome_to_the_jungle_2", --Big Oil Day 2
+		"election_day_1", --Election Day 1
+		"election_day_2", --Election Day 2
+		"election_day_3", --Election Day 3
+		"election_day_3_skip1", --Election Day 3 (Skipped 1)
+		"election_day_3_skip2", --Election Day 3 (Skipped 2)
+		"firestarter_1", --Firestarter Day 1
+		"mia_1", --Hotline Day 1
+		"hox_2", --Hoxout Day 2
+		"jewelry_store", --Jewelry Store
+		"alex_1", --Rats Day 1
+		"dinner", --Slaughterhouse
+		"moon", --Stealing Xmas
+		"ukrainian_job", --Ukrainian Job
+		"watchdogs_1", --Watchdogs Day 1
+		"watchdogs_1_night", --Watchdogs Day 1 Night
+		--Custom Heists--
+		"firestarter_1_res", --Firestarter Day 1 res edit version
+		"alex_1_res", --Rats Day 1 res edit version
+		"ukrainian_job_res", --Ukrainian Job res edit version
+	}		
 	restoration.captain_teamwork = {
 		"pal", --counterfeit 
 		"crojob2", --bomb dockyard
@@ -96,6 +93,7 @@ function restoration:Init()
 		"arm_par",
 		"arm_und",
 		"arm_for",
+		"arena",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",

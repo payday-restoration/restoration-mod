@@ -497,6 +497,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"tank_mini",
 					"spooc",
 					"shield",
+					"phalanx_minion",
+					"phalanx_minion_assault",
 					"taser",
 					"boom",
 					"rboom"

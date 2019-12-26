@@ -99,6 +99,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_extra_ammo_multiplier_1",	
 		"sentry_gun_silent",
 		"pistol_swap_speed_multiplier_1",
+		"player_civ_calming_alerts",
 		"x_p226",
 		"x_m45",
 		"x_mp7",
@@ -262,15 +263,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 8},
 				[1] = {
 					upgrades = {
-						"player_intimidate_range_mul",
-						"player_intimidate_aura"
+						"player_civ_intimidation_mul"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_civ_calming_alerts",
-						"player_civ_intimidation_mul"
+						"player_intimidate_range_mul",
+						"player_intimidate_aura"						
 					},
 					cost = self.costs.pro
 				}

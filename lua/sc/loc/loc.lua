@@ -393,7 +393,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
 	
 		--Woo Hints--
-		["loading_gameplay_118"] = "Cable Ties are a finite resource, make the most of them.",
+		["loading_gameplay_118"] = "You have a 25% chance to pick up cable ties from ammo boxes, make the most of them!",
 		["loading_gameplay_12"] = "Know your enemy. Cloakers have distinct green, glowing night vision goggles on, and are completely silent. Check your corners and maintain vigilance!",
 		
 		["loading_sc_tip_title"] = "SC's Mod Tips",
@@ -579,11 +579,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "Cable Guy",
-			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nYou gain a ##10%## chance to pick up cable ties from ammo boxes.\n\nIncreases your maximum cable ties by ##3.##",																								
+			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nYour chance to pick up cable ties from ammo boxes is increased to ##50%.##\n\nIncreases your maximum cable ties by ##3.##",																								
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "Clowns are Scary",
-			["menu_cable_guy_beta_desc_sc"] = "BASIC: ##$basic##\nThe power and range of your intimidation is increased by ##50%.##\n\nACE: ##$pro##\nCivilians are intimidated by the noise you make and remain intimidated ##50%## longer.",																								
+			["menu_cable_guy_beta_desc_sc"] = "BASIC: ##$basic##\nCivilians remain intimidated ##50%## longer.\n\nACE: ##$pro##\nThe power and range of your intimidation is increased by ##50%.##",																								
 
 			--Stockholm Syndrome	
 			["menu_joker_beta_sc"] = "Stockholm Syndrome",

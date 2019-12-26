@@ -39,35 +39,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	}
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-	if difficulty_index == 4 then
+	if Global.game_settings and Global.game_settings.one_down then
 		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-		    Cap_Autumn = 900
-		}
-	elseif difficulty_index == 5 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
-		}
-	elseif difficulty_index == 6 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
-		}
-	elseif difficulty_index == 7 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
-		}
-	elseif difficulty_index == 8 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
+			Cap_Spring = 1800,
+			Cap_Summers = 1800,
+		    Cap_Autumn = 600
 		}
 	else
 		group_cooldowns = {

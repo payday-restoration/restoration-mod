@@ -44,7 +44,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end	
 		
-	                --H&T Bank Heist (all versions)--
+	        --H&T Bank Heist (all versions)--
 			if id == "pln_branchbank_stage1_08" or id == "pln_branchbank_stage1_13" or id == "pln_branchbank_stage1_44" or id == "pln_branchbank_stage1_29" then
 				if difficulty_index <= 2 then
 					escape_time = 450
@@ -60,6 +60,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					escape_time = 300
 				end
 			end		
+			
+			--Hoxton Revenge--
+			if id == "Play_pln_hb3_42" then
+				if difficulty_index <= 2 then
+					escape_time = 570
+				elseif difficulty_index == 3 then
+					escape_time = 540
+				elseif difficulty_index == 4 then
+					escape_time = 510
+				elseif difficulty_index == 5 then
+					escape_time = 480	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 450						
+				else
+					escape_time = 420
+				end			
+			end	
 			
 			--Hoxton Breakout Day 2--
 			if id == "Play_pln_hb2_19" then

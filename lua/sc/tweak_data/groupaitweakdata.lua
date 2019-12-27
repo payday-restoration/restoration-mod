@@ -9049,7 +9049,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.MH_swat_rifle,
 						rank = 1
 					}
 				}
@@ -9084,7 +9084,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 0.7,
 						amount_min = 0,
 						amount_max = 1,
-						tactics = self._tactics.FBI_swat_rifle,
+						tactics = self._tactics.DW_swat_rifle,
 						rank = 1
 					}
 				}

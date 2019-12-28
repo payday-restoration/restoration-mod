@@ -1,0 +1,6 @@
+<unit type="com" slot="1" >
+    <object file="units/payday2/props/str_prop_street_scaffolding/str_prop_street_scaffolding" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

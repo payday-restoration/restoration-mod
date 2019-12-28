@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="man" slot="1">
+  <object file="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

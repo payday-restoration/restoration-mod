@@ -1,0 +1,122 @@
+<dynamic_object>
+	<diesel orientation_object="rp_bnk_vehicle_truck_police_anim_1" materials="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" />
+	<sequence_manager file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" />
+
+	<animations>
+		<animation_group name="anim" enabled="false">
+			<object name="anim_car" />
+			<object name="anim_body" />
+			<object name="anim_wheel_rear" />
+			<object name="anim_wheel_right" />
+			<object name="anim_wheel_left" />
+		</animation_group>
+
+		<animation_group name="ag_door_left" enabled="false">
+				<object name="anim_door_left" />
+		</animation_group>
+
+		<animation_group name="ag_door_right" enabled="false">
+				<object name="anim_door_right" />
+		</animation_group>
+
+		<animation_group name="ag_lid_top" enabled="false">
+				<object name="anim_lid_top" />
+		</animation_group>
+	</animations>
+
+	<bodies>
+		<!-- Body & Wheels Bodies -->
+		<body name="body_body" enabled="true" template="animated">
+			<object name="anim_body" />
+			<object name="c_body" 		collision_type="mesh_mopp" padding="-2" />
+		</body>
+
+		<body name="body_left_door" enabled="true" template="animated">
+			<object name="anim_door_left" />
+			<object name="c_left_door" collision_type="box" padding="-2" />
+		</body>
+
+		<body name="body_right_door" enabled="true" template="animated">
+			<object name="anim_door_right" />
+			<object name="c_right_door" collision_type="box" padding="-2" />
+		</body>
+
+		<body name="body_top_door" enabled="true" template="animated">
+			<object name="anim_lid_top" />
+			<object name="c_top_door" collision_type="mesh_mopp" padding="-2" />
+		</body>
+
+		<body name="body_wheel_rear" enabled="true" template="animated">
+			<object name="anim_wheel_rear" />
+			<object name="c_wheel_rear" collision_type="mesh_mopp" padding="-2" />
+		</body>
+
+		<body name="body_wheel_right" enabled="true" template="animated">
+			<object name="anim_wheel_right" />
+			<object name="c_wheel_right" collision_type="mesh_mopp" padding="-2" />
+		</body>
+
+		<body name="body_wheel_left" enabled="true" template="animated">
+			<object name="anim_wheel_left" />
+			<object name="c_wheel_left" collision_type="mesh_mopp" padding="-2" />
+		</body>
+
+		<!-- Other Bodies -->
+		<body name="blocker_mover" enabled="true" template="mover_blocker" keyframed="true" >
+			<object name="c_player_nono" collision_type="box" />
+		</body>
+		<body name="blocker_mover_more" enabled="true" template="mover_blocker" keyframed="true" >
+			<object name="anim_body" />
+			<object name="c_box_mover_blocker" collision_type="box" />
+		</body>
+
+		<body name="body_blocker_graph" enabled="true" template="graph_blocker">
+			<object name="c_graph_blocker" collision_type="box" padding="25" />
+		</body>
+
+		<body name="body_anim_blocker" enabled="true" template="mover_blocker" keyframed="true">
+			<object name="anim_body" />
+			<object name="c_box_point" 	collision_type="box" />
+			<object name="c_box" 		collision_type="box" />
+		</body>
+
+		<body name="bag_blocker" enabled="true" template="fence" collision_class="bag_blocker" keyframed="true">
+			<object name="c_box_bag_blocker" collision_type="box" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel">
+		<decal_mesh name="g_body" 			enabled="true" material="steel" />
+		<decal_mesh name="g_left_door" 		enabled="true" material="steel" />
+		<decal_mesh name="g_right_door" 	enabled="true" material="steel" />
+		<decal_mesh name="g_top_door" 		enabled="true" material="steel" />
+		<decal_mesh name="g_wheel_rear" 	enabled="true" material="rubber" />
+		<decal_mesh name="g_wheel_right" 	enabled="true" material="rubber" />
+		<decal_mesh name="g_wheel_left" 	enabled="true" material="rubber" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_vehicle_truck_police" enabled="true" culling_object="c_cull">
+			<object name="g_body" 				enabled="true" shadow_caster="false" />
+			<object name="g_left_door" 			enabled="true" shadow_caster="false" />
+			<object name="g_right_door" 		enabled="true" shadow_caster="false" />
+			<object name="g_top_door" 			enabled="true" shadow_caster="false" />
+
+			<object name="g_net" 				enabled="true" shadow_caster="false" />
+			<object name="g_left_door_net" 		enabled="true" shadow_caster="false" />
+			<object name="g_right_door_net" 	enabled="true" shadow_caster="false" />
+
+			<object name="g_wheel_rear" 		enabled="true" shadow_caster="false" />
+			<object name="g_wheel_right" 		enabled="true" shadow_caster="false" />
+			<object name="g_wheel_left" 		enabled="true" shadow_caster="false" />
+
+			<object name="s_body" 				enabled="true" shadow_caster="true" />
+			<object name="s_left_door" 			enabled="true" shadow_caster="true" />
+			<object name="s_right_door" 		enabled="true" shadow_caster="true" />
+			<object name="s_top_door" 			enabled="true" shadow_caster="true" />
+			<object name="s_wheel_rear" 		enabled="true" shadow_caster="true" />
+			<object name="s_wheel_right" 		enabled="true" shadow_caster="true" />
+			<object name="s_wheel_left" 		enabled="true" shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

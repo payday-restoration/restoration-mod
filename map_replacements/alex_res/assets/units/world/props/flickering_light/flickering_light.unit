@@ -1,0 +1,17 @@
+<unit type="hsp" slot="1" >
+	<network sync="spawn"/>
+    <object file="units/world/props/flickering_light/flickering_light" />
+    <dependencies>
+    	<depends_on bnk="soundbanks/regular_sfx" />
+    </dependencies>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" >
+            <var value="true" name="only_visible_in_editor" />
+        </extension>
+        <extension class="UnitDamage" name="damage" />
+	    <extension name="sync_unit_data" class="SyncUnitData" />
+    </extensions>
+    <sounds>
+    	<soundsource name="snd" source="rp_flickering_light" />
+    </sounds>
+</unit>

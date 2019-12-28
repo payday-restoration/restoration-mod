@@ -1,0 +1,27 @@
+<dynamic_object>
+	<diesel materials="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" orientation_object="rp_spawn_turret_debris" />
+	<bodies>
+		<body name="body_debris" enabled="true" template="debris" collides_with_mover="false"  collides_with_wheels="false">
+			<object name="c_convex" collision_type="convex" mass="250"/>
+		</body>
+		<body name="base_left_debris" enabled="true" template="debris" collides_with_mover="false"  collides_with_wheels="false">
+			<object name="c_convex_l" collision_type="convex" mass="250"/>
+		</body>
+		<body name="base_right_debris" enabled="true" template="debris" collides_with_mover="false"  collides_with_wheels="false">
+			<object name="c_convex_r" collision_type="convex" mass="250"/>
+		</body>
+		<body name="shield_left_debris" enabled="true" template="debris" collides_with_mover="false"  collides_with_wheels="false">
+			<object name="c_convex_s_l" collision_type="convex" mass="250"/>
+		</body>
+		<body name="shield_right_debris" enabled="true" template="debris" collides_with_mover="false"  collides_with_wheels="false">
+			<object name="c_convex_s_r" collision_type="convex" mass="250"/>
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="g_l" enabled="true" />
+		<object name="g_r" enabled="true" />
+		<object name="g_s_r" enabled="true" />
+		<object name="g_s_l" enabled="true" />
+	</graphics>
+</dynamic_object>

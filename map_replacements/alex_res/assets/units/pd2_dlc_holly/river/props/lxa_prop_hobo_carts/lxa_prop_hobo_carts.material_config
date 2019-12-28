@@ -1,0 +1,23 @@
+<materials version="3">
+    <material name="mat_cart" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_df"/>
+        <bump_normal_texture file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_nm"/>
+        <variable value="0.053000003099442" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="mat_cart_lod" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture mip="4" file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_df"/>
+        <bump_normal_texture mip="4" file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_nm"/>
+        <variable value="0" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="mat_props" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_props_df"/>
+        <bump_normal_texture file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_props_nm"/>
+        <variable value="0.0050000003539026" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="mat_props_lod" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture mip="4" file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_props_df"/>
+        <bump_normal_texture mip="4" file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_props_nm"/>
+        <variable value="0" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

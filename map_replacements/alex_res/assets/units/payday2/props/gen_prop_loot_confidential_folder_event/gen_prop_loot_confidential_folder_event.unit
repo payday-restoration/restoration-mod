@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<network sync="spawn"/>
+	<object file="units/payday2/props/gen_prop_loot_confidential_folder_event/gen_prop_loot_confidential_folder_event" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="take_confidential_folder_event" />
+			<var name="_global_event" value="pku_folder" />
+		</extension>
+	</extensions>
+</unit>

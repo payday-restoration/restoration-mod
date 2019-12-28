@@ -46473,22 +46473,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					}																
 				self.parts.wpn_fps_pis_sw659_g_cherry.stats = {
 						value = 1
-					]
+					}
 				self.parts.wpn_fps_pis_sw659_g_pearl.stats = {
 						value = 1
-					]			
+					}			
 				self.parts.wpn_fps_pis_sw659_g_wood.stats = {
 						value = 1
-					]			
+					}			
 				self.parts.wpn_fps_pis_sw659_g_special.stats = {
 						value = 1
-					]
+					}
 				self.parts.wpn_fps_pis_sw659_mag_big.stats = {
 						value = 2,
 						concealment = -1,
 						extra_ammo = 8,
 						reload = -2
-					]
+					}
 				self.parts.wpn_fps_pis_sw659_mag_verybig.stats = {
 						value = 2,
 						concealment = -2,
@@ -46496,7 +46496,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						spread = -1,
 						recoil = 1,
 						reload = -2
-					]													
+					}													
 				self.parts.wpn_fps_pis_sw659_slide_long.stats = {
 						value = 2,
 						spread = 1,

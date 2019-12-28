@@ -3218,12 +3218,48 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			1.14,
 			1.15			
 		}
-		self.stats.reload = {}
-		for i = 5, 20, 0.5 do
-			if i <= 10 or i == math.floor(i) then
-				table.insert(self.stats.reload, i / 10)
-			end
-		end
+		self.stats.reload = {
+			0.05,
+			0.1,
+			0.15,
+			0.2,
+			0.25,
+			0.3,
+			0.35,
+			0.4,
+			0.45,
+			0.5,
+			0.55,
+			0.6,
+			0.65,
+			0.7,
+			0.75,
+			0.8,
+			0.85,
+			0.9,
+			0.95,
+			1,
+			1.05,
+			1.1,
+			1.15,
+			1.2,
+			1.25,
+			1.3,
+			1.35,
+			1.4,
+			1.45,
+			1.5,
+			1.55,
+			1.6,
+			1.65,
+			1.7,
+			1.75,
+			1.8,
+			1.85,
+			1.9,
+			1.95,
+			2
+		}		
 		
 		self.spread = {
 			dispersion = 1.0
@@ -3289,6 +3325,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 		end
 		
+		for i, weap in pairs(self) do
+			if weap.stats and weap.stats.reload then
+				weap.stats.reload = 20
+			end
+		end		
+		
 		--Test to just give everything sniper auto hit cause reasons
 		for i, weap in pairs(self) do
 			if weap.autohit then
@@ -3345,7 +3387,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.new_m4.timers.reload_empty = 3.5		
 		self.new_m4.panic_suppression_chance = 0.0
@@ -3381,7 +3423,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.glock_17.panic_suppression_chance = 0.0
 		self.mp9.desc_id = "bm_menu_sc_mp9_desc"
@@ -3411,7 +3453,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mp9.panic_suppression_chance = 0.05
 		self.r870.desc_id = "bm_menu_sc_r870_desc"
@@ -3445,7 +3487,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.r870.stats_modifiers = {damage = 1}
 		self.r870.panic_suppression_chance = 0.0
@@ -3476,7 +3518,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.glock_18c.panic_suppression_chance = 0.0
 		self.amcar.desc_id = "bm_menu_sc_amcar_desc"
@@ -3506,7 +3548,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.amcar.timers.reload_not_empty = 2.10
 		self.amcar.timers.reload_empty = 2.9 		
@@ -3537,7 +3579,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.m16.panic_suppression_chance = 0.0
 		self.olympic.desc_id = "bm_menu_sc_olympic_desc"
@@ -3571,7 +3613,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ak74.desc_id = "bm_menu_sc_ak74_desc"
 		self.ak74.AMMO_MAX = 150
@@ -3599,7 +3641,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ak74.panic_suppression_chance = 0.0
 		self.akm.desc_id = "bm_menu_sc_akm_desc"
@@ -3625,7 +3667,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.akm.timers.reload_not_empty = 2
 		self.akm.panic_suppression_chance = 0.0
@@ -3653,7 +3695,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.akm_gold.panic_suppression_chance = 0.0
 		self.akmsu.categories = {
@@ -3682,7 +3724,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.akmsu.timers.reload_not_empty = 1.95 
 		self.akmsu.timers.reload_empty = 3.7 
@@ -3718,7 +3760,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.saiga.panic_suppression_chance = 0.0
 		self.ak5.spread.standing = 3
@@ -3744,7 +3786,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ak5.timers.reload_empty = 3.15
 		self.ak5.panic_suppression_chance = 0.0
@@ -3773,7 +3815,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.aug.timers.reload_empty = 3.4
 		self.aug.panic_suppression_chance = 0.0
@@ -3806,7 +3848,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.g36.timers.reload_not_empty = 2.4
 		self.g36.panic_suppression_chance = 0.0
@@ -3837,7 +3879,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.p90.panic_suppression_chance = 0.05
 		self.new_m14.CLIP_AMMO_MAX = 20
@@ -3866,7 +3908,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.new_m14.timers.reload_not_empty = 2.60
 		self.new_m14.panic_suppression_chance = 0.0
@@ -3898,7 +3940,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.deagle.panic_suppression_chance = 0.0
 		self.new_mp5.fire_mode_data.fire_rate = 0.075
@@ -3929,7 +3971,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.new_mp5.panic_suppression_chance = 0.05
 		self.colt_1911.fire_mode_data.fire_rate = 0.07692307692
@@ -3958,7 +4000,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.colt_1911.panic_suppression_chance = 0.0
 		self.mac10.CLIP_AMMO_MAX = 20
@@ -3987,7 +4029,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mac10.timers.reload_not_empty = 1.55
 		self.mac10.timers.reload_empty = 2.4	
@@ -4022,7 +4064,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.serbu.panic_suppression_chance = 0.0
 		self.huntsman.rays = 9
@@ -4070,7 +4112,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.huntsman.timers.reload_not_empty = 2.3
 		self.huntsman.timers.reload_empty = 2.3	
@@ -4101,7 +4143,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.b92fs.panic_suppression_chance = 0.0
 		self.new_raging_bull.fire_mode_data = {}
@@ -4131,7 +4173,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.new_raging_bull.timers.reload_not_empty = 2
 		self.new_raging_bull.timers.reload_empty = 2		
@@ -4167,7 +4209,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
-			reload = 11
+			reload = 20
 		}
 		self.saw.panic_suppression_chance = 0.0
 		self.saw_secondary.kick.standing = {
@@ -4201,7 +4243,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
-			reload = 11
+			reload = 20
 		}
 		self.saw_secondary.panic_suppression_chance = 0.0
 		self.usp.timers = {
@@ -4236,7 +4278,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.usp.panic_suppression_chance = 0.0
 		self.g22c.timers = {
@@ -4271,7 +4313,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.g22c.panic_suppression_chance = 0.0
 		self.judge.fire_mode_data = {}
@@ -4302,7 +4344,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.judge.panic_suppression_chance = 0.0
 		self.judge.stats_modifiers = {damage = 1}
@@ -4330,7 +4372,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
-			reload = 11
+			reload = 20
 		}
 		self.m45.timers.reload_not_empty = 2.8
 		self.m45.timers.reload_empty = 3.8		
@@ -4362,7 +4404,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.s552.timers.reload_not_empty = 1.7
 		self.s552.timers.reload_empty = 2.35	
@@ -4393,7 +4435,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ppk.timers.reload_not_empty = 1.45
 		self.ppk.timers.reload_empty = 2.2	
@@ -4423,7 +4465,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.mp7.timers.reload_not_empty = 1.75
 		self.mp7.timers.reload_empty = 2.4	
@@ -4451,7 +4493,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.scar.timers.reload_not_empty = 1.75
 		self.scar.panic_suppression_chance = 0.0
@@ -4481,7 +4523,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.p226.panic_suppression_chance = 0.0
 		self.hk21.categories = {
@@ -4515,7 +4557,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.m249.categories = {
 			"lmg",
@@ -4548,7 +4590,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.m249.timers.reload_not_empty = 5.5
 		self.m249.timers.reload_empty = 5.5	
@@ -4585,7 +4627,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.rpk.panic_suppression_chance = 0.055
 		self.m95.upgrade_blocks = nil
@@ -4615,7 +4657,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.m95.armor_piercing_chance = 1
 		self.m95.can_shoot_through_titan_shield = true
@@ -4652,7 +4694,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.msr.stats_modifiers = nil
 		self.msr.panic_suppression_chance = 0.0
@@ -4684,7 +4726,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.r93.armor_piercing_chance = 1
 		self.r93.stats_modifiers = {
@@ -4717,7 +4759,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.fal.panic_suppression_chance = 0.0
 		self.benelli.AMMO_MAX = 80
@@ -4751,7 +4793,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.benelli.panic_suppression_chance = 0.0
 		self.striker.rays = 9
@@ -4786,7 +4828,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.striker.panic_suppression_chance = 0.0
 		self.striker.timers.shotgun_reload_first_shell_offset = 0.4
@@ -4820,7 +4862,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ksg.panic_suppression_chance = 0.0
 		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
@@ -4849,7 +4891,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.gre_m79.panic_suppression_chance = 0.0
 		self.gre_m79.stats_modifiers = {damage = 10}
@@ -4879,7 +4921,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.g3.panic_suppression_chance = 0.0
 		self.galil.AMMO_MAX = 150
@@ -4911,7 +4953,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.galil.timers.reload_not_empty = 2.6
 		self.galil.timers.reload_empty = 3.9
@@ -4945,7 +4987,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.famas.timers.reload_not_empty = 2.6
 		self.famas.panic_suppression_chance = 0.0
@@ -4981,7 +5023,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.scorpion.timers.reload_not_empty = 1.95		
 		self.scorpion.panic_suppression_chance = 0.05
@@ -5016,7 +5058,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.tec9.panic_suppression_chance = 0.05
 		self.uzi.AMMO_MAX = 90
@@ -5049,7 +5091,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.uzi.panic_suppression_chance = 0.05
 		self.uzi.timers.reload_not_empty = 2.40
@@ -5080,7 +5122,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.jowi.panic_suppression_chance = 0.0
 		self.x_1911.spread.standing = 3
@@ -5110,7 +5152,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_1911.panic_suppression_chance = 0.0
 		self.x_b92fs.spread.standing = 3
@@ -5139,7 +5181,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_b92fs.panic_suppression_chance = 0.0
 		self.x_deagle.has_description = false
@@ -5174,7 +5216,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_deagle.panic_suppression_chance = 0.0
 		self.g26.AMMO_MAX = 135
@@ -5202,7 +5244,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.g26.panic_suppression_chance = 0.0
 		self.spas12.rays = 9
@@ -5237,7 +5279,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.spas12.panic_suppression_chance = 0.0
 		self.spas12.stats_modifiers = {damage = 1}
@@ -5269,7 +5311,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.mg42.timers.reload_not_empty = 6.25
 		self.mg42.timers.reload_empty = 6.25	
@@ -5304,7 +5346,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.c96.timers.reload_not_empty = 3.7
 		self.c96.panic_suppression_chance = 0.0
@@ -5336,7 +5378,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.sterling.panic_suppression_chance = 0.05
 		self.mosin.has_description = true
@@ -5366,7 +5408,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.mosin.stats_modifiers = {
 			damage = 1,
@@ -5403,7 +5445,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.m1928.timers.reload_not_empty = 3.3
 		self.m1928.panic_suppression_chance = 0.05
@@ -5438,7 +5480,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.l85a2.timers.reload_not_empty = 3
 		self.l85a2.timers.reload_empty = 4	
@@ -5471,7 +5513,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.vhs.timers.reload_empty = 4.6
 		self.vhs.panic_suppression_chance = 0.0
@@ -5504,7 +5546,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.hs2000.panic_suppression_chance = 0.0
 		self.m134.categories = {
@@ -5545,7 +5587,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		--She’s a gunshot bride
 		self.rpg7.spread.standing = 3
@@ -5575,7 +5617,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.rpg7.panic_suppression_chance = 0.0
 		self.rpg7.stats_modifiers = {damage = 3}
@@ -5610,7 +5652,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.cobray.panic_suppression_chance = 0.05
 		self.b682.rays = 9
@@ -5649,7 +5691,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.b682.panic_suppression_chance = 0.0
 		self.b682.stats_modifiers = {damage = 1}
@@ -5682,7 +5724,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_g22c.panic_suppression_chance = 0.0
 		self.x_g17.spread.standing = 3
@@ -5712,7 +5754,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_g17.panic_suppression_chance = 0.0
 		self.x_usp.spread.standing = 3
@@ -5742,7 +5784,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_usp.panic_suppression_chance = 0.0
 		self.flamethrower_mk2.categories = {
@@ -5797,7 +5839,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.flamethrower_mk2.panic_suppression_chance = 0.0
 		self.m32.spread.standing = 3
@@ -5824,7 +5866,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.m32.stats_modifiers = {damage = 10}
 		self.m32.panic_suppression_chance = 0.0
@@ -5856,7 +5898,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.aa12.panic_suppression_chance = 0.0
 		self.peacemaker.AMMO_MAX = 30
@@ -5883,7 +5925,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.peacemaker.panic_suppression_chance = 0.0
 		self.peacemaker.has_description = true
@@ -5927,7 +5969,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25		
 		self.winchester1874.stats_modifiers = nil
@@ -5959,7 +6001,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.plainsrider.panic_suppression_chance = 0.0
 		self.plainsrider.stats_modifiers = {damage = 2}
@@ -5991,7 +6033,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mateba.panic_suppression_chance = 0.0
 		self.asval.sounds.fire = "akm_fire_single"
@@ -6028,7 +6070,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.asval.panic_suppression_chance = 0.0
 		self.sub2000.categories = {"pistol"}
@@ -6070,7 +6112,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.sub2000.panic_suppression_chance = 0.0
 		self.wa2000.upgrade_blocks = nil
@@ -6104,7 +6146,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.wa2000.armor_piercing_chance = 1
 		self.wa2000.stats_modifiers = nil
@@ -6143,7 +6185,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.polymer.panic_suppression_chance = 0.05
 		self.hunter.has_description = true
@@ -6174,7 +6216,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.hunter.panic_suppression_chance = 0.0
 		self.hunter.stats_modifiers = {damage = 2}
@@ -6210,7 +6252,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.baka.panic_suppression_chance = 0.05
 		self.arblast.has_description = true
@@ -6240,7 +6282,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.arblast.timers.reload_not_empty = 3.05
 		self.arblast.timers.reload_empty = 3.05		
@@ -6273,7 +6315,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.frankish.timers.reload_not_empty = 1.6
 		self.frankish.timers.reload_empty = 1.6		
@@ -6307,7 +6349,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.long.stats_modifiers = {damage = 2}
 		self.par.categories = {
@@ -6344,7 +6386,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		--See you, Space Cowboy
 		self.sparrow.AMMO_MAX = 113
@@ -6373,7 +6415,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.sparrow.panic_suppression_chance = 0.0
 		self.model70.upgrade_blocks = nil
@@ -6403,7 +6445,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.model70.timers.reload_empty = 4.3	
 		self.model70.panic_suppression_chance = 0.0
@@ -6441,7 +6483,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.china.desc_id = "bm_40mm_weapon_sc_desc"
 		self.china.has_description = true
@@ -6470,7 +6512,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.china.panic_suppression_chance = 0.0
 		self.china.stats_modifiers = {damage = 10}
@@ -6502,7 +6544,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.sr2.timers.reload_not_empty = 2
 		self.sr2.panic_suppression_chance = 0.05
@@ -6532,7 +6574,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_sr2.panic_suppression_chance = 0.05
 		self.pl14.fire_mode_data.fire_rate = 0.07142857142
@@ -6561,7 +6603,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.pl14.panic_suppression_chance = 0.0
 		self.x_mp5.fire_mode_data.fire_rate = 0.075
@@ -6590,7 +6632,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_mp5.panic_suppression_chance = 0.05
 		self.x_mp5.timers.reload_not_empty = 1.95
@@ -6620,7 +6662,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_akmsu.timers.reload_not_empty = 2.75
 		self.x_akmsu.timers.reload_empty = 3.4		
@@ -6656,7 +6698,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.hajk.fire_mode_data.fire_rate = 0.075
 		self.hajk.auto.fire_rate = 0.075
@@ -6689,7 +6731,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.hajk.timers.reload_not_empty = 1.9 
 		self.hajk.timers.reload_empty = 3.4		
@@ -6724,7 +6766,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.boot.panic_suppression_chance = 0.0
 		self.boot.stats_modifiers = {damage = 1}
@@ -6754,7 +6796,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.schakal.fire_mode_data.fire_rate = 0.1
 		self.schakal.auto.fire_rate = 0.1
@@ -6785,7 +6827,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.desertfox.has_description = true
 		self.desertfox.desc_id = "bm_ap_weapon_sc_desc"
@@ -6815,7 +6857,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 10,
-			reload = 11
+			reload = 20
 		}
 		self.desertfox.stats_modifiers = {damage = 1}
 		self.x_packrat.AMMO_MAX = 180
@@ -6844,7 +6886,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.rota.upgrade_blocks = nil
 		self.rota.AMMO_MAX = 60
@@ -6877,7 +6919,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.arbiter.fire_mode_data.fire_rate = 1.5
 		self.arbiter.single.fire_rate = 1.5
@@ -6896,7 +6938,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.arbiter.stats_modifiers = {damage = 10}
 		self.arbiter.panic_suppression_chance = 0.0
@@ -6940,7 +6982,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.contraband_m203.spread.standing = 3
 		self.contraband_m203.spread.crouching = 2
@@ -6967,7 +7009,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.contraband_m203.stats_modifiers = {damage = 4}
 		self.ray.use_data.selection_index = 2
@@ -6999,7 +7041,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ray.panic_suppression_chance = 0.0
 		self.ray.stats_modifiers = {damage = 3}
@@ -7038,7 +7080,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.tti.armor_piercing_chance = 1
 		self.tti.stats_modifiers = {damage = 1}
@@ -7071,7 +7113,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.siltstone.stats_modifiers = nil
 		self.siltstone.panic_suppression_chance = 0.0
@@ -7104,7 +7146,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.flint.panic_suppression_chance = 0.0
 		self.coal.AMMO_MAX = 150
@@ -7134,7 +7176,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.coal.panic_suppression_chance = 0.05
 		self.lemming.CLIP_AMMO_MAX = 20
@@ -7168,7 +7210,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.chinchilla.fire_mode_data.fire_rate = 0.08571428571
 		self.chinchilla.single.fire_rate = 0.08571428571
@@ -7195,8 +7237,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
-		}
+			reload = 20
+		}		
+		--Keeping
 		self.x_chinchilla.tactical_akimbo = false
 		self.x_chinchilla.panic_suppression_chance = 0.0
 		self.x_chinchilla.fire_mode_data.fire_rate = 0.08571428571
@@ -7224,7 +7267,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_chinchilla.panic_suppression_chance = 0.0
 		self.breech.timers = {
@@ -7259,7 +7302,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.breech.panic_suppression_chance = 0.0	
 		self.ching.categories = {"assault_rifle"}
@@ -7295,7 +7338,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.ching.armor_piercing_chance = nil
 		self.ching.can_shoot_through_enemy = false
@@ -7332,7 +7375,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
-			reload = 11
+			reload = 20
 		}
 		self.erma.panic_suppression_chance = 0.05
 		self.ecp.has_description = true
@@ -7362,7 +7405,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ecp.stats_modifiers = {damage = 2}		
 		self.shrew.fire_mode_data.fire_rate = 0.07692307692
@@ -7391,9 +7434,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
-		self.shrew.panic_suppression_chance = 0.0		
+		self.shrew.panic_suppression_chance = 0.0	
+		--Keeping
 		self.x_shrew.fire_mode_data.fire_rate = 0.07692307692
 		self.x_shrew.single.fire_rate = 0.07692307692
 		self.x_shrew.CLIP_AMMO_MAX = 12
@@ -7420,7 +7464,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_shrew.panic_suppression_chance = 0.0		
 		self.basset.damage_near = 500	
@@ -7454,10 +7498,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 21,
 			value = 1,
 			extra_ammo = 101,
-			reload = 11,
+			reload = 20,
 			suppression = 6,
 			concealment = 21
 		}		
+		--Disabled--	
+		self.x_basset.use_data.selection_index = 4			
 		self.x_basset.tactical_akimbo = true
 		self.x_basset.damage_near = 500
 		self.x_basset.damage_far = 1000
@@ -7489,7 +7535,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 21,
 			value = 1,
 			extra_ammo = 101,
-			reload = 11,
+			reload = 20,
 			suppression = 6,
 			concealment = 21
 		}
@@ -7521,7 +7567,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.corgi.panic_suppression_chance = 0.0		
 		self.slap.desc_id = "bm_40mm_weapon_sc_desc"
@@ -7550,10 +7596,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.slap.panic_suppression_chance = 0.0
 		self.slap.stats_modifiers = {damage = 10}	
+		--Disabled--
+		self.x_coal.use_data.selection_index = 4
 		self.x_coal.AMMO_MAX = 200
 		self.x_coal.CLIP_AMMO_MAX = 128
 		self.x_coal.AMMO_PICKUP = self:_pickup_chance(200, 1)
@@ -7581,9 +7629,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_coal.panic_suppression_chance = 0.05		
+		--Disabled--
+		self.x_baka.use_data.selection_index = 4
 		self.x_baka.CLIP_AMMO_MAX = 60
 		self.x_baka.NR_CLIPS_MAX = 4
 		self.x_baka.AMMO_MAX = 180
@@ -7615,9 +7665,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_baka.panic_suppression_chance = 0.05		
+		--Disabled--
+		self.x_cobray.use_data.selection_index = 4		
 		self.x_cobray.timers.reload_not_empty = 2.00
 		self.x_cobray.timers.reload_empty = 2.7
 		self.x_cobray.CLIP_AMMO_MAX = 120
@@ -7648,9 +7700,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
-		self.x_cobray.panic_suppression_chance = 0.05		
+		self.x_cobray.panic_suppression_chance = 0.05	
+		--Disabled--
+		self.x_erma.use_data.selection_index = 4			
 		self.x_erma.CLIP_AMMO_MAX = 64
 		self.x_erma.AMMO_MAX = 150
 		self.x_erma.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -7678,9 +7732,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
-			reload = 11
+			reload = 20
 		}
-		self.x_erma.panic_suppression_chance = 0.05		
+		self.x_erma.panic_suppression_chance = 0.05	
+		--Disabled--
+		self.x_hajk.use_data.selection_index = 4				
 		self.x_hajk.fire_mode_data.fire_rate = 0.075
 		self.x_hajk.single.fire_rate = 0.075
 		self.x_hajk.CLIP_AMMO_MAX = 60
@@ -7710,8 +7766,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
+		--Disabled--
+		self.x_m45.use_data.selection_index = 4				
 		self.x_m45.CLIP_AMMO_MAX = 60
 		self.x_m45.AMMO_MAX = 150
 		self.x_m45.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -7736,9 +7794,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
-			reload = 11
+			reload = 20
 		}
 		self.x_m45.panic_suppression_chance = 0.05	
+		--Disabled--	
 		self.x_m1928.use_data.selection_index = 4
 		self.x_m1928.fire_mode_data.fire_rate = 0.075
 		self.x_m1928.CAN_TOGGLE_FIREMODE = true
@@ -7768,9 +7827,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
-		self.x_m1928.panic_suppression_chance = 0.05		
+		self.x_m1928.panic_suppression_chance = 0.05	
+		--Keeping
 		self.x_mac10.CLIP_AMMO_MAX = 40
 		self.x_mac10.AMMO_MAX = 120
 		self.x_mac10.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -7797,9 +7857,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_mac10.panic_suppression_chance = 0.05		
+		--Disabled--	
+		self.x_mp7.use_data.selection_index = 4		
 		self.x_mp7.CLIP_AMMO_MAX = 40
 		self.x_mp7.AMMO_MAX = 150
 		self.x_mp7.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -7824,9 +7886,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.x_mp7.panic_suppression_chance = 0.05	
+		--Disabled--	
+		self.x_mp9.use_data.selection_index = 4				
 		self.x_mp9.CLIP_AMMO_MAX = 40
 		self.x_mp9.single.fire_rate = 0.06666666666
 		self.x_mp9.fire_mode_data.fire_rate = 0.06666666666
@@ -7853,9 +7917,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_mp9.panic_suppression_chance = 0.05	
+		--Disabled--	
+		self.x_olympic.use_data.selection_index = 4			
 		self.x_olympic.CLIP_AMMO_MAX = 60
 		self.x_olympic.AMMO_MAX = 180
 		self.x_olympic.fire_mode_data.fire_rate = 0.075
@@ -7880,8 +7946,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
+		--Disabled--	
+		self.x_p90.use_data.selection_index = 4			
 		self.x_p90.AMMO_MAX = 200
 		self.x_p90.AMMO_PICKUP = self:_pickup_chance(200, 2)
 		self.x_p90.fire_mode_data.fire_rate = 0.06666666666
@@ -7908,10 +7976,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_p90.panic_suppression_chance = 0.05		
-		self.x_polymer.use_data.selection_index = 4
+		--Disabled--	
+		self.x_polymer.use_data.selection_index = 4			
 		self.x_polymer.CLIP_AMMO_MAX = 60
 		self.x_polymer.AMMO_MAX = 120
 		self.x_polymer.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -7941,9 +8010,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
-		self.x_polymer.panic_suppression_chance = 0.05		
+		self.x_polymer.panic_suppression_chance = 0.05	
+		--Disabled--	
+		self.x_schakal.use_data.selection_index = 4			
 		self.x_schakal.fire_mode_data.fire_rate = 0.1
 		self.x_schakal.single.fire_rate = 0.1
 		self.x_schakal.AMMO_MAX = 120
@@ -7973,8 +8044,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}		
+		--Disabled--	
+		self.x_scorpion.use_data.selection_index = 4				
 		self.x_scorpion.CLIP_AMMO_MAX = 40
 		self.x_scorpion.AMMO_MAX = 180
 		self.x_scorpion.AMMO_PICKUP = self:_pickup_chance(180, 2)
@@ -8002,9 +8075,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.x_scorpion.panic_suppression_chance = 0.05	
+		--Disabled--	
+		self.x_sterling.use_data.selection_index = 4				
 		self.x_sterling.CLIP_AMMO_MAX = 40
 		self.x_sterling.AMMO_MAX = 150
 		self.x_sterling.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -8031,9 +8106,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.x_sterling.panic_suppression_chance = 0.05	
+		--Disabled--	
+		self.x_tec9.use_data.selection_index = 4			
 		self.x_tec9.AMMO_MAX = 150
 		self.x_tec9.CLIP_AMMO_MAX = 40
 		self.x_tec9.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -8061,9 +8138,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.x_tec9.panic_suppression_chance = 0.05
+		--Disabled--	
+		self.x_uzi.use_data.selection_index = 4		
 		self.x_uzi.AMMO_MAX = 120
 		self.x_uzi.CLIP_AMMO_MAX = 44
 		self.x_uzi.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8090,9 +8169,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 7,
-			reload = 11
+			reload = 20
 		}
 		self.x_uzi.panic_suppression_chance = 0.05		
+		--Keeping
 		self.x_2006m.fire_mode_data.fire_rate = 0.08571428571
 		self.x_2006m.single.fire_rate = 0.08571428571
 		self.x_2006m.AMMO_MAX = 60
@@ -8118,13 +8198,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_2006m.panic_suppression_chance = 0.0	
 		self.x_2006m.weapon_hold = "x_chinchilla"
 		self.x_2006m.animations.reload_name_id = "x_chinchilla"
 		self.x_2006m.animations.second_gun_versions = self.x_rage.animations.second_gun_versions or {}
 		self.x_2006m.animations.second_gun_versions.reload = "reload"		
+		--Disabled--	
+		self.x_breech.use_data.selection_index = 4			
 		self.x_breech.AMMO_MAX = 180
 		self.x_breech.CLIP_AMMO_MAX = 24
 		self.x_breech.AMMO_PICKUP = self:_pickup_chance(180, 2)
@@ -8151,9 +8233,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
-		self.x_breech.panic_suppression_chance = 0.0		
+		self.x_breech.panic_suppression_chance = 0.0	
+		--Disabled--	
+		self.x_c96.use_data.selection_index = 4				
 		self.x_c96.AMMO_MAX = 120
 		self.x_c96.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.x_c96.FIRE_MODE = "single"
@@ -8184,9 +8268,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_c96.panic_suppression_chance = 0.0		
+		--Keeping
 		self.x_g18c.fire_mode_data.fire_rate = 0.05454545454
 		self.x_g18c.single.fire_rate = 0.05454545454
 		self.x_g18c.CLIP_AMMO_MAX = 36
@@ -8213,9 +8298,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
-		self.x_g18c.panic_suppression_chance = 0.0		
+		self.x_g18c.panic_suppression_chance = 0.0	
+		--Disabled--	
+		self.x_hs2000.use_data.selection_index = 4			
 		self.x_hs2000.CLIP_AMMO_MAX = 28
 		self.x_hs2000.AMMO_MAX = 120
 		self.x_hs2000.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -8245,9 +8332,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.x_hs2000.panic_suppression_chance = 0.0		
+		--Disabled--	
+		self.x_p226.use_data.selection_index = 4				
 		self.x_p226.AMMO_MAX = 150
 		self.x_p226.CLIP_AMMO_MAX = 28
 		self.x_p226.AMMO_PICKUP = self:_pickup_chance(150, 2)
@@ -8274,9 +8363,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.x_p226.panic_suppression_chance = 0.0	
+		--Disabled--	
+		self.x_pl14.use_data.selection_index = 4		
 		self.x_pl14.fire_mode_data.fire_rate = 0.07142857142
 		self.x_pl14.single.fire_rate = 0.07142857142
 		self.x_pl14.CLIP_AMMO_MAX = 20
@@ -8303,9 +8394,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_pl14.panic_suppression_chance = 0.0	
+		--Disabled--	
+		self.x_ppk.use_data.selection_index = 4				
 		self.x_ppk.AMMO_MAX = 180
 		self.x_ppk.CLIP_AMMO_MAX = 24
 		self.x_ppk.AMMO_PICKUP = self:_pickup_chance(180, 2)
@@ -8332,9 +8425,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_ppk.panic_suppression_chance = 0.0
+		--Keeping
 		self.x_rage.fire_mode_data.fire_rate = 0.1
 		self.x_rage.single.fire_rate = 0.1
 		self.x_rage.spread.standing = 3
@@ -8360,13 +8454,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_rage.panic_suppression_chance = 0.0	
 		self.x_rage.weapon_hold = "x_chinchilla"
 		self.x_rage.animations.reload_name_id = "x_chinchilla"
 		self.x_rage.animations.second_gun_versions = self.x_rage.animations.second_gun_versions or {}
-		self.x_rage.animations.second_gun_versions.reload = "reload"		
+		self.x_rage.animations.second_gun_versions.reload = "reload"	
+		--Disabled--	
+		self.x_sparrow.use_data.selection_index = 4			
 		self.x_sparrow.AMMO_MAX = 150
 		self.x_sparrow.AMMO_PICKUP = self:_pickup_chance(150, 2)
 		self.x_sparrow.spread.standing = 3
@@ -8392,9 +8488,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_sparrow.panic_suppression_chance = 0.0
+		--Keeping
 		self.x_judge.fire_mode_data.fire_rate = 0.4
 		self.x_judge.single.fire_rate = 0.4
 		self.x_judge.rays = 9
@@ -8420,14 +8517,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_judge.panic_suppression_chance = 0.0
 		self.x_judge.stats_modifiers = {damage = 1}	
 		self.x_judge.weapon_hold = "x_chinchilla"
 		self.x_judge.animations.reload_name_id = "x_chinchilla"
 		self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
-		self.x_judge.animations.second_gun_versions.reload = "reload"		
+		self.x_judge.animations.second_gun_versions.reload = "reload"	
+		--Disabled--	
+		self.x_rota.use_data.selection_index = 4			
 		self.x_rota.upgrade_blocks = nil
 		self.x_rota.AMMO_MAX = 80
 		self.x_rota.AMMO_PICKUP = self:_pickup_chance(80, 2)
@@ -8458,7 +8557,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
 		self.shuno.categories = {
 			"minigun",
@@ -8498,7 +8597,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}		
 		self.system.categories = {
 			"flamethrower",
@@ -8552,7 +8651,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.system.panic_suppression_chance = 0.0		
 		self.shepheard.use_data.selection_index = 2
@@ -8582,9 +8681,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.shepheard.panic_suppression_chance = 0.05		
+		--Disabled--	
 		self.x_shepheard.use_data.selection_index = 4
 		self.x_shepheard.fire_mode_data.fire_rate = 0.07058823529
 		self.x_shepheard.single.fire_rate = 0.07058823529
@@ -8612,7 +8712,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_shepheard.panic_suppression_chance = 0.05				
 		self.komodo.use_data.selection_index = 1
@@ -8647,7 +8747,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}		
 		self.elastic.has_description = true
 		self.elastic.desc_id = "bm_ap_2_weapon_sc_desc"
@@ -8678,7 +8778,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.elastic.stats_modifiers = {damage = 2}
 		self.coach.muzzleflash = "effects/particles/shotgun/muzzleflash"
@@ -8721,7 +8821,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.coach.panic_suppression_chance = 0.0
 		self.coach.stats_modifiers = {damage = 1}		
@@ -8751,7 +8851,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.legacy.timers = {
 			reload_not_empty = 1.47,
@@ -8759,7 +8859,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unequip = 0.5,
 			equip = 0.35
 		}		
-		self.legacy.panic_suppression_chance = 0.0		
+		self.legacy.panic_suppression_chance = 0.0	
+		--Disabled--	
+		self.x_legacy.use_data.selection_index = 4		
 		self.x_legacy.fire_mode_data.fire_rate = 0.07142857142
 		self.x_legacy.single.fire_rate = 0.07142857142
 		self.x_legacy.CLIP_AMMO_MAX = 24
@@ -8786,7 +8888,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}		
 		self.x_legacy.panic_suppression_chance = 0.0			
 		
@@ -8873,7 +8975,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 2,
 			value = 1,
 			extra_ammo = 101,
-			reload = 11,
+			reload = 20,
 			suppression = 7,
 			concealment = 26
 		}		
@@ -8907,7 +9009,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 		end
 
@@ -8939,7 +9041,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.sar21.panic_suppression_chance = 0.0
 		end
@@ -8979,7 +9081,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.r0991.panic_suppression_chance = 0.0
 		end		
@@ -9013,7 +9115,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 		end
 
@@ -9046,7 +9148,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 			self.hmcar.stats_modifiers = {
 				damage = 0.8
@@ -9092,7 +9194,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.toz34.panic_suppression_chance = 0.0
 			self.toz34.stats_modifiers = {damage = 1}
@@ -9138,7 +9240,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.toz66.panic_suppression_chance = 0.0
 			self.toz66.stats_modifiers = {damage = 1}
@@ -9175,7 +9277,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.m1216.panic_suppression_chance = 0.0		
 		end			
@@ -9209,7 +9311,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 		self.xm8.panic_suppression_chance = 0.0
 		end		
@@ -9243,7 +9345,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 		self.g36k.panic_suppression_chance = 0.0
 		end
@@ -9272,7 +9374,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.rk62.timers.reload_not_empty = 2
 			self.rk62.panic_suppression_chance = 0.0
@@ -9306,7 +9408,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.amt.panic_suppression_chance = 0.0
 	end	
@@ -9344,7 +9446,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		end		
 
@@ -9376,7 +9478,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.lynx.armor_piercing_chance = 1
 		self.lynx.can_shoot_through_titan_shield = true
@@ -9416,7 +9518,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.m1894.stats_modifiers = nil
 		self.m1894.can_shoot_through_enemy = true
@@ -9459,7 +9561,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.amr12.panic_suppression_chance = 0.0
 		self.amr12.stats_modifiers = {damage = 1}	
@@ -9493,7 +9595,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.sg416.panic_suppression_chance = 0.0
 	end
@@ -9530,7 +9632,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end			
 
@@ -9562,7 +9664,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
 	end			
 
@@ -9595,7 +9697,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end				
 
@@ -9632,7 +9734,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.obrez.stats_modifiers = {
 			damage = 1,
@@ -9668,7 +9770,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 4,
-				reload = 11
+				reload = 20
 			}
 			self.scar_m203.panic_suppression_chance = 0.0
 			--Explosive GL
@@ -9697,7 +9799,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.scar_m203gl.stats_modifiers = {damage = 4}			
 			--40mm Buck GL
@@ -9730,7 +9832,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}	
 			--40mm Flechette GL
 			self.scar_m203flechette.categories = {"shotgun"}
@@ -9762,7 +9864,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}				
 		end
 
@@ -9793,7 +9895,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.duke1911.panic_suppression_chance = 0.0			
 		end
@@ -9825,7 +9927,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.vityaz.panic_suppression_chance = 0.05		
 		end		
@@ -9853,7 +9955,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.ots_14_4a.armor_piercing_chance = nil		
 			self.ots_14_4a.panic_suppression_chance = 0.0
@@ -9889,7 +9991,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 		end								
 
@@ -9919,7 +10021,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.pm.panic_suppression_chance = 0.0		
 			self.xs_pm.has_description = false		
@@ -9950,7 +10052,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.xs_pm.panic_suppression_chance = 0.0						
 		end		
@@ -9981,7 +10083,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.pb.panic_suppression_chance = 0.0		
 		end			
@@ -10013,7 +10115,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.hshdm.panic_suppression_chance = 0.0	
 		end								
@@ -10045,7 +10147,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.rhino.panic_suppression_chance = 0.0			
 		end		
@@ -10080,7 +10182,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 		end
 		
@@ -10116,7 +10218,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 		end
 
@@ -10157,7 +10259,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 			self.winchester1894.stats_modifiers = nil
 			self.winchester1894.panic_suppression_chance = 0.0
@@ -10200,7 +10302,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 			self.moss464spx.stats_modifiers = nil
 			self.moss464spx.panic_suppression_chance = 0.0
@@ -10237,7 +10339,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 		end		
 
@@ -10271,7 +10373,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 			self.rpd.panic_suppression_chance = 0.05			
 		end		
@@ -10304,7 +10406,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 4,
-				reload = 11
+				reload = 20
 			}
 			self.yayo.panic_suppression_chance = 0.0
 			self.yayo_m203gl.spread.standing = 3
@@ -10332,7 +10434,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.yayo_m203gl.stats_modifiers = {damage = 4}
 		end
@@ -10373,7 +10475,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.storm.panic_suppression_chance = 0.0
 		end
@@ -10413,7 +10515,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.hcar.panic_suppression_chance = 0.05
 		end		
@@ -10454,7 +10556,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.bar.panic_suppression_chance = 0.05
 		end		
@@ -10489,7 +10591,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.ak12.panic_suppression_chance = 0.0	
 	end	
@@ -10520,7 +10622,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.aek971.panic_suppression_chance = 0.0				
 	end			
@@ -10552,7 +10654,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_gsh18.panic_suppression_chance = 0.0
 	end		
@@ -10583,7 +10685,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.gsh18.panic_suppression_chance = 0.0
 	end			
@@ -10611,7 +10713,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.stg44.panic_suppression_chance = 0.0
 	end		
@@ -10649,7 +10751,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.toz194.stats_modifiers = {damage = 1}
 		self.toz194.panic_suppression_chance = 0.0
@@ -10689,7 +10791,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.trench.panic_suppression_chance = 0.0
 		self.trench.stats_modifiers = {damage = 1}
@@ -10724,7 +10826,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.prison.panic_suppression_chance = 0.0	
 	end							
@@ -10758,7 +10860,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.spas15.panic_suppression_chance = 0.0	
 	end						
@@ -10796,7 +10898,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.owen.panic_suppression_chance = 0.05
 	end
@@ -10827,7 +10929,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.einhander.panic_suppression_chance = 0.05
 	end	
@@ -10859,7 +10961,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.gtt33.panic_suppression_chance = 0.0
 	end		
@@ -10894,7 +10996,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 	end				
 
@@ -10932,7 +11034,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end				
 
@@ -10964,7 +11066,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.deckard.panic_suppression_chance = 0.0
 	end				
@@ -10994,7 +11096,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.triad.stats_modifiers = {damage = 1}				
 	end			
@@ -11033,7 +11135,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.cbjms.panic_suppression_chance = 0.05
 	end		
@@ -11064,7 +11166,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 14,
 			value = 1,
 			extra_ammo = 101,
-			reload = 11,
+			reload = 20,
 			suppression = 6,
 			concealment = 19
 		}
@@ -11097,7 +11199,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.sks.panic_suppression_chance = 0.0
 	end			
@@ -11128,7 +11230,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end								
 
@@ -11164,7 +11266,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.l1a1.panic_suppression_chance = 0.05
 	end					
@@ -11206,7 +11308,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.tm1a1.panic_suppression_chance = 0.05
 		self.x_tm1a1.use_data.selection_index = 4 		
@@ -11240,7 +11342,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.hk416.panic_suppression_chance = 0.0
 		end	
@@ -11274,7 +11376,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 			}
 			self.fortress.panic_suppression_chance = 0.0
 		end								
@@ -11309,7 +11411,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.f2000.panic_suppression_chance = 0.0		
 		end
@@ -11348,7 +11450,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	
 	end				
@@ -11385,7 +11487,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.tilt.panic_suppression_chance = 0.05
 		end
@@ -11421,7 +11523,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mac10mpa.panic_suppression_chance = 0.05
 	end		
@@ -11455,7 +11557,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.kurz_919.panic_suppression_chance = 0.05
 	end				
@@ -11490,7 +11592,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		end
 
@@ -11521,7 +11623,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.acwr.panic_suppression_chance = 0.0				
 		self.acwr2.tactical_reload = 1
@@ -11551,7 +11653,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
 		self.acwr2.panic_suppression_chance = 0.0		
 		end		
@@ -11584,7 +11686,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}		
 		end				
 
@@ -11622,7 +11724,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.stf12.panic_suppression_chance = 0.0
 	end	
@@ -11657,7 +11759,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.l115.armor_piercing_chance = 1
 		self.l115.stats_modifiers = {
@@ -11697,7 +11799,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mp153.panic_suppression_chance = 0.0		
 	end			
@@ -11729,7 +11831,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.obr5.panic_suppression_chance = 0.0
 	end	
@@ -11761,7 +11863,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.x_af2011.use_data.selection_index = 4 				
 		end			
@@ -11800,7 +11902,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 		end	
 
@@ -11829,7 +11931,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 		}
 		self.temple.panic_suppression_chance = 0.0
 	end	
@@ -11862,7 +11964,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}		
 	end
 
@@ -11893,7 +11995,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.sw659.panic_suppression_chance = 0.0
 	end
@@ -11926,7 +12028,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end			
 
@@ -11958,7 +12060,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.p99.panic_suppression_chance = 0.0
 	end					
@@ -11994,7 +12096,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.qsz92.panic_suppression_chance = 0.0
 	end		
@@ -12042,7 +12144,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.m590.stats_modifiers = {damage = 1}
 		self.m590.panic_suppression_chance = 0.0
@@ -12091,7 +12193,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.beck.stats_modifiers = {damage = 1}
 		self.beck.panic_suppression_chance = 0.0
@@ -12126,7 +12228,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.car9.timers.reload_not_empty = 2.10
 		self.car9.timers.reload_empty = 2.9 		
@@ -12163,7 +12265,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.smolak.timers.reload_not_empty = 1.95 
 		self.smolak.timers.reload_empty = 3.7 
@@ -12209,7 +12311,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.hpb.panic_suppression_chance = 0.0			
 	end				
@@ -12249,7 +12351,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.peepee.panic_suppression_chance = 0.05
 		self.x_peepee.use_data.selection_index = 4
@@ -12280,7 +12382,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.heffy_762.panic_suppression_chance = 0.0
 	end			
@@ -12314,7 +12416,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.aug9mm.panic_suppression_chance = 0.0	
 	end													
@@ -12349,7 +12451,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.g3m203.panic_suppression_chance = 0.0
 		--Explosive GL
@@ -12378,7 +12480,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.g3_m203gl.stats_modifiers = {damage = 4}	
 		--40mm Buck GL
@@ -12411,7 +12513,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
 		--40mm Flechette GL
 		self.g3_m203flechette.categories = {"shotgun"}
@@ -12443,7 +12545,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}						
 	end
 
@@ -12471,7 +12573,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 	end	
 
@@ -12507,7 +12609,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.hx25.panic_suppression_chance = 0.0
 		self.hx25.stats_modifiers = {damage = 2}		
@@ -12539,7 +12641,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 5,
-			reload = 11
+			reload = 20
 		}
 		self.m3.panic_suppression_chance = 0.05	
 	end			
@@ -12582,7 +12684,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ks23.armor_piercing_chance = 1
 		self.ks23.panic_suppression_chance = 0.0
@@ -12620,7 +12722,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.czevo.panic_suppression_chance = 0.05
 			self.x_czevo.use_data.selection_index = 4 
@@ -12654,7 +12756,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.pdr.panic_suppression_chance = 0.0
 		end		
@@ -12691,7 +12793,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.fmg9.panic_suppression_chance = 0.05
 		end				
@@ -12726,7 +12828,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.plr16.panic_suppression_chance = 0.0
 		end						
@@ -12762,7 +12864,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.x_vp70.panic_suppression_chance = 0.0
 			self.x_vp70.AMMO_MAX = 180
@@ -12791,7 +12893,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 1,
-				reload = 11
+				reload = 20
 			}
 			self.vp70.panic_suppression_chance = 0.0			
 		end		
@@ -12823,7 +12925,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 4,
-				reload = 11
+				reload = 20
 			}
 			self.scarl.panic_suppression_chance = 0.0
 		end			
@@ -12863,7 +12965,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				extra_ammo = 101,
 				total_ammo_mod = 100,
 				value = 9,
-				reload = 11
+				reload = 20
 		}
 		end	
 
@@ -12894,7 +12996,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mpx.panic_suppression_chance = 0.0		
 		end
@@ -12933,7 +13035,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.ak12_76.panic_suppression_chance = 0.0
 	end	
@@ -12964,7 +13066,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end
 	
@@ -13000,7 +13102,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}	
 		self.recce.panic_suppression_chance = 0.0		
 	end	
@@ -13037,7 +13139,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.fd338.armor_piercing_chance = 1
 		self.fd338.stats_modifiers = {damage = 1}
@@ -13082,7 +13184,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.wargoddess.armor_piercing_chance = nil	
 		self.wargoddess.panic_suppression_chance = 0.0
@@ -13113,7 +13215,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}		
 		self.aps.panic_suppression_chance = 0.0
 	end			
@@ -13142,7 +13244,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.mas49.panic_suppression_chance = 0.0
 		self.mas49.stats_modifiers = {damage = 1}		
@@ -13183,7 +13285,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 	}
 	end	
 
@@ -13214,7 +13316,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.derringer.panic_suppression_chance = 0.0
 		self.derringer.has_description = true
@@ -13254,7 +13356,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
-			reload = 11
+			reload = 20
 		}
 		self.welrod.panic_suppression_chance = 0.0
 	end
@@ -13285,7 +13387,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}
 		self.sonny.panic_suppression_chance = 0.0
 		self.x_sonny.panic_suppression_chance = 0.0
@@ -13312,7 +13414,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 4,
-			reload = 11
+			reload = 20
 		}	
 	end
 
@@ -13342,7 +13444,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.czauto.panic_suppression_chance = 0.0
 	end
@@ -13377,7 +13479,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 2,
-			reload = 11
+			reload = 20
 		}
 		self.k1a7.panic_suppression_chance = 0.05
 	end
@@ -13414,7 +13516,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 3,
-			reload = 11
+			reload = 20
 		}
 		self.calico.panic_suppression_chance = 0.05
 	end
@@ -13445,7 +13547,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
-		reload = 11
+		reload = 20
 		}
 		self.dp28.panic_suppression_chance = 0.05
 	end
@@ -13479,7 +13581,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.toz106.panic_suppression_chance = 0.0
 		self.toz106.stats_modifiers = {damage = 1}
@@ -13527,7 +13629,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.littlest.panic_suppression_chance = 0.0
 		self.littlest.stats_modifiers = {damage = 1}
@@ -13568,7 +13670,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.auto5.panic_suppression_chance = 0.0
 	end
@@ -13599,7 +13701,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.g19.panic_suppression_chance = 0.0
 	end
@@ -13621,7 +13723,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 		self.inkunzi.stats_modifiers = {damage = 10}
 		self.inkunzi.panic_suppression_chance = 0.0
@@ -13663,7 +13765,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
-			reload = 11
+			reload = 20
 		}
 	end
 	

@@ -11834,6 +11834,70 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.temple.panic_suppression_chance = 0.0
 	end	
 
+	if self.max9 then --Alcat's Maxim 9
+		self.max9.tactical_reload = 1					
+		self.max9.AMMO_MAX = 135
+		self.max9.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.max9.fire_mode_data.fire_rate = 0.0625
+		self.max9.single.fire_rate = 0.0625
+		self.max9.spread.standing = 3
+		self.max9.spread.crouching = 2
+		self.max9.spread.steelsight = 1
+		self.max9.spread.moving_standing = 4
+		self.max9.spread.moving_crouching = 3
+		self.max9.spread.moving_steelsight = 2
+		self.max9.kick.standing = self.glock_17.kick.standing
+		self.max9.kick.crouching = self.glock_17.kick.standing
+		self.max9.kick.steelsight = self.glock_17.kick.standing
+		self.max9.panic_suppression_chance = 0.0
+		self.max9.stats = {
+			damage = 34,
+			spread = 16,
+			recoil = 22,
+			spread_moving = 7,
+			zoom = 1,
+			concealment = 27,
+			suppression = 19,
+			alert_size = 19,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}		
+	end
+
+	if self.sw659 then --S&W 659 By Various People
+		self.sw659.tactical_reload = 1			
+		self.sw659.fire_mode_data.fire_rate = 0.07142857142
+		self.sw659.single.fire_rate = 0.07142857142
+		self.sw659.AMMO_MAX = 90
+		self.sw659.AMMO_PICKUP = self:_pickup_chance(90, 1)
+		self.sw659.spread.standing = 3
+		self.sw659.spread.crouching = 2
+		self.sw659.spread.steelsight = 1
+		self.sw659.spread.moving_standing = 4
+		self.sw659.spread.moving_crouching = 3
+		self.sw659.spread.moving_steelsight = 2
+		self.sw659.kick.standing = self.glock_17.kick.standing
+		self.sw659.kick.crouching = self.glock_17.kick.standing
+		self.sw659.kick.steelsight = self.glock_17.kick.standing
+		self.sw659.stats = {
+			damage = 50,
+			spread = 17,
+			recoil = 21,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 24,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 11
+		}
+		self.sw659.panic_suppression_chance = 0.0
+	end
+	
 	if self.px4 then --Pawcio's PX4 Storm
 		self.px4.tactical_reload = 1							
 		self.px4.AMMO_MAX = 113

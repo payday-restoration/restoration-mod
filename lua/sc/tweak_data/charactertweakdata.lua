@@ -2111,7 +2111,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.headshot_dmg_mul = 1.25
 		self.phalanx_vip.damage.explosion_damage_mul = 0.05
 		self.phalanx_vip.damage.fire_damage_mul = 0.05
-		self.phalanx_vip.damage.bullet_damage_mul = 0.75
+		self.phalanx_vip.damage.bullet_damage_mul = 0.5
 		self.phalanx_vip.spawn_sound_event = "cpa_a02_01"	
 		self.phalanx_vip.priority_shout = "f45"
 		self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -10914,7 +10914,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			veteran = {
-				speed = 2,
+				speed = 1.75,
 				occasions = {
 					hit = {
 						chance = 1,
@@ -10922,17 +10922,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						variations = {
 							side_step = {
 								chance = 3,
-								timeout = {0, 0},
+								timeout = {1, 1},
 								shoot_chance = 1,
 								shoot_accuracy = 0.7
 							},
 							roll = {
 								chance = 1,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							},
 							wheel = {
 								chance = 2,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							}
 						}
 					},
@@ -10942,17 +10942,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						variations = {
 							side_step = {
 								chance = 3,
-								timeout = {0, 0},
+								timeout = {1, 1},
 								shoot_chance = 1,
 								shoot_accuracy = 0.8
 							},
 							roll = {
 								chance = 1,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							},
 							wheel = {
 								chance = 2,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							}
 						}
 					},
@@ -10962,21 +10962,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						variations = {
 							side_step = {
 								chance = 5,
-								timeout = {0, 0},
+								timeout = {1, 1},
 								shoot_chance = 0.8,
 								shoot_accuracy = 0.6
 							},
 							roll = {
 								chance = 3,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							},
 							wheel = {
 								chance = 3,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							},
 							dive = {
 								chance = 1,
-								timeout = {0, 0}
+								timeout = {1, 1}
 							}
 						}
 					}
@@ -13297,6 +13297,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.damage.bullet_damage_mul = 0.75
 		self.omnia_lpf.damage.explosion_damage_mul = 0.75
 		self.omnia_lpf.damage.fire_damage_mul = 0.75	
+		
+		--Winters can now overheal ala LPF
+		self.phalanx_vip.do_omnia = true
 		
 		if job == "haunted" then
 			self.tank_hw.move_speed = self.presets.move_speed.very_slow

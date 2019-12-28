@@ -43,7 +43,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					escape_time = 1050
 				end
 			end	
-		
+			
 			--Election Day Day 3 (Bank)--
 			if id == "Play_pln_ed3_18" then
 				if difficulty_index <= 2 then
@@ -59,7 +59,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				else
 					escape_time = 300
 				end
-			end	
+			end				
 		
 	        --H&T Bank Heist (all versions)--
 			if id == "pln_branchbank_stage1_08" or id == "pln_branchbank_stage1_13" or id == "pln_branchbank_stage1_44" or id == "pln_branchbank_stage1_29" then

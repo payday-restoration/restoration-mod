@@ -9775,28 +9775,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		if difficulty_index <= 5 then
 			self.enemy_spawn_groups.Cap_Winters = {
-				amount = {5, 5},
-				spawn = {
-					{
-						unit = "Phalanx_vip_new",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = self._tactics.Cap_winters,
-						rank = 1
-					},
-					{
-						unit = "Phalanx_minion_new",
-						freq = 1,
-						amount_min = 4,
-						amount_max = 4,
-						tactics = self._tactics.Cap_winters_minion,
-						rank = 2
-					}					
-				}
-			}			
-		else
-			self.enemy_spawn_groups.Cap_Winters = {
 				amount = {7, 7},
 				spawn = {
 					{
@@ -9812,6 +9790,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						freq = 1,
 						amount_min = 6,
 						amount_max = 6,
+						tactics = self._tactics.Cap_winters_minion,
+						rank = 2
+					}					
+				}
+			}			
+		else
+			self.enemy_spawn_groups.Cap_Winters = {
+				amount = {9, 9},
+				spawn = {
+					{
+						unit = "Phalanx_vip_new",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_winters,
+						rank = 1
+					},
+					{
+						unit = "Phalanx_minion_new",
+						freq = 1,
+						amount_min = 8,
+						amount_max = 8,
 						tactics = self._tactics.Cap_winters_minion,
 						rank = 2
 					}					

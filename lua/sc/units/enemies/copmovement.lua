@@ -244,7 +244,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._omnia_cooldown = t + 0.2
 		end
 		if self and self._unit then
-			if self._unit:base()._tweak_table == "omnia_lpf" and not self._unit:character_damage():dead() then
+			if self._unit:base()._tweak_table == "omnia_lpf" or self._unit:base()._tweak_table == "phalanx_vip" and not self._unit:character_damage():dead() then
 				local cops_to_heal = {
 					"cop",
 					"cop_scared",
@@ -498,12 +498,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"spooc",
 					"shield",
 					"phalanx_minion",
-					"phalanx_minion_assault",
 					"taser",
 					"boom",
 					"rboom"
 				}
-				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 2, managers.slot:get_mask("enemies"))
+				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 4, managers.slot:get_mask("enemies"))
 				if enemies then
 					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do

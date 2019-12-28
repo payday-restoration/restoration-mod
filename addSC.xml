@@ -755,9 +755,12 @@
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_body_df" force="true"/>	
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_head_df" force="true"/>		
 
-	<!--Winter with his cool shield-->
-	<!--doesn't exist yet :c-->	
-
+	<!--Winter with his cool shield (Jarey)-->
+	<!--doesn't exist yet :c NVM IT DOES NOW BAYBEEEEEE-->	
+	<model path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>
+	<object path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>	
+	
 	<!--RAPHAEL CHRIST IS EVILBOBARINO-->	
 	<!--LOD Vet Cop-->		
 	<object path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>

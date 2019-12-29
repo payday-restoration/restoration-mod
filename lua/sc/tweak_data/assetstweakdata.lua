@@ -27,6 +27,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "help")
 		table.insert(self.risk_pd.exclude_stages, "mex")
 		table.insert(self.risk_pd.exclude_stages, "mex_cooking")
+		table.insert(self.risk_pd.exclude_stages, "crojob2")
 		table.insert(self.risk_pd.exclude_stages, "crojob3")
 		table.insert(self.risk_pd.exclude_stages, "crojob3_night")				
 
@@ -46,6 +47,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "hvh")
 		table.insert(self.risk_swat.exclude_stages, "mex")
 		table.insert(self.risk_swat.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_swat.exclude_stages, "crojob2")
 		table.insert(self.risk_swat.exclude_stages, "crojob3")
 		table.insert(self.risk_swat.exclude_stages, "crojob3_night")				
 		
@@ -65,6 +67,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "hvh")
 		table.insert(self.risk_fbi.exclude_stages, "mex")
 		table.insert(self.risk_fbi.exclude_stages, "mex_cooking")
+		table.insert(self.risk_fbi.exclude_stages, "crojob2")
 		table.insert(self.risk_fbi.exclude_stages, "crojob3")
 		table.insert(self.risk_fbi.exclude_stages, "crojob3_night")			
 
@@ -84,6 +87,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "hvh")
 		table.insert(self.risk_death_squad.exclude_stages, "mex")
 		table.insert(self.risk_death_squad.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_death_squad.exclude_stages, "crojob2")
 		table.insert(self.risk_death_squad.exclude_stages, "crojob3")
 		table.insert(self.risk_death_squad.exclude_stages, "crojob3_night")				
 
@@ -102,7 +106,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "help")
 		table.insert(self.risk_easy_wish.exclude_stages, "hvh")
 		table.insert(self.risk_easy_wish.exclude_stages, "mex")
-		table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")		
+		table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob2")		
 		table.insert(self.risk_easy_wish.exclude_stages, "crojob3")
 		table.insert(self.risk_easy_wish.exclude_stages, "crojob3_night")			
 
@@ -121,7 +126,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "help")
 		table.insert(self.risk_death_wish.exclude_stages, "hvh")
 		table.insert(self.risk_death_wish.exclude_stages, "mex")
-		table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")
+		table.insert(self.risk_death_wish.exclude_stages, "crojob2")		
 		table.insert(self.risk_death_wish.exclude_stages, "crojob3")
 		table.insert(self.risk_death_wish.exclude_stages, "crojob3_night")			
 		
@@ -141,6 +147,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "hvh")
 		table.insert(self.risk_sm_wish.exclude_stages, "mex")
 		table.insert(self.risk_sm_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob2")	
 		table.insert(self.risk_sm_wish.exclude_stages, "crojob3")
 		table.insert(self.risk_sm_wish.exclude_stages, "crojob3_night")			
 		
@@ -160,6 +167,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"bph",
 			"vit",
 			"arm_for",
+			"crojob2",
 			"mex",
 			"mex_cooking",
 			--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal

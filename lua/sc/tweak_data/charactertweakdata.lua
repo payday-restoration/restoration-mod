@@ -307,6 +307,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.cop.steal_loot = true
 		end
 		self.cop.static_dodge_preset = true
+		if job == "crojob2" then
+			self.cop.has_alarm_pager = true
+			self.cop.radio_prefix = "fri_"
+		else
+			self.cop.has_alarm_pager = false
+		end		
 		table.insert(self._enemy_list, "cop")
 		self.cop_scared = deep_clone(self.cop)
 		self.cop_scared.surrender = presets.surrender.always
@@ -1047,6 +1053,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if job == "kosugi" or job == "dark" then
 			self.city_swat.shooting_death = false
+			self.city_swat.radio_prefix = "fri_"
 			self.city_swat.use_radio = "dsp_radio_russian"
 		else
 			self.city_swat.shooting_death = true

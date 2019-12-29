@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms" orientation_object="rp_res_ext_apartment_rooms_3windows_floor_3_in_gap" />
+	<bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_res_ext_apartment_rooms_3windows_floor_3_in_gap"/>
+			<object name="g_g" collision_type="mesh_mopp" />
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="plaster">
+        <decal_mesh enabled="true" name="g_g" material="plaster" />
+    </decal_surfaces>
+
+    <graphics>
+        <object enabled="true" name="g_g" shadow_caster="false"/>
+    </graphics>
+	
+</dynamic_object> 

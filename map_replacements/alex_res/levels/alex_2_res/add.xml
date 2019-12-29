@@ -199,93 +199,87 @@
 		<unit force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_mid" unload="true"/>
 	</add>
 	<add path="units/world/props/apartment/communication/communication_04" type="unit">
-		<unit force="true" path="units/world/props/apartment/communication/communication_04" unload="true"/>
-		<object force="true" path="units/world/props/apartment/communication/communication_04" unload="true"/>
 		<material_config force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<object force="true" path="units/world/props/apartment/communication/communication_04" unload="true"/>
+		<unit force="true" path="units/world/props/apartment/communication/communication_04" unload="true"/>
 	</add>
 	<add path="units/world/props/construction_crane/construction_crane_01" type="unit">
-		<unit force="true" path="units/world/props/construction_crane/construction_crane_01" unload="true"/>
-		<object force="true" path="units/world/props/construction_crane/construction_crane_01" unload="true"/>
 		<material_config force="true" path="units/world/props/construction_crane/construction_crane" unload="true"/>
+		<object force="true" path="units/world/props/construction_crane/construction_crane_01" unload="true"/>
 		<sequence_manager force="true" path="units/world/props/construction_crane/construction_crane_01" unload="true"/>
+		<unit force="true" path="units/world/props/construction_crane/construction_crane_01" unload="true"/>
 	</add>
 	<add path="units/world/props/apartment/communication/communication_02" type="unit">
-		<unit force="true" path="units/world/props/apartment/communication/communication_02" unload="true"/>
-		<object force="true" path="units/world/props/apartment/communication/communication_02" unload="true"/>
 		<material_config force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<object force="true" path="units/world/props/apartment/communication/communication_02" unload="true"/>
+		<unit force="true" path="units/world/props/apartment/communication/communication_02" unload="true"/>
 	</add>
 	<add path="units/world/architecture/street/decals/ground/decal_ground_grate4" type="unit">
-		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" unload="true"/>
-		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" unload="true"/>
 		<material_config force="true" path="units/world/architecture/street/decals/ground/decal_ground_grates_manhole" unload="true"/>
+		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" unload="true"/>
 	</add>
 	<add path="units/world/props/apartment/communication/communication_01" type="unit">
-		<unit force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
-		<object force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
 		<material_config force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<object force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<unit force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
 	</add>
 	<add path="units/world/props/box/prop_filebox_01" type="unit">
-		<unit force="true" path="units/world/props/box/prop_filebox_01" unload="true"/>
-		<object force="true" path="units/world/props/box/prop_filebox_01" unload="true"/>
 		<material_config force="true" path="units/world/props/box/prop_filebox_01" unload="true"/>
+		<object force="true" path="units/world/props/box/prop_filebox_01" unload="true"/>
+		<unit force="true" path="units/world/props/box/prop_filebox_01" unload="true"/>
 	</add>
 	<add path="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" type="unit">
-		<unit force="true" path="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" unload="true"/>
-		<object force="true" path="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" unload="true"/>
 		<material_config force="true" path="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" unload="true"/>
+		<object force="true" path="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" unload="true"/>
+		<unit force="true" path="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" unload="true"/>
 	</add>
 	<add path="units/world/props/apartment/communication/communication_03" type="unit">
-		<unit force="true" path="units/world/props/apartment/communication/communication_03" unload="true"/>
-		<object force="true" path="units/world/props/apartment/communication/communication_03" unload="true"/>
 		<material_config force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<object force="true" path="units/world/props/apartment/communication/communication_03" unload="true"/>
+		<unit force="true" path="units/world/props/apartment/communication/communication_03" unload="true"/>
 	</add>
 	<add path="units/world/props/apartment/communication/communication_06" type="unit">
-		<unit force="true" path="units/world/props/apartment/communication/communication_06" unload="true"/>
-		<object force="true" path="units/world/props/apartment/communication/communication_06" unload="true"/>
 		<material_config force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<object force="true" path="units/world/props/apartment/communication/communication_06" unload="true"/>
+		<unit force="true" path="units/world/props/apartment/communication/communication_06" unload="true"/>
 	</add>
 	<add path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_low" type="unit">
-		<unit force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_low" unload="true"/>
-		<object force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_low" unload="true"/>
 		<material_config force="true" path="units/world/props/yacht/boxes/boxes" unload="true"/>
+		<object force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_low" unload="true"/>
+		<unit force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_low" unload="true"/>
 	</add>
 	<add path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long" type="unit">
-		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long" unload="true"/>
-		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long" unload="true"/>
 		<material_config force="true" path="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_io" unload="true"/>
+		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long" unload="true"/>
 	</add>
 	<add path="units/world/props/box/a4paperbox_02" type="unit">
-		<unit force="true" path="units/world/props/box/a4paperbox_02" unload="true"/>
-		<object force="true" path="units/world/props/box/a4paperbox_02" unload="true"/>
 		<material_config force="true" path="units/world/props/box/a4paperbox_etc_material" unload="true"/>
+		<object force="true" path="units/world/props/box/a4paperbox_02" unload="true"/>
+		<unit force="true" path="units/world/props/box/a4paperbox_02" unload="true"/>
 	</add>
 	<add path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_high" type="unit">
-		<unit force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_high" unload="true"/>
-		<object force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_high" unload="true"/>
 		<material_config force="true" path="units/world/props/yacht/boxes/boxes" unload="true"/>
+		<object force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_high" unload="true"/>
+		<unit force="true" path="units/world/props/yacht/boxes/lxy_cover_boxes_stacked_high" unload="true"/>
 	</add>
 	<add path="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" type="unit">
-		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" unload="true"/>
-		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" unload="true"/>
 		<material_config force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" unload="true"/>
+		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" unload="true"/>
+		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" unload="true"/>
 	</add>
 	<add path="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" type="unit">
-		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" unload="true"/>
-		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" unload="true"/>
 		<material_config force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" unload="true"/>
+		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" unload="true"/>
+		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_crate_small/man_cover_int_shipping_crate_small" unload="true"/>
 	</add>
 	<add path="units/world/props/box/box_evidence" type="unit">
-		<unit force="true" path="units/world/props/box/box_evidence" unload="true"/>
-		<object force="true" path="units/world/props/box/box_evidence" unload="true"/>
 		<material_config force="true" path="units/world/props/box/box_evidence" unload="true"/>
+		<object force="true" path="units/world/props/box/box_evidence" unload="true"/>
+		<unit force="true" path="units/world/props/box/box_evidence" unload="true"/>
 	</add>
 	<add path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" type="unit">
-		<unit force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
-		<animation_state_machine force="true" path="anims/units/helicopter/helicopter" unload="true"/>
-		<animation_states force="true" path="anims/units/helicopter/std" unload="true"/>
-		<object force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
-		<animation_def force="true" path="anims/units/helicopter/helicopter" unload="true"/>
-		<animation_subset force="true" path="anims/units/helicopter/std" unload="true"/>
 		<animation force="true" path="anims/helicopter/chew/chew_bwd" unload="true"/>
 		<animation force="true" path="anims/helicopter/chew/chew_bwd_to_l" unload="true"/>
 		<animation force="true" path="anims/helicopter/chew/chew_bwd_to_r" unload="true"/>
@@ -387,19 +381,40 @@
 		<animation force="true" path="anims/helicopter/aprt_exit_circulate" unload="true"/>
 		<animation force="true" path="anims/helicopter/aprt_flyoff_panicroom" unload="true"/>
 		<animation force="true" path="anims/helicopter/aprt_hover_repel_cable" unload="true"/>
-		<material_config force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter" unload="true"/>
-		<sequence_manager force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
 		<effect force="true" load="true" path="effects/particles/weapons/flashlight/flashlight" unload="true"/>
 		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<animation_def force="true" path="anims/units/helicopter/helicopter" unload="true"/>
+		<animation_state_machine force="true" path="anims/units/helicopter/helicopter" unload="true"/>
+		<animation_states force="true" path="anims/units/helicopter/std" unload="true"/>
+		<animation_subset force="true" path="anims/units/helicopter/std" unload="true"/>
+		<material_config force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter" unload="true"/>
+		<object force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<unit force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
 	</add>
 	<add path="units/world/props/apartment/communication/communication_05" type="unit">
-		<unit force="true" path="units/world/props/apartment/communication/communication_05" unload="true"/>
-		<object force="true" path="units/world/props/apartment/communication/communication_05" unload="true"/>
 		<material_config force="true" path="units/world/props/apartment/communication/communication_01" unload="true"/>
+		<object force="true" path="units/world/props/apartment/communication/communication_05" unload="true"/>
+		<unit force="true" path="units/world/props/apartment/communication/communication_05" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" type="unit">
-		<unit force="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" unload="true"/>
-		<object force="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" unload="true"/>
 		<material_config force="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_carts" unload="true"/>
+		<object force="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3_in_gap" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3_in_gap" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3_in_gap" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_2_out_gap_right" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_2_out_gap_right" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_2_out_gap_right" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" type="unit">
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms" unload="true"/>
 	</add>
 </table>

@@ -72,6 +72,7 @@
 			<value_node value="levels/instances/unique/hvh/hvh_event/world/world"/>
 			<value_node value="levels/instances/unique/brb/brb_deposit_room/world/world"/>
 			<value_node value="levels/narratives/classics/man/world/world"/>
+			<value_node value="levels/narratives/classics/man/world_sounds"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>

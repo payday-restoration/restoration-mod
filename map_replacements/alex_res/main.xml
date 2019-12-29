@@ -110,7 +110,6 @@
 			<value_node value="levels/narratives/h_alex_must_die/stage_3/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_3/world/world"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_3/editor_only/editor_only"/>
-			<value_node value="levels/narratives/armadillo/arm_for/world"/>
 			<value_node value="levels/narratives/e_welcome_to_the_jungle/stage_2/backdrop/backdrop"/>
 			<value_node value="levels/narratives/classics/flat/world/world"/>
 		</packages>

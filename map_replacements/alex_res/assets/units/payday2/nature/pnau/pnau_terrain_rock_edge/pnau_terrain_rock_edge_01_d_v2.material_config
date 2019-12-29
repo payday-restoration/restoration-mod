@@ -1,0 +1,27 @@
+<materials version="3">
+	<material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+	<material version="2" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_pnau_terrain_rock_edge_01_mossystone_blend_v2">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_custom_rockgrass_v2_df"/>
+		<diffuse_layer0_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossy_01_v2_df"/>
+		<diffuse_layer1_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossyleafs_01_mask_v2_df"/>
+		<reflection_texture file="units/payday2/cubemaps/cubemap_forest" type="cubemap"/>
+		<bump_normal_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_custom_rockgrass_v2_nm"/>
+		<normal_layer0_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossy_01_v2_nm"/>
+	</material>
+	<material name="mat_pnau_terrain_rock_edge_01_mossyleaf_blend_v2" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossyleafs_01_v2_df"/>
+		<diffuse_layer0_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossy_01_v2_df"/>
+		<diffuse_layer1_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossyleafs_01_mask_v2_df"/>
+		<reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_forest"/>
+		<bump_normal_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossy_01_v2_nm"/>
+		<normal_layer0_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossyleafs_01_v2_nm"/>
+	</material>
+	<material version="2" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_pnau_terrain_rock_lake">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_lake_df"/>
+		<diffuse_layer0_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossy_01_v2_df"/>
+		<diffuse_layer1_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossyleafs_01_mask_v2_df"/>
+		<reflection_texture file="units/payday2/cubemaps/cubemap_forest" type="cubemap"/>
+		<bump_normal_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_lake_nm"/>
+		<normal_layer0_texture file="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_mossy_01_v2_nm"/>
+	</material>
+</materials>

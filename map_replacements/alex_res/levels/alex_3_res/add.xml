@@ -59,9 +59,29 @@
 		<unit force="true" path="units/payday2/architecture/gen_watchdog_2_water/gen_watchdog_2_water" unload="true"/>
 	</add>
 	<add path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" type="unit">
-		<unit force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" unload="true"/>
-		<object force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" unload="true"/>
-		<material_config force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost" unload="true"/>
 		<effect force="true" load="true" path="effects/payday2/particles/flares/street_light_flare_big" unload="true"/>
+		<material_config force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_terrain_custom_alex" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_c_v2" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_c_v2" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_c_v2" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" type="unit">
+		<unit force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" unload="true"/>
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment" unload="true"/>
 	</add>
 </table>

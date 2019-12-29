@@ -41,6 +41,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
+		self.bph.player_style = "loud_suit"
 		
 		self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vit"}
 		self.vit.ai_group_type = murkywater 
@@ -144,7 +145,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu"}
 		self.crojob2.player_style = "sneak_suit"
 		
+		self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/akanassets", "packages/lvl_mad",}
+		self.crojob3.ai_group_type = russia			
 		self.crojob3.player_style = "loud_suit"
+
+		self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/akanassets", "packages/lvl_mad",}
+		self.crojob3_night.ai_group_type = russia				
+		self.crojob3_night.player_style = "loud_suit"
 		
 		self.dark.package = {"packages/job_dark", "packages/addbdu"}
 		self.dark.player_style = "sneak_suit"

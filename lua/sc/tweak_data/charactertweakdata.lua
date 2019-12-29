@@ -312,6 +312,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop_scared.surrender = presets.surrender.always
 		self.cop_scared.surrender_break_time = nil
 		table.insert(self._enemy_list, "cop_scared")
+		
+		self.cop_forest = deep_clone(self.cop)
+		self.cop_forest.speech_prefix_p1 = "l"
+		self.cop_forest.speech_prefix_p2 = "n"
+		self.cop_forest.speech_prefix_count = 4		
+		self.cop_forest.access = "gangster"
+		table.insert(self._enemy_list, "cop_forest")
+		
 		self.cop_female = deep_clone(self.cop)
 		self.cop_female.speech_prefix_p1 = "fl"
 		self.cop_female.speech_prefix_p2 = "n"

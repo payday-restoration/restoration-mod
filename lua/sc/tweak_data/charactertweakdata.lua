@@ -342,6 +342,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop_civ.silent_priority_shout = nil
 		self.cop_civ.melee_weapon = nil
 		self.cop_civ.move_speed = presets.move_speed.very_fast
+		table.insert(self._enemy_list, "cop_civ")
+		
+		self.dave = deep_clone(self.cop)
+		self.dave.weapon = deep_clone(presets.weapon.expert)
+		self.dave.detection = presets.detection.normal
+		self.dave.HEALTH_INIT = 6
+		self.dave.headshot_dmg_mul = 1
+		self.dave.surrender = nil
+		self.dave.unintimidateable = true
+		self.dave.silent_priority_shout = nil
+		self.dave.melee_weapon = nil
+		self.dave.move_speed = presets.move_speed.lightning
+		self.dave.custom_voicework = "big_dave"
+		self.dave.can_shoot_while_dodging = true
+		self.dave.can_slide_on_suppress = true
+		self.dave.steal_loot = true
+		self.dave.access = "fbi"
 	end
 
 	function CharacterTweakData:_init_fbi(presets)
@@ -485,6 +502,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "meme_man_shield")				
 		self.vetlod = deep_clone(self.fbi_vet)		
 		self.vetlod.custom_voicework = "tdozer"
+		self.vetlod.access = "fbi"
 		table.insert(self._enemy_list, "vetlod")							
 	end
 
@@ -14200,6 +14218,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_bravo_lmg",
 					"ene_bravo_rifle",
 					"ene_bravo_shotgun"
+				}
+			},
+			dave = {
+				path = "units/pd2_mod_dave/characters/",
+				list = {
+					"ene_big_dave"
 				}
 			},
 			halloween = {

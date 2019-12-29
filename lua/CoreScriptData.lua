@@ -307,7 +307,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		--"sky_orientation/rotation":"278.53564453125",
 	end
 	
-		if Global.load_level == true and Global.game_settings.level_id == "firestarter_1_res" then
+	if Global.load_level == true and Global.game_settings.level_id == "firestarter_1_res" then
 				--if rnd == 1 or rnd == 2 then
 			--BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
@@ -319,6 +319,17 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		--end
 	end
 	
+	if Global.load_level == true and Global.game_settings.level_id == "alex_1_res" then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
+		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
+		--"sky_orientation/rotation":"278.53564453125",
+	end
+	
+	if Global.load_level == true and Global.game_settings.level_id == "alex_3_res" then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+		--"sky_orientation/rotation":"278.53564453125",
+	end
 	--Safehouse Booster
 	if Global.load_level == true and Global.game_settings.level_id == "safehouse" then
 		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")

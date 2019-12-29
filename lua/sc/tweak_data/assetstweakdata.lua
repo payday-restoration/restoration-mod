@@ -27,6 +27,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "help")
 		table.insert(self.risk_pd.exclude_stages, "mex")
 		table.insert(self.risk_pd.exclude_stages, "mex_cooking")
+		table.insert(self.risk_pd.exclude_stages, "crojob2")
+		table.insert(self.risk_pd.exclude_stages, "crojob3")
+		table.insert(self.risk_pd.exclude_stages, "crojob3_night")				
 
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -43,7 +46,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "help")
 		table.insert(self.risk_swat.exclude_stages, "hvh")
 		table.insert(self.risk_swat.exclude_stages, "mex")
-		table.insert(self.risk_swat.exclude_stages, "mex_cooking")		
+		table.insert(self.risk_swat.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_swat.exclude_stages, "crojob2")
+		table.insert(self.risk_swat.exclude_stages, "crojob3")
+		table.insert(self.risk_swat.exclude_stages, "crojob3_night")				
 		
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -60,7 +66,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "help")
 		table.insert(self.risk_fbi.exclude_stages, "hvh")
 		table.insert(self.risk_fbi.exclude_stages, "mex")
-		table.insert(self.risk_fbi.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_fbi.exclude_stages, "mex_cooking")
+		table.insert(self.risk_fbi.exclude_stages, "crojob2")
+		table.insert(self.risk_fbi.exclude_stages, "crojob3")
+		table.insert(self.risk_fbi.exclude_stages, "crojob3_night")			
 
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -77,7 +86,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "help")
 		table.insert(self.risk_death_squad.exclude_stages, "hvh")
 		table.insert(self.risk_death_squad.exclude_stages, "mex")
-		table.insert(self.risk_death_squad.exclude_stages, "mex_cooking")		
+		table.insert(self.risk_death_squad.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_death_squad.exclude_stages, "crojob2")
+		table.insert(self.risk_death_squad.exclude_stages, "crojob3")
+		table.insert(self.risk_death_squad.exclude_stages, "crojob3_night")				
 
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -94,7 +106,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "help")
 		table.insert(self.risk_easy_wish.exclude_stages, "hvh")
 		table.insert(self.risk_easy_wish.exclude_stages, "mex")
-		table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob2")		
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob3")
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob3_night")			
 
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -111,7 +126,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "help")
 		table.insert(self.risk_death_wish.exclude_stages, "hvh")
 		table.insert(self.risk_death_wish.exclude_stages, "mex")
-		table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")
+		table.insert(self.risk_death_wish.exclude_stages, "crojob2")		
+		table.insert(self.risk_death_wish.exclude_stages, "crojob3")
+		table.insert(self.risk_death_wish.exclude_stages, "crojob3_night")			
 		
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -128,10 +146,15 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "help")
 		table.insert(self.risk_sm_wish.exclude_stages, "hvh")
 		table.insert(self.risk_sm_wish.exclude_stages, "mex")
-		table.insert(self.risk_sm_wish.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_sm_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob2")	
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob3")
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob3_night")			
 		
 		-- Reaper Risk Asset
 		table.insert(self.mad_russian_merc_cameras.stages, "pines")
+		table.insert(self.mad_russian_merc_cameras.stages, "crojob3")
+		table.insert(self.mad_russian_merc_cameras.stages, "crojob3_night")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -144,6 +167,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"bph",
 			"vit",
 			"arm_for",
+			"crojob2",
 			"mex",
 			"mex_cooking",
 			--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal

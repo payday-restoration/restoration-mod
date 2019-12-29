@@ -9,6 +9,8 @@
 	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
 	
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
+	
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
 		
 	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
@@ -524,6 +526,19 @@
 	<cooked_physics path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="false" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
+	
+	<!--Big Dave-->
+	<object path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<cooked_physics path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<model path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<unit path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false" load="true"/>
+	<material_config path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<material_config path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave_contour" force="false"/>
+	<unit path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave_husk" force="false" load="true"/> 
+	<texture path="units/pd2_mod_dave/characters/shared_textures/taser_body_df"/>
+	<texture path="units/pd2_mod_dave/characters/shared_textures/taser_body_nm"/>
+	<texture path="units/pd2_mod_dave/characters/shared_textures/heads_atlas_df"/>
+	<texture path="units/pd2_mod_dave/characters/shared_textures/helmets_heavy_taser_atlas_df"/>	
 
 	<!--MEME MAN-->
 	<object path="units/payday2/characters/ene_mememan_1/ene_mememan_1" force="false"/>
@@ -1953,4 +1968,12 @@
 	<!--zombie necro cloaker-->
 	<material_config path="units/pd2_dlc_help/props/hlp_prop_giant_cloaker/hlp_prop_giant_cloaker"/>
 	<material_config path="units/pd2_dlc_nails/props/nls_prop_giant_cloaker/nls_prop_giant_cloaker"/>
+
+	<!--Beat Cops for Bomb Forest-->
+	<unit path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest" load="true"/>
+	<unit path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk" load="true"/>	
+	
+	<unit path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest" load="true"/>
+	<unit path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>		
+	
 </table>

@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="communications" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/props/apartment/communication/communication_df"/>
+        <bump_normal_texture file="units/world/props/apartment/communication/communication_nm"/>
+    </material>
+</materials>

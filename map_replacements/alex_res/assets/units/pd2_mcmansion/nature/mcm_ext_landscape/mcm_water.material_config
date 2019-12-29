@@ -1,0 +1,12 @@
+<materials version="3">
+    <material name="mat_water" render_template="generic:CUBE_ENVIRONMENT_MAPPING:CUBE_ENVIRONMENT_MAPPING_WATER:DIFFUSE_TEXTURE:RL_BACKDROP:WATER_BIG" version="2">
+        <diffuse_texture file="units/world/water/water_foam_df"/>
+        <variable value="-0.37000000476837 -1.3199999332428 0" type="vector3" name="water_settings_c"/>
+        <variable value="0.029999995604157 0 0.045999996364117" type="vector3" name="water_settings_b"/>
+        <bump_normal_texture file="units/world/water/water_weak_nm"/>
+        <variable value="0.05400649830699 0.086614191532135 0.058761786669493" type="vector3" name="water_color_a"/>
+        <variable value="0.035973429679871 0.038752492517233 0.039370059967041" type="vector3" name="water_color_b"/>
+        <variable value="1.5000004768372 0.20000004768372 0" type="vector3" name="water_settings"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_mcm_water"/>
+    </material>
+</materials>

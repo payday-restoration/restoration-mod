@@ -41,6 +41,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
+		self.bph.player_style = "loud_suit"
 		
 		self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vit"}
 		self.vit.ai_group_type = murkywater 
@@ -58,7 +59,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.mex_cooking.package = {"packages/murkyassets", "packages/job_mex2"}
 		self.mex_cooking.ai_group_type = murkywater 
-		self.mex_cooking.player_style = "suit_sunny"				
+		self.mex_cooking.player_style = "suit_sunny"		
+
+		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu", "packages/murkyassets"}
+		self.crojob2.ai_group_type = murkywater			
+		self.crojob2.player_style = "sneak_suit"		
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
@@ -140,12 +145,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
-		
-		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu"}
-		self.crojob2.player_style = "sneak_suit"
-		
-		self.crojob3.player_style = "loud_suit"
-		
+						
 		self.dark.package = {"packages/job_dark", "packages/addbdu"}
 		self.dark.player_style = "sneak_suit"
 		
@@ -227,6 +227,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
 		self.pines.player_style = "loud_suit"
 		self.pines.ai_group_type = russia	
+		
+		--Bomb: Forest--
+		self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/akanassets", "packages/lvl_mad",}
+		self.crojob3.ai_group_type = russia			
+		self.crojob3.player_style = "loud_suit"
+
+		self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/akanassets", "packages/lvl_mad",}
+		self.crojob3_night.ai_group_type = russia				
+		self.crojob3_night.player_style = "loud_suit"		
 		
 		--///BAG FIXES\\\--
 		self.pbr2.max_bags = 20

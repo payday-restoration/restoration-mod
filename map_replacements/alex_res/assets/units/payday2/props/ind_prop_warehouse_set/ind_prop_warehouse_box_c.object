@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_prop_warehouse_box_c" materials="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_box_c" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="box" name="c_box_01" padding="-2.5"/>
+        </body>		
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_cloth" material="cloth" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

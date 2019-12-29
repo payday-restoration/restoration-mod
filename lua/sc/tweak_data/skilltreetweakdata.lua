@@ -99,11 +99,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_extra_ammo_multiplier_1",	
 		"sentry_gun_silent",
 		"pistol_swap_speed_multiplier_1",
-		"player_civ_calming_alerts",
-		"x_p226",
-		"x_m45",
-		"x_mp7",
-		"x_ppk"		
+		"player_civ_calming_alerts"
 	}
 
 --[[   SKILLTREES   ]]--

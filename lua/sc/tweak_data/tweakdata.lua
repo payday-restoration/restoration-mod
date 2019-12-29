@@ -240,7 +240,11 @@
 		tweak_data.interaction.corpse_alarm_pager.timer = 10
 	end	
 	
-	tweak_data.narrative.jobs["chill_combat"].contact = "events"
+	tweak_data.narrative.jobs["chill_combat"].contact = "events"	
+	tweak_data.narrative.jobs.chill_combat.contract_visuals = {}	
+	tweak_data.narrative.jobs.chill_combat.contract_visuals.preview_image = {
+		id = "chill_combat"
+	}	
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0

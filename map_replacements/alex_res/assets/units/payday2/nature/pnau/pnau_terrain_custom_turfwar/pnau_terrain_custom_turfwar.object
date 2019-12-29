@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel orientation_object="rp_pnau_terrain_custom_turfwar" materials="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_turfwar" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="c_capsule" collision_type="capsule" padding="-2.5"/>
+			<object name="c_mesh" collision_type="mesh_mopp" />
+        </body>
+		<body name="mover_blocker" remove_ray_type="walk" template="mover_blocker" enabled="true">
+			<object name="c_mover" collision_type="mesh_mopp"/>
+		</body>
+    </bodies>
+	<decal_surfaces>
+		<decal_mesh name="dm_rock" enabled="true" material="stone"/>
+	</decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_terrain" />
+        <object enabled="true" name="g_terrain" shadow_caster="true" />
+    </graphics>
+</dynamic_object>

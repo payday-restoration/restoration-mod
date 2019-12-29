@@ -154,6 +154,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 			for group_sub, units_data_sub in pairs(group_ai_tweak.unit_categories[group].unit_types) do
 				group_ai_tweak.unit_categories[group].unit_types[group_sub] = {
+					Idstring("units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave"),
 					Idstring("units/payday2/characters/ene_mememan_1/ene_mememan_1"),
 					Idstring("units/payday2/characters/ene_mememan_2/ene_mememan_2"),
 					Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"),

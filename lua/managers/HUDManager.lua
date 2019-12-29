@@ -4,6 +4,48 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function HUDManager:_setup_player_info_hud_pd2()
 		_setup_player_info_hud_pd2_original(self)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
+			
+--setup radial mouse menu
+		local ammo_texture,ammo_rect = tweak_data.hud_icons:get_icon_data("equipment_ammo_bag")
+		local sentry_texture,sentry_rect = tweak_data.hud_icons:get_icon_data("equipment_sentry")
+		local tripmine_texture,tripmine_rect = tweak_data.hud_icons:get_icon_data("equipment_trip_mine")
+		local utility_params = {
+			name = "resutilitymenu",
+			deadzone = 10,
+			items = {
+				{
+					text = "Drop Excess Ammo",
+					icon = {
+						name = "ammo",
+						texture = ammo_texture,
+						texture_rect = ammo_rect
+					}
+				},
+				{
+					text = "Deployable Control",
+						icon = {
+						name = "sentrygun",
+						texture = sentry_texture,
+						texture_rect = sentry_rect
+					}
+				},
+				{
+					text = "Deployable Control 2",
+					icon = {
+						name = "tripmine",
+						texture = tripmine_texture,
+						texture_rect = tripmine_rect
+					}
+				}
+			}
+		}
+		restoration._utilitymenu = RadialMouseMenu:new(utility_params)
+		
+		
+		
+		
+		
+		
 	end
 	function HUDManager:set_dodge_value(value)
 		--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua

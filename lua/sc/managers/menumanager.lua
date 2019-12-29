@@ -74,4 +74,52 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end	
 
+	Hooks:Add("radialmenu_released_resutilitymenu","resmod_utility_menu_on_selected",function(item)
+		if item == 1 then 
+					
+			local loss_rate = 0.0
+			local placement_cost = 0.3
+			local ammo_ratio_taken = 0
+			local player = managers.player:local_player()
+			if player and alive(player) then 
+				for index, weapon in pairs(player:inventory():available_selections()) do
+					local ammo_taken = weapon.unit:base():remove_ammo(1 - placement_cost)
+					ammo_ratio_taken = ammo_ratio_taken + (ammo_taken / weapon.unit:base():get_ammo_max())
+					Log("ammo_ratio_taken: " .. ammo_ratio_taken)
+				
+					managers.hud:set_ammo_amount(index, weapon.unit:base():ammo_info())
+					
+				end
+				local pos = player:position()
+				
+				local angle = player:movement():m_head_rot():y()
+				local rot = Rotation(angle, angle, 0)
+				
+				local ammo_upgrade_lvl = 1 --managers.player:upgrade_level("ammo_bag", "ammo_increase")
+				local bullet_storm_level = 1 -- managers.player:upgrade_level("player", "no_ammo_cost")
+
+				if Network:is_client() then
+--						managers.network:session():send_to_host("place_ammo_bag", pos, rot, ammo_upgrade_lvl, bullet_storm_level)
+					--use networking instead
+				else
+				
+					local unit = AmmoBagBase.spawn(pos, rot, ammo_upgrade_lvl, managers.network:session():local_peer():id(), bullet_storm_level)
+					unit:base()._ammo_amount = math.floor(math.min(ammo_ratio_taken,2 * placement_cost) * (1 - loss_rate) * 100) / 100
+					local current_amount = unit:base()._ammo_amount
+					unit:base():_set_visual_stage()
+					managers.network:session():send_to_peers_synched("sync_ammo_bag_ammo_taken", unit, current_amount - ammo_ratio_taken)
+					Log("amount: " .. tostring(unit:base()._ammo_amount))
+					
+				end
+			elseif item == 2 or item == 3 then 
+				local equipped_deployable = managers.blackmarket:equipped_deployable()
+				if equipped_deployable == "tripmines" then 
+					Log("Equipped tripmines")
+				elseif equipped_deployable == "sentry_gun" then 
+					Log("Equipped sentrygun")
+				end
+			end
+		end
+	end)
+	
 end

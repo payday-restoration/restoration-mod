@@ -4,7 +4,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._empty then
 			return false, false
 		end
-
+			
+		Log("before " .. self._ammo_amount)
+			
 		local taken = self:_take_ammo(unit)
 
 		if taken > 0 then
@@ -28,6 +30,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._bullet_storm_level and self._bullet_storm_level > 0 then
 			bullet_storm = self._BULLET_STORM[self._bullet_storm_level] * taken
 		end
+		Log("after " .. self._ammo_amount)
 
 		return taken > 0, bullet_storm
 	end

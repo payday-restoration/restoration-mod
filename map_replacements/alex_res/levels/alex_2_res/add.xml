@@ -413,8 +413,72 @@
 		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_2_out_gap_right" unload="true"/>
 	</add>
 	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" type="unit">
-		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" unload="true"/>
-		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" unload="true"/>
 		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_01" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_01" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_01" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_02" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_02" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_02" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_03" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_03" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_03" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_10" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_10" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_10" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_09" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_09" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_09" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_04" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_04" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_04" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_05" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_05" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_05" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_06" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_06" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_06" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_07" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_07" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_07" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_08" type="unit">
+		<material_config force="true" path="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" unload="true"/>
+		<object force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_08" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/res_ext_apartment/res_ext_apartment_plastic_08" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_interactable_door_reinforced_lab" type="unit">
+		<material_config force="true" path="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_interactable_door_reinforced_lab" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_interactable_door_reinforced_lab" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_interactable_door_reinforced_lab" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_interactable_door_reinforced_lab" unload="true"/>
+	</add>
+	<add path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" type="unit">
+		<unit force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<object force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<material_config force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<unit force="true" path="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" unload="true"/>
+		<object force="true" path="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" unload="true"/>
 	</add>
 </table>

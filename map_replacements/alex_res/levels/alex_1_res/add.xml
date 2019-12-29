@@ -142,9 +142,19 @@
 		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" type="unit">
-		<unit force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
-		<object force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
 		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
+	</add>
+	<add path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_box_c" type="unit">
+		<material_config force="true" path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_box_c" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_box_c" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_box_c" unload="true"/>
+	</add>
+	<add path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" type="unit">
+		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
+		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
+		<material_config force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
 	</add>
 	<texture path="levels/mods/alex_1_res/cube_lights/dome_occlusion"/>
 </table>

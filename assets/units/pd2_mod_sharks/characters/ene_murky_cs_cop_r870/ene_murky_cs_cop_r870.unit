@@ -42,7 +42,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/payday2/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

@@ -10,6 +10,76 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		if Global.game_settings and Global.game_settings.one_down then
 		
+			--Watchdogs Day 1 IF twitch dies--
+			--when bain says bile is coming
+			if id == "pln_watchdogs_new_stage1_21" then
+				if difficulty_index <= 2 then
+					escape_time = 750
+				elseif difficulty_index == 3 then
+					escape_time = 720
+				elseif difficulty_index == 4 then
+					escape_time = 690
+				elseif difficulty_index == 5 then
+					escape_time = 660	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 630						
+				else
+					escape_time = 600
+				end
+			end	
+		
+			--Watchdogs Day 2--
+			if id == "pln_watchdogs_new_stage2_10" then
+				if difficulty_index <= 2 then
+					escape_time = 1200 
+				elseif difficulty_index == 3 then
+					escape_time = 1170
+				elseif difficulty_index == 4 then
+					escape_time = 1140
+				elseif difficulty_index == 5 then
+					escape_time = 1080	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 1080						
+				else
+					escape_time = 1050
+				end
+			end	
+		
+			--Bomb Forest--
+			--might not be the right line should be bains heavy units/roadblock warning
+			if id == "Play_pln_cr3_34" then
+				if difficulty_index <= 2 then
+					escape_time = 750
+				elseif difficulty_index == 3 then
+					escape_time = 720
+				elseif difficulty_index == 4 then
+					escape_time = 690
+				elseif difficulty_index == 5 then
+					escape_time = 660	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 630						
+				else
+					escape_time = 600
+				end	
+			end	
+		
+			--Bomb Dockyard--
+			if id == "Play_pln_cr2_122" then
+				if difficulty_index <= 2 then
+					escape_time = 690
+				elseif difficulty_index == 3 then
+					escape_time = 660
+				elseif difficulty_index == 4 then
+					escape_time = 630
+				elseif difficulty_index == 5 then
+					escape_time = 600	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 570						
+				else
+					escape_time = 540
+				end	
+			end	
+		
 			--Big Oil Day 1--
 			if id == "pln_bo1_05" then
 				if difficulty_index <= 2 then

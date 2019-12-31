@@ -347,18 +347,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dave = deep_clone(self.cop)
 		self.dave.weapon = deep_clone(presets.weapon.expert)
 		self.dave.detection = presets.detection.normal
-		self.dave.HEALTH_INIT = 6
-		self.dave.headshot_dmg_mul = 1
-		self.dave.surrender = nil
-		self.dave.unintimidateable = true
+		self.dave.dodge = presets.dodge.elite
+		self.dave.HEALTH_INIT = 20
+		self.dave.headshot_dmg_mul = 2
 		self.dave.silent_priority_shout = nil
-		self.dave.melee_weapon = nil
+		self.dave.melee_weapon = "fists_dozer"
 		self.dave.move_speed = presets.move_speed.lightning
 		self.dave.custom_voicework = "big_dave"
 		self.dave.can_shoot_while_dodging = true
 		self.dave.can_slide_on_suppress = true
 		self.dave.steal_loot = true
 		self.dave.access = "fbi"
+        self.dave.speech_prefix_p1 = "fuckyou"
+        self.dave.speech_prefix_count = nil   
 	end
 
 	function CharacterTweakData:_init_fbi(presets)

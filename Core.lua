@@ -284,7 +284,8 @@ local connection_network_handler_funcs = {
 }
 
 local unit_network_handler_funcs = {
-	'sync_grenades'
+	'sync_grenades',
+	'place_grenade_crate'
 }
 
 --[[ local unit_network_handler_funcs = {

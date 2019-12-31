@@ -61,7 +61,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			PlayerStandard.say_line(self, "s01x_plu")
 			managers.statistics:use_armor_bag()
 			local amount_upgrade_lvl = 0
-			local unit = GrenadeCrateBase.spawn(pos, rot, amount_upgrade_lvl, managers.network:session():local_peer():id())
+			if Network:is_client() then
+				managers.network:session():send_to_host("place_grenade_crate", pos, rot)
+			else
+				local unit = GrenadeCrateBase.spawn(pos, rot, managers.network:session():local_peer():id())
+			end
 			return true
 		end
 		return false

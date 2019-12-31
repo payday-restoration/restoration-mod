@@ -132,7 +132,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
         --///NEW OUTFITS\\\--
 		
-		self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
+		self.fish.package = {"packages/lvl_fish", "packages/nypdassets", "packages/addtux"}
 		self.fish.player_style = "tux"
 		
 		self.arm_cro.player_style = "loud_suit"

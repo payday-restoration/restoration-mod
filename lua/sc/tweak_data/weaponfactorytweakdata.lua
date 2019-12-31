@@ -24,58 +24,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wpn_fps_fla_mk2_body_fierybeast_summer",
 			"wpn_fps_fla_mk2_mag_rare"
 		}
-		self.wpn_fps_ass_m16_npc_summers = deep_clone(self.wpn_fps_ass_m16_npc)
-		self.wpn_fps_ass_m16_npc_summers.unit = "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc"
-		self.wpn_fps_ass_m16_npc_summers.default_blueprint = {
-			"wpn_fps_m4_uupg_b_long",
-			"wpn_fps_m4_lower_reciever",
-			"wpn_fps_upg_o_cs",
-			"wpn_fps_m4_upper_reciever_round",
-			"wpn_fps_m4_uupg_draghandle",
-			"wpn_fps_m16_fg_vietnam",
-			"wpn_fps_m16_s_solid_vanilla",
-			"wpn_fps_m4_upg_m_quick",
-			"wpn_fps_upg_m4_g_standard_vanilla"
-		}
-		self.wpn_fps_smg_p90_npc_summers = deep_clone(self.wpn_fps_smg_p90_npc)
-		self.wpn_fps_smg_p90_npc_summers.default_blueprint = {
-			"wpn_fps_smg_p90_body_p90",
-			"wpn_fps_smg_p90_b_ninja",
-			"wpn_fps_smg_p90_m_strap",
-			"wpn_fps_upg_o_rx30"
-		}
-		self.wpn_fps_pis_peacemaker_npc_summers = deep_clone(self.wpn_fps_pis_peacemaker_npc)
-		self.wpn_fps_pis_peacemaker_npc_summers.default_blueprint = {
-			"wpn_fps_pis_peacemaker_body_standard",
-			"wpn_fps_pis_peacemaker_b_short",
-			"wpn_fps_pis_peacemaker_m_standard",
-			"wpn_fps_pis_peacemaker_g_standard"
-		}
-		self.wpn_fps_x_six_shots_npc = {}
-		self.wpn_fps_x_six_shots_npc.optional_types = {
-			"barrel_ext",
-			"gadget",
-			"sight"
-		}
-		self.wpn_fps_x_six_shots_npc.default_blueprint = {
-			"wpn_fps_pis_peacemaker_body_standard",
-			"wpn_fps_pis_peacemaker_b_standard",
-			"wpn_fps_pis_peacemaker_m_standard",
-			"wpn_fps_pis_peacemaker_g_standard",
-			"wpn_fps_upg_pis_adam"
-		}
-		self.wpn_fps_x_six_shots_npc.uses_parts = {
-			"wpn_fps_pis_peacemaker_body_standard",
-			"wpn_fps_pis_peacemaker_b_standard",
-			"wpn_fps_pis_peacemaker_b_long",
-			"wpn_fps_pis_peacemaker_b_short",
-			"wpn_fps_pis_peacemaker_m_standard",
-			"wpn_fps_pis_peacemaker_g_standard",
-			"wpn_fps_pis_peacemaker_g_bling",
-			"wpn_fps_pis_peacemaker_s_skeletal",
-			"wpn_fps_upg_pis_adam"
-		}
-		self.wpn_fps_x_six_shots_npc.unit = "units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc"		
 		self:_init_jeb()
 	end
 

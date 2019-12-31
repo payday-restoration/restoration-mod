@@ -1403,69 +1403,38 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flamethrower_mk2_crew.alert_size = 3500
 		self.flamethrower_mk2_crew.suppression = 3.1
 		self.flamethrower_mk2_crew.FIRE_MODE = "auto"
-	end
-
-	function WeaponTweakData:_init_data_p90_crew()
-		self.p90_crew.categories = clone(self.p90.categories)
-		self.p90_crew.sounds.prefix = "p90_npc"
-		self.p90_crew.use_data.selection_index = 1
-		self.p90_crew.DAMAGE = 2.1
-		self.p90_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-		self.p90_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-		self.p90_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-		self.p90_crew.CLIP_AMMO_MAX = 50
-		self.p90_crew.NR_CLIPS_MAX = 4
-		self.p90_crew.reload = "looped"
-		self.p90_crew.looped_reload_speed = 0.14285715
-		self.p90_crew.auto.fire_rate = 0.06666666666
-		self.p90_crew.hold = {"bullpup", "rifle"}
-		self.p90_crew.alert_size = 1000
-		self.p90_crew.suppression = 0.1
-		self.p90_crew.FIRE_MODE = "auto"
-	end
-
-	function WeaponTweakData:_init_data_peacemaker_crew()
-		self.peacemaker_crew.categories = clone(self.peacemaker.categories)
-		self.peacemaker_crew.sounds.prefix = "pmkr45_npc"
-		self.peacemaker_crew.use_data.selection_index = 1
-		self.peacemaker_crew.DAMAGE = 14.1
-		self.peacemaker_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-		self.peacemaker_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-		self.peacemaker_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
-		self.peacemaker_crew.CLIP_AMMO_MAX = 6
-		self.peacemaker_crew.NR_CLIPS_MAX = 8
-		self.peacemaker_crew.reload = "looped"
-		self.peacemaker_crew.looped_reload_speed = 0.5
-		self.peacemaker_crew.hold = "pistol"
-		self.peacemaker_crew.alert_size = 5000
-		self.peacemaker_crew.suppression = 3.1
-		self.peacemaker_crew.armor_piercing = true
-		self.peacemaker_crew.FIRE_MODE = "single"
-		self.six_shots = deep_clone(self.peacemaker_crew)
-		self.six_shots.CLIP_AMMO_MAX = 12
-		self.six_shots.NR_CLIPS_MAX = 8
-		self.six_shots.usage = "akimbo_pistol"
-		self.six_shots.anim_usage = "akimbo_pistol"
-	end
-
-	function WeaponTweakData:_init_data_olympic_crew()
-		self.olympic_crew.categories = clone(self.olympic.categories)
-		self.olympic_crew.sounds.prefix = "m4_olympic_npc"
-		self.olympic_crew.use_data.selection_index = 1
-		self.olympic_crew.DAMAGE = 2.3
-		self.olympic_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-		self.olympic_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-		self.olympic_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-		self.olympic_crew.CLIP_AMMO_MAX = 100
-		self.olympic_crew.NR_CLIPS_MAX = 5
-		self.olympic_crew.pull_magazine_during_reload = "rifle"
-		self.olympic_crew.auto.fire_rate = 0.075
-		self.olympic_crew.hold = "rifle"
-		self.olympic_crew.alert_size = 1000
-		self.olympic_crew.suppression = 2.4
-		self.olympic_crew.FIRE_MODE = "auto"
-		self.olympic_primary_crew = deep_clone(self.olympic_crew)
-		self.olympic_primary_crew.use_data.selection_index = 2
+		
+		self.flamethrower_mk2_flamer = {}
+		self.flamethrower_mk2_flamer = deep_clone(self.flamethrower_mk2_crew)
+		self.flamethrower_mk2_flamer.categories = clone(self.flamethrower_mk2.categories)
+		self.flamethrower_mk2_flamer.sounds.prefix = "flamethrower_npc"
+		self.flamethrower_mk2_flamer.sounds.fire = "flamethrower_npc_fire"
+		self.flamethrower_mk2_flamer.sounds.stop_fire = "flamethrower_npc_fire_stop"
+		self.flamethrower_mk2_flamer.CLIP_AMMO_MAX = 60
+		self.flamethrower_mk2_flamer.NR_CLIPS_MAX = 4
+		self.flamethrower_mk2_flamer.FIRE_RANGE = 1400
+		self.flamethrower_mk2_flamer.DAMAGE = 3.7
+		self.flamethrower_mk2_flamer.fire_dot_data = {
+			dot_trigger_chance = 0,
+			dot_damage = 0,
+			dot_length = 0,
+			dot_trigger_max_distance = 0,
+			dot_tick_period = 0
+		}
+		self.flamethrower_mk2_flamer.FIRE_MODE = "auto"
+		self.flamethrower_mk2_flamer.fire_rate = 0.1
+		self.flamethrower_mk2_flamer.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.flamethrower_mk2_flamer.alert_size = 3500
+		self.flamethrower_mk2_flamer.suppression = 3.1
+		self.flamethrower_mk2_flamer.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.flamethrower_mk2_flamer.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.flamethrower_mk2_flamer.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+		self.flamethrower_mk2_flamer.pull_magazine_during_reload = "large_metal"
+		self.flamethrower_mk2_flamer.usage = "flamethrower"
+		self.flamethrower_mk2_flamer.anim_usage = "is_bullpup"			
 	end
 
 	--Lotta crew guns in here now--
@@ -13852,7 +13821,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			auto = {}
 		}
 		self.flamethrower_mk2_crew.usage = "flamethrower"
-		self.flamethrower_mk2_crew.anim_usage = "is_bullpup"
+		self.flamethrower_mk2_crew.anim_usage = "is_bullpup"	
 		--Crew shit below--
 		self.benelli_crew = {
 			usage = "is_shotgun_mag",

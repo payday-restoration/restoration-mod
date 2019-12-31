@@ -915,6 +915,12 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
 
 	<!--Summers Flamethrower-->
+	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<model path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<object path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" load="false"/>		
+	
 	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
 	<model path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
 	<object path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>

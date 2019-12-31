@@ -2298,8 +2298,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		self.summers.die_sound_event = "mga_death_scream"
 		self.summers.use_radio = "dsp_radio_russian"
-		self.summers.use_factory = true
-		self.summers.factory_weapon_id = {"wpn_fps_fla_mk2_npc_summers"}
 		self.summers.steal_loot = nil
 		self.summers.is_special = true
 	    self.summers.leader = {max_nr_followers = 3}
@@ -11810,7 +11808,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"bravo_rifle",
 			"bravo_shotgun",
 			"bravo_lmg",
-			"bravo_dmr"
+			"bravo_dmr",
+			"flamethrower_mk2_flamer_summers"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11867,7 +11866,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
 			Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
 			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"),
-			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
+			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
+			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers")
 		}
 	end
 

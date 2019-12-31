@@ -920,6 +920,8 @@
 	<object path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
 	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
 	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" load="false"/>		
+	<texture path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/flamethrower_summers_df"/>
+	<texture path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/flamethrower_summers_nm"/>
 	
 	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
 	<model path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>

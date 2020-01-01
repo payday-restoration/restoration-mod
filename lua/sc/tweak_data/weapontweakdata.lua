@@ -9568,6 +9568,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.sg416.panic_suppression_chance = 0.0
 	end
+	
+
+	if self.spike then --Gambyt's Spiker Rifle
+		self.spike.has_description = false						
+		self.spike.tactical_reload = 1		
+		self.spike.spread.standing = 3
+		self.spike.spread.crouching = 2
+		self.spike.spread.steelsight = 1
+		self.spike.spread.moving_standing = 4
+		self.spike.spread.moving_crouching = 3
+		self.spike.spread.moving_steelsight = 2
+		self.spike.kick.standing = self.new_m4.kick.standing
+		self.spike.kick.crouching = self.new_m4.kick.standing
+		self.spike.kick.steelsight = self.new_m4.kick.standing
+		self.spike.AMMO_MAX = 80
+		self.spike.AMMO_PICKUP = self:_pickup_chance(80, 2)
+		self.spike.stats = {
+			damage = 75,
+			spread = 18,
+			recoil = 17,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 18,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.spike.panic_suppression_chance = 0.0		
+	end
 
 
 	if self.ak5s then --Gambyt's AK5 SMG

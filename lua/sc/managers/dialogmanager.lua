@@ -46,7 +46,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end	
 		
 			--Bomb Forest--
-			--might not be the right line should be bains heavy units/roadblock warning
 			if id == "Play_pln_cr3_34" then
 				if difficulty_index <= 2 then
 					escape_time = 750
@@ -63,8 +62,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end	
 			end	
 		
+			--Scarface Mansion--
+			if id == "Play_pln_fri_36" then
+				if difficulty_index <= 2 then
+					escape_time = 750
+				elseif difficulty_index == 3 then
+					escape_time = 720
+				elseif difficulty_index == 4 then
+					escape_time = 690
+				elseif difficulty_index == 5 then
+					escape_time = 660	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 630						
+				else
+					escape_time = 600
+				end	
+			end	
+		
 			--Bomb Dockyard--
-			if id == "Play_pln_cr2_122" then
+			--i think only one of these plays im not 100% sure
+			if id == "Play_pln_cr2_121" or id == "Play_pln_cr2_122" then
 				if difficulty_index <= 2 then
 					escape_time = 690
 				elseif difficulty_index == 3 then

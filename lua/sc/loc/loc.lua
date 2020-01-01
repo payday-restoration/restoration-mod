@@ -129,7 +129,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
 		
-		--Player Outfits
+		--Player Outfits					
+		["bm_suit_two_piece_sc"] = "Two-piece Suit",
+		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!'",				
+		
 		["bm_suit_loud_suit"] = "Combat Harness",
 		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
 		
@@ -421,7 +424,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
-
+		
+		--Default Suit String
+		["bm_suit_none_desc"] = "This is the heister's default outfit with the selected armor. Will automatically change from the Two-piece Suit depending on the selected heist!",				
+		
 		-- Ad Banner Change
 		["menu_changelog"] = "Latest Changelog",
 		["menu_discord"] = "Discord Server",

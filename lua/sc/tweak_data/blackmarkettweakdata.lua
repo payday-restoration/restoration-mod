@@ -509,6 +509,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end		
 		
+		--Two Piece Suit
+		self.player_styles.two_piece_suit = {
+			name_id = "bm_suit_two_piece_sc",
+			desc_id = "bm_suit_two_piece_desc_sc",
+			unlocked = true,
+			texture_bundle_folder = "mods",
+			global_value = "sc"
+		}		
+		
 		-- Flecktarn Jumpsuit 
 		self.player_styles.jumpsuit.material_variations.flecktarn = {
 			name_id = "bm_suit_var_jumpsuit_flecktarn",

@@ -501,6 +501,17 @@
     <texture path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn_df"/>
 	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_old_hoxton"/> 
+   
+    <!--secret dev mask ssshhh-->
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <model path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <object path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_eye/msk_eye_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_eye/msk_eye_nm"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/all_seeing"/> 
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

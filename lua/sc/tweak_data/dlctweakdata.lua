@@ -2,7 +2,22 @@ old_DLCTweakData_init = DLCTweakData.init
 function DLCTweakData:init(...)
 	old_DLCTweakData_init(self, ...)
 	
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then	
+		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
+			self.omnia = {
+				content = {},
+				free = true
+			}
+			self.omnia.content.loot_global_value = "rest_omnia"
+			self.omnia.content.loot_drops = {}		
+			self.omnia.content.loot_drops = {
+				{
+					type_items = "masks",
+					item_entry = "all_seeing",
+					amount = 1
+				}
+			}	
+		end	
 		self.rest = {
 			content = {},
 			free = true

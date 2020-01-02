@@ -330,6 +330,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			global_value = "rest",
 			texture_bundle_folder = "mods"
 		}
+		
+		self.masks.all_seeing = {}
+		self.masks.all_seeing.unit = "units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc"
+			
+		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
+			self.masks.all_seeing = {
+				unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
+				name_id = "bm_all_seeing",
+				desc_id = "bm_all_seeing_desc",
+				value = 0,
+			    type = "helmet",
+				global_value = "rest_omnia",
+				texture_bundle_folder = "mods"
+			}		
+		end
 	end
 	
 	--we all know alligator skin's the best material right--

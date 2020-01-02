@@ -264,7 +264,7 @@
 	"heist_jackal_surface_tension_brief" : "Placeholder Briefing For Loadouts. Don't forget a medic bag.",
 	"heist_vivinite_name" : "ZERO DAY",
 	"heist_contact_shatter" : "Jackal & Raze",
-	"heist_contact_sin" : "The Sinaloan",
+	"heist_contact_sin" : "The Cobras",
 	"menu_contacts_shatter" : "CrimeNet Affiliates",
 	"heist_contact_shatter_description" : "Jackal & Raze. CrimeNet's asset and fighting force handlers. They have a healthy hatred for OMNIA Technologies and GENSEC.",
 	"heist_contact_jackal_description" : "Jackal started out working for GENSEC, but quit after an incident with human trafficking, tied to GENSEC and OMNIA.\n\nNow, he works for CrimeNet, bringing the fight to their front door.",
@@ -343,7 +343,7 @@
 	"bm_msk_secret_old_hoxton_desc" : "Hoxton left the Old Country to get his Payday in the new. When Bain first told him about the Secret, he fancied the idea of going after ancient items for their potential value, never really caring whether or not the legendary power Bain talked about was real or not.",	
    
     "bm_all_seeing" : "The All Seeing Anchor",
-	"bm_all_seeing_desc" : "A horrifying vision, a nightmarish sight. The powers that be have seen that you are rewarded for your contributions",	
+	"bm_all_seeing_desc" : "A horrifying vision, a nightmarish sight.\n\nThe powers that be have seen you, and ensure you are rewarded for your contributions.",	
    
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",

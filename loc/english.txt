@@ -342,6 +342,9 @@
 	"bm_msk_secret_old_hoxton" : "Secret Hoxton Reborn",
 	"bm_msk_secret_old_hoxton_desc" : "Hoxton left the Old Country to get his Payday in the new. When Bain first told him about the Secret, he fancied the idea of going after ancient items for their potential value, never really caring whether or not the legendary power Bain talked about was real or not.",	
    
+    "bm_all_seeing" : "The All Seeing Anchor",
+	"bm_all_seeing_desc" : "A horrifying vision, a nightmarish sight. The powers that be have seen that you are rewarded for your contributions",	
+   
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",
 	"material_jkl_matt01_title" : "Fighting Feathers",

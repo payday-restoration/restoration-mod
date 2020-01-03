@@ -332,7 +332,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		
 		self.masks.all_seeing = {}
-		self.masks.all_seeing.unit = "units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc"
+		self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"
 			
 		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 			self.masks.all_seeing = {

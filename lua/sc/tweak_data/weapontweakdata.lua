@@ -4510,6 +4510,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hk21.spread.moving_standing = 4
 		self.hk21.spread.moving_crouching = 3
 		self.hk21.spread.moving_steelsight = 2
+		self.hk21.spread.bipod = 0.5
 		self.hk21.kick.standing = self.new_m4.kick.standing
 		self.hk21.kick.crouching = self.new_m4.kick.standing
 		self.hk21.kick.steelsight = self.new_m4.kick.standing
@@ -4542,6 +4543,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m249.spread.moving_standing = 4
 		self.m249.spread.moving_crouching = 3
 		self.m249.spread.moving_steelsight = 2
+		self.m249.spread.bipod = 0.5
 		self.m249.fire_mode_data.fire_rate = 0.075
 		self.m249.auto.fire_rate = 0.075
 		self.m249.kick.standing = self.new_m4.kick.standing
@@ -4581,6 +4583,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.rpk.spread.moving_standing = 4
 		self.rpk.spread.moving_crouching = 3
 		self.rpk.spread.moving_steelsight = 2
+		self.rpk.spread.bipod = 0.5
 		self.rpk.kick.standing = self.new_m4.kick.standing
 		self.rpk.kick.crouching = self.new_m4.kick.standing
 		self.rpk.kick.steelsight = self.new_m4.kick.standing
@@ -5265,6 +5268,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.mg42.spread.moving_standing = 4
 		self.mg42.spread.moving_crouching = 3
 		self.mg42.spread.moving_steelsight = 2
+		self.mg42.spread.bipod = 0.5
 		self.mg42.kick.standing = self.new_m4.kick.standing
 		self.mg42.kick.crouching = self.new_m4.kick.standing
 		self.mg42.kick.steelsight = self.new_m4.kick.standing
@@ -6336,6 +6340,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.par.spread.moving_standing = 4
 		self.par.spread.moving_crouching = 3
 		self.par.spread.moving_steelsight = 2
+		self.par.spread.bipod = 0.5
 		self.par.timers.reload_not_empty = 6.5
 		self.par.timers.reload_empty = 6.5
 		self.par.kick = {}

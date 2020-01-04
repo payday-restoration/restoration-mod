@@ -9,7 +9,7 @@ function DLCTweakData:init(...)
 				content = {},
 				free = true
 			}
-			self.omnia.content.loot_global_value = "rest_omnia"	
+			self.omnia.content.loot_global_value = "rest_omnia"
 			self.omnia.content.loot_drops = {
 				{
 					type_items = "masks",

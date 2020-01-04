@@ -12292,7 +12292,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = 11,
 					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.9},	
 			}
 		}		
 		self.wpn_fps_lmg_hk21.optional_types = {"barrel_ext", "gadget"}
@@ -12501,7 +12501,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = 20,
 					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 			}
 		}
 		self.wpn_fps_lmg_m249.default_blueprint = {
@@ -18856,7 +18856,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -3,
 					recoil = 0
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 			}
 		}
 		self.wpn_fps_lmg_mg42.adds = { 
@@ -22704,7 +22704,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				total_ammo_mod = 20,
 				concealment = -3
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},
+			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},
 			has_description = true,
 			desc_id = "bm_wp_upg_a_halfthatkit_desc",
 			texture_bundle_folder = "dlc_pack_overkill",
@@ -27536,7 +27536,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = 11,
 					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.9},	
 			}
 		}		
 		self.wpn_fps_lmg_par.default_blueprint = {
@@ -38408,7 +38408,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -3,
 					recoil = 0
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 			}
 		}		
 		self.wpn_fps_lmg_shuno_npc = deep_clone(self.wpn_fps_lmg_shuno)
@@ -45914,7 +45914,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							concealment = -3,							
 							total_ammo_mod = 20
 						},
-						custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+						custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 					}
 				}				
 			end		
@@ -47874,7 +47874,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						total_ammo_mod = 25,
 						concealment = -3
 					},
-					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},	
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.9},	
 				}
 			}	
 		end
@@ -47949,7 +47949,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						total_ammo_mod = 25,
 						concealment = -3
 					},
-					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},	
+					custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.9},	
 				}
 			}					
 			end	
@@ -48618,7 +48618,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				concealment = -3,
 				total_ammo_mod = 20
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.8},
+			custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.9},
 			internal_part = true
 		}
 		self.parts.wpn_lmg_rpk_m_ban = {
@@ -48864,7 +48864,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						total_ammo_mod = 20,
 						concealment = -3
 					},
-					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 				}
 			}				
 		end		
@@ -48886,7 +48886,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						total_ammo_mod = 11,
 						concealment = -3
 					},
-				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.11, ammo_pickup_max_mul = 1.11, movement_speed = 0.9},	
 				}
 			}					
 		end				
@@ -48955,7 +48955,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						total_ammo_mod = 20,
 						concealment = -3
 					},
-					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+					custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 				}
 			}	
 		end	
@@ -48978,7 +48978,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						total_ammo_mod = 20,
 						concealment = -3
 					},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 				}
 			}	
 		end	
@@ -49045,7 +49045,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = 20,
 					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 				}
 			}	
 		end			
@@ -49126,7 +49126,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = 20,
 					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 			}
 		}			
 		end	
@@ -49374,7 +49374,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_lmg_dp28_tripod_top.custom_stats = {
 				ammo_pickup_min_mul = 1.2,
 				ammo_pickup_max_mul = 1.2,
-				movement_speed = 0.8
+				movement_speed = 0.9
 			}
 			--self.parts.wpn_fps_lmg_dp28_tripod_top.forbids = {"wpn_fps_upg_ammo_half_that"}				
 			self.parts.wpn_fps_lmg_dp28_barrel_lord.stats = {
@@ -49436,7 +49436,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					total_ammo_mod = 20,
 					concealment = -3
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.8},
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},
 				forbids = {"wpn_fps_lmg_dp28_tripod_top"}
 			}
 		}				

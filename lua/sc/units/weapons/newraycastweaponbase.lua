@@ -116,6 +116,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local spread_mult = 1
 		spread_mult = spread_mult * self:spread_multiplier(current_state)
 		spread_mult = spread_mult * self:conditional_accuracy_multiplier(current_state)
+		
+		if managers.player:current_state() == "bipod" then
+			spread_mult = spread_mult * 0.5
+		end
+		
 		spread_x = spread_x * spread_mult
 		spread_y = spread_y * spread_mult
 		
@@ -277,6 +282,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._rof_mult = 1
 		self._hipfire_mod = 1
 		self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
+		
+		self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
+		self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
+			
 		self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 		if self:weapon_tweak_data().heavy_AP then --for convenience
 			self._can_shoot_through_titan_shield = true

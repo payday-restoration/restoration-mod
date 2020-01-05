@@ -9887,7 +9887,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			optimal = 15000,
 			far = 15000
 		}
-		presets.weapon.sniper.is_rifle.use_laser = true
+		presets.weapon.sniper.is_rifle.use_laser = false
 		presets.weapon.sniper.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -13030,7 +13030,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion_assault.damage.fire_damage_mul = 0.2			
 		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
-		self.sniper.weapon.is_rifle.use_laser = false
 		
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
@@ -13203,7 +13202,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion_assault.damage.fire_damage_mul = 0.1
 		
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
-		self.sniper.weapon.is_rifle.use_laser = false
 		self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc")		
 		self.weap_unit_names[21] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc")		
 		

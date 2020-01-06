@@ -99,6 +99,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_extra_ammo_multiplier_1",	
 		"sentry_gun_silent",
 		"pistol_swap_speed_multiplier_1",
+		"player_tape_loop_duration_1",
 		"player_civ_calming_alerts"
 	}
 
@@ -1295,7 +1296,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 2},
 				[1] = {
 					upgrades = {
-						"player_tape_loop_duration_1",
+						"player_tape_loop_duration_2",
 						"player_hack_fix_interaction_speed_multiplier_1"
 					},
 					cost = self.costs.hightier

@@ -896,7 +896,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.small_loot_multiplier = {1.3, 1.3}
 				
 				--Cleaner
-				self.values.player.corpse_dispose_amount = {2, 3}
+				self.values.player.corpse_dispose_amount = {3, 4}
 				self.values.player.extra_corpse_dispose_amount = {1}
 				self.values.bodybags_bag.quantity = {1}
 				self.values.player.cleaner_cost_multiplier = {0}
@@ -913,7 +913,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.buy_spotter_asset = {true}
 				
 				--Systems Specialist
-				self.values.player.tape_loop_duration = {25, 50}
+				self.values.player.tape_loop_duration = {10, 30}
 				self.values.player.hack_fix_interaction_speed_multiplier = {0.75, 0.25}
 				self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}
 				self.values.player.mark_enemy_time_multiplier = {2}
@@ -922,7 +922,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.ecm_jammer.quantity = {1, 2}
 				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
 				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
-				self.values.player.melee_kill_snatch_pager_chance = {0}
+				self.values.player.melee_kill_snatch_pager_chance = {1}
 				
 				--ECM Overdrive
 				self.values.ecm_jammer.feedback_duration_boost = {1.25}

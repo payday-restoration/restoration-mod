@@ -8469,6 +8469,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.fire_mode_data.fire_rate = 0.4
 		self.x_judge.single.fire_rate = 0.4
 		self.x_judge.rays = 9
+		self.x_judge.FIRE_MODE = "single"
+		self.x_judge.BURST_FIRE = true
 		self.x_judge.spread.standing = 3 * 1
 		self.x_judge.spread.crouching = 2 * 1
 		self.x_judge.spread.steelsight = 1 * 1

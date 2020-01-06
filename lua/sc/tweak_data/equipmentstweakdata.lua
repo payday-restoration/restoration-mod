@@ -36,7 +36,7 @@ function EquipmentsTweakData:init()
 		asset_ammo_bag = 4,
 		asset_grenade_crate = 3,
 		first_aid_kit = 14,
-		asset_bodybags_bag = 3,
+		asset_bodybags_bag = 4,
 		bodybags_bag = 2,
 		sentry_gun = -1,
 		doctor_bag = 2

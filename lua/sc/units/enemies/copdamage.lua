@@ -732,24 +732,25 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				end
 				local not_cool_t = self._unit:movement():not_cool_t()
 				local t = TimerManager:game():time()
+				local job = Global.level_data and Global.level_data.level_id
 				local roll_security = math.rand(1, 100)
 				if is_civlian then
 					managers.money:civilian_killed()
 				elseif managers.player:upgrade_value("player", "melee_kill_snatch_pager_chance", 0) > math.rand(1) then
-					if self._unit:movement():cool() then 
-						snatch_pager = true
-						self._unit:unit_data().has_alarm_pager = false
-						if roll_security <= 25 then
-							managers.player:local_player():sound():say( "Play_pln_spawn_01", false, false )
-						end
-					elseif (not not_cool_t or t - not_cool_t < 1) then 
-						snatch_pager = true
-						self._unit:unit_data().has_alarm_pager = false	
-						if roll_security <= 25 then
-							managers.player:local_player():sound():say( "Play_pln_spawn_01", false, false )
-						end
+					if job == "short1_stage1" or job == "short1_stage2" then 
 					else
-					end	
+						if self._unit:movement():cool() then 
+							snatch_pager = true
+							self._unit:unit_data().has_alarm_pager = false
+						elseif (not not_cool_t or t - not_cool_t < 1.5) then 
+							snatch_pager = true
+							self._unit:unit_data().has_alarm_pager = false	
+						elseif self._unit:anim_data() and self._unit:anim_data().hands_tied then
+							snatch_pager = true
+							self._unit:unit_data().has_alarm_pager = false	
+						else
+						end	
+					end
 				end
 			end
 		end

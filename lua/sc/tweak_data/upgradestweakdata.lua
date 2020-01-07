@@ -1178,8 +1178,9 @@ function UpgradesTweakData:_init_pd2_values()
 		--}
 
 		if Global.game_settings and Global.game_settings.single_player then
-		self.values.cable_tie.quantity_1 = {16}
-	end
+			self.values.cable_tie.quantity_1 = {16}
+			self.values.player.corpse_dispose_amount = {12, 16}
+		end
 
 	--Perk Deck shit--
 	

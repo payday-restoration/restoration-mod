@@ -10,6 +10,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		if Global.game_settings and Global.game_settings.one_down then
 		
+			--Big Bank--			
+			--once the vault is open only thermite atm gotta add beast id
+			if id == "Play_pln_bb1_64" then
+				if difficulty_index <= 2 then
+					escape_time = 1200 
+				elseif difficulty_index == 3 then
+					escape_time = 1170
+				elseif difficulty_index == 4 then
+					escape_time = 1140
+				elseif difficulty_index == 5 then
+					escape_time = 1080	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 1080						
+				else
+					escape_time = 1050
+				end
+			end	
+		
 			--Boiling Point--
 			if id == "Play_pln_mad_45" then
 				if difficulty_index <= 2 then

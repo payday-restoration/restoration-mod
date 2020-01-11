@@ -1067,7 +1067,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.access = "swat"
 		self.city_swat.dodge = presets.dodge.athletic_overkill
 		self.city_swat.chatter = presets.enemy_chatter.swat
-		self.city_swat.melee_weapon = nil
+		self.city_swat.melee_weapon = "knife_1"
 		self.city_swat.melee_weapon_dmg_multiplier = 2.5
 		if job == "chill_combat" then
 			self.city_swat.steal_loot = nil

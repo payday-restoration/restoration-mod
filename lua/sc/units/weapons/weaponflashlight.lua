@@ -5,9 +5,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	WeaponFlashLight.NPC_GLOW_OPACITY_MAX = 100 --default 100; muzzle glow
 	WeaponFlashLight.NPC_CONE_OPACITY_MAX = 8 --default 8; projected cone
 	
-	local spot_angle = 90 --default 60
+	local spot_angle = 70 --default 60
 	local haunted_range = 10000 --default 10000
-	local normal_range = 5000 --default 1000
+	local normal_range = 2500 --default 1000
 	
 	function WeaponFlashLight:is_haunted()
 		if restoration and restoration.Options:GetValue("SC/Holiday") then

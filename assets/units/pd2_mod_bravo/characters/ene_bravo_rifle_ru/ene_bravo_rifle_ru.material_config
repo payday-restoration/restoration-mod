@@ -1,0 +1,35 @@
+<materials version="3" group="ene_akan_medic">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df" mip="1"/>
+	</material>
+	
+
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_body_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_ru_df"/>
+	</material>
+	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_ru_df" mip="1"/>
+	</material>
+	
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet" version="2">
+		<diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_head_nm" />
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod1" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/heads_atlas_df" />
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" />
+    </material>
+
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:" name="mat_light" version="2">
+		<diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_head_nm" />
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

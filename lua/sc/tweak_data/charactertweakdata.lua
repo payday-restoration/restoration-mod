@@ -899,8 +899,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "heavy_swat_sniper")
 		
 		--Weekend Snipers
-		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)
-		self.weekend_dmr.custom_voicework = "bravo"
+		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)	
+		if is_reaper then
+		    self.weekend_dmr.custom_voicework = "tswat_ru"
+		else
+		    self.weekend_dmr.custom_voicework = "bravo"
+		end	
         self.weekend_dmr.speech_prefix_p1 = "uwu"
         self.weekend_dmr.speech_prefix_count = nil    
 		table.insert(self._enemy_list, "weekend_dmr")
@@ -1102,9 +1106,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend
 		self.weekend = deep_clone(self.city_swat)
-		self.weekend.custom_voicework = "bravo"
+		if is_reaper then
+		    self.weekend.custom_voicework = "tswat_ru"
+		else
+		    self.weekend.custom_voicework = "bravo"
+		end	
         self.weekend.speech_prefix_p1 = "uwu"
         self.weekend.speech_prefix_count = nil 
+		self.weekend.surrender = nil
+		self.weekend.unintimidateable = true
 		table.insert(self._enemy_list, "weekend")				
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
@@ -1140,8 +1150,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "skeleton_swat_titan")	
 		
 		--Weekend LMG
-		self.weekend_lmg = deep_clone(self.city_swat_titan)
-		self.weekend_lmg.custom_voicework = "bravo"
+		self.weekend_lmg = deep_clone(self.city_swat_titan)	
+		if is_reaper then
+		    self.weekend_lmg.custom_voicework = "tswat_ru"
+		else
+		    self.weekend_lmg.custom_voicework = "bravo"
+		end	
         self.weekend_lmg.speech_prefix_p1 = "uwu"
         self.weekend_lmg.speech_prefix_count = nil 
 		table.insert(self._enemy_list, "weekend_lmg")						
@@ -14216,7 +14230,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_bravo_dmr",
 					"ene_bravo_lmg",
 					"ene_bravo_rifle",
-					"ene_bravo_shotgun"
+					"ene_bravo_shotgun",
+					"ene_bravo_dmr_ru",
+					"ene_bravo_lmg_ru",
+					"ene_bravo_rifle_ru",
+					"ene_bravo_shotgun_ru"
 				}
 			},
 			dave = {

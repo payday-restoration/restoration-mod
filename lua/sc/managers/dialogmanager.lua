@@ -10,6 +10,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		if Global.game_settings and Global.game_settings.one_down then
 		
+			--Boiling Point--
+			if id == "Play_pln_mad_45" then
+				if difficulty_index <= 2 then
+					escape_time = 690
+				elseif difficulty_index == 3 then
+					escape_time = 660
+				elseif difficulty_index == 4 then
+					escape_time = 630
+				elseif difficulty_index == 5 then
+					escape_time = 600	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 570						
+				else
+					escape_time = 540
+				end
+			end	
+		
 			--Watchdogs Day 1 IF twitch dies--
 			--when bain says bile is coming
 			if id == "pln_watchdogs_new_stage1_21" then

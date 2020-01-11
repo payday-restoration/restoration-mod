@@ -98,7 +98,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 			--Bomb Dockyard--
 			--i think only one of these plays im not 100% sure
-			if id == "Play_pln_cr2_121" or id == "Play_pln_cr2_122" then
+			if id == "Play_pln_cr2_63" then
 				if difficulty_index <= 2 then
 					escape_time = 690
 				elseif difficulty_index == 3 then

@@ -12,7 +12,7 @@ function TeamAILogicTravel.check_inspire(data, attention)
 		data.unit:brain():set_objective()
 		data.unit:sound():say("f36x_any", true, false)
 
-		local can_play_action = not criminal:movement():chk_action_forbidden("action") and not data.unit:anim_data().reload and not data.internal_data.firing and not data.internal_data.shooting
+		local can_play_action = not data.unit:movement():chk_action_forbidden("action") and not data.unit:anim_data().reload and not data.internal_data.firing and not data.internal_data.shooting
 
 		if can_play_action then
 			local new_action = {

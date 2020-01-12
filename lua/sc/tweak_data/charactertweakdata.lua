@@ -12075,14 +12075,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("normal", "normal")
 		self.autumn.damage.bullet_dodge_chance = 10
+		
 		self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+		self.city_swat.melee_weapon_dmg_multiplier = 1
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+		
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
+		
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		self.omnia.melee_weapon_dmg_multiplier = 1
 		
 		--Set damage dealt for false downs.
 		self.spooc.kick_damage = 3.0
@@ -12093,11 +12101,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.melee_weapon_dmg_multiplier = 1
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
 		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)		
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12282,6 +12292,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
 		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 1
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 1
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
+		self.omnia.melee_weapon_dmg_multiplier = 1
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 1
+		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
@@ -12465,6 +12483,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.omnia.melee_weapon_dmg_multiplier = 2
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 2
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12651,6 +12677,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.omnia.melee_weapon_dmg_multiplier = 2
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 2		
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12842,6 +12876,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.omnia.melee_weapon_dmg_multiplier = 2
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 2		
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)

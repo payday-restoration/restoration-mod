@@ -745,9 +745,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						elseif (not not_cool_t or t - not_cool_t < 1.5) then 
 							snatch_pager = true
 							self._unit:unit_data().has_alarm_pager = false	
-						elseif self._unit:anim_data() and self._unit:anim_data().hands_tied then
-							snatch_pager = true
-							self._unit:unit_data().has_alarm_pager = false	
 						else
 						end	
 					end

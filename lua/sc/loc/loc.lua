@@ -123,6 +123,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
+		["bm_melee_buck_info"] = "Reduces incoming ranged damage by 10% while charging.",
 		
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",

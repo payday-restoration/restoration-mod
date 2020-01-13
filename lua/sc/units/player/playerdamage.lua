@@ -316,6 +316,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
 		
+		if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+			if managers.blackmarket:equipped_melee_weapon()== "buck" then
+				attack_data.damage = attack_data.damage * 0.9
+			end
+		end
+		
 		if self._bleed_out then
 			self:_bleed_out_damage(attack_data)
 			return

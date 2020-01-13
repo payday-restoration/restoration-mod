@@ -115,7 +115,7 @@
 		<script_data_mods directory="scriptdata"/>
 	</level>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative briefing_event="hct_rats_brf_speak" contact="hector" debrief_event="hct_rats_debrief" id="alex" jc="40">
+	<narrative briefing_event="hct_rats_brf_speak" contact="hector" debrief_event="hct_rats_debrief" id="alex" jc="40" custom="true">
 		<chain>
 			<table level_id="alex_1_res" type="d" type_id="heist_type_survive"/>
 			<table level_id="alex_2_res" type="d" type_id="heist_type_survive"/>

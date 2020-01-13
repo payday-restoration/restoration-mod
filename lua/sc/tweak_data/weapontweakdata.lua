@@ -12290,6 +12290,38 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.x_ak5s then --disabled vmp akimbos
 		self.x_ak5s.use_data.selection_index = 4
 	end	
+
+	if self.cold then --Gambyt's VMP Classic Crosskill
+		self.cold.tactical_reload = 1											
+		self.cold.fire_mode_data.fire_rate = 0.07692307692
+		self.cold.single.fire_rate = 0.07692307692
+		self.cold.AMMO_MAX = 60
+		self.cold.AMMO_PICKUP = self:_pickup_chance(60, 1)
+		self.cold.spread.standing = 3
+		self.cold.spread.crouching = 2
+		self.cold.spread.steelsight = 1
+		self.cold.spread.moving_standing = 4
+		self.cold.spread.moving_crouching = 3
+		self.cold.spread.moving_steelsight = 2
+		self.cold.kick.standing = self.glock_17.kick.standing
+		self.cold.kick.crouching = self.glock_17.kick.standing
+		self.cold.kick.steelsight = self.glock_17.kick.standing
+		self.cold.stats = {
+			damage = 75,
+			spread = 18,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 24,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.cold.panic_suppression_chance = 0.0			
+	end						
 	
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.tactical_reload = 1											

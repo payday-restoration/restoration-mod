@@ -46668,9 +46668,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_pis_lemming_b_long.stats = {
 				value = 3,
 				spread = 2,
-				concealment = -1,				
-				spread_moving = 1
-			}	
+				concealment = -3
+			}
+			self.parts.wpn_fps_pis_cold_g_wood.stats = {
+				value = 3,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_pis_cold_body_custom.stats = {
+				value = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_pis_cold_sl_comp1.stats = {
+				value = 7,
+				concealment = -1,
+				spread = -1,
+				recoil = 2
+			}
+			self.parts.wpn_fps_pis_cold_sl_comp2.stats = {
+				value = 4,
+				spread = 2,
+				recoil = -1,
+				concealment = -4
+			}						
+			self.parts.wpn_fps_pis_cold_m_extended.stats = {
+				value = 2,
+				concealment = -2,
+				extra_ammo = 4,
+				spread = -1,
+				recoil = 1,			
+				reload = -2
+			}						
 			self.parts.wpn_fps_snp_siltstone_b_short.stats = {
 				value = 1,
 				concealment = 1

@@ -1113,8 +1113,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end	
         self.weekend.speech_prefix_p1 = "uwu"
         self.weekend.speech_prefix_count = nil 
-		self.weekend.surrender = nil
-		self.weekend.unintimidateable = true
 		table.insert(self._enemy_list, "weekend")				
 		
 		self.city_swat_titan = deep_clone(self.city_swat)

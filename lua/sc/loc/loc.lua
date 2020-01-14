@@ -124,6 +124,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Reduces incoming ranged damage by 10% while charging.",
+		["bm_melee_cs_info"] = "Deals 36 damage per second to targets in front of you while charging.",
+		["bm_melee_ostry_info"] = "Deals 20 damage per second to targets in front of you while charging.",
 		
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",

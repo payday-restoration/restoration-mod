@@ -690,14 +690,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_npc.alert_size = 2800
 		self.m4_npc.suppression = 2.2
 		self.m4_npc.FIRE_MODE = "auto"
+		
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
 		self.m4_secondary_npc.use_data.selection_index = 1
+		
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
 		self.ak47_ass_npc.sounds.prefix = "akm_npc"
+		
+		self.swamp_npc = deep_clone(self.m4_npc)
+		self.swamp_npc.sounds.prefix = "m16_npc"		
+		
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.auto.fire_rate = 0.1
 		self.sg417_npc.CLIP_AMMO_MAX = 20
 		self.sg417_npc.DAMAGE = 4.4
+		
 		self.m4_boom_npc = deep_clone(self.m4_npc)
 	end
 	
@@ -773,10 +780,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.rays = 9
 		self.r870_npc.spread = 3
 		self.r870_npc.FIRE_MODE = "single"
+		
 		self.benelli_npc = deep_clone(self.r870_npc)
 		self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 		self.benelli_npc.DAMAGE = 7
 		self.benelli_npc.CLIP_AMMO_MAX = 10
+		
+		self.bayou_npc = deep_clone(self.r870_npc)
+		self.bayou_npc.sounds.prefix = "spas_npc"
+		self.bayou_npc.DAMAGE = 7
+		self.bayou_npc.CLIP_AMMO_MAX = 10		
+		
 		self.r870_taser_npc = deep_clone(self.r870_npc)
 		self.r870_taser_npc.sounds.prefix = "remington_npc"
 		self.r870_taser_npc.DAMAGE = 5.9
@@ -1319,6 +1333,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Bravo LMG--
 		self.m249_bravo_npc = deep_clone(self.hk23_sc_npc)	
 		self.m249_bravo_npc.sounds.prefix = "m249_npc"
+		self.m249_bravo_npc.CLIP_AMMO_MAX = 200
 	end
 
 	function WeaponTweakData:_init_data_contraband_npc()

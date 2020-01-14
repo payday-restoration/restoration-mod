@@ -905,6 +905,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.weekend_dmr.custom_voicework = "bravo"
 		end	
+		self.weekend_dmr.HEALTH_INIT = 11.25
+		self.weekend_dmr.headshot_dmg_mul = 4.25
         self.weekend_dmr.speech_prefix_p1 = "uwu"
         self.weekend_dmr.speech_prefix_count = nil    
 		table.insert(self._enemy_list, "weekend_dmr")
@@ -1111,6 +1113,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 		    self.weekend.custom_voicework = "bravo"
 		end	
+		self.weekend.HEALTH_INIT = 18.75
+		self.weekend.headshot_dmg_mul = 3.75		
         self.weekend.speech_prefix_p1 = "uwu"
         self.weekend.speech_prefix_count = nil 
 		table.insert(self._enemy_list, "weekend")				
@@ -1148,12 +1152,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "skeleton_swat_titan")	
 		
 		--Weekend LMG
-		self.weekend_lmg = deep_clone(self.city_swat_titan)	
+		self.weekend_lmg = deep_clone(self.city_swat_titan)		
 		if is_reaper then
 		    self.weekend_lmg.custom_voicework = "tswat_ru"
 		else
 		    self.weekend_lmg.custom_voicework = "bravo"
 		end	
+		self.weekend_lmg.HEALTH_INIT = 28.125
+		self.weekend_lmg.headshot_dmg_mul = 3.75		
         self.weekend_lmg.speech_prefix_p1 = "uwu"
         self.weekend_lmg.speech_prefix_count = nil 
 		table.insert(self._enemy_list, "weekend_lmg")						
@@ -11764,7 +11770,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return presets
 	end
 
-
 	function CharacterTweakData:_create_table_structure()
 		self.weap_ids = {
 			"beretta92",
@@ -11876,8 +11881,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
 			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
-			Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-			Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou"),
 			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"),
 			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers")
@@ -11908,7 +11913,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)	
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)	
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
@@ -12101,7 +12106,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.melee_weapon_dmg_multiplier = 1
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)		
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)		
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
@@ -12285,7 +12290,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)	
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)	
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
@@ -12477,7 +12482,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_pump)	
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)	
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
@@ -12671,7 +12676,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_pump)			
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)			
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
@@ -12870,7 +12875,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_pump)		
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)		
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
@@ -13064,10 +13069,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
-		
-		--Weekend Shotgunners now use Semi-autos
-		self.weap_unit_names[53] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-		
+				
 		--Set damage dealt for false downs.
 		self.spooc.kick_damage = 5.0
 		self.taser.shock_damage = 3.0
@@ -13147,10 +13149,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
-		
-		--Weekend Shotgunners now use Semi-autos
-		self.weap_unit_names[53] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
-		
+					
 		--Set damage dealt for false downs.
 		self.spooc.kick_damage = 5.0
 		self.taser.shock_damage = 3.0

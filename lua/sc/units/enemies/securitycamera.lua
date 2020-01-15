@@ -11,6 +11,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end]]--
 	--rest in peiece maybe we can do something cool with cams one day
 	
+	function SecurityCamera:update(unit, t, dt)
+		self:_update_tape_loop_restarting(unit, t, dt)
+
+		if not Network:is_server() then
+			return
+		end
+
+		if managers.groupai:state():is_ecm_jammer_active("camera") or self._tape_loop_expired_clbk_id or self._tape_loop_restarting_t or self._call_police_clbk_id then
+			self:_destroy_all_detected_attention_object_data()
+			self:_stop_all_sounds()
+		else
+			self:_upd_detection(t)
+		end
+
+		self:_upd_sound(unit, t)
+	end
+		
 	function SecurityCamera:_sound_the_alarm(detected_unit)
 		if self._alarm_sound then
 			return
@@ -31,7 +48,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction - 0.1			
 
 			self:_destroy_all_detected_attention_object_data()
-			self:set_detection_enabled(false, nil, nil)
 		end
 
 		if self._suspicion_sound then

@@ -52,6 +52,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._state_data.night_vision_active = state
 	end	
 	
+	local add_unit_to_char_table_old = PlayerStandard._add_unit_to_char_table
+	function PlayerStandard:_add_unit_to_char_table(char_table, unit, unit_type, ...)
+		if unit_type ~= 3 or unit:base()._detection_delay or (Network:is_client() and unit:base().cam_disabled ~= true) then
+			add_unit_to_char_table_old(self, char_table, unit, unit_type, ...)
+		end
+	end	
+	
 	function PlayerStandard:_start_action_intimidate(t, secondary)
 		if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 			local skip_alert = managers.groupai:state():whisper_mode()

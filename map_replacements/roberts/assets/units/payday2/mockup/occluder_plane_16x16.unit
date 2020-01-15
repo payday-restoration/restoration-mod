@@ -1,0 +1,8 @@
+<unit type="str" slot="1" >
+    <object file="units/payday2/mockup/occluder_plane_16x16" />
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData">
+			<var name="only_visible_in_editor" value="true" />
+		</extension>
+    </extensions>
+</unit>

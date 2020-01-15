@@ -1,0 +1,14 @@
+<table>
+	<editor_groups/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="-200 200 0" _prev_rot="-0 0 -0 -1" continent="editor_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_002" position="-200 200 0" rotation="-0 0 -0 -1" unit_id="200000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-200 -200 0" _prev_rot="0 0 -0 -1" continent="editor_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 -400 0" local_rot="-0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_001" position="-200 -200 0" rotation="0 0 -0 -1" unit_id="200001"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

@@ -1,0 +1,12 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" orientation_object="rp_bph_prop_dangertape" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_bph_prop_dangertape" />
+			<object name="c_c" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

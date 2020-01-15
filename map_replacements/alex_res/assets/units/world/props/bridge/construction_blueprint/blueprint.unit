@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="bri" slot="1">
+  <object file="units/world/props/bridge/construction_blueprint/blueprint" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

@@ -1,0 +1,13 @@
+<unit type="csgo" slot="1" >
+    <object file="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" />
+	<network sync="spawn" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="interaction" class="SpecialEquipmentInteractionExt" >
+			<var name="_special_equipment" value="csgo_spraycan" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="tweak_data" value="csgo_spraycan" />
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

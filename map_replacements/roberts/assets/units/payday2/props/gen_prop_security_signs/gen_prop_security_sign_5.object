@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_prop_security_sign_5" materials="units/payday2/props/gen_prop_security_signs/gen_prop_security_sign_5" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object collision_type="box" name="c_box" padding="-5"/>
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_sign" material="sheet_metal" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_sign" />
+    </graphics>
+</dynamic_object>

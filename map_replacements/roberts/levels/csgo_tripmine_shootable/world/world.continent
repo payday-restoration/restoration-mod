@@ -1,0 +1,15 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="0 0 18" _prev_rot="0 0 -0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="true" disable_shadows="false" hide_on_projection_light="true" local_pos="0 -3 -7" local_rot="0 0 0.707107 0.707107" name="units/pd2_dlc2/props/gen_prop_swat_tripmine_shootable/gen_prop_swat_tripmine_shootable" name_id="gen_prop_swat_tripmine_shootable_001" position="0 0 18" rotation="0 0 -0.707107 -0.707107" unit_id="100000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 3 25" _prev_rot="-0 0 -0 -1" continent="world" disable_collision="false" disable_on_ai_graph="true" disable_shadows="false" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="state_laser_2" name="units/payday2/architecture/com_int_gallery/laser_detection" name_id="laser_detection_001" position="0 3 25" rotation="-0 0 -0 -1" unit_id="100001"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

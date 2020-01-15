@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/mockup/occluder_plane" orientation_object="rp_occluder_plane_16x16" />
+    <bodies>
+        <body name="static_body" template="editor" enabled="true" >
+            <object name="rp_occluder_plane_16x16"/>
+            <object collision_type="box" enabled="true" name="g_occluder_plane_01"/>
+        </body>
+    </bodies>
+	
+
+    <occluders>
+        <occluder name="oc_plane_01" />
+    </occluders>
+	
+    <graphics>
+        <object enabled="true" name="g_occluder_plane_01" />
+    </graphics>
+</dynamic_object> 

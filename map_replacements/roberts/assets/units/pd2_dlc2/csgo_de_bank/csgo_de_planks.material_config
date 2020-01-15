@@ -1,0 +1,22 @@
+<materials version="3">
+    <material name="mat_hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_hud_plank" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/plank_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" name="mat_hud_contour" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+    <material name="wood__woodwall005a" render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/pd2_dlc2/csgo_textures/wood/woodwall005a_df"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

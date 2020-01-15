@@ -1,0 +1,34 @@
+<materials version="3">
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_gen_prop_glow_01" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_01_df"/>
+        <variable type="scalar" name="intensity" value="dimlight"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_gen_prop_glow_window_01" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_01_df"/>
+        <variable type="scalar" name="intensity" value="desklight"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_gen_prop_glow_window_02" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_01_df"/>
+        <variable type="scalar" name="intensity" value="match"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_gen_prop_glow_window_14" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_14_df"/>
+        <variable type="scalar" name="intensity" value="match"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2" name="mat_gen_prop_glow_window_cardealer">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_01_df"/>
+        <variable type="scalar" name="intensity" value="dimlight"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2" name="mat_gen_prop_glow_window_arena">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_01_df"/>
+        <variable type="scalar" name="intensity" value="neonsign"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2" name="mat_gen_prop_glow_window_arena_frames">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_01_df"/>
+        <variable type="scalar" name="intensity" value="dimlight"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_lxy_prop_glow_01" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_glow/gen_prop_glow_01_df"/>
+        <variable type="scalar" name="intensity" value="identity"/>
+    </material>
+</materials>

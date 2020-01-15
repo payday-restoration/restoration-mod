@@ -148,6 +148,7 @@
 		<hook file="sc/units/enemies/huskcopdamage.lua" source_file="lib/units/enemies/cop/huskcopdamage"/>
 		<hook file="sc/utils/inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 		<hook file="sc/units/props/timergui.lua" source_file="lib/units/props/timergui"/>
+		<hook file="sc/units/props/texttemplatebase.lua" source_file="lib/units/props/texttemplatebase"/>
 		<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
 		<hook file="sc/player_actions/skills/playeractionstockholmsyndrometrade.lua" source_file="lib/player_actions/skills/playeractionstockholmsyndrometrade"/>
 		<hook file="sc/player_actions/skills/playeractiondamagecontrol.lua" source_file="lib/player_actions/skills/playeractiondamagecontrol"/>

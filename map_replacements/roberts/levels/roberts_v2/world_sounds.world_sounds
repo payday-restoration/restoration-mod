@@ -1,0 +1,290 @@
+<generic_scriptdata type="table">
+	<entry key="ambience_enabled" type="boolean" value="true"/>
+	<entry key="default_ambience" type="string" value="ambience_ext_downtown_small_day"/>
+	<entry key="default_environment" type="string" value="pd2_acoustics_outdoor_large_echo"/>
+	<entry key="default_occasional" type="string" value="occasionals_silent"/>
+	<entry key="sound_area_emitters" type="table">
+	</entry>
+	<entry key="sound_emitters" type="table">
+		<entry index="1" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_02"/>
+			<entry key="name" type="string" value="sound_emitter_001"/>
+			<entry key="position" type="vector3" value="-886 -648 499"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="2" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_02"/>
+			<entry key="name" type="string" value="sound_emitter_002"/>
+			<entry key="position" type="vector3" value="-942 -2307 619"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="3" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_03"/>
+			<entry key="name" type="string" value="sound_emitter_003"/>
+			<entry key="position" type="vector3" value="18 -1444 639"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="4" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum"/>
+			<entry key="name" type="string" value="sound_emitter_004"/>
+			<entry key="position" type="vector3" value="387 -4970 32"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="5" type="table">
+			<entry key="emitter_event" type="string" value="emitter_vending_machine_loop"/>
+			<entry key="name" type="string" value="sound_emitter_005"/>
+			<entry key="position" type="vector3" value="-845 -3832 100"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="6" type="table">
+			<entry key="emitter_event" type="string" value="emitter_radiator_hiss_loop"/>
+			<entry key="name" type="string" value="sound_emitter_006"/>
+			<entry key="position" type="vector3" value="145 -3810 12"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="7" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_03"/>
+			<entry key="name" type="string" value="sound_emitter_007"/>
+			<entry key="position" type="vector3" value="3819 -585 170"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="8" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum_02"/>
+			<entry key="name" type="string" value="sound_emitter_008"/>
+			<entry key="position" type="vector3" value="-819 294 343"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="9" type="table">
+			<entry key="emitter_event" type="string" value="emitter_cicada_02"/>
+			<entry key="name" type="string" value="snd_cicada_02_001"/>
+			<entry key="position" type="vector3" value="2522.81 -2777.86 382.117"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="10" type="table">
+			<entry key="emitter_event" type="string" value="emitter_cicada_01"/>
+			<entry key="name" type="string" value="snd_cicada_01_001"/>
+			<entry key="position" type="vector3" value="2791.27 1681.02 393.272"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="11" type="table">
+			<entry key="emitter_event" type="string" value="emitter_cicada_02"/>
+			<entry key="name" type="string" value="snd_cicada_02_002"/>
+			<entry key="position" type="vector3" value="-1479.34 543.801 227.414"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+		<entry index="12" type="table">
+			<entry key="emitter_event" type="string" value="emitter_ac_hum"/>
+			<entry key="name" type="string" value="snd_achum_001"/>
+			<entry key="position" type="vector3" value="3367.98 799.806 176.033"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+		</entry>
+	</entry>
+	<entry key="sound_environments" type="table">
+		<entry index="1" type="table">
+			<entry key="ambience_event" type="string" value="ambience_ext_downtown_underpass"/>
+			<entry key="depth" type="number" value="12400"/>
+			<entry key="environment" type="string" value="pd2_acoustics_tunnel_small"/>
+			<entry key="height" type="number" value="620"/>
+			<entry key="name" type="string" value="sound_environment_001"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="4651 -3580 -712.938"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="5210"/>
+		</entry>
+		<entry index="2" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="1900"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="570"/>
+			<entry key="name" type="string" value="sound_environment_002"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="277 -5220 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="1440"/>
+		</entry>
+		<entry index="3" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="1490"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="480"/>
+			<entry key="name" type="string" value="sound_environment_003"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="286 -2008 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707106"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="970"/>
+		</entry>
+		<entry index="4" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="880"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="430"/>
+			<entry key="name" type="string" value="sound_environment_004"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-327 -1041 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="690"/>
+		</entry>
+		<entry index="5" type="table">
+			<entry key="ambience_event" type="string" value="ambience_ext_industrial_small"/>
+			<entry key="depth" type="number" value="290"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_small"/>
+			<entry key="height" type="number" value="430"/>
+			<entry key="name" type="string" value="sound_environment_005"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-1183 -779.001 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="440"/>
+		</entry>
+		<entry index="6" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="1030"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="630"/>
+			<entry key="name" type="string" value="sound_environment_006"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-33.0006 433.999 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="870"/>
+		</entry>
+		<entry index="7" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="1180"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="480"/>
+			<entry key="name" type="string" value="sound_environment_007"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-33.0007 1305 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="630"/>
+		</entry>
+		<entry index="8" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="800"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_small"/>
+			<entry key="height" type="number" value="390"/>
+			<entry key="name" type="string" value="sound_environment_008"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-282.001 1931 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="630"/>
+		</entry>
+		<entry index="9" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_large"/>
+			<entry key="depth" type="number" value="780"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="390"/>
+			<entry key="name" type="string" value="sound_environment_009"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="4083 -545 -80"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="780"/>
+		</entry>
+		<entry index="10" type="table">
+			<entry key="ambience_event" type="string" value="ambience_ext_industrial_large"/>
+			<entry key="depth" type="number" value="2410"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_medium"/>
+			<entry key="height" type="number" value="640"/>
+			<entry key="name" type="string" value="sound_environment_010"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-6875 -4664 -117.44"/>
+			<entry key="rotation" type="quaternion" value="0 0 -0.707107 -0.707107"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="2440"/>
+		</entry>
+		<entry index="11" type="table">
+			<entry key="ambience_event" type="string" value="ambience_int_office_small"/>
+			<entry key="depth" type="number" value="980"/>
+			<entry key="environment" type="string" value="pd2_acoustics_indoor_small"/>
+			<entry key="height" type="number" value="330"/>
+			<entry key="name" type="string" value="sound_environment_011"/>
+			<entry key="occasional_event" type="string" value="occasionals_silent"/>
+			<entry key="position" type="vector3" value="-1495 -2012 -66.5001"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="300"/>
+		</entry>
+		<entry index="12" type="table">
+			<entry key="ambience_event" type="string" value="ambience_ext_downtown_small_day"/>
+			<entry key="depth" type="number" value="240"/>
+			<entry key="environment" type="string" value="pd2_acoustics_outdoor_small_echo"/>
+			<entry key="height" type="number" value="320"/>
+			<entry key="name" type="string" value="sound_environment_012"/>
+			<entry key="occasional_event" type="string" value="occasionals_city_dock"/>
+			<entry key="position" type="vector3" value="-1468 -1034 -65.5"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="true"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="260"/>
+		</entry>
+		<entry index="13" type="table">
+			<entry key="depth" type="number" value="135"/>
+			<entry key="environment" type="string" value="acoustics_indoor_small_hiecho"/>
+			<entry key="height" type="number" value="221"/>
+			<entry key="name" type="string" value="sound_env_shitter_001"/>
+			<entry key="position" type="vector3" value="-1891.03 -3326.72 -80.726"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="false"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="134"/>
+		</entry>
+		<entry index="14" type="table">
+			<entry key="depth" type="number" value="131"/>
+			<entry key="environment" type="string" value="acoustics_indoor_small_hiecho"/>
+			<entry key="height" type="number" value="247"/>
+			<entry key="name" type="string" value="sound_env_shitter_002"/>
+			<entry key="position" type="vector3" value="-2160.03 -3326.72 -80.726"/>
+			<entry key="rotation" type="quaternion" value="0 0 0 -1"/>
+			<entry key="type" type="string" value="box"/>
+			<entry key="use_ambience" type="boolean" value="false"/>
+			<entry key="use_environment" type="boolean" value="true"/>
+			<entry key="use_occasional" type="boolean" value="false"/>
+			<entry key="width" type="number" value="133"/>
+		</entry>
+	</entry>
+</generic_scriptdata>

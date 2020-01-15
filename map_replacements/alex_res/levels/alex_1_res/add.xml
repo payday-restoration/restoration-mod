@@ -152,9 +152,62 @@
 		<unit force="true" path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_box_c" unload="true"/>
 	</add>
 	<add path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" type="unit">
-		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
-		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
 		<material_config force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
+		<object force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
+		<unit force="true" path="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" unload="true"/>
+	</add>
+	<add path="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" type="unit">
+		<material_config force="true" path="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" unload="true"/>
+		<object force="true" path="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" unload="true"/>
+		<unit force="true" path="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_fence_b_1m/str_prop_construction_fence_b_1m" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_fence_b_1m/str_prop_construction_fence_b_1m" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_fence_b_1m/str_prop_construction_fence_b_1m" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_fence_b_1m/str_prop_construction_fence_b_1m" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_run/architecture/run_ext_skyscraper_construction_01/run_ext_skyscraper_construction_01" type="unit">
+		<material_config force="true" path="units/pd2_dlc_run/architecture/run_ext_skyscraper_construction_01/run_ext_skyscraper_construction_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc_run/architecture/run_ext_skyscraper_construction_01/run_ext_skyscraper_construction_01" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_run/architecture/run_ext_skyscraper_construction_01/run_ext_skyscraper_construction_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" type="unit">
+		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_foundation_01" type="unit">
+		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_foundation_01" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_foundation_01" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" type="unit">
+		<font force="true" path="fonts/font_euro_stencil" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_arena/props/editable_text_eurostile/editable_text_eurostile" unload="true"/>
+		<object force="true" path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" type="unit">
+		<unit force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
+		<object force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_bph/props/bph_prop_dangertape/bph_prop_dangertape" unload="true"/>
 	</add>
 	<texture path="levels/mods/alex_1_res/cube_lights/dome_occlusion"/>
 </table>

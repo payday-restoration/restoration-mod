@@ -44,8 +44,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			managers.enemy:add_delayed_clbk(self._call_police_clbk_id, callback(self, self, "clbk_call_the_police"), Application:time() + 7)
 
-			managers.groupai:state()._guard_detection_mul = managers.groupai:state()._guard_detection_mul + 0.05
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction - 0.1			
+			managers.groupai:state()._guard_detection_mul = managers.groupai:state()._guard_detection_mul + 0.1
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction - 0.2			
 
 			self:_destroy_all_detected_attention_object_data()
 		end
@@ -60,7 +60,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end	
 	
 	function SecurityCamera:clbk_call_the_police()
-		managers.groupai:state():on_criminal_suspicion_progress(nil, self._unit, "called")
+		managers.groupai:state():on_criminal_suspicion_progress(nil, self._unit, nil)
 		
 		self:_stop_all_sounds()
 				

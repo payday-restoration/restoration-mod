@@ -43,9 +43,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._call_police_clbk_id = "cam_call_cops" .. tostring(self._unit:key())
 
 			managers.enemy:add_delayed_clbk(self._call_police_clbk_id, callback(self, self, "clbk_call_the_police"), Application:time() + 7)
-
-			managers.groupai:state()._guard_detection_mul = managers.groupai:state()._guard_detection_mul + 0.1
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction - 0.2			
+			
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.1
+			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
+			managers.groupai:state():_delay_whisper_suspicion_mul_decay()
 
 			self:_destroy_all_detected_attention_object_data()
 		end

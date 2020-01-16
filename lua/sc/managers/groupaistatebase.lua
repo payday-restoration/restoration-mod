@@ -13,7 +13,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAIStateBase:_init_misc_data()
 		sc_group_misc_data(self)
 		self._ponr_is_on = nil
+		self._decay_target = 1
+		self._min_detection_threshold = 1
+		self._old_guard_detection_mul = 1
 		self._guard_detection_mul = 1
+		self._guard_detection_mul_raw = 0
+		self._old_guard_detection_mul_raw = 0
 		self._guard_delay_deduction = 0		
 		self._special_unit_types = {
 			tank = true,
@@ -37,7 +42,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAIStateBase:on_simulation_started()
 		sc_group_base(self)
 		self._ponr_is_on = nil
+		self._min_detection_threshold = 1
+		self._old_guard_detection_mul = 1
 		self._guard_detection_mul = 1
+		self._guard_detection_mul_raw = 0
+		self._old_guard_detection_mul_raw = 0
 		self._guard_delay_deduction = 0
 		self._special_unit_types = {
 			tank = true,
@@ -58,6 +67,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 	
 	function GroupAIStateBase:chk_guard_detection_mul()
+		self._guard_detection_mul = 1 + self._guard_detection_mul_raw
 		if self._hostages_killed then
 			return self._guard_detection_mul * (self._hostages_killed + 1)
 		else
@@ -126,7 +136,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			old_update_point_of_no_return(self, t, dt)
 		end
 	end
-		
+			
 	function GroupAIStateBase:_radio_chatter_clbk()
 		if self._ai_enabled and not self:whisper_mode() then
 			local optimal_dist = 500
@@ -203,12 +213,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+	
 	function GroupAIStateBase:chk_has_followers(leader_key)
 		local leader_u_data = self._police[leader_key]
 		if leader_u_data and next(leader_u_data.followers) then
 			return true
 		end
 	end
+	
 	function GroupAIStateBase:are_followers_ready(leader_key)
 		local leader_u_data = self._police[leader_key]
 		if not leader_u_data or not leader_u_data.followers then
@@ -467,6 +479,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return gameover
 	end
 	
+	function GroupAIStateBase:update(t, dt)
+		self._t = t
+
+		self:_upd_criminal_suspicion_progress()
+		
+		if self._decay_target and self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
+			self:_upd_whisper_suspicion_mul_decay(t)
+		end
+		
+		if self._draw_drama then
+			self:_debug_draw_drama(t)
+		end
+
+		self:_upd_debug_draw_attentions()
+		self:upd_team_AI_distance()
+	end
+	
+	function GroupAIStateBase:_upd_whisper_suspicion_mul_decay(t)
+		if not self._decay_target or self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t > t then
+			--log("why did this execute")
+			return
+		end
+		
+		local diff_threshold_value = 0.75
+		
+		if self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
+			if self._guard_detection_mul_raw > self._decay_target then
+				self._decay_target = self._old_guard_detection_mul_raw * diff_threshold_value
+				self._guard_detection_mul_raw = self._guard_detection_mul_raw - 0.01
+				self._next_whisper_susp_mul_t = t + 5
+				--log("coolcoolcool")
+			end
+		end	
+	end
+	
+	function GroupAIStateBase:_delay_whisper_suspicion_mul_decay()
+		self._next_whisper_susp_mul_t = self._t + 5
+	end
+	
 	function GroupAIStateBase:on_enemy_unregistered(unit)
 		if self:is_unit_in_phalanx_minion_data(unit:key()) then
 			self:unregister_phalanx_minion(unit:key())
@@ -517,8 +568,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		
 		if dead and managers.groupai:state():whisper_mode() then
-			self._guard_detection_mul = self._guard_detection_mul + 0.05
-			self._guard_delay_deduction = self._guard_delay_deduction - 0.1
+			self._next_whisper_susp_mul_t = self._t + 5
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.05
+			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
+			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.05
 		end		
 
 		if e_data.assigned_area and dead then

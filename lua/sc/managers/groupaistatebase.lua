@@ -36,6 +36,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			summers = true,
 			autumn = true
 		}
+		
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+		
+		if diff_index <= 2 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 3 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 4 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 5 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 6 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 7 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		else
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		end
+		
 	end
 
 	local sc_group_base = GroupAIStateBase.on_simulation_started
@@ -64,6 +90,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			summers = true,
 			autumn = true
 		}
+		
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+		
+		if diff_index <= 2 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 3 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 4 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 5 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 6 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 7 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		else
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.75
+		end
 	end
 	
 	function GroupAIStateBase:chk_guard_detection_mul()
@@ -484,8 +535,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:_upd_criminal_suspicion_progress()
 		
-		if self._decay_target and self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
-			self:_upd_whisper_suspicion_mul_decay(t)
+		if managers.groupai:state():whisper_mode() then
+			if self._old_guard_detection_mul_raw >= self._weapons_hot_threshold then
+				self:on_police_called("sys_police_alerted")
+			end
+			
+			if self._decay_target and self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
+				self:_upd_whisper_suspicion_mul_decay(t)
+			end
 		end
 		
 		if self._draw_drama then
@@ -502,11 +559,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 		
-		local diff_threshold_value = 0.75
-		
 		if self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
 			if self._guard_detection_mul_raw > self._decay_target then
-				self._decay_target = self._old_guard_detection_mul_raw * diff_threshold_value
+				self._decay_target = self._old_guard_detection_mul_raw * self._suspicion_threshold
 				self._guard_detection_mul_raw = self._guard_detection_mul_raw - 0.01
 				self._next_whisper_susp_mul_t = t + 5
 				--log("coolcoolcool")

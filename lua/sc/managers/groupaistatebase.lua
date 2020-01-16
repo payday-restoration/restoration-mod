@@ -536,8 +536,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_upd_criminal_suspicion_progress()
 		
 		if managers.groupai:state():whisper_mode() then
-			if self._old_guard_detection_mul_raw >= self._weapons_hot_threshold then
-				self:on_police_called("sys_police_alerted")
+			if Network:is_server() then
+				if self._old_guard_detection_mul_raw >= self._weapons_hot_threshold then
+					self:on_police_called("sys_police_alerted")
+				end
 			end
 			
 			if self._decay_target and self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then

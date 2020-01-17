@@ -1246,14 +1246,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.gangster.speech_prefix_p1 = "rt"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
-		elseif job == "alex_2" then
+		elseif job == "alex_2" or job == "alex_2_res" or job == "welcome_to_the_jungle_1" then
 			self.gangster.speech_prefix_p1 = "ict"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
-		elseif job == "welcome_to_the_jungle_1" then
-			self.gangster.speech_prefix_p1 = "bik"
-			self.gangster.speech_prefix_p2 = nil
-			self.gangster.speech_prefix_count = 2
+		elseif job == "man" then	
+			self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
+			self.gangster.speech_prefix_p2 = "n"
+			self.gangster.speech_prefix_count = 4			
+			self.gangster.no_arrest = false
 		else
 			self.gangster.speech_prefix_p1 = "lt"
 			self.gangster.speech_prefix_p2 = nil
@@ -1267,7 +1268,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.gangster.silent_priority_shout = "f37"
-		if job == "mex" or job == "mex_cooking" then
+		if job == "alex_3" or job == "alex_3_res" or job == "man" or job == "mex" or job == "mex_cooking" then
 			self.gangster.access = "security"
 		else
 			self.gangster.access = "gangster"

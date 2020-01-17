@@ -40,23 +40,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 		
 		if diff_index <= 2 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 1
+			self._suspicion_threshold = 0.15
 		elseif diff_index == 3 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.90
+			self._suspicion_threshold = 0.25
 		elseif diff_index == 4 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.80
+			self._suspicion_threshold = 0.35
 		elseif diff_index == 5 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.70
+			self._suspicion_threshold = 0.45
 		elseif diff_index == 6 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.60
+			self._suspicion_threshold = 0.55
 		elseif diff_index == 7 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.50
+			self._suspicion_threshold = 0.65
 		else
 			self._weapons_hot_threshold = 0.40
 			self._suspicion_threshold = 0.75
@@ -94,23 +94,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 		
 		if diff_index <= 2 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 1
+			self._suspicion_threshold = 0.15
 		elseif diff_index == 3 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.90
+			self._suspicion_threshold = 0.25
 		elseif diff_index == 4 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.80
+			self._suspicion_threshold = 0.35
 		elseif diff_index == 5 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.70
+			self._suspicion_threshold = 0.45
 		elseif diff_index == 6 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.60
+			self._suspicion_threshold = 0.55
 		elseif diff_index == 7 then
-			self._weapons_hot_threshold = 0.40
-			self._suspicion_threshold = 0.75
+			self._weapons_hot_threshold = 0.50
+			self._suspicion_threshold = 0.65
 		else
 			self._weapons_hot_threshold = 0.40
 			self._suspicion_threshold = 0.75

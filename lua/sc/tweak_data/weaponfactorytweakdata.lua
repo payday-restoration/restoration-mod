@@ -49763,11 +49763,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				recoil = 3,
 				concealment = -1
 			}
-			self.parts.wpn_fps_special_inkunzi_b_long.stats = {
-				spread = 3,
-				recoil = -1,
-				concealment = -1
-			}
 			self.parts.wpn_fps_special_inkunzi_b_short.stats = {
 				spread = -5,
 				recoil = 4,

@@ -534,7 +534,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._t = t
 
 		self:_upd_criminal_suspicion_progress()
-		
+				
 		if managers.groupai:state():whisper_mode() then
 			if Network:is_server() then
 				if self._old_guard_detection_mul_raw >= self._weapons_hot_threshold then
@@ -624,6 +624,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_remove_group_member(e_data.group, u_key, dead)
 		end
 		
+		--[[
 		if dead and managers.groupai:state():whisper_mode() then
 			self._next_whisper_susp_mul_t = self._t + 5
 			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.05
@@ -631,6 +632,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
 			self._guard_delay_deduction = self._guard_delay_deduction + 0.05
 		end		
+		]]--
 
 		if e_data.assigned_area and dead then
 			local spawn_point = unit:unit_data().mission_element

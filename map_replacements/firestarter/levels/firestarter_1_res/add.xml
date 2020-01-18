@@ -296,8 +296,84 @@
 		<unit force="true" path="units/world/street/concrete_barrier/concrete_barrier_01" unload="true"/>
 	</add>
 	<add path="units/world/street/concrete_barrier/concrete_barrier_destr_01" type="unit">
-		<unit force="true" path="units/world/street/concrete_barrier/concrete_barrier_destr_01" unload="true"/>
-		<object force="true" path="units/world/street/concrete_barrier/concrete_barrier_destr_01" unload="true"/>
 		<material_config force="true" path="units/world/street/concrete_barrier/concrete_barrier" unload="true"/>
+		<object force="true" path="units/world/street/concrete_barrier/concrete_barrier_destr_01" unload="true"/>
+		<unit force="true" path="units/world/street/concrete_barrier/concrete_barrier_destr_01" unload="true"/>
+	</add>
+	<add path="units/world/props/airport/airport_camera/airport_camera" type="unit">
+		<material_config force="true" path="units/world/props/airport/airport_camera/airport_camera" unload="true"/>
+		<object force="true" path="units/world/props/airport/airport_camera/airport_camera" unload="true"/>
+		<unit force="true" path="units/world/props/airport/airport_camera/airport_camera" unload="true"/>
+	</add>
+	<add path="units/world/props/airport/airport_cones/airport_tall_cone" type="unit">
+		<material_config force="true" path="units/world/props/airport/airport_cones/airport_tall_cone" unload="true"/>
+		<object force="true" path="units/world/props/airport/airport_cones/airport_tall_cone" unload="true"/>
+		<unit force="true" path="units/world/props/airport/airport_cones/airport_tall_cone" unload="true"/>
+	</add>
+	<add path="units/world/props/airport/airport_lamppost/airport_lamppost" type="unit">
+		<material_config force="true" path="units/world/props/airport/airport_lamppost/airport_lamppost" unload="true"/>
+		<object force="true" path="units/world/props/airport/airport_lamppost/airport_lamppost" unload="true"/>
+		<unit force="true" path="units/world/props/airport/airport_lamppost/airport_lamppost" unload="true"/>
+	</add>
+	<add path="units/world/props/airport/airport_strip_lights/airport_strip_lights" type="unit">
+		<material_config force="true" path="units/world/props/airport/airport_camera/airport_camera" unload="true"/>
+		<object force="true" path="units/world/props/airport/airport_strip_lights/airport_strip_lights" unload="true"/>
+		<unit force="true" path="units/world/props/airport/airport_strip_lights/airport_strip_lights" unload="true"/>
+	</add>
+	<add path="units/world/props/airport/airport_strip_lights/airport_strip_lights_small" type="unit">
+		<material_config force="true" path="units/world/props/airport/airport_camera/airport_camera" unload="true"/>
+		<object force="true" path="units/world/props/airport/airport_strip_lights/airport_strip_lights_small" unload="true"/>
+		<unit force="true" path="units/world/props/airport/airport_strip_lights/airport_strip_lights_small" unload="true"/>
+	</add>
+	<add path="units/world/props/airport/lamppost_four_lights/lamppost_four_lights" type="unit">
+		<material_config force="true" path="units/world/props/airport/lamppost_four_lights/lamppost_four_lights" unload="true"/>
+		<object force="true" path="units/world/props/airport/lamppost_four_lights/lamppost_four_lights" unload="true"/>
+		<unit force="true" path="units/world/props/airport/lamppost_four_lights/lamppost_four_lights" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/air_backdrop/air_backdrop_v2" type="unit">
+		<material_config force="true" path="units/payday2/architecture/air_backdrop/air_backdrop" unload="true"/>
+		<object force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car" type="unit">
+		<material_config force="true" path="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car" unload="true"/>
+		<object force="true" path="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" type="unit">
+		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" type="unit">
+		<font force="true" path="fonts/font_euro_stencil" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_arena/props/editable_text_eurostile/editable_text_eurostile" unload="true"/>
+		<object force="true" path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/mullplan_vehicle" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" type="unit">
+		<material_config force="true" path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" unload="true"/>
+		<object force="true" path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/mullplan_vehicle_small" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle_small" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle_small" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" type="unit">
+		<unit force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
+		<object force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
+		<material_config force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<material_config force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
 	</add>
 </table>

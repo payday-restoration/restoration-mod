@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_mullplan_vehicle" materials="units/payday2/props/shadow_mullplan/mullplan_vehicle" />
+    
+	<bodies>
+        <body name="editor_body" template="editor" enabled="true" >
+            <object name="rp_mullplan_vehicle"/>
+            <object collision_type="box" enabled="true" name="g_g"/>
+        </body>
+    </bodies>
+	
+	<graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

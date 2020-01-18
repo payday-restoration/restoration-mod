@@ -220,6 +220,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				else
 					escape_time = 300
 				end
+			end		
+			
+			--Election Day Day 2 (Warehouse)--
+			if id == "Play_pln_ed2_14" then
+				if difficulty_index <= 2 then
+					escape_time = 450 
+				elseif difficulty_index == 3 then
+					escape_time = 420
+				elseif difficulty_index == 4 then
+					escape_time = 390
+				elseif difficulty_index == 5 then
+					escape_time = 360	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 330						
+				else
+					escape_time = 300
+				end
 			end				
 		
 	        --H&T Bank Heist (all versions)--

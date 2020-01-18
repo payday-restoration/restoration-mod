@@ -7,7 +7,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local best_nmy, best_nmy_wgt = nil
 
 		for key, attention_info in pairs(enemies) do
-			if attention_info.reaction and AIAttentionObject.REACT_COMBAT <= attention_info.reaction and attention_info.unit:contour() and attention_info.identified then
+			if attention_info.identified and attention_info.reaction and AIAttentionObject.REACT_COMBAT <= attention_info.reaction and attention_info.unit:contour() then
 				if attention_info.verified or attention_info.nearly_visible then
 					if attention_info.is_deployable or attention_info.is_person and attention_info.char_tweak and attention_info.char_tweak.priority_shout then
 						if not attention_info.char_tweak or (not attention_info.char_tweak.priority_shout_max_dis or attention_info.dis < attention_info.char_tweak.priority_shout_max_dis) then

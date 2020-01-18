@@ -1,5 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
+	
 	local old_queue_dialog = DialogManager.queue_dialog
 	function DialogManager:queue_dialog(id, ...)
 		local escape_time = 0

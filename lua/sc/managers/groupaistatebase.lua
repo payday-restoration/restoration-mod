@@ -19,6 +19,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._guard_detection_mul = 1
 		self._guard_detection_mul_raw = 0
 		self._old_guard_detection_mul_raw = 0
+		self._played_stealth_warning = 0
 		self._guard_delay_deduction = 0		
 		self._special_unit_types = {
 			tank = true,
@@ -74,6 +75,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._guard_detection_mul_raw = 0
 		self._old_guard_detection_mul_raw = 0
 		self._guard_delay_deduction = 0
+		self._played_stealth_warning = 0
 		self._special_unit_types = {
 			tank = true,
 			spooc = true,
@@ -537,8 +539,49 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		if managers.groupai:state():whisper_mode() then
 			if Network:is_server() then
+				local warning_1_threshold = self._weapons_hot_threshold * 0.25
+				local warning_2_threshold = self._weapons_hot_threshold * 0.5
+				local warning_3_threshold = self._weapons_hot_threshold * 0.75
+				
+				if self._played_stealth_warning < 1 and self._old_guard_detection_mul_raw >= warning_1_threshold then
+					log("warning1")
+					self._played_stealth_warning = 1 
+				end
+				
+				if self._played_stealth_warning < 2 and self._old_guard_detection_mul_raw >= warning_2_threshold then
+					log("warning2")
+					self._played_stealth_warning = 2 
+				end
+				
+				if self._played_stealth_warning < 3 and self._old_guard_detection_mul_raw >= warning_3_threshold then
+					log("warning3")
+					self._played_stealth_warning = 3
+				end
+				
 				if self._old_guard_detection_mul_raw >= self._weapons_hot_threshold then
-					self:on_police_called("sys_police_alerted")
+					if not self._alarm_t then 
+						self._alarm_t = self._t + 60
+					end
+					
+					if self._played_stealth_warning < 4 then
+						managers.dialog:queue_dialog("Play_pln_pat_03", {})
+						self._played_stealth_warning = 4
+					end
+					
+					if self._played_stealth_warning < 5 and self._alarm_t - 30 < t then
+						managers.dialog:queue_dialog("Play_pln_pat_04", {})
+						self._played_stealth_warning = 5
+					end
+					
+					if self._played_stealth_warning < 6 and self._alarm_t - 50 < t then
+						managers.dialog:queue_dialog("Play_pln_pat_05", {})
+						self._played_stealth_warning = 6
+					end
+					
+					if self._alarm_t < t then
+						self:on_police_called("sys_police_alerted")
+						--log("uhohstinkyyyy")
+					end
 				end
 			end
 			

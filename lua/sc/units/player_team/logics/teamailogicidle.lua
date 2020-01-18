@@ -221,3 +221,16 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 
 	return best_target, best_target_priority_slot, best_target_reaction
 end
+
+function TeamAILogicIdle._upd_sneak_spotting(data, my_data)
+	if (not TeamAILogicAssault._mark_special_chk_t or TeamAILogicAssault._mark_special_chk_t + 0.75 < data.t) and (not TeamAILogicAssault._mark_special_t or TeamAILogicAssault._mark_special_t + 6 < data.t) and not my_data.acting and not data.unit:sound():speaking() then
+		local nmy = TeamAILogicAssault.find_enemy_to_mark(data.detected_attention_objects)
+		TeamAILogicAssault._mark_special_chk_t = data.t
+
+		if nmy then
+			TeamAILogicAssault._mark_special_t = data.t
+
+			TeamAILogicAssault.mark_enemy(data, data.unit, nmy, true, true)
+		end
+	end
+end

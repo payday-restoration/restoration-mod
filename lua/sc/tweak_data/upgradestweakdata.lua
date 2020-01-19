@@ -2398,7 +2398,7 @@ function UpgradesTweakData:_player_definitions()
 	}
 	self.definitions.player_chico_injector_speed = {
 		name_id = "menu_player_chico_injector_speed",
-		category = "player",
+		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "chico_injector_speed",

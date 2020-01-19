@@ -1495,7 +1495,7 @@ function UpgradesTweakData:_init_pd2_values()
 		{0.3, 5},
 		{0.3, 6}
 	}
-	self.values.temporary.chico_injector_speed = {
+	self.values.player.chico_injector_speed = {
 		1.2
 	}
 	self.values.player.chico_armor_multiplier = {
@@ -2396,14 +2396,13 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
-	self.definitions.temporary_chico_injector_speed = {
-		name_id = "menu_temporary_chico_injector_speed",
-		category = "temporary",
+	self.definitions.player_chico_injector_speed = {
+		name_id = "menu_player_chico_injector_speed",
+		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "chico_injector_speed",
-			synced = true,
-			category = "temporary"
+			category = "player"
 		}
 	}
 	self.definitions.pistol_swap_speed_multiplier_1 = {

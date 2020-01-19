@@ -2089,7 +2089,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_passive_health_multiplier_4",
 					"team_hostage_health_multiplier",
 					"team_hostage_stamina_multiplier"
 				},

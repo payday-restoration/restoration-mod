@@ -605,11 +605,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime	
 			["menu_control_freak_beta_sc"] = "Partners in Crime",	
-			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nYour converted enemy takes ##40%## less damage.\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes an additional ##40%## less damage.",
+			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nEach converted enemy you control increases your movement speed by ##5%##.\n\nYour converted enemy takes ##50%## less damage.\n\nACE: ##$pro##\nEach converted enemy you control increases your health by ##15%##.\n\nYour converted enemy takes an additional ##30%## less damage.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##2%## health every ##5## seconds.\n\nYou and your crew gain ##1## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\nNote: This skill does not stack.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##0.5%## health every ##5## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYou regenerate an additional ##0.5%## health every ##5## seconds for each hostage up to ##4## times.\n\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNote: Hostage Taker does not stack.",
 		
 
 			--}
@@ -1040,9 +1040,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",
-		["menu_deck1_5_desc_sc"] = "You gain ##10%## more health.\n\nYour crew gains ##5%## more health.\n\nNote: Crew perks do not stack.",
+		["menu_deck1_5_desc_sc"] = "You and your crew gain ##5%## more health.\n\nNote: Crew perks do not stack.",
 		["menu_deck1_7_desc_sc"] = "You gain ##15%## more armor.\n\nYour crew gains ##5%## more armor.\n\nNote: Crew perks do not stack.",
-		["menu_deck1_9_desc_sc"] = "You gain ##5%## more health.\n\nYou and your crew gains ##2.5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck1_9_desc_sc"] = "You and your crew gains ##2.5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
 		["menu_deck3_1_desc_sc"] = "You gain ##10%## more armor.",

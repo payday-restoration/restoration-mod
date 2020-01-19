@@ -1491,9 +1491,12 @@ function UpgradesTweakData:_init_pd2_values()
 	--Chico--
 	--kingpin
 	self.values.temporary.chico_injector = {
-		{0.5, 4},
-		{0.5, 5},
-		{0.5, 6}
+		{0.3, 4},
+		{0.3, 5},
+		{0.3, 6}
+	}
+	self.values.temporary.chico_injector_speed = {
+		1.2
 	}
 	self.values.player.chico_armor_multiplier = {
 		1.05,
@@ -1501,12 +1504,11 @@ function UpgradesTweakData:_init_pd2_values()
 		1.15
 	}
 	self.values.player.chico_injector_low_health_multiplier = {
-		{0.25, 0.2}
+		{0.25, 0.5}
 	}	
 	self.values.player.chico_injector_health_to_speed = {
-		{5, 1}
+		{0.3, 1}
 	}
-
 	--Are these the dreamers we were told about?--
 	--sicario
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
@@ -2393,7 +2395,17 @@ function UpgradesTweakData:_player_definitions()
 			synced = true,
 			category = "temporary"
 		}
-	}		
+	}
+	self.definitions.temporary_chico_injector_speed = {
+		name_id = "menu_temporary_chico_injector_speed",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "chico_injector_speed",
+			synced = true,
+			category = "temporary"
+		}
+	}
 	self.definitions.pistol_swap_speed_multiplier_1 = {
 		name_id = "menu_pistol_swap_speed_multiplier",
 		category = "feature",

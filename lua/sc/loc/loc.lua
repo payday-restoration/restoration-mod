@@ -771,19 +771,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hardware Expert--
 			["menu_hardware_expert_beta_sc"] = "Hardware Expert",
-			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##20%## faster.\n\nYour drill makes ##65%## less noise. Civilians and guards are less likely to hear your drill and sound the alarm.\n\nACE: ##$pro##\nYou fix drills and saws an additional ##30%## faster.\n\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to get alerted.",																								
+			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##50%## faster.\n\nACE: ##$pro##\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to get alerted.",																								
 
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
 			["menu_combat_engineering_desc_sc"] = "BASIC: ##$basic##\nThe radius of trip mine explosion is increased by ##30%.##\n\nACE: ##$pro##\nYour trip mine deals ##50%## more damage.",																								
 
-			--Drill Sawgeant
-			["menu_drill_expert_beta_sc"] = "Drill Sawgeant",
-			["menu_drill_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYour drill and saw efficiency is increased by ##10%.##\n\nACE: ##$pro##\nFurther increases your drill and saw efficency by ##20%.##",																								
-
-			--Demoman--
+			--More Firepower--
 			["menu_more_fire_power_sc"] = "Demoman",
-			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##6## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##8## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",																								
+			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##4## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##6## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",																								
 
 
 			--Kickstarter
@@ -857,7 +853,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "Counter Strike",
-			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down.\n\nYou take ##20%## less damage from cloaker kicks and taser shocks.\n\nACE: ##$pro##\nRanged damage against you is reduced by ##10%## while charging your melee weapon.\n\nYou take an additional ##30%## less damage from cloaker kicks and taser shocks.",																								
+			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nWhen charging your melee weapon you will counterattack enemies that try to strike you.\n\nACE: ##$pro##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down. You also take ##50%## less damage from cloaker kicks and taser shocks.",																								
 
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "Bloodthirst",
@@ -993,7 +989,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "Pumping Iron",
-		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing and charge melee weapons ##20%## faster.\n\nACE: ##$pro##\nYou swing and charge melee weapons an additional ##30%## faster.",																																																																																																																																																																																																																																		
+		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing melee weapons ##25%## faster.\n\nACE: ##$pro##\nYou swing melee weapons an additional ##25%## faster.",																																																																																																																																																																																																																																		
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
@@ -1111,11 +1107,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##3## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##50%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
-		["menu_deck17_3_desc_sc"] = "You are now healed for ##50%## of all damage taken for ##5## seconds while the Kingpin Injector is active.",
-		["menu_deck17_5_desc_sc"] = "You are now healed for ##50%## of all damage taken for ##6## seconds while the Kingpin Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
-		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
-		["menu_deck17_9_desc_sc"] = "For every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
+		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Kingpin Injector is active.",
+		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Kingpin Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
+		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##50%## while below ##25%## health.",
+		["menu_deck17_9_desc_sc"] = "For every ##3## life points gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nThe Smoke Bomb has a ##30## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",

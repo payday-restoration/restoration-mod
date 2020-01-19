@@ -3038,7 +3038,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"temporary_chico_injector_2"
+					"temporary_chico_injector_speed"
 				},
 				cost = 400,
 				icon_xy = {1, 0},

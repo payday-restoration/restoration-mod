@@ -12307,6 +12307,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_ak5s.use_data.selection_index = 4
 	end	
 
+	if self.x_cold then --disabled vmp akimbos
+		self.x_cold.use_data.selection_index = 4
+	end		
+
 	if self.cold then --Gambyt's VMP Classic Crosskill
 		self.cold.tactical_reload = 1											
 		self.cold.fire_mode_data.fire_rate = 0.07692307692

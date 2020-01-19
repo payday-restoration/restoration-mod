@@ -698,7 +698,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ak47_ass_npc.sounds.prefix = "akm_npc"
 		
 		self.swamp_npc = deep_clone(self.m4_npc)
-		self.swamp_npc.sounds.prefix = "m16_npc"		
+		self.swamp_npc.sounds.prefix = "m16_npc"	
+		self.swamp_npc.CLIP_AMMO_MAX = 60
 		
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.auto.fire_rate = 0.1

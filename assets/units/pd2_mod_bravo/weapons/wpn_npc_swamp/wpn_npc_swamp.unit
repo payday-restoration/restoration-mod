@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-	<object file="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" />
+	<object file="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" />
 	<dependencies>
 		<depends_on effect="effects/particles/weapons/rifle/muzzleflash_3dp" />
 		<depends_on effect="effects/particles/weapons/sniper_trail" />
@@ -9,7 +9,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="NPCRaycastWeaponBase" >
-			<var name="name_id" value="m4_npc" />
+			<var name="name_id" value="swamp_npc" />
 			<var name="_multivoice" value="true" />
 		</extension>
 		<extension name="damage" class="UnitDamage" />

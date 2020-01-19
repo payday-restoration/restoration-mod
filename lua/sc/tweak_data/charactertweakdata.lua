@@ -1242,6 +1242,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.no_retreat = true
 		self.gangster.weapon_voice = "3"
 		self.gangster.experience.cable_tie = "tie_swat"
+		self.gangster.rescue_hostages = false
+		self.gangster.use_radio = nil		
 		if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 			self.gangster.speech_prefix_p1 = "rt"
 			self.gangster.speech_prefix_p2 = nil
@@ -1253,8 +1255,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		elseif job == "man" then	
 			self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
 			self.gangster.speech_prefix_p2 = "n"
-			self.gangster.speech_prefix_count = 4			
+			self.gangster.speech_prefix_count = 4	
 			self.gangster.no_arrest = false
+			self.gangster.rescue_hostages = true
+			self.gangster.use_radio = self._default_chatter				
 		else
 			self.gangster.speech_prefix_p1 = "lt"
 			self.gangster.speech_prefix_p2 = nil
@@ -1268,13 +1272,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.gangster.silent_priority_shout = "f37"
-		if job == "alex_3" or job == "alex_3_res" or job == "man" or job == "mex" or job == "mex_cooking" then
+		if job == "alex_3" or job == "alex_3_res" or job == "mex" or job == "mex_cooking" then
 			self.gangster.access = "security"
 		else
 			self.gangster.access = "gangster"
 		end
-		self.gangster.rescue_hostages = false
-		self.gangster.use_radio = nil
 		self.gangster.dodge = presets.dodge.average
 		self.gangster.challenges = {type = "gangster"}
 		self.gangster.melee_weapon = nil
@@ -9902,24 +9904,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper.is_rifle.melee_dmg = 5
 		presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 		presets.weapon.sniper.is_rifle.range = {
-			close = 15000,
-			optimal = 15000,
-			far = 15000
+			close = 2000,
+			optimal = 8000,
+			far = 16000
 		}
 		presets.weapon.sniper.is_rifle.use_laser = false
 		presets.weapon.sniper.is_rifle.FALLOFF = {
-			{
-				r = 1000,
-				acc = {0.7, 0.95},
-				dmg_mul = 1,
-				recoil = {3, 6},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
 			{
 				r = 2000,
 				acc = {0.7, 0.95},
@@ -9934,6 +9924,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 4000,
+				acc = {0.7, 0.95},
+				dmg_mul = 1,
+				recoil = {3, 6},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
 				acc = {0.5, 0.95},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9945,7 +9947,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.5, 0.85},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9957,7 +9959,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.5, 0.75},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9973,18 +9975,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper_good.is_rifle.melee_dmg = 10
 		presets.weapon.sniper_good.is_rifle.FALLOFF = {
 			{
-				r = 1000,
-				acc = {0.7, 0.95},
-				dmg_mul = 2,
-				recoil = {3, 6},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
-			{
 				r = 2000,
 				acc = {0.7, 0.95},
 				dmg_mul = 2,
@@ -9998,6 +9988,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 4000,
+				acc = {0.7, 0.95},
+				dmg_mul = 2,
+				recoil = {3, 6},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
 				acc = {0.5, 0.95},
 				dmg_mul = 2,
 				recoil = {4, 6},
@@ -10009,7 +10011,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.5, 0.85},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -10021,7 +10023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.5, 0.75},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -10061,7 +10063,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},		
 			{
-				r = 2000,
+				r = 4000,
 				acc = {0.7, 1},
 				dmg_mul = 2.1,
 				recoil = {3, 5},
@@ -10073,7 +10075,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 4000,
+				r = 8000,
 				acc = {0.6, 0.95},
 				dmg_mul = 2.1,
 				recoil = {3, 5},
@@ -10085,7 +10087,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.6, 0.85},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10097,7 +10099,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.6, 0.75},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10137,7 +10139,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 2000,
+				r = 4000,
 				acc = {0.7, 1},
 				dmg_mul = 2.625,
 				recoil = {3, 5},
@@ -10149,7 +10151,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 4000,
+				r = 8000,
 				acc = {0.6, 0.95},
 				dmg_mul = 2.625,
 				recoil = {3, 5},
@@ -10161,7 +10163,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.6, 0.85},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10171,7 +10173,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0,
 					0
 				}
-			}
+			},
+			{
+				r = 16000,
+				acc = {0.6, 0.75},
+				dmg_mul = 1.05,
+				recoil = {3, 5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}			
 		}
 		presets.detection = {}
 		presets.detection.normal = {

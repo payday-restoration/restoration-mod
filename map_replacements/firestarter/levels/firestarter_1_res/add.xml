@@ -405,8 +405,15 @@
 		<unit force="true" path="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus_double" unload="true"/>
 	</add>
 	<add path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" type="unit">
-		<unit force="true" path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" unload="true"/>
-		<object force="true" path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" unload="true"/>
 		<material_config force="true" path="units/payday2/architecture/are/are_off_int" unload="true"/>
+		<object force="true" path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" unload="true"/>
+	</add>
+	<add path="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" type="unit">
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" unload="true"/>
+		<material_config force="true" path="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
 	</add>
 </table>

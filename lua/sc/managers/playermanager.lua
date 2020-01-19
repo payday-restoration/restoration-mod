@@ -51,7 +51,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_speed_multiplier", 1) - 1)
 
 		if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
-			multiplier = multiplier + (managers.player:upgrade_value("player", "chico_injector_speed", 1) - 1)
+			multiplier = multiplier + (self:upgrade_value("player", "chico_injector_speed", 1) - 1)
 		end
 
 		if self:has_category_upgrade("player", "secured_bags_speed_multiplier") then

@@ -2092,7 +2092,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_passive_health_multiplier_4",
 					"team_hostage_health_multiplier",
 					"team_hostage_stamina_multiplier"
 				},
@@ -3039,7 +3038,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"temporary_chico_injector_2"
+					"temporary_chico_injector_speed"
 				},
 				cost = 400,
 				icon_xy = {1, 0},

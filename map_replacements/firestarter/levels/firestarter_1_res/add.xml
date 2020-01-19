@@ -367,7 +367,6 @@
 		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_vehicle_small" unload="true"/>
 	</add>
 	<add path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" type="unit">
-		<unit force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
 		<object force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
 		<material_config force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
 		<sequence_manager force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
@@ -375,5 +374,39 @@
 		<material_config force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
 		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
 		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
+		<unit force="true" path="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_airplanelights_blinking" type="unit">
+		<material_config force="true" path="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_airplanelights_blinking" unload="true"/>
+		<object force="true" path="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_airplanelights_blinking" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_airplanelights_blinking" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_airplanelights_blinking" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign" type="unit">
+		<effect force="true" load="true" path="effects/payday2/particles/flares/indoor_sign" unload="true"/>
+		<material_config force="true" path="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign" unload="true"/>
+		<object force="true" path="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign" unload="true"/>
+		<unit force="true" path="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm_double" type="unit">
+		<material_config force="true" path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm_double" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm_double" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm_double" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus_double" type="unit">
+		<material_config force="true" path="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus_double" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus_double" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus_double" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" type="unit">
+		<unit force="true" path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" unload="true"/>
+		<object force="true" path="units/payday2/architecture/are/are_off_int_wall_plastic_trim_1m" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/are/are_off_int" unload="true"/>
 	</add>
 </table>

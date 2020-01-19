@@ -316,9 +316,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
 		
-		if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
-			if managers.blackmarket:equipped_melee_weapon()== "buck" then
-				attack_data.damage = attack_data.damage * 0.9
+		if managers.player:has_category_upgrade("player", "deflect_ranged") then
+			if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+				if managers.blackmarket:equipped_melee_weapon()== "buck" then
+					attack_data.damage = attack_data.damage * 0.8
+				else
+					attack_data.damage = attack_data.damage * 0.9
+				end
+			end			
+		else
+			if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+				if managers.blackmarket:equipped_melee_weapon()== "buck" then
+					attack_data.damage = attack_data.damage * 0.9
+				end
 			end
 		end
 		

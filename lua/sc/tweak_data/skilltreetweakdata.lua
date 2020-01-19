@@ -89,6 +89,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_mask_off_pickup",
 		"player_small_loot_multiplier_1",
 		"player_pick_lock_easy_speed_multiplier_1",
+		"player_counter_strike_melee",
 		"first_aid_kit_downs_restore_chance",
 		"player_suppression_resist",
 		"player_electrocution_resistance_1",
@@ -985,13 +986,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {9, 6},
 				[1] = {
 					upgrades = {
-						"player_drill_fix_interaction_speed_multiplier",
+						"player_drill_fix_interaction_speed_multiplier_1",
+						"player_drill_alert"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_drill_alert",
+						"player_drill_fix_interaction_speed_multiplier_2",
 						"player_silent_drill"
 					},
 					cost = self.costs.pro
@@ -1019,8 +1021,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Drill Sawgeant--
 			self.skills.drill_expert = {
-				["name_id"] = "menu_drill_expert_beta",
-				["desc_id"] = "menu_drill_expert_beta_desc",
+				["name_id"] = "menu_drill_expert_beta_sc",
+				["desc_id"] = "menu_drill_expert_beta_desc_sc",
 				["icon_xy"] = {3, 6},
 				[1] = {
 					upgrades = {
@@ -1883,14 +1885,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 12},
 				[1] = {
 					upgrades = {
-						"player_counter_strike_melee"
+						"player_counter_strike_spooc",
+						"player_spooc_damage_resist_1"						
 					},		
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_counter_strike_spooc",
-						"player_spooc_damage_resist"
+						"player_deflect_ranged",
+						"player_spooc_damage_resist_2"
 					},
 					cost = self.costs.hightierpro
 				}

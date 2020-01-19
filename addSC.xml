@@ -1935,8 +1935,14 @@
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_contour" />
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_husk"  load="true"/>	
-	
+		
+	<object path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<cooked_physics path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<model path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
 	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>	
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp_contour" force="false"/>	
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/swamp_df" force="false"/>	
 	
 	<!--bravo shotgun-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />

@@ -9904,24 +9904,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper.is_rifle.melee_dmg = 5
 		presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 		presets.weapon.sniper.is_rifle.range = {
-			close = 15000,
-			optimal = 15000,
-			far = 15000
+			close = 2000,
+			optimal = 8000,
+			far = 16000
 		}
 		presets.weapon.sniper.is_rifle.use_laser = false
 		presets.weapon.sniper.is_rifle.FALLOFF = {
-			{
-				r = 1000,
-				acc = {0.7, 0.95},
-				dmg_mul = 1,
-				recoil = {3, 6},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
 			{
 				r = 2000,
 				acc = {0.7, 0.95},
@@ -9936,6 +9924,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 4000,
+				acc = {0.7, 0.95},
+				dmg_mul = 1,
+				recoil = {3, 6},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
 				acc = {0.5, 0.95},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9947,7 +9947,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.5, 0.85},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9959,7 +9959,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.5, 0.75},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9975,18 +9975,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper_good.is_rifle.melee_dmg = 10
 		presets.weapon.sniper_good.is_rifle.FALLOFF = {
 			{
-				r = 1000,
-				acc = {0.7, 0.95},
-				dmg_mul = 2,
-				recoil = {3, 6},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
-			{
 				r = 2000,
 				acc = {0.7, 0.95},
 				dmg_mul = 2,
@@ -10000,6 +9988,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 4000,
+				acc = {0.7, 0.95},
+				dmg_mul = 2,
+				recoil = {3, 6},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
 				acc = {0.5, 0.95},
 				dmg_mul = 2,
 				recoil = {4, 6},
@@ -10011,7 +10011,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.5, 0.85},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -10023,7 +10023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.5, 0.75},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -10063,7 +10063,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},		
 			{
-				r = 2000,
+				r = 4000,
 				acc = {0.7, 1},
 				dmg_mul = 2.1,
 				recoil = {3, 5},
@@ -10075,7 +10075,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 4000,
+				r = 8000,
 				acc = {0.6, 0.95},
 				dmg_mul = 2.1,
 				recoil = {3, 5},
@@ -10087,7 +10087,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.6, 0.85},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10099,7 +10099,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.6, 0.75},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10139,7 +10139,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 2000,
+				r = 4000,
 				acc = {0.7, 1},
 				dmg_mul = 2.625,
 				recoil = {3, 5},
@@ -10151,7 +10151,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 4000,
+				r = 8000,
 				acc = {0.6, 0.95},
 				dmg_mul = 2.625,
 				recoil = {3, 5},
@@ -10163,7 +10163,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.6, 0.85},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10173,7 +10173,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0,
 					0
 				}
-			}
+			},
+			{
+				r = 16000,
+				acc = {0.6, 0.75},
+				dmg_mul = 1.05,
+				recoil = {3, 5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}			
 		}
 		presets.detection = {}
 		presets.detection.normal = {

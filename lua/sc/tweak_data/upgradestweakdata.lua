@@ -792,7 +792,8 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 				--Hardware Expert
-				self.values.player.drill_fix_interaction_speed_multiplier = {0.5}
+				self.values.player.drill_deploy_speed_multiplier = {0.5}
+				self.values.player.drill_fix_interaction_speed_multiplier = {0.2, 0.5}
 				self.values.player.drill_alert_rad = {900}
 				self.values.player.silent_drill = {true}
 				
@@ -801,7 +802,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.trip_mine.damage_multiplier = {1.5}
 
 				--Drill Sawgent
-				self.values.player.drill_speed_multiplier = {0.85, 0.7}
+				self.values.player.drill_speed_multiplier = {0.9, 0.7}
 				
 				--Demoman
 				self.values.player.trip_mine_deploy_time_multiplier = {
@@ -1155,13 +1156,14 @@ function UpgradesTweakData:_init_pd2_values()
 				--Pumping Iron	
 				self.values.player.non_special_melee_multiplier = {1.05, 1.1, 1.15, 1.2}
 				self.values.player.melee_damage_multiplier = {1.05, 1.1, 1.15, 1.2}
-				self.values.player.melee_swing_multiplier = {1.25, 1.5}
-				self.values.player.melee_swing_multiplier_delay = {0.75, 0.5}
+				self.values.player.melee_swing_multiplier = {1.2, 1.5}
+				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5}
 				
 				--Counter Strike
 				self.values.player.counter_strike_melee = {true}
 				self.values.player.counter_strike_spooc = {true}
-				self.values.player.spooc_damage_resist = {0.5}
+				self.values.player.deflect_ranged = {true}
+				self.values.player.spooc_damage_resist = {0.2, 0.5}
 
 				--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
@@ -1657,6 +1659,33 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "revived_health_regain",
 			category = "player"
 		}
+	}	
+	self.definitions.player_drill_deploy_speed_multiplier = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "drill_fix_interaction_speed_multiplier",
+			category = "player"
+		}
+	}		
+	self.definitions.player_drill_fix_interaction_speed_multiplier_1 = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "drill_fix_interaction_speed_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.player_drill_fix_interaction_speed_multiplier_2 = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "drill_fix_interaction_speed_multiplier",
+			category = "player"
+		}
 	}		
 	self.definitions.player_damage_control_auto_shrug_1 = {
 		category = "feature",
@@ -1899,6 +1928,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_deflect_ranged = {
+		category = "feature",
+		name_id = "menu_player_panic_suppression",
+		upgrade = {
+			category = "player",
+			upgrade = "deflect_ranged",
+			value = 1
+		}
+	}	
 	self.definitions.player_ignore_suppression_flinch = {
 		category = "feature",
 		name_id = "menu_player_panic_suppression",
@@ -2728,7 +2766,7 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_spooc_damage_resist = {
+	self.definitions.player_spooc_damage_resist_1 = {
 		name_id = "menu_player_spooc_damage_resist",
 		category = "feature",
 		upgrade = {
@@ -2737,6 +2775,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_spooc_damage_resist_2 = {
+		name_id = "menu_player_spooc_damage_resist",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "spooc_damage_resist",
+			category = "player"
+		}
+	}	
 	self.definitions.player_trigger_happy_bodyshot_refresh = {
 		name_id = "menu_player_trigger_happy_bodyshot_refresh",
 		category = "feature",

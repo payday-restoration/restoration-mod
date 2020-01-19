@@ -1,0 +1,29 @@
+<dynamic_object>
+    <diesel orientation_object="rp_bnk_prop_security_keybox" materials="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" />
+    <sequence_manager file="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox"/>
+	
+    <animations>
+        <animation_group name="anim_door" >
+            <object enabled="true" name="a_align_door" />
+        </animation_group>
+    </animations>
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object name="rp_bnk_prop_security_keybox" />		
+            <object collision_type="mesh_mopp" name="c_mesh_mopp" />
+        </body>
+        <body enabled="true" template="animated" name="animated_body" >
+            <object collision_type="box" name="c_box_01" />
+        </body>		
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_sheet_metal_01" material="sheet_metal" />
+        <decal_mesh enabled="true" name="dm_sheet_metal" material="sheet_metal" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_door" />
+        <object enabled="true" name="g_g" />
+        <object enabled="true" name="g_keys" />
+        <object enabled="false" name="g_outline" />
+    </graphics>
+</dynamic_object>

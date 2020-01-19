@@ -1,5 +1,5 @@
 <table name="alex_res">
-	<level ai_group_type="america" brief_id="heist_alex_1_briefing" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist" name_id="heist_alex_1_hl">
+	<level ai_group_type="america" player_style = "suit_sunny" brief_id="heist_alex_1_briefing" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist" name_id="heist_alex_1_hl">
 		<add file="levels/alex_1_res/add.xml"/>
 		<assets/>
 		<include directory="levels/alex_1_res">
@@ -76,7 +76,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="america" brief_id="heist_alex_3_briefing" briefing_dialog="Play_pln_rat_stage3_brief" cube="cube_apply_heist_bank" id="alex_3_res" intro_event="Play_pln_rat_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats03" max_bags="34" music="heist" name_id="heist_alex_3_hl">
+	<level ai_group_type="america" player_style = "suit_sunny" brief_id="heist_alex_3_briefing" briefing_dialog="Play_pln_rat_stage3_brief" cube="cube_apply_heist_bank" id="alex_3_res" intro_event="Play_pln_rat_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats03" max_bags="34" music="heist" name_id="heist_alex_3_hl">
 		<add file="levels/alex_3_res/add.xml"/>
 		<assets/>
 		<include directory="levels/alex_3_res">

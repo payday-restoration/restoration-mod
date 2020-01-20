@@ -84,8 +84,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 
 			player_unit:character_damage():damage_killzone(attack_data)
-			player_unit:movement():subtract_stamina(self._stamina_per_tick)
-			player_unit:movement():_restart_stamina_regen_timer()
+
+			if self._stamina_per_tick > 0.0 then
+				player_unit:movement():subtract_stamina(self._stamina_per_tick)
+				player_unit:movement():_restart_stamina_regen_timer()
+			end
 
 			if not self._has_played_VO then
 				PlayerStandard.say_line(player_unit:sound(), "g42x_any")

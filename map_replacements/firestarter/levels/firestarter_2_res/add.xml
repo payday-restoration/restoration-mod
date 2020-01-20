@@ -301,20 +301,6 @@
 		<sequence_manager force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room" unload="true"/>
 		<unit force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
 	</add>
-	<add path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/gen_interactable_door_reinforced_v2" type="unit">
-		<unit force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/gen_interactable_door_reinforced_v2" unload="true"/>
-		<object force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/gen_interactable_door_reinforced_v2" unload="true"/>
-		<material_config force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/gen_interactable_door_reinforced_v2" unload="true"/>
-		<sequence_manager force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/gen_interactable_door_reinforced_v2" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/spawn_debris_door_reinforced" unload="true"/>
-		<object force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/spawn_debris_door_reinforced" unload="true"/>
-		<material_config force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/spawn_debris_door_reinforced" unload="true"/>
-		<object force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
-		<material_config force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
-		<physic_effect force="true" path="physic_effects/push_sphere" unload="true"/>
-	</add>
 	<add path="units/pd2_dlc_arena/equipment/gen_interactable_door_keycard_v2/gen_interactable_door_keycard_v2" type="unit">
 		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
 		<material_config force="true" path="units/pd2_dlc_arena/equipment/gen_interactable_door_keycard_v2/gen_interactable_door_keycard_v2" unload="true"/>
@@ -348,8 +334,35 @@
 		<unit force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_small_01" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" type="unit">
-		<unit force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
-		<object force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
 		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" type="unit">
+		<effect force="true" load="true" path="effects/payday2/particles/water/water_bubbles" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/water/water_bubbles_jet" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/water/water_tank" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/water/water_tank3" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" unload="true"/>
+		<object force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_base" type="unit">
+		<material_config force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" unload="true"/>
+		<object force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_base" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_base" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_base" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/hcm/hcm_int_floor_4x4m_a" type="unit">
+		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
+		<object force="true" path="units/payday2/architecture/hcm/hcm_int_floor_4x4m_a" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/hcm/hcm_int_floor_4x4m_a" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/hcm/hcm_int_floor_2x2m_a" type="unit">
+		<unit force="true" path="units/payday2/architecture/hcm/hcm_int_floor_2x2m_a" unload="true"/>
+		<object force="true" path="units/payday2/architecture/hcm/hcm_int_floor_2x2m_a" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
 	</add>
 </table>

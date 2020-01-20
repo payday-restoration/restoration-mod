@@ -1,0 +1,1220 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" orientation_object="rp_lxy_prop_aquarium" />
+	<sequence_manager file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" />
+	
+	<animations>
+		<animation_group name="fish_anim_grp" enabled="false">
+			<object name="a_fish_01_idle" />
+			<object name="a_fish_02_idle" />
+			<object name="a_fish_03_idle" />
+			<object name="a_fish_04_idle" />
+			<object name="a_fish_05_idle" />
+			<object name="a_fish_06_idle" />
+			<object name="a_water_01" />
+			<object name="a_water_02" />
+		</animation_group>
+
+		<animation_group name="anim_box_grp" enabled="false">
+			<object name="anim_box" />
+		</animation_group>	
+
+		<animation_group name="fish_drop_grp" enabled="false">
+			<object name="a_fish_01_drop" enabled="true" />
+			<object name="a_fish_02_drop" enabled="true" />
+			<object name="a_fish_03_drop" enabled="true" />
+			<object name="a_fish_04_drop" enabled="true" />
+			<object name="a_fish_05_drop" enabled="true" />
+			<object name="a_fish_06_drop" enabled="true" />
+		</animation_group>
+
+		<animation_group name="grass_drop_grp" enabled="false">
+			<object name="a_grass_01_anim" enabled="true" />
+			<object name="a_grass_02_anim" enabled="true" />
+			<object name="a_grass_03_anim" enabled="true" />
+			<object name="a_grass_04_anim" enabled="true" />
+			<object name="a_grass_05_anim" enabled="true" />
+			<object name="a_grass_06_anim" enabled="true" />
+			<object name="a_grass_07_anim" enabled="true" />
+		</animation_group>
+
+		<animation_group name="water_anim_grp" enabled="false">			
+			<object name="a_water_03" />
+		</animation_group>
+		
+	</animations>
+
+	<effects>		
+		<effect_spawner name="bubbles_01" enabled="true" object="e_effect_01" effect="effects/payday2/particles/water/water_bubbles" />
+		<effect_spawner name="bubbles_02" enabled="true" object="e_effect_02" effect="effects/payday2/particles/water/water_bubbles" />
+		<effect_spawner name="bubbles_03" enabled="true" object="e_effect_03" effect="effects/payday2/particles/water/water_bubbles" />
+		<effect_spawner name="bubbles_04" enabled="true" object="e_effect_04" effect="effects/payday2/particles/water/water_bubbles" />
+		<effect_spawner name="bubbles_05" enabled="true" object="e_effect_05" effect="effects/payday2/particles/water/water_bubbles" />
+		<effect_spawner name="bubbles_06" enabled="true" object="e_effect_06" effect="effects/payday2/particles/water/water_bubbles" />	
+		<effect_spawner name="bubbles_07" enabled="false" object="e_effect_07" effect="effects/payday2/particles/water/water_bubbles_jet" speed="0.1"/>
+
+		<effect_spawner name="water_01" effect="effects/payday2/particles/water/water_tank"  object="e_effect_09" />
+		<effect_spawner name="water_02" effect="effects/payday2/particles/water/water_tank"  object="e_effect_10" />
+		<effect_spawner name="water_03" effect="effects/payday2/particles/water/water_tank"  object="e_effect_11" />
+		<effect_spawner name="water_04" effect="effects/payday2/particles/water/water_tank"  object="e_effect_12" />
+		<effect_spawner name="water_05" effect="effects/payday2/particles/water/water_tank"  object="e_effect_13" />
+		<effect_spawner name="water_06" effect="effects/payday2/particles/water/water_tank"  object="e_effect_14" />
+		<effect_spawner name="water_07" effect="effects/payday2/particles/water/water_tank"  object="e_effect_15" />			
+	</effects>
+
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_box_03" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_static2" enabled="true" template="static">
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />			
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+			<object name="c_box_05" collision_type="box" padding="-2.5" />
+			<object name="c_box_06" collision_type="box" padding="-2.5" />
+			<object name="c_box_07" collision_type="box" padding="-2.5" />
+			<object name="c_box_08" collision_type="box" padding="-2.5" />
+			<object name="c_box_09" collision_type="box" padding="-2.5" />
+			<object name="c_box_10" collision_type="box" padding="-2.5" />
+			<object name="c_box_11" collision_type="box" padding="-2.5" />
+			<object name="c_box_12" collision_type="box" padding="-2.5" />
+			<object name="c_box_13" collision_type="box" padding="-2.5" />
+
+			<object name="c_box_14" collision_type="box" padding="-2.5" />
+			<object name="c_box_15" collision_type="box" padding="-2.5" />
+			<object name="c_box_16" collision_type="box" padding="-2.5" />
+			<object name="c_box_17" collision_type="box" padding="-2.5" />
+		</body>
+
+<!-- 		<body name="body_collision_01a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_01" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_02a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_02" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_03a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_03" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_04a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_04" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_05a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_05" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_06a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_06" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_07a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_07" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_08a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_08" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_09a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_09" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_10a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_10" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_11a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_11" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_12a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_12" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_13a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_13" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_14a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_14" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_15a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_15" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_16a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_16" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_17a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_17" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_18a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_18" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_19a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_19" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_20a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_20" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_21a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_21" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_22a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_22" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_23a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_23" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_24a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_24" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_25a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_25" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_26a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_26" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_27a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_27" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_28a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_28" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_29a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_29" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_30a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_30" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_31a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_31" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_32a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_32" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_33a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_33" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_34a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_34" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_35a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_35" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_36a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_36" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_37a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_37" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_38a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_38" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_39a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_39" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_40a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_40" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_41a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_41" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_42a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_42" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_43a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_43" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_44a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_44" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_45a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_45" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_46a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_46" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_47a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_47" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_48a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_48" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_49a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_49" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_50a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_50" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_51a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_51" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_52a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_52" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_53a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_53" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_54a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_54" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_55a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_55" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_56a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_56" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_57a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_57" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_58a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_58" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_59a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_59" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_60a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_60" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_61a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_61" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_62a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_62" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_63a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_63" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_64a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_64" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_65a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_65" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_66a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_66" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_67a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_67" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_68a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_68" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_69a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_69" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_70a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_70" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_71a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_71" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_72a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_72" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_73a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_73" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_74a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_74" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_75a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_75" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_76a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_76" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_77a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_77" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_78a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_78" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_79a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_79" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_80a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_80" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_81a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_81" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_82a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_82" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_83a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_83" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_84a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_84" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_85a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_85" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_86a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_86" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_87a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_87" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_88a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_88" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_89a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_89" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_90a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_90" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_91a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_91" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_92a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_92" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_93a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_93" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_94a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_94" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_95a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_95" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_96a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_96" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_97a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_97" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_98a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_98" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_99a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_99" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_100a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_100" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_101a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_101" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_102a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_102" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_103a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_103" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_104a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_104" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_105a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_105" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_106a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_106" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_107a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_107" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_108a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_108" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_109a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_109" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_110a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_110" collision_type="box" padding="-2.5" />			
+		</body>
+
+		<body name="body_collision_111a" enabled="false" template="static">		
+			<object name="rp_lxy_prop_aquarium" />			
+			<object name="c_convex_111" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_112a" enabled="false" template="static">						
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_112" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_113a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_113" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_114a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_114" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_115a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_115" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_116a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_116" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_117a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_117" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_118a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_118" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_119a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_119" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_120a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_120" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_121a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_121" collision_type="box" padding="-2.5" />			
+		</body>
+		<body name="body_collision_122a" enabled="false" template="static">					
+			<object name="rp_lxy_prop_aquarium" />
+			<object name="c_convex_122" collision_type="box" padding="-2.5" />			
+		</body> -->
+<!-- 
+
+		<body name="body_collision_01" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_02" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_02" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_03" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_03" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_04" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_04" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_05" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_05" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_06" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_06" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_07" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_07" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_08" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_08" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_09" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_09" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_10" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_10" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_11" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_11" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_12" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_12" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_13" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_13" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_14" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_14" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_15" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_15" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_16" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_16" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_17" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_17" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_18" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_18" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_19" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_19" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_20" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_20" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_21" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_21" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_22" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_22" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_23" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_23" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_24" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_24" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_25" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_25" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_26" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_26" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_27" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_27" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_28" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_28" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_29" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_29" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_30" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_30" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_31" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_31" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_32" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_32" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_33" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_33" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_34" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_34" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_35" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_35" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_36" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_36" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_37" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_37" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_38" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_38" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_39" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_39" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_40" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_40" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_41" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_41" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_42" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_42" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_43" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_43" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_44" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_44" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_45" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_45" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_46" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_46" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_47" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_47" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_48" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_48" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_49" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_49" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_50" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_50" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_51" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_51" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_52" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_52" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_53" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_53" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_54" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_54" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_55" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_55" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_56" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_56" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_57" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_57" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_58" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_58" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_59" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_59" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_60" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_60" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_61" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_61" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_62" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_62" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_63" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_63" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_64" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">		
+			<object name="c_convex_64" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_65" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_65" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_66" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_66" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_67" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_67" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_68" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_68" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_69" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_69" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_70" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_70" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_71" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">			
+			<object name="c_convex_71" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_72" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_72" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_73" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_73" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_74" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_74" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_75" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_75" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_76" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_76" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_77" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_77" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_78" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_78" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_79" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_79" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_80" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_80" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_81" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_81" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_82" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_82" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_83" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_83" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_84" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_84" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_85" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_85" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_86" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_86" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_87" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_87" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_88" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_88" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_89" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_89" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_90" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_90" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_91" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_91" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_92" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_92" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_93" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_93" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_94" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_94" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_95" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_95" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_96" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_96" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_97" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_97" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_98" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_98" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_99" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_99" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_100" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_100" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_101" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_101" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_102" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_102" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_103" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_103" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_104" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_104" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_105" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_105" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_106" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_106" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_107" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_107" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_108" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_108" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_109" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_109" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_110" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_110" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_111" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_111" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_112" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_112" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_113" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_113" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_114" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_114" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_115" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_115" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_116" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_116" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_117" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_117" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_118" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_118" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_119" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_119" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_120" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_120" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_121" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_121" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_122" enabled="false" template="dynamic" collides_with_mover="false" pushed_by_mover="false">
+			<object name="c_convex_122" collision_type="convex" padding="-2.5" />
+		</body> -->
+		
+	</bodies>
+
+	<decal_surfaces >
+		<decal_mesh name="dm_glass_breakable" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_thin_layer" enabled="true" material="thin_layer" />
+		<decal_mesh name="dm_wood" enabled="true" material="wood" />
+	</decal_surfaces>
+
+	<graphics>
+
+		<object name="g_water" enabled="true" />
+		<object name="g_water2" enabled="false" />
+		<object name="g_glass" enabled="true" />
+		<object name="g_glass1" enabled="false" />
+		<object name="g_box" enabled="true" />
+
+		<graphic_group name="bodygroup" enabled="true" culling_object="g_body_lod0">
+			<lod_object name="lod_g_body">
+				<object name="g_body_lod0" enabled="true" max_distance="1500" />
+				<object name="g_body_lod1" enabled="true" max_distance="3000" />
+				<object name="g_body_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>
+
+		<graphic_group name="aquagroup" enabled="true" culling_object="g_aqua_lod0">
+			<lod_object name="lod_g_aqua">
+				<object name="g_aqua_lod0" enabled="true" max_distance="1500" />
+				<object name="g_aqua_lod1" enabled="true" max_distance="3000" />
+				<object name="g_aqua_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>
+
+		<graphic_group name="plantgroup" enabled="true" culling_object="g_plant_lod0">	
+			<lod_object name="lod_g_plant">
+				<object name="g_plant_lod0" enabled="true" max_distance="1500" />
+				<object name="g_plant_lod1" enabled="true" />
+			</lod_object>	
+		</graphic_group>
+		
+		<graphic_group name="idle_fishgroup" enabled="true" >					
+			<object name="g_fish_01_idle" enabled="true" />			
+			<object name="g_fish_02_idle" enabled="true" />			
+			<object name="g_fish_03_idle" enabled="true" />			
+			<object name="g_fish_04_idle" enabled="true" />			
+			<object name="g_fish_05_idle" enabled="true" />			
+			<object name="g_fish_06_idle" enabled="true" />
+		</graphic_group>
+
+		<graphic_group name="drop_fishgroup" enabled="false" >					
+			<object name="g_fish_01_drop" enabled="true" />			
+			<object name="g_fish_02_drop" enabled="true" />			
+			<object name="g_fish_03_drop" enabled="true" />			
+			<object name="g_fish_04_drop" enabled="true" />			
+			<object name="g_fish_05_drop" enabled="true" />			
+			<object name="g_fish_06_drop" enabled="true" />
+		</graphic_group>		
+
+		<graphic_group name="dmggroup" enabled="false" >
+			<object name="g_dmg_01" enabled="true" />
+			<object name="g_dmg_02" enabled="true" />
+			<object name="g_dmg_03" enabled="true" />
+			<object name="g_dmg_04" enabled="true" />
+			<object name="g_dmg_05" enabled="true" />
+			<object name="g_dmg_06" enabled="true" />
+			<object name="g_dmg_07" enabled="true" />
+			<object name="g_dmg_08" enabled="true" />
+			<object name="g_dmg_09" enabled="true" />
+			<object name="g_dmg_10" enabled="true" />
+			<object name="g_dmg_100" enabled="true" />
+			<object name="g_dmg_101" enabled="true" />
+			<object name="g_dmg_102" enabled="true" />
+			<object name="g_dmg_103" enabled="true" />
+			<object name="g_dmg_104" enabled="true" />
+			<object name="g_dmg_105" enabled="true" />
+			<object name="g_dmg_106" enabled="true" />
+			<object name="g_dmg_107" enabled="true" />
+			<object name="g_dmg_108" enabled="true" />
+			<object name="g_dmg_109" enabled="true" />
+			<object name="g_dmg_11" enabled="true" />
+			<object name="g_dmg_110" enabled="true" />
+			<object name="g_dmg_111" enabled="true" />
+			<object name="g_dmg_112" enabled="true" />
+			<object name="g_dmg_113" enabled="true" />
+			<object name="g_dmg_114" enabled="true" />
+			<object name="g_dmg_115" enabled="true" />
+			<object name="g_dmg_116" enabled="true" />
+			<object name="g_dmg_117" enabled="true" />
+			<object name="g_dmg_118" enabled="true" />
+			<object name="g_dmg_119" enabled="true" />
+			<object name="g_dmg_12" enabled="true" />
+			<object name="g_dmg_120" enabled="true" />
+			<object name="g_dmg_121" enabled="true" />
+			<object name="g_dmg_122" enabled="true" />
+			<object name="g_dmg_13" enabled="true" />
+			<object name="g_dmg_14" enabled="true" />
+			<object name="g_dmg_15" enabled="true" />
+			<object name="g_dmg_16" enabled="true" />
+			<object name="g_dmg_17" enabled="true" />
+			<object name="g_dmg_18" enabled="true" />
+			<object name="g_dmg_19" enabled="true" />
+			<object name="g_dmg_20" enabled="true" />
+			<object name="g_dmg_21" enabled="true" />
+			<object name="g_dmg_22" enabled="true" />
+			<object name="g_dmg_23" enabled="true" />
+			<object name="g_dmg_24" enabled="true" />
+			<object name="g_dmg_25" enabled="true" />
+			<object name="g_dmg_26" enabled="true" />
+			<object name="g_dmg_27" enabled="true" />
+			<object name="g_dmg_28" enabled="true" />
+			<object name="g_dmg_29" enabled="true" />
+			<object name="g_dmg_30" enabled="true" />
+			<object name="g_dmg_31" enabled="true" />
+			<object name="g_dmg_32" enabled="true" />
+			<object name="g_dmg_33" enabled="true" />
+			<object name="g_dmg_34" enabled="true" />
+			<object name="g_dmg_35" enabled="true" />
+			<object name="g_dmg_36" enabled="true" />
+			<object name="g_dmg_37" enabled="true" />
+			<object name="g_dmg_38" enabled="true" />
+			<object name="g_dmg_39" enabled="true" />
+			<object name="g_dmg_40" enabled="true" />
+			<object name="g_dmg_41" enabled="true" />
+			<object name="g_dmg_42" enabled="true" />
+			<object name="g_dmg_43" enabled="true" />
+			<object name="g_dmg_44" enabled="true" />
+			<object name="g_dmg_45" enabled="true" />
+			<object name="g_dmg_46" enabled="true" />
+			<object name="g_dmg_47" enabled="true" />
+			<object name="g_dmg_48" enabled="true" />
+			<object name="g_dmg_49" enabled="true" />
+			<object name="g_dmg_50" enabled="true" />
+			<object name="g_dmg_51" enabled="true" />
+			<object name="g_dmg_52" enabled="true" />
+			<object name="g_dmg_53" enabled="true" />
+			<object name="g_dmg_54" enabled="true" />
+			<object name="g_dmg_55" enabled="true" />
+			<object name="g_dmg_56" enabled="true" />
+			<object name="g_dmg_57" enabled="true" />
+			<object name="g_dmg_58" enabled="true" />
+			<object name="g_dmg_59" enabled="true" />
+			<object name="g_dmg_60" enabled="true" />
+			<object name="g_dmg_61" enabled="true" />
+			<object name="g_dmg_62" enabled="true" />
+			<object name="g_dmg_63" enabled="true" />
+			<object name="g_dmg_64" enabled="true" />
+			<object name="g_dmg_65" enabled="true" />
+			<object name="g_dmg_66" enabled="true" />
+			<object name="g_dmg_67" enabled="true" />
+			<object name="g_dmg_68" enabled="true" />
+			<object name="g_dmg_69" enabled="true" />
+			<object name="g_dmg_70" enabled="true" />
+			<object name="g_dmg_71" enabled="true" />
+			<object name="g_dmg_72" enabled="true" />
+			<object name="g_dmg_73" enabled="true" />
+			<object name="g_dmg_74" enabled="true" />
+			<object name="g_dmg_75" enabled="true" />
+			<object name="g_dmg_76" enabled="true" />
+			<object name="g_dmg_77" enabled="true" />
+			<object name="g_dmg_78" enabled="true" />
+			<object name="g_dmg_79" enabled="true" />
+			<object name="g_dmg_80" enabled="true" />
+			<object name="g_dmg_81" enabled="true" />
+			<object name="g_dmg_82" enabled="true" />
+			<object name="g_dmg_83" enabled="true" />
+			<object name="g_dmg_84" enabled="true" />
+			<object name="g_dmg_85" enabled="true" />
+			<object name="g_dmg_86" enabled="true" />
+			<object name="g_dmg_87" enabled="true" />
+			<object name="g_dmg_88" enabled="true" />
+			<object name="g_dmg_89" enabled="true" />
+			<object name="g_dmg_90" enabled="true" />
+			<object name="g_dmg_91" enabled="true" />
+			<object name="g_dmg_92" enabled="true" />
+			<object name="g_dmg_93" enabled="true" />
+			<object name="g_dmg_94" enabled="true" />
+			<object name="g_dmg_95" enabled="true" />
+			<object name="g_dmg_96" enabled="true" />
+			<object name="g_dmg_97" enabled="true" />
+			<object name="g_dmg_98" enabled="true" />
+			<object name="g_dmg_99" enabled="true" />
+		</graphic_group>
+		
+		<graphic_group name="anim_grassgroup" enabled="false" >
+			<object name="g_grass_01_anim" enabled="false" />		
+			<object name="g_grass_02_anim" enabled="false" />
+			<object name="g_grass_03_anim" enabled="false" />
+			<object name="g_grass_04_anim" enabled="false" />		
+			<object name="g_grass_05_anim" enabled="false" />		
+			<object name="g_grass_06_anim" enabled="false" />		
+			<object name="g_grass_07_anim" enabled="false" />
+		</graphic_group>	
+
+		<object name="g_grass_01_idle" enabled="true" />
+		<object name="g_grass_02_idle" enabled="true" />
+		<object name="g_grass_03_idle" enabled="true" />
+		<object name="g_grass_04_idle" enabled="true" />
+		<object name="g_grass_05_idle" enabled="true" />
+		<object name="g_grass_06_idle" enabled="true" />
+		<object name="g_grass_07_idle" enabled="true" />
+
+		
+		<object name="g_plant_01_anim" enabled="false" />		
+		<object name="g_plant_02_anim" enabled="false" />
+		<object name="g_plant_03_anim" enabled="false" />
+		<object name="g_plant_04_anim" enabled="false" />
+
+
+		<object name="g_plant_01_idle" enabled="true" />
+		<object name="g_plant_02_idle" enabled="true" />		
+		<object name="g_plant_03_idle" enabled="true" />		
+		<object name="g_plant_04_idle" enabled="true" />		
+
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

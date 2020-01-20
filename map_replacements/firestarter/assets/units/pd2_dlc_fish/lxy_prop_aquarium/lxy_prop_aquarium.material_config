@@ -1,0 +1,97 @@
+<materials version="3">
+    <material decal_material="no_decal" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_aquarium_body" version="2">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_df"/>
+        <material_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_nm"/>
+    </material>
+    <material decal_material="no_decal" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_aquarium_novertex" version="2">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_df"/>
+        <material_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_nm"/>
+    </material>
+    <material name="mat_lxy_mahogany_dark_trim" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2" decal_material="no_decal">
+        <diffuse_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_mahogany_dark_df"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+        <material_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_mahogany_dark_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_int_wood_dado_trim_nm"/>
+    </material>
+    <material name="mat_lxy_mahogany_light" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2" decal_material="no_decal">
+        <diffuse_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_mahogany_light_df"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+        <material_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_mahogany_dark_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_mahogany_dark_nm"/>
+    </material>
+    <material name="mat_lxy_int_veneer" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2" decal_material="no_decal">
+        <diffuse_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_int_veneer_df"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+        <material_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_int_veneer_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_lxy/architecture/yacht_dhruva/textures/lxy_int_veneer_nm"/>
+    </material>
+    <material decal_material="no_decal" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_aquarium_body_lod" version="2">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_df" mip="4"/>
+        <material_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_gsma" mip="4"/>
+        <bump_normal_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_body_nm" mip="4"/>
+    </material>
+    <material version="2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE" decal_material="glass_breakable" name="mat_aquarium_glass">
+        <variable type="vector3" name="fresnel_settings" value="1.9799998998642 0.94999998807907 0.23999999463558"/>
+        <opacity_texture file="units/pd2_dlc_arena/architecture/are_lobby/are_glass_clear_default_op"/>
+        <diffuse_texture file="units/pd2_dlc_arena/architecture/are_lobby/are_glass_clear_default_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable type="vector3" name="opacity_fade" value="10000 6623 0"/>
+    </material>
+    <material decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE" name="mat_aquarium_glass_shattered" version="2">
+        <variable type="vector3" name="fresnel_settings" value="0.88999998569489 1 0"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <variable type="vector3" name="opacity_fade" value="0 791 0"/>
+    </material>
+    <material name="mat_aquarium_plants" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:VEGETATION_BENDING" version="2" decal_material="stone">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_plants_df"/>
+        <variable type="vector3" name="branch_settings" value="9.6150007247925 0 0"/>
+        <variable type="scalar" name="speed" value="1.5"/>
+        <variable type="vector3" name="detail_settings" value="4 0.079000003635883 0"/>
+        <variable type="scalar" name="alpha_ref" value="0.5"/>
+    </material>
+    <material name="mat_aquarium_plants_lod" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:VEGETATION_BENDING" version="2" decal_material="stone">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_plants_df"/>
+        <variable type="vector3" name="branch_settings" value="9.6150007247925 0 0"/>
+        <variable type="scalar" name="speed" value="1.5"/>
+        <variable type="vector3" name="detail_settings" value="4 0.079000003635883 0"/>
+        <variable type="scalar" name="alpha_ref" value="0.5"/>
+    </material>
+    <material decal_material="no_decal" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_aquarium_lod" version="2">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_df" mip="4"/>
+        <material_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_gsma" mip="4"/>
+        <bump_normal_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_nm" mip="4"/>
+    </material>
+    <material decal_material="no_decal" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_aquarium" version="2">
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_df"/>
+        <material_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_nm"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_1WEIGHT" name="mat_aquarium_water" version="2">
+        <variable type="vector3" name="fresnel_settings" value="0 1 0.50999999046326"/>
+        <opacity_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_search" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_generic_search_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+</materials>

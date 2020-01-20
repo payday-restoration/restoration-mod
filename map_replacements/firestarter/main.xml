@@ -75,6 +75,7 @@
 			<value_node value="levels/narratives/escapes/escape_cafe/temp/temp"/>
 			<value_node value="levels/narratives/armadillo/arm_und/pc_only/pc_only"/>
 			<value_node value="packages/addbdu"/>
+			<value_node value="levels/instances/unique/pbr/pbr_mountain_vault/world/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>

@@ -1,4 +1,4 @@
---THIS MUST ALWAYS HOOK TO core/lib/managers/coresequencemanager
+	--THIS MUST ALWAYS HOOK TO core/lib/managers/coresequencemanager
 --local map = Global.level_data.level_id
 local rnd = math.random (3)
 local rnd2 = math.random (2)
@@ -281,63 +281,71 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	
 	end)
 end
---SC Level Edits
- if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
 
-	if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job_res" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "family_res" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_res" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "firestarter_2_res" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "firestarter_1_res" then
-				--if rnd == 1 or rnd == 2 then
-			--BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-			--BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-			--if rnd == 3 then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-	    BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
+--SC Level Edits
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
+
+		if Global.load_level == true and Global.game_settings.level_id == "ukrainian_job_res" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		end
+		
+		if Global.load_level == true and Global.game_settings.level_id == "family_res" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+		end
+		
+		if Global.load_level == true and Global.game_settings.level_id == "watchdogs_1_res" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		end
+		
+		if Global.load_level == true and Global.game_settings.level_id == "firestarter_2_res" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		end
+		
+		if Global.load_level == true and Global.game_settings.level_id == "firestarter_1_res" then
+					--if rnd == 1 or rnd == 2 then
+				--BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+				--BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+				--if rnd == 3 then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+				--end
 			--end
-		--end
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "alex_1_res" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
-	end
-	
-	if Global.load_level == true and Global.game_settings.level_id == "alex_3_res" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
-		--"sky_orientation/rotation":"278.53564453125",
-	end
-	--Safehouse Booster
-	if Global.load_level == true and Global.game_settings.level_id == "safehouse" then
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
-		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
-	end
-end)
+		end
+		
+		if Global.load_level == true and Global.game_settings.level_id == "alex_1_res" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		end
+		
+		if Global.load_level == true and Global.game_settings.level_id == "alex_3_res" then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		end
+		
+		--Safehouse Booster
+		if Global.load_level == true and Global.game_settings.level_id == "safehouse" then
+			if SystemFS:exists("mods/restoration-mod-gold/scriptdata/missions/safehouse.mission") and SystemFS:exists("mods/restoration-mod-gold/scriptdata/missions/safehouse.continent") then
+				BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
+				BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
+			elseif SystemFS:exists("mods/restoration-mod-dev/scriptdata/missions/safehouse.mission") and SystemFS:exists("mods/restoration-mod-dev/scriptdata/missions/safehouse.continent") then
+				BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
+				BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
+			elseif SystemFS:exists("mods/restoration-mod/scriptdata/missions/safehouse.mission") and SystemFS:exists("mods/restoration-mod/scriptdata/missions/safehouse.continent") then
+				BeardLib:ReplaceScriptData("mods/restoration-mod/scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
+				BeardLib:ReplaceScriptData("mods/restoration-mod/scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
+			end
+		end
+	end)
 end
 
 --Restoration Levels
@@ -386,16 +394,26 @@ end)
 	
 --Paintings
 if restoration.Options:GetValue("OTHER/Paintings") then	
-Hooks:Add("BeardLibCreateScriptDataMods", "MorePaintingsCallBeardLibSequenceFuncs", function()
-BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
-BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
-end)
+	Hooks:Add("BeardLibCreateScriptDataMods", "MorePaintingsCallBeardLibSequenceFuncs", function()
+		if SystemFS:exists("mods/restoration-mod-gold/scriptdata/paint.custom_xml") then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
+		elseif SystemFS:exists("mods/restoration-mod-dev/scriptdata/paint.custom_xml") then
+			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
+		elseif SystemFS:exists("mods/restoration-mod/scriptdata/paint.custom_xml") then
+			BeardLib:ReplaceScriptData("mods/restoration-mod/scriptdata/paint.custom_xml", "custom_xml", "units/payday2/architecture/com_int_gallery/com_int_gallery_wall_painting_bars", "sequence_manager", true)
+		end
+	end)
 end
 
 --Blue Sapphire FIX
 --OVK never finished the opening animation, and it was wrongly calling for to activate the diamond (probably leftover from PD:TH), thus this fix
 --probably update instances in heists where I want them to open with the PD:TH one raw
 Hooks:Add("BeardLibCreateScriptDataMods", "DiamondFixCallBeardLibSequenceFuncs", function()
-BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
-BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
+	if SystemFS:exists("mods/restoration-mod-gold/scriptdata/diamondFIX.custom_xml") then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
+	elseif SystemFS:exists("mods/restoration-mod-dev/scriptdata/diamondFIX.custom_xml") then
+		BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
+	elseif SystemFS:exists("mods/restoration-mod/scriptdata/diamondFIX.custom_xml") then
+		BeardLib:ReplaceScriptData("mods/restoration-mod/scriptdata/diamondFIX.custom_xml", "custom_xml", "units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01", "sequence_manager", true)
+	end
 end)

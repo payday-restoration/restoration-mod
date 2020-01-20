@@ -148,6 +148,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.nmh.ai_group_type = nypd
 		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
+		self.nmh.ghost_bonus = nil
 		
 		self.skm_run.ai_group_type = nypd
 		self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
@@ -268,6 +269,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.help.player_style = "suit_prison"
 		--///SAFEHOUSE\\\--
 		self.chill.ghost_bonus = nil
+		
+		self.cage.ghost_bonus = nil
+		
+		self.mallcrasher.ghost_bonus = 0.05
 		
 		--///REAPER LEVELS\\\--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/addsnow"}

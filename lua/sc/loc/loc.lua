@@ -512,13 +512,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 15% faster.",
+		["menu_crew_interact_desc"] = "Players interact 15% faster per AI controlled crew member.",
 
 		["menu_crew_inspire"] = "Inspiring",
-		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds.",
+		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds. Cooldown is reduced by 10 seconds per AI controlled crew member.",
 
 		["menu_crew_scavenge"] = "Sharpeyed",
-		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition.",
+		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition per AI controlled crew member.",
 
 		["menu_crew_ai_ap_ammo"] = "Piercing",
 		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through body armor.",
@@ -758,7 +758,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "Tower Defense",	
-			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%##, lowering damage by ##50%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.",																								
+			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.",																								
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",

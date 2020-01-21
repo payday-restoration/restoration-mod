@@ -485,22 +485,22 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_inspire = {
 		{
 			60,
-			60,
-			60
+			50,
+			40
 		}
 	}
 	self.values.team.crew_scavenge = {
 		{
 			0.25,
-			0.25,
-			0.25
+			0.5,
+			0.75
 		}
 	}
 	self.values.team.crew_interact = {
 		{
 			0.85,
-			0.85,
-			0.85
+			0.7,
+			0.55
 		}
 	}
 	self.values.team.crew_ai_ap_ammo = {true}
@@ -786,7 +786,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.sentry_gun.less_noisy = {true}
 				self.values.sentry_gun.ap_bullets = {true}
 				self.values.sentry_gun.fire_rate_reduction = {4}
-				self.values.sentry_gun.damage_multiplier = {0.5}	
+				self.values.sentry_gun.damage_multiplier = {1}	
 
 				--Bulletproof
 				self.values.player.armor_multiplier = {1.2, 1.5}

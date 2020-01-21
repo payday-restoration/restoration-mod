@@ -286,6 +286,7 @@
 		"summers",
 		"autumn",
 		"medic",
+		"sniper",
 		"tank_titan",
 		"tank_medic",
 		"omnia_lpf",

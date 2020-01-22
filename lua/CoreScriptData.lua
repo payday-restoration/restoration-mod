@@ -1,25 +1,76 @@
-	--THIS MUST ALWAYS HOOK TO core/lib/managers/coresequencemanager
+--THIS MUST ALWAYS HOOK TO core/lib/managers/coresequencemanager
 --local map = Global.level_data.level_id
+core:module("CoreSequenceManager")
+core:import("CoreEngineAccess")
+core:import("CoreLinkedStackMap")
+core:import("CoreTable")
+core:import("CoreUnit")
+core:import("CoreClass")
+
 local rnd = math.random (3)
 local rnd2 = math.random (2)
 local rnd3 = math.random (4)
 local rnd4 = math.random (5)
-local environment_branch_bank_value
-local environment_rvd1_value
+
+if not restoration then return end
+
+if restoration.Options:GetValue("OTHER/TimeOfDay") then
+
+function SequenceManager:init(area_damage_mask, target_world_mask, beings_mask)
+	init_original(self, area_damage_mask, target_world_mask, beings_mask)
+	self:EnvironmentSync()
+end
+
+function SequenceManager:EnvironmentSync(setting, ...)
+	restoration.setting_Env_Banks = restoration.Options:GetValue("OTHER/Env_Banks")
+	restoration.setting_Env_RVD1 = restoration.Options:GetValue("OTHER/Env_RVD1")  
+	restoration.setting_Env_RVD2 = restoration.Options:GetValue("OTHER/Env_RVD2")  
+	restoration.setting_Env_FSD1 = restoration.Options:GetValue("OTHER/Env_FSD1")  
+	restoration.setting_Env_PBR2 = restoration.Options:GetValue("OTHER/Env_PBR2")  
+	restoration.setting_Env_CJ2 = restoration.Options:GetValue("OTHER/Env_CJ2")  
+	restoration.setting_Env_UnderPass = restoration.Options:GetValue("OTHER/Env_UnderPass")  
+	restoration.setting_Env_MallCrasher = restoration.Options:GetValue("OTHER/Env_MallCrasher")  
+	restoration.setting_Env_Mia_1 = restoration.Options:GetValue("OTHER/Env_Mia_1")  
+	restoration.setting_Env_FSD3 = restoration.Options:GetValue("OTHER/Env_FSD3")  
+	restoration.setting_Env_WDD1N = restoration.Options:GetValue("OTHER/Env_WDD1N")  
+	restoration.setting_Env_WDD2D = restoration.Options:GetValue("OTHER/Env_WDD2D")  
+	restoration.setting_Env_Alex3 = restoration.Options:GetValue("OTHER/Env_Alex3")  
+	restoration.setting_Env_Big = restoration.Options:GetValue("OTHER/Env_Big")  
+	restoration.setting_Env_FS = restoration.Options:GetValue("OTHER/Env_FS")  
+	restoration.setting_Env_Ukra = restoration.Options:GetValue("OTHER/Env_Ukra")  
+
+	Environment_Settings_Table = {
+		restoration.setting_Env_Banks,
+		restoration.setting_Env_RVD1,
+		restoration.setting_Env_RVD2,
+		restoration.setting_Env_FSD1,
+		restoration.setting_Env_PBR2,
+		restoration.setting_Env_CJ2,
+		restoration.setting_Env_UnderPass,
+		restoration.setting_Env_MallCrasher,
+		restoration.setting_Env_Mia_1,
+		restoration.setting_Env_FSD3,
+		restoration.setting_Env_WDD1N,
+		restoration.setting_Env_WDD2D,
+		restoration.setting_Env_Alex3,
+		restoration.setting_Env_Big,
+		restoration.setting_Env_FS,
+		restoration.setting_Env_Ukra
+	}
+	local environments = LuaNetworking:TableToString(restoration.Environment_Settings_Table)
+
+	LuaNetworking:SendToPeers("environments_all", environments)
+end
 
 --Sync Environment
 Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
 
-    if id == "Sync_Env" then
-        if data == "environment_branch_bank" then
-            if Network:is_server() then
-                return environment_branch_bank_value
-            end
-		end
-		if data == "environment_rvd1" then
-            if Network:is_server() then
-               return environment_rvd1_value
-            end
+    if id == "environments_all" then
+      local env_data = data and (data ~= "") and LuaNetworking:StringToTable(data)
+        if env_data then
+          if sender == 1 then 
+            SequenceManager:EnvironmentSync(env_data)
+          end
         end
     end
 end)
@@ -27,9 +78,12 @@ end)
 local Net = _G.LuaNetworking
 
 --Time of Day Loader
-if restoration.Options:GetValue("OTHER/TimeOfDay") then
-Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function(unit)
+
+Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
+	local environments = LuaNetworking:TableToString(restoration.Environment_Settings_Table)
 	
+	LuaNetworking:SendToPeers("environments_all", environments)
+
 	if Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 1 then
 		return
 	elseif Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 2 then
@@ -64,44 +118,30 @@ Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", functi
 	end
 	
 	if Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 1 then
-		environment_rvd1_value = 1
-		LuaNetworking:SendToPeers("environment_rvd1", environment_rvd1_value)
-		return (restoration.Options:SetValue("OTHER/Env_RVD1") == "environment_rvd1_value")
-	end
-	if Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 2 then
-		environment_rvd1_value = 2
-		LuaNetworking:SendToPeers("environment_rvd1", environment_rvd1_value)
-		if rnd == 1 and Network:is_server() then
+			return
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 2 then
+		if rnd == 1 then
 			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 		end
-		if rnd == 2 and Network:is_server() then
+		if rnd == 2 then
 			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 		end
-		return (restoration.Options:SetValue("OTHER/Env_RVD1") == "environment_rvd1_value")
-	end
-	if Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 3 then
-			environment_rvd1_value = 3
-			LuaNetworking:SendToPeers("environment_rvd1", environment_rvd1_value)
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 3 then
 	    	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt1.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
-			return (restoration.Options:SetValue("OTHER/Env_RVD1") == "environment_rvd1_value")
-	end
-	if Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 4 then
-			environment_rvd1_value = 4
-			LuaNetworking:SendToPeers("environment_rvd1", environment_rvd1_value)
+	elseif Global.load_level == true and Global.game_settings.level_id == "rvd1" and restoration.Options:GetValue("OTHER/Env_RVD1") == 4 then
 	    	BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_exterior", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-gold/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 			BeardLib:ReplaceScriptData("mods/restoration-mod-dev/scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
-			return (restoration.Options:SetValue("OTHER/Env_RVD1") == "environment_rvd1_value")
 	end	
 
 	if Global.load_level == true and Global.game_settings.level_id == "rvd2" and restoration.Options:GetValue("OTHER/Env_RVD2") == 1 then

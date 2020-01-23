@@ -12,8 +12,6 @@ local rnd2 = math.random (2)
 local rnd3 = math.random (4)
 local rnd4 = math.random (5)
 
-if not restoration then return end
-
 if restoration.Options:GetValue("OTHER/TimeOfDay") then
 
 function SequenceManager:init(area_damage_mask, target_world_mask, beings_mask)

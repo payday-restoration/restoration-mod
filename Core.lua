@@ -2,7 +2,7 @@ if not ModCore then
 	restoration.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
-restoration._mod_path = ModPath
+restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
 	restoration.captain_camper = {

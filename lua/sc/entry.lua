@@ -44,15 +44,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 end
 
+--Hooks:Call("NetworkReceivedData",1,"environments_all",LuaNetworking:TableToString(restoration.Environment_Settings_Table))
+
 --Sync Environment
 Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
-
 	if id == "environments_all" then
-	local env_data = data and (data ~= "") and LuaNetworking:StringToTable(data)
+		local env_data = data and (data ~= "") and LuaNetworking:StringToTable(data)
 		if env_data then
-		if sender == 1 then 
-			SequenceManager:EnvironmentSync(env_data)
-		end
+			if sender == 1 then 
+				log("**********************************************************Received EnvironmentSync with results: ")
+				PrintTable(env_data)
+				log("**********************************************************End. HEY SOMEONE WHO ISN'T ME REMEMBER TO CALL THE THINGY THAT SWAPS OUT THE ENVIRONMENTS FROM HERE, entry.lua")
+			
+				for key,setting in pairs(env_data) do
+					if restoration.Environment_Settings_Table[key] ~= nil then 
+						restoration.Environment_Settings_Table[key] = setting
+					end
+				end
+			end
 		end
 	end
 end)

@@ -126,41 +126,31 @@ function restoration:Init()
 		"mia_2"
 	}	
 	
-	restoration.setting_Env_Banks = restoration.Options:GetValue("OTHER/Env_Banks")
-	restoration.setting_Env_RVD1 = restoration.Options:GetValue("OTHER/Env_RVD1")  
-	restoration.setting_Env_RVD2 = restoration.Options:GetValue("OTHER/Env_RVD2")  
-	restoration.setting_Env_FSD1 = restoration.Options:GetValue("OTHER/Env_FSD1")  
-	restoration.setting_Env_PBR2 = restoration.Options:GetValue("OTHER/Env_PBR2")  
-	restoration.setting_Env_CJ2 = restoration.Options:GetValue("OTHER/Env_CJ2")  
-	restoration.setting_Env_UnderPass = restoration.Options:GetValue("OTHER/Env_UnderPass")  
-	restoration.setting_Env_MallCrasher = restoration.Options:GetValue("OTHER/Env_MallCrasher")  
-	restoration.setting_Env_Mia_1 = restoration.Options:GetValue("OTHER/Env_Mia_1")  
-	restoration.setting_Env_FSD3 = restoration.Options:GetValue("OTHER/Env_FSD3")  
-	restoration.setting_Env_WDD1N = restoration.Options:GetValue("OTHER/Env_WDD1N")  
-	restoration.setting_Env_WDD2D = restoration.Options:GetValue("OTHER/Env_WDD2D")  
-	restoration.setting_Env_Alex3 = restoration.Options:GetValue("OTHER/Env_Alex3")  
-	restoration.setting_Env_Big = restoration.Options:GetValue("OTHER/Env_Big")  
-	restoration.setting_Env_FS = restoration.Options:GetValue("OTHER/Env_FS")  
-	restoration.setting_Env_Ukra = restoration.Options:GetValue("OTHER/Env_Ukra")  
-
-	restoration.Environment_Settings_Table = {
-		restoration.setting_Env_Banks,
-		restoration.setting_Env_RVD1,
-		restoration.setting_Env_RVD2,
-		restoration.setting_Env_FSD1,
-		restoration.setting_Env_PBR2,
-		restoration.setting_Env_CJ2,
-		restoration.setting_Env_UnderPass,
-		restoration.setting_Env_MallCrasher,
-		restoration.setting_Env_Mia_1,
-		restoration.setting_Env_FSD3,
-		restoration.setting_Env_WDD1N,
-		restoration.setting_Env_WDD2D,
-		restoration.setting_Env_Alex3,
-		restoration.setting_Env_Big,
-		restoration.setting_Env_FS,
-		restoration.setting_Env_Ukra
+	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
+	
+	local environment_settings = { --edit this one
+		["OTHER/Env_Banks"] = true,
+		["OTHER/Env_RVD1"] = true,
+		["OTHER/Env_RVD2"] = true,
+		["OTHER/Env_FSD1"] = true,
+		["OTHER/Env_PBR2"] = true,
+		["OTHER/Env_CJ2"] = true,
+		["OTHER/Env_UnderPass"] = true,
+		["OTHER/Env_MallCrasher"] = true,
+		["OTHER/Env_Mia_1"] = true,
+		["OTHER/Env_FSD3"] = true,
+		["OTHER/Env_WDD1N"] = true,
+		["OTHER/Env_WDD2D"] = true,
+		["OTHER/Env_Alex3"] = true,
+		["OTHER/Env_Big"] = true,
+		["OTHER/Env_FS"] = true,
+		["OTHER/Env_Ukra"] = true
 	}
+	for name,enabled in pairs(environment_settings) do 
+		if enabled then 
+			restoration.Environment_Settings_Table[name] = restoration.Options:GetValue(name)
+		end
+	end
 
 	_G.SC = _G.SC or {}
 	SC._path = self.ModPath
@@ -362,6 +352,36 @@ function restoration:rename_handler_funcs(NetworkHandler)
 	for key, value in pairs(restoration.network_handler_funcs) do
 		if NetworkHandler[key] then
 			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+		end
+	end
+end
+
+Hooks:Register("restoration_on_synced_peer")
+Hooks:Add("restoration_on_synced_peer","restoration_do_sync_peer_stuff",function(peer,peer_id)
+	restoration:send_sync_environment(peer,peer_id)
+end)
+
+function restoration:get_env_setting(name)
+	local value = restoration.Environment_Settings_Table[name]
+	if value ~= nil then 
+		return value
+	end
+	return restoration.Options:GetValue(name)
+end
+
+function restoration:send_sync_environment(to)
+	if Network:is_server() then 
+		local env_data = restoration.Environment_Settings_Table
+		local env_string = env_data and LuaNetworking:TableToString(env_data)
+		if env_string and env_string ~= "" then 
+			if to and managers.network:session():peer(to) then 
+				LuaNetworking:SendToPeer(to,"environments_all",env_string)
+			else
+				LuaNetworking:SendToPeers("environments_all",env_string)
+			end
+			log("**********************************************************Sent EnvironmentSync with results: ")
+			PrintTable(env_data)
+			log("**********************************************************End")
 		end
 	end
 end

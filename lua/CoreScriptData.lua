@@ -1,11 +1,5 @@
 --THIS MUST ALWAYS HOOK TO core/lib/managers/coresequencemanager
 --local map = Global.level_data.level_id
-core:module("CoreSequenceManager")
-core:import("CoreEngineAccess")
-core:import("CoreLinkedStackMap")
-core:import("CoreTable")
-core:import("CoreUnit")
-core:import("CoreClass")
 
 local rnd = math.random (3)
 local rnd2 = math.random (2)
@@ -14,73 +8,9 @@ local rnd4 = math.random (5)
 
 if restoration.Options:GetValue("OTHER/TimeOfDay") then
 
-function SequenceManager:init(area_damage_mask, target_world_mask, beings_mask)
-	init_original(self, area_damage_mask, target_world_mask, beings_mask)
-	self:EnvironmentSync()
-end
-
-function SequenceManager:EnvironmentSync(setting, ...)
-	restoration.setting_Env_Banks = restoration.Options:GetValue("OTHER/Env_Banks")
-	restoration.setting_Env_RVD1 = restoration.Options:GetValue("OTHER/Env_RVD1")  
-	restoration.setting_Env_RVD2 = restoration.Options:GetValue("OTHER/Env_RVD2")  
-	restoration.setting_Env_FSD1 = restoration.Options:GetValue("OTHER/Env_FSD1")  
-	restoration.setting_Env_PBR2 = restoration.Options:GetValue("OTHER/Env_PBR2")  
-	restoration.setting_Env_CJ2 = restoration.Options:GetValue("OTHER/Env_CJ2")  
-	restoration.setting_Env_UnderPass = restoration.Options:GetValue("OTHER/Env_UnderPass")  
-	restoration.setting_Env_MallCrasher = restoration.Options:GetValue("OTHER/Env_MallCrasher")  
-	restoration.setting_Env_Mia_1 = restoration.Options:GetValue("OTHER/Env_Mia_1")  
-	restoration.setting_Env_FSD3 = restoration.Options:GetValue("OTHER/Env_FSD3")  
-	restoration.setting_Env_WDD1N = restoration.Options:GetValue("OTHER/Env_WDD1N")  
-	restoration.setting_Env_WDD2D = restoration.Options:GetValue("OTHER/Env_WDD2D")  
-	restoration.setting_Env_Alex3 = restoration.Options:GetValue("OTHER/Env_Alex3")  
-	restoration.setting_Env_Big = restoration.Options:GetValue("OTHER/Env_Big")  
-	restoration.setting_Env_FS = restoration.Options:GetValue("OTHER/Env_FS")  
-	restoration.setting_Env_Ukra = restoration.Options:GetValue("OTHER/Env_Ukra")  
-
-	Environment_Settings_Table = {
-		restoration.setting_Env_Banks,
-		restoration.setting_Env_RVD1,
-		restoration.setting_Env_RVD2,
-		restoration.setting_Env_FSD1,
-		restoration.setting_Env_PBR2,
-		restoration.setting_Env_CJ2,
-		restoration.setting_Env_UnderPass,
-		restoration.setting_Env_MallCrasher,
-		restoration.setting_Env_Mia_1,
-		restoration.setting_Env_FSD3,
-		restoration.setting_Env_WDD1N,
-		restoration.setting_Env_WDD2D,
-		restoration.setting_Env_Alex3,
-		restoration.setting_Env_Big,
-		restoration.setting_Env_FS,
-		restoration.setting_Env_Ukra
-	}
-	local environments = LuaNetworking:TableToString(restoration.Environment_Settings_Table)
-
-	LuaNetworking:SendToPeers("environments_all", environments)
-end
-
---Sync Environment
-Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
-
-    if id == "environments_all" then
-      local env_data = data and (data ~= "") and LuaNetworking:StringToTable(data)
-        if env_data then
-          if sender == 1 then 
-            SequenceManager:EnvironmentSync(env_data)
-          end
-        end
-    end
-end)
-
-local Net = _G.LuaNetworking
-
 --Time of Day Loader
 
 Hooks:Add("BeardLibCreateScriptDataMods", "TODCallBeardLibSequenceFuncs", function()
-	local environments = LuaNetworking:TableToString(restoration.Environment_Settings_Table)
-	
-	LuaNetworking:SendToPeers("environments_all", environments)
 
 	if Global.load_level == true and Global.game_settings.level_id == "branchbank" and restoration.Options:GetValue("OTHER/Env_Banks") == 1 then
 		return

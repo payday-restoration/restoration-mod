@@ -43,3 +43,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end)
 
 end
+
+--Sync Environment
+Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
+
+	if id == "environments_all" then
+	local env_data = data and (data ~= "") and LuaNetworking:StringToTable(data)
+		if env_data then
+		if sender == 1 then 
+			SequenceManager:EnvironmentSync(env_data)
+		end
+		end
+	end
+end)

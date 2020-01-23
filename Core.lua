@@ -124,7 +124,43 @@ function restoration:Init()
 		"mex",
 		"mex_cooking",		
 		"mia_2"
-	}		
+	}	
+	
+	restoration.setting_Env_Banks = restoration.Options:GetValue("OTHER/Env_Banks")
+	restoration.setting_Env_RVD1 = restoration.Options:GetValue("OTHER/Env_RVD1")  
+	restoration.setting_Env_RVD2 = restoration.Options:GetValue("OTHER/Env_RVD2")  
+	restoration.setting_Env_FSD1 = restoration.Options:GetValue("OTHER/Env_FSD1")  
+	restoration.setting_Env_PBR2 = restoration.Options:GetValue("OTHER/Env_PBR2")  
+	restoration.setting_Env_CJ2 = restoration.Options:GetValue("OTHER/Env_CJ2")  
+	restoration.setting_Env_UnderPass = restoration.Options:GetValue("OTHER/Env_UnderPass")  
+	restoration.setting_Env_MallCrasher = restoration.Options:GetValue("OTHER/Env_MallCrasher")  
+	restoration.setting_Env_Mia_1 = restoration.Options:GetValue("OTHER/Env_Mia_1")  
+	restoration.setting_Env_FSD3 = restoration.Options:GetValue("OTHER/Env_FSD3")  
+	restoration.setting_Env_WDD1N = restoration.Options:GetValue("OTHER/Env_WDD1N")  
+	restoration.setting_Env_WDD2D = restoration.Options:GetValue("OTHER/Env_WDD2D")  
+	restoration.setting_Env_Alex3 = restoration.Options:GetValue("OTHER/Env_Alex3")  
+	restoration.setting_Env_Big = restoration.Options:GetValue("OTHER/Env_Big")  
+	restoration.setting_Env_FS = restoration.Options:GetValue("OTHER/Env_FS")  
+	restoration.setting_Env_Ukra = restoration.Options:GetValue("OTHER/Env_Ukra")  
+
+	restoration.Environment_Settings_Table = {
+		restoration.setting_Env_Banks,
+		restoration.setting_Env_RVD1,
+		restoration.setting_Env_RVD2,
+		restoration.setting_Env_FSD1,
+		restoration.setting_Env_PBR2,
+		restoration.setting_Env_CJ2,
+		restoration.setting_Env_UnderPass,
+		restoration.setting_Env_MallCrasher,
+		restoration.setting_Env_Mia_1,
+		restoration.setting_Env_FSD3,
+		restoration.setting_Env_WDD1N,
+		restoration.setting_Env_WDD2D,
+		restoration.setting_Env_Alex3,
+		restoration.setting_Env_Big,
+		restoration.setting_Env_FS,
+		restoration.setting_Env_Ukra
+	}
 
 	_G.SC = _G.SC or {}
 	SC._path = self.ModPath

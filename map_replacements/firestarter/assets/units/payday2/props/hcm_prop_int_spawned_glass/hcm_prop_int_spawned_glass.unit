@@ -1,0 +1,13 @@
+<unit type="spawn" slot="1" >
+    <object file="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+		
+	</dependencies>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="UnitDamage" name="damage" />
+        <extension name="attention" class="AIAttentionObject" />
+    </extensions>
+</unit>

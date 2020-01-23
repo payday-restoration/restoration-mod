@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="vit" slot="1">
+  <object file="units/pd2_dlc_vit/props/vit_prop_veg_tree_redoak/vit_prop_veg_tree_redoak" />
+  <extensions>
+	<extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

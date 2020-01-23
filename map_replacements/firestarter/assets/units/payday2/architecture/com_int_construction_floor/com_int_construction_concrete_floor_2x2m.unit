@@ -1,0 +1,6 @@
+<unit type="com" slot="1" >
+    <object file="units/payday2/architecture/com_int_construction_floor/com_int_construction_concrete_floor_2x2m" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

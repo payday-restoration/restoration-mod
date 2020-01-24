@@ -3316,6 +3316,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 		end		
 		
+		for i, weap in pairs(self) do
+			if weap.stats and weap.stats.extra_ammo then
+				weap.stats.extra_ammo = 101
+			end
+		end				
+		
 		--Test to just give everything sniper auto hit cause reasons
 		for i, weap in pairs(self) do
 			if weap.autohit then

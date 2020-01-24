@@ -23,8 +23,6 @@ function restoration:Init()
 		"dinner", --Slaughterhouse
 		"moon", --Stealing Xmas
 		"ukrainian_job", --Ukrainian Job
-		"watchdogs_1", --Watchdogs Day 1
-		"watchdogs_1_night", --Watchdogs Day 1 Night
 		--Custom Heists--
 		"firestarter_1_res", --Firestarter Day 1 res edit version
 		"alex_1_res", --Rats Day 1 res edit version
@@ -37,6 +35,7 @@ function restoration:Init()
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
+		"watchdogs_2_day", --Watchdogs Day 2 Daytime		
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"office_strike", --office strike
@@ -85,14 +84,12 @@ function restoration:Init()
 		"cane",
 		"dah",
 		"run",
-		"help",
 		"arm_cro",
 		"arm_hcm",
 		"arm_fac",
 		"arm_par",
 		"arm_und",
 		"arm_for",
-		"arena",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",
@@ -113,6 +110,8 @@ function restoration:Init()
 		"hox_1",		
 		"nail",		
 		"nmh",		
+		"arena",		
+		"help",		
 		"pbr2",		
 		"rvd2",		
 		"peta2",

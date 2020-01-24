@@ -50,8 +50,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end	
 		
 			--Big Bank--			
-			--once the vault is open only thermite atm gotta add beast id
-			if id == "Play_pln_bb1_64" then
+			if id == "Play_pln_bb1_64" or id == "Play_pln_bb1_38" then
 				if difficulty_index <= 2 then
 					escape_time = 1200 
 				elseif difficulty_index == 3 then

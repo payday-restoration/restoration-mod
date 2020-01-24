@@ -405,4 +405,11 @@
 		<sequence_manager force="true" path="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" unload="true"/>
 		<unit force="true" path="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" unload="true"/>
 	</add>
+	<add path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" type="unit">
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<material_config force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/mat_white" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+	</add>
 </table>

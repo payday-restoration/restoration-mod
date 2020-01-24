@@ -1,0 +1,221 @@
+<xml>
+	<state name="std" type="template_state" segment="base">
+		<default blend="0"/>
+
+		<!-- Big Bank -->
+		<to	name="van_bigbank_leave"						redirect="std/drive/van_bigbank_leave"/>
+
+		<!-- PINES -->
+		<to	name="van_straight_100m_puncture"				redirect="std/drive/van_straight_100m_puncture"/>
+
+		<!-- MUS -->
+		<to	name="van_mus_leave"							redirect="std/drive/van_mus_leave"/>
+
+		<!-- RAT -->
+		<to	name="van_rat_arrive_1"							redirect="std/drive/van_rat_arrive_1"/>
+		<to	name="van_rat_arrive_2"							redirect="std/drive/van_rat_arrive_2"/>
+		<to	name="van_rat_leave_1"							redirect="std/drive/van_rat_leave_1"/>
+		<to	name="van_rat_leave_2"							redirect="std/drive/van_rat_leave_2"/>
+
+		<!-- HOX -->
+		<to	name="van_hox_leave_1"							redirect="std/drive/van_hox_leave_1"/>
+
+		<!-- // -->
+		<to	name="van_arrive_hot_100m_1"					redirect="std/drive/van_arrive_hot_100m_1"/>
+
+		<to	name="van_red_arrive_1"							redirect="std/drive/van_red_arrive_1"/>
+
+		
+		<to	name="van_drk_arrive_1"							redirect="std/drive/van_drk_arrive_1"/>
+		
+
+		
+		<to	name="van_friend_arrive_01"							redirect="std/drive/van_friend_arrive_01"/>
+		<to	name="van_friend_arrive_02"							redirect="std/drive/van_friend_arrive_02"/>
+		<to	name="van_sfm_arrive_01"							redirect="std/drive/anim_van_sfm_arrive_01"/>
+		<to	name="van_sfm_arrive_02"							redirect="std/drive/anim_van_sfm_arrive_02"/>
+		
+		
+		<to	name="van_spa_arrive_01"							redirect="std/drive/anim_van_spa_arrive_01"/>
+		<to	name="van_spa_crash_01"								redirect="std/drive/anim_van_spa_crash_01"/>
+		
+		
+		<to	name="van_rvd_arrive_1"								redirect="std/drive/anim_van_rvd_arrive_1"/>
+		<to	name="van_rvd_arrive_2"								redirect="std/drive/anim_van_rvd_arrive_2"/>
+		<to	name="van_rvd_arrive_3"								redirect="std/drive/anim_van_rvd_arrive_3"/>
+		
+
+		
+		<to	name="van_brb_intro_1"								redirect="std/drive/anim_van_brb_intro_1"/>
+		<to	name="van_brb_intro_2"								redirect="std/drive/anim_van_brb_intro_2"/>
+		<to	name="van_brb_intro_3"								redirect="std/drive/anim_van_brb_intro_3"/>
+		<to	name="van_brb_intro_4"								redirect="std/drive/anim_van_brb_intro_4"/>
+		
+		
+
+
+	</state>
+
+	<state name="std/empty" type="emptyloop" segment="base">
+		<keys>
+			<key at="9" callback="anim_clbk_empty_full_blend" class_name="base"/>
+			<key at="exit" callback="anim_clbk_empty_exit" class_name="base"/>
+		</keys>
+	</state>
+
+	<state name="std/drive" type="template_state" segment="base">
+		<keys>
+			<key at="enter" callback="anim_clbk_animated_driving" class_name="base" param1="true"/>
+			<key at="exit" callback="anim_clbk_animated_driving" class_name="base" param1="false"/>
+		</keys>
+	</state>
+
+	<!-- Big Bank -->
+	<state name="std/drive/van_bigbank_leave" type="once" segment="base">
+		<anim name="anim_van_bigbank_leave"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- MUS -->
+	<state name="std/drive/van_mus_leave" type="once" segment="base">
+		<anim name="anim_van_mus_leave"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- PINES -->
+	<state name="std/drive/van_straight_100m_puncture" type="once" segment="base">
+		<anim name="anim_van_straight_100m_puncture"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- RAT -->
+	<state name="std/drive/van_rat_arrive_1" type="once" segment="base">
+		<anim name="anim_van_rat_arrive_1"/>
+		<keys>
+			<key at="enter" callback="anim_clbk_save_pose" class_name="base" param1="start_pose"/>
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_rat_arrive_2" type="once" segment="base">
+		<anim name="anim_van_rat_arrive_2"/>
+		<keys>
+			<key at="enter" callback="anim_clbk_save_pose" class_name="base" param1="start_pose"/>
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_rat_leave_1" type="once" segment="base">
+		<anim name="anim_van_rat_leave_1"/>
+		<keys>
+			<key at="exit" callback="anim_clbk_recall_pose" class_name="base" param1="start_pose" param2="true"/>
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_rat_leave_2" type="once" segment="base">
+		<anim name="anim_van_rat_leave_2"/>
+		<keys>
+			<key at="exit" callback="anim_clbk_recall_pose" class_name="base" param1="start_pose" param2="true"/>
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- HOX -->
+	<state name="std/drive/van_hox_leave_1" type="once" segment="base">
+		<anim name="anim_van_hox_leave_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- // -->
+	<state name="std/drive/van_arrive_hot_100m_1" type="once" segment="base">
+		<anim name="anim_van_arrive_hot_100m_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- // -->
+	<state name="std/drive/van_red_arrive_1" type="once" segment="base">
+		<anim name="anim_van_red_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	
+	<state name="std/drive/van_drk_arrive_1" type="once" segment="base">
+		<anim name="anim_van_drk_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/van_friend_arrive_01" type="once" segment="base">
+		<anim name="anim_van_gangster_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/van_friend_arrive_02" type="once" segment="base">
+		<anim name="anim_van_gangster_arrive_02"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/anim_van_sfm_arrive_01" type="once" segment="base">
+		<anim name="anim_van_sfm_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/anim_van_sfm_arrive_02" type="once" segment="base">
+		<anim name="anim_van_sfm_arrive_02"/>
+		<exit name="std/empty"/>
+	</state>
+		
+	
+	<state name="std/drive/anim_van_spa_arrive_01" type="once" segment="base">
+		<anim name="anim_van_spa_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/anim_van_spa_crash_01" type="once" segment="base">
+		<anim name="anim_van_spa_crash_01"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/anim_van_rvd_arrive_1" type="once" segment="base">
+		<anim name="anim_van_rvd_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/anim_van_rvd_arrive_2" type="once" segment="base">
+		<anim name="anim_van_rvd_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/anim_van_rvd_arrive_3" type="once" segment="base">
+		<anim name="anim_van_rvd_arrive_3"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	
+	<state name="std/drive/anim_van_brb_intro_1" type="once" segment="base">
+		<anim name="anim_van_brb_intro_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/anim_van_brb_intro_2" type="once" segment="base">
+		<anim name="anim_van_brb_intro_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/anim_van_brb_intro_3" type="once" segment="base">
+		<anim name="anim_van_brb_intro_3"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/anim_van_brb_intro_4" type="once" segment="base">
+		<anim name="anim_van_brb_intro_4"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+
+
+
+
+
+</xml>

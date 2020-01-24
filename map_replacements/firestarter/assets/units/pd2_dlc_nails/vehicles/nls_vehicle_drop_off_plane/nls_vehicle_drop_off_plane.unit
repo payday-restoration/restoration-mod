@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<unit type="nls" slot="1">
+	<object file="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="alaska_plane" />
+			<var name="_interact_object" value="interact_location" />
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="a_propeller"/>
+		<soundsource name="snd" source="a_propeller" />
+	</sounds>
+</unit>

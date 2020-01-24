@@ -84,7 +84,9 @@
 
 	<!--Reduced Sicario Smoke-->	
 	<effect path="effects/particles/explosions/smoke_screen" force="true"/>
-	<texture path="units/pd2_dlc_max/weapons/wpn_fps_smoke_screen_grenade/incendiary_third_df" force="true"/>
+
+	<!--PDTH Smokebomb-->
+	<effect path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>
 
 	<!--Security Guard 7 fixed cap (Thanks Baddy!) el chupacabras-->	
 	<object path="units/payday2/characters/ene_security_7/ene_security_7" force="true" />	

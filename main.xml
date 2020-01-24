@@ -57,6 +57,7 @@
 		<hook file="managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 		<hook file="managers/menu/MenuComponentManager.lua" source_file="lib/managers/menu/menucomponentmanager"/>
 		<hook file="managers/menu/NewsFeedGUI.lua" source_file="lib/managers/menu/NewsFeedGUI"/>
+		<hook file="managers/UserManager.lua" source_file="lib/managers/usermanager"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<!--///NOTIFICATIONS\\\-->

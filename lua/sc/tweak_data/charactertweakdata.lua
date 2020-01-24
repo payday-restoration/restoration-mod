@@ -1190,6 +1190,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.detection = presets.detection.sniper
 		self.sniper.HEALTH_INIT = 6
 		self.sniper.headshot_dmg_mul = 3.4
+		self.sniper.damage.hurt_severity = presets.hurt_severities.no_hurts
+		self.sniper.allowed_poses = {stand = true}
 		self.sniper.move_speed = presets.move_speed.very_fast
 		self.sniper.shooting_death = false
 		self.sniper.no_move_and_shoot = true
@@ -1216,6 +1218,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.rescue_hostages = false
 		self.sniper.static_weapon_preset = true
 		self.sniper.static_dodge_preset = true
+		self.sniper.crouch_move = nil
 		self.sniper.is_special = true
 		self.sniper.die_sound_event = "mga_death_scream"
 		self.sniper.spawn_sound_event = "mga_deploy_snipers"
@@ -2542,7 +2545,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    	is_zombie = true
 	    end
 		self.boom = deep_clone(presets.base)
-		self.boom.tags = {"law", "custom", "special", "customvo"}
+		self.boom.tags = {"law", "boom", "custom", "special", "customvo"}
 		self.boom.experience = {}
 		self.boom.weapon = deep_clone(presets.weapon.normal)
 		self.boom.melee_weapon = "knife_1"

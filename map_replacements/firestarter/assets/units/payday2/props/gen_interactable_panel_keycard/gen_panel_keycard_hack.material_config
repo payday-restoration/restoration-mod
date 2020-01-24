@@ -1,0 +1,15 @@
+<materials version="3">
+    <material name="static_hack" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/gen_interactable_panel_keycard/gen_panel_keycard_hack_il"/>
+        <variable value="sun" type="scalar" name="intensity"/>
+    </material>
+    <material name="scrolling" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM" version="2">
+        <diffuse_texture file="units/payday2/props/gen_interactable_panel_keycard/gen_panel_keycard_hack_il"/>
+        <variable value="sun" type="scalar" name="intensity"/>
+        <variable value="-1.5 1.4901200273698e-009 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="blinn7" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_interactable_panel_keycard/gen_panel_keycard_hack_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_interactable_panel_keycard/gen_panel_keycard_hack_nm"/>
+    </material>
+</materials>

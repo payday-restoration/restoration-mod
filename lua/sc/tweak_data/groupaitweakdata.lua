@@ -7673,6 +7673,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			access = access_type_all,
 			special_type = "autumn"
 		}
+		self.unit_categories.Titan_Spooc = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")				
+				},
+				zombie = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},					
+				murkywater = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				nypd = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},	
+				lapd = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				}				
+			},
+			access = access_type_all
+		}		
 		self.unit_categories.Cap_Summers = {
 			unit_types = {
 				america = {
@@ -9885,19 +9908,43 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}			
 		end
-		self.enemy_spawn_groups.Cap_Autumn = {
-			amount = {1, 1},
-			spawn = {
-				{
-					unit = "Cap_Autumn",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.Cap_autumn,
-					rank = 1
+		if difficulty_index <= 7 then
+			self.enemy_spawn_groups.Cap_Autumn = {
+				amount = {1, 1},
+				spawn = {
+					{
+						unit = "Cap_Autumn",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_autumn,
+						rank = 1
+					}
 				}
 			}
-		}
+		else
+			self.enemy_spawn_groups.Cap_Autumn = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "Cap_Autumn",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_autumn,
+						rank = 1
+					},
+					{
+						unit = "Titan_Spooc",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.Cap_autumn,
+						rank = 2
+					}					
+				}
+			}		
+		end
 		self.enemy_spawn_groups.Cap_Summers = {
 			amount = {4, 4},
 			spawn = {

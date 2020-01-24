@@ -2,7 +2,7 @@ if not ModCore then
 	restoration.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
-
+restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
 	restoration.captain_camper = {
@@ -23,8 +23,6 @@ function restoration:Init()
 		"dinner", --Slaughterhouse
 		"moon", --Stealing Xmas
 		"ukrainian_job", --Ukrainian Job
-		"watchdogs_1", --Watchdogs Day 1
-		"watchdogs_1_night", --Watchdogs Day 1 Night
 		--Custom Heists--
 		"firestarter_1_res", --Firestarter Day 1 res edit version
 		"alex_1_res", --Rats Day 1 res edit version
@@ -37,6 +35,7 @@ function restoration:Init()
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
+		"watchdogs_2_day", --Watchdogs Day 2 Daytime		
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"office_strike", --office strike
@@ -85,14 +84,12 @@ function restoration:Init()
 		"cane",
 		"dah",
 		"run",
-		"help",
 		"arm_cro",
 		"arm_hcm",
 		"arm_fac",
 		"arm_par",
 		"arm_und",
 		"arm_for",
-		"arena",
 		--Custom Heists below--
 		"Victor Romeo",
 		"junk",
@@ -113,6 +110,8 @@ function restoration:Init()
 		"hox_1",		
 		"nail",		
 		"nmh",		
+		"arena",		
+		"help",		
 		"pbr2",		
 		"rvd2",		
 		"peta2",
@@ -124,7 +123,33 @@ function restoration:Init()
 		"mex",
 		"mex_cooking",		
 		"mia_2"
-	}		
+	}	
+	
+	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
+	
+	local environment_settings = { --edit this one
+		["OTHER/Env_Banks"] = true,
+		["OTHER/Env_RVD1"] = true,
+		["OTHER/Env_RVD2"] = true,
+		["OTHER/Env_FSD1"] = true,
+		["OTHER/Env_PBR2"] = true,
+		["OTHER/Env_CJ2"] = true,
+		["OTHER/Env_UnderPass"] = true,
+		["OTHER/Env_MallCrasher"] = true,
+		["OTHER/Env_Mia_1"] = true,
+		["OTHER/Env_FSD3"] = true,
+		["OTHER/Env_WDD1N"] = true,
+		["OTHER/Env_WDD2D"] = true,
+		["OTHER/Env_Alex3"] = true,
+		["OTHER/Env_Big"] = true,
+		["OTHER/Env_FS"] = true,
+		["OTHER/Env_Ukra"] = true
+	}
+	for name,enabled in pairs(environment_settings) do 
+		if enabled then 
+			restoration.Environment_Settings_Table[name] = restoration.Options:GetValue(name)
+		end
+	end
 
 	_G.SC = _G.SC or {}
 	SC._path = self.ModPath
@@ -326,6 +351,36 @@ function restoration:rename_handler_funcs(NetworkHandler)
 	for key, value in pairs(restoration.network_handler_funcs) do
 		if NetworkHandler[key] then
 			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+		end
+	end
+end
+
+Hooks:Register("restoration_on_synced_peer")
+Hooks:Add("restoration_on_synced_peer","restoration_do_sync_peer_stuff",function(peer,peer_id)
+	restoration:send_sync_environment(peer,peer_id)
+end)
+
+function restoration:get_env_setting(name)
+	local value = restoration.Environment_Settings_Table[name]
+	if value ~= nil then 
+		return value
+	end
+	return restoration.Options:GetValue(name)
+end
+
+function restoration:send_sync_environment(to)
+	if Network:is_server() then 
+		local env_data = restoration.Environment_Settings_Table
+		local env_string = env_data and LuaNetworking:TableToString(env_data)
+		if env_string and env_string ~= "" then 
+			if to and managers.network:session():peer(to) then 
+				LuaNetworking:SendToPeer(to,"environments_all",env_string)
+			else
+				LuaNetworking:SendToPeers("environments_all",env_string)
+			end
+			log("**********************************************************Sent EnvironmentSync with results: ")
+			PrintTable(env_data)
+			log("**********************************************************End")
 		end
 	end
 end

@@ -35,23 +35,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--Beneath The Mountain--			
 			if id == "Play_loc_jr1_49" then
 				if difficulty_index <= 2 then
-					escape_time = 630
+					escape_time = 450
 				elseif difficulty_index == 3 then
-					escape_time = 600
+					escape_time = 420
 				elseif difficulty_index == 4 then
-					escape_time = 570
+					escape_time = 390
 				elseif difficulty_index == 5 then
-					escape_time = 540	
+					escape_time = 360	
 				elseif difficulty_index == 6 or difficulty_index == 7 then
-					escape_time = 510					
+					escape_time = 330						
 				else
-					escape_time = 480
-				end		
+					escape_time = 300
+				end	
 			end	
 		
 			--Big Bank--			
-			--once the vault is open only thermite atm gotta add beast id
-			if id == "Play_pln_bb1_64" then
+			if id == "Play_pln_bb1_64" or id == "Play_pln_bb1_38" then
 				if difficulty_index <= 2 then
 					escape_time = 1200 
 				elseif difficulty_index == 3 then

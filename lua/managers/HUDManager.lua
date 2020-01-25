@@ -4,6 +4,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function HUDManager:_setup_player_info_hud_pd2()
 		_setup_player_info_hud_pd2_original(self)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
+		self._bloody_screen = HUDBloodyScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
 			
 --setup radial mouse menu
 		local ammo_texture,ammo_rect = tweak_data.hud_icons:get_icon_data("equipment_ammo_bag")
@@ -39,20 +40,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		restoration._utilitymenu = RadialMouseMenu:new(utility_params)
-		
-		
-		
-		
-		
-		
+		restoration._utilitymenu = RadialMouseMenu:new(utility_params)	
 	end
+
 	function HUDManager:set_dodge_value(value)
 		--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua
 		self._dodge_meter:set_dodge_value(value)
 	end
+
 	function HUDManager:unhide_dodge_panel(dodge_points)
 		self._dodge_meter:unhide_dodge_panel(dodge_points)
+	end
+
+	function HUDManager:activate_bloody_screen(duration)
+		--Apply the bloody screen over a duration.
+		self._bloody_screen:do_bloody_screen(duration)
 	end
 end
 

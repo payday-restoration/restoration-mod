@@ -294,7 +294,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop.speech_prefix_p1 = self._prefix_data_p1.cop()
 		self.cop.speech_prefix_p2 = "n"
 		self.cop.speech_prefix_count = 4
-		self.cop.access = "cop"
+		if job == "crojob2" or job == "dark" or job == "kosugi" then
+			self.cop.access = "security"
+		else
+			self.cop.access = "cop"
+		end
 		self.cop.silent_priority_shout = "f37"
 		self.cop.dodge = presets.dodge.average
 		self.cop.deathguard = true
@@ -307,7 +311,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.cop.steal_loot = true
 		end
 		self.cop.static_dodge_preset = true
-		if job == "crojob2" then
+		if job == "crojob2" or job == "dark" or job == "kosugi" then
 			self.cop.has_alarm_pager = true
 			self.cop.radio_prefix = "fri_"
 		else

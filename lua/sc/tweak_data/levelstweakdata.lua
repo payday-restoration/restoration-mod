@@ -63,7 +63,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu", "packages/murkyassets"}
 		self.crojob2.ai_group_type = murkywater			
-		self.crojob2.player_style = "sneak_suit"		
+		self.crojob2.player_style = "sneak_suit"	
+
+		self.dark.package = {"packages/job_dark", "packages/addbdu", "packages/murkyassets"}
+		self.dark.ai_group_type = murkywater	
+		self.dark.player_style = "sneak_suit"
+		
+		self.kosugi.package = {"packages/kosugi", "packages/addbdu", "packages/murkyassets"}
+		self.kosugi.ai_group_type = murkywater	
+		self.kosugi.player_style = "sneak_suit"			
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
@@ -195,13 +203,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
-						
-		self.dark.package = {"packages/job_dark", "packages/addbdu"}
-		self.dark.player_style = "sneak_suit"
-		
-		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
-		self.kosugi.player_style = "sneak_suit"		
-		
+								
 		self.hox_1.player_style = "suit_sunny"
 		self.hox_2.player_style = "suit_sunny"
 		self.hox_3.player_style = "suit_sunny"

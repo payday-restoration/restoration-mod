@@ -45,7 +45,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",	
 			["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"
 		}
-	local murkywater_dockyard = {
+	local murkywater_2 = {
 			["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
 			["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5",
 			["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870",
@@ -504,11 +504,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end		
 
 		if ai_type == "murkywater" then
-			if job == "crojob2" then
-				if murkywater_dockyard[self._values.enemy] then
-					self._values.enemy = murkywater_dockyard[self._values.enemy]
+			if job == "crojob2" or job == "dark" or job == "kosugi" then
+				if murkywater_2[self._values.enemy] then
+					self._values.enemy = murkywater_2[self._values.enemy]
 				end
-				self._values.enemy = murkywater_dockyard[self._values.enemy] or self._values.enemy
+				self._values.enemy = murkywater_2[self._values.enemy] or self._values.enemy
 			else
 				if murkywater[self._values.enemy] then
 					self._values.enemy = murkywater[self._values.enemy]

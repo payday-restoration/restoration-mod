@@ -406,10 +406,35 @@
 		<unit force="true" path="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" unload="true"/>
 	</add>
 	<add path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" type="unit">
-		<unit force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
 		<material_config force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/mat_white" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
 		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_chair_single" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_chair_single" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_chair_single" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_checktable" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_checktable" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_checktable" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/nmh_mullplan_chair_01" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/nmh_mullplan_chair_01" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/nmh_mullplan_chair_01" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_round_small" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_round_small" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_round_small" unload="true"/>
+	</add>
+	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" type="unit">
+		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" unload="true"/>
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
 	</add>
 </table>

@@ -131,10 +131,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function HUDBloodyScreen:_fadeout_bloody_screen()
 		local start_time = Application:time()
 		local curr_time = start_time
-		log("Curr: " .. curr_time .. " End: " .. end_time)
-		while curr_time < end_time do
-			local curr_time = Application:time()
-			self._blood_panel:set_alpha(1 - ((curr_time - start_time) / self._duration)
+		while curr_time - start_time < self._duration do
+			curr_time = Application:time()
+			self._blood_panel:set_alpha(1 - ((curr_time - start_time) / self._duration))
 			coroutine.yield()
 		end
 		self._blood_panel:set_alpha(0)

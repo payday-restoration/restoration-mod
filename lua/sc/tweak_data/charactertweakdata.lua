@@ -902,6 +902,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)	
 		if is_reaper then
 		    self.weekend_dmr.custom_voicework = "tswat_ru"
+		elseif is_murky then
+		    self.weekend_dmr.custom_voicework = "bravo_murky"	
 		else
 		    self.weekend_dmr.custom_voicework = "bravo"
 		end	
@@ -1110,6 +1112,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend = deep_clone(self.city_swat)
 		if is_reaper then
 		    self.weekend.custom_voicework = "tswat_ru"
+		elseif is_murky then
+		    self.weekend.custom_voicework = "bravo_murky"	
 		else
 		    self.weekend.custom_voicework = "bravo"
 		end	
@@ -1155,6 +1159,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend_lmg = deep_clone(self.city_swat_titan)		
 		if is_reaper then
 		    self.weekend_lmg.custom_voicework = "tswat_ru"
+		elseif is_murky then
+		    self.weekend_lmg.custom_voicework = "bravo_murky"	
 		else
 		    self.weekend_lmg.custom_voicework = "bravo"
 		end	
@@ -14291,7 +14297,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_bravo_dmr_ru",
 					"ene_bravo_lmg_ru",
 					"ene_bravo_rifle_ru",
-					"ene_bravo_shotgun_ru"
+					"ene_bravo_shotgun_ru",
+					"ene_bravo_dmr_murky",
+					"ene_bravo_lmg_murky",
+					"ene_bravo_rifle_murky",
+					"ene_bravo_shotgun_murky"
 				}
 			},
 			dave = {

@@ -95,6 +95,51 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			coroutine.yield()
 		end
 	end
+
+	HUDBloodyScreen = HUDBloodyScreen or class()
+	function HUDBloodyScreen:init(hud)
+		self._hud_panel = hud.panel
+		
+		self._blood_panel = hud.panel:bitmap({
+			name = "blood_panel",
+			visible = true,
+			texture = "guis/textures/restoration/bloodyscreen",
+			layer = 0,
+			color = Color(1, 0.2, 0),
+			alpha = 0,
+			blend_mode = "add",
+			w = hud.panel:w(),
+			h = hud.panel:h(),
+			x = 0,
+			y = 0 
+		})
+
+		self._active = 0.0
+		self._duration = 0.0
+	end
+
+	function HUDBloodyScreen:do_bloody_screen(duration)
+		self._blood_panel:set_alpha(1)
+		self._duration = duration
+		if self._active == true then
+			self._blood_panel:stop()
+		end
+		self._active = true
+		self._blood_panel:animate(callback(self, self, "_fadeout_bloody_screen"))
+	end
+
+	function HUDBloodyScreen:_fadeout_bloody_screen()
+		local start_time = Application:time()
+		local curr_time = start_time
+		while curr_time - start_time < self._duration do
+			curr_time = Application:time()
+			self._blood_panel:set_alpha(1 - ((curr_time - start_time) / self._duration))
+			coroutine.yield()
+		end
+		self._blood_panel:set_alpha(0)
+		self._active = false
+	end
+
 end
 
 if restoration.Options:GetValue("HUD/MainHUD") then

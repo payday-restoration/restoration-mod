@@ -1015,12 +1015,12 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 				self.values.player.unseen_increased_crit_chance = {
 					{
-						min_time = 4,
+						min_time = 3,
 						max_duration = 3,
 						crit_chance = 1.15
 					},
 					{
-						min_time = 4,
+						min_time = 3,
 						max_duration = 6,
 						crit_chance = 1.15
 					}

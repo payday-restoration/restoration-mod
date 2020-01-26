@@ -282,12 +282,6 @@
 	<texture path="levels/mods/firestarter_2_res/cube_lights/100766"/>
 	<texture path="levels/mods/firestarter_2_res/cube_lights/101696"/>
 	<texture path="levels/mods/firestarter_2_res/cube_lights/106025"/>
-	<add path="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room_01" type="unit">
-		<material_config force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room_01" unload="true"/>
-		<object force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room_01" unload="true"/>
-		<sequence_manager force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room_01" unload="true"/>
-	</add>
 	<add path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" type="unit">
 		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
 		<material_config force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
@@ -328,11 +322,6 @@
 		<object force="true" path="units/world/architecture/hospital/props/rooftop/light_red/light_red2" unload="true"/>
 		<unit force="true" path="units/world/architecture/hospital/props/rooftop/light_red/light_red2" unload="true"/>
 	</add>
-	<add path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_small_01" type="unit">
-		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_small_01" unload="true"/>
-		<object force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_small_01" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_small_01" unload="true"/>
-	</add>
 	<add path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" type="unit">
 		<material_config force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
 		<object force="true" path="units/pd2_dlc_run/props/run_prop_cover_shipping_crate/run_prop_cover_shipping_crate_wide_01" unload="true"/>
@@ -364,12 +353,6 @@
 		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
 		<object force="true" path="units/payday2/architecture/hcm/hcm_int_floor_2x2m_a" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/hcm/hcm_int_floor_2x2m_a" unload="true"/>
-	</add>
-	<add path="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" type="unit">
-		<material_config force="true" path="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" unload="true"/>
-		<object force="true" path="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" unload="true"/>
-		<sequence_manager force="true" path="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" type="unit">
 		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
@@ -414,11 +397,6 @@
 		<material_config force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm" unload="true"/>
 		<object force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
 		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
-	</add>
-	<add path="units/pd2_dlc_vit/props/vit_prop_veg_tree_redoak/vit_prop_veg_tree_redoak" type="unit">
-		<material_config force="true" path="units/pd2_dlc_vit/props/vit_prop_veg_tree_redoak/vit_prop_veg_tree_redoak" unload="true"/>
-		<object force="true" path="units/pd2_dlc_vit/props/vit_prop_veg_tree_redoak/vit_prop_veg_tree_redoak" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_vit/props/vit_prop_veg_tree_redoak/vit_prop_veg_tree_redoak" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc_sah/props/sah_prop_branch_security_shutter/sah_prop_branch_security_shutter" type="unit">
 		<material_config force="true" path="units/pd2_dlc_sah/props/sah_prop_branch_security_shutter/sah_prop_branch_security_shutter" unload="true"/>
@@ -508,17 +486,6 @@
 		<sequence_manager force="true" path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm_double" unload="true"/>
 		<unit force="true" path="units/payday2/equipment/gen_interactable_door_hcm/gen_interactable_door_hcm_double" unload="true"/>
 	</add>
-	<add path="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell" type="unit">
-		<unit force="true" path="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell" unload="true"/>
-		<object force="true" path="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell" unload="true"/>
-		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell" unload="true"/>
-		<unit force="true" path="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" unload="true"/>
-		<object force="true" path="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" unload="true"/>
-		<material_config force="true" path="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" unload="true"/>
-		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
-	</add>
 	<add path="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell_b" type="unit">
 		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
 		<object force="true" path="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell_b" unload="true"/>
@@ -530,9 +497,61 @@
 		<object force="true" path="units/payday2/architecture/hcm/hcm_int_wall_2m_b_glass_cell" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/hcm/hcm_int_wall_2m_b_glass_cell" unload="true"/>
 	</add>
-	<add path="units/world/props/mansion/man_prop_int_alarm/man_prop_int_alarm" type="unit">
-		<unit force="true" path="units/world/props/mansion/man_prop_int_alarm/man_prop_int_alarm" unload="true"/>
-		<object force="true" path="units/world/props/mansion/man_prop_int_alarm/man_prop_int_alarm" unload="true"/>
-		<material_config force="true" path="units/world/props/mansion/man_prop_int_alarm/man_prop_int_alarm" unload="true"/>
+	<add path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" type="unit">
+		<material_config force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
+		<object force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
+		<unit force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_big" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_big" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_big" unload="true"/>
+	</add>
+	<add path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" type="unit">
+		<material_config force="true" path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" unload="true"/>
+		<object force="true" path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" unload="true"/>
+		<unit force="true" path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/cas_security_window_8m" type="unit">
+		<material_config force="true" path="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/cas_security_window_8m" unload="true"/>
+		<object force="true" path="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/cas_security_window_8m" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/cas_security_window_8m" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" type="unit">
+		<material_config force="true" path="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" unload="true"/>
+		<object force="true" path="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" unload="true"/>
+	</add>
+	<add path="units/payday2/props/lcm_prop_rooftop/lcm_prop_rooftop_vent" type="unit">
+		<material_config force="true" path="units/payday2/props/lcm_prop_rooftop/lcm_prop_rooftop" unload="true"/>
+		<object force="true" path="units/payday2/props/lcm_prop_rooftop/lcm_prop_rooftop_vent" unload="true"/>
+		<unit force="true" path="units/payday2/props/lcm_prop_rooftop/lcm_prop_rooftop_vent" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag" type="unit">
+		<material_config force="true" path="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag" unload="true"/>
+		<object force="true" path="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_open" type="unit">
+		<material_config force="true" path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_open" unload="true"/>
+		<object force="true" path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_open" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_open" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_closed" type="unit">
+		<material_config force="true" path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_closed" unload="true"/>
+		<object force="true" path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_closed" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_fish/lxy_prop_camera_case/lxy_prop_camera_case_closed" unload="true"/>
+	</add>
+	<add path="units/world/props/gym/stn_prop_camera/stn_prop_camera" type="unit">
+		<material_config force="true" path="units/world/props/gym/stn_prop_camera/stn_prop_camera_cheeze" unload="true"/>
+		<object force="true" path="units/world/props/gym/stn_prop_camera/stn_prop_camera" unload="true"/>
+		<sequence_manager force="true" path="units/world/props/gym/stn_prop_camera/stn_prop_camera" unload="true"/>
+		<unit force="true" path="units/world/props/gym/stn_prop_camera/stn_prop_camera" unload="true"/>
+	</add>
+	<add path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" type="unit">
+		<unit force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
+		<object force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
+		<material_config force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
 	</add>
 </table>

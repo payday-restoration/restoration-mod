@@ -7628,8 +7628,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.x_coal.panic_suppression_chance = 0.05		
-		--Disabled--
-		self.x_baka.use_data.selection_index = 4
+		self.x_baka.use_data.selection_index = 2
 		self.x_baka.CLIP_AMMO_MAX = 60
 		self.x_baka.NR_CLIPS_MAX = 4
 		self.x_baka.AMMO_MAX = 180

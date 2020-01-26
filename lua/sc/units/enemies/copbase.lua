@@ -10,7 +10,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.hud:set_buff_enabled("vip", true)
 		end	
 		if restoration and restoration.Options:GetValue("SC/Holiday") then
-			if Global.level_data.level_id == "pines" or Global.level_data.level_id == "roberts" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "moon" or Month == "12" then
+			if Global.level_data.level_id == "pines" or Global.level_data.level_id == "roberts" or Global.level_data.level_id == "roberts_v2" or Global.level_data.level_id == "cane" or Global.level_data.level_id == "moon" or Month == "12" then
 				if self:char_tweak().is_special then
 					if self._tweak_table == "tank_hw" or self._tweak_table == "spooc_titan" or self._tweak_table == "autumn" then
 					else

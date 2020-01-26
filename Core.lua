@@ -81,7 +81,6 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
-		"cane",
 		"dah",
 		"run",
 		"arm_cro",
@@ -91,7 +90,6 @@ function restoration:Init()
 		"arm_und",
 		"arm_for",
 		--Custom Heists below--
-		"Victor Romeo",
 		"junk",
 		"wetwork_burn",
 		"hardware_store",
@@ -100,7 +98,7 @@ function restoration:Init()
 		"skmc_ovengrill",
 		"spa_CD",		
 		"wwh_CD",		
-		"street" --whurr's hs edit
+		"street"		--whurr's hs edit
 	}
 	--Mostly for stuff like Cursed Killed Room and other crap heists
 	restoration.very_tiny_levels = {
@@ -112,6 +110,7 @@ function restoration:Init()
 		"nmh",		
 		"arena",		
 		"help",		
+		"cane",		
 		"pbr2",		
 		"rvd2",		
 		"peta2",
@@ -122,7 +121,10 @@ function restoration:Init()
 		"flat",	
 		"mex",
 		"mex_cooking",		
-		"mia_2"
+		"mia_2",
+		--Custom Heists below--
+		"Victor Romeo",
+		"thechase"
 	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

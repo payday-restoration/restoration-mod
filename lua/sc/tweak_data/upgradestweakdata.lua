@@ -134,6 +134,7 @@ function UpgradesTweakData:init(tweak_data)
 					"olympic",
 					"mp9",
 					"baka",
+					"x_baka",
 					"pugio",
 					"ballistic"
 				}

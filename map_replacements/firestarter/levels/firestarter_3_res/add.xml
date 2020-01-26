@@ -475,13 +475,6 @@
 		<object force="true" path="units/payday2/architecture/lcm/lcm_int_room_12x16m_b" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/lcm/lcm_int_room_12x16m_b" unload="true"/>
 	</add>
-	<add path="units/payday2/architecture/lcm/lcm_int_door_wood_01" type="unit">
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
-		<material_config force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
-		<object force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/architecture/lcm/lcm_door" unload="true"/>
-		<unit force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
-	</add>
 	<add path="units/payday2/architecture/lcm/lcm_int_storefront_4x8m_a_blinds" type="unit">
 		<material_config force="true" path="units/payday2/architecture/lcm/lcm_int_storefront" unload="true"/>
 		<object force="true" path="units/payday2/architecture/lcm/lcm_int_storefront_4x8m_a_blinds" unload="true"/>

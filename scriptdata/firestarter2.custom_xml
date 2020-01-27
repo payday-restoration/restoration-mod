@@ -12,7 +12,7 @@
 			<param key="sun_ray_color_scale" value="0.032213237136602"/>
 			<param key="global_world_overlay_texture" value=""/>
 			<param key="sun_ray_color" value="0.53333336114883 0.57647061347961 0.76470589637756"/>
-			<param key="global_texture" value="environments/cubemaps/cubemap_night_lcm"/>
+			<param key="global_texture" value="units/pd2_dlc_dah/environments/cubemaps/cubemap_night_sky"/>
 		</others>
 		<post_effect>
 			<deferred>

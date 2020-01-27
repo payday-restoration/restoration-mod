@@ -8352,7 +8352,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			ELITE_swat_rifle_flank = {
 				"reloadingretreat",
-			    "spoocavoidance",
 				"harass",
 				"flank",
 				"smoke_grenade",
@@ -8366,7 +8365,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			ELITE_swat_shotgun_flank = {
 				"reloadingretreat",
-			    "spoocavoidance",
 				"harass",
 				"flank",
 				"smoke_grenade",
@@ -8385,7 +8383,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flash_grenade",
 				"charge",
 				"obstacle",
-			    "spoocavoidance",
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",

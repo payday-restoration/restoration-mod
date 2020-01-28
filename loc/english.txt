@@ -258,7 +258,7 @@
 	"heist_greattrain_name" : "Time Window",
 	"heist_easystore_name" : "Twenty-Four Seven",
 	"heist_sin_villa_name" : "SCORE: Villa Vivaldi",
-	"heist_monalisaoverdrive_name" : "PLACEHOLDER",
+	"heist_monalisaoverdrive_name" : "Highway",
 	"heist_jkl_base_name" : "Jackal's Safehouse",
 	"heist_junger_name" : "Distorted Angels",
 	"heist_deep_name" : "Deep Six",
@@ -481,7 +481,7 @@
 	"wwburn_03" : "BURN THE BACKUPS",
 	"wwburn_03_desc" : "Burn the backups of the master servers, they'll be in the same containers.",
 	"wwburn_04" : "EXTRACTION AVAILABLE",
-	"wwburn_04_desc" : "Escape or secure more loot if you feel greedy.",
+	"wwburn_04_desc" : "Escape, or secure more loot if you feel greedy.",
 	
 	"wwburn_serverpku" : "Secure",
 	"wwburn_gaspku" : "Collect",

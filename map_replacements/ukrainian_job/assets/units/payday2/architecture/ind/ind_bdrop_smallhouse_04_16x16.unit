@@ -1,0 +1,6 @@
+<unit type="ind" slot="1" >
+    <object file="units/payday2/architecture/ind/ind_bdrop_smallhouse_04_16x16" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

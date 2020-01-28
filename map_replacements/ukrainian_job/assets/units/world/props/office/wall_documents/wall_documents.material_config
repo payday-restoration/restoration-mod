@@ -1,0 +1,5 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:INSTANCED" decal_material="wood" version="2" name="walldocument">
+        <diffuse_texture file="units/world/props/office/wall_documents/wall_documents_df"/>
+    </material>
+</materials>

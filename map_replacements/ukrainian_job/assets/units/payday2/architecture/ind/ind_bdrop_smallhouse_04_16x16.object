@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_bdrop_smallhouse_04_16x16" materials="units/payday2/architecture/ind/ind_bdrop_smallhouse_all" />
+    <bodies>
+        <body enabled="true" template="editor" name="body0" >
+            <object collision_type="box" name="c_box_04" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_house" />
+    </graphics>
+</dynamic_object>

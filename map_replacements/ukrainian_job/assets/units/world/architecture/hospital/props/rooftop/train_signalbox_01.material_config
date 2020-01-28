@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mat_de_train_signalbox" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/architecture/hospital/props/rooftop/de_train_signalbox/de_train_signalbox_01_df"/>
+    </material>
+	<material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

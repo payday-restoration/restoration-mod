@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/train/tra_cover_cardboardbox/tra_cover_cardboardbox" orientation_object="rp_tra_cover_cardboardbox" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_tra_cover_cardboardbox" />
+      <object name="c_tra_cover_cardboardbox_single" collision_type="box" padding="-2"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="plastic">
+    <decal_mesh name="g_tra_cover_cardboardbox_single" enabled="true" material="plastic"/>
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_tra_cover_cardboardbox_single" enabled="true" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object>

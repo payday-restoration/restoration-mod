@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/ind/ind_ext_harbour/ind_ext_harbour_tire_backless" orientation_object="rp_ind_ext_harbour_tire_full" />
+	<bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_ind_ext_harbour_tire_full"/>
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_02" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_03" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_04" collision_type="convex" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="rubber">
+        <decal_mesh enabled="true" name="dm_rubber" material="rubber" />
+    </decal_surfaces>
+
+    <graphics>
+        <object enabled="true" name="g_ind_ext_harbour_tire_full" />
+		<object enabled="true" name="s_s" shadow_caster="true"/>
+
+
+    </graphics>
+</dynamic_object> 
+
+
+

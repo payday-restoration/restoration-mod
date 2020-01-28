@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+	<object file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" 	class="ScriptUnitData" />
+		<extension name="damage" 		class="UnitDamage" />
+		<extension name="interaction" 	class="UseInteractionExt">
+			<var name="tweak_data" 			value="open_slash_close_act" />
+			<var name="_interact_object" 	value="interact"/>
+		</extension>
+	</extensions>
+</unit>

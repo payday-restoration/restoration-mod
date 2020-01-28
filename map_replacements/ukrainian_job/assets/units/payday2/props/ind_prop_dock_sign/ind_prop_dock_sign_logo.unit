@@ -1,0 +1,6 @@
+<unit type="ind" slot="1" >
+    <object file="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign_logo" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

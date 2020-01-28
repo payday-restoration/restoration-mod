@@ -42,4 +42,138 @@
 	<texture path="levels/mods/ukrainian_job_res/cube_lights/100465"/>
 	<texture path="levels/mods/ukrainian_job_res/cube_lights/102465"/>
 	<texture path="levels/mods/ukrainian_job_res/cube_lights/103059"/>
+	<add path="units/pd2_dlc2/csgo_models/props/de_train/ladderaluminium" type="unit">
+		<material_config force="true" path="units/pd2_dlc2/csgo_models/props/de_train/ladderaluminium" unload="true"/>
+		<object force="true" path="units/pd2_dlc2/csgo_models/props/de_train/ladderaluminium" unload="true"/>
+		<unit force="true" path="units/pd2_dlc2/csgo_models/props/de_train/ladderaluminium" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_container/gen_prop_container" type="unit">
+		<unit force="true" path="units/payday2/props/gen_prop_container/gen_prop_container" unload="true"/>
+		<object force="true" path="units/payday2/props/gen_prop_container/gen_prop_container" unload="true"/>
+		<material_config force="true" path="units/payday2/props/gen_prop_container/gen_prop_container_1" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<material_config force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<material_config force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<material_config force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<material_config force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<material_config force="true" path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/gen_prop_container/gen_prop_container" unload="true"/>
+	</add>
+	<add path="units/world/architecture/hospital/props/rooftop/de_train_signalbox/de_train_signalbox_01" type="unit">
+		<material_config force="true" path="units/world/architecture/hospital/props/rooftop/train_signalbox_01" unload="true"/>
+		<object force="true" path="units/world/architecture/hospital/props/rooftop/de_train_signalbox/de_train_signalbox_01" unload="true"/>
+		<unit force="true" path="units/world/architecture/hospital/props/rooftop/de_train_signalbox/de_train_signalbox_01" unload="true"/>
+	</add>
+	<add path="units/world/street/construction_grbhaul/construction_grbhaul" type="unit">
+		<material_config force="true" path="units/world/street/construction_grbhaul/construction_grbhaul" unload="true"/>
+		<object force="true" path="units/world/street/construction_grbhaul/construction_grbhaul" unload="true"/>
+		<unit force="true" path="units/world/street/construction_grbhaul/construction_grbhaul" unload="true"/>
+	</add>
+	<add path="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01" type="unit">
+		<material_config force="true" path="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01" unload="true"/>
+		<object force="true" path="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01" unload="true"/>
+		<unit force="true" path="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/ind/ind_ext_harbour/ind_ext_harbour_tire_full" type="unit">
+		<material_config force="true" path="units/payday2/architecture/ind/ind_ext_harbour/ind_ext_harbour_tire_backless" unload="true"/>
+		<object force="true" path="units/payday2/architecture/ind/ind_ext_harbour/ind_ext_harbour_tire_full" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/ind/ind_ext_harbour/ind_ext_harbour_tire_full" unload="true"/>
+	</add>
+	<add path="units/world/props/train/tra_cover_cardboardbox/tra_cover_cardboardbox" type="unit">
+		<material_config force="true" path="units/world/props/train/tra_cover_cardboardbox/tra_cover_cardboardbox" unload="true"/>
+		<object force="true" path="units/world/props/train/tra_cover_cardboardbox/tra_cover_cardboardbox" unload="true"/>
+		<unit force="true" path="units/world/props/train/tra_cover_cardboardbox/tra_cover_cardboardbox" unload="true"/>
+	</add>
+	<add path="units/world/props/nick/sign_meatcircus" type="unit">
+		<material_config force="true" path="units/world/props/nick/sign_meatcircus" unload="true"/>
+		<object force="true" path="units/world/props/nick/sign_meatcircus" unload="true"/>
+		<unit force="true" path="units/world/props/nick/sign_meatcircus" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/ind/ind_bdrop_smallhouse_04_16x16" type="unit">
+		<material_config force="true" path="units/payday2/architecture/ind/ind_bdrop_smallhouse_all" unload="true"/>
+		<object force="true" path="units/payday2/architecture/ind/ind_bdrop_smallhouse_04_16x16" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/ind/ind_bdrop_smallhouse_04_16x16" unload="true"/>
+	</add>
+	<add path="units/world/props/desert/des_prop_con_pipes/des_prop_con_pipe_plastic_pile" type="unit">
+		<material_config force="true" path="units/world/props/desert/des_prop_con_pipes/des_prop_pipes" unload="true"/>
+		<object force="true" path="units/world/props/desert/des_prop_con_pipes/des_prop_con_pipe_plastic_pile" unload="true"/>
+		<unit force="true" path="units/world/props/desert/des_prop_con_pipes/des_prop_con_pipe_plastic_pile" unload="true"/>
+	</add>
+	<add path="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign_logo" type="unit">
+		<material_config force="true" path="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign" unload="true"/>
+		<object force="true" path="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign_logo" unload="true"/>
+		<unit force="true" path="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign_logo" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc2/csgo_models/props_downtown/sign_stop" type="unit">
+		<unit force="true" path="units/pd2_dlc2/csgo_models/props_downtown/sign_stop" unload="true"/>
+		<object force="true" path="units/pd2_dlc2/csgo_models/props_downtown/sign_stop" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc2/csgo_models/props_downtown/sign_stop" unload="true"/>
+	</add>
+	<add path="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family" type="unit">
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family" unload="true"/>
+		<material_config force="true" path="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/window/storefront_window_small" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+	</add>
+	<add path="units/world/props/office/wall_documents/poster_02" type="unit">
+		<unit force="true" path="units/world/props/office/wall_documents/poster_02" unload="true"/>
+		<object force="true" path="units/world/props/office/wall_documents/poster_02" unload="true"/>
+		<material_config force="true" path="units/world/props/office/wall_documents/wall_documents" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_a" type="unit">
+		<unit force="true" path="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_a" unload="true"/>
+		<object force="true" path="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_a" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/ind/ind_ext_garagedoor01" unload="true"/>
+	</add>
+	<add path="units/world/street/dumpster/plastic_dumpstercart" type="unit">
+		<unit force="true" path="units/world/street/dumpster/plastic_dumpstercart" unload="true"/>
+		<object force="true" path="units/world/street/dumpster/plastic_dumpstercart" unload="true"/>
+		<material_config force="true" path="units/world/street/dumpster/plastic_dumpstercart" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/str/str_ext_asphalt_4x4m_a" type="unit">
+		<unit force="true" path="units/payday2/architecture/str/str_ext_asphalt_4x4m_a" unload="true"/>
+		<object force="true" path="units/payday2/architecture/str/str_ext_asphalt_4x4m_a" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/str/str_ext_ground_asphalt" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/lcm_b/lcm_b_ext_vtile2_4x4m_a_nowin" type="unit">
+		<unit force="true" path="units/payday2/architecture/lcm_b/lcm_b_ext_vtile2_4x4m_a_nowin" unload="true"/>
+		<object force="true" path="units/payday2/architecture/lcm_b/lcm_b_ext_vtile2_4x4m_a_nowin" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/lcm_b/lcm_b" unload="true"/>
+	</add>
+	<add path="units/world/props/concrete_blocks_cover/concrete_blocks_large" type="unit">
+		<unit force="true" path="units/world/props/concrete_blocks_cover/concrete_blocks_large" unload="true"/>
+		<object force="true" path="units/world/props/concrete_blocks_cover/concrete_blocks_large" unload="true"/>
+		<material_config force="true" path="units/world/props/concrete_blocks_cover/concrete_blocks_cover" unload="true"/>
+	</add>
+	<add path="units/world/props/office/wall_documents/poster_03" type="unit">
+		<unit force="true" path="units/world/props/office/wall_documents/poster_03" unload="true"/>
+		<object force="true" path="units/world/props/office/wall_documents/poster_03" unload="true"/>
+		<material_config force="true" path="units/world/props/office/wall_documents/wall_documents" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/lcm_b/lcm_b_ext_vtile3_4x8m_a" type="unit">
+		<unit force="true" path="units/payday2/architecture/lcm_b/lcm_b_ext_vtile3_4x8m_a" unload="true"/>
+		<object force="true" path="units/payday2/architecture/lcm_b/lcm_b_ext_vtile3_4x8m_a" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/lcm_b/lcm_b" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_5x2m" type="unit">
+		<unit force="true" path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_5x2m" unload="true"/>
+		<object force="true" path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_5x2m" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_desks" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/lcm/lcm_int_door_wood_01_closed" type="unit">
+		<unit force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01_closed" unload="true"/>
+		<object force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01_closed" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
+	</add>
 </table>

@@ -547,4 +547,16 @@
 		<object force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
 		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
 	</add>
+	<add path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" type="unit">
+		<unit force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
+		<object force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/hcm/hcm_str_glass" unload="true"/>
+		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_df" unload="true"/>
+		<texture force="true" path="environments/cubemaps/cubemap_quick_diamond_ext" unload="true"/>
+		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_nm" unload="true"/>
+		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_glass_op" unload="true"/>
+		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_glass_df" unload="true"/>
+		<texture force="true" path="units/payday2/architecture/str/str_01_df" unload="true"/>
+		<texture force="true" path="units/payday2/architecture/str/str_01_nm" unload="true"/>
+	</add>
 </table>

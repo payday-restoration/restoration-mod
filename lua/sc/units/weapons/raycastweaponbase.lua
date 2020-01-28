@@ -312,4 +312,60 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		return result
 	end
 	
+	--Original mod by 90e, uploaded by DarKobalt.
+	--Reverb fixed by Doctor Mister Cool, aka Didn'tMeltCables, aka DinoMegaCool
+	--New version uploaded and maintained by Offyerrocker.
+	--Totally not stolen for resmod 
+
+	local afsf_blacklist = {
+		["saw"] = true,
+		["saw_secondary"] = true,
+		["flamethrower_mk2"] = true,
+		["m134"] = true,
+		["mg42"] = true,
+		["shuno"] = true,
+		["system"] = true
+	}
+
+	function RaycastWeaponBase:_soundfix_should_play_normal()
+		local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
+		if not self._setup.user_unit == managers.player:player_unit() then
+			return true
+		elseif afsf_blacklist[name_id] then
+			return true
+		elseif not tweak_data.weapon[name_id].sounds.fire_single then
+			return true
+		end
+		
+	end
+
+	local orig_fire_sound = RaycastWeaponBase._fire_sound
+	function RaycastWeaponBase:_fire_sound(...)
+		if self:_soundfix_should_play_normal() then
+			orig_fire_sound(self,...)
+		end
+	end
+
+	local orig_fire = RaycastWeaponBase.fire
+	function RaycastWeaponBase:fire(...)
+		local result = orig_fire(self, ...)
+		if self:_soundfix_should_play_normal() then
+			return result
+		end
+
+		if result and self._setup.user_unit == managers.player:player_unit() then
+			self:play_tweak_data_sound("fire_single","fire")
+			self:play_tweak_data_sound("stop_fire")
+		end
+		
+		return result
+	end
+
+	local orig_stop_shooting = RaycastWeaponBase.stop_shooting
+	function RaycastWeaponBase:stop_shooting(...)
+		if self:_soundfix_should_play_normal() then
+			orig_stop_shooting(self,...)
+		end
+	end
+	
 end

@@ -393,11 +393,6 @@
 		<sequence_manager force="true" path="units/payday2/props/gen_interactable_panel_keycard/gen_panel_keycard_hack" unload="true"/>
 		<unit force="true" path="units/payday2/props/gen_interactable_panel_keycard/gen_panel_keycard_hack" unload="true"/>
 	</add>
-	<add path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" type="unit">
-		<material_config force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm" unload="true"/>
-		<object force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
-		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
-	</add>
 	<add path="units/pd2_dlc_sah/props/sah_prop_branch_security_shutter/sah_prop_branch_security_shutter" type="unit">
 		<material_config force="true" path="units/pd2_dlc_sah/props/sah_prop_branch_security_shutter/sah_prop_branch_security_shutter" unload="true"/>
 		<object force="true" path="units/pd2_dlc_sah/props/sah_prop_branch_security_shutter/sah_prop_branch_security_shutter" unload="true"/>
@@ -451,11 +446,6 @@
 		<object force="true" path="units/payday2/architecture/com_int_construction_floor/com_int_construction_concrete_floor_2x2m" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/com_int_construction_floor/com_int_construction_concrete_floor_2x2m" unload="true"/>
 	</add>
-	<add path="units/payday2/architecture/hcm/hcm_int_wall_4m_b_brown" type="unit">
-		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
-		<object force="true" path="units/payday2/architecture/hcm/hcm_int_wall_4m_b_brown" unload="true"/>
-		<unit force="true" path="units/payday2/architecture/hcm/hcm_int_wall_4m_b_brown" unload="true"/>
-	</add>
 	<add path="units/payday2/architecture/hcm/hcm_int_wall_4m_a_brown" type="unit">
 		<material_config force="true" path="units/payday2/architecture/hcm/hcm_int" unload="true"/>
 		<object force="true" path="units/payday2/architecture/hcm/hcm_int_wall_4m_a_brown" unload="true"/>
@@ -502,11 +492,6 @@
 		<object force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
 		<unit force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
 	</add>
-	<add path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_big" type="unit">
-		<material_config force="true" path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak" unload="true"/>
-		<object force="true" path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_big" unload="true"/>
-		<unit force="true" path="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_big" unload="true"/>
-	</add>
 	<add path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" type="unit">
 		<material_config force="true" path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" unload="true"/>
 		<object force="true" path="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" unload="true"/>
@@ -550,8 +535,16 @@
 		<unit force="true" path="units/world/props/gym/stn_prop_camera/stn_prop_camera" unload="true"/>
 	</add>
 	<add path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" type="unit">
-		<unit force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
-		<object force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
 		<material_config force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
+		<object force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
+		<unit force="true" path="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" type="unit">
+		<texture force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_leafs_df" unload="true"/>
+		<texture force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_trunk_df" unload="true"/>
+		<texture force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_trunk_nm" unload="true"/>
+		<material_config force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
 	</add>
 </table>

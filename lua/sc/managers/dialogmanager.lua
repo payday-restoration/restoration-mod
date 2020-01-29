@@ -83,6 +83,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end	
 		
+			--The Diamond--
+			if id == "Play_pln_hd1_34" then
+				if difficulty_index <= 2 then
+					escape_time = 1050
+				elseif difficulty_index == 3 then
+					escape_time = 1020
+				elseif difficulty_index == 4 then
+					escape_time = 990
+				elseif difficulty_index == 5 then
+					escape_time = 960	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 930					
+				else
+					escape_time = 900
+				end		
+			end	
+		
 			--Watchdogs Day 1 IF twitch dies--
 			--when bain says bile is coming
 			if id == "pln_watchdogs_new_stage1_21" then
@@ -324,19 +341,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end		
 
 			--Counterfeit--
-			if id == "Play_pln_pal_77" then
+			--Escaping
+			if id == "Play_pln_pal_59" or id == "Play_pln_pal_59" then
 				if difficulty_index <= 2 then
-					escape_time = 270
+					escape_time = 330
 				elseif difficulty_index == 3 then
-					escape_time = 240
+					escape_time = 300
 				elseif difficulty_index == 4 then
-					escape_time = 210
+					escape_time = 270
 				elseif difficulty_index == 5 then
-					escape_time = 180	
+					escape_time = 240	
 				elseif difficulty_index == 6 or difficulty_index == 7 then
-					escape_time = 150					
+					escape_time = 210				
 				else
-					escape_time = 120
+					escape_time = 180
+				end						
+			end	
+			
+			--Printing whenever the printer starts a little awkward because restarting the power also resets this
+			if id == "Play_pln_pal_71" then
+				if difficulty_index <= 2 then
+					escape_time = 690
+				elseif difficulty_index == 3 then
+					escape_time = 660
+				elseif difficulty_index == 4 then
+					escape_time = 630
+				elseif difficulty_index == 5 then
+					escape_time = 600	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 570						
+				else
+					escape_time = 540
 				end					
 			end	
 

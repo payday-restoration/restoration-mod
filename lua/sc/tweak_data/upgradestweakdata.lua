@@ -556,7 +556,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.long_dis_revive = {0.5, 0.5}
 				self.skill_descs.inspire = {multibasic = "50%", multibasic2 = "20%", multibasic3 = "10", multipro = "50%"}
 				self.values.cooldown.long_dis_revive = {
-					{1, 60}
+					{1, 90}
 				}
 				self.morale_boost_speed_bonus = 1.2
 				self.morale_boost_suppression_resistance = 1

@@ -515,7 +515,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_interact_desc"] = "Players interact 15% faster per AI controlled crew member.",
 
 		["menu_crew_inspire"] = "Inspiring",
-		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds. Cooldown is reduced by 10 seconds per AI controlled crew member.",
+		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 90 seconds. Cooldown is reduced by 15 seconds per AI controlled crew member.",
 
 		["menu_crew_scavenge"] = "Sharpeyed",
 		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition per AI controlled crew member.",

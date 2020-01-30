@@ -1862,18 +1862,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
-		self.tank_hw = deep_clone(self.tank)
-		self.tank_hw.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
-		self.tank_hw.speech_prefix_p2 = nil
-		self.tank_hw.speech_prefix_count = nil		
-		self.tank_hw.headshot_dmg_mul = 7.99425
+		self.tank_hw = deep_clone(self.tank_titan_assault)
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
-		if job == "haunted" then
-			self.tank_hw.move_speed = presets.move_speed.very_slow
-		else
-			self.tank_hw.move_speed = presets.move_speed.slow
-		end
+		self.tank_hw.move_speed = presets.move_speed.very_slow
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
@@ -13400,6 +13392,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Titandozers become immune to stunning
 		self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
+		self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
@@ -13413,13 +13406,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Winters can now overheal ala LPF
 		self.phalanx_vip.do_omnia = true
-		
-		if job == "haunted" then
-			self.tank_hw.move_speed = self.presets.move_speed.very_slow
-		else
-			self.tank_hw.move_speed = self.presets.move_speed.slow
-		end		
-		
+				
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")

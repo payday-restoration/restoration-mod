@@ -244,9 +244,17 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_nm" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_gsma" />
 	
+	
+	<unit path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
+	<object path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
+	<model path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
+	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_df" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_nm" />
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/player_tactical_outfit_fp_df" />
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/player_tactical_outfit_fp_nm" />
+	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/player_tactical_outfit_fp_gsma" />
 
 	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" />
 	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" />

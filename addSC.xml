@@ -609,6 +609,9 @@
 	<material_config path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_husk" force="false" load="true"/>
 	
+	<unit path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" load="true"/>
+	<unit path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_husk" force="true" load="true"/>	
+	
 	<!--Halloween Sword-->
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>

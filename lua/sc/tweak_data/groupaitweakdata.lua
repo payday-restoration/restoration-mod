@@ -7238,7 +7238,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2")
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
 				},				
 				murkywater = {
 					Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")

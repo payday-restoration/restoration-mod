@@ -485,9 +485,9 @@ function UpgradesTweakData:_init_pd2_values()
 	--Crew ability stuff
 	self.values.team.crew_inspire = {
 		{
-			60,
-			50,
-			40
+			90,
+			75,
+			60
 		}
 	}
 	self.values.team.crew_scavenge = {

@@ -342,7 +342,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			--Counterfeit--
 			--Escaping
-			if id == "Play_pln_pal_59" or id == "Play_pln_pal_59" then
+			if id == "Play_pln_pal_59" or id == "Play_pln_pal_76" then
 				if difficulty_index <= 2 then
 					escape_time = 330
 				elseif difficulty_index == 3 then

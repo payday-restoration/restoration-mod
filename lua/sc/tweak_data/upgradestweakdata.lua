@@ -1618,7 +1618,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Hacker
 	self.values.player.pocket_ecm_jammer_base = {
 		{
-			cooldown_drain = 4,
+			cooldown_drain = 2,
 			duration = 12
 		}
 	}	

@@ -51,22 +51,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function UnitNetworkHandler:place_grenade_crate(pos, rot, rpc)
-		local peer = self._verify_sender(rpc)
+	-- function UnitNetworkHandler:place_grenade_crate(pos, rot, rpc)
+	-- 	local peer = self._verify_sender(rpc)
 	
-		if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
-			return
-		end
+	-- 	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
+	-- 		return
+	-- 	end
 	
-		if not managers.player:verify_equipment(peer:id(), "grenade_crate") then
-			return
-		end
+	-- 	if not managers.player:verify_equipment(peer:id(), "grenade_crate") then
+	-- 		return
+	-- 	end
 	
-		local unit = GrenadeCrateBase.spawn(pos, rot, peer:id())
+	-- 	local unit = GrenadeCrateBase.spawn(pos, rot, peer:id())
 	
-		if unit then
-			unit:base():set_server_information(peer:id())
-		end
-	end
+	-- 	if unit then
+	-- 		unit:base():set_server_information(peer:id())
+	-- 	end
+	-- end
 
 end

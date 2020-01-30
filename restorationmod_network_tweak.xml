@@ -147,11 +147,11 @@
 				<param type="int" min="0" max="15"/> <!-- peer_id -->
 			</message>
 
-			<message name="RestorationMod__place_grenade_crate" delivery="ordered" receiver="RestorationMod__unit" check="client_to_server">
+			<!-- <message name="RestorationMod__place_grenade_crate" delivery="ordered" receiver="RestorationMod__unit" check="client_to_server">
 				<param type="vector3" />
 				<param type="rotation" />
 				<param type="int" min="0" max="255"/>
-			</message>
+			</message> -->
 		</rpc>
     </target>
 </tweak>

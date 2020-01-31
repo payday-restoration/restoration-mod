@@ -1445,8 +1445,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Shockproof--
 			self.skills.insulation = {
-				["name_id"] = "menu_insulation_beta",
-				["desc_id"] = "menu_insulation_beta_desc",
+				["name_id"] = "menu_insulation_beta_sc",
+				["desc_id"] = "menu_insulation_beta_desc_sc",
 				["icon_xy"] = {3, 5},
 				[1] = {
 					upgrades = {

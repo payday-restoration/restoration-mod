@@ -544,7 +544,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 			
 				--Uppers
-				self.values.first_aid_kit.quantity = {4, 10}
+				self.values.first_aid_kit.quantity = {3, 6}
 				self.values.first_aid_kit.downs_restore_chance = {1}
 
 				--Combat Doctor
@@ -982,6 +982,19 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 
 				--Shockproof
+				self.values.player.taser_malfunction = {
+					{
+						interval = 1,
+						chance_to_trigger = 0.15
+					}
+				}				
+				self.values.player.taser_self_shock = {
+					true
+				}	
+				self.values.player.escape_taser = {
+					2
+				}				
+				self.counter_taser_damage = 0.5			
 
 			--}
 			

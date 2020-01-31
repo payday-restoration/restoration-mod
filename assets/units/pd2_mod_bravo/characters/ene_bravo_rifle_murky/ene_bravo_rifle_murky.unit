@@ -41,7 +41,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

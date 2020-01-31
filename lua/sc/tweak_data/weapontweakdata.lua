@@ -57,6 +57,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 1
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 1.8
+		self.erma_crew.DAMAGE = 1.8
+		self.polymer_crew.DAMAGE = 1.8		
+		
 		self.akm_gold_crew.DAMAGE = 1.8
 		self.amcar_crew.DAMAGE = 1.8
 		self.ak74_crew.DAMAGE = 1.8
@@ -112,6 +116,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 1
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 1.8
+		self.erma_crew.DAMAGE = 1.8
+		self.polymer_crew.DAMAGE = 1.8				
+		
 		self.akm_gold_crew.DAMAGE = 1.8
 		self.amcar_crew.DAMAGE = 1.8
 		self.ak74_crew.DAMAGE = 1.8
@@ -167,6 +175,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 2
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 2.8
+		self.erma_crew.DAMAGE = 2.8
+		self.polymer_crew.DAMAGE = 2.8				
+		
 		self.akm_gold_crew.DAMAGE = 2.8
 		self.amcar_crew.DAMAGE = 2.8
 		self.ak74_crew.DAMAGE = 2.8
@@ -222,6 +234,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 3
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 3.8
+		self.erma_crew.DAMAGE = 3.8
+		self.polymer_crew.DAMAGE = 3.8			
+		
 		self.akm_gold_crew.DAMAGE = 3.8
 		self.amcar_crew.DAMAGE = 3.8
 		self.ak74_crew.DAMAGE = 3.8
@@ -1475,6 +1491,65 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jeb_crew = deep_clone(self.raging_bull_crew)
 	end	
 	
+	function WeaponTweakData:_init_data_shepheard_crew()
+		self.shepheard_crew.categories = clone(self.shepheard.categories)
+		self.shepheard_crew.sounds.prefix = "shepheard_npc"
+		self.shepheard_crew.use_data.selection_index = 2
+		self.shepheard_crew.DAMAGE = 4.8
+		self.shepheard_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.shepheard_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.shepheard_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.shepheard_crew.CLIP_AMMO_MAX = 60
+		self.shepheard_crew.NR_CLIPS_MAX = 5
+		self.shepheard_crew.auto.fire_rate = 0.08571428571
+		self.shepheard_crew.hold = "rifle"
+		self.shepheard_crew.pull_magazine_during_reload = "smg"
+		self.shepheard_crew.alert_size = 5000
+		self.shepheard_crew.suppression = 2.2
+		self.shepheard_crew.FIRE_MODE = "auto"
+	end	
+	
+	function WeaponTweakData:_init_data_erma_crew()
+		self.erma_crew.categories = clone(self.erma.categories)
+		self.erma_crew.sounds.prefix = "erma_npc"
+		self.erma_crew.use_data.selection_index = 2
+		self.erma_crew.DAMAGE = 4.8
+		self.erma_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.erma_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.erma_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.erma_crew.CLIP_AMMO_MAX = 60
+		self.erma_crew.NR_CLIPS_MAX = 5
+		self.erma_crew.reload = "rifle"
+		self.erma_crew.pull_magazine_during_reload = "smg"
+		self.erma_crew.auto.fire_rate = 0.08571428571
+		self.erma_crew.hold = "rifle"
+		self.erma_crew.alert_size = 5000
+		self.erma_crew.suppression = 2.2
+		self.erma_crew.FIRE_MODE = "auto"
+	end	
+	
+	function WeaponTweakData:_init_data_polymer_crew()
+		self.polymer_crew.categories = clone(self.polymer.categories)
+		self.polymer_crew.sounds.prefix = "polymer_npc"
+		self.polymer_crew.use_data.selection_index = 2
+		self.polymer_crew.DAMAGE = 4.8
+		self.polymer_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.polymer_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.polymer_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.polymer_crew.CLIP_AMMO_MAX = 60
+		self.polymer_crew.NR_CLIPS_MAX = 5
+		self.polymer_crew.reload = "rifle"
+		self.polymer_crew.pull_magazine_during_reload = "smg"
+		self.polymer_crew.auto.fire_rate = 0.08571428571
+		self.polymer_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.polymer_crew.alert_size = 5000
+		self.polymer_crew.suppression = 2.2
+		self.polymer_crew.FIRE_MODE = "auto"
+	end
+		
 	function WeaponTweakData:_init_data_akm_gold_crew()
 		self.akm_gold_crew.categories = clone(self.akm_gold.categories)
 		self.akm_gold_crew.sounds.prefix = "akm_npc"
@@ -2385,7 +2460,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mg42_secondary_crew.use_data.selection_index = 1
 		self.mg42_secondary_crew.armor_piercing = true
 	end
-		
+				
 	function WeaponTweakData:_init_data_x_basset_crew()
 		self.x_basset_crew.categories = clone(self.x_basset.categories)
 		self.x_basset_crew.sounds.prefix = "basset_x_npc"
@@ -13989,6 +14064,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			use_data = {}
 		}	
 		self.smoke_npc = {
+			usage = "is_smg",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}		
+		
+		self.shepheard_crew = {
 			usage = "is_smg",
 			sounds = {},
 			use_data = {},

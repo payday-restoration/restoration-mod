@@ -8226,24 +8226,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"aggressor",
 				"shield_cover"
 			},
-			SKULL_tank = { --set up as titan dozer lite
+			SKULL_tank = { --slightly more passive than the other dozers will stand his ground if charged
 			    "reloadingretreat",
 			    "ranged_fire",
 				"murder",
 				"harass",
 				"shield_cover"
 			},
-			TIT_tank = { --set up to use passive suppressive fire against players they'll also use the hunter tactic to hunt rambo players :)
+			TIT_tank = { --set up to use passive suppressive fire against players :)
 				"obstacle",
 			    "reloadingretreat",
 				"spoocavoidance",
-				"hunter",
 				"murder",
 				"elite_ranged_fire",
 				"shield_cover"
 			},
 			spooc = {
 				"hunter",
+				"flank",
 				"spoocavoidance",
 				"shield_cover",
 				"smoke_grenade",
@@ -8259,9 +8259,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			Cap_spring = {
 				"aggressor", --this is to help him not lag behind the player too much
+				"charge",
 				"murder"
 			},
 			Cap_summers = {
+				"aggressor",
 				"charge",
 				"murder"
 			},
@@ -8446,7 +8448,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			tazer_flanking = {
-				"flanking",
+				"flank",
 				"charge",
 				"provide_coverfire",
 				"smoke_grenade",

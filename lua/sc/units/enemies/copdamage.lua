@@ -260,14 +260,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			return "friendly_fire"
 		end
 		
-		if attack_data.attacker_unit:in_slot(16) then
-			if self._unit:anim_data() and self._unit:anim_data().hands_tied then
+		if alive(attack_data.attacker_unit) and attack_data.attacker_unit:in_slot(16) then
+			local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
+
+			if has_surrendered then
 				return
-			elseif self._unit:anim_data() and self._unit:anim_data().surrender then
-				return
-			elseif self._unit:anim_data() and self._unit:anim_data().hands_back then
-				return
-			end		
+			end
 		end
 			
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
@@ -1164,17 +1162,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end		
 		
-		if self._unit:anim_data() and self._unit:anim_data().hands_tied then
-			return
-		elseif self._unit:anim_data() and self._unit:anim_data().surrender then
-			return
-		elseif self._unit:anim_data() and self._unit:anim_data().hands_back then
-			return
-		end				
-		
-		if self._unit:brain() and self._unit:brain().is_current_logic and self._unit:brain():is_current_logic("intimidated") then
-			return
-		end		
+		if attack_data.variant == "graze" then
+			local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
+
+			if has_surrendered then
+				return
+			end
+		end
 
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 		local result = nil

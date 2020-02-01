@@ -10,22 +10,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._damage_per_tick = 0.45
 		self._stamina_per_tick = 0.0
 		if difficulty_index <= 2 then
-			self._damage_tick_period = 0.55
-		elseif difficulty_index == 3 then
 			self._damage_tick_period = 0.5
-		elseif difficulty_index == 4 then
+		elseif difficulty_index == 3 then
 			self._damage_tick_period = 0.45
-		elseif difficulty_index == 5 then
+		elseif difficulty_index == 4 then
 			self._damage_tick_period = 0.4
-		elseif difficulty_index == 6 then
+		elseif difficulty_index == 5 then
 			self._damage_tick_period = 0.35
+		elseif difficulty_index == 6 then
+			self._damage_tick_period = 0.3
 			self._damage_per_tick = 0.6
 		elseif difficulty_index == 7 then
-			self._damage_tick_period = 0.35
+			self._damage_tick_period = 0.3
 			self._stamina_per_tick = 1.5
 			self._damage_per_tick = 0.75			
 		else
-			self._damage_tick_period = 0.3
+			self._damage_tick_period = 0.25
 			self._stamina_per_tick = 3
 			self._damage_per_tick = 0.9
 		end

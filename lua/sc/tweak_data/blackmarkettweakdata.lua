@@ -3349,7 +3349,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--Chainsaw + Gun--
 	self.melee_weapons.cs.info_id = "bm_melee_cs_info"
 	self.melee_weapons.cs.chainsaw = true	
-	self.melee_weapons.cs.stats.tick_damage = 3.6
+	self.melee_weapons.cs.stats.tick_damage = 4
 	self.melee_weapons.cs.stats.min_damage = 15
 	self.melee_weapons.cs.stats.max_damage = 15
 	self.melee_weapons.cs.stats.min_damage_effect = 0.9

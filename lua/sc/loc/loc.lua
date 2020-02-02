@@ -892,7 +892,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Sniper Rifles deal ##50%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nThis effect chains up to ##4## times, with subsequent damage equaling the damage of the previous hit.\n\nACE: ##$pro##\nAny killing headshot with Sniper Rifles now deal ##100%## of the damage to the closest enemy in the effect radius.\n\nThis effect can now chain up to ##8## times.",																																																																																																																																																																																																																									
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots deal ##50%## of the damage dealt to the closest enemy in a ##4## meter radius. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nKilling headshots deal ##100%## of the damage dealt to the closest enemy within a ##4## meter radius, and chain ##1## additional time. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",

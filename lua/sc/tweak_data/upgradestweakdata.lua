@@ -855,19 +855,23 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.enter_steelsight_speed_multiplier = {1.25}
 				self.values.player.single_shot_accuracy_inc = {0.9}
 				
-				--Mind Blown, formerly Explosive Headshot
+				--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
 					{
 						radius = 400,
-						times = 4,
+						kill_times = 0,
+						range_times = 4,
 						damage_factor = 0.5,
-						damage_factor_kill = 0.5
+						damage_factor_kill = 0.5,
+						range_increment = 700
 					},
 					{
 						radius = 400,
-						times = 8,
+						bonus_times = 1,
+						max_times = 4,
 						damage_factor = 0.5,
-						damage_factor_kill = 1
+						damage_factor_kill = 1.0,
+						range_increment = 700
 					}
 				}				
 

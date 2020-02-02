@@ -1295,7 +1295,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local speech_allowed = not self._next_allowed_hurt_t or self._next_allowed_hurt_t and self._next_allowed_hurt_t < t
 		
 		if damage_info.damage and damage_info.damage > 0.01 and self._health > damage_info.damage and dmg_chk and speech_allowed then
-			if not damage_info.result_type or damage_info.result_type ~= "healed" and damage_info.result_type ~= "death" then
+			if not damage_info.result_type or damage_info.result_type ~= "healed" or damage_info.variant == "hurt_sick" and damage_info.result_type ~= "death" then
 				if damage_info.is_fire_dot_damage or damage_info.variant == "fire" then
 					if self._next_allowed_burnhurt_t and self._next_allowed_burnhurt_t < t or not self._next_allowed_burnhurt_t then
 						self._unit:sound():say("burnhurt", nil, nil, nil, nil)

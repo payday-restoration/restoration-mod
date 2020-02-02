@@ -7,7 +7,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local trail_length
 
 	function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
-	if not alive(weapon_unit) or not weapon_unit:base():fire_mode() == "single" or not weapon_unit:base():is_category("smg", "assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy then
+	if not alive(weapon_unit) or weapon_unit:base():fire_mode() ~= "single" or not weapon_unit:base():is_category("smg", "assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy then
 	  return
 	end
 
@@ -46,13 +46,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	for _, hit in pairs(hit_enemies) do
 	  local distance_sq = mvector3.distance_sq(hit.position, player_unit:movement():m_head_pos())
 	  local times = 1
-	  for i=1, upgrade_value.max_times do
+	  for i=1, upgrade_value.max_chain do
 		  if distance_sq > i * i * upgrade_value.range_increment * upgrade_value.range_increment then
 		  	times = times + 1
 		  end
-	  end
-	  if result.type == "death" then
-	  	times = times + upgrade_value.bonus_times
 	  end
 	  self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times)
 	end

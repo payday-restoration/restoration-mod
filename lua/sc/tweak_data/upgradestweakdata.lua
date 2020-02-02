@@ -859,17 +859,15 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.snp.graze_damage = {
 					{
 						radius = 400,
-						kill_times = 0,
-						range_times = 4,
-						damage_factor = 0.5,
-						damage_factor_kill = 0.5,
+						max_chain = 4,
+						damage_factor = 0.75,
+						damage_factor_kill = 0.75,
 						range_increment = 700
 					},
 					{
-						radius = 400,
-						bonus_times = 1,
-						max_times = 4,
-						damage_factor = 0.5,
+						radius = 500,
+						max_chain = 4,
+						damage_factor = 0.75,
 						damage_factor_kill = 1.0,
 						range_increment = 700
 					}

@@ -3,6 +3,12 @@
 	<diesel materials="units/pd2_dlc_vip/characters/ene_summers/ene_summers" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
+<!--Ooh I'm on FIRE~-->
+	<effects>
+		<effect_spawner name="fire_l_foot" enabled="true" object="LeftFoot" effect="effects/payday2/particles/explosions/summers_footstep" />
+		<effect_spawner name="fire_r_foot" enabled="true" object="RightFoot" effect="effects/payday2/particles/explosions/summers_footstep" />
+	</effects>
+
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>

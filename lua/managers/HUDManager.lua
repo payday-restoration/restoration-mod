@@ -136,7 +136,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			visible = not Network:is_server()
 		}) 
 		--yeah i can't seem to change the size of this thing from its parent's without breaking its center() and its children's set_center()
-		local icon_texture = "guis/textures/pd2/cn_minighost" -- or "guis/textures/restoration/crimewar_skull" or "guis/textures/pd2/hud_stealth_alarm01" or "guis/textures/pd2/hud_stealth_eye"
+		local icon_texture = "guis/textures/restoration/crimewar_skull" -- or "guis/textures/pd2/cn_minighost" or "guis/textures/pd2/hud_stealth_alarm01" or "guis/textures/pd2/hud_stealth_eye"
 		local radial_texture = "guis/textures/pd2/hud_rip"
 		local icon_size = 32
 		local radial_size = 128

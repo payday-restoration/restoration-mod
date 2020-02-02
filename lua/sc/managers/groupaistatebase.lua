@@ -538,8 +538,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if message == "restoration_sync_suspicion" then 
 				local data_tbl = string.split(data,":")
 				if data_tbl and #data_tbl > 0 then 
+					local groupai_state = managers.groupai:state()
 					if data_tbl[1] and data_tbl[2] then
-						local groupai_state = managers.groupai:state()
 						groupai_state._dummy_old_guard_detection_mul_raw = tonumber(data_tbl[1])
 						groupai_state._dummy_suspicion_threshold = tonumber(data_tbl[2])
 					end

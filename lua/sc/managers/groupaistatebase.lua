@@ -537,6 +537,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:_upd_criminal_suspicion_progress()
 				
+		managers.hud:_upd_animate_suspicion(t,self._old_guard_detection_mul_raw,self._suspicion_threshold,managers.groupai:state():whisper_mode())
+				
 		if managers.groupai:state():whisper_mode() then
 			local warning_1_threshold = self._weapons_hot_threshold * 0.25
 			local warning_2_threshold = self._weapons_hot_threshold * 0.5

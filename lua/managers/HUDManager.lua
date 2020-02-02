@@ -2,10 +2,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local _setup_player_info_hud_pd2_original = HUDManager._setup_player_info_hud_pd2
 
 	function HUDManager:_setup_player_info_hud_pd2()
+		self:_create_level_suspicion_hud(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
 		_setup_player_info_hud_pd2_original(self)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
 		self._bloody_screen = HUDBloodyScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
-			
+			--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel
 --setup radial mouse menu
 		local ammo_texture,ammo_rect = tweak_data.hud_icons:get_icon_data("equipment_ammo_bag")
 		local sentry_texture,sentry_rect = tweak_data.hud_icons:get_icon_data("equipment_sentry")
@@ -42,7 +43,145 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		restoration._utilitymenu = RadialMouseMenu:new(utility_params)	
 	end
+	
+	local NUM_SUSPICION_EFFECT_GHOSTS = 3
+	
+	function HUDManager:_upd_animate_suspicion(t,amount,amount_max,is_whisper_mode)
+		--got me thinking, do we want a noise indicator? one that plays when you perform an action that makes noise, whether by main hud item or by waypoint
+		if not (amount and amount_max) then
+			return
+		end
+		local panel = self._level_suspicion_panel
+		if not (panel and panel:visible()) then
+			return
+		end
+		if not is_whisper_mode then 
+			panel:set_alpha(panel:alpha() * 0.9)
+			if panel:alpha() <= 0.01 then 
+				panel:hide()
+			end
+		end
+		
+		local function interp_colors(one,two,percent) --interpolates colors based on a percentage
+		--percent is [0,1]
+			percent = math.clamp(percent,0,1)
+			
+		--color 1
+			local r1 = one.red
+			local g1 = one.green
+			local b1 = one.blue
+			
+		--color 2
+			local r2 = two.red
+			local g2 = two.green
+			local b2 = two.blue
 
+		--delta
+			local r3 = r2 - r1
+			local g3 = g2 - g1
+			local b3 = b2 - b1
+			
+			return Color(r1 + (r3 * percent),g1 + (g3 * percent), b1 + (b3 * percent))	
+		end
+		
+		local base_icon_alpha = 0.25
+		local ratio = math.min(1,amount/amount_max)
+		local ratio_color = interp_colors(Color("45B5FF"),Color("FF6138"),ratio) --blue to red
+		local suspicion_icon = panel:child("suspicion_icon")
+		suspicion_icon:set_color(ratio == 0 and Color(0.5,0.5,0.5) or ratio_color)
+		suspicion_icon:set_alpha(ratio + base_icon_alpha)
+		panel:child("suspicion_circle"):set_color(Color(ratio,0,0)) --progress radial
+		if ratio >= 1 then 
+			local interval = 2
+			local time_scale = 1
+			local icon_size = 32
+			for i=1,NUM_SUSPICION_EFFECT_GHOSTS,1 do 
+				local ghost = panel:child("suspicion_ghost_" .. tostring(i))
+				if ghost then 
+					local t_adjusted = time_scale * (t + (i / (NUM_SUSPICION_EFFECT_GHOSTS * interval)))
+					local progress = 1 - (math.cos((90 * (t_adjusted % 1))))
+
+					--raw equation: let a=2,b=0.5; y = 1/a - (cosine(modulo(x*b,1)*pi)/a)
+
+					local new_w = icon_size * (progress + 1)
+					local new_h = icon_size * (progress + 1)
+					ghost:set_w(new_w)
+					ghost:set_h(new_h)
+					ghost:set_color(ratio_color)
+					ghost:set_alpha(1 - progress)
+					ghost:set_center(panel:center())
+				end
+			end
+		elseif ratio > 0 then 
+			panel:child("suspicion_bg"):set_alpha(0.5)
+		end
+	end
+
+	function HUDManager:_create_level_suspicion_hud(hud)
+		local hud_panel = hud.panel
+		local level_suspicion_panel = hud_panel:panel({
+			name = "level_suspicion_panel",
+			y = -126, --i wanted so badly for 128 to work
+			alpha = 1
+		}) 
+		--yeah i can't seem to change the size of this thing from its parent's without breaking its center() and its children's set_center()
+		local icon_texture = "guis/textures/restoration/crimewar_skull" or "guis/textures/pd2/hud_stealth_alarm01" or "guis/textures/pd2/hud_stealth_eye"
+		local radial_texture = "guis/textures/pd2/hud_rip"
+		local icon_size = 32
+		local radial_size = 128
+		
+		self._level_suspicion_panel = level_suspicion_panel
+		local suspicion_circle = level_suspicion_panel:bitmap({ --circle outline progress
+			name = "suspicion_circle",
+			render_template = "VertexColorTexturedRadial",
+			texture = radial_texture, -- "guis/dlcs/coco/textures/pd2/hud_absorb_shield", --for soft blue outline instead
+			color = Color.black, --starts out invisible
+			alpha = 1,
+			layer = 3,
+			w = radial_size,
+			h = radial_size
+		})
+		local suspicion_bg = level_suspicion_panel:bitmap({ --circle outline bg
+			name = "suspicion_bg",
+			texture = radial_texture,
+			color = Color.black,
+			alpha = 0.2, --starts 0.5 when first update is called
+			layer = 1,
+			w = radial_size,
+			h = radial_size
+		})
+		
+		local suspicion_icon = level_suspicion_panel:bitmap({
+			name = "suspicion_icon",
+			texture = icon_texture,
+			color = Color.white,
+			alpha = 0, --set dynamically
+			layer = 2,
+			x = (level_suspicion_panel:w() - icon_size) / 2,
+			y = (level_suspicion_panel:h() - icon_size) / 2,
+			w = icon_size,
+			h = icon_size
+		})
+		local center_x,center_y = level_suspicion_panel:center()
+		suspicion_icon:set_center(center_x,center_y)
+		suspicion_circle:set_center(center_x,center_y)
+		suspicion_bg:set_center(center_x,center_y)
+		for i=1,NUM_SUSPICION_EFFECT_GHOSTS,1 do 
+			local suspicion_ghost = level_suspicion_panel:bitmap({
+				name = "suspicion_ghost_" .. tostring(i),
+				texture = icon_texture,
+				color = Color.white,
+				blend_mode = "add",
+				alpha = 0, --set dynamically
+				layer = 4 + i,
+				w = icon_size,
+				h = icon_size
+			})
+			suspicion_ghost:set_center(center_x,center_y)
+		end
+		
+	end
+	
 	function HUDManager:set_dodge_value(value)
 		--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua
 		self._dodge_meter:set_dodge_value(value)

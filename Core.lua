@@ -70,6 +70,7 @@ function restoration:Init()
 		"peta",
 		"brb",
 		"mus",
+		"hox_1",
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
@@ -104,8 +105,7 @@ function restoration:Init()
 	restoration.very_tiny_levels = {
 		"hvh",
 		"chew",
-		"sah",
-		"hox_1",		
+		"sah",		
 		"nail",		
 		"nmh",		
 		"arena",		

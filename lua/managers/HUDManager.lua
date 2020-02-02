@@ -52,10 +52,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 		local panel = self._level_suspicion_panel
-		if not (panel and panel:visible()) then
+		if not panel then 
 			return
 		end
-		if not is_whisper_mode then 
+		if not (panel:visible() or is_whisper_mode) then 
+			return
+		end
+		if is_whisper_mode then 
+			if not panel:visible() then 
+				panel:show()
+			end 
+			if panel:alpha() < 1 then 
+				panel:set_alpha(math.min(math.abs(panel:alpha()) * 1.1,1))
+			end
+		else
 			panel:set_alpha(panel:alpha() * 0.9)
 			if panel:alpha() <= 0.01 then 
 				panel:hide()
@@ -84,7 +94,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return Color(r1 + (r3 * percent),g1 + (g3 * percent), b1 + (b3 * percent))	
 		end
 		
-		local base_icon_alpha = 0.25
+		local base_icon_alpha = 0.5
 		local ratio = math.min(1,amount/amount_max)
 		local ratio_color = interp_colors(Color("45B5FF"),Color("FF6138"),ratio) --blue to red
 		local suspicion_icon = panel:child("suspicion_icon")
@@ -122,10 +132,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local level_suspicion_panel = hud_panel:panel({
 			name = "level_suspicion_panel",
 			y = -126, --i wanted so badly for 128 to work
-			alpha = 1
+			alpha = Network:is_server() and 0.0001 or 1,
+			visible = not Network:is_server()
 		}) 
 		--yeah i can't seem to change the size of this thing from its parent's without breaking its center() and its children's set_center()
-		local icon_texture = "guis/textures/restoration/crimewar_skull" or "guis/textures/pd2/hud_stealth_alarm01" or "guis/textures/pd2/hud_stealth_eye"
+		local icon_texture = "guis/textures/pd2/cn_minighost" -- or "guis/textures/restoration/crimewar_skull" or "guis/textures/pd2/hud_stealth_alarm01" or "guis/textures/pd2/hud_stealth_eye"
 		local radial_texture = "guis/textures/pd2/hud_rip"
 		local icon_size = 32
 		local radial_size = 128
@@ -145,7 +156,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name = "suspicion_bg",
 			texture = radial_texture,
 			color = Color.black,
-			alpha = 0.2, --starts 0.5 when first update is called
+			alpha = 0.25,
 			layer = 1,
 			w = radial_size,
 			h = radial_size

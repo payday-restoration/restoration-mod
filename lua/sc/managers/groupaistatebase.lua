@@ -532,12 +532,49 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return gameover
 	end
 	
+
+	Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion", function(sender, message, data)
+		if sender == 1 then 
+			if message == "restoration_sync_suspicion" then 
+				local data_tbl = string.split(data,":")
+				if data_tbl and #data_tbl > 0 then 
+					if data_tbl[1] and data_tbl[2] then
+						local groupai_state = managers.groupai:state()
+						groupai_state._dummy_old_guard_detection_mul_raw = tonumber(data_tbl[1])
+						groupai_state._dummy_suspicion_threshold = tonumber(data_tbl[2])
+					end
+					if data_tbl[3] then 
+						groupai_state._dummy_is_whisper_mode = (data_tbl[3] == "true")
+					end
+				end
+			end
+		end
+	end)
+	
+	
 	function GroupAIStateBase:update(t, dt)
 		self._t = t
 
 		self:_upd_criminal_suspicion_progress()
-				
-		managers.hud:_upd_animate_suspicion(t,self._old_guard_detection_mul_raw,self._suspicion_threshold,managers.groupai:state():whisper_mode())
+		
+
+		local level_suspicion,suspicion_threshold,is_whisper_mode
+		if Network:is_server() then 
+		
+			level_suspicion = self._old_guard_detection_mul_raw
+			suspicion_threshold = self._suspicion_threshold
+			is_whisper_mode = managers.groupai:state():whisper_mode()
+		else
+			level_suspicion = self._dummy_old_guard_detection_mul_raw or 0
+			suspicion_threshold = self._dummy_suspicion_threshold or 0
+			is_whisper_mode = managers.groupai:state():whisper_mode() or self._dummy_is_whisper_mode or true
+		end
+		
+		managers.hud:_upd_animate_suspicion(t,level_suspicion,suspicion_threshold,is_whisper_mode)
+		
+		if self._last_detection_mul and self._last_detection_mul ~= self._old_guard_detection_mul_raw and Network:is_server() then 
+			LuaNetworking:SendToPeers("restoration_sync_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._suspicion_threshold).. ":" .. tostring(is_whisper_mode))
+		end
 				
 		if managers.groupai:state():whisper_mode() then
 			local warning_1_threshold = self._weapons_hot_threshold * 0.25
@@ -596,6 +633,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:_upd_debug_draw_attentions()
 		self:upd_team_AI_distance()
+		self._last_detection_mul = self._old_guard_detection_mul_raw --used purely for suspicion meter syncing
 	end
 	
 	function GroupAIStateBase:_upd_whisper_suspicion_mul_decay(t)

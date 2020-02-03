@@ -46,7 +46,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	local NUM_SUSPICION_EFFECT_GHOSTS = 3
 	
-	function HUDManager:_upd_animate_suspicion(t,amount,amount_max,is_whisper_mode)
+	function HUDManager:_upd_animate_suspicion(t,amount,amount_max,amount_interpolated,is_whisper_mode)
 		--got me thinking, do we want a noise indicator? one that plays when you perform an action that makes noise, whether by main hud item or by waypoint
 		if not (amount and amount_max) then
 			return
@@ -99,6 +99,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local ratio_color = interp_colors(Color("45B5FF"),Color("FF6138"),ratio) --blue to red
 		local suspicion_icon = panel:child("suspicion_icon")
 		suspicion_icon:set_color(ratio == 0 and Color(0.5,0.5,0.5) or ratio_color)
+		panel:child("suspicion_interp"):set_color(Color(amount_interpolated/amount_max,0,0))
 		suspicion_icon:set_alpha(ratio + base_icon_alpha)
 		panel:child("suspicion_circle"):set_color(Color(ratio,0,0)) --progress radial
 		if ratio >= 1 then 
@@ -142,13 +143,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local radial_size = 128
 		
 		self._level_suspicion_panel = level_suspicion_panel
-		local suspicion_circle = level_suspicion_panel:bitmap({ --circle outline progress
+		local suspicion_circle = level_suspicion_panel:bitmap({ --circle outline progress; set instantly
 			name = "suspicion_circle",
 			render_template = "VertexColorTexturedRadial",
 			texture = radial_texture, -- "guis/dlcs/coco/textures/pd2/hud_absorb_shield", --for soft blue outline instead
 			color = Color.black, --starts out invisible
-			alpha = 1,
+			alpha = 0.5,
 			layer = 3,
+			w = radial_size,
+			h = radial_size
+		})
+		local suspicion_interp = level_suspicion_panel:bitmap({ --circle outline progress.
+			name = "suspicion_interp",
+			render_template = "VertexColorTexturedRadial",
+			texture = radial_texture,
+			color = Color.black,
+			alpha = 1,
+			layer = 1,
 			w = radial_size,
 			h = radial_size
 		})
@@ -174,9 +185,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			h = icon_size
 		})
 		local center_x,center_y = level_suspicion_panel:center()
-		suspicion_icon:set_center(center_x,center_y)
 		suspicion_circle:set_center(center_x,center_y)
+		suspicion_interp:set_center(center_x,center_y)
 		suspicion_bg:set_center(center_x,center_y)
+		suspicion_icon:set_center(center_x,center_y)
 		for i=1,NUM_SUSPICION_EFFECT_GHOSTS,1 do 
 			local suspicion_ghost = level_suspicion_panel:bitmap({
 				name = "suspicion_ghost_" .. tostring(i),

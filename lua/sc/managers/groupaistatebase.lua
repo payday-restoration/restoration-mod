@@ -543,9 +543,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						groupai_state._dummy_old_guard_detection_mul_raw = tonumber(data_tbl[1])
 						groupai_state._dummy_suspicion_threshold = tonumber(data_tbl[2])
 					end
-					if data_tbl[3] then 
-						groupai_state._dummy_is_whisper_mode = (data_tbl[3] == "true")
-					end
 				end
 			end
 		end
@@ -557,26 +554,42 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:_upd_criminal_suspicion_progress()
 		
-
-		local level_suspicion,suspicion_threshold,is_whisper_mode
-		if Network:is_server() then 
+		local level_suspicion,suspicion_threshold
 		
+		local is_whisper_mode = managers.groupai:state():whisper_mode()
+		
+		if Network:is_server() then 
+			--use suspicion values
 			level_suspicion = self._old_guard_detection_mul_raw
 			suspicion_threshold = self._suspicion_threshold
-			is_whisper_mode = managers.groupai:state():whisper_mode()
 		else
+			--use suspicion values synced from host
 			level_suspicion = self._dummy_old_guard_detection_mul_raw or 0
 			suspicion_threshold = self._dummy_suspicion_threshold or 0
-			is_whisper_mode = managers.groupai:state():whisper_mode() or self._dummy_is_whisper_mode or true
 		end
 		
-		managers.hud:_upd_animate_suspicion(t,level_suspicion,suspicion_threshold,is_whisper_mode)
+		if self._suspicion_interpolated then
+			local delta_suspicion = level_suspicion - self._suspicion_interpolated
+			if delta_suspicion < 0.0001 then 
+				--has caught up to actual value (or close enough)
+				self._suspicion_interpolated = level_suspicion
+			else
+				local animate_duration = 2 --approximate time in seconds for interpolated value to catch up to actual value
+				self._suspicion_interpolated = math.min(level_suspicion,0.0005 + self._suspicion_interpolated + (delta_suspicion * (dt / animate_duration)))
+			end
+		else
+			--init value
+			self._suspicion_interpolated = level_suspicion
+		end
+		
+		
+		managers.hud:_upd_animate_suspicion(t,level_suspicion,suspicion_threshold,self._suspicion_interpolated,is_whisper_mode)
 		
 		if self._last_detection_mul and self._last_detection_mul ~= self._old_guard_detection_mul_raw and Network:is_server() then 
-			LuaNetworking:SendToPeers("restoration_sync_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._suspicion_threshold).. ":" .. tostring(is_whisper_mode))
+			LuaNetworking:SendToPeers("restoration_sync_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._suspicion_threshold))
 		end
 				
-		if managers.groupai:state():whisper_mode() then
+		if is_whisper_mode then
 			local warning_1_threshold = self._weapons_hot_threshold * 0.25
 			local warning_2_threshold = self._weapons_hot_threshold * 0.5
 			local warning_3_threshold = self._weapons_hot_threshold * 0.75

@@ -595,7 +595,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					local following_dis = following_direction * 120
 					local near_pos = data.objective.follow_unit:movement():m_pos() + following_dis
 					
-					local notbestcovernotfollowcoverchk = not best_cover or not CopLogicAttack._verify_follow_cover(data, best_cover[1], near_pos, threat_pos, 60, 120)
+					local notbestcovernotfollowcoverchk = not best_cover or CopLogicAttack._verify_follow_cover(data, best_cover[1], near_pos, threat_pos, 60, 120)
 					
 					--unit would take the heister's angle to both the pillar, and the unit, the unit would attempt to line up the pillar and the heister together, since they're following the pillar, they should frequently position themselves behind the pillar, which would keep them in cover, its hacky, but it would work
 					
@@ -663,7 +663,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						end
 					end
 					
-					local notbc_or_fc_or_notvc_chk = not best_cover or flank_cover or not CopLogicAttack._verify_cover(data, best_cover[1], threat_pos, min_dis, max_dis)
+					local notbc_or_fc_or_notvc_chk = not best_cover or flank_cover or CopLogicAttack._verify_cover(data, best_cover[1], threat_pos, min_dis, max_dis)
 					
 					if not my_data.processing_cover_path and not my_data.charge_path_search_id and notbc_or_fc_or_notvc_chk then
 						satisfied = false

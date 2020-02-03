@@ -85,7 +85,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				for index, weapon in pairs(player:inventory():available_selections()) do
 					local ammo_taken = weapon.unit:base():remove_ammo(1 - placement_cost)
 					ammo_ratio_taken = ammo_ratio_taken + (ammo_taken / weapon.unit:base():get_ammo_max())
-					Log("ammo_ratio_taken: " .. ammo_ratio_taken)
+--					Log("ammo_ratio_taken: " .. ammo_ratio_taken)
 				
 					managers.hud:set_ammo_amount(index, weapon.unit:base():ammo_info())
 					
@@ -108,15 +108,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					local current_amount = unit:base()._ammo_amount
 					unit:base():_set_visual_stage()
 					managers.network:session():send_to_peers_synched("sync_ammo_bag_ammo_taken", unit, current_amount - ammo_ratio_taken)
-					Log("amount: " .. tostring(unit:base()._ammo_amount))
+--					Log("amount: " .. tostring(unit:base()._ammo_amount))
 					
 				end
 			elseif item == 2 or item == 3 then 
 				local equipped_deployable = managers.blackmarket:equipped_deployable()
 				if equipped_deployable == "tripmines" then 
-					Log("Equipped tripmines")
+--					Log("Equipped tripmines")
 				elseif equipped_deployable == "sentry_gun" then 
-					Log("Equipped sentrygun")
+--					Log("Equipped sentrygun")
 				end
 			end
 		end

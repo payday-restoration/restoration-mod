@@ -533,15 +533,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 	
 
-	Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion", function(sender, message, data)
+	Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion_from_host", function(sender, message, data)
 		if sender == 1 then 
-			if message == "restoration_sync_suspicion" then 
+			if message == "restoration_sync_level_suspicion" then 
 				local data_tbl = string.split(data,":")
 				if data_tbl and #data_tbl > 0 then 
 					local groupai_state = managers.groupai:state()
-					if data_tbl[1] and data_tbl[2] then
+					if data_tbl[1] and data_tbl[2] and groupai_state then
 						groupai_state._dummy_old_guard_detection_mul_raw = tonumber(data_tbl[1])
-						groupai_state._dummy_suspicion_threshold = tonumber(data_tbl[2])
+						groupai_state._dummy_alarm_threshold = tonumber(data_tbl[2])
 					end
 				end
 			end
@@ -551,21 +551,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	function GroupAIStateBase:update(t, dt)
 		self._t = t
-
 		self:_upd_criminal_suspicion_progress()
-		
-		local level_suspicion,suspicion_threshold
 		
 		local is_whisper_mode = managers.groupai:state():whisper_mode()
 		
+		local level_suspicion,alarm_threshold
 		if Network:is_server() then 
 			--use suspicion values
 			level_suspicion = self._old_guard_detection_mul_raw
-			suspicion_threshold = self._suspicion_threshold
+			alarm_threshold = self._weapons_hot_threshold
 		else
 			--use suspicion values synced from host
 			level_suspicion = self._dummy_old_guard_detection_mul_raw or 0
-			suspicion_threshold = self._dummy_suspicion_threshold or 0
+			alarm_threshold = self._dummy_alarm_threshold or 0
 		end
 		
 		if self._suspicion_interpolated then
@@ -574,21 +572,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				--has caught up to actual value (or close enough)
 				self._suspicion_interpolated = level_suspicion
 			else
-				local animate_duration = 2 --approximate time in seconds for interpolated value to catch up to actual value
+				local animate_duration = 1 --approximate time in seconds for interpolated value to catch up to actual value
 				self._suspicion_interpolated = math.min(level_suspicion,0.0005 + self._suspicion_interpolated + (delta_suspicion * (dt / animate_duration)))
 			end
 		else
 			--init value
 			self._suspicion_interpolated = level_suspicion
 		end
-		
-		
-		managers.hud:_upd_animate_suspicion(t,level_suspicion,suspicion_threshold,self._suspicion_interpolated,is_whisper_mode)
-		
+		managers.hud:_upd_animate_level_suspicion(t,level_suspicion,alarm_threshold,self._suspicion_interpolated,is_whisper_mode)
 		if self._last_detection_mul and self._last_detection_mul ~= self._old_guard_detection_mul_raw and Network:is_server() then 
-			LuaNetworking:SendToPeers("restoration_sync_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._suspicion_threshold))
+			LuaNetworking:SendToPeers("restoration_sync_level_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._weapons_hot_threshold))
 		end
 				
+		
+		
 		if is_whisper_mode then
 			local warning_1_threshold = self._weapons_hot_threshold * 0.25
 			local warning_2_threshold = self._weapons_hot_threshold * 0.5

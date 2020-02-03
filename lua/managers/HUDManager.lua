@@ -43,10 +43,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		restoration._utilitymenu = RadialMouseMenu:new(utility_params)	
 	end
+
 	
 	local NUM_SUSPICION_EFFECT_GHOSTS = 3
 	
-	function HUDManager:_upd_animate_suspicion(t,amount,amount_max,amount_interpolated,is_whisper_mode)
+	function HUDManager:_upd_animate_level_suspicion(t,amount,amount_max,amount_interpolated,is_whisper_mode)
 		--got me thinking, do we want a noise indicator? one that plays when you perform an action that makes noise, whether by main hud item or by waypoint
 		if not (amount and amount_max) then
 			return
@@ -132,7 +133,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local hud_panel = hud.panel
 		local level_suspicion_panel = hud_panel:panel({
 			name = "level_suspicion_panel",
-			y = -126, --i wanted so badly for 128 to work
+			y = -140, --i wanted so badly for 128 to work
 			alpha = Network:is_server() and 0.0001 or 1,
 			visible = not Network:is_server()
 		}) 
@@ -159,7 +160,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture = radial_texture,
 			color = Color.black,
 			alpha = 1,
-			layer = 1,
+			layer = 2,
 			w = radial_size,
 			h = radial_size
 		})
@@ -178,12 +179,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture = icon_texture,
 			color = Color.white,
 			alpha = 0, --set dynamically
-			layer = 2,
+			layer = 4,
 			x = (level_suspicion_panel:w() - icon_size) / 2,
 			y = (level_suspicion_panel:h() - icon_size) / 2,
 			w = icon_size,
 			h = icon_size
 		})
+		if restoration:all_enabled("HUD/MainHUD", "HUD/Stealth") then 
+			if restoration.Options:GetValue("HUD/Extra/StealthOrigPos") then 
+				
+			else
+				level_suspicion_panel:move(0,20)  --this is not the right way to do it but by god i'm doing it
+	--			level_suspicion_panel:set_center(managers.hud._hud_suspicion._suspicion_panel:center())
+			end
+		end
 		local center_x,center_y = level_suspicion_panel:center()
 		suspicion_circle:set_center(center_x,center_y)
 		suspicion_interp:set_center(center_x,center_y)
@@ -204,6 +213,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		
 	end
+	
 	
 	function HUDManager:set_dodge_value(value)
 		--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua

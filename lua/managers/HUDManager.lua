@@ -103,7 +103,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		panel:child("suspicion_interp"):set_color(Color(amount_interpolated/amount_max,0,0))
 		suspicion_icon:set_alpha(ratio + base_icon_alpha)
 		panel:child("suspicion_circle"):set_color(Color(ratio,0,0)) --progress radial
-		if ratio >= 1 then 
+		local alert_on = amount > amount_max
+		
+		if alert_on then
+			--not limited to a maximum of 1
+			suspicion_icon:set_image("guis/textures/restoration/crimewar_skull_2")
 			local interval = 2
 			local time_scale = 1
 			local icon_size = 32
@@ -117,6 +121,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 					local new_w = icon_size * (progress + 1)
 					local new_h = icon_size * (progress + 1)
+					ghost:set_image("guis/textures/restoration/crimewar_skull_2")
 					ghost:set_w(new_w)
 					ghost:set_h(new_h)
 					ghost:set_color(ratio_color)
@@ -124,7 +129,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					ghost:set_center(panel:center())
 				end
 			end
-		elseif ratio > 0 then 
+		end
+		if ratio > 0 then 
 			panel:child("suspicion_bg"):set_alpha(0.5)
 		end
 	end

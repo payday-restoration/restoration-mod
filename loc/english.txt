@@ -23,7 +23,7 @@
 	"RestorationModTimeOfDayTitleID" : "New + Randomized Time-of-days",
 	"RestorationModTimeOfDayDescID" : "Enable or disable this feature. Clientside only.",
 	
-	"restoration_level_data_unknown" : "LOCATION/TIME UNKNOWN",
+	"restoration_level_data_unknown" : "TIME UNKNOWN, LOCATION UNKNOWN",
 	"RestorationModEnv_BanksTitleID" : "Branch Bank",
 	"RestorationModEnv_BanksDescID" : "Select an environment for Branch Bank. Clientside only.",
 	"RestorationModEnv_RVD1TitleID" : "Reservoir Dogs Day 1",

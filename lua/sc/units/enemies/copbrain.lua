@@ -279,13 +279,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					-- Nothing
 				end
 			else
-				managers.groupai:state():on_police_called("alarm_pager_bluff_failed")
 				self._unit:interaction():set_active(false, true)
+				
+				--Unconvincing pager response
+				managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
+				managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+				managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+				managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.25
+				managers.groupai:state():_delay_whisper_suspicion_mul_decay()					
 
 				if is_dead then
-					self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_alarm_1"), nil, true)
+					self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_fooled_4"), nil, true)
 				else
-					self._unit:sound():play(self:_get_radio_id("dsp_radio_alarm_1"), nil, true)
+					self._unit:sound():play(self:_get_radio_id("dsp_radio_fooled_4"), nil, true)
 				end
 			end
 
@@ -297,10 +303,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		elseif status == "interrupted" then
 			--Suspicion Increase from an interrupted pager
-			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
 			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.25
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.7
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.3
 			managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
 			
 			--Tutorial Heists will sound an alarm to prevent a soft lock
@@ -315,9 +321,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:sound():stop()
 
 			if is_dead then
-				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_alarm_1"), nil, true)
+				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
 			else
-				self._unit:sound():play(self:_get_radio_id("dsp_radio_alarm_1"), nil, true)
+				self._unit:sound():play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
 			end
 			
 			self._unit:interaction():set_tweak_data("corpse_dispose")
@@ -368,16 +374,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:interaction():set_active(false, true)
 			
 			if is_dead then
-				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_alarm_1"), nil, true)
+				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
 			else
-				self._unit:sound():play(self:_get_radio_id("dsp_radio_alarm_1"), nil, true)
+				self._unit:sound():play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
 			end			
 
 			--Suspicion Increase from a dropped pager
-			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
 			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.25
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.7
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.3
 			managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
 
 			--Tutorial Heists will sound an alarm to prevent a soft lock

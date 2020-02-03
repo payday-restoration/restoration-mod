@@ -65,10 +65,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			nr_of_calls = {2, 2},
 			bluff_success_chance = {
-				1
+				1,
+				1,
+				0
 			},
 			bluff_success_chance_w_skill = {
-				1
+				1,
+				1,
+				0
 			}
 		}		
 	end
@@ -94,10 +98,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			nr_of_calls = {2, 2},
 			bluff_success_chance = {
-				1
+				1,
+				0
 			},
 			bluff_success_chance_w_skill = {
-				1
+				1,
+				0
 			}
 		}			
 	end
@@ -194,10 +200,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			nr_of_calls = {2, 2},
 			bluff_success_chance = {
-				1
+				1,
+				1,
+				1,
+				1,
+				0
 			},
 			bluff_success_chance_w_skill = {
-				1
+				1,
+				1,
+				1,
+				1,
+				0
 			}
 		}
 		self.max_nr_following_hostages = 1

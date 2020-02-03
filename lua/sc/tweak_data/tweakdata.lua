@@ -220,11 +220,11 @@
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	if difficulty_index == 8 then
-		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
+		tweak_data.interaction.corpse_alarm_pager.timer = 15
 	elseif difficulty_index == 7 then
-		tweak_data.interaction.corpse_alarm_pager.timer = 10
+		tweak_data.interaction.corpse_alarm_pager.timer = 12.5
 	else
-		tweak_data.interaction.corpse_alarm_pager.timer = 8
+		tweak_data.interaction.corpse_alarm_pager.timer = 10
 	end	
 	
 	tweak_data.narrative.jobs["chill_combat"].contact = "events"	

@@ -578,7 +578,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local satisfied = true
 		local my_pos = data.m_pos --my position
 		
-		if data.attention_obj and data.attention_obj.nav_tracker and AIAttentionObject.REACT_COMBAT >= data.attention_obj.reaction then
+		if data.attention_obj and data.attention_obj.nav_tracker and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction then
 			local find_new = not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos and not my_data.surprised
 			local enemyseeninlast2secs = data.attention_obj and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < 2
 			

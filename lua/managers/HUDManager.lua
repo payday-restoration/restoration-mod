@@ -103,7 +103,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		panel:child("suspicion_interp"):set_color(Color(amount_interpolated/amount_max,0,0))
 		suspicion_icon:set_alpha(ratio + base_icon_alpha)
 		panel:child("suspicion_circle"):set_color(Color(ratio,0,0)) --progress radial
-		local alert_on = amount > amount_max
+		local alert_on = amount >= amount_max
 		
 		if alert_on then
 			--not limited to a maximum of 1

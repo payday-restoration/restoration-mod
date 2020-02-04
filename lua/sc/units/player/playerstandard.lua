@@ -107,7 +107,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if alive(ai_unit) then 
 						ai_unit:brain():on_long_dis_interacted(0, ai_unit, true)
 						skip_intimidate_action = true
-						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", ai_unit, "cmd_stop")
 					end
 				end
 			

@@ -113,7 +113,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 --						managers.network:session():send_to_host("place_ammo_bag", pos, rot, ammo_upgrade_lvl, bullet_storm_level)
 					--use networking instead
 					
-					LuaNetworking:SendToPeer(1,"restoration_drop_ammo",concat(pos.x,pos.y,pos.z,rot:x(),rot:y(),rot:z(),ammo_ratio_taken))
+					LuaNetworking:SendToPeer(1,"restoration_drop_ammo",concat(":",pos.x,pos.y,pos.z,rot:x(),rot:y(),rot:z(),ammo_ratio_taken))
 				else
 				
 					local unit = AmmoBagBase.spawn(pos, rot, ammo_upgrade_lvl, managers.network:session():local_peer():id(), bullet_storm_level)

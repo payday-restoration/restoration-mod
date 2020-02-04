@@ -556,7 +556,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					local placement_cost = 0.3
 					local pos = Vector3(tonumber(data_tbl[1]) or 0,tonumber(data_tbl[2]) or 0, tonumber(data_tbl[3]) or 0)
 					local rot = Rotation(tonumber(data_tbl[4]) or 0,tonumber(data_tbl[5]) or 0, tonumber(data_tbl[6]) or 0)
-					local ammo_ratio_taken = tonumber(data.tbl[7]) or 1
+					local ammo_ratio_taken = tonumber(data_tbl[7]) or 1
 					if ammo_ratio_taken < 1 then 
 						local unit = AmmoBagBase.spawn(pos, rot, upgrade_level, sender or managers.network:session():local_peer():id(), bullet_storm_level)
 						unit:base()._ammo_amount = math.floor(math.min(ammo_ratio_taken,placement_cost) * (1 - loss_rate) * 100) / 100

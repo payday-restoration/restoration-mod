@@ -59,6 +59,104 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end	
 	
+	local orig_check_interact = PlayerStandard._check_action_interact
+	function PlayerStandard:_check_action_interact(t, input,...)
+		if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) then 
+			return orig_check_interact(self,t,input,...)
+		end
+		local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
+		local new_action, timer, interact_object = nil
+
+		if input.btn_interact_press then
+			if _G.IS_VR then
+				self._interact_hand = input.btn_interact_left_press and PlayerHand.LEFT or PlayerHand.RIGHT
+			end
+
+			if not self:_action_interact_forbidden() then
+				new_action, timer, interact_object = self._interaction:interact(self._unit, input.data, self._interact_hand)
+
+				if new_action then
+					self:_play_interact_redirect(t, input)
+				end
+
+				if timer then
+					new_action = true
+
+					self._ext_camera:camera_unit():base():set_limits(80, 50)
+					self:_start_action_interact(t, input, timer, interact_object)
+				end
+
+				if not new_action then
+					self._start_intimidate = true
+					self._start_intimidate_t = t
+				end
+			end
+		end
+
+		local secondary_delay = tweak_data.team_ai.stop_action.delay
+		local force_secondary_intimidate = false
+		local HOLD_TO_STOP_ALL_AI_DURATION = 1.5 --seconds to hold down to direct all ai instead of just the one
+		local skip_intimidate_action = false 
+		if self._start_shout_all_ai_t and self._start_shout_all_ai_t + HOLD_TO_STOP_ALL_AI_DURATION <= t then
+			self._start_shout_all_ai_t = nil
+			
+			--tell all ai to stop
+			for i, char_data in pairs(managers.criminals._characters) do
+				if char_data.data.ai then
+					local ai_unit = char_data.unit
+					if alive(ai_unit) then 
+						ai_unit:brain():on_long_dis_interacted(0, ai_unit, true)
+						skip_intimidate_action = true
+						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", ai_unit, "cmd_stop")
+					end
+				end
+			
+			end
+			if skip_intimidate_action then 
+				self:say_line("f48x_any", false)
+				--play a voiceline if any ai were actually stopped
+			end
+		elseif self._controller:get_input_released("interact_secondary") then 
+			--if release before the full duration required to call all ai then do normal single-target "stop ai" action
+			self._start_shout_all_ai_t = nil
+			force_secondary_intimidate = true
+		elseif input.btn_interact_secondary_press then 
+			--if pressing for the first time (not holding), start timer, do not do normal single-target "stop ai" until key release
+			self._start_shout_all_ai_t = t
+			skip_intimidate_action = true
+		end
+	
+		if input.btn_interact_release then
+			local released = true
+
+			if _G.IS_VR then
+				local release_hand = input.btn_interact_left_release and PlayerHand.LEFT or PlayerHand.RIGHT
+				released = release_hand == self._interact_hand
+			end
+
+			if released then
+				if self._start_intimidate and not self:_action_interact_forbidden() then
+					if t < self._start_intimidate_t + secondary_delay then
+						self:_start_action_intimidate(t)
+
+						self._start_intimidate = false
+					end
+				else
+					self:_interupt_action_interact()
+				end
+			end
+		end
+		
+		if (self._start_intimidate or force_secondary_intimidate) and not (self:_action_interact_forbidden() or skip_intimidate_action) and (not keyboard and t > self._start_intimidate_t + secondary_delay or force_secondary_intimidate) then
+			--don't do normal shout action if doing the "shout at ai" action with separate keybind
+			self:_start_action_intimidate(t, true)
+
+			self._start_intimidate = false
+		end
+
+		return new_action
+	end
+	
 	function PlayerStandard:_start_action_intimidate(t, secondary)
 		if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 			local skip_alert = managers.groupai:state():whisper_mode()

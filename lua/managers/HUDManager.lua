@@ -1,9 +1,9 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	local _setup_player_info_hud_pd2_original = HUDManager._setup_player_info_hud_pd2
 
-	function HUDManager:_setup_player_info_hud_pd2()
+	function HUDManager:_setup_player_info_hud_pd2(...)
 		self:_create_level_suspicion_hud(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
-		_setup_player_info_hud_pd2_original(self)
+		_setup_player_info_hud_pd2_original(self,...)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
 		self._bloody_screen = HUDBloodyScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
 			--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel

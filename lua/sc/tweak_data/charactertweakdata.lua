@@ -2838,7 +2838,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.russian.speech_prefix = "rb2"
 		self.russian.weapon_voice = "1"
 		self.russian.access = "teamAI1"
-		self.russian.dodge = presets.dodge.athletic
+		self.russian.dodge = nil
 		self.russian.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2864,7 +2864,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.german.speech_prefix = "rb2"
 		self.german.weapon_voice = "2"
 		self.german.access = "teamAI1"
-		self.german.dodge = presets.dodge.athletic
+		self.german.dodge = nil
 		self.german.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2890,7 +2890,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spanish.speech_prefix = "rb2"
 		self.spanish.weapon_voice = "3"
 		self.spanish.access = "teamAI1"
-		self.spanish.dodge = presets.dodge.athletic
+		self.spanish.dodge = nil
 		self.spanish.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2916,7 +2916,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.american.speech_prefix = "rb2"
 		self.american.weapon_voice = "3"
 		self.american.access = "teamAI1"
-		self.american.dodge = presets.dodge.athletic
+		self.american.dodge = nil
 		self.american.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2941,7 +2941,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jowi.speech_prefix = "rb2"
 		self.jowi.weapon_voice = "3"
 		self.jowi.access = "teamAI1"
-		self.jowi.dodge = presets.dodge.athletic
+		self.jowi.dodge = nil
 		self.jowi.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2966,7 +2966,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.old_hoxton.speech_prefix = "rb2"
 		self.old_hoxton.weapon_voice = "3"
 		self.old_hoxton.access = "teamAI1"
-		self.old_hoxton.dodge = presets.dodge.athletic
+		self.old_hoxton.dodge = nil
 		self.old_hoxton.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2991,7 +2991,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.female_1.speech_prefix = "rb7"
 		self.female_1.weapon_voice = "3"
 		self.female_1.access = "teamAI1"
-		self.female_1.dodge = presets.dodge.athletic
+		self.female_1.dodge = nil
 		self.female_1.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3016,7 +3016,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dragan.speech_prefix = "rb8"
 		self.dragan.weapon_voice = "3"
 		self.dragan.access = "teamAI1"
-		self.dragan.dodge = presets.dodge.athletic
+		self.dragan.dodge = nil
 		self.dragan.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3041,7 +3041,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jacket.speech_prefix = "rb9"
 		self.jacket.weapon_voice = "3"
 		self.jacket.access = "teamAI1"
-		self.jacket.dodge = presets.dodge.athletic
+		self.jacket.dodge = nil
 		self.jacket.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3062,7 +3062,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.bonnie.detection = presets.detection.gang_member
 		self.bonnie.move_speed = presets.move_speed.gang_member
-		self.bonnie.dodge = presets.dodge.athletic
+		self.bonnie.dodge = nil
 		self.bonnie.crouch_move = false
 		self.bonnie.speech_prefix = "rb10"
 		self.bonnie.weapon_voice = "3"
@@ -3091,6 +3091,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sokol.speech_prefix = "rb11"
 		self.sokol.weapon_voice = "3"
 		self.sokol.access = "teamAI1"
+		self.sokol.dodge = nil
 		self.sokol.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3115,6 +3116,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dragon.speech_prefix = "rb12"
 		self.dragon.weapon_voice = "3"
 		self.dragon.access = "teamAI1"
+		self.dragon.dodge = nil
 		self.dragon.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3139,6 +3141,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bodhi.speech_prefix = "rb13"
 		self.bodhi.weapon_voice = "3"
 		self.bodhi.access = "teamAI1"
+		self.bodhi.dodge = nil
 		self.bodhi.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3163,6 +3166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jimmy.speech_prefix = "rb14"
 		self.jimmy.weapon_voice = "3"
 		self.jimmy.access = "teamAI1"
+		self.jimmy.dodge = nil
 		self.jimmy.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3187,6 +3191,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sydney.speech_prefix = "rb15"
 		self.sydney.weapon_voice = "3"
 		self.sydney.access = "teamAI1"
+		self.sydney.dodge = nil
 		self.sydney.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3211,6 +3216,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wild.speech_prefix = "rb16"
 		self.wild.weapon_voice = "3"
 		self.wild.access = "teamAI1"
+		self.wild.dodge = nil
 		self.wild.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3235,6 +3241,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chico.speech_prefix = "rb17"
 		self.chico.weapon_voice = "3"
 		self.chico.access = "teamAI1"
+		self.chico.dodge = nil
 		self.chico.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3259,6 +3266,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.max.speech_prefix = "rb18"
 		self.max.weapon_voice = "3"
 		self.max.access = "teamAI1"
+		self.max.dodge = nil
 		self.max.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3284,7 +3292,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.myh.speech_prefix = "rb2"
 		self.myh.weapon_voice = "1"
 		self.myh.access = "teamAI1"
-		self.myh.dodge = presets.dodge.athletic
+		self.myh.dodge = nil
 		self.myh.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3311,6 +3319,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ecp_female.speech_prefix = "rb21"
 		self.ecp_female.weapon_voice = "3"
 		self.ecp_female.access = "teamAI1"
+		self.ecp_female.dodge = nil
 		self.ecp_female.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3334,6 +3343,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ecp_male.speech_prefix = "rb20"
 		self.ecp_male.weapon_voice = "3"
 		self.ecp_male.access = "teamAI1"
+		self.ecp_male.dodge = nil
 		self.ecp_male.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3360,6 +3370,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.joy.speech_prefix = "rb19"
 		self.joy.weapon_voice = "3"
 		self.joy.access = "teamAI1"
+		self.joy.dodge = nil
 		self.joy.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -11991,7 +12002,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 25
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.6
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
 		self.old_hoxton_mission.HEALTH_INIT = 25
 		self.spa_vip.HEALTH_INIT = 25
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -12184,7 +12195,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 50
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
 		self.old_hoxton_mission.HEALTH_INIT = 50
 		self.spa_vip.HEALTH_INIT = 50
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
@@ -12376,7 +12387,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 75
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 		self.old_hoxton_mission.HEALTH_INIT = 75
 		self.spa_vip.HEALTH_INIT = 75
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
@@ -12567,7 +12578,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 100
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 		self.old_hoxton_mission.HEALTH_INIT = 100
 		self.spa_vip.HEALTH_INIT = 100
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
@@ -12768,7 +12779,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 125
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.old_hoxton_mission.HEALTH_INIT = 125
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -12969,7 +12980,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 		self.autumn.damage.bullet_dodge_chance = 20	
 		self.presets.gang_member_damage.HEALTH_INIT = 125
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.old_hoxton_mission.HEALTH_INIT = 125
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -13046,7 +13057,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.autumn.damage.bullet_dodge_chance = 25
 		self.presets.gang_member_damage.HEALTH_INIT = 150
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.old_hoxton_mission.HEALTH_INIT = 150
 		self.spa_vip.HEALTH_INIT = 150
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
@@ -13217,7 +13228,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self:_multiply_all_speeds(1.1, 1.15)
 		self.presets.gang_member_damage.HEALTH_INIT = 150
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 		self.old_hoxton_mission.HEALTH_INIT = 150
 		self.spa_vip.HEALTH_INIT = 150
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150

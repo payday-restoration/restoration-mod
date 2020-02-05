@@ -910,6 +910,32 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.frag_com.no_cheat_count = true
 	self.projectiles.fir_com.no_cheat_count = true
 	self.projectiles.dada_com.no_cheat_count = true
+
+	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
+	--HE
+	self.projectiles.frag.animation = "throw_grenade_com"							--throw_grenade (Comments are original lines for ref sake)
+	self.projectiles.frag.anim_global_param = "projectile_frag_com"					--projectile_frag
+	--HEF OVK
+	--self.projectiles.frag_com.animation = "throw_grenade_com"						--throw_grenade_com
+	--self.projectiles.frag_com.anim_global_param = "projectile_frag_com"			--projectile_frag_com
+	--Matyroshka
+	--self.projectiles.dada_com.animation = "throw_dada"							--throw_dada
+	--self.projectiles.dada_com.anim_global_param = "projectile_dada"				--projectile_dada 
+	--Dynamite
+	--self.projectiles.dynamite.animation = "throw_dynamite"						--throw_dynamite
+	--self.projectiles.dynamite.anim_global_param = "projectile_dynamite"			--projectile_dynamite
+	--Molotov
+	self.projectiles.molotov.animation = "throw_dynamite"							--throw_molotov
+	self.projectiles.molotov.anim_global_param = "projectile_dynamite"				--projectile_molotov
+	--Incendiary  
+	self.projectiles.fir_com.animation = "throw_grenade_com"						--throw_concussion
+	self.projectiles.fir_com.anim_global_param = "projectile_frag_com"				--projectile_frag  
+	--Concussion  
+	self.projectiles.concussion.animation = "throw_grenade_com"						--throw_concussion
+	self.projectiles.concussion.anim_global_param = "projectile_frag_com"			--projectile_frag   
+	--Sicaro Smoke 
+	--self.projectiles.smoke_screen_grenade.animation = "throw_grenade_com"					--throw_grenade_com
+	--self.projectiles.smoke_screen_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

@@ -736,15 +736,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_remove_group_member(e_data.group, u_key, dead)
 		end
 		
-		--[[
 		if dead and managers.groupai:state():whisper_mode() then
 			self._next_whisper_susp_mul_t = self._t + 5
-			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.05
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.01
 			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
 			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
-			self._guard_delay_deduction = self._guard_delay_deduction + 0.05
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.01
 		end		
-		]]--
 
 		if e_data.assigned_area and dead then
 			local spawn_point = unit:unit_data().mission_element
@@ -795,5 +793,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+	
+	function GroupAIStateBase:on_civilian_unregistered(unit)
+		local u_key = unit:key()
+
+		self:_clear_character_criminal_suspicion_data(u_key)
+
+		local u_data = managers.enemy:all_civilians()[u_key]
+
+		if u_data and u_data.hostage_following then
+			self:on_hostage_follow(u_data.hostage_following, unit, false)
+		end
+		
+		local dead = unit:character_damage():dead()
+		
+		if dead and managers.groupai:state():whisper_mode() then
+			self._next_whisper_susp_mul_t = self._t + 5
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.01
+			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
+			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.01
+		end		
+		
+	end	
 	
 end

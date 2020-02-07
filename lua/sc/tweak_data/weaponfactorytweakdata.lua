@@ -46877,7 +46877,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_shot_beck_s_wrist.stats = {
 				value = 4,
 				concealment = 1
-			}						
+			}
+			self.parts.wpn_fps_ass_m4_m_wick.stats = {
+				value = 2,
+				concealment = 1,
+				reload = 2,
+				extra_ammo = -10
+			}									
 			self.parts.wpn_fps_shot_beck_ext.stats = {
 				value = 7,
 				concealment = -1,
@@ -46895,7 +46901,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				value = 1,
 				spread = 2,
 				recoil = -1,
-				concealment = -3,
+				concealment = -3
 			}
 			self.parts.wpn_fps_ass_s552_o_custom.stats = {
 				value = 0

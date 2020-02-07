@@ -267,7 +267,7 @@
 	"heist_crystal_name" : "Slaves of Fear",
 	"heist_gold_name" : "Remains of Nothing",
 	"heist_titanium_name" : "Turf War",
-	"heist_steel_name" : "Dead Reckoning",
+	"heist_airport_name" : "Dead Reckoning",
 	"heist_platinum_name" : "Surface Tension",
 	"heist_cursed_name" : "Green Harvest",
 	"heist_holly_name" : "Blockbuster Night",

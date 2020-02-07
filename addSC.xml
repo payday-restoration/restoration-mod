@@ -1001,7 +1001,9 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_face_df" force="false"/>	
 	
+
 	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
 	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" load="true" />		

@@ -275,6 +275,31 @@ end
 
 
 if not tweak_data then return end
+if restoration.Options:GetValue("HUD/UI/PeerColors") then
+--Alpha Peer Colors
+	local orange = Vector3( 224, 109, 81 )/255 
+	local green = Vector3( 102, 204, 51 )/255 
+	local brown = Vector3( 98, 70, 43 )/255 
+	local blue = Vector3( 104, 133, 161 )/255 
+	local team_ai = Vector3( 0.2, 0.8, 1 ) --this has multiple different values in the code, but they're all a variety of green or yellow.  add those as a multichoice later on, but not important since they clash.
+
+	tweak_data.peer_vector_colors = { blue, orange, green, brown, team_ai }
+    tweak_data.peer_colors = { "mrblue", "mrorange", "mrgreen", "mrbrown", "mrai" } 
+	
+	tweak_data.chat_colors = {     
+			Color( tweak_data.peer_vector_colors[1]:unpack() ),
+			Color( tweak_data.peer_vector_colors[2]:unpack() ),
+			Color( tweak_data.peer_vector_colors[3]:unpack() ),
+			Color( tweak_data.peer_vector_colors[4]:unpack() ),
+			Color( tweak_data.peer_vector_colors[5]:unpack() )
+    }
+	tweak_data.preplanning_peer_colors = {     
+			Color( tweak_data.peer_vector_colors[1]:unpack() ),
+			Color( tweak_data.peer_vector_colors[2]:unpack() ),
+			Color( tweak_data.peer_vector_colors[3]:unpack() ),
+			Color( tweak_data.peer_vector_colors[4]:unpack() )
+    }
+end
 --Jackal codex entry
 table.insert (tweak_data.gui.crime_net.codex,
 

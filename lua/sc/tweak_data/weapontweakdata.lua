@@ -10063,8 +10063,87 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.ots_14_4a.armor_piercing_chance = nil		
 			self.ots_14_4a.panic_suppression_chance = 0.0
-		end		
+		end
 
+		if self.negev then --Alcat's Negev
+			self.negev.categories = {
+				"lmg",
+				"smg"
+			}
+			self.negev.desc_id = "bm_menu_sc_negev_desc"
+			self.negev.CLIP_AMMO_MAX = 200
+			self.negev.AMMO_MAX = 200
+			self.negev.AMMO_PICKUP = self:_pickup_chance(200, 2)
+			self.negev.spread.standing = 3
+			self.negev.spread.crouching = 2
+			self.negev.spread.steelsight = 1
+			self.negev.spread.moving_standing = 4
+			self.negev.spread.moving_crouching = 3
+			self.negev.spread.moving_steelsight = 2
+			self.negev.spread.bipod = 0.5
+			self.negev.kick.standing = self.new_m4.kick.standing
+			self.negev.kick.crouching = self.new_m4.kick.standing
+			self.negev.kick.steelsight = self.new_m4.kick.standing
+			self.negev.stats = {
+				damage = 30,
+				spread = 14,
+				recoil = 20,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 14,
+				suppression = 10,
+				alert_size = 10,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 20
+			}
+			self.negev.panic_suppression_chance = 0.05
+		end
+
+		if self.sgs then --Gambyt's Guerilla 308.
+			self.sgs.upgrade_blocks = nil
+			self.sgs.has_description = true
+			self.sgs.desc_id = "bm_ap_weapon_sc_desc"
+			self.sgs.CLIP_AMMO_MAX = 20
+			self.sgs.AMMO_MAX = 40
+			self.sgs.AMMO_PICKUP = self:_pickup_chance(40, 2)
+			self.sgs.FIRE_MODE = "single"
+			self.sgs.fire_mode_data = {}
+			self.sgs.fire_mode_data.fire_rate = 0.75
+			self.sgs.single = {}
+			self.sgs.single.fire_rate = 0.75
+			self.sgs.spread.standing = 3
+			self.sgs.spread.crouching = 2
+			self.sgs.spread.steelsight = 1
+			self.sgs.spread.moving_standing = 4
+			self.sgs.spread.moving_crouching = 3
+			self.sgs.spread.moving_steelsight = 2
+			self.sgs.kick.standing = self.huntsman.kick.standing
+			self.sgs.kick.crouching = self.huntsman.kick.standing
+			self.sgs.kick.steelsight = self.huntsman.kick.standing
+			self.sgs.can_shoot_through_enemy = true
+			self.sgs.can_shoot_through_shield = true
+			self.sgs.can_shoot_through_wall = true
+			self.sgs.stats = {
+				damage = 150,
+				spread = 18,
+				recoil = 17,
+				spread_moving = 24,
+				zoom = 1,
+				concealment = 10,
+				suppression = 4,
+				alert_size = 4,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 20
+			}
+			self.sgs.armor_piercing_chance = 1
+			self.sgs.stats_modifiers = {damage = 1}
+			self.sgs.panic_suppression_chance = 0.0
+		end		
+		
 		if self.mg4 then --Pawcio's HK MG4 
 			self.mg4.categories = {
 				"lmg",

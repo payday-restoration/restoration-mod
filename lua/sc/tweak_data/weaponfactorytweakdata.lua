@@ -45423,7 +45423,54 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					spread_moving = -2,
 					concealment = -2
 				}
-			end			
+			end
+
+		if self.wpn_fps_lmg_negev then --Alcat's Negev
+				self.parts.wpn_fps_lmg_negev_s_folded.stats = { 
+					value = 5,
+					spread = -1,
+					concealment = 2
+				}
+				self.parts.wpn_fps_lmg_negev_fg_stick.stats = { 
+					value = 5,
+					recoil = 1,
+					concealment = -2
+				}
+				self.parts.wpn_fps_lmg_negev_b_long.stats = { 
+					value = 5,
+					spread = 2,
+					concealment = -2
+				}								
+			end
+
+		if self.wpn_fps_snp_sgs then --Gambyt's Guerilla 308.
+				self.parts.wpn_fps_snp_sgs_s_sniper.stats = { 
+					value = 2,
+					spread = 1,
+					concealment = -2
+				}
+				self.parts.wpn_fps_snp_sgs_g_black.stats = { 
+					value = 2,
+					spread = 1
+				}
+				self.parts.wpn_fps_snp_sgs_b_long.stats = { 
+					value = 2,
+					spread = 1,
+					concealment = -2
+				}
+				self.parts.wpn_fps_snp_sgs_b_sil.stats = { 
+					value = 1,
+					suppression = 13,
+					alert_size = 13,
+					spread = -1,
+					recoil = 1
+				}								
+				self.parts.wpn_fps_snp_sgs_fg_rail.stats = { 
+					value = 2,
+					concealment = 1
+				}								
+			end						
+			
 			
 			if self.wpn_fps_snp_wargoddess then -- Mira's MK14 EBR
 				table.list_append(self.wpn_fps_snp_wargoddess.uses_parts, {

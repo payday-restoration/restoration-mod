@@ -51,6 +51,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+
+	function UnitNetworkHandler:action_aim_state(unit, state)
+		if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not self._verify_character(unit) then
+			return
+		end
+
+		if state then
+			local shoot_action = {
+				block_type = "action",
+				body_part = 3,
+				type = "shoot"
+			}
+
+			unit:movement():action_request(shoot_action)
+		else
+			unit:movement():sync_action_aim_end()
+		end
+	end
 	-- function UnitNetworkHandler:place_grenade_crate(pos, rot, rpc)
 	-- 	local peer = self._verify_sender(rpc)
 	

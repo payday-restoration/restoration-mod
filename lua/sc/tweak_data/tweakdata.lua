@@ -248,7 +248,7 @@
 	tweak_data.team_ai.stop_action.delay = 0.8
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
-	tweak_data.medic.cooldown = 60
+	tweak_data.medic.cooldown = 90
 	tweak_data.medic.radius = 400
 	tweak_data.medic.lpf_radius = 800
 	
@@ -263,7 +263,6 @@
 	end			
 	
 	tweak_data.medic.disabled_units = {
-		"phalanx_minion",
 		"phalanx_vip",
 		"spring",
 		"taser_summers",
@@ -273,20 +272,8 @@
 		"autumn",
 		"medic",
 		"sniper",
-		"tank_titan",
 		"tank_medic",
-		"omnia_lpf",
-		"swat_titan",
-		"city_swat_titan",
-		"city_swat_titan_assault",
-		"skeleton_swat_titan",
-		"tank_titan_assault",
-		"spooc_titan",
-		"phalanx_minion_assault",
-		"heavy_swat_sniper",
-		"fbi_vet",
-		"boom_titan",
-		"taser_titan"
+		"omnia_lpf"
 	}
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000

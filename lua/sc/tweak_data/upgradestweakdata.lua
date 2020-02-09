@@ -1573,26 +1573,36 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Fat benis :DDDDD
 	--biker?
-	self.wild_trigger_time = 10
-	self.wild_max_triggers_per_time = 5	
+	self.wild_trigger_time = 2
+	self.wild_max_triggers_per_time = 1	
 	self.values.player.wild_health_amount = {0.1}
-	self.values.player.wild_armor_amount = {0.1}
+	self.values.player.wild_armor_amount = {0.0}
 	self.values.player.less_health_wild_armor = {{
-		0.1,
-		0.1
+		0.0,
+		0.0
 	}}
 	self.values.player.less_health_wild_cooldown = {{
-		0.1,
-		0.1
+		0.0,
+		0.0
 	}}
 	self.values.player.less_armor_wild_health = {{
-		0.1,
-		0.1
+		0.25,
+		0.3
 	}}
 	self.values.player.less_armor_wild_cooldown = {{
-		0.1,
-		0.1
-	}}	
+		0.25,
+		0.5
+	}}
+
+	self.values.player.melee_kill_armor_regen = {
+		1.5,
+		2
+	}
+
+	self.values.player.biker_armor_regen = {
+		{1.0, 3.0, 0.0},
+		{2.5, 3.0, 3.0}
+	}
 	
 	--Tag Team--
 	self.values.player.tag_team_base = {
@@ -2778,6 +2788,24 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "resistance_damage_health_ratio_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_biker_armor_regen_1 = {
+		name_id = "menu_player_biker_armor_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_armor_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_biker_armor_regen_2 = {
+		name_id = "menu_player_biker_armor_regen",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "biker_armor_regen",
 			category = "player"
 		}
 	}

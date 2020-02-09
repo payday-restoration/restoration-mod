@@ -1142,7 +1142,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## health and ##1## armor. This cannot occur more than ##5## times every ##10## seconds.",				
+		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## life point. This cannot occur more than once every ##2## seconds.",
+		["menu_deck16_3_desc_sc"] = "You regenerate ##10## armor every ##3## seconds.",
+		["menu_deck16_5_desc_sc"] = "Every ##25%## armor missing reduces cooldown to kill regen by ##0.5## seconds.",
+		["menu_deck16_7_desc_sc"] = "You regenerate an additional ##10## armor every ##3## seconds. Killing an enemy with a melee weapon instantly triggers this effect.",
+		["menu_deck16_9_desc_sc"] = "Every ##25%## armor missing increases the amount of health gained from kills by ##3##.",
 		
 		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills by up to ##10%## of your dodge every second.",	

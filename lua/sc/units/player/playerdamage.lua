@@ -61,8 +61,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
+
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
 		self._keep_health_on_revive = false
+
+		self._biker_armor_regen_t = 0.0
 
 		local function revive_player()
 			self:revive(true)
@@ -738,6 +741,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5)) --Update UI element once per frame.
 			self._dodge_meter_prev = self._dodge_meter
 		end
+
+		--Biker Armor Regen
+		if managers.player:has_category_upgrade("player", "biker_armor_regen") then
+			self:tick_biker_armor_regen(dt)
+		end
 	end)
 
 	Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)
@@ -806,4 +814,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end)
+
+	Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
+		if self._biker_armor_regen_t == 0.0 then
+			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+		end
+	end)
+
+	function PlayerDamage:tick_biker_armor_regen(amount)
+		if self:get_real_armor() == self:_max_armor() then
+			self._biker_armor_regen_t = 0.0
+			return
+		end
+
+		self._biker_armor_regen_t = self._biker_armor_regen_t - amount
+		if self._biker_armor_regen_t <= 0.0 then
+			self:restore_armor(managers.player:upgrade_value("player", "biker_armor_regen")[1])
+			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+		end
+	end
 end

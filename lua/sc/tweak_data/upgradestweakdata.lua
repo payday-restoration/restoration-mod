@@ -1587,11 +1587,11 @@ function UpgradesTweakData:_init_pd2_values()
 	}}
 	self.values.player.less_armor_wild_health = {{
 		0.25,
-		0.3
+		0.5
 	}}
 	self.values.player.less_armor_wild_cooldown = {{
 		0.25,
-		0.5
+		0.1
 	}}
 
 	self.values.player.melee_kill_armor_regen = {

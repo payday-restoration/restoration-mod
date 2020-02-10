@@ -1,6 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	function PlayerBleedOut:enter(state_data, enter_data)
+		self._unit:camera():camera_unit():base():set_target_tilt(35)
 		PlayerBleedOut.super.enter(self, state_data, enter_data)
 
 		self._revive_SO_data = {unit = self._unit}
@@ -24,7 +25,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_start_action_unequip_weapon(managers.player:player_timer():time(), {selection_wanted = 1})
 			self._unit:inventory():unit_by_selection(1):base():on_reload()
 		end
-
+			--self._unit:camera():play_shaker("player_bleedout_land")
 		local effect_id_world = "world_downed_Peer" .. tostring(managers.network:session():local_peer():id())
 
 		managers.time_speed:play_effect(effect_id_world, tweak_data.timespeed.downed)
@@ -206,5 +207,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local prime_target = self:_get_interaction_target(char_table, my_head_pos, cam_fwd)
 		return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only)
 	end
-
+function PlayerBleedOut:update(t, dt)
+    PlayerBleedOut.super.update(self, t, dt)
+end
 end

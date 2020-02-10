@@ -862,7 +862,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if not Is_Client and not data.internal_data.weapon_laser_on then
 						data.unit:inventory():equipped_unit():base():set_laser_enabled(true)
 						data.internal_data.weapon_laser_on = true
-						managers.enemy:_destroy_unit_gfx_lod_data(data.key)
+						--managers.enemy:_destroy_unit_gfx_lod_data(data.key)
 						managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_on)
 					end
 					
@@ -903,7 +903,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							data.unit:inventory():equipped_unit():base():set_laser_enabled(false)
 						end
 						data.internal_data.weapon_laser_on = false
-						managers.enemy:_create_unit_gfx_lod_data(data.unit)
+						--managers.enemy:_create_unit_gfx_lod_data(data.unit)
 						managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_off)
 					end
 					

@@ -939,6 +939,8 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_nm" force="false"/>	
 	<effect path="effects/payday2/particles/explosions/summers_footstep" load="false"/>	
 	
 
@@ -971,7 +973,9 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_nm" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_nm" force="false"/>	
 
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>

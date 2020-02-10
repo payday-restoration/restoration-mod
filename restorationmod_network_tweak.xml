@@ -21,18 +21,46 @@
 		<!-- Unit -->
 		<rpc>
 
-			<message name="sync_underbarrel_switch" receiver="unit" delivery="ordered">
-				<param type="int" /> <!-- Weapon slot -->
-				<param type="string" /> <!-- Underbarrel weapon id -->
-				<param type="bool" /> <!-- Underbarrel active state -->
-			</message>
-
-			<message name="shot_blank" delivery="ordered" receiver="unit">
-				<param type="unit"/> <!-- shooting unit -->
-				<param type="bool"/>
-				<param type="int" min="0" max="1"/> <!-- Sub ID -->
-			</message>
-
 		</rpc>
     </target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_underbarrel_switch"/>
+	</search>
+	<target mode="attributes">
+		<attr name="receiver" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="shot_blank"/>
+	</search>
+	<target mode="attributes">
+		<attr name="receiver" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="reload_weapon"/>
+	</search>
+	<target mode="attributes">
+		<attr name="receiver" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="reload_weapon_interupt"/>
+	</search>
+	<target mode="attributes">
+		<attr name="receiver" value="ordered"/>
+	</target>
 </tweak>

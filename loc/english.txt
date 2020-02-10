@@ -57,7 +57,7 @@
 	"RestorationModEnv_UkraTitleID" : "Ukrainian Job",
 	"RestorationModEnv_UkraDescID" : "Select an environment for Ukrainian Job.",
 
-	"RestorationModEnv_UkraTitleID" : "Alternative Last Down Color Grading",
+	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
 	"RestorationMoAltLastDownColorDescID" : "Switches the last down color grading to color_sin.",
 	
 	"default" : "Default",

@@ -1445,13 +1445,13 @@ function UpgradesTweakData:_init_pd2_values()
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
 		{
-			{3.0, 3.0},
-			{3.5, 3.5},
-			{4.0, 4.0},
-			{4.5, 4.5},
-			{5.0, 5.0},
-			{5.5, 5.5},
-			{6.0, 6.0}
+			{2.4, 3.0},
+			{2.8, 3.5},
+			{3.2, 4.0},
+			{3.6, 4.5},
+			{4.0, 5.0},
+			{4.4, 5.5},
+			{4.8, 6.0}
 		}
 	}
 	
@@ -1465,9 +1465,9 @@ function UpgradesTweakData:_init_pd2_values()
 
 	self.values.player.damage_to_armor = {
 		{
-			{1.5, 3},
 			{1.8, 3},
-			{2.1, 3},
+			{2.0, 3},
+			{2.2, 3},
 			{2.4, 3},
 			{2.6, 3},
 			{2.8, 3},
@@ -1529,6 +1529,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--sicario
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
 	self.values.player.sicario_multiplier = {0.35} --Multiplier for dodge gained per second while inside grenade.
+	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging.
 	
 	--alcoholism is no joke
 	--stoic
@@ -1574,7 +1575,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Fat benis :DDDDD
 	--biker?
 	self.wild_trigger_time = 2
-	self.wild_max_triggers_per_time = 1	
+	self.wild_max_triggers_per_time = 1
 	self.values.player.wild_health_amount = {0.1}
 	self.values.player.wild_armor_amount = {0.0}
 	self.values.player.less_health_wild_armor = {{
@@ -1587,7 +1588,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}}
 	self.values.player.less_armor_wild_health = {{
 		0.25,
-		0.1
+		0.2
 	}}
 	self.values.player.less_armor_wild_cooldown = {{
 		0.25,
@@ -1596,7 +1597,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 	self.values.player.biker_armor_regen = {
 		{1.0, 3.0, 0.0},
-		{2.5, 3.0, 3.0}
+		{2.0, 2.5, 3.5}
 	}
 	
 	--Tag Team--
@@ -2370,6 +2371,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_bomb_cooldown_reduction = {
+		category = "feature",
+		name_id = "menu_player_bomb_cooldown_reduction",
+		upgrade = {
+			category = "player",
+			upgrade = "bomb_cooldown_reduction",
+			value = 1
+		}
+	}
 	self.definitions.player_tag_team_damage_absorption_1 = {
 		category = "feature",
 		upgrade = {
@@ -2385,8 +2395,7 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "tag_team_damage_absorption",
 			category = "player"
 		}
-	}		
-	
+	}
 	self.definitions.temporary_chico_injector_1 = {
 		name_id = "menu_temporary_chico_injector_1",
 		category = "temporary",

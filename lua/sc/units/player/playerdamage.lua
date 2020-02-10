@@ -286,6 +286,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if pm:has_category_upgrade("player", "dodge_to_heal") then --Rogue health regen.
 					self:add_damage_to_hot()
 				end
+				if pm:has_category_upgrade("player", "bomb_cooldown_reduction") then
+					pm:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -816,7 +819,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end)
 
 	Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
-		if self._biker_armor_regen_t == 0.0 then
+		if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
 			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
 		end
 	end)
@@ -830,7 +833,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._biker_armor_regen_t = self._biker_armor_regen_t - amount
 		if self._biker_armor_regen_t <= 0.0 then
 			self:restore_armor(managers.player:upgrade_value("player", "biker_armor_regen")[1])
-			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+			self._biker_armor_regen_t = self._biker_armor_regen_t + managers.player:upgrade_value("player", "biker_armor_regen")[2]
 		end
 	end
 end

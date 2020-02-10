@@ -173,8 +173,8 @@ function CoreEnvironmentControllerManager:set_post_composite(t, dt)
 	local last_life = 0
 
     if self._last_life then
-        self._vp:vp():set_post_processor_effect("World", Idstring("color_grading_post"), Idstring("color_sin_classic"))
-        last_life = math.clamp((hurt_mod - 0.5) * 2, 0, 1)
+        last_life = 0 and self._vp:vp():set_post_processor_effect("World", Idstring("color_grading_post"), Idstring("color_sin_classic"))
+        self._ignore_user_color_grading = true
 	end
 
 	self._lut_modifier_material:set_variable(ids_LUT_settings_b, Vector3(last_life, flash_2 + math.clamp(hit_some_mod * 2, 0, 1) * 0.25 + blur_zone_val * 0.15, 0))

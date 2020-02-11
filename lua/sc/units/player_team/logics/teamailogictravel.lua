@@ -1,3 +1,5 @@
+local mvec3_dist_sq = mvector3.distance_sq
+
 function TeamAILogicTravel.check_inspire(data, attention)
 	if not attention then
 		return
@@ -6,7 +8,7 @@ function TeamAILogicTravel.check_inspire(data, attention)
 	local range_sq = 810000
 	local pos = data.unit:position()
 	local target = attention.unit:position()
-	local dist = mvector3.distance_sq(pos, target)
+	local dist = mvec3_dist_sq(pos, target)
 
 	if dist < range_sq and not attention.unit:character_damage():arrested() then
 		data.unit:brain():set_objective()
@@ -88,37 +90,48 @@ function TeamAILogicTravel._upd_enemy_detection(data)
 
 	CopLogicAttack._upd_aim(data, my_data)
 
-	if (not my_data._intimidate_chk_t or my_data._intimidate_chk_t + 0.5 < data.t) and (not my_data._intimidate_t or my_data._intimidate_t + 2 < data.t) then
-		my_data._intimidate_chk_t = data.t
+	if not my_data._intimidate_chk_t or my_data._intimidate_chk_t + 0.5 < data.t then
+		if not data.unit:brain()._intimidate_t or data.unit:brain()._intimidate_t + 2 < data.t then
+			my_data._intimidate_chk_t = data.t
 
-		if data.unit:movement()._should_stay then
-			local can_turn = (not my_data._turning_to_intimidate_t or my_data._turning_to_intimidate_t + 2 < data.t) and not data.unit:movement():chk_action_forbidden("turn") and (not new_prio_slot or new_prio_slot > 5)
-			local civ = TeamAILogicIdle.find_civilian_to_intimidate(data.unit, can_turn and 180 or 90, 1200)
+			if data.unit:movement()._should_stay then
+				local can_turn = nil
 
-			if civ then
-				if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then
-					my_data._turning_to_intimidate_t = data.t
-				else
-					if TeamAILogicIdle.intimidate_civilians(data, data.unit, true, true) then
-						my_data._intimidate_t = data.t
+				if not my_data._turning_to_intimidate_t or my_data._turning_to_intimidate_t + 2 < data.t then
+					if not data.unit:movement():chk_action_forbidden("turn") then
+						if not new_prio_slot or new_prio_slot > 5 then
+							can_turn = true
+						end
 					end
 				end
-			end
-		else
-			local civ = TeamAILogicIdle.intimidate_civilians(data, data.unit, true, true)
 
-			if civ then
-				my_data._intimidate_t = data.t
+				local civ = TeamAILogicIdle.find_civilian_to_intimidate(data.unit, can_turn and 180 or 90, 1200)
 
-				if not data.attention_obj then
-					CopLogicBase._set_attention_on_unit(data, civ)
+				if civ then
+					if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then
+						my_data._turning_to_intimidate_t = data.t
+					else
+						if TeamAILogicIdle.intimidate_civilians(data, data.unit, true, true) then
+							data.unit:brain()._intimidate_t = data.t
+						end
+					end
+				end
+			else
+				local civ = TeamAILogicIdle.intimidate_civilians(data, data.unit, true, true)
 
-					local key = "RemoveAttentionOnUnit" .. tostring(data.key)
+				if civ then
+					data.unit:brain()._intimidate_t = data.t
 
-					CopLogicBase.queue_task(my_data, key, TeamAILogicTravel._remove_enemy_attention, {
-						data = data,
-						target_key = civ:key()
-					}, data.t + 1.5)
+					if not data.attention_obj then
+						CopLogicBase._set_attention_on_unit(data, civ)
+
+						local key = "RemoveAttentionOnUnit" .. tostring(data.key)
+
+						CopLogicBase.queue_task(my_data, key, TeamAILogicTravel._remove_enemy_attention, {
+							data = data,
+							target_key = civ:key()
+						}, data.t + 1.5)
+					end
 				end
 			end
 		end

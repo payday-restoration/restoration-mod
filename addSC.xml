@@ -1019,7 +1019,12 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" load="true" />		
 	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
 	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />		
-	
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />			
 
 	<!--Omnia LPF-->
 	<object path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>

@@ -817,4 +817,40 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 	end	
 	
+	function GroupAIStateBase:_get_anticipation_duration(anticipation_duration_table, is_first)
+		local anticipation_duration = anticipation_duration_table[1][1]
+
+		if not is_first then
+			local rand = math.random()
+			local accumulated_chance = 0
+
+			for i, setting in pairs(anticipation_duration_table) do
+				accumulated_chance = accumulated_chance + setting[2]
+
+				if rand <= accumulated_chance then
+					anticipation_duration = setting[1]
+
+					break
+				end
+			end
+		end
+		
+		if not managers.skirmish:is_skirmish() then
+			if is_first or self._assault_number and self._assault_number == 1 then
+				return 45
+			elseif self._assault_number and self._assault_number == 2 then
+				return 45
+			elseif self._assault_number and self._assault_number == 3 then
+				return 35
+			elseif self._assault_number and self._assault_number >= 4 then
+				return 25
+			else
+				return 45
+			end
+		else
+			return anticipation_duration
+		end
+		
+	end	
+	
 end

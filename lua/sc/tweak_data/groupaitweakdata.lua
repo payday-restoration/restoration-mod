@@ -11380,9 +11380,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.besiege.assault = {}
 		self.besiege.assault.anticipation_duration = {
+			{40, 1},
 			{30, 1},
-			{30, 1},
-			{45, 0.5}
+			{20, 1}
 		}
 		self.besiege.assault.build_duration = 35
 		self.besiege.assault.sustain_duration_min = {

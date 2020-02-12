@@ -153,6 +153,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
+		if variant == "melee" and self:has_category_upgrade("player", "biker_armor_regen") then
+			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
+		end
+
 		if damage_ext:health_ratio() < 0.5 then
 			if variant == "melee" and self:has_category_upgrade("player", "melee_kill_dodge_regen") then
 				damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen") + self:upgrade_value("player", "kill_dodge_regen"))

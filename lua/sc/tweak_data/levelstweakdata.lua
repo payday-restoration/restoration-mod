@@ -166,8 +166,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets", "packages/addbdu"}
-		self.jolly.player_style = "sneak_suit"
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
+		self.jolly.player_style = "suit_sunny"
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	

@@ -440,9 +440,9 @@
 	"menu_rush_asset_sentrygun" : "Sentry Package",
 	"menu_rush_asset_sentrygun_desc" : "Buy a Sentry Package",
 	
-	"heist_junker_name" : "DOGHOUSE",
+	"heist_junker_name" : "Doghouse",
 	"heist_junker_brief" : "This is a job for Vlad. Apparently, a botched trade deal has left his men & the goods they brought in a bad situation -- Feds are nearly on the case. We have a vehicle ready to get you to the location, and then you can provide backup. We'll secure support chopper, and get you & the essentials out of there.\n\nThis should be short, but don't underestimate the police. Bring your fighting gear.",
-	"heist_junk_name" : "WATCHFUL EYES",
+	"heist_junk_name" : "Watchful Eyes",
 	"heist_junk_brief" : "The construction area is just ahead. Cops haven't arrived yet but they'll be here shortly. Vlad's guys will give you backup but they likely won't last too long.\n\nReports are that there's a meth lab on site apparently, so feel free to make a little extra money if you can keep Vlad's stuff safe at the same time.",
 	"junk_01" : "DEFEND AGAINST THE COPS",
 	"junk_01_desc" : "Keep the cops away from the loot!  Both the coke and the money need to be defended.",
@@ -476,9 +476,9 @@
 	"obj7_escapeorloot" : "EXTRACTION AVAILABLE",
 	"obj7_escapeorloot_desc" : "Leave the area as soon as you're satisfied with the take.",
 	
-	"heist_int_dock_burn_name" : "BURNOUT",
+	"heist_int_dock_burn_name" : "Burnout",
 	"heist_int_dock_burn_brief" : "No time for detailed plans, they're going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.",
-	"heist_wetwork_burn_name" : "BURNOUT",
+	"heist_wetwork_burn_name" : "Burnout",
 	"heist_wetwork_burn_brief" : "Alright, we're almost at the site. You've been here before, but we're going in hot this time.\nMight be some loot still stashed around, but that's secondary.\n\nKeep an eye out for anything you can use to see whats inside the closed containers. Cameras, objects around the containers, whiteboards and so on.",
 	"wwburn_01" : "READY UP",
 	"wwburn_01_desc" : "Were in the front gate, Murkywater will be all over so get your guns out.",

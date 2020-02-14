@@ -50,6 +50,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction then
 			CopLogicAttack._update_cover(data)
 			CopLogicAttack._upd_combat_movement(data)
+			data.logic._upd_stance_and_pose(data, data.internal_data, objective)
 		end
 
 		CopLogicBase.queue_task(my_data, my_data.update_task_key, TaserLogicAttack.queued_update, data, data.t + 0.016) --update asap
@@ -314,7 +315,87 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		TaserLogicAttack._upd_aim(data, my_data, new_reaction)
 	end
+	
+	function CopLogicAttack.action_complete_clbk(data, action)
+		local my_data = data.internal_data
+		local action_type = action:type()
 
+		if action_type == "walk" then
+			my_data.advancing = nil
+			my_data.flank_cover = nil
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+			CopLogicAttack._cancel_charge(data, my_data)
+			if my_data.surprised then
+				my_data.surprised = false
+			elseif my_data.moving_to_cover then
+				if action:expired() then
+					my_data.in_cover = my_data.moving_to_cover
+					my_data.cover_enter_t = data.t
+				end
+
+				my_data.moving_to_cover = nil
+			elseif my_data.walking_to_cover_shoot_pos then
+				my_data.walking_to_cover_shoot_pos = nil
+				my_data.at_cover_shoot_pos = true
+			end
+		elseif action_type == "shoot" then
+			my_data.shooting = nil
+		elseif action_type == "tase" then
+			if action:expired() and my_data.tasing then
+				local record = managers.groupai:state():criminal_record(my_data.tasing.target_u_key)
+
+				if record and record.status then
+					data.tase_delay_t = TimerManager:game():time() + 45
+				end
+			end
+
+			managers.groupai:state():on_tase_end(my_data.tasing.target_u_key)
+
+			my_data.tasing = nil
+		elseif action_type == "reload" then
+			--Removed the requirement for being important here.
+			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+				TaserLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+			end
+		elseif action_type == "turn" then
+			my_data.turning = nil
+		elseif action_type == "act" then
+			--CopLogicAttack._cancel_cover_pathing(data, my_data)
+			--CopLogicAttack._cancel_charge(data, my_data)
+			
+			--Fixed panic never waking up cops.
+			if action:expired() then
+				TaserLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+				CopLogicAttack._upd_combat_movement(data)
+			end
+		elseif action_type == "hurt" then
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+			CopLogicAttack._cancel_charge(data, my_data)
+			
+			--Removed the requirement for being important here.
+			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+				TaserLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+			end
+		elseif action_type == "dodge" then
+			local timeout = action:timeout()
+
+			if timeout then
+				data.dodge_timeout_t = TimerManager:game():time() + math.lerp(timeout[1], timeout[2], math.random())
+			end
+
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+
+			if action:expired() then
+				TaserLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+				TaserLogicAttack._upd_combat_movement(data)
+			end
+		end
+	end
+	
 	function TaserLogicAttack._chk_play_charge_weapon_sound(data, my_data, focus_enemy)
 		--if not my_data.tasing and (not my_data.last_charge_snd_play_t or data.t - my_data.last_charge_snd_play_t > 30) and focus_enemy.verified_dis < 2000 and math.abs(data.m_pos.z - focus_enemy.m_pos.z) < 300 then
 			--my_data.last_charge_snd_play_t = data.t

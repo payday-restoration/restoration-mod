@@ -149,7 +149,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopLogicBase._report_detections(data.detected_attention_objects)
 	end
 
-	
 	function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 		local focus_enemy = data.attention_obj
         local common_cop = data.unit:base():has_tag("law") and not data.unit:base():has_tag("special")
@@ -210,6 +209,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	--hyper heisting tactic ports thank you fuglore <3333
     function CopLogicAttack._upd_combat_movement(data)
     	local my_data = data.internal_data
+		
+		if not data.attention_obj then
+			return
+		else
+			local definitely_not_reactions_chk = AIAttentionObject.REACT_COMBAT > data.attention_obj.reaction
+
+			if definitely_not_reactions_chk then
+				return
+			end
+		end
+		
     	local t = data.t
     	local unit = data.unit
     	local focus_enemy = data.attention_obj
@@ -231,7 +241,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
 		
 		local want_to_take_cover = my_data.want_to_take_cover
-    	action_taken = action_taken or CopLogicAttack._upd_pose(data, my_data)
+    	action_taken = action_taken
     	local move_to_cover, want_flank_cover, taken_flank_cover = nil
 		local enemy_visible_mild_soft = focus_enemy.verified_t and t - focus_enemy.verified_t < 7
     	local flank_cover_charge_time = focus_enemy.verified_t and t - focus_enemy.verified_t < 4
@@ -272,31 +282,85 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     	elseif my_data.attitude == "engage" and not my_data.stay_out_time and not enemy_visible_soft and my_data.at_cover_shoot_pos and not action_taken and not want_to_take_cover then
     		my_data.stay_out_time = t + 7
     	end
+		
+		if not action_taken and want_to_take_cover and not best_cover or not action_taken and hitnrunmovementqualify and not pantsdownchk or not action_taken and eliterangedfiremovementqualify and not pantsdownchk or not action_taken and spoocavoidancemovementqualify and not pantsdownchk or not action_taken and reloadingretreatmovementqualify then
+			action_taken = CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, false)
+		end
+		
+		--removed the need for being important
+    	if not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") and CopLogicAttack._can_move(data) and data.attention_obj.verified and (not in_cover or not in_cover[4]) and not spoocavoidancemovementqualify then
+    		if data.is_suppressed and data.t - data.unit:character_damage():last_suppression_t() < 0.7 then
+    			action_taken = CopLogicBase.chk_start_action_dodge(data, "scared")
+    			--[[if data.char_tweak.chatter.dodge then
+    				managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "dodge")
+    			end]]--
+    		end
+    
+    		if not action_taken and focus_enemy.is_person and focus_enemy.dis < 3000 and math.random() < 0.5 then
+    			local dodge = nil
+    
+    			if focus_enemy.is_local_player then
+    				local e_movement_state = focus_enemy.unit:movement():current_state()
+    
+    				if not e_movement_state:_is_reloading() and not e_movement_state:_interacting() and not e_movement_state:is_equipping() then
+    					dodge = true
+    				end
+    			else
+    				local e_anim_data = focus_enemy.unit:anim_data()
+    
+    				if (e_anim_data.move or e_anim_data.idle) and not e_anim_data.reload then
+    					dodge = true
+    				end
+    			end
+    
+    			if dodge and focus_enemy.aimed_at then
+    				action_taken = CopLogicBase.chk_start_action_dodge(data, "preemptive")
+    				--[[if data.char_tweak.chatter.dodge then
+    					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "dodge")
+    				end]]--
+    			end
+    		end
+    	end
     
     	if action_taken then
     		-- Nothing
     	elseif want_to_take_cover then
     		move_to_cover = true
-    	elseif not enemy_visible_soft then --added some extra stuff here to make sure other enemy groups get in on the fight, also added a new system so that once flank cover is acquired for flanking teams, they'll charge, in order for flanking to actually happen instead of them just standing around in the flank cover 
-    		if data.tactics and data.tactics.charge and data.objective and data.objective.grp_objective and data.objective.grp_objective.charge and (not my_data.charge_path_failed_t or data.t - my_data.charge_path_failed_t > 6) or not enemy_visible_mild_soft and data.objective and data.objective.grp_objective and data.objective.grp_objective.charge and (not my_data.charge_path_failed_t or data.t - my_data.charge_path_failed_t > 6) or data.tactics and data.tactics.flank and my_data.flank_cover and in_cover and focus_enemy and focus_enemy.dis <= 1500 and not want_to_take_cover and taken_flank_cover and not flank_cover_charge_time and (not my_data.charge_path_failed_t or data.t - my_data.charge_path_failed_t > 4) then
+    	elseif not enemy_visible_soft then --added some extra stuff here to make sure other enemy groups get in on the fight, also added a new system so that once flank cover is acquired for flanking teams, they'll charge, in order for flanking to actually happen instead of them just standing around in the flank cover
+			local charge_failed_t_chk = not my_data.charge_path_failed_t or my_data.charge_path_failed_t and data.t - my_data.charge_path_failed_t > 6
+			
+    		if data.tactics and data.tactics.charge and charge_failed_t_chk or my_data.taken_flank_cover and charge_failed_t_chk then
     			if my_data.charge_path then
-    				local path = my_data.charge_path
-    				my_data.charge_path = nil
-    				action_taken = CopLogicAttack._chk_request_action_walk_to_cover_shoot_pos(data, my_data, path)
-    			elseif not my_data.charge_path_search_id and data.attention_obj.nav_tracker then
-    				my_data.charge_pos = CopLogicTravel._get_pos_on_wall(data.attention_obj.nav_tracker:field_position(), my_data.weapon_range.close, 45, nil)
-    
-    				if my_data.charge_pos then
-    					my_data.charge_path_search_id = "charge" .. tostring(data.key)
-    
-    					unit:brain():search_for_path(my_data.charge_path_search_id, my_data.charge_pos, nil, nil, nil)
-    					taken_flank_cover = nil
-    				else
-    					debug_pause_unit(data.unit, "failed to find charge_pos", data.unit)
-    
-    					my_data.charge_path_failed_t = TimerManager:game():time()
-    				end
-    			end
+					local path = my_data.charge_path
+					action_taken = CopLogicAttack._chk_request_action_walk_to_cover_shoot_pos(data, my_data, path)
+					
+					if my_data.taken_flank_cover then
+						if data.char_tweak.chatter.look_for_angle then
+							managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "look_for_angle")
+						end
+					end
+					
+					my_data.charge_path = nil
+					my_data.taken_flank_cover = nil
+				elseif not my_data.charge_path_search_id and data.attention_obj.nav_tracker then
+					if data.tactics and data.tactics.charge then
+						my_data.charge_pos = CopLogicTravel._get_pos_on_wall(focus_enemy.nav_tracker:field_position(), my_data.weapon_range.close, 45, nil)
+					else
+						my_data.charge_pos = CopLogicAttack._find_flank_pos(data, my_data, focus_enemy.nav_tracker, 3000)
+					end
+
+					if my_data.charge_pos then
+						my_data.charge_path_search_id = "charge" .. tostring(data.key)
+
+						unit:brain():search_for_path(my_data.charge_path_search_id, my_data.charge_pos, nil, nil, nil)
+								
+						--my_data.taken_flank_cover = nil
+					else
+						debug_pause_unit(data.unit, "failed to find charge_pos", data.unit)
+
+						my_data.charge_path_failed_t = TimerManager:game():time()
+					end
+				end
     		elseif in_cover then
     			if my_data.cover_test_step <= 2 then
     				local height = nil
@@ -389,45 +453,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		taken_flank_cover = nil
     		my_data.flank_cover = nil
     	end
-    	
-    	--removed the need for being important
-    	if not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") and CopLogicAttack._can_move(data) and data.attention_obj.verified and (not in_cover or not in_cover[4]) and not spoocavoidancemovementqualify then
-    		if data.is_suppressed and data.t - data.unit:character_damage():last_suppression_t() < 0.7 then
-    			action_taken = CopLogicBase.chk_start_action_dodge(data, "scared")
-    			--[[if data.char_tweak.chatter.dodge then
-    				managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "dodge")
-    			end]]--
-    		end
-    
-    		if not action_taken and focus_enemy.is_person and focus_enemy.dis < 3000 and math.random() < 0.5 then
-    			local dodge = nil
-    
-    			if focus_enemy.is_local_player then
-    				local e_movement_state = focus_enemy.unit:movement():current_state()
-    
-    				if not e_movement_state:_is_reloading() and not e_movement_state:_interacting() and not e_movement_state:is_equipping() then
-    					dodge = true
-    				end
-    			else
-    				local e_anim_data = focus_enemy.unit:anim_data()
-    
-    				if (e_anim_data.move or e_anim_data.idle) and not e_anim_data.reload then
-    					dodge = true
-    				end
-    			end
-    
-    			if dodge and focus_enemy.aimed_at then
-    				action_taken = CopLogicBase.chk_start_action_dodge(data, "preemptive")
-    				--[[if data.char_tweak.chatter.dodge then
-    					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "dodge")
-    				end]]--
-    			end
-    		end
-    	end
-    		
-    	if not action_taken and want_to_take_cover and not best_cover or not action_taken and hitnrunmovementqualify and not pantsdownchk or not action_taken and eliterangedfiremovementqualify and not pantsdownchk or not action_taken and spoocavoidancemovementqualify and not pantsdownchk or not action_taken and reloadingretreatmovementqualify then
-			action_taken = CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, false)
-		end
     
     	action_taken = action_taken or CopLogicAttack._chk_start_action_move_out_of_the_way(data, my_data)
     end
@@ -509,58 +534,115 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     end
     
     function CopLogicAttack.action_complete_clbk(data, action)
-    	local my_data = data.internal_data
-    	local action_type = action:type()
-    
-    	if action_type == "walk" then
-    		my_data.advancing = nil
-    
-    		CopLogicAttack._cancel_cover_pathing(data, my_data)
-    		CopLogicAttack._cancel_charge(data, my_data)
-    
-    		if my_data.surprised then
-    			my_data.surprised = false
-    		elseif my_data.moving_to_cover then
-    			if action:expired() then
-    				my_data.in_cover = my_data.moving_to_cover
-    				my_data.cover_enter_t = data.t
-    			end
-    
-    			my_data.moving_to_cover = nil
-    		elseif my_data.walking_to_cover_shoot_pos then
-    			my_data.walking_to_cover_shoot_pos = nil
-    			my_data.at_cover_shoot_pos = true
-    		end
-    	elseif action_type == "shoot" then
-    		my_data.shooting = nil
-    	elseif action_type == "turn" then
-    		my_data.turning = nil
-    	elseif action_type == "hurt" then
-    		CopLogicAttack._cancel_cover_pathing(data, my_data)
-    		
-    		--Removed the requirement for being important here.
-    		if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
-    			data.logic._upd_aim(data, my_data)
-    		end
-    	elseif action_type == "dodge" then
-    		local timeout = action:timeout()
-    
-    		if timeout then
-    			data.dodge_timeout_t = TimerManager:game():time() + math.lerp(timeout[1], timeout[2], math.random())
-    		end
-    
-    		CopLogicAttack._cancel_cover_pathing(data, my_data)
-    
-    		if action:expired() then
-    			CopLogicAttack._upd_aim(data, my_data)
-    		end
-    	end
-    end
+		local my_data = data.internal_data
+		local action_type = action:type()
+
+		if action_type == "walk" then
+			my_data.advancing = nil
+			if my_data.flank_cover then
+				my_data.taking_flank_cover = true
+			end
+			my_data.flank_cover = nil
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+			CopLogicAttack._cancel_charge(data, my_data)
+			
+			if my_data.surprised then
+				my_data.surprised = false
+			elseif my_data.moving_to_cover then
+				if action:expired() then
+					if my_data.taking_flank_cover then
+						my_data.taken_flank_cover = true
+					end
+					my_data.taking_flank_cover = nil
+					my_data.in_cover = my_data.moving_to_cover
+					my_data.cover_enter_t = data.t
+				end
+
+				my_data.moving_to_cover = nil
+			elseif my_data.walking_to_cover_shoot_pos then
+				my_data.walking_to_cover_shoot_pos = nil
+				my_data.at_cover_shoot_pos = true
+			end
+			elseif action_type == "shoot" then
+				my_data.shooting = nil
+			elseif action_type == "tase" then
+				if action:expired() and my_data.tasing then
+					local record = managers.groupai:state():criminal_record(my_data.tasing.target_u_key)
+
+					if record and record.status then
+						data.tase_delay_t = TimerManager:game():time() + 45
+					end
+				end
+
+				managers.groupai:state():on_tase_end(my_data.tasing.target_u_key)
+
+				my_data.tasing = nil
+			elseif action_type == "spooc" then
+				data.spooc_attack_timeout_t = TimerManager:game():time() + math.lerp(data.char_tweak.spooc_attack_timeout[1], data.char_tweak.spooc_attack_timeout[2], math.random())
+
+				if action:complete() and data.char_tweak.spooc_attack_use_smoke_chance > 0 and math.random() <= data.char_tweak.spooc_attack_use_smoke_chance and not managers.groupai:state():is_smoke_grenade_active() then
+					managers.groupai:state():detonate_smoke_grenade(data.m_pos + math.UP * 10, data.unit:movement():m_head_pos(), math.lerp(15, 30, math.random()), false)
+				end
+				
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					CopLogicAttack._upd_combat_movement(data)
+				end
+
+				my_data.spooc_attack = nil
+			elseif action_type == "reload" then
+				--Removed the requirement for being important here.
+				if action:expired() then
+					data.logic._upd_aim(data, my_data)
+				end
+			elseif action_type == "turn" then
+				my_data.turning = nil
+			elseif action_type == "act" then
+				--CopLogicAttack._cancel_cover_pathing(data, my_data)
+				--CopLogicAttack._cancel_charge(data, my_data)
+				
+				--Fixed panic never waking up cops.
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					CopLogicAttack._upd_combat_movement(data)
+				end
+				
+			elseif action_type == "hurt" then
+				CopLogicAttack._cancel_cover_pathing(data, my_data)
+				CopLogicAttack._cancel_charge(data, my_data)
+				
+				--Removed the requirement for being important here.
+				if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+					data.logic._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+				end
+				
+			elseif action_type == "dodge" then
+				local timeout = action:timeout()
+
+				if timeout then
+					data.dodge_timeout_t = TimerManager:game():time() + math.lerp(timeout[1], timeout[2], math.random())
+				end
+
+				CopLogicAttack._cancel_cover_pathing(data, my_data)
+
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					CopLogicAttack._upd_combat_movement(data)
+			end
+		end
+	end
     
     function CopLogicAttack.queue_update(data, my_data)
     	local focus_enemy = data.attention_obj
     	local in_combat = focus_enemy and focus_enemy.verified and focus_enemy.dis <= 3000 or focus_enemy and focus_enemy.verified_t and focus_enemy.verified_t < 2
     	local delay = in_combat and 0 or 0.35
+		
+		local objective = data.objective or nil
+		
+		data.logic._upd_stance_and_pose(data, data.internal_data, objective)
+		CopLogicAttack._update_cover(data)
+		
     	CopLogicBase.queue_task(my_data, my_data.update_queue_id, data.logic.queued_update, data, data.t + delay)
     end
     
@@ -903,5 +985,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		end
     	end
     end
+	
+	function CopLogicAttack._chk_exit_attack_logic(data, new_reaction)
+		if CopLogicBase.should_enter_attack(data) then
+			return
+		end
 
+		if not data.unit:movement():chk_action_forbidden("walk") then
+			local wanted_state = CopLogicBase._get_logic_state_from_reaction(data, new_reaction)
+
+			if wanted_state ~= data.name then
+				local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, data.objective, nil, nil)
+
+				if allow_trans then
+					if obj_failed then
+						data.objective_failed_clbk(data.unit, data.objective)
+					elseif wanted_state ~= "idle" or not managers.groupai:state():on_cop_jobless(data.unit) then
+						CopLogicBase._exit(data.unit, wanted_state)
+					end
+
+					CopLogicBase._report_detections(data.detected_attention_objects)
+				end
+			end
+		end
+	end
+	
 end

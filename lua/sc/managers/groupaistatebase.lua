@@ -227,6 +227,56 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.enemy:add_delayed_clbk("_radio_chatter_clbk", self._radio_clbk, Application:time() + 30 + math.random(0, 20))
 	end	
 	
+	function GroupAIStateBase:_draw_current_logics()
+		for key, data in pairs(self._police) do
+			if data.unit:brain() and data.unit:brain().is_current_logic then
+				local brain = data.unit:brain()
+				
+				if brain:is_current_logic("arrest") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.blue:with_alpha(1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("attack") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.red:with_alpha(1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("base") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.white:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("flee") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.orange:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("guard") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.blue:with_alpha(0.1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("idle") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("inactive") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.black:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("intimidated") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.black:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("sniper") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.red:with_alpha(0.1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("travel") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.yellow:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				end
+			end
+		end
+	end
+
 	function GroupAIStateBase:find_followers_to_unit(leader_key, leader_data)
 		local leader_u_data = self._police[leader_key]
 		if not leader_u_data then
@@ -533,7 +583,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return gameover
 	end
 	
-
 	Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion_from_host", function(sender, message, data)
 		if message == "restoration_sync_level_suspicion" then 
 			if sender == 1 then 
@@ -581,6 +630,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--use suspicion values
 			level_suspicion = self._old_guard_detection_mul_raw
 			alarm_threshold = self._weapons_hot_threshold
+			self:_draw_current_logics()
 		else
 			--use suspicion values synced from host
 			level_suspicion = self._dummy_old_guard_detection_mul_raw or 0

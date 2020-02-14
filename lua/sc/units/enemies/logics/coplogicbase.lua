@@ -281,5 +281,169 @@ end
 			managers.groupai:state():on_enemy_disengaging(data.unit, old_att_obj.u_key)
 		end
 	end
+	
+	function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
+		if data.unit:movement():chk_action_forbidden("walk") then
+			return
+		end
+		
+		if my_data ~= data.internal_data then
+			log("how is this man")
+			return
+		end
+		
+		
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 
+		local obj_has_stance, obj_has_pose, agg_pose = nil
+		local should_crouch = not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch
+		local should_stand = not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand
+		
+		if not data.is_converted then
+			if data.is_suppressed then
+				if diff_index <= 5 then
+					if not data.unit:anim_data().crouch and should_crouch then
+						if not my_data.next_allowed_crouch_t or my_data.next_allowed_crouch_t < data.t then
+							CopLogicAttack._chk_request_action_crouch(data)
+							my_data.next_allowed_crouch_t = data.t + math.random(1.5, 4)
+						end
+					end
+				else
+					if not data.unit:anim_data().crouch and should_crouch then
+						if not my_data.next_allowed_crouch_t or my_data.next_allowed_crouch_t < data.t then
+							CopLogicAttack._chk_request_action_crouch(data)
+							my_data.next_allowed_crouch_t = data.t + math.random(1.5, 4)
+						end
+					elseif data.unit:anim_data().crouch and should_stand then
+						if not my_data.next_allowed_stand_t or my_data.next_allowed_stand_t < data.t then
+							CopLogicAttack._chk_request_action_stand(data)
+							my_data.next_allowed_stand_t = data.t + math.random(1.5, 4)
+						end
+					end
+				end
+			elseif data.attention_obj and data.attention_obj.is_person and data.attention_obj.verified and data.attention_obj.aimed_at and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and diff_index > 5 then
+				if not data.unit:anim_data().crouch and should_crouch then
+					if not my_data.next_allowed_crouch_t or my_data.next_allowed_crouch_t < data.t then
+						CopLogicAttack._chk_request_action_crouch(data)
+						my_data.next_allowed_crouch_t = data.t + math.random(1.5, 4)
+					end
+				elseif data.unit:anim_data().crouch and should_stand then
+					if not my_data.next_allowed_stand_t or my_data.next_allowed_stand_t < data.t then
+						CopLogicAttack._chk_request_action_stand(data)
+						my_data.next_allowed_stand_t = data.t + math.random(1.5, 4)
+					end
+				end
+			end
+		end
+		
+		if objective and not agg_pose then
+			local objective_pose_shit = not data.char_tweak.allowed_stances or objective and objective.stance and data.char_tweak.allowed_stances[objective.stance]
+			
+			if objective.stance and objective_pose_shit then
+				obj_has_stance = true
+				local upper_body_action = data.unit:movement()._active_actions[3]
+
+				if not upper_body_action or upper_body_action:type() ~= "shoot" then
+					data.unit:movement():set_stance(objective.stance)
+				end
+			end
+
+			if objective.pose and not agg_pose and objective_pose_shit then
+				obj_has_pose = true
+
+				if objective.pose == "crouch" then
+					CopLogicAttack._chk_request_action_crouch(data)
+				elseif objective.pose == "stand" then
+					CopLogicAttack._chk_request_action_stand(data)
+				end
+			end
+		end
+
+		if not obj_has_stance and data.char_tweak.allowed_stances and not data.char_tweak.allowed_stances[data.unit:anim_data().stance] and not agg_pose then
+			for stance_name, state in pairs(data.char_tweak.allowed_stances) do
+				if state then
+					data.unit:movement():set_stance(stance_name)
+
+					break
+				end
+			end
+		end
+		
+		if not obj_has_pose and not agg_pose then
+			if data.char_tweak.allowed_poses and not data.char_tweak.allowed_poses[data.unit:anim_data().pose] then
+				for pose_name, state in pairs(data.char_tweak.allowed_poses) do
+					if state then
+						if pose_name == "crouch" then
+							CopLogicAttack._chk_request_action_crouch(data)
+
+							break
+						end
+
+						if pose_name == "stand" then
+							CopLogicAttack._chk_request_action_stand(data)
+						end
+
+						break
+					end
+				end
+			end
+		end
+	end
+	
+	function CopLogicBase.action_taken(data, my_data)
+		return my_data.turning or my_data.moving_to_cover or my_data.walking_to_cover_shoot_pos or my_data.surprised or my_data.has_old_action or data.unit:movement():chk_action_forbidden("walk")
+	end
+	
+	function CopLogicBase.chk_should_turn(data, my_data)
+		return not my_data.turning and not my_data.has_old_action and not data.unit:movement():chk_action_forbidden("walk") and not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos and not my_data.surprised
+	end
+	
+	function CopLogicBase.should_enter_attack(data)
+		local reactions_chk = data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction or data.attention_obj and AIAttentionObject.REACT_SPECIAL_ATTACK <= data.attention_obj.reaction
+		
+		if not data.is_converted and not data.unit:in_slot(16) and not data.unit:in_slot(managers.slot:get_mask("criminals")) and data.unit:base():has_tag("law") and reactions_chk and data.internal_data.attitude and data.internal_data.attitude == "engage" then
+			local att_obj = data.attention_obj
+			local my_data = data.internal_data
+			local criminal_in_my_area = nil
+			local criminal_in_neighbour = nil
+			local ranged_fire_group = nil
+			local my_area = managers.groupai:state():get_area_from_nav_seg_id(data.unit:movement():nav_tracker():nav_segment())
+
+			if next(my_area.criminal.units) then
+				criminal_in_my_area = true
+			else
+				for _, nbr in pairs(my_area.neighbours) do
+					if next(nbr.criminal.units) then
+						criminal_in_neighbour = true
+
+						break
+					end
+				end
+			end
+			
+			local attack_distance = 1200
+			
+			if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
+				attack_distance = 2000
+				ranged_fire_group = true
+			end
+			
+			local criminal_near = criminal_in_my_area or criminal_in_neighbour
+			
+			if not criminal_near and ranged_fire_group and att_obj.dis <= attack_distance then
+				criminal_near = true
+			end
+			
+			local visibility_chk = att_obj.verified or att_obj.verified_t and att_obj.verified_t - data.t <= 1
+			
+			if my_data.charge_path or data.internal_data and data.internal_data.tasing or data.internal_data and data.internal_data.spooc_attack or AIAttentionObject.REACT_SPECIAL_ATTACK <= data.attention_obj.reaction or att_obj.dis <= 900 and math.abs(data.m_pos.z - att_obj.m_pos.z) < 250 or my_data.firing and visibility_chk and att_obj.dis <= attack_distance or visibility_chk and att_obj.dis <= attack_distance and criminal_near then
+				return true
+			end
+			
+			return
+		end
+		
+		return
+	end
+	
 end

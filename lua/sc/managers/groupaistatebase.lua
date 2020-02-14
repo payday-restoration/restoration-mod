@@ -630,7 +630,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--use suspicion values
 			level_suspicion = self._old_guard_detection_mul_raw
 			alarm_threshold = self._weapons_hot_threshold
-			self:_draw_current_logics()
+			--self:_draw_current_logics()
 		else
 			--use suspicion values synced from host
 			level_suspicion = self._dummy_old_guard_detection_mul_raw or 0

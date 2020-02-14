@@ -504,12 +504,15 @@
     "menu_jukebox_screen_resmusic_lethalforce" : "Lethal Force",
 	"menu_jukebox_resmusic_redmarks" : "Red Marks",
     "menu_jukebox_screen_resmusic_redmarks" : "Red Marks",
+	"menu_jukebox_resmusic_ponr" : "Window of Opportunity",
+    "menu_jukebox_screen_resmusic_ponr" : "Window of Opportunity",
 	"menu_jukebox_resmusic_speciesnova" : "Species Nova",
     "menu_jukebox_screen_resmusic_speciesnova" : "Species Nova",
 	"menu_jukebox_resmusic_madvlad" : "Mad Vlad (Doghouse)",
     "menu_jukebox_screen_resmusic_madvlad" : "Mad Vlad (Doghouse)",
     "menu_jukebox_screen_m1" : "Criminal Intent (Old Version)",
 	"menu_jukebox_screen_m2" : "Preparations (Old Version)",
+	"menu_jukebox_screen_m3" : "Blueprints (Prototype Version)",
 	
 	"look_dad" : "no_errors",
 	

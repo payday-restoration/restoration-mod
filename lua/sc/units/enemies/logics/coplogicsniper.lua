@@ -66,7 +66,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if SniperFocusHandler == nil then
 				data.unit:inventory():equipped_unit():base():set_laser_enabled(true)
 				my_data.weapon_laser_on = true
-				managers.occlusion:remove_occlusion(data.unit)
+				--managers.occlusion:remove_occlusion(data.unit)
 				managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_on)
 			end
 		end
@@ -93,7 +93,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_off)
 			if new_logic_name ~= "inactive" then
-				managers.occlusion:add_occlusion(data.unit)
+				--managers.occlusion:add_occlusion(data.unit)
 			end
 		end
 	end
@@ -280,7 +280,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				data.unit:inventory():equipped_unit():base():set_laser_enabled(false)
 				data.internal_data.weapon_laser_on = false
 				if not data.unit:character_damage():dead() then
-					managers.occlusion:add_occlusion(data.unit)
+					--managers.occlusion:add_occlusion(data.unit)
 				end
 				managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_off)
 			end

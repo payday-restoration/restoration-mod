@@ -238,8 +238,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end	
 			
-			--Election Day Day 3 (Bank)--
-			if id == "Play_pln_ed3_18" then
+			--Breaking Ballot--
+			if id == "Play_pln_ed3_18" or id == "Play_pln_ed3_17" then
 				if difficulty_index <= 2 then
 					escape_time = 450 
 				elseif difficulty_index == 3 then
@@ -255,7 +255,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end		
 			
-			--Election Day Day 2 (Warehouse)--
+			--Swing Vote--
 			if id == "Play_pln_ed2_14" then
 				if difficulty_index <= 2 then
 					escape_time = 450 

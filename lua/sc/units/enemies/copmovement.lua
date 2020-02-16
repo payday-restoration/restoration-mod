@@ -813,48 +813,230 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.network:session():send_to_peers_synched("suppressed_state", self._unit, state and true or false)
 		end
 	end
-end
 
---crash prevention
-function CopMovement:anim_clbk_enemy_spawn_melee_item()
-	if alive(self._melee_item_unit) then
-		return
+	--crash prevention
+	function CopMovement:anim_clbk_enemy_spawn_melee_item()
+		if alive(self._melee_item_unit) then
+			return
+		end
+
+		local melee_weapon = self._unit:base().melee_weapon and self._unit:base():melee_weapon()
+		local unit_name = melee_weapon and melee_weapon ~= "weapon" and tweak_data.weapon.npc_melee[melee_weapon] and tweak_data.weapon.npc_melee[melee_weapon].unit_name or nil
+
+		if unit_name then
+			local align_obj_l_name = CopMovement._gadgets.aligns.hand_l
+			local align_obj_l = self._unit:get_object(align_obj_l_name)
+
+			self._melee_item_unit = World:spawn_unit(unit_name, align_obj_l:position(), align_obj_l:rotation())
+			self._unit:link(align_obj_l:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())
+		end
 	end
 
-	local melee_weapon = self._unit:base().melee_weapon and self._unit:base():melee_weapon()
-	local unit_name = melee_weapon and melee_weapon ~= "weapon" and tweak_data.weapon.npc_melee[melee_weapon] and tweak_data.weapon.npc_melee[melee_weapon].unit_name or nil
-
-	if unit_name then
-		local align_obj_l_name = CopMovement._gadgets.aligns.hand_l
-		local align_obj_l = self._unit:get_object(align_obj_l_name)
-
-		self._melee_item_unit = World:spawn_unit(unit_name, align_obj_l:position(), align_obj_l:rotation())
-		self._unit:link(align_obj_l:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())
+	function CopMovement:set_uncloaked(state)
+		self._uncloaked = state
 	end
-end
 
-function CopMovement:set_uncloaked(state)
-	self._uncloaked = state
-end
+	--used for Titan Spoocs and Autumn
+	function CopMovement:is_uncloaked()
+		return self._uncloaked or false
+	end
 
---used for Titan Spoocs and Autumn
-function CopMovement:is_uncloaked()
-	return self._uncloaked or false
-end
+	--syncing stuff
+	function CopMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier)
+		local reload_action = {
+			body_part = 3,
+			type = "reload",
+			idle_reload = empty_reload ~= 0 and empty_reload or nil
+		}
 
---syncing stuff
-function CopMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier)
-	local reload_action = {
-		body_part = 3,
-		type = "reload",
-		idle_reload = empty_reload ~= 0 and empty_reload or nil
-	}
+		self:action_request(reload_action)
+	end
 
-	self:action_request(reload_action)
-end
+	--syncing stuff
+	function CopMovement:sync_fall_position(pos, rot)
+		self:set_position(pos)
+		self:set_rotation(rot)
+	end
 
---syncing stuff
-function CopMovement:sync_fall_position(pos, rot)
-	self:set_position(pos)
-	self:set_rotation(rot)
+	function CopMovement:damage_clbk(my_unit, damage_info)
+		local hurt_type = damage_info.result.type
+
+		if damage_info.variant == "explosion" or damage_info.variant == "bullet" or damage_info.variant == "fire" or damage_info.variant == "poison" then
+			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
+		end
+
+		if hurt_type == "stagger" then
+			hurt_type = "heavy_hurt"
+		end
+
+		if hurt_type == "hurt" or hurt_type == "heavy_hurt" or hurt_type == "knock_down" then
+			if self._anim_global and self._anim_global == "shield" then
+				hurt_type = "expl_hurt"
+			end
+		end
+
+		local block_type = hurt_type
+
+		if hurt_type == "knock_down" or hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+			block_type = "heavy_hurt"
+		end
+
+		if hurt_type == "death" and self._queued_actions then
+			self._queued_actions = {}
+		end
+
+		if not hurt_type or Network:is_server() and self:chk_action_forbidden(block_type) then
+			if hurt_type == "death" then
+				debug_pause_unit(self._unit, "[CopMovement:damage_clbk] Death action skipped!!!", self._unit)
+				Application:draw_cylinder(self._m_pos, self._m_pos + math.UP * 5000, 30, 1, 0, 0)
+
+				for body_part, action in ipairs(self._active_actions) do
+					if action then
+						print(body_part, action:type(), inspect(action._blocks))
+					end
+				end
+			end
+
+			return
+		end
+
+		if damage_info.variant == "stun" and alive(self._ext_inventory and self._ext_inventory._shield_unit) then
+			hurt_type = "shield_knock"
+			block_type = "shield_knock"
+			damage_info.variant = "melee"
+			damage_info.result = {
+				variant = "melee",
+				type = "shield_knock"
+			}
+			damage_info.shield_knock = true
+		end
+
+		if hurt_type == "death" then
+			if self._rope then
+				self._rope:base():retract()
+
+				self._rope = nil
+				self._rope_death = true
+
+				if self._unit:sound().anim_clbk_play_sound then
+					self._unit:sound():anim_clbk_play_sound(self._unit, "repel_end")
+				end
+			end
+
+			if Network:is_server() then
+				self:set_attention()
+			else
+				self:synch_attention()
+			end
+		end
+
+		local attack_dir = damage_info.col_ray and damage_info.col_ray.ray or damage_info.attack_dir
+		local hit_pos = damage_info.col_ray and damage_info.col_ray.position or damage_info.pos
+		local lgt_hurt = hurt_type == "light_hurt"
+		local body_part = lgt_hurt and 4 or 1
+		local blocks = nil
+
+		if not lgt_hurt then
+			blocks = {
+				act = -1,
+				aim = -1,
+				action = -1,
+				tase = -1,
+				walk = -1,
+				light_hurt = -1
+			}
+
+			if hurt_type == "bleedout" then
+				blocks.bleedout = -1
+				blocks.hurt = -1
+				blocks.heavy_hurt = -1
+				blocks.hurt_sick = -1
+				blocks.concussion = -1
+			end
+
+			if hurt_type == "shield_knock" then
+				blocks.light_hurt = -1
+				blocks.concussion = -1
+			end
+
+			if hurt_type == "concussion" or hurt_type == "counter_tased" then
+				blocks.hurt = -1
+				blocks.light_hurt = -1
+				blocks.heavy_hurt = -1
+				blocks.stagger = -1
+				blocks.knock_down = -1
+				blocks.counter_tased = -1
+				blocks.hurt_sick = -1
+				blocks.expl_hurt = -1
+				blocks.counter_spooc = -1
+				blocks.fire_hurt = -1
+				blocks.taser_tased = -1
+				blocks.poison_hurt = -1
+				blocks.shield_knock = -1
+				blocks.concussion = -1
+			end
+		end
+
+		if damage_info.variant == "tase" then
+			block_type = "bleedout"
+		elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+			block_type = "heavy_hurt"
+		else
+			block_type = hurt_type
+		end
+
+		local client_interrupt = nil
+
+		if Network:is_client() and (hurt_type == "light_hurt" or hurt_type == "hurt" and damage_info.variant ~= "tase" or hurt_type == "heavy_hurt" or hurt_type == "expl_hurt" or hurt_type == "shield_knock" or hurt_type == "counter_tased" or hurt_type == "taser_tased" or hurt_type == "counter_spooc" or hurt_type == "death" or hurt_type == "hurt_sick" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "concussion") then
+			client_interrupt = true
+		end
+
+		local tweak = self._tweak_data
+		local action_data = nil
+
+		if hurt_type == "healed" then
+			if Network:is_client() then
+				client_interrupt = true
+			end
+
+			action_data = {
+				body_part = 3,
+				type = "healed",
+				client_interrupt = client_interrupt
+			}
+		else
+			action_data = {
+				type = "hurt",
+				block_type = block_type,
+				hurt_type = hurt_type,
+				variant = damage_info.variant,
+				direction_vec = attack_dir,
+				hit_pos = hit_pos,
+				body_part = body_part,
+				blocks = blocks,
+				client_interrupt = client_interrupt,
+				attacker_unit = damage_info.attacker_unit,
+				death_type = tweak.damage.death_severity and (tweak.damage.death_severity < damage_info.damage / tweak.HEALTH_INIT and "heavy" or "normal") or "normal",
+				ignite_character = damage_info.ignite_character,
+				start_dot_damage_roll = damage_info.start_dot_damage_roll,
+				is_fire_dot_damage = damage_info.is_fire_dot_damage,
+				fire_dot_data = damage_info.fire_dot_data,
+				is_synced = damage_info.is_synced
+			}
+		end
+
+		local request_action = Network:is_server() or not self:chk_action_forbidden(action_data)
+
+		if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt") then
+			request_action = false
+		end
+
+		if request_action then
+			self:action_request(action_data)
+
+			if hurt_type == "death" and self._queued_actions then
+				self._queued_actions = {}
+			end
+		end
+	end
 end

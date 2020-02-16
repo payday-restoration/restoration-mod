@@ -7,7 +7,6 @@ local math_min = math.min
 local math_lerp = math.lerp
 local tmp_vec2 = Vector3()
 local tmp_vec3 = Vector3()
-local vis_check_slotmask = managers.slot:get_mask("AI_visibility")
 
 function TeamAILogicIdle.enter(data, new_logic_name, enter_params)
 	TeamAILogicBase.enter(data, new_logic_name, enter_params)
@@ -616,7 +615,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 									local nearby_medic = managers.enemy:get_nearby_medic(att_unit)
 
 									if nearby_medic then
-										if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_medic:movement():m_head_pos(), "slot_mask", vis_check_slotmask, "ray_type", "ai_vision", "report") then
+										if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_medic:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report") then
 											target_priority_slot = 0
 											check_other_healing_sources = nil
 										end
@@ -682,7 +681,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 								local nearby_doc = get_nearby_medic_summers(att_unit)
 
 								if nearby_doc then
-									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_doc:movement():m_head_pos(), "slot_mask", vis_check_slotmask, "ray_type", "ai_vision", "report") then
+									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_doc:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report") then
 										if target_priority_slot == 1 then
 											target_priority_slot = target_priority_slot + 1
 										else
@@ -694,7 +693,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 								local nearby_lpf = get_nearby_lpf(att_unit)
 
 								if nearby_lpf then
-									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_lpf:movement():m_head_pos(), "slot_mask", vis_check_slotmask, "ray_type", "ai_vision", "report") then
+									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_lpf:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report") then
 										target_priority_slot = target_priority_slot + 1
 									end
 								end

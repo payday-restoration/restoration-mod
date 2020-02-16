@@ -833,12 +833,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CopMovement:set_uncloaked(state)
+		if state then
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.uncloak)
+		else
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.cloak)
+		end
+
 		self._uncloaked = state
 	end
 
 	--used for Titan Spoocs and Autumn
 	function CopMovement:is_uncloaked()
-		return self._uncloaked or false
+		return self._uncloaked
 	end
 
 	--syncing stuff

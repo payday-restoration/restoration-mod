@@ -13,6 +13,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		local weapon_tweak = tweak_data.weapon[self._name_id]
 
+		if weapon_tweak.armor_piercing then
+			self._use_armor_piercing = true
+		end
+
 		local trail = Idstring("effects/particles/weapons/weapon_trail")
 		
 		if weapon_tweak and weapon_tweak.sniper_trail then

@@ -684,6 +684,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return true
 	end
 
+	local tmp_vec1 = Vector3()
+
 	function CopActionHurt:_upd_ragdolled(t)
 		local dt = TimerManager:game():delta_time()
 

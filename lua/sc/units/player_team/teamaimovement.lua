@@ -2,7 +2,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	TeamAIMovement.update = TeamAIMovement.super.update
 
-	function HuskTeamAIMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier)
+	function TeamAIMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier)
 		local reload_action = {
 			body_part = 3,
 			type = "reload",

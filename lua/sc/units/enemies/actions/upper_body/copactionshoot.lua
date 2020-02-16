@@ -663,7 +663,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 						local is_autumn = self._ext_base._tweak_table == "autumn"
 
-						if self._unit:damage() and self._unit:damage():has_sequence("decloak") then
+						if not self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
 							local roll_chance = is_autumn and 0.2 or 0.4
 							local uncloak_roll = math_random() <= roll_chance
 

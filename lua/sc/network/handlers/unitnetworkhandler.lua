@@ -51,23 +51,41 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function UnitNetworkHandler:place_grenade_crate(pos, rot, rpc)
-		local peer = self._verify_sender(rpc)
-	
-		if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
+
+	function UnitNetworkHandler:action_aim_state(unit, state)
+		if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not self._verify_character(unit) then
 			return
 		end
-	
-		if not managers.player:verify_equipment(peer:id(), "grenade_crate") then
-			return
-		end
-	
-		local unit = GrenadeCrateBase.spawn(pos, rot, peer:id())
-	
-		if unit then
-			unit:base():set_server_information(peer:id())
+
+		if state then
+			local shoot_action = {
+				block_type = "action",
+				body_part = 3,
+				type = "shoot"
+			}
+
+			unit:movement():action_request(shoot_action)
+		else
+			unit:movement():sync_action_aim_end()
 		end
 	end
+	-- function UnitNetworkHandler:place_grenade_crate(pos, rot, rpc)
+	-- 	local peer = self._verify_sender(rpc)
+	
+	-- 	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
+	-- 		return
+	-- 	end
+	
+	-- 	if not managers.player:verify_equipment(peer:id(), "grenade_crate") then
+	-- 		return
+	-- 	end
+	
+	-- 	local unit = GrenadeCrateBase.spawn(pos, rot, peer:id())
+	
+	-- 	if unit then
+	-- 		unit:base():set_server_information(peer:id())
+	-- 	end
+	-- end
 
 	function UnitNetworkHandler:sync_add_doted_enemy(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, rpc)
 		if variant == 0 then
@@ -99,5 +117,4 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.dot:sync_add_dot_damage(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, variant, weapon_id)
 		end
 	end
-
 end

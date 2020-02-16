@@ -7238,7 +7238,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2")
 				},
 				zombie = {
-					Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
 				},				
 				murkywater = {
 					Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
@@ -7673,6 +7673,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			access = access_type_all,
 			special_type = "autumn"
 		}
+		self.unit_categories.Titan_Spooc = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")				
+				},
+				zombie = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},					
+				murkywater = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				nypd = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},	
+				lapd = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				}				
+			},
+			access = access_type_all
+		}		
 		self.unit_categories.Cap_Summers = {
 			unit_types = {
 				america = {
@@ -8203,24 +8226,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"aggressor",
 				"shield_cover"
 			},
-			SKULL_tank = { --set up as titan dozer lite
+			SKULL_tank = { --slightly more passive than the other dozers will stand his ground if charged
 			    "reloadingretreat",
 			    "ranged_fire",
 				"murder",
 				"harass",
 				"shield_cover"
 			},
-			TIT_tank = { --set up to use passive suppressive fire against players they'll also use the hunter tactic to hunt rambo players :)
+			TIT_tank = { --set up to use passive suppressive fire against players :)
 				"obstacle",
 			    "reloadingretreat",
 				"spoocavoidance",
-				"hunter",
 				"murder",
 				"elite_ranged_fire",
 				"shield_cover"
 			},
 			spooc = {
 				"hunter",
+				"flank",
 				"spoocavoidance",
 				"shield_cover",
 				"smoke_grenade",
@@ -8236,9 +8259,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			Cap_spring = {
 				"aggressor", --this is to help him not lag behind the player too much
+				"charge",
 				"murder"
 			},
 			Cap_summers = {
+				"aggressor",
 				"charge",
 				"murder"
 			},
@@ -8329,7 +8354,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			ELITE_swat_rifle_flank = {
 				"reloadingretreat",
-			    "spoocavoidance",
 				"harass",
 				"flank",
 				"smoke_grenade",
@@ -8343,7 +8367,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			ELITE_swat_shotgun_flank = {
 				"reloadingretreat",
-			    "spoocavoidance",
 				"harass",
 				"flank",
 				"smoke_grenade",
@@ -8362,7 +8385,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"flash_grenade",
 				"charge",
 				"obstacle",
-			    "spoocavoidance",
 				"provide_coverfire",
 				"provide_support",
 				"shield_cover",
@@ -8426,7 +8448,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"deathguard"
 			},
 			tazer_flanking = {
-				"flanking",
+				"flank",
 				"charge",
 				"provide_coverfire",
 				"smoke_grenade",
@@ -9885,19 +9907,43 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}			
 		end
-		self.enemy_spawn_groups.Cap_Autumn = {
-			amount = {1, 1},
-			spawn = {
-				{
-					unit = "Cap_Autumn",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.Cap_autumn,
-					rank = 1
+		if difficulty_index <= 7 then
+			self.enemy_spawn_groups.Cap_Autumn = {
+				amount = {1, 1},
+				spawn = {
+					{
+						unit = "Cap_Autumn",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_autumn,
+						rank = 1
+					}
 				}
 			}
-		}
+		else
+			self.enemy_spawn_groups.Cap_Autumn = {
+				amount = {4, 4},
+				spawn = {
+					{
+						unit = "Cap_Autumn",
+						freq = 1,
+						amount_min = 1,
+						amount_max = 1,
+						tactics = self._tactics.Cap_autumn,
+						rank = 1
+					},
+					{
+						unit = "Titan_Spooc",
+						freq = 1,
+						amount_min = 3,
+						amount_max = 3,
+						tactics = self._tactics.Cap_autumn,
+						rank = 2
+					}					
+				}
+			}		
+		end
 		self.enemy_spawn_groups.Cap_Summers = {
 			amount = {4, 4},
 			spawn = {
@@ -11334,9 +11380,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.besiege.assault = {}
 		self.besiege.assault.anticipation_duration = {
+			{40, 1},
 			{30, 1},
-			{30, 1},
-			{45, 0.5}
+			{20, 1}
 		}
 		self.besiege.assault.build_duration = 35
 		self.besiege.assault.sustain_duration_min = {

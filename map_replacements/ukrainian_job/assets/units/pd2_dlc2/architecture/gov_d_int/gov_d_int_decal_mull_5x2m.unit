@@ -1,0 +1,6 @@
+<unit type="gov" slot="1" >
+    <object file="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_5x2m" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

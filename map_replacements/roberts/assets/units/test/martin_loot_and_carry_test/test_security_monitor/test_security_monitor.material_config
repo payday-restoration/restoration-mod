@@ -1,0 +1,10 @@
+<materials version="3">
+    <material name="stn_prop_monitor" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/world/props/gym/stn_prop_monitor/stn_prop_monitor_df"/>
+        <bump_normal_texture file="units/world/props/gym/stn_prop_monitor/stn_prop_monitor_nm"/>
+        <self_illumination_texture file="units/world/props/gym/stn_prop_monitor/stn_prop_monitor_il"/>
+        <variable value="match" type="scalar" name="il_multiplier"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="1.75 0.25800001621246 0.40000000596046" type="vector3" name="environment_settings"/>
+    </material>
+</materials>

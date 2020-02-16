@@ -1,0 +1,6 @@
+<unit type="str" slot="1" >
+    <object file="units/payday2/props/shadow_mullplan/mullplan_branchbank_chair_single" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

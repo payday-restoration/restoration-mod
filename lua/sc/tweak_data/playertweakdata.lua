@@ -2,7 +2,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerTweakData:_set_easy()
 		self.damage.automatic_respawn_time = 120
-		self.damage.MIN_DAMAGE_INTERVAL = 0.6
+		self.damage.MIN_DAMAGE_INTERVAL = 0.55
 		self.suspicion.max_value = 6
 		self.suspicion.range_mul = 0.8
 		self.suspicion.buildup_mul = 0.8
@@ -10,7 +10,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerTweakData:_set_normal()
 		self.damage.automatic_respawn_time = 175
-		self.damage.MIN_DAMAGE_INTERVAL = 0.55
+		self.damage.MIN_DAMAGE_INTERVAL = 0.5
 		self.suspicion.max_value = 8
 		self.suspicion.range_mul = 1
 		self.suspicion.buildup_mul = 1	
@@ -18,21 +18,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerTweakData:_set_hard()
 		self.damage.automatic_respawn_time = 220
-		self.damage.MIN_DAMAGE_INTERVAL = 0.5
-		self.suspicion.max_value = 8
-		self.suspicion.range_mul = 1
-		self.suspicion.buildup_mul = 1	
-	end
-
-	function PlayerTweakData:_set_overkill()
 		self.damage.MIN_DAMAGE_INTERVAL = 0.45
 		self.suspicion.max_value = 8
 		self.suspicion.range_mul = 1
 		self.suspicion.buildup_mul = 1	
 	end
 
-	function PlayerTweakData:_set_overkill_145()
+	function PlayerTweakData:_set_overkill()
 		self.damage.MIN_DAMAGE_INTERVAL = 0.4
+		self.suspicion.max_value = 8
+		self.suspicion.range_mul = 1
+		self.suspicion.buildup_mul = 1	
+	end
+
+	function PlayerTweakData:_set_overkill_145()
+		self.damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.suspicion.max_value = 8
 		self.suspicion.range_mul = 1
 		self.suspicion.buildup_mul = 1	
@@ -42,14 +42,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.suspicion.max_value = 8
 		self.suspicion.range_mul = 1
 		self.suspicion.buildup_mul = 1	
-		self.damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	end
 
 	function PlayerTweakData:_set_overkill_290()
 		self.suspicion.max_value = 9
 		self.suspicion.range_mul = 1.1
 		self.suspicion.buildup_mul = 1.1
-		self.damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}
@@ -67,13 +67,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bluff_success_chance = {
 				1,
 				1,
-				1,
-				1,
 				0
 			},
 			bluff_success_chance_w_skill = {
-				1,
-				1,
 				1,
 				1,
 				0
@@ -85,7 +81,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.suspicion.max_value = 10
 		self.suspicion.range_mul = 1.2
 		self.suspicion.buildup_mul = 1.2
-		self.damage.MIN_DAMAGE_INTERVAL = 0.3
+		self.damage.MIN_DAMAGE_INTERVAL = 0.25
 		self.damage.REVIVE_HEALTH_STEPS = {
 			0.25
 		}
@@ -103,15 +99,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			nr_of_calls = {2, 2},
 			bluff_success_chance = {
 				1,
-				1,
-				1,
-				1,
 				0
 			},
 			bluff_success_chance_w_skill = {
-				1,
-				1,
-				1,
 				1,
 				0
 			}

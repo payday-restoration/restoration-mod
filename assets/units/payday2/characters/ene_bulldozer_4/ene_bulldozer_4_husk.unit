@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<unit type="being" slot="12">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	<object file="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" />
+
+	<dependencies>
+		
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_neck_4/ene_acc_bulldozer_neck_4" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_throat_4/ene_acc_bulldozer_throat_4" />
+		<depends_on unit="units/pd2_halloween/weapons/wpn_mel_titan_hammer/wpn_mel_titan_hammer" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="HuskCopBase" >
+			<var name="can_be_marked" value="true" />
+			<var name="_tweak_table" value="tank_hw" />
+			<var name="_default_weapon_id" value="hk21_sc" />
+			<var name="_melee_weapon_table" value="helloween" />
+		</extension>
+		<extension name="inventory" class="HuskCopInventory" />
+		<extension name="brain" class="HuskCopBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="HuskTankCopDamage" >
+			<var name="_head_body_name" value="head" />
+		</extension>
+		<extension name="movement" class="HuskCopMovement" >
+			<var name="_footwear" value="bulldozer" />
+			<var name="_anim_global" value="tank" />
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt" >
+			<var name="tweak_data" value="intimidate" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_skip_save_anim_state_machine" value="true" />
+		</extension>
+		<extension name="contour" class="ContourExt" />
+		<extension name="sound" class="CopSound" />
+	</extensions>
+
+  <network sync="husk" remote_unit=""/>
+
+  <sounds>
+		<default_soundsource source="Hips"/>
+  </sounds>
+</unit>

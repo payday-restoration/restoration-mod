@@ -1,0 +1,6 @@
+<unit type="csgo" slot="1" >
+    <object file="units/pd2_dlc2/csgo_models/props_downtown/sign_stop" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

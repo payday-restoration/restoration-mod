@@ -1,0 +1,16 @@
+<unit type="bnk" slot="1" >
+    <object file="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" />
+		<network sync="spawn"/>	
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>	
+    <extensions>
+        <extension name="unit_data" 	class="ScriptUnitData" />
+		<extension name="damage" 		class="UnitDamage" />
+		<extension name="interaction" 	class="UseInteractionExt">
+			<var name="tweak_data" 			value="invisible_interaction_open" />
+			<var name="_interact_object" 	value="interact"/>
+			<var name="drop_in_sync_tweak_data" value="true" />
+		</extension>
+    </extensions>
+</unit>

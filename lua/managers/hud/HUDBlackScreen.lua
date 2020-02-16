@@ -19,7 +19,11 @@ end)
 
 function HUDBlackScreen:set_mid_text(text)
 	local mid_text = self._blackscreen_panel:child("mid_text")
-	mid_text:set_text(utf8.to_upper(managers.localization:text("restoration_level_data_".. managers.job:current_level_id())))
+	if managers.localization:exists("restoration_level_data_".. managers.job:current_level_id()) then
+		mid_text:set_text(utf8.to_upper(managers.localization:text("restoration_level_data_".. managers.job:current_level_id())))
+	else
+		mid_text:set_text(utf8.to_upper(managers.localization:text("restoration_level_data_unknown")))
+	end
 end
 
 --Gonna keep those, I don't want to use child(index) to get these because it might break(btw thx ovk again for not using names)

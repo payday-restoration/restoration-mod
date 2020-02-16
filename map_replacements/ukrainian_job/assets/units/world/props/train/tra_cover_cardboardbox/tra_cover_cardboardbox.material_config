@@ -1,0 +1,6 @@
+<materials version="3">
+    <material version="2" decal_material="paper" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" name="orig_tra_cover_cardboardbox_standard">
+        <diffuse_texture file="units/payday2/props/com_prop_janitor_boxes/com_prop_janitor_boxes_df"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_janitor_boxes/com_prop_janitor_boxes_nm"/>
+    </material>
+</materials>

@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mat_str_prop_construction_nailgun" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun_df"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun_nm"/>
+    </material>
+</materials>

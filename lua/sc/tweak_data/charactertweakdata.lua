@@ -192,6 +192,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.steal_loot = nil
 		self.security.static_dodge_preset = true
 		self.security.shooting_death = false
+		self.security.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "security")
 		self.security_undominatable = deep_clone(self.security)
 		self.security_undominatable.surrender = nil
@@ -258,6 +259,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gensec.has_alarm_pager = true
 		self.gensec.melee_weapon = "baton"
 		self.gensec.steal_loot = nil
+		self.gensec.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "gensec")
 	end
 
@@ -294,7 +296,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop.speech_prefix_p1 = self._prefix_data_p1.cop()
 		self.cop.speech_prefix_p2 = "n"
 		self.cop.speech_prefix_count = 4
-		self.cop.access = "cop"
+		if job == "crojob2" or job == "dark" or job == "kosugi" then
+			self.cop.access = "security"
+		else
+			self.cop.access = "fbi"
+		end
 		self.cop.silent_priority_shout = "f37"
 		self.cop.dodge = presets.dodge.average
 		self.cop.deathguard = true
@@ -307,12 +313,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.cop.steal_loot = true
 		end
 		self.cop.static_dodge_preset = true
-		if job == "crojob2" then
+		if job == "crojob2" or job == "dark" or job == "kosugi" then
 			self.cop.has_alarm_pager = true
 			self.cop.radio_prefix = "fri_"
 		else
 			self.cop.has_alarm_pager = false
 		end		
+		self.cop.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "cop")
 		self.cop_scared = deep_clone(self.cop)
 		self.cop_scared.surrender = presets.surrender.always
@@ -360,6 +367,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dave.access = "fbi"
         self.dave.speech_prefix_p1 = "fuckyou"
         self.dave.speech_prefix_count = nil   
+		self.dave.heal_cooldown = 20
 	end
 
 	function CharacterTweakData:_init_fbi(presets)
@@ -402,6 +410,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi.chatter = presets.enemy_chatter.cop
 		self.fbi.steal_loot = true
 		self.fbi.no_arrest = false
+		self.fbi.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "fbi")
 		self.fbi_female = deep_clone(self.fbi)
 		self.fbi_female.speech_prefix_p1 = "fl"
@@ -456,6 +465,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		    self.fbi_vet.speech_prefix_p1 = "heck"
 		    self.fbi_vet.speech_prefix_count = nil	
 		end
+		self.fbi_vet.heal_cooldown = 3.75
 		table.insert(self._enemy_list, "fbi_vet")		
 		self.meme_man = deep_clone(self.fbi_vet)		
 		self.meme_man.tags = {"law", "tank", "special"}		
@@ -475,6 +485,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.meme_man.surrender = nil
 		self.meme_man.is_special = true
 		self.meme_man.unintimidateable = true
+		self.meme_man.heal_cooldown = 90
 		table.insert(self._enemy_list, "meme_man")	
 		self.meme_man_shield = deep_clone(self.meme_man)		
 		self.meme_man_shield.tags = {"medic", "special", "shield"}		
@@ -699,6 +710,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 			self.swat.steal_loot = true
 		end		
+		self.swat.heal_cooldown = 5
 		table.insert(self._enemy_list, "swat")
 		
 		self.swat_titan = deep_clone(self.swat)
@@ -713,6 +725,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.unintimidateable = true	
 		self.swat_titan.custom_voicework = nil
 		self.swat_titan.static_dodge_preset = true
+		self.swat_titan.heal_cooldown = 7.5
 		table.insert(self._enemy_list, "swat_titan")
 		
 		self.hrt = deep_clone(self.swat)
@@ -767,6 +780,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat.static_weapon_preset = true
 		self.heavy_swat.static_dodge_preset = true
 		self.heavy_swat.static_melee_preset = true	
+		self.heavy_swat.heal_cooldown = 10
 		table.insert(self._enemy_list, "heavy_swat")
 		
 		self.heavy_swat_sniper = deep_clone(self.heavy_swat)
@@ -896,17 +910,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.heavy_swat_sniper.custom_voicework = "tsniper"
 		end		
 		self.heavy_swat_sniper.is_special = true
+		self.heavy_swat_sniper.heal_cooldown = 15
 		table.insert(self._enemy_list, "heavy_swat_sniper")
 		
 		--Weekend Snipers
 		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)	
 		if is_reaper then
 		    self.weekend_dmr.custom_voicework = "tswat_ru"
+		elseif is_murky then
+		    self.weekend_dmr.custom_voicework = "bravo_murky"	
 		else
 		    self.weekend_dmr.custom_voicework = "bravo"
 		end	
+		self.weekend_dmr.HEALTH_INIT = 11.25
+		self.weekend_dmr.headshot_dmg_mul = 4.25
         self.weekend_dmr.speech_prefix_p1 = "uwu"
         self.weekend_dmr.speech_prefix_count = nil    
+		self.weekend_dmr.heal_cooldown = 15
 		table.insert(self._enemy_list, "weekend_dmr")
 	end
 
@@ -957,6 +977,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_swat.static_weapon_preset = true
 		self.fbi_swat.static_dodge_preset = true
 		self.fbi_swat.static_melee_preset = true
+		self.fbi_swat.heal_cooldown = 5
 		table.insert(self._enemy_list, "fbi_swat")
 		
 		self.fbi_swat_vet = deep_clone(self.fbi_swat)
@@ -1011,6 +1032,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_heavy_swat.static_weapon_preset = true
 		self.fbi_heavy_swat.static_dodge_preset = true
 		self.fbi_heavy_swat.static_melee_preset = true	
+		self.fbi_heavy_swat.heal_cooldown = 7.5
 		table.insert(self._enemy_list, "fbi_heavy_swat")
 		
 		self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
@@ -1087,6 +1109,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat.static_dodge_preset = true
 		self.city_swat.static_melee_preset = true	
 		self.city_swat.custom_voicework = nil
+		self.city_swat.heal_cooldown = 5
 		table.insert(self._enemy_list, "city_swat")
 		
 		self.omnia = deep_clone(self.city_swat)	
@@ -1108,13 +1131,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend = deep_clone(self.city_swat)
 		if is_reaper then
 		    self.weekend.custom_voicework = "tswat_ru"
+		elseif is_murky then
+		    self.weekend.custom_voicework = "bravo_murky"	
 		else
 		    self.weekend.custom_voicework = "bravo"
 		end	
+		self.weekend.HEALTH_INIT = 18.75
+		self.weekend.headshot_dmg_mul = 3.75		
         self.weekend.speech_prefix_p1 = "uwu"
         self.weekend.speech_prefix_count = nil 
-		self.weekend.surrender = nil
-		self.weekend.unintimidateable = true
+		self.weekend.heal_cooldown = 5
 		table.insert(self._enemy_list, "weekend")				
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
@@ -1140,6 +1166,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.static_weapon_preset = true
 		self.city_swat_titan.static_dodge_preset = true
 		self.city_swat_titan.static_melee_preset = true	
+		self.city_swat_titan.heal_cooldown = 7.5
 		table.insert(self._enemy_list, "city_swat_titan")
 		
 		self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
@@ -1150,14 +1177,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(self._enemy_list, "skeleton_swat_titan")	
 		
 		--Weekend LMG
-		self.weekend_lmg = deep_clone(self.city_swat_titan)	
+		self.weekend_lmg = deep_clone(self.city_swat_titan)		
 		if is_reaper then
 		    self.weekend_lmg.custom_voicework = "tswat_ru"
+		elseif is_murky then
+		    self.weekend_lmg.custom_voicework = "bravo_murky"	
 		else
 		    self.weekend_lmg.custom_voicework = "bravo"
 		end	
+		self.weekend_lmg.HEALTH_INIT = 28.125
+		self.weekend_lmg.headshot_dmg_mul = 3.75		
         self.weekend_lmg.speech_prefix_p1 = "uwu"
         self.weekend_lmg.speech_prefix_count = nil 
+		self.weekend_lmg.heal_cooldown = 7.5
 		table.insert(self._enemy_list, "weekend_lmg")						
 				
 		--Temp Solution
@@ -1186,6 +1218,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.detection = presets.detection.sniper
 		self.sniper.HEALTH_INIT = 6
 		self.sniper.headshot_dmg_mul = 3.4
+		self.sniper.damage.hurt_severity = presets.hurt_severities.no_hurts
+		self.sniper.allowed_poses = {stand = true}
 		self.sniper.move_speed = presets.move_speed.very_fast
 		self.sniper.shooting_death = false
 		self.sniper.no_move_and_shoot = true
@@ -1212,6 +1246,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sniper.rescue_hostages = false
 		self.sniper.static_weapon_preset = true
 		self.sniper.static_dodge_preset = true
+		self.sniper.crouch_move = nil
 		self.sniper.is_special = true
 		self.sniper.die_sound_event = "mga_death_scream"
 		self.sniper.spawn_sound_event = "mga_deploy_snipers"
@@ -1238,18 +1273,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.no_retreat = true
 		self.gangster.weapon_voice = "3"
 		self.gangster.experience.cable_tie = "tie_swat"
+		self.gangster.rescue_hostages = false
+		self.gangster.use_radio = nil		
 		if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 			self.gangster.speech_prefix_p1 = "rt"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
-		elseif job == "alex_2" then
+		elseif job == "alex_2" or job == "alex_2_res" or job == "welcome_to_the_jungle_1" then
 			self.gangster.speech_prefix_p1 = "ict"
 			self.gangster.speech_prefix_p2 = nil
 			self.gangster.speech_prefix_count = 2
-		elseif job == "welcome_to_the_jungle_1" then
-			self.gangster.speech_prefix_p1 = "bik"
-			self.gangster.speech_prefix_p2 = nil
-			self.gangster.speech_prefix_count = 2
+		elseif job == "man" then	
+			self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
+			self.gangster.speech_prefix_p2 = "n"
+			self.gangster.speech_prefix_count = 4	
+			self.gangster.no_arrest = false
+			self.gangster.rescue_hostages = true
+			self.gangster.use_radio = self._default_chatter				
 		else
 			self.gangster.speech_prefix_p1 = "lt"
 			self.gangster.speech_prefix_p2 = nil
@@ -1263,13 +1303,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.gangster.silent_priority_shout = "f37"
-		if job == "mex" or job == "mex_cooking" then
+		if job == "alex_3" or job == "alex_3_res" or job == "mex" or job == "mex_cooking" then
 			self.gangster.access = "security"
 		else
 			self.gangster.access = "gangster"
 		end
-		self.gangster.rescue_hostages = false
-		self.gangster.use_radio = nil
 		self.gangster.dodge = presets.dodge.average
 		self.gangster.challenges = {type = "gangster"}
 		self.gangster.melee_weapon = nil
@@ -1278,6 +1316,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.static_dodge_preset = true
 		self.gangster.unintimidateable = true
 		self.gangster.always_drop = true
+		self.gangster.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "gangster")
 	end
 
@@ -1303,6 +1342,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.biker.static_dodge_preset = true
 		self.biker.always_drop = true
+		self.biker.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "biker")
 		self.biker_guard = deep_clone(self.biker)
 		self.biker_guard.suppression = presets.suppression.hard_def
@@ -1330,6 +1370,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.biker_guard.static_dodge_preset = false
+		self.biker_guard.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "biker_guard")
 	end
 
@@ -1377,6 +1418,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.mobster.static_dodge_preset = true
 		self.mobster.always_drop = true
+		self.mobster.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "mobster")
 	end
 
@@ -1426,6 +1468,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster_boss.static_dodge_preset = true
 		self.mobster_boss.is_special = true
 		self.mobster_boss.always_drop = true
+		self.mobster.heal_cooldown = 135
 		table.insert(self._enemy_list, "mobster_boss")
 	end
 
@@ -1475,6 +1518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker_boss.static_dodge_preset = true
 		self.biker_boss.always_drop = true
 		self.biker_boss.is_special = true
+		self.biker_boss.heal_cooldown = 135
 		table.insert(self._enemy_list, "biker_boss")
 	end
 
@@ -1490,6 +1534,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hector_boss.priority_shout_max_dis = 3000
 		self.hector_boss.is_special = true
 		self.hector_boss.always_drop = true
+		self.hector_boss.heal_cooldown = 135
 		table.insert(self._enemy_list, "hector_boss")
 	end
 
@@ -1507,6 +1552,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hector_boss_no_armor.use_radio = nil
 		self.hector_boss_no_armor.can_be_tased = true
 		self.hector_boss_no_armor.always_drop = true
+		self.hector_boss_no_armor.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "hector_boss_no_armor")
 	end
 
@@ -1557,6 +1603,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chavez_boss.static_dodge_preset = true
 		self.chavez_boss.is_special = true
 		self.chavez_boss.always_drop = true
+		self.chavez_boss.heal_cooldown = 135
 		table.insert(self._enemy_list, "chavez_boss")
 	end
 
@@ -1580,6 +1627,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.bolivian.static_dodge_preset = true
 		self.bolivian.always_drop = true
+		self.bolivian.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "bolivian")
 		
 		self.bolivian_indoors = deep_clone(self.bolivian)
@@ -1669,6 +1717,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss.static_dodge_preset = true
 		self.drug_lord_boss.is_special = true
 		self.drug_lord_boss.always_drop = true
+		self.drug_lord_boss.heal_cooldown = 135
 		table.insert(self._enemy_list, "drug_lord_boss")
 	end
 
@@ -1708,6 +1757,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.drug_lord_boss_stealth.immune_to_knock_down = false
 		self.drug_lord_boss_stealth.immune_to_concussion = false
 		self.drug_lord_boss_stealth.always_drop = true
+		self.drug_lord_boss_stealth.heal_cooldown = 2.5
 		table.insert(self._enemy_list, "drug_lord_boss_stealth")
 	end
 
@@ -1789,6 +1839,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank.static_dodge_preset = true
 		self.tank.no_recoil = true
 		self.tank.is_special = true
+		self.tank.heal_cooldown = 90
 		table.insert(self._enemy_list, "tank")
 		
 		self.tank_medic = deep_clone(self.tank)
@@ -1835,6 +1886,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.die_sound_event = "mga_death_scream"
 		self.tank_titan.damage.explosion_damage_mul = 1.25
 		self.tank_titan.is_special = true
+		self.tank_titan.heal_cooldown = 135
 		table.insert(self._enemy_list, "tank_titan")
 		
 		self.tank_titan_assault = deep_clone(self.tank_titan)
@@ -1842,18 +1894,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 		table.insert(self._enemy_list, "tank_titan_assault")
 		
-		self.tank_hw = deep_clone(self.tank)
-		self.tank_hw.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
-		self.tank_hw.speech_prefix_p2 = nil
-		self.tank_hw.speech_prefix_count = nil		
-		self.tank_hw.headshot_dmg_mul = 7.99425
+		self.tank_hw = deep_clone(self.tank_titan_assault)
 		self.tank_hw.ignore_headshot = false
 		self.tank_hw.melee_anims = nil
-		if job == "haunted" then
-			self.tank_hw.move_speed = presets.move_speed.very_slow
-		else
-			self.tank_hw.move_speed = presets.move_speed.slow
-		end
+		self.tank_hw.move_speed = presets.move_speed.very_slow
 		table.insert(self._enemy_list, "tank_hw")	
 		
 		self.tank_mini = deep_clone(self.tank)
@@ -1936,7 +1980,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			detect_stop = "cloaker_detect_stop",
 			detect = "cloaker_detect_mono"
 		}
-		
+		self.spooc.heal_cooldown = 45
 		table.insert(self._enemy_list, "spooc")
 		
 		self.spooc_titan = deep_clone(self.spooc)
@@ -1963,6 +2007,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.spooc_titan.custom_voicework = "tspook"
 		end		
 		self.spooc_titan.die_sound_event = "mga_death_scream"
+		self.spooc_titan.heal_cooldown = 67.5
 		table.insert(self._enemy_list, "spooc_titan")	
 	end
 	
@@ -2015,7 +2060,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shadow_spooc.can_be_tased = true
 		self.shadow_spooc.static_dodge_preset = true
 		self.shadow_spooc.is_special = true
-		
+		self.shadow_spooc.heal_cooldown = 45
 		table.insert(self._enemy_list, "shadow_spooc")
 	end	
 
@@ -2083,6 +2128,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.immune_to_knock_down = true
 		self.shield.static_dodge_preset = true
 		self.shield.is_special = true
+		self.shield.heal_cooldown = 20
 		table.insert(self._enemy_list, "shield")
 	end
 
@@ -2143,6 +2189,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.phalanx_minion.speech_prefix_p2 = nil
 			self.phalanx_minion.speech_prefix_count = nil
 		end
+		self.phalanx_minion.heal_cooldown = 30
 		table.insert(self._enemy_list, "phalanx_minion")
 		self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 		self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"	
@@ -2460,6 +2507,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		self.taser.is_special = true
+		self.taser.heal_cooldown = 30
 		table.insert(self._enemy_list, "taser")
 		
 		self.taser_summers = deep_clone(self.taser)
@@ -2518,6 +2566,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.is_special = true	
 		self.taser_titan.move_speed = presets.move_speed.fast
 		self.taser_titan.melee_weapon = "buzzer_summer"
+		self.taser_titan.heal_cooldown = 45
 		table.insert(self._enemy_list, "taser_titan")
 	end
 
@@ -2535,7 +2584,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    	is_zombie = true
 	    end
 		self.boom = deep_clone(presets.base)
-		self.boom.tags = {"law", "custom", "special", "customvo"}
+		self.boom.tags = {"law", "boom", "custom", "special", "customvo"}
 		self.boom.experience = {}
 		self.boom.weapon = deep_clone(presets.weapon.normal)
 		self.boom.melee_weapon = "knife_1"
@@ -2586,6 +2635,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.steal_loot = nil
 		self.boom.custom_voicework = "grenadier"
 		self.boom.is_special = true		
+		self.boom.heal_cooldown = 30
 		table.insert(self._enemy_list, "boom")
 		self.rboom = deep_clone(self.boom)
 		self.rboom.die_sound_event = "mdc_x02a_any_3p"
@@ -2625,6 +2675,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.ecm_hurts = {}		
 		table.insert(self._enemy_list, "boom_summers")		
 		self.boom_titan = deep_clone(self.boom)
+		self.boom.heal_cooldown = 45
 		table.insert(self._enemy_list, "boom_titan")		
 	end
 
@@ -2826,7 +2877,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.russian.speech_prefix = "rb2"
 		self.russian.weapon_voice = "1"
 		self.russian.access = "teamAI1"
-		self.russian.dodge = presets.dodge.athletic
+		self.russian.dodge = nil
 		self.russian.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2852,7 +2903,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.german.speech_prefix = "rb2"
 		self.german.weapon_voice = "2"
 		self.german.access = "teamAI1"
-		self.german.dodge = presets.dodge.athletic
+		self.german.dodge = nil
 		self.german.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2878,7 +2929,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spanish.speech_prefix = "rb2"
 		self.spanish.weapon_voice = "3"
 		self.spanish.access = "teamAI1"
-		self.spanish.dodge = presets.dodge.athletic
+		self.spanish.dodge = nil
 		self.spanish.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2904,7 +2955,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.american.speech_prefix = "rb2"
 		self.american.weapon_voice = "3"
 		self.american.access = "teamAI1"
-		self.american.dodge = presets.dodge.athletic
+		self.american.dodge = nil
 		self.american.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2929,7 +2980,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jowi.speech_prefix = "rb2"
 		self.jowi.weapon_voice = "3"
 		self.jowi.access = "teamAI1"
-		self.jowi.dodge = presets.dodge.athletic
+		self.jowi.dodge = nil
 		self.jowi.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2954,7 +3005,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.old_hoxton.speech_prefix = "rb2"
 		self.old_hoxton.weapon_voice = "3"
 		self.old_hoxton.access = "teamAI1"
-		self.old_hoxton.dodge = presets.dodge.athletic
+		self.old_hoxton.dodge = nil
 		self.old_hoxton.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -2979,7 +3030,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.female_1.speech_prefix = "rb7"
 		self.female_1.weapon_voice = "3"
 		self.female_1.access = "teamAI1"
-		self.female_1.dodge = presets.dodge.athletic
+		self.female_1.dodge = nil
 		self.female_1.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3004,7 +3055,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dragan.speech_prefix = "rb8"
 		self.dragan.weapon_voice = "3"
 		self.dragan.access = "teamAI1"
-		self.dragan.dodge = presets.dodge.athletic
+		self.dragan.dodge = nil
 		self.dragan.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3029,7 +3080,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jacket.speech_prefix = "rb9"
 		self.jacket.weapon_voice = "3"
 		self.jacket.access = "teamAI1"
-		self.jacket.dodge = presets.dodge.athletic
+		self.jacket.dodge = nil
 		self.jacket.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3050,7 +3101,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.bonnie.detection = presets.detection.gang_member
 		self.bonnie.move_speed = presets.move_speed.gang_member
-		self.bonnie.dodge = presets.dodge.athletic
+		self.bonnie.dodge = nil
 		self.bonnie.crouch_move = false
 		self.bonnie.speech_prefix = "rb10"
 		self.bonnie.weapon_voice = "3"
@@ -3079,6 +3130,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sokol.speech_prefix = "rb11"
 		self.sokol.weapon_voice = "3"
 		self.sokol.access = "teamAI1"
+		self.sokol.dodge = nil
 		self.sokol.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3103,6 +3155,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.dragon.speech_prefix = "rb12"
 		self.dragon.weapon_voice = "3"
 		self.dragon.access = "teamAI1"
+		self.dragon.dodge = nil
 		self.dragon.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3127,6 +3180,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bodhi.speech_prefix = "rb13"
 		self.bodhi.weapon_voice = "3"
 		self.bodhi.access = "teamAI1"
+		self.bodhi.dodge = nil
 		self.bodhi.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3151,6 +3205,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jimmy.speech_prefix = "rb14"
 		self.jimmy.weapon_voice = "3"
 		self.jimmy.access = "teamAI1"
+		self.jimmy.dodge = nil
 		self.jimmy.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3175,6 +3230,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sydney.speech_prefix = "rb15"
 		self.sydney.weapon_voice = "3"
 		self.sydney.access = "teamAI1"
+		self.sydney.dodge = nil
 		self.sydney.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3199,6 +3255,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.wild.speech_prefix = "rb16"
 		self.wild.weapon_voice = "3"
 		self.wild.access = "teamAI1"
+		self.wild.dodge = nil
 		self.wild.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3223,6 +3280,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.chico.speech_prefix = "rb17"
 		self.chico.weapon_voice = "3"
 		self.chico.access = "teamAI1"
+		self.chico.dodge = nil
 		self.chico.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3247,6 +3305,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.max.speech_prefix = "rb18"
 		self.max.weapon_voice = "3"
 		self.max.access = "teamAI1"
+		self.max.dodge = nil
 		self.max.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3272,7 +3331,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.myh.speech_prefix = "rb2"
 		self.myh.weapon_voice = "1"
 		self.myh.access = "teamAI1"
-		self.myh.dodge = presets.dodge.athletic
+		self.myh.dodge = nil
 		self.myh.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3299,6 +3358,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ecp_female.speech_prefix = "rb21"
 		self.ecp_female.weapon_voice = "3"
 		self.ecp_female.access = "teamAI1"
+		self.ecp_female.dodge = nil
 		self.ecp_female.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3322,6 +3382,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ecp_male.speech_prefix = "rb20"
 		self.ecp_male.weapon_voice = "3"
 		self.ecp_male.access = "teamAI1"
+		self.ecp_male.dodge = nil
 		self.ecp_male.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -3348,6 +3409,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.joy.speech_prefix = "rb19"
 		self.joy.weapon_voice = "3"
 		self.joy.access = "teamAI1"
+		self.joy.dodge = nil
 		self.joy.arrest = {
 			timeout = 240,
 			aggression_timeout = 6,
@@ -9362,92 +9424,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}	
 		presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
-		presets.weapon.gang_member.is_smg.FALLOFF = {
-			{
-				r = 100,
-				acc = {0.8, 0.9},
-				dmg_mul = 1.25,
-				recoil = {0.4, 0.8},
-				mode = {
-					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				r = 500,
-				acc = {0.7, 0.8},
-				dmg_mul = 1.25,
-				recoil = {0.45, 0.8},
-				mode = {
-					0,
-					3,
-					3,
-					1
-				}
-			},
-			{
-				r = 1000,
-				acc = {0.6, 0.7},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				r = 1800,
-				acc = {0.5, 0.6},
-				dmg_mul = 1.25,
-				recoil = {0.35, 0.75},
-				mode = {
-					1,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				r = 2000,
-				acc = {0.4, 0.5},
-				dmg_mul = 1.25,
-				recoil = {0.4, 1.2},
-				mode = {
-					3,
-					2,
-					2,
-					0
-				}
-			},
-			{
-				r = 3000,
-				acc = {0.3, 0.4},
-				dmg_mul = 1.25,
-				recoil = {1.5, 3},
-				mode = {
-					3,
-					1,
-					1,
-					0
-				}
-			},
-			{
-				r = 4000,
-				acc = {0.2, 0.3},
-				dmg_mul = 1.25,
-				recoil = {1.5, 3},
-				mode = {
-					3,
-					1,
-					1,
-					0
-				}
-			}
-		}
 		presets.weapon.gang_member.is_revolver = presets.weapon.gang_member.is_pistol
 		presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
 		presets.weapon.gang_member.is_lmg.FALLOFF = {
@@ -9897,24 +9873,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper.is_rifle.melee_dmg = 5
 		presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 		presets.weapon.sniper.is_rifle.range = {
-			close = 15000,
-			optimal = 15000,
-			far = 15000
+			close = 2000,
+			optimal = 8000,
+			far = 16000
 		}
 		presets.weapon.sniper.is_rifle.use_laser = false
 		presets.weapon.sniper.is_rifle.FALLOFF = {
-			{
-				r = 1000,
-				acc = {0.7, 0.95},
-				dmg_mul = 1,
-				recoil = {3, 6},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
 			{
 				r = 2000,
 				acc = {0.7, 0.95},
@@ -9929,6 +9893,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 4000,
+				acc = {0.7, 0.95},
+				dmg_mul = 1,
+				recoil = {3, 6},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
 				acc = {0.5, 0.95},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9940,7 +9916,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.5, 0.85},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9952,7 +9928,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.5, 0.75},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -9968,18 +9944,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper_good.is_rifle.melee_dmg = 10
 		presets.weapon.sniper_good.is_rifle.FALLOFF = {
 			{
-				r = 1000,
-				acc = {0.7, 0.95},
-				dmg_mul = 2,
-				recoil = {3, 6},
-				mode = {
-					1,
-					0,
-					0,
-					0
-				}
-			},
-			{
 				r = 2000,
 				acc = {0.7, 0.95},
 				dmg_mul = 2,
@@ -9993,6 +9957,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			{
 				r = 4000,
+				acc = {0.7, 0.95},
+				dmg_mul = 2,
+				recoil = {3, 6},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
 				acc = {0.5, 0.95},
 				dmg_mul = 2,
 				recoil = {4, 6},
@@ -10004,7 +9980,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.5, 0.85},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -10016,7 +9992,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.5, 0.75},
 				dmg_mul = 1,
 				recoil = {4, 6},
@@ -10056,7 +10032,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},		
 			{
-				r = 2000,
+				r = 4000,
 				acc = {0.7, 1},
 				dmg_mul = 2.1,
 				recoil = {3, 5},
@@ -10068,7 +10044,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 4000,
+				r = 8000,
 				acc = {0.6, 0.95},
 				dmg_mul = 2.1,
 				recoil = {3, 5},
@@ -10080,7 +10056,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.6, 0.85},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10092,7 +10068,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 8000,
+				r = 16000,
 				acc = {0.6, 0.75},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10132,7 +10108,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 2000,
+				r = 4000,
 				acc = {0.7, 1},
 				dmg_mul = 2.625,
 				recoil = {3, 5},
@@ -10144,7 +10120,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 4000,
+				r = 8000,
 				acc = {0.6, 0.95},
 				dmg_mul = 2.625,
 				recoil = {3, 5},
@@ -10156,7 +10132,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			},
 			{
-				r = 6000,
+				r = 12000,
 				acc = {0.6, 0.85},
 				dmg_mul = 1.05,
 				recoil = {3, 5},
@@ -10166,7 +10142,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0,
 					0
 				}
-			}
+			},
+			{
+				r = 16000,
+				acc = {0.6, 0.75},
+				dmg_mul = 1.05,
+				recoil = {3, 5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}			
 		}
 		presets.detection = {}
 		presets.detection.normal = {
@@ -11766,7 +11754,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return presets
 	end
 
-
 	function CharacterTweakData:_create_table_structure()
 		self.weap_ids = {
 			"beretta92",
@@ -11878,8 +11865,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
 			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
-			Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-			Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou"),
 			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"),
 			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers")
@@ -11910,7 +11897,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)	
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)	
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
@@ -12054,7 +12041,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 25
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.6
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
 		self.old_hoxton_mission.HEALTH_INIT = 25
 		self.spa_vip.HEALTH_INIT = 25
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -12075,14 +12062,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("normal", "normal")
 		self.autumn.damage.bullet_dodge_chance = 10
+		
 		self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
+		self.city_swat.melee_weapon_dmg_multiplier = 1
 		self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 		self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 		self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+		
 		self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 		self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
 		self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
+		
 		self.omnia.weapon = deep_clone(self.presets.weapon.normal)
+		self.omnia.melee_weapon_dmg_multiplier = 1
 		
 		--Set damage dealt for false downs.
 		self.spooc.kick_damage = 3.0
@@ -12093,11 +12088,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend.melee_weapon_dmg_multiplier = 1
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)		
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)		
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12237,7 +12234,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 50
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
 		self.old_hoxton_mission.HEALTH_INIT = 50
 		self.spa_vip.HEALTH_INIT = 50
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
@@ -12277,10 +12274,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_pump)	
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)	
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 1
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 1
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
+		self.omnia.melee_weapon_dmg_multiplier = 1
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12421,7 +12426,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 75
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 		self.old_hoxton_mission.HEALTH_INIT = 75
 		self.spa_vip.HEALTH_INIT = 75
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
@@ -12461,10 +12466,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_pump)	
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)	
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.omnia.melee_weapon_dmg_multiplier = 2
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 2
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12604,7 +12617,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 100
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 		self.old_hoxton_mission.HEALTH_INIT = 100
 		self.spa_vip.HEALTH_INIT = 100
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
@@ -12647,10 +12660,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_pump)			
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)			
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.omnia.melee_weapon_dmg_multiplier = 2
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 2		
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12797,7 +12818,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self.presets.gang_member_damage.HEALTH_INIT = 125
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 		self.old_hoxton_mission.HEALTH_INIT = 125
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -12838,10 +12859,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
-		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_pump)		
+		self.weekend.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)		
 		
 		--Weekend LMG Variants
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.good)
+		
+		--Melee Mults
+		self.city_swat.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
+		self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
+		self.omnia.melee_weapon_dmg_multiplier = 2
+		self.weekend_lmg.melee_weapon_dmg_multiplier = 2		
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
@@ -12990,7 +13019,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 		self.autumn.damage.bullet_dodge_chance = 20	
 		self.presets.gang_member_damage.HEALTH_INIT = 125
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.old_hoxton_mission.HEALTH_INIT = 125
 		self.spa_vip.HEALTH_INIT = 125
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -13024,10 +13053,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
-		
-		--Weekend Shotgunners now use Semi-autos
-		self.weap_unit_names[53] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-		
+				
 		--Set damage dealt for false downs.
 		self.spooc.kick_damage = 5.0
 		self.taser.shock_damage = 3.0
@@ -13070,7 +13096,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.autumn.damage.bullet_dodge_chance = 25
 		self.presets.gang_member_damage.HEALTH_INIT = 150
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 		self.old_hoxton_mission.HEALTH_INIT = 150
 		self.spa_vip.HEALTH_INIT = 150
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
@@ -13107,10 +13133,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
-		
-		--Weekend Shotgunners now use Semi-autos
-		self.weap_unit_names[53] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
-		
+					
 		--Set damage dealt for false downs.
 		self.spooc.kick_damage = 5.0
 		self.taser.shock_damage = 3.0
@@ -13244,7 +13267,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self:_multiply_all_speeds(1.1, 1.15)
 		self.presets.gang_member_damage.HEALTH_INIT = 150
-		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 		self.old_hoxton_mission.HEALTH_INIT = 150
 		self.spa_vip.HEALTH_INIT = 150
 		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
@@ -13333,6 +13356,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Titandozers become immune to stunning
 		self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
+		self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 		self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
@@ -13346,13 +13370,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Winters can now overheal ala LPF
 		self.phalanx_vip.do_omnia = true
-		
-		if job == "haunted" then
-			self.tank_hw.move_speed = self.presets.move_speed.very_slow
-		else
-			self.tank_hw.move_speed = self.presets.move_speed.slow
-		end		
-		
+				
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -14234,7 +14252,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_bravo_dmr_ru",
 					"ene_bravo_lmg_ru",
 					"ene_bravo_rifle_ru",
-					"ene_bravo_shotgun_ru"
+					"ene_bravo_shotgun_ru",
+					"ene_bravo_dmr_murky",
+					"ene_bravo_lmg_murky",
+					"ene_bravo_rifle_murky",
+					"ene_bravo_shotgun_murky"
 				}
 			},
 			dave = {

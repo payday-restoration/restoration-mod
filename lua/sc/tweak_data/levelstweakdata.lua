@@ -63,7 +63,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu", "packages/murkyassets"}
 		self.crojob2.ai_group_type = murkywater			
-		self.crojob2.player_style = "sneak_suit"		
+		self.crojob2.player_style = "sneak_suit"	
+
+		self.dark.package = {"packages/job_dark", "packages/addbdu", "packages/murkyassets"}
+		self.dark.ai_group_type = murkywater	
+		self.dark.player_style = "sneak_suit"
+		
+		self.kosugi.package = {"packages/kosugi", "packages/addbdu", "packages/murkyassets"}
+		self.kosugi.ai_group_type = murkywater	
+		self.kosugi.player_style = "sneak_suit"			
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
@@ -96,9 +104,59 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.man.package = {"packages/narr_man"}
 		self.man.player_style = "loud_suit"
+		self.man.teams = {
+			criminal1 = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {
+					converted_enemy = true
+				}
+			},
+			law1 = {
+				foes = {
+					converted_enemy = true,
+					criminal1 = true
+				},
+				friends = {
+					mobster1 = true
+				}
+			},
+			mobster1 = {
+				foes = {
+					converted_enemy = true,
+					criminal1 = true
+				},
+				friends = {
+					law1 = true
+				}
+			},
+			converted_enemy = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {
+					criminal1 = true
+				}
+			},
+			neutral1 = {
+				foes = {},
+				friends = {}
+			},
+			hacked_turret = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {}
+			}
+		}
 		
 		self.nmh.ai_group_type = nypd
 		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
+		self.nmh.ghost_bonus = nil
 		
 		self.skm_run.ai_group_type = nypd
 		self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
@@ -108,8 +166,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets", "packages/addbdu"}
-		self.jolly.player_style = "sneak_suit"
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
+		self.jolly.player_style = "suit_sunny"
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	
@@ -145,13 +203,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
-						
-		self.dark.package = {"packages/job_dark", "packages/addbdu"}
-		self.dark.player_style = "sneak_suit"
-		
-		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
-		self.kosugi.player_style = "sneak_suit"		
-		
+								
 		self.hox_1.player_style = "suit_sunny"
 		self.hox_2.player_style = "suit_sunny"
 		self.hox_3.player_style = "suit_sunny"
@@ -219,6 +271,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.help.player_style = "suit_prison"
 		--///SAFEHOUSE\\\--
 		self.chill.ghost_bonus = nil
+		
+		self.cage.ghost_bonus = nil
+		
+		self.mallcrasher.ghost_bonus = 0.05
 		
 		--///REAPER LEVELS\\\--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/addsnow"}

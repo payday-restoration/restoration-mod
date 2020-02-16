@@ -10,7 +10,7 @@
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-8" />
+			<object name="c_sphere_head" collision_type="sphere"/>
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -218,7 +218,12 @@
 					<material materials="mtr_police_head_lod_2" />
 				</object>
 			</lod_object>
-			<object name="s_body" 			enabled="true" shadow_caster="true"/>
+
+			<lod_object name="lod_helmet" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_hat_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" />
+				<object name="g_hat_lod2" 	enabled="true" lod="1" />
+			</lod_object>
+			<object name="s_body" enabled="true" shadow_caster="true"/>
 			
 		</graphic_group>
 	</graphics>

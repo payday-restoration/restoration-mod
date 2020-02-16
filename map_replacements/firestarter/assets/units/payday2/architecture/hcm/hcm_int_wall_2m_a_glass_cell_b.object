@@ -1,0 +1,23 @@
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/hcm/hcm_int" orientation_object="rp_hcm_int_wall_2m_a_glass_cell_b" />
+	<sequence_manager file="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell_b" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_hcm_int_wall_2m_a_glass_cell_b" />
+			<object name="c_box_00" collision_type="box" padding="-2.5" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+			<object name="c_box_03" collision_type="box" padding="-2.5" />
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+			<object name="c_box_05" collision_type="box" padding="-2.5" />
+			<object name="c_box_06" collision_type="box" padding="-2.5" />
+			<object name="c_box_07" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="wood">
+		<decal_mesh name="dm_wood" enabled="true" material="wood" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_hcm_int_wall_2m_a_glass_cell_b" enabled="true" />
+	</graphics>
+</dynamic_object>

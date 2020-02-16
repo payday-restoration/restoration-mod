@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_can_blue" materials="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" />
+    <bodies>
+        <body name="static_body" enabled="true" template="static" >
+            <object name="c_box" collision_type="box" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_can" />
+    </graphics>
+</dynamic_object>

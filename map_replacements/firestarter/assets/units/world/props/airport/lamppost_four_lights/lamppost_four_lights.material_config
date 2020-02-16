@@ -1,0 +1,11 @@
+<materials version="3">
+    <material name="camera_steel_concrete_atlas" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/airport/lamppost_four_lights/lamppost_four_lights_df"/>
+        <bump_normal_texture file="units/world/props/airport/camera_steel_concrete_atlas_nm"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <self_illumination_texture file="units/world/props/airport/lamppost_four_lights/lamppost_four_lights_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

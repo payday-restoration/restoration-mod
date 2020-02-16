@@ -35,8 +35,15 @@
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
 		<event name="control" source="control.ogg"/>
 	</HeistMusic>
+	<HeistMusic directory="assets/sounds/ponr" id="resmusic_ponr" volume="0.7">
+		<event name="setup" source="stealth.ogg"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
+		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+	</HeistMusic>
 	<MenuMusic id="m1" source="m1.ogg" start_source="m1intro.ogg" volume="0.6"/>
 	<MenuMusic id="m2" source="m2.ogg" start_source="m2intro.ogg" volume="0.6"/>
+	<MenuMusic id="m3" source="m3.ogg" start_source="m3intro.ogg" volume="0.6"/>
 	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork" id="int_dock" jc="25">
 		<chain>
 			<table level_id="wetwork" type="d" type_id="heist_type_assault"/>

@@ -476,9 +476,54 @@
 	<add path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" type="unit">
 		<unit force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
 		<object force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
-		<material_config force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
 		<unit force="true" path="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" unload="true"/>
 		<object force="true" path="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" unload="true"/>
+		<material_config force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_passage_end_piece/str_prop_construction_passage_end_piece" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_passage_end_piece/str_prop_construction_passage_end_piece" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_passage_end_piece/str_prop_construction_passage_end_piece" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_passage_end_piece/str_prop_construction_passage_end_piece" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_plywood_stack_a/str_prop_construction_plywood_stack_a" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_portable_compressor/str_prop_construction_portable_compressor" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_portable_compressor/str_prop_construction_portable_compressor" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_portable_compressor/str_prop_construction_portable_compressor" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_portable_compressor/str_prop_construction_portable_compressor" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_debris_a/str_prop_construction_debris_a" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_debris_a/str_prop_construction_debris_a" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_debris_a/str_prop_construction_debris_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_debris_a/str_prop_construction_debris_a" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_debris_b/str_prop_construction_debris_b" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_debris_b/str_prop_construction_debris_b" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_debris_b/str_prop_construction_debris_b" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_debris_b/str_prop_construction_debris_b" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" type="unit">
+		<material_config force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_construction_container/str_prop_construction_container" unload="true"/>
+	</add>
+	<add path="units/world/props/bridge/construction_blueprint/blueprint" type="unit">
+		<unit force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
+		<object force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
+		<material_config force="true" path="units/world/props/bridge/construction_blueprint/blueprint" unload="true"/>
 	</add>
 </table>

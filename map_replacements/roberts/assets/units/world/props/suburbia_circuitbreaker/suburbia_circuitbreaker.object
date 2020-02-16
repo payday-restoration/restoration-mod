@@ -1,0 +1,36 @@
+<dynamic_object>
+    <diesel orientation_object="rp_suburbia_circuitbreaker" materials="units/world/props/suburbia_circuitbreaker/suburbia_circuitbreaker" />
+	<sequence_manager file="units/world/props/suburbia_circuitbreaker/suburbia_circuitbreaker" />
+	<animations>
+		<animation_group name="ag_switch">
+			<object name="a_switch" />
+		</animation_group>
+		<animation_group name="ag_door">
+			<object name="a_box_door" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="static_body" enabled="false" template="static" >
+			<object name="rp_suburbia_circuitbreaker" />
+			<object name="g_suburbia_circuitbreaker" collision_type="box" padding="-2"/>
+			<object name="g_box" collision_type="box" />
+		</body>
+		<body name="editor" enabled="true" template="editor" >
+			<object name="rp_suburbia_circuitbreaker" />
+			<object name="g_suburbia_circuitbreaker" collision_type="box" padding="-2"/>
+			<object name="g_box" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="plastic">
+		<decal_mesh name="g_suburbia_circuitbreaker" material="plastic" enabled="true" />
+		<decal_mesh name="g_switch" material="plastic" enabled="true" />
+		<decal_mesh name="g_box" material="metal_chassis" enabled="true" />
+		<decal_mesh name="g_box_door" material="metal_chassis" enabled="true" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_suburbia_circuitbreaker" enabled="true" />
+		<object name="g_switch" enabled="true" />
+		<object name="g_box" enabled="true" />
+		<object name="g_box_door" enabled="true" />
+	</graphics>
+</dynamic_object>

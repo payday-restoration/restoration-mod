@@ -52,6 +52,110 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._state_data.night_vision_active = state
 	end	
 	
+	local add_unit_to_char_table_old = PlayerStandard._add_unit_to_char_table
+	function PlayerStandard:_add_unit_to_char_table(char_table, unit, unit_type, ...)
+		if unit_type ~= 3 or unit:base()._detection_delay or (Network:is_client() and unit:base().cam_disabled ~= true) then
+			add_unit_to_char_table_old(self, char_table, unit, unit_type, ...)
+		end
+	end	
+	
+	local orig_check_interact = PlayerStandard._check_action_interact
+	function PlayerStandard:_check_action_interact(t, input,...)
+		if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) then 
+			return orig_check_interact(self,t,input,...)
+		end
+		local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
+		local new_action, timer, interact_object = nil
+
+		if input.btn_interact_press then
+			if _G.IS_VR then
+				self._interact_hand = input.btn_interact_left_press and PlayerHand.LEFT or PlayerHand.RIGHT
+			end
+
+			if not self:_action_interact_forbidden() then
+				new_action, timer, interact_object = self._interaction:interact(self._unit, input.data, self._interact_hand)
+
+				if new_action then
+					self:_play_interact_redirect(t, input)
+				end
+
+				if timer then
+					new_action = true
+
+					self._ext_camera:camera_unit():base():set_limits(80, 50)
+					self:_start_action_interact(t, input, timer, interact_object)
+				end
+
+				if not new_action then
+					self._start_intimidate = true
+					self._start_intimidate_t = t
+				end
+			end
+		end
+
+		local secondary_delay = tweak_data.team_ai.stop_action.delay
+		local force_secondary_intimidate = false
+		local HOLD_TO_STOP_ALL_AI_DURATION = 1.5 --seconds to hold down to direct all ai instead of just the one
+		local skip_intimidate_action = false 
+		if self._start_shout_all_ai_t and self._start_shout_all_ai_t + HOLD_TO_STOP_ALL_AI_DURATION <= t then
+			self._start_shout_all_ai_t = nil
+			
+			--tell all ai to stop
+			for i, char_data in pairs(managers.criminals._characters) do
+				if char_data.data.ai then
+					local ai_unit = char_data.unit
+					if alive(ai_unit) then 
+						ai_unit:brain():on_long_dis_interacted(0, ai_unit, true)
+						skip_intimidate_action = true
+					end
+				end
+			
+			end
+			if skip_intimidate_action then 
+				self:say_line("f48x_any", false)
+				--play a voiceline if any ai were actually stopped
+			end
+		elseif self._controller:get_input_released("interact_secondary") then 
+			--if release before the full duration required to call all ai then do normal single-target "stop ai" action
+			self._start_shout_all_ai_t = nil
+			force_secondary_intimidate = true
+		elseif input.btn_interact_secondary_press then 
+			--if pressing for the first time (not holding), start timer, do not do normal single-target "stop ai" until key release
+			self._start_shout_all_ai_t = t
+			skip_intimidate_action = true
+		end
+	
+		if input.btn_interact_release then
+			local released = true
+
+			if _G.IS_VR then
+				local release_hand = input.btn_interact_left_release and PlayerHand.LEFT or PlayerHand.RIGHT
+				released = release_hand == self._interact_hand
+			end
+
+			if released then
+				if self._start_intimidate and not self:_action_interact_forbidden() then
+					if t < self._start_intimidate_t + secondary_delay then
+						self:_start_action_intimidate(t)
+
+						self._start_intimidate = false
+					end
+				else
+					self:_interupt_action_interact()
+				end
+			end
+		end
+		
+		if (self._start_intimidate or force_secondary_intimidate) and not (self:_action_interact_forbidden() or skip_intimidate_action) and (not keyboard and t > self._start_intimidate_t + secondary_delay or force_secondary_intimidate) then
+			--don't do normal shout action if doing the "shout at ai" action with separate keybind
+			self:_start_action_intimidate(t, true)
+
+			self._start_intimidate = false
+		end
+
+		return new_action
+	end
+	
 	function PlayerStandard:_start_action_intimidate(t, secondary)
 		if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
 			local skip_alert = managers.groupai:state():whisper_mode()
@@ -296,7 +400,211 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 			self._state_data.melee_running_wanted = nil
 
+			local meleewpn = managers.blackmarket:equipped_melee_weapon()
+			if tweak_data.blackmarket.melee_weapons[meleewpn].chainsaw == true then
+				self._state_data.chainsaw_t = t + 0.8
+			end
+
 		end )
+		
+		local old_cam = PlayerStandard._check_action_melee
+		function PlayerStandard:_check_action_melee(t, input)
+			old_cam(self, t, input)
+			if input.btn_melee_release then
+				self._state_data.chainsaw_t = nil
+			end
+		end		
+		
+		function PlayerStandard:_do_chainsaw_damage(t)
+			melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
+			local charge_lerp_value = 0 
+
+			local sphere_cast_radius = 20
+			local col_ray = nil
+
+			if melee_hit_ray then
+				col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
+			else
+				col_ray = self:_calc_melee_hit_ray(t, sphere_cast_radius)
+			end
+
+			if col_ray and alive(col_ray.unit) then
+				local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(charge_lerp_value)
+				local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().categories and self._equipped_unit:base():weapon_tweak_data().categories[1], "melee_knockdown_mul", 1))
+				if tweak_data.blackmarket.melee_weapons[melee_entry].stats.tick_damage then
+					damage = tweak_data.blackmarket.melee_weapons[melee_entry].stats.tick_damage
+				end
+				damage = damage * managers.player:get_melee_dmg_multiplier()
+				damage_effect = damage_effect * damage_effect_mul
+				col_ray.sphere_cast_radius = sphere_cast_radius
+				local hit_unit = col_ray.unit
+
+				if hit_unit:character_damage() then
+					local hit_sfx = "hit_body"
+
+					if hit_unit:character_damage() and hit_unit:character_damage().melee_hit_sfx then
+						hit_sfx = hit_unit:character_damage():melee_hit_sfx()
+					end
+
+					self:_play_melee_sound(melee_entry, hit_sfx, self._melee_attack_var)
+					self:_play_melee_sound(melee_entry, "charge", self._melee_attack_var)
+
+					if not hit_unit:character_damage()._no_blood then
+						managers.game_play_central:play_impact_flesh({
+							col_ray = col_ray
+						})
+						managers.game_play_central:play_impact_sound_and_effects({
+							no_decal = true,
+							no_sound = true,
+							col_ray = col_ray
+						})
+					end
+
+				elseif self._on_melee_restart_drill and hit_unit:base() and (hit_unit:base().is_drill or hit_unit:base().is_saw) then
+					hit_unit:base():on_melee_hit(managers.network:session():local_peer():id())
+				else
+					self:_play_melee_sound(melee_entry, "hit_gen", self._melee_attack_var)
+					self:_play_melee_sound(melee_entry, "charge", self._melee_attack_var) -- continue playing charge sound after hit instead of silence
+
+					managers.game_play_central:play_impact_sound_and_effects({
+						no_decal = true,
+						no_sound = true,
+						col_ray = col_ray,
+						effect = Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")
+					})
+				end
+
+				local custom_data = nil
+
+				if _G.IS_VR and hand_id then
+					custom_data = {
+						engine = hand_id == 1 and "right" or "left"
+					}
+				end
+
+				managers.game_play_central:physics_push(col_ray)
+
+				local character_unit, shield_knock = nil
+				local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
+
+				if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) and not hit_unit:parent():character_damage():is_immune_to_shield_knockback() then
+					shield_knock = true
+					character_unit = hit_unit:parent()
+				end
+
+				character_unit = character_unit or hit_unit
+
+				if character_unit:character_damage() and character_unit:character_damage().damage_melee then
+					local dmg_multiplier = 1
+
+					if not managers.enemy:is_civilian(character_unit) and not managers.groupai:state():is_enemy_special(character_unit) then
+						dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "non_special_melee_multiplier", 1)
+					else
+						dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
+					end
+
+					dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
+
+					if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+						self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
+						self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {
+							nil,
+							0
+						}
+						local stack = self._state_data.stacking_dmg_mul.melee
+
+						if stack[1] and t < stack[1] then
+							dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("melee", "stacking_hit_damage_multiplier", 0) * stack[2])
+						else
+							stack[2] = 0
+						end
+					end
+
+					local health_ratio = self._ext_damage:health_ratio()
+					local damage_health_ratio = managers.player:get_damage_health_ratio(health_ratio, "melee")
+
+					if damage_health_ratio > 0 then
+						local damage_ratio = damage_health_ratio
+						dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("player", "melee_damage_health_ratio_multiplier", 0) * damage_ratio)
+					end
+
+					dmg_multiplier = dmg_multiplier * managers.player:temporary_upgrade_value("temporary", "berserker_damage_multiplier", 1)
+					local target_dead = character_unit:character_damage().dead and not character_unit:character_damage():dead()
+					local target_hostile = managers.enemy:is_enemy(character_unit) and not tweak_data.character[character_unit:base()._tweak_table].is_escort and character_unit:brain():is_hostile()
+					local life_leach_available = managers.player:has_category_upgrade("temporary", "melee_life_leech") and not managers.player:has_activate_temporary_upgrade("temporary", "melee_life_leech")
+
+					if target_dead and target_hostile and life_leach_available then
+						managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
+						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
+					end
+
+					local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
+					local action_data = {
+						variant = "melee"
+					}
+
+					if special_weapon == "taser" then
+						action_data.variant = "taser_tased"
+					end
+
+					if _G.IS_VR and melee_entry == "weapon" and not bayonet_melee then
+						dmg_multiplier = 0.1
+					end
+
+					action_data.damage = shield_knock and 0 or damage * dmg_multiplier
+					action_data.damage_effect = damage_effect
+					action_data.attacker_unit = self._unit
+					action_data.col_ray = col_ray
+
+					if shield_knock then
+						action_data.shield_knock = can_shield_knock
+					end
+
+					action_data.name_id = melee_entry
+					action_data.charge_lerp_value = charge_lerp_value
+
+					if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+						self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
+						self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {
+							nil,
+							0
+						}
+						local stack = self._state_data.stacking_dmg_mul.melee
+
+						if character_unit:character_damage().dead and not character_unit:character_damage():dead() then
+							stack[1] = t + managers.player:upgrade_value("melee", "stacking_hit_expire_t", 1)
+							stack[2] = math.min(stack[2] + 1, tweak_data.upgrades.max_melee_weapon_dmg_mul_stacks or 5)
+						else
+							stack[1] = nil
+							stack[2] = 0
+						end
+					end
+
+					local defense_data = character_unit:character_damage():damage_melee(action_data)
+
+					self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
+					self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage)
+
+					return defense_data
+				else
+					self:_perform_sync_melee_damage(hit_unit, col_ray, damage)
+				end
+			end
+
+			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
+				self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {
+					nil,
+					0
+				}
+				local stack = self._state_data.stacking_dmg_mul.melee
+				stack[1] = nil
+				stack[2] = 0
+			end
+
+			return col_ray
+		end
+				
 
 		Hooks:PreHook( PlayerStandard , "_update_melee_timers" , "ResPlayerStandardPreUpdateMeleeTimers" , function( self , t , input )
 
@@ -330,6 +638,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end
 			end
+			
+			local meleewpn = managers.blackmarket:equipped_melee_weapon()
+			if tweak_data.blackmarket.melee_weapons[meleewpn].chainsaw == true and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
+				self:_do_chainsaw_damage(t)
+				self._state_data.chainsaw_t = t + 0.2
+			end			
 
 		end )
 
@@ -342,6 +656,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if running then
 				self._running_wanted = true
 			end
+			
+			self._state_data.chainsaw_t = nil
 
 		end )	
 
@@ -378,6 +694,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_start or 2 --i.e. never get the bonus
 			local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_speed or 1
 			local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
+			local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
+			speed = speed * anim_speed
 			speed = speed * managers.player:upgrade_value("player", "melee_swing_multiplier", 1)
 			local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 			melee_damage_delay = melee_damage_delay * managers.player:upgrade_value("player", "melee_swing_multiplier_delay", 1)

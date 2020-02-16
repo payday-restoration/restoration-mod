@@ -61,8 +61,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
+
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
 		self._keep_health_on_revive = false
+
+		self._biker_armor_regen_t = 0.0
 
 		local function revive_player()
 			self:revive(true)
@@ -283,6 +286,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if pm:has_category_upgrade("player", "dodge_to_heal") then --Rogue health regen.
 					self:add_damage_to_hot()
 				end
+				if pm:has_category_upgrade("player", "bomb_cooldown_reduction") then
+					pm:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
+				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -316,6 +322,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
 		
+		if managers.player:has_category_upgrade("player", "deflect_ranged") then
+			if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+				if managers.blackmarket:equipped_melee_weapon()== "buck" then
+					attack_data.damage = attack_data.damage * 0.8
+				else
+					attack_data.damage = attack_data.damage * 0.9
+				end
+			end			
+		else
+			if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+				if managers.blackmarket:equipped_melee_weapon()== "buck" then
+					attack_data.damage = attack_data.damage * 0.9
+				end
+			end
+		end
+		
 		if self._bleed_out then
 			self:_bleed_out_damage(attack_data)
 			return
@@ -337,6 +359,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		if attack_data.armor_piercing then
 			attack_data.damage = attack_data.damage - health_subtracted
+			managers.hud:activate_bloody_screen(0.75)
 		else
 			attack_data.damage = attack_data.damage * armor_reduction_multiplier
 		end
@@ -721,6 +744,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5)) --Update UI element once per frame.
 			self._dodge_meter_prev = self._dodge_meter
 		end
+
+		--Biker Armor Regen
+		if managers.player:has_category_upgrade("player", "biker_armor_regen") then
+			self:tick_biker_armor_regen(dt)
+		end
 	end)
 
 	Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)
@@ -789,4 +817,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end)
+
+	Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
+		if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
+			self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+		end
+	end)
+
+	function PlayerDamage:tick_biker_armor_regen(amount)
+		if self:get_real_armor() == self:_max_armor() then
+			self._biker_armor_regen_t = 0.0
+			return
+		end
+
+		self._biker_armor_regen_t = self._biker_armor_regen_t - amount
+		if self._biker_armor_regen_t <= 0.0 then
+			self:restore_armor(managers.player:upgrade_value("player", "biker_armor_regen")[1])
+			self._biker_armor_regen_t = self._biker_armor_regen_t + managers.player:upgrade_value("player", "biker_armor_regen")[2]
+		end
+	end
 end

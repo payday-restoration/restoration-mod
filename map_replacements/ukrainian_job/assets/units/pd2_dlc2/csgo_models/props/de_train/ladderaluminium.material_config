@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mat_ladderaluminium" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc2/csgo_models/props/de_train/ladderaluminium_df"/>
+    </material>
+</materials>

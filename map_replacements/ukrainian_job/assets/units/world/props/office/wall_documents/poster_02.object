@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/office/wall_documents/wall_documents" orientation_object="rp_poster_02" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="c_poster" collision_type="box" />
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_poster_02" enabled="true" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object> 

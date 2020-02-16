@@ -1,0 +1,120 @@
+<effect force_synch="false">
+    <atom name="flames_halftime" min_size="3" max_size="9" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="1" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0.5" max="0 0 0.5"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="10 10" min="2" max="7"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="0" max="0.2"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="fire_teleport" trigger_teleport="time" lifetime_input="constant" particle_lifetime="2.5" teleport_cap="3" current_position="true" channel="world" normal_variation="0.43999999761581" teleport_event="false" positioner="circle">
+                <circle radius="10" on_edge="false"/>
+                <normal min_velocity="3" max_velocity="-3"/>
+            </teleporter>
+            <constantacceleration relative="world" acceleration="20 0 10"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_fire_static_loop_infamy_df" intensity="monitor" billboard_type="camera_facing" rotation_channel="rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.9" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 0" uv_size="0.125 0.25" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="32" fps="24" loop="true">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.62 1"/>
+                    <key t="0.5" v="1.25 2"/>
+                    <key t="2.5" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="65 208 250"/>
+                    <key t="0.1" v="247 193 134"/>
+                    <key t="2.5" v="214 75 10"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.5" v="150"/>
+                    <key t="2.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="flames_floor" min_size="3" max_size="9" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="1" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomrotation relative="effect" min="0 0 1" max="0 0 1" min_rot="0" max_rot="0"/>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="10 8" min="3" max="7"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="-0.5" max="0.5"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+            <boxrandomsize min="10 30" max="40 10"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="fire_teleport" trigger_teleport="time" lifetime_input="constant" particle_lifetime="2.5" teleport_cap="3" current_position="true" channel="world" normal_variation="0.91000002622604" teleport_event="true" positioner="circle">
+                <circle radius="10" on_edge="true"/>
+                <normal min_velocity="-3" max_velocity="3"/>
+            </teleporter>
+            <constantacceleration relative="world" acceleration="20 0 10"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_fire_static_loop_infamy_df" intensity="sun" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.9" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 0" uv_size="0.125 0.25" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="32" fps="24" loop="true">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.62 1"/>
+                    <key t="0.5" v="1.25 2"/>
+                    <key t="2.5" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="65 208 250"/>
+                    <key t="0.1" v="247 193 134"/>
+                    <key t="2.5" v="214 75 10"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.5" v="150"/>
+                    <key t="2.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="flames_floor0" min_size="3" max_size="9" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="1" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomrotation relative="effect" min="0 0 1" max="0 0 1" min_rot="0" max_rot="0"/>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="10 8" min="3" max="7"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="-0.5" max="0.5"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+            <boxrandomsize min="10 30" max="40 10"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="fire_teleport" trigger_teleport="time" lifetime_input="constant" particle_lifetime="2.5" teleport_cap="3" current_position="true" channel="world" normal_variation="0.91000002622604" teleport_event="true" positioner="circle">
+                <circle radius="10" on_edge="false"/>
+                <normal min_velocity="-3" max_velocity="3"/>
+            </teleporter>
+            <constantacceleration relative="world" acceleration="20 0 10"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_fire_static_loop_infamy_df" intensity="sun" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.9" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 0" uv_size="0.125 0.25" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="32" fps="24" loop="true">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.62 1"/>
+                    <key t="0.5" v="1.25 2"/>
+                    <key t="2.5" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="65 208 250"/>
+                    <key t="0.1" v="247 193 134"/>
+                    <key t="2.5" v="214 75 10"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.5" v="150"/>
+                    <key t="2.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

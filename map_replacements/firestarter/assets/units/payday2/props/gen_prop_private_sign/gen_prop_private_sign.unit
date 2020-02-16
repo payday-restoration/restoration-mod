@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<object file="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign" />
+	
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/flares/indoor_sign" />
+    </dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

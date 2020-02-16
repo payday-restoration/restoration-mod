@@ -134,6 +134,7 @@ function UpgradesTweakData:init(tweak_data)
 					"olympic",
 					"mp9",
 					"baka",
+					"x_baka",
 					"pugio",
 					"ballistic"
 				}
@@ -484,23 +485,23 @@ function UpgradesTweakData:_init_pd2_values()
 	--Crew ability stuff
 	self.values.team.crew_inspire = {
 		{
-			60,
-			60,
+			90,
+			75,
 			60
 		}
 	}
 	self.values.team.crew_scavenge = {
 		{
 			0.25,
-			0.25,
-			0.25
+			0.5,
+			0.75
 		}
 	}
 	self.values.team.crew_interact = {
 		{
 			0.85,
-			0.85,
-			0.85
+			0.7,
+			0.55
 		}
 	}
 	self.values.team.crew_ai_ap_ammo = {true}
@@ -543,7 +544,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 			
 				--Uppers
-				self.values.first_aid_kit.quantity = {4, 10}
+				self.values.first_aid_kit.quantity = {3, 6}
 				self.values.first_aid_kit.downs_restore_chance = {1}
 
 				--Combat Doctor
@@ -555,7 +556,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.long_dis_revive = {0.5, 0.5}
 				self.skill_descs.inspire = {multibasic = "50%", multibasic2 = "20%", multibasic3 = "10", multipro = "50%"}
 				self.values.cooldown.long_dis_revive = {
-					{1, 60}
+					{1, 90}
 				}
 				self.morale_boost_speed_bonus = 1.2
 				self.morale_boost_suppression_resistance = 1
@@ -594,12 +595,18 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Partners in Crime--
 				self.values.player.passive_convert_enemies_health_multiplier = {
-					0.6,
+					0.5,
 					0.2
-				}				
+				}
+				self.values.player.minion_master_health_multiplier = {
+					1.15
+				}
+				self.values.player.minion_master_speed_multiplier = {
+					1.05
+				}
 							
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.01, 0.02}
+				self.values.player.hostage_health_regen_addend = {0.005, 0.01}
 				self.values.team.damage = {
 					hostage_absorption = {0.1},
 					hostage_absorption_limit = 4
@@ -780,7 +787,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.sentry_gun.less_noisy = {true}
 				self.values.sentry_gun.ap_bullets = {true}
 				self.values.sentry_gun.fire_rate_reduction = {4}
-				self.values.sentry_gun.damage_multiplier = {0.5}	
+				self.values.sentry_gun.damage_multiplier = {1}	
 
 				--Bulletproof
 				self.values.player.armor_multiplier = {1.2, 1.5}
@@ -792,7 +799,8 @@ function UpgradesTweakData:_init_pd2_values()
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 				--Hardware Expert
-				self.values.player.drill_fix_interaction_speed_multiplier = {0.5}
+				self.values.player.drill_deploy_speed_multiplier = {0.5}
+				self.values.player.drill_fix_interaction_speed_multiplier = {0.2, 0.5}
 				self.values.player.drill_alert_rad = {900}
 				self.values.player.silent_drill = {true}
 				
@@ -801,7 +809,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.trip_mine.damage_multiplier = {1.5}
 
 				--Drill Sawgent
-				self.values.player.drill_speed_multiplier = {0.85, 0.7}
+				self.values.player.drill_speed_multiplier = {0.9, 0.7}
 				
 				--Demoman
 				self.values.player.trip_mine_deploy_time_multiplier = {
@@ -847,19 +855,21 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.weapon.enter_steelsight_speed_multiplier = {1.25}
 				self.values.player.single_shot_accuracy_inc = {0.9}
 				
-				--Mind Blown, formerly Explosive Headshot
+				--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
 					{
 						radius = 400,
-						times = 4,
-						damage_factor = 0.5,
-						damage_factor_kill = 0.5
+						max_chain = 4,
+						damage_factor = 0.75,
+						damage_factor_kill = 0.75,
+						range_increment = 700
 					},
 					{
-						radius = 400,
-						times = 8,
-						damage_factor = 0.5,
-						damage_factor_kill = 1
+						radius = 500,
+						max_chain = 4,
+						damage_factor = 0.75,
+						damage_factor_kill = 1.0,
+						range_increment = 700
 					}
 				}				
 
@@ -974,6 +984,19 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 
 				--Shockproof
+				self.values.player.taser_malfunction = {
+					{
+						interval = 1,
+						chance_to_trigger = 0.15
+					}
+				}				
+				self.values.player.taser_self_shock = {
+					true
+				}	
+				self.values.player.escape_taser = {
+					2
+				}				
+				self.counter_taser_damage = 0.5			
 
 			--}
 			
@@ -1008,12 +1031,12 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 				self.values.player.unseen_increased_crit_chance = {
 					{
-						min_time = 4,
+						min_time = 3,
 						max_duration = 3,
 						crit_chance = 1.15
 					},
 					{
-						min_time = 4,
+						min_time = 3,
 						max_duration = 6,
 						crit_chance = 1.15
 					}
@@ -1155,13 +1178,14 @@ function UpgradesTweakData:_init_pd2_values()
 				--Pumping Iron	
 				self.values.player.non_special_melee_multiplier = {1.05, 1.1, 1.15, 1.2}
 				self.values.player.melee_damage_multiplier = {1.05, 1.1, 1.15, 1.2}
-				self.values.player.melee_swing_multiplier = {1.25, 1.5}
-				self.values.player.melee_swing_multiplier_delay = {0.75, 0.5}
+				self.values.player.melee_swing_multiplier = {1.2, 1.5}
+				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5}
 				
 				--Counter Strike
 				self.values.player.counter_strike_melee = {true}
 				self.values.player.counter_strike_spooc = {true}
-				self.values.player.spooc_damage_resist = {0.5}
+				self.values.player.deflect_ranged = {true}
+				self.values.player.spooc_damage_resist = {0.2, 0.5}
 
 				--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
@@ -1275,7 +1299,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
 	self.hostage_max_num = {
-		health_regen = 1,
+		health_regen = 4,
 		health = 4,
 		stamina = 4,
 		damage_dampener = 1
@@ -1421,13 +1445,13 @@ function UpgradesTweakData:_init_pd2_values()
 	--Anarchist stuff--
 	self.values.player.armor_grinding = {
 		{
-			{3.0, 3.0},
-			{3.5, 3.5},
-			{4.0, 4.0},
-			{4.5, 4.5},
-			{5.0, 5.0},
-			{5.5, 5.5},
-			{6.0, 6.0}
+			{2.4, 3.0},
+			{2.8, 3.5},
+			{3.2, 4.0},
+			{3.6, 4.5},
+			{4.0, 5.0},
+			{4.4, 5.5},
+			{4.8, 6.0}
 		}
 	}
 	
@@ -1441,13 +1465,13 @@ function UpgradesTweakData:_init_pd2_values()
 
 	self.values.player.damage_to_armor = {
 		{
-			{1.5, 3},
-			{1.8, 3},
 			{2.1, 3},
 			{2.4, 3},
-			{2.6, 3},
-			{2.8, 3},
-			{3.0, 3}
+			{2.7, 3},
+			{3.0, 3},
+			{3.2, 3},
+			{3.4, 3},
+			{3.6, 3}
 		}
 	}
 	
@@ -1483,9 +1507,12 @@ function UpgradesTweakData:_init_pd2_values()
 	--Chico--
 	--kingpin
 	self.values.temporary.chico_injector = {
-		{0.5, 4},
-		{0.5, 5},
-		{0.5, 6}
+		{0.3, 4},
+		{0.3, 5},
+		{0.3, 6}
+	}
+	self.values.player.chico_injector_speed = {
+		1.2
 	}
 	self.values.player.chico_armor_multiplier = {
 		1.05,
@@ -1493,16 +1520,16 @@ function UpgradesTweakData:_init_pd2_values()
 		1.15
 	}
 	self.values.player.chico_injector_low_health_multiplier = {
-		{0.25, 0.2}
+		{0.25, 0.5}
 	}	
 	self.values.player.chico_injector_health_to_speed = {
-		{5, 1}
+		{0.3, 1}
 	}
-
 	--Are these the dreamers we were told about?--
 	--sicario
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
 	self.values.player.sicario_multiplier = {0.35} --Multiplier for dodge gained per second while inside grenade.
+	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging.
 	
 	--alcoholism is no joke
 	--stoic
@@ -1547,26 +1574,31 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Fat benis :DDDDD
 	--biker?
-	self.wild_trigger_time = 10
-	self.wild_max_triggers_per_time = 5	
+	self.wild_trigger_time = 2
+	self.wild_max_triggers_per_time = 1
 	self.values.player.wild_health_amount = {0.1}
-	self.values.player.wild_armor_amount = {0.1}
+	self.values.player.wild_armor_amount = {0.0}
 	self.values.player.less_health_wild_armor = {{
-		0.1,
-		0.1
+		0.0,
+		0.0
 	}}
 	self.values.player.less_health_wild_cooldown = {{
-		0.1,
-		0.1
+		0.0,
+		0.0
 	}}
 	self.values.player.less_armor_wild_health = {{
-		0.1,
-		0.1
+		0.25,
+		0.2
 	}}
 	self.values.player.less_armor_wild_cooldown = {{
-		0.1,
-		0.1
-	}}	
+		0.25,
+		0.5
+	}}
+
+	self.values.player.biker_armor_regen = {
+		{1.0, 3.0, 0.0},
+		{2.0, 2.5, 3.5}
+	}
 	
 	--Tag Team--
 	self.values.player.tag_team_base = {
@@ -1655,6 +1687,33 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "revived_health_regain",
+			category = "player"
+		}
+	}	
+	self.definitions.player_drill_deploy_speed_multiplier = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "drill_fix_interaction_speed_multiplier",
+			category = "player"
+		}
+	}		
+	self.definitions.player_drill_fix_interaction_speed_multiplier_1 = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "drill_fix_interaction_speed_multiplier",
+			category = "player"
+		}
+	}	
+	self.definitions.player_drill_fix_interaction_speed_multiplier_2 = {
+		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "drill_fix_interaction_speed_multiplier",
 			category = "player"
 		}
 	}		
@@ -1899,6 +1958,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_deflect_ranged = {
+		category = "feature",
+		name_id = "menu_player_panic_suppression",
+		upgrade = {
+			category = "player",
+			upgrade = "deflect_ranged",
+			value = 1
+		}
+	}	
 	self.definitions.player_ignore_suppression_flinch = {
 		category = "feature",
 		name_id = "menu_player_panic_suppression",
@@ -2303,6 +2371,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_bomb_cooldown_reduction = {
+		category = "feature",
+		name_id = "menu_player_bomb_cooldown_reduction",
+		upgrade = {
+			category = "player",
+			upgrade = "bomb_cooldown_reduction",
+			value = 1
+		}
+	}
 	self.definitions.player_tag_team_damage_absorption_1 = {
 		category = "feature",
 		upgrade = {
@@ -2318,8 +2395,7 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "tag_team_damage_absorption",
 			category = "player"
 		}
-	}		
-	
+	}
 	self.definitions.temporary_chico_injector_1 = {
 		name_id = "menu_temporary_chico_injector_1",
 		category = "temporary",
@@ -2349,7 +2425,16 @@ function UpgradesTweakData:_player_definitions()
 			synced = true,
 			category = "temporary"
 		}
-	}		
+	}
+	self.definitions.player_chico_injector_speed = {
+		name_id = "menu_player_chico_injector_speed",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "chico_injector_speed",
+			category = "player"
+		}
+	}
 	self.definitions.pistol_swap_speed_multiplier_1 = {
 		name_id = "menu_pistol_swap_speed_multiplier",
 		category = "feature",
@@ -2710,6 +2795,24 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_biker_armor_regen_1 = {
+		name_id = "menu_player_biker_armor_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_armor_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_biker_armor_regen_2 = {
+		name_id = "menu_player_biker_armor_regen",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "biker_armor_regen",
+			category = "player"
+		}
+	}
 	self.definitions.player_melee_kill_dodge_regen = {
 		name_id = "menu_player_melee_kill_dodge_regen",
 		category = "feature",
@@ -2728,7 +2831,7 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_spooc_damage_resist = {
+	self.definitions.player_spooc_damage_resist_1 = {
 		name_id = "menu_player_spooc_damage_resist",
 		category = "feature",
 		upgrade = {
@@ -2737,6 +2840,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_spooc_damage_resist_2 = {
+		name_id = "menu_player_spooc_damage_resist",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "spooc_damage_resist",
+			category = "player"
+		}
+	}	
 	self.definitions.player_trigger_happy_bodyshot_refresh = {
 		name_id = "menu_player_trigger_happy_bodyshot_refresh",
 		category = "feature",

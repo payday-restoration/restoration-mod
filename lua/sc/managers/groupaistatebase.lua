@@ -13,6 +13,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function GroupAIStateBase:_init_misc_data()
 		sc_group_misc_data(self)
 		self._ponr_is_on = nil
+		self._decay_target = 1
+		self._min_detection_threshold = 1
+		self._old_guard_detection_mul = 1
+		self._guard_detection_mul = 1
+		self._guard_detection_mul_raw = 0
+		self._old_guard_detection_mul_raw = 0
+		self._played_stealth_warning = 0
+		self._guard_delay_deduction = 0		
 		self._special_unit_types = {
 			tank = true,
 			spooc = true,
@@ -29,12 +37,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			summers = true,
 			autumn = true
 		}
+		
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+		
+		if diff_index <= 2 then
+			self._weapons_hot_threshold = 0.90
+			self._suspicion_threshold = 0.6
+		elseif diff_index == 3 then
+			self._weapons_hot_threshold = 0.80
+			self._suspicion_threshold = 0.65
+		elseif diff_index == 4 then
+			self._weapons_hot_threshold = 0.70
+			self._suspicion_threshold = 0.7
+		elseif diff_index == 5 then
+			self._weapons_hot_threshold = 0.60
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 6 then
+			self._weapons_hot_threshold = 0.50
+			self._suspicion_threshold = 0.8
+		elseif diff_index == 7 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.85
+		else
+			self._weapons_hot_threshold = 0.30
+			self._suspicion_threshold = 0.9
+		end
+		
 	end
 
 	local sc_group_base = GroupAIStateBase.on_simulation_started
 	function GroupAIStateBase:on_simulation_started()
 		sc_group_base(self)
 		self._ponr_is_on = nil
+		self._min_detection_threshold = 1
+		self._old_guard_detection_mul = 1
+		self._guard_detection_mul = 1
+		self._guard_detection_mul_raw = 0
+		self._old_guard_detection_mul_raw = 0
+		self._guard_delay_deduction = 0
+		self._played_stealth_warning = 0
 		self._special_unit_types = {
 			tank = true,
 			spooc = true,
@@ -51,7 +92,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			summers = true,
 			autumn = true
 		}
+		
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+		
+		if diff_index <= 2 then
+			self._weapons_hot_threshold = 0.90
+			self._suspicion_threshold = 0.6
+		elseif diff_index == 3 then
+			self._weapons_hot_threshold = 0.80
+			self._suspicion_threshold = 0.65
+		elseif diff_index == 4 then
+			self._weapons_hot_threshold = 0.70
+			self._suspicion_threshold = 0.7
+		elseif diff_index == 5 then
+			self._weapons_hot_threshold = 0.60
+			self._suspicion_threshold = 0.75
+		elseif diff_index == 6 then
+			self._weapons_hot_threshold = 0.50
+			self._suspicion_threshold = 0.8
+		elseif diff_index == 7 then
+			self._weapons_hot_threshold = 0.40
+			self._suspicion_threshold = 0.85
+		else
+			self._weapons_hot_threshold = 0.30
+			self._suspicion_threshold = 0.9
+		end
+		
 	end
+	
+	function GroupAIStateBase:chk_guard_detection_mul()
+		self._guard_detection_mul = 1 + self._guard_detection_mul_raw
+		if self._hostages_killed then
+			return self._guard_detection_mul * (self._hostages_killed + 1)
+		else
+			return self._guard_detection_mul * 1
+		end
+	end
+
+	function GroupAIStateBase:chk_guard_delay_deduction()
+		if self._hostages_killed then
+			return self._guard_delay_deduction * (self._hostages_killed * 0.25)
+		else
+			return self._guard_delay_deduction * 1
+		end
+	end	
 	
 	function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id)
 		if time == nil or setup:has_queued_exec() then
@@ -106,7 +190,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			old_update_point_of_no_return(self, t, dt)
 		end
 	end
-		
+			
 	function GroupAIStateBase:_radio_chatter_clbk()
 		if self._ai_enabled and not self:whisper_mode() then
 			local optimal_dist = 500
@@ -143,6 +227,56 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.enemy:add_delayed_clbk("_radio_chatter_clbk", self._radio_clbk, Application:time() + 30 + math.random(0, 20))
 	end	
 	
+	function GroupAIStateBase:_draw_current_logics()
+		for key, data in pairs(self._police) do
+			if data.unit:brain() and data.unit:brain().is_current_logic then
+				local brain = data.unit:brain()
+				
+				if brain:is_current_logic("arrest") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.blue:with_alpha(1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("attack") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.red:with_alpha(1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("base") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.white:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("flee") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.orange:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("guard") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.blue:with_alpha(0.1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("idle") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("inactive") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.black:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("intimidated") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.black:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("sniper") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.red:with_alpha(0.1), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				elseif brain:is_current_logic("travel") then
+					local draw_duration = 0.1
+					local new_brush = Draw:brush(Color.yellow:with_alpha(0.5), draw_duration)
+					new_brush:sphere(data.unit:movement():m_head_pos(), 20)
+				end
+			end
+		end
+	end
+
 	function GroupAIStateBase:find_followers_to_unit(leader_key, leader_data)
 		local leader_u_data = self._police[leader_key]
 		if not leader_u_data then
@@ -183,12 +317,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end
+	
 	function GroupAIStateBase:chk_has_followers(leader_key)
 		local leader_u_data = self._police[leader_key]
 		if leader_u_data and next(leader_u_data.followers) then
 			return true
 		end
 	end
+	
 	function GroupAIStateBase:are_followers_ready(leader_key)
 		local leader_u_data = self._police[leader_key]
 		if not leader_u_data or not leader_u_data.followers then
@@ -446,5 +582,325 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return gameover
 	end
+	
+	Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion_from_host", function(sender, message, data)
+		if message == "restoration_sync_level_suspicion" then 
+			if sender == 1 then 
+				local data_tbl = string.split(data,":")
+				if data_tbl and #data_tbl > 0 then 
+					local groupai_state = managers.groupai:state()
+					if data_tbl[1] and data_tbl[2] and groupai_state then
+						groupai_state._dummy_old_guard_detection_mul_raw = tonumber(data_tbl[1])
+						groupai_state._dummy_alarm_threshold = tonumber(data_tbl[2])
+					end
+				end
+			end
+		elseif message == "restoration_drop_ammo" then
+			if Network:is_server() then
+				local data_tbl = string.split(data,":") or {}
+				if data_tbl and #data_tbl > 0 then 
+					local upgrade_level = 0
+					local bullet_storm_level = 0
+					local loss_rate = 0.0
+					local placement_cost = 0.3
+					local pos = Vector3(tonumber(data_tbl[1]) or 0,tonumber(data_tbl[2]) or 0, tonumber(data_tbl[3]) or 0)
+					local rot = Rotation(tonumber(data_tbl[4]) or 0,tonumber(data_tbl[5]) or 0, tonumber(data_tbl[6]) or 0)
+					local ammo_ratio_taken = tonumber(data_tbl[7]) or 1
+					if ammo_ratio_taken < 1 then 
+						local unit = AmmoBagBase.spawn(pos, rot, upgrade_level, sender or managers.network:session():local_peer():id(), bullet_storm_level)
+						unit:base()._ammo_amount = math.floor(math.min(ammo_ratio_taken,placement_cost) * (1 - loss_rate) * 100) / 100
+						local current_amount = unit:base()._ammo_amount
+						unit:base():_set_visual_stage()
+						managers.network:session():send_to_peers_synched("sync_ammo_bag_ammo_taken", unit, current_amount - ammo_ratio_taken)						
+					end
+				end
+			end
+		end
+	end)
+	
+	
+	function GroupAIStateBase:update(t, dt)
+		self._t = t
+		self:_upd_criminal_suspicion_progress()
+		
+		local is_whisper_mode = managers.groupai:state():whisper_mode()
+		
+		local level_suspicion,alarm_threshold
+		if Network:is_server() then 
+			--use suspicion values
+			level_suspicion = self._old_guard_detection_mul_raw
+			alarm_threshold = self._weapons_hot_threshold
+			--self:_draw_current_logics()
+		else
+			--use suspicion values synced from host
+			level_suspicion = self._dummy_old_guard_detection_mul_raw or 0
+			alarm_threshold = self._dummy_alarm_threshold or 0
+		end
+		
+		if self._suspicion_interpolated then
+			local delta_suspicion = level_suspicion - self._suspicion_interpolated
+			if delta_suspicion < 0.0001 then 
+				--has caught up to actual value (or close enough)
+				self._suspicion_interpolated = level_suspicion
+			else
+				local animate_duration = 1 --approximate time in seconds for interpolated value to catch up to actual value
+				self._suspicion_interpolated = math.min(level_suspicion,0.0005 + self._suspicion_interpolated + (delta_suspicion * (dt / animate_duration)))
+			end
+		else
+			--init value
+			self._suspicion_interpolated = level_suspicion
+		end
+		managers.hud:_upd_animate_level_suspicion(t,level_suspicion,alarm_threshold,self._suspicion_interpolated,is_whisper_mode)
+		if self._last_detection_mul and self._last_detection_mul ~= self._old_guard_detection_mul_raw and Network:is_server() then 
+			LuaNetworking:SendToPeers("restoration_sync_level_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._weapons_hot_threshold))
+		end
+				
+		
+		
+		if is_whisper_mode then
+			local warning_1_threshold = self._weapons_hot_threshold * 0.25
+			local warning_2_threshold = self._weapons_hot_threshold * 0.5
+			local warning_3_threshold = self._weapons_hot_threshold * 0.75
+				
+			if self._played_stealth_warning < 1 and self._old_guard_detection_mul_raw >= warning_1_threshold then
+				log("warning1")
+				self._played_stealth_warning = 1 
+			end
+				
+			if self._played_stealth_warning < 2 and self._old_guard_detection_mul_raw >= warning_2_threshold then
+				log("warning2")
+				self._played_stealth_warning = 2 
+			end
+				
+			if self._played_stealth_warning < 3 and self._old_guard_detection_mul_raw >= warning_3_threshold then
+				log("warning3")
+				self._played_stealth_warning = 3
+			end
+				
+			if self._old_guard_detection_mul_raw >= self._weapons_hot_threshold then
+				if not self._alarm_t then 
+					self._alarm_t = self._t + 60
+				end
+					
+				if self._played_stealth_warning < 4 then
+					managers.dialog:queue_dialog("Play_pln_pat_03", {})
+					self._played_stealth_warning = 4
+				end
+					
+				if self._played_stealth_warning < 5 and self._alarm_t - 30 < t then
+					managers.dialog:queue_dialog("Play_pln_pat_04", {})
+					self._played_stealth_warning = 5
+				end
+					
+				if self._played_stealth_warning < 6 and self._alarm_t - 50 < t then
+					managers.dialog:queue_dialog("Play_pln_pat_05", {})
+					self._played_stealth_warning = 6
+				end
+					
+				if self._alarm_t < t then
+					self:on_police_called("sys_police_alerted")
+					--log("uhohstinkyyyy")
+				end
+			end
+			
+			if self._decay_target and self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
+				self:_upd_whisper_suspicion_mul_decay(t)
+			end
+		end
+		
+		if self._draw_drama then
+			self:_debug_draw_drama(t)
+		end
+
+		self:_upd_debug_draw_attentions()
+		self:upd_team_AI_distance()
+		self._last_detection_mul = self._old_guard_detection_mul_raw --used purely for suspicion meter syncing
+	end
+	
+	function GroupAIStateBase:_upd_whisper_suspicion_mul_decay(t)
+		if not self._decay_target or self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t > t then
+			--log("why did this execute")
+			return
+		end
+		
+		if self._next_whisper_susp_mul_t and self._next_whisper_susp_mul_t < t then
+			if self._guard_detection_mul_raw > self._decay_target then
+				self._decay_target = self._old_guard_detection_mul_raw * self._suspicion_threshold
+				self._guard_detection_mul_raw = self._guard_detection_mul_raw - 0.01
+				self._next_whisper_susp_mul_t = t + 5
+				--log("coolcoolcool")
+			end
+		end	
+	end
+	
+	function GroupAIStateBase:_delay_whisper_suspicion_mul_decay()
+		self._next_whisper_susp_mul_t = self._t + 5
+	end
+	
+	function GroupAIStateBase:on_enemy_unregistered(unit)
+		if self:is_unit_in_phalanx_minion_data(unit:key()) then
+			self:unregister_phalanx_minion(unit:key())
+			CopLogicPhalanxMinion:chk_should_breakup()
+			CopLogicPhalanxMinion:chk_should_reposition()
+		end
+
+		self._police_force = self._police_force - 1
+		local u_key = unit:key()
+
+		self:_clear_character_criminal_suspicion_data(u_key)
+
+		if not Network:is_server() then
+			return
+		end
+
+		local e_data = self._police[u_key]
+
+		if e_data.importance > 0 then
+			for c_key, c_data in pairs(self._player_criminals) do
+				local imp_keys = c_data.important_enemies
+
+				for i, test_e_key in ipairs(imp_keys) do
+					if test_e_key == u_key then
+						table.remove(imp_keys, i)
+						table.remove(c_data.important_dis, i)
+
+						break
+					end
+				end
+			end
+		end
+
+		for crim_key, record in pairs(self._ai_criminals) do
+			record.unit:brain():on_cop_neutralized(u_key)
+		end
+
+		local unit_type = unit:base()._tweak_table
+
+		if self._special_unit_types[unit_type] then
+			self:unregister_special_unit(u_key, unit_type)
+		end
+
+		local dead = unit:character_damage():dead()
+
+		if e_data.group then
+			self:_remove_group_member(e_data.group, u_key, dead)
+		end
+		
+		if dead and managers.groupai:state():whisper_mode() then
+			self._next_whisper_susp_mul_t = self._t + 5
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.01
+			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
+			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.01
+		end		
+
+		if e_data.assigned_area and dead then
+			local spawn_point = unit:unit_data().mission_element
+
+			if spawn_point then
+				local spawn_pos = spawn_point:value("position")
+				local u_pos = e_data.m_pos
+
+				if mvector3.distance(spawn_pos, u_pos) < 700 and math.abs(spawn_pos.z - u_pos.z) < 300 then
+					local found = nil
+
+					for area_id, area_data in pairs(self._area_data) do
+						local area_spawn_points = area_data.spawn_points
+
+						if area_spawn_points then
+							for _, sp_data in ipairs(area_spawn_points) do
+								if sp_data.spawn_point == spawn_point then
+									found = true
+									sp_data.delay_t = math.max(sp_data.delay_t, self._t + math.random(30, 60))
+
+									break
+								end
+							end
+
+							if found then
+								break
+							end
+						end
+
+						local area_spawn_points = area_data.spawn_groups
+
+						if area_spawn_points then
+							for _, sp_data in ipairs(area_spawn_points) do
+								if sp_data.spawn_point == spawn_point then
+									found = true
+									sp_data.delay_t = math.max(sp_data.delay_t, self._t + math.random(30, 60))
+
+									break
+								end
+							end
+
+							if found then
+								break
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	function GroupAIStateBase:on_civilian_unregistered(unit)
+		local u_key = unit:key()
+
+		self:_clear_character_criminal_suspicion_data(u_key)
+
+		local u_data = managers.enemy:all_civilians()[u_key]
+
+		if u_data and u_data.hostage_following then
+			self:on_hostage_follow(u_data.hostage_following, unit, false)
+		end
+		
+		local dead = unit:character_damage():dead()
+		
+		if dead and managers.groupai:state():whisper_mode() then
+			self._next_whisper_susp_mul_t = self._t + 5
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.01
+			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
+			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.01
+		end		
+		
+	end	
+	
+	function GroupAIStateBase:_get_anticipation_duration(anticipation_duration_table, is_first)
+		local anticipation_duration = anticipation_duration_table[1][1]
+
+		if not is_first then
+			local rand = math.random()
+			local accumulated_chance = 0
+
+			for i, setting in pairs(anticipation_duration_table) do
+				accumulated_chance = accumulated_chance + setting[2]
+
+				if rand <= accumulated_chance then
+					anticipation_duration = setting[1]
+
+					break
+				end
+			end
+		end
+		
+		if not managers.skirmish:is_skirmish() then
+			if is_first or self._assault_number and self._assault_number == 1 then
+				return 45
+			elseif self._assault_number and self._assault_number == 2 then
+				return 45
+			elseif self._assault_number and self._assault_number == 3 then
+				return 35
+			elseif self._assault_number and self._assault_number >= 4 then
+				return 25
+			else
+				return 45
+			end
+		else
+			return anticipation_duration
+		end
+		
+	end	
 	
 end

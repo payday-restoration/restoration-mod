@@ -1,0 +1,6 @@
+<materials version="3">
+	<material name="mtr_pressure" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/pressure_df" />
+		<bump_normal_texture file="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/pressure_nm" />
+	</material>
+</materials>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="hsp" slot="1">
+  <object file="units/world/architecture/hospital/props/rooftop/de_train_signalbox/de_train_signalbox_01" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

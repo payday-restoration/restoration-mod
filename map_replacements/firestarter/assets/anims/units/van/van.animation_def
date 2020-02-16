@@ -1,0 +1,47 @@
+<xml>
+
+<!-- Animatable sets //////////////////////////////////////////////////////////// -->
+	<animatable_set name="van">
+		<!-- Root -->
+		<bone name="rp_anim_car" root="true" alignment="true" alias="all root"/>
+		<bone name="anim_body" alias="all" />
+		<bone name="anim_tire_rear_left" alias="all" />
+		<bone name="anim_tire_rear_right" alias="all" />
+		<bone name="anim_tire_front_right" alias="all" />
+		<bone name="anim_tire_front_left" alias="all" />
+	</animatable_set>
+	
+
+<!-- Blend sets ///////////////////////////////////////////////////////////////// -->
+	<blend_set name="all" animatable_set="van">
+		<blend alias="all" weight="1.0"/>
+	</blend_set>
+	
+	<blend_set name="all_no_root" animatable_set="van">
+		<blend alias="all" weight="1.0"/>
+		<blend name="rp_anim_car" weight="0.0"/>
+	</blend_set>
+
+	<blend_set name="root" animatable_set="van">
+		<blend name="rp_anim_car" weight="1.0"/>
+	</blend_set>
+	
+	<blend_set name="chassis" animatable_set="van">
+		<blend name="rp_anim_car" weight="1.0"/>
+		<blend name="anim_body" weight="1.0"/>
+	</blend_set>
+
+	<blend_set name="wheels" animatable_set="van">
+		<blend name="anim_tire_rear_left" weight="1.0"/>
+		<blend name="anim_tire_rear_right" weight="1.0"/>
+		<blend name="anim_tire_front_right" weight="1.0"/>
+		<blend name="anim_tire_front_left" weight="1.0"/>
+	</blend_set>
+	
+<!-- Animation sets ///////////////////////////////////////////////////////////// -->
+	
+	<animation_set name="van" animatable_set="van">
+		<subset file="anims/units/van/std"/>
+	</animation_set>
+	
+</xml>

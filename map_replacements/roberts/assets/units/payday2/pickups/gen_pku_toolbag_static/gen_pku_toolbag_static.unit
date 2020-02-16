@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+  <network sync="spawn" />
+  <object file="units/payday2/pickups/gen_pku_toolbag_static/gen_pku_toolbag_static" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="interaction" class="CarryInteractionExt">
+      <var name="tweak_data" value="hold_pickup_lance" />
+      <var name="_remove_on_interact" value="true" />
+      <var name="_global_event" value="pku_toolbag" />
+    </extension>
+    <extension name="carry_data" class="CarryData">
+		<var name="_carry_id" value="lance_bag" />
+		<!-- <var name="tweak_value" value="bag_value" /> -->
+	</extension>
+  </extensions>
+</unit>

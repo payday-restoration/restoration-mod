@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/gen_prop_container/gen_prop_container_1" orientation_object="rp_gen_prop_container" />
+	<sequence_manager file="units/payday2/props/gen_prop_container/gen_prop_container" />
+
+	<animations>
+		<animation_group name="anim_door_front">
+			<object name="lf_door" />
+			<object name="lf_hinge1" />
+			<object name="lf_handle1" />
+			<object name="lf_hinge2" />
+			<object name="lf_handle2" />
+
+			<object name="rf_door" />
+			<object name="rf_hinge1" />
+			<object name="rf_handle1" />
+			<object name="rf_hinge2" />
+			<object name="rf_handle2" />
+		</animation_group>
+
+		<animation_group name="anim_door_back" enabled="false">
+			<object name="lr_door" />
+			<object name="lr_hinge1" />
+			<object name="lr_handle1" />
+			<object name="lr_hinge2" />
+			<object name="lr_handle2" />
+
+			<object name="rr_door" />
+			<object name="rr_hinge1" />
+			<object name="rr_handle1" />
+			<object name="rr_hinge2" />
+			<object name="rr_handle2" />
+		</animation_group>
+	</animations>
+
+	<bodies>
+		<body name="body_container" enabled="true" template="static">
+			<object name="rp_gen_prop_container" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_04" collision_type="box" padding="-2.5"/>
+		</body>
+
+		<body name="body_door_back_right" enabled="true" template="animated">
+			<object name="rr_door" />
+			<object name="c_box_rr_door" collision_type="box" padding="-2.5"/>
+		</body>
+
+		<body name="body_door_back_left" enabled="true" template="animated">
+			<object name="lr_door" />
+			<object name="c_box_lr_door" collision_type="box" padding="-2.5"/>
+		</body>
+
+		<body name="body_door_front_left" enabled="true" template="animated">
+			<object name="lf_door" />
+			<object name="c_box_lf_door" collision_type="box" padding="-2.5"/>
+		</body>
+
+		<body name="body_door_front_right" enabled="true" template="animated">
+			<object name="rf_door" />
+			<object name="c_box_rf_door" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_metal" 	enabled="true" material="sheet_metal" />
+		<decal_mesh name="dm_lr_door" 	enabled="true" material="sheet_metal" />
+		<decal_mesh name="dm_rr_door" 	enabled="true" material="sheet_metal" />
+		<decal_mesh name="dm_lf_door" 	enabled="true" material="sheet_metal" />
+		<decal_mesh name="dm_rf_door" 	enabled="true" material="sheet_metal" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_container" enabled="true" culling_object="co_cull">
+			<object name="g_1" enabled="false" 	shadow_caster="false" />
+			<object name="g_2" enabled="true" 	shadow_caster="false" />
+			<object name="g_3" enabled="false" 	shadow_caster="false" />
+			<object name="s_s" enabled="true" 	shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

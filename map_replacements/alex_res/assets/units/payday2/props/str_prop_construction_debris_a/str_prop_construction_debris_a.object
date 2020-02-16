@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_construction_debris_a/str_prop_construction_debris_a" orientation_object="rp_str_prop_construction_debris_a" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_str_prop_construction_debris_a"/>
+			<object name="c_box_a_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_06" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_07" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_08" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_09" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_10" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_11" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_12" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_13" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_14" collision_type="box" padding="-2.5"/>
+			<object name="c_box_a_15" collision_type="box" padding="-2.5"/>
+			<object name="c_convex_a_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_02" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_03" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_04" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_05" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_06" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_07" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_08" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_a_09" collision_type="convex" padding="-2.5"/>
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_str_prop_construction_debris_a" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_str_prop_construction_debris_a_lod0" enabled="true"/>
+		<object name="s_s_str_prop_construction_debris_a" 	 enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

@@ -422,9 +422,9 @@ function InteractionTweakData:init(...)
 			icon = "interaction_help",
 			text_id = "hud_int_tape_loop",
 			start_active = true,
-			interact_distance = 150,
+			interact_distance = 300,
 			no_contour = true,
-			timer = 4,
+			timer = 2,
 			action_text_id = "hud_action_tape_looping",
 			upgrade_timer_multiplier = {
 				upgrade = "hack_fix_interaction_speed_multiplier",

@@ -57,6 +57,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 1
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 1.8
+		self.erma_crew.DAMAGE = 1.8
+		self.polymer_crew.DAMAGE = 1.8		
+		
 		self.akm_gold_crew.DAMAGE = 1.8
 		self.amcar_crew.DAMAGE = 1.8
 		self.ak74_crew.DAMAGE = 1.8
@@ -112,6 +116,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 1
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 1.8
+		self.erma_crew.DAMAGE = 1.8
+		self.polymer_crew.DAMAGE = 1.8				
+		
 		self.akm_gold_crew.DAMAGE = 1.8
 		self.amcar_crew.DAMAGE = 1.8
 		self.ak74_crew.DAMAGE = 1.8
@@ -167,6 +175,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 2
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 2.8
+		self.erma_crew.DAMAGE = 2.8
+		self.polymer_crew.DAMAGE = 2.8				
+		
 		self.akm_gold_crew.DAMAGE = 2.8
 		self.amcar_crew.DAMAGE = 2.8
 		self.ak74_crew.DAMAGE = 2.8
@@ -222,6 +234,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.beretta92_npc.DAMAGE = 3
 		
 		--Everything else--
+		self.shepheard_crew.DAMAGE = 3.8
+		self.erma_crew.DAMAGE = 3.8
+		self.polymer_crew.DAMAGE = 3.8			
+		
 		self.akm_gold_crew.DAMAGE = 3.8
 		self.amcar_crew.DAMAGE = 3.8
 		self.ak74_crew.DAMAGE = 3.8
@@ -690,14 +706,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m4_npc.alert_size = 2800
 		self.m4_npc.suppression = 2.2
 		self.m4_npc.FIRE_MODE = "auto"
+		
 		self.m4_secondary_npc = deep_clone(self.m4_npc)
 		self.m4_secondary_npc.use_data.selection_index = 1
+		
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
 		self.ak47_ass_npc.sounds.prefix = "akm_npc"
+		
+		self.swamp_npc = deep_clone(self.m4_npc)
+		self.swamp_npc.sounds.prefix = "m16_npc"	
+		self.swamp_npc.CLIP_AMMO_MAX = 60
+		
 		self.sg417_npc = deep_clone(self.m4_npc)
 		self.sg417_npc.auto.fire_rate = 0.1
 		self.sg417_npc.CLIP_AMMO_MAX = 20
 		self.sg417_npc.DAMAGE = 4.4
+		
 		self.m4_boom_npc = deep_clone(self.m4_npc)
 	end
 	
@@ -773,10 +797,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.r870_npc.rays = 9
 		self.r870_npc.spread = 3
 		self.r870_npc.FIRE_MODE = "single"
+		
 		self.benelli_npc = deep_clone(self.r870_npc)
 		self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 		self.benelli_npc.DAMAGE = 7
 		self.benelli_npc.CLIP_AMMO_MAX = 10
+		
+		self.bayou_npc = deep_clone(self.r870_npc)
+		self.bayou_npc.sounds.prefix = "spas_npc"
+		self.bayou_npc.DAMAGE = 7
+		self.bayou_npc.CLIP_AMMO_MAX = 10		
+		
 		self.r870_taser_npc = deep_clone(self.r870_npc)
 		self.r870_taser_npc.sounds.prefix = "remington_npc"
 		self.r870_taser_npc.DAMAGE = 5.9
@@ -1319,6 +1350,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--Bravo LMG--
 		self.m249_bravo_npc = deep_clone(self.hk23_sc_npc)	
 		self.m249_bravo_npc.sounds.prefix = "m249_npc"
+		self.m249_bravo_npc.CLIP_AMMO_MAX = 200
 	end
 
 	function WeaponTweakData:_init_data_contraband_npc()
@@ -1459,6 +1491,65 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.jeb_crew = deep_clone(self.raging_bull_crew)
 	end	
 	
+	function WeaponTweakData:_init_data_shepheard_crew()
+		self.shepheard_crew.categories = clone(self.shepheard.categories)
+		self.shepheard_crew.sounds.prefix = "shepheard_npc"
+		self.shepheard_crew.use_data.selection_index = 2
+		self.shepheard_crew.DAMAGE = 4.8
+		self.shepheard_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.shepheard_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.shepheard_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.shepheard_crew.CLIP_AMMO_MAX = 60
+		self.shepheard_crew.NR_CLIPS_MAX = 5
+		self.shepheard_crew.auto.fire_rate = 0.08571428571
+		self.shepheard_crew.hold = "rifle"
+		self.shepheard_crew.pull_magazine_during_reload = "smg"
+		self.shepheard_crew.alert_size = 5000
+		self.shepheard_crew.suppression = 2.2
+		self.shepheard_crew.FIRE_MODE = "auto"
+	end	
+	
+	function WeaponTweakData:_init_data_erma_crew()
+		self.erma_crew.categories = clone(self.erma.categories)
+		self.erma_crew.sounds.prefix = "erma_npc"
+		self.erma_crew.use_data.selection_index = 2
+		self.erma_crew.DAMAGE = 4.8
+		self.erma_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.erma_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.erma_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.erma_crew.CLIP_AMMO_MAX = 60
+		self.erma_crew.NR_CLIPS_MAX = 5
+		self.erma_crew.reload = "rifle"
+		self.erma_crew.pull_magazine_during_reload = "smg"
+		self.erma_crew.auto.fire_rate = 0.08571428571
+		self.erma_crew.hold = "rifle"
+		self.erma_crew.alert_size = 5000
+		self.erma_crew.suppression = 2.2
+		self.erma_crew.FIRE_MODE = "auto"
+	end	
+	
+	function WeaponTweakData:_init_data_polymer_crew()
+		self.polymer_crew.categories = clone(self.polymer.categories)
+		self.polymer_crew.sounds.prefix = "polymer_npc"
+		self.polymer_crew.use_data.selection_index = 2
+		self.polymer_crew.DAMAGE = 4.8
+		self.polymer_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.polymer_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+		self.polymer_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.polymer_crew.CLIP_AMMO_MAX = 60
+		self.polymer_crew.NR_CLIPS_MAX = 5
+		self.polymer_crew.reload = "rifle"
+		self.polymer_crew.pull_magazine_during_reload = "smg"
+		self.polymer_crew.auto.fire_rate = 0.08571428571
+		self.polymer_crew.hold = {
+			"bullpup",
+			"rifle"
+		}
+		self.polymer_crew.alert_size = 5000
+		self.polymer_crew.suppression = 2.2
+		self.polymer_crew.FIRE_MODE = "auto"
+	end
+		
 	function WeaponTweakData:_init_data_akm_gold_crew()
 		self.akm_gold_crew.categories = clone(self.akm_gold.categories)
 		self.akm_gold_crew.sounds.prefix = "akm_npc"
@@ -2369,7 +2460,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mg42_secondary_crew.use_data.selection_index = 1
 		self.mg42_secondary_crew.armor_piercing = true
 	end
-		
+				
 	function WeaponTweakData:_init_data_x_basset_crew()
 		self.x_basset_crew.categories = clone(self.x_basset.categories)
 		self.x_basset_crew.sounds.prefix = "basset_x_npc"
@@ -3299,6 +3390,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				weap.stats.reload = 20
 			end
 		end		
+		
+		for i, weap in pairs(self) do
+			if weap.stats and weap.stats.extra_ammo then
+				weap.stats.extra_ammo = 101
+			end
+		end				
 		
 		--Test to just give everything sniper auto hit cause reasons
 		for i, weap in pairs(self) do
@@ -7606,8 +7703,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.x_coal.panic_suppression_chance = 0.05		
-		--Disabled--
-		self.x_baka.use_data.selection_index = 4
+		self.x_baka.use_data.selection_index = 2
 		self.x_baka.CLIP_AMMO_MAX = 60
 		self.x_baka.NR_CLIPS_MAX = 4
 		self.x_baka.AMMO_MAX = 180
@@ -9527,8 +9623,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.amr12.kick.steelsight = self.new_m4.kick.standing
 		self.amr12.stats = {
 			damage = 75,
-			spread = 4,
-			recoil = 18,
+			spread = 3,
+			recoil = 4,
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 18,
@@ -9967,8 +10063,87 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.ots_14_4a.armor_piercing_chance = nil		
 			self.ots_14_4a.panic_suppression_chance = 0.0
-		end		
+		end
 
+		if self.negev then --Alcat's Negev
+			self.negev.categories = {
+				"lmg",
+				"smg"
+			}
+			self.negev.desc_id = "bm_menu_sc_negev_desc"
+			self.negev.CLIP_AMMO_MAX = 200
+			self.negev.AMMO_MAX = 200
+			self.negev.AMMO_PICKUP = self:_pickup_chance(200, 2)
+			self.negev.spread.standing = 3
+			self.negev.spread.crouching = 2
+			self.negev.spread.steelsight = 1
+			self.negev.spread.moving_standing = 4
+			self.negev.spread.moving_crouching = 3
+			self.negev.spread.moving_steelsight = 2
+			self.negev.spread.bipod = 0.5
+			self.negev.kick.standing = self.new_m4.kick.standing
+			self.negev.kick.crouching = self.new_m4.kick.standing
+			self.negev.kick.steelsight = self.new_m4.kick.standing
+			self.negev.stats = {
+				damage = 30,
+				spread = 14,
+				recoil = 20,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 14,
+				suppression = 10,
+				alert_size = 10,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 20
+			}
+			self.negev.panic_suppression_chance = 0.05
+		end
+
+		if self.sgs then --Gambyt's Guerilla 308.
+			self.sgs.upgrade_blocks = nil
+			self.sgs.has_description = true
+			self.sgs.desc_id = "bm_ap_weapon_sc_desc"
+			self.sgs.CLIP_AMMO_MAX = 20
+			self.sgs.AMMO_MAX = 40
+			self.sgs.AMMO_PICKUP = self:_pickup_chance(40, 2)
+			self.sgs.FIRE_MODE = "single"
+			self.sgs.fire_mode_data = {}
+			self.sgs.fire_mode_data.fire_rate = 0.75
+			self.sgs.single = {}
+			self.sgs.single.fire_rate = 0.75
+			self.sgs.spread.standing = 3
+			self.sgs.spread.crouching = 2
+			self.sgs.spread.steelsight = 1
+			self.sgs.spread.moving_standing = 4
+			self.sgs.spread.moving_crouching = 3
+			self.sgs.spread.moving_steelsight = 2
+			self.sgs.kick.standing = self.huntsman.kick.standing
+			self.sgs.kick.crouching = self.huntsman.kick.standing
+			self.sgs.kick.steelsight = self.huntsman.kick.standing
+			self.sgs.can_shoot_through_enemy = true
+			self.sgs.can_shoot_through_shield = true
+			self.sgs.can_shoot_through_wall = true
+			self.sgs.stats = {
+				damage = 150,
+				spread = 18,
+				recoil = 17,
+				spread_moving = 24,
+				zoom = 1,
+				concealment = 10,
+				suppression = 4,
+				alert_size = 4,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 20
+			}
+			self.sgs.armor_piercing_chance = 1
+			self.sgs.stats_modifiers = {damage = 1}
+			self.sgs.panic_suppression_chance = 0.0
+		end		
+		
 		if self.mg4 then --Pawcio's HK MG4 
 			self.mg4.categories = {
 				"lmg",
@@ -12183,16 +12358,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.beck.kick.standing = self.new_m4.kick.standing
 		self.beck.kick.crouching = self.new_m4.kick.standing
 		self.beck.kick.steelsight = self.new_m4.kick.standing
-		self.beck.single.fire_rate = 0.65
-		self.beck.fire_mode_data.fire_rate = 0.65
+		self.beck.single.fire_rate = 0.5
+		self.beck.fire_mode_data.fire_rate = 0.5
 		self.beck.AMMO_MAX = 40 
 		self.beck.damage_near = 600
 		self.beck.damage_far = 1200
 		self.beck.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.beck.stats = {
 			damage = 150,
-			spread = 9,
-			recoil = 17,
+			spread = 10,
+			recoil = 18,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 15,
@@ -12290,6 +12465,42 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.x_ak5s then --disabled vmp akimbos
 		self.x_ak5s.use_data.selection_index = 4
 	end	
+
+	if self.x_cold then --disabled vmp akimbos
+		self.x_cold.use_data.selection_index = 4
+	end		
+
+	if self.cold then --Gambyt's VMP Classic Crosskill
+		self.cold.tactical_reload = 1											
+		self.cold.fire_mode_data.fire_rate = 0.07692307692
+		self.cold.single.fire_rate = 0.07692307692
+		self.cold.AMMO_MAX = 60
+		self.cold.AMMO_PICKUP = self:_pickup_chance(60, 1)
+		self.cold.spread.standing = 3
+		self.cold.spread.crouching = 2
+		self.cold.spread.steelsight = 1
+		self.cold.spread.moving_standing = 4
+		self.cold.spread.moving_crouching = 3
+		self.cold.spread.moving_steelsight = 2
+		self.cold.kick.standing = self.glock_17.kick.standing
+		self.cold.kick.crouching = self.glock_17.kick.standing
+		self.cold.kick.steelsight = self.glock_17.kick.standing
+		self.cold.stats = {
+			damage = 75,
+			spread = 18,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 24,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.cold.panic_suppression_chance = 0.0			
+	end						
 	
 	if self.hpb then --Gambyt's Browning HP
 		self.hpb.tactical_reload = 1											
@@ -13932,6 +14143,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			use_data = {}
 		}	
 		self.smoke_npc = {
+			usage = "is_smg",
+			sounds = {},
+			use_data = {},
+			auto = {}
+		}		
+		
+		self.shepheard_crew = {
 			usage = "is_smg",
 			sounds = {},
 			use_data = {},

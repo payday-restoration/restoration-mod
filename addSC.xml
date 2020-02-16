@@ -84,7 +84,11 @@
 
 	<!--Reduced Sicario Smoke-->	
 	<effect path="effects/particles/explosions/smoke_screen" force="true"/>
-	<texture path="units/pd2_dlc_max/weapons/wpn_fps_smoke_screen_grenade/incendiary_third_df" force="true"/>
+	<!--concussion grenade depth scaling vanilla bug-->	
+	<material_config path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" force="true" />	
+
+	<!--PDTH Smokebomb-->
+	<effect path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>
 
 	<!--Security Guard 7 fixed cap (Thanks Baddy!) el chupacabras-->	
 	<object path="units/payday2/characters/ene_security_7/ene_security_7" force="true" />	
@@ -97,6 +101,9 @@
 	<!--Panic Room Bullet Impact Fixes-->		
 	<object path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
 	<object path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
+	
+	<!--Parachute Collision edit (No more Boiling Point suicides)-->
+	<object path="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" force="true"/>
 	
 	<!--Scarface Guys-->		
 	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
@@ -206,6 +213,10 @@
 	
 	<!--New Crime Spree icons-->
 	<texture path="guis/dlcs/sc/textures/pd2/crime_spree/modifiers_atlas_sc"/>	
+	
+	<!--Crimewar skull icon for HUD Stealth Suspicion meter-->
+	<texture path="guis/textures/restoration/crimewar_skull"/>
+	<texture path="guis/textures/restoration/crimewar_skull_2"/>	
 	
 	<!--Mats/Patterns-->
 	<texture path="units/pd2_mod_jack/matcaps/jkl_matt01" force="false"/>
@@ -604,6 +615,9 @@
 	<material_config path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_husk" force="false" load="true"/>
 	
+	<unit path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" load="true"/>
+	<unit path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_husk" force="true" load="true"/>	
+	
 	<!--Halloween Sword-->
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
@@ -650,7 +664,7 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_rifle_df" force="false"/>
 	
-	<unit path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
 	<model path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
 	<object path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
@@ -710,6 +724,7 @@
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
     <texture path="guis/textures/pd2/hud_buff_shield" force="true" load="false"/>   
+	<texture path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
 	
     <!--Titan Taser-->	
 	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
@@ -924,6 +939,10 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_nm" force="false"/>	
+	<effect path="effects/payday2/particles/explosions/summers_footstep" load="false"/>	
+	
 
 	<!--Summers Flamethrower-->
 	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
@@ -954,7 +973,9 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_nm" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_nm" force="false"/>	
 
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
@@ -967,6 +988,9 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_face_nm" force="false"/>	
+
 	<unit path="units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc" load="false" force="false"/>
 
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
@@ -981,6 +1005,26 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_face_df" force="false"/>	
+	
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
+	
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />		
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />			
 
 	<!--Omnia LPF-->
 	<object path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
@@ -1347,6 +1391,14 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" load="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet/ene_acc_murky_helmet" force="false"/>	
+	
+	<!--glass shatter helmet but invisible-->
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" load="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>	
 	
 	<!--murky and OMNIA seqmans-->
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
@@ -1871,6 +1923,11 @@
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
 	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>
 	
+	<!--MINIGUN uh um I mean BENELLI DOZER-->
+	<texture path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
+	<model path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>
+	<sequence_manager path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>	
+
 	<!--shield-->
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
@@ -1905,12 +1962,14 @@
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_contour" />
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>	
+	
 	<!--cool hat bro-vo-->
 	<object path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
 	<cooked_physics path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
 	<model path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
 	<unit path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat"  load="true"/>
 	<material_config path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />	
+	
 	<!--bravo lmg-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
 	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
@@ -1919,7 +1978,9 @@
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg_contour" />
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg_husk"  load="true"/>	
+	
 	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"  load="true"/>
+	
 	<!--bravo rifle-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
 	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
@@ -1928,6 +1989,15 @@
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_contour" />
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_husk"  load="true"/>	
+		
+	<object path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<cooked_physics path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<model path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>	
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp_contour" force="false"/>	
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/swamp_df" force="false"/>	
+	
 	<!--bravo shotgun-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
 	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
@@ -1936,6 +2006,16 @@
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun_contour" />
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun_husk"  load="true"/>	
+	
+	<object path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<cooked_physics path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<model path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>	
+	<sequence_manager path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>	
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>		
+	
 	<!--textures-->	
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_dmr_df"/>
@@ -1969,6 +2049,8 @@
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/>
 	<!--Perk Decks-->
     <texture path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
+    <texture path="guis/dlcs/chico/textures/pd2/specialization/icons_atlas" force="true"/>
+    <texture path="guis/dlcs/wild/textures/pd2/specialization/icons_atlas" force="true"/>	
 	<!--grenade throwable case-->
 	<texture path="guis/textures/pd2/equipment" force="true"/>
 	<texture path="guis/textures/pd2/blackmarket/icons/deployables/armor_kit" force="true"/>

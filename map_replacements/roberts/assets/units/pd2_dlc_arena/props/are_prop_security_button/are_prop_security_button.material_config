@@ -1,0 +1,13 @@
+<materials version="3">
+    <material name="button" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2" >
+        <diffuse_texture file="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button_df"/>
+        <bump_normal_texture file="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button_nm"/>
+    </material>
+
+    <material name="contour" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2" unique="true" >
+        <diffuse_texture file="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button_df"/>
+        <bump_normal_texture file="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button_nm"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+</materials>

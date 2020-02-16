@@ -219,7 +219,63 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
       return best_target, best_target_priority_slot, best_target_reaction
   end
+	
+	function CopLogicIdle.queued_update(data)
+		local my_data = data.internal_data
+		local delay = data.logic._upd_enemy_detection(data)
 
+		if data.internal_data ~= my_data then
+			CopLogicBase._report_detections(data.detected_attention_objects)
+
+			return
+		end
+
+		local objective = data.objective
+
+		if my_data.has_old_action then
+			CopLogicIdle._upd_stop_old_action(data, my_data, objective)
+			CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicIdle.queued_update, data, data.t + delay)
+
+			return
+		end
+		
+		local objective_chk = not data.objective or data.objective.type and data.objective.type == "free"
+		local path_fail_chk = not data.path_fail_t or data.t - data.path_fail_t > 3
+		
+		if data.is_converted and objective_chk and path_fail_chk then
+			managers.groupai:state():on_criminal_jobless(data.unit)
+
+			if my_data ~= data.internal_data then
+				return
+			end
+		end
+
+		if CopLogicIdle._chk_exit_non_walkable_area(data) then
+			return
+		end
+
+		if CopLogicIdle._chk_relocate(data) then
+			return
+		end
+
+		CopLogicIdle._perform_objective_action(data, my_data, objective)
+		CopLogicBase._upd_stance_and_pose(data, my_data, objective)
+		CopLogicIdle._upd_pathing(data, my_data)
+		CopLogicIdle._upd_scan(data, my_data)
+
+		if data.cool then
+			CopLogicIdle.upd_suspicion_decay(data)
+		end
+
+		if data.internal_data ~= my_data then
+			CopLogicBase._report_detections(data.detected_attention_objects)
+
+			return
+		end
+			
+		CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicIdle.queued_update, data, data.t + delay)
+	end
+	
 	function CopLogicIdle.find_civilian_to_intimidate(data)
 		local best_civ = CopLogicIdle._find_intimidateable_civilians(data)
 
@@ -400,6 +456,292 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		return delay
+	end
+	
+	function CopLogicIdle.action_complete_clbk(data, action)
+		local action_type = action:type()
+		local my_data = data.internal_data
+		
+		if action_type == "walk" then
+			my_data.advancing = nil
+			my_data.flank_cover = nil
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+			CopLogicAttack._cancel_charge(data, my_data)
+			if my_data.surprised then
+				my_data.surprised = false
+			elseif my_data.moving_to_cover then
+				if action:expired() then
+					my_data.in_cover = my_data.moving_to_cover
+					my_data.cover_enter_t = data.t
+				end
+
+				my_data.moving_to_cover = nil
+			elseif my_data.walking_to_cover_shoot_pos then
+				my_data.walking_to_cover_shoot_pos = nil
+				my_data.at_cover_shoot_pos = true
+			end
+		elseif action_type == "shoot" then
+			my_data.shooting = nil
+		elseif action_type == "tase" then
+			if action:expired() and my_data.tasing then
+				local record = managers.groupai:state():criminal_record(my_data.tasing.target_u_key)
+
+				if record and record.status then
+					data.tase_delay_t = TimerManager:game():time() + 45
+				end
+			end
+
+			managers.groupai:state():on_tase_end(my_data.tasing.target_u_key)
+
+			my_data.tasing = nil
+		elseif action_type == "reload" then
+			--Removed the requirement for being important here.
+			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+				CopLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+			end
+		elseif action_type == "turn" then
+			data.internal_data.turning = nil
+
+			if data.internal_data.fwd_offset then
+				local return_spin = data.internal_data.rubberband_rotation:to_polar_with_reference(data.unit:movement():m_rot():y(), math.UP).spin
+
+				if math.abs(return_spin) < 15 then
+					data.internal_data.fwd_offset = nil
+				end
+			end
+		elseif action_type == "act" then
+
+			if my_data.action_started == action then
+				if my_data.scan and not my_data.exiting and (not my_data.queued_tasks or not my_data.queued_tasks[my_data.wall_stare_task_key]) and not my_data.stare_path_pos then
+					CopLogicBase.queue_task(my_data, my_data.wall_stare_task_key, CopLogicIdle._chk_stare_into_wall_1, data, data.t)
+				end
+
+				if action:expired() then
+					if not my_data.action_timeout_clbk_id then
+						data.objective_complete_clbk(data.unit, data.objective)
+					end
+				elseif not my_data.action_expired then
+					data.objective_failed_clbk(data.unit, data.objective)
+				end
+			end
+			
+			--CopLogicAttack._cancel_cover_pathing(data, my_data)
+			--CopLogicAttack._cancel_charge(data, my_data)
+			
+			--Fixed panic never waking up cops.
+			if action:expired() then
+				CopLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+				CopLogicAttack._upd_combat_movement(data)
+			end
+			
+		elseif action_type == "hurt" then
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+			CopLogicAttack._cancel_charge(data, my_data)
+			
+			--Removed the requirement for being important here.
+			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+				CopLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+			end
+		elseif action_type == "dodge" then
+			local timeout = action:timeout()
+
+			if timeout then
+				data.dodge_timeout_t = TimerManager:game():time() + math.lerp(timeout[1], timeout[2], math.random())
+			end
+
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+
+			if action:expired() then
+				CopLogicAttack._upd_aim(data, my_data)
+				data.logic._upd_stance_and_pose(data, data.internal_data)
+				CopLogicAttack._upd_combat_movement(data)
+			end
+		end
+	end
+	
+	
+	function CopLogicIdle._chk_relocate(data)
+		if CopLogicBase.should_enter_attack(data) then
+			return
+		end
+		
+		if data.objective and data.objective.type == "follow" then
+			if data.is_converted then
+				if TeamAILogicIdle._check_should_relocate(data, data.internal_data, data.objective) then
+					data.objective.in_place = nil
+
+					data.logic._exit(data.unit, "travel")
+
+					return true
+				end
+
+				return
+			end
+
+			if data.is_tied and data.objective.lose_track_dis and data.objective.lose_track_dis * data.objective.lose_track_dis < mvector3.distance_sq(data.m_pos, data.objective.follow_unit:movement():m_pos()) then
+				data.brain:set_objective(nil)
+
+				return true
+			end
+
+			local relocate = nil
+			local follow_unit = data.objective.follow_unit
+			local advance_pos = follow_unit:brain() and follow_unit:brain():is_advancing()
+			local follow_unit_pos = advance_pos or follow_unit:movement():m_pos()
+
+			if data.objective.relocated_to and mvector3.equal(data.objective.relocated_to, follow_unit_pos) then
+				return
+			end
+
+			if data.objective.distance and data.objective.distance < mvector3.distance(data.m_pos, follow_unit_pos) then
+				relocate = true
+			end
+
+			if not relocate then
+				local ray_params = {
+					tracker_from = data.unit:movement():nav_tracker(),
+					pos_to = follow_unit_pos
+				}
+				local ray_res = managers.navigation:raycast(ray_params)
+
+				if ray_res then
+					relocate = true
+				end
+			end
+
+			if relocate then
+				data.objective.in_place = nil
+				data.objective.nav_seg = follow_unit:movement():nav_tracker():nav_segment()
+				data.objective.relocated_to = mvector3.copy(follow_unit_pos)
+
+				data.logic._exit(data.unit, "travel")
+
+				return true
+			end
+		elseif data.objective and data.objective.type == "defend_area" then
+			local area = data.objective.area
+
+			if area and not next(area.criminal.units) then
+				local found_areas = {
+					[area] = true
+				}
+				local areas_to_search = {
+					area
+				}
+				local target_area = nil
+
+				while next(areas_to_search) do
+					local current_area = table.remove(areas_to_search)
+
+					if next(current_area.criminal.units) then
+						target_area = current_area
+
+						break
+					end
+
+					for _, n_area in pairs(current_area.neighbours) do
+						if not found_areas[n_area] then
+							found_areas[n_area] = true
+
+							table.insert(areas_to_search, n_area)
+						end
+					end
+				end
+
+				if target_area then
+					data.objective.in_place = nil
+					data.objective.nav_seg = next(target_area.nav_segs)
+					data.objective.path_data = {
+						{
+							data.objective.nav_seg
+						}
+					}
+
+					data.logic._exit(data.unit, "travel")
+
+					return true
+				end
+			end
+		end
+	end
+	
+	function CopLogicIdle.on_new_objective(data, old_objective)
+		local new_objective = data.objective
+
+		CopLogicBase.on_new_objective(data, old_objective)
+
+		local my_data = data.internal_data
+		local focus_enemy = data.attention_obj
+
+		if new_objective then
+			local objective_type = new_objective.type
+
+			if objective_type == "free" and my_data.exiting then
+				--nothing
+			elseif CopLogicBase.should_enter_attack(data) then
+				CopLogicBase._exit(data.unit, "attack")
+			elseif CopLogicIdle._chk_objective_needs_travel(data, new_objective) then
+				CopLogicBase._exit(data.unit, "travel")
+			elseif objective_type == "guard" then
+				CopLogicBase._exit(data.unit, "guard")
+			elseif objective_type == "security" then
+				CopLogicBase._exit(data.unit, "idle")
+			elseif objective_type == "sniper" then
+				CopLogicBase._exit(data.unit, "sniper")
+			elseif objective_type == "phalanx" then
+				CopLogicBase._exit(data.unit, "phalanx")
+			elseif objective_type == "surrender" then
+				CopLogicBase._exit(data.unit, "intimidated", new_objective.params)
+			elseif new_objective.action or not data.attention_obj or AIAttentionObject.REACT_AIM > data.attention_obj.reaction then
+				CopLogicBase._exit(data.unit, "idle")
+			else
+				CopLogicBase._exit(data.unit, "attack")
+			end
+		elseif not my_data.exiting then
+			CopLogicBase._exit(data.unit, "idle")
+		end
+
+		if new_objective and new_objective.stance then
+			if new_objective.stance == "ntl" then
+				data.unit:movement():set_cool(true)
+			else
+				data.unit:movement():set_cool(false)
+			end
+		end
+
+		if old_objective and old_objective.fail_clbk then
+			old_objective.fail_clbk(data.unit)
+		end
+	end
+
+	function CopLogicIdle._chk_objective_needs_travel(data, new_objective)
+		
+		if not new_objective.nav_seg and new_objective.type ~= "follow" then
+			return
+		end
+		
+		if CopLogicBase.should_enter_attack(data) then
+			return
+		end
+
+		if new_objective.in_place then
+			return
+		end
+
+		if new_objective.pos then
+			return true
+		end
+
+		if new_objective.area and new_objective.area.nav_segs[data.unit:movement():nav_tracker():nav_segment()] then
+			new_objective.in_place = true
+
+			return
+		end
+
+		return true
 	end
 	
 end

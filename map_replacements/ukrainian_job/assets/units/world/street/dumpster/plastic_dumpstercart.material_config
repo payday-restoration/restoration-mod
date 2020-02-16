@@ -1,0 +1,6 @@
+<materials version="3">
+	<material render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" decal_material="plastic" version="2" name="sps_dumpstercart_plastic">
+        <diffuse_texture file="units/world/street/dumpster/sps_dumpstercart_master_df"/>
+        <bump_normal_texture file="units/world/street/dumpster/sps_dumpstercart_master_nm"/>
+    </material>
+</materials>

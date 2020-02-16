@@ -1,0 +1,8 @@
+<materials version="3" group="wpn_npc_r870">
+    <material name="mtr_r870" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+        <diffuse_texture file="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df"/>
+    </material>
+    <material name="weapon_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+        <diffuse_texture file="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df"/>
+    </material>
+</materials>

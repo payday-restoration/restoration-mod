@@ -7,6 +7,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		--To hopefully make some crap on big bank more fruitful--
 		self.types.spycam.budget_cost = 1
+		self.types.spycam.total = 4
 		self.types.escape_bus_loud.budget_cost = 6
 		self.types.escape_c4_loud.budget_cost = 2
 		self.types.escape_elevator_loud.budget_cost = 4

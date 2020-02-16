@@ -1,0 +1,186 @@
+<table>
+	<editor_groups/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="-2547.29 -1292.73 1384.59" _prev_rot="-0 0 -0 -1" continent="night_only" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_001" position="-2547.29 -1292.73 1384.59" rotation="-0 0 -0 -1" unit_id="300001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-2547.29 -1492.73 1384.59" _prev_rot="-0 0 -0 -1" continent="night_only" hide_on_projection_light="true" local_pos="0 -100 1450" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_002" position="-2547.29 -1492.73 1384.59" rotation="-0 0 -0 -1" unit_id="300002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1305.23 -2013.72 764.749" _prev_rot="0.0141067 -0.0132609 0.991752 0.126698" continent="night_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_003" position="1305.23 -2013.72 764.749" rotation="0.0141067 -0.0132609 0.991752 0.126698" unit_id="300003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1305.23 -2013.72 764.749" _prev_rot="0.0141067 -0.0132609 0.991752 0.126698" continent="night_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_glow/gen_prop_glow_01" name_id="gen_prop_glow_01_001" position="1305.23 -2013.72 764.749" rotation="0.0141067 -0.0132609 0.991752 0.126698" unit_id="300004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3282.65 -961.829 1185.81" _prev_rot="0 0 -0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_glow/gen_prop_glow_01" name_id="gen_prop_glow_01_004" position="3282.65 -961.829 1185.81" rotation="0 0 -0.707107 -0.707107" unit_id="300005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3282.65 -961.829 1185.81" _prev_rot="-9.21962e-009 -2.37076e-008 -0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_004" position="3282.65 -961.829 1185.81" rotation="-9.21962e-009 -2.37076e-008 -0.707107 -0.707107" unit_id="300006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1040.06 -6609.99 1201.68" _prev_rot="0 0 0.121869 -0.992546" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_007" position="1040.06 -6609.99 1201.68" rotation="0 0 0.121869 -0.992546" unit_id="300007"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1252.15 -3678.75 1194.68" _prev_rot="0 0 0.992546 0.121869" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_006" position="1252.15 -3678.75 1194.68" rotation="0 0 0.992546 0.121869" unit_id="300008"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1252.15 -3678.75 1194.68" _prev_rot="0 0 0.992546 0.121869" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_glow/gen_prop_glow_01" name_id="gen_prop_glow_01_005" position="1252.15 -3678.75 1185.68" rotation="0 0 0.992546 0.121869" unit_id="300009"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1040.06 -6609.99 1201.68" _prev_rot="0 0 0.121869 -0.992546" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_glow/gen_prop_glow_01" name_id="gen_prop_glow_01_006" position="1040.06 -6609.99 1185.68" rotation="0 0 0.121869 -0.992546" unit_id="300010"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-4452.67 -1903.57 1613.2" _prev_rot="0 0 0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_010" position="-4452.67 -1903.57 1613.2" rotation="0 0 0.707107 -0.707107" unit_id="300011"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-4652.67 -1903.57 1613.2" _prev_rot="0 0 0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 -200 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_011" position="-4652.67 -1903.57 1613.2" rotation="0 0 0.707107 -0.707107" unit_id="300012"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-4452.67 696.43 1613.2" _prev_rot="0 0 0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_012" position="-4452.67 696.43 1613.2" rotation="0 0 0.707107 -0.707107" unit_id="300013"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-4652.67 -1903.57 1613.2" _prev_rot="0 0 0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 -200 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_013" position="-4652.67 696.43 1613.2" rotation="0 0 0.707107 -0.707107" unit_id="300014"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-4452.67 -4988.57 1613.2" _prev_rot="0 0 0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_014" position="-4452.67 -4988.57 1613.2" rotation="0 0 0.707107 -0.707107" unit_id="300015"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-4652.67 -5003.57 1613.2" _prev_rot="0 0 0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 -200 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_015" position="-4652.67 -4988.57 1613.2" rotation="0 0 0.707107 -0.707107" unit_id="300016"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3282.65 -961.829 1185.81" _prev_rot="0 0 -0.707107 -0.707107" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_001" only_visible_in_editor="true" position="3282.65 -961.829 1185.81" projection_light="ls_spot" rotation="0.707107 0.707107 3.09086e-008 3.09086e-008" unit_id="300017">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="2332.65 -961.829 1185.81" _prev_rot="0.707107 0.707107 3.09086e-008 3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_002" only_visible_in_editor="true" position="1301.5 3655.36 882.902" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300018">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="2157.65 -961.829 1185.81" _prev_rot="0.707107 0.707107 3.09086e-008 3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_004" only_visible_in_editor="true" position="1305.23 -2013.72 764.749" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300019">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="1252.15 -3678.75 1194.68" _prev_rot="0.707107 0.707107 -3.09086e-008 -3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_005" only_visible_in_editor="true" position="1252.15 -3678.75 1194.68" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300020">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="1907.65 -961.829 1185.81" _prev_rot="0.707107 0.707107 3.09086e-008 3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_006" only_visible_in_editor="true" position="1040.06 -6609.99 1201.68" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300021">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="1732.65 -961.829 1185.81" _prev_rot="0.707107 0.707107 3.09086e-008 3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_007" only_visible_in_editor="true" position="-2547.29 -1292.73 1384.59" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300022">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="-2547.29 -1292.73 1384.59" _prev_rot="0.707107 0.707107 -3.09086e-008 -3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_008" only_visible_in_editor="true" position="-2547.29 -1492.73 1384.59" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300023">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="-3997.29 -1142.73 1384.59" _prev_rot="0.707107 0.707107 -3.09086e-008 -3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_009" only_visible_in_editor="true" position="-4452.67 696.43 1613.19" projection_light="ls_spot" rotation="0.707107 0.707107 3.09086e-008 3.09086e-008" unit_id="300024">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="-3997.29 -1492.73 1384.59" _prev_rot="0.707107 0.707107 -3.09086e-008 -3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_010" only_visible_in_editor="true" position="-4452.67 -1903.57 1613.19" projection_light="ls_spot" rotation="0.707107 0.707107 3.09086e-008 3.09086e-008" unit_id="300025">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="-3997.29 -1817.73 1384.59" _prev_rot="0.707107 0.707107 -3.09086e-008 -3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_011" only_visible_in_editor="true" position="-4452.67 -4988.57 1613.19" projection_light="ls_spot" rotation="0.707107 0.707107 3.09086e-008 3.09086e-008" unit_id="300026">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="1534" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="2016.68 -4875.74 702.601" _prev_rot="0 0 -0.58425 -0.811574" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="-0.000154934 0.000463049 0.000305176" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_glow/gen_prop_glow_01" name_id="gen_prop_glow_01_007" position="2016.68 -4875.74 702.601" rotation="0 0 -0.58425 -0.811574" unit_id="300027"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2016.68 -4875.74 702.601" _prev_rot="0 0 -0.58425 -0.811574" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/world/street/street_lights/street_lights_night_cone" name_id="street_lights_night_cone_017" position="2016.68 -4875.74 702.601" rotation="0 0 -0.58425 -0.811574" unit_id="300028"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="1477.15 -3678.75 1194.68" _prev_rot="0.707107 0.707107 -3.09086e-008 -3.09086e-008" continent="night_only" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" name_id="light_spot_shadow_projection_01_012" only_visible_in_editor="true" position="2016.68 -4875.74 702.601" projection_light="ls_spot" rotation="0.707107 0.707107 -3.09086e-008 -3.09086e-008" unit_id="300029">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="907" multiplier="@ID5035addc43a80b74@" name="ls_spot" near_range="80" spot_angle_end="55" spot_angle_start="55"/>
+				</lights>
+				<projection_lights>
+					<ls_spot x="128" y="128"/>
+				</projection_lights>
+				<projection_textures ls_spot="units/lights/spot_light_projection_textures/spotprojection_07_round_df"/>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="2502.61 111.375 0.380468" _prev_rot="-0.101625 0.82767 -0.0672644 -0.547823" continent="night_only" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc2/csgo_models/props_fortifications/orange_cone001_reference" name_id="orange_cone001_reference_002" position="2502.61 111.375 0.380468" rotation="-0.0979657 0.797865 -0.0724908 -0.590389" unit_id="300000"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

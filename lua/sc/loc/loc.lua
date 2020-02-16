@@ -123,6 +123,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
+		["bm_melee_buck_info"] = "Reduces incoming ranged damage by 10% while charging.",
+		["bm_melee_cs_info"] = "Deals 40 damage per second to targets in front of you while charging.",
+		["bm_melee_ostry_info"] = "Deals 20 damage per second to targets in front of you while charging.",
 		
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
@@ -291,6 +294,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 		
+		--Throwables--
+		["bm_concussion_desc"] = "Capacity: 3 \nRange: 10m \nStuns enemy for up to 4s \nEnemy accuracy reduced by 50% for 7s \nStuns all enemies, excluding Titan-Shields, Titan-Bulldozers and Captains \n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "Range: 8m \nDuration: 10s \n \nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
+		["bm_grenade_frag_desc"] = "Capacity: 3\nDamage: 800 \nRange: 10m \n \nThe classic explosive hand grenade. Is there any more to say?",
+		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRange: 10m \n \nDesigned to effectively blast through rock. Even more effective at blasting through people.",
+		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 10m \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
+		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 10m \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
+		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage: 700 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates on impact \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",	
+		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage: 700 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates after 2.5s \n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",			
+		["bm_wpn_prj_ace_desc"] = "Capacity: 9 \nDamage: 240 \n \nThrowing cards with added weight and a razor edge. A real killer hand of cards.",		
+		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage: 200 (Impact) \nDamage: 200 over 5s (Poison) \nInterrupts enemy actions \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",		
+		["bm_wpn_prj_target_desc"] = "Capacity: 9 \nDamage: 240 \n \nA solid backup plan and a reliable tactic for a precise and silent kill.",		
+		["bm_wpn_prj_jav_desc"] = "Capacity: 6 \nDamage: 360 \n \nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",		
+		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",				
+			
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
 		["bm_wp_wpn_fps_upg_scar_m203_flechette"] = "40MM Flechette Rounds",
@@ -405,10 +423,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_sc_tip_2"] = "Know your enemy. The Veteran Cop automatically dodges 50% of incoming gunfire. Try using damage types that he can't dodge like explosives, fire, or your melee weapon!",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
-		["skill_uppers_revive"] = "Downs restored!",
+		--["skill_uppers_revive"] = "Downs restored!",
 		--["hud_ai_traded_in"] = "",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",
-		--["hint_short_max_pagers"] = "Max number of pagers scales with difficulty. Be aware of the Pager operator's response.",
+		["hint_short_max_pagers"] = "Neglecting pagers will significantly increase guard suspicion.",
 
 		--Nuking infamy shit because it's gay--
 		["menu_infamy_desc_ghost"] = "Modern assassin that carries out death sentences - for the right price.\n\nBONUSES:\nExperience gained is increased by ##5%##.",
@@ -509,13 +527,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 15% faster.",
+		["menu_crew_interact_desc"] = "Players interact 15% faster per AI controlled crew member.",
 
 		["menu_crew_inspire"] = "Inspiring",
-		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 60 seconds.",
+		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 90 seconds. Cooldown is reduced by 15 seconds per AI controlled crew member.",
 
 		["menu_crew_scavenge"] = "Sharpeyed",
-		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition.",
+		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition per AI controlled crew member.",
 
 		["menu_crew_ai_ap_ammo"] = "Piercing",
 		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through body armor.",
@@ -568,7 +586,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "Uppers",
-			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##4## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##6## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##60## seconds.\n\n Note: Does not apply to Swan Song.",
+			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##3## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##3## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##60## seconds.\n\n Note: Does not apply to Swan Song.",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
@@ -576,7 +594,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",
-			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##60## seconds.",																								
+			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.",																								
 
 
 			--}
@@ -602,11 +620,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Partners in Crime	
 			["menu_control_freak_beta_sc"] = "Partners in Crime",	
-			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nHaving a converted enemy increases your movement speed by ##10%.##\n\nYour converted enemy takes ##40%## less damage.\n\nACE: ##$pro##\nHaving a converted enemy increases your health by ##30%.##\n\nYour converted enemy takes an additional ##40%## less damage.",
+			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nEach converted enemy you control increases your movement speed by ##5%##.\n\nYour converted enemy takes ##50%## less damage.\n\nACE: ##$pro##\nEach converted enemy you control increases your health by ##15%##.\n\nYour converted enemy takes an additional ##30%## less damage.",
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nHaving at least one hostage or converted law enforcer makes you regenerate ##1%## health every ##5## seconds.\n\nACE: ##$pro##\nHaving at least one hostage or converted law enforcer makes you regenerate ##2%## health every ##5## seconds.\n\nYou and your crew gain ##1## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\nNote: This skill does not stack.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##0.5%## health every ##5## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYou regenerate an additional ##0.5%## health every ##5## seconds for each hostage up to ##4## times.\n\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNote: Hostage Taker does not stack.",
 		
 
 			--}
@@ -755,7 +773,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "Tower Defense",	
-			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%##, lowering damage by ##50%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.",																								
+			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.",																								
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
@@ -768,15 +786,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hardware Expert--
 			["menu_hardware_expert_beta_sc"] = "Hardware Expert",
-			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##50%## faster.\n\nACE: ##$pro##\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to get alerted.",																								
+			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##20%## faster.\n\nYour drill makes ##65%## less noise. Civilians and guards are less likely to hear your drill and sound the alarm.\n\nACE: ##$pro##\nYou fix drills and saws an additional ##30%## faster.\n\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to get alerted.",
 
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
 			["menu_combat_engineering_desc_sc"] = "BASIC: ##$basic##\nThe radius of trip mine explosion is increased by ##30%.##\n\nACE: ##$pro##\nYour trip mine deals ##50%## more damage.",																								
 
-			--More Firepower--
+			--Drill Sawgeant
+			["menu_drill_expert_beta_sc"] = "Drill Sawgeant",
+			["menu_drill_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYour drill and saw efficiency is increased by ##10%.##\n\nACE: ##$pro##\nFurther increases your drill and saw efficency by ##20%.##",
+
+			--Demoman--
 			["menu_more_fire_power_sc"] = "Demoman",
-			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##4## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##6## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",																								
+			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##6## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##8## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",																								
 
 
 			--Kickstarter
@@ -810,6 +832,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   COMMANDO SUBTREE   ]]--
 			--{
 
+			--Shockproof
+			["menu_insulation_beta_sc"] = "Shockproof",
+			["menu_insulation_beta_desc_sc"] = "BASIC: ##$basic##\nA Taser's shock attack has a ##15%## chance to backfire when targeted at you, knocking back the Taser in the process.\n\nACE: ##$pro##\nInteracting with an enemy Taser within ##2## seconds of him electrocuting you will counter-electrocute him, dealing ##50%## damage to his health.",
 
 			
 			--}
@@ -850,7 +875,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "Counter Strike",
-			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nWhen charging your melee weapon you will counterattack enemies that try to strike you.\n\nACE: ##$pro##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down. You also take ##50%## less damage from cloaker kicks and taser shocks.",																								
+			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down.\n\nYou take ##20%## less damage from cloaker kicks and taser shocks.\n\nACE: ##$pro##\nRanged damage against you is reduced by ##10%## while charging your melee weapon.\n\nYou take an additional ##30%## less damage from cloaker kicks and taser shocks.",																						
 
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "Bloodthirst",
@@ -882,7 +907,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Sniper Rifles deal ##50%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nThis effect chains up to ##4## times, with subsequent damage equaling the damage of the previous hit.\n\nACE: ##$pro##\nAny killing headshot with Sniper Rifles now deal ##100%## of the damage to the closest enemy in the effect radius.\n\nThis effect can now chain up to ##8## times.",																																																																																																																																																																																																																									
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots deal ##75%## of the damage dealt to the closest enemy in a ##4## meter radius. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nThe radius of Mind Blown is increased by ##1## meter. Killing headshots deal ##100%## of the damage dealt to the closest enemy within the radius. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.",																																																																																																																																																																																																																									
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
@@ -930,7 +955,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not lose any armor or health for ##4## seconds, you gain ##15%## critical hit chance for ##3## seconds.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nThe critical hit chance duration is increased to ##6## seconds.",																								
+		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not lose any armor or health for ##3## seconds, you gain ##15%## critical hit chance for ##3## seconds.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nThe critical hit chance duration is increased to ##6## seconds.",																								
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
@@ -986,7 +1011,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "Pumping Iron",
-		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing melee weapons ##25%## faster.\n\nACE: ##$pro##\nYou swing melee weapons an additional ##25%## faster.",																																																																																																																																																																																																																																		
+		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing and charge melee weapons ##20%## faster.\n\nACE: ##$pro##\nYou swing and charge melee weapons an additional ##30%## faster.",																																																																																																																																																																																																																																		
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
@@ -1037,9 +1062,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",
-		["menu_deck1_5_desc_sc"] = "You gain ##10%## more health.\n\nYour crew gains ##5%## more health.\n\nNote: Crew perks do not stack.",
+		["menu_deck1_5_desc_sc"] = "You and your crew gain ##5%## more health.\n\nNote: Crew perks do not stack.",
 		["menu_deck1_7_desc_sc"] = "You gain ##15%## more armor.\n\nYour crew gains ##5%## more armor.\n\nNote: Crew perks do not stack.",
-		["menu_deck1_9_desc_sc"] = "You gain ##5%## more health.\n\nYou and your crew gains ##2.5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck1_9_desc_sc"] = "You and your crew gains ##2.5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
 		["menu_deck3_1_desc_sc"] = "You gain ##10%## more armor.",
@@ -1066,7 +1091,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_1_desc_sc"] = "When you are within ##18## meters of an enemy, you receive ##5%## less damage from enemies.",
 		["menu_deck8_3_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##5%## less damage from enemies.",
 		["menu_deck8_5_desc_sc"] = "When you are within ##18## meters of an enemy, you receive an additional ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
-		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds and can stack up to ##5## times.",
+		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##8%## melee damage boost for ##10## seconds, this effect can stack up to ##5## times.",
 		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##1## life point every ##1.25## seconds for ##10## seconds, this effect can stack up to ##5## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sociopath--
@@ -1097,23 +1122,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck14_9_desc_sc"] = "Damage absorption from Hysteria Stacks on you is increased by ##25%.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
 
 		--Anarchist--
-		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##10## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
+		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
 		["menu_deck15_3_desc_sc"] = "##50%## of your health is converted into ##50%## armor.",
 		["menu_deck15_5_desc_sc"] = "##50%## of your health is converted into ##70%## armor.",
 		["menu_deck15_7_desc_sc"] = "##50%## of your health is converted into ##90%## armor.",
 		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##3## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##50%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
-		["menu_deck17_3_desc_sc"] = "You are now healed for ##50%## of all damage taken for ##5## seconds while the Kingpin Injector is active.",
-		["menu_deck17_5_desc_sc"] = "You are now healed for ##50%## of all damage taken for ##6## seconds while the Kingpin Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
-		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##20%## while below ##25%## health.",
-		["menu_deck17_9_desc_sc"] = "For every ##50## points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
+		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Kingpin Injector is active.",
+		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Kingpin Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
+		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##50%## while below ##25%## health.",
+		["menu_deck17_9_desc_sc"] = "For every ##3## life points gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##1## second.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nThe Smoke Bomb has a ##30## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
+		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nThe Smoke Bomb has a ##35## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
 		["menu_deck18_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck18_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
+		["menu_deck18_5_desc_sc"] = "Your dodge is increased by an additional ##5## points.\n\nDodging an attack reduces the smoke bomb's cooldown by ##1## second.",
 		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##35%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
@@ -1132,7 +1157,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## health and ##1## armor. This cannot occur more than ##5## times every ##10## seconds.",				
+		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##1## life point This can only occur once every ##2## seconds.",
+		["menu_deck16_3_desc_sc"] = "You regenerate ##10## armor every ##3## seconds.",
+		["menu_deck16_5_desc_sc"] = "Every ##25%## armor missing reduces cooldown to kill regen by ##0.5## seconds.",
+		["menu_deck16_7_desc_sc"] = "You regenerate an additional ##10## armor every ##2.5## seconds.\n\nKilling an enemy with a melee weapon instantly triggers this effect and causes the next armor regen tick to occur ##1## second sooner.",
+		["menu_deck16_9_desc_sc"] = "Every ##25%## armor missing increases the number of life points gained from kills by ##2##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills by up to ##10%## of your dodge every second.",	

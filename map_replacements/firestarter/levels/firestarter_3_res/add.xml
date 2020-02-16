@@ -475,13 +475,6 @@
 		<object force="true" path="units/payday2/architecture/lcm/lcm_int_room_12x16m_b" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/lcm/lcm_int_room_12x16m_b" unload="true"/>
 	</add>
-	<add path="units/payday2/architecture/lcm/lcm_int_door_wood_01" type="unit">
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
-		<material_config force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
-		<object force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/architecture/lcm/lcm_door" unload="true"/>
-		<unit force="true" path="units/payday2/architecture/lcm/lcm_int_door_wood_01" unload="true"/>
-	</add>
 	<add path="units/payday2/architecture/lcm/lcm_int_storefront_4x8m_a_blinds" type="unit">
 		<material_config force="true" path="units/payday2/architecture/lcm/lcm_int_storefront" unload="true"/>
 		<object force="true" path="units/payday2/architecture/lcm/lcm_int_storefront_4x8m_a_blinds" unload="true"/>
@@ -611,6 +604,19 @@
 		<object force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
 		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
 		<unit force="true" path="units/payday2/vehicles/str_vehicle_car_mondeo/str_vehicle_car_mondeo" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" type="unit">
+		<texture force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_leafs_df" unload="true"/>
+		<texture force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_trunk_df" unload="true"/>
+		<texture force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_trunk_nm" unload="true"/>
+		<material_config force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" type="unit">
+		<material_config force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
+		<object force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
+		<unit force="true" path="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" unload="true"/>
 	</add>
 	<cooked_physics path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<material_config path="units/world/props/red_diamond_room/big_red_diamond_stand" unload="true"/>

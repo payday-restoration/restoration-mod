@@ -1,0 +1,9 @@
+
+<state_machine name="van" timebase="frames">
+	<segment name="base"/>
+	
+	<default state="std/empty"/>
+	
+	<states file="anims/units/van/std"/>
+	
+</state_machine>

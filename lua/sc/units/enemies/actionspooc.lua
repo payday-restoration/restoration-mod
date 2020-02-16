@@ -146,7 +146,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		
-		self._unit:damage():run_sequence_simple("decloak")
+		if not self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
+			self._unit:damage():run_sequence_simple("decloak")
+			
+			local weapon_unit = self._unit:inventory():equipped_unit()
+
+			if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("decloak") then
+				weapon_unit:damage():run_sequence_simple("decloak")
+			end
+
+			self._unit:movement():set_uncloaked(true)
+		end
 
 		local r = LevelsTweakData.LevelType.Russia
 		local ai_type = tweak_data.levels:get_ai_group_type()
@@ -174,7 +184,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
-		self._unit:damage():run_sequence_simple("cloak_engaged")
+		if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+			self._unit:damage():run_sequence_simple("cloak_engaged")
+			
+			local weapon_unit = self._unit:inventory():equipped_unit()
+
+			if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+				weapon_unit:damage():run_sequence_simple("cloak_engaged")
+			end
+
+			self._unit:movement():set_uncloaked(false)
+		end
 
 		if self._root_blend_disabled then
 			self._ext_movement:set_root_blend(true)

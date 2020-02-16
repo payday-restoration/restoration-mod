@@ -669,13 +669,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 							if uncloak_roll then
 								self._unit:damage():run_sequence_simple("decloak")
-								self._unit:movement():set_uncloaked(true)
 
 								if self._weapon_unit:damage() and self._weapon_unit:damage():has_sequence("decloak") then
 									self._weapon_unit:damage():run_sequence_simple("decloak")
 								end
 
-								managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.uncloak)
+								self._unit:movement():set_uncloaked(true)
 							end
 						end
 

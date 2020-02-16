@@ -379,6 +379,10 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 	for u_key, attention_data in pairs(attention_objects) do
 		local att_unit = attention_data.unit
 
+		attention_data.pause_expire_t = nil
+		attention_data.stare_expire_t = nil
+		attention_data.settings.pause = nil
+
 		if attention_data.identified then
 			local distance = mvector3.distance(data.m_pos, attention_data.m_pos)
 			local reaction = reaction_func(data, attention_data, not CopLogicAttack._can_move(data))

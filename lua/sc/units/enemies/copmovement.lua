@@ -223,10 +223,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self:action_request({type = "idle", body_part = 1})
 			end
 		end
+
 		self:_upd_stance(t)
-		if not self._need_upd and (self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._stance.transition or self._suppression.transition) then
-			self._need_upd = true
-		end
+
+		--removing the check pretty much fixes panic + other systems that can cause enemies
+		--to become stuck or take too long to respond, no downsides found yet
+		self._need_upd = true
+
 		if self._tweak_data.do_omnia then
 			if not self._unit:character_damage():dead() then			
 				self:do_omnia(self)		
@@ -272,33 +275,31 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if enemies then
 					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
-						if enemy ~= self._unit then
-							local found_dat_shit = false
-							for __,enemy_type in ipairs(cops_to_heal) do
-								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
-								if enemy:base()._tweak_table == enemy_type then
-									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
-									found_dat_shit = true
-								end
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
 							end
-							if found_dat_shit then
-								local health_left = enemy:character_damage()._health
-								restoration.log_shit("SC: health_left: " .. tostring(health_left))
-								local max_health = enemy:character_damage()._HEALTH_INIT * 2
-								restoration.log_shit("SC: max_health: " .. tostring(max_health))
-								if health_left < max_health then
-									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
-									if self._unit:contour() then
-										self._unit:contour():add("medic_show", false)
-										self._unit:contour():flash("medic_show", 0.2)
-										managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
-									end										
-									if enemy:contour() then
-										enemy:contour():add("omnia_heal", false)
-									end		
-									enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
-								end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							restoration.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 2
+							restoration.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
+								end										
+								if enemy:contour() then
+									enemy:contour():add("omnia_heal", false)
+								end		
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 							end
 						end
 					end
@@ -448,34 +449,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if enemies then
 					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
-						if enemy ~= self._unit then
-							local found_dat_shit = false
-							for __,enemy_type in ipairs(cops_to_heal) do
-								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
-								if enemy:base()._tweak_table == enemy_type then
-									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
-									found_dat_shit = true
-								end
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
 							end
-							if found_dat_shit then
-								local health_left = enemy:character_damage()._health
-								restoration.log_shit("SC: health_left: " .. tostring(health_left))
-								local max_health = enemy:character_damage()._HEALTH_INIT * 1
-								restoration.log_shit("SC: max_health: " .. tostring(max_health))
-								if health_left < max_health then
-									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
-									if self._unit:contour() then
-										self._unit:contour():add("medic_show", false)
-										self._unit:contour():flash("medic_show", 0.2)
-										managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
-									end								
-									if enemy:contour() then
-										enemy:contour():add("medic_heal", true)
-										enemy:contour():flash("medic_heal", 0.2)
-									end		
-									enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
-								end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							restoration.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 1
+							restoration.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
+								end								
+								if enemy:contour() then
+									enemy:contour():add("medic_heal", true)
+									enemy:contour():flash("medic_heal", 0.2)
+								end		
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
 							end
 						end
 					end
@@ -520,34 +519,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if enemies then
 					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
-						if enemy ~= self._unit then
-							local found_dat_shit = false
-							for __,enemy_type in ipairs(cops_to_heal) do
-								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
-								if enemy:base()._tweak_table == enemy_type then
-									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
-									found_dat_shit = true
-								end
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
 							end
-							if found_dat_shit then
-								local health_left = enemy:character_damage()._health
-								restoration.log_shit("SC: health_left: " .. tostring(health_left))
-								local max_health = enemy:character_damage()._HEALTH_INIT * 1
-								restoration.log_shit("SC: max_health: " .. tostring(max_health))
-								if health_left < max_health then
-									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
-									if self._unit:contour() then
-										self._unit:contour():add("medic_show", false)
-										self._unit:contour():flash("medic_show", 0.2)
-										managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter_winters")
-									end								
-									if enemy:contour() then
-										enemy:contour():add("medic_heal", true)
-										enemy:contour():flash("medic_heal", 0.2)
-									end		
-									enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
-								end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							restoration.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 1
+							restoration.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter_winters")
+								end								
+								if enemy:contour() then
+									enemy:contour():add("medic_heal", true)
+									enemy:contour():flash("medic_heal", 0.2)
+								end		
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
 							end
 						end
 					end
@@ -576,34 +573,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if enemies then
 					restoration.log_shit("SC: FOUND ENEMIES")
 					for _,enemy in ipairs(enemies) do
-						if enemy ~= self._unit then
-							local found_dat_shit = false
-							for __,enemy_type in ipairs(cops_to_heal) do
-								restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
-								if enemy:base()._tweak_table == enemy_type then
-									restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
-									found_dat_shit = true
-								end
+						local found_dat_shit = false
+						for __,enemy_type in ipairs(cops_to_heal) do
+							restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
+							if enemy:base()._tweak_table == enemy_type then
+								restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
+								found_dat_shit = true
 							end
-							if found_dat_shit then
-								local health_left = enemy:character_damage()._health
-								restoration.log_shit("SC: health_left: " .. tostring(health_left))
-								local max_health = enemy:character_damage()._HEALTH_INIT * 1
-								restoration.log_shit("SC: max_health: " .. tostring(max_health))
-								if health_left < max_health then
-									local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-									restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
-									if self._unit:contour() then
-										self._unit:contour():add("medic_show", false)
-										self._unit:contour():flash("medic_show", 0.2)
-										managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
-									end								
-									if enemy:contour() then
-										enemy:contour():add("medic_heal", true)
-										enemy:contour():flash("medic_heal", 0.2)
-									end		
-									enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
-								end
+						end
+						if found_dat_shit then
+							local health_left = enemy:character_damage()._health
+							restoration.log_shit("SC: health_left: " .. tostring(health_left))
+							local max_health = enemy:character_damage()._HEALTH_INIT * 1
+							restoration.log_shit("SC: max_health: " .. tostring(max_health))
+							if health_left < max_health then
+								local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+								restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
+								if self._unit:contour() then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+									managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
+								end								
+								if enemy:contour() then
+									enemy:contour():add("medic_heal", true)
+									enemy:contour():flash("medic_heal", 0.2)
+								end		
+								enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
 							end
 						end
 					end
@@ -646,8 +641,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local end_value = state and 1 or 0
 		local vis_state = self._ext_base:lod_stage() 
 
-		--if vis_state and end_value ~= suppression.value then
-		if end_value ~= suppression.value then
+		--vis_state is used to do a smooth transition instead of snapping into the suppressed stance
+		--as long as the enemy is visible
+		if vis_state and end_value ~= suppression.value then
 			local t = TimerManager:game():time()
 			local duration = 0.5 * math.abs(end_value - suppression.value)
 			suppression.transition = {
@@ -766,29 +762,46 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 
 				self:action_request(action_desc)
-			elseif not self._ext_anim.crouch and self._tweak_data.crouch_move and (not self._tweak_data.allowed_poses or self._tweak_data.allowed_poses.crouch) and not self:chk_action_forbidden("crouch") then
-				local action_desc = {
-					body_part = 4,
-					type = "crouch"
-				}
+			elseif not self._ext_anim.crouch then
+				if self._ext_anim.run then
+					if self._tweak_data.can_slide_on_suppress and not self:chk_action_forbidden("act") then
+						local action_desc = {
+							clamp_to_graph = true,
+							type = "act",
+							body_part = 1,
+							variant = "e_nl_slide_fwd_4m",
+							blocks = {
+								action = -1,
+								walk = -1
+							}
+						}
 
-				self:action_request(action_desc)
-			elseif self._ext_anim.run and not self:chk_action_forbidden("act") and self._tweak_data.can_slide_on_suppress then  --add "and self._tweak_data.can_slide_on_suppress" to this if you follow the steps below at any point
-				local action_desc = {
-					clamp_to_graph = true,
-					type = "act",
-					body_part = 1,
-					variant = "e_nl_slide_fwd_4m",
-					blocks = {
-						action = -1,
-						walk = -1
-					}
-				}
+						self:action_request(action_desc)
+						--this will currently be done by anyone without "poses" but add stuff like 
+						--can_slide_on_suppress = true
+						--to charactertweakdata on the enemies that should be able to slide to further narrow it down so only certain enemies can do slides
+					end
+				elseif not self._tweak_data.allowed_poses or self._tweak_data.allowed_poses.crouch then
+					local action_desc = nil
 
-				self:action_request(action_desc)
-				--this will currently be done by anyone without "poses" but add stuff like 
-				--can_slide_on_suppress = true
-				--to charactertweakdata on the enemies that should be able to slide to further narrow it down so only certain enemies can do slides
+					if self._ext_anim.move then
+						if self._tweak_data.crouch_move then
+							action_desc = {
+								body_part = 4,
+								type = "crouch"
+							}
+						end
+					else
+						action_desc = {
+							body_part = 4,
+							type = "crouch"
+						}
+					end
+
+					if action_desc and not self:chk_action_forbidden("crouch") then
+						self:action_request(action_desc)
+					end
+				end
 			end
 		end
 
@@ -798,194 +811,236 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.network:session():send_to_peers_synched("suppressed_state", self._unit, state and true or false)
 		end
 	end
-	
-	--Sniper Stuff
-	SniperFocusHandler = class()
 
-	SniperFocusHandler.sniper_info = {}
+	--crash prevention
+	function CopMovement:anim_clbk_enemy_spawn_melee_item()
+		if alive(self._melee_item_unit) then
+			return
+		end
 
-	SniperFocusHandler.config_hone_in_mul = 1
-	SniperFocusHandler.config_hone_out_mul = 2
+		local melee_weapon = self._unit:base().melee_weapon and self._unit:base():melee_weapon()
+		local unit_name = melee_weapon and melee_weapon ~= "weapon" and tweak_data.weapon.npc_melee[melee_weapon] and tweak_data.weapon.npc_melee[melee_weapon].unit_name or nil
 
-	SniperFocusHandler.NetworkID = "SniperFocusID"
+		if unit_name then
+			local align_obj_l_name = CopMovement._gadgets.aligns.hand_l
+			local align_obj_l = self._unit:get_object(align_obj_l_name)
 
-	function SniperFocusHandler:SetupAttention(self, attention, client)
-		
-		if attention then
-			
-			local found = false
-			
-			for k, v in pairs( SniperFocusHandler.sniper_info ) do
-				if tostring( v.sniper:key() ) == tostring( self._unit:key() ) then
-					found = k
-					break
-				end
-			end
-			
-			if found == false then
-				table.insert( SniperFocusHandler.sniper_info, { 
-					["sniper"] = self._unit, 
-					["target_info"] = {} 
-				} )
-				found = #SniperFocusHandler.sniper_info
-			end
-			
-			if attention.unit and SniperFocusHandler.sniper_info[found].target_info[attention.unit:key()] == nil then
-				SniperFocusHandler.sniper_info[found].target_info[attention.unit:key()] = { ["unit"] = attention.unit, ["amm"] = 0 }
-			end
-			
-			SniperFocusHandler.sniper_info[found].cur_target = attention.unit
+			self._melee_item_unit = World:spawn_unit(unit_name, align_obj_l:position(), align_obj_l:rotation())
+			self._unit:link(align_obj_l:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())
+		end
+	end
+
+	function CopMovement:set_uncloaked(state)
+		if state then
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.uncloak)
 		else
-			for k, v in pairs( SniperFocusHandler.sniper_info ) do
-				if v.sniper == self._unit then
-					table.remove( SniperFocusHandler.sniper_info, k )
-					break
-				end
-			end
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.cloak)
 		end
+
+		self._uncloaked = state
 	end
 
-	function SniperFocusHandler:ThinkAttention(t, dt)
-		
-		local LP = managers.player:local_player()
-		local Is_Client = _G.LuaNetworking:IsClient()
-		
-		for k, v in pairs( SniperFocusHandler.sniper_info ) do
-			
-			local data = v.sniper:brain()._logic_data
-			
-			if (data or Is_Client) and v.sniper then
-				local canshoot = Is_Client or (data.internal_data.shoot_action and (t >= data.internal_data.shoot_action._shoot_t))
-				
-				if v.cur_target and canshoot then
-				
-					if not Is_Client and not data.internal_data.weapon_laser_on then
-						data.unit:inventory():equipped_unit():base():set_laser_enabled(true)
-						data.internal_data.weapon_laser_on = true
-						--managers.occlusion:remove_occlusion(data.unit)
-						managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_on)
-					end
-					
-					for o, p in pairs( v.target_info ) do
-						if p.unit and alive( p.unit ) then
-							local t_move = p.unit:movement()
-							if t_move and p.unit == v.cur_target then
-							
-								local shoot_pos = v.sniper:movement():m_head_pos()
-								local target_pos = t_move:m_head_pos()
-								local mask = managers.slot:get_mask("AI_visibility")
-								
-								local trace = World:raycast("ray", shoot_pos, target_pos, "slot_mask", mask, "ray_type", "ai_vision")
-								
-								if not trace then
-									v.target_info[o].amm = math.clamp( v.target_info[o].amm + dt * SniperFocusHandler.config_hone_in_mul, 0, 2.5 )
-									
-									local marked = v.sniper:inventory():equipped_unit() and v.sniper:inventory():equipped_unit():base()._laser_unit
-																		
-									if (v.target_info[o].amm - 1.5) > 0 and (v.target_info[o].amm - 1.5) > math.random() then
-										if not Is_Client then 
-											data.actual_fire = true
-										end
-									end
-								else
-									v.target_info[o].amm = math.clamp( v.target_info[o].amm - dt * SniperFocusHandler.config_hone_out_mul, 0, 2.5 )
-								end
-							else
-								v.target_info[o].amm = math.clamp( v.target_info[o].amm - dt * SniperFocusHandler.config_hone_out_mul, 0, 2.5 )
-							end
-						else
-							v.target_info[o] = nil
-						end
-					end
-				else
-					if not Is_Client and data.internal_data.weapon_laser_on then
-						if data.unit:inventory():equipped_unit() then
-							data.unit:inventory():equipped_unit():base():set_laser_enabled(false)
-						end
-						data.internal_data.weapon_laser_on = false
-							--managers.occlusion:add_occlusion(data.unit)
-						managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_off)
-					end
-					
-					for o, p in pairs( v.target_info ) do
-						v.target_info[o].amm = math.clamp( v.target_info[o].amm - dt * SniperFocusHandler.config_hone_out_mul, 0, 2.5 )
+	--used for Titan Spoocs and Autumn
+	function CopMovement:is_uncloaked()
+		return self._uncloaked
+	end
+
+	--syncing stuff
+	function CopMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier)
+		local reload_action = {
+			body_part = 3,
+			type = "reload",
+			idle_reload = empty_reload ~= 0 and empty_reload or nil
+		}
+
+		self:action_request(reload_action)
+	end
+
+	--syncing stuff
+	function CopMovement:sync_fall_position(pos, rot)
+		self:set_position(pos)
+		self:set_rotation(rot)
+	end
+
+	function CopMovement:damage_clbk(my_unit, damage_info)
+		local hurt_type = damage_info.result.type
+
+		if damage_info.variant == "explosion" or damage_info.variant == "bullet" or damage_info.variant == "fire" or damage_info.variant == "poison" then
+			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
+		end
+
+		if hurt_type == "stagger" then
+			hurt_type = "heavy_hurt"
+		end
+
+		if hurt_type == "hurt" or hurt_type == "heavy_hurt" or hurt_type == "knock_down" then
+			if self._anim_global and self._anim_global == "shield" then
+				hurt_type = "expl_hurt"
+			end
+		end
+
+		local block_type = hurt_type
+
+		if hurt_type == "knock_down" or hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+			block_type = "heavy_hurt"
+		end
+
+		if hurt_type == "death" and self._queued_actions then
+			self._queued_actions = {}
+		end
+
+		if not hurt_type or Network:is_server() and self:chk_action_forbidden(block_type) then
+			if hurt_type == "death" then
+				debug_pause_unit(self._unit, "[CopMovement:damage_clbk] Death action skipped!!!", self._unit)
+				Application:draw_cylinder(self._m_pos, self._m_pos + math.UP * 5000, 30, 1, 0, 0)
+
+				for body_part, action in ipairs(self._active_actions) do
+					if action then
+						print(body_part, action:type(), inspect(action._blocks))
 					end
 				end
+			end
+
+			return
+		end
+
+		if damage_info.variant == "stun" and alive(self._ext_inventory and self._ext_inventory._shield_unit) then
+			hurt_type = "shield_knock"
+			block_type = "shield_knock"
+			damage_info.variant = "melee"
+			damage_info.result = {
+				variant = "melee",
+				type = "shield_knock"
+			}
+			damage_info.shield_knock = true
+		end
+
+		if hurt_type == "death" then
+			if self._rope then
+				self._rope:base():retract()
+
+				self._rope = nil
+				self._rope_death = true
+
+				if self._unit:sound().anim_clbk_play_sound then
+					self._unit:sound():anim_clbk_play_sound(self._unit, "repel_end")
+				end
+			end
+
+			if Network:is_server() then
+				self:set_attention()
 			else
-				for o, p in pairs( v.target_info ) do
-					v.target_info[o].amm = math.clamp( v.target_info[o].amm - dt * SniperFocusHandler.config_hone_out_mul, 0, 2.5 )
-				end
+				self:synch_attention()
 			end
 		end
-		
-		local cursound = 0
-		
-		for k, v in pairs( SniperFocusHandler.sniper_info ) do
-		
-			if not v.sniper or not v.sniper.brain or not v.sniper.character_damage or v.sniper:character_damage():dead() then
-				table.remove( SniperFocusHandler.sniper_info, k )
-			else
-				for o, p in pairs( v.target_info ) do
-					if p.unit == LP and p.amm > cursound then
-						cursound = p.amm
-					end
-				end
+
+		local attack_dir = damage_info.col_ray and damage_info.col_ray.ray or damage_info.attack_dir
+		local hit_pos = damage_info.col_ray and damage_info.col_ray.position or damage_info.pos
+		local lgt_hurt = hurt_type == "light_hurt"
+		local body_part = lgt_hurt and 4 or 1
+		local blocks = nil
+
+		if not lgt_hurt then
+			blocks = {
+				act = -1,
+				aim = -1,
+				action = -1,
+				tase = -1,
+				walk = -1,
+				light_hurt = -1
+			}
+
+			if hurt_type == "bleedout" then
+				blocks.bleedout = -1
+				blocks.hurt = -1
+				blocks.heavy_hurt = -1
+				blocks.hurt_sick = -1
+				blocks.concussion = -1
+			end
+
+			if hurt_type == "shield_knock" then
+				blocks.light_hurt = -1
+				blocks.concussion = -1
+			end
+
+			if hurt_type == "concussion" or hurt_type == "counter_tased" then
+				blocks.hurt = -1
+				blocks.light_hurt = -1
+				blocks.heavy_hurt = -1
+				blocks.stagger = -1
+				blocks.knock_down = -1
+				blocks.counter_tased = -1
+				blocks.hurt_sick = -1
+				blocks.expl_hurt = -1
+				blocks.counter_spooc = -1
+				blocks.fire_hurt = -1
+				blocks.taser_tased = -1
+				blocks.poison_hurt = -1
+				blocks.shield_knock = -1
+				blocks.concussion = -1
 			end
 		end
-		
-		if LP and LP.character_damage then
-			local char_dmg = LP:character_damage()
-		
-			if cursound * 40 >= ( char_dmg._downed_progression or 0 ) and ( char_dmg._tinnitus_data == nil or cursound >= char_dmg._tinnitus_data.intensity ) then
-				SoundDevice:set_rtpc( "downed_state_progression", math.min( 100, cursound * 40 ) )
+
+		if damage_info.variant == "tase" then
+			block_type = "bleedout"
+		elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+			block_type = "heavy_hurt"
+		else
+			block_type = hurt_type
+		end
+
+		local client_interrupt = nil
+
+		if Network:is_client() and (hurt_type == "light_hurt" or hurt_type == "hurt" and damage_info.variant ~= "tase" or hurt_type == "heavy_hurt" or hurt_type == "expl_hurt" or hurt_type == "shield_knock" or hurt_type == "counter_tased" or hurt_type == "taser_tased" or hurt_type == "counter_spooc" or hurt_type == "death" or hurt_type == "hurt_sick" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "concussion") then
+			client_interrupt = true
+		end
+
+		local tweak = self._tweak_data
+		local action_data = nil
+
+		if hurt_type == "healed" then
+			if Network:is_client() then
+				client_interrupt = true
+			end
+
+			action_data = {
+				body_part = 3,
+				type = "healed",
+				client_interrupt = client_interrupt
+			}
+		else
+			action_data = {
+				type = "hurt",
+				block_type = block_type,
+				hurt_type = hurt_type,
+				variant = damage_info.variant,
+				direction_vec = attack_dir,
+				hit_pos = hit_pos,
+				body_part = body_part,
+				blocks = blocks,
+				client_interrupt = client_interrupt,
+				attacker_unit = damage_info.attacker_unit,
+				death_type = tweak.damage.death_severity and (tweak.damage.death_severity < damage_info.damage / tweak.HEALTH_INIT and "heavy" or "normal") or "normal",
+				ignite_character = damage_info.ignite_character,
+				start_dot_damage_roll = damage_info.start_dot_damage_roll,
+				is_fire_dot_damage = damage_info.is_fire_dot_damage,
+				fire_dot_data = damage_info.fire_dot_data,
+				is_synced = damage_info.is_synced
+			}
+		end
+
+		local request_action = Network:is_server() or not self:chk_action_forbidden(action_data)
+
+		if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt") then
+			request_action = false
+		end
+
+		if request_action then
+			self:action_request(action_data)
+
+			if hurt_type == "death" and self._queued_actions then
+				self._queued_actions = {}
 			end
 		end
 	end
-
-	function SniperFocusHandler:Init()
-		Hooks:PostHook( CopMovement, "synch_attention", "SniperFocus_synch_attention", function( self, attention )
-			if self._unit:base()._tweak_table == "sniper" then
-				SniperFocusHandler:SetupAttention( self, attention, true )
-			end
-		end )
-
-		Hooks:PostHook( CopMovement, "set_attention", "SniperFocus_set_attention", function( self, attention )
-			if tostring( self._unit:base()._tweak_table ) == "sniper" then
-				SniperFocusHandler:SetupAttention( self, attention )
-			end
-		end )
-
-		Hooks:Add("GameSetupUpdate", "SniperFocus_update", function( t, dt )
-			if SniperFocusHandler and t and dt then
-				SniperFocusHandler:ThinkAttention( t, dt )
-			end
-		end )
-	end
-
-	Hooks:Add("NetworkReceivedData", "SniperFocus_data_recieved", function(sender, id, data)
-		if SniperFocusHandler and id == SniperFocusHandler.NetworkID then
-			local is_host = _G.LuaNetworking:IsHost()
-			if not is_host and data == "Init" then
-				SniperFocusHandler:Init()
-			elseif is_host and data == "ShouldLoad" then
-				_G.LuaNetworking:SendToPeer( sender, SniperFocusHandler.NetworkID, "Init" )
-			end
-		end
-	end)
-
-	if _G.LuaNetworking:IsHost() then
-		SniperFocusHandler:Init()
-	else
-		Hooks:Add("BaseNetworkSessionOnLoadComplete", "SniperFocus_player_join", function( unit, id )
-			if SniperFocusHandler then
-				for _, peer in pairs(managers.network:session():peers()) do
-					if peer:is_host() then
-						_G.LuaNetworking:SendToPeer( peer:id(), SniperFocusHandler.NetworkID, "ShouldLoad" )
-						break
-					end
-				end
-			end
-		end )
-	end	
-
 end

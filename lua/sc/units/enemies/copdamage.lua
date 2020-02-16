@@ -43,22 +43,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				damage = self._health * 10
 			end
 		end		
-		
-		if self._unit:base()._tweak_table == "autumn" then
-			local recloak_roll = math.rand(1, 100)
-			local chance_recloak = 75	
-			if recloak_roll <= chance_recloak then
-				self._unit:damage():run_sequence_simple("cloak_engaged")
-			end			
+
+		if Network:is_server() then
+			if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
+				if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+					local recloak_roll = math.rand(1, 100)
+					local chance_recloak = 75
+
+					if recloak_roll then
+						self._unit:damage():run_sequence_simple("cloak_engaged")
+
+						local weapon_unit = self._unit:inventory():equipped_unit()
+
+						if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+							weapon_unit:damage():run_sequence_simple("cloak_engaged")
+						end
+
+						self._unit:movement():set_uncloaked(false)
+					end
+				end	
+			end
 		end
-		
-		if self._unit:base()._tweak_table == "spooc_titan" then
-			local recloak_roll = math.rand(1, 100)
-			local chance_recloak = 75	
-			if recloak_roll <= chance_recloak then
-				self._unit:damage():run_sequence_simple("cloak_engaged")
-			end			
-		end		
 
 		local helmet_pop_roll = math.rand(1, 100)
 		local chance_pop = 5
@@ -247,6 +252,169 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 	end
 	
+	function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dance_antimation, death, direction, weapon_type, weapon_id, healed)
+		if self._dead then
+			return
+		end
+
+		if Network:is_server() then
+			if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
+				if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+					local recloak_roll = math.rand(1, 100)
+					local chance_recloak = 75
+
+					if recloak_roll then
+						self._unit:damage():run_sequence_simple("cloak_engaged")
+
+						local weapon_unit = self._unit:inventory():equipped_unit()
+
+						if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+							weapon_unit:damage():run_sequence_simple("cloak_engaged")
+						end
+
+						self._unit:movement():set_uncloaked(false)
+					end
+				end	
+			end
+		end
+
+		local variant = "fire"
+		local damage = damage_percent * self._HEALTH_INIT_PRECENT
+		local is_fire_dot_damage = false
+		local attack_data = {
+			variant = variant,
+			attacker_unit = attacker_unit
+		}
+		local result = nil
+
+		if weapon_type then
+			local fire_dot = nil
+
+			if weapon_type == CopDamage.WEAPON_TYPE_GRANADE then
+				fire_dot = tweak_data.projectiles[weapon_id].fire_dot_data
+			elseif weapon_type == CopDamage.WEAPON_TYPE_BULLET then
+				if tweak_data.weapon.factory.parts[weapon_id].custom_stats then
+					fire_dot = tweak_data.weapon.factory.parts[weapon_id].custom_stats.fire_dot_data
+				end
+			elseif weapon_type == CopDamage.WEAPON_TYPE_FLAMER and tweak_data.weapon[weapon_id].fire_dot_data then
+				fire_dot = tweak_data.weapon[weapon_id].fire_dot_data
+			end
+
+			attack_data.fire_dot_data = fire_dot
+
+			if attack_data.fire_dot_data then
+				attack_data.fire_dot_data.start_dot_dance_antimation = start_dot_dance_antimation
+			end
+		end
+
+		if death then
+			result = {
+				type = "death",
+				variant = variant
+			}
+
+			self:die(attack_data)
+			self:chk_killshot(attacker_unit, "fire")
+
+			local data = {
+				variant = "fire",
+				head_shot = false,
+				name = self._unit:base()._tweak_table,
+				stats_name = self._unit:base()._stats_name,
+				weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit(),
+				is_molotov = weapon_id == "molotov"
+			}
+
+			managers.statistics:killed_by_anyone(data)
+		else
+			local result_type = variant == "stun" and "hurt_sick" or self:get_damage_type(damage_percent, "fire")
+
+			if healed then
+				result_type = "healed"
+			end
+
+			result = {
+				variant = "bullet",
+				type = result_type
+			}
+
+			if result_type ~= "healed" then
+				self:_apply_damage_to_health(damage)
+			end
+		end
+
+		attack_data.result = result
+		attack_data.damage = damage
+		attack_data.ignite_character = true
+		attack_data.is_fire_dot_damage = is_fire_dot_damage
+		attack_data.is_synced = true
+		local attack_dir = nil
+
+		if direction then
+			attack_dir = direction
+		elseif attacker_unit then
+			attack_dir = self._unit:position() - attacker_unit:position()
+
+			mvector3.normalize(attack_dir)
+		else
+			attack_dir = self._unit:rotation():y()
+		end
+
+		attack_data.attack_dir = attack_dir
+
+		if self._head_body_name then
+			local body = self._unit:body(self._head_body_name)
+
+			self:_spawn_head_gadget({
+				skip_push = true,
+				position = body:position(),
+				rotation = body:rotation(),
+				dir = Vector3()
+			})
+		end
+
+		if result.type == "death" then
+			local data = {
+				variant = "fire",
+				head_shot = false,
+				name = self._unit:base()._tweak_table,
+				stats_name = self._unit:base()._stats_name,
+				weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
+			}
+			local attacker_unit = attack_data.attacker_unit
+
+			if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
+				attacker_unit = attacker_unit:base():thrower_unit()
+				data.weapon_unit = attack_data.attacker_unit
+			end
+
+			if attacker_unit == managers.player:player_unit() then
+				if alive(attacker_unit) then
+					self:_comment_death(attacker_unit, self._unit)
+				end
+
+				self:_show_death_hint(self._unit:base()._tweak_table)
+				managers.statistics:killed(data)
+
+				if CopDamage.is_civilian(self._unit:base()._tweak_table) then
+					managers.money:civilian_killed()
+				end
+			end
+		end
+
+		local weapon_unit = attack_data.weapon_unit
+
+		if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+		end
+
+		attack_data.pos = self._unit:position()
+
+		mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
+		self:_send_sync_fire_attack_result(attack_data)
+		self:_on_damage_received(attack_data)
+	end
+	
 	function CopDamage:damage_bullet(attack_data)
 		if self._dead or self._invulnerable then
 			return
@@ -260,28 +428,20 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			return "friendly_fire"
 		end
 		
-		if attack_data.attacker_unit:in_slot(16) then
-			if self._unit:anim_data() and self._unit:anim_data().hands_tied then
+		if alive(attack_data.attacker_unit) and attack_data.attacker_unit:in_slot(16) then
+			local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
+
+			if has_surrendered then
 				return
-			elseif self._unit:anim_data() and self._unit:anim_data().surrender then
-				return
-			elseif self._unit:anim_data() and self._unit:anim_data().hands_back then
-				return
-			end		
+			end
 		end
 			
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
-		--local ap_skill = self._is_team_ai and managers.player:has_category_upgrade("team", "crew_ai_ap_ammo")
-		local ap_skill = managers.player:has_category_upgrade("team", "crew_ai_ap_ammo")
 
 		if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name and not attack_data.armor_piercing and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and not attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
 			local armor_pierce_roll = math.rand(1)
 			local armor_pierce_value = 0
-			if attack_data.attacker_unit:in_slot(16) then
-				if ap_skill then
-					armor_pierce_value = 1
-				end
-			end				
+
 			if attack_data.attacker_unit == managers.player:player_unit() and not attack_data.weapon_unit:base().thrower_unit then
 				armor_pierce_value = armor_pierce_value + attack_data.weapon_unit:base():armor_piercing_chance()
 				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("player", "armor_piercing_chance", 0)
@@ -375,30 +535,26 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			damage = damage * mul
 		end
 		
-		if self._unit:base()._tweak_table == "autumn" then
-		    if not attack_data.attacker_unit:in_slot(16) then
-			    local recloak_roll = math.rand(1, 100)
-			    local chance_recloak = 75	
-			    if recloak_roll <= chance_recloak then
-			    	self._unit:damage():run_sequence_simple("cloak_engaged")
-			    end	
-			end	
+		if Network:is_server() then
+			if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
+				if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+					local recloak_roll = math.rand(1, 100)
+					local chance_recloak = 75
 
-			--Just so he's not instagibbed by bots
-			if attack_data.attacker_unit:in_slot(16) then
-				damage = damage * 0.1
-			end			
+					if recloak_roll then
+						self._unit:damage():run_sequence_simple("cloak_engaged")
+
+						local weapon_unit = self._unit:inventory():equipped_unit()
+
+						if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+							weapon_unit:damage():run_sequence_simple("cloak_engaged")
+						end
+
+						self._unit:movement():set_uncloaked(false)
+					end
+				end	
+			end
 		end
-				
-		if self._unit:base()._tweak_table == "spooc_titan" then
-		    if not attack_data.attacker_unit:in_slot(16) then
-			    local recloak_roll = math.rand(1, 100)
-			    local chance_recloak = 75	
-			    if recloak_roll <= chance_recloak then
-			    	self._unit:damage():run_sequence_simple("cloak_engaged")
-			    end	
-			end					
-		end		
 		
 		if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
 			managers.groupai:state():_voice_saw() --THAT MADMAN HAS A FUCKIN' SAW
@@ -571,6 +727,176 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		result.attack_data = attack_data
 		
 		return result
+	end
+	
+	local tmp_vec_1 = Vector3()
+	function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, variant, death)
+		if self._dead then
+			return
+		end
+
+		if Network:is_server() then
+			if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
+				if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+					local recloak_roll = math.rand(1, 100)
+					local chance_recloak = 75
+
+					if recloak_roll then
+						self._unit:damage():run_sequence_simple("cloak_engaged")
+
+						local weapon_unit = self._unit:inventory():equipped_unit()
+
+						if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+							weapon_unit:damage():run_sequence_simple("cloak_engaged")
+						end
+
+						self._unit:movement():set_uncloaked(false)
+					end
+				end	
+			end
+		end
+
+		local body = self._unit:body(i_body)
+		local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
+		local damage = damage_percent * self._HEALTH_INIT_PRECENT
+		local attack_data = {}
+		local hit_pos = mvector3.copy(body:center_of_mass())
+		--local hit_pos = mvector3.copy(self._unit:movement():m_pos())
+
+		--mvector3.set_z(hit_pos, hit_pos.z + hit_offset_height)
+
+		attack_data.pos = hit_pos
+		attack_data.attacker_unit = attacker_unit
+		attack_data.variant = "bullet"
+		local attack_dir, distance = nil
+
+		if attacker_unit then
+			local from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
+
+			attack_dir = tmp_vec_1
+			distance = mvector3.direction(attack_dir, from_pos, hit_pos)
+			mvector3.normalize(attack_dir)
+		else
+			attack_dir = self._unit:rotation():y()
+		end
+
+		attack_data.attack_dir = attack_dir
+		local result, shotgun_push = nil
+
+		if death then
+			if head then
+				self:_spawn_head_gadget({
+					position = body:position(),
+					rotation = body:rotation(),
+					dir = attack_dir
+				})
+			end
+
+			result = {
+				variant = "bullet",
+				type = "death"
+			}
+
+			self:die(attack_data)
+			self:chk_killshot(attacker_unit, "bullet")
+
+			local data = {
+				name = self._unit:base()._tweak_table,
+				stats_name = self._unit:base()._stats_name,
+				head_shot = head,
+				weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit(),
+				variant = attack_data.variant
+			}
+
+			if data.weapon_unit then
+				self:_check_special_death_conditions("bullet", body, attacker_unit, data.weapon_unit)
+				managers.statistics:killed_by_anyone(data)
+
+				if distance and managers.enemy:is_corpse_disposal_enabled() and not data.weapon_unit:base().thrower_unit and data.weapon_unit:base().is_category and data.weapon_unit:base():is_category("shotgun") then
+					local negate_push = nil
+
+					if data.weapon_unit:base()._parts then
+						for part_id, part in pairs(data.weapon_unit:base()._parts) do
+							if tweak_data.weapon.factory.parts[part_id].custom_stats and tweak_data.weapon.factory.parts[part_id].custom_stats.rays == 1 then
+								negate_push = true
+
+								break
+							end
+						end
+					end
+
+					if not negate_push then
+						local max_distance = 500
+
+						if attacker_unit:base() then
+							if attacker_unit:base().is_husk_player or managers.groupai:state():is_unit_team_AI(attacker_unit) then
+								max_distance = managers.game_play_central:get_shotgun_push_range()
+							end
+						end
+
+						if distance < max_distance then
+							shotgun_push = true
+						end
+					end
+				end
+			end
+		else
+			local result_type = variant == 1 and "knock_down" or variant == 2 and "stagger" or self:get_damage_type(damage_percent, "bullet")
+
+			if variant == 3 then
+				result_type = "healed"
+			end
+
+			result = {
+				variant = "bullet",
+				type = result_type
+			}
+
+			if result_type ~= "healed" then
+				self:_apply_damage_to_health(damage)
+			end
+		end
+
+		attack_data.variant = "bullet"
+		attack_data.attacker_unit = attacker_unit
+		attack_data.result = result
+		attack_data.damage = damage
+		attack_data.is_synced = true
+
+		if not self._no_blood and damage > 0 then
+			managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+		end
+
+		self:_send_sync_bullet_attack_result(attack_data, hit_offset_height)
+		self:_on_damage_received(attack_data)
+
+		if shotgun_push then
+			local push_dir = attack_dir
+			local push_hit_pos = hit_pos
+
+			if attacker_unit and alive(attacker_unit) then
+				if attacker_unit:movement() and attacker_unit:movement().detect_look_dir then
+					push_dir = attacker_unit:movement():detect_look_dir()
+				--[[elseif attacker_unit:inventory() and attacker_unit:inventory().equipped_unit and attacker_unit:inventory():equipped_unit() and alive(attacker_unit:inventory():equipped_unit()) then
+					local weapon_fire_obj = attacker_unit:inventory():equipped_unit():get_object(Idstring("fire"))
+
+					if weapon_fire_obj and alive(weapon_fire_obj) then
+						push_dir = weapon_fire_obj:rotation():y()
+					end]]
+				end
+
+				local from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
+				local hit_ray = World:raycast("ray", from_pos, body:center_of_mass(), "target_body", body)
+
+				if hit_ray then
+					--managers.player:player_unit():sound():say("r03x_sin", true)
+					push_hit_pos = hit_ray.position
+					--push_dir = hit_ray.ray
+				end
+			end
+
+			managers.game_play_central:_do_shotgun_push(self._unit, push_hit_pos, push_dir, distance, attacker_unit)
+		end
 	end
 
 	local mvec_1 = Vector3()
@@ -752,7 +1078,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 		end
 		
-		if tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
+		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() and alive(attack_data.attacker_unit) and tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
 			local achievements = tweak_data.achievement.enemy_melee_hit_achievements or {}
 			local melee_type = tweak_data.blackmarket.melee_weapons[attack_data.name_id].type
 			local enemy_base = self._unit:base()
@@ -827,6 +1153,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					end
 				end
 			end
+		end
+
+		local attacker = attack_data.attacker_unit
+
+		if not attacker or attacker and alive(attacker) and attacker:id() == -1 then
+			attack_data.attacker_unit = self._unit
 		end
 		
 		local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:movement():m_pos().z, 0, 300)
@@ -1032,21 +1364,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:damage():run_sequence_simple("grenadier_glass_break")
 		end				
 
-		if self._unit:base()._tweak_table == "autumn" then
-			local recloak_roll = math.rand(1, 100)
-			local chance_recloak = 75	
-			if recloak_roll <= chance_recloak then
-				self._unit:damage():run_sequence_simple("cloak_engaged")
-			end			
-		end		
-		
-		if self._unit:base()._tweak_table == "spooc_titan" then
-			local recloak_roll = math.rand(1, 100)
-			local chance_recloak = 75	
-			if recloak_roll <= chance_recloak then
-				self._unit:damage():run_sequence_simple("cloak_engaged")
-			end			
-		end			
+		if Network:is_server() then
+			if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
+				if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+					local recloak_roll = math.rand(1, 100)
+					local chance_recloak = 75
+
+					if recloak_roll then
+						self._unit:damage():run_sequence_simple("cloak_engaged")
+
+						local weapon_unit = self._unit:inventory():equipped_unit()
+
+						if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+							weapon_unit:damage():run_sequence_simple("cloak_engaged")
+						end
+
+						self._unit:movement():set_uncloaked(false)
+					end
+				end	
+			end
+		end
 		
 		damage = self:_apply_damage_reduction(damage)
 		damage = math.clamp(damage, 0, self._HEALTH_INIT)
@@ -1152,6 +1489,152 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return result
 	end
 	
+	function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack_variant, death, direction, weapon_unit)
+		if self._dead then
+			return
+		end
+
+		if Network:is_server() then
+			if self._unit:base()._tweak_table == "autumn" or self._unit:base()._tweak_table == "spooc_titan" then
+				if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+					local recloak_roll = math.rand(1, 100)
+					local chance_recloak = 75
+
+					if recloak_roll then
+						self._unit:damage():run_sequence_simple("cloak_engaged")
+
+						local weapon_unit = self._unit:inventory():equipped_unit()
+
+						if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+							weapon_unit:damage():run_sequence_simple("cloak_engaged")
+						end
+
+						self._unit:movement():set_uncloaked(false)
+					end
+				end	
+			end
+		end
+
+		local variant = CopDamage._ATTACK_VARIANTS[i_attack_variant]
+		local damage = damage_percent * self._HEALTH_INIT_PRECENT
+		local attack_data = {
+			variant = variant,
+			attacker_unit = attacker_unit
+		}
+		local result = nil
+
+		if death then
+			result = {
+				type = "death",
+				variant = variant
+			}
+
+			self:die(attack_data)
+
+			local data = {
+				variant = "explosion",
+				head_shot = false,
+				name = self._unit:base()._tweak_table,
+				stats_name = self._unit:base()._stats_name,
+				weapon_unit = weapon_unit or attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
+			}
+
+			managers.statistics:killed_by_anyone(data)
+		else
+			local result_type = variant == "stun" and "hurt_sick" or self:get_damage_type(damage_percent, "explosion")
+			result = {
+				type = result_type,
+				variant = variant
+			}
+
+			self:_apply_damage_to_health(damage)
+		end
+
+		attack_data.result = result
+		attack_data.damage = damage
+		attack_data.is_synced = true
+		local attack_dir = nil
+
+		if direction then
+			attack_dir = direction
+		elseif attacker_unit then
+			attack_dir = self._unit:position() - attacker_unit:position()
+
+			mvector3.normalize(attack_dir)
+		else
+			attack_dir = self._unit:rotation():y()
+		end
+
+		attack_data.attack_dir = attack_dir
+
+		if self._head_body_name then
+			local body = self._unit:body(self._head_body_name)
+
+			self:_spawn_head_gadget({
+				skip_push = true,
+				position = body:position(),
+				rotation = body:rotation(),
+				dir = Vector3()
+			})
+		end
+
+		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
+			managers.hud:on_hit_confirmed()
+			managers.statistics:shot_fired({
+				hit = true,
+				weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
+			})
+		end
+
+		if result.type == "death" then
+			local data = {
+				variant = "explosion",
+				head_shot = false,
+				name = self._unit:base()._tweak_table,
+				stats_name = self._unit:base()._stats_name,
+				weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
+			}
+			local attacker_unit = attack_data.attacker_unit
+
+			if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
+				attacker_unit = attacker_unit:base():thrower_unit()
+				data.weapon_unit = attack_data.attacker_unit
+			end
+
+			self:chk_killshot(attacker_unit, "explosion")
+
+			if attacker_unit == managers.player:player_unit() then
+				if alive(attacker_unit) then
+					self:_comment_death(attacker_unit, self._unit)
+				end
+
+				self:_show_death_hint(self._unit:base()._tweak_table)
+				managers.statistics:killed(data)
+
+				if CopDamage.is_civilian(self._unit:base()._tweak_table) then
+					managers.money:civilian_killed()
+				end
+			end
+		end
+
+		if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+		end
+
+		if not self._no_blood then
+			local hit_pos = mvector3.copy(self._unit:movement():m_pos())
+
+			mvector3.set_z(hit_pos, hit_pos.z + 100)
+			managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+		end
+
+		attack_data.pos = self._unit:position()
+
+		mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
+		self:_send_sync_explosion_attack_result(attack_data)
+		self:_on_damage_received(attack_data)
+	end
+	
 	function CopDamage:damage_simple(attack_data)
 		if self._dead or self._invulnerable then
 			return
@@ -1161,17 +1644,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end		
 		
-		if self._unit:anim_data() and self._unit:anim_data().hands_tied then
-			return
-		elseif self._unit:anim_data() and self._unit:anim_data().surrender then
-			return
-		elseif self._unit:anim_data() and self._unit:anim_data().hands_back then
-			return
-		end				
-		
-		if self._unit:brain() and self._unit:brain().is_current_logic and self._unit:brain():is_current_logic("intimidated") then
-			return
-		end		
+		if attack_data.variant == "graze" then
+			local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
+
+			if has_surrendered then
+				return
+			end
+		end
 
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 		local result = nil

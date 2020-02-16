@@ -10,6 +10,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if user_unit:in_slot(16) then
 				self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16, 22)
 			end
+
+			if self._is_team_ai and managers.player:has_category_upgrade("team", "crew_ai_ap_ammo") then
+				self._use_armor_piercing = true
+			end
 		end				
 	end
 	

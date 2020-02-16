@@ -87,4 +87,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	-- 	end
 	-- end
 
+	function UnitNetworkHandler:sync_add_doted_enemy(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, rpc)
+		if variant == 0 then
+			managers.fire:sync_add_fire_dot(enemy_unit, nil, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation)
+		else
+			if variant == 1 then
+				variant = "poison"
+			elseif variant == 2 then
+				variant = "dot"
+			else
+				variant = nil
+			end
+
+			if weapon_unit and alive(weapon_unit) and weapon_unit:base() then
+				if weapon_unit:base().is_husk_player then
+					local peer_id = managers.network:session():peer_by_unit(weapon_unit):id()
+					local peer = managers.network:session():peer(peer_id)
+
+					weapon_unit = peer:melee_id()
+				else
+					weapon_unit = weapon_unit:base().melee_weapon and weapon_unit:base():melee_weapon() or weapon_unit
+
+					if weapon_unit == "weapon" then
+						weapon_unit = nil
+					end
+				end
+			end
+
+			managers.dot:sync_add_dot_damage(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, variant, weapon_id)
+		end
+	end
 end

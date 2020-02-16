@@ -72,7 +72,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
 		CopBrain._logic_variants.taser_titan = clone(security_variant)
 		CopBrain._logic_variants.autumn = clone(security_variant)
-		CopBrain._logic_variants.sniper.sniper = CopLogicSniperNew
 	end
 
 	--Thanks Rokk--

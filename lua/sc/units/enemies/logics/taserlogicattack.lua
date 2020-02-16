@@ -195,48 +195,33 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function TaserLogicAttack._chk_reaction_to_attention_object(data, attention_data, stationary)
 		local reaction = CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, stationary)
-		local my_data = data.internal_data
-		local tase_length = my_data.tase_distance or 1500 --fix for better bots crash (more like the sanity check vanilla lacks because :julesyes: )
+		local tase_length = data.internal_data.tase_distance or 1400
 
-		--if not supposd to shoot (or tase, for that matter), end the function here
 		if reaction < AIAttentionObject.REACT_SHOOT or not attention_data.criminal_record or not attention_data.is_person then
 			return reaction
 		end
 
-		if attention_data.unit:movement() then
-			--check if the unit's movement extension has a is_taser_attack_allowed function first (should be fine since you're checking for criminal_record and is_person first, but you never know)
-			if attention_data.unit:movement().is_taser_attack_allowed and attention_data.unit:movement():is_taser_attack_allowed() then
-				--log("helpme")
-
-				if attention_data.verified then
-					if attention_data.verified_dis <= tase_length then
-						--log("yeah.")
-
-						--honestly I have no idea what difference does it make to use the unit itself to do the ray, if it's better for performance, go for it
-						--there's also no need to use ignore_unit if the slotmask won't include them (since only geometry, vehicles and shields are checked in this case)
-						--sphere ray used to avoid tasers trying to tase if already obstructed by geometry (can add character slotmasks to prevent this with them as well)
-						local vis_check_fail = data.unit:raycast("ray", data.unit:movement():m_head_pos(), attention_data.m_head_pos, "sphere_cast_radius", 25, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles", "enemy_shield_check"), "report")
-
-						if not vis_check_fail then
-							if my_data.last_charge_snd_play_t and data.t - my_data.last_charge_snd_play_t < 1 or my_data.tasing and my_data.tasing.target_u_data.unit:movement():tased() then --tase
-								return AIAttentionObject.REACT_SPECIAL_ATTACK
-							else --charge taser
-								managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive") --don't know what delays are being used in copactiontase, so it might be better to use this above (at tase)
-								my_data.last_charge_snd_play_t = data.t
-								data.unit:sound():play("taser_charge", nil, true)
-								return AIAttentionObject.REACT_AIM
-							end
-						else
-							return AIAttentionObject.REACT_COMBAT
-						end
-					else
-						return AIAttentionObject.REACT_COMBAT
-					end
-				end
-			else
-				if attention_data.verified then
+		if attention_data.verified and attention_data.verified_dis <= tase_length then
+			if not data.internal_data.tasing or data.internal_data.tasing.target_u_key ~= attention_data.u_key then
+				if attention_data.unit:movement() and attention_data.unit:movement().tased and attention_data.unit:movement():tased() then
 					return AIAttentionObject.REACT_COMBAT
 				end
+			end
+
+			if attention_data.is_human_player then
+				if not attention_data.unit:movement():is_taser_attack_allowed() then
+					return AIAttentionObject.REACT_COMBAT
+				end
+			elseif attention_data.unit:movement():chk_action_forbidden("hurt") then
+				return AIAttentionObject.REACT_COMBAT
+			end
+
+			local obstructed = data.unit:raycast("ray", data.unit:movement():m_head_pos(), attention_data.m_head_pos, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles", "enemy_shield_check"), "sphere_cast_radius", 20, "report")
+
+			if obstructed then
+				return AIAttentionObject.REACT_COMBAT
+			else
+				return AIAttentionObject.REACT_SPECIAL_ATTACK
 			end
 		end
 

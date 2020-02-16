@@ -1,25 +1,35 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	TeamAIMovement.update = TeamAIMovement.super.update
-	
-	function TeamAIMovement:on_jump_SPOOCed(enemy_unit)		
+
+	function HuskTeamAIMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier)
+		local reload_action = {
+			body_part = 3,
+			type = "reload",
+			idle_reload = empty_reload ~= 0 and empty_reload or nil
+		}
+
+		self:action_request(reload_action)
+	end
+
+	function TeamAIMovement:on_jump_SPOOCed(enemy_unit)
 		if self._unit:character_damage()._god_mode then
 			return
 		end
-		
+
 		self._unit:brain():set_logic("surrender")
 		self._unit:network():send("arrested")
 		self._unit:character_damage():on_arrested()
-		
+
 		return true
-	end	
-	
-	function TeamAIMovement:on_SPOOCed(enemy_unit)			
+	end
+
+	function TeamAIMovement:on_SPOOCed(enemy_unit)
 		self._unit:character_damage():on_incapacitated()
 
 		return true
-	end	
-			
+	end
+
 	local old_throw = TeamAIMovement.throw_bag
 	function TeamAIMovement:throw_bag(...)
 		local data = self._ext_brain._logic_data
@@ -35,5 +45,4 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		return old_throw(self, ...)
 	end
-		
 end

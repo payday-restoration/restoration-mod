@@ -105,7 +105,9 @@ function TeamAILogicTravel._upd_enemy_detection(data)
 					end
 				end
 
-				local civ = TeamAILogicIdle.find_civilian_to_intimidate(data.unit, can_turn and 180 or 90, 1200)
+				local shout_angle = can_turn and 180 or 90
+				local shout_distance = 1200
+				local civ = TeamAILogicIdle.find_civilian_to_intimidate(data.unit, shout_angle, shout_distance)
 
 				if civ then
 					if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then

@@ -1995,6 +1995,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		    self.spooc_titan.speech_prefix_count = nil
 		end
 		self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+		self.spooc_titan.can_cloak = true
 		self.spooc_titan.can_be_tased = false
 		self.spooc_titan.priority_shout_max_dis = 0
 		self.spooc_titan.unintimidateable = true
@@ -2242,6 +2243,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spring.tags = {"law", "custom", "special", "captain"}
 		self.spring.move_speed = presets.move_speed.very_slow
 		self.spring.rage_move_speed = presets.move_speed.fast
+		self.spring.can_throw_frag = true
 		self.spring.no_run_start = true
 		self.spring.no_run_stop = true
 		self.spring.no_retreat = true
@@ -2384,6 +2386,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.damage.explosion_damage_mul = 0.25
 		self.autumn.damage.bullet_dodge_chance = 10
 		self.autumn.move_speed = presets.move_speed.lightning
+		self.autumn.can_cloak = true
 		self.autumn.no_retreat = true
 		self.autumn.no_arrest = true
 		self.autumn.surrender_break_time = {4, 6}
@@ -2549,6 +2552,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.headshot_dmg_mul = 2.2
 		self.taser_titan.priority_shout = "f32"
 		self.taser_titan.bot_priority_shout = "f32x_any"	
+		self.taser_titan.titan_taser_charge = true
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
@@ -2618,6 +2622,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.access = "taser"
 		self.boom.dodge = presets.dodge.athletic
 		self.boom.use_gas = true
+		self.boom.can_deploy_tear_gas = true
 		self.boom.priority_shout = "g29"
 		self.boom.bot_priority_shout = "g29"
 		self.boom.priority_shout_max_dis = 3000
@@ -2660,6 +2665,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom_summers.headshot_dmg_mul = 1.5
 		self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
 		self.boom_summers.ignore_medic_revive_animation = false
+		self.boom_summers.can_deploy_tear_gas = false
+		self.boom_summers.can_throw_molotov = true
 		self.boom_summers.no_retreat = true
 		self.boom_summers.no_arrest = true
 		self.boom_summers.immune_to_knock_down = true

@@ -3985,7 +3985,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.normal.is_pistol.melee_speed = 1
 		presets.weapon.normal.is_pistol.melee_dmg = 5
-		presets.weapon.normal.is_pistol.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.is_pistol.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_pistol.range = {
 			close = 1000,
 			optimal = 2000,
@@ -4065,7 +4065,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_rifle.tase_distance = 1400
 		presets.weapon.normal.is_rifle.aim_delay_tase = {0, 0.5}
 		presets.weapon.normal.is_rifle.tase_sphere_cast_radius = 30
-		presets.weapon.normal.is_rifle.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.is_rifle.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_rifle.range = {
 			close = 1000,
 			optimal = 2000,
@@ -4143,7 +4143,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_shotgun_pump.RELOAD_SPEED = 0.25
 		presets.weapon.normal.is_shotgun_pump.melee_speed = 1
 		presets.weapon.normal.is_shotgun_pump.melee_dmg = 5
-		presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_shotgun_pump.range = {
 			close = 500,
 			optimal = 1000,
@@ -4411,7 +4411,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_smg.RELOAD_SPEED = 1
 		presets.weapon.normal.is_smg.melee_speed = 1
 		presets.weapon.normal.is_smg.melee_dmg = 5
-		presets.weapon.normal.is_smg.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.is_smg.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_smg.range = {
 			close = 1000,
 			optimal = 2000,
@@ -4565,7 +4565,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.mac11.RELOAD_SPEED = 1
 		presets.weapon.normal.mac11.melee_speed = 1
 		presets.weapon.normal.mac11.melee_dmg = 5
-		presets.weapon.normal.mac11.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.mac11.melee_retry_delay = {2, 2}
 		presets.weapon.normal.mac11.range = {
 			close = 1000,
 			optimal = 2000,
@@ -4642,7 +4642,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.normal.is_revolver.melee_speed = 1
 		presets.weapon.normal.is_revolver.melee_dmg = 5
-		presets.weapon.normal.is_revolver.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.is_revolver.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_revolver.range = {
 			close = 1000,
 			optimal = 2000,
@@ -5105,7 +5105,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.mini.RELOAD_SPEED = 0.25
 		presets.weapon.normal.mini.melee_speed = 1
 		presets.weapon.normal.mini.melee_dmg = 5
-		presets.weapon.normal.mini.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.normal.mini.melee_retry_delay = {2, 2}
 		presets.weapon.normal.mini.range = {
 			close = 1000,
 			optimal = 2500,
@@ -6186,7 +6186,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.good.is_revolver.melee_speed = 1
 		presets.weapon.good.is_revolver.melee_dmg = 10
-		presets.weapon.good.is_revolver.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.good.is_revolver.melee_retry_delay = {2, 2}
 		presets.weapon.good.is_revolver.range = {
 			close = 1000,
 			optimal = 2000,
@@ -6330,7 +6330,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.mini.RELOAD_SPEED = 0.25
 		presets.weapon.good.mini.melee_speed = 1
 		presets.weapon.good.mini.melee_dmg = 10
-		presets.weapon.good.mini.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.good.mini.melee_retry_delay = {2, 2}
 		presets.weapon.good.mini.range = {
 			close = 1000,
 			optimal = 2500,
@@ -7447,7 +7447,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.expert.is_revolver.melee_speed = 1
 		presets.weapon.expert.is_revolver.melee_dmg = 10.5
-		presets.weapon.expert.is_revolver.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.expert.is_revolver.melee_retry_delay = {2, 2}
 		presets.weapon.expert.is_revolver.range = {
 			close = 1000,
 			optimal = 2000,
@@ -7615,7 +7615,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.mini.RELOAD_SPEED = 0.25
 		presets.weapon.expert.mini.melee_speed = 1
 		presets.weapon.expert.mini.melee_dmg = 10.5
-		presets.weapon.expert.mini.melee_retry_delay = {0.68, 0.68}
+		presets.weapon.expert.mini.melee_retry_delay = {2, 2}
 		presets.weapon.expert.mini.range = {
 			close = 1000,
 			optimal = 2500,
@@ -9870,8 +9870,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.deathwish.is_sniper = deep_clone(presets.weapon.deathwish.rifle)
 		
 		presets.weapon.sniper = deep_clone(presets.weapon.normal)
-		presets.weapon.sniper.is_rifle.aim_delay = {0.1, 0.1}
-		presets.weapon.sniper.is_rifle.focus_delay = 7
+		presets.weapon.sniper.is_rifle.aim_delay = {2, 2}
+		presets.weapon.sniper.is_rifle.focus_delay = 10
 		presets.weapon.sniper.is_rifle.focus_dis = 200
 		presets.weapon.sniper.is_rifle.spread = 30
 		presets.weapon.sniper.is_rifle.miss_dis = 250
@@ -9884,7 +9884,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			optimal = 8000,
 			far = 16000
 		}
-		presets.weapon.sniper.is_rifle.use_laser = false
+		presets.weapon.sniper.is_rifle.use_laser = true
 		presets.weapon.sniper.is_rifle.FALLOFF = {
 			{
 				r = 2000,

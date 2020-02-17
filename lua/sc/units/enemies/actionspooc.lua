@@ -146,7 +146,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		
-		if not self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
+		if Network:is_server() and not self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
 			self._unit:damage():run_sequence_simple("decloak")
 			
 			local weapon_unit = self._unit:inventory():equipped_unit()
@@ -184,7 +184,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
-		if self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
+		if Network:is_server() and self._unit:movement():is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("cloak_engaged") then
 			self._unit:damage():run_sequence_simple("cloak_engaged")
 			
 			local weapon_unit = self._unit:inventory():equipped_unit()

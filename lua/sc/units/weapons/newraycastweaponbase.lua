@@ -51,10 +51,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		function NewRaycastWeaponBase:reload_expire_t()
 			if self._use_shotgun_reload then
 				local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
-				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
-					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
-				else
+				if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
 					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+				else
+					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
 				end
 			end
 			return nil
@@ -64,11 +64,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			if self._use_shotgun_reload and t > self._next_shell_reloded_t then
 				local speed_multiplier = self:reload_speed_multiplier()
 				self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
-				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
-					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
+				if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
 					return true
 				else
-					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
 					return true
 				end
 				managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)

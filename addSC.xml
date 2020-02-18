@@ -85,7 +85,9 @@
 	<!--Reduced Sicario Smoke-->	
 	<effect path="effects/particles/explosions/smoke_screen" force="true"/>
 	<!--concussion grenade depth scaling vanilla bug-->	
-	<material_config path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" force="true" />	
+	<material_config path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" force="true" />
+	<!--Dynamite no rolly polly-->
+	<object path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true" />		
 
 	<!--PDTH Smokebomb-->
 	<effect path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>

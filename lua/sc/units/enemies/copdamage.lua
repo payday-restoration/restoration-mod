@@ -1,5 +1,43 @@
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+	
+	function CopDamage:_spawn_head_gadget(params)
+		if not self._head_gear then
+			return
+		end
 
+		if self._head_gear_object then
+			if self._nr_head_gear_objects then
+				for i = 1, self._nr_head_gear_objects, 1 do
+					local head_gear_obj_name = self._head_gear_object .. tostring(i)
+
+					self._unit:get_object(Idstring(head_gear_obj_name)):set_visibility(false)
+				end
+			else
+				self._unit:get_object(Idstring(self._head_gear_object)):set_visibility(false)
+			end
+
+			if self._head_gear_decal_mesh then
+				local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
+
+				self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("flesh"))
+			end
+		end
+
+		local unit = World:spawn_unit(Idstring(self._head_gear), params.position, params.rotation)
+
+		if not params.skip_push then
+			local true_dir = params.dir
+			local spread = math.random(6, 9)
+			mvector3.spread(true_dir, spread)
+			local dir = math.UP + true_dir
+			local body = unit:body(0)
+
+			body:push_at(body:mass(), dir * math.lerp(450, 650, math.random()), unit:position() + Vector3(math.rand(1), math.rand(1), math.rand(1)))
+		end
+
+		self._head_gear = false
+	end
+	
 	function CopDamage:damage_fire(attack_data)	
 		if self._dead or self._invulnerable then
 			return

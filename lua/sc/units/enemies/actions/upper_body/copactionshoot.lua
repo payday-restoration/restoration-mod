@@ -710,7 +710,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return
 			end
 
-			local can_melee = autotarget and self._melee_weapon_data and self._common_data.allow_fire and target_vec and true or nil
+			local can_melee = self._melee_weapon_data and self._common_data.allow_fire and target_vec and true or nil
 
 			if can_melee then
 				if self._is_server or autotarget then
@@ -1367,8 +1367,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 
 				defense_data = character_unit:character_damage():damage_melee(action_data)
-			end
-				--[[if self._is_server then --only allow melee damage against NPCs for the host (used in case an enemy targets a client locally but hits something else instead)
+			else
+				if self._is_server then --only allow melee damage against NPCs for the host (used in case an enemy targets a client locally but hits something else instead)
 					if character_unit:character_damage() then
 						if character_unit:base().sentry_gun then
 							local action_data = {
@@ -1407,7 +1407,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						managers.network:session():send_to_peers_synched("sync_body_damage_melee", col_ray.body, self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
 					end
 				end
-			end--]]
+			end
 
 			if defense_data and defense_data ~= "friendly_fire" then
 				if defense_data == "countered" then

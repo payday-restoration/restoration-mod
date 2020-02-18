@@ -331,7 +331,7 @@ function ExplosionManager:detect_and_give_dmg(params)
 			local dir, len, damage, ray_hit, damage_character = nil
 			local dmg_mul = 1
 
-			if character then
+			if character and hit_body:unit():movement() and hit_body:unit():movement().m_com then
 				if not units_to_hit[hit_body:unit():key()] then
 					if params.no_raycast_check_characters then
 						ray_hit = true

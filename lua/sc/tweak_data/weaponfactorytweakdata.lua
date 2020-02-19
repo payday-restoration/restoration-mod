@@ -6964,6 +6964,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				"wpn_fps_pis_deagle_o_standard_rear",
 				"wpn_fps_pis_deagle_o_standard_front_long"
 			},
+			wpn_fps_pis_deagle_b_modern = {
+				"wpn_fps_pis_deagle_o_standard_rear",
+				"wpn_fps_pis_deagle_o_standard_front"
+			},			
 			wpn_fps_upg_o_specter = {
 				"wpn_fps_pis_rage_o_adapter"
 			},
@@ -43231,13 +43235,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					table.list_append(self.wpn_fps_ass_g3m203.uses_parts, {
 						"wpn_fps_upg_i_faster_rof"
 					})									
-				self.parts.wpn_fps_upg_g3m203_supp_socom762.stats = {
-						value = 2,
-						suppression = 11,
-						alert_size = 11,
-						recoil = 1,
-						concealment = -2
-					}
 				self.parts.wpn_fps_upg_g3m203_handguard_wood.stats = {
 						value = 2,
 						recoil = 1,
@@ -43278,10 +43275,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						value = 2,
 						spread = 1
 					}	
-				self.parts.wpn_fps_upg_g3m203_trigger_group_navy.stats = {
-						value = 2,
-						concealment = 1
-					}																
 				self.parts.wpn_fps_upg_g3m203_stock_magpul_prs_largepad.stats = {
 						value = 2,
 						spread = 2,
@@ -46398,6 +46391,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_ass_m4_m_stick_sg.pcs = nil
 			self.parts.wpn_fps_ass_m4_m_stick_heavy.pcs = nil			
 			self.parts.wpn_fps_ass_m4_m_stick.pcs = nil	--caliber conversions STINK	
+			table.insert(self.parts.wpn_upg_ak_s_psl.forbids, "wpn_fps_ass_flint_g_custom")			
 			table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cqb")			
 			table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_cqb")			
 			table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_cqb")			
@@ -46860,7 +46854,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				stats = {
 					value = 1
 				}
-			}			
+			}
 			self.parts.wpn_fps_ass_sg416_fg_custom.stats = {
 				value = 2,
 				recoil = 2,

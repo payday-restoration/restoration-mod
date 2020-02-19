@@ -61,11 +61,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 		self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 		self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
-
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
 		self._keep_health_on_revive = false
-
 		self._biker_armor_regen_t = 0.0
+
+		self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0)
+
+		if managers.player:has_category_upgrade("player", "no_deflection") then		
+			self._deflection = 1
+		end
 
 		local function revive_player()
 			self:revive(true)
@@ -514,27 +518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerDamage:_calc_health_damage(attack_data)
 		local health_subtracted = 0
 		health_subtracted = self:get_real_health()
-		
-		if managers.player:has_category_upgrade("player", "no_deflection") then		
-			--Nothing
-		else
-			--Deflection--
-			if managers.blackmarket:equipped_armor() == "level_7" then
-				attack_data.damage = attack_data.damage * 0.85
-			elseif managers.blackmarket:equipped_armor() == "level_6" then
-				attack_data.damage = attack_data.damage * 0.85
-			elseif managers.blackmarket:equipped_armor() == "level_5" then
-				attack_data.damage = attack_data.damage * 0.8
-			elseif managers.blackmarket:equipped_armor() == "level_4" then
-				attack_data.damage = attack_data.damage * 0.85		
-			elseif managers.blackmarket:equipped_armor() == "level_3" then
-				attack_data.damage = attack_data.damage * 0.9	
-			elseif managers.blackmarket:equipped_armor() == "level_2" then
-				attack_data.damage = attack_data.damage * 0.95		
-			else
-				attack_data.damage = attack_data.damage * 1
-			end
-		end
+		attack_data.damage = attack_data.damage * self._deflection
 
 		if managers.player:has_category_upgrade("player", "dodge_to_heal") and attack_data.damage > 0.0 then --Rogue health regen.
 			self._damage_to_hot_stack = {}

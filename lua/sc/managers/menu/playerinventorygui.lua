@@ -71,6 +71,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				skill_stats[stat.name] = {
 					value = managers.player:skill_dodge_chance(false, false, false, name, detection_risk) * 100
 				}
+			elseif stat.name == "deflection" then
+				local base = 0
+				local mod = managers.player:body_armor_value("deflection", upgrade_level, 0)
+				base_stats[stat.name] = {value = (base + mod) * 100}
+				if managers.player:has_category_upgrade("player", "no_deflection") then
+					skill_stats[stat.name] = {value = (base + mod) * -100}
+				else 
+					skill_stats[stat.name] = {value = 0}
+				end
 			elseif stat.name == "damage_shake" then
 				local base = tweak_data.gui.armor_damage_shake_base
 				local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)
@@ -114,5 +123,157 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		return base_stats, mods_stats, skill_stats
+	end
+
+	function PlayerInventoryGui:setup_player_stats(panel)
+		local data = {
+			{
+				name = "armor"
+			},
+			{
+				name = "health"
+			},
+			{
+				name = "deflection"
+			},
+			{
+				name = "dodge",
+				procent = true,
+				revert = true
+			},
+			{
+				index = true,
+				name = "concealment"
+			},
+			{
+				procent = true,
+				name = "movement"
+			},
+			{
+				name = "stamina"
+			}
+		}
+		local stats_panel = panel:child("stats_panel")
+
+		if alive(stats_panel) then
+			panel:remove(stats_panel)
+
+			stats_panel = nil
+		end
+
+		stats_panel = panel:panel({
+			name = "stats_panel"
+		})
+		local panel = stats_panel:panel({
+			h = 20,
+			layer = 1,
+			w = stats_panel:w()
+		})
+		self._player_stats_shown = data
+		self._player_stats_titles = {
+			total = stats_panel:text({
+				x = 135,
+				layer = 2,
+				font_size = tweak_data.menu.pd2_small_font_size,
+				font = tweak_data.menu.pd2_small_font,
+				color = tweak_data.screen_colors.text,
+				text = utf8.to_upper(managers.localization:text("bm_menu_stats_total"))
+			}),
+			base = stats_panel:text({
+				alpha = 0.75,
+				x = 200,
+				layer = 2,
+				font_size = tweak_data.menu.pd2_small_font_size,
+				font = tweak_data.menu.pd2_small_font,
+				color = tweak_data.screen_colors.text,
+				text = utf8.to_upper(managers.localization:text("bm_menu_stats_base"))
+			}),
+			skill = stats_panel:text({
+				alpha = 0.75,
+				x = 259,
+				layer = 2,
+				font_size = tweak_data.menu.pd2_small_font_size,
+				font = tweak_data.menu.pd2_small_font,
+				color = tweak_data.screen_colors.resource,
+				text = utf8.to_upper(managers.localization:text("bm_menu_stats_skill"))
+			})
+		}
+		local x = 0
+		local y = 20
+		local text_panel = nil
+		local text_columns = {
+			{
+				size = 100,
+				name = "name"
+			},
+			{
+				size = 60,
+				name = "total",
+				align = "right"
+			},
+			{
+				align = "right",
+				name = "base",
+				blend = "add",
+				alpha = 0.75,
+				size = 60
+			},
+			{
+				align = "right",
+				name = "skill",
+				blend = "add",
+				alpha = 0.75,
+				size = 60,
+				color = tweak_data.screen_colors.resource
+			}
+		}
+		self._player_stats_texts = {}
+		self._player_stats_panel = stats_panel:panel()
+
+		for i, stat in ipairs(data) do
+			panel = self._player_stats_panel:panel({
+				name = "weapon_stats",
+				h = 20,
+				x = 0,
+				layer = 1,
+				y = y,
+				w = self._player_stats_panel:w()
+			})
+
+			if math.mod(i, 2) ~= 0 and not panel:child(tostring(i)) then
+				panel:rect({
+					name = tostring(i),
+					color = Color.black:with_alpha(0.4)
+				})
+			end
+
+			x = 2
+			y = y + 20
+			self._player_stats_texts[stat.name] = {}
+
+			for _, column in ipairs(text_columns) do
+				text_panel = panel:panel({
+					layer = 0,
+					x = x,
+					w = column.size,
+					h = panel:h()
+				})
+				self._player_stats_texts[stat.name][column.name] = text_panel:text({
+					text = "0",
+					layer = 1,
+					font_size = tweak_data.menu.pd2_small_font_size,
+					font = tweak_data.menu.pd2_small_font,
+					align = column.align,
+					alpha = column.alpha,
+					blend_mode = column.blend,
+					color = column.color or tweak_data.screen_colors.text
+				})
+				x = x + column.size
+
+				if column.name == "name" then
+					self._player_stats_texts[stat.name].name:set_text(managers.localization:to_upper_text("bm_menu_" .. stat.name))
+				end
+			end
+		end
 	end
 end

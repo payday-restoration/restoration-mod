@@ -457,6 +457,15 @@ function UpgradesTweakData:_init_pd2_values()
 		1.25,
 		1.20
 	}
+	self.values.player.body_armor.deflection = {
+		0.00,
+		0.05,
+		0.10,
+		0.15,
+		0.20,
+		0.15,
+		0.15
+	}
 
 	self.values.rep_upgrades.values = {0}
 	

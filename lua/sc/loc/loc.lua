@@ -156,6 +156,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
 		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",
 		
+		--Deflection for armor stats.
+		["bm_menu_deflection"] = "Deflection",
 	})
 end)
 

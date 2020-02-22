@@ -179,7 +179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0)
 				+ self:upgrade_value("player", "killshot_spooky_panic_chance", 0) * self:player_unit():character_damage():get_missing_revives()
 			panic_chance = managers.modifiers:modify_value("PlayerManager:GetKillshotPanicChance", panic_chance)
-			
+
 			if panic_chance > 0 or panic_chance == -1 then
 				local slotmask = managers.slot:get_mask("enemies")
 				local units = World:find_units_quick("sphere", player_unit:movement():m_pos(), tweak_data.upgrades.killshot_close_panic_range, slotmask)
@@ -304,7 +304,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required and self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
 			if self:has_category_upgrade("player", "infinite_messiah") then
-				self._messiah_kills_required = self._messiah_kills_required + 1
+				self._messiah_kills_required = self._messiah_kills_required + 2
 				self._messiah_kills = 0
 			end
 			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)

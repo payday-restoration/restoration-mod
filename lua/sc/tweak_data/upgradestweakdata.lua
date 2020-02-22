@@ -1161,7 +1161,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.primary_weapon_when_downed = {true}
 
 				--What Doesn't Kill (Formerly Up You Go)
-				self.values.player.damage_absorption_addend = {0.2}
+				self.values.player.damage_absorption_addend = {0.3}
 				self.values.player.damage_absorption_low_revives = {0.1}
 
 				--Swan Song
@@ -1169,8 +1169,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Haunt (Formerly Undying)
 				self.values.player.cheat_death_chance = {0.2, 0.45}
-				self.values.player.killshot_spooky_panic_chance = {0.1}
-				self.values.player.killshot_extra_spooky_panic_chance = {0.15}
+				self.values.player.killshot_spooky_panic_chance = {0.08}
+				self.values.player.killshot_extra_spooky_panic_chance = {0.2}
 				
 				--Messiah
 				self.values.player.messiah_revive_from_bleed_out = {1, 3}

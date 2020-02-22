@@ -9938,38 +9938,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				reload = 20
 			}	
-			--40mm Flechette GL
-			self.scar_m203flechette.categories = {"shotgun"}
-			self.scar_m203flechette.rays = 9
-			self.scar_m203flechette.damage_near = 1100
-			self.scar_m203flechette.damage_far = 2200			
-			self.scar_m203flechette.spread.standing = 3 * 1
-			self.scar_m203flechette.spread.crouching = 2 * 1
-			self.scar_m203flechette.spread.steelsight = 1 * 1
-			self.scar_m203flechette.spread.moving_standing = 4 * 1
-			self.scar_m203flechette.spread.moving_crouching = 3 * 1
-			self.scar_m203flechette.spread.moving_steelsight = 2 * 1
-			self.scar_m203flechette.kick.standing = self.huntsman.kick.standing
-			self.scar_m203flechette.kick.crouching = self.huntsman.kick.standing
-			self.scar_m203flechette.kick.steelsight = self.huntsman.kick.standing
-			self.scar_m203flechette.AMMO_PICKUP = {0.4, 1}
-			self.scar_m203flechette.panic_suppression_chance = 0.0
-			self.scar_m203flechette.ignore_damage_upgrades = false
-			self.scar_m203flechette.AMMO_MAX = 20
-			self.scar_m203flechette.stats = {
-				damage = 200,
-				spread = 11,
-				recoil = 14,
-				spread_moving = 6,
-				zoom = 3,
-				concealment = 18,
-				suppression = 20,
-				alert_size = 20,
-				extra_ammo = 101,
-				total_ammo_mod = 100,
-				value = 1,
-				reload = 20
-			}				
 		end
 
 		if self.duke1911 then --Pawcio's Dick Kickem 1911

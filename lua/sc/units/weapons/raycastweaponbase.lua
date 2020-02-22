@@ -77,7 +77,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local hit_unit = col_ray.unit
 		local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
 
-		if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock then
+		if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
 			local enemy_unit = hit_unit:parent()
 
 			if enemy_unit:character_damage() and enemy_unit:character_damage().dead and not enemy_unit:character_damage():dead() then

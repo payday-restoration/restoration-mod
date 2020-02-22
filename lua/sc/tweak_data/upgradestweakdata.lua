@@ -969,6 +969,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Deep Pockets
 				self.values.player.melee_concealment_modifier = {2}
 				self.values.player.ballistic_vest_concealment = {4}
+				self.values.player.level_1_armor_addend = {2}
 				self.values.player.level_2_armor_addend = {2}
 				self.values.player.level_3_armor_addend = {2}
 				self.values.player.level_4_armor_addend = {2}

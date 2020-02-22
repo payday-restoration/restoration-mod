@@ -14,7 +14,7 @@ function TeamAILogicDisabled._upd_enemy_detection(data)
 			for key, attention_info in pairs(data.detected_attention_objects) do
 				if attention_info.identified and attention_info.is_person and attention_info.unit:contour() then
 					if attention_info.unit:character_damage().dead and not attention_info.unit:character_damage():dead() then
-						if attention_info.unit:brain()._logic_data and attention_info.unit:brain()._logic_data.internal_data then
+						if attention_info.unit:brain() and attention_info.unit:brain()._logic_data and attention_info.unit:brain()._logic_data.internal_data then
 							local tasing = attention_info.unit:brain()._logic_data.internal_data.tasing
 
 							if tasing and tasing.target_u_data.unit == data.unit then

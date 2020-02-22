@@ -191,8 +191,10 @@
 	
 	<texture path="units/payday2/characters/shared_textures/heads_cop_df" force="true"/>
 	<texture path="units/payday2/characters/shared_textures/heads_cop_nm" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop2_df"/>
 	<texture path="units/payday2/characters/shared_textures/heads_cop2_nm"/>
-	<texture path="units/payday2/characters/shared_textures/heads_cop2_df"/>	
+	<texture path="units/payday2/characters/shared_textures/heads_cop3_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop3_nm"/>
 	<texture path="units/payday2/characters/shared_textures/heads_sec_df"/>
 	<texture path="units/payday2/characters/shared_textures/heads_sec_nm"/>
 	<texture path="units/payday2/characters/shared_textures/heads_fbi_df"/>

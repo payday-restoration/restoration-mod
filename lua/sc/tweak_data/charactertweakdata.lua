@@ -2177,7 +2177,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.can_be_tased = false
 		self.phalanx_minion.immune_to_knock_down = true
 		self.phalanx_minion.immune_to_concussion = true
-		self.phalanx_minion.damage.immune_to_knockback  false
+		self.phalanx_minion.damage.immune_to_knockback = false
 		self.phalanx_minion.spawn_sound_event = "shield_identification"
 		self.phalanx_minion.suppression = nil
 		self.phalanx_minion.is_special = true

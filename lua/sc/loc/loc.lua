@@ -158,6 +158,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Deflection for armor stats.
 		["bm_menu_deflection"] = "Deflection",
+		["bm_menu_swap_speed"] = "Swap Speed",
 	})
 end)
 
@@ -697,11 +698,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stun Resistance--
 			["menu_oppressor_beta_sc"] = "Stun Resistance",
-			["menu_oppressor_beta_desc_sc"] = "BASIC: ##$basic##\nYour steadiness is increased by ##10.##\n\nACE: ##$pro##\nReduces the visual effect duration of Flashbangs by ##50%.##",
+			["menu_oppressor_beta_desc_sc"] = "BASIC: ##$basic##\nYour steadiness is increased by ##10##.\n\nEnemy melee attacks push you back ##0.4%## less for every point of armor you have.\n\nACE: ##$pro##\nReduces the visual effect duration of Flashbangs by ##50%.##",
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "Die Hard",
-			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou can use your primary weapon in bleedout.\n\nACE: ##$pro##\nYour armor recovers ##10%## faster.",																																																																																																																																																																																																
+			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## deflection.\n\nEach point of deflection makes you take ##1%## less health damage.\n\nACE: ##$pro##\nYou gain an additional ##5## deflection.",																																																																																																																																																																																																
 			
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "Transporter",
@@ -717,7 +718,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\n##Note: Titanshields can only be knocked down by melee strikes.##",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.",																																																																																																																																																																																																
 		
 
 			--}
@@ -890,7 +891,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Deep Pockets--
 		["menu_thick_skin_beta_sc"] = "Deep Pockets",
-		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the armor of all ballistic vests and the suit by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
+		["menu_thick_skin_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases the concealment of melee weapons by ##2.##\n\nACE: ##$pro##\nIncreases the armor of all ballistic vests by ##20.##\n\nIncreases the concealment of all ballistic vests by ##4.##",
 
 		--Duck and Cover--
 		["menu_sprinter_beta_sc"] = "Duck and Cover",
@@ -995,17 +996,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_nine_lives_beta_sc"] = "Running from Death",
 		["menu_nine_lives_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##25%## faster for ##10## seconds after getting up.\n\nACE: ##$pro##\nYou reload and swap weapons ##25%## faster for ##10## seconds after getting up.",																																																																																																																																																																																																																																		
 
-		--Nine Lives--
-		["menu_running_from_death_beta_sc"] = "Nine Lives",
-		["menu_running_from_death_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##100%## increase to bleedout health.\n\nACE: ##$pro##\nYou gain the ability to get downed ##1## more time before going into custody.",																																																																																																																																																																																																																																		
-
 		--Undying--
-		["menu_feign_death_sc"] = "Undying",
-		["menu_feign_death_desc_sc"] = "BASIC: ##$basic##\nWhen you get downed, you have a ##20%## chance to instantly get revived.\n\nACE: ##$pro##\nThe chance to get revived is increased by an additional ##25%.##",																																																																																																																																																																																																																																		
+		["menu_running_from_death_beta_sc"] = "Undying",
+		["menu_running_from_death_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##100%## increase to bleedout health.\n\nACE: ##$pro##\nYou gain an additional ##100%## increase to bleedout health.\n\nYou may use your primary weapon while in bleedout.",																																																																																																																																																																																																																																		
+
+		--What Doesn't Kill You--
+		["menu_what_doesnt_kill_beta_sc"] = "What Doesn't Kill",
+		["menu_what_doesnt_kill_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## damage absorption for each down you are closer to custody. \n\nACE: ##$pro##\nYou gain an additional ##2## damage absorption.",
+
+		--Haunt--
+		["menu_haunt_sc"] = "Haunt",
+		["menu_haunt_desc_sc"] = "BASIC: ##$basic##\nKilling an enemy within ##18## meters has a ##10%## chance to spread panic for each down you are closer to custody. Panic makes enemies go into short bursts of uncontrollable fear.\n\nACE: ##$pro##\nEnemy panic chance is increased by an additional ##15%##.",																																																																																																																																																																																																																																		
 
 		--Messiah--
 		["menu_pistol_beta_messiah_sc"] = "Messiah",
-		["menu_pistol_beta_messiah_desc_sc"] = "BASIC: ##$basic##\nWhile in bleedout, killing an enemy will allow you to revive yourself.\n\nYou only have ##1## charge which is replenished when leaving custody.\n\nACE: ##$pro##\nYou now have a total of ##3## charges which are replenished when leaving custody.",																																																																																																																																																																																																																																		
+		["menu_pistol_beta_messiah_desc_sc"] = "BASIC: ##$basic##\nWhile in bleedout, killing an enemy will allow you to revive yourself.\n\nYou only have ##1## charge which is replenished when leaving custody.\n\nACE: ##$pro##\nYou can be downed ##1## additional time before going into custody. Messiah now has infinite charges, but each subsequent use requires an additional kill. This is reset when leaving custody.",																																																																																																																																																																																																																																		
 
 		--Martial Arts--
 		["menu_martial_arts_beta_sc"] = "Martial Arts",
@@ -1017,7 +1022,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
-		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nYou start with and cannot heal above ##25%## of your maximum health.\n\nYou take ##30%## less health damage and healing is reduced by ##75%.##\n\nACE: ##$pro##\nHealth damage taken is now reduced by ##60%## and healing is instead reduced by ##50%.##",																																																																																																																																																																																																																																		
+		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nYou start with and cannot heal above ##25%## of your maximum health.\n\nYou gain ##25## deflection but ##you can no longer heal##.\n\nEach point of deflection makes you take ##1%## less health damage.\n\nACE: ##$pro##\nYou gain an additional ##25## deflection, and healing is instead reduced by ##75%##.",																																																																																																																																																																																																																																		
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",

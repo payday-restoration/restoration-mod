@@ -464,7 +464,7 @@ function UpgradesTweakData:_init_pd2_values()
 		0.15,
 		0.20,
 		0.15,
-		0.15
+		0.05
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -691,11 +691,12 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Stun Resistance
 				self.values.player.damage_shake_addend = {1}
+				self.values.player.resist_melee_push = {0.04}
 				self.values.player.flashbang_multiplier = {0.5, 0.25}
 				
 				--Die Hard
 				self.values.player.armor_regen_timer_multiplier = {0.9}
-				self.values.player.primary_weapon_when_downed = {true}
+				self.values.player.deflection_addend = {0.05, 0.10}
 
 				--Transporter
 				self.values.carry.movement_speed_multiplier = {1.5}
@@ -968,7 +969,6 @@ function UpgradesTweakData:_init_pd2_values()
 				--Deep Pockets
 				self.values.player.melee_concealment_modifier = {2}
 				self.values.player.ballistic_vest_concealment = {4}
-				self.values.player.level_1_armor_addend = {2}
 				self.values.player.level_2_armor_addend = {2}
 				self.values.player.level_3_armor_addend = {2}
 				self.values.player.level_4_armor_addend = {2}
@@ -1155,23 +1155,27 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.temporary.reload_weapon_faster = {{1.25, 10}}
 				self.values.temporary.increased_movement_speed = {{1.25, 10}}
 				
-				--Nine Lives (Formerly Running From Death)
-				self.values.player.bleed_out_health_multiplier = {2}
-				self.values.player.additional_lives = {1, 3}
+				--Undying (Formerly Nine Lives, Formerly Running From Death)
+				self.values.player.bleed_out_health_multiplier = {2, 3}
+				self.values.player.primary_weapon_when_downed = {true}
 
-				--Up You Go
-				self.values.temporary.revived_damage_resist = {{0.7, 10}}
-				self.values.player.revived_health_regain = {1.4, 2.2}
-				
+				--What Doesn't Kill (Formerly Up You Go)
+				self.values.player.damage_absorption_addend = {0.2}
+				self.values.player.damage_absorption_low_revives = {0.1}
+
 				--Swan Song
 				self.values.temporary.berserker_damage_multiplier = { {1, 3}, {1, 9} }
 
-				--Undying
+				--Haunt (Formerly Undying)
 				self.values.player.cheat_death_chance = {0.2, 0.45}
+				self.values.player.killshot_spooky_panic_chance = {0.1}
+				self.values.player.killshot_extra_spooky_panic_chance = {0.15}
 				
 				--Messiah
 				self.values.player.messiah_revive_from_bleed_out = {1, 3}
 				self.values.player.pistol_revive_from_bleed_out = {1, 3}
+				self.values.player.infinite_messiah = {true}
+				self.values.player.additional_lives = {1, 3}
 			--}
 			
 			--[[   BRAWLER SUBTREE   ]]--
@@ -1198,7 +1202,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
-				self.values.player.healing_reduction = {0.25, 0.50}
+				self.values.player.healing_reduction = {0.00, 0.25}
+				self.values.player.frenzy_deflection = {0.25, 0.50}
                			self.values.player.health_damage_reduction = {0.85, 0.7}
                 		self.values.player.real_health_damage_reduction = {0.7, 0.4}
 				
@@ -2876,6 +2881,113 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_frenzy_deflection_1 = {
+		name_id = "menu_player_frenzy_deflection",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "frenzy_deflection",
+			category = "player"
+		}
+	}
+	self.definitions.player_frenzy_deflection_2 = {
+		name_id = "menu_player_frenzy_deflection",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "frenzy_deflection",
+			category = "player"
+		}
+	}
+	self.definitions.player_deflection_addend_1 = {
+		name_id = "menu_player_deflection_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "deflection_addend",
+			category = "player"
+		}
+	}
+	self.definitions.player_deflection_addend_2 = {
+		name_id = "menu_player_deflection_addend",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "deflection_addend",
+			category = "player"
+		}
+	}
+	self.definitions.player_bleed_out_health_multiplier_1 = {
+		name_id = "menu_player_bleed_out_health_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "bleed_out_health_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_bleed_out_health_multiplier_2 = {
+		name_id = "menu_player_bleed_out_health_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "bleed_out_health_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_resist_melee_push = {
+		name_id = "menu_player_resist_melee_push",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "resist_melee_push",
+			category = "player"
+		}
+	}
+	self.definitions.player_damage_absorption_addend = {
+		name_id = "menu_player_damage_absorption_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_absorption_addend",
+			category = "player"
+		}
+	}
+	self.definitions.player_damage_absorption_low_revives = {
+		name_id = "menu_player_damage_absorption_low_revives",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_absorption_low_revives",
+			category = "player"
+		}
+	}
+	self.definitions.player_infinite_messiah = {
+		name_id = "menu_player_infinite_messiah",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infinite_messiah",
+			category = "player"
+		}
+	}
+	self.definitions.player_killshot_spooky_panic_chance = {
+		name_id = "menu_player_killshot_spooky_panic_chance",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "killshot_spooky_panic_chance",
+			category = "player"
+		}
+	}
+	self.definitions.player_killshot_extra_spooky_panic_chance = {
+		name_id = "menu_player_killshot_extra_spooky_panic_chance",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "killshot_extra_spooky_panic_chance",
+			category = "player"
+		}
+	}
 end
-
 end

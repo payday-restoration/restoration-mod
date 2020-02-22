@@ -75,11 +75,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local base = 0
 				local mod = managers.player:body_armor_value("deflection", upgrade_level, 0)
 				base_stats[stat.name] = {value = (base + mod) * 100}
-				if managers.player:has_category_upgrade("player", "no_deflection") then
-					skill_stats[stat.name] = {value = (base + mod) * -100}
-				else 
-					skill_stats[stat.name] = {value = 0}
-				end
+				skill_stats[stat.name] = {value = managers.player:get_deflection_from_skills() * 100}
 			elseif stat.name == "damage_shake" then
 				local base = tweak_data.gui.armor_damage_shake_base
 				local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)

@@ -176,8 +176,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if dist_sq <= close_combat_sq then
 			regen_armor_bonus = regen_armor_bonus + self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)
 			local panic_chance = self:upgrade_value("player", "killshot_close_panic_chance", 0)
+				+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0)
+				+ self:upgrade_value("player", "killshot_spooky_panic_chance", 0) * self:player_unit():character_damage():get_missing_revives()
 			panic_chance = managers.modifiers:modify_value("PlayerManager:GetKillshotPanicChance", panic_chance)
-
+			
 			if panic_chance > 0 or panic_chance == -1 then
 				local slotmask = managers.slot:get_mask("enemies")
 				local units = World:find_units_quick("sphere", player_unit:movement():m_pos(), tweak_data.upgrades.killshot_close_panic_range, slotmask)
@@ -284,6 +286,28 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerManager:refill_messiah_charges()
 		if self._max_messiah_charges then
 			self._messiah_charges = self._max_messiah_charges
+		end
+
+		if self:has_category_upgrade("player", "infinite_messiah") then
+			self._messiah_kills_required = 1
+		end
+	end
+
+	function PlayerManager:use_messiah_charge()
+		if self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
+			self._messiah_charges = math.max(self._messiah_charges - 1, 0)
+		end
+	end
+
+	function PlayerManager:_on_messiah_event()
+		self._messiah_kills = self._messiah_kills + 1
+
+		if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required and self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
+			if self:has_category_upgrade("player", "infinite_messiah") then
+				self._messiah_kills_required = self._messiah_kills_required + 1
+				self._messiah_kills = 0
+			end
+			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 		end
 	end
 
@@ -501,12 +525,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
 			self._messiah_charges = self:upgrade_value("player", "messiah_revive_from_bleed_out", 0)
 			self._max_messiah_charges = self._messiah_charges
-
+			self._messiah_kills_required = 1
+			self._messiah_kills = 0
 			self._message_system:register(Message.OnEnemyKilled, "messiah_revive_from_bleed_out", callback(self, self, "_on_messiah_event"))
 		else
 			self._messiah_charges = 0
+			self._messiah_kills_required = 0
+			self._messiah_kills = 0
 			self._max_messiah_charges = self._messiah_charges
-
 			self._message_system:unregister(Message.OnEnemyKilled, "messiah_revive_from_bleed_out")
 		end
 
@@ -637,5 +663,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 			end
 		end
+	end
+
+	function PlayerManager:get_deflection_from_skills()
+		if self:has_category_upgrade("player", "no_deflection") then
+			return -self:body_armor_value("deflection", nil, 0)
+		end
+
+		return 
+			  self:upgrade_value("player", "deflection_addend", 0)
+			+ self:upgrade_value("player", "frenzy_deflection", 0)
 	end
 end

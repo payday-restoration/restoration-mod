@@ -618,7 +618,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 1},
 				[1] = {
 					upgrades = {
-						"player_damage_shake_addend"
+						"player_damage_shake_addend",
+						"player_resist_melee_push"
 					},
 					cost = self.costs.default
 				},
@@ -637,13 +638,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 2},
 				[1] = {
 					upgrades = {
-						"player_primary_weapon_when_downed"
+						"player_deflection_addend_1"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
-						"player_armor_regen_timer_multiplier"
+						"player_deflection_addend_2"
 					},
 					cost = self.costs.pro
 				}
@@ -1758,39 +1759,41 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Nine Lives--
+			--Undying--
 			self.skills.running_from_death = {
 				["name_id"] = "menu_running_from_death_beta_sc",
 				["desc_id"] = "menu_running_from_death_beta_desc_sc",
-				["icon_xy"] = {5, 2},
+				["icon_xy"] = {1, 2},
 				[1] = {
 					upgrades = {
-						"player_bleed_out_health_multiplier"
+						"player_bleed_out_health_multiplier_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_additional_lives_1"
+						"player_bleed_out_health_multiplier_2",
+						"player_primary_weapon_when_downed"
+
 					},
 					cost = self.costs.hightierpro
 				}
 			}
 
-			--Up you go--
+			--What Doesn't Kill You--
 			self.skills.up_you_go = {
-				["name_id"] = "menu_up_you_go_beta",
-				["desc_id"] = "menu_up_you_go_beta_desc",
-				["icon_xy"] = {11, 4},
+				["name_id"] = "menu_what_doesnt_kill_beta_sc",
+				["desc_id"] = "menu_what_doesnt_kill_beta_desc_sc",
+				["icon_xy"] = {11, 5},
 				[1] = {
 					upgrades = {
-						"player_revived_damage_resist_1"
+						"player_damage_absorption_low_revives"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_revived_health_regain_1"
+						"player_damage_absorption_addend"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1815,20 +1818,20 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Undying--
+			--Haunt--
 			self.skills.feign_death = {
-				["name_id"] = "menu_feign_death_sc",
-				["desc_id"] = "menu_feign_death_desc_sc",
-				["icon_xy"] = {11, 5},
+				["name_id"] = "menu_haunt_sc",
+				["desc_id"] = "menu_haunt_desc_sc",
+				["icon_xy"] = {5, 2},
 				[1] = {
 					upgrades = {
-						"player_cheat_death_chance_1"
+						"player_killshot_spooky_panic_chance"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_cheat_death_chance_2"
+						"player_killshot_extra_spooky_panic_chance"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1847,7 +1850,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_messiah_revive_from_bleed_out_2"
+						"player_infinite_messiah",
+						"player_additional_lives_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1947,7 +1951,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"player_healing_reduction_1",
-						"player_real_health_damage_reduction_1",
+						"player_frenzy_deflection_1",
 						"player_max_health_reduction_1"
 					},
 					cost = self.costs.hightier
@@ -1955,7 +1959,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_healing_reduction_2",
-						"player_real_health_damage_reduction_2"
+						"player_frenzy_deflection_2"
 					},
 					cost = self.costs.hightierpro
 				}

@@ -1,11 +1,12 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	
+	local mvec1 = Vector3()
 	function PlayerDamage:init(unit)
 		self._lives_init = tweak_data.player.damage.LIVES_INIT
 		self._lives_init = managers.modifiers:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
 		self._unit = unit
 		self._max_health_reduction = managers.player:upgrade_value("player", "max_health_reduction", 1)
 		self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)
+		self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills()
 		self._revives = Application:digest_value(0, true)
 		self._uppers_elapsed = 0
 
@@ -64,12 +65,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
 		self._keep_health_on_revive = false
 		self._biker_armor_regen_t = 0.0
-
-		self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0)
-
-		if managers.player:has_category_upgrade("player", "no_deflection") then		
-			self._deflection = 1
-		end
+		self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95)
 
 		local function revive_player()
 			self:revive(true)
@@ -176,11 +172,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._delayed_damage = {
 			epsilon = 0.001,
 			chunks = {}
-		}	
+		}
+
+		managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 	end
 	PlayerDamage._UPPERS_COOLDOWN = 60
 	
-	local player_damage_melee = PlayerDamage.damage_melee
 	function PlayerDamage:damage_melee(attack_data)
 		local player_unit = managers.player:player_unit()
 		if attack_data then
@@ -201,14 +198,68 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							attack_data.attacker_unit:sound():say("i03", true, nil, true)
 							managers.player:set_player_state("arrested")
 						end
-					end				
+					end			
 				end		
 			end
 		end
-		player_damage_melee(self, attack_data)
+
+		if not self:_chk_can_take_dmg() then
+			return
+		end
+
+		local pm = managers.player
+		local can_counter_strike = pm:has_category_upgrade("player", "counter_strike_melee")
+
+		if can_counter_strike and self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+			self._unit:movement():current_state():discharge_melee()
+
+			return "countered"
+		end
+
+		local blood_effect = attack_data.melee_weapon and attack_data.melee_weapon == "weapon"
+		blood_effect = blood_effect or attack_data.melee_weapon and tweak_data.weapon.npc_melee[attack_data.melee_weapon] and tweak_data.weapon.npc_melee[attack_data.melee_weapon].player_blood_effect or false
+
+		if blood_effect then
+			local pos = mvec1
+
+			mvector3.set(pos, self._unit:camera():forward())
+			mvector3.multiply(pos, 20)
+			mvector3.add(pos, self._unit:camera():position())
+
+			local rot = self._unit:camera():rotation():z()
+
+			World:effect_manager():spawn({
+				effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
+				position = pos,
+				normal = rot
+			})
+		end
+
+		local dmg_mul = pm:damage_reduction_skill_multiplier("melee")
+		attack_data.damage = attack_data.damage * dmg_mul
+
+		self._unit:sound():play("melee_hit_body", nil, nil)
+
+		local result = self:damage_bullet(attack_data)
+		local vars = {
+			"melee_hit",
+			"melee_hit_var2"
+		}
+
+		self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(1 * self._melee_push_multiplier, 0.2))
+
+		if pm:current_state() == "bipod" then
+			self._unit:movement()._current_state:exit(nil, "standard")
+			pm:set_player_state("standard")
+		end
+
+		local push_vel = Vector3(attack_data.push_vel.x * self._melee_push_multiplier, attack_data.push_vel.y * self._melee_push_multiplier, attack_data.push_vel.z * self._melee_push_multiplier)
+		self._unit:movement():push(push_vel)
+
+		return result
 	end
 	
-	local orig_dmg_xpl = PlayerDamage.damage_explosion
+	local orig_dmg_xpl = PlayerDamage.damage_explosion	
     function PlayerDamage:damage_explosion(attack_data,...)
         local attacker_unit = attack_data and attack_data.attacker_unit
         if attacker_unit then
@@ -221,7 +272,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end 
 	
 	--Lets you heal with full HP--
-	function PlayerDamage.full_revives(self)
+	function PlayerDamage:full_revives(self)
 		return Application:digest_value(self._revives, false) >= tweak_data.player.damage.LIVES_INIT + managers.player:upgrade_value("player", "additional_lives", 0)
 	end
 
@@ -231,6 +282,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if not no_messiah then
 			managers.player:refill_messiah_charges()
 		end
+
+		managers.player:set_damage_absorption(
+			"down_absorption",
+			0
+		)
 	end
 
 	local damage_bullet_original = PlayerDamage.damage_bullet
@@ -500,6 +556,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if managers.player:has_category_upgrade("player", "dodge_on_revive") then
 			self:fill_dodge_meter(3.0, true)
 		end
+		
+		managers.player:set_damage_absorption(
+			"down_absorption",
+			managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
+		)
 	end
 
 	function PlayerDamage:band_aid_health()
@@ -512,7 +573,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
 			self._revive_health_i = math.max(self._revive_health_i - 1, 1)
 			managers.environment_controller:set_last_life(1 >= Application:digest_value(self._revives, false))
+			managers.player:set_damage_absorption(
+				"down_absorption",
+				managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
+			)
 		end
+	end
+
+	function PlayerDamage:get_missing_revives()
+		return self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0) - self:get_revives()
 	end
 
 	function PlayerDamage:_calc_health_damage(attack_data)
@@ -819,5 +888,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:restore_armor(managers.player:upgrade_value("player", "biker_armor_regen")[1])
 			self._biker_armor_regen_t = self._biker_armor_regen_t + managers.player:upgrade_value("player", "biker_armor_regen")[2]
 		end
+	end
+
+	function PlayerDamage:consume_messiah_charge()
+		if self:got_messiah_charges() and not managers.player:has_category_upgrade("player", "infinite_messiah") then
+			self._messiah_charges = self._messiah_charges - 1
+
+			return true
+		end
+
+		return false
 	end
 end

@@ -510,11 +510,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				local base = 0
 				local mod = managers.player:body_armor_value("deflection", upgrade_level, 0)
 				base_stats[stat.name] = {value = (base + mod) * 100}
-				if managers.player:has_category_upgrade("player", "no_deflection") then
-					skill_stats[stat.name] = {value = (base + mod) * -100}
-				else 
-					skill_stats[stat.name] = {value = 0}
-				end
+				skill_stats[stat.name] = {value = managers.player:get_deflection_from_skills() * 100}
 			elseif stat.name == "damage_shake" then
 				local base = tweak_data.gui.armor_damage_shake_base
 				local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)
@@ -2154,14 +2150,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						percent = false,
 						name = "suppression",
 						offset = true
+					},
+					{
+						inverted = true,
+						name = "reload"
 					}
 				}
-
-				table.insert(self._stats_shown, {
-					inverted = true,
-					name = "reload"
-				})
-
 				self._stats_panel = self._weapon_info_panel:panel({
 					y = 58,
 					x = 10,

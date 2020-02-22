@@ -1474,8 +1474,8 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	self.values.player.armor_increase = {
 		0.50,
-		0.70,
-		0.90
+		0.75,
+		1.00
 	}
 
 	self.values.player.damage_to_armor = {

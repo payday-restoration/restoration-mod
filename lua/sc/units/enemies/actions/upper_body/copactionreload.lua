@@ -200,7 +200,7 @@ function CopActionReload:_play_reload()
 			self._machine:set_speed(redir_res, self._speed_mul)
 		end
 	else
-		cat_print("george", "[CopActionReload:_play_reload] redirect failed in", self._machine:segment_state(Idstring("base")))
+		--cat_print("george", "[CopActionReload:_play_reload] redirect failed in", self._machine:segment_state(Idstring("base")))
 
 		return
 	end
@@ -210,12 +210,13 @@ end
 
 function CopActionReload:on_attention(attention)
 	if attention then
+		local t = TimerManager:game():time()
+
 		self[self._ik_preset.start](self)
 
 		local vis_state = self._ext_base:lod_stage()
 
 		if vis_state and vis_state < 3 and self[self._ik_preset.get_blend](self) > 0 then
-			local t = TimerManager:game():time()
 			self._aim_transition = {
 				duration = 0.333,
 				start_t = t,
@@ -227,7 +228,7 @@ function CopActionReload:on_attention(attention)
 			self._get_target_pos = nil
 		end
 
-		self._mod_enable_t = TimerManager:game():time() + 0.5
+		self._mod_enable_t = t
 	else
 		self[self._ik_preset.stop](self)
 

@@ -21,6 +21,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local math_random = math.random
 	local math_clamp = math.clamp
 	local math_up = math.UP
+	local melee_vec1 = Vector3()
+	local melee_vec2 = Vector3()
+	local melee_vec3 = Vector3()
+	local melee_vec4 = Vector3()
 	local temp_vec2 = Vector3()
 	local temp_rot1 = Rotation()
 	local projectile_throw_pos_offset = Vector3(50, 50, 0)
@@ -339,11 +343,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if self._is_server then
 						if attention.unit:base() and attention.unit:base().is_husk_player then
 							self._shooting_husk_unit = true
-							self._next_vis_ray_t = t
+							self._next_vis_ray_t = t - 1
 						end
 					else
 						self._shooting_husk_unit = true
-						self._next_vis_ray_t = t
+						self._next_vis_ray_t = t - 1
 					end
 				end
 
@@ -378,7 +382,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					self._can_attack_with_special_move = true
 				end
 
-				if self._ext_base:has_tag("sniper") then
+				if self._ext_base._tweak_table == "sniper" then
 					self._use_sniper_focus = true
 					self._sniper_focus_start_t = t
 				end
@@ -421,7 +425,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						end
 					end
 
-					self._shoot_t = t + aim_delay
+					self._shoot_t = self._mod_enable_t + aim_delay
 					shoot_hist.focus_start_t = t
 					shoot_hist.m_last_pos = mvec3_copy(target_pos)
 				else
@@ -439,7 +443,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						end
 					end
 
-					self._shoot_t = t + aim_delay
+					self._shoot_t = self._mod_enable_t + aim_delay
 
 					shoot_hist = {
 						focus_start_t = t,
@@ -1146,17 +1150,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 
 				local my_fwd = mvec3_copy(self._ext_movement:m_head_rot():z())
-				local target_pos = Vector3()
 
-				mvec3_set(target_pos, my_fwd)
-				mvec3_mul(target_pos, target_dis)
-				mvec3_add(target_pos, shoot_from_pos)
+				mvec3_set(melee_vec1, my_fwd)
+				mvec3_mul(melee_vec1, target_dis)
+				mvec3_add(melee_vec1, shoot_from_pos)
 
-				local obstructed_by_geometry = self._unit:raycast("ray", shoot_from_pos, target_pos, "sphere_cast_radius", 20, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles"), "ray_type", "body melee", "report")
+				local obstructed_by_geometry = self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles"), "ray_type", "body melee", "report")
 
 				if not obstructed_by_geometry then
 					local target_has_shield = alive(attention.unit:inventory() and attention.unit:inventory()._shield_unit) and true or nil
-					local target_is_covered_by_shield = self._unit:raycast("ray", shoot_from_pos, target_pos, "sphere_cast_radius", 20, "slot_mask", self._shield_slotmask, "ray_type", "body melee", "report")
+					local target_is_covered_by_shield = self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", self._shield_slotmask, "ray_type", "body melee", "report")
 
 					if autotarget then
 						if not target_is_covered_by_shield then
@@ -1272,21 +1275,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 
-		local shoot_from_pos = self._shoot_from_pos
+		local shoot_from_pos = mvec3_copy(self._shoot_from_pos)
 		local my_fwd = mvec3_copy(self._ext_movement:m_head_rot():z())
-		local target_pos = Vector3()
 
-		mvec3_set(target_pos, my_fwd)
-		mvec3_mul(target_pos, self._melee_weapon_data.range)
-		mvec3_add(target_pos, shoot_from_pos)
+		mvec3_set(melee_vec2, my_fwd)
+		mvec3_mul(melee_vec2, self._melee_weapon_data.range)
+		mvec3_add(melee_vec2, shoot_from_pos)
 
 		--similar to player melee attacks, use a sphere ray instead of just a normal plain ray
-		local col_ray = self._unit:raycast("ray", shoot_from_pos, target_pos, "sphere_cast_radius", 20, "slot_mask", self._melee_weapon_data.slotmask, "ray_type", "body melee")
+		local col_ray = self._unit:raycast("ray", shoot_from_pos, melee_vec2, "sphere_cast_radius", 20, "slot_mask", self._melee_weapon_data.slotmask, "ray_type", "body melee")
 
 		if self._draw_melee_sphere_rays then
 			local draw_duration = 3
 			local new_brush = col_ray and Draw:brush(Color.red:with_alpha(0.5), draw_duration) or Draw:brush(Color.white:with_alpha(0.5), draw_duration)
-			local sphere_draw_pos = col_ray and col_ray.position or target_pos
+			local sphere_draw_pos = col_ray and col_ray.position or melee_vec2
 			local sphere_draw_size = col_ray and 5 or 20
 			new_brush:sphere(sphere_draw_pos, sphere_draw_size)
 		end
@@ -1297,25 +1299,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--sadly, no raycasts I tried so far (even with target_unit/target_body) seem to be able to hit the local player
 		if self._melee_weapon_data.hit_player and alive(local_player) and not self._unit:character_damage():is_friendly_fire(local_player) then
 			local player_head_pos = local_player:movement():m_head_pos()
-			local player_vec = Vector3()
-			local player_distance = mvec3_dir(player_vec, mvec3_copy(shoot_from_pos), mvec3_copy(player_head_pos))
+			local player_distance = mvec3_dir(melee_vec3, shoot_from_pos, player_head_pos)
 
 			if player_distance <= self._melee_weapon_data.range then
 				if not col_ray or col_ray.distance > player_distance or not self._unit:raycast("ray", shoot_from_pos, player_head_pos, "sphere_cast_radius", 5, "slot_mask", self._melee_weapon_data.slotmask, "ray_type", "body melee", "report") then
-					local flat_vec = Vector3()
-
-					mvec3_set(flat_vec, player_vec)
-					mvec3_set_z(flat_vec, 0)
-					mvec3_norm(flat_vec)
+					mvec3_set(melee_vec4, melee_vec3)
+					mvec3_set_z(melee_vec4, 0)
+					mvec3_norm(melee_vec4)
 
 					local min_dot = math_lerp(0, 0.4, player_distance / self._melee_weapon_data.range)
-					local fwd_dot = mvec3_dot(my_fwd, flat_vec)
+					local fwd_dot = mvec3_dot(my_fwd, melee_vec4)
 
 					if fwd_dot >= min_dot then
 						col_ray = {
 							unit = local_player,
 							position = player_head_pos,
-							ray = mvec3_copy(player_vec:normalized())
+							ray = mvec3_copy(melee_vec3:normalized())
 						}
 
 						if self._draw_melee_sphere_rays then

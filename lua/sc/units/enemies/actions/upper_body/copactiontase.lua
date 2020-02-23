@@ -173,7 +173,7 @@ function CopActionTase:on_attention(attention)
 		self._get_target_pos = nil
 	end
 
-	self._mod_enable_t = TimerManager:game():time() + 0.5
+	self._mod_enable_t = t + 0.5
 
 	self.update = nil
 	self._attention = attention
@@ -201,12 +201,12 @@ function CopActionTase:on_attention(attention)
 		self._common_data.ext_network:send("action_tase_event", 1)
 
 		if not attention_unit:base().is_husk_player then
-			self._shoot_t = t + shoot_delay
+			self._shoot_t = self._mod_enable_t + shoot_delay
 			self._tasing_local_unit = attention_unit
 			self._tasing_player = attention_unit:base().is_local_player and true or nil
 		end
 	elseif attention_unit:base().is_local_player then
-		self._shoot_t = t + shoot_delay
+		self._shoot_t = self._mod_enable_t + shoot_delay
 		self._tasing_local_unit = attention_unit
 		self._tasing_player = true
 	end
@@ -326,25 +326,27 @@ function CopActionTase:update(t)
 	end
 
 	if not self._ext_anim.reload and not self._ext_anim.equip and not self._ext_anim.melee then
-		if self._firing_at_husk and self._attention.unit:movement():tased() then
-			if self._tase_effect then
-				World:effect_manager():fade_kill(self._tase_effect)
+		if self._firing_at_husk then
+			if self._attention.unit:movement():tased() then
+				if self._tase_effect then
+					World:effect_manager():fade_kill(self._tase_effect)
+				end
+
+				self._tase_effect = World:effect_manager():spawn({
+					force_synch = true,
+					effect = Idstring("effects/payday2/particles/character/taser_thread"),
+					parent = self._weapon_obj_fire
+				})
+
+				self._tasered_sound = self._unit:sound():play("tasered_3rd", nil)
+
+				if vis_state == 1 then
+					self._ext_movement:play_redirect("recoil_single")
+				end
+
+				self._discharging_on_husk = true
+				self._firing_at_husk = nil
 			end
-
-			self._tase_effect = World:effect_manager():spawn({
-				force_synch = true,
-				effect = Idstring("effects/payday2/particles/character/taser_thread"),
-				parent = self._weapon_obj_fire
-			})
-
-			self._tasered_sound = self._unit:sound():play("tasered_3rd", nil)
-
-			if vis_state == 1 then
-				self._ext_movement:play_redirect("recoil_single")
-			end
-
-			self._discharging_on_husk = true
-			self._firing_at_husk = nil
 		elseif self._discharging_on_husk then
 			if not self._attention.unit:movement():tased() then
 				self._discharging_on_husk = nil
@@ -381,13 +383,13 @@ function CopActionTase:update(t)
 					self.update = self._upd_empty
 				end
 			end
-		elseif self._common_data.allow_fire and target_vec and self._mod_enable_t < t then
+		elseif self._common_data.allow_fire and target_vec then
 			if not self._played_sound_this_once then
 				self._played_sound_this_once = true
 				self._unit:sound():play("taser_charge", nil)
 			end
 
-			if self._shoot_t and self._shoot_t < t then
+			if self._shoot_t and self._mod_enable_t < t and self._shoot_t < t then
 				if self._tasing_local_unit and target_dis < self._tase_distance then
 					local record = managers.groupai:state():criminal_record(self._tasing_local_unit:key())
 

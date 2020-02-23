@@ -331,7 +331,7 @@ function ExplosionManager:detect_and_give_dmg(params)
 			local dir, len, damage, ray_hit, damage_character = nil
 			local dmg_mul = 1
 
-			if character and hit_body:unit():movement() and hit_body:unit():movement().m_com then
+			if character then
 				if not units_to_hit[hit_body:unit():key()] then
 					if params.no_raycast_check_characters then
 						ray_hit = true
@@ -345,28 +345,30 @@ function ExplosionManager:detect_and_give_dmg(params)
 								units_to_hit[hit_body:unit():key()] = true
 								damage_character = true
 
-								local det_pos = params.hit_pos
-								local e_com = hit_body:unit():movement():m_com() --hit_body:unit():body("body"):center_of_mass()
-								local shield_ray = World:raycast("ray", det_pos, e_com, "slot_mask", managers.slot:get_mask("enemy_shield_check"))
+								if hit_body:unit():movement() and hit_body:unit():movement().m_com then
+									local det_pos = params.hit_pos
+									local e_com = hit_body:unit():movement():m_com() --hit_body:unit():body("body"):center_of_mass()
+									local shield_ray = World:raycast("ray", det_pos, e_com, "slot_mask", managers.slot:get_mask("enemy_shield_check"))
 
-								if shield_ray and alive(shield_ray.unit:parent()) then
-									if draw_shield_obstructions then
-										local draw_duration = 3
-										local new_brush = Draw:brush(Color.blue:with_alpha(0.5), draw_duration)
-										new_brush:cylinder(det_pos, shield_ray.position, 1.5)
-									end
+									if shield_ray and alive(shield_ray.unit:parent()) then
+										if draw_shield_obstructions then
+											local draw_duration = 3
+											local new_brush = Draw:brush(Color.blue:with_alpha(0.5), draw_duration)
+											new_brush:cylinder(det_pos, shield_ray.position, 1.5)
+										end
 
-									local p_unit = shield_ray.unit:parent()
-									local p_unit_dmg = p_unit:character_damage()
+										local p_unit = shield_ray.unit:parent()
+										local p_unit_dmg = p_unit:character_damage()
 
-									if p_unit_dmg and p_unit_dmg.dead and not p_unit_dmg:dead() then
-										if hit_body:unit() == p_unit then
-											if p_unit:base():char_tweak().damage.shield_explosion_damage_mul then
-												dmg_mul = p_unit:base():char_tweak().damage.shield_explosion_damage_mul
-											end
-										else
-											if p_unit:base():char_tweak().damage.shield_explosion_ally_damage_mul then
-												dmg_mul = p_unit:base():char_tweak().damage.shield_explosion_ally_damage_mul
+										if p_unit_dmg and p_unit_dmg.dead and not p_unit_dmg:dead() then
+											if hit_body:unit() == p_unit then
+												if p_unit:base():char_tweak().damage.shield_explosion_damage_mul then
+													dmg_mul = p_unit:base():char_tweak().damage.shield_explosion_damage_mul
+												end
+											else
+												if p_unit:base():char_tweak().damage.shield_explosion_ally_damage_mul then
+													dmg_mul = p_unit:base():char_tweak().damage.shield_explosion_ally_damage_mul
+												end
 											end
 										end
 									end

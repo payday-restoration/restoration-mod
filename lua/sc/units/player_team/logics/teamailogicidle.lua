@@ -333,10 +333,6 @@ function TeamAILogicIdle._ignore_shield(unit, attention)
 		return false
 	end
 
-	if not TeamAILogicIdle._shield_check then
-		TeamAILogicIdle._shield_check = managers.slot:get_mask("enemy_shield_check")
-	end
-
 	local shoot_from_pos = unit:movement():m_head_pos()
 	local target_pos = nil
 
@@ -372,6 +368,10 @@ function TeamAILogicIdle._ignore_shield(unit, attention)
 end
 
 function TeamAILogicIdle._get_priority_attention(data, attention_objects, reaction_func)
+	if not TeamAILogicIdle._vis_check_slotmask then
+		TeamAILogicIdle._vis_check_slotmask = managers.slot:get_mask("AI_visibility")
+	end
+
 	reaction_func = reaction_func or TeamAILogicBase._chk_reaction_to_attention_object
 	local best_target, best_target_priority_slot, best_target_priority, best_target_reaction = nil
 
@@ -615,7 +615,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 									local nearby_medic = managers.enemy:get_nearby_medic(att_unit)
 
 									if nearby_medic then
-										if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_medic:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report") then
+										if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_medic:movement():m_head_pos(), "slot_mask", TeamAILogicIdle._vis_check_slotmask, "ray_type", "ai_vision", "report") then
 											target_priority_slot = 0
 											check_other_healing_sources = nil
 										end
@@ -681,7 +681,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 								local nearby_doc = get_nearby_medic_summers(att_unit)
 
 								if nearby_doc then
-									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_doc:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report") then
+									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_doc:movement():m_head_pos(), "slot_mask", TeamAILogicIdle._vis_check_slotmask, "ray_type", "ai_vision", "report") then
 										if target_priority_slot == 1 then
 											target_priority_slot = target_priority_slot + 1
 										else
@@ -693,7 +693,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 								local nearby_lpf = get_nearby_lpf(att_unit)
 
 								if nearby_lpf then
-									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_lpf:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report") then
+									if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_lpf:movement():m_head_pos(), "slot_mask", TeamAILogicIdle._vis_check_slotmask, "ray_type", "ai_vision", "report") then
 										target_priority_slot = target_priority_slot + 1
 									end
 								end

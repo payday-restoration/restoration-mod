@@ -1,0 +1,12 @@
+<materials version="3">
+	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/murkywater_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/murkywater_df"/>
+	</material>
+	<material name="mtr_helmet_lod_1" render_template="generic:DIFFUSE_TEXTURE:RL_COPS" version="2">
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/murkywater_df" mip="1"/>
+	</material>
+	<material name="mtr_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:RL_COPS" version="2">
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/murkywater_df" mip="4"/>
+	</material>
+</materials>

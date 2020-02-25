@@ -698,7 +698,9 @@ function HUDAssaultCorner:_start_assault(text_list)
 	assault_panel:animate(callback(self, self, "_animate_assault"))
 	text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
 	self:_set_feedback_color(self._assault_color)
+	if self:has_waves() then
 	self._hud_panel:child("wave_panel"):set_visible(true)
+        end
 	
 	if managers.skirmish:is_skirmish() then
 		self:_popup_wave_started()

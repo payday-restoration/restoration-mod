@@ -143,7 +143,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	if self._hud_panel:child("wave_panel") then
 		self._hud_panel:remove(self._hud_panel:child("wave_panel"))
 	end
-	self._completed_waves = 0
+	--self._completed_waves = 0
 	if self:has_waves() then
 		self._wave_panel_size = {250, 38}
 		local wave_w, wave_h = 38, 38
@@ -155,7 +155,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		})
 		local num_waves = wave_panel:text({
 			name = "num_waves",
-			text = self:get_completed_waves_string(),
+			text = "0",
 			valign = "center",
 			vertical = "center",
 			align = "center",
@@ -587,11 +587,12 @@ end
 function HUDAssaultCorner:set_assault_wave_number(assault_number)
 	self._wave_number = assault_number
 	local panel = self._hud_panel:child("wave_panel")
+	local num_wave_count = managers.network:session():is_host() and managers.groupai:state():get_assault_number() or self._wave_number	
 	print("found panel")
 	if panel then
 		local wave_text = panel:child("num_waves")
 		if wave_text then
-			wave_text:set_text(self:get_completed_waves_string())
+			wave_text:set_text(num_wave_count)
 		end
 	end
 end
@@ -697,6 +698,9 @@ function HUDAssaultCorner:_start_assault(text_list)
 	assault_panel:animate(callback(self, self, "_animate_assault"))
 	text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
 	self:_set_feedback_color(self._assault_color)
+	if self:has_waves() then
+	self._hud_panel:child("wave_panel"):set_visible(true)
+	end
 	
 	if managers.skirmish:is_skirmish() then
 		self:_popup_wave_started()
@@ -765,7 +769,8 @@ function HUDAssaultCorner:_end_assault()
 		self:_update_assault_hud_color(self._assault_survived_color)
 		self:_set_text_list(self:_get_survived_assault_strings())
 		text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
-		self._completed_waves = self._completed_waves + 1
+		--self._completed_waves = self._completed_waves + 1
+		self._hud_panel:child("wave_panel"):set_visible(false)		
 		wave_panel:animate(callback(self, self, "_animate_wave_completed"), self)
 		if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
 			corner_panel:child( "corner" ):set_color(self._wave_corner_color)

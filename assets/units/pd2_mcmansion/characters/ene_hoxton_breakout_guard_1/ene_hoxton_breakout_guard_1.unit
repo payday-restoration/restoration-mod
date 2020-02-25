@@ -23,6 +23,7 @@
 			<var name="_nr_head_gear_objects" value="2" />
 			<var name="_head_gear" value="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
+			<var name="_death_sequence" value="kill_murky_flashlights" />			
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

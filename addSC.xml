@@ -574,11 +574,6 @@
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk_nm" force="true"/>
 
-	<!--STOPPIN POWA GET SUMMM chimano88 is now c45-->
-	<model path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true"/>		
-	<texture path="units/payday2/weapons/wpn_npc_c45/pistol_df" force="true"/>
-	<texture path="units/payday2/weapons/wpn_npc_c45/pistol_nm" force="true"/>
-
 	<!--Big Dave-->
 	<object path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
 	<cooked_physics path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
@@ -2045,6 +2040,26 @@
 	<sequence_manager path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
 	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>	
 	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>		
+
+	<!--NPC Crosskill.45 1911-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>		
+	<object path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_nm"/>
+	
+	<!--NPC ScarLight-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>		
+	<object path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
 	
 	<!--textures-->	
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>

@@ -58,9 +58,9 @@
 	"RestorationModEnv_UkraDescID" : "Select an environment for Ukrainian Job.",
 
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
-	"RestorationMoAltLastDownColorDescID" : "Switches the last down color grading to color_sin.",
-	"RestorationModNoBleedoutTiltTitleID" : "Disable tilt when downed",
-	"RestorationMoANoBleedoutTiltDescID" : "",
+	"RestorationModAltLastDownColorDescID" : "Switches the last down color grading to color_sin_classic.",
+	"RestorationModNoBleedoutTiltTitleID" : "Disable Bleedout Camera Tilt",
+	"RestorationModNoBleedoutTiltDescID" : "Disables the camera tilt that happens while in bleedout",
 	
 	"default" : "Default",
 	"random" : "Random",

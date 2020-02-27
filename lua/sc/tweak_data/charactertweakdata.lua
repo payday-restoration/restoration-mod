@@ -11818,7 +11818,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"bravo_shotgun",
 			"bravo_lmg",
 			"bravo_dmr",
-			"flamethrower_mk2_flamer_summers"
+			"flamethrower_mk2_flamer_summers",
+			"scar_npc",
+			"m1911_npc"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11876,7 +11878,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou"),
 			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"),
 			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
-			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers")
+			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"),
+			Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light"),
+			Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911")
 		}
 	end
 

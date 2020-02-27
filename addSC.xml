@@ -1429,9 +1429,9 @@
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
 	<sequence_manager path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky"/>
-        <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>	
-        <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>		
-        <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>		
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>	
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>		
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>		
 	<sequence_manager path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>		
@@ -2039,27 +2039,7 @@
 	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>	
 	<sequence_manager path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
 	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>	
-	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>		
-
-	<!--NPC Crosskill.45 1911-->
-	<cooked_physics path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>	
-	<material_config path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
-	<model path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>		
-	<object path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
-	<sequence_manager path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
-	<unit path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" load="true" force="false"/>
-	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_df"/>
-	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_nm"/>
-	
-	<!--NPC ScarLight-->
-	<cooked_physics path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>	
-	<material_config path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
-	<model path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>		
-	<object path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
-	<sequence_manager path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
-	<unit path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" load="true" force="false"/>
-	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
-	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>	
 	
 	<!--textures-->	
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
@@ -2148,4 +2128,39 @@
 	<object path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet"/>	
 	<unit path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet" load="true"/>		
 
+	<!--NPC Crosskill.45 1911-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>		
+	<object path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_nm"/>
+	
+	<!--NPC ScarLight-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>		
+	<object path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
+	
+	<!--female cop husk fixes-->	
+	<unit path="units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1_husk" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2_husk" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3_husk" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4_husk" force="true" />	
+	
+	<!--m1911 users
+	<unit path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" load="true" force="true" />	
+	<unit path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true" force="true" />
+	
+	<unit path="units/payday2/characters/ene_secret_service_1/ene_secret_service_1" load="true" force="true" />	
+	<unit path="units/payday2/characters/ene_secret_service_1/ene_secret_service_1_husk" load="true" force="true" />	
+	
+	<unit path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2" load="true" force="true" />	
+	<unit path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2_husk" load="true" force="true" />-->	
 </table>

@@ -1,30 +1,5 @@
 <?xml version="1.0"?>
 <tweak name="settings/network" extension="network_settings">
-    <search>
-        <network/>
-    </search>
-
-    <target>
-		<!-- RestorationMod RECIEVERS -->
-
-		<!-- Connection -->
-		<rpc>
-			<message name="RestorationMod__sync_player_installed_mod" delivery="reliable" receiver="RestorationMod__connection">
-				<param type="int" min="0" max="15" />  <!-- Player -->
-				<param type="string" step="0.01" />     <!-- Mod id -->
-				<param type="longstring" step="0.01" /> <!-- Mod friendly name -->
-			</message>
-		</rpc>
-
-		<!-- END OF NETWORK BASE -->	<!-- END OF NETWORK BASE -->	<!-- END OF NETWORK BASE -->
-
-		<!-- Unit -->
-		<rpc>
-
-		</rpc>
-    </target>
-</tweak>
-<tweak name="settings/network" extension="network_settings">
 	<search>
 		<network/>
 		<rpc/>

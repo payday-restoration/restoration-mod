@@ -306,35 +306,35 @@ restoration.environments_choice_ukrainian_job = {
 
 -- These tables show the network messages we've modified in the network settings pdmod
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
-local connection_network_handler_funcs = {
+-- local connection_network_handler_funcs = {
 	-- 'sync_player_installed_mod'
 }
 
-local unit_network_handler_funcs = {
+-- local unit_network_handler_funcs = {
 	-- 'sync_grenades',
 	-- 'place_grenade_crate'
 }
 
 -- Builds a single table from our two string based keys for each handler above
-restoration.network_handler_funcs = {}
-function restoration:add_handler_funcs(handler_funcs)
-	for i = 1, #handler_funcs do
-		self.network_handler_funcs[handler_funcs[i]] = true
-	end
-end
+-- restoration.network_handler_funcs = {}
+-- function restoration:add_handler_funcs(handler_funcs)
+-- 	for i = 1, #handler_funcs do
+-- 		self.network_handler_funcs[handler_funcs[i]] = true
+-- 	end
+-- end
 
-restoration:add_handler_funcs(connection_network_handler_funcs)
-restoration:add_handler_funcs(unit_network_handler_funcs)
+-- restoration:add_handler_funcs(connection_network_handler_funcs)
+-- restoration:add_handler_funcs(unit_network_handler_funcs)
 
 
 -- Takes the network keys we defined above and prefixes any matches on the given handler
-function restoration:rename_handler_funcs(NetworkHandler)
-	for key, value in pairs(restoration.network_handler_funcs) do
-		if NetworkHandler[key] then
-			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
-		end
-	end
-end
+-- function restoration:rename_handler_funcs(NetworkHandler)
+-- 	for key, value in pairs(restoration.network_handler_funcs) do
+-- 		if NetworkHandler[key] then
+-- 			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+-- 		end
+-- 	end
+-- end
 
 Hooks:Register("restoration_on_synced_peer")
 Hooks:Add("restoration_on_synced_peer","restoration_do_sync_peer_stuff",function(peer,peer_id)

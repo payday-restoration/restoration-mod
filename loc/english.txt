@@ -59,6 +59,8 @@
 
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
 	"RestorationMoAltLastDownColorDescID" : "Switches the last down color grading to color_sin.",
+	"RestorationModNoBleedoutTiltTitleID" : "Disable tilt when downed",
+	"RestorationMoANoBleedoutTiltDescID" : "",
 	
 	"default" : "Default",
 	"random" : "Random",

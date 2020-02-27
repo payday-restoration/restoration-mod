@@ -1169,7 +1169,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Haunt (Formerly Undying)
 				self.values.player.cheat_death_chance = {0.2, 0.45}
-				self.values.player.killshot_spooky_panic_chance = {0.08}
+				self.values.player.killshot_spooky_panic_chance = {0.1}
 				self.values.player.killshot_extra_spooky_panic_chance = {0.2}
 				
 				--Messiah

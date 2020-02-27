@@ -186,7 +186,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 				for e_key, unit in pairs(units) do
 					if alive(unit) and unit:character_damage() and not unit:character_damage():dead() then
-						unit:character_damage():build_suppression(0, panic_chance)
+						unit:character_damage():build_suppression(200, panic_chance)
 					end
 				end
 			end

@@ -548,6 +548,36 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		return base_stats, mods_stats, skill_stats
 	end
 
+	--If this breaks then copy the vanilla version and change the value of self._armor_stats_shown to be
+	--			self._armor_stats_shown = {
+	--				{
+	--					name = "armor"
+	--				},
+	--				{
+	--					name = "health"
+	--				},
+	--				{
+	--					name = "deflection"
+	--				},
+	--				{
+	--					revert = true,
+	--					name = "dodge"
+	--				},
+	--				{
+	--					index = true,
+	--					name = "concealment"
+	--				},
+	--				{
+	--					name = "movement"
+	--				},
+	--				{
+	--					name = "stamina"
+	--				},
+	--				{
+	--					name = "damage_shake"
+	--				}
+	--			}
+	-- Or just add the name = "deflection" to the table somewhere if you don't care much for a logical layout.
 	function BlackMarketGui:_setup(is_start_page, component_data)
 		self._in_setup = true
 
@@ -869,7 +899,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				local market_bundles = {}
 
 				for entry, safe in pairs(tweak_data.economy.safes) do
-					if safe.market_link then
+					if not safe.promo then
 						table.insert(market_bundles, {
 							content = safe.content or "NONE",
 							safe = entry,
@@ -879,12 +909,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					end
 				end
 
+				local loc_sort = {}
+
 				table.sort(market_bundles, function (x, y)
 					if x.prio ~= y.prio then
-						return y.prio < x.prio
+						return (x.prio or 0) < (y.prio or 0)
 					end
 
-					return y.safe < x.safe
+					if not loc_sort[x.safe] then
+						loc_sort[x.safe] = managers.localization:text(tweak_data.economy.safes[x.safe].name_id)
+					end
+
+					if not loc_sort[y.safe] then
+						loc_sort[y.safe] = managers.localization:text(tweak_data.economy.safes[y.safe].name_id)
+					end
+
+					return loc_sort[x.safe] < loc_sort[y.safe]
 				end)
 
 				local num_market_bundles = #market_bundles
@@ -893,7 +933,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					info_box_top = info_box_top + h
 					info_box_h = info_box_h - h
 					local title_text = self._panel:text({
-						text = managers.localization:to_upper_text("menu_steam_market_title"),
+						text = managers.localization:to_upper_text("menu_steam_market_inspect_title"),
 						font = small_font,
 						font_size = small_font_size,
 						color = tweak_data.screen_colors.text
@@ -907,7 +947,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					local w = self._market_panel:w() - 2 * padding
 					local h = self._market_panel:h() - 2 * padding
 					local size = math.min(w / 2, h - 2 * small_font_size - padding * 0.5)
-					local panel, safe_panel, drill_panel, safe_text, drill_text, safe_market_panel, drill_market_panel, title_text, show_content_text, divider = nil
+					local panel, safe_panel, drill_panel, safe_text, drill_text, safe_market_panel, drill_market_panel, title_text = nil
 					self._market_bundles = {}
 					self._data.active_market_bundle = self._data.active_market_bundle or 1
 					local texture, rect = tweak_data.hud_icons:get_icon_data("scrollbar_arrow")
@@ -951,6 +991,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					self._market_bundles.arrow_left = arrow_left
 					self._market_bundles.arrow_right = arrow_right
 					self._market_bundles.num_bundles = num_market_bundles
+					self._market_bundles.market_bundles = market_bundles
 
 					for i, bundle in ipairs(market_bundles) do
 						panel = self._market_panel:panel({
@@ -993,11 +1034,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 							h = size
 						})
 
-						safe_panel:set_center_x(w * 0.25)
+						safe_panel:set_center_x(w * 0.5)
 						self:request_texture(texture_path, safe_panel, true, "normal")
 
 						safe_text = panel:text({
-							text = managers.localization:to_upper_text("menu_steam_market_buy_safe"),
+							blend_mode = "add",
+							text = managers.localization:to_upper_text("menu_steam_market_show_content"),
 							font = small_font,
 							font_size = small_font_size,
 							x = safe_panel:x(),
@@ -1006,38 +1048,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						})
 
 						self:make_fine_text(safe_text)
-
-						divider = panel:text({
-							text = " | ",
-							font = small_font,
-							font_size = small_font_size,
-							x = safe_text:right(),
-							y = safe_text:y(),
-							color = tweak_data.screen_colors.button_stage_3
-						})
-
-						self:make_fine_text(divider)
-
-						show_content_text = panel:text({
-							blend_mode = "add",
-							text = managers.localization:to_upper_text("menu_steam_market_show_content"),
-							font = small_font,
-							font_size = small_font_size,
-							x = divider:right(),
-							y = safe_text:y(),
-							color = tweak_data.screen_colors.button_stage_3
-						})
-
-						self:make_fine_text(show_content_text)
-						divider:set_center_x(safe_panel:center_x())
-						safe_text:set_right(math.round(math.max(divider:left())))
-
-						if safe_text:left() < 0 then
-							safe_text:set_left(0)
-							divider:set_left(safe_text:right())
-						end
-
-						show_content_text:set_left(math.round(divider:right()))
+						safe_text:set_center_x(safe_panel:center_x())
 
 						safe_market_panel = panel:panel({
 							x = safe_panel:x(),
@@ -1093,11 +1104,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 						self._market_bundles[i] = {
 							panel = panel,
-							show_content = {
-								entry = bundle.content,
-								select = show_content_text,
-								text = show_content_text
-							},
 							safe = {
 								entry = bundle.safe,
 								image = safe_panel,
@@ -1350,6 +1356,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					name = "bm_menu_btn_customize_gadget",
 					callback = callback(self, self, "open_customize_gadget_menu")
 				},
+				wcs_equip = {
+					btn = "BTN_A",
+					prio = 1,
+					name = "bm_menu_btn_equip_weapon_cosmetic",
+					callback = callback(self, self, "equip_weapon_color_callback")
+				},
+				wcs_customize_color = {
+					btn = "BTN_A",
+					prio = 1,
+					name = "bm_menu_btn_customize_weapon_color",
+					callback = callback(self, self, "open_customize_weapon_color_menu")
+				},
 				wcc_equip = {
 					btn = "BTN_A",
 					prio = 1,
@@ -1363,9 +1381,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					callback = callback(self, self, "choose_weapon_cosmetics_callback")
 				},
 				wcc_remove = {
-					btn = "BTN_A",
-					prio = 1,
+					btn = "BTN_X",
 					name = "bm_menu_btn_remove_weapon_cosmetic",
+					prio = 1,
+					pc_btn = "menu_remove_item",
 					callback = callback(self, self, "remove_weapon_cosmetics_callback")
 				},
 				wcc_preview = {
@@ -2150,12 +2169,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						percent = false,
 						name = "suppression",
 						offset = true
-					},
-					{
-						inverted = true,
-						name = "reload"
 					}
 				}
+
+				table.insert(self._stats_shown, {
+					inverted = true,
+					name = "reload"
+				})
+
 				self._stats_panel = self._weapon_info_panel:panel({
 					y = 58,
 					x = 10,

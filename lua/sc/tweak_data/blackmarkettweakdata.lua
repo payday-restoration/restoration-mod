@@ -3591,6 +3591,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fear.expire_t = 1.1
 	self.melee_weapons.fear.melee_damage_delay = 0.1	
 	self.melee_weapons.fear.info_id = "bm_melee_cqc_info"
+	
+	--Ay, qué lindo carnaval--	
+	self.melee_weapons.chac.stats.min_damage = 3.4
+	self.melee_weapons.chac.stats.max_damage = 5.5
+	self.melee_weapons.chac.stats.min_damage_effect = 4
+	self.melee_weapons.chac.stats.max_damage_effect = 4.5
+	self.melee_weapons.chac.stats.charge_time = 0.6
+	self.melee_weapons.chac.repeat_expire_t = 0.45
+	self.melee_weapons.chac.stats.range = 160
+	self.melee_weapons.chac.stats.concealment = 29
+	self.melee_weapons.chac.melee_damage_delay = 0.2
+	self.melee_weapons.chac.expire_t = 1.1		
 end	
 
 end

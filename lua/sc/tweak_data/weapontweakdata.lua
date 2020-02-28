@@ -3348,12 +3348,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
-		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy'}
+		local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech'}
 		for i, wep_id in ipairs(tact_rel) do
 			self[wep_id].tactical_reload = 1
 			self[wep_id].has_description = false
 		end
-		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy'}
+		local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech'}
 		for i, wep_id in ipairs(tact_akimbo_pistol) do
 			self[wep_id].tactical_reload = 2
 			self[wep_id].recategorize = "akimbo"
@@ -8967,7 +8967,157 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}		
-		self.x_legacy.panic_suppression_chance = 0.0			
+		self.x_legacy.panic_suppression_chance = 0.0		
+
+		--Beretta Auto
+		self.beer.use_data.selection_index = 2
+		self.beer.AMMO_MAX = 180
+		self.beer.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.beer.fire_mode_data.fire_rate = 0.05454545454
+		self.beer.spread.standing = 3
+		self.beer.spread.crouching = 2
+		self.beer.spread.steelsight = 1
+		self.beer.spread.moving_standing = 4
+		self.beer.spread.moving_crouching = 3
+		self.beer.spread.moving_steelsight = 2
+		self.beer.kick.standing = self.new_m4.kick.standing
+		self.beer.kick.crouching = self.new_m4.kick.standing
+		self.beer.kick.steelsight = self.new_m4.kick.standing
+		self.beer.stats = {
+			damage = 34,
+			spread = 14,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.beer.panic_suppression_chance = 0.0
+		--Disabled
+		self.x_beer.use_data.selection_index = 4	
+
+		--CZ 75
+		self.czech.AMMO_MAX = 135
+		self.czech.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.czech.fire_mode_data.fire_rate = 0.06
+		self.czech.spread.standing = 3
+		self.czech.spread.crouching = 2
+		self.czech.spread.steelsight = 1
+		self.czech.spread.moving_standing = 4
+		self.czech.spread.moving_crouching = 3
+		self.czech.spread.moving_steelsight = 2
+		self.czech.kick.standing = self.new_m4.kick.standing
+		self.czech.kick.crouching = self.new_m4.kick.standing
+		self.czech.kick.steelsight = self.new_m4.kick.standing
+		self.czech.stats = {
+			damage = 34,
+			spread = 13,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.czech.panic_suppression_chance = 0.0		
+		
+		--Akimbo CZ 75
+		self.x_czech.AMMO_MAX = 180
+		self.x_czech.AMMO_PICKUP = self:_pickup_chance(180, 1)
+		self.x_czech.fire_mode_data.fire_rate = 0.06
+		self.x_czech.spread.standing = 3
+		self.x_czech.spread.crouching = 2
+		self.x_czech.spread.steelsight = 1
+		self.x_czech.spread.moving_standing = 4
+		self.x_czech.spread.moving_crouching = 3
+		self.x_czech.spread.moving_steelsight = 2
+		self.x_czech.kick.standing = self.new_m4.kick.standing
+		self.x_czech.kick.crouching = self.new_m4.kick.standing
+		self.x_czech.kick.steelsight = self.new_m4.kick.standing
+		self.x_czech.stats = {
+			damage = 34,
+			spread = 13,
+			recoil = 19,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.x_czech.panic_suppression_chance = 0.0		
+
+		--Igor
+		self.stech.fire_mode_data.fire_rate = 0.08
+		self.stech.AMMO_MAX = 113
+		self.stech.AMMO_PICKUP = self:_pickup_chance(113, 1)
+		self.stech.spread.standing = 3
+		self.stech.spread.crouching = 2
+		self.stech.spread.steelsight = 1
+		self.stech.spread.moving_standing = 4
+		self.stech.spread.moving_crouching = 3
+		self.stech.spread.moving_steelsight = 2
+		self.stech.kick.standing = self.new_m4.kick.standing
+		self.stech.kick.crouching = self.new_m4.kick.standing
+		self.stech.kick.steelsight = self.new_m4.kick.standing
+		self.stech.CLIP_AMMO_MAX = 20
+		self.stech.stats = {
+			damage = 40,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.stech.panic_suppression_chance = 0.0	
+
+		--Akimbo Igor
+		self.x_stech.fire_mode_data.fire_rate = 0.08
+		self.x_stech.AMMO_MAX = 113
+		self.x_stech.AMMO_PICKUP = self:_pickup_chance(113, 1)
+		self.x_stech.spread.standing = 3
+		self.x_stech.spread.crouching = 2
+		self.x_stech.spread.steelsight = 1
+		self.x_stech.spread.moving_standing = 4
+		self.x_stech.spread.moving_crouching = 3
+		self.x_stech.spread.moving_steelsight = 2
+		self.x_stech.kick.standing = self.new_m4.kick.standing
+		self.x_stech.kick.crouching = self.new_m4.kick.standing
+		self.x_stech.kick.steelsight = self.new_m4.kick.standing
+		self.x_stech.CLIP_AMMO_MAX = 20
+		self.x_stech.stats = {
+			damage = 40,
+			spread = 15,
+			recoil = 20,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 25,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.x_stech.panic_suppression_chance = 0.0			
 		
 		--Restoration Weapons--
 		self.jeb = {

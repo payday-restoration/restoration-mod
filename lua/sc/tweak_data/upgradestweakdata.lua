@@ -783,6 +783,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.sentry_gun.shield = {true}	
 		
 				--Jack of All Trades
+				self.values.player.throwables_multiplier = {1.5}
 				self.values.player.second_deployable = {true}
 				self.values.player.second_deployable_full = {true}
 	
@@ -2987,6 +2988,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "killshot_extra_spooky_panic_chance",
+			category = "player"
+		}
+	}
+	self.definitions.player_throwables_multiplier = {
+		name_id = "menu_player_throwables_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "throwables_multiplier",
 			category = "player"
 		}
 	}

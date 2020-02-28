@@ -772,7 +772,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",
-			["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now equip a second deployable to bring with you. Pressing the ##'X'## key will allow you to toggle between deployables.\n\nThe second deployable has ##50%## less uses than normal.\n\nACE: ##$pro##\nYour second deployable now has ##100%## of its normal uses.",
+			["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: ##$basic##\nYou carry ##50%## more throwables.\n\nACE: ##$pro##\nYou can now equip a second deployable to bring with you. Pressing the ##'X'## key will allow you to toggle between deployables.\n\nThe second deployable has ##50%## less uses than normal.",
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "Tower Defense",	

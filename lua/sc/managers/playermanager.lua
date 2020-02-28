@@ -674,4 +674,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			  self:upgrade_value("player", "deflection_addend", 0)
 			+ self:upgrade_value("player", "frenzy_deflection", 0)
 	end
+
+	function PlayerManager:get_max_grenades(grenade_id)
+		grenade_id = grenade_id or managers.blackmarket:equipped_grenade()
+		local max_amount = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "max_amount") or 0
+
+		if max_amount and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") then
+			max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
+		end
+		max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
+
+		return max_amount
+	end
+
 end

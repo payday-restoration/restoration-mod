@@ -12345,11 +12345,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
-		self.presets.gang_member_damage.HEALTH_INIT = 50
+		self.presets.gang_member_damage.HEALTH_INIT = 25
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
-		self.old_hoxton_mission.HEALTH_INIT = 50
-		self.spa_vip.HEALTH_INIT = 50
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
+		self.old_hoxton_mission.HEALTH_INIT = 25
+		self.spa_vip.HEALTH_INIT = 25
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
 		self:_multiply_all_speeds(1, 1)
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -12537,11 +12537,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
-		self.presets.gang_member_damage.HEALTH_INIT = 75
+		self.presets.gang_member_damage.HEALTH_INIT = 50
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
-		self.old_hoxton_mission.HEALTH_INIT = 75
-		self.spa_vip.HEALTH_INIT = 75
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
+		self.old_hoxton_mission.HEALTH_INIT = 50
+		self.spa_vip.HEALTH_INIT = 50
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
 		self:_multiply_all_speeds(1, 1)
 		self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -12728,11 +12728,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
-		self.presets.gang_member_damage.HEALTH_INIT = 100
+		self.presets.gang_member_damage.HEALTH_INIT = 75
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
-		self.old_hoxton_mission.HEALTH_INIT = 100
-		self.spa_vip.HEALTH_INIT = 100
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
+		self.old_hoxton_mission.HEALTH_INIT = 75
+		self.spa_vip.HEALTH_INIT = 75
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
 		self:_multiply_all_speeds(1, 1)
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -12929,11 +12929,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}	
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
-		self.presets.gang_member_damage.HEALTH_INIT = 125
+		self.presets.gang_member_damage.HEALTH_INIT = 100
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-		self.old_hoxton_mission.HEALTH_INIT = 125
-		self.spa_vip.HEALTH_INIT = 125
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
+		self.old_hoxton_mission.HEALTH_INIT = 100
+		self.spa_vip.HEALTH_INIT = 100
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 		self:_multiply_all_speeds(1, 1.05)
 		self.weap_unit_names[6] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 		self.weap_unit_names[10] = Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5")
@@ -13130,11 +13130,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 		self.autumn.damage.bullet_dodge_chance = 20	
-		self.presets.gang_member_damage.HEALTH_INIT = 125
+		self.presets.gang_member_damage.HEALTH_INIT = 100
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-		self.old_hoxton_mission.HEALTH_INIT = 125
-		self.spa_vip.HEALTH_INIT = 125
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
+		self.old_hoxton_mission.HEALTH_INIT = 100
+		self.spa_vip.HEALTH_INIT = 100
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self:_multiply_all_speeds(1, 1.05)
@@ -13207,11 +13207,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 		self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 		self.autumn.damage.bullet_dodge_chance = 25
-		self.presets.gang_member_damage.HEALTH_INIT = 150
+		self.presets.gang_member_damage.HEALTH_INIT = 125
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-		self.old_hoxton_mission.HEALTH_INIT = 150
-		self.spa_vip.HEALTH_INIT = 150
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
+		self.old_hoxton_mission.HEALTH_INIT = 125
+		self.spa_vip.HEALTH_INIT = 125
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		self:_multiply_all_speeds(1.05, 1.1)
@@ -13378,11 +13378,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 		
 		self:_multiply_all_speeds(1.1, 1.15)
-		self.presets.gang_member_damage.HEALTH_INIT = 150
+		self.presets.gang_member_damage.HEALTH_INIT = 125
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
-		self.old_hoxton_mission.HEALTH_INIT = 150
-		self.spa_vip.HEALTH_INIT = 150
-		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
+		self.old_hoxton_mission.HEALTH_INIT = 125
+		self.spa_vip.HEALTH_INIT = 125
+		self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
 		self.flashbang_multiplier = 2
 		self.concussion_multiplier = 1
 		

@@ -159,6 +159,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		local r = LevelsTweakData.LevelType.Russia
+		local m = LevelsTweakData.LevelType.Federales
 		local ai_type = tweak_data.levels:get_ai_group_type()
 		self._taunt_during_assault = "cloaker_taunt_during_assault"
 		self._taunt_after_assault = "cloaker_taunt_after_assault"
@@ -166,6 +167,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if ai_type == r then
 			self._taunt_during_assault = "rcloaker_taunt_during_assault"
 			self._taunt_after_assault = "rcloaker_taunt_after_assault"
+		end
+
+		if ai_type == m then
+			self._taunt_during_assault = "mcloaker_taunt_during_assault"
+			self._taunt_after_assault = "mcloaker_taunt_after_assault"
 		end
 
 		local spooc_sound_events = self._common_data.char_tweak.spooc_sound_events or {}

@@ -896,8 +896,6 @@
 	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
 	<sequence_manager path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
 	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom_contour" force="false"/>
-	<texture path="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_df" force="false"/>
-	<texture path="units/payday2/weapons/wpn_npc_m4_boom/m4_boom_nm" force="false"/>
 
 	<!--NPC AKMSU-->	
 	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_x_akmsu" force="false" load="false"/>
@@ -1185,6 +1183,17 @@
 	<!--Not getting rid of my NPC weps dammit-->
 	<!--NPC M4-->
 	<model path="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_m4/m4_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_m4/m4_nm" force="true"/>
+
+	<!--NPC g36-->
+	<texture path="units/payday2/weapons/wpn_npc_g36/g36_df" force="true"/>
+	
+	<!--NPC M4 Yellow-->
+	<model path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow_contour" force="true"/>
+	<object path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>	
 	
 	<!--NPC Mp5-->
 	<model path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
@@ -2021,7 +2030,6 @@
 	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"  load="true"/>
 	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>	
 	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp_contour" force="false"/>	
-	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/swamp_df" force="false"/>	
 	
 	<!--bravo shotgun-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
@@ -2147,7 +2155,7 @@
 	<unit path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" load="true" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
 	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
-	
+
 	<!--female cop husk fixes-->	
 	<unit path="units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1_husk" force="true" />	
 	<unit path="units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2_husk" force="true" />	

@@ -308,12 +308,12 @@ restoration.environments_choice_ukrainian_job = {
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
 -- local connection_network_handler_funcs = {
 	-- 'sync_player_installed_mod'
-}
+--}
 
 -- local unit_network_handler_funcs = {
 	-- 'sync_grenades',
 	-- 'place_grenade_crate'
-}
+--}
 
 -- Builds a single table from our two string based keys for each handler above
 -- restoration.network_handler_funcs = {}

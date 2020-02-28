@@ -6,6 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.Russia = "russia"
 	LevelsTweakData.LevelType.Zombie = "zombie"
 	LevelsTweakData.LevelType.Murkywater = "murkywater"
+	LevelsTweakData.LevelType.Federales = "federales"
 	LevelsTweakData.LevelType.NYPD = "nypd"
 	LevelsTweakData.LevelType.LAPD = "lapd"
 	--///LEVELS\\\--
@@ -23,6 +24,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.russia = russia
 		self.ai_groups.zombie  = zombie
 		self.ai_groups.murkywater = murkywater
+		self.ai_groups.federales = federales
 		self.ai_groups.nypd = nypd
 		self.ai_groups.lapd = lapd
 		

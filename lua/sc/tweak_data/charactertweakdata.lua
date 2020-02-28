@@ -99,6 +99,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self._speech_prefix_p2 = "n"
 	end
+	
+	function CharacterTweakData:_init_region_federales()
+		self._default_chatter = "mex_dispatch_generic_message"
+		self._unit_prefixes = {
+			cop = "m",
+			swat = "m",
+			heavy_swat = "m",
+			taser = "mtsr",
+			cloaker = "mclk",
+			bulldozer = "mbdz",
+			medic = "mmdc"
+		}
+		self._speech_prefix_p2 = "n"
+	end	
 
 	function CharacterTweakData:_init_region_nypd()
 		self._default_chatter = "dispatch_generic_message"
@@ -126,7 +140,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			medic = "mdc"
 		}
 		self._speech_prefix_p2 = "d"
-	end	
+	end		
 	
     function CharacterTweakData:get_ai_group_type()    
         local bullshit = self.tweak_data.levels:get_ai_group_type()
@@ -134,7 +148,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
             return group_to_use
         end
         local ai_group_type = {}
-        ai_group_type["murkywater"] = "murkywater"        
+        ai_group_type["murkywater"] = "murkywater"    
+		ai_group_type["federales"] = "federales"        
         ai_group_type["zombie"] = "zombie"                
         ai_group_type["russia"] = "russia"        
        
@@ -159,6 +174,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.security = deep_clone(presets.base)
 		self.security.tags = {"law"}
 		self.security.experience = {}
@@ -213,6 +232,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.mute_security_undominatable.unintimidateable = true
 		end
 		table.insert(self._enemy_list, "mute_security_undominatable")	
+		
+		self.security_mex = deep_clone(self.security)
+		self.security_mex.speech_prefix_p1 = "m"
+		self.security_mex.radio_prefix = "mex_"
+
+		table.insert(self._enemy_list, "security_mex")		
 	end
 
 	function CharacterTweakData:_init_gensec(presets)
@@ -228,6 +253,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.gensec = deep_clone(presets.base)
 		self.gensec.tags = {"law"}
 		self.gensec.experience = {}
@@ -276,6 +305,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.cop = deep_clone(presets.base)
 		self.cop.tags = {"law"}
 		self.cop.experience = {}
@@ -383,6 +416,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.fbi = deep_clone(presets.base)
 		self.fbi.tags = {"law"}
 		self.fbi.experience = {}
@@ -531,6 +568,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         if self:get_ai_group_type() == "zombie" then
             is_zombie = true
         end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.medic = deep_clone(presets.base)
 		self.medic.tags = {"law", "medic", "special"}
 		self.medic.experience = {}
@@ -616,6 +657,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         if self:get_ai_group_type() == "zombie" then
             is_zombie = true
         end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.omnia_lpf = deep_clone(presets.base)
 		self.omnia_lpf.experience = {}
 		self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
@@ -679,6 +724,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.swat = deep_clone(presets.base)
 		self.swat.tags = {"law"}
 		self.swat.experience = {}
@@ -748,6 +797,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.heavy_swat = deep_clone(presets.base)
 		self.heavy_swat.tags = {"law"}
 		self.heavy_swat.experience = {}
@@ -943,6 +996,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.fbi_swat = deep_clone(presets.base)
 		self.fbi_swat.tags = {"law"}
 		self.fbi_swat.experience = {}
@@ -998,6 +1055,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.fbi_heavy_swat = deep_clone(presets.base)
 		self.fbi_heavy_swat.tags = {"law"}
 		self.fbi_heavy_swat.experience = {}
@@ -1062,6 +1123,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.city_swat = deep_clone(presets.base)
 		self.city_swat.tags = {"law", "city_swat"}
 		self.city_swat.experience = {}
@@ -1211,6 +1276,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.sniper = deep_clone(presets.base)
 		self.sniper.tags = {"law", "sniper", "special"}
 		self.sniper.experience = {}
@@ -1774,6 +1843,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.tank = deep_clone(presets.base)
 		self.tank.tags = {"law", "tank", "special"}
 		self.tank.experience = {}
@@ -1938,6 +2011,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         if self:get_ai_group_type() == "zombie" then
             is_zombie = true
         end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.spooc = deep_clone(presets.base)
 		self.spooc.tags = {"law", "spooc", "special"}
 		self.spooc.experience = {}
@@ -2078,6 +2155,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.shield = deep_clone(presets.base)
 		self.shield.tags = {"law", "shield", "special"}
 		self.shield.experience = {}
@@ -2146,6 +2227,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.phalanx_minion = deep_clone(self.shield)
 		self.phalanx_minion.tags = {"law", "shield", "special", "shield_titan"}
 		self.phalanx_minion.experience = {}
@@ -2309,6 +2394,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.summers = deep_clone(presets.base)
 		self.summers.tags = {"law", "custom", "special", "summers"}
 		self.summers.experience = {}
@@ -2457,6 +2546,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end		
 		self.taser = deep_clone(presets.base)
 		self.taser.tags = {"law", "taser", "special"}
 		self.taser.experience = {}
@@ -2587,6 +2680,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    if self:get_ai_group_type() == "zombie" then
 	    	is_zombie = true
 	    end
+		local is_federales
+	    if self:get_ai_group_type() == "federales" then
+	    	is_federales = true
+	    end			
 		self.boom = deep_clone(presets.base)
 		self.boom.tags = {"law", "boom", "custom", "special", "customvo"}
 		self.boom.experience = {}
@@ -2761,6 +2858,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.robbers_safehouse.HEALTH_INIT = 50
 		self.robbers_safehouse.headshot_dmg_mul = 1
 		self.robbers_safehouse.use_ik = true
+		
+		function CharacterTweakData:_init_civilian_mariachi(presets)
+			self.civilian_mariachi = deep_clone(self.civilian)
+		end		
 	end
 
 	function CharacterTweakData:_init_bank_manager(presets)
@@ -14162,6 +14263,50 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_mex_thug_outdoor_03",
 					"civ_male_italian"
 				}				
+			},
+			bex = {
+				path = "units/pd2_dlc_bex/characters/",
+				list = {
+					"ene_swat_policia_federale",
+					"ene_swat_policia_federale_r870",
+					"ene_swat_policia_federale_city",
+					"ene_swat_policia_federale_city_r870",
+					"ene_swat_policia_federale_city_fbi",
+					"ene_swat_policia_federale_city_fbi_r870",
+					"ene_swat_medic_policia_federale",
+					"ene_swat_medic_policia_federale_r870",
+					"ene_swat_cloaker_policia_federale",
+					"ene_swat_policia_sniper",
+					"ene_swat_shield_policia_federale_mp9",
+					"ene_swat_shield_policia_federale_c45",
+					"ene_swat_tazer_policia_federale",
+					"ene_swat_heavy_policia_federale",
+					"ene_swat_heavy_policia_federale_r870",
+					"ene_swat_heavy_policia_federale_g36",
+					"ene_swat_heavy_policia_federale_fbi",
+					"ene_swat_heavy_policia_federale_fbi_r870",
+					"ene_swat_heavy_policia_federale_fbi_g36",
+					"ene_swat_dozer_medic_policia_federale",
+					"ene_swat_dozer_policia_federale_r870",
+					"ene_swat_dozer_policia_federale_saiga",
+					"ene_swat_dozer_policia_federale_m249",
+					"ene_swat_dozer_policia_federale_minigun",
+					"ene_policia_01",
+					"ene_policia_02",
+					"ene_bex_security_01",
+					"ene_bex_security_02",
+					"ene_bex_security_03",
+					"ene_bex_security_suit_01",
+					"ene_bex_security_suit_02",
+					"ene_bex_security_suit_03",
+					"civ_male_it_guy",
+					"civ_male_bex_bank_manager",
+					"civ_male_bex_business",
+					"civ_male_mariachi_01",
+					"civ_male_mariachi_02",
+					"civ_male_mariachi_03",
+					"civ_male_mariachi_04"
+				}
 			},			
 			sharks = {
 				path = "units/pd2_mod_sharks/characters/",

@@ -8,6 +8,10 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/swat_city_df" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/swat_fbi_body_df" />
 	
+	<!--Riot Shield-->
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
+	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>	
+	
 	<!--Sniper-->	
 	<sequence_manager path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>
 	<object path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>

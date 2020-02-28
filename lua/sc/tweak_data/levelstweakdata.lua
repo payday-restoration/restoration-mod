@@ -28,6 +28,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.nypd = nypd
 		self.ai_groups.lapd = lapd
 		
+		--///MEXICAN LEVELS\\\--
+		self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
+		
 		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 		self.shoutout_raid.ai_group_type = murkywater

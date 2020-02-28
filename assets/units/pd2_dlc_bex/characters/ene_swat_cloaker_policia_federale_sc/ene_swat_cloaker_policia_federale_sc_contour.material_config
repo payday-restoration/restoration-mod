@@ -1,0 +1,23 @@
+<materials version="3" group="ene_spook_1">
+    <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+        <bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
+        <diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/spook_heavy_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" 	type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+        <bump_normal_texture    file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="1" />
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/shared_textures/spook_heavy_df" mip="1" />
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+
+	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
+		<self_illumination_texture 		file="units/payday2/characters/shared_textures/spook_il"/>
+		<opacity_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
+		<variable 						value="reddot" type="scalar" name="il_multiplier"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

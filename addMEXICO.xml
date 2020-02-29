@@ -12,10 +12,22 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>	
 	
+	<!--Fixed Beat Cops-->
+	<!--Glock-->
+	<object path="units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01" force="true"/>
+	<!--Bronco-->
+	<object path="units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02" force="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02" force="true" load="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02_husk" force="true" load="true"/>	
+	<!--MP5-->
+	<unit path="units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03" load="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03_husk" load="true"/>	
+	<!--R870-->
+	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04" load="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04_husk" load="true"/>	
+	
 	<!--Sniper-->	
-	<sequence_manager path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>
 	<object path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>
-	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>
 	<model path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true" load="true"/>
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>

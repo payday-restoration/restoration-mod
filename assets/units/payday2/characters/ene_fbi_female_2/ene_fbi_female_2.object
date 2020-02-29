@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel orientation_object="root_point" materials="units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2" />
+	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+
+ 	<bodies>
+		<body name="body" enabled="true" template="character" collision_group="1" friction="0.6">
+			<object name="Spine1"/>
+			<object name="c_capsule_body" collision_type="capsule"/>
+		</body>
+		<body name="head" enabled="true" template="character" collision_group="1" friction="0.6">
+			<object name="Head"/>
+			<object name="c_sphere_head" collision_type="sphere"/>
+		</body>
+		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
+			<object name="root_point"/>
+			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
+		</body>
+
+
+		<body  name="cloth_headphys1" enabled="true" template="static" collision_class="hair" collision_group="2" collides_with="3" collides_with_mover="false" friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="1" restitution="0">
+			<object name="Head" />
+			<object name="c_headphys1" collision_type="capsule" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_headphys2" enabled="true" template="static" collision_class="hair" collision_group="2" collides_with="3" collides_with_mover="false" friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="1" restitution="0">
+			<object name="Spine2" />
+			<object name="c_headphys2" collision_type="capsule" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint1" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint1" />
+			<object name="c_cube1" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint2" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint2" />
+			<object name="c_cube2" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint3" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint3" />
+			<object name="c_cube3" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint4" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint4" />
+			<object name="c_cube4" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint5" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint5" />
+			<object name="c_cube5" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint6" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint6" />
+			<object name="c_cube6" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint7" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint7" />
+			<object name="c_cube7" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint8" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint8" />
+			<object name="c_cube8" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint9" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint9" />
+			<object name="c_cube9" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint10" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint10" />
+			<object name="c_cube10" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint11" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint11" />
+			<object name="c_cube11" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint12" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint12" />
+			<object name="c_cube12" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint13" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint13" />
+			<object name="c_cube13" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint14" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint14" />
+			<object name="c_cube14" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+		<body  name="cloth_joint15" enabled="true" template="dynamic" collision_class="hair" collision_group="3" collides_with="2" collides_with_mover="false"  friction="0.01"  keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.5" ang_damping="0.7" restitution="0">
+			<object name="c_joint15" />
+			<object name="c_cube15" collision_type="sphere" mass="1" padding="-4"/>
+		</body>
+
+<!-- RAGDOLL -->
+		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="Neck" />
+			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
+		</body>
+
+		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="ignore" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
+			<object name="Hips" />
+			<object collision_type="capsule" mass="22" padding="-5" name="c_sphere_Hips" />
+		</body>
+
+		<body name="rag_Spine" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="ignore" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0">
+			<object name="Spine" />
+			<object collision_type="capsule" mass="18" padding="-5" name="c_sphere_Spine" />
+		</body>
+
+		 <body name="rag_Spine1" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="ignore" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
+			<object name="Spine1" />
+			<object collision_type="capsule" mass="18" padding="-5" name="c_sphere_Spine1" />
+		</body>
+
+		<body name="rag_Spine2" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="ignore" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
+			<object name="Spine2" />
+			<object collision_type="capsule" mass="17" padding="-5" name="c_sphere_Spine2" />
+		</body>
+
+		<body name="rag_RightUpLeg" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.4" ang_damping="20" collision_group="20" collides_with="30" tag="flesh" restitution="0">
+			<object name="RightUpLeg" />
+			<object collision_type="capsule" mass="22" padding="-5" name="c_capsule_RightUpLeg" />
+		</body>
+
+		<body name="rag_LeftUpLeg" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.4" ang_damping="20" collision_group="30" collides_with="20" tag="flesh" restitution="0">
+			<object name="LeftUpLeg" />
+			<object collision_type="capsule" mass="22" padding="-5" name="c_capsule_LeftUpLeg" />
+		</body>
+
+		<body name="rag_RightArm" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.4" ang_damping="20" collides_with="1" tag="flesh" restitution="0">
+			<object name="RightArm" />
+			<object collision_type="capsule" mass="4" padding="-5" name="c_capsule_RightArm" />
+		</body>
+
+		<body name="rag_LeftArm" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0.4" ang_damping="20" collides_with="1" tag="flesh" restitution="0">
+			<object name="LeftArm" />
+			<object collision_type="capsule" mass="4" padding="-5" name="c_capsule_LeftArm" />
+		</body>
+
+		<body name="rag_RightForeArm" enabled="false" template="corpse" friction="0.02" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="20" collision_group="4" collides_with="8" tag="flesh" restitution="0">
+			<object name="RightForeArm" />
+			<object collision_type="capsule" mass="3" padding="-5" name="c_capsule_RightForeArm" />
+		</body>
+
+		<body name="rag_LeftForeArm" enabled="false" template="corpse" friction="0.02" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="20" collision_group="6" collides_with="8" tag="flesh" restitution="0">
+			<object name="LeftForeArm" />
+			<object collision_type="capsule" mass="3" padding="-5" name="c_capsule_LeftForeArm" />
+		</body>
+
+		<body name="rag_RightLeg" enabled="false" template="corpse" friction="0.03" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="1" ang_damping="20" collision_group="21" collides_with="31" tag="flesh" restitution="0">
+			<object name="RightLeg" />
+			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_RightLeg" />
+		</body>
+
+		<body name="rag_LeftLeg" enabled="false" template="corpse" friction="0.03" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="1" ang_damping="20" collision_group="31" collides_with="21" tag="flesh" restitution="0">
+			<object name="LeftLeg" />
+			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_LeftLeg" />
+		</body>
+	</bodies>
+
+	<constraints>
+		<constraint type="ragdoll" name="joint1" enabled="true">
+			<param body_a="cloth_headphys1" body_b="cloth_joint1"/>
+			<param pivot="position:c_joint1"/>
+ 			<param twist_axis="xaxis:c_joint1" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint2" enabled="true">
+			<param body_a="cloth_joint1" body_b="cloth_joint2"/>
+			<param pivot="position:c_joint2"/>
+ 			<param twist_axis="xaxis:c_joint2" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint3" enabled="true">
+			<param body_a="cloth_joint2" body_b="cloth_joint3"/>
+			<param pivot="position:c_joint3"/>
+ 			<param twist_axis="xaxis:c_joint3" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint4" enabled="true">
+			<param body_a="cloth_joint3" body_b="cloth_joint4"/>
+			<param pivot="position:c_joint4"/>
+ 			<param twist_axis="xaxis:c_joint4" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint5" enabled="true">
+			<param body_a="cloth_joint4" body_b="cloth_joint5"/>
+			<param pivot="position:c_joint5"/>
+ 			<param twist_axis="xaxis:c_joint5" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint6" enabled="true">
+			<param body_a="cloth_headphys1" body_b="cloth_joint6"/>
+			<param pivot="position:c_joint6"/>
+ 			<param twist_axis="xaxis:c_joint6" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint7" enabled="true">
+			<param body_a="cloth_joint6" body_b="cloth_joint7"/>
+			<param pivot="position:c_joint7"/>
+ 			<param twist_axis="xaxis:c_joint7" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint8" enabled="true">
+			<param body_a="cloth_joint7" body_b="cloth_joint8"/>
+			<param pivot="position:c_joint8"/>
+ 			<param twist_axis="xaxis:c_joint8" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint9" enabled="true">
+			<param body_a="cloth_joint8" body_b="cloth_joint9"/>
+			<param pivot="position:c_joint9"/>
+ 			<param twist_axis="xaxis:c_joint9" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint10" enabled="true">
+			<param body_a="cloth_joint9" body_b="cloth_joint10"/>
+			<param pivot="position:c_joint10"/>
+ 			<param twist_axis="xaxis:c_joint10" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint11" enabled="true">
+			<param body_a="cloth_headphys1" body_b="cloth_joint11"/>
+			<param pivot="position:c_joint11"/>
+ 			<param twist_axis="xaxis:c_joint11" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint12" enabled="true">
+			<param body_a="cloth_joint11" body_b="cloth_joint12"/>
+			<param pivot="position:c_joint12"/>
+ 			<param twist_axis="xaxis:c_joint12" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint13" enabled="true">
+			<param body_a="cloth_joint12" body_b="cloth_joint13"/>
+			<param pivot="position:c_joint13"/>
+ 			<param twist_axis="xaxis:c_joint13" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint14" enabled="true">
+			<param body_a="cloth_joint13" body_b="cloth_joint14"/>
+			<param pivot="position:c_joint14"/>
+ 			<param twist_axis="xaxis:c_joint14" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+		<constraint type="ragdoll" name="joint15" enabled="true">
+			<param body_a="cloth_joint14" body_b="cloth_joint15"/>
+			<param pivot="position:c_joint15"/>
+ 			<param twist_axis="xaxis:c_joint15" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/>
+			<param damping="200" spring_constant="200" min_restitution="0.1" max_restitution="0.1"/>
+		</constraint>
+
+
+		<constraint type="ragdoll" name="RightArm" enabled="false">
+			<param body_a="rag_Spine2" body_b="rag_RightArm"/>
+			<param pivot="position:RightArm"/>
+			<param twist_axis="yaxis:RightArm" twist_min="-60" twist_max="70" twist_freedom="20"/><!-- X axis -->
+			<param plane_axis="xaxis:RightArm"/><!-- Y axis -->
+			<param cone_y="35" cone_z="40" cone_freedom="10"/>
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+		<constraint type="limited_hinge" name="RightForeArm" enabled="false">
+			<param body_a="rag_RightArm" body_b="rag_RightForeArm"/>
+			<param pivot="position:RightForeArm"/>
+			<param min_angle="-60" max_angle="60" axis="yaxis:RightForeArm" twist_freedom="5"/> <!-- X axis -->
+			<param plane_axis="xaxis:RightForeArm"/> <!-- Y axis -->
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="LeftArm" enabled="false">
+			<param body_a="rag_Spine2" body_b="rag_LeftArm"/>
+			<param pivot="position:LeftArm"/>
+			<param twist_axis="yaxis:LeftArm" twist_min="-60" twist_max="70" twist_freedom="20"/>
+			<param plane_axis="xaxis:LeftArm"/>
+			<param cone_y="35" cone_z="40" cone_freedom="10"/>
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+		<constraint type="limited_hinge" name="LeftForeArm" enabled="false">
+			<param body_a="rag_LeftArm" body_b="rag_LeftForeArm"/>
+			<param pivot="position:LeftForeArm"/>
+			<param min_angle="-60" max_angle="60" axis="yaxis:LeftForeArm" twist_freedom="5"/> <!-- X axis -->
+			<param plane_axis="xaxis:LeftForeArm"/> <!-- Y axis -->
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="Spine" enabled="false">
+			<param body_a="rag_Hips" body_b="rag_Spine"/>
+			<param pivot="position:Spine"/>
+			<param twist_axis="yaxis:Spine" twist_min="-2" twist_max="5" twist_freedom="5"/> <!-- Y axis -->
+			<param plane_axis="xaxis:Spine"/>
+			<param cone_y="5" cone_z="3" cone_freedom="5"/> <!-- X axis --> <!-- Z axis -->
+			<param damping="1" spring_constant="600" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="Spine1" enabled="false">
+			<param body_b="rag_Spine" body_a="rag_Spine1"/>
+			<param pivot="position:Spine1"/>
+			<param twist_axis="yaxis:Spine1" twist_min="-2" twist_max="5" twist_freedom="5"/> <!-- Y axis -->
+			<param plane_axis="xaxis:Spine1"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/> <!-- X axis --> <!-- Z axis -->
+			<param damping="1" spring_constant="600" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="Spine2" enabled="false">
+			<param body_b="rag_Spine1" body_a="rag_Spine2"/>
+			<param pivot="position:Spine2"/>
+			<param twist_axis="yaxis:Spine2" twist_min="-2" twist_max="5" twist_freedom="5"/> <!-- Y axis -->
+			<param plane_axis="xaxis:Spine2"/>
+			<param cone_y="5" cone_z="5" cone_freedom="5"/> <!-- X axis --> <!-- Z axis = Twist Spine -->
+			<param damping="1" spring_constant="600" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="Head" enabled="false">
+			<param body_b="rag_Head" body_a="rag_Spine2"/>
+			<param pivot="position:Neck"/>
+			<param twist_axis="yaxis:Neck" twist_min="-40" twist_max="40" twist_freedom="40"/> <!-- Y axis -->
+			<param plane_axis="xaxis:Neck"/>
+			<param cone_y="25" cone_z="25" cone_freedom="3"/> <!-- X axis --> <!-- Z axis -->
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="RightUpLeg" enabled="false">
+			<param body_a="rag_Hips" body_b="rag_RightUpLeg"/>
+			<param pivot="position:RightUpLeg"/>
+			<param twist_axis="yaxis:RightUpLeg" twist_min="-10" twist_max="10" twist_freedom="5"/>
+			<param plane_axis="xaxis:RightUpLeg"/>
+			<param cone_y="15" cone_z="15" cone_freedom="5"/>
+			<param damping="1" spring_constant="350" min_restitution="0"/>
+		</constraint>
+		<constraint type="ragdoll" name="LeftUpLeg" enabled="false">
+			<param body_a="rag_Hips" body_b="rag_LeftUpLeg"/>
+			<param pivot="position:LeftUpLeg"/>
+			<param twist_axis="yaxis:LeftUpLeg" twist_min="-10" twist_max="10" twist_freedom="5"/>
+			<param plane_axis="xaxis:LeftUpLeg"/>
+			<param cone_y="15" cone_z="15" cone_freedom="5"/>
+			<param damping="1" spring_constant="350" min_restitution="0"/>
+		</constraint>
+		<constraint type="limited_hinge" name="RightLeg" enabled="false">
+			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
+			<param pivot="position:RightLeg"/>
+			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+			<param plane_axis="yaxis:RightLeg"/>
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
+			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
+			<param pivot="position:LeftLeg"/>
+			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+			<param plane_axis="yaxis:LeftLeg"/>
+			<param damping="1" spring_constant="200" min_restitution="0"/>
+		</constraint>
+	</constraints>
+
+	<decal_surfaces default_material="flesh" />
+
+	<graphics>
+		<graphic_group name="character" enabled="true" culling_object="g_body">
+			
+			<lod_object name="lod_hair_cloth1">
+				<object name="g_hair_cloth1" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_hair_1" max_distance="1000" />
+					<material materials="mtr_hair_1_lod_1" max_distance="1500" />
+					<material materials="mtr_hair_1_lod_2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_hair_cloth2">
+				<object name="g_hair_cloth2" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_hair_2" max_distance="1000" />
+					<material materials="mtr_hair_2_lod_1" max_distance="1500" />
+					<material materials="mtr_hair_2_lod_2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_hair_cloth3">
+				<object name="g_hair_cloth3" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_hair_3" max_distance="1000" />
+					<material materials="mtr_hair_3_lod_1" max_distance="1500" />
+					<material materials="mtr_hair_3_lod_2" />
+				</object>
+			</lod_object>			
+			<lod_object name="lod_body_details">
+				<object name="g_body_details" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_head">
+				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1000" />
+					<material materials="mtr_head_lod_1" max_distance="1500" />
+					<material materials="mtr_head_lod_2" />
+				</object>
+				<object name="g_head_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod_2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_body">
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			<object name="s_body" 				enabled="true" shadow_caster="true"/>
+		</graphic_group>
+	</graphics>
+
+</dynamic_object>

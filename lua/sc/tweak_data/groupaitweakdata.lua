@@ -625,9 +625,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
 				},
 				federales = {
-					Idstring("units/payday2/characters/ene_cop_1/ene_cop_1"),
-					Idstring("units/payday2/characters/ene_cop_3/ene_cop_3"),
-					Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"),
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03"),
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04")
 				},				
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"),
@@ -661,8 +661,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
 				},
 				federales = {
-					Idstring("units/payday2/characters/ene_cop_1/ene_cop_1"),
-					Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"),
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03")
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"),
@@ -690,7 +690,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
 				},
 				federales = {
-					Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04")
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4")
@@ -716,7 +716,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")
 				},
 				federales = {
-					Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
+					Idstring("units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02")
 				},				
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2")

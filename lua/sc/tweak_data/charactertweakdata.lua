@@ -14299,6 +14299,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_swat_dozer_policia_federale_minigun",
 					"ene_policia_01",
 					"ene_policia_02",
+					"ene_policia_03",
+					"ene_policia_04",
 					"ene_bex_security_01",
 					"ene_bex_security_02",
 					"ene_bex_security_03",

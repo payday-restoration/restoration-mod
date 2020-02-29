@@ -14309,6 +14309,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_bex_security_suit_02",
 					"ene_bex_security_suit_03",
 					"civ_male_it_guy",
+					"ene_veteran_cop_1",
+					"ene_veteran_cop_2",
 					"civ_male_bex_bank_manager",
 					"civ_male_bex_business",
 					"civ_male_mariachi_01",

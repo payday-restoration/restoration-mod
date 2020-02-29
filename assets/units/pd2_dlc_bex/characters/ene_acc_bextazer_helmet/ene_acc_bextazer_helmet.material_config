@@ -1,0 +1,24 @@
+<materials version="3" group="police_force">
+    <material name="police_force" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER" version="2">
+        <bump_normal_texture file="units/characters/enemies/textures/police_force_nm"/>
+        <diffuse_texture file="units/characters/enemies/textures/police_force_df"/>
+    </material>
+    <material name="police_force_lod1" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER" version="2">
+        <diffuse_texture file="units/characters/enemies/textures/police_force_df"/>
+    </material>
+    <material name="police_force_lod2" render_template="generic:RL_COPS:SKINNED_1WEIGHT:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER" version="2"/>
+    <material name="police_force_no_skin" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:VERTEX_COLOR:VERTEX_COLOR_ALPHA:VERTEX_COLOR_CHARACTER" version="2">
+        <bump_normal_texture file="units/characters/enemies/textures/police_force_nm"/>
+        <diffuse_texture file="units/characters/enemies/textures/police_force_df"/>
+    </material>
+    <material name="mtr_helmet_lod1.001" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_heavy_taser_atlas_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/helmets_heavy_taser_atlas_df"/>
+    </material>	
+    <material version="2" name="glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>   
+</materials>

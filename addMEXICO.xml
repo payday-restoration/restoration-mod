@@ -1,5 +1,8 @@
 <table directory="assets">
 	<!--Mexico shared_textures crap-->
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/taser_body_df" />
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df" />
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_df" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/fbi_df" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/helmets_atlas_df" />
@@ -13,9 +16,46 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" force="false"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	
 	
-	<!--Riot Shield-->
+	<!--Taser Helmet-->
+	<object path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
+	<sequence_manager path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>	
+	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
+	<model path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
+	
+	<!--Taser-->
+	<object path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>
+	<model path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true" load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_contour" force="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_husk" force="true" load="true"/>	
+	
+	<!--Medic-->
+	<object path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" force="true"/>
+	<model path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" force="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" force="true" load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" force="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale_contour" force="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale_husk" force="true" load="true"/>	
+	
+	<!--Riot Shields-->
+	<!--The guys holding the shields-->
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9_contour" force="true"/>	
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9" force="true"/>	
+	<object path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45_husk" force="true"/>	
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45_husk" force="true" load="true"/>	
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45" force="true" load="true"/>	
+	<!--Big-->
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>	
+	<!--Smol-->
+	<sequence_manager path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<object path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<model path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<unit path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small"  load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
 	
 	<!--Vet Cops-->	
 	<!--1-->	

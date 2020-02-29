@@ -3610,7 +3610,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
 						Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
 						Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),							
-						Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+						Idstring("units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
 						Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 					},					
 					nypd = {

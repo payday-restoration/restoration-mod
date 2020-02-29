@@ -6,7 +6,7 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" />
 	</dependencies>
 
 	<extensions>
@@ -21,7 +21,7 @@
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_hat" />
-			<var name="_head_gear" value="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />
+			<var name="_head_gear" value="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >

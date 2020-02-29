@@ -72,6 +72,8 @@
 	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2_contour" />
 	<unit path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2_husk"  load="true"/>	
+	<!--MARIACHI HAT-->	
+	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>
 	
 	<!--Sniper-->	
 	<object path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" force="true"/>

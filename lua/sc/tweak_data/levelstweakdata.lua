@@ -17,6 +17,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local zombie = LevelsTweakData.LevelType.Zombie
 		local murkywater = LevelsTweakData.LevelType.Murkywater
 		local nypd = LevelsTweakData.LevelType.NYPD
+		local federales = LevelsTweakData.LevelType.Federales		
 		local lapd = LevelsTweakData.LevelType.LAPD
 		self.ai_groups = {}
 		self.ai_groups.default = america

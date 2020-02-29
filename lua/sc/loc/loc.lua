@@ -333,6 +333,7 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
+local f = tweak_data.levels.ai_groups.federales
 local ai_type = tweak_data.levels:get_ai_group_type()
 local russia_guide = Idstring("russian"):key() == SystemInfo:language():key()
 local english_guide = Idstring("english"):key() == SystemInfo:language():key()
@@ -366,7 +367,14 @@ elseif ai_type == z then
 			["hud_assault_assault"] = "Pciloe Asuaslt in Prergoss",
 			["hud_assault_alpha"] = "PCILOE ASUASLT"
 		})
-	end)	
+	end)
+elseif ai_type == f then	
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Asalto Federales En Marcha",
+			["hud_assault_alpha"] = "ASALTO FEDERALES"
+		})
+	end)		
 elseif ai_type == m and difficulty_index <= 7 then	
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({

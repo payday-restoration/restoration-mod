@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mtr_akan_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_akan_dozer_policia_federale_body_black_df"/>
+    </material>
+</materials>

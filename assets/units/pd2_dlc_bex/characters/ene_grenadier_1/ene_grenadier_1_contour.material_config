@@ -1,0 +1,52 @@
+<materials version="3" group="ene_tazer_1">
+	<material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/grenadier_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/grenadier_atlas_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/grenadier_body_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/material_body_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/material_body_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+	</material>
+    <material version="2" name="mtr_ene_acc_swat_helmet_lod" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+         <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>  
+	
+    <material version="2" name="mtr_ene_acc_swat_helmet_lod1" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>  
+	
+    <material version="2" name="mtr_head_lod" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>  
+    <material name="mtr_body_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" 	type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+	
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

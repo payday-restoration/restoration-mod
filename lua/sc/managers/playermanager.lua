@@ -728,9 +728,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			amount = self:get_grenade_amount(peer_id) or amount
 		end
 
-		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
 
 		if amount and not grenade.base_cooldown then
+			amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
 			amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
 		end
 

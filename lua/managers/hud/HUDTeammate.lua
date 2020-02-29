@@ -753,7 +753,12 @@ function HUDTeammate:set_name(teammate_name)
 	local name = teammate_panel:child("name")
 	local name_bg = teammate_panel:child("name_bg")
 	local callsign = teammate_panel:child("callsign")
-	name:set_text( utf8.to_upper( " "..teammate_name ) )
+	if restoration.Options:GetValue("HUD/UppercaseNames") then
+	    name_text = utf8.to_upper( " "..teammate_name ) 
+	else
+	    name_text = " "..teammate_name
+	end
+	name:set_text( name_text )
 	local h = name:h()
 	managers.hud:make_fine_text(name)
 	name:set_h(h)

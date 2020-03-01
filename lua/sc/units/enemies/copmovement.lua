@@ -789,38 +789,36 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								end
 
 								if try_something_else and self._tweak_data.crouch_move then
-									if not self._tweak_data.allowed_poses or self._tweak_data.allowed_poses.crouch then
-										if self._ext_anim.idle then
-											if not self._active_actions[2] or self._active_actions[2]:type() == "idle" then
-												if not self:chk_action_forbidden("act") then
-													--using body part 2 means shooting won't be interrupted, which in turn fixes the issue
-													--where sometimes suppressing an enemy causes them to instantly fire their weapon again
-													--this happens because using 1 causes the shoot action to expire and exit
-													local action_desc = {
-														clamp_to_graph = true,
-														type = "act",
-														body_part = 2,
-														variant = "suppressed_reaction",
-														blocks = {
-															walk = -1
-														}
+									if self._ext_anim.idle then
+										if not self._active_actions[2] or self._active_actions[2]:type() == "idle" then
+											if not self:chk_action_forbidden("act") then
+												--using body part 2 means shooting won't be interrupted, which in turn fixes the issue
+												--where sometimes suppressing an enemy causes them to instantly fire their weapon again
+												--this happens because using 1 causes the shoot action to expire and exit
+												local action_desc = {
+													clamp_to_graph = true,
+													type = "act",
+													body_part = 2,
+													variant = "suppressed_reaction",
+													blocks = {
+														walk = -1
 													}
+												}
 
-													if self:action_request(action_desc) then
-														try_something_else = false
-													end
+												if self:action_request(action_desc) then
+													try_something_else = false
 												end
 											end
 										end
+									end
 
-										if try_something_else and not self:chk_action_forbidden("crouch") then
-											local action_desc = {
-												body_part = 4,
-												type = "crouch"
-											}
+									if try_something_else and not self:chk_action_forbidden("crouch") then
+										local action_desc = {
+											body_part = 4,
+											type = "crouch"
+										}
 
-											self:action_request(action_desc)
-										end
+										self:action_request(action_desc)
 									end
 								end
 							end
@@ -833,6 +831,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		self:enable_update()
+	end
+
+	function CopMovement:synch_attention(attention)
+		if attention and self._unit:character_damage():dead() then
+			--debug_pause_unit(self._unit, "[CopMovement:synch_attention] dead AI", self._unit, inspect(attention))
+		end
+
+		self:_remove_attention_destroy_listener(self._attention)
+		self:_add_attention_destroy_listener(attention)
+
+		if attention and attention.unit and not attention.destroy_listener_key then
+			--debug_pause_unit(attention.unit, "[CopMovement:synch_attention] problematic attention unit", attention.unit)
+			self:synch_attention(nil)
+
+			return
+		end
+
+		local old_attention = self._attention --of course vanilla lacks this for no real reason
+		self._attention = attention
+		self._action_common_data.attention = attention
+
+		for _, action in ipairs(self._active_actions) do
+			if action and action.on_attention then
+				action:on_attention(attention, old_attention)
+			end
+		end
 	end
 
 	--crash prevention

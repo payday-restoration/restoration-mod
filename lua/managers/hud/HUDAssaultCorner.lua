@@ -2,6 +2,76 @@ if not restoration:all_enabled("HUD/MainHUD", "HUD/AssaultPanel") then
 	return
 end
 
+HUDAssaultCorner._custom_lines_casing = {
+	"GUYS, THE THERMAL DRILL - GO GET IT",
+	"I'M NOT HERE FOR YOUR ENTERTAINMENT",
+	"DO YOU PLAN ON MASKING UP ANYTIME SOON?",
+	"NOBODY CARED WHO I WAS, CAUSE I STILL HADN'T MASKED UP",
+	"CREDITS    ///    CGNICK, KAILLUS, WILKO, I AM NOT A SPY, BATTLE DOG, ZDANN, SUPER MUFFIN, WOLFY, GREAT BIG BUSHY BEARD, WILLCARIO, OLIPRO, INSANO-MAN, MELONIOUS, BENEDICT, SEVEN, PORKY-DA-CORGI, DOKTOR AKCEL, A.J. VALENTINE, TOM SEA, MUD, KRYMXON, SC, ELYSIUM, GARRETT, WHITE3DESIGNER, BMSTU_HEDGEHOG, SIX-DEMON BAG, SOME NAME HERE, REZULUX, BANGL, TONIS, FENDERMCBENDER, VICIOUSWALRUS, EDISLEADO, EVIL BOB, KARL LAKNER, AND EVERYONE ELSE AT OVERKILL SOFTWARE AND STARBREEZE AB    ///    THANK YOU EVERYONE <3",
+	"CONGRATULATIONS!  YOU ARE OUR 1000TH VISITOR!",
+	"WOW.. THAT CREDITS SURE IS LONG, AIN'T IT?  CAN WE GET IT LONGER...?",
+	"BEGINNING VIRTUOUS MISSION...",
+	"73 69 6e 67 75 6c 61 72 69 74 79",
+	"FEAR IS THE MINDKILLER",
+	"FLÄSHYN!",
+}
+HUDAssaultCorner._custom_lines_assault = {
+	"DON'T DIE",
+	"JUST KEEP TAPPING",
+	"JUST KEEP TAPDANCING",
+	"SONG NAME?",
+	"HOW LONG IS THIS TAPE ANYWAY?",
+	"THE COPS NEED THEIR PAYDAY TOO, YOU KNOW",
+	"THE SAFEWORD IS POLICE BRUTALITY",
+	"IS THAT A CLOAKER BEHIND YOU",
+	"TIP #003: MASK UP TO BEGIN THE HEIST",
+	"TIP #021: SHOOTING COPS KILLS THEM... MOST OF THE TIME",
+	"TIP #045: SHOOT THE BULLDOZER UNTIL IT DIES",
+	"TIP #053: DON'T FORGET THE THERMAL DRILL",
+	"TIP #069: HE-HE-HE-HE-HE",
+	"TIP #081: STOP LOOKING AT ME AND SHOOT THE COPS",
+	"TIP #099: THERE AREN'T ANY TIPS BEYOND 99, YOU HAVE BEEN LIED TO",
+	"DRILL JAMMING IN PROGRESS",
+	"GUNS THAT WEAR VESTS IT",
+	"GUNS THAT HATE TEXAS",
+	"GUNS WITH 6 SENSES",
+	"GUNS THAT STRAIGHT FESTIVE",
+	"GUNS THAT MAKE BREAKFAST",
+	"GUNS THAT SEND TEXTSES",
+	"GUNS FOR FAKE NECKLACE",
+	"AMATEUR HOUR IS OVER",
+	"LIKE KEVIN COSTNER",
+}
+HUDAssaultCorner._custom_lines_phalanx = {
+	"AVENGERS ASSEMBLE!",
+	"WINTERS IS COMING",
+	"POINT OF NO RETURN IN... HAHA JUST KIDDING",
+	"IT'S NOT FAIR, IT'S NOT RIGHT",
+}
+HUDAssaultCorner._custom_lines_civilian = {
+	"I AM TEXT BLOCK.",
+	"NOTHING UNUSUAL HERE",
+	"YOU ARE IN CASING MODE.  MASK UP TO START THE... WAIT, SHIT",
+	"ALWAYS WEAR DRY SOCKS",
+	"NO POPO",
+}
+HUDAssaultCorner._custom_lines_ponr = {
+	"OH MY GOD, JC A BOMB",
+	"GOTTA GO FAST",
+	"RUN, RUN GOD DAMN IT",
+	"IT'S A BEAUTIFUL DAY, BIRDS ARE SINGING, FLOWERS ARE BLOOMING... ON DAYS LIKE THESE, HEISTERS LIKE YOU DESERVE TO ROT IN JAIL",
+	"THEY CAN'T CHASE YOU FOREVER",
+	"YOU DESERVE THIS",
+	"THE W.P.D. IS LOOKING FOR YOU",
+	"NEVER LOOK BACK",
+	"THEY'RE GETTING CLOSER",
+	"KEEP MOVING",
+	"NEVER STOP",
+	"NEVER SLOW DOWN",
+	"ANOTHER WORLD LOST",
+}
+HUDAssaultCorner._custom_line_chance = 2 -- Chance of a new line, between 0-100
+
 function HUDAssaultCorner:init(hud, full_hud)
 	self._hud_panel = hud.panel
 	self._full_hud_panel = full_hud.panel
@@ -414,7 +484,27 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 		local text_id = text_list[text_index]
 		local text_string = ""
 		if type(text_id) == "string" then
-			text_string = managers.localization:to_upper_text(text_id)
+
+			local tab = {}
+			
+			if self._casing then
+				tab = self._custom_lines_casing
+			elseif self._assault then
+				tab = self._custom_lines_assault
+			elseif self._point_of_no_return then
+				tab = self._custom_lines_ponr
+			end
+			if self._assault_mode == "phalanx" then
+				tab = self._custom_lines_phalanx
+			end
+			if self._mode == "civilian" then -- NEED TO FIND A WAY TO ENABLE THIS - D.A.
+				tab = self._custom_lines_civilian
+			end
+			if #tab > 0 and text_id ~= "hud_assault_end_line" and text_id ~= "hud_assault_padlock" and self._custom_line_chance > math.random(100) then
+				text_string = tab[math.random(#tab)]
+			else
+				text_string = managers.localization:to_upper_text(text_id)
+			end
 		elseif text_id == Idstring("risk") then
 			local use_stars = true
 			if managers.crime_spree:is_active() then
@@ -926,6 +1016,7 @@ function HUDAssaultCorner:show_casing(mode)
 	local text_panel = casing_panel:child("text_panel")
 	text_panel:script().text_list = {}
 	self._casing_bg_box:script().text_list = {}
+	self._mode = mode
 	local msg
 	if mode == "civilian" then
 		msg = {

@@ -396,9 +396,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local aim_delay_minmax = self._aim_delay_minmax
 
 				if shoot_hist then
-					local displacement = mvec3_dis(target_pos, shoot_hist.m_last_pos)
-
-					if displacement > self._focus_displacement then
+					if self._use_sniper_focus then
 						if self._draw_focus_displacement then
 							local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)
 							line_1:cylinder(self._shoot_from_pos, shoot_hist.m_last_pos, 0.5)
@@ -414,20 +412,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							if aim_delay_minmax[1] == aim_delay_minmax[2] then
 								aim_delay = aim_delay_minmax[1]
 							else
-								local lerp_dis = math_min(1, self._focus_displacement / displacement)
+								local lerp_dis = math_min(1, target_dis / self._falloff[#self._falloff].r)
 
-								aim_delay = math_lerp(aim_delay_minmax[2], aim_delay_minmax[1], lerp_dis)
+								aim_delay = math_lerp(aim_delay_minmax[1], aim_delay_minmax[2], lerp_dis)
 							end
 
 							if self._common_data.is_suppressed then
 								aim_delay = aim_delay * 1.5
 							end
 						end
-					end
 
-					self._shoot_t = self._mod_enable_t + aim_delay
-					shoot_hist.focus_start_t = t
-					shoot_hist.m_last_pos = mvec3_copy(target_pos)
+						self._shoot_t = self._mod_enable_t + aim_delay
+						shoot_hist.focus_start_t = t
+						shoot_hist.m_last_pos = mvec3_copy(target_pos)
+					else
+						local displacement = mvec3_dis(target_pos, shoot_hist.m_last_pos)
+
+						if displacement > self._focus_displacement then
+							if self._draw_focus_displacement then
+								local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)
+								line_1:cylinder(self._shoot_from_pos, shoot_hist.m_last_pos, 0.5)
+
+								local line_2 = Draw:brush(Color.blue:with_alpha(0.5), 2)
+								line_2:cylinder(self._shoot_from_pos, target_pos, 0.5)
+
+								local line_3 = Draw:brush(Color.blue:with_alpha(0.5), 2)
+								line_3:cylinder(target_pos, shoot_hist.m_last_pos, 0.5)
+							end
+
+							if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
+								if aim_delay_minmax[1] == aim_delay_minmax[2] then
+									aim_delay = aim_delay_minmax[1]
+								else
+									local lerp_dis = math_min(1, self._focus_displacement / displacement)
+
+									aim_delay = math_lerp(aim_delay_minmax[2], aim_delay_minmax[1], lerp_dis)
+								end
+
+								if self._common_data.is_suppressed then
+									aim_delay = aim_delay * 1.5
+								end
+							end
+						end
+
+						self._shoot_t = self._mod_enable_t + aim_delay
+						shoot_hist.focus_start_t = t
+						shoot_hist.m_last_pos = mvec3_copy(target_pos)
+					end
 				else
 					if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
 						if aim_delay_minmax[1] == aim_delay_minmax[2] then

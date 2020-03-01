@@ -340,6 +340,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end			
 			end				
 
+			--Green Bridge--
+			if id == "Play_pln_glace_29" then
+				if difficulty_index <= 2 then
+					escape_time = 510
+				elseif difficulty_index == 3 then
+					escape_time = 480
+				elseif difficulty_index == 4 then
+					escape_time = 540
+				elseif difficulty_index == 5 then
+					escape_time = 420	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 390					
+				else
+					escape_time = 360
+				end			
+			end				
+
 			--Diamond Heist--
 			if id == "Play_pln_dah_120" then
 				if difficulty_index <= 2 then

@@ -358,7 +358,7 @@ if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "ИДЁТ ЩТУРМ НАЁМНИКОВ",
-			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В YКРЫТИИ",			
+			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",			
 			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
 		})
 	end)
@@ -373,7 +373,7 @@ elseif ai_type == z then
 elseif ai_type == f then	
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Asalto Federales En Marcha",
+			["hud_assault_assault"] = "Asalto Federal En Marcha",
 			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
 			["hud_assault_alpha"] = "ASALTO FEDERAL"
 		})

@@ -357,8 +357,8 @@ end
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Reaper Assault in Progress",
-			["hud_assault_alpha"] = "REAPER ASSAULT"
+			["hud_assault_assault"] = "ИдЁт Щтурм наЁмников",
+			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
 		})
 	end)
 elseif ai_type == z then	

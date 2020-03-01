@@ -1,8 +1,0 @@
-<unit type="com" slot="1" >
-	<network sync="spawn"/>
-    <object file="units/payday2/architecture/com_int_gallery/laser_detection" />
-    <extensions>
-    <extension name="unit_data" class="ScriptUnitData" />
-	<extension name="damage" class="UnitDamage"/>
-  </extensions>
-</unit>

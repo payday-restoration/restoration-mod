@@ -1,6 +1,0 @@
-<materials version="3">
-    <material name="mtr_can_2" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
-        <diffuse_texture file="units/payday2/props/gen_prop_spraycans/gen_prop_spraycan_blue_df"/>
-        <bump_normal_texture file="units/payday2/props/gen_prop_spraycans/gen_prop_spraycan_nm"/>
-    </material>
-</materials>

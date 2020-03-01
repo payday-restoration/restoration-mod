@@ -1,6 +1,0 @@
-<unit type="str" slot="1" >
-    <object file="units/world/street/street_lights/street_lights_night_cone" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

@@ -357,7 +357,8 @@ end
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИдЁт Щтурм наЁмников",
+			["hud_assault_assault"] = "ИДЁТ ЩТУРМ НАЁМНИКОВ",
+			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В YКРЫТИИ",			
 			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
 		})
 	end)
@@ -365,6 +366,7 @@ elseif ai_type == z then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Pciloe Asuaslt in Prergoss",
+			["hud_assault_cover"] = "STYA IN COVRE...FLESH",						
 			["hud_assault_alpha"] = "PCILOE ASUASLT"
 		})
 	end)
@@ -372,7 +374,8 @@ elseif ai_type == f then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Asalto Federales En Marcha",
-			["hud_assault_alpha"] = "ASALTO FEDERALES"
+			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
+			["hud_assault_alpha"] = "ASALTO FEDERAL"
 		})
 	end)		
 elseif ai_type == m and difficulty_index <= 7 then	

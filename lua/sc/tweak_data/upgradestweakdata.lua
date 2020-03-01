@@ -464,7 +464,7 @@ function UpgradesTweakData:_init_pd2_values()
 		0.15,
 		0.20,
 		0.15,
-		0.05
+		0.10
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -570,7 +570,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.morale_boost_speed_bonus = 1.2
 				self.morale_boost_suppression_resistance = 1
 				self.morale_boost_time = 10
-				self.morale_boost_reload_speed_bonus = 1
+				self.morale_boost_reload_speed_bonus = 1.2
 				self.morale_boost_base_cooldown = 3.5
 			--}
 			
@@ -691,7 +691,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Stun Resistance
 				self.values.player.damage_shake_addend = {1}
-				self.values.player.resist_melee_push = {0.04}
+				self.values.player.resist_melee_push = {0.025}
 				self.values.player.flashbang_multiplier = {0.5, 0.25}
 				
 				--Die Hard

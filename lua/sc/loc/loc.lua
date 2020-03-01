@@ -605,7 +605,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",
-			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster. Shouting at your teammates will increase their movement speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.",																								
+			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster.\n\nACE: ##$pro##\nThere is a ##100%## chance that you can revive crew members at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.\n\nShouting at your teammates will increase their movement and reload speed by ##20%## for ##10## seconds.",																								
 
 
 			--}
@@ -661,11 +661,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSubmachine Guns, Light Machineguns or Rifles set on automatic fire mode have a ##10%## chance to knock down enemies.\n\nACE: ##$pro##\nYour shots now have a ##25%## chance to knock down enemies.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nYour weapons have a ##10%## chance to knock down enemies.\n\nACE: ##$pro##\nYour shots now have a ##25%## chance to knock down enemies.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
-			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\n##30%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns or Rifles fired in automatic mode and does not apply to Bulldozers.\n\nACE: ##$pro##\n##100%## of the enemy's headshot multiplier is applied to the enemy's body.",
+			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\n##30%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns, Rifles or Pistols fired in automatic mode and does not apply to Bulldozers.\n\nACE: ##$pro##\n##100%## of the enemy's headshot multiplier is applied to the enemy's body.",
 
 			--}
 		--}
@@ -706,7 +706,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Stun Resistance--
 			["menu_oppressor_beta_sc"] = "Stun Resistance",
-			["menu_oppressor_beta_desc_sc"] = "BASIC: ##$basic##\nYour steadiness is increased by ##10##.\n\nEnemy melee attacks push you back ##0.4%## less for every point of armor you have.\n\nACE: ##$pro##\nReduces the visual effect duration of Flashbangs by ##50%.##",
+			["menu_oppressor_beta_desc_sc"] = "BASIC: ##$basic##\nYour steadiness is increased by ##10##.\n\nEnemy melee attacks push you back ##0.25%## less for every point of armor you have.\n\nACE: ##$pro##\nReduces the visual effect duration of Flashbangs by ##50%.##",
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "Die Hard",

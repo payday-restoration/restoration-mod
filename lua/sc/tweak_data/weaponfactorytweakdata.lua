@@ -7232,7 +7232,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 4,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_m5k"
@@ -7255,7 +7255,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -2
+				concealment = -1
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_mp5a5"
@@ -7342,8 +7342,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_s_adjust",
 			stats = {
 				value = 3,
-				recoil = -1,
-				concealment = 2
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_smg_mp5_s_ring = {
@@ -7358,8 +7357,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_s_ring",
 			stats = {
 				value = 3,
-				recoil = -2,
-				concealment = 3
+				recoil = -1,
+				concealment = 2
 			}
 		}
 		self.parts.wpn_fps_smg_mp5_s_solid = {
@@ -23538,8 +23537,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			stats = {
 				value = 1,
 				recoil = -2,
-				spread = 2,
-				concealment = 1
+				spread = 2
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
@@ -31473,7 +31471,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_mp5_s_folding",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_smg_mp5_s_folding/wpn_fps_smg_mp5_s_folding",
-			stats = {value = 1, concealment = 1},
+			stats = {
+				value = 1, 
+				concealment = -2, 
+				spread = -1, 
+				recoil = 2
+			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
 			is_a_unlockable = true

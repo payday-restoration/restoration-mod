@@ -216,14 +216,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 9},
 				[1] = {
 					upgrades = {
-						"player_revive_interaction_speed_multiplier",
-						"player_morale_boost"
+						"player_revive_interaction_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"cooldown_long_dis_revive"
+						"cooldown_long_dis_revive",
+						"player_morale_boost"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -635,7 +635,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.show_of_force = {
 				["name_id"] = "menu_show_of_force_sc",
 				["desc_id"] = "menu_show_of_force_desc_sc",
-				["icon_xy"] = {1, 2},
+				["icon_xy"] = {2, 12},
 				[1] = {
 					upgrades = {
 						"player_deflection_addend_1"

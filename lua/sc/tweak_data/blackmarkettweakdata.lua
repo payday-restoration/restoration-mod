@@ -482,6 +482,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wild"
 		}
 		local characters_all = table.list_union(characters_female, characters_male, characters_female_big, characters_male_big)
+		local body_replacement_fuck_the_new_raincoat = {
+			head = false,
+			armor = true,
+			body = false,
+			hands = false,
+			vest = true
+		}	
 		local body_replacement_standard = {
 			head = false,
 			armor = true,
@@ -524,7 +531,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			for _, key in ipairs(characters) do
 				self.player_styles[player_style].characters[key] = data
 			end
-		end		
+		end	
 		
 		--Two Piece Suit
 		self.player_styles.two_piece_suit = {
@@ -599,7 +606,76 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flatgreen"
 			}			
 			end
-		end						
+		end				
+	    
+		--Fixed Raincoat
+		self.player_styles.raincoat = {
+	    	name_id = "bm_suit_raincoat",
+	    	desc_id = "bm_suit_raincoat_desc",
+	    	locks = {
+	    		achievement = "glace_1"
+	    	},
+	    	texture_bundle_folder = "trd",
+	    	body_replacement = body_replacement_fuck_the_new_raincoat,
+	    	third_body_replacement = body_replacement_fuck_the_new_raincoat,
+	    	characters = {}
+	    }
+		set_characters_data("raincoat", characters_male, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_black_gloves, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_tony, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_bodhi, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_jimmy, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_chains, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_sangres, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_jacket, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_male_big, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_worst_addition, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan"
+		})
+		set_characters_data("raincoat", characters_female, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_sydney, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_joy, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_female_big, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc"
+		})			
 
 		--Resmod Loud Suit
 		self.player_styles.loud_suit = {

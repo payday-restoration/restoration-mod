@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="glc" slot="1">
-	<object file="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" />
+	<object file="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc" />
 
 	<dependencies>
 		

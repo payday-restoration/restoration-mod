@@ -207,8 +207,9 @@
 	<texture path="units/payday2/characters/shared_textures/heads_ss_lv_df"/>
 	<texture path="units/payday2/characters/shared_textures/heads_ss_lv_nm"/>
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_nm" />		
-	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_nm" />	
+	<texture path="units/pd2_dlc1/characters/shared_textures/ene_security_gensec_heads_df" force="true" />	
+
 	<!--Risk Level-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>

@@ -133,7 +133,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Player Outfits					
 		["bm_suit_two_piece_sc"] = "Two-piece Suit",
-		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!'",				
+		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!' \n \nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",				
 		
 		["bm_suit_loud_suit"] = "Combat Harness",
 		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		

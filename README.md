@@ -59,9 +59,14 @@ Captain Autumn
 Russian Titan enemies
 GenSec Shotgunner and UMP guy
 Heavy shotgunner assets
-Heister "Sunny-Side Robber" suits
+Heister "Sunny-Side Robber"
 Heister "Combat Harness"
 and providing many promotional screenshots.
+Murky Special Forces 
+US National Guard
+AKAN Containment Team
+Policia Federal Commons
+Voicing Murky Special Forces
 Creation of some alternate environments and minor code additions, mostly the enemy chatter stuff.
 
 Zdann Major asset contributions to the mod 
@@ -88,6 +93,9 @@ Jarey_ ZEALS Used for our ZEAL sepcials
 Updating Captain Spring and Russian Titan Dozer assets
 Sniper Glint
 Murky Vetcop
+Policia Federal Specials
+Updating some NPC weapon models
+Heister "Prison Suit"
 Russian Titan Cloaker textures
 
 Splish Asset contributions to the mod 
@@ -102,12 +110,15 @@ Titan SWAT
 Various crimespree icons and risk level assets
 The Restoration masks
 Captain Summers
-The still unused Biker Dozer
+Biker Dozer
+Policia Federal Cloaker Model
 and the creation of the map package.
 
-fuglore doing all the crazy AI and tactic changes, adding the common enemy pain lines stuff, making the Voiceline Framework function better and providing Less Flat "The Classic" Lighting for implementation.
+fuglore creating all of the custom tactics and making enemy logics work much much better, adding the common enemy pain lines stuff, making the Voiceline Framework function better and providing Less Flat "The Classic" Lighting for implementation.
 
 Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
+
+Hoxi mass optimization of game code and improvements to enemy ai including npc melee improvements, npc reload fixes, updating sniper code and much much more
 
 Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
 
@@ -123,7 +134,7 @@ Offyerrocker Helping redesign Sentries. Making Autumn's special abilities work.
 
 Scruffy A huge thanks for voicing the Grenadier.
 
-VxWolf Creating the songs used in Doghouse, Wetworks and Burnout and voicing the OMNIA LPF.
+VxWolf Creating the mod soundtrack and voicing the OMNIA LPF.
 
 Skwuruhl fixing stance modifiers and making spread work better.
 
@@ -131,7 +142,7 @@ Major Pyatosin A huge thanks for voicing the Vet Cop and Jackal.
 
 Whurr Helping create the Firestarter Day 3 edit.
 
-test-1 adding the package loading system, updating the network code and fixing all the bugs we couldn't.
+test-1 adding the package loading system, updating the network code, expanding the options menu and fixing all the bugs we couldn't.
 
 Porky da Corgi creating the base textures for the grenadier and OMNIA Light
 
@@ -144,6 +155,8 @@ Baddy fixing the cap on security 7, Russian Medic helmet popping, providing the 
 Nardo Allowing us to include "First-person Stealth Suit Fixes".
 
 KLEITON and Tom Blaine taking on the huge task of translating the steam guide into Russian.
+
+MarioInATopHat voicing Big Dave
 
 Testers:
 ShortonComedyGamer (made sure neslon added support to the custom owen) 

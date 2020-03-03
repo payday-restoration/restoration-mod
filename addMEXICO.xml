@@ -47,6 +47,7 @@
 	<object path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45_husk" force="true"/>	
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45_husk" force="true" load="true"/>	
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45" force="true" load="true"/>	
+	
 	<!--Big-->
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>	
@@ -72,7 +73,7 @@
 	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2_contour" />
 	<unit path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2_husk"  load="true"/>	
-	<!--MARIACHI HAT-->	
+	<!--MARIACHI SOMBRERO-->	
 	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>
 	
 	<!--Sniper-->	
@@ -217,6 +218,9 @@
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"/>
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump_contour"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump_husk" load="true"/>	
+
+	<!--Rifleman Helmet Acc-->	
+	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_city_helmet/ene_acc_bex_city_helmet" load="true"/>
 	
 	<!--FBI Tier-->
 	<!--Rifle-->
@@ -227,6 +231,10 @@
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi_contour" />
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi_husk" load="true"/>	
+	
+	<!--Rifleman Helmet Acc-->	
+	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_fbi_helmet/ene_acc_bex_fbi_helmet" load="true"/>
+	
 	<!--Shotgun-->	
 	<object path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870" />

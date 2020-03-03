@@ -47651,6 +47651,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_upg_o_cqb.stats = {
 				value = 5
 			}
+			self.parts.wpn_fps_ass_s552_g_sniper.stats = {
+				value = 6,
+				spread = 1
+			}
+			self.parts.wpn_fps_ass_s552_s_sniper.stats = {
+				value = 1,
+				recoil = 2,
+				spread = -1,
+				concealment = -2
+			}						
+			self.parts.wpn_fps_sho_rota_b_longer.stats = {
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_s552_fg_tac.stats = {
+				value = 7,
+				spread = -2,
+				recoil = 3,
+				concealment = -1
+			}			
 			self.parts.wpn_fps_pis_g17_b_bling.stats = {
 				value = 1
 			}

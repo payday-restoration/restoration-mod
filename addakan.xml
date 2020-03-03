@@ -144,6 +144,10 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob_contour" force="false" />
 	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_head_df" force="false" />
 	<texture path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_body_df" force="false" />	
+
+	<!--(thx baddy) russian medic helmet acc-->	
+	<unit_mat path="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet" load="true"/>
+	<unit_mat path="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann" load="true"/>
 	
 	<!--Russian Medic zdann-->
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" load="true"/>

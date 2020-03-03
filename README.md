@@ -118,7 +118,7 @@ fuglore creating all of the custom tactics and making enemy logics work much muc
 
 Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
 
-Hoxi mass optimization of game code and improvements to enemy ai including npc melee improvements, npc reload fixes, updating sniper code and much much more
+Hoxi mass optimization of game code, improving the shit out of bots and improvements to enemy ai including npc melee improvements, npc reload fixes, updating sniper code and much much more
 
 Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
 
@@ -159,6 +159,7 @@ KLEITON and Tom Blaine taking on the huge task of translating the steam guide in
 MarioInATopHat voicing Big Dave
 
 Testers:
+Derma
 ShortonComedyGamer (made sure neslon added support to the custom owen) 
 K4_Kydure
 Finale

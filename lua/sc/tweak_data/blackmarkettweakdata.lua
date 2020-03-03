@@ -725,8 +725,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_sangres, {
-			body_replacement = body_replacement_hands,
+			body_replacement = body_replacement_fuck_the_new_raincoat ,
 			third_body_replacement = body_replacement_armor,
+			keep_wrists = false,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})

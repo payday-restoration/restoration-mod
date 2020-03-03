@@ -10,6 +10,9 @@
 	"menu_utility_radial_menu_name" : "Utility Radial Menu",
 	"menu_utility_radial_menu_desc" : "Open the Utility Menu",
 	
+	"res_credits" : "Restoration Mod Credits",
+	"res_credits_help" : "",
+	
 	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO REP 100",
 	
 	"RestorationModOptionsButtonTitleID" : "Restoration Mod Options",

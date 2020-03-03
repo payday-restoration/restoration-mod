@@ -121,14 +121,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return
 	end
 	
-	function GroupAIStateBesiege:chk_assault_active_atm()  
-	   if not self._task_data.assault.active then
-	     	return
-	   	--log("not assault active")
-	   end
-	   
-	   return true
-    end
+	function GroupAIStateBesiege:chk_assault_active_atm()
+		local assault_task = self._task_data.assault
+		
+		if assault_task and assault_task.phase == "build" or assault_task and assault_task.phase == "sustain" then
+			return true
+		end
+		
+		return
+	end
 	
 	function GroupAIStateBesiege:_voice_groupentry(group)
 	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)

@@ -5,8 +5,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local action_type = action:type()
         
 		if data.tactics and data.tactics.hitnrun or data.tactics and data.tactics.elite_ranged_fire or data.tactics and data.tactics.spoocavoidance or data.tactics and data.tactics.reloadingretreat then
-	            --cover point changes are a little fucky wucky with these tactics
-	        if action_type == "walk" then
+	        --cover point changes are a little fucky wucky with these tactics
+			if action_type == "healed" then
+				CopLogicAttack._cancel_cover_pathing(data, my_data)
+				CopLogicAttack._cancel_charge(data, my_data)
+			
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+			elseif action_type == "heal" then
+				CopLogicAttack._cancel_cover_pathing(data, my_data)
+				CopLogicAttack._cancel_charge(data, my_data)
+			
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)	
+				end
+	        elseif action_type == "walk" then
 	        	if action:expired() and not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
 	        		my_data.coarse_path_index = my_data.coarse_path_index + 1
             
@@ -78,7 +96,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
             
 	        		data.unit:brain():abort_detailed_pathing(my_data.advance_path_search_id)
 	        	end
-	        elseif action_type == "shoot" then
+				
+				if action:expired() then
+					--CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+				
+	        elseif action_type == "shoot" then		
 				my_data.shooting = nil
 			elseif action_type == "tase" then
 				if action:expired() and my_data.tasing then
@@ -87,6 +112,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if record and record.status then
 						data.tase_delay_t = TimerManager:game():time() + 45
 					end
+					TaserLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
 				end
 
 				managers.groupai:state():on_tase_end(my_data.tasing.target_u_key)
@@ -102,28 +130,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if action:expired() then
 					CopLogicAttack._upd_aim(data, my_data)
 					data.logic._upd_stance_and_pose(data, data.internal_data)
-					--CopLogicAttack._upd_combat_movement(data)
+					CopLogicTravel.upd_advance(data)
 				end
 
 				my_data.spooc_attack = nil
 			elseif action_type == "reload" then
 				--Removed the requirement for being important here.
-				if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
-					CopLogicAttack._upd_aim(data, my_data)
-					data.logic._upd_stance_and_pose(data, data.internal_data)
-				end
-			elseif action_type == "turn" then
-				my_data.turning = nil
-			elseif action_type == "act" then
-				--CopLogicAttack._cancel_cover_pathing(data, my_data)
-				--CopLogicAttack._cancel_charge(data, my_data)
-				
-				--Fixed panic never waking up cops.
 				if action:expired() then
 					CopLogicAttack._upd_aim(data, my_data)
 					data.logic._upd_stance_and_pose(data, data.internal_data)
-					--CopLogicAttack._upd_combat_movement(data)
+					CopLogicTravel.upd_advance(data)
 				end
+			elseif action_type == "turn" then
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+				
+				my_data.turning = nil
 			elseif action_type == "hurt" then
 				CopLogicAttack._cancel_cover_pathing(data, my_data)
 				CopLogicAttack._cancel_charge(data, my_data)
@@ -131,7 +156,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				--Removed the requirement for being important here.
 				if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
 					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
 				end
+				
 			elseif action_type == "dodge" then
 				local timeout = action:timeout()
 
@@ -140,17 +168,55 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 
 				CopLogicAttack._cancel_cover_pathing(data, my_data)
-
+				CopLogicAttack._cancel_charge(data, my_data)
+				
 				if action:expired() then
 					CopLogicAttack._upd_aim(data, my_data)
 					data.logic._upd_stance_and_pose(data, data.internal_data)
-					--CopLogicAttack._upd_combat_movement(data)
+					CopLogicTravel.upd_advance(data)
 				end
-			end
+				
+				local objective = data.objective
+				local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, nil)
+
+				if allow_trans then
+					local wanted_state = data.logic._get_logic_state_from_reaction(data)
+
+					if wanted_state and wanted_state ~= data.name and obj_failed then
+						if data.unit:in_slot(managers.slot:get_mask("enemies")) or data.unit:in_slot(17) then
+							data.objective_failed_clbk(data.unit, data.objective)
+						elseif data.unit:in_slot(managers.slot:get_mask("criminals")) then
+							managers.groupai:state():on_criminal_objective_failed(data.unit, data.objective, false)
+						end
+
+						if my_data == data.internal_data then
+							debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] exiting without discarding objective", data.unit, inspect(data.objective))
+							CopLogicBase._exit(data.unit, wanted_state)
+						end
+					end
+				end
 	        
 		else				
 		    
-			if action_type == "walk" then
+			if action_type == "healed" then
+				CopLogicAttack._cancel_cover_pathing(data, my_data)
+				CopLogicAttack._cancel_charge(data, my_data)
+			
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+			elseif action_type == "heal" then
+				CopLogicAttack._cancel_cover_pathing(data, my_data)
+				CopLogicAttack._cancel_charge(data, my_data)
+			
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+			elseif action_type == "walk" then
 		    	if action:expired() and not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
 		    		my_data.coarse_path_index = my_data.coarse_path_index + 1
             
@@ -234,7 +300,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
             
 		    		data.unit:brain():abort_detailed_pathing(my_data.advance_path_search_id)
 		    	end
-		    elseif action_type == "shoot" then
+				
+				if action:expired() then
+					--CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+		    elseif action_type == "shoot" then		
 				my_data.shooting = nil
 			elseif action_type == "tase" then
 				if action:expired() and my_data.tasing then
@@ -243,6 +315,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if record and record.status then
 						data.tase_delay_t = TimerManager:game():time() + 45
 					end
+					TaserLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
 				end
 
 				managers.groupai:state():on_tase_end(my_data.tasing.target_u_key)
@@ -258,28 +333,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if action:expired() then
 					CopLogicAttack._upd_aim(data, my_data)
 					data.logic._upd_stance_and_pose(data, data.internal_data)
-					--CopLogicAttack._upd_combat_movement(data)
+					CopLogicTravel.upd_advance(data)
 				end
 
 				my_data.spooc_attack = nil
 			elseif action_type == "reload" then
 				--Removed the requirement for being important here.
-				if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
-					CopLogicAttack._upd_aim(data, my_data)
-					data.logic._upd_stance_and_pose(data, data.internal_data)
-				end
-			elseif action_type == "turn" then
-				my_data.turning = nil
-			elseif action_type == "act" then
-				--CopLogicAttack._cancel_cover_pathing(data, my_data)
-				--CopLogicAttack._cancel_charge(data, my_data)
-				
-				--Fixed panic never waking up cops.
 				if action:expired() then
 					CopLogicAttack._upd_aim(data, my_data)
 					data.logic._upd_stance_and_pose(data, data.internal_data)
-					--CopLogicAttack._upd_combat_movement(data)
+					CopLogicTravel.upd_advance(data)
 				end
+			elseif action_type == "turn" then
+				if action:expired() then
+					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
+				end
+				
+				my_data.turning = nil
 			elseif action_type == "hurt" then
 				CopLogicAttack._cancel_cover_pathing(data, my_data)
 				CopLogicAttack._cancel_charge(data, my_data)
@@ -287,7 +359,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				--Removed the requirement for being important here.
 				if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
 					CopLogicAttack._upd_aim(data, my_data)
+					data.logic._upd_stance_and_pose(data, data.internal_data)
+					CopLogicTravel.upd_advance(data)
 				end
+				
 			elseif action_type == "dodge" then
 				local timeout = action:timeout()
 
@@ -296,11 +371,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 
 				CopLogicAttack._cancel_cover_pathing(data, my_data)
-
+				CopLogicAttack._cancel_charge(data, my_data)
+				
 				if action:expired() then
 					CopLogicAttack._upd_aim(data, my_data)
 					data.logic._upd_stance_and_pose(data, data.internal_data)
-					--CopLogicAttack._upd_combat_movement(data)
+					CopLogicTravel.upd_advance(data)
+				end
+				
+				local objective = data.objective
+				local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, nil)
+
+				if allow_trans then
+					local wanted_state = data.logic._get_logic_state_from_reaction(data)
+
+					if wanted_state and wanted_state ~= data.name and obj_failed then
+						if data.unit:in_slot(managers.slot:get_mask("enemies")) or data.unit:in_slot(17) then
+							data.objective_failed_clbk(data.unit, data.objective)
+						elseif data.unit:in_slot(managers.slot:get_mask("criminals")) then
+							managers.groupai:state():on_criminal_objective_failed(data.unit, data.objective, false)
+						end
+
+						if my_data == data.internal_data then
+							debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] exiting without discarding objective", data.unit, inspect(data.objective))
+							CopLogicBase._exit(data.unit, wanted_state)
+						end
+					end
 				end
 			end
 		end

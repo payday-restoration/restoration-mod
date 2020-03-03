@@ -432,6 +432,8 @@
 	"RestorationModProfileDescID" : "Enable or disable alpha Profile Box.",
 	"RestorationModNewsfeedTitleID" : "Alpha Newsfeed",
 	"RestorationModNewsfeedDescID" : "Enable or disable alpha Newsfeed.",
+	"RestorationModUppercaseNamesTitleID" : "Uppercase names",
+	"RestorationModUppercaseNamesDescID" : "Enable or disable uppercase names.",	
 	"RestorationModPeerColorsTitleID" : "Alpha Peer Colors",
 	"RestorationModPeerColorsDescID" : "Enable or disable the alpha peer colors.",
 	"alpha_assault" : "Early Alpha Corner",

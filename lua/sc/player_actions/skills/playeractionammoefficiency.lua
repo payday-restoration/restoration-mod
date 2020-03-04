@@ -16,7 +16,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					headshots = headshots + 1
 
 					if headshots == target_headshots then
-						local refund = math.ceil(0.02 * weapon_unit:get_ammo_max(), 1)
+						local refund = math.ceil(bullet_refund * weapon_unit:get_ammo_max(), 1)
 						if to_magazine then
 							weapon_unit:set_ammo_remaining_in_clip(math.min(weapon_unit:get_ammo_max_per_clip(), weapon_unit:get_ammo_remaining_in_clip() + refund))
 						end

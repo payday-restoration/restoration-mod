@@ -925,8 +925,8 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
-					{ ammo = 1, time = 6, headshots = 3 },
-					{ ammo = 1, time = 6, headshots = 2 }
+					{ ammo = 0.02, time = 6, headshots = 3, to_magazine = false },
+					{ ammo = 0.02, time = 6, headshots = 2, to_magazine = true }
 				}
 
 				--Aggressive Reload

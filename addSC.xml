@@ -2096,7 +2096,6 @@
 	
 	<!--suit inventory icons-->
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit"/>
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_pool"/>
 	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/jumpsuit_flecktarn"/>
 	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/jumpsuit_flatgreen"/>		
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison"/>

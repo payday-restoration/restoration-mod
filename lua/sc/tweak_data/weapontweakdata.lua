@@ -854,7 +854,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mp5_npc.FIRE_MODE = "auto"
 		self.mp5_tactical_npc = deep_clone(self.mp5_npc)
 		self.mp5_tactical_npc.has_suppressor = "suppressed_a"
-		self.mp5_tactical_npc.DAMAGE = 3.1
 		self.mp5_tactical_npc.alert_size = 500
 		self.mp5_tactical_npc.suppression = 0.1
 		self.mp5_cloak_npc = deep_clone(self.mp5_npc)

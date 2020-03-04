@@ -87,24 +87,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	-- 	end
 	-- end
 
-	function UnitNetworkHandler:set_equipped_weapon(unit, item_index, blueprint_string, cosmetics_string, sender)
-		if not self._verify_character(unit) then
-			return
-		end
-
-		local peer = self._verify_sender(sender)
-
-		if not peer then
-			return
-		end
-
-		if not unit:inventory() or not unit:inventory().synch_equipped_weapon then
-			return
-		end
-
-		unit:inventory():synch_equipped_weapon(item_index, blueprint_string, cosmetics_string, peer)
-	end
-
 	function UnitNetworkHandler:sync_add_doted_enemy(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, rpc)
 		if variant == 0 then
 			managers.fire:sync_add_fire_dot(enemy_unit, nil, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation)

@@ -4939,6 +4939,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.ksg.panic_suppression_chance = 0.0
+		self.gre_m79.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.gre_m79.desc_id = "bm_40mm_weapon_sc_desc"
 		self.gre_m79.has_description = true
 		self.gre_m79.fire_mode_data.fire_rate = 1
@@ -5665,6 +5670,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		--She’s a gunshot bride
+		self.rpg7.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.rpg7.spread.standing = 3
 		self.rpg7.spread.crouching = 2
 		self.rpg7.spread.steelsight = 1
@@ -5917,6 +5927,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.flamethrower_mk2.panic_suppression_chance = 0.0
+		self.m32.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}				
 		self.m32.spread.standing = 3
 		self.m32.spread.crouching = 2
 		self.m32.spread.steelsight = 1
@@ -6049,6 +6064,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25		
 		self.winchester1874.stats_modifiers = nil
 		self.winchester1874.panic_suppression_chance = 0.0
+		self.plainsrider.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.plainsrider.has_description = true
 		self.plainsrider.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.plainsrider.spread.standing = 3
@@ -6263,6 +6283,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.polymer.panic_suppression_chance = 0.05
+		self.hunter.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.hunter.has_description = true
 		self.hunter.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.hunter.AMMO_MAX = 23
@@ -6330,6 +6355,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.baka.panic_suppression_chance = 0.05
+		self.arblast.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
 		self.arblast.has_description = true
 		self.arblast.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.arblast.AMMO_MAX = 20
@@ -6362,6 +6392,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arblast.timers.reload_not_empty = 3.05
 		self.arblast.timers.reload_empty = 3.05		
 		self.arblast.stats_modifiers = {damage =  2}
+		self.frankish.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
 		self.frankish.has_description = true
 		self.frankish.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.frankish.spread.standing = 3
@@ -6395,6 +6430,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.frankish.timers.reload_not_empty = 1.6
 		self.frankish.timers.reload_empty = 1.6		
 		self.frankish.stats_modifiers = {damage = 2}
+		self.long.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
 		self.long.has_description = true
 		self.long.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.long.spread.standing = 3
@@ -6561,6 +6601,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
+		self.china.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.china.desc_id = "bm_40mm_weapon_sc_desc"
 		self.china.has_description = true
 		self.china.fire_mode_data.fire_rate = 1.5
@@ -6997,6 +7042,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
+		self.arbiter.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.arbiter.fire_mode_data.fire_rate = 1.5
 		self.arbiter.single.fire_rate = 1.5
 		self.arbiter.CLIP_AMMO_MAX = 6
@@ -7060,6 +7110,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
+		self.contraband_m203.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.contraband_m203.spread.standing = 3
 		self.contraband_m203.spread.crouching = 2
 		self.contraband_m203.spread.steelsight = 1
@@ -7088,6 +7143,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.contraband_m203.stats_modifiers = {damage = 4}
+		self.ray.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
 		self.ray.use_data.selection_index = 2
 		self.ray.spread.standing = 3
 		self.ray.spread.crouching = 2
@@ -7454,6 +7514,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.erma.panic_suppression_chance = 0.05
+		self.ecp.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}		
 		self.ecp.has_description = true
 		self.ecp.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.ecp.spread.standing = 3
@@ -7646,6 +7711,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.corgi.panic_suppression_chance = 0.0		
+		self.slap.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}			
 		self.slap.desc_id = "bm_40mm_weapon_sc_desc"
 		self.slap.has_description = false
 		self.slap.fire_mode_data.fire_rate = 1.2
@@ -8825,7 +8895,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			total_ammo_mod = 100,
 			value = 1,
 			reload = 20
-		}		
+		}	
+		self.elastic.upgrade_blocks = {
+			weapon = {
+				"clip_ammo_increase"
+			}
+		}
 		self.elastic.has_description = true
 		self.elastic.desc_id = "bm_ap_2_weapon_sc_desc"
 		self.elastic.spread.standing = 3

@@ -216,14 +216,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 9},
 				[1] = {
 					upgrades = {
-						"player_revive_interaction_speed_multiplier"
+						"player_revive_interaction_speed_multiplier",
+						"player_morale_boost"						
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"cooldown_long_dis_revive",
-						"player_morale_boost"
+						"cooldown_long_dis_revive"
 					},
 					cost = self.costs.hightierpro
 				}

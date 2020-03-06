@@ -14,7 +14,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		local player_manager = managers.player
 		self._bleed_out_health = Application:digest_value(tweak_data.player.damage.BLEED_OUT_HEALTH_INIT * player_manager:upgrade_value("player", "bleed_out_health_multiplier", 1), true)
-		self._god_mode = Global.god_mode
+		self._god_mode = Global.god_mode or true
 		self._invulnerable = false
 		self._mission_damage_blockers = {}
 		self._gui = Overlay:newgui()

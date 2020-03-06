@@ -910,15 +910,15 @@ function UpgradesTweakData:_init_pd2_values()
 					{
 						radius = 400,
 						max_chain = 4,
-						damage_factor = 0.75,
-						damage_factor_kill = 0.75,
+						damage_factor = 0.70,
+						damage_factor_range = 0.00,
 						range_increment = 700
 					},
 					{
 						radius = 500,
 						max_chain = 4,
-						damage_factor = 0.75,
-						damage_factor_kill = 1.0,
+						damage_factor = 0.70,
+						damage_factor_range = 0.10,
 						range_increment = 700
 					}
 				}				

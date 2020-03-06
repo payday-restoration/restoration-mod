@@ -931,7 +931,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
-		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## headshots in less than ##3## seconds will grant ##1## bullet or ##2%## of your total ammo, whichever is higher, to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nACE: ##$pro##\nThe effect is now triggered upon landing ##2## headshots, and the ammo is refunded directly into your magazine whenever possible.",
+		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## lethal headshots in less than ##6## seconds will grant ##1## bullet or ##3.5%## of your total ammo, whichever is higher, to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot mode.\n\nACE: ##$pro##\nThe effect is now triggered upon landing ##2## lethal headshots, and the ammo is refunded directly into your magazine whenever possible.",
 
 		--Cleaner--
 		["menu_jail_workout_sc"] = "Cleaner",

@@ -12,7 +12,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local attacker_unit = attack_data.attacker_unit
 				local variant = attack_data.variant
 
-				if attacker_unit == player_manager:player_unit() and variant == "bullet" then
+				if attacker_unit == player_manager:player_unit() and variant == "bullet" and attack_data.result.type == "death" then
 					headshots = headshots + 1
 
 					if headshots == target_headshots then
@@ -26,6 +26,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 
+			--OnLethalHeadshot crashes because attack_data and unit somehow become null. Why? Damned if I know.
 			player_manager:register_message(Message.OnHeadShot, co, on_headshot)
 
 			while time < target_time do

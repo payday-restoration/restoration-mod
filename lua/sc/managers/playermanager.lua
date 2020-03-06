@@ -658,7 +658,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
 
-			if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
+			if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") and attack_data.result.type == "death" then
 				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 			end
 		end

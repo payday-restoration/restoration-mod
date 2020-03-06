@@ -83,7 +83,9 @@ function EquipmentsTweakData:init()
 		self.specials.blood_sample_verified.quantity=1
 		self.specials.blood_sample_verified.max_quantity=4	
 		self.specials.mayan_gold_bar.quantity=4
-		self.specials.mayan_gold_bar.max_quantity=4			
+		self.specials.mayan_gold_bar.max_quantity=4		
+		self.specials.lance_part.quantity=4
+		self.specials.lance_part.max_quantity=4				
    	end
 end
 

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<tweak name="settings/network" extension="network_settings">
+<!--tweak name="settings/network" extension="network_settings">
 	<search>
 		<network/>
 		<rpc/>
@@ -38,4 +38,4 @@
 	<target mode="attributes">
 		<attr name="receiver" value="ordered"/>
 	</target>
-</tweak>
+</tweak> -->

@@ -339,7 +339,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			my_data.tasing = nil
 		elseif action_type == "reload" then
 			--Removed the requirement for being important here.
-			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+			if not data.unit:character_damage():dead() and action:expired() then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 			end
@@ -350,7 +350,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--CopLogicAttack._cancel_charge(data, my_data)
 			
 			--Fixed panic never waking up cops.
-			if action:expired() then
+			if not data.unit:character_damage():dead() and action:expired() then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 				CopLogicAttack._upd_combat_movement(data)
@@ -360,7 +360,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			CopLogicAttack._cancel_charge(data, my_data)
 			
 			--Removed the requirement for being important here.
-			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+			if not data.unit:character_damage():dead() and action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 			end
@@ -373,7 +373,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			CopLogicAttack._cancel_cover_pathing(data, my_data)
 
-			if action:expired() then
+			if not data.unit:character_damage():dead() and action:expired() then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 				TaserLogicAttack._upd_combat_movement(data)

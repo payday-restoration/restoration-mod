@@ -29,13 +29,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_black.america, classic_mini_unit_name)
 		table.insert(unit_types_black.russia, classic_mini_unit_name)
 		table.insert(unit_types_black.zombie, classic_mini_unit_name)
-		table.insert(unit_types_black.murkywater, classic_mini_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))
+		table.insert(unit_types_black.murkywater, classic_medic_unit_name)
 		table.insert(unit_types_black.nypd, classic_mini_unit_name)
 		table.insert(unit_types_black.lapd, classic_mini_unit_name)				
 		else		
 		table.insert(unit_types_black.america, mini_unit_name)
 		table.insert(unit_types_black.russia, mini_unit_name)
 		table.insert(unit_types_black.zombie, mini_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))		
 		table.insert(unit_types_black.murkywater, mini_unit_name)
 		table.insert(unit_types_black.nypd, mini_unit_name)
 		table.insert(unit_types_black.lapd, mini_unit_name)		
@@ -73,6 +75,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.america, classic_medic_unit_name)
 		table.insert(unit_types.russia, classic_medic_unit_name)
 		table.insert(unit_types.zombie, classic_medic_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
 		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types.nypd, classic_medic_unit_name)
 		table.insert(unit_types.lapd, classic_medic_unit_name)
@@ -80,6 +83,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_black.america, classic_medic_unit_name)
 		table.insert(unit_types_black.russia, classic_medic_unit_name)
 		table.insert(unit_types_black.zombie, classic_medic_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
 		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_black.nypd, classic_medic_unit_name)
 		table.insert(unit_types_black.lapd, classic_medic_unit_name)
@@ -87,6 +91,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_skull.america, classic_medic_unit_name)
 		table.insert(unit_types_skull.russia, classic_medic_unit_name)
 		table.insert(unit_types_skull.zombie, classic_medic_unit_name)
+		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
 		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_skull.nypd, classic_medic_unit_name)
 		table.insert(unit_types_skull.lapd, classic_medic_unit_name)			
@@ -94,6 +99,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.america, medic_unit_name)
 		table.insert(unit_types.russia, medic_unit_name)
 		table.insert(unit_types.zombie, medic_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
 		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types.nypd, medic_unit_name)
 		table.insert(unit_types.lapd, medic_unit_name)
@@ -101,6 +107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_black.america, medic_unit_name)
 		table.insert(unit_types_black.russia, medic_unit_name)
 		table.insert(unit_types_black.zombie, medic_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
 		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_black.nypd, medic_unit_name)
 		table.insert(unit_types_black.lapd, medic_unit_name)
@@ -108,6 +115,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_skull.america, medic_unit_name)
 		table.insert(unit_types_skull.russia, medic_unit_name)
 		table.insert(unit_types_skull.zombie, medic_unit_name)
+		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
 		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_skull.nypd, medic_unit_name)
 		table.insert(unit_types_skull.lapd, medic_unit_name)					
@@ -301,7 +309,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
-					},	
+					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc")
+					},										
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1")
 					},	
@@ -323,10 +334,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					},
 					zombie = {
 						Idstring("units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1")
-					},
+					},					
 					murkywater = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc")
+					},															
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker")
 					},
@@ -355,6 +369,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale")							
+					},					
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1")							
 					},	
@@ -383,6 +400,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale")							
+					},										
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
@@ -411,6 +431,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870")			
 				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870")			
+				},				
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870")					
 				},
@@ -437,6 +460,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale")			
+					},									
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1")						
 					},
@@ -470,6 +496,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
 						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),			
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),			
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")					
+					},														
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
 						Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
@@ -507,6 +538,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
 						Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),			
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),			
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")					
+					},																			
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
 						Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
@@ -544,6 +580,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
 						Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),			
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),			
+						Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")					
+					},																								
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
@@ -580,6 +621,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")						
+					},					
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")						
@@ -610,6 +655,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")						
+					},										
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")						
@@ -639,6 +688,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
+					},					
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")							
 					},	
@@ -663,6 +715,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
+					},										
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
 					},
@@ -694,6 +749,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4"),	
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),	
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale")							
+					},					
 					nypd = {
 						Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
 						Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4")								
@@ -720,6 +779,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi")
+					},										
 					nypd = {
 						Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1")								
 					},	
@@ -748,6 +810,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),	
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi")						
+					},															
 					nypd = {
 						Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 						Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1")
@@ -774,6 +840,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city")
+					},																				
 					nypd = {
 						Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
 					},	
@@ -798,6 +867,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city")
+					},																									
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
 					},	
@@ -829,6 +901,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump")
+					},					
 					nypd = {
 						Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 						Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
@@ -859,6 +935,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump")
+					},										
 					nypd = {
 						Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 						Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3")			
@@ -889,6 +969,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump")							
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump")
+					},					
 					nypd = {
 						Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
 						Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3")				
@@ -919,6 +1003,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump")
+					},										
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
@@ -937,7 +1025,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			tweak_data.group_ai.unit_categories.FBI_heavy_R870 = {
 				unit_types = {
 					america = {
-						Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
+						Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc")
 					},
 					russia = {
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870")
@@ -948,6 +1036,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")
+					},					
 					nypd = {
 						Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
 					},
@@ -967,11 +1058,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870")
 					},
 					zombie = {
-						Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870")
+						Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc")
 					},							
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")
+					},										
 					nypd = {
 						Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
 					},
@@ -996,6 +1090,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")
+					},															
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
 					},	
@@ -1023,6 +1120,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9")
+					},																				
 					nypd = {
 						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
 					},		
@@ -1048,6 +1148,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9")
+					},																									
 					nypd = {
 						Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec")								
 					},	
@@ -1073,6 +1176,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9")
+					},																									
 					nypd = {
 						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
 					},	
@@ -1100,6 +1206,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3")					
 				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249")					
+				},				
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer")							
 				},
@@ -1127,6 +1236,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale")
+					},					
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 					},	
@@ -1152,6 +1264,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale")
+					},										
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 					},	
@@ -1177,6 +1292,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					murkywater = {
 						Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")						
 					},
+					federales = {
+						Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale")
+					},										
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
 					},

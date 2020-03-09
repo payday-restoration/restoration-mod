@@ -13976,6 +13976,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"ene_titan_rifle",
 					"ene_akan_lpf",
 					"ene_fbi_titan_1",
+					"ene_phalanx_1_assault",										
 					"ene_spook_cloak_1",										
 					"ene_titan_sniper",
 					"ene_titan_taser"				

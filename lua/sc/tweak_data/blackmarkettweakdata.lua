@@ -331,6 +331,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "mods"
 		}
 		
+		--Classic Helmet
+		self.masks.classic_helmet = {}
+		self.masks.classic_helmet.unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"		
+		if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
+			self.masks.classic_helmet = {
+				unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet",
+				name_id = "bm_msk_classic_helmet",
+				desc_id = "bm_msk_classic_helmet_desc",
+				value = 0,
+				type = "helmet",			
+				global_value = "rest_omnia",
+				texture_bundle_folder = "mods"
+			}
+		end
 		
 		self.masks.all_seeing = {}
 		self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"			

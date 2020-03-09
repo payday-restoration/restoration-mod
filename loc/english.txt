@@ -376,6 +376,9 @@
    
     "bm_all_seeing" : "The All Seeing Anchor",
 	"bm_all_seeing_desc" : "A horrifying vision, a nightmarish sight.\n\nThe powers that be have seen you, and ensure you are rewarded for your contributions.",	
+	
+    "bm_msk_classic_helmet" : "The Classic Enforcer",
+	"bm_msk_classic_helmet_desc" : "(((PDTH heavy swat helmet thingy.Ryhnne add a cool description here.)))\n\nA reward for your contributions.",		
    
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",

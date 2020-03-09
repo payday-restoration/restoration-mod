@@ -1,0 +1,8 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet" orientation_object="rp_hector_helmet_mask" />
+	<graphics>
+		<object name="g_helmet_2" enabled="true" />
+		<object name="g_strap_2" enabled="true" />		
+		<object name="g_glass" enabled="true" />		
+	</graphics>
+</dynamic_object>

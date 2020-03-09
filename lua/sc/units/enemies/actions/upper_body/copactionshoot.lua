@@ -907,34 +907,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						else
 							local shield_in_the_way = nil
 
-							if self._shield then
-								shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "ignore_unit", self._shield, "report")
-							else
-								shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "report")
+							if not self._weapon_base._use_armor_piercing or self._shooting_player then
+								if self._shield then
+									shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "ignore_unit", self._shield, "report")
+								else
+									shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "report")
+								end
 							end
 
 							if not shield_in_the_way then
-								if not self._last_vis_check_status and t - self._line_of_sight_t > 1 then
-									if self._draw_focus_delay_vis_reset then
-										local draw_duration = self._shooting_husk_unit and 4 or 2
-
-										local line_1 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-										line_1:cylinder(shoot_from_pos, self._shoot_history.m_last_pos, 0.5)
-
-										local line_2 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-										line_2:cylinder(shoot_from_pos, target_pos, 0.5)
-
-										local line_3 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-										line_3:cylinder(target_pos, self._shoot_history.m_last_pos, 0.5)
-									end
-
-									self._shoot_history.focus_start_t = t
-								end
-
-								self._shoot_history.m_last_pos = mvec3_copy(target_pos)
-								self._line_of_sight_t = t
 								shoot = true
 							end
+
+							if not self._last_vis_check_status and t - self._line_of_sight_t > 1 then
+								if self._draw_focus_delay_vis_reset then
+									local draw_duration = self._shooting_husk_unit and 4 or 2
+
+									local line_1 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+									line_1:cylinder(shoot_from_pos, self._shoot_history.m_last_pos, 0.5)
+
+									local line_2 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+									line_2:cylinder(shoot_from_pos, target_pos, 0.5)
+
+									local line_3 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+									line_3:cylinder(target_pos, self._shoot_history.m_last_pos, 0.5)
+								end
+
+								self._shoot_history.focus_start_t = t
+							end
+
+							self._shoot_history.m_last_pos = mvec3_copy(target_pos)
+							self._line_of_sight_t = t
 						end
 
 						if self._use_sniper_focus then

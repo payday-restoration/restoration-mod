@@ -1,4 +1,4 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") the
+if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	local mvec3_set = mvector3.set
 	local mvec3_set_z = mvector3.set_z
 	local mvec3_mul = mvector3.multiply
@@ -636,4 +636,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:units_to_push(units_to_push, position, range)
 	end
+
 end

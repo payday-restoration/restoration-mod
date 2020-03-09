@@ -877,6 +877,58 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+	function CopMovement:_equip_item(item_type, align_place, droppable)
+		if item_type == "needle" then
+			align_place = "hand_l"
+		end
+
+		local align_name = self._gadgets.aligns[align_place]
+
+		if not align_name then
+			--print("[CopMovement:anim_clbk_equip_item] non existent align place:", align_place)
+
+			return
+		end
+
+		local align_obj = self._unit:get_object(align_name)
+		local available_items = self._gadgets[item_type]
+
+		if not available_items then
+			--print("[CopMovement:anim_clbk_equip_item] non existent item_type:", item_type)
+
+			return
+		end
+
+		local item_name = available_items[math.random(available_items)]
+
+		if self._spawneditems[item_type] ~= nil then
+			return
+		end
+
+		self._spawneditems[item_type] = true
+
+		if item_type == "needle" then
+			align_place = "hand_l"
+		end
+
+		--print("[CopMovement]Spawning: " .. item_type)
+
+		local item_unit = World:spawn_unit(item_name, align_obj:position(), align_obj:rotation())
+
+		self._unit:link(align_name, item_unit, item_unit:orientation_object():name())
+
+		self._equipped_gadgets = self._equipped_gadgets or {}
+		self._equipped_gadgets[align_place] = self._equipped_gadgets[align_place] or {}
+
+		table.insert(self._equipped_gadgets[align_place], item_unit)
+
+		if droppable then
+			self._droppable_gadgets = self._droppable_gadgets or {}
+
+			table.insert(self._droppable_gadgets, item_unit)
+		end
+	end
+
 	function CopMovement:drop_held_items()
 		self._spawneditems = {}
 

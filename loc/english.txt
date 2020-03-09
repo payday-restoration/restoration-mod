@@ -378,7 +378,7 @@
 	"bm_all_seeing_desc" : "A horrifying vision, a nightmarish sight.\n\nThe powers that be have seen you, and ensure you are rewarded for your contributions.",	
 	
     "bm_msk_classic_helmet" : "The Classic Enforcer",
-	"bm_msk_classic_helmet_desc" : "(((PDTH heavy swat helmet thingy.Ryhnne add a cool description here.)))\n\nA reward for your contributions.",		
+	"bm_msk_classic_helmet_desc" : "A gift given by an ex-SWAT enforcer. Before retiring, he found Jackal... and offered only the gear he had access to, to aid in Jackal's efforts.\n\nHis curious offer was due to one reason: he saw himself, what OMNIA was doing in secret. But he himself, refused to divulge those secrets, and left soon after, never to be seen again.\n\nJackal sent these helmets forward. A reward for your contributions.",		
    
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",

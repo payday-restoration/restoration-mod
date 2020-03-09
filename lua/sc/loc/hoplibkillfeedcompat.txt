@@ -10,7 +10,7 @@
   "ene_akan_cs_swat_zeal" : "Reaper HRT",  
   "ene_akan_medic_bob" : "Medic", 
   "ene_akan_medic_zdann" : "Medic", 
-  "ene_akan_veteran" : "ндrd-as-fuck ндrold",  
+  "ene_akan_veteran" : "Ӊдгd Дs Ғцс́ќ Ӊдгоld",  
   "ene_lapd_veteran_cop" : "SWAT Chief Mardo",  
   "ene_lapd_light" : "LAPD SWAT",  
   "ene_lapd_heavy" : "LAPD Heavy SWAT",  

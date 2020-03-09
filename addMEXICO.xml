@@ -59,19 +59,19 @@
 	
 	<!--Vet Cops-->	
 	<!--1-->	
-	<object path="units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1" />
-	<model path="units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1" />
-	<unit path="units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1"  load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1" />
-	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1_contour" />
-	<unit path="units/pd2_dlc_bex/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk"  load="true"/>	
+	<object path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
+	<model path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
+	<unit path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1"  load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
+	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1_contour" />
+	<unit path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1_husk"  load="true"/>	
 	<!--2-->	
-	<object path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2" />
-	<model path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2" />
-	<unit path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2"  load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2" />
-	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2_contour" />
-	<unit path="units/pd2_dlc_bex/characters/ene_veteran_cop_2/ene_veteran_cop_2_husk"  load="true"/>	
+	<object path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
+	<model path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
+	<unit path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2"  load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
+	<material_config path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_contour" />
+	<unit path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_husk"  load="true"/>	
 	<!--MARIACHI HAT-->	
 	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>
 	

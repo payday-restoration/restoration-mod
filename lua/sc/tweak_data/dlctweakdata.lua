@@ -15,10 +15,14 @@ function DLCTweakData:init(...)
 					type_items = "masks",
 					item_entry = "all_seeing",
 					amount = 1
-				}
+				},
+				{
+					type_items = "masks",
+					item_entry = "classic_helmet",
+					amount = 1
+				}				
 			}	
-		end	
-
+		end
 		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 			self.omnia_2 = {
 				content = {},
@@ -184,7 +188,7 @@ function DLCTweakData:init(...)
 				type_items = "masks",
 				item_entry = "wolf_stone",
 				amount = 1
-			},
+			},		
 			{
 				type_items = "materials",
 				item_entry = "jkl_matt01",

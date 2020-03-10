@@ -29,7 +29,13 @@ function DLCTweakData:init(...)
 				free = true
 			}
 			self.omnia_2.content.loot_global_value = "rest_omnia"
-			self.omnia_2.content.loot_drops = {}	
+			self.omnia_2.content.loot_drops = {
+				{
+					type_items = "masks",
+					item_entry = "cube",
+					amount = 1
+				}			
+			}	
 		end			
 		
 		self.rest = {

@@ -379,7 +379,10 @@
 	
     "bm_msk_classic_helmet" : "The Classic Enforcer",
 	"bm_msk_classic_helmet_desc" : "A gift given by an ex-SWAT enforcer. Before retiring, he found Jackal... and offered only the gear he had access to, to aid in Jackal's efforts.\n\nHis curious offer was due to one reason: he saw himself, what OMNIA was doing in secret. But he himself, refused to divulge those secrets, and left soon after, never to be seen again.\n\nJackal sent these helmets forward. A reward for your contributions.",		
-   
+
+    "bm_cube" : "jarey implement the mask",
+	"bm_cube_desc" : "please we need to update the mod",	
+	  
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",
 	"material_jkl_matt01_title" : "Fighting Feathers",

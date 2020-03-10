@@ -360,6 +360,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}		
 		end
 		
+		self.masks.cube = {}
+		self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"	
+		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
+			self.masks.cube = {
+				unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
+				name_id = "bm_cube",
+				desc_id = "bm_cube_desc",
+				value = 0,
+			    type = "helmet",
+				global_value = "rest_omnia",
+				texture_bundle_folder = "mods"
+			}		
+		end		
 		
 	end
 	

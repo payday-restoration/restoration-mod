@@ -727,5 +727,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	    	end
 	    end
     end
+
+    function CopLogicTravel.get_pathing_prio(data)
+    	local prio = nil
+    	local objective = data.objective
+    	local focus_enemy = data.attention_obj
+    	
+    	if objective then
+    		prio = 4
+    		
+    		if (objective.follow_unit or objective.type == "phalanx") then
+    			prio = prio + 1
+    			
+    			if focus_enemy and AIAttentionObject.REACT_COMBAT >= data.attention_obj.reaction and focus_enemy.dis < 4000 then
+    				prio = prio + 2
+    			end
+    		end
+    		
+    		if data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) then
+    			prio = prio + 2
+    		end	
+    	end
+    
+    	return prio
+    end
 	
 end

@@ -14,6 +14,7 @@
   "ene_lapd_veteran_cop" : "SWAT Chief Mardo",  
   "ene_lapd_light" : "LAPD SWAT",  
   "ene_lapd_heavy" : "LAPD Heavy SWAT",  
+  "ene_fbi" : "HRT",    
   "ene_nypd_shield" : "Shield",
   "ene_nypd_medic" : "Medic",  
   "ene_nypd_heavy" : "NYPD Heavy SWAT",    

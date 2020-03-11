@@ -150,7 +150,7 @@ Wekk Telling us what LPF should mean and allowing us to implement "Less Clones, 
 
 ShinyHopip Created the Mind Blown graze rework.
 
-Baddy fixing the cap on security 7, Russian Medic helmet popping, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
+Baddy fixing the cap on security 7, giving us the sexico FBI HRT dude, Russian Medic helmet popping, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
 
 Nardo Allowing us to include "First-person Stealth Suit Fixes".
 

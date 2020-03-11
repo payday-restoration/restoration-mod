@@ -941,6 +941,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local is_cop = not is_civlian and not is_gangster		
 		local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 		local damage = attack_data.damage
+		local damage_effect = attack_data.damage_effect
 		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 			if critical_hit then
@@ -957,8 +958,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			damage = damage * self._marked_dmg_mul
 		end
 		local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
-		local damage = attack_data.damage
-		local damage_effect = attack_data.damage_effect
 		local headshot_multiplier = 1
 		if attack_data.attacker_unit == managers.player:player_unit() then
 			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
@@ -969,10 +968,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				managers.player:on_headshot_dealt(self._unit, attack_data)
 			end
 		end
-		if self._damage_reduction_multiplier then
-			damage = damage * self._damage_reduction_multiplier
-			damage_effect = damage_effect * self._damage_reduction_multiplier
-		elseif head then
+		
+		if head and not self._damage_reduction_multiplier then
 			if self._char_tweak and self._char_tweak.headshot_dmg_mul then
 				damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
 				damage_effect = damage_effect * self._char_tweak.headshot_dmg_mul * headshot_multiplier
@@ -1000,6 +997,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		local damage_effect_percent
 		damage = self:_apply_damage_reduction(damage)
+		damage_effect = self:_apply_damage_reduction(damage_effect) 
+		
 		damage = math.clamp(damage, self._HEALTH_INIT_PRECENT, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
 		damage = damage_percent * self._HEALTH_INIT_PRECENT

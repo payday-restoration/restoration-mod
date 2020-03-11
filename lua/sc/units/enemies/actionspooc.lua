@@ -1357,7 +1357,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local attack_ray = self._unit:raycast("ray", self._ext_movement:m_com(), self._strike_unit:movement():m_com(), "sphere_cast_radius", 20, "target_unit", self._strike_unit)
 			local action_data = {
 				damage = self._strike_unit:character_damage()._HEALTH_INIT,
-				damage_effect = damage,
+				damage_effect = self._strike_unit:character_damage()._HEALTH_INIT,
 				variant = "melee",
 				attacker_unit = self._unit,
 				col_ray = attack_ray,

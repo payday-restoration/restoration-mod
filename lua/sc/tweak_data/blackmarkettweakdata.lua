@@ -345,7 +345,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				texture_bundle_folder = "mods"
 			}
 		end
-		
+
+		--All Seeing Anchor		
 		self.masks.all_seeing = {}
 		self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"			
 		if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
@@ -359,12 +360,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				texture_bundle_folder = "mods"
 			}		
 		end
-		
+
+		--devmask.model		
 		self.masks.cube = {}
-		self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"	
+		self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"	
 		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 			self.masks.cube = {
-				unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
+				unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube",
 				name_id = "bm_cube",
 				desc_id = "bm_cube_desc",
 				value = 0,

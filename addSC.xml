@@ -529,7 +529,7 @@
     <texture path="units/pd2_mod_fucking_masks/msk_eye/msk_eye_nm"/>
 	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/all_seeing"/> 
-
+	
     <cooked_physics path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
     <model path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
     <object path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
@@ -538,7 +538,16 @@
     <texture path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet_df"/>
     <texture path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet_nm"/>
 	
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/classic_helmet"/> 	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/classic_helmet"/>
+	
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <model path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <object path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_cube/msk_cube_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/cube"/> 		
 	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

@@ -27,139 +27,62 @@ This github is open to the public, and you are free to submit issue reports or p
 
 # Credits
 
-Rhynne Helped in development of the Restoration HUD and was the original project lead. Creating the map edits.
+Rhynne: Helped in development of the Restoration HUD and was the original project lead. Creating all of the Major Heist Edits.
 
-DoktorAkcel Majority of the HUD and UI setup, asset work, incredibly useful research to help with mod development.
+DoktorAkcel: Majority of the HUD and UI setup, asset work, incredibly useful research to help with mod development.
 
-SC Providing the vast majority of the codebase, the balancing and general design of the overhaul.
+SC: Providing the vast majority of the codebase, the balancing and general design of the overhaul.[/u]
 
-DMC Assisting with creation of the weapons, skill trees and helping with overall balance in the overhaul.
+DMC: Assisting with creation of the weapons, skill trees and helping with overall balance in the overhaul.
 
-Rino Major asset contributions to the mod
-including:
-The Murkywater faction
-The Titan Sniper, HRT, Taser and Dozer
-The NYPD Veteran Cop
-The revamped Zeal Team
-OMNIA faction asset work
-Captain Spring
-Major Molly and Engineer Elektra
-Edits to City SWAT textures
-NYPD faction asset work
-OMNIA LPF
-The below Death Wish difficulty Russian Medic
-The Titan Cloaker model/textures
-Skeleton SWAT
-Additional Zombie faction assets
-The OMNIA Special Units
-The ZEAL SG553
-LAPD SWAT
-LAPD Vet Cop
-Captain Autumn
-Russian Titan enemies
-GenSec Shotgunner and UMP guy
-Heavy shotgunner assets
-Heister "Sunny-Side Robber"
-Heister "Combat Harness"
-and providing many promotional screenshots.
-Murky Special Forces 
-US National Guard
-AKAN Containment Team
-Policia Federal Commons
-Voicing Murky Special Forces
-Creation of some alternate environments and minor code additions, mostly the enemy chatter stuff.
+Rino: Major asset contributions to the mod including: The Murkywater faction, The Titan Sniper, HRT, Taser and Dozer, The NYPD Veteran Cop, The revamped Zeal Team, OMNIA faction asset work, Captain Spring, Major Molly, and Engineer Elektra, Edits to City SWAT textures NYPD faction asset work OMNIA LPF The below Death Wish difficulty Russian Medic The Titan Cloaker model/textures Skeleton SWAT Additional Zombie faction assets The OMNIA Special Units The ZEAL SG553 LAPD SWAT LAPD Vet Cop Captain Autumn Russian Titan enemies GenSec Shotgunner and UMP guy assets Heavy shotgunner assets, Heister "Sunny-Side Robber", Heister "Combat Harness", Murky Special Forces, US National Guard, AKAN Containment Team, Policia Federal Commons and Voicing Murky Special Forces. Providing many promotional screenshots. Creation of some alternate environments and minor code additions, mostly the enemy chatter stuff.
 
-Zdann Major asset contributions to the mod 
-including:
-Getting Murkydozers to work
-The Veteran Cop
-The Russian Veteran Cop
-The Russian Grenadier
-The Russian elite heavy
-NPC weapon models
-Sergeant Doc
-GenSec shield
-The above Death Wish difficulty Russian Medic
-Getting the Titan Cloaker working
-Shovelposting.
+Jarey: Major asset contributions to the mod including: PDTH Styled Enemies assets used for the NYPD faction, The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker, Femcloaker - Used as ashrinkwrap base for female enemies, Jarey_ ZEALS Used for our ZEAL sepcials, Updating Captain Sprung and Russian Titan Dozer assets, Sniper Glint, Russian Titan Cloaker textures, Murky Vetcop, Policia Federal Specials, Updating some NPC weapon models, Heister "Prison Suit"
 
-Jarey Major asset contributions to the mod 
-including:
-Tweaking Boiler Suit assets, Flecktarn Camo
-PDTH Styled Enemies assets used for the NYPD faction
-The Spectre Cloaker used as the Murky faction Cloaker and the base of the OMNIA Cloaker
-Femcloaker - Used as a shrinkwrap base for female enemies
-Jarey_ ZEALS Used for our ZEAL sepcials
-Updating Captain Spring and Russian Titan Dozer assets
-Sniper Glint
-Murky Vetcop
-Policia Federal Specials
-Updating some NPC weapon models
-Heister "Prison Suit"
-Russian Titan Cloaker textures
+Zdann: Major asset contributions to the mod including: Getting Murkydozers to work The Veteran Cop The Russian Veteran Cop The Russian Grenadier The Russian elite heavy NPC weapon models Sergeant Doc GenSec shield The above Death Wish difficulty Russian Medic Getting the Titan Cloaker working Shovelposting.
 
-Splish Asset contributions to the mod 
-including: 
-The Grenadier
-Providing concept art for the OMNIA LPF
-and providing many, many promotional screenshots.
+Splish: Asset contributions to the mod including: The Grenadier Providing concept art for the OMNIA LPF and providing many, many promotional screenshots.
 
-Rex Asset contributions to the mod
-including: 
-Titan SWAT
-Various crimespree icons and risk level assets
-The Restoration masks
-Captain Summers
-Biker Dozer
-Policia Federal Cloaker Model
-and the creation of the map package.
+Rex: Asset contributions to the mod including: Titan SWAT, Various crimespree icons and risk level assets, The Restoration masks, Captain Summers, The Biker Dozer, and the creation of the map package.
 
-fuglore creating all of the custom tactics and making enemy logics work much much better, adding the common enemy pain lines stuff, making the Voiceline Framework function better and providing Less Flat "The Classic" Lighting for implementation.
+Fuglore: Doing all the crazy AI and tactic changes.
 
-Ravicale reworking some perk decks, overhauling dodge, and other gameplay tweaks.
+Ravicale: Reworking some perk decks, overhauling dodge, and other gameplay tweaks.
 
-Hoxi mass optimization of game code, improving the shit out of bots and improvements to enemy ai including npc melee improvements, npc reload fixes, updating sniper code and much much more
+Teacyn: Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation of multiple alternate heist environments.
 
-Teacyn Writing the overhaul steam guide and providing valuable feedback to overhaul development. Creation multiple alternate heist environments.
+Nelson01023: Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Creating various Minor Heist Edits.
 
-Nelson01023 Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Basically doing all the jobs no one else wanted to do.
+Iamgoofball: Creating the Voiceline Framework and contributing to the development of Captain Summers and his team.
 
-Iamgoofball Creating the Voiceline Framework and contributing to the development of Captain Summers and his team.
+Finale: Providing feedback during development.
 
-Finale Providing feedback during development.
+Offyerrocker: Helping redesign Sentries. Making Autumn's special abilities work, and other assorted code things.
 
-Cpone Allowing us to add their pool repair suits to the mod.
+Scruffy: Voicing the Grenadier.
 
-Offyerrocker Helping redesign Sentries. Making Autumn's special abilities work.
+VxWolf: Creating the custom Restoration Mod soundtrack and voicing the OMNIA LPF.
 
-Scruffy A huge thanks for voicing the Grenadier.
+Skwuruhl: fixing stance modifiers and making spread work better.
 
-VxWolf Creating the mod soundtrack and voicing the OMNIA LPF.
+JimTheCookie: voicing the Vet Cop and Jackal.
 
-Skwuruhl fixing stance modifiers and making spread work better.
+Whurr: Helping create the Firestarter Day 3 edit.
 
-Major Pyatosin A huge thanks for voicing the Vet Cop and Jackal.
+test-1: adding the package loading system, updating the network code, expanding the options menu and fixing all the bugs we couldn't.
 
-Whurr Helping create the Firestarter Day 3 edit.
+Porky da Corgi: creating the base textures for the grenadier and OMNIA Light
 
-test-1 adding the package loading system, updating the network code, expanding the options menu and fixing all the bugs we couldn't.
+Wekk: Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" into the mod.
 
-Porky da Corgi creating the base textures for the grenadier and OMNIA Light
+ShinyHopip: Created the Mind Blown graze rework.
 
-Wekk Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" to the mod.
+Baddy: fixing the cap on security 7, giving us the sexico FBI HRT dude, Russian Medic helmet popping, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
 
-ShinyHopip Created the Mind Blown graze rework.
+Hoxi: for ungodly numbers of fixes and general code improvements. You the man!
 
-Baddy fixing the cap on security 7, giving us the sexico FBI HRT dude, Russian Medic helmet popping, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
+Nardo: Allowing us to include "First-person Stealth Suit Fixes".
 
-Nardo Allowing us to include "First-person Stealth Suit Fixes".
+MarioInATopHat: voicing Big Dave
 
-KLEITON and Tom Blaine taking on the huge task of translating the steam guide into Russian.
-
-MarioInATopHat voicing Big Dave
-
-Testers:
-Derma
-ShortonComedyGamer (made sure neslon added support to the custom owen) 
-K4_Kydure
-Finale
+Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

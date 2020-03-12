@@ -2288,11 +2288,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_vip.damage.shield_knocked = false
 		self.phalanx_vip.damage.immune_to_knockback = true
 		self.phalanx_vip.immune_to_knock_down = true
-		self.phalanx_vip.HEALTH_INIT = 40
-		self.phalanx_vip.headshot_dmg_mul = 1.25
+		self.phalanx_vip.HEALTH_INIT = 80
+		self.phalanx_vip.headshot_dmg_mul = 2.5
 		self.phalanx_vip.damage.explosion_damage_mul = 0.05
 		self.phalanx_vip.damage.fire_damage_mul = 0.05
-		self.phalanx_vip.damage.bullet_damage_mul = 0.5
+		self.phalanx_vip.damage.bullet_damage_mul = 0.25
 		self.phalanx_vip.spawn_sound_event = "cpa_a02_01"	
 		self.phalanx_vip.priority_shout = "f45"
 		self.phalanx_vip.bot_priority_shout = "f45x_any"

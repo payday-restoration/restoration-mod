@@ -1631,7 +1631,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--biker?
 	self.wild_trigger_time = 2
 	self.wild_max_triggers_per_time = 1
-	self.values.player.wild_health_amount = {0.1}
+	self.values.player.wild_health_amount = {0.2}
 	self.values.player.wild_armor_amount = {0.0}
 	self.values.player.less_health_wild_armor = {{
 		0.0,

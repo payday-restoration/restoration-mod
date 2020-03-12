@@ -1,5 +1,6 @@
 <table directory="assets">
 	<!--Mexico shared_textures crap-->
+	<texture path="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_helmets_df" force="true"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/taser_body_df" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_df" />

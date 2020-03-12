@@ -176,7 +176,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			radius = 700,
 			max_nr = 3,
 			duration = {2, 4},
-			interval = {10, 10},
+			interval = {15, 15},
 			group_min = 0,
 			queue = "rrl"
 		}

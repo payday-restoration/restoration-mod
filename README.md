@@ -83,6 +83,8 @@ Hoxi: for ungodly numbers of fixes and general code improvements. You the man!
 
 Nardo: Allowing us to include "First-person Stealth Suit Fixes".
 
+KLEITON and Tom Blaine: taking on the huge task of translating the steam guide into Russian.
+
 MarioInATopHat: voicing Big Dave
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

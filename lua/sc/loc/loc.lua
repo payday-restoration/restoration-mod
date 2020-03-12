@@ -1181,7 +1181,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##2## life points This can only occur once every ##2## seconds.",
+		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##2## life points. This can only occur once every ##2## seconds.",
 		["menu_deck16_3_desc_sc"] = "You regenerate ##10## armor every ##3## seconds.",
 		["menu_deck16_5_desc_sc"] = "Every ##25%## armor missing reduces cooldown to kill regen by ##0.5## seconds.",
 		["menu_deck16_7_desc_sc"] = "You regenerate an additional ##10## armor every ##2.5## seconds.\n\nKilling an enemy with a melee weapon instantly triggers this effect and causes the next armor regen tick to occur ##1## second sooner.",

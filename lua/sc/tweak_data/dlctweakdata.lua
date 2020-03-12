@@ -2,7 +2,42 @@ old_DLCTweakData_init = DLCTweakData.init
 function DLCTweakData:init(...)
 	old_DLCTweakData_init(self, ...)
 	
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then	
+	
+		if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
+			self.omnia = {
+				content = {},
+				free = true
+			}
+			self.omnia.content.loot_global_value = "rest_omnia"
+			self.omnia.content.loot_drops = {
+				{
+					type_items = "masks",
+					item_entry = "all_seeing",
+					amount = 1
+				},
+				{
+					type_items = "masks",
+					item_entry = "classic_helmet",
+					amount = 1
+				}				
+			}	
+		end
+		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
+			self.omnia_2 = {
+				content = {},
+				free = true
+			}
+			self.omnia_2.content.loot_global_value = "rest_omnia"
+			self.omnia_2.content.loot_drops = {
+				{
+					type_items = "masks",
+					item_entry = "cube",
+					amount = 1
+				}			
+			}	
+		end			
+		
 		self.rest = {
 			content = {},
 			free = true
@@ -159,7 +194,7 @@ function DLCTweakData:init(...)
 				type_items = "masks",
 				item_entry = "wolf_stone",
 				amount = 1
-			},
+			},		
 			{
 				type_items = "materials",
 				item_entry = "jkl_matt01",
@@ -182,7 +217,7 @@ function DLCTweakData:init(...)
 			}			
 		}
 	end
-				
+	
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 		self.sc = {}
 		self.sc.free = true
@@ -196,4 +231,5 @@ function DLCTweakData:init(...)
 			}				
 		}
 	end
+	
 end

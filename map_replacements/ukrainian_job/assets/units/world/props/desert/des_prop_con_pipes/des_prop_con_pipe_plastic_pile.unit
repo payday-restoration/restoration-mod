@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="des" slot="1">
+  <object file="units/world/props/desert/des_prop_con_pipes/des_prop_con_pipe_plastic_pile" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

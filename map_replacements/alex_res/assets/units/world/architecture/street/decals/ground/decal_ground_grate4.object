@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/decals/ground/decal_ground_grates_manhole" orientation_object="rp_street_decal_ground_grate4" />
+  <bodies>
+    <body name="static_body" enabled="true" template="editor">
+      <object name="rp_street_decal_ground_grate4" />
+      <object name="g_grate4" collision_type="box" />
+    </body>
+  </bodies>
+  <decal_surfaces static="true" default_material="metal">
+    <decal_mesh name="g_grate4" enabled="true" material="metal" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_grate4" enabled="true" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object> 

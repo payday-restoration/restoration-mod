@@ -6,6 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.Russia = "russia"
 	LevelsTweakData.LevelType.Zombie = "zombie"
 	LevelsTweakData.LevelType.Murkywater = "murkywater"
+	LevelsTweakData.LevelType.Federales = "federales"
 	LevelsTweakData.LevelType.NYPD = "nypd"
 	LevelsTweakData.LevelType.LAPD = "lapd"
 	--///LEVELS\\\--
@@ -16,6 +17,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local zombie = LevelsTweakData.LevelType.Zombie
 		local murkywater = LevelsTweakData.LevelType.Murkywater
 		local nypd = LevelsTweakData.LevelType.NYPD
+		local federales = LevelsTweakData.LevelType.Federales		
 		local lapd = LevelsTweakData.LevelType.LAPD
 		self.ai_groups = {}
 		self.ai_groups.default = america
@@ -23,8 +25,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.russia = russia
 		self.ai_groups.zombie  = zombie
 		self.ai_groups.murkywater = murkywater
+		self.ai_groups.federales = federales
 		self.ai_groups.nypd = nypd
 		self.ai_groups.lapd = lapd
+		
+		--///MEXICAN LEVELS\\\--
+		self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
 		
 		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
@@ -41,6 +47,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
 		self.bph.ai_group_type = murkywater 
+		self.bph.player_style = "loud_suit"
 		
 		self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vit"}
 		self.vit.ai_group_type = murkywater 
@@ -58,7 +65,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.mex_cooking.package = {"packages/murkyassets", "packages/job_mex2"}
 		self.mex_cooking.ai_group_type = murkywater 
-		self.mex_cooking.player_style = "suit_sunny"				
+		self.mex_cooking.player_style = "suit_sunny"		
+
+		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu", "packages/murkyassets"}
+		self.crojob2.ai_group_type = murkywater			
+		self.crojob2.player_style = "sneak_suit"	
+
+		self.dark.package = {"packages/job_dark", "packages/addbdu", "packages/murkyassets"}
+		self.dark.ai_group_type = murkywater	
+		self.dark.player_style = "sneak_suit"
+		
+		self.kosugi.package = {"packages/kosugi", "packages/addbdu", "packages/murkyassets"}
+		self.kosugi.ai_group_type = murkywater	
+		self.kosugi.player_style = "sneak_suit"			
 		
 		--///NYPD LEVELS\\\--
 		self.spa.ai_group_type = nypd
@@ -91,9 +110,59 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.man.package = {"packages/narr_man"}
 		self.man.player_style = "loud_suit"
+		self.man.teams = {
+			criminal1 = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {
+					converted_enemy = true
+				}
+			},
+			law1 = {
+				foes = {
+					converted_enemy = true,
+					criminal1 = true
+				},
+				friends = {
+					mobster1 = true
+				}
+			},
+			mobster1 = {
+				foes = {
+					converted_enemy = true,
+					criminal1 = true
+				},
+				friends = {
+					law1 = true
+				}
+			},
+			converted_enemy = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {
+					criminal1 = true
+				}
+			},
+			neutral1 = {
+				foes = {},
+				friends = {}
+			},
+			hacked_turret = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {}
+			}
+		}
 		
 		self.nmh.ai_group_type = nypd
 		self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
+		self.nmh.ghost_bonus = nil
 		
 		self.skm_run.ai_group_type = nypd
 		self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
@@ -103,8 +172,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
-		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets", "packages/addbdu"}
-		self.jolly.player_style = "sneak_suit"
+		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
+		self.jolly.player_style = "suit_sunny"
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	
@@ -127,7 +196,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
         --///NEW OUTFITS\\\--
 		
-		self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
+		self.fish.package = {"packages/lvl_fish", "packages/nypdassets", "packages/addtux"}
 		self.fish.player_style = "tux"
 		
 		self.arm_cro.player_style = "loud_suit"
@@ -140,18 +209,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
-		
-		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu"}
-		self.crojob2.player_style = "sneak_suit"
-		
-		self.crojob3.player_style = "loud_suit"
-		
-		self.dark.package = {"packages/job_dark", "packages/addbdu"}
-		self.dark.player_style = "sneak_suit"
-		
-		self.kosugi.package = {"packages/kosugi", "packages/addbdu"}
-		self.kosugi.player_style = "sneak_suit"		
-		
+								
 		self.hox_1.player_style = "suit_sunny"
 		self.hox_2.player_style = "suit_sunny"
 		self.hox_3.player_style = "suit_sunny"
@@ -220,6 +278,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///SAFEHOUSE\\\--
 		self.chill.ghost_bonus = nil
 		
+		self.cage.ghost_bonus = nil
+		
+		self.mallcrasher.ghost_bonus = 0.05
+		
 		--///REAPER LEVELS\\\--
 		self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/addsnow"}
 		self.mad.player_style = "winter_suit"
@@ -227,6 +289,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
 		self.pines.player_style = "loud_suit"
 		self.pines.ai_group_type = russia	
+		
+		--Bomb: Forest--
+		self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/akanassets", "packages/lvl_mad",}
+		self.crojob3.ai_group_type = russia			
+		self.crojob3.player_style = "loud_suit"
+
+		self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/akanassets", "packages/lvl_mad",}
+		self.crojob3_night.ai_group_type = russia				
+		self.crojob3_night.player_style = "loud_suit"		
 		
 		--///BAG FIXES\\\--
 		self.pbr2.max_bags = 20

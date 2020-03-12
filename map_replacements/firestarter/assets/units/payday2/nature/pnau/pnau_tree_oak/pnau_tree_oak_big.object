@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak" orientation_object="rp_pnau_tree_oak_big" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="c_pnau_tree_oak_big" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="dm_pnau_tree_oak_big" enabled="true" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_pnau_tree_oak_big" enabled="true" shadow_caster="true"  />
+  </graphics>
+</dynamic_object>

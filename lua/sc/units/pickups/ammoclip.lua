@@ -7,11 +7,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		local player_manager = managers.player
 		local inventory = unit:inventory()
-		local CABLE_TIE_GET_CHANCE = 0
+		--Base amount
+		local CABLE_TIE_GET_CHANCE = 0.25
 		local CABLE_TIE_GET_AMOUNT = 1
 		
 		if managers.player:has_category_upgrade("cable_tie", "pickup_chance") then
-			CABLE_TIE_GET_CHANCE = 0.1
+			CABLE_TIE_GET_CHANCE = 0.5
 		end
 
 		if not unit:character_damage():dead() and inventory then

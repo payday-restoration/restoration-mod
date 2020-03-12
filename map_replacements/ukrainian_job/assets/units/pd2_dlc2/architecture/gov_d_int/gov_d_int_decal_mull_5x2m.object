@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gov_d_int_decal_mull_5x2m" materials="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_desks" />
+    <bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" orientation_object="rp_kevlar_helmet" />
+  <sequence_manager file="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" />
+  <bodies>
+    <body pushed_by_mover="false" name="static_body" enabled="false" template="small_prop" ang_damping="0.9">
+      <object name="rp_kevlar_helmet" />
+      <object name="c_sphere" collision_type="sphere" mass="1.5" />
+      <object name="c_box" collision_type="box" />
+      <object name="c_box1" collision_type="box" />
+    </body>
+    <body pushed_by_mover="false" name="dmg1" enabled="false" template="debris" collision_class="minor_debris">
+      <object name="c_dmg1" collision_type="box" />
+      <object name="g_dmg1" />
+    </body>
+    <body pushed_by_mover="false" name="dmg2" enabled="false" template="debris" collision_class="minor_debris">
+      <object name="c_dmg2" collision_type="box" />
+      <object name="g_dmg2" />
+    </body>
+    <body pushed_by_mover="false" name="dmg3" enabled="false" template="debris" collision_class="minor_debris">
+      <object name="c_dmg3" collision_type="box" />
+      <object name="g_dmg3" />
+    </body>
+    <body pushed_by_mover="false" name="dmg4" enabled="false" template="debris" collision_class="minor_debris">
+      <object name="c_dmg4" collision_type="box" />
+      <object name="g_dmg4" />
+    </body>
+    <body pushed_by_mover="false" name="dmg5" enabled="false" template="debris" collision_class="minor_debris">
+      <object name="c_dmg5" collision_type="box" />
+      <object name="g_dmg5" />
+    </body>
+    <body pushed_by_mover="false" name="dmg6" enabled="false" template="debris" collision_class="minor_debris">
+      <object name="c_dmg6" collision_type="box" />
+      <object name="g_dmg6" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="metal">
+    <decal_mesh name="g_helmet" enabled="false" material="metal" />
+    <decal_mesh name="g_dmg1" enabled="false" material="glass_no_decal" />
+    <decal_mesh name="g_dmg2" enabled="false" material="glass_no_decal" />
+    <decal_mesh name="g_dmg3" enabled="false" material="glass_no_decal" />
+    <decal_mesh name="g_dmg4" enabled="false" material="glass_no_decal" />
+    <decal_mesh name="g_dmg5" enabled="false" material="glass_no_decal" />
+    <decal_mesh name="g_dmg6" enabled="false" material="glass_no_decal" />
+  </decal_surfaces>
+  <effects>
+    <effect_spawner name="es_e_glass" damp_time="5" enabled="true" object="e_glass" effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
+    <effect_spawner name="es_e_glass1" damp_time="4" enabled="true" object="e_glass" effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
+  </effects>
+  <graphics>
+    <object name="g_helmet" enabled="false" />
+    <object name="g_dmg1" enabled="false" />
+    <object name="g_dmg2" enabled="false" />
+    <object name="g_dmg4" enabled="false" />
+    <object name="g_dmg5" enabled="false" />
+    <object name="g_dmg6" enabled="false" />
+    <object name="g_dmg3" enabled="false" />
+  </graphics>
+</dynamic_object>

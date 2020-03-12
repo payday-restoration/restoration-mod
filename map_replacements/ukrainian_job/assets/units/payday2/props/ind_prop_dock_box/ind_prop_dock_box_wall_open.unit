@@ -1,0 +1,7 @@
+<unit type="ind" slot="1" >
+	<network sync="spawn"/>
+    <object file="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

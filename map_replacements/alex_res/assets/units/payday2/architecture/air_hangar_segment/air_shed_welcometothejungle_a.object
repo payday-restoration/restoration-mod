@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/air_hangar_segment/air_hangar_segment01" orientation_object="rp_air_shed_welcometothejungle_a" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_air_shed_welcometothejungle_a"/>
+            <object collision_type="mesh_mopp" enabled="true" name="g_air_shed_welcometothejungle_a"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="metal" static="true">
+		<decal_mesh name="g_air_shed_welcometothejungle_a" material="metal" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_air_shed_welcometothejungle_a" />
+    </graphics>
+</dynamic_object> 

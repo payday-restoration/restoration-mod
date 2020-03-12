@@ -1,0 +1,6 @@
+<materials version="3">
+    <material version="2" decal_material="steel" name="mtr_grbhaul" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS">
+        <diffuse_texture file="units/world/street/shared_textures/metal_props_df"/>
+    </material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials> 

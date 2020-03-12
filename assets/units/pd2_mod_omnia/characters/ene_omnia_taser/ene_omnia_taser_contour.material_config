@@ -1,7 +1,7 @@
 <materials version="3" group="ene_tazer_1">
     <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
-        <diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
+        <bump_normal_texture 	file="units/pd2_mod_omnia/characters/shared_textures/tyler1_nm"/>
+        <diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/tyler1_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" 	type="scalar" name="contour_opacity"/>
     </material>
@@ -20,12 +20,12 @@
 	</material>
 
 	<material name="mtr_head_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df" mip="1"/>
+        <diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/tyler1_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" 	type="scalar" name="contour_opacity"/>
     </material>
     <material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <diffuse_texture        file="units/payday2/characters/shared_textures/heads_atlas_df" mip="4"/>
+        <diffuse_texture        file="units/pd2_mod_omnia/characters/shared_textures/tyler1_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0"     type="scalar" name="contour_opacity"/>
     </material>

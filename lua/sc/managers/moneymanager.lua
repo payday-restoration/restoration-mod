@@ -116,7 +116,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			small_value = tweak_data:get_value("money_manager", "max_small_loot_value")
 		end
 		
-		if managers.skirmish:is_skirmish() or managers.crime_spree:is_active() then
+		if managers.skirmish:is_skirmish() or managers.crime_spree:is_active() or on_last_stage then
 			return get_money_by_params_original(self, params)
 		end
 		

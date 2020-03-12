@@ -1,0 +1,7 @@
+<materials version="3">
+	<material render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" decal_material="metal" version="2" name="mtr_barrel_01">
+        <diffuse_texture file="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01_df"/>
+        <bump_normal_texture file="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01_nm"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>

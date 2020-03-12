@@ -33,44 +33,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	-- Example contents with haphazardly chosen cooldowns, add more group types and adjust as desired
 	local group_cooldowns = {
+		Cap_Winters = 2700,
 		Cap_Spring = 2700,
 		Cap_Summers = 2700,
 		Cap_Autumn = 900
 	}
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-	if difficulty_index == 4 then
+	if Global.game_settings and Global.game_settings.one_down then
 		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-		    Cap_Autumn = 900
-		}
-	elseif difficulty_index == 5 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
-		}
-	elseif difficulty_index == 6 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
-		}
-	elseif difficulty_index == 7 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
-		}
-	elseif difficulty_index == 8 then
-		group_cooldowns = {
-			Cap_Spring = 2700,
-			Cap_Summers = 2700,
-			Cap_Autumn = 900
+			Cap_Winters = 1800,
+			Cap_Spring = 1800,
+			Cap_Summers = 1800,
+		    Cap_Autumn = 600
 		}
 	else
 		group_cooldowns = {
+			Cap_Winters = 2700,
 			Cap_Spring = 2700,
 			Cap_Summers = 2700,
 			Cap_Autumn = 900
@@ -138,82 +117,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return _spawn_in_group_actual(self, spawn_group, spawn_group_type, ...)
 	end
 
-	local job = Global.level_data and Global.level_data.level_id
 	function GroupAIStateBesiege:_check_spawn_phalanx()
-		local found_shit = false
-		for _,j in ipairs(restoration.captain_teamwork) do
-			if job == j then
-				found_shit = true
-				break
-			end
-		end
-		for _,j2 in ipairs(restoration.captain_murderdozer) do
-			if job == j2 then
-			found_shit = true
-				break
-			end
-		end
-		for _,j3 in ipairs(restoration.captain_stelf) do
-			if job == j3 then
-			found_shit = true
-				break
-			end
-		end
-		 for _,j4 in ipairs(restoration.disable_captain_camper) do
-			if job == j4 then
-			found_shit = true
-				break
-			end
-		end
-		if found_shit then
-			return
-		end
-		if self._task_data and self._task_data.assault.active and self._phalanx_center_pos and not self._phalanx_spawn_group then
-			if self._task_data.assault.phase == "build" or self._task_data.assault.phase == "sustain" then
-			local now = TimerManager:game():time()
-			local respawn_delay = tweak_data.group_ai.phalanx.spawn_chance.respawn_delay
-			if not self._phalanx_despawn_time or now >= self._phalanx_despawn_time + respawn_delay then
-				local spawn_chance_start = tweak_data.group_ai.phalanx.spawn_chance.start
-				self._phalanx_current_spawn_chance = self._phalanx_current_spawn_chance or spawn_chance_start
-				self._phalanx_last_spawn_check = self._phalanx_last_spawn_check or now
-				self._phalanx_last_chance_increase = self._phalanx_last_chance_increase or now
-				local spawn_chance_increase = tweak_data.group_ai.phalanx.spawn_chance.increase
-				local spawn_chance_max = tweak_data.group_ai.phalanx.spawn_chance.max
-				if spawn_chance_max > self._phalanx_current_spawn_chance and spawn_chance_increase > 0 then
-					local chance_increase_intervall = tweak_data.group_ai.phalanx.chance_increase_intervall
-					if now >= self._phalanx_last_chance_increase + chance_increase_intervall then
-						self._phalanx_last_chance_increase = now
-						self._phalanx_current_spawn_chance = math.min(spawn_chance_max, self._phalanx_current_spawn_chance + spawn_chance_increase)
-						print("Phalanx spawn chance increased to ", self._phalanx_current_spawn_chance)
-					end
-				else
-				end
-				if self._phalanx_current_spawn_chance > 0 then
-					local check_spawn_intervall = tweak_data.group_ai.phalanx.check_spawn_intervall
-					if now >= self._phalanx_last_spawn_check + check_spawn_intervall then
-						self._phalanx_last_spawn_check = now
-						print("Spawn chance roll...")
-						if math.random() <= self._phalanx_current_spawn_chance then
-							self:_spawn_phalanx()
-						else
-							print("Spawn chance roll failed!")
-						end
-					end
-				end
-			end
-		end
-		else
-		end
+		return
 	end
 	
-	function GroupAIStateBesiege:chk_assault_active_atm()  
-	   if not self._task_data.assault.active then
-	     	return
-	   	--log("not assault active")
-	   end
-	   
-	   return true
-    end
+	function GroupAIStateBesiege:chk_assault_active_atm()
+		local assault_task = self._task_data.assault
+		
+		if assault_task and assault_task.phase == "build" or assault_task and assault_task.phase == "sustain" then
+			return true
+		end
+		
+		return
+	end
 	
 	function GroupAIStateBesiege:_voice_groupentry(group)
 	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)

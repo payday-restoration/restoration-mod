@@ -1,0 +1,63 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ene_acc_shield_phalanx" materials="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" />
+    <sequence_manager file="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" />
+	<bodies>
+		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield" 					collision_type="mesh_mopp" />
+			<object name="c_convex_mid"					collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_side1"				collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_side2"				collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_top_mid"				collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_top_side1"			collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_top_side2"			collision_type="convex" padding="-2.5"/>
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
+		</body>
+
+		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_convex_mid"					collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_side1"				collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_side2"				collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_top_mid"				collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_top_side1"			collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_top_side2"			collision_type="convex" padding="-2.5"/>
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
+		</body>
+
+		<body name="light_01" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_light_01" collision_type="box" />
+		</body>
+
+		<body name="light_02" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_light_02" collision_type="box" />
+		</body>
+
+	</bodies>
+	
+    <decal_surfaces>
+        <decal_mesh name="dm_metal" enabled="true" material="shield" />
+    </decal_surfaces>
+	
+    <graphics>
+		<lod_object name="lod_shield">
+        <object name="g_shield"		enabled="true" >
+				<material materials="mtr_shield" max_distance="0" />
+				<material materials="mtr_shield_lod1" max_distance="1000" />
+				<material materials="mtr_shield_lod2" max_distance="1500" />
+			</object>
+		</lod_object>
+	<lod_object name="lod_badge">
+        <object name="g_badge"		enabled="true" >
+				<material materials="mtr_shield_badge" max_distance="0" />
+				<material materials="mtr_shield_badge_lod1" max_distance="1000" />
+				<material materials="mtr_shield_badge_lod2" max_distance="1500" />
+			</object>
+		</lod_object>
+        <object name="g_light_01" 	enabled="true" />
+		<object name="g_light_02" 	enabled="true" />
+    </graphics>
+	
+</dynamic_object>

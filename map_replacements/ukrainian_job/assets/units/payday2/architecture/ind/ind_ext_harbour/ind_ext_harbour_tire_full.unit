@@ -1,0 +1,6 @@
+<unit type="ind" slot="1" >
+    <object file="units/payday2/architecture/ind/ind_ext_harbour/ind_ext_harbour_tire_full" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

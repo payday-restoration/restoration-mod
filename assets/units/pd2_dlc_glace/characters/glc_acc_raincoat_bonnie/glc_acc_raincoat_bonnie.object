@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<dynamic_object>
-	<diesel materials="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie/glc_acc_raincoat_bonnie" orientation_object="root_point" />
-
-<graphics>
-		<object name="g_raincoat" enabled="true" />
-	</graphics>
-
-</dynamic_object>

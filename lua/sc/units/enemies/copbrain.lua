@@ -1,90 +1,92 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-local old_init = CopBrain.init
-local old_update = CopBrain.update
-local logic_variants = {
-	security = {
-		idle = CopLogicIdle,
-		attack = CopLogicAttack,
-		travel = CopLogicTravel,
-		inactive = CopLogicInactive,
-		intimidated = CopLogicIntimidated,
-		arrest = CopLogicArrest,
-		guard = CopLogicGuard,
-		flee = CopLogicFlee,
-		sniper = CopLogicSniper,
-		trade = CopLogicTrade,
-		phalanx = CopLogicPhalanxMinion
+	local old_init = CopBrain.init
+	local old_update = CopBrain.update
+	local logic_variants = {
+		security = {
+			idle = CopLogicIdle,
+			attack = CopLogicAttack,
+			travel = CopLogicTravel,
+			inactive = CopLogicInactive,
+			intimidated = CopLogicIntimidated,
+			arrest = CopLogicArrest,
+			guard = CopLogicGuard,
+			flee = CopLogicFlee,
+			sniper = CopLogicSniper,
+			trade = CopLogicTrade,
+			phalanx = CopLogicPhalanxMinion
+		}
 	}
-}
-local security_variant = logic_variants.security
-function CopBrain:init(unit)
-	old_init(self, unit)
-	CopBrain._logic_variants.cop_civ = security_variant
-	CopBrain._logic_variants.fbi_female = security_variant
-	CopBrain._logic_variants.hrt = security_variant
-	CopBrain._logic_variants.fbi_swat_vet = security_variant
-	CopBrain._logic_variants.swat_titan = security_variant
-	CopBrain._logic_variants.swat_assault = security_variant
-	CopBrain._logic_variants.city_swat_titan = security_variant
-	CopBrain._logic_variants.city_swat_titan_assault = security_variant
-	CopBrain._logic_variants.skeleton_swat_titan = security_variant
-	CopBrain._logic_variants.weekend = security_variant
-	CopBrain._logic_variants.weekend_dmr = security_variant
-	CopBrain._logic_variants.weekend_lmg = security_variant
-	CopBrain._logic_variants.omnia = security_variant
-	CopBrain._logic_variants.omnia_heavy = security_variant
-	CopBrain._logic_variants.boom = security_variant
-	CopBrain._logic_variants.boom_summers = security_variant
-	CopBrain._logic_variants.taser_summers = clone(security_variant)
-	CopBrain._logic_variants.medic_summers = security_variant
-	CopBrain._logic_variants.rboom = security_variant
-	CopBrain._logic_variants.fbi_vet = security_variant
-	CopBrain._logic_variants.vetlod = security_variant	
-	CopBrain._logic_variants.meme_man = security_variant	
-	CopBrain._logic_variants.meme_man_shield = clone(security_variant)
-	CopBrain._logic_variants.meme_man_shield.attack = ShieldLogicAttack
-	CopBrain._logic_variants.meme_man_shield.intimidated = nil
-	CopBrain._logic_variants.meme_man_shield.flee = nil	
-	CopBrain._logic_variants.spring = clone(security_variant)
-	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
-	CopBrain._logic_variants.summers = clone(security_variant)
-	CopBrain._logic_variants.summers.attack = TankCopLogicAttack
-	CopBrain._logic_variants.tank_titan = clone(security_variant)
-	CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
-	CopBrain._logic_variants.tank_titan_assault = clone(security_variant)
-	CopBrain._logic_variants.tank_titan_assault.attack = TankCopLogicAttack
-	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
-	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
-	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
-	CopBrain._logic_variants.omnia_lpf = security_variant
-	CopBrain._logic_variants.tank_biker = clone(security_variant)
-	CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
-	CopBrain._logic_variants.biker_guard = security_variant
-	CopBrain._logic_variants.phalanx_minion_assault = clone(security_variant)
-	CopBrain._logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack
-	CopBrain._logic_variants.phalanx_minion_assault.intimidated = nil
-	CopBrain._logic_variants.phalanx_minion_assault.flee = nil
-	CopBrain._logic_variants.spooc_titan = clone(security_variant)
-	CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
-	CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
-	CopBrain._logic_variants.taser_titan = clone(security_variant)
-	CopBrain._logic_variants.autumn = clone(security_variant)
-end
+	local security_variant = logic_variants.security
+	function CopBrain:init(unit)
+		old_init(self, unit)
+		CopBrain._logic_variants.dave = security_variant
+		CopBrain._logic_variants.cop_civ = security_variant
+		CopBrain._logic_variants.cop_forest = security_variant
+		CopBrain._logic_variants.fbi_female = security_variant
+		CopBrain._logic_variants.hrt = security_variant
+		CopBrain._logic_variants.fbi_swat_vet = security_variant
+		CopBrain._logic_variants.swat_titan = security_variant
+		CopBrain._logic_variants.swat_assault = security_variant
+		CopBrain._logic_variants.city_swat_titan = security_variant
+		CopBrain._logic_variants.city_swat_titan_assault = security_variant
+		CopBrain._logic_variants.skeleton_swat_titan = security_variant
+		CopBrain._logic_variants.weekend = security_variant
+		CopBrain._logic_variants.weekend_dmr = security_variant
+		CopBrain._logic_variants.weekend_lmg = security_variant
+		CopBrain._logic_variants.omnia = security_variant
+		CopBrain._logic_variants.omnia_heavy = security_variant
+		CopBrain._logic_variants.boom = security_variant
+		CopBrain._logic_variants.boom_summers = security_variant
+		CopBrain._logic_variants.taser_summers = clone(security_variant)
+		CopBrain._logic_variants.medic_summers = security_variant
+		CopBrain._logic_variants.rboom = security_variant
+		CopBrain._logic_variants.fbi_vet = security_variant
+		CopBrain._logic_variants.vetlod = security_variant	
+		CopBrain._logic_variants.meme_man = security_variant	
+		CopBrain._logic_variants.meme_man_shield = clone(security_variant)
+		CopBrain._logic_variants.meme_man_shield.attack = ShieldLogicAttack
+		CopBrain._logic_variants.meme_man_shield.intimidated = nil
+		CopBrain._logic_variants.meme_man_shield.flee = nil	
+		CopBrain._logic_variants.spring = clone(security_variant)
+		CopBrain._logic_variants.spring.attack = TankCopLogicAttack
+		CopBrain._logic_variants.summers = clone(security_variant)
+		CopBrain._logic_variants.summers.attack = TankCopLogicAttack
+		CopBrain._logic_variants.tank_titan = clone(security_variant)
+		CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
+		CopBrain._logic_variants.tank_titan_assault = clone(security_variant)
+		CopBrain._logic_variants.tank_titan_assault.attack = TankCopLogicAttack
+		CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
+		CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
+		CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
+		CopBrain._logic_variants.omnia_lpf = security_variant
+		CopBrain._logic_variants.tank_biker = clone(security_variant)
+		CopBrain._logic_variants.tank_biker.attack = TankCopLogicAttack
+		CopBrain._logic_variants.biker_guard = security_variant
+		CopBrain._logic_variants.phalanx_minion_assault = clone(security_variant)
+		CopBrain._logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack
+		CopBrain._logic_variants.phalanx_minion_assault.intimidated = nil
+		CopBrain._logic_variants.phalanx_minion_assault.flee = nil
+		CopBrain._logic_variants.spooc_titan = clone(security_variant)
+		CopBrain._logic_variants.spooc_titan.idle = SpoocLogicIdle
+		CopBrain._logic_variants.spooc_titan.attack = SpoocLogicAttack
+		CopBrain._logic_variants.taser_titan = clone(security_variant)
+		CopBrain._logic_variants.autumn = clone(security_variant)
+	end
 
---Thanks Rokk--
-Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(self)
-    
-    self._unit:unit_data().is_convert = true
-    
-    --Ugly hack to be able to call converts
-    --Kill me now
-    if not SC._converts then
-        SC._converts = {}
-    end   
-    table.insert(SC._converts, self._unit)
-    
-end)
+	--Thanks Rokk--
+	Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(self)
+		
+		self._unit:unit_data().is_convert = true
+		
+		--Ugly hack to be able to call converts
+		--Kill me now
+		if not SC._converts then
+			SC._converts = {}
+		end   
+		table.insert(SC._converts, self._unit)
+		
+	end)
 
 	function CopBrain:convert_to_criminal(mastermind_criminal)
 		self._logic_data.is_converted = true
@@ -173,31 +175,245 @@ end)
 		self._unit:sound():say("cn1", true, nil)
 		managers.network:session():send_to_peers_synched("sync_unit_converted", self._unit)
 	end
-	
-	
-function CopBrain:on_suppressed(state)
-    self._logic_data.is_suppressed = state or nil
+				
+	function CopBrain:on_suppressed(state)
+		self._logic_data.is_suppressed = state or nil
 
-    if self._current_logic.on_suppressed_state then
-        self._current_logic.on_suppressed_state(self._logic_data)
+		if self._current_logic.on_suppressed_state then
+			self._current_logic.on_suppressed_state(self._logic_data)
 
-        if self._logic_data.char_tweak.chatter.suppress then 
-		    if managers.groupai:state():chk_assault_active_atm()then
-		    local roll = math.rand(1, 100)
-			local chance_heeeeelpp = 50
-				if roll <= chance_heeeeelpp then
-                    self._unit:sound():say("hlp", true) 
-					--log(" assault panic works")
-				else --hopefully some variety here now
-                    self._unit:sound():say("lk3a", true) 
-					--log(" assault panic works")
-			    end	
-		    else		
-               self._unit:sound():say("lk3b", true) --calmer lines for when the assault is off
-			   --log("between assault panic works")
+			if self._logic_data.char_tweak.chatter.suppress then 
+				if managers.groupai:state():chk_assault_active_atm()then
+				local roll = math.rand(1, 100)
+				local chance_heeeeelpp = 50
+					if roll <= chance_heeeeelpp then
+						self._unit:sound():say("hlp", true) 
+						--log(" assault panic works")
+					else --hopefully some variety here now
+						self._unit:sound():say("lk3a", true) 
+						--log(" assault panic works")
+					end	
+				else		
+				   self._unit:sound():say("lk3b", true) --calmer lines for when the assault is off
+				   --log("between assault panic works")
+				end
 			end
-        end
-    end
-end
+		end
+	end
+	
+	function CopBrain:begin_alarm_pager(reset)
+		if not reset and self._alarm_pager_has_run then
+			return
+		end
+		
+		--Suspicion Increase from a pager call
+		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.04
+		managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.04
+		managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
 
+		self._alarm_pager_has_run = true
+		self._alarm_pager_data = {
+			total_nr_calls = math.random(tweak_data.player.alarm_pager.nr_of_calls[1], tweak_data.player.alarm_pager.nr_of_calls[2]),
+			nr_calls_made = 0
+		}
+		local call_delay = math.lerp(tweak_data.player.alarm_pager.first_call_delay[1], tweak_data.player.alarm_pager.first_call_delay[2], math.random())
+		self._alarm_pager_data.pager_clbk_id = "pager" .. tostring(self._unit:key())
+
+		managers.enemy:add_delayed_clbk(self._alarm_pager_data.pager_clbk_id, callback(self, self, "clbk_alarm_pager"), TimerManager:game():time() + call_delay)
+	end
+		
+	function CopBrain:on_alarm_pager_interaction(status, player)
+		if not managers.groupai:state():whisper_mode() then
+			return
+		end
+
+		local is_dead = self._unit:character_damage():dead()
+		local pager_data = self._alarm_pager_data
+
+		if not pager_data then
+			return
+		end
+
+		if status == "started" then
+			self._unit:sound():stop()
+			self._unit:interaction():set_outline_flash_state(nil, true)
+
+			if pager_data.pager_clbk_id then
+				managers.enemy:remove_delayed_clbk(pager_data.pager_clbk_id)
+
+				pager_data.pager_clbk_id = nil
+			end
+		elseif status == "complete" then
+			local nr_previous_bluffs = managers.groupai:state():get_nr_successful_alarm_pager_bluffs()
+			local has_upgrade = nil
+
+			if player:base().is_local_player then
+				has_upgrade = managers.player:has_category_upgrade("player", "corpse_alarm_pager_bluff")
+			else
+				has_upgrade = player:base():upgrade_value("player", "corpse_alarm_pager_bluff")
+			end
+
+			local chance_table = tweak_data.player.alarm_pager[has_upgrade and "bluff_success_chance_w_skill" or "bluff_success_chance"]
+			local chance_index = math.min(nr_previous_bluffs + 1, #chance_table)
+			local is_last = chance_table[math.min(chance_index + 1, #chance_table)] == 0
+			local rand_nr = math.random()
+			local success = chance_table[chance_index] > 0 and rand_nr < chance_table[chance_index]
+
+			self._unit:sound():stop()
+
+			if success then
+				managers.groupai:state():on_successful_alarm_pager_bluff()
+
+				local cue_index = is_last and 4 or 1
+
+				if is_dead then
+					self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_fooled_" .. tostring(cue_index)), nil, true)
+				else
+					self._unit:sound():play(self:_get_radio_id("dsp_radio_fooled_" .. tostring(cue_index)), nil, true)
+				end
+
+				if is_last then
+					-- Nothing
+				end
+			else
+				self._unit:interaction():set_active(false, true)
+				
+				--Unconvincing pager response
+				managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
+				managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+				managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+				managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.25
+				managers.groupai:state():_delay_whisper_suspicion_mul_decay()					
+
+				if is_dead then
+					self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_fooled_4"), nil, true)
+				else
+					self._unit:sound():play(self:_get_radio_id("dsp_radio_fooled_4"), nil, true)
+				end
+			end
+
+			self:end_alarm_pager()
+			managers.mission:call_global_event("player_answer_pager")
+
+			if not self:_chk_enable_bodybag_interaction() then
+				self._unit:interaction():set_active(false, true)
+			end
+		elseif status == "interrupted" then
+			--Suspicion Increase from an interrupted pager
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
+			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.7
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.3
+			managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
+			
+			--Tutorial Heists will sound an alarm to prevent a soft lock
+			local job = Global.level_data and Global.level_data.level_id
+			
+			if job == "short1_stage1" or job == "short1_stage2" then 
+				managers.groupai:state():on_police_called("sys_police_alerted")
+				managers.groupai:state():set_point_of_no_return_timer(10, 0)
+			end			
+			
+			self._unit:interaction():set_active(false, true)
+			self._unit:sound():stop()
+
+			if is_dead then
+				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
+			else
+				self._unit:sound():play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
+			end
+			
+			self._unit:interaction():set_tweak_data("corpse_dispose")
+			self._unit:interaction():set_active(true, true)						
+
+			self:end_alarm_pager()
+		end
+	end	
+	
+	function CopBrain:clbk_alarm_pager(ignore_this, data)
+		local pager_data = self._alarm_pager_data
+		local clbk_id = pager_data.pager_clbk_id
+		pager_data.pager_clbk_id = nil
+
+		if not managers.groupai:state():whisper_mode() then
+			self:end_alarm_pager()
+
+			return
+		end
+
+		if pager_data.nr_calls_made == 0 then
+			if managers.groupai:state():is_ecm_jammer_active("pager") then
+				self:end_alarm_pager()
+				self:begin_alarm_pager(true)
+
+				return
+			end
+
+			self._unit:sound():stop()
+
+			if self._unit:character_damage():dead() then
+				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_query_1"), nil, true)
+			else
+				self._unit:sound():play(self:_get_radio_id("dsp_radio_query_1"), nil, true)
+			end
+
+			self._unit:interaction():set_tweak_data("corpse_alarm_pager")
+			self._unit:interaction():set_active(true, true)
+		elseif pager_data.nr_calls_made < pager_data.total_nr_calls then
+			self._unit:sound():stop()
+
+			if self._unit:character_damage():dead() then
+				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
+			else
+				self._unit:sound():play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
+			end
+		elseif pager_data.nr_calls_made == pager_data.total_nr_calls then
+			self._unit:interaction():set_active(false, true)
+			
+			if is_dead then
+				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
+			else
+				self._unit:sound():play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
+			end			
+
+			--Suspicion Increase from a dropped pager
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
+			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.7
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.3
+			managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
+
+			--Tutorial Heists will sound an alarm to prevent a soft lock
+			local job = Global.level_data and Global.level_data.level_id
+			
+			if job == "short1_stage1" or job == "short1_stage2" then 
+				managers.groupai:state():on_police_called("sys_police_alerted")
+				managers.groupai:state():set_point_of_no_return_timer(10, 0)
+			end
+
+			self._unit:sound():stop()
+
+			self:end_alarm_pager()
+			
+			self._unit:interaction():set_tweak_data("corpse_dispose")
+			self._unit:interaction():set_active(true, true)			
+		end
+
+		if pager_data.nr_calls_made == pager_data.total_nr_calls - 1 then
+			self._unit:interaction():set_outline_flash_state(true, true)
+		end
+
+		pager_data.nr_calls_made = pager_data.nr_calls_made + 1
+
+		if pager_data.nr_calls_made <= pager_data.total_nr_calls then
+			local duration_settings = tweak_data.player.alarm_pager.call_duration[math.min(#tweak_data.player.alarm_pager.call_duration, pager_data.nr_calls_made)]
+			local call_delay = math.lerp(duration_settings[1], duration_settings[2], math.random())
+			self._alarm_pager_data.pager_clbk_id = clbk_id
+
+			managers.enemy:add_delayed_clbk(self._alarm_pager_data.pager_clbk_id, callback(self, self, "clbk_alarm_pager"), TimerManager:game():time() + call_delay)
+		end
+	end	
+		
 end

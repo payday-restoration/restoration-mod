@@ -1,4 +1,4 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+--[[if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	local origfunc = AnimatedVehicleBase.spawn_module
 	function AnimatedVehicleBase:spawn_module(module_unit_name, align_obj_name, ...)
@@ -7,4 +7,4 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-end
+end]]--

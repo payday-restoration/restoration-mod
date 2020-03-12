@@ -1,0 +1,9 @@
+<materials version="3" group="wpn_npc_c45">
+    <material name="mtr_pistol" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+        <bump_normal_texture file="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_nm"/>
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_df"/>
+    </material>
+    <material name="mtr_pistol_lod" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_df"/>
+    </material>
+</materials>

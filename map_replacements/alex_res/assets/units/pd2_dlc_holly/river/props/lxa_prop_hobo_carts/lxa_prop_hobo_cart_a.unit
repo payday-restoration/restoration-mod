@@ -1,0 +1,6 @@
+<unit type="lxa" slot="1">
+	<object file="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

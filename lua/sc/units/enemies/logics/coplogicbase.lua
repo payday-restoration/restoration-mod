@@ -281,5 +281,161 @@ end
 			managers.groupai:state():on_enemy_disengaging(data.unit, old_att_obj.u_key)
 		end
 	end
+	
+	function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
+		if my_data ~= data.internal_data then
+			--log("how is this man")
+			return
+		end
 
+		if data.char_tweak.allowed_poses or data.is_converted or my_data.tasing or my_data.spooc_attack or data.unit:in_slot(managers.slot:get_mask("criminals")) then
+			return
+		end
+
+		if data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.unit:movement():chk_action_forbidden("walk") then
+			return
+		end
+
+		local obj_has_stance, obj_has_pose, agg_pose = nil
+		local can_stand_or_crouch = nil
+
+		if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch then
+			if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand then
+				if data.char_tweak.crouch_move then
+					can_stand_or_crouch = true
+				end
+			end
+		end
+
+		if can_stand_or_crouch then
+			local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+
+			if data.is_suppressed then
+				if diff_index <= 5 then
+					if data.unit:anim_data().stand then
+						if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+							if CopLogicAttack._chk_request_action_crouch(data) then
+								my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+								agg_pose = true
+							end
+						end
+					end
+				else
+					if data.unit:anim_data().stand then
+						if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+							if CopLogicAttack._chk_request_action_crouch(data) then
+								my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+								agg_pose = true
+							end
+						end
+					elseif data.unit:anim_data().crouch then
+						if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+							if CopLogicAttack._chk_request_action_stand(data) then
+								my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+								agg_pose = true
+							end
+						end
+					end
+				end
+			elseif data.attention_obj and data.attention_obj.aimed_at and data.attention_obj.reaction and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified then
+				if diff_index > 5 then
+					if data.unit:anim_data().stand then
+						if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+							if CopLogicAttack._chk_request_action_crouch(data) then
+								my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+								agg_pose = true
+							end
+						end
+					elseif data.unit:anim_data().crouch then
+						if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+							if CopLogicAttack._chk_request_action_stand(data) then
+								my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+								agg_pose = true
+							end
+						end
+					end
+				end
+			end
+		end
+		
+		if agg_pose then
+			return
+		end
+
+		if data.char_tweak.allowed_poses and can_stand_or_crouch and not obj_has_pose and not agg_pose then
+			for pose_name, state in pairs(data.char_tweak.allowed_poses) do
+				if state then
+				
+					if pose_name == "stand" then
+						CopLogicAttack._chk_request_action_stand(data)
+
+						break
+					end
+					
+					if pose_name == "crouch" then
+						CopLogicAttack._chk_request_action_crouch(data)
+
+						break
+					end
+				end
+			end
+		end
+	end
+	
+	function CopLogicBase.action_taken(data, my_data)
+		return my_data.turning or my_data.moving_to_cover or my_data.walking_to_cover_shoot_pos or my_data.surprised or my_data.has_old_action or data.unit:movement():chk_action_forbidden("walk")
+	end
+	
+	function CopLogicBase.chk_should_turn(data, my_data)
+		return not my_data.turning and not my_data.has_old_action and not data.unit:movement():chk_action_forbidden("walk") and not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos and not my_data.surprised
+	end
+	
+	function CopLogicBase.should_enter_attack(data)
+		local reactions_chk = data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction or data.attention_obj and AIAttentionObject.REACT_SPECIAL_ATTACK <= data.attention_obj.reaction
+		
+		if not data.is_converted and not data.unit:in_slot(16) and not data.unit:in_slot(managers.slot:get_mask("criminals")) and data.unit:base():has_tag("law") and reactions_chk and data.internal_data.attitude and data.internal_data.attitude == "engage" then
+			local att_obj = data.attention_obj
+			local my_data = data.internal_data
+			local criminal_in_my_area = nil
+			local criminal_in_neighbour = nil
+			local ranged_fire_group = nil
+			local my_area = managers.groupai:state():get_area_from_nav_seg_id(data.unit:movement():nav_tracker():nav_segment())
+
+			if next(my_area.criminal.units) then
+				criminal_in_my_area = true
+			else
+				for _, nbr in pairs(my_area.neighbours) do
+					if next(nbr.criminal.units) then
+						criminal_in_neighbour = true
+
+						break
+					end
+				end
+			end
+			
+			local attack_distance = 1200
+			
+			if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
+				attack_distance = 2000
+				ranged_fire_group = true
+			end
+			
+			local criminal_near = criminal_in_my_area or criminal_in_neighbour
+			
+			if not criminal_near and ranged_fire_group and att_obj.dis <= attack_distance then
+				criminal_near = true
+			end
+			
+			local visibility_chk = att_obj.verified or att_obj.verified_t and att_obj.verified_t - data.t <= 1
+			
+			if my_data.charge_path or data.internal_data and data.internal_data.tasing or data.internal_data and data.internal_data.spooc_attack or AIAttentionObject.REACT_SPECIAL_ATTACK <= data.attention_obj.reaction or att_obj.dis <= 900 and math.abs(data.m_pos.z - att_obj.m_pos.z) < 250 or my_data.firing and visibility_chk and att_obj.dis <= attack_distance or visibility_chk and att_obj.dis <= attack_distance and criminal_near then
+				return true
+			end
+			
+			return
+		end
+		
+		return
+	end
+	
 end

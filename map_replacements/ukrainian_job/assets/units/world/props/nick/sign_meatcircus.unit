@@ -1,0 +1,6 @@
+<unit type="fwb" slot="1" >
+    <object file="units/world/props/nick/sign_meatcircus" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

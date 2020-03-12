@@ -1,13 +1,13 @@
 <materials version="3" group="ene_akan_fbi_heavy_g36">
     <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mobster_2_head_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/mobster_2_head_df"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/sokol_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_face_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
     <material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mobster_2_head_nm" mip="1"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/mobster_2_head_df" mip="1"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/police_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/security_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<unit type="wst" slot="1">
+	 <!--<network sync="spawn" />-->
+  <object file="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <!--<extension name="damage" class="UnitDamage" />-->
+  </extensions>
+</unit>

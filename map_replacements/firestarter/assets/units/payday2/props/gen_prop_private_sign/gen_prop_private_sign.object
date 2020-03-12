@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign" orientation_object="rp_gen_prop_private_sign" />
+	<bodies>
+        <body name="static_body" template="editor" enabled="true" >
+            <object name="rp_gen_prop_private_sign"/>
+			<object name="g_g" collision_type="mesh_mopp" />
+		</body>
+    </bodies>
+		
+	<decal_surfaces default_material="plastic" />
+	
+	<effects>
+		<effect_spawner name="indoor_sign" enabled="true" object="e_effect" effect="effects/payday2/particles/flares/indoor_sign" />
+    </effects>
+	
+	<graphics>
+		<object name="g_g" enabled="true" shadow_caster="false"/>
+	</graphics>
+	
+</dynamic_object>

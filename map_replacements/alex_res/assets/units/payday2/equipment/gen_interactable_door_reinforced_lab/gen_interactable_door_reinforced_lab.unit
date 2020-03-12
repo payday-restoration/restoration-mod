@@ -1,0 +1,9 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_interactable_door_reinforced_lab" />
+	<network sync="spawn"/>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="attention" class="AIAttentionObject" />
+	</extensions>
+</unit>

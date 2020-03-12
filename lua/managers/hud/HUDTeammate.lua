@@ -382,33 +382,33 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 
 	if self._main_player then
 		local radial_rip = radial_health_panel:bitmap({
-			texture = "guis/textures/pd2/hud_rip",
+			texture = "guis/textures/restoration/hud_rip",
 			name = "radial_rip",
 			layer = 3,
 			blend_mode = "add",
 			visible = false,
 			render_template = "VertexColorTexturedRadial",
 			texture_rect = {
-				128,
+				64,
 				0,
-				-128,
-				128
+				-64,
+				64
 			},
 			color = Color(1, 0, 0, 0),
 			w = radial_health_panel:w(),
 			h = radial_health_panel:h()
 		})
 		local radial_rip_bg = radial_health_panel:bitmap({
-			texture = "guis/textures/pd2/hud_rip_bg",
+			texture = "guis/textures/restoration/hud_rip_bg",
 			name = "radial_rip_bg",
 			layer = 1,
 			visible = false,
 			render_template = "VertexColorTexturedRadial",
 			texture_rect = {
-				128,
+				64,
 				0,
-				-128,
-				128
+				-64,
+				64
 			},
 			color = Color(1, 0, 0, 0),
 			w = radial_health_panel:w(),
@@ -753,7 +753,12 @@ function HUDTeammate:set_name(teammate_name)
 	local name = teammate_panel:child("name")
 	local name_bg = teammate_panel:child("name_bg")
 	local callsign = teammate_panel:child("callsign")
-	name:set_text( utf8.to_upper( " "..teammate_name ) )
+	if restoration.Options:GetValue("HUD/UppercaseNames") then
+	    name_text = utf8.to_upper( " "..teammate_name ) 
+	else
+	    name_text = " "..teammate_name
+	end
+	name:set_text( name_text )
 	local h = name:h()
 	managers.hud:make_fine_text(name)
 	name:set_h(h)

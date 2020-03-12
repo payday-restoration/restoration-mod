@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/street/construction_grbhaul/construction_grbhaul" orientation_object="rp_construction_grbhaul" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_construction_grbhaul" />
+      <object name="c_construction_grbhaul" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="steel">
+	<decal_mesh name="g_construction_grbhaul" enabled="true" material="steel"/>
+  </decal_surfaces>
+  <graphics>
+    <object name="g_construction_grbhaul" enabled="true" />
+    <object name="s_construction_grbhaul" enabled="true" shadow_caster="true" />
+  </graphics>
+</dynamic_object> 

@@ -36,15 +36,13 @@
 			<value_node value="levels/instances/unique/kenaz/storage_rooms/world/world"/>
 			<value_node value="levels/narratives/dentist/hox/stage_2/world/world"/>
 			<value_node value="levels/instances/unique/chew/chew_swat_van/world/world"/>
-			<value_node value="levels/narratives/short2/stage1/world/world"/>
-			<value_node value="levels/narratives/h_watchdogs/stage_2/world/world"/>
 			<value_node value="levels/instances/unique/moon/crate_shoes/world/world"/>
 			<value_node value="levels/narratives/classics/dah/world/world"/>
 			<value_node value="levels/narratives/classics/dah/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<narrative brief_id="heist_ukrainian_job_crimenet" briefing_event="vld_ukranian_brf" contact="vlad" debrief_event="vld_ukranian_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/jewelrystore" id="ukrainian_job_prof" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_jewelry_store" name_id="heist_ukrainian_job" region="street">
+	<narrative brief_id="heist_ukrainian_job_crimenet" briefing_event="vld_ukranian_brf" contact="vlad" custom="true" debrief_event="vld_ukranian_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/jewelrystore" id="ukrainian_job_prof" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_jewelry_store" name_id="heist_ukrainian_job" region="street">
 		<chain>
 			<table level_id="ukrainian_job_res" type="d" type_id="heist_type_assault"/>
 		</chain>

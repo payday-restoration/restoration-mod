@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" orientation_object="rp_ind_prop_dock_box_wall_open" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="mesh_mopp" name="c_c" />
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_dm" material="cloth" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" shadow_caster="true" name="s_s" />
+        <object enabled="true" name="g_wall" />
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="debris" slot="18">
+	<object file="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

@@ -33,7 +33,7 @@
 	tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
 	tweak_data.projectiles.launcher_incendiary.curve_pow = 2
 	tweak_data.projectiles.launcher_incendiary.player_damage = 3
-	tweak_data.projectiles.launcher_incendiary.burn_duration = 10
+	tweak_data.projectiles.launcher_incendiary.burn_duration = 5
 	tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
 		dot_damage = 1,
 		dot_trigger_max_distance = 3000,
@@ -65,7 +65,7 @@
 	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
 	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 8000
 	tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
-	tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 10
+	tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 	tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
 	tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 		dot_damage = 1,
@@ -134,25 +134,25 @@
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80
 	tweak_data.projectiles.frag.player_damage = 40
-	tweak_data.projectiles.frag.curve_pow = 2
+	tweak_data.projectiles.frag.curve_pow = 1
 	tweak_data.projectiles.frag.range = 500
 
 	--Dynamite--
 	tweak_data.projectiles.dynamite.damage = 80
 	tweak_data.projectiles.dynamite.player_damage = 40
-	tweak_data.projectiles.dynamite.curve_pow = 2
+	tweak_data.projectiles.dynamite.curve_pow = 1
 	tweak_data.projectiles.dynamite.range = 500
 
 	--Community Frag--
 	tweak_data.projectiles.frag_com.damage = 80
 	tweak_data.projectiles.frag_com.player_damage = 40
-	tweak_data.projectiles.frag_com.curve_pow = 2
+	tweak_data.projectiles.frag_com.curve_pow = 1
 	tweak_data.projectiles.frag_com.range = 500
 
 	--The other community frag--
 	tweak_data.projectiles.dada_com.damage = 80
 	tweak_data.projectiles.dada_com.player_damage = 40
-	tweak_data.projectiles.dada_com.curve_pow = 2
+	tweak_data.projectiles.dada_com.curve_pow = 1
 	tweak_data.projectiles.dada_com.range = 500
 
         --Molliest of tovs--
@@ -162,7 +162,6 @@
 
 	--Incendiary Nades, idea to make em a mollie (WIP)--
 	tweak_data.projectiles.fir_com.damage = 3
-	--tweak_data.projectiles.fir_com.curve_pow = 2
 	tweak_data.projectiles.fir_com.player_damage = 3
 	tweak_data.projectiles.fir_com.fire_dot_data = {
 		dot_damage = 1,
@@ -174,19 +173,6 @@
 	tweak_data.projectiles.fir_com.range = 75
 	tweak_data.blackmarket.projectiles.fir_com.impact_detonation = false
 	
-	--Incendiary Nades--
-	tweak_data.projectiles.fir_com.damage = 60
-	tweak_data.projectiles.fir_com.curve_pow = 2
-	tweak_data.projectiles.fir_com.player_damage = 60
-	tweak_data.projectiles.fir_com.fire_dot_data = {
-		dot_damage = 1,
-		dot_trigger_max_distance = 3000,
-		dot_trigger_chance = 50,
-		dot_length = 10,
-		dot_tick_period = 0.5
-	}
-	tweak_data.projectiles.fir_com.range = 500	
-
 	--Throwing Card--
 	tweak_data.projectiles.wpn_prj_ace.damage = 24
 	tweak_data.projectiles.wpn_prj_ace.adjust_z = 0
@@ -225,6 +211,7 @@
 	--Had to include this in here due to some BS with it being in upgradestweakdata
 	tweak_data.upgrades.values.player.health_multiplier = {1.15, 1.4}
 	tweak_data.upgrades.values.trip_mine.quantity = {3, 7}
+	tweak_data.upgrades.values.shape_charge.quantity = {3, 5}
 
 	tweak_data.interaction.drill_upgrade.timer = 3
 	tweak_data.interaction.gen_int_saw_upgrade.timer = 3
@@ -239,6 +226,12 @@
 	else
 		tweak_data.interaction.corpse_alarm_pager.timer = 10
 	end	
+	
+	tweak_data.narrative.jobs["chill_combat"].contact = "events"	
+	tweak_data.narrative.jobs.chill_combat.contract_visuals = {}	
+	tweak_data.narrative.jobs.chill_combat.contract_visuals.preview_image = {
+		id = "chill_combat"
+	}	
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0
@@ -255,7 +248,7 @@
 	tweak_data.team_ai.stop_action.delay = 0.8
 	tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 
-	tweak_data.medic.cooldown = 60
+	tweak_data.medic.cooldown = 90
 	tweak_data.medic.radius = 400
 	tweak_data.medic.lpf_radius = 800
 	
@@ -270,7 +263,6 @@
 	end			
 	
 	tweak_data.medic.disabled_units = {
-		"phalanx_minion",
 		"phalanx_vip",
 		"spring",
 		"taser_summers",
@@ -279,20 +271,9 @@
 		"summers",
 		"autumn",
 		"medic",
-		"tank_titan",
+		"sniper",
 		"tank_medic",
-		"omnia_lpf",
-		"swat_titan",
-		"city_swat_titan",
-		"city_swat_titan_assault",
-		"skeleton_swat_titan",
-		"tank_titan_assault",
-		"spooc_titan",
-		"phalanx_minion_assault",
-		"heavy_swat_sniper",
-		"fbi_vet",
-		"boom_titan",
-		"taser_titan"
+		"omnia_lpf"
 	}
 	tweak_data.medic.cooldown_summers = 0
 	tweak_data.radius_summers = 100000

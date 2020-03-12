@@ -1,5 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
+	local Net = _G.LuaNetworking
+
 	function PlayerEquipment:valid_shape_placement(equipment_id, equipment_data)
 		local from = self._unit:movement():m_head_pos()
 		local to = from + self._unit:movement():m_head_rot():y() * 220
@@ -61,7 +63,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			PlayerStandard.say_line(self, "s01x_plu")
 			managers.statistics:use_armor_bag()
 			local amount_upgrade_lvl = 0
-			local unit = GrenadeCrateBase.spawn(pos, rot, amount_upgrade_lvl, managers.network:session():local_peer():id())
+			if Network:is_client() then
+				Net:SendToPeer(1, "PlaceGrenadeCrate", tostring(pos).."|"..tostring(rot).."|"..tostring(amount_upgrade_lvl))
+			else
+				local unit = GrenadeCrateBase.spawn(pos, rot, amount_upgrade_lvl, managers.network:session():local_peer():id())
+			end
 			return true
 		end
 		return false

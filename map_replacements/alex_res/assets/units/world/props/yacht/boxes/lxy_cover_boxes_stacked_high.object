@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/yacht/boxes/boxes" orientation_object="rp_lxy_cover_boxes_stacked_high" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_lxy_cover_boxes_stacked_high"/>
+      <object name="c_c" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="wood" static="true">
+    <decal_mesh name="dm_metal_sheet" enabled="true" material="sheet_metal" />
+    <decal_mesh name="dm_paper" enabled="true" material="plastic" />
+    <decal_mesh name="dm_wood" enabled="true" material="wood" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_g" enabled="true"  />
+    <object name="g_g" enabled="true" shadow_caster="true" />
+  </graphics>
+</dynamic_object>

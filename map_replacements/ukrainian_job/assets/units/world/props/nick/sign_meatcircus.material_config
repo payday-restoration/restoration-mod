@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="sign_meatcircus" render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/nick/sign_meatcircus_df"/>
+    </material>
+</materials>

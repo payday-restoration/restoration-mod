@@ -2,6 +2,50 @@ if not restoration:all_enabled("HUD/MainHUD", "HUD/AssaultPanel") then
 	return
 end
 
+HUDAssaultCorner._custom_lines_casing = {
+	"GUYS, THE THERMAL DRILL - GO GET IT",
+	"I'M NOT HERE FOR YOUR ENTERTAINMENT",
+	"DO YOU PLAN ON MASKING UP ANYTIME SOON?",
+	"NOBODY CARED WHO I WAS, CAUSE I STILL HADN'T MASKED UP",
+	"CREDITS    ///    CGNICK, KAILLUS, WILKO, I AM NOT A SPY, BATTLE DOG, ZDANN, SUPER MUFFIN, WOLFY, GREAT BIG BUSHY BEARD, WILLCARIO, OLIPRO, INSANO-MAN, MELONIOUS, BENEDICT, SEVEN, PORKY-DA-CORGI, DOKTOR AKCEL, A.J. VALENTINE, TOM SEA, MUD, KRYMXON, SC, ELYSIUM, GARRETT, WHITE3DESIGNER, BMSTU_HEDGEHOG, SIX-DEMON BAG, SOME NAME HERE, REZULUX, BANGL, TONIS, FENDERMCBENDER, VICIOUSWALRUS, EDISLEADO, RINO, TEACYN, FUGLORE, JAREY, RAVIACLE, HOXI, VXWOLF, KARL LAKNER, AND EVERYONE ELSE AT OVERKILL SOFTWARE AND STARBREEZE AB    ///    THANK YOU EVERYONE <3",
+	"CONGRATULATIONS!  YOU ARE OUR 1000TH VISITOR!",
+	"WOW.. THAT CREDITS SURE IS LONG, AIN'T IT?  CAN WE GET IT LONGER...?",
+	"BEGINNING VIRTUOUS MISSION...",
+	"I'm the casing mode ticker!  I'm not in the mod anymore.  Isn't that unfortunate?  If for some reason you're seeing me, please alert the team right away.  Thanks!",
+}
+HUDAssaultCorner._custom_lines_assault = {
+	"DON'T DIE",
+	"JUST KEEP TAPPING",
+	"JUST KEEP TAPDANCING",
+	"TOOK ONE IN THE CHICKENPLATE!",
+	"SONG NAME?",
+	"HOW LONG IS THIS TAPE ANYWAY?",
+	"IS THAT A CLOAKER BEHIND YOU",
+	"DRILL JAMMING IN PROGRESS",
+	"KEEP AN EYE OPEN FOR FLASHBANGS... OR... DON'T KEEP AN EYE OPEN... LOOK, YOU KNOW WHAT I MEAN.",
+	"Hey!  This is Jackal.  While you're out, can you grab me a snack?  I'm pretty hungry... something with a lot of veggies, I'm thinking.  If you can find some almonds too, that'd be great.  Thanks a bunch.",
+}
+HUDAssaultCorner._custom_lines_phalanx = {
+	"POINT OF NO RETURN IN... JUST KIDDING",
+	"YOU'RE ABOUT TO GET OUTGUNNED",
+	"DON'T STAY IN COVER, SHOOT THE ASSHOLES!",
+	"THIS IS ONE ASSAULT WAVE THAT WILL NEVER END!  ALL YOU CAN DO NOW IS FIGHT!",
+	"THE ASSAULT WAVE IS JAMMED, YOU GOTTA FIX IT!",
+	"NOW GIVE THEM HELL",
+	"HERE THEY COME",
+	"GUN UP, CREW",
+}
+HUDAssaultCorner._custom_lines_civilian = {
+	"I AM TEXT BLOCK.",
+	"YOU ARE IN CASING MODE.  MASK UP TO START THE... WAIT, SHIT",
+	"I'm the civilian mode ticker!  I'm not in the mod anymore.  Isn't that unfortunate?  If for some reason you're seeing me, please alert the team right away.  Thanks!",
+}
+HUDAssaultCorner._custom_lines_ponr = {
+	"RUN, RUN GOD DAMN IT",
+	"I'm the point of no return ticker!  I'm not in the mod anymore.  Isn't that unfortunate?  If for some reason you're seeing me, please alert the team right away.  Thanks!",
+}
+HUDAssaultCorner._custom_line_chance = 1 -- Chance of a new line, between 0-100
+
 function HUDAssaultCorner:init(hud, full_hud)
 	self._hud_panel = hud.panel
 	self._full_hud_panel = full_hud.panel
@@ -143,7 +187,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	if self._hud_panel:child("wave_panel") then
 		self._hud_panel:remove(self._hud_panel:child("wave_panel"))
 	end
-	self._completed_waves = 0
+	--self._completed_waves = 0
 	if self:has_waves() then
 		self._wave_panel_size = {250, 38}
 		local wave_w, wave_h = 38, 38
@@ -155,7 +199,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 		})
 		local num_waves = wave_panel:text({
 			name = "num_waves",
-			text = self:get_completed_waves_string(),
+			text = "0",
 			valign = "center",
 			vertical = "center",
 			align = "center",
@@ -414,7 +458,27 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 		local text_id = text_list[text_index]
 		local text_string = ""
 		if type(text_id) == "string" then
-			text_string = managers.localization:to_upper_text(text_id)
+
+			local tab = {}
+			
+			if self._casing then
+				tab = self._custom_lines_casing
+			elseif self._assault then
+				tab = self._custom_lines_assault
+			elseif self._point_of_no_return then
+				tab = self._custom_lines_ponr
+			end
+			if self._assault_mode == "phalanx" then
+				tab = self._custom_lines_phalanx
+			end
+			if self._mode == "civilian" then -- NEED TO FIND A WAY TO ENABLE THIS - D.A.
+				tab = self._custom_lines_civilian
+			end
+			if #tab > 0 and text_id ~= "hud_assault_end_line" and text_id ~= "hud_assault_padlock" and self._custom_line_chance > math.random(100) then
+				text_string = tab[math.random(#tab)]
+			else
+				text_string = managers.localization:to_upper_text(text_id)
+			end
 		elseif text_id == Idstring("risk") then
 			local use_stars = true
 			if managers.crime_spree:is_active() then
@@ -587,11 +651,12 @@ end
 function HUDAssaultCorner:set_assault_wave_number(assault_number)
 	self._wave_number = assault_number
 	local panel = self._hud_panel:child("wave_panel")
+	local num_wave_count = managers.network:session():is_host() and managers.groupai:state():get_assault_number() or self._wave_number	
 	print("found panel")
 	if panel then
 		local wave_text = panel:child("num_waves")
 		if wave_text then
-			wave_text:set_text(self:get_completed_waves_string())
+			wave_text:set_text(num_wave_count)
 		end
 	end
 end
@@ -697,6 +762,9 @@ function HUDAssaultCorner:_start_assault(text_list)
 	assault_panel:animate(callback(self, self, "_animate_assault"))
 	text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
 	self:_set_feedback_color(self._assault_color)
+	if self:has_waves() then
+	self._hud_panel:child("wave_panel"):set_visible(true)
+	end
 	
 	if managers.skirmish:is_skirmish() then
 		self:_popup_wave_started()
@@ -765,7 +833,8 @@ function HUDAssaultCorner:_end_assault()
 		self:_update_assault_hud_color(self._assault_survived_color)
 		self:_set_text_list(self:_get_survived_assault_strings())
 		text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
-		self._completed_waves = self._completed_waves + 1
+		--self._completed_waves = self._completed_waves + 1
+		self._hud_panel:child("wave_panel"):set_visible(false)		
 		wave_panel:animate(callback(self, self, "_animate_wave_completed"), self)
 		if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
 			corner_panel:child( "corner" ):set_color(self._wave_corner_color)
@@ -921,6 +990,7 @@ function HUDAssaultCorner:show_casing(mode)
 	local text_panel = casing_panel:child("text_panel")
 	text_panel:script().text_list = {}
 	self._casing_bg_box:script().text_list = {}
+	self._mode = mode
 	local msg
 	if mode == "civilian" then
 		msg = {

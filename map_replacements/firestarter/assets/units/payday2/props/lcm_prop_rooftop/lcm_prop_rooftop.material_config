@@ -1,0 +1,27 @@
+<materials version="3">
+    <material name="secret_stash_props_rooftop_1" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_df"/>
+        <bump_normal_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_nm"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_secret_stash_ext"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+	
+	  <material name="secret_stash_props_rooftop_1_lod1" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_df" mip="5"/>
+        <bump_normal_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_nm" mip="5"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_secret_stash_ext"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+	
+    <material name="secret_stash_props_rooftop_1_alpha" render_template="generic:ALPHA_MASKED:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_df"/>
+        <bump_normal_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_nm"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_secret_stash_ext"/>
+        <variable value="0.1870000064373" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="alpha_shadow" render_template="shadow_caster_only:ALPHA_MASKED:EXTERNAL_ALPHA_REF" version="2">
+        <diffuse_texture file="units/world/architecture/secret_stash/props_textures/secret_stash_props_rooftop_1_df"/>
+        <variable value="0.46100002527237" type="scalar" name="alpha_ref"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

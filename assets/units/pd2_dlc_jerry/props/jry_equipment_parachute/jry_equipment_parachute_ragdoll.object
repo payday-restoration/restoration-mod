@@ -1,0 +1,644 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute" orientation_object="rp_jry_equipment_parachute_ragdoll" />
+	<sequence_manager file="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" />
+
+	<bodies>
+		<body name="body_collision_01" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_1" />
+
+		</body>
+		<body name="body_collision_02" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_2" />
+
+		</body>
+		<body name="body_collision_03" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_3" />
+
+		</body>
+		<body name="body_collision_04" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_4" />
+
+		</body>
+		<body name="body_collision_05" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_5" />
+
+		</body>
+		<body name="body_collision_06" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_6" />
+
+		</body>
+		<body name="body_collision_07" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_7" />
+
+		</body>
+		<body name="body_collision_08" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_8" />
+
+		</body>
+		<body name="body_collision_09" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_9" />
+
+		</body>
+		<body name="body_collision_10" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_10" />
+
+		</body>
+		<body name="body_collision_11" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_11" />
+
+		</body>
+		<body name="body_collision_12" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_12" />
+
+		</body>
+		<body name="body_collision_13" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_13" />
+
+		</body>
+		<body name="body_collision_14" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_14" />
+
+		</body>
+		<body name="body_collision_15" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_15" />
+
+		</body>
+		<body name="body_collision_16" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_16" />
+
+		</body>
+		<body name="body_collision_17" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_17" />
+
+		</body>
+		<body name="body_collision_18" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_18" />
+
+		</body>
+		<body name="body_collision_19" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_19" />
+
+		</body>
+		<body name="body_collision_20" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_20" />
+
+		</body>
+		<body name="body_collision_21" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_21" />
+
+		</body>
+		<body name="body_collision_22" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_22" />
+
+		</body>
+		<body name="body_collision_23" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_23" />
+
+		</body>
+		<body name="body_collision_24" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_24" />
+
+		</body>
+		<body name="body_collision_25" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_25" />
+
+		</body>
+		<body name="body_collision_26" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_26" />
+
+		</body>
+		<body name="body_collision_27" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_27" />
+
+		</body>
+		<body name="body_collision_28" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_28" />
+
+		</body>
+		<body name="body_collision_29" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_29" />
+
+		</body>
+		<body name="body_collision_30" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_30" />
+
+		</body>
+		<body name="body_collision_31" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_31" />
+
+		</body>
+		<body name="body_collision_32" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_32" />
+
+		</body>
+		<body name="body_collision_33" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_33" />
+
+		</body>
+		<body name="body_collision_34" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_34" />
+
+		</body>
+		<body name="body_collision_35" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_35" />
+
+		</body>
+		<body name="body_collision_36" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_36" />
+
+		</body>
+		<body name="body_collision_37" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_37" />
+
+		</body>
+		<body name="body_collision_38" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_38" />
+
+		</body>
+		<body name="body_collision_39" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_39" />
+
+		</body>
+		<body name="body_collision_40" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_40" />
+
+		</body>
+		<body name="body_collision_41" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_41" />
+
+		</body>
+		<body name="body_collision_42" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_42" />
+
+		</body>
+		<body name="body_collision_43" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_43" />
+
+		</body>
+		<body name="body_collision_44" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_44" />
+
+		</body>
+		<body name="body_collision_45" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_45" />
+
+		</body>
+		<body name="body_collision_46" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_46" />
+
+		</body>
+		<body name="body_collision_47" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_47" />
+
+		</body>
+		<body name="body_collision_48" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_48" />
+
+		</body>
+		<body name="body_collision_49" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_49" />
+
+		</body>
+		<body name="body_collision_50" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_50" />
+
+		</body>
+		<body name="body_collision_51" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="pivot_51" />
+
+		</body>
+		<body name="body_collision_52" enabled="false" template="dynamic" pushed_by_mover="false" collides_with_mover="false" lin_damping="3" ang_damping="20" collision_group="-1" collision_class="ragdoll" >
+			<object name="rp_jry_equipment_parachute_ragdoll" />
+
+		</body>
+	</bodies>
+	<constraints>
+<!-- 
+		<constraint name="constraint_strings_end" enabled="false" type="ragdoll">
+			<param body_a="body_collision_51" body_b="body_collision_52"/>
+			<param pivot="position:pivot_51"/>
+			<param twist_axis="yaxis:pivot_51" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_51"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="0" spring_constant="0" min_restitution="0"/>
+		</constraint> -->
+<!-- 
+		<constraint name="constraint_01" enabled="false" type="ragdoll">
+			<param body_a="body_collision_51" body_b="body_collision_01"/>
+			<param pivot="position:pivot_51"/>
+			<param twist_axis="yaxis:pivot_51" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_51"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+
+		<constraint name="constraint_02" enabled="false" type="ragdoll">
+			<param body_a="body_collision_51" body_b="body_collision_26"/>
+			<param pivot="position:pivot_51"/>
+			<param twist_axis="yaxis:pivot_51" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_51"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+ -->
+		<constraint name="constraint_03" enabled="false" type="ragdoll">
+			<param body_a="body_collision_01" body_b="body_collision_02"/>
+			<param pivot="position:pivot_1"/>
+			<param twist_axis="yaxis:pivot_1" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_1"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_04" enabled="false" type="ragdoll">
+			<param body_a="body_collision_01" body_b="body_collision_22"/>
+			<param pivot="position:pivot_1"/>
+			<param twist_axis="yaxis:pivot_1" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_1"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_05" enabled="false" type="ragdoll">
+					<param body_a="body_collision_22" body_b="body_collision_23"/>
+					<param pivot="position:pivot_22"/>
+					<param twist_axis="yaxis:pivot_22" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_22"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_06" enabled="false" type="ragdoll">
+			<param body_a="body_collision_01" body_b="body_collision_24"/>
+			<param pivot="position:pivot_1"/>
+			<param twist_axis="yaxis:pivot_1" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_1"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_07" enabled="false" type="ragdoll">
+					<param body_a="body_collision_24" body_b="body_collision_25"/>
+					<param pivot="position:pivot_24"/>
+					<param twist_axis="yaxis:pivot_24" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_24"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_08" enabled="false" type="ragdoll">
+			<param body_a="body_collision_02" body_b="body_collision_03"/>
+			<param pivot="position:pivot_2"/>
+			<param twist_axis="yaxis:pivot_2" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_2"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_09" enabled="false" type="ragdoll">
+			<param body_a="body_collision_02" body_b="body_collision_18"/>
+			<param pivot="position:pivot_2"/>
+			<param twist_axis="yaxis:pivot_2" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_2"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_10" enabled="false" type="ragdoll">
+					<param body_a="body_collision_18" body_b="body_collision_19"/>
+					<param pivot="position:pivot_18"/>
+					<param twist_axis="yaxis:pivot_18" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_18"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_11" enabled="false" type="ragdoll">
+			<param body_a="body_collision_02" body_b="body_collision_20"/>
+			<param pivot="position:pivot_2"/>
+			<param twist_axis="yaxis:pivot_2" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_2"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_12" enabled="false" type="ragdoll">
+					<param body_a="body_collision_20" body_b="body_collision_21"/>
+					<param pivot="position:pivot_20"/>
+					<param twist_axis="yaxis:pivot_20" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_20"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_13" enabled="false" type="ragdoll">
+			<param body_a="body_collision_03" body_b="body_collision_04"/>
+			<param pivot="position:pivot_3"/>
+			<param twist_axis="yaxis:pivot_3" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_3"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_14" enabled="false" type="ragdoll">
+			<param body_a="body_collision_03" body_b="body_collision_14"/>
+			<param pivot="position:pivot_3"/>
+			<param twist_axis="yaxis:pivot_3" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_3"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_15" enabled="false" type="ragdoll">
+					<param body_a="body_collision_14" body_b="body_collision_15"/>
+					<param pivot="position:pivot_14"/>
+					<param twist_axis="yaxis:pivot_14" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_14"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_16" enabled="false" type="ragdoll">
+			<param body_a="body_collision_03" body_b="body_collision_16"/>
+			<param pivot="position:pivot_3"/>
+			<param twist_axis="yaxis:pivot_3" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_3"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_17" enabled="false" type="ragdoll">
+					<param body_a="body_collision_16" body_b="body_collision_17"/>
+					<param pivot="position:pivot_16"/>
+					<param twist_axis="yaxis:pivot_16" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_16"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_18" enabled="false" type="ragdoll">
+			<param body_a="body_collision_04" body_b="body_collision_05"/>
+			<param pivot="position:pivot_4"/>
+			<param twist_axis="yaxis:pivot_4" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_4"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_19" enabled="false" type="ragdoll">
+			<param body_a="body_collision_04" body_b="body_collision_10"/>
+			<param pivot="position:pivot_4"/>
+			<param twist_axis="yaxis:pivot_4" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_4"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_20" enabled="false" type="ragdoll">
+					<param body_a="body_collision_10" body_b="body_collision_11"/>
+					<param pivot="position:pivot_10"/>
+					<param twist_axis="yaxis:pivot_10" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_10"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_21" enabled="false" type="ragdoll">
+			<param body_a="body_collision_04" body_b="body_collision_12"/>
+			<param pivot="position:pivot_4"/>
+			<param twist_axis="yaxis:pivot_4" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_4"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_22" enabled="false" type="ragdoll">
+					<param body_a="body_collision_12" body_b="body_collision_13"/>
+					<param pivot="position:pivot_12"/>
+					<param twist_axis="yaxis:pivot_12" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_12"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_23" enabled="false" type="ragdoll">
+			<param body_a="body_collision_05" body_b="body_collision_06"/>
+			<param pivot="position:pivot_5"/>
+			<param twist_axis="yaxis:pivot_5" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_5"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_24" enabled="false" type="ragdoll">
+					<param body_a="body_collision_06" body_b="body_collision_07"/>
+					<param pivot="position:pivot_6"/>
+					<param twist_axis="yaxis:pivot_6" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_6"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_25" enabled="false" type="ragdoll">
+			<param body_a="body_collision_05" body_b="body_collision_08"/>
+			<param pivot="position:pivot_5"/>
+			<param twist_axis="yaxis:pivot_5" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_5"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_26" enabled="false" type="ragdoll">
+					<param body_a="body_collision_08" body_b="body_collision_09"/>
+					<param pivot="position:pivot_8"/>
+					<param twist_axis="yaxis:pivot_8" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_8"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_27" enabled="false" type="ragdoll">
+			<param body_a="body_collision_26" body_b="body_collision_27"/>
+			<param pivot="position:pivot_26"/>
+			<param twist_axis="yaxis:pivot_26" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_26"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_28" enabled="false" type="ragdoll">
+			<param body_a="body_collision_26" body_b="body_collision_47"/>
+			<param pivot="position:pivot_26"/>
+			<param twist_axis="yaxis:pivot_26" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_26"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_29" enabled="false" type="ragdoll">
+					<param body_a="body_collision_47" body_b="body_collision_48"/>
+					<param pivot="position:pivot_47"/>
+					<param twist_axis="yaxis:pivot_47" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_47"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_30" enabled="false" type="ragdoll">
+			<param body_a="body_collision_26" body_b="body_collision_49"/>
+			<param pivot="position:pivot_26"/>
+			<param twist_axis="yaxis:pivot_26" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_26"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_31" enabled="false" type="ragdoll">
+					<param body_a="body_collision_49" body_b="body_collision_50"/>
+					<param pivot="position:pivot_49"/>
+					<param twist_axis="yaxis:pivot_49" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_49"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_32" enabled="false" type="ragdoll">
+			<param body_a="body_collision_27" body_b="body_collision_28"/>
+			<param pivot="position:pivot_27"/>
+			<param twist_axis="yaxis:pivot_27" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_27"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_33" enabled="false" type="ragdoll">
+			<param body_a="body_collision_27" body_b="body_collision_43"/>
+			<param pivot="position:pivot_27"/>
+			<param twist_axis="yaxis:pivot_27" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_27"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_34" enabled="false" type="ragdoll">
+					<param body_a="body_collision_43" body_b="body_collision_44"/>
+					<param pivot="position:pivot_43"/>
+					<param twist_axis="yaxis:pivot_43" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_43"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_35" enabled="false" type="ragdoll">
+			<param body_a="body_collision_27" body_b="body_collision_45"/>
+			<param pivot="position:pivot_27"/>
+			<param twist_axis="yaxis:pivot_27" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_27"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_36" enabled="false" type="ragdoll">
+					<param body_a="body_collision_45" body_b="body_collision_46"/>
+					<param pivot="position:pivot_45"/>
+					<param twist_axis="yaxis:pivot_45" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_45"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_37" enabled="false" type="ragdoll">
+			<param body_a="body_collision_28" body_b="body_collision_29"/>
+			<param pivot="position:pivot_28"/>
+			<param twist_axis="yaxis:pivot_28" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_28"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_38" enabled="false" type="ragdoll">
+			<param body_a="body_collision_28" body_b="body_collision_39"/>
+			<param pivot="position:pivot_28"/>
+			<param twist_axis="yaxis:pivot_28" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_28"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_39" enabled="false" type="ragdoll">
+					<param body_a="body_collision_39" body_b="body_collision_40"/>
+					<param pivot="position:pivot_39"/>
+					<param twist_axis="yaxis:pivot_39" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_39"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_40" enabled="false" type="ragdoll">
+			<param body_a="body_collision_28" body_b="body_collision_41"/>
+			<param pivot="position:pivot_28"/>
+			<param twist_axis="yaxis:pivot_28" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_28"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_41" enabled="false" type="ragdoll">
+					<param body_a="body_collision_41" body_b="body_collision_42"/>
+					<param pivot="position:pivot_41"/>
+					<param twist_axis="yaxis:pivot_41" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_41"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+		<constraint name="constraint_42" enabled="false" type="ragdoll">
+			<param body_a="body_collision_29" body_b="body_collision_30"/>
+			<param pivot="position:pivot_29"/>
+			<param twist_axis="yaxis:pivot_29" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_29"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+		<constraint name="constraint_43" enabled="false" type="ragdoll">
+			<param body_a="body_collision_29" body_b="body_collision_35"/>
+			<param pivot="position:pivot_29"/>
+			<param twist_axis="yaxis:pivot_29" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_29"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_44" enabled="false" type="ragdoll">
+					<param body_a="body_collision_35" body_b="body_collision_36"/>
+					<param pivot="position:pivot_35"/>
+					<param twist_axis="yaxis:pivot_35" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_35"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_45" enabled="false" type="ragdoll">
+			<param body_a="body_collision_29" body_b="body_collision_37"/>
+			<param pivot="position:pivot_29"/>
+			<param twist_axis="yaxis:pivot_29" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_29"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_46" enabled="false" type="ragdoll">
+					<param body_a="body_collision_37" body_b="body_collision_38"/>
+					<param pivot="position:pivot_37"/>
+					<param twist_axis="yaxis:pivot_37" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_37"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_47" enabled="false" type="ragdoll">
+			<param body_a="body_collision_30" body_b="body_collision_31"/>
+			<param pivot="position:pivot_30"/>
+			<param twist_axis="yaxis:pivot_30" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_30"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_48" enabled="false" type="ragdoll">
+					<param body_a="body_collision_31" body_b="body_collision_32"/>
+					<param pivot="position:pivot_31"/>
+					<param twist_axis="yaxis:pivot_31" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_31"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+		<constraint name="constraint_49" enabled="false" type="ragdoll">
+			<param body_a="body_collision_30" body_b="body_collision_33"/>
+			<param pivot="position:pivot_30"/>
+			<param twist_axis="yaxis:pivot_30" twist_min="-1" twist_max="1" twist_freedom="1"/>
+			<param plane_axis="xaxis:pivot_30"/>
+			<param cone_y="1" cone_z="1" cone_freedom="1"/>
+			<param damping="1" spring_constant="1" min_restitution="1"/>
+		</constraint>
+				<constraint name="constraint_50" enabled="false" type="ragdoll">
+					<param body_a="body_collision_33" body_b="body_collision_34"/>
+					<param pivot="position:pivot_33"/>
+					<param twist_axis="yaxis:pivot_33" twist_min="-1" twist_max="1" twist_freedom="1"/>
+					<param plane_axis="xaxis:pivot_33"/>
+					<param cone_y="1" cone_z="1" cone_freedom="1"/>
+					<param damping="1" spring_constant="1" min_restitution="1"/>
+				</constraint>
+
+	</constraints>
+	<graphics>
+		<graphic_group name="parachute_grp" enabled="true" culling_object="co_box">
+			<object name="g_g" enabled="true" shadow_caster="true" />
+			<object name="g_bar" enabled="true" shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

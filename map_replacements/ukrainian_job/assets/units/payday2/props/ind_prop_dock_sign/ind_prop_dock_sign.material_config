@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="mat_sign" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign_df"/>
+    </material>
+	<material name="mat_add" version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE">
+        <diffuse_texture file="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign_df"/>
+        <variable value="dimlight" type="scalar" name="intensity"/>
+    </material>
+</materials>

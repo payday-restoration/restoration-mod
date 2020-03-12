@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mat_sign_stop" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc2/csgo_models/props_downtown/sign_donotenter_df"/>
+    </material>
+</materials>

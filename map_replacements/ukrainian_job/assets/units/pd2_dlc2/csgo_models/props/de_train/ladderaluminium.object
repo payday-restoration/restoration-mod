@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+    <diesel materials="units/pd2_dlc2/csgo_models/props/de_train/ladderaluminium" orientation_object="rp_ladderaluminium" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_ladderaluminium"/>
+            <object name="c_box_1" collision_type="box" padding="-2.5"/>
+            <object name="c_box_10" collision_type="box" padding="-2.5"/>
+            <object name="c_box_11" collision_type="box" padding="-2.5"/>
+            <object name="c_box_12" collision_type="box" padding="-2.5"/>
+            <object name="c_box_13" collision_type="box" padding="-2.5"/>
+            <object name="c_box_14" collision_type="box" padding="-2.5"/>
+            <object name="c_box_15" collision_type="box" padding="-2.5"/>
+            <object name="c_box_16" collision_type="box" padding="-2.5"/>
+            <object name="c_box_17" collision_type="box" padding="-2.5"/>
+            <object name="c_box_18" collision_type="box" padding="-2.5"/>
+            <object name="c_box_19" collision_type="box" padding="-2.5"/>
+            <object name="c_box_2" collision_type="box" padding="-2.5"/>
+            <object name="c_box_20" collision_type="box" padding="-2.5"/>
+            <object name="c_box_3" collision_type="box" padding="-2.5"/>
+            <object name="c_box_4" collision_type="box" padding="-2.5"/>
+            <object name="c_box_5" collision_type="box" padding="-2.5"/>
+            <object name="c_box_6" collision_type="box" padding="-2.5"/>
+            <object name="c_box_7" collision_type="box" padding="-2.5"/>
+            <object name="c_box_8" collision_type="box" padding="-2.5"/>
+            <object name="c_box_9" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+    
+    <decal_surfaces default_material="metal" static="true">
+        <decal_mesh name="g_ladderaluminium" material="metal" enabled="true"/>
+    </decal_surfaces> 
+    
+    <graphics>
+        <object enabled="true" name="g_ladderaluminium" shadow_caster="true"/>
+    </graphics>
+</dynamic_object> 

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<unit type="being" slot="12">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	<object file="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" />
+
+	<dependencies>
+		
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="CopBase" >
+			<var name="_tweak_table" value="dave" />
+			<var name="_default_weapon_id" value="c45" />
+		</extension>
+		<extension name="inventory" class="CopInventory" />
+		<extension name="brain" class="CopBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="CopDamage">
+			<var name="_head_body_name" value="head" />
+		</extension>
+		<extension name="movement" class="CopMovement" >
+			<var name="_footwear" value="hardsole" />
+			<var name="_anim_global" value="cop" />
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt" >
+			<var name="tweak_data" value="intimidate" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_skip_save_anim_state_machine" value="true" />
+		</extension>
+		<extension name="contour" class="ContourExt" />
+		<extension name="sound" class="CopSound" />
+	</extensions>
+
+	<network sync="spawn" remote_unit="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave_husk"/>
+
+	<sounds>
+		<default_soundsource source="Hips"/>
+	</sounds>
+</unit>

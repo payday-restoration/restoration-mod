@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<network sync="spawn"/>
+	<object file="units/payday2/props/gen_prop_container/gen_prop_container" />
+	<dependencies>
+		<depends_on unit="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" />
+		<depends_on unit="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" />
+		<depends_on unit="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" />
+		<depends_on unit="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" />
+		<depends_on unit="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" />
+
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="sync_unit_data" class="SyncUnitData" />
+	</extensions>
+</unit>

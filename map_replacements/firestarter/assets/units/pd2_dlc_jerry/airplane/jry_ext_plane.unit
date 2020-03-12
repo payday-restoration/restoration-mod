@@ -1,0 +1,9 @@
+<unit type="jry" slot="1">
+	<object file="units/pd2_dlc_jerry/airplane/jry_ext_plane" />
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/fire/plane_jet_engine" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

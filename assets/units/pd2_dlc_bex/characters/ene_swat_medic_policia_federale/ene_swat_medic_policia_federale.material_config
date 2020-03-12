@@ -1,0 +1,35 @@
+<materials version="3" group="ene_swat_2">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df" mip="1"/>
+	</material>
+	
+
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_df"/>
+	</material>
+	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_df" mip="1"/>
+	</material>
+	
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod1" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df" mip="1"/>
+    </material>
+
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:" name="mat_light" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/ene_nypd_medic_head_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

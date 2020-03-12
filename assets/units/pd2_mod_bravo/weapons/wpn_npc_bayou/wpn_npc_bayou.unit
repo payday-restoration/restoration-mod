@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" />
+  <dependencies>
+ 	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
+	<depends_on bnk="soundbanks/weapon_spas" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCShotgunBase" >
+		<var name="name_id" value="bayou_npc" />
+    </extension>
+  <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_r870" />
+    <default_soundsource source="rp_r870" />
+  </sounds>
+</unit>

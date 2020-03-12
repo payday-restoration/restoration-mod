@@ -2,37 +2,32 @@ if not ModCore then
 	restoration.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
-
+restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
-	restoration.disable_captain_camper = {
-		--///BASE LEVELS\\\--
-		"pbr2",
-		"born",
-		"nail",
-		"peta",
-		"skm_mus",
-		"skm_red2",
-		"skm_run",
-		"skm_watchdogs_stage2",
-		"crojob2",
-		"mus",
-		"big",
-		"wwh",
-		"pines",
-		"hox_3",
-		"framing_frame_1",
-		--///CUSTOM HEISTS\\\--
-		"hardware_store", 
-		"office_strike",
-		"spa_CD",
-		--///REX'S HOLDOUT LEVELS\\\--
-		"skmc_mad",
-		"skmc_fish",
-		"skmc_ovengrill",
-		--///RESTORATION EDITS\\\--
-		"firestarter_2_res"
-	}
+	restoration.captain_camper = {
+		"arena", --Alesso
+		"welcome_to_the_jungle_1", --Big Oil Day 1
+		"welcome_to_the_jungle_1_night", --Big Oil Day 1 Night
+		"welcome_to_the_jungle_2", --Big Oil Day 2
+		"election_day_1", --Election Day 1
+		"election_day_2", --Election Day 2
+		"election_day_3", --Election Day 3
+		"election_day_3_skip1", --Election Day 3 (Skipped 1)
+		"election_day_3_skip2", --Election Day 3 (Skipped 2)
+		"firestarter_1", --Firestarter Day 1
+		"mia_1", --Hotline Day 1
+		"hox_2", --Hoxout Day 2
+		"jewelry_store", --Jewelry Store
+		"alex_1", --Rats Day 1
+		"dinner", --Slaughterhouse
+		"moon", --Stealing Xmas
+		"ukrainian_job", --Ukrainian Job
+		--Custom Heists--
+		"firestarter_1_res", --Firestarter Day 1 res edit version
+		"alex_1_res", --Rats Day 1 res edit version
+		"ukrainian_job_res", --Ukrainian Job res edit version
+	}		
 	restoration.captain_teamwork = {
 		"pal", --counterfeit 
 		"crojob2", --bomb dockyard
@@ -40,6 +35,7 @@ function restoration:Init()
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
+		"watchdogs_2_day", --Watchdogs Day 2 Daytime		
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"office_strike", --office strike
@@ -69,10 +65,12 @@ function restoration:Init()
 		"hntn" --harvest and trustee north
 	}
 	restoration.tiny_levels = {
+		"welcome_to_the_jungle_2",
+		"election_day_2",
 		"peta",
-		"rvd2",
-		"chill_combat",
 		"brb",
+		"mus",
+		"hox_1",
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
@@ -81,14 +79,11 @@ function restoration:Init()
 		"glace",
 		"man",
 		"pbr",
-		"pbr2",
 		"dinner",
 		"wwh",
 		"born",
-		"cane",
 		"dah",
 		"run",
-		"help",
 		"arm_cro",
 		"arm_hcm",
 		"arm_fac",
@@ -96,7 +91,6 @@ function restoration:Init()
 		"arm_und",
 		"arm_for",
 		--Custom Heists below--
-		"Victor Romeo",
 		"junk",
 		"wetwork_burn",
 		"hardware_store",
@@ -105,25 +99,59 @@ function restoration:Init()
 		"skmc_ovengrill",
 		"spa_CD",		
 		"wwh_CD",		
-		"street" --whurr's hs edit
+		"street"		--whurr's hs edit
 	}
 	--Mostly for stuff like Cursed Killed Room and other crap heists
 	restoration.very_tiny_levels = {
 		"hvh",
 		"chew",
-		"sah",
-		"hox_1",		
+		"sah",		
 		"nail",		
 		"nmh",		
+		"arena",		
+		"help",		
+		"cane",		
+		"pbr2",		
+		"rvd2",		
 		"peta2",
 		"des",		
 		"vit",
 		"spa",		
+		"chill_combat",		
 		"flat",	
 		"mex",
 		"mex_cooking",		
-		"mia_2"
-	}		
+		"mia_2",
+		--Custom Heists below--
+		"Victor Romeo",
+		"thechase"
+	}	
+	
+	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
+	
+	local environment_settings = { --edit this one
+		["OTHER/Env_Banks"] = true,
+		["OTHER/Env_RVD1"] = true,
+		["OTHER/Env_RVD2"] = true,
+		["OTHER/Env_FSD1"] = true,
+		["OTHER/Env_PBR2"] = true,
+		["OTHER/Env_CJ2"] = true,
+		["OTHER/Env_UnderPass"] = true,
+		["OTHER/Env_MallCrasher"] = true,
+		["OTHER/Env_Mia_1"] = true,
+		["OTHER/Env_FSD3"] = true,
+		["OTHER/Env_WDD1N"] = true,
+		["OTHER/Env_WDD2D"] = true,
+		["OTHER/Env_Alex3"] = true,
+		["OTHER/Env_Big"] = true,
+		["OTHER/Env_FS"] = true,
+		["OTHER/Env_Ukra"] = true
+	}
+	for name,enabled in pairs(environment_settings) do 
+		if enabled then 
+			restoration.Environment_Settings_Table[name] = restoration.Options:GetValue(name)
+		end
+	end
 
 	_G.SC = _G.SC or {}
 	SC._path = self.ModPath
@@ -278,52 +306,62 @@ restoration.environments_choice_ukrainian_job = {
 
 -- These tables show the network messages we've modified in the network settings pdmod
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
-local connection_network_handler_funcs = {
-	'sync_player_installed_mod'
-}
+-- local connection_network_handler_funcs = {
+	-- 'sync_player_installed_mod'
+--}
 
-local unit_network_handler_funcs = {
-	'sync_grenades'
-}
-
---[[ local unit_network_handler_funcs = {
-	'set_unit',
-	'remove_corpse_by_id',
-	'mission_ended',
-	'from_server_sentry_gun_place_result',
-	'sync_equipment_setup',
-	'sync_ammo_bag_setup',
-	'on_sole_criminal_respawned',
-	'sync_grenades',
-	'sync_carry_data',
-	'sync_throw_projectile',
-	'sync_attach_projectile',
-	'sync_unlock_asset',
-	'sync_equipment_possession',
-	'sync_remove_equipment_possession',
-	'mark_minion',
-	'suspicion',
-	'server_secure_loot',
-	'sync_secure_loot'
-} ]]
+-- local unit_network_handler_funcs = {
+	-- 'sync_grenades',
+	-- 'place_grenade_crate'
+--}
 
 -- Builds a single table from our two string based keys for each handler above
-restoration.network_handler_funcs = {}
-function restoration:add_handler_funcs(handler_funcs)
-	for i = 1, #handler_funcs do
-		self.network_handler_funcs[handler_funcs[i]] = true
-	end
-end
+-- restoration.network_handler_funcs = {}
+-- function restoration:add_handler_funcs(handler_funcs)
+-- 	for i = 1, #handler_funcs do
+-- 		self.network_handler_funcs[handler_funcs[i]] = true
+-- 	end
+-- end
 
-restoration:add_handler_funcs(connection_network_handler_funcs)
-restoration:add_handler_funcs(unit_network_handler_funcs)
+-- restoration:add_handler_funcs(connection_network_handler_funcs)
+-- restoration:add_handler_funcs(unit_network_handler_funcs)
 
 
 -- Takes the network keys we defined above and prefixes any matches on the given handler
-function restoration:rename_handler_funcs(NetworkHandler)
-	for key, value in pairs(restoration.network_handler_funcs) do
-		if NetworkHandler[key] then
-			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+-- function restoration:rename_handler_funcs(NetworkHandler)
+-- 	for key, value in pairs(restoration.network_handler_funcs) do
+-- 		if NetworkHandler[key] then
+-- 			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+-- 		end
+-- 	end
+-- end
+
+Hooks:Register("restoration_on_synced_peer")
+Hooks:Add("restoration_on_synced_peer","restoration_do_sync_peer_stuff",function(peer,peer_id)
+	restoration:send_sync_environment(peer,peer_id)
+end)
+
+function restoration:get_env_setting(name)
+	local value = restoration.Environment_Settings_Table[name]
+	if value ~= nil then 
+		return value
+	end
+	return restoration.Options:GetValue(name)
+end
+
+function restoration:send_sync_environment(to)
+	if Network:is_server() then 
+		local env_data = restoration.Environment_Settings_Table
+		local env_string = env_data and LuaNetworking:TableToString(env_data)
+		if env_string and env_string ~= "" then 
+			if to and managers.network:session():peer(to) then 
+				LuaNetworking:SendToPeer(to,"environments_all",env_string)
+			else
+				LuaNetworking:SendToPeers("environments_all",env_string)
+			end
+			log("**********************************************************Sent EnvironmentSync with results: ")
+			PrintTable(env_data)
+			log("**********************************************************End")
 		end
 	end
 end

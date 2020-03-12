@@ -1,0 +1,33 @@
+<materials version="3" group="ene_akan_fbi_heavy_g36">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/head_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/head_df" mip="1"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_1_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_murky_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_1_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_murky_df" mip="1"/>
+	</material>
+
+	<material name="mtr_helmet_lod0" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/ene_spring/spring_df"/>
+	</material>
+	
+	<material name="mtr_helmet_lod1" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+		<reflection_texture type="cubemap" global_texture="current_global_texture" />
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/spring_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/ene_spring/spring_df"/>
+		<variable value="0 1 0" type="vector3" name="fresnel_settings"/>
+	</material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

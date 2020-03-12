@@ -24,7 +24,7 @@
 	
 	<material name="mtr_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_2_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/mask_df"/>
+		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/mask_df"/>
 	</material>
 
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

@@ -1,2 +1,7 @@
-local one_day_seconds = 86400
-CustomSafehouseManager.SPAWN_COOLDOWN = one_day_seconds * 3
+ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+ 
+	 function CustomSafehouseManager:is_being_raided()
+		return false 
+	 end
+	 
+end	 

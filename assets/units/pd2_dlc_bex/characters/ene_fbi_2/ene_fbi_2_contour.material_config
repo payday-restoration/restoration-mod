@@ -1,0 +1,40 @@
+<materials version="3" group="ene_security_2">
+    <material name="mtr_security_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_nm"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material> 
+    <material name="mtr_security_head_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_nm" mip="1"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_security_head_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_nm" mip="4"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_security_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/payday2/characters/shared_textures/police_nm"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_fbi_2/bex_fbi_jerome_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_security_body_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/payday2/characters/shared_textures/police_nm" mip="1"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_fbi_2/bex_fbi_jerome_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_security_body_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture    file="units/payday2/characters/shared_textures/police_nm" mip="4"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_fbi_2/bex_fbi_jerome_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

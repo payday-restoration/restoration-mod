@@ -1,0 +1,47 @@
+<materials version="3" group="family">
+    <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE" version="2">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="mtr_glass_dmg" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP:OPACITY_FADE" version="2">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="mtr_glass_skin" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE:SKINNED_1WEIGHT" version="2">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="mtr_light" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_nm"/>
+    </material>    
+	<material name="mtr_light_il" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+	    <variable value="reddot" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_il"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_nm"/>
+    </material>
+    <material name="mtr_light_skin" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_light_nm"/>
+    </material>
+    <material name="mtr_logos" render_template="decal:DIFFUSE_TEXTURE:OPACITY_TEXTURE:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_op_df"/>
+        <opacity_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_op"/>
+    </material>
+    <material name="mtr_vehicle" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_car_suv_family/str_vehicle_car_suv_family_nm"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

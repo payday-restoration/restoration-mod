@@ -1,0 +1,46 @@
+<materials version="3">
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_lcm_b_ext_01a">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_nm"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_lcm_b_ext_01b">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01b_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01b_nm"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+    <material name="mat_lcm_b_ext_01a_alpha" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_rail_df"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_rail_nm"/>
+        <variable value="0.05800000205636" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="mat_lcm_b_int_01" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_df"/>
+        <reflection_texture global_texture="current_global_texture" type="cube"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_01a_nm"/>
+    </material>
+    <material name="mat_glass" decal_material="glass_breakable" version="2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE">
+        <variable value="2 1 0.45999997854233" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/architecture/lcm/lcm_glass_op"/>
+        <diffuse_texture file="units/payday2/architecture/lcm/lcm_glass_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_lcm_b_ext_rooftar_a">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_rooftar_a_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm_b/lcm_b_ext_rooftar_a_nm"/>
+    </material>
+    <material name="mat_glass_shattered" decal_material="glass_breakable" version="2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP">
+        <variable value="2 0 0" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <reflection_texture global_texture="current_global_texture" type="cube"/>
+    </material>
+    <material version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF" name="mat_lcm_b_decal_logo_coffeestore_timeout">
+        <diffuse_texture file="units/payday2/architecture/lcm_b/lcm_b_decal_logo_coffeestore_timeout_df"/>
+        <variable value="0.3120000064373" type="scalar" name="alpha_ref"/>
+    </material>
+</materials>

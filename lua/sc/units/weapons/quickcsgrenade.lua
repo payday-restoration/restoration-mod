@@ -7,22 +7,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._tweak_data = tweak_data.projectiles[grenade_entry]
 		self._radius = self._tweak_data.radius or 300
 		self._radius_blurzone_multiplier = self._tweak_data.radius_blurzone_multiplier or 1.3
-		self._damage_per_tick = 0.4
+		self._damage_per_tick = 0.3
+		self._stamina_per_tick = 0.0
 		if difficulty_index <= 2 then
-			self._damage_tick_period = 0.55
-		elseif difficulty_index == 3 then
 			self._damage_tick_period = 0.5
-		elseif difficulty_index == 4 then
+		elseif difficulty_index == 3 then
 			self._damage_tick_period = 0.45
-		elseif difficulty_index == 5 then
+		elseif difficulty_index == 4 then
 			self._damage_tick_period = 0.4
+		elseif difficulty_index == 5 then
+			self._damage_tick_period = 0.35
 		elseif difficulty_index == 6 then
-			self._damage_tick_period = 0.35
-		elseif difficulty_index == 7 then
-			self._damage_tick_period = 0.35
-		else
 			self._damage_tick_period = 0.3
-			self._damage_per_tick = 0.6
+			self._damage_per_tick = 0.45
+		elseif difficulty_index == 7 then
+			self._damage_tick_period = 0.3
+			self._damage_per_tick = 0.6			
+		else
+			self._damage_tick_period = 0.25
+			self._stamina_per_tick = 2.5
+			self._damage_per_tick = 0.75
 		end
 	end
 	
@@ -70,4 +74,29 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end	
 
+	function QuickCsGrenade:_do_damage()
+		local player_unit = managers.player:player_unit()
+
+		if player_unit and mvector3.distance_sq(self._unit:position(), player_unit:position()) < self._tweak_data.radius * self._tweak_data.radius then
+			local attack_data = {
+				damage = self._damage_per_tick,
+				col_ray = {
+					ray = math.UP
+				}
+			}
+
+			player_unit:character_damage():damage_killzone(attack_data)
+
+			if self._stamina_per_tick > 0.0 then
+				player_unit:movement():subtract_stamina(self._stamina_per_tick)
+				player_unit:movement():_restart_stamina_regen_timer()
+			end
+
+			if not self._has_played_VO then
+				PlayerStandard.say_line(player_unit:sound(), "g42x_any")
+
+				self._has_played_VO = true
+			end
+		end
+	end
 end

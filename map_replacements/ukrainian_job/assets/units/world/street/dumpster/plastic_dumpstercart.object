@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/street/dumpster/plastic_dumpstercart" orientation_object="rp_sps_dumpstercart_plastic" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_sps_dumpstercart_plastic" />
+      <object name="c_sps_dumpstercart_plastic" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="rubber" static="true">
+	<decal_mesh name="dm_rubber" enabled="true" material="rubber" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_sps_dumpstercart_plastic" enabled="true" instance_struct="world_tm" />
+  </graphics>
+</dynamic_object>

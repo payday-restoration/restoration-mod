@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_m4" materials="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" />
+    <graphics>
+    	<object name="g_body" enabled="true" />
+    </graphics>
+</dynamic_object>

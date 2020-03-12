@@ -1,0 +1,43 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_glace/props/glc_prop_contruction_scaffold/glc_prop_contruction_scaffold" orientation_object="rp_glc_prop_contruction_scaffold_bottom_01" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_glc_prop_contruction_scaffold_bottom_01" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+			<object name="c_box_03" collision_type="box" padding="-2.5" />
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+			<object name="c_box_05" collision_type="box" padding="-2.5" />
+			<object name="c_box_06" collision_type="box" padding="-2.5" />
+			<object name="c_box_07" collision_type="box" padding="-2.5" />
+			<object name="c_box_08" collision_type="box" padding="-2.5" />
+			<object name="c_box_09" collision_type="box" padding="-2.5" />
+			<object name="c_box_10" collision_type="box" padding="-2.5" />
+			<object name="c_box_11" collision_type="box" padding="-2.5" />
+			<object name="c_box_12" collision_type="box" padding="-2.5" />
+			<object name="c_box_13" collision_type="box" padding="-2.5" />
+			<object name="c_box_14" collision_type="box" padding="-2.5" />
+			<object name="c_box_15" collision_type="box" padding="-2.5" />
+			<object name="c_box_16" collision_type="box" padding="-2.5" />
+			<object name="c_box_17" collision_type="box" padding="-2.5" />
+			<object name="c_box_18" collision_type="box" padding="-2.5" />
+			<object name="c_box_19" collision_type="box" padding="-2.5" />
+			<object name="c_box_20" collision_type="box" padding="-2.5" />
+			<object name="c_box_21" collision_type="box" padding="-2.5" />
+			<object name="c_box_22" collision_type="box" padding="-2.5" />
+			<object name="c_box_23" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="wood">
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+		<decal_mesh name="dm_wood" enabled="true" material="wood" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="lod_g">
+			<object name="g_lod0" enabled="true" max_distance="1500" />
+			<object name="g_lod1" enabled="true" max_distance="3000" />
+			<object name="g_lod2" enabled="true" />
+		</lod_object>
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

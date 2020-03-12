@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/hcm/hcm_str_glass" orientation_object="rp_hcm_ext_storefront_8x16m_c" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_hcm_ext_storefront_8x16m_c"/>
+			<object name="c_mesh_str" collision_type="mesh_mopp" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_06" collision_type="box" padding="-2.5"/>
+			<object name="c_box_07" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="metal" static="true">
+		<decal_mesh name="dm_glass_unbreakable" material="glass_unbreakable" enabled="true"/>
+		<decal_mesh name="dm_metal" material="metal" enabled="true"/>
+		<decal_mesh name="dm_asphalt" material="asphalt" enabled="true"/>
+		<decal_mesh name="dm_concrete" material="concrete" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_hcm_ext_storefront_8x16m_c" />
+        <object enabled="true" name="g_hcm_ext_storefront_8x16m_c_glass" />
+        <object enabled="true" name="g_hcm_ext_storefront_8x16m_c_str" />
+		<object name="s_s" enabled="true" shadow_caster="true"/>
+    </graphics>
+</dynamic_object> 

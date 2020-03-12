@@ -1,0 +1,110 @@
+<effect force_synch="false">
+    <atom name="bubbles_small" min_size="20" max_size="500" lifetime="6" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="20" fade_out_start="20" spawn_cull_policy="kill" cull_policy="freeze" cull_gracetime="0" max_particle_radius="5" soundbank="" cue="" ambient="true" grab_relative="effect" grab_pos="-0.133333 -0.2 0" grab_radius="500" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="-1.14" max="130.14"/>
+            <boxrandomaspectsize size="-12.6667 6" min="1" max="2"/>
+            <boxrandomuvoffset uv_size="1 1" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="0.4" teleport_cap="10" current_position="true" channel="world" normal_variation="0.14" teleport_event="true" positioner="box">
+                <box min="2.6666700839996 0.33333298563957 -8.6666698455811" max="2.6666700839996 2.3333299160004 4.3333301544189" min_normal="0 0 -0.26666700839996" max_normal="1 0.46666699647903 0.86666697263718"/>
+                <normal min_velocity="5" max_velocity="70"/>
+            </teleporter>
+            <ager/>
+            <variableacceleration name="" relative="effect" acceleration="8.33333 -45 -36.6667"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="1" teleport_cap="3" current_position="true" channel="world" normal_variation="0.14" teleport_event="true" positioner="box">
+                <box min="-100 -43.333301544189 -100" max="-56.666698455811 -3.3333299160004 50" min_normal="-133.33299255371 -133.33299255371 6.6666698455811" max_normal="-13.333299636841 -40 83.333297729492"/>
+                <normal min_velocity="20" max_velocity="20"/>
+            </teleporter>
+            <windacceleration radius="2" mass="50"/>
+            <constantacceleration relative="world" acceleration="-250 33.3333 -150"/>
+            <planecollision name="" relative="effect" center="-0.133333 -1.46667 -0.466667" normal="-0.2 -0.8 -1" elasticity="1" event_threshold_velocity="100"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/liquid/bubble_aquarium_df" intensity="dimlight" billboard_type="axialz_locked" rotation_channel="rotation" blend_mode="add" render_template="heat_shimmer" origo="0.6 1" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.10000000149012 0.10000000149012"/>
+                    <key t="1.0019775629044" v="0.20000000298023 0.20000000298023"/>
+                    <key t="1.4542974233627" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="236 245 253"/>
+                    <key t="0.67633485794067" v="210 231 238"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.12005457282066" v="100"/>
+                    <key t="0.24390244483948" v="100"/>
+                    <key t="0.70668482780457" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="true">
+                    <key t="0" v="0.0099999997764826"/>
+                    <key t="9.7271480560303" v="0.0010000000474975"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="bubbles_small0" min_size="150" max_size="500" lifetime="8" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="2" fade_out_start="5" spawn_cull_policy="kill" cull_policy="freeze" cull_gracetime="0" max_particle_radius="5" soundbank="" cue="" ambient="true" grab_relative="effect" grab_pos="0 0 0" grab_radius="500" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="-3.14" max="3.11"/>
+            <boxrandomaspectsize size="1 0.333333" min="360" max="360"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="5"/>
+            <boxrandomsize min="30 -6.66667" max="-15 1.66667"/>
+            <lightcone axis="-1 1.33333 -0.866667" start="0">
+                <distance_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="1" v="1"/>
+                    <key t="1.1352313756943" v="0"/>
+                </distance_keys>
+                <size_keys loop="false">
+                    <key t="0" v="100 100"/>
+                </size_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="255"/>
+                </opacity_keys>
+            </lightcone>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="0.4" teleport_cap="10" current_position="true" channel="world" normal_variation="0.14" teleport_event="true" positioner="box">
+                <box min="0 0 -40" max="0 0 6" min_normal="-6.6666698455811 -3.3333299160004 -23.333299636841" max_normal="0 -0 -23.333299636841"/>
+                <normal min_velocity="150" max_velocity="160"/>
+            </teleporter>
+            <ager/>
+            <variableacceleration name="" relative="effect" acceleration="23.3333 20 -6.66667"/>
+            <windacceleration radius="10" mass="1"/>
+            <constantacceleration relative="world" acceleration="0 -0 350"/>
+            <planecollision name="" relative="effect" center="0.733333 0.266667 -0.333333" normal="-0.666667 0.4 -0.0666667" elasticity="1" event_threshold_velocity="100"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/liquid/bubble_aquarium_df" intensity="dimlight" billboard_type="axialz_locked" rotation_channel="rotation" blend_mode="add" render_template="heat_shimmer" origo="0.333333 0.733333" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.10000000149012 0.10000000149012"/>
+                    <key t="0.079173840582371" v="0.20000000298023 0.20000000298023"/>
+                    <key t="1.129087805748" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="236 245 253"/>
+                    <key t="1.6901893615723" v="231 242 245"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.68846815824509" v="100"/>
+                    <key t="0.85714286565781" v="100"/>
+                    <key t="0.98795181512833" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="true">
+                    <key t="0" v="0.0099999997764826"/>
+                    <key t="9.7271480560303" v="0.0010000000474975"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

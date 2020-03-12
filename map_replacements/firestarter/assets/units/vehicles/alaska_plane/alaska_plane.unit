@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="fst" slot="1">
+  <object file="units/vehicles/alaska_plane/alaska_plane" />
+  <network sync="spawn"/>
+  <extensions>
+  <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  <extension name="base" class="AnimatedVehicleBase">
+      <var name="_body_name" value="anim"/>
+  </extension>
+	<extension name="interaction" class="UseInteractionExt">
+      <var name="tweak_data" value="alaska_plane" />
+	  <var name="_interact_object" value="interact_location" />
+	  </extension>
+  </extensions>
+   <sounds>
+  	<soundsource name="a_propeller" source="a_propeller" />
+  </sounds>
+</unit>

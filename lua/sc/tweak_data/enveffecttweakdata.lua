@@ -87,7 +87,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_tick_period = 0.5
 			},
 			range = 75,
-			burn_duration = 10,
+			burn_duration = 5,
 			burn_tick_period = 0.5,
 			curve_pow = 3,
 			sound_event = "gl_explode",
@@ -112,7 +112,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_tick_period = 0.5
 			},
 			range = 75,
-			burn_duration = 10,
+			burn_duration = 5,
 			burn_tick_period = 0.5,
 			curve_pow = 3,
 			sound_event = "gl_explode",

@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_prop_dock_sign_logo" materials="units/payday2/props/ind_prop_dock_sign/ind_prop_dock_sign" />
+    
+	<bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+            <object name="rp_ind_prop_dock_sign_logo" />
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+	
+	<graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

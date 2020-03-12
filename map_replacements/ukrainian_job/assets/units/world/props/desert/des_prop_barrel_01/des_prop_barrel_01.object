@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/desert/des_prop_barrel_01/des_prop_barrel_01" orientation_object="rp_barrel_01" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_barrel_01"/>
+      <object name="c_c" collision_type="convex" padding="-2"/>
+    </body>
+  </bodies>
+  <decal_surfaces static="true" default_material="sheet_metal">
+    <decal_mesh name="dm_dm" enabled="true" material="sheet_metal"/>
+  </decal_surfaces>
+  <graphics>
+    <object name="g_g" enabled="true"  instance_struct="world_tm"/>
+    <object name="s_s" enabled="true"  shadow_caster="true" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object>

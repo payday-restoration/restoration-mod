@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="tra" slot="1">
+  <object file="units/world/props/train/tra_cover_cardboardbox/tra_cover_cardboardbox" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

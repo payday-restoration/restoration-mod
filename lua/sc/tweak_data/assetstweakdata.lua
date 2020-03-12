@@ -27,6 +27,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_pd.exclude_stages, "help")
 		table.insert(self.risk_pd.exclude_stages, "mex")
 		table.insert(self.risk_pd.exclude_stages, "mex_cooking")
+		table.insert(self.risk_pd.exclude_stages, "crojob2")
+		table.insert(self.risk_pd.exclude_stages, "crojob3")
+		table.insert(self.risk_pd.exclude_stages, "crojob3_night")				
 
 		--SWAT--		
 		table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -43,7 +46,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_swat.exclude_stages, "help")
 		table.insert(self.risk_swat.exclude_stages, "hvh")
 		table.insert(self.risk_swat.exclude_stages, "mex")
-		table.insert(self.risk_swat.exclude_stages, "mex_cooking")		
+		table.insert(self.risk_swat.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_swat.exclude_stages, "crojob2")
+		table.insert(self.risk_swat.exclude_stages, "crojob3")
+		table.insert(self.risk_swat.exclude_stages, "crojob3_night")				
 		
 		--FBI--		
 		table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -60,7 +66,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_fbi.exclude_stages, "help")
 		table.insert(self.risk_fbi.exclude_stages, "hvh")
 		table.insert(self.risk_fbi.exclude_stages, "mex")
-		table.insert(self.risk_fbi.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_fbi.exclude_stages, "mex_cooking")
+		table.insert(self.risk_fbi.exclude_stages, "crojob2")
+		table.insert(self.risk_fbi.exclude_stages, "crojob3")
+		table.insert(self.risk_fbi.exclude_stages, "crojob3_night")			
 
 		--Overkill--		
 		table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -77,7 +86,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_squad.exclude_stages, "help")
 		table.insert(self.risk_death_squad.exclude_stages, "hvh")
 		table.insert(self.risk_death_squad.exclude_stages, "mex")
-		table.insert(self.risk_death_squad.exclude_stages, "mex_cooking")		
+		table.insert(self.risk_death_squad.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_death_squad.exclude_stages, "crojob2")
+		table.insert(self.risk_death_squad.exclude_stages, "crojob3")
+		table.insert(self.risk_death_squad.exclude_stages, "crojob3_night")				
 
 		--Mayhem--		
 		table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -94,7 +106,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_easy_wish.exclude_stages, "help")
 		table.insert(self.risk_easy_wish.exclude_stages, "hvh")
 		table.insert(self.risk_easy_wish.exclude_stages, "mex")
-		table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob2")		
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob3")
+		table.insert(self.risk_easy_wish.exclude_stages, "crojob3_night")			
 
 		--Deathwish--		
 		table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -111,7 +126,10 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_death_wish.exclude_stages, "help")
 		table.insert(self.risk_death_wish.exclude_stages, "hvh")
 		table.insert(self.risk_death_wish.exclude_stages, "mex")
-		table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")
+		table.insert(self.risk_death_wish.exclude_stages, "crojob2")		
+		table.insert(self.risk_death_wish.exclude_stages, "crojob3")
+		table.insert(self.risk_death_wish.exclude_stages, "crojob3_night")			
 		
 		--One Down--		
 		table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -128,10 +146,15 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_sm_wish.exclude_stages, "help")
 		table.insert(self.risk_sm_wish.exclude_stages, "hvh")
 		table.insert(self.risk_sm_wish.exclude_stages, "mex")
-		table.insert(self.risk_sm_wish.exclude_stages, "mex_cooking")			
+		table.insert(self.risk_sm_wish.exclude_stages, "mex_cooking")	
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob2")	
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob3")
+		table.insert(self.risk_sm_wish.exclude_stages, "crojob3_night")			
 		
 		-- Reaper Risk Asset
 		table.insert(self.mad_russian_merc_cameras.stages, "pines")
+		table.insert(self.mad_russian_merc_cameras.stages, "crojob3")
+		table.insert(self.mad_russian_merc_cameras.stages, "crojob3_night")
 		
 		self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 		self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
@@ -144,6 +167,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 			"bph",
 			"vit",
 			"arm_for",
+			"crojob2",
 			"mex",
 			"mex_cooking",
 			--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
@@ -214,7 +238,131 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.bodybags_bag.stages, "firestarter_2_res")
 		table.insert(self.spotter.stages, "firestarter_2_res")
 		table.insert(self.grenade_crate.stages, "firestarter_2_res")
-		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")		
+		table.insert(self.firestarter_2_cam.stages, "firestarter_2_res")	
+
+		--Diamond Store, Resmod Edit
+		table.insert(self.safe_escape.stages, "family_res")
+		table.insert(self.bodybags_bag.stages, "family_res")
+		
+		--Rats Day 1, Resmod Edit
+		table.insert(self.grenade_crate.stages, "alex_1_res")		
+		table.insert(self.sniper_spot_rats1.stages, "alex_1_res")
+		table.insert(self.rat_1_ammo.stages, "alex_1_res")
+		table.insert(self.rat_1_health.stages, "alex_1_res")
+		table.insert(self.rat_1_lights.stages, "alex_1_res")
+		
+		--Rats Day 2, Resmod Edit
+		--Nothing!
+		
+		--Rats Day 3, Resmod Edit
+		table.insert(self.sniper_spot_rats3.stages, "alex_3_res")		
+		table.insert(self.rat_3_pilot.stages, "alex_3_res")
+		
+		--Pro Job changes--
+		if Global.game_settings and Global.game_settings.one_down then
+		
+			--Generic Ammo asset
+			self.ammo_bag.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}
+			
+			--Generic Doctor asset
+			self.health_bag.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}
+
+			--Generic BodyBag asset
+			self.bodybags_bag.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Generic Grenade Crate asset
+			self.grenade_crate.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Watchdogs D1 Bags
+			self.watchdogs_1_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.watchdogs_1_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Watchdogs D2 Bags
+			self.watchdogs_2_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.watchdogs_2_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Firestarter D1 Bags
+			self.firestarter_1_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.firestarter_1_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			
+			--Big Oil Day 2 Ammo
+			self.jungle_2_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}				
+
+			--Rats D1 Bags
+			self.rat_1_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.rat_1_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Mallcrasher bags
+			self.mallcrasher_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.mallcrasher_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+
+			--Nightclub bags
+			self.nightclub_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.nightclub_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}				
+		
+			--Armored Transport Heists Bags
+			self.arm_for_ammo.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}	
+			self.arm_for_health.upgrade_lock = {
+				upgrade = "additional_assets_pro",
+				category = "player"
+			}		
+		
+		end
+		
 	end
 	
 	--Restoration Heist assets--

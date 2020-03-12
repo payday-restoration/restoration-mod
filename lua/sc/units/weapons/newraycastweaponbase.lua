@@ -1,7 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	function NewRaycastWeaponBase:get_add_head_shot_mul()
-		if self:is_category("smg", "lmg", "assault_rifle", "minigun") and self._fire_mode == ids_auto then
+		if self:is_category("smg", "lmg", "assault_rifle", "minigun", "pistol") and self._fire_mode == ids_auto then
 			return self._add_head_shot_mul
 		end
 		return nil
@@ -51,10 +51,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		function NewRaycastWeaponBase:reload_expire_t()
 			if self._use_shotgun_reload then
 				local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
-				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
-					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
-				else
+				if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
 					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+				else
+					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
 				end
 			end
 			return nil
@@ -64,11 +64,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			if self._use_shotgun_reload and t > self._next_shell_reloded_t then
 				local speed_multiplier = self:reload_speed_multiplier()
 				self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
-				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
-					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
+				if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
 					return true
 				else
-					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
 					return true
 				end
 				managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
@@ -116,6 +116,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local spread_mult = 1
 		spread_mult = spread_mult * self:spread_multiplier(current_state)
 		spread_mult = spread_mult * self:conditional_accuracy_multiplier(current_state)
+		
+		if managers.player:current_state() == "bipod" then
+			spread_mult = spread_mult * 0.5
+		end
+		
 		spread_x = spread_x * spread_mult
 		spread_y = spread_y * spread_mult
 		
@@ -277,6 +282,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self._rof_mult = 1
 		self._hipfire_mod = 1
 		self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
+		
+		self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
+		self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
+			
 		self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 		if self:weapon_tweak_data().heavy_AP then --for convenience
 			self._can_shoot_through_titan_shield = true
@@ -305,7 +314,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if not self:is_npc() then
 			self._burst_rounds_remaining = 0
 			self._has_auto = not self._locked_fire_mode and (self:can_toggle_firemode() or self:weapon_tweak_data().FIRE_MODE == "auto")
+			
 			self._has_burst_fire = (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
+			
 			--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
 			--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 			self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE

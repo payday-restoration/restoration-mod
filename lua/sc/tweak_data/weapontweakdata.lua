@@ -5940,12 +5940,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.kick.standing = self.huntsman.kick.standing
 		self.m32.kick.crouching = self.huntsman.kick.standing
 		self.m32.kick.steelsight = self.huntsman.kick.standing
-		self.m32.fire_mode_data.fire_rate = 1.5
+		self.m32.fire_mode_data.fire_rate = 0.75
 		self.m32.AMMO_MAX = 9
 		self.m32.AMMO_PICKUP = {0.18, 0.45}
 		self.m32.stats = {
 			damage = 80,
-			spread = 6,
+			spread = 8,
 			recoil = 8,
 			spread_moving = 6,
 			zoom = 3,
@@ -7046,14 +7046,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"clip_ammo_increase"
 			}
 		}		
-		self.arbiter.fire_mode_data.fire_rate = 1.5
-		self.arbiter.single.fire_rate = 1.5
+		self.arbiter.fire_mode_data.fire_rate = 0.75
+		self.arbiter.single.fire_rate = 0.75
 		self.arbiter.CLIP_AMMO_MAX = 6
 		self.arbiter.AMMO_MAX = 9
 		self.arbiter.AMMO_PICKUP = {0.18, 0.45}
 		self.arbiter.stats = {
 			damage = 60,
-			spread = 6,
+			spread = 7,
 			recoil = 8,
 			spread_moving = 6,
 			zoom = 3,

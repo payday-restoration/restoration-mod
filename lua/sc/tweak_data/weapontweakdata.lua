@@ -5940,7 +5940,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.m32.kick.standing = self.huntsman.kick.standing
 		self.m32.kick.crouching = self.huntsman.kick.standing
 		self.m32.kick.steelsight = self.huntsman.kick.standing
-		self.m32.fire_mode_data.fire_rate = 0.75
+		self.m32.fire_mode_data.fire_rate = 1.0
 		self.m32.AMMO_MAX = 9
 		self.m32.AMMO_PICKUP = {0.18, 0.45}
 		self.m32.stats = {

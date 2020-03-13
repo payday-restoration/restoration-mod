@@ -419,7 +419,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		if attack_data.armor_piercing then
 			attack_data.damage = attack_data.damage - health_subtracted
-			managers.hud:activate_bloody_screen(0.75)
+			if not _G.IS_VR then
+				managers.hud:activate_bloody_screen(0.75)
+			end
 		else
 			attack_data.damage = attack_data.damage * armor_reduction_multiplier
 		end
@@ -790,6 +792,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		elseif self._unit:movement():zipline_unit() then
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0)
 		end
+
+		--Dodge bot boost.
+		passive_dodge = passive_dodge + managers.player:upgrade_value("team", "crew_add_dodge", 0)
 
 		self:fill_dodge_meter(self._dodge_points * dt * passive_dodge)
 

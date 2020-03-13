@@ -25302,8 +25302,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			parent = "lower_reciever",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_fps_bow_plainsrider_m_standard",
-			stats = {value = 1, spread = 0},
-			custom_stats = {ammo_pickup_min_mul = 2, ammo_pickup_max_mul = 2},
+			stats = {value = 1}
 		}
 		self.parts.wpn_fps_upg_a_bow_explosion = {
 			pcs = {},
@@ -25314,9 +25313,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_fps_bow_plainsrider_m_explosive",
 			third_unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_third_bow_plainsrider_m_explosive",
-			stats = {damage = 120, total_ammo_mod = -50, spread = -6, recoil = -5},
+			stats = {damage = 60, total_ammo_mod = -50, spread = -6},
 			custom_stats = {
 				launcher_grenade = "west_arrow_exp",
+				ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5,
 				block_b_storm = true
 			},
 			dlc = "west",
@@ -25333,10 +25333,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_plainsrider_m_poison/wpn_fps_bow_plainsrider_m_poison",
 			third_unit = "units/pd2_dlc_turtles/weapons/wpn_third_bow_plainsrider_m_poison/wpn_third_bow_plainsrider_m_poison",
-			stats = {damage = -20, total_ammo_mod = 0},
+			stats = {damage = -10, total_ammo_mod = 0},
 			custom_stats = {
 				launcher_grenade = "bow_poison_arrow",
-				ammo_pickup_min_mul = 2, ammo_pickup_max_mul = 2,
 				dot_data = {
 					type = "poison",
 					custom_data = {dot_length = nil, hurt_animation_chance = nil}
@@ -27162,14 +27161,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_standard",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
-			custom_stats = {
-				armor_piercing_add = 1,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				ammo_pickup_min_mul = 1.67,
-				ammo_pickup_max_mul = 1.67
-			},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_fps_bow_arblast_m_standard",
 			stats = {value = 1}
 		}
@@ -27181,9 +27172,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_fps_bow_arblast_m_poison",
 			third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_third_bow_arblast_m_poison",
-			stats = {damage = -25, total_ammo_mod = 0},
+			stats = {damage = -15},
 			custom_stats = {
-				launcher_grenade = "arblast_poison_arrow", ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67,
+				launcher_grenade = "arblast_poison_arrow",
 				dot_data = {
 					type = "poison",
 					custom_data = {dot_length = nil, hurt_animation_chance = nil}
@@ -27201,8 +27192,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_fps_bow_arblast_m_explosive",
 			third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_third_bow_arblast_m_explosive",
-			stats = {damage = 120, total_ammo_mod = -40, spread = -10, recoil = -6},
+			stats = {damage = 60, total_ammo_mod = -40, spread = -3, recoil = -6},
 			custom_stats = {
+				ammo_pickup_min_mul = 0.6,
+				ammo_pickup_max_mul = 0.6,
 				launcher_grenade = "arblast_arrow_exp",
 				block_b_storm = true
 			},
@@ -27272,7 +27265,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_wp_standard",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
-			custom_stats = {ammo_pickup_min_mul = 2, ammo_pickup_max_mul = 2},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_fps_bow_frankish_m_standard",
 			stats = {value = 1}
 		}
@@ -27285,9 +27277,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_fps_bow_frankish_m_poison",
 			third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_third_bow_frankish_m_poison",
 			is_a_unlockable = true,
-			stats = {damage = -20, total_ammo_mod = 0},
+			stats = {damage = -10},
 			custom_stats = {
-				launcher_grenade = "frankish_poison_arrow", ammo_pickup_min_mul = 2, ammo_pickup_max_mul = 2,
+				launcher_grenade = "frankish_poison_arrow",
 				dot_data = {
 					type = "poison",
 					custom_data = {dot_length = nil, hurt_animation_chance = nil}
@@ -27306,8 +27298,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_fps_bow_frankish_m_explosive",
 			third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_third_bow_frankish_m_explosive",
-			stats = {damage = 120, total_ammo_mod = -50, spread = -6, recoil = -5},
+			stats = {damage = 60, total_ammo_mod = -50, spread = -6, recoil = -6},
 			custom_stats = {
+				ammo_pickup_min_mul = 0.5, 
+				ammo_pickup_max_mul = 0.5,
 				launcher_grenade = "frankish_arrow_exp",
 				block_b_storm = true
 			},
@@ -27375,7 +27369,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			parent = "lower_reciever",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
-			custom_stats = {ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_fps_bow_long_m_standard",
 			stats = {value = 1}
 		}
@@ -27389,9 +27382,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_fps_bow_long_m_explosive",
 			third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_third_bow_long_m_explosive",
-			stats = {damage = 120, total_ammo_mod = -40, spread = -10, recoil = -6},
+			stats = {damage = 60, total_ammo_mod = -40, spread = -3},
 			custom_stats = {
 				launcher_grenade = "long_arrow_exp",
+				ammo_pickup_min_mul = 0.6, 
+				ammo_pickup_max_mul = 0.6,
 				block_b_storm = true
 			},
 			texture_bundle_folder = "steel",
@@ -27408,9 +27403,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_fps_bow_long_m_poison",
 			third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_long_pts/wpn_third_bow_long_m_poison",
-			stats = {damage = -25, total_ammo_mod = 0},
+			stats = {damage = -15},
 			custom_stats = {
-				launcher_grenade = "long_poison_arrow", ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67,
+				launcher_grenade = "long_poison_arrow",
 				dot_data = {
 					type = "poison",
 					custom_data = {dot_length = nil, hurt_animation_chance = nil}
@@ -34507,7 +34502,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			a_obj = "a_m",
 			type = "ammo",
 			name_id = "bm_wp_ecp_m_arrows",
-			custom_stats = {ammo_pickup_min_mul = 0, ammo_pickup_max_mul = 0},
 			unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp_pts/wpn_fps_bow_ecp_m_arrows_standard",
 			bullet_objects = {
 				amount = 6,
@@ -34530,8 +34524,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 6,
 				prefix = "g_bullet_"
 			},
-			stats = {damage = 90, total_ammo_mod = -25, spread = -10, recoil = -6},
-			custom_stats = {launcher_grenade = "ecp_arrow_exp"}
+			stats = {damage = 45, total_ammo_mod = -50, spread = -3, recoil = -6},
+			custom_stats = {
+				launcher_grenade = "ecp_arrow_exp",
+				ammo_pickup_min_mul = 0.5, 
+				ammo_pickup_max_mul = 0.5
+			}
 		}
 		self.parts.wpn_fps_bow_ecp_m_arrows_poison = {
 			is_a_unlockable = true,
@@ -34548,15 +34546,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 6,
 				prefix = "g_bullet_"
 			},
-			stats = {damage = -15},
+			stats = {damage = -10},
 			custom_stats = {
 				launcher_grenade = "ecp_arrow_poison",
 				dot_data = {
 					type = "poison",
 					custom_data = {}
-				},
-				ammo_pickup_min_mul = 0, 
-				ammo_pickup_max_mul = 0
+				}
 			}
 		}
 		self.parts.wpn_fps_bow_ecp_m_casing = {
@@ -39137,7 +39133,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			},
 			stats = {
 				value = 1,
-				spread = 1
+				spread = 1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_bow_elastic_g_3 = {
@@ -39153,8 +39150,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				40
 			},
 			stats = {
-				concealment = 1,
-				value = 1
+				value = 0
 			}
 		}
 		self.parts.wpn_fps_bow_elastic_pin = {
@@ -39199,7 +39195,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67},
 			stats = {value = 1}
 		}
 		self.parts.wpn_fps_bow_elastic_m_explosive = {
@@ -39216,8 +39211,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			stats = {damage = 120, total_ammo_mod = -40, spread = -10, recoil = -6},
-			custom_stats = {launcher_grenade = "elastic_arrow_exp"}
+			stats = {damage = 60, total_ammo_mod = -40, spread = -3},
+			custom_stats = {
+				launcher_grenade = "elastic_arrow_exp",
+				ammo_pickup_min_mul = 0.6, 
+				ammo_pickup_max_mul = 0.6
+			}
 		}
 		self.parts.wpn_fps_bow_elastic_m_poison = {
 			is_a_unlockable = true,
@@ -39233,9 +39232,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				amount = 1,
 				prefix = "g_bullet_"
 			},
-			stats = {damage = -25, total_ammo_mod = 0},
+			stats = {damage = -15, total_ammo_mod = 0},
 			custom_stats = {
-				launcher_grenade = "elastic_arrow_poison", ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67,
+				launcher_grenade = "elastic_arrow_poison",
 				dot_data = {
 					type = "poison",
 					custom_data = {}

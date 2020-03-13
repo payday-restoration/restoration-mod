@@ -6076,17 +6076,32 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.plainsrider.spread.moving_standing = 4
 		self.plainsrider.spread.moving_crouching = 3
 		self.plainsrider.spread.moving_steelsight = 2
-		self.plainsrider.kick.standing = self.huntsman.kick.standing
-		self.plainsrider.kick.crouching = self.huntsman.kick.standing
-		self.plainsrider.kick.steelsight = self.huntsman.kick.standing
+		self.plainsrider.kick.standing = {
+			0,
+			0,
+			0,
+			0
+		}
+		self.plainsrider.kick.crouching = {
+			0,
+			0,
+			0,
+			0
+		}
+		self.plainsrider.kick.steelsight = {
+			0,
+			0,
+			0,
+			0
+		}
 		self.plainsrider.AMMO_MAX = 30
-		self.plainsrider.AMMO_PICKUP = {0.3, 0.75}
-		self.plainsrider.charge_data.max_t = 1
+		self.plainsrider.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.plainsrider.charge_data.max_t = 0.5
 		self.plainsrider.not_allowed_in_bleedout = false
 		self.plainsrider.stats = {
-			damage = 120,
+			damage = 60,
 			spread = 21,
-			recoil = 25,
+			recoil = 26,
 			spread_moving = 12,
 			zoom = 5,
 			concealment = 30,
@@ -6098,7 +6113,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.plainsrider.panic_suppression_chance = 0.0
-		self.plainsrider.stats_modifiers = {damage = 2}
+		self.plainsrider.stats_modifiers = {damage = 4}
 		self.mateba.fire_mode_data.fire_rate = 0.08571428571
 		self.mateba.single = {}
 		self.mateba.single.fire_rate = 0.08571428571
@@ -6290,7 +6305,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hunter.has_description = true
 		self.hunter.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.hunter.AMMO_MAX = 23
-		self.hunter.AMMO_PICKUP = {0.24, 1.15}
+		self.hunter.AMMO_PICKUP = self:_pickup_chance(23, 1)
 		self.hunter.spread.standing = 3
 		self.hunter.spread.crouching = 2
 		self.hunter.spread.steelsight = 1
@@ -6362,7 +6377,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arblast.has_description = true
 		self.arblast.desc_id = "bm_ap_3_weapon_sc_desc"
 		self.arblast.AMMO_MAX = 20
-		self.arblast.AMMO_PICKUP = {0.24, 0.6}
+		self.arblast.AMMO_PICKUP = self:_pickup_chance(20, 1)
 		self.arblast.spread.standing = 3
 		self.arblast.spread.crouching = 2
 		self.arblast.spread.steelsight = 1
@@ -6375,9 +6390,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.arblast.kick.steelsight = self.huntsman.kick.standing
 		self.arblast.panic_suppression_chance = 0.0
 		self.arblast.stats = {
-			damage = 180,
+			damage = 90,
 			spread = 21,
-			recoil = 19,
+			recoil = 16,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 25,
@@ -6390,7 +6405,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.arblast.timers.reload_not_empty = 3.05
 		self.arblast.timers.reload_empty = 3.05		
-		self.arblast.stats_modifiers = {damage =  2}
+		self.arblast.stats_modifiers = {damage =  4}
 		self.frankish.upgrade_blocks = {
 			weapon = {
 				"clip_ammo_increase"
@@ -6409,13 +6424,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.frankish.kick.crouching = self.huntsman.kick.standing
 		self.frankish.kick.steelsight = self.huntsman.kick.standing
 		self.frankish.AMMO_MAX = 30
-		self.frankish.AMMO_PICKUP = {0.3, 0.75}
+		self.frankish.AMMO_PICKUP = self:_pickup_chance(30, 1)
 		self.frankish.panic_suppression_chance = 0.0
 		self.frankish.ignore_damage_upgrades = true
 		self.frankish.stats = {
-			damage = 120,
-			spread = 21,
-			recoil = 19,
+			damage = 60,
+			spread = 19,
+			recoil = 18,
 			spread_moving = 8,
 			zoom = 3,
 			concealment = 26,
@@ -6428,7 +6443,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.frankish.timers.reload_not_empty = 1.6
 		self.frankish.timers.reload_empty = 1.6		
-		self.frankish.stats_modifiers = {damage = 2}
+		self.frankish.stats_modifiers = {damage = 4}
 		self.long.upgrade_blocks = {
 			weapon = {
 				"clip_ammo_increase"
@@ -6442,19 +6457,34 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.long.spread.moving_standing = 4
 		self.long.spread.moving_crouching = 3
 		self.long.spread.moving_steelsight = 2
-		self.long.kick.standing = self.huntsman.kick.standing
-		self.long.kick.crouching = self.huntsman.kick.standing
-		self.long.kick.steelsight = self.huntsman.kick.standing
-		self.long.charge_data.max_t = 1.5
+		self.long.kick.standing = {
+			0,
+			0,
+			0,
+			0
+		}
+		self.long.kick.crouching = {
+			0,
+			0,
+			0,
+			0
+		}
+		self.long.kick.steelsight = {
+			0,
+			0,
+			0,
+			0
+		}		
+		self.long.charge_data.max_t = 1
 		self.long.not_allowed_in_bleedout = false
 		self.long.AMMO_MAX = 20
-		self.long.AMMO_PICKUP = {0.24, 0.6}
+		self.long.AMMO_PICKUP = self:_pickup_chance(20, 2)
 		self.long.panic_suppression_chance = 0.0
 		self.long.ignore_damage_upgrades = true
 		self.long.stats = {
-			damage = 180,
+			damage = 90,
 			spread = 21,
-			recoil = 25,
+			recoil = 26,
 			spread_moving = 12,
 			zoom = 5,
 			concealment = 29,
@@ -6465,7 +6495,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
-		self.long.stats_modifiers = {damage = 2}
+		self.long.stats_modifiers = {damage = 4}
 		self.par.categories = {
 			"lmg",
 			"smg"
@@ -7530,16 +7560,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.ecp.kick.crouching = self.huntsman.kick.standing
 		self.ecp.kick.steelsight = self.huntsman.kick.standing
 		self.ecp.AMMO_MAX = 40
-		self.ecp.AMMO_PICKUP = {0.6, 1.5}
+		self.ecp.AMMO_PICKUP = self:_pickup_chance(40, 1)
 		self.ecp.panic_suppression_chance = 0.0
 		self.ecp.ignore_damage_upgrades = true
 		self.ecp.stats = {
-			damage = 90,
-			spread = 20,
-			recoil = 19,
+			damage = 45,
+			spread = 17,
+			recoil = 21,
 			spread_moving = 8,
 			zoom = 3,
-			concealment = 26,
+			concealment = 20,
 			suppression = 20,
 			alert_size = 20,
 			extra_ammo = 101,
@@ -7547,7 +7577,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
-		self.ecp.stats_modifiers = {damage = 2}		
+		self.ecp.stats_modifiers = {damage = 4}		
 		self.shrew.fire_mode_data.fire_rate = 0.07692307692
 		self.shrew.single.fire_rate = 0.07692307692
 		self.shrew.CLIP_AMMO_MAX = 6
@@ -8902,28 +8932,49 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.elastic.has_description = true
 		self.elastic.desc_id = "bm_ap_2_weapon_sc_desc"
+		self.elastic.timers = {
+			reload_not_empty = 1.5,
+			reload_empty = 1.5,
+			unequip = 0.85,
+			equip = 0.85
+		}		
 		self.elastic.spread.standing = 3
 		self.elastic.spread.crouching = 2
 		self.elastic.spread.steelsight = 1
 		self.elastic.spread.moving_standing = 4
 		self.elastic.spread.moving_crouching = 3
 		self.elastic.spread.moving_steelsight = 2
-		self.elastic.kick.standing = self.huntsman.kick.standing
-		self.elastic.kick.crouching = self.huntsman.kick.standing
-		self.elastic.kick.steelsight = self.huntsman.kick.standing
-		self.elastic.charge_data.max_t = 1.5
+		self.elastic.kick.standing = {
+			0,
+			0,
+			0,
+			0
+		}
+		self.elastic.kick.crouching = {
+			0,
+			0,
+			0,
+			0
+		}
+		self.elastic.kick.steelsight = {
+			0,
+			0,
+			0,
+			0
+		}				
+		self.elastic.charge_data.max_t = 1
 		self.elastic.not_allowed_in_bleedout = false
 		self.elastic.AMMO_MAX = 20
-		self.elastic.AMMO_PICKUP = {0.24, 0.6}
+		self.elastic.AMMO_PICKUP = self:_pickup_chance(20, 2)
 		self.elastic.panic_suppression_chance = 0.0
 		self.elastic.ignore_damage_upgrades = true
 		self.elastic.stats = {
-			damage = 180,
+			damage = 90,
 			spread = 20,
-			recoil = 25,
+			recoil = 26,
 			spread_moving = 12,
 			zoom = 5,
-			concealment = 29,
+			concealment = 30,
 			suppression = 20,
 			alert_size = 20,
 			extra_ammo = 101,
@@ -8931,7 +8982,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
-		self.elastic.stats_modifiers = {damage = 2}
+		self.elastic.stats_modifiers = {damage = 4}
 		self.coach.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.coach.rays = 9
 		self.coach.spread.standing = 3 * 1

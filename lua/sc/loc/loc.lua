@@ -547,40 +547,40 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_menu_skill"] = "Crew Boosts",
 
 		["menu_crew_interact"] = "Quick",
-		["menu_crew_interact_desc"] = "Players interact 15% faster per AI controlled crew member.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_interact_desc"] = "Players interact 15% faster per AI controlled crew member.",
 
 		["menu_crew_inspire"] = "Inspiring",
 		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 90 seconds. Cooldown is reduced by 15 seconds per AI controlled crew member.",
 
 		["menu_crew_scavenge"] = "Sharpeyed",
-		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition per AI controlled crew member.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_scavenge_desc"] = "Players pickup 25% more ammunition per AI controlled crew member.",
 
 		["menu_crew_ai_ap_ammo"] = "Piercing",
 		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds. This enables them to shoot through body armor.",
 
 		["menu_crew_healthy"] = "Reinforcer",
-		["menu_crew_healthy_desc"] = "Players' health is increased by 30.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_healthy_desc"] = "Players' health is increased by 30.",
 
 		["menu_crew_sturdy"] = "Protector",
-		["menu_crew_sturdy_desc"] = "Players' armor is increased by 15.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_sturdy_desc"] = "Players' armor is increased by 15.",
 
 		["menu_crew_evasive"] = "Distractor",
-		["menu_crew_evasive_desc"] = "Players' dodge is increased by 3.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_evasive_desc"] = "Players' dodge meters are filled by 3% of their dodge every second.",
 
 		["menu_crew_motivated"] = "Invigorator",
-		["menu_crew_motivated_desc"] = "Players have 25 more stamina.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
-		["menu_crew_regen_desc"] = "Players heal 1.5 health every 5 seconds.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_regen_desc"] = "Players heal 1.5 health every 5 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
-		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",
 
 		["menu_crew_generous"] = "Stockpiler ",
-		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 70 kills.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 70 kills.",
 
 		["menu_crew_eager"] = "Accelerator",
-		["menu_crew_eager_desc"] = "Players reload 10% faster.\n\nNote: Disabled in Multiplayer.",
+		["menu_crew_eager_desc"] = "Players reload 10% faster.",
 		
 		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 20 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
 		

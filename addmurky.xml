@@ -412,13 +412,6 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump_husk" force="false" load="true"/>	
-
-	<!--murky city ump helmet -->
-	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
-	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
-	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false" load="true"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" force="false"/>		
 	
 	<!--murky city textures-->    
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/murky_heavy_df" force="false"/>	

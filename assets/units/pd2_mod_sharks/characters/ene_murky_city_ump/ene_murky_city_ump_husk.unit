@@ -6,7 +6,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" />
+		<depends_on unit="units/payday2/characters/ene_acc_fbi_swat_helmet/ene_acc_fbi_swat_helmet" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 	</dependencies>
 
@@ -22,7 +22,7 @@
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod1" />
-			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_city_ump_helmet/ene_acc_murky_city_ump_helmet" />
+			<var name="_head_gear" value="units/payday2/characters/ene_acc_fbi_swat_helmet/ene_acc_fbi_swat_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

@@ -243,6 +243,15 @@
 	<unit path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" load="true"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>
 
+	<!--Generic Bravo Airframe-->	
+	<unit_mat path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" load="true"/>
+
+	<!--Bravo SWAT Helmet-->	
+	<unit_mat path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_swat_helmet/ene_acc_bravo_akan_swat_helmet" load="true"/>	
+
+	<!--Bravo Rifleman Helmet-->	
+	<unit_mat path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63" load="true"/>	
+	
 	<!--bravo dmr-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
 	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />

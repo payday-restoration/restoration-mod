@@ -5,6 +5,7 @@
   "ene_akan_fbi_heavy_dw" : "Reaper Heavy Elite", 
   "ene_akan_fbi" : "Reaper HRT", 
   "ene_akan_cs_cop_c45_sc" : "Reaper Security", 
+  "ene_akan_cs_cop_raging_bull_sc" : "Reaper Security",  
   "ene_akan_cs_cop_akmsu_smg_sc" : "Reaper Security",
   "ene_akan_cs_cop_r870" : "Reaper Security",  
   "ene_akan_cs_swat_zeal" : "Reaper HRT",  

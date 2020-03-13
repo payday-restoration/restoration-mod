@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unit type="debris" slot="18">
+	<object file="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />				
+	</extensions>
+</unit>

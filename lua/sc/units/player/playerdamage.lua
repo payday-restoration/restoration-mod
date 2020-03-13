@@ -419,7 +419,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		if attack_data.armor_piercing then
 			attack_data.damage = attack_data.damage - health_subtracted
-			managers.hud:activate_bloody_screen(0.75)
+			if not _G.IS_VR then
+				managers.hud:activate_bloody_screen(0.75)
+			end
 		else
 			attack_data.damage = attack_data.damage * armor_reduction_multiplier
 		end

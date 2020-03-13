@@ -81,6 +81,10 @@
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />
+	
+	<!--Improved Flashlight-->	
+	<texture path="effects/particles/weapons/flashlight/e_gradient_radial2" force="true"/>	
+	<texture path="units/lights/spot_light_projection_textures/spotprojection_11_flashlight_df" force="true"/>	
 
 	<!--Reduced Sicario Smoke-->	
 	<effect path="effects/particles/explosions/smoke_screen" force="true"/>

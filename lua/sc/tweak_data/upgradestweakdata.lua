@@ -359,7 +359,7 @@ function UpgradesTweakData:_init_pd2_values()
 	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
 
 		--Explosives hurt--
-		self.explosive_bullet.curve_pow = 3
+		self.explosive_bullet.curve_pow = 2
 		self.explosive_bullet.player_dmg_mul = 0.5
 		self.explosive_bullet.range = 250
 		self.explosive_bullet.feedback_range = self.explosive_bullet.range
@@ -480,79 +480,41 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.melee_to_heal = {true}
 	self.values.player.dodge_on_revive = {true}	
 	
-	if Global.game_settings and Global.game_settings.single_player then
-		--Bot boost stuff stuff--
-		self.values.team.crew_add_health = {3}
-		self.values.team.crew_add_armor = {1.5}
-		self.values.team.crew_add_dodge = {0.03}
-		self.values.team.crew_add_concealment = {1}
-		self.values.team.crew_add_stamina = {25}
-		self.values.team.crew_reduce_speed_penalty = {1}
-		self.values.team.crew_health_regen = {0.15}
-		self.values.team.crew_throwable_regen = {70}
-		self.values.team.crew_faster_reload = {1.1}
-		self.values.team.crew_faster_swap = {1}	
+	--Bot boost stuff stuff--
+	self.values.team.crew_add_health = {3}
+	self.values.team.crew_add_armor = {1.5}
+	self.values.team.crew_add_dodge = {0.03}
+	self.values.team.crew_add_concealment = {1}
+	self.values.team.crew_add_stamina = {25}
+	self.values.team.crew_reduce_speed_penalty = {1}
+	self.values.team.crew_health_regen = {0.15}
+	self.values.team.crew_throwable_regen = {70}
+	self.values.team.crew_faster_reload = {1.1}
+	self.values.team.crew_faster_swap = {1}	
 
-		--Crew ability stuff
-		self.values.team.crew_inspire = {
-			{
-				90,
-				75,
-				60
-			}
+	--Crew ability stuff
+	self.values.team.crew_inspire = {
+		{
+			90,
+			75,
+			60
 		}
-		self.values.team.crew_scavenge = {
-			{
-				0.25,
-				0.5,
-				0.75
-			}
+	}
+	self.values.team.crew_scavenge = {
+		{
+			0.25,
+			0.5,
+			0.75
 		}
-		self.values.team.crew_interact = {
-			{
-				0.85,
-				0.7,
-				0.55
-			}
+	}
+	self.values.team.crew_interact = {
+		{
+			0.85,
+			0.7,
+			0.55
 		}
-		self.values.team.crew_ai_ap_ammo = {true}
-	else
-		--Bot boost stuff stuff--
-		self.values.team.crew_add_health = {0}
-		self.values.team.crew_add_armor = {0}
-		self.values.team.crew_add_dodge = {0}
-		self.values.team.crew_add_concealment = {0}
-		self.values.team.crew_add_stamina = {0}
-		self.values.team.crew_reduce_speed_penalty = {1}
-		self.values.team.crew_health_regen = {0}
-		self.values.team.crew_throwable_regen = {70}
-		self.values.team.crew_faster_reload = {1}
-		self.values.team.crew_faster_swap = {1}	
-
-		--Crew ability stuff
-		self.values.team.crew_inspire = {
-			{
-				90,
-				75,
-				60
-			}
-		}
-		self.values.team.crew_scavenge = {
-			{
-				0,
-				0,
-				0
-			}
-		}
-		self.values.team.crew_interact = {
-			{
-				1,
-				1,
-				1
-			}
-		}
-		self.values.team.crew_ai_ap_ammo = {true}	
-	end
+	}
+	self.values.team.crew_ai_ap_ammo = {true}
 	
 	--Equipment--
 	

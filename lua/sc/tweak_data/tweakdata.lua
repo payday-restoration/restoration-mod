@@ -77,59 +77,59 @@
 
 	--Plainsrider--
 	tweak_data.projectiles.west_arrow.damage = 24
-	tweak_data.projectiles.west_arrow.launch_speed = 10000
+	tweak_data.projectiles.west_arrow.launch_speed = 2500
 	tweak_data.projectiles.west_arrow_exp.damage = 48
-	tweak_data.projectiles.west_arrow_exp.launch_speed = 10000
+	tweak_data.projectiles.west_arrow_exp.launch_speed = 2500
 	tweak_data.projectiles.bow_poison_arrow.damage = 20
-	tweak_data.projectiles.bow_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.bow_poison_arrow.launch_speed = 2500
 
 	--Hunter crossbow--
 	tweak_data.projectiles.crossbow_arrow.damage = 24
 	tweak_data.projectiles.crossbow_poison_arrow.damage = 20
 	tweak_data.projectiles.crossbow_arrow_exp.damage = 48
-	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.crossbow_arrow.launch_speed = 10000
-	tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.crossbow_arrow.launch_speed = 3125
+	tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 3125
 
 	--Arblast Heavy Crossbow--
 	tweak_data.projectiles.arblast_arrow.damage = 36
 	tweak_data.projectiles.arblast_arrow_exp.damage = 60
-	tweak_data.projectiles.arblast_poison_arrow.damage = 31
-	tweak_data.projectiles.arblast_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.arblast_arrow.launch_speed = 10000
-	tweak_data.projectiles.arblast_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.arblast_poison_arrow.damage = 30
+	tweak_data.projectiles.arblast_arrow_exp.launch_speed = 4375
+	tweak_data.projectiles.arblast_arrow.launch_speed = 4375
+	tweak_data.projectiles.arblast_poison_arrow.launch_speed = 4375
 
 	--Franken fish--
 	tweak_data.projectiles.frankish_arrow.damage = 24
 	tweak_data.projectiles.frankish_arrow_exp.damage = 48
 	tweak_data.projectiles.frankish_poison_arrow.damage = 20
-	tweak_data.projectiles.frankish_poison_arrow.launch_speed = 10000
-	tweak_data.projectiles.frankish_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.frankish_arrow.launch_speed = 10000
+	tweak_data.projectiles.frankish_poison_arrow.launch_speed = 3750
+	tweak_data.projectiles.frankish_arrow_exp.launch_speed = 3750
+	tweak_data.projectiles.frankish_arrow.launch_speed = 3750
 
 	--BOWMEN, FORM UP--
 	tweak_data.projectiles.long_arrow.damage = 36
 	tweak_data.projectiles.long_arrow_exp.damage = 60
-	tweak_data.projectiles.long_poison_arrow.damage = 31
-	tweak_data.projectiles.long_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.long_arrow.launch_speed = 10000
-	tweak_data.projectiles.long_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.long_poison_arrow.damage = 30
+	tweak_data.projectiles.long_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.long_arrow.launch_speed = 3125
+	tweak_data.projectiles.long_poison_arrow.launch_speed = 3125
 	
 	--le happy merchant--
 	tweak_data.projectiles.ecp_arrow.damage = 18
-	tweak_data.projectiles.ecp_arrow_exp.damage = 36
-	tweak_data.projectiles.ecp_arrow_poison.damage = 15
-	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 10000
-	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.ecp_arrow.launch_speed = 10000	
+	tweak_data.projectiles.ecp_arrow_exp.damage = 360
+	tweak_data.projectiles.ecp_arrow_poison.damage = 14
+	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 3125
+	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.ecp_arrow.launch_speed = 3125	
 	
 	--The not longbow--
 	tweak_data.projectiles.elastic_arrow.damage = 36
 	tweak_data.projectiles.elastic_arrow_exp.damage = 60
-	tweak_data.projectiles.elastic_arrow_poison.damage = 31
-	tweak_data.projectiles.elastic_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.elastic_arrow.launch_speed = 10000
-	tweak_data.projectiles.elastic_arrow_poison.launch_speed = 10000	
+	tweak_data.projectiles.elastic_arrow_poison.damage = 30
+	tweak_data.projectiles.elastic_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.elastic_arrow.launch_speed = 3125
+	tweak_data.projectiles.elastic_arrow_poison.launch_speed = 3125	
 
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80

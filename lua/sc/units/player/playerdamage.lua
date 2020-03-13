@@ -793,6 +793,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0)
 		end
 
+		--Dodge bot boost.
+		passive_dodge = passive_dodge + managers.player:upgrade_value("team", "crew_add_dodge", 0)
+
 		self:fill_dodge_meter(self._dodge_points * dt * passive_dodge)
 
 		if self._dodge_meter ~= self._dodge_meter_prev then

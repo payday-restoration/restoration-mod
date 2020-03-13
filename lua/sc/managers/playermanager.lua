@@ -461,7 +461,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
 		chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
 		chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
-		chance = chance + self:upgrade_value("team", "crew_add_dodge", 0)
 
 		return chance
 	end

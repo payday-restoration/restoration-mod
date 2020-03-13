@@ -565,7 +565,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_sturdy_desc"] = "Players' armor is increased by 15.",
 
 		["menu_crew_evasive"] = "Distractor",
-		["menu_crew_evasive_desc"] = "Players' dodge is increased by 3.",
+		["menu_crew_evasive_desc"] = "Players' dodge meters are filled by 3% of their dodge every second.",
 
 		["menu_crew_motivated"] = "Invigorator",
 		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",

@@ -850,7 +850,7 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Hardware Expert
 				self.values.player.drill_deploy_speed_multiplier = {0.5}
-				self.values.player.drill_fix_interaction_speed_multiplier = {0.2, 0.5}
+				self.values.player.drill_fix_interaction_speed_multiplier = {0.8, 0.5}
 				self.values.player.drill_alert_rad = {900}
 				self.values.player.silent_drill = {true}
 				

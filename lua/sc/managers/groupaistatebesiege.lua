@@ -1270,5 +1270,12 @@ end
 		end
 		return false
 	end
-	
+
+	function GroupAIStateBesiege:chk_no_fighting_atm()
+		if self._drama_data.amount > 0.2 then
+			return
+		end
+
+		return true
+	end
 end

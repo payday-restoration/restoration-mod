@@ -1023,7 +1023,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					CopLogicTravel._try_anounce(data, my_data)
 				end
 				
-				CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
+				--CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
 
 				if my_data ~= data.internal_data then
 					return

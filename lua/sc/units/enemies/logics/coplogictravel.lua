@@ -355,7 +355,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function CopLogicTravel.action_complete_clbk(data, action)
 		local my_data = data.internal_data
 		local action_type = action:type()
-        
+		local engage_range = my_data.weapon_range.close or 1500
+
 		if data.tactics and data.tactics.hitnrun or data.tactics and data.tactics.elite_ranged_fire or data.tactics and data.tactics.spoocavoidance or data.tactics and data.tactics.reloadingretreat then
 	        --cover point changes are a little fucky wucky with these tactics
 			if action_type == "healed" then

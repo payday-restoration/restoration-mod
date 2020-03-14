@@ -176,7 +176,27 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return occupation
 	end
-	
+
+	function CopLogicTravel._set_engage_cover(data, my_data, cover_data)
+		local engage_cover = my_data.engage_cover
+
+		if engage_cover then
+			managers.navigation:release_cover(engage_cover[1])
+			CopLogicAttack._cancel_cover_pathing(data, my_data)
+		end
+
+		if cover_data then
+			managers.navigation:reserve_cover(cover_data[1], data.pos_rsrv_id)
+
+			my_data.engage_cover = cover_data
+
+			--my_data.cover_enter_t = data.t
+		else
+			my_data.engage_cover = nil
+			my_data.flank_cover = nil
+		end
+	end
+
 	function CopLogicTravel._get_exact_move_pos(data, nav_index)
 		local my_data = data.internal_data
 		local objective = data.objective

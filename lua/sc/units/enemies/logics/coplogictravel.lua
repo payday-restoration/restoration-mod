@@ -517,6 +517,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CopLogicTravel.action_complete_clbk(data, action)
 		local my_data = data.internal_data
+		my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
 		local action_type = action:type()
 		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
 
@@ -1092,7 +1093,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		return
     	end
 
-		local engage_range = my_data.weapon_range.close or 1500
+		my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
 
 		if not my_data.next_movement_attempt or my_data.next_movement_attempt < data.t then
 			my_data.want_to_take_cover = CopLogicTravel._chk_wants_to_take_cover(data, my_data)
@@ -1266,8 +1268,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				return
 			end
 		end
-		
-		local engage_range = my_data.weapon_range.close or 1500
+
+		my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+
+		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
 
 		local action_taken = data.logic.action_taken(data, my_data)
 		local focus_enemy = data.attention_obj
@@ -1446,7 +1450,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						my_data.charge_path = nil
 					elseif not my_data.charge_path_search_id and data.attention_obj.nav_tracker then
 						if data.tactics and data.tactics.charge then
-							my_data.charge_pos = CopLogicTravel._get_pos_on_wall(focus_enemy.nav_tracker:field_position(), my_data.weapon_range.close, 45, nil)
+							my_data.charge_pos = CopLogicTravel._get_pos_on_wall(focus_enemy.nav_tracker:field_position(), engage_range, 45, nil)
 						else
 							my_data.charge_pos = CopLogicAttack._find_flank_pos(data, my_data, focus_enemy.nav_tracker, 3000)
 						end
@@ -1612,7 +1616,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 			search_area = managers.groupai:state():get_area_from_nav_seg_id(search_nav_seg)
 		end
-		
+
+		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
+		local optimal_range = my_data.weapon_range and my_data.weapon_range.optimal or 2000
+		local far_range = my_data.weapon_range and my_data.weapon_range.far or 5000
 		local want_to_take_cover = my_data.want_to_take_cover
 		local flank_cover = my_data.flank_cover
 		local min_dis, max_dis = nil
@@ -1633,7 +1640,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if not data.attention_obj.verified_t or data.attention_obj.verified_t - data.t < 2 then
 						optimal_threat_dis = 120
 					else
-						optimal_threat_dis = data.internal_data.weapon_range.close * 0.5
+						optimal_threat_dis = engage_range * 0.5
 					end
 				else
 					optimal_threat_dis = 120
@@ -1645,9 +1652,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						allow_fwd = true
 					else
 						if diff_index <= 5 then
-							optimal_threat_dis = data.internal_data.weapon_range.optimal
+							optimal_threat_dis = optimal_range
 						else
-							optimal_threat_dis = data.internal_data.weapon_range.close
+							optimal_threat_dis = engage_range
 						end
 					end
 				else
@@ -1655,7 +1662,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					allow_fwd = true
 				end
 			else
-				optimal_threat_dis = data.internal_data.weapon_range.far
+				optimal_threat_dis = far_range
 				allow_fwd = true
 			end
 
@@ -1720,52 +1727,51 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if flank_cover then
 					mvector3.rotate_with(my_vec, Rotation(flank_cover.angle))
 				end
-				
-				
+
 				local optimal_dis = my_vec:length()
 				local not_ranged_fire_group_chk = not data.tactics or not data.tactics.ranged_fire and not data.tactics.elite_ranged_fire
 
 				if want_to_take_cover and enemyseeninlast2secs then
 					if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
-						if optimal_dis < my_data.weapon_range.optimal then
+						if optimal_dis < optimal_range then
 							optimal_dis = optimal_dis
 
 							mvector3.set_length(my_vec, optimal_dis)
 						else
-							optimal_dis = my_data.weapon_range.optimal
+							optimal_dis = optimal_range
 
 							mvector3.set_length(my_vec, optimal_dis)
 						end
 					else
-						if optimal_dis < my_data.weapon_range.close then
+						if optimal_dis < engage_range then
 							optimal_dis = optimal_dis
 
 							mvector3.set_length(my_vec, optimal_dis)
 						else
-							optimal_dis = my_data.weapon_range.close
+							optimal_dis = engage_range
 
 							mvector3.set_length(my_vec, optimal_dis)
 						end
 					end
 									
 					if not_ranged_fire_group_chk then
-						max_dis = math.max(optimal_dis + 200, my_data.weapon_range.far * 0.5)
+						max_dis = math.max(optimal_dis + 200, far_range * 0.5)
 					else							
-						max_dis = math.max(optimal_dis + 200, my_data.weapon_range.far)
+						max_dis = math.max(optimal_dis + 200, far_range)
 					end
 									
-				elseif not_ranged_fire_group_chk and optimal_dis > my_data.weapon_range.close or not enemyseeninlast2secs then
-					optimal_dis = my_data.weapon_range.close
+				elseif not_ranged_fire_group_chk and optimal_dis > engage_range or not enemyseeninlast2secs then
+					optimal_dis = engage_range
 
 					mvector3.set_length(my_vec, optimal_dis)
 
-					max_dis = my_data.weapon_range.optimal
-				elseif optimal_dis > my_data.weapon_range.optimal then
-					optimal_dis = my_data.weapon_range.optimal
+					max_dis = optimal_range
+				elseif optimal_dis > optimal_range then
+					optimal_dis = optimal_range
 
 					mvector3.set_length(my_vec, optimal_dis)
 
-					max_dis = my_data.weapon_range.far
+					max_dis = far_range
 				end
 				
 				local my_side_pos = threat_pos + my_vec
@@ -1835,7 +1841,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								return cover
 							end
 						else
-							cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, data.internal_data.weapon_range.far, flank_pos, threat_pos)
+							cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, far_range, flank_pos, threat_pos)
 						end
 					end
 					

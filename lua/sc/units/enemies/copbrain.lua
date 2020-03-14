@@ -88,6 +88,57 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 	end)
 
+	function CopBrain:on_nav_link_unregistered(element_id)
+		if self._logic_data.pathing_results then
+			local failed_search_ids = nil
+
+			for path_name, path in pairs(self._logic_data.pathing_results) do
+				if type(path) == "table" and path[1] and type(path[1]) ~= "table" then
+					for i, nav_point in ipairs(path) do
+						if not nav_point.x and nav_point:script_data().element._id == element_id then
+							failed_search_ids = failed_search_ids or {}
+							failed_search_ids[path_name] = true
+
+							break
+						end
+					end
+				end
+			end
+
+			if failed_search_ids then
+				for search_id, _ in pairs(failed_search_ids) do
+					self._logic_data.pathing_results[search_id] = "failed"
+				end
+			end
+		end
+
+		local paths = self._current_logic._get_all_paths and self._current_logic._get_all_paths(self._logic_data)
+
+		if not paths then
+			return
+		end
+
+		local verified_paths = {}
+
+		for path_name, path in pairs(paths) do
+			local path_is_ok = true
+
+			for i, nav_point in ipairs(path) do
+				if not nav_point.x and nav_point:script_data().element._id == element_id then
+					path_is_ok = false
+
+					break
+				end
+			end
+
+			if path_is_ok then
+				verified_paths[path_name] = path
+			end
+		end
+
+		self._current_logic._set_verified_paths(self._logic_data, verified_paths)
+	end
+
 	function CopBrain:convert_to_criminal(mastermind_criminal)
 		self._logic_data.is_converted = true
 		self._logic_data.group = nil

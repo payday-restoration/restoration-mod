@@ -95,7 +95,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			for path_name, path in pairs(self._logic_data.pathing_results) do
 				if type(path) == "table" and path[1] and type(path[1]) ~= "table" then
 					for i, nav_point in ipairs(path) do
-						if not nav_point.x and nav_point:script_data().element._id == element_id then
+						if not nav_point.x and nav_point.script_data and nav_point:script_data().element._id == element_id then
 							failed_search_ids = failed_search_ids or {}
 							failed_search_ids[path_name] = true
 
@@ -124,7 +124,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local path_is_ok = true
 
 			for i, nav_point in ipairs(path) do
-				if not nav_point.x and nav_point:script_data().element._id == element_id then
+				if not nav_point.x and nav_point.script_data and nav_point:script_data().element._id == element_id then
 					path_is_ok = false
 
 					break

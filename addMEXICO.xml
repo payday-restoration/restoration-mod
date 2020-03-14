@@ -244,7 +244,9 @@
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump" load="true"/>
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"/>
 	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump_contour"/>
-	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump_husk" load="true"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump_husk" load="true"/>	
+	<!--UMPMAN HAT-->	
+	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_umper_hat/ene_acc_bex_umper_hat" load="true"/>	
 	<!--Heavy Rifle-->	
 	<object path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36" force="true" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36" force="true" />

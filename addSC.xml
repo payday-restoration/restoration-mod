@@ -67,11 +67,6 @@
 
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
-	
-	<!-- Hoxton Breakout FBI Boss Vetcop -->
-	<unit_mat path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" load="true" force="true" />
-	<unit path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
-
 	<!--Reaper Bullet Impact Fixes-->	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
 	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" />	

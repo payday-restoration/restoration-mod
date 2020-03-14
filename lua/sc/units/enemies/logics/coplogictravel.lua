@@ -517,7 +517,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CopLogicTravel.action_complete_clbk(data, action)
 		local my_data = data.internal_data
-		my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+
+		if data.unit:inventory() and data.unit:inventory().equipped_unit and data.unit:inventory():equipped_unit() then
+			my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		end
+
 		local action_type = action:type()
 		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
 
@@ -1093,7 +1097,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
     		return
     	end
 
-		my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		if data.unit:inventory() and data.unit:inventory().equipped_unit and data.unit:inventory():equipped_unit() then
+			my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		end
+
 		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
 
 		if not my_data.next_movement_attempt or my_data.next_movement_attempt < data.t then
@@ -1269,7 +1276,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
-		my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		if data.unit:inventory() and data.unit:inventory().equipped_unit and data.unit:inventory():equipped_unit() then
+			my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+		end
 
 		local engage_range = my_data.weapon_range and my_data.weapon_range.close or 1500
 

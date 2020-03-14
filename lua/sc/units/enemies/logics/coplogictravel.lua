@@ -1,4 +1,16 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	local tmp_vec1 = Vector3()
+	local tmp_vec2 = Vector3()
+	local temp_vec4 = Vector3()
+	local temp_vec5 = Vector3()
+	local temp_vec6 = Vector3()
+	local fuckingvector = Vector3()
+	local cone_top = Vector3()
+	local tmp_vec_cone_dir = Vector3()
+	local mvec3_set = mvector3.set
+	local math_lerp = math.lerp
+	local math_min = math.min
+	local mrot = mrotation
 
 	function CopLogicTravel.enter(data, new_logic_name, enter_params)
 		CopLogicBase.enter(data, new_logic_name, enter_params)
@@ -1559,10 +1571,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		action_taken = action_taken or CopLogicAttack._chk_start_action_move_out_of_the_way(data, my_data)
 	end
-	
-	local temp_vec4 = Vector3()
-	local temp_vec5 = Vector3()
-	local temp_vec6 = Vector3()
 
 	function CopLogicTravel._find_cover(data, search_nav_seg, near_pos)
 		local cover = nil

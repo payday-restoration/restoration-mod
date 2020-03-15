@@ -68,7 +68,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		for u_key, enemy_data in pairs(enemies) do
 			local enemy = enemy_data.unit
 
-			if not enemy:in_slot(16) then
+			if enemy:base():lod_stage() and not enemy:in_slot(16) then
 				local com = enemy:movement():m_head_pos()
 
 				mvector3.direction(tmp_vec1, pos, com)

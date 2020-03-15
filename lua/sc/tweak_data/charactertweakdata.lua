@@ -464,8 +464,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_vet.damage.bullet_dodge_chance = 65
 		self.fbi_vet.smoke_dodge_increase = 10
 		self.fbi_vet.dodge = presets.dodge.veteran
-		self.fbi_vet.allowed_stances = {cbt = true} --[[Cock and ball torture (CBT), penis torture or dick torture is a sexual activity involving application of pain or constriction to the penis or testicles. This may involve directly painful activities, such as genital piercing, wax play, genital spanking, squeezing, ball-busting, genital flogging, urethral play, tickle torture, erotic electrostimulation or even kicking.[1] 
-		The recipient of such activities may receive direct physical pleasure via masochism, or emotional pleasure through erotic humiliation, or knowledge that the play is pleasing to a sadistic dominant. Many of these practices carry significant health risks. [2]Contents]]--
 		self.fbi_vet.access = "spooc"
 		self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
 		self.fbi_vet.use_animation_on_fire_damage = false
@@ -503,7 +501,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		    self.fbi_vet.speech_prefix_count = nil	
 		end
 		self.fbi_vet.heal_cooldown = 3.75
-		table.insert(self._enemy_list, "fbi_vet")		
+		table.insert(self._enemy_list, "fbi_vet")	
+
+		self.fbi_vet_boss = deep_clone(self.fbi_vet)
+		self.fbi_vet_boss.HEALTH_INIT = 24
+		self.fbi_vet_boss.headshot_dmg_mul = 3.4		
+		self.fbi_vet_boss.melee_weapon = "buzzer_summer"
+		self.fbi_vet_boss.heal_cooldown = 7.5
+		table.insert(self._enemy_list, "fbi_vet_boss")	
+		
 		self.meme_man = deep_clone(self.fbi_vet)		
 		self.meme_man.tags = {"law", "tank", "special"}		
 		self.meme_man.HEALTH_INIT = 500
@@ -2936,7 +2942,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.old_hoxton_mission.experience.cable_tie = "tie_swat"
 		self.old_hoxton_mission.speech_prefix_p1 = "rb2"
 		self.old_hoxton_mission.access = "teamAI4"
-		self.old_hoxton_mission.dodge = presets.dodge.athletic
+		self.old_hoxton_mission.dodge = nil
 		self.old_hoxton_mission.no_arrest = true
 		self.old_hoxton_mission.chatter = presets.enemy_chatter.no_chatter
 		self.old_hoxton_mission.use_radio = nil
@@ -11921,7 +11927,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"bravo_dmr",
 			"flamethrower_mk2_flamer_summers",
 			"scar_npc",
-			"m1911_npc"
+			"m1911_npc",
+			"vet_cop_boss_pistol"
 		}
 		self.weap_unit_names = {
 			Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -11981,7 +11988,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"),
 			Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light"),
-			Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911")
+			Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911"),
+			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc")
 		}
 	end
 
@@ -12162,6 +12170,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end
 	end
 
 	function CharacterTweakData:_set_normal()
@@ -12354,6 +12365,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:_set_hard()
@@ -12545,6 +12559,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:_set_overkill()
@@ -12735,6 +12752,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:_set_overkill_145()
@@ -12935,6 +12955,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:_set_easy_wish()
@@ -13137,6 +13160,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:_set_overkill_290()
@@ -13213,6 +13239,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:_set_sm_wish()
@@ -13480,6 +13509,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 		self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 		self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
+		if job == "tag" then
+			self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
+		end		
 	end
 
 	function CharacterTweakData:is_special_unit(enemy_tweak)

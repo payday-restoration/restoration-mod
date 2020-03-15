@@ -13,7 +13,7 @@
 	"res_credits" : "Restoration Mod Credits",
 	"res_credits_help" : "View the credits for RESTORATION MOD.",
 	
-	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO REP 100",
+	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
 	
 	"RestorationModOptionsButtonTitleID" : "Restoration Mod Options",
 	"RestorationModOptionsButtonDescID" : "Restoration Mod's Options.",

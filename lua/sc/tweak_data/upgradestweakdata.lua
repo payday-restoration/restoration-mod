@@ -1364,14 +1364,14 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend = {-3}
+	self.values.player.level_5_armor_addend = {-5}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
-		tick_time = 0.5,
+		tick_time = 1,
 		total_ticks = 6,
 		max_stacks = false,
-		stacking_cooldown = 1.5,
+		stacking_cooldown = 1,
 		add_stack_sources = {
 			bullet = true,
 			explosion = true,

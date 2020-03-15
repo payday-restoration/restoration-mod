@@ -2667,30 +2667,32 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_damage_to_hot_2"
+					"player_passive_health_multiplier_1",
+					"player_passive_health_multiplier_2"
 				},
 				cost = 400,
-				icon_xy = {2, 6},
+				icon_xy = {0, 0},
 				name_id = "menu_deck11_3",
 				desc_id = "menu_deck11_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_damage_to_hot_3"
+					"player_damage_to_hot_2"
 				},
 				cost = 1000,
-				icon_xy = {3, 6},
+				icon_xy = {2, 6},
 				name_id = "menu_deck11_5",
 				desc_id = "menu_deck11_5_desc_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"player_damage_to_hot_4"
+					"player_passive_health_multiplier_3",
+					"player_passive_health_multiplier_4"
 				},
 				cost = 2400,
-				icon_xy = {4, 6},
+				icon_xy = {4, 0},
 				name_id = "menu_deck11_7",
 				desc_id = "menu_deck11_7_desc_sc"
 			},
@@ -2698,6 +2700,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_extra_ticks",
+					"player_damage_to_hot_3",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

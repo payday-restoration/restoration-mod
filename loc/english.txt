@@ -11,7 +11,7 @@
 	"menu_utility_radial_menu_desc" : "Open the Utility Menu",
 	
 	"res_credits" : "Restoration Mod Credits",
-	"res_credits_help" : "",
+	"res_credits_help" : "View the credits for RESTORATION MOD.",
 	
 	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO REP 100",
 	
@@ -298,8 +298,8 @@
 	"bm_msk_shatter_true" : "Raze",
 	"bm_msk_shatter_true_desc" : "The mask of Raze, Jackal's partner in crime. The Phoenix represents rebirth. Each death bringing about new life. Raze believes that the mask is her 'lucky charm', and often doesn't work without it.",
 	
-	"menu_l_global_value_veritas" : "Aletheia",
-	"menu_l_global_value_veritas_desc" : "This is an Aletheia item!",
+	"menu_l_global_value_veritas" : "Restoration Mod",
+	"menu_l_global_value_veritas_desc" : "This is a Restoration Mod item!",
 	
 	"menu_asset_wet_intel" : "Intel",
 	"menu_asset_risk_murky" : "Murkywater Mercenaries",
@@ -381,7 +381,10 @@
 	"bm_msk_classic_helmet_desc" : "A gift given by an ex-SWAT enforcer. Before retiring, he found Jackal... and offered only the gear he had access to, to aid in Jackal's efforts.\n\nHis curious offer was due to one reason: he saw himself, what OMNIA was doing in secret. But he himself, refused to divulge those secrets, and left soon after, never to be seen again.\n\nJackal sent these helmets forward. A reward for your contributions.",		
 
     "bm_cube" : "devmask.model",
-	"bm_cube_desc" : "Push the placeholder, we'll get around to it.",	
+	"bm_cube_desc" : "Push the placeholder, we'll get around to it.",
+	
+	"bm_j4" : "J-4",
+	"bm_j4_desc" : "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.",
 	  
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",

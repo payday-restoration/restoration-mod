@@ -1586,13 +1586,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function CopLogicTravel._find_cover(data, search_nav_seg, near_pos)
 		local cover = nil
 		local search_area = nil
+
+		if data.unit:movement():cool() then
+			search_area = managers.groupai:state():get_area_from_nav_seg_id(search_nav_seg)
+			cover = managers.navigation:find_cover_in_nav_seg_1(search_area.nav_segs)
+
+			return cover
+		end
+
 		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 		local threat_tracker = nil
 		local threat_area = nil
 		local allow_fwd = nil
 		local my_data = data.internal_data
 		local my_pos = data.m_pos
-		
+
 		if data.objective and data.objective.type == "follow" then
 			if data.tactics and data.tactics.shield_cover and data.attention_obj and data.attention_obj.nav_tracker and data.attention_obj.reaction and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and not alive(data.unit:inventory() and data.unit:inventory()._shield_unit) then
 				local threat_nav_pos = data.attention_obj.nav_tracker:field_position()
@@ -1624,282 +1632,274 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local far_range = my_data.weapon_range and my_data.weapon_range.far or 5000
 		local want_to_take_cover = my_data.want_to_take_cover
 		local flank_cover = my_data.flank_cover
-		local min_dis, max_dis = nil
-		
-		if data.unit:movement():cool() then
-			if search_area then
-				cover = managers.navigation:find_cover_in_nav_seg_1(search_area.nav_segs)
+		local min_dis, max_dis, optimal_threat_dis, threat_pos = nil
+
+		if data.unit:base()._tweak_table == "spooc" or data.unit:base()._tweak_table == "taser" then --make sure these two boys are getting appropriate ranges
+			if diff_index <= 5 and data.unit:base()._tweak_table == "spooc" then
+				optimal_threat_dis = 900
+			else
+				optimal_threat_dis = 1400
 			end
-		else
-			local optimal_threat_dis, threat_pos = nil
-			
-			if data.unit:base()._tweak_table == "spooc" or data.unit:base()._tweak_table == "taser" then --make sure these two boys are getting appropriate ranges
-				if diff_index <= 5 and data.unit:base()._tweak_table == "spooc" then
-					optimal_threat_dis = 900
-				else
-					optimal_threat_dis = 1400
-				end
-			elseif data.tactics and data.tactics.charge and data.objective.attitude == "engage" then --charge is an aggressive tactic, so i want it actually being aggressive as possible
-				if data.attention_obj then
-					if not data.attention_obj.verified_t or data.attention_obj.verified_t - data.t < 2 then
-						optimal_threat_dis = 120
-					else
-						optimal_threat_dis = engage_range * 0.5
-					end
-				else
+		elseif data.tactics and data.tactics.charge and data.objective.attitude == "engage" then --charge is an aggressive tactic, so i want it actually being aggressive as possible
+			if data.attention_obj then
+				if not data.attention_obj.verified_t or data.attention_obj.verified_t - data.t < 2 then
 					optimal_threat_dis = 120
-				end
-			elseif data.objective.attitude == "engage" and data.tactics and not data.tactics.charge then --everything else is not required to find it.
-				if data.attention_obj then
-					if not data.attention_obj.verified_t or data.attention_obj.verified_t - data.t < 2 then
-						optimal_threat_dis = 120
-						allow_fwd = true
-					else
-						if diff_index <= 5 then
-							optimal_threat_dis = optimal_range
-						else
-							optimal_threat_dis = engage_range
-						end
-					end
 				else
+					optimal_threat_dis = engage_range * 0.5
+				end
+			else
+				optimal_threat_dis = 120
+			end
+		elseif data.objective.attitude == "engage" and data.tactics and not data.tactics.charge then --everything else is not required to find it.
+			if data.attention_obj then
+				if not data.attention_obj.verified_t or data.attention_obj.verified_t - data.t < 2 then
 					optimal_threat_dis = 120
 					allow_fwd = true
+				else
+					if diff_index <= 5 then
+						optimal_threat_dis = optimal_range
+					else
+						optimal_threat_dis = engage_range
+					end
 				end
 			else
-				optimal_threat_dis = far_range
+				optimal_threat_dis = 120
 				allow_fwd = true
 			end
+		else
+			optimal_threat_dis = far_range
+			allow_fwd = true
+		end
 
-			near_pos = near_pos or search_area and search_area.pos
-			
-			if data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.is_person then
-				threat_pos = data.attention_obj.m_pos
-				threat_tracker = data.attention_obj.nav_tracker
-				threat_area = managers.groupai:state():get_area_from_nav_seg_id(threat_tracker:nav_segment())
-				--log("got an area!")
-			else
-				local all_criminals = managers.groupai:state():all_char_criminals()
-				local closest_crim_u_data, closest_crim_dis = nil
+		near_pos = near_pos or search_area and search_area.pos
+		
+		if data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.is_person then
+			threat_pos = data.attention_obj.m_pos
+			threat_tracker = data.attention_obj.nav_tracker
+			threat_area = managers.groupai:state():get_area_from_nav_seg_id(threat_tracker:nav_segment())
+			--log("got an area!")
+		else
+			local all_criminals = managers.groupai:state():all_char_criminals()
+			local closest_crim_u_data, closest_crim_dis = nil
 
-				for u_key, u_data in pairs(all_criminals) do
-					local crim_area = managers.groupai:state():get_area_from_nav_seg_id(u_data.tracker:nav_segment()) --this checks for the area any criminal units are standing in, this includes players and bots, keep in mind, this is nav-segment to nav-segment, so its map-dependant
+			for u_key, u_data in pairs(all_criminals) do
+				local crim_area = managers.groupai:state():get_area_from_nav_seg_id(u_data.tracker:nav_segment()) --this checks for the area any criminal units are standing in, this includes players and bots, keep in mind, this is nav-segment to nav-segment, so its map-dependant
 
-					if crim_area == search_area then
+				if crim_area == search_area then
+					threat_pos = u_data.m_pos
+					--near_pos = threat_pos
+					threat_tracker = u_data.tracker
+					threat_area = managers.groupai:state():get_area_from_nav_seg_id(threat_tracker:nav_segment())
+					--log("got an area!")
+					break
+				elseif near_pos then
+					local crim_dis = mvector3.distance_sq(near_pos, u_data.m_pos)
+
+					if not closest_crim_dis or crim_dis < closest_crim_dis then
 						threat_pos = u_data.m_pos
-						--near_pos = threat_pos
 						threat_tracker = u_data.tracker
 						threat_area = managers.groupai:state():get_area_from_nav_seg_id(threat_tracker:nav_segment())
-						--log("got an area!")
-						break
-					elseif near_pos then
-						local crim_dis = mvector3.distance_sq(near_pos, u_data.m_pos)
-
-						if not closest_crim_dis or crim_dis < closest_crim_dis then
-							threat_pos = u_data.m_pos
-							threat_tracker = u_data.tracker
-							threat_area = managers.groupai:state():get_area_from_nav_seg_id(threat_tracker:nav_segment())
-							closest_crim_dis = crim_dis
-						end
+						closest_crim_dis = crim_dis
 					end
 				end
 			end
+		end
+		
+		if threat_pos and my_data.engage_mode then
+			local enemyseeninlast2secs = data.attention_obj and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < math.random(0.5, 2)
 			
-			if threat_pos and my_data.engage_mode then
-				local enemyseeninlast2secs = data.attention_obj and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < math.random(0.5, 2)
-				
-				if want_to_take_cover then
-					if not enemyseeninlast2secs then
-						min_dis = 30
-						max_dis = data.attention_obj.dis
-					else
-						min_dis = math.max(data.attention_obj.dis * 1.2, data.attention_obj.dis + 200)
-									
-						if min_dis > data.attention_obj.dis + 1000 then
-							min_dis = data.attention_obj.dis + 500
-						end
-									
-						max_dis = math.min(min_dis + 500, data.attention_obj.dis + 1000)
-									
-						if min_dis > max_dis then
-							min_dis = min_dis - max_dis
-						end
-					end
-				end
-					
-				local my_vec = my_pos - threat_pos
-				
-				if flank_cover then
-					mvector3.rotate_with(my_vec, Rotation(flank_cover.angle))
-				end
-
-				local optimal_dis = my_vec:length()
-				local not_ranged_fire_group_chk = not data.tactics or not data.tactics.ranged_fire and not data.tactics.elite_ranged_fire
-
-				if want_to_take_cover and enemyseeninlast2secs then
-					if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
-						if optimal_dis < optimal_range then
-							optimal_dis = optimal_dis
-
-							mvec3_set_l(my_vec, optimal_dis)
-						else
-							optimal_dis = optimal_range
-
-							mvec3_set_l(my_vec, optimal_dis)
-						end
-					else
-						if optimal_dis < engage_range then
-							optimal_dis = optimal_dis
-
-							mvec3_set_l(my_vec, optimal_dis)
-						else
-							optimal_dis = engage_range
-
-							mvec3_set_l(my_vec, optimal_dis)
-						end
-					end
-									
-					if not_ranged_fire_group_chk then
-						max_dis = math.max(optimal_dis + 200, far_range * 0.5)
-					else							
-						max_dis = math.max(optimal_dis + 200, far_range)
-					end
-									
-				elseif not_ranged_fire_group_chk and optimal_dis > engage_range or not enemyseeninlast2secs then
-					optimal_dis = engage_range
-
-					mvec3_set_l(my_vec, optimal_dis)
-
-					max_dis = optimal_range
-				elseif optimal_dis > optimal_range then
-					optimal_dis = optimal_range
-
-					mvec3_set_l(my_vec, optimal_dis)
-
-					max_dis = far_range
-				end
-				
-				local my_side_pos = threat_pos + my_vec
-
-				mvec3_set_l(my_vec, max_dis)
-
-				local furthest_side_pos = threat_pos + my_vec
-
-				if flank_cover then
-					local angle = flank_cover.angle
-					local sign = flank_cover.sign
-
-					if math.sign(angle) ~= sign then
-						angle = -angle + flank_cover.step * sign
-
-						if math.abs(angle) > 90 then
-							flank_cover.failed = true
-						else
-							flank_cover.angle = angle
-						end
-					else
-						flank_cover.angle = -angle
-					end
-				end
-				
-				local search_nav_seg = threat_area.nav_segs or search_area and search_area.nav_segs
-				local search_from_pos = data.m_pos
-				local cone_dir = nil
-
-				if data.attention_obj.is_husk_player then
-					cone_dir = data.attention_obj.unit:movement():detect_look_dir()
+			if want_to_take_cover then
+				if not enemyseeninlast2secs then
+					min_dis = 30
+					max_dis = data.attention_obj.dis
 				else
-					cone_dir = tmp_vec_cone_dir
-
-					if data.attention_obj.is_local_player then
-						mrot.y(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
-					else
-						if data.attention_obj.unit:movement().m_head_rot then
-							mrot.z(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
-						elseif data.attention_obj.unit:movement().m_rot then
-							mrot.y(data.attention_obj.unit:movement():m_rot(), cone_dir)
-						else
-							mrot.y(data.attention_obj.unit:rotation(), cone_dir)
-						end
+					min_dis = math.max(data.attention_obj.dis * 1.2, data.attention_obj.dis + 200)
+								
+					if min_dis > data.attention_obj.dis + 1000 then
+						min_dis = data.attention_obj.dis + 500
+					end
+								
+					max_dis = math.min(min_dis + 500, data.attention_obj.dis + 1000)
+								
+					if min_dis > max_dis then
+						min_dis = min_dis - max_dis
 					end
 				end
+			end
+				
+			local my_vec = my_pos - threat_pos
+			
+			if flank_cover then
+				mvector3.rotate_with(my_vec, Rotation(flank_cover.angle))
+			end
 
-				local cone_base = cone_top + cone_dir * 400
-				local cone_angle = nil
+			local optimal_dis = my_vec:length()
+			local not_ranged_fire_group_chk = not data.tactics or not data.tactics.ranged_fire and not data.tactics.elite_ranged_fire
 
-				if flank_cover and not flank_cover.failed then
-					cone_angle = flank_cover.angle
+			if want_to_take_cover and enemyseeninlast2secs then
+				if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
+					if optimal_dis < optimal_range then
+						optimal_dis = optimal_dis
+
+						mvec3_set_l(my_vec, optimal_dis)
+					else
+						optimal_dis = optimal_range
+
+						mvec3_set_l(my_vec, optimal_dis)
+					end
 				else
-					cone_angle = math_lerp(90, 60, math_min(1, optimal_dis / 3000))
-				end
+					if optimal_dis < engage_range then
+						optimal_dis = optimal_dis
 
-				if search_nav_seg then
-					cover = managers.navigation:find_cover_from_threat_2(search_nav_seg, optimal_threat_dis, near_pos, threat_pos, search_from_pos, max_dis, cone_base, cone_angle, data.pos_rsrv_id)
+						mvec3_set_l(my_vec, optimal_dis)
+					else
+						optimal_dis = engage_range
+
+						mvec3_set_l(my_vec, optimal_dis)
+					end
+				end
+								
+				if not_ranged_fire_group_chk then
+					max_dis = math.max(optimal_dis + 200, far_range * 0.5)
+				else							
+					max_dis = math.max(optimal_dis + 200, far_range)
+				end
+								
+			elseif not_ranged_fire_group_chk and optimal_dis > engage_range or not enemyseeninlast2secs then
+				optimal_dis = engage_range
+
+				mvec3_set_l(my_vec, optimal_dis)
+
+				max_dis = optimal_range
+			elseif optimal_dis > optimal_range then
+				optimal_dis = optimal_range
+
+				mvec3_set_l(my_vec, optimal_dis)
+
+				max_dis = far_range
+			end
+			
+			local my_side_pos = threat_pos + my_vec
+
+			mvec3_set_l(my_vec, max_dis)
+
+			local furthest_side_pos = threat_pos + my_vec
+
+			if flank_cover then
+				local angle = flank_cover.angle
+				local sign = flank_cover.sign
+
+				if math.sign(angle) ~= sign then
+					angle = -angle + flank_cover.step * sign
+
+					if math.abs(angle) > 90 then
+						flank_cover.failed = true
+					else
+						flank_cover.angle = angle
+					end
+				else
+					flank_cover.angle = -angle
+				end
+			end
+			
+			local search_nav_seg = threat_area.nav_segs or search_area and search_area.nav_segs
+			local search_from_pos = data.m_pos
+			local cone_dir = nil
+
+			if data.attention_obj.is_husk_player then
+				cone_dir = data.attention_obj.unit:movement():detect_look_dir()
+			else
+				cone_dir = tmp_vec_cone_dir
+
+				if data.attention_obj.is_local_player then
+					mrot.y(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
+				else
+					if data.attention_obj.unit:movement().m_head_rot then
+						mrot.z(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
+					elseif data.attention_obj.unit:movement().m_rot then
+						mrot.y(data.attention_obj.unit:movement():m_rot(), cone_dir)
+					else
+						mrot.y(data.attention_obj.unit:rotation(), cone_dir)
+					end
+				end
+			end
+
+			local cone_base = cone_top + cone_dir * 400
+			local cone_angle = nil
+
+			if flank_cover and not flank_cover.failed then
+				cone_angle = flank_cover.angle
+			else
+				cone_angle = math_lerp(90, 60, math_min(1, optimal_dis / 3000))
+			end
+
+			if search_nav_seg then
+				cover = managers.navigation:find_cover_from_threat_2(search_nav_seg, optimal_threat_dis, near_pos, threat_pos, search_from_pos, max_dis, cone_base, cone_angle, data.pos_rsrv_id)
+			end
+			
+			if cover then
+				return cover
+			end
+		end
+		
+		if not cover then
+			if data.tactics and data.tactics.flank and threat_area and threat_tracker then
+				local flank_pos = CopLogicAttack._find_flank_pos(data, data.internal_data, threat_tracker, 6000)
+				
+				if flank_pos then
+					if data.tactics.ranged_fire or data.tactics.elite_ranged_fire then
+						cover = managers.navigation:find_cover_near_pos_1(flank_pos, threat_pos, 2000, optimal_threat_dis, allow_fwd)
+						if cover then
+							--log("flanking ranged fire")
+							return cover
+						end
+					else
+						cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, far_range, flank_pos, threat_pos)
+					end
 				end
 				
 				if cover then
+					--log("ohworm")
 					return cover
 				end
 			end
 			
-			if not cover then
-				if data.tactics and data.tactics.flank and threat_area and threat_tracker then
-					local flank_pos = CopLogicAttack._find_flank_pos(data, data.internal_data, threat_tracker, 6000)
-					
-					if flank_pos then
-						if data.tactics.ranged_fire or data.tactics.elite_ranged_fire then
-							cover = managers.navigation:find_cover_near_pos_1(flank_pos, threat_pos, 2000, optimal_threat_dis, allow_fwd)
-							if cover then
-								--log("flanking ranged fire")
-								return cover
-							end
-						else
-							cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, far_range, flank_pos, threat_pos)
-						end
-					end
-					
-					if cover then
-						--log("ohworm")
-						return cover
-					end
-				end
+			if data.tactics and data.tactics.charge and threat_area and threat_tracker then
+				local charge_pos = CopLogicTravel._get_pos_on_wall(threat_tracker:field_position(), optimal_threat_dis, 45, nil)
 				
-				if data.tactics and data.tactics.charge and threat_area and threat_tracker then
-					local charge_pos = CopLogicTravel._get_pos_on_wall(threat_tracker:field_position(), optimal_threat_dis, 45, nil)
-					
-					if charge_pos then
-						cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, optimal_threat_dis, charge_pos, threat_pos)
-					end
+				if charge_pos then
+					cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, optimal_threat_dis, charge_pos, threat_pos)
+				end
 
-					if cover then
-						--log("ohworm")
-						return cover
-					else
-						cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, optimal_threat_dis, threat_pos, threat_pos)
-						
-						if cover then
-							--log("alt aggro charge")
-							return cover
-						end
-					end
-				end
-				
-				--log("notohworm")
-				if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
-					cover = managers.navigation:find_cover_near_pos_1(near_pos, threat_pos, 2000, optimal_threat_dis, allow_fwd)
+				if cover then
+					--log("ohworm")
+					return cover
+				else
+					cover = managers.navigation:find_cover_from_threat(threat_area.nav_segs, optimal_threat_dis, threat_pos, threat_pos)
 					
 					if cover then
-						--log("ranged_fire")
+						--log("alt aggro charge")
 						return cover
 					end
 				end
-				
-				if search_area and search_area.nav_segs then
-					cover = managers.navigation:find_cover_from_threat(search_area.nav_segs, optimal_threat_dis, near_pos, threat_pos)
-				end
+			end
+			
+			--log("notohworm")
+			if data.tactics and data.tactics.ranged_fire or data.tactics and data.tactics.elite_ranged_fire then
+				cover = managers.navigation:find_cover_near_pos_1(near_pos, threat_pos, 2000, optimal_threat_dis, allow_fwd)
 				
 				if cover then
-					--log("eh")
+					--log("ranged_fire")
+					return cover
 				end
+			end
+			
+			if search_area and search_area.nav_segs then
+				cover = managers.navigation:find_cover_from_threat(search_area.nav_segs, optimal_threat_dis, near_pos, threat_pos)
+			end
+			
+			if cover then
+				--log("eh")
 			end
 		end
 

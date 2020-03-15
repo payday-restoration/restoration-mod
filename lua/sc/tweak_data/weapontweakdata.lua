@@ -4387,9 +4387,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.g22c.panic_suppression_chance = 0.0
 		self.judge.fire_mode_data = {}
-		self.judge.fire_mode_data.fire_rate = 0.25
+		self.judge.fire_mode_data.fire_rate = 0.272727
 		self.judge.single = {}
-		self.judge.single.fire_rate = 0.25
+		self.judge.single.fire_rate = 0.272727
 		self.judge.rays = 9
 		self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.judge.spread.standing = 3
@@ -4408,7 +4408,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 14,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 25,
+			concealment = 24,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,
@@ -8668,8 +8668,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_sparrow.panic_suppression_chance = 0.0
 		--Keeping
-		self.x_judge.fire_mode_data.fire_rate = 0.25
-		self.x_judge.single.fire_rate = 0.25
+		self.x_judge.fire_mode_data.fire_rate = 0.272727
+		self.x_judge.single.fire_rate = 0.272727
 		self.x_judge.rays = 9
 		self.x_judge.FIRE_MODE = "single"
 		self.x_judge.BURST_FIRE = true
@@ -8689,7 +8689,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 14,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 25,
+			concealment = 24,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,

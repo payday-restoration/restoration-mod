@@ -16,6 +16,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local mvec3_crs = mvector3.cross
 	local mvec3_mul = mvector3.multiply
 	local mvec3_set_len = mvector3.set_length
+	local m_rot_y = mrotation.y
+	local m_rot_z = mrotation.z
 	local REACT_SHOOT = AIAttentionObject.REACT_SHOOT
 	local REACT_SUSPICIOUS = AIAttentionObject.REACT_SUSPICIOUS
 	local REACT_COMBAT = AIAttentionObject.REACT_COMBAT
@@ -23,7 +25,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local REACT_ARREST = AIAttentionObject.REACT_ARREST
 	
 	function CopLogicBase.chk_am_i_aimed_at(data, attention_obj, max_dot)
-		if not attention_obj.is_person then
+		if not attention_obj.is_person or attention_obj.unit:character_damage().dead and attention_obj.unit:character_damage():dead() then
 			return
 		end
 
@@ -32,6 +34,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		local enemy_look_dir = nil
+		local weapon_rot = nil
 
 		if attention_obj.is_husk_player then
 			enemy_look_dir = attention_obj.unit:movement():detect_look_dir()
@@ -39,9 +42,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			enemy_look_dir = tmp_vec1
 
 			if attention_obj.is_local_player then
-				mrotation.y(attention_obj.unit:movement():m_head_rot(), enemy_look_dir)
+				m_rot_y(attention_obj.unit:movement():m_head_rot(), enemy_look_dir)
 			else
-				mrotation.z(attention_obj.unit:movement():m_head_rot(), enemy_look_dir)
+				if attention_obj.unit:inventory() and attention_obj.unit:inventory():equipped_unit() then
+					if attention_obj.unit:movement()._stance.values[3] >= 0.6 then
+						local weapon_fire_obj = attention_obj.unit:inventory():equipped_unit():get_object(Idstring("fire"))
+
+						if alive(weapon_fire_obj) then
+							weapon_rot = weapon_fire_obj:rotation()
+						end
+					end
+				end
+
+				if weapon_rot then
+					m_rot_y(weapon_rot, enemy_look_dir)
+				else
+					m_rot_z(attention_obj.unit:movement():m_head_rot(), enemy_look_dir)
+				end
 			end
 		end
 

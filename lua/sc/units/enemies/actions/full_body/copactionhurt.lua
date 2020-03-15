@@ -683,42 +683,4 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		return true
 	end
-
-	local tmp_vec1 = Vector3()
-
-	function CopActionHurt:_upd_ragdolled(t)
-		local dt = TimerManager:game():delta_time()
-
-		if self._shooting_hurt then
-			local weap_unit = self._weapon_unit
-			local weap_unit_base = weap_unit:base()
-			local shoot_from_pos = weap_unit:position()
-			local shoot_fwd = weap_unit:rotation():y()
-
-			weap_unit_base:trigger_held(shoot_from_pos, shoot_fwd, 3)
-
-			if weap_unit_base.clip_empty and weap_unit_base:clip_empty() then
-				self._shooting_hurt = false
-
-				weap_unit_base:stop_autofire()
-			end
-		end
-
-		if self._ragdoll_active then
-			self._hips_obj:m_position(tmp_vec1)
-			self._ext_movement:set_position(tmp_vec1)
-		end
-
-		if Network:is_server() and managers.groupai:state():whisper_mode() then
-			local position = mvector3.copy(tmp_vec1)
-			local rotation = self._unit:rotation()
-
-			managers.network:session():send_to_peers_synched("sync_fall_position", self._unit, position, rotation)
-		end
-
-		if not self._ragdoll_freeze_clbk_id and not self._shooting_hurt then
-			self._died = true
-		end
-	end
-
 end

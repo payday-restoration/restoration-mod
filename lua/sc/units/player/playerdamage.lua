@@ -807,8 +807,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if managers.player:has_category_upgrade("player", "biker_armor_regen") then
 			self:tick_biker_armor_regen(dt)
 		end
-
-		log(managers.player:damage_reduction_skill_multiplier("bullet"))
 	end)
 
 	Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)

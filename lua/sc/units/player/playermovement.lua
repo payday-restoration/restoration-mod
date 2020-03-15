@@ -1,5 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
+	local infiltrator_distance = tweak_data.upgrades.infiltrator_dr_range * tweak_data.upgrades.infiltrator_dr_range
 	local init_original = PlayerMovement.init
 	function PlayerMovement:init(...)
 		init_original(self, ...)
@@ -56,7 +56,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function PlayerMovement:_upd_underdog_skill(t)
 		local data = self._underdog_skill_data
-		local infiltrator_distance = 360000
 
 		if not self._attackers or not data.has_dmg_dampener and not data.has_dmg_mul or t < self._underdog_skill_data.chk_t then
 			return

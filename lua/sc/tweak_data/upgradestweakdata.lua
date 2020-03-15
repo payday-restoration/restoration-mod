@@ -1284,6 +1284,7 @@ function UpgradesTweakData:_init_pd2_values()
 		1.25
 	}
 	--infiltrator stuff
+	self.infiltrator_dr_range = 1200
 	self.values.temporary.melee_life_leech = {
 		{0.08, 08}
 	}

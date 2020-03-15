@@ -1811,7 +1811,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if data.attention_obj.is_local_player then
 						mrot.y(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
 					else
-						mrot.z(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
+						if data.attention_obj.unit:movement().m_head_rot then
+							mrot.z(data.attention_obj.unit:movement():m_head_rot(), cone_dir)
+						elseif data.attention_obj.unit:movement().m_rot then
+							mrot.y(data.attention_obj.unit:movement():m_rot(), cone_dir)
+						else
+							mrot.y(data.attention_obj.unit:rotation(), cone_dir)
+						end
 					end
 				end
 

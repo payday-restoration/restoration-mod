@@ -53,5 +53,58 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return true
 		end
 	end
+
+	function PlayerMovement:_upd_underdog_skill(t)
+		local data = self._underdog_skill_data
+		local infiltrator_distance = 360000
+
+		if not self._attackers or not data.has_dmg_dampener and not data.has_dmg_mul or t < self._underdog_skill_data.chk_t then
+			return
+		end
+
+		local my_pos = self._m_pos
+		local nr_guys = 0
+		local nr_close_guys = 0
+		local activated = nil
+
+		for u_key, attacker_unit in pairs(self._attackers) do
+			if not alive(attacker_unit) then
+				self._attackers[u_key] = nil
+
+				return
+			end
+
+			local attacker_pos = attacker_unit:movement():m_pos()
+			local dis_sq = mvector3.distance_sq(attacker_pos, my_pos)
+
+			if dis_sq < data.max_dis_sq and math.abs(attacker_pos.z - my_pos.z) < data.max_vert_dis then
+				nr_guys = nr_guys + 1
+
+				if data.nr_enemies <= nr_guys then
+					activated = true
+
+					if data.has_dmg_mul then
+						managers.player:activate_temporary_upgrade("temporary", "dmg_multiplier_outnumbered")
+					end
+
+					if data.has_dmg_dampener then
+						managers.player:activate_temporary_upgrade("temporary", "dmg_dampener_outnumbered")
+						managers.player:activate_temporary_upgrade("temporary", "dmg_dampener_outnumbered_strong")
+					end
+
+					break
+				end
+				if dis_sq < infiltrator_distance then
+					nr_close_guys = nr_close_guys + 1
+				end
+			end
+		end
+
+		if nr_close_guys >= 1 then
+			managers.player:activate_temporary_upgrade("temporary", "dmg_dampener_close_contact")
+		end
+
+		data.chk_t = t + (activated and data.chk_interval_active or data.chk_interval_inactive)
+	end
 	
 end

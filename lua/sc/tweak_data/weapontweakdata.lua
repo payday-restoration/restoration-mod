@@ -4387,28 +4387,28 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.g22c.panic_suppression_chance = 0.0
 		self.judge.fire_mode_data = {}
-		self.judge.fire_mode_data.fire_rate = 0.4
+		self.judge.fire_mode_data.fire_rate = 0.25
 		self.judge.single = {}
-		self.judge.single.fire_rate = 0.4
+		self.judge.single.fire_rate = 0.25
 		self.judge.rays = 9
 		self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
-		self.judge.spread.standing = 3 * 1
-		self.judge.spread.crouching = 2 * 1
-		self.judge.spread.steelsight = 1 * 1
-		self.judge.spread.moving_standing = 4 * 1 
-		self.judge.spread.moving_crouching = 3 * 1 
-		self.judge.spread.moving_steelsight = 2 * 1
+		self.judge.spread.standing = 3
+		self.judge.spread.crouching = 2
+		self.judge.spread.steelsight = 1
+		self.judge.spread.moving_standing = 4
+		self.judge.spread.moving_crouching = 3
+		self.judge.spread.moving_steelsight = 2
 		self.judge.AMMO_MAX = 30
 		self.judge.damage_near = 600
 		self.judge.damage_far = 1200
 		self.judge.AMMO_PICKUP = self:_pickup_chance(30, 1)
 		self.judge.stats = {
 			damage = 150,
-			spread = 6,
-			recoil = 19,
-			spread_moving = 5,
+			spread = 7,
+			recoil = 14,
+			spread_moving = 8,
 			zoom = 3,
-			concealment = 21,
+			concealment = 25,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,
@@ -4416,6 +4416,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
+		self.judge.timers.reload_not_empty = 2.65
+		self.judge.timers.reload_empty = 2.65
 		self.judge.panic_suppression_chance = 0.0
 		self.judge.stats_modifiers = {damage = 1}
 		self.m45.CLIP_AMMO_MAX = 30
@@ -8666,8 +8668,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_sparrow.panic_suppression_chance = 0.0
 		--Keeping
-		self.x_judge.fire_mode_data.fire_rate = 0.4
-		self.x_judge.single.fire_rate = 0.4
+		self.x_judge.fire_mode_data.fire_rate = 0.25
+		self.x_judge.single.fire_rate = 0.25
 		self.x_judge.rays = 9
 		self.x_judge.FIRE_MODE = "single"
 		self.x_judge.BURST_FIRE = true
@@ -8683,11 +8685,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.x_judge.stats = {
 			damage = 150,
-			spread = 6,
-			recoil = 19,
-			spread_moving = 5,
+			spread = 7,
+			recoil = 14,
+			spread_moving = 8,
 			zoom = 3,
-			concealment = 21,
+			concealment = 25,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -8700,7 +8702,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.weapon_hold = "x_chinchilla"
 		self.x_judge.animations.reload_name_id = "x_chinchilla"
 		self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
-		self.x_judge.animations.second_gun_versions.reload = "reload"	
+		self.x_judge.animations.second_gun_versions.reload = "reload"
+		self.x_judge.kick.standing = self.judge.kick.standing
+		self.x_judge.kick.crouching = self.judge.kick.standing
+		self.x_judge.kick.steelsight = self.judge.kick.standing
 		--Disabled--	
 		self.x_rota.use_data.selection_index = 4			
 		self.x_rota.upgrade_blocks = nil

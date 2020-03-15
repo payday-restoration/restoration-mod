@@ -357,7 +357,7 @@
 				<option type="bool" default_value="true" name="UppercaseNames"/>				
 			</option_group>
 			<option_group name="SC">
-				<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>
+				<!--<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>-->
 				<option type="bool" default_value="true" name="Holiday"/>
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			</option_group>

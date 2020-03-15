@@ -15,53 +15,55 @@ function restoration:Init()
 		"election_day_3", --Election Day 3
 		"election_day_3_skip1", --Election Day 3 (Skipped 1)
 		"election_day_3_skip2", --Election Day 3 (Skipped 2)
-		"firestarter_1", --Firestarter Day 1
-		"mia_1", --Hotline Day 1
-		"hox_2", --Hoxout Day 2
-		"jewelry_store", --Jewelry Store
-		"alex_1", --Rats Day 1
+		"gallery", --art gallery
+		"framing_frame_1", --art gallery but ff
+		"firestarter_2", --firestarter day 2
+		"four_stores", --Gee, I wonder what this could be.
 		"dinner", --Slaughterhouse
 		"moon", --Stealing Xmas
-		"ukrainian_job", --Ukrainian Job
+		"mus",	--the diamond
 		--Custom Heists--
-		"firestarter_1_res", --Firestarter Day 1 res edit version
-		"alex_1_res", --Rats Day 1 res edit version
-		"ukrainian_job_res", --Ukrainian Job res edit version
-	}		
+		"office_strike", --office strike
+		"firestarter_2_res" --firestarter day 2 res edit version
+	}
 	restoration.captain_teamwork = {
-		"pal", --counterfeit 
+		"pal", --counterfeit
+		"mia_1", --Hotline Day 1
 		"crojob2", --bomb dockyard
+		"firestarter_1", --Firestarter Day 1
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
-		"watchdogs_2_day", --Watchdogs Day 2 Daytime		
+		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
-		"office_strike", --office strike
+		"firestarter_1_res", --Firestarter Day 1 res edit version
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
-		"firestarter_2", --firestarter day 2
+		"dah", --diamond heist
+		"hox_2", --Hoxout Day 2
 		"framing_frame_3", --framing frame day 3
-		"rat",	--cook off
 		"arm_for",	--train heist
-		"mus",	--the diamond
 		"big", --big bank
-		--custom heists		
-		"firestarter_2_res" --firestarter day 2 res edit version
+		"kenaz",--Golden Grin Casino
+		"cas" --Golden Grin Casino
 	}
 	restoration.captain_stelf = {
+		"alex_1", --Rats Day 1
+		"rat",	--cook off
 		"nightclub", --and Autumn stay off the dance floor
-		"gallery", --art gallery
-		"framing_frame_1", --art gallery but ff
 		"branchbank", --well the trees are orange
-		"dah", --diamond heist
-		"four_stores", --do i really need to make a comment here?
 		"family", --diamond store
+		"jewelry_store", --Jewelry Store
+		"ukrainian_job", --Ukrainian Job
+		"framing_frame_2", --Powerbox simulator
 		--custom heists
 		"wetwork", --res map package wetworks
+		"alex_1_res", --Rats Day 1 res edit version
 		"lvl_fourmorestores", --four more stores
+		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
 	restoration.tiny_levels = {

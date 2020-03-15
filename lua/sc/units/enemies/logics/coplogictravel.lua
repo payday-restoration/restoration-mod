@@ -1,13 +1,11 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	local tmp_vec1 = Vector3()
-	local tmp_vec2 = Vector3()
-	local temp_vec4 = Vector3()
-	local temp_vec5 = Vector3()
-	local temp_vec6 = Vector3()
-	local fuckingvector = Vector3()
+	local temp_vec1 = Vector3()
 	local cone_top = Vector3()
 	local tmp_vec_cone_dir = Vector3()
-	local mvec3_set = mvector3.set
+	local mvec3_set_l = mvector3.set_length
+	local mvec3_dir = mvector3.direction
+	local mvec3_copy = mvector3.copy
+	local mvec3_norm = mvector3.normalize
 	local math_lerp = math.lerp
 	local math_min = math.min
 	local mrot = mrotation
@@ -1596,24 +1594,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local my_pos = data.m_pos
 		
 		if data.objective and data.objective.type == "follow" then
-			if data.tactics and data.tactics.shield_cover and not alive(data.unit:inventory() and data.unit:inventory()._shield_unit) and data.attention_obj and data.attention_obj.nav_tracker and data.attention_obj.reaction and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction then
-				local enemy_tracker = data.attention_obj.nav_tracker
-				local threat_pos = enemy_tracker:field_position()
-				local heister_pos = data.attention_obj.m_pos --the threat
-				local shield_pos = data.objective.follow_unit:movement():m_pos() --the pillar
-				local shield_direction = mvector3.direction(temp_vec4, my_pos, shield_pos)
-				local heister_direction = mvector3.direction(temp_vec5, my_pos, heister_pos)
-				local following_direction = mvector3.direction(temp_vec6, shield_direction, heister_direction)
-				mvector3.set(temp_vec4, my_pos)
-				mvector3.direction(temp_vec5, temp_vec4, shield_pos)
-				mvec3_norm(temp_vec5)
-				mvector3.direction(fuckingvector, temp_vec5, heister_direction)
-				mvec3_norm(fuckingvector)
-				local following_dis = fuckingvector
-				local near_pos = data.objective.follow_unit:movement():m_pos() + following_dis
+			if data.tactics and data.tactics.shield_cover and data.attention_obj and data.attention_obj.nav_tracker and data.attention_obj.reaction and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and not alive(data.unit:inventory() and data.unit:inventory()._shield_unit) then
+				local threat_nav_pos = data.attention_obj.nav_tracker:field_position()
+
+				local threat_pos = data.attention_obj.m_pos --the threat
+				local shield_pos = mvec3_copy(data.objective.follow_unit:movement():m_pos()) --the pillar
+				mvec3_dir(temp_vec1, threat_pos, shield_pos)
+				mvec3_norm(temp_vec1)
+
+				local near_pos = shield_pos + temp_vec1 * 120
 				local follow_unit_area = managers.groupai:state():get_area_from_nav_seg_id(data.objective.follow_unit:movement():nav_tracker():nav_segment())
-				local cover = managers.navigation:find_cover_in_nav_seg_3(follow_unit_area.nav_segs, data.objective.distance and data.objective.distance * 0.9 or nil, near_pos, threat_pos)
-				
+				local objective_dis = data.objective.distance and data.objective.distance * 0.9 or nil
+				local cover = managers.navigation:find_cover_in_nav_seg_3(follow_unit_area.nav_segs, objective_dis, near_pos, threat_nav_pos)
+
 				if cover then
 					return cover
 				end
@@ -1745,21 +1738,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						if optimal_dis < optimal_range then
 							optimal_dis = optimal_dis
 
-							mvector3.set_length(my_vec, optimal_dis)
+							mvec3_set_l(my_vec, optimal_dis)
 						else
 							optimal_dis = optimal_range
 
-							mvector3.set_length(my_vec, optimal_dis)
+							mvec3_set_l(my_vec, optimal_dis)
 						end
 					else
 						if optimal_dis < engage_range then
 							optimal_dis = optimal_dis
 
-							mvector3.set_length(my_vec, optimal_dis)
+							mvec3_set_l(my_vec, optimal_dis)
 						else
 							optimal_dis = engage_range
 
-							mvector3.set_length(my_vec, optimal_dis)
+							mvec3_set_l(my_vec, optimal_dis)
 						end
 					end
 									
@@ -1772,20 +1765,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif not_ranged_fire_group_chk and optimal_dis > engage_range or not enemyseeninlast2secs then
 					optimal_dis = engage_range
 
-					mvector3.set_length(my_vec, optimal_dis)
+					mvec3_set_l(my_vec, optimal_dis)
 
 					max_dis = optimal_range
 				elseif optimal_dis > optimal_range then
 					optimal_dis = optimal_range
 
-					mvector3.set_length(my_vec, optimal_dis)
+					mvec3_set_l(my_vec, optimal_dis)
 
 					max_dis = far_range
 				end
 				
 				local my_side_pos = threat_pos + my_vec
 
-				mvector3.set_length(my_vec, max_dis)
+				mvec3_set_l(my_vec, max_dis)
 
 				local furthest_side_pos = threat_pos + my_vec
 

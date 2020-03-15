@@ -1627,7 +1627,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local min_dis, max_dis = nil
 		
 		if data.unit:movement():cool() then
-			cover = managers.navigation:find_cover_in_nav_seg_1(search_area.nav_segs)
+			if search_area then
+				cover = managers.navigation:find_cover_in_nav_seg_1(search_area.nav_segs)
+			end
 		else
 			local optimal_threat_dis, threat_pos = nil
 			
@@ -1668,7 +1670,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				allow_fwd = true
 			end
 
-			near_pos = near_pos or search_area.pos
+			near_pos = near_pos or search_area and search_area.pos
 			
 			if data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.is_person then
 				threat_pos = data.attention_obj.m_pos
@@ -1689,7 +1691,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						threat_area = managers.groupai:state():get_area_from_nav_seg_id(threat_tracker:nav_segment())
 						--log("got an area!")
 						break
-					else
+					elseif near_pos then
 						local crim_dis = mvector3.distance_sq(near_pos, u_data.m_pos)
 
 						if not closest_crim_dis or crim_dis < closest_crim_dis then
@@ -1799,7 +1801,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end
 				
-				local search_nav_seg = threat_area.nav_segs or search_area.nav_segs
+				local search_nav_seg = threat_area.nav_segs or search_area and search_area.nav_segs
 				local search_from_pos = data.m_pos
 				local cone_dir = nil
 
@@ -1830,7 +1832,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					cone_angle = math_lerp(90, 60, math_min(1, optimal_dis / 3000))
 				end
 
-				cover = managers.navigation:find_cover_from_threat_2(search_nav_seg, optimal_threat_dis, near_pos, threat_pos, search_from_pos, max_dis, cone_base, cone_angle, data.pos_rsrv_id)
+				if search_nav_seg then
+					cover = managers.navigation:find_cover_from_threat_2(search_nav_seg, optimal_threat_dis, near_pos, threat_pos, search_from_pos, max_dis, cone_base, cone_angle, data.pos_rsrv_id)
+				end
 				
 				if cover then
 					return cover
@@ -1889,8 +1893,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end
 				
-				
-				cover = managers.navigation:find_cover_from_threat(search_area.nav_segs, optimal_threat_dis, near_pos, threat_pos)
+				if search_area and search_area.nav_segs then
+					cover = managers.navigation:find_cover_from_threat(search_area.nav_segs, optimal_threat_dis, near_pos, threat_pos)
+				end
 				
 				if cover then
 					--log("eh")

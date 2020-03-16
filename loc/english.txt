@@ -132,7 +132,7 @@
 	"RestorationModPauseDescID" : "Enable or disable the Alpha Pause Menu.",
 	
 	"menu_support" : "Overhaul Guide/Support",
-	"menu_support_help" : "View the guide for Restoration's Overhaul, get support, find crew mates.",
+	"menu_support_help" : "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
 	"menu_manual_header" : "Placeholder Text",
 	"hud_instruct_mask_on_alpha" : "Hold $BTN_USE_ITEM to put on your mask",
 	"hud_assault_alpha" : "POLICE ASSAULT",
@@ -260,6 +260,7 @@
 	"restoration_level_data_vit" : "1:07 PM, Washington D.C. - The White House",
 	"restoration_level_data_mex" : "TIME CLASSIFIED, United States - Southern Border",
 	"restoration_level_data_mex_cooking" : "TIME CLASSIFIED, Mexico - Coyopa Compound",
+	"restoration_level_data_bex" : "TIME CLASSIFIED, Mexico - San Martín Bank",
 	"restoration_level_data_wetwork" : "TIME CLASSIFIED, LOCATION CLASSIFIED",
 	"restoration_level_data_junk" : "TIME CLASSIFIED, LOCATION CLASSIFIED",
 	"restoration_level_data_holly" : "5:00 PM, Los Angeles - Lukas' Mansion",
@@ -280,9 +281,9 @@
 	"heist_cursed_name" : "Green Harvest",
 	"heist_holly_name" : "Blockbuster Night",
 	
-	"heist_platinum_brief" : "Placeholder Briefing for Crimenet. Heist the yacht. Shoot some people.",
+	"heist_platinum_brief" : "stir the boat",
 	"heist_jackal_surface_tension_name" : "OMNIA Research Vessel SN-XR-LETHE",
-	"heist_jackal_surface_tension_brief" : "Placeholder Briefing For Loadouts. Don't forget a medic bag.",
+	"heist_jackal_surface_tension_brief" : "PLACEHOLDER",
 	
 	"heist_vivinite_name" : "Zero Day",
 	

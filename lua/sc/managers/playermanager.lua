@@ -418,19 +418,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier * dmg_red_mul
 
 		if self:is_damage_health_ratio_active(health_ratio) then
-			multiplier = multiplier * (1 - managers.player:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
+			multiplier = multiplier * (1 - self:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
 		end
 
 		if damage_type == "melee" then
-			multiplier = multiplier * managers.player:upgrade_value("player", "melee_damage_dampener", 1)
+			multiplier = multiplier * self:upgrade_value("player", "melee_damage_dampener", 1)
 		end
 
 		local current_state = self:get_current_state()
 
 		if current_state and current_state:_interacting() then
-			multiplier = multiplier * managers.player:upgrade_value("player", "interacting_damage_multiplier", 1)
+			multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
 		end
 		
+		local melee_name_id = managers.blackmarket:equipped_melee_weapon()
+
+		if current_state and current_state:in_melee() then
+			if damage_type == "bullet" then
+				multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
+			end
+
+			if tweak_data.blackmarket.melee_weapons[melee_name_id].block then
+				multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
+			end
+		end
 
 		return multiplier
 	end
@@ -446,7 +457,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier * self:upgrade_value("player", "perk_armor_regen_timer_multiplier", 1)
 
 		if not moving then
-			multiplier = multiplier * managers.player:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
+			multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
 		end
 
 		return multiplier
@@ -458,7 +469,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
 
-		local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
+		local detection_risk_add_dodge_chance = self:upgrade_value("player", "detection_risk_add_dodge_chance")
 		chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
 		chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
 
@@ -604,6 +615,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:register_message(Message.OnPlayerDodge, "dodge_replenish_armor", callback(self, self, "_dodge_replenish_armor"))
 		else
 			self:unregister_message(Message.OnPlayerDodge, "dodge_replenish_armor")
+		end
+
+		if self:has_category_upgrade("player", "dodge_to_heal") then
+			self:register_message(Message.OnPlayerDodge, "add_dodge_healing", callback(self, self, "_dodge_stack_health_regen"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "add_dodge_healing")
+		end
+
+		if self:has_category_upgrade("player", "bomb_cooldown_reduction") then
+			self:register_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr", callback(self, self, "_dodge_smokebomb_cdr"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr")
 		end
 
 		if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
@@ -807,5 +830,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self:has_equipment("armor_kit") then
 			managers.mission:call_global_event("player_regenerate_armor", true)
 		end
+	end
+
+	function PlayerManager:_dodge_stack_health_regen()
+		player_unit:character_damage():add_damage_to_hot()
+	end
+
+	function PlayerManager:_dodge_smokebomb_cdr()
+		self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
 	end
 end

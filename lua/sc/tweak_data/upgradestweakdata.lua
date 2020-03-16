@@ -1200,7 +1200,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Counter Strike
 				self.values.player.counter_strike_melee = {true}
 				self.values.player.counter_strike_spooc = {true}
-				self.values.player.deflect_ranged = {true}
+				self.values.player.deflect_ranged = {0.9}
 				self.values.player.spooc_damage_resist = {0.2, 0.5}
 
 				--Frenzy (Berserker)

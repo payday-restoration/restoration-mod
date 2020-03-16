@@ -3261,7 +3261,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.buck.repeat_expire_t = 0.7
 	self.melee_weapons.buck.stats.concealment = 26
 	self.melee_weapons.buck.melee_damage_delay = 0.2
-	self.melee_weapons.buck.expire_t = 1.2	
+	self.melee_weapons.buck.expire_t = 1.2
+	self.melee_weapons.buck.block = 0.9
 
 	--Fear the beard--	
 	self.melee_weapons.beardy.anim_global_param = "melee_baseballbat"

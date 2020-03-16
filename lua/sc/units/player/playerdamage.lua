@@ -295,25 +295,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerDamage:damage_bullet(attack_data, ...)
 		if not self:_chk_can_take_dmg() then
 			return
-		end
-				
-		local damage_info = {
-			result = {type = "hurt", variant = "bullet"},
-			attacker_unit = attack_data.attacker_unit
-		}
-		local pm = managers.player
-		local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
-		attack_data.damage = attack_data.damage * dmg_mul
-		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-		
-		local damage_absorption = pm:damage_absorption()
-		
-		if damage_absorption > 0 then
-			attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
-		end
-				
-		if self._god_mode then
+		elseif self._god_mode then
 			if attack_data.damage > 0 then
 				self:_send_damage_drama(attack_data, attack_data.damage)
 			end
@@ -335,25 +317,41 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 		
+		local pm = managers.player
 		self._last_received_dmg = attack_data.damage
 		self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
+
+		self._last_bullet_damage = attack_data.damage
+		local next_allowed_dmg_t_old = self._next_allowed_dmg_t
+		
+		if self._next_allowed_dmg_t ~= next_allowed_dmg_t_old then
+			self._last_received_dmg = self._last_bullet_damage
+		end
+
+		local damage_info = {
+			result = {type = "hurt", variant = "bullet"},
+			attacker_unit = attack_data.attacker_unit
+		}
+		local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
+		attack_data.damage = attack_data.damage * dmg_mul
+		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+		end
+		
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
 			self._unit:sound():play("pickup_fak_skill") --Feel free to replace if you know a better sound.
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0)
 				self:_send_damage_drama(attack_data, 0)
-				if pm:has_category_upgrade("player", "dodge_to_heal") then --Rogue health regen.
-					self:add_damage_to_hot()
-				end
-				if pm:has_category_upgrade("player", "bomb_cooldown_reduction") then
-					pm:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
-				end
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
 			self:_hit_direction(attack_data.attacker_unit:position())
-			self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
 			self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
 			managers.player:send_message(Message.OnPlayerDodge)
 			return	
@@ -381,22 +379,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		pm:check_damage_carry(attack_data)
 		
 		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
-		
-		if managers.player:has_category_upgrade("player", "deflect_ranged") then
-			if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
-				if managers.blackmarket:equipped_melee_weapon()== "buck" then
-					attack_data.damage = attack_data.damage * 0.8
-				else
-					attack_data.damage = attack_data.damage * 0.9
-				end
-			end			
-		else
-			if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
-				if managers.blackmarket:equipped_melee_weapon()== "buck" then
-					attack_data.damage = attack_data.damage * 0.9
-				end
-			end
-		end
 		
 		if self._bleed_out then
 			self:_bleed_out_damage(attack_data)
@@ -449,13 +431,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		pm:send_message(Message.OnPlayerDamage, nil, attack_data)
 		self:_call_listeners(damage_info)
-		
-		self._last_bullet_damage = attack_data.damage
-		local next_allowed_dmg_t_old = self._next_allowed_dmg_t
-		
-		if self._next_allowed_dmg_t ~= next_allowed_dmg_t_old then
-			self._last_received_dmg = self._last_bullet_damage
-		end
 		
 		local _time = math.floor(TimerManager:game():time())
 		self.tase_time = self.tase_time or 0
@@ -740,6 +715,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif self._dodge_meter < 1.5 then
 				self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
 			end
+		elseif self:is_downed() then
+			self._dodge_meter = 0.0
 		end
 	end
 
@@ -757,8 +734,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)
+		local pm = managers.player
 		self._in_smoke_bomb = 0.0
-		for _, smoke_screen in ipairs(managers.player._smoke_screen_effects or {}) do
+		for _, smoke_screen in ipairs(pm._smoke_screen_effects or {}) do
 			if smoke_screen:is_in_smoke(self._unit) then
 				if smoke_screen:mine() then
 					self._in_smoke_bomb = 2.0
@@ -768,33 +746,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
-		--Add passive dodge increases.
-		local passive_dodge = 0.0
+		--Add passive dodge increases. Start with bot dodge boost.
+		local passive_dodge = pm:upgrade_value("team", "crew_add_dodge", 0)
 
 		--Yakuza capstone skill.
 		if self:health_ratio() < 0.5 then
-			passive_dodge = passive_dodge + (1 - self:health_ratio()) * managers.player:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
+			passive_dodge = passive_dodge + (1 - self:health_ratio()) * pm:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
 		end
 
 		--Sicario capstone skill.
 		if self._in_smoke_bomb == 2.0 then
-			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "sicario_multiplier", 0)
+			passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
 		end
 
 		--Burglar capstone skill.
 		if self._unit:movement():crouching() then
-			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "crouch_dodge_chance", 0)
+			passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
 		end
 
 		--Duck and Cover aced.
 		if self._unit:movement():running() then
-			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "run_dodge_chance", 0)
+			passive_dodge = passive_dodge + pm:upgrade_value("player", "run_dodge_chance", 0)
 		elseif self._unit:movement():zipline_unit() then
-			passive_dodge = passive_dodge + managers.player:upgrade_value("player", "on_zipline_dodge_chance", 0)
+			passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
 		end
-
-		--Dodge bot boost.
-		passive_dodge = passive_dodge + managers.player:upgrade_value("team", "crew_add_dodge", 0)
 
 		self:fill_dodge_meter(self._dodge_points * dt * passive_dodge)
 
@@ -804,15 +779,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		--Biker Armor Regen
-		if managers.player:has_category_upgrade("player", "biker_armor_regen") then
+		if pm:has_category_upgrade("player", "biker_armor_regen") then
 			self:tick_biker_armor_regen(dt)
 		end
 	end)
-
-	Hooks:PostHook(PlayerDamage, "on_downed" , "ResDodgeMeterOnDown" , function(self)
-		self:fill_dodge_meter(-self._dodge_meter)
-	end)
-
+	
 	function PlayerDamage:_upd_health_regen(t, dt)
 		if self._health_regen_update_timer then
 			self._health_regen_update_timer = self._health_regen_update_timer - dt

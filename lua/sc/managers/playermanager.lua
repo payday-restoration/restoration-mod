@@ -436,9 +436,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
 		end
 		
-		local melee_name_id = managers.blackmarket:equipped_melee_weapon()
 
 		if current_state and current_state:in_melee() then
+			local melee_name_id = managers.blackmarket:equipped_melee_weapon()
 			if damage_type == "bullet" then
 				multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
 			end

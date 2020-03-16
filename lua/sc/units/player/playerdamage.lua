@@ -707,6 +707,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+	function PlayerDamage:get_dodge_points()
+		return self._dodge_points
+	end
+
 	--Adds to/Subtracts from dodge meter and updates hud element.
 	function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
 		if self._dodge_points > 0 and not self:is_downed() then
@@ -783,7 +787,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:tick_biker_armor_regen(dt)
 		end
 	end)
-	
+
 	function PlayerDamage:_upd_health_regen(t, dt)
 		if self._health_regen_update_timer then
 			self._health_regen_update_timer = self._health_regen_update_timer - dt

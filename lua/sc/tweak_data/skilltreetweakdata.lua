@@ -1476,7 +1476,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_detection_risk_add_dodge_chance_2"
+						"player_detection_risk_add_dodge_chance_2",
+						"player_backstab_dodge"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1599,7 +1600,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_detection_risk_add_crit_chance_2"
+						"player_detection_risk_add_crit_chance_2",
+						"player_backstab_crits"
 					},
 					cost = self.costs.hightierpro
 				}

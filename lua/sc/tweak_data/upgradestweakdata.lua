@@ -1010,6 +1010,10 @@ function UpgradesTweakData:_init_pd2_values()
 				}				
 				self.counter_taser_damage = 0.5			
 
+				self.values.player.backstab_dodge = {
+					0.75
+				}
+
 			--}
 			
 			--[[   SILENT KILLER SUBTREE   ]]--
@@ -1076,7 +1080,7 @@ function UpgradesTweakData:_init_pd2_values()
 						0.3
 					}
 				}
-
+				self.values.player.backstab_crits = {0.35}
 
 			--}
 		--}
@@ -2999,6 +3003,24 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "throwables_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_backstab_dodge = {
+		name_id = "menu_player_backstab_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "backstab_dodge",
+			category = "player"
+		}
+	}
+	self.definitions.player_backstab_crits = {
+		name_id = "menu_player_backstab_crits",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "backstab_crits",
 			category = "player"
 		}
 	}

@@ -133,6 +133,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local t = Application:time()
 		local damage_ext = player_unit:character_damage()
 
+		local fwd_vec = mvector3.dot(killed_unit:movement():m_rot():y(), player_unit:movement():m_head_rot():y())
+		if fwd_vec > 0.2 then
+			damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge", 0))
+		end
+
 		if self:has_category_upgrade("player", "kill_change_regenerate_speed") then
 			local amount = self:body_armor_value("skill_kill_change_regenerate_speed", nil, 1)
 			local multiplier = self:upgrade_value("player", "kill_change_regenerate_speed", 0)

@@ -3466,7 +3466,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.wing.repeat_expire_t = 0.5
 	self.melee_weapons.wing.expire_t = 1.1
 	self.melee_weapons.wing.melee_damage_delay = 0.1
-	self.melee_weapons.wing.backstab_damage_multiplier = 2 --dmg_multiplier in melee seems to do weird shit and applies this twice. Needs investigation.
+	self.melee_weapons.wing.backstab_damage_multiplier = 4
 
 	--YEAH YEAH YEAH YEAH--
 	self.melee_weapons.road.anim_speed_mult = 1.75

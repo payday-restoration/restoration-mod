@@ -3457,7 +3457,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--you got blood on my suit--
 	self.melee_weapons.wing.info_id = "bm_melee_wing_info"	
 	self.melee_weapons.wing.stats.min_damage = 2.5
-	self.melee_weapons.wing.stats.max_damage = 5
+	self.melee_weapons.wing.stats.max_damage = 4.5
 	self.melee_weapons.wing.stats.min_damage_effect = 0.4
 	self.melee_weapons.wing.stats.max_damage_effect = 0.5
 	self.melee_weapons.wing.stats.charge_time = 0.75

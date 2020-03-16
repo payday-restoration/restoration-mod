@@ -997,7 +997,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						custom_data = {engine = melee_hand_id == 1 and "right" or "left"}
 					end
 				end			
-				
+
 				managers.rumble:play("melee_hit", nil, nil, custom_data)
 				managers.game_play_central:physics_push(col_ray)
 				
@@ -1037,12 +1037,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
 						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 					end
+					local fwd_vec = mvector3.dot(hit_unit:movement():m_rot():y(), self._unit:movement():m_head_rot():y())
+					if fwd_vec > 0.2 and tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier then
+						dmg_multiplier = dmg_multiplier * tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier
+					end
 					local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
 					local action_data = {}
 					action_data.variant = "melee"
 					if special_weapon == "taser" and charge_lerp_value >= 0.99 then
 						action_data.variant = "taser_tased"
 					end
+
+
 					
 					if _G.IS_VR and melee_entry == "weapon" and not bayonet_melee then
 						dmg_multiplier = 0.1

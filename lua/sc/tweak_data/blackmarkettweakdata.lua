@@ -3455,8 +3455,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.zeus.melee_damage_delay = 0.2
 
 	--you got blood on my suit--
-	self.melee_weapons.wing.stats.min_damage = 5
-	self.melee_weapons.wing.stats.max_damage = 10.5
+	self.melee_weapons.wing.info_id = "bm_melee_wing_info"	
+	self.melee_weapons.wing.stats.min_damage = 2.5
+	self.melee_weapons.wing.stats.max_damage = 5
 	self.melee_weapons.wing.stats.min_damage_effect = 0.4
 	self.melee_weapons.wing.stats.max_damage_effect = 0.5
 	self.melee_weapons.wing.stats.charge_time = 0.75
@@ -3465,6 +3466,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.wing.repeat_expire_t = 0.5
 	self.melee_weapons.wing.expire_t = 1.1
 	self.melee_weapons.wing.melee_damage_delay = 0.1
+	self.melee_weapons.wing.backstab_damage_multiplier = 2 --dmg_multiplier in melee seems to do weird shit and applies this twice. Needs investigation.
 
 	--YEAH YEAH YEAH YEAH--
 	self.melee_weapons.road.anim_speed_mult = 1.75

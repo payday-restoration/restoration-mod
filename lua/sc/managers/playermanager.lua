@@ -838,7 +838,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function PlayerManager:_dodge_stack_health_regen()
-		player_unit:character_damage():add_damage_to_hot()
+		self:player_unit():character_damage():add_damage_to_hot()
 	end
 
 	function PlayerManager:_dodge_smokebomb_cdr()

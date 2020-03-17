@@ -818,6 +818,7 @@
 	<!--Autumn-->
 	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_contour" force="false"/>	
 	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_decloak" force="false"/>
 	<model path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
 	<object path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>

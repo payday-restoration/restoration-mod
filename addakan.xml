@@ -234,6 +234,7 @@
 	<cooked_physics path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
 	<unit path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_df" load="true"/>		
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_nm" load="true"/>

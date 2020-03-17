@@ -2025,7 +2025,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local critical_value = (critical_hits.base_chance or 0) + managers.player:critical_hit_chance() * (critical_hits.player_chance_multiplier or 1)
 
 		local player_unit = managers.player:player_unit()
-		if player_unit and self._unit:movement and self._unit:movement():m_rot then
+		if player_unit and self._unit:movement() and self._unit:movement():m_rot() then
 			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), player_unit:movement():m_head_rot():y())
 			if fwd_vec > 0.2 then
 				critical_value = critical_value + managers.player:upgrade_value("player", "backstab_crits", 0)

@@ -3411,9 +3411,10 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.scoutknife.stats.concealment = 28
 	self.melee_weapons.scoutknife.expire_t = 1.1
 
-	--It's kinda cool I guess, but it just ended up to be a katana reskin--
+	--Fires actual nails when--
+	self.melee_weapons.nin.info_id = "bm_melee_nin_info" 
 	self.melee_weapons.nin.make_effect = true
-	self.melee_weapons.nin.make_decal = true
+	self.melee_weapons.nin.make_decal = true  
 	self.melee_weapons.nin.stats.min_damage = 7.5
 	self.melee_weapons.nin.stats.max_damage = 7.5
 	self.melee_weapons.nin.stats.min_damage_effect = 1

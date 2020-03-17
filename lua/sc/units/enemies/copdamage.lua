@@ -540,6 +540,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local headshot = false
 		local headshot_multiplier = 1
 		if attack_data.attacker_unit == managers.player:player_unit() then
+			attack_data.backstab = self:check_backstab(attack_data)
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 			if critical_hit then
 				managers.hud:on_crit_confirmed()
@@ -647,6 +648,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					type = "death",
 					variant = attack_data.variant
 				}
+				if attack_data.backstab then
+					managers.player:add_backstab_dodge()
+				end
 				self:die(attack_data)
 				self:chk_killshot(attack_data.attacker_unit, "bullet", headshot)
 			end
@@ -943,6 +947,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local damage = attack_data.damage
 		local damage_effect = attack_data.damage_effect
 		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
+			attack_data.backstab = self:check_backstab(attack_data)
+			if attack_data.backstab then
+				damage = damage * attack_data.backstab_multiplier
+			end
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 			if critical_hit then
 				managers.hud:on_crit_confirmed()
@@ -1020,6 +1028,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					type = "death",
 					variant = attack_data.variant
 				}
+				if attack_data.backstab then
+					managers.player:add_backstab_dodge()
+				end
 				self:die(attack_data)
 				self:chk_killshot(attack_data.attacker_unit, "melee")
 			end
@@ -2024,12 +2035,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local critical_hit = false
 		local critical_value = (critical_hits.base_chance or 0) + managers.player:critical_hit_chance() * (critical_hits.player_chance_multiplier or 1)
 
-		local player_unit = managers.player:player_unit()
-		if player_unit and self._unit:movement() and self._unit:movement():m_rot() then
-			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), player_unit:movement():m_head_rot():y())
-			if fwd_vec > 0.2 then
-				critical_value = critical_value + managers.player:upgrade_value("player", "backstab_crits", 0)
-			end
+		if attack_data.backstab then
+			critical_value = critical_value + managers.player:upgrade_value("player", "backstab_crits", 0)
 		end
 
 		if critical_value > 0 then
@@ -2048,5 +2055,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		return critical_hit, damage
+	end
+
+	function CopDamage:check_backstab(attack_data)
+		if self._unit.movement and self._unit:movement().m_rot then
+			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), managers.player:player_unit():movement():m_head_rot():y())
+			if fwd_vec > 0.2 then
+				return true
+			end
+		end
+
+		return false
 	end
 end

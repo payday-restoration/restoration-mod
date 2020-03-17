@@ -1037,20 +1037,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
 						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 					end
-					if hit_unit:movement() and hit_unit:movement():m_rot() and self._unit:movement() and self._unit:movement():m_head_rot() then
-						local fwd_vec = mvector3.dot(hit_unit:movement():m_rot():y(), self._unit:movement():m_head_rot():y())
-						if fwd_vec > 0.2 and tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier then
-							dmg_multiplier = dmg_multiplier * tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier
-						end
-					end
-					local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
+
+					local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 					local action_data = {}
 					action_data.variant = "melee"
-					if special_weapon == "taser" and charge_lerp_value >= 0.99 then
+					if melee_weapon.special_weapon == "taser" and charge_lerp_value >= 0.99 then
 						action_data.variant = "taser_tased"
 					end
-
-
 					
 					if _G.IS_VR and melee_entry == "weapon" and not bayonet_melee then
 						dmg_multiplier = 0.1
@@ -1063,6 +1056,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					action_data.shield_knock = can_shield_knock
 					action_data.name_id = melee_entry
 					action_data.charge_lerp_value = charge_lerp_value
+					action_data.backstab_multiplier = melee_weapon.backstab_damage_multiplier or 1
 					if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 						self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 						self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}

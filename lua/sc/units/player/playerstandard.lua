@@ -1037,9 +1037,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
 						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 					end
-					local fwd_vec = mvector3.dot(hit_unit:movement():m_rot():y(), self._unit:movement():m_head_rot():y())
-					if fwd_vec > 0.2 and tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier then
-						dmg_multiplier = dmg_multiplier * tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier
+					if hit_unit:movement() and hit_unit:movement():m_rot() and self._unit:movement() and self._unit:movement():m_head_rot() then
+						local fwd_vec = mvector3.dot(hit_unit:movement():m_rot():y(), self._unit:movement():m_head_rot():y())
+						if fwd_vec > 0.2 and tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier then
+							dmg_multiplier = dmg_multiplier * tweak_data.blackmarket.melee_weapons[melee_entry].backstab_damage_multiplier
+						end
 					end
 					local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
 					local action_data = {}

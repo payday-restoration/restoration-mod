@@ -1,4 +1,4 @@
-nHooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_suicidal_description"] =  "There's a crazy gang of Russian mercenaries who are out for blood, and not even the cops will touch them. But our business calls, and that business is picking up in this chaos.",
 		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",

@@ -122,11 +122,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		
+		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
-		["bm_melee_buck_info"] = "Reduces incoming ranged damage by 10% while charging.",
-		["bm_melee_cs_info"] = "Deals 40 damage per second to targets in front of you while charging.",
-		["bm_melee_ostry_info"] = "Deals 20 damage per second to targets in front of you while charging.",
-		["bm_melee_wing_info"] = "Deals quadruple damage when attacking enemies from behind.",
+		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.",
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 40 damage per second to targets in front of you while charging.",
+		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.",
+		["bm_melee_wing_info"] = "Unfortunately does not come with a disguise kit.\n\nDeals quadruple damage when attacking enemies from behind.",
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.",
 		
 		--We assets now--

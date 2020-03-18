@@ -47601,7 +47601,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						suppression = -10,
 						alert_size = -10						
 					}															
-				end				
+				end
+
+		if self.parts.wpn_fps_pis_judge_raging_barrel then -- Mira's A Bunch of Judge Attachments
+				self.parts.wpn_fps_pis_judge_raging_barrel.stats = { 
+						value = 2,
+						spread = 2,
+						recoil = -1,
+						concealment = -2
+					}									
+				self.parts.wpn_fps_pis_judge_leupold.stats = { 
+						value = 1
+					}																				
+				end								
 
 		if self.wpn_fps_pis_vp70 then -- VP70M  
 				self.parts.wpn_fps_pis_vp70_ac_9x21imi.pcs = nil

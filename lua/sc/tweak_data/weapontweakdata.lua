@@ -625,8 +625,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.m1911_npc = deep_clone(self.c45_npc)
 		self.m1911_npc.use_data.selection_index = 2
 		self.m1911_npc.CLIP_AMMO_MAX = 7
-		self.m1911_npc.DAMAGE = 4.3
+		self.m1911_npc.DAMAGE = 2.6
 		--someone make proper stats ples
+		--no
 	end
 
 	function WeaponTweakData:_init_data_x_c45_npc()

@@ -4000,8 +4000,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deagle.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.deagle.stats = {
 			damage = 100,
-			spread = 17,
-			recoil = 17,
+			spread = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 22,
@@ -5284,8 +5284,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_deagle.animations.has_steelsight_stance = true
 		self.x_deagle.stats = {
 			damage = 100,
-			spread = 17,
-			recoil = 17,
+			spread = 18,
+			recoil = 19,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 22,

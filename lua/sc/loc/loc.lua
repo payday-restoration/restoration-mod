@@ -1,4 +1,4 @@
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
+nHooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_suicidal_description"] =  "There's a crazy gang of Russian mercenaries who are out for blood, and not even the cops will touch them. But our business calls, and that business is picking up in this chaos.",
 		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",
@@ -232,7 +232,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Converts to medium pistol tier.\nMin and Max pickup rate: 0.8x",
 		["bm_wp_wpn_fps_lmg_dp28_tripod_top_desc"] = "A tripod with additional ammo mounted on its side.\nReduces movement speed by 20% when equipped.",
 		["bm_wp_wpn_fps_gre_arbiter_o_smart_desc"] = "Experimental scope that provides airburst capabilites to the Arbiter.\nIncompatible with incendiary rounds.",
-		["bm_sc_bipod_desc"] = "Deploy/Undeploy by pressing the $BTN_BIPOD on a valid surface.\n\nReduces weapon spread by 50% and eliminates recoil while deployed.",
+		["bm_sc_bipod_desc"] = "Deploy/Undeploy by pressing the $BIPOD on a valid surface.\n\nReduces weapon spread by 50% and eliminates recoil while deployed.",
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 		-- Renamed default weapons
@@ -415,22 +415,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
 		["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract.",
 		
-		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
-		["debug_interact_bodybags_bag_take_bodybag"] = "HOLD $BTN_INTERACT TO REFILL YOUR BODY BAGS",
+		["debug_interact_grenade_crate_take_grenades"] = "HOLD $INTERACT TO REFILL YOUR THROWABLES",
+		["debug_interact_bodybags_bag_take_bodybag"] = "HOLD $INTERACT TO REFILL YOUR BODY BAGS",
 		
 		["menu_equipment_armor_kit"] = "Throwable Case",
 		["bm_equipment_armor_kit"] = "Throwable Case",
 		["debug_equipment_armor_kit"] = "Throwable Case",
 		["bm_equipment_armor_kit_desc"] = "To use the throwable case, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your throwables. It can only be used three times.\n\nYou can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.",
 
-		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
+		["hud_int_hold_take_pardons"] = "PRESS $INTERACT TO TAKE THE PARDON",
 		
-		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
-		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
+		["hud_repair_sentry"] = "$INTERACT $AMMO_LEFT",
+		["repair_sentry_macro"] = "Hold $INTERACT to start sentry auto-repair sequence",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
-		["pickup_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
-		["firemode_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
-		["hud_interact_sentry_gun_switch_fire_mode"] = "$BTN_INTERACT $AMMO_LEFT",
+		["pickup_sentry_macro"] = "Hold $INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
+		["firemode_sentry_macro"] = "Hold $INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
+		["hud_interact_sentry_gun_switch_fire_mode"] = "$INTERACT $AMMO_LEFT",
 		["hud_action_repair_sentry"] = "Repairing sentry...",		
 		
 		--More fitting descriptions of difficulties--

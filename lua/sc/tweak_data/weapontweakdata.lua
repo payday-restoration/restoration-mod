@@ -4001,8 +4001,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.deagle.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.deagle.stats = {
 			damage = 100,
-			spread = 18,
-			recoil = 19,
+			spread = 17,
+			recoil = 17,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 22,
@@ -4218,9 +4218,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.b92fs.panic_suppression_chance = 0.0
 		self.new_raging_bull.fire_mode_data = {}
-		self.new_raging_bull.fire_mode_data.fire_rate = 0.1
+		self.new_raging_bull.fire_mode_data.fire_rate = 0.19047619
 		self.new_raging_bull.single = {}
-		self.new_raging_bull.single.fire_rate = 0.1
+		self.new_raging_bull.single.fire_rate = 0.19047619
 		self.new_raging_bull.spread.standing = 3
 		self.new_raging_bull.spread.crouching = 2
 		self.new_raging_bull.spread.steelsight = 1
@@ -4234,11 +4234,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.new_raging_bull.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.new_raging_bull.stats = {
 			damage = 100,
-			spread = 16,
+			spread = 17,
 			recoil = 18,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 24,
+			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
 			extra_ammo = 101,
@@ -4246,8 +4246,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
-		self.new_raging_bull.timers.reload_not_empty = 2
-		self.new_raging_bull.timers.reload_empty = 2		
+		self.new_raging_bull.timers.reload_not_empty = 2.4
+		self.new_raging_bull.timers.reload_empty = 2.4		
 		self.new_raging_bull.panic_suppression_chance = 0.0
 		self.saw.has_description = true
 		self.saw.spread.standing = 0
@@ -5287,8 +5287,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_deagle.animations.has_steelsight_stance = true
 		self.x_deagle.stats = {
 			damage = 100,
-			spread = 18,
-			recoil = 19,
+			spread = 17,
+			recoil = 17,
 			spread_moving = 6,
 			zoom = 3,
 			concealment = 22,
@@ -6117,9 +6117,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.plainsrider.panic_suppression_chance = 0.0
 		self.plainsrider.stats_modifiers = {damage = 4}
-		self.mateba.fire_mode_data.fire_rate = 0.08571428571
+		self.mateba.fire_mode_data.fire_rate = 0.15789474
 		self.mateba.single = {}
-		self.mateba.single.fire_rate = 0.08571428571
+		self.mateba.single.fire_rate = 0.15789474
 		self.mateba.AMMO_MAX = 45
 		self.mateba.AMMO_PICKUP = self:_pickup_chance(45, 1)
 		self.mateba.timers.reload_not_empty = 3.6
@@ -6139,7 +6139,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 23,
+			concealment = 24,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -7380,8 +7380,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
-		self.chinchilla.fire_mode_data.fire_rate = 0.08571428571
-		self.chinchilla.single.fire_rate = 0.08571428571
+		self.chinchilla.fire_mode_data.fire_rate = 0.19047619
+		self.chinchilla.single.fire_rate = 0.19047619
 		self.chinchilla.spread.standing = 3
 		self.chinchilla.spread.crouching = 2
 		self.chinchilla.spread.steelsight = 1
@@ -7410,8 +7410,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		--Keeping
 		self.x_chinchilla.tactical_akimbo = false
 		self.x_chinchilla.panic_suppression_chance = 0.0
-		self.x_chinchilla.fire_mode_data.fire_rate = 0.08571428571
-		self.x_chinchilla.single.fire_rate = 0.08571428571
+		self.x_chinchilla.fire_mode_data.fire_rate = 0.19047619
+		self.x_chinchilla.single.fire_rate = 0.19047619
 		self.x_chinchilla.spread.standing = 3
 		self.x_chinchilla.spread.crouching = 2
 		self.x_chinchilla.spread.steelsight = 1
@@ -7437,6 +7437,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
+		self.x_chinchilla.timers.reload_empty = 3.7
+		self.x_chinchilla.timers.reload_not_empty = 3.7
 		self.x_chinchilla.panic_suppression_chance = 0.0
 		self.breech.timers = {
 			reload_not_empty = 1.55,
@@ -8350,8 +8352,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_uzi.panic_suppression_chance = 0.05		
 		--Keeping
-		self.x_2006m.fire_mode_data.fire_rate = 0.08571428571
-		self.x_2006m.single.fire_rate = 0.08571428571
+		self.x_2006m.fire_mode_data.fire_rate = 0.15789474
+		self.x_2006m.single.fire_rate = 0.15789474
 		self.x_2006m.AMMO_MAX = 60
 		self.x_2006m.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.x_2006m.spread.standing = 3
@@ -8369,7 +8371,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 19,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 23,
+			concealment = 24,
 			suppression = 5,
 			alert_size = 5,
 			extra_ammo = 101,
@@ -8381,7 +8383,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_2006m.weapon_hold = "x_chinchilla"
 		self.x_2006m.animations.reload_name_id = "x_chinchilla"
 		self.x_2006m.animations.second_gun_versions = self.x_rage.animations.second_gun_versions or {}
-		self.x_2006m.animations.second_gun_versions.reload = "reload"		
+		self.x_2006m.animations.second_gun_versions.reload = "reload"
+		self.x_2006m.timers.reload_not_empty = 4.1
+		self.x_2006m.timers.reload_empty = 4.1	
 		--Disabled--	
 		self.x_breech.use_data.selection_index = 4			
 		self.x_breech.AMMO_MAX = 180
@@ -8606,8 +8610,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.x_ppk.panic_suppression_chance = 0.0
 		--Keeping
-		self.x_rage.fire_mode_data.fire_rate = 0.1
-		self.x_rage.single.fire_rate = 0.1
+		self.x_rage.fire_mode_data.fire_rate = 0.19047619
+		self.x_rage.single.fire_rate = 0.19047619
 		self.x_rage.spread.standing = 3
 		self.x_rage.spread.crouching = 2
 		self.x_rage.spread.steelsight = 1
@@ -8621,11 +8625,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rage.AMMO_PICKUP = self:_pickup_chance(60, 2)
 		self.x_rage.stats = {
 			damage = 100,
-			spread = 16,
+			spread = 17,
 			recoil = 18,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 24,
+			concealment = 23,
 			suppression = 4,
 			alert_size = 4,
 			extra_ammo = 101,
@@ -8637,7 +8641,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_rage.weapon_hold = "x_chinchilla"
 		self.x_rage.animations.reload_name_id = "x_chinchilla"
 		self.x_rage.animations.second_gun_versions = self.x_rage.animations.second_gun_versions or {}
-		self.x_rage.animations.second_gun_versions.reload = "reload"	
+		self.x_rage.animations.second_gun_versions.reload = "reload"
+		self.x_rage.timers.reload_not_empty = 3.3
+		self.x_rage.timers.reload_empty = 3.3
 		--Disabled--	
 		self.x_sparrow.use_data.selection_index = 4			
 		self.x_sparrow.AMMO_MAX = 150

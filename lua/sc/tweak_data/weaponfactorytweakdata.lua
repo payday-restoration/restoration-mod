@@ -5357,6 +5357,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",					
 					rays = 1,
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
@@ -8505,9 +8506,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					alert_size = -1,
 					concealment = -5
 				},
-				custom_stats = {
+				custom_stats = {				
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 					rays = 1,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
@@ -8754,6 +8756,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 					rays = 1,
 					armor_piercing_add = 1,
 					use_heavy_kick = true,
@@ -10221,6 +10224,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -13718,6 +13722,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -13926,6 +13931,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -14374,6 +14380,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				custom_stats = {
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 					rays = 1,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
@@ -17262,6 +17269,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				moving_spread = 0
 			},
 			custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
 				rays = 1,
@@ -18628,6 +18636,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -24759,6 +24768,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -28362,6 +28372,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -30861,6 +30872,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -35155,6 +35167,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						moving_spread = 0
 					},
 					custom_stats = {
+						muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rays = 1,
@@ -35309,6 +35322,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						moving_spread = 0
 					},
 					custom_stats = {
+						muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rays = 1,
@@ -38032,6 +38046,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						moving_spread = 0
 					},
 					custom_stats = {
+						muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rays = 1,
@@ -38205,6 +38220,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -39840,6 +39856,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						moving_spread = 0
 					},
 					custom_stats = {
+						muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rays = 1,
@@ -43026,6 +43043,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -43362,6 +43380,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -43796,6 +43815,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -43992,6 +44012,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -5
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -44250,6 +44271,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -44336,6 +44358,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -45955,6 +45978,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -47268,6 +47292,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						moving_spread = 0
 					},
 					custom_stats = {
+						muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rays = 1,
@@ -48273,6 +48298,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						moving_spread = 0
 					},
 					custom_stats = {
+						muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 						damage_near_mul = 999999999,
 						damage_far_mul = 999999999,
 						rays = 1,
@@ -49077,6 +49103,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					concealment = -2
 				}
 		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = { --ToDo: get proper Titan Shield Piercing
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
 					damage_near_mul = 3.333333333333333,
 					damage_far_mul = 5,
 					rays = 1,
@@ -49394,6 +49421,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				override = {wpn_fps_shot_r870_body_rack = {unit = "units/mods/weapons/wpn_fps_sho_ben_pts/wpn_fps_sho_ben_APextrashell"}},																				
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																		
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -49472,6 +49500,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				override = {wpn_fps_sho_m37_extrashell = {unit = "units/mods/weapons/wpn_fps_sho_m37_pts/wpn_fps_sho_m37_APrack"}},																								
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																		
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -49554,6 +49583,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				override = {wpn_fps_sho_ksg_extrashell = {unit = "units/mods/weapons/wpn_fps_sho_ksg_pts/wpn_fps_sho_ksg_APrack"}},																				
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																						
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -49635,6 +49665,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				override = {wpn_fps_sho_spas12_extrashell = {unit = "units/mods/weapons/wpn_fps_sho_spas12_pts/wpn_fps_sho_spas12_APrack"}},																												
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																										
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -49715,6 +49746,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				override = {wpn_fps_shot_r870_body_rack = {unit = "units/mods/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_APrack"}},												
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																										
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -49840,6 +49872,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				},
 				override = {wpn_fps_shot_r870_body_rack = {unit = "units/mods/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_APrack"}},								
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																										
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
@@ -50917,6 +50950,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					moving_spread = 0
 				},
 				custom_stats = {
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																										
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,

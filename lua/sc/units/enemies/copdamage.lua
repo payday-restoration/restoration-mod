@@ -948,7 +948,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local damage_effect = attack_data.damage_effect
 		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
 			attack_data.backstab = self:check_backstab(attack_data)
-			if attack_data.backstab then
+			if attack_data.backstab and attack_data.backstab_multiplier then
 				damage = damage * attack_data.backstab_multiplier
 			end
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)

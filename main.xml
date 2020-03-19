@@ -364,8 +364,9 @@
 			<option_group name="OTHER">
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
+				<option type="bool" default_value="false" name="StopAllBots"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
-				<divider name="tod_divider" size="30"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
 				<option type="multichoice" default_value="2" name="Env_RVD2" values_tbl="restoration.environments_choice_rvd2"/>
@@ -382,7 +383,7 @@
 				<option type="multichoice" default_value="2" name="Env_Big" values_tbl="restoration.environments_choice_big"/>
 				<option type="multichoice" default_value="2" name="Env_FS" values_tbl="restoration.environments_choice_four_stores"/>
 				<option type="multichoice" default_value="2" name="Env_Ukra" values_tbl="restoration.environments_choice_ukrainian_job"/>
-				<divider name="tod_divider" size="30"/>
+				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<option type="bool" default_value="true" name="Notify"/>
 			</option_group>

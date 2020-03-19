@@ -61,7 +61,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	local orig_check_interact = PlayerStandard._check_action_interact
 	function PlayerStandard:_check_action_interact(t, input,...)
-		if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) then 
+		if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) or not restoration.Options:GetValue("OTHER/StopAllBots") then
 			return orig_check_interact(self,t,input,...)
 		end
 		local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"

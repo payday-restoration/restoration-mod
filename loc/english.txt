@@ -413,6 +413,8 @@
 	"RestorationModHostagesTextTitleID" : "Hostages text",
 	"RestorationModHintTextTitleID" : "Hint text",
 	"RestorationModMaskOnTextTitleID" : "Mask on text",
+	"RestorationModStopAllBotsTitleID" : "Stop All Bots",
+	"RestorationModStopAllBotsDescID" : "Stops all bots by holding the stop bot key",
 	"RestorationModScaleTitleID" : "HUD scaling",
 	"RestorationModScaleDescID" : "Changes HUD scaling. May require a restart.",
 	"RestorationModSizeOnScreenTitleID" : "HUD size on screen",

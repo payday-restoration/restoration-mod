@@ -367,45 +367,105 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return balance_multipliers[nr_players]
 	end
 
-	function GroupAIStateBase:detonate_world_smoke_grenade(id)
-		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-		local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
-		local job = Global.level_data and Global.level_data.level_id
-				
+	function GroupAIStateBase:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, ignore_control, flashbang)
 		self._smoke_grenades = self._smoke_grenades or {}
+		local data = {
+			id = id,
+			detonate_pos = detonate_pos,
+			shooter_pos = shooter_pos,
+			duration = duration,
+			ignore_control = ignore_control,
+			flashbang = flashbang
+		}
+		self._smoke_grenades[id] = data
+	end
+
+	function GroupAIStateBase:detonate_world_smoke_grenade(id)
+		self._smoke_grenades = self._smoke_grenades or {}
+
 		if not self._smoke_grenades[id] then
-			Application:error("Could not detonate smoke grenade as it was not queued!", id)
+			--Application:error("Could not detonate smoke grenade as it was not queued!", id)
 			return
 		end
+
 		local data = self._smoke_grenades[id]
-		
+		local job = Global.level_data and Global.level_data.level_id
+
 		if job == "haunted" then
 			return
 		end		
-		
+
 		if data.flashbang then
 			if Network:is_client() then
 				return
 			end
-			local flashbang_unit = "units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang"
+
+			local det_pos = data.detonate_pos + Vector3(0, 0, 5)
+			local ray_to = mvector3.copy(det_pos)
+
+			mvector3.set_z(ray_to, ray_to.z - 50)
+
+			local ground_ray = World:raycast("ray", det_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry, statics"))
+
+			if ground_ray then
+				det_pos = ground_ray.hit_position
+				mvector3.set_z(det_pos, det_pos.z + 3)
+				data.detonate_pos = det_pos
+			end
+
+			local rotation = Rotation(math.random() * 360, 0, 0)
+			local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+			local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+			local flashbang_unit = nil
+
 			if difficulty_index == 8 then
 				flashbang_unit = "units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang"
-			end			
-			local pos = data.detonate_pos + Vector3(0, 0, 1)
-			local rotation = Rotation(math.random() * 360, 0, 0)
-			local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), data.detonate_pos, rotation)
-			flash_grenade:base():activate(data.detonate_pos, data.duration)
+			else
+				flashbang_unit = "units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang"
+			end
+
+			local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), det_pos, rotation)
+			flash_grenade:base():activate(data.shooter_pos or det_pos, data.duration)
+
 			self._smoke_grenades[id] = nil
 		else
 			data.duration = data.duration == 0 and 15 or data.duration
-			local smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), data.detonate_pos, Rotation())
-			smoke_grenade:base():activate(data.detonate_pos, data.duration)
-			managers.groupai:state():teammate_comment(nil, "g40x_any", data.detonate_pos, true, 2000, false)
+			local det_pos = data.detonate_pos + Vector3(0, 0, 5)
+
+			if Network:is_server() then
+				local ray_to = mvector3.copy(det_pos) + Vector3(0, 0, 5)
+
+				mvector3.set_z(ray_to, ray_to.z - 50)
+
+				local ground_ray = World:raycast("ray", det_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry, statics"))
+
+				if ground_ray then
+					det_pos = ground_ray.hit_position
+					mvector3.set_z(det_pos, det_pos.z + 3)
+					data.detonate_pos = det_pos
+				end
+
+				managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, true)
+			end
+
+			local rotation = Rotation(math.random() * 360, 0, 0)
+			local smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), det_pos, rotation)
+			smoke_grenade:base():activate(data.shooter_pos or det_pos, data.duration)
+
 			data.grenade = smoke_grenade
 		end
+
 		if Network:is_server() then
-			managers.network:session():send_to_peers_synched("sync_smoke_grenade", data.detonate_pos, data.detonate_pos, data.duration, data.flashbang and true or false)
+			managers.network:session():send_to_peers_synched("sync_smoke_grenade", data.detonate_pos, data.shooter_pos or data.detonate_pos, data.duration, data.flashbang and true or false)
 		end
+	end
+
+	function GroupAIStateBase:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
+		self._smoke_grenades = self._smoke_grenades or {}
+		local id = #self._smoke_grenades
+
+		self:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, true, flashbang)
+		self:detonate_world_smoke_grenade(id)
 	end
 
 	function GroupAIStateBase:has_room_for_police_hostage()

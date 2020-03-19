@@ -293,6 +293,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local _chk_dmg_too_soon_original = PlayerDamage._chk_dmg_too_soon
 
 	function PlayerDamage:damage_bullet(attack_data, ...)
+		local damage_info = {
+			result = {type = "hurt", variant = "bullet"},
+			attacker_unit = attack_data.attacker_unit
+		}
+		
 		if not self:_chk_can_take_dmg() then
 			return
 		elseif self._god_mode then
@@ -328,10 +333,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._last_received_dmg = self._last_bullet_damage
 		end
 
-		local damage_info = {
-			result = {type = "hurt", variant = "bullet"},
-			attacker_unit = attack_data.attacker_unit
-		}
 		local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
 		attack_data.damage = attack_data.damage * dmg_mul
 		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)

@@ -455,7 +455,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, false)
 
 			data.grenade = smoke_grenade
-			self._smoke_end_t = data.duration
+			self._smoke_end_t = Application:time() + data.duration
 		end
 	end
 

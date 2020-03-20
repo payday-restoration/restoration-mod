@@ -1,77 +1,122 @@
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_suicidal_description"] =  "There's a crazy gang of Russian mercenaries who are out for blood, and not even the cops will touch them. But our business calls, and that business is picking up in this chaos.",
+		--I NEED SCISSORS--
 		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",
 		["bm_menu_bain_akan"] =  "We are formless. We have no defined bodies or characteristics. We are the American way of life manifested as an influential power.",
 		["bm_menu_bain_crazy"] =  "$preferredcharacter$ TURN OFF THE COMPUTER NOW",
-		["bm_wp_r870_s_folding_ext"] = "Muldon Stock (Retracted)",	
-		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
-		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
-		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
-		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
-		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
-		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.",
-		["menu_jowi"] = "Wick",
-		["bm_wp_upg_a_slug_sc"] = "Slug",
-		["bm_wp_upg_a_op_sc"] = "+P Rounds",
-		["bm_sc_blank"] = "",
-		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug.",
+		
+		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
+		
+		--Menu Stuff--
 		["menu_hud_cheater"] = "",
 		["menu_inspect_player"] = "Inspect Player",
 		["menu_inspect_player_desc"] = "Inspect player's stats",
-		["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
+		
+		--Heist Breifings--
+		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",	
+		
+		----Weapon Mod Descriptions/names----
+		
+		--Reinfield--
+		["bm_wp_r870_s_folding_ext"] = "Muldon Stock (Retracted)",	
+		
+		--Bernetti--
+		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
+		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.", --still need to do the one for the primary bernetti--
+		
+		--Shotgun Generic Mods--
+		["bm_wp_upg_a_slug_sc"] = "Slug",
+		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
+		["bm_wp_upg_a_explosive_desc_sc"] = "High-explosive slugs. Fires one explosive charge that kills or stuns targets. Cannot headshot.",
+		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",
+		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that give more impact and increase damage.",
+		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
+		["bm_wp_upg_a_dragons_breath_desc_sc"] = "Fires pellets that go up in sparks and flames. The fire deals damage over time, has a chance to interrupt enemies, and burns through body armor.",
+		
+		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",
 		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
+		
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
-		["bm_wp_upg_vintage_desc"] = "",
-		["bm_sc_scorpion_double_mag"] = "",
-		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
 		["bm_wp_upg_mil_sc"] = "Milspec Mag",
 		["bm_wp_upg_tac_sc"] = "Tactical Mag",
-		["bm_wp_upg_mil_desc"] = "",
+		
+		["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
 		["bm_wp_upg_drum_desc"] = "",
 		["bm_wp_upg_drum2_desc"] = "",
 		["bm_wp_upg_quad_desc"] = "",
 		["bm_wp_upg_quad2_desc"] = "",
-		["bm_wp_mg42_b_mg34_desc_sc"] = "SLOWS YOUR RATE OF FIRE TO 800",
+		["bm_wp_upg_vintage_desc"] = "",
+		
+		--Socrpion (get in-game-name later)
+		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
+		["bm_sc_scorpion_double_mag"] = "", --Unsure what this one is?--
+		
+		--RPK--
+		["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
+		
+		--Buzzsaw--
+		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
+		
+		--Saw--
+		["bm_ap_saw_sc_desc"] = "",
+		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
+		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
+		
+		--Leupold Sight-- --I think VMP's HeistEye and anything else with this effect also calls this?--
+		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies and guards in stealth while aiming.",
+		
+		
+		--'Nade Launchers--
+		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",
+		
+		--Flamethrowers--
+		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
+		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
+		
+		--LMGs/Miniguns--
+		["bm_wp_upg_a_halfthatkit"] = "I'll Take Double That Kit", -- lol
+		["bm_wp_upg_a_halfthatkit_desc"] = "ADDS A 10% MOVEMENT SPEED PENALTY WHILE THE WEAPON IS EQUIPPED.",
+		
+		--Thanatos--
+		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on people is probably a war crime.\n##CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.##",
+				
+		--Kobus 90--
+		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
+		
+		--Legendary Skins--
+		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
+		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",
+		["bm_menu_sc_legendary_deagle"] = "Midas Touch",
+		["bm_menu_sc_legendary_m134"] = "The Gimp",
+		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
+		["bm_wskn_ak74_rodina_desc_sc"] = "A special-issue AK that - in war and crime - has demonstrated an unquenchable thirst for blood.",
+		["bm_wskn_deagle_bling_desc_sc"] = "A hand-crafted Deagle built as testament to the finest gaming-trained crackshot in the world.",
+
+		--Modifiers--
+		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
+		
+		--Little Friend--
+		["bm_m203_weapon_sc_desc"] = "Press the $BTN_BIPOD to switch to the mounted Grenade Launcher.",
+		
+		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-		["bm_m203_weapon_sc_desc"] = "Press the $BTN_BIPOD to switch to the mounted Grenade Launcher.",
-		["bm_40mm_weapon_sc_desc"] = "Press the [Gadget Key] to toggle Flip Up Sight.",
 		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
 		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
-		["bm_ap_flamethrower_sc_desc"] = "BURNS THROUGH BODY ARMOR.",
-		["bm_ap_saw_sc_desc"] = "",
-		["bm_ap_saw_blade_sc_desc"] = "Adds the ability to cut through body armor.",
-		["bm_wp_upg_a_explosive_desc_sc"] = "Fires one explosive charge that kills or stuns targets. Cannot headshot.",
-		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally.",
-		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks enemies while aiming.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",		
-		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
-		["menu_rifle"] = "RIFLES",
-	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
-	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
-	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
-		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
-		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that give more impact and increase damage.",
-		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
-		["menu_moving_target_sc"] = "Subtle",
-		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",
-		["bm_sc_silencers_small_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
-		["bm_wp_wpn_fps_upg_cbjms_ammo_cbj_desc"] = "Rechambers the CBJ-MS with 6.5x25mm CBJ ammunition, adding AP capability and increasing damage slightly. However, stability, total ammo, and concealment is reduced.",		
-		["bm_sc_silencers_large_desc"] = "SLOWS YOUR RATE OF FIRE BY 45%",
-		["bm_wp_upg_a_dragons_breath_desc_sc"] = "Fires pellets that go up in sparks and flames. The fire deals damage over time, has a chance to interrupt enemies, and burns through body armor.",
-		["menu_difficulty_suicidal"] = "Deathwish 145+",
-		["bm_wp_upg_a_halfthatkit"] = "I'll Take Double That Kit",
-		["bm_wp_upg_a_halfthatkit_desc"] = "ADDS A 10% MOVEMENT SPEED PENALTY WHILE THE WEAPON IS EQUIPPED.",
+		["bm_40mm_weapon_sc_desc"] = "Press the [Gadget Key] to toggle Flip Up Sight.",
+		
+		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
 		
 		["menu_l_global_value_omnia"] = "OMNIA",
 		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",		
 		
+		--Depreciated stuff? (please confirm before removal)--
 		["sc_menu"] = "SC's Mod",
 		["sc_menu_desc"] = "Options for SC's mod.",
 		["sc_deploy_title"] = "Deployable Changes",
@@ -94,20 +139,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["sc_perk_desc"] = "Turn this off if you don't want Perk Deck changes from SC's mod. (Requires restart)",
 		["sc_flash_desc"] = "Turn this off if you don't want a flashbang HUD indicator... wait why wouldn't you? (Requires restart)",
 		["sc_stealth_desc"] = "Turn this off if you don't want stealth changes from SC's mod.(Requires restart)",
-		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
-		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",
-		["bm_menu_sc_legendary_deagle"] = "Midas Touch",
-		["bm_menu_sc_legendary_m134"] = "The Gimp",
-		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
-		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
-		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects",				
-		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",		
-		["bm_wskn_ak74_rodina_desc_sc"] = "A special-issue AK that - in war and crime - has demonstrated an unquenchable thirst for blood.",
-		["bm_wskn_deagle_bling_desc_sc"] = "A hand-crafted Deagle built as testament to the finest gaming-trained crackshot in the world.",
-
-		["bm_wp_upg_a_mag_msr"] = ".338 MAG rounds",
+		
+		["menu_difficulty_suicidal"] = "Deathwish 145+",
+		["menu_rifle"] = "RIFLES",
+		["menu_jowi"] = "Wick",
+		["menu_moving_target_sc"] = "Subtle",
+		
+		
+	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
+	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
+	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
+		
+		["bm_wp_upg_a_mag_msr"] = ".338 MAG rounds", --rip these
 		["bm_wp_upg_a_mag_msr_desc"] = "",
-
+		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",
+		["bm_sc_silencers_small_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
+		["bm_wp_wpn_fps_upg_cbjms_ammo_cbj_desc"] = "Rechambers the CBJ-MS with 6.5x25mm CBJ ammunition, adding AP capability and increasing damage slightly. However, stability, total ammo, and concealment is reduced.",		
+		["bm_sc_silencers_large_desc"] = "SLOWS YOUR RATE OF FIRE BY 45%",
+		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
+		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
+		["bm_wp_upg_a_op_sc"] = "+P Rounds",
+		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
+		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%", --RIP RoF mods
+		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
+		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
+		
 		["bm_hint_titan_60"] = "The Titandozer leaves in 60 seconds!",
 		["bm_hint_titan_10"] = "The Titandozer leaves in 10 seconds!",		
 		["bm_hint_titan_end"] = "The Titandozer left to haunt another world!",
@@ -117,66 +173,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
 		
-		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
-		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
-
-		["bm_wp_p90_body_p90_tan"] = "Tan Body",
-		
-		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata) --
-		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
-		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.",
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 40 damage per second to targets in front of you while charging.",
-		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.",
-		["bm_melee_wing_info"] = "Unfortunately does not come with a disguise kit.\n\nDeals quadruple damage when attacking enemies from behind.",
-		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.",
-		
-		--We assets now--
-		["menu_asset_dinner_safe"] = "Safe",
-		["menu_asset_bomb_inside_info"] = "Insider Info",
-		
-		--Player Outfits					
-		["bm_suit_two_piece_sc"] = "Two-piece Suit",
-		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!' \n \nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",				
-		
-		["bm_suit_loud_suit"] = "Combat Harness",
-		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
-		
-		["bm_suit_sunny"] = "Sunny-Side Robber",
-		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
-		
-		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
-		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",	
-		
-		["bm_suit_prison"] = "Prison Suit",
-		["bm_suit_prison_desc"] = "You've been taken into custody!",		
-
-		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
-		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",		
-
-		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
-		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",				
-		--Safe House Test
-		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
-		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",
-		
-		--Deflection for armor stats.
-		["bm_menu_deflection"] = "Deflection",
-		["bm_menu_swap_speed"] = "Swap Speed",
-	})
-end)
-
-if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
-
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
-	LocalizationManager:add_localized_strings({
-		["bm_menu_bonus"] = "Modifiers",
-		--["menu_challenge_stat_boost"] = "Random Mod Kit",
-		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
-		["bm_menu_suppression"] = "Noise Range(M)",
-		["steam_inventory_stat_boost"] = "Stat Modifier",
-		--["dialog_new_tradable_item_bonus"] = "",
-		--["steam_inventory_team_boost"] = "",
-		--["steam_inventory_boost_xp_cash"] = "",
 		["bm_wp_upg_a_slug_sc_fire"] = "Incendiary Slug",
 		["bm_menu_sc_m4_desc"] = "Modern take on the M16 service rifle. Good rate of fire and decent damage, however plastic parts make for shoddy stability.",
 		["bm_menu_sc_glock17_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
@@ -213,47 +209,149 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_a_40sw_desc"] = "",		
 		["bm_wp_upg_a_storm_40acp"] = ".45ACP Conversion Kit",
 		["bm_wp_upg_a_storm_40acp_desc"] = "",
-		["bm_menu_custom_plural"] = "WEAPON ATTACHMENTS IN THE CUSTOM CATEGORY",
+		
+		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
+		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
+		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.",
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 40 damage per second to targets in front of you while charging.",
+		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.",
+		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",
+		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.",
+		
+		--We assets now--
+		["menu_asset_dinner_safe"] = "Safe",
+		["menu_asset_bomb_inside_info"] = "Insider Info",
+		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects", --unused?--
+		
+		--Player Outfits--					
+		["bm_suit_two_piece_sc"] = "Two-piece Suit",
+		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!' \n \nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",				
+		
+		["bm_suit_loud_suit"] = "Combat Harness",
+		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
+		
+		["bm_suit_sunny"] = "Sunny-Side Robber",
+		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
+		
+		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
+		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",	
+		
+		["bm_suit_prison"] = "Prison Suit",
+		["bm_suit_prison_desc"] = "You've been taken into custody!",		
+
+		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",		
+
+		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",	
+		
+		--Safe House Test-- --unused?--
+		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
+		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",
+		
+		--New menu stats--
+		["bm_menu_deflection"] = "Deflection",
+		["bm_menu_swap_speed"] = "Swap Speed",
+	})
+end)
+
+if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
+	LocalizationManager:add_localized_strings({
+		["bm_menu_bonus"] = "Modifiers",
+		--["menu_challenge_stat_boost"] = "Random Mod Kit",
+		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
+		["bm_menu_suppression"] = "Noise Range(M)",
+		["steam_inventory_stat_boost"] = "Stat Modifier",
+		--["dialog_new_tradable_item_bonus"] = "",
+		--["steam_inventory_team_boost"] = "",
+		--["steam_inventory_boost_xp_cash"] = "",
+		
+		
+		["bm_menu_custom_plural"] = "WEAPON ATTACHMENTS IN THE CUSTOM CATEGORY", --unused?--
+		
+		----Custom Weapon Mod Descriptions----
+		
+		--Is there a reason these have to be down here? If not, I'll move them up with the others (custom weapons in their own section dw)--
+		
+		--Triad Chi-Revolver [Custom]--
 		["bm_wp_wpn_fps_upg_triad_bullets_44normal_desc"] = "Why would you use outdated post-Collision ammunition with Chi-Revolvers? Why the fuck do dogs lick their balls?\nMin and max ammo pickup rate: 1.33x",		
 		["bm_wp_wpn_fps_upg_triad_bullets_44ap_desc"] = "Assblast your enemies through walls, armor, and shields with these rounds.\nEnables armor, shield, and wall piercing at the cost of damage.",
-		["bm_wp_wpn_fps_upg_triad_bullets_44hollow_desc"] = "Chi-fussed hollow rounds stolen from a place of unknown origin. The only thing you need to know is that this shit KICKS hard and the fact that anything on the other end of the barrel is practically vaporized after the gun kicks. Good shit, ain't it?\nThis ammunition is much harder to find in ammo drops.\nEverything else lowered in favor of damage, and pickup rate.\nMin and max ammo pickup rate: 0.33x",		
+		["bm_wp_wpn_fps_upg_triad_bullets_44hollow_desc"] = "Chi-fussed hollow rounds stolen from a place of unknown origin. The only thing you need to know is that this shit KICKS hard and the fact that anything on the other end of the barrel is practically vaporized after the gun kicks. Good shit, ain't it?\nThis ammunition is much harder to find in ammo drops.\nEverything else lowered in favor of damage, and pickup rate.\nMin and max ammo pickup rate: 0.33x",	
+		
+		--DECK-ARD [Custom]--
 		["bm_wp_wpn_fps_upg_deckard_ammo_damage_high_desc"] = "Shoot them so dead they'll die in hell.\nMassive damage at the cost of everything else.\nCapable of piercing through armor, walls and shields.\nThis ammunition is much harder to find in ammo drops.\nMin and max ammo pickup rate: 0.33x",
-		["bm_wp_wpn_fps_upg_deckard_ammo_damage_med_desc"] = "Shoot them dead.\nThis ammunition is substantially easier to find in ammo drops.\nMin and max ammo pickup rate: 1.33x",		
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",	
-		["bm_wp_wpn_fps_ass_mk18s_a_weak_desc"] = "An ammunition type that mimics medium tier rifles. Lowers ammo count and stability in trade for higher damage and accuracy.",		
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",		
+		["bm_wp_wpn_fps_upg_deckard_ammo_damage_med_desc"] = "Shoot them dead.\nThis ammunition is substantially easier to find in ammo drops.\nMin and max ammo pickup rate: 1.33x",
+		
+		--Unknown Weapon--
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit", 	
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",
+		
+		--MK18 Specialist [Custom]--
+		["bm_wp_wpn_fps_ass_mk18s_a_weak_desc"] = "An ammunition type that mimics medium tier rifles. Lowers ammo count and stability in trade for higher damage and accuracy.",
+		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",				
+		
+		--Unknown Weapon--
 		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",	
-		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can penetrate both armor and walls.",		
+		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extend-o Magazine",
+		
+		--Jackal SMG(these are unused though)--
+		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can penetrate both armor and walls.",
+		
+		--Unknown weapon--
 		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",								
-		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extend-o Magazine",	
-		["bm_menu_weirdmagthing"] = "Magwell Grip",		
-		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",			
+		--Unknown Weapon--
+		["bm_menu_weirdmagthing"] = "Magwell Grip",	
+		
+		--Gecko 7.62--
 		["bm_wp_wpn_fps_ass_galil_m_drum"] = "75 Round Drum Magazine",
+		
+		--Cavity 9mm--
 		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Converts to medium pistol tier.\nMin and Max pickup rate: 0.8x",
+		
+		--DP-28 [Custom]--
 		["bm_wp_wpn_fps_lmg_dp28_tripod_top_desc"] = "A tripod with additional ammo mounted on its side.\nReduces movement speed by 20% when equipped.",
-		["bm_wp_wpn_fps_gre_arbiter_o_smart_desc"] = "Experimental scope that provides airburst capabilites to the Arbiter.\nIncompatible with incendiary rounds.",
-		["bm_sc_bipod_desc"] = "Deploy/Undeploy by pressing the $BIPOD on a valid surface.\n\nReduces weapon spread by 50% and eliminates recoil while deployed.",
+		
+		--Arbiter--
+		["bm_wp_wpn_fps_gre_arbiter_o_smart_desc"] = "Experimental scope that provides airburst capabilites to the Arbiter.\nIncompatible with incendiary rounds.", --this weapon mod isn't vanilla though iirc--
+		
+		--Itachi? [Custom]--
+		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",
+		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",
+		
+		--Kobus 90 (again)--
+		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",	
+		
+		--Union 5.56--
+		["bm_wp_corgi_b_short"] = "MSG Barrel",
+		
+		--Bipod--
+		["bm_sc_bipod_desc"] = "Deploy/Undeploy by pressing the $BTN_BIPOD on a valid surface.\n\nReduces weapon spread by 50% and eliminates recoil while deployed.",
+		
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
-		-- Renamed default weapons
-		["bm_wp_corgi_b_short"] = "MSG Barrel",
-		["menu_es_rep_upgrade"] = "",				
+		
+		-- Renamed default weapons and mods + descriptions-- --move all these to their respective weapons--
+
 		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
-		["bm_wp_1911_m_big"] = "Casket Magazine",		
+		["bm_wp_1911_m_big"] = "Casket Magazine",
+		["bm_wp_usp_m_big"] = "Casket Magazine",		
+		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
+		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
+		["bm_wp_p90_b_ninja"] = "Ninja Barrel",	
+		
+		["menu_es_rep_upgrade"] = "",	--???--			
+		
 		["bm_w_lemming"] = "5/7 Pistol",
+		
 		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
 		["bm_w_x_shrew"] = "Barry & Paul",
 		["bm_w_x_1911"] = "Mustang & Sally",
 		["bm_w_tec9"] = "T3K Urban Submachine Gun",
-		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",		
-		["bm_wp_usp_m_big"] = "Casket Magazine",		
-		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
-		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
-		["bm_wp_p90_b_ninja"] = "Ninja Barrel",		
-		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",		
-		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",				
-		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",				
+		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",
+			
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
@@ -261,12 +359,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
 		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",				
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",
+		["bm_wp_g3_b_short"] = "Micro Barrel",
+		
 		["bm_w_m590"] = "Reinbeck 890 Shotgun",
 		["bm_w_m590_desc"] = "The spiritual successor to the criminal syndicate's most popular shotgun has arrived. Although it retains the power of the original Reinbeck, it makes a few small deviations from the original design, making it easier to pump but less stable.",		
 		["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
-		["bm_wp_g3_b_short"] = "Micro Barrel",								
+		
+								
 
-		--Modifiers--
+		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
 		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Accuracy/Stability penalty",
 		["bm_menu_bonus_concealment_p1_mod"] = "Small Concealment Modifier",
 		["bm_menu_bonus_concealment_p2"] = "Large Concealment bonus and Accuracy/Stability penalty",

@@ -744,4 +744,70 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return true
 	end
 	
+	function CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, stationary)
+		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+		local difficulty_index = tweak_data:difficulty_to_index(difficulty)			
+		local record = attention_data.criminal_record
+		local can_arrest = CopLogicBase._can_arrest(data)
+		
+		--No arrest attempts during stealth on DS
+		if difficulty_index == 8 then
+			if managers.groupai:state():whisper_mode() then
+				can_arrest = false
+			end
+		end
+
+		if not record or not attention_data.is_person then
+			if attention_data.settings.reaction == AIAttentionObject.REACT_ARREST and not can_arrest then
+				return AIAttentionObject.REACT_AIM
+			else
+				return attention_data.settings.reaction
+			end
+		end
+
+		local att_unit = attention_data.unit
+
+		if attention_data.is_deployable or data.t < record.arrest_timeout then
+			return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_COMBAT)
+		end
+
+		local visible = attention_data.verified
+
+		if record.status == "dead" then
+			return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_AIM)
+		elseif record.status == "disabled" then
+			if record.assault_t and record.assault_t - record.disabled_t > 0.6 then
+				return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_COMBAT)
+			else
+				return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_AIM)
+			end
+		elseif record.being_arrested then
+			return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_AIM)
+		elseif can_arrest and (not record.assault_t or att_unit:base():arrest_settings().aggression_timeout < data.t - record.assault_t) and record.arrest_timeout < data.t and not record.status then
+			local under_threat = nil
+
+			if attention_data.dis < 2000 then
+				for u_key, other_crim_rec in pairs(managers.groupai:state():all_criminals()) do
+					local other_crim_attention_info = data.detected_attention_objects[u_key]
+
+					if other_crim_attention_info and (other_crim_attention_info.is_deployable or other_crim_attention_info.verified and other_crim_rec.assault_t and data.t - other_crim_rec.assault_t < other_crim_rec.unit:base():arrest_settings().aggression_timeout) then
+						under_threat = true
+
+						break
+					end
+				end
+			end
+
+			if under_threat then
+				-- Nothing
+			elseif attention_data.dis < 2000 and visible then
+				return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_ARREST)
+			else
+				return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_AIM)
+			end
+		end
+
+		return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_COMBAT)
+	end	
+	
 end

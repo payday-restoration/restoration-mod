@@ -388,20 +388,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 
-		local data = self._smoke_grenades[id]
 		local job = Global.level_data and Global.level_data.level_id
 
 		if job == "haunted" then
+			self._smoke_grenades = nil --delete queue
+
 			return
-		end		
+		end
+
+		local data = self._smoke_grenades[id]
 
 		if data.flashbang then
 			if Network:is_client() then
 				return
 			end
 
-			local det_pos = data.detonate_pos + Vector3(0, 0, 5)
-			local ray_to = mvector3.copy(det_pos)
+			local det_pos = data.detonate_pos
+			local ray_to = mvector3.copy(det_pos) + math.UP * 5
 
 			mvector3.set_z(ray_to, ray_to.z - 50)
 
@@ -425,38 +428,34 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 
 			local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), det_pos, rotation)
-			flash_grenade:base():activate(data.shooter_pos or det_pos, data.duration)
+			local shoot_from_pos = data.shooter_pos or det_pos
+			flash_grenade:base():activate(shoot_from_pos, data.duration)
 
 			self._smoke_grenades[id] = nil
 		else
 			data.duration = data.duration == 0 and 15 or data.duration
-			local det_pos = data.detonate_pos + Vector3(0, 0, 5)
+			local det_pos = data.detonate_pos
+			local ray_to = mvector3.copy(det_pos) + math.UP * 5
 
-			if Network:is_server() then
-				local ray_to = mvector3.copy(det_pos) + Vector3(0, 0, 5)
+			mvector3.set_z(ray_to, ray_to.z - 50)
 
-				mvector3.set_z(ray_to, ray_to.z - 50)
+			local ground_ray = World:raycast("ray", det_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry, statics"))
 
-				local ground_ray = World:raycast("ray", det_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry, statics"))
-
-				if ground_ray then
-					det_pos = ground_ray.hit_position
-					mvector3.set_z(det_pos, det_pos.z + 3)
-					data.detonate_pos = det_pos
-				end
-
-				managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, true)
+			if ground_ray then
+				det_pos = ground_ray.hit_position
+				mvector3.set_z(det_pos, det_pos.z + 3)
+				data.detonate_pos = det_pos
 			end
 
 			local rotation = Rotation(math.random() * 360, 0, 0)
 			local smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), det_pos, rotation)
-			smoke_grenade:base():activate(data.shooter_pos or det_pos, data.duration)
+			local shoot_from_pos = data.shooter_pos or det_pos
+			smoke_grenade:base():activate(shoot_from_pos, data.duration)
+
+			managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, false)
 
 			data.grenade = smoke_grenade
-		end
-
-		if Network:is_server() then
-			managers.network:session():send_to_peers_synched("sync_smoke_grenade", data.detonate_pos, data.shooter_pos or data.detonate_pos, data.duration, data.flashbang and true or false)
+			self._smoke_end_t = data.duration
 		end
 	end
 
@@ -466,6 +465,23 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, true, flashbang)
 		self:detonate_world_smoke_grenade(id)
+	end
+
+	function GroupAIStateBase:sync_smoke_grenade_kill()
+		if self._smoke_grenades then
+			for id, data in pairs(self._smoke_grenades) do
+				if alive(data.grenade) and data.grenade:base() and data.grenade:base().preemptive_kill then
+					data.grenade:base():preemptive_kill()
+				end
+			end
+
+			self._smoke_grenades = {}
+			self._smoke_end_t = nil
+		end
+	end
+
+	function GroupAIStateBase:smoke_and_flash_grenades()
+		return self._smoke_grenades
 	end
 
 	function GroupAIStateBase:has_room_for_police_hostage()

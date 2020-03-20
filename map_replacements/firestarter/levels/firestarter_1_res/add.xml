@@ -405,6 +405,13 @@
 		<sequence_manager force="true" path="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" unload="true"/>
 		<unit force="true" path="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" unload="true"/>
 	</add>
+	<add path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" type="unit">
+		<material_config force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/mat_white" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<object force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+		<unit force="true" path="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" unload="true"/>
+	</add>
 	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_chair_single" type="unit">
 		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
 		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_chair_single" unload="true"/>
@@ -415,129 +422,19 @@
 		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_checktable" unload="true"/>
 		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_checktable" unload="true"/>
 	</add>
+	<add path="units/payday2/props/shadow_mullplan/nmh_mullplan_chair_01" type="unit">
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/nmh_mullplan_chair_01" unload="true"/>
+		<unit force="true" path="units/payday2/props/shadow_mullplan/nmh_mullplan_chair_01" unload="true"/>
+	</add>
 	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_round_small" type="unit">
 		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
 		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_round_small" unload="true"/>
 		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_round_small" unload="true"/>
 	</add>
 	<add path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" type="unit">
-		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
-		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" unload="true"/>
 		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" unload="true"/>
-	</add>
-	<add path="units/world/architecture/street/decals/ground/decal_ground_grate4" type="unit">
-		<material_config force="true" path="units/world/architecture/street/decals/ground/decal_ground_grates_manhole" unload="true"/>
-		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" unload="true"/>
-		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" unload="true"/>
-	</add>
-	<add path="units/world/architecture/street/decals/ground/decal_ground_manhole" type="unit">
-		<material_config force="true" path="units/world/architecture/street/decals/ground/decal_ground_grates_manhole" unload="true"/>
-		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_manhole" unload="true"/>
-		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_manhole" unload="true"/>
-	</add>
-	<add path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" type="unit">
-		<unit force="true" path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" unload="true"/>
-		<material_config force="true" path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" unload="true"/>
-		<animation force="true" path="anims/car/van_hox_move_away" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_hox_arrive_1_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_hox_arrive_1_2" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_hox_arrive_2" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_hox_arrive_3" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_hox_arrive_4" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_diamond_store_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_firestarter_1_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_firestarter_1_arrive_2" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_four_stores_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_a_bkwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_a_fwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_b_bkwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_b_fwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_c_bkwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_c_fwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_d_bkwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shoutout_d_fwd" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_2" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_3" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_4" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_5" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_6" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_7" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_8" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_9" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pal_arrive_10" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_red_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_jry_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_jry_arrive_2" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_cne_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pta_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pta_arrive_2" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pta_arrive_3" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_pta_arrive_4" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shr_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_shr_arrive_2" unload="true"/>
-		<animation force="true" path="anims/car/car_chw_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/car_chw_leave_1" unload="true"/>
-		<animation force="true" path="anims/car/car_chw_wheel_loop" unload="true"/>
-		<animation force="true" path="anims/car/car_chw_idle_loop" unload="true"/>
-		<animation force="true" path="anims/car/car_chw_move_fwd_15m" unload="true"/>
-		<animation force="true" path="anims/car/car_chw_move_bwd_15m" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_bor_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_spa_arrive_1" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_spa_exit_01" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_spa_arrive_02" unload="true"/>
-		<animation force="true" path="anims/car/car_swat_rvd_crash_01" unload="true"/>
-		<animation force="true" path="anims/car/car_swat_rvd_crash_02" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_rvd_day2_arrive_01" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_rvd_day2_arrive_02" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_rvd_day2_arrive_03" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_wwh_arrive_01" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_wwh_arrive_02" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_wwh_arrive_03" unload="true"/>
-		<animation force="true" path="anims/car/van_swat_brb_arrive_01" unload="true"/>
-		<animation force="true" path="anims/car/car_police_sah_arrive_03" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/flares/scene_flare_small_01" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/spotlight/scene_spotlight_01" unload="true"/>
-		<unit force="true" path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" unload="true"/>
-		<material_config force="true" path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" unload="true"/>
-		<unit force="true" path="units/payday2/vehicles/gen_vehicle_turret/spawn_turret_debris" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/gen_vehicle_turret/spawn_turret_debris" unload="true"/>
-		<unit force="true" path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_front" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_front" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/explosions/sentry_aftersmoke" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/explosions/sentry_damage_smoke" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/explosions/sentry_damage_smoke_med" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/explosions/sentry_damage_smoke_large" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/explosions/sparks/sparks_loop" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/weapons/big_762_auto" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/weapons/parts/combo_light_all" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/weapons/parts/distance_halo_big" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/weapons/shells/shell_556_lmg" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/weapons/shells/shell_link" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/explosions/sentry_explosion" unload="true"/>
-		<unit force="true" path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper" unload="true"/>
-		<object force="true" path="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper" unload="true"/>
-		<bnk force="true" path="soundbanks/weapon_swatturret" unload="true"/>
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
-		<animation_def force="true" path="anims/units/swat_van/swat_van" unload="true"/>
-		<animation_state_machine force="true" path="anims/units/swat_van/swat_van" unload="true"/>
-		<animation_states force="true" path="anims/units/swat_van/std" unload="true"/>
-		<animation_subset force="true" path="anims/units/swat_van/std" unload="true"/>
-		<physic_effect force="true" path="physic_effects/push_sphere" unload="true"/>
-	</add>
-	<add path="units/world/architecture/street/decals/ground/decal_ground_big_puddle" type="unit">
-		<material_config force="true" path="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_io" unload="true"/>
-		<object force="true" path="units/world/architecture/street/decals/ground/decal_ground_big_puddle" unload="true"/>
-		<unit force="true" path="units/world/architecture/street/decals/ground/decal_ground_big_puddle" unload="true"/>
-	</add>
-	<add path="units/payday2/props/ind_prop_alley_lamp_wall/ind_prop_alley_lamp_wall_il" type="unit">
-		<unit force="true" path="units/payday2/props/ind_prop_alley_lamp_wall/ind_prop_alley_lamp_wall_il" unload="true"/>
-		<object force="true" path="units/payday2/props/ind_prop_alley_lamp_wall/ind_prop_alley_lamp_wall_il" unload="true"/>
-		<material_config force="true" path="units/payday2/props/ind_prop_alley_lamp_wall/ind_prop_alley_lamp_wall_il" unload="true"/>
-		<effect force="true" load="true" path="effects/payday2/particles/flares/street_light_flare_small_orange" unload="true"/>
+		<object force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" unload="true"/>
+		<material_config force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank" unload="true"/>
 	</add>
 </table>

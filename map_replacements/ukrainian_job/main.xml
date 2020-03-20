@@ -32,7 +32,12 @@
 			<value_node value="levels/narratives/vlad/ukrainian_job/pc_only/pc_only"/>
 			<value_node value="levels/narratives/vlad/ukrainian_job/world/world"/>
 			<value_node value="levels/narratives/vlad/ukrainian_job/editor_only/editor_only"/>
+			<value_node value="levels/narratives/vlad/mallcrasher/world"/>
+			<value_node value="levels/instances/unique/kenaz/storage_rooms/world/world"/>
+			<value_node value="levels/narratives/dentist/hox/stage_2/world/world"/>
+			<value_node value="levels/instances/unique/chew/chew_swat_van/world/world"/>
 			<value_node value="levels/instances/unique/moon/crate_shoes/world/world"/>
+			<value_node value="levels/narratives/classics/dah/world/world"/>
 			<value_node value="levels/narratives/classics/dah/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>

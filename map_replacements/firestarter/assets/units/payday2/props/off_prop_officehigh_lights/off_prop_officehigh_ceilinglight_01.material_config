@@ -1,8 +1,0 @@
-<materials version="3">
-    <material name="ceilinglight_01" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
-        <diffuse_texture file="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01_df"/>
-        <self_illumination_texture file="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01_il"/>
-        <variable value="sun" type="scalar" name="il_multiplier"/>
-        <bump_normal_texture file="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01_nm"/>
-    </material>
-</materials>

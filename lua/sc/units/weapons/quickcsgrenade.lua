@@ -40,13 +40,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			sound_source:set_position(self._shoot_position)
 			sound_source:post_event("grenade_gas_npc_fire")
 		elseif self._state == 2 then
-			local bounce_point = Vector3()
-
-			mvector3.lerp(bounce_point, self._shoot_position, self._unit:position(), 0.65)
-
 			local sound_source = SoundDevice:create_source("grenade_bounce_source")
 
-			sound_source:set_position(bounce_point)
+			sound_source:set_position(self._unit:position())
 			sound_source:post_event("grenade_gas_bounce")
 		elseif self._state == 3 then
 			World:effect_manager():spawn({

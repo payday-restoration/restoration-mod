@@ -1,0 +1,20 @@
+<unit type="dah" slot="1">
+	<object file="units/pd2_dlc_dah/props/dah_prop_diamond_display_pillow/dah_prop_diamonds_02" />
+    <network sync="spawn" />
+  <dependencies>
+  	<depends_on effect="effects/payday2/particles/grab/grab_gold" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="interaction" class="CarryInteractionExt">
+      <var name="tweak_data" value="diamonds_pickup" />
+      <var name="_remove_on_interact" value="true" />
+      <var name="_global_event" value="pku_money" />
+    </extension>
+    <extension name="carry_data" class="CarryData">
+		<var name="_carry_id" value="diamonds_dah" />
+		<!-- <var name="tweak_value" value="bag_value" /> -->
+	</extension>
+  </extensions>
+</unit>

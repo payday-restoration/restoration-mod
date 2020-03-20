@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<unit type="vhc" slot="39">
+	<object file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" />
+	<network sync="spawn"/>
+	<anim_state_machine name="anims/units/swat_van/swat_van" />
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/flares/scene_flare_small_01" />
+		<depends_on effect="effects/payday2/particles/spotlight/scene_spotlight_01" />
+		<depends_on animation_def="anims/units/swat_van/swat_van"/>
+		<depends_on animation_state_machine="anims/units/swat_van/swat_van"/>
+		<depends_on unit="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+
+	<extensions>
+		<extension name="base" class="AnimatedVehicleBase">
+			<var name="_body_name" value="anim_body"/>
+		</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="sync_unit_data" class="SyncUnitData" />
+	</extensions>
+
+	<sounds>
+		<default_soundsource source="anim_body"/>
+		<soundsource name="snd" source="anim_body" />
+	</sounds>
+	
+</unit>

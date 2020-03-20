@@ -1,0 +1,48 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" orientation_object="rp_bry_prop_vault_door" />
+	<sequence_manager file="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" />
+	<animations>
+		<animation_group name="anim_grp_door" enabled="false">
+			<object name="anim_door" />
+		</animation_group>
+		<animation_group name="anim_grp_lock" enabled="false">
+			<object name="anim_lock" />
+		</animation_group>
+		<animation_group name="anim_grp_bolts" enabled="false">
+			<object name="anim_bolts_inner_01" />
+			<object name="anim_bolts_inner_02" />
+			<object name="anim_bolts_outer" />
+		</animation_group>
+		<animation_group name="anim_grp_wheel" enabled="false">
+			<object name="anim_wheel" />
+		</animation_group>
+		<animation_group name="anim_grp_pusher" enabled="false">
+			<object name="anim_pusher" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_bry_prop_vault_door" />
+			<object name="g_frame" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_door" enabled="true" template="animated">
+			<object name="anim_door" />
+			<object name="c_door" collision_type="box" />
+		</body>
+		<body name="body_pusher" enabled="false" template="animated">
+			<object name="anim_pusher" />
+			<object name="c_pusher" collision_type="box" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_lock" enabled="true" />
+		<object name="g_bolts_inner_01" enabled="true" />
+		<object name="g_bolts_inner_02" enabled="true" />
+		<object name="g_bolts_outer" enabled="true" />
+		<object name="g_handle_back" enabled="true" />
+		<object name="g_handle_front" enabled="true" />
+		<object name="g_door" enabled="true" />
+		<object name="g_bolts_static" enabled="true" />
+		<object name="g_frame" enabled="true" />
+	</graphics>
+</dynamic_object>

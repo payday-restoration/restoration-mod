@@ -1,0 +1,11 @@
+<unit type="bry" slot="1">
+	<object file="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

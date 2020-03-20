@@ -282,13 +282,6 @@
 	<texture path="levels/mods/firestarter_2_res/cube_lights/100766"/>
 	<texture path="levels/mods/firestarter_2_res/cube_lights/101696"/>
 	<texture path="levels/mods/firestarter_2_res/cube_lights/106025"/>
-	<add path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" type="unit">
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
-		<material_config force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-		<object force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-		<unit force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-	</add>
 	<add path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" type="unit">
 		<material_config force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
 		<object force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
@@ -363,16 +356,6 @@
 		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
 		<object force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
 		<unit force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
-	</add>
-	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" type="unit">
-		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
-		<object force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
-	</add>
-	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" type="unit">
-		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
-		<object force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
 	</add>
 	<add path="units/payday2/equipment/gen_interactable_pickup_harddrive/gen_interactable_pickup_harddrive" type="unit">
 		<material_config force="true" path="units/payday2/equipment/gen_interactable_pickup_harddrive/gen_interactable_pickup_harddrive" unload="true"/>
@@ -548,9 +531,6 @@
 		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
 	</add>
 	<add path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" type="unit">
-		<unit force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
-		<object force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
-		<material_config force="true" path="units/payday2/architecture/hcm/hcm_str_glass" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_df" unload="true"/>
 		<texture force="true" path="environments/cubemaps/cubemap_quick_diamond_ext" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_nm" unload="true"/>
@@ -558,5 +538,59 @@
 		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_glass_df" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/str/str_01_df" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/str/str_01_nm" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/hcm/hcm_str_glass" unload="true"/>
+		<object force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
+	</add>
+	<add path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" type="unit">
+		<material_config force="true" path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+		<object force="true" path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+		<unit force="true" path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+	</add>
+	<add path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" type="unit">
+		<material_config force="true" path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup" unload="true"/>
+		<object force="true" path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" unload="true"/>
+		<unit force="true" path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_rug" type="unit">
+		<material_config force="true" path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_armchair" unload="true"/>
+		<object force="true" path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_rug" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_rug" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" type="unit">
+		<effect force="true" load="true" path="effects/particles/dest/sparks_lamp_dest" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk_on" unload="true"/>
+		<object force="true" path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" type="unit">
+		<material_config force="true" path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01" unload="true"/>
+		<object force="true" path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
+		<unit force="true" path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" type="unit">
+		<material_config force="true" path="units/payday2/architecture/ind/ind_ext_garagedoor01_clean" unload="true"/>
+		<object force="true" path="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" unload="true"/>
+	</add>
+	<add path="units/world/props/oil_stains_decal/oil_stains_decal_03" type="unit">
+		<material_config force="true" path="units/world/props/oil_stains_decal/oil_stains_decal" unload="true"/>
+		<object force="true" path="units/world/props/oil_stains_decal/oil_stains_decal_03" unload="true"/>
+		<unit force="true" path="units/world/props/oil_stains_decal/oil_stains_decal_03" unload="true"/>
+	</add>
+	<add path="core/units/light_omni_seq/light_omni_seq" type="unit">
+		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
+		<object force="true" path="core/units/light_omni_seq/light_omni_seq" unload="true"/>
+		<sequence_manager force="true" path="core/units/light_omni_seq/light_omni_seq" unload="true"/>
+		<unit force="true" path="core/units/light_omni_seq/light_omni_seq" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" type="unit">
+		<unit force="true" path="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" unload="true"/>
+		<object force="true" path="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_berry/props/bry_prop_vault_door/bry_prop_vault_door" unload="true"/>
+		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
 	</add>
 </table>

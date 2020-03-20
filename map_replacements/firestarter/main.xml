@@ -33,8 +33,6 @@
 			<value_node value="levels/narratives/h_firestarter/stage_1/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/editor_only/editor_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
-			<value_node value="levels/narratives/classics/dinner/lights/lights"/>
-			<value_node value="levels/narratives/classics/run/world/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -71,11 +69,7 @@
 			<value_node value="levels/narratives/h_firestarter/stage_2/background/background"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/editor_only/editor_only"/>
-			<value_node value="levels/narratives/bain/cage/world"/>
-			<value_node value="levels/narratives/escapes/escape_cafe/temp/temp"/>
-			<value_node value="levels/narratives/armadillo/arm_und/pc_only/pc_only"/>
 			<value_node value="packages/addbdu"/>
-			<value_node value="levels/instances/unique/pbr/pbr_mountain_vault/world/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>

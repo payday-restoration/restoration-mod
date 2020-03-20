@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/architecture/street/decals/ground/decal_ground_grates_manhole" orientation_object="rp_street_decal_ground_manhole" />
+	<graphics>
+		<object name="g_manhole" enabled="true" instance_struct="world_tm"/>
+	</graphics>
+</dynamic_object> 

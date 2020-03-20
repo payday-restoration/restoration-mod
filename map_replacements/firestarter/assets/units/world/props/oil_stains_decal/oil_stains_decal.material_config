@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="oil_stains_decal" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/oil_stains_decal/oil_stains_decal_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+</materials>

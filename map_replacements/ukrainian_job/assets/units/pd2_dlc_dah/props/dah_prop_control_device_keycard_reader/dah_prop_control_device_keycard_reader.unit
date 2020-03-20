@@ -1,0 +1,15 @@
+<unit type="dah" slot="1">
+	<object file="units/pd2_dlc_dah/props/dah_prop_control_device_keycard_reader/dah_prop_control_device_keycard_reader" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="dah_panicroom_keycard" />
+			<var name="drop_in_sync_tweak_data" value="true" />
+		</extension>
+	</extensions>
+</unit>

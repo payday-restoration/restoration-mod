@@ -1,0 +1,101 @@
+<!-- If the animation finishes inside the viewable area and does not finish outside of the viewable area,
+	 you must animate the root point. Or else the animation will not sync at drop in.
+	 For eample the police car arrives and stop in the viewable area, here the root point shoul be animated.
+	 The heicopter arrives and leaves the the viewable area, here all_no_root is allowed. -->
+
+<xml>
+	<anim	name="anim_van_hox_move_away"				file="anims/car/van_hox_move_away"					blend_set="all"/>
+
+	<anim	name="anim_van_swat_hox_arrive_1_1"				file="anims/car/van_swat_hox_arrive_1_1"		blend_set="all"/>
+	<anim	name="anim_van_swat_hox_arrive_1_2"				file="anims/car/van_swat_hox_arrive_1_2"		blend_set="all"/>
+	<anim	name="anim_van_swat_hox_arrive_2"				file="anims/car/van_swat_hox_arrive_2"			blend_set="all"/>
+	<anim	name="anim_van_swat_hox_arrive_3"				file="anims/car/van_swat_hox_arrive_3"			blend_set="all"/>
+	<anim	name="anim_van_swat_hox_arrive_4"				file="anims/car/van_swat_hox_arrive_4"			blend_set="all"/>
+
+	<anim	name="anim_van_swat_diamond_store_1"		file="anims/car/van_swat_diamond_store_1"			blend_set="all"/>
+	<anim	name="anim_van_swat_firestarter_1_arrive_1"	file="anims/car/van_swat_firestarter_1_arrive_1"	blend_set="all"/>
+	<anim	name="anim_van_swat_firestarter_1_arrive_2"	file="anims/car/van_swat_firestarter_1_arrive_2"	blend_set="all"/>
+	<anim	name="anim_van_swat_four_stores_arrive_1"	file="anims/car/van_swat_four_stores_arrive_1"		blend_set="all"/>
+
+	<anim	name="anim_van_swat_shoutout_a_bkwd"		file="anims/car/van_swat_shoutout_a_bkwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_a_fwd"			file="anims/car/van_swat_shoutout_a_fwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_b_bkwd"		file="anims/car/van_swat_shoutout_b_bkwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_b_fwd"			file="anims/car/van_swat_shoutout_b_fwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_c_bkwd"		file="anims/car/van_swat_shoutout_c_bkwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_c_fwd"			file="anims/car/van_swat_shoutout_c_fwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_d_bkwd"		file="anims/car/van_swat_shoutout_d_bkwd"			blend_set="all"/>
+	<anim	name="anim_van_swat_shoutout_d_fwd"			file="anims/car/van_swat_shoutout_d_fwd"			blend_set="all"/>
+
+	
+	<anim	name="anim_van_swat_pal_arrive_1"			file="anims/car/van_swat_pal_arrive_1"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_2"			file="anims/car/van_swat_pal_arrive_2"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_3"			file="anims/car/van_swat_pal_arrive_3"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_4"			file="anims/car/van_swat_pal_arrive_4"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_5"			file="anims/car/van_swat_pal_arrive_5"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_6"			file="anims/car/van_swat_pal_arrive_6"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_7"			file="anims/car/van_swat_pal_arrive_7"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_8"			file="anims/car/van_swat_pal_arrive_8"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_9"			file="anims/car/van_swat_pal_arrive_9"				blend_set="all"/>
+	<anim	name="anim_van_swat_pal_arrive_10"			file="anims/car/van_swat_pal_arrive_10"				blend_set="all"/>
+	
+
+	<anim	name="anim_van_swat_red_arrive_1"			file="anims/car/van_swat_red_arrive_1"				blend_set="all"/>
+	
+	<anim	name="anim_van_swat_jry_arrive_1"			file="anims/car/van_swat_jry_arrive_1"				blend_set="all"/>
+	<anim	name="anim_van_swat_jry_arrive_2"			file="anims/car/van_swat_jry_arrive_2"				blend_set="all"/>
+	
+	
+	<anim	name="anim_van_swat_cne_arrive_1"			file="anims/car/van_swat_cne_arrive_1"				blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_swat_pta_arrive_1"			file="anims/car/van_swat_pta_arrive_1"				blend_set="all"/>
+	<anim	name="anim_van_swat_pta_arrive_2"			file="anims/car/van_swat_pta_arrive_2"				blend_set="all"/>
+	<anim	name="anim_van_swat_pta_arrive_3"			file="anims/car/van_swat_pta_arrive_3"				blend_set="all"/>
+	<anim	name="anim_van_swat_pta_arrive_4"			file="anims/car/van_swat_pta_arrive_4"				blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_swat_shr_arrive_1"			file="anims/car/van_swat_shr_arrive_1"				blend_set="all"/>
+	<anim	name="anim_van_swat_shr_arrive_2"			file="anims/car/van_swat_shr_arrive_2"				blend_set="all"/>
+	
+
+	
+	<anim	name="anim_car_chw_arrive_1"		file="anims/car/car_chw_arrive_1"				blend_set="all"/>
+	<anim	name="anim_car_chw_leave_1"			file="anims/car/car_chw_leave_1"				blend_set="all"/>
+	<anim	name="anim_car_chw_wheel_loop"		file="anims/car/car_chw_wheel_loop"				blend_set="wheels"/>
+	<anim	name="anim_car_chw_idle_loop"		file="anims/car/car_chw_idle_loop"				blend_set="all"/>
+	<anim	name="anim_car_chw_move_fwd_15m"	file="anims/car/car_chw_move_fwd_15m"			blend_set="all"/>
+	<anim	name="anim_car_chw_move_bwd_15m"	file="anims/car/car_chw_move_bwd_15m"			blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_swat_bor_arrive_1"	file="anims/car/van_swat_bor_arrive_1"		blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_swat_spa_arrive_1"	file="anims/car/van_swat_spa_arrive_1"		blend_set="all"/>
+	<anim	name="anim_van_swat_spa_exit_1"	file="anims/car/van_swat_spa_exit_01"		blend_set="all"/>
+	<anim	name="anim_van_swat_spa_arrive_2"	file="anims/car/van_swat_spa_arrive_02"		blend_set="all"/>
+	
+	
+
+	<anim	name="anim_car_rvd_crash_01"		file="anims/car/car_swat_rvd_crash_01"	blend_set="all"/>
+	<anim	name="anim_car_rvd_crash_02"		file="anims/car/car_swat_rvd_crash_02"	blend_set="all"/>
+
+	<anim	name="anim_van_swat_rvd_day2_arrive_01"			file="anims/car/van_swat_rvd_day2_arrive_01"	blend_set="all"/>
+	<anim	name="anim_van_swat_rvd_day2_arrive_02"			file="anims/car/van_swat_rvd_day2_arrive_02"	blend_set="all"/>
+	<anim	name="anim_van_swat_rvd_day2_arrive_03"			file="anims/car/van_swat_rvd_day2_arrive_03"	blend_set="all"/>
+	
+	
+	<anim	name="van_swat_wwh_arrive_01"			file="anims/car/van_swat_wwh_arrive_01"	blend_set="all"/>
+	<anim	name="van_swat_wwh_arrive_02"			file="anims/car/van_swat_wwh_arrive_02"	blend_set="all"/>
+	<anim	name="van_swat_wwh_arrive_03"			file="anims/car/van_swat_wwh_arrive_03"	blend_set="all"/>
+	
+	
+	<anim	name="van_swat_brb_arrive_01"			file="anims/car/van_swat_brb_arrive_01"	blend_set="all"/>
+	
+	
+	<anim	name="van_swat_sah_arrive_01"			file="anims/car/car_police_sah_arrive_03"	blend_set="all"/>
+	
+</xml>

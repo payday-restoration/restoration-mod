@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel orientation_object="rp_diamond_stand_05_diamond" materials="units/world/props/diamondheist_diamond_pickups/sapphire_pickup" />
+	<sequence_manager file="units/world/props/diamond_stand/diamond_stand_05_diamond" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_diamond_stand_05_diamond" />
+            <object enabled="true" name="c_box" collision_type="box" padding="-2"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="glass_unbreakable" static="true"/>
+	
+    <graphics>
+        <object enabled="true" name="g_sapphire_pickup" instance_struct="world_tm"/>
+		<object enabled="true" name="g_sapphire_inside" instance_struct="world_tm"/>
+		<object enabled="true" name="g_sapphire_shimmer" instance_struct="world_tm"/>
+		<object enabled="true" name="g_sapphire_glow" instance_struct="world_tm"/>				
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,22 @@
+<unit type="dah" slot="1">
+	<object file="units/pd2_dlc_dah/props/dah_props_diamond_stands/dah_prop_diamond_stand_01" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on unit="units/world/props/diamond_stand/diamond_stand_05_diamond" />
+	</dependencies>
+	<extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension class="UnitDamage" name="damage"/>
+		<extension name="spawn_manager" class="ManageSpawnedUnits" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="cut_glass" />
+			<var name="_interact_object" value="interact"/>
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_dah_prop_diamond_stand_01"/>
+		<soundsource name="snd" source="a_cage" />
+	</sounds>
+</unit>

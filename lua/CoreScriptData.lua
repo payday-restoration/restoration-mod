@@ -252,6 +252,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			elseif level_id == "firestarter_2_res" then 
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 				--"sky_orientation/rotation":"278.53564453125",
+			elseif level_id == "firestarter_3_res" then 
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+				--"sky_orientation/rotation":"278.53564453125",
 			elseif level_id == "firestarter_1_res" then 
 				--if rnd == 1 or rnd == 2 then
 				--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
@@ -281,11 +284,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", fu
 	if Global.load_level == true then 
 		if Global.game_settings.level_id == "jackal_surface_tension" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/platinum.custom_xml", "custom_xml", "core/environments/default", "environment")
-		end
-		
-		if Global.game_settings.level_id == "firestarter_3_res" then
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-		end			
+		end		
 	end
 end)
 

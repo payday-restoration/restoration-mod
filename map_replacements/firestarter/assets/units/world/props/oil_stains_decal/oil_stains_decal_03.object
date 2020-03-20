@@ -1,0 +1,13 @@
+<dynamic_object>
+    <diesel orientation_object="rp_oil_stains_decal_03" materials="units/world/props/oil_stains_decal/oil_stains_decal" />
+    
+<bodies>
+	<body name="editor_body" enabled="true" template="editor">
+      <object name="rp_oil_stains_decal_03" enabled="true" />
+      <object name="g_oil_stains_decal_03" enabled="true" collision_type="box" />
+    </body>
+	</bodies>
+	<graphics>
+        <object enabled="true" name="g_oil_stains_decal_03" />
+    </graphics>
+</dynamic_object>

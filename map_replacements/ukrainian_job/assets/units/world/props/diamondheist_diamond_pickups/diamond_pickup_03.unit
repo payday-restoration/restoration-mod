@@ -1,0 +1,19 @@
+<unit type="dia" slot="1" >
+    <object file="units/world/props/diamondheist_diamond_pickups/diamond_pickup_03" />
+	<network sync="spawn"/>
+    <sounds/>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		
+		<extension name="base" class="SmallLootBase">
+			<var name="small_loot" value="diamondheist_vault_diamond" />
+		</extension>
+		
+		<extension name="interaction" class="SmallLootInteractionExt">
+			<var name="tweak_data" value="diamond_pickup_axis" />
+			<var name="_global_event" value="pku_jewelry_instant" />
+		</extension>
+    </extensions>
+    <dependencies/>
+</unit>

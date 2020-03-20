@@ -1,0 +1,27 @@
+<materials version="3">
+    <material decal_material="glass_unbreakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED" version="2" name="diamond_pickups">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/dah_prop_sapphire_df"/>
+        <opacity_texture file="units/world/props/diamondheist_diamond_pickups/gems_op"/>
+        <reflection_texture file="environments/cubemaps/cubemap_mirror" type="cubemap"/>
+        <variable type="vector3" name="fresnel_settings" value="1.039999961853 0.46999999880791 0"/>
+    </material>
+    <material unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:INSTANCED" version="2" decal_material="glass_unbreakable" name="glow">
+        <variable type="scalar" name="contour_opacity" value="1"/>
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/dah_prop_sapphire_back_df"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+    </material>
+    <material decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:INSTANCED" version="2" name="diamond_inside">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/gems_df"/>
+        <opacity_texture file="units/world/props/diamondheist_diamond_pickups/gems_op"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material decal_material="glass_unbreakable" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:INSTANCED" version="2" name="caustics">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/gems_df"/>
+        <variable type="scalar" name="intensity" value="identity"/>
+    </material>
+    <material decal_material="glass_unbreakable" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:INSTANCED:VIEW_ANGLE_FALLOFF_OP" version="2" name="shimmer">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/dah_prop_sapphire_back_df"/>
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <variable type="scalar" name="falloff_exp" value="1"/>
+    </material>	
+</materials>

@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_inter_hack_computer_b" materials="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_b" />
+	<sequence_manager file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_b" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_gen_inter_hack_computer_b" />
+            <object collision_type="box" name="c_bottom_box" />
+            <object collision_type="box" name="c_screen_box" />
+        </body>
+    </bodies>
+    <graphics>
+        <object name="g_off"            enabled="true"/>
+        <object name="g_on_v1"          enabled="false"/>
+        <object name="g_on_v2"          enabled="false"/>
+        <object name="g_on_v3"          enabled="false"/>
+		<object name="g_on_v4"          enabled="false"/>
+		<object name="g_computerscreen" enabled="true"/>
+    </graphics>
+</dynamic_object>

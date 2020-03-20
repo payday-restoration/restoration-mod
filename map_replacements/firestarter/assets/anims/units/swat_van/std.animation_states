@@ -1,0 +1,426 @@
+<xml>
+	<state name="std" type="template_state" segment="base">
+		<default blend="0"/>
+
+		<to	name="van_hox_move_away"						redirect="std/drive/van_hox_move_away"/>
+
+		<to	name="van_swat_hox_arrive_1_1"						redirect="std/drive/van_swat_hox_arrive_1_1"/>
+		<to	name="van_swat_hox_arrive_1_2"						redirect="std/drive/van_swat_hox_arrive_1_2"/>
+		<to	name="van_swat_hox_arrive_2"						redirect="std/drive/van_swat_hox_arrive_2"/>
+		<to	name="van_swat_hox_arrive_3"						redirect="std/drive/van_swat_hox_arrive_3"/>
+		<to	name="van_swat_hox_arrive_4"						redirect="std/drive/van_swat_hox_arrive_4"/>
+
+		<to	name="van_swat_diamond_store_1"					redirect="std/drive/van_swat_diamond_store_1"/>
+		<to	name="van_swat_firestarter_1_arrive_1"			redirect="std/drive/van_swat_firestarter_1_arrive_1"/>
+		<to	name="van_swat_firestarter_1_arrive_2"			redirect="std/drive/van_swat_firestarter_1_arrive_2"/>
+		<to	name="van_swat_four_stores_arrive_1"			redirect="std/drive/van_swat_four_stores_arrive_1"/>
+
+		<to	name="van_swat_shoutout_a_bkwd"					redirect="std/drive/van_swat_shoutout_a_bkwd"/>
+		<to	name="van_swat_shoutout_a_fwd"					redirect="std/drive/van_swat_shoutout_a_fwd"/>
+		<to	name="van_swat_shoutout_b_bkwd"					redirect="std/drive/van_swat_shoutout_b_bkwd"/>
+		<to	name="van_swat_shoutout_b_fwd"					redirect="std/drive/van_swat_shoutout_b_fwd"/>
+		<to	name="van_swat_shoutout_c_bkwd"					redirect="std/drive/van_swat_shoutout_c_bkwd"/>
+		<to	name="van_swat_shoutout_c_fwd"					redirect="std/drive/van_swat_shoutout_c_fwd"/>
+		<to	name="van_swat_shoutout_d_bkwd"					redirect="std/drive/van_swat_shoutout_d_bkwd"/>
+		<to	name="van_swat_shoutout_d_fwd"					redirect="std/drive/van_swat_shoutout_d_fwd"/>
+
+		
+		<to	name="van_swat_pal_arrive_1"					redirect="std/drive/van_swat_pal_arrive_1"/>
+		<to	name="van_swat_pal_arrive_2"					redirect="std/drive/van_swat_pal_arrive_2"/>
+		<to	name="van_swat_pal_arrive_3"					redirect="std/drive/van_swat_pal_arrive_3"/>
+		<to	name="van_swat_pal_arrive_4"					redirect="std/drive/van_swat_pal_arrive_4"/>
+		<to	name="van_swat_pal_arrive_5"					redirect="std/drive/van_swat_pal_arrive_5"/>
+		<to	name="van_swat_pal_arrive_6"					redirect="std/drive/van_swat_pal_arrive_6"/>
+		<to	name="van_swat_pal_arrive_7"					redirect="std/drive/van_swat_pal_arrive_7"/>
+		<to	name="van_swat_pal_arrive_8"					redirect="std/drive/van_swat_pal_arrive_8"/>
+		<to	name="van_swat_pal_arrive_9"					redirect="std/drive/van_swat_pal_arrive_9"/>
+		<to	name="van_swat_pal_arrive_10"					redirect="std/drive/van_swat_pal_arrive_10"/>
+		
+		<to	name="van_swat_red_arrive_1"					redirect="std/drive/van_swat_red_arrive_1"/>
+
+		<to	name="van_swat_jry_arrive_1"					redirect="std/drive/van_swat_jry_arrive_1"/>
+		<to	name="van_swat_jry_arrive_2"					redirect="std/drive/van_swat_jry_arrive_2"/>
+
+		
+		<to	name="van_swat_cne_arrive_1"					redirect="std/drive/van_swat_cne_arrive_1"/>
+		
+
+		
+		<to	name="van_swat_pta_arrive_1"					redirect="std/drive/van_swat_pta_arrive_1"/>
+		<to	name="van_swat_pta_arrive_2"					redirect="std/drive/van_swat_pta_arrive_2"/>
+		<to	name="van_swat_pta_arrive_3"					redirect="std/drive/van_swat_pta_arrive_3"/>
+		<to	name="van_swat_pta_arrive_4"					redirect="std/drive/van_swat_pta_arrive_4"/>
+		
+
+		
+		<to	name="van_swat_shr_arrive_1"					redirect="std/drive/van_swat_shr_arrive_1"/>
+		<to	name="van_swat_shr_arrive_2"					redirect="std/drive/van_swat_shr_arrive_2"/>
+		
+
+		
+		<to	name="car_chw_arrive_1"						redirect="std/drive/car_chw_arrive_1"/>
+		<to	name="car_chw_leave_1"						redirect="std/drive/car_chw_leave_1"/>
+		<to	name="car_chw_wheel_loop"					redirect="std/drive/car_chw_wheel_loop"/>
+		<to	name="car_chw_move_fwd_15m"					redirect="std/drive/car_chw_move_fwd_15m"/>
+		<to	name="car_chw_move_bwd_15m"					redirect="std/drive/car_chw_move_bwd_15m"/>
+		
+
+		
+		<to	name="van_swat_bor_arrive_1"				redirect="std/drive/van_swat_bor_arrive_1"/>
+		
+
+		
+		<to	name="van_swat_spa_arrive_1"				redirect="std/drive/van_swat_spa_arrive_1"/>
+		<to	name="van_swat_spa_exit_1"					redirect="std/drive/van_swat_spa_exit_1"/>
+		<to	name="van_swat_spa_arrive_2"				redirect="std/drive/van_swat_spa_arrive_2"/>
+		
+		
+
+		<to	name="car_rvd_crash_01"						redirect="std/drive/car_rvd_crash_1"/>
+		<to	name="car_rvd_crash_02"						redirect="std/drive/car_rvd_crash_2"/>
+
+		<to	name="van_swat_rvd_day2_arrive_01"						redirect="std/drive/van_swat_rvd_day2_arrive_1"/>
+		<to	name="van_swat_rvd_day2_arrive_02"						redirect="std/drive/van_swat_rvd_day2_arrive_2"/>
+		<to	name="van_swat_rvd_day2_arrive_03"						redirect="std/drive/van_swat_rvd_day2_arrive_3"/>
+		
+		
+		<to	name="car_wwh_arrive_01"						redirect="std/drive/car_wwh_arrive_01"/>
+		<to	name="car_wwh_arrive_02"						redirect="std/drive/car_wwh_arrive_02"/>
+		<to	name="car_wwh_arrive_03"						redirect="std/drive/car_wwh_arrive_03"/>
+		
+		
+		<to	name="car_brb_arrive_01"						redirect="std/drive/car_brb_arrive_01"/>
+		
+		
+		<to	name="van_swat_sah_arrive_01"						redirect="std/drive/car_sah_arrive_01"/>
+		
+	</state>
+
+	<state name="std/empty" type="emptyloop" segment="base">
+		<keys>
+			<key at="9" callback="anim_clbk_empty_full_blend" class_name="base"/>
+			<key at="exit" callback="anim_clbk_empty_exit" class_name="base"/>
+		</keys>
+	</state>
+
+	<state name="std/drive" type="template_state" segment="base">
+		<keys>
+			<key at="enter" callback="anim_clbk_animated_driving" class_name="base" param1="true"/>
+			<key at="exit" callback="anim_clbk_animated_driving" class_name="base" param1="false"/>
+		</keys>
+	</state>
+
+	<!-- HOX -->
+	<state name="std/drive/van_hox_move_away" type="once" segment="base">
+		<anim name="anim_van_hox_move_away"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_hox_arrive_1_1" type="once" segment="base">
+		<anim name="anim_van_swat_hox_arrive_1_1"/>
+		<keys>
+			<key at="enter" callback="anim_clbk_set_sequence_block_state" class_name="damage" param1="true"/>
+			<key at="exit" callback="anim_clbk_set_sequence_block_state" class_name="damage" param1="false"/>
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_hox_arrive_1_2" type="once" segment="base">
+		<anim name="anim_van_swat_hox_arrive_1_2"/>
+		<keys>
+			<key at="enter" callback="anim_clbk_set_sequence_block_state" class_name="damage" param1="true"/>
+			<key at="exit" callback="anim_clbk_set_sequence_block_state" class_name="damage" param1="false"/>
+		</keys>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_hox_arrive_2" type="once" segment="base">
+		<anim name="anim_van_swat_hox_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_hox_arrive_3" type="once" segment="base">
+		<anim name="anim_van_swat_hox_arrive_3"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_hox_arrive_4" type="once" segment="base">
+		<anim name="anim_van_swat_hox_arrive_4"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- DIA -->
+	<state name="std/drive/van_swat_diamond_store_1" type="once" segment="base">
+		<anim name="anim_van_swat_diamond_store_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_firestarter_1_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_firestarter_1_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_firestarter_1_arrive_2" type="once" segment="base">
+		<anim name="anim_van_swat_firestarter_1_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_four_stores_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_four_stores_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_a_bkwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_a_bkwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_a_fwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_a_fwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_b_bkwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_b_bkwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_b_fwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_b_fwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_c_bkwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_c_bkwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_c_fwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_c_fwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_d_bkwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_d_bkwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shoutout_d_fwd" type="once" segment="base">
+		<anim name="anim_van_swat_shoutout_d_fwd"/>
+		<exit name="std/empty"/>
+	</state>
+
+	
+	<state name="std/drive/van_swat_pal_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_2" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_3" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_3"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_4" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_4"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_5" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_5"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_6" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_6"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_7" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_7"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_8" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_8"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_9" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_9"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pal_arrive_10" type="once" segment="base">
+		<anim name="anim_van_swat_pal_arrive_10"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	<!-- RED -->
+	<state name="std/drive/van_swat_red_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_red_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<!-- JRY -->
+	<state name="std/drive/van_swat_jry_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_jry_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_jry_arrive_2" type="once" segment="base">
+		<anim name="anim_van_swat_jry_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	
+	<state name="std/drive/van_swat_cne_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_cne_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	
+	<state name="std/drive/van_swat_pta_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_pta_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pta_arrive_2" type="once" segment="base">
+		<anim name="anim_van_swat_pta_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pta_arrive_3" type="once" segment="base">
+		<anim name="anim_van_swat_pta_arrive_3"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_pta_arrive_4" type="once" segment="base">
+		<anim name="anim_van_swat_pta_arrive_4"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	
+	<state name="std/drive/van_swat_shr_arrive_1" type="once" segment="base">
+		<anim name="anim_van_swat_shr_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_shr_arrive_2" type="once" segment="base">
+		<anim name="anim_van_swat_shr_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	
+	<state name="std/drive/car_chw_arrive_1" type="once" segment="base">
+		<anim name="anim_car_chw_arrive_1"/>
+		<exit name="std/drive/car_chw_idle_loop"/>
+	</state>
+
+	<state name="std/drive/car_chw_leave_1" type="once" segment="base">
+		<anim name="anim_car_chw_leave_1"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/car_chw_wheel_loop" type="loop" segment="wheels">
+		<anim name="anim_car_chw_wheel_loop"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/car_chw_idle_loop" type="loop" segment="base" speed="0.25" >
+		<anim name="anim_car_chw_idle_loop"/>
+	</state>
+
+	<state name="std/drive/car_chw_move_fwd_15m" type="once" segment="base" >
+		<anim name="anim_car_chw_move_fwd_15m"/>
+		<exit name="std/drive/car_chw_idle_loop"/>
+	</state>
+
+	<state name="std/drive/car_chw_move_bwd_15m" type="once" segment="base" >
+		<anim name="anim_car_chw_move_bwd_15m"/>
+		<exit name="std/drive/car_chw_idle_loop"/>
+	</state>
+	
+
+	
+	<state name="std/drive/van_swat_bor_arrive_1" type="once" segment="base" >
+		<anim name="anim_van_swat_bor_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/van_swat_spa_arrive_1" type="once" segment="base" >
+		<anim name="anim_van_swat_spa_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/van_swat_spa_exit_1" type="once" segment="base" >
+		<anim name="anim_van_swat_spa_exit_1"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/van_swat_spa_arrive_2" type="once" segment="base" >
+		<anim name="anim_van_swat_spa_arrive_2"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/car_rvd_crash_1" type="once" segment="base" >
+		<anim name="anim_car_rvd_crash_01"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/car_rvd_crash_2" type="once" segment="base" >
+		<anim name="anim_car_rvd_crash_02"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/van_swat_rvd_day2_arrive_1" type="once" segment="base" >
+		<anim name="anim_van_swat_rvd_day2_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/van_swat_rvd_day2_arrive_2" type="once" segment="base" >
+		<anim name="anim_van_swat_rvd_day2_arrive_02"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/van_swat_rvd_day2_arrive_3" type="once" segment="base" >
+		<anim name="anim_van_swat_rvd_day2_arrive_03"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+	
+	<state name="std/drive/car_wwh_arrive_01" type="once" segment="base" >
+		<anim name="van_swat_wwh_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/car_wwh_arrive_02" type="once" segment="base" >
+		<anim name="van_swat_wwh_arrive_02"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/car_wwh_arrive_03" type="once" segment="base" >
+		<anim name="van_swat_wwh_arrive_03"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/car_brb_arrive_01" type="once" segment="base" >
+		<anim name="van_swat_brb_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/car_sah_arrive_01" type="once" segment="base" >
+		<anim name="van_swat_sah_arrive_01"/>
+		<exit name="std/empty"/>
+	</state>
+	
+</xml>

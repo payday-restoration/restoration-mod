@@ -1,0 +1,37 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_b" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on gui="guis/timer_gui" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="attention" class="AIAttentionObject" />
+		<extension name="base" class="Drill">
+			<var name="_use_effect" value="false" />
+			<var name="is_hacking_device" value="true" />
+		</extension>
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="hack_suburbia_outline" />
+		</extension>
+		<extension name="timer_gui" class="TimerGui">
+			<var name="_gui_object" value="timer_gui" />
+			<var name="_jammed_tweak_data" value="hack_suburbia_jammed_y" />
+			<var name="_start_event" value="hacking_device" />
+			<var name="_jam_event" value="hacking_device_jam" />
+			<var name="_resume_event" value="hacking_device_resume" />
+			<var name="_done_event" value="hacking_device_end" />
+			<var name="_power_off_event" value="hacking_device_power_off" />
+			<var name="_can_jam" value="false" />
+			<var name="_gui_start" value="prop_timer_hack_ipad_gui_start" />
+			<var name="_gui_working" value="prop_timer_hack_ipad_gui_working" />
+			<var name="_gui_done" value="prop_timer_hack_ipad_gui_done" />
+			<var name="_gui_malfunction" value="prop_timer_hack_ipad_gui_malfunction" />
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_gen_inter_hack_computer_b"/>
+	</sounds>
+</unit>

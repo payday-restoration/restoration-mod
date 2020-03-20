@@ -3,6 +3,46 @@
 	<search>
 		<network/>
 		<rpc/>
+		<message name="sync_smoke_grenade"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_smoke_grenade_kill"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_cs_grenade"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_cs_grenade_kill"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
 		<message name="sync_underbarrel_switch"/>
 	</search>
 	<target mode="attributes">

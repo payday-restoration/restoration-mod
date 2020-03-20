@@ -13380,14 +13380,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.damage.explosion_damage_mul = 0.8
 		self.shield.immune_to_concussion = true
 		
-		self.security.no_arrest = true
-		self.gensec.no_arrest = true
-		self.bolivian_indoors.no_arrest = true
-		if job == "kosugi" or job == "dark" then
-			self.city_swat.no_arrest = true
-		else
-			self.city_swat.no_arrest = false
-		end
 		self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 		self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2
 		self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	

@@ -205,6 +205,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						else
 							if visibility_chk and focus_enemy.criminal_record and focus_enemy.criminal_record.assault_t and data.t - focus_enemy.criminal_record.assault_t < 4 then
 								shoot = true
+							elseif not data.unit:base():has_tag("law") and visibility_chk and focus_enemy.dis <= firing_range or data.unit:base():has_tag("law") and visibility_chk and focus_enemy.aimed_at and focus_enemy.dis <= 1500 then
+								shoot = true					
 							end
 						end
 

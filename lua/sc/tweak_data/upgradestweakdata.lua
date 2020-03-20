@@ -1374,8 +1374,8 @@ function UpgradesTweakData:_init_pd2_values()
 		works_with_armor_kit = true,
 		tick_time = 1,
 		total_ticks = 6,
-		max_stacks = 6,
-		stacking_cooldown = 0.4,
+		max_stacks = 5,
+		stacking_cooldown = 0.5,
 		add_stack_sources = {
 			bullet = true,
 			explosion = true,

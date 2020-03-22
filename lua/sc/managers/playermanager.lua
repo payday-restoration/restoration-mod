@@ -287,9 +287,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._messiah_charges = self._max_messiah_charges
 		end
 
-		if self:has_category_upgrade("player", "infinite_messiah") then
-			self._messiah_kills_required = 1
-		end
+		self._messiah_kills_required = 1
 	end
 
 	function PlayerManager:use_messiah_charge()

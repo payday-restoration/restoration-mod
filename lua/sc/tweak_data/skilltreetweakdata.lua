@@ -1851,8 +1851,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_infinite_messiah",
-						"player_additional_lives_1"
+						"player_infinite_messiah"
 					},
 					cost = self.costs.hightierpro
 				}

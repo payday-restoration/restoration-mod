@@ -15,8 +15,6 @@ function restoration:Init()
 		"election_day_3", --Election Day 3
 		"election_day_3_skip1", --Election Day 3 (Skipped 1)
 		"election_day_3_skip2", --Election Day 3 (Skipped 2)
-		"gallery", --art gallery
-		"framing_frame_1", --art gallery but ff
 		"firestarter_2", --firestarter day 2
 		"four_stores", --Gee, I wonder what this could be.
 		"dinner", --Slaughterhouse
@@ -56,6 +54,8 @@ function restoration:Init()
 		"nightclub", --and Autumn stay off the dance floor
 		"branchbank", --well the trees are orange
 		"family", --diamond store
+		"framing_frame_1", --art gallery but ff
+		"gallery", --art gallery
 		"jewelry_store", --Jewelry Store
 		"ukrainian_job", --Ukrainian Job
 		"framing_frame_2", --Powerbox simulator

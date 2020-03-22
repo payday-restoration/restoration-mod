@@ -189,6 +189,7 @@
 		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<hook file="sc/managers/mission/elementspawngrenade.lua" source_file="lib/managers/mission/elementspawngrenade"/>
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
+		<hook file="sc/units/weapons/flashgrenadeunitdamage.lua" source_file="lib/units/weapons/grenades/flashgrenadeunitdamage"/>
 		<hook file="sc/units/weapons/quickflashgrenade.lua" source_file="lib/units/weapons/grenades/quickflashgrenade"/>
 		<hook file="sc/units/enemies/actions/upper_body/medicactionheal.lua" source_file="lib/units/enemies/medic/actions/upper_body/medicactionheal"/>
 		<hook file="sc/tweak_data/hudiconstweakdata.lua" source_file="lib/tweak_data/hudiconstweakdata"/>

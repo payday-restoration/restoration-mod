@@ -47687,10 +47687,60 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.parts.wpn_fps_upg_o_cqb.stats = {
 				value = 5
 			}
-			self.parts.wpn_fps_ass_s552_g_sniper.stats = {
-				value = 6,
-				spread = 1
+			self.parts.wpn_fps_pis_pl14_body_custom.stats = {
+				value = 3,
+				recoil = 1,
+				concealment = -1
 			}
+			self.parts.wpn_fps_upg_ak_s_polymerstock.stats = {
+				value = 6,
+				spread = 1,
+				spread_moving = -3,
+				recoil = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_amcar_fg_covers_base.stats = {
+				recoil = 1,
+				concealment =1,
+				value = 4
+			}
+			self.parts.wpn_fps_shot_beck_pump_swat.stats = {
+				value = 1,
+				recoil = 1,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_upg_ak_g_titanium.stats = {
+				recoil = -1,
+				concealment = 2,
+				value = 1
+			}									
+			self.parts.wpn_fps_pis_czech_sl_chrome.stats = {
+				value = 6
+			}
+			self.parts.wpn_fps_pis_lebman_m_extended.stats = {
+				value = 3,
+				extra_ammo = 5,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts.wpn_fps_pis_beer_s_std.stats = {
+				value = 7,
+				recoil = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_pis_lebman_body_classic.stats = {
+				value = 6,
+				recoil = 2,
+				concealment = -3
+			}			
+			self.parts.wpn_fps_pis_lebman_b_chrome.stats = { --quatruple quitraple platinum
+				value = 6
+			}
+			self.parts.wpn_fps_ass_s552_g_sniper.stats = {
+				value = 2,
+				spread = 1
+			}									
 			self.parts.wpn_fps_ass_s552_s_sniper.stats = {
 				value = 1,
 				recoil = 2,

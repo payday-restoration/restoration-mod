@@ -10030,7 +10030,45 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			value = 1,
 			reload = 20
 		}
+	end
+
+	if self.lebman then --Gambyt's Vendetta 38 Pistol
+		self.lebman.desc_id = nil
+		self.lebman.tactical_reload = 1		
+		self.lebman.use_data.selection_index = 2
+		self.lebman.clip_AMMO_MAX = 14		
+		self.lebman.AMMO_MAX = 120
+		self.lebman.AMMO_PICKUP = self:_pickup_chance(120, 1)
+		self.lebman.fire_mode_data.fire_rate = 0.1
+		self.lebman.auto.fire_rate = 0.1
+		self.lebman.spread.standing = 3
+		self.lebman.spread.crouching = 2
+		self.lebman.spread.steelsight = 1
+		self.lebman.spread.moving_standing = 4
+		self.lebman.spread.moving_crouching = 3
+		self.lebman.spread.moving_steelsight = 2
+		self.lebman.kick.standing = self.new_m4.kick.standing
+		self.lebman.kick.crouching = self.new_m4.kick.standing
+		self.lebman.kick.steelsight = self.new_m4.kick.standing
+		self.lebman.stats = {
+			damage = 50,
+			spread = 15,
+			recoil = 18,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 27,
+			suppression = 9,
+			alert_size = 9,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.lebman.panic_suppression_chance = 0.0
+		--Disabled
+		self.x_lebman.use_data.selection_index = 4			
 	end			
+	
 
 	if self.mk18s then --Gambyt's MK18 Specialist
 		self.mk18s.use_data.selection_index = 1

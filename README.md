@@ -81,6 +81,8 @@ Baddy: fixing the cap on security 7, giving us the sexico HRT and UMP dudes, Rus
 
 Hoxi: for ungodly numbers of fixes and general code improvements. You the man!
 
+Luffy: For improving the HUD/UI code and adding more HUD/UI options
+
 Nardo: Allowing us to include "First-person Stealth Suit Fixes".
 
 KLEITON and Tom Blaine: taking on the huge task of translating the steam guide into Russian.

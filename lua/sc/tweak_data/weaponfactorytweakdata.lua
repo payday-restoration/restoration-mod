@@ -84,8 +84,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				suppression = 12,
 				alert_size = 12,
-				spread = 1,
-				recoil = -1,
+				spread = 2,
+				recoil = -2,
 				concealment = -2
 			},
 			perks = {"silencer"},
@@ -110,8 +110,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				suppression = 11,
 				alert_size = 11,
-				recoil = 1,
-				spread = -1,
+				recoil = -1,
+				spread = 1,
 				concealment = -1
 			},
 			perks = {"silencer"},
@@ -280,8 +280,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				suppression = -2,
 				alert_size = -2,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_upg_ns_ass_smg_stubby = {
@@ -318,7 +317,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_upg_ns_shot_shark = {
@@ -447,8 +446,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_upg_vg_ass_smg_stubby = {
@@ -463,7 +461,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_upg_vg_ass_smg_afg = {
@@ -1419,7 +1417,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				recoil = -2,
 				spread = 2,
-				concealment = -4
+				concealment = -2
 			},
 			custom_stats = {
 				damage_near_mul = 200,
@@ -1889,7 +1887,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_fg_jp/wpn_fps_upg_fg_jp",
 			stats = {
 				value = 5,
-				concealment = -4,
+				concealment = -2,
 				spread = 2,
 				recoil = -2
 			},
@@ -1904,7 +1902,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_fg_smr/wpn_fps_upg_fg_smr",
 			stats = {
 				value = 5,
-				concealment = -1,
 				spread = -1,
 				recoil = 1
 			},
@@ -1948,7 +1945,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_ak_fg_tapco/wpn_fps_upg_ak_fg_tapco",
 			stats = {
 				value = 5,
-				concealment = -1,
 				recoil = 1,
 				spread = -1
 			},
@@ -1963,7 +1959,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_fg_midwest/wpn_fps_upg_fg_midwest",
 			stats = {
 				value = 5,
-				concealment = -2,
+				concealment = -1,
 				recoil = -1,
 				spread = 1
 			},
@@ -2018,7 +2014,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = 2,
 				recoil = -2,
-				concealment = -4
+				concealment = -2
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -2040,7 +2036,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			forbids = {
 				"wpn_upg_ak_g_standard"
@@ -2057,8 +2053,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				recoil = 1,
-				concealment = -1
+				recoil = 1
 			},
 			forbids = {
 				"wpn_upg_ak_g_standard"
@@ -2100,8 +2095,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				suppression = -4,
 				alert_size = -4,
 				spread = -2,
-				recoil = 2,
-				concealment = -2
+				recoil = 2
 			},
 			dlc = "gage_pack_jobs"
 		}
@@ -2117,7 +2111,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				recoil = -2,
 				spread = 2,
-				concealment = -4
+				concealment = -2
 			},
 			dlc = "gage_pack_jobs"
 		}
@@ -2148,7 +2142,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -2241,7 +2235,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_m4_s_crane/wpn_fps_upg_m4_s_crane",
 			stats = {
 				value = 2,
-				concealment = -2,
 				recoil = 2,
 				spread = -2
 			},
@@ -2263,7 +2256,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 6,
 				recoil = -2,
-				concealment = -4,
+				concealment = -2,
 				spread = 2
 			},
 			custom_stats = {
@@ -2597,7 +2590,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				recoil = -1
+				recoil = -1,
+				concealment = -1
 			},
 			forbids = {
 				"wpn_fps_m4_upper_reciever_round_vanilla",
@@ -2629,7 +2623,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 4,			
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_m4_uupg_b_short = {
@@ -2716,7 +2710,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
 			stats = {
 				value = 5,
-				concealment = -2,
+				concealment = -1,
 				recoil = -1,
 				spread = 1
 			}
@@ -2824,8 +2818,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				recoil = 1,
-				concealment = -1
+				recoil = 1
 			}
 		}
 		self.parts.wpn_fps_upg_m4_g_sniper = {
@@ -2843,7 +2836,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 6,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -2901,7 +2894,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				concealment = 2,
-				reload = 2,
+				reload = 3,
 				extra_ammo = -10
 			}
 		}
@@ -2919,8 +2912,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			},
 			adds_type = {
 				"stock_adapter"
@@ -2944,7 +2936,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 3,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -3673,7 +3665,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 1,
 					spread = 2,
 					recoil = -2,
-					concealment = -4
+					concealment = -2
 				}
 			}
 		}
@@ -3797,8 +3789,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			},
 			forbids = {
 				"wpn_fps_addon_ris"
@@ -3988,8 +3979,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = -1,
-				recoil = 1,
-				concealment = -1
+				recoil = 1
 			},
 			forbids = {
 				"wpn_fps_ak_extra_ris"
@@ -4009,8 +3999,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				spread = -2,
-				recoil = 2,
-				concealment = -2
+				recoil = 2
 			},
 			forbids = {
 				"wpn_fps_addon_ris",
@@ -4241,9 +4230,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_psl",
 			stats = {
 				value = 6,
-				spread = 2,
-				recoil = -2,
-				concealment = -4
+				spread = 3,
+				recoil = -3,
+				concealment = -3
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -5501,8 +5490,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 7,
 				spread = -1,
-				recoil = 1,
-				concealment = -1
+				recoil = 1
 			},
 			forbids = {
 				"wpn_fps_addon_ris"
@@ -5523,7 +5511,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 7,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_ass_ak5_s_ak5a = {
@@ -5547,8 +5535,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				spread = -1,
-				recoil = 1,
-				concealment = -1
+				recoil = 1
 			},
 			adds = {
 				"wpn_fps_ass_ak5_s_ak5a"
@@ -5574,7 +5561,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 7,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_ass_ak5_b_std.third_unit = "units/payday2/weapons/wpn_third_ass_ak5_pts/wpn_third_ass_ak5_b_std"
@@ -5740,7 +5727,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 6,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_aug_b_medium = {
@@ -5798,7 +5785,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 7,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			override = {
 				wpn_fps_aug_b_short = {
@@ -6027,8 +6014,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			},
 			forbids = {
 				"wpn_fps_ass_g36_b_short"
@@ -6050,8 +6036,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			},
 			adds = {
 				"wpn_fps_ass_g36_body_standard",
@@ -6075,7 +6060,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 6,
 				recoil = -1,
 				spread = 1,
-				concealment = -2
+				concealment = -1
 			},
 			adds = {
 				"wpn_fps_ass_g36_body_sl8"
@@ -10651,7 +10636,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			dlc = "armored_transport"
 		}
@@ -10733,7 +10718,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			forbids = {
 				"wpn_fps_addon_ris"
@@ -14916,7 +14901,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 0,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			forbids = {
 				"wpn_fps_shot_r870_ris_special"
@@ -15335,8 +15320,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 0,
 				spread = 2,
-				recoil = -2,
-				concealment = -4
+				recoil = -1,
+				concealment = -8
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
@@ -15383,7 +15368,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 0,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
@@ -15411,7 +15396,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 0,
 				recoil = -1,
 				spread = 1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
@@ -15442,7 +15427,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 0,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
@@ -15471,8 +15456,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_galil_pts/wpn_fps_ass_galil_s_sniper",
 			stats = {
 				value = 0,
-				recoil = -1,
-				spread = 2,
+				recoil = -3,
+				spread = 3,
 				concealment = -3
 			},
 			texture_bundle_folder = "gage_pack_assault",
@@ -15669,7 +15654,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			override = {
 				wpn_fps_upg_ns_ass_smg_large = {a_obj = "a_ns_s"},
@@ -15712,7 +15697,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				recoil = -2,
 				spread = 2,
-				concealment = -4
+				concealment = -2
 			},
 			override = {
 				wpn_fps_upg_ns_ass_smg_large = {a_obj = "a_ns_s"},
@@ -15737,7 +15722,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				alert_size = 13,
 				spread = 2,
 				recoil = -2,
-				concealment = -4
+				concealment = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -15789,9 +15774,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_g_retro",
 			stats = {
 				value = 2,
-				spread = -1,
-				recoil = 1,
-				concealment = -1
+				concealment = -1,
+				recoil = 1
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
@@ -16896,7 +16880,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc",
-			stats = {value = 1, spread = 1, recoil = -1},
+			stats = {value = 1, spread = 1, recoil = -1, concealment = -1},
 			internal_part = true,
 			custom_stats = {
 				damage_near_mul = 100,
@@ -20236,7 +20220,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "character_pack_clover",
 			dlc = "character_pack_clover"
@@ -20256,7 +20240,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "character_pack_clover",
 			dlc = "character_pack_clover"
@@ -20305,7 +20289,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_l85a2_g_worn",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_g_worn",
-			stats = {value = 1, recoil = 1, spread = -1, concealment = -1},
+			stats = {value = 1, recoil = 1, spread = -1},
 			texture_bundle_folder = "character_pack_clover",
 			dlc = "character_pack_clover"
 		}
@@ -20519,7 +20503,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				alert_size = 13,
 				spread = 2,
 				recoil = -2,
-				concealment = -4
+				concealment = -2
 			},
 			texture_bundle_folder = "character_pack_dragan",
 			dlc = "character_pack_dragan",
@@ -20563,7 +20547,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "character_pack_dragan",
 			dlc = "character_pack_dragan",
@@ -20960,7 +20944,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 2,
 				recoil = -2,
-				concealment = -4
+				concealment = -2
 			},
 			sound_switch = {suppressed = "regular_b"},
 			texture_bundle_folder = "dlc_akm4",
@@ -21072,7 +21056,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				recoil = -1,
 				spread = 1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -21358,7 +21342,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 2,
 				recoil = -2,
-				concealment = -4
+				concealment = -2
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -22361,7 +22345,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				concealment = -1,
-				spread = -1,
 				recoil = 1
 			},
 			texture_bundle_folder = "dlc_akm4",
@@ -22376,7 +22359,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m4_fg_moe/wpn_fps_upg_ass_m4_fg_moe",
 			stats = {
 				value = 5,
-				concealment = -4,
+				concealment = -2,
 				spread = 2,
 				recoil = -2
 			},
@@ -22419,7 +22402,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 4,
 				recoil = -1,
 				spread = 1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -22434,7 +22417,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -2,
-				spread = 2
+				spread = 2,
+				concealment = -2
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -22498,7 +22482,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				recoil = -1
+				recoil = -1,
+				concealment = -1
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -22529,8 +22514,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 2,
-				spread = -2,
-				concealment = -2
+				spread = -2
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -22552,7 +22536,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 2,
 				recoil = -2,
-				concealment = -4,
+				concealment = -2,
 			},
 			sound_switch = {suppressed = "regular_b"},
 			is_a_unlockable = true,
@@ -23408,9 +23392,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_aug_body_f90/wpn_fps_aug_body_f90",
 			stats = {
 				value = 1,
-				spread = -1,
-				recoil = 1,
-				concealment = -1
+				concealment = -1,
+				recoil = 1
 			},
 			adds = {
 				"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
@@ -23757,7 +23740,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				recoil = -2,
 				spread = 2,
-				concealment = -4
+				concealment = -2
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
@@ -29223,7 +29206,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			dlc = "opera",
 			texture_bundle_folder = "opera"
@@ -31323,7 +31306,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				spread = 1,
 				recoil = -1,
-				concealment = -2
+				concealment = -1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -32021,7 +32004,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 6,
 				recoil = -2,
-				concealment = -4,
+				concealment = -2,
 				spread = 2
 			},
 			custom_stats = {
@@ -35470,8 +35453,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				recoil = 1,
-				concealment = -1
+				recoil = 1
 			}
 		}
 		self.parts.wpn_fps_ass_corgi_body_upper = {
@@ -36038,7 +36020,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				wpn_fps_upg_m4_m_straight = {stats = {
 					value = 2,
 					concealment = 2,
-					reload = 2,
+					reload = 3,
 					extra_ammo = -20
 				}}
 			},
@@ -36435,8 +36417,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				wpn_fps_upg_m4_m_straight = {stats = {
 					value = 1,
 					extra_ammo = -20,
-					reload = 2,
-					concealment = 1
+					reload = 3,
+					concealment = 2
 				}},
 				wpn_fps_upg_m4_m_drum = {stats = {
 					value = 9,

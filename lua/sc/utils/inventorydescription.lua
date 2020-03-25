@@ -261,8 +261,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value, 0) + 1]
 		local skill_swap_speed = (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier - base_stats.swap_speed.value - mods_stats.swap_speed.value
 		
-		--Floating point shenanigans with silencer skills adding like 0.005 swap speed and shit.
-		if skill_swap_speed >= -0.025 then
+		if skill_swap_speed >= 0 then
 			return false, 0
 		else
 			log(skill_swap_speed)

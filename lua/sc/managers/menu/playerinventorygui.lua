@@ -1,4 +1,8 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	local function format_round(num, round_value)
+		return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
+	end
+	
 	function PlayerInventoryGui:_get_armor_stats(name)
 		local base_stats = {}
 		local mods_stats = {}
@@ -268,6 +272,66 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 				if column.name == "name" then
 					self._player_stats_texts[stat.name].name:set_text(managers.localization:to_upper_text("bm_menu_" .. stat.name))
+				end
+			end
+		end
+	end
+
+	function PlayerInventoryGui:_update_info_weapon(name)
+		local player_loadout_data = managers.blackmarket:player_loadout_data()
+		local category = name == "primary" and "primaries" or "secondaries"
+		local equipped_item = managers.blackmarket:equipped_item(category)
+		local equipped_slot = managers.blackmarket:equipped_weapon_slot(category)
+		local base_stats, mods_stats, skill_stats = WeaponDescription._get_stats(equipped_item.weapon_id, category, equipped_slot)
+		local text_string = string.format("##%s##  %s", player_loadout_data[name].info_text, managers.experience:cash_string(managers.money:get_weapon_slot_sell_value(category, equipped_slot)))
+
+		self:set_info_text(text_string, {
+			player_loadout_data[name].info_text_color or tweak_data.screen_colors.text,
+			add_colors_to_text_object = true
+		})
+
+		local tweak_stats = tweak_data.weapon.stats
+		local modifier_stats = tweak_data.weapon[equipped_item.weapon_id].stats_modifiers
+
+		for _, stat in ipairs(self._stats_shown) do
+			self._stats_texts[stat.name].name:set_text(utf8.to_upper(managers.localization:text("bm_menu_" .. stat.name)))
+
+			local value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
+			local base = base_stats[stat.name].value
+
+			self._stats_texts[stat.name].total:set_alpha(1)
+			self._stats_texts[stat.name].total:set_text(format_round(value, stat.round_value))
+			self._stats_texts[stat.name].base:set_text(format_round(base, stat.round_value))
+			self._stats_texts[stat.name].mods:set_text(mods_stats[stat.name].value == 0 and "" or (mods_stats[stat.name].value > 0 and "+" or "") .. format_round(mods_stats[stat.name].value, stat.round_value))
+			self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) or "")
+
+			if base < value then
+				self._stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
+			elseif value < base then
+				self._stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
+			else
+				self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
+			end
+
+			if stat.percent then
+				if math.round(value) >= 100 then
+					self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stat_maxed)
+				end
+			elseif stat.index then --Sets concealment text to purple when maxed.
+					if base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value >= #tweak_stats[stat.name] then
+						self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stat_maxed)
+					end
+			elseif tweak_stats[stat.name] then
+				local without_skill = math.round(base_stats[stat.name].value + mods_stats[stat.name].value)
+				local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
+
+				if stat.offset then
+					local offset = math.min(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
+					max_stat = max_stat - offset
+				end
+
+				if without_skill >= max_stat then
+					self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stat_maxed)
 				end
 			end
 		end

@@ -2173,13 +2173,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						percent = false,
 						name = "suppression",
 						offset = true
+					},
+					{
+						inverted = true,
+						name = "reload"
+					},
+					{
+						inverted = true,
+						name = "swap_speed"
 					}
 				}
-
-				table.insert(self._stats_shown, {
-					inverted = true,
-					name = "reload"
-				})
 
 				self._stats_panel = self._weapon_info_panel:panel({
 					y = 58,

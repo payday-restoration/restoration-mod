@@ -1225,4 +1225,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._ext_network:send("reload_weapon", empty_reload, speed_multiplier)
 		end
 	end
+
+	function PlayerStandard:_get_swap_speed_multiplier()
+		local multiplier = 1
+		local weapon_tweak_data = self._equipped_unit:base():weapon_tweak_data()
+		multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
+		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
+		multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
+
+		for _, category in ipairs(weapon_tweak_data.categories) do
+			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", category == "pistol" and tweak_data.pistol_swap_bonus or 1)
+		end
+
+		multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)
+
+		if managers.player:has_activate_temporary_upgrade("temporary", "swap_weapon_faster") then
+			multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "swap_weapon_faster", 1)
+		end
+
+		multiplier = managers.modifiers:modify_value("PlayerStandard:GetSwapSpeedMultiplier", multiplier)
+		return multiplier
+	end
 end

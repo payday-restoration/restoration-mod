@@ -3060,6 +3060,41 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			1.55,
 			1.6
 		}
+
+		--Weapon swap speed multiplier from concealment.
+		self.stats.mobility = {
+			0.5,
+			0.525,
+			0.55,
+			0.575,
+			0.6,
+			0.625,
+			0.65,
+			0.675,
+			0.7,
+			0.725, 
+			0.75,
+			0.775,
+			0.8,
+			0.825,
+			0.85,
+			0.875,
+			0.9,
+			0.925,
+			0.95,
+			0.975,
+			1.0,
+			1.025,
+			1.05,
+			1.075,
+			1.1,
+			1.125,
+			1.15,
+			1.175,
+			1.2,
+			1.225,
+			1.25
+		}
 		
 		self.stats.extra_ammo = {}
 		for i = -100, 1500, 1 do

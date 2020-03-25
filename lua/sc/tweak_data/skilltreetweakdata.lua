@@ -99,7 +99,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_rot_speed_multiplier",
 		"sentry_gun_extra_ammo_multiplier_1",	
 		"sentry_gun_silent",
-		"pistol_swap_speed_multiplier_1",
 		"player_tape_loop_duration_1",
 		"player_civ_calming_alerts"
 	}

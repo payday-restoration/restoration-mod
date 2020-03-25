@@ -18,6 +18,9 @@
 		near_angle = 60
 	}
 
+	--Pistol Swap Speed Multiplier
+	tweak_data.pistol_swap_bonus = 1.5
+
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 60

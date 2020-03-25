@@ -272,6 +272,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 	end
 
+	--Returns the weapon's current concealment stat.
+	function RaycastWeaponBase:get_concealment()
+		local result = self._current_concealment or self._concealment
+		if result then
+			return math.max(result, 0)
+		else
+			log("Error: Missing concealment information")
+			return 20
+		end
+		
+	end
+
 	--Le stats face
 	local old_update_stats_values = NewRaycastWeaponBase._update_stats_values	
 	function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
@@ -312,6 +324,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		
 		if not self:is_npc() then
+			local weapon = {
+				factory_id = self._factory_id,
+				blueprint = self._blueprint
+			}
+			self._current_concealment = managers.blackmarket:calculate_weapon_concealment(weapon) + managers.blackmarket:get_silencer_concealment_modifiers(weapon)
+
 			self._burst_rounds_remaining = 0
 			self._has_auto = not self._locked_fire_mode and (self:can_toggle_firemode() or self:weapon_tweak_data().FIRE_MODE == "auto")
 			

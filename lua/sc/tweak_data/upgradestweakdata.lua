@@ -1027,7 +1027,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Optical Illusions
 				self.values.player.silencer_concealment_penalty_decrease = {1}
-				self.values.player.silencer_concealment_increase = {1}
+				self.values.player.silencer_concealment_increase = {1, 2}
 
 				--The Professional
 				self.values.weapon.silencer_spread_index_addend = {1}
@@ -2173,6 +2173,24 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary",
 			upgrade = "damage_speed_multiplier",
 			value = 2
+		}
+	}
+	self.definitions.player_silencer_concealment_increase_1 = {
+		name_id = "menu_player_silencer_concealment_increase_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "silencer_concealment_increase",
+			category = "player"
+		}
+	}
+	self.definitions.player_silencer_concealment_increase_2 = {
+		name_id = "menu_player_silencer_concealment_increase_2",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "silencer_concealment_increase",
+			category = "player"
 		}
 	}
 	self.definitions.player_real_health_damage_reduction_1 = {

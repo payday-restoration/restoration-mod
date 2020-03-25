@@ -264,7 +264,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if skill_swap_speed >= 0 then
 			return false, 0
 		else
-			log(skill_swap_speed)
 			return true, skill_swap_speed
 		end
 	end

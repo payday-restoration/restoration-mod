@@ -1071,7 +1071,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",
-		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nReduces the concealment penalty of suppressors by ##1.##\n\nACE: ##$pro##\nYou gain ##1## concealment for each suppressed weapon you equip.",																								
+		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nYou gain an additional ##1## concealment for each suppressed weapon you equip.\n\nACE: ##$pro##\nYou gain an additional ##1## concealment for each suppressed weapon you equip.",																								
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",

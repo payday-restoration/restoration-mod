@@ -1515,13 +1515,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 10},
 				[1] = {
 					upgrades = {
-						"player_silencer_concealment_penalty_decrease_1"
+						"player_silencer_concealment_increase_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_silencer_concealment_increase_1"
+						"player_silencer_concealment_increase_2"
 					},
 					cost = self.costs.hightierpro
 				}

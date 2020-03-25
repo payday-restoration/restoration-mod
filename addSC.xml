@@ -1927,7 +1927,10 @@
 	<!--Jarey_ zeals shit below-->
 	<!--GREEN-->
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/bulldozer_2_df" force="true"/>	
-	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_contour" force="true"/>		
 	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
 	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
@@ -1958,6 +1961,9 @@
 	<!--BLACK-->
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/bulldozer_3_df" force="true"/>	
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>	
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_contour" force="true"/>	
 	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>		
 	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
@@ -1986,6 +1992,9 @@
 	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>	
 
 	<!--SKULL-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_contour" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_df" force="true"/>	
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
 	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>
@@ -2000,14 +2009,20 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_contour" force="true"/>
 	
-	<!--swat-->
+	<!--zeal swat-->
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>	
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>	
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_contour" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_df" force="true"/>	
 	
-	<!--taser-->
+	<!--zeal taser-->
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_contour" force="true"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk" force="true" load="true"/>
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" force="true"/>	
 	
@@ -2019,7 +2034,77 @@
 	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>	
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>
 	<!--Fixed acc LOD Jaaaaareeeyyy >:( !!!!! -->	
-	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>	
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>
+
+	<!--swat dozers-->
+	<object path="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1" force="true"/>	
+	<object path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>	
+	<object path="units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3" force="true"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1_contour" force="true"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>	
+	<material_config path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2_contour" force="true"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3" force="true"/>	
+	<material_config path="units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3_contour" force="true"/>
+	
+	<!--swat shield 2-->
+	<unit path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"  load="true"/>
+	<unit path="units/payday2/characters/ene_shield_2/ene_shield_2_husk" force="true" load="true"/>
+	<object path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>	
+	<model path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>	
+	<material_config path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>	
+	<material_config path="units/payday2/characters/ene_shield_2/ene_shield_2_contour" force="true"/>
+	
+	<!--swat taser-->
+	<unit path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"  load="true"/>
+	<unit path="units/payday2/characters/ene_tazer_1/ene_tazer_1_husk" force="true" load="true"/>
+	<object path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>	
+	<model path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_tazer_1/ene_tazer_1_contour" force="true"/>
+	
+	<!--gensec heavy g36-->
+	<unit path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"  load="true"/>
+	<unit path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" force="true" load="true"/>
+	<object path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>	
+	<model path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>	
+	<material_config path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>	
+	<material_config path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour" force="true"/>
+	
+	<!--fbi heavy 1-->
+	<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"  load="true"/>
+	<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk" force="true" load="true"/>
+	<object path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>	
+	<model path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_contour" force="true"/>
+	
+	<!--swat heavy 1-->
+	<unit path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"  load="true"/>
+	<unit path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" force="true" load="true"/>
+	<object path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>	
+	<model path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>	
+	<material_config path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1_contour" force="true"/>
+	
+	<!--fbi swat 1-->
+	<model path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>	
+	
+	<!--fbi swat 2-->
+	<model path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>	
+	
+	<!--vanilla unit texture overrides-->	
+	<texture path="units/payday2/characters/shared_textures/genshill_helm_df"/>
+	<texture path="units/payday2/characters/shared_textures/genshill_helm_nm"/>
+	<texture path="units/payday2/characters/shared_textures/police_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/spook_heavy_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/swat_body_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/swat_fbi_body_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/helmets_atlas_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/helmets_atlas_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
+	<texture path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>
 
 	<!--bravo dmr-->
 	<object path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />

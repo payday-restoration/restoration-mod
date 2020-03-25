@@ -1,0 +1,22 @@
+<materials version="3" group="ene_tazer_1">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df"/>
+	</material>
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df"/>
+	</material>
+	<material name="mtr_ene_acc_swat_helmet_lod2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

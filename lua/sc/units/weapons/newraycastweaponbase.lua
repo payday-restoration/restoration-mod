@@ -81,6 +81,35 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	NewRaycastWeaponBase.IDSTRING_SINGLE = Idstring("single")
 	NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 
+	function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
+		local mul = 1
+
+		if not current_state then
+			return mul
+		end
+
+		local pm = managers.player
+
+		--Will do this in a more proper way some other time.
+		if current_state:in_steelsight() and self:is_category("assault_rifle", "smg", "snp") --[[and self:is_single_shot()]] then
+			mul = mul + 1 - pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
+		end
+
+		if current_state:in_steelsight() then
+			for _, category in ipairs(self:categories()) do
+				mul = mul + 1 - managers.player:upgrade_value(category, "steelsight_accuracy_inc", 1)
+			end
+		end
+
+		if current_state._moving then
+			mul = mul + 1 - pm:upgrade_value("player", "weapon_movement_stability", 1)
+		end
+
+		mul = mul + 1 - pm:get_property("desperado", 1)
+
+		return self:_convert_add_to_mul(mul)
+	end
+
 	function NewRaycastWeaponBase:_get_spread(user_unit)
 		local current_state = user_unit:movement()._current_state
 		
@@ -123,7 +152,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		spread_x = spread_x * spread_mult
 		spread_y = spread_y * spread_mult
-		
+
 		return spread_x, spread_y
 	end
 	

@@ -865,7 +865,7 @@ function UpgradesTweakData:_init_pd2_values()
 				--Rifleman
 				self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.5}
 				self.values.weapon.enter_steelsight_speed_multiplier = {1.25}
-				self.values.player.single_shot_accuracy_inc = {0.9}
+				self.values.player.single_shot_accuracy_inc = {0.75}
 				
 				--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {

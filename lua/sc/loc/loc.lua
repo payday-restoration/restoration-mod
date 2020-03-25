@@ -936,7 +936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Rifleman
 			["menu_rifleman_sc"] = "Rifleman",
-			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##25%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##10%## accuracy bonus while aiming down sights with all SMG, Assault Rifles and Sniper Rifles fired in single shot mode.",		
+			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##25%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##25%## accuracy bonus while aiming down sights with all SMGs, Assault Rifles and Sniper Rifles.",		
 
 			--Aggressive Reload
 			["menu_engineering_beta_sc"] = "Aggressive Reload",

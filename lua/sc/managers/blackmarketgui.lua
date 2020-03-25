@@ -31,7 +31,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	local tiny_font_size = tweak_data.menu.pd2_tiny_font_size
 
 	local function format_round(num, round_value)
-		return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
+		return round_value and tostring(math.round(num)) or string.format("%.2f", num):gsub("%.?0+$", "")
 	end
 
 	function BlackMarketGui:choose_weapon_buy_callback(data)

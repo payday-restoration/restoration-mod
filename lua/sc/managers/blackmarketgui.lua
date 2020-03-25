@@ -3573,6 +3573,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			local hide_equip = mod_stats.equip.name == mod_stats.chosen.name
 			local remove_stats = {}
 
+			--Minimal but hacky way to add swap_speed to weapon mod stat changes.
+			--Checks if the weapon stats with the mod (and no skills) change, and if they do, displays the difference.
+			--Would write a better solution, but I hate this file.
+			--Also, enjoy those rounded values.
+			if unaltered_total_mods_stats.swap_speed.value ~= total_mods_stats.swap_speed.value then
+				mod_stats.chosen.swap_speed = (total_base_stats.swap_speed.value + total_mods_stats.swap_speed.value)
+					- (unaltered_total_base_stats.swap_speed.value + unaltered_total_mods_stats.swap_speed.value)
+			end
+
 			if self._slot_data.removes then
 				for _, part_id in ipairs(self._slot_data.removes) do
 					local part_stats = WeaponDescription.get_stats_for_mod(part_id, name, category, slot)

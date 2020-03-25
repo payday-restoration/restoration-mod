@@ -1705,8 +1705,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 		
-		if threat_pos and my_data.engage_mode and data.attention_obj then
-			local enemyseeninlast2secs = data.attention_obj and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < math.random(0.5, 2)
+		if threat_pos and my_data.engage_mode and data.attention_obj and data.attention_obj.unit and data.attention_obj.unit:movement() then
+			local enemyseeninlast2secs = data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < math.random(0.5, 2)
 			
 			if want_to_take_cover then
 				if not enemyseeninlast2secs then

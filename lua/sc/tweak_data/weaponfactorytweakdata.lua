@@ -2824,8 +2824,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				recoil = -1,
-				concealment = 1
+				recoil = 1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_upg_m4_g_sniper = {
@@ -32086,7 +32086,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_tti_g_grippy",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_g_grippy",
-			stats = {value = 1, recoil = 1, spread = -1, concealment = -1},
+			stats = {value = 1, recoil = -1, concealment = 1},
 			dlc = "spa",
 			texture_bundle_folder = "spa"
 		}

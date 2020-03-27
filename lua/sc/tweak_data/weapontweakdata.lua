@@ -13965,37 +13965,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}	
 	end
 
-	if self.czauto then --Alcat's CZ Auto
-		self.czauto.has_description = false
-		self.czauto.tactical_reload = 1		
-		self.czauto.AMMO_MAX = 180
-		self.czauto.AMMO_PICKUP = self:_pickup_chance(180, 1)
-		self.czauto.spread.standing = 3
-		self.czauto.spread.crouching = 2
-		self.czauto.spread.steelsight = 1
-		self.czauto.spread.moving_standing = 4
-		self.czauto.spread.moving_crouching = 3
-		self.czauto.spread.moving_steelsight = 2
-		self.czauto.kick.standing = self.glock_17.kick.standing
-		self.czauto.kick.crouching = self.glock_17.kick.standing
-		self.czauto.kick.steelsight = self.glock_17.kick.standing
-		self.czauto.stats = {
-			damage = 30,
-			spread = 14,
-			recoil = 20,
-			spread_moving = 9,
-			zoom = 3,
-			concealment = 28,
-			suppression = 10,
-			alert_size = 10,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.czauto.panic_suppression_chance = 0.0
-	end
-
 	if self.k1a7 then --Alcat's K1A7
 		self.k1a7.use_data.selection_index = 2														
 		self.k1a7.categories = {

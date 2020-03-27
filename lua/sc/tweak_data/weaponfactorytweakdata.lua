@@ -337,8 +337,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				suppression = -2,
 				alert_size = -2,
 				recoil = 1,
-				spread = -1,
-				concealment = -1
+				spread = -1
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -3570,9 +3569,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_fg_railed",
 			stats = {
 				value = 7,
-				spread_moving = -2,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			forbids = {
 				"wpn_fps_addon_ris"
@@ -3598,9 +3596,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_fg_vietnam",
 			stats = {
 				value = 10,
-				spread_moving = 1,
-				recoil = 0,
-				concealment = 2
+				spread = -1,
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_m16_s_solid = {
@@ -4273,9 +4270,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_s_skfoldable",
 			stats = {
 				value = 3,
-				spread_moving = 2,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			adds = {
 				"wpn_upg_ak_g_standard"
@@ -4941,7 +4937,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_akmsu_fg_rail",
 			a_obj = "a_fg",
 			unit = "units/payday2/weapons/wpn_fps_smg_akmsu_pts/wpn_fps_smg_akmsu_fg_rail",
-			stats = {value = 1, spread = 1, concealment = -2},
+			stats = {value = 1, spread = 1, recoil = -1, concealment = -1},
 			forbids = {
 				"wpn_fps_addon_ris",
 				"wpn_fps_ak_extra_ris"
@@ -10781,7 +10777,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "armored_transport"
 		}
@@ -13193,7 +13189,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13214,7 +13210,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_fg_03",
 			stats = {
 				value = 2,
-				recoil = 1
+				recoil = 1,
+				spread = -1
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13229,8 +13226,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = 2,
-				recoil = -1,
-				concealment = -3
+				recoil = -2,
+				concealment = -2
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13245,8 +13242,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				recoil = 2,
-				spread = -1,
-				concealment = -1
+				spread = -2
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13260,9 +13256,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_g_01",
 			stats = {
 				value = 2,
-				recoil = 1,
-				spread_moving = 1,
-				concealment = 6
+				recoil = -1,
+				concealment = 1
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13278,15 +13273,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.parts.wpn_fps_ass_fal_m_01 = {
 			pcs = {},
 			type = "magazine",
-			name_id = "bm_wp_fal_m_01",
+			name_id = "bm_wp_upg_vintage_sc",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
-			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_m_01",
+			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_straight",
+			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_m_standard",
 			stats = {
 				value = 2,
-				extra_ammo = 10,
-				concealment = -1,
-				reload = -2
+				extra_ammo = -10,
+				concealment = 2,
+				reload = 2
 			},
 			animations = {
 				reload = "reload",
@@ -13301,7 +13297,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_fal_m_standard",
 			a_obj = "a_m",
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
-			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_m_standard",
+			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_m_01",
 			stats = {value = 2},
 			animations = {
 				reload = "reload",
@@ -13316,7 +13312,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_s_01",
 			stats = {
 				value = 2,
-				concealment = 1
+				concealment = 1,
+				recoil = -1
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13331,7 +13328,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -13353,7 +13351,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			texture_bundle_folder = "big_bank",
 			dlc = "big_bank",
@@ -21624,7 +21622,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_upg_ak_fg_zenit",
 			a_obj = "a_fg",
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ak_fg_zenit/wpn_fps_upg_ak_fg_zenit",
-			stats = {value = 1, spread = -1, concealment = 2},
+			stats = {value = 1, spread = -1, concealment = 1},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
 			is_a_unlockable = true,
@@ -21832,7 +21830,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -21855,7 +21853,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				alert_size = 12,
 				spread = 2,
 				recoil = -2,
-				concealment = -4
+				concealment = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -22381,9 +22379,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ass_m16_fg_stag/wpn_fps_upg_ass_m16_fg_stag",
 			stats = {
 				value = 2,
-				spread = 2,
+				spread = 1,
 				recoil = -1,
-				concealment = -3
+				concealment = -1
 			},
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
@@ -29076,6 +29074,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			wpn_fps_upg_ak_m_uspalm = {
 				stats = {
 					value = 1,
+					recoil = -1,
 					concealment = 1
 				}
 			}

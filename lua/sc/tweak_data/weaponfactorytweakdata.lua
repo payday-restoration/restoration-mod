@@ -50618,36 +50618,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		end
 
-		if self.wpn_fps_pis_czauto then --Alcat's CZAuto
-			self.parts.wpn_fps_pis_czauto_ns_compensated.stats = {
-				recoil = 1,
-				spread = 1,
-				concealment = -1,
-				spread_moving = 1
-			}
-			self.parts.wpn_fps_pis_czauto_m_extended.stats = {
-				recoil = 1,
-				extra_ammo = 8,
-				concealment = -2,
-				reload = -1,
-				spread_moving = 0
-			}
-			self.parts.wpn_fps_pis_czauto_vg_mag.stats = {
-				recoil = 3,
-				concealment = -2,
-				reload = 3
-			}
-			self.parts.wpn_fps_pis_czauto_g_wooden.stats = {
-				recoil = 0
-			}
-			self.parts.wpn_fps_pis_czauto_g_walnut.stats = {
-				recoil = 0
-			}
-			self.parts.wpn_fps_pis_czauto_g_pearl.stats = {
-				recoil = 0
-			}
-		end
-
 		if self.wpn_fps_smg_k1a7 then --Alcat's K1A7
 			self.parts.wpn_fps_smg_k1a7_m_9mm.pcs = nil
 			self.parts.wpn_fps_smg_k1a7_m_9mm.stats = {

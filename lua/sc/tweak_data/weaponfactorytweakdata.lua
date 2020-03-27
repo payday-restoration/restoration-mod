@@ -46802,7 +46802,15 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					spread = 2,
 					recoil = -1,
 					concealment = -1
-					}		
+					}
+				self.parts.wpn_fps_ass_ns_g_sup9.stats = { 
+					value = 10,
+					suppression = 12,
+					alert_size = 12,
+					spread = 2,
+					recoil = -2,
+					concealment = -2
+					}							
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1) --not a good way of fixing it, but it works, yeah?
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)
 				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)				
@@ -47611,7 +47619,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.parts.wpn_fps_pis_lebman_m_extended.stats = {
 				value = 3,
-				extra_ammo = 5,
+				extra_ammo = 6,
 				concealment = -1,
 				reload = -1
 			}

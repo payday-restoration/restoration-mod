@@ -44919,8 +44919,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						value = 2,
 						damage = -4,
 						spread = -1,
-						total_ammo_mod = 11,
-						extra_ammo = 15
+						total_ammo_mod = 11
 					}					
 				self.parts.wpn_fps_ass_amcar_m_9mm.custom_stats = {
 						is_pistol = true			

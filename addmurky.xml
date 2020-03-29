@@ -418,13 +418,20 @@
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/helmets_atlas_df" force="false"/>	
 	<texture path="units/pd2_mod_sharks/characters/ene_murky_city_m4/helmets_atlas_nm" force="false"/>		
 	
-	<!--Murky Shield Acc-->
+	<!--Murky Shield Acc Lights-->
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<object path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
-		
+	
+	<!--Murky Shield Acc Small-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false"/>	
+
 	<!--Murky Cop C45-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk" load="true"/>

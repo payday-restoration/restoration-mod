@@ -6,7 +6,7 @@
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" />	
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
-		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" />	
 	</dependencies>
 
 	<extensions>
@@ -17,7 +17,7 @@
 			<var name="_default_weapon_id" value="mp9" />
 		</extension>		
 		<extension name="inventory" class="CopInventory" >
-			<var name="_shield_unit_name" value="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan"/>
+			<var name="_shield_unit_name" value="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky"/>
 		</extension>
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

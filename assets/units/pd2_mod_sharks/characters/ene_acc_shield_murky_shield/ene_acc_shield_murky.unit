@@ -1,7 +1,13 @@
-<unit type="items" slot="8">
-	<object file="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" />
-	<extensions>
-		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="damage" class="UnitDamage" />
-	</extensions>
+<unit type="items" slot="8" >
+    <object file="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" />
+	
+	<dependencies>
+		<depends_on effect="effects/particles/dest/security_camera_dest"/>
+	</dependencies>
+	
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="UnitDamage" name="damage" />
+    </extensions>
+
 </unit>

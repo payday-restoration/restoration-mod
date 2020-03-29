@@ -3006,10 +3006,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					if math.round(value) >= 100 then
 						self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
 					end
-				elseif stat.index then --Sets concealment text to purple when maxed.
-					if base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value >= #tweak_stats[stat.name] then
-						self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
+				elseif stat.name == "concealment" then --Sets concealment text to purple when maxed.
+					if base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value >= tweak_data.concealment_cap then
+						self._stats_texts.concealment.equip:set_color(tweak_data.screen_colors.stat_maxed)
 					end
+				elseif stat.index then
+					--nothing
 				elseif tweak_stats[stat.name] then
 					local without_skill = math.round(base_stats[stat.name].value + mods_stats[stat.name].value)
 					local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
@@ -3121,10 +3123,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						if math.round(value) >= 100 then
 							self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
 						end
-					elseif stat.index then
-						if base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value >= #tweak_stats[stat.name] then
-							self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
+					elseif stat.name == "concealment" then --Sets concealment text to purple when maxed.
+						if base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value >= tweak_data.concealment_cap then
+							self._stats_texts.concealment.equip:set_color(tweak_data.screen_colors.stat_maxed)
 						end
+					elseif stat.index then
+						--nothing
 					elseif tweak_stats[stat.name] then
 						local without_skill = math.round(base_stats[stat.name].value + mods_stats[stat.name].value)
 						local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
@@ -3164,10 +3168,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						if math.round(value) >= 100 then
 							self._stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stat_maxed)
 						end
-					elseif stat.index then
-						if base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value >= #tweak_stats[stat.name] then
-							self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
+					elseif stat.name == "concealment" then --Sets concealment text to purple when maxed.
+						if base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value >= tweak_data.concealment_cap then
+							self._stats_texts.concealment.equip:set_color(tweak_data.screen_colors.stat_maxed)
 						end
+					elseif stat.index then
+						--nothing
 					elseif tweak_stats[stat.name] then
 						local without_skill = math.round(base_stats[stat.name].value + mods_stats[stat.name].value)
 						local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)
@@ -3688,10 +3694,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					if math.round(total_value) >= 100 then
 						self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
 					end
-				elseif stat.index then
-					if total_base_stats[stat.name].value + total_mods_stats[stat.name].value + total_skill_stats[stat.name].value >= #tweak_stats[stat.name] then
-						self._stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stat_maxed)
+				elseif stat.name == "concealment" then --Sets concealment text to purple when maxed.
+					if total_base_stats.concealment.value + total_mods_stats.concealment.value + total_skill_stats.concealment.value >= tweak_data.concealment_cap then
+						self._stats_texts.concealment.equip:set_color(tweak_data.screen_colors.stat_maxed)
 					end
+				elseif stat.index then
+					--nothing
 				elseif tweak_stats[stat.name] then
 					local without_skill = math.round(total_base_stats[stat.name].value + total_mods_stats[stat.name].value)
 					local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier * (modifier_stats and modifier_stats[stat.name] or 1)

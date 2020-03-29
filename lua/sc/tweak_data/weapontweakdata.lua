@@ -3028,6 +3028,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			9,
 			10
 		}
+
 		self.stats.concealment = {
 			0.3,
 			0.4,
@@ -3093,7 +3094,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			1.175,
 			1.2,
 			1.225,
-			1.25
+			1.25,
+			1.275,
+			1.3, --Concealment is hardcapped here, in theory at least.
+			1.325, --Headroom here in case it gets adjusted further upwards for some reason.
+			1.35,
+			1.375,
+			1.4,
+			1.425,
+			1.45,
+			1.475,
+			1.5
 		}
 		
 		self.stats.extra_ammo = {}

@@ -104,7 +104,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		local parts_stats = managers.weapon_factory:get_stats(factory_id, blueprint)
 
-		return math.min((base_stats.concealment + bonus + (parts_stats.concealment or 0) + (bonus_stats.concealment or 0)) * (modifiers_stats and modifiers_stats.concealment or 1), #tweak_data.weapon.stats.concealment)
+		return math.min((base_stats.concealment + bonus + (parts_stats.concealment or 0) + (bonus_stats.concealment or 0)) * (modifiers_stats and modifiers_stats.concealment or 1), tweak_data.concealment_cap)
 	end
 
 	function BlackMarketManager:get_silencer_concealment_modifiers(weapon)
@@ -133,8 +133,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end
 		end
 
-		if current_concealment + bonus > #tweak_data.weapon.stats.concealment then
-			return #tweak_data.weapon.stats.concealment - current_concealment
+		if current_concealment + bonus > tweak_data.concealment_cap then
+			return tweak_data.concealment_cap - current_concealment
 		end
 
 		return bonus

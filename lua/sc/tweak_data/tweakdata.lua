@@ -21,6 +21,9 @@
 	--Pistol Swap Speed Multiplier
 	tweak_data.pistol_swap_bonus = 1.5
 
+	--Max concealment for guns.
+	tweak_data.concealment_cap = 32
+
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 60

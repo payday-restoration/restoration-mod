@@ -2084,6 +2084,9 @@
 	<model path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>	
 	<material_config path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>	
 	<material_config path="units/payday2/characters/ene_tazer_1/ene_tazer_1_contour" force="true"/>
+
+	<!--Taser Helmet-->
+	<unit_mat_seq path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false" load="true"/>
 	
 	<!--gensec heavy g36-->
 	<unit path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"  load="true"/>

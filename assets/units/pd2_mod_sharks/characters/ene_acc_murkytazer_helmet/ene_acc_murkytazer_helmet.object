@@ -5,9 +5,8 @@
   <bodies>
     <body pushed_by_mover="false" name="static_body" enabled="true" template="small_prop" ang_damping="0.9">
       <object name="rp_kevlar_helmet" />
-		<object name="c_sphere" collision_type="sphere" mass="1.5" />
-		<object name="c_box" collision_type="box" />	  
-		<object name="c_box" collision_type="box" />	  		
+			<object name="c_sphere" collision_type="sphere" mass="1.5" />
+			<object name="c_box" collision_type="box" />
     </body>
     <body pushed_by_mover="false" name="dmg1" enabled="true" template="debris" collision_class="minor_debris">
       <object name="c_dmg1" collision_type="box" />

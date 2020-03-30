@@ -16,15 +16,7 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" force="false"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" force="false"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	
-	
-	<!--Taser Helmet-->
-	<object path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
-	<sequence_manager path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>	
-	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
-	<model path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
-	<unit path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false" load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_acc_bextazer_helmet/ene_acc_bextazer_helmet" force="false"/>
-	
+		
 	<!--Taser-->
 	<object path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>
 	<model path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>

@@ -424,6 +424,7 @@
 	<object path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/shield_df"/>		
 	
 	<!--Murky Shield Acc Small-->
 	<unit path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false"/>

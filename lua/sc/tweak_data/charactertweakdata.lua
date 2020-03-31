@@ -14389,6 +14389,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			omnia = {
 				path = "units/pd2_mod_omnia/characters/",
 				list = {
+					"ene_omnia_crew",
+					"ene_omnia_crew_2",
 					"ene_omnia_city",
 					"ene_omnia_city_2",
 					"ene_omnia_city_3",

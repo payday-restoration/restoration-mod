@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<unit type="debris" slot="18">
+	<object file="units/payday2/characters/ene_acc_genfucker/ene_acc_genfucker" />
+  <dependencies>
+	<depends_on bnk="soundbanks/regular_sfx" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+  	<soundsource name="glass" source="e_glass" />
+  </sounds>
+</unit>

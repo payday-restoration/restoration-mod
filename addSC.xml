@@ -2103,6 +2103,9 @@
 	<material_config path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>	
 	<material_config path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour" force="true"/>
 	
+	<!--genfuck heavy-->
+	<unit_mat_seq path="units/payday2/characters/ene_acc_genfucker/ene_acc_genfucker" load="true" />
+	
 	<!--fbi heavy 1-->
 	<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"  load="true"/>
 	<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk" force="true" load="true"/>

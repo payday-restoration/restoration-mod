@@ -13480,13 +13480,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben_pts/wpn_fps_sho_ben_b_long",
 			stats = {
 				value = 0,
-				spread = 1,
-				concealment = -2,
+				concealment = -1,
 				extra_ammo = 2
-			},
-			custom_stats = {
-				damage_near_mul = 100,
-				damage_far_mul = 200
 			},
 			dlc = "gage_pack_shotgun",
 			texture_bundle_folder = "gage_pack_shotgun",
@@ -13509,13 +13504,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_ben_pts/wpn_fps_sho_ben_b_short",
 			stats = {
 				value = 0,
-				spread = -1,
-				concealment = 3,
+				concealment = 1,
 				extra_ammo = -2
-			},
-			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200
 			},
 			dlc = "gage_pack_shotgun",
 			texture_bundle_folder = "gage_pack_shotgun",
@@ -13556,7 +13546,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 0,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "gage_pack_shotgun",
 			texture_bundle_folder = "gage_pack_shotgun",
@@ -13571,8 +13561,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 0,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			dlc = "gage_pack_shotgun",
 			texture_bundle_folder = "gage_pack_shotgun",
 			is_a_unlockable = true
@@ -13729,7 +13723,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -13747,12 +13742,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_gage_shot/weapons/wpn_fps_sho_striker_pts/wpn_fps_sho_striker_b_suppressed",
 			stats = {
-				value = 5,
-				suppression = 13,
-				alert_size = 13,
-				recoil = 1,
-				spread_moving = 1
+				value = 2,
+				suppression = 11,
+				alert_size = 11,
+				recoil = -1,
+				spread = 1,
+				concealment = -1
 			},
+			custom_stats = {
+				damage_near_mul = 100,
+				damage_far_mul = 200
+			},			
 			perks = {"silencer"},
 			sound_switch = {
 				suppressed = "suppressed_a"
@@ -18336,13 +18336,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_crimefest_2014/oct26/weapons/wpn_fps_sho_spas12_pts/wpn_fps_sho_b_spas12_long",
 			stats = {
 				value = 1,
-				spread = 1,
-				concealment = -2,
+				concealment = -1,
 				extra_ammo = 2
-			},
-			custom_stats = {
-				damage_near_mul = 100,
-				damage_far_mul = 200
 			},
 			dlc = "pd2_clan"
 		}
@@ -18386,7 +18381,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "pd2_clan",
 			forbids = {
@@ -18423,7 +18418,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				recoil = -2,
-				concealment = 3
+				concealment = 2
 			},
 			dlc = "pd2_clan"
 		}
@@ -18441,8 +18436,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			dlc = "pd2_clan"
 		}
 		self.parts.wpn_fps_sho_s_spas12_unfolded = {
@@ -30668,8 +30667,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_b_short",
 			stats = {
 				value = 1,
+				spread = -1,
 				concealment = 1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			dlc = "rota",
 			texture_bundle_folder = "rota"
 		}
@@ -30685,20 +30689,20 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_b_silencer",
 			stats = {
-				value = 6,
-				suppression = 13,
-				alert_size = 13,
-				spread = -1,
-				recoil = 1,
+				value = 2,
+				suppression = 11,
+				alert_size = 11,
+				recoil = -1,
+				spread = 1,
 				concealment = -1
+			},
+			custom_stats = {
+				damage_near_mul = 100,
+				damage_far_mul = 200
 			},
 			perks = {"silencer"},
 			sound_switch = {
 				suppressed = "suppressed_c"
-			},
-			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200
 			},
 			forbids = {
 				"wpn_fps_upg_shot_ns_king",
@@ -35124,7 +35128,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				wpn_fps_upg_a_custom = {
 					stats = {
 						value = 9,
-						total_ammo_mod = -33,
+						total_ammo_mod = -25,
 						damage = 25,	
 						spread = -1
 					},
@@ -35132,8 +35136,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						damage_near_mul = -100,
 						damage_far_mul = -200,
 						rays = 6,
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
+						ammo_pickup_min_mul = 0.75,
+						ammo_pickup_max_mul = 0.75
 					}
 				},
 				wpn_fps_upg_a_custom_free = {
@@ -39889,8 +39893,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				suppression = -4,
 				alert_size = -4,
 				spread = -2,
-				recoil = 2,
-				concealment = -2
+				recoil = 2
 			}
 		}
 		self.parts.wpn_fps_upg_g_m4_surgeon = {

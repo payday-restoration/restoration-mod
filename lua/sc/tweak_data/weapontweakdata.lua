@@ -10116,7 +10116,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.lebman.desc_id = nil
 		self.lebman.tactical_reload = 1		
 		self.lebman.use_data.selection_index = 2
-		self.lebman.clip_AMMO_MAX = 14		
+		self.lebman.CLIP_AMMO_MAX = 14		
 		self.lebman.AMMO_MAX = 120
 		self.lebman.AMMO_PICKUP = self:_pickup_chance(120, 1)
 		self.lebman.fire_mode_data.fire_rate = 0.1

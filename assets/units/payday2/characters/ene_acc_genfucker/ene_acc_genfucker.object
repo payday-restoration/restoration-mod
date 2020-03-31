@@ -3,6 +3,7 @@
 	<diesel materials="units/payday2/characters/ene_acc_genfucker/ene_acc_genfucker" orientation_object="rp_kevlar_helmet" />
 	<sequence_manager file="units/payday2/characters/ene_acc_genfucker/ene_acc_genfucker" />	
   <bodies>
+  <!-- POGGERS -->
     <body pushed_by_mover="false" name="static_body" enabled="true" template="small_prop" ang_damping="0.9">
       <object name="rp_kevlar_helmet" />
 		<object name="c_sphere" collision_type="sphere" mass="1.5" />

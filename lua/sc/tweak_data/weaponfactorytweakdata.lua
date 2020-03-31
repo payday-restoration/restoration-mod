@@ -239,8 +239,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				suppression = 12,
 				alert_size = 12,
 				recoil = 1,
-				spread = -1,		
-				concealment = -1
+				spread = -1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -1363,6 +1362,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 5,
 				spread = 1
 			},
+			custom_stats = {
+				damage_near_mul = 100,
+				damage_far_mul = 200
+			},			
 			perks = {
 				"fire_mode_single"
 			},			
@@ -1391,6 +1394,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				spread = -1,
 				recoil = 1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},				
 			perks = {
 				"fire_mode_auto"
 			},					
@@ -2015,8 +2022,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = -2
 			},
 			custom_stats = {
-				damage_near_mul = 100,
-				damage_far_mul = 200
+				damage_near_mul = 200,
+				damage_far_mul = 400
 			},
 			forbids = {
 				"wpn_upg_ak_g_standard"
@@ -2036,6 +2043,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = -1,
 				concealment = -1
 			},
+			custom_stats = {
+				damage_near_mul = 100,
+				damage_far_mul = 200
+			},			
 			forbids = {
 				"wpn_upg_ak_g_standard"
 			},
@@ -2053,6 +2064,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				spread = -1,
 				recoil = 1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			forbids = {
 				"wpn_upg_ak_g_standard"
 			},
@@ -2236,6 +2251,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 2,
 				spread = -2
 			},
+			custom_stats = {
+				damage_near_mul = -200,
+				damage_far_mul = -400
+			},			
 			dlc = "gage_pack_jobs",
 			adds_type = {
 				"stock_adapter"
@@ -2674,7 +2693,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 10,
 				suppression = 10,
 				alert_size = 10,
-				spread = -1
+				spread = -1,
+				recoil = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -2915,6 +2935,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			adds_type = {
 				"stock_adapter"
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			forbids = {
 				"wpn_fps_shot_r870_ris_special"
 			}
@@ -4231,8 +4255,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = -3
 			},
 			custom_stats = {
-				damage_near_mul = 100,
-				damage_far_mul = 200
+				damage_near_mul = 300,
+				damage_far_mul = 600
 			},
 			override = {
 				wpn_fps_snp_flint_s_adapter = {
@@ -5188,8 +5212,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				recoil = 1,
-				spread_moving = -2,
-				concealment = -1
+				spread = -1
 			},
 			forbids = {
 				"wpn_fps_addon_ris",
@@ -5204,7 +5227,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			dlc = "sc",
 			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
 			unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
-			custom_stats = {is_drum_aa12 = true},
 			stats = {value = 1, extra_ammo = 14, reload = -3, concealment = -3}
 		}
 		self.parts.wpn_fps_shot_saiga_b_standard.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_shot_saiga_b_standard"
@@ -21841,6 +21863,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 1,
 				spread = -1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
 			is_a_unlockable = true,
@@ -22523,6 +22549,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 2,
 				spread = -2
 			},
+			custom_stats = {
+				damage_near_mul = -200,
+				damage_far_mul = -400
+			},			
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
 			is_a_unlockable = true,
@@ -23807,16 +23837,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			parent = "barrel",
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_ns_sho_salvo/wpn_fps_upg_ns_sho_salvo_large",
 			stats = {
-				value = 7,
-				suppression = 13,
-				alert_size = 13,
-				spread = -2,
-				recoil = 3,
-				concealment = -4
+				value = 2,
+				suppression = 11,
+				alert_size = 11,
+				recoil = -1,
+				spread = 1,
+				concealment = -1
 			},
 			custom_stats = {
-				damage_near_mul = -200,
-				damage_far_mul = -400
+				damage_near_mul = 100,
+				damage_far_mul = 200
 			},
 			perks = {"silencer"},
 			forbids = {
@@ -24488,7 +24518,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -24510,11 +24541,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_sho_aa12_pts/wpn_fps_sho_aa12_barrel_silenced",
 			stats = {
-				value = 5,
-				suppression = 13,
-				alert_size = 13,
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
 				spread = -1,
-				concealment = -3
+				recoil = 1
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -30901,8 +30932,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_sho_saiga_b_short/wpn_fps_sho_saiga_b_short",
 			stats = {
 				value = 1,
+				spread = -1,
 				concealment = 1
 			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},			
 			forbids = {
 				"wpn_fps_ak_extra_ris"
 			},
@@ -30921,7 +30957,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_saiga_fg_holy",
 			a_obj = "a_fg",
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_sho_saiga_fg_holy/wpn_fps_sho_saiga_fg_holy",
-			stats = {value = 1, recoil = -1, concealment = 2},
+			stats = {value = 1, recoil = -1, concealment = 1},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
 			is_a_unlockable = true
@@ -31392,15 +31428,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			has_description = true,
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_ns_duck/wpn_fps_upg_ns_duck",
 			stats = {
-				value = 1,
+				value = 5,
 				spread_multi = {2.25, 0.5},
-				concealment = -3,
-				spread = -2,
-				recoil = 3
+				suppression = -2,
+				alert_size = -2,
+				recoil = 1,
+				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -200,
-				damage_far_mul = -400
+				damage_near_mul = -100,
+				damage_far_mul = -200
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -34969,6 +35006,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				value = 1,
+				recoil = -1,
 				concealment = 1
 			},
 			override = {
@@ -35061,7 +35099,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 10,
 						concealment = -5,
-						total_ammo_mod = -33,
+						total_ammo_mod = -25,
 						damage = 25,	
 						recoil = -1,
 						spread = 11,
@@ -35079,8 +35117,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						can_shoot_through_enemy = false,
 						can_shoot_through_shield = false,
 						can_shoot_through_wall = false,
-						ammo_pickup_min_mul = 0.666666666667,
-						ammo_pickup_max_mul = 0.666666666667
+						ammo_pickup_min_mul = 0.75,
+						ammo_pickup_max_mul = 0.75
 					}
 				},
 				wpn_fps_upg_a_custom = {

@@ -3028,7 +3028,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			9,
 			10
 		}
-
 		self.stats.concealment = {
 			0.3,
 			0.4,
@@ -3379,12 +3378,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 	function WeaponTweakData:_pickup_chance(max_ammo, selection_index)
 		local low, high
+		--Standard pickup for primaries
 		if selection_index == 2 then
 			low = 0.02
 			high = 0.05
+		--Double for secondaries
 		else
-			low = 0.02
-			high = 0.05
+			low = 0.04
+			high = 0.1
 		end
 		return {
 			max_ammo * low,
@@ -3719,10 +3720,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"assault_rifle"
 		}
 		self.olympic.CLIP_AMMO_MAX = 30
-		self.olympic.AMMO_MAX = 135
+		self.olympic.AMMO_MAX = 90
 		self.olympic.fire_mode_data.fire_rate = 0.075
 		self.olympic.auto.fire_rate = 0.075
-		self.olympic.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.olympic.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.olympic.spread.standing = 3
 		self.olympic.spread.crouching = 2
 		self.olympic.spread.steelsight = 1
@@ -3839,8 +3840,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.akmsu.categories = {
 			"assault_rifle"
 		}
-		self.akmsu.AMMO_MAX = 90
-		self.akmsu.AMMO_PICKUP = self:_pickup_chance(90, 1)
+		self.akmsu.AMMO_MAX = 60
+		self.akmsu.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.akmsu.fire_mode_data.fire_rate = 0.0923076923
 		self.akmsu.auto.fire_rate = 0.0923076923
 		self.akmsu.spread.standing = 3
@@ -3882,22 +3883,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.saiga.AMMO_PICKUP = self:_pickup_chance(120, 2)
 		self.saiga.fire_mode_data.fire_rate = 0.1
 		self.saiga.auto.fire_rate = 0.1
-		self.saiga.damage_near = 600
-		self.saiga.damage_far = 1200
+		self.saiga.damage_near = 700
+		self.saiga.damage_far = 1400
 		self.saiga.shake.fire_multiplier = 1
 		self.saiga.shake.fire_steelsight_multiplier = -1
 		self.saiga.kick.standing = self.new_m4.kick.standing
-		self.saiga.kick.crouching = self.new_m4.kick.standing
-		self.saiga.kick.steelsight = self.new_m4.kick.standing
+		self.saiga.kick.crouching = self.new_m4.kick.crouching
+		self.saiga.kick.steelsight = self.new_m4.kick.steelsight
 		self.saiga.stats = {
 			damage = 50,
-			spread = 6,
+			spread = 7,
 			recoil = 19,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 20,
-			suppression = 6,
-			alert_size = 6,
+			concealment = 24,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -6046,8 +6047,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.aa12.AMMO_MAX = 120
 		self.aa12.AMMO_PICKUP = self:_pickup_chance(120, 2)
-		self.aa12.damage_near = 800
-		self.aa12.damage_far = 1600
+		self.aa12.damage_near = 1100
+		self.aa12.damage_far = 2200
 		self.aa12.spread.standing = 3 * 1
 		self.aa12.spread.crouching = 2 * 1
 		self.aa12.spread.steelsight = 1 * 1
@@ -6055,17 +6056,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aa12.spread.moving_crouching = 3 * 1
 		self.aa12.spread.moving_steelsight = 2 * 1
 		self.aa12.kick.standing = self.new_m4.kick.standing
-		self.aa12.kick.crouching = self.new_m4.kick.standing
-		self.aa12.kick.steelsight = self.new_m4.kick.standing
+		self.aa12.kick.crouching = self.new_m4.kick.crouching
+		self.aa12.kick.steelsight = self.new_m4.kick.steelsight
 		self.aa12.stats = {
 			damage = 50,
-			spread = 7,
-			recoil = 21,
+			spread = 11,
+			recoil = 23,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 19,
-			suppression = 6,
-			alert_size = 6,
+			concealment = 24,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -6934,10 +6935,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.hajk.fire_mode_data.fire_rate = 0.075
 		self.hajk.auto.fire_rate = 0.075
-		self.hajk.AMMO_MAX = 113
+		self.hajk.AMMO_MAX = 75
 		self.hajk.BURST_FIRE = 2
 		self.hajk.ADAPTIVE_BURST_SIZE = false											
-		self.hajk.AMMO_PICKUP = self:_pickup_chance(113, 1)
+		self.hajk.AMMO_PICKUP = self:_pickup_chance(75, 1)
 		self.hajk.spread.standing = 3
 		self.hajk.spread.crouching = 2
 		self.hajk.spread.steelsight = 1
@@ -7721,13 +7722,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.x_shrew.panic_suppression_chance = 0.0		
-		self.basset.damage_near = 500	
-		self.basset.damage_far = 1000
+		self.basset.damage_near = 600	
+		self.basset.damage_far = 1200
 		self.basset.rays = 9
 		self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 		self.basset.CLIP_AMMO_MAX = 6
-		self.basset.AMMO_MAX = 90
-		self.basset.AMMO_PICKUP = self:_pickup_chance(90, 1)
+		self.basset.AMMO_MAX = 60
+		self.basset.AMMO_PICKUP = self:_pickup_chance(60, 1)
 		self.basset.fire_mode_data = {fire_rate = 0.1}
 		self.basset.auto = {fire_rate = 0.1}
 		self.basset.spread = {
@@ -7739,28 +7740,28 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			moving_steelsight = 2 * 1
 		}		
 		self.basset.kick.standing = self.new_m4.kick.standing
-		self.basset.kick.crouching = self.new_m4.kick.standing
-		self.basset.kick.steelsight = self.new_m4.kick.standing
+		self.basset.kick.crouching = self.new_m4.kick.crouching
+		self.basset.kick.steelsight = self.new_m4.kick.steelsight
 		self.basset.panic_suppression_chance = 0.0
 		self.basset.stats = {
 			zoom = 3,
 			total_ammo_mod = 100,
 			damage = 50,
-			alert_size = 6,
-			spread = 5,
+			alert_size = 7,
+			spread = 7,
 			spread_moving = 8,
-			recoil = 21,
+			recoil = 19,
 			value = 1,
 			extra_ammo = 101,
 			reload = 20,
 			suppression = 6,
-			concealment = 21
+			concealment = 24
 		}		
 		--Disabled--	
 		self.x_basset.use_data.selection_index = 4			
 		self.x_basset.tactical_akimbo = true
-		self.x_basset.damage_near = 500
-		self.x_basset.damage_far = 1000
+		self.x_basset.damage_near = 600
+		self.x_basset.damage_far = 1200
 		self.x_basset.rays = 9
 		self.x_basset.CLIP_AMMO_MAX = 12
 		self.x_basset.AMMO_MAX = 120
@@ -7776,22 +7777,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			moving_steelsight = 2 * 1
 		}		
 		self.x_basset.kick.standing = self.new_m4.kick.standing
-		self.x_basset.kick.crouching = self.new_m4.kick.standing
-		self.x_basset.kick.steelsight = self.new_m4.kick.standing
+		self.x_basset.kick.crouching = self.new_m4.kick.crouching
+		self.x_basset.kick.steelsight = self.new_m4.kick.steelsight
 		self.x_basset.panic_suppression_chance = 0.0
 		self.x_basset.stats = {
 			zoom = 3,
 			total_ammo_mod = 100,
 			damage = 50,
-			alert_size = 6,
-			spread = 5,
+			alert_size = 7,
+			spread = 7,
 			spread_moving = 8,
-			recoil = 21,
+			recoil = 19,
 			value = 1,
 			extra_ammo = 101,
 			reload = 20,
 			suppression = 6,
-			concealment = 21
+			concealment = 24
 		}
 		self.corgi.CLIP_AMMO_MAX = 30
 		self.corgi.AMMO_MAX = 180
@@ -8988,10 +8989,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"assault_rifle"
 		}
 		self.komodo.CLIP_AMMO_MAX = 30
-		self.komodo.AMMO_MAX = 135
+		self.komodo.AMMO_MAX = 90
 		self.komodo.fire_mode_data.fire_rate = 0.06666666666
 		self.komodo.auto.fire_rate = 0.06666666666
-		self.komodo.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.komodo.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.komodo.spread.standing = 3
 		self.komodo.spread.crouching = 2
 		self.komodo.spread.steelsight = 1

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="debris" slot="18">
+	<object file="units/pd2_dlc_mad/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" />	
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

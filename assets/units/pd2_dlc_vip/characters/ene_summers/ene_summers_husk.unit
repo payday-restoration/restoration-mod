@@ -26,6 +26,7 @@
 			<var name="_nr_head_gear_objects" value="2" />
 			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
+			<var name="_death_sequence" value="kill_murky_flashlights" />				
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="bulldozer" />

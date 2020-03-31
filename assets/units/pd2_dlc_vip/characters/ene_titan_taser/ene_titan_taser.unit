@@ -8,7 +8,7 @@
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
-		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" />
 	</dependencies>
 
 	<extensions>
@@ -24,9 +24,11 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod1" />
-			<var name="_head_gear" value="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+			<var name="_head_gear_object" value="g_helmet_lod" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
+			<var name="_death_sequence" value="kill_murky_flashlights" />				
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

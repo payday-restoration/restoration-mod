@@ -1,5 +1,19 @@
 if not restoration.Options:GetValue("HUD/UI/Crimenet") then return end
 
+local function round_gui_object(object)
+    if alive(object) then
+        local x, y = object:world_position()
+
+        object:set_world_position(math.round(x), math.round(y))
+
+        if object.children then
+            for i, d in ipairs(object:children()) do
+                round_gui_object(d)
+            end
+        end
+    end
+end
+
 function MenuNodeCrimenetGui:init( node, layer, parameters )
 	
 	parameters.font = tweak_data.menu.default_font
@@ -49,7 +63,7 @@ function MenuNodeCrimenetFiltersGui:_setup_item_panel(safe_rect, res)
 		self.item_panel:set_y(static_y)
 	end
 	self.item_panel:set_position(math.round(self.item_panel:x()), math.round(self.item_panel:y()))
-	self:_rec_round_object(self.item_panel)
+	round_gui_object(self.item_panel)
 	if alive(self.box_panel) then
 		self.item_panel:parent():remove(self.box_panel)
 		self.box_panel = nil

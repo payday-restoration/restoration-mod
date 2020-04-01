@@ -4499,8 +4499,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.panic_suppression_chance = 0.0
 		self.judge.stats_modifiers = {damage = 1}
 		self.judge.kick.standing = self.huntsman.kick.standing
-		self.judge.kick.crouching = self.judge.kick.crouching
-		self.judge.kick.steelsight = self.judge.kick.steelsight
+		self.judge.kick.crouching = self.huntsman.kick.crouching
+		self.judge.kick.steelsight = self.huntsman.kick.steelsight
 		self.m45.CLIP_AMMO_MAX = 30
 		self.m45.AMMO_MAX = 113
 		self.m45.AMMO_PICKUP = self:_pickup_chance(113, 1)

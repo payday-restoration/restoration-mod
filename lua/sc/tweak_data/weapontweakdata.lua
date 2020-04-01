@@ -4234,21 +4234,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.huntsman.single.fire_rate = 0.06	
 		self.huntsman.auto = {}		
 		self.huntsman.auto.fire_rate = 0.06
+		--@SC, double barrel shotguns kicking mostly side to side instead of upwards felt really fucking bad to use. Using huntsman values scaled to match the overall recoil from new_m4.
 		self.huntsman.kick.standing = {
-			1.9,
-			2,
-			-0.2,
-			0.2
+			1.5,
+			1.58,
+			-0.16,
+			0.16
 		}
-		self.huntsman.kick.crouching = self.huntsman.kick.standing
-		self.huntsman.kick.steelsight = self.huntsman.kick.standing		
+		self.huntsman.kick.crouching = {
+			1.06,
+			1.12,
+			-0.11,
+			-0.11
+		}
+		self.huntsman.kick.steelsight = self.new_m4.kick.crouching
 		self.huntsman.stats = {
 			damage = 150,
 			spread = 12,
-			recoil = 20,
+			recoil = 12,
 			spread_moving = 6,
 			zoom = 3,
-			concealment = 23,
+			concealment = 21,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,
@@ -4476,13 +4482,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.AMMO_PICKUP = self:_pickup_chance(30, 1)
 		self.judge.stats = {
 			damage = 150,
-			spread = 7,
-			recoil = 14,
+			spread = 6,
+			recoil = 8,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
-			suppression = 3,
-			alert_size = 3,
+			suppression = 4,
+			alert_size = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -4492,6 +4498,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.timers.reload_empty = 2.65
 		self.judge.panic_suppression_chance = 0.0
 		self.judge.stats_modifiers = {damage = 1}
+		self.judge.kick.standing = self.huntsman.kick.standing
+		self.judge.kick.crouching = self.judge.kick.crouching
+		self.judge.kick.steelsight = self.judge.kick.steelsight
 		self.m45.CLIP_AMMO_MAX = 30
 		self.m45.AMMO_MAX = 113
 		self.m45.AMMO_PICKUP = self:_pickup_chance(113, 1)
@@ -5849,10 +5858,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.b682.stats = {
 			damage = 150,
 			spread = 13,
-			recoil = 20,
+			recoil = 13,
 			spread_moving = 6,
 			zoom = 3,
-			concealment = 21,
+			concealment = 20,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,
@@ -6989,13 +6998,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.timers.shotgun_reload_first_shell_offset = 0.15
 		self.boot.stats = {
 			damage = 150,
-			spread = 9,
-			recoil = 17,
+			spread = 10,
+			recoil = 12,
 			spread_moving = 5,
 			zoom = 3,
-			concealment = 15,
-			suppression = 5,
-			alert_size = 5,
+			concealment = 20,
+			suppression = 4,
+			alert_size = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8772,13 +8781,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.x_judge.stats = {
 			damage = 150,
-			spread = 7,
-			recoil = 14,
+			spread = 6,
+			recoil = 8,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
-			suppression = 5,
-			alert_size = 5,
+			suppression = 4,
+			alert_size = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8790,9 +8799,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.animations.reload_name_id = "x_chinchilla"
 		self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
 		self.x_judge.animations.second_gun_versions.reload = "reload"
-		self.x_judge.kick.standing = self.judge.kick.standing
-		self.x_judge.kick.crouching = self.judge.kick.standing
-		self.x_judge.kick.steelsight = self.judge.kick.standing
+		self.x_judge.kick.standing = self.huntsman.kick.standing
+		self.x_judge.kick.crouching = self.huntsman.kick.standing
+		self.x_judge.kick.steelsight = self.huntsman.kick.standing
 		--Disabled--	
 		self.x_rota.use_data.selection_index = 4			
 		self.x_rota.upgrade_blocks = nil
@@ -9105,11 +9114,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.coach.auto.fire_rate = 0.06		
 		self.coach.stats = {
 			damage = 150,
-			spread = 10,
-			recoil = 20,
+			spread = 9,
+			recoil = 13,
 			spread_moving = 6,
 			zoom = 3,
-			concealment = 23,
+			concealment = 21,
 			suppression = 3,
 			alert_size = 3,
 			extra_ammo = 101,

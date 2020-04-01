@@ -65,8 +65,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
 		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
 		
-		--Leupold Sight-- --I think VMP's HeistEye and anything else with this effect also calls this?--
-		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies and guards in stealth while aiming.",
+		--Weapon Sights--
+		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies and guards in stealth while aiming.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
 		
 		
 		--'Nade Launchers--
@@ -86,6 +86,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
+		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
+		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -212,11 +214,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
-		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.",
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 40 damage per second to targets in front of you while charging.",
-		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.",
-		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",
-		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.",
+		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 40 damage per second to targets in front of you while charging.", -- ROAMING FR-
+		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.", --Kazaguruma
+		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
+		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
+		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 45 extra damage over two seconds.", --Alabama Razor
 		
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
@@ -316,13 +319,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Arbiter--
 		["bm_wp_wpn_fps_gre_arbiter_o_smart_desc"] = "Experimental scope that provides airburst capabilites to the Arbiter.\nIncompatible with incendiary rounds.", --this weapon mod isn't vanilla though iirc--
 		
-		--Itachi? [Custom]--
+		--Itachi [Custom]--
 		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",
 		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",
-		
-		--Kobus 90 (again)--
-		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",	
 		
 		--Union 5.56--
 		["bm_wp_corgi_b_short"] = "MSG Barrel",

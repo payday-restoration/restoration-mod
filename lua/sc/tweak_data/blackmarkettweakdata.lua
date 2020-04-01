@@ -3624,6 +3624,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.meter.expire_t = 1.2	
 	
 	--Clowns to the left of me, jokers to the right--
+	self.melee_weapons.clean.info_id = "bm_melee_clean_info"
 	self.melee_weapons.clean.stats.weapon_type = "sharp"
 	self.melee_weapons.clean.stats.min_damage = 7.5
 	self.melee_weapons.clean.stats.max_damage = 7.5

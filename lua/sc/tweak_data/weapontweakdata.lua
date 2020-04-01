@@ -4247,7 +4247,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			-0.11,
 			-0.11
 		}
-		self.huntsman.kick.steelsight = self.new_m4.kick.crouching
+		self.huntsman.kick.steelsight = self.huntsman.kick.crouching
 		self.huntsman.stats = {
 			damage = 150,
 			spread = 12,

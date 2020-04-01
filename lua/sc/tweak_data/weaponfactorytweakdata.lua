@@ -9251,7 +9251,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_b_short",
 			stats = {
 				value = 10,
-				spread = -1,
+				spread = -2,
 				concealment = 2
 			},
 			custom_stats = {
@@ -9289,7 +9289,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 10,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_shot_huntsman_b_long.third_unit = "units/payday2/weapons/wpn_third_shot_huntsman_pts/wpn_third_shot_huntsman_b_long"
@@ -23206,7 +23206,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_b_short",
 			stats = {
 				value = 1,
-				spread = -1,
+				spread = -2,
 				concealment = 2
 			},
 			custom_stats = {
@@ -23271,7 +23271,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "character_pack_bonnie",
 			dlc = "pd2_clan"
@@ -29720,7 +29720,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -29743,7 +29743,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			custom_stats = {
 				damage_near_mul = 100,
@@ -39695,7 +39696,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				value = 10,
-				spread = -1,
+				spread = -2,
 				concealment = 2
 			},
 			custom_stats = {
@@ -39725,7 +39726,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 10,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_sho_coach_body_standard = {

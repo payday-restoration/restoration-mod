@@ -8034,7 +8034,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 3
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -23291,7 +23291,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 4
 			},
 			custom_stats = {
 				damage_near_mul = -100,
@@ -31505,7 +31505,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 3
 			},
 			animations = {
 				reload = "reload",
@@ -31618,7 +31618,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 3
 			},
 			animations = {
 				reload = "reload",
@@ -44153,7 +44153,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						value = 2,
 						spread = -1,
 						concealment = -1,
-						reload = 1
+						reload = 3
 					}, 
 					a_obj="a_rack"
 				},		
@@ -44372,7 +44372,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 3
 			}
 			self.parts.wpn_fps_shot_trench_b_long.stats = {
 				value = 1,
@@ -46146,7 +46146,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					reload = 1
+					reload = 3
 				}	
 				self.parts.wpn_fps_shot_m37_s_rack.custom_stats = nil				
 				self.parts.wpn_fps_shot_m37_s_stakeout.stats = { 
@@ -48182,13 +48182,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.parts.wpn_fps_smg_ak5s_m_curve.stats = {
 				value = 1,
-				reload = 1,
+				reload = 3,
 				spread = -1, 
 				concealment = -1
 			}
 			self.parts.wpn_fps_smg_ak5s_m_new.stats = {
 				value = 1,
-				reload = 1,
+				reload = 3,
 				spread = -1, 
 				concealment = -1
 			}			
@@ -48272,7 +48272,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 1
+				reload = 3
 			}			
 			self.parts.wpn_fps_pis_smolak_m_custom.stats = {
 				value = 1,
@@ -49377,28 +49377,28 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					reload = 1
+					reload = 3
 			}
 			self.parts.wpn_fps_sho_ben_extrashell.custom_stats = nil				
 			self.parts.wpn_fps_sho_spas12_extrashell.stats = {				
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					reload = 1
+					reload = 3
 			}
 			self.parts.wpn_fps_sho_spas12_extrashell.custom_stats = nil							
 			self.parts.wpn_fps_sho_ksg_extrashell.stats = {				
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					reload = 1
+					reload = 3
 			}
 			self.parts.wpn_fps_sho_ksg_extrashell.custom_stats = nil										
 			self.parts.wpn_fps_sho_m37_extrashell.stats = {				
 					value = 2,
 					spread = -1,
 					concealment = -1,
-					reload = 1
+					reload = 3
 			}
 			self.parts.wpn_fps_sho_m37_extrashell.custom_stats = nil													
 			end		

@@ -1015,7 +1015,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Sneaky Bastard
 				self.values.player.backstab_dodge = {
-					1.0
+					0.75
 				}
 
 			--}

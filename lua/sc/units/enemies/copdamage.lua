@@ -2060,7 +2060,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function CopDamage:check_backstab(attack_data)
 		if self._unit.movement and self._unit:movement().m_rot then
 			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), managers.player:player_unit():movement():m_head_rot():y())
-			if fwd_vec > 0.2 then
+			--# degrees of leeway == (1-(2*number fwd_vec > than))pi radians
+			if fwd_vec > 0.15 then
 				return true
 			end
 		end

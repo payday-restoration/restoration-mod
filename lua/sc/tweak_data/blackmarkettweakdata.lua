@@ -3221,7 +3221,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--REMEMBER THE BASICS OF--
 	self.melee_weapons.cqc.dot_data = {
 		type = "poison",
-		custom_data = {dot_length = 3, hurt_animation_chance = 0.75}
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.75}
 	}	
 	self.melee_weapons.cqc.stats.min_damage = 2
 	self.melee_weapons.cqc.stats.max_damage = 4
@@ -3624,12 +3624,16 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.meter.expire_t = 1.2	
 	
 	--Clowns to the left of me, jokers to the right--
+	self.melee_weapons.clean.dot_data = {
+		type = "poison",
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.0}
+	}	
 	self.melee_weapons.clean.info_id = "bm_melee_clean_info"
 	self.melee_weapons.clean.stats.weapon_type = "sharp"
-	self.melee_weapons.clean.stats.min_damage = 7.5
-	self.melee_weapons.clean.stats.max_damage = 7.5
-	self.melee_weapons.clean.stats.min_damage_effect = 0.1
-	self.melee_weapons.clean.stats.max_damage_effect = 0.1
+	self.melee_weapons.clean.stats.min_damage = 5.0
+	self.melee_weapons.clean.stats.max_damage = 5.0
+	self.melee_weapons.clean.stats.min_damage_effect = 0.2
+	self.melee_weapons.clean.stats.max_damage_effect = 0.2
 	self.melee_weapons.clean.stats.charge_time = 0.00001
 	self.melee_weapons.clean.stats.range = 140
 	self.melee_weapons.clean.stats.concealment = 30
@@ -3689,7 +3693,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--LET'S GO PRACTICE MEDICINE--
 	self.melee_weapons.fear.dot_data = {
 		type = "poison",
-		custom_data = {dot_length = 3, hurt_animation_chance = 0.75}
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.75}
 	}	
 	self.melee_weapons.fear.stats.min_damage = 2
 	self.melee_weapons.fear.stats.max_damage = 4

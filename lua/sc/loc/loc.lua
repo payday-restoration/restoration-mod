@@ -219,7 +219,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.", --Kazaguruma
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
-		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 45 extra damage over two seconds.", --Alabama Razor
+		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 extra damage over three seconds.", --Alabama Razor
+		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
 		
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",

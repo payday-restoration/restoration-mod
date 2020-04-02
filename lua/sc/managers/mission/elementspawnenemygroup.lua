@@ -28,13 +28,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 		
 	--Super ugly fix but it won't work without doing this garbage otherwise, ugh	
-	if job == "Victor Romeo" or job == "hardware_store" or job == "hntn" or job == "bookmakers_office" or job == "thechase" or job == "help" then	
-		function ElementSpawnEnemyGroup:spawn_groups()
-			local opt = {}
-			for cat_name, team in pairs(tweak_data.group_ai.enemy_spawn_groups) do
-				table.insert(opt, cat_name)
-			end
-			return opt
-		end		
+	for _,h in pairs(restoration.bad_spawn_heists) do
+		if job == h then
+			function ElementSpawnEnemyGroup:spawn_groups()
+				local opt = {}
+				for cat_name, team in pairs(tweak_data.group_ai.enemy_spawn_groups) do
+					table.insert(opt, cat_name)
+				end
+				return opt
+			end		
+			break
+		end
 	end
 end

@@ -128,6 +128,27 @@ function restoration:Init()
 		"Victor Romeo",
 		"thechase"
 	}	
+	--For custom heists that seem to be broken with our normal spawn setup
+	restoration.bad_spawn_heists = {
+		"help",
+		--Custom Heists--
+		"Victor Romeo",
+		"hardware_store",
+		"hntn",
+		"bookmakers_office",
+		"thechase",
+		"santa_pain"
+	}	
+	--Christmas Effects Heists
+	restoration.christmas_heists = {
+		"roberts",
+		"pines",
+		"cane",
+		"moon",
+		--Custom Heists--
+		"roberts_v2",
+		"santa_pain"
+	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	

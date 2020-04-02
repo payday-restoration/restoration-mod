@@ -585,6 +585,8 @@ function InteractionTweakData:init(...)
 			timer = 0
 		}	
 		self.grenade_briefcase = deep_clone(self.invisible_interaction_open_superfast)
-		self.grenade_briefcase.contour = "deployable"		
+		self.grenade_briefcase.contour = "deployable"
+		--Gage package
+		self.gage_assignment.timer = 0			
 	end
 end

@@ -457,29 +457,31 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				self:weapon_tweak_data().armor_piercing_chance = 0
 			end
 
+			--Leaving in case we ever want to give pistols their own kick
 			if stats.use_pistol_kick then
 				if self:weapon_tweak_data().kick then
 					self:weapon_tweak_data().kick.standing = {
 									0.6,
 									0.8,
-									-0.5,
-									0.5
+									-1,
+									1
 					}
 					self:weapon_tweak_data().kick.crouching = {
-									0.6,
-									0.8,
-									-0.5,
-									0.5
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 					self:weapon_tweak_data().kick.steelsight = {
-									0.6,
-									0.8,
-									-0.5,
-									0.5
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 				end
 			end
 
+			--Basically give it new_m4 kick
 			if stats.use_auto_kick then
 				if self:weapon_tweak_data().kick then
 					self:weapon_tweak_data().kick.standing = {
@@ -489,39 +491,40 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 									1
 					}
 					self:weapon_tweak_data().kick.crouching = {
-									0.6,
-									0.8,
-									-1,
-									1
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 					self:weapon_tweak_data().kick.steelsight = {
-									0.6,
-									0.8,
-									-1,
-									1
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 				end
 			end
 			
+			--Ditto, give it Huntsman kick profile
 			if stats.use_heavy_kick then
 				if self:weapon_tweak_data().kick then
 					self:weapon_tweak_data().kick.standing = {
-									1.9,
-									2,
-									-0.2,
-									0.2
+									1.5,
+									1.58,
+									-0.16,
+									0.16
 					}
 					self:weapon_tweak_data().kick.crouching = {
-									1.9,
-									2,
-									-0.2,
-									0.2
+									1.06,
+									1.12,
+									-0.11,
+									-0.11
 					}
 					self:weapon_tweak_data().kick.steelsight = {
-									1.9,
-									2,
-									-0.2,
-									0.2
+									1.06,
+									1.12,
+									-0.11,
+									-0.11
 					}
 				end
 			end			

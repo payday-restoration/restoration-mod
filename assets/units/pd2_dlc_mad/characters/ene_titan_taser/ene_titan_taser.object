@@ -205,10 +205,10 @@
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
-
-				<object name="g_body" 		enabled="true"/>
-				<object name="g_body_lod1" 	enabled="true"/>
-
+			<lod_object name="lod_body">
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
+				<object name="g_body_lod1" 	enabled="true" lod="1" />
+			</lod_object>
 
 			<lod_object name="lod_head">
 				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>

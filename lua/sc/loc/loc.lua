@@ -1020,7 +1020,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",																								
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.",
+		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nKilling an enemy from behind with guns or melee fills your dodge meter by ##100%## of your dodge.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
@@ -1068,7 +1068,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Moving Target--
 		["menu_dire_need_beta_sc"] = "Moving Target",
-		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##",																								
+		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1.5%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1.5%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##\n\nAttacks dealing health damage cause your dodge meter to fill up by ##50%## of your dodge.",																								
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",

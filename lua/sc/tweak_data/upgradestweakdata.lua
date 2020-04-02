@@ -980,19 +980,22 @@ function UpgradesTweakData:_init_pd2_values()
 				--Moving Target
 				self.values.player.detection_risk_add_movement_speed = {
 					{
-						0.01,
+						0.015,
 						3,
 						"below",
 						35,
 						0.15
 					},
 					{
-						0.01,
+						0.015,
 						1,
 						"below",
 						35,
 						0.15
 					}
+				}
+				self.values.player.health_damage_bonus_dodge = {
+					0.5
 				}
 
 				--Shockproof
@@ -1010,8 +1013,9 @@ function UpgradesTweakData:_init_pd2_values()
 				}				
 				self.counter_taser_damage = 0.5			
 
+				--Sneaky Bastard
 				self.values.player.backstab_dodge = {
-					0.75
+					1.0
 				}
 
 			--}
@@ -3021,6 +3025,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "throwables_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.health_damage_bonus_dodge = {
+		name_id = "menu_player_health_damage_bonus_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "health_damage_bonus_dodge",
 			category = "player"
 		}
 	}

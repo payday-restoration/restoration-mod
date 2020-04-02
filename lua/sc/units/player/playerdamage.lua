@@ -361,10 +361,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if attack_data.attacker_unit:base()._tweak_table == "tank" then
 			managers.achievment:set_script_data("dodge_this_fail", true)
 		end
+
 		if 0 < self:get_real_armor() then
 			self._unit:sound():play("player_hit")
 		else
 			self._unit:sound():play("player_hit_permadamage")
+			self.fill_dodge_meter(pm.upgrade_value("player", "health_damage_bonus_dodge", 0) * self._dodge_points)
 		end
 		
 		local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)

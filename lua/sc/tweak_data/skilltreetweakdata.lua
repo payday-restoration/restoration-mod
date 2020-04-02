@@ -1430,13 +1430,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 4},
 				[1] = {
 					upgrades = {
-                   				"player_detection_risk_add_movement_speed_1"
+                   		"player_detection_risk_add_movement_speed_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-                   				"player_detection_risk_add_movement_speed_2"
+                   		"player_detection_risk_add_movement_speed_2",
+                   		"player_health_damage_bonus_dodge"
 					},
 					cost = self.costs.hightierpro
 				}

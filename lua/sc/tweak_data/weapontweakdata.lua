@@ -4837,7 +4837,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.msr.NR_CLIPS_MAX = 5
 		self.msr.AMMO_MAX = 40
 		self.msr.AMMO_PICKUP = self:_pickup_chance(40, 2)
-		self.msr.fire_mode_data.fire_rate = 0.66666666666
+		self.msr.fire_mode_data.fire_rate = 0.75
 		self.msr.spread.standing = 3
 		self.msr.spread.crouching = 2
 		self.msr.spread.steelsight = 2
@@ -7354,7 +7354,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.siltstone.CLIP_AMMO_MAX = 10
 		self.siltstone.AMMO_MAX = 40
 		self.siltstone.AMMO_PICKUP = self:_pickup_chance(40, 2)
-		self.siltstone.fire_mode_data.fire_rate = 0.66666666666
+		self.siltstone.fire_mode_data.fire_rate = 0.6
 		self.siltstone.spread.standing = 3
 		self.siltstone.spread.crouching = 2
 		self.siltstone.spread.steelsight = 2

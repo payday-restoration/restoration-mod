@@ -25293,120 +25293,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			wpn_fps_upg_o_45iron = { "wpn_fps_smg_thompson_o_adapter" },
 			wpn_fps_upg_o_leupold = { "wpn_fps_smg_thompson_o_adapter" },
 		}
-		self.wpn_fps_snp_winchester.override = {	
-			wpn_fps_upg_o_specter = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			},
-			wpn_fps_upg_o_aimpoint = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			},
-			wpn_fps_upg_o_aimpoint_2 = {
-				stats = {
-					value = 1,
-					zoom = 4,
-					concealment = 2
-				}
-			},
-			wpn_fps_upg_o_docter = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			},
-			wpn_fps_upg_o_eotech = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}
-			},	
-			wpn_fps_upg_o_t1micro = {
-				stats = {
-					value = 3,
-					concealment = 4
-				}
-			},	
-			wpn_fps_upg_o_cmore = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			},		
-			wpn_fps_upg_o_acog = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			},
-			wpn_fps_upg_o_cs = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}
-			},	
-			wpn_fps_upg_o_eotech_xps = {
-				stats = {
-					value = 5
-				}
-			},	
-			wpn_fps_upg_o_reflex = {
-				stats = {
-					value = 5,
-					zoom = 2,
-					concealment = 3
-				}
-			},	
-			wpn_fps_upg_o_rx01 = {
-				stats = {
-					value = 5,
-					zoom = 4,
-					concealment = 2
-				}
-			},	
-			wpn_fps_upg_o_rx30 = {
-				stats = {
-					value = 5,
-					zoom = 4,
-					concealment = 2
-				}
-			},		
-			wpn_fps_upg_o_spot = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1	
-				}
-			},
-			wpn_fps_upg_o_bmg = {
-				stats = {
-					zoom = 6,
-					concealment = 1,
-					value = 8
-				}
-			},	
-			wpn_fps_upg_o_fc1 = {
-				stats = {
-					value = 6
-				}			
-			},
-			wpn_fps_upg_o_uh = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}			
-			}			
-		}						
 		self.wpn_fps_snp_winchester.default_blueprint = {
 			"wpn_fps_snp_winchester_b_standard",
 			"wpn_fps_snp_winchester_body_standard",
@@ -46875,14 +46761,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					recoil = -1,
 					concealment = 1
 				}	
-				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag3 = { --this specific override ain't working while the rest does, at least on my side -Boo
-					stats = {
-						extra_ammo = 10,
-						value = 3,
-						spread_moving = 0,
-						reload = -1
-					}
-				}			
 				self.parts.wpn_fps_upg_m4_m_pmagsolid.stats = { 
 					value = 3,
 					spread_moving = 1,
@@ -46904,24 +46782,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					concealment = 2,
 					reload = 2,
 					extra_ammo = -10
-				}
-				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag10 = {
-					stats = {
-						value = 2,
-						spread_moving = 2,
-						recoil = -1,
-						concealment = 2,
-						reload = 2,
-						extra_ammo = -10
-					}
-				}
-				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag20 = {
-					stats = {
-						value = 1,
-						spread_moving = 1,
-						recoil = -1,
-						concealment = 1
-					}
 				}
 				self.parts.wpn_fps_upg_s_m4_sl.stats = { 
 					value = 1,
@@ -46952,15 +46812,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					extra_ammo = 10,
 					recoil = -1,
 					reload = -1
-				}
-				self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag40 = {
-					stats = {
-						value = 4,
-						recoil = -1,
-						extra_ammo = 20,
-						reload = -3,
-						concealment = -1
-					}
 				}
 			end							
 
@@ -48219,6 +48070,30 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end										
 
 		if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Mod Pack
+			self.wpn_fps_snp_wa2000.override.wpn_fps_upg_o_cqb = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				}		
+			self.wpn_fps_snp_tti.override.wpn_fps_upg_o_cqb = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				}
+			self.wpn_fps_snp_msr.override.wpn_fps_upg_o_cqb = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				}								
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_cqb = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				}		
 			self.parts.wpn_fps_ass_m4_m_stick_amcar.pcs = nil
 			self.parts.wpn_fps_ass_m4_m_stick_sg.pcs = nil
 			self.parts.wpn_fps_ass_m4_m_stick_heavy.pcs = nil			
@@ -48873,6 +48748,127 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 1,
 				concealment = 1
 			}
+			self.wpn_fps_snp_sgs.override = {	
+				wpn_fps_upg_o_specter = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1
+					}
+				},
+				wpn_fps_upg_o_aimpoint = {
+					stats = {
+						value = 8,
+						zoom = 4,
+						concealment = 2
+					}
+				},
+				wpn_fps_upg_o_aimpoint_2 = {
+					stats = {
+						value = 1,
+						zoom = 4,
+						concealment = 2
+					}
+				},
+				wpn_fps_upg_o_docter = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				},
+				wpn_fps_upg_o_eotech = {
+					stats = {
+						value = 3,
+						zoom = 2,
+						concealment = 3
+					}
+				},	
+				wpn_fps_upg_o_cqb = {
+					stats = {
+						value = 3,
+						zoom = 2,
+						concealment = 3
+					}
+				},					
+				wpn_fps_upg_o_t1micro = {
+					stats = {
+						value = 3,
+						concealment = 4
+					}
+				},	
+				wpn_fps_upg_o_cmore = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				},		
+				wpn_fps_upg_o_acog = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1
+					}
+				},
+				wpn_fps_upg_o_cs = {
+					stats = {
+						value = 3,
+						zoom = 2,
+						concealment = 3
+					}
+				},	
+				wpn_fps_upg_o_eotech_xps = {
+					stats = {
+						value = 5
+					}
+				},	
+				wpn_fps_upg_o_reflex = {
+					stats = {
+						value = 5,
+						zoom = 2,
+						concealment = 3
+					}
+				},	
+				wpn_fps_upg_o_rx01 = {
+					stats = {
+						value = 5,
+						zoom = 4,
+						concealment = 2
+					}
+				},	
+				wpn_fps_upg_o_rx30 = {
+					stats = {
+						value = 5,
+						zoom = 4,
+						concealment = 2
+					}
+				},		
+				wpn_fps_upg_o_spot = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1	
+					}
+				},
+				wpn_fps_upg_o_bmg = {
+					stats = {
+						zoom = 6,
+						concealment = 1,
+						value = 8
+					}
+				},	
+				wpn_fps_upg_o_fc1 = {
+					stats = {
+						value = 6
+					}			
+				},
+				wpn_fps_upg_o_uh = {
+					stats = {
+						value = 3,
+						zoom = 2,
+						concealment = 3
+					}			
+				}			
+			}
 			self.parts.wpn_fps_pis_smolak_fg_polymer.stats = {
 				value = 1,
 				concealment = 1
@@ -48996,14 +48992,51 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			
 		end		
 
-		if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint CompM4s Sight
+		if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint Comp M4s Sight
+			self.wpn_fps_snp_wa2000.override.wpn_fps_upg_o_compm4s = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1
+					}
+				}		
+			self.wpn_fps_snp_tti.override.wpn_fps_upg_o_compm4s = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1
+					}
+				}
+			self.wpn_fps_snp_msr.override.wpn_fps_upg_o_compm4s = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1
+					}
+				}								
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_compm4s = {
+					stats = {
+						value = 8,
+						zoom = 6,
+						concealment = 1
+					}
+				}		
 			self.parts.wpn_fps_upg_o_compm4s.stats = {
-				value = 3,
-				zoom = 1,
-				spread_moving = -1,
-				concealment = -1
+						zoom = 6,			
+						value = 8,
+						concealment = -3
 				}			
+				if self.parts.wpn_fps_upg_o_compm4s and self.parts.wpn_fps_ass_flint_b_long then
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_o_compm4s = {
+							stats = {
+								value = 8,
+								zoom = 6,
+								concealment = 1
+							}
+						}												
+				end								
 			end
+
 	
 		if self.parts.wpn_fps_ass_komodo_o_tele then --Alcat's F2000 Sight
 			self.parts.wpn_fps_ass_komodo_o_tele.stats = {
@@ -49015,74 +49048,62 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
 			self.parts.wpn_fps_upg_o_snp_m4flipup_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}		
 			self.parts.wpn_fps_upg_o_snp_mbus_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}
 			self.parts.wpn_fps_upg_o_snp_troy_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}			
 			self.parts.wpn_fps_upg_o_snp_troym4_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}								
 			self.parts.wpn_fps_upg_o_snp_scorpionevo_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}				
 			self.parts.wpn_fps_upg_o_snp_kac_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}				
 			self.parts.wpn_fps_upg_o_snp_dd_a1_rear.stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 				}											
 			end			
 			
-		if self.parts.wpn_fps_upg_b92fs_o_tritium then --Pawcio's Illuminated Ironsights Pack
-			self.parts.wpn_fps_upg_1911_o_tritium.stats = {
+		if self.parts.wpn_fps_upg_1911_tritium then --Pawcio's Illuminated Ironsights Pack
+			self.parts.wpn_fps_upg_b92fs_tritium.stats = {
 				value = 0
 				}	
-			self.parts.wpn_fps_upg_b92fs_o_tritium.stats = {
-				value = 0
-				}							
-			self.parts.wpn_fps_upg_colt_def_o_tritium.stats = {
+			self.parts.wpn_fps_upg_1911_tritium.stats = {
 				value = 0
 				}		
-			self.parts.wpn_fps_upg_fs_o_tritium.stats = {
+			self.parts.wpn_fps_upg_beer_tritium.stats = {
 				value = 0
 				}	
-			self.parts.wpn_fps_upg_g18c_o_tritium.stats = {
+			self.parts.wpn_fps_upg_czech_tritium.stats = {
 				value = 0
 				}	
-			self.parts.wpn_fps_upg_g26_o_tritium.stats = {
+			self.parts.wpn_fps_upg_deagle_tritium.stats = {
 				value = 0
 				}	
-			self.parts.wpn_fps_upg_hs2000_o_tritium.stats = {
+			self.parts.wpn_fps_upg_p226_tritium.stats = {
 				value = 0
 				}
-			self.parts.wpn_fps_upg_pl14_o_tritium.stats = {
+			self.parts.wpn_fps_upg_pl14_tritium.stats = {
 				value = 0
 				}
-			self.parts.wpn_fps_upg_usp_o_tritium.stats = {
+			self.parts.wpn_fps_upg_shrew_tritium.stats = {
 				value = 0
 				}																							
-			self.parts.wpn_fps_upg_jericho_941_pl_o_tritium.stats = {
+			self.parts.wpn_fps_upg_stech_tritium.stats = {
 				value = 0
 				}																											
-			self.parts.wpn_fps_upg_p226_o_tritium.stats = {
-				value = 0
-				}																											
-			self.parts.wpn_fps_upg_g22c_o_tritium.stats = {
-				value = 0
-				}															
-			self.parts.wpn_fps_upg_deagle_o_tritium.stats = {
-				value = 0
-				}							
 			end
 			
 
@@ -49330,14 +49351,50 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			table.insert(self.parts.wpn_fps_smg_p90_b_ninja.forbids, "wpn_fps_upg_ns_dragon")
 			end					
 			
-
-		if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint CompM2 Sight 
+		if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight		
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_compm2 = {
+					stats = {
+						value = 8,
+						zoom = 4,
+						concealment = 2
+					}
+				}
+			self.wpn_fps_snp_wa2000.override.wpn_fps_upg_o_compm2 = {
+					stats = {
+						value = 8,
+						zoom = 4,
+						concealment = 2
+					}
+				}		
+			self.wpn_fps_snp_tti.override.wpn_fps_upg_o_compm2 = {
+					stats = {
+						value = 8,
+						zoom = 4,
+						concealment = 2
+					}
+				}
+			self.wpn_fps_snp_msr.override.wpn_fps_upg_o_compm2 = {
+					stats = {
+						value = 8,
+						zoom = 4,
+						concealment = 2
+					}
+				}								
 			self.parts.wpn_fps_upg_o_compm2.stats = {
-				value = 8,
-				zoom = 3,
-				spread_moving = -3,
-				concealment = -3
-				}			
+					value = 8,
+					zoom = 3,
+					spread_moving = -3,
+					concealment = -3
+				}		
+				if self.parts.wpn_fps_upg_o_compm2 and self.parts.wpn_fps_ass_flint_b_long then
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_o_compm2 = {
+							stats = {
+								value = 8,
+								zoom = 4,
+								concealment = 2
+							}
+						}												
+				end
 			end				
 
 		if self.parts.wpn_fps_ass_ching_o_m84 then --Alcat's M1 Garand Various Attachments
@@ -49380,6 +49437,32 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			end							
 
 		if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_okp7_dove = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				}
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_ekp_1s_03 = {
+					stats = {
+						value = 5,
+						concealment = 4
+					}
+				}
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_1pn93 = {
+					stats = {
+						zoom = 6,
+						concealment = 1,
+						value = 8
+					}
+				}						
+			self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_1p29 = {
+					stats = {
+						value = 8,
+						zoom = 4,
+						concealment = 2
+					}
+				}										
 			self.parts.wpn_fps_upg_o_okp7_dove.stats = {
 				value = 5,
 				zoom = 4,

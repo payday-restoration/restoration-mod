@@ -1,0 +1,23 @@
+<materials version="3" group="eene_male_des">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_2/ene_guard_security_heavy_2_head_nm" />
+        <diffuse_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_2/ene_guard_security_heavy_2_head_df" />
+	</material>
+	<material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_2/ene_guard_security_heavy_2_head_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_2/ene_guard_security_heavy_2_head_df" mip="1"/>
+	</material>
+	<material name="mtr_nerd" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_1/ene_guard_security_heavy_1_body_nm" />
+        <diffuse_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_1/ene_guard_security_heavy_1_body_df" />
+	</material>
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_des/characters/ene_male_des/npc_enemy_des_body_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/omnia_hrt_df"/>
+	</material>
+	<material name="mtr_body_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_des/characters/ene_male_des/npc_enemy_des_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_omnia/characters/shared_textures/omnia_hrt_df" mip="1"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

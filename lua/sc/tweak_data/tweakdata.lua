@@ -18,8 +18,9 @@
 		near_angle = 60
 	}
 
-	--Pistol Swap Speed Multiplier
-	tweak_data.pistol_swap_bonus = 1.5
+	--Swap Speed Multipliers
+	tweak_data.pistol = {swap_bonus = 1.5}
+	tweak_data.akimbo = {swap_bonus = 0.5}
 
 	--Max concealment for guns.
 	tweak_data.concealment_cap = 32

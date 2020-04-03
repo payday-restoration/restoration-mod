@@ -1234,7 +1234,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
 
 		for _, category in ipairs(weapon_tweak_data.categories) do
-			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", category == "pistol" and tweak_data.pistol_swap_bonus or 1)
+			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
 		end
 
 		multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)

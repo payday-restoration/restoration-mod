@@ -1128,11 +1128,11 @@ function UpgradesTweakData:_init_pd2_values()
 					-1
 				}
 				self.values.akimbo.spread_index_addend = {
-					-4,
-					-3,
 					-2,
 					-1,
-					0
+					-0,
+					-1,
+					2
 				}				
 
 				--Desperado

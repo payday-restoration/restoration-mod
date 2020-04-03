@@ -226,8 +226,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local weapon_tweak = tweak_data.weapon[name]
 		local multiplier = 1
 		for _, category in ipairs(weapon_tweak.categories) do
-			if category == "pistol" then
-				multiplier = multiplier * tweak_data.pistol_swap_bonus
+			if tweak_data[category] and tweak_data[category].swap_bonus then
+				multiplier = multiplier * tweak_data[category].swap_bonus
 			end
 		end
 		multiplier = multiplier * tweak_data.weapon.stats.mobility[base_stats.concealment.value + 1]
@@ -239,8 +239,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local weapon_tweak = tweak_data.weapon[name]
 		local multiplier = 1
 		for _, category in ipairs(weapon_tweak.categories) do
-			if category == "pistol" then
-				multiplier = multiplier * tweak_data.pistol_swap_bonus
+			if tweak_data[category] and tweak_data[category].swap_bonus then
+				multiplier = multiplier * tweak_data[category].swap_bonus
 			end
 		end
 		multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value, 0) + 1]
@@ -256,7 +256,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
 
 		for _, category in ipairs(weapon_tweak.categories) do
-			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", category == "pistol" and tweak_data.pistol_swap_bonus or 1)
+			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
 		end
 		local multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value, 0) + 1]
 		local skill_swap_speed = (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier - base_stats.swap_speed.value - mods_stats.swap_speed.value

@@ -3028,7 +3028,7 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.health_damage_bonus_dodge = {
+	self.definitions.player_health_damage_bonus_dodge = {
 		name_id = "menu_player_health_damage_bonus_dodge",
 		category = "feature",
 		upgrade = {

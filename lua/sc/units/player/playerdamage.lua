@@ -366,7 +366,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:sound():play("player_hit")
 		else
 			self._unit:sound():play("player_hit_permadamage")
-			self.fill_dodge_meter(pm.upgrade_value("player", "health_damage_bonus_dodge", 0) * self._dodge_points)
+			self:fill_dodge_meter(pm:upgrade_value("player", "health_damage_bonus_dodge", 0) * self._dodge_points)
 		end
 		
 		local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)

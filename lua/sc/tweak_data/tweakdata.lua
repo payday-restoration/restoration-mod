@@ -20,7 +20,7 @@
 
 	--Swap Speed Multipliers
 	tweak_data.pistol = {swap_bonus = 1.5}
-	tweak_data.akimbo = {swap_bonus = 0.6666666}
+	tweak_data.akimbo = {swap_bonus = 0.6}
 
 	--Max concealment for guns.
 	tweak_data.concealment_cap = 32

@@ -599,9 +599,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								end
 							end
 
-							local check_other_healing_sources = true
+							local is_valid_combat_target = target_priority_slot ~= 0 and reaction >= AIAttentionObject.REACT_COMBAT
+							local check_healing_sources = is_valid_combat_target and att_unit:character_damage().check_medic_heal
 
-							if target_priority_slot ~= 0 and att_unit:character_damage().check_medic_heal and not table.contains(tweak_data.medic.disabled_units, att_base._tweak_table) then
+							if check_healing_sources and not table.contains(tweak_data.medic.disabled_units, att_base._tweak_table) then
 								if not att_unit:anim_data() or not att_unit:anim_data().act then
 									local team = att_unit:brain() and att_unit:brain()._logic_data and att_unit:brain()._logic_data.team
 									local proceed = true
@@ -618,14 +619,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 										if nearby_medic then
 											if not data.unit:raycast("ray", data.unit:movement():m_head_pos(), nearby_medic:movement():m_head_pos(), "slot_mask", TeamAILogicIdle._vis_check_slotmask, "ray_type", "ai_vision", "report") then
 												target_priority_slot = 0
-												check_other_healing_sources = nil
+												check_healing_sources = nil
 											end
 										end
 									end
 								end
 							end
 
-							if check_other_healing_sources and target_priority_slot ~= 0 then
+							if check_healing_sources then
 								local function get_nearby_lpf(unit)
 									local enemies = World:find_units_quick(unit, "sphere", unit:position(), tweak_data.medic.lpf_radius, managers.slot:get_mask("enemies"))
 
@@ -701,7 +702,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								end
 							end
 
-							if reaction >= AIAttentionObject.REACT_COMBAT then
+							if is_valid_combat_target then
 								local my_weapon_usage = data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage
 
 								if my_weapon_usage == "is_shotgun_mag" or my_weapon_usage == "is_lmg" then

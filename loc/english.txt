@@ -304,6 +304,7 @@
 	
 	"menu_asset_wet_intel" : "Intel",
 	"menu_asset_risk_murky" : "Murkywater Mercenaries",
+	"menu_asset_risk_bexico" : "Policía Federal",
 	"menu_asset_risk_zombie" : "zOmbIe rEpsondERs",
 	"menu_asset_wet_boat" : "Boat",
 	"menu_asset_wet_boat_desc" : "Buy an additional boat drop-off and escape",

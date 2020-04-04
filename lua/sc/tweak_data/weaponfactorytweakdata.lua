@@ -35117,7 +35117,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				concealment = -1,
-				reload = 2
+				reload = 5
 			}
 		}
 		self.parts.wpn_fps_ass_ching_s_standard = {
